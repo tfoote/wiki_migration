@@ -1,0 +1,43 @@
+This package contains the ROS control node and its structures to control
+the \'\'qb SoftHand Research\'\' or the \'\'qb SoftHand2 Research\'\'
+device. It exploits the features provided by the base device-independent
+control library (cf. [qb_device_control](qb_device_control)) and the
+specific hardware interface (cf.
+[qb_hand_hardware_interface](qb_hand_hardware_interface)).
+
+## Launch files
+
+The launch files start a ROS node for the \'\'qb SoftHand Research\'\'
+or the \'\'qb SoftHand2 Research\'\' to control it through a GUI and
+through predefined configurable waypoints (stored in the
+\`config/qbhand_waypoints.yaml\`). In both cases the controllers setup
+can be found in the \`config/qbhand_controllers.yaml\`; it is
+recommended not to change the default settings though.
+
+### gui_control
+
+This launch file calls the template
+[full_bringup](qb_device_bringup#full_bringup) with the default settings
+to bringup a full control node for the device based on GUI inputs. It
+also starts the Communication Handler and therefore it is recommended
+not to start other driver nodes while using this one (cf.
+[qb_chain](qb_chain) to control several devices together).
+
+### waypoint_control
+
+This launch file calls the template
+[full_bringup](qb_device_bringup#full_bringup) with the default settings
+to bringup a full control node for the device based on waypoint inputs.
+It also starts the Communication Handler and therefore it is recommended
+not to start other driver nodes while using this one (cf.
+[qb_chain](qb_chain) to control several devices together).
+
+## Nodes and API
+
+### qb_hand_control
+
+This control library specifically designed for the robotic hand extends
+the [qb_device_control](qb_device_control) and exploits the
+[qb_hand_hardware_interface](qb_hand_hardware_interface), therefore it
+provides all the ROS resources and requires all the specifications of
+this two base packages.

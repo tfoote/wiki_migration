@@ -1,0 +1,15 @@
+[rosserial_client](rosserial_client) contains the generic client-side
+[rosserial](rosserial) implementation. It is designed for
+microcontrollers and it can run on any processor for which you have an
+ANSI C++ compiler and a serial port connection to a computer running
+ROS.
+
+For details on using rosserial_client with the Arduino, please see
+[rosserial_arduino](rosserial_arduino). For other platforms, please see
+the [rosserial_client tutorials](rosserial_client/Tutorials).
+
+\'\'\'Note:\'\'\' The serialization and deserialization code generated
+by the \`make_libraries\` module assumes that the client is a
+little-endian machine. If you have a bi-endian target such as ARM or
+MIPS, be sure that it has been placed in little-endian mode in order to
+use it with rosserial.

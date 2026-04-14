@@ -1,0 +1,323 @@
+## Introduction
+
+This package provides the official ROS driver for the 221e Multisensor
+InerTial CHamaleon (MITCH) V2 device.
+
+Package available for:
+
+-   ROS Noetic - Ubuntu 20.04
+-   ROS Noetic - Windows 10
+
+## Installation
+
+### Install ROS and create a Catkin workspace
+
+a\. Ubuntu 20.04:
+
+-   Install [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
+    on [Ubuntu 20.04](https://www.ubuntu-it.org/download)
+-   Create your
+    [ Catkin Workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace) b.
+    Windows 10:
+-   Install [ROS Noetic](https://wiki.ros.org/Installation/Windows) on
+    Windows 10
+-   Open your ROS short cut terminal
+-   Create your
+    [ Catkin Workspace](https://github.com/Brabalawuka/RosOnWindows) (in
+    this tutorial, we assume that your catkin workspace is located in
+    your \`\`\`c:\\\`\`\` directory)
+
+Tips for Windows:
+
+-   Remember to start your installation routine from the ROS command
+    short cut (created in the installation step)
+-   Assuming you are exploiting
+    [Microsoft Visual Studio 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes),
+    remember to include the \"Desktop development with C++\" workload.
+    Moreover, in the Individual Components, select \"Windows 10 SDK\".
+-   if you need the Ninja build tool, go to the
+    [ releases page](https://github.com/ninja-build/ninja/releases ) and
+    download a suitable binary for Windows. Place \`\`\`ninja.exe\`\`\`
+    in a suitable spot, e.g., \`\`\`C:\\Ninja\`\`\`. Make sure that
+    CMake can find \`\`\`ninja.exe\`\`\` by adding \`\`\`C:\\Ninja\`\`\`
+    to your \`\`\`%PATH%\`\`\`.
+
+To set up the \`\`\`catkin_make\`\`\` tools in Visual Studio 2019:
+
+-   From the ROS shortcut, enter \`\`\`devenv\`\`\` to start your Visual
+    Studio IDE;
+-   Choose to open up your catkin workspace from your local folder;
+-   As Visual Studio is using different settings for CMake projects, we
+    need to configure the CMake file. Thus, click \`\`\`Project \--\>
+    CMake Settings for Project\`\`\` and edit the JSON version of your
+    Cmake settings file as follows:
+
+```
+{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "RelWithDebInfo",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "C:\\catkin_ws\\build",
+      "installRoot": "C:\\catkin_ws\\install",
+      "cmakeCommandArgs": "DCATKIN_DEVEL_PREFIX=C:\\catkin_ws\\devel",
+      "ctestCommandArgs": ""
+    }
+  ]
+}
+```
+
+In this way, Cmaking and building your project from Visual Studio will
+be equal to a catkin_make outside the Visual Studio environment. You can
+also open the Command Line directly from the Visual Studio
+\`\`\`Tools\`\`\` button.
+
+### Install lib221e
+
+lib221e is the C++ library for the 221e Communication Protocol. Follow
+the installation instructions available
+[here](https://github.com/221eROS/lib221e.git ).
+
+### Clone mitch_v2_driver in your Catkin Workspace
+
+a\) Ubuntu: ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```
+
+b\) Windows: ```
+$ cd c:\catkin_ws\src
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ cd ..
+$ catkin_make
+```
+
+## Usage
+
+### Device connection
+
+Switch on your MUSE V2 device. From your catkin workspace, launch the
+following command to connect to your sensor and enable its ROS node:
+```
+$ roslaunch muse_v2_driver muse_v2.launch
+``` Among others, this launch file allows you to
+set:
+
+-   port name (Default: COM5);
+-   baudrate (Default: 115200).
+
+### Device shutdown
+
+Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\],
+launch the following command to switch off your device:
+```
+$ roslaunch muse_v2_driver shutdown.launch
+```
+
+### Configuration
+
+\'\'\'\'\'Get configuration parameters.\'\'\'\'\' Assuming the ROS node
+of your MUSE V2 sensor is active \[step 3.1\], launch the following
+command from your catkin workspace: ```
+$ roslaunch muse_v2_driver get_configuration_params.launch
+```
+
+It will output the configuration parameters of your device:
+
+-   gyroscope full-scale;
+-   accelerometer full-scale;
+-   accelerometer HDR full-scale;
+-   magnetometer full-scale;
+-   log mode;
+-   log frequency.
+
+By default, \`\`\`launch/get_configuration_params.launch\`\`\` enables
+the request of all parameters. You can freely \'\'enable/disable\'\'
+each parameter transmission by setting to \'\'true/false\'\' its
+corresponding argument in this launch file.
+
+\'\'\'\'\'Set configuration parameters.\'\'\'\'\' To change the
+configuration parameters of your MUSE V2 sensor, you can edit the
+\`\`\`muse_v2_config.yaml\`\`\` file in the \`\`\`config\`\`\` folder.
+The following parameters can be configured:
+
+-   gyroscope full-scale value (Default: 0 Available: {500, 1000, 2000,
+    4000});
+-   accelerometer full-scale value (Default: 0 Available: {2, 4, 6, 8,
+    16});
+-   accelerometer HDR full-scale value (Default: 0 Available: {100, 200,
+    400});
+-   magnetometer full-scale value (Default: 0 Available: {2, 4, 8, 12});
+-   log mode (Default: UINT8_MAX Available: {0, 1, 2, 3, 4, 5});
+-   log frequency (Default: UINT(\_MAX Available: \<= 250).
+
+Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\],
+launch the following command to write the new parameters on your device:
+```
+$ roslaunch muse_v2_driver set_configuration_params.launch
+```
+
+### Calibration
+
+\'\'\'\'\'Get calibration params.\'\'\'\'\' Assuming the ROS node of
+your MUSE V2 sensor is active \[step 3.1\], launch the following command
+from your catkin workspace: ```
+$ roslaunch muse_v2_driver get_calibration_params.launch
+```
+
+It will output the calibration parameters of your device:
+
+-   gyroscope offset;
+-   accelerometer calibration parameters;
+-   magnetometer calibration parameters.
+
+Such parameters will be stored in \`\`\`config/muse_v2_calib.txt\`\`\`.
+By default, the launch file enables the request of all parameters. You
+can freely \'\'enable/disable\'\' each parameter retrieval by setting to
+\'\'true/false\'\' its argument in
+\`\`\`launch/get_calibration_params.launch\`\`\`.
+
+### Memory
+
+Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\], the
+following command lets you retrieve log data from your device memory:
+
+```
+$ roslaunch muse_v2_driver logger.launch
+``` According to the flagged parameter, the device
+will output:
+
+-   the available memory \[kB\];
+-   a boolan value attesting that the memory has been correctly erased;
+-   the list of log files;
+-   all logs of a selected log file;
+-   all logs of all stored log files.
+
+Focusing on the log files,
+
+-   \'\'get_files:=true\'\' will output the list \'\'\[(1,
+    file_name_1.txt), \..., (n, file_name_n.txt)\]\'\' of log files
+    stored in your device;
+-   \'\'read_file:=i\'\' (with i ={1, \..., n}) will store the content
+    of file i-th;
+-   \'\'read_memory:=true\'\' will store the content of all log files.
+
+Log files are stored in the \`\`\`config\`\`\` folder.
+
+### Data acquisition
+
+```clearsilver
+pub {
+  0.name = imu/data
+  0.type = sensor_msgs/Imu
+  0.desc = quaternion, angular velocity, and linear acceleration.
+  1.name = imu/acceleration
+  1.type = geometry_msgs/Vector3Stamped
+  1.desc = calibrated linear acceleration.
+  2.name = imu/angular_velocity
+  2.type = geometry_msgs/Vector3Stamped
+  2.desc = calibrated angular velocity.
+  3.name = imu/mag
+  3.type = geometry_msgs/Vector3Stamped
+  3.desc = calibrated magnetic field.
+  4.name = imu/quaternion
+  4.type = geometry_msgs/QuaternionStamped
+  4.desc = sensor orientation expressed in quaternion.
+  5.name = imu/rpy
+  5.type = geometry_msgs/Vector3Stamped
+  5.desc = sensor orientation expressed in Roll-Pitch-Yaw.
+}
+```
+
+\'\'\'\'\'Start acquisition.\'\'\'\'\' We assume that the ROS node of
+your MUSE V2 device is active \[step 3(a)\]. To start raw data
+transmission, launch the following command from your catkin workspace:
+```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```0
+
+By default, \`\`\`start_transmission.launch\`\`\` starts to publish the
+following data:
+
+-   IMU;
+-   quaternion;
+-   RPY;
+-   angular velocity;
+-   acceleration;
+-   magnetic field.
+
+You can freely \'\'enable/disable\'\' each data publisher by setting to
+\'\'true/false\'\' its corresponding argument. The launch file also
+enables to choose the desired sampling \'\'frequency\'\' (Default: 150
+Hz - Admitted range: \[1-150\] (Hz)).
+
+\'\'\'\'\'Plots.\'\'\'\'\' While streaming raw data, you can plot them
+by means of ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```1 To enable the activation of one or
+more plots, you should set to \'\'true\'\' its corresponding argument.
+
+\'\'\'\'\'Raw data subscriber.\'\'\'\'\' While streaming raw data, you
+can subscribe to the \'\'publisher\'\' node and publish data back on
+your terminal. Assuming your transmission node is active, launch the
+following command from your catkin workspace: ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```2
+\'\'\'\'\'Stop acquisition.\'\'\'\'\' If your acquisition node is active
+and you want to stop data transmission: ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```3
+
+### Miscellaneous
+
+\'\'\'\'\'Get battery charge and voltage.\'\'\'\'\' Assuming the ROS
+node of your MUSE V2 sensor is active \[step 3.1\], type the following
+command from your catkin workspace: ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```4 The node
+will send back the battery charge, its voltage, or both depending on
+whether the arguments \'\'charge\'\' and \'\'voltage\'\' are set to
+\'\'true\'\'.
+
+## Example
+
+The following example shows how to ask a 221e MUSE V2 sensor to stream
+raw data and enable the 3D visualization of the IMU plot.
+
+-   Open one terminal and, from your catkin workspace, type:
+    ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```5
+-   Open a second terminal and, from you catkin workspace, type:
+    ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```6
+-   Open a third terminal and, from you catkin workspace, type:
+    ```
+$ cd ~/catkin_ws/src/
+$ git clone https://github.com/221eROS/muse_v2_driver.git
+$ catkin_make
+```7
+-   On your desktop, the 3D view of your sensor will appear:
+
+![IMU RViz output example\|width=70%](attachment:imu_rviz_output_example.png)
+
+It displays the orientation of the IMU using a box as well as and
+coordinate axes. The acceleration can also be visualized using a vector.

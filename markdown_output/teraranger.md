@@ -1,0 +1,306 @@
+Github: \*<https://github.com/Terabee/teraranger>
+
+## Supported Hardware
+
+This package works with TeraRanger \'\'\'Evo Mini\'\'\', TeraRanger
+\'\'\'Evo 60m\'\'\', TeraRanger \'\'\'Evo 600Hz\'\'\', TeraRanger
+\'\'\'Evo 3m\'\'\' , TeraRanger \'\'\'Evo Thermal 33/90\'\'\',
+TeraRanger \'\'\'Evo 64px\'\'\', TeraRanger \'\'\'One\'\'\' and
+TeraRanger \'\'\'Duo\'\'\'. You can find more information below.
+
+TeraRanger \'\'\'Evo 60m\'\'\' is the long range Time-of-Flight distance
+sensor of the TeraRanger product family. It provides calibrated distance
+readings in millimetres and has a range up to 60m, whilst remaining
+lightweight and small! Instead of laser, TeraRanger Evo uses LED
+technology. React faster and detect obstacles with greater assurance,
+TeraRanger \'\'\'Evo 600Hz\'\'\' is perfect for high-speed collision
+avoidance and object detection solution! With its 10cm to 3m range,
+100Hz fixed update rate and greater accuracy(+/-2cm), the TeraRanger
+\'\'\'Evo 3m\'\'\', is optimized for close-range distance measurement.
+![](attachment:TeraRanger_Evo.jpg)
+
+For more information about TeraRanger \'\'\'Evo 60m/Evo 600Hz/Evo
+3m\'\'\':
+
+-   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-evo-60m//>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/portfolio-item/teraranger-evo-3m/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/portfolio-item/teraranger-evo-600hz/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/sensors-modules/lidar-tof-range-finders//>
+    \-\-\-\-- TeraRanger \'\'\'Evo Mini\'\'\'
+    ![](attachment:TeraRanger_EvoMini.jpg)
+
+For more information about TeraRanger \'\'\'Evo Mini\'\'\':
+
+-   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-evo-mini/>
+    \-\-\-\--
+
+TeraRanger \'\'\'Evo Thermal 33/90\'\'\' Monitor heat variations, detect
+movement and capture the unseen! In a compact and affordable design,
+ideal for OEM integration in Smart City, Smart building, Robotics and
+Industrial applications. For more information about TeraRanger \'\'\'Evo
+Thermal 33/90\'\'\': ![](attachment:TeraRanger_Evo_Thermal_33_90.jpg)
+
+-   <https://www.terabee.com/shop/thermal-cameras/teraranger-evo-thermal-90/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/shop/thermal-cameras/teraranger-evo-thermal-33/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/sensors-modules/thermal-cameras/> \-\-\-\--
+
+TeraRanger \'\'\'Evo 64px\'\'\' is a lightweight, high-performance
+multi-pixel sensor based on infrared Time-of-Flight (ToF) technology.
+For more information about TeraRanger \'\'\'Evo 64px\'\'\':
+![](attachment:TeraRanger_Evo_64px.jpg)
+
+-   <https://www.terabee.com/shop/3d-tof-cameras/teraranger-evo-64px/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/sensors-modules/3d-tof-cameras/> \-\-\-\--
+
+TeraRanger \'\'\'One\'\'\' is a lightweight, high-performance distance
+measurement sensor based on infrared Time-of-Flight (ToF) technology.
+![](attachment:Teraranger_one.jpg)
+
+For more information about TeraRanger \'\'\'One\'\'\':
+
+-   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-one/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/sensors-modules/lidar-tof-range-finders/>
+    \-\-\-\-- TeraRanger Duo is a powerful surface detection solution
+    for any environment! Combining our advanced infrared Time-of-Flight
+    (ToF) technology with classic ultrasound technology, you'll never
+    again have issues detecting the proximity of difficult surfaces.
+
+![](attachment:Teraranger_duo.jpg)
+
+For more information about TeraRanger \'\'\'Duo\'\'\':
+
+-   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-duo/>
+
+```{=html}
+<!-- -->
+```
+-   <https://www.terabee.com/sensors-modules/lidar-tof-range-finders/>
+
+## API Stability
+
+The ROS API of this driver should be considered stable.
+
+## Nodes
+
+```clearsilver
+desc = This node is the official driver for TeraRanger '''Evo 60m''', TeraRanger '''Evo 600Hz''' and TeraRanger '''Evo 3m'''.
+node.0 {
+name = evo
+
+pub {
+  0.name = /teraranger_evo
+  0.type = sensor_msgs/Range
+  0.desc = Provides range reading
+}
+
+param {
+ 1.name = _portname
+ 1.type = str, default: "/dev/ttyACM0"
+ 1.desc = The device path to open.
+ 2.name = _sensor_type
+ 2.type = str, default: "Evo_60m"
+ 2.desc = The type of sensor to define "Evo_60m", "Evo_600Hz" or "Evo_3m".
+}
+}
+
+node.1 {
+    name = evo_mini
+    desc = This node is the official driver for TeraRanger '''Evo Mini'''
+    pub {
+      0.name = /teraranger_evo_mini/range
+      0.type = sensor_msgs/Range
+      0.desc = Provides distance data when sensor in single-pixel mode
+      1.name = /teraranger_evo_mini/ranges
+      1.type = teraranger_array/RangeArray
+      1.desc = Provides distance data when sensor in multi-pixel mode
+    }
+
+    param {
+      group.0 {
+        name=Static Parameters
+        0.name = _portname
+        0.type = str, default: "/dev/ttyACM0"
+        0.desc = The device path to open.
+      }
+      group.1 {
+        name=Dynamic Parameters
+        0.name = Pixel_mode
+        0.desc = Set the pixel mode: 0 = Single, 1 = Two, 2 = Two by Two
+        0.type = int
+        0.default = 0
+        1.name = Range_mode
+        1.desc = Set the ranging mode: 0 = Long , 1 = Short
+        1.type = int
+        1.default = 0
+      }
+    }
+  }
+
+node.2 {
+    name = evo_thermal
+    desc = This node is the official driver for TeraRanger '''Evo Thermal 33/90'''
+    pub {
+      0.name = /teraranger_evo_thermal/raw_temp_array
+      0.type = std_msgs/Float64MultiArray
+      0.desc = Provides an array of thermal value
+      1.name = /teraranger_evo_thermal/rgb_image
+      1.type = sensor_msgs/Image
+      1.desc = Provide a color mapped image of sensor output
+      2.name = /teraranger_evo_thermal/ptat
+      2.type = std_msgs/Float64
+      2.desc = Provide the internal temperature of the sensor
+    }
+
+    param {
+        group.0 {
+            name=Static Parameters
+            0.name = _portname
+            0.type = str, default: "/dev/ttyACM0"
+            0.desc = The device path to open.
+            1.name = _baudrate
+            1.type = int, default: "115200"
+            1.desc = Baudrate of serial connection, 1500000 if using UART backboard
+        }
+        group.1 {
+            name=Dynamic Parameters
+            0.name = thermal_image_flip_h
+            0.desc = Flip Thermal Image horizontally
+            0.type = bool
+            0.default = False
+            1.name = thermal_image_flip_v
+            1.desc = Flip Thermal Image vertically
+            1.type = bool
+            1.default = False
+            2.name = thermal_image_interpolate
+            2.desc = Interpolate Thermal Image
+            2.type = bool
+            2.default = False
+            3.name = manual_min_scaling
+            3.desc = Lower scaling bound
+            3.type = double_t
+            3.default = 0.0
+            4.name = manual_max_scaling
+            4.desc = Upper scaling bound
+            4.type = double_t
+            4.default = 0.0
+            5.name = Map
+            5.desc = Set the sensor map mode
+            5.type = int_t
+            5.default = 3
+        }
+    }
+}
+
+node.3 {
+    name = evo_64px
+    desc = This node is the official driver for TeraRanger '''Evo 64px'''
+    pub {
+      0.name = /teraranger_evo_64px/point_cloud
+      0.type = sensor_msgs/PointCloud2
+      0.desc = Provides a point_cloud of sensor readings
+      1.name = /teraranger_evo_64px/depth_image
+      1.type = sensor_msgs/Image
+      1.desc = Provide a colormapped image of sensor output
+    }
+
+    param {
+        group.0 {
+            name=Static Parameters
+            0.name = _portname
+            0.type = str, default: "/dev/ttyACM0"
+            0.desc = The device path to open.
+            1.name = _baudrate
+            1.type = int, default: "115200"
+            1.desc = Baudrate of serial connection, 3000000 if using UART backboard
+        }
+        group.1 {
+            name=Dynamic Parameters
+            0.name = depth_image_invert
+            0.desc = Invert depth Image
+            0.type = bool
+            0.default = false
+            1.name = depth_image_interpolate
+            1.desc = Interpolate depth Image
+            1.type = bool
+            1.default = false
+            2.name = min_distance_mm
+            2.desc = Min distance allowed
+            2.type = int
+            2.default = 100
+            3.name = max_distance_mm
+            3.desc = Max distance allowed
+            3.type = int
+            3.default = 5000
+            4.name = Mode
+            4.desc = Set the sensor mode: 0 = Close Range (Allows ranging from 10cm to 5m), 1 = Fast (Allows ranging from 1m to 5m with faster update rate)
+            4.type = int
+            4.default = 0
+        }
+    }
+}
+
+node.4 {
+name = one
+desc = This node is the official driver for TeraRanger '''One'''
+pub {
+  0.name = /teraranger_one
+  0.type = sensor_msgs/Range
+  0.desc = Provides range reading
+}
+
+param {
+ 1.name = _portname
+ 1.type = str, default: "/dev/ttyACM0"
+ 1.desc = The device path to open.
+}
+}
+
+node.5 {
+name = duo
+desc = This node is the official driver for TeraRanger '''Duo'''
+pub {
+  0.name = /teraranger_duo
+  0.type = sensor_msgs/Range
+  0.desc = Provides range reading
+}
+param {
+  1.name = _portname
+  1.type = str, default: "/dev/ttyACM0"
+  1.desc = The device path to open.
+}
+}
+```
+
+## Running
+
+To launch a node simply run: ```
+rosrun teraranger name_of_the_sensor
+```

@@ -43,6 +43,7 @@ for item in os.listdir(pages_dir):
 with open(output_file, "w") as f:
     for key, value in sorted(result.items()):
         # Quoting to handle special characters safely
-        f.write(f'"{key}": "{value}"\n')
+        f.write(f'"{key}":\n')
+        f.write(f'  source_file: "{value}"\n')
 
 print(f"Successfully generated {output_file} with {len(result)} entries.")

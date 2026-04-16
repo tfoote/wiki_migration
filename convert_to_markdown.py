@@ -1,6 +1,7 @@
 import os
 import re
 import subprocess
+import yaml
 
 input_file = "current_pages.yaml"
 output_dir = "markdown_output"
@@ -198,50 +199,45 @@ count = 0
 success_count = 0
 
 with open(input_file, "r") as f:
-    for line in f:
-        parts = line.strip().split(": ")
-        if len(parts) == 2:
-            key = parts[0].strip('"')
-            value = parts[1].strip('"')
+    data = yaml.safe_load(f)
 
-            src_file = value
-            dst_file = os.path.join(output_dir, f"{key}.md")
+for key, value in data.items():
+    src_file = value["source_file"]
+    dst_file = os.path.join(output_dir, f"{key}.md")
 
+    if os.path.exists(src_file):
+        count += 1
+        try:
+            with open(src_file, "r", errors="ignore") as f_in:
+                content = f_in.read()
 
-            if os.path.exists(src_file):
-                count += 1
-                try:
-                    with open(src_file, "r", errors="ignore") as f_in:
-                        content = f_in.read()
+            preprocessed_content, code_blocks = preprocess(content)
 
-                    preprocessed_content, code_blocks = preprocess(content)
+            process = subprocess.Popen(
+                ["pandoc", "-f", "creole", "-t", "markdown"],
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+            stdout, stderr = process.communicate(
+                input=preprocessed_content.encode("utf-8")
+            )
 
-                    process = subprocess.Popen(
-                        ["pandoc", "-f", "creole", "-t", "markdown"],
-                        stdin=subprocess.PIPE,
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE,
-                    )
-                    stdout, stderr = process.communicate(
-                        input=preprocessed_content.encode("utf-8")
-                    )
+            if process.returncode == 0:
+                markdown_out = stdout.decode("utf-8")
+                final_markdown = postprocess(markdown_out, code_blocks)
 
-                    if process.returncode == 0:
-                        markdown_out = stdout.decode("utf-8")
-                        final_markdown = postprocess(markdown_out, code_blocks)
-
-
-                        with open(dst_file, "w") as f_out:
-                            f_out.write(final_markdown)
-                        success_count += 1
-                    else:
-                        print(
-                            f"Error converting {src_file}: {stderr.decode('utf-8')}"
-                        )
-                except Exception as e:
-                    print(f"Error processing {src_file}: {e}")
+                with open(dst_file, "w") as f_out:
+                    f_out.write(final_markdown)
+                success_count += 1
             else:
-                print(f"Warning: Source file {src_file} not found.")
+                print(
+                    f"Error converting {src_file}: {stderr.decode('utf-8')}"
+                )
+        except Exception as e:
+            print(f"Error processing {src_file}: {e}")
+    else:
+        print(f"Warning: Source file {src_file} not found.")
 
 print(
     f"Finished. Attempted to convert {count} files. Successfully converted {success_count}."

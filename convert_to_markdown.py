@@ -230,6 +230,7 @@ for key, value in data.items():
                 with open(dst_file, "w") as f_out:
                     f_out.write(final_markdown)
                 success_count += 1
+                data[key]["markdown_file"] = dst_file
             else:
                 print(
                     f"Error converting {src_file}: {stderr.decode('utf-8')}"
@@ -238,6 +239,9 @@ for key, value in data.items():
             print(f"Error processing {src_file}: {e}")
     else:
         print(f"Warning: Source file {src_file} not found.")
+
+with open(input_file, "w") as f:
+    yaml.dump(data, f, default_flow_style=False, sort_keys=True)
 
 print(
     f"Finished. Attempted to convert {count} files. Successfully converted {success_count}."

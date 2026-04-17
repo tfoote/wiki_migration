@@ -6,6 +6,8 @@ import urllib.error
 import json
 import time
 import os
+import xml.etree.ElementTree as ET
+
 
 def github_api_request(url):
     token = os.environ.get("GITHUB_TOKEN")
@@ -56,7 +58,9 @@ def correlate(yaml_file):
     print("Loading noetic distribution...")
     distro = rosdistro.get_distribution(index, "noetic")
 
+    token = os.environ.get("GITHUB_TOKEN")
     repo_archived_cache = {}
+
 
     for pkg_name in data:
         print(f"\nProcessing package: {pkg_name}")
@@ -121,7 +125,102 @@ def correlate(yaml_file):
                 else:
                     print("  Skipping README check (not GitHub or no repo URL).")
 
+                # Check package.xml
+                package_xml_match = False
+                if repo_url and "github.com" in repo_url:
+                    package_xml_url = f"{base_url}/{branch}/"
+                    if subdir:
+                        package_xml_url += f"{subdir}/"
+                    package_xml_url += "package.xml"
+
+                    print(f"  Checking package.xml at: {package_xml_url}")
+                    try:
+                        req = urllib.request.Request(package_xml_url, headers={'User-Agent': 'Mozilla/5.0'})
+                        if token:
+                            req.add_header("Authorization", f"token {token}")
+                        with urllib.request.urlopen(req) as response:
+                            if response.status == 200:
+                                xml_content = response.read()
+                                root = ET.fromstring(xml_content)
+                                name_tag = root.find('name')
+                                if name_tag is not None and name_tag.text.strip() == pkg_name:
+                                    package_xml_match = True
+                                    print("  package.xml match!")
+                                else:
+                                    print(f"  package.xml mismatch! Found: {name_tag.text if name_tag is not None else 'None'}")
+                    except urllib.error.HTTPError as e:
+                        if e.code == 404:
+                            print("  package.xml not found (404).")
+                        else:
+                            print(f"  HTTP Error checking package.xml: {e.code}")
+                    except Exception as e:
+                        print(f"  Error checking package.xml: {e}")
+                else:
+                    print("  Skipping package.xml check (not GitHub or no repo URL).")
+
+                data[pkg_name]["package_xml_match"] = package_xml_match
+
+                if not package_xml_match and repo_url and "github.com" in repo_url:
+                    print(f"  Package.xml mismatch or not found at guess. Searching repository...")
+                    parts = repo_url.replace(".git", "").split("/")
+                    if len(parts) >= 2:
+                        owner = parts[-2]
+                        repo_name_only = parts[-1]
+                        tree_url = f"https://api.github.com/repos/{owner}/{repo_name_only}/git/trees/{branch}?recursive=1"
+                        print(f"  Fetching file tree from: {tree_url}")
+                        try:
+                            tree_info = github_api_request(tree_url)
+                            if tree_info and "tree" in tree_info:
+                                for item in tree_info["tree"]:
+                                    path = item.get("path", "")
+                                    if path.endswith("package.xml"):
+                                        # Construct raw URL to check it
+                                        cand_xml_url = f"{base_url}/{branch}/{path}"
+                                        try:
+                                            req = urllib.request.Request(cand_xml_url, headers={'User-Agent': 'Mozilla/5.0'})
+                                            if token:
+                                                req.add_header("Authorization", f"token {token}")
+                                            with urllib.request.urlopen(req) as response:
+                                                if response.status == 200:
+                                                    xml_content = response.read()
+                                                    root = ET.fromstring(xml_content)
+                                                    name_tag = root.find('name')
+                                                    if name_tag is not None and name_tag.text.strip() == pkg_name:
+                                                        package_xml_match = True
+                                                        print(f"  Matched package.xml at: {path}")
+                                                        # Subdirectory is the directory containing package.xml
+                                                        subdir = "/".join(path.split("/")[:-1])
+                                                        print(f"  Updated subdirectory: {subdir}")
+                                                        
+                                                        # Re-check README at new subdirectory
+                                                        cand_readme_url = f"{base_url}/{branch}/"
+                                                        if subdir:
+                                                            cand_readme_url += f"{subdir}/"
+                                                        cand_readme_url += "README.md"
+                                                        print(f"  Re-checking README at: {cand_readme_url}")
+                                                        readme_exists = False
+                                                        try:
+                                                            req = urllib.request.Request(cand_readme_url, headers={'User-Agent': 'Mozilla/5.0'})
+                                                            with urllib.request.urlopen(req) as response:
+                                                                if response.status == 200:
+                                                                    readme_exists = True
+                                                                    print("  README found at new location!")
+                                                        except Exception as e:
+                                                            pass # Silent if not found
+                                                        
+                                                        # Update data
+                                                        data[pkg_name]["subdirectory"] = subdir
+                                                        data[pkg_name]["readme_exists"] = readme_exists
+                                                        data[pkg_name]["package_xml_match"] = True
+                                                        break
+                                        except Exception as e:
+                                            pass # Ignore errors for candidates
+                        except Exception as e:
+                            print(f"  Error fetching file tree: {e}")
+
                 # Check if archived (GitHub only)
+
+
                 repository_archived = False
                 if repo_url and "github.com" in repo_url:
                     if repo_url in repo_archived_cache:

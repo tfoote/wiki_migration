@@ -4,6 +4,42 @@ import rosdistro
 import urllib.request
 import urllib.error
 import json
+import time
+import os
+
+def github_api_request(url):
+    token = os.environ.get("GITHUB_TOKEN")
+    while True:
+        try:
+            headers = {'User-Agent': 'Mozilla/5.0'}
+            if token:
+                headers["Authorization"] = f"token {token}"
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req) as response:
+                if response.status == 200:
+                    return json.loads(response.read().decode())
+
+        except urllib.error.HTTPError as e:
+            if e.code in [403, 429]:
+                reset_time = e.headers.get('X-RateLimit-Reset')
+                if reset_time:
+                    reset_time = int(reset_time)
+                    sleep_time = reset_time - time.time() + 5  # Add 5 seconds buffer
+                    if sleep_time > 0:
+                        print(f"  Rate limit hit. Sleeping for {sleep_time:.2f} seconds...")
+                        time.sleep(sleep_time)
+                        continue
+                else:
+                    print(f"  Rate limit hit but no reset header. Sleeping for 60 seconds...")
+                    time.sleep(60)
+                    continue
+            else:
+                print(f"  HTTP Error: {e.code}")
+                raise e
+        except Exception as e:
+            print(f"  Error: {e}")
+            raise e
+
 
 def correlate(yaml_file):
     print(f"Loading {yaml_file}...")
@@ -99,15 +135,14 @@ def correlate(yaml_file):
                             api_url = f"https://api.github.com/repos/{owner}/{repo_name_only}"
                             print(f"  Checking archived status at: {api_url}")
                             try:
-                                req = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0'})
-                                with urllib.request.urlopen(req) as response:
-                                    if response.status == 200:
-                                        repo_info = json.loads(response.read().decode())
-                                        repository_archived = repo_info.get("archived", False)
-                                        print(f"  Archived: {repository_archived}")
-                                        repo_archived_cache[repo_url] = repository_archived
+                                repo_info = github_api_request(api_url)
+                                if repo_info:
+                                    repository_archived = repo_info.get("archived", False)
+                                    print(f"  Archived: {repository_archived}")
+                                    repo_archived_cache[repo_url] = repository_archived
                             except Exception as e:
-                                print(f"  Error checking archived status: {e}")
+                                print(f"  Error checking archived status after retries: {e}")
+
                 else:
                     print("  Skipping archived check (not GitHub or no repo URL).")
 

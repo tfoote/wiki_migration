@@ -1,0 +1,24 @@
+amcl:
+  branch: noetic-devel
+  markdown_file: markdown_output/amcl.md
+  readme_exists: false
+  repository: https://github.com/ros-planning/navigation.git
+  repository_archived: true
+  source_file: pages/amcl/revisions/00000097
+  subdirectory: amcl
+roscpp:
+  branch: noetic-devel
+  markdown_file: markdown_output/roscpp.md
+  readme_exists: false
+  repository: https://github.com/ros/ros_comm.git
+  repository_archived: true
+  source_file: pages/roscpp/revisions/00000077
+  subdirectory: roscpp
+tf2:
+  branch: noetic-devel
+  markdown_file: markdown_output/tf2.md
+  readme_exists: false
+  repository: https://github.com/ros/geometry2.git
+  repository_archived: true
+  source_file: pages/tf2/revisions/00000064
+  subdirectory: tf2

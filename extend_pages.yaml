@@ -1,0 +1,2997 @@
+abb_driver:
+  branch: kinetic-devel
+  markdown_file: markdown_output/abb_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb_driver.git
+  repository_archived: false
+  source_file: pages/abb_driver/revisions/00000013
+  subdirectory: ''
+abb_egm_msgs:
+  branch: master
+  markdown_file: markdown_output/abb_egm_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb_robot_driver_interfaces.git
+  repository_archived: false
+  source_file: pages/abb_egm_msgs/revisions/00000001
+  subdirectory: abb_egm_msgs
+abb_irb2600_support:
+  branch: noetic-devel
+  markdown_file: markdown_output/abb_irb2600_support.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb.git
+  repository_archived: false
+  source_file: pages/abb_irb2600_support/revisions/00000002
+  subdirectory: abb_irb2600_support
+abb_irb52_support:
+  branch: noetic-devel
+  markdown_file: markdown_output/abb_irb52_support.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb.git
+  repository_archived: false
+  source_file: pages/abb_irb52_support/revisions/00000002
+  subdirectory: abb_irb52_support
+abb_irb6650s_support:
+  branch: noetic-devel
+  markdown_file: markdown_output/abb_irb6650s_support.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb.git
+  repository_archived: false
+  source_file: pages/abb_irb6650s_support/revisions/00000002
+  subdirectory: abb_irb6650s_support
+abb_irb7600_support:
+  branch: noetic-devel
+  markdown_file: markdown_output/abb_irb7600_support.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb.git
+  repository_archived: false
+  source_file: pages/abb_irb7600_support/revisions/00000002
+  subdirectory: abb_irb7600_support
+abb_rapid_msgs:
+  branch: master
+  markdown_file: markdown_output/abb_rapid_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb_robot_driver_interfaces.git
+  repository_archived: false
+  source_file: pages/abb_rapid_msgs/revisions/00000001
+  subdirectory: abb_rapid_msgs
+abb_rapid_sm_addin_msgs:
+  branch: master
+  markdown_file: markdown_output/abb_rapid_sm_addin_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb_robot_driver_interfaces.git
+  repository_archived: false
+  source_file: pages/abb_rapid_sm_addin_msgs/revisions/00000001
+  subdirectory: abb_rapid_sm_addin_msgs
+abb_robot_msgs:
+  branch: master
+  markdown_file: markdown_output/abb_robot_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/abb_robot_driver_interfaces.git
+  repository_archived: false
+  source_file: pages/abb_robot_msgs/revisions/00000001
+  subdirectory: abb_robot_msgs
+ackermann_steering_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/ackermann_steering_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/ackermann_steering_controller/revisions/00000004
+  subdirectory: ackermann_steering_controller
+adi_tmc_coe:
+  branch: noetic
+  markdown_file: markdown_output/adi_tmc_coe.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/analogdevicesinc/adi_tmc_coe.git
+  repository_archived: false
+  source_file: pages/adi_tmc_coe/revisions/00000005
+  subdirectory: ''
+adi_tmcl:
+  branch: noetic
+  markdown_file: markdown_output/adi_tmcl.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/analogdevicesinc/tmcl_ros.git
+  repository_archived: false
+  source_file: pages/adi_tmcl/revisions/00000007
+  subdirectory: ''
+agni_tf_tools:
+  branch: master
+  markdown_file: markdown_output/agni_tf_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ubi-agni/agni_tf_tools.git
+  repository_archived: false
+  source_file: pages/agni_tf_tools/revisions/00000003
+  subdirectory: ''
+app_manager:
+  branch: kinetic-devel
+  markdown_file: markdown_output/app_manager.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/pr2/app_manager.git
+  repository_archived: false
+  source_file: pages/app_manager/revisions/00000002
+  subdirectory: ''
+aruco_detect:
+  branch: noetic-devel
+  markdown_file: markdown_output/aruco_detect.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UbiquityRobotics/fiducials.git
+  repository_archived: false
+  source_file: pages/aruco_detect/revisions/00000009
+  subdirectory: aruco_detect
+assisted_teleop:
+  branch: noetic-devel
+  markdown_file: markdown_output/assisted_teleop.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/assisted_teleop/revisions/00000001
+  subdirectory: assisted_teleop
+async_comm:
+  branch: master
+  markdown_file: markdown_output/async_comm.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/dpkoch/async_comm.git
+  repository_archived: false
+  source_file: pages/async_comm/revisions/00000004
+  subdirectory: ''
+async_web_server_cpp:
+  branch: ros1-develop
+  markdown_file: markdown_output/async_web_server_cpp.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fkie/async_web_server_cpp.git
+  repository_archived: false
+  source_file: pages/async_web_server_cpp/revisions/00000001
+  subdirectory: ''
+auv_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/auv_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/oceansystemslab/auv_msgs.git
+  repository_archived: false
+  source_file: pages/auv_msgs/revisions/00000001
+  subdirectory: ''
+avt_vimba_camera:
+  branch: ros1_master
+  markdown_file: markdown_output/avt_vimba_camera.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/astuff/avt_vimba_camera.git
+  repository_archived: false
+  source_file: pages/avt_vimba_camera/revisions/00000002
+  subdirectory: ''
+bagger:
+  branch: master
+  markdown_file: markdown_output/bagger.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/squarerobot/bagger.git
+  repository_archived: false
+  source_file: pages/bagger/revisions/00000001
+  subdirectory: ''
+baldor:
+  branch: master
+  markdown_file: markdown_output/baldor.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/crigroup/baldor.git
+  repository_archived: false
+  source_file: pages/baldor/revisions/00000002
+  subdirectory: ''
+camera_aravis:
+  branch: noetic-devel
+  markdown_file: markdown_output/camera_aravis.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/FraunhoferIOSB/camera_aravis.git
+  repository_archived: false
+  source_file: pages/camera_aravis/revisions/00000009
+  subdirectory: ''
+cartesian_interface:
+  branch: main
+  markdown_file: markdown_output/cartesian_interface.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+  repository_archived: false
+  source_file: pages/cartesian_interface/revisions/00000001
+  subdirectory: cartesian_interface
+cartesian_msgs:
+  branch: jade-devel
+  markdown_file: markdown_output/cartesian_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/cartesian_msgs.git
+  repository_archived: false
+  source_file: pages/cartesian_msgs/revisions/00000001
+  subdirectory: ''
+cartesian_trajectory_controller:
+  branch: main
+  markdown_file: markdown_output/cartesian_trajectory_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+  repository_archived: false
+  source_file: pages/cartesian_trajectory_controller/revisions/00000001
+  subdirectory: cartesian_trajectory_controller
+cartesian_trajectory_interpolation:
+  branch: main
+  markdown_file: markdown_output/cartesian_trajectory_interpolation.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+  repository_archived: false
+  source_file: pages/cartesian_trajectory_interpolation/revisions/00000001
+  subdirectory: cartesian_trajectory_interpolation
+catch_ros:
+  branch: master
+  markdown_file: markdown_output/catch_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/AIS-Bonn/catch_ros.git
+  repository_archived: false
+  source_file: pages/catch_ros/revisions/00000001
+  subdirectory: ''
+clober_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/clober_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/CLOBOT-Co-Ltd/clober_msgs.git
+  repository_archived: false
+  source_file: pages/clober_msgs/revisions/00000005
+  subdirectory: ''
+cmvision:
+  branch: noetic-devel
+  markdown_file: markdown_output/cmvision.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/teshanshanuka/cmvision.git
+  repository_archived: false
+  source_file: pages/cmvision/revisions/00000016
+  subdirectory: ''
+cob_fiducials:
+  branch: kinetic-devel
+  markdown_file: markdown_output/cob_fiducials.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/4am-robotics/cob_fiducials.git
+  repository_archived: false
+  source_file: pages/cob_fiducials/revisions/00000073
+  subdirectory: ''
+cob_gazebo_ros_control:
+  branch: kinetic_dev
+  markdown_file: markdown_output/cob_gazebo_ros_control.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ipa320/cob_gazebo_plugins.git
+  repository_archived: false
+  source_file: pages/cob_gazebo_ros_control/revisions/00000001
+  subdirectory: cob_gazebo_ros_control
+cob_sick_s300:
+  branch: kinetic_dev
+  markdown_file: markdown_output/cob_sick_s300.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/4am-robotics/cob_driver.git
+  repository_archived: false
+  source_file: pages/cob_sick_s300/revisions/00000009
+  subdirectory: cob_sick_s300
+code_coverage:
+  branch: master
+  markdown_file: markdown_output/code_coverage.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mikeferguson/code_coverage.git
+  repository_archived: false
+  source_file: pages/code_coverage/revisions/00000001
+  subdirectory: ''
+compass_conversions:
+  branch: master
+  markdown_file: markdown_output/compass_conversions.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/compass.git
+  repository_archived: false
+  source_file: pages/compass_conversions/revisions/00000001
+  subdirectory: compass_conversions
+compass_msgs:
+  branch: master
+  markdown_file: markdown_output/compass_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/compass.git
+  repository_archived: false
+  source_file: pages/compass_msgs/revisions/00000001
+  subdirectory: compass_msgs
+control_box_rst:
+  branch: noetic-devel
+  markdown_file: markdown_output/control_box_rst.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/rst-tu-dortmund/control_box_rst.git
+  repository_archived: false
+  source_file: pages/control_box_rst/revisions/00000002
+  subdirectory: ''
+convex_decomposition:
+  branch: melodic-devel
+  markdown_file: markdown_output/convex_decomposition.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/convex_decomposition.git
+  repository_archived: false
+  source_file: pages/convex_decomposition/revisions/00000014
+  subdirectory: ''
+costmap_converter:
+  branch: master
+  markdown_file: markdown_output/costmap_converter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/rst-tu-dortmund/costmap_converter.git
+  repository_archived: false
+  source_file: pages/costmap_converter/revisions/00000009
+  subdirectory: ''
+costmap_queue:
+  branch: noetic
+  markdown_file: markdown_output/costmap_queue.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/costmap_queue/revisions/00000001
+  subdirectory: costmap_queue
+cras_cpp_common:
+  branch: master
+  markdown_file: markdown_output/cras_cpp_common.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/ros-utils.git
+  repository_archived: false
+  source_file: pages/cras_cpp_common/revisions/00000003
+  subdirectory: cras_cpp_common
+cras_docs_common:
+  branch: master
+  markdown_file: markdown_output/cras_docs_common.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/ros-utils.git
+  repository_archived: false
+  source_file: pages/cras_docs_common/revisions/00000001
+  subdirectory: cras_docs_common
+cras_msgs:
+  branch: master
+  markdown_file: markdown_output/cras_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/cras_msgs.git
+  repository_archived: false
+  source_file: pages/cras_msgs/revisions/00000001
+  subdirectory: ''
+cras_py_common:
+  branch: master
+  markdown_file: markdown_output/cras_py_common.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/ros-utils.git
+  repository_archived: false
+  source_file: pages/cras_py_common/revisions/00000001
+  subdirectory: cras_py_common
+cras_relative_positional_controller:
+  branch: master
+  markdown_file: markdown_output/cras_relative_positional_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/cras_relative_positional_controller.git
+  repository_archived: false
+  source_file: pages/cras_relative_positional_controller/revisions/00000001
+  subdirectory: ''
+cras_topic_tools:
+  branch: master
+  markdown_file: markdown_output/cras_topic_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/ros-utils.git
+  repository_archived: false
+  source_file: pages/cras_topic_tools/revisions/00000001
+  subdirectory: cras_topic_tools
+create_description:
+  branch: melodic
+  markdown_file: markdown_output/create_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/AutonomyLab/create_robot.git
+  repository_archived: false
+  source_file: pages/create_description/revisions/00000003
+  subdirectory: create_description
+create_driver:
+  branch: melodic
+  markdown_file: markdown_output/create_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/AutonomyLab/create_robot.git
+  repository_archived: false
+  source_file: pages/create_driver/revisions/00000005
+  subdirectory: create_driver
+criutils:
+  branch: master
+  markdown_file: markdown_output/criutils.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/crigroup/criutils.git
+  repository_archived: false
+  source_file: pages/criutils/revisions/00000001
+  subdirectory: ''
+csm:
+  branch: master
+  markdown_file: markdown_output/csm.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/AndreaCensi/csm.git
+  repository_archived: false
+  source_file: pages/csm/revisions/00000007
+  subdirectory: ''
+cv_camera:
+  branch: master
+  markdown_file: markdown_output/cv_camera.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OTL/cv_camera.git
+  repository_archived: false
+  source_file: pages/cv_camera/revisions/00000005
+  subdirectory: ''
+ddynamic_reconfigure_python:
+  branch: master
+  markdown_file: markdown_output/ddynamic_reconfigure_python.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/pal-robotics/ddynamic_reconfigure_python.git
+  repository_archived: false
+  source_file: pages/ddynamic_reconfigure_python/revisions/00000002
+  subdirectory: ''
+diff_drive_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/diff_drive_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/diff_drive_controller/revisions/00000039
+  subdirectory: diff_drive_controller
+dingo_description:
+  branch: melodic-devel
+  markdown_file: markdown_output/dingo_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/dingo-cpr/dingo.git
+  repository_archived: false
+  source_file: pages/dingo_description/revisions/00000002
+  subdirectory: dingo_description
+dlux_global_planner:
+  branch: noetic
+  markdown_file: markdown_output/dlux_global_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/dlux_global_planner/revisions/00000001
+  subdirectory: dlux_global_planner
+dlux_plugins:
+  branch: noetic
+  markdown_file: markdown_output/dlux_plugins.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/dlux_plugins/revisions/00000001
+  subdirectory: dlux_plugins
+draco_point_cloud_transport:
+  branch: master
+  markdown_file: markdown_output/draco_point_cloud_transport.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/point_cloud_transport_plugins.git
+  repository_archived: false
+  source_file: pages/draco_point_cloud_transport/revisions/00000001
+  subdirectory: draco_point_cloud_transport
+dwb_critics:
+  branch: noetic
+  markdown_file: markdown_output/dwb_critics.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/dwb_critics/revisions/00000002
+  subdirectory: dwb_critics
+dwb_local_planner:
+  branch: noetic
+  markdown_file: markdown_output/dwb_local_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/dwb_local_planner/revisions/00000001
+  subdirectory: dwb_local_planner
+dwb_plugins:
+  branch: noetic
+  markdown_file: markdown_output/dwb_plugins.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/dwb_plugins/revisions/00000001
+  subdirectory: dwb_plugins
+dynamic_robot_state_publisher:
+  branch: master
+  markdown_file: markdown_output/dynamic_robot_state_publisher.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/peci1/dynamic_robot_state_publisher.git
+  repository_archived: false
+  source_file: pages/dynamic_robot_state_publisher/revisions/00000001
+  subdirectory: ''
+dynamixel_workbench_toolbox:
+  branch: noetic-devel
+  markdown_file: markdown_output/dynamixel_workbench_toolbox.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+  repository_archived: false
+  source_file: pages/dynamixel_workbench_toolbox/revisions/00000008
+  subdirectory: dynamixel_workbench_toolbox
+end_effector:
+  branch: master
+  markdown_file: markdown_output/end_effector.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ADVRHumanoids/ROSEndEffector.git
+  repository_archived: false
+  source_file: pages/end_effector/revisions/00000002
+  subdirectory: ''
+ess_imu_driver:
+  branch: noetic
+  markdown_file: markdown_output/ess_imu_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/cubicleguy/ess_imu_driver.git
+  repository_archived: false
+  source_file: pages/ess_imu_driver/revisions/00000008
+  subdirectory: ''
+euslisp:
+  branch: master
+  markdown_file: markdown_output/euslisp.md
+  package_xml_match: false
+  readme_exists: true
+  repository: https://github.com/euslisp/EusLisp.git
+  repository_archived: false
+  source_file: pages/euslisp/revisions/00000002
+  subdirectory: ''
+face_detector:
+  branch: noetic
+  markdown_file: markdown_output/face_detector.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/wg-perception/people.git
+  repository_archived: false
+  source_file: pages/face_detector/revisions/00000026
+  subdirectory: face_detector
+fcl:
+  branch: master
+  markdown_file: markdown_output/fcl.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/flexible-collision-library/fcl.git
+  repository_archived: false
+  source_file: pages/fcl/revisions/00000008
+  subdirectory: ''
+fetch_tools:
+  branch: ros1
+  markdown_file: markdown_output/fetch_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fetchrobotics/fetch_tools.git
+  repository_archived: false
+  source_file: pages/fetch_tools/revisions/00000001
+  subdirectory: ''
+fiducial_slam:
+  branch: noetic-devel
+  markdown_file: markdown_output/fiducial_slam.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UbiquityRobotics/fiducials.git
+  repository_archived: false
+  source_file: pages/fiducial_slam/revisions/00000015
+  subdirectory: fiducial_slam
+find_object_2d:
+  branch: noetic-devel
+  markdown_file: markdown_output/find_object_2d.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/introlab/find-object.git
+  repository_archived: false
+  source_file: pages/find_object_2d/revisions/00000035
+  subdirectory: ''
+fkie_message_filters:
+  branch: master
+  markdown_file: markdown_output/fkie_message_filters.md
+  package_xml_match: false
+  readme_exists: true
+  repository: https://github.com/fkie/message_filters.git
+  repository_archived: false
+  source_file: pages/fkie_message_filters/revisions/00000005
+  subdirectory: ''
+fmi_adapter:
+  branch: melodic_and_noetic
+  markdown_file: markdown_output/fmi_adapter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/boschresearch/fmi_adapter.git
+  repository_archived: false
+  source_file: pages/fmi_adapter/revisions/00000008
+  subdirectory: fmi_adapter
+four_wheel_steering_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/four_wheel_steering_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/four_wheel_steering_controller/revisions/00000001
+  subdirectory: four_wheel_steering_controller
+gazebo_ros_control_select_joints:
+  branch: master
+  markdown_file: markdown_output/gazebo_ros_control_select_joints.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tu-darmstadt-ros-pkg/gazebo_ros_control_select_joints.git
+  repository_archived: false
+  source_file: pages/gazebo_ros_control_select_joints/revisions/00000002
+  subdirectory: ''
+geneus:
+  branch: master
+  markdown_file: markdown_output/geneus.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/geneus.git
+  repository_archived: false
+  source_file: pages/geneus/revisions/00000001
+  subdirectory: ''
+gennodejs:
+  branch: kinetic-devel
+  markdown_file: markdown_output/gennodejs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/RethinkRobotics-opensource/gennodejs.git
+  repository_archived: false
+  source_file: pages/gennodejs/revisions/00000002
+  subdirectory: ''
+geometric_shapes:
+  branch: noetic-devel
+  markdown_file: markdown_output/geometric_shapes.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/geometric_shapes.git
+  repository_archived: false
+  source_file: pages/geometric_shapes/revisions/00000011
+  subdirectory: ''
+global_planner_tests:
+  branch: noetic
+  markdown_file: markdown_output/global_planner_tests.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/global_planner_tests/revisions/00000001
+  subdirectory: global_planner_tests
+goal_passer:
+  branch: noetic-devel
+  markdown_file: markdown_output/goal_passer.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/goal_passer/revisions/00000001
+  subdirectory: goal_passer
+graph_msgs:
+  branch: jade-devel
+  markdown_file: markdown_output/graph_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/graph_msgs.git
+  repository_archived: false
+  source_file: pages/graph_msgs/revisions/00000002
+  subdirectory: ''
+grasping_msgs:
+  branch: ros1
+  markdown_file: markdown_output/grasping_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mikeferguson/grasping_msgs.git
+  repository_archived: false
+  source_file: pages/grasping_msgs/revisions/00000001
+  subdirectory: ''
+grepros:
+  branch: master
+  markdown_file: markdown_output/grepros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/suurjaak/grepros.git
+  repository_archived: false
+  source_file: pages/grepros/revisions/00000005
+  subdirectory: ''
+handeye:
+  branch: master
+  markdown_file: markdown_output/handeye.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/crigroup/handeye.git
+  repository_archived: false
+  source_file: pages/handeye/revisions/00000001
+  subdirectory: ''
+hardware_interface:
+  branch: noetic-devel
+  markdown_file: markdown_output/hardware_interface.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/ros_control.git
+  repository_archived: false
+  source_file: pages/hardware_interface/revisions/00000016
+  subdirectory: hardware_interface
+hokuyo3d:
+  branch: master
+  markdown_file: markdown_output/hokuyo3d.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/at-wat/hokuyo3d.git
+  repository_archived: false
+  source_file: pages/hokuyo3d/revisions/00000002
+  subdirectory: ''
+hri_msgs:
+  branch: master
+  markdown_file: markdown_output/hri_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros4hri/hri_msgs.git
+  repository_archived: false
+  source_file: pages/hri_msgs/revisions/00000002
+  subdirectory: ''
+hri_rviz:
+  branch: main
+  markdown_file: markdown_output/hri_rviz.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros4hri/hri_rviz.git
+  repository_archived: false
+  source_file: pages/hri_rviz/revisions/00000004
+  subdirectory: ''
+human_description:
+  branch: main
+  markdown_file: markdown_output/human_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros4hri/human_description.git
+  repository_archived: false
+  source_file: pages/human_description/revisions/00000002
+  subdirectory: ''
+husky_description:
+  branch: noetic-devel
+  markdown_file: markdown_output/husky_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/husky/husky.git
+  repository_archived: false
+  source_file: pages/husky_description/revisions/00000006
+  subdirectory: husky_description
+ifopt:
+  branch: master
+  markdown_file: markdown_output/ifopt.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ethz-adrl/ifopt.git
+  repository_archived: false
+  source_file: pages/ifopt/revisions/00000047
+  subdirectory: ''
+image_transport_codecs:
+  branch: master
+  markdown_file: markdown_output/image_transport_codecs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/ros-utils.git
+  repository_archived: false
+  source_file: pages/image_transport_codecs/revisions/00000001
+  subdirectory: image_transport_codecs
+ipcamera_driver:
+  branch: master
+  markdown_file: markdown_output/ipcamera_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/alireza-hosseini/ipcamera_driver.git
+  repository_archived: false
+  source_file: pages/ipcamera_driver/revisions/00000003
+  subdirectory: ''
+ira_laser_tools:
+  branch: ros1-master
+  markdown_file: markdown_output/ira_laser_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/iralabdisco/ira_laser_tools.git
+  repository_archived: false
+  source_file: pages/ira_laser_tools/revisions/00000005
+  subdirectory: ''
+ivcon:
+  branch: melodic-devel
+  markdown_file: markdown_output/ivcon.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/ivcon.git
+  repository_archived: false
+  source_file: pages/ivcon/revisions/00000012
+  subdirectory: ''
+jackal_description:
+  branch: noetic-devel
+  markdown_file: markdown_output/jackal_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jackal/jackal.git
+  repository_archived: false
+  source_file: pages/jackal_description/revisions/00000010
+  subdirectory: jackal_description
+joint_state_publisher:
+  branch: noetic-devel
+  markdown_file: markdown_output/joint_state_publisher.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/joint_state_publisher.git
+  repository_archived: false
+  source_file: pages/joint_state_publisher/revisions/00000029
+  subdirectory: joint_state_publisher
+joint_trajectory_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/joint_trajectory_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/joint_trajectory_controller/revisions/00000028
+  subdirectory: joint_trajectory_controller
+joy:
+  branch: ros1
+  markdown_file: markdown_output/joy.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/joystick_drivers.git
+  repository_archived: false
+  source_file: pages/joy/revisions/00000076
+  subdirectory: joy
+joy_mouse:
+  branch: master
+  markdown_file: markdown_output/joy_mouse.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_control.git
+  repository_archived: false
+  source_file: pages/joy_mouse/revisions/00000001
+  subdirectory: joy_mouse
+joy_teleop:
+  branch: noetic-devel
+  markdown_file: markdown_output/joy_teleop.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/teleop_tools.git
+  repository_archived: false
+  source_file: pages/joy_teleop/revisions/00000003
+  subdirectory: joy_teleop
+jsk_calibration:
+  branch: master
+  markdown_file: markdown_output/jsk_calibration.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_control.git
+  repository_archived: false
+  source_file: pages/jsk_calibration/revisions/00000001
+  subdirectory: jsk_calibration
+jsk_footstep_planner:
+  branch: master
+  markdown_file: markdown_output/jsk_footstep_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_control.git
+  repository_archived: false
+  source_file: pages/jsk_footstep_planner/revisions/00000001
+  subdirectory: jsk_footstep_planner
+jsk_interactive_marker:
+  branch: master
+  markdown_file: markdown_output/jsk_interactive_marker.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_visualization.git
+  repository_archived: false
+  source_file: pages/jsk_interactive_marker/revisions/00000001
+  subdirectory: jsk_interactive_markers/jsk_interactive_marker
+jsk_network_tools:
+  branch: master
+  markdown_file: markdown_output/jsk_network_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_common.git
+  repository_archived: false
+  source_file: pages/jsk_network_tools/revisions/00000001
+  subdirectory: jsk_network_tools
+jsk_teleop_joy:
+  branch: master
+  markdown_file: markdown_output/jsk_teleop_joy.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_control.git
+  repository_archived: false
+  source_file: pages/jsk_teleop_joy/revisions/00000001
+  subdirectory: jsk_teleop_joy
+jsk_tilt_laser:
+  branch: master
+  markdown_file: markdown_output/jsk_tilt_laser.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_common.git
+  repository_archived: false
+  source_file: pages/jsk_tilt_laser/revisions/00000001
+  subdirectory: jsk_tilt_laser
+julius_ros:
+  branch: master
+  markdown_file: markdown_output/julius_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+  repository_archived: false
+  source_file: pages/julius_ros/revisions/00000001
+  subdirectory: julius_ros
+key_teleop:
+  branch: noetic-devel
+  markdown_file: markdown_output/key_teleop.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/teleop_tools.git
+  repository_archived: false
+  source_file: pages/key_teleop/revisions/00000002
+  subdirectory: key_teleop
+kobuki_ftdi:
+  branch: noetic
+  markdown_file: markdown_output/kobuki_ftdi.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/yujinrobot/kobuki_core.git
+  repository_archived: false
+  source_file: pages/kobuki_ftdi/revisions/00000011
+  subdirectory: kobuki_ftdi
+kvh_geo_fog_3d_driver:
+  branch: noetic-devel
+  markdown_file: markdown_output/kvh_geo_fog_3d_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/MITRE/kvh_geo_fog_3d.git
+  repository_archived: false
+  source_file: pages/kvh_geo_fog_3d_driver/revisions/00000004
+  subdirectory: kvh_geo_fog_3d_driver
+lanelet2_core:
+  branch: master
+  markdown_file: markdown_output/lanelet2_core.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_core/revisions/00000001
+  subdirectory: lanelet2_core
+lanelet2_examples:
+  branch: master
+  markdown_file: markdown_output/lanelet2_examples.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_examples/revisions/00000001
+  subdirectory: lanelet2_examples
+lanelet2_io:
+  branch: master
+  markdown_file: markdown_output/lanelet2_io.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_io/revisions/00000001
+  subdirectory: lanelet2_io
+lanelet2_maps:
+  branch: master
+  markdown_file: markdown_output/lanelet2_maps.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_maps/revisions/00000001
+  subdirectory: lanelet2_maps
+lanelet2_projection:
+  branch: master
+  markdown_file: markdown_output/lanelet2_projection.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_projection/revisions/00000001
+  subdirectory: lanelet2_projection
+lanelet2_python:
+  branch: master
+  markdown_file: markdown_output/lanelet2_python.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_python/revisions/00000001
+  subdirectory: lanelet2_python
+lanelet2_routing:
+  branch: master
+  markdown_file: markdown_output/lanelet2_routing.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_routing/revisions/00000001
+  subdirectory: lanelet2_routing
+lanelet2_traffic_rules:
+  branch: master
+  markdown_file: markdown_output/lanelet2_traffic_rules.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_traffic_rules/revisions/00000001
+  subdirectory: lanelet2_traffic_rules
+lanelet2_validation:
+  branch: master
+  markdown_file: markdown_output/lanelet2_validation.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fzi-forschungszentrum-informatik/lanelet2.git
+  repository_archived: false
+  source_file: pages/lanelet2_validation/revisions/00000001
+  subdirectory: lanelet2_validation
+laser_proc:
+  branch: melodic-devel
+  markdown_file: markdown_output/laser_proc.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-perception/laser_proc.git
+  repository_archived: false
+  source_file: pages/laser_proc/revisions/00000001
+  subdirectory: ''
+lgsvl_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/lgsvl_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lgsvl/lgsvl_msgs.git
+  repository_archived: false
+  source_file: pages/lgsvl_msgs/revisions/00000003
+  subdirectory: ''
+libcreate:
+  branch: master
+  markdown_file: markdown_output/libcreate.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/AutonomyLab/libcreate.git
+  repository_archived: false
+  source_file: pages/libcreate/revisions/00000002
+  subdirectory: ''
+libfranka:
+  branch: master
+  markdown_file: markdown_output/libfranka.md
+  package_xml_match: false
+  readme_exists: true
+  repository: https://github.com/frankaemika/libfranka.git
+  repository_archived: false
+  source_file: pages/libfranka/revisions/00000002
+  subdirectory: ''
+libmavconn:
+  branch: master
+  markdown_file: markdown_output/libmavconn.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mavlink/mavros.git
+  repository_archived: false
+  source_file: pages/libmavconn/revisions/00000001
+  subdirectory: libmavconn
+libnabo:
+  branch: master
+  markdown_file: markdown_output/libnabo.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ethz-asl/libnabo.git
+  repository_archived: false
+  source_file: pages/libnabo/revisions/00000002
+  subdirectory: ''
+libpointmatcher:
+  branch: master
+  markdown_file: markdown_output/libpointmatcher.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/norlab-ulaval/libpointmatcher.git
+  repository_archived: false
+  source_file: pages/libpointmatcher/revisions/00000004
+  subdirectory: ''
+lms1xx:
+  branch: noetic-devel
+  markdown_file: markdown_output/lms1xx.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/clearpathrobotics/lms1xx.git
+  repository_archived: false
+  source_file: pages/lms1xx/revisions/00000002
+  subdirectory: ''
+locomotor:
+  branch: noetic
+  markdown_file: markdown_output/locomotor.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/locomotor/revisions/00000001
+  subdirectory: locomotor
+locomotor_msgs:
+  branch: noetic
+  markdown_file: markdown_output/locomotor_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/locomotor_msgs/revisions/00000001
+  subdirectory: locomotor_msgs
+locomove_base:
+  branch: noetic
+  markdown_file: markdown_output/locomove_base.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/locomove_base/revisions/00000001
+  subdirectory: locomove_base
+log_view:
+  branch: devel
+  markdown_file: markdown_output/log_view.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/hatchbed/log_view.git
+  repository_archived: false
+  source_file: pages/log_view/revisions/00000003
+  subdirectory: ''
+magnetic_model:
+  branch: master
+  markdown_file: markdown_output/magnetic_model.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/compass.git
+  repository_archived: false
+  source_file: pages/magnetic_model/revisions/00000001
+  subdirectory: magnetic_model
+magnetometer_compass:
+  branch: master
+  markdown_file: markdown_output/magnetometer_compass.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/compass.git
+  repository_archived: false
+  source_file: pages/magnetometer_compass/revisions/00000001
+  subdirectory: magnetometer_compass
+magnetometer_pipeline:
+  branch: master
+  markdown_file: markdown_output/magnetometer_pipeline.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/compass.git
+  repository_archived: false
+  source_file: pages/magnetometer_pipeline/revisions/00000001
+  subdirectory: magnetometer_pipeline
+marker_msgs:
+  branch: master
+  markdown_file: markdown_output/marker_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tuw-robotics/marker_msgs.git
+  repository_archived: false
+  source_file: pages/marker_msgs/revisions/00000006
+  subdirectory: ''
+mavlink:
+  branch: release/noetic/mavlink
+  markdown_file: markdown_output/mavlink.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mavlink/mavlink-gbp-release.git
+  repository_archived: false
+  source_file: pages/mavlink/revisions/00000045
+  subdirectory: ''
+mavros:
+  branch: master
+  markdown_file: markdown_output/mavros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mavlink/mavros.git
+  repository_archived: false
+  source_file: pages/mavros/revisions/00000060
+  subdirectory: mavros
+mavros_extras:
+  branch: master
+  markdown_file: markdown_output/mavros_extras.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mavlink/mavros.git
+  repository_archived: false
+  source_file: pages/mavros_extras/revisions/00000017
+  subdirectory: mavros_extras
+mbf_abstract_core:
+  branch: noetic
+  markdown_file: markdown_output/mbf_abstract_core.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_abstract_core/revisions/00000001
+  subdirectory: mbf_abstract_core
+mbf_abstract_nav:
+  branch: noetic
+  markdown_file: markdown_output/mbf_abstract_nav.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_abstract_nav/revisions/00000001
+  subdirectory: mbf_abstract_nav
+mbf_costmap_core:
+  branch: noetic
+  markdown_file: markdown_output/mbf_costmap_core.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_costmap_core/revisions/00000001
+  subdirectory: mbf_costmap_core
+mbf_costmap_nav:
+  branch: noetic
+  markdown_file: markdown_output/mbf_costmap_nav.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_costmap_nav/revisions/00000001
+  subdirectory: mbf_costmap_nav
+mbf_msgs:
+  branch: noetic
+  markdown_file: markdown_output/mbf_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_msgs/revisions/00000001
+  subdirectory: mbf_msgs
+mbf_simple_nav:
+  branch: noetic
+  markdown_file: markdown_output/mbf_simple_nav.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/magazino/move_base_flex.git
+  repository_archived: false
+  source_file: pages/mbf_simple_nav/revisions/00000001
+  subdirectory: mbf_simple_nav
+mini_maxwell:
+  branch: master
+  markdown_file: markdown_output/mini_maxwell.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+  repository_archived: false
+  source_file: pages/mini_maxwell/revisions/00000001
+  subdirectory: 3rdparty/mini_maxwell
+mocap_nokov:
+  branch: master
+  markdown_file: markdown_output/mocap_nokov.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/NOKOV-MOCAP/mocap_nokov.git
+  repository_archived: false
+  source_file: pages/mocap_nokov/revisions/00000023
+  subdirectory: ''
+mongodb_store:
+  branch: noetic-devel
+  markdown_file: markdown_output/mongodb_store.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/strands-project/mongodb_store.git
+  repository_archived: false
+  source_file: pages/mongodb_store/revisions/00000011
+  subdirectory: mongodb_store
+moveit_commander:
+  branch: master
+  markdown_file: markdown_output/moveit_commander.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_commander/revisions/00000001
+  subdirectory: moveit_commander
+moveit_core:
+  branch: master
+  markdown_file: markdown_output/moveit_core.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_core/revisions/00000001
+  subdirectory: moveit_core
+moveit_fake_controller_manager:
+  branch: master
+  markdown_file: markdown_output/moveit_fake_controller_manager.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_fake_controller_manager/revisions/00000001
+  subdirectory: moveit_plugins/moveit_fake_controller_manager
+moveit_msgs:
+  branch: master
+  markdown_file: markdown_output/moveit_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit_msgs.git
+  repository_archived: false
+  source_file: pages/moveit_msgs/revisions/00000003
+  subdirectory: ''
+moveit_opw_kinematics_plugin:
+  branch: noetic-devel
+  markdown_file: markdown_output/moveit_opw_kinematics_plugin.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/JeroenDM/moveit_opw_kinematics_plugin.git
+  repository_archived: false
+  source_file: pages/moveit_opw_kinematics_plugin/revisions/00000001
+  subdirectory: ''
+moveit_ros_benchmarks:
+  branch: master
+  markdown_file: markdown_output/moveit_ros_benchmarks.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_ros_benchmarks/revisions/00000001
+  subdirectory: moveit_ros/benchmarks
+moveit_ros_control_interface:
+  branch: master
+  markdown_file: markdown_output/moveit_ros_control_interface.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_ros_control_interface/revisions/00000001
+  subdirectory: moveit_plugins/moveit_ros_control_interface
+moveit_setup_assistant:
+  branch: master
+  markdown_file: markdown_output/moveit_setup_assistant.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/moveit_setup_assistant/revisions/00000001
+  subdirectory: moveit_setup_assistant
+moveit_sim_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/moveit_sim_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/moveit_sim_controller.git
+  repository_archived: false
+  source_file: pages/moveit_sim_controller/revisions/00000001
+  subdirectory: ''
+moveit_visual_tools:
+  branch: noetic-devel
+  markdown_file: markdown_output/moveit_visual_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit_visual_tools.git
+  repository_archived: false
+  source_file: pages/moveit_visual_tools/revisions/00000002
+  subdirectory: ''
+mpc_local_planner_examples:
+  branch: noetic-devel
+  markdown_file: markdown_output/mpc_local_planner_examples.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/rst-tu-dortmund/mpc_local_planner.git
+  repository_archived: false
+  source_file: pages/mpc_local_planner_examples/revisions/00000001
+  subdirectory: mpc_local_planner_examples
+mqtt_bridge:
+  branch: master
+  markdown_file: markdown_output/mqtt_bridge.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/groove-x/mqtt_bridge.git
+  repository_archived: false
+  source_file: pages/mqtt_bridge/revisions/00000002
+  subdirectory: ''
+mrpt_graphslam_2d:
+  branch: ros1
+  markdown_file: markdown_output/mrpt_graphslam_2d.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mrpt-ros-pkg/mrpt_slam.git
+  repository_archived: false
+  source_file: pages/mrpt_graphslam_2d/revisions/00000016
+  subdirectory: mrpt_graphslam_2d
+mrpt_msgs:
+  branch: master
+  markdown_file: markdown_output/mrpt_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mrpt-ros-pkg/mrpt_msgs.git
+  repository_archived: false
+  source_file: pages/mrpt_msgs/revisions/00000002
+  subdirectory: ''
+mrt_cmake_modules:
+  branch: master
+  markdown_file: markdown_output/mrt_cmake_modules.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/KIT-MRT/mrt_cmake_modules.git
+  repository_archived: false
+  source_file: pages/mrt_cmake_modules/revisions/00000001
+  subdirectory: ''
+multi_object_tracking_lidar:
+  branch: master
+  markdown_file: markdown_output/multi_object_tracking_lidar.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/praveen-palanisamy/multiple-object-tracking-lidar.git
+  repository_archived: false
+  source_file: pages/multi_object_tracking_lidar/revisions/00000005
+  subdirectory: ''
+mvsim:
+  branch: develop
+  markdown_file: markdown_output/mvsim.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ual-arm-ros-pkg/mvsim.git
+  repository_archived: false
+  source_file: pages/mvsim/revisions/00000006
+  subdirectory: ''
+naoqi_bridge_msgs:
+  branch: master
+  markdown_file: markdown_output/naoqi_bridge_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-naoqi/naoqi_bridge_msgs.git
+  repository_archived: false
+  source_file: pages/naoqi_bridge_msgs/revisions/00000006
+  subdirectory: ''
+naoqi_libqicore:
+  branch: ros
+  markdown_file: markdown_output/naoqi_libqicore.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-naoqi/libqicore.git
+  repository_archived: false
+  source_file: pages/naoqi_libqicore/revisions/00000001
+  subdirectory: ''
+nav_2d_msgs:
+  branch: noetic
+  markdown_file: markdown_output/nav_2d_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_2d_msgs/revisions/00000002
+  subdirectory: nav_2d_msgs
+nav_2d_utils:
+  branch: noetic
+  markdown_file: markdown_output/nav_2d_utils.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_2d_utils/revisions/00000002
+  subdirectory: nav_2d_utils
+nav_core2:
+  branch: noetic
+  markdown_file: markdown_output/nav_core2.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_core2/revisions/00000001
+  subdirectory: nav_core2
+nav_core_adapter:
+  branch: noetic
+  markdown_file: markdown_output/nav_core_adapter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_core_adapter/revisions/00000001
+  subdirectory: nav_core_adapter
+nav_grid:
+  branch: noetic
+  markdown_file: markdown_output/nav_grid.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_grid/revisions/00000001
+  subdirectory: nav_grid
+nav_grid_iterators:
+  branch: noetic
+  markdown_file: markdown_output/nav_grid_iterators.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_grid_iterators/revisions/00000001
+  subdirectory: nav_grid_iterators
+nav_grid_pub_sub:
+  branch: noetic
+  markdown_file: markdown_output/nav_grid_pub_sub.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/locusrobotics/robot_navigation.git
+  repository_archived: false
+  source_file: pages/nav_grid_pub_sub/revisions/00000001
+  subdirectory: nav_grid_pub_sub
+ncd_parser:
+  branch: ros1
+  markdown_file: markdown_output/ncd_parser.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/CCNYRoboticsLab/scan_tools.git
+  repository_archived: false
+  source_file: pages/ncd_parser/revisions/00000007
+  subdirectory: ncd_parser
+nerian_stereo:
+  branch: master
+  markdown_file: markdown_output/nerian_stereo.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/nerian-vision/nerian_stereo.git
+  repository_archived: false
+  source_file: pages/nerian_stereo/revisions/00000015
+  subdirectory: ''
+network_interface:
+  branch: master
+  markdown_file: markdown_output/network_interface.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/astuff/network_interface.git
+  repository_archived: false
+  source_file: pages/network_interface/revisions/00000002
+  subdirectory: ''
+nicla_vision_ros:
+  branch: master
+  markdown_file: markdown_output/nicla_vision_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ADVRHumanoids/nicla_vision_ros.git
+  repository_archived: false
+  source_file: pages/nicla_vision_ros/revisions/00000001
+  subdirectory: ''
+nmea_comms:
+  branch: jade-devel
+  markdown_file: markdown_output/nmea_comms.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/nmea_comms.git
+  repository_archived: false
+  source_file: pages/nmea_comms/revisions/00000007
+  subdirectory: ''
+ntpd_driver:
+  branch: master
+  markdown_file: markdown_output/ntpd_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/vooon/ntpd_driver.git
+  repository_archived: false
+  source_file: pages/ntpd_driver/revisions/00000005
+  subdirectory: ''
+ntrip_client:
+  branch: ros
+  markdown_file: markdown_output/ntrip_client.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/LORD-MicroStrain/ntrip_client.git
+  repository_archived: false
+  source_file: pages/ntrip_client/revisions/00000004
+  subdirectory: ''
+octomap:
+  branch: devel
+  markdown_file: markdown_output/octomap.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OctoMap/octomap.git
+  repository_archived: false
+  source_file: pages/octomap/revisions/00000022
+  subdirectory: octomap
+octomap_msgs:
+  branch: melodic-devel
+  markdown_file: markdown_output/octomap_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OctoMap/octomap_msgs.git
+  repository_archived: false
+  source_file: pages/octomap_msgs/revisions/00000010
+  subdirectory: ''
+octomap_ros:
+  branch: melodic-devel
+  markdown_file: markdown_output/octomap_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OctoMap/octomap_ros.git
+  repository_archived: false
+  source_file: pages/octomap_ros/revisions/00000009
+  subdirectory: ''
+octomap_rviz_plugins:
+  branch: kinetic-devel
+  markdown_file: markdown_output/octomap_rviz_plugins.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OctoMap/octomap_rviz_plugins.git
+  repository_archived: false
+  source_file: pages/octomap_rviz_plugins/revisions/00000002
+  subdirectory: ''
+octovis:
+  branch: devel
+  markdown_file: markdown_output/octovis.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OctoMap/octomap.git
+  repository_archived: false
+  source_file: pages/octovis/revisions/00000005
+  subdirectory: octovis
+odva_ethernetip:
+  branch: kinetic-devel
+  markdown_file: markdown_output/odva_ethernetip.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/odva_ethernetip.git
+  repository_archived: false
+  source_file: pages/odva_ethernetip/revisions/00000001
+  subdirectory: ''
+open_karto:
+  branch: melodic-devel
+  markdown_file: markdown_output/open_karto.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-perception/open_karto.git
+  repository_archived: false
+  source_file: pages/open_karto/revisions/00000001
+  subdirectory: ''
+openhrp3:
+  branch: master
+  markdown_file: markdown_output/openhrp3.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fkanehiro/openhrp3.git
+  repository_archived: false
+  source_file: pages/openhrp3/revisions/00000003
+  subdirectory: ''
+panda_moveit_config:
+  branch: noetic-devel
+  markdown_file: markdown_output/panda_moveit_config.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/panda_moveit_config.git
+  repository_archived: false
+  source_file: pages/panda_moveit_config/revisions/00000001
+  subdirectory: ''
+pass_through_controllers:
+  branch: main
+  markdown_file: markdown_output/pass_through_controllers.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_passthrough_controllers.git
+  repository_archived: false
+  source_file: pages/pass_through_controllers/revisions/00000001
+  subdirectory: ''
+pgm_learner:
+  branch: master
+  markdown_file: markdown_output/pgm_learner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+  repository_archived: false
+  source_file: pages/pgm_learner/revisions/00000001
+  subdirectory: pgm_learner
+phidgets_high_speed_encoder:
+  branch: noetic
+  markdown_file: markdown_output/phidgets_high_speed_encoder.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/phidgets_drivers.git
+  repository_archived: false
+  source_file: pages/phidgets_high_speed_encoder/revisions/00000004
+  subdirectory: phidgets_high_speed_encoder
+phidgets_ik:
+  branch: noetic
+  markdown_file: markdown_output/phidgets_ik.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/phidgets_drivers.git
+  repository_archived: false
+  source_file: pages/phidgets_ik/revisions/00000001
+  subdirectory: phidgets_ik
+picovoice_driver:
+  branch: main
+  markdown_file: markdown_output/picovoice_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/reinzor/picovoice_ros.git
+  repository_archived: false
+  source_file: pages/picovoice_driver/revisions/00000001
+  subdirectory: picovoice_driver
+picovoice_msgs:
+  branch: main
+  markdown_file: markdown_output/picovoice_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/reinzor/picovoice_ros.git
+  repository_archived: false
+  source_file: pages/picovoice_msgs/revisions/00000001
+  subdirectory: picovoice_msgs
+pilz_industrial_motion_planner:
+  branch: master
+  markdown_file: markdown_output/pilz_industrial_motion_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/moveit.git
+  repository_archived: false
+  source_file: pages/pilz_industrial_motion_planner/revisions/00000001
+  subdirectory: moveit_planners/pilz_industrial_motion_planner
+plotjuggler:
+  branch: main
+  markdown_file: markdown_output/plotjuggler.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/facontidavide/PlotJuggler.git
+  repository_archived: false
+  source_file: pages/plotjuggler/revisions/00000005
+  subdirectory: ''
+point_cloud2_filters:
+  branch: master
+  markdown_file: markdown_output/point_cloud2_filters.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ADVRHumanoids/point_cloud2_filters.git
+  repository_archived: false
+  source_file: pages/point_cloud2_filters/revisions/00000001
+  subdirectory: ''
+point_cloud_transport:
+  branch: master
+  markdown_file: markdown_output/point_cloud_transport.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/point_cloud_transport.git
+  repository_archived: false
+  source_file: pages/point_cloud_transport/revisions/00000001
+  subdirectory: ''
+pose_base_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/pose_base_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/pose_base_controller/revisions/00000001
+  subdirectory: pose_base_controller
+pose_cov_ops:
+  branch: master
+  markdown_file: markdown_output/pose_cov_ops.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mrpt-ros-pkg/pose_cov_ops.git
+  repository_archived: false
+  source_file: pages/pose_cov_ops/revisions/00000009
+  subdirectory: ''
+pose_follower:
+  branch: noetic-devel
+  markdown_file: markdown_output/pose_follower.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/pose_follower/revisions/00000001
+  subdirectory: pose_follower
+power_msgs:
+  branch: ros1
+  markdown_file: markdown_output/power_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/fetchrobotics/power_msgs.git
+  repository_archived: false
+  source_file: pages/power_msgs/revisions/00000004
+  subdirectory: ''
+pr2_bringup:
+  branch: kinetic-devel
+  markdown_file: markdown_output/pr2_bringup.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/pr2/pr2_robot.git
+  repository_archived: false
+  source_file: pages/pr2_bringup/revisions/00000014
+  subdirectory: pr2_bringup
+pr2_gripper_sensor_action:
+  branch: hydro-devel
+  markdown_file: markdown_output/pr2_gripper_sensor_action.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PR2/pr2_gripper_sensor.git
+  repository_archived: false
+  source_file: pages/pr2_gripper_sensor_action/revisions/00000131
+  subdirectory: pr2_gripper_sensor_action
+pr2_gripper_sensor_controller:
+  branch: hydro-devel
+  markdown_file: markdown_output/pr2_gripper_sensor_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PR2/pr2_gripper_sensor.git
+  repository_archived: false
+  source_file: pages/pr2_gripper_sensor_controller/revisions/00000023
+  subdirectory: pr2_gripper_sensor_controller
+pr2_gripper_sensor_msgs:
+  branch: hydro-devel
+  markdown_file: markdown_output/pr2_gripper_sensor_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PR2/pr2_gripper_sensor.git
+  repository_archived: false
+  source_file: pages/pr2_gripper_sensor_msgs/revisions/00000006
+  subdirectory: pr2_gripper_sensor_msgs
+psen_scan_v2:
+  branch: main
+  markdown_file: markdown_output/psen_scan_v2.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PilzDE/psen_scan_v2.git
+  repository_archived: false
+  source_file: pages/psen_scan_v2/revisions/00000015
+  subdirectory: ''
+py_trees:
+  branch: release/0.7.x
+  markdown_file: markdown_output/py_trees.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/splintered-reality/py_trees.git
+  repository_archived: false
+  source_file: pages/py_trees/revisions/00000009
+  subdirectory: ''
+py_trees_ros:
+  branch: release/0.6.x
+  markdown_file: markdown_output/py_trees_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/splintered-reality/py_trees_ros.git
+  repository_archived: false
+  source_file: pages/py_trees_ros/revisions/00000012
+  subdirectory: ''
+pyhri:
+  branch: master
+  markdown_file: markdown_output/pyhri.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros4hri/pyhri.git
+  repository_archived: false
+  source_file: pages/pyhri/revisions/00000001
+  subdirectory: ''
+qoi_image_transport:
+  branch: master
+  markdown_file: markdown_output/qoi_image_transport.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/qoi_image_transport.git
+  repository_archived: false
+  source_file: pages/qoi_image_transport/revisions/00000001
+  subdirectory: ''
+quanergy_client_ros:
+  branch: master
+  markdown_file: markdown_output/quanergy_client_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/QuanergySystems/quanergy_client_ros.git
+  repository_archived: false
+  source_file: pages/quanergy_client_ros/revisions/00000001
+  subdirectory: ''
+radar_msgs:
+  branch: noetic
+  markdown_file: markdown_output/radar_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-perception/radar_msgs.git
+  repository_archived: false
+  source_file: pages/radar_msgs/revisions/00000002
+  subdirectory: ''
+random_numbers:
+  branch: master
+  markdown_file: markdown_output/random_numbers.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/random_numbers.git
+  repository_archived: false
+  source_file: pages/random_numbers/revisions/00000003
+  subdirectory: ''
+razor_imu_9dof:
+  branch: indigo-devel
+  markdown_file: markdown_output/razor_imu_9dof.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ENSTABretagneRobotics/razor_imu_9dof.git
+  repository_archived: false
+  source_file: pages/razor_imu_9dof/revisions/00000049
+  subdirectory: ''
+rc_common_msgs:
+  branch: master
+  markdown_file: markdown_output/rc_common_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_common_msgs.git
+  repository_archived: false
+  source_file: pages/rc_common_msgs/revisions/00000001
+  subdirectory: ''
+rc_dynamics_api:
+  branch: master
+  markdown_file: markdown_output/rc_dynamics_api.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_dynamics_api.git
+  repository_archived: false
+  source_file: pages/rc_dynamics_api/revisions/00000002
+  subdirectory: ''
+rc_genicam_api:
+  branch: master
+  markdown_file: markdown_output/rc_genicam_api.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_genicam_api.git
+  repository_archived: false
+  source_file: pages/rc_genicam_api/revisions/00000003
+  subdirectory: ''
+rc_genicam_driver:
+  branch: master
+  markdown_file: markdown_output/rc_genicam_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_genicam_driver_ros.git
+  repository_archived: false
+  source_file: pages/rc_genicam_driver/revisions/00000001
+  subdirectory: ''
+rc_hand_eye_calibration_client:
+  branch: master
+  markdown_file: markdown_output/rc_hand_eye_calibration_client.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_hand_eye_calibration_client/revisions/00000011
+  subdirectory: rc_hand_eye_calibration_client
+rc_pick_client:
+  branch: master
+  markdown_file: markdown_output/rc_pick_client.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_pick_client/revisions/00000021
+  subdirectory: rc_pick_client
+rc_silhouettematch_client:
+  branch: master
+  markdown_file: markdown_output/rc_silhouettematch_client.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_silhouettematch_client/revisions/00000003
+  subdirectory: rc_silhouettematch_client
+rc_tagdetect_client:
+  branch: master
+  markdown_file: markdown_output/rc_tagdetect_client.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_tagdetect_client/revisions/00000010
+  subdirectory: rc_tagdetect_client
+rc_visard_description:
+  branch: master
+  markdown_file: markdown_output/rc_visard_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_visard_description/revisions/00000003
+  subdirectory: rc_visard_description
+rc_visard_driver:
+  branch: master
+  markdown_file: markdown_output/rc_visard_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rc_visard_ros.git
+  repository_archived: false
+  source_file: pages/rc_visard_driver/revisions/00000025
+  subdirectory: rc_visard_driver
+rcdiscover:
+  branch: master
+  markdown_file: markdown_output/rcdiscover.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/roboception/rcdiscover.git
+  repository_archived: false
+  source_file: pages/rcdiscover/revisions/00000001
+  subdirectory: ''
+realtime_tools:
+  branch: melodic-devel
+  markdown_file: markdown_output/realtime_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/realtime_tools.git
+  repository_archived: false
+  source_file: pages/realtime_tools/revisions/00000029
+  subdirectory: ''
+remote_rosbag_record:
+  branch: master
+  markdown_file: markdown_output/remote_rosbag_record.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/yoshito-n-students/remote_rosbag_record.git
+  repository_archived: false
+  source_file: pages/remote_rosbag_record/revisions/00000006
+  subdirectory: ''
+ridgeback_description:
+  branch: melodic-devel
+  markdown_file: markdown_output/ridgeback_description.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ridgeback/ridgeback.git
+  repository_archived: false
+  source_file: pages/ridgeback_description/revisions/00000004
+  subdirectory: ridgeback_description
+robot_body_filter:
+  branch: master
+  markdown_file: markdown_output/robot_body_filter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/peci1/robot_body_filter.git
+  repository_archived: false
+  source_file: pages/robot_body_filter/revisions/00000011
+  subdirectory: ''
+robot_localization:
+  branch: noetic-devel
+  markdown_file: markdown_output/robot_localization.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/cra-ros-pkg/robot_localization.git
+  repository_archived: false
+  source_file: pages/robot_localization/revisions/00000137
+  subdirectory: ''
+robot_pose_ekf:
+  branch: master
+  markdown_file: markdown_output/robot_pose_ekf.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/robot_pose_ekf.git
+  repository_archived: false
+  source_file: pages/robot_pose_ekf/revisions/00000081
+  subdirectory: ''
+robot_upstart:
+  branch: noetic-devel
+  markdown_file: markdown_output/robot_upstart.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/clearpathrobotics/robot_upstart.git
+  repository_archived: false
+  source_file: pages/robot_upstart/revisions/00000004
+  subdirectory: ''
+ros_control_boilerplate:
+  branch: noetic-devel
+  markdown_file: markdown_output/ros_control_boilerplate.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/ros_control_boilerplate.git
+  repository_archived: false
+  source_file: pages/ros_control_boilerplate/revisions/00000001
+  subdirectory: ''
+ros_ethercat_eml:
+  branch: noetic-devel
+  markdown_file: markdown_output/ros_ethercat_eml.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/shadow-robot/ros_ethercat_eml.git
+  repository_archived: false
+  source_file: pages/ros_ethercat_eml/revisions/00000001
+  subdirectory: ''
+ros_ign:
+  branch: noetic
+  markdown_file: markdown_output/ros_ign.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ignitionrobotics/ros_ign.git
+  repository_archived: false
+  source_file: pages/ros_ign/revisions/00000001
+  subdirectory: ros_ign
+ros_ign_bridge:
+  branch: noetic
+  markdown_file: markdown_output/ros_ign_bridge.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ignitionrobotics/ros_ign.git
+  repository_archived: false
+  source_file: pages/ros_ign_bridge/revisions/00000001
+  subdirectory: ros_ign_bridge
+ros_ign_gazebo_demos:
+  branch: noetic
+  markdown_file: markdown_output/ros_ign_gazebo_demos.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ignitionrobotics/ros_ign.git
+  repository_archived: false
+  source_file: pages/ros_ign_gazebo_demos/revisions/00000001
+  subdirectory: ros_ign_gazebo_demos
+ros_ign_image:
+  branch: noetic
+  markdown_file: markdown_output/ros_ign_image.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ignitionrobotics/ros_ign.git
+  repository_archived: false
+  source_file: pages/ros_ign_image/revisions/00000001
+  subdirectory: ros_ign_image
+ros_introspection:
+  branch: main
+  markdown_file: markdown_output/ros_introspection.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/DLu/roscompile.git
+  repository_archived: false
+  source_file: pages/ros_introspection/revisions/00000001
+  subdirectory: ros_introspection
+ros_numpy:
+  branch: master
+  markdown_file: markdown_output/ros_numpy.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/eric-wieser/ros_numpy.git
+  repository_archived: false
+  source_file: pages/ros_numpy/revisions/00000002
+  subdirectory: ''
+ros_pytest:
+  branch: noetic-devel
+  markdown_file: markdown_output/ros_pytest.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/machinekoder/ros_pytest.git
+  repository_archived: false
+  source_file: pages/ros_pytest/revisions/00000002
+  subdirectory: ''
+rosbash_params:
+  branch: master
+  markdown_file: markdown_output/rosbash_params.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/peci1/rosbash_params.git
+  repository_archived: false
+  source_file: pages/rosbash_params/revisions/00000003
+  subdirectory: ''
+roscompile:
+  branch: main
+  markdown_file: markdown_output/roscompile.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/DLu/roscompile.git
+  repository_archived: false
+  source_file: pages/roscompile/revisions/00000002
+  subdirectory: roscompile
+rosdoc_lite:
+  branch: master
+  markdown_file: markdown_output/rosdoc_lite.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-infrastructure/rosdoc_lite.git
+  repository_archived: false
+  source_file: pages/rosdoc_lite/revisions/00000026
+  subdirectory: ''
+rosee_msg:
+  branch: master
+  markdown_file: markdown_output/rosee_msg.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ADVRHumanoids/rosee_msg.git
+  repository_archived: false
+  source_file: pages/rosee_msg/revisions/00000001
+  subdirectory: ''
+rosfmt:
+  branch: master
+  markdown_file: markdown_output/rosfmt.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/xqms/rosfmt.git
+  repository_archived: false
+  source_file: pages/rosfmt/revisions/00000001
+  subdirectory: ''
+roslint:
+  branch: master
+  markdown_file: markdown_output/roslint.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/roslint.git
+  repository_archived: false
+  source_file: pages/roslint/revisions/00000024
+  subdirectory: ''
+rosparam_shortcuts:
+  branch: noetic-devel
+  markdown_file: markdown_output/rosparam_shortcuts.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/rosparam_shortcuts.git
+  repository_archived: false
+  source_file: pages/rosparam_shortcuts/revisions/00000001
+  subdirectory: ''
+rospatlite:
+  branch: master
+  markdown_file: markdown_output/rospatlite.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+  repository_archived: false
+  source_file: pages/rospatlite/revisions/00000002
+  subdirectory: rospatlite
+rospy_message_converter:
+  branch: master
+  markdown_file: markdown_output/rospy_message_converter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/DFKI-NI/rospy_message_converter.git
+  repository_archived: false
+  source_file: pages/rospy_message_converter/revisions/00000004
+  subdirectory: ''
+rosserial_mbed:
+  branch: noetic-devel
+  markdown_file: markdown_output/rosserial_mbed.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/rosserial.git
+  repository_archived: false
+  source_file: pages/rosserial_mbed/revisions/00000002
+  subdirectory: rosserial_mbed
+rostwitter:
+  branch: master
+  markdown_file: markdown_output/rostwitter.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/jsk-ros-pkg/jsk_3rdparty.git
+  repository_archived: false
+  source_file: pages/rostwitter/revisions/00000001
+  subdirectory: rostwitter
+rplidar_ros:
+  branch: master
+  markdown_file: markdown_output/rplidar_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/Slamtec/rplidar_ros.git
+  repository_archived: false
+  source_file: pages/rplidar_ros/revisions/00000001
+  subdirectory: ''
+rqt_ez_publisher:
+  branch: noetic-devel
+  markdown_file: markdown_output/rqt_ez_publisher.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/OTL/rqt_ez_publisher.git
+  repository_archived: false
+  source_file: pages/rqt_ez_publisher/revisions/00000015
+  subdirectory: ''
+rqt_nav_view:
+  branch: master
+  markdown_file: markdown_output/rqt_nav_view.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-visualization/rqt_nav_view.git
+  repository_archived: false
+  source_file: pages/rqt_nav_view/revisions/00000001
+  subdirectory: ''
+rqt_py_trees:
+  branch: release/0.4.x
+  markdown_file: markdown_output/rqt_py_trees.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/stonier/rqt_py_trees.git
+  repository_archived: false
+  source_file: pages/rqt_py_trees/revisions/00000002
+  subdirectory: ''
+rqt_robot_dashboard:
+  branch: master
+  markdown_file: markdown_output/rqt_robot_dashboard.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-visualization/rqt_robot_dashboard.git
+  repository_archived: false
+  source_file: pages/rqt_robot_dashboard/revisions/00000003
+  subdirectory: ''
+rt_usb_9axisimu_driver:
+  branch: noetic-devel
+  markdown_file: markdown_output/rt_usb_9axisimu_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/rt-net/rt_usb_9axisimu_driver.git
+  repository_archived: false
+  source_file: pages/rt_usb_9axisimu_driver/revisions/00000008
+  subdirectory: ''
+rtabmap:
+  branch: noetic-devel
+  markdown_file: markdown_output/rtabmap.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/introlab/rtabmap.git
+  repository_archived: false
+  source_file: pages/rtabmap/revisions/00000034
+  subdirectory: ''
+rviz:
+  branch: noetic-devel
+  markdown_file: markdown_output/rviz.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-visualization/rviz.git
+  repository_archived: false
+  source_file: pages/rviz/revisions/00000080
+  subdirectory: ''
+rviz_animated_view_controller:
+  branch: noetic-devel
+  markdown_file: markdown_output/rviz_animated_view_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-visualization/rviz_animated_view_controller.git
+  repository_archived: false
+  source_file: pages/rviz_animated_view_controller/revisions/00000005
+  subdirectory: ''
+rviz_visual_tools:
+  branch: noetic-devel
+  markdown_file: markdown_output/rviz_visual_tools.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/PickNikRobotics/rviz_visual_tools.git
+  repository_archived: false
+  source_file: pages/rviz_visual_tools/revisions/00000003
+  subdirectory: ''
+rwt_image_view:
+  branch: kinetic-devel
+  markdown_file: markdown_output/rwt_image_view.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tork-a/visualization_rwt.git
+  repository_archived: false
+  source_file: pages/rwt_image_view/revisions/00000001
+  subdirectory: rwt_image_view
+rwt_plot:
+  branch: kinetic-devel
+  markdown_file: markdown_output/rwt_plot.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tork-a/visualization_rwt.git
+  repository_archived: false
+  source_file: pages/rwt_plot/revisions/00000002
+  subdirectory: rwt_plot
+rwt_speech_recognition:
+  branch: kinetic-devel
+  markdown_file: markdown_output/rwt_speech_recognition.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tork-a/visualization_rwt.git
+  repository_archived: false
+  source_file: pages/rwt_speech_recognition/revisions/00000001
+  subdirectory: rwt_speech_recognition
+sbg_driver:
+  branch: master
+  markdown_file: markdown_output/sbg_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SBG-Systems/sbg_ros_driver.git
+  repository_archived: false
+  source_file: pages/sbg_driver/revisions/00000019
+  subdirectory: ''
+sbpl_lattice_planner:
+  branch: noetic-devel
+  markdown_file: markdown_output/sbpl_lattice_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/sbpl_lattice_planner/revisions/00000021
+  subdirectory: sbpl_lattice_planner
+sbpl_recovery:
+  branch: noetic-devel
+  markdown_file: markdown_output/sbpl_recovery.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/sbpl_recovery/revisions/00000001
+  subdirectory: sbpl_recovery
+scaled_joint_trajectory_controller:
+  branch: main
+  markdown_file: markdown_output/scaled_joint_trajectory_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_scaled_controllers.git
+  repository_archived: false
+  source_file: pages/scaled_joint_trajectory_controller/revisions/00000001
+  subdirectory: scaled_joint_trajectory_controller
+schunk_svh_driver:
+  branch: main
+  markdown_file: markdown_output/schunk_svh_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SCHUNK-GmbH-Co-KG/schunk_svh_ros_driver.git
+  repository_archived: false
+  source_file: pages/schunk_svh_driver/revisions/00000038
+  subdirectory: schunk_svh_driver
+schunk_svh_library:
+  branch: main
+  markdown_file: markdown_output/schunk_svh_library.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SCHUNK-GmbH-Co-KG/schunk_svh_library.git
+  repository_archived: false
+  source_file: pages/schunk_svh_library/revisions/00000002
+  subdirectory: ''
+sensor_filters:
+  branch: master
+  markdown_file: markdown_output/sensor_filters.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ctu-vras/sensor_filters.git
+  repository_archived: false
+  source_file: pages/sensor_filters/revisions/00000001
+  subdirectory: ''
+septentrio_gnss_driver:
+  branch: master
+  markdown_file: markdown_output/septentrio_gnss_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/septentrio-gnss/septentrio_gnss_driver.git
+  repository_archived: false
+  source_file: pages/septentrio_gnss_driver/revisions/00000008
+  subdirectory: ''
+serial:
+  branch: main
+  markdown_file: markdown_output/serial.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/wjwwood/serial.git
+  repository_archived: false
+  source_file: pages/serial/revisions/00000002
+  subdirectory: ''
+sick_safetyscanners:
+  branch: master
+  markdown_file: markdown_output/sick_safetyscanners.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SICKAG/sick_safetyscanners.git
+  repository_archived: false
+  source_file: pages/sick_safetyscanners/revisions/00000012
+  subdirectory: ''
+sick_safevisionary_base:
+  branch: main
+  markdown_file: markdown_output/sick_safevisionary_base.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SICKAG/sick_safevisionary_base.git
+  repository_archived: false
+  source_file: pages/sick_safevisionary_base/revisions/00000001
+  subdirectory: ''
+sick_safevisionary_driver:
+  branch: main
+  markdown_file: markdown_output/sick_safevisionary_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SICKAG/sick_safevisionary_ros1.git
+  repository_archived: false
+  source_file: pages/sick_safevisionary_driver/revisions/00000004
+  subdirectory: sick_safevisionary_driver
+sick_safevisionary_msgs:
+  branch: main
+  markdown_file: markdown_output/sick_safevisionary_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SICKAG/sick_safevisionary_ros1.git
+  repository_archived: false
+  source_file: pages/sick_safevisionary_msgs/revisions/00000001
+  subdirectory: sick_safevisionary_msgs
+simple_grasping:
+  branch: ros1
+  markdown_file: markdown_output/simple_grasping.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/mikeferguson/simple_grasping.git
+  repository_archived: false
+  source_file: pages/simple_grasping/revisions/00000001
+  subdirectory: ''
+sound_play:
+  branch: master
+  markdown_file: markdown_output/sound_play.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/audio_common.git
+  repository_archived: false
+  source_file: pages/sound_play/revisions/00000060
+  subdirectory: sound_play
+spacenav_node:
+  branch: ros1
+  markdown_file: markdown_output/spacenav_node.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/joystick_drivers.git
+  repository_archived: false
+  source_file: pages/spacenav_node/revisions/00000037
+  subdirectory: spacenav_node
+spatio_temporal_voxel_layer:
+  branch: noetic-devel
+  markdown_file: markdown_output/spatio_temporal_voxel_layer.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SteveMacenski/spatio_temporal_voxel_layer.git
+  repository_archived: false
+  source_file: pages/spatio_temporal_voxel_layer/revisions/00000007
+  subdirectory: ''
+speed_scaling_state_controller:
+  branch: main
+  markdown_file: markdown_output/speed_scaling_state_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_scaled_controllers.git
+  repository_archived: false
+  source_file: pages/speed_scaling_state_controller/revisions/00000001
+  subdirectory: speed_scaling_state_controller
+srdfdom:
+  branch: noetic-devel
+  markdown_file: markdown_output/srdfdom.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/srdfdom.git
+  repository_archived: false
+  source_file: pages/srdfdom/revisions/00000001
+  subdirectory: ''
+stag_ros:
+  branch: noetic-devel
+  markdown_file: markdown_output/stag_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/usrl-uofsc/stag_ros.git
+  repository_archived: false
+  source_file: pages/stag_ros/revisions/00000001
+  subdirectory: ''
+stage:
+  branch: release/noetic/stage
+  markdown_file: markdown_output/stage.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-gbp/stage-release.git
+  repository_archived: false
+  source_file: pages/stage/revisions/00000057
+  subdirectory: ''
+static_transform_mux:
+  branch: master
+  markdown_file: markdown_output/static_transform_mux.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tradr-project/static_transform_mux.git
+  repository_archived: false
+  source_file: pages/static_transform_mux/revisions/00000001
+  subdirectory: ''
+swri_console:
+  branch: master
+  markdown_file: markdown_output/swri_console.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/swri-robotics/swri_console.git
+  repository_archived: false
+  source_file: pages/swri_console/revisions/00000001
+  subdirectory: ''
+swri_nodelet:
+  branch: master
+  markdown_file: markdown_output/swri_nodelet.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/swri-robotics/marti_common.git
+  repository_archived: false
+  source_file: pages/swri_nodelet/revisions/00000001
+  subdirectory: swri_nodelet
+teb_local_planner:
+  branch: noetic-devel
+  markdown_file: markdown_output/teb_local_planner.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/rst-tu-dortmund/teb_local_planner.git
+  repository_archived: false
+  source_file: pages/teb_local_planner/revisions/00000046
+  subdirectory: ''
+teleop_legged_robots:
+  branch: main
+  markdown_file: markdown_output/teleop_legged_robots.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/SoftServeSAG/teleop_legged_robots.git
+  repository_archived: false
+  source_file: pages/teleop_legged_robots/revisions/00000005
+  subdirectory: ''
+teleop_twist_joy:
+  branch: indigo-devel
+  markdown_file: markdown_output/teleop_twist_joy.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/teleop_twist_joy.git
+  repository_archived: false
+  source_file: pages/teleop_twist_joy/revisions/00000007
+  subdirectory: ''
+teleop_twist_keyboard:
+  branch: master
+  markdown_file: markdown_output/teleop_twist_keyboard.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/teleop_twist_keyboard.git
+  repository_archived: false
+  source_file: pages/teleop_twist_keyboard/revisions/00000007
+  subdirectory: ''
+tf_remapper_cpp:
+  branch: master
+  markdown_file: markdown_output/tf_remapper_cpp.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/tradr-project/tf_remapper_cpp.git
+  repository_archived: false
+  source_file: pages/tf_remapper_cpp/revisions/00000004
+  subdirectory: ''
+timed_roslaunch:
+  branch: noetic-devel
+  markdown_file: markdown_output/timed_roslaunch.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/Tiryoh/timed_roslaunch.git
+  repository_archived: false
+  source_file: pages/timed_roslaunch/revisions/00000006
+  subdirectory: ''
+trajectory_tracker:
+  branch: master
+  markdown_file: markdown_output/trajectory_tracker.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/at-wat/neonavigation.git
+  repository_archived: false
+  source_file: pages/trajectory_tracker/revisions/00000001
+  subdirectory: trajectory_tracker
+twist_controller:
+  branch: main
+  markdown_file: markdown_output/twist_controller.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+  repository_archived: false
+  source_file: pages/twist_controller/revisions/00000001
+  subdirectory: twist_controller
+twist_mux:
+  branch: melodic-devel
+  markdown_file: markdown_output/twist_mux.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/twist_mux.git
+  repository_archived: false
+  source_file: pages/twist_mux/revisions/00000017
+  subdirectory: ''
+twist_mux_msgs:
+  branch: melodic-devel
+  markdown_file: markdown_output/twist_mux_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-teleop/twist_mux_msgs.git
+  repository_archived: false
+  source_file: pages/twist_mux_msgs/revisions/00000001
+  subdirectory: ''
+twist_recovery:
+  branch: noetic-devel
+  markdown_file: markdown_output/twist_recovery.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/navigation_experimental.git
+  repository_archived: false
+  source_file: pages/twist_recovery/revisions/00000001
+  subdirectory: twist_recovery
+um6:
+  branch: indigo-devel
+  markdown_file: markdown_output/um6.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/um6.git
+  repository_archived: false
+  source_file: pages/um6/revisions/00000010
+  subdirectory: ''
+um7:
+  branch: indigo-devel
+  markdown_file: markdown_output/um7.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/um7.git
+  repository_archived: false
+  source_file: pages/um7/revisions/00000011
+  subdirectory: ''
+ur_client_library:
+  branch: master
+  markdown_file: markdown_output/ur_client_library.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_Client_Library.git
+  repository_archived: false
+  source_file: pages/ur_client_library/revisions/00000002
+  subdirectory: ''
+ur_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/ur_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-industrial/ur_msgs.git
+  repository_archived: false
+  source_file: pages/ur_msgs/revisions/00000002
+  subdirectory: ''
+ur_robot_driver:
+  branch: master
+  markdown_file: markdown_output/ur_robot_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_Driver.git
+  repository_archived: false
+  source_file: pages/ur_robot_driver/revisions/00000005
+  subdirectory: ur_robot_driver
+urdf_geometry_parser:
+  branch: kinetic-devel
+  markdown_file: markdown_output/urdf_geometry_parser.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-controls/urdf_geometry_parser.git
+  repository_archived: false
+  source_file: pages/urdf_geometry_parser/revisions/00000001
+  subdirectory: ''
+urdf_sim_tutorial:
+  branch: ros1
+  markdown_file: markdown_output/urdf_sim_tutorial.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/urdf_sim_tutorial.git
+  repository_archived: false
+  source_file: pages/urdf_sim_tutorial/revisions/00000001
+  subdirectory: ''
+urdf_tutorial:
+  branch: master
+  markdown_file: markdown_output/urdf_tutorial.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/urdf_tutorial.git
+  repository_archived: false
+  source_file: pages/urdf_tutorial/revisions/00000005
+  subdirectory: ''
+urdfdom_py:
+  branch: melodic-devel
+  markdown_file: markdown_output/urdfdom_py.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/urdf_parser_py.git
+  repository_archived: false
+  source_file: pages/urdfdom_py/revisions/00000006
+  subdirectory: ''
+urg_c:
+  branch: master
+  markdown_file: markdown_output/urg_c.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/urg_c.git
+  repository_archived: false
+  source_file: pages/urg_c/revisions/00000001
+  subdirectory: ''
+urg_node:
+  branch: kinetic-devel
+  markdown_file: markdown_output/urg_node.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/urg_node.git
+  repository_archived: false
+  source_file: pages/urg_node/revisions/00000010
+  subdirectory: ''
+usb_cam:
+  branch: develop
+  markdown_file: markdown_output/usb_cam.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/usb_cam.git
+  repository_archived: false
+  source_file: pages/usb_cam/revisions/00000041
+  subdirectory: ''
+video_stream_opencv:
+  branch: master
+  markdown_file: markdown_output/video_stream_opencv.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/video_stream_opencv.git
+  repository_archived: false
+  source_file: pages/video_stream_opencv/revisions/00000007
+  subdirectory: ''
+view_controller_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/view_controller_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-visualization/view_controller_msgs.git
+  repository_archived: false
+  source_file: pages/view_controller_msgs/revisions/00000002
+  subdirectory: ''
+vision_msgs:
+  branch: noetic-devel
+  markdown_file: markdown_output/vision_msgs.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/Kukanani/vision_msgs.git
+  repository_archived: false
+  source_file: pages/vision_msgs/revisions/00000001
+  subdirectory: ''
+visp_auto_tracker:
+  branch: noetic-devel
+  markdown_file: markdown_output/visp_auto_tracker.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lagadic/vision_visp.git
+  repository_archived: false
+  source_file: pages/visp_auto_tracker/revisions/00000010
+  subdirectory: visp_auto_tracker
+visp_bridge:
+  branch: noetic-devel
+  markdown_file: markdown_output/visp_bridge.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lagadic/vision_visp.git
+  repository_archived: false
+  source_file: pages/visp_bridge/revisions/00000010
+  subdirectory: visp_bridge
+visp_camera_calibration:
+  branch: noetic-devel
+  markdown_file: markdown_output/visp_camera_calibration.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lagadic/vision_visp.git
+  repository_archived: false
+  source_file: pages/visp_camera_calibration/revisions/00000019
+  subdirectory: visp_camera_calibration
+visp_hand2eye_calibration:
+  branch: noetic-devel
+  markdown_file: markdown_output/visp_hand2eye_calibration.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lagadic/vision_visp.git
+  repository_archived: false
+  source_file: pages/visp_hand2eye_calibration/revisions/00000007
+  subdirectory: visp_hand2eye_calibration
+visp_tracker:
+  branch: noetic-devel
+  markdown_file: markdown_output/visp_tracker.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/lagadic/vision_visp.git
+  repository_archived: false
+  source_file: pages/visp_tracker/revisions/00000046
+  subdirectory: visp_tracker
+warehouse_ros:
+  branch: kinetic-devel
+  markdown_file: markdown_output/warehouse_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/warehouse_ros.git
+  repository_archived: false
+  source_file: pages/warehouse_ros/revisions/00000002
+  subdirectory: ''
+warehouse_ros_mongo:
+  branch: noetic-devel
+  markdown_file: markdown_output/warehouse_ros_mongo.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-planning/warehouse_ros_mongo.git
+  repository_archived: false
+  source_file: pages/warehouse_ros_mongo/revisions/00000002
+  subdirectory: ''
+web_video_server:
+  branch: master
+  markdown_file: markdown_output/web_video_server.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/RobotWebTools/web_video_server.git
+  repository_archived: false
+  source_file: pages/web_video_server/revisions/00000009
+  subdirectory: ''
+webots_ros:
+  branch: master
+  markdown_file: markdown_output/webots_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/cyberbotics/webots_ros.git
+  repository_archived: false
+  source_file: pages/webots_ros/revisions/00000017
+  subdirectory: ''
+wifi_ddwrt:
+  branch: noetic-devel
+  markdown_file: markdown_output/wifi_ddwrt.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/wifi_ddwrt.git
+  repository_archived: false
+  source_file: pages/wifi_ddwrt/revisions/00000018
+  subdirectory: ''
+witmotion_ros:
+  branch: main
+  markdown_file: markdown_output/witmotion_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ElettraSciComp/witmotion_IMU_ros.git
+  repository_archived: false
+  source_file: pages/witmotion_ros/revisions/00000060
+  subdirectory: ''
+xacro:
+  branch: noetic-devel
+  markdown_file: markdown_output/xacro.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros/xacro.git
+  repository_archived: false
+  source_file: pages/xacro/revisions/00000087
+  subdirectory: ''
+xsens_mti_driver:
+  branch: master
+  markdown_file: markdown_output/xsens_mti_driver.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/nobleo/xsens_mti_driver.git
+  repository_archived: false
+  source_file: pages/xsens_mti_driver/revisions/00000019
+  subdirectory: ''
+ypspur:
+  branch: master
+  markdown_file: markdown_output/ypspur.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/openspur/yp-spur.git
+  repository_archived: false
+  source_file: pages/ypspur/revisions/00000001
+  subdirectory: ''
+ypspur_ros:
+  branch: master
+  markdown_file: markdown_output/ypspur_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/openspur/ypspur_ros.git
+  repository_archived: false
+  source_file: pages/ypspur_ros/revisions/00000001
+  subdirectory: ''
+zbar_ros:
+  branch: melodic-devel
+  markdown_file: markdown_output/zbar_ros.md
+  package_xml_match: true
+  readme_exists: true
+  repository: https://github.com/ros-drivers/zbar_ros.git
+  repository_archived: false
+  source_file: pages/zbar_ros/revisions/00000007
+  subdirectory: ''

@@ -15,6 +15,37 @@ if not os.path.exists(output_dir):
 
 
 def preprocess(content):
+    # 0. Handle <<Include(arg)>> recursively (Moved to first step)
+    def resolve_include(content, depth=0, max_depth=5):
+        if depth > max_depth:
+            print(f"Warning: Max include depth reached ({max_depth}).")
+            return content
+
+        def include_repl(match):
+            page_name = match.group(1)
+            pages_dir = "pages"
+            current_file = os.path.join(pages_dir, page_name, "current")
+
+            if os.path.exists(current_file):
+                with open(current_file, "r") as f:
+                    revision = f.read().strip()
+                revision_file = os.path.join(pages_dir, page_name, "revisions", revision)
+                if os.path.exists(revision_file):
+                    with open(revision_file, "r", errors="ignore") as f_rev:
+                        included_content = f_rev.read()
+                        # Recursively resolve includes in the included content
+                        return resolve_include(included_content, depth + 1)
+                else:
+                    print(f"Warning: Revision file {revision_file} not found.")
+                    return f"[[Included page {page_name} not found (missing revision)]]"
+            else:
+                print(f"Warning: Current file {current_file} not found.")
+                return f"[[Included page {page_name} not found]]"
+
+        return re.sub(r"<<Include\(([^)]+)\)>>", include_repl, content)
+
+    content = resolve_include(content)
+
     # 1. Drop version sections unless they end in _and_newer or are noetic
     def version_repl(match):
         version_line = match.group(1)
@@ -44,8 +75,6 @@ def preprocess(content):
 
     # Extract multiline code blocks and replace with placeholders
     code_blocks = []
-
-
 
     def code_block_repl(match):
         code_blocks.append(match.group(1))
@@ -87,8 +116,6 @@ def preprocess(content):
     macros_regex = "|".join(macros_to_omit)
     pattern = re.compile(r"#?\s*<<(" + macros_regex + r")(\(.*\))?>>")
     content = pattern.sub("", content)
-
-
 
     # 4. Convert <<BR>> to \\
     content = content.replace("<<BR>>", "\\\\")
@@ -195,54 +222,55 @@ def postprocess(content, code_blocks):
 
 
 
-count = 0
-success_count = 0
+if __name__ == "__main__":
+    count = 0
+    success_count = 0
 
-with open(input_file, "r") as f:
-    data = yaml.safe_load(f)
+    with open(input_file, "r") as f:
+        data = yaml.safe_load(f)
 
-for key, value in data.items():
-    src_file = value["source_file"]
-    dst_file = os.path.join(output_dir, f"{key}.md")
+    for key, value in data.items():
+        src_file = value["source_file"]
+        dst_file = os.path.join(output_dir, f"{key}.md")
 
-    if os.path.exists(src_file):
-        count += 1
-        try:
-            with open(src_file, "r", errors="ignore") as f_in:
-                content = f_in.read()
+        if os.path.exists(src_file):
+            count += 1
+            try:
+                with open(src_file, "r", errors="ignore") as f_in:
+                    content = f_in.read()
 
-            preprocessed_content, code_blocks = preprocess(content)
+                preprocessed_content, code_blocks = preprocess(content)
 
-            process = subprocess.Popen(
-                ["pandoc", "-f", "creole", "-t", "markdown"],
-                stdin=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-            )
-            stdout, stderr = process.communicate(
-                input=preprocessed_content.encode("utf-8")
-            )
-
-            if process.returncode == 0:
-                markdown_out = stdout.decode("utf-8")
-                final_markdown = postprocess(markdown_out, code_blocks)
-
-                with open(dst_file, "w") as f_out:
-                    f_out.write(final_markdown)
-                success_count += 1
-                data[key]["markdown_file"] = dst_file
-            else:
-                print(
-                    f"Error converting {src_file}: {stderr.decode('utf-8')}"
+                process = subprocess.Popen(
+                    ["pandoc", "-f", "creole", "-t", "markdown"],
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
                 )
-        except Exception as e:
-            print(f"Error processing {src_file}: {e}")
-    else:
-        print(f"Warning: Source file {src_file} not found.")
+                stdout, stderr = process.communicate(
+                    input=preprocessed_content.encode("utf-8")
+                )
 
-with open(input_file, "w") as f:
-    yaml.dump(data, f, default_flow_style=False, sort_keys=True)
+                if process.returncode == 0:
+                    markdown_out = stdout.decode("utf-8")
+                    final_markdown = postprocess(markdown_out, code_blocks)
 
-print(
-    f"Finished. Attempted to convert {count} files. Successfully converted {success_count}."
-)
+                    with open(dst_file, "w") as f_out:
+                        f_out.write(final_markdown)
+                    success_count += 1
+                    data[key]["markdown_file"] = dst_file
+                else:
+                    print(
+                        f"Error converting {src_file}: {stderr.decode('utf-8')}"
+                    )
+            except Exception as e:
+                print(f"Error processing {src_file}: {e}")
+        else:
+            print(f"Warning: Source file {src_file} not found.")
+
+    with open(input_file, "w") as f:
+        yaml.dump(data, f, default_flow_style=False, sort_keys=True)
+
+    print(
+        f"Finished. Attempted to convert {count} files. Successfully converted {success_count}."
+    )

@@ -11,6 +11,8 @@ process using the ROS vision pipeline into one single process.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = tracker_2d
 desc = hue color blob 2d tracking node
@@ -33,6 +35,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = projector
 desc = Use disparity information to retrieve tracked color blob 3d position
@@ -47,6 +53,10 @@ param {
   1.default = roseball
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = monitor
@@ -63,11 +73,17 @@ param {
 }
 ```
 
+
+
 ## Tutorial
+
+
 
 ```shell
 roslaunch hueblob track2-nodelet.launch
 ```
+
+
 
 ## Report a bug
 

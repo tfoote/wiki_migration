@@ -30,9 +30,13 @@ up a wsgi file that imports the application from this package: see the
 Flask documentation for details. Simpler (but not recommended for public
 networks or heavy use) is to run Flask's own server. This is done with:
 
+
+
 ```
 rosrun semantic_model_web_interface run_server.py
 ```
+
+
 
 The above command brings up the site on port 5000 of the local machine.
 You can use a different port by passing it as the single argument to

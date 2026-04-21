@@ -15,6 +15,8 @@ If you discover problems installing them on other platforms, please
 
 The [schunk_powercube_chain](schunk_powercube_chain) package provides a
 configurable node for operating a chain of powercube modules.
+
+
 ```clearsilver
  name = schunk_powercube_chain
  desc = The `schunk_powercube_chain` node takes in <<MsgLink(brics_actuator/JointVelocities)>> messages and sends this directly to the hardware. The chain can be initialized, stopped or recovered via [[Services|services]].
@@ -112,21 +114,33 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 This package is not intended to be used directly, but with the
 corresponding launch and yaml files from e.g.
 [schunk_bringup](schunk_bringup) in the [schunk_robots](schunk_robots)
-stack. For starting only the lwa use ```
+stack. For starting only the lwa use 
+
+```
 roslaunch schunk_bringup lwa_solo.launch
-``` For
+```
+
+ For
 including the lwa in your overall launch file use
+
+
 ```
 <include file="$(find schunk_bringup)/components/lwa.launch" />
-``` All hardware configuration is done in the
+```
+
+ All hardware configuration is done in the
 [schunk_hardware_config](schunk_hardware_config) package. A sample
 parameter file in "schunk_hardware_config/lwa/config/lwa.yaml" could
-look like this ```
+look like this 
+
+```
 can_module: PCAN
 can_device: /dev/pcan1
 can_baudrate: 1000
@@ -139,3 +153,5 @@ ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.1 # rad/sec^2
 max_error: 0.2 # rad
 ```
+
+

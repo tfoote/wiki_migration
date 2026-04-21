@@ -1,8 +1,12 @@
 repository: <git://github.com/neobotix/neo_driver>
 
+
+
 ```wiki
 This package is obsolete and will be replaced by [[neo_serrelayboard/merged|cob_relayboard]]
 ```
+
+
 
 ## Serial Relay Board
 
@@ -17,6 +21,8 @@ publishes angular rates and acceleration on 3 axis. 1. I/O Board: 2.
 Radar Board: publishes velocities.
 
 ## Topics to publish/subscribe and configuration parameters
+
+
 
 ```clearsilver
 
@@ -110,6 +116,8 @@ param {
   16.desc = are there any ir-sensors? [true/false]
 }
 ```
+
+
 
 ## Troubleshooting
 

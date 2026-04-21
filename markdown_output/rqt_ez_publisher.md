@@ -14,15 +14,23 @@
 
 1\. run as a single GUI
 
+
+
 ```
 $ rosrun rqt_ez_publisher rqt_ez_publisher
 ```
 
+
+
 2\. run as plugin of [rqt](rqt)
+
+
 
 ```
 $ rqt
 ```
+
+
 
 Plugins -> Topics -> Easy Message Publisher
 
@@ -60,15 +68,23 @@ on [github](https://github.com/OTL/rqt_ez_publisher/issues).
 
 ### Q. Plugin not found!
 
+
+
 ```
 qt_gui_main() found no plugin matching "rqt_ez_publisher"
 ```
 
+
+
 A. Try this
+
+
 
 ```
 $ rm ~/.config/ros.org/rqt_gui.ini
 ```
+
+
 
 ### Q. How can I change publish repeat rate
 

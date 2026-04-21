@@ -69,12 +69,18 @@ from categories and subcategories (separated by dots) a prefix search
 can be used to find all entities that are part of the same
 category/subcategory. For example:
 
+
+
 ```
 UID1: animal.mammal.cat.kitty
 UID2: animal.mammal.dog.pluto
 ```
 
+
+
 Valid prefix searches are:
+
+
 
 ```
 a                  // => UID1 and UID2 found
@@ -83,6 +89,8 @@ animal.mam         // => UID1 and UID2 found
 animal.mammal.cat  // => UID1 found
 animal.mammal.d    // => UID2 found
 ```
+
+
 
 ## Semantic Query
 
@@ -93,14 +101,20 @@ reasoning based on the RDF triples. Example queries:
 
 -   Get all OWL classes:
 
+
+
 ```
 SELECT C FROM
 {C} rdf:type {owl:Class}
 WHERE isURI(C)
 ```
 
+
+
 -   query_action_recipes: Get all recipes having a label, which contains
     "serve a drink":
+
+
 
 ```
 SELECT S FROM
@@ -108,8 +122,12 @@ SELECT S FROM
 WHERE L LIKE "serve a drink"
 ```
 
+
+
 -   query_objects: Get all !ColoredPointCloudModels, which provide a
     model for a hand:
+
+
 
 ```
 SELECT S FROM
@@ -119,8 +137,12 @@ re=<http://www.roboearth.org/kb/roboearth.owl#>,
 kr=<http://ias.cs.tum.edu/kb/knowrob.owl#>
 ```
 
+
+
 -   query_objects: Get all object models, which include a
     !ColoredPointCloudModel for a hand
+
+
 
 ```
 SELECT source FROM CONTEXT source
@@ -129,3 +151,5 @@ USING NAMESPACE
 re=<http://www.roboearth.org/kb/roboearth.owl#>,
 kr=<http://ias.cs.tum.edu/kb/knowrob.owl#>
 ```
+
+

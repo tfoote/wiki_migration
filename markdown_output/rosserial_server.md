@@ -23,21 +23,35 @@ Recommended usage is to launch the main server node alongside the
 message info node. A launchfile is provided for starting the serial
 link. If the port is not specified it defaults to /dev/ttyACM0.
 
+
+
 ```
 roslaunch rosserial_server serial.launch port:=/dev/ttyUSB0
-``` There's also a launchfile for starting a
+```
+
+ There's also a launchfile for starting a
 socket link, which defaults to listening on port 11411.
+
+
 ```
 roslaunch rosserial_server socket.launch
 ```
 
+
+
 Basic usage with just the server alone:
+
+
 
 ```
 rosrun rosserial_server serial_node _port:=/dev/ttyUSB0
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name=serial_node
@@ -55,7 +69,11 @@ param {
   2.type = obj
   2.desc = See below
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name=socket_node
 desc=Interface to a multiple rosserial TCP clients.
 param {
@@ -66,6 +84,8 @@ param {
 }
 ```
 
+
+
 ## Require API
 
 The `require` parameter to the server allows it to enforce that the
@@ -74,6 +94,8 @@ important because a serial connection provides no guarantee of delivery,
 and the rosserial protocol doesn't inherently contain any such checks.
 
 Example usage in a launch file:
+
+
 
 ```
 <launch>
@@ -89,6 +111,8 @@ Example usage in a launch file:
         name="rosserial_message_info" />
 </launch>
 ```
+
+
 
 When the Arduino client connects to this server, the server will verify
 that the status, cmd, and lights topics get set up. If they don't after

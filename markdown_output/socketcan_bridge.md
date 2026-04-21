@@ -16,6 +16,8 @@ The functionality is offered in the form of three nodes:
 same CAN device, the `socketcan_bridge_node` needs to be used to prevent
 every sent message from being echoed to the receiving topic.
 
+
+
 ```clearsilver
 name = socketcan_bridge_node
 desc = Receives frames from SocketCAN devices and publishes these on the topic, at the same time it listens to CAN messages and sends these to SocketCAN. The frames that are sent to the CAN device are not published as received messages.
@@ -37,6 +39,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = socketcan_to_topic_node
 desc = Publishes the frames received on the SocketCAN device to a topic.
@@ -53,6 +59,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = topic_to_socketcan_node
 desc = Sends CAN messages received on the topic to the SocketCAN device.
@@ -68,6 +78,8 @@ param {
   0.default = can0
 }
 ```
+
+
 
 ### Remarks
 

@@ -10,6 +10,8 @@ This device supports all the drivers implemented in the
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = eyelids_node
@@ -37,13 +39,19 @@ node.0 {
 }
 ```
 
+
+
 ## Launch File Examples
 
 In a terminal window, start an eyelids node process running:
 
+
+
 ```
 $ roslaunch maggie_eyelids eyelids.launch robot:=maggie
 ```
+
+
 
 ## Examples
 
@@ -51,6 +59,10 @@ An example of movement by string could be:
 
 1\. Launch the node. 2. Move by string:
 
+
+
 ```
 $ rosservice call /maggie/move_str_pos eyelids_msgs/MoveStrPos "open"
 ```
+
+

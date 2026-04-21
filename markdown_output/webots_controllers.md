@@ -54,9 +54,13 @@ Follow [these instructions](kaist_webots) to install the
 A demo of the joint position controller is included, using ROS messages
 to control a simulated Puma 560 manipulator in Webots.
 
-Run the demo: ```
+Run the demo: 
+
+```
 $ roslaunch webots_controllers joint_position_controller_demo.launch
 ```
+
+
 
 The Webots simulator should load with the Puma 560 in the home position.
 
@@ -73,9 +77,13 @@ the\
 topic.
 
 For example, the base rotation joint is called 'waist'. To move that
-joint, run the command: ```
+joint, run the command: 
+
+```
 $ rostopic pub -1 /Puma560/SimController/waist/command std_msgs/Float64 -- 1.5
-``` The joint will rotate
+```
+
+ The joint will rotate
 1.5 radians in the positive direction.\
 This command publishes one message to the ROS topic and the "`\--`"
 indiciates that the next input is a number.

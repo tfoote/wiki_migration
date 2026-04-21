@@ -28,6 +28,8 @@ A result of the kinect_registration_node can be seen below:
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = kinect_registration_node
@@ -54,12 +56,18 @@ param {
 }
 ```
 
+
+
 #### Usage
 
 To launch the kinect_registration_node, run the following command.
+
+
 ```
 roslaunch robotino_kinect kinect_registration.launch
-``` Once the node has been successfully launched,
+```
+
+ Once the node has been successfully launched,
 it will subscribe to the /kinect topic, obtain the pointclouds, register
 them and publish the output. This is done repeatedly until Robotino has
 rotated a whole 360 degrees.
@@ -67,6 +75,10 @@ rotated a whole 360 degrees.
 If you would like to save the pointclouds published by the
 kinect_registration_node, run the following command. **Note:** If you
 have modified the launch file then your publish topic might be
-different. ```
+different. 
+
+```
 rosrun pcl_ros pointcloud_to_pcd /input:=/kinect_registration_node/registered_cloud
 ```
+
+

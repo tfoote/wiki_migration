@@ -14,6 +14,8 @@ usually distributed together with the hand.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = svh_ros_control_node
 desc = This is the only node that's needed to control the Schunk Five Finger Hand. It uses ROS-control for managing controllers. Most topic and service communication is thus handled through the controller manager, such as publishing `joint_states` and receiving action goals for the `joint_trajectory_controller`. The node adds the following topics and services.
@@ -81,6 +83,8 @@ param {
   8.desc = Set either `left_hand` or `right_hand` according to your hardware setup.
 }
 ```
+
+
 
 ## Additional Information
 

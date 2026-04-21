@@ -21,9 +21,13 @@ An example of this usage is
 [supplied in the package](https://github.com/ros-drivers/nmea_comms/blob/indigo-devel/launch/tee.launch),
 which you can launch like so:
 
+
+
 ```
 roslaunch nmea_comms tee.launch port:=<serial port> baud:=<baud rate>
 ```
+
+
 
 Once running, you should see the output of your serial NMEA device on
 the `/navsat/nmea_sentence` topic, as well as when running `nc
@@ -34,6 +38,8 @@ localhost 29500`.
 ROS nodes as detailed below. No code API.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -89,3 +95,5 @@ node.1 {
   }
  }
 ```
+
+

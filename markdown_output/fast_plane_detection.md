@@ -13,14 +13,22 @@ The following launch file will read in disparity maps from a given topic
 table plane parameters as well as a disparity image with the detected
 table plane filtered out.
 
+
+
 ```
 roslaunch fast_plane_detection fast_plane_detection_jean.launch
-``` To detect a local plane in a region around a
+```
+
+ To detect a local plane in a region around a
 specific pixel position in the image, run the following ros node.
+
+
 
 ```
 rosrun fast_plane_detection fast_region_plane_detector_jean disparity_in:=/plane_detection/disparity disparity_image_topic:=/narrow_stereo_textured/disparity cam_info_in:=/narrow_stereo_textured/left/camera_info
-``` Here it takes as input the topics, on which the
+```
+
+ Here it takes as input the topics, on which the
 node launched by the previous launch file is publishing.
 
 ## Example Results

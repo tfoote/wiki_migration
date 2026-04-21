@@ -10,15 +10,23 @@ default demo will cause turtle2 to follow turtle1, the
 To run the default example, start by getting the required dependencies
 and making the package.
 
+
+
 ```
 $ rosdep install turtle_tf
 $ rosmake turtle_tf
 ```
 
-Then in `roslaunch` the demo: ```
+
+
+Then in `roslaunch` the demo: 
+
+```
 $ roscd turtle_tf
 $ roslaunch launch/turtle_tf_demo.launch
 ```
+
+
 
 You will see the turtlesim start with two turtles.
 

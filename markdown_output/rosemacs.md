@@ -32,18 +32,26 @@ automatically as a dependency.
 Since ROS Indigo rosemacs is distributed through the ROS release
 infrastructure.
 
+
+
 ```
 $ sudo apt-get install ros-DISTRO-rosemacs
 ```
+
+
 
 #### ROS Fuerte, Groovy and Hydro
 
 For ROS Fuerte, Groovy and Hydro, the package was distributed through
 Ubuntu Debian package repositories:
 
+
+
 ```
 $ sudo apt-get install rosemacs-el
 ```
+
+
 
 ### Installation from source
 
@@ -51,6 +59,8 @@ The most up-to-date version of rosemacs code can be found
 [here](https://github.com/code-iai/ros_emacs_utils). Installation
 instructions can be found in the README file. What you'll need to do
 will be something like the following:
+
+
 
 ```
 $ cd YOUR_CATKIN_WS/src
@@ -60,6 +70,8 @@ $ cd ..
 $ catkin_make
 $ catkin_make install
 ```
+
+
 
 ## Setup
 
@@ -74,17 +86,25 @@ Update your
 [emacs configuration file](http://www.emacswiki.org/emacs/InitFile),
 e.g.:
 
+
+
 ```
 $ emacs -nw ~/.emacs.d/init.el
 ```
 
+
+
 Add the following:
+
+
 
 ```
 (add-to-list 'load-path "/opt/ros/DISTRO/share/emacs/site-lisp")
 ;; or whatever your install space is + "/share/emacs/site-lisp"
 (require 'rosemacs-config)
 ```
+
+
 
 For troubleshooting consult the
 [README](https://github.com/code-iai/ros_emacs_utils/blob/master/README.md)
@@ -96,6 +116,8 @@ Put the following in your
 [emacs configuration file](http://www.emacswiki.org/emacs/InitFile)
 (e.g. `/.emacs`):
 
+
+
 ```
 ;; Load the library and start it up
 (require 'rosemacs)
@@ -105,6 +127,8 @@ Put the following in your
 ;; to the rosemacs commands
 (global-set-key "\C-x\C-r" ros-keymap)
 ```
+
+
 
 ## Navigating the ros file system
 
@@ -220,9 +244,13 @@ by `\[TAB\]`, it will:
 ### Current package in the Mode Line
 
 You can add the following expression to the customization
-`mode-line-format`: ```
+`mode-line-format`: 
+
+```
 (:eval (ros-current-pkg-modeline-entry))
-``` With this, the current
+```
+
+ With this, the current
 buffer's ROS package becomes part of the mode line.
 
 ### Editing yaml files
@@ -230,11 +258,15 @@ buffer's ROS package becomes part of the mode line.
 You may also want to add a yaml mode to your .emacs file. 1. Download a
 yaml mode .el file from here: <http://www.emacswiki.org/emacs/YamlMode>
 and put it next to rosemacs.el or somewhere else in your emacs load
-path. 1. Add these lines to your .emacs file: ```
+path. 1. Add these lines to your .emacs file: 
+
+```
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 ```
+
+
 
 ### Editing message, service, and action files
 

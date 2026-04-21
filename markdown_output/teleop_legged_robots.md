@@ -1,16 +1,26 @@
 ## Install
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-teleop-legged-robots
 ```
 
+
+
 ## Launch
+
+
 
 ```
 $ roslaunch teleop_legged_robots teleop.launch
 ```
 
+
+
 ## Usage
+
+
 
 ```
 Reading from the keyboard and Publishing to Twist and Pose!
@@ -48,6 +58,8 @@ t/b : increase/decrease body's pose angular speed by 10%
 
 CTRL-C to quit
 ```
+
+
 
 The operation of teleop_legged_robots is represented in video below.
 [Youtube](https://www.youtube.com/watch?v=VvZM1hyVEOo&t=18sg) The

@@ -31,6 +31,8 @@ questions.
 
 ### Services Offered
 
+
+
 ```clearsilver
 srv{
  no_header= True
@@ -40,10 +42,14 @@ srv{
 }
 ```
 
+
+
 ### ROS Parameters
 
 There are lots of params besides this one. They're all described in
-point_cluster_grasp_planner.py. ```clearsilver
+point_cluster_grasp_planner.py. 
+
+```clearsilver
 param {
   no_header= True
   0.name= min_good_grasp_points
@@ -53,11 +59,15 @@ param {
 }
 ```
 
+
+
 ### ROS Topics
 
 (In Fuerte and beyond, enable this marker for debugging by setting
 self.draw_gripper to be 1 in point_cluster_grasp_planner.py. The planner
 is much much faster if it doesn't have to draw the grasps.)
+
+
 ```clearsilver
 pub {
   no_header= True
@@ -66,3 +76,5 @@ pub {
   0.desc= Shows the boxy gripper model (used for evaluating collisions with the object and whether there are points within the grasp) at each potential grasp pose as it's being checked.
 }
 ```
+
+

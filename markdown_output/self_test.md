@@ -1,19 +1,31 @@
 ## Running a Self-Test
 
 You can get a list of the available subtests with the rosservice
-command:```
+command:
+
+```
 $ rosservice list | grep "/self_test$"
 /hokuyo_node/self_test
 ```
 
-You can then run the self test using rosservice:```
+
+
+You can then run the self test using rosservice:
+
+```
 $ rosservice call /hokuyo_node/self_test
 ```
 
+
+
 You can get different output with the *deprecated* `run_selftest`
-node: ```
+node: 
+
+```
 $ rosrun self_test run_selftest /hokuyo_node/self_test
 ```
+
+
 
 ## C++ API
 
@@ -45,6 +57,8 @@ example can be found in
 
 ## Nodes
 
+
+
 ```clearsilver
 node {
  0{
@@ -65,3 +79,5 @@ node {
   }
  }
 ```
+
+

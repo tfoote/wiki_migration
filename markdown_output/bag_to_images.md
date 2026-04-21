@@ -13,22 +13,38 @@ is no worry of dropped images.
 # Usage
 
 Basic usage (dumps colorized rectified images from left wide stereo
-camera): ```
+camera): 
+
+```
 bag_to_images --bag [filename].bag
 ```
 
-To see the various options available: ```
+
+
+To see the various options available: 
+
+```
 bag_to_images
 ```
 
-Dumping .png files: ```
+
+
+Dumping .png files: 
+
+```
 bag_to_images --bag [filename].bag --extension png
 ```
 
+
+
 To dump (rectified) images from the right narrow camera:
+
+
 ```
 bag_to_images --bag [filename].bag --camera /narrow_stereo/right --color false
 ```
+
+
 
 # Implementation Notes
 

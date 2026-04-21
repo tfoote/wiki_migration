@@ -47,11 +47,15 @@ parsing code could not be used.
 
 Binary packages are available:
 
+
+
 ```
 sudo apt install ros-${ROS_DISTRO}-rosmon
 
 source /opt/ros/${ROS_DISTRO}/setup.bash # Needed to use the 'mon launch' shortcut
 ```
+
+
 
 If you just need the rosmon CLI and don't require the `rqt_rosmon` rqt
 plugin, you can install the smaller package
@@ -66,17 +70,27 @@ When installed, rosmon drops a handy shell wrapper into your shell
 context (currently supported in bash and zsh). You may have to re-source
 your workspace environment after building. Usage (similar to roslaunch):
 
+
+
 ```
 mon launch <package> <launch file> [arguments]
 ```
 
+
+
 or
+
+
 
 ```
 mon launch <path to launch file> [arguments]
 ```
 
+
+
 Full usage information:
+
+
 
 ```
 Usage:
@@ -101,6 +115,8 @@ rosmon also obeys some environment variables:
                       available color mode.
 ```
 
+
+
 ## Console interface
 
 rosmon features a basic console interface. Each node is assigned a
@@ -120,6 +136,8 @@ usage) are displayed.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = rosmon
 desc = Main rosmon node.
@@ -134,3 +152,5 @@ srv {
   0.desc = Start or stop a controlled node.
 }
 ```
+
+

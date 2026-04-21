@@ -52,6 +52,8 @@ method has been published at SIGGRAPH Asia 2017. Please refer to
 [the project page](http://kevinkaixu.net/projects/tfnav.html). If you
 find the package useful, please consider citing the following paper:
 
+
+
 ```
 @article {xu_siga16,
     title = {Autonomous Reconstruction of Unknown Indoor Scenes Guided by Time-varying Tensor Fields},
@@ -64,6 +66,8 @@ find the package useful, please consider citing the following paper:
 }
 ```
 
+
+
 ## Download and Install
 
 ### Dependencies
@@ -74,25 +78,39 @@ and thus recommended.
 
 ### From source
 
-Please download the source code from: ```
+Please download the source code from: 
+
+```
 git clone https://github.com/zlt1991/tensor_field_nav.git
-``` then
+```
+
+ then
+
+
 ```
 catkin_make
 ```
 
+
+
 ## Run
+
+
 
 ```
 $ roslaunch tensor_field_nav_core complete_run.launch
 $ roslaunch octomap_tensor_field octomap_mapping.launch
 ```
 
+
+
 ## Acknowledgements
 
 The implementation of our tensor field navigation is based on the code
 of tensor field design provided by Eugene Zhang. If you use this code,
 please also cite the following paper:
+
+
 
 ```
 @article{zhang2007interactive,
@@ -105,3 +123,5 @@ please also cite the following paper:
   publisher={IEEE}
 }
 ```
+
+

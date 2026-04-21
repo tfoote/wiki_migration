@@ -23,9 +23,13 @@ RTAB-Map libraries and standalone application. Visit
 [RTAB-Map's wiki](https://github.com/introlab/rtabmap/wiki) to know how
 to use the standalone application and
 [tools](https://github.com/introlab/rtabmap/wiki/Tools) that come with
-this package: ```
+this package: 
+
+```
 $ rtabmap
 ```
+
+
 
 ## Citing
 

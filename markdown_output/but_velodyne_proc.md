@@ -12,8 +12,6 @@ Velodyne HDL-32E). There are three main nodes:
 
 Each node has it's nodelet counterpart with same ROS API.
 
-<<GitHubIssues(robofit/but_velodyne)>>
-
 ## Installation
 
 From source:
@@ -31,11 +29,17 @@ might be used with [move_base](move_base).
 
 Usage example:
 
+
+
 ```shell
 roslaunch but_velodyne_proc laserscan_node.launch
 ```
 
+
+
 ### Topics
+
+
 
 ```clearsilver
 no_header=True
@@ -57,7 +61,11 @@ no_header=True
 }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 no_header=True
@@ -101,6 +109,8 @@ no_header=True
 }
 ```
 
+
+
 ## Groundmap Node
 
 Estimates frame-to-frame *bumpiness* of robot's surrounding and
@@ -110,6 +120,8 @@ rovers supposed to navigate on a rough terrain.
 ![Resulting groundmap published as occupancy grid.\|width=600px](attachment:but_velodyne_proc_groundmap.png)
 
 ### Topics
+
+
 
 ```clearsilver
 no_header=True
@@ -131,7 +143,11 @@ no_header=True
 }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 no_header=True
@@ -216,6 +232,8 @@ no_header=True
 }
 ```
 
+
+
 ## Cloud Assembler Node
 
 When a robot is moving, this node combines few historic clouds and the
@@ -226,6 +244,8 @@ current one to produce denser cloud.
 ![Output cloud.\|width=600px](attachment:cloud_assembler_1.png)
 
 ### Topics
+
+
 
 ```clearsilver
 no_header=True
@@ -246,3 +266,5 @@ no_header=True
    }
 }
 ```
+
+

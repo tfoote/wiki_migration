@@ -12,13 +12,23 @@ This package doesn't have a own ROS API, it just configures the
 
 ## Usage/Examples
 
-For starting only the torso use ```
+For starting only the torso use 
+
+```
 roslaunch cob_torso solo.launch
-``` For including
-the torso in your overall launch file use ```
+```
+
+ For including
+the torso in your overall launch file use 
+
+```
 <include file="$(find cob_torso)/ros/launch/torso.launch" />
-``` A
-sample parameter file could look like this ```
+```
+
+ A
+sample parameter file could look like this 
+
+```
 can_module: PCAN
 can_device: /dev/pcan0
 can_baudrate: 500
@@ -26,10 +36,16 @@ module_ids: [14,13,16,15]
 joint_names: [torso_lower_neck_pan_joint, torso_lower_neck_tilt_joint, torso_upper_neck_pan_joint, torso_upper_neck_tilt_joint]
 max_accelerations: [0.8,0.8,0.8,0.8]
 OperationMode: position
-``` For
+```
+
+ For
 moving the torso start the [cob_dashboard](cob_dashboard)
+
+
 ```
 roslaunch cob_dashboard dashboard.launch
-``` Press the "init" button to call the init
+```
+
+ Press the "init" button to call the init
 service for connecting to the hardware. Afterwards use the buttons to
 move to predefined positions.

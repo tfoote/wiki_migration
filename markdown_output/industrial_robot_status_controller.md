@@ -13,6 +13,8 @@ See the documentation in the repository:
 
 Controllers provided by this package:
 
+
+
 ```clearsilver
 
 node.0 {
@@ -38,6 +40,6 @@ node.0 {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(gavanderhoorn/industrial_robot_status_controller)>>
+
+## Report a Bug

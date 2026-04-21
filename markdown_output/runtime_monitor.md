@@ -1,6 +1,10 @@
+
+
 ```wiki
 Deprecated: `runtime_monitor` is superseded by [[rqt_runtime_monitor]].
 ```
+
+
 
 ## Overview
 
@@ -20,13 +24,21 @@ who need the raw data.
 ## Viewing Diagnostics
 
 To start the `runtime_monitor`, point to the ROS [Master](Master) for
-your robot, e.g. ```
+your robot, e.g. 
+
+```
 export ROS_MASTER_URI=http://my_robot:11311
 ```
 
-In the same terminal, type: ```
+
+
+In the same terminal, type: 
+
+```
 rosrun runtime_monitor monitor
 ```
+
+
 
 For the complete tutorial, see
 [Starting the Runtime Monitor](diagnostics/Tutorials/Starting the Runtime Monitor)
@@ -41,6 +53,8 @@ plugin. This features is experimental.
 
 The `MonitorPanel` class of the `runtime_monitor` can be embedded in
 a WX application. To embed the monitor inside a WX notebook panel:
+
+
 
 ```python
 from runtime_monitor.monitor_panel import MonitorPanel
@@ -70,10 +84,14 @@ from runtime_monitor.monitor_panel import MonitorPanel
     self._monitor_panel.shutdown()
 ```
 
+
+
 Only the above functions are supported when embedded into a WX
 application.
 
 ## ROS API
+
+
 
 ```clearsilver
 name = monitor
@@ -84,3 +102,5 @@ sub {
   0.desc = Raw diagnostics data from robot
 }
 ```
+
+

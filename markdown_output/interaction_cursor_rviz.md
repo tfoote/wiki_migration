@@ -25,17 +25,25 @@ interactive marker types:
 
 ## How to Run / Test
 
-Install the following debs: ```
+Install the following debs: 
+
+```
 sudo apt-get install ros-groovy-rviz-animated-view-controller
 ```
 
+
+
 Add the following repositories to your catkin workspace:
+
+
 ```
 - git: {local-name: ros_3d_interaction_cursor, uri: 'https://github.com/aleeper/ros_3d_interaction_cursor.git'}
 - git: {local-name: razer_hydra, uri: 'https://github.com/aleeper/razer_hydra.git'}
 - git: {local-name: interactive_markers, uri: 'https://github.com/ros-visualization/interactive_markers.git'}
 - git: {local-name: rviz, uri: 'https://github.com/ros-visualization/rviz.git'}
 ```
+
+
 
 You may also need
 `https:*github.com/ros-visualization/visualization_tutorials`, which
@@ -44,14 +52,22 @@ unfortunately must go in a rosbuild workspace.*
 Build your catkin workspace, and build interactive_marker_tutorials.
 
 If you haven't configured udev rules for the hydra before, do:
+
+
 ```
 roscd razer_hydra
 ./configure_udev_rules
-``` and then plug your hydra in.
+```
 
-Then run: ```
+ and then plug your hydra in.
+
+Then run: 
+
+```
 roslaunch interaction_cursor_demo demo.launch
-``` You can add the option
+```
+
+ You can add the option
 start_hydra:=false, or change the radius of the hydra workspace with
 radius:=<a number>.
 

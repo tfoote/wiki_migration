@@ -71,6 +71,8 @@ For even more videos, see the
 
 ### Parameters
 
+
+
 ```clearsilver
 param{
   0.name=root_name
@@ -82,8 +84,12 @@ param{
 }
 ```
 
+
+
 Example configuration (from
 [ee_cart_imped_control](ee_cart_imped_control)/pr2_arms_cart_imped_controller.yaml):
+
+
 
 ```yaml
 r_arm_cart_imped_controller:
@@ -92,7 +98,11 @@ r_arm_cart_imped_controller:
   tip_name: r_gripper_tool_frame
 ```
 
+
+
 ### Topics
+
+
 
 ```clearsilver
 pub{
@@ -102,6 +112,10 @@ pub{
 }
 ```
 
+
+
+
+
 ```clearsilver
 sub{
   0.name=command
@@ -109,6 +123,8 @@ sub{
   0.desc=The trajectory to follow.  The absolute start time of the trajectory is given in header.stamp.  If forces are specified, the controller will try to exert that force in the correct direction throughout the trajectory segment.  If stiffness is specified, the controller will try to achieve the desired segment point with that stiffness.  At the end of the trajectory, the controller holds the last point.
 }
 ```
+
+
 
 ## Closed Loop Control
 

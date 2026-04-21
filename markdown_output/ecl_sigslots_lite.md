@@ -42,6 +42,8 @@ it's source can be simply copied to a firmware project.
 
 ## Compiling & Linking
 
+
+
 ```cplusplus
 #include <ecl/sigslots_lite.hpp>
 
@@ -55,6 +57,8 @@ using ecl::lite::global_slots_capacity;
 using ecl::lite::member_slots_stored;
 using ecl::lite::member_slots_capacity;
 ```
+
+
 
 ## Examples
 

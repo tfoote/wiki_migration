@@ -18,5 +18,3 @@ Microsoft Kinect.
     other packages.
 
 ## Report a Bug
-
-<<GitHubIssues(mdrwiega/depth_nav_tools)>>

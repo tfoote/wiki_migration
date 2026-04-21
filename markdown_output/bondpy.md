@@ -6,7 +6,9 @@ please see the example below as well as the
 
 ## Example usage
 
-**Process A:** ```python
+**Process A:** 
+
+```python
 from bondpy import bondpy
 
 id = generate_unique_id()
@@ -20,7 +22,11 @@ bond.wait_until_broken()
 print "B has broken the bond"
 ```
 
-**Process B:** ```python
+
+
+**Process B:** 
+
+```python
 from bondpy import bondpy
 
 # Receives id from A using a service or an action
@@ -30,6 +36,6 @@ bond.start()
 bond.break_bond()
 ```
 
-## Report a Bug
 
-<<GitHubIssues(ros/bond_core)>>
+
+## Report a Bug

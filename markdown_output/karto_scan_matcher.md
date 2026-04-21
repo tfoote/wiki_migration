@@ -6,6 +6,8 @@ migrated into [slam_karto](slam_karto)**.
 This package provides a C++ library that wraps the Karto scan matcher
 for use in ROS nodes. Code that uses it looks like:
 
+
+
 ```
 geometry_msgs::Pose2D laser_offset;
 sensor_msgs::LaserScan example_scan;
@@ -25,6 +27,8 @@ karto_scan_matcher::ScanMatchResult res = matcher.scanMatch(new_scan, initial_po
 geometry_msgs::Pose corrected = res.first;
 double response = res.second;
 ```
+
+
 
 The numerical arguments to the matcher constructor are the grid size and
 search resolution. You can also make these vectors, in which case a

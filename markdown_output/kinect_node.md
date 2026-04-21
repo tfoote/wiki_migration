@@ -37,11 +37,15 @@ For calibration information based on this package, please see
 
 ## Running
 
+
+
 ```
 roscore  >& /dev/null &
 rosrun kinect_node kinect_node  >& /dev/null &
 rosrun rviz rviz
 ```
+
+
 
 Set Fixed Frame to /kinect_depth or whatever name was provided with the
 kinect_depth_frame argument.
@@ -56,11 +60,15 @@ kinect_node.bag is 1.1GB of data and may not be useful.
 
 kinect_node_subset.bag is a 143M subset of the above bag file.
 
+
+
 ```
 roscore >& /dev/null &
 rosrun rviz rviz >& /dev/null &
 rosbag play -q -l kinect_node_subset.bag
 ```
+
+
 
 In rviz select 'File > Open Config' from the main menu then open the
 'kinect_node/launch/demo.vcg' config file.
@@ -68,6 +76,8 @@ In rviz select 'File > Open Config' from the main menu then open the
 [Youtube](https://www.youtube.com/watch?v=jQgnuupBUI4)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = kinect_node
@@ -134,6 +144,8 @@ param{
  prov_tf{
  }
 ```
+
+
 
 ## References
 

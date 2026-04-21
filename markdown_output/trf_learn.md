@@ -12,23 +12,39 @@ the execute launch script (execute.launch).
 Specifically, the steps that you'll need to perform are:
 
 -   launch navigation and manipulation nodes required (trf_learn.launch)
-    ```
+    
+
+```
 roslaunch trf_learn trf_learn.launch
 ```
+
+
 -   Localize the robot with rviz.
 -   Position your robot in front of the mechanism to operate.
--   Initialize the learning procedure. ```
+-   Initialize the learning procedure. 
+
+```
 roslaunch trf_learn init.launch
 ```
+
+
     -   after this completes the collected data will be saved in
         /.ros/locations_narrow_v11.pkl
--   Launch the learning procedure. ```
+-   Launch the learning procedure. 
+
+```
 roslaunch trf_learn practice.launch
 ```
 
-Finally to execute your learned behavior use: ```
+
+
+Finally to execute your learned behavior use: 
+
+```
 roslaunch trf_learn execute.launch
 ```
+
+
 
 When initialization finishes, you'll progress to the second stage and
 set the robot to gather additional data autonomously for its classifier

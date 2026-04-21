@@ -62,6 +62,8 @@ compatible with OpenCV 2.4.9+ and 3+.
 
 ### Python
 
+
+
 ```python
 import cv2
 from distutils.version import LooseVersion
@@ -71,7 +73,11 @@ else:
     # Whatever OpenCV3 code
 ```
 
+
+
 ### C++
+
+
 
 ```cpp
 #include "opencv2/core/version.hpp"
@@ -82,12 +88,16 @@ else:
 #endif
 ```
 
+
+
 Also, if you write OpenCV3 code, chances are high that it will also
 compile with OpenCV 2.4.9+. E.g., in color conversion, when replacing
 *CV_BGR2GRAY* by *cv::COLOR_RGB2GRAY*, your code will also compile in
 OpenCV2 as this API has been backported (and not documented \...).
 
 ### CMake
+
+
 
 ```cmake
 if(OpenCV_VERSION VERSION_LESS "3.0")
@@ -96,6 +106,8 @@ else()
 # use 3.x modules
 endif()
 ```
+
+
 
 ### package.xml
 
@@ -114,7 +126,9 @@ or something you need.
 The package is slightly patched from upstream to not build certain
 things like tests and examples. It is released through bloom using a tar
 file as source. In case you ever need to build your own package, this
-tar file is obtained with the following: ```highlight
+tar file is obtained with the following: 
+
+```highlight
 #!/bin/bash
 mkdir tmp
 cd tmp
@@ -167,6 +181,8 @@ rm ./opencv.tar.gz
 tar --exclude-vcs -zcf ./opencv.tar.gz ./opencv/*
 ```
 
+
+
 We need to use a .tar archive and not an upstream repo because we are
 packaging opencv_contrib too and it cannot be packaged independently:
 the official way of compiling it is by incorporating it into the OpenCV
@@ -174,9 +190,13 @@ sources.
 
 Then, just download the opencv3-release repo at
 <https://github.com/ros-gbp/opencv3-release> and:
+
+
 ```
 git-bloom-release kinetic
 ```
+
+
 
 ## Future
 

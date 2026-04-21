@@ -17,9 +17,13 @@ chmod operation can be used.
 
 A udev rule can also be created to permanently change the permissions.
 Copy the text in the box below to the file
-/etc/udev/rules.d/65-usb-xdimax.rules ```
+/etc/udev/rules.d/65-usb-xdimax.rules 
+
+```
 # set permission to 666 for Sub20 device
 SUBSYSTEM=="usb", ATTR{idVendor}=="04d8", ATTR{idProduct}=="ffc3", ACTION=="add", MODE="0666"
 ```
+
+
 
 NB: The vendor and product IDs are case sensitive.

@@ -9,6 +9,8 @@ information might be out of date, for recent data look here:
 ### HostStatistics
 
 Contains statistics about a host's resource usage.
+
+
 ```
 # ip of the host  
 string host
@@ -65,9 +67,13 @@ float32[] bandwidth_stddev
 float32[] bandwidth_max
 ```
 
+
+
 ### NodeStatistics
 
 Contains statistics about a node's resource usage.
+
+
 ```
 #ip of the host this node belongs to
 string host
@@ -122,9 +128,13 @@ float32 node_read_stddev
 float32 node_read_max
 ```
 
+
+
 ### RatedStatisticsEntity
 
 Contains comparisons of expected value and actual value for a statistic.
+
+
 ```
 # type of statistic like cpu_usage_core or cpu_usage
 string statistic_type
@@ -146,10 +156,14 @@ uint8 OK=3
 uint8[] state
 ```
 
+
+
 ### RatedStatistics
 
 Contains an array of RatedStatisticsEntities for a node, host , or
-connection. ```
+connection. 
+
+```
 # name of node/host/connection 
 string seuid
 
@@ -164,17 +178,25 @@ time window_stop
 RatedStatisticsEntity[] rated_statistics_entity
 ```
 
+
+
 ### MasterAPIEntity
 
-Represents a single entry of the master API```
+Represents a single entry of the master API
+
+```
 string name
 string[] content
 ```
+
+
 
 ### MasterApi
 
 Contains all the information masterApi.Master.getSystemState returns
 which is information about publishers, subscribers and services.
+
+
 ```
 # publisher
 MasterApiEntity[] pubs
@@ -184,11 +206,15 @@ MasterApiEntity[] subs
 MasterApiEntity[] srvs
 ```
 
+
+
 ## Service Types
 
 ### NodeReaction
 
 Stop or restart a node on a host or execute a shell command on host
+
+
 ```
 # identifier of the affected node
 string node
@@ -203,9 +229,13 @@ string command
 string returnmessage
 ```
 
+
+
 ### StatisticHistory
 
 Receive a History of the last few statistics send out
+
+
 ```
 # get all statistics where timestamp in ms is > than timestamp
 time timestamp
@@ -222,3 +252,5 @@ RatedStatistics[] rated_node_statistics
 rosgraph_msgs/TopicStatistics[] topic_statistics
 RatedStatistics[] rated_topic_statistics
 ```
+
+

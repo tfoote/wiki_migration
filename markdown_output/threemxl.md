@@ -18,6 +18,8 @@ reliable.
 
 #### LxSerial
 
+
+
 ```cplusplus
 #include <threemxl/C3mxl.h>
 
@@ -35,9 +37,13 @@ motor->setConfig(config->setID(109));
 motor->init(false);
 ```
 
+
+
 #### LxFTDI
 
 You can find the USB ID using `lsusb`.
+
+
 
 ```cplusplus
 #include <threemxl/C3mxl.h>
@@ -57,12 +63,16 @@ motor->setConfig(config->setID(109));
 motor->init(false);
 ```
 
+
+
 ### shared_serial
 
 To use multiple 3mxl boards on a single bus, use the
 [shared_serial](shared_serial) node and
 [C3mxlROS](http://docs.ros.org/hydro/api/threemxl/html/classC3mxlROS.html)
 class. A launch file would look like this:
+
+
 
 ```
 <launch>
@@ -75,7 +85,11 @@ class. A launch file would look like this:
 </launch>
 ```
 
+
+
 The motor can then be initialized using
+
+
 
 ```cplusplus
 #include <threemxl/C3mxlROS.h>
@@ -89,12 +103,16 @@ motor->setConfig(config->setID(109));
 motor->init(false);
 ```
 
+
+
 ## Reading state
 
 For efficiency reasons, reading state information is split in two sets
 of functions, `get\...()` and `present\...()`. `get\...()`
 functions retrieve the state from the motor, while `present\...()`
 functions return the information to the caller. An example:
+
+
 
 ```cplusplus
 ros::Rate loop_rate(10);
@@ -105,6 +123,8 @@ do
   motor->getPos();
 } while (ros::ok() && fabs(motor->presentPos()) > 0.01);
 ```
+
+
 
 It is possible to retrieve more than one piece of state information at
 the same time, e.g. using `getState()`.

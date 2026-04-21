@@ -1,10 +1,14 @@
 See <http://rc-visard.com> and <http://doc.rc-visard.com> for more
 details.
 
+
+
 ```wiki
 '''This package is not developed anymore'''. New clients are available in the
 [[rc_reason_clients]] package.
 ```
+
+
 
 ## Overview
 
@@ -28,9 +32,13 @@ IP address:**
 
 -   `device`: The ID of the device, i.e. Roboception rc_visard sensor.
     This can be either:
--   serial number, e.g. `02912345`. ```wiki
+-   serial number, e.g. `02912345`. 
+
+```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://gSinceithub.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
 ```
+
+
 -   user defined name must be unique among all reachable sensors. If no
     device or host is given, this parameter works if just one rc_visard
     is connected.
@@ -59,21 +67,27 @@ The following services are offered to follow the calibration routine:
 
 ## Launch
 
-Using command line parameters: ```bash
+Using command line parameters: 
+
+```bash
 rosrun rc_tagdetect_client rc_april_node _host:=<sensor_ip>
 rosrun rc_tagdetect_client rc_qr_node _host:=<sensor_ip>
 ```
 
+
+
 **Since version 2.7:**
+
+
 
 ```bash
 rosrun rc_tagdetect_client rc_april_node _device:=:<serial_number>
 rosrun rc_tagdetect_client rc_qr_node _device:=:<serial_number>
 ```
 
-## Report a Bug
 
-<<GitHubIssues(roboception/rc_visard_ros)>>
+
+## Report a Bug
 
 ## Acknowledgements
 

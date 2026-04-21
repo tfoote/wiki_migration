@@ -52,7 +52,9 @@ the position of the PolicyX file
 A typical POMDP control cycle is : robot executes an action and receives
 an observation. Here the robot controller needs to send the received
 observation the service node to get the feedback action. The message
-format is: ```
+format is: 
+
+```
 int64 cmd   --> command type
 
 string obs  --> observation
@@ -63,6 +65,8 @@ string xstate  -->fully observable states
 
 int64 action  -->the action you should execute given by the service node
 ```
+
+
 
 1\. cmd=0 test command.
 
@@ -83,6 +87,8 @@ For example, in the below PomdpX variable declaration script, it has 3
 fully observable variables: RobPos,RobVel,PedPose.It has only one
 observation variable oPed. A valid assignment to xstate can be
 "sx00y00sR00sV0". And a valid assignment to obs can be "ox00y00".
+
+
 ```
 <Variable>
 <StateVar vnamePrev="RobPose_0" vnameCurr="RobPose_1" fullyObs="true">
@@ -118,6 +124,8 @@ aCru  aAcc  aDec
 <RewardVar vname="reward_robot"/>
 </Variable>
 ```
+
+
 
 ## Example
 

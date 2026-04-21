@@ -15,6 +15,8 @@ approximately 45° but the map's orientation is fixed.
 
 ### ROS API
 
+
+
 ```clearsilver
 sub {
    0.name=~<name>/footprint
@@ -41,3 +43,5 @@ param {
   2.desc= Map resolution (m/pixel).
 }
 ```
+
+

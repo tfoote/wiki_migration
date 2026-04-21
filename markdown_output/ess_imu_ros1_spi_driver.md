@@ -144,9 +144,13 @@ Epson IMU model that is being used in the ROS system.
     folder. 4. Reload the current ROS1 environment variables that may
     have changed after the catkin build process.
 
+
+
 ```
 <catkin_workspace>/source devel/setup.bash
 ```
+
+
 
 5\. Modify the appropriate [roslaunch/XML](roslaunch XML files ) to set
 your desired IMU init parameters for the specific IMU model in the
@@ -161,9 +165,13 @@ launch folder that you selected and built
 
 -   To start the Epson IMU ROS1 driver use the appropriate launch file
     (located in launch/) with [roslaunch](roslaunch )
--   For example: ```
+-   For example: 
+
+```
 <catkin_workspace>/roslaunch ess_imu_ros1_spi_driver epson_g370.launch
 ```
+
+
 
 ## Technical Support
 

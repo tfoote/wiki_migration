@@ -46,6 +46,8 @@ the corresponding configuration.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = ati_force_torque_config
 desc = Changes configuration data of the sensor like baudrate and base-id.
@@ -86,7 +88,11 @@ param {
   5.desc = Base identifier on which you want to set up the sensor. For meaning of this value see sensor manual.
   5.default = 7
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = ati_force_torque_node
 desc = ROS-Node for reading sensor data. Data can be filtered and transformed automatically. The same description is valid for sensor handle used in ros_control.
 sub {
@@ -231,9 +237,9 @@ param {
 }
 ```
 
+
+
 There are few other paramters used for parametrisation of filters.
 Please check sensor_configuration.yaml to see them.
 
 ## Issues
-
-<<GitHubIssues(iirob/ati_force_torque)>>

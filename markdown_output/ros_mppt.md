@@ -10,16 +10,24 @@ using ve-direct protocol via serial USB port.
 
 ### From the distro repo
 
+
+
 ```
 sudo apt-get install ros-kinetic-ros_mppt
 ```
 
+
+
 ### From sources
 
 Clone the package from github repo into your catkin workspace and build
-as usual ```
+as usual 
+
+```
 $ git clone https://github.com/AaronPB/ros_mppt.git
 ```
+
+
 
 ## Customize the sender
 
@@ -53,6 +61,8 @@ Choose those values you want to send from the topic, and modify the
 python file "vemppt_ros.py" adding them with this structure:
 
 First, define the value where the other ones are already be defined:
+
+
 ```python
 #Predefined values of msg
     msg.v_bat = -1
@@ -61,7 +71,11 @@ First, define the value where the other ones are already be defined:
     msg.p_pv = -1
 ```
 
+
+
 Then, add into the while loop the following lines of code:
+
+
 ```python
 elif "V" in ve_read and "P" not in ve_read: #Filter
             try:
@@ -69,6 +83,8 @@ elif "V" in ve_read and "P" not in ve_read: #Filter
                 msg.v_bat = float(ve_read[1]) * 0.001 #Value of splitted data
             except Exception as e: logging.error('Exception ocurred in V', exc_info=True) #Log info register in case of error
 ```
+
+
 
 The first line is the filter, the "important filters" are already made
 so you only need to put the label of the value into a string (see the
@@ -84,6 +100,8 @@ Imagine you want to see the error codes that the mppt is sending.
 First, we define it in the predefined msg values section in
 vemppt_ros.py as msg.error_mppt:
 
+
+
 ```python
 #Predefined values of msg
     msg.v_bat = -1
@@ -93,7 +111,11 @@ vemppt_ros.py as msg.error_mppt:
     msg.error_mppt = 0 #Let's say it has no error at the beginning
 ```
 
+
+
 Then, we add the following lines of code into the while loop:
+
+
 ```python
 elif "ERROR" in ve_read: #Filter with "ERROR" label
             try:
@@ -102,7 +124,11 @@ elif "ERROR" in ve_read: #Filter with "ERROR" label
             except Exception as e: logging.error('Exception ocurred in ERROR', exc_info=True) #Log info register in case of error ("V" modified to "ERROR")
 ```
 
+
+
 The modified sender() method will looks like the following code:
+
+
 ```python
 """
     This file is part of ros_mppt.
@@ -169,6 +195,8 @@ def sender():
         r.sleep()
 ```
 
+
+
 Now, we have our new custom value created. But, we need to do something
 else to send it to the topic: define it in the .msg file.
 
@@ -177,6 +205,8 @@ else to send it to the topic: define it in the .msg file.
 If you want to add more custom values to the mppt_channel topic you have
 to defined those in the .msg file. Go to msg/mppt.msg in your catkin
 workspace and add the new custom values into them:
+
+
 ```
 float64 v_bat
 float64 i_bat
@@ -184,8 +214,12 @@ float64 v_pv
 float64 p_pv
 ```
 
+
+
 Following our previous example, we need to define msg.error_mppt into
-the mppt.msg file (as an integer): ```
+the mppt.msg file (as an integer): 
+
+```
 float64 v_bat
 float64 i_bat
 float64 v_pv
@@ -193,25 +227,39 @@ float64 p_pv
 int32 error_mppt
 ```
 
+
+
 You can also define your own custom values just as state values or
 anything else. More info of .msg files at the Documentation section.
 
 ## Run ros_mppt
 
 To run the package first make sure to build it (also important if you
-made any changes at vemppt_ros.py): ```
+made any changes at vemppt_ros.py): 
+
+```
 $ cd ~/catkin_ws
 $ catkin_make
 $ . ~/catkin_ws/devel/setup.bash
-``` Then, just
-run roscore and vemppt_ros.py: ```
-$ git clone https://github.com/AaronPB/ros_mppt.git
-```0
+```
 
-If you want to save the topic, you can use the rosbag command:
+ Then, just
+run roscore and vemppt_ros.py: 
+
 ```
 $ git clone https://github.com/AaronPB/ros_mppt.git
-```1
+```
+
+0
+
+If you want to save the topic, you can use the rosbag command:
+
+
+```
+$ git clone https://github.com/AaronPB/ros_mppt.git
+```
+
+1
 
 More info about ros commands at the Documentation section.
 

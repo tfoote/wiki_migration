@@ -13,6 +13,8 @@ Now we will create a simple script which will warn about high cpu usage.
 
 ## Predicate
 
+
+
 ```python
 #! type predicate
 #! name cpu_monitor
@@ -33,7 +35,11 @@ core3 < core_th
 core4 < core_th
 ```
 
+
+
 ## Python
+
+
 
 ```python
 #! name cpu_monitor
@@ -54,6 +60,8 @@ validate.is_true(core3 < core_th, "core3 usage too high")
 validate.is_true(core4 < core_th, "core4 usage too high")
 ```
 
+
+
 You can activate the script using rqt plugin -
 <http://wiki.ros.org/scriptable_monitor_rqt>
 
@@ -65,12 +73,20 @@ You can activate the script using rqt plugin -
 
 ### Configuration parameters
 
-Parameters are preceded by '#!'. Syntax: ```parameter_name
+Parameters are preceded by '#!'. Syntax: 
+
+```parameter_name
 
 ```
+
+
 There is one required parameter: "name" - the identification name of
 the script, it must be unique.
 
-Example: ```name
+Example: 
+
+```name
 
 ```
+
+

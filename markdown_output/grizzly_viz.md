@@ -15,9 +15,13 @@ To view the Grizzly model and TF transform tree in isolation,
 **disconnected** from a real or simulated robot, use the following
 launcher:
 
+
+
 ```
 roslaunch grizzly_viz view_model.launch
 ```
+
+
 
 You can change joint positions using joint state publisher gui:
 
@@ -28,9 +32,13 @@ You can change joint positions using joint state publisher gui:
 
 To visualize a real or simulated Grizzly, launch:
 
+
+
 ```
 roslaunch grizzly_viz view_robot.launch
 ```
+
+
 
 You can click the [Interact](interactive_markers) button in rviz, and
 use the interactive markers to give Grizzly some motion commands:

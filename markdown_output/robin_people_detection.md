@@ -4,6 +4,8 @@ See the robin_people_detection node documentation.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = robin_people_detection
 desc = This Node provides two tf between /base_footprint and /dominant_person, and /base_footprint and /group. The dominant Person is calculated by a weighted function from x and y distances (costs = x + 0.4*y). The group includes the average position of all detected persons. The z-coordinate of both tf is set to zero, to get the footprint of the person/group.
@@ -30,6 +32,8 @@ param {
 }
 ```
 
+
+
 ## Launch Files
 
 Use roslaunch files to load this files.
@@ -41,6 +45,10 @@ Use roslaunch files to load this files.
 
 ## Test People Detection
 
-By calling ```
+By calling 
+
+```
 roslaunch robin_people_detection robin_people_detection.launch
-``` one can test the people detection.
+```
+
+ one can test the people detection.

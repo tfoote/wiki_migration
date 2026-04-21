@@ -25,6 +25,8 @@ script (TBD) or write one on your own.
 To extract the appearance models of the rotated object we will be using
 the following launch file:
 
+
+
 ```xml
   <launch>
 	<node  pkg="model_completion" type="in_hand_modeling" name="get_mask_client" output="screen"  >
@@ -45,6 +47,8 @@ the following launch file:
 </launch>
 ```
 
+
+
 There are several parameters that control the object modeling process:
 
 -   *width*, *height*, *fovy* - are the width, height and vertical focal
@@ -61,9 +65,13 @@ There are several parameters that control the object modeling process:
     explanation below on the meaning of the parameters);
 -   *robot_description* - upload robot's URDF if working on rosbags.
 
-To start the program run: ```
+To start the program run: 
+
+```
 $ roslaunch model_completion getMask.launch
 ```
+
+
 
 #### The overview of the program can be seen in the following figure:
 

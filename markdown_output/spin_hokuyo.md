@@ -36,9 +36,13 @@ This example walks through using this package and corresponding hardware
 for the first time. For additional information on the code, please see
 Nodes section below.
 
-1\. ```
+1\. 
+
+```
 sudo apt-get install ros-indigo-spin-hokuyo
-``` 1. In the tutorials/launch folder, update
+```
+
+ 1. In the tutorials/launch folder, update
 the dynamixel_servos.yaml file to match the information for your servo.
 In particular, make sure the id number matches that of your servo. 1. In
 the tutorials/launch folder, update the basic_motors.launch file, go to
@@ -46,9 +50,13 @@ line 12. These parameters are used to set up the dynamixel_motor
 package. In particular, make sure the port_name and baud_rate match your
 servo. Also, check that your motor id falls within the inclusive range
 from min_motor_id to max_motor_id. 1. Save and compile changes (if
-applicable). 1. ```
+applicable). 1. 
+
+```
 roslaunch spin_hokuyo basic_motors.launch
-``` 1. In a new terminal, open the
+```
+
+ 1. In a new terminal, open the
 rostopics list. There should be two new commands:
 /tilt_controller/command and /tilt_controller/state. /command will issue
 new positions to the motor via Float64 (try this using rostopic pub).
@@ -57,11 +65,17 @@ echo). 1. If this is fully functional, kill the node and run the
 following command. This should cause the motor to regularly sweep from
 90 to -90 and generate a point cloud and occupancy map. Be sure to
 update the dynamixel_servos_tilting.yaml for position, speed, etc. 1.
+
+
 ```
 roslaunch spin_hokuyo tilting_lidar_continuous.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -226,6 +240,8 @@ param {
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

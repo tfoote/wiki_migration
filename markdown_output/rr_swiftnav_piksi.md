@@ -5,12 +5,18 @@ This package requires SwiftNav's
 before installing this package.
 
 **Option 1 (Recommended)** Install binaries via aptitude package manager
+
+
 ```
 sudo apt install ros-kinetic-rr-swiftnav-piksi
 ```
 
+
+
 **Option 2** Install source from github (only use if you want to make
-custom changes to the source code) ```
+custom changes to the source code) 
+
+```
 cd ~/catkin_ws/src/
 git clone https://github.com/RoverRobotics/rr_swiftnav_piksi.git
 cd ~/catkin_ws/
@@ -18,7 +24,11 @@ catkin_make
 source devel/setup.bash
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node{
@@ -76,8 +86,14 @@ param {
 }
 ```
 
+
+
 ## Running
 
-Example using rosrun ```
+Example using rosrun 
+
+```
 rosrun rr_swiftnav_piksi swiftnav_piksi_tcp.py
 ```
+
+

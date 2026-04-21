@@ -8,6 +8,8 @@ autonomously pickup specific objects.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_interactive_manipulation
@@ -80,6 +82,8 @@ node.0 {
 }
 ```
 
+
+
 ### Manipulation Objects
 
 This package visualizes segmented and recognized objects, and provides
@@ -101,13 +105,17 @@ object from the segmented/recognized object list.
 To install the `carl_bot` package, you can install from source with
 the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -116,12 +124,20 @@ catkin_make install
 The interactive manipulation backend can be started by running the
 carl_interactive_manipulation node, as follows:
 
-. ```
+. 
+
+```
 rosrun carl_interactive_manipulation carl_interactive_manipulation
 ```
 
+
+
 The interactive manipulation frontend can be started by launching the
 following, which will bring up an rviz interface: .
+
+
 ```
 roslaunch carl_interactive_manipulation im_frontend.launch
 ```
+
+

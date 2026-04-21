@@ -17,20 +17,32 @@ works (see notes below), so it's recommended that you install the SDK
 manually.
 
 If you want to use the script anyway, place the downloaded SDK into the
-`phantom_omni` package: ```
+`phantom_omni` package: 
+
+```
 mv OpenHapticsAE_Linux_v3_0.zip `rospack find phantom_omni`/
-``` Launch the
-installation script: ```
+```
+
+ Launch the
+installation script: 
+
+```
 roscd phantom_omni
 ./install_open_haptics.sh
 ```
 
+
+
 ### Compiling and Starting
 
-Make and run the `omni` node with: ```
+Make and run the `omni` node with: 
+
+```
 rosmake phantom_omni
 rosrun phantom_omni omni
 ```
+
+
 
 ## Troubleshooting
 
@@ -82,6 +94,8 @@ rosrun phantom_omni omni
 
 ## ROS API
 
+
+
 ```clearsilver
 name=omni
 desc= In the below, replace OMNI_NAME with the appropriate value set for the parameter `~omni_name` (defaults to `omni1`)
@@ -109,3 +123,5 @@ param {
    0.default=omni1
    0.desc=Name for this omni device.
 ```
+
+

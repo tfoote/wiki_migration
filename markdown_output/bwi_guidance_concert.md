@@ -66,36 +66,52 @@ The workflow of the system is as follows:
     to install all the base code required by this package.
 -   Additionally, you'll need to install a web server. This package has
     only been tested using the apache web server:
-    ```
+    
+
+```
 sudo apt-get install apache2
 ```
+
+
 -   Next, install the following rosinstall entry. You may already have
     some of these packages if you've already installed the
     [segbot_gazebo_concert](segbot_gazebo_concert) demo. A patched
     version of rosbridge is used here
     ([#104](https://github.com/RobotWebTools/rosbridge_suite/issues/104))
-    ```
+    
+
+```
 - git: {local-name: segbot_rocon, uri: 'https://github.com/utexas-bwi/segbot_rocon.git', version: master}
 - git: {local-name: bwi_guidance, uri: 'https://github.com/utexas-bwi/bwi_guidance.git', version: master}
 - git: {local-name: rl_pursuit, uri: 'https://github.com/utexas-bwi/rl_pursuit.git', version: master}
 - git: {local-name: rosbridge_suite, uri: 'https://github.com/piyushk/rosbridge_suite.git', version: patch-1}
 ```
+
+
 -   You'll need to copy/symlink the necessary files so that they can be
     displayed by the webserver. If you've got home directory encryption
     enabled, then the following command won't work and you'll have to
     copy the files. The following command also assumes standard
     installation with the web home directory being `/var/www`.
-    ```
+    
+
+```
 sudo ln -sf `rospack find bwi_guidance`/www /var/www/exp1
 ```
+
+
 -   Finally, you'll need to copy some data files to the bwi_guidance
     package which are required by the experiment:
-    ```
+    
+
+```
 roscd bwi_guidance_solver/data/exp2/cache
 wget http://cs.utexas.edu/~piyushk/share/vi.tar.gz
 tar xvzf vi.tar.gz
 rm vi.tar.gz
 ```
+
+
 
 ## Running the code
 
@@ -106,15 +122,23 @@ The following commands need to be run on a reasonably powerful machine
 
 #### Non-Concert Version
 
+
+
 ```
 roslaunch bwi_guidance_solver server.launch --screen
 ```
 
+
+
 #### Concert Version
+
+
 
 ```
 rocon_launch bwi_guidance_concert guidance.concert --screen
 ```
+
+
 
 ### Running the User Interface
 
@@ -125,26 +149,42 @@ rosbridge library over websockets.
 Typically, you'll have to type the following link into the web-browser
 to launch the user side GUI. This link will only work on the machine
 from where you ran the command line application.
+
+
 ```
 http://localhost/exp1/index.html
 ```
 
+
+
 If you want to run on a different machine, you'll have to supply the
 hostname/IP of the machine where the command line application ran, so
-that your browser knows to connect to it: ```
+that your browser knows to connect to it: 
+
+```
 http://robot-devil.csres.utexas.edu/exp1/index.html?host=robot-devil.csres.utexas.edu
 ```
 
+
+
 Additionally, if you're running the concert version of the demo,
 you'll have to supply an additional parameters:
+
+
 ```
 http://robot-devil.csres.utexas.edu/exp1/index.html?host=robot-devil.csres.utexas.edu&concert=true
 ```
 
+
+
 A convenience webpage where you can enter this information and get
-redirected to the correct link is available at: ```
+redirected to the correct link is available at: 
+
+```
 http://robot-devil.csres.utexas.edu/exp1/link.html
 ```
+
+
 
 Once you get to the `index.html` page, follow the instructions to run
 through the experiment!

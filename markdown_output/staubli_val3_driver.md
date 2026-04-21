@@ -1,3 +1,5 @@
+
+
 ```html
 <div style="position: relative; margin-top: -1%;">
  <ul>
@@ -5,6 +7,8 @@
  </ul>
 </div>
 ```
+
+
 
 ## Status
 
@@ -33,5 +37,3 @@ general, please contact the developers by posting a message in the
 ROS Discourse.
 
 ## Report a Bug
-
-<<GitHubIssues(ros-industrial/staubli_val3_driver)>>

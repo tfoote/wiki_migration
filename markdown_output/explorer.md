@@ -63,7 +63,9 @@ points.
 ## Related Documentation
 
 Please refer to the following paper to retrieve more information on the
-node: ```
+node: 
+
+```
 {
 @InProceedings{Andre2014,
   Title                    = {Coordinated Multi-Robot Exploration: Out of the Box Packages for {ROS}},
@@ -72,11 +74,15 @@ node: ```
   Year                     = {2014},
   Month                    = dec,
 }
-```} You may obtain the paper from
+```
+
+} You may obtain the paper from
 [IEEEXplore](http://ieeexplore.ieee.org/) or search in
 [Google Scholar](http://scholar.google.at/scholar?q=Coordinated+Multi-Robot+Exploration%3A+Out+of+the+Box+Packages+for+ROS&hl=de&btnG=Suche&lr=).
 
 ## ROS API
+
+
 
 ```clearsilver
 name = Exploration Package
@@ -141,3 +147,5 @@ param {
   2.default = 3
 }
 ```
+
+

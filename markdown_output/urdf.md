@@ -70,23 +70,37 @@ URDF description, and either prints a description of the resulting
 kinematic chain, or an error message.
 
 For example, to run this tool on the pr2 urdf, first create the urdf
-file by running: ```
+file by running: 
+
+```
 rosrun xacro xacro.py `rospack find pr2_description`/robots/pr2.urdf.xacro -o /tmp/pr2.urdf
 ```
+
+
 
 Then run the check by running:
 
 Note: You may need to run `sudo apt-get install liburdfdom-tools`.
 
+
+
 ```
 check_urdf pr2.urdf
 ```
 
-Then run the check by running: ```
+
+
+Then run the check by running: 
+
+```
 rosrun urdfdom check_urdf /tmp/pr2.urdf
 ```
 
+
+
 and you should see something resembling:
+
+
 
 ```
 robot name is: pr2
@@ -116,6 +130,8 @@ root Link: base_footprint has 1 child(ren)
  ...
 ```
 
+
+
 ### Visualization
 
 Visual Studio Code has a
@@ -126,11 +142,19 @@ To get a graphviz diagram of your urdf file, do the following: In
 Indigo, the `urdf_to_graphiz` tool has moved to the
 `liburdfdom-tools` package. You may need to run `sudo apt-get install
 liburdfdom-tools` if you can't use `urdf_to_graphiz`
+
+
 ```
 urdf_to_graphiz pr2.urdf
-``` ```
+```
+
+ 
+
+```
 urdf_to_graphiz pr2.urdf
 ```
+
+
 
 The result is a file called pr2.pdf that looks something like this:
 

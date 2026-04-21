@@ -23,6 +23,8 @@ shared memory
 
 The program shmadmin is able to read and write variables and vectors of
 common types. It is also able to set and release locks on variables
+
+
 ```shell
 rosrun ak_shm shmadmin -h
 Allowed Parameters:
@@ -42,9 +44,13 @@ Allowed Parameters:
                         channels vector/array six values at index 3
 ```
 
+
+
 #### shmimageviewer
 
 This program displays images stored in the shared memory
+
+
 ```shell
 rosrun ak_shm shmimageview -h
 Allowed Parameters:
@@ -57,6 +63,8 @@ Allowed Parameters:
   -b [ --bgr ] arg       shared bgr image
   -y [ --yuyv ] arg      shared yuyv image
 ```
+
+
 
 ## Examples
 
@@ -69,11 +77,15 @@ This example publishes images using the usb_cam package and copies the
 image into the shared memory using the *image2shm* note. The
 *shmimageviewer* is able to draw images stored in the shared memory and
 the *shm2image* note pipes the image back to a rostopic.
+
+
 ```shell
 rosmake usb_cam ak_shm 
 rosrun ak_shm shmadmin -c # clears the shared memory
 roslaunch ak_shm usb_cam_to_shm.launch
 ```
+
+
 
 ### Creating variables
 
@@ -81,36 +93,54 @@ This example shows you how you can create, read and write common shared
 variables and how you can create a shared vector of your own type/class.
 You should run the example multiple times to see the effect. You can
 also see how to access variables on a secure concurrent way.
+
+
 ```shell
 rosmake ak_shm
 rosrun ak_shm shmadmin -c # clears the shared memory
 rosrun ak_shm example00
 ```
 
+
+
 ### Locking variables, waiting for changes and signals
 
 This example shows you how you lock variables and how you trigger
-signals. ```shell
+signals. 
+
+```shell
 rosrun ak_shm shmadmin -c # clears the shared memory
 rosrun ak_shm example01
-``` After you run the example01 you can
-use the **shmadmin** to view the variables. ```shell
+```
+
+ After you run the example01 you can
+use the **shmadmin** to view the variables. 
+
+```shell
 rosrun ak_shm shmadmin -a # -a lists all shared variables
 rosrun ak_shm shmadmin -u MyPoint3D # -a Unlocks variables
 ```
 
+
+
 ### Timed wait and signals
 
 This example shows you how you lock variables and how you trigger
-changes. ```shell
+changes. 
+
+```shell
 rosrun ak_shm shmadmin -c # clears the shared memory
 rosrun ak_shm example02
 ```
 
+
+
 ### Shared images and opencv image processing
 
 This example shows how you create a shared image and how you can view it
-with the **shmimageviewer**. ```shell
+with the **shmimageviewer**. 
+
+```shell
 rosrun ak_shm shmadmin -c # clears the shared memory
 # opens a image and porcesses a canny image
 rosrun ak_shm example03 [path to a color image] 
@@ -122,23 +152,35 @@ rosrun ak_shm shmimageview --gray ImgCanny
 rosrun ak_shm shmimageview --rgb ImgSrc --gray ImgCanny
 ```
 
+
+
 ## System installation
 
 If you want the library to be available outside of ros you can run *make
-install* in your build folder ```shell
+install* in your build folder 
+
+```shell
 roscd ak_shm
 cd build
 make install # with sudo
 ```
 
+
+
 ### System uninstall
+
+
 
 ```shell
 rm -rf /usr/include/akshm  # with sudo
 rm $HOME/bin/shmimageview $HOME/bin/shmadmin
 ```
 
+
+
 ## Nodes
+
+
 
 ```shell
 rosrun ak_shm shmimageview -h
@@ -151,4 +193,6 @@ Allowed Parameters:
   -r [ --rgb ] arg       shared rgb image
   -b [ --bgr ] arg       shared bgr image
   -y [ --yuyv ] arg      shared yuyv image
-```0
+```
+
+0

@@ -5,6 +5,8 @@ Maps Framework ([LaMa](Large Maps Framework)).
 
 ### ROS API
 
+
+
 ```clearsilver
 srv {
   0.name= ~<name>/compute_dissimilarity
@@ -17,3 +19,5 @@ param {
   0.desc= Max. number of threads
 }
 ```
+
+

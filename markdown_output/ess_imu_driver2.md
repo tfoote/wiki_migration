@@ -156,6 +156,8 @@
     using the devices internal reset counter value (measured time delay
     since latest GNSS 1PPS)
 
+
+
 ```
 DeclareLaunchArgument(
                 name="time_correction_en",
@@ -163,6 +165,8 @@ DeclareLaunchArgument(
                 description="Enables using IMU external counter reset function for timestamp with external 1PPS connected to IMU input pin for GPIO2/EXT",
             ),
 ```
+
+
 
 -   The use of **time_correction_en** is intended to give a more
     accurate timestamp of the inertial data by minimizing the effects of
@@ -189,9 +193,13 @@ changed ROS2 packages located in the <colcon_workspace>/src/ folder
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.
 
+
+
 ```
 From the <colcon_workspace>/source install/setup.bash
 ```
+
+
 
 5\. Modify the appropriate
 [ launch file](https://docs.ros.org/en/foxy/Tutorials/Launch-Files/Creating-Launch-Files.html?highlight=launch )
@@ -212,9 +220,13 @@ in the launch folder to set your desired initialization parameters
 ```
 -   For example:
 
+
+
 ```
 <colcon_workspace>/ros2 launch ess_imu_driver2 launch.py
 ```
+
+
 
 ## USB-UART Latency
 
@@ -241,9 +253,13 @@ in the launch folder to set your desired initialization parameters
     1 when an FTDI USB-UART device is plugged in
 -   For example, below is a text file named \*99-ftdi_sio.rules\* that
     can be put in the \*/etc/udev/rules.d\* directory
-    ```
+    
+
+```
 SUBSYSTEM=="usb-serial", DRIVER=="ftdi_sio", ATTR{latency_timer}="1"
 ```
+
+
 
 **NOTE:** Root (sudo) access is required to create or copy file in
 \*/etc/udev/rules.d\* **NOTE:** This is the preferred method because it
@@ -258,6 +274,8 @@ affects **ALL FTDI USB-UART** devices on the host system
     readback.
     -   NOTE:** May require root (sudo su) access on your system**
 
+
+
 ```
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 16
@@ -265,6 +283,8 @@ echo 1 > /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 1
 ```
+
+
 
 ### Modifying \*low_latency\* flag using \*setserial\* utility
 
@@ -275,6 +295,8 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 -   **NOTE:** You may need to install setserial with *sudo apt install
     setserial*
 
+
+
 ```
 user@user:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0
@@ -284,6 +306,8 @@ user@user:~$ setserial /dev/ttyUSB0 low_latency
 user@user:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0, Flags: low_latency
 ```
+
+
 
 ## Technical Support
 

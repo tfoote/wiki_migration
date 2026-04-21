@@ -22,6 +22,8 @@ explicitly the manipulator poses in the parameter server (parameters
 
 ## ROS API
 
+
+
 ```clearsilver
 name = ft_calib_node
 desc = The `ft_calib_node` moves the robot arm into different positions and collects (raw) F/T sensor readings and accelerometer readings to calibrate the force-torque sensor.
@@ -93,6 +95,8 @@ param {
     10.type = double array
     10.desc = 6x1 array of doubles which specifies the pose of the gripper with respect to the '''poses_frame_id''' frame ID. The representation is in [x y z r p y] (`x,y,z` translation and `roll/pitch/yaw` rotation). You can specify `pose0, pose1, pose2, ... poseN` parameters.
 ```
+
+
 
 ## Running the calibration node
 

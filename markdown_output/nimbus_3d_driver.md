@@ -2,9 +2,13 @@ Official ROS driver for the
 [Nimbus 3D](https://shop.pieye.org/en/Cameras/Nimbus-3D-camera.html)
 time-of-flight camera.
 
+
+
 ```wiki
 This package is still in development and the API might change in the future. Please report any bugs or feature requests on [[https://github.com/pieye/nimbus-ros/issues|GitHub]].
 ```
+
+
 
 ## Overview
 
@@ -89,5 +93,3 @@ Detailed Information to install the driver can be found in the
 [GitHub README](https://github.com/pieye/nimbus-ros).
 
 ## Report a Bug
-
-<<GitHubIssues(pieye/nimbus-ros)>>

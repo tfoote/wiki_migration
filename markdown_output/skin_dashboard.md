@@ -26,6 +26,8 @@ the system is displayed by "Error" or "NoError" and "Go" or
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
 name=skin_dashboard
@@ -43,3 +45,5 @@ sub {
 srv {
 }
 ```
+
+

@@ -18,11 +18,17 @@ required transforms.
 To make a map from a robot with a laser publishing scans on the
 `base_scan` topic:
 
+
+
 ```
 rosrun gmapping slam_gmapping scan:=base_scan
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = slam_gmapping
@@ -234,3 +240,5 @@ rosrun gmapping slam_gmapping scan:=base_scan
   }
  }
 ```
+
+

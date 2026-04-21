@@ -3,19 +3,33 @@
 The `turtlebot_teleop` package provides launch files for teleoperation
 with different input devices.
 
-For a keyboard teleoperation use: ```
+For a keyboard teleoperation use: 
+
+```
 roslaunch turtlebot_teleop keyboard_teleop.launch
 ```
 
-For a ps3 joystick use: ```
+
+
+For a ps3 joystick use: 
+
+```
 roslaunch turtlebot_teleop ps3_teleop.launch
 ```
 
-For a xbox360 joystick use: ```
+
+
+For a xbox360 joystick use: 
+
+```
 roslaunch turtlebot_teleop xbox360_teleop.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node {
@@ -98,3 +112,5 @@ node {
   }
 }
 ```
+
+

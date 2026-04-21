@@ -33,6 +33,8 @@ so keep your eyes open.
 
 ## Creating a Virtual Camera (Node API)
 
+
+
 ```clearsilver
 node.0{
   name= mono_offsetter
@@ -80,10 +82,14 @@ node.0{
 }
 ```
 
+
+
 #### Example
 
 Suppose that you want to offset a camera in the `/prosilica`
 namespace. You could use the following launch file:
+
+
 ```
 <launch>
   <node type="mono_offsetter" pkg="camera_offsetter" name="prosilica_offsetter">
@@ -94,11 +100,15 @@ namespace. You could use the following launch file:
 </launch>
 ```
 
+
+
 This launches a camera_offsetter that subscribes to
 `/prosilica/image_rect_color` and `/prosilica/camera_info`. It
 copies the data from these messages, appends `_offset` to the
 frame_ids, and republishes on `prosilica_offset/image_rect_color` and
 `/prosilica/camera_info`.
+
+
 
 ```clearsilver
 node.0{
@@ -138,8 +148,12 @@ node.0{
 }
 ```
 
+
+
 Suppose that you want to offset a stereocamera in the `/narrow_stereo`
 namespace. You could use the following launch file:
+
+
 ```
 <launch>
   <node type="stereo_offsetter" pkg="camera_offsetter" name="stereo_offsetter">
@@ -151,11 +165,15 @@ namespace. You could use the following launch file:
     <node type="stereo_image_proc" name="proc" pkg="stereo_image_proc"/>
   </group>
 </launch>
-``` This will create a virtual stereocamera in the
+```
+
+ This will create a virtual stereocamera in the
 `/narrow_stereo_offset` namespace. This file also launches the
 `stereo_image_proc` node on the offset camera.
 
 ## Use the keyboard to move a virtual camera (Node API)
+
+
 
 ```clearsilver
 node.2{
@@ -175,6 +193,8 @@ node.2{
 }
 ```
 
+
+
 #### Command Line Usage
 
 -   In translation mode, keys x/X, y/Y, z/Z move the virtual camera in
@@ -189,6 +209,10 @@ node.2{
 To start the keyboard interface, all you need to do is start the node in
 the same namespace as the offsetter. If the offsetter is in the global
 namespace, then a simple `rosrun` is sufficient:
+
+
 ```
 rosrun camera_offsetter keyboard_interface
 ```
+
+

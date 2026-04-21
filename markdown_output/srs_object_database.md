@@ -22,9 +22,13 @@ After the previous step is completed an empty database must be created
 using a script found inside the folder *db_scripts* of the package
 *srs_object_database*. The first time you need to create an empty
 database with the internal structure and data. To do this simply enter
-the *db_scripts* folder and run: ```
+the *db_scripts* folder and run: 
+
+```
 . createDatabase.sh databaseName
 ```
+
+
 
 NOTE: database name must not include capital letters.
 
@@ -33,9 +37,13 @@ script also to create additional database in case you want to do some
 test. Also if you want to create an empty database you can use the
 following script:
 
+
+
 ```
 . createemptyDb.sh databaseName
 ```
+
+
 
 In general if you have already a user which is different from 'willow'
 and database should be assigned to this user, you can specify an
@@ -45,17 +53,25 @@ and the one used to restore and delete database. For example to create a
 database with owner the user 'srs_user', which must be already created
 before executing the script.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
 ```
+
+
 
 ##### Database Restore
 
 Database can be restored to original data using the following script:
 
+
+
 ```
 . resetDatabase.sh databaseName
 ```
+
+
 
 PS: warning this command will drop the previous database so your data
 will be lost!
@@ -64,9 +80,13 @@ will be lost!
 
 Database can be deleted completely in some case:
 
+
+
 ```
 . deleteDatabase.sh databaseName
 ```
+
+
 
 PS: warning this command will drop the previous database so your data
 will be lost!
@@ -86,6 +106,8 @@ Environment configuration is passed to services through the launch file
 which run *srs_object_database* services. The file called
 *srs_db.launch* is stored in the folder *launch* of the
 *srs_object_database*.
+
+
 
 ```
 <launch>
@@ -111,53 +133,87 @@ which run *srs_object_database* services. The file called
 </launch>
 ```
 
+
+
 The configuration is controlled by the param element inside the launch
 file.
 
 Localhost set the ip addres of the postgreSQL server. For local
-installation use 'localhost'. ```
+installation use 'localhost'. 
+
+```
 <param name="instanceName" value="localhost" type="str"/>
 ```
 
+
+
 dbPort set the port on which the database server is listening. Default
-for postgres is *5432* ```
+for postgres is *5432* 
+
+```
 <param name="dbPort" value="5432" type="str"/>
 ```
 
+
+
 databaseName must be set to the name of database created before.
+
+
 ```
 <param name="databaseName" value="srs_template_database" type="str" />
 ```
 
+
+
 username must be set to the user which own read and write right on the
-*srs_database*. ```
+*srs_database*. 
+
+```
 <param name="userName" value="user" type="str" />
 ```
 
+
+
 pwd must provide the password for the user specified at the previous
-point. ```
+point. 
+
+```
 . createemptyDb.sh databaseName
-```0
+```
+
+0
 
 repoPath is used to set the root folder where the file repository is
 stored. Note that at the end **/ is added otherwise services will fail
-to return object data. ```
+to return object data. 
+
+```
 . createemptyDb.sh databaseName
-```1**
+```
+
+1**
 
 Once this parameters are correctly configured the services provided by
 *srs_object_database* are ready to be run.
 
+
+
 ```
 . createemptyDb.sh databaseName
-```2
+```
+
+2
 
 ## Usage/Examples
 
 In order to run all ros services for both insert and retrieval execut
-the launch file. ```
+the launch file. 
+
+```
 . createemptyDb.sh databaseName
-```3
+```
+
+3
 
 ### clientTest
 
@@ -168,16 +224,24 @@ data. It is executed with *rosrun*. Is mandatory to execute the
 *srs_object_database* launch file to start all services before running
 the client.
 
+
+
 ```
 . createemptyDb.sh databaseName
-```4
+```
+
+4
 
 After running the client it will be possible to specify an action to
 take:
 
+
+
 ```
 . createemptyDb.sh databaseName
-```5
+```
+
+5
 
 The selection of the action should be consequence of the input
 parameters.
@@ -194,9 +258,13 @@ input:
 Search all objects:
 
 Providing all as parameter allows retrieve all object currently stored
-in the sql database. ```
+in the sql database. 
+
+```
 . createemptyDb.sh databaseName
-```6
+```
+
+6
 
 Search by object id:
 
@@ -204,21 +272,33 @@ It is possible to specify id as key search and provide a numeric object
 id to verify if an object with a give id is present in database and in
 case retrieve its infomation.
 
+
+
 ```
 . createemptyDb.sh databaseName
-```7
+```
+
+7
 
 Search by object category: It is possible to search all object which
 have a specified class. Use class as first parameter and provide an
-object_class such as glass. ```
+object_class such as glass. 
+
+```
 . createemptyDb.sh databaseName
-```8
+```
+
+8
 
 Search by object name: It is possible to search a specific object using
 its name. Use nameas first parameter and provide an object_name such as
-"milkBox1". ```
+"milkBox1". 
+
+```
 . createemptyDb.sh databaseName
-```9
+```
+
+9
 
 ##### how to force retrieve of data with clientTest without user interaction
 
@@ -226,18 +306,26 @@ Adding the key 'retrieve' after the previous command will allow the
 client to direclty retrieve object data, the general data, without
 requiring additional user interaction.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```0
+```
+
+0
 
 #### how to retrieve data with clientTest
 
 after an object as been retrieved the clienTest allow to return the data
 using the command line:
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```1
+```
+
+1
 
 Selecting 3, for example, will allow to retrieve, if available, image of
 the current object retrieved by the search.
@@ -256,9 +344,13 @@ git repository
 *[ git file share repository](https://github.com/ipa320/srs_data )* with
 the data files. The input file is
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```2
+```
+
+2
 
 Each attribute will be insert in database in the respective table. For
 object such as: urdf,image,grasp,mesh,pcl or surf. It mush be provided
@@ -269,9 +361,13 @@ inside the appropiate folder of the file repository. One example is
 *testInputInsert.txt* which allow to insert a new object simply calling
 the clientTest:
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```3
+```
+
+3
 
 In the output you will be able to see which id is assigned to this new
 object.
@@ -282,9 +378,13 @@ Adding the key 'insert' after the previous command will allow the
 client to direclty insert object and its data without requiring
 additional user interaction.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```4
+```
+
+4
 
 #### how to update data with clientTest
 
@@ -302,9 +402,13 @@ Adding the key 'update' after the previous command will allow the
 client to direclty update object and its data without requiring
 additional user interaction.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```5
+```
+
+5
 
 ### general usage of srs_object_database services
 
@@ -318,9 +422,13 @@ To insert and update object data the service *"InsertObject"* should
 be used. Note that you should provide a type of mesh (usually iv.txt)
 and an Image type such as: icon,top-view,front-view.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```6
+```
+
+6
 
 #### Getting Objects data
 
@@ -328,9 +436,13 @@ To retrieve data a dispacher service can be invoked. It has some boolean
 flag which must be put to 1 to indicate the data that should be
 retrieved if available for the provided objects ids.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```7
+```
+
+7
 
 #### Getting objects id of objects
 
@@ -341,9 +453,13 @@ specified as type: all, to retrieve all objects id in database, name, to
 search a specific object based on its name, class, to search ids of
 object using their class.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```8
+```
+
+8
 
 This service will return general information for the objects retrieved,
 such as name, description, size.
@@ -360,9 +476,13 @@ of the image to be retrieved for the object id provided in the request
 message. It works like a filter to select, for instance, only icon
 image.
 
+
+
 ```
 . createemptyDb.sh databaseName srs_user
-```9
+```
+
+9
 
 #### Managing object category
 
@@ -370,9 +490,13 @@ The database allow management of knowledge category associated to an
 object. The category could be managed through services or clientTest
 with the following command line:
 
+
+
 ```
 . resetDatabase.sh databaseName
-```0
+```
+
+0
 
 The key 'category' tells the client to enter a submenu where it is
 possible to query database for the existing category, insert new

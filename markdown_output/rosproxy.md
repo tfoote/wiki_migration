@@ -30,6 +30,8 @@ on the current ROS master.
 
 ## Nodes
 
+
+
 ```clearsilver
  name = proxy
  desc = The `proxy` node can proxy service calls and subscriptions, which is useful when traversing firewalls or other configurations where you wish to limit access to another ROS graph. NOTE: the `proxy` only talks to the [[Master|master]] on the ''internal'' side. In order to enable the `proxy` to work with multiple external graphs, the `register.py` script should be used to register it with other masters.
@@ -55,3 +57,5 @@ on the current ROS master.
 
  }
 ```
+
+

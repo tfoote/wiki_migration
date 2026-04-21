@@ -1,5 +1,3 @@
-<<GitHubIssues(jstnhuang/robot_markers)>>
-
 ## Overview
 
 `robot_markers` is a library for creating
@@ -20,6 +18,8 @@ from a URDF.
 
 First, create a `Builder` for a given URDF:
 
+
+
 ```cplusplus
 #include "robot_markers/builder.h"
 #include "ros/ros.h"
@@ -32,9 +32,13 @@ robot_markers::Builder builder(model);
 builder.Init();
 ```
 
+
+
 There are a variety of configuration options you can set before
 generating the markers (pose, color, etc.). You should always specify a
 namespace and a frame ID.
+
+
 
 ```cplusplus
 builder.SetNamespace("robot");
@@ -47,9 +51,13 @@ pose.orientation.z = -0.38268343;
 builder.SetPose(pose);
 ```
 
+
+
 A notable feature of `Builder` is the ability to set the joint angles
 of the robot. To do so, pass in a map that gives the joint angles for a
 set of joint names. `Builder` does not check joint angle limits.
+
+
 
 ```cplusplus
 #include <map>
@@ -61,8 +69,12 @@ joint_positions["head_tilt_joint"] = 0.5;
 builder.SetJointPositions(joint_positions);
 ```
 
+
+
 Once you have configured the visualization, call `Builder::Build`,
 passing in a marker array to append the robot markers to.
+
+
 
 ```cplusplus
 ros::Publisher marker_arr_pub =
@@ -72,7 +84,11 @@ builder.Build(&robot1);
 marker_arr_pub.publish(robot1);
 ```
 
+
+
 Here is a full example, available as a demo file.
+
+
 
 ```cplusplus
 #include <map>
@@ -128,3 +144,5 @@ int main(int argc, char** argv) {
   return 0;
 }
 ```
+
+

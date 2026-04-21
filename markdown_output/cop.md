@@ -30,6 +30,8 @@ Descriptors on start up
 
 An example might look like:
 
+
+
 ```
 <?xml version="1.0" encoding="ISO-8859-1"?>
   <config>
@@ -49,11 +51,15 @@ An example might look like:
   </config>
 ```
 
+
+
 # Using the /cop/in Service
 
 The main functionality of cop can be used by calling the service at
 /\[cop\]/in It is of type vision_srvs/cop_call which looks like this
-(rossrv show cop_call): ```
+(rossrv show cop_call): 
+
+```
 string outputtopic
 string[] object_classes
 uint64[] object_ids
@@ -65,6 +71,8 @@ vision_msgs/apriori_position[] list_of_poses
 ---
 uint64 perception_primitive
 ```
+
+
 
 The parameter *outputtopic* specifies the topic on which the answers are
 expected. This topic will be advertised by cop, and cop will wait a

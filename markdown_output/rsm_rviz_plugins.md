@@ -37,6 +37,8 @@ following changes occurs in the waypoint array:
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = waypointFollowingVisualizationNode
@@ -48,3 +50,5 @@ node.0 {
   }
 }
 ```
+
+

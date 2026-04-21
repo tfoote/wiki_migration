@@ -10,11 +10,15 @@
 check that it is working before uploading for real)
 
 3\. Make a launch file to remap raw_stereo_throttled from your bag file
-to raw_stereo: ```
+to raw_stereo: 
+
+```
 <node pkg="rosrecord" type="rosplay" args="<absolute path to your bag file>" output="screen">
 <remap from="/stereo/raw_stereo_throttled" to-"/raw_stereo" />
 </node>
 ```
+
+
 
 ## Video
 

@@ -1,3 +1,5 @@
+
+
 ```clearsilver
 name = slam_backend
 desc = The SLAM Backend provides an interface to graph construction and optimization tools. It essentially forms the map of our SLAM system and uses pose estimates from the visual odometry to form the nodes of a graph. It also corrects drift in the VO estimates when the Place Recognition node flags a match between views.
@@ -43,6 +45,8 @@ param {
   3.default = 4
 }
 ```
+
+
 
 ## Note about g2o compatibility
 

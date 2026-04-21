@@ -8,6 +8,8 @@ validity then feeds trajectory generator with received points.
 
 ### Properties
 
+
+
 ```clearsilver
 param {
   no_header= True
@@ -20,9 +22,13 @@ param {
 }
 ```
 
+
+
 ### Action interface
 
 #### Input ports
+
+
 
 ```clearsilver
 sub {
@@ -36,7 +42,11 @@ sub {
 }
 ```
 
+
+
 #### Output ports
+
+
 
 ```clearsilver
 pub {
@@ -53,9 +63,13 @@ pub {
 }
 ```
 
+
+
 ### Trajectory interface
 
 #### Input ports
+
+
 
 ```clearsilver
 sub {
@@ -66,7 +80,11 @@ sub {
 }
 ```
 
+
+
 #### Output ports
+
+
 
 ```clearsilver
 pub {
@@ -76,3 +94,5 @@ pub {
   0.desc=New point of trajectory for trajectory generator.
 }
 ```
+
+

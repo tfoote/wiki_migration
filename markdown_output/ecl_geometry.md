@@ -2,6 +2,8 @@
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/geometry.hpp>
 
@@ -29,6 +31,8 @@ using ecl::TensionSpline;
 // Transforms
 using ecl::Pose2D;
 ```
+
+
 
 If outside ros, you will also need to link to *ecl_geometry*.
 

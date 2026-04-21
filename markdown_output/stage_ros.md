@@ -15,9 +15,13 @@ least one laser/camera and position model are not found, stageros exits.
 
 Usage
 
+
+
 ```
 rosrun stage_ros stageros [-g runs headless] <world> [standard ROS args]
-``` Parameters:
+```
+
+ Parameters:
 
 -   world : The Stage .world file to load.
 -   -g : If set, this option will run stage as "headless," no GUI will

@@ -10,18 +10,28 @@ will convert the UART to USB for communicating with a computer.
 
 ## Running the example
 
+
+
 ```
 roslaunch rr_openrover_driver example.launch
 ```
 
+
+
 ## Reading Battery State of Charge
+
+
 
 ```
 rostopic echo /rr_openrover_driver/r_slow_rate_data/reg_robot_rel_soc_a
 rostopic echo /rr_openrover_driver/r_slow_rate_data/reg_robot_rel_soc_b
 ```
 
+
+
 ## Sending Motors Commands
+
+
 
 ```
 managed_pub = rospy.Publisher('/cmd_vel/managed', TwistStamped, queue_size=1)
@@ -33,11 +43,15 @@ managed_control_input.twist.angular.z=0.5
 managed_pub.publish(managed_control_input)
 ```
 
+
+
 ### Fusing Encoders with other sensors
 
 We recommend using the robot_localization to fuse
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -228,13 +242,21 @@ desc= Connects to the InOrbit server to push openrover_driver data.
 }
 ```
 
+
+
 ## Running
 
 Example using rosrun
 
+
+
 ```
 rosrun rr_openrover_driver openrover_driver_node
-``` Example launch file
+```
+
+ Example launch file
+
+
 
 ```
 <launch>
@@ -258,6 +280,8 @@ rosrun rr_openrover_driver openrover_driver_node
     </node>
 </launch>slow_rate_pub
 ```
+
+
 
 ## Release Notes
 

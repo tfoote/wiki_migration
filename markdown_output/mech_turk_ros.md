@@ -13,6 +13,8 @@ provide:
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=image_snapper
@@ -135,6 +137,8 @@ param{
 }
 }
 ```
+
+
 
 ## Image UID
 

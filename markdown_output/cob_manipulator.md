@@ -7,6 +7,10 @@ for simulation. To bringup a Care-O-bot see [cob_bringup](cob_bringup).
 
 ## Usage/Examples
 
-For starting the ik solver ```
+For starting the ik solver 
+
+```
 roslaunch cob_manipulator kdl_solver.launch
 ```
+
+

@@ -8,6 +8,8 @@ goal immediately).
 
 ### Input ports
 
+
+
 ```clearsilver
 param {
   no_header= True
@@ -17,7 +19,11 @@ param {
 }
 ```
 
+
+
 ### Output ports
+
+
 
 ```clearsilver
 param {
@@ -32,7 +38,11 @@ param {
 }
 ```
 
+
+
 ### Properties
+
+
 
 ```clearsilver
 param {
@@ -42,3 +52,5 @@ param {
   0.desc=Number of joints that will be controlled by fake_servo.
 }
 ```
+
+

@@ -24,9 +24,13 @@ Each is described in details:
 
 ### GUI
 
+
+
 ```wiki
 The GUI functionality has been split out of the main `joint_state_publisher` package into its own package called `joint_state_publisher_gui`.  The old `use_gui` parameter to `joint_state_publisher` is removed.  For packages transitioning before this change, `joint_state_publisher_gui` should be added as an `<exec_depend>` to package.xml and launch files should be updated to launch `joint_state_publisher_gui` instead of using `joint_state_publisher` with `use_gui` parameter.
 ```
+
+
 
 If GUI is present, the package displays the joint positions in a window
 as sliders. Each slider is set to the joints' min and max limits,
@@ -60,6 +64,8 @@ The default value is zero. If zero is not a permissible value
 use the `zeros` parameter. An example YAML file is seen below.
 
 ## Node API
+
+
 
 ```clearsilver
 name = joint_state_publisher
@@ -113,6 +119,8 @@ param {
 }
 ```
 
+
+
 ### Example YAML file for dependent_joints and zeros parameters
 
 The following YAML snippets show examples of how to set the
@@ -120,13 +128,21 @@ The following YAML snippets show examples of how to set the
 These can be loaded to the parameter server using the
 [<rosparam> tag](roslaunch/XML/rosparam) in a launch file.
 
+
+
 ```
 dependent_joints:
   joint_D: {parent: joint_A, factor: 3 }
   joint_E: {parent: joint_B }
   joint_F: {parent: joint_C, factor: -1 }
-``` ```
+```
+
+ 
+
+```
 zeros:
   joint_A: 1.57
   joint_B: 0.785
 ```
+
+

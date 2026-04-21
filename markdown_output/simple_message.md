@@ -59,5 +59,3 @@ at !GitHub. See the readme for information on how to install it.
 [Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
-
-<<GitHubIssues(ros-industrial/industrial_core)>>

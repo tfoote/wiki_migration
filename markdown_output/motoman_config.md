@@ -1,7 +1,11 @@
+
+
 ```wiki
 '''Deprecated in Hydro'''
 This package is deprecated in hydro and will be removed in the next release.  The config and meshes files have been moved to robot model specific support packages within the motoman meta-package.
 ```
+
+
 
 ## Overview
 
@@ -17,5 +21,3 @@ available tutorials.
 [Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Report a Bug
-
-<<GitHubIssues(ros-industrial/motoman)>>

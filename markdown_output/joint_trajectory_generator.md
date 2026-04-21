@@ -1,6 +1,8 @@
 ![](attachment:trapezoid.png) Image source: Herman Bruyninckx, Motion
 Interpolation
 
+
+
 ```clearsilver
 node.0 {
  name = joint_trajectory_generator
@@ -36,3 +38,5 @@ EOM
   2.desc = The [[urdf]] robot description. This is used to know if a joint is continuous or rotational.
 }
 ```
+
+

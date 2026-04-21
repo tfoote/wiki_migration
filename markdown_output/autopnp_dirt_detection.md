@@ -21,12 +21,20 @@ algorithm on a different robot.
 
 The usage of the dirt detection system is quite simple. If you are
 working with a Care-O-bot 3, start the robot, launch the bringup scripts
-and the localization, e.g. with ```
+and the localization, e.g. with 
+
+```
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch
-``` and launch the
-dirt detection software with ```
+```
+
+ and launch the
+dirt detection software with 
+
+```
 roslaunch autopnp_dirt_detection dirt_detection.launch
-``` If you want to
+```
+
+ If you want to
 detect dirt on a bag-file data stream, start the dirt detection software
 and then play the bag-file.
 
@@ -48,6 +56,8 @@ package for different purposes:
     [Recording and Labeling Your Own Bag-Files](autopnp_dirt_detection#Recording_and_Labeling_Your_Own_Bag-Files).
 -   Database testing is explained in Section
     [Database Testing](autopnp_dirt_detection#Database_Testing)
+
+
 
 ```clearsilver
 name = ROS API
@@ -213,6 +223,8 @@ pub {
 }
 ```
 
+
+
 ## Dirt Dataset
 
 In order to conduct a proper evaluation of the dirt detection algorithm,
@@ -310,19 +322,31 @@ Care-O-bot, start the robot, launch cob_bringup as well as a mapping
 tool like cob_navigation_global 2dnav_ros_dwa.launch in case you already
 have a map of your environment or cob_navigation_slam
 2dnav_ros_dwa.launch if you do not have a map. Then record the following
-topics ```
+topics 
+
+```
 rosbag record /tf /cam3d/rgb/points /cam3d/rgb/image_color /map
-``` The `/map` topic does not need to be
+```
+
+ The `/map` topic does not need to be
 recorded if you do not aspire to display the results in the original
 map.
 
 After recording the bag-file, start the dirt detection software with
+
+
 ```
 roslaunch autopnp_dirt_detection dirt_detection_labeling.launch
-``` and then play the recorded bag-file with
+```
+
+ and then play the recorded bag-file with
+
+
 ```
 rosbag play --clock -l <name-of-your-file>
-``` You can also use the -r <number> option to
+```
+
+ You can also use the -r <number> option to
 play the bag-file at a different speed. After a few seconds, the dirt
 detection software will open two images showing the normal view onto the
 scene as well as the warped image. Click into one of the images to move
@@ -356,9 +380,13 @@ mapping part, please open rviz while your bag-file is playing and
 display the colored point cloud. Estimate the x- and y-coordinates of
 the center of your recordings approximately with the grid of rviz and
 put those numbers separated by a whitespace after the file name. A valid
-entry in `dirt_database.txt` looks like ```
+entry in `dirt_database.txt` looks like 
+
+```
 filename-without-ending x-coordinate y-coordinate
 ```
+
+
 
 ## Database Testing
 
@@ -389,9 +417,13 @@ the index file dirt_database.txt. You need to put the appropriate path
 to your storage location of the bag-files from the dirt dataset in the
 first line.
 
-Then start the database test with ```
+Then start the database test with 
+
+```
 roslaunch autopnp_dirt_detection dirt_detection_dbtest_<experiment_name>.launch
-``` Depending on
+```
+
+ Depending on
 the speed of your hard disc and processor your computer will now compute
 for some hours or up to a day. The results will be written into
 `autopnp_dirt_detection/common/files/results/<experiment_name>`.

@@ -15,6 +15,8 @@ There are two ways of creating a layoutserver_node, either with a single
 file, or a path and a list of files. For more information on loading
 layout files to devices, check out the
 [TouchOSC Basics Tutorial](rososc_tutorials/Tutorials/TouchOSC Basics).
+
+
 ```clearsilver
 name = layoutserver_node
 desc = ROS wrapper to the pytouchosc layout server
@@ -42,9 +44,13 @@ param {
 }
 ```
 
+
+
 ### Example Launch File for Single Layout Server
 
 This will create a single layout server on port 9658.
+
+
 ```
 <launch>
     <param name="layout_file" 
@@ -52,6 +58,8 @@ This will create a single layout server on port 9658.
     <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
 </launch>
 ```
+
+
 
 ### Example Launch File for Multiple Layouts
 
@@ -62,7 +70,9 @@ second layout server hosting
 
 In this case, two "Found Hosts" will appear in the "Add Layout"
 screen of TouchOSC, with the name of their respective layouts as a
-listing. ```
+listing. 
+
+```
 <launch>
     <param name="layout_path" value="$(find rososc_tutorials)/layouts"/>
     <rosparam param="layouts">
@@ -71,6 +81,8 @@ listing. ```
     <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
 </launch>
 ```
+
+
 
 ## Helper Scripts
 
@@ -81,11 +93,17 @@ there are a few scripts to help interact with TouchOSC layouts.
 
 A command line (ROS not needed) utility to spawn a layout server.
 
-Example: ```
+Example: 
+
+```
 rosrun pytouchosc layoutserver.py ~/teleop.touchosc
 ```
 
-Available command line options: ```
+
+
+Available command line options: 
+
+```
 Usage: layoutserver.py [options] /path/to/layout.touchosc
 
 Options:
@@ -95,12 +113,16 @@ Options:
   --log=LOGGING         Set logging level
 ```
 
+
+
 ### inspectLayout
 
 A command line utility for inspecting the tabpages and controls in a
 given layout file.
 
-Example: ```
+Example: 
+
+```
 rosrun pytouchosc inspectLayout -tc slider-ipad.touchosc 
 ************************************************************
 Layout Filename               slider-ipad.touchosc          
@@ -115,7 +137,11 @@ Number of Tabpages            1
 /1/multifader                 MultiDial
 ```
 
-Usage: ```
+
+
+Usage: 
+
+```
 rosrun pytouchosc inspectLayout --help
 Usage: inspectLayout [options]
 
@@ -124,6 +150,8 @@ Options:
   -t          List tabpages in this layout
   -c          List controls addresses and types in this layout
 ```
+
+
 
 ## Code API
 

@@ -23,9 +23,13 @@ development in ROS. In fact, some of the functionality they provide is
 very similar.
 
 There is only one line of `roslib` you need to know, which exists for
-bootstrapping reasons:```
+bootstrapping reasons:
+
+```
 import roslib; roslib.load_manifest('YOUR_PACKAGE_NAME')
 ```
+
+
 
 Otherwise, the simple answer is **use [rospy](rospy)**. Unless you're
 more familiar with ROS Python development, `rospy` should provide you

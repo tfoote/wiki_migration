@@ -8,6 +8,8 @@ TF tree to get this information. An example use case is for web widgets.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = robot_pose_publisher
@@ -20,15 +22,21 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 ### Startup
 
 To run the node, ensure that a valid transform exists between the
 `/base_link` frame and the `/map` frame (e.g., from a navigation
-node), and run the following: ```
+node), and run the following: 
+
+```
 rosrun robot_pose_publisher robot_pose_publisher
 ```
+
+
 
 ## Support
 

@@ -29,6 +29,8 @@ tutorial:**
 
 ## ROS API
 
+
+
 ```clearsilver
 name = tango
 desc = This node is the core of the application, it is responsible for streaming Tango data to ROS.
@@ -260,6 +262,8 @@ prov_tf {
 }
 ```
 
+
+
 Note that all image topics are published via
 [image_transport](image_transport). Therefore, for each image topic, a
 compressed version of the image is available together with its
@@ -269,5 +273,3 @@ Also note that the service `tango/connect` seems to not work properly
 on Tango Tablet Development Kit.
 
 ## Report a bug
-
-<<GitHubIssues(Intermodalics/tango_ros)>>

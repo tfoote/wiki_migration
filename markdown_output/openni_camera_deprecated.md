@@ -151,17 +151,25 @@ and `openni_launch`:
 ### Diamondback/Electric to Fuerte (deprecated API)
 
 For users of the deprecated API, the only change is the package name.
-Instead of: ```
+Instead of: 
+
+```
 # Diamondback, Electric
 rosrun openni_camera openni_node
 roslaunch openni_camera openni_node.launch
 ```
 
-do ```
+
+
+do 
+
+```
 # Fuerte
 rosrun openni_camera_deprecated openni_node
 roslaunch openni_camera_deprecated openni_node.launch
 ```
+
+
 
 The node(let) ROS API remains unchanged. The nodelet can still be loaded
 by the same name, `openni_camera/OpenNINodelet`.
@@ -171,6 +179,8 @@ packages to use the stable [openni_camera](openni_camera) and
 [openni_launch](openni_launch) APIs.
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -279,6 +289,8 @@ node.1 {
   desc = Nodelet version of the deprecated OpenNI driver. Has the same ROS API as `openni_node` above.
 }
 ```
+
+
 
 ## Launch files
 

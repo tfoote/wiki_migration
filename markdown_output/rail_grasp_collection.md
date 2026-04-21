@@ -9,6 +9,8 @@ Demonstrations are stored in a grasp database, handled by
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = rail_grasp_collection
@@ -141,16 +143,22 @@ node.1 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `rail_pick_and_place` package, you can install from
-source with the following commands: . ```shell
+source with the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_pick_and_place.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -160,17 +168,29 @@ rail_grasp_retriever node individually, and for launching both nodes
 together. These can be launched with the following commands,
 respectively:
 
-. ```
+. 
+
+```
 roslaunch rail_grasp_collection rail_grasp_collection.launch
 ```
 
-. ```
+
+
+. 
+
+```
 roslaunch rail_grasp_collection rail_grasp_retriever.launch
 ```
 
-. ```
+
+
+. 
+
+```
 roslaunch rail_grasp_collection rail_grasp_collection_and_retriever.launch
 ```
+
+
 
 Grasp collection can also be run and executed with an rviz plugin found
 in [rail_pick_and_place_tools](rail_pick_and_place_tools).

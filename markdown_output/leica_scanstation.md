@@ -73,47 +73,73 @@ documentation.
 [Setup](https://github.com/fada-catec/leica_scanstation/tree/master/leica_scanstation_ros#set-up)
 your workspace.
 
-2\. Execute program ```
+2\. Execute program 
+
+```
 roslaunch leica_scanstation_ros start.launch
 ```
 
+
+
 3\. Use [ROS services](#anchor_services) to control, move and start
 scanning on the Scanstation. E.g: Try to move your pan and tilt
+
+
 ```
 rosservice call /leica/move 3.141 0.785
 ```
 
+
+
 ### In Ubuntu (using wine)
 
-1\. Create a workspace and clone this repo ```
+1\. Create a workspace and clone this repo 
+
+```
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
  git clone https://github.com/fada-catec/leica_scanstation
 ```
 
+
+
 2\. Compile (be careful: package leica_scanstation_ros is meant to be
-compiled on Windows) ```
+compiled on Windows) 
+
+```
 cd ~/catkin_ws
  catkin_make -DCATKIN_BLACKLIST_PACKAGES="leica_scanstation_ros"
 ```
 
+
+
 3\. To be able to execute the program with wine, you need to export it
 first. Read
 [how to export program](https://github.com/fada-catec/leica_scanstation/blob/master/leica_scanstation_ros/README.md#export-program)
-to get more information. ```
+to get more information. 
+
+```
 roscore
  cd ~/catkin_ws/src/leica_scanstation/leica_scanstation_ros/export
  wineconsole leica_scanstation_ros_node.exe
 ```
 
+
+
 4\. Use [ROS services](#anchor_services) to control, move and start
 scanning on the Scanstation. E.g: Try to move your pan and tilt
+
+
 ```
 rosservice call /leica/move 3.141 0.785
 ```
 
+
+
 ## ROS API
 
 ### Topics
+
+
 
 ```clearsilver
 pub {
@@ -131,7 +157,11 @@ pub {
 }
 ```
 
+
+
 ### Services
+
+
 
 ```clearsilver
 srv{
@@ -193,7 +223,11 @@ srv{
    }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 param {
@@ -205,6 +239,8 @@ param {
    default = "leica_scanstation_utils/pointclouds"
    }
 ```
+
+
 
 ## Acknowledgement
 

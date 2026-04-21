@@ -1,10 +1,14 @@
 See <http://rc-visard.com> and <http://doc.rc-visard.com> for more
 details.
 
+
+
 ```wiki
 '''This package is not developed anymore'''. A new clients is available in the
 [[rc_reason_clients]] package.
 ```
+
+
 
 ## Overview
 
@@ -26,9 +30,13 @@ For detail description check the following link:
 ```{=html}
 <!-- -->
 ```
--   serial number, e.g. `02912345`. ```wiki
+-   serial number, e.g. `02912345`. 
+
+```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://github.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -70,13 +78,15 @@ The following services are offered by the node:
 
 Using command line parameters:
 
+
+
 ```bash
 rosrun rc_silhouettematch_client rc_silhouettematch_client _device:=:<serial_number>
 ```
 
-## Report a Bug
 
-<<GitHubIssues(roboception/rc_visard_ros)>>
+
+## Report a Bug
 
 ## Acknowledgements
 

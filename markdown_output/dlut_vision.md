@@ -13,13 +13,19 @@ Point Grey flyCapture SDK
 
 ## Usage
 
+
+
 ```shell
 rosrun dlut_vision pgr_camera [video_mode] [frame_rate]
-``` \[video_mode\] : 1280x960 or 640x480
+```
+
+ \[video_mode\] : 1280x960 or 640x480
 
 \[frame_rate\] : 15 or 7.5
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -36,6 +42,8 @@ desc = Publish the image information.
 }
 }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

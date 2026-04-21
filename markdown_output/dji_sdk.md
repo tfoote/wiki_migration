@@ -16,13 +16,19 @@ will need to upgrade to the latest firmware (1.1.0410) to work with
 Onboard SDK and to download the latest DJI Assistant 2 (1.1.8) for
 simulation.
 
+
+
 ```wiki
 '''ATTENTION:'''
 
 Since version 3.3, the `dji_sdk` ROS package starts to follow the [[http://www.ros.org/reps/rep-0103.html|REP103]] convention on coordinate frame and units for the telemetry data. In the header of most of the telemetry data such as imu and attitude, the `frame_id` is either `"body_FLU"` or `ground_ENU`, to make it explicit. The flight control signals subscribed by the `dji_sdk` node are also supposed to be `FLU` for body frame or `ENU` for ground frame. The gimbal related data is currently NOT fully following the convention yet.
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -510,6 +516,8 @@ EOM
 }
 }
 ```
+
+
 
 #### Details on flight control setpoint
 

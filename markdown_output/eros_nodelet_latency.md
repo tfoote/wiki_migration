@@ -18,9 +18,13 @@ this situation, the transport communication medium passes the BigObject
 via pointers, so we can expect to see very low latencies being generated
 by this.
 
+
+
 ```
 roslaunch eros_nodelet_latency internal.launch
 ```
+
+
 
 Upon execution, you should see the average latency continually being
 communicated to standard output. Ctrl-c to terminate the application.

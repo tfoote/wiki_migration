@@ -7,6 +7,8 @@ Gazebo plugins to support simulation of Unmanned Surface Vehicles
 
 ## Available Plugins
 
+
+
 ```clearsilver
 node.0 {
  name = usv_gazebo_dynamics_plugin
@@ -105,6 +107,8 @@ node.0 {
   22.desc = Transverse (along y-axis) metacentric height [m].  Results in a stabilizing righting moment in the roll direction and dictates the natural frequency in roll.
   22.default = 0.4
 ```
+
+
 
 ## Xacro Files
 

@@ -37,6 +37,8 @@ terminal.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = clockServer
 desc = This node synchronize time between V-rep simulation time and ROS time. It publish messages from special V-rep's topic "/vrep/info" into ROS dedicated clock topic [[Clock|"/clock"]]. V-rep topic publish special custom type of messages therefore it is needed to build vrep_common messages. More in Dependencies section.  
@@ -50,7 +52,11 @@ pub {
   0.type = rosgraph_msgs/Clock
   0.desc = more info [[Clock|here]]
   }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = accelerometer
 desc = Reads data from V-rep accelerometer sensor and publish it to ROS ecosystem
 sub {
@@ -63,6 +69,10 @@ pub {
   0.type = geometry_msgs/Vector3Stamped
   0.desc = publish stamped vector of accelerations in format [X axis ,Y axis ,Z axis]
 ```
+
+
+
+
 ```clearsilver
 name = gyroscope
 desc = Reads data from V-rep gyroscope sensor and publish it to ROS ecosystem
@@ -77,6 +87,10 @@ pub {
   0.desc = publish stamped vector of angular velocities around each axis in format [X axis ,Y axis ,Z axis]
 ```
 
+
+
+
+
 ```clearsilver
 name = bumper
 desc = Reads data from all V-rep bumper sensor and publish it to ROS ecosystem. It uses parameter "vrep_index" to identify certain robot. 
@@ -89,7 +103,11 @@ pub {
   0.name = sensor0/Range
   0.type = sensor_msgs/Range
   0.desc = for each bumper sensor is created publisher in form sensor[ID of sensor]/Range
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = ultrasonic
 desc = Reads data from all V-rep bumper sensor and publish it to ROS ecosystem. It uses parameter "vrep_index" to identify certain robot. 
 sub {
@@ -102,6 +120,10 @@ pub {
   0.type = sensor_msgs/Range
   0.desc = for each  ultrasonic sensor is created publisher in form sensor[ID of sensor]/Range
 ```
+
+
+
+
 ```clearsilver
 name = laser
 desc = It uses parameter "vrep_index" to identify certain robot. 
@@ -115,6 +137,10 @@ pub {
   0.type = sensor_msgs/LaserScan
   0.desc = publish the laser scan received from V-rep.
 ```
+
+
+
+
 
 ```clearsilver
 name = rightMotor
@@ -135,7 +161,11 @@ pub {
   1.name = /vrep/i0_Pioneer_p3dx_rightMotor/setVel
   1.type = std_msgs/Float64
   1.desc = .
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = leftMotor
 desc = This node makes both way communication for left motor. It receives wheel velocity on topic setVel and sends it to V-rep topic /vrep/i0_Pioneer_p3dx_leftMotor/setVel. In other direction it receives Joint state from V-rep and publish it to getState topic in ROS. It uses parameter "vrep_index" to identify certain robot. 
 sub {
@@ -155,6 +185,8 @@ pub {
   1.type = std_msgs/Float64
   1.desc = .
 ```
+
+
 
 ## Parameters
 

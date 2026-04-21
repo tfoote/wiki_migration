@@ -66,13 +66,21 @@ above).
 2\. As the superuser, run the provided script for adding a udev rule for
 the wouse. (This assumes you are using a swiftpoint SM300, if this is
 not the case, you will need to write your own rule, using the provided
-script as a template). ```
+script as a template). 
+
+```
 roscd wouse/scripts/
 sudo ./setup.sh
-``` 3. Plug the wouse USB
-connector into the computer. Run: ```
+```
+
+ 3. Plug the wouse USB
+connector into the computer. Run: 
+
+```
 sudo cat /dev/wouse
-``` and move the
+```
+
+ and move the
 wouse against a surface (so that the mouse can sense movement). Garbage
 output should appear in the terminal.
 
@@ -104,9 +112,13 @@ Head Shaking, Head Nodding, and Wincing). Each action/expression will be
 printed to a terminal, and the user should perform that action or assume
 that expression for the duration it is displayed on the screen, before
 moving on to the next expression. This script can be run with:
+
+
 ```
 rosrun wouse train.py filename -l ### -d ##
 ```
+
+
 
 -   *filename* is the **required** filename in which to store collected
     data. This is a .csv file in *wouse/data*/
@@ -166,16 +178,24 @@ stronger guarantees on operation, and easily halt the robot if failures
 occur.
 
 To actually use the wouse with a PR2, **on the robot**, first run:
+
+
 ```
 rosrun wouse run_stop_server.py
 ```
 
+
+
 This will bring up the node which communicates with the power-board
 node, and is responsible for run-stopping the robot.
 
-Then, **on the machine with the wouse**, run: ```
+Then, **on the machine with the wouse**, run: 
+
+```
 roslaunch wouse wouse.launch
 ```
+
+
 
 This will launch both the local nodes. The *wouse.py* will read in the
 formatted training data from the specified pickle file, and trains an
@@ -244,9 +264,13 @@ power boards and resetting the motors.
 
 #### Desktop Launcher
 
-A python script is provided, ```
+A python script is provided, 
+
+```
 python ...???.../wouse/scripts/reset_wouse.py
-``` which will reset
+```
+
+ which will reset
 the power boards and motors.
 
 For easier access, a desktop launcher may be created to run

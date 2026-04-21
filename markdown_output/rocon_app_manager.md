@@ -27,6 +27,8 @@ the system that runs the app manager) to make a decision as to whether
 it wishes to assume control of the robot. Assuming control is managed by
 making a request to invite the robot.
 
+
+
 ```clearsilver
 srv{
   no_header=True
@@ -52,9 +54,13 @@ srv{
   }
 ```
 
+
+
 ### Controller Services
 
 These services are only flipped after an invitation has been made.
+
+
 
 ```clearsilver
 srv{
@@ -71,10 +77,14 @@ srv{
   }
 ```
 
+
+
 ## Standalone Mode Launcher parameters
 
 The list of arguments to use for standalone mode robot launcher.
 [rocon_app_manager/standalone.launch](https://github.com/robotics-in-concert/rocon_app_platform/blob/indigo/rocon_app_manager/launch/standalone.launch)
+
+
 
 ```
 Required Arguments:
@@ -105,10 +115,14 @@ Optional Arguments:
   zeroconf_port (default "11311")
 ```
 
+
+
 ## Concert Mode Launcher parameters
 
 The list of arguments to use for concert mode robot launcher.
 [rocon_app_manager/concert_client.launch](https://github.com/robotics-in-concert/rocon_app_platform/blob/indigo/rocon_app_manager/launch/standalone.launch)
+
+
 
 ```
 Required Arguments:
@@ -137,3 +151,5 @@ Optional Arguments:
   screen (default "false"): verbose output from running apps
   simulation (default "false"): if simulated robot
 ```
+
+

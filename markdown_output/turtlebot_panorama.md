@@ -5,6 +5,8 @@ To learn how to use this package, take a look to the
 
 ## ROS API
 
+
+
 ```clearsilver
 name = pano_app
 desc = Creates panorama pictures from stitched snapshots
@@ -84,3 +86,5 @@ param {
   5.default = /tmp/turtlebot_panorama.bag
 }
 ```
+
+

@@ -21,7 +21,9 @@ stacks:
 
 For a 3rdparty package that pulls code from an tarball (or equivalent
 downloadable file), you should use `download_unpack_build.mk`, like
-so: ```
+so: 
+
+```
 all: paramiko
 
 TARBALL = build/paramiko-1.7.5.tar.gz
@@ -41,7 +43,9 @@ clean:
         -rm -rf src $(SOURCE_DIR) paramiko
 wipe: clean
         -rm -rf build
-``` The following variables should be defined
+```
+
+ The following variables should be defined
 prior to including `download_unpack_build.mk`:
 
 -   `TARBALL`: local path to which the tarball should be downloaded;
@@ -79,7 +83,9 @@ Some packages that use `download_unpack_build.mk`:
 ## 3rdparty code, from SVN
 
 For a 3rdparty package that pulls code from an SVN repository, you
-should use `svn_checkout.mk`, like so: ```
+should use `svn_checkout.mk`, like so: 
+
+```
 all: installed
 
 SVN_DIR = build/stage-svn
@@ -99,7 +105,9 @@ clean:
 
 wipe: clean
         rm -rf $(SVN_DIR)
-``` The
+```
+
+ The
 following variables should be defined prior to including
 `svn_checkout.mk`:
 

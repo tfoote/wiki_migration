@@ -93,21 +93,37 @@ For simulation nothing is needed. Additional hardware components:
 
 To launch the kinematic chain as simulation, run
 
+
+
 ```
 roslauch asr_kinematic_chain_dome dome_mock.launch
-``` To launch the kinematic chain on real hardware,
+```
+
+ To launch the kinematic chain on real hardware,
 run
+
+
 
 ```
 roslauch asr_kinematic_chain_dome dome.launch
-``` or
+```
+
+ or
+
+
 
 ```
 rosrun asr_kinematic_chain_dome dome_with_fob.sh
-``` to use the Kinect, run one of the commands
+```
+
+ to use the Kinect, run one of the commands
 above and
+
+
 
 ```
 roslauch asr_kinematic_chain_dome transformation_publishers_for_kinect_left.launch
-``` start rviz and** enable the !RobotModel for
+```
+
+ start rviz and** enable the !RobotModel for
 visualization**

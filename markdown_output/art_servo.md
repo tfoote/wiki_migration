@@ -3,6 +3,8 @@
 This package contains ROS drivers for all servo devices on the ART
 autonomous vehicle.
 
+
+
 ```clearsilver
 node.0 {
  name = brake
@@ -41,19 +43,31 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Test the ART brake driver using `/dev/null`, publishing simulated
 `brake/state` messages and accepting `brake/cmd` messages.
+
+
 ```
 rosrun art_servo brake
 ```
 
+
+
 Run the brake driver with the real ART brake device. The port assignment
 gets saved in the ROS parameter server, persisting across future
-invocations until `roscore` stops. ```
+invocations until `roscore` stops. 
+
+```
 rosrun art_servo brake _port:=/dev/brake
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -82,21 +96,33 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Test the ART ioadr driver with `/dev/null`, publishing simulated
 `ioadr/state` messages and accepting `ioadr/cmd` messages.
+
+
 ```
 rosrun art_servo ioadr _port:=/dev/null
 ```
+
+
 
 Run the ART ioadr driver connected to the I/O board on serial port
 `/dev/ioadr`, publishing `ioadr/state` messages and accepting
 `ioadr/cmd` messages. The port assignment gets saved in the ROS
 parameter server, persisting across future invocations until `roscore`
-stops. ```
+stops. 
+
+```
 rosrun art_servo ioadr
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -125,21 +151,33 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Test the ART shifter driver with `/dev/null`, publishing simulated
 `shifter/state` messages and accepting `shifter/cmd` messages.
+
+
 ```
 rosrun art_servo ioadr shifter:=true _port:=/dev/null
 ```
+
+
 
 Run the ART shifter driver connected to the I/O board on serial port
 `/dev/shifter`, publishing `shifter/state` messages and accepting
 `shifter/cmd` messages. The port assignment gets saved in the ROS
 parameter server, persisting across future invocations until `roscore`
-stops. ```
+stops. 
+
+```
 rosrun art_servo ioadr shifter:=true
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -174,60 +212,102 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Test the ART steering driver using `/dev/null`, publishing simulated
 `steering/state` messages and accepting `steering/cmd` messages.
+
+
 ```
 rosrun art_servo brake
-```0
+```
+
+0
 
 Run the steering driver with the real ART steering controller. The port
 assignment gets saved in the ROS parameter server, persisting across
-future invocations until `roscore` stops. ```
-rosrun art_servo brake
-```1
+future invocations until `roscore` stops. 
 
 ```
 rosrun art_servo brake
-```2
+```
+
+1
+
+
+
+```
+rosrun art_servo brake
+```
+
+2
 
 #### Examples
 
 Test the ART throttle driver using `/dev/null`, publishing simulated
 `throttle/state` messages and accepting `throttle/cmd` messages.
+
+
 ```
 rosrun art_servo brake
-```3
+```
+
+3
 
 Run the throttle driver with the real ART throttle controller. The port
 assignment gets saved in the ROS parameter server, persisting across
-future invocations until `roscore` stops. ```
+future invocations until `roscore` stops. 
+
+```
 rosrun art_servo brake
-```4
+```
+
+4
 
 ## Utility Commands
 
+
+
 ```
 rosrun art_servo brake
-```5
+```
+
+5
 
 #### Usage
 
+
+
 ```
 rosrun art_servo brake
-```6
+```
+
+6
 
 #### Examples
 
-Shift the transmission into Neutral. ```
-rosrun art_servo brake
-```7
+Shift the transmission into Neutral. 
 
-Shift the transmission into Drive. ```
+```
 rosrun art_servo brake
-```8
+```
 
-Shift the transmission into Reverse. ```
+7
+
+Shift the transmission into Drive. 
+
+```
 rosrun art_servo brake
-```9
+```
+
+8
+
+Shift the transmission into Reverse. 
+
+```
+rosrun art_servo brake
+```
+
+9

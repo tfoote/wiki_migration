@@ -24,6 +24,8 @@ catkin_make at root of your catkin WORK SPACE.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
   name=FX8DrvierNodelet
@@ -145,6 +147,8 @@ node.1 {
 }
 ```
 
+
+
 ## Usage
 
 Start a nodelet manager process with an FX8DriverNodelet. The driver
@@ -152,40 +156,66 @@ publishes range image, IR image and point cloud. If other nodelets are
 loaded in the same nodelet manager process, those will have zero copy
 access to published topics.
 
+
+
 ```
 $ rosrun nodelet nodelet manager
 $ rosrun nodelet nodelet load infinisoleil/FX8DriverNodelet manager
 ```
 
+
+
 Start a driver nodelet with configuration of hostname.
+
+
 ```
 $ rosrun nodelet nodelet manager
 $ rosrun nodelet nodelet load infinisoleil/FX8DriverNodelet manager _hostname:=192.168.0.81
 ```
 
+
+
 ### Launch file
 
 This package has two launch files. fx8_drvier.launch runs a nodelet
 manager process and an FX8DriverNodelet. fx8_node.launch runs an
-fx8_node. ```
+fx8_node. 
+
+```
 $ roslaunch infinisoleil fx8_driver.launch
-``` ```
+```
+
+ 
+
+```
 $ roslaunch infinisoleil fx8_node.launch
 ```
 
+
+
 Start an fx8_node by roslaunch with configuration of hostname.
+
+
 ```
 $ roslaunch infinisoleil fx8_node.launch hostname:=192.168.0.81
 ```
 
+
+
 Start a driver nodelet by roslaunch without diagnostics.
+
+
 ```
 $ roslaunch infinisoleil fx8_driver.launch diagnostics_enable:=false
 ```
 
+
+
 fx8_driver.launch runs a nodelet manager and a driver nodelet. The
 nodelet manager can load another driver nodelet but drivers cannot
 connect to the same sensor. So, this case requires two sensors.
+
+
 ```
 <launch>
     <!-- launch fx8_driver.launch -->
@@ -203,21 +233,35 @@ connect to the same sensor. So, this case requires two sensors.
   </launch>
 ```
 
+
+
 ### Tests
 
 This package supports hertz test. Hertz test checks frame_cycle
 corresponded to specific measure_mode. For instance, run a test with
 default parameters.
 
+
+
 ```
 $ rostest infinisoleil fx8_driver_hertz.test
 ```
 
-Run a test with configuration of hostname. ```
+
+
+Run a test with configuration of hostname. 
+
+```
 $ rostest infinisoleil fx8_driver_hertz.test set_hostname:=192.168.0.81
 ```
 
-Run a test with configuration of measure mode. ```
+
+
+Run a test with configuration of measure mode. 
+
+```
 $ rosrun nodelet nodelet manager
 $ rosrun nodelet nodelet load infinisoleil/FX8DriverNodelet manager
-```0
+```
+
+0

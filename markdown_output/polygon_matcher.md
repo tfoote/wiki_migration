@@ -15,6 +15,8 @@ visited places (map vertices).
 
 ### Services
 
+
+
 ```clearsilver
 srv {
   0.name= ~<name>/simple_polygon_dissimilarity
@@ -22,3 +24,5 @@ srv {
   0.desc= Compute the distance of each point in polygon 1 to each point in polygon 2
 }
 ```
+
+

@@ -15,5 +15,3 @@ Here we provide some
 see more information.
 
 ## Report a Bug
-
-<<GitHubIssues(SawYer-Robotics/roch_robot)>>

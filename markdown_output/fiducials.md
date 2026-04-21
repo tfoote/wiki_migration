@@ -53,15 +53,23 @@ Raspberry Pi is available at:
 
 To install the fiducial software from binary packages:
 
+
+
 ```
 sudo apt-get install ros-kinetic-fiducials
 ```
 
+
+
 Fiducial markers can be generated with a command like this:
+
+
 
 ```
 rosrun aruco_detect create_markers.py 100 112 fiducials.pdf
-``` Once printed, they can be affixed to the
+```
+
+ Once printed, they can be affixed to the
 environment. They don't need to be placed in any particular pattern but
 the density should be such that two or more markers can be seen by the
 camera on the robot, so the map can be built. Placing them on the
@@ -77,15 +85,23 @@ saved.
 
 There are launch files for both of these nodes:
 
+
+
 ```
 roslaunch aruco_detect aruco_detect.launch
 roslaunch fiducial_slam fiducial_slam.launch
 ```
 
+
+
 A launch file is also provided to visualize the map in [rviz](rviz).
+
+
 ```
 roslaunch fiducial_slam fiducial_rviz.launch
 ```
+
+
 
 This will produce a display as shown below. The bottom left pane shows
 the current camera view. This is useful for determining if the fiducial
@@ -111,9 +127,13 @@ robot stationary.
 
 The map can be cleared with the following command:
 
+
+
 ```
 rosservice call /fiducial_slam/clear_map
 ```
+
+
 
 After this command is issued, the map can be auto-initialized, as
 described above.

@@ -12,16 +12,22 @@ region, the UAV center is located.
 ### Parameters
 
 Setup initial parameters in launch/CV_detection.launch
+
+
 ```
 <param name="initial_x" type="int" value="320" />
 <param name="initial_y" type="int" value="270" />
 <param name="initial_r" type="int" value="20" />
-``` The coordinate (initial_x, initial_y) is the
+```
+
+ The coordinate (initial_x, initial_y) is the
 center of the initial curve (circle) and the initial_r is the radius
 
 ### Usage
 
 #### Installation
+
+
 
 ```
 cd ~/catkin_ws/src
@@ -30,15 +36,21 @@ cd ..
 catkin_make
 ```
 
+
+
 #### Running
 
 Open a new consol and run a video node
 
 **Note:**run this video node under /catkin_ws directory Run detection
-node also in /catkin_ws directory ```
+node also in /catkin_ws directory 
+
+```
 source devel/setup.bash
 roslaunch cv_detection cv_detection.launch
 ```
+
+
 
 #### Result demo
 

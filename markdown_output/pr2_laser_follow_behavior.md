@@ -11,10 +11,14 @@
 ### Launching
 
 To quickly get up and running run the following commands:
+
+
 ```
 ssh pr2c1 #Replace with the address of your PR2's c1 computer.
 roslaunch pr2_laser_follow_behavior follow_pointer.launch 2> /dev/null
 ```
+
+
 
 Note that, by default, this launch script runs the map server with the
 map for our building, HSI, so replace the appropriate part of the launch
@@ -22,9 +26,13 @@ script for better navigation in your facility. However, this is not
 strictly necessary if you're not sending any navigation commands.
 
 On another computer with a running X server launch the GUI with:
+
+
 ```
 rosrun laser_interface user_interface_node.py
 ```
+
+
 
 ### User Interface
 

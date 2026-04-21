@@ -307,7 +307,9 @@ avoided and which collisions are OK. For example, during the lift
 operation (which is guaranteed to be in the "up" direction), we can
 ignore collisions between the object and the table.
 
-The motion of the arm for executing a grasp is: ```
+The motion of the arm for executing a grasp is: 
+
+```
 starting_arm_position
                |
                | <-(motion planner)
@@ -336,6 +338,8 @@ starting_arm_position
                V
     some desired arm position
 ```
+
+
 
 ![](attachment:grasp1.png)
 

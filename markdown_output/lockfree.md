@@ -18,6 +18,8 @@ wait-free.
 
 ### Example
 
+
+
 ```cplusplus
 // Create a free list with 100 128-byte blocks
 FreeList free_list(128, 100);
@@ -31,6 +33,8 @@ if (mem)
 }
 ```
 
+
+
 ## ObjectPool<T>
 
 While the `FreeList` class simply provides allocation of
@@ -42,6 +46,8 @@ allocate either `boost::shared_ptr`s or bare pointers, depending on
 your needs. `ObjectPool` is lock-free but not wait-free.
 
 ### Example
+
+
 
 ```cplusplus
 struct Foo
@@ -70,3 +76,5 @@ if (inst2)
   pool.freeBare(inst2);
 }
 ```
+
+

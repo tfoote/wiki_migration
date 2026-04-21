@@ -12,6 +12,8 @@ particle cloud, and transform data of the form published by
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=fake_localization
@@ -64,3 +66,5 @@ node.0 {
     0.desc=Passed on from the simulator over [[tf]].
 }
 ```
+
+

@@ -6,16 +6,24 @@
 
 The web interface is served directly from the robot on port 8000 using
 roswww. To launch the web server and other back-end services:
+
+
 ```
 roslaunch hrl_pr2_lib openni_kinect.launch
 roslaunch assistive_teleop assistive_teleop.launch
 ```
 
+
+
 ### Client (Desktop)
 
-Point a Chrome web browser to: ```
+Point a Chrome web browser to: 
+
+```
 http://PR2HOSTNAME:8000/assistive_teleop/hz_tab_interface.html
-``` where
+```
+
+ where
 PR2HOSTNAME is the hostname of the robot on which the above launch file
 was run.
 

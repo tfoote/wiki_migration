@@ -12,6 +12,8 @@ The ddwrt [ ROS Node](Nodes ) publishes information about the Access
 Point that the router is currently connected to as well as survey
 information about all the Access Points that the router can see.
 
+
+
 ```clearsilver
   pub {
     0.name = ddwrt/sitesurvey
@@ -37,11 +39,15 @@ information about all the Access Points that the router can see.
   }
 ```
 
+
+
 ### monitor
 
 The monitor node publishes a visualization marker to [rviz](rviz) that
 displays between 1-5 bars over the robot's head according to the signal
 strength of the Access Point the robot is currently connected to.
+
+
 
 ```clearsilver
   sub {
@@ -59,11 +65,15 @@ strength of the Access Point the robot is currently connected to.
   }
 ```
 
+
+
 ### analysis
 
 The analysis node logs information about signal strength from the Access
 Points that the robot connects to and displays visualizations of this
 information on a map which it saves as a png image.
+
+
 
 ```clearsilver
   sub {
@@ -80,6 +90,8 @@ information on a map which it saves as a png image.
     0.desc = Markers corresponding to the signal strength of a given Access Point at each position a reading was taken.
   }
 ```
+
+
 
 ### output
 

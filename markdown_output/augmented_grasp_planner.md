@@ -8,6 +8,8 @@ version of rviz provided by
 [interactive_rviz_helper](interactive_rviz_helper) provides the UI
 necessary to collect this feedback.
 
+
+
 ```clearsilver
 srv{
   0.name= augmented_database_grasp_planner 
@@ -37,3 +39,5 @@ param {
   2.desc= The relative weight of euclidean to angular distance when computing the distance between grasp poses. This distance is used to sort grasps. The grasps closest to the one selected by human feedback will be attempted first. A value of 17.0 roughly equates a 10 degree difference with a 2 cm difference.
 }
 ```
+
+

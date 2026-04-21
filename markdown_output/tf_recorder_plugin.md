@@ -13,6 +13,8 @@ The performance of the sqlite database is not high enough to record tf
 frames at their full rate in most cases. Therefore, the plug-in has
 support for recording only transforms at a maximal rate.
 
+
+
 ```clearsilver
  param {
    group.1{
@@ -47,3 +49,5 @@ support for recording only transforms at a maximal rate.
         }
      }
 ```
+
+

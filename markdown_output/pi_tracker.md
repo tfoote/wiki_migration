@@ -34,6 +34,8 @@ that communicate over ROS topics and services:
 
 ## Skeleton Tracker Node (from the skeleton_markers package)
 
+
+
 ```clearsilver
 node.0 {
 name = skeleton_tracker
@@ -121,7 +123,11 @@ prov_tf {
 }
 ```
 
+
+
 ## Tracker Command Node
+
+
 
 ```clearsilver
 node.1 {
@@ -142,6 +148,8 @@ param {
 }
 ```
 
+
+
 ### Tracker Command Required Services
 
 Tracker command requires one or more services from each node it
@@ -151,6 +159,8 @@ example, sending the command "STOP" to the `tracker_base_controller`
 node (see below) tells the base to stop moving.
 
 ## Tracker Base Controller Node
+
+
 
 ```clearsilver
 node.2 {
@@ -219,7 +229,11 @@ param {
 }
 ```
 
+
+
 ## Tracker Joint Controller Node
+
+
 
 ```clearsilver
 node.2 {
@@ -267,6 +281,8 @@ param {
 }
 ```
 
+
+
 ### Example Launch File
 
 It is recommended to split the launch process into two launch files. The
@@ -277,7 +293,9 @@ without having to disconnect and reconnect to the Kinect camera. Also,
 note that neither launch file brings up a real joint controller or base
 controller since these will depend on your hardware.
 
-Sample Skeleton/Kinect Launch File: ```
+Sample Skeleton/Kinect Launch File: 
+
+```
 <launch>
   <arg name="fixed_frame" value="camera_depth_frame" />
  
@@ -310,7 +328,11 @@ Sample Skeleton/Kinect Launch File: ```
 </launch>
 ```
 
-Sample Tracker Nodes Launch File: ```
+
+
+Sample Tracker Nodes Launch File: 
+
+```
 <launch>
     <node name="tracker_command" pkg="pi_tracker" type="tracker_command.py" output="screen">
         <rosparam command="load" file="$(find pi_tracker)/params/tracker_params.yaml" />
@@ -324,7 +346,11 @@ Sample Tracker Nodes Launch File: ```
 </launch>
 ```
 
+
+
 ### Example YAML File
+
+
 
 ```
 command_rate: 2
@@ -370,3 +396,5 @@ skel_to_joint_map: {
    right_foot: no_joint
 }
 ```
+
+

@@ -3,9 +3,13 @@
 
 ## Installation
 
+
+
 ```
 $ sudo apt-get install ros-<distro>-ifopt
-``` If this package has not yet made it to the
+```
+
+ If this package has not yet made it to the
 binaries or for additional information, visit
 **<https://github.com/ethz-adrl/ifopt>**.
 
@@ -20,7 +24,9 @@ Nonlinear with constraints.
 See
 [here](https://github.com/ethz-adrl/ifopt/blob/master/ifopt_core/test/ifopt/test_vars_constr_cost.h)
 how the above problem is formulated using Eigen. Then it can be solved
-with, e.g. Ipopt, as: ```cplusplus
+with, e.g. Ipopt, as: 
+
+```cplusplus
 int main() {
 
   // Define the solver independent problem
@@ -41,13 +47,21 @@ int main() {
 }
 ```
 
-Output: ```
+
+
+Output: 
+
+```
 1.00 0.00
 ```
+
+
 
 ## Publications
 
 If you use this work in an academic context, please consider citing as
+
+
 ```
 @misc{ifopt,
   author = {Alexander W Winkler},
@@ -58,6 +72,8 @@ If you use this work in an academic context, please consider citing as
   url    = {https://doi.org/10.5281/zenodo.1135046}
 }
 ```
+
+
 
 This software has been used in the following
 [publications](https://www.alex-winkler.com):

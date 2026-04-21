@@ -16,6 +16,8 @@ see [move_arm](move_arm)
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   no_header= True
@@ -38,6 +40,8 @@ param {
 }
 ```
 
+
+
 ### Action API
 
 The `simple_arm_server.py` node provides an implementation of a
@@ -51,6 +55,8 @@ using the `SimpleActionClient`. Please see
 
 #### Action Subscribed Topics
 
+
+
 ```clearsilver
 sub {
   no_header=True
@@ -63,7 +69,11 @@ sub {
 }
 ```
 
+
+
 #### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -80,7 +90,11 @@ pub {
 }
 ```
 
+
+
 ### Other Subscriptions
+
+
 
 ```clearsilver
 sub {
@@ -91,7 +105,11 @@ sub {
 }
 ```
 
+
+
 ### Required Services
+
+
 
 ```clearsilver
 srv_called {
@@ -105,9 +123,13 @@ srv_called {
 }
 ```
 
+
+
 ### Outputs
 
 #### Action Outputs
+
+
 
 ```clearsilver
 pub {
@@ -118,6 +140,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 pub {
   1.name = gripper_controller/command
@@ -126,13 +152,17 @@ pub {
 }
 ```
 
+
+
 ### Configuring for Your Robot
 
 The simple_arm_server package has a launch file
 (launch/arm_server.launch) which can bring up the arm_kinematics package
 and the simple_arm_server with the correct parameters. To use this
 launch file, and supply it the correct parameters, you would add
-something like: ```
+something like: 
+
+```
 <launch>
   <include file="$(find simple_arm_server)/launch/arm_server.launch">
     <arg name="arm_dof" value="4" />
@@ -140,7 +170,9 @@ something like: ```
      <arg name="tip_name" value="gripper_link" />
   </include>
 </launch>
-``` To your robot bringup launch
+```
+
+ To your robot bringup launch
 file, supplying the correct root, tip and dof values for your robot.
 
 ### Command Line Usage
@@ -148,14 +180,22 @@ file, supplying the correct root, tip and dof values for your robot.
 The *simple_arm_server_test.py* script allows you to move the arm, using
 the server, through the command line:
 
+
+
 ```
 $ simple_arm_server_test.py
 usage: simple_arm_server_test.py x y z wrist_pitch [wrist_roll=0.0 wrist_yaw=0.0 frame_id='base_link' duration=5.0]
 ```
 
+
+
 Small 5-DOF arms often have small workspaces. To get a starting point,
 you can see where the arm is in relation to the base using:
+
+
 
 ```
 rosrun tf tf_echo base_link gripper_link
 ```
+
+

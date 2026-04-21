@@ -1,6 +1,10 @@
+
+
 ```wiki
 The code has been removed from the public domain. The technology is available as commercial produces from [[http://www.kaarta.com|Kaarta]].
 ```
+
+
 
 ## Overview
 
@@ -33,9 +37,13 @@ of the program using a camera and a 3D lidar is available
 To run the program, users need to install packages required by the iSAM
 library, used by the bundle adjustment:
 
+
+
 ```
 sudo apt-get install libsuitesparse-dev libeigen3-dev libsdl1.2-dev
 ```
+
+
 
 Code can be downloaded from
 [GitHub](https://github.com/jizhang-cmu/demo_rgbd), or following the
@@ -45,31 +53,47 @@ that does not have the bundle adjustment is available
 embedded systems. The program can be started by ROS launch file
 (available in the downloaded folder), which runs the VO and rivz:
 
+
+
 ```
 roslaunch demo_rgbd.launch
 ```
 
+
+
 For the slimmed down version, use:
+
+
 
 ```
 roslaunch demo_rgbd_slimmed.launch
 ```
+
+
 
 Datasets are available for download at the bottom of this page. Please
 make sure the data files are for the RGBD camera (not camera and lidar)
 version. With the program running (from the launch file), users can play
 the data file:
 
+
+
 ```
 rosbag play data_file_name.bag
 ```
 
+
+
 Note that if a slow computer is used, users can try to play the data
 file at a low speed, e.g. play the data file at half speed:
+
+
 
 ```
 rosbag play data_file_name.bag -r 0.5
 ```
+
+
 
 ## Datasets
 

@@ -10,9 +10,13 @@ controller, to enable real-time sensor based control.
 
 ## Installation
 
-The fs100_motoman package can be installed with ```
+The fs100_motoman package can be installed with 
+
+```
 sudo apt-get install ros-hydro-fs100-motoman
 ```
+
+
 or by downloading the source code and compiling it.
 
 ## Design
@@ -41,6 +45,8 @@ do a filtering of the trajectory before streaming it.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = mh5l_traj
 desc = Opens connection with FS100 controller with MotoROS installed. Publishes joint states in topics and subscribes to JointTrajectoryPoint topic for goal position. The robot has a reaction delay of ~0.2 sec.
@@ -65,6 +71,8 @@ param {
   0.desc = The nodes expects an IP to be provided as an argument.
 }
 ```
+
+
 
 ## Report a bug
 

@@ -10,9 +10,13 @@ Package also contains copy of assisted arm navigation generic states.
 -   install [srs_assisted_arm_navigation](srs_assisted_arm_navigation),
     [srs_assisted_arm_navigation_ui](srs_assisted_arm_navigation_ui) and
     [srs_assisted_grasping](srs_assisted_grasping)
--   build srs_arm_navigation_tests with ```
+-   build srs_arm_navigation_tests with 
+
+```
 rosmake srs_arm_navigation_tests
 ```
+
+
 
 ## Configuration
 
@@ -34,21 +38,33 @@ which can be used as part of state machine:
 ```
 -   launch needed stuff:
 
+
+
 ```
 roslaunch srs_arm_navigation_tests fake_dm_test.launch
 ```
 
+
+
 -   spawn milk:
+
+
 
 ```
 roslaunch srs_arm_navigation_tests milk_box.launch
 ```
 
+
+
 -   run the fake decision making
+
+
 
 ```
 roslaunch srs_arm_navigation_tests fake_dm_only.launch
 ```
+
+
 
 -   It will test both generic states in this order:
 -   move_arm_to_given_positions_assisted

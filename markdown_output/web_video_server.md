@@ -3,6 +3,8 @@
 This package provides a video stream of a ROS image transport topic that
 can be accessed via HTTP.
 
+
+
 ```clearsilver
 param {
   0.name = ~port
@@ -27,6 +29,8 @@ param {
 
 }
 ```
+
+
 
 ## Usage
 
@@ -55,6 +59,8 @@ Several parameters can be configure via the video stream URL - Example:
 These are the parameters that can be used to configure a stream or
 snapshot:
 
+
+
 ```clearsilver
 param {
   no_header= True
@@ -81,9 +87,13 @@ param {
 }
 ```
 
+
+
 ### Snapshot Parameters
 
 These are the parameters that can be used to configure a snapshot:
+
+
 
 ```clearsilver
 param {
@@ -95,9 +105,13 @@ param {
 }
 ```
 
+
+
 ### Stream Parameters
 
 These are the parameters that can be used to configure a stream:
+
+
 
 ```clearsilver
 param {
@@ -107,12 +121,16 @@ param {
   0.default= mjpeg
   0.desc= The encoding method for the stream (mjpeg, vp8, ros_compressed, png, h264).
 }
-``` Additional parameters can be specified for each
+```
+
+ Additional parameters can be specified for each
 encoding type as described below.
 
 #### Mjpeg Stream Parameters
 
 These are the parameters that can be used to configure a mjpeg stream:
+
+
 
 ```clearsilver
 param {
@@ -124,9 +142,13 @@ param {
 }
 ```
 
+
+
 #### VP8 Stream Parameters
 
 These are the parameters that can be used to configure a vp8 stream:
+
+
 
 ```clearsilver
 param {
@@ -156,7 +178,9 @@ param {
   4.desc = The encoding quality.
   4.default = realtime
 }
-``` More information on the quality and profile
+```
+
+ More information on the quality and profile
 parameter of the VP8 codec can be found here:
 <http://www.webmproject.org/docs/encoder-parameters>
 
@@ -179,11 +203,15 @@ One way is to republish the image topic with a lower rate. You can use
 
 rostopic list output:
 
+
+
 ```
 $ rostopic list
 /usb_cam/camera_info
 /usb_cam/image_raw/compressed
 ```
+
+
 
 View compressed stream at:
 `http:*localhost:8080/stream?topic=/usb_cam/image_raw&type=ros_compressed`*

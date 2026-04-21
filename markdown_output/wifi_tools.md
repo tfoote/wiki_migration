@@ -1,5 +1,7 @@
 ## Installation
 
+
+
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/freiburg_tools/gaussian_process
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/wifi_tools
@@ -8,9 +10,13 @@ sudo apt-get install libiw-dev
 rosmake wifi_tools
 ```
 
+
+
 ## Example
 
 ### wifi_stumbler
+
+
 
 ```
 ~/ros_workspace/wifi_tools# rosrun wifi_tools wifitumbler
@@ -21,9 +27,13 @@ rosmake wifi_tools
 [ INFO] [1370261175.398753935]: Found 4 AP.
 ```
 
+
+
 This node has to be run by root authority.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -96,6 +106,8 @@ node.3 {
   }
 }
 ```
+
+
 
 ## Questions & Bugs
 

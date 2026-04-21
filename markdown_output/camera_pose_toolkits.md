@@ -106,9 +106,13 @@ re-publishes them to tf. This allows users to easily reuse their
 calibration results at a later time. All they need to do is to type in
 the following line:
 
+
+
 ```
 rosrun camera_pose_toolkits transform_playback_node [your_bag_name]
 ```
+
+
 
 And all the transform messages in the bag are published to tf.
 
@@ -158,9 +162,13 @@ Note 2: the cal_optimzer node is a component of the
 
 Launching camera_pose_urdf_updater with arguments could look like this:
 
+
+
 ```
 roslaunch camera_pose_toolkits urdf_updater.launch new_cam_ns:=MS_Kinect/rgb urdf_cam_ns:=/wide_stereo/left mounting_frame:=torso_lift_link urdf_input_file:=/etc/ros/diamondback/urdf/robot.xml urdf_output_file:=/u/yiping/new.xml checker_rows:=4 checker_cols:=5 checker_size:=0.0249 headless:=1
-``` The **urdf_updater.launch** includes
+```
+
+ The **urdf_updater.launch** includes
 **calibrate_2_camera.launch**, which is located in the
 **launch_extrinsics** directory in the camera_pose_calibration package
 path.
@@ -203,9 +211,13 @@ function, you need to set up a parameter
 most cases, if the urdf camera frame and the mounting frame are
 different frames, you will always want to include the following line
 
+
+
 ```
 <param name="optimizer_conditional_resetter_enable" value ="True" />
 ```
+
+
 
 in your launch file.
 

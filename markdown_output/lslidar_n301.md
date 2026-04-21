@@ -7,10 +7,14 @@ Shenzhen Leishen Intelligence System Co, Ltd.
 
 This is a Catkin package. Make sure the package is on ROS_PACKAGE_PATH
 after cloning the package to your workspace. And the normal procedure
-for compling a catkin package will work. ```
+for compling a catkin package will work. 
+
+```
 cd your_work_space
 catkin_make --pkg lslidar_n301_driver lslidar_n301_decoder --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
+
+
 
 # Usage
 
@@ -58,9 +62,13 @@ catkin_make --pkg lslidar_n301_driver lslidar_n301_decoder --cmake-args -DCMAKE_
 ## Tutorial
 
 Running following commmand to launch lslidar n301 drive
+
+
 ```
 roslauch lslidar_n301_decoder lslidar_n301_decoder_nodelet.launch
 ```
+
+
 
 **Note** that this launch file launches both the driver and the decoder,
 which is the only launch file needed to be used.

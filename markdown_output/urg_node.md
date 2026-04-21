@@ -44,6 +44,8 @@ to add support for unsafe_settings.)
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=hokuyo_node
@@ -133,20 +135,30 @@ param {
 }
 ```
 
+
+
 ## Command-Line Tools
 
 The `getID` program can be used to get information about a hokuyo
 laser scanner. Each of them can be invoked in a human readable way:
 
+
+
 ```
 $ rosrun urg_node getID /dev/ttyACM0
 Device at /dev/ttyACM0 has ID H0807228
-``` or in a script friendly way:
+```
+
+ or in a script friendly way:
+
+
 
 ```
 $ rosrun urg_node getID /dev/ttyACM0 --
 H0807228
-``` If they fail to connect to the device they will
+```
+
+ If they fail to connect to the device they will
 retry for about ten seconds before giving up.
 
 ## Using udev to Give Hokuyos Consistent Device Names
@@ -156,11 +168,17 @@ device given its port. Combined with udev, this allows a consistent
 device name to be given to each device, even if the order in which they
 are plugged in varies. On the PR2 we use the following udev rule:
 
+
+
 ```
 SUBSYSTEMS=="usb", KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", ATTRS{idProduct}=="0000", MODE="666", PROGRAM="/opt/ros/hydro/lib/urg_node/getID /dev/%k q", SYMLINK+="sensors/hokuyo_%c", GROUP="dialout"
-``` This udev rule sets up a device name that is
+```
+
+ This udev rule sets up a device name that is
 based on the Hokuyo's hardware ID. The PR2 then has a symlink to that
 name that gets changed if the Hokuyo is replaced:
+
+
 
 ```
 $ ls -l /etc/ros/sensors/base_hokuyo
@@ -168,3 +186,5 @@ lrwxrwxrwx 1 root root 28 2010-01-12 15:53 /etc/ros/sensors/base_hokuyo -> /dev/
 $ ls -l /dev/sensors/hokuyo_H0902620
 lrwxrwxrwx 1 root root 10 2010-04-12 12:34 /dev/sensors/hokuyo_H0902620 -> ../ttyACM1
 ```
+
+

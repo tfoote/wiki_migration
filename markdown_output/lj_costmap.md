@@ -26,6 +26,8 @@ are computed. Implemented actions:
      Setter                         <<MsgLink(lama_msgs/Crossing)>>          jockey_name + "_crossing"        
   -- --------------------------- -- ----------------------------------------- -- ----------------------------------- --
 
+
+
 ```clearsilver
 sub {
    0.name=~<name>/local_costmap
@@ -52,3 +54,5 @@ param {
   2.desc= Name of the dissimilarity server.
 }
 ```
+
+

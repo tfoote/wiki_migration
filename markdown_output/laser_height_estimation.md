@@ -27,15 +27,23 @@ following the instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz tf rosbag
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch laser_height_estimation demo.launch
 ```
+
+
 
 ## Nodes
 

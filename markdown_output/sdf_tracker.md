@@ -8,27 +8,39 @@ Function tracking algorithm, proposed
 
 Clone the repository and add it to your ROS_PACKAGE_PATH
 
+
+
 ```
 export ROS_PACKAGE_PATH=/your_path/oru-ros-pkg/:$ROS_PACKAGE_PATH
 ```
 
+
+
 The following commands should build the sdf_tracker library and the
 sdf_tracker_node
+
+
 
 ```
 roscd sdf_tracker
 rosmake
 ```
 
+
+
 ## Running the Node
 
 Using an openNI compatible depth-sensor you can get the node up and
 running with:
 
+
+
 ```
 roslaunch openni_launch openni.launch &
 rosrun sdf_tracker sdf_tracker_node _param1:=val1 _param2:=val2 ...etc
 ```
+
+
 
 ![](attachment:sdf.jpg)
 
@@ -111,9 +123,13 @@ ROS node.
 
 An example:
 
+
+
 ```
 rosrun sdf_tracker sdf_tracker_node _c_name:="camera2" _depth_registered:="true" _OutputTriangles:="true" _CellSize:=0.02 _GridSizeX:=300
 ```
+
+
 
 This will start the node, listening to /camera2/depth_registered/image,
 using a voxel-size of 2cm in a grid of 300x256x256. Triangles will be
@@ -129,6 +145,8 @@ specified volume, looking along the z-axis. To change the initial camera
 pose, relative to the volume set the *pose_offset* parameter of the
 SDF_Parameter class and pass this to the constructor when initializing
 your SDFTracker, e.g.,
+
+
 
 ```cplusplus
 //Parameters for an SDFtracker object 
@@ -148,6 +166,8 @@ myParameters.pose_offset = initialTransformation;
 //create the tracker object
 SDFTracker myTracker(myParameters);
 ```
+
+
 
 ## Shutdown
 

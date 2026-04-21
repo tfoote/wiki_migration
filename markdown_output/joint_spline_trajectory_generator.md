@@ -20,6 +20,8 @@ interpolation.
 
 ### Input ports
 
+
+
 ```clearsilver
 param {
   no_header= True
@@ -35,7 +37,11 @@ sub {
 }
 ```
 
+
+
 ### Output ports
+
+
 
 ```clearsilver
 param {
@@ -49,7 +55,11 @@ param {
 }
 ```
 
+
+
 ### Properties
+
+
 
 ```clearsilver
 param {
@@ -59,3 +69,5 @@ param {
   0.desc=Number of joints used in interpolation.
 }
 ```
+
+

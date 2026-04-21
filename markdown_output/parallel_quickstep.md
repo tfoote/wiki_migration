@@ -31,28 +31,40 @@ install [simulator_gazebo](simulator_gazebo) from source,
     following instructions on the [rosinstall wiki](rosinstall).
 -   Download
     [simulator rosinstall file](attachment:simulator.rosinstall) in your
-    home directory, and run ```
+    home directory, and run 
+
+```
 rosinstall ~/diamondback_simulator ~/simulator.rosinstall
 ```
+
+
 -   Rebuild simulator_gazebo stack, if you have previously checked out
     gazebo or parallel_quickstep locally, make sure to do a ``make
-    clean`` first: ```
+    clean`` first: 
+
+```
 roscd gazebo
 make clean
 roscd parallel_quickstep
 make clean
 rosmake simulator_gazebo
-``` During recompilation of
+```
+
+ During recompilation of
     [parallel_quickstep](parallel_quickstep), if CUDA is installed
     correctly on your system, cmake scripts in parallel_quickstep should
     detect it automatically. You should see cmake output on the console
-    similar to: ```
+    similar to: 
+
+```
 ...
 -- CUDA Found, compiling with CUDA support
 -- using sm_10 without DOUBLE_SUPPORT_ENABLED and ATOMIC_SUPPORT_ENABLED
 -- CUDA Target Architecture: sm_10
 ...
 ```
+
+
 -   Add the line (or modify as) <stepType>parallel_quick</stepType>
     to your Gazebo world file
 -   Launch the world 1. Alternatively, you can configure the package for

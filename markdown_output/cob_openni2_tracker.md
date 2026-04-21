@@ -59,22 +59,34 @@ If you just need the tracker without any topics of the camera driver
 (image, point cloud), simply start the launch file with the
 standalone_without_camera_driver option:
 
+
+
 ```
 roslaunch cob_openni2_tracker body_tracker_nodelet.launch standalone_without_camera_driver:=true
 ```
 
+
+
 Alternatively, if you like to use the camera driver, start the camera
 driver first via
+
+
 
 ```
 roslaunch openni2_launch openni2.launch depth_registration:=true
 ```
 
+
+
 and then the human tracker
+
+
 
 ```
 roslaunch cob_openni2_tracker body_tracker_nodelet.launch
 ```
+
+
 
 After the launch process has succeeded, the launch output will be
 presented in the current console window and the body tracker will be

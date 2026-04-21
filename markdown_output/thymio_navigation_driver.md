@@ -20,6 +20,8 @@ This node interfaces the Thymio with ROS. It demands an
 [asebaros](asebaros) node connected to the Thymio. Using asebaros, this
 node will accept twist commands and publish odometry/tf.
 
+
+
 ```clearsilver
 sub {
   0.name = /aseba/events/odometry
@@ -43,10 +45,14 @@ prov_tf {
   0.desc = tf from odometry
 ```
 
+
+
 ### Node: joy_to_twist
 
 This node transform a joystick command into a twist command to control
 the speed of Thymio.
+
+
 
 ```clearsilver
 sub {
@@ -60,6 +66,8 @@ pub {
   0.desc = velocity commands
 }
 ```
+
+
 
 ### Putting it all together
 

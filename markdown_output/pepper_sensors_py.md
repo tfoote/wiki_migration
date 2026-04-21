@@ -26,6 +26,8 @@ and is called:
 
 -   shovel
 
+
+
 ```clearsilver
 pub {
   0.name = ~pepper/laser/shovel/scan
@@ -87,6 +89,8 @@ param {
         1.default = False
     }
 ```
+
+
 
 ### Camera
 

@@ -1,16 +1,28 @@
 ## Install
 
-Check out the package ```
+Check out the package 
+
+```
 Svn co https://code.ros.org/svn/wg-ros-pkg/branches/trunk_cturtle/sandbox/pr2_teleop_booth ~/pr2_teleop_booth
 ```
 
-Add it to your ROS_PACKAGE_PATH: ```
+
+
+Add it to your ROS_PACKAGE_PATH: 
+
+```
 echo "export ROS_PACKAGE_PATH=~/pr2_teleop_booth:$ROS_PACKAGE_PATH" >> ~/.bashrc
 ```
 
-Build the package. ```
+
+
+Build the package. 
+
+```
 rosmake pr2_teleop_booth
 ```
+
+
 
 ## Bring up the robot
 
@@ -24,9 +36,13 @@ different nodes and particular controllers running. All of the requisite
 nodes and controllers will be brought up by launching the
 pr2_teleop_booth.launch file.
 
+
+
 ```
 roslaunch pr2_teleop_booth pr2_teleop_booth.launch
 ```
+
+
 
 ### Pairing
 

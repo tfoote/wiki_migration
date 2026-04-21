@@ -1,9 +1,13 @@
 ## Installation
 
 The easiest way to get the mocap_optitrack package in Ubuntu is using
-`apt-get`: ```
+`apt-get`: 
+
+```
 $ sudo apt-get install ros-fuerte-mocap-optitrack
 ```
+
+
 
 If you'd like to contribute to the package, feel free to check it out
 from Github and submit pull requests.
@@ -35,10 +39,14 @@ the mapping of trackables to ROS topics must be defined. A sample
 configuration file called "mocap.yaml" is included with the package,
 you can find it in the config directory of the package.
 
+
+
 ```
 $ roscd mocap_optitrack/config
 $ vi mocap.yaml
 ```
+
+
 
 ### Selecting Rigid Bodies to Publish
 
@@ -59,6 +67,8 @@ The published topics for each trackable can now be configured in
 mocap_optitrack. Each trackable that should be published in ROS can be
 specified by its Trackable ID - the desired topics for the published
 Pose, 2D Pose and the frame_id of the transform in tf can be configured.
+
+
 ```
 rigid_bodies:
     '1':
@@ -67,7 +77,9 @@ rigid_bodies:
         frame_id: Robot_1/base_link
     '2':
         pose: Robot_2/pose
-``` If any of the topics is left unconfigured,
+```
+
+ If any of the topics is left unconfigured,
 nothing will be published for that datatype. E.g. for trackable "2",
 no pose2d or frame_id is configured so no Pose2D or TF messages will be
 published.

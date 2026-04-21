@@ -4,9 +4,13 @@
 
 This launch file will start a simple demo of the [explore](explore)
 package in the [stage](stage) simulator. Launch the demo by calling:
+
+
 ```
 $ roslaunch explore_stage explore.launch
 ```
+
+
 
 This configuration file will launch a [move_base](move_base) node to
 provide navigation.
@@ -15,9 +19,13 @@ provide navigation.
 
 This launch file will start a demo of the [explore](explore) package in
 the [stage](stage) simulator that interacts with a [gmapping](gmapping)
-node. Launch the demo by calling: ```
+node. Launch the demo by calling: 
+
+```
 $ roslaunch explore_stage explore_slam.launch
 ```
+
+
 
 This configuration file will launch a [move_base](move_base) node to
 provide navigation.

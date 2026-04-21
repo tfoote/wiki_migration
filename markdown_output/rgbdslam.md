@@ -13,24 +13,36 @@ this page.
 Download rgbdslam with the following command to your
 [ros workspace](ROS/Tutorials/InstallingandConfiguringROSEnvironment).
 
+
+
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/rgbdslam_freiburg
 ```
+
+
 **`'ROS needs to be aware of the folder into which you download rgbdslam_freiburg! Make sure that the folder containing rgbdslam_freiburg is in your ROS_PACKAGE_PATH (see [[ROS/Tutorials/InstallingandConfiguringROSEnvironment|ros workspace]] for how to modify the ROS_PACKAGE_PATH. It is a bad idea to put rgbdslam_freiburg into /opt/ros/fuerte/...). If properly configured  "roscd rgbdslam" will take you to the rgbdslam package directory`**'
 
 If not yet installed, install [rosdep](rosdep) first, then execute
 
+
+
 ```
 rosdep update
 rosdep install rgbdslam_freiburg
-``` This should take care of all system
+```
+
+ This should take care of all system
 dependencies (e.g. libg2o, octomap).
 
 You can then compile it with
 
+
+
 ```
 rosmake rgbdslam_freiburg
-``` which will take a while. If you encounter
+```
+
+ which will take a while. If you encounter
 problems, here is an example
 [build logfile](attachment:example_rgbdslam_build_output.log) for a
 successful build for reference (Revision 3949).
@@ -39,9 +51,13 @@ As mentioned in [rgbdslam_electric](rgbdslam_electric), if ROS
 dependencies are still not met for some reason, you might need to
 install the following dependencies
 
+
+
 ```
 sudo apt-get install libglew1.5-dev libdevil-dev libsuitesparse-dev
 ```
+
+
 
 # Configuration
 
@@ -78,15 +94,23 @@ the launch file octomap_server.launch)
 
 To start RGBDSLAM launch
 
+
+
 ```
 roslaunch rgbdslam kinect+rgbdslam.launch
-``` Alternatively you can start the openni nodes
+```
+
+ Alternatively you can start the openni nodes
 and RGBDSLAM separately, e.g.:
+
+
 
 ```
 roslaunch openni_launch openni.launch
   rosrun rgbdslam rgbdslam
-``` To capture models either press space to start
+```
+
+ To capture models either press space to start
 recording a continuous stream or press enter to record a single frame.
 To reduce data redundancy, sequential frames from (almost) the same
 position are not included in the final model. The 3D visualization
@@ -109,9 +133,15 @@ for example on the PR2. The possible calls are:
 See below for a detailed description of all options. To start the
 rgbdslam headless use the headless.launch:
 
+
+
 ```
 roslaunch rgbdslam headless.launch
-``` Example service calls:
+```
+
+ Example service calls:
+
+
 
 ```
 rosservice call /rgbdslam/ros_ui frame # Capture single frames via
@@ -119,7 +149,9 @@ rosservice call /rgbdslam/ros_ui frame # Capture single frames via
         rosservice call /rgbdslam/ros_ui send_all # Send point clouds with computed transformations (e.g., to rviz or octomap_server)
         rosservice call /rgbdslam/ros_ui_s save_cloud /tmp/mycloud.pcd # Save the registered pointclouds in the given file
         rosservice call /rgbdslam/ros_ui_s save_individual /tmp/filenameprefix # As above, but save every pointcloud in its own file
-``` Detailed command descriptions:
+```
+
+ Detailed command descriptions:
 
 /rgbdslam/ros_ui:
 
@@ -194,6 +226,8 @@ If you aren't using ROS yet and just want to use RGB-D SLAM on Ubuntu
 (tested with Ubuntu "precise pangolin" 12.04), here's an installation
 walkthrough:
 
+
+
 ```
 # Better pick a mirror close to you.
 # See http://ros.org/wiki/ROS/Installation/UbuntuMirrors
@@ -224,11 +258,17 @@ roscd rgbdslam
 
 # This will take a while:
 rosmake rgbdslam_freiburg
-``` If this reports no failures, you successfully
+```
+
+ If this reports no failures, you successfully
 installed the RGB-D SLAM system.
 
 To use it with a Kinect/Xtion Pro you need to install the camera driver:
 
+
+
 ```
 sudo apt-get install ros-fuerte-openni-launch
-``` For usage, see above.
+```
+
+ For usage, see above.

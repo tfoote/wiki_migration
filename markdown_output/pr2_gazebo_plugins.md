@@ -28,6 +28,8 @@ parameter where robot description is stored. `<robotNamespace>`
 
 #### Example
 
+
+
 ```
 <!-- GazeboMechanismControl -->
     <controller:gazebo_ros_controller_manager name="gazebo_ros_controller_manager" plugin="libgazebo_ros_controller_manager.so">
@@ -37,6 +39,8 @@ parameter where robot description is stored. `<robotNamespace>`
       <robotNamespace>/</robotNamespace>
     </controller:gazebo_ros_controller_manager>
 ```
+
+
 
 ### gazebo_ros_prosilica
 
@@ -64,6 +68,8 @@ Distortion t2 value. `<hackBaseline>` (double, default: 0) Hack for
 right stereo camera
 
 #### Example
+
+
 
 ```
 <body:empty name="camera_body_name">
@@ -96,6 +102,8 @@ right stereo camera
   </body:empty>
 ```
 
+
+
 ### gazebo_ros_power_node
 
 `GazeboRosPowerNode` plugin provides ROS topics and services similar
@@ -115,6 +123,8 @@ voltate `<dischargeRate>` (double, default: -500.0) Discharge rate
 
 #### Example
 
+
+
 ```
 <controller:gazebo_ros_power_monitor name="gazebo_ros_power_monitor_controller" plugin="libgazebo_ros_power_monitor.so">
         <alwaysOn>true</alwaysOn>
@@ -131,7 +141,11 @@ voltate `<dischargeRate>` (double, default: -500.0) Discharge rate
     </controller:gazebo_ros_power_monitor>
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = gazebo_ros_power_node
@@ -147,6 +161,10 @@ pub {
   0.desc = simulated power state
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = gazebo_ros_prosilica_node
@@ -166,6 +184,8 @@ srv {
     0.desc = '''(Polled Mode Only)''' Captures an image and publishes it in the namespace specified by the request message. Returns the timestamp.
 }
 ```
+
+
 
 ### gazebo_ros_controller_manager
 

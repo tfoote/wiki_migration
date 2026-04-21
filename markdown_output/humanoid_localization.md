@@ -14,6 +14,8 @@ useful e.g. for UAVs.
 Details are available in the corresponding publication
 **[Humanoid Robot Localization in Complex Indoor Environments](http://hrl.informatik.uni-freiburg.de/papers/hornung10iros.pdf)**
 by A. Hornung, K. M. Wurm, and M. Bennewitz (IROS 2010).
+
+
 ```
 @INPROCEEDINGS{hornung10iros,
   author = {Armin Hornung and Kai M. Wurm and Maren Bennewitz},
@@ -25,6 +27,8 @@ by A. Hornung, K. M. Wurm, and M. Bennewitz (IROS 2010).
   month= {October}
 }
 ```
+
+
 
 humanoid_localization will request a 3D occupancy map from
 [octomap_server](octomap_server), so it needs to be running with the map
@@ -39,6 +43,8 @@ determined automatically). For visualization, set the fixed frame to
 "/map" in RViz.
 
 ## ROS Node API
+
+
 
 ```clearsilver
 name = localization_node
@@ -145,3 +151,5 @@ param {
 
 }
 ```
+
+

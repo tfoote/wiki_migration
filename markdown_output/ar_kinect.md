@@ -15,6 +15,8 @@ ideal marker geometry using methods from PCL.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name = ar_kinect
@@ -63,3 +65,5 @@ desc = the pose of markers relative to the camera frame
 }
 }
 ```
+
+

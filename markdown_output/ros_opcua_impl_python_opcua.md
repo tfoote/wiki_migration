@@ -16,11 +16,17 @@ Check the [ros_opcua_communication](ros_opcua_communication) page.
 
 The easiest way to start the nodes is using launch file:
 
+
+
 ```
 roslaunch ros_opcua_impl_python_opcua rosopcua.launch
 ```
 
+
+
 ### Nodes
+
+
 
 ```clearsilver
 name = rosopcua
@@ -33,6 +39,6 @@ param {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(iirob/ros_opcua_communication)>>
+
+## Report a Bug

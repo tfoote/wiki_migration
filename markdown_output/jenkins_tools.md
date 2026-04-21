@@ -6,9 +6,13 @@ debug scripts on a Jenkins cluster.
 ## Installation
 
 After you've set up the ros apt sources, you can simply install
-jenkins-tools using apt: ```
+jenkins-tools using apt: 
+
+```
 sudo apt-get install python-jenkins-tools
 ```
+
+
 
 ## Chroot Tools
 
@@ -23,9 +27,13 @@ environment, on your local machine. This can be useful when you want to
 try out a new version of the script before you schedule it on Jenkins,
 or when you want to find out why a script is failing on Jenkins.
 
-Usage: ```
+Usage: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
 ```
+
+
 
 Arguments:
 
@@ -48,9 +56,13 @@ Arguments:
 -   **\[script_args\]**: a list of arguments for the script you are
     running.
 
-Example: ```
+Example: 
+
+```
 run_chroot_local precise amd64 /home/user/workspace prerelease groovy common_msgs
 ```
+
+
 
 Script Development: When you're developing a script in the
 jenkins_scripts repository, you obviously don't want to commit every
@@ -70,9 +82,13 @@ This command line tool allows you to run a script in a chroot
 environment, remotely, on a Jenkins node. The script will be scheduled
 immediately.
 
-Usage: ```
+Usage: 
+
+```
 run_chroot_jenkins_now ubuntu_distro arch job_name email script [script_args]
 ```
+
+
 
 Arguments:
 
@@ -95,9 +111,13 @@ Arguments:
 -   **\[script_args\]**: a list of arguments for the script you are
     running.
 
-Example: ```
+Example: 
+
+```
 run_chroot_jenkins_now precise amd64 groovy-common_msgs you@hidof.com prerelease groovy common_msgs
 ```
+
+
 
 ### run_chroot_jenkins_periodic
 
@@ -105,9 +125,13 @@ This command line tool allows you to run a script in a chroot
 environment, remotely, on a Jenkins node. The script will be scheduled
 periodically.
 
-Usage: ```
+Usage: 
+
+```
 run_chroot_jenkins_periodic ubuntu_distro arch job_name email period script [script_args]
 ```
+
+
 
 Arguments:
 
@@ -132,9 +156,13 @@ Arguments:
 -   **\[script_args\]**: a list of arguments for the script you are
     running.
 
-Example: ```
+Example: 
+
+```
 run_chroot_jenkins_periodic precise amd64 groovy-common_msgs you@hidof.com nightly prerelease groovy common_msgs
 ```
+
+
 
 ### run_chroot_jenkins_vcs
 
@@ -142,9 +170,13 @@ This command line tool allows you to run a script in a chroot
 environment, remotely, on a Jenkins node. The script will be scheduled
 when a commit happens to a vcs repository.
 
-Usage: ```
+Usage: 
+
+```
 chroot_jenkins_vcs ubuntu_distro arch job_name email vcs uri branch script [script_args]
 ```
+
+
 
 Arguments:
 
@@ -173,9 +205,13 @@ Arguments:
 -   **\[script_args\]**: a list of arguments for the script you are
     running.
 
-Example: ```
+Example: 
+
+```
 run_chroot_jenkins_vcs precise amd64 groovy-common_msgs you@hidof.com git https://github.com/ros-infrastructure/jenkins_scripts.git default prerelease groovy common_msgs
 ```
+
+
 
 ## Job Generation Tools
 
@@ -184,9 +220,13 @@ run_chroot_jenkins_vcs precise amd64 groovy-common_msgs you@hidof.com git https:
 This tool generates all the development regression tests for a given ros
 distribution.
 
-Usage: ```
+Usage: 
+
+```
 generate_jenkins_devel ros_distro [--delete] [--run]
 ```
+
+
 
 Arguments:
 
@@ -196,9 +236,13 @@ Arguments:
 -   **\--run**: In addition to scheduling jobs to be triggered by
     commits, schedule a build of each repository immediately.
 
-Example: ```
+Example: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
-```0
+```
+
+0
 
 ### Documentation Jobs
 
@@ -207,9 +251,13 @@ more information about how to add a documentation job to the index of
 jobs used by this tool, please see this
 [ page](Get Involved#Indexing_Your_.2A-ros-pkg_Repository_for_Documentation_Generation ).
 
-Usage: ```
+Usage: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
-```1
+```
+
+1
 
 Options:
 
@@ -222,18 +270,26 @@ Arguments:
 
 -   **ros_distro**: the ros distribution you want to generate jobs for.
 
-Example: ```
+Example: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
-```2
+```
+
+2
 
 ### Prerelease Jobs
 
 This tool generates all the development regression tests for a given
 release repository.
 
-Usage: ```
+Usage: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
-```3
+```
+
+3
 
 Arguments:
 
@@ -241,6 +297,10 @@ Arguments:
 -   **distro_name**: the name of the distribution you want to generate
     jobs for.
 
-Example: ```
+Example: 
+
+```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
-```4
+```
+
+4

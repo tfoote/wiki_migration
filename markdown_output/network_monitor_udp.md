@@ -63,6 +63,8 @@ as logging and test control logic via three classes:
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=udpmonsourcenode.py
@@ -176,10 +178,14 @@ desc=`udpmonsink` is a lightweight node that echoes back received packets either
 }
 ```
 
+
+
 ## Command-line tools
 
 `udpmoncli.py` can also be used stand-alone, independent of ROS with
 `udpmonserv` as in the example below:
+
+
 
 ```
 # rosrun network_monitor_udp udpmonserv 12345
@@ -193,10 +199,14 @@ desc=`udpmonsink` is a lightweight node that echoes back received packets either
   3.000: 100   0   0   /   0   0   0   0 avg:   0.4 ms avgr:   0.4 ms loss:   0.00 %
 ```
 
+
+
 ## Usage example
 
 The following launch file starts a source and a sink node as well as a
 bandwidth test node:
+
+
 
 ```
 <launch>
@@ -206,8 +216,12 @@ bandwidth test node:
 </launch>
 ```
 
+
+
 The test node starts a link capacity test on the loopback interface and
-prints the resulting capacity: ```/usr/bin/env
+prints the resulting capacity: 
+
+```/usr/bin/env
 
 import roslib; roslib.load_manifest('network_monitor_udp')
 import rospy
@@ -228,7 +242,11 @@ if __name__ == '__main__':
         source.cancel_all_tests()
 ```
 
+
+
 Here's an example run:
+
+
 
 ```
 # roslaunch launch_nodes.launch
@@ -241,6 +259,8 @@ process[source-2]: started with pid [20044]
 process[test_node-3]: started with pid [20055]
 Link capacity: 68.71Mbit/s
 ```
+
+
 
 More usage examples with more complex configurations can be found in the
 [network_control_tests](network_control_tests) package.

@@ -44,6 +44,8 @@ The calibration file is loaded from the
 [sr_control_gui](sr_control_gui)/param/cyberglove.cal file. To change
 which file you want to use, you can simply edit the parameter
 **path_to_calibration** of the **cyberglove.launch** file.
+
+
 ```
 <node pkg="cyberglove" name="cyberglove" type="cyberglove">
     <param name="cyberglove_prefix" type="string" value="/cyberglove" />
@@ -53,6 +55,8 @@ which file you want to use, you can simply edit the parameter
     sr_control_gui)/param/cyberglove.cal" />
 </node>
 ```
+
+
 
 A calibration process is available in the **cyberglove calibrator**
 plugin of the [sr_control_gui](sr_control_gui).

@@ -9,7 +9,9 @@ any problem using ([xsens_driver](xsens_driver) and
 
 ## Installation
 
-Open a terminal: ```
+Open a terminal: 
+
+```
 $ sudo cd ~/catkin_ws/src
         $ git clone https://github.com/JJJJJJJack/xsens_reader.git
         $ cd ..
@@ -17,21 +19,31 @@ $ sudo cd ~/catkin_ws/src
         $ catkin_make install
 ```
 
+
+
 ## Run
 
-Open a terminal: ```
+Open a terminal: 
+
+```
 $ sudo su
          $ cd ~/catkin_ws
          $ source devel/setup.bash
          $ roscore
 ```
 
-Open another terminal: ```
+
+
+Open another terminal: 
+
+```
 $ sudo su
          $ cd ~/catkin_ws
          $ source devel
          $ rosrun xsens_reader xsens_reader -d /dev/ttyUSB0
 ```
+
+
 
 ## Note
 
@@ -41,11 +53,17 @@ Try USB1 USB2 if you can't connect to the port.
 
 xsens_reader publishes the sensor_msgs::Imu message of "/xsens_data".
 
-run ```
+run 
+
+```
 $ rostopic echo /xsens_data
-``` to show the message of MTi.
+```
+
+ to show the message of MTi.
 
 ## Published Topics
+
+
 
 ```clearsilver
 pub{
@@ -54,3 +72,5 @@ pub{
   0.desc = orientation, angular velocity, and linear acceleration.
 }
 ```
+
+

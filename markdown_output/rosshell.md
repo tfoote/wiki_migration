@@ -10,13 +10,21 @@ from stdin, stdout, and stderr.
 
 The required commands are always defined as a string:
 
+
+
 ```
 $ rosrun rosshell rosshell.py "command"
 ```
 
+
+
+
+
 ```
 $ rosrun rosshell rosshellX.py "command"
 ```
+
+
 
 have a look at the examples or at the included launch-files.
 
@@ -25,19 +33,31 @@ have a look at the examples or at the included launch-files.
 ### rosshell
 
 This command is just used to generate some random noise \...
+
+
 ```
 $ rosrun rosshell rosshell.py "aplay -c 2 -f S16_LE -r 44100 /dev/urandom"
 ```
 
+
+
 Pipe the results of /dev/random into a text file \...
+
+
 ```
 $ rosrun rosshell rosshell.py "cat /dev/random > test.txt"
 ```
 
+
+
 or the some information about the current directory \...
+
+
 ```
 $ rosrun rosshell rosshell.py "ls -Shal > test.txt"
 ```
+
+
 
 ### rosshellX
 
@@ -53,49 +73,85 @@ at topic /rosshellX/stdout and /rosshellX/stderr, all of type
 `bc` is just a simple commandline-calculator
 
 1\. open three shells 2. start `bc` with the following command:
+
+
 ```
 $ rosrun rosshell rosshellX.py "bc"
-``` 3. print the the results of `bc` stdout by
-running: ```
+```
+
+ 3. print the the results of `bc` stdout by
+running: 
+
+```
 $ rostopic echo /rosshellX/stdout
-``` 4. and now, send some inputs like:
+```
+
+ 4. and now, send some inputs like:
+
+
 ```shell
 $ rostopic pub /rosshellX/stdin std_msgs/String "99*99\n"
 $ rostopic pub /rosshellX/stdin std_msgs/String "sqrt(2.0)\n"
 $ rostopic pub /rosshellX/stdin std_msgs/String "33^3\n"
 $ rostopic pub /rosshellX/stdin std_msgs/String "quit\n"
-``` 5. to interact a bit with stderr, simply
-subscribe for: ```
+```
+
+ 5. to interact a bit with stderr, simply
+subscribe for: 
+
+```
 $ rostopic echo /rosshellX/stderr
-``` and publish some nonsense like
+```
+
+ and publish some nonsense like
+
+
 ```shell
 $ rostopic pub /rosshellX/stdin std_msgs/String "öjaki\n"
 ```
 
+
+
 #### Additional functionality
 
-To get some filesystem-information try: ```
-$ rosrun rosshell rosshellX.py "command"
-```0
-
-or
+To get some filesystem-information try: 
 
 ```
 $ rosrun rosshell rosshellX.py "command"
-```1
+```
+
+0
+
+or
+
+
+
+```
+$ rosrun rosshell rosshellX.py "command"
+```
+
+1
 
 both are the same but you also have the possibility to change the
 command and topics, also within the launch-file, have a look at
 `rosshellX.launch` \...
 
+
+
 ```
 $ rosrun rosshell rosshellX.py "command"
-```2
+```
+
+2
 
 ## Nodes
 
+
+
 ```
 $ rosrun rosshell rosshellX.py "command"
-```3
+```
+
+3
 
 ## Bug Reports & Feature Requests ==/

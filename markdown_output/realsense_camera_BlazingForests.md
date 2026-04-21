@@ -23,12 +23,20 @@ Infrared raw stream for realsense camera.
 
 ### launch realsense camera and rviz
 
+
+
 ```
 roslaunch realsense_camera realsense_rviz.launch
 ```
 
+
+
 ### launch realsense camera only
+
+
 
 ```
 roslaunch realsense_camera realsense_camera.launch
 ```
+
+

@@ -23,19 +23,29 @@ To run the `geometric_calibration` node for a monocular camera set the
 input topics and the configuration parameters in
 `./config/geometric.yaml` according to the tutorial and execute:
 
+
+
 ```
 roslaunch cam2lidar geometric.launch
 ```
+
+
 
 Accordingly, to run the `temporal_calibration` node for a monocular
 camera set the input topics and the configuration parameters in
 `./config/temporal.yaml` according to the tutorial and execute:
 
+
+
 ```
 roslaunch cam2lidar temporal.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -50,7 +60,11 @@ sub{
 1.type= sensor_msgs/CameraInfo
 1.desc= raw camera info topic, for monocular cameras
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.1 {
 name=geometric_calibration
 desc=`geometric_calibration` subscribes to ROS raw image topics and Velodyne (Lidar) topic. The node detects Apriltag and the Lidar target and saves samples, in order to solve the PnP problem. The output is saved in `./output/image_points.txt` and `./output/lidar_points.txt`.
@@ -64,6 +78,10 @@ sub{
 1.desc= raw lidar topic
 }
 ```
+
+
+
+
 ```clearsilver
 node.2 {
 name=temporal_calibration
@@ -78,3 +96,5 @@ sub{
 1.desc= raw lidar topic
 }
 ```
+
+

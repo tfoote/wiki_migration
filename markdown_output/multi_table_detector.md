@@ -21,6 +21,8 @@ stack in order to test the reachability of possible manipulation poses.
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   group.0{
@@ -106,12 +108,16 @@ param {
 }
 ```
 
+
+
 ### Required Services
 
 `multi_table_node` requires an external service to test the
 reachability of candidate poses, which is usually done with the
 navigation stack. In a launch file, the topic name below should be
 remapped to the appropriate service, such as the one given.
+
+
 
 ```clearsilver
 pub {
@@ -122,7 +128,11 @@ pub {
 }
 ```
 
+
+
 ### Subscribed Topics
+
+
 
 ```clearsilver
 pub {
@@ -133,7 +143,11 @@ pub {
 }
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -144,7 +158,11 @@ pub {
 }
 ```
 
+
+
 ### Provided Services
+
+
 
 ```clearsilver
 pub {
@@ -154,6 +172,8 @@ pub {
   0.desc= Service call to initiate the multi table detection. The request is empty and the response contains details on the tables detected, as well as the final status of the detection.
 }
 ```
+
+
 
 ## Example Usage
 
@@ -165,6 +185,8 @@ are obtained when a persistent collision map, such as
 source.
 
 ### Example Launch File
+
+
 
 ```
 <launch>
@@ -201,3 +223,5 @@ source.
 
 </launch>
 ```
+
+

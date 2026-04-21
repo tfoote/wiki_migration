@@ -6,6 +6,8 @@ robot/camera. They are general purpose calibration nodes which perform
 automatic calibration; only images of a checkerboard calibration object
 located somewhere on disk are needed.
 
+
+
 ```clearsilver
 node.0{
 name=mono_calibration
@@ -146,3 +148,5 @@ param {
 }
 }
 ```
+
+

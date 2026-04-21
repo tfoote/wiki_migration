@@ -11,7 +11,9 @@ install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rms_rovio_environment.git
 roscd rms_rovio_environment
@@ -19,12 +21,18 @@ rosdep install rms_rovio_environment
 rosmake rms_rovio_environment
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rms-rovio-environment
 ```
+
+
 
 ### Startup
 
@@ -36,9 +44,13 @@ Rovio. Refer to the documentation provided on the their respective wiki
 pages to do so. When finished, you can launch the RMS environment server
 with the following command:
 
+
+
 ```
 roslaunch rms_rovio_environment rms_rovio_environment.launch
 ```
+
+
 
 ## Tutorials
 

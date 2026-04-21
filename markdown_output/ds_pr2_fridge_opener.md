@@ -7,11 +7,17 @@ used. ![](attachment:openning_fridge.jpg)
 
 ## Start the action server:
 
+
+
 ```
 roslaunch ds_pr2_fridge_opener open_close_fridge.launch
 ```
 
+
+
 ## OpenFridge Action Definition
+
+
 
 ```
 #goal
@@ -27,6 +33,8 @@ int32 result
 ---
 #feedback
 ```
+
+
 
 ## Calling OpenFridge Action
 

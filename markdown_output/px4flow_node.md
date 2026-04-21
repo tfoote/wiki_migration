@@ -25,10 +25,14 @@ the website: <http://www.cvg.ethz.ch/MAV>
 
 Clone this repositoy in your catkin workspace.
 
+
+
 ```
 cd ~/your_workspace/src
 git clone https://github.com/cvg/px-ros-pkg.git
 ```
+
+
 
 Note that `px4flow_node` package has the following dependencies.
 
@@ -43,10 +47,14 @@ Note that `px4flow_node` package has the following dependencies.
 Build using `catkin_make` according to the ROS
 [instructions](http://wiki.ros.org/catkin/Tutorials).
 
+
+
 ```
 cd ~/your_workspace/
 catkin_make
 ```
+
+
 
 ## Quick Start
 
@@ -56,27 +64,45 @@ optical flow board to one of the USB ports on your computer.
 Run the launch file to start up the ROS interface to the PX4Flow optical
 flow board.
 
+
+
 ```
 {#!wiki buildsystem catkin
 {{{
 $ roslaunch px4flow px4flow.launch
-``` }}}} ```
+```
+
+ }}}} 
+
+```
 {#!wiki buildsystem rosbuild
 {{{
 $ roslaunch px4flow_node px4flow.launch
-``` }}}} Run
+```
+
+ }}}} Run
 `image_view` to show the current image from the camera.
+
+
 
 ```
 $ rosrun image_view image_view image:=/px4flow/camera_image
-``` Run `rostopic` to show the values in the
+```
+
+ Run `rostopic` to show the values in the
 current message published by the `px4flow_node` node.
+
+
 
 ```
 $ rostopic echo /px4flow/opt_flow
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name = px4flow_node
@@ -102,3 +128,5 @@ param {
   1.default = 921600
 }
 ```
+
+

@@ -42,15 +42,23 @@ the grasping pipeline of the REEM robot.
 
 Execute
 
+
+
 ```
 sudo apt-get install ros-hydro-perception-blort
-``` A commonly used package with blort_ros is
+```
+
+ A commonly used package with blort_ros is
 pal_vision_segmentation which you can also get from the ROS repositories
 by executing
+
+
 
 ```
 sudo apt-get install ros-hydro-pal-vision-segmentation
 ```
+
+
 
 ## Techniques
 
@@ -73,6 +81,8 @@ and tune BLORT to your needs.
 
 ## ROS API
 
+
+
 ```clearsilver
 name=blort_learnsifts
 node {
@@ -87,7 +97,11 @@ sub {
   1.type = sensor_msgs/CameraInfo
   1.desc = Camera parameters associated with the input image. '''If you input a rectified image, do provide the according camera_info as well.'''
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name=blort_tracker
 node {
   0.name=gltracker_node
@@ -124,6 +138,10 @@ param {
   0.default = "tracking"
 }
 ```
+
+
+
+
 ```clearsilver
 name=blort_detector
 node {
@@ -155,7 +173,11 @@ param {
   1.desc = See [[http://www.ros.org/wiki/blort_ros/Tutorials/Tune#Detector_tuning|Detector tuning]].
   1.default = 4
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name=pose2Tf
 node {
   0.name=pose2Tf
@@ -172,6 +194,10 @@ prov_tf {
   0.desc = Transformation defined by the pose message compiled to tf transformation.
 }
 ```
+
+
+
+
 ```clearsilver
 name=pose2Tf_repeat
 node {
@@ -189,3 +215,5 @@ prov_tf {
   0.desc = Transformation defined by the pose message compiled to tf transformation.
 }
 ```
+
+

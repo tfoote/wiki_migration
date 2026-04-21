@@ -28,14 +28,20 @@ To use the wrapper, either run the `IcBarcodeScannerNodelet` or
 `IcBarcodeScannerNode`, which both provide the same
 interface/functionality.
 
+
+
 ```
 rosrun ic_barcode_scanner IcBarcodeScannerNode
 ```
+
+
 
 The nodelet/node only subscribes to the image input on demand, i.e. if
 somebody listens to a barcode topic.
 
 ### Interface
+
+
 
 ```clearsilver
 sub{
@@ -82,3 +88,5 @@ param{
 3.default = `-1`
 }
 ```
+
+

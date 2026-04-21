@@ -34,9 +34,13 @@ The Glass server node is implemented in Python. In order to use it, you
 must first download the PyBluez library. You can use the following
 apt-get command:
 
+
+
 ```
 sudo apt-get install python-bluetooth
-``` On some computers, a Bluetooth socket may be
+```
+
+ On some computers, a Bluetooth socket may be
 established but no data is sent through. If your computer is having
 trouble sending data through Bluetooth, please see
 [this StackOverflow post](http://stackoverflow.com/questions/14618277/rfcomm-without-pairing-using-pybluez-on-debian/14827036#14827036).
@@ -86,6 +90,8 @@ tutorial page (TODO).
 
 ## Nodes
 
+
+
 ```clearsilver
 node {
 name = glass_server_node
@@ -115,5 +121,7 @@ srv {
 }
 }
 ```
+
+
 
 ![](https://googledrive.com/host/0B8CLLYYXup2fblVnNFU1SUd1ME0/RIVeR_Lab.png)

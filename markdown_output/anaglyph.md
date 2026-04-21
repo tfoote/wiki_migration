@@ -18,6 +18,8 @@ using a Videre STOC 9cm baseline stereo camera.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = anaglyph
 desc = Generates red/cyan anaglyph image
@@ -35,3 +37,5 @@ pub {
   0.desc = Red/cyan anaglyph image.
 }
 ```
+
+

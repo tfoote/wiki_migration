@@ -10,7 +10,9 @@ install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/python_ethernet_rmp.git
 cd /path/to/your/catkin/workspace
@@ -18,12 +20,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-python-ethernet-rmp
 ```
+
+
 
 ## system_defines.py
 

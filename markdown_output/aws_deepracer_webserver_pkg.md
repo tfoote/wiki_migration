@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = webserver_publisher_node
 sub {
@@ -144,3 +146,5 @@ srv_called {
    }
 }
 ```
+
+

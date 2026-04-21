@@ -26,9 +26,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch target_monitor target_monitor.launch
-``` to launch the
+```
+
+ to launch the
 `target_monitor` node.
 
 The launch file can be configured with following parameters:
@@ -46,6 +50,8 @@ coordinates of the simulated targets. It is only used when the parameter
 where the list index is the ID of the target.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -146,6 +152,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

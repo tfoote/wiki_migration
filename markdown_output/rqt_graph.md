@@ -10,9 +10,13 @@
 every topic connection (see [Topics](Topics) for more details. This has
 to be enabled beforehand through:
 
+
+
 ```
 $ rosparam set enable_statistics true
 ```
+
+
 
 After that, rqt_graph will automatically annotate the ROS graph with
 statistics information.

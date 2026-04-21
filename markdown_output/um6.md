@@ -44,20 +44,30 @@ provided via the [imu_compass](imu_compass) package.
 
 Install the package from debians:
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-um6
 ```
 
+
+
 Run the driver like so:
+
+
 
 ```
 rosrun um6 um6_driver _port:=/dev/ttyUSB0
 ```
 
+
+
 **Note:** A rosbuild branch is also available in the repository, for
 users working with rosbuild workspaces under Fuerte or Groovy.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -117,3 +127,5 @@ node.0 {
  }
 }
 ```
+
+

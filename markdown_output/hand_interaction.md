@@ -31,6 +31,8 @@ cloud it came from.
     this will indicate what type of gesture is being made (ie: fist,
     peace, openpalm, etc.)
 
+
+
 ```clearsilver
 name = detectskelhands
 desc = This node finds the point clouds corresponding to the hands indicated by a skeletal model.
@@ -55,6 +57,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = detectfingers
 desc = This node segments a hand into fingers and palm.  It takes in incomplete Hand messages, and fills in information.
@@ -69,3 +75,5 @@ pub {
   0.desc = The Hand message out, which contains locations and orientations of the fingers
 }
 ```
+
+

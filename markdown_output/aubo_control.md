@@ -10,15 +10,23 @@ i5.
 To control the AUBO-i5 use USB-PCAN,run the joint_control node use the
 following:
 
+
+
 ```
 rosrun aubo_control joint_control_pcan
 ```
 
+
+
 A teleop control panel to move the real robot,run
+
+
 
 ```
 roslaunch aubo_description aubo_i5_rviz.launch
 ```
+
+
 
 Choose PCAN bus interface, and select "Continuous move" mode.
 

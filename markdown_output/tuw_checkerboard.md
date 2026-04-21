@@ -15,13 +15,21 @@ checkerboard pose as tf, marker msg, or pose.
     lets assume you ar publishing your camera under */camera/image_raw*
     and */camera/camera_info*
 -   Secound you can start the checkerboard detection\
-    ```
+    
+
+```
 rosrun tuw_checkerboard tuw_checkerboard_node image:=/camera/image_raw camera_info:=/camera/camera_info
 ```
+
+
 -   running the reconfigure module allows you to tune parameters
-    ```
+    
+
+```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+
+
 
 ## Screenshots
 

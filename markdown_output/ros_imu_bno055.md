@@ -13,9 +13,13 @@ configuration and calibration of the IMU
 -   Source: git
     [ https://github.com/RoboticArts/ros_imu_bno055.git ](https://github.com/RoboticArts/ros_imu_bno055.git )
 
+
+
 ```wiki
 '''IMPORTANT:''' This wiki offers a starter guide. See the readme of the [[  https://github.com/RoboticArts/ros_imu_bno055 |  RoboticArts/ros_imu_bno055 ]] repository for complete documentation
 ```
+
+
 
 ## Overview
 
@@ -54,9 +58,13 @@ inverted, so the PS1 bridge must be unsolder.
 ![this\|width=40%](attachment:bno055_uart.jpg)
 ![this\|width=40%](attachment:bno055_aliexpress.jpg)
 
+
+
 ```wiki
 '''Note:''' For different board, for example the Adafruit board or a different Chinese board, use [[https://gr33nonline.wordpress.com/2019/04/19/dont-get-the-wrong-bno055/ | this link]]
-``` __
+```
+
+ __
 
 Finally, connect the IMU to the serial to USB converter. The Rx and Tx
 cables are crossed. The power of the BNO055 module is 5V
@@ -67,13 +75,19 @@ cables are crossed. The power of the BNO055 module is 5V
 
 To install ros_imu_bno055 package:
 
+
+
 ```
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/RoboticArts/ros_imu_bno055.git
 ```
 
+
+
 It is important to compile the package so that the libraries are added
 correctly
+
+
 
 ```
 $ cd ~/catkin_ws
@@ -81,12 +95,18 @@ $ catkin_make --only-pkg-with-deps ros_imu_bno055
 $ source devel/setup.bash
 ```
 
+
+
 Finally pyserial must be installed if it is not on the computer. This
 dependency is normally included in the standard ROS installation
+
+
 
 ```
 $ pip install pyserial
 ```
+
+
 
 ## Launch IMU
 
@@ -96,9 +116,13 @@ Hardware Setup section for more information
 2\. In a terminal, launch the following command to display the IMU in
 RVIZ
 
+
+
 ```
 $ roslaunch ros_imu_bno055 view_imu.launch
 ```
+
+
 
 3\. Move the IMU to view its orientation in RVIZ
 
@@ -110,9 +134,13 @@ BNO055 IMU has an internal factory calibration, however, it is highly
 recommended to calibrate it. The node imu_calibration takes care of it.
 To launch it:
 
+
+
 ```
 $ roslaunch ros_imu_bno055 imu_calibration.launch operation_mode:=NDOF_FMC_OFF
 ```
+
+
 
 This will generate a calibration file that will be used by the driver.
 Note that the calibration depends on the operating mode used, therefore
@@ -120,11 +148,17 @@ it must be indicated.
 
 ![this\|width=60%](attachment:calibration_mode.png)
 
+
+
 ```wiki
 '''Note:''' For more detailed instructions see [[https://github.com/RoboticArts/ros_imu_bno055 | readme ]]
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = ros_imu_bno055 / imu_ros
@@ -199,3 +233,5 @@ param{
     7.desc = Enables topic imu/temperature
  }
 ```
+
+

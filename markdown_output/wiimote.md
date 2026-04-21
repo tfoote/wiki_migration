@@ -31,6 +31,8 @@ Make sure your Wiimote's batteries are charged.
 
 ## Nodes
 
+
+
 ```clearsilver
 node {
 0{
@@ -85,6 +87,8 @@ desc= Service to request that the Wiimote be re-calibrated.
 }
 ```
 
+
+
 ## The State Message
 
 The `State` message communicates all data that is available from your
@@ -112,7 +116,9 @@ However, the accelerometer bias is not obtained through observation
 during calibration, but is read from the Wiimote. The devices come with
 this information factory installed. The `buttons` array shows which
 buttons are currently depressed on the Wiimtoe device. The position
-mapping is as follows: ```
+mapping is as follows: 
+
+```
 Position   Button Name
 0         1
 1         2
@@ -125,7 +131,9 @@ Position   Button Name
 8         Rocker Up
 9         Rocker Down
 10        HOME
-``` LED and Rumble
+```
+
+ LED and Rumble
 (vibrator) states are simple Booleans.
 
 The `ir_tracking` are four sets of x/y/\[z\], and size measures, for

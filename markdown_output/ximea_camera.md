@@ -21,6 +21,8 @@ for details.
 should be kept in the /config folder. A configuration file will look as
 follows:
 
+
+
 ```
 serial_no: 32301951
 cam_name: "camera1"
@@ -32,6 +34,8 @@ rect_height: 600
 rect_width: 900
 image_data_format: "XI_MONO8"
 ```
+
+
 
 -   `serial_no` refers to the serial number of the camera
 -   `cam_name` is the name you wish to give to the camera
@@ -49,6 +53,8 @@ image_data_format: "XI_MONO8"
 2\) Create a launch file for your camera configuration. A typical launch
 file will look as follows:
 
+
+
 ```xml
 <launch>
 <!-- Camera Node -->
@@ -59,7 +65,9 @@ file will look as follows:
 
 </node>
 </launch>
-``` The main parameters of interest are the frame
+```
+
+ The main parameters of interest are the frame
 rate and the file paths.
 
 -   `frame_rate` corresponds to the frame rate for all of the cameras in
@@ -73,15 +81,23 @@ rate and the file paths.
     camera setup, the `camera_param_file_paths` parameter would look
     something like:
 
+
+
 ```xml
 <rosparam param="camera_param_file_paths" subst_value="true"> [$(find ximea_camera)/config/ximea1.yaml] </rosparam>
-``` while a three camera setup would have a list
+```
+
+ while a three camera setup would have a list
 containing the file names for the configuration files of all three
 cameras, separated by commas:
 
+
+
 ```xml
 <rosparam param="camera_param_file_paths" subst_value="true">[$(find ximea_camera)/config/ximea1.yaml, $(find ximea_camera)/config/ximea2.yaml, $(find ximea_camera)/config/ximea3.yaml]</rosparam>
-``` 3) You should now be able to plug in the
+```
+
+ 3) You should now be able to plug in the
 cameras and launch the file created in step 2.
 
 ## Published Topics

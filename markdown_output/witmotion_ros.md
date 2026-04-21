@@ -31,9 +31,13 @@ of the ICT Group.
 
 ## Installation
 
+
+
 ```
 sudo apt install ros-${ROS_DISTRO}-witmotion-ros
 ```
+
+
 
 ## Supported/tested Devices
 
@@ -51,9 +55,13 @@ sensor devices:
     tested on baud rates from 2400 to 115200 baud, polling frequencies
     up to 150 Hz.
 
+
+
 ```wiki
 The polling frequency of 200 Hz declared by Witmotion is actually a packet drop frequency which is slightly higher than the maximal possible measurement frequency.
 ```
+
+
 
 ### Community-driven tests
 
@@ -129,9 +137,15 @@ availability are configurable):
 
 ## Nodes
 
+
+
 ```wiki
 All the topic names listed here are '''configurable'''. The general rule is the following: the topic name is taken from the configuration parameter naming the corresponding '''publisher''': `<measurement-name>_publisher/topic_name`. One can adjust the topic names using a config file. Also, all publishers of the node except IMU, orientation and GPS publishers, are ready for '''linear calibration''' because there can be differences in decoding coefficients between the sensors (proven for WT31N and JY901B sensors). To set the linear calibration for a publisher, use ''coefficient'' and ''addition'' parameters in the dedicated configuration namespace (see the [[https://github.com/ElettraSciComp/witmotion_IMU_ros/blob/main/config/config.yml|sample config file]]).
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -362,12 +376,12 @@ node.0 {
  }
 ```
 
+
+
 ## Report a Bug
 
--   **ROS driver** - <<GitHubIssues(
-    ElettraSciComp/witmotion_IMU_ros)>>
--   **Underlying library** - <<GitHubIssues(
-    ElettraSciComp/witmotion_IMU_QT)>>
+-   **ROS driver** -
+-   **Underlying library** -
 
 ## Usage of controller applications
 
@@ -388,9 +402,13 @@ sensor once they comply with Witmotion 11-byte serial protocol. Use this
 to determine the desired baudrate, port and exact message set your
 sensor produces. The following example demonstrates the running of
 enumeration from */dev/ttyUSB0* port on 115200 baud with a polling
-interval of 10 ms. ```
+interval of 10 ms. 
+
+```
 rosrun witmotion_ros message-enumerator -d ttyUSB0 -b 115200 -p 10
 ```
+
+
 
 ## Troubleshooting
 
@@ -404,6 +422,8 @@ Please refer to the dedicated
 **DOI**: 10.5281/zenodo.7682518
 
 #### Modern BibTeX
+
+
 
 ```
 @software{witmotion_ros_2023,
@@ -420,7 +440,11 @@ Please refer to the dedicated
 }
 ```
 
+
+
 #### Plain BibTeX
+
+
 
 ```
 @misc{witmotion_ros_2023,
@@ -435,11 +459,15 @@ Please refer to the dedicated
 }
 ```
 
+
+
 ### Library
 
 **DOI**: 10.5281/zenodo.7017118
 
 #### Modern BibTeX
+
+
 
 ```
 @software{andrei_vukolov_2022_7017118,
@@ -454,7 +482,11 @@ Please refer to the dedicated
 }
 ```
 
+
+
 #### Plain BibTeX
+
+
 
 ```
 @misc{andrei_vukolov_2022_7017118,
@@ -466,3 +498,5 @@ Please refer to the dedicated
   howpublished = {Github Releases \url{https://github.com/ElettraSciComp/witmotion_IMU_QT/releases/tag/v0.9.17-alpha}}
 }
 ```
+
+

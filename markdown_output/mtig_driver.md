@@ -14,17 +14,29 @@ Verify if the usb device was recognized by using the following command
 (pay attention to the fact that the 0 in ttyUSB0 may be a different
 number in your setup):
 
+
+
 ```
 $ ls /dev/ttyUSB0
-``` You may have to the current user to the dialout
-group, using ```
+```
+
+ You may have to the current user to the dialout
+group, using 
+
+```
 $ sudo adduser this_user dialout
-``` Now you can run the node using
+```
+
+ Now you can run the node using
 roslaunch
+
+
 
 ```
 $ roslaunch mtig_driver mtig_driver.launch
 ```
+
+
 
 ## Configuration
 
@@ -53,6 +65,8 @@ The launchfile contains the following types of parameters.
 
 Below is an example of an configuration file "all_zero.launch" where
 all the modules are used with the maximum frequency available.
+
+
 
 ```
 <launch>
@@ -94,7 +108,11 @@ all the modules are used with the maximum frequency available.
 </launch>
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name = mtig_driver
@@ -123,3 +141,5 @@ pub {
   6.desc = This message contains important information from the Xsens' GPS that no other ROS Message accounted for.
 }
 ```
+
+

@@ -22,21 +22,31 @@ instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch ncd_parser demo.launch
 ```
+
+
 
 You should see a result similar to the video below.
 
 [Youtube](https://www.youtube.com/watch?v=5Im-PNR_zI4)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = ncd_parser
@@ -88,6 +98,8 @@ param{
     desc = pose of the right SICK laser in the robot frame
   }
 ```
+
+
 
 ## Acknowledgements
 

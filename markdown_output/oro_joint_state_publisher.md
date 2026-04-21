@@ -2,6 +2,8 @@
 
 ### Input ports
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -11,7 +13,11 @@ sub {
 }
 ```
 
+
+
 ### Output ports
+
+
 
 ```clearsilver
 pub {
@@ -22,7 +28,11 @@ pub {
 }
 ```
 
+
+
 ### Properties
+
+
 
 ```clearsilver
 param {
@@ -36,3 +46,5 @@ param {
   1.desc=ROS name of X joint.
 }
 ```
+
+

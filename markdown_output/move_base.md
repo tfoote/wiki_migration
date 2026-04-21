@@ -71,6 +71,8 @@ tracking their status is by using the `SimpleActionClient`. Please see
 
 ##### Action Subscribed Topics
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -83,7 +85,11 @@ sub {
 }
 ```
 
+
+
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -99,6 +105,10 @@ pub {
   2.desc= Result is empty for the `move_base` action.
 }
 ```
+
+
+
+
 
 ```clearsilver
 pub {
@@ -181,6 +191,8 @@ param {
   13.desc= How many times to allow for planning retries before executing recovery behaviors. A value of -1.0 corresponds to an infinite retries.
 }
 ```
+
+
 
 #### Component APIs
 

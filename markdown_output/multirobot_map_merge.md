@@ -1,5 +1,3 @@
-<<GitHubIssues(hrnr/m-explore)>>
-
 ## Overview
 
 This package provides global map for multiple robots. It can merge maps
@@ -73,6 +71,8 @@ tune `estimation_rate` parameter to run re-estimation less often if it
 causes any troubles.
 
 ## ROS API
+
+
 
 ```clearsilver
 
@@ -177,10 +177,14 @@ param {
 }
 ```
 
+
+
 ## Acknowledgements
 
 This package was developed as part of my bachelor thesis at
 [Charles University](http://www.mff.cuni.cz/to.en/) in Prague.
+
+
 
 ```
 @masterthesis{Hörner2016,
@@ -193,6 +197,8 @@ This package was developed as part of my bachelor thesis at
   URL = {https://is.cuni.cz/webapps/zzp/detail/174125/},
 }
 ```
+
+
 
 Idea for dynamic robot discovery is from [map_merging](map_merging)
 package from Zhi Yan. Merging algorithm and configuration are different.

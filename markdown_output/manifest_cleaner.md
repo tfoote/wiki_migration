@@ -1,8 +1,12 @@
 ## Usage
 
+
+
 ```
 rosrun manifest_cleaner stats.py (some/directory/containing/packages) [-web]
 ```
+
+
 
 The script will walk the entire directory structure of the specified
 path. The optional -web flag checks the status of the URL specified in
@@ -17,20 +21,28 @@ manifest tags (see below)
 ### Stack Overview
 
 The first section lists all of the specific properties of any stacks
-that were crawled. Example: ```
+that were crawled. Example: 
+
+```
 name                     description brief    license url       review       author                     
 ======================== =========== ======== ======= ========= ============ ===========================
 pr2_common               detailed    detailed BSD     specified Doc reviewed Maintained by John Hsu
 ```
 
+
+
 ### Package Overview
 
 The second section lists all the properties for the stacks that were
-crawled. Example: ```
+crawled. Example: 
+
+```
 name                     description brief    license url       review       author                     
 ======================== =========== ======== ======= ========= ============ ===========================
 pr2_msgs                 detailed    detailed BSD     specified Doc reviewed Eric Berger and many others
 ```
+
+
 
 ### Descriptions Summary
 

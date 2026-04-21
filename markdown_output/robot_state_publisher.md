@@ -42,13 +42,21 @@ See [tf_prefix](tf/Theory) for more details.
 
 . Publish frequency of state publisher, default: 50Hz.
 
+
+
 ```wiki
 `ignore_timestamp` (`bool`)
 
  . If true, ignore the publish_frequency and the timestamp of joint_states and publish a  tf for each of the received joint_states. Default is "false".
 ```
 
+
+
+
+
 ```wiki
 `use_tf_static` (`bool`)
   Set whether to use the /tf_static latched static transform broadcaster. Default: true.
 ```
+
+

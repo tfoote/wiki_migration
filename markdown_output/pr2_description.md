@@ -31,11 +31,15 @@ Some notable changes from [pr2_defs](pr2_defs):
 
 ## PR2 Coordinate Frames
 
-To see the PR2 URDF graphically, you can ```
+To see the PR2 URDF graphically, you can 
+
+```
 rosrun xacro xacro `rospack find pr2_description`/robots/pr2.urdf.xacro > pr2.urdf
 urdf_to_graphiz pr2.urdf
 evince pr2.pdf
-``` A
+```
+
+ A
 snapshot (r46956) is attached [here](attachment:pr2_description/pr2.pdf)
 for reference.
 
@@ -45,13 +49,21 @@ with `base_footprint` as the root link of the tree.
 ## Working with a Kinect
 
 To use the original Kinect with the PR2 (either robot or simulation),
-set the KINECT1 environment variable to true. ```
+set the KINECT1 environment variable to true. 
+
+```
 export KINECT1=true
 ```
+
+
 To use a Kinect2 with the PR2 (either robot or simulation), set the
-KINECT2 environment variable to true. ```
+KINECT2 environment variable to true. 
+
+```
 export KINECT2=true
-``` If both
+```
+
+ If both
 variables are set, the Kinect 2 will take precedence over the original
 Kinect.
 

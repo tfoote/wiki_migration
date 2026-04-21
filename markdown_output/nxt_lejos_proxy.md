@@ -9,6 +9,8 @@ and is recommended.
 
 Even though the API description looks quite complicated, it's very easy
 to configure the bindings. Here is an example configuration:
+
+
 ```
 nxt_robot:
   - type: motor
@@ -41,7 +43,11 @@ nxt_robot:
     track_width: 16.0
     wheel_diameter: 5.6
     reverse: true
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.0 {
 name=Motor
 desc=leJOS ROS API for the NXT motor 
@@ -76,6 +82,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
 name=Ultrasonic Sensor
@@ -108,6 +118,10 @@ param {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -143,6 +157,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
 name=Color Sensor
@@ -176,6 +194,10 @@ param {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -211,6 +233,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
 name=Acceleration Sensor
@@ -244,6 +270,10 @@ param {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -279,6 +309,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
 name=Sound Sensor
@@ -312,6 +346,10 @@ param {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -347,6 +385,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
 name=Motor
@@ -380,4 +422,6 @@ param {
 3.desc= The topic name for the sensor data.   
 }
 }
-```0
+```
+
+0

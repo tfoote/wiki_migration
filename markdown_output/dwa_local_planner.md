@@ -48,6 +48,8 @@ interface found in the [nav_core](nav_core) package.
 
 Example creation of a `dwa_local_planner::DWAPlannerROS` object:
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -62,10 +64,14 @@ dwa_local_planner::DWAPlannerROS dp;
 dp.initialize("my_dwa_planner", &tf, &costmap);
 ```
 
+
+
 ### API Stability
 
 -   The C++ API is stable
 -   The ROS API is stable
+
+
 
 ```clearsilver
 pub {
@@ -76,13 +82,19 @@ pub {
   1.type = nav_msgs/Path
   1.desc = The local plan or trajectory that scored the highest on the last cycle. Used primarily for visualization purposes.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 sub {
   0.name = odom
   0.type = nav_msgs/Odometry
   0.desc = Odometry information that gives the local planner the current speed of the robot. The velocity information in this message is assumed to be in the same coordinate frame as the `robot_base_frame` of the costmap contained within the `TrajectoryPlannerROS object`. See the [[costmap_2d]] package for information about the `robot_base_frame` parameter.
 }
 ```
+
+
 
 ### Parameters
 
@@ -95,6 +107,8 @@ also be changed using [dynamic_reconfigure](dynamic_reconfigure) to
 facilitate tuning the local planner in a running system.
 
 #### Robot Configuration Parameters
+
+
 
 ```clearsilver
 param{
@@ -146,7 +160,11 @@ param{
 }
 ```
 
+
+
 #### Goal Tolerance Parameters
+
+
 
 ```clearsilver
 param{
@@ -174,7 +192,11 @@ param{
   5.desc = The translational speed in m/s at which the robot is considered stopped
 ```
 
+
+
 #### Forward Simulation Parameters
+
+
 
 ```clearsilver
 param{
@@ -206,17 +228,25 @@ param{
 }
 ```
 
+
+
 #### Trajectory Scoring Parameters
 
 The cost function used to score each trajectory is in the following
 form:
+
+
 
 ```
 cost =
   path_distance_bias * (distance to path from the endpoint of the trajectory in meters)
   + goal_distance_bias * (distance to local goal from the endpoint of the trajectory in meters)
   + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 param{
   no_header=True
   1.name = ~<name>/path_distance_bias
@@ -254,7 +284,11 @@ param{
 }
 ```
 
+
+
 #### Oscillation Prevention Parameters
+
+
 
 ```clearsilver
 param{
@@ -266,7 +300,11 @@ param{
 }
 ```
 
+
+
 #### Global Plan Parameters
+
+
 
 ```clearsilver
 param{
@@ -277,6 +315,8 @@ param{
   0.desc = Defines whether or not to eat up the plan as the robot moves along the path. If set to true, points will fall off the end of the plan once the robot moves 1 meter past them.
 }
 ```
+
+
 
 ### C++ API
 

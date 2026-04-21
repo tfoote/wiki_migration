@@ -13,15 +13,23 @@ position against the camera.
 ## Installation Requirements
 
 Please download the following additional repositories into your
-workspace ```
+workspace 
+
+```
 git clone https://github.com/ipa320/cob_object_perception.git
 git clone https://github.com/ipa320/cob_perception_common.git
-``` and install all dependencies by
+```
+
+ and install all dependencies by
 moving into your catkin workspace (the folder where you type
-catkin_make) and run ```
+catkin_make) and run 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
 ```
+
+
 
 ## Calibrating the RGB-D camera's mounting position
 
@@ -44,7 +52,9 @@ laser scanner to base calibration, see README.md at
 2\. Measure laser scanner height and put in the number into the
 `properties.urdf.xacro` file of your robot which is located, e.g., at
 *`squirrel_calibration/robotino_bringup/robots/uibk-robotino/urdf/properties.urdf.xacro`*.
-There search for the block: ```
+There search for the block: 
+
+```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
   <property name="hokuyo_y" value="0.00937244242"/>
@@ -52,7 +62,9 @@ There search for the block: ```
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-``` and enter the
+```
+
+ and enter the
 measure at `hokuyo_z`. Optimally, you measure your laser scanner height
 using a level that is shifted downwards a ruler until it becomes visible
 in the laser scan. Repeat the procedure from below: shifting the level
@@ -99,7 +111,9 @@ wall at ground level.
 There are some properties you may want to edit in order to match your
 calibration environment well. These properties can be found in the
 *`squirrel_calibration/relative_localization/ros/launch/box_localization_params.yaml`*
-file. ```
+file. 
+
+```
 # Defines how fast new measurements are averaged into the transformation estimate (new_value = (1-update_rate)*old_value + update_rate*measurement). [0,1]
 # double
 update_rate: 0.75
@@ -151,6 +165,8 @@ box_search_polygon: [0.3, 0.5,
                      0.3, 0.5]
 ```
 
+
+
 #### Corner
 
 This approach localizes the robot against a corner of two perpendicular
@@ -175,7 +191,9 @@ laserscanner points.
 There are some properties you may want to edit in order to match your
 calibration environment well. These properties can be found in the
 *`squirrel_calibration/relative_localization/ros/launch/corner_localization_params.yaml`*
-file ```
+file 
+
+```
 # Defines how fast new measurements are averaged into the transformation estimate (new_value = (1-update_rate)*old_value + update_rate*measurement). [0,1]
 # double
 update_rate: 0.25
@@ -223,6 +241,8 @@ side_wall_polygon: [0, 3.0,
                     0, 3.0]
 ```
 
+
+
 ### Mount markers in the environment
 
 Chose one of the following marker types that are used to calibrate the
@@ -253,9 +273,13 @@ calibration points. The following images illustrate this setup.
 Measure the vertical distance between ground plane and the upper left
 checkerboard point and insert this number into file
 *`squirrel_calibration/robotino_calibration/ros/launch/camera_base_calibration_checkerboard.launch`*
-at the line: ```
+at the line: 
+
+```
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_checkerboard" output="screen" args="0.0 -0.8 0 0 0 0  landmark_reference checkerboard_frame 100"/>
-``` Replace the -0.8 at the y-offset
+```
+
+ Replace the -0.8 at the y-offset
 with your measured number in meters. All other numbers should be 0 if
 the box is aligned with the checkerboard as described above. Use a
 negative measure because the y-axis of frame landmark_reference is
@@ -264,12 +288,16 @@ pointing into the ground floor.
 Enter the properties of the used calibration pattern (grid size, square
 side length) into file
 *`squirrel_calibration/robotino_calibration/ros/launch/camera_base_calibration_checkerboard_params.yaml`*
-at the lines: ```
+at the lines: 
+
+```
 # side length of the chessboard squares
 chessboard_cell_size: 0.05
 # number of checkerboard calibration points (in x- and y-direction, i.e. horizontal and vertical), i.e. those points where 4 squares meet
 chessboard_pattern_size: [6,4]
 ```
+
+
 
 #### Pi-Tags
 
@@ -293,7 +321,9 @@ the **tags' side length definitions** in file
 The size of a Pi-Tag is defined as the length between the **centers of
 two neighboring corner points** on the edge of a tag. The standard is
 0.15 m. You can set the real side length of a tag with the
-*`LineWidthHeight`* attribute: ```
+*`LineWidthHeight`* attribute: 
+
+```
 <FiducialDetector>
         <PI>
                 <ID value="25" />
@@ -315,6 +345,8 @@ two neighboring corner points** on the edge of a tag. The standard is
         ...
 ```
 
+
+
 File
 *`squirrel_calibration/robotino_calibration/ros/launch/camera_base_calibration_pitag.launch`*
 already provides convenient coordinate system definitions if you follow
@@ -325,13 +357,17 @@ this advice. The defined coordinate systems
 algorithm. These coordinate systems are not translated but rotated
 against *`landmark_reference_nav`* in the respective direction of the
 Pi-Tag orientation at the frontal or left wall, or at the ground.
+
+
 ```
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_marker_nav_front" output="screen" args="0.0 0.0 0.0 -1.57079632679 0 1.57079632679  landmark_reference_nav landmark_reference_front 100"/>
 ...
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_marker_nav_left" output="screen" args="0.0 0.0 0.0 0 0 1.57079632679  landmark_reference_nav landmark_reference_left 100"/>
 ...
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_marker_nav_ground" output="screen" args="0.0 0.0 0.0 -1.57079632679 0 0  landmark_reference_nav landmark_reference_ground 100"/>
-``` These definitions are illustrated further
+```
+
+ These definitions are illustrated further
 below.
 
 Finally, the real world locations of the mounted Pi-Tags must be entered
@@ -351,22 +387,34 @@ file
 are mentioned thereafter.
 
 ![Pi-Tag Mounting Position Front\|height="350"](attachment:corner-pi-2.png)
+
+
 ```
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_25" output="screen" args="0.8 0.75 0.01 0 0 0  landmark_reference_front tag_25 100"/>
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_36" output="screen" args="0.8 0.55 0.01 0 0 0  landmark_reference_front tag_36 100"/>
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_38" output="screen" args="1.0 0.65 0.01 0 0 0  landmark_reference_front tag_38 100"/>
 ```
+
+
 ![Pi-Tag Mounting Position Ground\|height="350"](attachment:corner-pi-3.png)
+
+
 ```
 rosdep update
 rosdep install --from-paths /src -y -i
-```0
+```
+
+0
 ![Pi-Tag Mounting Position Left\|height="350"](attachment:corner-pi-4.png)
 ![Pi-Tag Mounting Position Left\|height="350"](attachment:corner-pi-5.png)
+
+
 ```
 rosdep update
 rosdep install --from-paths /src -y -i
-```1
+```
+
+1
 
 The whole transformation chain from laser scanner to Pi-Tags, e.g. at
 the frontal wall, is *`hokuyo_link`* \--> *`landmark_reference_nav`*
@@ -392,18 +440,26 @@ and so on. If we take the example in the image, we had to enter the
 transform from Robot_Base to Camera_Base first and then add the one from
 Camera_Base to Camera_Head on top (transforms are marked on green). The
 order in which those transforms will be calibrated can then be changed
-in the *`calibration_order`* list. ```
+in the *`calibration_order`* list. 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
-```2
+```
+
+2
 
 3\. Choose one of the following two ways for defining a set of robot
 configurations, i.e. robot positions/orientations and camera angles to
 be used for calibration. First of all, set the count of degrees of
-freedom the camera has inside the yaml file. ```
+freedom the camera has inside the yaml file. 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
-```3
+```
+
+3
 This setting is located in file
 *`squirrel_calibration/robotino_calibration/ros/launch/camera_base_calibration_checkerboard_params.yaml`*
 or
@@ -415,10 +471,14 @@ you. Keep in mind that this method will only be chosen, when the
 utilized. The *`camera_ranges`* vector consists of each degree of
 freedom of the camera (pan and tilt in our case here) and each DOF comes
 along with three entries (min, step, max), so that the vector always
-contains a factor of three entries. ```
+contains a factor of three entries. 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
-```4 b.
+```
+
+4 b.
 Alternatively, a **set of robot configurations can be specified
 explicitly**. Fill in a good amount (i.e. >30) of robot configurations
 for observing the marker(s) measured relative to the
@@ -426,24 +486,36 @@ landmark_reference_nav coordinate system that is similarly aligned as
 the robot's base_link when the robot faces the marker. It makes sense
 to have observation positions from close, mid-range, and long distance
 and capture 3x3 images with the marker in all image corners and between
-and 4 additional images around the center. ```
-rosdep update
-rosdep install --from-paths /src -y -i
-```5
+and 4 additional images around the center. 
 
-### Run the calibration
-
-For starting the calibration procedure call ```
-rosdep update
-rosdep install --from-paths /src -y -i
-```6
-where *`foo`* can either be `box` or `corner` and *`bar`* can be set to
-`checkerboard` or `pitag`. For example, if you want to start a
-calibration using a corner and Pi-Tags, you have to type:
 ```
 rosdep update
 rosdep install --from-paths /src -y -i
-```7 The robot will drive into different
+```
+
+5
+
+### Run the calibration
+
+For starting the calibration procedure call 
+
+```
+rosdep update
+rosdep install --from-paths /src -y -i
+```
+
+6
+where *`foo`* can either be `box` or `corner` and *`bar`* can be set to
+`checkerboard` or `pitag`. For example, if you want to start a
+calibration using a corner and Pi-Tags, you have to type:
+
+
+```
+rosdep update
+rosdep install --from-paths /src -y -i
+```
+
+7 The robot will drive into different
 observation positions and move the torso to capture calibration images
 of the marker(s) at the wall(s). After image recording, the intrinsic
 camera calibration (checkerboard only) and the extrinsic transform
@@ -461,10 +533,14 @@ or
 Replace the extrinsic calibration parameters output by the program in
 your
 *`squirrel_calibration/robotino_bringup/robots/xyz_robotino/urdf/properties.urdf.xacro`*,
-e.g. ```
+e.g. 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
-```8
+```
+
+8
 
 The program also writes these calibrated values into a text file. The
 file can be found at
@@ -485,11 +561,17 @@ In RViz you have to add the topics `/kinect/depth_registered/points`
 (PointCloud2) and `/fiducials/fiducial_marker_array` (MarkerArray) in
 order to confirm that the RGB image (i.e. detected Pi-Tag markers)
 matches the point cloud. The Pi-Tag marker detection can be started as
-standalone program by running ```
+standalone program by running 
+
+```
 rosdep update
 rosdep install --from-paths /src -y -i
-```9 and subscribing
+```
+
+9 and subscribing
 to a marker topic (otherwise it will not publish data)
+
+
 ```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
@@ -498,11 +580,15 @@ to a marker topic (otherwise it will not publish data)
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```0 Once you have found a suitable scaling, you
+```
+
+0 Once you have found a suitable scaling, you
 can put it into a launch file to use it everytime with the driver. You
 may put it in
 *`squirrel_robotino/robotino_bringup/robots/xyz_robotino/launch/xyz_robotino.launch`*
-as ```
+as 
+
+```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
   <property name="hokuyo_y" value="0.00937244242"/>
@@ -510,7 +596,9 @@ as ```
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```1
+```
+
+1
 
 ## \[NOT YET\] Calibrating the mounting position of the arm
 
@@ -547,6 +635,8 @@ The following image illustrates an example setup for the RAW robot:
 Afterwards, fill in the corresponding
 *`arm_base_calibration_params_Robotino.yaml`* file which is located in
 *`squirrel_calibration/robotino_calibration/ros/launch`*:
+
+
 ```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
@@ -555,7 +645,9 @@ Afterwards, fill in the corresponding
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```2
+```
+
+2
 
 ### Capturing arm and camera positions for calibration
 
@@ -564,7 +656,9 @@ automatical calibration process you can use the jointstate_saver
 software provided in *`squirrel_robotino/jointstate_saver`*. The
 software settings can be adjusted to your needs using the
 *`saver.launch`* file inside the *`launch`* folder. The program can be
-launched by calling: ```
+launched by calling: 
+
+```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
   <property name="hokuyo_y" value="0.00937244242"/>
@@ -572,7 +666,9 @@ launched by calling: ```
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```3 Ensure that the camera
+```
+
+3 Ensure that the camera
 has clear sight to the checkerboard for each position change. It is
 recommended to also run the
 [camera_calibration](http://wiki.ros.org/camera_calibration) node
@@ -589,6 +685,8 @@ settings. Be aware that the more positions (30) have been captured the
 better the calibration result will be. There are at least three
 positions for camera and arm needed for the software to run the
 calibration. (The following settings are example values only)
+
+
 ```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
@@ -597,13 +695,17 @@ calibration. (The following settings are example values only)
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```4
+```
+
+4
 
 ### Starting the arm calibration routine
 
 In order to start the process make sure that all settings in
 *`arm_base_calibration_params_Robotino.yaml`* are correct, ensure that
 the arm and camera have enough space to move and call afterwards:
+
+
 ```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
@@ -612,7 +714,9 @@ the arm and camera have enough space to move and call afterwards:
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```5 The software will save an image of each
+```
+
+5 The software will save an image of each
 position and all corresponding transformations for offline calibration
 (set *`load_images`* to true).
 
@@ -620,7 +724,9 @@ position and all corresponding transformations for offline calibration
 
 Replace these parameters in your
 *`squirrel_robotino/robotino_bringup/robots/xyz_robotino/urdf/properties.urdf.xacro`*
-file (example values): ```
+file (example values): 
+
+```
 <!-- hokuyo mount positions | relative to base_link -->
   <property name="hokuyo_x" value="0.131740483"/>
   <property name="hokuyo_y" value="0.00937244242"/>
@@ -628,4 +734,6 @@ file (example values): ```
   <property name="hokuyo_roll" value="0.0"/>
   <property name="hokuyo_pitch" value="0.0"/>
   <property name="hokuyo_yaw" value="-0.0536545473"/>
-```6
+```
+
+6

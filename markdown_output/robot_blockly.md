@@ -88,6 +88,8 @@ brain for making drones and robots.
 
 ## Installation
 
+
+
 ```
 mkdir -p ~/blockly_ws/src
 cd ~/blockly_ws/src
@@ -99,7 +101,11 @@ cd ~/blockly_ws/
 catkin_make_isolated -j2 --pkg robot_blockly --install
 ```
 
+
+
 or
+
+
 
 ```
 mkdir -p ~/blockly_ws/src
@@ -109,12 +115,18 @@ cd ..
 catkin_make_isolated -j2 --pkg robot_blockly --install
 ```
 
+
+
 ## Launch it
+
+
 
 ```
 source ~/blockly_ws/install_isolated/setup.bash
 roslaunch robot_blockly robot_blockly.launch
 ```
+
+
 
 ## Support
 

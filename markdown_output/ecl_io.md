@@ -6,6 +6,8 @@ slight differences in posix and win32 functionality.
 
 ## Compiling & Linking
 
+
+
 ```cplusplus
 #include <ecl/io.hpp>
 
@@ -16,6 +18,8 @@ using ecl::poll_sockets;      // a drop in for posix poll() on windoze.
 using ecl::close_socket;      // a drop in for posix socketpair() on windoze.
 using ecl::socket_pair;       // standardises the api for closing a socket.
 ```
+
+
 
 Outside ros, you will also need to link to `ecl_io`.
 

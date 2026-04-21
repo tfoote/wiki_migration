@@ -169,13 +169,19 @@ All topics starts with prefix `interaction_primitives`.
 
 Both components are in srs git in `srs_interaction_primitives` package
 and can be compiled with ROS standard tool `rosmake`
+
+
 ```
 rosmake srs_interaction_primitives
 ```
 
+
+
 ## Usage
 
 ### Adding primitives from C++
+
+
 
 ```cplusplus
 
@@ -195,18 +201,28 @@ billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
 ```
 
+
+
 ### Using predefined services
 
--   Run service server ```
+-   Run service server 
+
+```
 rosrun srs_interaction_primitives interaction_primitives_service_server
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Run RViz ```
+-   Run RViz 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -220,41 +236,67 @@ Now you can call services and add or update Primitives.
 
 ##### Add Bounding Box
 
+
+
 ```
 rosservice call /interaction_primitives/add_bounding_box '{frame_id: /world, name: bbox, object_name: obj, description: "", 0, pose: { position: { x: -1, y: 0, z: 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } }, scale: { x: 1, y: 1, z: 1 }, color: { r: 1, g: 0, b: 0 }}'
 ```
 
+
+
 ##### Add Billboard
+
+
 
 ```
 rosservice call /interaction_primitives/add_billboard '{frame_id: /world, name: billboard, type: 2, description: "this is billboard", velocity: 5.6, direction: {x: 1, y: 1, z: 0, w: 1}, 0, pose: {position: { x: -1, y: 0, z: 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } }, scale: { x: 1, y: 1, z: 1 }}'
 ```
 
+
+
 ##### Add Plane
+
+
 
 ```
 rosservice call /interaction_primitives/add_plane '{frame_id: /world, name: plane, description: "", 0, pose: { position: { x: -1, y: 0, z: 5 }, orientation: { x: 0, y: 1, z: 0, w: 1 } }, scale: { x: 1, y: 1, z: 1 }, color: { r: 1, g: 0.3, b: 0, a: 1.0 }}'
 ```
 
+
+
 ##### Add Object
+
+
 
 ```
 rosservice call /interaction_primitives/add_object '{frame_id: /world, name: table_obj, description: "My table", 0, pose: { position: { x: -1, y: 0, z: 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } }, scale: { x: 1, y: 1, z: 1 }, resource: "package://gazebo_worlds/Media/models/table.dae", use_material: false, color: {r: 1, g: 0, b: 1, a: 1 }}'
 ```
 
+
+
 ##### Add Unknown Object
+
+
 
 ```
 rosservice call /interaction_primitives/add_unknown_object '{frame_id: /world, name: uobj, description: "", 0, pose: { position: { x: -1, y: 0, z: 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } }, scale: { x: 1, y: 1, z: 1 } }'
 ```
 
+
+
 ##### Add Object
+
+
 
 ```
 rosservice call /interaction_primitives/add_object '{frame_id: /world, name: milk, description: "Detected milk", 0, pose: { position: { x: -1, y: 0, z: 0 }, orientation: { x: 0, y: 0, z: 0, w: 1 } }, bounding_box_lwh: {x: 1.0, y: 0.2, z: 0.1}, color: {r: 1, g: 1, b: 0}, resource: package://cob_gazebo_worlds/Media/models/milk_box.dae, use_material: True}'
 ```
 
+
+
 ##### Change pose
+
+
 
 ```cplusplus
 
@@ -272,10 +314,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```0
+```
+
+0
 
 ##### Change scale
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -292,10 +338,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```1
+```
+
+1
 
 ##### Change color
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -312,10 +362,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```2
+```
+
+2
 
 ##### Change description
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -332,10 +386,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```3
+```
+
+3
 
 ##### Set pre-grasp position
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -352,10 +410,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```4
+```
+
+4
 
 ##### Remove pre-grasp position
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -372,10 +434,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```5
+```
+
+5
 
 ##### Remove object
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -392,10 +458,14 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```6
+```
+
+6
 
 #### Calling services from C++
 
+
+
 ```cplusplus
 
 // Create Interactive Marker Server 
@@ -412,4 +482,6 @@ billboard->setDirection(direction); // actual movement direction
 billboard->setVelocity(velocity); // actual movement velocity
 billboard->setDescription("This is me!"); // description
 billboard->insert(); // creates interaction primitive a inserts it into IMS
-```7
+```
+
+7

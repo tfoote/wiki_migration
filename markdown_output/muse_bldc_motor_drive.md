@@ -2,9 +2,13 @@
 
 From command line run:
 
+
+
 ```
 rosrun muse_bldc_motor_drive muse_bldc_motor_drive
-``` Now *muse* node publishes a list with Muse
+```
+
+ Now *muse* node publishes a list with Muse
 Drives that are visible on the network and is ready to listen to your
 commands.
 
@@ -13,9 +17,13 @@ control/state machine commands.
 
 If you want to set another value for these frequencies, you can run:
 
+
+
 ```
 rosrun muse_bldc_motor_drive muse_bldc_motor_drive <feedback_frequency(Hz)> <control_frequency(Hz)>
-``` Note: There is no point in setting higher value
+```
+
+ Note: There is no point in setting higher value
 for feedback frequency. However, you can decrease it, if you do not need
 it to be so high, or your network cannot handle such a high frequency.
 

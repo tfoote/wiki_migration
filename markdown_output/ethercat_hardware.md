@@ -37,6 +37,8 @@ board has the following features:
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=ethercat_hardware
@@ -59,6 +61,8 @@ pub{
 }
 ```
 
+
+
 ## Command-line Tools
 
 The `ethercat_hardware` package's primary purpose is to provide a
@@ -75,6 +79,8 @@ assembly, and should not be needed after initial bring-up of the robot.
 boards, and allow boards to be programmed with new configuration
 information.
 
+
+
 ```
 Usage: ./motorconf [options]
  -i, --interface <i>    Use the network interface <i>
@@ -87,9 +93,13 @@ Usage: ./motorconf [options]
  -h, --help             Print this message and exit
 ```
 
+
+
 When running motorconf, you must specify the interface used to
 communicate with the EtherCAT devices. Without any additional arguments,
 `motorconf` will enumerate all of the EtherCAT devices it can find.
+
+
 
 ```
 # ./motorconf -i ecat0
@@ -110,6 +120,8 @@ communicate with the EtherCAT devices. Without any additional arguments,
 [DEBUG] 1263333388.297113000:             Name: laser_tilt_mount_motor
 ```
 
+
+
 In order to program an unconfigured device, or re-program a device, you
 must specify a name, motor type, and board type for this motor. If the
 name given (using the `-n` option) matches one of the names in the
@@ -122,13 +134,21 @@ name, motor, and board types, `motorconf` needs to know which device
 in the EtherCAT chain to program. The device number is specified with
 the `-d` option. Finally, the `-p` option tells `motorconf` to
 actually program the board. The following example programs device #2 to
-be the `br_caster_r_wheel_motor`: ```
+be the `br_caster_r_wheel_motor`: 
+
+```
 ./motorconf -i ecat0 -n br_caster_r_wheel_motor -d 2 -p
 ```
 
-`motorconf` will respond with: ```
+
+
+`motorconf` will respond with: 
+
+```
 [ INFO] 1263334127.577301000: Programming device 2, to be named: br_caster_r_wheel_motor
 ```
+
+
 
 #### actuators.conf
 
@@ -154,7 +174,9 @@ contains the following attributes:
 -   Reduction
 
 For example, this element specifies the Maxon RE40 motor used in PR2's
-elbow, shoulder and spine: ```
+elbow, shoulder and spine: 
+
+```
 <!-- Elbow, shoulder, spine -->
   <!-- http://pr.willowgarage.com/wiki/HardwareComponents/Motors?action=AttachFile&do=get&target=maxonRE40.pdf -->
   <motor name="148877">
@@ -168,6 +190,8 @@ elbow, shoulder and spine: ```
   </motor>
 ```
 
+
+
 The <actuators> subsection contains a series of <actuator>
 definitions. An <actuator> has the following attributes:
 
@@ -176,6 +200,10 @@ definitions. An <actuator> has the following attributes:
 -   Board For example, the following <actuator> definition states that
     the *l_elbow_flex_motor* should be configured with the motor
     parameters specified in the previous example:
-    ```
+    
+
+```
 <actuator name="l_elbow_flex_motor" motor="148877" board="wg005"/>
 ```
+
+

@@ -6,12 +6,18 @@ for detailed information on how to use the deployer.
 
 Run the orocos deployer using rosrun
 
+
+
 ```
 rosrun ocl deployer-gnulinux -ldebug -s deploy.ops
 ```
 
+
+
 Where you define your launch configuration in the deploy.ops script,
 e.g.
+
+
 
 ```python
 #import your OROCOS library (dependencies are automatically resolved)
@@ -29,8 +35,12 @@ Comp.configure()
 Comp.start()
 ```
 
+
+
 The myCompProp.cpf file declares the Components properties using XML
 syntax:
+
+
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>                                                                                                                            
@@ -39,6 +49,8 @@ syntax:
      <simple name="init_file" type="string"><description>Name of the initialisation file</description><value>init.xml</value></simple>
     </properties>
 ```
+
+
 
 ## Roslaunch for OROCOS components
 
@@ -50,12 +62,16 @@ rtt_ros_integration.
 E.g, a roslaunch file myComp.launch to start the ocl deployer in debug
 mode and load the deploy.ops script in the myRosPkg package:
 
+
+
 ```
 <launch>                                                                                                                                                 
    <node name="myNodeName" pkg="ocl" type="deployer-gnulinux" launch-prefix="konsole -e" args="-ldebug -s $(find myRosPkg)/deploy.ops --">
    </node>           
   </launch>
 ```
+
+
 
 Important remarks:
 

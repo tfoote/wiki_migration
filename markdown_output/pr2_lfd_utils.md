@@ -5,18 +5,26 @@ and learning from demonstrations with the PR2.
 
 ## Installation
 
-Get this package via github: ```shell
+Get this package via github: 
+
+```shell
 git clone https://github.com/sniekum/pr2_lfd_utils.git
-``` Build using
+```
+
+ Build using
 catkin. This package has recently had a major update, so the rest of
 this wiki page may be out of date until further notice.
 
 ## Utilities
 
 Before any utilities can be used, a launch script must be run:
+
+
 ```shell
 roslaunch pr2_lfd_utils lfd.launch
 ```
+
+
 
 Then, any of the following utilities are available:
 

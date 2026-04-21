@@ -4,64 +4,108 @@
 
 see [cob_mapping_slam](cob_mapping_slam)
 
-record map to srs_user_tests package ```
+record map to srs_user_tests package 
+
+```
 roscd srs_user_tests/ros/config/ipa-apartment
 rosrun map_server map_saver
 ```
 
+
+
 ### Create initial environment model
 
-start navigation with new map ```
+start navigation with new map 
+
+```
 roscd srs_user_tests/ros/config/ipa-apartment
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch map:=$(pwd)/map.yaml
 ```
 
+
+
 record bag file on pc2 (TODO: Check if topics are correct)
+
+
 ```
 rosbag record -O /tmp/srs_setup.bag /tf /cam3d/depth_registered/points
 ```
 
+
+
 #### create environment model for BUT version
+
+
 
 ```
 rosbag play /tmp/srs/srs_setup.bag
 roslaunch srs_env_model but_envmodel_robot.launch
-``` Save map ```
+```
+
+ Save map 
+
+```
 roslaunch srs_user_tests save_octomap.launch
 roscd srs_user_tests/data
 mv saved_octomap.enm ipa-apartment/octomap.enm
-``` Load map
+```
+
+ Load map
+
+
 ```
 roslaunch srs_user_tests load_octomap.launch
 ```
 
+
+
 #### create environment model for IPA version
+
+
 
 ```
 rosbag play /tmp/srs/srs_setup.bag
 roslaunch cob_3d_mapping_pipeline mapping.launch
 rosrun cob_3d_mapping_point_map trigger_mapping.py <start|stop>
-``` Save map to bag file ```
+```
+
+ Save map to bag file 
+
+```
 rosrun cob_3d_mapping_geometry_map get_geometry_map /tmp/srs/geomap.bag
 roscd srs_user_tests/data/ipa-apartment
 cp /tmp/srs/geomap.bag .
 ```
-Load initial map from bag file ```
+
+
+Load initial map from bag file 
+
+```
 roscd srs_user_tests/data/ipa-apartment
 roslaunch cob_3d_mapping_geometry_map set_geometry_map.launch file_path:=geomap.bag
-``` Visualization
+```
+
+ Visualization
+
+
 ```
 rosrun rviz rviz
 ```
+
+
 
 ## Start user tests
 
 ### on robot or simulation machine
 
-Start srs components on robot ```
+Start srs components on robot 
+
+```
 roscd srs_user_tests/ros/config/ipa-apartment
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch map:=$(pwd)/map.yaml
-```0
+```
+
+0
 
 `exp` Experiment.
 
@@ -82,10 +126,14 @@ test/participant.
 
 ### on remote pc
 
+
+
 ```
 roscd srs_user_tests/ros/config/ipa-apartment
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch map:=$(pwd)/map.yaml
-```1
+```
+
+1
 
 Arguments `exp`, `task`, `cond`, `sim` and `id` have the same
 meaning for both launch files. Just `id` has slightly different

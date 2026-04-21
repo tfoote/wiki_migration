@@ -22,6 +22,8 @@ parameters.
 Let's suppose we have a vision sensor in V-REP called
 "Vision_sensor_0". The plugin will create the following topics:
 
+
+
 ```
 /vrep/Vision_sensor_0
  /vrep/Vision_sensor_0/Camerainfo
@@ -35,3 +37,5 @@ Let's suppose we have a vision sensor in V-REP called
  /vrep/Vision_sensor_0/theora/parameter_descriptions
  /vrep/Vision_sensor_0/theora/parameter_updates
 ```
+
+

@@ -56,12 +56,16 @@ you set for these must be, respectively, a bool, an integer and a
 string. Also note that boolean features must be specified as ROS params
 false/true, not as integer 0/1.
 
+
+
 ```
 $ rosparam set /camera_aravis/GammaEnable false
 $ rosparam set /camera_aravis/BlackLevelRaw 5
 $ rosparam set /camera_aravis/PixelFormat Mono12
 $ rosrun camera_aravis cam_aravis
 ```
+
+
 
 ### Multiple Cameras
 
@@ -70,15 +74,23 @@ on the command-line, or via parameter. It runs one camera per node.
 
 To specify which camera to open, via the command-line:
 
+
+
 ```
 $ rosrun camera_aravis cam_aravis _guid:=Basler-21237813
-``` To specify which camera to open, via a
+```
+
+ To specify which camera to open, via a
 parameter:
+
+
 
 ```
 $ rosparam set /camera_aravis/guid Basler-21237813
 $ rosrun camera_aravis cam_aravis
 ```
+
+
 
 ### Timestamps
 
@@ -100,10 +112,18 @@ rates, a PID controller gently pulls the result toward ROS time.
 
 The basic command to run camera_aravis:
 
+
+
 ```
 $ rosrun camera_aravis cam_aravis
-``` To run it in a given namespace:
+```
+
+ To run it in a given namespace:
+
+
 
 ```
 $ ROS_NAMESPACE=cam1 rosrun camera_aravis cam_aravis
 ```
+
+

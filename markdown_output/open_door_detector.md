@@ -4,6 +4,8 @@ See the open_door_detector node documentation.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = open_door_detector
 desc = Provides a service to detect if a door is open. If this is the case, it returns the position of the middle of the door. Otherwise it returns position 0.
@@ -15,13 +17,23 @@ srv {
 }
 ```
 
+
+
 ## Test open_door_detector
 
-By calling ```
+By calling 
+
+```
 roslaunch open_door_detector open_door_detector.launch
-``` one can start the node
+```
+
+ one can start the node
 open_door_detector which provides the detect_open_door service. By
-calling ```
+calling 
+
+```
 rosservice call /detect_open_door [aperture_angle] [wall_distance]
-``` one can call the service to detect a
+```
+
+ one can call the service to detect a
 open door.

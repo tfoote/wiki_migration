@@ -9,6 +9,8 @@ represented in a costmap that otherwise would not be detected by CARL.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = furniture_layer
@@ -94,10 +96,14 @@ node.3 {
 }
 ```
 
+
+
 ## Installation
 
 To install the carl_navigation package, you can install from source with
 the following commands:
+
+
 
 ```
 cd /(your catkin workspace)/src
@@ -106,33 +112,51 @@ cd ..
 catkin_make
 ```
 
+
+
 ## Startup
 
 The carl_navigation package contains multiple launch files. One can
 launch the navigation stack using:
 
+
+
 ```
 roslaunch carl_navigation navigation.launch
-``` One can see a visual representation of
+```
+
+ One can see a visual representation of
 navigation using rviz with:
+
+
 
 ```
 roslaunch carl_navigation view_nav.launch
-``` Finally, one can generate a map of the
+```
+
+ Finally, one can generate a map of the
 environment using gmapping:
+
+
 
 ```
 roslaunch carl_navigation gmapping.launch
-``` The carl_navigation package also supports the
+```
+
+ The carl_navigation package also supports the
 inclusion of defined obstacles that may not be visible to a laser scan.
 These obstacles appear on a furniture layer costmap plugin defined in
 this package. Packages such as [rail_ceiling](rail_ceiling) can provide
 furniture definitions and tracking. One can launch the the navigation
 stack configured to use these layered costmaps with:
 
+
+
 ```
 roslaunch carl_navigation navigation_layered.launch
 ```
+
+
 
 ## Support
 

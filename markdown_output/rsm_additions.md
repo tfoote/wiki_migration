@@ -19,7 +19,9 @@ for forward movement with "move_base" and for reverse movement with
 
 The following code needs to be included in your launch file (or the
 nodes launched respectively) to allow the robot to navigate in forward
-and reverse depending on the set mode: ```
+and reverse depending on the set mode: 
+
+```
 <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
         ...
         <param name="global_costmap/robot_base_frame" value="$(arg robot_frame)" />
@@ -40,7 +42,9 @@ and reverse depending on the set mode: ```
     </node>
 
     <node pkg="tf" type="static_transform_publisher" name="base_footprint_reverse" args="0 0 0 3.1415 0 0 (arg robot_frame) $(arg robot_frame)_reverse 10" />
-``` Replace
+```
+
+ Replace
 the dots with the usual parameters for the navigation stack. Both
 packages share the same parameters but for the robot base frame. To use
 a particular navigation stack, initiate it like in this

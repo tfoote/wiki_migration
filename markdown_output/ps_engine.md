@@ -20,8 +20,12 @@ this is a work in progress. In order to use `ps_engine` with the
 Kinect, you will need to set two environment variables. We recommend
 adding the following to your `.bashrc`:
 
+
+
 ```
 export XN_SENSOR_VENDOR_ID=0x045E 
 export XN_SENSOR_PRODUCT_ID=0x02AE
 export XN_HOST_PROTOCOL_ALGORITHM_REGISTRATION=0x40
 ```
+
+

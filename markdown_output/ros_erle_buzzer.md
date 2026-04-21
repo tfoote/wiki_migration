@@ -17,6 +17,8 @@ Erle-Brain
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = ros_erle_buzzer_main
@@ -36,34 +38,52 @@ node.1 {
 }
 ```
 
+
+
 ## Using ros_erle_buzzer
 
 ### ros_erle_buzzer_main
 
-Launch the subscriber: ```
+Launch the subscriber: 
+
+```
 rosrun ros_erle_buzzer ros_erle_buzzer_main
 ```
+
+
 
 You can Publish the led status with one of the two examples:
 
 ### ros_erle_buzzer_write.py
 
-Usage in Python: ```
+Usage in Python: 
+
+```
 rosrun ros_erle_buzzer ros_erle_buzzer_writer.py tune
 ```
 
+
+
 ### ros_erle_buzzer_write
 
-Usage in C++: ```
+Usage in C++: 
+
+```
 rosrun ros_erle_buzzer ros_erle_buzzer_writer tune
 ```
+
+
 
 ### Example
 
 If you want to play one of the eleven different tones execute:
+
+
 ```
 rosrun ros_erle_buzzer ros_erle_buzzer_writer 1
 ```
+
+
 
 ### Configure your network
 
@@ -71,15 +91,23 @@ If you are working with two different machines, for example: Erle-Brain
 and your laptop remember to configure ROS_MASTER_URI and ROS_IP. Maybe
 could be interesting to put this lines in your bashrc.
 
-Erle-Brain ```
+Erle-Brain 
+
+```
 export ROS_MASTER_URI=http://192.168.7.2:11311
 export ROS_IP=192.168.7.2
 ```
 
-Laptop or PC: ```
+
+
+Laptop or PC: 
+
+```
 export ROS_MASTER_URI=http://192.168.7.2:11311
 export ROS_IP=192.168.7.1
 ```
+
+
 
 ## Support forums and chats
 

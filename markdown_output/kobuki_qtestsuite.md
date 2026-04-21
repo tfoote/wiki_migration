@@ -4,15 +4,23 @@ drift, events amongst others.
 
 To install:
 
+
+
 ```
 > sudo apt-get install ros-$ROS_DISTRO-kobuki-qtestsuite
 ```
 
+
+
 and execute:
+
+
 
 ```
 > . /opt/ros/$ROS_DISTRO/setup.bash
 > kobuki_qtestsuite
 ```
+
+
 
 ![Kobuki Qtestsuite\|width=800](attachment:kobuki_qtestsuite/kobuki_qtestsuite.png)

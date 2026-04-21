@@ -57,15 +57,23 @@ following the instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz tf rosbag
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch laser_ortho_projector demo.launch
 ```
+
+
 
 You should see the input laser scan and the orthogonally projected scan
 displayed in [rviz](rviz), similar to the video below:
@@ -77,6 +85,8 @@ displayed in [rviz](rviz), similar to the video below:
 Two drivers are available: `laser_ortho_projector_node` and
 `laser_ortho_projector_nodelet`. Their parameters and topics are
 identical.
+
+
 
 ```clearsilver
  name = laser_ortho_projector_node / laser_ortho_projector_nodelet
@@ -149,6 +159,8 @@ identical.
   }
  }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

@@ -30,13 +30,21 @@ well.
 ## Launch Example
 
 . to make a map by RPlidar, you should launch
-rplidar_gmapping_demo.launch like: ```
+rplidar_gmapping_demo.launch like: 
+
+```
 roslaunch rplidar_python rplidar_gmapping_demo.launch
-``` Or you may
+```
+
+ Or you may
 wanna see laser frame only by typing following command:
+
+
 ```
 roslaunch rplidar_python rplidar_demo.launch
 ```
+
+
 
 ## Node
 

@@ -45,6 +45,8 @@ custom CANopen device can be written in less than 100 lines of code.
 
 ## Related publication
 
+
+
 ```
 @inproceedings{kacanopen2016,
   title = {KaCanOpen: An Open Plug&Play CANopen Stack for ROS in Modern C++},
@@ -53,3 +55,5 @@ custom CANopen device can be written in less than 100 lines of code.
   year = 2016
 }
 ```
+
+

@@ -29,15 +29,23 @@ The following explains what every script in **demos** does:
 
 -   *0.estimate_vfh_and_normals.sh* needs
     *estimate_normals_and_vfh.launch* launched first, e.g.:
-    ```
+    
+
+```
 $ roslaunch vfh_cluster_classifier estimate_normals_and_vfh.launch
-``` and for a given directory containing point
+```
+
+ and for a given directory containing point
     cloud clusters, it will estimate the surface normals and VFH global
     descriptors;
 -   *0.estimate_vfh.sh* needs *estimate_vfh.launch* launched first,
-    e.g.: ```
+    e.g.: 
+
+```
 $ roslaunch vfh_cluster_classifier estimate_vfh.launch
-``` and for a given directory containing
+```
+
+ and for a given directory containing
     point cloud clusters with surface normals at each point, it will
     estimate the VFH global descriptors;
 -   *1.build_tree.sh* uses the estimated VFH global descriptors to build
@@ -48,10 +56,14 @@ $ roslaunch vfh_cluster_classifier estimate_vfh.launch
 -   *3.view_histograms.sh* draws the VFH signatures for one cluster per
     directory (from **demos/data**).
 
-For a quick test, just run: ```
+For a quick test, just run: 
+
+```
 $ bash 1.build_tree.sh
 $ bash 2.nearest_neighbors.sh
-``` in **demos**. You
+```
+
+ in **demos**. You
 should see something along the lines of:
 
 ![](attachment:ex1.jpg) ![](attachment:ex2.jpg)

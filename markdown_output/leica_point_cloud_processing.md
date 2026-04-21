@@ -51,9 +51,13 @@ the following.
 ### Publish clouds
 
 **load_and_publish_clouds** node will load both source and target clouds
-into ROS environment. ```
+into ROS environment. 
+
+```
 rosrun leica_point_cloud_processing load_and_publish_clouds
 ```
+
+
 
 Considerations:
 
@@ -72,23 +76,33 @@ Considerations:
 ```
 -   Publisher starts when service `/publish_clouds` is called:
     automatically done by `leica_scanstation_ros_node` when scan is
-    finished or manually by user: ```
+    finished or manually by user: 
+
+```
 rosservice call /publish_clouds "source_cloud_file: 'scan_fods.pcd'
         target_cloud_file: 'cad.ply'"
 ```
+
+
 
 ### Start process
 
 **node** is the main node that perform alignment and FOD detection. It
 opens subscribers to clouds topics and start process. As the target
 cloud indicated in example above comes from a CAD file, set param
-`using_CAD` to true. ```
+`using_CAD` to true. 
+
+```
 roslaunch leica_point_cloud_processing leica_point_cloud_processing.launch using_CAD:=true
 ```
+
+
 
 ## ROS API
 
 ### Topics
+
+
 
 ```clearsilver
 pub {
@@ -125,7 +139,11 @@ pub {
    }
 ```
 
+
+
 ### Services
+
+
 
 ```clearsilver
 srv{
@@ -137,7 +155,11 @@ srv{
    }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 param {
@@ -155,6 +177,8 @@ param {
    default = 1
    }
 ```
+
+
 
 ## Acknowledgement
 

@@ -13,15 +13,23 @@ For more information on simulating Jackal, see
 To view the Jackal model in isolation, disconnected from a real or
 simulated robot, use the following launcher:
 
+
+
 ```
 roslaunch jackal_viz view_model.launch
 ```
 
+
+
 To visualize a real or simulated Jackal, launch:
+
+
 
 ```
 roslaunch jackal_viz view_robot.launch
 ```
+
+
 
 For more examples, see
 [Jackal Tutorials](http://www.clearpathrobotics.com/assets/guides/melodic/jackal/).
@@ -31,9 +39,13 @@ For more examples, see
 If you'd like to bring up a specific rviz configuration, you can add an
 arg to the view_robot launcher, for example:
 
+
+
 ```
 roslaunch jackal_viz view_robot.launch config:=navigation
 ```
+
+
 
 The configurations available are:
 

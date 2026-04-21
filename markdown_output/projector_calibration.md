@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = grid
@@ -27,6 +29,8 @@ node.0 {
 }
 ```
 
+
+
 ## Using the Calibration
 
 Given a homography, `H` (provided by
@@ -38,7 +42,9 @@ point `p`,,img,,). 1. Project `p`,,img,, onto the image plane (call
 the new point `p`,,proj,,). 1. Transform `p`,,2d,, to projector
 pixels using `H`
 
-In python this looks something like ```python
+In python this looks something like 
+
+```python
 import image_geometry, tf, cv2
 
 # get camera_info_msg and H from somewhere
@@ -49,3 +55,5 @@ p_img = tf_listener.transformPoint(model.tf_frame, p)
 p_2d = model.project3dToPixel((p_img.x, p_img.y, p_img.z))
 p_proj = cv2.perspectiveTransform(H, [p_2d])
 ```
+
+

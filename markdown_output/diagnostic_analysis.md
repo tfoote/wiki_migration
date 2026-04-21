@@ -15,12 +15,16 @@ thin or convert these files into smaller CSV files for analysis.
 ### Non-Diagnostics Bagfiles
 
 If you have any messages that aren't on the "/diagnostics" topic,
-they will be discarded. ```
+they will be discarded. 
+
+```
 Discarding message on topic: /turtle1/pose
 Discarding message on topic: /turtle1/color_sensor
 Discarding message on topic: /turtle1/pose
 Discarding message on topic: /turtle1/color_sensor
-``` The PR2 diagnostics
+```
+
+ The PR2 diagnostics
 toolchain uses <<MsgLink(diagnostic_msgs/DiagnosticArray)>> messages
 on the "/diagnostics" topic, which is what this package is designed
 for. Only [bag files](Bags) of this type will work with the
@@ -35,14 +39,22 @@ files, use [rostopic](rostopic).
 
 Convert bag file(s) to CSV representation. By default, this will output
 the CSV file to the `output/log_filename` directory, e.g.:
+
+
 ```
 $ rosrun diagnostic_analysis export_csv.py <bagfilename>
 ```
 
+
+
 `-d OUTPUT_DIR` Change the output directory. For
-<example:```
+<example:
+
+```
 rosrun diagnostic_analysis export_csv.py file.bag -d my_dir
-```> will store the results in the
+```
+
+> will store the results in the
 "my_dir/output" directory.
 
 Each "name" in the diagnostic status messages will have its own file.
@@ -54,9 +66,13 @@ EtherCAT Master, etc\...
 `sparse_csv.py <csv-file> -m` (`\--max`) Shrink CSV file to a
 maximum of 65,000 rows. This assists with fitting within Excel limit of
 65,536 rows. This will retain every nth line as necessary to reduce the
-CSV row length. For example: ```
+CSV row length. For example: 
+
+```
 $ rosrun diagnostic_analysis sparse_csv.py my_bagfile.csv -m
 ```
+
+
 
 `sparse_csv.py <csv-file> -l LENGTH` (`\--length`) Shrink CSV file
 to specified row length by skipping every nth line as necessary.

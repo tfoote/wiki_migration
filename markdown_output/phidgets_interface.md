@@ -18,12 +18,16 @@ Phidgets Python Module:
 
 Open the terminal on your catkin workspace and type
 
+
+
 ```
 $ cd src
 $ git clone https://github.com/lumoreno17/phidgets_interface
 $ cd ..
 $ catkin_make
 ```
+
+
 
 ## How to use
 
@@ -32,6 +36,8 @@ specific topic, specify the name of the sensor and the channel mode
 (analog or digital). On the end of the script you will find the
 following examples:
 
+
+
 ```
 monitor_0 = PhidgetMonitor(0, 'SENSOR_NAME','ANALOG0','ANALOG')
 monitor_0.setup()
@@ -39,7 +45,9 @@ monitor_1 = PhidgetMonitor(1, 'SENSOR_NAME2','ANALOG1','ANALOG')
 monitor_1.setup()
 monitor_2 = PhidgetMonitor(0, 'SENSOR_NAME3','DIGITAL0','DIGITAL')
 monitor_2.setup()
-``` monitor_0 is an object of the class
+```
+
+ monitor_0 is an object of the class
 PhidgetMonitor that receives as parameters:
 
 1\. Channel number
@@ -60,14 +68,26 @@ Don't forget to save the changes!
 
 Inside your catkin workspace write the following command
 
+
+
 ```
 rosrun phidgets_interface Phidgets_Interface.py
-``` See the topics being used
+```
+
+ See the topics being used
+
+
 
 ```
 rostopic list
-``` Read the data
+```
+
+ Read the data
+
+
 
 ```
 rostopic echo <NAME_OF_THE_TOPIC>
 ```
+
+

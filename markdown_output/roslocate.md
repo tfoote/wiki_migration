@@ -7,11 +7,17 @@ is distributed with [rosinstall](rosinstall). For older version of
 `roslocate` is installed with the [rosinstall](rosinstall) tool. To
 install:
 
+
+
 ```
 easy_install -U rosinstall
 ```
 
+
+
 ## Usage
+
+
 
 ```
 roslocate
@@ -24,6 +30,8 @@ roslocate
 	describe	Get description of resource
 ```
 
+
+
 In order to assist with migrating users from the old version of
 `roslocate`, the `roslocate svn` command is still supported. It will
 be removed in future versions.
@@ -33,21 +41,29 @@ be removed in future versions.
 `roslocate info <package-or-stack>` Return `rosinstall` fragment
 for install the package or stack.
 
-Example: ```
+Example: 
+
+```
 roslocate info mapping
  - git:
         local-name: mapping
         uri: http://code.in.tum.de/git/mapping.git
 ```
 
+
+
 `\--prefix` Specify a file-system prefix for the rosinstall fragment.
 
-Example: ```
+Example: 
+
+```
 roslocate info --prefix /home/bob/ros-pkg rospy
  - svn:
         local-name: /home/bob/ros-pkg/rospy
         uri: https://code.ros.org/svn/ros/stacks/ros_comm/trunk/clients/rospy
 ```
+
+
 
 `\--distro=DISTRO` *(Since 0.5.17)* Get installation information for
 stack released into a specific ROS distribution. *(Released stacks

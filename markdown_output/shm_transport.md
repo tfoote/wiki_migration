@@ -26,6 +26,8 @@ are some examples.
 
 ### Writing the publisher node
 
+
+
 ```cplusplus
 #include "ros/ros.h"
 #include "std_msgs/String.h"
@@ -65,10 +67,10 @@ int main(int argc, char ** argv) {
 }
 ```
 
+
+
 The main difference between using shm_transport and native ROS transport
 is at line 15 to 17.
-
-<<CodeRef(publisher,15,17)>>
 
 A shm_transport::Topic object is an encapsulation of ros::NodeHandle.
 
@@ -83,6 +85,8 @@ total size of shared memory segment should be larger than two messages
 plus the space used by memory allocation algorithm.
 
 ### Writing the subscriber node
+
+
 
 ```cplusplus
 #include "ros/ros.h"
@@ -106,10 +110,10 @@ int main(int argc, char ** argv) {
 }
 ```
 
+
+
 Similar with the publisher node, the main difference between using
 shm_transport and native ROS transport is at line 14 to 16.
-
-<<CodeRef(subscriber,14,16)>>
 
 By calling shm_transport::Topic::subscribe(), we can get a
 shm_transport::Subscriber object, which acts the same with

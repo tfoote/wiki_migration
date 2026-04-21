@@ -14,6 +14,8 @@ the orientation of the base and top frame, respectively.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = phidgets_imu_node
@@ -90,12 +92,16 @@ node.1 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `carl_bot` package, you can install from source with
 the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
 cd ..
@@ -103,15 +109,21 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## First Time Sensor Setup
 
 To use the Phidgets IMU as a user other than root, you need to create a
 udev rule. Create a file called `99-phidgets.rules`, with the
 following line:
 
-. ```
+. 
+
+```
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="06c2", ATTRS{idProduct}=="00[3-a][0-f]", MODE="666"
 ```
+
+
 
 Copy this file into the `/etc/udev/rules.d` directory. You may need to
 reboot your computer for this to take effect.
@@ -121,17 +133,29 @@ reboot your computer for this to take effect.
 The two IMU's placed on CARL can be launched with the following launch
 file:
 
-. ```
+. 
+
+```
 roslaunch carl_phidgets imu.launch
 ```
 
-The orientation filter can be started with: . ```
+
+
+The orientation filter can be started with: . 
+
+```
 rosrun carl_phidgets orientation_filter
 ```
+
+
 
 Individual IMUs can be started with by running the IMU node separately,
 and specifying the sensor's unique serial number.
 
-. ```
+. 
+
+```
 rosrun carl_phidgets phidgets_imu_node _serial_number:=xxxxxx
 ```
+
+

@@ -22,13 +22,17 @@ organized into subdirectories as follows:
 ## Installation
 
 To install the `wpi_jaco` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -38,14 +42,22 @@ used to populate a tf tree and visualize the robot. Once launched, the
 MICO model can be visualized in tools such as rviz. It can be launched
 with the following command:
 
-. ```
+. 
+
+```
 roslaunch mico_description display.launch
 ```
+
+
 
 The launch file also includes a parameter (`gui`) to launch a GUI
 which can control each joint to test the model's behavior, which can be
 launched as follows:
 
-. ```
+. 
+
+```
 roslaunch mico_description display.launch gui:=true
 ```
+
+

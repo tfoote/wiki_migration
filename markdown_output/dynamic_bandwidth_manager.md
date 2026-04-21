@@ -28,6 +28,8 @@ Systems* will be presented at IROS 2015.
 
 ## System Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -101,9 +103,13 @@ param {
 }
 ```
 
+
+
 ## Basic Usage
 
 ### Writing a Simple Publisher using dynamic_bandwidth_manager package
+
+
 
 ```python
 #!/usr/bin/env python
@@ -132,6 +138,8 @@ if __name__ == '__main__':
         pass
 ```
 
+
+
 ### Running optimization node
 
 To create the independence of the optimization algorithm used by the
@@ -150,6 +158,8 @@ the calculated frequency for each topic considering the priorities (see
 Using **DBMOptimizer** it's possible create new optimization
 strategies. Code below presents a example of how create a node with a
 optimization algorithm.
+
+
 
 ```python
 #!/usr/bin/env python
@@ -172,6 +182,8 @@ if __name__ == '__main__':
 
     except rospy.ROSInterruptException: pass
 ```
+
+
 
 ## Managing topics on same machine
 

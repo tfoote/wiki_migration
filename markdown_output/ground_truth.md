@@ -1,5 +1,7 @@
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = calibrate
@@ -14,6 +16,8 @@ node.0 {
  }
 ```
 
+
+
 #### Placing the Kinect
 
 1\. Although the algorithm is independent of the sensor position,
@@ -22,19 +26,31 @@ field size (3m x 4m). I have had success placing it on the side of the
 half field at a height of about 2.5 - 3.5 meters.
 
 2\. Launch the calibrate node and adjust sensor appropriately until the
-field is visible as desired. ```
+field is visible as desired. 
+
+```
 roslaunch ground_truth calibrate.launch
 ```
+
+
 
 #### Calibrating the Kinect
 
-1\. Launch the kinect driver ```
+1\. Launch the kinect driver 
+
+```
 roslaunch openni_camera openni_node.launch
 ```
 
-2\. Launch the calibrate node ```
+
+
+2\. Launch the calibrate node 
+
+```
 roslaunch ground_truth calibrate.launch
 ```
+
+
 
 3\. Follow the instructions on the bottom of the pointcloud visualizer
 screen. *Remember that you have to click on the image and not the
@@ -50,6 +66,8 @@ already been saved.
 #### Command line arguments
 
 1\. The program supports a couple of command line arguments.
+
+
 ```
 -qsize <integer>         the ROS topic queue size (recommended value 1)
 -calibFile <string>      location where the calibration file should be stored
@@ -57,15 +75,23 @@ already been saved.
                          visualizer window on the screen
 ```
 
+
+
 2\. The `launch/calibrate.launch` file can be used to specify these
 arguments, so that they do not have to be supplied every time. These
 arguments are the ones that are supplied every time you run the binary
 through the `roslaunch` command.
 
 3\. Alternatively, you can supply these parameters at command line
-directly ```
+directly 
+
+```
 rosrun ground_truth calibrate -qsize 1 -calibFile data/calib2.txt
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -78,19 +104,31 @@ node.0 {
  }
 ```
 
+
+
 #### Running the detect node
 
-1\. Launch the kinect driver ```
+1\. Launch the kinect driver 
+
+```
 roslaunch openni_camera openni_node.launch
 ```
 
-2\. Launch the detect node ```
+
+
+2\. Launch the detect node 
+
+```
 roslaunch ground_truth detect.launch
 ```
+
+
 
 #### Command line arguments
 
 1\. The program supports a couple of command line arguments.
+
+
 ```
 -qsize <integer>         the ROS topic queue size (recommended value 1)
 -calibFile <string>      location of the calibration file
@@ -102,15 +140,21 @@ roslaunch ground_truth detect.launch
                          visualizer window on the screen
 ```
 
+
+
 2\. The `launch/detect.launch` file can be used to specify these
 arguments, so that they do not have to be supplied every time. These
 arguments are the ones that are supplied every time you run the binary
 through the `roslaunch` command.
 
 3\. Alternatively, you can supply these parameters at command line
-directly ```
+directly 
+
+```
 roslaunch ground_truth calibrate.launch
-```0
+```
+
+0
 
 ##### logFile
 
@@ -120,9 +164,13 @@ this log file.
 
 ##### mode
 
-`mode` supports 2 values ```
+`mode` supports 2 values 
+
+```
 roslaunch ground_truth calibrate.launch
-```1
+```
+
+1
 
 #### Current Status
 

@@ -21,9 +21,13 @@ occurs either in binary or clear-text mode.
 ## Usage
 
 The first node that should be used when working with the !LaMa Framework
-is `map_node`: ```
+is `map_node`: 
+
+```
 rosrun lama_interfaces map_node
-``` This node will run several
+```
+
+ This node will run several
 services: `/lama_map_agent`, `/interface_factory`,
 `/lama_object_getter`, and `/lama_object_setter`, which are
 described in further sections.
@@ -44,6 +48,8 @@ will be the name of the interface (`interface_name` attribute) to
 which "`_getter`" or "`_setter`" are added.
 
 For example, to create a clear-text interface for `float64` in C++:
+
+
 ```cplusplus
 ros::NodeHandle nh;
 ros::ServiceClient client = nh.serviceClient<lama_interfaces::AddInterface>("interface_factory");
@@ -60,10 +66,14 @@ if (!client.call(srv))
 }
 ```
 
+
+
 To add a database interface in Python, one can either use the
 `/interface_factory` service or call the equivalent Python function.
 For example, for a "`sensor_msgs/LaserScan\[\]`" descriptor with
-binary storage: ```python
+binary storage: 
+
+```python
 from lama_interfaces.interface_factory import interface_factory
 interface_name = 'my_laser_descriptor'
 getter_service = 'lama_interfaces/GetVectorLaserScan'
@@ -80,6 +90,8 @@ iface = interface_factory(interface_name,
 get_srv = iface.getter_service_proxy
 set_srv = iface.setter_service_proxy
 ```
+
+
 
 ### Direct vertex/edge access
 

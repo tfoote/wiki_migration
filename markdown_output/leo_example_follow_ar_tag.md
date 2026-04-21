@@ -1,6 +1,10 @@
+
+
 ```wiki
 '''Note:''' You can also check a detailed integration tutorial on [[https://www.leorover.tech/integrations/follow-artag|LeoRover Tech - Follow ARTag|target="_blank"]]
 ```
+
+
 
 ## Overview
 
@@ -12,15 +16,21 @@ stock [Leo Rover](Robots/Leo Rover).
 
 ## Usage
 
-To run the follower simply type: ```
+To run the follower simply type: 
+
+```
 roslaunch leo_example_follow_ar_tag follow_ar_tag.launch
 ```
+
+
 
 It will use the base configuration from the yaml files. You can run the
 node with your configuration by changing the parameters (described in
 [ROS API](http://wiki.ros.org/leo_example_follow_ar_tag#rosapi) section)
 
 ## ROS API
+
+
 
 ```clearsilver
 name= follow_ar_tag
@@ -100,3 +110,5 @@ param {
   }
 }
 ```
+
+

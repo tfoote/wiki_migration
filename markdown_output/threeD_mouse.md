@@ -6,9 +6,13 @@ This node is a ROS wrapper around the
 [spacenav library](http://spacenav.sourceforge.net). Refer to their
 website to install the library on your computer first.
 
-You can then compile the node by running: ```
+You can then compile the node by running: 
+
+```
 $ rosmake threeD_mouse
 ```
+
+
 
 ## ROS API
 

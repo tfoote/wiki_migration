@@ -32,9 +32,13 @@ products used at Willow Garage.
 
 #### Serial Numbers
 
-Invent serial numbers are of the form: ```
+Invent serial numbers are of the form: 
+
+```
 68-0XXXX-0YYYY
-``` The
+```
+
+ The
 first values, `XXXX`, are the part number. All Hokuyo laser scanners
 have the part number "3134". The second, `YYYY`, is the serial
 number of the device. Serial numbers are increasing from "0000" for
@@ -70,6 +74,8 @@ as long as the user has the correct permissions.
 
 ### Client Example
 
+
+
 ```python
 from wg_invent_client import Invent
 
@@ -88,6 +94,8 @@ attachs = iv.list_attachments(serial)
 if iv.get_test_status(serial):
     iv.setNote(serial, "Item has finished with all testing")
 ```
+
+
 
 Client functions will log in automatically. Calling the `login()`
 method can be useful to check a username and password.
@@ -111,9 +119,13 @@ the history of moves of every part of the robot to compute use.
 
 1\. User can get a list of historical changes to the composition or
 membership of a serialized component. 1. pseudo-code:
+
+
 ```
 get_history(serial_number)
-``` 1. returns a list of changes 1. Each change is
+```
+
+ 1. returns a list of changes 1. Each change is
 a list comprising the datetime of the change followed by a string for
 the type of change, either `Parent` or `Children`
 

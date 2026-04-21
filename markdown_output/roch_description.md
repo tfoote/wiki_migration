@@ -16,9 +16,13 @@ models configuration files can find at
 For different accessories collocation with Roch, please checkout
 [ configuration with roch](roch_robot/Tutorials/Using package of roch_description).
 
-And simple demo you can use following command: ```
+And simple demo you can use following command: 
+
+```
 roslaunch roch_viz view_model.launch
 ```
+
+
 
 ## Report a Bug
 

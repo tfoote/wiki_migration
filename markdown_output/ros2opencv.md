@@ -7,37 +7,55 @@ by other nodes, and displaying processed images and markers.
 ## How To Use
 
 -   To launch a ros2opencv node using the Kinect RGB-D camera, use:
-    ```
+    
+
+```
 $ roslaunch ros2opencv openni_node.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   To launch a ros2opencv node using a UVC-compatible webcam, use:
-    ```
+    
+
+```
 $ roslaunch ros2opencv uvc_cam.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   To load an AVI file and re-publish it on the topic
-    /camera/image_raw: ```
+    /camera/image_raw: 
+
+```
 $ roslaunch ros2opencv avi2ros.launch input:=/path/to/avi/file
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   To publish the video on a different topic, use rosrun instead of
-    roslaunch: ```
+    roslaunch: 
+
+```
 $ rosrun ros2opencv avi2ros.py _input:=/path/to/avi/file output:=/your_topic
 ```
+
+
 
 (Note the underscore in front of _input but not in front of output.)
 
 ## Nodes
+
+
 
 ```clearsilver
 name = ros2opencv.py
@@ -56,6 +74,10 @@ pub {
   0.desc = The display image including markers republished from OpenCV to ROS
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = avi2ros.py
@@ -86,3 +108,5 @@ pub {
   0.desc = The ROS Image stream corresponding to the input AVI file.  Can be remapped on the command line or in a launch file.
 }
 ```
+
+

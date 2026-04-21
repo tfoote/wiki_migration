@@ -3,9 +3,13 @@ Kuka RSI XML protocol to control joint and cartesian movements.
 
 ## Example launch file
 
-An example to start the driver is given by: ```
+An example to start the driver is given by: 
+
+```
 roslaunch ipa_kuka_rsi test_driver.launch
 ```
+
+
 
 ## Configuration on KR16
 
@@ -32,6 +36,8 @@ server.
 
 The [ipa_kuka_rsi](ipa_kuka_rsi) package provides both, a joint based
 and a cartesian movement.
+
+
 
 ```clearsilver
 
@@ -149,6 +155,8 @@ prov_tf{
 }
 ```
 
+
+
 ## Action API
 
 The `ipa_kuka_rsi` node provides an implementation of two
@@ -156,6 +164,8 @@ The `ipa_kuka_rsi` node provides an implementation of two
 movement of joint based trajectories or cartesian trajectories.
 
 ##### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -171,7 +181,11 @@ sub {
 }
 ```
 
+
+
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -191,12 +205,16 @@ pub {
 }
 ```
 
+
+
 ## Dynamic Reconfigure
 
 Some parameters such as frequency, motion mode and more can be
 configured by dynamic reconfigure.
 
 ## How to use the RSI communication layer for your own software
+
+
 
 ```cplusplus
 #include <ipa_kuka_rsi/rsi_server.h>
@@ -217,3 +235,5 @@ bool ok = rsi.set("SomeNameFromERC", 42.37);
 if(!ok)
   ROS_INFO("could not set the variable");
 ```
+
+

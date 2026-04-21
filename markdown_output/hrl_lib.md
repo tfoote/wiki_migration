@@ -10,13 +10,21 @@ on startup and unset/restore those same parameters when it exits.
 Created for setting camera parameters on start up for the
 laser_interface_node and restoring the default settings on shutdown.
 
-On the command line: ```
+On the command line: 
+
+```
 $ rosrun hrl_lib load_dynamic_config <node_name> <yaml_file>
 ```
 
-Example usage in roslaunch file: ```
+
+
+Example usage in roslaunch file: 
+
+```
 <node name="$(anon dynam_load)" pkg="hrl_lib" type="load_dynamic_config" args="/wide_stereo_both $(find laser_interface)/office_exposure.yaml"/>
 ```
+
+
 
 ## Modules
 

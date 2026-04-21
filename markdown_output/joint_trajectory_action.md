@@ -19,6 +19,8 @@ controller.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=joints
@@ -44,8 +46,12 @@ param {
 }
 ```
 
+
+
 Example configuration (from
 pr2_controller_configuration/pr2_arm_controllers.yaml):
+
+
 
 ```
 joint_trajectory_action_node:
@@ -75,11 +81,15 @@ joint_trajectory_action_node:
       goal: 0.04
 ```
 
+
+
 ### Action interface
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
 <<MsgLink(pr2_controllers_msgs/JointTrajectoryGoal)>>.
+
+
 
 ```clearsilver
 sub {
@@ -103,7 +113,11 @@ pub {
 }
 ```
 
+
+
 ### Controller interface
+
+
 
 ```clearsilver
 sub {
@@ -117,6 +131,8 @@ pub {
   0.desc=Sends joint trajectories to the controller.
 }
 ```
+
+
 
 ## Usage
 

@@ -132,23 +132,35 @@ Manually adapt the two packages
 In the move_base package in file "move_base.cpp" at line 132 add:
 (After the initialization of the local planner)
 
+
+
 ```
 tc_->setGlobalCostmap(planner_costmap_ros_);
-``` **Nav_core:**
+```
+
+ **Nav_core:**
 
 In the nav_core package in file nav_core/include/base_local_planner.h
 
 1\. Add one public method:
 
+
+
 ```
 void setGlobalCostmap(costmap_2d::Costmap2DROS* global_costmap_ros){
      global_costmap_ros_ = global_costmap_ros;
 }
-``` 2. Add one protected attribute:
+```
+
+ 2. Add one protected attribute:
+
+
 
 ```
 costmap_2d::Costmap2DROS* global_costmap_ros_;
 ```
+
+
 
 ### Needed Parameters
 
@@ -172,6 +184,8 @@ The move_base parameter "base_local_planner" must be set to
 
 This could look like this:
 
+
+
 ```
 <node name="move_base" pkg="asr_move_base" type="move_base" respawn="false" output="screen">
 
@@ -180,7 +194,9 @@ This could look like this:
 ... yaml files ....
 
 </node>
-``` For example you can look at the launch file
+```
+
+ For example you can look at the launch file
 "launch/navigation.launch" in the asr_mild_navigation package.
 
 #### Drive around local obstacles
@@ -193,17 +209,25 @@ Then there are two ways to put a local obstacle into the global costmap:
 
 **1. Activate the obstacle in the global_costmap.yaml:**
 
+
+
 ```
 global_costmap/obstacle_layer:
     enabled: true
-``` **OR**
+```
+
+ **OR**
 
 **2. Set the "join_obstacle" parameter of the ftc_local_planner to
 true:**
 
+
+
 ```
 join_obstacle: true
-``` **Don't use both methods together!**
+```
+
+ **Don't use both methods together!**
 
 ### Start system
 
@@ -212,19 +236,29 @@ You can use the launch files in
 
 #### Simulation
 
+
+
 ```
 roslaunch asr_mild_navigation simulation_manual_rearranged.launch
 ```
 
+
+
 #### Real
+
+
 
 ```
 roslaunch asr_mild_navigation navigation.launch
 ```
 
+
+
 ## ROS Nodes
 
 ### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -235,10 +269,14 @@ pub {
 }
 ```
 
+
+
 ### Parameters
 
 These are all the parametes of the planner which you can edit in the
 FTCPlanner .yaml:
+
+
 
 ```clearsilver
 param {
@@ -290,6 +328,8 @@ param {
 
 }
 ```
+
+
 
 ## Tutorials
 

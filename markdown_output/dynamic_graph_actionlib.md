@@ -6,6 +6,8 @@ It is designed to be intergrated into a high-level supervisor such as
 
 ## Using the RunDynamicGraphCommands action
 
+
+
 ```shell
 # Start standalone controller.
 rosrun dynamic_graph_bridge interpreter
@@ -19,3 +21,5 @@ rosrun dynamic_graph_actionlib RunCommandsServer
 # remotely.
 rosrun dynamic_graph_actionlib RunCommandsClient 'a=1'
 ```
+
+

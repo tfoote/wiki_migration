@@ -8,6 +8,8 @@ as necessary.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = ethernet_rmp.py
@@ -152,10 +154,14 @@ node.1 {
 }
 ```
 
+
+
 #### Transforms
 
 `rmp_pose_updater` broadcasts the robot frame ('/base_footprint')
 with respect to the odometry frame (`/odom`).
+
+
 
 ```clearsilver
 node.2 {
@@ -196,6 +202,8 @@ node.2 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `ros_ethernet_rmp` package, you can choose to either
@@ -203,7 +211,9 @@ install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/ros_ethernet_rmp.git
 cd /path/to/your/catkin/workspace
@@ -211,12 +221,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-ros-ethernet-rmp
 ```
+
+
 
 ### Startup
 
@@ -228,16 +244,24 @@ launched if the argument, include_batt_monitor, is true. It is defaulted
 to true. To launch these nodes, **with** the battery monitor the
 following command can be used:
 
+
+
 ```
 roslaunch ros_ethernet_rmp ros_ethernet_rmp.launch
 ```
 
+
+
 To launch these nodes **without** the battery monitor, the following
 command can be used:
+
+
 
 ```
 roslaunch ros_etehrnet_rmp ros_ethernet_rmp.launch include_batt_monitor:=false
 ```
+
+
 
 ## Support
 

@@ -39,9 +39,13 @@ The original source for the project can be found in
 [here](https://github.com/timn/ros-mongodb_log).
 
 Afterwards the logger can be started. To record all topics advertised in
-the system execute ```
+the system execute 
+
+```
 rosrun mongodb_log mongodb_log -a
-``` You should start with a
+```
+
+ You should start with a
 small number of topics and see how the system performs. Then increase
 the number of topics and see what your system can handle and the
 influence of the actual robot task. You can use the tools mentioned
@@ -79,6 +83,8 @@ over into the document structure. Here is an example of a TF message and
 the document used to store it. Note that we have added a few empty lines
 to match left and right sides more closely.
 
+
+
 ```
 MongoDB document                          rostopic echo /tf
 ------------------------------------------------------------------------------
@@ -111,7 +117,9 @@ MongoDB document                          rostopic echo /tf
     }                                    |
   ]                                      |
 }                                        |
-``` What is easy to spot is that there is a direct
+```
+
+ What is easy to spot is that there is a direct
 one-to-one correspondence of the ROS message type and the resulting
 document. Additionally, because all of the values are accessible by keys
 in the document, we can formulate queries based on these keys. Hence

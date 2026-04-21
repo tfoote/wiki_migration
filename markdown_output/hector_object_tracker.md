@@ -3,6 +3,8 @@
 This package provides a node for tracking the position of objects of
 interest as described in
 [this paper](http://www.sim.informatik.tu-darmstadt.de/publ/download/2010_rcs_worldmodel.pdf)
+
+
 ```
 @INPROCEEDINGS{Meyer:2010:WorldModel,
   author = {J. Meyer and P. Schnitzspan and S. Kohlbrecher and K. Petersen and O. Schwahn and M. Andriluka and U. Klingauf and S. Roth and B. Schiele and O. von Stryk},
@@ -16,7 +18,11 @@ interest as described in
 }
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -222,6 +228,8 @@ param {
   }
 }
 }
-``` See
+```
+
+ See
 [object_tracker.launch](https://github.com/tu-darmstadt-ros-pkg/hector_worldmodel/blob/catkin/hector_object_tracker/launch/object_tracker.launch)
 for a sample configuration.

@@ -24,6 +24,8 @@ fast (the motion model still runs).
 
 ### ROS API
 
+
+
 ```clearsilver
 pub {
   0.name  = dynamic_obstacles
@@ -42,6 +44,10 @@ sub {
   1.desc = If the track_when_turning parameter is false, the node doesn't use observations when the robot is primarily turning. 
 }
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -69,3 +75,5 @@ param {
   3.desc = Whether to use observations while the robot is turning. Setting this to false is useful if the robot's localization is poor while turning.
 }
 ```
+
+

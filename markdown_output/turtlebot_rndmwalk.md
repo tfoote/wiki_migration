@@ -8,34 +8,54 @@ You'll need a TurtleBot!
 ### Installation
 
 1\. Make sure you have the OpenNI Kinect Driver Installed:
+
+
 ```
 sudo apt-get install ros-diamondback-openni-kinect
 ```
 
+
+
 2\. You'll also need to checkout the following Clearpath Packages:
+
+
 ```
 svn co http://clearpath-ros-pkg.googlecode.com/svn/trunk/clearpath_kinect ~/clearpath-ros-pkg/clearpath_kinect
 svn co http://clearpath-ros-pkg.googlecode.com/svn/trunk/clearpath_turtlebot ~/clearpath-ros-pkg/clearpath_turtlebot
 ```
 
+
+
 3\. Add the following line to your '.bashrc' if it does not already
-exist: ```
+exist: 
+
+```
 export ROS_PACKAGE_PATH=${HOME}/clearpath-ros-pkg:${ROS_PACKAGE_PATH}
 ```
 
-4\. Compile all Clearpath Stacks: ```
+
+
+4\. Compile all Clearpath Stacks: 
+
+```
 rosmake clearpath_kinect
 rosmake clearpath_turtlebot
 ```
+
+
 
 ### Demo
 
 Make sure the robot starts with a good amount of floor area in it's
 view so that it can properly calibrate the floor plane.
 
-Use the launch file ```
+Use the launch file 
+
+```
 roslaunch turtlebot_rndmwalk rndm_walk.launch
 ```
+
+
 
 The robot will randomly switch between moving left, straight and right.
 In addition the robot will stop when detecting an obstacle and turn for
@@ -46,13 +66,19 @@ shows what you should expect.
 
 ## Nodes
 
+
+
 ```clearsilver
 node {
   no_header=True
   0.name=ClearpathTurtleRndmWalk 
   0.desc= `ClearpathTurtleRndmWalk` is a ROS node that reads a frame from the Kinect PointCloud and generates a safe random motion output.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 sub {
   0.name= rndmwalk_in(~in)
   0.type= sensor_msgs/PointCloud2
@@ -98,3 +124,5 @@ param{
     7.desc = The number of points that must be inside the stop_distance to warrant an obstacle.
 }
 ```
+
+

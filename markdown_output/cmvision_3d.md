@@ -32,6 +32,8 @@ your camera_topic. 1. Set the "color_file" file parameter to your .txt
 colors file, as described in
 [cmvision](http://wiki.ros.org/cmvision#Selecting_Blob_Colors).
 
+
+
 ```
 <launch>
         <arg name="image" default="/your/image/topic"/>
@@ -45,12 +47,18 @@ colors file, as described in
           <!-- Location of the cmvision color file -->
           <param name="color_file" type="string"
                  value="$(find cmvision_3d)/colors/yourColors.txt" />
-``` After you've done this, you can proceed to run
+```
+
+ After you've done this, you can proceed to run
 both cmvision and color_controller using
+
+
 
 ```
 roslaunch cmvision_3d color_tracker.launch
 ```
+
+
 
 **Note:** This stuff will pretty much work out of the box if you're
 running *openni_launch openni.launch depth_registration:= true* on a
@@ -58,6 +66,8 @@ Microsoft Kinect, as the defaults for the above arguments are set to the
 relevant topics for the Kinect environment.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -87,3 +97,5 @@ node.0 {
   }
 }
 ```
+
+

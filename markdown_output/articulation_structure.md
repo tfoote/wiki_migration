@@ -2,6 +2,8 @@
 
 ## Nodes
 
+
+
 ```clearsilver
 name = structure_learner
 desc = This node receives trajectories of all parts of a kinematic object in form of <<MsgLink(articulation_msgs/ArticulatedObjectMsg Message)>> messages. For every pair of object parts, it fits the motion between these two parts to all known model classes, and selects the the kinematic structure that maximizes the BIC (Bayesian Information Criterion). The node publishes the result again in form of a <<MsgLink(articulation_msgs/ArticulatedObjectMsg)>> message, now containing additionally the individual link models. 
@@ -25,6 +27,8 @@ param {
   2.default = "rigid prismatic rotational"
 }
 ```
+
+
 
 ## References
 

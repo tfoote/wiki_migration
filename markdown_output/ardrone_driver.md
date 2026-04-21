@@ -16,9 +16,13 @@ specific packet approximately every 200ms.
 
 To bring the driver online:
 
+
+
 ```
 rosrun ardrone_driver ardrone_driver
 ```
+
+
 
 ## Controlling the AR.Drone
 
@@ -28,22 +32,32 @@ specified between 1 and -1. For the smoothest possible movement, a
 `geometry_msgs/Twist` should be published at a rate of no less than
 30Hz.
 
+
+
 ```
 Movement is specified in meters per second. Maximum value specified should be no more than 0.8. For maximum stability while flying, a value of .5 or lower is suggested.
 ```
+
+
 
 -   linear.x - (+)forward and (-)backward
 -   linear.y - (+)left and (-)right
 -   linear.z - (+)up and (-)down
 
+
+
 ```
 Rotation is specified in radians per second.
 ```
+
+
 
 -   angular.z - The rotational velocity. Causes rotation about the
     center.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -123,3 +137,5 @@ node.0 {
     3.type = std_srvs/Empty
     3.desc = Calibrates the on-board IMU. Use only while landed on flat ground.
 ```
+
+

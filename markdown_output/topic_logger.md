@@ -19,12 +19,20 @@ accompanying SimpleActionClient.
 ## Running the topic_logger node
 
 Before launching the topic_logger node you have to make this package
-using: ```
+using: 
+
+```
 rosmake topic_logger
-``` Afterwards you can launch the node
-using: ```
+```
+
+ Afterwards you can launch the node
+using: 
+
+```
 roslaunch topic_logger topicLogger_server.launch
-``` This launch-file launches the node and
+```
+
+ This launch-file launches the node and
 sets several parameters on the ROS parameter server which are needed to
 execute the node. The parameters are:
 

@@ -3,9 +3,13 @@
 This package is a collection of simple tools for working with python in
 and around both linux and ros systems.
 
+
+
 ```wiki
 ||<style="text-align: center;" tablewidth="100%">Full details and usage examples are in the sphinx documentation ([[http://docs.ros.org/hydro/api/rocon_python_utils/html/|indigo]]).||
 ```
+
+
 
 \
 

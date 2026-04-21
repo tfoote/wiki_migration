@@ -16,12 +16,16 @@ packages can be found
 To install the `rail_youbot` stack, simply run the following commands
 in your shell:
 
+
+
 ```shell
 cd /path/to/your/local/ros/stacks
 git clone https://github.com/WPI-RAIL/rail_youbot.git
 roscd rail_youbot
 rosmake rail_youbot
 ```
+
+
 
 This will ensure all dependencies are met and that the package is ready
 for use.
@@ -32,9 +36,13 @@ This package contains a `rail_youbot.launch` file which should require
 no modifications for use you your youBot. To start the script, run the
 following command on your robot:
 
+
+
 ```
 roslaunch rail_youbot_launch rail_youbot_launch.launch
 ```
+
+
 
 ### Remote ROS Core
 
@@ -44,17 +52,25 @@ above file. In the `/.bashrc` file on your robot, add the following
 lines (replacing the parts in `< >` with the appropriate
 information.
 
+
+
 ```shell
 export ROS_HOSTNAME=<hostname>
 export ROS_MASTER_URI=http://<remote-roscore-server-ip>:11311
 ```
 
+
+
 After saving the file, reload your `.bashrc` file with the following
 command:
+
+
 
 ```
 . ~/.bashrc
 ```
+
+
 
 Now, when launching the launch file above, the robot will communicate
 with a remote `roscore` instead of its own local `roscore`.

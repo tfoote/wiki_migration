@@ -74,6 +74,8 @@ within `Prolog`.
 To generate your section from within `Prolog` add a new predicate to
 `report_card/prolog/report_card.pl` file:
 
+
+
 ```
 generate_section_name(RcHomeOs, SectionPath) :-
   Section = 'section_name',
@@ -92,6 +94,8 @@ generate_section_name(RcHomeOs, SectionPath) :-
 
   jpl_call( 'org.knowrob.report_card.Generator', section, [RcHomeOs, Section, Strings, RawStrings, SeqStrings, RawSeqStrings], SectionPath).
 ```
+
+
 
 Where `RcHomeOs` is path to the temporary directory of current report
 card; `Section` is the section name (it MUST contain the exact name
@@ -114,6 +118,8 @@ also generate the report card manually: for details please see below.
 
 To alter current generator please append your section to
 `generate_report_card(card_type(default))` predicate as follows:
+
+
 
 ```
 generate_report_card(card_type(default)) :-
@@ -145,9 +151,13 @@ generate_report_card(card_type(default)) :-
   write(RcPdf), !.
 ```
 
+
+
 If you prefer to create custom report card generator first add type
 predicate to the already existing list: `card_type(custom_card_type).`
 and then create custom loader for created type:
+
+
 
 ```
 generate_report_card(card_type(custom_card_type)) :-
@@ -181,14 +191,20 @@ generate_report_card(card_type(custom_card_type)) :-
   write(RcPdf), !.
 ```
 
+
+
 ## Manual
 
 To manually generate the report card (using `Prolog` shell) please use
 the following sequence:
 
+
+
 ```
 rc_temporary_directory(RcTempDir), create_directory(RcTempDir), prolog_to_os_filename(RcTempDir, RcHomeOs), get_experiment_info(experimentId  , TrialId), generate_section_name1(RcHomeOs, Section1), generate_section_name2(RcHomeOs, Section2), generate_section_name3(RcHomeOs, Section3), jpl_datums_to_array([Section1, Section2, Section3], Strings), jpl_call( 'org.knowrob.report_card.Generator', rc, [RcHomeOs, TrialId, Strings], RcPdf), export_data(data_format(csv)), export_data(data_format(r)).
 ```
+
+
 
 Before generating a report card remember to load the data e.g.
 `load_experiment('/home/ros/datasets/ds4/cram_log.owl').`!
@@ -200,24 +216,36 @@ To perform statistical computations R is accessed via
 interface in Prolog. As a rough guide please see the example shown
 below.
 
-Set two lists in Prolog and pass them to R; ```
+Set two lists in Prolog and pass them to R; 
+
+```
 A = [1, 2, 3, 4, 5, 6],
 B = ['a', 'b', 'c', 'd', 'e', 'f'],
 a <- A,
 b <- B,
 ```
+
+
 calculate mean of the first list, memorise the result in R variable and
-pass it back to Prolog; ```
+pass it back to Prolog; 
+
+```
 'a.mean' <- mean(a),
 Amean <- 'a.mean',
 write(Amean),
-``` and finally, plot a
+```
+
+ and finally, plot a
 pie-chart to PDF based on the list A with labels B.
+
+
 ```
 <- pdf(file = +"./filename.pdf"),
 <- pie('a', labels = sprintf(+"%s of\n%s", 'a', 'b'), main = +"Pie-chart name"),
 <- invisible('dev.off()').
 ```
+
+
 
 # Package requirements and installation
 

@@ -46,6 +46,8 @@ This step is implemented in the **model_fitter** node.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = tabletop_detector
@@ -161,13 +163,19 @@ node.2{
 }
 ```
 
+
+
 ## Tutorials
 
 This is a tutorial on how to use functionality provided by this package.
 
--   Build the *tabletop_objects* package:```
+-   Build the *tabletop_objects* package:
+
+```
 rosmake tabletop_objects
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -179,10 +187,14 @@ rosmake tabletop_objects
 ```{=html}
 <!-- -->
 ```
--   Launch the nodes: ```
+-   Launch the nodes: 
+
+```
 roscd tabletop_objects
 roslaunch launch/model_fitter.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -192,9 +204,13 @@ roslaunch launch/model_fitter.launch
     **table_top/find_object_poses** service is called. For a quick test
     (to make sure everything is running properly), you can run the
     'test_service' node, which just calls the above service:
-    ```
+    
+
+```
 rosrun tabletop_objects test_service
-```For a more complex example, of how to use
+```
+
+For a more complex example, of how to use
     the tabletop_objects detector and integrate it with the planing
     pipeline, see the 'simple.cpp' source file in the
     **tabletop_scripts** package.

@@ -52,27 +52,49 @@ The following devices were tested with socketcan_interface:
 
 Set-up udev rules or type manually:
 
+
+
 ```
 sudo modprobe peak_usb # kernel driver, since 3.11
-``` ```
+```
+
+ 
+
+```
 sudo modprobe peak_pci # kernel driver
 ```
+
+
+
+
 ```
 sudo modprobe pcan # PEAK vendor driver
-``` ```
+```
+
+ 
+
+```
 sudo modprobe esd_usb2 # kernel driver
 ```
+
+
 
 ### Initialize NIC
 
 Bring-up CAN NIC (Linux kernel drivers):
 
+
+
 ```
 sudo ip link set can0 up type can bitrate 500000 # adjust bitrate as needed
-``` Further options are availabe, please consult
+```
+
+ Further options are availabe, please consult
 [SocketCAN Readme, section 6.5](https://www.kernel.org/doc/Documentation/networking/can.txt).
 For automatic set-up, the network can be configured in
 */etc/network/interfaces*, e.g.:
+
+
 
 ```
 allow-hotplug can0
@@ -81,6 +103,8 @@ iface can0 can static
 #    up ip link set $IFACE txqueuelen 20 # uncomment if more than 4 nodes are used
 ```
 
+
+
 ## Tools and Debugging
 
 ### socketcan_dump
@@ -88,23 +112,35 @@ iface can0 can static
 Simple test program provided with the package, just prints the received
 messages:
 
+
+
 ```
 rosrun socketcan_interface socketcan_dump can0
 ```
 
+
+
 ### Netlink status
+
+
 
 ```
 ip -details -statistics link show can0
-``` (not available for all drivers)
+```
+
+ (not available for all drivers)
 
 ### can-utils
 
 Feature-rich tool suite for SocketCAN, install with:
 
+
+
 ```
 sudo apt-get install can-utils
 ```
+
+
 
 -   candump
 -   cansend

@@ -17,5 +17,3 @@ On how to use this package, please see
 [tutorials](roch_robot/Tutorials/Using package of roch_sensorpc).
 
 ## Report a Bug
-
-<<GitHubIssues(SawYer-Robotics/roch_robot)>>

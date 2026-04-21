@@ -11,6 +11,8 @@ from a directory or a video file. Parameters can be changed with the
 parameters, see
 [Camera.cfg](https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_legacy/cfg/Camera.cfg)
 
+
+
 ```clearsilver
 pub {
   0.name = image
@@ -34,6 +36,10 @@ param {
   0.desc = The frame attached to the camera.
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -75,6 +81,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -122,6 +132,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -175,3 +189,5 @@ node {
   }
 }
 ```
+
+

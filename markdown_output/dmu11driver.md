@@ -27,29 +27,49 @@ The package we have developed, contains the driver of DMU11, and a
 launch file which visualizes readings coming from the sensor. This
 package is built on Ubuntu 16.04.1 LTS x64 running ROS Kinetic. To
 install, clone the repository into catkin workspace.
+
+
 ```
 cd ~/catkin_ws/src  
 git clone https://github.com/leo-muhendislik/dmu_ros.git
-``` After copying source files into src directory,
+```
+
+ After copying source files into src directory,
 you build it from root directory as follows:
+
+
 
 ```
 cd ~/catkin_ws
 catkin_make
-``` After building, you source the setup.bash:
+```
+
+ After building, you source the setup.bash:
+
+
 ```
 source devel/setup.bash
 ```
+
+
 
 ## Usage
 
 Now you are ready to go. Connect your sensor to your PC and make sure
 which port is assigned to it. Then set the value of device parameter
 inside the launch file to the name of the port assigned to your sensor:
+
+
 ```
 <param name="device" value="/dev/ttyUSB0"/>
-``` Now just run this command:
+```
+
+ Now just run this command:
+
+
 ```
 roslaunch dmu_ros dmu11.launch
-``` Sensor data is published at a rate of 200Hz on
+```
+
+ Sensor data is published at a rate of 200Hz on
 the /imu/data_raw topic as sensor_msgs/Imu message.

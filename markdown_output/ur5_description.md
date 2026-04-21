@@ -6,6 +6,10 @@ The pretty mesh model
 
 The cylinder-based efficient collision model.
 
-To see the ur5 model yourself, use: ```
+To see the ur5 model yourself, use: 
+
+```
 roslaunch ur5_description test.launch
 ```
+
+

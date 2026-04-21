@@ -1,3 +1,5 @@
+
+
 ```wiki
 '''This page refers to the development version of the package and releases made AFTER 01.04.2023!'''
 
@@ -7,6 +9,8 @@ ROS binary package repository is now containing '''version 0.3.7''' available fo
 
 Please note that the documentation for previously released (`0.3.7` and earlier) versions of this package is available on [[/Old Versions|Old versions' documentation]] subpage
 ```
+
+
 
 ## Overview
 
@@ -67,6 +71,8 @@ For example, if the node runs under the name `usb_cam` and
 `camera_transport_suffix` is set to `image_raw` (default invocation
 case), the node will publish the following list of topics:
 
+
+
 ```
 /usb_cam/camera_info
 /usb_cam/image_raw
@@ -81,6 +87,8 @@ case), the node will publish the following list of topics:
 /usb_cam/image_raw/theora/parameter_updates
 ```
 
+
+
 ### Hardware-accelerated decoder
 
 The support for a hardware-accelerated decoder in the package is now
@@ -91,9 +99,15 @@ supported only from `libavcodec` library version `52.00.100`.
 
 ## Nodes
 
+
+
 ```wiki
 The names mentioned <in brackets> are actually the names of '''parameters''' configuring the really used names in the ROS system namespace. Thus, most of the names of topics and services mentioned here are '''configurable'''. Please see [[https://github.com/ros-drivers/usb_cam/blob/develop/config/usb_cam.yml|sample config file]] for reference.
 ```
+
+
+
+
 
 ```clearsilver
 node.0{
@@ -237,6 +251,8 @@ param {
 }
 ```
 
+
+
 ### I/O modes reference ===The node supports the following I/O mode names for the given device:
 
 -   `read` - for devices supporting virtual filesystem or block I/O
@@ -269,9 +285,13 @@ hardware-accelerated decoding!
 
 ### Intrinsic control configuration ===The node queries V4L kernel driver for available intrinsic control names and data types they require, in the same way, that one can query from terminal with the following command:
 
+
+
 ```
 v4l2-ctl --device=/dev/video<ID> -L
-``` The node supports the following types of
+```
+
+ The node supports the following types of
 intrinsic controls provided by `libv4l2`:
 
 -   Booleans (`true/false`)
@@ -298,6 +318,8 @@ namespace contains:
 This example configuration is obtained using *Logitech HD Pro Webcam
 C920* web camera with standard `V4L2` kernel driver from Ubuntu 22.04
 with 5.15.0 kernel installed. The manually queried control names:
+
+
 ```
 v4l2-ctl --device=/dev/video0 -L
                      brightness 0x00980900 (int)    : min=0 max=255 step=1 default=128 value=128
@@ -322,8 +344,12 @@ v4l2-ctl --device=/dev/video0 -L
                  focus_absolute 0x009a090a (int)    : min=0 max=250 step=5 default=0 value=0 flags=inactive
                      focus_auto 0x009a090c (bool)   : default=1 value=1
                   zoom_absolute 0x009a090d (int)    : min=100 max=500 step=1 default=100 value=100
-``` The corresponding YAML configuration multilist
-looks like: ```
+```
+
+ The corresponding YAML configuration multilist
+looks like: 
+
+```
 intrinsic_controls:                 
     focus_auto: true
     exposure_auto_priority: true
@@ -344,7 +370,9 @@ intrinsic_controls:
         focus_absolute,
         zoom_absolute
     ]
-``` Here are the following intrinsic
+```
+
+ Here are the following intrinsic
 controls that are mentioned in the **root namespace** of the
 `intrinsic_controls` multilist, so they will be processed and set up:
 

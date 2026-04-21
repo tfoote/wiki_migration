@@ -10,6 +10,8 @@ pyserial).
 
 ## Nodes
 
+
+
 ```clearsilver
 name=serial_node.py
 desc=Interface to a rosserial-enabled device. This node automatically spins up subscribers and publishers based on the configuration information stored in the device.
@@ -25,17 +27,25 @@ param {
 }
 ```
 
+
+
 ## Examples
 
 To run the node with a different port and baud rate, for example on
 /dev/ttyACM1, you must specify the `port` and `baud` parameters on
 the command line:
 
+
+
 ```
 rosrun rosserial_python serial_node.py _port:=/dev/ttyACM1 _baud:=115200
 ```
 
+
+
 You can also specify these parameters as part of your launch file:
+
+
 
 ```
 <launch>
@@ -45,3 +55,5 @@ You can also specify these parameters as part of your launch file:
   </node>
 </launch>
 ```
+
+

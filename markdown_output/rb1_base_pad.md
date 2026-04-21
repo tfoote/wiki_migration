@@ -14,9 +14,13 @@ the node
 ## Usage
 
 In order to launch the [joy](joy) node along with the personalized
-rb1_base joystick: ```
+rb1_base joystick: 
+
+```
 roslaunch rb1_base_pad rb1_base_pad.launch pad_model:=ps4
 ```
+
+
 
 This command will launch the mentioned joy node, in order to have a ROS
 driver for joysticks, it will publish msgs of type sensor_msgs/Joy.

@@ -6,6 +6,8 @@ topic has a client.
 
 ## Node API
 
+
+
 ```clearsilver
 name = barcode_reader_node
 desc = The `barcode_reader_node` listens to image data (camera or otherwise) on the incoming topic, outputs the contents of any barcodes detected in the images.
@@ -25,6 +27,8 @@ param {
   0.desc = Time (s) to throttle any repeated barcode scans. If `0.0`, all detected barcodes will be output as fast as the node can process the incoming images.
 }
 ```
+
+
 
 ## Nodelet API
 

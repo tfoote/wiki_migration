@@ -7,9 +7,13 @@ For a pure Java implementation, please see [rosjava_core](rosjava_core).
 **Rosjava has been moved to a different repository and got released. Get
 the current version with the following command:**
 
+
+
 ```
 git clone https://github.com/gheorghelisca/rosjava_jni.git client_rosjava_jni
 ```
+
+
 
 ### Client library API
 
@@ -110,17 +114,25 @@ JDK installation. Per default, it uses the cmake FindJNI module. If this
 causes problems, you can set your JAVA_HOME environmental variable,
 e.g.,:
 
+
+
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-``` Once you've installed the JDK and maybe set
+```
+
+ Once you've installed the JDK and maybe set
 your JAVA_HOME, you should be ready to build and use existing rosjava
 nodes. To test this out, assuming you have already downloaded and build
 ROS, you should be able to:
 
+
+
 ```
 roscd test_rosjava
 make test
-``` and see a bunch of printouts, followed by a
+```
+
+ and see a bunch of printouts, followed by a
 successful test result. If things don't build or run properly, you
 probably have a bad version of Java installed or haven't set your
 JAVA_HOME correctly.
@@ -143,9 +155,13 @@ To create a new rosjava node, you need to take the following steps:
 -   Add a dependency to rosjava in your manifest.xml
 -   In CMakeLists.txt, add a line
 
+
+
 ```
 add_java_source_dir(${PROJECT_SOURCE_DIR}/<dir>)
-``` . for each Java source directory tree you want
+```
+
+ . for each Java source directory tree you want
 compiled (into the /bin directory of your package). This will also
 trigger compilation of all of the message and service classes your
 package depends on, the output of which will also be placed in the /bin
@@ -153,9 +169,13 @@ directory of the current package.
 
 -   In CMakeLists.txt, for each main class, add a line
 
+
+
 ```
 rospack_add_java_executable(<exec-name> <class-name>)
-``` . This will generate a script in
+```
+
+ . This will generate a script in
 bin/<exec-name> that automatically sets the proper environmental
 variables, then launches java on your class with the proper classpath.
 
@@ -182,19 +202,29 @@ setting JVM arguments. Patches are always welcome!
 
 -   Importing rosjava
 
+
+
 ```java
   import ros.*;
   import ros.communication.*;
 ```
 
+
+
 -   Initializing rosjava
+
+
 
 ```java
   Ros ros = Ros.getInstance();
   ros.init("testNode");
 ```
 
+
+
 -   Logging to rosout
+
+
 
 ```java
   ros.logDebug("DEBUG");
@@ -204,13 +234,21 @@ setting JVM arguments. Patches are always welcome!
   ros.logFatal("FATAL");
 ```
 
+
+
 -   Creating a NodeHandle
+
+
 
 ```java
   NodeHandle n = ros.createNodeHandle();
 ```
 
+
+
 -   Setting and getting parameters
+
+
 
 ```java
   n.setParam("test", 2);
@@ -222,38 +260,60 @@ setting JVM arguments. Patches are always welcome!
   System.out.println(n.getStringParam("test3"));
 ```
 
+
+
 -   Publishing on a topic
+
+
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-```0
+```
+
+0
 
 -   Subscribing to a topic (with a queueing callback)
 
+
+
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-```1 (this could be made less ugly by importing the
+```
+
+1 (this could be made less ugly by importing the
 String message class, except that in this case it clashes with Java's
 built-in String type.)
 
 -   Calling a service
 
+
+
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-```2
+```
+
+2
 
 -   Advertising a service, and then spinning
 
+
+
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-```3
+```
+
+3
 
 -   Shutting down a NodeHandle (and all
     Publishers/Subscribers/ServiceClients/ServiceServers created through
     it)
 
+
+
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-```4
+```
+
+4
 
 ## Known Issues

@@ -11,6 +11,8 @@ The tutorials for this package are in the
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   1.name= ~service_type
@@ -20,7 +22,11 @@ param {
 }
 ```
 
+
+
 ### Services offered
+
+
 
 ```clearsilver
 srv {
@@ -32,6 +38,8 @@ srv {
     1.desc = This is the service offered if service_type is set to !FilterJointTrajectoryWithConstraints. 
     }
 ```
+
+
 
 ### YAML Configuration
 

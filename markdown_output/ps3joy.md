@@ -59,17 +59,27 @@ is a good starting point for how to use this package.
 ### Install
 
 Install from source (see repo link above) or from repository:
+
+
 ```
 sudo apt-get install ros-%ROSDISTRO%-joystick-drivers
 sudo apt-get install ros-indigo-joystick-drivers       (ROS Indigo for example)
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = ps3joy.py
 desc = Joystick driver for the PS3 Joystick. Plain Python without any ROS-references, needed to be easily started with `sudo`, which is the easiest way to grant it permissions to access bluetooth hardware.
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = ps3joy_node.py
 desc = Joystick driver for the PS3 Joystick, which is also a ROS node to publish diagnostics and receive controller feedback messages.
 sub {
@@ -84,9 +94,13 @@ pub {
 }
 ```
 
+
+
 ## Command-Line Options
 
 This is the same for `ps3joy.py` and `ps3joy_node.py`.
+
+
 ```
 $ ./ps3joy.py --help
 usage: ps3joy.py [--inactivity-timeout=<n>] [--no-disable-bluetoothd] [--redirect-output]=<f>
@@ -94,6 +108,8 @@ usage: ps3joy.py [--inactivity-timeout=<n>] [--no-disable-bluetoothd] [--redirec
 <f>: file name to redirect output to.
 Unless --no-disable-bluetoothd is specified, bluetoothd will be stopped.
 ```
+
+
 
 `\--inactivity-timeout` Turn off the joystick after a certain period
 of inactivity. This is useful to save batteries and reduce contention on
@@ -119,9 +135,13 @@ messages on the /joy topic.
 Starting the ROS node variant of ps3joy is somewhat tricky. It needs
 higher permissions to access bluetooth hardware, which can be achieved
 via sudo, but running ROS code as sudo is neither recommended nor
-trivial. Here is what you can do: ```
+trivial. Here is what you can do: 
+
+```
 .../ps3joy$ sudo bash -c "source /home/myself/.bashrc; ./scripts/ps3joy_node.py --inactivity-timeout=300"
 ```
+
+
 
 Or you could write a sudo script for sourcing ROS and starting
 ps3joy_node; I use
@@ -130,9 +150,13 @@ automatically start the `ps3joy_node` after booting and a ROS-check.
 
 ### Sending feedback to the controller
 
-To set the led or rumble from the command line: ```
+To set the led or rumble from the command line: 
+
+```
 rostopic pub  /joy/set_feedback sensor_msgs/JoyFeedbackArray '[ [0, 3, 1], [1, 1, 0.8] ]'
 ```
+
+
 There is
 [real world code sending feedback](https://github.com/felix-kolbe/uashh-rvl-ros-pkg/blob/master/teleop_ps3/src/teleop_ps3.cpp#L334).
 
@@ -163,6 +187,8 @@ the single-axis gyroscope:
 With these #defines you can access the PS3 buttons within the
 [sensor_msgs/Joy message published by the joy_node](joy#Published_Topics)
 without worrying about magic numbers:
+
+
 
 ```
 // note on plain values:
@@ -209,3 +235,5 @@ without worrying about magic numbers:
 #define PS3_AXIS_ACCELEROMETER_UP        18
 #define PS3_AXIS_GYRO_YAW                19
 ```
+
+

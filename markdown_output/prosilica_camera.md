@@ -21,6 +21,8 @@ For basic vision processing of camera images, see the
 
 ## Nodes
 
+
+
 ```clearsilver
 name = prosilica_node
 desc = ROS driver for Prosilica GigE cameras. Note that the ROS API varies depending on whether the driver is in streaming or polled mode. In streaming mode it publishes to `camera/image_raw` and `camera/camera_info` like any other camera. In polled mode it publishes on request to a client-specified namespace, following the [[polled_camera]] protocol.<<BR>><<BR>>[[image_transport]] is used for all image publications.
@@ -72,6 +74,8 @@ desc=If `~ip_address` is set, the node opens the camera at that IP. If only `~gu
 }
 ```
 
+
+
 ## Command-line tools
 
 ### set_ip
@@ -82,6 +86,10 @@ camera listed. The camera must be unopened (i.e. `prosilica_node`
 should not be running). This tool is normally used once to configure a
 new camera (see the [tutorials](prosilica_camera/Tutorials)).
 
-Usage: ```
+Usage: 
+
+```
 $ set_ip <IP address>
 ```
+
+

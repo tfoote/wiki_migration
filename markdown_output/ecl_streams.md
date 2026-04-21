@@ -18,6 +18,8 @@ pot at the bottom of the rainbow.
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/streams.hpp>
 
@@ -42,6 +44,8 @@ using ecl::LogStream;
 using ecl::endl;
 using ecl::clrscr;
 ```
+
+
 
 If outside ros, you will also need to link to *ecl_streams*.
 

@@ -145,9 +145,13 @@ changed ROS2 packages located in the <colcon_workspace>/src/ folder.
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.
 
+
+
 ```
 From the <colcon_workspace>: . install/setup.bash
 ```
+
+
 
 5\. Modify the appropriate
 [ launch file](https://docs.ros.org/en/foxy/Tutorials/Launch-Files/Creating-Launch-Files.html?highlight=launch )
@@ -171,9 +175,13 @@ the launch folder that you selected and built
 ```
 -   For example, for the Epson G370 IMU:
 
+
+
 ```
 <colcon_workspace>/roslaunch ess_imu_ros2_spi_driver epson_g370.launch
 ```
+
+
 
 ## Technical Support
 

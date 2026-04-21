@@ -23,6 +23,8 @@ from the sensor setup on the !AscTec Neo Research platform.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = viodom_node
 desc = This node takes in a stereo pair of images and IMU data, and outputs pose estimates. Images are rectified using calibration information. On startup, an IMU filter needs to be initialized.
@@ -56,10 +58,14 @@ pub{
 }
 ```
 
+
+
 ## Citing
 
 If you use viodom in an academic context, please cite the following
 publication: <http://ieeexplore.ieee.org/document/7502653/>
+
+
 
 ```
 @INPROCEEDINGS{7502653,
@@ -71,3 +77,5 @@ publication: <http://ieeexplore.ieee.org/document/7502653/>
   doi={10.1109/ICUAS.2016.7502653},
   month={June},}
 ```
+
+

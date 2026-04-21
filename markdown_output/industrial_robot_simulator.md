@@ -18,11 +18,17 @@ scripts). These nodes include the simulator and a controlling action
 server. In typical applications the action server receives trajectories
 from a higher level planner (not included in this launch file).
 
-Standalone execution is through roslaunch: ```
+Standalone execution is through roslaunch: 
+
+```
 roslaunch industrial_robot_simulator robot_interface_simulator.launch
 ```
 
+
+
 ## Node API
+
+
 
 ```clearsilver
 name = industrial_robot_simulator
@@ -60,8 +66,8 @@ param {
 }
 ```
 
+
+
 [Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
-
-<<GitHubIssues(ros-industrial/industrial_core)>>

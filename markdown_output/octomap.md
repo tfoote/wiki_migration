@@ -6,7 +6,9 @@ General information about !OctoMap is available at
 by A. Hornung, K. M. Wurm, M. Bennewitz, C. Stachniss, and W. Burgard
 (Autonomous Robots Journal, 2013).
 
-BibTeX: ```
+BibTeX: 
+
+```
 @ARTICLE{hornung13auro,
   author = {Armin Hornung and Kai M. Wurm and Maren Bennewitz and Cyrill
   Stachniss and Wolfram Burgard},
@@ -18,7 +20,9 @@ BibTeX: ```
   doi = {10.1007/s10514-012-9321-0},
   note = {Software available at \url{http://octomap.github.com}}
 }
-``` Please cite our paper if you use
+```
+
+ Please cite our paper if you use
 !OctoMap in your research.
 
 Doxygen documentation based on the latest !OctoMap release is available
@@ -30,6 +34,8 @@ methods. [octomap_server](octomap_server) provides map building and
 serving capabilities. A visualization tool is available at
 [octovis](octovis).
 
+
+
 ```
 {{#!wiki version fuerte_and_newer
 == Using OctoMap ==
@@ -37,6 +43,8 @@ Run
 {{{
 sudo apt-get install ros-$ROS_DISTRO-octomap
 ```
+
+
 
 to install !OctoMap as stand-alone libraries with no ROS dependencies
 (so the package can also be used in a non-ROS setting).
@@ -47,14 +55,20 @@ For convenience, the system install includes CMake config files for
 easily finding and configuring !OctoMap in your CMakeLists.txt using the
 regular `find_package()` macro:
 
+
+
 ```
 find_package(octomap REQUIRED)
 include_directories(${OCTOMAP_INCLUDE_DIRS})
 target_link_libraries(${OCTOMAP_LIBRARIES})
 ```
 
+
+
 (Add ```link_directories(\${OCTOMAP_LIBRARY_DIRS})``` only if
 required - usually it's not needed).
+
+
 
 ```
 {#!wiki version groovy_and_newer
@@ -64,6 +78,8 @@ Finally, add to your `package.xml`:
 <build_depend>octomap</build_depend>
 <run_depend>octomap</run_depend>
 ```
+
+
 
 }}}}
 

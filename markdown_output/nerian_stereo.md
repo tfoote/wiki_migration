@@ -33,10 +33,14 @@ SP1 or the now discontinued [nerian_sp1](nerian_sp1) node**
 On Ubuntu Linux, please use the following commands to install the
 official package for your current ROS version.
 
+
+
 ```
 sudo apt-get update
 sudo apt-get install ros-`rosversion -d`-nerian-stereo
-``` These commands work for both, ROS1 and ROS2
+```
+
+ These commands work for both, ROS1 and ROS2
 distributions.
 
 Should there not be an appropriate package for your system and ROS
@@ -56,6 +60,8 @@ ROS messages. A Nodelet version is also provided for ROS1.
 ### Published Topics
 
 The node can publish the received data through three different topics:
+
+
 
 ```clearsilver
 
@@ -83,12 +89,16 @@ pub {
 }
 ```
 
+
+
 ### Launching and parameters
 
 Example launch files are included for the ROS1 node and nodelet and for
 ROS2. You can run several nodes in parallel if you use more than one
 device, specifying the respective device address and a desired ROS node
 name in case of ROS1:
+
+
 
 ```
 # For ROS1:
@@ -98,9 +108,13 @@ roslaunch nerian_stereo nerian_stereo.launch device_address:=192.168.10.10 node_
 ros2 launch nerian_stereo nerian_stereo.launch.py
 ```
 
+
+
 The behaviour of the node can be configured through various parameters.
 An example parameterization can be found in the included launch file
 `nerian_stereo.launch`. The following parameters are supported:
+
+
 
 ```clearsilver
 
@@ -168,12 +182,16 @@ param {
 }
 ```
 
+
+
 ### Testing
 
 The topics published by the nerian_stereo node can be viewed with
 [rviz](rviz). The disparity map can also be visualized with the
 [image_view](image_view) node in ROS1 or showimage from ROS2. To do so,
 use can use one of the following commands:
+
+
 
 ```
 # For ROS1:
@@ -183,6 +201,8 @@ rosrun image_view image_view image:=/nerian_stereo/disparity_map
 ros2 run image_tools showimage image:=/nerian_stereo/disparity_map
 ```
 
+
+
 In this case color coding should be activated such that the disparity
 map can be displayed on a screen.
 
@@ -190,6 +210,8 @@ map can be displayed on a screen.
 
 For displaying the left camera image, please run the image_view node
 with the following command line:
+
+
 
 ```
 #For ROS1:
@@ -199,6 +221,8 @@ rosrun image_view image_view image:=/nerian_stereo/left_image
 ros2 run image_tools showimage image:=/nerian_stereo/left_image
 ```
 
+
+
 ### Dynamic reconfiguration in ROS1
 
 At launch time, the ROS1 node (and nodelet) publishes the current
@@ -206,9 +230,13 @@ configuration reported by the respective device to the ROS parameter
 server, and can be reconfigured at run time using ROS
 dynamic_reconfigure, for example using the GUI:
 
+
+
 ```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+
+
 
 ## Further Information
 

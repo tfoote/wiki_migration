@@ -145,65 +145,105 @@ List of all published topics.
 ## Installation
 
 Build package:\
+
+
 ```
 rosmake srs_ui_but
 ```
 
+
+
 ### Distance Linear Visualizer
 
-First you need to run `but_service_server`: ```
+First you need to run `but_service_server`: 
+
+```
 rosrun srs_ui_but but_services_server
 ```
 
-Then run `rviz`: ```
+
+
+Then run `rviz`: 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 Load plugin `` and add **Distance Linear Visualizer** display.
 
 ### Distance Circular Indicator
 
-Run `rviz`: ```
+Run `rviz`: 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 Load plugin **but_gui** and add **Distance Circular Indicator** display.
 
 ### COB Stretch Indicator
 
 First you need to run simulation and `cob_stretch_publisher`:
+
+
 ```
 rosrun srs_ui_but cob_stretch_publisher
 ```
 
-Then run `rviz`: ```
+
+
+Then run `rviz`: 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 Load plugin `` and add **COB Stretch Indicator** display.
 
 ### Camera Display
 
-Run everything together with launch file: ```
+Run everything together with launch file: 
+
+```
 roslaunch srs_ui_but but_data_fusion.launch
 ```
 
-Or launch manually all needed components: ```
+
+
+Or launch manually all needed components: 
+
+```
 rosrun srs_ui_but view
 roslaunch cob_2dnav 2dnav.launch
 ```
 
-Run `rviz`: ```
+
+
+Run `rviz`: 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 Load plugin **but_gui** and add **CButCamDisplay** display.
 
 ### Object Manager
 
-For example usage just run ```
+For example usage just run 
+
+```
 roslaunch srs_ui_but object_manager_test.launch
 ```
+
+
 
 ## Configuration
 

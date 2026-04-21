@@ -8,6 +8,10 @@ more information.
 
 ## How to start the viewer
 
+
+
 ```
 rosrun xdot xdot.py [file]
 ```
+
+

@@ -4,9 +4,13 @@
 
 ## Making
 
+
+
 ```
 rosmake ar_recog
 ```
+
+
 
 The `ar_recog` package downloads and compiles the ARToolkit. It must
 therefore be able to connect to Sourceforge on the internet. This also
@@ -18,15 +22,23 @@ used thereafter.
 
 To run code that listens to `/image` messages:
 
+
+
 ```
 rosrun ar_recog ar_recog
 ```
 
+
+
 To run code for a specific image message such as one from gscam:
+
+
 
 ```
 rosrun ar_recog ar_recog image:=/gscam/image
 ```
+
+
 
 ## Messages and Services
 
@@ -62,9 +74,13 @@ ROS parameter (`aov`), or determined using the
     `dist` is the distance between the AR tag and the camera in
     millimeters:
 
+
+
 ```
 rosservice call ar/calibrate_distance dist
 ```
+
+
 
 ### Tips
 

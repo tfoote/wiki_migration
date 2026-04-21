@@ -18,6 +18,8 @@ odometry is not updated or lost.
 -   Parameters available for odometry can be shown from the terminal by
     using the "\--params" argument:
 
+
+
 ```
 $ rosrun rtabmap_odom rgbd_odometry --params
 or
@@ -26,10 +28,14 @@ or
 $ rosrun rtabmap_odom icp_odometry --params
 ```
 
+
+
 #### Arguments
 
 -   `"\--params"`: Show RTAB-Map's parameters related to this node
     and exit.
+
+
 
 ```clearsilver
 pub {
@@ -184,6 +190,8 @@ prov_tf {
 }
 ```
 
+
+
 ### rgbd_odometry
 
 This node wraps the RGBD odometry approach of RTAB-Map. Using RGBD
@@ -193,7 +201,9 @@ feature correspondences between the images, a RANSAC approach computes
 the transformation between the consecutive images.
 
 See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. ```clearsilver
+common odometry stuff used by this node. 
+
+```clearsilver
 sub {
   0.name = rgb/image
   0.type = sensor_msgs/Image
@@ -237,6 +247,8 @@ param {
 }
 ```
 
+
+
 ### stereo_odometry
 
 This node wraps the stereo odometry approach of RTAB-Map. Using stereo
@@ -247,7 +259,9 @@ RANSAC approach computes the transformation between the consecutive left
 images.
 
 See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. ```clearsilver
+common odometry stuff used by this node. 
+
+```clearsilver
 sub {
   0.name = left/image_rect
   0.type = sensor_msgs/Image
@@ -294,6 +308,8 @@ param {
 }
 ```
 
+
+
 ### icp_odometry
 
 This node wraps the icp odometry approach of RTAB-Map. Using laser scan
@@ -301,7 +317,9 @@ or a point cloud, odometry is computed by Iterative Closest Point (ICP)
 registration.
 
 See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. ```clearsilver
+common odometry stuff used by this node. 
+
+```clearsilver
 sub {
   0.name = scan
   0.type = sensor_msgs/LaserScan
@@ -356,3 +374,5 @@ param {
    }
 }
 ```
+
+

@@ -52,12 +52,16 @@ mocap files.
 
 This library allows you to create a player object, which broadcasts the
 PointClouds over time, using specified topics. Example usage:
+
+
 ```
 #python
 player = MocapPlayer(scale=100.0)
 player.add(mocap, "/mocap0")
 player.play()
-``` You can also send the messages for a particular
+```
+
+ You can also send the messages for a particular
 frame using `play_frame(t)`.
 
 The MocapPlayer will broadcast the data points as !PointClouds, with the
@@ -75,9 +79,13 @@ This node uses the [c3d](c3d) package to convert c3d motion capture
 files to <<MsgLink(mocap_point_cloud/MotionCapture)>> messages,
 stored in bag files.
 
+
+
 ```
 rosrun mocap_point_cloud convert.py file1.c3d file2.c3d ...
 ```
+
+
 
 This will convert the c3d files into the bag files file1.c3d
 
@@ -87,18 +95,26 @@ This node will load a single c3d/bag file, and play its contents using
 the mcpc_player library. It will keep looping through all timepoints
 according to the frame rate, until manually killed.
 
+
+
 ```
 rosrun mocap_point_cloud play.py file1.bag
 ```
+
+
 
 ### Play using a GUI
 
 This node is similar to Play, but allows the user to control which
 timepoint is displayed using a GUI slider.
 
+
+
 ```
 rosrun mocap_point_cloud play_gui.py file1.bag
 ```
+
+
 
 ### Statistics
 

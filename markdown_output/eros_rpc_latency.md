@@ -12,19 +12,27 @@ slowdown depending on whether it is software emulated or not.
 
 ### Integral
 
+
+
 ```
 roscd eros_rpc_latency/bin
 ./server
 ./client // in a separate terminal
 ```
 
+
+
 Latencies will be printed every second, and upon termination of the
 client (ctrl-c), the average latency will be printed to standard output.
 
 ### Float
+
+
 
 ```
 roscd eros_rpc_latency/bin
 ./float_server
 ./float_client // in a separate terminal
 ```
+
+

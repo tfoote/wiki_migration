@@ -8,6 +8,8 @@ autonomous vehicle to follow, plus some related test utilities.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = maplanes
@@ -42,16 +44,24 @@ param {
 }
 ```
 
+
+
 #### Examples
 
 Run the ART map server, publishing `roadmap_global` and
 `roadmap_local` messages using the RNDF from the 2007 DARPA site visit
 at Southwest Research Institute.
 
+
+
 ```
 $ roscd art_map
  $ rosrun art_map maplanes _rndf:=rndf/swri/site_visit.rndf
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -65,14 +75,22 @@ node.0 {
 }
 ```
 
+
+
 #### Usage
 
-Run the getpoints node to collect waypoints. ```
+Run the getpoints node to collect waypoints. 
+
+```
 $ rosrun art_map getpoints
 ```
 
+
+
 Enter waypoints for lanes, zones or parking spots by pressing the
-corresponding letter and <Enter>. ```
+corresponding letter and <Enter>. 
+
+```
 Valid instructions are:
  L record lane point
  P record zone perimeter point
@@ -81,10 +99,18 @@ Valid instructions are:
  Q quit
 ```
 
+
+
 Use the following command to convert waypoint file to RNDF
+
+
 ```
 $ `rospack find art_map`/src/node/pointsToRNDF.rb waypoints.txt out.rndf
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -93,7 +119,11 @@ node.0 {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 $ rosrun art_map test_lanes --help
@@ -109,3 +139,5 @@ usage: test_lanes [options] RNDF_name
 	-o, --output-points	print polygon points to polys.points
 	-v, --verbose	print verbose messages
 ```
+
+

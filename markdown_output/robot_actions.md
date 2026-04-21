@@ -80,6 +80,8 @@ function to test for preemption. if developers do not have such tests
 then in practice their action will not be pre-emptable since preemption
 must be signaled by the action implementer.
 
+
+
 ```cplusplus
 class MyAction: public robot_actions::Action<Float32, Float32> {
 public:
@@ -116,12 +118,16 @@ private:
 };
 ```
 
+
+
 We also provide a function to waitForDeactivation so that action
 implementations based on callbacks can signal the execute method to
 complete.
 
 Finally, an ActionRunner class is provided to implement the ROS message
 bindings, making the action callable over ROS.
+
+
 
 ```cplusplus
   MyAction action;
@@ -132,6 +138,8 @@ bindings, making the action callable over ROS.
   runner.run();
 ```
 
+
+
 ### Test Support
 
 An ActionClient has been provided to allow a test program in C++ to call
@@ -139,6 +147,8 @@ actions remotely, exercising the ROS message integration model. Simple
 test executives can thus be built.
 
 Here is a simple test executive.
+
+
 
 ```cplusplus
   // Use a client to test the action
@@ -156,6 +166,8 @@ Here is a simple test executive.
   result = client.execute(g, f, ros::Duration().fromSec(0.0001));
   ASSERT_EQ(result, robot_actions::PREEMPTED);
 ```
+
+
 
 ## Tutorials
 

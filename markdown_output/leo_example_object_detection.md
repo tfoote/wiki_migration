@@ -1,6 +1,10 @@
+
+
 ```wiki
 '''Note:''' You can also check a detailed integration tutorial on [[https://www.leorover.tech/integrations/object-detection|LeoRover Tech - Object detection|target="_blank"]]
 ```
+
+
 
 ## Overview
 
@@ -17,9 +21,13 @@ stock [Leo Rover](Robots/Leo Rover).
 ### Running object detection with the default configuration
 
 If you want to run object detection with the default configuration,
-simply type: ```
+simply type: 
+
+```
 roslaunch leo_example_object_detection detector.launch
 ```
+
+
 
 ### Running object detection with custom configuration
 
@@ -28,9 +36,13 @@ network model, files with color definitions and label names, as well as
 camera view. The arguments are as follows: labels:: The path to the file
 with the labels (one label in one line), for the neural network model.
 
+
+
 ```wiki
 '''IMPORTANT:''' If the labels in the file won't be suited for the model, the program might not work properly.
 ```
+
+
 
 camera:: The name of the topic with the camera image - you can specify
 which camera view you want to use for detecting objects.
@@ -42,16 +54,26 @@ your choice.
 config_file:: The path to the config file with the ROS params defining
 colors for specified labels.
 
+
+
 ```wiki
 '''Note:''' See the [[http://wiki.ros.org/leo_example_object_detection#rosapi|ROS API]] section for more details about the parameters.
 ```
 
+
+
 Therefore, an example usage with custom configuration looks like this:
+
+
 ```
 roslaunch leo_example_object_detection detector.launch config_file:=<path_to_config> model:=<path_to_model> labels:=<path_to_labels> camera:=<topic_name>
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name= object_detector
@@ -86,3 +108,5 @@ param {
   }
 }
 ```
+
+

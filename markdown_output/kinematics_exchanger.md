@@ -21,9 +21,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch kinematics_exchanger kinematics_exchanger.launch
-``` to launch the
+```
+
+ to launch the
 `kinematics_exchanger` node.
 
 The launch file can be configured with following parameters:
@@ -38,6 +42,8 @@ In the `param` subdirectory there is the parameter file
 `kinematics_exchanger` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -102,6 +108,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

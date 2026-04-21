@@ -13,15 +13,25 @@ doxygen documentation available in the Code API section.
 ## Usage
 
 The ground station GUI can be started by running:
+
+
 ```shell
 roslaunch ground_station ground_station.launch
 ```
 
-The telemetry demo can be started by running: ```shell
+
+
+The telemetry demo can be started by running: 
+
+```shell
 roslaunch ground_station telemetry.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -322,6 +332,8 @@ param {
 46.desc = Indicates the end value of bar 4.
 46.default = 100
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

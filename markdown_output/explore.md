@@ -5,6 +5,8 @@
 The explore node implements frontier based exploration. It actively
 builds a map of its environment by visiting unknown areas.
 
+
+
 ```clearsilver
 pub {
   0.name= visualization_marker
@@ -37,6 +39,8 @@ param {
 }
 ```
 
+
+
 #### Action API
 
 The `explore` node implements a `SimpleActionClient` (see
@@ -44,6 +48,8 @@ The `explore` node implements a `SimpleActionClient` (see
 `geometry_msgs/PoseStamped` messages.
 
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -53,6 +59,8 @@ pub {
   0.desc= A goal to pursue in the world. 
 }
 ```
+
+
 
 #### Component Parameters
 

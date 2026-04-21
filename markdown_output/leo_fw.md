@@ -14,29 +14,47 @@ so it has to be installed on the system.
 
 ### Flashing firmware
 
-To flash the newest firmware, simply type: ```
+To flash the newest firmware, simply type: 
+
+```
 rosrun leo_fw update
-``` To
+```
+
+ To
 flash the firmware from file, use the `flash` script:
+
+
 ```
 rosrun leo_fw flash firmware.bin
-``` The script will guide you through the flashing
+```
+
+ The script will guide you through the flashing
 process.
 
 The firmware uses [rosserial](rosserial) protocol to communicate with
 ROS nodes. This requires a running host-side rosserial implementation
 which should be already started by [leo_bringup](leo_bringup), but it
-can also be started manually: ```
+can also be started manually: 
+
+```
 rosrun rosserial_python serial_node.py _port:=/dev/serial0 _baud:=250000
-``` Once the
+```
+
+ Once the
 `serial_node` connects to the firmware, the firmware's ROS API should
 be available on the system.
+
+
 
 ```wiki
 The ROS API differs between the firmwares released for Noetic and Melodic distributions. Make sure you read the correct section.
 ```
 
+
+
 ## ROS API (Noetic)
+
+
 
 ```clearsilver
 name= firmware
@@ -166,6 +184,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name= firmware_message_converter
 desc= A node that subscribes for the messages published by the firmware and converts them to message types commonly used in ROS.
@@ -227,7 +249,11 @@ param {
 }
 ```
 
+
+
 ## ROS API (Melodic)
+
+
 
 ```clearsilver
 name= firmware
@@ -409,3 +435,5 @@ param {
   }
 }
 ```
+
+

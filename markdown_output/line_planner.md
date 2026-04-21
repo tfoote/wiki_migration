@@ -11,6 +11,8 @@ current.
 
 Note that min speed should be less or equal to max speed.
 
+
+
 ```xml
 <node name="line_planner" pkg="line_planner" type="line_planner_node.py" output="screen">
 
@@ -41,6 +43,8 @@ Note that min speed should be less or equal to max speed.
 
 </node>
 ```
+
+
 
 Here's a diagram showing the possible states of the planner, and which
 distances each parameter affects:
@@ -113,11 +117,15 @@ get stuck out of wifi range.
 
 ## Params
 
+
+
 ```xml
 <node name="area_to_path_node" pkg="line_planner" type="area_to_path_node.py" output="screen">
     <param name="step_size" value="2.0"/> <!-- determines the distance between parallel lines -->
 </node>
 ```
+
+
 
 ## Subscribed Topics
 

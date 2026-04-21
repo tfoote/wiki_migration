@@ -13,6 +13,8 @@ This device supports all the drivers implemented in the
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = ir_controller_node
@@ -32,13 +34,19 @@ node.0 {
 }
 ```
 
+
+
 ## Launch File Examples
 
 In a terminal window, start an ir_controller node process running:
 
+
+
 ```
 $ roslaunch maggie_ir_controller ir_controller.launch robot:=maggie
 ```
+
+
 
 ## Examples
 
@@ -46,6 +54,10 @@ An example of sending a command for turning on the TV could be:
 
 1\. Launch the node. 2. Send the command:
 
+
+
 ```
 $ rosservice call /maggie/send_command maggie_ir_controller_msgs/SetTvAction "on"
 ```
+
+

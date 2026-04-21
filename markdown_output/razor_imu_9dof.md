@@ -1,3 +1,5 @@
+
+
 ```
 {#!wiki version hydro_and_newer
 
@@ -40,11 +42,15 @@ sudo apt-get install python-visual # For Ubuntu 16.04 and before
 sudo apt-get install python3-pip python3-wxgtk4.0 ; pip3 install vpython # From Ubuntu 20.04
 ```
 
+
+
 ### Install ROS razor_imu_9dof Package
 
 #### From Source
 
-Clone the ROS source repository and build it: ```
+Clone the ROS source repository and build it: 
+
+```
 cd catkin_ws/src
 git clone https://github.com/ENSTABretagneRobotics/razor_imu_9dof.git
 cd ..
@@ -53,12 +59,18 @@ catkin_make
 cd src/razor_imu_9dof/nodes ; wget https://www.glowscript.org/docs/VPythonDocs/VPtoGS.py ; python3 VPtoGS.py ; cp -f Converted/display_3D_visualization.py display_3D_visualization.py ; cd ../../..
 ```
 
+
+
 #### From Repository
 
 Install the razor_imu_9dof package from repository, e.g. for Indigo:
+
+
 ```
 sudo apt-get install ros-indigo-razor-imu-9dof
 ```
+
+
 
 ### Load Firmware into Razor Board
 
@@ -72,10 +84,14 @@ called `"Arduino"`. This is where the Arduino IDE expects to find
 source code for the firmware you're going to install on the Razor.
 
 -   Copy the Razor firmware from the *razor_imu_9dof/src* directory to
-    your arduino source directory. ```
+    your arduino source directory. 
+
+```
 roscd razor_imu_9dof
 cp -r src/Razor_AHRS ~/Arduino
-``` Replace
+```
+
+ Replace
     */Arduino* with */sketchbook* if needed.
 
 ```{=html}
@@ -129,10 +145,14 @@ cp -r src/Razor_AHRS ~/Arduino
 
 Create a custom configuration file *my_razor.yaml*:
 
--   Copy the template file *razor.yaml*: ```
+-   Copy the template file *razor.yaml*: 
+
+```
 roscd razor_imu_9dof/config
 cp razor.yaml my_razor.yaml
 ```
+
+
 -   Edit *my_razor.yaml* as needed. See further for more information on
     setting the calibration values.
 
@@ -187,9 +207,13 @@ The three numbers represent YPR (Yaw, Pitch, and Roll) in degrees.
 ### 3D Visualization Test GUI
 
 You can also use the included 3D Visualization Test GUI to test the
-AHRS. Simply run the launch file: ```
+AHRS. Simply run the launch file: 
+
+```
 roslaunch razor_imu_9dof razor-pub-and-display.launch
-``` You should
+```
+
+ You should
 see a display like this:
 
 ![](attachment:3DVisualizationGui.png)
@@ -198,9 +222,13 @@ see a display like this:
 ### Echo the Imu Messages
 
 The normal way to start publishing Imu data from the Razor is to run the
-launch file: ```
+launch file: 
+
+```
 roslaunch razor_imu_9dof razor-pub.launch
-``` You can now run `"rostopic
+```
+
+ You can now run `"rostopic
 list"` in another window and look for the `/imu` topic. Run
 `"rostopic echo /imu"` and look at the Imu messages. Move the Razor
 around and see how the values in the Imu messages change.
@@ -263,14 +291,22 @@ warm up. Calibrating the sensors can be a little tricky:
 -   Connect the Razor to your computer, set the correct serial port in
     *Arduino* and open the Serial Monitor.
 -   If you didn't change the firmware defaults, you should see lots of
-    output like this: ```
+    output like this: 
+
+```
 #YPR=-155.73,-76.48,-129.51
 ```
+
+
 -   Set the firmware *output mode* to *calibration* by sending the
     string `#oc`. You should now see output like this:
-    ```
+    
+
+```
 accel x,y,z (min/max) = -5.00/-1.00  25.00/29.00  225.00/232.00
 ```
+
+
 
 #### Calibrating the Accelerometer
 
@@ -310,9 +346,13 @@ accel x,y,z (min/max) = -5.00/-1.00  25.00/29.00  225.00/232.00
 -   **Wait for 10 seconds, and do not move the *Razor AHRS*.** It will
     collect and average the noise of the gyroscope on all three axes.
 -   You should now have output that looks like this:
-    ```
+    
+
+```
 gyro x,y,z (current/average) = -29.00/-27.98  102.00/100.51  -5.00/-5.85
 ```
+
+
 -   If you think you messed up the measurement by shaking or moving the
     board, you can reset by sending `#oc`.
 -   Take the second values of each pair and put them into

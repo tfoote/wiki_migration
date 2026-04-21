@@ -11,9 +11,13 @@ encoders. For further technical specifications please visit the
 
 First, check out the sensoray626 package from the repository.
 
+
+
 ```
 svn co https://mediabox.grasp.upenn.edu/svn/penn-ros-pkgs/penn_lightweight_teleop/trunk/sensoray626 sensoray626
 ```
+
+
 
 Within the repository is a folder named ``s626-1.0.1``, which
 contains the Sensoray's Linux SDK files (v1.0.1) that are also
@@ -25,10 +29,14 @@ that these drivers must be reinstalled every time the computer is
 restarted), I wrote a script to automate the build and install process.
 This script must be run as sudo.
 
+
+
 ```
 roscd sensoray626
 sudo ./setup626.py
 ```
+
+
 
 One important thing to note is that this script disables *comedi*. The
 [comedi driver](http://www.comedi.org/doc/x1781.html#AEN4530) does not
@@ -39,17 +47,25 @@ Now we can make the package, which should build the core&mod library as
 *lib/libsensoray626.so* and a demo program as *bin/demo_cpp*. Run the
 demo program to verify successful installation of the driver.
 
+
+
 ```
 make
 rosrun sensoray626 demo_cpp
 ```
 
+
+
 ## Using Sensoray 626 in your node.
 
 Add the following line to *CMakeLists.txt* in your package to link to
-the library in the sensoray626 package. ```
+the library in the sensoray626 package. 
+
+```
 target_link_libraries(YOUR_EXECUTABLE_NAME_HERE sensoray626)
 ```
+
+
 
 ## External API Documentation
 

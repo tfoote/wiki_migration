@@ -32,6 +32,8 @@ of [openni_launch](openni_launch).
 
 ## Nodelets
 
+
+
 ```clearsilver
 node.0 {
   name = depth_image_proc/convert_metric
@@ -53,11 +55,15 @@ node.1 {
 }
 ```
 
+
+
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                    
      ![Depth\|width=100%](attachment:depth.png)                                            ![Disparity\|width=100%](attachment:disparity.png)            
      Depth image                                                                           Disparity image (colorized by [disparity_view](image_view))   
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
+
+
 
 ```clearsilver
   sub {
@@ -93,6 +99,10 @@ node.1 {
   }
 ```
 
+
+
+
+
 ```clearsilver
 node.2 {
   name = depth_image_proc/point_cloud_xyz
@@ -100,11 +110,15 @@ node.2 {
 }
 ```
 
+
+
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 46%"> **Input**      **Output**                                            
      ![Depth\|width=100%](attachment:depth.png)                                            ![Point cloud\|width=100%](attachment:rviz_xyz.png)   
      Depth image                                                                           Point cloud, colorized by distance along Z-axis       
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
+
+
 
 ```clearsilver
   sub {
@@ -128,12 +142,18 @@ node.2 {
   }
 ```
 
+
+
+
+
 ```clearsilver
 node.3 {
   name = depth_image_proc/point_cloud_xyzrgb
   desc = Nodelet to combine registered depth image and RGB image into XYZRGB point cloud.
 }
 ```
+
+
 
   -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
      <tablestyle="width: 99%; text-align: center" style="width: 40%"> **Input**      **Output**                                                                       
@@ -142,6 +162,8 @@ node.3 {
      ![RGB\|width=100%](attachment:rgb.jpg)                                                                                                                                 
      RGB image                                                                             Color point cloud                                                                
   -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
+
+
 
 ```clearsilver
   sub {
@@ -168,6 +190,10 @@ node.3 {
   }
 ```
 
+
+
+
+
 ```clearsilver
 node.4 {
   name = depth_image_proc/register
@@ -175,11 +201,15 @@ node.4 {
 }
 ```
 
+
+
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                  
      ![Depth\|width=100%](attachment:depth.png)                                            ![Registered depth\|width=100%](attachment:depth_reg.png)   
      Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera      
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
+
+
 
 ```clearsilver
   sub {
@@ -214,6 +244,8 @@ node.4 {
   }
 ```
 
+
+
 ## Execution
 
 Since the package is made of 'nodelet's, 'nodelet' execution method
@@ -222,6 +254,8 @@ is used as:
 
 For example, the launch file to execute a 'point_cloud_xyz' nodelet is
 like as:
+
+
 
 ```
 <launch>
@@ -235,3 +269,5 @@ like as:
   </node>
 </launch>
 ```
+
+

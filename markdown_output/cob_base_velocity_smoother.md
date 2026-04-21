@@ -19,6 +19,8 @@ respectively).
 The following states the ROS API for the `cob_base_velocity_smoother`
 node.
 
+
+
 ```clearsilver
  name = cob_base_velocity_smoother
  desc = The `cob_base_velocity_smoother` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages from the navigation or teleoperation device and publishes recalculated [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages to avoid jerky behavior.
@@ -68,6 +70,8 @@ param{
 
 }
 ```
+
+
 
 ## Usage
 

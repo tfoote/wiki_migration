@@ -20,6 +20,8 @@ reference.
 
 ## ROS Nodes and Nodelets
 
+
+
 ```clearsilver
 node.0 {
  name = CloudNodelet
@@ -62,19 +64,27 @@ param {
 }
 ```
 
+
+
 #### Examples
 
 Continuously convert raw Velodyne packets into
 <<MsgLink(sensor_msgs/PointCloud2)>> messages. *Running as a
 standalone nodelet prevents zero-copy message sharing.*
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```
 
+
+
 This launch file runs the cloud nodelet in the same process with the
 device driver. *That enables zero-copy message sharing.* The full path
 name of the calibration file *must* be provided. This example uses one
-of the package test files for calibration. ```
+of the package test files for calibration. 
+
+```
 <launch>
   <!-- start nodelet manager and driver nodelets -->
   <include file="$(find velodyne_driver)/launch/nodelet_manager.launch" />
@@ -88,6 +98,10 @@ of the package test files for calibration. ```
 </launch>
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
  name = cloud_node
@@ -95,13 +109,21 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Continuously convert raw Velodyne packets into
 <<MsgLink(sensor_msgs/PointCloud2)>> messages.
+
+
 ```
 $ rosrun velodyne_pointcloud cloud_node _calibration:=calibration.yaml
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -149,19 +171,27 @@ param {
 }
 ```
 
+
+
 #### Examples
 
 Transform raw Velodyne packets into
 <<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
 frame. *Running as a standalone nodelet prevents zero-copy message
-sharing.* ```
+sharing.* 
+
+```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/TransformNodelet
 ```
+
+
 
 This launch file runs the transform nodelet in the same process with the
 device driver. *That enables zero-copy message sharing.* The full path
 name of the calibration file *must* be provided. This example uses one
-of the package test files. ```
+of the package test files. 
+
+```
 <launch>
   <!-- start nodelet manager and driver nodelets -->
   <include file="$(find velodyne_driver)/launch/nodelet_manager.launch" />
@@ -174,6 +204,10 @@ of the package test files. ```
 </launch>
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
  name = transform_node
@@ -181,19 +215,29 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Transform raw Velodyne packets into
 <<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
-frame. ```
+frame. 
+
+```
 $ rosrun velodyne_pointcloud transform_node _calibration:=calibration.yaml
 ```
 
+
+
 Transform raw Velodyne packets into
 <<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/map`
-frame. ```
+frame. 
+
+```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```0
+```
+
+0
 
 ## Launch File Examples
 
@@ -201,41 +245,65 @@ In two separate terminal windows, start a `velodyne_nodelet_manager`
 process running the driver nodelet and the cloud nodelet, which will
 have zero-copy access to the raw data messages the driver publishes.
 
-```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```1
+
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```2
+```
+
+1
+
+
+
+```
+$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+```
+
+2
 
 Start a driver nodelet with input from `tcpdump.pcap`, in the current
 directory. The `pwd` provides a full path name, as required for
 `roslaunch`. In another terminal, start the transform nodelet, to
 publish the data points transformed into the /odom frame of reference.
 
-```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```3
+
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```4
+```
+
+3
+
+
+
+```
+$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+```
+
+4
 
 Start a `velodyne_nodelet_manager` process for a Velodyne HDL-32E.
 This script runs both the driver and the point cloud conversion,
 providing the standard HDL-32E calibration.
 
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```5
+```
+
+5
 
 Start another `velodyne_nodelet_manager` for the Velodyne HDL-32E, but
 provide a PCAP dump file as input.
 
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```6
+```
+
+6
 
 ## Utility Commands
 
@@ -249,15 +317,23 @@ from the `db.xml` file that was provided by Velodyne with the device.
 Read `db.xml` from the current directory, writing the required
 calibration data to `db.yaml`.
 
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```7
+```
+
+7
 
 Save generated 32E calibration data in `my_calibration.yaml`.
 
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```8
+```
+
+8
 
 ## C++ API
 

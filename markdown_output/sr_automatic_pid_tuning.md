@@ -33,9 +33,13 @@ use some working values) in the **seed.yaml** file. The
 be explored by the algorithm.
 
 You can run the algorithm with the following command line:
+
+
 ```
 $ rosparam load `rospack find sr_automatic_pid_tuning`/seed.yaml ; rosrun sr_automatic_pid_tuning sr_automatic_pid_tuning /sr_automatic_pid_tuning/targets:=/sh_ffj3_effort_controller/command --popSize=10 --weakElitism=2 --pCross=0.9 --maxGen=10 --joint="ffj3" _image_path:="`rospack find sr_movements`/movements/test.png" _min:=-200.0 _max:=200. _publish_rate:=500 _controler:="motor"
 ```
+
+
 
 Other useful parameters:
 
@@ -46,6 +50,10 @@ Other useful parameters:
 
 ### More options
 
-To see all the options, you can run: ```
+To see all the options, you can run: 
+
+```
 $ rosrun sr_automatic_pid_tuning sr_automatic_pid_tuning --help
 ```
+
+

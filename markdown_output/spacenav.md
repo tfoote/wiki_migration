@@ -15,8 +15,12 @@ explains how to use this package.
 
 Simply type:
 
+
+
 ```
 $ rosmake spacenav
-``` The "rosmake" checks out and builds a version
+```
+
+ The "rosmake" checks out and builds a version
 of **spacenavd** and **libspacenav** that has been tested with
 [spacenav_node](spacenav_node).

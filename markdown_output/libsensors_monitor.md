@@ -6,6 +6,8 @@ system.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = libsensors_monitor
@@ -25,3 +27,5 @@ node.0 {
   }
 }
 ```
+
+

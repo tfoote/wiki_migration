@@ -12,16 +12,24 @@ active development.
 ## Running
 
 You'll likely need to create your own map, but:
+
+
 ```
 roslaunch neato_node bringup.launch
 roslaunch 2dnav_neato move_base.launch
 ```
+
+
 
 ## Creating Maps
 
 [gmapping](gmapping) can be used to create maps, as with any other
 robot. We've yet to find just the right set of parameters (work on the
 beam likelihood is probably needed), but the following seems to work on
-the Neato for smaller maps: ```
+the Neato for smaller maps: 
+
+```
 rosrun gmapping slam_gmapping scan:=base_scan _srr:=0.001 _srt:=0.001 _str:=0.000001 _stt:=0.000001 _linearUpdate:=0.5 _angularUpdate:=0.4
 ```
+
+

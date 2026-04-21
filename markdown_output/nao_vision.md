@@ -6,6 +6,8 @@ vision via ROS. These packages have been tested with
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = nao_vision
@@ -38,10 +40,14 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `nao_rail` stack, simply run the following commands in
 your shell:
+
+
 
 ```shell
 cd /path/to/your/ros/stacks
@@ -50,6 +56,8 @@ roscd nao_rail
 rosdep install nao_rail
 rosmake nao_rail
 ```
+
+
 
 ### Startup
 
@@ -63,16 +71,24 @@ values in the given launch file. This file launches an instance of the
 `nao_vision` node. To launch this node, the following commands can be
 used:
 
+
+
 ```
 roslaunch nao_vision nao_vision.launch
 ```
 
+
+
 With the above node running, you can test video streaming with the
 [image_view](image_view) package using the following command:
+
+
 
 ```
 rosrun image_view image_view image:=/nao_camera
 ```
+
+
 
 ## Support
 

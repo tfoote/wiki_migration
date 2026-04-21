@@ -1,7 +1,9 @@
 ## ROS API
 
 The [cob_head_axis](cob_head_axis) package provides a configurable node
-for operating the axis of the head. ```clearsilver
+for operating the axis of the head. 
+
+```clearsilver
  name = cob_head_axis
  desc = The `cob_head_axis` node takes in <<MsgLink(trajectory_msgs/JointTrajectory)>> messages and send this directly to the hardware. The joint states can be received by [[Topics|topics]] and the axis can be initialized, stopped or recovered via [[Services|services]].
 
@@ -97,12 +99,16 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage
 
 All hardware configuration is done in the
 [cob_hardware_config](cob_hardware_config) package. A sample parameter
 file in "cob_hardware_config/cob3-3/config/head.yaml" could look like
-this ```
+this 
+
+```
 CanDevice: PCAN:0
 CanBaudrate: 500
 ModId: 17
@@ -114,3 +120,5 @@ GearRatio: 62.5
 EnoderIncrementsPerRevMot: 2000
 operation_mode: position
 ```
+
+

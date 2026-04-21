@@ -33,6 +33,8 @@ into the RSM and setup your robot to use the RSM go to the
 If you use RSM in an academic context, please cite the following
 [publication](https://dl.acm.org/doi/abs/10.1145/3448823.3448857):
 
+
+
 ```
 @inproceedings{RSM,
 address = {New York, NY, USA},
@@ -48,3 +50,5 @@ url = {https://dl.acm.org/doi/10.1145/3448823.3448857},
 year = {2020}
 }
 ```
+
+

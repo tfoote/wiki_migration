@@ -10,13 +10,21 @@ mobile manipulation challenge. To obtain both pieces of code:
 
 1\. Download [the rosinstall file](attachment:darrth.rosinstall).
 
-1\. Install: ```
+1\. Install: 
+
+```
 rosinstall . darrth.rosinstall
 ```
 
-If you see the error: ```
+
+
+If you see the error: 
+
+```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-``` you are using an older
+```
+
+ you are using an older
 version of rosinstall. Comment out the setup-file line in the rosinstall
 file. After installing everything, rosinstall will give you another
 error that you can ignore.
@@ -33,41 +41,65 @@ released version of the distance_field that keeps DARRT from doing
 collision checking (it also causes some errors with the 3D Nav stack in
 sushi). The folks in charge are looking into this but for now you need
 the patched version in the darrth folder. Ensure that
+
+
 ```
 roscd distance_field
-``` takes you to darrth/distance_field.
+```
+
+ takes you to darrth/distance_field.
 
 1\. Make everything by rosmaking the darrt_actions package
+
+
 ```
 rosmake darrt_actions
-``` Compilation, especially of darrt_msgs, may take
+```
+
+ Compilation, especially of darrt_msgs, may take
 up to five or ten minutes.
 
 ### Downloading DARRT
 
 If you already have the sushi code, you can download DARRT alone using
+
+
 ```
 svn co https://kforge.ros.org/sandbox/darrt/fuerte-tag-July-18-2012-Bug-Fix darrth
-``` If you are not a member of the kforge project,
-you can also get it from the mit-ros-pkg: ```
+```
+
+ If you are not a member of the kforge project,
+you can also get it from the mit-ros-pkg: 
+
+```
 svn co https://svn.csail.mit.edu/mit-ros-pkg/branches/sandbox-uncrawled/darrt/fuerte-tag-July-18-2012-Bug-Fix darrth
 ```
+
+
 
 The most recent version of DARRT is also in the mit-ros-pkg. This is my
 experimental code and not guaranteed to work. The instructions on this
 wiki are out of date for this version of the code:
+
+
 ```
 svn co https://svn.csail.mit.edu/mit-ros-pkg/branches/sandbox/darrth darrth
 ```
+
+
 
 You should then follow steps 3-4 under Downloading DARRT+Sushi.
 
 ### Run
 
 To run DARRT, just launch darrt.launch on the robot or in simulation
-using the laser data as an octomap, use ```
+using the laser data as an octomap, use 
+
+```
 roslaunch darrt darrt.launch
 ```
+
+
 
 There may be warnings, but should be no errors while launching this
 file. It expects a local version of the objects database.
@@ -79,9 +111,13 @@ you want to use interactive manipulation while running DARRT, you only
 need to launch the desktop file. On the **desktop computer** (not the
 robot) launch
 
+
+
 ```
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_desktop.launch
 ```
+
+
 
 ## ROS API
 
@@ -95,6 +131,8 @@ The DARRTAction provides an
 [ action server](actionlib#Implementing_an_ActionServer ) that takes in
 goals of the type <<MsgLink(darrt_msgs/DARRTGoal)>>.
 
+
+
 ```clearsilver
 sub {
   0.name=darrt_planning/darrt_action/goal
@@ -105,6 +143,8 @@ sub {
   1.desc=A request to cancel a specific goal.
 }
 ```
+
+
 
 ### Goal
 
@@ -409,9 +449,13 @@ change the world frame of the robot when using an Octomap (see
 groups than just the arms. Be careful when running DARRT that you do not
 load a different version of the planning description onto the parameter
 server! The /robot_description_planning should include the pr2_base as a
-group (which it does not by default): ```
+group (which it does not by default): 
+
+```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```0
+```
+
+0
 
 ## Using an Octomap
 
@@ -424,9 +468,13 @@ pre-constructed octomap as the collision map. This allows much more
 accurate collision checking when moving the base. If you have a 3D map,
 you should launch darrt with the use_map argument set to true:
 
+
+
 ```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```1 This will by default use the Willow Garage
+```
+
+1 This will by default use the Willow Garage
 sushi environment maps. You can change the maps being used by setting
 the map_suffix argument. Currently the other map available in the
 repository is g415, which is a map of the robot environment at MIT. You
@@ -443,9 +491,13 @@ frame and not the /odom_combined frame. This is done by changing the
 parent_frame_id of the multi DOF joint defined in
 pr2_planning_description.yaml to be map so the planning description that
 DARRT loads on the parameter server depends on the use_map argument.
+
+
 ```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```2
+```
+
+2
 
 Note that running with an octomap as the collision map may make DARRT
 significantly slower.
@@ -550,15 +602,23 @@ DARRT is very much a work in progress. There are several known bugs.
 ```
 -   **Plans collide with everything:** The released version of
     distance_field will break collision checking for DARRT. Make sure
-    that ```
+    that 
+
+```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```3 takes you to the version of the
+```
+
+3 takes you to the version of the
     distance field in the darrth folder. The only difference between
     this version and the released version should be in
     src/propagation_distance_field.cpp. In the patched version, line 374
-    in the reset() function should have: ```
+    in the reset() function should have: 
+
+```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```4
+```
+
+4
 
 ```{=html}
 <!-- -->
@@ -577,9 +637,13 @@ ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.
     add the sushi repository. This appears to be an issue with mercurial
     and large files. Everything else will be installed so just manually
     install the sushi repository into sushi_all:
-    ```
+    
+
+```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
-```5 This may take several tries - the
+```
+
+5 This may take several tries - the
     mercurial error appears to be non-deterministic.
 
 ```{=html}

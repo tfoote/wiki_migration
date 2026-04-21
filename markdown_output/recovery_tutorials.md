@@ -58,12 +58,16 @@ state machine base class and setting the oracle flag, this operation
 would be very similar to SMACH state machines. Also specify a read/write
 location for the failure and transition matrices.
 
+
+
 ```python
     sm = smach_recovery.StateMachine(outcomes=['succeeded','aborted','preempted'],oracle = 1)
     current_path =  path.join(path.dirname(__file__), 'data')
     sm._file_failure = current_path+'/failure_matrix_.pkl'
     sm._file_transition = current_path+'/transition_matrix_.pkl'
 ```
+
+
 
 By setting oracle = 1 you are turning on the ORACLE recovery behavior.
 If oracle is set to zero the state machine acts like a regular SMACH
@@ -73,6 +77,8 @@ Now to specify preconditions for any state in the state machine, the
 preconditions are specified with a identifier(string) which could either
 be another state in the state machine or an independent class that is
 not a part of the current execution cycle.
+
+
 
 ```python
 with sm:
@@ -86,6 +92,8 @@ with sm:
                                result_cb = fibonacci_cb,
                                goal = sm.userdata.fibonacci)})
 ```
+
+
 
 preconditions are specified similar to transitions except that the
 dictionary maps a string to an object of a class.
@@ -101,10 +109,14 @@ Finally to invoke the recovery you need to check if the oracle flag has
 been invoked with the following snippet of code to follow the container
 construction.
 
+
+
 ```python
 if sm._oracle:
         sm = recovery.failure_free(sm)
 ```
+
+
 
 Then the state machine is executed similar to a SMACH state machine.
 
@@ -121,11 +133,23 @@ to as demonstrated above
 To run the demo run the following commands in the given order on
 separate terminals after starting the roscore
 
+
+
 ```
 rosrun smach_recovery_viewer smach_viewer.py
-``` ```
+```
+
+ 
+
+```
 rosrun recovery_tutorials fibonacci_server
 ```
+
+
+
+
 ```
 rosrun recovery_tutorials simple_oracle.py
 ```
+
+

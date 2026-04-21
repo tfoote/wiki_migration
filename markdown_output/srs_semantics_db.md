@@ -1,6 +1,8 @@
 ## ROS API
 
-Small introduction to component ```clearsilver
+Small introduction to component 
+
+```clearsilver
  name = example_node_name
  desc = Example description what the node is doing.
 
@@ -58,12 +60,22 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 Tell how the component can be used, by providing a launch file
+
+
 ```
 roslaunch srs_component component.launch
-``` and an example script how to test it
+```
+
+ and an example script how to test it
+
+
 ```
 rosrun srs_component test_this_component.py
 ```
+
+

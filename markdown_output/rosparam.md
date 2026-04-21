@@ -9,6 +9,8 @@ entering YAML in at the command-line, please see the
 `rosparam` uses a 1-to-1 correspondence between
 [Parameter Server](Parameter Server) types and YAML types. For example:
 
+
+
 ```
 string: 'foo'
 integer: 1234
@@ -17,6 +19,8 @@ boolean: true
 list: [1.0, mixed list]
 dictionary: {a: b, c: d}
 ```
+
+
 
 YAML dictionaries can occur as the argument to the `load` and `set`
 commands of `rosparam`. Dictionaries in this context are interpreted
@@ -31,17 +35,25 @@ There are also special converters for angle radian/degree
 representations. Any Python-legal mathematical expression can be used
 with the radian value, with `pi` used to represent pi.
 
+
+
 ```
 angle1: rad(2*pi)
 angle2: deg(180)
 ```
 
+
+
 or,
+
+
 
 ```
 angle1: !degrees 181.0
 angle2: !radians 3.14169
 ```
+
+
 
 In either case, the angle value is converted to radians (float).
 
@@ -58,7 +70,9 @@ treated like a [ private name](Names).
 The `rosparam` tool enables command-line setting and getting of
 parameters as well as loading and dumping
 [Parameter Server](Parameter Server) state to a file. The currently
-supported commands are: ```
+supported commands are: 
+
+```
 rosparam set	set parameter
 rosparam get	get parameter
 rosparam load	load parameters from file
@@ -66,6 +80,8 @@ rosparam dump	dump parameters to file
 rosparam delete	delete parameter
 rosparam list	list parameter names
 ```
+
+
 
 Command-line arguments to rosparam obey the `ROS_NAMESPACE`
 environment variable (see
@@ -79,21 +95,33 @@ file is used.
 
 ### rosparam list
 
-`list` list all parameter names. ```
+`list` list all parameter names. 
+
+```
 $ rosparam list
 ```
 
+
+
 `list <namespace>` list all parameters in a particular namespace.
+
+
 ```
 $ rosparam list /namespace
 ```
 
+
+
 ### rosparam get
 
 `get <parameter-name>` Get a parameter
-value.```
+value.
+
+```
 $ rosparam get parameter_name
 ```
+
+
 
 `-p` Pretty-print output. *WARNING: this is not YAML-safe*.
 
@@ -103,21 +131,33 @@ $ rosparam get parameter_name
 
 `set <parameter-name> \[parameter-value\]` Set a parameter to a
 value. `parameter-value` is required unless `\--textfile` or
-`\--binfile` are specified. ```
+`\--binfile` are specified. 
+
+```
 $ rosparam set parameter_name value
-```NOTE: if parameter
+```
+
+NOTE: if parameter
 value is a dictionary, this will *add* to the currently set values.\
 *Examples*: Setting a list with one as a string, integer, and float:
+
+
 ```
 $ rosparam set /foo "['1', 1, 1.0]"
 ```
 
+
+
 Setting an entire namespace of parameters using a YAML
-dictionary:```
+dictionary:
+
+```
 $ rosparam set /gains "p: 1.0
 i: 1.0
 d: 1.0"
 ```
+
+
 
 `-v` Show verbose output.
 
@@ -131,40 +171,60 @@ Binary type (Base 64 encoded).
 ### rosparam delete
 
 `delete <parameter-name>` Delete a parameter
-value.```
+value.
+
+```
 angle1: rad(2*pi)
 angle2: deg(180)
-```0
+```
+
+0
 
 `-v` Show verbose output.
 
 ### rosparam dump
 
 `dump <file>` Dump the YAML-formatted contents of the
-[Parameter Server](Parameter Server) to a file.```
+[Parameter Server](Parameter Server) to a file.
+
+```
 angle1: rad(2*pi)
 angle2: deg(180)
-```1
+```
+
+1
 
 `dump <file> <namespace>` Dump only the the parameters in the
-specified namespace.```
-angle1: rad(2*pi)
-angle2: deg(180)
-```2
+specified namespace.
 
-`-v` Verbose output. e.g.: ```
+```
 angle1: rad(2*pi)
 angle2: deg(180)
-```3
+```
+
+2
+
+`-v` Verbose output. e.g.: 
+
+```
+angle1: rad(2*pi)
+angle2: deg(180)
+```
+
+3
 
 ### rosparam load
 
 `load <yaml-file> \[namespace\]` Load parameters from a YAML file
 into the specified `\[namespace\]` (defaults to `/`). NOTE: this
-will *add* to the currently set values.```
+will *add* to the currently set values.
+
+```
 angle1: rad(2*pi)
 angle2: deg(180)
-```4
+```
+
+4
 
 `-v` Show verbose output.
 

@@ -18,6 +18,8 @@ interface found in the [nav_core](nav_core) package.
 
 Example creation of a `rotate_recovery::RotateRecovery` object:
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -33,6 +35,8 @@ rr.initialize("my_rotate_recovery", &tf, &global_costmap, &local_costmap);
 
 rr.runBehavior();
 ```
+
+
 
 ### API Stability
 
@@ -50,6 +54,8 @@ user to specify additional parameters.
 
 #### RotateRecovery Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -64,6 +70,8 @@ param {
 }
 ```
 
+
+
 #### TrajectoryPlannerROS Parameters
 
 These parameters are already set when using the
@@ -71,6 +79,8 @@ These parameters are already set when using the
 need to be set explicitly for the `rotate_recovery::RotateRecovery`
 recovery behavior if a different local planne is used with the
 [ navigation stack](navigation ).
+
+
 
 ```clearsilver
 param{
@@ -93,6 +103,8 @@ param{
   4.desc = The minimum rotational velocity allowed for the base while performing in-place rotations in radians/sec
 }
 ```
+
+
 
 ### C++ API
 

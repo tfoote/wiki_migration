@@ -52,11 +52,17 @@ this package works.
 
 1\. Install dependency.
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-frontier-exploration ros-$ROS_DISTRO-navigation-stage
 ```
 
+
+
 2\. Run the necessary nodes one-by-one from separate terminal:
+
+
 
 ```
 roslaunch navigation_stage move_base_gmapping_5cm.launch
@@ -65,6 +71,8 @@ roslaunch navigation_stage move_base.xml
 
 roslaunch frontier_exploration global_map.launch
 ```
+
+
 
 RViz pops up, then a demo robot appears around the center in a map.
 
@@ -155,6 +163,8 @@ Sample launch file:
 
 ## Provided Components
 
+
+
 ```clearsilver
 name = explore_client
 desc = The `explore_client` node listens to points published by Rviz and builds an `ExploreTask` action goal to send to `explore_server`.
@@ -175,6 +185,8 @@ pub{
 }
 ```
 
+
+
 ### explore_server
 
 The `explore_server` node executes exploration actions for any
@@ -184,6 +196,8 @@ track of the exploration progress, and creates movement goals for
 
 #### Actions Provided
 
+
+
 ```clearsilver
 act_called {
   no_header= True
@@ -191,7 +205,11 @@ act_called {
   0.type= frontier_exploration/ExploreTask
   0.desc= Server for incoming exploration task requests
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 act_called {
   0.name= move_base
   0.type= move_base_msgs/MoveBaseAction
@@ -219,6 +237,10 @@ param {
   2.desc = When `frequency` > `0.0`, `~goal_aliasing` is the required distance delta between the last goal and a new goal, before the new goal is submitted to `move_base`. It is safe to set to anywhere within `sensor_range/2` > `~goal_aliasing` > `0.0`, and this parameter will reduce the amount of redundant goals sent during 'smooth' exploration.
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = BoundedExploreLayer
@@ -251,3 +273,5 @@ pub {
   0.desc = Pointcloud `pcl::Pointcloud<pcl::PointXYZI>` marking all frontiers detected when service `~get_next_frontier` is called, with the selected frontier marked using a higher intensity point.
 }
 ```
+
+

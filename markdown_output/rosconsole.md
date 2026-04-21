@@ -52,12 +52,16 @@ default config file.
 
 A simple example:
 
+
+
 ```
 # Set the default ros output to warning and higher
 log4j.logger.ros=WARN
 # Override my package to output everything
 log4j.logger.ros.my_package_name=DEBUG
-``` You may have noticed that the example says
+```
+
+ You may have noticed that the example says
 "log4j" not "log4cxx". This is because log4cxx is directly
 compatible with log4j's configuration files.
 
@@ -73,6 +77,8 @@ roslaunch.
 
 Example:
 
+
+
 ```
 <launch>
   <env name="ROSCONSOLE_CONFIG_FILE"
@@ -80,6 +86,8 @@ Example:
   <node pkg="mypackage" type="mynode" name="mynode" output="screen"/>
 </launch>
 ```
+
+
 
 ## ROS Logger Hierarchy
 
@@ -95,9 +103,13 @@ expose this:
 If you'd like to access one of your named loggers, you can get the name
 by:
 
+
+
 ```cplusplus
 const char* logger_name = ROSCONSOLE_DEFAULT_NAME ".<name>"
 ```
+
+
 
 ## Compile-time Logger Removal
 
@@ -121,12 +133,16 @@ see the [Configuration](#Configuration) section.
 To change the logger levels from C++, use
 `ros::console::set_logger_level()`. Example:
 
+
+
 ```
 #include <ros/console.h>
 if( ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels::Debug) ) {
    ros::console::notifyLoggerLevelsChanged();
 }
-``` If you change one of the `Logger`'s
+```
+
+ If you change one of the `Logger`'s
 verbosity levels after any logging statements using that logger, you
 **must** call `ros::console::notifyLoggerLevelsChanged()`. If you do
 not, logging statements that have already been hit once (and therefore
@@ -141,9 +157,13 @@ rosconsole allows you to specify how you'd like its output to show up
 in the console output through the `ROSCONSOLE_FORMAT` environment
 variable. The default is equivalent to:
 
+
+
 ```
 export ROSCONSOLE_FORMAT='[${severity}] [${time}]: ${message}'
-``` The full list of possible options follows.
+```
+
+ The full list of possible options follows.
 
   -- ----------------------------------------------------------------------------------------------------------------- ------------- ---------------------------------------------------------------------------- ---------------------- --
      **Token**                                                                                                                       **Sample Output**                                                                                   
@@ -165,12 +185,16 @@ export ROSCONSOLE_FORMAT='[${severity}] [${time}]: ${message}'
 
 You can directly define the environment variable in a launch file (of
 course, change the value depending on your needs):
+
+
 ```
 <launch>
   <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${time}] [${node}]: ${message}"/>
   <node pkg="mypackage" type="mynode" name="mynode" output="screen"/>
 </launch>
 ```
+
+
 
 ### Change default time and walltime format
 
@@ -180,11 +204,19 @@ You need to finish **time** or **walltime** token with colon and then
 specify **format string**, which can contain normal text together with
 argument specifiers like **%M** and **%S**. It looks like:
 
+
+
 ```
 export ROSCONSOLE_FORMAT='${time:format string}'
-``` or ```
+```
+
+ or 
+
+```
 export ROSCONSOLE_FORMAT='${walltime:format string}'
 ```
+
+
 
 It mostly supports
 [strfime](https://en.cppreference.com/w/c/chrono/strftime) specification
@@ -201,9 +233,13 @@ The following table lists examples available for both C++ and Python.
 
 ### Changed default value in Python === the default format (if the environment variable is not set) for Python is now the same as for C++. If you want to keep the previous format for backward compatibility you can set the following:
 
+
+
 ```
 export ROSCONSOLE_FORMAT='[${severity}] [WallTime: ${time}]: ${message}'
 ```
+
+
 
 ## Disable all logging
 
@@ -212,9 +248,13 @@ export ROSCONSOLE_FORMAT='[${severity}] [WallTime: ${time}]: ${message}'
 Create a custom rosconsole configuration file with the following content
 and use it as described above:
 
+
+
 ```
 log4j.threshold=OFF
 ```
+
+
 
 ### By calling a function
 
@@ -229,13 +269,17 @@ application until the buffer fills up. The user can force line buffering
 for ROS loggers that print to the console by setting the environment
 variable `ROSCONSOLE_STDOUT_LINE_BUFFERED` to `1`.
 
+
+
 ```
 <launch>
   <env name="ROSCONSOLE_CONFIG_FILE"
        value="$(find mypackage)/custom_rosconsole.conf"/>
   <node pkg="mypackage" type="mynode" name="mynode" output="screen"/>
 </launch>
-```0 In this case the buffer will be flushed after
+```
+
+0 In this case the buffer will be flushed after
 every line that is written to the logs.
 
 Default value is `0`. When set to `0` the flush is not triggered on

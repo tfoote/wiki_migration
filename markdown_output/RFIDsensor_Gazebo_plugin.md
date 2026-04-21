@@ -36,9 +36,13 @@ robot simulated in the gazebo by including the models and plugins
 adequately in the robot SDF/Xacro file.
 
 This page will provide you with the necessary steps to run the plugin on
-your system. ```wiki
+your system. 
+
+```wiki
 '''IMPORTANT:''' Please install dependencies required for gazebo 9 and iris drone for the simulation to be able to work.
 ```
+
+
 
 ## RFID Antenna Sensor Gazebo Plugin
 
@@ -60,9 +64,13 @@ detection are:
 
 ### Params
 
+
+
 ```wiki
 '''NOTE:''' These parameters could be changed in the SDF/Xacro file while adding the plugin.
 ```
+
+
 
 -   `<Antenna_name>`: A parameter that sets the name of the antenna.
 -   `<tag_name>`: A parameter that sets the name of the tag.
@@ -102,7 +110,9 @@ detection are:
 
 In order for the plugin to work the antenna frame and relative pose in
 ROS must be set correctly in the **gazebo_to_ros_tf** package launch
-file. ```highlight
+file. 
+
+```highlight
 <launch>
 
  	<node pkg="gazebo_to_ros_tf"
@@ -119,8 +129,12 @@ file. ```highlight
 		args="0.12 0 -0.11 0 0 0 base_link_sim antenna_1 100" />
 ```
 
+
+
 However, if you would like to use more then one RFID antenna/reader
 attached to the same robot an example would be like this:
+
+
 
 ```highlight
 <launch>
@@ -149,16 +163,22 @@ attached to the same robot an example would be like this:
 		type="static_transform_publisher"
 		name="base_link_to_antenna_publisher4"
 		args="0 -0.12 -0.11 -1.57 0 0 base_link_sim antenna_4 100" />
-``` Shows that 4 antenna frames are connected to
+```
+
+ Shows that 4 antenna frames are connected to
 the base_link_sim frame which represents the robot frame. An example
 video of 4 antennas connected to an aerial robot is shown at the end of
 this page.
+
+
 
 ```wiki
 '''assign the relative position/pose of the antenna carefully with the robot, it should be set the same way the antenna model is positioned in the gazebo'''
 
 Admonitions should be used with care. A page riddled with admonitions will look restless and will be harder to follow than a page where admonitions are used sparingly.
 ```
+
+
 
 ## RFID Tag Sensor Gazebo Plugin
 
@@ -180,9 +200,13 @@ that contain tags) in this order:
 
 ### Params
 
+
+
 ```wiki
 '''NOTE:''' These parameters could be changed in the SDF/Xacro file while adding the plugin.
 ```
+
+
 
 -   `<tag_name>`: A parameter that sets the name of the tag.
 -   `<tags_per_fix>`: which sets the number of tags spawned in each
@@ -207,29 +231,43 @@ below image shows the transform tree of 3 tags:
 
 Setting up your ROS source folder: Clone the packages **gazebo_to_ros_tf
 gazebo** & **RFID_antenna_plugin** & **RFID_tag_plugin** to your source
-folder **catkin_ws/src** ```highlight
+folder **catkin_ws/src** 
+
+```highlight
 git clone https://github.com/Abdu-lybot/RFID_Sensor_Plugin_gazebo.git
 ```
+
+
 
 ### Second Step
 
 Compile your workspace: From the location of your workspace folder
-**catkin_ws** ```highlight
+**catkin_ws** 
+
+```highlight
 catkin_make
 ```
 
+
+
 ### Third Step
 
-Adding to your bashrc the path of your plugin: ```highlight
+Adding to your bashrc the path of your plugin: 
+
+```highlight
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/<USER>/catkin_ws/src/RFID_tag_plugin/cmake-build-debug/devel/lib
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/<USER>/catkin_ws/src/RFID_antenna_plugin/cmake-build-debug/devel/lib
 ```
+
+
 
 ### Fourth Step
 
 add the **RFID_antenna** & **RFID_tag** plugins to your robot model
 Xacro/SDF file or any other: For adding the plugins: Adding the Plugin
-to your model: ```highlight
+to your model: 
+
+```highlight
 !--for the RFID_tags plugin:-->
   <gazebo reference="base_link">
      <sensor type="rfid" name="rfid_tags">
@@ -242,11 +280,17 @@ to your model: ```highlight
        </plugin>
      </sensor>
   </gazebo>
-``` For the RFID_antenna plugin:
+```
+
+ For the RFID_antenna plugin:
 Adding the Plugin and the Graphical Antenna Model to Gazebo:
+
+
 ```wiki
 '''NOTE:''' These parameters could be changed in the SDF/Xacro file while adding the plugin.
-```0
+```
+
+0
 
 ### Published topics-msgs
 
@@ -266,9 +310,13 @@ Adding the Plugin and the Graphical Antenna Model to Gazebo:
 ### Finnaly
 
 Run your gazebo simulation, then run the tf tree node:
+
+
 ```wiki
 '''NOTE:''' These parameters could be changed in the SDF/Xacro file while adding the plugin.
-```1
+```
+
+1
 
 ### Video Example
 

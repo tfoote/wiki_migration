@@ -23,23 +23,37 @@ ROS camera interface and any imu driver node satisfying the sensor
 
 To run the `robot_state` node :
 
+
+
 ```
 rosrun vi_sfm robot_state imu:=/my_imu feature:=/my_feature camera:=/my_camera
 ```
 
+
+
 To run the `robot_state` node using rectified features :
+
+
 
 ```
 rosrun vi_sfm robot_state imu:=/my_imu feature:=/my_feature camera:=/my_camera isRectified:=True
 ```
 
+
+
 Or use a specific launch file :
+
+
 
 ```
 roslaunch vi_sfm robot_state.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -75,3 +89,5 @@ sub{
 }
 }
 ```
+
+

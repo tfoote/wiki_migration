@@ -4,21 +4,33 @@ You can use TTS speach output by using the
 ## Starting Sound
 
 NOTE: If you login remotely via ssh, login without -X.
+
+
 ```
 roslaunch cob_sound sound.launch
 ```
 
+
+
 ## Usage
 
 You can either call and action or a service, e.g.
+
+
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
 ```
 
-You can mute and unmute the output ```
+
+
+You can mute and unmute the output 
+
+```
 rosservice call /sound/mute
 rosservice call /sound/unmute
 ```
+
+
 
 ### Using festival
 
@@ -30,9 +42,13 @@ used.
 For [cepstral](http://www.cepstral.com) you need to buy a license key.
 
 For using cepstral instead of festival please set the mode to cepstral
-with ```
+with 
+
+```
 rosparam set /sound/mode cepstral
 ```
+
+
 
 #### Installing cepstral vices and license
 
@@ -41,27 +57,45 @@ Download and install voice. Adopted from
 
 -   Download a voice file from
     <http://www.cepstral.com/downloads/personal.php> e.g. Linux 32bit or
-    64bit, US English, David: ```
+    64bit, US English, David: 
+
+```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_David_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_David_x86-64-linux_6.2.3.873.tar.gz
-``` e.g. Linux 32bit
-    or 64bit, US English, Diane: ```
+```
+
+ e.g. Linux 32bit
+    or 64bit, US English, Diane: 
+
+```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Diane_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Diane_x86-64-linux_6.2.3.873.gz
-``` e.g. Linux
-    32bit or 64bit, German, Matthias: ```
+```
+
+ e.g. Linux
+    32bit or 64bit, German, Matthias: 
+
+```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Matthias_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Matthias_x86-64-linux_6.2.3.873.tar.gz
-``` e.g.
-    Linux 32bit or 64bit, German, Katrin: ```
+```
+
+ e.g.
+    Linux 32bit or 64bit, German, Katrin: 
+
+```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Katrin_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Katrin_x86-64-linux_6.2.3.873.tar.gz
 ```
 
+
+
 ```{=html}
 <!-- -->
 ```
--   unpack and install ```
+-   unpack and install 
+
+```
 tar xzvf Cepstral_David_x86-64-linux_6.2.3.873.tar.gz
 cd Cepstral_David_x86-64-linux_6.2.3.873
 sudo ./install.sh
@@ -70,41 +104,75 @@ sudo sh -c 'echo "/opt/swift/lib" > /etc/ld.so.conf.d/cepstral.conf'
 sudo ldconfig
 ```
 
+
+
 ```{=html}
 <!-- -->
 ```
--   apply fix for Ubuntu > 12.04 ```
+-   apply fix for Ubuntu > 12.04 
+
+```
 roscd cob_sound
 sudo ./fix_swift_for_precise.sh
 ```
 
+
+
 if that fix doesn't help, try to install alsa-oss
+
+
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```0 and modify /usr/local/bin/swift_fix to contain
+```
+
+0 and modify /usr/local/bin/swift_fix to contain
+
+
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```1
+```
+
+1
 
 -   Register voice with license (you need to buy a license from
     <http://www.cepstral.com>, for IPA robots ask UHR or FMW for license
-    key) ```
+    key) 
+
+```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```2
+```
+
+2
 
 ## Setting the sound volume
 
-Either use alsamixer: ```
+Either use alsamixer: 
+
+```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```3
+```
+
+3
 
 or use alsactl: For setting the sound to xx% use
+
+
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```4 or ```
+```
+
+4 or 
+
+```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```5 5% is a
+```
+
+5 5% is a
 reasonable volume. To store the settings permanently, type
+
+
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
-```6
+```
+
+6

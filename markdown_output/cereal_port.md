@@ -1,6 +1,10 @@
+
+
 ```wiki
 Notice: This package is unsupported on recent versions of ROS. If you're writing a ROS driver which interfaces with serial hardware, consider using [[http://wjwwood.io/serial/|serial]].
 ```
+
+
 
 ## Documentation
 
@@ -14,6 +18,8 @@ the [Code API.](http://www.ros.org/doc/api/cereal_port/html/)
 The following example shows how to use the cereal_port library in your
 ROS projects. This example in particular opens a serial port sends an
 'R' and waits for a reply.
+
+
 
 ```cplusplus
 #include <ros/ros.h>
@@ -58,20 +64,30 @@ int main(int argc, char** argv)
         r.sleep();
     }
 }
-``` To compile this example.cpp file you should
+```
+
+ To compile this example.cpp file you should
 make sure you have the serial_communication stack installed and don't
 forget to add cereal_port as a dependency on your package manifest.xml:
+
+
 
 ```
 ...
   <depend package="cereal_port" />
-``` Add the following lines to your pkg
+```
+
+ Add the following lines to your pkg
 CMakeList.txt in order to get your code to compile:
+
+
 
 ```
 rosbuild_add_executable(example_node src/example.cpp)
 target_link_libraries(example_node cereal_port)
 ```
+
+
 
 ## Current state
 

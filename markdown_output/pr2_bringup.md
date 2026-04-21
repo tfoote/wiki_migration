@@ -17,6 +17,8 @@ To disable the [prosilica_camera](prosilica_camera) set the
 "no-prosilica" arg to "true" in "/etc/ros/robot.launch" when
 launching your PR2:
 
+
+
 ```
 <launch>
   <arg name="no-prosilica" value="true" />
@@ -26,6 +28,8 @@ launching your PR2:
 </launch>
 ```
 
+
+
 ## Running the PR2
 
 This manual will take you step by step through starting the PR2 robot,
@@ -34,27 +38,55 @@ running both ROS Groovy and ROS Hydro, this is then the start sequence:
 
 ** For Groovy: **
 
+
+
 ```
 robot groovy
-``` ```
+```
+
+ 
+
+```
 export ROS_ENV_LOADER=/etc/ros/env.sh
 ```
+
+
+
+
 ```
 roslaunch /etc/ros/robot.launch
-``` **For Hydro: **
+```
+
+ **For Hydro: **
+
+
 
 ```
 robot hydro
-``` ```
+```
+
+ 
+
+```
 export ROS_ENV_LOADER=/etc/ros/env.sh
 ```
+
+
+
+
 ```
 roslaunch /etc/ros/robot.launch
-``` For your knowledge:
+```
+
+ For your knowledge:
+
+
 
 ```
 robot start
-``` can be used to replace /etc/ros/robot.launch.
+```
+
+ can be used to replace /etc/ros/robot.launch.
 The sequence these commands are executed are crucial, otherwise if you
 try to export ROS_ENV_LOADER before specifying robot groovy or robot
 hydro, then the env loader will load the environment to be whatever was

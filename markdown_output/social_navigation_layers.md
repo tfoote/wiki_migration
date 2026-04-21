@@ -12,6 +12,8 @@ with the following types:
 -   `social_navigation_layers::ProxemicLayer`
 -   `social_navigation_layers::PassingLayer`
 
+
+
 ```clearsilver
 name = ProxemicLayer/PassingLayer
 desc = The interface for both layers is the same. 
@@ -47,6 +49,8 @@ param {
   5.default = 0.75
 }
 ```
+
+
 
 ## How the Costmap Changes
 

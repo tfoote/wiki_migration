@@ -10,6 +10,8 @@ from the joints, actuators and controllers.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = pr2_mechanism_diagnostics
 desc = Publishes joint and controller diagnostics
@@ -35,3 +37,5 @@ param {
   1.default = false
 }
 ```
+
+

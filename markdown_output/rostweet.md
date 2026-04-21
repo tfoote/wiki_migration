@@ -25,22 +25,34 @@ create a twitter account for your robot and start following other robots
 Rostweet is delivered as a ROS stack. It can be downloaded from the
 uji-ros-pkg google code project repository:
 
+
+
 ```
 $ svn co http://uji-ros-pkg.googlecode.com/svn/trunk/rostweet
 ```
 
+
+
 After downloading and placing it in a folder inside your
 `ROS_PACKAGE_PATH`, it should compile with:
+
+
 
 ```
 $ rosmake rostweet
 ```
 
+
+
 and run with:
+
+
 
 ```
 $ rosrun rostweet rostweet
 ```
+
+
 
 This will ask for a twitter username and password and start the node
 afterwards (by running the node for the first time, you implicitly
@@ -54,22 +66,34 @@ e.g.:
 
 View incoming tweets:
 
+
+
 ```
 $ rostopic echo /rostweet/incomingTweet/tweet
 ```
 
+
+
 Send a tweet:
+
+
 
 ```
 $ rosrun rostweet post "Hello world from rostweet"
 ```
 
+
+
 With rostweet your robots can also share pictures. Use the `post`
 executable for an example:
+
+
 
 ```
 $ rosrun rostweet post "Hello world from rostweet" <path_to_picture>
 ```
+
+
 
 For now, rostweet only supports the image media type, although support
 for other types of media can be easily added.
@@ -91,6 +115,8 @@ file inside the launch/ folder in [YAML](YAML Overview) format. With it
 you can easily write a launch file in order to set the parameters
 automatically:
 
+
+
 ```
 <launch>
  <node name="rostweet" pkg="rostweet" type="rostweet" output="screen">
@@ -98,3 +124,5 @@ automatically:
  </node>
  </launch>
 ```
+
+

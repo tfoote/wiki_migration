@@ -19,13 +19,17 @@ should work as intended for the new arm.
 To install the `wpi_jaco` package, you can install from source with
 the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 

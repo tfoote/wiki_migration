@@ -8,6 +8,8 @@ come from 3-D cameras like Microsoft Kinect.
 
 There are several filter algorithms implemented in this package.
 
+
+
 ```clearsilver
 name = amplitude_filter
 desc = Thresholding filter on the amplitude channel.
@@ -42,6 +44,10 @@ param{
  1.desc = Maximum amplitude threshold. All values above are filtered out.
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = intensity_filter
@@ -78,6 +84,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = cob_3d_mapping_filters/JumpEdgeFilter
 desc = Filter for removing jump edges that occur in TOF point clouds or during fast camera movement. Implements the method described in Stefan Fuchs and Stefan May:  [[http://www.robotic.dlr.de/fileadmin/robotic/fuchs/TOFCamerasFuchsMay2007.pdf|Calibration and Registration for Precise Surface Reconstruction]], In Proceedings of the DAGM Dyn3D Workshop, September, 2007, Heidelberg, Germany
@@ -108,6 +118,10 @@ param{
  0.desc = Max angle between neighbouring points to be detected as jump edge (degree).
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = smoothing_filter
@@ -148,6 +162,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = speckle_filter
 desc = Outlier removal filter based on region growing (speckles).
@@ -182,3 +200,5 @@ param{
  1.desc = Minimum allowed distance between two speckles.
 }
 ```
+
+

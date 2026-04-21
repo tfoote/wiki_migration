@@ -6,6 +6,8 @@ simulate commands from a higher level node.
 
 ## ROS Interface
 
+
+
 ```clearsilver
 node.0 {
   name=operator
@@ -70,3 +72,5 @@ node.0 {
     7.type=bool
     7.desc=Whether to publish the `desired` and `route` topics.
 ```
+
+

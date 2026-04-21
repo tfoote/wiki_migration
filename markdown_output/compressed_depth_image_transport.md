@@ -22,6 +22,8 @@ instruction on using `image_transport`.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = Publisher plugin
 desc =
@@ -31,6 +33,10 @@ pub {
   0.desc = Compressed depth transport subtopic.
 }
 ```
+
+
+
+
 
 ```
 {{#!wiki version diamondback_and_newer
@@ -55,7 +61,11 @@ group.0 {
   2.desc = PNG compression level, in the range [1, 9]. Higher values trade computation time for space savings.
 }
 }
-``` }}}}
+```
+
+ }}}}
+
+
 
 ```
 {#!wiki version noetic_and_newer
@@ -83,7 +93,11 @@ group.0 {
   3.desc = PNG compression level, in the range [1, 9]. Higher values trade computation time for space savings.
 }
 }
-``` }}}} }}}}}
+```
+
+ }}}} }}}}}
+
+
 
 ```clearsilver
 name = Subscriber plugin
@@ -94,3 +108,5 @@ sub {
   0.desc = Compressed depth transport subtopic.
 }
 ```
+
+

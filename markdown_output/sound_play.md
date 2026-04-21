@@ -63,6 +63,8 @@ The `play.py` script can play any `.WAV` or `.OGG` file. The file
 must be available on the computer on which `soundplay_node.py` is
 running, and an absolute path should be given.
 
+
+
 ```
 $ rosrun sound_play play.py --help
 Usage: /u/blaise/ros/ros-pkg/stacks/sound_drivers/sound_play/scripts/play.py sound_to_play.(ogg|wav)
@@ -70,16 +72,24 @@ Usage: /u/blaise/ros/ros-pkg/stacks/sound_drivers/sound_play/scripts/play.py sou
 Plays an .OGG or .WAV file. The path to the file should be absolute, and be valid on the computer on which sound_play is running.
 ```
 
+
+
 For example (soundplay_node.py should be running first):
+
+
 ```
 $rosrun sound_play play.py /usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav
 Playing "/usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav".
 ```
 
+
+
 ### Playing a built in sound
 
 Some standard sounds are built-into the driver, and can be played only
 by specifying their integer identifier using `playbuiltin.py`.
+
+
 ```
 $ rosrun sound_play playbuiltin.py 
 Usage: /u/blaise/ros/ros-pkg/stacks/sound_drivers/sound_play/scripts/playbuiltin.py <sound_id>
@@ -87,15 +97,23 @@ Usage: /u/blaise/ros/ros-pkg/stacks/sound_drivers/sound_play/scripts/playbuiltin
 Plays one of the built-in sounds based on its integer ID. Look at the <<MsgLink(sound_play/SoundRequest)>> message definition for IDs.
 ```
 
+
+
 For example (`soundplay_node.py` should be running first):
+
+
 ```
 $ rosrun sound_play playbuiltin.py 2
 Playing sound 2".
 ```
 
+
+
 To get an up-to-date list of the built-in sounds, consult the definition
 of the <<MsgLink(sound_play/SoundRequest)>> message. The relevant
 information is below the "`Sounds`" comment.
+
+
 
 ```
 $ cat `rospack find sound_play`/msg/SoundRequest.msg
@@ -123,6 +141,8 @@ byte command # Indicates what to do with the sound
 string arg # file name or text to say
 ```
 
+
+
 ### Saying Some Text
 
 The sound node can also be used to synthesize speech using the
@@ -130,6 +150,8 @@ The sound node can also be used to synthesize speech using the
 The `say.py` script gives command-line access to this functionality.
 This script can take its input from the command line, or if the
 command-line is empty it can take input from standard input.
+
+
 
 ```
 $ rosrun sound_play say.py --help
@@ -142,7 +164,11 @@ appropriate. For a string on standard input, the command will wait for
 EOF before saying anything.
 ```
 
+
+
 Examples (`soundplay_node.py` should be running first):
+
+
 ```
 $ rosrun sound_play say.py 'Hello world'
 Saying: Hello world.
@@ -150,6 +176,8 @@ $ echo Hello again|rosrun sound_play say.py
 Awaiting something to say on standard input.
 Saying: Hello again
 ```
+
+
 
 ### Silencing the Robot
 
@@ -165,7 +193,9 @@ that are played. It will not completely silence the robot, however, as
 the first tens of milliseconds of newly requested sounds will be played
 before they are silenced.
 
-For example: ```
+For example: 
+
+```
 $ rosrun sound_play shutup.py 
 Sending stopall command every 100 ms.
 Note: This will not prevent a node that is continuing to issue commands
@@ -173,16 +203,24 @@ from producing sound.
 Press Ctrl+C to exit.
 ```
 
+
+
 ### Testing Sound Play Node Operation
 
 To test that `soundplay_node.py` is operating correctly, you can use
 the `test.py` script. It will play the various built-in sounds, and
 exercise the `.WAV` playing and text-to-speech capabilities. To run
-it: ```
+it: 
+
+```
 $ rosrun sound_play test.py
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node {
@@ -207,13 +245,19 @@ node {
 }
 ```
 
+
+
 ### Example Launch File
 
 The following launch file, which starts `soundplay_node.py`, can be
-found in `soundplay_node.launch`: ```
+found in `soundplay_node.launch`: 
+
+```
 $rosrun sound_play play.py /usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav
 Playing "/usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav".
-```0
+```
+
+0
 
 ### Message Format
 

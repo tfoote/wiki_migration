@@ -27,35 +27,59 @@ Package *pose_ekf_slam* contains two nodes:
 
 This node receive position fixes of type
 [PoseWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/PoseWithCovarianceStamped.html)
-in the topic ```
+in the topic 
+
+```
 /pose_ekf_slam/pose_update
-``` linear velocity updates of type
+```
+
+ linear velocity updates of type
 [TwistWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/TwistWithCovarianceStamped.html)
-are received through the topic ```
+are received through the topic 
+
+```
 /pose_ekf_slam/velocity_update
-``` and vehicle
+```
+
+ and vehicle
 orientation and angular velocity are expected at
+
+
 ```
 /pose_ekf_slam/imu_input
-``` using an
+```
+
+ using an
 [Imu](http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html) sensor
 message. Finally, landmark updates have to be published at
+
+
 ```
 /pose_ekf_slam/landmark_update/landmark_id
-``` in order to be discovered by the
+```
+
+ in order to be discovered by the
 *pose_ekf_slam* node. They are also
 [PoseWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/PoseWithCovarianceStamped.html)
 messages.\
 
 Outputs of this node are an
 [Odometry](http://www.ros.org/doc/api/nav_msgs/html/msg/Odometry.html)
-message published at ```
+message published at 
+
+```
 /pose_ekf_slam/odometry
-``` and a custom message,
+```
+
+ and a custom message,
 indicating the position and covariance of each landmark, published at
+
+
 ```
 /pose_ekf_slam/map
 ```
+
+
 
 ### test_pose_ekf_slam
 

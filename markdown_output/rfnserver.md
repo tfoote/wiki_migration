@@ -24,6 +24,8 @@ callback.
 
 ## Initializing an RFNServer
 
+
+
 ```
 from rfnserver import RFNServer
 
@@ -34,6 +36,8 @@ server = RFNServer("moo", moo)
 # Register with semantic frames here.
 server.start()
 ```
+
+
 
 The first argument is the topic where you want the `RFNServer`
 (behind-the-scenes: `SimpleActionServer`) to publish goal, feedback,
@@ -49,6 +53,8 @@ which the `RFNServer` has
 To get arguments for a specific frame element of the semantic frame, the
 helper function `frame_argument` is provided:
 
+
+
 ```
 def callback(filled_semantic_frame):
   [...]
@@ -56,11 +62,17 @@ def callback(filled_semantic_frame):
   [...]
 ```
 
+
+
 ## Adding Semantic Frames
+
+
 
 ```
 server.add_frame("../frames/mooing.yaml")
 ```
+
+
 
 The filepath is relative to the directory from which the program was
 launched. Typically, this means that before running, you'll want to
@@ -70,9 +82,13 @@ tag in its roslaunch file.
 
 ## Adding Lexical Units
 
+
+
 ```
 server.add_lexical_unit("../lu/mooing.yaml")
 ```
+
+
 
 The filepath is relative to the directory from which the program was
 launched. Typically, this means that before running, you'll want to
@@ -82,9 +98,13 @@ tag in its roslaunch file.
 
 ## Registering with a Semantic Frame
 
+
+
 ```
 server.register_with_frame("mooing")
 ```
+
+
 
 Upon registration, the callback specified in the
 [initialization](#Initializing an RFNServer) of the RFNServer may

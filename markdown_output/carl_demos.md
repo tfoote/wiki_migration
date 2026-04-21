@@ -6,6 +6,8 @@ running CARL on the [RobotsFor.Me](https://www.robotsfor.me/) project.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_speed_speak
@@ -18,16 +20,22 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `carl_demos` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_demos.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -36,6 +44,10 @@ The `carl_demos` package contains the launch file
 allow control of navigation and manipulation through a web interface.
 This includes tf publishing, video streaming, interactive markers,
 navigation, and an extra level of safety to allow researchers to cut off
-control of CARL from the web interface. . ```
+control of CARL from the web interface. . 
+
+```
 roslaunch carl_demos basic_web_demo.launch
 ```
+
+

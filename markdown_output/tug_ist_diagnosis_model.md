@@ -9,6 +9,8 @@ propositions, (5) a set of clauses that defines the diagnosis model.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name= diagnosis_model_server.py
@@ -27,3 +29,5 @@ param{
 }
 }
 ```
+
+

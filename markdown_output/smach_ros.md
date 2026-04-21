@@ -3,7 +3,9 @@
 For example, if you want to call an [actionlib](actionlib) action from
 SMACH, you can of course write a
 [generic state](smach/Tutorials/Generic State), which would look
-something like this: ```python
+something like this: 
+
+```python
   class ManualActionState(smach.State):
      def __init__(self, outcomes=['succeeded', 
                                   'aborted',
@@ -29,8 +31,12 @@ with sm:
     smach.StateMachine.add('TRIGGER_GRIPPER',
                            ManualActionState(),
                            rransitions={'succeeded':'APPROACH_PLUG'})
-``` But you can call that same
+```
+
+ But you can call that same
 action with much less coding, using the !SimpleActionState:
+
+
 ```python
 sm = StateMachine(['succeeded','aborted','preempted'])
 with sm:
@@ -39,6 +45,8 @@ with sm:
                                              ActionState),
                            transitions={'succeeded':'APPROACH_PLUG'})
 ```
+
+
 
 SMACH ROS offers the same type of support for ROS services and ROS
 topics. For more details take a look at the

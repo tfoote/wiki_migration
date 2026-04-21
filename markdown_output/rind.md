@@ -2,11 +2,15 @@
 
 ## Overview
 
+
+
 ```wiki
 This is a beta release to get feedback.
 
 Currently requires Ubuntu 10.04 or having appindicator installed
 ```
+
+
 
 This package provides an indicator that displays the status of ROS. It
 shows the topics available and the nodes that are currently running. It
@@ -25,6 +29,8 @@ indexed yet
 
 Install the ihr_tools stack.
 
+
+
 ```shell
 cd ~/ros/stacks
 git clone git://github.com/IHeartRobotics/iheart-ros-pkg.git
@@ -33,13 +39,19 @@ rosdep install rind
 rosmake rind
 ```
 
+
+
 ## Running
+
+
 
 ```
 roscd rind
 cd bin
 ./rind
 ```
+
+
 
 ## Known Bugs
 

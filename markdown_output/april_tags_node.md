@@ -1,10 +1,16 @@
+
+
 ```wiki
 '''Newly supported `apriltag_ros` package'''
 
 The April Robotics Lab's Github repository has a supported `apriltag_ros` [[https://github.com/AprilRobotics/apriltag_ros|package]]. The ROS Wiki documentation is  [[apriltag_ros|here]].
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -124,27 +130,45 @@ node.0 {
  }
 ```
 
+
+
 ## Usage
 
 ### Running the node directly (with default parameters)
+
+
 
 ```
 rosrun april_tags_node execute
 ```
 
+
+
 ### Using roslaunch
+
+
 
 ```
 roslaunch april_tags_node april_tags_node.launch
 ```
 
+
+
 ### Running rviz
+
+
 
 ```
 rosrun rviz rviz -d `rospack find april_tags_node`/config/rviz.vcg
-``` ```
+```
+
+ 
+
+```
 roslaunch april_tags_node rviz.launch
 ```
+
+
 
 ## Report a Bug
 

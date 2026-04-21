@@ -129,7 +129,9 @@ the `dh_chains` section of the config file. The parameters defined
 below are used in
 [ pr2_calibration_estimation/dh_chain.py](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_estimation/src/pr2_calibration_estimation/dh_chain.py )
 
-Example: ```
+Example: 
+
+```
 right_arm_chain:
    dh:
    - [   0,  -pi/2, .1, 0      ]    # r_shoulder_pan_joint
@@ -143,6 +145,8 @@ right_arm_chain:
      joint_angles: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
    gearing: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 ```
+
+
 
 -   **dh** - Each list item under `dh` stores the 4 DH parameters for
     a link. They are ordered as \[theta, alpha, a, d\]. In the example
@@ -167,7 +171,9 @@ As defined here, it is very unclear where and how these transforms
 attach to actual robot frames. Later, when we define sensors, we can
 attach these transforms before and after dh chains.
 
-6 Examples: ```
+6 Examples: 
+
+```
 head_plate_frame_joint:    [   .0232, .0, .0645, 0, 0, 0]
   double_stereo_frame_joint: [ 0, 0, .003, 0, 0, 0]
   wide_stereo_frame_joint:   [ 0, .03, .0305, 0, 0, 0  ]
@@ -175,6 +181,8 @@ head_plate_frame_joint:    [   .0232, .0, .0645, 0, 0, 0]
   wide_stereo_optical_frame_joint:    [0, 0, 0, -1.20919, 1.20919, -1.20919]
   narrow_stereo_optical_frame_joint:  [0, 0, 0, -1.20919, 1.20919, -1.20919]
 ```
+
+
 
 Each transform is defined by a list with 6 elements:
 
@@ -200,7 +208,9 @@ The tilting laser primitive is used to represent a laser rangefinder
 [ UTM-30lx](http://www.hokuyo-aut.jp/02sensor/07scanner/utm_30lx.html ))
 that is actuated.
 
-Example: ```
+Example: 
+
+```
 tilt_laser:
     before_joint: [ .09893, 0,  .227, 0, 0, 0]
     after_joint:  [  0, 0,  .03,  0, 0, 0]
@@ -210,6 +220,8 @@ tilt_laser:
       range: 0.005
       tilt: 0.0005
 ```
+
+
 
 ![](attachment:tilting_laser.png)
 
@@ -239,7 +251,9 @@ that has already been rectified. We assume that the distortion
 correction is perfect, and we only have estimate parameters associated
 with the pinhole camera model.
 
-Example: ```
+Example: 
+
+```
 wide_left_rect:
     baseline_shift: 0.0
     f_shift: 0.0
@@ -247,6 +261,8 @@ wide_left_rect:
     cy_shift: 0.0
     cov: {u: 0.125, v: 0.125}
 ```
+
+
 
 -   **baseline_shift** - Value to add to the `-baseline\*Tx` term in
     the projection matrix (`camera_info.P\[3\]`)
@@ -266,7 +282,9 @@ Although the checkerboards themselves aren't really a part of the
 robot, they still have parameters that need to be defined and could be
 estimated. Thus this file becomes a convenient location to define them.
 
-2 Examples: ```
+2 Examples: 
+
+```
 small_cb_4x5:
     corners_x: 4
     corners_y: 5
@@ -278,6 +296,8 @@ small_cb_4x5:
     spacing_x: .108
     spacing_y: .108
 ```
+
+
 
 -   **corners_x** - Number of corners along the x-axis of the
     checkerboard. This is an integer parameter, and will not be changed
@@ -306,6 +326,8 @@ This sensor is used to define a camera that is attached to an actuated
 linkage. The standard example of this is a camera on a pan-tilt
 platform:
 
+
+
 ```
 camera_chains:
   - camera_id: forearm_right_rect
@@ -317,6 +339,8 @@ camera_chains:
                      r_forearm_cam_optical_frame_joint]
       dh_link_num:  4
 ```
+
+
 
 -   **sensor_id** - Unique identifier for this sensor
 -   **camera_id** - Monocular camera being used for this sensor. Must
@@ -348,7 +372,9 @@ requirements:
 
 A chain sensor is a sensor that can hold a checkerboard.
 
-Example: ```
+Example: 
+
+```
 chains:
   - sensor_id:    left_arm_chain
     before_chain: [l_shoulder_pan_joint]
@@ -356,6 +382,8 @@ chains:
     after_chain:  [left_arm_tip_adj, left_arm_cb]
     dh_link_num:  6
 ```
+
+
 
 -   **sensor_id** - Unique identifier for this sensor
 -   The **before_chain**, **chain_id**, and **after_chain** have the
@@ -378,11 +406,15 @@ All the information that we need about a tilting laser is already in
 robot primitive definitions. Thus, all we need to do is specify the name
 of the tilting laser primitive, along with a unique sensor_id.
 
-Example: ```
+Example: 
+
+```
 tilting_lasers:
     - sensor_id: tilt_laser
       laser_id:  tilt_laser
 ```
+
+
 
 This sensor will only be used with a sample
 (<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following

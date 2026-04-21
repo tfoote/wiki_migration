@@ -6,10 +6,14 @@ using openloop_object_manipulation. It uses the param server for the
 object locations and for the "executive_script" which is the order the
 objects should be picked up and put down.
 
+
+
 ```
 self.object_locations = rospy.get_param('aaai_lfd_demo_object_locations', {})
  self.executive_script = rospy.get_param('aaai_lfd_demo_executive_script', {})
 ```
+
+
 
 execute.py essentially performs the functionality described in the
 tutorials of

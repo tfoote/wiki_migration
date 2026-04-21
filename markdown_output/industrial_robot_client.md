@@ -54,15 +54,21 @@ calculation (0-100% of max-velocity) with an absolute velocity
 algorithm.
 
 1\. Create a new derived class, based on JointTrajectoryDownloader (or
-JointTrajectoryStreamer) ```cplusplus
+JointTrajectoryStreamer) 
+
+```cplusplus
 class myRobot_JointTrajectoryDownloader : JointTrajectoryDownloader
 {
 ...
 }
 ```
 
+
+
 1\. Override specific functionality. In this case, the velocity
-calculation. ```cplusplus
+calculation. 
+
+```cplusplus
 class myRobot_JointTrajectoryDownloader : JointTrajectoryDownloader
 {
 
@@ -79,8 +85,12 @@ public:
 }
 ```
 
+
+
 1\. Implement a new node, using an instance of the appropriate
-derived-class. ```cplusplus
+derived-class. 
+
+```cplusplus
 int main(int argc, char** argv)
 {
   // initialize node
@@ -94,6 +104,8 @@ int main(int argc, char** argv)
 }
 ```
 
+
+
 ### Further examples
 
 Further examples of creating robot-specific interfaces may be found in
@@ -106,6 +118,8 @@ the following code samples:
 Besides the reusable libraries, this package also provides default
 implementations of a set of generic nodes. The following is the ROS API
 of those generic nodes.
+
+
 
 ```clearsilver
 
@@ -235,8 +249,8 @@ node.2 {
 }
 ```
 
+
+
 [Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
-
-<<GitHubIssues(ros-industrial/industrial_core)>>

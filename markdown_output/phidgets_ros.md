@@ -22,6 +22,8 @@ work on your Mac.
 
 ## Accelerometer ROS API
 
+
+
 ```clearsilver
 node.0 {
 name= accelerometer.py node
@@ -64,7 +66,11 @@ desc= These parameters are used to specify the user-defined-name, serial_number,
 }
 ```
 
+
+
 ## RFID ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -92,7 +98,11 @@ desc= These parameters are used to specify the user-defined-name, serial_number,
 }
 ```
 
+
+
 ## InterfaceKit ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -119,3 +129,5 @@ desc= These parameters are used to specify the user-defined-name, serial_number,
 }
 }
 ```
+
+

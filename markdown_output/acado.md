@@ -12,6 +12,10 @@ The ACADO Toolkit is made available in ROS Indigo by
 [ClearpathRobotics](ClearpathRobotics). You can install it on Ubuntu
 like so:
 
+
+
 ```
 sudo apt-get install ros-indigo-acado
 ```
+
+

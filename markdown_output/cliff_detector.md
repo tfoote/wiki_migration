@@ -13,6 +13,8 @@ start node cliff_detector can be used a following file
 
 ## Node
 
+
+
 ```clearsilver
 name = cliff_detector
 desc =
@@ -62,6 +64,6 @@ param {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(mdrwiega/depth_nav_tools)>>
+
+## Report a Bug

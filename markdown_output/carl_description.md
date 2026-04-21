@@ -22,6 +22,10 @@ The carl_description package includes a launch file that can be used to
 load the robot model and setup joint state and robot state publishing
 used to populate a tf tree and visualize the robot. Once launched, CARL
 can be visualized in tools such as rviz. It can be launched with the
-following command: ```
+following command: 
+
+```
 roslaunch carl_description view.launch
 ```
+
+

@@ -12,6 +12,8 @@ twoLevelMTTD testing environment.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name= initial_sender
@@ -41,13 +43,23 @@ node.0 {
  }
 ```
 
+
+
 ## Running
 
-In order to run the simulation, just typing ```
+In order to run the simulation, just typing 
+
+```
 $ roslaunch MTTD_simulation simulation.launch
-``` and
+```
+
+ and
 then set the robot initial pose using [rviz](rviz), or typing (in a new
-terminal) ```
+terminal) 
+
+```
 $ rosrun MTTD_simulation initial_sender
-``` Remember to kill `initial_sender`
+```
+
+ Remember to kill `initial_sender`
 node after.

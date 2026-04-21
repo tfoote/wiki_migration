@@ -68,7 +68,9 @@ package: *At the moment there are some minor changes to this package
 required, the easiest way is to check it out from
 [this repository](http://github.com/tum-vision/ardrone_autonomy), which
 contains a slightly older, but well-tested and already modified
-version.* To do this, run: ```
+version.* To do this, run: 
+
+```
 # cd into ros root dir
 roscd
 
@@ -86,7 +88,11 @@ cd ardrone_autonomy
 rosmake
 ```
 
-2\. Install tum_ardrone package: ```
+
+
+2\. Install tum_ardrone package: 
+
+```
 # cd into ros root dir
 roscd
 
@@ -98,11 +104,15 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/tum_ardrone
 
 # build package (may take up to 10 minutes)
 rosmake tum_ardrone
-``` *Make shure,
+```
+
+ *Make shure,
 you have the correct branch of tum_ardrone for your ROS version (fuerte
 / hydro/groovy)*
 
 ### Run
+
+
 
 ```
 # run driver
@@ -117,6 +127,8 @@ rosrun tum_ardrone drone_autopilot
 # run gui node
 rosrun tum_ardrone drone_gui
 ```
+
+
 
 ### Use
 

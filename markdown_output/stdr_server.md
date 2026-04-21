@@ -26,6 +26,8 @@ or from [robot_handler](stdr_robot#robot_handler) node.
 Action to register a newly spawned robot. Called from `stdr_robot`
 nodelet itself, serves synchronization purposes.
 
+
+
 ```clearsilver
 pub {
   0.name = map
@@ -72,6 +74,8 @@ prov_tf {
 }
 ```
 
+
+
 #### Command-Line Usage
 
 `stdr_server_node` can run without any command-line arguments and
@@ -79,9 +83,13 @@ simply waits until someone calls either `load_static_map` or
 `load_static_map_external` service. There is an option to run
 `stdr_server_node` passing an image file to load as the static map or
 you can include it to a launch file using the `args` option.
+
+
 ```
 $ rosrun stdr_server stdr_server_node <map_file.yaml>
 ```
+
+
 
 ### map_loader_node
 
@@ -94,9 +102,13 @@ be used by other packages.
 
 #### Command-Line Usage
 
+
+
 ```
 $ rosrun stdr_server load_map <map_file.yaml>
 ```
+
+
 
 ## Tutorials
 

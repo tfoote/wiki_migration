@@ -86,25 +86,37 @@ the available commands.
 
 `add <description.yaml> <x> <y> <theta>` Adds a new robot at
 given position (x, y, theta). Needs full path to the description file.
-Example: ```
+Example: 
+
+```
 $ rosrun stdr_robot robot_handler add resources/robots/khepera2.yaml 1.2 2 1.57
-``` NOTE: `robot_handler` does not check
+```
+
+ NOTE: `robot_handler` does not check
 if the pose you provided is valid, so you can spawn a robot on a wall,
 or on top of an existing robot. (This will change in future releases)
 
 #### robot_handler delete
 
 `delete <robot_name>` Deletes a robot named <robot_name>. Example:
+
+
 ```
 $ rosrun stdr_robot robot_handler delete /robot2
 ```
 
+
+
 #### robot_handler replace
 
 `replace <robot_name> <new_x> <new_y> <new_theta>` Moves a
-robot to given pose. Example: ```
+robot to given pose. Example: 
+
+```
 $ rosrun stdr_robot robot_handler replace /robot1 1.2 3 3.14
-``` NOTE:
+```
+
+ NOTE:
 `robot_handler` does not check if the pose you provided is valid, so
 you can move a robot on a wall, or on top of an existing robot. (This
 will change in future releases)

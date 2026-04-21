@@ -9,13 +9,23 @@ The package provides:
 
 Start up the pr2_navigation stack:
 
+
+
 ```
 roslaunch ds_pr2_2dnav drink_demo.launch
-``` Start up the action server:
+```
+
+ Start up the action server:
+
+
 
 ```
 roslaunch ds_pr2_2dnav move_robot.launch
-``` Definition of the action:
+```
+
+ Definition of the action:
+
+
 
 ```
 #goal definition
@@ -25,8 +35,14 @@ geometry_msgs/PoseStamped pose
 bool success
 ---
 #feedback
-``` Send the robot to the arbitrary pose:
+```
+
+ Send the robot to the arbitrary pose:
+
+
 
 ```
 rosrun ds_pr2_2dnav move_robot_client x y z qx qy qz qw
 ```
+
+

@@ -26,6 +26,8 @@ The driver is constantly being further developed, so we recommend that
 you check out and compile the software from the devel branch of the
 repository. The following actions are necessary for this:
 
+
+
 ```bash
 source /opt/ros/<rosdistro>/setup.bash
 mkdir -p ~/ros_catkin_ws/src/
@@ -35,6 +37,8 @@ cd ..
 catkin_make
 source ~/ros_catkin_ws/install/setup.bash
 ```
+
+
 
 ## First steps
 

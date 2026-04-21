@@ -1,5 +1,3 @@
-<<GitHubIssues(hrnr/map-merge)>>
-
 ## Overview
 
 This package provides a 3D global map for multiple robots and the
@@ -52,6 +50,8 @@ Estimating transforms between maps is cpu-intesive so you might want to
 tune `estimation_rate` parameter to run the re-estimation less often.
 
 ## ROS API
+
+
 
 ```clearsilver
 
@@ -209,6 +209,8 @@ prov_tf {
 }
 ```
 
+
+
 ## Tools
 
 Alongside ROS node `map_merge_3d` provides command-line tools to work
@@ -228,15 +230,23 @@ global map. This tool can merge arbitrary number of maps.
 
 #### Usage
 
+
+
 ```
 rosrun map_merge_3d map_merge_tool [--param value] map1.pcd map2.pcd [map3.pcd...]
 ```
 
+
+
 For example to use SHOT descriptors with 3 maps:
+
+
 
 ```
 rosrun map_merge_3d map_merge_tool --descriptor_type SHOT map1.pcd map2.pcd map3.pcd
 ```
+
+
 
 ### registration_visualisation
 
@@ -245,9 +255,13 @@ visualiser for the visualisation.
 
 #### Usage
 
+
+
 ```
 rosrun map_merge_3d registration_visualisation [--param value] map1.pcd map2.pcd
 ```
+
+
 
 After one step of the estimation a visualisation window appears. You can
 freely navigate the point cloud, save a screenshot or camera parameters

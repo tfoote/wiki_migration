@@ -5,15 +5,23 @@ The urdf_to_collada tool will convert `.urdf` files into COLLADA
 
 Usage:
 
+
+
 ```
 rosrun collada_urdf urdf_to_collada <input-urdf> <output.dae>
 ```
 
+
+
 Example:
+
+
 
 ```
 rosrun collada_urdf urdf_to_collada pr2.urdf pr2.dae
 ```
+
+
 
 ### Limitations
 
@@ -25,6 +33,10 @@ rosrun collada_urdf urdf_to_collada pr2.urdf pr2.dae
 
 Usage:
 
+
+
 ```
 rosrun collada_urdf collada_to_urdf <input.dae> <output.urdf>
 ```
+
+

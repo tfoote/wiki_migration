@@ -20,6 +20,8 @@ The driver node has been tested with the following cameras:
 
 ## Nodes
 
+
+
 ```clearsilver
 name = camera
 desc = ROS driver node for uEye cameras.
@@ -80,7 +82,11 @@ group.0 {
   11.desc = Sets the image hardware gain if ~auto_gain is false.
 }
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = framerate
 desc = Node that displays the actual rate of an image stream.
 sub {
@@ -100,23 +106,37 @@ desc=asdf
 }
 ```
 
+
+
 ## Usage
 
 ### To run stereo cameras
+
+
 
 ```
 $ rosrun ueye stereo
 ```
 
+
+
 You might want to lower resolution by setting the zoom parameter
+
+
 ```
 $ rosrun ueye stereo _zoom:=2
 ```
 
+
+
 In case there are multiple cameras connected, you can choose the cameras
-that will be used by specifying the camera ids. ```
+that will be used by specifying the camera ids. 
+
+```
 $ rosrun ueye stereo _lCameraId:=1 _rCameraId:=3
 ```
+
+
 
 ### Camera Calibration
 

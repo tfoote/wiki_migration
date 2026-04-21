@@ -1,6 +1,10 @@
+
+
 ```
 argos3d_p100_ros_pkg
 ```
+
+
 
 ------------------------------------------------------------------------
 
@@ -78,10 +82,14 @@ Install the driver for using the ToF camera:
 In Ubuntu/linux copy the file from the driver folder to
 **/etc/udev/rules.d/**
 
+
+
 ```
 cd driver 
 sudo cp 10-pmd-ubuntu.rules /etc/udev/rules.d/
-``` This will set the right permissions to allow
+```
+
+ This will set the right permissions to allow
 not sudo users to use the camera.
 
 ### Libraries setup
@@ -98,11 +106,15 @@ can simply copy the libpmdaccess2.so file to **/usr/local/lib** as root
 (like pmd_camera_L64.conf) with the path of your library in
 **/etc/ld.so.conf.d**. The file must contaning the following lines:
 
+
+
 ```
 #PMD camera support
 /.../PMDSDK/bin
 /.../PMDSDK/include
 ```
+
+
 
 -   **replace the dots with the absolute path to the PMDSDK directory**
 
@@ -122,9 +134,13 @@ can simply copy the libpmdaccess2.so file to **/usr/local/lib** as root
 After adding libraries, update the links and cache of the share
 libraries with:
 
+
+
 ```
 ldconfig
 ```
+
+
 
 # Installation
 
@@ -132,15 +148,21 @@ ldconfig
 
 Make sure you have the following dependencies already installed:
 
+
+
 ```
 apt-get install ros-hydro-pcl-ros ros-hydro-pcl-conversions ros-hydro-perception-pcl
 ```
+
+
 
 ## Install the package
 
 Clone from repository:
 <https://github.com/voxel-dot-at/argos3d_p100_ros_pkg.git> to your src/
 folder in your catkin workspace and compile it with:
+
+
 
 ```
 cd catkin_ws
@@ -151,6 +173,8 @@ cd ..
 catkin_make
 ```
 
+
+
 # Usage
 
 ## Watch our demo video:
@@ -159,17 +183,25 @@ catkin_make
 
 ## Start the ROS core
 
+
+
 ```
 roscore &
 ```
 
+
+
 ## Start capturing
+
+
 
 ```
 cd catkin_ws
 source devel/setup.bash
 rosrun argos3d_p100 argos3d_p100_node
 ```
+
+
 
 -   You can change the camera parameters through command option when
     initializing the node.
@@ -178,6 +210,8 @@ rosrun argos3d_p100 argos3d_p100_node
 <!-- -->
 ```
 -   Use \--help parameter to display parameter initialization usage.
+
+
 
 ```
 Using help for argos3d_p100_ros_pkg
@@ -213,6 +247,8 @@ Using help for argos3d_p100_ros_pkg
  Example:
 ```
 
+
+
 ## \* Use calibration file
 
 In the software distibuted with your camera there is a calibration file
@@ -222,21 +258,29 @@ connection with you Argos3D is established.
 In order to use it, just copy this file to the folder where you will
 execute the node:
 
+
+
 ```
 cp argos3d.cal catkin_ws
 cd catkin_ws
 rosrun argos3d_p100 argos3d_p100_node
 ```
 
+
+
 The argos3d_p100_node will show a message that confirmes you if the
 calibration file was loaded successfully.
 
 ## Visualization in rviz
 
+
+
 ```
 cd driver 
 sudo cp 10-pmd-ubuntu.rules /etc/udev/rules.d/
-```0 After the rviz window comes up, set the
+```
+
+0 After the rviz window comes up, set the
 following options.
 
 Add a Pointcloud2 topic to visualize the depth clouds. Two different
@@ -261,10 +305,14 @@ To apply point filters and change camera parameters, use
 dynamic_reconfigure from ros. To use, it run the configuration interface
 (after launching argos3d_p100_ros_pkg)
 
+
+
 ```
 cd driver 
 sudo cp 10-pmd-ubuntu.rules /etc/udev/rules.d/
-```1
+```
+
+1
 
 -   Select /argos3d_p100 to view the options available for
     modifications.

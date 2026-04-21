@@ -7,6 +7,8 @@ This package provides 6-DoF head pose estimation from depth data.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = head_pose_estimation
@@ -75,6 +77,8 @@ node.0 {
   }
 }
 ```
+
+
 
 ## Example Usage
 

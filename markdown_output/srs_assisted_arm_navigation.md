@@ -66,6 +66,8 @@ user to perform some task.
 
 ##### Action Subscribed Topics
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -78,7 +80,11 @@ sub {
 }
 ```
 
+
+
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -95,7 +101,11 @@ pub {
 }
 ```
 
+
+
 ### Topics, services, parameters
+
+
 
 ```clearsilver
 pub {
@@ -311,14 +321,20 @@ param {
 }
 ```
 
+
+
 ## Installation
 
 -   install COB stacks from Ubuntu repository or from git (see
     [installation instructions](Robots/Care-O-bot/electric))
 -   checkout srs and srs_public git repositories
--   compile srs_assisted_arm_navigation package ```
+-   compile srs_assisted_arm_navigation package 
+
+```
 rosmake srs_assisted_arm_navigation
 ```
+
+
 
 ## Usage
 
@@ -327,16 +343,26 @@ First, please take a look on how to install and use
 manipulation.
 
 For starting COB simulation, actionlib server use this:
+
+
 ```
 roslaunch srs_assisted_arm_navigation but_arm_nav_sim.launch
-``` and then next command to start user interface
-(RVIZ): ```
+```
+
+ and then next command to start user interface
+(RVIZ): 
+
+```
 roslaunch srs_assisted_arm_navigation_ui rviz.launch
 ```
+
+
 
 There is an example of a [rospy](rospy) script which can be used to
 "trigger" manipulation task. Run it and operator should be asked for
 action by messagebox from RVIZ plugin.
+
+
 
 ```python
 #!/usr/bin/env python
@@ -379,6 +405,8 @@ def main():
 if __name__ == '__main__':
   main()
 ```
+
+
 
 For instructions on how to test SRS scenarios, please see
 [srs_arm_navigation_tests](srs_arm_navigation_tests).

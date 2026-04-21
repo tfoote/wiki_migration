@@ -5,9 +5,13 @@ functionalities of the Large Maps Framework
 ## Usage
 
 To test the high-level node `dfs_explorer/explorer.py`:
+
+
 ```shell
 roslaunch dfs_explorer explorer.py
-``` This will load a small map with 3 vertices and
+```
+
+ This will load a small map with 3 vertices and
 start exploring it. The exploration can be stopped and launched again.
 The exploration will then continue and take into account the information
 already available in the map. The node will launch an exploration either

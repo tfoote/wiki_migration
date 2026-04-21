@@ -9,19 +9,29 @@ You can use this with [otl_roomba](otl_roomba) package.
 
 ## How to use on Turtlebot
 
-cd to your working ROS directory. ```
+cd to your working ROS directory. 
+
+```
 svn checkout https://otl-ros-pkg.googlecode.com/svn/trunk/otl_android
-``` Add below
+```
+
+ Add below
 into your mock_apps/turtlebot_apps.installed file.
+
+
 ```
 - display: Tilt Teleop
    app: otl_android_roomba_app/roomba
 ```
 
+
+
 Access to your robot by App Chooser of your Android device, and select
 'Tilt Teleop'. Enjoy!
 
 ## Node Info
+
+
 
 ```clearsilver
 name = Tilt Teleop (Android App)
@@ -39,14 +49,20 @@ pub {
 }
 ```
 
+
+
 ## .app file
 
 You can adjust velocity by editting
 otl_android_roomba_app/app/roomba.app file. Default setting is
+
+
 ```
 app:
       base_control_topic: /cmd_vel
       linear_rate: 0.08
       angular_rate: 0.2
-``` linear_rate means velocity of linear.x,
+```
+
+ linear_rate means velocity of linear.x,
 angular_rate is for angular.z.

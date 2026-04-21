@@ -13,6 +13,8 @@ for this.
 
 The package comes with a node which may be used out of the box.
 
+
+
 ```clearsilver
 name=teleop_node
 desc=Republish Joy messages as scaled <<MsgLink(geometry_msgs/Twist)>> messages.
@@ -61,6 +63,8 @@ param {
   7.default = ~scale_angular
 }
 ```
+
+
 
 ## C++ API
 

@@ -22,6 +22,8 @@ radial_menu_msgs and radial_menu_rviz
 
 ## Pkg: radial_menu_backend
 
+
+
 ```clearsilver
 name = Nodelet: Backend
 desc = Updates radial menu state based on joystick input
@@ -90,7 +92,11 @@ param {
 }
 ```
 
+
+
 ### Example of the param menu_description
+
+
 
 ```xml
 <!-- A simple example -->
@@ -106,7 +112,11 @@ param {
 </item>
 
 <!-- Multiple root elements are not allowed -->
-``` ```xml
+```
+
+ 
+
+```xml
 <!-- A complex example -->
 
 <!-- An element can optionally have the attribute 'display'. -->
@@ -128,15 +138,25 @@ param {
 </item>
 ```
 
+
+
 ## Pkg: radial_menu_rviz
+
+
 
 ```clearsilver
 name = Rviz plugin: RadialMenu
 desc = Visualizes subscribed menu states as a radial menu when the menu is being enabled. Supports display types of items.
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = Rviz plugin: HorizontalMenu
 desc = Always visualizes subscribed menu states as a single-lined menu. Displays item names regardless of their display types.
 ```
+
+
 
 ## Pkg: radial_menu_model
 

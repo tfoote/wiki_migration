@@ -14,6 +14,8 @@ both 2D and 3D Octomap (.ot) file and saved on the turtlebot laptop.
 If you find the package useful, please consider citing the following
 papers:
 
+
+
 ```
 @inproceedings{bai2016information,
   title={Information-theoretic exploration with Bayesian optimization},
@@ -25,6 +27,10 @@ papers:
 }
 ```
 
+
+
+
+
 ```
 @inproceedings{bai2015inference,
   title={Inference-Enabled Information-Theoretic Exploration of Continuous Action Spaces},
@@ -34,33 +40,55 @@ papers:
 }
 ```
 
+
+
 ## Download and Install
 
 ### Dependencies
 
-Install octomap_ros and rviz plugins. ```
+Install octomap_ros and rviz plugins. 
+
+```
 sudo apt-get install ros-indigo-octomap*
 ```
 
+
+
 ### from source
 
-Please download the source code from: ```
+Please download the source code from: 
+
+```
 git clone https://github.com/RobustFieldAutonomyLab/turtlebot_exploration_3d.git
 ```
 
-then ```
+
+
+then 
+
+```
 catkin_make
 ```
 
+
+
 ### binary form
+
+
 
 ```
 sudo apt-get update
 ```
 
+
+
+
+
 ```
 sudo apt-get install ros-indigo-turtlebot-exploration-3d
 ```
+
+
 
 ## Setup
 
@@ -72,19 +100,29 @@ to setup network between turtlebot and remote PC.
 
 ### From turtlebot laptop
 
+
+
 ```
 $ roslaunch turtlebot_exploration_3d minimal_explo.launch
 $ roslaunch turtlebot_exploration_3d turtlebot_gmapping.launch
 $ rosrun turtlebot_exploration_3d turtlebot_exploration_3d
 ```
 
+
+
 ### From Remote PC
+
+
 
 ```
 roslaunch turtlebot_exploration_3d exploration_rviz.launch
 ```
 
+
+
 ### Topics
+
+
 
 ```clearsilver
 no_header=True
@@ -108,6 +146,8 @@ pub {
    }
   }
 ```
+
+
 
 ## Video
 

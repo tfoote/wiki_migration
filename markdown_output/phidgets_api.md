@@ -29,6 +29,8 @@ API.
 We first define the Imu class, which is inherited from the base
 `Phidget` class:
 
+
+
 ```cplusplus
 class Imu: public Phidget
 {
@@ -51,6 +53,8 @@ class Imu: public Phidget
 };
 ```
 
+
+
 The `Imu` class has a `CPhidgetSpatialHandle`, which is a special
 handle for the Phidget Spatial device. Different devices will have
 different handle types.
@@ -61,6 +65,8 @@ The constructor needs to perform 4 operations:
 -   pass the handle to the base class for intialization
 -   ask the base class to register common Phidget callbacks
 -   register IMU-specific callbacks
+
+
 
 ```cplusplus
 Imu::Imu(): Phidget(), imu_handle_(0)
@@ -80,9 +86,13 @@ Imu::Imu(): Phidget(), imu_handle_(0)
 }
 ```
 
+
+
 The `zero()` and `setDataRate` functions implement sepcific calls to
 the IMU device using the C API. The data handler function receives
 spatial data events.
+
+
 
 ```cplusplus
 void Imu::setDataRate(int rate)
@@ -97,8 +107,12 @@ void Imu::zero()
 }
 ```
 
+
+
 The `SpatialDataHandler` is a static callback function which forwards
 the data to the correct `Imu` class instance.
+
+
 
 ```cplusplus
 int Imu::SpatialDataHandler(CPhidgetSpatialHandle handle, void *userptr, CPhidgetSpatial_SpatialEventDataHandle *data, int count)
@@ -109,10 +123,14 @@ int Imu::SpatialDataHandler(CPhidgetSpatialHandle handle, void *userptr, CPhidge
 }
 ```
 
+
+
 Finally, the virtual `dataHandler` function is the one which is called
 back when Spatial data arrives. In this example, the function just
 prints out a message. However, you can create a class which inherits
 from the `Imu` class and overwrites this behavior.
+
+
 
 ```cplusplus
 void Imu::dataHandler(CPhidgetSpatial_SpatialEventDataHandle *data, int count)
@@ -120,6 +138,8 @@ void Imu::dataHandler(CPhidgetSpatial_SpatialEventDataHandle *data, int count)
   printf("Empty data handler\n");
 }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

@@ -17,14 +17,20 @@ stereo camera. Included in the package is:
 
 To install from apt, use:
 
+
+
 ```
 sudo apt-get install ros-*-elp-stereo-camera
-``` Please see README.md in the source repository
+```
+
+ Please see README.md in the source repository
 for instructions on checking the code out from source.
 
 ## Usage
 
 To start the cameras, run the following two launch files:
+
+
 
 ```
 # terminal 1
@@ -32,7 +38,9 @@ roslaunch elp_stereo_camera elp_stereo_camera.launch
 
 # terminal 2
 roslaunch elp_stereo_camera stereo_image_proc.launch
-``` You now have available topics such as
+```
+
+ You now have available topics such as
 `/elp/left/image_rect_color`, `/elp/left/image_rect_color`, and
 `/elp/points2`. You'll likely also want to include the
 `elp_stereo_camera` macro in your urdf file. Look at the
@@ -42,10 +50,14 @@ file in the source code for an example of how to do that.
 To quickly view a camera image and the resulting point cloud, try out
 the included rviz configuration:
 
+
+
 ```
 # terminal 3
 roslaunch elp_stereo_camera rviz.launch
-``` Click the "Point Cloud" saved camera view in
+```
+
+ Click the "Point Cloud" saved camera view in
 the Views pane on the right. You should now be able to your objects in
 3D! Keep in mind that objects closer than 70 cm won't show up in the
 point cloud with this particular camera.
@@ -68,9 +80,13 @@ To calibrate the cameras, first print out the 8x6 checkerboard on an
 something firm like a clipboard. (Add a bit of tape to the bottom two
 corners to keep the page flat.) Then run the following:
 
+
+
 ```
 roslaunch elp_stereo_camera calibrate.launch
-``` The calibration process measures a range of
+```
+
+ The calibration process measures a range of
 four key attributes: X, Y, size, and skew. Hold the checkerboard up in
 front of the cameras and vary each of the parameters. (So move the
 checkerboard left and right, up and down, father and closer, and at

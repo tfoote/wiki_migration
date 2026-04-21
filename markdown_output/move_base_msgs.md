@@ -9,12 +9,16 @@ on the [move_base](move_base) node see
 
 ## MoveBase.action
 
+
+
 ```
 geometry_msgs/PoseStamped target_pose
 ---
 ---
 geometry_msgs/PoseStamped base_position
 ```
+
+
 
 The `target_pose` is the goal that the navigation stack attempts to
 achieve. The `base_position` given as feedback is the current position

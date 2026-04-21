@@ -74,15 +74,21 @@ options:
 Make sure you have the following ROS dependencies already installed
 (gstreamer is only needed if you want 2d camera support):
 
+
+
 ```
 apt-get install ros-$ROS_DISTRO-camera-info-manager ros-$ROS_DISTRO-pcl-ros ros-$ROS_DISTRO-pcl-conversions ros-$ROS_DISTRO-perception-pcl gstreamer1.0-dev libgstreamer-plugins-base1.0-dev libturbojpeg0-dev libturbojpeg
 ```
+
+
 
 ## Installing the package
 
 Clone from repository:
 <https://github.com/voxel-dot-at/bta_tof_driver.git> to the src/ folder
 in your catkin workspace. Now compile it with:
+
+
 
 ```
 cd catkin_ws
@@ -95,6 +101,8 @@ cd ../..
 catkin_make
 ```
 
+
+
 ## Select compiling options
 
 Since version v2.1.0 we just need one library to manage all interfaces
@@ -104,10 +112,14 @@ If your device includes a 2D rgb sensor, after installing the gstreamer
 dependencies, you have to use the flag 2DSENSOR for compiling the 2D
 node.
 
+
+
 ```
 #Including 2D
 catkin_make -D2DSENSOR=on
 ```
+
+
 
 # Usage
 
@@ -132,6 +144,8 @@ captured by the ToF camera.
 
 In order to execute it you have just to type one of the following:
 
+
+
 ```
 #For eth interface devices:
 roslaunch bta_tof_driver node_tof_eth.launch # for depth+amplitudes
@@ -152,7 +166,9 @@ roslaunch bta_tof_driver node_tof_eth_3d.launch #for xyz cloud 3d coordinates + 
 roslaunch bta_tof_driver nodelet_tof.launch #for running it as nodelet
 #or
 roslaunch bta_tof_driver node_tof.launch #for running it as node
-``` bta_tof_driver will advertise the following
+```
+
+ bta_tof_driver will advertise the following
 topics:
 
 __/nodeName/tof_camera/image_raw__ for amplitudes data
@@ -193,6 +209,8 @@ the connection with the device.
 We need to set the right device in the configuration file. The devices
 id's are located in the headers of the BltTofApi.
 
+
+
 ```
 // Generic
 BTA_DeviceTypeGenericEth = 0x0001,
@@ -214,8 +232,12 @@ BTA_DeviceTypeTimUp19kS3Spartan6 = 0x13ab,
 
 // UART products
 BTA_DeviceTypeEPC610TofModule = 0x7a3d,
-``` This is an example of the needed parameter for
+```
+
+ This is an example of the needed parameter for
 connecting to a Bluetechnix tof device with a network interface:
+
+
 
 ```
 #Parameter server configuration for eth interface devices.
@@ -238,15 +260,21 @@ tcpDeviceIpAddrLen: 4
 tcpControlPort: 10001
 
 deviceType: 1
-``` For a device using the usb interface you do not
+```
+
+ For a device using the usb interface you do not
 need to include any network parameter:
+
+
 
 ```
 #Parameter server configuration for usb interface devices.
 frameMode: 2
 verbosity: 5
 deviceType: 2
-``` These options correspond to the
+```
+
+ These options correspond to the
 [BltToFApi](BtaApi) C configuration object used for starting the
 connection with the ToF camera. To get more information about the
 configuration parameters, please refer to the [BltToFApi](BtaApi)
@@ -258,9 +286,13 @@ For the 2d stream we just need the http URL address where the camera is
 serving the .sdp file to start capturing video. Inside you sensor2D node
 you must include the following parameter:
 
+
+
 ```
 <param name="2dURL" value="http://192.168.0.10/argos.sdp"/>
 ```
+
+
 
 #### Displaying 3d data with rviz
 
@@ -273,6 +305,8 @@ We have included several config yaml and launch files that already
 select this mode and also open the ROS visualizer Rviz to display the 3d
 data.
 
+
+
 ```
 #for xyz cloud 3d coordinates + amplitudes:
 
@@ -284,7 +318,9 @@ roslaunch bta_tof_driver node_tof_usb_3d.launch
 
 #Tim-eth interface devices:
 roslaunch bta_tof_driver node_tof_eth_3d.launch
-``` The PointCloud transformation frame is
+```
+
+ The PointCloud transformation frame is
 published and it is connected to the world tf. That means, the world
 coordinates system, is the camera coordinates system.
 
@@ -311,12 +347,18 @@ Example how to do a calibration on your own:
 
 Start the camera:
 
+
+
 ```
 roslaunch bta_tof_driver node_tof_eth.launch
-``` Measure the length of the squares in meter of
+```
+
+ Measure the length of the squares in meter of
 your chess pattern (\--square) and count the interior corners (\--size).
 Check in which topic the camera is publishing the raw images (image:=).
 ![rosgraph\|width="400"](attachment:rosgraph.png)
+
+
 
 ```
 cd catkin_ws
@@ -327,7 +369,9 @@ cd bta_tof_driver/
 ./install.sh  ## first method to install the API
 cd ../..
 catkin_make
-```0 Move the chess pattern around to get as many
+```
+
+0 Move the chess pattern around to get as many
 images from different angles and distances as possible. At least as long
 as all directions in the calibration show a green bar. Then click
 calibrate and save.
@@ -335,16 +379,7 @@ calibrate and save.
 
 Extract the calibration data:
 
-```
-cd catkin_ws
-source devel/setup.bash ## initialize search path to include local workspace
-cd src/
-git clone https://github.com/voxel-dot-at/bta_tof_driver.git
-cd bta_tof_driver/
-./install.sh  ## first method to install the API
-cd ../..
-catkin_make
-```1 Rename ost.yaml to calib.yml.
+
 
 ```
 cd catkin_ws
@@ -355,20 +390,28 @@ cd bta_tof_driver/
 ./install.sh  ## first method to install the API
 cd ../..
 catkin_make
-```2 Copy into ROS package
+```
+
+1 Rename ost.yaml to calib.yml.
+
+
+
+```
+cd catkin_ws
+source devel/setup.bash ## initialize search path to include local workspace
+cd src/
+git clone https://github.com/voxel-dot-at/bta_tof_driver.git
+cd bta_tof_driver/
+./install.sh  ## first method to install the API
+cd ../..
+catkin_make
+```
+
+2 Copy into ROS package
 /catkin_ws/src/bta_tof_driver. Change camera name in the YAML file if
 needed.
 
-```
-cd catkin_ws
-source devel/setup.bash ## initialize search path to include local workspace
-cd src/
-git clone https://github.com/voxel-dot-at/bta_tof_driver.git
-cd bta_tof_driver/
-./install.sh  ## first method to install the API
-cd ../..
-catkin_make
-```3 Now you can run
+
 
 ```
 cd catkin_ws
@@ -379,7 +422,24 @@ cd bta_tof_driver/
 ./install.sh  ## first method to install the API
 cd ../..
 catkin_make
-```4 and check the calibration.
+```
+
+3 Now you can run
+
+
+
+```
+cd catkin_ws
+source devel/setup.bash ## initialize search path to include local workspace
+cd src/
+git clone https://github.com/voxel-dot-at/bta_tof_driver.git
+cd bta_tof_driver/
+./install.sh  ## first method to install the API
+cd ../..
+catkin_make
+```
+
+4 and check the calibration.
 
 ## Watch our demo video:
 
@@ -420,6 +480,8 @@ dynparam from dynamic_reconfigure:
 
 -   Reading a register:
 
+
+
 ```
 cd catkin_ws
 source devel/setup.bash ## initialize search path to include local workspace
@@ -429,11 +491,15 @@ cd bta_tof_driver/
 ./install.sh  ## first method to install the API
 cd ../..
 catkin_make
-```5 The value will be displayed in console (in
+```
+
+5 The value will be displayed in console (in
 Reg_val ).
 
 -   Write a register:
 
+
+
 ```
 cd catkin_ws
 source devel/setup.bash ## initialize search path to include local workspace
@@ -443,5 +509,7 @@ cd bta_tof_driver/
 ./install.sh  ## first method to install the API
 cd ../..
 catkin_make
-```6 A console message will tell you if it was
+```
+
+6 A console message will tell you if it was
 written correctly.

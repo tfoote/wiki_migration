@@ -1,3 +1,5 @@
+
+
 ```wiki
 
 = THE canonical_scan_matcher PACKAGE IS DISCONTINUED =
@@ -5,6 +7,8 @@ the package has been renamed to  [[laser_scan_matcher]] and has been updated wit
 
 The information below be preserved for a while while people switch.
 ```
+
+
 
 ![](attachment:canonical_scan_matcher.png)
 
@@ -39,15 +43,23 @@ following the instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz rosbag tf
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch canonical_scan_matcher demo.launch
 ```
+
+
 
 You should see a result similar to the video below. The video shows CSM
 tracking the position of a Hokuyo laser as it is being carried freely
@@ -57,6 +69,8 @@ additional odometry is provided.
 [Youtube](https://www.youtube.com/watch?v=sIMM73Was74)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = csm_node
@@ -260,6 +274,8 @@ param{
   }
  }
 ```
+
+
 
 ## References
 

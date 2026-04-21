@@ -6,7 +6,9 @@
 ## Installing
 
 { Or equivalent depending on your operating system. }}}} { Or equivalent
-depending on your operating system. }}}} ```
+depending on your operating system. }}}} 
+
+```
 {
 #!wiki version groovy
 Since Groovy is now at its end of life, we don't provide releases for it, but you still can build it from the source. Assuming you know how to [[catkin/Tutorials/create_a_workspace|create a catkin workspace]], you can use [[http://git-scm.com/|git]] and roslocate to automatically download the repository and set your path:
@@ -17,40 +19,62 @@ cd ~/catkin_ws/src
 roslocate uri ar_sys | xargs git clone
 ```
 
+
+
 and then build the [ar_sys](ar_sys) package, by running:
+
+
 
 ```shell
 cd ~/catkin_ws
 catkin_make
-``` }}}}
+```
+
+ }}}}
 
 ## Usage
+
+
 
 ```
 {
 #!wiki version groovy
 {{{#!wiki blue/solid
 To use the launchers with full functionality, you might need to build [[uvc_camera]] from the source, as we depend on it in the camera capture capabilities.
-``` }}}} To start tracking a single board of
+```
+
+ }}}} To start tracking a single board of
 markers, ensure you pass the proper launcher parameters (see
 [launch files](#Launch_files) for details) to meet your camera device,
 [calibration](camera_calibration) URI, pointing to the correct board
 configuration, and then use:
 
+
+
 ```shell
 roslaunch ar_sys single_board.launch
-``` To track more boards, follow the same as of a
+```
+
+ To track more boards, follow the same as of a
 single board, but modify the **data/multi/boards.yml** file to include
 all your board configuration files, and then launch:
 
+
+
 ```shell
 roslaunch ar_sys multi-boards.launch
-``` Finally, you could have the 3D [rviz](rviz)
+```
+
+ Finally, you could have the 3D [rviz](rviz)
 viewer of your boards by using:
+
+
 
 ```shell
 roslaunch ar_sys system_viewer.launch
-``` This is the very basic usage of the package,
+```
+
+ This is the very basic usage of the package,
 and there are more details in the scenarios below.
 
 ## Scenarios
@@ -60,18 +84,28 @@ and there are more details in the scenarios below.
 Assuming you have two cameras, and would like to display multiple boards
 from each camera in one 3D rvix environment. All you need is to execute
 something like these commands, each in a separate terminal:
+
+
 ```shell
 roslaunch ar_sys multi-boards.launch video_namespace:=camera1 camera_frame_id:=camera1 camera_device:=/dev/video0 uid:=1
 roslaunch ar_sys multi-boards.launch video_namespace:=camera2 camera_frame_id:=camera2 camera_device:=/dev/video1 uid:=2
 roslaunch ar_sys system_viewer.launc
-``` This is the single board version of the above
-scenario. ```shell
+```
+
+ This is the single board version of the above
+scenario. 
+
+```shell
 roslaunch ar_sys single_board.launch video_namespace:=camera1 camera_frame_id:=camera1 board_frame_id:=board1 camera_device:=/dev/video0 uid:=1
 roslaunch ar_sys single_board.launch video_namespace:=camera2 camera_frame_id:=camera2 board_frame_id:=board2 camera_device:=/dev/video1 uid:=2
 roslaunch ar_sys system_viewer.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -143,7 +177,11 @@ param {
 6.default = [false]
 }
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.1 {
 name = multi_boards
 desc = multi_boards listens to the `/camera_info` and `/image` topics and detects virtually unlimited boards of markers set by YMAL config file indicated in its parameters, and then publishes the from-the-camera transforms of each board detected on the `/transform` topic. This is mainly used with `system_viewer` node to display the coordinates of the camera and each board related to a reference world point using [[rviz]]. The `multi_boards` node runs with a `~boards_config` parameter that points to a [[YAML Overview|YAML]] file containing list of boards.
@@ -209,33 +247,53 @@ param {
 }
 }
 ```
+
+
+
+
 ```shell
 cd ~/catkin_ws
 catkin_make
-```0
+```
+
+0
 
 ## Launch files
 
 There are many [roslaunch parameters](roslaunch/XML#Setting_parameters)
 that we are employing in the launchers of each node. Here is the
-details: ```shell
-cd ~/catkin_ws
-catkin_make
-```1 ```shell
-cd ~/catkin_ws
-catkin_make
-```2
+details: 
+
 ```shell
 cd ~/catkin_ws
 catkin_make
-```3
+```
+
+1 
+
+```shell
+cd ~/catkin_ws
+catkin_make
+```
+
+2
+
+
+```shell
+cd ~/catkin_ws
+catkin_make
+```
+
+3
 
 ## Bug Reports & Feature Requests
 
+
+
 ```shell
 cd ~/catkin_ws
 catkin_make
-```4
+```
 
-<<GitHubIssues(Sahloul/ar_sys)>> We appreciate the time and effort
-spent submitting bug reports.
+4 We appreciate the time and effort spent
+submitting bug reports.

@@ -1,9 +1,13 @@
 ## Demo
 
 After installing [mrpt_navigation](mrpt_navigation) and [mvsim](mvsim),
-run: ```
+run: 
+
+```
 roslaunch mrpt_reactivenav2d reactive_nav_demo_with_mvsim.launch
 ```
+
+
 
 [Youtube](https://www.youtube.com/watch?v=9iohyHqGc0g)
 

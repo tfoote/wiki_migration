@@ -61,7 +61,9 @@ For example, in a package, `mypkg`, to launch a
 filters: `LaserFilterClass1` and `LaserFilterClass2`, you could use
 the file:
 
-`my_laser_config.yaml`: ```yaml
+`my_laser_config.yaml`: 
+
+```yaml
 scan_filter_chain:
 - name: unique_name1
   type: mypkg/LaserFilterClass1
@@ -75,15 +77,25 @@ scan_filter_chain:
     param2: b
 ```
 
+
+
 You could then push this configuration to the parameter server using
-[rosparam](rosparam) by running: ```
+[rosparam](rosparam) by running: 
+
+```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 ```
 
+
+
 And then launching the `scan_to_scan_filter_chain`:
+
+
 ```
 $ rosrun laser_filters scan_to_scan_filter_chain
 ```
+
+
 
 ## Laser Filter Nodes
 
@@ -121,7 +133,9 @@ filtered laser scan
 
 #### Example Launch File
 
-`my_laser_filter.launch`: ```
+`my_laser_filter.launch`: 
+
+```
 <launch>
   <node pkg="laser_filters" type="scan_to_scan_filter_chain"
       name="laser_filter">
@@ -131,7 +145,11 @@ filtered laser scan
 </launch>
 ```
 
-`my_laser_config.yaml`: ```
+
+
+`my_laser_config.yaml`: 
+
+```
 scan_filter_chain:
 - name: shadows
   type: laser_filters/ScanShadowsFilter
@@ -147,6 +165,8 @@ scan_filter_chain:
     upper_threshold: 10000
     disp_histogram: 0
 ```
+
+
 
 ### scan_to_cloud_filter_chain
 
@@ -184,7 +204,9 @@ outgoing filtered point cloud.
 
 #### Example Launch File
 
-`my_laser_cloud_filter.launch`: ```
+`my_laser_cloud_filter.launch`: 
+
+```
 <launch>
   <node pkg="laser_filters" type="scan_to_cloud_filter_chain"
       name="tilt_shadow_filter">
@@ -198,7 +220,11 @@ outgoing filtered point cloud.
 </launch>
 ```
 
-`my_laser_config.yaml`: ```
+
+
+`my_laser_config.yaml`: 
+
+```
 scan_filter_chain:
 - name: shadows
   type: laser_filters/ScanShadowsFilter
@@ -215,13 +241,19 @@ scan_filter_chain:
     disp_histogram: 0
 ```
 
-`my_cloud_config.yaml`: ```
+
+
+`my_cloud_config.yaml`: 
+
+```
 cloud_filter_chain:
 - type: PR2PointCloudFootprintFilter
   name: footprint_filter
   params:
     inscribed_radius: 0.325
 ```
+
+
 
 ## Laser Filter Plugins
 
@@ -247,6 +279,8 @@ description, describing an appropriate chain of
 
 #### Example Configuration
 
+
+
 ```
 scan_filter_chain:
 - type: laser_filters/LaserArrayFilter
@@ -266,6 +300,8 @@ scan_filter_chain:
           unused: 10
 ```
 
+
+
 ### ScanShadowsFilter
 
 This filter removes laser readings that are most likely caused by the
@@ -284,6 +320,8 @@ neighbors to remove
 
 #### Example configuration
 
+
+
 ```
 scan_filter_chain:
 - name: shadows
@@ -294,6 +332,8 @@ scan_filter_chain:
     neighbors: 20
     window: 1
 ```
+
+
 
 ### InterpolationFilter
 
@@ -307,9 +347,13 @@ NONE
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```0
+```
+
+0
 
 ### LaserScanIntensityFilter
 
@@ -328,9 +372,13 @@ not to write an intensity histogram to standard out. (0 or 1)
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```1
+```
+
+1
 
 ### LaserScanRangeFilter
 
@@ -356,9 +404,13 @@ measurements >`upper_threshold`. Default: `NaN`
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```2
+```
+
+2
 
 ### LaserScanAngularBoundsFilter
 
@@ -373,9 +425,13 @@ angle.
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```3
+```
+
+3
 
 ### LaserScanAngularBoundsFilterInPlace
 
@@ -391,9 +447,13 @@ assumed to be an error case.
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```4
+```
+
+4
 
 ### LaserScanBoxFilter
 
@@ -411,9 +471,13 @@ cartesian y `min_z` (`double`) Minimum cartesian z `max_z`
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```5
+```
+
+5
 
 ### LaserScanSpeckleFilter
 
@@ -437,6 +501,10 @@ NaN.
 
 #### Example configuration
 
+
+
 ```
 $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
-```6
+```
+
+6

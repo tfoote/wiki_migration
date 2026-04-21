@@ -35,6 +35,8 @@ Some parameters belong in the private namespace of the node, others
 belong in a config/ or debug/ namespace below the private namespace, as
 given for each parameter below.
 
+
+
 ```clearsilver
   param {
 
@@ -45,6 +47,10 @@ given for each parameter below.
 
 }
 ```
+
+
+
+
 
 ```clearsilver
   param {
@@ -124,6 +130,10 @@ given for each parameter below.
 }
 ```
 
+
+
+
+
 ```clearsilver
   param {
 
@@ -134,3 +144,5 @@ given for each parameter below.
 
 }
 ```
+
+

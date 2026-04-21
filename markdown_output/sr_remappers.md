@@ -3,9 +3,13 @@
 To run this node, you need to have the
 [sr_hand](sr_hand/Tutorials/Getting Started: running the hand and arm interface)
 and the [cyberglove](cyberglove) node running. You can then run:
+
+
 ```
 $ roslaunch sr_remappers remapper_glove.launch
 ```
+
+
 
 It will remap the calibrated data coming from the cyberglove to the
 targets of the hand.

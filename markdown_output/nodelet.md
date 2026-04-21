@@ -36,6 +36,8 @@ runtime using [pluginlib](pluginlib).
 
 ### Basic Usage
 
+
+
 ```
 nodelet usage:
 nodelet load pkg/Type manager - Launch a nodelet of type pkg/Type on manager manager
@@ -43,6 +45,8 @@ nodelet standalone pkg/Type   - Launch a nodelet of type pkg/Type in a standalon
 nodelet unload name manager   - Unload a nodelet a nodelet by name from manager
 nodelet manager               - Launch a nodelet manager node
 ```
+
+
 
 For command line and launch file examples see this tutorial
 [Running a nodelet](nodelet/Tutorials/Running a nodelet)
@@ -55,11 +59,17 @@ For command line and launch file examples see this tutorial
 
 Public methods:
 
+
+
 ```cplusplus
 Nodelet() //Default constructor used when dynamically loaded
 void init (const std::string& name, const ros::M_string& remapping_args, const std::vector<std::string>& my_argv); // This method is how a nodelet should be started.  The arguments are what is required from the manager to start the nodelet.  This will initialize the nodelet base class and then call the subclass's onInit() method.
-``` Protected members and methods for use in
+```
+
+ Protected members and methods for use in
 subclass:
+
+
 
 ```cplusplus
 std::string             getName() //Get the name of the nodelet
@@ -71,10 +81,16 @@ ros::CallbackQueue&     getMTCallbackQueue () // Get the callback queue (threadp
 std::vector<std::string> getMyArgv() // Get command line arguments to the nodelet stripped of ROS and nodelet specific args.
 ```
 
+
+
 Initialization method used to start ROS API in subclass:
+
+
 ```cplusplus
 virtual void onInit () = 0 //Virtual and must be overridden by subclass. All initialization of the ROS infrastructure must be put into this function.
 ```
+
+
 
 #### NODELET ROSCONSOLE MACROS
 
@@ -88,6 +104,8 @@ same type nodelets running on the same manager. They also have the
 advantage that you can turn one specific nodelet into debug, instead of
 all nodelets of a specific type.
 
+
+
 ```cplusplus
 #include "nodelet/nodelet.h"
 
@@ -97,6 +115,8 @@ NODELET_DEBUG_STREAM("my debug statement " << (double) 1.0)
 NODELET_DEBUG_COND( 1 == 1, "my debug_statement")
 NODELET_DEBUG_STREAM_COND( 1 == 1, "my debug statement " << (double) 1.0)
 ```
+
+
 
 #### Publishing from a Nodelet
 
@@ -152,15 +172,23 @@ Following commands are helpful to list all nodelets available on your
 system found in `ROS_PACKAGE_PATH`. Note that it's NOT the list of
 currently running nodelet nor nodelet managers.
 
+
+
 ```
 rosrun nodelet declared_nodelets
 ```
 
+
+
 Or list the nodelet xml files for [pluginlib](pluginlib) by:
+
+
 
 ```
 rospack plugins --attrib=plugin nodelet
 ```
+
+
 
 ## Report a Bug
 

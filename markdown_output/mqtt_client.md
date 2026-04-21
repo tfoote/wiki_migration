@@ -1,10 +1,8 @@
-<<GitHubIssues(ika-rwth-aachen/mqtt_client)>>
-
 ## Full Documentation from GitHub
 
-<<Markdown(<https://raw.githubusercontent.com/ika-rwth-aachen/mqtt_client/main/README.md>)>>
-
 ## Nodelets
+
+
 
 ```clearsilver
 
@@ -174,3 +172,5 @@ param {
   30.default = false
 }
 ```
+
+

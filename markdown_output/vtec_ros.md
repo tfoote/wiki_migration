@@ -11,6 +11,8 @@ It describes the tracker software and its working principles. If you use
 this software in an academic context, please cite the technical report,
 using:
 
+
+
 ```
 @TechReport{nogueira2019,
   author = {Lucas Nogueira and Ely de Paiva and Geraldo Silveira},
@@ -22,23 +24,35 @@ using:
 }
 ```
 
+
+
 ## Installation
 
 ### Dependencies
 
 Install the usb_cam driver from ROS repositories.
 
+
+
 ```
 sudo apt-get install ros-[kinetic|melodic]-usb-cam
 ```
+
+
 
 ### Build
 
 Setup a ROS workspace.
 
+
+
 ```
 mkdir -p ~/catkin_ws/src
-``` Install the vtec cpp library
+```
+
+ Install the vtec cpp library
+
+
 
 ```
 cd ~/catkin_ws/src
@@ -48,7 +62,11 @@ mkdir build
 cd build
 cmake ..
 make
-``` Install the ROS packages
+```
+
+ Install the ROS packages
+
+
 
 ```
 cd ~/catkin_ws/src
@@ -57,6 +75,8 @@ cd ~/catkin_ws
 catkin_make
 source devel/setup.bash
 ```
+
+
 
 ### Running
 
@@ -68,34 +88,52 @@ Download the dataset from here:
 Open two terminal windows, and launch in the first one the tracker node
 with:
 
+
+
 ```
 roslaunch vtec_tracker tracker.launch
-``` In the other terminal, navigate to the
+```
+
+ In the other terminal, navigate to the
 directory where you downloaded the dataset, and play the bagfile with:
+
+
 
 ```
 rosbag play vtec_test_tracker.bag
-``` Now you should see in RViz the tracking process
+```
+
+ Now you should see in RViz the tracking process
 using the default parameters from the launch file.
 
 #### From a live camera
 
 Open a terminal window and launch the tracker node:
 
+
+
 ```
 roslaunch vtec_tracker tracker_live.launch
-``` A Rviz window will pop-up with the camera
+```
+
+ A Rviz window will pop-up with the camera
 images. In the terminal window where you issued the roslaunch command,
 press the S key to start tracking. This will select a bounding box in
 the current frame to be tracked. You can press S again anytime to
 restart the tracking process.
 
 If you want to enable the robust to unknown occlusion mode, use the
-following command instead: ```
+following command instead: 
+
+```
 roslaunch vtec_tracker tracker_live_occlusion.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name = ibgho_tracker_node
@@ -166,6 +204,8 @@ param{
 }
 ```
 
+
+
 ## Resources
 
 1\. Technical Report:
@@ -181,5 +221,3 @@ and in part by the InSAC (CNPq under Grant 465755/2014-3 and FAPESP
 under Grant 2014/50851-0).
 
 ## Report a Bug
-
-<<GitHubIssues(visiotec/vtec_ros)>>

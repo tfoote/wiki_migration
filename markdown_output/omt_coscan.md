@@ -24,7 +24,9 @@ Kai Xu(kevin.kai.xu@gmail.com) and Qiang Zhou(bamboosdu@gmail.com). This
 method has been published at SIGGRAPH 2019. Please refer to
 <https://kevinkaixu.net/projects/multirobot.html>. If you find the
 package helpful for your research, please consider citing the following
-paper: ```
+paper: 
+
+```
 @article{dong2019multi,
   title={Multi-robot collaborative dense scene reconstruction},
   author={Dong, Siyan and Xu, Kai and Zhou, Qiang and Tagliasacchi, Andrea and Xin, Shiqing and Nie{\ss}ner, Matthias and Chen, Baoquan},
@@ -37,6 +39,8 @@ paper: ```
 }
 ```
 
+
+
 ## Download and Install
 
 ### Dependencies
@@ -46,18 +50,30 @@ libraries first.
 
 ### From Source
 
-Please download the source code: ```
+Please download the source code: 
+
+```
 catkin_ws/src$ git clone https://github.com/siyandong/CoScan.git
-``` Modify the
+```
+
+ Modify the
 direcrotries of OpenCV, CGAL and OctoMap in CMakeLists.txt. Then
+
+
 ```
 catkin_ws$ catkin_make_isolated
 ```
 
+
+
 ## Run
+
+
 
 ```
 catkin_ws$ roslaunch virtual_scan simulator.launch
 catkin_ws$ roslaunch virtual_scan data_sever.launch
 catkin_ws$ rosrun co_scan co_scan
 ```
+
+

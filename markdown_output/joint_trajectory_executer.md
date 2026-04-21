@@ -3,6 +3,8 @@ an action interface for executing trajectories.
 
 ## Action API
 
+
+
 ```clearsilver
 sub {
   0.name=action/goal
@@ -22,7 +24,11 @@ pub {
 }
 ```
 
+
+
 ## ROS API to the controller
+
+
 
 ```clearsilver
 pub {
@@ -37,7 +43,11 @@ sub {
 }
 ```
 
+
+
 ## Parameters
+
+
 
 ```clearsilver
 param {
@@ -55,7 +65,11 @@ param {
 }
 ```
 
+
+
 ## Example Roslaunch
+
+
 
 ```XML
 <launch>
@@ -77,3 +91,5 @@ param {
 
 </launch>
 ```
+
+

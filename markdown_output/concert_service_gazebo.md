@@ -15,6 +15,8 @@ In order to use this package, you'll have to do the following.
 <<TutorialChain(concert_service_gazebo/Tutorials/indigo/How to add a
 new robot type)>>
 
+
+
 ```wiki
  1. You'll need to prepare your robot launch file such that multiple robots can be spawned without a topic or tf name clash. This is typically achieved by prefixing both your topic names and tf frames with a robot-specific prefix. If you can run a single launch file with two or more simulated robots in Gazebo, you should be able to use this module to spawn multiple concert clients, one for each robot.
  2. Next, you'll need to write a new package that extends the `RobotManager` module in this package, specifying the following pieces of information:
@@ -23,6 +25,8 @@ new robot type)>>
   * How each concert client for a simulated robot should be launched.
   * Which connections need to flipped over from gazebo to each robot.
 ```
+
+
 
 ## Example
 

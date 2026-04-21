@@ -8,6 +8,8 @@ The RS422/485 versions are not supported by this package.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=windsonic_node
@@ -33,6 +35,8 @@ param {
 }
 }
 ```
+
+
 
 ## Communication Protocol Documentation
 

@@ -35,6 +35,8 @@ kinematic='True' creates a kinematic configuration variable in trep
 for that joint.
 
 An example of a system created from a URDF on the parameter server is:
+
+
 ```python
 import rospy
 import trep.ros as rostrep
@@ -42,12 +44,18 @@ import trep.ros as rostrep
 system = rostrep.import_urdf(rospy.get_param('robot_description'))
 ```
 
+
+
 Additionally, import_urdf can import the URDF onto an existing system
 definition and can add a prefix to all of the frames and joints created
-from the URDF using the following syntax: ```python
+from the URDF using the following syntax: 
+
+```python
 system = rostrep.import_urdf(rospy.get_param('robot_description'), 
          system=prev_system, prefix='new-prefix')
 ```
+
+
 
 ### ROSMidpointVI Integrator
 
@@ -62,13 +70,21 @@ An example package called `trep_urdf_demo` is available at
 demos which can be called from launch files. After cloning the package
 to your ROS workspace, run the following command:
 
--   **RRbot simulator:** ```
+-   **RRbot simulator:** 
+
+```
 roslaunch trep_urdf_demo rrbot.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   **Interactive marionette simulator:** ```
+-   **Interactive marionette simulator:** 
+
+```
 roslaunch trep_urdf_demo puppet.launch
 ```
+
+

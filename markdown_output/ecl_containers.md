@@ -2,6 +2,8 @@
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/containers.hpp>
 
@@ -11,6 +13,8 @@ using ecl::Stencil;
 using ecl::FiFo
 using ecl::PushAndPop;
 ```
+
+
 
 ## Tutorials
 

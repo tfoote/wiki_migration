@@ -1,8 +1,12 @@
 repository: <git://github.com/neobotix/neo_driver>
 
+
+
 ```wiki
 This package is obsolete and will be replaced by [[neo_base_drive_can/merged|cob_base_drive_chain]]
 ```
+
+
 
 ## Neo Base Drive Can
 
@@ -10,6 +14,8 @@ This package is a ros interface for controlling multiple can-open motors
 via ros.
 
 ## Topics to subscribe / publish and configuration parameters
+
+
 
 ```clearsilver
 
@@ -80,6 +86,8 @@ param {
   26.desc = the can identifier for motor nr * (for example 0 )
 }
 ```
+
+
 
 ## Troubleshooting
 

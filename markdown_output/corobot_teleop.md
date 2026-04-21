@@ -11,13 +11,21 @@ device, the application is available at:
 
 ## Start the node
 
-To start the node, either use the command: ```
+To start the node, either use the command: 
+
+```
 rosrun corobot_teleop corobot_teleop
-``` or
+```
+
+ or
 use the configurable launch file that permits to start every other nodes
-for the Corobot robot: ```
+for the Corobot robot: 
+
+```
 roslaunch corobot_launch corobot_software.launch
 ```
+
+
 
 ## Remote connection
 

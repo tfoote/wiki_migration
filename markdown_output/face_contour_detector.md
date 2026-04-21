@@ -58,9 +58,13 @@ The general partition is shown in the following picture\
 The exploring parameter selector tries to reach the preconfigured graph
 mass for each image. This is being done by trying different combinations
 of parameters. The graph mass describes a contour image and is defined
-as: ```
+as: 
+
+```
 graph mass = (w*((width/100) + (height/100)))/(b)
-``` w = the number of pixels with a line\
+```
+
+ w = the number of pixels with a line\
 b = the number of pixels without a line\
 width = the width of the image\
 height = the height of the image\

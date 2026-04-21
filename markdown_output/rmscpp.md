@@ -14,7 +14,9 @@ source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/librms.git
 roscd librms
@@ -22,12 +24,18 @@ rosdep install librms
 rosmake librms
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-librms
 ```
+
+
 
 ## Library Example
 
@@ -37,6 +45,8 @@ have [installed the RMS](rms/Tutorials/InstallTheRMS) locally; however,
 it can be easily adapted to access a remote server.
 
 ### The C++ Code
+
+
 
 ```cplusplus
 /*
@@ -89,37 +99,29 @@ int main(int argc, char **argv)
 }
 ```
 
+
+
 ### Code Explanation
 
 Now that we have a running example, let's look at each piece.
-
-<<CodeRef(rmscpp_example,10,11)>>
 
 In order to utilize the RMS library, we must import the single client
 header file. We also include the `iostream` header to allow for
 terminal printing.
 
-<<CodeRef(rmscpp_example,17,18)>>
-
 We start by creating a client object that will connect to `localhost`
 using the default parameters (i.e., port `80`, and using HTTP).
-
-<<CodeRef(rmscpp_example,20,32)>>
 
 First, we will make a call that requires no authentication. This basic
 example will grab a list of all content pages in the RMS, and then count
 the number of articles that were found for that given page. This
 information is printed to the terminal.
 
-<<CodeRef(rmscpp_example,34,42)>>
-
 Next, we attempt to grab a list of all of the user accounts. This call
 requires an admin to be authenticated. To illustrate what will happen if
 you do not authenticate, we surround the call in a `try-catch` block.
 The error string that is reported is the one that comes from the
 [API](rms/rest).
-
-<<CodeRef(rmscpp_example,44,47)>>
 
 Finally, we authenticate (using the default admin password supplied with
 the base install of RMS), and make the call again. We then report the

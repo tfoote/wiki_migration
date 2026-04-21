@@ -1,7 +1,11 @@
+
+
 ```wiki
 '''Note:''' This stack is designed for robots purchased before June 2014. 
 For new robots, see the [[robotican|robotican]] stack.
 ```
+
+
 
 ## Preliminary Setup
 
@@ -16,9 +20,13 @@ file (see the
 tutorial)
 
 In order to use the joystick control node one should also install the
-joystick-drivers package. ```
+joystick-drivers package. 
+
+```
 $ sudo apt-get install ros-hydro-joystick-drivers
 ```
+
+
 
 ## Launching the Lizi robots
 
@@ -29,7 +37,9 @@ other IP addresses.
 
 First, we will edit the
 lizi_robot/lizi_base_station/launch/base_station.launch file to match
-the above Lizi robots addresses: ```shell
+the above Lizi robots addresses: 
+
+```shell
 <machine name="lizi1" address="192.168.0.101" user="lizi" password="a" env-loader="~/catkin_ws/src/lizi_robot/lizi/config/lizi_env.sh" default="true"/>
 
 <group ns="lizi_1">
@@ -48,6 +58,8 @@ the above Lizi robots addresses: ```shell
 </group>
 ```
 
+
+
 Make sure that the <machine/> parameters are all correct according to
 your network setup and to the specific robot computer username and
 password. Note that from the factory the default username is "lizi"
@@ -57,22 +69,34 @@ In order to select exactly what will be launched on the lizi robots, see
 the lizi_robot/lizi_base_station/launch/remote_lizi.launch file.
 
 Set the following parameters according to the base station IP address:
+
+
 ```
 $ export ROS_MASTER_URI="http://192.168.0.100:11311"
 $ export ROS_IP="192.168.0.100"
 $ export ROSLAUNCH_SSH_UNKNOWN=1
 ```
 
-Finally, launch the base_station.launch file: ```
+
+
+Finally, launch the base_station.launch file: 
+
+```
 $ roslaunch lizi_base_station base_station.launch
 ```
+
+
 
 If you have any problems during the launch, check your network setup.
 
 Now you can control all the Lizi robots, try printing the current topics
-to check that everything is ok: ```
+to check that everything is ok: 
+
+```
 $ rostopic list
 ```
+
+
 
 ## Controlling the Lizi robots
 
@@ -83,14 +107,22 @@ The lizi_robot/lizi_base_station/launch/base_station.launch is used to
 launch the required parameters and start the node.
 
 You will have to figure out your joystick port and the id numbers of
-joystick axes and buttons. To do so, type: ```
+joystick axes and buttons. To do so, type: 
+
+```
 $ ls /dev/input
-``` and
+```
+
+ and
 find the joystick port name (usually /dev/input/js0).
 
-Now run: ```
+Now run: 
+
+```
 $ sudo jstest /dev/input/js0
-``` Play with joystick sticks and buttons
+```
+
+ Play with joystick sticks and buttons
 and write down the numbers of the axes which you would like to control
 the drive and the axes to control the pan-tilt system. You should also
 choose a button for switching between Lizi robots.
@@ -128,12 +160,20 @@ The above numbers are suitable for a logitech usb joystick. Use
 *joy_for: 4* and *joy_rot: 3* for Xbox 360 Controller.
 
 Launching the base_station.launch file can be done manually:
+
+
 ```
 $ roslaunch lizi_base_station multi_lizi_control.launch
-``` or as a part of the base_station.launch:
+```
+
+ or as a part of the base_station.launch:
+
+
 ```
 <include file="$(find lizi_base_station)/launch/multi_lizi_control.launch"/>
 ```
+
+
 
 Now you can manually drive and operate the pan-tilt system of all the
 Lizi robots.

@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = pose_manager
@@ -73,3 +75,5 @@ node.1 {
   }
 }
 ```
+
+

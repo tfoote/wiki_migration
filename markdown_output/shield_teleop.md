@@ -15,6 +15,8 @@ image messages.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = shield_teleop
 desc = ROS interface for shield_teleop
@@ -30,6 +32,8 @@ pub {
 }
 ```
 
+
+
 ## Building
 
 shield_teleop utilizes [rosjava](rosjava) and the complimentary
@@ -37,6 +41,8 @@ shield_teleop utilizes [rosjava](rosjava) and the complimentary
 them as a build dependency.
 
 ### Command Line
+
+
 
 ```
 source ~/rosjava/devel/setup.bash
@@ -47,6 +53,8 @@ source ~/rosjava/devel/setup.bash
  cd ~/shield_teleop
  catkin_make
 ```
+
+
 
 ### Android Studio
 

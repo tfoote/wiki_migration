@@ -20,6 +20,8 @@ update within a timeout.
 
 #### Advertised topics
 
+
+
 ```clearsilver
 pub {
   no_header= True
@@ -35,7 +37,11 @@ pub {
 }
 ```
 
+
+
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -62,3 +68,5 @@ param {
   4.desc= Maximum time between battery messages before a battery reports an error. Set to <0 to disable
 }
 ```
+
+

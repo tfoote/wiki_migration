@@ -44,11 +44,17 @@ you install from binaries, the example files discussed below will be in
 ### Binary Installation
 
 Replace "indigo" with your release in the command below.
+
+
 ```
 $ sudo apt-get install ros-indigo-pid
 ```
 
+
+
 ### Install and Build from source
+
+
 
 ```
 $ cd catkin_ws/src
@@ -56,6 +62,8 @@ $ git clone https://bitbucket.org/AndyZe/pid.git
 $ cd ..
 $ catkin_make
 ```
+
+
 
 ## Example: Run servo_sim.launch
 
@@ -67,9 +75,13 @@ load. The control loop runs at 100 Hz.
 
 Roslaunch pid servo_sim.launch, and several windows will open.
 
+
+
 ```
 $ roslaunch pid servo_sim.launch
 ```
+
+
 
 An rqt_plot window opens displaying controller inputs and outputs. Click
 the pan/zoom button and right-click and drag left to zoom out until you
@@ -148,9 +160,13 @@ through a range of Kp values and recording oscillations. I wouldn't use
 this on hardware! The ZN method aims for a fast response time and
 usually results in significant overshoot. To run it:
 
+
+
 ```
 $ rosrun pid autotune
 ```
+
+
 
 If you want to customize the autotuner for your application, these are
 the values in autotune.cpp that need changing:
@@ -263,7 +279,9 @@ parameters from a launch file, or the rosrun parameter syntax documented
 the command line.
 
 The following snippet from a launch file shows how to launch the node
-and set its parameters from a launch file. ```
+and set its parameters from a launch file. 
+
+```
 <node name="left_wheel_pid" pkg="pid" type="controller" >
       <param name="Kp" value="5.0" />
       <param name="Ki" value="0.0" />
@@ -276,11 +294,17 @@ and set its parameters from a launch file. ```
     </node>
 ```
 
+
+
 ### Dynamic Reconfiguration
+
+
 
 ```
 rosrun rqt_reconfigure rqt_reconfigure
-``` The pid nodes will be displayed in the left
+```
+
+ The pid nodes will be displayed in the left
 pane. Select any of the nodes and its Kp, Ki, and Kd reconfiguration
 controls will be displayed in the main pane. Tune each controller as
 needed.
@@ -345,6 +369,8 @@ remapping techniques. The "ns" property pushes the controller down
 into a namespace. The remap element remaps the node's
 /namespace/setpoint topic to the global /setpoint topic.
 
+
+
 ```
 <node name="controller" pkg="pid" type="controller" ns="left_wheel" output="screen" >
       <param name="node_name" value="left_wheel_pid" />
@@ -381,6 +407,8 @@ into a namespace. The remap element remaps the node's
       <param name="reverse_acting" value="true" />
     </node>
 ```
+
+
 
 A plot of the resulting two-controller simulation is shown below. Note:
 the Kp, Ki, and Kd parameters are intentionally a little different for
@@ -429,6 +457,8 @@ temperature control loop in operation. Look at the time scale - it is
 running at 4X wallclock time.
 
 This is accomplished by the following launchfile statements:
+
+
 ```
 <param name="use_sim_time" value="true" />
 
@@ -436,6 +466,8 @@ This is accomplished by the following launchfile statements:
       <param name="sim_speedup" value="4" />
     </node>
 ```
+
+
 
 Setting the global parameter "use_sim_time" true causes roscpp and
 rospy (which all the nodes use for ros time services like Duration,

@@ -10,6 +10,10 @@ marker information from the marker_detector_tbot package.
 
 On the robot:
 
+
+
 ```
 rosrun ds_pr2_drop_drink drop_drink
 ```
+
+

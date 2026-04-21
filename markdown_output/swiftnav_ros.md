@@ -68,6 +68,8 @@ Comments follow a \# below - they explain the step; do not type them.
 Caution: do not build libsbp in your catkin workspace - it is not
 "catkinized".
 
+
+
 ```
 cd mysrc       # cd to a directory where you will download and build libsbp
 git clone https://github.com/swift-nav/libsbp
@@ -79,10 +81,14 @@ make
 sudo make install   # install headers and libraries into /usr/local
 ```
 
+
+
 ### Build and Install the swiftnav_piksi driver
 
 The following steps build and install this package into your catkin
 workspace.
+
+
 
 ```
 cd catkin_ws/src       # your catkin workspace
@@ -90,6 +96,8 @@ git clone https://github.com/swift-nav/swiftnav_ros
 cd ..
 catkin_make
 ```
+
+
 
 ### Build and Install the Swift Console
 
@@ -111,9 +119,13 @@ Note: the Swift Navigation device is assumed to be at /dev/ttyUSB0.
 If the Swift Navigation device serial port is different, edit the port
 parameter in swiftnav_ros/launch/swiftnav_ros.launch.
 
+
+
 ```
 roslaunch swiftnav_ros swiftnav_ros.launch
 ```
+
+
 
 ## Using Multi/Duro swiftnav_ros driver with Ethernet
 
@@ -124,9 +136,13 @@ Assuming the Piksi is set at the default adddress of
 /tmp instead of /dev to avoid permission issues. Run this command in a
 separate terminal.
 
+
+
 ```
 socat pty,link=/tmp/virtualcom0,raw tcp:192.168.0.222:55555
 ```
+
+
 
 You can test the conection with Swift Console. Start the Swift Console
 and connect with serial to /tmp/virtualcom0 and verfiy it runs.
@@ -136,8 +152,12 @@ and connect with serial to /tmp/virtualcom0 and verfiy it runs.
 Change the device name in the launch file. The default was /dev/ttyUSB0.
 Change it to /tmp/virtualcom0.
 
+
+
 ```
 <param name="port" value="/tmp/virtualcom0" />
 ```
+
+
 
 This has been tested on Duro and on Piksi Multi eval boards.

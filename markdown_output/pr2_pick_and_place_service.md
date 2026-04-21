@@ -1,11 +1,17 @@
 # Usage
 
 Warning: this package is currently under development.
+
+
 ```
 $ rosrun pr2_pick_and_place_service pick_and_place_service.py
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 srv{
@@ -35,3 +41,5 @@ srv{
   7.desc= Moves arm to the side
 }
 ```
+
+

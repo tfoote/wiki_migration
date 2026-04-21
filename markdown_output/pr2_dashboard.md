@@ -1,18 +1,30 @@
+
+
 ```wiki
 (2/20/2013) pr2_dashboard has reached End Of Life and is replaced by [[rqt_pr2_dashboard|rqt_pr2_dashboard]].
 ```
 
+
+
 ## Running
 
-Run `pr2_dashboard` with: ```
+Run `pr2_dashboard` with: 
+
+```
 rosrun pr2_dashboard pr2_dashboard
 ```
 
+
+
 You may have to set your
 [ROS_MASTER_URI](ROS/EnvironmentVariables#ROS_MASTER_URI) environment
-variable before you start your dashboard: ```
+variable before you start your dashboard: 
+
+```
 export ROS_MASTER_URI=http://MY_ROBOT:11311
 ```
+
+
 
 ## Dashboard
 
@@ -85,6 +97,8 @@ charging.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
   name = pr2_dashboard
@@ -118,3 +132,5 @@ node.0 {
     2.desc = Halts the motors
   }
 ```
+
+

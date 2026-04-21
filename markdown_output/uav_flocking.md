@@ -29,13 +29,21 @@ Further required packages are:
 ## Execution
 
 There are two launch files, one for coverage and one for tracking. Run
-the launch file ```
+the launch file 
+
+```
 roslaunch uav_flocking uav_flocking_coverage.launch
-``` to launch the
+```
+
+ to launch the
 `uav_flocking_coverage` node. Run the launch file
+
+
 ```
 roslaunch uav_flocking uav_flocking_tracking.launch
-``` to launch the `uav_flocking_tracking` node.
+```
+
+ to launch the `uav_flocking_tracking` node.
 
 The launch files can be configured with following parameters:
 
@@ -48,6 +56,8 @@ In the `param` subdirectory there is the parameter file
 `uav_flocking.yaml` that allows to configure the behavior of both nodes.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -268,6 +278,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

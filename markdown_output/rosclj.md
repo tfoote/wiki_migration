@@ -1,8 +1,12 @@
 [Included page Menus/ROSClients not found](Included page Menus/ROSClients not found)
 
+
+
 ```wiki
 '''WARNING:''' This documentation refers to an outdated version of rosjava and is probably incorrect. Use at your own risk.
 ```
+
+
 
 ## Package Details
 
@@ -25,57 +29,89 @@ your classpath (e.g., clojure-contrib.jar) into this directory, and set
 the environmental variable "CLJ_HOME" to point at this directory.
 
 To create a new package that uses rosclj, your manifest.xml must include
-a dependency on rosclj: -```
+a dependency on rosclj: -
+
+```
 <depend package="rosclj"/>
-```-\~
+```
+
+-\~
 
 Then, in CMakeLists.txt, you first add your Clojure source directories:
--```
+-
+
+```
 add_clj_source_dir(${PROJECT_SOURCE_DIR}/src)
-```-\~
+```
+
+-\~
 
 Finally, you can generate binary (scripts) that launch a Clojure REPL
 with your code in the classpath, or run a particular Clojure file, as
-follows: -```
+follows: -
+
+```
 rospack_add_clj_repl(bin/repl)
 rospack_add_clj_executable(bin/do_stuff script.clj)
-```-\~
+```
+
+-\~
 
 ### Initializing ROS and getting a NodeHandle
 
 To create a ROS node, first load rosclj.
 
+
+
 ```clojure
 (use 'ros.ros)
 ```
 
+
+
 Then, call (import-ros) as a shortcut to import all of the
 [rosjava](rosjava) classes into the current namespace:
+
+
 
 ```clojure
 (import-ros)
 ```
 
+
+
 Next, get a handle to the global ROS instance and initialize it, by
 directly calling the corresponding rosjava methods.
+
+
 
 ```clojure
 (def *ros* (Ros/getInstance))
 (.init *ros* "my-node")
 ```
 
+
+
 Finally, once you have initialized ROS, you can get a scoped NodeHandle
 by calling with-node-handle:
+
+
 
 ```clojure
 (with-node-handle [nh *ros*] (println (.now nh)))
 ```
 
+
+
 or simply create one by calling rosjava methods directly:
+
+
 
 ```clojure
 (def nh (.createNodeHandle *ros*))
 ```
+
+
 
 ### Messages and Services
 
@@ -89,10 +125,14 @@ more important than raw speed.
 To use this functionality, you must first declare the top-level Messages
 and Services you want to use:
 
+
+
 ```clojure
 (defmsgs [std_msgs Float64] [geometry_msgs Twist PoseStamped])
 (defsrvs [roscpp GetLoggers SetLoggerLevel] [roscpp_tutorials TwoInts])
 ```
+
+
 
 This will set up Clojure infrastructure for converting between messages
 and maps for these types, as well as all submessages/request/response
@@ -102,9 +142,13 @@ unqualified names (except where this would case a name conflict).
 
 In particular, after declaring a message, you can use *msg->map* to
 convert a rosjava Message into a rosclj map, and *map->msg* to go back
-in the other direction: ```
+in the other direction: 
+
+```
 <depend package="rosclj"/>
-```0 As you can see, the
+```
+
+0 As you can see, the
 Clojure representation of a message is a map from keyword-ized field
 names to values, plus a *:class* field that maps to the java.lang.Class
 object corresponding to the message type.
@@ -144,9 +188,13 @@ a *fn*-like syntax for directly declaring subscriber and service
 callbacks that take (and return) Clojure maps, which are converted
 to/from rosjava Messages of the proper types behind the scenes.
 
+
+
 ```
 <depend package="rosclj"/>
-```1
+```
+
+1
 
 At an even higher level, functions are provided for writing or reading a
 single message from a topic, and calling a service. *put-message*
@@ -155,9 +203,13 @@ achieved, publishes the given message, and then shuts down the
 Publisher. *get-message* subscribes to a topic, returns the first
 message received, and then shuts down the Subscriber. Finally,
 *call-service* creates a ServiceClient, calls the service with the given
-request, and then shuts down the service. ```
+request, and then shuts down the service. 
+
+```
 <depend package="rosclj"/>
-```2
+```
+
+2
 
 These are primarily meant for interactive development at the REPL,
 although they may find some use in more mature programs as well. In such

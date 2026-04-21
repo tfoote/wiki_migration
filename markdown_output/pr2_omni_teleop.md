@@ -10,15 +10,23 @@ Prior to running the teleop package, pull out the Omni pens from its
 calibration wells.
 
 On the first computer (I use a laptop for this) connected to a Phantom
-Omni: ```
+Omni: 
+
+```
 rosrun phantom_omni omni2.sh
-``` Now place omni2's tip back into its
+```
+
+ Now place omni2's tip back into its
 calibration well. This will control the PR2's left arm.
 
 On the second computer, also connected to an Omni:
+
+
 ```
 roslaunch pr2_omni_teleop stereo_omni_pr2.launch
-``` Now, place the right omni's tip back into its
+```
+
+ Now, place the right omni's tip back into its
 calibration well. Open rosconsole on pr2_dashboard.
 
 ## User Interface
@@ -56,6 +64,10 @@ quickly, the omni stylus may go unstable.
 This node will track the midpoint of the line joining the PR2's gripper
 tips, allowing the user to not have to worry about controlling the
 PR2's pantilt unit during teleoperation. It is also independent of the
-`pr2_omni_teleop package`. To use it run: ```
+`pr2_omni_teleop package`. To use it run: 
+
+```
 rosrun pr2_omni_teleop track_gripper.py
 ```
+
+

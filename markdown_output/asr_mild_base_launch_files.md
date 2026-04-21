@@ -23,6 +23,8 @@ speed up of the velocity (look at the
 
 To adapt the parameters take a look at the mild.launch file:
 
+
+
 ```
 <launch>
     <env name="ROSCONSOLE_CONFIG_FILE" value="$(find asr_mild_base_launch_files)/log/rosconsole.config" />
@@ -39,6 +41,8 @@ To adapt the parameters take a look at the mild.launch file:
 </launch>
 ```
 
+
+
 ## Usage
 
 ### Needed packages
@@ -52,6 +56,10 @@ asr_mild_base_laserscanner
 Execute the following command on the computer which is connected to the
 motors and the laserscanner (start driving and laserscanner):
 
+
+
 ```
 roslaunch asr_mild_base_launch_files mild.launch
 ```
+
+

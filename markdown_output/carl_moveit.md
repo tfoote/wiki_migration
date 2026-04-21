@@ -10,6 +10,8 @@ as arm readying, retracting, and lifting.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_moveit_wrapper
@@ -135,16 +137,22 @@ node.1 {
   }
 ```
 
+
+
 ## Installation
 
 To install the `carl_moveit` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_moveit.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -154,6 +162,10 @@ on a simulated robot, run benchmarks, visualize motion planning, and
 adjust parameters. Primarily, the `carl_moveit_full.launch` file can
 be used to run everything required for MoveIt! on CARL, as well as
 `carl_moveit_wrapper` and `carl_moveit_common_actions`: .
+
+
 ```
 roslaunch carl_moveit carl_moveit_full.launch
 ```
+
+

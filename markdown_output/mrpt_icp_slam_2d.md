@@ -52,16 +52,26 @@ MRPT GUI:
 
 The example of usage icp SLAM in online regime:
 
+
+
 ```
 roslaunch mrpt_icp_slam_2d icp_slam.launch
-``` The example of usage icp SLAM from .rawlog
+```
+
+ The example of usage icp SLAM from .rawlog
 file:
+
+
 
 ```
 roslaunch mrpt_icp_slam_2d icp_slam_rawlog.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = mrpt_icp_slam_2d
@@ -153,3 +163,5 @@ roslaunch mrpt_icp_slam_2d icp_slam_rawlog.launch
   }
  }
 ```
+
+

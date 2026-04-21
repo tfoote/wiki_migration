@@ -125,10 +125,14 @@ object.
 To monitor sensor data, model sensor data must first be collected. These
 two commands will first, collect grasp data by trying a series of grasps
 over the desired sampling space, and second, process the data gathered.
+
+
 ```
 rosrun pr2_overhead_grasping overhead_grasping.py --cdata
 rosrun pr2_overhead_grasping overhead_grasping.py --pdata
-``` The first command requires robot supervision as
+```
+
+ The first command requires robot supervision as
 it will be moving the entire time. The second command can be run
 overnight. Both of these commands can take several hours depending on
 the size of the grasping space established by the parameters. Currently,
@@ -139,15 +143,23 @@ overhead_grasping.py.
 
 Before running the demos, the pipeline must be launched which runs
 helper nodes used by the main node. Run this launch file in the
-background before running the demos: ```
+background before running the demos: 
+
+```
 roslaunch pr2_overhead_grasping simple_grasp_pipeline.launch
-``` There are
+```
+
+ There are
 currently three modes of grasping demonstration.
+
+
 ```
 rosrun pr2_overhead_grasping overhead_grasping.py --randgrasp
 rosrun pr2_overhead_grasping overhead_grasping.py --visiongrasp
 rosrun pr2_overhead_grasping overhead_grasping.py --lasergrasp
-``` The first mode tries random grasp motions in
+```
+
+ The first mode tries random grasp motions in
 its sampled space repeatedly so that the sensitivity and different grasp
 patterns can be quickly evaluated. The second mode uses vision to grasp
 the object closest to a point near the middle of the table. After

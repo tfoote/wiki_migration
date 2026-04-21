@@ -36,6 +36,8 @@ The ROS API for this node is explained in detail below.
 
 ### Services offered
 
+
+
 ```clearsilver
 srv {
   no_header = True
@@ -87,7 +89,11 @@ srv {
   }
 ```
 
+
+
 ### Parameter configuration
+
+
 
 ```clearsilver
 param {
@@ -171,7 +177,11 @@ param {
 }
 ```
 
+
+
 ### ROS topics
+
+
 
 ```clearsilver
 pub{
@@ -185,6 +195,10 @@ pub{
 }
 ```
 
+
+
+
+
 ```clearsilver
 sub{
     0.name = collision_map
@@ -196,6 +210,8 @@ sub{
     
 }
 ```
+
+
 
 ## Tutorials
 

@@ -1,7 +1,11 @@
+
+
 ```wiki
 
 ||<style="text-align: center;" tablewidth="100%">This is part of the [[http://www.robotconcert.org|Robotics in Concert]] project.||
 ```
+
+
 
 ## Overview
 
@@ -12,9 +16,13 @@ to get/set hue status.
 
 ## Installation
 
+
+
 ```
 > sudo apt-get install ros-<distro>-rocon-hue
 ```
+
+
 
 ## Execution
 
@@ -25,15 +33,23 @@ to get/set hue status.
 
 2\. Start bridge server
 
+
+
 ```
 > roslaunch rocon_hue hue_bridge_server.launch --screen hue_ip:=<bridge ip>
 ```
 
+
+
 3\. You should be able to see..
+
+
 
 ```
 [INFO] [WallTime: 1397022783.781245] bridge connect
 ```
+
+
 
 ## Predefined Colors
 
@@ -41,6 +57,8 @@ Check
 [rocon_device_msgs/HueState](http://docs.ros.org/indigo/api/rocon_device_msgs/html/msg/HueState.html)
 
 ## APIs
+
+
 
 ```clearsilver
 pub{
@@ -59,3 +77,5 @@ sub{
  desc = Sets status of a single hue bulb
  }
 ```
+
+

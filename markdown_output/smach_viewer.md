@@ -4,9 +4,13 @@
 
 ## Usage
 
+
+
 ```
 rosrun smach_viewer smach_viewer.py
 ```
+
+
 
 This will start the GUI. Once you have one or more state machines
 running with an introspection server, they should show up in the GUI.

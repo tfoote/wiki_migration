@@ -5,20 +5,30 @@ package, as described on the
 [ROS wiki srv_tools](http://wiki.ros.org/srv_tools) page. Next, install
 this package to make it available to rosrun.
 
+
+
 ```
 catkin_make install --pkg bag_tools
 ```
+
+
 
 ## bag_tools
 
 ### extract_stereo_images
 
 Extracts stereo images from a list of bagfiles to a folder. The images
-extracted are rectified and syncronized. ```
+extracted are rectified and syncronized. 
+
+```
 rosrun bag_tools extract_stereo_images OUT_DIR FILETYPE STEREO_BASE_TOPIC BAGFILE [BAGFILE...]
 ```
 
+
+
 ### bag_add_time_offset.py
+
+
 
 ```
 usage: bag_add_time_offset.py [-h] -o OUTPUT_BAGFILE -i INPUT_BAGFILE
@@ -36,7 +46,11 @@ optional arguments:
   -t TOPIC [TOPIC ...]  topic(s) to change
 ```
 
+
+
 ### change_camera_info.py
+
+
 
 ```
 usage: change_camera_info.py [-h] inbag outbag replacement [replacement ...]
@@ -53,7 +67,11 @@ optional arguments:
   -h, --help   show this help message and exit
 ```
 
+
+
 ### check_delay.py
+
+
 
 ```
 usage: check_delay.py [-h] inbag [inbag ...]
@@ -68,7 +86,11 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
 
+
+
 ### cut.py
+
+
 
 ```
 usage: cut.py [-h] --inbag INBAG [INBAG ...] --outbag OUTBAG --start START
@@ -85,7 +107,11 @@ optional arguments:
   --duration DURATION   duration of the resulting part
 ```
 
+
+
 ### replace_msg_time_with_hdr.py
+
+
 
 ```
 usage: replace_msg_time_with_hdr.py [-h] -o OUTPUT_BAGFILE -i INPUT_BAGFILE
@@ -99,7 +125,11 @@ optional arguments:
   -i INPUT_BAGFILE   input bagfile
 ```
 
+
+
 ### add_header_time_offset.py
+
+
 
 ```
 usage: add_header_time_offset.py [-h] -o OFFSET -i BAGFILE [BAGFILE ...] -t
@@ -115,12 +145,16 @@ optional arguments:
   -t TOPIC [TOPIC ...]  topics to change
 ```
 
+
+
 ### camera_info_parser.py
 
 Parses camera info yaml files and returns the content as
 sensor_msgs.msg.CameraInfo.
 
 ### change_frame_id.py
+
+
 
 ```
 usage: change_frame_id.py [-h] -o OUTPUT_BAGFILE -i INPUT_BAGFILE -f FRAME_ID
@@ -137,12 +171,16 @@ optional arguments:
   -t TOPIC [TOPIC ...]  topic(s) to change
 ```
 
+
+
 ### image_sequence_publisher.py
 
 Publishes a folder full of images as if it was a normal camera topic and
 it's related camera info topic.
 
 #### Example Launch File
+
+
 
 ```
 <launch>
@@ -155,8 +193,14 @@ it's related camera info topic.
 </launch>
 ```
 
+
+
 ### make_video.py
+
+
 
 ```
 rosrun bag_tools extract_stereo_images OUT_DIR FILETYPE STEREO_BASE_TOPIC BAGFILE [BAGFILE...]
-```0
+```
+
+0

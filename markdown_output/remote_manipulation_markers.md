@@ -41,6 +41,8 @@ Videos of the approaches in action can be found
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = free_positioning
@@ -197,10 +199,14 @@ node.3 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `remote_manipulation_markers` package, you can install
-from source with the following commands: . ```shell
+from source with the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/remote_manipulation_markers.git
 cd ..
@@ -208,22 +214,36 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 Each of the methods can be launched with its own launch file, as
 follows:
 
-. ```
+. 
+
+```
 roslaunch remote_manipulation_markers free_positioning.launch
 ```
 
-. ```
+
+
+. 
+
+```
 roslaunch remote_manipulation_markers constrained_positioning.launch
 ```
 
-. ```
+
+
+. 
+
+```
 roslaunch remote_manipulation_markers point_and_click.launch
 ```
+
+
 
 Note that `free_positioning.launch` and
 `constrained_positioning.launch` include a boolean parameter

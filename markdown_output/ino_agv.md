@@ -36,50 +36,88 @@ Lazer Tarayıcının yayınladığı Topicler
 
 Terminal ( Ctrl + Alt + T ) açılarak oluşturulan workspace e girilir.
 
+
+
 ```
 $ git clone https://github.com/inomuh/agvsim_v2_ros.git
-``` Githubtan agvsim_v2_ros dosyası indirilir.
+```
+
+ Githubtan agvsim_v2_ros dosyası indirilir.
+
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-``` komutuyla agv_v2 modeli zipten çıkartılır.
+```
+
+ komutuyla agv_v2 modeli zipten çıkartılır.
 
 Aşağıdaki komutlarla gerekli kütüphaneler indirilir.
 
 ROS Navigasyon paketinin çalışması için gerekli olan kütüphane
 indirilir.
 
+
+
 ```
 $ sudo apt-get install ros-kinetic-navigation
-``` ROS Slam paketi ile harita oluşturma ve
+```
+
+ ROS Slam paketi ile harita oluşturma ve
 kaydetme işlemleri gerçekleştirilir.
+
+
 
 ```
 $ sudo apt-get install ros-kinetic-gmapping
-``` Launch dosyalarının belirlenen zaman
+```
+
+ Launch dosyalarının belirlenen zaman
 aralıklarında açılması için kullanılır.
+
+
 
 ```
 $ sudo apt-get install ros-kinetic-timed-roslaunch
-``` ROS'ta dinamik olarak parametre değişikliği
+```
+
+ ROS'ta dinamik olarak parametre değişikliği
 için kullanılmaktadır.
+
+
 
 ```
 $ sudo apt-get install ros-kinetic-dynamic-reconfigure
-``` ROS Smach paketinin uygulamalarını
+```
+
+ ROS Smach paketinin uygulamalarını
 görselleştirmek için kullanılmaktadır.
+
+
 
 ```
 $ sudo apt-get install ros-kinetic-smach-viewer
-``` Bashrc açılır ve Gazebo ortamı için modellerin
+```
+
+ Bashrc açılır ve Gazebo ortamı için modellerin
 bulunduğu dosya, GAZEBO_MODEL_PATH' e eklenir.
+
+
 
 ```
 $ gedit ~/.bashrc
-``` ```
+```
+
+ 
+
+```
 $ export GAZEBO_MODEL_PATH=/<WORKSPACE_NAME>/src/agvsim_v2_ros/building_editor_models:/<WORKSPACE_NAME>/src/agvsim_v2_ros/model_editor_models:$GAZEBO_MODEL_PATH
-``` Workspace'e girilerek
+```
+
+ Workspace'e girilerek
 catkin_make yapılır.
+
+
 
 ```
 $ cd <WORKSPACE_NAME>
@@ -89,47 +127,85 @@ $ catkin_make
 $ catkin_make install
 ```
 
+
+
 ## Uygulama Çalıştırma
 
 Tüm uygulamayı açmak için
 
-```
-Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```0 Gazebo'yu açmak için
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```1 Navigasyonu açmak için
+```
+
+0 Gazebo'yu açmak için
+
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```2 Uygulama için özelleştirilmiş Rviz'i açmak
+```
+
+1 Navigasyonu açmak için
+
+
+
+```
+Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
+```
+
+2 Uygulama için özelleştirilmiş Rviz'i açmak
 için
 
-```
-Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```3 Smach Viewer'ı açmak için
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```4 Smach uygulamasını çalıştırmak için
+```
+
+3 Smach Viewer'ı açmak için
+
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```5 Slam yaparak harita oluşturmak için
+```
+
+4 Smach uygulamasını çalıştırmak için
+
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```6 Hata Aşağıdaki gibi bir hata alınır ise ERROR:
+```
+
+5 Slam yaparak harita oluşturmak için
+
+
+
+```
+Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
+```
+
+6 Hata Aşağıdaki gibi bir hata alınır ise ERROR:
 cannot launch node of type \[agv2_smach/agv_task_plan_service.py\]:
 can't locate node \[agv_task_plan_service.py\] in package
 \[agv2_smach\]
 
-```
-Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```7 konumuna giderek aşağıda belirtilen yetki
-komutları çalıştırılır
+
 
 ```
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
-```8
+```
+
+7 konumuna giderek aşağıda belirtilen yetki
+komutları çalıştırılır
+
+
+
+```
+Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
+```
+
+8

@@ -2,6 +2,8 @@
 
 ![](http://datamatrix.kaywa.com/img.php?s=12&d=IPA)
 
+
+
 ```clearsilver
 name = cob_marker
 desc = cob_marker allows to find 6DOF markers of different types, like datamatrix, Qr, natural landmarks, ... 
@@ -47,6 +49,8 @@ feedback{
  0.desc=Feedback holds number to indicate the approximate progress
 }
 ```
+
+
 
 ## Installation
 

@@ -32,6 +32,8 @@ USB OTG). It has been tested on:
 
 Add the required packages (this is done automatically by the IDE):
 
+
+
 ```java
 // USB library used
 import com.hoho.android.usbserial.driver.UsbSerialDriver;
@@ -41,9 +43,13 @@ import com.github.c77.base_controller.BaseControllerNode;
 import com.github.c77.base_controller.BaseStatusPublisher;
 import com.github.c77.base_controller.BaseOdomPublisher;
 import com.github.c77.base_driver.kobuki.KobukiBaseDevice;
-``` If extending !RosActivity to create the
+```
+
+ If extending !RosActivity to create the
 application, in the init method you would need to add something like
 this:
+
+
 
 ```java
 // Get UsbManager from Android.
@@ -62,6 +68,8 @@ NodeConfiguration odomPublisherNodeConf = NodeConfiguration.newPublic(host);
 nodeMainExecutor.execute(baseOdomPublisher, odomPublisherNodeConf);
 ```
 
+
+
 ### Gradle dependency
 
 This package is a
@@ -69,9 +77,13 @@ This package is a
 package. To use it in your rosjava project you need to add the
 dependency to your *build.gradle* file:
 
+
+
 ```groovy
 compile 'com.github.creativa77.base_controller:base_controller:0.1.+'
 ```
+
+
 
 ## Adding a new base
 
@@ -85,6 +97,8 @@ package supports.
 
 To add a new base, a new base_driver should be created, implementing the
 !BaseDevice interface by overriding the following methods:
+
+
 
 ```java
     /**
@@ -111,6 +125,8 @@ To add a new base, a new base_driver should be created, implementing the
      */
     OdometryStatus getOdometryStatus();
 ```
+
+
 
 -   **initialize()**: executed when bringing up the base and is
     responsible for any configuration the base may need.

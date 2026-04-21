@@ -14,9 +14,13 @@ storage and recreation of parameters.
 The nodes provided by this package can be started together using the
 mongodb_store.launch file:
 
+
+
 ```
 HOSTNAME=yourhost roslaunch mongodb_store mongodb_store.launch db_path:=/path/to/db db_port:=62345
-``` Without the HOSTNAME env variable the host will
+```
+
+ Without the HOSTNAME env variable the host will
 revert to localhost, db_path will default to /opt/ros/mongodb_store and
 db_port will default to 62345.
 
@@ -25,18 +29,26 @@ db_port will default to 62345.
 First set the host and port you want the datacentre to run on. We do
 this via `rosparam` so that other nodes know where to find the server.
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-``` If these are not set the server uses a
+```
+
+ If these are not set the server uses a
 generated port number and `localhost` then sets the above parameters
 to its chosen values.
 
 Start the server:
 
+
+
 ```
 rosrun mongodb_store mongodb_server.py
-``` This runs the `mongod` server and also
+```
+
+ This runs the `mongod` server and also
 provides some utility functions around this. By default, the mongod
 database will be stored in `/opt/ros/mongodb_store`. This can be
 overridden by setting the private parameter database_path for the node.
@@ -60,17 +72,25 @@ were originally recorded.
 
 To run the playback node, use the following options:
 
+
+
 ```
 Usage: mongodb_play.py [options] [TOPICs...]
 
 Options:
   -h, --help           show this help message and exit
   --mongodb-name=NAME  Name of DB in which to store values
-``` E.g.
+```
+
+ E.g.
+
+
 
 ```
 rosrun mongodb_store mongodb_play.py  /map /tf /scan
-``` will play back messages previously from the
+```
+
+ will play back messages previously from the
 `/map` `/tf` and `/scan` topics which were previously stored in
 the default database (`roslog`). `mongodb_log` and `mongodb_play`
 respect latched topics.
@@ -113,14 +133,22 @@ Likewise, local parameter overrides can be set using the
 To start the config manager, make sure that you have the mongo db
 running then:
 
+
+
 ```
 rosrun mongodb_store config_manager.py _defaults_path:=pkg://my_package/defaults
-``` This will load all parameters onto the ros
+```
+
+ This will load all parameters onto the ros
 parameter server, which can be checked with:
+
+
 
 ```
 rosparam list
 ```
+
+
 
 ### Reading parameters
 
@@ -128,16 +156,24 @@ There are three methods to access parameter values:
 
 1\. Use the copy on the ros parameter server:
 
+
+
 ```
 rosparam get /my/parameter
-``` and likewise with the rospy and roscpp
+```
+
+ and likewise with the rospy and roscpp
 libraries.
 
 2\. Use the config_manager service:
 
+
+
 ```
 rosservice call /config_manager/get_param "param_name: '/my/parameter'"
-``` 3. Using the database server directly
+```
+
+ 3. Using the database server directly
 
 ### Setting parameters
 
@@ -149,17 +185,25 @@ The local parameter overrides can be set in 2 ways:
 
 1\. Using the config_manager service:
 
+
+
 ```
 rosservice call /config_manager/set_param "param: '{\"path\":\"/chris\",\"value\":43}'"
-``` Note the syntax of the parameter: it is a json
+```
+
+ Note the syntax of the parameter: it is a json
 representation of a dictionary with path and value keys.
 
 2\. Using the config_manager service:
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```0 Note: This will save the current value of the
+```
+
+0 Note: This will save the current value of the
 parameter into the locals database
 
 3\. Using the database server directly
@@ -171,24 +215,36 @@ and remove ROS messages in the mongo store via the `MessageStoreProxy`
 object in both Python and C++. This is best demonstrated by examples.
 With the mongodb server running, run the message store:
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```1
+```
+
+1
 
 ### Python Message Store Client
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```2
+```
+
+2
 
 ### C++ Message Store Client
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```3
+```
+
+3
 
 ## Replicating Stored Messages: replicator_node.py
 
@@ -198,10 +254,14 @@ parts of the store is done manually to allow different content to appear
 on different hosts. A list of hosts and ports where replications should
 be made can be set via the `mongodb_store_extras` ros parameter:
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```4 Inserts and updates are performed across the
+```
+
+4 Inserts and updates are performed across the
 main and replicant stores.
 
 If `mongodb_store_extras` is set (regardless of
@@ -210,10 +270,14 @@ nothing found, the replicants are tried.
 
 You can launch additional datacentres as follows, e.g.
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```5 You can test if this works by adding some
+```
+
+5 You can test if this works by adding some
 things to the message store, deleting them from the master using
 [RoboMongo](http://robomongo.org) (not the message store as the deletes
 are replicated), then running queries.
@@ -222,10 +286,14 @@ are replicated), then running queries.
 
 The `MoveEntries` action and the corresponding action server:
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```6 (which is included in `datacentre.launch`)
+```
+
+6 (which is included in `datacentre.launch`)
 
 allows you to bulk copy or move entries from message store collections
 to the mongod instances defined under `mongodb_store_extras`. The
@@ -237,16 +305,24 @@ an example client that does this for a list of collections specified on
 the command line. This \*moves\* entries inserted 24 hours ago or
 earlier.
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```7 **\*NOTE THAT this all makes `update`
+```
+
+7 **\*NOTE THAT this all makes `update`
 operations a bit uncertain, so please do not use this type of
 replication on collections you plan to use update on.**\*
 
 ## Nodes
 
+
+
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```8
+```
+
+8

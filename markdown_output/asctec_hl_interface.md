@@ -69,9 +69,13 @@ Packet rates of certain packets can be configured with the
 configuration packet is sent to the HLP which will send the packets in
 the desired rate accordingly. Note that no checking is done if the
 packet rates exceed the available bandwidth, so check the correct rate
-with ```
+with 
+
+```
 rostopic hz <topic> -w <expected rate>
 ```
+
+
 
 ## Modes of Operation
 
@@ -134,6 +138,8 @@ To work with this mode, please go carefully through this
 [tutorial](asctec_hl_interface/Tutorials/hlp position control).
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -401,6 +407,8 @@ node.2{
 }
 ```
 
+
+
 ## Scripts
 
 All plot_\* scripts plot IMU data from the LLP and debug data from the
@@ -408,11 +416,17 @@ SSDK running on the HLP. For the SSDK, data is displayed in the North
 East Down (NED) convention, i.e. data is rotated 180° around the x-axis.
 y(NED) = -y(ENU), z(NED) = -z(ENU) (height is negative!) and angles
 likewise according to the right hand rule. Usage:
+
+
 ```
 rosrun asctec_hl_interface plot_position_input [namespace]
 #e.g.
 rosrun asctec_hl_interface plot_position_input pelican
 ```
+
+
+
+
 
 ```clearsilver
 node.0{
@@ -452,3 +466,5 @@ node.8{
   desc = plots the position that is sent to the HLP to perform a position update of the filter. NED convention!
 }
 ```
+
+

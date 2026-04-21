@@ -1,6 +1,10 @@
+
+
 ```wiki
 ||<style="text-align: center;" tablewidth="100%">This is part of the [[http://www.robotconcert.org/wiki/Main_Page|Robotics in Concert]] project.||
 ```
+
+
 
 # Overview
 
@@ -10,17 +14,25 @@ Multi robot simulation with concert framework.
 
 ### Starting Gazebo Concert
 
+
+
 ```
 > roslaunch gazebo_concert concert.launch --screen
 ```
+
+
 
 ### Teleoperate a robot
 
 -   Start [rocon_remocon](rocon_remocon)
 
+
+
 ```
 > rocon_remocon
 ```
+
+
 
 -   Select Concert
 

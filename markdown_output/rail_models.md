@@ -96,7 +96,9 @@ from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rail_gazebo.git
 roscd rail_gazebo
@@ -104,12 +106,18 @@ rosdep install rail_gazebo
 rosmake rail_gazebo
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rail-gazebo
 ```
+
+
 
 ## Support
 

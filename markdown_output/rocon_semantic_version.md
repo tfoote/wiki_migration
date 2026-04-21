@@ -3,6 +3,8 @@
 A very convenient, simple python package for interacting with standard
 `MAJOR.MINOR.PATCH` version number strings.
 
+
+
 ```highlight
 import rocon_semantic_version as semantic_version
 
@@ -14,6 +16,8 @@ print("Patch Version: %s" % version.patch)   # 2
 version2 = semantic_version.Version("1.5.3")
 version < version2                           # True
 ```
+
+
 
 Note that it has been renamespaced to `rocon_semantic_version` to
 avoid conflicts with a locally installed module. See the

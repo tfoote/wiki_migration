@@ -25,6 +25,8 @@ environment.
 
 ## ROS Interface
 
+
+
 ```clearsilver
 node {
   0.name=navigator
@@ -104,6 +106,10 @@ node {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node{
   1.name=set_goal_client
@@ -115,6 +121,10 @@ node{
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node{
@@ -128,6 +138,10 @@ node{
 }
 ```
 
+
+
+
+
 ```clearsilver
 node{
   3.name=explore_client
@@ -139,3 +153,5 @@ node{
   }
 }
 ```
+
+

@@ -20,6 +20,8 @@ URL. The current implementation only supports these URL types:
 
 ## ROS Interface
 
+
+
 ```clearsilver
 node.0 {
  name = osm_server node
@@ -31,6 +33,10 @@ node.0 {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -54,6 +60,8 @@ node.0 {
 }
 ```
 
+
+
 ### viz_osm Launch File
 
 Runs the osm_cartography nodes, passing the URL of a local file
@@ -72,12 +80,20 @@ like, these examples call it `map_local`.
 #### Example
 
 In one terminal window, create a transform from the `/map` frame to
-`/local_map`: ```
+`/local_map`: 
+
+```
 rosrun tf static_transform_publisher 622150 3362350 0 0 0 0 1 map local_map 100
-``` Then, launch the visualization
-nodes: ```
+```
+
+ Then, launch the visualization
+nodes: 
+
+```
 roslaunch osm_cartography viz_osm.launch url:=package://osm_cartography/tests/prc.osm
-``` Finally, run `rviz`, create a Marker
+```
+
+ Finally, run `rviz`, create a Marker
 display and set the static frame to `local_map`. You'll probably need
 to zoom out.
 

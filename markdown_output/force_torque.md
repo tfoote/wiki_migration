@@ -27,9 +27,13 @@ find the system path to the given FT device.
 To actually get data follow the sample code in force_torque_client's
 main block.
 
-Sample launch sequence: ```
+Sample launch sequence: 
+
+```
 ./force_torque_relay --name=ft1 $ ./force_torque_poller --name=ft1 --path=/dev/robot/fingerFT1
 ```
+
+
 
 ## ROS API
 

@@ -18,6 +18,8 @@ Overview of how the nodes interact with the robot sensor stream:
 **Note**: All nodes assume that `<gripper_motor_name>` is either
 `r_gripper_motor` or `l_gripper_motor`.
 
+
+
 ```clearsilver
 node.0 {
 name=sensor_info
@@ -40,9 +42,13 @@ sub{
  1.desc= Sensor calibration, geometry and tf frame.
 }
 }
-``` Example of `view_fingertip_pressure` GUI:
+```
+
+ Example of `view_fingertip_pressure` GUI:
 
 [ {{attachment:fingertip_sensors_panel.png}}](attachment:fingertip_sensors_panel.png)
+
+
 ```clearsilver
 node.2 {
 name=sphere_viz
@@ -89,6 +95,8 @@ pub{
 }
 ```
 
+
+
 ### Launch files
 
 `launch/fingertip_demo.launch` is a standalone demo of the package's
@@ -96,10 +104,18 @@ capabilities. It runs all the package's nodes, and rviz (to view the
 visualization markers). This should demonstrate all the packages
 capabilities.
 
-Example: ```
+Example: 
+
+```
 $ roslaunch launch/fingertip_demo.launch
-``` and in a separate shell:
+```
+
+ and in a separate shell:
+
+
 ```
 $ roscd pr2_gazebo
 $ roslaunch pr2_empty.launch
 ```
+
+

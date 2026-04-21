@@ -43,5 +43,3 @@ Most documentation is handled inside the Githhub
 files.
 
 ## Contributing
-
-<<GitHubIssues(UniversalRobots/Universal_Robots_Client_Library)>>

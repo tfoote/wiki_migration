@@ -12,7 +12,9 @@ source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/lfd.git
 roscd lfd
@@ -20,12 +22,18 @@ rosdep install lfd
 rosmake lfd
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-lfd
 ```
+
+
 
 ## Support
 

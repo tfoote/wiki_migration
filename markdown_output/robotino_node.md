@@ -11,6 +11,8 @@ please use the openni packages externally.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = robotino_node
@@ -95,8 +97,14 @@ param {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 roslaunch robotino_node robotino_node.launch hostname:=IPADDRESS_OF_ROBOTINO
 ```
+
+

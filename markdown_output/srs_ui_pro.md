@@ -1,9 +1,13 @@
 ## Instalation
 
 To run the GUI you need to download the srs_ui_pro package. You can
-download them from the git repository: ```
+download them from the git repository: 
+
+```
 git clone git@github.com:mrodriguez-robotnik/srs_ui_pro.git
 ```
+
+
 
 After that you will need the SkypeKit downloaded and working in your
 machine. In this
@@ -28,10 +32,14 @@ SkypeKit.
 If everything is OK, please follow the next steps:
 
 1\. Add a new variable called **SKYPE_KIT_PATH** to the
-.bashrc:```
+.bashrc:
+
+```
 echo "export SKYPE_KIT_PATH=skypekit_path" >> ~/.bashrc
 . ~/.bashrc
 ```
+
+
 
 2\. Copy the requested **keypair.pem** into the path
 *srs_ui_pro/skype_utils*.
@@ -182,10 +190,14 @@ should looks like this:
 
 ### General info
 
-To run the srs_ui_pro interface you should run: ```
+To run the srs_ui_pro interface you should run: 
+
+```
 roscd srs_ui_pro
 rosrun srs_ui_pro srs_ui_pro
 ```
+
+
 
 After that, the Main Window should appears. If all is well configured
 (see Instalation section) the *Status log box* should display:

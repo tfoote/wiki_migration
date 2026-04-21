@@ -14,6 +14,8 @@ The format of an arm/hand description is documented in the
 [object_manipulator](object_manipulator) page. Here is an example of
 such a configuration file:
 
+
+
 ```
 hand_description:
   right_arm:
@@ -41,6 +43,8 @@ hand_description:
     hand_fingertip_links: [l_gripper_r_finger_tip_link,l_gripper_l_finger_tip_link]
     hand_approach_direction: [1.0,0.0,0.0]
 ```
+
+
 
 ## Running the Manipulation Pipeline
 

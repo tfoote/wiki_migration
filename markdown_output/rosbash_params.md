@@ -3,11 +3,15 @@ in Bash. The main thing it adds is ROS-like command-line parameter
 parsing (`_param:=value`), so that you can easily call the Bash
 script from a launch file like
 
+
+
 ```
 <node name="test" pkg="pkg" type="my_bash_script.sh">
     <param name="par" value="test" />
 </node>
 ```
+
+
 
 ## Advantages
 
@@ -37,6 +41,8 @@ script from a launch file like
 
 ### Example script test_rosbash
 
+
+
 ```/usr/bin/env
 
 rosbash_init_node "node_name" "$@"  # parse the command line arguments
@@ -56,7 +62,11 @@ echo "bool_param3 = ${bool_param3}"  # access the parsed parameter value
 echo "rosbash_unused_argv = ${rosbash_unused_argv[@]}"  # all CLI args not parsed as a parameter
 ```
 
+
+
 ### Example call:
+
+
 
 ```
 $ ./test_rosbash _param_name:=1 _unparsed_param:=2 positional1 positional2 _bool_name1:=False
@@ -68,14 +78,22 @@ bool_param3 = False
 rosbash_unused_argv = _unparsed_param:=2 positional1 positional2
 ```
 
+
+
 ### Example call with missing mandatory parameter:
+
+
 
 ```
 $ ./test_rosbash positional1 positional2
 Required parameter 'param_name' was not set.
 ```
 
+
+
 ### Example call showing bool behavior
+
+
 
 ```
 $ ./test_rosbash  _param_name:=test _bool_name1:=1 _bool_name2:=0 _bool_name3:=on
@@ -87,7 +105,11 @@ bool_param3 = True  # `on` without quotes is always converted to `True`
 rosbash_unused_argv =
 ```
 
+
+
 ### Example launch file
+
+
 
 ```
 <launch>
@@ -98,6 +120,8 @@ rosbash_unused_argv =
     </node>
 </launch>
 ```
+
+
 
 ## API
 
@@ -151,9 +175,13 @@ rosbash_unused_argv =
     call `exit 1` when parameter is not found, instead call `return
     1`, so that the calling code controls what should happen when the
     parameter is not found.
--   e.g. ```
+-   e.g. 
+
+```
 ROS_BASH_PARAM_EXIT=0 rosbash_param var "mandatory" || echo "Please, fill the mandatory param"
 ```
+
+
 
 ## Other shells
 

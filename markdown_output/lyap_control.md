@@ -13,30 +13,50 @@ is explained
 ## Installing the package
 
 At this point, it's best to install this package from source. Create a
-catkin workspace for the package: ```
+catkin workspace for the package: 
+
+```
 $ mkdir -p ~/Desktop/catkin_ws/src
 $ cd ~/Desktop/catkin_ws/src
 $ catkin_init_workspace
 ```
 
-Clone the package ```
+
+
+Clone the package 
+
+```
 $ git clone https://bitbucket.org/AndyZe/lyap_control.git
 $ cd ..
 ```
 
-Build the package ```
+
+
+Build the package 
+
+```
 $ catkin_make
 ```
 
-Source the new files ```
+
+
+Source the new files 
+
+```
 $ source devel/setup.bash
-``` (You may have to do this
+```
+
+ (You may have to do this
 every time you open a new terminal window, or add this line to your
 bashrc: *source /Desktop/catkin_ws/devel/setup.bash*)
 
-Check that it runs ```
+Check that it runs 
+
+```
 $ roslaunch lyap_control lyap_control.launch
-``` This launches a simulation
+```
+
+ This launches a simulation
 of a 2nd-order system with (1,-2) setpoints. The displayed *V* is the
 sum-of-squares of the error for all states (it should drop
 exponentially).
@@ -47,11 +67,15 @@ exponentially).
 
 To run the controller nodes individually:
 
+
+
 ```
 $ roscore
 $ rosrun lyap_control controller (publishes data on the control_effort topic)
 $ rosrun lyap_control second_order_plant (publishes data on the state topic)
 ```
+
+
 
 You may wish to tune the controller at this point. You can adjust its
 'aggressiveness', called *V_dot_target_initial_dB*, in controller.h.
@@ -81,17 +105,33 @@ is just one state variable
 pass must be shorter. In *controller.msg*, update *u* to a 1-vector. In
 *plant.msg*, update *x* and *setpoint* to 1-vectors.
 
-That's it! Now run the system again\-- ```
+That's it! Now run the system again\-- 
+
+```
 $ catkin_make
 ```
+
+
+
+
 ```
 $ roscore
-``` ```
+```
+
+ 
+
+```
 $ rosrun lyap_control controller
 ```
+
+
+
+
 ```
 $ rosrun lyap_control first_order_plant
-``` and you should see the system stabilize at 1.0.
+```
+
+ and you should see the system stabilize at 1.0.
 
 If you wish to change the initial conditions or the setpoints, or even
 make a time-varying setpoint, you can do so in *first_order_plant.cpp*.

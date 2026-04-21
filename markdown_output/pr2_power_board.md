@@ -11,6 +11,8 @@ power board temperature.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = power_node2
 pub {
@@ -46,6 +48,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = power_node
 desc = Deprecated node for controller Rev. A and B power boards.
@@ -63,3 +69,5 @@ srv {
   1.desc= Send a command to the power board
 }
 ```
+
+

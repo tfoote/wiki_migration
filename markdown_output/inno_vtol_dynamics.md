@@ -21,5 +21,3 @@ To be updated.
 Please, check
 [innopolis_vtol_dynamics](https://github.com/InnopolisAero/innopolis_vtol_dynamics)
 for full description.
-
-<<Markdown(<https://raw.githubusercontent.com/InnopolisAero/innopolis_vtol_dynamics/master/README.md>)>>

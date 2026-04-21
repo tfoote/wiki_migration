@@ -5,7 +5,9 @@
 The `ptp_arm_action` node takes a
 <<MsgLink(geometry_msgs/PoseStamped)>> from the
 `LinearMovementAction` and instructs to robot to move its gripper to
-that new location. ```clearsilver
+that new location. 
+
+```clearsilver
 sub {
    0.name = left_ptp, right_ptp (depends on which arm is being used)
    0.type = ptp_arm_actions/LinearMovementActionGoal
@@ -38,5 +40,7 @@ param{
   3.desc=How long before we should be aborting this motion.
 }
 ```
+
+
 
 }}}

@@ -23,6 +23,8 @@ and how
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=~goal_threshold
@@ -40,7 +42,11 @@ param {
 }
 ```
 
+
+
 ### Action interface
+
+
 
 ```clearsilver
 sub {
@@ -61,7 +67,11 @@ pub {
 }
 ```
 
+
+
 ### Controller interface
+
+
 
 ```clearsilver
 sub {
@@ -75,3 +85,5 @@ pub {
   0.desc=Sends grip commands to the controller.
 }
 ```
+
+

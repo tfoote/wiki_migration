@@ -47,40 +47,64 @@ The pylon_camera-pkg requires the pylonSDK to be installed on your
 system. Please download and install the pylon debian package for your
 architecture from:
 
+
+
 ```
 https://www.baslerweb.com/de/support/downloads/downloads-software/
 ```
+
+
 
 In order to build the package, you need to configure rosdep (i.e. the
 ROS command-line tool for checking and installing system dependencies
 for ROS packages) such that it knows how to resolve this dependency.
 This can be achieved by executing the following commands:
 
+
+
 ```
 sudo sh -c 'echo "yaml https://raw.githubusercontent.com/magazino/pylon_camera/indigo-devel/rosdep/pylon_sdk.yaml " > /etc/ros/rosdep/sources.list.d/15-plyon_camera.list'
 ```
+
+
+
+
 
 ```
 rosdep update
 ```
 
+
+
 Then, clone the pylon_camera-pkg, and the camera_control_msgs-pkg and
 install all necessary dependencies via rosdep install:
+
+
 
 ```
 cd ~/catkin_ws/src/ && git clone https://github.com/magazino/pylon_camera.git && git clone https://github.com/magazino/camera_control_msgs.git
 ```
 
+
+
+
+
 ```
 rosdep install --from-paths . --ignore-src --rosdistro=$ROS_DISTRO -y
 ```
 
+
+
 Build the pylon_camera package as you would build a standard ROS-package
 using p.e.
+
+
 
 ```
 cd ~/catkin_ws && catkin_make
 ```
+
+
 
 ## Parameters
 
@@ -171,26 +195,42 @@ used on a RaspberryPI this value should be set to 11772.
 
 Make sure you have the catkin_ws sourced:
 
+
+
 ```
 source ~/catkin_ws/devel/setup.bash
 ```
 
+
+
 The pylon_camera_node can be started over the launch file which includes
 a config file with desired parameters as frame rate or exposure time
 
+
+
 ```
 roslaunch pylon_camera pylon_camera_node.launch
-``` or ```
+```
+
+ or 
+
+```
 rosrun pylon_camera pylon_camera_node
 ```
+
+
 
 Images were only published if another node connects to the image topic.
 The published images can be seen using the image_view node from the
 image_pipeline stack:
 
+
+
 ```
 rosrun image_view image_view image:=/pylon_camera_node/image_raw
 ```
+
+
 
 ## Questions
 

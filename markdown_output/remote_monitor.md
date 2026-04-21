@@ -18,11 +18,15 @@ Tutorial to integrate OpenVPN and ROS is
 
 下記のコマンドで上記動画のように遊べるはずです
 
+
+
 ```
 $ roslaunch cirkit_unit03_autorun autorun_gazebo.launch 
 $ roslaunch remote_monitor remote_monitor_server_gazebo.launch
 $ roslaunch remote_monitor remote_monitor_client_gazebo.launch
 ```
+
+
 
 ## Nodes
 
@@ -42,12 +46,18 @@ $ roslaunch remote_monitor remote_monitor_client_gazebo.launch
 
 ### Clone the repository
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
 ```
 
+
+
 ### Clone the dependent repository via wstool
+
+
 
 ```
 $ cd <catkin_ws>
@@ -56,19 +66,29 @@ $ wstool merge -t src src/remote_monitor/remote_monitor.rosinstall
 $ wstool update -t src
 ```
 
+
+
 ### Clone the dependent repository via rpsdep
+
+
 
 ```
 $ rosdep update && rosdep install -r -y --from-paths src --ignore-src
 ```
 
+
+
 ### Build
+
+
 
 ```
 $ cd <catkin_ws>
 $ catkin_make
 $ source devel/setup.bash
 ```
+
+
 
 ## How to launch
 
@@ -80,15 +100,23 @@ $ source devel/setup.bash
 
 #### 実機の場合のコマンド
 
+
+
 ```
 $ roslaunch remote_monitor remote_monitor_server.launch map_yaml:=hogehoge.yaml
 ```
 
+
+
 #### `Gazebo`の場合のコマンド
+
+
 
 ```
 $ roslaunch remote_monitor remote_monitor_server_gazebo.launch map_yaml:=hogehoge.yaml
 ```
+
+
 
 ### service client
 
@@ -97,12 +125,18 @@ $ roslaunch remote_monitor remote_monitor_server_gazebo.launch map_yaml:=hogehog
 -   まずサーバ側の人にグローバルIPを聞く．
 -   以下の要領で設定ファイルに反映させる．
 
+
+
 ```
 $ cd /etc/openvpn
 $ emacs client.conf
 ```
 
-client.conf ```
+
+
+client.conf 
+
+```
 # 省略
 
 # グローバルIPアドレスを指定する．
@@ -111,113 +145,171 @@ remote 101.102.103.xxx 1194
 # 省略
 ```
 
+
+
 #### OpenVPNを再起動する.
+
+
 
 ```
 $ service openvpn restart
 ```
 
+
+
 #### ネットワークを確認する．
+
+
 
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```0
+```
+
+0
 
 -   下記のような`tun`デバイスが表示される．少し時間がかかる場合がある．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```1
+```
+
+1
 
 -   そしてサーバにping．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```2
+```
+
+2
 
 #### ROSネットワークの設定
 
 -   必ず「全てのコンソール」で下記の設定をすること．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```3
+```
+
+3
 
 -   下記をsourceでもよい．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```4
+```
+
+4
 
 -   一応確認する．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```5
+```
+
+5
 
 #### ROSネットワークの確認
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```6
+```
+
+6
 
 -   下記のサービスがあることを確認する．
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```7
+```
+
+7
 
 #### モニタークライアントを起動する
 
 ##### 実機設定
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```8
+```
+
+8
 
 ##### Gazebo設定
 
+
+
 ```
 $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
-```9
+```
+
+9
 
 ## parameters
 
 ### /config/remote_monitor_server.yaml
 
+
+
 ```
 $ cd <catkin_ws>
 $ wstool init src
 $ wstool merge -t src src/remote_monitor/remote_monitor.rosinstall
 $ wstool update -t src
-```0
+```
+
+0
 
 ### /config/third_robot_client.yaml
 
+
+
 ```
 $ cd <catkin_ws>
 $ wstool init src
 $ wstool merge -t src src/remote_monitor/remote_monitor.rosinstall
 $ wstool update -t src
-```1
+```
+
+1
 
 ## Commands
 
 地図画像をアクティブにした状態で下記キーを入力するとモードを切り替えられます．
 
+
+
 ```
 $ cd <catkin_ws>
 $ wstool init src
 $ wstool merge -t src src/remote_monitor/remote_monitor.rosinstall
 $ wstool update -t src
-```2
+```
+
+2

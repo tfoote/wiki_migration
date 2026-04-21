@@ -12,8 +12,6 @@ In case you have a different robot, please read
 [\|What if my robot is not Pionner-compatible?](http://wiki.ros.org/pioneer_teleop#What_if_my_robot_is_not_Pionner-compatible)
 section
 
-<<GitHubIssues(amineHorseman/pioneer_teleop)>>
-
 # Dependencies
 
 You need first to get and install
@@ -24,11 +22,15 @@ You need first to get and install
 After installing the dependencies, download or clone this repository in
 your caktin workspace:
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/amineHorseman/pioneer_teleop.git
 rosdep install pioneer_teleop
 ```
+
+
 
 Build your workspace:
 
@@ -36,10 +38,14 @@ Build your workspace:
 
 Now, make sure that python scripts are executable:
 
+
+
 ```
 cd ~/catkin_ws/src/pioneer_teleop/nodes
 sudo chmod +x *.py
 ```
+
+
 
 # Usage
 
@@ -47,9 +53,13 @@ In this package, there are 3 teleoperation modes:
 
 ## Keyboard teleoperation
 
+
+
 ```
 roslaunch pioneer_teleop keyboard_teleop.launch
 ```
+
+
 
 This allow you to control the robot motors using keyboard arrows, use +
 and - to increase or decrease the speed, and s to stop
@@ -57,9 +67,13 @@ and - to increase or decrease the speed, and s to stop
 A different version of keyboard teleoperation is also available using
 this command:
 
+
+
 ```
 roslaunch pioneer_teleop discrete_keyboard_teleop.launch
 ```
+
+
 
 In this case, the robot moves only for a small period of time (1.5
 seconds by default) and then stops.
@@ -69,9 +83,13 @@ seconds by default) and then stops.
 Controls the robot remotely throught socket commands (especially if you
 want to move the robot using a web interface via internet/LAN).
 
+
+
 ```
 roslaunch pionner_teleop socket_teleop.launch
 ```
+
+
 
 The expected commands are "*forward*", "*backward*", "*left*" or
 "*right*"
@@ -80,18 +98,26 @@ By default, the script listens to port 50001, and the robot moves only
 for 1.5 seconds. To change these parameters, you can use extra arguments
 as mentioned bellow:
 
+
+
 ```
 roslaunch pionner_teleop socket_teleop.launch _port:=12345 _speed:=0.3 _move_time:=2.0
 ```
+
+
 
 ## Command line teleoperation
 
 Useful if you want to move the robot using command line throught a
 terminal or ssh:
 
+
+
 ```
 roslaunch pionner_teleop socket_commandline.launch _direction:=forward
 ```
+
+
 
 The expected commands (*_direction* argument) are "*forward*",
 "*backward*", "*left*" or "*right*"
@@ -99,9 +125,13 @@ The expected commands (*_direction* argument) are "*forward*",
 By default, the robot moves only for 1.5 seconds at 0.2 speed. To change
 these parameters, you can use extra arguments as mentionned bellow:
 
+
+
 ```
 roslaunch pionner_teleop socket_teleop.launch _direction:=backward _speed:=0.3 _move_time:=2.0
 ```
+
+
 
 # What if my robot is not Pionner-compatible?
 

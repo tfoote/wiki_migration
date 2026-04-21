@@ -1,9 +1,15 @@
 ## Usage
 
+
+
 ```
 cd src/pan_tilt_robotis
  python pan_tilt.py -h
-``` The output will be: ```
+```
+
+ The output will be: 
+
+```
 Usage: pan_tilt.py [options]
 
 Options:
@@ -14,6 +20,8 @@ Options:
   --pan=PAN          pan angle (degrees).
   --tilt=TILT        tilt angle (degrees).
 ```
+
+
 
 The `pan_id` and `tilt_id` are the servo ids of the pan and tilt
 Robotis servos.

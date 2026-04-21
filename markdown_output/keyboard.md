@@ -8,6 +8,8 @@ opened when the node starts, and this is where all keyboard input will
 be received. In other words, the node will receive key-presses only when
 this window is focused.
 
+
+
 ```clearsilver
 name = keyboard
 desc = Listens to key-presses and publishes them as messages
@@ -34,3 +36,5 @@ param {
   2.default= SDL_DEFAULT_REPEAT_INTERVAL
  }
 ```
+
+

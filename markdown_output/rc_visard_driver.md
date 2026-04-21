@@ -4,10 +4,14 @@ Official ROS driver for [Roboception](http://roboception.com) rc_visard
 See <http://rc-visard.com> and <http://doc.rc-visard.com> for more
 details.
 
+
+
 ```wiki
 This package is in maintenance mode.
 Unless you need the dynamics functionality, please use [[rc_genicam_driver]] which also supports the rc_cube.
 ```
+
+
 
 ## Overview
 
@@ -368,15 +372,25 @@ current `ip_address` and `gev_packet_size` are published.
 
 -   Using command line parameters:
 
+
+
 ```bash
 rosrun rc_visard_driver rc_visard_driver _device:=:02912345 _enable_tf:=True _autostart_dynamics:=True _autostop_dynamics:=True
 ```
 
+
+
 -   As a nodelet, and in a separate **namespace**:
+
+
 
 ```bash
 ROS_NAMESPACE=my_visard rosrun nodelet nodelet standalone rc_visard_driver _device:=:02912345
 ```
+
+
+
+
 
 ```wiki
 Note that in this setup all frame_ids in all ros messages (including
@@ -386,9 +400,9 @@ of the poses will be `my_visard_world`, and the frame_id of
 the Imu messages will be `my_visard_imu`.
 ```
 
-## Report a Bug
 
-<<GitHubIssues(roboception/rc_visard_ros)>>
+
+## Report a Bug
 
 ## Acknowledgements
 

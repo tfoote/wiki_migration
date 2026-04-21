@@ -40,18 +40,28 @@ keyboard input) returns a handle which offers the following commands.
 
 ## Terminal API
 
-By running ```
+By running 
+
+```
 rosrun cob_script_server cob_console
-``` you can access all script_server
+```
+
+ you can access all script_server
 commands in an ipython terminal with the prefix `sss`, e.g.
+
+
 ```
 sss.move("head","front")
 ```
+
+
 
 ## Actionlib API
 
 All functions from the python API are also available as
 [actionlib](actionlib) calls.
+
+
 
 ```clearsilver
  name = script_server
@@ -94,18 +104,32 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 For starting the script server and upload parameters
+
+
 ```
 roslaunch cob_script_server script_server.launch
-``` For running a test script
+```
+
+ For running a test script
+
+
 ```
 rosrun cob_script_server test_script.py
-``` For running the script viewer
+```
+
+ For running the script viewer
+
+
 ```
 rosrun cob_script_server script_viewer.py
 ```
+
+
 
 All the parameters that are loaded in the name space /script_server are
 defined in .yaml files in the package

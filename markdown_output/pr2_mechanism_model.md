@@ -35,27 +35,43 @@ example on how to use the `RobotState`, check out the
 
 The `pr2_mechanism_model::RobotState` provides access by name to all
 the `pr2_mechanism_model::JointState`s it contains. To get access to a
-`JointState`, use the following method: ```
+`JointState`, use the following method: 
+
+```
 JointState* js = robot_state_->getJointState(name);
 ```
 
+
+
 From a `JointState` you can extract joint position, effort, velocity,
 and command the desired joint effort: To get e.g. the measured joint
-position from the `JointState`, use: ```
+position from the `JointState`, use: 
+
+```
 double position = js->position_;
-``` or, to
+```
+
+ or, to
 set the commanded effort on `JointState`, use:
+
+
 ```
 js->commanded_effort_ = my_command;
-``` The [tutorials](pr2_mechanism/Tutorials) give
+```
+
+ The [tutorials](pr2_mechanism/Tutorials) give
 more examples on how to use the `JointState`.
 
 The `JointState` also gives access to the joint model, which contains
 things like the joint type, axis, reference position, etc. To e.g. get
-the joint type, use: ```
+the joint type, use: 
+
+```
 if (js->joint_->type == urdf::Joint::Continuous)
 ROS_INFO("This is a continuous joint");
-``` The [urdf](urdf) API
+```
+
+ The [urdf](urdf) API
 documentation provides all details.
 
 For reference documentation, check out the
@@ -65,9 +81,13 @@ velocity and measured effort effort, and write the commanded effort.
 
 ##### URDF Safety Controller Limits
 
-Class member `urdf::Joint::safety` ```
+Class member `urdf::Joint::safety` 
+
+```
 js->joint_->safety
-``` contains
+```
+
+ contains
 various parameters used to configure joint safety controller
 [position and velocity limits](pr2_controller_manager/safety_limits).
 Please see the
@@ -80,9 +100,13 @@ The `pr2_mechanism_model::RobotState` also provides access to the
 transmissions between the motors and the joints. Typically you should
 not need the transmissions, unless you are using some advanced dynamic
 model, or you are calibrating the joints. To get access to a
-`JointState`, use the following method: ```
+`JointState`, use the following method: 
+
+```
 Transmission* tr = robot_state_->getTransmission(name);
-``` See
+```
+
+ See
 the
 [code api](http://www.ros.org/doc/api/pr2_mechanism_model/html/classpr2__mechanism__model_1_1Transmission.html)
 for more details.
@@ -102,9 +126,13 @@ system time, the controller time is not affected by the time other
 controllers consume in their update loop. Moreover, the controller time
 is the best measure of when the communication with the hardware actually
 occurs. To get access to the controller time, use:
+
+
 ```
 ros::Time time = robot_state_->getTime();
 ```
+
+
 
 #### Robot model
 
@@ -112,9 +140,13 @@ The `pr2_mechanism_model::RobotState` contains a [urdf](urdf) robot
 description object. There is lots of [documentation](urdf) on the urdf
 model, and there are even a number of [tutorials](urdf/Tutorials) you
 could look at. To get access to the urdf model use:
+
+
 ```
 urdf::Model m = robot_state_->robot_->robot_model_;
 ```
+
+
 
 ### Chain
 
@@ -122,12 +154,18 @@ The `pr2_mechanism_model::Chain` class provides an easy way to work
 with a kinematic chain that consists of multiple joints. Instead of
 finding all the joints by iterating through the `RobotState`, the
 `Chain` will pull out all the joints between a given root and tip
-link: ```
+link: 
+
+```
 pr2_mechanism_model::Chain chain;
 chain.init(robot_state, root_name, tip_name);
-``` From a `Chain` you can get the
+```
+
+ From a `Chain` you can get the
 positions/velocities/efforts of all the joints, and set the efforts of
-all joints: ```
+all joints: 
+
+```
 KDL::JointArray jnt_pos;
 chain.getPositions(jnt_pos);
 
@@ -139,10 +177,16 @@ chain.getEfforts(jnt_eff);
 
 KDL::JointArray jnt_eff;
 chain.setEfforts(jnt_eff);
-``` From a chain you can also extract a
-`KDL::Chain`: ```
+```
+
+ From a chain you can also extract a
+`KDL::Chain`: 
+
+```
 double position = js->position_;
-```0 See the
+```
+
+0 See the
 [code API](http://www.ros.org/doc/api/pr2_mechanism_model/html/classpr2__mechanism__model_1_1Chain.html)
 for more details.
 

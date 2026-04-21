@@ -28,6 +28,8 @@ these parameters can also be changed using
 [dynamic_reconfigure](dynamic_reconfigure) but some of them must be set
 at start-up.
 
+
+
 ```
 sub{
   0.name= image
@@ -42,7 +44,11 @@ pub{
   0.type= tf/tfMessage
   0.desc= TF related to the detected markers
 }
-``` ```
+```
+
+ 
+
+```
 param{
   0.name = ~<name>/show_camera_image
   0.default = false
@@ -110,3 +116,5 @@ param{
   14.desc = name of the pattern tf related to a multi marker
 }
 ```
+
+

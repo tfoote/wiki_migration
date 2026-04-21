@@ -16,6 +16,8 @@ move.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
 name=skin_demo_movebase
@@ -50,3 +52,5 @@ sub {
 srv {
 }
 ```
+
+

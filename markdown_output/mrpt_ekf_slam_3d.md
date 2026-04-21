@@ -29,16 +29,26 @@ The following video represents the EKF 3D SLAM in Rviz and MRPT GUI:
 
 The example of usage EKF 3D SLAM in online regime:
 
+
+
 ```
 roslaunch mrpt_ekf_slam_3d ekf_slam_3d.launch
-``` The example of usage EKF 3D SLAM from .rawlog
+```
+
+ The example of usage EKF 3D SLAM from .rawlog
 file:
+
+
 
 ```
 roslaunch mrpt_ekf_slam_3d ekf_slam_3d_rawlog.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = mrpt_ekf_slam_3d
@@ -129,3 +139,5 @@ roslaunch mrpt_ekf_slam_3d ekf_slam_3d_rawlog.launch
   }
  }
 ```
+
+

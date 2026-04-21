@@ -14,6 +14,8 @@ and is also extensible to Opensplice DDS.
 
 ## Compile
 
+
+
 ```
 mkdir -p catkin_ws/src
 cd catkin_ws/src
@@ -23,6 +25,8 @@ cd ..
 catkin_make -j1
 source devel/setup.bash
 ```
+
+
 
 ## Architecture
 
@@ -58,37 +62,59 @@ swarm algorithms to further facilitate the application development.
 
 #### create a swarm
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 ```
 
+
+
 #### get swarm id
+
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
 ```
 
+
+
 #### get swarm members
+
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
 ```
 
+
+
 #### join in a swarm unconditionally
+
+
 
 ```
 s.join();  //join in the swarm s
 ```
 
+
+
 #### leave a swarm unconditionally
+
+
 
 ```
 s.leave();  //leave the swarm s
 ```
 
+
+
 #### join in a swarm according to a certain condition
+
+
 
 ```
 bool checkID(unsigned int id)
@@ -106,7 +132,11 @@ boost::function<bool()> bf=boost::bind(&checkID, self_id);
 s.select(bf);  //the robot whose id is even join in the swarm s
 ```
 
+
+
 #### leave a swarm according to a certain condition
+
+
 
 ```
 bool checkID(unsigned int id)
@@ -121,7 +151,11 @@ boost::function<bool()> bf=boost::bind(&checkID, self_id);
 s.unselect(bf);  //the robot whose id is even leave the swarm s
 ```
 
+
+
 #### execute a swarm task
+
+
 
 ```
 void printID(unsigned int id)
@@ -134,7 +168,11 @@ boost::function<void()> f = boost::bind(&printID, self_id);
 s.execute(f);  //the robot in the swarm s print the id of themselves
 ```
 
+
+
 #### execute a swarm task
+
+
 
 ```
 void printID(unsigned int id)
@@ -146,59 +184,93 @@ boost::function<void()> f = boost::bind(&printID, self_id);
 
 s.execute(f);  //the robot in the swarm s print the id of themselves
 ```
+
+
 
 #### swarm break up operation
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```0
+```
+
+0
 
 #### swarm intersection operation
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```1
+```
+
+1
 
 #### swarm union operation
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```2
+```
+
+2
 
 #### swarm difference operation
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```3
+```
+
+3
 
 #### swarm negation operation
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```4
+```
+
+4
 
 ### Neighbors
 
 #### create a default neighbors structure
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```5
+```
+
+5
 
 #### create a user-defined data type neighbors structure
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```6
+```
+
+6
 
 #### neighbors foreach function
 
 foreach function perform a function that has no return value on each
 robot's data
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```7
+```
+
+7
 
 #### neighbors map function
 
@@ -206,18 +278,26 @@ map function perform a function that has a return value on each robot's
 data. generating a new Neighbors structure. Key is robot's id and value
 is the new data after transforming.
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```8
+```
+
+8
 
 #### neighbors reduce function
 
 reduce function perform a function on the whole neighbors data structure
 and get a single return value.
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
-```9
+```
+
+9
 
 #### neighbors filter function
 
@@ -225,10 +305,14 @@ filter function perform the filtering operation according to
 user-defined judging method on each tuple. generating a new neighbors
 structure.
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```0
+```
+
+0
 
 #### neighbors kin function
 
@@ -236,59 +320,87 @@ neighborsFilter function is a special filter essentially. generating a
 new neighbors structure. every robot in the new neighbors structure is
 in a specified swarm.
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```1
+```
+
+1
 
 #### neighbors nonkin function
 
 opposite of the kin
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```2
+```
+
+2
 
 ### VirtualStigmergy
 
 #### create a VirtualStigmergy
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```3
+```
+
+3
 
 #### virtualStigmergyPut
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```4
+```
+
+4
 
 #### virtualStigmergyGet
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```5
+```
+
+5
 
 #### get the size of a VirtualStigmergy
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```6 note: we could define VirtualStigmergy
+```
+
+6 note: we could define VirtualStigmergy
 structure using the simple type, for example int, float, string. For the
 user-defined data-type, we need to use the Macro definition defined in
 the micros_swarm_framework to serialize in order to store and transport
 data of this type. We provided two Macro definition:BOOST_SERIALIZE,
 MEMBER:
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```7
+```
+
+7
 
 ### NeighborCommunication
 
@@ -304,58 +416,94 @@ int id=s.id();
 
 start the Stage with 20 robots
 
-```
-Swarm s = Swarm(1);  //create a swarm s with id 1
-int id=s.id();
-```8 start the daemon nodes of all the robots
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 int id=s.id();
-```9 wait a minute, in order that all the daemon
+```
+
+8 start the daemon nodes of all the robots
+
+
+
+```
+Swarm s = Swarm(1);  //create a swarm s with id 1
+int id=s.id();
+```
+
+9 wait a minute, in order that all the daemon
 nodes are started successfully, then start the App1 of all the robots.
+
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
-```0
+```
+
+0
 
 ### Separation into Multiple Swarms
 
 start the Stage with 20 robots
 
-```
-Swarm s = Swarm(1);  //create a swarm s with id 1
-std::set<int> m=s.members();
-```1 start the daemon nodes of all the robots
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
-```2 wait a minute, in order that all the daemon
+```
+
+1 start the daemon nodes of all the robots
+
+
+
+```
+Swarm s = Swarm(1);  //create a swarm s with id 1
+std::set<int> m=s.members();
+```
+
+2 wait a minute, in order that all the daemon
 nodes are started successfully, then start the App2 of all the robots
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
-```3
+```
+
+3
 
 ### Flocking
 
 start the Stage with 20 robots
 
-```
-Swarm s = Swarm(1);  //create a swarm s with id 1
-std::set<int> m=s.members();
-```4 start the daemon nodes of all the robots
+
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
-```5 wait a minute, in order that all the daemon
+```
+
+4 start the daemon nodes of all the robots
+
+
+
+```
+Swarm s = Swarm(1);  //create a swarm s with id 1
+std::set<int> m=s.members();
+```
+
+5 wait a minute, in order that all the daemon
 nodes are started successfully, then start the App3 of all the robots.
 
+
+
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
 std::set<int> m=s.members();
-```6
+```
+
+6

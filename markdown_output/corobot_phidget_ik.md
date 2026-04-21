@@ -4,6 +4,8 @@ This driver works with a Phidgets Interface Kit, Phidget Spatial
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=corobot_phidget
@@ -78,3 +80,5 @@ param{
 }
 }
 ```
+
+

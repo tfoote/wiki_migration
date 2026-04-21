@@ -11,17 +11,29 @@ which grabs all transmissions available in the model)
 
 ## Installation
 
-Using conda: ```
+Using conda: 
+
+```
 conda install -c robostack ros-noetic-gazebo-ros-control-select-joints
 ```
 
-Using apt: ```
+
+
+Using apt: 
+
+```
 sudo apt-get install os-noetic-gazebo-ros-control-select-joints
 ```
 
-From source: ```
+
+
+From source: 
+
+```
 git clone https://github.com/tu-darmstadt-ros-pkg/gazebo_ros_control_select_joints.git
 ```
+
+
 
 ## Usage
 
@@ -31,6 +43,8 @@ plugin, which documentation can be found
 [here](https://classic.gazebosim.org/tutorials?tut=ros_control)
 
 To use the plugin, add the following to your robot's URDF:
+
+
 ```
 <gazebo>
   <plugin name="gazebo_ros_control_select_joints" filename="libgazebo_ros_control_select_joints.so">
@@ -39,6 +53,8 @@ To use the plugin, add the following to your robot's URDF:
   </plugin>
 </gazebo>
 ```
+
+
 
 with `<joints>` tag being the feature brought by this package. It
 expects a space separated list of joint names.

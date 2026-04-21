@@ -7,9 +7,13 @@ Navigation, and Control (GNC) projects. It defines an architecture to
 connect GNC algorithms to Unmanned Aerial Vehicles (UAV), and provides a
 suite of tools to help develop, qualify, and deploy your algorithms.
 
+
+
 ```wiki
 '''Note:''' This section presents the general features of this framework. For a step-by-step explanation on how to use it, please follow the [[real_time_simulator/Tutorials | tutorials]].
 ```
+
+
 
 ### Architecture
 
@@ -28,9 +32,13 @@ control and sensor data. These five nodes are contained in a ROS package
 that it can be connected with no modifications to a simulator or a
 testing facility during the first phases of development.
 
+
+
 ```wiki
 '''Note:''' This package only contains the definition of custom messages and services used in this architecture. To implement the rest of this architecture, please see the [[https://github.com/EPFLRocketTeam/template_gnc|template package]]
 ```
+
+
 
 ### Tools
 

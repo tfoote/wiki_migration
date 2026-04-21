@@ -38,10 +38,16 @@ configuration options on the Elmo MC website
 In the following, one example configuration of the recorder is given:\
 (See also __SimplIQ Software Manual__, 7.4 The Recorder).
 
+
+
 ```
 //Stop Recorder if it's active
 RR = -1
-``` ```
+```
+
+ 
+
+```
 // Record:
 // Main speed (index 0, ID1)
 // Main Position (index 1, ID2)
@@ -50,31 +56,57 @@ RR = -1
 // RC = 2^(Signal1 Index)  + 2^(Signal2 Index) + ... e.g. 2^0 + 2^1 + 2^9  + 2^15 = 33283
 RC = 33283
 ```
+
+
+
+
 ```
 // Set Recording Length
 // RL = (4096 / Number of recorded signals) as Elmo MC can store 4096 data points
 RL = 1024
-``` ```
+```
+
+ 
+
+```
 // Set Time Quantum, Default: RP=0 -> Time Quantum = TS * 4; TS is 90us by default
 RR = 0
 ```
+
+
+
+
 ```
 // Set Recording Gap
 // Recording Gap specifies, every which Time Quanta a data point is recorded
 RG = 1
-``` ```
+```
+
+ 
+
+```
 // -> Total Recording Time = 90us * 4 * RG * RL
-``` That all was the very
+```
+
+ That all was the very
 basic configuration of the recorder. Next, you can specify various
 trigger events or optionally start the recorder immediately.
+
+
 
 ```
 // Set trigger type to immediate and start recording
 RR = 2
-``` ```
+```
+
+ 
+
+```
 //or start at next BH-command
 RR = 1
-``` Now you have to wait
+```
+
+ Now you have to wait
 until recording of data has finished. To request the recorder state, use
 the general status register (binary interpreter SR), that contains 2
 bits (bit 16 - 17) telling the recorder state (0: Recorder inactive, no

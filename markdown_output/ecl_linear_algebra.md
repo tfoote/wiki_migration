@@ -5,6 +5,8 @@ Using ros eigen now, but you can also opt to use the internal
 
 ## Compiling & Linking
 
+
+
 ```cplusplus
 // If you want to use the internal eigen
 // #define ECL_EIGEN_IS_INTERNAL
@@ -35,6 +37,8 @@ Using ros eigen now, but you can also opt to use the internal
 
 using namespace ecl::linear_algebra
 ```
+
+
 
 Note that the namespace is simply an alias to the Eigen namespace. You
 can use either namespace, however the ecl namespace is preferred so its

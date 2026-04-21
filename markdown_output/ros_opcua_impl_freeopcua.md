@@ -15,11 +15,17 @@ Check the [ros_opcua_communication](ros_opcua_communication) page.
 
 The easiest way to start the nodes is using launch file:
 
+
+
 ```
 roslaunch ros_opcua_impl_freeopcua clinet.launch
 ```
 
+
+
 ### Nodes
+
+
 
 ```clearsilver
 name = client_node
@@ -52,6 +58,6 @@ srv {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(iirob/ros_opcua_communication)>>
+
+## Report a Bug

@@ -26,10 +26,14 @@ points.
 On Ubuntu Linux, please use the following commands to install the
 official package for your current ROS version.
 
+
+
 ```
 sudo apt-get update
 sudo apt-get install ros-`rosversion -d`-nerian-sp1
-``` Should there not be an appropriate package for
+```
+
+ Should there not be an appropriate package for
 your system and ROS version, please checkout the git repository and
 compile the code using catkin.
 
@@ -45,6 +49,8 @@ publishing the received data as ROS messages.
 ### Published Topics
 
 The node can publish the received data through three different topics:
+
+
 
 ```clearsilver
 
@@ -72,11 +78,15 @@ pub {
 }
 ```
 
+
+
 ### Parameters
 
 The behaviour of the node can be configured through various parameters.
 An example parameterization can be found in the included launch file
 `nerian_sp1.launch`. The following parameters are supported:
+
+
 
 ```clearsilver
 
@@ -149,6 +159,8 @@ param {
 }
 ```
 
+
+
 ### Testing
 
 The topics published by the nerian_sp1 node can be viewed with
@@ -157,18 +169,26 @@ The topics published by the nerian_sp1 node can be viewed with
 activated such that the disparity map can be displayed on a screen. In
 order to do so, please launch the image_view node as follows:
 
+
+
 ```
 rosrun image_view image_view image:=/nerian_sp1/disparity_map
 ```
+
+
 
 ![](https://nerian.com/blog/articles/images/image_view.jpg)
 
 For displaying the left camera image, please run the image_view node
 with the following command line:
 
+
+
 ```
 rosrun image_view image_view image:=/nerian_sp1/left_image
 ```
+
+
 
 ## Further Information
 

@@ -23,6 +23,8 @@ iteration through multiple patterns, as if it was one pattern.
 
 The following is an example of such a structure:
 
+
+
 ```
 root [tf0]                      # <transform-name> [<transform-number>]
     ├── grp1 [tf1]                  # transform as pattern group/container
@@ -45,6 +47,8 @@ root [tf0]                      # <transform-name> [<transform-number>]
     │   └── ...
     └── ...
 ```
+
+
 
 For information on how to specifically perform these operations, please
 check out the tutorials for getting started with pattern_manager below.

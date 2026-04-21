@@ -8,6 +8,8 @@ teleoperation node and the joy stick listener node.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = youbot_joy_teleop
@@ -25,6 +27,8 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 Before installing the `rail_youbot` stack, be sure to install the
@@ -35,12 +39,16 @@ packages can be found
 To install the `rail_youbot` stack, simply run the following commands
 in your shell:
 
+
+
 ```shell
 cd /path/to/your/local/ros/stacks
 git clone https://github.com/WPI-RAIL/rail_youbot.git
 roscd rail_youbot
 rosmake rail_youbot
 ```
+
+
 
 ### Startup
 
@@ -50,9 +58,13 @@ This file launches an instance of the `youbot_joy_teleop` and
 `joy_node` nodes. To launch these nodes, the following command can be
 used:
 
+
+
 ```
 roslaunch rail_youbot_teleop youbot_joy_teleop.launch
 ```
+
+
 
 You should now be able to teleoperate your youBot with a joystick.
 

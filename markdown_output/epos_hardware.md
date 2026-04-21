@@ -6,6 +6,8 @@ to allow use of EPOS motor controllers with ros_control.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = epos_hardware_node
@@ -18,11 +20,17 @@ node.0 {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-``` Each name that is specified as an argument will
+```
+
+ Each name that is specified as an argument will
 be loaded as a motor. See below for configuration
 
 ## Configuration
@@ -39,6 +47,8 @@ position and velocity parameters and control inputs are in the device
 units (this is normally rotations and rpm by default).
 
 ### Device Parameters
+
+
 
 ```clearsilver
 param {
@@ -59,7 +69,11 @@ param {
 }
 ```
 
+
+
 ### Motor Parameters
+
+
 
 ```clearsilver
 param {
@@ -70,7 +84,11 @@ param {
 }
 ```
 
+
+
 #### DC Motor Parameters
+
+
 
 ```clearsilver
 param {
@@ -87,7 +105,11 @@ param {
 }
 ```
 
+
+
 #### EC Motor Parameters
+
+
 
 ```clearsilver
 param {
@@ -107,7 +129,11 @@ param {
 }
 ```
 
+
+
 ### Sensor Parameters
+
+
 
 ```clearsilver
 param {
@@ -118,7 +144,11 @@ param {
 }
 ```
 
+
+
 #### Incremental Encoder Parameters
+
+
 
 ```clearsilver
 param {
@@ -132,7 +162,11 @@ param {
 }
 ```
 
+
+
 #### Hall Sensor Parameters
+
+
 
 ```clearsilver
 param {
@@ -143,7 +177,11 @@ param {
 }
 ```
 
+
+
 #### SSI Absolute Encoder Parameters
+
+
 
 ```clearsilver
 param {
@@ -163,54 +201,88 @@ param {
 }
 ```
 
+
+
 ### Safety Parameters
+
+
 
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```0
+```
+
+0
 
 ### Position Regulator Parameters
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```1
+```
+
+1
 
 ### Velocity Regulator Parameters
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```2
+```
+
+2
 
 ### Current Regulator Parameters
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```3
+```
+
+3
 
 ### Position Profile Parameters
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```4
+```
+
+4
 
 ### Velocity Profile Parameters
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```5
+```
+
+5
 
 ## Tools
 
 ### list_devices
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```6 Enumerate all EPOS devices on USB and
+```
+
+6 Enumerate all EPOS devices on USB and
 optionally RS232 ports
 
 ### get_state
 
+
+
 ```
 $ rosrun epos_hardware epos_hardware_node motor_name1 motor_name2 motor_name3
-```7 Get the position, velocity, and current from
+```
+
+7 Get the position, velocity, and current from
 the motor with the given serial number

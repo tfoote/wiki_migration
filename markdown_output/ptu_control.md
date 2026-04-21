@@ -11,7 +11,9 @@ controlling and tracking the Logitech Orbit AF camera.
 
 The following code reads pan and tilt angles from the command line,
 starts an action client, sends the desired pan/tilt angles, and waits
-for any feedback. ```python
+for any feedback. 
+
+```python
 #!/usr/env/bin python
 import roslib; roslib.load_manifest('ptu_control')
 import rospy
@@ -32,3 +34,5 @@ if __name__ == '__main__':
     result = ptu_action_test()
     print result
 ```
+
+

@@ -17,9 +17,15 @@ resources, i.e. the Communication Handler.
 
 To start an instance of the Communication Handler node, execute the
 following command from a terminal (it **does not require** any
-configuration parameters): ```
+configuration parameters): 
+
+```
 roslaunch qb_device_driver communication_handler.launch
 ```
+
+
+
+
 ```clearsilver
 name = qb_device_communication_handler
 desc = The Communication Handler provides seven services to interact with ''qbrobotics'' devices connected to the system. It is assumed that each device has a unique ID and that no other qbrobotics devices have the same ID.
@@ -51,3 +57,5 @@ srv {
   7.desc = Currently this service is only for qb SoftClaw Research. Set the desired control mode. The accepted request field should be ''deflection'' or ''position'' '''COMING SOON FOR ALL qbrobotics DEVICES'''
 }
 ```
+
+

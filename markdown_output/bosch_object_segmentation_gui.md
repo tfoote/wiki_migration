@@ -19,6 +19,8 @@ additional packages such as [grabcut_3d](grabcut_3d).
 
 The following [rosinstall](rosinstall) file will get everything for you:
 
+
+
 ```
 - svn: 
     local-name: bosch_object_segmentation_gui
@@ -46,10 +48,14 @@ The following [rosinstall](rosinstall) file will get everything for you:
     uri: 'https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_object_manipulation/trunk/'
 ```
 
+
+
 Note: To use the rosinstall file, create a new directory (e.g.
 interactive_segmentation), create a file named
 *interactive_segmentation.rosinstall* in this folder and paste the above
 text into it, go to the directory in a terminal and type
+
+
 
 ```
 rosinstall . interactive_segmentation.rosinstall /opt/ros/electric
@@ -58,21 +64,31 @@ rosmake pr2_interactive_manipulation
 rosmake bosch_object_segmentation_gui
 ```
 
+
+
 Please refer to the [rosinstall](rosinstall) page for more details.
 
 ## Running the Application
 
 On the PR2 launch the interactive manipulation stack
 
+
+
 ```
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_robot.launch
 ```
 
+
+
 On a desktop run (after exporting the ROS_MASTER_URI to your robot)
+
+
 
 ```
 roslaunch bosch_object_segmentation_gui pr2_interactive_manipulation_desktop.launch
 ```
+
+
 
 Once rviz is started select the interactive segmentation and wait until
 the window opens.

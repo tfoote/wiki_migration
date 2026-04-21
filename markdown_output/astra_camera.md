@@ -7,28 +7,48 @@ A ROS driver for Orbbec 3D cameras.
 This package supports ROS Kinetic and Melodic.
 
 1\. Install [ROS](http://wiki.ros.org/ROS/Installation). 1. Install
-dependences ```
+dependences 
+
+```
 sudo apt install ros-*-rgbd-launch ros-*-libuvc ros-*-libuvc-camera ros-*-libuvc-ros
-``` 1. Create a
+```
+
+ 1. Create a
 [ROS Workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)(if
-you don't have one) ```
+you don't have one) 
+
+```
 mkdir -p
 /catkin_ws/src
 /catkin_ws/
 catkin_make
-``` 1. Pull the repository
-into your ROS workspace ```
+```
+
+ 1. Pull the repository
+into your ROS workspace 
+
+```
 /catkin_ws/src
 git clone https://github.com/orbbec/ros_astra_camera
-``` 1. Create astra udev
-rule ```
+```
+
+ 1. Create astra udev
+rule 
+
+```
 roscd astra_camera
 ./scripts/create_udev_rules
-``` 1. Go to catkin workspace and compile
-astra_camera ```
+```
+
+ 1. Go to catkin workspace and compile
+astra_camera 
+
+```
 /catkin_ws
 catkin_make --pkg astra_camera
 ```
+
+
 
 ### Filter Enable (To be deprecated: recommend to try master branch at first)
 
@@ -100,19 +120,35 @@ please check [this tutorial](http://wiki.ros.org/rosservice).
 After launching an astra camera, you can get ir exposure by the
 following command
 
-1\. ir exposure ```
+1\. ir exposure 
+
+```
 rosservice call /camera/get_ir_exposure
-``` Next, you can change this value
-in this way ```
+```
+
+ Next, you can change this value
+in this way 
+
+```
 rosservice call /camera/set_ir_exposure
-``` 1. turn on/off laser
+```
+
+ 1. turn on/off laser
+
+
 ```
 rosservice call /camera/set_laser
 rosservice call /camera/set_laser
-``` 1. switch ir ```
+```
+
+ 1. switch ir 
+
+```
 rosservice call /camera/switch_ir_camera
 rosservice call /camera/switch_ir_camera
 ```
+
+
 
 For the other services, the usage is same as the above example.
 
@@ -126,6 +162,10 @@ your camera's uvc have serial number).
 If you received USB Buffer Error, you could try to increase your USBFS
 buffer size by the following command.
 
+
+
 ```
 echo 64 > /sys/module/usbcore/parameters/usbfs_memory_mb
 ```
+
+

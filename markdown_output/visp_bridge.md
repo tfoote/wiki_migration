@@ -33,13 +33,21 @@ For usage, see the
 [visp_bridge](visp_bridge) is part of [vision_visp](vision_visp) stack.
 
 -   To install [visp_bridge](visp_bridge) package run
-    ```
+    
+
+```
 sudo apt-get install ros-$ROS_DISTRO-visp-bridge
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Or to install the complete stack run ```
+-   Or to install the complete stack run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
+
+

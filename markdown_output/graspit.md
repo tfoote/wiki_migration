@@ -4,9 +4,13 @@ original repository, then build it.
 
 As any released ROS stack, it is available as a debian package:
 
+
+
 ```
 sudo apt-get install ros-[distro]-graspit-simulator
 ```
+
+
 
 The debian version of this stack comes with a fully built version of
 GraspIt!. This should allow you to start GraspIt! easily. More often
@@ -24,9 +28,13 @@ edit `CMakeLists.txt` and replace `Makefile.graspit.tarball` with
 `Makefile.graspit.svn`.
 
 Summarizing, an easy way to get GraspIt! under ROS from source code is
-do the following: ```
+do the following: 
+
+```
 sudo apt-get install ros-[distro]-graspit
 svn co https://code.ros.org/svn/wg-ros-pkg/stacks/graspit_simulator/tags/[distro] graspit_simulator
 //add graspit_simulator to your ROS_PACKAGE_PATH
 rosmake graspit
 ```
+
+

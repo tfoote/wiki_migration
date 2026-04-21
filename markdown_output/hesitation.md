@@ -35,32 +35,52 @@ may not work with previous versions of ROS.
 
 Make sure that roscore is running; if it is not, launch one.
 
+
+
 ```
 $ roscore
 ```
 
+
+
 Build the package in your machine.
+
+
 
 ```
 $ rosbuild --pre-clean hesitation
-``` or
+```
+
+ or
+
+
 
 ```
 $ make
 ```
 
+
+
 Type the following command to launch the necessary servers.
+
+
 
 ```
 $ roslaunch hesitation hesitation_ready.launch
 ```
 
+
+
 Now you are ready to launch the trajectory generator. Open a new
 terminal. Usage is:
+
+
 
 ```
 $ rosrun hesitation trajectory_generator [frequency] [xi] [yi] [zi] [xf] [yf] [zf] [mode]
 ```
+
+
 
 where each argument is described below:
 
@@ -83,11 +103,17 @@ as the Y-plane coordinate on space and should be a valid parameter.
 An example of launching the generator with valid parameters and to
 follow a P-type motion is provided below:
 
+
+
 ```
 $ rosrun hesitation trajectory_generator 100 0.6 -0.3 0.2 1.0 -0.3 0.1 1
 ```
 
+
+
 The output should look like this:
+
+
 
 ```
 [ INFO] [1348784846.143523089]: Z-axis motion follows: -1.840170x^2 +2.694272x + -0.754102 
@@ -104,12 +130,18 @@ The output should look like this:
 [ INFO] [1348784852.685514142, 9721.833000000]: Dwelling
 ```
 
+
+
 To verify that the trajectory is being correctly generated, you can use
 rxplot. In another terminal, type
+
+
 
 ```
 $ rxplot /traj_points/x /traj_points/z
 ```
+
+
 
 A new window should be opened, showing the format of X-axis and Z-axis
 trajectories in function of time.
@@ -119,9 +151,13 @@ hesitation (depending on the mode value set), the /collision_topic must
 be activated. For simulation purposes, a talker node can be used as
 following:
 
+
+
 ```
 $ rosrun hesitation collision_talker [0 or 1] [freq]
 ```
+
+
 
 where:
 
@@ -135,17 +171,25 @@ replaced by a sensor reading giving a boolean output.
 
 As an example, you can launch
 
+
+
 ```
 $ rosrun hesitation collision_talker 1 1
 ```
+
+
 
 That will inform the generator that collision has been detected and it
 will keep sending these messages each second. Make sure that it gets
 called at least twice -- after launching it once and seeing as output
 
+
+
 ```
 $ rosbuild --pre-clean hesitation
-```0
+```
+
+0
 
 you can Ctrl+C and stop the talker. The motion should switch from
 reach-and-retract to hesitation.

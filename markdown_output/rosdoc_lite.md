@@ -51,15 +51,21 @@ documentation Web sites.
 
 ### Installation
 
+
+
 ```
 apt-get install ros-$ROS_DISTRO-rosdoc-lite
 ```
+
+
 
 ### Generate document locally
 
 You can use `rosdoc_lite` to generate local copies of documentation.
 When you run the `rosdoc_lite` command, it will generate documentation
 into the 'doc' folder of the local directory.
+
+
 
 ```
 Usage: rosdoc_lite [options] [package_path]
@@ -74,11 +80,17 @@ Options:
   -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
                         If specified, will generate a doxygen tagfile in this
                         location. Ex: /home/user/tags/package.tag
-``` *Generate documentation for a package*:
+```
+
+ *Generate documentation for a package*:
+
+
 
 ```
 rosdoc_lite <path_of_package>
-``` . This will generate the documentation in
+```
+
+ . This will generate the documentation in
 `doc`. It's easiest if you point your Web browser to open
 `doc/html/index.html`. Note that you need `doxygen` installed on
 your machine (e.g., `sudo apt-get install doxygen`). You may also need
@@ -105,11 +117,15 @@ something else, you must place the following tag in the
 `<export>\...</export>` section of the `package.xml`, but this
 behavior is old:
 
+
+
 ```
 <export>
   <rosdoc config="rosdoc.yaml" />
 </export>
 ```
+
+
 
 #### Basic Syntax
 
@@ -131,6 +147,8 @@ Each builder may specify additional configuration keys.
 Here is an example from the [roslib](roslib) package, which performs
 both C++ and Python API documentation:
 
+
+
 ```
 - builder: epydoc
    output_dir: python
@@ -139,6 +157,8 @@ both C++ and Python API documentation:
    output_dir: c++
    file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox'
 ```
+
+
 
 #### Builder: Doxygen
 
@@ -188,6 +208,8 @@ Simple example:
 
 . From
 [ardrone_autonomy](https://github.com/tum-vision/ardrone_autonomy/blob/master/rosdoc.yaml)
+
+
 ```
 - builder: doxygen
   name: C++ API
@@ -196,11 +218,17 @@ Simple example:
   exclude_patterns: '*/ARDroneLib/*'
 ```
 
-. Or using the README.md as mainpage: ```
+
+
+. Or using the README.md as mainpage: 
+
+```
 - builder: doxygen
   file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox *.md'
   use_mdfile_as_mainpage: README.md
 ```
+
+
 
 #### Builder: Epydoc
 
@@ -221,10 +249,14 @@ Simple example:
 
 . From
 [dynamic_reconfigure](https://github.com/ros/dynamic_reconfigure/blob/master/rosdoc.yaml)
+
+
 ```
 - builder: epydoc
   config: epydoc.config
 ```
+
+
 
 #### Builder: Sphinx
 
@@ -242,10 +274,14 @@ Simple example:
 
 . From
 [rocon_uri/rosdoc.yaml](https://github.com/robotics-in-concert/rocon_tools/blob/7900b9aaa9242c8c91b42f96c820afe78b84363a/rocon_uri/rosdoc.yaml)
+
+
 ```
 - builder: sphinx           # specify document generator. e.g) doxygen, epidoc, sphinx
   sphinx_root_dir: doc      # document directory
 ```
+
+
 
 #### Builder: external
 
@@ -272,9 +308,13 @@ To generate a tag file during a documentation run, simply pass the
 `-g` option to rosdoc lite with a path to the desired location of the
 tagfile. For example:
 
+
+
 ```
 rosdoc_lite -o doc -g doc/tags/my_package.tag /path/to/my/package
 ```
+
+
 
 ### (Option) Using External Tag Files
 
@@ -290,6 +330,8 @@ dictionaries, where each dictionary has the following standard keys:
 
 An example tags (example_tags.yaml) file is shown below:
 
+
+
 ```
 Usage: rosdoc_lite [options] [package_path]
 
@@ -303,9 +345,13 @@ Options:
   -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
                         If specified, will generate a doxygen tagfile in this
                         location. Ex: /home/user/tags/package.tag
-```0 Running `rosdoc_lite` with this file to get
+```
+
+0 Running `rosdoc_lite` with this file to get
 cross references might look something like this:
 
+
+
 ```
 Usage: rosdoc_lite [options] [package_path]
 
@@ -319,7 +365,9 @@ Options:
   -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
                         If specified, will generate a doxygen tagfile in this
                         location. Ex: /home/user/tags/package.tag
-```1
+```
+
+1
 
 ### Linking to External Third Party Documentation
 
@@ -327,6 +375,8 @@ For third party packages, rosdoc_lite can automatically create a doxygen
 main page for the package, that includes a link to the third party
 documentation. To do so, you must add a line to your manifest.xml
 
+
+
 ```
 Usage: rosdoc_lite [options] [package_path]
 
@@ -340,7 +390,9 @@ Options:
   -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
                         If specified, will generate a doxygen tagfile in this
                         location. Ex: /home/user/tags/package.tag
-```2
+```
+
+2
 
 ## Automatically Generated Online Documentation on ros.org
 

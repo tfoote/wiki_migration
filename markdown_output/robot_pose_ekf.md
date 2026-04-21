@@ -17,7 +17,9 @@ configurable parameters:
 The configuration can be modified in the launch file, which looks
 something like this:
 
-. ```
+. 
+
+```
 <launch>
   <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
     <param name="output_frame" value="odom"/>
@@ -33,22 +35,34 @@ something like this:
  </launch>
 ```
 
+
+
 ### Running
 
--   **Build** the package ```
+-   **Build** the package 
+
+```
 $ rosdep install robot_pose_ekf
  $ roscd robot_pose_ekf
  $ rosmake
 ```
 
+
+
 ```{=html}
 <!-- -->
 ```
--   **Run** the robot pose ekf ```
+-   **Run** the robot pose ekf 
+
+```
 $ roslaunch robot_pose_ekf.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -68,6 +82,8 @@ node.0{
 }
 ```
 
+
+
 The `robot_pose_ekf` node does not require all three sensor sources to
 be available all the time. Each source gives a pose estimate and a
 covariance. The sources operate at different rates and with different
@@ -75,6 +91,8 @@ latencies. A source can appear and disappear over time, and the node
 will automatically detect and use the available sensors.To add your own
 sensor inputs, check out
 [the Adding a GPS sensor tutorial](robot_pose_ekf/Tutorials/AddingGpsSensor)
+
+
 
 ```clearsilver
 pub {
@@ -84,6 +102,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 prov_tf {
   0.from = odom_combined  
@@ -91,6 +113,8 @@ prov_tf {
   0.desc= 
 }
 ```
+
+
 
 ## How Robot Pose EKF works
 

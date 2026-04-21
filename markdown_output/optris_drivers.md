@@ -2,6 +2,8 @@
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = optris_imager_node
@@ -43,7 +45,11 @@ srv{
   desc = sets temperature range
   }
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.1 {
  name = optris_colorconvert_node
  desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
@@ -82,6 +88,10 @@ srv{
   }
 }
 ```
+
+
+
+
 ```clearsilver
 node.2 {
  name = optris_binary_image_node
@@ -104,6 +114,8 @@ param {
 }
 ```
 
+
+
 ## Basic Installation
 
 Binary driver versions for the Optris thermal imager series are
@@ -124,9 +136,13 @@ applications.
 
 Start driver node that publishes thermal data.
 
+
+
 ```
 $ rosrun optris_drivers optris_imager_node _xmlConfig:=config/12090031.xml
-``` The xml configuration file is camera specific.
+```
+
+ The xml configuration file is camera specific.
 It comprises the following values:
 
 -   fov: optic's field of view
@@ -148,26 +164,46 @@ It comprises the following values:
 Start color conversion node, that publishes data in false color
 representation.
 
+
+
 ```
 $ rosrun optris_drivers optris_colorconvert_node _palette:=6 _paletteScaling:=2 _temperatureMin:=10 _temperatureMax:=30
-``` Alternatively, both nodes are started in the
+```
+
+ Alternatively, both nodes are started in the
 namespace "optris" with
+
+
 
 ```
 $ roslaunch optris_drivers.launch
-``` Display thermal images in false color code
+```
+
+ Display thermal images in false color code
+
+
 
 ```
 $ rosrun image_view image_view image:=/optris/thermal_image_view
-``` Switch off automatic shutter flag control
+```
+
+ Switch off automatic shutter flag control
+
+
 
 ```
 $ rosservice call /optris/optris_imager_node/auto_flag 0
-``` Trigger shutter flag manually
+```
+
+ Trigger shutter flag manually
+
+
 
 ```
 $ rosservice call /optris/optris_imager_node/force_flag
 ```
+
+
 
 ### Using Compression
 
@@ -176,51 +212,17 @@ over a low-bandwidth network, you can employ the PNG compression
 mechanism of image_transport. Launch the subscriber of the thermal_image
 topic with the following _image_transport option:
 
+
+
 ```
 $ rosrun optris_drivers optris_colorconvert_node _palette:=6 _paletteScaling:=2 _temperatureMin:=10 _temperatureMax:=30 _image_transport:=compressed
-``` Since thermal images are in 1-channel 16-Bit
+```
+
+ Since thermal images are in 1-channel 16-Bit
 integer format, JPEG compression can not be used. Moreover, JPEG is not
 lossless. Switch to PNG with:
 
-```clearsilver
-node.1 {
- name = optris_colorconvert_node
- desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
- pub {
-  1.name= thermal_image_view
-  1.type= sensor_msgs/Image
-  1.desc= color encoded image to be displayed with e.g. image_view
-  2.name= visible_image_view
-  2.type= sensor_msgs/Image
-  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
-}
-param {
-  1.name= palette
-  1.type= int
-  1.desc= coloring palette in the range of 1..12
-  1.default= 6
-  2.name= paletteScaling
-  2.type= int
-  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
-  2.default= 2
-  3.name= temperatureMin
-  3.type= int
-  3.desc= minimum value of temperature range (if manual scaling method chosen)
-  3.default= 20
-  4.name= temperatureMax
-  4.type= int
-  4.desc= maximum value of temperature range (if manual scaling method chosen)
-  4.default= 40
- }
-}
-srv{
-  0{
-  name = ~palette
-  type = optris_drivers/Palette
-  desc = switches color conversion palette (valid values: 1..12).
-  }
-}
-```0 or with the help of a graphical interface:
+
 
 ```clearsilver
 node.1 {
@@ -260,49 +262,56 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```1 With rxgraph the usage of compression can be
+```
+
+0 or with the help of a graphical interface:
+
+
+
+```clearsilver
+node.1 {
+ name = optris_colorconvert_node
+ desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
+ pub {
+  1.name= thermal_image_view
+  1.type= sensor_msgs/Image
+  1.desc= color encoded image to be displayed with e.g. image_view
+  2.name= visible_image_view
+  2.type= sensor_msgs/Image
+  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
+}
+param {
+  1.name= palette
+  1.type= int
+  1.desc= coloring palette in the range of 1..12
+  1.default= 6
+  2.name= paletteScaling
+  2.type= int
+  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
+  2.default= 2
+  3.name= temperatureMin
+  3.type= int
+  3.desc= minimum value of temperature range (if manual scaling method chosen)
+  3.default= 20
+  4.name= temperatureMax
+  4.type= int
+  4.desc= maximum value of temperature range (if manual scaling method chosen)
+  4.default= 40
+ }
+}
+srv{
+  0{
+  name = ~palette
+  type = optris_drivers/Palette
+  desc = switches color conversion palette (valid values: 1..12).
+  }
+}
+```
+
+1 With rxgraph the usage of compression can be
 verified. The remaining bandwidth can be displayed with:
 
-```clearsilver
-node.1 {
- name = optris_colorconvert_node
- desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
- pub {
-  1.name= thermal_image_view
-  1.type= sensor_msgs/Image
-  1.desc= color encoded image to be displayed with e.g. image_view
-  2.name= visible_image_view
-  2.type= sensor_msgs/Image
-  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
-}
-param {
-  1.name= palette
-  1.type= int
-  1.desc= coloring palette in the range of 1..12
-  1.default= 6
-  2.name= paletteScaling
-  2.type= int
-  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
-  2.default= 2
-  3.name= temperatureMin
-  3.type= int
-  3.desc= minimum value of temperature range (if manual scaling method chosen)
-  3.default= 20
-  4.name= temperatureMax
-  4.type= int
-  4.desc= maximum value of temperature range (if manual scaling method chosen)
-  4.default= 40
- }
-}
-srv{
-  0{
-  name = ~palette
-  type = optris_drivers/Palette
-  desc = switches color conversion palette (valid values: 1..12).
-  }
-}
-```2 If you use the roslaunch file, uncomment the
-following line
+
 
 ```clearsilver
 node.1 {
@@ -342,7 +351,54 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```3 and remind the namespace "optris".
+```
+
+2 If you use the roslaunch file, uncomment the
+following line
+
+
+
+```clearsilver
+node.1 {
+ name = optris_colorconvert_node
+ desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
+ pub {
+  1.name= thermal_image_view
+  1.type= sensor_msgs/Image
+  1.desc= color encoded image to be displayed with e.g. image_view
+  2.name= visible_image_view
+  2.type= sensor_msgs/Image
+  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
+}
+param {
+  1.name= palette
+  1.type= int
+  1.desc= coloring palette in the range of 1..12
+  1.default= 6
+  2.name= paletteScaling
+  2.type= int
+  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
+  2.default= 2
+  3.name= temperatureMin
+  3.type= int
+  3.desc= minimum value of temperature range (if manual scaling method chosen)
+  3.default= 20
+  4.name= temperatureMax
+  4.type= int
+  4.desc= maximum value of temperature range (if manual scaling method chosen)
+  4.default= 40
+ }
+}
+srv{
+  0{
+  name = ~palette
+  type = optris_drivers/Palette
+  desc = switches color conversion palette (valid values: 1..12).
+  }
+}
+```
+
+3 and remind the namespace "optris".
 
 ### Using BI-SPECTRAL technology
 
@@ -355,6 +411,8 @@ optris_colorconvert_node subscribes to visible_image and publishes
 visible_image_view, which is in rgb8 format. Either raw or PNG/JPEG
 compression can be used.
 
+
+
 ```clearsilver
 node.1 {
  name = optris_colorconvert_node
@@ -393,7 +451,9 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```4
+```
+
+4
 
 ## Troubleshooting
 
@@ -419,45 +479,7 @@ If you cannot get image data from above mentioned topics, check
     adjusted in this xmlConfig file, too. The calibration files are
     looked up in dependency of these settings, e.g.,
 
-```clearsilver
-node.1 {
- name = optris_colorconvert_node
- desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
- pub {
-  1.name= thermal_image_view
-  1.type= sensor_msgs/Image
-  1.desc= color encoded image to be displayed with e.g. image_view
-  2.name= visible_image_view
-  2.type= sensor_msgs/Image
-  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
-}
-param {
-  1.name= palette
-  1.type= int
-  1.desc= coloring palette in the range of 1..12
-  1.default= 6
-  2.name= paletteScaling
-  2.type= int
-  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
-  2.default= 2
-  3.name= temperatureMin
-  3.type= int
-  3.desc= minimum value of temperature range (if manual scaling method chosen)
-  3.default= 20
-  4.name= temperatureMax
-  4.type= int
-  4.desc= maximum value of temperature range (if manual scaling method chosen)
-  4.default= 40
- }
-}
-srv{
-  0{
-  name = ~palette
-  type = optris_drivers/Palette
-  desc = switches color conversion palette (valid values: 1..12).
-  }
-}
-```5 . will configure the file names:
+
 
 ```clearsilver
 node.1 {
@@ -497,12 +519,60 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```6
+```
+
+5 . will configure the file names:
+
+
+
+```clearsilver
+node.1 {
+ name = optris_colorconvert_node
+ desc = ROS driver node that subscribes the data topics of optris_imager_node (thermal_image and if available visible_image). Data is converted into displayable color representations.
+ pub {
+  1.name= thermal_image_view
+  1.type= sensor_msgs/Image
+  1.desc= color encoded image to be displayed with e.g. image_view
+  2.name= visible_image_view
+  2.type= sensor_msgs/Image
+  2.desc= RGB image from visible channel (bi-spectral technology necessary, only PI200/PI230)
+}
+param {
+  1.name= palette
+  1.type= int
+  1.desc= coloring palette in the range of 1..12
+  1.default= 6
+  2.name= paletteScaling
+  2.type= int
+  2.desc= scaling method for color conversion (determination of temperature bounds for high contrast coloring, 1=manual, 2=min/max, 3=1sigma, 4=3sigma)
+  2.default= 2
+  3.name= temperatureMin
+  3.type= int
+  3.desc= minimum value of temperature range (if manual scaling method chosen)
+  3.default= 20
+  4.name= temperatureMax
+  4.type= int
+  4.desc= maximum value of temperature range (if manual scaling method chosen)
+  4.default= 40
+ }
+}
+srv{
+  0{
+  name = ~palette
+  type = optris_drivers/Palette
+  desc = switches color conversion palette (valid values: 1..12).
+  }
+}
+```
+
+6
 
 -   For PI400/450: If your application is crashing while calling the
     constructor, check whether the file Formats.def has the following
     entry:
 
+
+
 ```clearsilver
 node.1 {
  name = optris_colorconvert_node
@@ -541,4 +611,6 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```7
+```
+
+7

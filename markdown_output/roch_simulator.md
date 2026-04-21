@@ -21,5 +21,3 @@ For how to using simulators with Roch, please see
 -   Primary simulation in Gazebo simulator with ROS.
 
 ## Report a Bug
-
-<<GitHubIssues(SawYer-Robotics/roch_simulator)>>

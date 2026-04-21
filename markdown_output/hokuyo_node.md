@@ -5,12 +5,16 @@ Image credit:
 
 ## For newer ROS distro than Indigo
 
+
+
 ```wiki
 Looking for a newer driver?  [[urg_node|urg_node]] is fully [[http://ros.org/reps/rep-0138.html|REP-138]] compliant AND compatible with Ethernet/MultiEcho Hokuyos!  Hokuyo_node will remain maintained for current users and PR2s.
 
 Check it out at:
 [[urg_node|http://ros.org/wiki/urg_node]]
 ```
+
+
 
 ## Supported Hardware
 
@@ -57,6 +61,8 @@ version, and is proportional to the `cluster` parameter.
   -- ----------------------------------------------------------- -- ------------------------------------------- -- ------------------------- --
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -143,6 +149,8 @@ name=Read-only parameters
 }
 ```
 
+
+
 ##### Parameter interactions
 
 Some parameter settings can cause problems, usually due to speed
@@ -159,15 +167,23 @@ The `getID` and `getFirmwareVersion` programs can be used to get
 information about a hokuyo laser scanner. Each of them can be invoked in
 a human readable way:
 
+
+
 ```
 $ rosrun hokuyo_node getID /dev/ttyACM0
 Device at /dev/ttyACM0 has ID H0807228
-``` or in a script friendly way:
+```
+
+ or in a script friendly way:
+
+
 
 ```
 $ rosrun hokuyo_node getID /dev/ttyACM0 --
 H0807228
-``` If they fail to connect to the device they will
+```
+
+ If they fail to connect to the device they will
 retry for about ten seconds before giving up.
 
 ## Using udev to Give Hokuyos Consistent Device Names
@@ -178,11 +194,17 @@ device name to be given to each device, even if the order in which they
 are plugged in varies. The following udev rule should work universally
 on any ROS system:
 
+
+
 ```
 KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/hydro/env.sh rosrun hokuyo_node getID %N q", SYMLINK+="sensors/hokuyo_%c"
-``` This udev rule sets up a device name that is
+```
+
+ This udev rule sets up a device name that is
 based on the Hokuyo's hardware ID. The PR2 then has a symlink to that
 name that gets changed if the Hokuyo is replaced:
+
+
 
 ```
 $ ls -l /etc/ros/sensors/base_hokuyo
@@ -190,6 +212,8 @@ lrwxrwxrwx 1 root root 28 2010-01-12 15:53 /etc/ros/sensors/base_hokuyo -> /dev/
 $ ls -l /dev/sensors/hokuyo_H0902620
 lrwxrwxrwx 1 root root 10 2010-04-12 12:34 /dev/sensors/hokuyo_H0902620 -> ../ttyACM1
 ```
+
+
 
 ## Communication Protocol Documentation
 

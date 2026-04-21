@@ -80,6 +80,8 @@ An example of registering such joint interfaces can be seen in
 In `URDF` in your robot, add the following tag to apply
 [steer_bot_hardware_gazebo](steer_bot_hardware_gazebo).
 
+
+
 ```
 <!-- Gazebo plugin for ROS Control -->
   <gazebo>
@@ -90,6 +92,8 @@ In `URDF` in your robot, add the following tag to apply
   </gazebo>
 ```
 
+
+
 An example of a xacro is `description.gazebo.xacro` in
 [steer_bot_hardware_gazebo](steer_bot_hardware_gazebo).
 
@@ -99,6 +103,8 @@ You need to register ROS parameter to apply the plugin to your original
 robot.
 
 #### Joint Parameters
+
+
 
 ```clearsilver
 param{
@@ -121,7 +127,11 @@ param{
 }
 ```
 
+
+
 #### Virtual Ackermann link mechanism related parameters
+
+
 
 ```clearsilver
 param{
@@ -138,13 +148,19 @@ param{
 }
 ```
 
+
+
 #### PID parameters to send velocity to the rear wheel joints in Gazebo
+
+
 
 ```
 gains:
   base_to_right_rear_wheel  :  {p: 100000.0, d: 10.0, i: 0.50, i_clamp: 3.0}
   base_to_left_rear_wheel   :  {p: 100000.0, d: 10.0, i: 0.50, i_clamp: 3.0}
 ```
+
+
 
 [cirkit_unit03_simulator](cirkit_unit03_simulator) has an example launch
 file to spawn [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03) with

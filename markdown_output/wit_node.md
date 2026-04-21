@@ -22,9 +22,13 @@ temperature, latitude,longitude, altitude, satellites number .etc
 
 Launch the only ROS launch file:
 
+
+
 ```
 roslaunch wit_node wit.launch
 ```
+
+
 
 ## Dependencies and Install
 
@@ -34,11 +38,17 @@ roslaunch wit_node wit.launch
 
 Install ecl by
 
+
+
 ```
 sudo apt install ros-<distro>-ecl
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -70,3 +80,5 @@ sub {
   0.desc= Reset the offset yaw angle to current yaw,  so the zero direction is turned to current direction.
 }
 ```
+
+

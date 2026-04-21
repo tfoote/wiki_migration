@@ -3,6 +3,8 @@
 `ectools` contains a utility for recording dropped packers over a
 loopback link.
 
+
+
 ```clearsilver
 name = ecstats
 desc = Counts dropped packets over loopback link
@@ -13,7 +15,11 @@ pub {
 }
 ```
 
+
+
 #### Command Line Usage
+
+
 
 ```
 usage: bin/ecstats [-i <interface>] [-s <size>] [-d <delay>] [-l <preload>] [-v]
@@ -25,6 +31,8 @@ Publishes results on 'ecstats' topic.
   -v : increase verbosity
   -h : display this help
 ```
+
+
 
 This node generates data that is listened by the
 [pr2_hardware_test_monitor](pr2_hardware_test_monitor). It is used in

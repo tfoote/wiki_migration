@@ -1,8 +1,12 @@
 ![](attachment:maps.jpg)
 
+
+
 ```wiki
 The code has been removed from the public domain. The technology is available as commercial produces from [[http://www.kaarta.com|Kaarta]].
 ```
+
+
 
 ## Overview
 
@@ -36,25 +40,37 @@ link on the top of this page. The program can be started by ROS launch
 file (available in the downloaded folder), which starts four nodes and
 rivz:
 
+
+
 ```
 roslaunch loam_continuous.launch
 ```
+
+
 
 Datasets are available for download at the bottom of this page. Please
 make sure the data files are for the continuous spin version (not back
 and forth spin or Velodyne version). With the program running (from the
 launch file), users can play the data file:
 
+
+
 ```
 rosbag play data_file_name.bag
 ```
 
+
+
 Note that if a slow computer is used, users can try to play the data
 file at a low speed, e.g. play the data file at half speed:
+
+
 
 ```
 rosbag play data_file_name.bag -r 0.5
 ```
+
+
 
 ## Datasets
 

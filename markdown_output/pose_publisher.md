@@ -16,6 +16,8 @@ used in multi-robot systems.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = pose_publisher
@@ -42,16 +44,24 @@ node.0 {
 }
 ```
 
+
+
 ## Usage
+
+
 
 ```
 rosrun pose_publisher pose_publisher
 ```
 
+
+
 ## Related Documentation
 
 Please refer to the following paper to retrieve more information on the
-node: ```
+node: 
+
+```
 @inproceedings{yz14simpar,
 author = {Zhi Yan and Luc Fabresse and Jannik Laval and Noury Bouraqadi},
 title = {Team Size Optimization for Multi-robot Exploration},
@@ -62,6 +72,8 @@ month = {October},
 year = {2014}
 }
 ```
+
+
 
 ## Support
 

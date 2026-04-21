@@ -12,9 +12,13 @@ The state that is exchanged is read from a [SMACH](SMACH) state machine.
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch state_exchanger state_exchanger.launch
-``` to launch the
+```
+
+ to launch the
 `state_exchanger` node.
 
 The launch file can be configured with following parameters:
@@ -29,6 +33,8 @@ In the `param` subdirectory there is the parameter file
 `state_exchanger` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -74,6 +80,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

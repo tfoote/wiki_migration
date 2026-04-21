@@ -13,10 +13,14 @@ rviz visualization.
     the [ar_pose_demo package](http://www.ros.org/wiki/ar_pose_demo))
 -   Start the ar_pose_ekf component
 
+
+
 ```
 roscd ar_pose_ekf
 ./runekf.sh
 ```
+
+
 
 -   Read out the fused estimated with e.g. rviz (demo vcg files are
     available in the

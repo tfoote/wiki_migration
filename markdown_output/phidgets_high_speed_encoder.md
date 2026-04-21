@@ -7,9 +7,13 @@ This package provides a ROS node for Phidget's high speed 4-Input
 
 Assuming you already have roscore running on another terminal:
 
+
+
 ```shell
 rosrun phidgets_high_speed_encoder phidgets_high_speed_encoder _joint0_name:=wheel_FR _joint1_name:=wheel_FL _joint2_name:=wheel_RR _joint3_name:=wheel_RL _serial_number:=1234567 _PUBLISH_RATE:=20
 ```
+
+
 
 Published topics:
 

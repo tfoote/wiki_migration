@@ -10,9 +10,13 @@ particularly the type of information used by the
 ([definition here](CS/NodeAPI)).
 
 To generate your own documentation, run the following command.
+
+
 ```
 rosrun roswiki_node roswiki [source code files]
 ```
+
+
 
 You can list any number of source code files for a given node and the
 output will be code that you can paste into the ROS wiki.

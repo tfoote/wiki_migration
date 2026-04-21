@@ -19,9 +19,13 @@ are required:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch area_division area_division.launch
-``` to launch the
+```
+
+ to launch the
 `area_division` node.
 
 The launch file can be configured with following parameters:
@@ -36,6 +40,8 @@ In the `param` subdirectory there is the parameter file
 `area_division` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -128,6 +134,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

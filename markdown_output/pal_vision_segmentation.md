@@ -12,6 +12,8 @@ nodes to help with this image processing step.
 
 ## ROS API
 
+
+
 ```clearsilver
 name=disparity_segmentation
 node {
@@ -43,6 +45,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name=histogram_segmentation
 node {
@@ -65,6 +71,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name=template_segmentation
 node {
@@ -86,3 +96,5 @@ pub {
   1.desc = Mask.
 }
 ```
+
+

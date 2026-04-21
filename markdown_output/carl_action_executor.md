@@ -8,6 +8,8 @@ recognition, and pick-and-place.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_action_executor
@@ -77,6 +79,8 @@ node.0 {
 }
 ```
 
+
+
 ## Actions Supported
 
 Actions are specified using the `carl_action_executor/GeneralAction`
@@ -127,7 +131,9 @@ specified pose.
 ## Installation
 
 To install the `carl_action_executor` package, you can install from
-source with the following commands: . ```shell
+source with the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_action_executor.git
 cd ..
@@ -135,10 +141,16 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 The `carl_action_executor` can be started by simply running the node:
 
-. ```
+. 
+
+```
 rosrun carl_action_executor carl_action_executor
 ```
+
+

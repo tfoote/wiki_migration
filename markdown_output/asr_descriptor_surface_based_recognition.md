@@ -121,9 +121,13 @@ or you will get an exception at startup.
 
 To start the process, call:
 
+
+
 ```
 roslaunch asr_descriptor_surface_based_recognition descriptor_surface_based_recognition.launch
-``` Now you can call one of the provided services
+```
+
+ Now you can call one of the provided services
 to add or remove objects to/from the list of recognizable ones.
 
 ## ROS Nodes

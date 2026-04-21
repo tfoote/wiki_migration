@@ -35,10 +35,14 @@ values will be used otherwise.
 
 Test with:
 
+
+
 ```bash
 roscd kinect_2d_scanner
 roslaunch kinect_2d_scanner_test.launch
 ```
+
+
 
 Read
 [kinect_2d_scanner_test.launch](http://mrpt-ros-pkg.googlecode.com/svn/trunk/mrpt_hwdrivers/kinect_2d_scanner/kinect_2d_scanner_test.launch)

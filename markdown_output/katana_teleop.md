@@ -3,6 +3,8 @@
 This package provides the `katana_teleop_key` ROS node, which provides
 a keyboard-based teleoperation for the Neuronics Katana 450 arm.
 
+
+
 ```clearsilver
 
 node.0 {
@@ -30,6 +32,8 @@ sub{
   }
 }
 ```
+
+
 
 #### Usage
 

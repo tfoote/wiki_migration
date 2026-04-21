@@ -11,9 +11,13 @@ Serial(RS422) and EtherCAT electronics.
 
 ### Installing from binaries
 
-Run in a terminal: ```
+Run in a terminal: 
+
+```
 $ sudo apt install ros-$ROS_DISTRO-bota-driver
 ```
+
+
 
 ### Installing from Source
 
@@ -33,17 +37,25 @@ ROS, so it's a binary dependency for a source installation.
 
 To build the `bota_driver` from source, clone the latest version from
 the source code repository into your catkin workspace:
+
+
 ```
 $ cd catkin_workspace/src
 $ git clone https://gitlab.com/botasys/bota_driver.git
 ```
 
+
+
 Before building, you need to make sure that all the binary dependencies
 are installed. To do so, run in a terminal:
+
+
 
 ```
 $ cd catkin_workspace && rosdep update && rosdep install --from-path src --ignore-src -y
 ```
+
+
 
 #### Building
 
@@ -51,13 +63,19 @@ Compile the package using:
 
 1\. The `catkin_tools` package:
 
+
+
 ```
 $ cd catkin_workspace
 $ catkin build bota_driver
 ```
 
+
+
 2\. If you don't have the `catkin_tools` package, you can still build
 from source with `catkin_make`:
+
+
 
 ```
 $ cd catkin_workspace
@@ -66,13 +84,19 @@ $ catkin_make --only-pkg-with-deps bota_driver
 # catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
 
+
+
 3\. Finally, you can build from source with `catkin_make_isolated`.
 The only difference is that each package will be processed sequentially:
+
+
 
 ```
 $ cd catkin_workspace
 $ catkin_make_isolated --pkg bota_driver
 ```
+
+
 
 ## Packages
 
@@ -112,6 +136,8 @@ class.
 and services used for communication over ROS.
 
 ## Nodes
+
+
 
 ```clearsilver
 name = rokubimini
@@ -153,6 +179,8 @@ param {
   4.default = 0.01
 }
 ```
+
+
 
 ## Configuration
 
@@ -241,7 +269,9 @@ The following parameters can be set in `rokubimini_sensor.yaml` in the
 
 ### Configuration File Examples
 
-1\. `setup.yaml` example ```
+1\. `setup.yaml` example 
+
+```
 rokubiminis:
   - name:                     ft_sensor0
     configuration_file:       rokubimini_sensor.yaml
@@ -253,8 +283,12 @@ rokubiminis:
     product_code:             2
     ethercat_bus:             eth0
     ethercat_address:         1
-``` 2.
-`rokubimini_sensor.yaml` example ```
+```
+
+ 2.
+`rokubimini_sensor.yaml` example 
+
+```
 set_reading_to_nan_on_disconnect:  false
 
 imu_acceleration_range: 3
@@ -325,6 +359,8 @@ sensor_calibration:
     6_6:  -0.0000077
 ```
 
+
+
 ## Launch File Examples
 
 ### Default parameters
@@ -333,11 +369,15 @@ sensor_calibration:
 want to have access to the EtherCAT devices. For example, this can be
 done with escalated privileges (e.g. `su root`):
 
+
+
 ```
 $ su root
 # source /path/to/catkin_workspace/devel/setup.bash
 # roslaunch bota_device_driver rokubimini.launch
 ```
+
+
 
 **Note:** In the above example it is assumed that the `root` user has
 a bash terminal. If this isn't the case change it accordingly.
@@ -346,24 +386,36 @@ a bash terminal. If this isn't the case change it accordingly.
 without `root` privileges provided that the user is in the `dialout`
 group. This can be done with:
 
+
+
 ```
 $ cd catkin_workspace/src
 $ git clone https://gitlab.com/botasys/bota_driver.git
-```0 Please log off and log in again for the
+```
+
+0 Please log off and log in again for the
 changes to take effect!
 
 ### Custom parameters
 
-1\. Example with custom `time_step`: ```
-$ cd catkin_workspace/src
-$ git clone https://gitlab.com/botasys/bota_driver.git
-```1
+1\. Example with custom `time_step`: 
 
-2\. Example with custom `rokubimini_setup_file`:
 ```
 $ cd catkin_workspace/src
 $ git clone https://gitlab.com/botasys/bota_driver.git
-```2
+```
+
+1
+
+2\. Example with custom `rokubimini_setup_file`:
+
+
+```
+$ cd catkin_workspace/src
+$ git clone https://gitlab.com/botasys/bota_driver.git
+```
+
+2
 
 ## Unit Tests
 

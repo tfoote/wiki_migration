@@ -19,14 +19,22 @@ here: [joy](joy), and here: [ps3joy](ps3joy)
 To run the standalone teleop you first have to run the collision
 environment if you do not have any running.
 
+
+
 ```
 roslaunch pr2_arm_teleop_skin teleop_environment.launch
-``` Now you are ready to launch the standalone
+```
+
+ Now you are ready to launch the standalone
 teleop:
+
+
 
 ```
 roslaunch pr2_arm_teleop_skin teleop_standalone.launch
-``` To drive the robot around you have to press the
+```
+
+ To drive the robot around you have to press the
 deadman button which is button 1 on the left side. To move the arms
 around you have to press button 1 on the left side and button 1 on the
 right side at the same time. If you want to change the orientation of
@@ -43,9 +51,13 @@ first have to launch this controller, see documentation in
 
 Then you can run teleop with
 
+
+
 ```
 roslaunch pr2_arm_teleop_skin teleop.launch
-``` The usage is the same as with the standalone
+```
+
+ The usage is the same as with the standalone
 teleop.
 
 ## Add obstacles with the proximity sensor
@@ -54,8 +66,12 @@ After you started your teleop you have a running environment server
 either which teleop you ran. So you can use the proximity sensor to add
 obstacles to that environment server.
 
+
+
 ```
 roslaunch proximity_sensor_add_obstacles add_obstacles.launch
-``` However, you do not need to use the proximity
+```
+
+ However, you do not need to use the proximity
 sensor to build your collision map, you can use whatever sensor (or
 sensors) you want.

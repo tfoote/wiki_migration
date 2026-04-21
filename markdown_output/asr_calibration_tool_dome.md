@@ -55,14 +55,26 @@ trackers are located as well as the ptu is started well:
 
 e\. g.:
 
+
+
 ```
 rostopic echo /fob_objects
-``` ```
+```
+
+ 
+
+```
 rostopic echo /ptu_driver/state
 ```
+
+
+
+
 ```
 rostopic echo /checkerboard_detector/objectdetection_pose
-``` If there are data published on each topic, you
+```
+
+ If there are data published on each topic, you
 can capture data with any key but 'e' (use 'e' for exit the
 trackertool). Now just move your construction around in the working area
 and collect as much datasets as you like. Capture your data so, the
@@ -105,6 +117,8 @@ system to get some flexibility
 
 ### Start system
 
+
+
 ```
 rosrun asr_flock_of_birds flock_of_birds_remote.sh
 
@@ -116,6 +130,8 @@ roslaunch asr_resources_for_vision guppy_head_full_pbd.launch
 
 roslaunch asr_calibration_tool_dome checkerboard_detector_single.launch
 ```
+
+
 
 ## ROS Nodes
 

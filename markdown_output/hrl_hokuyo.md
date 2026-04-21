@@ -1,11 +1,17 @@
 ## Usage
 
+
+
 ```
 cd src/hrl_hokuyo
  python hokuyo_processing.py -h
 ```
 
-The output will be: ```
+
+
+The output will be: 
+
+```
 Usage: hokuyo_processing.py [options]
 
 Options:
@@ -16,7 +22,9 @@ Options:
   -f                    flip the hokuyo scan
   --ang_range=ANG_RANGE
                         max angle of the ray to display (degrees)
-``` 1. Given an appropriate
+```
+
+ 1. Given an appropriate
 hokuyo number and type this will visualize the hokuyo scans in a pygame
 window. 1. Prior to running hokuyo_processing.py, launch a hokuyo_node.
 Look at cody_utm0.launch for an example. 1. Alternately, look at

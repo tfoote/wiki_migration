@@ -16,6 +16,8 @@ scenario: [Youtube](https://www.youtube.com/watch?v=cd2FGMBj8iw)
 
 An overview can also be obtained from the following paper (available
 [here](https://www.sim.informatik.tu-darmstadt.de/publ/download/2013_RoboCup_Kohlbrecher_open_source_tools.pdf)):
+
+
 ```
 @INPROCEEDINGS{2013:RoboCup,
   author = {S. Kohlbrecher and J. Meyer and T. Graber and K. Petersen and O. von Stryk and U. Klingauf},
@@ -25,9 +27,13 @@ An overview can also be obtained from the following paper (available
   publisher = {Springer},
   series = {Lecture Notes in Artificial Intelligence (LNAI)},
   booktitle = {Proc. RoboCup Symposium 2013},
-``` The exploration approach used is based on the
+```
+
+ The exploration approach used is based on the
 following paper (available
 [here](https://www.uni-koblenz.de/~agas/Documents/Wirth2007ETA1.pdf)):
+
+
 ```
 @inproceedings{wirth2007exploration,
   title={Exploration transform: A stable exploring algorithm for robots in rescue environments},
@@ -38,3 +44,5 @@ following paper (available
   organization={IEEE}
 }
 ```
+
+

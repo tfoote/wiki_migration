@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = deepracer_navigation_node
 sub {
@@ -50,3 +52,5 @@ srv {
   
 }
 ```
+
+

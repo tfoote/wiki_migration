@@ -9,6 +9,8 @@ Two drivers are available: `laser_scan_sparsifier_nodelet` and
 `laser_scan_sparsifier_node`. Their parameters and topics are
 identical.
 
+
+
 ```clearsilver
  name = laser_scan_sparsifier_node / laser_scan_sparsifier_nodelet
  desc = The `laser_scan_sparsifier` takes in <<MsgLink(sensor_msgs/LaserScan)>> messages, and downsamples it by a given step size.
@@ -33,6 +35,8 @@ param{
     0.desc = Step size for decimation (must be > 0). A step size of 1 means the output scan will be the same as the input scan. A step size of 2 means the output scan will be half the input scan, etc.
 }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

@@ -12,6 +12,8 @@ The node assume the following setup for the laser (I used the
 [Lightware](http://www.lightware.co.za/shop/en/content/8-software)
 terminal from the manufacture):
 
+
+
 ```
 1: Active data port           USB distance in m
    2: Resolution                 0.03 m
@@ -22,8 +24,12 @@ terminal from the manufacture):
    7: Alarm activation distance  17.50 m
    8: Alarm latch                Off
    9: USB port update rate       50 / sec  (actual = 50 / sec)
-``` Before you leave the terminal, make sure the
+```
+
+ Before you leave the terminal, make sure the
 sensor is sending messages of the form (hit space to make it happen):
+
+
 
 ```
 0.57 m
@@ -39,12 +45,16 @@ sensor is sending messages of the form (hit space to make it happen):
 0.57 m
 ```
 
+
+
 ## To install the package
 
 Create a catkin workspace. For instructions on how to create the
 workspace go
 [here](http://wiki.ros.org/catkin/Tutorials/create_a_workspace).
 Download and compile the package:
+
+
 
 ```
 catkin_ws/src
@@ -53,14 +63,20 @@ cd ..
 catkin_make
 ```
 
+
+
 ## To run the node
 
 In a terminal run:
 
+
+
 ```
 source devel/setup.bash
 roslaunch sf30_node sf30.launch
-``` The message of type
+```
+
+ The message of type
 [sensor_msgs::LaserScan](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)
 will be published in topic /sf30/range at 50Hz. The intensities field on
 this message means data confidence. It is 1 if we can trust the given

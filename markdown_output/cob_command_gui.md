@@ -11,22 +11,34 @@ be used with either a real Care-O-bot or a simulated one (see
 The [cob_command_gui](cob_command_gui) package provides a configurable
 node for operating different hardware parts of Care-O-bot. The
 command_gui uses the functionalities of the
-[cob_script_server](cob_script_server) package. ```clearsilver
+[cob_script_server](cob_script_server) package. 
+
+```clearsilver
  name = knoeppkes.py
  desc = The `knoeppkes.py` is configurable by a .yaml file to send [[Topics|topics]] and [[Services|services]]. Inside the command_gui mainly [[actionlib]] calls are used.
 ```
 
+
+
 ## Usage/Examples
 
-Building ```
+Building 
+
+```
 rosdep install cob_command_gui
 rosmake cob_command_gui
-``` For starting the command_gui
+```
+
+ For starting the command_gui
+
+
 ```
 export ROBOT=cob3-3
 export ROBOT_ENV=ipa-kitchen
 roslaunch cob_bringup dashboard.launch
-``` The parameters of the command_gui are defined
+```
+
+ The parameters of the command_gui are defined
 in [cob_default_env_config](cob_default_env_config) and
 [cob_default_robot_config](cob_default_robot_config) and loaded in the
 parameter server.

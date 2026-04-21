@@ -54,16 +54,24 @@ Before launching anything, make sure `youbot_wrapper` and
 ### For slam
 
 Bring up the navigation nodes without a map, then launch slam.
+
+
 ```
 roslaunch youbot_navigation_common bringup_navigation.launch
 roslaunch slam.launch
-``` `slam.launch` assumes that the Hokuyo is
+```
+
+ `slam.launch` assumes that the Hokuyo is
 mounted upside down, so it launches a `laser_flipper` to compensate.
 The suggested way to map a room is to manually teleoperate the robot
 around the room until it is reliably mapped. This can be done with
-[youbot_teleop](youbot_teleop). ```
+[youbot_teleop](youbot_teleop). 
+
+```
 roslaunch youbot_teleop youbot_keyboard_teleop_safe.launch
-``` When the map of
+```
+
+ When the map of
 the room is sufficiently complete, save it with
 [map_server](map_server)'s `map_saver` node.
 
@@ -73,9 +81,13 @@ Start a [map_server](map_server) with the desired map. If you just ran
 slam, run the `map_server` with the `map.yaml` file that
 `map_saver` created.
 
-Bring up navigation: ```
+Bring up navigation: 
+
+```
 roslaunch youbot_navigation_common bringup_navigation_with_map.launch
 ```
+
+
 
 The robot should now be ready to navigate. Open `rviz` and add the
 necessary displays. You'll need a Robot Model for the youBot, a Map on

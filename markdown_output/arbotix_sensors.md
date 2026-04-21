@@ -6,6 +6,8 @@ additional layers of ROS interface onto the basic structure of
 
 ## Nodes
 
+
+
 ```clearsilver
 name=ir_ranger.py
 desc=Interface to a Sharp IR range finder. Automatically starts analog stream and publishes a range message derived from the raw stream.
@@ -41,3 +43,5 @@ param {
   3.default = GP2D12
 }
 ```
+
+

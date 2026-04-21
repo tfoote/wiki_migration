@@ -11,19 +11,27 @@ You can download the plugin from the following
 After getting it from the reposotory you need to run the following
 commands:
 
+
+
 ```
 $ catkin_make
 $ source devel/setup.bash
 ```
+
+
 
 ### Run for the first Time
 
 Once the build is successful and the new setup.\*sh file is sourced, you
 can load a robot configured for MoveIt, for example:
 
+
+
 ```
 $ roslaunch fermi_sia20d_moveit_config moveit_planning_execution.launch
 ```
+
+
 
 #### Setting up the RViz Environment
 
@@ -85,11 +93,23 @@ Execution of the Cartesian Path from the Way-Points.
 
 The repository contains further examples that demonstrate Cartesian path
 planning capability. These can be ran with the following:
+
+
 ```
 roslaunch fermi_blending_cell_moveit_config moveit_planning_execution.launch
-``` ```
+```
+
+ 
+
+```
 roslaunch fermi_sia20d_moveit_config moveit_planning_execution.launch
 ```
+
+
+
+
 ```
 roslaunch fermi_irb2400_moveit_config moveit_planning_execution.launch
 ```
+
+

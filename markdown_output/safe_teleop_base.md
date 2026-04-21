@@ -6,6 +6,8 @@ This node takes as input commands for a robot base and outputs the
 nearest safe commands. The core functionality has some similarities to
 [base_local_planner](base_local_planner).
 
+
+
 ```clearsilver
 pub {
   0.name= ~<name>/safe_vel
@@ -19,6 +21,10 @@ pub {
   2.desc= The trajectory corresponding to the outgoing (safe) base commands
 }
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -36,10 +42,14 @@ srv{
 }
 ```
 
+
+
 #### Parameters
 
 Many of the parameters are identical to those of the
 [base_local_planner](base_local_planner) package.
+
+
 
 ```clearsilver
 param {
@@ -147,3 +157,5 @@ param {
 
 }
 ```
+
+

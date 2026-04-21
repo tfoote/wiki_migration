@@ -31,9 +31,13 @@ first.
 
 Run this node:
 
+
+
 ```
 rosrun master_sync_fkie master_sync
 ```
+
+
 
 **Note:** do not rename the master_sync node! If it does, use the
 ignore_nodes filter to prevent synchronization of the master_sync nodes,
@@ -47,6 +51,8 @@ detected automatically!
 { }}}}
 
 { }}}}
+
+
 
 ```clearsilver
 param{
@@ -141,3 +147,5 @@ param{
 91.default = False
 }
 ```
+
+

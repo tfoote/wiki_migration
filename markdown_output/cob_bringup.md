@@ -15,8 +15,12 @@ chapter in the
 
 Before running, you have to
 [login to the robot](Robots/Care-O-bot/Real robot Tutorials/Login to the robot).
+
+
 ```
 export ROBOT=cob4-2
 export ROBOT_ENV=ipa-apartment
 roslaunch cob_bringup robot.launch
 ```
+
+

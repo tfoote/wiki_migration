@@ -3,16 +3,24 @@
 
 ## Installation
 
+
+
 ```
 $ sudo apt install spacenavd
 $ sudo apt install ros-indigo-spacenav-node
 ```
 
+
+
 ## Usage
+
+
 
 ```
 $ roslaunch spacenav_node classic.launch
 ```
+
+
 
 ## Supported Hardware
 
@@ -24,6 +32,8 @@ upstream [spacenav](spacenav) package.
 This package's API is expected to be stable.
 
 ## Nodes
+
+
 
 ```clearsilver
 node {
@@ -55,3 +65,5 @@ node {
  }
 }
 ```
+
+

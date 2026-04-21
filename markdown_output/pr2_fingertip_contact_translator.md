@@ -12,6 +12,8 @@ simulating on the PR2 hardware.
 **Note**: All nodes assume that `<gripper_motor_name>` is either
 `r_gripper_motor` or `l_gripper_motor`.
 
+
+
 ```clearsilver
 
 node.0 {
@@ -39,8 +41,14 @@ sub{
 }
 ```
 
+
+
 ### Launch files
 
-To test this node: ```
+To test this node: 
+
+```
 rosrun pr2_fingertip_contact_translator pr2_fingertip_contact_translator.py
 ```
+
+

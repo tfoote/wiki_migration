@@ -12,6 +12,8 @@ start node depth_sensor_pose can be used a following file
 
 ## Node
 
+
+
 ```clearsilver
 name = depth_sensor_pose
 desc =
@@ -61,6 +63,6 @@ param {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(mdrwiega/depth_nav_tools)>>
+
+## Report a Bug

@@ -44,6 +44,8 @@ easiest is to connect to your receiver with **Novatel Connect**
 ([zip](http://www.novatel.com/assets/Documents/Downloads/NovAtelConnect_Setup_1_6_0.zip)),
 using the serial or USB interface. Then, using the device's console:
 
+
+
 ```
 wificonfig state disabled
 ethconfig etha auto auto auto auto
@@ -51,16 +53,22 @@ icomconfig icom1 tcp :3001
 ipconfig etha static [address] 255.255.255.0 [gateway]
 saveconfig
 saveethernetdata etha
-``` You can confirm that the settings were saved by
+```
+
+ You can confirm that the settings were saved by
 power-cycling the device, reconnecting, and outputting these settings
 like so:
+
+
 
 ```
 log wificonfig once
 log ethconfig once
 log icomconfig once
 log ipconfig once
-``` From the **Wizards** menu, select **SPAN
+```
+
+ From the **Wizards** menu, select **SPAN
 Alignment**, which will take you through the position and orientation of
 the IMU relative to your vehicle's base_link, and the relative position
 of the GNSS antenna(s).
@@ -76,14 +84,20 @@ commands into the other devices using the console or the
 
 Run the example launchfile:
 
+
+
 ```
 roslaunch novatel_span_driver example.launch ip:=[address] --screen
-``` You should see topics come up for
+```
+
+ You should see topics come up for
 `navsat/fix`, `navsat/odom`, `imu/data`, `/diagnostics`, etc.
 These will publish data once the system has acquired an initial GNSS
 fix.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -129,6 +143,8 @@ node.0 {
 }
 ```
 
+
+
 ## Implementation
 
 The driver exists in four parts, all of which run together in a single
@@ -160,10 +176,14 @@ The source repository includes example captures from a ProPak6 mounted
 on a [Husky](Robots/Husky). To create your own captures, use
 `tcpdump`:
 
+
+
 ```
 sudo tcpdump -i br0 port 3001 -w capture.pcap
 gzip capture.pcap
 ```
+
+
 
 ## Resources
 

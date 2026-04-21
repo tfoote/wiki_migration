@@ -15,6 +15,8 @@ variants. Sample usage is shown below; more comprehensive explanations
 can be found on
 [Hizook.com](http://www.hizook.com/blog/2010/03/14/robotis-dynamixel-servos-overview-applications-tear-down-and-open-source-software).
 
+
+
 ```
 from lib_robotis import *
 dyn = USB2Dynamixel_Device('/dev/ttyUSB0')
@@ -22,10 +24,14 @@ p = Robotis_Servo( dyn, 11 )
 t = Robotis_Servo( dyn, 12 )
 t.move_angle( math.radians( 10 ), blocking = False )
 p.move_angle( math.radians( 10 ), blocking = False )
-``` ROS wrappers (messages and services) have also
+```
+
+ ROS wrappers (messages and services) have also
 been implemented to query and control the servos remotely. Again, sample
 usage is shown below and more comprehensive explanations can be found on
 [Hizook.com](http://www.hizook.com/blog/2010/03/14/robotis-dynamixel-servos-overview-applications-tear-down-and-open-source-software).
+
+
 
 ```
 import roslib
@@ -36,7 +42,11 @@ from robotis.ros_robotis import *
 poller = ROS_Robotis_Poller( '/dev/ttyUSB0', [11,12], ['pan', 'tilt'] )
 rospy.spin()
 poller.stop()
-``` Essentially, the poller is implemented thusly:
+```
+
+ Essentially, the poller is implemented thusly:
+
+
 
 ```
 import roslib
@@ -66,11 +76,17 @@ try:
         time.sleep(0.001)
 except:
     pass
-``` Older libraries (robotis_servo.py) are also
+```
+
+ Older libraries (robotis_servo.py) are also
 present, but are now deprecated.
+
+
 
 ```
 ./robotis_servo -h # this will print out the command line params that the code accepts.
 
 ./robotis_servo -d /dev/ttyUSB0 --ang=30 --id=1 # moves a servo with id 1 connected to ttyUSB0 to angle 30 degrees.
 ```
+
+

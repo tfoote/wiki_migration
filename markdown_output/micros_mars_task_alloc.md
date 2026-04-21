@@ -73,6 +73,8 @@ have a parameter named 'forwarder_name' indicating that which
 forwarder it activates. The paramters of the topics in 'Forwarder'
 indicate which behavior set they attach.
 
+
+
 ```
 Inhibitor(inhibitor_name, topic_in, in_out_msg_type, topic_out, inhibiting_topic, inhibiting_msg_type)
 
@@ -82,6 +84,8 @@ Forwarder(forwarder_name, topic_1_in , msg_1_type, topic_1_out, topic_2_in, msg_
 
 MotivationalBehavior(motivational_behavior_name, robot_ID, behavior_set_ID, forwarder_name)
 ```
+
+
 
 # A Demo
 
@@ -116,55 +120,91 @@ Notice that, the multi-robot task need multi-robot collision avoidance.
 One ROS package can help you do this, so you should git clone and
 compile the collvoid package first.
 
+
+
 ```
 git clone https://github.com/daenny/collvoid.git
-``` The package needs a simulated environment
+```
+
+ The package needs a simulated environment
 supporting multi-robot navigation without confliction (the prefixes of
 the namespace and TF may conflict with each other). You should git clone
 the multi_robot_stage package in your own catkin_ws.
 
+
+
 ```
 git clone https://github.com/liminglong/multi_robot_stage.git
-``` And then git clone this package
+```
+
+ And then git clone this package
 micros_mars_task_alloc in your workspace.
+
+
 
 ```
 git clone https://github.com/liminglong/micros_mars_task_alloc.git
-``` Finally, even all the codes are witten in
+```
+
+ Finally, even all the codes are witten in
 python, you should compile the files in your workspace again. Such that
 the added message files can be imported by the python modules. Don't
 forget to source your setup.bash.
 
 -   run the demo First, launch the simulated multi-robot environment.
 
+
+
 ```
 roslaunch multi_robot_stage multi_robot.launch
-``` Run the following commands in your terminal.
+```
+
+ Run the following commands in your terminal.
+
+
 
 ```
 cd /catkin_ws/src/micros_mars_task_alloc/scripts/basic_support
-``` Use the python interpreter to start the first
+```
+
+ Use the python interpreter to start the first
 robot.
+
+
 
 ```
 python robot0.py
-``` Open a new terminal in the same directory to
+```
+
+ Open a new terminal in the same directory to
 start the second robot.
+
+
 
 ```
 python robot1.py
-``` Open another new ternimal in the same directory
+```
+
+ Open another new ternimal in the same directory
 to run the third robot.
+
+
 
 ```
 python robot2.py
-``` Then the whole system will run as a whole. The
+```
+
+ Then the whole system will run as a whole. The
 three robots patrol the three rooms. Besides, you can also control a
 suspicious robot to invade the room.
 
+
+
 ```
 roslaunch micros_mars_task_alloc robot3_control.launch
-``` One of the robot can detect and follow it
+```
+
+ One of the robot can detect and follow it
 immediately. The remained room will not be empty, because the other two
 robots will patrol the three rooms alternatively and compensate for this
 fault.

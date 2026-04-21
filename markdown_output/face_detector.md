@@ -22,6 +22,8 @@ detections.
 
 ## Node
 
+
+
 ```clearsilver
 name = face_detector
 desc = The face_detector node can be used in two ways, continuously or as an action. Continuous mode: detect faces in the entire image stream. Action mode: an action is used to start face detection and the detector processes images until it has found at least one face. 
@@ -104,6 +106,8 @@ result {
 }
 ```
 
+
+
 ## Example Usage
 
 See `face_detector/launch/face_detector.<camera>.launch` to see how to
@@ -116,6 +120,8 @@ Possible pitfall may be the argument names (in
 [face_detector.rgbd.launch](https://github.com/wg-perception/people/blob/9d99dbd8d9fa4124f270742eac2a5f12e829eeda/face_detector/launch/face_detector.rgbd.launch)
 for example):
 
+
+
 ```
 <arg name="camera" default="camera" />
   <arg name="depth_ns" default="depth_registered" />
@@ -123,6 +129,8 @@ for example):
   <arg name="depth_topic" default="image_rect_raw" />
   <arg name="fixed_frame" default="camera_rgb_optical_frame" />
 ```
+
+
 
 `camera` and `depth_ns` together consists the namespace prefix, and
 `\*_topic` makes the body of the topic to subscribe. In the example
@@ -137,6 +145,8 @@ for the name of the topics you need to correct.
 
 ### Config example with Xtion
 
+
+
 ```
 <launch>
   <arg name="camera" default="camera" />
@@ -147,6 +157,8 @@ for the name of the topics you need to correct.
 :
 </launch>
 ```
+
+
 
 ### Example with robots
 
@@ -159,26 +171,42 @@ useful packages, you can visualize face detection result on
 1\. Install some useful packages ([jsk_pr2_startup](jsk_pr2_startup)
 that depends on [jsk_rviz_plugins](jsk_rviz_plugins), which provides a
 feature to show the result of `face_detector` on `RViz`) :
+
+
 ```
 apt-get install jsk_pr2_startup
 ```
 
+
+
 2\. Run the robot's launch files:
 
-For `PR2`: ```
+For `PR2`: 
+
+```
 roslaunch pr2_gazebo pr2_empty_world.launch
 roslaunch face_detector facedetector_rgb_pr2.launch  (*a)
 ```
 
-For `Turtlebot`: ```
+
+
+For `Turtlebot`: 
+
+```
 roslaunch turtlebot_gazebo turtlebot_world.launch
 roslaunch turtlebot_miscsample_cpp facedetector_rgb.launch (*b)
 ```
 
+
+
 3\. Then run RViz using [jsk_pr2_startup](jsk_pr2_startup) package:
+
+
 ```
 roslaunch jsk_pr2_startup rviz.launch
 ```
+
+
 
 4\. (Simulation only) Add a `standing person` model on Gazebo; On
 Gazebo, `Insert` -> `Standing person` then place him at certain

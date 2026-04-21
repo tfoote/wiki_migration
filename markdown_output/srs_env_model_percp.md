@@ -111,9 +111,13 @@ rectangle (in 3D) for visualisation purposes.
 ## Installation
 
 All components are in srs git in srs_env_model_percp package and can be
-compiled with ROS standard tool rosmake ```
+compiled with ROS standard tool rosmake 
+
+```
 rosmake srs_env_model_percp
 ```
+
+
 
 command
 
@@ -182,38 +186,58 @@ depth map as an input
 
 A few examples of starting described nodes:
 
--   normal start of segmenter node ```
+-   normal start of segmenter node 
+
+```
 rosrun srs_env_model_percp but_segmenter
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   start of segmenter node with method specified (depth only
-    segmentation) ```
+    segmentation) 
+
+```
 rosrun srs_env_model_percp but_segmenter -type depth
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   start of segmenter node with maximum depth specified (in milimeters)
-    ```
+    
+
+```
 rosrun srs_env_model_percp but_segmenter -maxdepth 4500
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   normal start of plane detector node (you must specify the input)
-    ```
+    
+
+```
 rosrun srs_env_model_percp but_plane_detector -input pcl
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   start of plane detector node with target frame id specified
-    ```
+    
+
+```
 rosrun srs_env_model_percp but_plane_detector -input pcl -target /world
 ```
+
+

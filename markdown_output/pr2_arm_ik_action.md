@@ -1,5 +1,7 @@
 ![](attachment:ik.png)
 
+
+
 ```clearsilver
 node.0 {
  name = pr2_arm_ik_action
@@ -46,7 +48,11 @@ EOM
 }
 ```
 
+
+
 Example launch file :
+
+
 
 ```
 <launch>
@@ -67,3 +73,5 @@ Example launch file :
   </node>
 </launch>
 ```
+
+

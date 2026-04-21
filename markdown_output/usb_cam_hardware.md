@@ -15,6 +15,8 @@ usb_cam are;
 
 ## Nodelets
 
+
+
 ```clearsilver
 name = usb_cam_hardware/USBCamHardware
 desc = an USB camera driver based on ros_control
@@ -47,9 +49,13 @@ param {
 }
 ```
 
+
+
 ## Controllers
 
 All topics and parameters are defined in each controller's namespace
+
+
 
 ```clearsilver
 name = usb_cam_controllers/CameraInfoController
@@ -73,6 +79,10 @@ param {
  2.default = "head_camera"
  2.desc = camera name
 ```
+
+
+
+
 
 ```clearsilver
 name = usb_cam_controllers/PacketController
@@ -102,6 +112,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = usb_cam_controllers/CompressedPacketController
 desc = publishes raw packets from the camera as compressed images
@@ -122,6 +136,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = usb_cam_controllers/MjpegController
 desc = decodes mjpeg-compressed packets and publishes decoded images
@@ -132,6 +150,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = usb_cam_controllers/H264Controller
 desc = decodes h264-compressed packets and publishes decoded images
@@ -141,6 +163,10 @@ pub {
  0.desc = decoded images
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = usb_cam_controllers/RGB24Controller
@@ -162,6 +188,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = usb_cam_controllers/UYVYController
 desc = converts uyvy-formatted packets to bgr images and publishes them
@@ -182,6 +212,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = usb_cam_controllers/YUYVController 
 desc = converts yuyv-formatted packets to bgr images and publishes them
@@ -201,6 +235,8 @@ param {
  1.desc = value of Image::height
 }
 ```
+
+
 
 ## Examples
 

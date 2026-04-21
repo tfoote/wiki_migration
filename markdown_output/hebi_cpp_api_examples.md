@@ -25,6 +25,8 @@ Some of these examples depend on:
 
 To install all dependencies in a new catkin workspace, run the following
 steps (replace `<ros-distro>` with kinetic` or `melodic`):
+
+
 ```
 sudo apt-get install ros-<ros-distro>-hebi-cpp-api
 
@@ -36,6 +38,8 @@ git clone https://github.com/HebiRobotics/hebi_cpp_api_ros_examples.git hebi_cpp
 cd ..
 catkin_make
 ```
+
+
 
 # Getting Started
 

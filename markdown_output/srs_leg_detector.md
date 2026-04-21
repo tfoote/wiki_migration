@@ -12,6 +12,10 @@ To start the leg detector first make sure you have a source of laser
 scans,e.g. a laser range finder or a bag file with suitable data and
 then issue:
 
+
+
 ```
 roslaunch srs_leg_detector srs_leg_detector_front.launch
 ```
+
+

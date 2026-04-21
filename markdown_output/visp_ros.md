@@ -54,6 +54,8 @@ Implementing a visual servo with ViSP is resumed in the next image:
 
 The corresponding code looks like the following:
 
+
+
 ```
 #include <visp/vpImage.h> 
 #include <visp/vp1394TwoGrabber.h> 
@@ -76,6 +78,8 @@ int main()
 }
 ```
 
+
+
 ## Using visp_ros
 
 Using [visp_ros](visp_ros) allows to completely separate the code that
@@ -92,6 +96,8 @@ publish cmd_vel velocities on a given topic.
 Now using visp_ros, we can do the same by subscribing to the
 /camera/image_raw topic and by publishing velocities to the
 /myrobot/cmd_vel topic.
+
+
 
 ```
 #include <visp/vpImage.h> 
@@ -117,8 +123,12 @@ int main()
 }
 ```
 
+
+
 It is also possible to subscribe to a jpeg topic named for example
-"/camera/image_jpg" using the following code: ```
+"/camera/image_jpg" using the following code: 
+
+```
 ...
   vpROSGrabber g; 
   g.setImageTopic("/camera/image_jpg"); // Name of the compressed topic
@@ -126,6 +136,8 @@ It is also possible to subscribe to a jpeg topic named for example
   g.open(I); 
   ...
 ```
+
+
 
 This
 [tutorial](http://docs.ros.org/en/noetic/api/visp_ros/html/tutorial-ros-grabber.html)
@@ -138,6 +150,8 @@ order to create a ROS node that does the visual servoing in a complete
 transparent way just by passing argc and argv parameters.
 
 ![](attachment:visual-servo-ros-node.png)
+
+
 
 ```
 #include <visp/vpImage.h> 
@@ -162,6 +176,8 @@ int main(int argc, char **argv)
   }
 }
 ```
+
+
 
 # Controlling a Parrot Bebop2 drone by Visual-Servoing
 

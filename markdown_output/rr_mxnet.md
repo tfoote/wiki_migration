@@ -50,10 +50,14 @@ If using a NVIDIA TX2
 
 ### Install ROS Package
 
+
+
 ```
 cd ~/catkin_ws/src/
 git clone https://github.com/RoverRobotics/rr_mxnet
 ```
+
+
 
 ### Download Pre-Built MXNet Bindings (Ubuntu 18.04)
 
@@ -61,10 +65,14 @@ New for JetPack4.2 and TX2 with Ubuntu18.04. Rebuilt mxnet bindings:
 
 -   [TX2 with JetPack4.2 download link](https://drive.google.com/file/d/1il0ogdjt_3QAm5954MXuJrlk_MTiK7Rm/view?usp=sharing)
 
-Install dependencies: ```
+Install dependencies: 
+
+```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
 ```
+
+
 
 Download and unzip in home directory, cd inside and run
 ./install_bindings.sh to automatically make links into the
@@ -72,10 +80,14 @@ Download and unzip in home directory, cd inside and run
 unpacked directory but remove the zipfile when unpacked. When finished,
 install gluoncv with pip:
 
+
+
 ```
 pip3 install gluoncv --user
 pip2 install gluoncv --user
 ```
+
+
 
 ### Download Pre-Built MXNet Bindings (Ubuntu 16.04)
 
@@ -94,6 +106,8 @@ gluoncv \--pre). This GluonCV snapshot zip (commit
 6721429cb93637a0f9a7ec8a85deea4d43cb5d62) was verified to work with SSD
 and segmentation networks.
 
+
+
 ```
 unzip mxnet_<target>_bindings_<jetpack_cuda_cudnn string>.zip
 sudo mv mxnet_<target>_bindings_<jetpack_cuda_cudnn string>/mxnet-1.3.0-py2.7.egg /usr/local/lib/python2.7/dist-packages/.
@@ -105,19 +119,31 @@ sudo apt install python-scipy
 sudo pip install tqdm
 ```
 
+
+
 Add a link to this package in easy-install.pth in the
 /usr/local/lib/python2.7/dist-packages/ subdirectory:
+
+
 ```
 ./mxnet-1.3.0-py2.7.egg
 ```
 
+
+
 Install required python libraries:
+
+
 
 ```
 sudo apt-get install python-opencv python-matplotlib python-numpy
 ```
 
+
+
 ### Test MxNet Installation
+
+
 
 ```
 python
@@ -137,6 +163,8 @@ python
 <NDArray 5x5 @cpu(0)>
 ```
 
+
+
 If you're working on a computer other than the TX1 or TX2, and/or if
 the above bindings didn't work for you, follow the mxnet documentation
 on installation and if you are lucky, pip will work for you. If not,
@@ -155,19 +183,31 @@ for up-to-date models. Here is the relevant line in the launch file for
 loading a resnet50 (v1) based SSD, trained on the 20-class VOC dataset
 and intended to be run on 512x512 sized images:
 
+
+
 ```
 <param name="network" value="ssd_512_resnet50_v1_voc" />
 ```
 
+
+
 Test the detector with an image being published to /usb_cam/image run:
+
+
 
 ```
 roslaunch rr_mxnet example-resnet50-20classes.launch
-``` View detections with rqt_image_view
+```
+
+ View detections with rqt_image_view
+
+
 
 ```
 rqt_image_view
-``` Choose /rr_mxnet/image topic from the dropdown
+```
+
+ Choose /rr_mxnet/image topic from the dropdown
 menu. If all is working well, you should see fresh images and possibly
 detections overlain on the image.
 
@@ -177,10 +217,14 @@ If you do not see output, first check the node started and check that
 mxnet is working. The node should output a line indicating it has
 initialized with the selected model file like so:
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```0
+```
+
+0
 
 If instead the node gives an error starting MxNet, the following areas
 should be checked: the MxNet bindings, GluonCV bindings, the model name
@@ -469,10 +513,14 @@ save_directory (String, default "/tmp")
 
 #### Example Launch File
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```1
+```
+
+1
 
 ### mxnet_segmentation_node
 
@@ -509,10 +557,14 @@ is set) or alternatively if run_continuous is False, it can be run once
 on run_once=True and some number of frames (or single frame) averaged
 before publishing the output mask. Test with:
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```2
+```
+
+2
 
 /rr_mxnet_segmentation/run_continuous std_msgs::Bool
 
@@ -581,10 +633,14 @@ typical low latency systems, this can be decreased.
 
 #### Example Launch File
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```3
+```
+
+3
 
 ### mxnet_depseg_hydra_node
 
@@ -619,10 +675,14 @@ is set) or alternatively if run_continuous is False, it can be run once
 on run_once=True and some number of frames (or single frame) averaged
 before publishing the output mask. Test with:
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```4
+```
+
+4
 
 /rr_mxnet_segmentation/run_continuous std_msgs::Bool
 
@@ -691,10 +751,14 @@ typical low latency systems, this can be decreased.
 
 #### Example Launch File
 
+
+
 ```
 sudo apt install python-scipy python3-scipy python-matplotlib python3-matplotlib
 sudo pip install tqdm
-```5
+```
+
+5
 
 ## Release Notes
 

@@ -22,6 +22,8 @@ The ROS API is extremely similar to that of
 [openni_camera](openni_camera). Any differences are described in the API
 and the [migration guide](#Migration_guide).
 
+
+
 ```clearsilver
 node.0 {
   name = freenect_node
@@ -202,6 +204,8 @@ node.1 {
   desc = Nodelet version of the freenect driver. Has the same ROS API as `freenect_node` above.
 }
 ```
+
+
 
 ## Migration guide
 

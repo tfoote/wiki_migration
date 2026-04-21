@@ -10,7 +10,11 @@ Healthcare Robotics Lab, Georgia Tech.
 ## Running on a PR2
 
 To move the right arm to its home position (zero joint
-angles):```
+angles):
+
+```
 $ roscd epc_core/src/epc_core
 $ python epc.py
 ```
+
+

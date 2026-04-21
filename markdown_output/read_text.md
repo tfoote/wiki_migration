@@ -5,9 +5,13 @@ for general use: given any image input, output detection and recognition
 results.
 
 The implementation of text detection is based on:
+
+
 ```
 Boris Epshtein, Eyal Ofek, Yonatan Wexler, "Detecting text in natural scenes with stroke width transform," Computer Vision and Pattern Recognition (CVPR) 2010.
 ```
+
+
 
 ### Workflow
 
@@ -25,11 +29,15 @@ in dictionary is found as the final output.
 
 #### run test script
 
-After compiling the code, to test the code: ```
+After compiling the code, to test the code: 
+
+```
 roscd read_text
 cd scripts
 sh test.sh
 ```
+
+
 
 Which will read in a test image, a letter correlation matrix and a
 dictionary, output an image named **\*_detection.jpg under the same
@@ -38,9 +46,13 @@ output text in the right side of the image.**
 
 #### command line usage
 
-The following is just the content in test.sh: ```
+The following is just the content in test.sh: 
+
+```
 rosrun read_text run_detect ../images/test_image.jpg ../fonts/correlation.txt ../dictionary/full-dictionary
 ```
+
+
 
 First input is any image file readable by OpenCV, either color or
 gray-scale image.
@@ -62,11 +74,15 @@ results will be more accurate.)
 #### batch run detection
 
 A script for batching up detection for images under the same directory
-(recursively) is also provided. ```
+(recursively) is also provided. 
+
+```
 mkdir results
 cd results
 python scripts/filelist.py <path/to/input/folder>
-``` The script
+```
+
+ The script
 recursively checks all images for certain formats(see the script for
 more detail) under input directory and run detection, outputting results
 under current directory where you run the script. Note, the input images

@@ -12,6 +12,8 @@ and in the tf tree.
 Simply include the desired `.urdf.xacro` file in your robot's
 description file and configure it's offset like so:
 
+
+
 ```
 <xacro:include filename="$(find microstrain_inertial_description)/urdf/gq7.urdf.xacro" />
 
@@ -19,6 +21,8 @@ description file and configure it's offset like so:
   <origin xyz="0 0 0" rpy="0 0 0" />
 </xacro:gq7>
 ```
+
+
 
 The above example will place a GQ7 with the frame ID `gq7_link` with
 it's center directly on top of `base_link`.

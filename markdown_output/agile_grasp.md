@@ -166,17 +166,25 @@ contains the *.pcd* files used for training.
 
 **Example: files.txt**
 
-```
-file1
-file2
-...
-``` **Example: workspace.txt**
+
 
 ```
 file1
 file2
 ...
-``` **Training**
+```
+
+ **Example: workspace.txt**
+
+
+
+```
+file1
+file2
+...
+```
+
+ **Training**
 
 `$ rosrun agile_grasp train_svm num_files pcd_directory svm_filename [plots_hands] [num_samples] [num_threads]`
 

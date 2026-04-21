@@ -1,5 +1,3 @@
-<<GitHubIssues(jstnhuang/moveit_goal_builder)>>
-
 ## Overview
 
 `moveit_goal_builder` is a library for building
@@ -13,6 +11,8 @@ interface does not allow you to do.
 
 To build a goal, create a new moveit_goal_builder::Builder, add a goal,
 some constraints, and set other options. Then, call `Build()`:
+
+
 
 ```cplusplus
 #include "moveit_goal_builder/builder.h"
@@ -29,7 +29,11 @@ moveit_msgs::MoveGroupGoal goal;
 builder.Build(&goal);
 ```
 
+
+
 ## Python example
+
+
 
 ```python
 from moveit_goal_builder import MoveItGoalBuilder
@@ -40,6 +44,8 @@ builder.replan = True
 builder.replan_attempts = 10
 goal = builder.build()
 ```
+
+
 
 ## Differences between C++ and Python
 

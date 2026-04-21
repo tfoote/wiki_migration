@@ -13,6 +13,8 @@ collection, training, and testing of the 2D recognizer.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = model_generator
@@ -400,6 +402,8 @@ node.8 {
 }
 ```
 
+
+
 ## The Recognition Pipeline
 
 ![\|width="500"](attachment:recognition_pipeline.png)
@@ -427,9 +431,13 @@ This can be accomplished by running a segmentation node, such as the one
 found in [rail_segmentation](rail_segmentation), and the collect_images
 node as follows:
 
-. ```
+. 
+
+```
 roslaunch rail_recognition collect_images.launch
 ```
+
+
 
 The images will be saved in the directory specified to the
 collect_images node. These must then be sorted by hand into a training
@@ -444,23 +452,35 @@ the recognizer is being retrained for added objects or data, the same
 dictionaries can be re-used if the dataset hasn't changed dramatically,
 and this step can be skipped.
 
-. ```
+. 
+
+```
 rosrun rail_recognition save_image_recognizer_features
 ```
 
+
+
 Next, the neural net itself needs to be trained:
 
-. ```
+. 
+
+```
 rosrun rail_recognition train_image_recognizer
 ```
+
+
 
 The 2D image recognizer is now trained and ready to use. For
 verification of its accuracy, the test dataset can be used for
 evaluation:
 
-. ```
+. 
+
+```
 rosrun rail_recognition test_image_recognizer
 ```
+
+
 
 ### Setting up the Point Cloud Recognizer
 
@@ -474,7 +494,9 @@ models.
 To install the `rail_pick_and_place` package, you can install from
 source with the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_pick_and_place.git
 cd ..
@@ -482,40 +504,70 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 The `rail_recognition` package contains a launch file for launching
 the object_recognition_listener node with the various database,
 segmentation, and recognition parameters set, executed with:
 
-. ```
+. 
+
+```
 roslaunch rail_recognition object_recognition_listener.launch
 ```
+
+
 
 Other major nodes in the package contain similar launch files with
 parameters set, listed below, where each launch file corresponds to a
 node of the same name.
 
-. ```
+. 
+
+```
 roslaunch rail_recognition collect_images.launch
-``` . ```
+```
+
+ . 
+
+```
 roslaunch rail_recognition metric_trainer.launch
-``` .
+```
+
+ .
+
+
 ```
 roslaunch rail_recognition model_generator.launch
-``` . ```
-roslaunch rail_recognition collect_images.launch
-```0 .
+```
+
+ . 
+
 ```
 roslaunch rail_recognition collect_images.launch
-```1
+```
+
+0 .
+
+
+```
+roslaunch rail_recognition collect_images.launch
+```
+
+1
 
 The set of nodes used for training the 2D image recognizer can be run as
 follows:
 
-. ```
+. 
+
+```
 roslaunch rail_recognition collect_images.launch
-```2
+```
+
+2
 
 Model generation can be run with an rviz plugin for visualization found
 in [rail_pick_and_place_tools](rail_pick_and_place_tools).

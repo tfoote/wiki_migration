@@ -24,6 +24,8 @@ The bus settings consists of a CAN interface
 ([socketcan_interface](socketcan_interface)) and the shared bus settings
 for [canopen_master](canopen_master).
 
+
+
 ```highlight
 bus:
   device: can0 # socketcan network
@@ -39,10 +41,14 @@ heartbeat: # simple heartbeat producer, optional!
   msg: "77f#05" # message to send, cansend format: heartbeat of node 127 with status 5=Started
 ```
 
+
+
 ### Node layer
 
 All nodes are listed in the nodes parameter, either as list or a struct,
 and require a node ID, a name and the path to the EDS/DCF file.
+
+
 
 ```highlight
 # struct syntax
@@ -55,7 +61,11 @@ nodes:
     id: 85
     name: other_mode # optional name
     eds_file: "/path/to/my_config.eds" # absolute name
-``` ```highlight
+```
+
+ 
+
+```highlight
 # list syntax
 nodes:
   - name: node1
@@ -65,8 +75,12 @@ nodes:
   - name: node2
     id: 85
     eds_file: "/path/to/my_config.dcf" # absolute name
-``` Additional parameters
+```
+
+ Additional parameters
 can set either for each node or in a defaults section:
+
+
 
 ```highlight
 defaults: # optional, all defaults can be overwritten per node
@@ -75,7 +89,9 @@ defaults: # optional, all defaults can be overwritten per node
   dcf_overlay: # "ObjectID": "ParameterValue" (both as strings)
     "1016sub1" : "0x7F0064" # heartbeat timeout of 100 ms for master at 127
     "1017": "100" # heartbeat producer
-``` The dcf_overlay can be used to overwrite
+```
+
+ The dcf_overlay can be used to overwrite
 specific settings in the EDS/DCF.
 
 ### ROS layer
@@ -87,7 +103,9 @@ debugging or for simple CANopen interfaces, since it blocks the control
 loop. Each entry can have an exclamation mark appended that forces the
 driver to reread the object form the node in each step.
 
-For example: ```highlight
+For example: 
+
+```highlight
 defaults: # optional, all defaults can be overwritten per node
   publish: ["1001"] # list of objects to be published (one topic per node)
 nodes:
@@ -98,7 +116,9 @@ nodes:
     # ...
   node3:
     # ...
-``` will publish on three topics with
+```
+
+ will publish on three topics with
 the sync/update_rate:
 
 -   node1_1003sub0 (<<MsgLink(std_msgs/UInt8)>>): number of errors
@@ -112,6 +132,8 @@ The [diagnostic_updater](diagnostic_updater) can be passed the
 diagnostic_period parameter in fractional seconds.
 
 ## ROS API
+
+
 
 ```clearsilver
 name = canopen_chain_node
@@ -161,7 +183,9 @@ param {
   5.type = struct/list
   5.desc = settings for the nodes
 }
-``` Further topics will be published according to
+```
+
+ Further topics will be published according to
 the publish parameters.
 
 ## C++ API

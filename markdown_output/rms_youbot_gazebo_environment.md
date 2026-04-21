@@ -9,12 +9,16 @@
 To install the `rms_youbot_gazebo_environment` package, simply run the
 following commands in your shell:
 
+
+
 ```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rms_youbot_gazebo_environment.git
 roscd rms_youbot_gazebo_environment
 rosmake rms_youbot_gazebo_environment
 ```
+
+
 
 This will ensure all dependencies are met and that the package is ready
 for use.
@@ -27,18 +31,26 @@ spawn the robot into an existing Gazebo instance. To launch the entire
 server environment (i.e., with all server nodes such as
 [rosbridge_server](rosbridge_server)), simply run the following:
 
+
+
 ```
 roslaunch rms_youbot_gazebo_environment rms_youbot_gazebo_environment.launch
 ```
+
+
 
 If instead you wish to start Gazebo and spawn the robot without starting
 the actual server nodes, run the following set of commands in two shell
 sessions:
 
+
+
 ```shell
 roslaunch rail_worlds youbot_world.launch
 roslaunch rms_youbot_gazebo_environment youbot_gazebo_start.launch
 ```
+
+
 
 ## Tutorials
 

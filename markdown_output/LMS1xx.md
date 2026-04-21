@@ -5,11 +5,17 @@ This package should work with Sick LMS 1xx laser range finders.
 Note that this package has been released by Clearpath Robotics as
 [lms1xx](lms1xx). You can install it on Ubuntu using apt:
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-lms1xx
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -32,3 +38,5 @@ param {
 }
 }
 ```
+
+

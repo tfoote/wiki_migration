@@ -18,9 +18,13 @@ For installation instructions, see the
 each with respect to its own reference and dump it as text into an
 output file.
 
+
+
 ```
 rosrun ethzasl_extrinsic_calibration tf_logger
 ```
+
+
 
 ### Parameters
 
@@ -37,9 +41,13 @@ the second reference frame. `/outputFileName` (`string`, default:
 
 `optimizer` will use an evolutionary strategy to compute the
 transformation from the first reference frame to the second, reading
-these frames from a text file. ```
+these frames from a text file. 
+
+```
 rosrun ethzasl_extrinsic_calibration optimizer <dtf_file> [inlier_ratio] [restart_count] [gen_count]
 ```
+
+
 
 ### Arguments
 
@@ -66,6 +74,8 @@ reduce the variance between random restarts, but will take more time.
 `optimizer` prints both a line that can be added to a `launch` file
 to provide the computed transformation in the `tf` tree and the
 command to publish this transformation directly from the command line:
+
+
 ```
 Optimization completed, code to COPY-PASTE in to use the transformation:
 
@@ -77,16 +87,22 @@ OR
 rosrun tf static_transform_publisher 0.182129 0.00632656 0 -0.491826 0.498884 -0.499452 0.509676 /base_link /kinect 100
 ```
 
+
+
 Also, if random restarts are used, it gives an estimate of the variance.
 
 ### File Format
 
 The text file between `tf_logger` and `optimizer` consists of a
 sequence of lines, each line providing a pair of transforms. This, the
-format for one line is the following: ```
+format for one line is the following: 
+
+```
 timestamp
 tr1_trans_x tr1_trans_y tr1_trans_z tr1_quat_x tr1_quat_y tr1_quat_z tr1_quat_w tr2_trans_x tr2_trans_y tr2_trans_z tr2_quat_x tr2_quat_y tr2_quat_z tr2_quat_w
 ```
+
+
 
 ## Known issues
 

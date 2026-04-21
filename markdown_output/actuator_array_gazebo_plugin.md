@@ -17,6 +17,8 @@ of each joint. Internally, each joint is controlled by a PID loop. The
 tuning parameters for the PID are specified for each joint. This allows
 the simulated performance to be tuned to match the real system.
 
+
+
 ```xml
 <!-- Add a Gazebo plugin controller -->
 <gazebo>
@@ -61,3 +63,5 @@ the simulated performance to be tuned to match the real system.
   </controller:gazebo_ros_actuator_array>
 </gazebo>
 ```
+
+

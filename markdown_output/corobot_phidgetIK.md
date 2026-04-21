@@ -5,6 +5,8 @@ Phidget Encoders board
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=corobot_phidget
@@ -85,3 +87,5 @@ param{
 }
 }
 ```
+
+

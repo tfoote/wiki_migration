@@ -13,15 +13,23 @@ For more information on simulating Dingo, see
 To view the Dingo model in isolation, disconnected from a real or
 simulated robot, use the following launcher:
 
+
+
 ```
 roslaunch dingo_viz view_model.launch
 ```
 
+
+
 To visualize a real or simulated Dingo, launch:
+
+
 
 ```
 roslaunch dingo_viz view_robot.launch
 ```
+
+
 
 For more examples, see
 [Dingo Tutorials](http://www.clearpathrobotics.com/assets/guides/melodic/dingo/index.html).
@@ -31,9 +39,13 @@ For more examples, see
 If you'd like to bring up a specific rviz configuration, you can add an
 arg to the view_robot launcher, for example:
 
+
+
 ```
 roslaunch dingo_viz view_robot.launch config:=navigation
 ```
+
+
 
 The configurations available are:
 

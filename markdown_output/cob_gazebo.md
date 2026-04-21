@@ -9,6 +9,10 @@ have a look at [cob_bringup_sim](cob_bringup_sim).
 
 If you have started your own simulation environment not using
 [cob_bringup_sim](cob_bringup_sim), you can spawn the Care-O-bot robot
-with ```
+with 
+
+```
 roslaunch cob_gazebo robot.launch
 ```
+
+

@@ -27,6 +27,8 @@ only a RGB stream, and runs at 15FPS on an Intel 10th gen CPU.
 ```
 -   then:
 
+
+
 ```
 $ cd ~/src
 $ git clone https://git.brl.ac.uk/ROS4HRI/hri_skeletons.git
@@ -35,12 +37,18 @@ $ mkdir build && cd build
 $ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/dev .. && make && make install
 ```
 
+
+
 You can test this node by running:
+
+
 
 ```
 $ rosrun usb_cam usb_cam
 $ rosrun hri_skeletons run image:=/usb_cam/image_raw _debug:=true _model:=$HOME/openvino_models/public/human-pose-estimation-3d-0001/FP16/human-pose-estimation-3d-0001.xml
 ```
+
+
 
 which should display something like that (debug mode = true):
 

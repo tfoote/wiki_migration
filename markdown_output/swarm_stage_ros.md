@@ -23,6 +23,8 @@ A playlist with example applications of the system is available on
 
 Details can be found in this paper:
 
+
+
 ```wiki
 @INPROCEEDINGS{KalempaTeixeiraOliveiraFabro2018,
  . author={V. Cremer Kalempa and M. A. Simões Teixeira and A. Schneider de Oliveira and J. A. Fabro},
@@ -34,22 +36,34 @@ Details can be found in this paper:
  . month={Nov}}
 ```
 
+
+
 # Installation
 
 The swarm_stage_ros package can be installed on your workspace:
 
+
+
 ```wiki
 cd /home/user/catkin_ws/src git clone https://github.com/VivianCremerKalempa/swarm_stage_ros cd .. catkin_make
-``` To run your package, you just need this
+```
+
+ To run your package, you just need this
 command:
+
+
 
 ```wiki
 roslaunch swarm_stage_ros swarm_stage.launch
-``` Note that roslaunch starts ROS automatically.
+```
+
+ Note that roslaunch starts ROS automatically.
 
 At the end of processing, two files are generated: custom.world and
 controller.launch. The custom.world file has all the necessary
 specification for the scenario to be run on the Stage, for example:
+
+
 
 ```wiki
   . include "/home/vivian/catkin_ws/src/swarm_stage_ros/launch/include/map.inc"
@@ -68,8 +82,12 @@ specification for the scenario to be run on the Stage, for example:
   . roomba (name "r8" pose [-1.20 -1.20 0 0 ] color "blue")
   . roomba (name "r9" pose [-1.50 1.50 0 0 ] color "blue")
   . roomba (name "r10" pose [-1.50 -1.50 0 0 ] color "blue")
-``` The controller.launch file is generated in
+```
+
+ The controller.launch file is generated in
 order to run the environment that has just been created:
+
+
 
 ```wiki
 <?xml version="1.0"?>
@@ -79,8 +97,12 @@ order to run the environment that has just been created:
   <!--  Stage Simulator -->
         <node pkg="stage_ros" type="stageros" name="stageros" args="$(find swarm_stage_ros)/launch/custom.world" respawn="true" output="log"/>
 </launch>
-``` The swarm_stage.launch requires as a parameter
+```
+
+ The swarm_stage.launch requires as a parameter
 the arguments passed by the swarm.yaml file:
+
+
 
 ```wiki
 swarm:
@@ -100,9 +122,13 @@ swarm:
    . publish_tf: 'no' #yes or no, use this field when reference = "relative"
 
 run: 'yes'
-``` To simplify the understanding of each parameter
+```
+
+ To simplify the understanding of each parameter
 required to the swarm.yaml file, the following table presents a summary,
 which contains the values allowed by parameter and a brief description.
+
+
 
 ```wiki
 ||||||<tablewidth="100%"border="1"tablestyle="text-align:left"style="text-align:center">'''Parameters of the file swarm.yaml''' ||
@@ -122,6 +148,8 @@ which contains the values allowed by parameter and a brief description.
 ||reference ||relative or global ||Allows to choose whether the position of the robot will be relative, that is, based on the odometry or global position of the robot relative to the point of origin of the map. ||
 ||publish_tf ||yes or no ||If the reference parameter is relative, it is possible to choose between the yes and no values for the publish tf parameter. If yes, the tf.launch file is created and for each robot a transformation is made between its relative position to its overall position on the map. ||
 ```
+
+
 
 ------------------------------------------------------------------------
 

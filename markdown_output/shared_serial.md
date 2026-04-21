@@ -9,6 +9,8 @@ normal messages and services as well.
 To launch the node, use a launch file that sets the port and baud rate,
 like in
 
+
+
 ```
 <launch>
 	<node name="motor_comm" pkg="shared_serial" type="server">
@@ -18,6 +20,8 @@ like in
 	</node>
 </launch>
 ```
+
+
 
 Possible port types are RS232, RS485_FTDI, RS485_EXAR, RS485_SMSC and
 TCP. For TCP, the port name is "ip:port". The default 3mxl baud rate

@@ -9,23 +9,35 @@ REPL.
 
 ### For a Debian package
 
+
+
 ```
 $ sudo apt-get install ros-DISTRO-slime-ros
 ```
 
+
+
 Then call the initialization script that generates `.sbclrc` in your
 home directory for configuring your SBCL.
+
+
 
 ```
 $ rosrun slime_ros slime_ros_init
 ```
 
+
+
 And then add the following to your
 [Emacs configuration file](http://www.emacswiki.org/emacs/InitFile):
+
+
 
 ```
 (require 'slime-config "/opt/ros/DISTRO/share/slime_ros/slime-config.el")
 ```
+
+
 
 ### From source
 
@@ -33,6 +45,8 @@ The most up-to-date version of `slime_ros` code can be found
 [here](https://github.com/code-iai/ros_emacs_utils). Installation
 instructions are in the README file. What you'll need to do will be
 something like the following:
+
+
 
 ```
 $ cd YOUR_CATKIN_WS/src
@@ -43,6 +57,8 @@ $ catkin_make
 $ catkin_make install
 $ emacs -nw ~/.emacs.d/init.el # edit your emacs configuration file
 ```
+
+
 
 ## How to use
 

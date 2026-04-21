@@ -40,12 +40,16 @@ specifications. They are read from the namespace `/arni/specifications`.
 There you might give your desired specifications for a given seuid
 according to this format:
 
+
+
 ```
 - n!example_node: # a seuid
     measurement1: [minvalue, maxvalue]
     # or
     measurement2: [value, deviation, "relative"]
 ```
+
+
 
 You can pack these specifications as list items in one single list,
 which will then overwrite the whole list when you load several lists or
@@ -77,6 +81,8 @@ limits, the given limit will be used for each value.
 ### Specification Fields
 
 #### Hosts
+
+
 
 ```
 cpu_temp_mean (float32)
@@ -116,7 +122,11 @@ bandwidth_stddev (float32[])
 bandwidth_max (float32[])
 ```
 
+
+
 #### Nodes
+
+
 
 ```
 node_cpu_usage_mean (float32)
@@ -152,10 +162,14 @@ node_read_stddev (float32)
 node_read_max  (float32)
 ```
 
+
+
 #### Connections
 
 Connections use the built-in
 [Statistics messagetype](http://docs.ros.org/api/rosgraph_msgs/html/msg/TopicStatistics.html).
+
+
 ```
 delivered_msgs (int32)
 dropped_msgs (int32)
@@ -169,9 +183,13 @@ stamp_age_stddev (duration)
 stamp_age_max (duration)
 ```
 
+
+
 #### Topics
 
-Topics use a subset of these fields: ```
+Topics use a subset of these fields: 
+
+```
 delivered_msgs (int32)
 dropped_msgs (int32)
 packages (int32) # number of packages included in the aggregation
@@ -183,3 +201,5 @@ stamp_age_mean (duration)
 stamp_age_stddev (duration)
 stamp_age_max (duration)
 ```
+
+

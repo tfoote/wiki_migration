@@ -12,6 +12,8 @@ More information can be found
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = calibrator
@@ -125,19 +127,31 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 For intrinsic calibration only:
+
+
 
 ```
 $ roslaunch thermalvis calibrator_monoexample.launch
 ```
 
+
+
 For stereo calibration:
+
+
 
 ```
 $ roslaunch thermalvis calibrator_stereoexample.launch
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -312,15 +326,23 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 Should act as a driver for a Thermoteknix Miricle 110K or 307K camera,
 allowing the reading of the thermistor, and control of camera settings,
 along with streaming in the raw 14-bit/pixel mode.
 
+
+
 ```
 $ roslaunch thermalvis streamer_example.launch
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -427,14 +449,22 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 Should publish a customized **tracks** topic containing sparse optical
 flow information.
 
+
+
 ```
 $ roslaunch thermalvis flow_example.launch
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -541,13 +571,21 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 I recommend making sure that you have got the **flow** node working
 effectively before trying to run the **monoslam** node.
+
+
 ```
 $ roslaunch thermalvis monoslam_example.launch
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -570,23 +608,37 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 This should simply produce a depth map from two video streams.
 
-```
-$ roslaunch thermalvis calibrator_monoexample.launch
-```0
+
 
 ```
 $ roslaunch thermalvis calibrator_monoexample.launch
-```1
+```
+
+0
+
+
+
+```
+$ roslaunch thermalvis calibrator_monoexample.launch
+```
+
+1
 
 #### Examples
 
 This node requires a bag file to exist which contains relevant topics
 for 3D thermal mapping.
 
+
+
 ```
 $ roslaunch thermalvis calibrator_monoexample.launch
-```2
+```
+
+2

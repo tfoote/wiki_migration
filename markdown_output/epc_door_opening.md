@@ -11,13 +11,21 @@ grasp it. These can be downloaded from:
 
 Steps to run the door opening code on a PR2: 1. Launch the Cartesian
 controller, node to estimate mechanism kinematics, and end effector
-forces. ```
+forces. 
+
+```
 $ roslaunch epc_door_opening pr2_door_opening.launch
-``` 1. Run the door opening equilibrium
-point controller ```
+```
+
+ 1. Run the door opening equilibrium
+point controller 
+
+```
 $ roscd epc_door_opening/src/epc_door_opening/
 $ python door_epc.py
-``` and follow the on screen
+```
+
+ and follow the on screen
 instructions.
 
 ## Limitations

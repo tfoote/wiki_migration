@@ -27,9 +27,13 @@ described below.
 
 ### Launching
 
-Launch joystick teleop: ```
+Launch joystick teleop: 
+
+```
 roslaunch pr2_teleop teleop_joystick.launch
 ```
+
+
 
 Now you should be able to control the robot's base and spine with its
 PS3 controller.
@@ -92,9 +96,13 @@ The robot base can be controlled via keyboard commands.
 
 ### Launching
 
-Launch keyboard teleop: ```
+Launch keyboard teleop: 
+
+```
 roslaunch pr2_teleop teleop_keyboard.launch
-``` Now you should be able
+```
+
+ Now you should be able
 to control the robot base with keyboard commands in the shell where you
 ran the above [roslaunch](roslaunch) command.
 

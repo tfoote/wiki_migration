@@ -47,9 +47,13 @@ To interact with controllers from the command line, use the
 `pr2_controller_manager` tool. To interact with a specific controller,
 use:
 
+
+
 ```
 $ rosrun pr2_controller_manager pr2_controller_manager <command> <controller_name>
-``` The following commands are available:
+```
+
+ The following commands are available:
 
 -   `load`: load a controller (construct and initialize)
 -   `unload`: unload a controller (destruct)
@@ -60,9 +64,13 @@ $ rosrun pr2_controller_manager pr2_controller_manager <command> <controller_nam
 
 To get the state of the controllers, use:
 
+
+
 ```
 $ rosrun pr2_controller_manager pr2_controller_manager <command>
-``` The following commands are available:
+```
+
+ The following commands are available:
 
 -   `list`: list all the controllers in the order they are executed,
     and give the state of each controller
@@ -84,9 +92,13 @@ $ rosrun pr2_controller_manager pr2_controller_manager <command>
 
 To automatically load and start a set of controllers at once, and
 automatically stop and unload those same controllers at once, use the
-`spawner` tool: ```
+`spawner` tool: 
+
+```
 $ rosrun pr2_controller_manager spawner [--stopped] name1 name2 name3
-``` When you run spawner, the
+```
+
+ When you run spawner, the
 listed controllers will get loaded and started (unless you specify
 \--stopped). Spawner will keep running while the controllers are up.
 When you kill spawner (ctrl-c) it will automatically stop and unload all
@@ -95,9 +107,13 @@ controllers it initially started.
 ### unspawner
 
 To automatically stop a set of controllers, and restart them later, you
-can use the `unspawner` tool: ```
+can use the `unspawner` tool: 
+
+```
 $ rosrun pr2_controller_manager unspawner name1 name2 name3
-``` The listed
+```
+
+ The listed
 controllers will be *stopped*, but not unloaded. Once spawner is shut
 down, the controllers will be restarted.
 
@@ -112,6 +128,8 @@ controller. When you stop `spawner` (when the launch file is taken
 down) it will stop and unload the controller. Your launch file would
 look something like this:
 
+
+
 ```
 <launch>
    <node pkg="pr2_controller_manager" 
@@ -120,7 +138,11 @@ look something like this:
  </launch>
 ```
 
+
+
 or, if you just want to load the controller, but not start it yet:
+
+
 ```
 <launch>
    <node pkg="pr2_controller_manager" 
@@ -129,10 +151,14 @@ or, if you just want to load the controller, but not start it yet:
  </launch>
 ```
 
+
+
 ## ROS API
 
 To interact with controllers form another ROS node, the controller
 manager provides five service calls:
+
+
 
 ```clearsilver
 node.0 {
@@ -178,3 +204,5 @@ node.0 {
   }
 }
 ```
+
+

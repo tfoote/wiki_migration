@@ -23,23 +23,35 @@ which allows control through a PS3 joystick controller.
 There are several launch files offered for convenience. The first can be
 accessed using
 
+
+
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_joystick.launch
-``` This launch file enables body control, head
+```
+
+ This launch file enables body control, head
 control, and arm control but disables prosilica control. It also starts
 pr2_kinematics nodes for the left and right arms, which are necessary
 for joystick control of the arms and enabling walk_along_mode.
+
+
 
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_joystick_noik.launch
 ```
 
+
+
 implements the same functionality but does not launch arm ik nodes,
 assuming that they are already running from another launch file.
+
+
 
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_joystick_bodyhead_only.launch
 ```
+
+
 
 disables arm control altogether and starts no processes associated with
 the arms.
@@ -164,21 +176,33 @@ which allows robot control using the keyboard.
 There are three launch files which largely mirror the functionality
 described for the joystick:
 
+
+
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_keyboard.launch
 ```
 
+
+
 brings up arm ik and allows control of all modes
+
+
 
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_keyboard_noik.launch
 ```
 
+
+
 does not bring up ik nodes, assuming they are running elsewhere.
+
+
 
 ```
 roslaunch pr2_teleop_general pr2_teleop_general_keyboard_bodyhead_only.launch
 ```
+
+
 
 allows control of only the body and the head.
 
@@ -193,6 +217,8 @@ As a convenience the joystick and keyboard programs implement largely
 the same set of ROS parameters:
 
 ### Basic parameters
+
+
 
 ```clearsilver
 param {
@@ -224,10 +250,14 @@ param {
 }
 ```
 
+
+
 ### Advanced parameters
 
 There are many parameters offered by the modules that will generally not
 need to be changed by the users. Here we list two of the most important.
+
+
 
 ```clearsilver
 param {
@@ -242,3 +272,5 @@ param {
   2.desc=The namespace to connect to the prosilica for the polling topic
 }
 ```
+
+

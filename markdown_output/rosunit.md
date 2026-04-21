@@ -17,6 +17,8 @@ The library that comes with `rosunit` can be used as described at
 
 ## Usage
 
+
+
 ```
 $ rosrun rosunit rosunit -h
 
@@ -28,7 +30,9 @@ Options:
   --time-limit=TIME_LIMIT
                         Set time limit for test
   --name=TEST_NAME      Test name
-``` . `-t`, `\--text` . Runs a gtest-compatible
+```
+
+ . `-t`, `\--text` . Runs a gtest-compatible
 executable inside of a process monitor. If the test does not succeed
 within the time limit (default 1 minute), the test is killed and marked
 as a failure. Executable is not run within a ROS graph. `\--name` .

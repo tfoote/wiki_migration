@@ -27,9 +27,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch uav_random_direction uav_random_direction.launch
-``` to launch the
+```
+
+ to launch the
 `uav_random_direction` node.
 
 The launch file can be configured with following parameters:
@@ -44,6 +48,8 @@ In the `param` subdirectory there is the parameter file
 `uav_random_direction` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -102,6 +108,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

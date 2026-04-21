@@ -7,6 +7,8 @@ monitor board.
 
 The [cob_hwboard](cob_hwboard) package can be used to monitor certain
 voltages, currents and temperatures inside the robot.
+
+
 ```clearsilver
  name = cob_hwboard
  desc = The `cob_hwboard` node directly recieves measured values from the hardware and publishes them on the [[diagnostics]] topic.
@@ -61,19 +63,31 @@ prov{
 }
 ```
 
+
+
 ## Usage/Examples
 
-For starting only the hwboard use ```
+For starting only the hwboard use 
+
+```
 roslaunch cob_bringup hwboard.launch
-``` For including
-the hwboard in your overall launch file use ```
+```
+
+ For including
+the hwboard in your overall launch file use 
+
+```
 <include file="$(find cob_bringup)/components/hwboard.launch" />
-``` All
+```
+
+ All
 hardware configuration is done by using a yaml-file stored in the
 [cob_hardware_config](cob_hardware_config) package. The file which
 contains all necessary parameters is located in
 "cob_hardware_config/cob3-3/config/hwboard.yaml" and should be similar
-to this ```
+to this 
+
+```
 devicestring: /dev/ttyHwBoard
 head_sensor: 0x103AEE7A
 eye_sensor: 0x1089D07A
@@ -82,3 +96,5 @@ torso_sensor: 0x10E4967D
 pc_sensor: 0x1082E17B
 engine_sensor: 0x10FADC7A
 ```
+
+

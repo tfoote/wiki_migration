@@ -12,5 +12,3 @@ For using this package, please see
 [Using package of roch_safety_controller](roch_robot/Tutorials/Using package of roch_safety_controller).
 
 ## Report a Bug
-
-<<GitHubIssues(SawYer-Robotics/roch_robot)>>

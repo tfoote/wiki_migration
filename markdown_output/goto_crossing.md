@@ -19,7 +19,9 @@ Launch the node with `rosrun goto_crossing goto_crossing`.
 
 To use the `goto_crossing::CrossingGoer` as class instance, one uses
 `goto_crossing::CrossingGoer::goto_crossing` to compute the twist
-necessary to reach the crossing center: ```cplusplus
+necessary to reach the crossing center: 
+
+```cplusplus
 #include <geometry_msgs/Twist.h>
 #include <goto_crossing/crossing_goer.h>
 #include <lama_msgs/Crossing.h>
@@ -33,12 +35,20 @@ crossing.center.y = 0.24;
 const bool goal_reached = crossing_goer.goto_crossing(crossing, twist);
 ```
 
+
+
 To reset the integral parts of the PI-controller, use
+
+
 ```cplusplus
 crossing_goer.resetIntegrals();
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 sub { 
@@ -112,3 +122,5 @@ param {
   12.type= float
   12.desc= Anti wind-up for sum_w_ (rad.s)}
 ```
+
+

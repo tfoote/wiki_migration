@@ -3,21 +3,35 @@
 You need to install the pr2_cockpit stack which contains the impedance
 controller from Willow Garage. I recommend to use the Debian packages:
 
+
+
 ```
 sudo apt-get install ros-electric-pr2-cockpit
 ```
 
-Get the articulation stack from Freiburg: ```
+
+
+Get the articulation stack from Freiburg: 
+
+```
 cd ~/ros
 svn co https://alufr-ros-pkg.googlecode.com/svn/trunk alufr-ros-pkg
 svn co https://alufr-ros-pkg.googlecode.com/svn/branches/articulation-experimental
 ```
 
-Compile: ```
+
+
+Compile: 
+
+```
 rosmake articulation_pr2
 ```
 
+
+
 # Running the demo
+
+
 
 ```
 roslaunch /etc/ros/robot.launch
@@ -25,10 +39,16 @@ roslaunch pr2_teleop teleop_joystick.launch
 roslaunch articulation_pr2 articulation_service.launch
 ```
 
+
+
 Before you call the articulation service, make sure that the PR2 has
-firmly grasped the handle. ```
+firmly grasped the handle. 
+
+```
 rosrun articulation_pr2 articulate_object_client
 ```
+
+
 
 # Parameters
 

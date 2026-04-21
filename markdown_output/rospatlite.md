@@ -8,18 +8,28 @@
 
 ## Examples
 
+
+
 ```
 $ roslaunch rospatlite patlite.launch IP:=10.68.0.10
 ```
 
-In another shell ```
+
+
+In another shell 
+
+```
 $ rostopic pub /patlite/set/buzzer std_msgs/Int8 1 # <- buzzer ON
 $ rostopic pub /patlite/set/buzzer std_msgs/Int8 0 # <- buzzer OFF
 $ rostopic pub /patlite/set/red std_msgs/Int8 1 # <- red light ON
 $ rostopic pub /patlite/set/yellow std_msgs/Int8 2 # <- yellow light blink
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = patlite_node
@@ -74,3 +84,5 @@ param {
   2.desc = timeout[sec] for socket connection.
 }
 ```
+
+

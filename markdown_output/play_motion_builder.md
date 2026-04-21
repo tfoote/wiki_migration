@@ -22,9 +22,13 @@ simulation. The project requires that the `robot_description_param`,
 the `semantic_description`, and `extra_joints_param_name` parameters
 are properly set.
 
-The node can be run using the command: ```
+The node can be run using the command: 
+
+```
 rosrun play_motion_builder play_motion_builder_node
 ```
+
+
 
 Once the node is running starting the `build` action needs to be
 invoked in order to start creating or editing a motion. This action must
@@ -47,6 +51,8 @@ To execute this motions `play_motion` (see
 [ play_motion documentation](play_motion )) is used.
 
 #### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -75,7 +81,11 @@ sub {
 }
 ```
 
+
+
 #### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -106,6 +116,10 @@ pub {
   3.desc= A request to cancel a specific goal for the `play_motion` action.
 }
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -143,15 +157,21 @@ param {
 }
 ```
 
+
+
 ## rqt_play_motion_builder
 
 The `rqt_play_motion_builder` package provides an RQT-based (See
 [ RQT documentation](rqt )) frontend that simplifies the use of the
 `play_motion_builder` node.
 
-The GUI can be started by running: ```
+The GUI can be started by running: 
+
+```
 rosrun rqt_play_motion_builder rqt_play_motion_builder
-``` on a system
+```
+
+ on a system
 in which the `play_motion_builder_node` is running.
 
 ## play_motion_builder_js

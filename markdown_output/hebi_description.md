@@ -18,14 +18,20 @@ xacro macros so they can be easily edited. To use one of these (for
 example, a 6-DOF arm with a gripper) in a launch file, you could add the
 following tag:
 
+
+
 ```
 <param name="robot_description" command="$(find xacro)/xacro --xacro-ns '$(find hebi_description)/urdf/kits/A-2085-06-parallel-gripper.xacro'" />
 ```
+
+
 
 ### Simple RViz example
 
 Below is a complete example of a launch file that will visualize this
 system in rviz:
+
+
 
 ```
 <launch>
@@ -37,8 +43,12 @@ system in rviz:
 </launch>
 ```
 
+
+
 To initialize/update the joint angle, you can publish joint angles on
 the joint_states channel as follows:
+
+
 
 ```
 rostopic pub /joint_states sensor_msgs/JointState "header:
@@ -50,6 +60,8 @@ position: [0, 1, 1, 0, 0, 0, 0]
 velocity: [0, 0, 0, 0, 0, 0, 0]
 effort: [0, 0, 0, 0, 0, 0, 0]"
 ```
+
+
 
 ## Creating custom URDF
 

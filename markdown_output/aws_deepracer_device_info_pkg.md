@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = device_info_node
 
@@ -31,3 +33,5 @@ srv {
   
 }
 ```
+
+

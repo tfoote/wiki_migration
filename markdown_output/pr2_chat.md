@@ -2,7 +2,9 @@ A demo of how to use speech recognition and generation.
 
 ## Input
 
-Here are the valid input sentences: ```
+Here are the valid input sentences: 
+
+```
 hello
 what's your name
 what is your name
@@ -12,7 +14,9 @@ what is the second law of robotics
 what is the third law of robotics
 high five
 pound it
-``` Note: Must
+```
+
+ Note: Must
 be recognized exactly by pocketsphinx
 
 ## Output

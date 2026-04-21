@@ -1,8 +1,12 @@
 ## Running
 
+
+
 ```
 rosrun pr2_keyboard_teleoperator  pr2_keyboard_teleoperator.py
 ```
+
+
 
 ## Usage
 
@@ -12,11 +16,15 @@ The keyboard interface is as follows:
 
 ### Moving the Base: (uses the number pad)
 
+
+
 ```
 7      8      9
   4      5      6
   1      2      3
 ```
+
+
 
 ### Moving the Arm's Joints:
 

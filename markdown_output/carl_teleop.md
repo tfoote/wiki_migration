@@ -6,6 +6,8 @@ via keyboard teleoperation and joystick/gamepad teleoperation.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_joy_teleop
@@ -154,6 +156,8 @@ node.1 {
 }
 ```
 
+
+
 ## Controls
 
 Controls for the joystick and keyboard teleop nodes are listed below.
@@ -247,13 +251,17 @@ Base Control Mode:
 ## Installation
 
 To install the `carl_bot` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -267,16 +275,32 @@ which can currently be set to either "analog" or "digital",
 representing controllers with analog triggers and digital triggers,
 respectively. Example launch syntax is given below.
 
-With default parameters: . ```
+With default parameters: . 
+
+```
 roslaunch carl_teleop carl_joy_teleop.launch
-``` .
+```
+
+ .
+
+
 ```
 roslaunch carl_teleop carl_key_teleop.launch
 ```
 
-Example with parameters: . ```
+
+
+Example with parameters: . 
+
+```
 roslaunch carl_teleop carl_joy_teleop.launch linear_throttle_factor_base:=0.5 angular_throttle_factor_base:=0.5 linear_throttle_factor_arm:=0.8 angular_throttle_factor_arm:=0.8 finger_throttle_factor:=0.75 controller_type:="analog"
-``` .
+```
+
+ .
+
+
 ```
 roslaunch carl_teleop carl_key_teleop.launch linear_throttle_factor_base:=0.5 angular_throttle_factor_base:=0.5 linear_throttle_factor_arm=0.8 angular_throttle_factor_arm=0.8 finger_throttle_factor:=0.75
 ```
+
+

@@ -8,15 +8,25 @@ the command from the keyboard.
 
 ## Usage
 
-Node "serial_com" can be started by running: ```shell
+Node "serial_com" can be started by running: 
+
+```shell
 rosrun dlut_move_base serial_com
 ```
 
-Node "sick_key" can be started by running: ```shell
+
+
+Node "sick_key" can be started by running: 
+
+```shell
 rosrun dlut_move_base sick_key
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -85,6 +95,8 @@ param {
 1.desc = the weight of the linear velocity's increment.
 1.default = 0.1
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

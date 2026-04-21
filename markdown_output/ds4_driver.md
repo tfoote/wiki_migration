@@ -20,6 +20,8 @@ on pull requests have not yet been merged upstream. Until they are
 merged, use [the fork](https://github.com/naoki-mizuno/ds4drv) (devel
 branch).
 
+
+
 ```console
 $ git clone https://github.com/naoki-mizuno/ds4drv --branch devel
 $ cd ds4drv
@@ -31,13 +33,19 @@ $ cd ~/catkin_ws/src
 $ git clone https://github.com/naoki-mizuno/ds4_driver.git
 ```
 
+
+
 Compile and source this package just like any other ROS package. To run,
+
+
 
 ```console
 $ roslaunch ds4_driver ds4_driver.launch
 # Or
 $ rosrun ds4_driver ds4_driver_node.py
 ```
+
+
 
 ### Disable touchpad input device
 
@@ -53,18 +61,26 @@ you want to prevent the touchpad from being recognized as an input
 device, add the following to the udev rules and run the `udevadm`
 commands (you will still be able to use the touchpad from this driver):
 
+
+
 ```
 SUBSYSTEM=="input", ATTRS{name}=="*Wireless Controller Touchpad", RUN+="/bin/rm %E{DEVNAME}", ENV{ID_INPUT_JOYSTICK}=""
 ```
+
+
 
 ## Demonstration
 
 Get a glimpse of some of the features of `ds4_driver` including
 touchpad, rumble, and LED control:
 
+
+
 ```console
 $ roslaunch ds4_driver demo.launch
 ```
+
+
 
 Moving the left/right stick controls the rumble. Sliding left and right
 on the touchpad while pressing circle, triangle, cross buttons controls
@@ -73,6 +89,8 @@ from the color of the button). Pressing the PS button triggers the
 flashing of the LED.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -186,3 +204,5 @@ EOS
 }
 }
 ```
+
+

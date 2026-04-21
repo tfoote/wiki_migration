@@ -16,9 +16,13 @@ For a full tutorial, see
 
 ## Usage
 
-Run the monitor with: ```
+Run the monitor with: 
+
+```
 rosrun robot_monitor robot_monitor
 ```
+
+
 
 ### Rxbag Plugin
 
@@ -61,6 +65,8 @@ scrub through messages independently.
 
 ## Node API
 
+
+
 ```clearsilver
 node.0 {
   name = robot_monitor
@@ -71,3 +77,5 @@ node.0 {
     0.desc = Aggregated diagnostics published by [[diagnostic_aggregator]]
   }
 ```
+
+

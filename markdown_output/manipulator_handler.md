@@ -15,28 +15,52 @@ commands from ROS in several ways (see
 details):
 
 -   In position (passive mode, no dynamic simulation: the links will be
-    static) ```
+    static) 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_Passive_mode
 ```
+
+
 -   In motion mode (DEPRECATED, not working from V-REP V3.2.2. Please
-    use the mode in velocity instead) ```
+    use the mode in velocity instead) 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_MOT_velocity
 ```
+
+
 -   In velocity (passive mode, no dynamic simulation: the links will be
-    static) ```
+    static) 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_Passive_mode_velocity
 ```
+
+
 -   In torque/force mode (the links will be dynamically simulated, see
     [here](http://www.coppeliarobotics.com/helpFiles/en/designingDynamicSimulations.htm)):
--   Position (PID controller) ```
+-   Position (PID controller) 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_TF_position
 ```
--   Velocity ```
+
+
+-   Velocity 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_TF_velocity
 ```
--   Force and torque ```
+
+
+-   Force and torque 
+
+```
 sim_ext_ros_bridge_manipulator_ctrl_mode_TF_effort
 ```
+
+
 
 You can use the function "simExtSetFloatCustomDataFromHeader()" to set
 the control mode you prefer.

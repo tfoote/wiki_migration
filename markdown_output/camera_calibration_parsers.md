@@ -16,27 +16,39 @@ This utility converts between calibration file formats.
 
 #### Usage
 
+
+
 ```
 $ rosrun  camera_calibration_parsers convert  in-file out-file
 ```
+
+
 
 #### Example
 
 ##### yml to ini
 
+
+
 ```
 $ rosrun  camera_calibration_parsers convert  cal.yml cal.ini
 ```
+
+
 
 ##### ost.txt to yml
 
 *(**ost.txt** file is in the calibrationdata.tar.gz file saved during
 the calibraton process)*
 
+
+
 ```
 $ mv ost.txt ost.ini
 $ rosrun  camera_calibration_parsers convert  ost.ini cal.yml
 ```
+
+
 
 ## File formats
 
@@ -47,6 +59,8 @@ parameters internally. We are using it as our preferred format for
 storing calibration on camera flash memory (not only Videre cameras).
 
 Example:
+
+
 
 ```
 # Prosilica camera intrinsics
@@ -80,11 +94,15 @@ projection
 0.00000 0.00000 1.00000 0.00000
 ```
 
+
+
 ### YAML
 
 The YAML output is based on that used by the OpenCV calibration program.
 
 Example:
+
+
 
 ```
 image_width: 2448
@@ -108,3 +126,5 @@ projection_matrix:
   cols: 4
   data: [4827.94, 0, 1223.5, 0, 0, 4835.62, 1024.5, 0, 0, 0, 1, 0]
 ```
+
+

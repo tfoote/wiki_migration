@@ -7,6 +7,8 @@ teleoperation is provided via the `rovio_teleop` node.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = rovio_move
@@ -89,6 +91,8 @@ node.2 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `rovio` stack, you can choose to either install from
@@ -96,7 +100,9 @@ source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rovio.git
 roscd rovio
@@ -104,12 +110,18 @@ rosdep install rovio
 rosmake rovio
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rovio
 ```
+
+
 
 ### Startup
 
@@ -119,9 +131,13 @@ your Rovio. This file launches an instance of the `rovio_move` and
 `rovio_head` nodes. To launch these nodes, the following command can
 be used:
 
+
+
 ```
 roslaunch rovio_ctrl rovio_ctrl.launch
 ```
+
+
 
 The `rovio_ctrl` package also contains a `rovio_teleop.launch` file
 which should be edited with the hostname, username and password to login
@@ -130,9 +146,13 @@ to your Rovio as well as absolute path to the `wav` folder within the
 `rovio_move`, `rovio_head`, `rovio_audio` and `rovio_teleop`
 nodes. To launch these nodes, the following command can be used:
 
+
+
 ```
 roslaunch rovio_ctrl rovio_teleop.launch
 ```
+
+
 
 You should now be able to teleoperate your Rovio with a joystick.
 

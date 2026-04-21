@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = artstage
@@ -58,19 +60,29 @@ param {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 rosrun simulator_art artstage <world>
 ```
 
+
+
 Where `<world>` is the full path name of the stage world file to
 load. To run one of the world files included in this package, resolve it
 like this (all on one line):
 
+
+
 ```
 rosrun simulator_art artstage $(rospack find simulator_art)/world/swri_site_visit.world
 ```
+
+
 
 ## To Do
 

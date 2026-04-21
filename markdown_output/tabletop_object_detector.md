@@ -66,6 +66,8 @@ recognized (as shown by the cyan mesh further superimposed on them)*
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name=tabletop_segmentation
@@ -133,6 +135,8 @@ param {
 }
 ```
 
+
+
 #### Filtering Parameters
 
 All of these parameters are applied to decide what part of the point
@@ -141,6 +145,8 @@ cloud the detector should focus on. They must make sense in the
 processing takes place in the native frame of the incoming cloud, which
 on the PR2 robot is the camera frame. Therefore, all these parameters
 have default values which makes sense in the camera frame.
+
+
 
 ```clearsilver
 param {
@@ -179,6 +185,10 @@ no_header=True
 8.desc= Whether the natural "up" direction (relative to gravity) is closer to positive or negative
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.1 {
@@ -234,6 +244,8 @@ srv{
 }
 }
 ```
+
+
 
 ## Running the Manipulation Pipeline
 

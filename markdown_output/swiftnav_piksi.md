@@ -1,8 +1,12 @@
+
+
 ```wiki
 '''Note:''' This page is obsolete.
 
 See the [[http://wiki.ros.org/swiftnav_ros | swiftnav_ros]] page, which is maintained by Swiftnav, for updated information on piksi and piksi multi. This page is retained for historical purposes during the transition to the Swiftnav-maintained page, and may be deleted in the future.
 ```
+
+
 
 ## Description
 
@@ -86,7 +90,9 @@ The following steps build and install libsbp, which is needed to support
 the swiftnav_piksi package. Clone libsbp into a local directory, and
 build and install it. Comments follow a \# below - they explain the
 step; do not type them. Caution: do not build libsbp in your catkin
-workspace - it is not "catkinized". ```
+workspace - it is not "catkinized". 
+
+```
 cd mysrc       # cd to a directory where you will download and build libsbp
 git clone https://github.com/PaulBouchier/libsbp
 cd libsbp/c
@@ -97,10 +103,14 @@ make
 sudo make install   # install headers and libraries into /usr/local
 ```
 
+
+
 ### Build and Install the swiftnav_piksi driver
 
 The following steps build and install this package into your catkin
 workspace.
+
+
 
 ```
 cd catkin_ws/src       # your catkin workspace
@@ -108,6 +118,8 @@ git clone https://github.com/PaulBouchier/swiftnav_piksi.git
 cd ..
 catkin_make
 ```
+
+
 
 ### Build and Install the Piksi Console
 
@@ -144,15 +156,23 @@ and also a diagnotic monitor.
 
 Note: the Piksi is assumed to be at /dev/ttyUSB0. If the Piksi serial
 port is different, edit the port parameter in
-swiftnav_piksi/launch/swiftnav_piksi.launch. ```
+swiftnav_piksi/launch/swiftnav_piksi.launch. 
+
+```
 roslaunch swiftnav_piksi swiftnav_piksi.launch
 ```
 
+
+
 In a different window, start rqt_robot_monitor which displays status of
 the Piksi interface. Observe the rqt_robot_monitor window, which should
-show OK status for GPS. ```
+show OK status for GPS. 
+
+```
 rosrun rqt_robot_monitor rqt_robot_monitor
 ```
+
+
 
 ![](attachment:rqt_robot_monitor.png)
 

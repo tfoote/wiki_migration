@@ -16,6 +16,8 @@ supersedes [collision_octomap](collision_octomap).
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   2.name= ~resolution
@@ -60,10 +62,14 @@ param {
 }
 ```
 
+
+
 ### cloud_sources parameter
 
 An example of the cloud_sources YAML file is given below. Note that this
 is the same format used for the regular [collision_map](collision_map).
+
+
 ```
 cloud_sources:
   - name: full_cloud_filtered
@@ -72,7 +78,11 @@ cloud_sources:
     sensor_frame: laser_tilt_mount_link
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 sub{
@@ -101,3 +111,5 @@ sub{
     }
 }
 ```
+
+

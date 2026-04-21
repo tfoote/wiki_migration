@@ -15,50 +15,82 @@ calculation for a point cloud in RVIZ:
 
 CREATE CATKIN WORKSPACE
 
+
+
 ```
 >> mkdir -p ~/haf_grasping_ws/src
 >> cd ~/haf_grasping_ws/src
 >> catkin_init_workspace
-``` OR navigate to an existing \*src\* folder of
+```
+
+ OR navigate to an existing \*src\* folder of
 your ROS workspace:
+
+
 
 ```
 cd location_of_workspace/src
-``` DOWNLOAD CODE (and add the path to the
+```
+
+ DOWNLOAD CODE (and add the path to the
 environment variable ROS_PACKAGE_PATH if needed)
+
+
 
 ```
 >> git clone https://github.com/davidfischinger/haf_grasping.git
-``` Execute "make" in the libsvm folder:
+```
+
+ Execute "make" in the libsvm folder:
+
+
 
 ```
 >> roscd haf_grasping/libsvm-3.12
 >> make
-``` CATKIN_MAKE OF PACKAGE HAF_GRASPING
+```
+
+ CATKIN_MAKE OF PACKAGE HAF_GRASPING
+
+
 
 ```
 >> roscd haf_grasping/../..
 >> catkin_make -DCMAKE_BUILD_TYPE=Release
 >> source devel/setup.sh
-``` Start calculation server (does the work),
+```
+
+ Start calculation server (does the work),
 haf_client (small program including the class that shows how to use
 haf_grasping) and a visualization in rviz:
 
+
+
 ```
 >> roslaunch haf_grasping haf_grasping_all.launch
-``` Publish the path of a point cloud to calculate
+```
+
+ Publish the path of a point cloud to calculate
 grasp points on this object with the gripper approaching direction along
 the z-axis:
 
+
+
 ```
 >> rostopic pub /haf_grasping/input_pcd_rcs_path std_msgs/String "$(rospack find haf_grasping)/data/pcd2.pcd" -1
-``` Alternatively, publish a point cloud to the ROS
+```
+
+ Alternatively, publish a point cloud to the ROS
 topic: /haf_grasping/depth_registered/single_cloud/points_in_lcs:
+
+
 
 ```
 >> roscd haf_grasping/data
 >> rosrun pcl_ros pcd_to_pointcloud pcd2.pcd cloud_pcd:=/haf_grasping/depth_registered/single_cloud/points_in_lcs
 ```
+
+
 
 ### EXPLANATION FOR THE RVIZ VISUALIZATION
 
@@ -148,58 +180,90 @@ this vector. For the default vector (0,0,1) the gripper is going down
 the z-axis towards the origin. Service to set the approach vector to
 (1,1,1):
 
+
+
 ```
 >> rosservice call /haf_grasping/set_approach_vector "approach_vector:  x: 1.0
   y: 1.0
   z: 1.0"
-``` Grasp_center: the x-,y-,z-position, that is the
+```
+
+ Grasp_center: the x-,y-,z-position, that is the
 center of the area where grasps are searched. Set grasp search center
 (in m) to (x=0.1,y=0,z=0) with a service call:
+
+
 
 ```
 >> rosservice call /haf_grasping/set_grasp_center "graspsearchcenter:
    x: 0.10
    y: 0.0
    z: 0.0"
-``` Grasp_area_size: the size of the area where
+```
+
+ Grasp_area_size: the size of the area where
 grasps should be detected. Set rectangle to 16x10 centimeter:
 
-```
-cd location_of_workspace/src
-```0 Grasp_calculation_time_max: maximal time in
-seconds until a grasp has to be returned. Set max time to 3 sec:
+
 
 ```
 cd location_of_workspace/src
-```1 Show_only_best_grasp: defines if only the best
+```
+
+0 Grasp_calculation_time_max: maximal time in
+seconds until a grasp has to be returned. Set max time to 3 sec:
+
+
+
+```
+cd location_of_workspace/src
+```
+
+1 Show_only_best_grasp: defines if only the best
 grasp should be published or each grasp with an evaluation exceeding a
 threshold (only top grasps per roll angle). Set this value to publish
 only the overall top-rated grasp:
 
+
+
 ```
 cd location_of_workspace/src
-```2 Gripper opening width: this factor f is used
+```
+
+2 Gripper opening width: this factor f is used
 to simulate a gripper that is opened 1/f-times the maximal gripper
 opening width (e.g.: value 3 => gripper only one third opened):
 
-```
-cd location_of_workspace/src
-```3 These values can also be set before launching
-the haf_client in the launch file launch/haf_grasping_all.launch. Here
-are the default values:
+
 
 ```
 cd location_of_workspace/src
-```4
+```
+
+3 These values can also be set before launching
+the haf_client in the launch file launch/haf_grasping_all.launch. Here
+are the default values:
+
+
+
+```
+cd location_of_workspace/src
+```
+
+4
 
 ### HAF-GRASPING CLIENT - CODE EXPLAINED
 
 In calc_grasppoints_action_client.cpp we subscribe to a point_cloud
 topic and start the following callback when a point cloud comes in:
 
+
+
 ```
 cd location_of_workspace/src
-```5
+```
+
+5
 
 ### RESULT
 
@@ -208,9 +272,13 @@ service client. Furthermore, they are published to the topic
 /haf_grasping/grasp_hypothesis_with_eval as string value and have the
 following format:
 
+
+
 ```
 cd location_of_workspace/src
-```6 **val**: scaled evaluation of the grasp: 99 is
+```
+
+6 **val**: scaled evaluation of the grasp: 99 is
 the top value, -20 is the worst possible value, meaning that no grasp
 was found at all (normally indicating a data or software issue, e.g. an
 issue with the tf system or no **make** executed in the libsvm folder)
@@ -288,11 +356,12 @@ machines. ACM Transactions on Intelligent Systems and Technology,
 If you like this package and use it in your own work, please cite our
 [\*\*IJRR paper\*\*](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features):
 
+
+
 ```
 cd location_of_workspace/src
-```7
+```
 
-## REPORT A BUG
+7
 
-<<GitHubIssues(davidfischinger/haf_grasping)>> or contact the
-package maintainer directly.
+## REPORT A BUG == or contact the package maintainer directly.

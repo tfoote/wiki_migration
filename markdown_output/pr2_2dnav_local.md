@@ -22,9 +22,13 @@ Tuck the arms of the PR2 using the
 
 The pr2_2dnav_local application can be run with the following command:
 
+
+
 ```
 roslaunch pr2_2dnav_local pr2_2dnav.launch
 ```
+
+
 
 ## Interacting with the Application
 
@@ -35,9 +39,13 @@ pr2_2dnav_local application can be commanded via [rviz](rviz),
 ### rviz
 
 -   You can bring up rviz in a pr2_2dnav_local friendly configuration by
-    running the following launch file: ```
+    running the following launch file: 
+
+```
 roslaunch pr2_navigation_local rviz_move_base_local.launch
 ```
+
+
 -   The application is now up and ready to receive goals.
 -   Click the "2D Nav Goal" button in the rviz GUI window.
 -   Left click on the map at the location of the goal and drag to set
@@ -55,9 +63,13 @@ roslaunch pr2_navigation_local rviz_move_base_local.launch
 ### nav_view
 
 -   You can bring up nav_view in a pr2_2dnav friendly configuration by
-    running the following launch file ```
+    running the following launch file 
+
+```
 roslaunch pr2_navigation_local nav_view_move_base_local.launch
 ```
+
+
 -   The application is now up and ready to receive goals.
 -   Click the "Set Goal" button in the nav_view GUI window.
 -   Left click on the map at the location of the goal and drag to set

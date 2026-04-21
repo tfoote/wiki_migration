@@ -5,6 +5,8 @@ users validate the SR data versus a stereo setup.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=swissranger_camera
@@ -69,3 +71,5 @@ name=Calibration Parameters
 }
 }
 ```
+
+

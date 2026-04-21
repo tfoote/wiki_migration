@@ -25,16 +25,22 @@ requires the zeroconf parameter to be set to false. There are two
 default launchers in [rocon_hub](rocon_hub) that can be used to fire up
 'default' hub configurations:
 
+
+
 ```
 > roslaunch rocon_hub hub.launch
 # OR
 > roslaunch rocon_hub hub_no_zeroconf.launch
 ```
 
+
+
 Currently, there is only [avahi](zeroconf_avahi) support for zeroconf on
 linux.
 
 ## Configuration
+
+
 
 ```clearsilver
 node.0 {
@@ -60,6 +66,8 @@ node.0 {
   }
 }
 ```
+
+
 
 Of these, the `name` and the `zeroconf` flag are the most oft used.
 The name can be used to enable gateways to selectively filter which

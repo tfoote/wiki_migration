@@ -12,7 +12,9 @@ Fuser, check out the code API, as well as the tutorials.
 
 ## Nodes
 
-This package provides one node - ndt_fuser. ```clearsilver
+This package provides one node - ndt_fuser. 
+
+```clearsilver
 name = ndt_fuser
 desc = fuses 2D or 3D range information into an NDT map
 sub {
@@ -40,6 +42,8 @@ srv {
   0.desc = request the fuser to save the current map
 }
 ```
+
+
 
 For detailed description and list of parameters, see the tutorial.
 

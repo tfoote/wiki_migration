@@ -15,5 +15,3 @@ for a radio-based range-only sensor in this
 [dataset](http://grvc.us.es/staff/caba/roslam).
 
 ## Report a Bug
-
-<<GitHubIssues(felramfab/rangeonly_driver)>>

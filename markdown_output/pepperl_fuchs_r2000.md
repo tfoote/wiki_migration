@@ -68,9 +68,13 @@ Copy the driver in your ROS workspace and compile it. Set the IP-Address
 of the scanner in `pepperl_fuchs_r2000/launch/gui_example.launch` and
 run the following command:
 
+
+
 ```
 roslaunch pepperl_fuchs_r2000 gui_example.launch
-``` This starts `RViz`
+```
+
+ This starts `RViz`
 (<http://wiki.ros.org/rviz>) and the driver and you should see the
 measuring output of the scanner.
 
@@ -80,6 +84,8 @@ There exists a file `CMakeLists.txt.NO_ROS_LIB_ONLY` in the
 `pepperl_fuchs_r2000` directory. Replace `CMakeLists.txt` with it to
 compile the driver without ROS:
 
+
+
 ```
 $ cd pepperl_fuchs_r2000
     $ mv CMakeLists.txt.NO_ROS_LIB_ONLY CMakeLists.txt
@@ -87,11 +93,15 @@ $ cd pepperl_fuchs_r2000
     $ cd build
     $ cmake ..
     $ make
-``` This builds a SHARED library which can be used
+```
+
+ This builds a SHARED library which can be used
 in your program. To build a static library remove the `SHARED` in the
 `add_library` command in the `CMakeLists.txt`.
 
 ### The basic usage of the driver library code (C++11 style) is as follows:
+
+
 
 ```
 #include <pepperl_fuchs_r2000/r2000_driver.h>
@@ -124,12 +134,18 @@ in your program. To build a static library remove the `SHARED` in the
     }
 ```
 
+
+
 ## More documentation
 
 The driver is commented in doxygen style. You can create a latex and
 html documentation in the `pepperl_fuchs_r2000/doxygen` directory by
 entering the following command in the `pepperl_fuchs_r2000` directory:
 
+
+
 ```
 $ doxygen doxygen.conf
 ```
+
+

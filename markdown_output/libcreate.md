@@ -15,5 +15,3 @@ Roomba platforms. For ROS bindings, see
 -   Roomba 800 series
 
 ## Report a Bug
-
-<<GitHubIssues(AutonomyLab/libcreate)>>

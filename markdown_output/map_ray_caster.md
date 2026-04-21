@@ -17,6 +17,8 @@ non-default values.
 
 To use the `map_ray_caster::MapRayCaster` class to compute a fake
 <<SrvLink(sensor_msgs/LaserScan)>> from an occupancy grid in C++:
+
+
 ```cplusplus
 #include <map_ray_caster/map_ray_caster.h>
 
@@ -34,3 +36,5 @@ scan.header = map.header;
 scan.header.frame_id = "laser_frame";
 ray_caster.laserScanCast(map, scan);
 ```
+
+

@@ -25,9 +25,13 @@ Follow [these instructions](kaist_webots) to install the
 
 ## Usage
 
-To test the node, run: ```
+To test the node, run: 
+
+```
 $ roslaunch webots_run test_world.launch
-``` This will start the
+```
+
+ This will start the
 Webots simulator, which should look something like this:
 
 ![](http://img.acianetmedia.com/i/j5mWB.jpg)

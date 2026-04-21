@@ -5,6 +5,8 @@ within ROS.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = erratic_player
@@ -95,6 +97,8 @@ node.0 {
     12.default = false
 }
 ```
+
+
 
 ## Tutorials
 

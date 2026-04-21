@@ -39,12 +39,16 @@ Gstreamer is installed and a camera of some kind is available attached
 to `/dev/video2`. Note that `gscam` expects to start *within* the
 bin directory:
 
+
+
 ```
 roscd gscam
 cd bin
 export GSCAM_CONFIG="v4l2src device=/dev/video2 ! video/x-raw-rgb,framerate=30/1 ! ffmpegcolorspace"
 rosrun gscam gscam
 ```
+
+
 
 If you see a message about a "failure to PAUSE" or something similar,
 the most likely cause is a permission issue with the available video
@@ -67,6 +71,8 @@ appropriate ROS documentation on the [image_pipeline](image_pipeline)
 wiki page.
 
 An example launch file which includes loading calibration data is
+
+
 
 ```
 <launch>
@@ -96,10 +102,14 @@ An example launch file which includes loading calibration data is
 </launch>
 ```
 
+
+
 Note it assumes calibration data is stored in a subdirectory of the ROS
 package 'localcam'.
 
 ## ROS API
+
+
 
 ```clearsilver
 name=gscam
@@ -123,11 +133,17 @@ srv {
 }
 ```
 
+
+
 ## Troubleshooting
 
 ### Bad Camera Info
 
+
+
 ```
 MessageFilter [target=/map ]: Discarding message from [/gscam_publisher] due to empty frame_id.  This message will only print once.
-``` You need to set the TF frame via the
+```
+
+ You need to set the TF frame via the
 `set_camera_info` service described above.

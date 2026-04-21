@@ -23,17 +23,25 @@ into the gripper of the left arm. Before you start the scan node you
 FIRST have to put this metal stick into the robot's left gripper. This
 can be done with the pr2 teleop:
 
+
+
 ```
 roslaunch pr2_teleop teleop_joystick.launch
-``` Then open the gripper, place the metal stick in
+```
+
+ Then open the gripper, place the metal stick in
 between and close it again. A length of about 6 cm is sufficient.
 
 Now you can CTRL+C the teleop again. After that you have to start the
 arm planning environment for the scan method.
 
+
+
 ```
 roslaunch pr2_calib_proximity_sensor both_arm_navigation.launch
-``` If you did not configure your scan method yet,
+```
+
+ If you did not configure your scan method yet,
 you should do it now. Let's take a look into the *conf/scan.yaml*
 
 Forearm and upper arm are scanned one after the other. So there is one
@@ -71,9 +79,13 @@ good job, but you can also change it.
 
 When you're ready you can launch the scan procedure with
 
+
+
 ```
 roslaunch pr2_calib_proximity_sensor scan.launch
-``` This will take a few hours\...
+```
+
+ This will take a few hours\...
 
 Don't mind if the scan cannot reach every measurement position, this is
 normal behaviour and no problem.
@@ -83,9 +95,13 @@ normal behaviour and no problem.
 After the scan finished you can arrange the proximity sensor patches
 based on the measurements of the scan. This is done with
 
+
+
 ```
 roslaunch pr2_calib_proximity_sensor arrange_patches.launch
-``` This will produce an output file for the
+```
+
+ This will produce an output file for the
 patches_tf node in [proximity_sensor_tf](proximity_sensor_tf) When the
 scan method could not find any reasonable measure point for a patch, you
 will get a warning and the patch is placed far away relative to
@@ -97,11 +113,19 @@ calibration for each single patch.
 You might want to see the data that the scan method saved after it
 completed. First run rviz.
 
+
+
 ```
 rosrun rviz rviz
-``` Now you can visualize the data for patch *n* by
+```
+
+ Now you can visualize the data for patch *n* by
 running
+
+
 
 ```
 roslaunch pr2_calib_proximity_sensor visualize_data.launch patch_id:=n
 ```
+
+

@@ -2,6 +2,8 @@
 
 ## Nodelets
 
+
+
 ```clearsilver
 node {
   name = rtabmap_sync/rgbd_sync
@@ -54,6 +56,10 @@ node {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node {
   name = rtabmap_sync/rgb_sync
@@ -90,6 +96,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -133,6 +143,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -189,3 +203,5 @@ node {
   }
 }
 ```
+
+

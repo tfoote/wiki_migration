@@ -20,17 +20,25 @@ objects and create the respective structures in the knowledge base.
 The following commands launch KnowRob and start the CoP listener. You
 will get a list of models printed to the console (the current state of
 the CoP database) after calling the cop_listener(_) predicate.
+
+
 ```
 rosrun rosprolog rosprolog comp_cop
  comp_cop:cop_listener(_).
 ```
 
+
+
 ### Adding mappings from Cop to KnowRob identifiers
 
 These mappings are defined in the file comp_cop/prolog/comp_cop.pl in
-the form ```
+the form 
+
+```
 cop_to_knowrob('placemat', 'http://ias.cs.tum.edu/kb/knowrob.owl#PlaceMat').
 ```
+
+
 
 You can simply add new lines here and the system will know them after
 restarting comp_cop.
@@ -45,7 +53,11 @@ Given an EAN number (as string), the node queries upcdatabase.com for a
 description of the object, parses the returned HTML and returns the
 object class label as the result.
 
+
+
 ```
 rosrun comp_cop BarcodeWebLookup
  rosservice call /barcode_web_lookup '!!str 40084015'
 ```
+
+

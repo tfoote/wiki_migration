@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
 name=image_capture
@@ -32,3 +34,5 @@ srv {
 }
 }
 ```
+
+

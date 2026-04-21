@@ -34,6 +34,8 @@ start the node laserscan_kinect it can be used a following file
 
 ## Node
 
+
+
 ```clearsilver
 name = laserscan_kinect
 desc = 
@@ -105,6 +107,6 @@ param {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(mdrwiega/depth_nav_tools)>>
+
+## Report a Bug

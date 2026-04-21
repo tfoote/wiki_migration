@@ -18,12 +18,16 @@ Publishers:
 emitted from the rover, in unprocessed form (see
 <https://roverrobotics.com/blogs/news/uart-protocol> for interpretation)
 
+
+
 ```
 Gauss% ros2 topic echo /raw_data
 which: 14
 value: ['''', '3']
 ---
 ```
+
+
 
 /rover:: :: A higher-level node which converts between serial and ROS
 concepts. This need not have direct hardware access to the rover.
@@ -50,6 +54,8 @@ efforts (left, right, flipper) being sent to the rover
 instructions sent to the rover as (verb, arg) pairs
 
 An example of what diagnostics might look like:
+
+
 
 ```
 Gauss% ros2 topic echo /diagnostics
@@ -106,3 +112,5 @@ status:
     value: '0'
 ---
 ```
+
+

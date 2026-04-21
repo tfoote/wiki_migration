@@ -18,6 +18,8 @@ using the PR2 robot, tutorials and launch files are provided in
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
 no_header=True
@@ -53,7 +55,11 @@ no_header=True
 }
 ```
 
+
+
 ### Services Provided
+
+
 
 ```clearsilver
 srv{
@@ -62,6 +68,8 @@ srv{
 0.desc=.
 }
 ```
+
+
 
 ### Action Servers Provided
 
@@ -74,6 +82,8 @@ srv{
 
 ### Subscribers
 
+
+
 ```clearsilver
 sub{
 0.name=joint_states
@@ -81,3 +91,5 @@ sub{
 0.desc=.
 }
 ```
+
+

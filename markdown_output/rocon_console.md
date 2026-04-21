@@ -20,12 +20,18 @@ The current list of supported colour definitions:
 Simply intersperse colour definitions throughout your printing
 statements, e.g.
 
+
+
 ```highlight
    import rocon_console.console as console
    print(console.cyan + "    Name" + console.reset + ": " + console.yellow + "Dude" + console.reset)
 ```
 
+
+
 ** Logging Style **
+
+
 
 ```highlight
    import rocon_console.console as console
@@ -35,3 +41,5 @@ statements, e.g.
    logerror("this is a budweiser")
    logfatal("this is mereley a cider")
 ```
+
+

@@ -21,13 +21,19 @@ JSDoc can be found at <https://techming.github.io/web-video-canvas>
 It is recommended that you import this package via npm or yarn. Simply
 run
 
+
+
 ```bash
 npm install @techming/web-video-canvas // or
 yarn add @techming/web-video-canvas
 ```
 
+
+
 Once you installed the package, you can import the `View` or
 `MultiStreamViewer` in your file:
+
+
 
 ```javascript
 import { View } from '@techming/web-video-canvas';
@@ -42,6 +48,8 @@ const viewer = new Viewer({
   type: 'png', // you can change to mjpeg, png, or ros_compressed
 });
 ```
+
+
 
 ### Static Import
 

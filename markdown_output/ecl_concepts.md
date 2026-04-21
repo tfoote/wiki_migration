@@ -4,12 +4,16 @@ For templatised functions and classes, the input template arguments
 usually have little or no restriction on the class that can be used,
 e.g.
 
+
+
 ```cplusplus
 template <typename T>
 void f(T input) {
     // use some aspect of T's interface
 }
 ```
+
+
 
 Of course the compile will fail if you try to use an input type, T, that
 doesn't have the specialised interface you want, but the compile time
@@ -21,6 +25,8 @@ into _Concepts_. A simplified version of this is utilised here.
 ## Compiling & Linking
 
 Include the following at the top of any translation unit:
+
+
 
 ```cplusplus
 #include <ecl/concepts.hpp>
@@ -39,6 +45,8 @@ using ecl::InputByteDeviceConcept;
 using ecl::OutputByteDeviceConcept;
 using ecl::InputOutputByteDeviceConcept;
 ```
+
+
 
 ## Usage
 

@@ -12,6 +12,8 @@ controller and navigation filters.
 
 ## Citation
 
+
+
 ```
 ﻿@article {Miskovic11JFR,
 author = {Mišković, Nikola and Vukić, Zoran and Bibuli, Marco and Bruzzone, Gabriele and Caccia, Massimo},
@@ -27,3 +29,5 @@ pages = {101--120},
 year = {2011},
 }
 ```
+
+

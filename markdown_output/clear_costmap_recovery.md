@@ -20,6 +20,8 @@ specified on initialization. It adheres to the
 Example creation of a `clear_costmap_recovery::ClearCostmapRecovery`
 object:
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -36,12 +38,16 @@ ccr.initialize("my_clear_costmap_recovery", &tf, &global_costmap, &local_costmap
 ccr.runBehavior();
 ```
 
+
+
 ### API Stability
 
 -   The C++ API is stable.
 -   The ROS API is stable.
 
 ### ROS Parameters
+
+
 
 ```clearsilver
 param {
@@ -61,6 +67,8 @@ param {
   2.desc = Clears only the 'layers' that are mentioned in the 'layer_names' parameter. The layers are defined according to the plugins for local_costmap and global_costmap.
 }
 ```
+
+
 
 ### C++ API
 

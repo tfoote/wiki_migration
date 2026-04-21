@@ -22,12 +22,16 @@ Currently, this package must be installed from source and also requires
 the articulation package to build the articulation plugin. Both are easy
 to build using rosmake:
 
+
+
 ```shell
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/articulation
 git clone https://github.com/sniekum/changepoint.git
 cd changepoint
 rosmake
 ```
+
+
 
 ## Parameters
 
@@ -77,16 +81,26 @@ a zero-mean Gaussian, but where the variance of the distribution can
 change between segments. Simulated data is provided in the test/data
 folder that contains 5 segments of Gaussian data with changing variance.
 
-First, run the changepoint server: ```shell
+First, run the changepoint server: 
+
+```shell
 roslaunch changepoint changepoint_server.launch
 ```
 
+
+
 Then:
+
+
 
 ```shell
 cd test
 python gaussTest.py
-``` should result in: ![](attachment:ex1.png)
+```
+
+ should result in: ![](attachment:ex1.png)
+
+
 ```
 Model: Gaussian    Length: 41
 Start: 0
@@ -129,6 +143,8 @@ End: 249
    model_evidence : -162.530678693
 ```
 
+
+
 ## Example 2: Articulation models
 
 This second example uses 3 separate models of articulated motion from
@@ -144,16 +160,26 @@ difference trajectory of the poses of two objects) that contains 2
 segments: rotational motion, followed by rigid motion between two
 objects.
 
-First, run the changepoint server: ```shell
+First, run the changepoint server: 
+
+```shell
 roslaunch changepoint changepoint_server.launch
 ```
 
+
+
 Then:
+
+
 
 ```shell
 cd test
 python articTest.py
-``` should result in: ![](attachment:ex2.png)
+```
+
+ should result in: ![](attachment:ex2.png)
+
+
 ```
 Model: rotational    Length: 43
 Start: 0
@@ -186,6 +212,8 @@ End: 105
    log_likelihood : 258.428841159
    model_evidence : 245.99943698
 ```
+
+
 
 Unlike the Gaussian example, the articulation models have some
 parameters to tune. Currently, these are hardcoded in articulation.cpp.

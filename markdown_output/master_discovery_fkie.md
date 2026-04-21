@@ -22,14 +22,22 @@ service types:
 
 { }}}} { }}}} Run the node:
 
+
+
 ```
 rosrun master_discovery_fkie master_discovery
-``` To use `zeroconf` for discovering you need to
+```
+
+ To use `zeroconf` for discovering you need to
 run:
+
+
 
 ```
 rosrun master_discovery_fkie zeroconf
-``` *In this case you have to install
+```
+
+ *In this case you have to install
 `python-avahi` and `avahi-daemon`!*
 
 ### Interface
@@ -56,24 +64,52 @@ publishers, subscribers, services and their types, URI's).\
 \[str,str,str,str,str\] \])` . (stamp, stamp of local changes,
 masteruri, name, publishers, subscribers, services, topicTypes, nodes,
 serviceProvider)\
-System state is in list representation: ```
+System state is in list representation: 
+
+```
 [stamp, stamp of local changes, masteruri, name, publishers, subscribers, services, topicTypes, nodes, serviceProvider]
 ```
-`publishers` is of the form: ```
+
+
+`publishers` is of the form: 
+
+```
 [ [topic1, [topic1Publisher1...topic1PublisherN]] ... ]
-``` `subscribers`
-is of the form: ```
+```
+
+ `subscribers`
+is of the form: 
+
+```
 [ [topic1, [topic1Subscriber1...topic1SubscriberN]] ... ]
-``` `services` is of the form:
+```
+
+ `services` is of the form:
+
+
 ```
 [ [service1, [service1Provider1...service1ProviderN]] ... ]
-``` `nodes` is of the form:
+```
+
+ `nodes` is of the form:
+
+
 ```
 [ [topicName1, topicType1], ... ]
-``` `topicTypes` is of the form:
+```
+
+ `topicTypes` is of the form:
+
+
 ```
 [ [nodename, XML-RPC URI, origin ROS_MASTER_URI, pid, {str(local) or str(remote)} ], ... ]
-``` `serviceProvider` is of the form:
+```
+
+ `serviceProvider` is of the form:
+
+
 ```
 [ [service, XML-RPC URI, origin ROS_MASTER_URI, type, {str(local) or str(remote)} ], ... ]
 ```
+
+

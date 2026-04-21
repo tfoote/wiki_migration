@@ -11,11 +11,17 @@ required transforms.
 To make a map from a robot with a laser publishing scans on the
 base_scan topic:
 
+
+
 ```
 rosrun coreslam slam_coreslam scan:=base_scan
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = slam_coreslam
@@ -111,3 +117,5 @@ rosrun coreslam slam_coreslam scan:=base_scan
   }
  }
 ```
+
+

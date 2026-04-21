@@ -15,7 +15,9 @@ you use the footstep planner in your research.
 
 -   **[Anytime Search-Based Footstep Planning with Suboptimality Bounds](http://hrl.informatik.uni-freiburg.de/papers/hornung12humanoids.pdf)**
     by A. Hornung, A. Dornbush, M. Likhachev, and M. Bennewitz
-    (Humanoids 2012). ```
+    (Humanoids 2012). 
+
+```
 @INPROCEEDINGS{hornung12humanoids,
   author = {Armin Hornung and Andrew Dornbush and Maxim Likhachev and 
   Maren Bennewitz},
@@ -27,12 +29,16 @@ you use the footstep planner in your research.
 }
 ```
 
+
+
 ```{=html}
 <!-- -->
 ```
 -   **[Humanoid Navigation with Dynamic Footstep Plans](http://hrl.informatik.uni-freiburg.de/papers/garimort11icra.pdf)**
     by J. Garimort, A. Hornung, and M. Bennewitz (ICRA 2011).
-    ```
+    
+
+```
 @INPROCEEDINGS{garimort11icra,
   author = {Johannes Garimort and Armin Hornung and Maren Bennewitz},
   title = {Humanoid Navigation with Dynamic Footstep Plans},
@@ -41,6 +47,8 @@ you use the footstep planner in your research.
   year = 2011
 }
 ```
+
+
 
 The planner can be invoked by interacting with it via RViz, or by
 continuously using it during plan execution (Video below). A pose
@@ -56,9 +64,13 @@ check out the source for that or
 [download a recent package](http://code.google.com/p/alufr-ros-pkg/downloads/list)).
 
 For interactive planning (without any plan execution by a robot),
-you're almost set now. Simply run ```
+you're almost set now. Simply run 
+
+```
 roslaunch footstep_planner footstep_planner_complete.launch
-``` which loads
+```
+
+ which loads
 a sample map, starts up the planner, and launches RViz to interact with
 it. Set a "2D pose estimate" as start, and a "2D nav goal" as goal
 (Hotkeys **P** and **G**). After some time (depending on footsteps,
@@ -141,6 +153,8 @@ See
 for documentation of all classes and relevant code. The ROS node
 interface is described below. Both might be subject to change in the
 future as we develop the package further.
+
+
 
 ```clearsilver
 node.0 {
@@ -284,6 +298,10 @@ node.0 {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
  name = footstep_navigation_node
@@ -328,6 +346,10 @@ node.0 {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.3 {
  name = footstep_planner_walls
@@ -345,3 +367,5 @@ param {
 }
 }
 ```
+
+

@@ -66,6 +66,8 @@ code.
 
 As a simple "Hello World" example, consider:
 
+
+
 ```cplusplus
 #include <ros/ros.h>
 #include <std_msgs/String.h>
@@ -101,6 +103,8 @@ int main(int argc, char** argv)
     return 0;
 }
 ```
+
+
 
 The user-defined filter accepts a
 [std_msgs::String](http://docs.ros.org/api/std_msgs/html/msg/String.html)

@@ -19,6 +19,8 @@ published frames using the **checkerboard_pose node**.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name = checkerboard_pose
@@ -151,3 +153,5 @@ prov_tf{
 }
 }
 ```
+
+

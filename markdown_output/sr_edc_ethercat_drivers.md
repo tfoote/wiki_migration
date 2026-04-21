@@ -23,6 +23,10 @@ learn how to use the driver.
 ## Checking the status of the robot
 
 You can look at the current status of the robot using the
-[robot_monitor](robot_monitor): ```
+[robot_monitor](robot_monitor): 
+
+```
 $ rosrun robot_monitor robot_monitor
 ```
+
+

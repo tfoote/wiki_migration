@@ -50,6 +50,8 @@ You can use `rosdoc` to generate local copies of documentation. When
 you run the `rosdoc` command, it will generate documentation into the
 'doc' folder of the local directory.
 
+
+
 ```
 Usage: rosdoc [options] [packages...]
 
@@ -60,14 +62,24 @@ Options:
   -o OUTPUT_DIRECTORY   directory to write documentation to
 ```
 
+
+
 *Generate documentation for specific packages*:
+
+
 
 ```
 roscd rosdoc
 ./rosdoc <package-names>
-``` or simply ```
+```
+
+ or simply 
+
+```
 rosrun rosdoc rosdoc <package-names>
 ```
+
+
 
 This will generate the documentation in `rosdoc/doc`. It's easiest if
 you point your Web browser to open
@@ -78,10 +90,14 @@ packages.
 
 *Generate documentation for all packages*:
 
+
+
 ```
 roscd rosdoc
 ./rosdoc
 ```
+
+
 
 `rosdoc` will find all packages on your package path and generate
 documentation for them in the 'doc' folder.
@@ -90,10 +106,14 @@ documentation for them in the 'doc' folder.
 
 Sometimes, the `rosdoc` package directory may not be writable, perhaps
 it was installed as a binary package. In that case, use the `-o`
-option to specify a different output directory. ```
+option to specify a different output directory. 
+
+```
 roscd rosdoc -o ~/doc
 ./rosdoc <package-names>
 ```
+
+
 (Again rosrun combination works here too.)
 
 ## Automatically Generated Online Documentation
@@ -121,11 +141,15 @@ In order to enable the rosdoc configuration file, you must place the
 following tag in the `<export>\...</export>` section of the
 [manifest.xml](Manifest) file:
 
+
+
 ```
 <export>
   <rosdoc config="rosdoc.yaml" />
 </export>
 ```
+
+
 
 `rosdoc.yaml` should be the path to the configuration file you wish to
 use.
@@ -147,6 +171,8 @@ Each builder may specify additional configuration keys.
 Here is an example from the [roslib](roslib) package, which performs
 both C++ and Python API documentation:
 
+
+
 ```
 - builder: epydoc
    output_dir: python
@@ -155,6 +181,8 @@ both C++ and Python API documentation:
    output_dir: c++
    file_patterns: '*.c *.cpp *.h *.cc *.hh *.dox'
 ```
+
+
 
 #### Builder: Doxygen
 
@@ -247,11 +275,15 @@ specified above*
 For third party packages, rosdoc can automatically create a doxygen main
 page for the package, that includes a link to the third party
 documentation. To do so, you must add a line to your
-manifest.xml```
+manifest.xml
+
+```
 <export>
   <doxymaker external="http://link.to.external/page.html"/>
 </export>
 ```
+
+
 
 ## rosdoc on ros.org
 

@@ -18,6 +18,8 @@ controller.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=~joint
@@ -31,11 +33,15 @@ param {
 }
 ```
 
+
+
 ### Action interface
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
 <<MsgLink(pr2_controllers_msgs/SingleJointPositionGoal)>>.
+
+
 
 ```clearsilver
 sub {
@@ -59,7 +65,11 @@ pub {
 }
 ```
 
+
+
 ### Controller interface
+
+
 
 ```clearsilver
 sub {
@@ -73,3 +83,5 @@ pub {
   0.desc=Sends joint trajectories to the controller.
 }
 ```
+
+

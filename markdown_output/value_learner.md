@@ -22,6 +22,8 @@ Otherwise leave false.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   group.0 {
@@ -85,6 +87,8 @@ param {
     10.desc = The sensitivity parameter for the RKHS-SARSA algorithm. The higher this number, the less RBFs will be added.
   }
 ```
+
+
 
 ## learn_RKHS_SARSA.launch
 

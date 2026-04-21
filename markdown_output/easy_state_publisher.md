@@ -1,10 +1,14 @@
 ## Deprecation
 
+
+
 ```wiki
 '''This package is being deprecated'''
 
 Instead of using this package, we recommend that you use [[joint_state_publisher]] to replace easy_state_publisher, and [[joint_state_publisher]] + [[robot_state_publisher]] for easy_tf_publisher.
 ```
+
+
 
 ## Overview
 
@@ -15,6 +19,8 @@ are laid out relative to one another.
 
 The nodes read in the robot_description from the parameter server and
 parses out all of the non-fixed joints, and sets the joints to zero.
+
+
 
 ```clearsilver
 name = easy_tf_publisher
@@ -34,6 +40,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = easy_state_publisher
 desc = Based on the non-fixed joints, this node publishes the joint states for the robot. Can be used in conjunction with the robot_state_publisher node to publish joint states and transforms.
@@ -49,3 +59,5 @@ param {
 0.default = None
 }
 ```
+
+

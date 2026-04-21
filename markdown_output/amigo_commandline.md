@@ -17,15 +17,27 @@ doxygen at **INSERT LINK HERE**
 
 # Use
 
-To set a reference a controller, type: ```
+To set a reference a controller, type: 
+
+```
 $rosrun amigo_commandline set_reference <part name> {<joint1position>, <joint2position>, ... }
-``` For
-example, to set a reference for the base type: ```
+```
+
+ For
+example, to set a reference for the base type: 
+
+```
 $rosrun amigo_commandline set_reference base <x velocity> <y velocity> <angular velocity>
 ```
-and for the left arm: ```
+
+
+and for the left arm: 
+
+```
 $rosrun amigo_commandline set_reference left_arm 0 1 0 1.2 0.4 0 -0.5
 ```
+
+
 
 The controllers for left_arm and right_arm expect seven joints,
 left_gripper and right_gripper expect two joints, the spindle expects

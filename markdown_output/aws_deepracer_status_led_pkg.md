@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = status_led_node
 srv {
@@ -34,3 +36,5 @@ srv {
   }
 }
 ```
+
+

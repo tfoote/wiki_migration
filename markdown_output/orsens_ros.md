@@ -27,6 +27,8 @@ folder contains several files for different purposes:
 Main node that publishes camera's data, as well as some results of
 SDK's integrated CV functions.
 
+
+
 ```clearsilver
 
 pub {
@@ -130,6 +132,8 @@ param {
   15.desc = Publish mask with scene regions.
 }
 ```
+
+
 
 ## Demos
 

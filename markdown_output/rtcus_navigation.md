@@ -8,13 +8,17 @@ is based on generic programming through c++ templates. This can help to
 solve some important and prone problems like the semantic coherence in
 the reutilization of navigation components.
 
-Example: ```cxx
+Example: 
+
+```cxx
 template<typename StateType, typename ObstaclesType, typename ActionType, typename GoalType, typename TTime>
   class NavigationNode;
 
 //specific templated navigation node
 class DwaNavigationNode: public NavigationNode<DynamicState2D, pcl::PointCloud<pcl::PointXY>, Twist2D, Pose2D, ros::Time> DwaNavigationNode;
 ```
+
+
 
 A reusable architecture should be applicable to many different contexts
 (world models, kinematic constraints, state representation, world

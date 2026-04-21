@@ -17,6 +17,8 @@ location simplified by an AR_tag., this can be done considering:
 
 Details can also be found in this paper:
 
+
+
 ```
 @INPROCEEDINGS{Santamaria_icra13,
   title = {Uncalibrated image-based visual servoing},
@@ -26,6 +28,8 @@ Details can also be found in this paper:
   pages={5227-5232},
 }
 ```
+
+
 
 ------------------------------------------------------------------------
 

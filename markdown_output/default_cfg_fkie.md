@@ -28,9 +28,13 @@ service types:
 
 Run the node:
 
+
+
 ```
 rosrun default_cfg_fkie default_cfg _package:=@PACKAGE_NAME@ _launch_file:=@FILE_NAME@
 ```
+
+
 
 You can run the node without parameter and use the `load` service to
 load a launch configuration.
@@ -40,6 +44,8 @@ load a launch configuration.
 { }}}}
 
 { }}}}
+
+
 
 ```clearsilver
 param {
@@ -59,3 +65,5 @@ param {
 2.default = `[str]`
 }
 ```
+
+

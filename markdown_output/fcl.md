@@ -18,9 +18,13 @@ For more technical details, check out the
 
 ## Download and Install
 
-Download the code using Git: ```
+Download the code using Git: 
+
+```
 git clone git://github.com/flexible-collision-library/fcl.git
 ```
+
+
 
 ## Related Work
 

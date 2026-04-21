@@ -2,14 +2,20 @@
 
 If you want to launch only the markers without an rviz instance:
 
+
+
 ```
 roslaunch husky_interactive_markers interactive_markers.launch
 ```
+
+
 
 Markers should appear around Husky in running rviz instances. Click and
 drag them to send velocity command messages.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -37,6 +43,8 @@ param {
   3.default = 2.2
  }
 }
-``` }}}}
+```
+
+ }}}}
 
 { }}}}

@@ -57,6 +57,8 @@ configure node parameters accordingly.
 If you use this work in your research, please consider citing the
 following paper:
 
+
+
 ```
 @article{beltran2022,  
   author={Beltrán, Jorge and Guindel, Carlos and de la Escalera, Arturo and García, Fernando},  
@@ -66,6 +68,8 @@ following paper:
   doi={10.1109/TITS.2022.3155228}
 }
 ```
+
+
 
 A previous version of this tool is available
 [here](https://github.com/beltransen/velo2cam_calibration/tree/v1.0) and

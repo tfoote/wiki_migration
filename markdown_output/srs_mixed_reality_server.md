@@ -33,6 +33,8 @@ about name, class and pose).
 
 The published topic (/control_mrs) structure is:
 
+
+
 ```
 string command # Can be ADD or REMOVE (add or remove object from augmented map)
 
@@ -68,6 +70,8 @@ string clr
 sensor_msgs/Image image # topview image icon for the object (only for augmentation level 3)
 ```
 
+
+
 ### RealityPublusher
 
 This node provide information to the UI about the objects located on the
@@ -75,6 +79,8 @@ augmented map.
 
 The published topic - /map_active_areas consists of ros header and array
 of data which conatains all the objects presented on the virtual map.
+
+
 ```
 Header header
 
@@ -99,11 +105,15 @@ uint32[] angle # Bounding box rotation angles in degrees
 bool[] graspable # Grasping possibility
 ```
 
+
+
 ### MapTF
 
 This node converts the coordinates, and sizes from ROS metric to pixel
 coordinates on virtual map and vice versa. It is provided as a ROS
 service srs_mixed_reality_server/MapTransform:
+
+
 
 ```
 uint32 transform_type 
@@ -118,6 +128,8 @@ geometry_msgs/Point world_coordinates (input point in metric - types 1 and 2 or 
 geometry_msgs/Point map_coordinates (output point in pixels - types 1 and 2 or metric - types 3 and 4)
 ```
 
+
+
 It also publishes the position of the robot in pixel map coordinates on
 topic /maptf.
 
@@ -130,12 +142,18 @@ via the assisted detector node in the Mixed reality server, BB Estimator
 and srs_assisted_detection stack. Assisted Detector node This node
 operates as an ROS service /srs_assisted_detector called from the UI_PRI
 via the ROSBridge. The service have the following input parameters:
+
+
 ```
 uint32 operation # 1 UIDetection, 2 BBMove, 3 Test
 std_msgs/String name # Name of the detected object
 int16[2] p1 # x1,y1 coordinates of the selected region in the UI /operation mode 2/
 int16[2] p2  # x2,y2 coordinates of the selected region in the UI /operation mode 2/
-``` The service response is:
+```
+
+ The service response is:
+
+
 ```
 string[] object_name # Array of the object labels detected
 uint32[] x1 # Array of the object x1 coordinates detected
@@ -143,7 +161,9 @@ uint32[] y1 # Array of the object y1 coordinates detected
 uint32[] x2 # Array of the object x2 coordinates detected
 uint32[] y2 # Array of the object y2 coordinates detected
 std_msgs/String message # response from the BBMove if any
-``` Operation modes
+```
+
+ Operation modes
 
 1\. Operation mode 1 - UIDetect The user start the detection process in
 the UI_PRI via clicking on the Detect button. The service
@@ -177,31 +197,45 @@ object - Milk box.
 These SRS package is not open to the public. If you want to run the
 packages, please write to goa@ipa.fhg.de, fmw@ipa.fhg.de. You can then
 fetch the source from the [github](https://github.com/ipa320/srs).
+
+
 ```
 rosmake srs_mixed_reality_server
 ```
+
+
 
 ## Configuration
 
 The node can be configured via its launch file -- MRS.launch. You can
 customize the virtual map size and the augmentation level -- 0 draw map
 only, 1 draw map and graphical representation of the objects (rectangles
-and ellipses) and 2 draw map with image icons. ```
+and ellipses) and 2 draw map with image icons. 
+
+```
 <param name="mapWidth"           value="1024" type="int"/>
 <param name="mapHeight"          value="1024" type="int"/>
 <param name="augmentationLevel"  value="2"    type="int"/>
 ```
 
+
+
 ## To start Mixed Reality Server
+
+
 
 ```
 roslaunch srs_mixed_reality_server MRS.launch
 ```
 
+
+
 ## Dependencies
 
 In order to generate augmented map you need following components
-compiled and running: ```
+compiled and running: 
+
+```
 roscore
 
 Care-O-bot simulation in gazebo or the real robot
@@ -215,10 +249,14 @@ srs_object_database (The Household Objects Database)
 rosbridge (to communicate to the UI_PRI)
 ```
 
+
+
 ## Testing
 
 You can test the output result using the UI_PRI on iPad or using a
 standard websockets compliant browser -- as Google Chrome.
+
+
 ```
 To view a snapshot - please open: 
 http://127.0.0.1:8080/snapshot?topic=/map 
@@ -231,3 +269,5 @@ http://127.0.0.1:8080/stream?topic=/stereo/right/image_raw
 
 Note: replace 127.0.0.1 with the IP of your ROS server where you run the MRS.
 ```
+
+

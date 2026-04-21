@@ -4,6 +4,8 @@ Inside this package there is the launch to load the parameters in
 parameter server in the name space /script_server , for example
 upload_param_cob3-3.launch:
 
+
+
 ```
 <?xml version="1.0"?>
 <launch>
@@ -20,12 +22,16 @@ upload_param_cob3-3.launch:
 </launch>
 ```
 
+
+
 ## Parameter definition/ Examples
 
 The package is divided into folders, a folder per robot, inside each
 robot folder you can find the `.yaml`-files.
 
 The `tray_joint_configurations.yaml`-file could look similar to this:
+
+
 
 ```
 joint_names: ["torso_tray_joint"]
@@ -34,13 +40,17 @@ up: [[0.0]]
 down: [[-3.1415926]]
 ```
 
+
+
 Each entry is defined as a list of lists. The inner list contains all
 joint positions for a certain point. The outer list contains all points
 belonging to a certain trajectory. All commands are trajectories with
 one or more points.
 
 Here you can see an example of a `arm_joint_configurations.yaml` file
-with points and trajectories: ```
+with points and trajectories: 
+
+```
 joint_names: ["arm_1_joint","arm_2_joint","arm_3_joint","arm_4_joint","arm_5_joint","arm_6_joint","arm_7_joint"]
 
 # single positions
@@ -54,11 +64,15 @@ waveout: [[1.5, 0.5, 0.0, 0.5, 0.0, -0.5, 0.0]]
 wave: [waveout, wavein, waveout, wavein]
 ```
 
+
+
 ## Command_gui_buttons / Example
 
 Also it is a .yaml file with the buttons of the command_gui
 (cob_default_robot_config)/\$(env ROBOT)/command_gui_buttons.yaml it is
 defined for each robot. The typical format of this file is:
+
+
 
 ```
 group:
@@ -68,7 +82,11 @@ group:
     [button_name2,function_name2,parameter_name2]]
 ```
 
-A sample of this file is: ```
+
+
+A sample of this file is: 
+
+```
 group1:
   group_name: base
   component_name: base
@@ -99,3 +117,5 @@ group3:
     [up,move,up],
     [down,move,down]]
 ```
+
+

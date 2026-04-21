@@ -30,12 +30,16 @@ defining transitions.
 After loading the maps, you must define transitions between maps. This
 revolves around creating a YAML file defining them. The YAML file has
 two main parts - the first is a list of maps and the second a list of
-transitions. The maps section is as follows: ```
+transitions. The maps section is as follows: 
+
+```
 start_map: willow-up
 maps:
      - name: willow-up
        north_angle: 1.5707963267948966
 ```
+
+
 
 The last two lines are repeated for however many maps there are. The
 start_map: defines the initial map. The last two lines define a map
@@ -45,7 +49,9 @@ unless the default transition is used. If all maps face the same
 direction, it is safe to set all north_angle values to zero.
 
 After defining your maps, you must define the transitions, which begin
-with the wormholes tag: ```
+with the wormholes tag: 
+
+```
 wormholes:
      - name: hallway-door
        type: normal
@@ -56,6 +62,8 @@ wormholes:
             - map: willow-up
               position: [5.65, 22.629]
 ```
+
+
 
 The wormholes tag specifies the list of transitions. The -name: elements
 may be repeated to define as many transitions as you wish. The name of
@@ -94,6 +102,8 @@ as they do not conflict with "map", "position", "angle", or
 
 You must first add map_store to your launch file. To start
 multi_map_navigation, add this code to your launch file:
+
+
 ```
 <node pkg="multi_map_navigation" type="multi_map_navigation" name="multi_map_navigation" output="screen">
   	<param name="definition_file" value="YAML" />
@@ -101,17 +111,23 @@ multi_map_navigation, add this code to your launch file:
   </node>
 ```
 
+
+
 Where YAML is the absolute path to your configuration YAML and TYPES is
 a list of transition actions that could be present in the map. TYPES can
 be the empty string if you have no transitions outside of "normal"
 transitions that do not trigger any actions.
 
 You can also add lines to set the initial pose of the base:
+
+
 ```
 <param name="/amcl/initial_pose_x" value="9.116" />
   <param name="/amcl/initial_pose_y" value="10.993" />
   <param name="/amcl/initial_pose_a" value="1.546" />
 ```
+
+
 
 ## Specifying Robot Position and Calling Multi-Map Navigation
 
@@ -119,15 +135,23 @@ Once multi-map navigation is launched, you must specify a position in
 the maps. If you did not specify a proper initial position, then you
 must use rviz to place the robot properly in the map. You must also
 launch on the proper map, if you haven't, then you must properly set
-the map from the command line: ```
+the map from the command line: 
+
+```
 rosservice call /multi_map_navigation/set_map <map-name>
-``` Where
+```
+
+ Where
 <map-name> is the target <map-name> which the robot is starting on.
 
 Once multi-map navigation is launched, you can give the robot a goal. To
-achieve this from the command line: ```
+achieve this from the command line: 
+
+```
 rosrun multi_map_navigation multi_map_navigation_test 12 10 willow-down
-``` Where 12
+```
+
+ Where 12
 and 10 are the floating point x-y coordinate of the target and
 "willow-down" is the target map name.
 
@@ -137,6 +161,8 @@ The example of multi_map_navigation_test shows how to do this
 effectively. Basically, there is an action called
 MultiMapNavigationAction that exists in multi_map_navigation/move. From
 python:
+
+
 
 ```
 self.action_client = actionlib.SimpleActionClient("multi_map_navigation/move", MultiMapNavigationAction)
@@ -151,6 +177,8 @@ self.action_client = actionlib.SimpleActionClient("multi_map_navigation/move", M
         self.action_client.send_goal(goal)
         self.action_client.wait_for_result()
 ```
+
+
 
 ## Writing Transition Actions
 

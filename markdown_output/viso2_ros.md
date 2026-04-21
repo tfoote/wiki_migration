@@ -91,6 +91,8 @@ for the camera movement or the feature distribution.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = Common for mono_odometer and stereo_odometer
 pub {
@@ -195,6 +197,10 @@ prov_tf {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = mono_odometer
 sub {
@@ -225,6 +231,10 @@ param {
   4.default = 100.0
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = stereo_odometer
@@ -282,6 +292,8 @@ param {
   7.default = 150
 }
 ```
+
+
 
 ## Troubleshoting
 

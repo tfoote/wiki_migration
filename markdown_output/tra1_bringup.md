@@ -3,16 +3,24 @@
 To try this package without real robot, type following command in a
 terminal:
 
+
+
 ```
 $ roslaunch tra1_bringup tra1_bringup.launch simulation:=true
-``` The argument "simulation:=true" set the
+```
+
+ The argument "simulation:=true" set the
 controller into loop-back mode, to emulate real hardware.
 
 And type this command in another terminal:
 
+
+
 ```
 $ roslaunch tra1_bringup tra1_moveit.launch
-``` Now you can see MoveIt! rviz interface to
+```
+
+ Now you can see MoveIt! rviz interface to
 control the robot.
 
 ![ScreenShot\|width="75%"](attachment:Screenshot from 2017-09-15 10-56-31.png)

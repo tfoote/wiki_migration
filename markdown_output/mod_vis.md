@@ -27,6 +27,8 @@ The applet offers four services for changing these four fields, all of
 which accept a string that is either visualized or used as a file name
 to load an image.
 
+
+
 ```
 comm_vis_set_left_img
 comm_vis_set_right_img
@@ -34,15 +36,25 @@ comm_vis_set_req_text
 comm_vis_set_res_text
 ```
 
-Launch with ```
+
+
+Launch with 
+
+```
 rosrun mod_vis communication_vis
 ```
 
+
+
 You can either call the services directly or, from within Java, use the
 wrapper function in the CommunicationVisApplet class:
+
+
 ```
 CommunicationVisApplet.visualizeCommunication("Retrieving model...", "", null, "cop.png");
 ```
+
+
 
 ## Visualization of task descriptions
 

@@ -13,8 +13,12 @@ output with "*rostopic echo /tray_sensors/range_1*"
 If you get a message like "operation not permitted" you have probably
 not the right to open the USB device. Therefore, add an udev rule with:
 
+
+
 ```
 sudo echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="06c2", MODE="0666", GROUP="dialout"' >>  /etc/udev/rules.d/10-persistent-usb.rules && sudo chmod a+r /etc/udev/rules.d/10-persistent-usb.rules && sudo udevadm control --reload-rules
 ```
+
+
 
 Make sure your user is in the group "dialout" with `groups`.

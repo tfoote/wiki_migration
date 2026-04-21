@@ -10,10 +10,14 @@ This tutorial package provides one teleop node:
 To run the default examples, start by getting the required dependencies
 and making the package.
 
+
+
 ```
 $ rosdep install turtle_teleop
 $ rosmake turtle_teleop
 ```
+
+
 
 Then there are five different launch files for setting up your device
 with the teleop node and driving turtle1 in the turtlesim. See the

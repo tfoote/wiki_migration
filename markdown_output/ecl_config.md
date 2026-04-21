@@ -14,6 +14,8 @@ Major platform support includes posix/apple and mingw/msvc (partial).
 Include the following at the top of any translation unit that utilises
 the configuration definitions and tools.
 
+
+
 ```cplusplus
 #include <ecl/config.hpp>
 
@@ -26,6 +28,8 @@ using ecl::int8;
 using ecl::uint8;
 // ...
 ```
+
+
 
 ## Under the Hood
 
@@ -49,6 +53,8 @@ purpose macros only.
 
 ### Macros
 
+
+
 ```
 // Platform macros - automatically detected by the build.
 - ECL_IS_POSIX || ECL_IS_WIN32 || ECL_IS_APPLE || ECL_IS_CUSTOM
@@ -70,6 +76,8 @@ purpose macros only.
 - ECL_PUBLIC || ECL_LOCAL
 ```
 
+
+
 Note that you may predefine ECL_HAS_SHARED_LIBS or ECL_HAS_STATIC_LIBS
 for your project if both are available and you want to force appropriate
 behaviour for the target set you are linking against.
@@ -79,6 +87,8 @@ behaviour for the target set you are linking against.
 When you absolutely need to specify the bit-width type you need to use,
 the following typedefs are defined by the ECL when the appropriate types
 are available.
+
+
 
 ```
 - ecl::int8,  ecl::uint8
@@ -91,9 +101,13 @@ are available.
 - ecl::float128
 ```
 
+
+
 ### Platform Sniffers
 
 Checking for *endianness*:
+
+
 
 ```
 // The function operates like a macro, and a good compiler will compile
@@ -103,13 +117,19 @@ if ( ecl::is_big_endian() {
 }
 ```
 
+
+
 To check if your default char type is signed, or otherwise, use the
 following. Note that this only works for runtime checks. To do compile
 time checks (for use in template parameters etc), there is the
 ECL_CHAR_IS_SIGNED and ECL_CHAR_IS_UNSIGNED macros.
+
+
 
 ```cplusplus
 if ( ecl::is_char_signed() {
    // ...
 }
 ```
+
+

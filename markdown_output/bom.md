@@ -24,6 +24,8 @@ observations.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=ssd_node
@@ -121,6 +123,8 @@ param{
 }
 }
 ```
+
+
 
 ## References
 

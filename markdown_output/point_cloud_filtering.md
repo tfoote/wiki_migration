@@ -23,19 +23,35 @@ and a voxel grid downsampling
 [here](https://github.com/srv/point_cloud_filtering). 2. Include the
 package into you ROS workspace:
 
-Go to your ROS home directory ```
+Go to your ROS home directory 
+
+```
 $ roscd
 ```
 
-Put this package into your workspace ```
+
+
+Put this package into your workspace 
+
+```
 $ rosws set download_path/point_cloud_filtering
 ```
 
-Update ```
+
+
+Update 
+
+```
 $ source setup.sh
 ```
 
+
+
 3\. Setup the filter parameters in the file filter_params.yaml 4. Run
-the package using the launch file included: ```
+the package using the launch file included: 
+
+```
 $ roslaunch point_cloud_filtering point_cloud_filtering.launch
 ```
+
+

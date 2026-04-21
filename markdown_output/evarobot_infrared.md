@@ -3,6 +3,8 @@
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=evarobot_infrared
@@ -14,7 +16,11 @@ node.0 {
   }
 ```
 
+
+
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -95,3 +101,5 @@ param {
   14.desc= Parameter B for converting from voltage to range.
 }
 ```
+
+

@@ -17,6 +17,8 @@ Erle-Brain
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = ros_erle_ubled_main
@@ -48,13 +50,19 @@ node.1 {
 }
 ```
 
+
+
 ## Using ros_erle_ubled
 
 ### ros_erle_ubled_main
 
-Launch the subscriber: ```
+Launch the subscriber: 
+
+```
 rosrun ros_erle_ubled ros_erle_ubled_main
 ```
+
+
 
 ### Configure your network
 
@@ -62,15 +70,23 @@ If you are working with two different machines, for example: Erle-Brain
 and your laptop remember to configure ROS_MASTER_URI and ROS_IP. Maybe
 could be interesting to put this lines in your bashrc.
 
-Erle-Brain ```
+Erle-Brain 
+
+```
 export ROS_MASTER_URI=http://192.168.7.2:11311
 export ROS_IP=192.168.7.2
 ```
 
-Laptop or PC: ```
+
+
+Laptop or PC: 
+
+```
 export ROS_MASTER_URI=http://192.168.7.2:11311
 export ROS_IP=192.168.7.1
 ```
+
+
 
 ## Support forums and chats
 

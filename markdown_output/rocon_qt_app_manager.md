@@ -6,6 +6,10 @@ Graphical user interface to start rapps.
 
 ### Execution
 
+
+
 ```
 > rocon_qt_appmanager
 ```
+
+

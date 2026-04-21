@@ -23,6 +23,8 @@ The INS should be configured through its web interface to output:
 
 ## Nodes
 
+
+
 ```clearsilver
 name = ixblue_ins_driver
 desc = ROS driver for iXblue inertial sensors supporting stdbin protocol
@@ -65,3 +67,5 @@ param {
   3.default = unix
 }
 ```
+
+

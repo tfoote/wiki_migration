@@ -52,6 +52,8 @@ or 1. Any other data source that produces point clouds
 If you use the code or snippets from this repository in your work,
 please cite:
 
+
+
 ```
 @software{praveen_palanisamy_2019_3559187,
   author       = {Praveen Palanisamy},
@@ -65,6 +67,8 @@ please cite:
   url          = {https://doi.org/10.5281/zenodo.3559186}
 }
 ```
+
+
 
 ## Wiki
 

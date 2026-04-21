@@ -17,9 +17,13 @@ libmarble-dev package of ubuntu. The main features are:
 
 ## Installation
 
-You might need to satisfy dependency by: ```
+You might need to satisfy dependency by: 
+
+```
 $ rosdep install marble_plugin
 ```
+
+
 
 ## Further Reading
 

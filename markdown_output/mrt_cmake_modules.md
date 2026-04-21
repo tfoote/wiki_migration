@@ -30,5 +30,3 @@ On the other hand, you get a lot of things for free:
 
 For more information, please refer to the documentation
 [within the repository](https://github.com/KIT-MRT/mrt_cmake_modules)
-
-<<GitHubIssues(KIT-MRT/mrt_cmake_modules)>>

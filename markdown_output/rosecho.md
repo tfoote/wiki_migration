@@ -17,42 +17,68 @@ To be released
 ### Install from source
 
 Steps to install to catkin_ws. Tested for ROS kinetic and melodic.
+
+
 ```
 cd ~/catkin_ws/src/
 git clone https://github.com/tianbot/rosecho.git
 cd ~/catkin_ws && catkin_make
 ```
 
+
+
 ### Usage Instructions
 
 Make sure the power supply and usb connection are correct.
 
-Start ROSECHO node Launch the ROSECHO. ```
+Start ROSECHO node Launch the ROSECHO. 
+
+```
 roslaunch rosecho rosecho.launch
 ```
+
+
 
 The default serial port is /dev/ttyUSB0, if serial open failed, pls
 check the port used by ROSECHO If it is /dev/ttyUSB1, you can change the
 launch file or launch use the command as follows
+
+
 ```
 roslaunch rosecho rosecho.launch serial_port:=/dev/ttyUSB1
 ```
 
+
+
 To enable wifi config, call the wifi_cfg service.
+
+
 ```
 rosservice call /rosecho/wifi_cfg "ssid: 'tianbot' password: 'www.tianbot.com'"
-``` You can use Tab to auto-complete the command
+```
+
+ You can use Tab to auto-complete the command
 and then fill in the ssid and password.
 
-check the automated sound recognition result ```
+check the automated sound recognition result 
+
+```
 rosrun rosecho asr_echo.py
 ```
 
-check the answer ```
+
+
+check the answer 
+
+```
 rosrun rosecho answer_echo.py
 ```
 
-send tts to rosecho/tts/goal ```
+
+
+send tts to rosecho/tts/goal 
+
+```
 rostopic pub /rosecho/tts/goal rosecho/ttsActionGoal "header:
   seq: 0
   stamp:
@@ -68,18 +94,26 @@ goal:
   text: '你好机器人'"
 ```
 
+
+
 You can use Tab to auto-complete the command and then fill in the goal:
 text: '你好机器人'
 
 ## Simple Demo
 
-Voice command test in turtlebot stage ```
+Voice command test in turtlebot stage 
+
+```
 roslaunch rosecho rosecho.launch
 roslaunch turtlebot_stage turtlebot_in_stage.launch
 rosrun rosecho demo.py
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
   name=rosecho
@@ -132,6 +166,8 @@ srv{
   4.desc = Setup WIFI connection.
 }
 ```
+
+
 
 ## License
 

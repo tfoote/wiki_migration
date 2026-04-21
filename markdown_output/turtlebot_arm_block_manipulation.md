@@ -39,6 +39,8 @@ necessary to run the block manipulation demo.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = interactive_manipulation_action_server
 desc = Provides an action-based interactive marker server for prompting the user to move blocks around. Requires a goal specifying where the the blocks are, and publishes a result containing a start pose and end pose.
@@ -59,6 +61,10 @@ param {
   0.default = 0.005
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = block_detection_action_server
@@ -84,14 +90,22 @@ req_tf {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = pick_and_place_action_server
 desc = Interfaces with MoveIt! for the !TurtleBot arm to move an object from the start pose to the end pose.
 ```
 
+
+
 ## Actions
 
 ### BlockDetection.action
+
+
 
 ```
 #goal definition
@@ -105,7 +119,11 @@ geometry_msgs/PoseArray blocks
 #feedback
 ```
 
+
+
 ### InteractiveBlockManipulation.action
+
+
 
 ```
 #goal definition
@@ -119,7 +137,11 @@ geometry_msgs/Pose place_pose
 #feedback
 ```
 
+
+
 ### PickAndPlace.action
+
+
 
 ```
 #goal definition
@@ -135,3 +157,5 @@ string topic
 ---
 #feedback
 ```
+
+

@@ -9,9 +9,13 @@ For a graphical version of `rosgraph`, please see
 periodically displays information about your current graph in a text
 format. To use it, simply type:
 
+
+
 ```
 $ rosgraph
 ```
+
+
 
 ## Python API
 

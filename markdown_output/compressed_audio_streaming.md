@@ -7,7 +7,9 @@ scripts both require a `client_host` and `client_port`. If both
 scripts are run on the same machine `client_host` can be set to
 `localhost`.
 
-Example launch file for the server: ```
+Example launch file for the server: 
+
+```
 <launch>
 
   <node name="gstream_server" pkg="compressed_audio_streaming" type="gstream_server.py" output="screen">
@@ -18,7 +20,11 @@ Example launch file for the server: ```
 </launch>
 ```
 
-Example launch file for the client: ```
+
+
+Example launch file for the client: 
+
+```
 <launch>
 
   <node name="gstream_client" pkg="compressed_audio_streaming" type="gstream_client.py" output="screen">
@@ -29,15 +35,25 @@ Example launch file for the client: ```
 </launch>
 ```
 
+
+
 Once the launch files are created, start the server on the machine which
-has the microphones ```
+has the microphones 
+
+```
 roslaunch compressed_audio_streaming server.launch
 ```
 
+
+
 Finally, start the client on the machine which is to receive the audio
-stream ```
+stream 
+
+```
 roslaunch compressed_audio_streaming client.launch
 ```
+
+
 
 ## Audio Devices
 

@@ -17,16 +17,24 @@ You'll need to point the compiler at the location of OPEN_NI_UNSTABLE
 and OPEN_NITE_UNSTABLE on your system. Change the corresponding lines in
 the CMakeLists.txt file. eg
 
+
+
 ```
 set(OPEN_NI_UNSTABLE "/home/your_name/kinect/openni/" CACHE STRING "Location of Unstable OpenNI")
 set(OPEN_NITE_UNSTABLE "/home/your_name/kinect/nite/" CACHE STRING "Location of Unstable NITE")
 ```
 
+
+
 ## Running the node
+
+
 
 ```
 rosrun people_tracker tracker
 ```
+
+
 
 Stand about 1-2 metres in front of the kinect so that it can see your
 whole body. There is no need to pose, the default calibration file is
@@ -39,6 +47,8 @@ you will be detected.
 
 None. This node wraps the OpenNI skeleton tracker so communicates
 directly to the kinect.
+
+
 
 ```clearsilver
 pub {
@@ -59,3 +69,5 @@ pub {
   2.desc = xyz offset of the tracked person's torso from the base_link
 }
 ```
+
+

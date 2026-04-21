@@ -21,21 +21,31 @@
 <!-- -->
 ```
 -   image_view: A modified version of image_view to display the
-    overlayed image. ```
+    overlayed image. 
+
+```
 rosrun camera_self_filter image_view image:=/wide_stereo/left/image_rect_color_alpha_masked
 ```
 
+
+
 [![\|width=640px](attachment:overlayed_image.jpg)](attachment:overlayed_image.jpg)
 
--   The mask can be displayed running ```
+-   The mask can be displayed running 
+
+```
 rosrun image_view image_view image:=/wide_stereo/left/self_mask
 ```
+
+
 
 [![\|width=640px](attachment:mask.jpg)](attachment:mask.jpg)
 
 ### launch
 
 Example launch file:
+
+
 
 ```
 <node pkg="camera_self_filter" type="camera_self_filter"  
@@ -50,6 +60,8 @@ Example launch file:
 		
 </node>
 ```
+
+
 
 Note that the camera_self_filter node expects the robot urdf on the
 parameter server. If has not been loaded automatically (for instance

@@ -62,10 +62,14 @@ Usage: rosrun cv_mech_turk2 convert_outlines_to_masks.py
 -   \--annotations_dir - dir_to_annotations. Path where
     session_results.py saved session results.
 
-e.g: ```
+e.g: 
+
+```
 rosrun cv_mech_turk2 session_results.py --server=vm6 \
   --session=whiteboard-debug-4s --filter=none
 
 rosrun cv_mech_turk2 convert_outlines_to_masks.py \
   --annotations_dir=./results/whiteboard-debug-4s/
 ```
+
+

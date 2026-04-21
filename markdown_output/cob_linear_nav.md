@@ -8,6 +8,8 @@ of time (to be specified over a parameter).
 
 ## ROS API
 
+
+
 ```clearsilver
  name = cob_linear_nav
  desc = The `cob_linear_nav` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/PoseStamped.html|geometry_msgs/PoseStamped]] messages as a new goal, as well as [[http://ros.org/doc/api/nav_msgs/html/msg/Odometry.html|nav_msgs/Odometry]] messages specifying the odometry of the robot. The movement commands are published as a [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] [[Topics|topic]]. It also provides the ability to send a goal using [[rviz]] on the ''/move_base_linear_simple/goal'' topic.
@@ -129,6 +131,8 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 For the usage of [cob_linear_nav](cob_linear_nav), have a look at
@@ -137,7 +141,9 @@ For the usage of [cob_linear_nav](cob_linear_nav), have a look at
 
 A sample parameter file (currently in
 [cob_navigation_config](cob_navigation_config)`/common/linear/ctrl_params.yaml`)
-can look like this: ```
+can look like this: 
+
+```
 #Parameters designing the potential field controller
 #Translational part
 kv: 2.50 #damping 2.50
@@ -162,3 +168,5 @@ robot_frame: /base_link #/base_link
 slow_down_distance: 0.5 #0.5[m] distance from robot_center to goal at which robot starts slowing down
 goal_abortion_time: 5.0 #5.0[s] time until robot aborts goal due to obstacle
 ```
+
+

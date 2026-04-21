@@ -26,9 +26,13 @@ The package provides the following ROS nodes/nodelets:
 First, launch the device and image processing via
 [ccny_openni_launch](ccny_openni_launch).
 
+
+
 ```
 roslaunch ccny_openni_launch openni.launch publish_cloud:=true
 ```
+
+
 
 Next, launch
 [ visual_odometry.launch](https://github.com/ccny-ros-pkg/ccny_rgbd_tools/blob/master/ccny_rgbd/launch/visual_odometry.launch )
@@ -36,9 +40,13 @@ for visual odometry, or
 [ vo+mapping.launch](https://github.com/ccny-ros-pkg/ccny_rgbd_tools/blob/master/ccny_rgbd/launch/vo+mapping.launch )
 for visual odometry and mapping interfaces.
 
+
+
 ```
 roslaunch ccny_rgbd vo+mapping.launch
 ```
+
+
 
 Launch [rviz](rviz), and load the
 [ vo+mapping.vcg](https://github.com/ccny-ros-pkg/ccny_rgbd_tools/blob/master/ccny_rgbd/launch/vo+mapping.vcg )
@@ -47,22 +55,34 @@ configuration file.
 If you are using the mapping interface, you can call the following
 services to perform graph-based SLAM (offline):
 
+
+
 ```
 rosservice call /generate_graph 
 rosservice call /solve_graph
 ```
 
+
+
 You can publish the resulting keyframe to rviz:
+
+
 
 ```
 rosservice call /publish_keyframes  ".*"
 ```
 
+
+
 Or save the entire map as a pcd:
+
+
 
 ```
 rosservice call /save_pcd_map /home/your_user_name/my_map.pcd
 ```
+
+
 
 For more options, consult the individual app pages.
 

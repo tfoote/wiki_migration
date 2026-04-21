@@ -10,11 +10,15 @@ predefined local object in the gazebo simulator.
 
 ## Invocation
 
+
+
 ```
 $ rosrun re_vision ObjectDetector [options] [camera_info:=/your/camera_info]
 $ rosrun re_vision ObjectDetectorDummy [options] [camera_info:=/your/camera_info]
 $ roslaunch re_vision gazebo.launch
 ```
+
+
 
 The first line runs the !ObjectDetector node, which must be notified the
 object models to load via topic. The !ObjectDetectorDummy behaves the
@@ -41,6 +45,8 @@ Options:
 
 ### ROS Topics
 
+
+
 ```clearsilver
 
 sub {
@@ -61,7 +67,11 @@ pub {
 }
 ```
 
+
+
 ### ROS Services
+
+
 
 ```clearsilver
 srv {
@@ -72,3 +82,5 @@ srv {
 
 }
 ```
+
+

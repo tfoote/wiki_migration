@@ -25,16 +25,24 @@ the standard ROS camera interface. See the
 [vision_visp](vision_visp) stack.
 
 -   To install [visp_camera_calibration](visp_camera_calibration)
-    package run ```
+    package run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-visp-camera_calibration
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Or to install the complete stack run ```
+-   Or to install the complete stack run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
+
+
 
 ## Tutorials
 
@@ -64,7 +72,9 @@ module needs to load several parameters:
 -   tracking parameters used in image processing
 -   behaviour of the interface. Set pause_at_each_frame to True if
     you're using the experimental camera shipped with this package. For
-    any other ROS camera, set it to False. ```xml
+    any other ROS camera, set it to False. 
+
+```xml
 <node pkg="visp_camera_calibration" name="visp_camera_calibration_image_processing" type="visp_camera_calibration_image_processing">
       <!-- 3D coordinates of 4 points the user has to select to initialise the calibration process -->
       <rosparam param="selected_points_x">[0.03, 0.03, 0.09, 0.12]</rosparam>
@@ -85,13 +95,19 @@ module needs to load several parameters:
 </node>
 ```
 
+
+
 ### Camera calibrator
 
 You can run the calibrator without any parameters.
 
+
+
 ```xml
 <node pkg="visp_camera_calibration" name="visp_camera_calibration_calibrator" type="visp_camera_calibration_calibrator"/>
 ```
+
+
 
 ### Experimental camera
 
@@ -99,12 +115,18 @@ For testing purposes, the package contains a camera satisfying the
 standard ROS camera interface. The camera reads a video or a sequence of
 images and is configured as follows:
 
+
+
 ```xml
 <node pkg="visp_camera_calibration" name="visp_camera_calibration_camera" type="visp_camera_calibration_camera">
 	<param name="images_path" value="images/grid36-0%d.pgm" />
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = visp_camera_calibration_image_processing
@@ -190,6 +212,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = visp_camera_calibration_calibrator
 desc = This node computes the camera calibration parameters and calls the <<SrvLink(sensor_msgs/SetCameraInfo)>> service on the current camera. It produces a calibration.ini file that will be in your $HOME/.ros directory.
@@ -213,6 +239,10 @@ srv_called {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = visp_camera_calibration_camera
 desc = This is an experimental camera node used for test purposes.
@@ -229,3 +259,5 @@ srv_called {
   0.desc = Get the camera parameters according to the chosen camera model, with or without distorsion and the size of the images.
 }
 ```
+
+

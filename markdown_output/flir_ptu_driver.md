@@ -22,9 +22,13 @@ file provides an example of how to use the macro.
 To visualize the model without running the driver, you can launch it
 like so:
 
+
+
 ```
 roslaunch flir_ptu_viz view_model.launch
 ```
+
+
 
 This should produce an [rviz](rviz) window showing the device model, as
 well as a [joint_state_publisher](joint_state_publisher) window letting
@@ -35,23 +39,37 @@ you adjust the joint values.
 To try out the driver prior to integration with a larger robot, you can
 connect and power it, and run:
 
+
+
 ```
 roslaunch flir_ptu_driver ptu.launch port:=/dev/ttyUSB0
 ```
 
+
+
 Once up, you can bring up the visualization in rviz:
+
+
 
 ```
 roslaunch flir_ptu_viz view_ptu.launch
 ```
 
+
+
 You can send it one-off commands using a provided convenience script:
+
+
 
 ```
 ROS_NAMESPACE=ptu rosrun flir_ptu_driver cmd_angles -0.6 0.3
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -83,6 +101,8 @@ node.0 {
  }
 }
 ```
+
+
 
 ## Roadmap
 

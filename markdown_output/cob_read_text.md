@@ -41,6 +41,8 @@ read_text_with_eval.launch -> run_detection -> text_detect
 
 Parameters are specified in launch/params.yaml.
 
+
+
 ```clearsilver
 param {
     0.name = smoothImage
@@ -260,6 +262,8 @@ param {
   }
 ```
 
+
+
 ## Additional Applications
 
 ### read_evaluation
@@ -268,7 +272,9 @@ To evaluate cob_read_text the application read_evaluation is used.
 Usage: read_evaluation takes a .xml-file containing a list of images
 with ground-truth bounding boxes enclosing every text that can be found.
 
-Example input file: ```
+Example input file: 
+
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <tagset>
  <image>
@@ -280,6 +286,8 @@ Example input file: ```
  </image>
 </tagset>
 ```
+
+
 
 All rectangles are described via:
 

@@ -17,6 +17,8 @@ in the future.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name= gazebo
@@ -46,6 +48,10 @@ sub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.1 {
 name= joint_state_publisher
@@ -57,6 +63,10 @@ pub {
   0.desc = Joint State for each non-fixed joint in the robot
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.2 {
@@ -71,3 +81,5 @@ sub {
   1.type = tf2_msgs/TFMessage
   1.desc = maintains the relationship between coordinate frames in a tree structure buffered in time.
 ```
+
+

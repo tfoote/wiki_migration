@@ -28,10 +28,16 @@ configuration of this package.
 First install the stack by following the steps mentioned [here](wire).
 Then, launch:
 
+
+
 ```
 $ roslaunch wire_core start.launch
-``` Now, the world model starts. The output on the
-screen will look something like this: ```
+```
+
+ Now, the world model starts. The output on the
+screen will look something like this: 
+
+```
 ***** 1352890681.479009 ***** 
    Number of hypotheses        = 1 
    Max probability             = 1 
@@ -50,20 +56,32 @@ Max update:           0 seconds
 Evidence buffer size: 0
 ```
 
+
+
 If evidence is fed into the world model, it will start filtering and a
 non-empty world state estimate will be available on the /world_state
 topic. Then, the visualization might be useful to visualize both the
-world model input and/or output in RViz.: ```
+world model input and/or output in RViz.: 
+
+```
 $ roslaunch wire_tutorials rviz_wire_fuerte.launch
-``` for
-fuerte users or ```
+```
+
+ for
+fuerte users or 
+
+```
 $ roslaunch wire_tutorials rviz_wire_electric.launch
-``` for electric users.
+```
+
+ for electric users.
 
 ## Configuring the visualization
 
 The world model can be figures using the parameters/world_model.yaml
-file: ```python
+file: 
+
+```python
 world_model_frame: /map
 output_frame: /map
 
@@ -71,23 +89,25 @@ evidence_topics:
  - /world_evidence
 ```
 
+
+
 ## Line-by-line explanation
 
-<<CodeRef(yaml,1,2)>> Here the frame of the world model and its
-output can be defined. All input is transformed to the
-world_model_frame. In this frame the tracking is done. The final world
-state estimate is transformed to output_frame before it is published
-over the /world_state topic.
-
-<<CodeRef(yaml,4,5)>> Here the input topics of the world model are
-defined. Note that if the input topic changes, the world_model_vis
-package is no longer able to visualize the world model input. This can
-however easily be changed, by changing the topic name in the main
-function of the file world_model_vis/src/visualization.cpp.
+Here the frame of the world model and its output can be defined. All
+input is transformed to the world_model_frame. In this frame the
+tracking is done. The final world state estimate is transformed to
+output_frame before it is published over the /world_state topic. Here
+the input topics of the world model are defined. Note that if the input
+topic changes, the world_model_vis package is no longer able to
+visualize the world model input. This can however easily be changed, by
+changing the topic name in the main function of the file
+world_model_vis/src/visualization.cpp.
 
 ## Nodes
 
 ### Publishers/subscribers
+
+
 
 ```clearsilver
 pub {
@@ -102,7 +122,11 @@ sub {
 }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 param {
@@ -120,3 +144,5 @@ param {
   2.desc = List of topics feeding the world model
 }
 ```
+
+

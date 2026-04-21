@@ -20,23 +20,35 @@ Also right now be sure this location has sub-folders 'results' and
 4\) rosmake the hrl_lib package. This is the only package that requires
 rosmake to run.
 
-5\) Prep: ```
+5\) Prep: 
+
+```
 $roslaunch pr2_clutter_helper  table_snapshotter.launch
-``` I usually run this on the PR2 itself.
+```
+
+ I usually run this on the PR2 itself.
 This starts saving laserscans from '/tilt_scan' to clouds on expected
 default topic name of '/table_cloud'.
 
-Data Collection Test ```
+Data Collection Test 
+
+```
 $ rosrun pr2_clutter_helper  acquire_pr2_data.py
-``` This will collect data
+```
+
+ This will collect data
 from robot, and publish a colored-point cloud. This should pop up a
 couple of image visuals. View results in RVIZ by adding cloud topic
 listening to "table_cloud_colored" This test only tests ability to get
 data from PR2 and manipulate correctly.
 
-Segmentation Test ```
+Segmentation Test 
+
+```
 $ rosrun clutter_segmentation  run_segmentation_PR2.py
-``` This should pop up a couple
+```
+
+ This should pop up a couple
 of visuals View results in RVIZ by adding cloud topic listening to
 "labeled_cloud" and another for "table_cloud_colored"
 
@@ -110,14 +122,22 @@ the file clutter_calibration_info.txt.**
 ### Viewing
 
 The 3D data can be viewed in the following ways: (1)
+
+
 ```
 $ rosbag play X.bag --clock -d 5
-``` In RVIZ listen to topic /clutter_cloud and set
+```
+
+ In RVIZ listen to topic /clutter_cloud and set
 Fixed_Frame to be /clutter_cloud The delay will let you subscribe to the
 topic in RVIZ before the bag closes. I have added a color channel (adds
 2 MB to each bag) for easy viewing of labels in RVIZ. The intensities
 channel can also be used to color the clouds. (2)
+
+
 ```
 $ rosrun pcl_visualization pcd_viewer X.pcd
-``` Doesn't allow viewing of the labeled 'L'
+```
+
+ Doesn't allow viewing of the labeled 'L'
 channel as far as I can tell.

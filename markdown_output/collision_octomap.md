@@ -53,6 +53,8 @@ something to look out for.
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   1.name= ~fixed_frame
@@ -86,10 +88,14 @@ param {
 }
 ```
 
+
+
 ### cloud_sources YAML file
 
 An example of the cloud_sources YAML file is given below. Note that this
 is the same format used for the regular [collision_map](collision_map).
+
+
 ```
 cloud_sources:
   - name: full_cloud_filtered
@@ -98,7 +104,11 @@ cloud_sources:
     sensor_frame: laser_tilt_mount_link
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 sub{
@@ -127,10 +137,14 @@ sub{
 }
 ```
 
+
+
 ## Example Usage
 
 The `collision_octomap_node` should be launched the same way as as
 `collision_map_node`. An example launch file is shown below.
+
+
 
 ```
 <launch>
@@ -151,6 +165,8 @@ The `collision_octomap_node` should be launched the same way as as
 </launch>
 ```
 
+
+
 In the above launch file, we are using the "map" fixed frame, which is
 provided by the navigation stack. Make sure you launch some flavor of
 the navigation stack if you wish to use the map frame, otherwise use
@@ -158,6 +174,8 @@ something like "odom_combined". If you want to insert laser snapshots
 (recommended) instead of individual laser scans, you should configure
 your assembler with the same fixed frame used by
 `collision_octomap_node`. Example launch file below.
+
+
 
 ```
 <launch>
@@ -178,3 +196,5 @@ your assembler with the same fixed frame used by
   </node> 
 </launch>
 ```
+
+

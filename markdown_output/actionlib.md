@@ -75,7 +75,9 @@ These files are placed in a package's `./action` directory, and look
 extremely similar to a service's `.srv` file. An action specification
 for doing the dishes might look like the following:
 
-`./action/DoDishes.action` ```
+`./action/DoDishes.action` 
+
+```
 # Define the goal
 uint32 dishwasher_id  # Specify which dishwasher we want to use
 ---
@@ -85,6 +87,8 @@ uint32 total_dishes_cleaned
 # Define a feedback message
 float32 percent_complete
 ```
+
+
 
 Based on this `.action` file, 6 messages need to be generated in order
 for the client and server to communicate. This generation can be
@@ -97,36 +101,52 @@ automatically triggered during the make process:
 Add the following to your CMakeLists.txt file *before*
 `catkin_package()`.
 
+
+
 ```
 find_package(catkin REQUIRED genmsg actionlib_msgs)
 add_action_files(DIRECTORY action FILES DoDishes.action)
 generate_messages(DEPENDENCIES actionlib_msgs)
 ```
 
+
+
 Additionally, the `package.xml` of the package that includes
 `.action` files must include the following dependencies:
+
+
 ```
 <build_depend>actionlib_msgs</build_depend>
 <exec_depend>actionlib_msgs</exec_depend>
 ```
+
+
 
 #### Build a package that depends on actionlib API
 
 Package that depends on actionlib API to implement an action server or
 use an action client needs another dependency on `actionlib`.
 
-`CMakeLists.txt` ```
+`CMakeLists.txt` 
+
+```
 find_package(catkin REQUIRED genmsg actionlib_msgs actionlib)
 add_action_files(DIRECTORY action FILES DoDishes.action)
 generate_messages(DEPENDENCIES actionlib_msgs)
 ```
 
-`package.xml` ```
+
+
+`package.xml` 
+
+```
 <build_depend>actionlib</build_depend>
 <build_depend>actionlib_msgs</build_depend>
 <exec_depend>actionlib</exec_depend>
 <exec_depend>actionlib_msgs</exec_depend>
 ```
+
+
 
 ### Results
 
@@ -154,7 +174,9 @@ Full API Reference for the
 **Quickstart Guide:**\
 Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to send a goal to a !DoDishes
-!ActionServer called "do_dishes". ```cplusplus
+!ActionServer called "do_dishes". 
+
+```cplusplus
 #include <chores/DoDishesAction.h> // Note: "Action" is appended
 #include <actionlib/client/simple_action_client.h>
 
@@ -176,6 +198,8 @@ int main(int argc, char** argv)
 }
 ```
 
+
+
 **Note:** For the C++ `SimpleActionClient`, the `waitForServer`
 method will only work if a separate thread is servicing the client's
 callback queue. This requires passing in `true` for the
@@ -191,6 +215,8 @@ Full API reference for the
 Suppose the `DoDishes.action` exists in the `chores` package. The
 following snippet shows how to send a goal to a !DoDishes !ActionServer
 called "do_dishes" using Python.
+
+
 
 ```python
 #! /usr/bin/env python
@@ -213,6 +239,8 @@ if __name__ == '__main__':
     client.wait_for_result(rospy.Duration.from_sec(5.0))
 ```
 
+
+
 ## Implementing an ActionServer
 
 ### C++ SimpleActionServer
@@ -223,7 +251,9 @@ Full API Reference for the
 **Quickstart Guide:**\
 Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to write a !DoDishes !ActionServer
-called "do_dishes". ```cplusplus
+called "do_dishes". 
+
+```cplusplus
 #include <chores/DoDishesAction.h>  // Note: "Action" is appended
 #include <actionlib/server/simple_action_server.h>
 
@@ -246,6 +276,8 @@ int main(int argc, char** argv)
 }
 ```
 
+
+
 ### Python SimpleActionServer
 
 Full API Reference for the
@@ -255,6 +287,8 @@ Full API Reference for the
 Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to write a !DoDishes !ActionServer
 called "do_dishes".
+
+
 
 ```python
 #! /usr/bin/env python
@@ -281,6 +315,8 @@ if __name__ == '__main__':
   server = DoDishesServer()
   rospy.spin()
 ```
+
+
 
 ## SimpleActionServer Goal Policies
 

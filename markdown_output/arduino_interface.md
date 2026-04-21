@@ -18,6 +18,8 @@ installed from the backports repository.
 
 ### Building the Firmware
 
+
+
 ```
 {#!wiki caution
 '''I^2^C with External Pull-up Resistors'''
@@ -27,27 +29,41 @@ If you are using the I^2^C interface on the Arduino with external pull-up resist
 69 // activate internal pullups for twi.
 70 // digitalWrite(SDA, 1);
 71 // digitalWrite(SCL, 1);
-``` }}}}
+```
+
+ }}}}
 
 Open a terminal and change to the `arduino_firmware` directory. Set
 the Arduino board type by setting an environment variable:
+
+
 ```
 $ export BOARD=uno
-``` Alternatively, the `Makefile` defualt on line
+```
+
+ Alternatively, the `Makefile` defualt on line
 281 can be changed. To see supported boards type `make boards`.
 
-Build the firmware by typing ```
+Build the firmware by typing 
+
+```
 $ make
-``` There should be a
+```
+
+ There should be a
 fair number of warnings, but no errors. The warnings are all in the
 Arduino-supplied code.
 
 ### Uploading the Firmware
 
 After the firmware is successfully built, upload it to the Arduino using
+
+
 ```
 $ make upload
-``` The Arduino is now ready for use with the
+```
+
+ The Arduino is now ready for use with the
 `arduino_interface` package.
 
 The Makefile supports additional options, as described in the table

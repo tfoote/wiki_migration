@@ -62,9 +62,13 @@
 The package contains a launch file that computes multiresolution normals
 in a nodelet.
 
+
+
 ```
 $ roslaunch octreelib normalestimation_nodelet.launch
 ```
+
+
 
 The input PointCloud2 topic of the nodelet is mapped to
 /camera/depth/points for Kinect depth streams. The launch file also
@@ -72,6 +76,8 @@ starts RViz with a proper configuration to visualize output normals from
 the PointCloud2 output messages and visualization markers.
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -110,3 +116,5 @@ param {
 }
 }
 ```
+
+

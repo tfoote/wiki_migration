@@ -18,9 +18,13 @@ boot), udev rules (nice if you ever unplug your USB devices) and
 joystick drivers.
 
 If you want to install this package in isolation you can do so with the
-following command ```
+following command 
+
+```
 sudo apt-get install ros-melodic-rr-openrover-stack
 ```
+
+
 
 ## Release Notes
 

@@ -21,6 +21,8 @@ perform fast checks agains the robot's footprint.
 
 ### ROS API
 
+
+
 ```clearsilver
 sub{
   0.name = octomap_collision_object
@@ -37,6 +39,8 @@ srv_called{
   0.desc = Requests the robot's current kinematic state at the beginning of each plan
   }
 ```
+
+
 
 #### Published Topics
 

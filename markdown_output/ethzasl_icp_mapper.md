@@ -26,6 +26,8 @@ introduces the library and proposes a sound evaluation methodology using
 it. It was published in Autonomous Robots and can be found
 [ here ](http://link.springer.com/article/10.1007%2Fs10514-013-9327-2 )
 ([full text](http://publications.asl.ethz.ch/files/pomerleau13comparing.pdf)):
+
+
 ```
 @ARTICLE{pomerleau13comparing,
    Author = {F. Pomerleau and F. Colas and R. Siegwart and S. Magnenat},
@@ -39,10 +41,14 @@ it. It was published in Autonomous Robots and can be found
 }
 ```
 
+
+
 In addition, a paper using a preliminary version of this package to
 evaluate a Kinect tracker was presented at IROS 2011 and can be found
 [ here ](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6094861 )
 ([fulltext](http://publications.asl.ethz.ch/files/pomerleau11tracking.pdf)):
+
+
 ```
 @INPROCEEDINGS{pomerleau11tracking,
     author = {François Pomerleau and Stéphane Magnenat and Francis Colas and Ming Liu and Roland Siegwart},
@@ -54,14 +60,20 @@ evaluate a Kinect tracker was presented at IROS 2011 and can be found
 }
 ```
 
+
+
 ## Quick Start
 
 Since the proposed ICP chain is highly modular, it has many parameters.
 You can play with it directly if you have an
-[openni-compatible](openni_camera) sensor: ```
+[openni-compatible](openni_camera) sensor: 
+
+```
 roscd ethzasl_icp_mapper 
 roslaunch launch/openni/tracker_viewer.launch
-``` You
+```
+
+ You
 can then have a look into the `launch/openni/` files to see how the
 openni tracker is configured. This file roughly corresponds to the
 following chain:
@@ -72,6 +84,8 @@ Starting from this chain, you can
 [develop your own chain](ethzasl_icp_configuration).
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -135,6 +149,8 @@ prov_tf {
   0.desc = odom to map frame transform, result of ICP
 }
 ```
+
+
 
 ### Parameters
 

@@ -41,16 +41,24 @@ These features would be valuable contribution to this package:
 stack.
 
 -   To install [visp_tracker](visp_tracker) package run
-    ```
+    
+
+```
 sudo apt-get install ros-$ROS_DISTRO-visp-tracker
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Or to install the complete stack run ```
+-   Or to install the complete stack run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
+
+
 
 ## Features
 
@@ -61,6 +69,8 @@ and its initial pose. It also provides the pose covariance.
 ## ROS API
 
 Note: data is only published if there is at least one listener.
+
+
 
 ```clearsilver
 name = tracker
@@ -201,6 +211,10 @@ req_tf {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = client
 desc = Command line tool used to decide which object to track and what is its initial pose.
@@ -225,6 +239,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = viewer
 desc = Monitoring tool.
@@ -240,6 +258,8 @@ param {
   1.default = raw
 }
 ```
+
+
 
 ## Nodelets
 
@@ -257,9 +277,13 @@ They are respectively named:
 When the nodelet version is used, no-copy intraprocess publishing is
 used. See the [nodelet](nodelet) documentation for more information.
 
-An example launch file is also provided: ```
+An example launch file is also provided: 
+
+```
 roslaunch visp_tracker tutorial-nodelet.launch
 ```
+
+
 
 *Note:* even if a nodelet is available for the client and viewer, one
 should avoid running them in the same process than the vision pipeline

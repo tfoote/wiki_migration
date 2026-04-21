@@ -17,15 +17,23 @@ following the instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz rosbag
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch laser_scan_splitter demo.launch
 ```
+
+
 
 You should see a result similar to the video below. The 3 laser scan
 messages displayed in [rviz](rviz) are obtained by splitting the
@@ -38,6 +46,8 @@ original scan.
 Two drivers are available: `laser_scan_splitter_node` and
 `laser_scan_splitter_nodelet`. Their parameters and topics are
 identical.
+
+
 
 ```clearsilver
  name = laser_scan_splitter_node / laser_scan_splitter_nodelet
@@ -74,6 +84,8 @@ param{
     2.desc = the frames in which the scans are published. The string can contain an arbitrary number of frames, but note that the number of frames must match the number of sized and topics.
   }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

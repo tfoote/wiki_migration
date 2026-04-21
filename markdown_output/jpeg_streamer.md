@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = jpeg_streamer
@@ -28,3 +30,5 @@ node.0 {
   3.desc= Limit on number of concurrent clients. Idle threads will be removed.
   }
 ```
+
+

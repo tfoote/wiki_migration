@@ -9,27 +9,39 @@ watchdog_timer package as a dependency to your package.
 
 Then you should include the
 
+
+
 ```
 #include "watchdog_timer/Watchdog.h"
 ```
+
+
 
 in your code.
 
 In addition, at the CMakeLists.txt file you should link your executable
 to the Watchdog library
 
+
+
 ```
 rosbuild_add_link_flags(executable_name -lWatchdog)
 ```
+
+
 
 ### Creating a Watchdog
 
 To create a watchdog object (and register it at the watchdog monitor),
 create a watchdog object
 
+
+
 ```
 Watchdog theWatchdogName("nameOfWatchdog",ros::Duration(10));
 ```
+
+
 
 Where the first argument of the constructor is the unique name of the
 watchdog and the second argument is the amount of time that the timer
@@ -40,19 +52,31 @@ will countdown, until it resets.
 Having your watchdog timer you can start/ stop/ reset the timer by using
 the objects methods.
 
-By calling the ```
+By calling the 
+
+```
 theWatchdogName.start();
-``` you can start the watchdog.
+```
+
+ you can start the watchdog.
 
 Similarly:
+
+
 
 ```
 theWatchdogName.stop();
 ```
 
+
+
+
+
 ```
 theWatchdogName.reset();
 ```
+
+
 
 ### When a watchdog times out
 
@@ -63,9 +87,13 @@ will publish a message at the /robot/watchdogResets topic.
 
 To start the watchdog monitor you can run
 
+
+
 ```
 rosrun watchdog_timer wdtMonitor
 ```
+
+
 
 or you could include it in a .launch file
 

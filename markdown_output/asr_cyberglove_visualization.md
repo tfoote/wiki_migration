@@ -40,18 +40,26 @@ Therefore, the nodes of the corresponding packages asr_cyberglove_lib
 and/or asr_flock_of_birds should be started first. To start the servers
 directly from the PC to which the hardware is connected, use:
 
+
+
 ```
 roslaunch asr_cyberglove_lib glove_lib.launch
 
 roslaunch asr_flock_of_birds flock_of_birds.launch
-``` Alternatively, the servers can also be started
+```
+
+ Alternatively, the servers can also be started
 from remote if the hardware is connected to another Lab-PC:
+
+
 
 ```
 rosrun asr_cyberglove_lib glove_lib_remote.sh
 
 rosrun asr_flock_of_birds flock_of_birds_remote.sh
 ```
+
+
 
 #### Starting the visualization
 

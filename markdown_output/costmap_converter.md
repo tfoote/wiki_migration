@@ -49,6 +49,8 @@ map has been converted and not the complete static map.
 
 #### Parameters
 
+
+
 ```clearsilver
 param{
   no_header=True
@@ -71,6 +73,8 @@ param{
 }
 ```
 
+
+
 ### CostmapToPolygonsDBSConcaveHull
 
 This plugin converts occupied cells to a set of non-convex (concave)
@@ -87,6 +91,8 @@ map has been converted and not the complete static map.
 ![Conversion to concave polygons\|width="350"](attachment:costmap_converter_concave_hull.png)
 
 #### Parameters
+
+
 
 ```clearsilver
 param{
@@ -114,6 +120,8 @@ param{
 }
 ```
 
+
+
 ### CostmapToLinesDBSMCCH
 
 This plugin converts occupied cells to a set of lines (and points). This
@@ -132,6 +140,8 @@ and polygons are colored in red while lines are colored in green.
 ![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSMCCH_1.png)
 
 #### Parameters
+
+
 
 ```clearsilver
 param{
@@ -167,6 +177,8 @@ param{
 }
 ```
 
+
+
 ### CostmapToLinesDBSRANSAC
 
 This plugin converts occupied cells to a set of lines (and points). The
@@ -187,6 +199,8 @@ and polygons are colored in red while lines are colored in green.
 ![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSRANSAC_4.png)
 
 #### Parameters
+
+
 
 ```clearsilver
 param{
@@ -234,6 +248,8 @@ param{
 
 }
 ```
+
+
 
 ## Standalone Node
 

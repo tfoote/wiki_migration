@@ -15,17 +15,29 @@ skeleton in Japanese.
 
 ## Documentation
 
+
+
 ```
 svn checkout http://subaru.ait.kyushu-u.ac.jp/svn/irvs-ros-pkg/trunk/irvs-ros-pkg/hone_markers
 ```
+
+
+
+
 
 ```
 rosmake hone_markers
 ```
 
+
+
+
+
 ```
 roslaunch hone_markers hone_markers.launch
 ```
+
+
 
 RViz : File>>Open Config>>RViz_hone_markers.vcg
 

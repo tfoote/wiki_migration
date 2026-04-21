@@ -45,12 +45,16 @@ declared in it's [pluginlib](pluginlib) registration. `params`
 
 #### Example configuration
 
+
+
 ```yaml
 parameter_namespace_passed_to_configure:
   name: unique_name
   type: FilterName
   params: { param1: a, param2: b}
 ```
+
+
 
 ### Filter Chain
 
@@ -71,6 +75,8 @@ Filters. See [Filter ROS Parameters](#FilterParameters).
 
 #### Example configuration
 
+
+
 ```
 param_namespace_passed_to_configure:
   filter_chain:
@@ -84,21 +90,31 @@ param_namespace_passed_to_configure:
       params: {number_of_observations: 5}
 ```
 
+
+
 #### Using a Filter Chain
 
 Here's an example of a multi-channel filter chain for doubles. To do a
 non-vector style use a `filters::FilterChain<double>` and change
 `in` and `out` to type `double`.
 
-Initialization: ```
+Initialization: 
+
+```
 filters::MultiChannelFilterChain<double> chain("double"); //Node template type and argument must match
 chain.configure("param_namespace_passed_to_configure");
 std::vector<double> in, out;
 ```
 
-Process data: assuming in is populated ```
+
+
+Process data: assuming in is populated 
+
+```
 chain.update(in, out);
 ```
+
+
 
 ## Implementing a Filter
 
@@ -109,12 +125,20 @@ loaded class for [pluginlib](pluginlib).
 
 1\. Create a class which inherits from `FilterBase<T>` a. Implement
 `configure()` method a. Implement `update()` method 1. In the source
-for the class call ```
+for the class call 
+
+```
 PLUGINLIB_REGISTER_PLUGIN(UniqueFullClassNameSoSpecialCharacters, my_package::ClassName, filters::FilterBase<Type>)
-```: A new simpler plugin macro
-is now recommended: ```
+```
+
+: A new simpler plugin macro
+is now recommended: 
+
+```
 PLUGINLIB_EXPORT_PLUGIN(my_package::ClassName, filters::FilterBase<Type>)
-``` 1. Create a plugin
+```
+
+ 1. Create a plugin
 description file, see [pluginlib](pluginlib) 1. Add an export to your
 [manifest.xml](Manifest) pointing to the plugin description file, see
 [pluginlib](pluginlib) 1. Make sure you depend on the `filters`

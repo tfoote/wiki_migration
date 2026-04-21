@@ -10,6 +10,8 @@ ros package.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = calibration
@@ -162,10 +164,14 @@ node.2 {
 }
 ```
 
+
+
 ## Installation
 
 To install the rail_ceiling package, you can install from source with
 the following commands:
+
+
 
 ```
 cd /(your catkin workspace)/src
@@ -173,6 +179,8 @@ git clone https://github.com/WPI-RAIL/rail_ceiling.git
 cd ..
 catkin_make
 ```
+
+
 
 ## Camera Transform Calibration
 
@@ -199,32 +207,48 @@ associated with marker 100, camera 1 will be associated with marker 101,
 etc.).
 
 This process can be launched with the following launch file, which will
-also start the cameras and ar tracking nodes: . ```
+also start the cameras and ar tracking nodes: . 
+
+```
 roslaunch rail_ceiling calibration.launch
 ```
 
-The process can be visualized with: . ```
+
+
+The process can be visualized with: . 
+
+```
 roslaunch rail_ceiling view_calibration.launch
 ```
+
+
 
 ### Calibration from Mobile Robot
 
 The `calibration_from_carl` node provides a method of calibrating the
 camera transforms from a marker placed on a localized mobile robot, such
 as the CARL platform. This calibration method is executed as follows: .
+
+
 ```
 roslaunch rail_ceiling cameras.launch
 roslaunch rail_ceiling ar_trackers.launch marker_size:=12.0
 roslaunch rail_ceiling calibration_from_carl.launch
 ```
 
+
+
 Next, the robot must be driven into the field of view of a camera to be
 calibrated. Once the robot is in the camera's field of view and it is
 confirmed to be accurately localized, publishing to the
 `start_calibration` topic with the id number of the camera to be
-calibrated replacing \[camera_id\]: . ```
+calibrated replacing \[camera_id\]: . 
+
+```
 rostopic pub /start_calibration std_msgs::Int16 "data: [camera_id]"
-``` This will
+```
+
+ This will
 initiate sample collecting for the selected camera, and completion of
 sample collection will be denoted in the terminal. The process must then
 be repeated for all cameras. Note that if the robot is within the field
@@ -259,7 +283,9 @@ identifying the type of furniture) a localization footprint (a set of
 convex polygons that a laser scanner will detect), and a navigation
 footprint (a set of convex polygons that represent the full area
 occupied by the piece of furniture that should be avoided during
-navigation). The entry format is as follows: . ```
+navigation). The entry format is as follows: . 
+
+```
 - name: furniture_name
   localization_footprint:
     - polygon: [[x1, y1], [x2, y2], [x3, y3], ..., [xn, yn]]
@@ -270,6 +296,8 @@ navigation). The entry format is as follows: . ```
     - polygon: [[x1, y1], [x2, y2], [x3, y3], ..., [xn, yn]]
     - ...
 ```
+
+
 Points composing the polygons are defined with respect to the center of
 the piece of furniture, according to a coordinate system with x
 increasing right, y increasing forward, and z increasing up. In
@@ -292,6 +320,8 @@ pose for the piece of furniture in the global coordinate frame), and a
 required set of markers. Markers are defined with the unique id used to
 generate them, and the pose of the marker with respect to the furniture
 reference frame. The entry format is as follows: .
+
+
 ```
 - type: furniture_name
   initial_pose: [x0, y0, theta0]
@@ -305,29 +335,43 @@ reference frame. The entry format is as follows: .
       y: y2
       theta: theta2
     - ...
-``` Note that each furniture instance requires one
+```
+
+ Note that each furniture instance requires one
 or more markers, and no two furniture instances can use the same marker
 id.
 
 ## Startup
 
 Once calibrated, a pose publisher for the camera positions can be run
-with: . ```
+with: . 
+
+```
 roslaunch rail_ceiling ceiling_description.launch
 ```
 
+
+
 The main functionality of the `rail_ceiling` package is furniture
-tracking. This can be launched with: . ```
+tracking. This can be launched with: . 
+
+```
 roslaunch rail_ceiling furniture_tracker.launch
 ```
 
+
+
 Alternatively, the cameras, the cameras and AR trackers can be launched
-individually with: . ```
+individually with: . 
+
+```
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_ceiling.git
 cd ..
 catkin_make
-```0
+```
+
+0
 
 ## Support
 

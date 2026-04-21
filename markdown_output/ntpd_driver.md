@@ -7,21 +7,31 @@ as ntpd and chrony).
 
 ### ntpd
 
-Just add to `/etc/ntp.conf`: ```
+Just add to `/etc/ntp.conf`: 
+
+```
 server 127.127.28.2 minpoll 4 maxpoll 4
 fudge 127.127.28.2 time1 0.5 stratum 12 refid ROS
 ```
 
+
+
 ### chrony
 
-Add this to `/etc/chrony/chrony.conf`: ```
+Add this to `/etc/chrony/chrony.conf`: 
+
+```
 refclock SHM 2 delay 0.5 refid ROS
 ```
+
+
 
 Note that chrony does not allow set stratum (topic not very accurate),
 but i hope delay option does same thing.
 
 ## Node
+
+
 
 ```clearsilver
 node.0 {
@@ -40,3 +50,5 @@ node.0 {
  }
 }
 ```
+
+

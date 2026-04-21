@@ -68,20 +68,28 @@ want to convert.
 To convert a *sensor_msgs::Image* to a *!HalconCpp::HImage* call one of
 the following functions:
 
+
+
 ```
 HalconImagePtr toHalconCopy(const sensor_msgs::ImageConstPtr& source)
 HalconImagePtr toHalconCopy(const sensor_msgs::Image& source);
-``` The return-value is a *!HalconImagePtr *object,
+```
+
+ The return-value is a *!HalconImagePtr *object,
 which contains a* !HalconCpp::HImage*-Pointer as a member called
 *image*.
 
 To convert a *!HalconImage* to ROS again call one of the following
 member functions:
 
+
+
 ```
 sensor_msgs::ImagePtr toImageMsg() const;
 void toImageMsg(sensor_msgs::Image& ros_image) const;
 ```
+
+
 
 ------------------------------------------------------------------------
 
@@ -90,16 +98,24 @@ void toImageMsg(sensor_msgs::Image& ros_image) const;
 This step is similar to the image conversion. The important functions
 are
 
+
+
 ```
 HalconPointcloudPtr toHalconCopy(const sensor_msgs::PointCloud2ConstPtr& source);
 HalconPointcloudPtr toHalconCopy(const sensor_msgs::PointCloud2& source);
-``` to convert a *sensor_msgs::!PointCloud2* to a*
+```
+
+ to convert a *sensor_msgs::!PointCloud2* to a*
 !HalconCpp::HObjectModel3D* (the member in the returned
 *!HalconPointcloud* is called *model*).
 
 To convert it back to ROS call:
 
+
+
 ```
 sensor_msgs::PointCloud2Ptr toPointcloudMsg() const;
 void toPointcloudMsg(sensor_msgs::PointCloud2& ros_pointcloud) const;
 ```
+
+

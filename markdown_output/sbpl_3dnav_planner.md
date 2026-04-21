@@ -37,6 +37,8 @@ The PR2 makes dancing look easy\...
 
 ### ROS Topics
 
+
+
 ```clearsilver
 sub {
     0.name = collision_map_occ
@@ -57,7 +59,11 @@ sub {
 }
 ```
 
+
+
 ### ROS Services
+
+
 
 ```clearsilver
 srv {
@@ -81,7 +87,11 @@ srv_called {
 }
 ```
 
+
+
 ### ROS Parameters
+
+
 
 ```clearsilver
 param {
@@ -301,3 +311,5 @@ param {
     41.default = false
 }
 ```
+
+

@@ -21,9 +21,13 @@
 ## Running
 
 If you are on a machine configured to communicate with a PR2, run this
-node by executing: ```
+node by executing: 
+
+```
 rosrun stereo_anaglyph red-cyan-anaglyph.py -d /wide_stereo -d 20
-``` If you are not on a PR2,
+```
+
+ If you are not on a PR2,
 replace `/wide_stereo` with a topic of your choice. The -d option here
 controls the separation distance. To get a feel for what this should be,
 launch the node then press the left and right arrow key while the
@@ -50,9 +54,15 @@ one for each image stream. The two launch files provided
 `pr2_narrow_stereo_view.launch` and `pr2_wide_stereo_view.launch`
 does this by default. Run them with the command:
 
+
+
 ```
 roslaunch stereo_anaglyph pr2_wide_stereo_view.launch
-``` For reference, this launch file contains:
+```
+
+ For reference, this launch file contains:
+
+
 
 ```
 <launch>
@@ -62,7 +72,11 @@ roslaunch stereo_anaglyph pr2_wide_stereo_view.launch
 </launch>
 ```
 
+
+
 ## Command Line Interface
+
+
 
 ```
 ./red-cyan-anaglyph.py --help
@@ -74,7 +88,11 @@ Options:
   -d DIST     separation distance
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name=red_cyan_anaglyph.py
@@ -89,3 +107,5 @@ sub {
  1.desc = right image
  }
 ```
+
+

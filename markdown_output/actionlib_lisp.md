@@ -151,11 +151,15 @@ This example shows how to construct an action client for the fibonacci
 action of the actionlisp_tutorials package, send a goal to it and wait
 for the result.
 
+
+
 ```
 (defparameter *ac* (make-action-client "/fibonacci" "actionlib_tutorials/FibonacciAction"))
 
 (send-goal-and-wait *ac* (make-action-goal *ac* :order 10) :exec-timeout 20 :result-timeout 0.5)
 ```
+
+
 
 To run it, you need to have the actionlib-lisp and
 actionlib_tutorials-msg loaded and be in a package that uses the
@@ -226,6 +230,8 @@ signalled.
 ## Example
 
 This example shows how to implement a simple fibonacci action server.
+
+
 ```
 (def-exec-callback fib-callback (order)
   "This function takes in the FibonacciGoal message and pursues the action."
@@ -249,3 +255,5 @@ This example shows how to implement a simple fibonacci action server.
   (with-ros-node ("fib")
     (start-action-server "fibonacci" "actionlib_tutorials/FibonacciAction" #'fib-callback)))
 ```
+
+

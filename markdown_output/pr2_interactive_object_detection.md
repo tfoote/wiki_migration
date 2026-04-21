@@ -20,25 +20,37 @@ have to do the following:
 
 ### On the robot
 
-Start the following launch file: ```
+Start the following launch file: 
+
+```
 roslaunch pr2_interactive_object_detection pr2_interactive_object_detection_robot.launch
 ```
 
-Or, if you have a local Kinect: ```
+
+
+Or, if you have a local Kinect: 
+
+```
 roslaunch openni_camera openni_node.launch
 roslaunch rgbd_assembler rgbd_kinect_assembler.launch
 roslaunch household_objects_database objects_database_remote_server.launch
 rosrun willow_tod recognition_node camera:=/camera/rgb points:=/camera/rgb/points -C detect_config.txt
 ```
 
+
+
 Then start rviz and add "Interactive Object Detection", "Object
 Recognition popup window"
 
 ### On the desktop
 
-Start the following launch file: ```
+Start the following launch file: 
+
+```
 roslaunch pr2_interactive_object_detection pr2_interactive_object_detection_desktop.launch
 ```
+
+
 
 Note that this launch file will bring up rviz. The tool is implemented
 as an [rviz plugin](rviz/UserGuide#Plugins). For everything to work, you

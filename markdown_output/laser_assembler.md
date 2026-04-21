@@ -60,6 +60,8 @@ The main interaction with the assemblers is via ROS services. The
 NOTE: For laser_pipeline releases < 0.5.0, this service is called
 `build_cloud`.
 
+
+
 ```clearsilver
 node.0{
   name= laser_scan_assembler
@@ -124,6 +126,8 @@ node.1{
 }
 ```
 
+
+
 ### Example Launch
 
 **laser_scan_assembler:**
@@ -131,6 +135,8 @@ node.1{
 Launch an assembler operating on `tilt_scan`
 <<MsgLink(sensor_msgs/LaserScan)>> messages in the base_link frame,
 with a buffer of 400 scans.<<MsgLink(sensor_msgs/LaserScan)>>
+
+
 
 ```
 <launch>
@@ -143,11 +149,15 @@ with a buffer of 400 scans.<<MsgLink(sensor_msgs/LaserScan)>>
 </launch>
 ```
 
+
+
 **point_cloud_assembler:**
 
 Launch an assembler operating on `my_cloud_in`
 <<MsgLink(sensor_msgs/PointCloud)>> messages in the `base_link`
 frame, with a buffer of 400 scans.
+
+
 
 ```
 <launch>
@@ -160,9 +170,13 @@ frame, with a buffer of 400 scans.
 </launch>
 ```
 
+
+
 ### Example: Calling from C++
 
 Request a cloud with scans occurring between the start of time and now.
+
+
 ```cplusplus
 #include <ros/ros.h>
 #include <laser_assembler/AssembleScans.h>
@@ -184,9 +198,13 @@ int main(int argc, char **argv)
 }
 ```
 
+
+
 ### Example: Calling from Python
 
 Request a cloud with scans occurring between the start of time and now.
+
+
 ```python
 #!/usr/bin/env python
 import roslib; roslib.load_manifest('laser_assembler')
@@ -201,6 +219,8 @@ try:
 except rospy.ServiceException, e:
     print "Service call failed: %s"%e
 ```
+
+
 
 NOTE: in both service calls the number of points in the returned point
 cloud is capped by the size of the assembler's rolling buffer.

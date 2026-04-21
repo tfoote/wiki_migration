@@ -3,6 +3,8 @@
 This package contains ROS nodes for navigating the ART autonomous
 vehicle.
 
+
+
 ```clearsilver
 node.0 {
  name = commander
@@ -42,13 +44,21 @@ name=Initial Parameters
 }
 ```
 
+
+
 #### Examples
 
 Run the ART commander, sending `navigator/cmd` messages.
 
+
+
 ```
 rosrun art_nav commander _rndf:=road_map.rndf _mdf:=mission_ckpts.mdf
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -251,13 +261,21 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 Run the ART navigator, accepting `navigator/cmd` messages.
 
+
+
 ```
 rosrun art_nav navigator
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -276,9 +294,15 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Run GUI for sending Run and Pause orders to the navigator.
+
+
 ```
 rosrun art_nav estop.py
 ```
+
+

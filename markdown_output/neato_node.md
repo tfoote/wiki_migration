@@ -5,6 +5,8 @@ allows control of the Neato XV-11.
 
 ## ROS API
 
+
+
 ```clearsilver
 name=neato.py
 desc=Provides an ROS interface to the Neato XV-11 robot.  
@@ -29,16 +31,30 @@ param {
 }
 ```
 
+
+
 ## Running
 
-Plug in your neato. Then run: ```
+Plug in your neato. Then run: 
+
+```
 lsusb
-``` Find the neato
-device (ours was ID 2108:780b). Then: ```
+```
+
+ Find the neato
+device (ours was ID 2108:780b). Then: 
+
+```
 sudo modprobe usbserial vendor=0x2108 product=0x780b
-``` You
+```
+
+ You
 should now have a /dev/ttyUSBX like device connected. You can start the
-neato node by: ```
+neato node by: 
+
+```
 roslaunch neato_node bringup.launch
-``` This loads the node and a static
+```
+
+ This loads the node and a static
 TF transformer for base_laser to base_link.

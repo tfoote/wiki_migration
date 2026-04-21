@@ -2,9 +2,13 @@
 
 **OpenNI Viewer** is a lightweight PointCloud2 viewer.
 
+
+
 ```
 $ rosrun openni_pcl openni_viewer ~input:=/camera/depth/points2
 ```
+
+
 
 ![](attachment:pcl_openni_viewer_ds.jpg)
 
@@ -14,6 +18,8 @@ packages available in the
 [perception_pcl](http://www.ros.org/wiki/perception_pcl) and
 [perception_pcl_addons](http://www.ros.org/wiki/perception_pcl_addons)
 stacks. To download them, you can use the following rosinstall file:
+
+
 ```
 - svn:
     uri: https://code.ros.org/svn/ros-pkg/stacks/perception_pcl/tags/unstable
@@ -23,6 +29,12 @@ stacks. To download them, you can use the following rosinstall file:
     local-name: ros_pkg/stacks/perception_pcl_addons
 ```
 
-Then just rosmake openni_pcl: ```
+
+
+Then just rosmake openni_pcl: 
+
+```
 rosmake openni_pcl
 ```
+
+

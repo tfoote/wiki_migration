@@ -3,6 +3,8 @@
 This package contains ROS nodes for operating the ART autonomous vehicle
 under human control.
 
+
+
 ```clearsilver
 node.0 {
 name = teleop
@@ -15,12 +17,20 @@ pub {
 }
 ```
 
+
+
 #### Examples
 
 Run Qt script for sending speeds and steering angles to the pilot.
+
+
 ```
 rosrun art_teleop teleop.py
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -72,24 +82,38 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 Run stage simulation with joystick controlling steering and speed. Sets
-`use_navigator` to `False`. ```
+`use_navigator` to `False`. 
+
+```
 roslaunch art_run joy_stage.launch
 ```
 
+
+
 Run stage simulation with joystick controlling autonomous operation, and
 only controlling steering and speed when suspended. Sets
-`use_navigator` to `True`. ```
+`use_navigator` to `True`. 
+
+```
 roslaunch art_run joy_auto_stage.launch
 ```
 
+
+
 Run the real vehicle with joystick controlling autonomous operation, and
 only controlling steering and speed when suspended. Sets
-`use_navigator` to `True`. ```
+`use_navigator` to `True`. 
+
+```
 roslaunch art_run joy_auto_drive.launch
 ```
+
+
 
 #### Usage
 

@@ -43,15 +43,21 @@ instructions can be found
 
 #### From Package Manager
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-webots-ros
 ```
+
+
 
 #### From Sources
 
 The following instructions assume that a
 [Catkin workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 is already available:
+
+
 
 ```shell
 cd /path/to/catkin_ws/src
@@ -74,6 +80,8 @@ catkin_make
 source /path/to/catkin_ws/devel/setup.bash
 ```
 
+
+
 The packages can now be used as regular ROS packages.
 
 Refer to the [catkin tutorials](catkin/Tutorials) for more information
@@ -90,8 +98,6 @@ For questions about this package or Webots in general, get in touch with
 the developers on [Discord](https://discord.gg/fyPuMM4).
 
 ## Report a Bug
-
-<<GitHubIssues(cyberbotics/webots_ros)>>
 
 ## Acknowledgement
 

@@ -13,10 +13,14 @@ provides a ROS multi-channel publisher for the multi-sensor devices.
 ## Download
 
 Clone this package into your catkin workspace as follows.
+
+
 ```
 $ cd "Path_to_catkin_ws"/src/"
  $ git clone https://github.com/ohm-ros-pkg/vrmagic_drivers.git
 ```
+
+
 
 ## ROS Node
 
@@ -41,14 +45,22 @@ base_topic:"topicname", ID:1 -> "topicname1").
 
 **Starting the node using rosrun with parameters:**
 
+
+
 ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=<topicname> _ip_smartcam:=<ip> _port_smartcam:=<port>
-``` Example with base_topic: "vrmagic_image_",
+```
+
+ Example with base_topic: "vrmagic_image_",
 ip: "192.168.3.100", PORT: 1234
+
+
 
 ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=vrmagic_image_ _ip_smartcam:=192.168.3.100 _port_smartcam:=1234
-``` Or use a launch file and roslaunch with the
+```
+
+ Or use a launch file and roslaunch with the
 parameters described in [Parameter](#Parameter)
 
 ## Firmware Interface
@@ -80,20 +92,28 @@ cam firmware
 
 In the first step a `VrMagicHandler_camhost` - object must be
 instanciated. For that the header file from the class needs to be
-included. ```cplusplus
+included. 
+
+```cplusplus
  #include "VrMagicHandler_camhost/VrMagicHandler_camhost.h"
  
  unsigned int port = 1234;
  ohm::VrMagicHandler_camhost rosBrige(port);
 ```
 
+
+
 A connection to the ROS server can be established by calling the
 `connect()` method. This method blocks until a connection to the ROS
 server can be established.
 
+
+
 ```cplusplus
  rosBrige.connect();
 ```
+
+
 
 With the method `writeImage(ohm::ImageType& image)` an image is
 transmitted to the ROS server. Create and fill an instance of
@@ -108,6 +128,8 @@ monoscaled and BGR images, either with 8 or 16 Bit pixeldepth.
 -   If the image is BGR format, the field `unsigned int channels` needs
     to be set to 3. \-\-\-\-\-\-\-\-\--
 
+
+
 ```cplusplus
  rosImage.id                = sensor_port;                     
  rosImage.dataSize          = width * height * bytePerPixel;
@@ -119,6 +141,8 @@ monoscaled and BGR images, either with 8 or 16 Bit pixeldepth.
  rosImage.bytePerPixel      = 3;
  rosImage.data              = image_ptr;   //ensure image to have correct fromat
 ```
+
+
 
   -- ---------------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------- --
      **Field**                             **Description**                                                                                                                    
@@ -137,9 +161,13 @@ After filling the `ohm::ImageType`-object, it must be transmitted to the
 ROS bridge with the method `writeImage(ohm::ImageType& image)`, see the
 following code:
 
+
+
 ```cplusplus
  rosBrige.writeImage(rosImage);
 ```
+
+
 
 Typically, this method has to be called after image grabbing.
 
@@ -166,32 +194,48 @@ The example application is located in the folder
 
 To build the demo application, copy the whole `firmware` folder to the
 location where the VRMagic SDK is installed (host PC or virtual
-machine). Type ```
+machine). Type 
+
+```
 $ cd firmware/
  $ make
-``` to build the demo application.
+```
+
+ to build the demo application.
 
 To execute the demo application, copy the binary in
 `firmware/src/demo_app` named `ros_bridge_demo_app` to your VRMagic
 smart cam. Now execute the demo application on the VRMagic smart cam:
+
+
 ```
 $ cd where_you_copied_the_binary/
  $ ./ros_bridge_demo_app
 ```
 
+
+
 Start the ROS bridge server on the ROS host PC. Now you will find a
 publisher named `<your_base_topicname>1`
 
 To visualize the image, the standard ROS image_view package can be used:
+
+
 ```
 $ rosrun image_view image_view image:=/<your_base_topicname>1
 ```
 
+
+
 ------------------------------------------------------------------------
 
 **Note:** The ROS bridge specific code in the demo application is
-labeled with the following comments: ```
+labeled with the following comments: 
+
+```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=<topicname> _ip_smartcam:=<ip> _port_smartcam:=<port>
-```0
+```
+
+0
 
 ------------------------------------------------------------------------

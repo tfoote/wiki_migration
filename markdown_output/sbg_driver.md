@@ -11,9 +11,13 @@ publish ROS standard messages , and to calibrate the magnetometers.
 ## Installation from packages
 
 User can install the sbg_ros_driver through the standard ROS
-installation system. ```
+installation system. 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-sbg-driver
 ```
+
+
 
 ## Installation from sources
 
@@ -29,16 +33,24 @@ To be able to communicate with the device, be sure that your user is
 part of the dialout group. Once added, restart your machine to save and
 apply the changes.
 
+
+
 ```
 sudo adduser $USER dialout
 ```
 
+
+
 Afterwards, detect the port where your SBG device is connected (e.g.
 /dev/ttyUSB0) using
+
+
 
 ```
 dmesg | grep tty
 ```
+
+
 
 and edit `sbg_device_uart_default.yaml` accordingly or (recommended)
 define a [udev](https://wiki.debian.org/udev) rule (e.g. pointing to
@@ -49,15 +61,23 @@ define a [udev](https://wiki.debian.org/udev) rule (e.g. pointing to
 Run the ros node to receive messages from the SBG IMU.
 
 Config files are available for uart or udp connection. Users should
-properly define the device parameters. ```
+properly define the device parameters. 
+
+```
 roslaunch sbg_driver sbg_device.launch
 ```
 
+
+
 ## Ros node for magnetometers calibration
+
+
 
 ```
 roslaunch sbg_driver sbg_device_mag_calibration.launch
 ```
+
+
 
 ## Configuration files
 
@@ -172,12 +192,18 @@ For compatible devices, the SBG ROS driver allows the user to configure
 the device before starting the data handling.
 
 To do so, the configuration yaml file should be modified.
+
+
 ```
 # Configuration of the device with ROS.
 confWithRos: true
 ```
 
+
+
 ## Calibrate the magnetometers
+
+
 
 ```
 $ roslaunch sbg_driver sbg_device_mag_calibration.launch
@@ -187,6 +213,8 @@ $ rosservice call /sbg/mag_calibration
 // If the magnetic calibration results are satisfaying, it could be uploaded
 $ rosserive call /sbg/mag_calibration_save
 ```
+
+
 
 # Contributing
 

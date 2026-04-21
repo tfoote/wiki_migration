@@ -3,6 +3,8 @@
 API below is for information purposes only. pr2_computer_monitor is only
 supported to monitor PR2 computers and systems.
 
+
+
 ```clearsilver
 node.0 {
   name=cpu_monitor.py
@@ -44,7 +46,11 @@ node.0 {
   }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
@@ -53,9 +59,15 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-``` To try it locally: ```
+```
+
+ To try it locally: 
+
+```
 roslaunch pr2_computer_monitor cpu_monitor.launch
 ```
+
+
 
 #### Implementation details
 
@@ -72,6 +84,8 @@ down.
      `mpstat -P ALL 1 1`                                  CPU usage                                                                                                                                      
      `find /sys/devices -name temp1_input`                Gives names of CPU core temps, only called at startup                                                                                          
   -- ----------------------------------------- ------------ ------------------------------------------------------- -------------------------------------------------------------------------------------- --
+
+
 
 ```clearsilver
 node.0 {
@@ -90,23 +104,33 @@ node.0 {
   }
 ```
 
+
+
 #### Usage
 
 Since many robots use a network filesystem and have the same files on
 all machines, it doesn't make sense to monitor drive space on all
-drives. ```
+drives. 
+
+```
 Usage: hd_monitor.py [--diag-hostname=cX]
 
 Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-``` If the HOME_DIR directory above isn't
+```
+
+ If the HOME_DIR directory above isn't
 specified, the monitor will not check disk space remaining.
 
-To try it locally: ```
+To try it locally: 
+
+```
 roslaunch pr2_computer_monitor hd_monitor.launch
 ```
+
+
 
 #### Implementation details
 
@@ -122,10 +146,16 @@ argument is set from the command line.
 
 To check hard drive temperature, it opens a socket to hddtemp, a daemon
 program running on most Linux machines. You can check if hddtemp is
-working by running: ```
+working by running: 
+
+```
 $ netcat localhost 7634
 |/dev/sda|Hitachi HDT725032VLA360|43|C|
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -138,7 +168,11 @@ node.0 {
   }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 Usage: ntp_monitor ntp-hostname []
@@ -153,21 +187,31 @@ Options:
                         Computer name in diagnostics output (ex: 'c1')
 ```
 
-To try it locally: ```
+
+
+To try it locally: 
+
+```
 roslaunch pr2_computer_monitor ntp_monitor.launch
 ```
+
+
 
 #### Implementation Details
 
 `ntp_monitor.py` uses ntpdate to check the offset in clocks, using the
-NTP protocol. ```
+NTP protocol. 
+
+```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
 Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```0 Give the offset from the NTP
+```
+
+0 Give the offset from the NTP
 server, and the computer's self offset.
 
 #### Computer Clocks and Self-Offset
@@ -179,6 +223,8 @@ compare host's chrony time with the local system time. Doing `ntpdate
 -q <hostname>` allows you to verify that the chrony time and the
 system time match.
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -186,10 +232,14 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```1
+```
+
+1
 
 #### Usage
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -197,11 +247,15 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```2 (No command-line arguments).
+```
+
+2 (No command-line arguments).
 
 #### Implementation Details
 
 The `nvidia_temp.py` script uses the command:
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -209,9 +263,13 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```3 to check the status of the GPU. This command
+```
+
+3 to check the status of the GPU. This command
 must work without a password. Configure your sudoers file accordingly.
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -219,12 +277,16 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```4
+```
+
+4
 
 #### Usage
 
 Here is a typical launch file entry for running it:
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -232,20 +294,26 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```5
+```
+
+5
 
 ## Installation and setup
 
 With proper system dependencies, `pr2_computer_monitor` can work on
 almost any linux system. Use [rosdep](rosdep) to install required
-packages from the operating system: ```
+packages from the operating system: 
+
+```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
 Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```6
+```
+
+6
 
 ### Verifying hddtemp Daemon
 
@@ -255,6 +323,8 @@ pr2_computer_monitor opens a socket to the `hddtemp` daemon.
 
 First, verify that the `hddtemp` daemon is running.
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -262,9 +332,13 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```7 This opens a socket to the daemon, which by
+```
+
+7 This opens a socket to the daemon, which by
 default runs on port 7634. You should see something like:
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -272,9 +346,13 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```8 If `hddtemp` isn't up and running, start it
+```
+
+8 If `hddtemp` isn't up and running, start it
 by typing:
 
+
+
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -282,30 +360,48 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```9 This will start it in daemon mode. Replace
+```
+
+9 This will start it in daemon mode. Replace
 "/dev/sda" above with the name of your hard drive if it's different.
 
 ### Configuring ipmitool
 
 Now, check if you have `ipmitool` installed correctly. If you choose
 not to use ipmitool to monitor CPU temperature and fan speed, disable it
-with `check_ipmi_tool` parameter to False. ```
-roslaunch pr2_computer_monitor cpu_monitor.launch
-```0
-If this command returns with an error (below), then you will need to
-disable the ipmitool checks using the `check_ipmi_tool` parameter.
+with `check_ipmi_tool` parameter to False. 
+
 ```
 roslaunch pr2_computer_monitor cpu_monitor.launch
-```1
+```
+
+0
+If this command returns with an error (below), then you will need to
+disable the ipmitool checks using the `check_ipmi_tool` parameter.
+
+
+```
+roslaunch pr2_computer_monitor cpu_monitor.launch
+```
+
+1
 
 The `ipmitool` command needs to work properly without a password. If
 the above command asks for a "sudo" password, you'll need to edit the
-sudoers file: ```
+sudoers file: 
+
+```
 roslaunch pr2_computer_monitor cpu_monitor.launch
-```2 Add the following line to use
-`ipmitool` without typing your password: ```
+```
+
+2 Add the following line to use
+`ipmitool` without typing your password: 
+
+```
 roslaunch pr2_computer_monitor cpu_monitor.launch
-```3
+```
+
+3
 
 ### Other Configuration
 

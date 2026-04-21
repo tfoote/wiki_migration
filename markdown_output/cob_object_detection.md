@@ -15,6 +15,8 @@ The [cob_object_detection](cob_object_detection) package provides a
 configurable node for detecting textured objects based on local feature
 point detection and 3D model matching.
 
+
+
 ```clearsilver
  name = cob_object_detection
  desc = The cob_object_detection node takes in <<MsgLink(sensor_msgs/PointCloud2)>> messages generated e.g. from a stereo camera pair or an RGBD camera device and performs 6 DOF object detection based on previously trained object models. Object detection and training is triggered using [[Services|services]] or [[actionlib|actions]]. Visualization and the detection results are published on [[Topics|topics]].
@@ -148,22 +150,34 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 The package can be used via a launch file which loads all parameters
 from a .yaml file and starts the object_detection node.
 
+
+
 ```
 roslaunch cob_object_detection object_detection.launch
 ```
 
+
+
 For including the object_detection in your overall launch file use
+
+
 
 ```
 <include file="$(find cob_object_detection)/ros/launch/object_detection.launch" />
 ```
 
+
+
 A sample parameter file could look like this
+
+
 
 ```
 # Object model type
@@ -220,6 +234,8 @@ detect_ransac_norm_inlier_dist_thresh: 0.014
 detect_min_inlier_size: 10
 ```
 
+
+
 ## Definition of object coordinate system
 
 The frame of the object is defined like the following picture.
@@ -239,14 +255,26 @@ Tutorials can be found on the
 ## Models
 
 You can get model files either from <https://github.com/ipa320/srs_data>
-or from an internal Server at IPA ```
+or from an internal Server at IPA 
+
+```
 smb://saturn20.ipa.fhg.de/austauschipa/J0SF
-``` To insert
+```
+
+ To insert
 models into cob_object_detection, pllace the models you like to use in
-the folder ```
+the folder 
+
+```
 roscd cob_object_detection/common/files/models/ObjectModels/
-``` Either you delete the Info.txt or
-you write the name correct inside the file. ```
+```
+
+ Either you delete the Info.txt or
+you write the name correct inside the file. 
+
+```
 rm Info.txt
-``` The
+```
+
+ The
 object names must be "Model_<object_name>.txt".

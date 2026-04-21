@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 name=fiducial_slam
 desc=`fiducial_slam` receives fiducial_poses from [[aruco_detect]] and combines them to build a map of fiducial locations and an estimate of the robot's pose.  
@@ -65,6 +67,8 @@ param{
   7.desc= Specifies an interval at which poses are published, even if no fiducials are observed.  This is useful in cases where the fiducial pose is used as a correction to odometry.
 }
 ```
+
+
 
 #### File Formats
 

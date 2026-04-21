@@ -14,23 +14,33 @@ Here we show you usage for roch_viz package.
 ### View Model
 
 You can checkout URDF model when you modified Roch model by following
-command. ```
+command. 
+
+```
 roslaunch roch_viz view_model.launch
 ```
 
+
+
 ### View Robot
 
-View robot you can type. ```
+View robot you can type. 
+
+```
 roslaunch roch_viz view_robot.launch
 ```
+
+
 
 ### View Navigation
 
 When you play Roch whether real robot or not in navigation, you can
-using under command. ```
+using under command. 
+
+```
 roslaunch roch_viz view_navigation.launch
 ```
 
-## Report a Bug
 
-<<GitHubIssues(SawYer-Robotics/roch_viz)>>
+
+## Report a Bug

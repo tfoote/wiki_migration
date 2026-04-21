@@ -46,9 +46,13 @@ NOTE: If any tool returns the error 'No transport layers found in path
     enabled or disabled directly on the command line by setting the
     appropriate GenICam parameters. The following command enables
     intensity images, disables disparity images and stores 10 images:
-    ```
+    
+
+```
 gc_stream <ID> ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
-``` NOTE: Many image viewers can display PGM
+```
+
+ NOTE: Many image viewers can display PGM
     and PPM format. The sv tool of cvkit
     (<https://github.com/roboception/cvkit>) can also be used.
 
@@ -154,9 +158,13 @@ UDP packets fast enough resulting in incomplete image buffers.
 The `net_perf_check.sh` script performs some simple checks and should
 be run while or after streaming images via GigE Vision.
 
+
+
 ```
 ./net_perf_check.sh --help
 ```
+
+
 
 ### Jumbo Frames
 
@@ -164,9 +172,13 @@ First of all increasing the UDP packet size (using jubo frames) is
 strongly recommended! Increase the MTU of your network interface to
 9000, e.g.
 
+
+
 ```sh
 sudo ifconfig eth0 mtu 9000
-``` Also make sure that all network
+```
+
+ Also make sure that all network
 devices/switches between your host and the sensor support this.
 
 ### sysctl settings
@@ -184,13 +196,21 @@ increasing the socket receive buffer size usually fixes the problem.
 
 Check the `RcvbufErrors with` `net_perf_check.sh` or
 
+
+
 ```
 netstat -us | grep RcvbufErrors
-``` Increase max receive buffer size:
+```
+
+ Increase max receive buffer size:
+
+
 
 ```sh
 sudo sysctl -w net.core.rmem_max=33554432
 ```
+
+
 
 #### softirq
 
@@ -199,7 +219,11 @@ kernel is already dropping packets.
 
 Check with `net_perf_check.sh` and increase the values if needed:
 
+
+
 ```sh
 sudo sysctl -w net.core.netdev_max_backlog=2000
 sudo sysctl -w net.core.netdev_budget=600
 ```
+
+

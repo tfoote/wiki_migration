@@ -27,37 +27,61 @@ with your personal Care-O-bot identifier)
 
 For running all cameras
 
+
+
 ```
 export ROBOT=cob3-2
 roslaunch cob_camera_sensors all_cameras.launch
-``` For running the left or right color cameras
+```
+
+ For running the left or right color cameras
+
+
 
 ```
 roslaunch cob_camera_sensors left.launch
 roslaunch cob_camera_sensors right.launch
-``` For running the depth imaging camera
+```
+
+ For running the depth imaging camera
+
+
 
 ```
 roslaunch cob_camera_sensors cam3d.launch
-``` In order to check if everything is running
+```
+
+ In order to check if everything is running
 launch the image viewer
 
 To show the color images
 
+
+
 ```
 rosrun image_view image_view image:=/stereo/left/image_color
-``` and
+```
+
+ and
+
+
 
 ```
 rosrun image_view image_view image:=/stereo/right/image_color
-``` For quitting do not close the viewer window,
+```
+
+ For quitting do not close the viewer window,
 but hit `CTRL-C` on your console
 
 To show the time-of-flight images
 
+
+
 ```
 roslaunch cob_camera_sensors tof_camera_viewer.launch
-``` For quitting do not close the viewer window,
+```
+
+ For quitting do not close the viewer window,
 but hit `CTRL-C` on your console
 
 ## Code API
@@ -68,7 +92,9 @@ sensor_msgs/Image 13.desc= XYZ data of tof camera 14.name=
 /sr4000/camera_info 14.type= sensor_msgs/CameraInfo 14.desc= Camera
 intrinsics of tof camera
 
--   / ```clearsilver
+-   / 
+
+```clearsilver
 
 name = cob_camera_sensors
 desc = Provides access to the two color cameras and the time-of-flight sensor mounted on Care-O-Bot's head module.
@@ -123,6 +149,8 @@ desc=
 }
 ```
 
+
+
 ## IPA configuration files
 
 The IPA configuration file is located at
@@ -132,6 +160,8 @@ It holds one XML-tag for each camera e.g. `<AVTPikeCam_0>` for a AVT
 Pike C145 camera. The number within the tag-name is used to
 differentiate several camera of the same type. Here is an excerpt from
 the IPA configuration file of one of our Care-O-bots.
+
+
 
 ```
 <!-- Camera sensors initialization file -->
@@ -161,7 +191,9 @@ the IPA configuration file of one of our Care-O-bots.
   ...
 <AVTPikeCam_0/>
 <LibCameraSensors/>
-``` Each tag within the IPA configuration file has
+```
+
+ Each tag within the IPA configuration file has
 a short explanation of its functionality. Please feel free to examine
 one of the Care-O-bot configuration files to get an impression of the
 possible settings.

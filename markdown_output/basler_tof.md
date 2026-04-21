@@ -3,6 +3,8 @@ Note: Full, up-to date documentation is in the project's
 
 ## ROS API
 
+
+
 ```clearsilver
 name = basler_tof_node
 desc = 
@@ -95,6 +97,6 @@ group.1 {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(uos/basler_tof)>>
+
+## Report a Bug

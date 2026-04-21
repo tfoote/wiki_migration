@@ -225,31 +225,51 @@ openni_launch and software like RTABMap, or libraries like PCL, etc.
 Once the tar file is downloaded, go to the directory where it is
 downloaded and uncompress it, by using:
 
+
+
 ```
 $  tar -zxvf filename.tar.gz
-``` or simply double-click it to open it with
+```
+
+ or simply double-click it to open it with
 Archive Manager. Then install the driver by:
+
+
 
 ```
 $  sudo ./install.sh
-``` Next Download the NITE middleware, form the
+```
+
+ Next Download the NITE middleware, form the
 [same place](http://www.mira-project.org/downloads/3rdparty/bin-linux/).
 Again uncompress it and install it.
 
+
+
 ```
 $  tar -zxvf filename.tar.gz
 $  sudo ./install.sh
-``` Now, it's time to install the Openni_launch
+```
+
+ Now, it's time to install the Openni_launch
 for ROS. Simply type:
+
+
 
 ```
 $  sudo apt-get install ros-<rosdistro>-openni-launch
-``` At this point, to check everything is
+```
+
+ At this point, to check everything is
 installed, just connect the Kinect and type:
+
+
 
 ```
 $  roslaunch openni_launch openni.launch
-``` If the launch file runs, then all the drivers
+```
+
+ If the launch file runs, then all the drivers
 are working fine."
 
 ### Downloading the Autonomy Script
@@ -271,9 +291,13 @@ found in the /home directory. To navigate to this file location and save
 the python file in the /src folder, your command line path should look
 somewhat similar to this:
 
+
+
 ```
 $  cd home/catkin_ws/src/
-``` Once the "gesture.py" script file is saved in
+```
+
+ Once the "gesture.py" script file is saved in
 this directory it can now communicate with all of the other nodes within
 RoS. **It is imperative that this script is in this file location in the
 catkin workspace source folder or else the python file will NOT be able
@@ -285,31 +309,47 @@ The first step in bringing all of these pieces together in order to
 control the Turtle Bot is to start roscore, to do this in the terminal
 type:
 
+
+
 ```
 $  roscore
-``` Once roscore initializes successfully, open a
+```
+
+ Once roscore initializes successfully, open a
 new terminal window and navigate to the location of the "gesture.py"
 script, and run the script.
+
+
 
 ```
 $  cd home/catkin_ws/src/
 $  ./gesture.py
-``` Once the script is up and running you will not
+```
+
+ Once the script is up and running you will not
 see any output from the python file for the time being until a user is
 being tracked by openni_tracker. Before we can start tracking a user, we
 first have to initialize and start the Turtle Bot. To do this,
 physically turn on your Turtle Bot and plug it in to the computer. Then
 open yet another terminal window and type:
 
+
+
 ```
 $  roslaunch turtlebot_bringup minimal.launch
-``` You should hear an audible noise come from the
+```
+
+ You should hear an audible noise come from the
 Turtle Bot once it has been initialized. Now we are ready to start the
 body tracking service to begin controlling the robot. To do this type:
 
+
+
 ```
 $  rosrun openni_tracker openni_tracker
-``` At this point position yourself in front of the
+```
+
+ At this point position yourself in front of the
 Kinect sensor, and wait until the program identifies a new user. Once a
 new user has been identified, assume the
 [Psi Pose](http://3.bp.blogspot.com/-t9FxKt9JUts/TWfK4juSF7I/AAAAAAAABBI/36-uvouIG7I/s320/PsiPose.gif)
@@ -350,16 +390,24 @@ is to utilize a program called
 [rviz](http://wiki.ros.org/action/fullsearch/rviz?action=fullsearch&context=180&value=linkto:"rviz").
 Before starting the openni_tracker type:
 
+
+
 ```
 $  sudo ./install.sh
-```0 . This will start the rviz program. In order
+```
+
+0 . This will start the rviz program. In order
 to display the reference frames the user needs to be tracked by the
 Kinect sensor. To do this start the openni_tracker service like we did
 earlier when controlling the robot:
 
+
+
 ```
 $  sudo ./install.sh
-```1 Once you are being tracked by the sensor go in
+```
+
+1 Once you are being tracked by the sensor go in
 to rviz (be careful to move out of view of the sensor) and add a /tf
 window. This allows you to specifically track the outputs of the
 transformation node (/tf). Then set the openni_depth_frame as the fixed
@@ -373,9 +421,13 @@ Another option is to output the data of the /tf node to show the
 numerical values for the position and rotation of each of the reference
 frames. To do this type in a new terminal window:
 
+
+
 ```
 $  sudo ./install.sh
-```2 . The output from this command shows the
+```
+
+2 . The output from this command shows the
 numerical orientations of all of the different joint reference frames as
 the body parts move through space.
 

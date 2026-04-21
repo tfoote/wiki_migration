@@ -49,11 +49,17 @@ This is a visualization demonstration using RViz.
 
 Install the package:
 
+
+
 ```
 sudo apt-get install ros-indigo-myahrs-driver
 ```
 
+
+
 Install the package from the github:
+
+
 
 ```
 cd ~/catkin_ws/src
@@ -61,21 +67,33 @@ git clone https://github.com/robotpilot/myahrs_driver.git
 cd ~/catkin_ws && catkin_make
 ```
 
+
+
 ## Run
 
 Run the driver like so:
+
+
 
 ```
 rosrun myahrs_driver myahrs_driver _port:=/dev/ttyACM0
 ```
 
+
+
 or
+
+
 
 ```
 roslaunch myahrs_driver myahrs_driver.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -131,6 +149,8 @@ node.0 {
  }
 }
 ```
+
+
 
 ## Communication Protocol Manual and Forum
 

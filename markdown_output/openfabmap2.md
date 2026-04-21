@@ -39,6 +39,8 @@ In any case it can be useful to train a codebook on data gathered in
 various conditions and locations stored in multiple
 [rosbag](http://www.ros.org/wiki/rosbag) files.
 
+
+
 ```
 roscore
 
@@ -48,6 +50,8 @@ roslaunch openfabmap2 learn.launch image:=/stereo/left/image_raw path:=/codebook
 
 rosbag play garden_loop.bag --clock
 ```
+
+
 
 This will process images on the supplied topic for a number of frame and
 then save the codebook and descriptor files to the 'path' location.
@@ -72,6 +76,8 @@ provided codebook and publishes candidate matches to previous images
 observed in the test-set. This process is typically run 'online', the
 following example is provided.
 
+
+
 ```
 roscore
 
@@ -81,6 +87,8 @@ roslaunch openfabmap2 run.launch image:=/stereo/left/image_raw path:=/codebook_p
 
 rosbag play garden_loop.bag --clock
 ```
+
+
 
 This example will will visualise the matches between images as a
 confusion matrix. Time along the vertical axis and frame ID on the

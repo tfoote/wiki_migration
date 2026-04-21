@@ -23,6 +23,8 @@ for simulation of velocity mode of SDH.
 
 ### Topics, parameters
 
+
+
 ```clearsilver
 
 sub {
@@ -69,8 +71,12 @@ param {
   4.desc= Rate of internal controller. Also commands are published at this rate.
 ```
 
+
+
 Node also requires list of joints with some additional information. This
 can be done easily in YAML file:
+
+
 
 ```
 joints:
@@ -104,9 +110,13 @@ joints:
   static: false
 ```
 
+
+
 ### Actionlib API
 
 ##### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -121,7 +131,11 @@ sub {
 }
 ```
 
+
+
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -139,6 +153,8 @@ pub {
   2.desc= Current joint values, forces and real time to stop for all joints.
 }
 ```
+
+
 
 ## Tactile filter
 

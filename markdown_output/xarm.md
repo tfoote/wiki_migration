@@ -71,21 +71,33 @@ workspace.
 
 ### Obtain the package
 
+
+
 ```
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/xArm-Developer/xarm_ros.git
 ```
 
+
+
 ### Install other dependent packages:
+
+
 
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-``` Please change 'kinetic' to the ROS
+```
+
+ Please change 'kinetic' to the ROS
 distribution you use. If there are any missing dependencies listed. Run
-the following command to install: ```
+the following command to install: 
+
+```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-``` And chane
+```
+
+ And chane
 'kinetic' to the ROS distribution you use.
 
 ## Package Description & Usage Guidance
@@ -123,31 +135,55 @@ hardware.
 Planner and Rviz visualization. If you have Moveit! installed, you can
 try the demo.
 
+
+
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-``` To run Moveit! motion planner along with Gazebo
+```
+
+ To run Moveit! motion planner along with Gazebo
 simulator: If no xArm gripper needed, first run:
+
+
 ```
 $ roslaunch xarm_gazebo xarm7_beside_table.launch
-``` Then in another terminal:
+```
+
+ Then in another terminal:
+
+
 ```
 $ roslaunch xarm7_moveit_config xarm7_moveit_gazebo.launch
-``` If xArm gripper needs to be attached, first
-run: ```
+```
+
+ If xArm gripper needs to be attached, first
+run: 
+
+```
 $ roslaunch xarm_gazebo xarm7_beside_table.launch add_gripper:=true
-``` Then in another terminal:
+```
+
+ Then in another terminal:
+
+
 ```
 $ roslaunch xarm7_gripper_moveit_config xarm7_gripper_moveit_gazebo.launch
-``` If you have a satisfied motion planned in
+```
+
+ If you have a satisfied motion planned in
 Moveit!, hit the "Execute" button and the virtual arm in Gazebo will
 execute the trajectory.
 
 To run Moveit! motion planner to control the real xArm: First make sure
 the xArm and the controller box are powered on, then execute:
 
+
+
 ```
 $ roslaunch xarm7_moveit_config realMove_exec.launch robot_ip:=<your controller box LAN IP address>
-``` Examine the terminal output and see if any
+```
+
+ Examine the terminal output and see if any
 error occured during the launch. If not, just play with the robot in
 Rviz and you can execute the sucessfully planned trajectory on real arm.
 But be sure it will not hit any surroundings before execution!
@@ -156,9 +192,13 @@ To run Moveit! motion planner to control the real xArm with xArm Gripper
 attached: First make sure the xArm and the controller box are powered
 on, then execute:
 
+
+
 ```
 $ roslaunch xarm7_gripper_moveit_config realMove_exec.launch robot_ip:=<your controller box LAN IP address>
 ```
+
+
 
 It is better to use this package with real xArm gripper, since Moveit
 planner will take the gripper into account for collision detection.
@@ -172,10 +212,14 @@ how to use it inside xarm_planner package.
 
 To launch the xarm simple motion planner together with the real xArm:
 
+
+
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```0 Argument 'robot_dof' specifies the number of
+```
+
+0 Argument 'robot_dof' specifies the number of
 joints of your xArm (default is 7).
 
 ### xarm_api/xarm_msgs:
@@ -230,81 +274,129 @@ names) supported:
 **Starting xArm by ROS service:**   First startup the service server for
 xarm7, ip address is just an example:
 
+
+
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```1   Then make sure all the servo motors are
+```
+
+1   Then make sure all the servo motors are
 enabled, refer to SetAxis.srv:
 
+
+
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```2   Before any motion commands, set proper robot
+```
+
+2   Before any motion commands, set proper robot
 mode(0: POSE) and state(0: READY) in order, refer to SetInt16.srv:
 
-```
-$ rosdep update
-$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```3
+
 
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```4 Joint space or Cartesian space command
+```
+
+3
+
+
+
+```
+$ rosdep update
+$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
+```
+
+4 Joint space or Cartesian space command
 example:   Please note that all the angles must use the unit of radian.
 All motion commands use the same type of srv request: Move.srv.
 
 1\. Joint space motion:   To call joint space motion with max speed 0.35
 rad/s and acceleration 7 rad/s\^2:
 
-```
-$ rosdep update
-$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```5   To go back to home (all joints at 0 rad)
-position with max speed 0.35 rad/s and acceleration 7 rad/s\^2:
+
 
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```6 2. Cartesian space motion in Base coordinate:
+```
+
+5   To go back to home (all joints at 0 rad)
+position with max speed 0.35 rad/s and acceleration 7 rad/s\^2:
+
+
+
+```
+$ rosdep update
+$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
+```
+
+6 2. Cartesian space motion in Base coordinate:
   To call Cartesian motion to the target expressed in robot BASE
 Coordinate, with max speed 200 mm/s and acceleration 2000 mm/s\^2:
 
+
+
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```7 3. Cartesian space motion in Tool coordinate:
+```
+
+7 3. Cartesian space motion in Tool coordinate:
   To call Cartesian motion expressed in robot TOOL Coordinate, with max
 speed 200 mm/s and acceleration 2000 mm/s\^2, the following will move a
 relative motion (delta_x=50mm, delta_y=100mm, delta_z=100mm) along the
 current Tool coordinate, no orientation change:
 
-```
-$ rosdep update
-$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```8 Motion service Return:   Please Note the above
-motion services will return immediately by default. If you wish to
-return until actual motion is finished, set the ros parameter
-"/xarm/wait_for_finish" to be true in advance. That is:
+
 
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```9   Upon success, 0 will be returned. If any
+```
+
+8 Motion service Return:   Please Note the above
+motion services will return immediately by default. If you wish to
+return until actual motion is finished, set the ros parameter
+"/xarm/wait_for_finish" to be true in advance. That is:
+
+
+
+```
+$ rosdep update
+$ rosdep check --from-paths . --ignore-src --rosdistro kinetic
+```
+
+9   Upon success, 0 will be returned. If any
 error occurs, 1 will be returned.
 
 Tool I/O Operations:   We provide 2 digital, 2 analog input port and 2
 digital output signals at the end I/O connector.
 
-1\. To get current 2 DIGITAL input states: ```
+1\. To get current 2 DIGITAL input states: 
+
+```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```0 2.
-To get one of the ANALOG input value: ```
+```
+
+0 2.
+To get one of the ANALOG input value: 
+
+```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```1 3. To
-set one of the Digital output: ```
+```
+
+1 3. To
+set one of the Digital output: 
+
+```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```2   You have to
+```
+
+2   You have to
 make sure the operation is successful by checking responding "ret" to
 be 0.
 
@@ -329,9 +421,13 @@ roll, pitch, yaw rotations of (PI, 0, 0) from base frame (Frame A).
 
  For example:
 
+
+
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```3   This is to set tool frame position offset (x
+```
+
+3   This is to set tool frame position offset (x
 = 0 mm, y = 0 mm, z = 20 mm), and orientation (RPY) offset of ( 0, 0, 0
 ) radians with respect to initial tool frame (Frame B in picture).
 Remember to set this offset each time the controller box is restarted !
@@ -342,22 +438,34 @@ power loss, position/speed limit violation, planning errors, etc. It
 needs additional intervention to clear. User can check error code in the
 message of topic "xarm/xarm_states" .
 
+
+
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```4   If it is non-zero, the corresponding reason
+```
+
+4   If it is non-zero, the corresponding reason
 can be found out in the user manual. After solving the problem, this
 error satus can be removed by calling service "/xarm/clear_err" with
 empty argument.
 
-```
-$ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```5   If using Moveit!, call
-"/xarm/moveit_clear_err" instead to avoid the need of setting mode 1
-again manually.
+
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```6   After calling this service, please check the
+```
+
+5   If using Moveit!, call
+"/xarm/moveit_clear_err" instead to avoid the need of setting mode 1
+again manually.
+
+
+
+```
+$ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
+```
+
+6   After calling this service, please check the
 err status again in 'xarm/xarm_states', if it becomes 0, the clearing
 is successful. Otherwise, it means the error/exception is not properly
 solved. If clearing error is successful, remember to set robot state to
@@ -370,24 +478,36 @@ check the gripper.
 1\. Gripper services: (1) First enable the griper and configure the
 grasp speed:
 
-```
-$ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```7    Proper range of the speed is from 1 to
-5000. 1500 is used as an example. 'ret' value is 0 for success. (2)
-Give position command (open distance) to xArm gripper:
+
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```8    Proper range of the open distance is from 0
+```
+
+7    Proper range of the speed is from 1 to
+5000. 1500 is used as an example. 'ret' value is 0 for success. (2)
+Give position command (open distance) to xArm gripper:
+
+
+
+```
+$ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
+```
+
+8    Proper range of the open distance is from 0
 to 850. 0 is closed, 850 is fully open. 500 is used as an example.
 'ret' value is 0 for success.
 
 \(3\) To get the current status (position and error_code) of xArm
 gripper:
 
+
+
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
-```9    If error code is non-zero, please refer to
+```
+
+9    If error code is non-zero, please refer to
 user manual for the cause of error, the "/xarm/clear_err" service can
 still be used to clear the error code of xArm Gripper.
 
@@ -397,19 +517,31 @@ speed. By setting "true" of "use_gripper_action" argument in
 xarm_bringup/launch/xarm7_server.launch, the action server will be
 started. Gripper action can be called by:
 
+
+
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-```0    Alternatively: ```
+```
+
+0    Alternatively: 
+
+```
 $ roslaunch xarm7_moveit_config demo.launch
-```1
+```
+
+1
 Tool Modbus communication: If modbus communication with the tool device
 is needed, please first set the proper baud rate and timeout parameters
 through the "xarm/config_tool_modbus" service (refer to
 ConfigToolModbus.srv). For example:
 
+
+
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-```2 The above command will configure the tool
+```
+
+2 The above command will configure the tool
 modbus baudrate to be 115200 bps and timeout threshold to be 20 ms. It
 is not necessary to configure again if these properties are not changed
 afterwards. Please note the first time to change the baud rate may
@@ -423,9 +555,13 @@ Currently, only the following baud rates (bps) are supported: \[4800,
 Then the communication can be conducted like (refer to
 SetToolModbus.srv):
 
+
+
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-```3 First argument would be the uint8(unsigned
+```
+
+3 First argument would be the uint8(unsigned
 char) data array to be sent to the modbus tool device, and second is the
 number of characters to be received as a response from the device. This
 number should be the expected data byte length +1 (without CRC bytes). A
@@ -472,18 +608,30 @@ back and enable Moveit control again:
   (1) Make sure the objects causing the collision are removed.   (2)
 clear the error:
 
+
+
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-```4   (3) switch to the desired mode (Mode 2 for
+```
+
+4   (3) switch to the desired mode (Mode 2 for
 example), and set state to 0 for ready:
 
-```
-$ roslaunch xarm7_moveit_config demo.launch
-```5
+
 
 ```
 $ roslaunch xarm7_moveit_config demo.launch
-```6   The above operations can also be done by
+```
+
+5
+
+
+
+```
+$ roslaunch xarm7_moveit_config demo.launch
+```
+
+6   The above operations can also be done by
 calling relavant xArm SDK functions.
 
 ## Other Examples

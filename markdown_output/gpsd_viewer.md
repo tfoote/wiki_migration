@@ -30,15 +30,23 @@ installed by following the instructions
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz rosbag
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch gpsd_viewer demo.launch
 ```
+
+
 
 You should then see a map display and a moving marker for the position
 data that was recorded.
@@ -46,6 +54,8 @@ data that was recorded.
 [Youtube](https://www.youtube.com/watch?v=t0-ABAmCjkQ)
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -58,6 +68,8 @@ node.0 {
   }
 }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

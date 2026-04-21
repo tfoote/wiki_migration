@@ -15,6 +15,8 @@ In this representation
 ([robot_state_cartesian.h](http://docs.ros.org/api/xpp_states/html/robot__state__cartesian_8h_source.html)),
 the robot is described by the position, velocity and acceleration of
 it's endeffectors and the Cartesian force they exert.
+
+
 ```cplusplus
 class RobotStateCartesian {
 public:
@@ -26,6 +28,8 @@ public:
 };
 ```
 
+
+
 ### Joint Representation
 
 In this representation
@@ -33,6 +37,8 @@ In this representation
 the endeffector state is only indirectly given through the joint values.
 Instead of forces acting on the endeffectors, this state equivalently
 represents this as torques acting on the joints.
+
+
 ```cplusplus
 class RobotStateJoint {
 public:
@@ -43,6 +49,8 @@ public:
   double t_global_;
 };
 ```
+
+
 
 ## Endeffectors
 

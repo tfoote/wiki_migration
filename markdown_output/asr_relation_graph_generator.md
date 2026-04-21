@@ -99,6 +99,8 @@ In Code:
 
 In !ProbabilisticSceneModel::!OcmForegroundSceneLearner::learn():
 
+
+
 ```
 // generate trainer. Ratios and deviation from ros parameters:
 SceneModel::PSMTrainer trainer(staticBreakRatio, togetherRation, maxAngleDeviation);
@@ -117,16 +119,22 @@ trainer.getTree()->printTreeToConsole(0);
 
 //learn a model with the tree as its base:
 learner->learn(examplesList, trainer.getTree());
-``` The other trainers function similarly, but take
+```
+
+ The other trainers function similarly, but take
 other parameters in construction:
 
 **!FullyMeshedTrainer**: none
 
 **!TopologyTreeTrainer**:
 
+
+
 ```
 TopologyTreeTrainer(std::vector<boost::shared_ptr<Relation>> pRelations);
-``` Where *pRelations* are the relations
+```
+
+ Where *pRelations* are the relations
 representing the topology to be transformed into a graph, or rather, a
 tree containing reference nodes (hence the name).
 
@@ -137,23 +145,39 @@ set.
 
 The central functions are:
 
+
+
 ```
 std::vector<boost::shared_ptr<Topology>> generateNeighbours(boost::shared_ptr<Topology> pFrom);
-``` Generates a set of neighbouring topologies from
+```
+
+ Generates a set of neighbouring topologies from
 the given one using up to three operations depending on the parameters
 passed in constructor (see parameters).
 
+
+
 ```
 std::vector<boost::shared_ptr<Topology>> generateStarTopologies();
-``` Generates all possible star-shaped topologies
+```
+
+ Generates all possible star-shaped topologies
 containing all the object types passed in constructor.
+
+
 
 ```
 boost::shared_ptr<Topology> generateFullyMeshedTopology();
-``` Generates the fully meshed topology containing
+```
+
+ Generates the fully meshed topology containing
 all the object types from constructor.
+
+
 
 ```
 boost::shared_ptr<Topology> generateRandomTopology();
-``` Generates a random connected topology
+```
+
+ Generates a random connected topology
 containing the object types.

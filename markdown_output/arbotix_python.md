@@ -9,6 +9,8 @@ with the driver, and a terminal tool for setting up your servos.
 
 ## Driver Node
 
+
+
 ```clearsilver
 name=driver.py
 desc=Interface to an ArbotiX !RoboController. 
@@ -94,6 +96,8 @@ param {
 }
 ```
 
+
+
 ### Submodules
 
 The `arbotix_python` package also offers several controllers which add
@@ -117,6 +121,8 @@ configure the ArbotiX node is via a YAML file. For example, a simple
 robot with a differential drive base and a pan and tilt head (with a
 follow_controller) might look like:
 
+
+
 ```
 port: /dev/ttyUSB1
 rate: 15
@@ -130,8 +136,12 @@ controllers: {
 }
 ```
 
+
+
 If you saved such a YAML file in a package you have created, you could
 then start the ArbotiX node using a launch file such as:
+
+
 
 ```
 <launch>
@@ -141,6 +151,8 @@ then start the ArbotiX node using a launch file such as:
 </launch>
 ```
 
+
+
 ## ControllerGUI
 
 The ControllerGUI is a test/teleop node that allows you to control a
@@ -148,9 +160,13 @@ mobile base and/or your Dynamixel servos. The ControllerGUI publishes
 geometry_msgs/Twist commands to the *cmd_vel* topic, and commands to
 individual servos. It will automatically determine the names and limits
 of your servos from your YAML specification file. Launching the
-ControllerGUI is as easy as: ```
+ControllerGUI is as easy as: 
+
+```
 rosrun arbotix_python controllerGUI.py
-``` You should then
+```
+
+ You should then
 see a window like:
 
 ![](attachment:controllerGUI.png)
@@ -170,6 +186,8 @@ terminal works like a typical Linux terminal, you can type `ls` to
 query which servos are attached, `mv 1 2` will `move` the servo with
 ID 1 to an ID of 2, etc:
 
+
+
 ```
 $ rosrun arbotix_python terminal.py 
 ArbotiX Terminal --- Version 0.1
@@ -184,8 +202,12 @@ OK
 .... .... .... .... .... .... .... .... ....
 ```
 
+
+
 The terminal has several other commands. Typing `help` will list all
-commands: ```
+commands: 
+
+```
 >>  help
 ArbotiX Terminal V0.1
 
@@ -201,3 +223,5 @@ valid parameters
  baud - baud rate
  temp - current temperature, degrees C, READ ONLY
 ```
+
+

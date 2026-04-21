@@ -3,6 +3,8 @@
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=evarobot_minimu9
@@ -14,7 +16,11 @@ node.0 {
   }
 ```
 
+
+
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -44,3 +50,5 @@ param {
   4.type= double
   4.desc= Maximum frequency of the node loop.
 ```
+
+

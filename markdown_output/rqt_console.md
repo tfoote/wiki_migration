@@ -14,9 +14,13 @@ library: [C++](roscpp/Overview/Logging),
 ## Usage
 
 Assuming you have ROS installed, you can invoke `rqt_console` by just
-typing: ```
+typing: 
+
+```
 rqt_console
 ```
+
+
 
 ## Message List
 

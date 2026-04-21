@@ -11,6 +11,8 @@ below.
 
 ## Nodes
 
+
+
 ```clearsilver
 name=teraranger_hub_multiflex
 desc=TeraRanger Multiflex is the modular solution for indoor distance sensing applications up to 2m range. Plug and play sensor modules on one flexible bus making it easy to create custom configurations and to place sensors where needed. An array of calibrated distances in millimeters is streamed from the Multiflex Hub. It’s the ideal – and higher performance – alternative to ultrasound for robot collision avoidance and a myriad other shorter range distance sensing requirements, all in one convenient and easy to use kit.
@@ -64,8 +66,14 @@ param {
 }
 ```
 
+
+
 ## Running
 
-To launch a node simply run: ```
+To launch a node simply run: 
+
+```
 rosrun teraranger_hub_multiflex teraranger_hub_multiflex_node
 ```
+
+

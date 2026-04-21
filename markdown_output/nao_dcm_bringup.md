@@ -8,9 +8,13 @@ default).
 
 ## Installation
 
--   install dependencies ```
+-   install dependencies 
+
+```
 sudo apt-get install ros-indigo-nao-robot ros-indigo-nao-meshes ros-indigo-nao-control
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -19,9 +23,13 @@ sudo apt-get install ros-indigo-nao-robot ros-indigo-nao-meshes ros-indigo-nao-c
 -   clone [naoqi_dcm_driver](naoqi_dcm_driver)
 -   clone [nao_dcm_bringup](nao_dcm_bringup)
 -   optionally, clone [nao_moveit_config](nao_moveit_config)
--   compile all packages with ```
+-   compile all packages with 
+
+```
 catkin_make
 ```
+
+
 
 ## How to use it
 
@@ -30,17 +38,25 @@ catkin_make
 ### Trajectory control
 
 -   start the DCM Bringup providing the robot's IP
-    ```
+    
+
+```
 roslaunch nao_dcm_bringup nao_dcm_H25_bringup_remote.launch robot_ip:=<ROBOT_IP>
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   you can launch MoveIt! (if installed previously) and control your
-    robot (arms by default) ```
+    robot (arms by default) 
+
+```
 roslaunch nao_moveit_config moveit_planner.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -54,14 +70,22 @@ To command joints positions via ROS:
 
 -   start the DCM bringup proving your robot's IP (be aware that the
     package will stop Autonomous Life on your robot):
-    ```
+    
+
+```
 roslaunch nao_dcm_bringup nao_dcm_H25_bringup_position.launch robot_ip:=<ROBOT_IP>
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   send a position to the desired controller, for example
-    ```
+    
+
+```
 rostopic pub /nao_dcm/LWristYaw_position_controller/command std_msgs/Float64 "data: 0"
 ```
+
+

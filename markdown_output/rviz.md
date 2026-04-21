@@ -20,9 +20,13 @@
 To see the list of command line options for your RViz release, run the
 following command:
 
+
+
 ```
 rosrun rviz rviz --help
 ```
+
+
 
 ## Recording Movies
 

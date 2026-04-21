@@ -56,6 +56,8 @@ slot must use the same type.
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/sigslots.hpp>
 
@@ -63,6 +65,8 @@ Include the following at the top of any translation unit:
 using ecl::Signal;
 using ecl::Slots;
 ```
+
+
 
 You will also need to link to *ecl_sigslots*.
 

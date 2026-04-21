@@ -20,6 +20,8 @@ its functions to the ROS network as services. This makes it quite easy
 to create different controllers (e.g. joystick, keyboard,
 vision-based\...) without taking care of the basic communication.
 
+
+
 ```clearsilver
 
 name = cob_base_drive_chain_node
@@ -58,6 +60,8 @@ pub {
   1.desc = it publishes states and error information of the platform
 }
 ```
+
+
 
 ## Using the Elmo Recorder
 

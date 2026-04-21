@@ -137,12 +137,18 @@ object messages suitable for consumption by
 
 Make sure a depth camera is generating point clouds. Determine if you
 need to change any of the default parameters of the object detection,
-then launch it with those arguments: ```
+then launch it with those arguments: 
+
+```
 roslaunch rail_object_discovery object_detection.launch
 ```
 
+
+
 When you wish to extract objects, call the `/discover_objects` service
 with the desired constraints. Here are some example ones:
+
+
 ```
 rosservice call /discover_objects "constraints:
 object_min_sensor_range: 0.2
@@ -150,11 +156,17 @@ object_min_sensor_range: 0.2
   object_min_spherical_radius: 0.01
   object_max_spherical_radius: 0.1
 plane_slope_tolerance: 2.0"
-``` Alternately, you can run the
+```
+
+ Alternately, you can run the
 `extract_objects.sh` script included in the package, which uses the
-constraints in the above example. ```
+constraints in the above example. 
+
+```
 rosrun rail_object_detection extract_objects.sh
 ```
+
+
 
 If you wish to view the extracted objects in rviz without using !MoveIt,
 you can view each extracted object and plane cloud separately by making

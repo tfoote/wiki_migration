@@ -5,6 +5,8 @@ the OpenRover.
 
 ## RawRrOpenroverDriverFastRateData.msg
 
+
+
 ```
 std_msgs/Header header
 std_msgs/int32 left_motor
@@ -12,7 +14,11 @@ std_msgs/int32 right_motor
 std_msgs/int32 flipper_motor
 ```
 
+
+
 ## RawRrOpenroverDriverMedRateData.msg
+
+
 
 ```
 std_msgs/Header header
@@ -31,7 +37,11 @@ std_msgs/int16 battery_current_a
 std_msgs/int16 battery_current_b
 ```
 
+
+
 ## RawRrOpenroverDriverMedRateData.msg
+
+
 
 ```
 std_msgs/Header header
@@ -51,7 +61,11 @@ std_msgs/uint16 battery_voltage_b
 std_msgs/int32 buildno
 ```
 
+
+
 ## RawRrOpenroverDriverMedRateData.msg
+
+
 
 ```
 std_msgs/Header header
@@ -68,3 +82,5 @@ std_msgs/bool discharging
 std_msgs/bool fully_charged
 std_msgs/bool fully_discharged
 ```
+
+

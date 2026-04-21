@@ -6,6 +6,8 @@
 
 ### Topic subscriptions
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -14,6 +16,8 @@ sub {
   0.desc= The topic on which this plugin listens for display paths.
 }
 ```
+
+
 
 ## Tutorials
 

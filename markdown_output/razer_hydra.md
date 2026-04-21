@@ -25,21 +25,33 @@ verification would be appreciated.
 ## Bringup
 
 Install the udev rules for the Razer Hydra by running the configure
-script in the razer_hydra directory: ```
+script in the razer_hydra directory: 
+
+```
 roscd razer_hydra
 ./configure_udev_rules
 ```
 
+
+
 Then launch the device node:
+
+
 
 ```
 roslaunch razer_hydra hydra.launch publish_tf:=true/false
 ```
 
+
+
 You can check if things are working either by looking at the TF tree in
-Rviz, or by doing: ```
+Rviz, or by doing: 
+
+```
 rostopic echo /hydra_calib
 ```
+
+
 
 ## Frames and Offsets
 
@@ -74,11 +86,17 @@ is used on position, and a low-pass
 is used on the orientation.
 
 The corner/cutoff frequency for the filters is specified at launch, with
-a default value of 2.5 Hz. ```
+a default value of 2.5 Hz. 
+
+```
 roslaunch razer_hydra hydra.launch corner_hz:=2.5
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = hydra
@@ -131,3 +149,5 @@ param {
   6.desc = The x,y,z components of a translation offset between what is reported by the low-level hydra driver and what is set as the `hydra_<left/right>_grab` frame.
 }
 ```
+
+

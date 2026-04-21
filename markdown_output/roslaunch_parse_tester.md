@@ -23,6 +23,8 @@ Using various options, roslaunch_parse_tester can check:
 
 `launch_parser.py` parses and checks a launch file.
 
+
+
 ```
 Usage: ./launch_parser.py file [options]
 
@@ -36,11 +38,15 @@ Options:
   -c, --config_errors  Check configuration errors
 ```
 
+
+
 ### Package Parser
 
 `package_parse_test.py` checks all the launch files in a package.
 Users can choose to "blacklist" individual files or entire
 directories.
+
+
 
 ```
 Usage: ./package_parse_test.py PKG [options]
@@ -59,12 +65,16 @@ files.
   -c, --config_errors   Check configuration errors
 ```
 
+
+
 ## RPT as a Python Library
 
 `roslaunch_parse_tester` can be used as a library in a Python script,
 and be added to an automated build test.
 
 ### Example
+
+
 
 ```python
 from roslaunch_parse_tester.package_parse import ROSLaunchPackageParser
@@ -79,3 +89,5 @@ def check_pkg(pkg):
 
     return launch_file_parser.check_package()
 ```
+
+

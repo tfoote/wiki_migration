@@ -4,15 +4,23 @@
 
 Start the proxy with your desired prefix:
 
+
+
 ```
 $ rosrun proxy proxy _prefix:=/proxy
 ```
 
+
+
 Subscribe to a repeated topic (suppose you have a topic /scan):
+
+
 
 ```
 $ rostopic echo /proxy/scan
 ```
+
+
 
 ## Notes
 
@@ -29,9 +37,13 @@ If you run multiple proxy instances, the proxies will repeat each
 other's topics, but they will not create a loop. You can use this to
 create message chains like the following:
 
+
+
 ```
 /proxy3/proxy2/proxy1/scan
 ```
+
+
 
 When you first subscribe to that topic, proxy 3 will subscribe to proxy
 2, which will subscribe to proxy 1, which will read in the original

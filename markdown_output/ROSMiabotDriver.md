@@ -47,16 +47,24 @@ These instructions cover the use of a built in Bluetooth module or a
 
 Turn on the robot. Open up a terminal window and type:
 
-. ```
+. 
+
+```
 hcitool scan
 ```
+
+
 
 Note the robot Bluetooth module, which normally begins with midxxx, and
 then type:
 
-. ```
+. 
+
+```
 sudo rfcomm connect hci0 <bdaddr from hcitool>
 ```
+
+
 
 This will block in terminal session with something like:
 
@@ -67,38 +75,54 @@ Launch another terminal window to continue. The next stage is to convert
 the serial rfcomm device into a TCP/IP socket. To do this we need to
 install the useful ser2net utility:
 
-. ```
+. 
+
+```
 sudo apt-get install ser2net
 ```
 
+
+
 Then configure the settings:
 
-. ```
+. 
+
+```
 add to the end of: /etc/ser2net.conf using your favourite editor (e3,nano etc)
 
 3000:telnet:600:/dev/rfcomm0:19200 8DATABITS NONE 1STOPBIT banner
 ```
 
+
+
 1.  (comment out any other port definitions on 3000)
 
 Launch the program:
 
-. ```
+. 
+
+```
 ser2net
 ```
+
+
 
 This will now run as a background process.
 
 To check everything is working we can run up a terminal program such as
 putty:
 
-. ```
+. 
+
+```
 sudo apt-get install putty
 
 putty telnet://localhost:3000/
 
 type: [t] and you will receive: <test#00>
 ```
+
+
 
 This is an inbuilt test function within the robot, and will demonstrate
 everything is working successfully. To close down the communication,
@@ -107,27 +131,41 @@ re-establish the connection just re-run the rfcomm line.
 
 ## ROS Miabot Driver Installation
 
-. ```
+. 
+
+```
 git init
 git clone https://github.com/MerlinSystemsCorp/ROSMiabotDriver.git
 ```
 
+
+
 -   Add the new directory location into the ROS package path variable
     (change /home/mark with your directory location):
 
-. ```
+. 
+
+```
 export ROS_PACKAGE_PATH=/home/mark/ROSMiabotDriver:/opt/ros/cturtle/stacks
 ```
 
+
+
 Check the project builds correctly:
 
-. ```
+. 
+
+```
 rosmake ROSMiabotDriver
 ```
 
+
+
 Launch the program:
 
-. ```
+. 
+
+```
 cd launch
 ./launch.sh
 rosrun miabot miabot        (separate shell)
@@ -136,6 +174,8 @@ rosrun miabot miabot        (separate shell)
 
 rosrun miabot keyboard      (seperate shell)
 ```
+
+
 
 ## Other Features
 

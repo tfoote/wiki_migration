@@ -5,6 +5,8 @@ be controlled remotely using a joystick or a keyboard.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = joystick_teleop_node
@@ -39,6 +41,8 @@ node.0 {
 }
 ```
 
+
+
 #### Joystick note
 
 **Please note** that depending on your joystick, you might have to
@@ -46,9 +50,15 @@ modify the axes parameters in the launch file for it to work.
 
 #### Usage
 
+
+
 ```
 roslaunch robotino_teleop joystick_teleop.launch
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -72,10 +82,16 @@ node.0 {
 }
 ```
 
+
+
 #### Usage
 
 Run the following command and use the W,A,S & D keys for translational
 motion and keys Q and E for rotational motion. Use the SPACEBAR to stop.
+
+
 ```
 roslaunch robotino_teleop keyboard_teleop.launch
 ```
+
+

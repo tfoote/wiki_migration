@@ -7,11 +7,17 @@ Here is how it looks:
 
 Run it like this:
 
+
+
 ```
 rosrun tf_publisher_gui tf_publisher_gui _parent_frame:=/odom_combined _child_frame:=/head_mount_kinect_link
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = tf_publisher_gui
@@ -35,3 +41,5 @@ prov_tf {
   0.to = ~child_frame
 }
 ```
+
+

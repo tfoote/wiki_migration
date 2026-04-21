@@ -9,6 +9,8 @@ described by the [URDF](urdf) file.
 
 ### Example
 
+
+
 ```
 <model name="model">
   <position xyz="0 0 0" rpy="0 0 0"/>
@@ -22,3 +24,5 @@ described by the [URDF](urdf) file.
   </link>
 </model>
 ```
+
+

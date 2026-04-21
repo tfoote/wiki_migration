@@ -32,65 +32,101 @@ is available for the ROS distribution you use:
 For example, on Ubuntu 18.04 and with ROS distribution Melodic Morenia,
 the OpenZen ROS driver can be installed with this command:
 
+
+
 ```
 apt install ros-melodic-openzen-sensor
 ```
+
+
 
 ## Running the Driver
 
 You can then run the OpenZen ROS driver with this command in the window
 you used to compile the software:
 
+
+
 ```
 rosrun openzen_sensor openzen_sensor_node
 ```
+
+
 
 By default, it will connect to the first available sensor. If you want
 to connect to a specific sensor, you can use the serial name of the
 sensor as parameter, for example:
 
+
+
 ```
 rosrun openzen_sensor openzen_sensor_node _sensor_name:="LPMSCU2000573"
 ```
 
+
+
 If your sensor is configured for a different baud rate, you can use the
 baudrate parameter to give a specfic baud rate setting:
+
+
 
 ```
 rosrun openzen_sensor openzen_sensor_node _sensor_name:="LPMSCU2000573" _baudrate:=115200
 ```
 
+
+
 Now you can print the IMU values from ROS with:
+
+
 
 ```
 rostopic echo /imu/data
 ```
 
+
+
 To output the values of a GPS unit (if available) use this command:
+
+
 
 ```
 rostopic echo /imu/nav
 ```
 
+
+
 Or plot some values (for example linear acceleration) with
+
+
 
 ```
 rosrun rqt_plot rqt_plot /imu/data/linear_acceleration
 ```
 
+
+
 If you want to readout the values of two OpenZen sensors simultaneously,
 you need to rename the topics and the node names likes this:
+
+
 
 ```
 rosrun openzen_sensor openzen_sensor __name:="cu2node" _sensor_name:="LPMSCU2000573" imu:=/cu2_imu 
 rosrun openzen_sensor openzen_sensor __name:="ig1_node" _sensor_name:="LPMSIG1000032" imu:=/ig1_imu
 ```
 
+
+
 Alternatively, we have prepared a sample launch file
 openzen_lpms_ig1.launch to demonstrate data acquisition and plotting
-using openzen_sensor_node: ```
+using openzen_sensor_node: 
+
+```
 roslaunch openzen_sensor openzen_lpms_ig1.launch
 ```
+
+
 
 ## Published Topics
 

@@ -16,8 +16,12 @@ the hand. Depending on the hand model, the model can be different.
 
 To see the model and test it.
 
+
+
 ```
 $ roslaunch bhand_description bh_alone.launch
 ```
+
+
 
 ![ BHand model\|width="700"](attachment:bhand_test_rviz.png)

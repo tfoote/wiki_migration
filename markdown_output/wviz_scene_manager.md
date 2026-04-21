@@ -13,11 +13,17 @@ whole.
 
 ## Running the wviz_scene_manager node
 
+
+
 ```
 $ rosrun wviz_scene_manager wviz_scene_manager
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 pub {
@@ -34,3 +40,5 @@ srv{
   1.desc= Allows a client to remove a marker topic from the scene
 }
 ```
+
+

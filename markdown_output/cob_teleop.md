@@ -7,7 +7,9 @@ simulated one (see [cob_gazebo](cob_gazebo)).
 ## ROS API
 
 The [cob_teleop](cob_teleop) package provides both, a configurable node
-for teleoperation by joystick or by keyboard. ```clearsilver
+for teleoperation by joystick or by keyboard. 
+
+```clearsilver
  name = cob_teleop
  desc = The `cob_teleop` node takes in <<MsgLink(sensor_msgs/Joy)>> messages and send direct commands to the hardware.
 
@@ -173,20 +175,34 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 ### Starting teleoperation node
 
-For starting the teleoperation with joystick ```
+For starting the teleoperation with joystick 
+
+```
 roslaunch cob_bringup teleop.launch
 ```
+
+
 For including the teleoperation in your overall launch file use
+
+
 ```
 <include file="$(find cob_bringup)/tools/teleop.launch" />
-``` If you haven't got joystick you can move the
-base of the robot using the keyboard: ```
+```
+
+ If you haven't got joystick you can move the
+base of the robot using the keyboard: 
+
+```
 roslaunch cob_teleop teleop_keyboard.launch
 ```
+
+
 
 ### Move components
 
@@ -211,7 +227,9 @@ the selected arm joints.
 
 ### Parameter file
 
-A sample parameter file could look like this ```
+A sample parameter file could look like this 
+
+```
 # common params
 run_factor: 2.0
 
@@ -248,3 +266,5 @@ max_ay: 0.5
 max_vth: 0.3
 max_ath: 0.7
 ```
+
+

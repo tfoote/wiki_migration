@@ -45,6 +45,8 @@ Example launch and configuration files are included for the
 to the [Parameter Server](Parameter Server) using your configured
 `.launch` file.
 
+
+
 ```
 # Handler specific information
 diagnostics:
@@ -55,10 +57,14 @@ diagnostics:
   start_topic: '/diagnostics'
 ```
 
+
+
 More details on configuring launch files for
 [touchosc_bridge](touchosc_bridge) can be found in the
 [rososc_tutorials](rososc_tutorials) and in the
 [touchosc_bridge](touchosc_bridge) package documentation.
+
+
 ```
 <launch>
     <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc_bridge" output="screen">
@@ -71,6 +77,10 @@ More details on configuring launch files for
     </node>
 </launch>
 ```
+
+
+
+
 
 ```clearsilver
 name = DiagnosticsTabpageHandler
@@ -91,3 +101,5 @@ param {
 0.default = /diagnostics
 }
 ```
+
+

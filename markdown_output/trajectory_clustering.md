@@ -10,6 +10,10 @@ You'll need to edit CMakeLists.txt to reflect the location of the
 tree.hh library. Specifically, set THIRDPARTY_SRCS to the parent
 directory of the *tree-2.81* directory.
 
+
+
 ```
 set(THIRDPARTY_SRCS "/home/your_name/Thirdparty" CACHE STRING "Location of Thirdparty Source Directory")
 ```
+
+

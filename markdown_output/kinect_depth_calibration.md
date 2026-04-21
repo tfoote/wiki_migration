@@ -42,9 +42,13 @@ the pose reported by the Kinect's internal depth computation.
     details.
 
 **Running** Bring up the Kinect camera first. Then, launch the
-calibration: ```
+calibration: 
+
+```
 roslaunch kinect_depth_calibration test_calibration.launch image_ns:=camera/ir depth_ns:=camera/depth
 ```
+
+
 
 ### Setup with other cameras
 
@@ -66,6 +70,10 @@ extrinsics of an external camera attached to a Kinect.
     [camera_pose_calibration](camera_pose_calibration))
 
 **Running** Bring up the Kinect camera and the external camera. Then,
-launch the calibration: ```
+launch the calibration: 
+
+```
 roslaunch kinect_depth_calibration test_calibration.launch image_ns:=external_camera/rgb depth_ns:=camera/depth
 ```
+
+

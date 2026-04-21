@@ -4,9 +4,13 @@ The opencupboard_action package is a part of the
 [mit-ros-pkg](mit-ros-pkg) repository. To download the most recent
 version of the stack without downloading the whole repository use
 
+
+
 ```
 $ svn co `roslocate svn opencupboard_action`
 ```
+
+
 
 ## Overview
 
@@ -42,6 +46,8 @@ The door opening uses hybrid force and position control
 Can be specified for specific handles and doors. All of the default
 values were determined from our specific cupboard.
 
+
+
 ```clearsilver
 param {
   0.name=door_width
@@ -69,3 +75,5 @@ param {
   5.default=None
   5.desc=An optional parameter for the height range the handle can be found in. Will only successfully find a handle if it within a tolerance of 0.05 meters of this specified height.
 ```
+
+

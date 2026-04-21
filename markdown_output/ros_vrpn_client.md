@@ -28,15 +28,27 @@
 ## Running the code
 
 1\. Run node from command line to track an object whose name is
-Trackable1: ```
+Trackable1: 
+
+```
 $ rosrun ros_vrpn_client ros_vrpn_client __name:=Trackable1 _vrpn_server_ip:=192.168.2.110
-``` 1. visualize in rviz:
+```
+
+ 1. visualize in rviz:
+
+
 ```
 $ roslaunch ros_vrpn_client demo.launch
-``` 1. check rate at which object is being tracked:
+```
+
+ 1. check rate at which object is being tracked:
+
+
 ```
 $ rostopic hz /Trackable1/pose
-``` We can track objects at 100Hz.
+```
+
+ We can track objects at 100Hz.
 
 ## TF coordinate frames
 
@@ -62,6 +74,8 @@ the ros node (given from the launch file or command line).
     published via VRPN, and will be the name of the TF coordinate frame
     for this object.
 
+
+
 ```clearsilver
 pub {
  0.name= ros_vrpn_client/pose
@@ -81,3 +95,5 @@ param {
  2.desc= port number for the VRPN.
 }
 ```
+
+

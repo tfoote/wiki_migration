@@ -40,6 +40,8 @@ automatically connect/reconnect with roscore when it becomes available.
 
 #### Keybindings
 
+
+
 ```
 CTRL-c       Exit log viewer
 CTRL-h       Show/hide help screen
@@ -70,6 +72,8 @@ Enter        Next match
 CTRL-e       Enable/disable text exclude filter
 CTRL-f       Enable/disable text include filter
 ```
+
+
 
 #### Mouse Support
 

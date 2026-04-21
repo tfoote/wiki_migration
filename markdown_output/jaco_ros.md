@@ -62,6 +62,8 @@ prevent the joints from rotating excessively.
 
 #### Cartesian Control Actionserver Topic, Command, and Parameters
 
+
+
 ```
 /jaco_arm_driver/arm_pose/arm_pose
 
@@ -87,7 +89,11 @@ Parameters on the parameter server (can be set in the launch file):
     to complete the action
 ```
 
+
+
 #### Published Topic for Cartesian Position
+
+
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -102,6 +108,8 @@ float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
 ```
 
+
+
 ### Angular Control
 
 Angular control is accomplished via actionserver. The joint angles are
@@ -113,6 +121,8 @@ Joint 3 has a range of +17 to +343 degrees. Sending a command past these
 limits will cause the arm to move to its hard-wired limit, then stop.
 
 #### Angular Control Actionserver Topic, Command, and Parameters
+
+
 
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
@@ -136,7 +146,11 @@ Parameters on the parameter server (can be set in the launch file):
     to complete the action
 ```
 
+
+
 #### Published Topics for Angular Position in Degrees
+
+
 
 ```
 /jaco_arm_driver/out/joint_angles
@@ -150,7 +164,11 @@ float32 joint5 – second “wrist” joint angle in degrees
 float32 joint6 – “hand” joint angle in degrees
 ```
 
+
+
 #### Published Topics for Angular Position in Radians
+
+
 
 ```
 /jaco_arm_driver/out/joint_state
@@ -162,6 +180,8 @@ float64[] velocity – array containing the joint velocities (placeholder, conta
 float64[] effort – array containing the joint forces in newtons (placeholder, contains no data)
 ```
 
+
+
 ### Finger Control
 
 Finger control is accomplished via actionserver. The finger angles are
@@ -170,6 +190,8 @@ on the JACO is approximately 0 (fully open) to 60 (fully closed). The
 two fingers on the MICO have a range of approximately 0 to 6400.
 
 #### Finger Control Actionserver Topic, Command, and Parameters
+
+
 
 ```
 /jaco_arm_driver/fingers/finger_positions
@@ -192,7 +214,11 @@ Parameters on the parameter server (can be set in the launch file):
     a MICO and a JACO arm (see the example launch files).
 ```
 
+
+
 #### Published Topic for Finger Position
+
+
 
 ```
 /jaco_arm_driver/out/finger_position
@@ -202,6 +228,8 @@ float32 finger1 – position of finger 1 in degrees
 float32 finger2 – position of finger 2 in degrees
 float32 finger3 – position of finger 3 in degrees (0 when using the two-fingered MICO)
 ```
+
+
 
 ### Services
 
@@ -215,10 +243,14 @@ When called, this service will return the arm to its pre-programmed
 on the pendant controller. The service requires no input parameters, and
 simply reports when the arm has returned home.
 
+
+
 ```
 Service Topic:  /jaco_arm_driver/in/home_arm
 Result:  string homearm_result – a string containing the results of the home_arm service
 ```
+
+
 
 #### Emergency Stop
 
@@ -228,26 +260,36 @@ a software e-stop flag. This flag will prevent any further movement of
 the arm, including homing. Joint angle feedback will continue to
 function. The service requires no input parameters.
 
+
+
 ```
 Topic:  /jaco_arm_driver/in/stop
 Result:  string stop_result – a string containing the results of the stop service
 ```
+
+
 
 #### Start
 
 When called, this service will disable the software e-stop flag, and
 restore control of the arm. The service requires no input parameters.
 
+
+
 ```
 Topic:  /jaco_arm_driver/in/start
 Result:  string start_result – a string containing the results of the start service
 ```
+
+
 
 ### Joint Velocity Subscriber
 
 Publishing messages to this topic allows for the arm to be controlled
 using joint velocity commands. For example, the following command will
 cause the arm to spin the sixth joint:
+
+
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -260,7 +302,9 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```0 Note, using tab-completion to create this
+```
+
+0 Note, using tab-completion to create this
 message will make sure that the command follows the correct syntax and
 format. If you just copy-and-paste this command into a terminal, it may
 not work.
@@ -271,6 +315,8 @@ Publishing messages to this topic allows for the arm to be controlled
 using Cartesian velocity commands. For example, the following command
 will cause the arm to move in the positive z-direction (up).
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -282,7 +328,9 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```1 }}}} Note, using tab-completion to create this
+```
+
+1 }}}} Note, using tab-completion to create this
 message will make sure that the command follows the correct syntax and
 format. If you just copy-and-paste this command into a terminal, it may
 not work.
@@ -308,6 +356,8 @@ becomes available from thejaco_arm_driver node.
 To make ros-jaco part of your workspace, follow these steps (assuming
 your workspace is setup following the standard conventions):
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -319,10 +369,14 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```2 To access the arm via usb copy the udev rule
+```
+
+2 To access the arm via usb copy the udev rule
 file 99-jaco-arm.rules from
 <your_workspace>/ros-jaco-arm/jaco_driver/udev to /etc/udev/rules.d/:
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -334,7 +388,9 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```3 If you would like the jaco_arm_driver and
+```
+
+3 If you would like the jaco_arm_driver and
 jaco_tf_updater nodes to launch automatically when ROS is started, copy
 the jaco_arm.launch file contained in the /launch folder into the
 relevant /core.dfolder.
@@ -347,6 +403,8 @@ and a tf_prefix for both the arm_driver node and thetf_updater node. For
 example, include the following lines in the launch file between <node
 pkg="jaco_driver" type="jaco_arm_driver" \...> and </node>:
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -358,10 +416,14 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```4 And the following line in the launch file
+```
+
+4 And the following line in the launch file
 between <node pkg="jaco_driver" type="jaco_tf_updater" \...> and
 </node>:
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -373,7 +435,9 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```5 If no serial number parameter is set, the node
+```
+
+5 If no serial number parameter is set, the node
 will simply try to connect to the JACO or MICO arm that is present.
 
 ## Execution
@@ -387,6 +451,8 @@ the firmware may result in unexpected behavior.
 
 To "home" the arm
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -398,21 +464,12 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```6 To activate the e-stop (emergency stop)
+```
+
+6 To activate the e-stop (emergency stop)
 function
 
-```
-/jaco_arm_driver/out/tool_position
 
-Message format:
-float64 position.x – end effector distance from the base in meters (left-right relative to base)
-float64 position.y – end effector distance from the base in meters (forward-back relative to base)
-float64 position.z – end effector distance from the base in meters (up-down relative to base)
-float64 orientation.x – end effector quaternion orientation
-float64 orientation.y – end effector quaternion orientation
-float64 orientation.z – end effector quaternion orientation
-float64 orientation.w – end effector quaternion orientation
-```7 To restore control of the arm
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -425,12 +482,33 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```8
+```
+
+7 To restore control of the arm
+
+
+
+```
+/jaco_arm_driver/out/tool_position
+
+Message format:
+float64 position.x – end effector distance from the base in meters (left-right relative to base)
+float64 position.y – end effector distance from the base in meters (forward-back relative to base)
+float64 position.z – end effector distance from the base in meters (up-down relative to base)
+float64 orientation.x – end effector quaternion orientation
+float64 orientation.y – end effector quaternion orientation
+float64 orientation.z – end effector quaternion orientation
+float64 orientation.w – end effector quaternion orientation
+```
+
+8
 
 ### Joint Sensors
 
 To obtain the raw joint angles in degrees
 
+
+
 ```
 /jaco_arm_driver/out/tool_position
 
@@ -442,30 +520,12 @@ float64 orientation.x – end effector quaternion orientation
 float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
-```9 To obtain the "transformed" joint angles in
+```
+
+9 To obtain the "transformed" joint angles in
 radians in a standard sensor_msgs format
 
-```
-/jaco_arm_driver/joint_angles/arm_joint_angles
 
-Message format:
-float32 joint1 – “base” joint angle in radians
-float32 joint2 – “shoulder” joint angle in radians
-float32 joint3 – “elbow” joint angle in radians
-float32 joint4 – first “wrist” joint angle in radians
-float32 joint5 – second “wrist” joint angle in radians
-float32 joint6 – “hand” joint angle in radians
-
-Parameters on the parameter server (can be set in the launch file):
-/jaco_arm_driver/joint_angles/stall_interval_seconds – duration over which the stall condition is tested
-/jaco_arm_driver/joint_angles/stall_threshold – threshold over which the stall condition is tested
-    (e.g., if there is less than stall_threshold change in measurement over stall_interval_seconds,
-    the action will aborted due to a stall condition)
-/jaco_arm_driver/joint_angles/rate_hz – rate at which the action is tested for completion, stall, or
-    other termination condition
-/jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
-    to complete the action
-```0 To obtain the finger angles in degrees
 
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
@@ -487,9 +547,39 @@ Parameters on the parameter server (can be set in the launch file):
     other termination condition
 /jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
     to complete the action
-```1 To obtain the arm's position in Cartesian
+```
+
+0 To obtain the finger angles in degrees
+
+
+
+```
+/jaco_arm_driver/joint_angles/arm_joint_angles
+
+Message format:
+float32 joint1 – “base” joint angle in radians
+float32 joint2 – “shoulder” joint angle in radians
+float32 joint3 – “elbow” joint angle in radians
+float32 joint4 – first “wrist” joint angle in radians
+float32 joint5 – second “wrist” joint angle in radians
+float32 joint6 – “hand” joint angle in radians
+
+Parameters on the parameter server (can be set in the launch file):
+/jaco_arm_driver/joint_angles/stall_interval_seconds – duration over which the stall condition is tested
+/jaco_arm_driver/joint_angles/stall_threshold – threshold over which the stall condition is tested
+    (e.g., if there is less than stall_threshold change in measurement over stall_interval_seconds,
+    the action will aborted due to a stall condition)
+/jaco_arm_driver/joint_angles/rate_hz – rate at which the action is tested for completion, stall, or
+    other termination condition
+/jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
+    to complete the action
+```
+
+1 To obtain the arm's position in Cartesian
 units in a standard geometry_msgs format
 
+
+
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
 
@@ -510,7 +600,9 @@ Parameters on the parameter server (can be set in the launch file):
     other termination condition
 /jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
     to complete the action
-```2
+```
+
+2
 
 ### Arm Control
 
@@ -520,6 +612,8 @@ controlling the arm. These scripts are located in the jaco_demo package.
 To set the joint angles using DH "transformed" angles in radians, use
 joint_angle_workout.py
 
+
+
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
 
@@ -540,9 +634,13 @@ Parameters on the parameter server (can be set in the launch file):
     other termination condition
 /jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
     to complete the action
-```3 To set the arm position using Cartesian
+```
+
+3 To set the arm position using Cartesian
 co-ordinates, use cartesian_workout.py
 
+
+
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
 
@@ -563,9 +661,13 @@ Parameters on the parameter server (can be set in the launch file):
     other termination condition
 /jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
     to complete the action
-```4 To set the finger positions, use
+```
+
+4 To set the finger positions, use
 gripper_workout.py
 
+
+
 ```
 /jaco_arm_driver/joint_angles/arm_joint_angles
 
@@ -586,7 +688,9 @@ Parameters on the parameter server (can be set in the launch file):
     other termination condition
 /jaco_arm_driver/joint_angles/tolerance – tolerance between the measured position and the goal position
     to complete the action
-```5
+```
+
+5
 
 ## Known Limitations
 

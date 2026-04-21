@@ -61,8 +61,6 @@ The extension to car-like robots is described in
 Get started by completing the tutorials in the
 [Tutorials](teb_local_planner/Tutorials) section.
 
-<<GitHubIssues(rst-tu-dortmund/teb_local_planner)>>
-
 ## Video
 
 The following video presents the features of the package and shows
@@ -79,6 +77,8 @@ video (supporting car-like robots and costmap conversion).
 ## Node API
 
 ### Topics
+
+
 
 ```clearsilver
 pub {
@@ -100,6 +100,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 sub {
   0.name = ~<name>/odom
@@ -110,6 +114,10 @@ sub {
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
 ```
+
+
+
+
 
 ```
 {#!wiki version kinetic_and_newer
@@ -123,6 +131,8 @@ sub {
   0.desc = Provide custom via-points (you need to set `~<name>/global_plan_viapoint_sep` to zero or negative)
 }
 ```
+
+
 
 }}}}
 
@@ -138,6 +148,8 @@ them are chosen to be compliant with the
 can be modified at runtime using [rqt_reconfigure](rqt_reconfigure).
 
 #### Robot Configuration Parameters
+
+
 
 ```clearsilver
 param{
@@ -165,7 +177,11 @@ param{
 }
 ```
 
+
+
 The following parameters are relevant only for carlike robots:
+
+
 
 ```clearsilver
 param{
@@ -184,6 +200,10 @@ param{
   2.desc = Substitute the rotational velocity in the commanded velocity message by the corresponding steering angle [-pi/2,pi/2]. ''Note, changing the semantics of yaw rate depending on the application is not preferable. Here, it just complies with the inputs required by the stage simulator. Datatypes in [[ackermann_msgs]] are more appropriate, but are not supported by move_base. The local planner is not intended to send commands by itself. '' 
 }
 ```
+
+
+
+
 
 ```
 {#!wiki version kinetic_and_newer
@@ -207,12 +227,16 @@ param{
 }
 ```
 
+
+
 }}}}
 
 The following parameters are relevant for the footprint model used for
 optimization (see
 [Tutorial Obstacle Avoidance and Robot Footprint Model](teb_local_planner/Tutorials/Obstacle Avoidance and Robot Footprint Model)).
 ** New in version 0.3**
+
+
 
 ```clearsilver
 param{
@@ -260,7 +284,11 @@ param{
 }
 ```
 
+
+
 #### Goal Tolerance Parameters
+
+
 
 ```clearsilver
 param{
@@ -280,7 +308,11 @@ param{
 }
 ```
 
+
+
 #### Trajectory Configuration Parameters
+
+
 
 ```clearsilver
 param{
@@ -328,6 +360,10 @@ param{
 }
 ```
 
+
+
+
+
 ```
 {#!wiki version kinetic_and_newer
 
@@ -350,20 +386,13 @@ param{
 }
 ```
 
+
+
 }}}}
 
 #### Obstacle Parameters
 
-```clearsilver
-sub {
-  0.name = ~<name>/odom
-  0.type = nav_msgs/Odometry
-  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
-  1.name = ~<name>/obstacles
-  1.type = costmap_converter/ObstacleArrayMsg
-  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
-}
-```0
+
 
 ```clearsilver
 sub {
@@ -374,7 +403,24 @@ sub {
   1.type = costmap_converter/ObstacleArrayMsg
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
-```1
+```
+
+0
+
+
+
+```clearsilver
+sub {
+  0.name = ~<name>/odom
+  0.type = nav_msgs/Odometry
+  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
+  1.name = ~<name>/obstacles
+  1.type = costmap_converter/ObstacleArrayMsg
+  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
+}
+```
+
+1
 
 }}}}
 
@@ -382,6 +428,8 @@ The following parameters are relevant only if
 [costmap_converter](costmap_converter) plugins are desired (see
 tutorial):
 
+
+
 ```clearsilver
 sub {
   0.name = ~<name>/odom
@@ -391,20 +439,13 @@ sub {
   1.type = costmap_converter/ObstacleArrayMsg
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
-```2
+```
+
+2
 
 #### Optimization Parameters
 
-```clearsilver
-sub {
-  0.name = ~<name>/odom
-  0.type = nav_msgs/Odometry
-  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
-  1.name = ~<name>/obstacles
-  1.type = costmap_converter/ObstacleArrayMsg
-  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
-}
-```3
+
 
 ```clearsilver
 sub {
@@ -415,22 +456,30 @@ sub {
   1.type = costmap_converter/ObstacleArrayMsg
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
-```4
+```
+
+3
+
+
+
+```clearsilver
+sub {
+  0.name = ~<name>/odom
+  0.type = nav_msgs/Odometry
+  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
+  1.name = ~<name>/obstacles
+  1.type = costmap_converter/ObstacleArrayMsg
+  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
+}
+```
+
+4
 
 }}}}
 
 #### Parallel Planning in distinctive Topologies
 
-```clearsilver
-sub {
-  0.name = ~<name>/odom
-  0.type = nav_msgs/Odometry
-  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
-  1.name = ~<name>/obstacles
-  1.type = costmap_converter/ObstacleArrayMsg
-  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
-}
-```5
+
 
 ```clearsilver
 sub {
@@ -441,12 +490,31 @@ sub {
   1.type = costmap_converter/ObstacleArrayMsg
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
-```6
+```
+
+5
+
+
+
+```clearsilver
+sub {
+  0.name = ~<name>/odom
+  0.type = nav_msgs/Odometry
+  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
+  1.name = ~<name>/obstacles
+  1.type = costmap_converter/ObstacleArrayMsg
+  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
+}
+```
+
+6
 
 }}}}
 
 #### Miscellaneous Parameters
 
+
+
 ```clearsilver
 sub {
   0.name = ~<name>/odom
@@ -456,7 +524,9 @@ sub {
   1.type = costmap_converter/ObstacleArrayMsg
   1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
 }
-```7
+```
+
+7
 
 ## Roadmap
 

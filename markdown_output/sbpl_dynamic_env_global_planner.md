@@ -59,6 +59,8 @@ trajectories. This node is not robust!
 
 ### ROS API
 
+
+
 ```clearsilver
 pub {
   0.name  = ~/SBPLDynEnvGlobalPlanner/plan
@@ -80,6 +82,10 @@ sub {
   1.desc = Since the default path followers don't follow time-parameterized paths, when the path has a point where the robot must wait in place, the planner only returns the path up until that wait. It checks the goal status until the robot has reached the "sub-goal". Then it feeds the next part of the path to move_base by telling it there is a "new goal". Hopefully this is a temporary hack.
 }
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -143,6 +149,8 @@ param {
   9.desc = When removing dynamic obstacles from the costmap the planner will use the radius of the obstacle plus this parameter. (This parameter only matters if remove_dynObs_from_costmap is true). 
 }
 ```
+
+
 
 ### Customizing your Motion Primitives
 

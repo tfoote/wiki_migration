@@ -4,14 +4,18 @@ As thermal camera simulation isn't supported natively by gazebo, this
 plugin takes the following approach: Objects of interest (OOIs) that
 have to appear hot in thermal vision are modelled using COLLADA and have
 their emissive and ambient material properties set to maximum red like
-this: ```
+this: 
+
+```
 <emission>
               <color sid="emission">1 0 0 1</color>
             </emission>
             <ambient>
               <color sid="ambient">1 0 0 1</color>
             </ambient>
-``` The relevant OOI will then always have
+```
+
+ The relevant OOI will then always have
 exactly red color, regardless of lighting conditions in gazebo. The
 gazebo_ros_thermal_camera plugin then colors only the portions of the
 MONO8 thermal image as white (for white hot) that have exactly this
@@ -30,6 +34,8 @@ options are not currently implemented.
 
 The plugin is based on the gazebo_ros_camera plugin and thus has the
 same parameters and signature for use in a URDF model:
+
+
 ```
 <gazebo reference="thermal_frame">
       <sensor:camera name="thermal_camera_sensor">
@@ -50,3 +56,5 @@ same parameters and signature for use in a URDF model:
       </sensor:camera>
     </gazebo>
 ```
+
+

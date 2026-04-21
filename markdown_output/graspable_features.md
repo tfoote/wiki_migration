@@ -12,19 +12,31 @@ For now, please follow the steps as in below:
 
 ### On the robot
 
-Start the following launch file: ```
+Start the following launch file: 
+
+```
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_robot.launch
 ```
 
+
+
 ### On the desktop
 
-Run the grasp evaluation service node: ```
+Run the grasp evaluation service node: 
+
+```
 rosrun graspable_features grasp_evaluation_server
 ```
 
-Start the following launch file: ```
+
+
+Start the following launch file: 
+
+```
 roslaunch graspable_features pr2_interactive_manipulation_with_GripperClick_Voxelgrid_desktop.launch
 ```
+
+
 
 Note that this launch file will bring up rviz. The PR2 Interactive
 Manipulation tools are implemented as
@@ -85,6 +97,8 @@ gripper, object will fall out of the robot hand.
 
 ### Services Offered
 
+
+
 ```clearsilver
 srv{
  no_header = True
@@ -93,6 +107,8 @@ srv{
  0.desc = This service takes in a point cloud and a list of grasp poses, which will be evaluated on this point cloud. A list of scores will be returned. The score of a grasp represents the possibility that this grasp is likely to succeed. It has a range of [0, 1]. 
 }
 ```
+
+
 
 ## Technical Details
 

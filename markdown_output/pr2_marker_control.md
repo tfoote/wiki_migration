@@ -16,6 +16,8 @@ getting the needed packages installed for using interactive markers.
 
 To bring the robot up in simulation:
 
+
+
 ```
 roslaunch gazebo_worlds empty_world.launch
 
@@ -27,6 +29,8 @@ roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_robot.launch
 
 roslaunch pr2_interactive_manipulation_frontend pr2_interactive_manipulation_desktop.launch sim:=true
 ```
+
+
 
 In Rviz, add a "Interactive Markers" topic, and subscribe to
 **/pr2_markercontrol/update**. Finally, select the "Interact" button

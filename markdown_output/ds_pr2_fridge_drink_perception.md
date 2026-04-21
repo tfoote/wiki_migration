@@ -32,7 +32,9 @@ refrigerator. rail_z_offset is the distance from the ground.
 The action client takes a goal, which encodes the rail number inside the
 refrigerator. Each rail number corresponds to a specific drink.
 
-The action is defined as follows : ```
+The action is defined as follows : 
+
+```
 #goal definition
 uint8 rail_nr
 ---
@@ -43,3 +45,5 @@ bool success
 ---
 #feedback
 ```
+
+

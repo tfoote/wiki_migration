@@ -49,23 +49,35 @@ a 500k baudrate.
 Execute the following command on the computer with CAN and laserscan
 connection (start driving and laserscanner):
 
+
+
 ```
 roslaunch asr_mild_base_launch_files mild.launch
-``` OR
+```
+
+ OR
 
 Start only the laserscanner:
 
+
+
 ```
 rosrun mild_base_laserscanner mild_base_laserscanner
-``` Wait until the following is shown (this can
+```
+
+ Wait until the following is shown (this can
 take 1-2 minutes):
+
+
 
 ```
 Init. complete: Sick PLS is online and ready!
 tScan Angle: 180
 tScan Resolution: 0.5
 tMeasuring Units: cm
-``` It can take several tries to connect to the
+```
+
+ It can take several tries to connect to the
 laserscanner!
 
 ## ROS Nodes

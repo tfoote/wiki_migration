@@ -8,6 +8,8 @@ goal pose is sent to the goal server.
 
 ## API Documentation
 
+
+
 ```clearsilver
 node.0 {
  name = goal_server_cu
@@ -45,3 +47,5 @@ srv {
  }
 }
 ```
+
+

@@ -43,6 +43,8 @@ file and is connected to the running RViz by calls to
 !TypeRegistry.registerDisplay() in the plugin's rvizPluginInit()
 function:
 
+
+
 ```cplusplus
 
 #include "rviz/plugin/type_registry.h"
@@ -54,6 +56,8 @@ extern "C" void rvizPluginInit(rviz::TypeRegistry* reg)
 }
 ```
 
+
+
 see [rviz_PluginAPI](rviz/PluginAPI#Existing_Plugin_API)
 
 ### execute_commands.py
@@ -64,10 +68,14 @@ The [cob_script_server](cob_script_server) implementation.
 
 ### Building and Uploading
 
+
+
 ```
 rosdep install cob_command_gui_rviz
 rosmake cob_command_gui_rviz
-``` You can upload the cob_command_gui_rviz plugin
+```
+
+ You can upload the cob_command_gui_rviz plugin
 by selecting the **Plugins->Manage\...** menu item in RViz.
 
 A dialog will pop up letting you manage loading/unloading plugins:
@@ -82,17 +90,25 @@ For a more detailed introduction see [rviz/UserGuide](rviz/UserGuide).
 
 ### Usage
 
-For starting the action server: ```
+For starting the action server: 
+
+```
 roscd cob_rviz_movement_control/src
 ./execute_commands.py
 ```
 
-For loading the parameters and starting RViz: ```
+
+
+For loading the parameters and starting RViz: 
+
+```
 export ROBOT=cob3-3
 export ROBOT_ENV=ipa-kitchen
 roslaunch cob_command_gui_rviz startup.launch
 rosrun rviz rviz
 ```
+
+
 The parameters of the command_gui_rviz are defined in
 [cob_default_env_config](cob_default_env_config) and
 [cob_default_robot_config](cob_default_robot_config) and loaded in the

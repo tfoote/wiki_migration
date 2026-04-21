@@ -27,33 +27,49 @@ simple steps are needed:
      `CSHARP_ADD_TARGET_DEPENDENCY(target deps)`      adds the dependencies deps to target. Only use target names or assembly names without extension.   
   -- --------------------------------------------- -- -------------------------------------------------------------------------------------------------- --
 
-Example: ```
+Example: 
+
+```
 CSHARP_ADD_TARGET_DEPENDENCY(myExecutable myLibrary Mono.C5 otherLibrary)
 ```
+
+
 
   -- --------------------------------- -- --------------------- --
      `CSHARP_ADD_LIBRARY(lib files)`      build a C# assembly   
   -- --------------------------------- -- --------------------- --
 
-Example: ```
+Example: 
+
+```
 CSHARP_ADD_LIBRARY(myLibrary src/mycode.cs src/myclass.cs)
 ```
+
+
 
   -- ----------------------------- -- ----------------------- --
      `CSHARP_ADD_EXE(exe files)`      build a C# executable   
   -- ----------------------------- -- ----------------------- --
 
-Example: ```
+Example: 
+
+```
 CSHARP_ADD_EXE(myExe src/mymain.cs src/myclass.cs)
 ```
+
+
 
   -- ----------------------------------------- -- ----------------------------------- --
      `CSHARP_ADD_PKG_DEPENDENCY(target dep)`      add a dependency using pkg-config   
   -- ----------------------------------------- -- ----------------------------------- --
 
-Example: ```
+Example: 
+
+```
 CSHARP_ADD_PKG_DEPENDENCY(myLibrary gtk-sharp-2.0)
 ```
+
+
 
   -- ----------------------------------- -- ---------------------------------------------------------------- --
      `CSHARP_ADD_RESOURCE(target res)`      add a resource to the target (similar to `dmcs -resource:res`)   
@@ -82,6 +98,8 @@ API documentation for the main functionality is available here:
 <https://cn-roscs-ros-pkg.googlecode.com/git/roscs/apidoc/index.html>.
 
 The following example illustrates the wrapped API:
+
+
 ```
 using System;
 using System.Threading;
@@ -121,7 +139,9 @@ namespace Example
 		}
 	}
 }
-``` Note that only asynchronous message handling is
+```
+
+ Note that only asynchronous message handling is
 supported.
 
 # Known Issues and Limitations

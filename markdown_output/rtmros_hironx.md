@@ -26,11 +26,15 @@ Full-fledged user document incl. writing codes is found
 
 ### Moveit and dynamic scenes with HiroNXO
 
+
+
 ```
 Can moveit plan a path and then change it during execution because a new obstacle
  appeared in the path? There are `move_group.plan()` and `move_group.go()` for static
  scenes. Do I need other commands for dynamic scenes?
 ```
+
+
 
 For MoveIt! related feature, HiroNXO does no customization. So follow
 general `MoveIt! way`. MoveIt! has "allow re-plan" feature.
@@ -39,12 +43,16 @@ might be of your interest.
 
 ### Controlling joint motors directly with `Joint Trajectory Action Interface`
 
+
+
 ```
 At the moment I am working on the low level API, the joint trajectory action
  interface to control the robot. Is it true that the joint trajectory controller 
  directly control the joints (joint motors) of the robot? Because I thought that 
  the robot can only be accessed via CORBA and ROS does not know anything about CORBA.
 ```
+
+
 
 Your observation is correct; NEXTAGE OPEN does not provide direct
 controller access to the motor, from both ROS API and hrpsys API. This
@@ -54,10 +62,14 @@ have control over.
 
 ### Correct physical behavior of the simulator
 
+
+
 ```
 Another question is, if the hrpsys simulator can also simulate the correct physical
  behavior when we control the joints directly (with Joint Trajectory Aciton). 
  Let’s say my controller parameters are chosen wrong.. Will the robot arm overshoot?
 ```
+
+
 
 TBA

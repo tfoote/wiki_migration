@@ -8,9 +8,13 @@ or against a locally installed [octomap](octomap) library.
 
 To install octovis on Ubuntu using the pre-built packages, run
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-octovis
 ```
+
+
 
 This will install !OctoMap and octovis as stand-alone libraries with no
 ROS dependencies, so they can be also used in a non-ROS setting.

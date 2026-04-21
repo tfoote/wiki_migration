@@ -5,6 +5,8 @@ filters are focused on the needs of industrial robots and applications.
 
 ## Filters
 
+
+
 ```clearsilver
 
 node.0 {
@@ -29,6 +31,8 @@ node.1 {
   }
 ```
 
+
+
 ## Applying Filters
 
 { }}}} {}
@@ -41,5 +45,3 @@ For more detailed examples see the
 [Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
-
-<<GitHubIssues(ros-industrial/industrial_core)>>

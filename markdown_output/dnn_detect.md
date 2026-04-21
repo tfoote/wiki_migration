@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 name = dnn_detect
 desc = dnn_detect uses the [[https://docs.opencv.org/3.3.0/d2/d58/tutorial_table_of_content_dnn.html|OpenCV Deep Neural Network module]] to find objects in an image stream and provide their bounding boxes.
@@ -63,11 +65,17 @@ param {
 }
 ```
 
+
+
 ## Installation
+
+
 
 ```
 sudo apt install ros-kinetic-dnn-detect
 ```
+
+
 
 ## Sample Usage
 
@@ -76,14 +84,26 @@ The sample launch file uses
 
 A camera node, such as [usb_cam](usb_cam) needs to be running
 
-For example: ```
+For example: 
+
+```
 rosrun usb_cam usb_cam_node
 ```
 
-Then `dnn_detect` can be launched: ```
+
+
+Then `dnn_detect` can be launched: 
+
+```
 roslaunch dnn_detect dnn_detect.launch camera:=/usb_cam image:=image_raw
-``` and the
+```
+
+ and the
 results viewed with: {{ rqt_image_view /dnn_images or:
+
+
 ```
 rostopic echo /dnn_objects
 ```
+
+

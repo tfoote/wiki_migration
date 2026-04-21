@@ -21,9 +21,13 @@ The
 [ openni.launch](https://github.com/ccny-ros-pkg/ccny_rgbd_tools/blob/master/ccny_openni_launch/launch/openni.launch )
 file will launch the driver and the processing nodelets.
 
+
+
 ```shell
 roslaunch ccny_openni_launch openni.launch
 ```
+
+
 
 ![](attachment:openni_launch.png)
 
@@ -35,9 +39,13 @@ file will launch the device driver and record the raw data to a bag. No
 processing is performed. The bag will include the raw RGB and depth
 images, together with their CameraInfo topics.
 
+
+
 ```shell
 roslaunch ccny_openni_launch openni_record.launch bag_name:=<path_to_ros_bag>
 ```
+
+
 
 ![](attachment:openni_record_launch.png)
 
@@ -49,9 +57,13 @@ file will play a recorded bag and launch the processing nodelets. The
 output of this launch file is the same as the output of
 [ openni.launch](https://github.com/ccny-ros-pkg/ccny_rgbd_tools/blob/master/ccny_openni_launch/launch/openni.launch ).
 
+
+
 ```shell
 roslaunch ccny_openni_launch openni_play.launch bag_name:=<path_to_ros_bag>
 ```
+
+
 
 ![](attachment:openni_play_launch.png)
 

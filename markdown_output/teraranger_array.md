@@ -32,6 +32,8 @@ The ROS API of this driver should be considered stable.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name = teraranger_evo
@@ -135,8 +137,14 @@ param{
 }
 ```
 
+
+
 ## Running
 
-To launch a node simply run: ```
+To launch a node simply run: 
+
+```
 rosrun teraranger_array <teraranger_one|teraranger_multiflex> [_portname:=<device_path>]
 ```
+
+

@@ -23,6 +23,8 @@ parameters) small movements in other axes can be ignored.
 
 ## ROS API
 
+
+
 ```clearsilver
 
 sub {
@@ -118,21 +120,35 @@ param {
 }
 ```
 
+
+
 ## Usage example
 
 To test with simulated Care-O-Bot run following command:
+
+
 ```
 roslaunch cob_spacenav_teleop spacenav_teleop_test_sim.launch
 ```
 
+
+
 To test with a real robot, connect SN and launch its driver:
+
+
 
 ```
 rosrun spacenav_node spacenav_node
 ```
 
+
+
 Launch teleop:
+
+
 
 ```
 roslaunch cob_spacenav_teleop spacenav_teleop.launch
 ```
+
+

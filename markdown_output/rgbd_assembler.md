@@ -26,16 +26,24 @@ of information are roughly synchronised.
 Bring up the RGB-D Assembler on the robot using the following launch
 file:
 
+
+
 ```
 roslaunch rgbd_assembler rgbd_assembler.launch
 ```
 
+
+
 For bringing up the RGB-D Assembler using the kinect, use the following
 launch file:
+
+
 
 ```
 roslaunch rgbd_assembler rgbd_kinect_assembler.launch
 ```
+
+
 
 ## Example Output
 

@@ -106,8 +106,12 @@ Unlike in tf, there is no period argument, and a latched topic is used.
 for manual use, as well as for use within [roslaunch](roslaunch) files
 for setting static transforms. For example:
 
+
+
 ```xml
 <launch>
 <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 link1_parent link1" />
 </launch>
 ```
+
+

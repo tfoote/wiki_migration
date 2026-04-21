@@ -3,6 +3,8 @@
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=pr2_laser_snapshotter
@@ -28,7 +30,11 @@ node.0 {
     0.default= 0
     0.desc=  If set to N>0, then the snapshotter will skip N signals before requesting a new snapshot. This will make the snapshots be N times larger. N=0 - no skipping.
   }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.0 {
   name=point_cloud_srv
   desc=`point_cloud_srv` is a node that assembles a set of scans from a single sweep of the PR2's tilting laser into a point cloud, which is then published.  It is similar to the `pr2_laser_snapshotter` node, with the difference that `point_cloud_srv`'s interface is a service through which the user can specify parameters for the tilt profile.
@@ -52,10 +58,14 @@ node.0 {
   }
 ```
 
+
+
 ## Example
 
 If you wanted to assemble point clouds on the PR2, you could launch
 something like this:
+
+
 
 ```
 <launch>
@@ -79,3 +89,5 @@ something like this:
   </node>
 </launch>
 ```
+
+

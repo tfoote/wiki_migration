@@ -59,6 +59,8 @@ being developed further, so we recommend that you check out and compile
 the software from the devel branch of the repository. The following
 actions are necessary for this:
 
+
+
 ```bash
 source /opt/ros/<rosdistro>/setup.bash
 mkdir -p ~/ros_catkin_ws/src/
@@ -69,18 +71,28 @@ catkin_make
 source ~/ros_catkin_ws/install/setup.bash
 ```
 
+
+
 ## First steps
 
 1\. Use the
 [SICK SOPAS ET Software](https://www.sick.com/de/de/sopas-engineering-tool-2018/p/p367244)
 to determine or set the IP address of the laser scanner. 1. Change Ip
 address is in the launch-file associated with your scanner type. 1.
-Launch the node e.g. ```
+Launch the node e.g. 
+
+```
 roslaunch sick_scan sick_mrs_1xxx.launch
-``` 1. Launch rviz
+```
+
+ 1. Launch rviz
+
+
 ```
 rviz rviz
-``` 1. Select **`'laser`**' as fixed frame. And
+```
+
+ 1. Select **`'laser`**' as fixed frame. And
 add a new PointCloud decoder subscribed at topic **`'cloud`**'. 1.
 Enjoy.
 

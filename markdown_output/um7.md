@@ -57,16 +57,24 @@ testing
 . um7 is released for indigo, but should work under hydro and may work
 in later versions.
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-um7
-``` Run the driver:
+```
+
+ Run the driver:
 
 . **note**: replace "ttyUSB0" below with the port number of your UM7
 device. See /dev
 
+
+
 ```
 rosrun um7 um7_driver _port:=/dev/ttyUSB0
-``` **Note:** the "port" assignment actually
+```
+
+ **Note:** the "port" assignment actually
 defaults to "/dev/ttyUSB0", so if your sensor is on that port, the
 parameter setting shown above is unnecessary.
 

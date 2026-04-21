@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = path_planner
@@ -142,6 +144,8 @@ node.4 {
 }
 ```
 
+
+
 ## Startup
 
 The `youbot_overhead_localization` package should be launched at the
@@ -150,26 +154,38 @@ same time as the 'youbot_overhead_vision' package with the use of the
 depending on whether the camera streams are real or simulated. However,
 the node can be run on its own by using one of the following commands:
 
+
+
 ```shell
 rosmake youbot_overhead_localization
 roslaunch youbot_overhead_localization youbot_overhead_localization.launch
 ```
 
+
+
 or
+
+
 
 ```shell
 rosmake youbot_overhead_localization
 roslaunch youbot_overhead_localization youbot_overhead_localization_sim.launch
 ```
 
+
+
 The path planning itself normally requires a node to create an actionlib
 client to set path goals, but this can be avoided for testing purposes
 by launching the 'path_planner_client' node with the following
 command:
 
+
+
 ```shell
 rosrun youbot_overhead_localization path_planner_client
 ```
+
+
 
 This will create the /update_goal service, which can be called to set
 goals for the path planner.

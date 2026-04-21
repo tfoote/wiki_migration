@@ -15,9 +15,13 @@ upright.*
 
 ## Installation
 
+
+
 ```
 sudo apt install ros-kinetic-look-at-pose
 ```
+
+
 
 or, clone and build from
 [ Github]( https://github.com/UTNuclearRoboticsPublic/look_at_pose ).
@@ -26,20 +30,32 @@ or, clone and build from
 
 To launch the server and send a set of test data:
 
+
+
 ```
 rosrun rviz rviz
 ```
 
+
+
 In RViz, turn on **TF** and **Marker** (topic: visualization_marker) to
 see the original camera frame, new camera frame, and point of interest.
+
+
 
 ```
 rosrun look_at_pose look_at_pose_server
 ```
 
+
+
+
+
 ```
 rosrun look_at_pose test_client
 ```
+
+
 
 ![alt text\|width=800](attachment:rviz.png)
 

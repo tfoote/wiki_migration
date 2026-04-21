@@ -58,9 +58,13 @@ our hardware/software setup can be found on the
 [ PR2 Hardware Modifications page ](Robots/PR2/HardwareMods).
 
 You should also change roar/launch/audio_parameters.yaml audio_card line
-to read: ```
+to read: 
+
+```
 audio_card: plug:left_ear
 ```
+
+
 
 ### ALSA Configuration
 
@@ -81,10 +85,14 @@ so it is hard to give generic instructions,but here are a few tips:
     <http://alsa.opensrc.org/.asoundrc> Generally, when you can record
     using gnome-sound-recorder, then you've got the microphone setup
     properly. You may want to store these settings or load some settings
-    you previously stored with. ```
+    you previously stored with. 
+
+```
 alsactl -f ~/roar_microphone.state store
 alsactl -f ~/roar_microphone.state restore
 ```
+
+
 
 ## Software
 
@@ -98,22 +106,34 @@ distribution, but they currently remain untested.
 
 The proper way to aquire the ROAR software is to download the entire
 stack to the folder of your choosing (below we download to /ros):
+
+
 ```
 svn co https://mediabox.grasp.upenn.edu/svn/penn-ros-pkgs/roar_stack/trunk ~/ros/roar_stack
-``` If /ros isn't already on your ROS_PACKAGE_PATH
+```
+
+ If /ros isn't already on your ROS_PACKAGE_PATH
 you will need to add it by typing the following before continuing with
-the installation: ```
+the installation: 
+
+```
 export ROS_PACKAGE_PATH=~/ros:${ROS_PACKAGE_PATH}
 ```
+
+
 
 ### Compiling ROAR
 
 To compile the ROAR stack you should build the roar package. Make sure
 to use the \--rosdep-install flag, which will install the external
 dependencies for Ubuntu (NOTE: You will need super-user permissions to
-install packages to the system properly!): ```
+install packages to the system properly!): 
+
+```
 rosmake roar --rosdep-install
 ```
+
+
 
 ### Running ROAR
 

@@ -20,12 +20,16 @@ stripe, 4 = random, >4 = patterns from textfiles)
 If the node is not started as a service, the pattern can be changed with
 the keyboard:
 
+
+
 ```
 p = swith to next pattern
 + = increase block size by 1
 - = decrease block size by 1
 q = quit
-``` In most cases, it is more useful to use the
+```
+
+ In most cases, it is more useful to use the
 [launch file](#Create_pattern.launch), which enables to project the
 pattern on another screen device.
 
@@ -38,9 +42,13 @@ publishes it
 Input topic (default: "stereo/left/image_rect") and output topic
 (default "stereo/left/roi") can be overwritten by calling:
 
+
+
 ```
 roi_diff_image (input || output)_topic:=<new topic>
-``` Parameters:
+```
+
+ Parameters:
 
 -   (Optional) Percentage of the maximal difference (Differences below
     that value will be filtered out) (Default = 0.3)
@@ -61,9 +69,13 @@ Uses background subtraction to compute the illuminated area
 Input topic (default: "stereo/left/image_rect") and output topic
 (default "stereo/left/roi") can be overwritten by calling
 
+
+
 ```
 roi_bgfg_codebooks (input_image || output)_topic:=<new topic>
-``` Parameters:
+```
+
+ Parameters:
 
 . None
 
@@ -84,27 +96,43 @@ Default image input topic is "/stereo/left/image_mono", default Region
 of Interest input topic is "/stereo/left/roi" if other topics should
 be used they should be overwritten with:
 
+
+
 ```
 adjust_exposure input:=<topic_new>"
-``` . or
+```
+
+ . or
+
+
 
 ```
 "adjust_exposure roi_input:=<topic_new>"
-``` Default namespace for the camera parameters is
+```
+
+ Default namespace for the camera parameters is
 "/stereo/stereodcam2701/" for the videre camera. That can also be
 overwritten by calling:
 
+
+
 ```
 adjust_exposure prefix=<prefix_new>
-``` The new namespace must contain the three
+```
+
+ The new namespace must contain the three
 parameters for camera exposure (exposure, exposure_min, exposure_max)
 
 If auto-exposure is activated for the camera, that must be deactivated
 manually before running the node, for example with the reconfigure_gui:
 
+
+
 ```
 rosrun dynamic_reconfigure reconfigure_gui)
 ```
+
+
 
 ### Blur_estimation
 
@@ -134,12 +162,16 @@ Parameters:
 
 -   Path to model
 -   Point cloud folder
--   Compare mode ```
+-   Compare mode 
+
+```
 0 = Just number of points in the cloud
 1 = Number of points that are equal in model and measured point cloud
 2 = ICP fitness score between model and measured cloud
 3 = All three values are returned
 ```
+
+
 
 ## Launch-Files
 
@@ -148,9 +180,13 @@ Parameters:
 Camera driver for the videre stereo camera, just modified not to show
 the disparity view by default. Disparity view can be shown by calling:
 
+
+
 ```
 roslaunch videre_2701 disparity:=1
 ```
+
+
 
 ### Create_pattern.launch
 
@@ -158,9 +194,13 @@ Runs the create_pattern node and shows the pattern on the display, that
 was specified. Per default the node is started not as a service, this
 can be done by calling:
 
+
+
 ```
 roslaunch create_pattern service:=1
 ```
+
+
 
 ### Blur_estimation
 

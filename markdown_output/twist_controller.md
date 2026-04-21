@@ -7,6 +7,8 @@ specified twist message as reference for robot control.
 
 A possible configuration looks like this:
 
+
+
 ```highlight
 twist_controller:
    type:         ros_controllers_cartesianlers/TwistController
@@ -23,3 +25,5 @@ twist_controller:
    - joint5
    - joint6
 ```
+
+

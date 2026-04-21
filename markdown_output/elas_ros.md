@@ -15,6 +15,8 @@ uses [rviz](rviz).
 
 ## Relevant Publications
 
+
+
 ```
 LATEX BIBTEX CITATION ENTRY:
 @INPROCEEDINGS{Geiger10,
@@ -27,7 +29,11 @@ LATEX BIBTEX CITATION ENTRY:
 }
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -104,6 +110,8 @@ node.1 {
 }
 ```
 
+
+
 ## Usage
 
 This code should be used in conjunction with visual odometry to
@@ -137,6 +145,8 @@ static (and published using
 The current frame's point cloud is published to `/elas/point_cloud`,
 the concatenated point cloud is published to `/elas_pc/point_cloud`
 
+
+
 ```
 <launch>
 
@@ -154,6 +164,8 @@ the concatenated point cloud is published to `/elas_pc/point_cloud`
 
 </launch>
 ```
+
+
 
 ## Contacts
 

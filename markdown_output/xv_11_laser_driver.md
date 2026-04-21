@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = neato_laser_publisher
@@ -28,6 +30,8 @@ node.0 {
   3.desc = The laser data frame. This frame should be at the optical center of the laser, with the x-axis along the zero degree ray, and the y-axis along the pi/2 degree ray.
   }
 ```
+
+
 
 ## Library
 

@@ -17,12 +17,16 @@ possible to operate a network with multiple masters.
 It is possible to add a node to multiple groups using a prefix for
 `capability_group`, e.g.:
 
+
+
 ```
 <node name="node_manager" pkg="node_manager_fkie" type="nm" >
     <param name="capability_group" value="Management"/>
     <param name="1.capability_group" value="Node Manager"/>
   </node>
 ```
+
+
 
 The description of a capability group is stored in a global
 `capabilities` parameter. This parameter is defined as
@@ -35,6 +39,8 @@ package. The `description` can be coded as
 and contains also image references relative to `node_manager_fkie`
 package path. Since after loading the XML the new line separators are
 removed, you must enter `\\n` to insert a new line.
+
+
 
 ```
 <rosparam param="capabilities">
@@ -51,6 +57,8 @@ removed, you must enter `\\n` to insert a new line.
     </rosparam>
 ```
 
+
+
 The capability group do not change the `namespace` of the included ROS
 nodes.
 
@@ -59,6 +67,8 @@ nodes.
 Further parameter `robots` describes in same manner the roboter. The
 list must contains `host name`, `robot type`, `displayed name`,
 `image` and `description`:
+
+
 
 ```
 <rosparam param="robots">
@@ -73,6 +83,8 @@ list must contains `host name`, `robot type`, `displayed name`,
     ]
   </rosparam>
 ```
+
+
 
 This description will also shown in
 [Description Dock](#description dock) and tooltip.
@@ -112,15 +124,23 @@ Click on the header to show the description in
 Although the node is written in Python we need to run `rosmake` to
 generate message and service types:
 
+
+
 ```
 rosmake master_discovery_fkie default_cfg_fkie
 ```
 
+
+
 Run the node:
+
+
 
 ```
 rosrun node_manager_fkie nm
 ```
+
+
 
 ## Interface
 
@@ -128,6 +148,8 @@ The services of
 [master_discovery_fkie](http://www.ros.org/wiki/master_discovery_fkie)
 and [default_cfg_fkie](http://www.ros.org/wiki/default_cfg_fkie) are
 detected automatically by whose names.
+
+
 
 ```clearsilver
 sub {
@@ -141,6 +163,8 @@ sub {
 
 }
 ```
+
+
 
 ## Key Bindings
 
@@ -180,12 +204,16 @@ sub {
 It is possible to add a node to multiple groups using a prefix for
 `capability_group`, e.g.:
 
+
+
 ```
 <node name="node_manager" pkg="node_manager_fkie" type="nm" >
     <param name="capability_group" value="Management"/>
     <param name="1.capability_group" value="Node Manager"/>
   </node>
 ```
+
+
 
 The description of a capability group is stored in a global
 `capabilities` parameter. This parameter is defined as
@@ -198,6 +226,8 @@ package. The `description` can be coded as
 and contains also image references relative to `node_manager_fkie`
 package path. Since after loading the XML the new line separators are
 removed, you must enter `\\n` to insert a new line.
+
+
 
 ```
 <rosparam param="capabilities">
@@ -214,6 +244,8 @@ removed, you must enter `\\n` to insert a new line.
     </rosparam>
 ```
 
+
+
 The capability group do not change the `namespace` of the included ROS
 nodes.
 
@@ -222,6 +254,8 @@ nodes.
 Further parameter `robots` describes in same manner the roboter. The
 list must contains `host name`, `robot type`, `displayed name`,
 `image` and `description`:
+
+
 
 ```
 <rosparam param="robots">
@@ -236,6 +270,8 @@ list must contains `host name`, `robot type`, `displayed name`,
     ]
   </rosparam>
 ```
+
+
 
 This description will also shown in
 [Description Dock](#description dock) and tooltip.
@@ -275,11 +311,17 @@ Click on the header to show the description in
 Although the node is written in Python we need to run `rosmake` to
 generate message and service types:
 
+
+
 ```
 rosmake master_discovery_fkie default_cfg_fkie
 ```
 
+
+
 Run the node:
+
+
 
 ```
 <rosparam param="capabilities">
@@ -294,7 +336,9 @@ Run the node:
       ]
 
     </rosparam>
-```0
+```
+
+0
 
 ## Interface
 
@@ -303,6 +347,8 @@ The services of
 and [default_cfg_fkie](http://www.ros.org/wiki/default_cfg_fkie) are
 detected automatically by whose names.
 
+
+
 ```
 <rosparam param="capabilities">
       [
@@ -316,7 +362,9 @@ detected automatically by whose names.
       ]
 
     </rosparam>
-```1
+```
+
+1
 
 ## Key Bindings
 
@@ -353,6 +401,8 @@ detected automatically by whose names.
 Although the node is written in Python we need to run `catkin_make` to
 generate message and service types:
 
+
+
 ```
 <rosparam param="capabilities">
       [
@@ -366,10 +416,14 @@ generate message and service types:
       ]
 
     </rosparam>
-```2
+```
+
+2
 
 Run the node:
 
+
+
 ```
 <rosparam param="capabilities">
       [
@@ -383,7 +437,11 @@ Run the node:
       ]
 
     </rosparam>
-```3 or ```
+```
+
+3 or 
+
+```
 <rosparam param="capabilities">
       [
         ["Management",
@@ -396,7 +454,9 @@ Run the node:
       ]
 
     </rosparam>
-```4
+```
+
+4
 
 ## Interface
 
@@ -405,6 +465,8 @@ The services of
 and [default_cfg_fkie](http://www.ros.org/wiki/default_cfg_fkie) are
 detected automatically by whose names.
 
+
+
 ```
 <rosparam param="capabilities">
       [
@@ -418,14 +480,18 @@ detected automatically by whose names.
       ]
 
     </rosparam>
-```5
+```
+
+5
 
 ## Troubleshooting
 
 1\. Error while launch a node on remote host: *bash: rosrun: command not
 found* To run a node on remote host, an SSH connection will be
 established without setting any enviroment variables. Try to comment out
-in .bashrc: ```
+in .bashrc: 
+
+```
 <rosparam param="capabilities">
       [
         ["Management",
@@ -438,14 +504,18 @@ in .bashrc: ```
       ]
 
     </rosparam>
-```6
+```
+
+6
 
 2\. The `Node Manager` crashes on load a launch file with error:
 *QSpiAccessible::accessibleEvent not handled: "8008"* This "bug"
 seems to be resolved by removing the *qt-at-spi* package.
 
 3\. You don't see the correct output of your nodes. Try to change your
-default terminal: ```
+default terminal: 
+
+```
 <rosparam param="capabilities">
       [
         ["Management",
@@ -458,4 +528,6 @@ default terminal: ```
       ]
 
     </rosparam>
-```7
+```
+
+7

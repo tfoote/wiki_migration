@@ -9,6 +9,8 @@ Please see the install instructions in the official
 
 ## ROS API
 
+
+
 ```clearsilver
 name = sick_safevisionary
 desc = Control node for the 3D camera. The node publishes to the following topics.
@@ -56,6 +58,8 @@ param {
   1.default = 6060
 }
 ```
+
+
 
 ## Additional Information
 

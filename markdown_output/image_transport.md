@@ -30,6 +30,8 @@ For complete examples of publishing and subscribing to images using
 
 Instead of:
 
+
+
 ```cplusplus
 // Do not communicate images this way!
 #include <ros/ros.h>
@@ -42,7 +44,11 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
 ros::NodeHandle nh;
 ros::Subscriber sub = nh.subscribe("in_image_topic", 1, imageCallback);
 ros::Publisher pub = nh.advertise<sensor_msgs::Image>("out_image_topic", 1);
-``` Do:
+```
+
+ Do:
+
+
 
 ```cplusplus
 // Use the image_transport classes instead.
@@ -58,7 +64,9 @@ ros::NodeHandle nh;
 image_transport::ImageTransport it(nh);
 image_transport::Subscriber sub = it.subscribe("in_image_base_topic", 1, imageCallback);
 image_transport::Publisher pub = it.advertise("out_image_base_topic", 1);
-``` `image_transport` publishers advertise
+```
+
+ `image_transport` publishers advertise
 individual ROS [Topics](Topics) for each available transport - unlike
 ROS Publishers, which advertise a single topic. The topic names follow a
 standard naming convention, outlined below. Note, however, that all code
@@ -126,6 +134,8 @@ name>`. For example, using plugins for `"compressed"` and
 `"theora"` transports, with a base topic of `/stereo/left/image`,
 the topics would be:
 
+
+
 ```clearsilver
   pub {
   no_header=True
@@ -143,6 +153,8 @@ the topics would be:
   3.desc= (''`image_transport::CameraPublisher`-only'') Camera info topic.
 }
 ```
+
+
 
 #### Parameters
 
@@ -162,6 +174,8 @@ observed by all subscribers to the image topic.
 
 NOTE: This convention was changed in Diamondback, to support using
 [dynamic_reconfigure](dynamic_reconfigure) for plugin parameters. }}}}
+
+
 ```
 {#!wiki version diamondback_and_newer
 Publisher plugin parameters should be exposed through [[dynamic_reconfigure]] for best visibility and ease of use. Conventionally, they take the following form:
@@ -182,7 +196,9 @@ param {
     1.desc= An example transport-specific parameter which sets the JPEG quality for `"compressed"` transport for image topic `/camera/image`.
   }
 }
-``` }}}}
+```
+
+ }}}}
 
 ### image_transport Subscribers
 
@@ -203,6 +219,8 @@ ROS topic associated with the base topic. For example, if the base topic
 is `/stereo/left/image`, the subscribed topics for transports
 `"raw"` and `"compressed"` are respectively:
 
+
+
 ```clearsilver
 sub {
   no_header=True
@@ -216,14 +234,20 @@ sub {
   2.type= sensor_msgs/CameraInfo
   2.desc= (''`image_transport::CameraSubscriber`-only'') Camera info topic.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 param {
   0.name= ~image_transport
   0.default= "raw"
   0.type= string
   0.desc= Name of the transport to use.
 }
-``` If this parameter is
+```
+
+ If this parameter is
 not set, the transport from the `image_transport::TransportHints`
 argument of `image_transport::ImageTransport::subscribe()` is used.
 
@@ -252,6 +276,8 @@ of the subscribing node.
 
 NOTE: This convention was changed in Diamondback, to support using
 [dynamic_reconfigure](dynamic_reconfigure) for plugin parameters. }}}}
+
+
 ```
 {#!wiki version diamondback_and_newer
 
@@ -274,9 +300,13 @@ param {
     1.desc= An example transport-specific parameter which sets the post-processing level when subscribed using `"theora"` transport.
   }
 }
-``` }}}}
+```
+
+ }}}}
 
 ## Nodes
+
+
 
 ```clearsilver
 node {
@@ -285,11 +315,17 @@ node {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 $ rosrun image_transport republish [in_transport] in:=<in_base_topic> [out_transport] out:=<out_base_topic>
 ```
+
+
 
 #### Examples
 
@@ -300,9 +336,13 @@ $ rosrun image_transport republish [in_transport] in:=<in_base_topic> [out_trans
     video into still images independently. Instead we can start a
     republish node on the offboard computer, streaming the video only to
     that node for processing into <<MsgLink(sensor_msgs/Image)>>
-    messages republished to the other nodes: ```
+    messages republished to the other nodes: 
+
+```
 $ rosrun image_transport republish theora in:=camera/image raw out:=camera/image_decompressed
 ```
+
+
 -   The above command is also useful simply to pipe a compressed image
     topic into a node that can only listen to
     <<MsgLink(sensor_msgs/Image)>> (because it uses
@@ -312,21 +352,7 @@ $ rosrun image_transport republish theora in:=camera/image raw out:=camera/image
     full range of transports. Note however that the base topic must be
     different from the original topic, and this approach entails a
     slight overhead over using `image_transport::Publisher` in the
-    original node. ```cplusplus
-// Use the image_transport classes instead.
-#include <ros/ros.h>
-#include <image_transport/image_transport.h>
-
-void imageCallback(const sensor_msgs::ImageConstPtr& msg)
-{
-  // ...
-}
-
-ros::NodeHandle nh;
-image_transport::ImageTransport it(nh);
-image_transport::Subscriber sub = it.subscribe("in_image_base_topic", 1, imageCallback);
-image_transport::Publisher pub = it.advertise("out_image_base_topic", 1);
-```0
+    original node. 
 
 ```cplusplus
 // Use the image_transport classes instead.
@@ -342,7 +368,29 @@ ros::NodeHandle nh;
 image_transport::ImageTransport it(nh);
 image_transport::Subscriber sub = it.subscribe("in_image_base_topic", 1, imageCallback);
 image_transport::Publisher pub = it.advertise("out_image_base_topic", 1);
-```1
+```
+
+0
+
+
+
+```cplusplus
+// Use the image_transport classes instead.
+#include <ros/ros.h>
+#include <image_transport/image_transport.h>
+
+void imageCallback(const sensor_msgs::ImageConstPtr& msg)
+{
+  // ...
+}
+
+ros::NodeHandle nh;
+image_transport::ImageTransport it(nh);
+image_transport::Subscriber sub = it.subscribe("in_image_base_topic", 1, imageCallback);
+image_transport::Publisher pub = it.advertise("out_image_base_topic", 1);
+```
+
+1
 
 #### Parameters
 
@@ -361,6 +409,8 @@ etc.).
 
 #### Usage
 
+
+
 ```cplusplus
 // Use the image_transport classes instead.
 #include <ros/ros.h>
@@ -375,4 +425,6 @@ ros::NodeHandle nh;
 image_transport::ImageTransport it(nh);
 image_transport::Subscriber sub = it.subscribe("in_image_base_topic", 1, imageCallback);
 image_transport::Publisher pub = it.advertise("out_image_base_topic", 1);
-```2
+```
+
+2

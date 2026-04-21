@@ -32,11 +32,17 @@ of your ROS distro (e.g., `kinetic`).
 The driver is released at longer intervals as a binary package. It can
 be installed with the following command:
 
+
+
 ```
 sudo apt-get install ros-<rosdistro>-sick-safetyscanners
 ```
 
+
+
 ### From Source
+
+
 
 ```bash
 source /opt/ros/<rosdistro>/setup.bash
@@ -48,15 +54,21 @@ catkin_make install
 source ~/catkin_ws/install/setup.bash
 ```
 
+
+
 ## Starting
 
 To start the driver the launch file has to be started. For the driver to
 work correctly, the sensor ip and host ip have to be defined. These
 parameters can be passed to the sensor as arguments via launch file.
 
+
+
 ```
 roslaunch sick_safetyscanners sick_safetyscanners.launch sensor_ip:=192.168.1.10 host_ip:=192.168.1.9
-``` This will start the driver and the dynamic
+```
+
+ This will start the driver and the dynamic
 reconfigure node. In this you can set different parameters on runtime,
 especially the angles and the data the sensor should publish. If these
 parameters should be set on startup they can be loaded to the parameter
@@ -64,9 +76,13 @@ server beforehand.
 
 To visualize the data start rviz and subscribe to the /laser_scan topic.
 
+
+
 ```
 rosrun rviz rviz
 ```
+
+
 
 ## Troubleshooting
 
@@ -85,30 +101,50 @@ In case of technical support please open a new issue. Under
 
 ## Advertised ROS Topics
 
+
+
 ```
 /scan (type: sensor_msgs/LaserScan)
-``` Publishes a scan from the laserscanner
+```
+
+ Publishes a scan from the laserscanner
+
+
 
 ```
 /extended_laser_scan (type sick_safetyscanners/ExtendedLaserScanMsg)
-``` Extends the basic laser scan message by
+```
+
+ Extends the basic laser scan message by
 reflektor data and intrusion data.
+
+
 
 ```
 /output_paths (type sick_safetyscanners/OutputPathMsg)
-``` Gives feedback of the current status of the
+```
+
+ Gives feedback of the current status of the
 output paths.
+
+
 
 ```
 /raw_data (type: sick_safetyscanners/RawMicroScanDataMsg)
-``` Publishes the raw data from the sensor as a ros
+```
+
+ Publishes the raw data from the sensor as a ros
 message.
 
 ## Advertised ROS Services
 
+
+
 ```
 /field_data
-``` Returns all configured protective and warning
+```
+
+ Returns all configured protective and warning
 fields for the sensor.
 
 ## ROS parameters

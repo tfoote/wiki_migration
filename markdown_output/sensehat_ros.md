@@ -31,6 +31,8 @@ device equipped with an Astro Pi Sense HAT module and with a supported
 ROS distro. Binary release is not an option with pip dependencies in the
 package.xml, so the package have to be built and installed from source.
 
+
+
 ```
 $ mkdir ~/catkin_ws
 $ cd ~/catkin_ws
@@ -43,6 +45,8 @@ $ catkin_make
 $ catkin_make install
 ```
 
+
+
 Please, follow the Code API documentation link for additional details
 about building and testing the package.
 
@@ -53,10 +57,14 @@ about building and testing the package.
 To verify if the sensehat_ros ROS package is working properly a ROS node
 can be started with a modified logging level.
 
+
+
 ```
 $ source install/setup.bash
 $ roslaunch --screen -v sensehat_ros sensehat_ros.launch DEBUG:=True
 ```
+
+
 
 The onscreen log output should present sensor data coming from the
 device (or the emulator):
@@ -66,6 +74,8 @@ device (or the emulator):
 
 The package includes two sample client nodes to show how to call
 services interactively or consume messages from topics.
+
+
 
 ```
 # Assuming "roslaunch sensehat_ros sensehat_ros.launch" already running in another shell
@@ -87,7 +97,11 @@ $ rosrun sensehat_ros sample_listener
 ^C
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name = sensehat_ros
@@ -192,3 +206,5 @@ srv {
   11.desc = Switches on/off the LED matrix “low light” mode and returns the current state.
 }
 ```
+
+

@@ -14,6 +14,10 @@ If the xacro files are modified, then the `robotino.urdf` would have
 to updated as well. This can be done by running the following command
 from the `robotino_description/urdf` directory.
 
+
+
 ```
 rosrun xacro xacro.py robotino.urdf.xacro > robotino.urdf
 ```
+
+

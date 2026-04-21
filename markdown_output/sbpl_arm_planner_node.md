@@ -20,13 +20,17 @@ planner you need to:
 -   In your
     [ MoveArmGoal](http://www.ros.org/doc/api/move_arm_msgs/html/msg/MoveArmGoal.html )
     request message to move_arm,there are two changes that must be made:
-    ```
+    
+
+```
 // don't run IK - send pose constraint as-is to the planner
  my_msg.disable_ik = true;
 
  // sbpl planner service name
  my_msg.planner_service_name = std::string("sbpl_planning/plan_path");
 ```
+
+
 
 If you don't already know how to send planning requests to move_arm, I
 suggest you check out the useful
@@ -35,6 +39,8 @@ suggest you check out the useful
 ## ROS API
 
 ### Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -50,7 +56,11 @@ sub {
   2.desc= Objects that were added to the robot model - usually objects that the robot grasped. They get added to the robot's collision model.
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -67,7 +77,11 @@ pub {
 }
 ```
 
+
+
 ### Services Offered
+
+
 
 ```clearsilver
 srv{
@@ -78,11 +92,15 @@ srv{
 }
 ```
 
+
+
 ### ROS Parameters
 
 #### Planner
 
 ##### General
+
+
 
 ```clearsilver
 param {
@@ -127,7 +145,11 @@ param {
 }
 ```
 
+
+
 ##### Research
+
+
 
 ```clearsilver
 param {
@@ -147,7 +169,11 @@ param {
 }
 ```
 
+
+
 ##### Debug
+
+
 
 ```clearsilver
 param {
@@ -159,7 +185,11 @@ param {
 }
 ```
 
+
+
 #### Robot Model
+
+
 
 ```clearsilver
 param {
@@ -191,7 +221,11 @@ param {
 }
 ```
 
+
+
 ##### Collision Space
+
+
 
 ```clearsilver
 param {
@@ -235,7 +269,11 @@ param {
 }
 ```
 
+
+
 #### Visualizations
+
+
 
 ```clearsilver
 param {
@@ -267,6 +305,8 @@ param {
 }
 ```
 
+
+
 ### API Stability
 
 -   ROS API is UNREVIEWED and UNSTABLE
@@ -293,7 +333,9 @@ The planner keeps failing what is going wrong?
     the allotted planning time. You should try raising the
     "allowed_planning_time" field in the
     [ MoveArmGoal](http://www.ros.org/doc/api/move_arm_msgs/html/msg/MoveArmGoal.html )
-    message. ```clearsilver
+    message. 
+
+```clearsilver
 sub {
   no_header= True
   0.name= collision_map_occ
@@ -305,7 +347,9 @@ sub {
   2.name= attached_collision_object
   2.type= mapping_msgs/AttachedCollisionObject
   2.desc= Objects that were added to the robot model - usually objects that the robot grasped. They get added to the robot's collision model.
-```0
+```
+
+0
 
 ```{=html}
 <!-- -->

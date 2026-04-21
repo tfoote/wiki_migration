@@ -47,6 +47,8 @@ a rotation, the red box is not shown.
 
 ![\|width="150px"](attachment:rotation.png)
 
+
+
 ```clearsilver
 sub {
   0.name= /move_base/goal
@@ -196,17 +198,25 @@ param {
 }
 ```
 
+
+
 #### Installation
+
+
 
 ```
 sudo apt install ros-kinetic-move-basic
 ```
+
+
 
 #### Example
 
 To move forward one meter using [ rostopic ]( rostopic ) (note that
 [ bash ]( https://www.gnu.org/software/bash/ ) completion will provide
 an empty message that can be filled out):
+
+
 
 ```
 rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped "header:
@@ -226,6 +236,8 @@ pose:
     z: 0.0
     w: 1.0"
 ```
+
+
 
 This is an example of a relative goal, since the `frame_id` is set to
 `base_link`. The position of the target pose is set to 1 meter in the

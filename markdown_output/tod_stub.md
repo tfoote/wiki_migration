@@ -17,15 +17,23 @@ Also please make sure that you install:
 
 -   The openni kinect drivers - <http://www.ros.org/wiki/openni_kinect>
 
+
+
 ```
 sudo apt-get install ros-diamondback-openni-kinect
 ```
 
+
+
 -   pcl_visualization - <http://www.ros.org/wiki/perception_pcl_addons>
+
+
 
 ```
 sudo apt-get install ros-diamondback-perception-pcl-addons
 ```
+
+
 
 ## install tod_stub
 
@@ -36,9 +44,13 @@ following will install everything you need to get started in you.
 The following line will install everything in under the path:
 `~/tod_stub_dev`
 
+
+
 ```
 rosinstall ~/tod_stub_dev https://code.ros.org/svn/wg-ros-pkg/branches/trunk_diamondback/stacks/object_recognition/tod_stub/tod_stub.install
 ```
+
+
 
 -   You must then source `setup.bash` in /tod_stub_dev either "by
     hand" or put `source ~/tod_stub_dev/setup.bash` in your `.bashrc`

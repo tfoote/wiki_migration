@@ -25,14 +25,20 @@ example; individual elements will be described below.
 This is a **minimal example**, which describes a scene where the robot
 emits a mooing sound:
 
+
+
 ```
 name: mooing
 description: The robot moos.
 ```
 
+
+
 This is the first **"maximal" example**, which describes a robot
 turning. Additionally, it describes its relation to two semantic frames,
 which specifically describe the robot moving forwards or backwards:
+
+
 
 ```
 name: moving
@@ -63,10 +69,14 @@ children:
         child_value: [backward, backwards]
 ```
 
+
+
 This is the second **"maximal" example**, which describes the robot
 retrieving an object. Additionally, it describes its relation to a
 series of other semantic frames, whose sequence performs the same task
 as the master:
+
+
 
 ```
 name: retrieving
@@ -87,6 +97,8 @@ children:
     - name: navigating_to_master
 ```
 
+
+
 See also some
 [corresponding lexical units in the semantic_framer](semantic_framer#Overview and Examples),
 which describe mappings for the first two examples.
@@ -98,11 +110,15 @@ single instance can be entered, or a list of multiple instances can be
 entered. For instance, with verb, "one or more verbs" means all the
 following entries are legal:
 
+
+
 ```
 verb: moo
 verb: [moo]
 verb: [moo, speak]
 ```
+
+
 
 ### Required Values
 

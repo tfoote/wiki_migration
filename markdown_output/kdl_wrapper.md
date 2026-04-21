@@ -8,6 +8,8 @@ installed.
 An example C++ code for doing inverse kinematics with the PR2 is given
 under **src/pr2_kdl_wrapper_example.cpp** :
 
+
+
 ```cplusplus
 
 #include <ros/ros.h>
@@ -61,20 +63,32 @@ int main(int argc, char *argv[])
 }
 ```
 
+
+
 You can run the example code by doing the following:
 
 1\. Make sure you have the pr2_common metapackage:
+
+
 ```
 sudo apt-get install ros-<rosdistro>-pr2-common
-``` 2. Upload the PR2 URDF:
+```
+
+ 2. Upload the PR2 URDF:
+
+
 ```
 roslaunch pr2_description upload_pr2.launch kinect:=TRUE
-``` 3. Compile the `kdl_wrapper` package.
+```
 
-4\. Run the pr2_kdl_wrapper_example : ```
+ 3. Compile the `kdl_wrapper` package.
+
+4\. Run the pr2_kdl_wrapper_example : 
+
+```
 rosrun kdl_wrapper pr2_kdl_wrapper_example
 ```
 
-## Report a Bug
 
-<<GitHubIssues(kth-ros-pkg/kdl_wrapper)>>
+
+## Report a Bug

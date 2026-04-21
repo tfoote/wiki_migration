@@ -41,6 +41,8 @@ which need to be fast. The stack winding *will* slow your program down.
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/exceptions.hpp>
 
@@ -53,6 +55,8 @@ using ecl::ConfigurationError;
 using ecl::InvalidInputError;
 // ...
 ```
+
+
 
 If outside ros, you will also need to link to *ecl_exceptions*.
 

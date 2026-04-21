@@ -24,32 +24,50 @@ follow the steps below.
 
 Firstly, install the system dependencies (if not yet installed):
 
+
+
 ```
 $ sudo apt-get install libusb-1.0-0 libusb-1.0-0-dev
-``` Next, download the source code to your catkin
+```
+
+ Next, download the source code to your catkin
 workspace and build it:
 
 { }}}} { }}}} { }}}} Lastly, run the node (remember to run roscore if it
 is not yet running):
 
+
+
 ```
 $ rosrun kinect_aux kinect_aux_node
 ```
+
+
 
 ## Quick tests
 
 To set the the tilt angle to, e.g., -15 degrees (Kinect facing
 downwards), simply publish a message on the topic (see API below):
 
+
+
 ```
 $ rostopic pub /tilt_angle std_msgs/Float64 -- -15
-``` To view current tilt angle, run:
+```
+
+ To view current tilt angle, run:
+
+
 
 ```
 $ rostopic echo /cur_tilt_angle
 ```
 
+
+
 ## API
+
+
 
 ```clearsilver
 name = kinect_aux_node
@@ -80,6 +98,6 @@ param {
 }
 ```
 
-## Bug reports and feature requests
 
-<<GitHubIssues(muhrix/kinect_aux)>>
+
+## Bug reports and feature requests

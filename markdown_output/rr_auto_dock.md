@@ -9,6 +9,8 @@ Marker, center itself, and proceed towards the dock.
 ## Running auto dock
 
 To run the auto-docking code add the below line to your launch file.
+
+
 ```
 <node pkg="aruco_detect" name="aruco_detect" type="aruco_detect" output="screen" respawn="false">
       <param name="image_transport" value="$(arg transport)"/>
@@ -32,17 +34,29 @@ To run the auto-docking code add the below line to your launch file.
     </node>
 ```
 
+
+
 To start the undocking procedure publish a True std_msgs/Bool value to
-"/auto_dock/undock". ```
+"/auto_dock/undock". 
+
+```
 rostopic pub /auto_dock/undock std_msgs/Bool "true"
 ```
 
+
+
 To start the docking procedure publish a True std_msgs/Bool value to
-"/auto_dock/dock". ```
+"/auto_dock/dock". 
+
+```
 rostopic pub /auto_dock/dock std_msgs/Bool "true"
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -150,3 +164,5 @@ desc= The number of seconds before the Aruco detection counter begins accepting 
 }
 }
 ```
+
+

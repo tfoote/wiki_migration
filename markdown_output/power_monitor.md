@@ -24,6 +24,8 @@ available:
 
 #### Subscribed topics
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -36,7 +38,11 @@ sub {
 }
 ```
 
+
+
 #### Advertised topics
+
+
 
 ```clearsilver
 pub {
@@ -47,7 +53,11 @@ pub {
 }
 ```
 
+
+
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -70,3 +80,5 @@ param {
   3.desc = Stop publishing power estimate if batteries haven't updated within this timeout. Set to <0 to always publish estimate.
 }
 ```
+
+

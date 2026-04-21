@@ -26,14 +26,22 @@ The outputs will be generated as follows:
     messages, the output will go on **points_out** as PointCloud
     messages.
 
-Examples: ```
+Examples: 
+
+```
 $  rosrun point_cloud_converter point_cloud_converter points2_in:=/my_input_pointcloud2_topic points_out:=/my_output_pointcloud_topic
 [ INFO] [1272222413.891331026]: PointCloudConverter initialized to transform from PointCloud (/points_in) to PointCloud2 (/points2_out).
 [ INFO] [1272222413.891524710]: PointCloudConverter initialized to transform from PointCloud2 (/points2_in) to PointCloud (/points_out).
 ```
+
+
+
+
 
 ```
 $  rosrun point_cloud_converter point_cloud_converter /points2_in:=my_input_pointcloud2_topic /points_out:=my_output_pointcloud_topic
 [ INFO] [1272222329.786616389]: PointCloudConverter initialized to transform from PointCloud (/points_in) to PointCloud2 (/points2_out).
 [ INFO] [1272222329.786817983]: PointCloudConverter initialized to transform from PointCloud2 (/my_input_pointcloud2_topic) to PointCloud (/my_output_pointcloud_topic).
 ```
+
+

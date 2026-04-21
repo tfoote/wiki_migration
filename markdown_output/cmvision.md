@@ -4,9 +4,13 @@
 
 ![](attachment:lewis_cmvision.png)
 
+
+
 ```
 rosrun cmvision colorgui image:=<image topic>
-``` The above command will bring up an interface
+```
+
+ The above command will bring up an interface
 that provides a means for graphically selecting desired colors for
 blobs. `colorgui` displays values for `RGB` and `YUV` which can be
 used in a colors file.
@@ -21,6 +25,8 @@ Blob parameters are specified to `cmvision` using two components:
     follows: (min_y:max_y, min_u:max_u, min_v:max_v)
 
 Example `colors.txt` for detecting a *Research Robot Red* RWI B21r
+
+
 ```
 [colors]
 (159,  62, 71) 0.000000 7 ResearchRobotRed
@@ -29,19 +35,27 @@ Example `colors.txt` for detecting a *Research Robot Red* RWI B21r
 (56:99, 108:117, 173:193)
 ```
 
+
+
 Multiple blob colors can be specified in the same file by adding lines
 under `colors` and `thresholds`.
 
 ### Detecting Blobs
+
+
 
 ```
 rosparam set /cmvision/color_file /path/to/colors.txt
 rosrun cmvision cmvision image:=<image topic>
 ```
 
+
+
 ![](https://raw.githubusercontent.com/teshanshanuka/cmvision/noetic-devel/static/demo.gif)
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -94,3 +108,5 @@ node.1 {
   }
 }
 ```
+
+

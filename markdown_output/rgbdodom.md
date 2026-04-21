@@ -21,6 +21,8 @@ Research platform.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = rgbdodom_node
 desc = This node takes in a flow of color and depth images, and IMU data, and outputs pose estimates. Images are rectified using calibration information.
@@ -54,10 +56,14 @@ pub{
 }
 ```
 
+
+
 ## Citing
 
 If you use rgbdodom in an academic context, please cite the following
 publication: <http://ieeexplore.ieee.org/document/7502653/>
+
+
 
 ```
 @INPROCEEDINGS{7502653,
@@ -69,3 +75,5 @@ publication: <http://ieeexplore.ieee.org/document/7502653/>
   doi={10.1109/ICUAS.2016.7502653},
   month={June},}
 ```
+
+

@@ -28,15 +28,27 @@ An overview of all newly created ROS nodes:
 
 ### How to launch COB interactive teleop
 
-1\. Run COB simulation ```
+1\. Run COB simulation 
+
+```
 roslaunch cob_bringup_sim robot.launch
-``` 2. Run cob marker teleop
-node ```
+```
+
+ 2. Run cob marker teleop
+node 
+
+```
 roslaunch cob_interactive_teleop interactive_teleop.launch
-``` 3. Start preconfigured RViz
+```
+
+ 3. Start preconfigured RViz
+
+
 ```
 roslaunch cob_interactive_teleop rviz.launch
-``` 4. Setup RViz:
+```
+
+ 4. Setup RViz:
 
 -   Switch to **Interaction mode**
 

@@ -14,9 +14,13 @@ the root cause for the contradiction.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name= diagnosis_engine_controller
 desc= This is a controller of diagnosis engine. It acts like a client. The server is a java based program that connects client over TCP.
 }
 ```
+
+

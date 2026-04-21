@@ -20,6 +20,8 @@ computation and makes the following assuption:
     <<MsgLink(geometry_msgs/WrenchStamped)>> messages.
 -   the robot is biped.
 
+
+
 ```clearsilver
 name = zmp_estimator
 desc = ZMP estimation node from feet force sensors
@@ -104,10 +106,16 @@ param {
 }
 ```
 
+
+
 For instance, you may run this script by typing:
+
+
 ```shell
 rosrun walk_tools zmp_monitor _left_foot_wrench:=/force_0 _right_foot_wrench:=/force_1
 ```
+
+
 
 ### Effort monitor
 
@@ -118,6 +126,8 @@ This script regularly checks that the current torques reported by the
 `joint_states` topic are lower than the limit indicated in the robot
 URDF model. If the effort is higher that 85% of the limit, a warning is
 issued. Warning and errors are reported using the ROS diagnostics stack.
+
+
 
 ```clearsilver
 name = effort_monitor
@@ -135,6 +145,10 @@ pub {
   0.desc = Diagnostic topic.
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = force_monitor
@@ -166,3 +180,5 @@ param {
   1.desc = Maxmimum allowed force before reporting an error.
 }
 ```
+
+

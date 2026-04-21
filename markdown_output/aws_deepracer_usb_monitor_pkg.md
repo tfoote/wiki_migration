@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = usb_monitor_node
 pub {
@@ -42,3 +44,5 @@ srv {
   }
 }
 ```
+
+

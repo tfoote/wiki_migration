@@ -6,9 +6,13 @@
 
 ### Command line
 
-Usage: ```
+Usage: 
+
+```
 rosrun job_generation generate_prerelease.py --rosdistro diamondback --email name@foo.bar --stack stackname1 --stack stackname2
 ```
+
+
 
 Extra options:
 
@@ -32,9 +36,13 @@ Extra options:
 
 ### Command line
 
-Usage: ```
+Usage: 
+
+```
 rosrun job_generation generate_devel.py --rosdistro diamondback --stack stackname1
 ```
+
+
 
 Extra options:
 

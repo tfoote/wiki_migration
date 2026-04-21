@@ -6,6 +6,8 @@
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name= position_control
@@ -60,6 +62,10 @@ param{
 
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.1 {
@@ -122,6 +128,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
 node.2 {
 name= torque_control
@@ -182,6 +192,10 @@ param{
 
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.3 {
@@ -249,6 +263,8 @@ param{
 
 }
 ```
+
+
 
 ## Tutorials
 

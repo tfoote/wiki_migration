@@ -6,20 +6,30 @@ subscriber and a actionlib server.
 First include the code dependencies and add to your code the following
 include files
 
+
+
 ```
 #include "ros/ros.h"
 #include "gtest/gtest.h"
 #include "mock_objects/MockSubscriber.h"
 ```
 
+
+
 To create a mock subscriber
+
+
 
 ```
 typedef controllersAndSensors_communications::irMsg ir;
 MockSubscriber<ir> irSubscriber;
 ```
 
+
+
 Creating a mock action server can be done as in this example:
+
+
 
 ```
 #include "ros/ros.h"
@@ -33,17 +43,25 @@ int main() {
 }
 ```
 
+
+
 ## Range Checks using mock objects
 
 You can use the mock objects for performing range checks, using the
 build in google mock functions. For a message with the definition
+
+
 
 ```
 Header header
 int32[5] distance
 ```
 
+
+
 the following range check can be defined:
+
+
 
 ```
 EXPECT_CALL(irSubscriber, subscriberActualCallback(
@@ -56,7 +74,11 @@ EXPECT_CALL(irSubscriber, subscriberActualCallback(
 ))).Times(AtLeast(0));
 ```
 
+
+
 where the *IsBetween* is a matcher defined as follows:
+
+
 ```
 MATCHER_P2(IsBetween, a, b, std::string(negation ? "isn't" : "is")
 + " between " + PrintToString(a) + " and " + PrintToString(b)) {
@@ -64,7 +86,11 @@ MATCHER_P2(IsBetween, a, b, std::string(negation ? "isn't" : "is")
 }
 ```
 
+
+
 Note that you need to add the following lines too
+
+
 ```
 using ::testing::AtLeast;
 using ::testing::Eq;
@@ -77,10 +103,14 @@ using ::testing::Matcher;
 using ::testing::AnyOf;
 ```
 
+
+
 ### Complex Logical Rules
 
 Combining the Google Mock !AnyOf and !AllOf matchers can provide more
 complex rules for range checks. For example:
+
+
 
 ```
 EXPECT_CALL(soundExistenceSubscriber, subscriberActualCallback(
@@ -93,7 +123,11 @@ EXPECT_CALL(soundExistenceSubscriber, subscriberActualCallback(
 ))).Times(AtLeast(0));
 ```
 
+
+
 and a simple or-like statement
+
+
 
 ```
 EXPECT_CALL(lineColorSubscriber, subscriberActualCallback(
@@ -113,11 +147,15 @@ EXPECT_CALL(lineColorSubscriber, subscriberActualCallback(
 ))).Times(AtLeast(0));
 ```
 
+
+
 ### Define New Matchers
 
 You can define new matchers to simplify rules. For example, checking a
 message that has x,y,z that all messages fall into a sphere of a
 specific distance, we first define a matcher:
+
+
 
 ```
 MATCHER_P(DistanceIsLess, distance, "") {
@@ -125,14 +163,20 @@ MATCHER_P(DistanceIsLess, distance, "") {
 }
 ```
 
+
+
 and then use it.
 
 ### TF matcher
 
-A matcher for the tf is as follows ```
+A matcher for the tf is as follows 
+
+```
 typedef controllersAndSensors_communications::irMsg ir;
 MockSubscriber<ir> irSubscriber;
-```0
+```
+
+0
 
 ## More Examples
 

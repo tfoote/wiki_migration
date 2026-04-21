@@ -1,20 +1,32 @@
 ## Install
 
 Granted you have installed the ros-electric-desktop-full and the
-ros-electric-ias-common debian packages: ```
+ros-electric-ias-common debian packages: 
+
+```
 sudo apt-get install ros-electric-desktop-full ros-electric-ias-common
-``` you
+```
+
+ you
 have to install the following additional packages from the sources (make
 sure you check them out into the directory contained in
-ROS_PACKAGE_PATH): ```
+ROS_PACKAGE_PATH): 
+
+```
 svn co https://code.ros.org/svn/ros-pkg/stacks/vslam/trunk vslam
 svn co https://cmu-ros-pkg.svn.sourceforge.net/svnroot/cmu-ros-pkg/trunk/3rdparty/ann2 ann2
 svn co https://jsk-ros-pkg.svn.sourceforge.net/svnroot/jsk-ros-pkg/trunk/3rdparty/libsiftfast libsiftfast
 git clone https://github.com/dejanpan/objects_of_daily_use_finder
-``` Finally run:
+```
+
+ Finally run:
+
+
 ```
 rosmake objects_of_daily_use_finder
 ```
+
+
 
 ## Overview
 

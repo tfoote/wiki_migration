@@ -4,17 +4,25 @@ the `bash/compgen_hooks.sh` script for tab completion on pose files.
 
 ## save.py
 
+
+
 ```
 save.py FILENAME
 ```
+
+
 
 Saves the current pose of the pr2 to the given file.
 
 ### load.py
 
+
+
 ```
 load.py FILENAME
 ```
+
+
 
 Make the pr2's pose (not including the base pose) be the one specified
 in the file. Does no collision avoidance, so make sure there aren't any

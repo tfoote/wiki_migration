@@ -13,9 +13,13 @@ To use the leg tracker function to detect and track people clone the
 repository and required dependencies to your catkin environment and
 build it according to the instructions. Run the launch file:
 
+
+
 ```
 roslaunch cob_leg_detection leg_detector.launch
 ```
+
+
 
 Please check the settings for a laser scanner data and its topic in the
 `cob_leg_detection/launch/leg_detector.launch` file.

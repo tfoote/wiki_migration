@@ -8,11 +8,19 @@ messages and actions.
 
 The launch file airbus_docgen.launch can be used to call the tool:
 
+
+
 ```
 roslaunch airbus_docgen airbus_docgen.launch output_path:="/tmp/docu" ros_pkg:="/home/user/my_workspace"
-``` or: ```
+```
+
+ or: 
+
+```
 roslaunch airbus_docgen airbus_docgen.launch output_path:="/tmp/docu" ros_pkg:="package_name"
 ```
+
+
 
 Input parameters of this launch file are:
 
@@ -26,9 +34,13 @@ In case you want to document your current workspace and save the
 documentation in the /tmp/docu directory, you can just call the index.py
 node:
 
+
+
 ```
 rosrun airbus_docgen index.py
 ```
+
+
 
 The index.html of your workspace will look like the following image:
 

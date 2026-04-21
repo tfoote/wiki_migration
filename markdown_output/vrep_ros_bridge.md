@@ -90,7 +90,9 @@ Procedure:
     'Scene hierarchy' (on the right) or directly on the scene)
 -   Click on 'Add \--> Associated child script \--> Non threated'
 -   The general structure of the child script (written in
-    [LUA](http://www.lua.org/)) is: ```
+    [LUA](http://www.lua.org/)) is: 
+
+```
 if (simGetScriptExecutionCount()==0) then
 -- Put your Initialization code, executed only once (at the beginning of the simulation)
 end
@@ -103,10 +105,16 @@ if (simGetSimulationState()==sim_simulation_advancing_lastbeforestop) then
 -- Put some restoration code here
 end
 ```
--   Now we have to add some instructions: ```
+
+
+-   Now we have to add some instructions: 
+
+```
 quadrotor = simGetObjectAssociatedWithScript(sim_handle_self)
 simExtSetFloatCustomDataFromHeader(quadrotor, sim_ext_ros_bridge_quadrotor_data_main, 0.0)
 ```
+
+
     withing the initialization code.
 
 The function 'simExtSetFloatCustomDataFromHeader()' adds a custom data
@@ -138,6 +146,8 @@ error, we can run V-REP and check if everything is working as expected.
 -   Type roscore in a terminal
 -   Now run V-Rep via terminal. In the terminal you should see:
 
+
+
 ```
 Add-on script 'vrepAddOnScript-addOnScriptDemo.lua' was loaded.
  Simulator launched.
@@ -146,6 +156,8 @@ Add-on script 'vrepAddOnScript-addOnScriptDemo.lua' was loaded.
  Plugin 'RosBridge': load succeeded.
  (...)
 ```
+
+
 
 -   If an external console will appear with the available plugins the
     plugin is working:
@@ -169,17 +181,27 @@ Add-on script 'vrepAddOnScript-addOnScriptDemo.lua' was loaded.
 ![text describing image](attachment:ExtCnsTest.png)
 
 -   In order to see the ROS computation graph, run in a terminal:
-    ```
+    
+
+```
 rqt_graph
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Open a terminal and digit: ```
+-   Open a terminal and digit: 
+
+```
 rostopic list
-``` These are the
+```
+
+ These are the
     topics that the plugin created. In this case you should see:
+
+
 
 ```
 /command/quadrotor_0
@@ -207,6 +229,8 @@ rostopic list
  /vrep/viper_0/jointCommand
  /vrep/viper_0/jointStatus
 ```
+
+
 
 ## Demo
 

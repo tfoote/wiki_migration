@@ -17,44 +17,64 @@ This package depends on
 clone the repository into you workspace:
 
 -   If you have ssh key setup for your github account:
-    ```
+    
+
+```
 cd ~/ros_ws/src
 git clone git@github.com:Terabee/hardware_drivers.git
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   If you prefer to use https use this set of commands:
-    ```
+    
+
+```
 cd ~/ros_ws/src
 git clone https://github.com/Terabee/hardware_drivers.git
 ```
+
+
 
 ## Building the packages
 
 Clone the repository into your workspace:
 
 -   If you have ssh key setup for your github account:
-    ```
+    
+
+```
 cd ~/ros_ws/src
 git clone git@github.com:Terabee/follow_me_driver_ros.git
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   If you prefer to use https use this set of commands:
-    ```
+    
+
+```
 cd ~/ros_ws/src
 git clone https://github.com/Terabee/follow_me_driver_ros.git
 ```
 
-Navigate to your workspace and build: ```
+
+
+Navigate to your workspace and build: 
+
+```
 cd ~/ros_ws
 catkin build
 source devel/setup.bash
 ```
+
+
 
 ## Nodes
 
@@ -78,9 +98,13 @@ It provides following configuration options of the system:
 
 After your workspace is built and sourced, you can run the node (set
 `_portname` to the actual port name where the master beacon is
-connected: ```
+connected: 
+
+```
 rosrun follow_me_driver_ros follow_me_master_beacon _portname:=/dev/ttyACM0
 ```
+
+
 
 #### Subscribed topics
 
@@ -97,19 +121,27 @@ This node subscribes to the following topics:
     topic triggers test command which returns actual configuration of
     the device
 
-Example 1 of usage: ```
+Example 1 of usage: 
+
+```
 rostopic pub /follow_me_master_beacon/follow_me_config follow_me_driver_ros/FollowMeDriverConfig "printout_mode: 'Binary'
 swap_beacons: true
 ema_window: 10
 beacons_span: 540"
-``` Sets binary printout mode,
+```
+
+ Sets binary printout mode,
 swaps beacons, sets EMA filter to 10 samples and beacons span to 540 mm.
 
-Example 2 of usage: ```
+Example 2 of usage: 
+
+```
 rostopic pub /follow_me_master_beacon/follow_me_rs485_config follow_me_driver_ros/FollowMeDriverRS485Config "rs485_slave_id: 3
 rs485_baudrate: 19200
 rs485_parity: 2"
-``` Sets Modbus RTU slave id to
+```
+
+ Sets Modbus RTU slave id to
 3, baud rate to 19200 and parity to 2 (Even).
 
 To see list of valid values for each parameter, open respective \*.msg
@@ -137,9 +169,13 @@ It provides following configuration options of the remote control:
 
 After your workspace is built and sourced, you can run the node (set
 `_portname` to the actual port name where the remote control is
-connected: ```
+connected: 
+
+```
 rosrun follow_me_driver_ros follow_me_remote_control _portname:=/dev/ttyUSB0
 ```
+
+
 
 #### Subscribed topics
 
@@ -152,10 +188,14 @@ This node subscribes to the following topics:
     this topic sets remote control configuration (button mode and buzzer
     state)
 
-Example of usage: ```
+Example of usage: 
+
+```
 rostopic pub /follow_me_remote_control/follow_me_set_config follow_me_driver_ros/FollowMeRemoteControlConfig "button_mode: 'Hold'
 buzzer_active: false"
-``` Sets button mode to *Hold*
+```
+
+ Sets button mode to *Hold*
 and deactivates buzzer.
 
 To see list of valid values for each parameter, open respective \*.msg
@@ -172,10 +212,18 @@ In `CMakeLists.txt` add the package name `follow_me_driver_ros` to
 
 In `package.xml` add:
 
+
+
 ```
 cd ~/ros_ws/src
 git clone https://github.com/Terabee/hardware_drivers.git
-```0 and ```
+```
+
+0 and 
+
+```
 cd ~/ros_ws/src
 git clone https://github.com/Terabee/hardware_drivers.git
-```1
+```
+
+1

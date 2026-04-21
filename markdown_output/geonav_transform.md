@@ -41,7 +41,9 @@ navigation, Xsens, etc.). This situation is analogous to using an
 ekf/ukf node from robot_localization package to fuse IMU and GPS
 information, but in this case the processing is done by the sensor. The
 purpose of this package is to allow integration of this type of sensor
-directly into the ROS navigation stack. ```clearsilver
+directly into the ROS navigation stack. 
+
+```clearsilver
 node.0 {
  name = geonav_transform_node
  desc = ROS node to provide conversions (both data and tf transforms) between geodetic, utm and odom frames.
@@ -102,6 +104,8 @@ node.0 {
  }
 }
 ```
+
+
 
 ### Odometry in Geographic Coordinates
 

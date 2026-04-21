@@ -5,6 +5,8 @@ see <http://www.shervinemami.info/faceRecognition.html> .
 
 ## Installation
 
+
+
 ```
 {#!wiki buildsystem rosbuild
 
@@ -16,9 +18,15 @@ Execute:
 $ cd ~/rosbuild_ws
 $ rosws set face_recognition --git git://github.com/procrob/procrob_functional.git
 $ rosws update
-``` In new terminal ```
+```
+
+ In new terminal 
+
+```
 $ rosmake face_recognition
 ```
+
+
 
 ## How the face recognition works:
 
@@ -57,10 +65,14 @@ Fserver is a ROS node that provides a simple actionlib server interface
 for performing different face recognition functionalities in video
 stream.
 
-To start the Fserver node ```
+To start the Fserver node 
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
 ```
+
+
 
 ### FaceRecognitionGoal message
 
@@ -144,54 +156,98 @@ for the face_recognition simple actionlib server (i.e. 'Fserver').
 (You have to install gscam to do this tutorial) An exercise of using
 Fserver and Fclient:\
 
--   Run roscore ```
+-   Run roscore 
+
+```
 $ roscore
 ```
+
+
 -   In a separate terminal publish a video stream on topic
     **/camera/image_raw**. If you have the gscam package installed and
     configured, you can use it to publish images from your web cam as
-    follows: ```
+    follows: 
+
+```
 $ roscd gscam/bin
 $ rosrun gscam gscam /gscam/image_raw:=/camera/image_raw
 ```
+
+
 -   In separate terminals run the face recognition server and client as
-    follows: ```
+    follows: 
+
+```
 $ rosrun face_recognition Fserver
 $ rosrun face_recognition Fclient
 ```
+
+
 -   In another terminal publish following messages on topic /fr_order to
     test different face recognition functionalities.
 -   After each command notice the output of Fserver and Fclient.
-    ```
+    
+
+```
 $ rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 2 "your_name"
 ```
+
+
 -   To acquire training images for your face: you should try to appear
-    in the video stream! ```
+    in the video stream! 
+
+```
 $ rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 3 "none"
 ```
+
+
 -   To retrain and update the database, so that you can be recognized
-    ```
+    
+
+```
 $ rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 1 "none"
 ```
+
+
 -   To recognise faces continuously. This would not stop until you
     preempt or cancel the goal. So lets preempt it by sending the next
-    goal. ```
+    goal. 
+
+```
 $ rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 2 "your_friend's_name"
 ```
--   To add training images for a new person ```
-$ rosmake face_recognition
-```0
--   To recognize once a face. ```
-$ rosmake face_recognition
-```1
--   To recognize continuously ```
-$ rosmake face_recognition
-```2
--   To exit }}}}
+
+
+-   To add training images for a new person 
 
 ```
 $ rosmake face_recognition
-```3
+```
+
+0
+-   To recognize once a face. 
+
+```
+$ rosmake face_recognition
+```
+
+1
+-   To recognize continuously 
+
+```
+$ rosmake face_recognition
+```
+
+2
+-   To exit }}}}
+
+
+
+```
+$ rosmake face_recognition
+```
+
+3
 
 ## How the face recognition works:
 
@@ -230,9 +286,13 @@ Fserver is a ROS node that provides a simple actionlib server interface
 for performing different face recognition functionalities in video
 stream.
 
-To start the Fserver node ```
+To start the Fserver node 
+
+```
 $ rosmake face_recognition
-```4
+```
+
+4
 
 ### FaceRecognitionGoal message
 
@@ -315,52 +375,92 @@ for the face_recognition simple actionlib server (i.e. 'Fserver').
 
 An exercise of using Fserver and Fclient:\
 
--   Run roscore ```
+-   Run roscore 
+
+```
 $ rosmake face_recognition
-```5
+```
+
+5
 -   In separate terminal publish a video stream on topic
     **/camera/image_raw**.
 -   For example you can use **usb_cam** to publish images from your web
     cam as follows:
 -   Install [http://wiki.ros.org/usb_cam](usb_cam) package
--   Run ```
+-   Run 
+
+```
 $ rosmake face_recognition
-```6
+```
+
+6
 -   In separate terminals run the face recognition server and client as
-    follows: ```
+    follows: 
+
+```
 $ rosmake face_recognition
-```7
+```
+
+7
 -   In another terminal publish following messages on topic /fr_order to
     test different face recognition functionalities.
 -   After each command notice the output of Fserver and Fclient.
-    ```
+    
+
+```
 $ rosmake face_recognition
-```8
+```
+
+8
 -   To acquire training images for your face: you should try to appear
-    in the video stream! ```
+    in the video stream! 
+
+```
 $ rosmake face_recognition
-```9
+```
+
+9
 -   To retrain and update the database, so that you can be recognized
-    ```
+    
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
-```0
+```
+
+0
 -   To recognise faces continuously. This would not stop until you
     preempt or cancel the goal. So lets preempt it by sending the next
-    goal. ```
+    goal. 
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
-```1
--   To add training images for a new person ```
+```
+
+1
+-   To add training images for a new person 
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
-```2
--   To recognize once a face. ```
+```
+
+2
+-   To recognize once a face. 
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
-```3
--   To recognize continuously ```
+```
+
+3
+-   To recognize continuously 
+
+```
 $ roscd face_recognition
 $ rosrun face_recognition Fserver
-```4
+```
+
+4
 -   To exit }}}}

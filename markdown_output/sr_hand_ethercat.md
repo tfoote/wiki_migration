@@ -19,7 +19,9 @@ released. You will need:
 -   pr2_mechanism from trunk
 
 Below is a example rosinstall overlay that be used against a
-ros-cturtle-pr2 distribution ```
+ros-cturtle-pr2 distribution 
+
+```
 - svn:
     uri: https://code.ros.org/svn/wg-ros-pkg/branches/trunk_cturtle/sandbox/shadow_robot_ethercat
     local-name: shadow_robot_ethercat
@@ -27,3 +29,5 @@ ros-cturtle-pr2 distribution ```
     uri: https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_mechanism/trunk
     local-name: pr2_mechanism
 ```
+
+

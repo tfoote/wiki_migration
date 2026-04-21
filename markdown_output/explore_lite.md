@@ -1,5 +1,3 @@
-<<GitHubIssues(hrnr/m-explore)>>
-
 ## Overview
 
 This package provides greedy frontier-based exploration. When node is
@@ -70,6 +68,8 @@ work out-of-the box in most cases, but as always you might need to
 adjust topic names and frame names according to your setup.
 
 ## ROS API
+
+
 
 ```clearsilver
 
@@ -161,10 +161,14 @@ act_called {
 }
 ```
 
+
+
 ## Acknowledgements
 
 This package was developed as part of my bachelor thesis at
 [Charles University](http://www.mff.cuni.cz/to.en/) in Prague.
+
+
 
 ```
 @masterthesis{Hörner2016,
@@ -177,6 +181,8 @@ This package was developed as part of my bachelor thesis at
   URL = {https://is.cuni.cz/webapps/zzp/detail/174125/},
 }
 ```
+
+
 
 This project was initially based on [explore](explore) package by
 Charles !DuHadway. Most of the node has been rewritten since then. The

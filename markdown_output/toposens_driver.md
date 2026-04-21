@@ -7,6 +7,8 @@ the received data string and publish it as a
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 name = ts_driver_node
 desc = translates the raw datastream of a Toposens 3D ultrasonic sensor into messages of type <<MsgLink(toposens_msgs/TsScan)>>
@@ -41,7 +43,9 @@ param {
   7.name = ~use_external_temperature
   7.type = bool
   7.desc = if true uses external_temperature to calibrate speed-of-sound, otherwise uses value provided by on-board temperature sensor
-``` Most of the parameters are used by the sensors
+```
+
+ Most of the parameters are used by the sensors
 firmware and are therefore sent to the sensor via the serial port. For a
 more detailed description of these parameters see
 [this tutorial](toposens/Tutorials/Getting Started with the TS3).

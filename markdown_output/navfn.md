@@ -20,6 +20,8 @@ interface found in the [nav_core](nav_core) package.
 
 Example creation of a `navfn::NavfnROS` object:
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -34,12 +36,16 @@ navfn::NavfnROS navfn;
 navfn.initialize("my_navfn_planner", &costmap);
 ```
 
+
+
 ### API Stability
 
 -   The ROS API is stable
 -   The C++ API is stable
 
 ### ROS API
+
+
 
 ```clearsilver
 pub {
@@ -70,6 +76,8 @@ param {
   4.desc = Specifies whether or not to visualize the potential area computed by navfn via a !PointCloud2. '''New in navigation 1.3.1'''
 }
 ```
+
+
 
 ### C++ API
 

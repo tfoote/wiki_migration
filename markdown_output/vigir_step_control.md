@@ -43,12 +43,16 @@ install instruction can be found
 [here](vigir_footstep_planning#installation).
 
 After compiled your workspace you start up the system (each line in a
-seperate terminal): ```
+seperate terminal): 
+
+```
 roscore
 roslaunch vigir_footstep_planning footstep_planner_test.launch
 roslaunch vigir_step_control step_controller_test.launch
 roslaunch vigir_footstep_planning step_interface_rqt.launch
 ```
+
+
 
 In the *step_interface_widget* you have first to select a footstep
 planner parameter set. Afterwards the direction commands become

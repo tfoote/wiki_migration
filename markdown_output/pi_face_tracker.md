@@ -64,21 +64,29 @@ a rectangle over a part of the image.
 First install Eric Perko's uvc_cam package if you don't have it
 already:
 
+
+
 ```
 $ git clone https://github.com/ericperko/uvc_cam.git
 $ rosdep install uvc_cam
 $ rosmake uvc_cam
-``` For rosdep and rosmake to work, new packages
+```
+
+ For rosdep and rosmake to work, new packages
 need to be on your ROS_PACKAGE_PATH. So clone them into your sandbox, or
 use rosws (do not forget to source setup.sh), or change your
 ROS_PACKAGE_PATH manually.
 
 Next, install the pi_vision stack as follows:
 
+
+
 ```
 $ svn co http://pi-robot-ros-pkg.googlecode.com/svn/trunk/pi_vision
 $ rosmake pi_vision
 ```
+
+
 
 ## How To Use
 
@@ -100,45 +108,73 @@ title bar). Then type one of the following characters:
 
 ### Tracking with the Kinect RGB-D Camera
 
+
+
 ```
 $ roslaunch ros2opencv openni_node.launch
 ```
 
+
+
 Then launch the Kinect face tracker launch file:
+
+
 
 ```
 $ roslaunch pi_face_tracker face_tracker_kinect.launch
 ```
 
+
+
 ### Tracking with a UVC-Compatible Webcam
 
 If you have only one webcam attached to your computer and it is device
-/dev/video0, then simply launch: ```
+/dev/video0, then simply launch: 
+
+```
 $ roslaunch ros2opencv uvc_cam.launch
 ```
 
+
+
 To connect to a different device, e.g. /dev/video1, use the following
-form: ```
+form: 
+
+```
 $ roslaunch ros2opencv uvc_cam.launch device:=/dev/video1
 ```
 
+
+
 Then launch the UVC face tracker launch file:
+
+
 
 ```
 $ roslaunch pi_face_tracker face_tracker_uvc_cam.launch
 ```
+
+
 
 ### Tracking with an AVI File
 
+
+
 ```
 $ roslaunch pi_face_tracker face_tracker_uvc_cam.launch
 ```
 
+
+
 Then start the video file:
+
+
 
 ```
 $ roslaunch ros2opencv avi2ros.launch input:=/path/to/avi/file
 ```
+
+
 
 #### Special Keyboard Commands for AVI Files
 
@@ -158,6 +194,8 @@ around the object you want to track. You can select a different patch at
 any time.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -273,3 +311,5 @@ srv {
   1.desc = Set the ROI to track using message type sensor_msgs/RegionOfInterest.
 }
 ```
+
+

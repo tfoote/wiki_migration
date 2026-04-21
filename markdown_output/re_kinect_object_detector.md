@@ -11,6 +11,8 @@ for a usage description.
 
 ## Interface
 
+
+
 ```clearsilver
 name = re_kinect
 desc = Main node for recognizing objects with the Kinect camera.
@@ -37,3 +39,5 @@ prov_tf {
   0.desc = Transformation from the camera frame to the object frame.
 }
 ```
+
+

@@ -24,6 +24,8 @@ Every avr_bridge program needs a yaml configuration file which specifies
 the port name, the subscriptions, and the publications that each avr
 handles. This is an example configuration file:
 
+
+
 ```yaml
 port: /dev/ttyUSB0
 name: callResponse
@@ -35,14 +37,20 @@ subscribe: #list of subscripitions
   type: std_msgs/String
 ```
 
+
+
 ## gen_avr.py  :  avr_ros source generator
 
 The gen_avr.py script is an avr c++ msg generator. To run gen_avr,
 perform
 
+
+
 ```
 rosrun avr_bridge gen_avr.py <config file> <avr src path>
-``` This command will generate an avr_ros folder to
+```
+
+ This command will generate an avr_ros folder to
 be included in your avr project. This folder has the base msg objects
 and the avr C++
 
@@ -65,6 +73,8 @@ micro-controller to a connected computer.
 
 The following is an example of this for the Arduino environment.
 
+
+
 ```cplusplus
 namespace ros {
     int fputc(char c, FILE *f) {
@@ -76,29 +86,43 @@ namespace ros {
     }
 
 }
-``` To let the node processes the in coming
+```
+
+ To let the node processes the in coming
 communication, run
+
+
 
 ```cplusplus
      node.spin();
 ```
+
+
 
 ### Subscriptions
 
 For every subscription, a callback function and callback message must be
 registered using ros.subscribe:
 
+
+
 ```cplusplus
 void ros::NodeHandle::subscribe(char const *name, RosCb *func, Msg *msg);
 
 typedef void (ros::RosCb)(Msg const *msg);
-``` thus, an example usage is
+```
+
+ thus, an example usage is
+
+
 
 ```cplusplus
 roslib::Header head;
 /* head_cb is defined elsewhere */
 node.subscribe("test_header", head_cb, &head);
-``` Note that the callback function may not be a
+```
+
+ Note that the callback function may not be a
 member due to our lack of boost.
 
 The message object is used for both deserialization and storage of the
@@ -106,11 +130,15 @@ deserialized data.
 
 ### Publishing Messages
 
+
+
 ```cplusplus
 Header head_pub;
 ros::Publisher pub = node.advertise("test_pub");
 node.publish(pub, &head_pub);
-``` `Publisher ros::NodeHandler::advertise(char
+```
+
+ `Publisher ros::NodeHandler::advertise(char
 const \*topic_name)` returns a unique identifier for the given topic.
 Data may be sent to the controlling device by calling `void
 ros::NodeHandler::publish(Publisher pub, Msg \*msg)`.
@@ -129,9 +157,13 @@ configuration yaml file as its first argument. It automatically opens
 the avr port starts talking to the avr, and subscribes and publishes the
 messages. To use run:
 
+
+
 ```
 rosrun avr_bridge bridge_node.py <config file>
 ```
+
+
 
 ## System Caveats
 

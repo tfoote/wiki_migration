@@ -24,8 +24,6 @@ multiple scanners simultaneously.
 
 ## Report a Bug
 
-<<GitHubIssues(PilzDE/psen_scan)>>
-
 ## Further information
 
 You need further information? Our international hotline staff will

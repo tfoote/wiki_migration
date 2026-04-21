@@ -14,22 +14,38 @@ example of how to access the bagserver.
 
 Here's how to use it:
 
-Make all: ```
+Make all: 
+
+```
 rosmake bagserver bag_image_view
 ```
 
-Download test data ```
+
+
+Download test data 
+
+```
 roscd bagserver
 make test
 ```
 
+
+
 Run the bag server on the test_data/test_images2.index
+
+
 ```
 roslaunch $(rospack find bagserver)/test/test_images2.launch
 ```
 
-Run the bag_image_view tool: ```
+
+
+Run the bag_image_view tool: 
+
+```
 rosrun bag_image_view view.py
 ```
+
+
 
 Drag the slider around.

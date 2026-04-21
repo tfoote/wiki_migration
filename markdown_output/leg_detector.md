@@ -28,6 +28,8 @@ detection algorithm that alerts the leg_detector that there is probably
 a pair of legs underneath. This mode is enabled using the `use_seeds`
 parameter.
 
+
+
 ```clearsilver
 name = leg_detector
 desc = 
@@ -121,3 +123,5 @@ param {
   16.default = 10
 }
 ```
+
+

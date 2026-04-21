@@ -121,9 +121,13 @@ Epson IMU model that is being used in the ROS system.
     folder. 4. Reload the current ROS1 environment variables that may
     have changed after the catkin build process.
 
+
+
 ```
 <catkin_workspace>/source devel/setup.bash
 ```
+
+
 
 5\. Modify the appropriate [roslaunch/XML](roslaunch XML files ) to set
 your desired IMU init parameters for the specific IMU model in the
@@ -138,9 +142,13 @@ launch folder that you selected and built
 
 -   To start the Epson IMU ROS1 driver use the appropriate launch file
     (located in launch/) with [roslaunch](roslaunch )
--   For example: ```
+-   For example: 
+
+```
 <catkin_workspace>/roslaunch ess_imu_ros1_uart_driver epson_g370.launch
 ```
+
+
 
 ## USB-UART Latency
 
@@ -163,6 +171,8 @@ launch folder that you selected and built
 -   **NOTE:** May require root (sudo su) access on your system to
     modify.
 
+
+
 ```
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 16
@@ -170,6 +180,8 @@ echo 1 > /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 1
 ```
+
+
 
 ### Modify low_latency flag using setserial utility
 
@@ -180,6 +192,8 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 -   **NOTE:** You may need to install setserial with *sudo apt install
     setserial*
 
+
+
 ```
 user@user-VirtualBox:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0
@@ -189,6 +203,8 @@ user@user-VirtualBox:~$ setserial /dev/ttyUSB0 low_latency
 user@user-VirtualBox:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0, Flags: low_latency
 ```
+
+
 
 ## Technical Support
 

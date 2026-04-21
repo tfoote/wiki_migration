@@ -26,7 +26,9 @@ parsing the specific filenames are parsed also recursively.
 
 When a **filename** tag is found, during the parsing step, a
 stdr_parser::Node is created tagged as *filename*. For example a robot
-XML resource follows: ```
+XML resource follows: 
+
+```
 <robot>
   <robot_specifications>
     <footprint>
@@ -42,8 +44,12 @@ XML resource follows: ```
     </laser>
   </robot_specifications>
 <robot>
-``` where `hokuyo.xml` ,may
+```
+
+ where `hokuyo.xml` ,may
 contain the following (not fully functional, just to showcase):
+
+
 ```
 <laser>
   <laser_specifications>
@@ -58,7 +64,11 @@ contain the following (not fully functional, just to showcase):
     </noise>
   </laser_specifications>
 </laser>
-``` and the **gauss_small.xml**
+```
+
+ and the **gauss_small.xml**
+
+
 ```
 <noise>
   <noise_specifications>
@@ -68,9 +78,13 @@ contain the following (not fully functional, just to showcase):
 </noise>
 ```
 
+
+
 In addition, every `stdr_parser::Node` contains a level value that is
 increased when the recurrent file depth increases. After the first step,
 the tree will look like that (the levels in \[ \]):
+
+
 ```
 ├ robot [0]
 │ ├ robot_specifications [0]
@@ -104,6 +118,8 @@ the tree will look like that (the levels in \[ \]):
 │ │ │ │ │ │ ├ 1.57 [0]
 ```
 
+
+
 ### Step 2 : 'filename' tag elimination
 
 The second step is to eliminate the `filename` tags from the tree. To do
@@ -111,6 +127,8 @@ so a sanity check is performed: the parent node and the child node of a
 `filename` node must be the same. If the above holds, the `filename`
 node is eliminated, as well as its child and the child's children are
 connected to `filename`'s parent. The result follows:
+
+
 ```
 ├ robot [0]
 │ ├ robot_specifications [0]
@@ -140,6 +158,8 @@ connected to `filename`'s parent. The result follows:
 │ │ │ │ │ │ ├ 1.57 [0]
 ```
 
+
+
 ### Step 3 : Node merging
 
 The third step is the recursive node merging. In this step the
@@ -153,7 +173,9 @@ these tags:
 -   laser
 -   sonar All the other tags are recursively merged, if multiple
     occurrences exist under any other tag. The tree after this step
-    follows: ```
+    follows: 
+
+```
 ├ robot [0]
 │ ├ robot_specifications [0]
 │ │ ├ footprint [0]
@@ -178,6 +200,8 @@ these tags:
 │ │ │ │ │ │ ├ noise_std [2]
 │ │ │ │ │ │ │ ├ 0.03 [2]
 ```
+
+
 
 ### Step 4 : Value merging
 
@@ -187,7 +211,9 @@ as during the value merging, the values with higher level are overridden
 by those with lower level. This helps to easily write resource files by
 changing only some aspects of the included files (in the specific
 example the robot has a laser but the scientist wants to change the
-laser's orientation). The final tree follows: ```
+laser's orientation). The final tree follows: 
+
+```
 ├ robot [0]
 │ ├ robot_specifications [0]
 │ │ ├ footprint [0]
@@ -211,6 +237,8 @@ laser's orientation). The final tree follows: ```
 │ │ │ │ │ │ ├ noise_std [2]
 │ │ │ │ │ │ │ ├ 0.03 [2]
 ```
+
+
 
 ### Step 5 : Validation
 
@@ -226,20 +254,30 @@ performs **allowed** and **required** checks for all tree nodes.
 After the tree is fully created, **stdr_parser** can create the
 according **stdr_msgs**. This is performed seamlessly by using
 templates. An example of creating a **stdr_msgs::RobotMsg** follows:
+
+
 ```
 stdr_msgs::RobotMsg msg = stdr_parser::Parser::createMessage<stdr_msgs::RobotMsg>("simple_robot.yaml");
 ```
 
+
+
 In a similar way a **stdr_msgs** message can be saved to a Yaml or XML
-file: ```
+file: 
+
+```
 stdr_msgs::RobotMsg msg = stdr_parser::Parser::createMessage<stdr_msgs::RobotMsg>("simple_robot.yaml");
 stdr_parser::Parser::saveMessage(msg,"test.xml");
 ```
 
+
+
 ### Exceptions
 
 If anything goes wrong an `ParserException` is thrown. The way to use it
-in a source code file follows: ```
+in a source code file follows: 
+
+```
 try
   {
     stdr_parser::Parser::saveMessage(
@@ -255,8 +293,12 @@ try
   }
 ```
 
+
+
 The `ParserException` exceptions hold a trail of the error for better
-debugging. Example: ```
+debugging. Example: 
+
+```
 <laser>
   <laser_specifications>
     <max_range>4</max_range>
@@ -270,7 +312,9 @@ debugging. Example: ```
     </noise>
   </laser_specifications>
 </laser>
-```0
+```
+
+0
 
 ## Using YAML files
 
@@ -279,6 +323,8 @@ the five basic message types will be provided.
 
 ### Noise
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -293,10 +339,14 @@ the five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```1
+```
+
+1
 
 ### Footprint
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -311,10 +361,14 @@ the five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```2
+```
+
+2
 
 ### Laser
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -329,10 +383,14 @@ the five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```3
+```
+
+3
 
 ### Sonar
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -347,10 +405,14 @@ the five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```4
+```
+
+4
 
 ### Robot
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -365,7 +427,9 @@ the five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```5
+```
+
+5
 
 ## Using XML files
 
@@ -374,6 +438,8 @@ five basic message types will be provided.
 
 ### Noise
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -388,10 +454,14 @@ five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```6
+```
+
+6
 
 ### Footprint
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -406,10 +476,14 @@ five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```7
+```
+
+7
 
 ### Laser
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -424,10 +498,14 @@ five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```8
+```
+
+8
 
 ### Sonar
 
+
+
 ```
 <laser>
   <laser_specifications>
@@ -442,9 +520,13 @@ five basic message types will be provided.
     </noise>
   </laser_specifications>
 </laser>
-```9
+```
+
+9
 
 ### Robot
+
+
 
 ```
 <noise>
@@ -453,7 +535,9 @@ five basic message types will be provided.
     <noise_std>0.03</noise_std>
   </noise_specifications>
 </noise>
-```0
+```
+
+0
 
 ## stdr_specifications.xml
 

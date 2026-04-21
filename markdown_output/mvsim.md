@@ -3,9 +3,13 @@ development!\*\*******
 
 ## Installing
 
--   From the repositories: ```
+-   From the repositories: 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-mvsim
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -23,9 +27,13 @@ wheel forces via ROS.
 Usage: See parameters below. You can start running the provided demo
 files, for example:
 
+
+
 ```
 roslaunch mvsim mvsim_demo_2robots.launch
 ```
+
+
 
 #### World files
 

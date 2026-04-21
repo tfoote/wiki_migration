@@ -28,6 +28,8 @@ launching the `navigation.launch` file from the
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -61,3 +63,5 @@ param {
   6.desc = The tolerance in meters for the controller in the x & y distance when achieving a goal.
 }
 ```
+
+

@@ -219,9 +219,13 @@ List of all published topics. All topics are published in the
 ## Installation
 
 All components are in srs git in srs_env_model package and can be
-compiled with ROS standard tool rosmake ```
+compiled with ROS standard tool rosmake 
+
+```
 rosmake srs_env_model
 ```
+
+
 
 ## Configuration
 

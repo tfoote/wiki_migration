@@ -104,9 +104,13 @@ pre-recorded bag file that comes with the package. First, make sure you
 have the [scan_tools](scan_tools) stack downloaded and installed by
 following the [instruction instructions](scan_tools#Installing).
 
+
+
 ```shell
 roslaunch laser_scan_matcher demo.launch
 ```
+
+
 
 You should see a result similar to the video below. The video shows
 tracking the position of a Hokuyo laser as it is being carried freely
@@ -121,6 +125,8 @@ Two drivers are available: `laser_scan_matcher_nodelet` and
 `laser_scan_matcher_node`. Their parameters and topics are identical.
 
 ### Topics
+
+
 
 ```clearsilver
 no_header=True
@@ -155,7 +161,11 @@ pub {
   }
 ```
 
+
+
 ### Transforms
+
+
 
 ```clearsilver
 no_header=True
@@ -175,9 +185,13 @@ no_header=True
  }
 ```
 
+
+
 ### Parameters
 
 #### Coordinate frames
+
+
 
 ```clearsilver
 no_header=True
@@ -195,7 +209,11 @@ no_header=True
 }
 ```
 
+
+
 #### Motion prediction
+
+
 
 ```clearsilver
 no_header=True
@@ -218,10 +236,14 @@ no_header=True
 }
 ```
 
+
+
 #### Pointcloud input
 
 Parameters when using <<MsgLink(sensor_msgs/PointCloud2)>> instead
 of <<MsgLink(sensor_msgs/LaserScan)>> messages.
+
+
 
 ```clearsilver
 no_header=True
@@ -244,6 +266,8 @@ no_header=True
 }
 ```
 
+
+
 #### Keyframes
 
 Parameters for setting up keyframe-scan based registration. Using the
@@ -251,6 +275,8 @@ default values, the keyframe is updated when the sensor moves 10 cm or
 10 degrees. Setting either of these to zero will reduce to
 frame-to-frame scan matching. Keeping them at default levels should
 reduce drift while robot is stationary.
+
+
 
 ```clearsilver
 no_header=True
@@ -268,7 +294,11 @@ no_header=True
 }
 ```
 
+
+
 #### Output
+
+
 
 ```clearsilver
 no_header=True
@@ -291,7 +321,11 @@ no_header=True
 }
 ```
 
+
+
 #### Scan matching
+
+
 
 ```clearsilver
 no_header=True
@@ -336,7 +370,11 @@ no_header=True
 }
 ```
 
+
+
 #### Scan matching (advanced)
+
+
 
 ```clearsilver
 no_header=True
@@ -439,6 +477,8 @@ no_header=True
     38.desc = If 1, the field 'readings_sigma' in the second scan is used to weight the correspondence by 1/sigma^2 (Not sure if changing this has any effect in the current implementation)
   }
 ```
+
+
 
 ## References
 

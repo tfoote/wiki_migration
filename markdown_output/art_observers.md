@@ -8,6 +8,8 @@ road.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = observers_node
@@ -45,7 +47,11 @@ node.0 {
   2.desc = Maximum valid obstacle range (meters).
   2.default = 80.0
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.0 {
  name = points_on_road
  desc = Publish point cloud of obstacles detected on the road.
@@ -64,6 +70,8 @@ node.0 {
  }
 }
 ```
+
+
 
 #### To Do List
 

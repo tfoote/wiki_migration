@@ -8,18 +8,26 @@ lower angle.
 To install the `lower_step_detector` package, you can install from
 source with the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/CIR-KIT/lower_step_detector.git
 cd ..
 catkin_make
 ```
 
+
+
 ## Usage
 
-. ```shell
+. 
+
+```shell
 roslaunch lower_step_detector hogehoge.launch
 ```
+
+
 
 ## Parameters
 

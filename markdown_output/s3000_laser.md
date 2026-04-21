@@ -17,6 +17,8 @@ This package should work with SICK S3000 safety laser scanners.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = s3000_laser
@@ -58,3 +60,5 @@ node.0 {
  }
 }
 ```
+
+

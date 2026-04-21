@@ -16,7 +16,9 @@ package try to unify all these transformations in a generic template
 library. Because of this, this package is absolutely open to accept new
 kinds of transformation software.
 
-Example of Cpp code of composition MRPT: ```
+Example of Cpp code of composition MRPT: 
+
+```
 CPose2D original, new_local_frame, result;
 original.x(3);
 original.phi(0.1);
@@ -24,6 +26,8 @@ new_local_frame.y(30);
 
 result= original - new_local_frame;
 ```
+
+
 
 ## Composing not only poses
 
@@ -40,13 +44,19 @@ composed.
 
 See the next example: consider a frame moving and while dynamic
 information is available (PoseWithTwist)a possible composition would be
+
+
 ```
 (pcl::PointCloud<PointXYPhi>) - (PoseWithTwist) ->  (pcl::PointCloud<PointXYdXdYdPhi>)
 ```
 
+
+
 For now there is no a convey about how to tackle this problem. Because
 of this the rtcus_compositios is needed. This package provide a cpp
 library with this functionality:
+
+
 
 ```
 class StateComposer
@@ -62,6 +72,8 @@ public:
 
 };
 ```
+
+
 
 If the composition is available it would be detected at linking time.
 

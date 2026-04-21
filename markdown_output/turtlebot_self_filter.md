@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 name = laser_footprint_filter
 desc = Filters out a circular region of a specific size centered about a TF frame.
@@ -30,3 +32,5 @@ req_tf {
   0.desc = It's necessary to be able to transform the laser scan into the base_frame prior to self-filtering.
 }
 ```
+
+

@@ -10,6 +10,8 @@ grasping/manipulation).
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = template_matcher_node
@@ -139,17 +141,23 @@ node.2 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `rail_mesh_icp` package, you can install from source
 with the following commands:
 
-. ```shell
+. 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/rail_mesh_icp.git
 cd ..
 catkin build rail_mesh_icp
 ```
+
+
 
 ## Making the Mesh (Source) Cloud
 

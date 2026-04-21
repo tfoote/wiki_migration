@@ -52,6 +52,8 @@ To set up the ```catkin_make``` tools in Visual Studio 2019:
     CMake Settings for Project``` and edit the JSON version of your
     Cmake settings file as follows:
 
+
+
 ```
 {
   "configurations": [
@@ -69,6 +71,8 @@ To set up the ```catkin_make``` tools in Visual Studio 2019:
 }
 ```
 
+
+
 In this way, Cmaking and building your project from Visual Studio will
 be equal to a catkin_make outside the Visual Studio environment. You can
 also open the Command Line directly from the Visual Studio
@@ -82,18 +86,26 @@ the installation instructions available
 
 ### Clone mitch_v2_driver in your Catkin Workspace
 
-a\) Ubuntu: ```
+a\) Ubuntu: 
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
 ```
 
-b\) Windows: ```
+
+
+b\) Windows: 
+
+```
 $ cd c:\catkin_ws\src
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ cd ..
 $ catkin_make
 ```
+
+
 
 ## Usage
 
@@ -101,9 +113,13 @@ $ catkin_make
 
 Switch on your MUSE V2 device. From your catkin workspace, launch the
 following command to connect to your sensor and enable its ROS node:
+
+
 ```
 $ roslaunch muse_v2_driver muse_v2.launch
-``` Among others, this launch file allows you to
+```
+
+ Among others, this launch file allows you to
 set:
 
 -   port name (Default: COM5);
@@ -113,17 +129,25 @@ set:
 
 Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\],
 launch the following command to switch off your device:
+
+
 ```
 $ roslaunch muse_v2_driver shutdown.launch
 ```
+
+
 
 ### Configuration
 
 **`'Get configuration parameters.`**' Assuming the ROS node of your
 MUSE V2 sensor is active \[step 3.1\], launch the following command from
-your catkin workspace: ```
+your catkin workspace: 
+
+```
 $ roslaunch muse_v2_driver get_configuration_params.launch
 ```
+
+
 
 It will output the configuration parameters of your device:
 
@@ -156,17 +180,25 @@ The following parameters can be configured:
 
 Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\],
 launch the following command to write the new parameters on your device:
+
+
 ```
 $ roslaunch muse_v2_driver set_configuration_params.launch
 ```
+
+
 
 ### Calibration
 
 **`'Get calibration params.`**' Assuming the ROS node of your MUSE V2
 sensor is active \[step 3.1\], launch the following command from your
-catkin workspace: ```
+catkin workspace: 
+
+```
 $ roslaunch muse_v2_driver get_calibration_params.launch
 ```
+
+
 
 It will output the calibration parameters of your device:
 
@@ -185,9 +217,13 @@ can freely *enable/disable* each parameter retrieval by setting to
 Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\], the
 following command lets you retrieve log data from your device memory:
 
+
+
 ```
 $ roslaunch muse_v2_driver logger.launch
-``` According to the flagged parameter, the device
+```
+
+ According to the flagged parameter, the device
 will output:
 
 -   the available memory \[kB\];
@@ -207,6 +243,8 @@ Focusing on the log files,
 Log files are stored in the ```config``` folder.
 
 ### Data acquisition
+
+
 
 ```clearsilver
 pub {
@@ -231,14 +269,20 @@ pub {
 }
 ```
 
+
+
 **`'Start acquisition.`**' We assume that the ROS node of your MUSE V2
 device is active \[step 3(a)\]. To start raw data transmission, launch
 the following command from your catkin workspace:
+
+
 ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```0
+```
+
+0
 
 By default, ```start_transmission.launch``` starts to publish the
 following data:
@@ -256,37 +300,53 @@ choose the desired sampling *frequency* (Default: 150 Hz - Admitted
 range: \[1-150\] (Hz)).
 
 **`'Plots.`**' While streaming raw data, you can plot them by means of
+
+
 ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```1 To enable the activation of one or more plots,
+```
+
+1 To enable the activation of one or more plots,
 you should set to *true* its corresponding argument.
 
 **`'Raw data subscriber.`**' While streaming raw data, you can
 subscribe to the *publisher* node and publish data back on your
 terminal. Assuming your transmission node is active, launch the
-following command from your catkin workspace: ```
+following command from your catkin workspace: 
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```2
+```
+
+2
 **`'Stop acquisition.`**' If your acquisition node is active and you
-want to stop data transmission: ```
+want to stop data transmission: 
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```3
+```
+
+3
 
 ### Miscellaneous
 
 **`'Get battery charge and voltage.`**' Assuming the ROS node of your
 MUSE V2 sensor is active \[step 3.1\], type the following command from
-your catkin workspace: ```
+your catkin workspace: 
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```4 The node will send back
+```
+
+4 The node will send back
 the battery charge, its voltage, or both depending on whether the
 arguments *charge* and *voltage* are set to *true*.
 
@@ -296,23 +356,35 @@ The following example shows how to ask a 221e MUSE V2 sensor to stream
 raw data and enable the 3D visualization of the IMU plot.
 
 -   Open one terminal and, from your catkin workspace, type:
-    ```
+    
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```5
+```
+
+5
 -   Open a second terminal and, from you catkin workspace, type:
-    ```
+    
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```6
+```
+
+6
 -   Open a third terminal and, from you catkin workspace, type:
-    ```
+    
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```7
+```
+
+7
 -   On your desktop, the 3D view of your sensor will appear:
 
 ![IMU RViz output example\|width=70%](attachment:imu_rviz_output_example.png)

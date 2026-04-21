@@ -10,9 +10,13 @@ To use this package, please refer to [openni_launch](openni_launch) and
 the OpenNI driver is documented [here](freenect_camera#Migration_guide).
 
 The main launch script can be run using the following command:
+
+
 ```
 roslaunch freenect_launch freenect.launch
 ```
+
+
 
 ## Modifications from openni_launch
 

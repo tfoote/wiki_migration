@@ -14,6 +14,10 @@ Details on rc_genicam_driver are in the README:
 
 -   Using command line parameters:
 
+
+
 ```bash
 rosrun rc_genicam_driver rc_genicam_driver _device:=:02912345
 ```
+
+

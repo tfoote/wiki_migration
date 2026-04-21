@@ -5,11 +5,17 @@ ROS image topic.
 
 Simplest example are
 
+
+
 ```
 rosrun image_publisher image_publisher /opt/ros/indigo/share/rviz/images/splash.png
 ```
 
+
+
 Complex launchfile example
+
+
 
 ```
 <launch>                                                                        
@@ -24,7 +30,11 @@ Complex launchfile example
 </launch>
 ```
 
+
+
 More complex nodelet example using launch file
+
+
 
 ```
 <launch>                                                                        
@@ -42,7 +52,11 @@ More complex nodelet example using launch file
 </launch>
 ```
 
+
+
 ## Node
+
+
 
 ```clearsilver
 node.0 {
@@ -87,7 +101,11 @@ node.0 {
 }
 ```
 
+
+
 ## Nodelets
+
+
 
 ```clearsilver
 node.0 {
@@ -105,3 +123,5 @@ node.0 {
     0.name = Same as image_publisher node
   }
 ```
+
+

@@ -23,23 +23,33 @@ to customise easily qt applications.
 A launch file is already generated to open a cobot_gui window with the
 default configuration
 
+
+
 ```
 roslaunch airbus_cobot_gui default.launch
 ```
+
+
 
 ![\|width=100%](attachment:cobot_gui.png)
 
 The user can also call this launch file to run a different
 configuration, using the input parameters *config_path* and *file_name*
 
+
+
 ```
 roslaunch airbus_cobot_gui default.launch config_path:='${PKG_NAME}/folder' file_name:='file.conf'
 ```
+
+
 
 ## Configuration
 
 The configuration of the cobot_gui can be defined via a
 [XML file](https://github.com/ipa320/airbus_coop/blob/master/airbus_cobot_gui/config/default.conf):
+
+
 
 ```
 <?xml version="1.0"?>
@@ -67,7 +77,9 @@ The configuration of the cobot_gui can be defined via a
         </launcher>
     </window>
 </app>
-``` For further information about the parameters
+```
+
+ For further information about the parameters
 see:
 <https://github.com/ipa320/airbus_coop/blob/master/airbus_cobot_gui/README.md#2--configuration>
 
@@ -89,6 +101,8 @@ as example.
 
 The configuration file for this package include new registers files for
 the dashboards and the plugins:
+
+
 
 ```
 <?xml version="1.0"?>
@@ -118,21 +132,29 @@ the dashboards and the plugins:
         </launcher>
     </window>
 </app>
-``` Where the *default_dashboards_register.xm*l
+```
+
+ Where the *default_dashboards_register.xm*l
 includes an entry for a new dashboard:
+
+
 
 ```
 <?xml version='1.0' encoding='utf8'?>
 <dashboards-register>
         <dashboard label="Template" package="airbus_template_dashboard" />
 </dashboards-register>
-``` The package
+```
+
+ The package
 [airbus_template_dashboard](https://github.com/ipa320/airbus_coop_tutorials/blob/master/airbus_template_dashboard/src/airbus_template_dashboard/dashboard.py)
 define the python code of the qt level that will be popup inside your
 cobot_gui.
 
 For the plugins the procedure is almost the same, there is also a XML
 file where the user can include new entries, for example:
+
+
 
 ```
 <?xml version='1.0' encoding='utf8'?>
@@ -143,6 +165,8 @@ file where the user can include new entries, for example:
   <plugin label="LogManager"     package="airbus_plugin_log_manager" />
   <plugin label="Template"       package="airbus_template_plugin" />
 </plugins-register>
-``` Being the package
+```
+
+ Being the package
 [airbus_template_plugin](https://github.com/ipa320/airbus_coop_tutorials/blob/master/airbus_template_plugin/src/airbus_template_plugin/plugin.py)
 where the plugin functions is defined.

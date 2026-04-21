@@ -44,14 +44,22 @@ actual robot car or in the Stage simulation of it).
 
 The environment can be run with the following command:
 
+
+
 ```
 rosrun rl_env env --env type [options]
-``` where the environment type is one of the
+```
+
+ where the environment type is one of the
 following options:
+
+
 
 ```
 taxi tworooms fourrooms energy fuelworld mcar cartpole car2to7 car7to2 carrandom stocks lightworld
-``` There are a number of options to specify
+```
+
+ There are a number of options to specify
 particular parameters of options for the various domains:
 
 -   \--seed value (integer seed for random number generator)
@@ -71,9 +79,13 @@ learning to go between random starting and target velocities, with
 stochastic actions, lag on the brake actuator, and debug print
 statements on, you would call:
 
+
+
 ```
 rosrun rl_env env --env carrandom --lag --stochastic --prints
 ```
+
+
 
 ### How the Environment interacts with the RL Agent
 

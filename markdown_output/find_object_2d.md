@@ -10,6 +10,8 @@ position (pixels in the image). This package is a ROS integration of the
 
 ### Citing
 
+
+
 ```
 @misc{labbe11findobject,
    Author = {{Labb\'{e}, M.}},
@@ -20,14 +22,20 @@ position (pixels in the image). This package is a ROS integration of the
 }
 ```
 
+
+
 ## Quick start
+
+
 
 ```
 $ roscore &
  # Launch your preferred usb camera driver
  $ rosrun uvc_camera uvc_camera_node &
  $ rosrun find_object_2d find_object_2d image:=image_raw
-``` Visit
+```
+
+ Visit
 [Find-Object on GitHub](http://introlab.github.io/find-object) for some
 tutorials.
 
@@ -38,7 +46,9 @@ tutorials.
     )
 -   **Publish detected objects** (with **position**, **rotation**,
     **scale** and **shear**) as topic "objects":
-    ```
+    
+
+```
 $ rosrun find_object_2d print_objects_detected
   (...)
   ---
@@ -49,6 +59,8 @@ $ rosrun find_object_2d print_objects_detected
   Object 7 detected at (115.422760,163.439835)
   (...)
 ```
+
+
 -   Note that parameter **Homography/homographyComputed** must be true
     (default true) in order to publish the topic.
 -   Parameter **General/mirrorView** would be false in order to
@@ -66,17 +78,25 @@ computed in Find-Object ros-pkg.
 
 ![this\|width=100%](https://raw.githubusercontent.com/wiki/introlab/find-object/doc/ros_find_object_3d.png)
 
+
+
 ```
 $ roslaunch openni_launch openni.launch depth_registration:=true
 $ roslaunch find_object_2d find_object_3d.launch
 $ rosrun rviz rviz  (for visualisation purpose: set "fixed_frame" to "/camera_link" and add TF display)
-``` Kinect v2 example (you will need
+```
+
+ Kinect v2 example (you will need
 [iai_kinect2](https://github.com/code-iai/iai_kinect2) package and
 [find_object_3d_kinect2.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_3d_kinect2.launch)):
+
+
 ```
 $ roslaunch kinect2_bridge kinect2_bridge.launch publish_tf:=true
 $ roslaunch find_object_2d find_object_3d_kinect2.launch
 ```
+
+
 
 -   Take a look at the sample launch file
     [find_object_3d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_3d.launch)
@@ -105,6 +125,8 @@ $ roslaunch find_object_2d find_object_3d_kinect2.launch
 ## Nodes
 
 ### find_object_2d
+
+
 
 ```clearsilver
 sub {
@@ -181,3 +203,5 @@ param {
    }
 }
 ```
+
+

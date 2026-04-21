@@ -29,11 +29,17 @@ be specified shown below in the list of parameters.
 
 The package contains a launch file for testing the sbpl_lattice_planner
 as the global planner for move_base using stage for 2D simulation:
+
+
 ```
 roslaunch sbpl_lattice_planner  move_base_sbpl_fake_localization_2.5cm.launch
 ```
 
+
+
 ### ROS API
+
+
 
 ```clearsilver
 pub {
@@ -45,6 +51,10 @@ pub {
   1.desc = Statistics from the last planning request. Stats include: time taken to get to the first and final solutions, number of state expansions taken to get the first and final solutions, the epsilon (bound on the sub-optimality of the solution) of the first and final solutions, and the size of the final solution. 
 }
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -108,6 +118,8 @@ param {
   9.desc = The cost of an obstacle in the planner's version of the costmap. All other values in the costmap are scaled accordingly. The obstacle cost is the largest in the costmap2d so by setting this parameter to something below its obstacle thresh, we can get obstacle padding that is less harsh and more reasonable. This will make the planner more likely to choose to go through more narrow areas such as doorways. 
 }
 ```
+
+
 
 ### Customizing your Motion Primitives
 

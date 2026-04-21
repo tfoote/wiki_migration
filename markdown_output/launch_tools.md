@@ -11,10 +11,18 @@ rounded boxes.
 
 -   Usage
 
-Run: ```
+Run: 
+
+```
 $ rosrun srv_tools launchViz
-``` launchViz will search for launchfiles in
-the working directory ```
+```
+
+ launchViz will search for launchfiles in
+the working directory 
+
+```
 $ rosrun srv_tools launchViz -pkg PKG_A [PKG_B ...]
-``` launchViz will search in
+```
+
+ launchViz will search in
 the specified packages

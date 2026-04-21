@@ -12,9 +12,15 @@ description in each device namespace (which is required to setup their
 control nodes) and to load the whole robot model complete with
 [joint_state_publisher](joint_state_publisher),
 [robot_state_publisher](robot_state_publisher) and [rviz](rviz) only
-once. ```wiki
+once. 
+
+```wiki
 Please, use these "macros" whenever is possible to improve '''robustness''', '''readability''' and '''maintenance''' of derived packages.
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = load_description_template
 desc = This basic launch file just loads the [[urdf]] xml robot description in the `robot_description` ROS param by providing few configuration arguments.
 param {
@@ -29,6 +35,10 @@ param {
   2.desc = The base package name prefix (without "_description") where robot models are stored (e.g. `qb_device` if it is `qb_device_description`).
 }
 ```
+
+
+
+
 ```clearsilver
 name = state_publisher_template
 desc = This launch file starts the [[joint_state_publisher]] and the [[robot_state_publisher]] for the given `robot_description` loaded in the Parameter Server (under the current namespace). If specified also starts [[rviz]].
@@ -57,3 +67,5 @@ param {
   5.default = true
 }
 ```
+
+

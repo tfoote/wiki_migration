@@ -65,16 +65,24 @@ This is an example of a valid flash-code pattern that can be downloaded
 [vision_visp](vision_visp) stack.
 
 -   To install [visp_auto_tracker](visp_auto_tracker) package run
-    ```
+    
+
+```
 sudo apt-get install ros-$ROS_DISTRO-visp-auto-tracker
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Or to install the complete stack run ```
+-   Or to install the complete stack run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
+
+
 
 ## Examples
 
@@ -86,9 +94,13 @@ file that comes with the package, or on a live video from a camera.
 To run [visp_auto_tracker](visp_auto_tracker) on a pre-recorded image
 sequence, just run:
 
+
+
 ```
 roslaunch launch/tutorial.launch
-``` The pattern used in this example can be
+```
+
+ The pattern used in this example can be
 downloaded
 [here](http://cloud.github.com/downloads/lagadic/visp_auto_tracker/QRPattern.png).
 
@@ -101,9 +113,13 @@ camera. If you have an usb camera (like a webcam) you can use
 
 You can launch with the following command line:
 
+
+
 ```
 roslaunch launch/tracklive_firewire.launch
 ```
+
+
 
 ## Config file
 
@@ -113,6 +129,8 @@ parameters inside a configuration file following the
 default format.
 
 The basic configuration file would look like this:
+
+
 
 ```
 #set the detector type: "zbar" to detect QR code, "dmtx" to detect flashcode
@@ -171,6 +189,8 @@ outer-coordinates= -0.0765
 outer-coordinates= 0.0765
 outer-coordinates= 0.000
 ```
+
+
 
 ### Common parameters
 
@@ -256,6 +276,8 @@ model-based tracker with QR-code initialisation:
 
 ## Nodes
 
+
+
 ```clearsilver
 name = visp_auto_tracker
 desc = Subscribes to a camera and publishes pose.
@@ -307,6 +329,8 @@ pub {
 
 }
 ```
+
+
 
 ## Report a bug
 

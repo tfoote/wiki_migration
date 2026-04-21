@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name = svenzva_joy_node
@@ -30,3 +32,5 @@ sub {
 1.desc = An actionlib action commanding the open/closing of the gripper.
 }
 ```
+
+

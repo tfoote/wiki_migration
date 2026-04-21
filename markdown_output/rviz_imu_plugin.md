@@ -17,5 +17,3 @@ inclusion in ROS.
 
 We appreciate the time and effort spent submitting bug reports and
 feature requests.
-
-<<GitHubIssues(CCNYRoboticsLab/imu_tools)>>

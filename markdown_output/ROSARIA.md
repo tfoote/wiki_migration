@@ -53,6 +53,8 @@ Parameters are stored by the ROS parameter server. See also
 Some parameters can also be dynamically changed using
 [dynamic_reconfigure](dynamic_reconfigure).
 
+
+
 ```clearsilver
  name = RosAria
  desc = Simple node that uses ARIA to control the robot
@@ -271,6 +273,8 @@ param {
  19.desc = Name to use to publish tf associate with sonar sensor data. 
 }
 ```
+
+
 
 ## Examples
 

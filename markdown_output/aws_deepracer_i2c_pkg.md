@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = battery_node
 
@@ -31,3 +33,5 @@ srv {
   
 }
 ```
+
+

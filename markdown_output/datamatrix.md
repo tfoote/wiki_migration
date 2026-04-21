@@ -20,6 +20,8 @@ Use the makeps.py script in datamatrix:
 
 Usage:
 
+
+
 ```
 Usage: makeps.py [options] code
 
@@ -28,6 +30,8 @@ Options:
   -s SIZE, --size=SIZE  size of marker in m, default is .1
   -o OUT, --out=OUT     output filename, default is standard output
 ```
+
+
 
 ### running the node
 

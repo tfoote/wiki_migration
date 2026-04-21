@@ -17,6 +17,8 @@ instruction on using `image_transport`.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
   name = Publisher plugin
@@ -70,7 +72,11 @@ node.1 {
 }
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name= ogg_saver 
@@ -90,8 +96,14 @@ sub {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 $ rosrun theora_image_transport ogg_saver image:=<base_topic> [output_file.ogv]
 ```
+
+

@@ -15,9 +15,13 @@ installing the realsense-camera package, follow the
 ### ROS Debian Package
 
 Most users should only need to install the prebuilt ROS Debian packages.
+
+
 ```
 sudo apt-get install 'ros-*-realsense-camera'
-``` This will also install the required
+```
+
+ This will also install the required
 ros-<\*distro\*>-librealsense library on your system.
 
 ### Build from Source (rare usage)
@@ -52,6 +56,8 @@ Please
 concerning this package to the realsense_camera GitHub Issues.
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -824,31 +830,49 @@ desc='''ZR300 camera''' See the [[dynamic_reconfigure]] package for details on d
 }
 ```
 
+
+
 ### Running the Nodelet
 
 #### R200 Cameras
+
+
 
 ```
 $ roslaunch realsense_camera r200_nodelet_default.launch
 ```
 
+
+
 #### F200 Cameras
+
+
 
 ```
 $ roslaunch realsense_camera f200_nodelet_default.launch
 ```
 
+
+
 #### SR300 Cameras
+
+
 
 ```
 $ roslaunch realsense_camera sr300_nodelet_default.launch
 ```
 
+
+
 #### ZR300 Cameras
+
+
 
 ```
 $ roslaunch realsense_camera zr300_nodelet_default.launch
 ```
+
+
 
 Sample launch files are available in launch directory. Make sure the
 correct "camera_type" is specified to launch the desired camera.
@@ -903,13 +927,17 @@ much match the same camera
 -   The camera does not provide hardware based depth
     registration/projector data. Hence the launch file
     "r200_nodelet_rgbd.launch" will not generate data for the
-    following topics: ```
+    following topics: 
+
+```
 /camera/depth_registered/hw_registered/image_rect_raw
 /camera/depth_registered/hw_registered/image_rect
 /camera/depth_registered/image
 /camera/depth/disparity
 /camera/depth_registered/disparity
 ```
+
+
 
 ```{=html}
 <!-- -->

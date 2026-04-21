@@ -5,28 +5,46 @@ First make sure you have the latest ric meta-package installed. See
 
 Then, install additional packages:
 
+
+
 ```
 $ sudo apt-get install ros-indigo-gazebo-ros-pkgs ros-indigo-gazebo-ros-control ros-indigo-hector-gazebo ros-indigo-ros-controllers
 ```
+
+
 
 ## Launch
 
 To launch the simulation with default parameters run the specific robot
 simulation launch file:
 
+
+
 ```
 $ roslaunch ric_gazebo komodo_gazebo.launch
-``` or:
+```
+
+ or:
+
+
 
 ```
 $ roslaunch ric_gazebo lizi_gazebo.launch
-``` or:
+```
+
+ or:
+
+
 
 ```
 $ roslaunch ric_gazebo komodo_with_elev_gazebo.launch
-``` To change the robot color, name, initial
+```
+
+ To change the robot color, name, initial
 position and orientation and sensors edit the robot spawn block in the
 simulation launch file:
+
+
 
 ```
 <include file="$(find ric_gazebo)/launch/spawn_lizi.launch">
@@ -49,10 +67,14 @@ simulation launch file:
 
 Here is and example of the Komodo robot launched with default settings:
 ```
+
+
 ![alt text\|width="600"](attachment:gazeboo.png)
 
 To launch multiple robots in the same simulation add another block on
 the launch file as bellow:
+
+
 
 ```
 <include file="$(find ric_gazebo)/launch/spawn_komodo.launch">
@@ -78,6 +100,8 @@ the launch file as bellow:
   <arg name="Y" value="0.0" />
   </include>
 ```
+
+
 ![alt text\|width="600"](attachment:gazeboo2.png)
 
 You can view the robots sensors using rviz:
@@ -161,14 +185,22 @@ arm**
 
 To launch the komodo with arm model type this commend in a new terminal:
 
+
+
 ```
 $ roslaunch komodo_2_moveit_config komodo_gazebo_moveit.launch
-``` To launch the komodo with elevator and arm
+```
+
+ To launch the komodo with elevator and arm
 model type this commend in a new terminal:
+
+
 
 ```
 $ roslaunch komodo_arm_moveit_config komodo_with_elev_gazebo_moveit.launch
 ```
+
+
 
 ## Videos
 
@@ -186,6 +218,8 @@ Komodo with arm and elevator running moveit
 
 If you see something like this after launching:
 
+
+
 ```
 Warning [gazebo.cc:215] Waited 1seconds for namespaces.
 Warning [gazebo.cc:215] Waited 1seconds for namespaces.
@@ -198,10 +232,16 @@ Warning [gazebo.cc:215] Waited 1seconds for namespaces.
 Warning [gazebo.cc:215] Waited 1seconds for namespaces.
 Warning [gazebo.cc:215] Waited 1seconds for namespaces.
 Error [gazebo.cc:220] Waited 11 seconds for namespaces. Giving up.
-``` Try to upgrade to gazebo 2.2.5:
+```
+
+ Try to upgrade to gazebo 2.2.5:
+
+
 
 ```
 > sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu trusty main" > /etc/apt/sources.list.d/gazebo-latest.list'
 > wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-``` Then if you update Ubuntu, It install Gazebo
+```
+
+ Then if you update Ubuntu, It install Gazebo
 2.2.5.

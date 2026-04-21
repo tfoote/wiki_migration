@@ -14,14 +14,20 @@ The `karto` node will attempt to transform each incoming scan into the
 ## Building Karto in a stand-alone mode
 
 Karto uses [cmake](http://www.cmake.org/)(like ros) to build itself. To
-build Karto: ```
+build Karto: 
+
+```
 mkdir build
 cd build
 cmake -G \"Unix Makefiles\" ..
 make
 ```
 
+
+
 You should see something like that (short version):
+
+
 
 ```
 [  1%] Building CXX object Karto.cpp.o
@@ -41,6 +47,8 @@ Linking CXX executable ../bin/OpenKarto_Tutorial1
 Linking CXX executable ../bin/OpenKarto_Tutorial2
 [100%] Built target OpenKarto_Tutorial2
 ```
+
+
 
 In the bin directory, you should have both tutorials built and in the
 lib directory you should have *libOpenKarto_32.so*

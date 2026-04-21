@@ -4,9 +4,13 @@ This package provides methods for querying the KnowRob ontology via ROS.
 
 json_prolog can load the `init.pl` file of a ros package at startup.
 Just pass the corresponding ros package name as first parameter.
+
+
 ```
 rosrun json_prolog json_prolog comp_germandeli
 ```
+
+
 
 # Client Libraries
 
@@ -109,6 +113,8 @@ through 4 services:
 
 ## Node API
 
+
+
 ```clearsilver
 srv{
 0.name=~query
@@ -129,6 +135,8 @@ srv{
 }
 ```
 
+
+
 ## JSON Format
 
 Prolog expressions are either *terms*, *atoms*, *numbers*, *lists* or
@@ -141,21 +149,37 @@ they contain a mapping from `list` to the (JSON) list of the members.
 For variables, they contain a mapping from `variable` to the name of
 the variable. Strings should always be enclosed by \\" to prevent the
 JSON parser from doing something stupid. The following example shows how
-a the Prolog query ```
+a the Prolog query 
+
+```
 member(X, [1, 2, 3]), Y = foo(X)
-``` should be encoded:
+```
+
+ should be encoded:
+
+
 ```
 {\"term\":[\",\",{\"term\":[\"MEMBER\",{\"variable\":\"X\"},{\"list\":[1,2,3]}]},{\"term\":[\"=\",{\"variable\":\"Y\"},{\"term\":[\"foo\",{\"variable\":\"X\"}]}]}]}
 ```
+
+
 
 Please note that for calling the service `query`, the outer map has to
 be omitted, i.e. only the list corresponding to the outer `term` must
 be passed to the service.
 
 Results are maps of variables to values in the format specified above.
-For instance, a Prolog query ```
+For instance, a Prolog query 
+
+```
 X = 1, Y = 2
-``` results in one
-solution of the form ```
+```
+
+ results in one
+solution of the form 
+
+```
 {\"X\":1, \"Y\":2}
 ```
+
+

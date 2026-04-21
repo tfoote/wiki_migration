@@ -21,24 +21,36 @@ manipulator motion planning.
 
 ## Installing the package
 
+
+
 ```
 $ sudo apt-get install ros-indigo-move-base-to-manip
 ```
 
+
+
 ## Run the demo
+
+
 
 ```
 $ rosrun move_base_to_manip provide_target
 ```
+
+
 
 \^This launches a ROS service that will make a desired pose available to
 the move_base_to_manip node. It also displays this desired pose in Rviz.
 When the client sends *true* on the service request, this node will shut
 down after providing the pose.
 
+
+
 ```
 $ roslaunch move_base_to_manip move_base_to_manip.launch
 ```
+
+
 
 \^This node requests the desired pose from the other node. It then moves
 the end-effector to the desired height and orientation. From there, it
@@ -48,9 +60,13 @@ Cartesian move is able to complete 100%, the arm moves and the program
 exits. Otherwise, there is a call to *move_base* to get closer to the
 object:
 
+
+
 ```
 ac.sendGoal(goal);
 ```
+
+
 
 At this point, your robot base should move.
 

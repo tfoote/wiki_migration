@@ -7,26 +7,38 @@ a desktop environment.
 ## Usage
 
 To view the Leo Rover model without having the real or simulated robot
-connected to the ROS network, use: ```
+connected to the ROS network, use: 
+
+```
 roslaunch leo_viz view_model.launch
 ```
+
+
 
 This will run RViz and a basic ROS environment for publishing robot
 state, including a GUI for specifying fake joint states (you can disable
 the GUI by passing `gui:=false` argument to the launch file).
 
 If you have the robot running on the ROS network and would like to just
-visualize it in RViz, type: ```
+visualize it in RViz, type: 
+
+```
 roslaunch leo_viz rviz.launch
 ```
+
+
 
 ### RViz configurations
 
 If you would like to use a specific RViz configuration, you can add the
 `config` argument to the `rviz.launch` file with the configuration
-name, for example: ```
+name, for example: 
+
+```
 roslaunch leo_viz rviz.launch config:=slam
-``` Here's a list of available
+```
+
+ Here's a list of available
 configurations:
 
   -- --------------------------------------------------------- -- ------------------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --

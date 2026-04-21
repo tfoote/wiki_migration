@@ -43,10 +43,16 @@ returning them from the service call:
 Continually requests images from a polled camera at a specified rate in
 Hz, making the camera look like it is capturing continuously.
 
-Usage: ```
+Usage: 
+
+```
 # Poll "my_camera" at 5 Hz, publishing in namespace my_polled_output/.
 $ poller 5 camera:=my_camera output:=my_polled_output
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 pub {
   0.name = <output>/image_raw
   0.type = sensor_msgs/Image
@@ -61,3 +67,5 @@ srv_called {
   0.desc = The camera driver's polled image service. `camera` should be remapped by the user to the camera namespace.
 }
 ```
+
+

@@ -36,9 +36,13 @@ move_base package (look at
 "asr_navfn/NavfnROS". You can set it as parameter ("param") by start
 the move_base node in an launch file:
 
+
+
 ```
 <param name="base_global_planner" value="asr_navfn/NavfnROS"/>
-``` An example can be found in
+```
+
+ An example can be found in
 [asr_mild_navigation](asr_mild_navigation) in file
 "launch/navigation.launch".
 

@@ -75,9 +75,13 @@ webportal.
 ## Prerequisites
 
 Before getting started, install the following packages required for
-cob_webportal: ```
+cob_webportal: 
+
+```
 $ sudo apt-get install python-setuptools python-paramiko screen python2.*-dev
 ```
+
+
 
 ## Installing Trac
 
@@ -88,20 +92,28 @@ version 1.0 in this scenario. When your download finished install trac
 via setup_tools, pip or the python installation script. More information
 can be found on the
 [Trac Installation Guide](http://trac.edgewall.org/wiki/TracInstall). We
-use the following basic installation: ```
+use the following basic installation: 
+
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-``` In case
+```
+
+ In case
 you don't get any error you can check whether the installation was
-successful via the python interactive shell: ```
+successful via the python interactive shell: 
+
+```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-``` If
+```
+
+ If
 you get the output '1.0' as well, then trac is installed correctly.
 
 ## Creating a Trac environment
@@ -110,11 +122,15 @@ In order to use trac, you have to set up an environment. You can use the
 helper tool trac-admin for that purpose. See
 [TracEnvironment Wiki Page](http://trac.edgewall.org/wiki/TracEnvironment)
 for more Information. We use a basic setup under the directory
-/usr/local/trac/webportal ```
+/usr/local/trac/webportal 
+
+```
 $ sudo mkdir -p /usr/local/trac/webportal
 $ sudo trac-admin /usr/local/trac/webportal initenv
 Follow instructions
 ```
+
+
 
 ## Setting up Apache
 
@@ -128,29 +144,45 @@ with trac we need a new module called mod_wsgi. It can be downloaded
 from the [mod_wsgi project page](http://code.google.com/p/modwsgi/). On
 the project page you can find the
 [Installation Instructions](http://code.google.com/p/modwsgi/wiki/InstallationInstructions)
-as well. We install mod_wsgi the following way: ```
+as well. We install mod_wsgi the following way: 
+
+```
 $ cd ~/trac
 $ wget http://modwsgi.googlecode.com/files/mod_wsgi-3.4.tar.gz
 $ tar -xzvf mod_wsgi-3.4.tar.gz
 $ cd mod_wsgi-3.4
 $ ./configure
 ```
+
+
 If your configure script prints the following error message at the end:
+
+
 ```
 config.status: error: cannot find input file: Makefile.in
-``` You have to install the package apache2-dev or
-apache2-threaded-dev, depending on your system ```
+```
+
+ You have to install the package apache2-dev or
+apache2-threaded-dev, depending on your system 
+
+```
 $ sudo apt-get install apache2-dev || sudo apt-get install apache2-threaded-dev
 ```
 
+
+
 The next steps include compiling, installing and configuring apache to
-load the module: ```
+load the module: 
+
+```
 $ make
 $ sudo make install
 $ echo 'LoadModule wsgi_module /usr/lib/apache2/modules/mod_wsgi.so' | sudo tee /etc/apache2/mods-available/wsgi.load
 $ sudo a2enmod wsgi
 $ sudo service apache2 restart
 ```
+
+
 
 If you experience the following error during the restart process:
 ` No apache MPM package installed" ` then you have to install the
@@ -162,38 +194,58 @@ environment. However, we need to make a few more configurations first.
 In a first step, we need to deploy the trac configuration to play nicely
 with apache and wsgi. An elaborate guide can be found on the Trac's
 [ModWSGI Wiki Page](http://trac.edgewall.org/wiki/TracModWSGI). We
-deploy our environment like this: ```
+deploy our environment like this: 
+
+```
 $ sudo trac-admin /usr/local/trac/webportal deploy /usr/local/trac/webportal
-``` The previous
+```
+
+ The previous
 command creates the folders cgi-bin and htdocs under the
 /usr/local/trac/webportal directory. Next we need to map a url to our
-cgi scripts. Create a new site for apache: ```
+cgi scripts. Create a new site for apache: 
+
+```
 $ sudo vim /etc/apache2/sites-available/webportal
-``` and
-paste the following content: ```
-$ mkdir ~/trac && cd ~/trac
-$ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
-$ tar -xzvf Trac-1.0.tar.gz
-$ cd Trac-1.0
-$ sudo easy_install Trac==1.0
-```0 Enable the site
-via the command: ```
-$ mkdir ~/trac && cd ~/trac
-$ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
-$ tar -xzvf Trac-1.0.tar.gz
-$ cd Trac-1.0
-$ sudo easy_install Trac==1.0
-```1 You need to give the apache
-user read and write access to your trac.ini and db files. Moreover you
-are going to need a .egg-cache directory to which the apache user
-requires read/write access as well. You can do that with the commands:
+```
+
+ and
+paste the following content: 
+
 ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```2
+```
+
+0 Enable the site
+via the command: 
+
+```
+$ mkdir ~/trac && cd ~/trac
+$ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
+$ tar -xzvf Trac-1.0.tar.gz
+$ cd Trac-1.0
+$ sudo easy_install Trac==1.0
+```
+
+1 You need to give the apache
+user read and write access to your trac.ini and db files. Moreover you
+are going to need a .egg-cache directory to which the apache user
+requires read/write access as well. You can do that with the commands:
+
+
+```
+$ mkdir ~/trac && cd ~/trac
+$ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
+$ tar -xzvf Trac-1.0.tar.gz
+$ cd Trac-1.0
+$ sudo easy_install Trac==1.0
+```
+
+2
 
 Now you should be able to view your trac environment in the browser.
 Browse the following location <http://localhost/webportal>. You should
@@ -205,30 +257,42 @@ server only works with the basic access authentication at the moment.
 First we need an httpasswd file. To do that run the following command
 which creates an password file called **htpasswd** under the directory
 */usr/local/trac/webportal* with an initial user *admin*.
+
+
 ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```3 Next open your configuration file
+```
+
+3 Next open your configuration file
 */etc/apache2/sites-available/webportal* and paste the following lines
-at the top of the file: ```
+at the top of the file: 
+
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```4
+```
+
+4
 
 We also need to enable apache's mod_rewrite module and as usual you
-need to restart apache afterwards: ```
+need to restart apache afterwards: 
+
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```5
+```
+
+5
 
 When you browse to your location <http://localhost/webportal> again, you
 should be prompted a dialog requiring you to enter your user
@@ -247,13 +311,17 @@ Now we are almost done configuring apache. We need to add a small
 snippet at the top of our site configuration that is required to run the
 webportal background daemon. But first we have to enable two more apache
 modules called *mod_proxy* and *mod_proxy_http*. We can do that via the
-following commands: ```
+following commands: 
+
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```6
+```
+
+6
 
 These modules are required to bypass the ajax same-domain-policy. All
 information and configuration options for mod_proxy and mod_proxy_http
@@ -262,48 +330,68 @@ can be found on Apache's
 [mod_proxy_http](http://httpd.apache.org/docs/2.2/mod/mod_proxy_http.html)
 page respectively. Now open /etc/apache2/sites-available/webportal and
 paste the following lines at the top of the file:
+
+
 ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```7
+```
+
+7
 
 For the changes to take effect we need to restart our apache web server
+
+
 ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```8 If anything doesn't work out, you can compare
+```
+
+8 If anything doesn't work out, you can compare
 your configuration to our final apache configuration. After following
 our three steps above your apache webportal configuration file looks
-like this: ```
+like this: 
+
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```9
+```
+
+9
 
 ## Compiling plugin
 
 First of all, get the latest source code from
-[\|Github](https://github.com/ipa320/cob_web) ```
+[\|Github](https://github.com/ipa320/cob_web) 
+
+```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-```0
+```
+
+0
 Create the python egg for trac, copy it into your environment's plugin
-folder and restart your server: ```
+folder and restart your server: 
+
+```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-```1
+```
+
+1
 
 When you browse to your trac environment under
 <http://localhost/webportal> you can notice a new item called
@@ -348,19 +436,27 @@ server.
 
 The server has to be started by the superuser at the moment. Furthermore
 it's recommended to start the server in a separate screen, for example:
+
+
 ```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-```2 You can detach from the screen using the
+```
+
+2 You can detach from the screen using the
 keyboard shortcut *<Ctrl-a>d*. To reconnect to the screen run the
-command ```
+command 
+
+```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-```3 To learn more about screens see *man
+```
+
+3 To learn more about screens see *man
 screen*.
 
 Once you have started the server and it's fully initialized (indicated

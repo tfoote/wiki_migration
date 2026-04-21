@@ -9,7 +9,9 @@ GUI that generate a SCXML file like :
 
 ## Creation of SCXML file
 
-Here is a example of a SCXML file : ```
+Here is a example of a SCXML file : 
+
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <scxml initial="Input Number">
     <datamodel>
@@ -41,6 +43,8 @@ Here is a example of a SCXML file : ```
 </scxml>
 ```
 
+
+
 This example SCXML file can be found in the airbus_ssm_tutorial package.
 It will create a very litte state machine using some keyboard entry to
 test if an input number is a prime number or not. This is a basic
@@ -52,6 +56,8 @@ SMACH state machine.
 -   Set up a skill register xml file as data in the datamodel at the
     root level
 
+
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <scxml initial="Input Number">
@@ -62,10 +68,14 @@ SMACH state machine.
 </scxml>
 ```
 
+
+
 This file contains the informations about the predefined States you are
 gonna use (like importing a Module / Class in Python).
 
-For example : ```
+For example : 
+
+```
 <?xml version="1.0"?>
 <skills>
   <skill name="Input"   pkg="airbus_ssm_tutorial" module="airbus_ssm_tutorial1.skills" class="Input"/>
@@ -73,6 +83,8 @@ For example : ```
   <skill name="Primes"	pkg="airbus_ssm_tutorial" module="airbus_ssm_tutorial1.skills" class="Primes"/>
 </skills>
 ```
+
+
 
 Explanation :
 
@@ -89,6 +101,8 @@ onEntry, onExit and datamodel/userdata assignment will not be used.**
 -   Assign a SMACH State or a SSM State to the SCXML state by using the
     datamodel of the state.
 
+
+
 ```
 <state id="IsPrime">
   <datamodel>
@@ -97,6 +111,8 @@ onEntry, onExit and datamodel/userdata assignment will not be used.**
   ...
 </state>
 ```
+
+
 
 Using the 'id' "skill" and set the 'expr' value to ``the name of
 the skill you want to use``. In order to maintain the consistency of
@@ -108,9 +124,13 @@ check will fail.
 the skill XML file, you can run the "ssm_descriptor"**
 
 This will generate a text file with a small description of every states
-and a list of outcomes and userdata. ```
+and a list of outcomes and userdata. 
+
+```
 roslaunch airbus_ssm_core ssm_descriptor.launch skill_xml_file:=empty_register.xml output_file:=/tmp/descriptor.txt
-``` Parameters
+```
+
+ Parameters
 are :
 
 -   skill_xml_file: the skill.xml file you want to scan. It should be
@@ -141,6 +161,8 @@ parent and then be link to the targeted state.
 
 **SCXML**
 
+
+
 ```
 <state id="Parent">
   <initial>
@@ -156,6 +178,8 @@ parent and then be link to the targeted state.
    <transition event="to_bar2" target="bar2"/>
 </state>
 ```
+
+
 
 **Qt Authoring**
 
@@ -177,6 +201,8 @@ If you want to have the following transitions
 
 Then you will have the following SCXML :
 
+
+
 ```
 <parallel id="Parallel_1">
   <state id="A"/>
@@ -188,17 +214,27 @@ Then you will have the following SCXML :
 </parallel>
 ```
 
+
+
 The syntax that conditioning the outcome is written in the "cond" part
-of the transition. ```
+of the transition. 
+
+```
 "/state/./outcome/" "AND/OR" "/state/./outcome/"
-``` **For now it only support 2
+```
+
+ **For now it only support 2
 states in the conditions !!**
 
 ## Execution
 
-To execute a SCXML file you can use : ```
+To execute a SCXML file you can use : 
+
+```
 roslaunch airbus_ssm_core ssm.launch scxml_file:=default
 ```
+
+
 
 Input parameter is:
 
@@ -208,9 +244,13 @@ Input parameter is:
     *\${pkg_name}/directory/file.scxml* or you can give the pull path to
     the file.
 
-For example : ```
+For example : 
+
+```
 roslaunch airbus_ssm_core ssm.launch scxml_file:=${airbus_ssm_core}/resources/defaulf.scxml
-``` There is a service to 'load' a
+```
+
+ There is a service to 'load' a
 new SCXML file :
 
 -   server_name + '/srv/init' (default : '/ssm/srv/init')
@@ -230,6 +270,8 @@ Or use the airbus_ssm_plugin (which can be use in the airbus_cobos_gui
 framework or as a standalone).
 
 To launch the SSM Simple Action Server you can use :
+
+
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <scxml initial="Input Number">
@@ -238,7 +280,9 @@ To launch the SSM Simple Action Server you can use :
     </datamodel>
     ...
 </scxml>
-```0
+```
+
+0
 
 The goal are the SCXML file you want to execute using the same
 restriction of the input parameter scxml_file. The result is the outcome

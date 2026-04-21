@@ -111,25 +111,37 @@ future.
 
 On the first terminal run:
 
+
+
 ```
 roslaunch laser_detector_office_local.launch 2> /dev/null
-``` The piping to `/dev/null` is due to some
+```
+
+ The piping to `/dev/null` is due to some
 OpenCV weirdness. Leave it out if you're willing to put up with lots of
 annoying printouts.
 
 On the second terminal run:
 
+
+
 ```
 rosrun laser_interface user_interface_node.py
-``` In the display that appears, press `d`
+```
+
+ In the display that appears, press `d`
 (another window showing video images should pop up) then `g` (a whole
 bunch of new windows should pop up).
 
 On the third terminal:
 
+
+
 ```
 rosrun dynamic_reconfigure reconfigure_gui
-``` After the reconfigure_gui pops up we will
+```
+
+ After the reconfigure_gui pops up we will
 select `/wide_stereo_both`. Uncheck everything that looks like it'll
 try do do things automatically (`auto_gain`, `auto_black_level`, and
 `auto_exposure`).
@@ -142,10 +154,14 @@ setting in the `reconfigure_gui` (set the `gain`, `brightness`,
 and `black_level to some reasonable value and forget about them). Next
 we adjust the intensity threshold through the command line:
 
+
+
 ```
 rosparam set laser_pointer_detector/intensity_threshold_low 20
 rosparam set laser_pointer_detector/intensity_threshold_high 215
-``` Replace 20 and 215 with values that will allow
+```
+
+ Replace 20 and 215 with values that will allow
 the laser point to show up as a white region in the `intensity`
 window. Adjust `intensity_threshold_low` such that the laser point
 will show up when shone on dark objects (dark brown tables, blue jeans,
@@ -157,21 +173,33 @@ that it's marked by a blue square in the image.
 When satisfied with the results, save your camera settings (replace the
 node name and file name if needed):
 
+
+
 ```
 rosrun save_dynamic_config /wide_stereo_both my_awesome_exposure_settings.yaml
-``` Now place your new yaml file into some safe
+```
+
+ Now place your new yaml file into some safe
 package, for now we'll move it to the laser_interface package:
+
+
 
 ```
 mv my_awesome_exposure_settings.yaml `rospack find laser_interface`/
-``` For the intensity thresholds we'll, open your
+```
+
+ For the intensity thresholds we'll, open your
 favorite text editor and type the following (replace these numbers with
 yours):
+
+
 
 ```
 intensity_threshold_low   : 72
 intensity_threshold_high  : 146
-``` Let's call this file
+```
+
+ Let's call this file
 `intensity_threshold.yaml`.
 
 Open `laser_detector_office_local.launch` and replace office.yaml with
@@ -186,15 +214,21 @@ close the running detector node (Ctrl-C
 laser_detector_office_local.launch) from the last step and launch a
 fresh copy:
 
+
+
 ```
 roslaunch laser_detector_office_local.launch 2> /dev/null
-``` It should now be using your new settings. Point
+```
+
+ It should now be using your new settings. Point
 the stereo pair to a static scene (no people, no moving objects, no
 trees blowing in the wind, etc). In the GUI (user_interface_node.py),
 press `p`, left click on the GUI window (and hold down the mouse
 button) then start shining the laser point in this static scene. Make
 sure that the laser point is the only moving thing. You should see the
 following messages in your console:
+
+
 
 ```
 LaserPointerDetector.mode_handler: gather_positive_examples True
@@ -204,7 +238,9 @@ EmbodiedLaserDetector.record: expected 1 got 1, 96
 EmbodiedLaserDetector.record: expected 1 got 1, 97
 ...
 EmbodiedLaserDetector.record: expected 1 got 1, 118
-``` Do this until you've gathered a sufficiently
+```
+
+ Do this until you've gathered a sufficiently
 representative number of examples (couple of hundreds, more is better
 but not of the same stuff). This step can be repeated if need be.
 
@@ -212,20 +248,28 @@ Now we gather negative examples by pointing the cameras at a scene full
 of shiny moving things. The goal is to get the laser detector to
 misclassify and print out messages similar to the following:
 
+
+
 ```
 EmbodiedLaserDetector.record: expected 0 (no laser detections) but got 1 (laser detection), 122 instances
 EmbodiedLaserDetector.record: expected 0 (no laser detections) but got 1 (laser detection), 123 instances
 EmbodiedLaserDetector.record: expected 0 (no laser detections) but got 1 (laser detection), 124 instances
 EmbodiedLaserDetector.record: expected 0 (no laser detections) but got 1 (laser detection), 125 instances
 ...
-``` After a couple of hundreds of these, press
+```
+
+ After a couple of hundreds of these, press
 space bar in the GUI to rebuild the classifier and write our dataset to
 disk. You should see something like the following (but with more
 examples hopefully):
 
+
+
 ```
 rosrun laser_interface user_interface_node.py
-```0 You should now see a file called
+```
+
+0 You should now see a file called
 `PatchClassifier.dataset.pickle`.
 
 ### Running on a Robot
@@ -236,23 +280,35 @@ files with your appropriate settings. Copy over the file
 PatchClassifier.dataset.pickle to the package `laser_interface`.
 Launch your new file on the robot:
 
+
+
 ```
 rosrun laser_interface user_interface_node.py
-```1 If nothing happens, then try it without the
+```
+
+1 If nothing happens, then try it without the
 redirection to see if there are any errors (besides from OpenCV
 complaining).
 
 Then on a computer with an X server run:
 
-```
-rosrun laser_interface user_interface_node.py
-```2 To use, give focus to the GUI and turn on the
-laser point after left clicking. When there are detections you should
-see them on the `cursor3d` topic:
+
 
 ```
 rosrun laser_interface user_interface_node.py
-```3
+```
+
+2 To use, give focus to the GUI and turn on the
+laser point after left clicking. When there are detections you should
+see them on the `cursor3d` topic:
+
+
+
+```
+rosrun laser_interface user_interface_node.py
+```
+
+3
 
 ### Maintenance
 
@@ -262,16 +318,28 @@ classifier. Usually this will get rid of them.
 
 ## Command Line Usage
 
+
+
 ```
 rosrun laser_interface user_interface_node.py
-```4
+```
+
+4
 
 ## ROS API
 
-```
-rosrun laser_interface user_interface_node.py
-```5
+
 
 ```
 rosrun laser_interface user_interface_node.py
-```6
+```
+
+5
+
+
+
+```
+rosrun laser_interface user_interface_node.py
+```
+
+6

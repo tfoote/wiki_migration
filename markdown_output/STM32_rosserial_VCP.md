@@ -31,18 +31,26 @@ stm32F4 rosserial UART repo -
 -   run the following commands (from the original git by johnsonzzd) -
 
 Notice: Baudrate on VCP protocol is determine by the host(MCU), no need
-to set it as parameter on rosrun\... ```
+to set it as parameter on rosrun\... 
+
+```
 1st terminal. roscore
 	2nd terminal. rosrun rosserial_python serial_node.py _port:=/dev/ttyACM0
 	3rd terminal. rostopic list 、 rostopic echo /version
 ```
 
+
+
 It is better to generate you own ros_lib on your system to get all your
-messeages, do the following - ```
+messeages, do the following - 
+
+```
 cd <sketchbook>/libraries
    	rm -rf ros_lib
    	rosrun rosserial_arduino make_libraries.py .
 ```
+
+
 
 and copy ros_lib to the systemworkbench project folder.
 

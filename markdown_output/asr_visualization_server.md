@@ -34,9 +34,13 @@ Runtime only:
 
 To start the program run the following command:
 
+
+
 ```
 roslaunch asr_visualization_server visualization.launch
-``` Now you can call one of the provided services
+```
+
+ Now you can call one of the provided services
 described below to visualize the models you want to.
 
 ## ROS Nodes
@@ -102,12 +106,16 @@ rotation_x, rotation_y, rotation_z).
 
 Example:
 
+
+
 ```
 <markers>
      <marker name="dome" scale="0.1,0.1,0.1" mesh="package://asr_object_database/rsc/databases/environment/Dome/Dome.dae" use_mat="0">1,-0.189,-1.77,-0.681189,-0.681488,0.188607,0.189693</marker>
      <marker name="table" scale="0.1,0.1,0.1" mesh="package://asr_object_database/rsc/databases/environment/TableDome/TableDome.dae" use_mat="0">0.9,0.6,-1.77,0.31,0.31,-0.56,-0.56</marker>
 </markers>
 ```
+
+
 
 ### Provided Services
 

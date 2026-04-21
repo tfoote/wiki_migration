@@ -23,9 +23,13 @@ that are the baselines of this package (ready to use). You only need a
 set of joint trajectories and optionally Cartesian space trajectories of
 the robot for a specific task.
 
+
+
 ```wiki
 '''NOTE''': This package is intended to be used for Gazebo simulations and has not been adapted for real robots at the moment.
 ```
+
+
 
 ## Package description
 
@@ -169,22 +173,42 @@ Here you'll find a description on how you can install the *pid_tuning*
 package in your workspace so you can use it for your projects.
 
 1\. In the terminal, move to the catkin workspace in which you have your
-robot description package. ```
+robot description package. 
+
+```
 cd ~/<workspace_name>/src
 ```
 
-2\. Clone the github package repository ```
+
+
+2\. Clone the github package repository 
+
+```
 git clone https://github.com/We-R22/pid_tuning.git
-``` 3.
-Return to your workspace ```
+```
+
+ 3.
+Return to your workspace 
+
+```
 cd ~/<workspace_name>
-``` 4. Compile the
-workspace ```
+```
+
+ 4. Compile the
+workspace 
+
+```
 catkin_make
-``` 5. Add to the bash
+```
+
+ 5. Add to the bash
+
+
 ```
 source devel/setup.bash
 ```
+
+
 
 ## Tutorials
 

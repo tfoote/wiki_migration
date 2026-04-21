@@ -8,6 +8,8 @@ API, and forward kinematics.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = jaco_arm_trajectory_node
@@ -237,6 +239,8 @@ node.3 {
 }
 ```
 
+
+
 ## Arm Parameters
 
 The `wpi_jaco_wrapper` package uses a configuration file to set most
@@ -338,13 +342,17 @@ using this package with the JACO2.
 ## Installation
 
 To install the `wpi_jaco` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -356,6 +364,10 @@ is done for easier MoveIt! integration), but these can be changed if
 desired by editing the launch file. This can be launched with the
 following command:
 
-. ```
+. 
+
+```
 roslaunch wpi_jaco_wrapper arm.launch
 ```
+
+

@@ -12,6 +12,8 @@ blob, with info about structure in `fields`.
 
 PointCloud.msg:
 
+
+
 ```
 Header header
 
@@ -26,7 +28,11 @@ uint32 height
 
 bool is_dense     # True if there are no invalid points
 bool is_bigendian
-``` PointField.msg:
+```
+
+ PointField.msg:
+
+
 
 ```
 uint8 INT8    = 1
@@ -41,7 +47,9 @@ uint8 FLOAT64 = 8
 string name
 uint32 offset
 uint8  datatype
-``` Discussion:
+```
+
+ Discussion:
 
 -   (Patrick) Should PointCloud contain a stride field? Not strictly
     necessary - stride = data.size() / (width\*height) - but could be
@@ -58,6 +66,8 @@ can use the concise form `POINT_CLOUD_REGISTER_FLAT_POINT_STRUCT`. If
 your struct contains struct members, array members, or has any
 non-standard named fields, you should use the more general
 `POINT_CLOUD_REGISTER_POINT_STRUCT`. For example:
+
+
 
 ```
 #include <stdint.h>
@@ -113,7 +123,9 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(
   (float,    normal[0], normal_x)
   (float,    normal[1], normal_y)
   (float,    normal[2], normal_z));
-``` The registration list contains (datatype,
+```
+
+ The registration list contains (datatype,
 accessor, tag) 3-tuples. In the flat case, the accessor and tag are the
 same.
 
@@ -121,6 +133,8 @@ The registration macro, incidentally, also registers the point struct
 with
 [Boost.Fusion](http://www.boost.org/doc/libs/1_40_0/libs/fusion/doc/html/index.html)
 as an associative type, meaning you can access fields by tag:
+
+
 
 ```
 #include <boost/fusion/sequence/intrinsic/at_key.hpp>
@@ -133,7 +147,9 @@ printf("pt2 has x = %f\n", pt2.pos.x);
 // is identical to...
 printf("pt1 has x = %f\n", boost::fusion::at_key<point_cloud::fields::x>(pt1));
 printf("pt2 has x = %f\n", boost::fusion::at_key<point_cloud::fields::x>(pt2));
-``` The syntax could be made less horrible; the
+```
+
+ The syntax could be made less horrible; the
 point is that this at least opens the possibility of writing generic
 point cloud algorithms that operate efficiently on arbitrary
 user-defined point types.
@@ -166,6 +182,8 @@ iterators, etc.
 
 Usage example:
 
+
+
 ```
 #include "my_point.h"
 #include <point_cloud_redesign/publisher.h>
@@ -189,7 +207,9 @@ int main(int argc, char** argv)
     loop_rate.sleep();
   }
 }
-``` Discussion:
+```
+
+ Discussion:
 
 -   (Patrick) Should the unordered version of `publish()` assume the
     point cloud is dense?
@@ -215,6 +235,8 @@ which is also templated on the point type.
 
 Usage example:
 
+
+
 ```
 #include "my_point.h"
 #include <point_cloud_redesign/subscriber.h>
@@ -234,7 +256,9 @@ int main(int argc, char** argv)
   sub.subscribe(nh, "cloud", 1, callback);
   ros::spin();
 }
-``` Limitations:
+```
+
+ Limitations:
 
 -   Is very unoptimized. Analysis of how to map serialized data to the
     point struct is only performed on the first message received, but

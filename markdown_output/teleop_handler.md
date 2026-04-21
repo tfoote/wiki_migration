@@ -49,6 +49,8 @@ Example launch and configuration files are included for the
 the [Parameter Server](Parameter Server) using your configured
 `.launch` file.
 
+
+
 ```
 teleop:
   # Required parameters
@@ -65,10 +67,14 @@ teleop:
   min_freq: 5
 ```
 
+
+
 More details on configuring launch files for
 [touchosc_bridge](touchosc_bridge) can be found in the
 [rososc_tutorials](rososc_tutorials) and in the
 [touchosc_bridge](touchosc_bridge) package documentation.
+
+
 ```
 <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc_bridge">
     <param name="osc_name" value="ROS Teleop"/>
@@ -79,6 +85,10 @@ More details on configuring launch files for
     <rosparam command="load" file="$(find teleop_handler)/cfg/teleop.yaml" />
 </node>
 ```
+
+
+
+
 
 ```clearsilver
 name = TeleopTabpageHandler
@@ -119,3 +129,5 @@ param {
 6.desc = Minimum publish frequency on `cmd_vel`
 6.default = 10.0}
 ```
+
+

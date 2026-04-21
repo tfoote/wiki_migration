@@ -21,6 +21,8 @@ look for the script that needs to be run).
 
 -   Create the working directory and download a few scripts.
 
+
+
 ```
 > mkdir %USERPROFILE%/hudson/workspace/roswin
 > cd %USERPROFILE%/hudson/workspace/roswin
@@ -29,10 +31,16 @@ look for the script that needs to be run).
 > wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_hudson/resources/slave.jar
 ```
 
+
+
 ## Execution
 
 Open the trigger url in a browser:
 
+
+
 ```
 http://build.willowgarage.com/job/roswin/build?token=yujin
 ```
+
+

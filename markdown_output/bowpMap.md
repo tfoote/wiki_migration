@@ -51,6 +51,8 @@ This video is a result of BoWP-Map on New College Dataset.
 It is a wrapper of the BoWP-Map Core library for topological mapping .
 The graph of the map is incrementally built and the output is shown
 using ros topics where loop closure information is published.
+
+
 ```clearsilver
 
 sub {
@@ -97,3 +99,5 @@ sub {
   }
 }
 ```
+
+

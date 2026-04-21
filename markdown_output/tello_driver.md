@@ -1,5 +1,3 @@
-<<GitHubIssues(appie-17/tello_driver)>>
-
 # tello_driver
 
 ## Overview
@@ -30,33 +28,61 @@ updating the [TelloPy](https://github.com/hanyazou/TelloPy) library.
 
 Binary release from the ROS repository:
 
--   Kinetic ```
+-   Kinetic 
+
+```
 $ sudo apt install ros-kinetic-tello-driver
 ```
 
+
+
 #### Build from source
 
-. ```
+. 
+
+```
 $ cd <CATKIN_WS/SRC>
-``` ```
+```
+
+ 
+
+```
 $ git clone --recursive https://github.com/appie-17/tello_driver.git
-``` .
+```
+
+ .
+
+
 ```
 $ cd ..
-``` ```
+```
+
+ 
+
+```
 $ catkin_make
 ```
+
+
+
+
 ```
 $ source devel/setup.bash
 ```
+
+
 
 ### Launch
 
 -   Turn on Tello drone
 -   Connect to drone's WiFi access point (`TELLO_XXXXXX`)
-    ```
+    
+
+```
 $ roslaunch tello_driver tello_node.launch
 ```
+
+
 
 ## Nodes
 
@@ -191,13 +217,21 @@ None
 -   **Stream raw video**
 
 . Depends on [PyAV](https://github.com/mikeboers/PyAV) package: .
+
+
 ```
 $ pip install av --user
-``` . Installation of PyAV on Ubuntu 16.04 requires
-ffmpeg of at least version 3: ```
+```
+
+ . Installation of PyAV on Ubuntu 16.04 requires
+ffmpeg of at least version 3: 
+
+```
 $ sudo add-apt-repository ppa:jonathonf/ffmpeg-3   
 $ sudo apt update && sudo apt install ffmpeg
 ```
+
+
 
 ## WIP
 

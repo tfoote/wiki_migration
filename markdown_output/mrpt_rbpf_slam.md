@@ -54,22 +54,34 @@ using Rviz and MRPT GUI:
 To run the example of the gridmap RBPF SLAM in online mode, use the
 following command:
 
+
+
 ```
 roslaunch mrpt_rbpf_slam rbpf_slam.launch
 ```
 
+
+
 To run the example of the gridmap RBPF SLAM from \*.rawlog file, use the
 following command:
+
+
 
 ```
 roslaunch mrpt_rbpf_slam rbpf_slam_rawlog.launch
 ```
 
+
+
 another example is available by running
+
+
 
 ```
 roslaunch mrpt_rbpf_slam rbpf_slam_rawlog.launch example:=2
 ```
+
+
 
 Another possibility is to use the RBPF SLAM package for the range-only
 SLAM. The following video demonstrates work of the range only RBPF-based
@@ -79,15 +91,23 @@ SLAM using Rviz and MRPT GUI:
 
 The example usage of the range only RBPF SLAM in online mode:
 
+
+
 ```
 roslaunch mrpt_rbpf_slam ro_slam.launch
 ```
 
+
+
 The example usage of the range only RBPF SLAM from .rawlog file:
+
+
 
 ```
 roslaunch mrpt_rbpf_slam ro_slam_rawlog.launch
 ```
+
+
 
 The following video shows use of the mrpt_rbpf_slam package with mvsim
 simulator:
@@ -96,9 +116,13 @@ simulator:
 
 The example usage of the mrpt_rbpf_slam with mvsim simulator:
 
+
+
 ```
 roslaunch mrpt_rbpf_slam mvsim_slam.launch
 ```
+
+
 
 The package was developed and tested as part of the Google Summer of
 Code 2016 project. The following video shows the final tests carried out
@@ -107,6 +131,8 @@ with the robot:
 [Youtube](https://www.youtube.com/watch?v=HfkRK3lwEgg)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = mrpt_rbpf_slam
@@ -207,6 +233,8 @@ with the robot:
   }
  }
 ```
+
+
 
 ------------------------------------------------------------------------
 

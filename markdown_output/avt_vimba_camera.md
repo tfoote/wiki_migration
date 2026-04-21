@@ -21,6 +21,8 @@ For basic vision processing of camera images, see the
 
 ## Nodes
 
+
+
 ```clearsilver
 name = avt_vimba_camera_node
 desc = ROS driver for AVT GigE cameras. Note that the ROS API varies depending on the driver streaming mode.<<BR>><<BR>>[[image_transport]] is used for all image publications.
@@ -55,3 +57,5 @@ desc=If `~ip_address` is set, the node opens the camera at that IP. If only `~gu
 }
 }
 ```
+
+

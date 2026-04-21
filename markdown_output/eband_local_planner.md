@@ -57,6 +57,8 @@ This plugin runs inside the move_base process. Its parameter namespace
 is prefixed by that of `move_base` and the `base_local_planner` name
 under which it was launched, typically `EBandPlannerROS`, e.g.:
 
+
+
 ```
 <node pkg="move_base" type="move_base" name="move_base">
     <param name="base_local_planner" value="eband_local_planner/EBandPlannerROS"/>
@@ -64,7 +66,11 @@ under which it was launched, typically `EBandPlannerROS`, e.g.:
   </node>
 ```
 
+
+
 **Common Parameters **
+
+
 
 ```clearsilver
 param {
@@ -88,7 +94,11 @@ param {
 }
 ```
 
+
+
 **Visualization Parameters **
+
+
 
 ```clearsilver
 param {
@@ -100,7 +110,11 @@ param {
 }
 ```
 
+
+
 **Elastic Band Parameters **
+
+
 
 ```clearsilver
 param {
@@ -148,7 +162,11 @@ param {
 }
 ```
 
+
+
 **Trajectory Controller Parameters **
+
+
 
 ```clearsilver
 param {
@@ -227,3 +245,5 @@ param {
   18.default = False
 }
 ```
+
+

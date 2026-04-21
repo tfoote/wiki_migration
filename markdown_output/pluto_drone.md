@@ -16,6 +16,8 @@ pluto-ros-package.
 
 ### Installation
 
+
+
 ```
 # Navigate to catkin workspace
 roscd <WORKSPACE_NAME>
@@ -27,44 +29,66 @@ git clone https://github.com/DronaAviation/pluto-ros-package
 catkin_make
 ```
 
+
+
 ## Nodes
 
 -   **plutonode**\
     The `plutonode` provides a communication with Pluto/PlutoX drone
 
+
+
 ```
 rosrun plutodrone plutonode
 ```
 
+
+
 -   **data_via_rosservice.py**\
     This can be used to get the data from drone
+
+
 
 ```
 rosrun plutoserver data_via_rosservice.py
 ```
 
+
+
 -   **plutojoystick**\
     To control drone using Joystick
+
+
 
 ```
 rosrun plutoserver plutojoystick
 ```
 
+
+
 -   **drone_comb.launch**\
     Use this launch file of node to control drone using keyboard
+
+
 
 ```
 roslaunch plutoserver drone_comb.launch
 ```
 
+
+
 -   **Note**: To use Camera wifi to control drone instead of ESP wifi,
     edit following lines in
     [Communication.cpp](https://github.com/DronaAviation/pluto-ros-package/blob/master/plutodrone/src/Communication.cpp)
+
+
 
 ```
 addr.sin_port = htons(CAMERA_PORT);
 addr.sin_addr.s_addr = inet_addr(CAMERA_IP_ADDRESS);
 ```
+
+
 
 ### Topics
 
@@ -240,9 +264,13 @@ PlutoMsg can be used to control drone\
 
 -   **ARM**\
 
+
+
 ```
 rostopic pub /drone_command plutodrone/PlutoMsg "{rcRoll: 1500, rcPitch: 1500, rcYaw: 1500, rcThrottle: 1000, rcAUX1: 1500, rcAUX2: 1500, rcAUX3: 1500, rcAUX4: 1500}"
 ```
+
+
 
 -   For more details on how to PlutoMsg to control drone use
     [link](https://github.com/DronaAviation/pluto-ros-package/blob/master/README.md)
@@ -255,30 +283,46 @@ rostopic pub /drone_command plutodrone/PlutoMsg "{rcRoll: 1500, rcPitch: 1500, r
 1\. Setting the drone in client mode: Connect to drone wifi and use
 following command to open telnet connection:\
 
+
+
 ```
 telnet 192.168.4.1 // drone wifi ip
 ```
 
+
+
 2\. Set the drone in both Station(STA) and Access Point Mode(AP) :\
+
+
 
 ```
 +++AT MODE 3
 ```
 
+
+
 3\. Set the ssid and password:\
+
+
 
 ```
 +++AT STA ssid password
 ```
+
+
 
 4\. Add IPs: Start hotspot and drone should connect to the hotspot. Note
 the IP address assigned to it. Edit following lines in
 [PlutoSwarm.cpp](https://github.com/DronaAviation/pluto-ros-package/blob/master/plutodrone/src/PlutoSwarm.cpp).
 Repeat this for all new drones which are added to the network.\
 
+
+
 ```
 rosrun plutodrone plutonode
-```0
+```
+
+0
 
 5\. Send data: Use PlutoMsg to send RC data to drone and add plutoIndex
 in every PlutoMsg command. This index is the same as the index of the IP

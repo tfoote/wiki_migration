@@ -35,6 +35,8 @@ SBC using either a USB port or an RF serial link (e.g. XBee).
 
 ## Arduino Node
 
+
+
 ```clearsilver
 node.0 {
 name = arduino-node.py
@@ -180,6 +182,8 @@ prov_tf {
 }
 ```
 
+
+
 ### Configuration
 
 The Arduino node is configured using a YAML file specifying the required
@@ -198,6 +202,8 @@ Current valid sensor types names (case-sensitive):
 -   PololuMotorCurrent
 -   PhidgetsVoltage
 -   PhidgetsCurrent (20 amps, DC)
+
+
 
 ```
 port: /dev/ttyUSB0
@@ -243,7 +249,11 @@ sensors: {
 }
 ```
 
+
+
 ### Example Launch File
+
+
 
 ```
 <launch>
@@ -252,6 +262,8 @@ sensors: {
    </node>
 </launch>
 ```
+
+
 
 ### Usage Notes
 
@@ -262,9 +274,13 @@ sensors: {
 <!-- -->
 ```
 -   If you mess up your parameters in a given session, just do a:\
-    ```
+    
+
+```
 rosparam delete /arduino
 ```
+
+
 
 ```{=html}
 <!-- -->

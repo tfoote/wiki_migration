@@ -17,12 +17,18 @@ need data to show that the parameter should be changed.
 To make a [control chart](http://en.wikipedia.org/wiki/Control_chart)
 for test parameters, follow these instructions:
 
+
+
 ```
 rosrun wgtest_data_analysis make_control_chart.py -u USER
-``` Enter your username for the WG Inventory
+```
+
+ Enter your username for the WG Inventory
 System, it will prompt for your password.
 
-The available tests will display like this: ```
+The available tests will display like this: 
+
+```
 Available tests:
 	0: 2966-2 (ID: 48)
 	1: 4204-2 (ID: 50)
@@ -49,8 +55,12 @@ Available tests:
 	22: hokuyo_test (ID: 37)
         ....
 ```
+
+
 Enter the index of the test. In this case, select `20` for the
 `head-test`.
+
+
 
 ```
 Subtests for head-test
@@ -63,10 +73,14 @@ Subtests for head-test
 Select subtest to examine. Enter index (0, 1, ...):
 ```
 
+
+
 Select the subtest you want to examine, in this case `0` for `Tilt
 Hysteresis`.
 
 Finally, select which measurement you want to plot:
+
+
 ```
 Subtest measurements:
 	0: Intercept_Negative
@@ -82,7 +96,9 @@ Subtest measurements:
 	10: Slope_Negative
 	11: Slope_Positive
 Select measurement to plot (enter index):
-``` Entering `2` for `Max_Range`, we can make a
+```
+
+ Entering `2` for `Max_Range`, we can make a
 plot, or export a CSV.
 
 ### Request a Parameter Change
@@ -112,6 +128,8 @@ example, instead of "Positive_Effort_Average", select
 To determine if a part is fully tested, you can run the
 `check_tested.py` script.
 
+
+
 ```
 watts@ckb:/wg/stor5_home4/watts$ rosrun  wgtest_data_analysis  check_tested.py -u USER -d -r 680421301037
 Enter your password to the Willow Garage Inventory system
@@ -128,13 +146,17 @@ Required sequence:
 	wrist-burn (ID: 41)
 	wrist-dummy (ID: 40)
 	wrist-post (ID: 42)
-``` Enter the component's serial number (ex:
+```
+
+ Enter the component's serial number (ex:
 "680421301037" above).
 
 Note: For any burn in tests completed before 9/15/2010, the completion
 will not be in the log.
 
 ## Writing Custom Utilities
+
+
 
 ```python
 
@@ -176,3 +198,5 @@ if __name__ == '__main__':
             
         percents[i] = percent_passed(results)
 ```
+
+

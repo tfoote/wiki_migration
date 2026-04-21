@@ -55,13 +55,19 @@ The controller main input is a
 [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 topic in the namespace of the controller.
 
+
+
 ```clearsilver
 sub {
   0.name= cmd_vel
   0.type= geometry_msgs/Twist
   0.desc= Velocity command.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 pub {
   0.name= odom
   0.type= nav_msgs/Odometry
@@ -73,7 +79,11 @@ pub {
 }
 ```
 
+
+
 #### Joint Parameters
+
+
 
 ```clearsilver
 param{
@@ -87,7 +97,11 @@ param{
 }
 ```
 
+
+
 #### Coveriance Parameters
+
+
 
 ```clearsilver
 param{
@@ -101,7 +115,11 @@ param{
 }
 ```
 
+
+
 #### Time Related Parameters
+
+
 
 ```clearsilver
 param{
@@ -117,7 +135,11 @@ param{
 }
 ```
 
+
+
 #### TF Related Parameters
+
+
 
 ```clearsilver
 param{
@@ -137,7 +159,11 @@ param{
 }
 ```
 
+
+
 #### Multiplier Parameters
+
+
 
 ```clearsilver
 param{
@@ -157,7 +183,11 @@ param{
 }
 ```
 
+
+
 #### Limmiter Parameters
+
+
 
 ```clearsilver
 param{
@@ -219,7 +249,11 @@ param{
 }
 ```
 
+
+
 #### Calibration Parameters
+
+
 
 ```clearsilver
 param{
@@ -233,9 +267,13 @@ param{
 }
 ```
 
+
+
 ### Controller configuration examples
 
 #### Minimal description
+
+
 
 ```yaml
 mobile_base_controller:
@@ -246,7 +284,11 @@ mobile_base_controller:
   twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 ```
 
+
+
 #### Complete description
+
+
 
 ```clearsilver
 pub {
@@ -258,7 +300,9 @@ pub {
   1.type= tf/tfMessage
   1.desc= Transform from odom to base_footprint
 }
-```0
+```
+
+0
 
 ### RobotHW
 

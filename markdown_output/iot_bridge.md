@@ -59,12 +59,16 @@ openHAB 3 on the ROS system:
 -   Go to [iot bridge](https://github.com/corb555/iot_bridge) for
     openHAB 2 or [iot bridge](https://github.com/Michdo93/iot_bridge)
     for openHAB 3 and find the GIT clone address
--   On your ROS system: ```
+-   On your ROS system: 
+
+```
 cd catkin_ws/src
         git clone address-from-above
         cd ..
         catkin_make
 ```
+
+
 
 1\. Edit iot_bridge/config/items.yaml:
 
@@ -87,12 +91,16 @@ Sample Open_HAB item definition:
 
 NOTE: you must have two or more items defined in the ROS group.
 
+
+
 ```
 Group ROS (All)
 String ROS_Status "ROS [%s]"
 Switch Light_GF_Corridor_Ceiling  "Ceiling"  (GF_Corridor, Lights, ROS)
 Switch Light_GF_Bathroom (GF_Bathroom, Lights, ROS)
 ```
+
+
 
 ## Launch
 
@@ -104,16 +112,24 @@ Switch Light_GF_Bathroom (GF_Bathroom, Lights, ROS)
 -   In your browser, go to <http://localhost:8080/rest/items/ROS>
 -   You should see an XML response with the state of the items you have
     put in the ROS group
--   In the console, type ```
+-   In the console, type 
+
+```
 rostopic echo /iot_updates
 ```
+
+
 -   Bring up the openHAB demo site in your browser and change an item in
     the ROS group
 -   You should see the new state in the rostopic echo console
--   Test sending to openHAB ```
+-   Test sending to openHAB 
+
+```
 cd catkin_ws/src/iot_bridge/scripts
     ./iot_test  item_name item_value
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -132,9 +148,13 @@ cd catkin_ws/src/iot_bridge/scripts
     display the
 -   time of the last update (to nearest minute) and counts of messages
     and errors.
--   Place the following in demo.sitemap: . ```
+-   Place the following in demo.sitemap: . 
+
+```
 Text item=ROS_Status label="ROS [%s]"
 ```
+
+
 
 ## Interfaces
 

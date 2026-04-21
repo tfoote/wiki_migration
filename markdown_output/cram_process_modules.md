@@ -34,12 +34,16 @@ result value that is passed to the caller.
 The following code illustrates how a simple navigation process module
 could be defined:
 
+
+
 ```
 (def-process-module navigation (input-designator)
   (let ((goal-pose (reference input-designator)))
     (or (execute-navigation-action goal-pose)
         (fail 'navigation-failed))))
 ```
+
+
 
 We assume that the input designator (an action designator) resolves to a
 3d pose that we can send to the function `execute-navigation-action`.
@@ -50,11 +54,15 @@ To send a command to a process module, the package provides the API
 method `pm-execute`. The following example shows how to send a
 navigation action to the process module defined above:
 
+
+
 ```
 (top-level
   (with-process-modules-running (navigation)
     (pm-execute navigation (make-designator 'action `((type navigation) (goal ,some-pose)))))
 ```
+
+
 
 We assume that the variable `some-pose` is already bound to a 3d pose.
 The macro `with-process-modules-running` is used to start up the

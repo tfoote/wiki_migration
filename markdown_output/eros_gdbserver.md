@@ -28,14 +28,20 @@ local one must absolutely be non-stripped and have debug symbols.
 
 **Embedded Board**
 
+
+
 ```
 gdbserver 192.168.0.66:5200 ./hello
 ```
+
+
 
 Note that the ip is actually ignored, the port number is the only thing
 that is important.
 
 **Build Platform**
+
+
 
 ```
 arm-samsung-linux-gnueabi-gdb ./hello
@@ -45,15 +51,21 @@ arm-samsung-linux-gnueabi-gdb ./hello
 (gdb) continue
 ```
 
+
+
 ### Backtraces
 
 The first continue will stop at main, the second continue starts it
 running. After a segfault
 
+
+
 ```
 (gdb) list
 (gdb) bt
 ```
+
+
 
 The first command shows the source location of the last frame before the
 crash. The latter, the backtrace (f full) provides the last chain of
@@ -71,12 +83,18 @@ easily) create a config file to run with gdb on the build platform. The
 following example `iclebo.gdb` sets directories in the sysroot to
 parse standard libraries in:
 
+
+
 ```
 set solib-absolute-prefix /usr/arm-samsung-linux-gnueabi
 set solib-search-path /usr/arm-samsung-linux-gnueabi/lib:/usr/arm-samsung-linux-gnueabi/usr/lib
 ```
 
+
+
 You can then run it on something like a hellow world program as follows:
+
+
 
 ```
 arm-samsung-linux-gnueabi-gdb --command=iclebo.gdb ./hello
@@ -85,5 +103,7 @@ arm-samsung-linux-gnueabi-gdb --command=iclebo.gdb ./hello
 (gdb) continue
 (gdb) continue
 ```
+
+
 
 Push this into a bash script to make it more convenient.

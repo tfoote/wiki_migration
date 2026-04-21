@@ -7,6 +7,8 @@ library.
 
 ## Relevant Publications
 
+
+
 ```
 LATEX BIBTEX CITATION ENTRY:
 @INPROCEEDINGS{Geiger10,
@@ -18,3 +20,5 @@ LATEX BIBTEX CITATION ENTRY:
  address = {Queenstown, New Zealand}
 }
 ```
+
+

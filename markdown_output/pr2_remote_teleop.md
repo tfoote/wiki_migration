@@ -32,15 +32,23 @@ one which should be run locally.
 
 On the robot:
 
+
+
 ```
 roslaunch pr2_remote_teleop launch_on_robot.launch
-``` On a local computer:
+```
+
+ On a local computer:
+
+
 
 ```
 roslaunch pr2_remote_teleop sixaxis_teleop.launch
 *** or ***
 roslaunch pr2_remote_teleop spacenav_teleop.launch
 ```
+
+
 
 ## Controlling with a PS3 Joystick
 

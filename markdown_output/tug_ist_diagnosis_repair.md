@@ -8,9 +8,13 @@ diagnosis repair engine finds action plan for the first diagnosis.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name= diagnosis_repair
 desc= This is planning based repair engine. It acts like a client. The server is a java based program that connects client over TCP.
 }
 ```
+
+

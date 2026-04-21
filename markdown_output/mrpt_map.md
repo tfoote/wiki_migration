@@ -10,6 +10,8 @@ Most ROS packages expect the map to be a unique occupancy grid map. This
 node supports those simple maps, plus all other
 [map kinds defined in MRPT](http://www.mrpt.org/tutorials/programming/maps-for-localization-slam-map-building/the_hierarchical_model_of_metric_maps/).
 
+
+
 ```clearsilver
 srv {
   0.name = static_map
@@ -52,3 +54,5 @@ param{
     4.desc = TF frame name for published map messages
 }
 ```
+
+

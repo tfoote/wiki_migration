@@ -5,6 +5,8 @@
 Launch recorder nodes with your favourite nodes. Use respawn options to
 record multiple times.
 
+
+
 ```xml
 <launch>
 
@@ -33,7 +35,11 @@ record multiple times.
   </group>
   
 </launch>
-``` ```yaml
+```
+
+ 
+
+```yaml
 # xxx_topics.yml may look like this
 topics:
 - /joint_states
@@ -41,28 +47,40 @@ topics:
 - ...
 ```
 
+
+
 **\[Step 2\]**
 
 Start rosbag-record at your own timing
 
 -   method 1: use remote_rosbag_record/trigger node
-    ```
+    
+
+```
 rosrun remote_rosbag_record trigger _regex:="/.*/start"
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   method 2: use remote_rosbag_record/joy_listener node
-    ```
+    
+
+```
 rosrun remote_rosbag_record joy_listener _start_regex:="/.*/start" _start_button:=10 ...
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   method 3: call trigger services from your teleoperation node
-    ```cpp
+    
+
+```cpp
 #include<remote_rosbag_record/call.hpp>
 
 #include<boost/regex.hpp>
@@ -74,11 +92,15 @@ if (start_button_pressed) {
 }
 ```
 
+
+
 **\[Step 3\]**
 
 Stop rosbag-record (similar to the previous step)
 
 ## Nodes
+
+
 
 ```clearsilver
 name = record
@@ -131,6 +153,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = trigger
 desc = calls multiple start/stop services at once
@@ -140,6 +166,10 @@ param {
  0.desc = regular expression which matches services you want to call
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = joy_listener
@@ -172,3 +202,5 @@ param {
  4.desc = verbose console output when calling a service
 }
 ```
+
+

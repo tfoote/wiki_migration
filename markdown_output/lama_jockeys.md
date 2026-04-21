@@ -130,6 +130,8 @@ map and jockey functionalities are already implemented.
 The `lama_jockeys::Jockey` provides the mechanisms to interfere with
 the map in the form of the member variable `map_agent_`. For example,
 to get the vertex with id 243 from the map, one can write:
+
+
 ```cplusplus
 #include <lama_jockeys/jockey.h>
 
@@ -146,6 +148,8 @@ if (!map_agent_.call(srv))
 ROS_DEBUG("Received response PULLL_VERTEX");
 lama_interfaces::LamaObject vertex = srv.response.objects[0];
 ```
+
+
 
 The three subclasses `lama_jockeys::LearningJockey`,
 `lama_jockeys::LocalizingJockey`, and

@@ -5,9 +5,13 @@
 Add the eros python tools to your PATH. The easiest way to do this is
 simply to add the command to your setup.sh.
 
+
+
 ```
 echo "export PATH=`rospack find eros_python_tools`/scripts:\${PATH}" >> setup.sh
 ```
+
+
 
 ### Tool List
 

@@ -4,6 +4,8 @@ The [cob_3d_segmentation](cob_3d_segmentation) package provides a
 configurable node for point cloud segmentation. Input data is supposed
 to come from 3-D cameras like Microsoft Kinect.
 
+
+
 ```clearsilver
 param{
  0.name = ~algorithm
@@ -13,12 +15,18 @@ param{
 }
 ```
 
+
+
 ## Usage/Examples
 
 Typically you would start the segmentation processes by
+
+
 ```
 roslaunch cob_3d_segmentation simple_segmentation.launch
-``` The following arguments are used to define
+```
+
+ The following arguments are used to define
 subscription and publication topics:
 
   -- -------------------- -- ---------------------------------- -- -------------------------------- -- ----------------------------------------------- --
@@ -36,6 +44,8 @@ class in your own code. Note: you should be familiar with the basic
 [PCL](http://pointclouds.org/) data types and methods.
 
 This example uses the following simple ROS layout:
+
+
 ```cplusplus
 
 #include <ros/ros.h>
@@ -78,8 +88,12 @@ int main(int argc, char** argv)
 }
 ```
 
+
+
 Use the following lines in your callback function to perform a
-segmentation on an organized point cloud: ```cplusplus
+segmentation on an organized point cloud: 
+
+```cplusplus
 ...
 
 void cloud_cb(const pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr& input)
@@ -112,10 +126,14 @@ void cloud_cb(const pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr& input)
   /************ access results ***************/
   //....
 }
-``` The
+```
+
+ The
 results of the segmentation will be stored as a labeled point cloud and
 within the internal ClusterHandler. The following lines give an example
 on how to access the results:
+
+
 
 ```cplusplus
 ...
@@ -176,5 +194,7 @@ void cloud_cb(const pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr& input)
     c = cluster_handler->getCluster(cluster_id);
   }
 }
-``` See the complete example on
+```
+
+ See the complete example on
 [Github.com](https://github.com/ipa-goa-sf/cob_environment_perception/blob/hydro_dev/cob_3d_segmentation/common/apps/tutorial_fast_segmentation.cpp).

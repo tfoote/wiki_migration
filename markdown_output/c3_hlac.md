@@ -12,14 +12,22 @@ Please also see our project page
 
 ## Usage
 
+
+
 ```
 $ rosrun c3_hlac example_c3_hlac `rospack find c3_hlac`/data/sample.pcd
 ```
+
+
 
 This executable reads color point cloud "sample.pcd" and writes its
 C3-HLAC descriptor into "c3_hlac.pcd" in the current directory.
 
 If you have pcl_visualization, you can see the histogram by:
+
+
 ```
 $ rosrun pcl_visualization pcd_viewer c3hlac.pcd
 ```
+
+

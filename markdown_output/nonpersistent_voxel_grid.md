@@ -34,6 +34,8 @@ does not do any clearing and resets each sensor cycle.
 Same API applies to this layer as to the voxel layer, except for the
 clearing operations.
 
+
+
 ```clearsilver
 sub {
   0.name= <point_cloud_topic>
@@ -51,7 +53,11 @@ sub {
 }
 ```
 
+
+
 #### Sensor management parameters
+
+
 
 ```clearsilver
 param {
@@ -63,8 +69,12 @@ param {
 }
 ```
 
+
+
 Each *`source_name`* in `observation_sources` defines a namespace in
 which parameters can be set:
+
+
 
 ```clearsilver
 param {
@@ -116,9 +126,13 @@ param {
 }
 ```
 
+
+
 #### Global Filtering Parameters
 
 These parameters apply to all sensors.
+
+
 
 ```clearsilver
 param {
@@ -134,10 +148,14 @@ param {
 }
 ```
 
+
+
 #### NonPersistentVoxelCostmapPlugin
 
 The following parameters are used by the
 NonPersistentVoxelCostmapPlugin.
+
+
 
 ```clearsilver
 param {
@@ -172,3 +190,5 @@ param {
   6.desc= If true, the robot footprint will clear (mark as free) the space in which it travels.
 }
 ```
+
+

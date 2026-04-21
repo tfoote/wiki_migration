@@ -2,9 +2,13 @@
 
 The easiest way to run the interface is alongside the
 [projector calibration node](projector_calibration#grid). This can be
-done with ```bash
+done with 
+
+```bash
 roslaunch projector_interface calibrate_and_circle.launch
 ```
+
+
 
 This will start both the calibration node and interface node. The
 interface node will wait to display anything until a homography is
@@ -16,6 +20,8 @@ circles, and any polygons sent to it using the
 <<SrvLink(projector_interface/DrawPolygon)>> service.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -170,3 +176,5 @@ node.3 {
     0.desc = Publishes a pose where the object should be placed
   }
 ```
+
+

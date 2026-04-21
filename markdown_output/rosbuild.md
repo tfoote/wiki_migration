@@ -1,8 +1,12 @@
+
+
 ```wiki
 [[catkin]] is the recommended build system for packages starting with ROS [[groovy]]. Up to ROS [[fuerte]], ROS was build using a cmake wrapper script called ``rosmake`` which is part of rosbuild.
 
 Please select the EOL-distro above to see the old documentation.
 ```
+
+
 
 {
 
@@ -55,7 +59,9 @@ The following variables are defined in
 \*preceding\* the **rosbuild_init()** invocation), e.g.:
 
 -   Turn on static libs, but turn off shared libs:
-    ```
+    
+
+```
 cmake_minimum_required(VERSION 2.4.6)
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 # Turn off shared libs and turn on static libs, just for this package
@@ -64,7 +70,11 @@ set(ROS_BUILD_SHARED_LIBS false)
 rosbuild_init()
 rosbuild_add_library(mylib mysrc.cpp)
 ```
--   Another example, changing the warnings:```
+
+
+-   Another example, changing the warnings:
+
+```
 cmake_minimum_required(VERSION 2.4.6)
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 # Turn on higher warnings, because I'm hard-core
@@ -72,26 +82,40 @@ set(ROS_COMPILE_FLAGS "-W -Wall -Wextra -pedantic")
 rosbuild_init()
 rosbuild_add_library(mylib mysrc.cpp)
 ```
+
+
 -   Another example, changing from Debug to Release
-    build:```
+    build:
+
+```
 cmake_minimum_required(VERSION 2.4.6)
 include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
 # Go to a release build, because I'm done debugging and I want compiler optimizations
 set(ROS_BUILD_TYPE Release)
 rosbuild_init()
 rosbuild_add_library(mylib mysrc.cpp)
-``` 1. If present,
+```
+
+ 1. If present,
     \$(ROS_ROOT)/rosconfig.cmake, e.g.:
--   ```
+-   
+
+```
 # I want both static and shared libs for all ROS packages (shared are enabled by default)
 set(ROS_BUILD_STATIC_LIBS true)
-``` 1. If present, rosconfig.cmake in the
+```
+
+ 1. If present, rosconfig.cmake in the
     current package's top-level directory, e.g.:
--   ```
+-   
+
+```
 # I want just static libs, just for this package
 set(ROS_BUILD_STATIC_LIBS true)
 set(ROS_BUILD_SHARED_LIBS false)
 ```
+
+
 
 **NOTE**: this ordering is a little non-intuitive, in that the setting
 in the package's `CMakeLists.txt` is overridden by the settings in
@@ -112,6 +136,8 @@ command line of every compilation step:
 To compile ROS with Intel C/C++ compiler, first install Intel compilers
 as instructed on the Intel website. Next, modify your `CMakeLists.txt`
 in the ROS package to contain the following lines:
+
+
 ```
 set (CMAKE_C_COMPILER $(INTEL_DIR)/bin/icc)
 set (CMAKE_CXX_COMPILER $(INTEL_DIR)/bin/icpc)
@@ -123,7 +149,9 @@ set (CMAKE_C_FLAGS   "-msse3 -ip  -no-prec-div         -parallel -O3 -fPIC" )
 set (CMAKE_CXX_FLAGS "-msse3 -ip  -no-prec-div         -parallel -O3 -fPIC" )
 
 set (CMAKE_EXE_LINKER_FLAGS  "-Wl,-rpath,$(INTEL_DIR)/lib -L$(INTEL_DIR)/lib -lguide -lcxaguard -limf -lsvml -lirc -lpthread -lintlc" )
-``` Where `\$(INTEL_DIR)` is the Intel compiler
+```
+
+ Where `\$(INTEL_DIR)` is the Intel compiler
 install directory (e.g. `/opt/intel/cc/10.1.008`), optimization flags
 used here are optional.
 
@@ -137,19 +165,31 @@ The ROS build system can take advantage of
 [distcc](http://distcc.samba.org/). Just configure them as you normally
 would.
 
-E.g., to enable `ccache`: ```
+E.g., to enable `ccache`: 
+
+```
 export PATH=/usr/lib/ccache:$PATH
-``` Make sure that
+```
+
+ Make sure that
+
+
 ```
 which gcc
-``` points to `ccache`'s wrapper (e.g.,
+```
+
+ points to `ccache`'s wrapper (e.g.,
 `/usr/lib/ccache/gcc`).
 
 E.g., to enable distcc, in concert with ccache, assuming that you have
-four machines, named `pre1` through `pre4`: ```
+four machines, named `pre1` through `pre4`: 
+
+```
 export DISTCC_HOSTS='@pre1/1 @pre2/1 @pre3/1 @pre4/1'
 export CCACHE_PREFIX=distcc
 ```
+
+
 
 ### Parallel jobs
 

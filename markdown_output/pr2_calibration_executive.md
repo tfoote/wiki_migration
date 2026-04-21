@@ -82,7 +82,9 @@ consists of the following:
 The cameras on the PR2 are defined in file
 [ cam_config.yaml](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/capture_data/hardware_config/cam_config.yaml )
 
-Example: -```
+Example: -
+
+```
 narrow_left_rect:
   cb_detector_config:  /narrow_stereo/left/cb_detector_config
   led_detector_config: /narrow_stereo/left/led_detector
@@ -105,7 +107,9 @@ narrow_left_rect:
         subpixel_zero_zone: 1
       led_detector:
         active: False
-```-\~
+```
+
+-\~
 
 -   `cb_detector_config` - Action namespace for reconfiguring
     checkerboard detector
@@ -122,7 +126,9 @@ that detects when the specified set of joints no longer is moving.
 The chains on the PR2 are defined in
 [ chain_config.yaml](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/capture_data/hardware_config/chain_config.yaml )
 
-Example: -```
+Example: -
+
+```
 left_arm_chain:
   settler_config:  /left_arm_chain/settler_config
 
@@ -147,7 +153,9 @@ left_arm_chain:
         - 0.002
         max_step:   1.0
         cache_size: 1500
-```-\~
+```
+
+-\~
 
 #### Tilt Lasers
 
@@ -199,6 +207,8 @@ defined in
 
 Example:
 
+
+
 ```
 head_traj_controller:
   topic: head_traj_controller/command
@@ -206,6 +216,8 @@ head_traj_controller:
   - head_pan_joint
   - head_tilt_joint
 ```
+
+
 
 -   `topic` - ROS topic on which the controller is expecting commands
 -   `joint_names` - Names of the joints that we'll be sending the

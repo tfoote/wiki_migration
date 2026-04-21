@@ -19,6 +19,8 @@ right-hand pane or filter bar.*
 
 #### Usage
 
+
+
 ```
 Usage: rxgraph [options]
 
@@ -27,6 +29,8 @@ Options:
   -o DOTFILE, --dot=DOTFILE
                         ouput graph as graphviz dot file
 ```
+
+
 
 `-o DOTFILE`, `\--dot=DOTFILE` `rxgraph` can save a
 [GraphViz](http://www.graphviz.org/) "dot" file of the ROS graph. This
@@ -43,10 +47,14 @@ is useful for producing documentation of your online system.
 The `-q` and `-t` options were removed from the command-line and
 replaced with 'quiet' and 'All topics' check-boxes in the toolbar.
 
-The quiet option removes the following nodes: ```
+The quiet option removes the following nodes: 
+
+```
 ['/diag_agg', '/runtime_logger', '/pr2_dashboard', '/rviz', 
 '/rosout', '/cpu_monitor', '/monitor','/hd_monitor', '/rxloggerlevel', '/clock']
 ```
+
+
 
 Usually, topics are marked with edges and nodes by ellipses. The 'All
 topics' option makes the topics appear as rectangles. It also makes

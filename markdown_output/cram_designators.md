@@ -5,9 +5,13 @@ the [CRAM Plan Language](cram_language). To the user, designators are
 objects containing sequences of key-value pairs of symbols. For example,
 a location to see a specific object would be created as follows (the
 variable `object` must be bound to an object designator already:
+
+
 ```
 (make-designator 'location `((to see) (obj ,object)))
 ```
+
+
 
 The current implementation supports three different designator types,
 action designators as inputs for process modules, location designators
@@ -189,6 +193,8 @@ predicate `action-desig ?designator ?solution`. For instance, if we
 want to implement navigation, the corresponding action designator could
 be constructed like this:
 
+
+
 ```
 (let ((goal-location 
          (make-designator 'location 
@@ -199,11 +205,15 @@ be constructed like this:
   (make-designator 'action '((type navigation) (goal ,goal-location)))
 ```
 
+
+
 This designator describes the action of moving one meter forward. The
 only important information it contains, besides defining the actual
 action `(type navigation)` is the goal pose. For resolution it might
 be sufficient to just get the goal. The corresponding predicate
 `action-desig` can be defined as follows:
+
+
 
 ```
 (def-fact-group navigation-action-designator (action-desig)
@@ -211,6 +221,8 @@ be sufficient to just get the goal. The corresponding predicate
     (desig-prop ?designator (type navigation))
     (desig-prop ?designator (goal ?goal))))
 ```
+
+
 
 ### Location Designators
 
@@ -300,9 +312,13 @@ Designator properties are lisp lists of pairs of symbols. Let's
 consider the following example of a designator description for an object
 designator:
 
+
+
 ```
 '((type cup) (color red))
 ```
+
+
 
 The user might want to use the same designator properties across
 different lisp packages that not necessarily know about each other. For
@@ -322,6 +338,8 @@ few more as designator properties in package `foo`, we use the
 following package definition for creating `foo` (instead of
 DEFPACKAGE):
 
+
+
 ```
 (in-package :cl-user)
 
@@ -330,6 +348,8 @@ DEFPACKAGE):
   (:export some-awesome-functon some-even-more-awesome-function)
   (:desig-properties type cup pot plate color red blue black green))
 ```
+
+
 
 Please note that all packages that are either using or implementing
 designator properties are required to declare them properly.

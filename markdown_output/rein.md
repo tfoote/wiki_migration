@@ -48,17 +48,25 @@ attention operator is a list of regions of interest (ROI) and masks. The
 `rein::AttentionOperator` has the following pure virtual methods which
 have to be implemented by a subclass.
 
+
+
 ```cplusplus
 virtual void run() = 0; // runs the attention operator
 virtual std::string getName() = 0; // returns the (unique) name of the attention operator
 ```
 
+
+
 An attention operator also has the following getter/setter methods.
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
 ```
+
+
 
 The ROS nodelet will automatically call these getter/setter methods to
 set the input image/point cloud and to get the resulting masks after the
@@ -74,14 +82,20 @@ The output of a detector is a list of detections
 following pure virtual methods which have to be implemented by a
 subclass.
 
+
+
 ```cplusplus
 virtual void detect() = 0; // runs the detector
 virtual std::string getName() = 0; // returns the (unique) name of the detector
 virtual void loadModels(const std::vector<std::string>& models) = 0; // loads the list of pre-trained models that will be detected in the input image
 ```
 
+
+
 A detector also has the following getter/setter methods. These are
 automatically called by the ROS wrapper.
+
+
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -89,6 +103,8 @@ void setMasks(const MaskArrayConstPtr& masks); // masks (rois)
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 DetectionArray getDetections() const; // output detections
 ```
+
+
 
 #### PoseEstimator
 
@@ -99,13 +115,19 @@ objects in the image/point cloud. The output of a pose estimator is a
 list of poses. The `rein::PoseEstimator` has the following pure
 virtual methods which have to be implemented by a subclass.
 
+
+
 ```cplusplus
 virtual void run() = 0; // runs the attention operator
 virtual std::string getName() = 0; // returns the (unique) name of the pose estimator
 ```
 
+
+
 A pose estimator also has the following getter/setter methods. These are
 automatically called by the ROS wrapper.
+
+
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -114,17 +136,23 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 geometry_msgs::PoseArray getPoses() const; // output poses
 ```
 
+
+
 #### Trainable
 
 The `rein::Trainable` is an interface that must be implemented by all
 the algorithms (usually detectors) that support online training. The
 interface contains the following pure virtual methods:
 
+
+
 ```cplusplus
 void startTraining(const std::string& name) = 0; // called when training of a new object model starts
 void trainInstance(const std::string& name, const TrainingData& data) = 0; // called for each training instance
 void endTraining(const std::string& name) = 0; // called when training is finished, usually to save the model
 ```
+
+
 
 #### ModelStorage
 
@@ -134,11 +162,15 @@ being `rein::ModelDatabase`, that uses a database (postgresql and
 sqlite3 are currently supported) for persistence. The interface has the
 following methods:
 
+
+
 ```cplusplus
 virtual void saveModel(const std::string& name, const std::string& detector, const std::string& model_blob) = 0;
 virtual bool loadModel(const std::string& name, const std::string& detector, std::string& model_blob) = 0;
 virtual bool getModelList(const std::string& detector, std::vector<std::string>& model_list) = 0;
 ```
+
+
 
 ### ROS Nodelets
 
@@ -154,6 +186,8 @@ of writing new nodelets.
 
 **Subscribed Topics**
 
+
+
 ```clearsilver
 sub {
 no_header=True
@@ -166,7 +200,11 @@ no_header=True
 }
 ```
 
+
+
 **Published Topics**
+
+
 
 ```clearsilver
 pub {
@@ -180,65 +218,95 @@ no_header=True
 }
 ```
 
+
+
 **Parameters**
+
+
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```0
+```
+
+0
 
 #### DetectorNodelet
 
 **Subscribed Topics**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```1
+```
+
+1
 
 **Published Topics**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```2
+```
+
+2
 
 **Parameters**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```3
+```
+
+3
 
 #### PoseEstimatorNodelet
 
 **Subscribed Topics**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```4
+```
+
+4
 
 **Published Topics**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```5
+```
+
+5
 
 **Parameters**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```6
+```
+
+6
 
 #### TrainerServer
 
@@ -248,16 +316,24 @@ used to train a new detector. The detector to be trained must implement
 the `rein::Trainable` interface and is passed as a parameter to the
 constructor of `TrainerServer`.
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```7
+```
+
+7
 
 **Services advertised**
 
+
+
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
 void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input point cloud
 MaskArray getMasks() const; // output masks
-```8
+```
+
+8

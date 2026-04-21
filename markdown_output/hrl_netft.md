@@ -10,14 +10,20 @@ netft sensor by incrementally sampling forces with various orientations
 of the gripper. A parameter file is fed to the utility (examples in the
 params folder) and output parameters are written back to it.
 
-Show help options: ```
+Show help options: 
+
+```
 rosrun hrl_netft netft_zeroing.py --help
 # describes the options available for the script
 ```
 
+
+
 ### Quick Start
 
 #### Training a Tool
+
+
 
 ```
 roslaunch hrl_phri_2011 phri_netft_tracking.launch
@@ -31,9 +37,15 @@ roslaunch hrl_netft netft_zero_train.launch tool:=$tool$
 # Collect at least 20 samples
 ```
 
+
+
 #### Running the Zeroing Node
+
+
 
 ```
 roslaunch hrl_phri_2011 phri_netft_tracking.launch
 roslaunch hrl_netft netft_zero_run.launch tool:=$tool$
 ```
+
+

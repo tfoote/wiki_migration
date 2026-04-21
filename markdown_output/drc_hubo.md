@@ -65,14 +65,20 @@ simulator. They are synchronized each other using [/clock](Clock) topic
 
 1\. Get the source from the
 [repository](https://github.com/JeongsooLim/drc_hubo).
+
+
 ```
 // clone the source from repository
 cd ~/catkin_ws/src
 git clone -b indigo-devel https://github.com/JeongsooLim/drc_hubo
 ```
 
+
+
 2\. If you are using Indigo, you need to remove default Gazebo2 and
-install Gazebo5. ```
+install Gazebo5. 
+
+```
 // remove default Gazebo2
 sudo apt-get remove ros-indigo-gazebo-*
 
@@ -85,6 +91,8 @@ sudo apt-get update
 sudo apt-get install ros-indigo-gazebo5-*
 ```
 
+
+
 3\. Move the contents of
 "home/{user_name}/catkin_ws/src/drc_hubo/gazebo_model" in the source
 to "home/{user_name}/.gazebo/models/".
@@ -92,31 +100,45 @@ to "home/{user_name}/.gazebo/models/".
 Change the absolute paths in the source.
 
 a\. home/{user_name}/.gazebo/models/DRC_hubo/DRC_hubo.sdf
+
+
 ```
 <plugin name="drc_plugin" filename="/home/hubo/catkin_ws/devel/lib/libdrc_plugin.so"/>
 -->
 <plugin name="drc_plugin" filename="/home/{user_name}/catkin_ws/devel/lib/libdrc_plugin.so"/>
 ```
 
+
+
 b\. home/{user_name}/.gazebo/models/DRC_head/DRC_head.sdf
 
 home/{user_name}/.gazebo/models/DRC_head_kinect/DRC_head_kinect.sdf
+
+
 ```
 <plugin name="head_plugin" filename="/home/hubo/catkin_ws/devel/lib/libhead_plugin.so"/>
 -->
 <plugin name="head_plugin" filename="/home/{user_name}/catkin_ws/devel/lib/libhead_plugin.so"/>
 ```
 
+
+
 c\.
 home/{user_name}/catkin_ws/src/drc_hubo/ros/drc_podo_connector/src/podo_connector.cpp
+
+
 ```
 fpNet = fopen("/home/hubo/catkin_ws/src/drc_hubo/ros/settings/network.txt", "r");
 -->
 fpNet = fopen("/home/{user_name}/catkin_ws/src/drc_hubo/ros/settings/network.txt", "r");
 ```
 
+
+
 d\.
 home/{user_name}/catkin_ws/src/drc_hubo/ros/drc_plugin/src/drc_plugin.cpp
+
+
 ```
 fpNet = fopen("/home/hubo/catkin_ws/src/drc_hubo/ros/settings/network.txt", "r");
 -->
@@ -127,15 +149,23 @@ fpGain = fopen("/home/hubo/catkin_ws/src/drc_hubo/ros/settings/gain.txt", "r");
 fpGain = fopen("/home/{user_name}/catkin_ws/src/drc_hubo/ros/settings/gain.txt", "r");
 ```
 
+
+
 e\.
 home/{user_name}/catkin_ws/src/drc_hubo/ros/drc_podo_connector/launch/drc_hubo.launch
+
+
 ```
 args="-sdf -file /home/hubo/.gazebo/models/DRC_hubo/DRC_hubo.sdf -model DRC_hubo"
 -->
 args="-sdf -file /home/{user_name}/.gazebo/models/DRC_hubo/DRC_hubo.sdf -model DRC_hubo"
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = podo_connector
@@ -206,6 +236,10 @@ args="-sdf -file /home/{user_name}/.gazebo/models/DRC_hubo/DRC_hubo.sdf -model D
  }
 ```
 
+
+
+
+
 ```clearsilver
 
  name = head_plugin
@@ -258,17 +292,25 @@ pub {
  }
 ```
 
+
+
 ## Examples
 
 ### SLAM (wheel mode)
 
 a\. launch PODO (Daemon and PODOGUI)
 
-b\. launch drc_hubo.launch ```
+b\. launch drc_hubo.launch 
+
+```
 roslaunch drc_podo_connector drc_hubo.launch
 ```
 
-c\. launch slam.launch ```
+
+
+c\. launch slam.launch 
+
+```
 // remove default Gazebo2
 sudo apt-get remove ros-indigo-gazebo-*
 
@@ -279,7 +321,9 @@ sudo apt-get update
 
 // install Gazebo5
 sudo apt-get install ros-indigo-gazebo5-*
-```0
+```
+
+0
 
 d\. make wheel mode using PODOGUI and click the "ROS MODE"
 
@@ -291,7 +335,9 @@ e\. use [teleop_twist_joy](teleop_twist_joy) to make a map
 
 a\. launch PODO (Daemon and PODOGUI)
 
-b\. launch drc_hubo.launch ```
+b\. launch drc_hubo.launch 
+
+```
 // remove default Gazebo2
 sudo apt-get remove ros-indigo-gazebo-*
 
@@ -302,9 +348,13 @@ sudo apt-get update
 
 // install Gazebo5
 sudo apt-get install ros-indigo-gazebo5-*
-```1
+```
 
-c\. launch navi.launch ```
+1
+
+c\. launch navi.launch 
+
+```
 // remove default Gazebo2
 sudo apt-get remove ros-indigo-gazebo-*
 
@@ -315,7 +365,9 @@ sudo apt-get update
 
 // install Gazebo5
 sudo apt-get install ros-indigo-gazebo5-*
-```2
+```
+
+2
 
 d\. make wheel mode using PODOGUI and click the "ROS MODE"
 

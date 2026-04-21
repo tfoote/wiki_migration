@@ -17,7 +17,9 @@ Care-O-Bot (see [cob_bringup](cob_bringup) and
 
 The [cob_collision_velocity_filter](cob_collision_velocity_filter)
 package provides a configurable node for collision avoidance using
-teleoperation devices ```clearsilver
+teleoperation devices 
+
+```clearsilver
  name = cob_collision_velocity_filter
  desc = The `cob_collision_velocity_filter` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages from the teleop device as well as [[http://ros.org/doc/api/nav_msgs/html/msg/GridCells.html|nav_msgs/GridCells]] messages specifying the obstacles on the costmap. The safe movement commands are published as a [[Topics|topic]], as well as the extracted relevant obstacles in driving direction. It further periodically tries to call the `/get_footprint` service of [[cob_footprint_observer]] to check for changed footprints and adjusts the used one accordingly.
 
@@ -118,22 +120,34 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 For starting the `cob_collision_velocity_filter` use
+
+
 ```
 roslaunch cob_bringup base_collision_observer.launch
-``` This launches the required rolling window
+```
+
+ This launches the required rolling window
 [costmap_2d](costmap_2d) as well as the optional
 [cob_footprint_observer](cob_footprint_observer). If you don't want to
 use the [cob_footprint_observer](cob_footprint_observer) simply comment
 or delete the respective lines in the launch file. For including the
 `collision_velocity_filter` in your overall launch file use
+
+
 ```
 <include file=$(find cob_bringup/tools/base_collision_observer.launch />
-``` A sample parameter file for the
+```
+
+ A sample parameter file for the
 [cob_collision_velocity_filter](cob_collision_velocity_filter) can look
-like this: ```
+like this: 
+
+```
 #where to look for costmap parameters
 costmap_parameter_source: "/local_costmap_node/costmap" #default "/local_costmap_node/costmap"
 
@@ -153,3 +167,5 @@ obstacle_damping_dist: 1.0 # used as slow-down dist
 stop_threshold: 0.1 #[m]
 use_circumscribed_threshold: 0.2 #[rad/s]
 ```
+
+

@@ -11,9 +11,13 @@ the MoveIt! Motion Planning Framework.
 ## Install
 
 On your `Ubuntu` machine where `ROS` [indigo](indigo) is installed:
+
+
 ```
 $ sudo apt-get install ros-indigo-minas
-``` This command will have the following packages:
+```
+
+ This command will have the following packages:
 
 -   From `minas` package suite: [ethercat_manager](ethercat_manager),
     [minas_control](minas_control), [tra1_bringup](tra1_bringup),

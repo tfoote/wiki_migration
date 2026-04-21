@@ -10,8 +10,6 @@ Robo@FIT group.
 -   but_velodyne_odom - odometry estimation based on point clouds and
     RGB
 
-<<GitHubIssues(robofit/but_velodyne)>>
-
 ## Requirements
 
 ## Installation

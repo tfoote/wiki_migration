@@ -52,6 +52,8 @@ To set up the ```catkin_make``` tools in Visual Studio 2019:
     CMake Settings for Project``` and edit the JSON version of your
     Cmake settings file as follows:
 
+
+
 ```
 {
   "configurations": [
@@ -69,6 +71,8 @@ To set up the ```catkin_make``` tools in Visual Studio 2019:
 }
 ```
 
+
+
 In this way, Cmaking and building your project from Visual Studio will
 be equal to a catkin_make outside the Visual Studio environment. You can
 also open the Command Line directly from the Visual Studio
@@ -82,18 +86,26 @@ the installation instructions available
 
 ### Clone mitch_v2_driver in your Catkin Workspace
 
-a\) Ubuntu: ```
+a\) Ubuntu: 
+
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/mitch_v2_driver.git
 $ catkin_make
 ```
 
-b\) Windows: ```
+
+
+b\) Windows: 
+
+```
 $ cd c:\catkin_ws\src
 $ git clone https://github.com/221eROS/mitch_v2_driver.git
 $ cd ..
 $ catkin_make
 ```
+
+
 
 ## Usage
 
@@ -101,26 +113,38 @@ $ catkin_make
 
 Switch on your MITCH V2 device. From your catkin workspace, launch the
 following command to connect to your sensor and enable its ROS node:
+
+
 ```
 $ roslaunch mitch_v2_driver mitch_v2.launch
-``` Among others, this launch file allows you to
+```
+
+ Among others, this launch file allows you to
 set: - port name (Default: COM4); - baudrate (Default: 115200).
 
 ### Device shutdown
 
 Assuming the ROS node of your MITCH V2 sensor is active \[step 3(a)\],
 launch the following command to switch off your device:
+
+
 ```
 $ roslaunch mitch_v2_driver shutdown.launch
 ```
+
+
 
 ### Battery charge and voltage
 
 Assuming the ROS node of your MITCH V2 sensor is active \[step 3(a)\],
 type the following command from your catkin workspace:
+
+
 ```
 $ roslaunch mitch_v2_driver battery.launch
-``` The node will send back the battery charge, its
+```
+
+ The node will send back the battery charge, its
 voltage, or both depending on whether the arguments \*charge\* and
 \*voltage\* are set to \*true\*.
 
@@ -128,6 +152,10 @@ voltage, or both depending on whether the arguments \*charge\* and
 
 Assuming the ROS node of your MITCH V2 sensor is active \[step 3(a)\],
 type the following command from your catkin workspace:
+
+
 ```
 $ roslaunch mitch_v2_driver get_firmware_version.launch
 ```
+
+

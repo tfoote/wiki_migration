@@ -20,6 +20,8 @@ used ones are shown here.
 
 **cv_backports/imshow.hpp**
 
+
+
 ```cplusplus
 void imshow(const std::string& winname, cv::InputArray mat);
 void namedWindow(const std::string& winname, int flags = cv::WINDOW_AUTOSIZE);
@@ -40,9 +42,13 @@ CvFont fontQt(const std::string& nameFont, int pointSize=-1,
 void addText( const cv::Mat& img, const std::string& text, cv::Point org, CvFont font);
 ```
 
+
+
 ## Examples
 
 **imshow**
+
+
 
 ```cplusplus
 #include <cv_backports/imshow.hpp>
@@ -55,3 +61,5 @@ cv_backports::imshow(name, image);
 // eventually
 cv_backports::destroyWindow(name);
 ```
+
+

@@ -40,11 +40,15 @@ registration module.
 
 ## Installation Instructions
 
+
+
 ```
 git clone http://code.in.tum.de/git/mapping.git
 cd mapping/rgbd_registration
 make
 ```
+
+
 
 The makefile will download some sample test data (130MB download) from
 the internet. This can be disabled in the CMakeLists.txt
@@ -56,9 +60,13 @@ structure.
 
 ## Usage
 
+
+
 ```
 roslaunch rgbd_registration rgbd_registration.launch
 ```
+
+
 
 The package has just one executable and is best started with the launch
 file rgbd_registration.launch. The launch file handles file input and
@@ -72,10 +80,14 @@ the launch file. The "source" pointcloud is transformed to the
 "target". So to see the alignment one should view both the target and
 transformed pointclouds together:
 
+
+
 ```
 cd results
 pcd_viewer target_cloud.pcd transformed_cloud.pcd
 ```
+
+
 
 ## ROS Parameters
 

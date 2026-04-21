@@ -17,27 +17,43 @@ Please also see our project page
 This application works with Kinect. Please install
 [openni_kinect](http://www.ros.org/wiki/openni_kinect) package, first.
 Connect Kinect and start to get color point could:
+
+
 ```
 $ roslaunch openni_camera openni_node.launch
 ```
 
+
+
 ### Three steps for object detection application
 
-**1. learn the environment** ```
+**1. learn the environment** 
+
+```
 $ bash `rospack find color_voxel_recognition`/demos/SH/learn_env.sh
-``` Press "Enter"
+```
+
+ Press "Enter"
 key for saving data, and "Ctrl+C" ONLY ONCE for quit. (This step is
 necessary for only once.)
 
-**2. learn objects** ```
+**2. learn objects** 
+
+```
 $ bash `rospack find color_voxel_recognition`/demos/SH/learn_obj.sh <object_name>
-``` Put the target object
+```
+
+ Put the target object
 closest from Kinect and confirm the green box contains only the object.
 Press "Enter" key for saving data, and "Ctrl+C" ONLY ONCE for quit.
 (This step is necessary once for each object.)
 
-**3. detect one object** ```
+**3. detect one object** 
+
+```
 $ bash `rospack find color_voxel_recognition`/demos/SH/detect_test.sh <object_name> <similarity_threshold> <bounding_box_size>
-``` *similarity_threshold*
+```
+
+ *similarity_threshold*
 should be between 0 and 1. *bounding_box_size* should be given in metric
 unit.

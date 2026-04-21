@@ -3,6 +3,8 @@ Motion Analysis of 3 wheeled omnidirectional robot:
 
 ## Installing
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/YugAjmera/teleop_keyboard_omni3
@@ -12,15 +14,23 @@ source ~/catkin_ws/devel/setup.bash
 source ~/.bashrc
 ```
 
+
+
 ## Running
+
+
 
 ```
 rosrun teleop_keyboard_omni3 teleop_keyboard_omni3.py
 ```
 
+
+
 ## Controls
 
 See the on-screen instructions:
+
+
 
 ```
 Reading from the keyboard !
@@ -43,3 +53,5 @@ q/z : increase/decrease max speeds by 10%
 
 CTRL-C to quit
 ```
+
+

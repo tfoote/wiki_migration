@@ -13,6 +13,8 @@ motors using the pr2_dashboard.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = pr2_transmission_check
 desc = Publishes joint and controller diagnostics, checks transmissions
@@ -30,6 +32,8 @@ srv {
   0.desc= Reset the transmission status to True
 }
 ```
+
+
 
 All transmissions will publish diagnostics on last observed position,
 the joints and actuators, and the number of errors. Joints that have

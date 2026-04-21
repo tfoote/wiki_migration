@@ -13,6 +13,8 @@ this one for new applications.
 
 ### Usage
 
+
+
 ```
 rosrun applanix odometry [options]
 
@@ -23,17 +25,29 @@ Options:
     -t <filename>  run unit test with fake data from <filename>
 ```
 
+
+
 ### Examples
 
 Read the Applanix POS-LV, publishing `gps` and `odom` messages.
+
+
 ```
 $ rosrun applanix odometry
 ```
 
+
+
 Read previously captured Applanix packets from `dump.pcap` file.
+
+
 ```
 $ rosrun applanix odometry -f dump.pcap
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -64,3 +78,5 @@ sub {
   0.desc = Transmission gear currently selected.
 }
 ```
+
+

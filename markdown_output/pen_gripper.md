@@ -44,9 +44,17 @@ to let the pr2 draw a portrait or you can use it with an
 <<SrvLink(portrait_roboter_msgs/alubsc_node_instr)>> message
 
 start the service node and the [ee_cart_imped](ee_cart_imped) controller
+
+
 ```
 roslaunch pen_gripper pen_gripper.launch
-``` send a service call (with abort = 0 and an
-empty list) to let the pr2 grip a pen ```
+```
+
+ send a service call (with abort = 0 and an
+empty list) to let the pr2 grip a pen 
+
+```
 rosservice call /alubsc/node_instr/pen_gripper "0" "[]"
 ```
+
+

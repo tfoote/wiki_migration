@@ -2,9 +2,13 @@
 
 ## Prerequirements
 
-Install packages ```
+Install packages 
+
+```
 sudo apt-get install ros-indigo-pepper-robot ros-indigo-pepper-meshes
 ```
+
+
 
 ## Bring up Pepper
 
@@ -12,13 +16,21 @@ You can start Pepper either with a [C++](naoqi_driver) or
 [Python](naoqi_driver_py) version. The pepper_bringup package thus
 contains two launch files.
 
-For starting the C++ version: ```
+For starting the C++ version: 
+
+```
 roslaunch pepper_bringup pepper_full.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip> [network_interface:=<eth0|wlan0|vpn0>]
 ```
 
-Similar, the Python version: ```
+
+
+Similar, the Python version: 
+
+```
 roslaunch pepper_bringup pepper_full_py.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip>
 ```
+
+
 
 As shown above, the launch files contain 3 parameters
 

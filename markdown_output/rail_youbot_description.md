@@ -12,12 +12,16 @@ packages can be found
 [in this tutorial](rail_youbot/Tutorials/AddingAUserAndInstallingTheirLocalDrivers).
 
 To install the `rail_youbot` stack, simply run the following commands
-in your shell: ```shell
+in your shell: 
+
+```shell
 cd /path/to/your/local/ros/stacks
 git clone https://github.com/WPI-RAIL/rail_youbot.git
 roscd rail_youbot
 rosmake rail_youbot
 ```
+
+
 
 This will ensure all dependencies are met and that the package is ready
 for use.

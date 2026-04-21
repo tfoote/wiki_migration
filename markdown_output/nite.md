@@ -23,44 +23,64 @@ installation as described in the
 
 Instead of depending on the `nite` package, declare the following
 [rosdeps](rosdep) in your [manifest.xml](Manifest):
+
+
 ```
 <rosdep name="openni-dev" />
 <rosdep name="ps-engine" />
 <rosdep name="nite-dev"/>
 ```
 
+
+
 Now `rosdep install MY_AWESOME_PACKAGE` will install OpenNI, the
 `ps-engine` device driver, and NITE.
 
 If you provide headers included by code in other packages, and those
 headers use OpenNI and/or NITE, then you must also export the flags:
+
+
 ```
 <export>
   <cpp cflags="-I/usr/include/openni -I/usr/include/nite" />
 </export>
 ```
 
+
+
 ### CMakeLists.txt (linking against NITE)
 
 The OpenNI and NITE headers are installed in `/usr/include/openni` and
 `/usr/include/nite`, respectively. In your
 [CMakeLists.txt](rosbuild/CMakeLists), add the include directories:
+
+
 ```
 include_directories(/usr/include/openni /usr/include/nite)
 ```
 
+
+
 NITE is loaded dynamically by the OpenNI framework, so link your
-binaries against OpenNI: ```
+binaries against OpenNI: 
+
+```
 rosbuild_add_executable(my_awesome_demo src/my_awesome_demo.cpp)
 target_link_libraries(my_awesome_demo OpenNI)
 ```
 
+
+
 ### my_code.cpp (using NITE in your code)
 
 You can access the OpenNI C++ wrapper in your code with:
+
+
 ```cplusplus
 #include <XnCppWrapper.h>
 ```
+
+
 
 NITE is a module providing APIs like `UserGenerator`. See the
 [OpenNI documentation](http://openni.org/Documentation/) for more

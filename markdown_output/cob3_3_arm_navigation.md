@@ -24,24 +24,36 @@ This tutorial assumes that you are familiar with:
 -   using the [cob_command_gui](cob_command_gui) to move the arm
 
 Please compile cob3_3_arm_navigation to make sure all dependencies can
-be found. ```
+be found. 
+
+```
 rosdep install cob3_3_arm_navigation
 rosmake cob3_3_arm_navigation
 ```
 
+
+
 ### Start the planning environment
 
-To start the arm_navigation please call ```
+To start the arm_navigation please call 
+
+```
 roslaunch cob3_3_arm_navigation cob3_3_arm_navigation.launch
-``` to
+```
+
+ to
 start all nodes necessary to perform collision-free path planning
 (considering self-collision, known obstacles as well as sensor data).
 
 **OR**
 
-Call ```
+Call 
+
+```
 roslaunch cob3_3_arm_navigation cob3_3_arm_navigation_static.launch
-``` to start all nodes necessary to perform
+```
+
+ to start all nodes necessary to perform
 collision-free path planning (considering self-collision and known
 obstacles but **NO** sensor data).
 
@@ -56,9 +68,13 @@ This is the easiest way to plan collision-free paths to predefined
 configurations. It uses the [cob_command_gui](cob_command_gui) which is
 started by
 
+
+
 ```
 roslaunch cob_bringup dashboard.launch
 ```
+
+
 
 On the [cob_command_gui](cob_command_gui) you can move all modules of
 the [care-o-bot](care-o-bot). However, planned motion can only be

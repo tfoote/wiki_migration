@@ -31,22 +31,34 @@ package abilities.
 [vision_visp](vision_visp) stack.
 
 -   To install [visp_hand2eye_calibration](visp_hand2eye_calibration)
-    package run ```
+    package run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-visp-hand2eye-calibration
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
--   Or to install the complete stack run ```
+-   Or to install the complete stack run 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
 
+
+
 ## Usage
 
-To run the `calibrator` node: ```
+To run the `calibrator` node: 
+
+```
 rosrun visp_hand2eye_calibration visp_hand2eye_calibration_calibrator
 ```
+
+
 
 ## Example
 
@@ -55,24 +67,38 @@ transformations (camera->object and world->hand) to the calibrator
 which computes the relative transformation between the the camera and
 the hand.
 
-To try this example, run roscore first. ```
+To try this example, run roscore first. 
+
+```
 roscore
 ```
 
+
+
 Then, run the client:
+
+
 
 ```
 rosrun visp_hand2eye_calibration visp_hand2eye_calibration_client
 ```
 
+
+
 Finally, run the calibrator:
+
+
 
 ```
 rosrun visp_hand2eye_calibration visp_hand2eye_calibration_calibrator
 ```
 
+
+
 The output displayed in the terminal running your client should look
 like this:
+
+
 
 ```
 [ INFO] [1329226083.184531090]: Waiting for topics...
@@ -114,7 +140,11 @@ rotation:
   w: 0.215889
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -144,3 +174,5 @@ srv_called{
 }
 }
 ```
+
+

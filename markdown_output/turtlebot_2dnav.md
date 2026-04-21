@@ -8,9 +8,13 @@ autonomously through a previously mapped environment.
 The [turtlebot_2dnav](turtlebot_2dnav) application can be run with the
 following command:
 
+
+
 ```
 roslaunch turtlebot_2dnav turtlebot_2dnav.launch map_file:=/my_map.yaml
 ```
+
+
 
 ## Interacting with the Application
 
@@ -21,9 +25,13 @@ turtlebot_2dnav application can be commanded via [rviz](rviz),
 ### rviz
 
 -   You can bring up rviz using turtlebot_2dnav configuration by running
-    the following launch file: ```
+    the following launch file: 
+
+```
 roslaunch turtlebot_rviz_launchers view_navigation.launch --screen
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -52,9 +60,13 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch --screen
 ```
 -   In order to make ROS able to communicate with the webpage that uses
     ros2djs, we launch the web socket after the turtlebot_2dnav.
-    ```
+    
+
+```
 roslaunch rosbridge_server rosbridge_websocket.launch
 ```
+
+
 
 ```{=html}
 <!-- -->

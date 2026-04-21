@@ -17,6 +17,8 @@ Observer (HObs) and Property Observer (PObs).
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name= DObs
@@ -227,3 +229,5 @@ pub{
 }
 }
 ```
+
+

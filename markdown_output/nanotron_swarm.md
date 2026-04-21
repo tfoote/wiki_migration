@@ -2,11 +2,19 @@
 
 ![](http://wiki.ros.org/nanotron_swarm?action=AttachFile&do=get&target=nanoPAN_DK)
 
+
+
 ```wiki
 This package is part of the ROS stack [[rangeonly_driver]]. It provides a driver for [[http://nanotron.com/|Nanotron]] range-only sensors based on Swarm API firmware. The ROS driver has been developed at the University of Seville in the [[http://grvc.us.es|Robotics, Vision and Control research group (GRVC)]]. This driver also provides a custom ROS message for range-only sensors (see message [[http://docs.ros.org/indigo/api/rangeonly_msgs/html/msg/P2PRange.html|rangeonly_msgs/P2PRange]] on package [[rangeonly_msgs]]).
-``` ```wiki
+```
+
+ 
+
+```wiki
 This package is part of the ROS stack [[rangeonly_driver]]. It provides a driver for [[http://nanotron.com/|Nanotron]] range-only sensors based on Swarm API firmware. The ROS driver has been developed at the University of Seville in the [[http://grvc.us.es|Robotics, Vision and Control research group (GRVC)]]. This driver also provides a custom ROS message for range-only sensors (see message nanotron_swarm/P2PRange of this rosbuild package).
-``` In the case of
+```
+
+ In the case of
 Nanotron devices, these devices are based on the Time of Flight of radio
 signals to measure the distance between a pair of devices.
 
@@ -25,6 +33,8 @@ Examples of usage of this driver can be found in:
 
 ## Nodes
 
+
+
 ```
 {#!wiki buildsystem catkin
 {{{
@@ -37,7 +47,11 @@ node.0 {
     0.type= rangeonly_msgs/P2PRange
     0.desc= The range-only mesaurements.
   }
-``` }}}} ```
+```
+
+ }}}} 
+
+```
 {#!wiki buildsystem rosbuild
 {{{
 #!clearsilver CS/NodeAPI
@@ -49,9 +63,13 @@ node.0 {
     0.type= nanotron_swarm/P2PRange or nanotron_swarm/P2PRange (in rosbuild)
     0.desc= The range-only mesaurements.
   }
-``` }}}}
+```
+
+ }}}}
 
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -67,6 +85,6 @@ param {
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(felramfab/rangeonly_driver)>>
+
+## Report a Bug

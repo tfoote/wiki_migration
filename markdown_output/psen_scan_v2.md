@@ -51,9 +51,13 @@ line. This will launch the ROS Node with the default configuration.
 If you wish to set parameters from the command line, add them to the end
 of the command as **parameter:=value**, separated by spaces.
 
+
+
 ```
 roslaunch psen_scan_v2 psen_scan_v2.launch sensor_ip:=192.168.0.10
 ```
+
+
 
 This example configures the safety laser scanner at 192.168.0.10 to send
 it´s frames to the ROS node at localhost.
@@ -106,20 +110,32 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
     scan round to be completed. This way the scan data is received
     sooner but is split into several sensor messages.
 
+
+
 ```wiki
 '''Hint: 1: Scan rounds and fragments that contain no measurement data are not published. This can happen with smaller scan ranges.'''
 ```
+
+
+
+
 
 ```wiki
 '''Hint: 2: Frequency of the laser scan messages is about 33hz for the combined and 200hz for the fragmented scans.'''
 ```
 
+
+
 **/<name>/zoneconfiguration**
 ([psen_scan_v2/ZoneSetConfiguration](http://docs.ros.org/en/noetic/api/psen_scan_v2/html/msg/ZoneSetConfiguration.html))
+
+
 
 ```wiki
 '''Hint: 1: Will not be advertised if no config_file is provided.'''
 ```
+
+
 
 **/<name>/active_zoneset**
 ([std_msgs/UInt8](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt8.html))
@@ -127,9 +143,13 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 -   This topic contains the id of the currently active zoneset of the
     PSENscan safety laser scanner.
 
+
+
 ```wiki
 '''Hint: 1: If no zonesets are configured the driver will publish "0" as default.'''
 ```
+
+
 
 **/<name>/active_zoneset_markers**
 ([visualization_msgs/MarkerArray](http://docs.ros.org/en/noetic/api/visualization_msgs/html/msg/MarkerArray.html))
@@ -137,13 +157,21 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 -   The markers published represent the currently active zoneset as
     triangle lists. They can be viewed e.g. in rviz.
 
+
+
 ```wiki
 '''Hint: 1: Uses the topics /<name>/zoneconfiguration and /<name>/active_zoneset to calculate the vizualization and updates in the same frequency as those topics.'''
 ```
 
+
+
+
+
 ```wiki
 '''Hint: 2: Will not be advertised if no config_file is provided.'''
 ```
+
+
 
 **/<name>/io_states**
 ([psen_scan_v2/IOState](http://docs.ros.org/en/noetic/api/psen_scan_v2/html/msg/IOState.html))
@@ -152,17 +180,29 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
     the scanner IOs. A list of all available IOs can be found
     [here](#Transferred_IOs)
 
+
+
 ```wiki
 '''Hint: 1: With every scan data of a monitoring frame the IO states are transferred from the PSENscan safety laser scanner. They are processed in the same way as the scan data.'''
 ```
+
+
+
+
 
 ```wiki
 '''Hint: 2: By using <fragmented_scans=true> the driver will publish 1 IOStates while with <fragmented_scans=false> it will publish 6 IOStates per single publish of scan data.'''
 ```
 
+
+
+
+
 ```wiki
 '''Hint: 3: The timesamps of all IO states are the same as the one of their corresponding `LaserScan` msg.'''
 ```
+
+
 
 ### TF Frames
 
@@ -254,16 +294,24 @@ will be exactly the same in ROS:
      <40%>      ![configurator_screenshot\|width=700](https://raw.githubusercontent.com/PilzDE/psen_scan_v2/main/img/zones_screenshot_rviz.png)      <40%>   
   -- --------- -- --------------------------------------------------------------------------------------------------------------------------------- -- --------- --
 
-You can try this out with: ```wiki
+You can try this out with: 
+
+```wiki
 '''Hint: 1: Scan rounds and fragments that contain no measurement data are not published. This can happen with smaller scan ranges.'''
-```0
+```
+
+0
 
 If you want to use the configuration node in your launchfile add a
 section such as:
 
+
+
 ```wiki
 '''Hint: 1: Scan rounds and fragments that contain no measurement data are not published. This can happen with smaller scan ranges.'''
-```1
+```
+
+1
 
 ### Visualizing the active zoneset
 
@@ -273,8 +321,6 @@ For visualizing the active zoneset in RViz you can run the
 screenshot above.
 
 ## Report a Bug
-
-<<GitHubIssues(PilzDE/psen_scan_v2)>>
 
 ## Further information
 

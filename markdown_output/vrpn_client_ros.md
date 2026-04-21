@@ -13,6 +13,8 @@ unsolved. See sample configuration launch file
 
 ## Node API
 
+
+
 ```clearsilver
 name = vrpn_client_node
 desc = The client node connects to a remote VRPN server, and exposes information from the server's Trackers over ROS topics and [[tf2]]. The client node auto-detects, or is provided the Tracker names via ROS params (must be [[http://wiki.ros.org/Names#Valid_Names|valid]] ROS Graph names).
@@ -53,3 +55,5 @@ param {
   5.default = true
 }
 ```
+
+

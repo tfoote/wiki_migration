@@ -44,17 +44,29 @@ features.
 ### Quick start
 
 Don't forget to build the driver if you've installed from source:
+
+
 ```
 rosmake openni_camera_unstable
 ```
 
-Launch the OpenNI driver: ```
+
+
+Launch the OpenNI driver: 
+
+```
 roslaunch openni_camera_unstable openni.launch
 ```
 
-To visualize in [rviz](rviz): ```
+
+
+To visualize in [rviz](rviz): 
+
+```
 rosrun rviz rviz
 ```
+
+
 
 Set the Fixed Frame (top left of rviz window) to
 `/camera_depth_optical_frame`.
@@ -64,14 +76,22 @@ Add a !PointCloud2 display, and set the topic to
 with viewing. This is the *unregistered* point cloud in the frame of the
 depth (IR) camera. It is not matched with the RGB camera images.
 
-Alternatively you can view the disparity image: ```
+Alternatively you can view the disparity image: 
+
+```
 rosrun image_view disparity_view image:=/camera/depth/disparity
 ```
 
+
+
 Now let's look at a *registered* point cloud, aligned with the RGB
-data. Open the dynamic reconfigure GUI: ```
+data. Open the dynamic reconfigure GUI: 
+
+```
 rosrun dynamic_reconfigure reconfigure_gui
 ```
+
+
 
 And select `/camera/driver` from the drop-down menu. Enable
 `depth_registration`: ![](attachment:openni_reconfigure.png)
@@ -81,18 +101,30 @@ Now go back to rviz, and change your !PointCloud2 topic to
 You should see a color, 3D point cloud of your scene.
 
 Again, you can view the registered disparity image:
+
+
 ```
 rosrun image_view disparity_view image:=/camera/depth_registered/disparity
 ```
 
+
+
 To view the color image from the RGB camera outside of rviz:
+
+
 ```
 rosrun image_view image_view image:=/camera/rgb/image_color
 ```
 
-or to view the grayscale image: ```
+
+
+or to view the grayscale image: 
+
+```
 rosrun image_view image_view image:=/camera/rgb/image_mono
 ```
+
+
 
 ### Camera calibration
 
@@ -105,6 +137,8 @@ For instructions on calibrating camera intrinsics, see
 
 This package provides launch files to load the driver nodelet and
 various data processing nodelets as a coordinated system.
+
+
 
 ```clearsilver
 node.0 {
@@ -295,6 +329,8 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
   }
 }
 ```
+
+
 
 ## Nodelets
 

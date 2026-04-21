@@ -61,6 +61,8 @@ the trajectory to make predictions.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = model_learner_msg
 desc = This node receives kinematic trajectories in form of <<MsgLink(articulation_msgs/TrackMsg)>> messages, fits the trajectories to all known model classes, selects the model with the lowest BIC (Bayesian Information Criterion), and publishes the result in form of a <<MsgLink(articulation_msgs/ModelMsg)>> message. The node operates in real-time i.e., it has a queue size of 1 and might drop messages if processing takes too long. 
@@ -89,6 +91,10 @@ param {
   2.default = "rigid prismatic rotational"
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = model_learner_srv
@@ -119,6 +125,10 @@ param {
   2.default = "rigid prismatic rotational"
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = model_learner_prior
@@ -160,7 +170,11 @@ param {
 }
 ```
 
+
+
 ## Useful Scripts
+
+
 
 ```clearsilver
 name = prior_publisher_atonce.py
@@ -180,6 +194,10 @@ srv_called {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = simple_publisher.py
 desc = This node publishes a trajectory from a text file. Each line of the text file contains a single pose, with space-separated values. The format of a pose is "x y z [qw qx qy qz [width height]]", where x y z is the Cartesian position, qw qx qy qz is the (optional) orientation, and width and height is the (optional) dimensions of a door/drawer front. The script reads the complete file at once, then moves the trajectory to start at the origin. Then it incrementally sends out <<MsgLink(articulation_msgs/TrackMsg)>> messages, at 0.05 second intervals. For an example of this script, run `roslaunch demo_fitting fit_kitchen.launch`.
@@ -188,6 +206,10 @@ pub {
   0.type = articulation_msgs/TrackMsg
   0.desc = Incrementally publishes kinematic trajectories that it reads from a text file. }
 ```
+
+
+
+
 
 ```clearsilver
 name = prior_save.py
@@ -198,6 +220,10 @@ srv_called {
   3.desc = Retrieves the current list of prior models. }
 ```
 
+
+
+
+
 ```clearsilver
 name = prior_load.py
 desc = This node loads prior models from a file, and restores them using the `model_prior_set` service.
@@ -206,6 +232,8 @@ srv_called {
   3.type = articulation_msgs/SetModelPriorSrv
   3.desc = Sets the current list of prior models. }
 ```
+
+
 
 ## References
 

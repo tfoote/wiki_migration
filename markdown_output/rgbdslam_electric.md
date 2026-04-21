@@ -38,11 +38,15 @@ Installation **should** work with (but hasn't been tested)
 If you do not already have a directory for personal ROS packages, create
 one like this:
 
+
+
 ```
 mkdir -p ~/ros
 echo 'export ROS_PACKAGE_PATH=~/ros:$ROS_PACKAGE_PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+
 
 **The remainder of this description assumes you chose /ros/ as your
 personal package path.** Otherwise you need to adapt the paths below,
@@ -52,14 +56,22 @@ where /ros is contained to fit your directory strucure.
 
 Download RGBDSLAM and g2o to your personal package path:
 
+
+
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/rgbdslam_freiburg/rgbdslam@2924
 svn co https://code.ros.org/svn/ros-pkg/stacks/vslam/trunk/g2o ~/ros/g2o
 ```
 
-Build rgbdslam and g2o. ```
+
+
+Build rgbdslam and g2o. 
+
+```
 rosmake --rosdep-install rgbdslam
-``` This takes quite a time
+```
+
+ This takes quite a time
 (20min on an old laptop with core2 cpu T5600 at 1.83GHz). You can
 advance to the next section and fetch the benchmark data and tools
 meanwhile. Using "export ROS_PARALLEL_JOBS=-jX" with X being the
@@ -69,9 +81,13 @@ factor of X, but will need huge amounts of memory (\~ 1GB per core).
 If ros dependency resolution failed for your system for some reason, you
 might need to install the system dependencies manually:
 
+
+
 ```
 sudo apt-get install libglew1.5-dev libdevil-dev libsuitesparse-dev
-``` If this fails and you can not figure out the
+```
+
+ If this fails and you can not figure out the
 solution, please check/ask for solutions at
 [answers.ros.org](http://answers.ros.org/questions/?tags=rgbdslam).
 
@@ -85,15 +101,23 @@ save to a ply file and use meshlab (debian-package: meshlab).
 
 To start RGBDSLAM launch
 
+
+
 ```
 roslaunch rgbdslam kinect+rgbdslam.launch
-``` Alternatively you can start the openni nodes
+```
+
+ Alternatively you can start the openni nodes
 and RGBDSLAM separately, e.g.:
+
+
 
 ```
 roslaunch openni_camera openni_node.launch
 rosrun rgbdslam rgbdslam
-``` To capture models either press space to start
+```
+
+ To capture models either press space to start
 recording a continuous stream or press enter to record a single frame.
 To reduce data redundancy, sequential frames from (almost) the same
 position are not included in the final model. The 3D visualization
@@ -104,18 +128,26 @@ triangulated except at missing values and depth jumps.
 
 To generate octomaps from the registered point clouds you need to
 install the octomap stacks. The easiest way (for non-colored octomaps)
-ist to install from the debian repositories: ```
+ist to install from the debian repositories: 
+
+```
 sudo apt-get install ros-electric-octomap-mapping ros-electric-octomap-visualization
 ```
+
+
 
 Generating Colored Octomap requires the experimental version of the
 [octomap stack](http://www.ros.org/wiki/octomap) to be installed.
 
 -   Checkout and compile the experimental version of the octomap stack:
 
+
+
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/branches/octomap_mapping-experimental/
 ```
+
+
 
 -   Start rgbdslam as described above, capture a scene
 -   Execute `roslaunch rgbdslam octomap_server.launch`
@@ -159,6 +191,8 @@ camera"**, Proc. of the *RGB-D Workshop on 3D Perception in Robotics at
 the European Robotics Forum*, Vasteras, Sweden, 2011.
 [pdf](http://vision.in.tum.de/_media/spezial/bib/engelhard11euron.pdf)
 
+
+
 ```
 @InProceedings{ engelhard11euron-workshop,
     TITLE = "Real-time 3D visual SLAM with a hand-held RGB-D camera",
@@ -170,11 +204,15 @@ the European Robotics Forum*, Vasteras, Sweden, 2011.
 }
 ```
 
+
+
 Felix Endres and Jürgen Hess and Nikolas Engelhard and Jürgen Sturm and
 Daniel Cremers and Wolfram Burgard, **"An Evaluation of the RGB-D SLAM
 System"**, In the Proc. of the International Conference on Robotics and
 Automation (ICRA) 2012.
 [pdf](http://vision.in.tum.de/_media/spezial/bib/endres12icra.pdf)
+
+
 
 ```
 @InProceedings{endres12icra,
@@ -186,3 +224,5 @@ month={May},
 year={2012}
 }
 ```
+
+

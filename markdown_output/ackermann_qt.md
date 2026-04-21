@@ -3,6 +3,8 @@ steering under human control.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = qteleop
@@ -15,8 +17,14 @@ node.0 {
 }
 ```
 
+
+
 #### Example
 
-Run the teleop script. ```
+Run the teleop script. 
+
+```
 rosrun ackermann_qt qteleop
 ```
+
+

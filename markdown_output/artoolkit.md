@@ -10,8 +10,12 @@ their home page.
 
 In Ubuntu 11.04 and 11.10, you may encounter errors related to
 *videoLinuxV4L*. A possible workaround is to patch the header files
-manually with: . ```
+manually with: . 
+
+```
 $ roscd artoolkit
 $ sed -i 's,#include <linux/videodev.h>,#include <libv4l1-videodev.h>,g' ./build/artoolkit/include/AR/sys/videoLinuxV4L.h
 $ sed -i 's,#include <linux/videodev.h>,#include <libv4l1-videodev.h>,g' ./build/artoolkit/lib/SRC/VideoLinuxV4L/video.c
 ```
+
+

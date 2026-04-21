@@ -52,18 +52,26 @@ In order to use ROSRemote first it is necessary to start the master on
 all devices that the user want to connect, it includes robots and
 computers. This is done by using the command.
 
+
+
 ```
 roscore
 ```
+
+
 
 After that, the user needs to start the package that has the service
 needed to send the information, tha package is called cloud_ros and the
 main file, that starts the node, is main_cloud_ros. So, to run the
 package the user needs the following command.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
 ```
+
+
 
 This will create [Spacebrew](http://docs.spacebrew.cc/) client as well
 as start the service /send_data, that will be called to send the
@@ -80,9 +88,13 @@ command in quotes preceded by the calling of the /send_data service. In
 the next example the user is calling the command rostopic list and will
 receive the answer from a remote master or robot.
 
+
+
 ```
 rosservice call /send_data "rostopic list"
 ```
+
+
 
 Not all ros features were already implemented, but can be done in the
 future. Also new developers can create their own application using
@@ -111,9 +123,13 @@ Rostopic list returns to the user a list of all currently published
 topics. In order to use this command in ROSRemote, the user needs to
 insert the following.
 
+
+
 ```
 rosservice call /send_data "rostopic list"
 ```
+
+
 
 #### Rostopic echo
 
@@ -128,16 +144,24 @@ Differently from rostopic list, where the user just need to send the
 command, in echo it is necessary to send the topic name and also the
 publication frequency.
 
+
+
 ```
 rosservice call /send_data "rostopic echo /topic_name frequency_rate"
 ```
 
+
+
 If the user wants to echo the cmd_vel topic, for example, in a rate of
 five times per second, the command would be.
+
+
 
 ```
 rosservice call /send_data "rostopic echo /cmd_vel 5"
 ```
+
+
 
 #### Rostopic info
 
@@ -145,34 +169,50 @@ Rostopic info shows the information about topics, such as the node that
 is publishing it. Its syntax is the same as the rostopic echo but in
 this case it is not necessary to send the publish rate.
 
+
+
 ```
 rosservice call /send_data "rostopic info /topic_name"
 ```
 
+
+
 Using the cmd_vel example, the user can send the command to recover the
 cmd_vel information.
+
+
 
 ```
 rosservice call /send_data "rostopic info /cmd_vel"
 ```
+
+
 
 ### Rosrun
 
 Rosrun is designed to start a package in ros, the same way the user can
 start a package remotely by using the simple command.
 
+
+
 ```
 rosservice call /send_data "rosrun package_name executable_name"
 ```
+
+
 
 The only package that the user can not start remotely is the ROSRemote
 package, because it already has to be running on the remote machine. But
 assuming that the user would do that, just for example purposes, the
 syntax would be.
 
+
+
 ```
 rosservice call /send_data "rosrun cloud_ros main_cloud_ros"
 ```
+
+
 
 ### Rosservice
 
@@ -188,9 +228,13 @@ functionality is almost the same as the rostopic list. It is also
 important to remember that whenever the user wants to send the commands
 to a remote master, it needs to call the /send_data service.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```0
+```
+
+0
 
 #### Rosservice args
 
@@ -198,9 +242,13 @@ Shows all the arguments needed to call a determined service. The syntax
 is also simple and very similar to rostopic echo, but instead of sending
 the topic name, the user sends the service name.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```1
+```
+
+1
 
 #### Rosservice call
 
@@ -208,9 +256,13 @@ Call a service that is running in a device. The syntax is the same as
 the one in the rosservice args, but the user needs to change args by
 call.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```2
+```
+
+2
 
 In ROSRemote, if the user wants to, it can call the /send_data service
 in a remote device, it is not necessary since one can connect to which
@@ -218,9 +270,13 @@ device is wanted, but to exemplify, users can use the command to call
 itself in a remote master and send any command, like rostopic list, for
 instance.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```3
+```
+
+3
 
 In this case the remote device will send the command to another remote
 device and the user will receive the answer.
@@ -230,9 +286,13 @@ device and the user will receive the answer.
 Rosservice node shows which node is providing a certain service, the
 only thing the user needs to know is the service name.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```4
+```
+
+4
 
 #### Rosservice type
 
@@ -241,17 +301,25 @@ the user needs to create a software that call this service, because it
 is necessary to know which type it has in order do correctly call it.
 The syntx is also the same than most of the rosservice commands.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```5
+```
+
+5
 
 Alternatively, the user can send an extra parameter to the command to
 recover the srv file of the service, in case this service was developed
 by a user and uses a srv that was created by him/her.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```6
+```
+
+6
 
 ### Roscommands
 
@@ -261,17 +329,25 @@ development, it was used RosAria teleop. The fisrt thing the user needs
 to do is to connect to the remote robot using ROSRemote and RosAria, in
 this case, the command is.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```7
+```
+
+7
 
 This will start RosAria on the robot connected in the IP given by the
 user. It is necessary to send the IP and the port, an example would be
 as follows.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```8
+```
+
+8
 
 When calling this package in ROS, the user has to use := instead of @,
 but since := is a reserved Python command, it was not possible to use it
@@ -285,9 +361,13 @@ that will receive the commands. Since ROSRemote publishes directly on
 the cmd_vel of the robot to make it walk, the user needs to set this
 name to make the ROSRemote work.
 
+
+
 ```
 rosrun cloud_ros main_cloud_ros
-```9
+```
+
+9
 
 Then users are already able to send teleoperational commands to the
 robot by using the arrow keys on keyboard, just like it would do if the

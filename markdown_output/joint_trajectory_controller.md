@@ -126,6 +126,8 @@ interface in the `follow_joint_trajectory` namespace of the
 controller. See the action definition for more information on what to
 send.
 
+
+
 ```clearsilver
 pub {
   0.name=state
@@ -139,13 +141,21 @@ sub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 srv{
   0.name= query_state
   0.type= control_msgs/QueryTrajectoryState
   0.desc= Query controller state at any future time.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 param{
   0.name=joints
   0.type=string[]
@@ -192,9 +202,13 @@ param{
 }
 ```
 
+
+
 ### Controller configuration examples
 
 #### Minimal description, position interface
+
+
 
 ```yaml
 head_controller:
@@ -204,7 +218,11 @@ head_controller:
     - head_2_joint
 ```
 
+
+
 #### Minimal description, velocity interface
+
+
 
 ```yaml
 head_controller:
@@ -218,7 +236,11 @@ head_controller:
     head_2_joint: {p: 100,  d: 1, i: 1, i_clamp: 1}
 ```
 
+
+
 #### Velocity FF, velocity interface
+
+
 
 ```yaml
 head_controller:
@@ -236,7 +258,11 @@ head_controller:
     head_2_joint: 1.0
 ```
 
+
+
 #### Minimal description, effort interface
+
+
 
 ```yaml
 head_controller:
@@ -250,7 +276,11 @@ head_controller:
     head_2_joint: {p: 100,  d: 1, i: 1, i_clamp: 1}
 ```
 
+
+
 #### Complete description, effort interface
+
+
 
 ```yaml
 head_controller:
@@ -276,3 +306,5 @@ head_controller:
   action_monitor_rate: 30            # Override default
   stop_trajectory_duration: 0        # Override default
 ```
+
+

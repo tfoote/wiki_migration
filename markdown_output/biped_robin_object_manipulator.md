@@ -5,6 +5,8 @@ place cups with the BipedRobin robot.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = object_manipulator
@@ -30,3 +32,5 @@ srv_called {
 }
 }
 ```
+
+

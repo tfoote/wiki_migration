@@ -1,6 +1,10 @@
+
+
 ```wiki
 /!\ Work in progress.
 ```
+
+
 
 ### Action API
 
@@ -16,9 +20,13 @@ using the `SimpleActionClient`. Please see
 
 The opendoors package is a part of the [mit-ros-pkg](mit-ros-pkg)
 repository. To download the most recent version of the stack without
-downloading the whole repository use ```
+downloading the whole repository use 
+
+```
 svn co `roslocate svn opendoors`
 ```
+
+
 
 ## Tutorials
 

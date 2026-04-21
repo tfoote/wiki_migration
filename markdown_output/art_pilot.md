@@ -3,6 +3,8 @@
 This package contains a ROS node for controlling ART autonomous vehicle
 servo interfaces, including brake, shifter, steering and throttle.
 
+
+
 ```clearsilver
 node.0 {
 name = pilot
@@ -116,10 +118,16 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 #### Examples
 
 Run the ART pilot node, accepting `pilot/drive` messages.
 
+
+
 ```
 rosrun art_pilot pilot
 ```
+
+

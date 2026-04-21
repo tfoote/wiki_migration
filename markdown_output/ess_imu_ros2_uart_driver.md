@@ -121,9 +121,13 @@ changed ROS2 packages located in the <colcon_workspace>/src/ folder.
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.
 
+
+
 ```
 From the <colcon_workspace>: source install/setup.bash
 ```
+
+
 
 5\. Modify the appropriate
 [ launch file](https://docs.ros.org/en/foxy/Tutorials/Launch-Files/Creating-Launch-Files.html?highlight=launch )
@@ -147,9 +151,13 @@ the launch folder that you selected and built
 ```
 -   For example:
 
+
+
 ```
 <colcon_workspace>/ros2 launch ess_imu_ros2_uart_driver g370_launch.py
 ```
+
+
 
 ## USB-UART Latency
 
@@ -172,6 +180,8 @@ the launch folder that you selected and built
 -   **NOTE:** May require root (sudo su) access on your system to
     modify.
 
+
+
 ```
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 16
@@ -179,6 +189,8 @@ echo 1 > /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 1
 ```
+
+
 
 ### Modify low_latency flag using setserial utility
 
@@ -189,6 +201,8 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 -   **NOTE:** You may need to install setserial with *sudo apt install
     setserial*
 
+
+
 ```
 user@user-VirtualBox:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0
@@ -198,6 +212,8 @@ user@user-VirtualBox:~$ setserial /dev/ttyUSB0 low_latency
 user@user-VirtualBox:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0, Flags: low_latency
 ```
+
+
 
 ## Technical Support
 

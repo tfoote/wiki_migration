@@ -9,6 +9,8 @@ you can also switch between position/force control.
 
 2\. Run the following commands:
 
+
+
 ```shell
 # Launch gazebo simulation.
 roslaunch gazebo_worlds empty_world.launch
@@ -26,3 +28,5 @@ rosrun pr2_controller_manager pr2_controller_manager list-types
 # Manage the controller using the remote client.
 rosrun dynamic_graph_bridge run_command
 ```
+
+

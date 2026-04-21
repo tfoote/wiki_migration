@@ -12,9 +12,13 @@ default).
 
 ## Installation
 
--   Install packages ```
+-   Install packages 
+
+```
 sudo apt-get install ros-indigo-romeo-robot ros-indigo-romeo-control
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -24,21 +28,33 @@ sudo apt-get install ros-indigo-romeo-robot ros-indigo-romeo-control
 -   clone [romeo_dcm_driver](romeo_dcm_driver)
 -   clone [romeo_dcm_bringup](romeo_dcm_bringup)
 -   optionally, clone [romeo_moveit_config](romeo_moveit_config)
--   compile all packages with ```
+-   compile all packages with 
+
+```
 catkin_make
 ```
+
+
 
 ## How to use it
 
 -   start the DCM bringup providing the IP of your robot
-    ```
+    
+
+```
 roslaunch romeo_dcm_bringup romeo_dcm_bringup_remote.launch robot_ip:=<ROBOT_IP>
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   you can launch MoveIt! (if installed previously) and control your
-    robot (arms, by default) ```
+    robot (arms, by default) 
+
+```
 roslaunch romeo_moveit_config moveit_planner.launch
 ```
+
+

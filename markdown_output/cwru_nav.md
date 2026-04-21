@@ -5,6 +5,8 @@ the CWRU mobile robots.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = map_as_sensor
@@ -47,3 +49,5 @@ node.0 {
   0.desc= Usually provided by a node responsible for odometry or localization such as [[amcl]].
   }
 ```
+
+

@@ -9,6 +9,8 @@ version replicates map_store behavior for semantic maps.
 
 ### ROS APIs
 
+
+
 ```clearsilver
 name = world canvas server
 desc = world canvas server apis
@@ -79,3 +81,5 @@ param {
   3.desc = param for map manager
 }
 ```
+
+

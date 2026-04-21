@@ -26,6 +26,8 @@ compile it from our
 
 ## Nodes
 
+
+
 ```clearsilver
 name = motor_controler
 desc = This motor driver is suitable for differential driven robot. Received data are in form of <<MsgLink(geometry_msgs/Twist)>> and transformed into angular speeds for left and right wheels.
@@ -42,7 +44,11 @@ pub {
   1.type = std_msgs/Float64
   1.desc = angular speed of right wheel in m/s
   }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = odometry_provider
 desc = This node calculates forward velocity and angular speed around Z axis of the robot with differential drive.
 sub {
@@ -70,10 +76,18 @@ param {
   1.default = odom
 }
 ```
+
+
+
+
 ```clearsilver
 name = imu_provider
 desc = This node merges accelerometer and gyroscope data into complete <<MsgLink(sensor_msgs/Imu)>> message.
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = odom_tf_broadcaster
 desc = Creates tf transformation between odom frame and robot's base link.
 param {
@@ -93,3 +107,5 @@ prov_tf {
   0.desc = .
 }
 ```
+
+

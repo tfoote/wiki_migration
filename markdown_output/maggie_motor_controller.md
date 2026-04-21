@@ -15,15 +15,23 @@ This device supports all the drivers implemented in the
 -   For the arms: In a terminal window, start a motor_controller node
     process running:
 
+
+
 ```
 $ roslaunch maggie_motor_controller arms_controller.launch robot:=maggie
 ```
 
+
+
 -   For the neck: In a terminal window, start a motor_controller node
     process running:
+
+
 
 ```
 $ roslaunch maggie_motor_controller neck_controller.launch robot:=maggie
 ```
+
+
 
 ## Examples

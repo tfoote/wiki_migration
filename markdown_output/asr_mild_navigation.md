@@ -88,9 +88,13 @@ like in "launch/simulation/simulation_manual_rearranged.launch".
 
 For example:
 
+
+
 ```
 roslaunch asr_mild_navigation simulation_manual_rearranged.launch
-``` Starts simulation.launch, with the
+```
+
+ Starts simulation.launch, with the
 manual_rearranged map. There are also launch files for three other
 rooms. How they look you can see on the maps in the folder "rsc/maps".
 
@@ -98,14 +102,22 @@ rooms. How they look you can see on the maps in the folder "rsc/maps".
 
 For the real navigation you only need to start:
 
+
+
 ```
 roslaunch asr_mild_navigation navigation.launch
-``` And you must change the map to a map of your
+```
+
+ And you must change the map to a map of your
 environment:
+
+
 
 ```
 <node name="map_server" pkg="map_server" type="map_server" args="$(find your_package)/your_map.yaml" required="true"/>
-``` There are also a launch file
+```
+
+ There are also a launch file
 (launch/amcl_diff.launch") to start [amcl](http://wiki.ros.org/amcl),
 this is automaticly started if you launch "launch/navigation.launch".
 
@@ -113,9 +125,13 @@ this is automaticly started if you launch "launch/navigation.launch".
 
 To start gazebo with the manual_rearranged map/room.
 
+
+
 ```
 roslaunch asr_mild_navigation gazebo_mild_manual_rearranged.launch
 ```
+
+
 
 ### Parameters
 

@@ -13,6 +13,8 @@ and can be found [here](wire/Tutorials/Visualizing the world model).
 
 ### Topics
 
+
+
 ```clearsilver
 pub {
   0.name=visualization_markers/world_evidence
@@ -32,7 +34,11 @@ sub {
 }
 ```
 
+
+
 ### Parameters
+
+
 
 ```clearsilver
 param {
@@ -118,3 +124,5 @@ param {
   19.desc = Lifetime of the marker
 }
 ```
+
+

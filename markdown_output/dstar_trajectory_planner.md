@@ -34,6 +34,8 @@ The package contains two plugins:
 
 ### Example Configuration
 
+
+
 ```YAML
 DStarGlobalPlanner:
     goal_distance_threshold: 0.3
@@ -51,9 +53,11 @@ DStarGlobalPlanner:
         from: map.json # OPTIONAL PASSABLE ZONES FILE
 ```
 
+
+
 ### Parameters Explained
 
-<<Markdown(<https://bafybeihlwdw3gkhszbmtralo5welhdmhsfoxnp5pyy5xz3dls7sg4xneai.ipfs.twdragon.net/parameters.md>)>>\
+\
 Here `cells` should be considered as elements of
 <<MsgLink(nav_msgs/OccupancyGrid)>>.
 

@@ -8,6 +8,8 @@ an arbitrary number).
 
 ### ROS API
 
+
+
 ```clearsilver
 pub {
   0.name  = robot_0/dynamic_obstacles
@@ -29,3 +31,5 @@ sub {
   3.desc = The location of this robot in the simulator.
 }
 ```
+
+

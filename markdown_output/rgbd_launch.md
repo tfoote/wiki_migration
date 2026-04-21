@@ -25,6 +25,8 @@ driver specific launch package such as [openni_launch](openni_launch) or
 `rgbd_launch` contains many internal launch files to split up
 processing. Only the following launch files should be used externally:
 
+
+
 ```clearsilver
 node.0 {
   name = processing.launch.xml
@@ -34,7 +36,11 @@ EOM
 }
 ```
 
+
+
 #### Arguments
+
+
 
 ```clearsilver
 param {
@@ -85,6 +91,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 param {
   no_header=True
@@ -114,13 +124,19 @@ param {
 }
 ```
 
+
+
 #### Example Parameter Configurations
 
 [freenect_launch](freenect_launch) contains some example configurations
 that you can run and test running nodelets in the system:
+
+
 ```
 roslaunch freenect_launch freenect-xyz.launch
 roslaunch freenect_launch freenect-registered-xyzrgb.launch
-``` The first launch files only produces a
+```
+
+ The first launch files only produces a
 pointcloud from depth data. The second launch file produces a registered
 pointcloud using hardware registration on the device.

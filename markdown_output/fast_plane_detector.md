@@ -12,17 +12,25 @@ orientation is possible to detect.
 For detecting the table plane in a disparity image start the following
 launch file:
 
+
+
 ```
 roslaunch fast_plane_detection fast_plane_detection_jean.launch
-``` which starts a table plane detection node that
+```
+
+ which starts a table plane detection node that
 subscribes to the topic /narrow_stereo_textured/disparity.
 
 For detecting the local plane in a region around a specific pixel
 position, run the following node:
 
+
+
 ```
 rosrun fast_plane_detection fast_region_plane_detector_jean disparity_in:=/plane_detection/disparity disparity_image_topic:=/narrow_stereo_textured/disparity cam_info_in:=/narrow_stereo_textured/left/camera_info
-``` where the remapped topics are the output from
+```
+
+ where the remapped topics are the output from
 the node run by the previous launch file.
 
 ## Example Results

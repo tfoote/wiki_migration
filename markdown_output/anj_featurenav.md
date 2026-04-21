@@ -12,6 +12,8 @@ learning/navigating jockeys.
 
 The words feature and descriptor are used as synonymous.
 
+
+
 ```clearsilver
 param {
   group.0 {
@@ -310,6 +312,8 @@ param {
   }
 }
 ```
+
+
 
 The !SimpleBlog algorithm takes no parameter, cf.
 <http://docs.opencv.org/modules/features2d/doc/common_interfaces_of_feature_detectors.html?highlight=simpleblob#simpleblobdetector>.

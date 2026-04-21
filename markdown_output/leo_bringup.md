@@ -13,11 +13,17 @@ more.
 ## Usage
 
 This package is intended to be used by a system service, but it can also
-be used standalone: ```
+be used standalone: 
+
+```
 roslaunch leo_bringup leo_bringup.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name= leo_system
@@ -36,3 +42,5 @@ pub {
   0.desc= The namespace of the robot.
 }
 ```
+
+

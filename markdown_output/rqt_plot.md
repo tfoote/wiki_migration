@@ -2,31 +2,49 @@
 
 ### First time running
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-rqt
 $ sudo apt-get install ros-$ROS_DISTRO-rqt-common-plugins
 ```
 
+
+
 OR
+
+
 
 ```
 $ rosdep install rqt_plot
-``` Also if you're on Ubuntu and like to know the
+```
+
+ Also if you're on Ubuntu and like to know the
 most recommended plotting result, simply get a `.deb` file of
 `pyqtgraph` [here](http://www.pyqtgraph.org/), which is not available
 via `rosdep`. And run it by something like:
+
+
 
 ```
 $ dpkg -i %NAME_OF_DOT_DEB_FILE%.deb
 ```
 
+
+
 ### How to run in general
+
+
 
 ```
 $ rqt_plot
-``` To specify topic(s) to plot, you need full path
+```
+
+ To specify topic(s) to plot, you need full path
 name of the topics published. You can find them easily for instance by
 the command below:
+
+
 
 ```
 $ rostopic list
@@ -36,6 +54,8 @@ $ rostopic list
 /turtle1/color_sensor
 /turtle1/pose
 ```
+
+
 
 ### To give topic names to plot
 
@@ -47,10 +67,14 @@ is resumed (as far as the program was shut down without error).
 
 Both of the following lines plot the same topics.
 
+
+
 ```
 $ rqt_plot /turtle1/pose/x:y:z
 $ rqt_plot /turtle1/pose/x /turtle1/pose/y /turtle1/pose/z
-``` Obviously, if you want to change the topics to
+```
+
+ Obviously, if you want to change the topics to
 plot, you need to restart the program and give the new topic names.
 
 #### From GUI

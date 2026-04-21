@@ -12,9 +12,13 @@ To control the arm you will need a PEAK can adapter as the driver
 communicates through a pcan interface. We recommend to install the PEAK
 driver from source as this works best. For example this can be done
 through the fzi_icl_can package, which is a dependency for this package:
+
+
 ```
 rosrun fzi_icl_can install_pcan_module.sh
-``` Note: You will be asked for your sudo password
+```
+
+ Note: You will be asked for your sudo password
 during execution.
 
 You can also build the driver from source by hand, see the PEAK website
@@ -33,13 +37,17 @@ You will need to checkout the following packages into your workspace:
 -   <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_can>
 -   <https://github.com/fzi-forschungszentrum-informatik/schunk_canopen_driver>
 
-then just call ```
+then just call 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
    # If Peak driver was not installed before.
    # Note: You will be asked for your sudo password during execution.
    rosrun fzi_icl_can install_pcan_module.sh
 ```
+
+
 
 If you have the fzi_icl_core or fzi_icl_can package in your workspace
 you'll have to build it with *catkin_make_isolated*, as those packages
@@ -49,12 +57,16 @@ are plain cmake packages. See the
 ### Installing via package manager
 
 To install the package use your apt-get package manager:
+
+
 ```
 sudo apt-get install ros-indigo-schunk-canopen-driver
   # If Peak driver was not installed before.
   # Note: You will be asked for your sudo password during execution.
   rosrun fzi_icl_can install_pcan_module.sh
 ```
+
+
 
 ## ROS API
 
@@ -77,6 +89,8 @@ The *ros_control*-interface provides a position controller in joint
 space which will interpolate between waypoints inside the controller (on
 the host PC). You can set joint velocities and time constraints for each
 waypoint which the controller will take care of.
+
+
 
 ```clearsilver
 
@@ -139,6 +153,8 @@ param {
   4.desc = If set to true the robot will work in the ''interpolated-position''-mode. It will be controlled by a position-based controller from ros-control. If set to false, the robot will work in the ''profile-position''-mode, where position commands will be simply forwarded to the arm and the hardware itself takes care about the movement towards the given configuration. Note that synchronous movement of all joints can't be achieved using this mode.
 }
 ```
+
+
 
 ## Usage
 

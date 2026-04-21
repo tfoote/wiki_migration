@@ -6,6 +6,8 @@ control is separate for each direction: egress and ingress.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=traffic_control_node.py
@@ -86,6 +88,8 @@ desc= See the [[dynamic_reconfigure]] package for details on dynamically reconfi
 }
 }
 ```
+
+
 
 ## How it works
 
@@ -177,10 +181,14 @@ This tool takes as parameters:
 For example, for a link with capacity 1Mbit/s which is saturated since
 the TX rate is 1.5MBit/s:
 
+
+
 ```
 # rosrun network_traffic_control projected_link_metrics.py 1000000 0.0 0.0 1500 1500000
 Projected metrics: bandwidth 1000.00Kbit/s latency 12.00ms loss 33.33%
 ```
+
+
 
 The bandwidth is the link capacity, the latency is the time to send one
 packet (i.e. 1500 bytes at 1Mbit/s) and the loss is due to the
@@ -189,28 +197,40 @@ overrunning the link capacity.
 Other examples:
 
 -   link saturated, bandwidth and latency control
-    ```
+    
+
+```
 # rosrun network_traffic_control projected_link_metrics.py 1000000 0.04 0.0 1500 1500000
 Projected metrics: bandwidth 1000.00Kbit/s latency 60.00ms loss 33.33%
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   link saturated, bandwidth and latency and loss control
-    ```
+    
+
+```
 # rosrun network_traffic_control projected_link_metrics.py 1000000 0.04 80.0 1500 1500000
 Projected metrics: bandwidth 300.00Kbit/s latency 40.00ms loss 80.00%
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   link not saturated, bandwidth and latency and loss control
-    ```
+    
+
+```
 # rosrun network_traffic_control projected_link_metrics.py 1000000 0.02 20.0 1500 500000
 Projected metrics: bandwidth 400.00Kbit/s latency 20.00ms loss 20.00%
 ```
+
+
 
 ### measure_link_node.py
 
@@ -228,6 +248,8 @@ subdirectory.
 Here's an example, whose results agree quite closely with the
 theoretical projection made previously:
 
+
+
 ```
 # roslaunch measure_link.launch tx_bandwidth:=1500000 bandwidth_limit:=1000000 latency:=0.0 loss:=0.0
 
@@ -239,6 +261,8 @@ theoretical projection made previously:
                  direction egress duration 10.00s
 [INFO] 1288966581.043424: RESULTS: measured_bandwidth 974.48kbit/s measured_latency 8.41ms measured_loss 35.02%
 ```
+
+
 
 The launch file (and node) takes the following parameters:
 
@@ -262,6 +286,8 @@ The launch file (and node) takes the following parameters:
 
 Some more examples:
 
+
+
 ```
 # roslaunch measure_link.launch tx_bandwidth:=1500000 bandwidth_limit:=1000000 latency:=0.04 loss:=0.0
 
@@ -273,6 +299,10 @@ Some more examples:
                  direction egress duration 10.00s
 [INFO] 1288967237.291811: RESULTS: measured_bandwidth 978.08kbit/s measured_latency 69.74ms measured_loss 34.80%
 ```
+
+
+
+
 
 ```
 # roslaunch measure_link.launch tx_bandwidth:=1500000 bandwidth_limit:=1000000 latency:=0.04 loss:=80.0
@@ -286,6 +316,10 @@ Some more examples:
 [INFO] 1288967298.390246: RESULTS: measured_bandwidth 279.58kbit/s measured_latency 39.58ms measured_loss 81.36%
 ```
 
+
+
+
+
 ```
 # roslaunch measure_link.launch tx_bandwidth:=500000 bandwidth_limit:=1000000 latency:=0.02 loss:=20.0
 
@@ -298,6 +332,8 @@ Some more examples:
 [INFO] 1288967485.549177: 
 RESULTS: measured_bandwidth 394.65kbit/s measured_latency 20.19ms measured_loss 21.28%
 ```
+
+
 
 ## Implementation details
 

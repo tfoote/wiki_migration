@@ -84,9 +84,13 @@ Step 3: install Retalis as follows
 
 After you program retalis as described below, rune it by:
 
+
+
 ```shell
 roslaunch retalis retalis.launch
 ```
+
+
 
 ### Programming
 
@@ -104,6 +108,8 @@ application_source folder of the retalis package:
     functionalities and to query the retalis knowledge base
 
 ### Nodes (Run-Time Configuration)
+
+
 
 ```clearsilver
 node.0{
@@ -138,6 +144,8 @@ srv {
 }
 ```
 
+
+
 ## Tutorials
 
 This section describes retalis using two examples.
@@ -171,15 +179,23 @@ environment.
 
 The following clause in pub_sub.xml subscribes retalis to the tf topic:
 
+
+
 ```shell
 < subscribe_to   name="tf"   msg_type="tf/tfMessage"  />
-``` Similarly, the following clauses in pub_sub.xml
+```
+
+ Similarly, the following clauses in pub_sub.xml
 subscribe retalis to messages of recognized faces and objects.
+
+
 
 ```shell
 <subscribe_to name="face_recognition/feedback" msg_type="face_recognition/FaceRecognitionActionFeedback"/>
 <subscribe_to name="ar_pose_marker" msg_type="ar_pose/ARMarkers"/>
-``` Messages received by retalis from the
+```
+
+ Messages received by retalis from the
 subscribed topics are automatically converted to events. For example,
 the following message of type **`'tf/tfMessage`**'
 
@@ -205,9 +221,13 @@ corresponding event is stamped with the current time.
 The following rule calls the **`'split_tf`**' function for every
 **`'tf{{{__0__`tfMessage}}}**' event received by retalis.
 
+
+
 ```shell
 null_event do split_tf(Transforms)    <- tf__0__tfMessage(Transforms).
-``` . This function is implemented as a prolog rule
+```
+
+ . This function is implemented as a prolog rule
 in eventRules.txt. It splits the **`'Transforms`**', its input list of
 **`'geometry_msgs/TransformStamped`**' messages, into the elements and
 generates a new **`'tf`**' event for each. Each **`'tf`**' event is
@@ -216,9 +236,13 @@ time-stamped according to header file of the corresponding
 retalis receives the above **`'tf{{{__0__`tfMessage}}}**' event (in
 section 4.1.2), this rule generates the following event:
 
+
+
 ```shell
 tf('“/odom”', '“/base_link”',[0,-0.01,0.1], [0.05,0.008,-0.02,0.9])
-``` The event is time-stamped with (1413748205,
+```
+
+ The event is time-stamped with (1413748205,
 981209993) represented in the datime format.
 
 Each **`'ar_pose/ARMarkers`**' message from **`'ar_pose`**' contains a
@@ -226,13 +250,21 @@ list of recognized objects, each represented by a
 **`'ar_pose{{{__0__`ARMarker}}}**' message. The following rule
 generates a separate event for each object.
 
+
+
 ```shell
 split_ar_pose(Markers)  <- ar_pose__0__ARMarkers(Header,Markers).
-``` . Such an event is of the following form
+```
+
+ . Such an event is of the following form
+
+
 
 ```shell
 ar_marker(Seq,MarkerName,[[P1,P2,P3],[Q1,Q2,Q3,Q4]],Sec,NSec)
-``` where **`'Name`**' represents a recognized
+```
+
+ where **`'Name`**' represents a recognized
 object and **`'(Sec,NSec)`**' encodes the time of recognition. This
 time corresponds to the time of taking the picture at which the object
 was recognized. This time is taken from the header file of the
@@ -249,9 +281,13 @@ examples of rules implementing various event-processing functionalities.
 
 The following clause creates a memory instance.
 
+
+
 ```shell
 memorize(tf('"/odom"', '"/base_link"', V, Q),[], tf(V, Q), odom_base,  2500)
-``` This memory instance keeps the history of
+```
+
+ This memory instance keeps the history of
 events of the form **`'tf(  {{{'"/odom"','"/base_link"'`,V,Q)}}}**',
 specified by the first argument. The second argument specifies a list of
 conditions, being empty here. A memory instance only records events that
@@ -360,6 +396,8 @@ performs the **`'{{{Query}}}`**', when the
 **`'{{{SynchConditions}}}`**' are satisfied and then generate the
 **`'{{{Event}}}`**'. Consider the following clause from eventRules.txt:
 
+
+
 ```shell
 syncronized(
     geometry_msgs__0__PoseStamped(std_msgs__0__Header(Seq, [Sec,NSec], Name),geometry_msgs__0__Pose(geometry_msgs__0__Point(P11,P12,P13),geometry_msgs__0__Quaternion(Q11,Q12,Q13,Q14))),
@@ -367,48 +405,16 @@ syncronized(
         [[odom_base,Z],[base_torso,Z],[torso_neck,Z],[neck_head,Z],[head_cam,Z]]
           )
     <- ar_marker(Seq,Name,RelPose,Sec,NSec) where (Z is Sec + (NSec * 0.000000001) ).
-``` This rule computes the position of recognized
+```
+
+ This rule computes the position of recognized
 markers in the world and is read as follows. For each **`'ar_marker`**'
 event, specified in line 6, the position is computed by calling the
 **`'transform_marker`**' function, as in line 3. After computing the
 position, an event of the following form is generated, specified in line
 2:
 
-```clearsilver
-node.0{
-name = retalis
-desc = This node implements main functionalities.
-srv{
-0.name = add_output_subscription
-0.type = retalis/AddOutputSubscription
-0.desc = adds a subscription
-1.name = delete_output_subscription
-1.type = retalis/DeleteOutputSubscription
-1.desc = cancels a subscription
-2.name = add_memory
-2.type = retalis/AddMemory
-2.desc = adds a memory instance
-3.name = delete_memory
-3.type = retalis/DeleteMemory
-3.desc = deletes a memory instance
-}
-}
-node.1{
-name = retalis_ros_interface
-desc = This node automates the conversion between ros messages and retalis events
-srv {
-0.name = add_input_subscription
-0.type = retalis/DeleteInputSubscription
-0.desc = subscribes retalis to a ros topic
-1.name = delete_input_subscription
-1.type = retalis/DeleteInputSubscription
-1.desc = unsubscribe retalis from a ros topic
-}
-}
-```0 Such a **`'{{{PoseStamped}}}`**' event
-encodes the marker's name, its position in the world and the time of
-recogntion. The **`'{{{SyncConditions}}}`**' are the followings,
-specified in line 4:
+
 
 ```clearsilver
 node.0{
@@ -441,7 +447,49 @@ srv {
 1.desc = unsubscribe retalis from a ros topic
 }
 }
-```1 These conditions specify that the
+```
+
+0 Such a **`'{{{PoseStamped}}}`**' event
+encodes the marker's name, its position in the world and the time of
+recogntion. The **`'{{{SyncConditions}}}`**' are the followings,
+specified in line 4:
+
+
+
+```clearsilver
+node.0{
+name = retalis
+desc = This node implements main functionalities.
+srv{
+0.name = add_output_subscription
+0.type = retalis/AddOutputSubscription
+0.desc = adds a subscription
+1.name = delete_output_subscription
+1.type = retalis/DeleteOutputSubscription
+1.desc = cancels a subscription
+2.name = add_memory
+2.type = retalis/AddMemory
+2.desc = adds a memory instance
+3.name = delete_memory
+3.type = retalis/DeleteMemory
+3.desc = deletes a memory instance
+}
+}
+node.1{
+name = retalis_ros_interface
+desc = This node automates the conversion between ros messages and retalis events
+srv {
+0.name = add_input_subscription
+0.type = retalis/DeleteInputSubscription
+0.desc = subscribes retalis to a ros topic
+1.name = delete_input_subscription
+1.type = retalis/DeleteInputSubscription
+1.desc = unsubscribe retalis from a ros topic
+}
+}
+```
+
+1 These conditions specify that the
 **`'transform_marker`**' function should be evaluated, only after all
 **`'odom_base`**', **`'base_torso`**', **`'torso_neck`**',
 **`'neck_head`**' and **`'head_cam`**' memory instances have been
@@ -458,6 +506,8 @@ events are generated as soon as necessary conditions are met.
 
 The following clause in goalPredicates.txt creates a subscription:
 
+
+
 ```clearsilver
 node.0{
 name = retalis
@@ -489,7 +539,9 @@ srv {
 1.desc = unsubscribe retalis from a ros topic
 }
 }
-```2 The subscription subscribes the topic
+```
+
+2 The subscription subscribes the topic
 **`'marker1`**' to the **`'{{{PoseStamped}}}`**' events in which
 **`'Name`**' is **`'{{{'"4x4_1"'}}}`**'. Such events are generated by
 the synchronized rule, presented in Section 4.1.7. They contain the

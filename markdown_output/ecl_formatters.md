@@ -16,6 +16,8 @@ The formatter classes can be used standalone, with stl streams or with
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/formatters.hpp>
 
@@ -37,6 +39,8 @@ using ecl::Hex;
 using ecl::Fixed;
 using ecl::Sci;
 ```
+
+
 
 If outside of ros, you will also need to link to *ecl_formatters*.
 

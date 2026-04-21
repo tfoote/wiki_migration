@@ -14,24 +14,36 @@ Subspace Method (LSM).
 
 ## Install
 
+
+
 ```
 git clone git://github.com/kanezaki/isi-ros-pkg.git
 git clone http://code.in.tum.de/git/mapping.git
 ```
 
+
+
 ## Usage
+
+
 
 ```
 $ rosrun vosch example_vosch `rospack find vosch`/data/sample_cone_green.pcd
-``` This executable reads color point cloud
+```
+
+ This executable reads color point cloud
 "sample_cone_green.pcd" and writes its VOSCH descriptor into
 "vosch.pcd" in the current directory.
 
 If you have pcl_visualization, you can see the histogram by:
 
+
+
 ```
 $ rosrun pcl_visualization pcd_viewer vosch.pcd
-``` ![](attachment:vosch_cone.png)
+```
+
+ ![](attachment:vosch_cone.png)
 ![](attachment:vosch_torus.png)
 
 ## The Code
@@ -46,7 +58,11 @@ above example code, you can get a set of VOSCH feature vectors extracted
 from the subdivisions of 10x10x10 voxel grid with 5x5x5 overlapping
 respectively:
 
+
+
 ```
 std::vector< std::vector<float> > vosch;
 extractVOSCH( grid, cloud, cloud_downsampled, vosch, 127, 127, 127, voxel_size, 10, 5, 5, 5 );
 ```
+
+

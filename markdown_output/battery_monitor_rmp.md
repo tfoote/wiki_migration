@@ -6,6 +6,8 @@ user if a battery is getting low. It also publishes this information.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = monitor_rmp.py
@@ -45,6 +47,8 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `battery_monitor_rmp` package, you can choose to either
@@ -52,7 +56,9 @@ install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/battery_monitor_rmp.git
 cd /path/to/your/catkin/workspace
@@ -60,12 +66,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-battery-monitor-rmp
 ```
+
+
 
 ### Startup
 
@@ -74,9 +86,13 @@ The `battery_monitor_rmp` package contains a
 the `battery_monitor_rmp.py`. To launch these nodes the following
 command can be used:
 
+
+
 ```
 roslaunch battery_monitor_rmp battery_monitor_rmp.launch
 ```
+
+
 
 Now the node will publish the information as well as use espeak to
 inform the user of a state of charge less than or equal to 20%.

@@ -11,9 +11,13 @@ You can see the state machine below:
 
 ## Running the Demo
 
-To start it, just run: ```
+To start it, just run: 
+
+```
 $ roslaunch sr_smach_example sr_smach.launch
 ```
+
+
 
 It will start the demo as well as the
 [state machine visualizer](smach_viewer).

@@ -7,6 +7,8 @@ types.
 
 ## Usage
 
+
+
 ```
 Usage: rxdeps [options]
 
@@ -33,6 +35,8 @@ Options:
   --message=full_message_name
                         target_message
 ```
+
+
 
 It will generate a file like below. The default filename is
 `deps.pdf`.

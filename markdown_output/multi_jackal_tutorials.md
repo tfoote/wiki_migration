@@ -12,20 +12,34 @@
 This package (and all dependencies) can be installed the standard way
 through rosdep:
 
+
+
 ```
 rosdep install multi_jackal_tutorials
-``` If Gazebo is not yet installed, this may take
+```
+
+ If Gazebo is not yet installed, this may take
 some time. Alternatively, you can install it by:
+
+
 ```
 sudo apt-get install ros-kinetic-multi-jackal-tutorials
 ```
 
+
+
 ### Simulating a Jackal
+
+
 
 ```
 roslaunch multi_jackal_tutorials one_jackal.launch rviz:=true
-``` This launch file does three things. Firstly, it
+```
+
+ This launch file does three things. Firstly, it
 starts up Gazebo:
+
+
 
 ```xml
 <!-- Start Gazebo with an empty world. -->
@@ -34,13 +48,17 @@ starts up Gazebo:
   <arg name="gui"          value="$(arg gui)"/>
   <arg name="world_name"   value="$(find multi_jackal_tutorials)/worlds/$(arg world)"/>
 </include>
-``` Gazebo will be generating the ROS clock, so it
+```
+
+ Gazebo will be generating the ROS clock, so it
 can simulate faster or slower than real time (this is set in the world
 description). If `gui` is set to `true`, the Gazebo client will also
 appear. This can also be done after launching by running `gzclient` in
 a new terminal.
 
 Secondly, the launch file spawns a robot into Gazebo:
+
+
 
 ```xml
 <!-- Spawn the robot. -->
@@ -50,7 +68,9 @@ Secondly, the launch file spawns a robot into Gazebo:
   <arg name="config_id"     value="$(arg config_id)"/>
   <arg name="use_move_base" value="true"/>
 </include>
-``` The namespace `ns` must be unique (like
+```
+
+ The namespace `ns` must be unique (like
 jackal0, jackal1, etc), so that individual robots can be identified. The
 configuration type `config` specifies the components on the jackal.
 This string must match a file located in
@@ -65,12 +85,16 @@ and controllers
 all called through the Jackal base
 ([multi_jackal_base](http://wiki.ros.org/multi_jackal_base)).
 
-Thirdly, the launch file starts up RVIZ: ```xml
+Thirdly, the launch file starts up RVIZ: 
+
+```xml
 <!-- View in RVIZ. -->
 <node name="rviz" pkg="rviz" type="rviz" ns="$(arg ns)" args="-d $(find multi_jackal_tutorials)/rviz/one_jackal.rviz" >
     <remap from="/move_base_simple/goal" to="/$(arg ns)/move_base_simple/goal"/>
 </node>
-``` This
+```
+
+ This
 displays the robot model, sensor output, and controllers to move the
 robot:
 
@@ -87,11 +111,17 @@ image to zoom in):
 
 ### Simulating Multiple Jackals
 
+
+
 ```
 roslaunch multi_jackal_tutorials two_jackal.launch rviz:=true
-``` The only difference for multiple Jackals is
+```
+
+ The only difference for multiple Jackals is
 that the robots need to be created with different namespaces and
 positions.
+
+
 
 ```xml
 <!-- Spawn the robots. -->
@@ -109,6 +139,8 @@ positions.
   <arg name="x"             value="2"/>
 </include>
 ```
+
+
 
 ![configs=front_bumblebee2,apriltags\|width=600](attachment:multi_jackal_tutorials4.png)
 

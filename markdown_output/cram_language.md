@@ -17,18 +17,26 @@ REPL. Change to the CPL package.
 
 If you create a package that uses the CRAM language, don't use the
 package COMMON-LISP but the package CPL instead. Example:
+
+
 ```
 (defpackage cpl-user
     (:use :cpl))
 ```
 
+
+
 Whenever you want to execute a CRAM language form in the REPL, you need
-to enclose it in a `top-level` form: ```
+to enclose it in a `top-level` form: 
+
+```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
 ```
+
+
 
 If you define a top-level plan (with `def-top-level-plan`) it contains
 an implicit top-level. That means you can execute top-level plans
@@ -65,28 +73,40 @@ can be accessed through the reader `value`, can be set with
 In the following example, a fluent is created and passed to a function
 that, for instance, spawns a thread and executes a perception routine.
 The result is put into the fluent's value. The main program sleeps
-until it receives the value and prints it. ```
+until it receives the value and prints it. 
+
+```
 (let ((fl (make-fluent :test-fluent :value nil)))
   (spawn-perception fl)
   (wait-for fl)
   (format t "Received value: ~a~%" (value fl))
 ```
 
+
+
 We can extend the example to do the print until the fluent's value
-changes to :done: ```
+changes to :done: 
+
+```
 (let ((fl (make-fluent :test-fluent :value nil)))
   (spawn-perception fl)
   (whenever (fl)
     (when (eq (value fl :done))
       (return-from whenever))
     (format t "Received value: ~a~%" (value fl))))
-``` Please note that the
+```
+
+ Please note that the
 `whenever` body is executed continuously, in a loop, as long as the
 value of `fl` is non-NIL. If you want to execute the body only on
-changes, you can use `pulsed`: ```
+changes, you can use `pulsed`: 
+
+```
 (whenever ((pulsed fl))
   ...)
-``` see fluent
+```
+
+ see fluent
 pulses below.
 
 #### Fluent networks
@@ -96,10 +116,14 @@ value whenever one of the fluents it is constructed from changes its
 value. In the CPL package, the most important comparison and math
 operators (<, >, =, eq, eql, +, -, \*, /) are overloaded to construct
 a fluent network whenever they are called with at least one fluent as
-parameter. Example: ```
+parameter. Example: 
+
+```
 (wait-for (> fl 20))
 (wait-for (< (/ fl 3) 1))
-``` In addition, the logical
+```
+
+ In addition, the logical
 operators `fl-and`, `fl-or` and `fl-not` are defined. Please note that
 they this is necessary since common lisp's logical operators have a
 slightly different semantics. For instance, AND returns the first
@@ -113,10 +137,14 @@ parameter fluents changes its value. This is especially useful when a
 fluent contains an instance of a CLOS object and the user wants to wait
 for a condition defined on one of its slots. Example (pose-fl is a
 fluent containing a pose object with the slots x, y and z:
+
+
 ```
 (wait-for (fl-and (> (fl-funcall #'x pose-fl) 10)
                   (< (fl-funcall #'y pose-fl) 3)))
 ```
+
+
 
 #### Fluent pulses
 
@@ -174,19 +202,27 @@ lisp top level and not inside a plan are defined with the macro
 `def-top-level-cram-function`.
 
 `def-cram-function` uses the same syntax as defun, e.g.
+
+
 ```
 (def-cram-function robot-at (location)
     "Attempts to move robot towards location. Succeeds once robot is at given location."
      ...)
 ```
 
+
+
 Plans can be nested into each other. To execute a plan, a top-level
 context is required, meaning either a plan defined with
-`def-top-level-plan`, or running a plan using: ```
+`def-top-level-plan`, or running a plan using: 
+
+```
 (top-level
    (let ((location ...))
      (robot-at location)))
 ```
+
+
 
 **TODO:** Explain code-tree and task hierarchy.
 
@@ -233,23 +269,31 @@ when all succeed.
 ##### par
 
 Execute forms in parallel. Fail if one fails, succeed after **all**
-succeeded. Example: ```
+succeeded. Example: 
+
+```
 (par
   (park-left-arm)
   (park-right-arm))
 ```
+
+
 
 ##### pursue
 
 Execute forms in parallel. Fail if one fails, succeed when **one**
 succeeds. All other forms are evaporated when one form succeeds. This is
 especially useful for implementing monitors or run code until a
-condition holds: ```
+condition holds: 
+
+```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```0 In the example above, the
+```
+
+0 In the example above, the
 form terminates successfully when the robot is at the waypoint.
 Navigation commands to approach the waypoint are sent to the robot
 repeatedly.
@@ -302,12 +346,16 @@ should not cause Lisp to enter the debugger.
 
 The `with-failure-handling` macro allows to wrap function calls so that
 if a failure occurs, failure handling code is executed. E.g.:
+
+
 ```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```1 In this case we monitor for failures of type
+```
+
+1 In this case we monitor for failures of type
 `trajectory-controller-failed`, and if they happen we call (retry)
 meaning we just run the body again on each failure until we succeed.
 `(move-arm-to-point ...)` is the body in this case.
@@ -328,34 +376,46 @@ it operates in. It is up to the goal designer to decide which occasion
 types to declare. To start with, a common choice could be a general
 occasion like `(achieve <occasion>)`.
 
-Declaring occasion types is done like this: ```
+Declaring occasion types is done like this: 
+
+```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```2
+```
+
+2
 
 TODO: Explain body options for declare-goal
 
 Once an occasion type has been declared like above, goals can be defined
-for that type like this: ```
+for that type like this: 
+
+```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```3 This uses a plan
+```
+
+3 This uses a plan
 defined like earlier on this page. (Technical detail: The syntax with
 the question marks is specific to the pattern matching used. Since for
 one occasion different goals can be defined, the actual goal is
 determined during runtime using pattern matching.)
 
 Instead of running the plan robot-at, we can that way make the robot
-achieve this goal: ```
+achieve this goal: 
+
+```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```4 Whether the 2d pose object
+```
+
+4 Whether the 2d pose object
 works with the goal depends on the implementation of the robot-at plan.
 
 By structuring the robots plans as goals the executive framework gains

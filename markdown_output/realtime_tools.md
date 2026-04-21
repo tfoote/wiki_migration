@@ -8,7 +8,9 @@ realtime controller. The realtime publisher is a wrapper around the ROS
 publisher; the wrapper creates an extra non-realtime thread that
 publishes messages on a ROS topic. The example below shows a typical
 usage of the realtime publisher in the `init()` and `update()`
-methods of a realtime controller: ```cplusplus
+methods of a realtime controller: 
+
+```cplusplus
 #include <realtime_tools/realtime_publisher.h>
 
 bool MyController::init(pr2_mechanism_model::RobotState *robot,
@@ -32,3 +34,5 @@ void MyController::update()
   ...
 }
 ```
+
+

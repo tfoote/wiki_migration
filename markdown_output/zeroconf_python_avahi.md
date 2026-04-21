@@ -18,6 +18,8 @@ robots connected to the local network will be a needed for
 
 Install the ihr_tools stack.
 
+
+
 ```shell
 cd ~/ros/stacks
 git clone git://github.com/IHeartRobotics/iheart-ros-pkg.git
@@ -26,11 +28,17 @@ rosdep install zeroconf
 rosmake zeroconf
 ```
 
+
+
 For the lazy or reckless, the following should update all the config
 files correctly on Ubuntu 10.04. There is currently no guarantee this
-will work and it might delete your computer. ```shell
+will work and it might delete your computer. 
+
+```shell
 make install
 ```
+
+
 
 ### Service types
 
@@ -44,10 +52,14 @@ maintainers.
 
 Additional translations or corrections are welcome.
 
+
+
 ```shell
 cp `rospack find zeroconf`/config/service-types /usr/share/avahi/service-types
 cp `rospack find zeroconf`/config/service-types.db /usr/lib/avahi/service-types.db
 ```
+
+
 
 ### service-discovery-applet
 
@@ -55,16 +67,24 @@ While not required, this is a useful GUI tool for using zeroconf. It can
 be installed on Ubuntu 10.04 by running the following and right clicking
 the top panel and selecting add to panel.
 
+
+
 ```shell
 sudo aptitude install service-discovery-applet
 ```
 
+
+
 The service-discovery-applet does not support ROS service types by
 default, however the following command will add support.
+
+
 
 ```shell
 gconftool --load `rospack find zeroconf`/config/service-discovery-applet.xml
 ```
+
+
 
 ## Running
 
@@ -79,9 +99,13 @@ master. The obvious downside to this approach is that each launch file
 will need to be modified to include zeroconf. The upside is that it is
 simple and free of unintended consequences.
 
+
+
 ```shell
 roslaunch zeroconf zeroconf.launch
 ```
+
+
 
 ### /etc/avahi/services
 
@@ -90,9 +114,13 @@ announce the availability of the ROS Master service without running a
 separate node. The downside of this approach is that the service will be
 announced to the local network regardless of that state of rosmaster.
 
+
+
 ```shell
 cp `rospack find zeroconf`/config/ros-master.service /etc/avahi/services/.
 ```
+
+
 
 The provided launch file can be modified so that the zeroconf node only
 provide discovery of network resources without announcing the
@@ -106,19 +134,29 @@ when rosmaster is running, and that individual launch files do not need
 to be modified. The downside is that it modifies roslaunch and that
 might be bad.
 
-Think before patching\... ```shell
+Think before patching\... 
+
+```shell
 more `rospack find zeroconf`/config/roscore.xml.patch
 patch `rospack find roslaunch`/roscore.xml < `rospack find zeroconf`/config/roscore.xml.patch
 ```
+
+
 
 ## Service Example
 
 The following command will call the discover_masters service and return
 a list of Masters and its associated MASTER_URI.
 
+
+
 ```shell
 rosservice call /zeroconf/discover_masters
 ```
+
+
+
+
 
 ```
 $ rosservice call /zeroconf/discover_masters
@@ -131,11 +169,17 @@ masters:
     master_uri: http://bar.local:11311
 ```
 
+
+
 ## Nodes
+
+
 
 ```shell
 make install
-```0
+```
+
+0
 
 <<MsgSrvDoc(zeroconf)>>
 

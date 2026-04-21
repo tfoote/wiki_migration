@@ -17,6 +17,8 @@ trajectory server node, see below.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = trajectory_server
 desc = Trajectory generation node.
@@ -69,6 +71,8 @@ srv {
   0.desc = Generate a trajectory from footprints positions.
 }
 ```
+
+
 
 ## References
 

@@ -3,6 +3,8 @@
 To interact with controllers form another ROS node, the controller
 manager provides five service calls:
 
+
+
 ```clearsilver
 node.0 {
   name = pr2_controller_manager
@@ -39,3 +41,5 @@ node.0 {
   }
 }
 ```
+
+

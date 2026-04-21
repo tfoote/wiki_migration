@@ -68,6 +68,8 @@ paper:
 
 If you use amcl3d in an academic context, please cite this publication:
 
+
+
 ```
 @article{doi:10.1177/1729881417732757,
 author = {Francisco J Perez-Grau and Fernando Caballero and Antidio Viguria and Anibal Ollero},
@@ -80,6 +82,8 @@ doi = {10.1177/1729881417732757},
 URL = {https://doi.org/10.1177/1729881417732757}
 }
 ```
+
+
 
 ## Package files
 
@@ -134,9 +138,13 @@ The package is structured as follows:
 
 -   \[amcl3d/launch\]
 -   **amcl3d_rosin.launch**: starts amcl3d node with a selected
-    configuration of parameters. ```
+    configuration of parameters. 
+
+```
 roslaunch amcl3d amcl3d_rosin.launch
 ```
+
+
 
 ### Msg
 
@@ -147,6 +155,8 @@ roslaunch amcl3d amcl3d_rosin.launch
 For more information, see **__3.2.1 Radio-Range Message__**.
 
 ## Node
+
+
 
 ```clearsilver
 node.0 {
@@ -185,7 +195,11 @@ pub {
 }
 ```
 
+
+
 #### Parameters
+
+
 
 ```clearsilver
 param {
@@ -283,6 +297,8 @@ param {
 }
 ```
 
+
+
 ### Rosbag
 
 It contains several topics:
@@ -306,6 +322,8 @@ sensors used in this demo are "swarm bee ER" from
 needs the distance measurements and the position of each sensor. That is
 why we created this message with the following structure:
 
+
+
 ```
 Header header
 
@@ -313,6 +331,8 @@ uint64 source_id
 uint64 destination_id
 float64 range geometry_msgs/Point position
 ```
+
+
 
 ### Map
 
@@ -326,14 +346,20 @@ result:
 It should be noted that the algorithm accepts both files with the
 extension ".bt" and ".ot". The next roslaunch itself creates the
 .grid from ".bt"/".ot" introduced like parameter.
+
+
 ```
 roslaunch amcl3d amcl3d_rosin.launch
 ```
+
+
 
 It probably that you have to wait several minutes to the generation of
 the grid.
 
 The terminal will show you the next lines:
+
+
 
 ```
 [ERROR] [1568280031.986394659]: [/amcl3d_node] Error opening file /home/.../mapfile_complete.grid for reading
@@ -341,6 +367,8 @@ The terminal will show you the next lines:
 [ INFO] [1568280329.208192793]: [/amcl3d_node] Computing 3D occupancy grid done!
 [ INFO] [1568280329.417065336]: [/amcl3d_node] Grid map successfully saved on /home/.../mapfile_complete.grid
 ```
+
+
 
 ### TF
 

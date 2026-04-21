@@ -27,9 +27,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch ugv_random_walk ugv_random_walk.launch
-``` to launch the
+```
+
+ to launch the
 `ugv_random_walk` node.
 
 The launch file can be configured with following parameters:
@@ -44,6 +48,8 @@ In the `param` subdirectory there is the parameter file
 `ugv_random_walk` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -102,6 +108,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

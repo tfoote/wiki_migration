@@ -19,9 +19,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch uav_simple_tracking uav_simple_tracking.launch
-``` to launch the
+```
+
+ to launch the
 `uav_simple_tracking` node.
 
 The launch file can be configured with following parameters:
@@ -36,6 +40,8 @@ In the `param` subdirectory there is the parameter file
 `uav_simple_tracking` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -73,6 +79,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

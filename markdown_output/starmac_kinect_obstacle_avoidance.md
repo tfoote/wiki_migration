@@ -8,6 +8,10 @@ control and simple obstacle avoidance onboard a quadrotor vehicle. For
 entry in the [ROS 3D Contest](openni/Contests/ROS 3D) \-- see the
 [contest entry page](openni/Contests/ROS 3D/Quadrotor Altitude Control and Obstacle Avoidance).
 
-To run: ```
+To run: 
+
+```
 roslaunch starmac_kinect_obstacle_avoidance patrol_demo.launch
 ```
+
+

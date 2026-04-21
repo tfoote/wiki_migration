@@ -69,6 +69,8 @@ them, follow the procedures on their respective official websites.
 
 ### Install ucl_drone package:
 
+
+
 ```
 # cd into ros root dir
 roscd
@@ -80,6 +82,8 @@ git clone git:https://github.com/Felicien93/ucl_drone.git
 catkin_make
 ```
 
+
+
 ## Set up the router
 
 As several drones communicate during this mission, it is mandatory to
@@ -88,6 +92,8 @@ model we used was the "TPlink « TL-WR841N »" but any model should do.
 
 The first step is to collect the MAC addresses of the drone you will
 use.
+
+
 
 ```
 #Connect your computer to the drone's network
@@ -121,7 +127,11 @@ sudo ifconfig eth0 192.168.1.253
 #In your files (not in navigator) go in src>ucl_drone>drone_preparation>Appareillage and add one file per drone. The file name should be the drone's network name (example: ardrone2_00217) and it should contain the IP address you want it to have (example: 192.168.1.5)
 ```
 
+
+
 ## Run
+
+
 
 ```
 # Connect to the drones. Go in src>ucl_drone>drone_preparation>Appareillage
@@ -130,3 +140,5 @@ bash autoconfarparrot
 # run the program
 roslaunch ucl_drone two_simples_new.launch
 ```
+
+

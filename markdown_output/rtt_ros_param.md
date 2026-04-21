@@ -4,7 +4,9 @@
 
 /!\\ Make sure you have a roscore running before you start the deployer.
 
-An example script *test.ops*: ```python
+An example script *test.ops*: 
+
+```python
 import(your_component_package)
 import("rtt_ros_param")
 loadComponent("YourComponentName","your_component_package::YourComponent")
@@ -19,9 +21,15 @@ YourComponentName.rosparam.storeProperty("PropertyName",false,false)
 YourComponentName.rosparam.refreshProperty("PropertyName",true,true)
 ```
 
-Which you can run using: ```
+
+
+Which you can run using: 
+
+```
 rosrun ocl deployer-gnulinux -s test.ops
 ```
+
+
 
 The meaning of the rosparam functions are explained in the next section.
 
@@ -31,9 +39,13 @@ The meaning of the rosparam functions are explained in the next section.
 
 #### Storing a single property
 
+
+
 ```cplusplus
 bool storeProperty(string PropertyName, bool private_namespace, bool relative_component_name)
 ```
+
+
 
 The **storeProperty** function takes 3 arguments: 1. **propertyName**:
 this is the name of the Property you want to store 2.
@@ -58,9 +70,13 @@ server:
 
 #### Storing all properties
 
+
+
 ```cplusplus
 bool storeProperties()
 ```
+
+
 
 This will **always** store all the components properties **in the
 private and relative component namespace**:
@@ -76,9 +92,13 @@ private and relative component namespace**:
 
 #### Refresh a single properties
 
+
+
 ```cplusplus
 bool refreshProperty(string PropertyName, bool private_namespace, bool relative_component_name)
 ```
+
+
 
 The **refreshProperty** function takes 3 arguments: 1. **propertyName**:
 this is the name of the Property you want to refresh 2.
@@ -104,9 +124,13 @@ parameter server:
 
 #### Refresh all properties
 
+
+
 ```cplusplus
 bool refreshProperties()
 ```
+
+
 
 This will **always** refresh all the components properties **from the
 private and relative component namespace** if they are availabe, if one

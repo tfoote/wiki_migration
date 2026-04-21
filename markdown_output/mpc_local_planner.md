@@ -14,8 +14,6 @@ The following paper describes the approach:
     Groups, \[\[<https://arxiv.org/abs/2006.03534%7CarXiv:2006.03534>
     '\[cs.RO\]'\]\], June 2020.
 
-<<GitHubIssues(rst-tu-dortmund/mpc_local_planner)>>
-
 ## Get Started
 
 The best way to get started is to look at one of the example

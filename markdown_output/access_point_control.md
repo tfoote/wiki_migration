@@ -6,6 +6,8 @@ specific to access point model such as
 [linksys_access_point](linksys_access_point),
 [ddwrt_access_point](ddwrt_access_point).
 
+
+
 ```clearsilver
 
 param {
@@ -66,3 +68,5 @@ desc=  See the [[dynamic_reconfigure]] package for details on dynamically reconf
 
 }
 ```
+
+

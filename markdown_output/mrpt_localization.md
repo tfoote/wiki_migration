@@ -52,9 +52,13 @@ MRPT particle filtering allows for localization with:
 
 ### LIDAR localization with a gridmap
 
-Run: ```
+Run: 
+
+```
 roslaunch mrpt_localization demo.launch
-``` to start:
+```
+
+ to start:
 
 -   a rosbag including tf and laser scan data,
 -   the mrpt localization with a mrpt map
@@ -62,9 +66,13 @@ roslaunch mrpt_localization demo.launch
 
 ### Range-only (RO) localization with a set of fixed, known radio beacons
 
-Run: ```
+Run: 
+
+```
 roslaunch mrpt_localization demo_ro.launch
-``` to start:
+```
+
+ to start:
 
 -   a dataset (rawlog format) including RO and odometry observations,
 -   the mrpt localization with known beacon locations, and
@@ -105,9 +113,15 @@ above.
 
 Example usage:
 
+
+
 ```
 roslaunch mrpt_localization demo.launch
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 srv {
   0.name = static_map
   0.type = nav_msgs/GetMap
@@ -168,3 +182,5 @@ prov_tf {
     0.desc = transform from global map to odometry origin
 }
 ```
+
+

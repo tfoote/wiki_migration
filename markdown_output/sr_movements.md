@@ -17,9 +17,13 @@ percentage between **min** and **max**. The top of the graph is 100%
 
 ### How to run
 
-The recommended way of using this package is: ```
+The recommended way of using this package is: 
+
+```
 rosrun sr_movements sr_movements /sr_movements/targets:=/sh_ffj3_mixed_position_velocity_controller/command /sr_movements/inputs:=/sh_ffj3_mixed_position_velocity_controller/state _image_path:="`rospack find sr_movements`/movements/test.png" _min:=.1 _max:=1.4 _publish_rate:=100 _repetition:=5 _nb_step:=1000 _msg_type:="sr"
 ```
+
+
 
 ### Topics published and subscribed
 

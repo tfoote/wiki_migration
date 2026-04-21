@@ -17,6 +17,8 @@ is featured in the `image_transport` tutorial
 
 ## ROS API
 
+
+
 ```clearsilver
 name = Publisher plugin
 desc =
@@ -27,13 +29,21 @@ pub {
 }
 ```
 
+
+
 {
 
 }}}}
 
+
+
 ```wiki
 [[Included page compressed_image_transport/diamondback_params not found]]
 ```
+
+
+
+
 
 ```clearsilver
 name = Subscriber plugin
@@ -44,6 +54,8 @@ sub {
   0.desc = Compressed transport subtopic.
 }
 ```
+
+
 
 ## Publishing compressed images directly
 

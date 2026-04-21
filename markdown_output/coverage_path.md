@@ -28,9 +28,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch coverage_path coverage_path.launch
-``` to launch the
+```
+
+ to launch the
 `coverage_path` node.
 
 The launch file can be configured with following parameters:
@@ -45,6 +49,8 @@ In the `param` subdirectory there is the parameter file
 `coverage_path` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -120,6 +126,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

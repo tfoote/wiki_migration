@@ -7,16 +7,22 @@ The phoxi_camera driver provides a ROS interface for PhoXi devices.
 Get the package from github and put it in your catkin workspace src
 folder:
 
+
+
 ```
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/photoneo/phoxi_camera
 ```
+
+
 
 ## ROS Node
 
 ### Published Topics
 
 The node can publish the received data through different topics:
+
+
 
 ```clearsilver
 
@@ -40,9 +46,13 @@ pub {
 }
 ```
 
+
+
 ### Parameters
 
 The following parameters are supported:
+
+
 
 ```clearsilver
 
@@ -94,11 +104,17 @@ param {
 }
 ```
 
+
+
 ### Testing
 
 The point cloud published by the phoxi_camera node can be viewed with
 [rviz](rviz).
 
+
+
 ```
 roslaunch phoxi_camera phoxi_camera.launch
 ```
+
+

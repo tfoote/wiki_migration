@@ -15,11 +15,17 @@ allows a client to request all transforms.
 
 ## Running the wviz_tf_manager node
 
+
+
 ```
 $ rosrun wviz_tf_manager wviz_tf_manager
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 pub {
@@ -48,3 +54,5 @@ param{
 
 }
 ```
+
+

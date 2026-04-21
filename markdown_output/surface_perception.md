@@ -1,5 +1,3 @@
-<<GitHubIssues(jstnhuang/surface_perception)>>
-
 ## Overview
 
 ![demo\|width=100%](attachment:demoImage.png)
@@ -11,7 +9,9 @@ is the main API. It takes in a point cloud, where the positive "z"
 direction points up. It also assumes that the point cloud has been
 cropped down to a tabletop/shelf scene.
 
-Example: ```cplusplus
+Example: 
+
+```cplusplus
 surface_perception::Segmentation seg;
 seg.set_input_cloud(pcl_cloud);
 
@@ -46,16 +46,24 @@ std::vector<SurfaceObjects> surface_objects;
 bool success = seg.Segment(&surface_objects);
 ```
 
+
+
 ## Demo
 
-To run the demo: ```
+To run the demo: 
+
+```
 rosrun surface_perception demo target_point_cloud_frame cloud_in:=input_point_cloud_topic
-``` If
+```
+
+ If
 `target_point_cloud_frame` is not provided, the point cloud will be
 processed in `base_link`.
 
 [surface_perception::SurfaceViz](http://docs.ros.org/indigo/api/surface_perception/html/classsurface__perception_1_1SurfaceViz.html)
-visualizes the result: ```cplusplus
+visualizes the result: 
+
+```cplusplus
 SurfaceViz viz(marker_pub);
 viz.set_surface_objects(surface_objects);
 viz.Show();
@@ -63,6 +71,10 @@ viz.Show();
 // Removes the visualization.
 viz.Hide();
 ```
+
+
+
+
 
 ```clearsilver
   name = surface_perception_demo
@@ -123,3 +135,5 @@ viz.Hide();
     12.desc = The minimum number of iteration that the surface exploration algorithm must go through.
   }
 ```
+
+

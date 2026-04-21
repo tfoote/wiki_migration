@@ -22,17 +22,29 @@ At present, following basic functions are provided.
 
 Setup environmet variable:
 
+
+
 ```
 export GOPATH=${path/to/rosgo/dir}
-``` Build rosgo library:
+```
+
+ Build rosgo library:
+
+
 
 ```
 go install ros
-``` Examples programs:
+```
+
+ Examples programs:
+
+
 
 ```
 go install test_listener test_talker test_param
-``` Example executables are placed in `bin`
+```
+
+ Example executables are placed in `bin`
 directory.
 
 *In future release, the build system will be integrated with

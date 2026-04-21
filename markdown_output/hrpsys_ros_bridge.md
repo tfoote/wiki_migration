@@ -36,6 +36,8 @@ command prompt starts waiting on the same terminal (the output might
 look as following), edit `package.xml` to comment out lines for
 declaring build and run depend on `pr2-controllers`.
 
+
+
 ```
 $ bloom-release --rosdistro groovy --track groovy rtmros_common
 :
@@ -44,7 +46,11 @@ $ bloom-release --rosdistro groovy --track groovy rtmros_common
 (bloom)emacs package.xml
 ```
 
-Modify `package.xml` as: ```
+
+
+Modify `package.xml` as: 
+
+```
 :  
 <!-- <build_depend>pr2_controllers</build_depend> -->
 :
@@ -52,8 +58,12 @@ Modify `package.xml` as: ```
 :
 ```
 
+
+
 3\. Run `git add`, `\$ git am \--skip`, `git commit` like below,
 and `exit 0` respectively. If all succeeds then `bloom` resumes.
+
+
 ```
 (bloom)git add package.xml
 (bloom)git am --skip
@@ -73,3 +83,5 @@ exit
 :
 (bloom continues)
 ```
+
+

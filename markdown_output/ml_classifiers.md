@@ -8,19 +8,33 @@ easily though [pluginlib](http://www.ros.org/wiki/pluginlib).
 
 ## Installation
 
+
+
 ```
 $ sudo apt-get install ros-fuerte-ml-classifiers
-``` ```
+```
+
+ 
+
+```
 $ sudo apt-get install ros-groovy-ml-classifiers
 ```
+
+
+
+
 ```
 $ sudo apt-get install ros-hydro-ml-classifiers
 ```
+
+
 
 ## ROS API
 
 ml_classifiers provides a general interface for all plugin classifiers
 to implement:
+
+
 
 ```clearsilver
 name = Interface
@@ -49,6 +63,8 @@ srv {
 }
 ```
 
+
+
 ## Plugins
 
 ml_classifiers comes with 3 plugins built in: A "zero" classifier that
@@ -63,10 +79,16 @@ above interface.
 
 Simply compile all additional desired plugins and then:
 
+
+
 ```
 $ roslaunch ml_classifiers classifier_server.launch
-``` An example python script to wrap the service
+```
+
+ An example python script to wrap the service
 calls and test the SVM classifier:
+
+
 
 ```python
 import roslib; roslib.load_manifest('ml_classifiers')
@@ -195,5 +217,7 @@ if __name__ == '__main__':
     resp = cw.classifyPoints('test',testpts)
     print resp
 ```
+
+
 
 ## Report a Bug

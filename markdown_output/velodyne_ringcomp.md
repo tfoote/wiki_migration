@@ -13,11 +13,17 @@ publishes them as <<MsgLink(sensor_msgs/PointCloud)>> in the
 
 #### Usage
 
+
+
 ```
 $ rosrun velodyne_ringcomp ringcomp
 ```
 
+
+
 ## Nodelets
+
+
 
 ```clearsilver
 node.0 {
@@ -46,9 +52,15 @@ param {
 }
 ```
 
+
+
 #### Examples
 
 Start the ring compression nodelet. *Running as a standalone nodelet
-prevents zero-copy message sharing.* ```
+prevents zero-copy message sharing.* 
+
+```
 $ rosrun nodelet nodelet standalone velodyne_ringcomp/RingCompNodelet
 ```
+
+

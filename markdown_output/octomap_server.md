@@ -6,7 +6,9 @@ General information about !OctoMap is available at
 by A. Hornung, K. M. Wurm, M. Bennewitz, C. Stachniss, and W. Burgard
 (Autonomous Robots Journal, 2013).
 
-BibTeX: ```
+BibTeX: 
+
+```
 @ARTICLE{hornung13auro,
   author = {Armin Hornung and Kai M. Wurm and Maren Bennewitz and Cyrill
   Stachniss and Wolfram Burgard},
@@ -18,7 +20,9 @@ BibTeX: ```
   doi = {10.1007/s10514-012-9321-0},
   note = {Software available at \url{http://octomap.github.com}}
 }
-``` Please cite our paper if you use
+```
+
+ Please cite our paper if you use
 !OctoMap in your research.
 
 ## ROS Node API
@@ -30,6 +34,8 @@ dynamic_reconfigure interface to change the displayed map resolution on
 the fly (since version 0.3.8). Note that this will not change the
 resolution of the underlying OctoMap, but only of the published marker /
 collision topics (e.g. for visualization).
+
+
 
 ```clearsilver
 node.0 {
@@ -166,6 +172,8 @@ node.2 {
  desc = A small command line tool to request octomap files from an octomap_server, similar to [[map_server#map_saver]]. Just run "octomap_saver mapfile.bt" to request a compressed binary octomap via service call and save it to mapfile.bt. Run "octomap_saver -f mapfile.ot" to request a full probability octomap instead (Requires version 0.5 or later).
 }
 ```
+
+
 
 ## Report a Bug
 

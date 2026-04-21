@@ -22,6 +22,8 @@ X.
 ### YAML format
 
 The YAML format is best explained with a simple, complete example:
+
+
 ```
 image: testmap.png
 resolution: 0.1
@@ -29,7 +31,9 @@ origin: [0.0, 0.0, 0.0]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 0
-``` Required fields: **\*image** : Path to the
+```
+
+ Required fields: **\*image** : Path to the
 image file containing the occupancy data; can be absolute, or relative
 to the location of the YAML file **\*resolution** : Resolution of the
 map, meters / pixel **\*origin** : The 2-D pose of the lower-left pixel
@@ -95,6 +99,8 @@ This mode will output `x` for each pixel, so output values are `\[0,
 
 ## Command-line Tools
 
+
+
 ```clearsilver
 node {
   no_header=True
@@ -103,6 +109,8 @@ node {
 }
 ```
 
+
+
 The current implementation of the map_server converts color values in
 the map image data into ternary occupancy values: free (0), occupied
 (100), and unknown (-1). Future versions of this tool may use the values
@@ -110,19 +118,29 @@ between 0 and 100 to communicate finer gradations of occupancy.
 
 #### Usage
 
+
+
 ```
 map_server <map.yaml>
 ```
 
+
+
 #### Example
+
+
 
 ```
 rosrun map_server map_server mymap.yaml
 ```
 
+
+
 Note that the map data may be retrieved via either latched topic
 (meaning that it is sent once to each new subscriber), or via service.
 The service may eventually be phased out.
+
+
 
 ```clearsilver
 pub {
@@ -146,6 +164,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
 node {
   no_header=True
@@ -154,11 +176,17 @@ node {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 rosrun map_server map_saver [--occ <threshold_occupied>] [--free <threshold_free>] [-f <mapname>] map:=/your/costmap/topic
-``` `map_saver` retrieves map data and writes it
+```
+
+ `map_saver` retrieves map data and writes it
 out to **map.pgm** and **map.yaml**. Use the **-f** option to provide a
 different base name for the output files. The **\--occ** and **\--free**
 options take values between 0 and 100. To save different map topic set
@@ -166,11 +194,21 @@ options take values between 0 and 100. To save different map topic set
 
 #### Examples
 
+
+
 ```
 rosrun map_server map_saver -f mymap
-``` ```
+```
+
+ 
+
+```
 rosrun map_server map_saver --occ 90 --free 10 -f mymap map:=/move_base/global_costmap/costmap
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -179,3 +217,5 @@ sub {
   0.desc= Map will be retrieved via this latched topic.
 }
 ```
+
+

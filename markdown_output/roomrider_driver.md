@@ -13,23 +13,37 @@
 
 Make sure that all dependencies are satisfied:
 
+
+
 ```
 rosmake roomrider_driver
 ```
 
+
+
 Run the node:
+
+
 
 ```
 rosrun roomrider_driver roomrider_driver
 ```
 
+
+
 Test your iRobot Roomba500 sensors and actuators:
+
+
 
 ```
 roslaunch roomrider_driver roomrider_test.launch
 ```
 
+
+
 ### Messages
+
+
 
 ```clearsilver
 pub {
@@ -87,3 +101,5 @@ param {
 2.default = "/dev/roomba"
 }
 ```
+
+

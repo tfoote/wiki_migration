@@ -12,6 +12,10 @@ There are two xacro files of importance:
 There is a simple launcher inside the package that will let you view the
 kobuki model rviz.
 
+
+
 ```
 > roslaunch kobuki_description view_model.launch
 ```
+
+

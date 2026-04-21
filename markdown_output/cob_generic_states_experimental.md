@@ -10,9 +10,13 @@ commanding a Care-O-bot.
 Approaches a pose or a list of poses and checks the accessibility for
 moving to these poses beforehand with the services provided by
 cob_map_accessibility_analysis. To use this state machine the map
-analysis has to be started first: ```
+analysis has to be started first: 
+
+```
 roslaunch cob_map_accessibility_analysis map_accessibility_analysis.launch
 ```
+
+
 
 ### Input keys
 
@@ -43,9 +47,13 @@ new_computation_flag:: see above
 Approaches a pose on the perimeter of a circle and checks the
 accessibility for moving to this pose beforehand with the services
 provided by cob_map_accessibility_analysis. To use this state machine
-the map analysis has to be started first: ```
+the map analysis has to be started first: 
+
+```
 roslaunch cob_map_accessibility_analysis map_accessibility_analysis.launch
 ```
+
+
 
 ### Input keys
 
@@ -88,9 +96,13 @@ Approaches one or multiple poses on the perimeter of an arbitrary
 polygon and checks the accessibility for moving to this pose beforehand
 with the services provided by cob_map_accessibility_analysis. To use
 this state machine the map analysis has to be started first:
+
+
 ```
 roslaunch cob_map_accessibility_analysis map_accessibility_analysis.launch
 ```
+
+
 
 ### Input keys
 

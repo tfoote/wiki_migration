@@ -1,8 +1,12 @@
 ## Usage
 
-To start, just execute screenrun. ```
+To start, just execute screenrun. 
+
+```
 rosrun screenrun screenrun [b]
-``` If *b* is
+```
+
+ If *b* is
 passed, byobu is used instead of screen.
 
 ## Configuration
@@ -16,7 +20,9 @@ command.
 A screen session named *ros* is started and screen windows with the
 program name are created, where the commands are entered. Usually the
 *programs* parameter will come from a configuration or launch file. See
-this example as a reference: ```
+this example as a reference: 
+
+```
 -
     name: planner
     commands:
@@ -27,3 +33,5 @@ this example as a reference: ```
     commands:
         - rosrun pr2_dashboard pr2_dashboard\015
 ```
+
+

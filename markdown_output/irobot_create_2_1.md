@@ -9,9 +9,13 @@ The only external dependency of the driver is
 
 Provided the external dependencies are satisfied:
 
+
+
 ```
 rosmake irobot_create_2_1
 ```
+
+
 
 should work properly.
 
@@ -19,31 +23,47 @@ should work properly.
 
 In its own terminal you will need to run roscore:
 
+
+
 ```
 roscore
 ```
 
+
+
 You can then run the create driver via:
+
+
 
 ```
 rosrun irobot_create_2_1 driver.py
 ```
 
+
+
 The node will assume the robot is attached to `/dev/ttyUSB0` if it is
 not:
+
+
 
 ```
 rosparam set /brown/irobot_create_2_1/port PORT
 ```
+
+
 
 or an equivalent should be executed prior to running the driver, where
 PORT is the port to which the robot is actually attached.
 
 Additionally, you can check ROS/Create functionality by running:
 
+
+
 ```
 rosrun irobot_create_2_1 bumpGo.py
 ```
+
+
 
 *while* also running the driver. This will run a primitive bump and go
 program using the ROS driver.
@@ -108,6 +128,8 @@ indicating whether the service call was successful or not.
 The driver publishes a single message type, which exports all of the
 robot's sensory information:
 
+
+
 ```
 Header header
 bool wheeldropCaster
@@ -142,6 +164,8 @@ bool internalCharger
 uint8 songNumber
 uint8 songPlaying
 ```
+
+
 
 All of the fields within the message (with the exception of the header)
 are equivalent to sensor packets available within the iRobot Create Open

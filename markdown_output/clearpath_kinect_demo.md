@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node {
   no_header=True
@@ -9,6 +11,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -94,6 +100,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
 node {
   no_header=True
@@ -103,6 +113,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -187,3 +201,5 @@ param{
     }
 }
 ```
+
+

@@ -7,6 +7,8 @@ contact is made, and verifying whether the gripper is holding something.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = gripper_actions
@@ -67,6 +69,8 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `robotiq_85_gripper_actions` package, follow the steps
@@ -75,13 +79,19 @@ below:
 1\. `robotiq_85_gripper_actions` assumes you are using Stanley
 Innovation's `robotiq_85_gripper` package to run the arm. If you do
 not already have the package installed, you can get it from the Stanley
-Innovation github repository: ```shell
+Innovation github repository: 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/StanleyInnovation/robotiq_85_gripper.git
 ```
 
+
+
 2\. Install `robotiq_85_gripper_actions` from source with the
-following commands: ```shell
+following commands: 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/remote_manipulation_markers.git
 cd ..
@@ -89,11 +99,17 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 This package contains a single ros node. Run it with the following,
 adding any parameters as necessary:
 
-. ```
+. 
+
+```
 rosrun robotiq_85_gripper_actions gripper_actions
 ```
+
+

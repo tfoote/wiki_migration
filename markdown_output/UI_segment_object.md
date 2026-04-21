@@ -13,23 +13,39 @@ The package requires that the openni_camera package is also installed
 and functional. After running rosmake, the following should start the
 server:
 
+
+
 ```
 rosrun UI_segment_object segment_object
-``` If the server runs without errors and you can
+```
+
+ If the server runs without errors and you can
 run
+
+
 
 ```
 roslaunch openni_camera openni_kinect.launch
-``` the following two service calls should then
+```
+
+ the following two service calls should then
 give an idea of how the node works:
+
+
 
 ```
 rosservice call /get_object_on_plane
-``` and
+```
+
+ and
+
+
 
 ```
 rosservice call /get_3D_pt
-``` The /get_object_on_plane service call sequence
+```
+
+ The /get_object_on_plane service call sequence
 of operation is shown below through four images. It first subscribes to
 a PointCloud2 message from the Kinect. it then presents the user with a
 2D image. The user is then asked to specify a region in the image by

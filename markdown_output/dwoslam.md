@@ -20,38 +20,62 @@ combine those constraints with 2D features in a uniform framework.
 # Getting Started
 
 First, get the code from kforge.ros.org and rosinstall some
-dependencies: ```
+dependencies: 
+
+```
 mkdir overlays
 svn co https://kforge.ros.org/dwoslam/svn/trunk overlays/dwoslam
 rosinstall overlays /opt/ros/diamondback overlays/dwoslam/dwoslam.rosinstall
-``` Then, build everything:
+```
+
+ Then, build everything:
+
+
 ```
 source overlays/setup.sh
 rosmake --rosdep-install dwoslam
 ```
 
+
+
 ## Run The Realtime GICP Demo
 
 To run a simple realtime GICP demo, launch your Kinect (see
 [openni_kinect](openni_kinect)), or start playing a bagfile; then:
+
+
 ```
 rosrun dwoslam realtime_gicp_demo rgb:=/image_color/topic depth:=/depth/topic info:=/rgb/camera_info/topic
-``` To see a complete list of options:
+```
+
+ To see a complete list of options:
+
+
 ```
 rosrun dwoslam realtime_gicp_demo --help
-``` The known commands are shown in the terminal
+```
+
+ The known commands are shown in the terminal
 and are caught by the OpenCV window: spacebar:: start/pause r:: reset
 (restart from scratch) c:: close the loop (experimental)
 
 ## Run The KLT+ICP Tracker
 
-To run the KLT+ICP tracker: ```
+To run the KLT+ICP tracker: 
+
+```
 rosrun dwoslam dwo_node [file.bag] --topics /camera/rgb/image_color /camera/depth/image /camera/rgb/camera_info --harris --do-icp
-``` If no bagfile is
+```
+
+ If no bagfile is
 provided it starts an online session. To see a complete list of options:
+
+
 ```
 rosrun dwoslam dwo_node --help
-``` Commands caught by the OpenCV window:\
+```
+
+ Commands caught by the OpenCV window:\
 *online session* spacebar:: restart g:: write the graph to pdf *testing
 session* spacebar:: restart g:: write the graph to pdf s:: skip frame
 c:: continue (track this frame) f:: go to frame no\...(write the frame

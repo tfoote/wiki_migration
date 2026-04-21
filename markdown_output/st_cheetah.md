@@ -33,9 +33,13 @@ attached !BioTacs and writes their properties to the parameter server.
 
 ## Overview
 
+
+
 ```html
 This package provides a ROS interface for the !BioTac sensors through the Cheetah SPI Port. The Cheetah device samples the connected !BioTacs according to the specified <a href="#Sampling Parameters">sampling parameters</a>. The !BioTac C library is included in this package to communicate with the sensors and decode the data. Each sample is then published as a new message that contains the channel identifier, sample data for each attached !BioTac, and a timestamp.
 ```
+
+
 
 ![hardware interface\|width=600](attachment:cheetah_hardware_interface.png)
 
@@ -43,9 +47,13 @@ This package provides a ROS interface for the !BioTac sensors through the Cheeta
 software is only compatible with the version that is included in this
 package.
 
+
+
 ```html
 <a name="working"></a>
 ```
+
+
 
 ### BioTac Communication and Batch Structure
 
@@ -83,6 +91,8 @@ below.
 
 Rosgraph containing the nodes and topics
 
+
+
 ```clearsilver
 node.0 {
   name=BioTac_Cheetah_Pub
@@ -95,11 +105,15 @@ pub {
 }
 ```
 
+
+
 #### Parameters
 
 ##### Cheetah Hardware Configuration parameters
 
 ![serial no\|width=300](attachment:cheetah_serial_no.png)
+
+
 
 ```clearsilver
 param {
@@ -117,11 +131,19 @@ param {
 }
 ```
 
+
+
+
+
 ```html
 <a name="Sampling Parameters"></a>
 ```
 
+
+
 ##### Sampling Parameters
+
+
 
 ```clearsilver
 param {
@@ -136,9 +158,15 @@ param {
   1.type = int
   1.desc = The sampling pattern for the !BioTac. They are hard coded in the program and can be identified by numbers as listed below:
 }
-``` ```html
+```
+
+ 
+
+```html
 <a name="frame types"></a>
 ```
+
+
 
 -   0 - *Default Sampling Sequence* - Vibrations (P,,AC,,) signals are
     sampled at high frequency and interleaved with all other
@@ -200,6 +228,8 @@ param {
 
 ##### Batch Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -215,15 +245,23 @@ param {
 }
 ```
 
+
+
 -   0 - display warning and continue sampling
 -   1 - display warning and reset sampling sequence before continuing
 -   2 - Display error and terminate program (recommended for
-    time-critical applications)```html
+    time-critical applications)
+
+```html
 <p>For more details go <a href="#working">here</a>.
 </p>
 ```
 
+
+
 ##### BioTac Properties
+
+
 
 ```clearsilver
 param {
@@ -255,11 +293,17 @@ param {
 }
 ```
 
+
+
 ##### Other Parameteres
+
+
 
 ```html
 <a name="working"></a>
-```0
+```
+
+0
 
 ## Documentation
 
@@ -279,24 +323,40 @@ the !BioTac properties before restarting sampling.
 ## Installation Instructions
 
 Download the SynTouch stack from (link). Unpack the package in a working
-ROS directory. ```html
-<a name="working"></a>
-```1
-
-Configure the launch file parameters. The minimum configuration is
-specified below: ```html
-<a name="working"></a>
-```2
-
-Or the extended configuration:
+ROS directory. 
 
 ```html
 <a name="working"></a>
-```3
+```
 
-Run the launch file with: ```html
+1
+
+Configure the launch file parameters. The minimum configuration is
+specified below: 
+
+```html
 <a name="working"></a>
-```4
+```
+
+2
+
+Or the extended configuration:
+
+
+
+```html
+<a name="working"></a>
+```
+
+3
+
+Run the launch file with: 
+
+```html
+<a name="working"></a>
+```
+
+4
 
 ## Contributing
 

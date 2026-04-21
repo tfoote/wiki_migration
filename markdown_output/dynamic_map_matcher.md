@@ -15,6 +15,8 @@ demo uses two hector_slam mappers.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=map_matcher_node
@@ -37,6 +39,10 @@ pub{
 
 }
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -79,6 +85,8 @@ param {
   8.desc= Weighting coefficient for the particle filter likelihood function.
 }
 ```
+
+
 
 ## References
 

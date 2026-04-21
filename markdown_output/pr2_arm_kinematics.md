@@ -23,6 +23,8 @@ detail below. To get a collision free version of this node, check out
 the
 [pr2_arm_kinematics_constraint_aware package](pr2_arm_kinematics_constraint_aware).
 
+
+
 ```clearsilver
 srv{
     0.name = node_namespace/get_ik
@@ -40,7 +42,11 @@ srv{
 }
 ```
 
+
+
 ### ROS Parameter Configuration
+
+
 
 ```clearsilver
 param {
@@ -63,6 +69,8 @@ param {
 
 }
 ```
+
+
 
 ## Tutorials
 

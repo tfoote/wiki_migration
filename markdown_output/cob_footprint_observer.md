@@ -17,7 +17,9 @@ Care-O-Bot (see [cob_bringup](cob_bringup) and
 
 The [cob_footprint_observer](cob_footprint_observer) package provides a
 configurable node for checking and adjusting the footprint based on the
-current setup. ```clearsilver
+current setup. 
+
+```clearsilver
  name = cob_footprint_observer
  desc = The `cob_footprint_observer` node uses a `tf::TransformListener` to check the transformations for desired frames and adjusts the footprint accordingly. It publishes the adjusted footprint as a [[Topics|topic]] and sets the footprint using a [[Services|service]].
 
@@ -70,21 +72,33 @@ prov_tf{
 }
 ```
 
+
+
 ## Usage/Examples
 
 This package is not intended to be used directly, but with the
 corresponding launch and yaml files. For starting the footprint observer
-with the `collision_velocity_filter` use ```
+with the `collision_velocity_filter` use 
+
+```
 roslaunch cob_bringup base_collision_observer.launch
-``` For
+```
+
+ For
 including the footprint observer in your overall launch file use
+
+
 ```
 <!-- start footprint observer node -->
 <node pkg="cob_footprint_observer" type="footprint_observer" name="footprint_observer" output="screen">
   <!-- load parameter file -->
   <rosparam file="$(find cob_hardware_config)/$(env ROBOT)/config/footprint_observer_params.yaml" command="load" />
 </node>
-``` A sample parameter file could look like this
+```
+
+ A sample parameter file could look like this
+
+
 ```
 # node from which initial footprint is read
 footprint_source: /local_costmap_node/costmap
@@ -94,3 +108,5 @@ robot_base_frame: /base_link
 # frames to check for footprint adjustment
 frames_to_check: /sdh_tip_link /arm_6_link /arm_4_link
 ```
+
+

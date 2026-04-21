@@ -22,9 +22,13 @@ systems):
 
 ## Installation
 
+
+
 ```
 sudo apt-get install ros-indigo-rqt-launchtree
 ```
+
+
 
 Afterwards, launch RQT (you might need to pass "\--force-discover" the
 first time) and select the plugin from the "Plugins" menu. You find it
@@ -37,19 +41,27 @@ the source repository is available on
 [github](http://www.github.com/pschillinger/rqt_launchtree) and can be
 checked out by running (in the /src folder of your workspace):
 
+
+
 ```
 git clone https://github.com/pschillinger/rqt_launchtree.git 
 cd ..
 catkin_make
 ```
 
+
+
 If you are using ROS Kinetic, you will need to switch the branch first.
 This is required because PyQt4 has been replaced by PyQt5, which has a
 few different bindings.
 
+
+
 ```
 git checkout kinetic
 ```
+
+
 
 ## Usage
 
@@ -105,5 +117,3 @@ configuration dialog.
     argument at the end.
 
 ## Report a Bug
-
-<<GitHubIssues(pschillinger/rqt_launchtree)>>

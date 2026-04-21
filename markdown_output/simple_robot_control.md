@@ -6,15 +6,25 @@ Arm, Gripper, Head, Base and Torso objects can be instantiated and
 calling their functions will move the robot. For moving the arms in
 cartesian space the arm planners need to be launched by calling:
 
+
+
 ```
 launch/simple_robot_control_without_collision_checking.launch
 ```
 
-or to enable planning with obstacle avoidance ```
+
+
+or to enable planning with obstacle avoidance 
+
+```
 launch/simple_robot_control.launch
 ```
 
+
+
 C++ interface:
+
+
 
 ```
 #include <ros/ros.h>
@@ -75,3 +85,5 @@ int main(int argc, char** argv){
 
 }
 ```
+
+

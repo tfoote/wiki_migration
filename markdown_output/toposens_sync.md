@@ -9,6 +9,8 @@ encapsulate all the device communication and logic flow.
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 name = ts_sync_node
 desc = triggers the connected sensors alternately and polls the data from them
@@ -26,3 +28,5 @@ param {
   1.desc = array of frame IDs in which the data is published (element [i] is mapped to element [i] of ~ports)
 }
 ```
+
+

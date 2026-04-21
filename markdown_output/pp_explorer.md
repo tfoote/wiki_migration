@@ -18,6 +18,8 @@ gradient and the angular distance to the current heading of the robot.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=pp_explorer_node
@@ -128,6 +130,8 @@ param {
 }
 }
 ```
+
+
 
 ## Tutorials
 

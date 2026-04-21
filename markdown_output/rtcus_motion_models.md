@@ -15,15 +15,23 @@ of more complex functions are generated. Including: sample a trajectory,
 obtain the final state after a set of asynchronous action history,
 obtain the final state after a set of actions, etc.
 
+
+
 ```
 template<typename StateType, typename ActionType, typename Duration = ros::Duration, typename TTime = ros::Time>
 class MotionModel;
 ```
 
+
+
 ## Example
 
 Non holonomic and Deterministic 2D(non probabilistic) motion model.
 
+
+
 ```
 class DeterministicNonHolonomic2D: public MotionModel<Pose,Twist>
 ```
+
+

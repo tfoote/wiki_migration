@@ -7,6 +7,8 @@ platforms by \[neobotix\|neobotix\].
 
 ## Topics to publish/subscribe and configuration parameters
 
+
+
 ```clearsilver
 sub {
   0.name = /joint_states
@@ -35,3 +37,5 @@ param {
   3.desc = should this node send transformations on /tf? [true, false]
 }
 ```
+
+

@@ -16,6 +16,8 @@ As per standard ROS practice, make a workspace, go to the workspace's
 src directory, and clone this repository, then run catkin_make in the
 root of the workspace, and source the resulting setup.bash!
 
+
+
 ```
 $ git clone https://github.com/methylDragon/teleop_twist_keyboard_cpp.git
 $ cd ..
@@ -24,7 +26,11 @@ $ catkin_make
 $ source devel/setup.bash
 ```
 
+
+
 ## Running the Node
+
+
 
 ```
 # In one terminal, run
@@ -37,9 +43,13 @@ $ rosrun teleop_twist_keyboard_cpp teleop_twist_keyboard
 $ rostopic echo /cmd_vel
 ```
 
+
+
 ## Usage
 
 Same as the original
+
+
 
 ```
 Reading from the keyboard  and Publishing to Twist!
@@ -66,3 +76,5 @@ e/c : increase/decrease only angular speed by 10%
 
 CTRL-C to quit
 ```
+
+

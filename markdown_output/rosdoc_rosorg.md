@@ -100,9 +100,13 @@ option is required to produce output.
 
 Usage: create_distro_index.py <distro> <filename>
 
-Writes into <filename> a yaml dict: ```
+Writes into <filename> a yaml dict: 
+
+```
 {'repos': safe_repo_index, 'stacks': stack_index, 'distro_name': distro_name}
-``` based on
+```
+
+ based on
 rospkg.distro.load_distro(), which in turn reads files from
 code.ros.org/svn/release\..../<distro>.rosdistro
 
@@ -126,6 +130,8 @@ sources.
 
 Usage: rosdoc_rosorg \--repos=<filename> \[options\] \[packages\...\]
 
+
+
 ```
 Options:
   -h, --help            show this help message and exit
@@ -146,12 +152,16 @@ Options:
   --rosbrowse           run rosbrowse indexer instead
 ```
 
+
+
 \--repos is a required option, it takes a rosinstall-like file with
 additional "meta" tags to declare membership of an SCM repository to a
 larger "repo" (e.g. all lab-wide stacks).
 
 \--distro-index is an optional file (e.g. rosdoc_rosorg/distro-\*.yaml)
-: ```
+: 
+
+```
 distro_name: foo
 repos: 
   repo-name: [stackname1, stackname2]
@@ -165,7 +175,9 @@ stacks:
   stackname2: {version: ver1,
                repo: repo1,
                rules: {git: *id001 } }
-``` Which contains redundant structural data
+```
+
+ Which contains redundant structural data
 (repo <-> stack). Also it contains yaml references (\*0001 points to
 &0001) The code is parsed by core.py, where the Repo class represents
 one stack (not Repo), and a repo is represented as an aggregate name of

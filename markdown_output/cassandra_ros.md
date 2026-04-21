@@ -42,9 +42,13 @@ First of all you will need start Cassandra, what is done in most cases
 by going into the folder, where Cassandra was installed and than by
 typing in:
 
+
+
 ```
 $ bin/cassandra -f
 ```
+
+
 
 The option -f hinders Cassandra to start a deamon in backgroud, for more
 information and help visit :
@@ -55,24 +59,36 @@ installation was successful. You will need a webcam to run these
 examples, camera-settings can be changed in the launch-file. First of
 all run
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
 ```
+
+
 
 a window with the camera-stream should appear, furthermore this starts
 cassandraBag.py, a service which stores this stream in a CassandraDB. If
 you abort, recording will stop automatically. By running:
 
+
+
 ```
 $ roslaunch cassandra_ros replayCamera.launch
 ```
 
+
+
 the recorded stream will be replayed. If you could see yourself,
 everything seems to be correct installed and configured. By running:
+
+
 
 ```
 $ roslaunch cassandra_ros deleteCamera.launch
 ```
+
+
 
 the column-family, in which the stream was stored, gets deleted. The
 service cassandra_ros/node/bag/cassandraBag.py was in this case
@@ -135,6 +151,8 @@ and access ros-messages within Cassandra.
 
 Let us start by connecting to Cassandra:
 
+
+
 ```python
 import rospy
 import roslib; roslib.load_manifest("cassandra_ros")
@@ -158,8 +176,12 @@ if not rosCas.connectToKeyspace('test'):
 rosCas.connectToKeyspace('test')
 ```
 
+
+
 Thats it, now we are connected. In the next step we will create a new
 topic/column-family:
+
+
 
 ```python
 # this is the datatype we will store
@@ -187,7 +209,11 @@ rosCas.existTopic(topic)
 rosCas.getAllTopics()
 ```
 
+
+
 In the next step we will start to insert some messages into the database
+
+
 
 ```python
 # get the topic-containerros
@@ -242,6 +268,8 @@ topicContainer.getData('04', '20')
 # also allowed is something like this: topicContainer.addData(msg, 'XXX'))
 ```
 
+
+
 ## Storage Formats
 
 As mentioned before, we support different ways of storing data, it is
@@ -249,6 +277,8 @@ either possible to store messages in a binary format, which enables fast
 conversion and storing. But currently it is also possible to store
 messages as "strings", "yaml", or "ros" format. The type of
 conversion is defined at the creation of a topic-container:
+
+
 
 ```python
 rosCas.addTopic(topic,
@@ -260,11 +290,15 @@ rosCas.addTopic(topic,
                 comment)
 ```
 
+
+
 If you would like to run CQL-Queries on your stored messages, you will
 have to use the 'ros' -- format (might not work with every datatype).
 Every message is therefore translated into a linar form and column are
 strongly typed, according to the defined message formats. A Message of
 type "geometry_msgs/TransformStamped":
+
+
 
 ```shell
 std_msgs/Header header
@@ -284,7 +318,11 @@ geometry_msgs/Transform transform
     float64 w
 ```
 
+
+
 is then transformed into Cassandra format:
+
+
 
 ```shell
 .header.seq : INT_TYPE
@@ -298,6 +336,8 @@ is then transformed into Cassandra format:
 .transform.rotation.z : DOUBLE_TYPE
 .transform.rotation.w : DOUBLE_TYPE
 ```
+
+
 
 which allows to query and analyze your data afterwards, by using CQL (as
 described within the next section).
@@ -329,16 +369,24 @@ CassandraQueryLanguage, you will have to generate at first secondary
 indexes. Because this might be expensive and not required for every part
 of a message, this has to be done manually, as follows:
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```0
+```
+
+0
 
 For an automatic translation of topics, use the following method, this
 will replace topicnames with their hash-value.
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```1
+```
+
+1
 
 For more information on CQL, check the following website:
 <http://www.datastax.com/docs/1.0/references/cql/index>
@@ -349,46 +397,74 @@ If you already checked, if your package is working, than you already had
 used cassandraBag. This is a simple service, which stores and replays
 messages similar to rosbag. Simply start the application with:
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```2
+```
+
+2
 
 You can also change some of the parameters in the launch-file. Storing
 and replaying or deleting topics requires to use the following
 command-line tool:
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```3
+```
+
+3
 
 To get a list of all currently stored topics, use the parameter
 'list':
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```4 Use record to store online messages, while
+```
+
+4 Use record to store online messages, while
 option -f denotes the storage-format rosrun cassandra_ros
 cassandraBag-cli.py record -f string start topic
 
-and use record stop to finish recoring ```
+and use record stop to finish recoring 
+
+```
 $ roslaunch cassandra_ros recordCamera.launch
-```5
+```
+
+5
 
 You can bag as many topics as Cassandra supports in parallel and stop
 and run recording dynamically
 
+
+
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```6
+```
+
+6
 
 and if you want to delete some topics use delete, for more help, just
 run
 
-```
-$ roslaunch cassandra_ros recordCamera.launch
-```7 or something like, which will support you with
-some command-line options \...
+
 
 ```
 $ roslaunch cassandra_ros recordCamera.launch
-```8/
+```
+
+7 or something like, which will support you with
+some command-line options \...
+
+
+
+```
+$ roslaunch cassandra_ros recordCamera.launch
+```
+
+8/

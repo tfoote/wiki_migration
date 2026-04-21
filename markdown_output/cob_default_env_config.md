@@ -22,12 +22,16 @@ namespace used by [cob_script_server](cob_script_server).
 ### Configuring predefined navigation goals
 
 The predefined navigation goals are defined in `navigation_goals.yaml`,
-an example file could look like this ```
+an example file could look like this 
+
+```
 #[x,y,theta]
 home: [0, 0, 0]
 order: [1, -0.5, -0.7]
 kitchen: [-2.04, 0.3, 0]
 ```
+
+
 
 Here you specify a 2D pose with in a 2D map, this means x- and
 y-position as well as the theta orientation around the z-axis in the
@@ -38,7 +42,9 @@ y-position as well as the theta orientation around the z-axis in the
 You can configure the buttons displayed by the
 [cob_command_gui](cob_command_gui) using the `command_gui_buttons.yaml`
 file which is defined for each environemt. The typical format of this
-file is: ```
+file is: 
+
+```
 group:
   group_name: <group_name>
   component_name: <component_name>
@@ -46,11 +52,17 @@ group:
     [button_name2,function_name2,parameter_name2]]
 ```
 
-An example could be ```
+
+
+An example could be 
+
+```
 buttons: [[home,move,home],
   [order,move,order],
   [kitchen,move,kitchen]]
 ```
+
+
 
 ## Populating the environment with objects
 
@@ -59,6 +71,8 @@ buttons: [[home,move,home],
 The positions of the objects are defined in a yaml file for each
 environment, you can redefine these positions in
 cob_default_env_config/config/ROBOT_ENV/object_locations.yaml:
+
+
 ```
 milk:                          #model_name
   model: milk                  #object_name (in cob_gazebo_objects/objects)
@@ -66,6 +80,8 @@ milk:                          #model_name
   position: [-2.95, 0.0, 1.02] #xyz
   orientation: [0, 0, 0]       #rpy
 ```
+
+
 
 ### Spawning or removing objects
 

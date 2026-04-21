@@ -88,7 +88,9 @@ and all other relative offsets are calculated from this point.
 Joints follow a similar naming scheme to Links, ("%s%d", name tag,
 lowest unused natural number). However, often they are referred to by a
 their base connection frame. In the following snippet, the joint number
-would be 11. ```xml
+would be 11. 
+
+```xml
 <SimpleJoint>
 	<name>"ENTERPRISEHULL--PHASERARRAY"</name>
 	<nodeID>"44/5516/10606:-:44/5516"</nodeID>
@@ -111,7 +113,9 @@ would be 11. ```xml
 	</follower>
 	...
 </SimpleJoint>
-``` This was done out of convenience,
+```
+
+ This was done out of convenience,
 but is probably not the best way to refer to joints. However, in the
 parameter file below, this will be referred to as the joint number.
 
@@ -154,11 +158,15 @@ NOT loaded into the parameter server.
     welds/fixed. \\
 -   `redefinedjoints` (Map, default empty) - The keys are joint numbers
     of joints we wish to change some attributes of. The value is a map
-    of attributes to change. ```
+    of attributes to change. 
+
+```
 redefinedjoints:
    12: {name: ARM_TRANSLATE, axis: "1 0 0", type: prismatic, limits: {effort: 30, velocity: 1.0, lower: -.18, upper: .18}}
    15: {name: ARM_ROTATE, axis: "0 0 1"}
 ```
+
+
 
 ### Adding Joints
 

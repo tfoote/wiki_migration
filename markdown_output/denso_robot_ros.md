@@ -1,3 +1,5 @@
+
+
 ```html
 <div style="position: relative; margin-top: -1%;">
  <ul>
@@ -5,6 +7,8 @@
  </ul>
 </div>
 ```
+
+
 
 ## Overview
 
@@ -42,9 +46,13 @@ on Ubuntu, making installation through `apt-get` or synaptic possible.
 Other Linux distributions will have to build from source.
 
 To install all released Indigo packages, run the following on the
-command line: ```
+command line: 
+
+```
 sudo apt-get install ros-$ROS_DISTRO-denso-robot-ros
 ```
+
+
 
 ## Tutorials
 
@@ -52,5 +60,3 @@ See the [Tutorials](denso_robot_ros/Tutorials) page for an overview of
 the available tutorials.
 
 ## Report a Bug
-
-<<GitHubIssues(DENSORobot/denso_robot_ros)>>

@@ -13,6 +13,8 @@ to a target_frame (`"/map"` as default).
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
  name = background
@@ -44,3 +46,5 @@ param{
     1.desc= The name of the laser scanner frame.
 }
 ```
+
+

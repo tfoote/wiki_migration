@@ -25,6 +25,8 @@ an interface to the EECartImped Controller.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=constraints/goal/time
@@ -49,8 +51,12 @@ param {
   5.desc=The maximum error allowed in the squared difference between the joint efforts during the trajectory.  A negative number indicates there is no constraint.  The PR2 does not have force sensors that allow us to close the loop so this is simply the difference between the efforts the joints are commanded to produce and the efforts they are actually able to produce.  If the current trajectory point does not specify force in any DOF, this constraint is ignored.
 ```
 
+
+
 Example configuration (from
 [ee_cart_imped_control](ee_cart_imped_control)/pr2_arms_cart_imped_controller.yaml):
+
+
 
 ```
 r_arm_cart_imped_action_node:
@@ -71,6 +77,8 @@ r_arm_cart_imped_action_node:
         effort: -1.0
 ```
 
+
+
 ### Action Interface
 
 The EECartImpedAction provides an
@@ -79,6 +87,8 @@ goals of the type
 <<MsgLink(ee_cart_imped_msgs/EECartImpedActionGoal)>> and publishes
 feedback of the type
 <<MsgLink(ee_cart_imped_msgs/EECartImpedActionFeedback)>>.
+
+
 
 ```clearsilver
 sub {
@@ -102,7 +112,11 @@ pub {
 }
 ```
 
+
+
 ### Controller Interface
+
+
 
 ```clearsilver
 sub {
@@ -116,6 +130,8 @@ pub {
   0.desc=Sends trajectories with force control to the controller.
 }
 ```
+
+
 
 ## Usage
 

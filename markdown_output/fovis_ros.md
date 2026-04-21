@@ -47,6 +47,8 @@ estimate in-plane rotations correctly.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = Common for mono_depth_odometer and stereo_odometer
 pub {
@@ -96,6 +98,10 @@ prov_tf {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = mono_depth_odometer
 sub {
@@ -107,6 +113,10 @@ sub {
   1.desc = The corresponding depth image. There must be a corresponding `camera_info` topic as well. Values must be given in floating point format (distance in meters).
 }
 ```
+
+
+
+
 
 ```clearsilver
 name = stereo_odometer
@@ -125,6 +135,8 @@ sub {
   3.desc = Camera info for right image.
 }
 ```
+
+
 
 ## Troubleshoting
 

@@ -2,6 +2,8 @@
 
 ![](http://datamatrix.kaywa.com/img.php?s=12&d=IPA)
 
+
+
 ```clearsilver
 name = cob_datamatrix
 desc = fakes object detection
@@ -26,6 +28,8 @@ sub {
   2.desc = instrinstric information about camera
 }
 ```
+
+
 
 ## Usage/Examples
 

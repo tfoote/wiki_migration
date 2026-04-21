@@ -50,6 +50,8 @@ workspace's source directory and run a `catkin_make`.
 For sample configuration files, see the ones in `config/`. Here are
 the accepted parameters.
 
+
+
 ```
 {
 #!clearsilver CS/NodeAPI
@@ -99,7 +101,9 @@ the accepted parameters.
   10.default = position
   10.desc = if no 'command_interface' is defined for a joint, this value is used instead
 }
-```}
+```
+
+}
 
 ## Testing the hardware interface
 

@@ -11,6 +11,8 @@ how to run the calibration node.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = gravity_compensation_node
 desc = The `gravity_compensation_node` compensates gravitational forces on the gripper of the robot so that force-torque signals are zeroed. Assumes previously calibrated accelerometer and F/T sensor. It also broadcasts through '''tf''' the pose of the center of mass of the gripper from the force-torque sensor calibration.
@@ -83,6 +85,8 @@ param {
       }
 ```
 
+
+
 ## Launching the node
 
 An example calibration file required to run this node can be found under
@@ -93,9 +97,13 @@ You can launch the node using the **gravity_compensation.launch** file
 contained in the `launch` folder of the package and setting a few
 roslaunch arguments, e.g.:
 
+
+
 ```
 roslaunch gravity_compensation gravity_compensation.launch node_name:=gravity_compensation calib_data_file:=$HOME/.ros/ft_calib/ft_calib_data.yaml ft_raw:=/ft_sensor/ft_raw imu:=/imu/data loop_rate:=650.0 ns=/ft_sensor gripper_com_child_frame_id:=gripper_com
 ```
+
+
 
 where the arguments are:
 

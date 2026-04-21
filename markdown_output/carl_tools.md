@@ -7,6 +7,8 @@ respective mounts, and an arm current logger.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = camera_external_calibration
@@ -44,10 +46,14 @@ node.1 {
   }
 ```
 
+
+
 ## Installation
 
 To install the `carl_bot` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
 cd ..
@@ -55,22 +61,36 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 External camera calibration can be started with the following launch
-command: . ```
+command: . 
+
+```
 roslaunch carl_tools camera_external_calibration.launch
-``` Optionally, an rviz interface for
+```
+
+ Optionally, an rviz interface for
 visualizing the calibration process and final calculated transforms can
-be launched with: . ```
+be launched with: . 
+
+```
 roslaunch carl_tools view_calibration.launch
-``` Current logging can be
+```
+
+ Current logging can be
 started by running the current_logger node, with an optional parameter
 for the output file name (replace <output_filename>), and it will
 continue to log currents until the node is terminated. .
+
+
 ```
 rosrun carl_tools current_logger _filename:=<output_filename>
 ```
+
+
 
 ## Calibration Procedure
 

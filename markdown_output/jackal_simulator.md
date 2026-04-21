@@ -4,9 +4,13 @@ To work with simulated Jackal on your own machine, make sure if have
 [ROS Indigo](indigo/Installation) set up, and install the metapackages
 for desktop and simulation:
 
+
+
 ```
 sudo apt-get install ros-indigo-jackal-simulator ros-indigo-jackal-desktop
 ```
+
+
 
 You should now be good to go!
 

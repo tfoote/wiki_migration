@@ -31,22 +31,34 @@ relative to the location of a fixed camera. The position of the camera
 in the world frame is published by `static_tf_publisher` as a static
 transform. The tracking process is visualized in [rviz](rviz).
 
+
+
 ```wiki
 '''Download Warning'''
 The `setup_single.sh` script currently downloads a '''350MB''' file.
-``` First, make sure you have built the additional
+```
+
+ First, make sure you have built the additional
 packages necessary for the demo:
+
+
 
 ```shell
 rosmake rviz rosbag
-``` Next, download the example image data and run
+```
+
+ Next, download the example image data and run
 the demo.
+
+
 
 ```shell
 roscd ar_pose/demo
 ./setup_single.sh
 roslaunch ar_pose demo_single.launch
-``` You should then see something similar to the
+```
+
+ You should then see something similar to the
 video below:
 
 [Youtube](https://www.youtube.com/watch?v=K6ytrF-YKh4)
@@ -60,22 +72,34 @@ The position of the marker in the world frame is published by
 `static_tf_publisher` as a static transform. The tracking process is
 visualized in [rviz](rviz).
 
+
+
 ```wiki
 '''Download Warning'''
 The `setup_reverse.sh` script currently downloads a '''177MB''' file.
-``` First, make sure you have built the additional
+```
+
+ First, make sure you have built the additional
 packages necessary for the demo:
+
+
 
 ```shell
 rosmake rviz rosbag
-``` Next, download the example image data and run
+```
+
+ Next, download the example image data and run
 the demo.
+
+
 
 ```shell
 roscd ar_pose/demo
 ./setup_reverse.sh
 roslaunch ar_pose demo_reverse.launch
-``` You should then see something similar to the
+```
+
+ You should then see something similar to the
 video below:
 
 [Youtube](https://www.youtube.com/watch?v=rrzlVRwhy6I)
@@ -88,22 +112,34 @@ relative to the location of a fixed camera. The position of the camera
 in the world frame is published by `static_tf_publisher` as a static
 transform. The tracking process is visualized in [rviz](rviz).
 
+
+
 ```wiki
 '''Download Warning'''
 The `setup_multi.sh` script currently downloads a '''177MB''' file.
-``` First, make sure you have built the additional
+```
+
+ First, make sure you have built the additional
 packages necessary for the demo:
+
+
 
 ```shell
 rosmake rviz rosbag
-``` Next, download the example image data and run
+```
+
+ Next, download the example image data and run
 the demo.
+
+
 
 ```shell
 roscd ar_pose/demo
 ./setup_multi.sh
 roslaunch ar_pose demo_multi.launch
 ```
+
+
 [Youtube](https://www.youtube.com/watch?v=b_WYO1QIYtc)
 
 ### Live video examples
@@ -115,9 +151,13 @@ The single-marker example that is provided uses the patt.hiro marker. A
 .pdf of this marker can be found in
 /ros/stacks/ccny-ros-pkg/ccny_vision/artoolkit/build/artoolkit-svn/patterns/pattHiro.pdf
 
+
+
 ```shell
 roslaunch ar_pose ar_pose_single.launch
-``` A multi-marker configuration can be started as
+```
+
+ A multi-marker configuration can be started as
 well. The Markers used in this example are found in
 /ros/stacks/ccny-ros-pkg/ccny_vision/data/4x4/4x4_ps.tar.gz The 4x4
 patterns were created with
@@ -126,17 +166,25 @@ which was developed by David Johnson, Christopher Berthiaume and Bryan
 Witkowski. These patterns are distributed with this software under the
 GPL with permission.
 
+
+
 ```shell
 rosmake rviz rosbag
-```0
+```
+
+0
 
 ## Nodes
 
 FIXME: The nodes section of this page is not displaying.
 
+
+
 ```shell
 rosmake rviz rosbag
-```1
+```
+
+1
 
 ## Troubleshooting
 

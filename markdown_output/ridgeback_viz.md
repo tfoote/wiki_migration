@@ -11,24 +11,36 @@ set up to use with Ridgeback, see the
 To view the Ridgeback model in isolation, disconnected from a real or
 simulated robot, use the following launcher:
 
+
+
 ```
 roslaunch ridgeback_viz view_model.launch
 ```
 
+
+
 To visualize a real or simulated Ridgeback, launch:
+
+
 
 ```
 roslaunch ridgeback_viz view_robot.launch
 ```
+
+
 
 ## Configurations
 
 If you'd like to bring up a specific rviz configuration, you can add an
 arg to the view_robot launcher, for example:
 
+
+
 ```
 roslaunch ridgeback_viz view_robot.launch config:=navigation
 ```
+
+
 
 The configurations available are:
 

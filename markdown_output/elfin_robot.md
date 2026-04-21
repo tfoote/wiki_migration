@@ -1,3 +1,5 @@
+
+
 ```html
 <div style="position: relative; margin-top: -1.3%;">
  <ul>
@@ -5,9 +7,15 @@
 </div>
 ```
 
+
+
+
+
 ```wiki
 [[Included page Industrial/Software_Status/Experimental not found]]
 ```
+
+
 
 ## Overview
 
@@ -43,6 +51,8 @@ on the build machine.
 In all other cases the packages will have to be build from sources in a
 Catkin workspace:
 
+
+
 ```shell
 cd /path/to/catkin_ws/src
 
@@ -62,6 +72,8 @@ catkin_make
 source /path/to/catkin_ws/devel/setup.bash
 ```
 
+
+
 The packages can now be used as regular ROS packages.
 
 Refer to the [catkin tutorials](catkin/Tutorials) for more information
@@ -80,8 +92,6 @@ in the [ROS Driver category](https://discourse.ros.org/c/drivers/) on
 ROS Discourse.
 
 ## Report a Bug
-
-<<GitHubIssues(canonical-robots/elfin_robot)>>
 
 ## Acknowledgement
 

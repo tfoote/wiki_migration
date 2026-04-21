@@ -19,6 +19,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = sensor_fusion_node
 sub {
@@ -63,3 +65,5 @@ srv {
   }
 }
 ```
+
+

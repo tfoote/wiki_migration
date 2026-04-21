@@ -7,7 +7,9 @@ An example video can be seen here:
 Further video examples are available in this playlist:
 <http://www.youtube.com/playlist?list=PL0E462904E5D35E29>
 
-Details can also be found in this paper: ```
+Details can also be found in this paper: 
+
+```
 @INPROCEEDINGS{KohlbrecherMeyerStrykKlingaufFlexibleSlamSystem2011,
   author = {S. Kohlbrecher and J. Meyer and O. von Stryk and U. Klingauf},
   title = {A Flexible and Scalable SLAM System with Full 3D Motion Estimation},
@@ -17,6 +19,8 @@ Details can also be found in this paper: ```
   organization = {IEEE},
 }
 ```
+
+
 available
 [ here](http://www.sim.tu-darmstadt.de/publ/download/2011_SSRR_KohlbrecherMeyerStrykKlingauf_Flexible_SLAM_System.pdf )
 .
@@ -30,6 +34,8 @@ of scan data, so the LIDAR does not have to be fixed related to the
 specified base frame. Odometry data is not needed.
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -244,3 +250,5 @@ desc = The name of the odom frame.
   }
  }
 ```
+
+

@@ -28,20 +28,32 @@ After ensuring that the Cybergloves are turned on, the
 asr_cyberglove_lib server can be started directly from the PC to which
 the hardware is connected:
 
+
+
 ```
 roslaunch asr_cyberglove_lib glove_lib.launch
-``` Instead of using the preconfigured
+```
+
+ Instead of using the preconfigured
 .launch-file, the server can also be started via *rosrun*, e.g. with:
+
+
 
 ```
 rosrun asr_cyberglove_lib gloveServer_node -r --calibration-file-right $(find asr_cyberglove_lib)/cfg/GloveCalibrationRight.cal --tty-right /dev/ttyD2 -d 0
-``` Alternatively, the server can also be started
+```
+
+ Alternatively, the server can also be started
 from remote if the hardware is connected to another Lab-PC. The
 following command will also use a preconfigured .launch-file:
+
+
 
 ```
 rosrun asr_cyberglove_lib glove_lib_remote.sh
 ```
+
+
 
 ### Start system from remote using different ROS distributions
 

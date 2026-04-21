@@ -6,6 +6,8 @@ for the JACO and JACO2.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = jaco_interactive_manipulation
@@ -45,16 +47,22 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `wpi_jaco` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -68,8 +76,16 @@ preset configuration to show the arm model and the interactive markers.
 This can be launched on any computer capable of displaying a GUI. The
 syntax for launching these nodes is as follows:
 
-. ```
+. 
+
+```
 roslaunch jaco_interaction im_backend.launch
-``` . ```
+```
+
+ . 
+
+```
 roslaunch jaco_interaction im_frontend.launch
 ```
+
+

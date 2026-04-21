@@ -83,9 +83,13 @@ The conversion functions from device to ROS supports an extended notion
 with obj prefixes: E.g. `obj6064` will read the actual position and
 `obj6091sub1` will read the gear ration nominator.
 
+
+
 ```wiki
 Please note that you can write to these variables, but you should avoid it, these writes are not passed to the device anyway and will overwritten in the next call!
 ```
+
+
 
 You can define more variables by just using them, they will be
 initialized to NaN values.
@@ -105,7 +109,9 @@ to load a motor plugin with [pluginlib](pluginlib), it defaults to the
 'motor_layer' parameter will be passed to the motor layer instance.
 
 In summary the following parameters are supported in `defaults`
-section and per node: ```highlight
+section and per node: 
+
+```highlight
 defaults: # optional, all defaults can be overwritten per node
   # canopen_chain_node settings ..
   motor_allocator: canopen::Motor402::Allocator # select allocator for motor layer
@@ -117,7 +123,9 @@ defaults: # optional, all defaults can be overwritten per node
   vel_from_device: "deg2rad(obj606C)/1000" # actual velocity [mdeg/s] -> rad/s
   eff_to_device: "rint(eff)" # just round to integer
   eff_from_device: "0" # unset
-``` If omitted, the listed
+```
+
+ If omitted, the listed
 values are used.
 
 ``The objects used in the conversion functions and the drive modes
@@ -128,9 +136,13 @@ should be mapped to PDOs for best performance.``
 The canopen_motor_node exposes the ROS interfaces of
 [canopen_chain_node](canopen_chain_node).
 
+
+
 ```wiki
 Please note that the `init` service will try to perform the drive homing if it's supported.
 ```
+
+
 
 In addition the interfaces of [controller_manager](controller_manager)
 are available after initialization. However, the controller_manager is

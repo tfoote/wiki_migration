@@ -15,9 +15,13 @@ arm.
 [turtlebot_arm_bringup](turtlebot_arm_bringup) package have to be
 running.
 
-To start up the markers, run: ```
+To start up the markers, run: 
+
+```
 roslaunch turtlebot_arm_interactive_markers arm_markers.launch
 ```
+
+
 
 ## Files
 
@@ -25,6 +29,8 @@ roslaunch turtlebot_arm_interactive_markers arm_markers.launch
 interactive marker server.
 
 ## Nodes
+
+
 
 ```clearsilver
 name = turtlebot_arm_marker_server
@@ -100,3 +106,5 @@ req_tf {
   0.desc = This transform is necessary for visualizing the correct position of the arm marker.
 }
 ```
+
+

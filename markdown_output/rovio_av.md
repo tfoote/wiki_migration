@@ -11,6 +11,8 @@ its internal speakers.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = rovio_audio
@@ -34,6 +36,8 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `rovio` stack, you can choose to either install from
@@ -41,7 +45,9 @@ source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rovio.git
 roscd rovio
@@ -49,12 +55,18 @@ rosdep install rovio
 rosmake rovio
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rovio
 ```
+
+
 
 ### Startup
 
@@ -66,23 +78,35 @@ changed in the `GSCAM_CONFIG` variable in order to stream video using
 and `gscam` nodes. To launch these nodes, the following command can be
 used:
 
+
+
 ```
 roslaunch rovio_av rovio_av.launch
 ```
 
+
+
 With the above nodes running, you can test video streaming with the
 [image_view](image_view) package using the following command:
+
+
 
 ```
 rosrun image_view image_view image:=/gscam/image_raw
 ```
 
+
+
 Additionally, an example to test the audio service is the following
 command:
+
+
 
 ```
 rosservice call /wav_play /path/to/rovio/rovio_av/wav/G22.wav
 ```
+
+
 
 ## Support
 

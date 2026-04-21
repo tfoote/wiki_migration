@@ -5,9 +5,13 @@ which reads the [roslaunch .launch/XML format](roslaunch/XML). It also
 contains a variety of other support tools to help you use these files.
 
 Many ROS packages come with "launch files", which you can run with:
+
+
 ```
 $ roslaunch package_name file.launch
 ```
+
+
 
 These launch files usually bring up a set of nodes for the package that
 provide some aggregate functionality.
@@ -84,16 +88,22 @@ packages, or nodes.
 The following is how you would check all `\*.launch` files in a
 package's "`launch`" directory:
 
+
+
 ```cmake
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 roslaunch_add_file_check(launch)
 ```
+
+
 
 NOTE: `roslaunch_add_file_check` takes only one directory at a time.
 
 The check runs during
 [tests](http://docs.ros.org/api/catkin/html/howto/format2/run_tests.html).
 So something like following is cleaner.
+
+
 
 ```cmake
 if (CATKIN_ENABLE_TESTING)
@@ -102,12 +112,18 @@ if (CATKIN_ENABLE_TESTING)
 endif()
 ```
 
+
+
 Since you need to find `roslaunch` in `find_package` as above, you
 better explicitly add a dependency in your `package.xml` as following:
+
+
 
 ```
 <build_depend>roslaunch</build_depend>
 ```
+
+
 
 The macro accepts either a single directory or file argument. Basically,
 it adds additional test targets into catkin generated Makefile.
@@ -125,10 +141,14 @@ defines dependency for the tests (e.g. `test_depend`). This avoids
 issues that happen during tests such as
 [this issue](http://answers.ros.org/question/262558/buildfarm-missing-package-dependencies-pkg_namepackagexml).
 
+
+
 ```cmake
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 roslaunch_add_file_check(launch USE_TEST_DEPENDENCIES)
 ```
+
+
 
 ## GUI
 

@@ -18,13 +18,17 @@ Object Model Generation, shown and described below.
 ## Installation
 
 To install the `rail_pick_and_place` package, you can install from
-source with the following commands: . ```shell
+source with the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_pick_and_place.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -33,13 +37,21 @@ starting up the backend necessary for grasp demonstration collection and
 object model generation, as well as a frontend that launches rviz with
 the relevant panels and topics shown:
 
-. ```
+. 
+
+```
 roslaunch rail_pick_and_place_tools model_generation_backend.launch
 ```
 
-. ```
+
+
+. 
+
+```
 roslaunch rail_pick_and_place_tools model_generation_frontend.launch
 ```
+
+
 
 The frontend should look something like this:
 

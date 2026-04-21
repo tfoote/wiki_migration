@@ -43,9 +43,13 @@ initializes the FMU correspondingly.
 For this purpose, this package provide a launch file with argument
 *fmu_path*. Simply call
 
+
+
 ```
 roslaunch fmi_adapter fmi_adapter_node.launch fmu_path:=[PathToTheFMUFile]
 ```
+
+
 
 ## fmi_adapter library
 
@@ -87,21 +91,31 @@ file from an application-specific ROS node or library.
 **Step 1:** Include the FMIAdapter.h from the fmi_adapter package in
 your C++ code.
 
+
+
 ```
 #include "fmi_adapter/FMIAdapter.h"
 ```
 
+
+
 **Step 2:** Instantiate the adapter class with the path to the FMU file
 and the desired simulation step size. If the step-size argument is
 omitted, the default step size specified in the FMU file will be used.
+
+
 
 ```
 ros::Duration stepSize(0.001);
 fmi_adapter::FMIAdapter adapter(fmuPath, stepSize);
 ```
 
+
+
 **Step 3:** Create subscribers or timers to set the FMU's input values.
 For example:
+
+
 
 ```
 ros::Subscriber subscriber =
@@ -109,6 +123,8 @@ ros::Subscriber subscriber =
       adapter.setInputValue("angleX", ros::Time::now(), msg->data);
     });
 ```
+
+
 
 In this example, `angle_x` is the topic name whereas `angleX` is the
 corresponding input variable of the FMU.
@@ -119,6 +135,8 @@ variables.
 **Step 4:** Create a timer or subscriber that triggers the simulation of
 the FMU using `adapter.doStepsUntil(..)`. For example:
 
+
+
 ```
 ros::Timer timer = nHandle.createTimer(ros::Duration(0.01), [&](const ros::TimerEvent& event) {
     adapter.doStepsUntil(event.current_expected);
@@ -127,15 +145,21 @@ ros::Timer timer = nHandle.createTimer(ros::Duration(0.01), [&](const ros::Timer
   });
 ```
 
+
+
 Use `adapter.getOutputVariableNames()` to get a list of all output
 variables.
 
 **Step 5:** Sets parameters and initial values of the FMU:
 
+
+
 ```
 adapter.setInitialValue("dampingParam", 0.21);
 adapter.setInitialValue("angleX", 1.3);
 ```
+
+
 
 The function `adapter.initializeFromROSParameters(nHandle)` may be used
 to initialize all parameters from the corresponding ROS parameters.
@@ -147,7 +171,11 @@ supported by ROS are replaced by an `_`, cf.
 initialization mode and set the ROS time that refers to the FMU's
 internal timepoint 0.0.
 
+
+
 ```
 adapter.exitInitializationMode(ros::Time::now());
 ros::spin();
 ```
+
+

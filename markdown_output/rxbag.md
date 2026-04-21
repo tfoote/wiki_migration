@@ -23,9 +23,13 @@ contained in the [rxbag_plugins](rxbag_plugins) package in the
 
 ## Usage
 
-To run, pass the filename of a bag file, e.g. ```
+To run, pass the filename of a bag file, e.g. 
+
+```
 $ rxbag teleop.bag
 ```
+
+
 
 Additional [command-line options](rxbag/Commandline) are available.
 

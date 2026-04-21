@@ -16,9 +16,13 @@ reference but may not be released in next ROS distro.
 
 On your `Ubuntu` machine where `ROS` [hydro](hydro) is installed:
 
+
+
 ```
 $ sudo apt-get install ros-hydro-denso
-``` This command will have the following packages
+```
+
+ This command will have the following packages
 at minimum installed:
 
 -   From `denso` package suite: [denso_controller](denso_controller),
@@ -34,15 +38,23 @@ you're unsure what it is, do the following:
 
 1\. Open /etc/apt/sources.list.d/ros-latest.list. If it doesn't exist,
 create one. 1. Comment out any entries taht contain packages.ros.org 1.
-Add these lines: ```
+Add these lines: 
+
+```
 # Shadow-fixed
         deb http://packages.ros.org/ros-shadow-fixed/ubuntu precise main
         deb-src http://packages.ros.org/ros-shadow-fixed/ubuntu precise main
-``` 1. Run on terminal:
+```
+
+ 1. Run on terminal:
+
+
 ```
 $ sudo apt-get update
         $ sudo apt-get dist-upgrade
-``` 1. Remove above portion of entries once
+```
+
+ 1. Remove above portion of entries once
 `apt-get` finishes.
 
 Again, do NOT forget to roll back `apt`'s source list by number 5

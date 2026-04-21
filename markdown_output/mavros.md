@@ -9,6 +9,8 @@ also [mavros_extras](mavros_extras) package.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = mavros_node
@@ -123,22 +125,32 @@ node.2 {
 }
 ```
 
+
+
 ## Usage
 
 Example launch files are in the mavros/launch directory. If the
 autopilot is on the PX4 native stack use the following to launch an
 example configuration:
 
+
+
 ```
 roslaunch mavros px4.launch
 ```
 
+
+
 If the autopilot is on the ArduPilot/APM stack firmware use the
 following:
+
+
 
 ```
 roslaunch mavros apm.launch
 ```
+
+
 
 Example configurations for the various mavros plugins can also be found
 in similarly named yaml files. For more details on the choices between
@@ -199,6 +211,8 @@ All utilities provides `<util> \--help` and `<util> <command>
 
 ### mavcmd
 
+
+
 ```
 usage: mavcmd [-h] [-n MAVROS_NS] [-v] [--wait]
               {long,int,sethome,takeoff,land,takeoffcur,landcur,trigger_control}
@@ -225,9 +239,13 @@ optional arguments:
   --wait                Wait for establishing FCU connection
 ```
 
+
+
 ### mavftp
 
-**PX4** only. ```
+**PX4** only. 
+
+```
 usage: mavftp [-h] [-n MAVROS_NS] [-v]
               {cd,list,cat,remove,mkdir,rmdir,download,upload,verify,reset}
               ...
@@ -254,7 +272,11 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
+
+
 ### mavparam
+
+
 
 ```
 usage: mavparam [-h] [-n MAVROS_NS] [-v] {load,dump,get,set} ...
@@ -275,7 +297,11 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
+
+
 ### mavsafety
+
+
 
 ```
 usage: mavsafety [-h] [-n MAVROS_NS] [-v] {arm,disarm,safetyarea} ...
@@ -295,9 +321,13 @@ optional arguments:
   -v, --verbose         verbose output
 ```
 
+
+
 ### mavsetp
 
 Testing utility for setpoint plugins.
+
+
 
 ```
 usage: mavsetp [-h] [-n MAVROS_NS] [-V] {local} ...
@@ -315,7 +345,11 @@ optional arguments:
   -V, --verbose         verbose output
 ```
 
+
+
 ### mavsys
+
+
 
 ```
 usage: mavsys [-h] [-n MAVROS_NS] [-v] [--wait] {mode,rate} ...
@@ -335,10 +369,14 @@ optional arguments:
   --wait                Wait for establishing FCU connection
 ```
 
+
+
 Supported custom modes listed at
 [mavros/CustomModes](mavros/CustomModes).
 
 ### mavwp
+
+
 
 ```
 usage: mavwp [-h] [-n MAVROS_NS] [-v]
@@ -362,6 +400,8 @@ optional arguments:
                         ROS node namespace
   -v, --verbose         verbose output
 ```
+
+
 
 ## Plugins
 

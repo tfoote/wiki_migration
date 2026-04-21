@@ -1,6 +1,10 @@
+
+
 ```wiki
 '''WARNING:''' This documentation refers to an outdated version of rosjava and is probably incorrect. Use at your own risk.
 ```
+
+
 
 ## Interpreting Output Messages
 
@@ -9,6 +13,8 @@
 A python utility is provided to unsquash the parse trees and
 dependencies output by `stanford_parser_ros`. This will create a tree
 structure:
+
+
 
 ```
 from stanford_parser_msgs import unsquash_tree
@@ -21,8 +27,12 @@ def callback(msg): # msg type: stanford_parser_msgs/Parse
   [...]
 ```
 
+
+
 Each node in the tree \-- an instance of the class Tree \-- has the
 following elements:
+
+
 
 ```
 node.tag        # string
@@ -31,6 +41,8 @@ node.word       # string
 node.word_index # integer -- node.word = msg.words[node.word_index]
 node.children   # listof(Tree)
 ```
+
+
 
 The part-of-speech tags used in the Stanford Parser come from Penn
 Treebank II and can be found

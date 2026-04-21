@@ -42,6 +42,8 @@ now functional. However, all callback invocation that occured out of
 
 ## Library
 
+
+
 ```clearsilver
 node.0 {
  name = API
@@ -90,4 +92,4 @@ node.0 {
 }
 ```
 
-<<GitHubIssues(snt-robotics/robot_activity)>>
+

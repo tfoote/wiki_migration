@@ -18,6 +18,8 @@ controller.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=~pan_link
@@ -35,12 +37,16 @@ param {
 }
 ```
 
+
+
 ### Action interface
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
 <<MsgLink(pr2_controllers_msgs/PointHeadGoal)>>. It reports success
 when the head is pointed at the target.
+
+
 
 ```clearsilver
 sub {
@@ -64,7 +70,11 @@ pub {
 }
 ```
 
+
+
 ### Controller interface
+
+
 
 ```clearsilver
 sub {
@@ -78,3 +88,5 @@ pub {
   0.desc=Sends joint trajectories to the controller.
 }
 ```
+
+

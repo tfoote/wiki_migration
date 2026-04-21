@@ -23,9 +23,13 @@ repository have been released into ROS Kinetic on Ubuntu, making
 installation through `apt-get`or synaptic possible. Other
 distributions will have build from source.
 
+
+
 ```
 sudo apt-get install ros-kinetic-binpicking-utils
 ```
+
+
 
 ## Config
 
@@ -51,6 +55,8 @@ away from the Grasp Point.
 Example config file is located at the config folder. Change launch file
 parameter filepath to adopt launch to your custom config file.
 
+
+
 ```
 bin_center_x: 0.5
 bin_center_y: 0
@@ -72,19 +78,31 @@ approach_distance: 0.1
 deapproach_distance: 0.15
 ```
 
+
+
 ## Usage
 
 Following
 [launch file](https://github.com/durovsky/binpicking_utils/blob/master/bin_pose_emulator/launch/bin_pose_emulator.launch)
 loads example config.yaml from package /config directory.
 
+
+
 ```
 roslaunch bin_pose_emulator bin_pose_emulator
-``` Call ROS service with an Emptry Request:
+```
+
+ Call ROS service with an Emptry Request:
+
+
 
 ```
 rosservice call /bin_pose
-``` Service response:
+```
+
+ Service response:
+
+
 
 ```
 grasp_pose:
@@ -118,6 +136,8 @@ deapproach_pose:
     z: -0.11979722254
     w: 0.678952364862
 ```
+
+
 
 ## Visualization
 

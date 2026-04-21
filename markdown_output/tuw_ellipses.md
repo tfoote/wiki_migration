@@ -19,13 +19,21 @@ ECCV 2004, Springer Berlin Heidelberg, 2004, 3023, 521-532,
     lets assume you ar publishing your camera under */camera/image_raw*
     and */camera/camera_info*
 -   Secound you can start the ellipse detection\
-    ```
+    
+
+```
 rosrun tuw_ellipses tuw_ellipses_node image:=/camera/image_raw camera_info:=/camera/camera_info
 ```
+
+
 -   running the reconfigure module allows you to tune parameters
-    ```
+    
+
+```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+
+
 
 ## Screenshots
 

@@ -45,9 +45,13 @@ should have no problem to work in any Linux environment.
 
 Install the package by calling: { }}}} { }}}} { }}}} { }}}} { }}}} the
 package comes with udev rules that allow for an easy discovery of the
-brainbox adapters. Install them by calling: ```
+brainbox adapters. Install them by calling: 
+
+```
 rosrun schunk_svh_driver create_udev_rules
 ```
+
+
 this will copy the udev rules to `/etc/udev/rules.d` and restart your
 udev service.
 
@@ -60,10 +64,14 @@ src directory:
 -   <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_comm>
 -   <https://github.com/fzi-forschungszentrum-informatik/schunk_svh_driver>
 
-then just call ```
+then just call 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
 ```
+
+
 
 If you have the fzi_icl_core or fzi_icl_comm package in your workspace
 you'll have to build it with *catkin_make_isolated*, as those packages
@@ -72,12 +80,18 @@ are plain cmake packages. See the
 
 The package comes with UDEV rules for the Brainbox USB to Serial adapter
 to install these source your workspace and call the following:
+
+
 ```
 rosrun schunk_svh_driver create_udev_rules
-``` which will copy the udev rules into
+```
+
+ which will copy the udev rules into
 `/etc/udev/rules.d` and restart your udev service.
 
 ## ROS API
+
+
 
 ```clearsilver
 name = svh_controller
@@ -169,7 +183,11 @@ param {
   11.desc = Array of parameters for all hardware versions and all joints. The values are read from the *.yaml files in the package's ''etc'' directory.
   11.default = Filled with values from the etc/controller_default.yaml file
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = svh_sin_test
 desc = this node is meant as a very very simple test program to show how to interface with the `svh_controller` and to check if the hardware works
 sub {
@@ -189,6 +207,8 @@ pub{
  0.desc = Target position of the fingers for the svh_controller
 }
 ```
+
+
 
 ## Additional API information
 
@@ -239,9 +259,13 @@ default file will be used. If both files are missing or the node use
 used without the launch file hardcoded default values that are safe will
 be used.
 
+
+
 ```wiki
 WARNING: These settings enable control of very low level concepts. Setting wrong values here may lead to permanent damage in the hardware. Especially the maximum allowed currents should not be exceeded. Consult the [[attachment:svh_hardware_information.pdf]] before you change things.
 ```
+
+
 
 ## Usage
 
@@ -259,9 +283,13 @@ needed for correct operation and visualization.
 
 Make sure the hand is connected to an appropriate power source and via a
 USB to Serial adapter to your PC. You can check which adapters are
-available with a quick: ```
+available with a quick: 
+
+```
 ls /dev
-``` where an entry like
+```
+
+ where an entry like
 /ttyUSB0 should be present. In case you have multiple adapters the
 easiest way to check which one you are using is to disconnect the
 adapter shortly and check which of the ttyUSBx devices is gone.
@@ -286,9 +314,13 @@ the hand into any position you can use the package as standalone with
 sliders.
 
 Make sure the hardware is powered and can move freely and launch the
-controller node by calling ```
+controller node by calling 
+
+```
 roslaunch schunk_svh_driver svh_controller.launch standalone:=true
-``` This will
+```
+
+ This will
 automatically connect the driver to the hardware and call the reset
 routine for all fingers. Upon the message: "Driver was autostarted!
 Input can now be sent. Have a safe and productive day!" the hand is
@@ -296,9 +328,13 @@ ready and fingers can be moved by using the Joint State publisher gui
 that has come up.
 
 You can disable the autostart by adding the argument autostart:
+
+
 ```
 roslaunch schunk_svh_driver svh_controller.launch standalone:=true autostart:=false
 ```
+
+
 
 By using the `standalone` argument the launchfile will start a joint
 state publisher for easy input. If you do not activate this as input you
@@ -310,21 +346,29 @@ gives you some examples how to controll the hand via rostopic.
 
 By default the node will await input from another node. To use the
 svh_controller with your project **it is highly recommended that you
-include it via its launch file** like this: ```
+include it via its launch file** like this: 
+
+```
 <include file="$(find schunk_svh_driver)/launch/svh_controller.launch">
         <arg name="standalone" value="False" />
         <arg name="gui" value="False" />
   </include>
-``` The
+```
+
+ The
 argmuments are not strictly necessary as the values default to these.
 This way of including the node may however be more than you want because
 the launch script already contains things like a robot state publisher
 etc. if you just want the node, but do not want to care about the config
 files and so on you can use the very simple include file:
+
+
 ```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```0 again, fill out the arguments you need, the
+```
+
+0 again, fill out the arguments you need, the
 rest will default to predefined values. If you use the svh_node.launch
 file you will have to provide an "output joint state publisher" for
 the joint states in order to generate the joint states required for the
@@ -348,10 +392,14 @@ relation.
 The node will automatically show the input sliders if started with the
 standalone argument. If you additionally provide the `gui` argument as
 true an rqt gui will be opened when launching the node:
+
+
 ```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```1
+```
+
+1
 
 The `rqt` gui opens always to its default configuration (which is
 usually the last one). The SVH comes with the plugin `SVH_Reset` which
@@ -366,17 +414,25 @@ should look something like this to access all GUI functionalities:
 ### Simulation
 
 If you do not want to use the actual hand you can simply start a
-simulation of the hand by using: ```
+simulation of the hand by using: 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```2 as with the
+```
+
+2 as with the
 real hardware you can choose to use the simulation (which is not really
 a simulation but just a visualisation) with convenient sliders or with
 the command line/ your own packages by using the `standalone`
-argument: ```
+argument: 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```3
+```
+
+3
 
 **Note**: The SVH uses relative encoders that need a hard stop to reset.
 Especially the finger spread however also contains springs that will
@@ -387,20 +443,32 @@ please beware when you develop poses without the hardware in the loop.
 
 As a test to see if the hardware is properly working the very simple
 test node `svh_sin_test` is provided. Make sure the hand can move
-freely and run the test with: ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
-```4 after all
-fingers are reset all fingers except the thumb will perform a sinus like
-motion. You can stop/start the motion execution by sending:
+freely and run the test with: 
+
 ```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```5 During execution the driver will output
-warnings like this: ```
+```
+
+4 after all
+fingers are reset all fingers except the thumb will perform a sinus like
+motion. You can stop/start the motion execution by sending:
+
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```6 this is perfectly normal
+```
+
+5 During execution the driver will output
+warnings like this: 
+
+```
+catkin_make_isolated
+   source devel_isolated/setup.bash
+```
+
+6 this is perfectly normal
 as the sin test tries to drive the fingers to positions outside of the
 soft stops.
 
@@ -454,14 +522,22 @@ direct human input when set to true
 *After an autostart (default setting) of the software the fingers do not
 begin to move* The autostart tries to connect to the hand and run and
 autostart immediately. Check the output of the driver. After a
-successful connect it should read: ```
+successful connect it should read: 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```7 If the
-driver states: ```
+```
+
+7 If the
+driver states: 
+
+```
 catkin_make_isolated
    source devel_isolated/setup.bash
-```8 the serial device could not ne
+```
+
+8 the serial device could not ne
 opened. Check that you have installed the udev rules and that the device
 shows up as /dev/ttyUSBx when you connect it *After an autostart of the
 software it says **Send packages = 28, received packages = 20** or

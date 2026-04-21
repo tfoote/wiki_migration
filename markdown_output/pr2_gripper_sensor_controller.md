@@ -59,9 +59,13 @@ Since the [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller)
 package is a real-time controller, it is important to remember to
 compile the package **before** launching your robot, otherwise it will
 fail to register and load correctly with [pluginlib](pluginlib).
-Compiling can be done simply by typing: ```
+Compiling can be done simply by typing: 
+
+```
 rosmake pr2_gripper_sensor_controller
 ```
+
+
 
 Or by building any of the higher-level packages (such as
 [pr2_gripper_sensor_action](pr2_gripper_sensor_action) which depend on

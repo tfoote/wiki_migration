@@ -9,6 +9,8 @@ visualizer.
 
 ![RVIZ plugin.\|width=200px](attachment:arm-nav-ui.png)
 
+
+
 ```clearsilver
 
 sub {
@@ -32,11 +34,15 @@ param {
 }
 ```
 
+
+
 Presets for goal positions can be defined in yaml file. Here is the
 example with two presets, where first preset is relative position and
 second absolute. Orientation can be specified as RPY (three values) or
 as quaternion (four values). Presets are displayed in the user
 interface.
+
+
 
 ```
 arm_nav_presets:
@@ -52,6 +58,8 @@ arm_nav_presets:
   relative: false
 ```
 
+
+
 ## Assisted arm navigation state visualizer
 
 Node for publishing text marker indicating state of arm planning - tells
@@ -61,6 +69,8 @@ arm navigation node to visualize text marker near the end effector when
 planning.
 
 ![Text marker tells user if there is some problem.\|width=600px](attachment:statevis.png)
+
+
 
 ```clearsilver
 pub {
@@ -75,6 +85,8 @@ sub {
 }
 ```
 
+
+
 ## Assisted detection (bounding box estimation)
 
 RVIZ plugin for assisted object detection. Actionlib interface can be
@@ -82,6 +94,8 @@ called to get ROI of object in image stream. This ROI can be then
 converted to 3D bounding box using [BB estimator](bb_estimator).
 
 ![Assisted detection pop-up window.\|width=600px](attachment:assist-det.png)
+
+
 
 ```clearsilver
 
@@ -99,7 +113,11 @@ param {
 }
 ```
 
+
+
 ##### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -113,7 +131,11 @@ sub {
 }
 ```
 
+
+
 ##### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -131,6 +153,8 @@ pub {
   2.desc= Result contains final ROI.
 }
 ```
+
+
 
 Example of action client for assisted detection plugin can be found in
 *detect_unknown_object_assisted* SMACH generic state implemented in

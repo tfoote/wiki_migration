@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = image_calibration
@@ -109,6 +111,8 @@ node.2 {
 }
 ```
 
+
+
 ## Startup
 
 The `youbot_overhead_vision` package should be launched at the same
@@ -117,24 +121,36 @@ time as the 'rrl_localization' package with the use of the
 depending on whether the camera streams are real or simulated. However,
 the node can be run on its own by using one of the following commands:
 
+
+
 ```shell
 rosmake youbot_overhead_vision
 roslaunch youbot_overhead_vision youbot_overhead_vision.launch
 ```
 
+
+
 or
+
+
 
 ```shell
 rosmake youbot_overhead_vision
 roslaunch youbot_overhead_vision youbot_overhead_vision_sim.launch
 ```
 
+
+
 With the above node running, you can test video streaming with the
 [image_view](image_view) package using the following command:
+
+
 
 ```shell
 rosrun image_view image_view image:="/image_calibration/image_cal"
 ```
+
+
 
 You may find that the two camera images do not align properly due to
 different overhead camera positions. Changing this requires opening the
@@ -148,10 +164,14 @@ change the useFromSimulation parameter found in the
 if the camera stream comes from gazebo, and 'false' otherwise. Then,
 run the calibration creation tool using the following commands:
 
+
+
 ```shell
 rosmake youbot_overhead_vision
 roslaunch youbot_overhead_vision youbot_overhead_vision_create_calibs.launch
 ```
+
+
 
 The calibration tool allows for both calibrating points, and setting
 boundary regions through which the robot cannot drive through.

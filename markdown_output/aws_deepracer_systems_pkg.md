@@ -20,6 +20,8 @@ The source code is released under
 
 ## Node Details
 
+
+
 ```clearsilver
 name = software_update_node
 sub {
@@ -84,6 +86,10 @@ srv_called {
 }
 ```
 
+
+
+
+
 ```clearsilver
 
 name = model_loader_node
@@ -138,6 +144,10 @@ srv_called {
 }
 ```
 
+
+
+
+
 ```clearsilver
 
 name = otg_control_node
@@ -150,6 +160,10 @@ srv {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 
@@ -194,3 +208,5 @@ srv_called {
    }
 }
 ```
+
+

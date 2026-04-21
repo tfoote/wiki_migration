@@ -5,6 +5,8 @@ libgphoto2-2-dev or equivalent is required.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
 name= photo_node
@@ -25,6 +27,8 @@ srv {
   
 }
 ```
+
+
 
 ### test_photo
 

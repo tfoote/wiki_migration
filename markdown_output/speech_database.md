@@ -4,6 +4,8 @@ See the speech_database node documentation.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = speech_database
 desc = This node sends request to the soundplay_node to play audio files that contain synthesised speech. It checks with a dictonary if the to-be-synthesised text has been handled before. If so, the existing audio file is used, otherwise, synthesised speech is downloaded from Google. The filename is a 50 character string and is chosen randomly. To determine whether an audio file that corresponds to the text already exists, the node accesses a json dictionary that contains pre-downloaded files with synthesised speech. It holds  strings as keys and filenames as values.
@@ -30,6 +32,8 @@ param {
 }
 ```
 
+
+
 ## Launch Files
 
 Use roslaunch files to load this files.
@@ -40,9 +44,13 @@ Use roslaunch files to load this files.
 
 ## Test Voice Output
 
-By calling ```
+By calling 
+
+```
 rostopic pub /speech std_msgs/String "Hello World"
-``` one can test the voice output.
+```
+
+ one can test the voice output.
 
 ## Use of self generated voice files
 

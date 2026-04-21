@@ -32,7 +32,9 @@ diagnostics data from a simple robot.
 
 If a robot had diagnostics from the motor drivers, SICK laser scanner,
 Videre camera and a few batteries, the diagnostic input might have
-status names: ```
+status names: 
+
+```
 Left Wheel
 Right Wheel
 SICK Frequency
@@ -49,10 +51,14 @@ Battery 4 Level
 Voltage Status
 ```
 
+
+
 Using the diagnostic aggregator, we can move these diagnostic messages
 into easy to understand categories to display in our `robot_monitor`.
 To do this, just prepend the name of the category to the status names,
-and separate them with "/". ```
+and separate them with "/". 
+
+```
 My Robot/Wheels/Left
 My Robot/Wheels/Right
 My Robot/SICK/Frequency
@@ -69,8 +75,12 @@ My Robot/Power System/Battery 4 Level
 My Robot/Power System/Voltage Status
 ```
 
+
+
 Using the above input, the Robot Monitor will categorize the data as
-follows: ```
+follows: 
+
+```
 My Robot
   -- Wheels
     -- Left
@@ -80,6 +90,8 @@ My Robot
   -- Stereo
   -- Power System
 ```
+
+
 
 ## Analyzers
 
@@ -127,6 +139,8 @@ For a full tutorial, see the tutorial
 To set up the diagnostic analyzer on a robot, the aggregator is given
 parameters that will configure the analyzers. These parameters, below,
 are in the private namespace of the aggregator node.
+
+
 ```
 pub_rate: 1.0 # Optional, defaults to 1.0
 base_path: 'PRE' # Optional, defaults to ""
@@ -137,7 +151,9 @@ analyzers:
     type: GenericAnalyzer
     path: 'Joints'
     regex: 'Joint*'
-``` Under each sub namespace under `analyzers`, a
+```
+
+ Under each sub namespace under `analyzers`, a
 different analyzer is configured. Analyzers can be robot specific, or
 they can be general purpose ones like the `GenericAnalyzer`.
 
@@ -159,13 +175,17 @@ optional, and defaults to 1.0. The `base_path` is prepended to all
 To look for an example of an aggregator in use, look in the
 "diagnostic_aggregator/demo" directory. Users specify each
 `Analyzer` in the private parameter space of the `aggregator_node`,
-then start the node. ```xml
+then start the node. 
+
+```xml
 <node pkg="diagnostic_aggregator" type="aggregator_node"
       name="diag_agg" >
   <rosparam command="load" 
             file="$(find diagnostic_aggregator)/demo/pr2_analyzers.yaml" />
 </node>
 ```
+
+
 
 ## Basic Analyzer Types
 
@@ -194,6 +214,8 @@ analyzing a group of similar items, like 4 different cameras. The
 `AnalyzerGroup` can use any type of analyzer as one of the
 sub-analyzers.
 
+
+
 ```
 type: AnalyzerGroup
 path: Sensors
@@ -214,6 +236,8 @@ analyzers:
     startswith: imu_node
     num_items: 3
 ```
+
+
 
 The above example can analyze the instruments on a PR2. The
 `AnalyzerGroup` uses the parameter `path` to prepend to all output
@@ -250,6 +274,8 @@ suppress any output from anything that it matches.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = aggregator_node
 desc = Collects diagnostics, loads diagnostic analyzer plugins
@@ -284,6 +310,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = analyzer_loader
 desc = Loads diagnostic analyzers, verifies initialization OK. Used as regression test.
@@ -293,6 +323,8 @@ param {
   0.desc = Same format as aggregator_node
 }
 ```
+
+
 
 ## Examples and Applications
 

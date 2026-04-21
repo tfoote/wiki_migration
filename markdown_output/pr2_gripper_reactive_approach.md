@@ -63,6 +63,8 @@ The ROS API is UNREVIEWED and UNSTABLE
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   1.name= side_step
@@ -120,6 +122,8 @@ param {
 }
 ```
 
+
+
 ### Action APIs
 
 The reactive_grasp_server node provides implementations of
@@ -134,6 +138,8 @@ to send goals is by using the `SimpleActionClient`. Please see
 
 #### Reactive Grasp Action Subscribed Topics
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -146,7 +152,11 @@ sub {
 }
 ```
 
+
+
 #### Reactive Grasp Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -160,7 +170,11 @@ pub {
 }
 ```
 
+
+
 #### Reactive Approach Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -174,7 +188,11 @@ sub {
 }
 ```
 
+
+
 #### Reactive Approach Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -188,7 +206,11 @@ pub {
 }
 ```
 
+
+
 #### Reactive Lift Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -202,7 +224,11 @@ sub {
 }
 ```
 
+
+
 #### Reactive Lift Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -215,6 +241,8 @@ pub {
   1.desc= Contains a result code of type object_manipulation_msgs/ManipulationResult, that indicates the final result of the reactive lift.
 }
 ```
+
+
 
 ### Services
 

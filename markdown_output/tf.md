@@ -101,6 +101,8 @@ utility node for remapping coordinate transforms.
 . Print information about the current coordinate transform tree to
 console. For example:
 
+
+
 ```
 $ rosrun tf tf_monitor
 RESULTS: for all Frames
@@ -117,11 +119,15 @@ Broadcasters:
 Node: /realtime_loop 94.7371 Hz, Average Delay: 0.000599916 Max Delay: 0.001337
 Node: /robot_pose_ekf 30.8259 Hz, Average Delay: 0.0469324 Max Delay: 0.0501503
 Node: /robot_state_publisher 25.8099 Hz, Average Delay: 0.0089224 Max Delay: 0.00960276
-``` `tf_monitor <source_frame>
+```
+
+ `tf_monitor <source_frame>
 <target_target>`
 
 . Monitor a specific transform. For example, to monitor the transform
 from `/base_footprint` to `/odom`:
+
+
 
 ```
 $ rosrun tf tf_monitor /base_footprint /odom
@@ -139,6 +145,8 @@ Node: /robot_pose_ekf 30.9654 Hz, Average Delay: 0.0465218 Max Delay: 0.051754
 Node: /robot_state_publisher 25.9839 Hz, Average Delay: 0.00903061 Max Delay: 0.00939562
 ```
 
+
+
 ### tf_echo
 
 `tf_echo <source_frame> <target_frame>`
@@ -147,6 +155,8 @@ Node: /robot_state_publisher 25.9839 Hz, Average Delay: 0.00903061 Max Delay: 0.
 `source_frame` and a `target_frame`. For example, to echo the
 transform between `/map` and `/odom`:
 
+
+
 ```
 $ rosrun tf tf_echo /map /odom
 At time 1263248513.809
@@ -154,6 +164,8 @@ At time 1263248513.809
 - Rotation: in Quaternion [0.000, 0.000, -0.707, 0.707]
 in RPY [0.000, -0.000, -1.570]
 ```
+
+
 
 ### static_transform_publisher
 
@@ -177,31 +189,47 @@ to send a transform. 100ms (10hz) is a good value.
 for manual use, as well as for use within [roslaunch](roslaunch) files
 for setting static transforms. For example:
 
+
+
 ```xml
 <launch>
 <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 link1_parent link1 100" />
 </launch>
 ```
 
+
+
 ### view_frames
 
 `view_frames` is a graphical debugging tool that creates a PDF graph
 of your current transform tree.
 
+
+
 ```
 $ rosrun tf view_frames
-``` You probably want to view the graph when you
+```
+
+ You probably want to view the graph when you
 are done, so a typical usage on Ubuntu systems is:
+
+
 
 ```
 $ rosrun tf view_frames
 $ evince frames.pdf
-``` Therefore an helpful shortcut to add in your
+```
+
+ Therefore an helpful shortcut to add in your
 `.bashrc` is:
+
+
 
 ```
 alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
 ```
+
+
 
 NOTE: See also [rqt_tf_tree](rqt_tf_tree) that allows dynamic
 introspection of the frames.
@@ -213,11 +241,17 @@ automatically runs whenever you run `roswtf`. This plugin will analyze
 your current tf configuration and attempt to find common problems. To
 run, just invoke `roswtf` normally:
 
+
+
 ```
 $ roswtf
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -241,6 +275,10 @@ param {
 }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -272,5 +310,7 @@ param {
 }
 }
 ```
+
+
 
 1.  Keywords Transformation, Transformations, coordinate transform

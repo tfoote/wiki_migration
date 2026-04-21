@@ -3,6 +3,8 @@
 Both nodes write to a gnuplot file and plot the sharpness of the camera
 image.
 
+
+
 ```clearsilver
 name = focus
 desc = Collects data on camera focus
@@ -13,6 +15,10 @@ sub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = focus_prosilica.py
 desc = Collects data on prosilica camera focus
@@ -22,3 +28,5 @@ sub {
   0.desc = Image from camera
 }
 ```
+
+

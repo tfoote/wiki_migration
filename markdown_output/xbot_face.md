@@ -6,6 +6,8 @@ management, face logout, and face recognition.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = face_recog
 desc = The `face_recog` node provides face recognition function and outputs recognition results.
@@ -20,7 +22,11 @@ desc = The `face_recog` node provides face recognition function and outputs reco
    0.type = xbot_face/FaceResult
    0.desc = Get the face recognition result from this topic.
  }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = camera_image_publisher
 desc = The `camera_image_publisher` node provides a `/xbot/camera/image` topic for publishing the image data obtained by the camera sensor.
 
@@ -30,3 +36,5 @@ desc = The `camera_image_publisher` node provides a `/xbot/camera/image` topic f
    0.desc = Get the camera image data from this topic.
  }
 ```
+
+

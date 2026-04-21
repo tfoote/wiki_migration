@@ -3,9 +3,13 @@ NOTE: The modern, Catkinized source is now here:
 
 ## Quick Start
 
+
+
 ```
 roslaunch vicon_bridge vicon.launch
-``` You may need to set the "datastream_hostport"
+```
+
+ You may need to set the "datastream_hostport"
 parameter to your vicon computer's ip/hostname
 
 ## Operation
@@ -33,9 +37,13 @@ when an object is created in vicon tracker, it places the origin more or
 less arbitrary in the object. To calibrate the origin of a segment,
 place the vehicle at the vicon origin that you set during vicon
 calibration, and measure/estimate the height (z offset) of your desired
-origin from the floor. Then run ```
+origin from the floor. Then run 
+
+```
 rosrun vicon_bridge calibrate <subject name> <segment name> <z offset>
-``` Poses are
+```
+
+ Poses are
 grabbed, averaged and the vehicle is placed in the vicon's origin. The
 calibration parameters are stored on the parameter server as
 /<subject_name>/<segment_name>/zero_pose (see
@@ -48,13 +56,19 @@ everything went correct ;-) ).
 
 Sometimes vicon data is too perfect ;-) This motivated `tf_distort`,
 which adds different types of noise, adds delay or reduces the framerate
-to test how robots work with bad data. ```
+to test how robots work with bad data. 
+
+```
 rosrun vicon_bridge tf_distort
-``` Then run
+```
+
+ Then run
 [reconfigure_gui](dynamic_reconfigure#reconfigure_gui) to set the
 parameters. This is work in progress, suggestions are welcome.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -178,3 +192,5 @@ node.1{
   }
 }
 ```
+
+

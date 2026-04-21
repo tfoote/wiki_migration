@@ -6,6 +6,8 @@ A node that maintains a local obstacle map (point cloud, voxels or
 occupancy grid) from recent sensor readings within a configurable time
 window.
 
+
+
 ```clearsilver
 pub {
   0.name= local_map_pointcloud
@@ -59,14 +61,20 @@ req_tf {
 }
 ```
 
+
+
 ## Demo
 
 This demo requires [mvsim](mvsim). It simulates one robot with 2 laser
 scanners and builds and publish the local obstacle maps to
 `/local_map_pointcloud`:
 
+
+
 ```
 roslaunch mrpt_local_obstacles demo_with_mvsim.launch
 ```
+
+
 
 ![](attachment:local_obstacle_maps_screenshot.png)

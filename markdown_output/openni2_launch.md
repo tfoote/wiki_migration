@@ -14,8 +14,12 @@ thin wrapper around [openni2_camera](openni2_camera) and
 ## Usage
 
 Quick start: Launch the OpenNI2 driver. This will launch the full
-constellation of nodelets: ```
+constellation of nodelets: 
+
+```
 roslaunch openni2_launch openni2.launch
 ```
+
+
 
 More is documented <http://docs.ros.org/api/openni2_launch/html/>

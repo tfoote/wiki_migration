@@ -23,15 +23,25 @@ run once on each machine.
 
 Before running rosprofiler, topic statistics must be enabled. To collect
 statistics about all topics, this should be done before running any
-other nodes. ```
+other nodes. 
+
+```
 rosparam set enable_statistics true
 ```
 
-Once enabled, rosprofiler can be started using ```
+
+
+Once enabled, rosprofiler can be started using 
+
+```
 rosrun rosprofiler rosprofiler
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -45,6 +55,8 @@ pub {
 }
 ```
 
+
+
 ## rosgrapher node
 
 The rosgrapher node publishes information about the ROS System State
@@ -55,11 +67,17 @@ rosgrapher once even if there are nodes on multiple host machines.
 
 ### Running rosgrapher
 
+
+
 ```
 rosrun rosprofiler rosgrapher
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -69,3 +87,5 @@ pub {
   0.desc= Information about node and topic connectivity
 }
 ```
+
+

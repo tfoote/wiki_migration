@@ -27,6 +27,8 @@ To declare your prohibition areas you need to detect the coordinates in
 the map (e.g. with Rviz). This coordinates you can fill into a YAML file
 with the following structre:
 
+
+
 ```
 prohibition_areas:
  # your first prohibited area is only a point
@@ -41,6 +43,8 @@ prohibition_areas:
     [-10.05, -12.218]]
 ```
 
+
+
 ## configure your global costmap plugin
 
 The costmap2D from ros is able to add plugins (see
@@ -51,11 +55,15 @@ them into the namespace *global_costmap/costmap_prohibition_layer*. The
 underlayed namespace (*costmap_prohibition_layer* should accord with the
 plugin name, defined in the next step: In step three it is described how
 to add the plugin itself. For this plugin you have to add:
+
+
 ```
 plugins:
      # ... your own plugins     
      - {name: costmap_prohibition_layer,       type: costmap_prohibition_layer_namespace::CostmapProhibitionLayer"}
 ```
+
+
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
      <tablewidth="90%" #E0E0FF> **NOTE:** If you're using the inflation_layer and want, that your prohibitions get also inflated you have to add the costmap_prohibition_layer plugin above the inflation_layer plugin.   

@@ -1,6 +1,8 @@
 ## Basic Example
 
-Timing some code: ```
+Timing some code: 
+
+```
 rtcus_timing::Timer timer;
   //anonymous chunk
   timer.start();
@@ -20,11 +22,19 @@ rtcus_timing::Timer timer;
   ros::Duration(5.0).sleep();
 ```
 
-See the console output result: ```
+
+
+See the console output result: 
+
+```
 [ INFO] [1340637966.153541042]: duration of the second chunk: 2.000209
 ```
 
-Watch the timing topic messages ```
+
+
+Watch the timing topic messages 
+
+```
 $ rostopic echo timing
 
 event_name: default
@@ -61,3 +71,5 @@ duration:
   nsecs: 146508
 ---
 ```
+
+

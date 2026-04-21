@@ -22,6 +22,8 @@ Here's an example of the filter in operation:
 
 ### complementary_filter_node
 
+
+
 ```clearsilver
 sub {
    0{
@@ -119,9 +121,9 @@ sub {
   }
 ```
 
+
+
 ## Bug Reports & Feature Requests
 
 We appreciate the time and effort spent submitting bug reports and
 feature requests.
-
-<<GitHubIssues(CCNYRoboticsLab/imu_tools)>>

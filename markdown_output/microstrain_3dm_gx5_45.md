@@ -21,6 +21,8 @@ communicate with the device. Includes the following applications:
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = microstrain_3dm_gx5_45
@@ -117,6 +119,8 @@ node.0 {
 }
 ```
 
+
+
 ### Update Rates
 
 The rates are set as a target value in Hz. The device accepts a
@@ -170,7 +174,9 @@ protocol is
 
 ## Build Instructions
 
-Building from source ```
+Building from source 
+
+```
 DISTRO={hydro|indigo}
 cd ~/catkin_ws
 rosdep update
@@ -180,6 +186,8 @@ rosdep install --from-paths src/microstrain_3dm_gx5_45/ --ignore-src --rosdistro
 catkin_make
 source devel/setup.bash
 ```
+
+
 
 ## Dev Notes
 

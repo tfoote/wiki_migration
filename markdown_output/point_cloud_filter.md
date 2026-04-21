@@ -20,15 +20,23 @@ and installed by following the instructions
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz rosbag
 ```
 
+
+
 Finally, launch the demo:
+
+
 
 ```shell
 roslaunch point_cloud_filter demo.launch
 ```
+
+
 
 You should see a result similar to the video below. The bag file
 contains a single reading from a Swissranger 4000 camera. The point
@@ -39,6 +47,8 @@ cloud is filtered based on confidence values, with the minimum set to
 [Youtube](https://www.youtube.com/watch?v=vmW-euUIcNg)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = point_cloud_filter
@@ -80,6 +90,8 @@ cloud is filtered based on confidence values, with the minimum set to
     3.desc = whether to copy the channel information to the filtered point cloud. Disabling this improves performance.
  }
 ```
+
+
 
 ## Bug Reports & Feature Requests
 

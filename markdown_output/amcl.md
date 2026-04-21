@@ -14,11 +14,17 @@ laser maps. It could be extended to work with other sensor data.
 ## Example
 
 To localize using laser data on the `base_scan` topic:
+
+
 ```
 amcl scan:=base_scan
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -67,6 +73,8 @@ node.0 {
   }
 ```
 
+
+
 #### Parameters
 
 There are three categories of ROS [Parameters](Parameters) that can be
@@ -74,6 +82,8 @@ used to configure the `amcl` node: overall filter, laser model, and
 odometery model.
 
 ##### Overall filter parameters
+
+
 
 ```clearsilver
 param {
@@ -165,11 +175,15 @@ param {
 }
 ```
 
+
+
 ##### Laser model parameters
 
 Note that whichever mixture weights are in use should sum to 1. The beam
 model uses all 4: z_hit, z_short, z_max, and z_rand. The
 likelihood_field model uses only 2: z_hit and z_rand.
+
+
 
 ```clearsilver
 param {
@@ -221,6 +235,8 @@ param {
 }
 ```
 
+
+
 ##### Odometry model parameters
 
 If `odom_model_type` is `"diff"` then we use the
@@ -253,6 +269,8 @@ Kinetic is Navigation 1.14.1. This bug only affects robot with type
 translation odometry noise from robot translation-al motion, and
 `odom_alpha4` represents the odometry rotation noise from robot's
 rotation motion.
+
+
 
 ```clearsilver
 param {
@@ -299,6 +317,8 @@ param {
   9.desc = Set this to `false` to prevent amcl from publishing the transform between the global frame and the odometry frame.
 }
 ```
+
+
 
 #### Transforms
 

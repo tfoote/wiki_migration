@@ -16,15 +16,21 @@ The pre-requisites for this repo include:
 -   ros-kinetic-cv-bridge
 -   ros-kinetic-image-transport \* libunwind-dev
 
+
+
 ```bash
 # after installing spinnaker verify that you can run your cameras with SpinView
 # after installing ros, install other pre-requisites with:
 sudo apt install libunwind-dev ros-kinetic-cv-bridge ros-kinetic-image-transport
 ```
 
+
+
 ### Installation
 
 To install the spinnaker drivers:
+
+
 
 ```bash
 bash mkdir -p ~/spinnaker_ws/src cd spinnaker_ws/src
@@ -35,17 +41,25 @@ source ~/spinnaker_ws/devel/setup.bash
 # add this to ~/.bashrc to make this permanent
 ```
 
+
+
 ### Running the drivers
 
 Modify the `params/test_params.yaml` file replacing the cam-ids and
 master cam serial number to match your camera's serial number. Then run
 the code as:
 
+
+
 ```
 roslaunch spinnaker_sdk_camera_driver acquisition.launch
 
 # Test that the images are being published by running rqt_image_view
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = acquisition_node
 desc = The node that runs the spinakker sdk and exports to ROS. All the parameters can be set via the launch file or via the yaml config_file. It is good practice to specify all the 'task' specific parameters via launch file and all the 'system configuration' specific parameters via a config_file.
 pub {
@@ -193,3 +207,5 @@ param {
   21.desc = Intrinsic coefficients of all the cameras in the array. Must match the number of cam_ids provided. Specified as [fx 0 cx 0 fy cy 0 0 1]
 }
 ```
+
+

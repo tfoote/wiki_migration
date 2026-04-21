@@ -30,6 +30,8 @@ the final target point
 
 ## Node API
 
+
+
 ```clearsilver
 name = obstacle_server
 desc = Provides possibility to meet obstacles on target point at map.
@@ -43,7 +45,11 @@ srv {
   0.type = multipoint_navigation_receiver/obstacle_srv
   0.desc = Allows an extemal user to ask for the possibility to meet obstacles on target point.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = multipoint_navigation_receiver
 desc = Receive multiple target points.
 srv {
@@ -52,3 +58,5 @@ srv {
   0.desc = Allows an extemal user to send multiple target points.
 }
 ```
+
+

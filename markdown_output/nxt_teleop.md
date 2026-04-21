@@ -1,18 +1,32 @@
 ## Build and Launch
 
+
+
 ```
 rosmake nxt_teleop
 ```
 
-For keyboard teleop: ```
+
+
+For keyboard teleop: 
+
+```
 roslaunch nxt_teleop teleop_keyboard.launch
 ```
 
-For joystick teleop: ```
+
+
+For joystick teleop: 
+
+```
 roslaunch nxt_teleop teleop_joy.launch
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -71,3 +85,5 @@ param{
 }
 }
 ```
+
+

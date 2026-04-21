@@ -10,6 +10,8 @@ status messages and publishes transforms.
 
 ##### Motion Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -55,6 +57,10 @@ param {
   7.desc= a0 gain for pan axis
 }
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -107,7 +113,11 @@ param {
 }
 ```
 
+
+
 ##### Unit ID Parameters
+
+
 
 ```clearsilver
 param {
@@ -125,7 +135,11 @@ param {
 }
 ```
 
+
+
 ##### Frame Parameters
+
+
 
 ```clearsilver
 param {
@@ -143,7 +157,11 @@ param {
 }
 ```
 
+
+
 ##### Connection Parameters
+
+
 
 ```clearsilver
 param {
@@ -181,6 +199,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 pub {
   0.name= ~<name>/pan_state
@@ -191,6 +213,10 @@ pub {
   1.desc= The tilt state
 }
 ```
+
+
+
+
 
 ```clearsilver
 srv {
@@ -224,11 +250,15 @@ srv {
 }
 ```
 
+
+
 ### sweep_amtec
 
 Sweeps pan axis of amtec using trapezoidal motion profiles instead of
 the sinusoidal motion profiles provided by amtec_node directly. Uses the
 services provided by amtec_node.
+
+
 
 ```clearsilver
 param {
@@ -253,6 +283,8 @@ param {
   3.desc= Acceleration to use in motion profile (in radians/sec/sec)
 }
 ```
+
+
 
 ### test_amtec
 

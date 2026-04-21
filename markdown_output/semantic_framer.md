@@ -23,13 +23,19 @@ example; individual elements will be described below.
 This is a minimal example, which binds the verb "moo" to the
 "mooing" semantic frame:
 
+
+
 ```
 frame_name: mooing
 verb: moo
 ```
 
+
+
 This is a "maximal" example, which will bind sentences such as "Move
 forward 2 feet." to the moving semantic frame:
+
+
 
 ```
 frame_name: moving
@@ -44,6 +50,8 @@ frame_element_grammatical_relations:
     relation: num/dobj
 ```
 
+
+
 See also the
 [corresponding example frames for frame_registrar](frame_registrar#Overview and Examples).
 
@@ -54,11 +62,15 @@ single instance can be entered, or a list of multiple instances can be
 entered. For instance, with verb, "one or more verbs" means all the
 following entries are legal:
 
+
+
 ```
 verb: moo
 verb: [moo]
 verb: [moo, speak]
 ```
+
+
 
 #### Required Values
 
@@ -97,18 +109,28 @@ complete set of relations can be found in the
 Additionally, relations can be found empirically. First, start the
 natural language processing half of roboframenet:
 
+
+
 ```
 roslaunch roboframenet_bringup nlp.launch
 ```
 
+
+
 Then, send example sentences:
+
+
 
 ```
 rostopic pub command std_msgs/String "Pick up the red ball."
 ```
 
+
+
 The terminal which is running `nlp.launch` will display the resultant
 parse tree and dependencies:
+
+
 
 ```
 (ROOT (S (NP (PRP You)) (VP (VBP pick) (PRT (RP up)) (NP (DT the) (JJ red) (NN ball))) (. .)))
@@ -119,6 +141,8 @@ amod(ball-6, red-5)
 dobj(pick-2, ball-6)
 ```
 
+
+
 (Note: The implicit "you" was added by
 [imperative_to_declarative](imperative_to_declarative).)
 
@@ -126,6 +150,8 @@ dobj(pick-2, ball-6)
 
 A single yaml file can also contain multiple lexical units. In this
 case, the lexical units are just a top level list:
+
+
 
 ```
 - frame_name: mooing
@@ -136,6 +162,8 @@ case, the lexical units are just a top level list:
   verb: move
   [...]
 ```
+
+
 
 ### Adding Lexical Units to RoboFrameNet
 

@@ -37,12 +37,16 @@ the system from within KnowRob.
 
 For the first option, just call roslaunch comp_ehow comp_ehow.launch
 
-For calling comp_ehow from within KnowRob, call ```
+For calling comp_ehow from within KnowRob, call 
+
+```
 roscd comp_ehow
 rosrun rosprolog rosprolog comp_ehow
 rdf_triple(knowrob:forCommand, A, 'set a table').
 A = 'http://www.owl-ontologies.com/Ontology1252257693.owl#SetATable'
 ```
+
+
 
 The variable (here: A) will be bound to the identifier of the plan that
 has been generated and already been parsed, so that you can use it for

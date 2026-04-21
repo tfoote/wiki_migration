@@ -3,9 +3,13 @@
 The Test Manager system starts, stops and monitors hardware tests on
 robot components.
 
-To start Test Manager: ```
+To start Test Manager: 
+
+```
 rosrun life_test test_manager.py
-``` You can enable a "debug
+```
+
+ You can enable a "debug
 mode" by giving a "\--debug" option.
 
 To use Test Manager, scan a component serial number into the starting
@@ -55,6 +59,8 @@ The file `life_test/tests.xml` loads details about individual tests.
 Each test is assigned to a serial number, and a serial number may have
 more than one test.
 
+
+
 ```xml
 <tests>
   <test serial="faketes" name="Simple Test" 
@@ -65,6 +71,8 @@ more than one test.
         power="false" type="Life Test" >
 </tests>
 ```
+
+
 
 The fields under the "test" tag include:
 
@@ -89,6 +97,8 @@ for each room and test "bay". A "bay" is a place where a test can be
 run. Only one test can run in a bay at a time. Each room has multiple
 bays.
 
+
+
 ```xml
 <rooms>
   <room hostname="ckb" >
@@ -97,6 +107,8 @@ bays.
   </room>
 </rooms>
 ```
+
+
 
 The "hostname" of a room is the complete hostname of the master
 computer. All slaves are given in "bay" tags.
@@ -185,6 +197,8 @@ device-under-test in the filename.
 
 ## Test Manager ROS API
 
+
+
 ```clearsilver
 name = test_manager.py
 desc = Starts, stops and logs all WG burn in tests
@@ -208,6 +222,8 @@ pub {
   1.desc = Heartbeat or keepalive for any slaves.
 }
 ```
+
+
 
 ## Additional Documentation
 

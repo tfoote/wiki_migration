@@ -31,11 +31,15 @@ Some of their methods are overridden specifically for Hironx at
 For some of those methods derived from [hrpsys](hrpsys), unit test cases
 are available in
 [nextage_ros_bridge/test/test_hironx_derivedmethods_rostest.py](https://github.com/tork-a/rtmros_nextage/blob/groovy-devel/nextage_ros_bridge/test/test_hironx_derivedmethods_rostest.py).
-Download it and run: ```
+Download it and run: 
+
+```
 $ mv test_hironx_derivedmethods_rostest.py `rospack find nextage_ros_bridge`/test
 $ chmod 755 test_hironx_derivedmethods_rostest.py
 $ rosrun nextage_ros_bridge test_hironx_derivedmethods_rostest.py
 ```
+
+
 
 As of today (Jan 31, 2014), you might want to modify the file to adjust
 to your environment. Open the file with the editor, replace

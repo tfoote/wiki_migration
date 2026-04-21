@@ -1,14 +1,22 @@
 ## Running
 
-Run `lwr_dashboard` with: ```
+Run `lwr_dashboard` with: 
+
+```
 rosrun lwr_dashboard lwr_dashboard
 ```
 
+
+
 You may have to set your
 [ROS_MASTER_URI](ROS/EnvironmentVariables#ROS_MASTER_URI) environment
-variable before you start your dashboard: ```
+variable before you start your dashboard: 
+
+```
 export ROS_MASTER_URI=http://MY_ROBOT:11311
 ```
+
+
 
 ## Dashboard
 

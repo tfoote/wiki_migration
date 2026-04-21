@@ -28,6 +28,8 @@ of more complete solutions on top. Some ideas for
 
 ### Parameters
 
+
+
 ```clearsilver
 param{
   no_header=True
@@ -94,7 +96,11 @@ param{
 }
 ```
 
+
+
 ### Services
+
+
 
 ```clearsilver
 srv{
@@ -145,6 +151,8 @@ srv{
   desc = Current status and info about currently connected remote gateways.
   }
 ```
+
+
 
 ## Utilities
 

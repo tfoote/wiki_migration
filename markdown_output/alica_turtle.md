@@ -11,23 +11,39 @@ The package can be started in the following way:
 -   Include ES_ROOT/lib into your MONO_PATH
 -   Copy alica_turtle/etc to ES_ROOT/etc. This folder contains example
     configuration files.
--   Build alica_turtle: ```
+-   Build alica_turtle: 
+
+```
 rosmake alica_turtle
 ```
+
+
 -   Start a roscore.
--   Start a turtlesim ```
+-   Start a turtlesim 
+
+```
 rosrun turtlesim turtlesim_node
 ```
--   Start some turtles ```
+
+
+-   Start some turtles 
+
+```
 ROBOT=turtle1 rosrun alica_turtle AlicaTurtle.exe -m Example
 ROBOT=turtle2 rosrun alica_turtle AlicaTurtle.exe -m Example
 ROBOT=turtle3 rosrun alica_turtle AlicaTurtle.exe -m Example
 ...
 ```
+
+
 -   You can start the [AlicaClient](AlicaClient) to monitor the internal
-    state of the turtles: ```
+    state of the turtles: 
+
+```
 rosrun AlicaClient AlicaClient.exe
-``` Hover over a plan in
+```
+
+ Hover over a plan in
     the client to see the current values for constrained variables.
 
 ## Package Layout

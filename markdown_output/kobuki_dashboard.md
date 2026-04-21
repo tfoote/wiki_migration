@@ -6,14 +6,22 @@ its basic functionalities (e.g. LEDs).
 ## Usage
 
 1\. Fire up Kobuki and launch the minimal configuration in a new
-terminal ```
+terminal 
+
+```
 $ roslaunch kobuki_node minimal.launch
 ```
 
+
+
 2\. To start the dashboard execute the below in a separate terminal.
+
+
 ```
 $ rosrun kobuki_dashboard kobuki_dashboard
 ```
+
+
 
 3\. Play with it!
 

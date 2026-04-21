@@ -38,13 +38,19 @@ The controller main input is a
 [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 topic in the namespace of the controller.
 
+
+
 ```clearsilver
 sub {
   0.name= cmd_vel
   0.type= geometry_msgs/Twist
   0.desc= Velocity command.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 pub {
   0.name= odom
   0.type= nav_msgs/Odometry
@@ -59,6 +65,10 @@ pub {
   2.desc= Available when "publish_cmd" parameter is set to True. It is the Twist after limiters have been applied on the controller input.
 }
 ```
+
+
+
+
 ```clearsilver
 param{
   0.name=left_wheel
@@ -176,9 +186,13 @@ param{
 }
 ```
 
+
+
 ### Controller configuration examples
 
 #### Minimal description
+
+
 
 ```yaml
 mobile_base_controller:
@@ -189,7 +203,11 @@ mobile_base_controller:
   twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 ```
 
+
+
 #### Complete description
+
+
 
 ```yaml
 mobile_base_controller:
@@ -238,6 +256,8 @@ mobile_base_controller:
       max_jerk               : 2.5  # rad/s^3
 ```
 
+
+
 #### Skid steer
 
 The diff_drive_controller allows for skid steer driving with the
@@ -250,6 +270,8 @@ calculations. For more info read the code and
 [issue](https://github.com/ros-controls/ros_controllers/issues/100).
 
 Multiple wheels per side example from Jackal.
+
+
 
 ```yaml
 
@@ -285,3 +307,5 @@ jackal_velocity_controller:
       has_acceleration_limits: true
       max_acceleration       : 25.0   # rad/s^2
 ```
+
+

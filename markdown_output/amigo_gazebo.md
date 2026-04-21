@@ -24,6 +24,8 @@ are configured with use of the parameter files from the package
 [amigo_controller_configuration_gazebo](amigo_controller_configuration_gazebo).
 The different controller classes are as follows:
 
+
+
 ```clearsilver
  name = BaseOdometry
  desc = Publishes the odometry data of Amigo.
@@ -39,7 +41,11 @@ The different controller classes are as follows:
     desc = Estimatation of the position and velocity of Amigo in free space
     }
   }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
  name = BaseController
  desc = Controller that makes it possible to move the base of Amigo with use of velocity messages. It listens to twist messages and computes the efforts that needs to be put on the wheels.
  sub {
@@ -50,6 +56,10 @@ The different controller classes are as follows:
     }
   }
 ```
+
+
+
+
 ```clearsilver
 name = PositionController
 desc = Generic controller which parses <<MsgLink(sensor_msgs/JointState)>> messages and calculates the torques / forces on the corresponding joints. The controller also returns the current position of the joints as <<MsgLink(sensor_msgs/JointState)>> messages. This generic controller is used as arm, gripper, spindle and head controller. 
@@ -68,6 +78,8 @@ pub {
     }
   }
 ```
+
+
 
 Additional documentation of the c++ files can be found as doxygen at
 <INSERT LINK HERE>

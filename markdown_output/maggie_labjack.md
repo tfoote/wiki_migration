@@ -10,6 +10,8 @@ This device supports all the drivers implemented in the
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = labjack_node
@@ -39,12 +41,18 @@ node.0 {
 }
 ```
 
+
+
 ## Launch File Examples
 
 In a terminal window, start an eyelids node process running:
 
+
+
 ```
 $ roslaunch maggie_labjack labjack.launch robot:=maggie
 ```
+
+
 
 ## Examples

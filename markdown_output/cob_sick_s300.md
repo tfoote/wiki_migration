@@ -1,7 +1,9 @@
 ## ROS API
 
 The [cob_sick_s300](cob_sick_s300) package provides two configurable
-nodes for operating with the scanners. ```clearsilver
+nodes for operating with the scanners. 
+
+```clearsilver
  name = cob_sick_s300
  desc = The `cob_sick_s300` node takes in <<MsgLink(sensor_msgs/LaserScan)>> messages and send this directly to the hardware.
 
@@ -55,6 +57,10 @@ param{
 }
 ```
 
+
+
+
+
 ```clearsilver
  name = cob_scan_filter
  desc = The `cob_scan_filter` node takes <<MsgLink(sensor_msgs/LaserScan)>> messages and sends a filtered copy of it to the hardware.
@@ -79,22 +85,34 @@ param{
 }
 ```
 
+
+
 ## Usage/Examples
 
 This package is not intended to be used directly, but with the
 corresponding launch and yaml files from e.g. [cob_bringup](cob_bringup)
 in the [cob_robots](cob_robots) stack. For starting use:
+
+
 ```
 roslaunch cob_bringup laser_front.launch
 roslaunch cob_bringup laser_rear.launch
-``` For including in your overall launch file use
+```
+
+ For including in your overall launch file use
+
+
 ```
 <include file="$(find cob_bringup)/components/laser_front.launch" />
 <include file="$(find cob_bringup)/components/laser_rear.launch" />
-``` All hardware configuration is done in the
+```
+
+ All hardware configuration is done in the
 [cob_hardware_config](cob_hardware_config) package. A sample parameter
 file in "cob_hardware_config/cob3-3/config/laser_front.yaml" could
-look like this ```
+look like this 
+
+```
 port: /dev/ttyScan1
 baud: 500000
 scan_duration: 0.025 #no info about that in SICK-docu, but 0.025 is believable and looks good in rviz
@@ -104,3 +122,5 @@ scan_id: 7
 frame_id: /base_laser_front_link
 scan_intervals: [[-1.3526, 1.361357]] #[rad] these intervals are included to the scan
 ```
+
+

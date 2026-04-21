@@ -27,9 +27,13 @@ respective section.
 This example demonstrates using [rviz](rviz) in order to visualize a
 physical robot in real-time.
 
+
+
 ```
 roslaunch hebiros_advanced_examples x_demo_rviz.launch
-```\
+```
+
+\
 
 You should see rviz open. First, add a new display and select
 `RobotModel`.
@@ -59,15 +63,23 @@ First, launch the setup file. This will load the urdf to
 `robot_parameter`, open Gazebo and start the `hebiros_node` and
 example node.
 
+
+
 ```
 roslaunch hebiros_advanced_examples x_demo_gazebo_setup.launch
-``` Next, launch the start file. This will start
+```
+
+ Next, launch the start file. This will start
 the [controller_manager](controller_manager),
 [robot_state_publisher](robot_state_publisher), and spawn the model.
 
+
+
 ```
 roslaunch hebiros_advanced_examples x_demo_gazebo_start.launch
-```\
+```
+
+\
 
 You should see the robot simulated in Gazebo as in the following video.
 [Youtube](https://www.youtube.com/watch?v=C147k-d7fbM)
@@ -75,9 +87,13 @@ You should see the robot simulated in Gazebo as in the following video.
 \
 
 You can also use the same node to run the example on the hardware.
+
+
 ```
 roslaunch hebiros_advanced_examples x_demo_gazebo_hardware.launch
 ```
+
+
 
 \
 
@@ -96,9 +112,13 @@ called `x_demo` in the `hebiros_advanced_examples` source files. To
 use it, place the folder in your catkin workspace.
 
 Launch the visualization file in order to visualize planning and
-executing paths to different positions ```
+executing paths to different positions 
+
+```
 roslaunch hebiros_advanced_examples x_demo_moveit_visualization.launch
 ```
+
+
 
 \
 
@@ -110,9 +130,13 @@ following video.
 \
 
 You can also try using the visualization interface to execute
-trajectories on the physical robot. ```
+trajectories on the physical robot. 
+
+```
 roslaunch hebiros_advanced_examples x_demo_moveit_control.launch
 ```
+
+
 
 \
 

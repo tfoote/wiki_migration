@@ -88,15 +88,25 @@ Input can be either from camera topics, an OpenCV camera, or a video.
 
 Start a cnn_bridge in segmentation mode:
 
+
+
 ```
 $ roslaunch cnn_bridge segmentation_publisher.launch
-``` Start a cnn_bridge in detection mode:
+```
+
+ Start a cnn_bridge in detection mode:
+
+
 
 ```
 $ roslaunch cnn_bridge detection_publisher.launch
 ```
 
+
+
 ## Hypes Example
+
+
 
 ```
 {
@@ -108,15 +118,23 @@ $ roslaunch cnn_bridge detection_publisher.launch
 }
 ```
 
+
+
 ## Metadata JSON
 
 If segmentation mode:
+
+
 
 ```
 {
     "classes": ["CLASS_NAME_1", "CLASS_NAME_2", ..., "CLASS_NAME_N"]
 }
-``` If detection mode:
+```
+
+ If detection mode:
+
+
 
 ```
 {
@@ -129,3 +147,5 @@ If segmentation mode:
     }]
 }
 ```
+
+

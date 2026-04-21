@@ -18,13 +18,21 @@ described in /hardware folder in order to run the full demo.
 To see a demo of the playpen, run the following on the computer
 controlling the conveyor and playpen:
 
+
+
 ```
 $ rosrun pr2_playpen playpen_server.py
-``` and on the PR2 run:
+```
+
+ and on the PR2 run:
+
+
 
 ```
 $ roslaunch pr2_playpen/launch_pr2/pr2_UI_segment.launch
-``` This will require the user to select a number
+```
+
+ This will require the user to select a number
 of points in a 2D image. The 3D points inside the polygon defined by the
 user are used for the tabletop object segmentation in the manipulation
 stack. Points are selected by a left click of the mouse and the user
@@ -32,13 +40,21 @@ designates that they are finished with a right click.
 
 We can then run:
 
+
+
 ```
 $ roslaunch pr2_playpen/launch_pr2/pr2_tabletop_manipulation.launch
-``` and
+```
+
+ and
+
+
 
 ```
 $ rosrun pr2_playpen wg_manipulation.py
-``` all on the PR2. This will run a demo where the
+```
+
+ all on the PR2. This will run a demo where the
 PR2 will attempt to grasp each item that is delivered to it at least 2
 times before sending a command for the next item to be delivered.
 

@@ -23,6 +23,8 @@ interface found in the [nav_core](nav_core) package.
 
 Example creation of a `carrot_planner::CarrotPlanner` object:
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -36,12 +38,16 @@ carrot_planner::CarrotPlanner cp;
 cp.initialize("my_carrot_planner", &costmap);
 ```
 
+
+
 ### API Stability
 
 -   The ROS API is stable.
 -   The C++ API is stable.
 
 ### ROS Parameters
+
+
 
 ```clearsilver
 param {
@@ -56,6 +62,8 @@ param {
   1.desc = The minimum distance from the robot in meters at which a goal point will be sent to the local planner.
 }
 ```
+
+
 
 ### C++ API
 

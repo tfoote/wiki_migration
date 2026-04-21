@@ -1,6 +1,10 @@
+
+
 ```wiki
 /!\ Work in progress.
 ```
+
+
 
 ## Overview
 
@@ -17,6 +21,8 @@ by the original action and service.
 
 ### Services offered
 
+
+
 ```clearsilver
 srv {
     0.name = move_arm_to_pose
@@ -28,12 +34,16 @@ srv {
     }
 ```
 
+
+
 ### Services required
 
 You must have the [move_arm](move_arm) action AND the
 [joint_trajectory_action](joint_trajectory_action) running and all
 services necessary for those. In addition, the following services are
 required:
+
+
 
 ```clearsilver
  srv{
@@ -44,6 +54,8 @@ required:
     1.type = planning_environment_msgs/GetRobotState
     1.desc = This services allows move_arm to get the complete state of the robot. This message contains information about the joint positions of all the (real) joints on the robot.
 ```
+
+
 
 ## Usage
 

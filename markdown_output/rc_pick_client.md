@@ -1,10 +1,14 @@
 See <http://rc-visard.com> and <http://doc.rc-visard.com> for more
 details.
 
+
+
 ```wiki
 '''This package is not developed anymore'''. New clients are available in the
 [[rc_reason_clients]] package.
 ```
+
+
 
 ## Overview
 
@@ -36,9 +40,13 @@ IP address:**
 ```{=html}
 <!-- -->
 ```
--   serial number, e.g. `02912345`. ```wiki
+-   serial number, e.g. `02912345`. 
+
+```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://github.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -90,26 +98,40 @@ additional service:
 Using command line parameters:
 
 For the [ItemPick](https://roboception.com/product/itempick/) module:
+
+
 ```bash
 $ rosrun rc_pick_client rc_itempick_client_node _host:=<sensor_ip>
 ```
 
-Since version 2.7: ```bash
+
+
+Since version 2.7: 
+
+```bash
 rosrun rc_pick_client rc_itempick_client_node _device:=:<serial_number>
 ```
 
+
+
 For the [BoxPick](https://roboception.com/product/boxpick/) module:
+
+
 ```bash
 $ rosrun rc_pick_client rc_boxpick_client_node _host:=<sensor_ip>
 ```
 
-Since version 2.7: ```bash
+
+
+Since version 2.7: 
+
+```bash
 rosrun rc_pick_client rc_boxpick_client_node _device:=:<serial_number>
 ```
 
-## Report a Bug
 
-<<GitHubIssues(roboception/rc_visard_ros)>>
+
+## Report a Bug
 
 ## Acknowledgements
 

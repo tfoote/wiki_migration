@@ -71,30 +71,46 @@ A calibrated mono or stereo camera system.
 
 Start the process with
 
+
+
 ```
 roslaunch asr_aruco_marker_recognition aruco_marker_recognition.launch
 ```
+
+
 
 ------------------------------------------------------------------------
 
 To start the (paused) recognition call the following service:
 
+
+
 ```
 rosservice call /asr_aruco_marker_recognition/get_recognizer
-``` To pause the (running) recognition call:
+```
+
+ To pause the (running) recognition call:
+
+
 
 ```
 rosservice call /asr_aruco_marker_recognition/release_recognizer
 ```
+
+
 
 ### Marker Creator
 
 First edit the parameters for the marker creator as you need them to be
 (see configuration) and then start the process with
 
+
+
 ```
 roslaunch asr_aruco_marker_recognition marker_creator.launch
-``` The created marker images can be found in the
+```
+
+ The created marker images can be found in the
 directory specified in the configuration-yaml-file.
 
 ## ROS Nodes

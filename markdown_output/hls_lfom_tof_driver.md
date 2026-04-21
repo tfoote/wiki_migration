@@ -33,12 +33,18 @@ extract it(<http://hlds.co.jp/product-eng/tofsdk>)
 
 ### Install SDK
 
+
+
 ```
 {
 $ sudo dpkg -i libtof-dev_<version_number>ubuntu16_amd64.deb
-```}
+```
+
+}
 
 ### Build HLS-LFOM 3D LiDAR(TOF) driver
+
+
 
 ```
 {
@@ -46,7 +52,9 @@ $ cd ~/catkin_ws/src
 $ git clone https://github.com/HLDS-GIT/hls_lfom_tof_driver.git  
 $ cd ~/catkin_ws  
 $ catkin_make
-```} If using SDK older than v2.3, please use
+```
+
+} If using SDK older than v2.3, please use
 CMakeLists_old.txt.
 
 ## Setting IP address
@@ -61,19 +69,29 @@ API Reference Manual in SDK
 
 ### Run hlds_3dtof_node
 
+
+
 ```
 {
 roslaunch hls_lfom_tof_driver hlds_tof_driver.launch
-```}
+```
+
+}
 
 ### Run hlds_3dtof_node with RViz
+
+
 
 ```
 {
 roslaunch hls_lfom_tof_driver view_hlds_tof_driver.launch
-```}
+```
+
+}
 
 ## Nodes
+
+
 
 ```clearsilver
 name = hlds_3dtof_node
@@ -156,6 +174,8 @@ param {
 }
 ```
 
+
+
 ## Use Case
 
 ### 3D SLAM
@@ -165,6 +185,8 @@ param {
 
 #### Package Installation
 
+
+
 ```
 {
 // Install pointcloud to laserscan
@@ -173,7 +195,9 @@ $ sudo apt-get install ros-kinetic-pointcloud-to-laserscan
 $ sudo apt-get install ros-kinetic-hector-slam
 //Install octomap
 $ sudo apt-get install ros-kinetic-octomap-server
-```}
+```
+
+}
 
 #### Example
 

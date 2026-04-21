@@ -14,6 +14,8 @@ Once running, stand in front of the Kinect and surrender (i.e. hit the
 [Psi Pose](http://3.bp.blogspot.com/-t9FxKt9JUts/TWfK4juSF7I/AAAAAAAABBI/36-uvouIG7I/s320/PsiPose.gif).
 You should see some variation on the following messages.
 
+
+
 ```
 New User 1
 Pose Psi detected for user 1
@@ -21,6 +23,8 @@ Calibration started for user 1
 Calibration complete, start tracking user 1
 Lost User 1
 ```
+
+
 
 The user's pose will be published as a set of transforms (`/tf`) with
 the following frame names.
@@ -41,6 +45,8 @@ the following frame names.
 -   `/right_knee`
 -   `/right_foot`
 
+
+
 ```clearsilver
 name = Topics and Parameters
 param {
@@ -50,3 +56,5 @@ param {
   0.default = openni_depth_frame
 }
 ```
+
+

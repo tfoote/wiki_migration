@@ -4,6 +4,8 @@ features to be exploited and expanded in the derived packages (cf.
 
 ## Launch files
 
+
+
 ```clearsilver
 name = spawner_template
 desc = This launch file loads the controller parameters (i.e. the given yaml file) to the Parameter Server and spawns them in the [[controller_manager]]. If specified, starts the [[rqt_joint_trajectory_controller]] GUI.
@@ -24,7 +26,11 @@ param {
 }
 ```
 
+
+
 ## API
+
+
 
 ```clearsilver
 name = qb_device_control
@@ -52,3 +58,5 @@ srv_called {
   0.desc = Checks if all the already registered devices are completely initialized and ready for the control application; a device node is considered ready if it has requested this service at least once. The response `success` variable is set to `true` if all the control nodes are ready.
 }
 ```
+
+

@@ -15,17 +15,29 @@ pointing.Limit of horizontal and vertical is 10M and the height is 7M.
 
 ## Documentation
 
+
+
 ```
 svn checkout http://subaru.ait.kyushu-u.ac.jp/svn/irvs-ros-pkg/trunk/irvs-ros-pkg/pointing_markers
 ```
+
+
+
+
 
 ```
 rosmake pointing_markers
 ```
 
+
+
+
+
 ```
 roslaunch pointing_markers pointing_markers.launch
 ```
+
+
 
 RViz : File>>Open Config>>RViz_pointing_markers.vcg
 

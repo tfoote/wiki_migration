@@ -24,6 +24,8 @@ message stamp is expired discard the message.
 
 ## Nodes
 
+
+
 ```clearsilver
 node {
   0.name = control_input_manager
@@ -160,3 +162,5 @@ pub {
   5.desc= Joystick delay
 }
 ```
+
+

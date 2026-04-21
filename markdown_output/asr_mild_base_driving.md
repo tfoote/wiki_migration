@@ -77,22 +77,34 @@ We used:
 Execute the following command on the computer with CAN and laserscann
 connection (start driving and laserscanner):
 
+
+
 ```
 roslaunch asr_mild_base_launch_files mild.launch
-``` OR
+```
+
+ OR
 
 To only start the driving:
 
+
+
 ```
 rosrun asr_mild_base_driving mild_base_driving
-``` If it starts succesfully, you will see this on
+```
+
+ If it starts succesfully, you will see this on
 the console:
+
+
 
 ```
 Can: Socket set successfully.
 CanListener: Started successfully.
 BaseController: Started successfully.
 ```
+
+
 
 ## ROS Nodes
 

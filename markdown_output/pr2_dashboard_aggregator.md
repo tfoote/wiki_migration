@@ -1,5 +1,7 @@
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=pr2_dashboard_aggregator
@@ -24,3 +26,5 @@ node.0 {
     3.desc= Whether the motors are halted
   }
 ```
+
+

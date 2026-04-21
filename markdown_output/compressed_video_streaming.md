@@ -14,21 +14,29 @@ data off the wide stereo camera on a robot to a local machine.
 
 On the robot:
 
+
+
 ```
 roscd compressed_video_streaming
 rosmake compressed_video_streaming
 rosrun compressed_video_streaming image_compression_node image:=/wide_stereo/right/image_rect_color
-``` (note, in the third command above replace
+```
+
+ (note, in the third command above replace
 "/wide_stereo/right/image_rect_color" with whatever the name of the
 topic your images are being published on is.
 
 Off the robot:
 
+
+
 ```
 roscd compressed_video_streaming
 rosmake compressed_video_streaming
 rosrun compressed_video_streaming image_decompression_node
-``` A sample bag is also available
+```
+
+ A sample bag is also available
 [HERE](attachment:theora_stream.bag). Rosrecord appears to have dropped
 some packets, so there is a little bit of corruption, but it's not too
 bad. Thanks go to Priyanka for modeling in the video. To use it just do

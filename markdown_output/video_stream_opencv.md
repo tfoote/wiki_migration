@@ -11,7 +11,9 @@ flipping of images and fps throttling.
 ## Usage
 
 Example usages in launch folder (only the argument
-`video_stream_provider` is mandatory): ```
+`video_stream_provider` is mandatory): 
+
+```
 <launch>
    <!-- launch video stream -->
    <include file="$(find video_stream_opencv)/launch/camera.launch" >
@@ -39,6 +41,8 @@ Example usages in launch folder (only the argument
    </include>
 </launch>
 ```
+
+
 
 ## Supported inputs
 
@@ -155,16 +159,24 @@ node you can use a simple python script called
 which just tries to open the video resource (no ROS involved, just copy
 the file to your computer and try). Just do any of those:
 
+
+
 ```
 rosrun video_stream_opencv test_video_resource.py 0
 rosrun video_stream_opencv test_video_resource.py rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov
 rosrun video_stream_opencv video_stream /home/youruser/myvideo.mkv
 ```
 
-And you'll see an output like: ```
+
+
+And you'll see an output like: 
+
+```
 Trying to open resource: /dev/video0
 Correctly opened resource, starting to show feed.
 ```
+
+
 
 With an OpenCV image show window showing the stream (which should close
 when pressing ESC, or Control+C the shell).

@@ -9,9 +9,13 @@ specific configurations.
 
 ## Prerequirements
 
-Install packages ```
+Install packages 
+
+```
 sudo apt-get install ros-indigo-romeo-robot ros-indigo-naoqi-driver
 ```
+
+
 
 ## Bring up Romeo
 
@@ -19,13 +23,21 @@ You can start Romeo either with a [C++](naoqi_driver) or
 [Python](naoqi_driver_py) version. Thus, the romeo_bringup package
 contains two launch files.
 
-For starting the C++ version: ```
+For starting the C++ version: 
+
+```
 roslaunch romeo_bringup romeo_full.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip> [network_interface:=<eth0|wlan0|vpn0>]
 ```
 
-Similar, the Python version: ```
+
+
+Similar, the Python version: 
+
+```
 roslaunch romeo_bringup romeo_full_py.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip>
 ```
+
+
 
 As shown above, the launch files contain 3 parameters
 

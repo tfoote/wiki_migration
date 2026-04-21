@@ -38,10 +38,14 @@ the OS is re-installed or upgrade to a new major release.
 
 ##### Method 1 (Script)
 
+
+
 ```
 wget -O enable_kernel_sources.sh https://raw.githubusercontent.com/IntelRealSense/librealsense/rosdebian/scripts/enable_kernel_sources.sh
 bash ./enable_kernel_sources.sh
 ```
+
+
 
 or
 
@@ -52,6 +56,8 @@ Update your `/etc/apt/sources.list` file and/or
 `deb-src` entries for all of the entries for the `main`
 repositories. Below is an **example** for ubuntu 16.04 (Xenial).
 
+
+
 ```
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
@@ -59,48 +65,82 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted un
 deb-src http://security.ubuntu.com/ubuntu xenial-security main restricted
 ```
 
+
+
 After the manual edits are complete, run the update commands to ensure
 the entries are correct and update the package database.
+
+
 ```
 sudo apt-get update
 ```
 
+
+
 #### Update to the Xenial kernel
+
+
 
 ```
 sudo apt-get install linux-image-generic-lts-xenial
 sudo reboot
-``` Or update to the latest Distro which should
-contain a 4.4.x or higher kernel: ```
+```
+
+ Or update to the latest Distro which should
+contain a 4.4.x or higher kernel: 
+
+```
 sudo apt-get dist-upgrade
 ```
+
+
 
 #### Re-install Package
 
 If the package has failed to install because the kernel sources were not
 available, the package will need to be re-installed after the update.
+
+
 ```
 sudo apt-get --reinstall install 'ros-*-librealsense'
 ```
+
+
 
 ### Installation Troubleshooting
 
 #### No cameras detected:
 
+
+
 ```
 roslaunch realsense_camera [cam_type]_nodelet_[mode].launch
-``` \... ```wiki
+```
+
+ \... 
+
+```wiki
 [ERROR]: /camera/driver - No cameras detected!
 [ERROR]: /camera/driver - Error calling rs_create_context ( api_version:11100 ): 
 uvcvideo kernel module is not loaded
 ...
 ```
 
+
+
+
+
 ```
 sudo modprobe uvcvideo
-``` ```wiki
+```
+
+ 
+
+```wiki
 modprobe: ERROR: could not insert 'uvcvideo': Required key not available
 ```
+
+
 
 **Solution: **
 
@@ -109,21 +149,29 @@ modprobe: ERROR: could not insert 'uvcvideo': Required key not available
 
 #### DKMS Fails to Build:
 
+
+
 ```
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
 deb-src http://security.ubuntu.com/ubuntu xenial-security main restricted
-```0
+```
+
+0
 
 **Solution: **
 
--   Remove the failed DKMS installation ```
+-   Remove the failed DKMS installation 
+
+```
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
 deb-src http://security.ubuntu.com/ubuntu xenial-security main restricted
-```1
+```
+
+1
 
 ## ROS Support
 

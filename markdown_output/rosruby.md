@@ -19,23 +19,35 @@ hydro, groovy and fuerte (v0.2.1).
 
 You can install rosruby using apt.
 
+
+
 ```
 sudo apt-get install ros-hydro-rosruby ros-hydro-rosruby-common ros-hydro-rosruby-messages
 ```
+
+
 
 rosruby_messages contains pre-compiled ruby message files. Then you have
 to source setup file for update your environmental variables for
 rosruby.
 
+
+
 ```
 source ~/.bashrc
 ```
 
+
+
 or
+
+
 
 ```
 source /opt/ros/hydro/setup.bash
 ```
+
+
 
 ## Tutorials
 

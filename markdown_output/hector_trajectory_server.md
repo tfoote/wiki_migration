@@ -10,6 +10,8 @@ parameters as described below.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=hector_trajectory_server
@@ -55,3 +57,5 @@ param{
 }
 }
 ```
+
+

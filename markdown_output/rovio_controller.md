@@ -6,6 +6,8 @@ offered as a service.
 
 ## ROS API
 
+
+
 ```clearsilver
 param {
   0.name=rovio_hostname
@@ -32,3 +34,5 @@ srv {
   0.desc=Control of the head position
 }
 ```
+
+

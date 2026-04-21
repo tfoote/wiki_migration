@@ -32,6 +32,8 @@ topics in a dynamic way, when loading source code.
 
 The following commands will fetch and compile the `asebaros` package.
 The latter will fetch all required dependencies automatically.
+
+
 ```
 # Fetch ethzasl_aseba stack
 git clone --recursive git://github.com/ethz-asl/ros-aseba.git ethzasl_aseba
@@ -46,11 +48,15 @@ rosdep install asebaros
 rosmake
 ```
 
+
+
 ## Usage
 
 ### Node: asebaros
 
 The bridge with Aseba is called `asebaros`:
+
+
 
 ```
 asebaros [options] [additional targets]
@@ -64,6 +70,8 @@ Options:
 Additional targets are any valid Dashel targets.
 ```
 
+
+
 When started with no option, asebaros will listen to incoming Aseba
 connections and respond to ROS requests. You can specify additional
 Aseba targets that asebaros will try to connect on startup. Aseba
@@ -71,9 +79,15 @@ targets follow the
 [Dashel target naming scheme](http://download.gna.org/dashel/1.0.3/doc/index.html).
 For example, to connect Aseba to a serial port on a UNIX, setting
 hardware flow control and a speed of 921.6&nbsp;kbps, write:
+
+
 ```
 asebaros "ser:device=/dev/ttyUSB0;fc=hard;baud=921600"
 ```
+
+
+
+
 
 ```clearsilver
 srv {
@@ -122,6 +136,8 @@ pub {
   1.desc = Topic on which Aseba events named `NAME` are published.
 }
 ```
+
+
 
 ### Developing for Aseba
 

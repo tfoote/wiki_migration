@@ -17,9 +17,13 @@ GripIt has been uploaded to ROS Jenkins build system.
 Running the following commands should download the package to your local
 environment.
 
+
+
 ```
 $ sudo apt install ros-kinetic-gripit
 ```
+
+
 
 ### Application Dependencies
 
@@ -33,9 +37,13 @@ Currently, GripIt relies on the following packages:
 After Installation, GripIt could be launced using the following
 commands:
 
+
+
 ```
 $ rosrun gripit gripit
 ```
+
+
 
 -   Ensure a Roscore instance already running and color and depth topic
     is being published by a separate package.

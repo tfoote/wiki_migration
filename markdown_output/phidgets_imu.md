@@ -22,6 +22,8 @@ for using the driver together with a filter is included in the package.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = phidgets_imu_node / phidgets_imu_nodelet
 desc = The `phidgets_imu_node_node` publishes IMU data from the Phidgets Spatial device.
@@ -77,3 +79,5 @@ srv{
   0.desc= Tells the IMU to (re)calibrate its gyroscope biases. The service call returns once calibration is complete. A message will published to `imu/is_calibrated` for each call to `imu/calibrate`.
 }
 ```
+
+

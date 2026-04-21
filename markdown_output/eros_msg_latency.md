@@ -17,25 +17,37 @@ For all of these, make sure you have pre-run `roscore`.
 
 ### InterProcessCopy
 
+
+
 ```
 ./talker
 ./listener
 ```
+
+
 
 It will output latencies and finally when terminated (ctrl-c) will
 output the average latency to standard output.
 
 ### InterThreadCopy
 
+
+
 ```
 ./thread_passing_copies
 ```
 
+
+
 ### InterThreadPointers
+
+
 
 ```
 ./thread_passing_pointers
 ```
+
+
 
 Note this one is almost functionally identical to the previous one - you
 just pass a boost shared pointer when publishing instead of an actual

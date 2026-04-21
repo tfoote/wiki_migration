@@ -23,6 +23,8 @@ To run the driver use:
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=numatac_can_node
@@ -48,3 +50,5 @@ pub{
     2.desc = The option the tare the readings based on the first reading.
   }
 ```
+
+

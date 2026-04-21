@@ -8,6 +8,10 @@ The following simulated Schunk components are available
 -   7-DOF lwa with sdh, `lwa_sdh.launch`
 
 You can spawn the components in an empty gazebo world using the
-corresponding launch files, e.g. ```
+corresponding launch files, e.g. 
+
+```
 roslaunch schunk_bringup_sim lwa_sdh.launch
 ```
+
+

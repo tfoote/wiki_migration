@@ -6,9 +6,13 @@ specialized to manipulate heavy weight object up to 20kg.
 
 To visualize the robot model in rviz, type command as:
 
+
+
 ```
 $ roslaunch tra1_description tra1.launch
-``` The rviz and slider interface for joint angle
+```
+
+ The rviz and slider interface for joint angle
 appears.
 
 ![ScreenShot\|width="75%"](attachment:Screenshot from 2017-09-15 10-33-10.png)

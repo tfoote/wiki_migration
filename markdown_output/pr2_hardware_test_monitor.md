@@ -32,14 +32,18 @@ test. This could mean, for example, calling the
 
 Listeners are loaded by parameters in the private namespace of the
 `pr2_hw_test_monitor` node. This example loads a `CameraListener`
-and an `EthercatListener`: ```
+and an `EthercatListener`: 
+
+```
 ethercat:
   type: EthercatListener
   file: ethercat_listener
 camera:
   type: CameraListener
   file: camera_listener
-``` The parameters
+```
+
+ The parameters
 `type` and `file` are mandatory, and specify the class name and
 filename/submodule of the listener, respectively. The `file` is
 assumed to be in the package `pr2_hardware_test_monitor`.
@@ -47,11 +51,15 @@ assumed to be in the package `pr2_hardware_test_monitor`.
 ## Monitor Behavior
 
 At the simplest level, the test monitor polls each listener at 1Hz to
-check status. The listener returns a tuple of: ```
+check status. The listener returns a tuple of: 
+
+```
 level (int) : 0 - OK, 1 - WARN, 2 - ERROR, 3 - STALE
 message (str) : Status message
 diags ([ diagnostic_msgs/DiagnosticStatus ]) : Diagnostics to publish
 ```
+
+
 
 The monitor collects the status level and message and publishes it to
 the output topic `test_status` as a
@@ -94,6 +102,8 @@ exist, or a listener returns false on `create`.
 
 ## Monitor Node ROS API
 
+
+
 ```clearsilver
 name = pr2_hw_test_monitor
 desc = Monitors PR2 hardware testing
@@ -125,6 +135,8 @@ srv{
 1.desc= Reset monitor and listeners
 }
 ```
+
+
 
 ## Listener Info
 
@@ -160,12 +172,16 @@ transmissions. The [pr2_transmission_check](pr2_transmission_check) node
 must be running for this to work.
 
 The transmission listener can also check for casters slipping.
+
+
 ```yaml
 trans:
   type: TransmissionListener
   file: trans_listener
   caster_slip: fl
 ```
+
+
 
 This makes sure the caster does not slip more than a prescribed amount
 during the caster burn in. When the caster slip detection is enabled,

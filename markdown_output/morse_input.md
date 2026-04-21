@@ -24,9 +24,13 @@ Morse code reference sheet is also built in.
 
 Morser is started via:
 
+
+
 ```
 roslaunch morse_input morse.launch
 ```
+
+
 
 The resulting main window may be moved to a convenient place. If the
 window is resized, the new size is remembered, and subsequent starts of
@@ -168,9 +172,13 @@ Difficulty level settings include the speed at which the letters
 descend, and the number of letters in flight at the same time. To start
 MorseChallenger:
 
+
+
 ```
 rosrun morse_input morse_challenger.py
 ```
+
+
 
 Note: Make sure that:
 

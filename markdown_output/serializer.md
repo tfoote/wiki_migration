@@ -7,6 +7,8 @@ using either a USB port or XBEE radios.
 
 ## Serializer Node
 
+
+
 ```clearsilver
 node.0 {
 name = serializer-node.py
@@ -190,6 +192,8 @@ prov_tf {
 }
 ```
 
+
+
 ### Configuration
 
 The recommended way to configure the Serializer node is to use a YAML
@@ -197,6 +201,8 @@ file specifying the required parameters. A sample parameter file called
 `sample_params.yaml` is included in the distribution and is shown
 below. Note that many of the parameters are commented out and must be
 set and un-commented before you can use the node with your Serialzier:
+
+
 
 ```
 port: /dev/ttyUSB0
@@ -230,7 +236,11 @@ analog: { voltage: {pin: 5, type: Voltage}, drive_current: {pin: 1, type: Phidge
 #digital: { base_sonar: {pin: 5, type: Ping} }
 ```
 
+
+
 ### Example Launch File
+
+
 
 ```
 <launch>
@@ -240,12 +250,18 @@ analog: { voltage: {pin: 5, type: Voltage}, drive_current: {pin: 1, type: Phidge
 </launch>
 ```
 
+
+
 ### Usage Notes
 
 -   If you mess up your parameters in a given session, just do a:\
-    ```
+    
+
+```
 rosparam delete /serializer
 ```
+
+
 
 ```{=html}
 <!-- -->

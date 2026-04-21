@@ -6,7 +6,9 @@ Home of the unnoficial ROS driver for MatrixVision BlueFox cameras.
 [ drivers page](http://www.matrix-vision.com/mvvirtualdevice-442.html ):
 . Select mvBlueFOX / mvBlueFOX-MLC in the drop down fields. Download the
 latest Linux drivers (e.g. mvVirtualDevice x86_XXXXXXXX.tgz) and unpack
-the archive in to a directory: ```shell
+the archive in to a directory: 
+
+```shell
 $ cd ~/src (or wherever you want to install this package)
 $ tar xvzf mvVirtualDevice\ x86_XXXXXXXX.tgz
 
@@ -35,38 +37,62 @@ $./wxPropView
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ```
 
+
+
 ## Example
 
 The driver can be run as a regular node by launching:
+
+
 ```shell
 roslaunch mv_bluefox_driver camera_node.launch
 ```
 
+
+
 OR
 
-The driver can be launched as a *nodelet* as: ```shell
+The driver can be launched as a *nodelet* as: 
+
+```shell
 roslaunch mv_bluefox_driver camera_nodelet.launch
 ```
 
+
+
 The camera can be calibrated via the
 [camera_calibration](camera_calibration) package from
-[image_pipeline](image_pipeline) by launching: ```shell
+[image_pipeline](image_pipeline) by launching: 
+
+```shell
 roslaunch mv_bluefox_driver calibrate_camera.launch
 ```
+
+
 **NOTE:** You must modify the checkerboard patter calibration parameters
 to suit your own.
 
 After a *.yaml* calibration file has been properly generated, the actual
 rectified images can be processed further via
 [image_pipeline](image_pipeline)'s [image_proc](image_proc). Thus, the
-following launchers achieve that, respectively. ```shell
+following launchers achieve that, respectively. 
+
+```shell
 roslaunch mv_bluefox_driver camera_node_proc.launch
 ```
-OR ```shell
+
+
+OR 
+
+```shell
 roslaunch mv_bluefox_driver camera_nodelet_proc.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
  name = mv_bluefox_driver
@@ -97,6 +123,8 @@ roslaunch mv_bluefox_driver camera_nodelet_proc.launch
  
 }
 ```
+
+
 
 ## TODO
 

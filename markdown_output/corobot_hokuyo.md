@@ -40,6 +40,8 @@ version, and is proportional to the `cluster` parameter.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=corobot_hokuyo
@@ -120,6 +122,8 @@ name=Read-only parameters
 }
 }
 ```
+
+
 
 ##### Parameter interactions
 

@@ -1,8 +1,12 @@
 # Installation
 
+
+
 ```wiki
 The C-API driver is (currently) only compatible with CB2 controllers running a 1.x version of Polyscope. It cannot be used on CB3 or newer controllers.
 ```
+
+
 
 ## UR Control Box
 

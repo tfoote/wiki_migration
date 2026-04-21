@@ -19,10 +19,14 @@ This can be done either by running our Makefile or manually:
 -   **Automatic way:**\
     Please set ADB variable to your adb executable or make sure that adb
     executable is in your PATH.\
-    Connect your Android device to your PC. ```
+    Connect your Android device to your PC. 
+
+```
 $ export ADB=~/android/android-sdk-linux_86/platform-tools/adb
  $ make python
 ```
+
+
     This will automatically download and install latest stable SL4A and
     Python for Android on your phone.
 
@@ -38,9 +42,13 @@ $ export ADB=~/android/android-sdk-linux_86/platform-tools/adb
     ![1&choe=UTF-8](https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://android-scripting.googlecode.com/files/sl4a_r3.apk&chld=L) a.
     Install SL4A on your Android phone either by opening the APK on your
     phone using a file explorer or by installing it from the PC via
-    adb:```
+    adb:
+
+```
 adb install sl4a_r3.apk
 ```
+
+
 -   **Python for Android (Py4A)**\
     This will install Python executable, library and its most common
     modules on your Android device:\
@@ -50,9 +58,13 @@ adb install sl4a_r3.apk
     ![1&choe=UTF-8](https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://python-for-android.googlecode.com/files/PythonForAndroid_r5.apk&chld=L) a.
     Install Py4A on your Android phone either by opening the APK on your
     phone using a file explorer or by installing it from the PC via
-    adb:```
+    adb:
+
+```
 adb install PythonForAndroid_r5.apk
-``` a. Launch *Python for Android* on your
+```
+
+ a. Launch *Python for Android* on your
     device and press *Install*. This will download and extract Python,
     most common Python modules and the SL4A API on the phone.\
 
@@ -63,24 +75,36 @@ verify the successfull installation either by starting *SL4A* and
 executing one of the Python example files or by starting Python on your
 device via adb shell:\
 Open up a terminal on your PC, have your Android device connected to
-it.```
+it.
+
+```
 $ sudo adb start-server
  $ adb shell
-``` Now you can work on the device's shell from
-the PC and try to execute Python on it:```
+```
+
+ Now you can work on the device's shell from
+the PC and try to execute Python on it:
+
+```
 PYTHONPATH=/data/data/com.googlecode.pythonforandroid/files/python/lib/python2.6/lib-dynload
 PYTHONPATH=${PYTHONPATH}:/mnt/sdcard/com.googlecode.pythonforandroid/extras/python
 export PYTHONPATH
 export PYTHONHOME=/data/data/com.googlecode.pythonforandroid/files/python
 export LD_LIBRARY_PATH=/data/data/com.googlecode.pythonforandroid/files/python/lib
 /data/data/com.googlecode.pythonforandroid/files/python/bin/python
-``` This
-should show something like this:```
+```
+
+ This
+should show something like this:
+
+```
 Python 2.6.2 (r262:71600, Feb 14 2011, 10:32:30) 
  [GCC 4.4.3] on linux-armv7l
  Type "help", "copyright", "credits" or "license" for more information.
  >>>
-```\
+```
+
+\
 \
 
 ## Get ROScore running on Android
@@ -96,10 +120,14 @@ in your PATH. We can distinguish the installation
 -   **Un-rooted Android devices** (default)\
     On unrooted phones you have to carry out the OpenCV Module Import
     manually. First install the files on your phone by running e.
-    g.:```
+    g.:
+
+```
 $ export ADB=~/android/android-sdk-linux_86/platform-tools/adb
  $ make install_no_root
-``` After the process has finished, you have
+```
+
+ After the process has finished, you have
     to execute *Python for Android* on your mobile device and press
     *Import Module*. There you should be able to select **cv.egg**.
     After the *Success* message, you are able to run our sample ROS node
@@ -107,10 +135,14 @@ $ export ADB=~/android/android-sdk-linux_86/platform-tools/adb
 -   **Rooted Android devices**\
     Installation on rooted phones (Hint: you will know if you have one.)
     is easier, as we can install all the files to their correct location
-    automatically. You can simply run, e. g.:```
+    automatically. You can simply run, e. g.:
+
+```
 $ export ADB=~/android/android-sdk-linux_86/platform-tools/adb
  $ make install
-```\
+```
+
+\
     \
 
 ## Currently supported ROS packages and Python modules
@@ -166,23 +198,39 @@ node can be started.
     *start_roscore.sh* script in *testing*/ folder. This script depends
     on [pyqrcode](http://pyqrcode.sourceforge.net/) Python module.\
     You can also generate your own QR-code using
-    [Google's Chart API](http://code.google.com/intl/de-DE/apis/chart/):```
+    [Google's Chart API](http://code.google.com/intl/de-DE/apis/chart/):
+
+```
 https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=ROS_MASTER_URI&chld=L|1&choe=UTF-8
 ```
+
+
     replace *ROS_MASTER_URI* with your full URI e.
-    g.:```
+    g.:
+
+```
 https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://192.168.1.100:11311&chld=L|1&choe=UTF-8
-```\
+```
+
+\
     Now */android* ROS node should exists. Feel free to test the
     following topics:
 
-**Publishers:** ```
-adb install sl4a_r3.apk
-```0
+**Publishers:** 
 
-**Subscribers:** ```
+```
 adb install sl4a_r3.apk
-```1
+```
+
+0
+
+**Subscribers:** 
+
+```
+adb install sl4a_r3.apk
+```
+
+1
 
 The image on */mobile/image* is only published after a request on
 */mobile/request_images* (std_msgs/Int16), which holds the number of
@@ -199,9 +247,13 @@ requested images.\
 Simply develop your ROS node using *rospy* and the provided packages and
 push it to SL4A's script directory on the Android device:
 
+
+
 ```
 adb install sl4a_r3.apk
-```2
+```
+
+2
 
 After pushing it to the device, you can execute it directly from *SL4A*.
 

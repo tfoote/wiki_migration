@@ -1,8 +1,12 @@
 ## Usage
 
-To launch reconfigure_gui in Groovy, run: ```
+To launch reconfigure_gui in Groovy, run: 
+
+```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+
+
 
 You will be presented with an interface like this:
 
@@ -17,9 +21,13 @@ You can select multiple nodes.
 ![ Reconfiguring multiple nodes](attachment:reconfigure_gui3.png )
 
 You can also launch the `reconfigure_gui` via [rqt_gui](rqt_gui):
+
+
 ```
 rosrun rqt_gui rqt_gui
 ```
+
+
 
 ### Limitation
 
@@ -44,9 +52,13 @@ are helpful for doing that.
 Run the following command to make sure dynamic reconfigure parameters
 are returned:
 
+
+
 ```
 rosrun dynamic_reconfigure dynparam list
 ```
+
+
 
 If nothing returned then the issue is your `dynamic_reconfigure`
 itself, not `rqt-reconfigure`.

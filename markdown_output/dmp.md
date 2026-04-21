@@ -28,13 +28,19 @@ in full.
 
 First, the DMP server must be running. Type:
 
+
+
 ```shell
 roslaunch dmp dmp.launch
 ```
 
+
+
 Now, let's look at some sample code to learn a DMP from demonstration,
 set it as the active DMP on the server, and use it to plan, given a new
 start and goal:
+
+
 
 ```python
 #!/usr/bin/env python
@@ -127,7 +133,11 @@ if __name__ == '__main__':
     print plan
 ```
 
+
+
 When executed, this produces:
+
+
 
 ```
 Starting LfD...
@@ -160,6 +170,8 @@ plan:
   times: [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]
 at_goal: 1
 ```
+
+
 
 ## Parameters
 
@@ -254,6 +266,8 @@ a bit of explanation.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = dmp_server
 srv {
@@ -271,3 +285,5 @@ srv {
   2.desc = Creates a full or partial plan from a start state to a goal state, using the currently active DMP. 
 }
 ```
+
+

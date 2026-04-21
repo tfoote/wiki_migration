@@ -26,7 +26,9 @@ occupancy grid of the environment, subscribe to `cloud_map` or
     There is a description for each parameter. Here two examples (use
     string type for all RTAB-Map's parameters) by either using
     `param` member or by passing as arguments:
-    ```
+    
+
+```
 <launch>
 <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" args="--Grid/RangeMax 5">
    <param name="Optimizer/Iterations" type="int" value="50"/>
@@ -34,15 +36,21 @@ occupancy grid of the environment, subscribe to `cloud_map` or
 </launch>
 ```
 
+
+
 ```{=html}
 <!-- -->
 ```
 -   Another way to show available parameters from the terminal is to
-    call the node with "\--params" argument: ```
+    call the node with "\--params" argument: 
+
+```
 $ rosrun rtabmap_slam rtabmap --params
 or
 $ rtabmap --params
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -50,7 +58,9 @@ $ rtabmap --params
 -   By default, rtabmap is in mapping mode. To set in localization mode
     with a previously created map, you should set the memory not
     incremental (make sure that arguments don't contain
-    `"\--delete_db_on_start"` too!): ```
+    `"\--delete_db_on_start"` too!): 
+
+```
 <launch>
 <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" args="">
    <!-- LOCALIZATION MODE -->
@@ -58,6 +68,8 @@ $ rtabmap --params
 </node>
 </launch>
 ```
+
+
 
 #### Arguments
 
@@ -67,6 +79,8 @@ $ rtabmap --params
 -   `"\--uinfo"`: Show RTAB-Map's info/warning/error logs.
 -   `"\--params"`: Show RTAB-Map's parameters related to this node
     and exit.
+
+
 
 ```clearsilver
 sub {
@@ -608,3 +622,5 @@ prov_tf {
   0.desc = the current odometry correction.
 }
 ```
+
+

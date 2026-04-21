@@ -1,8 +1,12 @@
 ## Usage
 
+
+
 ```
 rosrun smach_recovery_viewer smach_viewer.py
 ```
+
+
 
 This will start the GUI and help visualize the transitions in the state
 machine much like in the original SMACH package. The GUI also shows you

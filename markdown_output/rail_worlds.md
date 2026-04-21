@@ -37,7 +37,9 @@ from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rail_gazebo.git
 roscd rail_gazebo
@@ -45,30 +47,48 @@ rosdep install rail_gazebo
 rosmake rail_gazebo
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rail-gazebo
 ```
+
+
 
 ### Startup
 
 Separate launch files are provided to launch each of the above worlds.
 To launch the youBot world, simply execute the following command:
+
+
 ```
 roslaunch rail_worlds youbot_world.launch
 ```
 
+
+
 To launch the PR2 world, simply execute the following command:
+
+
 ```
 roslaunch rail_worlds pr2_world.launch
 ```
 
+
+
 To launch the Fuller 318 Two Tables world, simply execute the following
-command: ```
+command: 
+
+```
 roslaunch rail_worlds fuller_318_full_2_tables_world
 ```
+
+
 
 Note that these launch files will **`'not`**' place any robots inside
 of the world.

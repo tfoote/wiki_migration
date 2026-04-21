@@ -4,6 +4,8 @@
 
 ## ROS Nodes and Nodelets
 
+
+
 ```clearsilver
 node.0 {
  name = HeightMapNodelet
@@ -42,19 +44,27 @@ param {
 }
 ```
 
+
+
 #### Examples
 
 Start the height map nodelet in a separate process. *Running as a
 standalone nodelet prevents zero-copy message sharing.*
+
+
 ```
 $ rosrun nodelet nodelet standalone velodyne_height_map/HeightMapNodelet
 ```
+
+
 
 This launch file runs the height map nodelet in the same process with
 the Velodyne device driver and a
 [velodyne_pointcloud](velodyne_pointcloud) nodelet which publishes the
 points transformed into the "/odom" frame. *This approach minimizes
 data copying.*
+
+
 
 ```
 <launch>
@@ -77,6 +87,10 @@ data copying.*
 </launch>
 ```
 
+
+
+
+
 ```clearsilver
 node.0 {
  name = heightmap_node
@@ -84,18 +98,32 @@ node.0 {
 }
 ```
 
+
+
 #### Examples
 
 Run the height map algorithm as a separate node.
+
+
 ```
 $ rosrun velodyne_height_map heightmap_node
 ```
 
-Run the node with a 100x100 grid of 10cm cells. ```
+
+
+Run the node with a 100x100 grid of 10cm cells. 
+
+```
 $ rosrun velodyne_height_map heightmap_node _grid_dimensions:=100 _cell_size:=0.1
 ```
 
+
+
 Run the node with anything more than 5cm high considered an obstacle.
+
+
 ```
 $ rosrun velodyne_height_map heightmap_node _height_threshold:=0.05
 ```
+
+

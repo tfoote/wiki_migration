@@ -4,15 +4,23 @@
 
 First, if you run it for the first time, install prerequisite.
 
+
+
 ```
 $ rosdep install vs060
 $ ros-$YOUR_ROSDISTRO$-moveit-ros-visualization  (may not be necessary)
 ```
 
+
+
 You can run [VS060](vs060) manipulator on [RViz](rviz) by the following:
+
+
 ```
 $ roslaunch denso_launch denso_vs060_moveit_demo_simulation.launch
 ```
+
+
 
 Then you can plan the arm's pose by using
 [Interactive Markers](interactive_markers‎), then actually move it to
@@ -32,9 +40,13 @@ Youtube example: [Youtube](https://www.youtube.com/watch?v=ytdnVw_QEoQ)
 
 ### VS060 in iREX 2013 demo
 
-You can run it on `RViz` by: ```
+You can run it on `RViz` by: 
+
+```
 $ roslaunch vs060_moveit_config demo_simulation_cage.launch
 ```
+
+
 
 You'll see `VS060` sitting in a bit more restricted situation.
 ![\|width=75%](attachment:vs060_irex_rviz.png)

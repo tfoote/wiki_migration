@@ -4,11 +4,15 @@ This package contains a new search-based motion planning algorithm for
 manipulation.
 
 A detailed explanation of how the planner works can be found in the
-following papers. ```
+following papers. 
+
+```
 Benjamin Cohen, Gokul Subramanian, Sachin Chitta, and Maxim Likhachev, "Planning for Manipulation with Adaptive Motion Primitives, " Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2011.
 
 Benjamin Cohen, Sachin Chitta, and Maxim Likhachev, "Search-based Planning for Manipulation with Motion Primitives, " Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2010.
 ```
+
+
 
 One of the notable differences between this planner and the other
 popular planning algorithms for manipulation is that the
@@ -59,6 +63,8 @@ with obstacles on it.
 
 #### Subscribed Topics
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -73,7 +79,11 @@ sub {
   2.desc= Objects that were added to the robot model - usually objects that the robot grasped. They get added to the robot's collision model.
 ```
 
+
+
 #### Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -90,7 +100,11 @@ pub {
 }
 ```
 
+
+
 ### Services Offered
+
+
 
 ```clearsilver
 srv{
@@ -101,11 +115,15 @@ srv{
 }
 ```
 
+
+
 ### ROS Parameters
 
 #### Planner
 
 ##### General
+
+
 
 ```clearsilver
 param {
@@ -150,7 +168,11 @@ param {
 }
 ```
 
+
+
 ##### Research
+
+
 
 ```clearsilver
 param {
@@ -170,7 +192,11 @@ param {
 }
 ```
 
+
+
 ##### Debug
+
+
 
 ```clearsilver
 param {
@@ -182,7 +208,11 @@ param {
 }
 ```
 
+
+
 #### Robot Model
+
+
 
 ```clearsilver
 param {
@@ -214,7 +244,11 @@ param {
 }
 ```
 
+
+
 ##### Collision Space
+
+
 
 ```clearsilver
 param {
@@ -258,7 +292,11 @@ param {
 }
 ```
 
+
+
 #### Visualizations
+
+
 
 ```clearsilver
 param {
@@ -290,12 +328,16 @@ param {
 }
 ```
 
+
+
 ## Motion Primitives
 
 The following text file format is how the motion primitives are inputted
 into the planner. In the future, we plan on moving to a yaml format so
 that we can put the primitives on the rosparam server.
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -308,11 +350,15 @@ sub {
   2.name= attached_collision_object
   2.type= mapping_msgs/AttachedCollisionObject
   2.desc= Objects that were added to the robot model - usually objects that the robot grasped. They get added to the robot's collision model.
-```0
+```
+
+0
 
 The default primitive file can be found in config/pr2.mprim and looks
 like this:
 
+
+
 ```clearsilver
 sub {
   no_header= True
@@ -325,7 +371,9 @@ sub {
   2.name= attached_collision_object
   2.type= mapping_msgs/AttachedCollisionObject
   2.desc= Objects that were added to the robot model - usually objects that the robot grasped. They get added to the robot's collision model.
-```1
+```
+
+1
 
 ## Roadmap
 

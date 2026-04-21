@@ -32,6 +32,8 @@ Todo: similar video from rviz.
 Two drivers are available: `imu_filter_node` and
 `imu_filter_nodelet`. Their parameters and topics are identical.
 
+
+
 ```clearsilver
 sub {
    0{
@@ -140,6 +142,8 @@ sub {
   }
 ```
 
+
+
 ## References
 
 \[1\] <http://www.x-io.co.uk/open-source-imu-and-ahrs-algorithms/>
@@ -148,5 +152,3 @@ sub {
 
 We appreciate the time and effort spent submitting bug reports and
 feature requests.
-
-<<GitHubIssues(CCNYRoboticsLab/imu_tools)>>

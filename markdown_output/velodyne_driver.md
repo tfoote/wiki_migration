@@ -87,28 +87,44 @@ packet rates for them.\
 Read the Velodyne HDL-64E (default) input socket as fast as possible.
 Publish each complete revolution to `velodyne_packets`.
 
+
+
 ```
 $ rosrun velodyne_driver velodyne_node
-``` Read the Velodyne Velodyne HDL-32E input socket
+```
+
+ Read the Velodyne Velodyne HDL-32E input socket
 as fast as possible. Publish each complete revolution to
 `velodyne_packets`.
 
+
+
 ```
 $ rosrun velodyne_driver velodyne_node _model:=32E
-``` Read previously captured Velodyne packets from
+```
+
+ Read previously captured Velodyne packets from
 dump.pcap file. Publish messages to `velodyne_packets` at
 approximately 10 Hz rate. Dump files can be grabbed by `libpcap`,
 Velodyne's DSR software, `ethereal`, `wireshark`, `tcpdump`, or
 the [vdump](#vdump) command.
 
+
+
 ```
 $ rosrun velodyne_driver velodyne_node _pcap:=dump.pcap
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.0 {
  name = DriverNodelet
  desc = ROS nodelet that captures Velodyne 3D LIDAR data and publishes it in raw form. This uses the same device driver class as [[http://ros.org/wiki/velodyne_driver#velodyne_node|velodyne_node]]. All topics and parameters are identical.
 }
 ```
+
+
 
 ## Utility Commands
 
@@ -124,12 +140,16 @@ Other methods of acquiring PCAP data include using `tcpdump` directly,
 
 #### Usage
 
+
+
 ```
 rosrun velodyne_driver vdump <file_prefix> [ <interface> ]
 
         <file_prefix>   file name to dump (with 3-digit number suffix)
         <interface>     interface to read from (default: "eth0")
 ```
+
+
 
 #### Examples
 
@@ -139,9 +159,13 @@ The time span that a single 100MB file covers depends on packet size and
 sampling rate of a particular model (for VLP-16 that is about 100
 seconds worth of packets). Type `\^C` when finished.
 
+
+
 ```
 $ rosrun velodyne_driver vdump pcap- eth1
 ```
+
+
 
 ## Launch File Examples
 
@@ -149,17 +173,29 @@ Start a `velodyne_nodelet_manager` process running the driver nodelet.
 Other nodelets using the same nodelet manager process will have
 zero-copy access to the raw data messages the driver publishes.
 
+
+
 ```
 $ roslaunch velodyne_driver nodelet_manager.launch
-``` Start a `velodyne_nodelet_manager` process
+```
+
+ Start a `velodyne_nodelet_manager` process
 for a Velodyne HDL-32E.
+
+
 
 ```
 $ roslaunch velodyne_driver nodelet_manager.launch model:=32E
-``` Start a driver nodelet with input from
+```
+
+ Start a driver nodelet with input from
 `tcpdump.pcap`, in the current directory. The `pwd` provides a full
 path name, as required for `roslaunch`.
+
+
 
 ```
 $ roslaunch velodyne_driver nodelet_manager.launch pcap:=$(pwd)/tcpdump.pcap
 ```
+
+

@@ -11,9 +11,13 @@ Other than the general checks, `roswtf` has two usages.
 
 #### Checking packages or stacks
 
-You can either run it just by typing: ```
+You can either run it just by typing: 
+
+```
 $ roswtf
-``` which
+```
+
+ which
 will check the current package or stack for problems.
 
 **IMPORTANT**: `roswtf` performs those checks based on the directory
@@ -24,9 +28,13 @@ based on files in the `navigation` stack and its dependencies.
 #### Checking a launch file
 
 Or you can also run `roswtf` on a [roslaunch](roslaunch) file:
+
+
 ```
 $ roswtf yourfile.launch
 ```
+
+
 
 in which case it will check the given launch file for any potential
 issues.

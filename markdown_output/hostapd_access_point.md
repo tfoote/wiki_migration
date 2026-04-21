@@ -8,6 +8,8 @@ drivers which support master mode (see
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=ap_hostapd_node.py
@@ -94,6 +96,8 @@ desc= Implements the dynamic_reconfigure interface defined in [[access_point_con
 }
 ```
 
+
+
 ## Usage examples
 
 ### Manual control
@@ -103,6 +107,8 @@ its parameters using the `reconfigure_gui` interface.
 
 The following launch file starts an AP node on the `wlan0` interface
 and the `reconfigure_gui`:
+
+
 
 ```
 <launch>
@@ -114,6 +120,8 @@ and the `reconfigure_gui`:
     <node name="reconfigure_node" pkg="dynamic_reconfigure" type="reconfigure_gui"/>
 </launch>
 ```
+
+
 
 The following window will appear showing that initially the AP is not
 running (the enable checkbox is unchecked):
@@ -138,6 +146,8 @@ The hostapd access point can be controlled programatically via the
 dynamic_reconfigure interface described above. The following snippet
 reproduces the manual interaction from the previous section.
 
+
+
 ```
 import dynamic_reconfigure.client
 
@@ -155,6 +165,8 @@ config = ap.update_configuration({"freq": freq})
 if config['status'] != "OK":
     raise Exception("AP failed to start: " + config['errmsg'])
 ```
+
+
 
 ## Command-line tools
 
@@ -179,6 +191,8 @@ three virtual interfaces. Their names will be `wlan0`, `wlan1` and
 
 Using `find_hwsim_iface.py`:
 
+
+
 ```
 $ echo `rosrun hostapd_access_point find_hwsim_iface.py 1 3`
 wlan0
@@ -188,10 +202,14 @@ $ echo `rosrun hostapd_access_point find_hwsim_iface.py 3 3`
 wlan1
 ```
 
+
+
 The script can be used to launch nodes on the *n-th virtual interface*
 with roslaunch. The following example, launches two nodes on the first
 and second mac80211_hwsim interfaces while ensuring that there are at
 least three total interfaces:
+
+
 
 ```
 <launch>
@@ -204,6 +222,8 @@ least three total interfaces:
     </node>
 </launch>
 ```
+
+
 
 ### hwsim_nat_setup.sh
 
@@ -225,6 +245,8 @@ The script takes six parameters:
 
 An example:
 
+
+
 ```
 # rosrun hostapd_access_point hwsim_nat_setup.sh wlan0 192.168.68.1 192.168.69.1 wlan1 192.168.69.2 192.168.68.2
 
@@ -236,6 +258,8 @@ wlan0     Link encap:Ethernet  HWaddr 02:00:00:00:00:00
 wlan1     Link encap:Ethernet  HWaddr 02:00:00:00:01:00  
           inet addr:192.168.69.2  Bcast:192.168.69.255  Mask:255.255.255.0
 ```
+
+
 
 A packet with destination IP 192.168.69.1 will travel "over-the-air"
 from wlan1 to wlan0, while packets with destination IP 192.168.68.2 will

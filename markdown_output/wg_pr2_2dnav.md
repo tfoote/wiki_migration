@@ -22,9 +22,13 @@ Tuck the arms of the PR2 using the
 
 The wg_pr2_2dnav application can be run with the following command:
 
+
+
 ```
 roslaunch wg_pr2_2dnav pr2_2dnav.launch
 ```
+
+
 
 ## Interacting with the Application
 
@@ -35,9 +39,13 @@ through code.
 ### rviz
 
 -   You can bring up rviz in a wg_pr2_2dnav friendly configuration by
-    running the following launch file: ```
+    running the following launch file: 
+
+```
 roslaunch pr2_navigation_global rviz_move_base.launch
 ```
+
+
 -   In the rviz window that pops up, you'll need to set the pose of the
     robot.
 -   Take note of where the robot is in the world.
@@ -68,9 +76,13 @@ roslaunch pr2_navigation_global rviz_move_base.launch
 ### nav_view
 
 -   You can bring up nav_view in a wg_pr2_2dnav friendly configuration
-    by running the following launch file ```
+    by running the following launch file 
+
+```
 roslaunch pr2_navigation_global nav_view_move_base.launch
 ```
+
+
 -   In the nav_view window that pops up, you'll need to set the pose of
     the robot.
 -   Take note of where the robot is in the world.

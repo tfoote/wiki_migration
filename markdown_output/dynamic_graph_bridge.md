@@ -15,6 +15,8 @@ entites:
 These three entities can be easily instantiated together using the
 Python `Ros` class.
 
+
+
 ```python
 from dynamic_graph.ros import *
 
@@ -31,13 +33,19 @@ ros = Ros(robot)
 ros.rosExport.add('vector3Stamped', 'mySignal', 'myTopic')
 ```
 
+
+
 The published topics after executing this sample are:
+
+
 ```
 /dynamic_graph/joint_states
 /dynamic_graph/myTopic
 /rosout
 /rosout_agg
 ```
+
+
 
 ## Supported types
 
@@ -148,6 +156,8 @@ To use this feature, start dynamic-graph in your controller manager
 GrxUI/hrpsys or the PR2 controller manaager) and launch the remote
 client:
 
+
+
 ```shell
 # Launch the stand-alone controller.
 # This embeds the Python interpreter into a executable which provides
@@ -156,6 +166,8 @@ rosrun dynamic_graph_bridge interpreter&
 # Connect to the controller to send commands.
 rosrun dynamic_graph_bridge run_command
 ```
+
+
 
 You will then obtain a prompt almost equivalent to a classical Python
 prompt except that you must keep in mind that commands are run on a
@@ -168,9 +180,13 @@ Currently, there is no way to publish [tf](tf) information in a
 real-time loop safely. Therefore, a small Python scripts forwards the
 topics into tf.
 
+
+
 ```
 rosrun dynamic_graph_bridge tf_publisher _frame:=/a _child_frame:=/b _topic:=/mytopic
 ```
+
+
 
 This script will listen for the topic `mytopic` (which type must be
 <<MsgLink(geometry_msgs/TransformStamped)>>) and publish in [tf](tf)
@@ -182,6 +198,8 @@ the robot [urdf](urdf) description and the
 <<MsgLink(sensor_msgs/JointState)>> message.
 
 ### ROS API
+
+
 
 ```clearsilver
 name = tf_publisher
@@ -224,3 +242,5 @@ prov_tf {
   0.desc = Streamed frame.
 }
 ```
+
+

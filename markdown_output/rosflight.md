@@ -16,11 +16,17 @@ The following command will run the node that interfaces the autopilot
 with ROS running on the onboard computer (this must be run on a computer
 that is physically connected to the autopilot via USB or serial):
 
+
+
 ```
 $ rosrun rosflight rosflight_io _port:=/dev/ttyUSB0
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -176,3 +182,5 @@ param{
 }
 }
 ```
+
+

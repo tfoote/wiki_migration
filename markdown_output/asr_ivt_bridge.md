@@ -40,24 +40,36 @@ call one of the following functions (notice that the
 *toIvtCopy*-functions create a copy of the input messages while the
 other ones try to share the data if possible):
 
+
+
 ```
 IvtImagePtr toIvtCopy(const sensor_msgs::ImageConstPtr& source, const std::string& encoding = std::string());
 IvtImagePtr toIvtCopy(const sensor_msgs::Image& source, const std::string& encoding = std::string());
-``` or
+```
+
+ or
+
+
 
 ```
 IvtImageConstPtr toIvtShare(const sensor_msgs::ImageConstPtr& source, const std::string& encoding = std::string());
 IvtImageConstPtr toIvtShare(const sensor_msgs::Image& source, const boost::shared_ptr<void const>& tracked_object, const std::string& encoding = std::string());
-``` The return-value is a *!IvtImagePtr*-object,
+```
+
+ The return-value is a *!IvtImagePtr*-object,
 which contains a *CByteImage\** member called image.
 
 To convert such an *!IvtImage* back to ROS call one of the following
 member functions:
 
+
+
 ```
 sensor_msgs::ImagePtr toImageMsg() const;
 void toImageMsg(sensor_msgs::Image& ros_image) const;
 ```
+
+
 
 ------------------------------------------------------------------------
 
@@ -70,20 +82,32 @@ the provided member functions with the ROS-!CameraInfo-message you want
 to convert (for a stereo system you have to provide messages of both
 cameras of course):
 
+
+
 ```
 bool fromCameraInfo(const sensor_msgs::CameraInfo& msg);
 bool fromCameraInfo(const sensor_msgs::CameraInfoConstPtr& msg);
-``` in case of a mono camera system and
+```
+
+ in case of a mono camera system and
+
+
 
 ```
 bool fromCameraInfo(const sensor_msgs::CameraInfo& left, const sensor_msgs::CameraInfo& right);
 bool fromCameraInfo(const sensor_msgs::CameraInfoConstPtr& left, const sensor_msgs::CameraInfoConstPtr& right);
-``` in case of a stereo one.
+```
+
+ in case of a stereo one.
 
 The converted message can be obtained with the provided getter-functions
 (depends again on your used camera system):
+
+
 
 ```
 boost::shared_ptr<CCalibration> getCalibration(bool forRectifiedImages=false) const;
 boost::shared_ptr<CStereoCalibration> getStereoCalibration(bool forRectifiedImages=false) const;
 ```
+
+

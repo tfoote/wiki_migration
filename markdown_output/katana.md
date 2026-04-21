@@ -11,6 +11,8 @@ documented separately below for clarity.
 Also there is a second node in this package, called
 `katana_arm_kinematics`, documented at the end.
 
+
+
 ```clearsilver
 node.0 {
   name = katana node: general parameters
@@ -200,3 +202,5 @@ node.5 {
   }
 }
 ```
+
+

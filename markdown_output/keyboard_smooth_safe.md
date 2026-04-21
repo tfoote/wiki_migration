@@ -7,19 +7,31 @@ and the proximity sensor to avoid collisions with the environment.
 To start the keyboard_smooth_safe teleop you first have to bring up the
 skin using
 
+
+
 ```
 roslaunch skin_common bringup_skin.launch
-``` Then you might want to make sure you have the
+```
+
+ Then you might want to make sure you have the
 right amount of patches set
+
+
 
 ```
 rosrun skin_config skin_config
-``` After these steps you are ready to run the
+```
+
+ After these steps you are ready to run the
 teleop
+
+
 
 ```
 roslaunch keyboard_smooth_safe keyboard_smooth_safe.launch
-``` Use the arrow keys to move the robot aroun.
+```
+
+ Use the arrow keys to move the robot aroun.
 
 ## Parameters
 

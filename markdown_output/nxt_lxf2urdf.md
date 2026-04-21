@@ -16,9 +16,13 @@ ldraw models to Collada.
 
 Now that you have created and exported the \*.lxf and \*.ldr files, run
 the conversion program nxt_lxf2urdf.py and pipe the output into a urdf
-file. ```
+file. 
+
+```
 rosrun nxt_lxf2urdf nxt_lxf2urdf.py robot.lxf robot.ldr > robot.urdf
 ```
+
+
 
 ## Labelling and Positioning the Sensors and Motors
 

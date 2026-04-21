@@ -9,6 +9,8 @@ around a tf2 transform implemented in [tf2_sensor_msgs](tf2_sensor_msgs)
 
 ## Node
 
+
+
 ```clearsilver
 node.0 {
  name = imu_transformer_node
@@ -37,6 +39,8 @@ node.0 {
  }
 }
 ```
+
+
 
 ## Nodelet
 

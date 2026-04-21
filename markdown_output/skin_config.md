@@ -27,6 +27,8 @@ up. 1. **Init Skin:** Initialize skin and set "Ini" values to current
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0{
 name=skin_config_interface
@@ -47,3 +49,5 @@ srv {
   0.desc= Service to reconfigure skin
 }
 ```
+
+

@@ -37,16 +37,24 @@ Follow [these instructions](kaist_webots) to install the
 Plug-in your USB joystick. This joystick controller has been tested with
 the Microsoft Xbox-360 USB joystick.
 
-You can test the joystick by running: ```
+You can test the joystick by running: 
+
+```
 $ cat /dev/input/js0
-``` (you
+```
+
+ (you
 should see strange characters when you press the buttons)
 
 You can edit the joystick path in the launch file.
 
-Run the demo: ```
+Run the demo: 
+
+```
 $ roslaunch webots_joy_demo run.launch
 ```
+
+
 
 The Webots simulator should load, as shown:
 

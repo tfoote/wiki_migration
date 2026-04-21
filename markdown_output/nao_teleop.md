@@ -1,9 +1,13 @@
 ## Starting Teleoperation
 
 Start all the needed remote teleoperation nodes by running
+
+
 ```
 roslaunch nao_teleop teleop_joy.launch
-``` on the remote machine (e.g. your PC).
+```
+
+ on the remote machine (e.g. your PC).
 
 Then start [naoqi_driver](naoqi_driver) either on your local machine or
 on the Nao (nao_walker and nao_controller are required by this node). By
@@ -42,6 +46,8 @@ II. The button / behavior mapping can be changed with parameters.
 ![](attachment:nao_teleop.png)
 
 ## Node API
+
+
 
 ```clearsilver
 node.0 {
@@ -93,3 +99,5 @@ param {
 }
 }
 ```
+
+

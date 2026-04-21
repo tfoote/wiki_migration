@@ -94,20 +94,30 @@ environment variables must be set appropriately:
 
 On Robot Computer:
 
-. ```
+. 
+
+```
 export ROS_IP=ip.of.robot.computer
 ```
 
+
+
 On Visualization Computer:
 
-. ```
+. 
+
+```
 export ROS_IP=ip.of.visualisation.computer
 export ROS_MASTER_URI='http://ip.of.robot.computer:11311/'
 ```
 
+
+
 ------------------------------------------------------------------------
 
 ## API Documentation
+
+
 
 ```clearsilver
 name = visualization_cu
@@ -201,3 +211,5 @@ req_tf {
  }
 }
 ```
+
+

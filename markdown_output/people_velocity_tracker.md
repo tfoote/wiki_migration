@@ -1,5 +1,7 @@
 ## Documentation
 
+
+
 ```clearsilver
 name = tracker.py
 desc = 
@@ -24,6 +26,10 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = static.py
 desc = Publishes a People message repeatedly, with one person at the position/velocity specified by four command line arguments. (pos_x, pos_y, vel_x, vel_y)
@@ -33,3 +39,5 @@ pub {
   0.desc = Positions and velocities of people
 }
 ```
+
+

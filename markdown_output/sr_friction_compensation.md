@@ -21,9 +21,13 @@ other direction.
 
 ## How to run the Friction Compensation Algorithm
 
-Simply run: ```
+Simply run: 
+
+```
 $ rosrun sr_friction_compensation sr_friction_compensation.py /sr_friction_compensation/FFJ3:=/sh_ffj3_effort_controller/command _sign:=1 _nb_repetition=3
 ```
+
+
 
 The following parameters can be specified:
 

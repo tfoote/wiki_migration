@@ -22,6 +22,8 @@ Get BVH-formatted motion capture data from
 
 ## Usage
 
+
+
 ```shell
 python bvh_broadcaster.py [-h] [-n NAME] [-l] bvh_file base_frame
 
@@ -36,12 +38,18 @@ optional arguments:
   -l, --loop            Loop broadcasting
 ```
 
-For example: ```shell
+
+
+For example: 
+
+```shell
 # add execution access
 chmod +x scripts/bvh_broadcaster.py
 # loop broadcasting bvh to world frame
 python scripts/bvh_broadcaster.py example/13_14.bvh world -l
-``` Now, you can view the result in
+```
+
+ Now, you can view the result in
 rviz:
 
 ![](https://raw.githubusercontent.com/mingfeisun/bvh_broadcaster/master/example/example_bvh.gif)

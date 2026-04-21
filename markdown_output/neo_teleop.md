@@ -4,6 +4,8 @@ This package uses a joystick for teleoperating robots by neobotix.
 
 ## Topics/Configuration
 
+
+
 ```clearsilver
 sub {
   0.name = /joy
@@ -35,8 +37,14 @@ param {
 }
 ```
 
+
+
 ## Usage/Example
+
+
 
 ```
 roslaunch neo_teleop teleop.launch
 ```
+
+

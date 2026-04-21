@@ -3,16 +3,24 @@
 You can test the LSE miniQ URDF by running the test launch file provided
 on this pkg.
 
+
+
 ```
 roslaunch lse_miniq_description test.launch
 ```
 
+
+
 Next open rviz to view the model.
+
+
 
 ```
 roscd lse_miniq_description
 rosrun rviz rviz -d urdf_test.vcg
 ```
+
+
 
 ![\|width=100%](attachment:miniq_urdf.png)
 

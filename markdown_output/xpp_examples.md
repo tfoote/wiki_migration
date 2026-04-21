@@ -4,6 +4,8 @@
 ## Example launch scripts
 
 Check out the visualization of some example motions by running
+
+
 ```
 $ sudo apt-get update
 $ sudo apt-get install ros-[distro-name]-xpp
@@ -13,6 +15,8 @@ $ roslaunch xpp_examples quadrotor_ex.launch
 $ roslaunch xpp_examples monoped_ex_bag.launch
 $ roslaunch xpp_examples monoped_ex_generate.launch
 ```
+
+
 
 ## Feedback
 

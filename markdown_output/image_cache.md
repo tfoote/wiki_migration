@@ -1,4 +1,6 @@
-![](attachment:republish.jpg) ```clearsilver
+![](attachment:republish.jpg) 
+
+```clearsilver
 name = image_cache
 desc = The image cache node holds a central position in our architecture and serves multiple purposes detailed above.
 sub {
@@ -53,3 +55,5 @@ param {
   3.default = 4
 }
 ```
+
+

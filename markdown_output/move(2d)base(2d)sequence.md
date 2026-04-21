@@ -1,5 +1,3 @@
-<<GitHubIssues(MarkNaeem/move_base_sequence)>>
-
 ## Overview
 
 This is a ROS package that uses a ROS Action server to manage sending
@@ -15,6 +13,8 @@ Check:
 [Readme file on GitHub](https://github.com/MarkNaeem/move_base_sequence/blob/main/README.md)
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -36,7 +36,9 @@ node.0 {
     1.type= nav_msgs/Path
     1.desc= visualization topic that draws the path that connects goals together.
   }
-``` note: A robot using move base sequence can have
+```
+
+ note: A robot using move base sequence can have
 two states: paused: paused state stops the move base server and stops
 the sequence server so the robot stays at its place. operating:
 operating state means that the sequence server will be sending goals and
@@ -45,6 +47,8 @@ functioning until something causes state to change to paused (e.g. a
 goal cancellation or abortion).
 
 ## Parameters
+
+
 
 ```clearsilver
 param{
@@ -58,4 +62,6 @@ param{
   1.type = Bool
   1.desc =  determines whether the robot should be looping on the goals in an infinite loop which is the default value and set to be True, or it should only achieve them once, delete them, and wait for new goals, which is set by False.
 }
-``` <<MsgSrvDoc(move_base_sequence)>>
+```
+
+ <<MsgSrvDoc(move_base_sequence)>>

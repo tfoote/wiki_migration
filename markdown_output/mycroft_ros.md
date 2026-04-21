@@ -8,10 +8,14 @@ to be configured as a
 
 ## Installation
 
-Clone the repo into src ```
+Clone the repo into src 
+
+```
 cd ~/catkin_ws/src
 git clone https://github.com/injones/mycroft_ros.git
 ```
+
+
 
 ### Install dependencies
 
@@ -29,9 +33,13 @@ Follow the steps below to run the package.
 
 ### Launching nodes
 
-To launch all Mycroft nodes run the following ```
+To launch all Mycroft nodes run the following 
+
+```
 roslaunch mycroft_ros mycroft.launch
 ```
+
+
 
 ### Creating Mycroft Skills from ROS nodes
 
@@ -48,6 +56,8 @@ used to register nodes as Mycroft Skills within the Skill Manager of
 Mycroft.
 
 #### Example skill
+
+
 
 ```python
 class ExampleSkill(RosMycroftSkill):
@@ -77,6 +87,8 @@ if __name__ == "__main__":
     rospy.on_shutdown(example.shutdown)
 ```
 
+
+
 ## catkin_virtualenv
 
 This package makes use of the **`catkin_virtualenv`** ROS package to run
@@ -84,6 +96,8 @@ the *mycroft_message_bus*, *mycroft_tts*, *mycroft_stt* and
 *mycroft_skills* nodes in a seperate Python virtual environment.
 
 ## ROS Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -142,3 +156,5 @@ node.3 {
   }
 }
 ```
+
+

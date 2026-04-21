@@ -5,9 +5,13 @@ create more structured launch files in the derived packages (cf.
 ## Launch files
 
 The five launch file templates come in help when loading the description
-package of a device. ```wiki
+package of a device. 
+
+```wiki
 Please, use these "macros" whenever is possible to improve '''robustness''', '''readability''' and '''maintenance''' of derived packages.
 ```
+
+
 
 ### component_bringup
 
@@ -26,7 +30,9 @@ launch file is the includes of the
 [load_description_template](qb_device_description#load_description_template)
 rather than the [description_bringup](#description_bringup), the
 parameters are exactly the same as the other a part from `use_rviz`
-which is not used. ```clearsilver
+which is not used. 
+
+```clearsilver
 name = control_bringup
 desc = This launch file starts the device control node with the given parameters.
 param {
@@ -59,7 +65,11 @@ param {
   7.type = string
   7.desc = The base package name prefix (without "_control") where the waypoint yaml file is stored (e.g. `qb_device` if it is `qb_device_control`).
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = controllers_bringup
 desc = This launch file just calls the [[qb_device_control#spawner_template|spawner_template]] to bringup the device controllers including the [[rqt_joint_trajectory_controller]] GUI if requested.
 param {
@@ -78,6 +88,10 @@ param {
   3.default = false
 }
 ```
+
+
+
+
 ```clearsilver
 name = description_bringup
 desc = This launch file packs together the [[qb_device_description#load_description_template|load_description_template]] and the [[qb_device_description#state_publisher_template|state_publisher_template]] to bringup all the device description including [[joint_state_publisher]] and [[robot_state_publisher]]. If specified also starts [[rviz]].
@@ -105,6 +119,8 @@ param {
   5.default = true
 }
 ```
+
+
 
 ### full_bringup
 

@@ -35,6 +35,8 @@ Please see [Verbosity Level Best Practices](Verbosity Levels).
 The `/rosout` node is part of [roscore](roscore) and has preferential
 startup order.
 
+
+
 ```clearsilver
 name = rosout 
 desc = rosout subscribes to the standard `/rosout` topic, records these messages in a textual log file, and rebroadcasts the messages on `/rosout_agg`. 
@@ -49,6 +51,8 @@ pub {
   0.desc = Aggregated feed of messages published to `/rosout`.
 }
 ```
+
+
 
 ### /rosout
 

@@ -41,16 +41,22 @@ involves several steps outlined below.
 Make sure you add the following lines to the manifest.xml file in
 *example_kinematics*.
 
+
+
 ```
 <depend package="pluginlib"/>
  <depend package="kinematics_base"/>
 ```
+
+
 
 #### Setup the plugins file
 
 In a file named *example_plugins.xml* in your example_kinematics
 package, add the following lines and modify them to match the names you
 have chosen for your components.
+
+
 
 ```
 <library path="lib/libarm_kinematics_constraint_aware_lib">
@@ -62,12 +68,18 @@ have chosen for your components.
 </library>
 ```
 
+
+
 1\. Replace *arm_kinematics_constraint_aware_lib* with the name of the
 library object that contains your implementation of the kinematics. E.g.
 if you named your library *example_kinematics*, the first line above
-should read: ```
+should read: 
+
+```
 <library path="lib/libexample_kinematics">
-``` 1. Rename the class name to be
+```
+
+ 1. Rename the class name to be
 *namespace/class_name*. E.g. if your code is in the namespace
 *example_kinematics* and you named your class !ExampleKinematics,
 replace the class name with
@@ -80,14 +92,22 @@ replace the class name with
 In the manifest.xml file for example_kinematics, make sure the following
 lines are present in the *export* tag:
 
+
+
 ```
 <kinematics_base plugin="${prefix}/example_plugins.xml" />
 ```
+
+
 
 #### Register the plugin in your code
 
 In your .cpp file, make sure you have the following line at the top:
 
+
+
 ```
 PLUGINLIB_DECLARE_CLASS(example_kinematics,ExampleKinematicsPlugin, example_kinematics::ExampleKinematicsPlugin, kinematics::KinematicsBase)
 ```
+
+

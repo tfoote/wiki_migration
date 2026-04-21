@@ -28,86 +28,154 @@ kinetic branch. Assuming you already have installed ROS and have created
 a catkin environment.
 
 -   Check out OMIP and omip_msgs from the repository in your catkin
-    environment: ```
+    environment: 
+
+```
 git clone https://github.com/tu-rbo/omip.git
 git clone https://github.com/tu-rbo/omip_msgs.git
 ```
+
+
 -   Install dependencies:
 -   Boost, Eigen library.
 -   Terminator: allows to split a window into several terminals. When
     you install it, it will be probably set as default when you open new
     terminals. If you want to go back to the default gnome terminal,
-    execute after installing terminator: ```
+    execute after installing terminator: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
 ```
+
+
 -   Create a backup of the config file for terminator and then copy
     omip_launch/cfg/terminator/config to /.config/terminator/ . This
     file contains predefine configurations to launch OMIP within a
-    single terminator window. ```
+    single terminator window. 
+
+```
 cp ~/.config/terminator/config ~/.config/terminator/config.bak
 cp omip/omip_launch/cfg/terminator/config ~/.config/terminator/
 ```
+
+
 -   ROS packages OpenCV, PCL, openni, openni2, cmake-modules, BFL:
-    ```
+    
+
+```
 sudo apt-get install ros-indigo-pcl-ros ros-indigo-openni-launch ros-indigo-openni-camera
 ros-indigo-openni2-launch ros-indigo-openni2-camera ros-indigo-cmake-modules
 ```
--   Bayesian Filter Library by TU Leuven: ```
+
+
+-   Bayesian Filter Library by TU Leuven: 
+
+```
 sudo apt-get install ros-indigo-bfl
-``` then
+```
+
+ then
     copy omip/thirdparty/bflConfig.cmake into
-    your_ros_install_dir/share/bfl with: ```
+    your_ros_install_dir/share/bfl with: 
+
+```
 sudo cp omip/omip/third_party/bflConfig.cmake /opt/ros/indigo/share/bfl/
 ```
+
+
 -   \[Optional to run the occlusion detector\] RVIZ plugin to compute
     the area of the image occluded by the robot (you will need a URDF
-    model of your robot!): ```
+    model of your robot!): 
+
+```
 git clone https://github.com/roberto-martinmartin/rviz_plugin_camerarenderpublisher.git
 ```
+
+
 -   \[Optional to visualize the estimated rigid body poses with
     covariance in RVIZ\] RVIZ plugin by LAAS-CNRS Toulousse:
-    ```
+    
+
+```
 git clone https://github.com/laas/rviz_plugin_covariance.git
-``` then switch to Indigo branch.
+```
+
+ then switch to Indigo branch.
 -   \[Optional to run the latest version of the shape-based tracker\]
-    Libpointmatcher by ETH Zurich: ```
+    Libpointmatcher by ETH Zurich: 
+
+```
 sudo apt-get install ros-indigo-libpointmatcher
-``` then create
+```
+
+ then create
     a backup of the libpointmatcherConfig.cmake in
     your_ros_install_dir/share/libpointmacher and copy the one in
-    omip/omip/third_party: ```
+    omip/omip/third_party: 
+
+```
 sudo cp your_ros_install_dir/share/libpointmacher/libpointmatcherConfig.cmake your_ros_install_dir/share/libpointmacher/libpointmatcherConfig.cmake.bak
-``` and
-    ```
+```
+
+ and
+    
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```0 You can skip this step if you only want to
+```
+
+0 You can skip this step if you only want to
     use the feature-based tracker by adding a CATKIN_IGNORE file into
-    the shape_tracker package: ```
+    the shape_tracker package: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```1
--   Build the packages: ```
+```
+
+1
+-   Build the packages: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```2
+```
+
+2
 -   Download one of the the demo rosbags from
     [here](https://owncloud.tu-berlin.de/index.php/s/uDSTdI3FDQagfL1)
     (several GB!) or start an openni node. The rosbags are compressed,
-    you will need to decompress them with: ```
+    you will need to decompress them with: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```3
+```
+
+3
     puma_demo is the smallest bag.
 -   Start a roscore
--   Run OMIP. For example: ```
+-   Run OMIP. For example: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```4 The options
+```
+
+4 The options
     \--omip=1 launches only the feature-based tracker and no shape
     reconstruction, and \--rgbd=0 avoids launching an openni node. To
-    see other options run: ```
+    see other options run: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```5
+```
+
+5
 -   Play the demo bag or use the RGB-D stream provided by the openni
-    node: ```
+    node: 
+
+```
 gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-terminal'
-```6
+```
+
+6
 
 You can launch OMIP with 3 different system architectures:
 

@@ -10,9 +10,17 @@ This package doesn't have a own ROS API, it just configures the
 
 ## Usage/Examples
 
-For starting the hokuyo node use ```
+For starting the hokuyo node use 
+
+```
 roslaunch cob_bringup hokuyo.launch
-``` For including
-the torso in your overall launch file use ```
+```
+
+ For including
+the torso in your overall launch file use 
+
+```
 <include file="$(find cob_bringup)/components/hokuyo.launch" />
 ```
+
+

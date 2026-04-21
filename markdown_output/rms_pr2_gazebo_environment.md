@@ -11,7 +11,9 @@ either install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/rms_pr2_gazebo_environment.git
 roscd rms_pr2_gazebo_environment
@@ -19,12 +21,18 @@ rosdep install rms_pr2_gazebo_environment
 rosmake rms_pr2_gazebo_environment
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-rms-pr2-gazebo-environment
 ```
+
+
 
 ### Startup
 
@@ -34,18 +42,26 @@ spawn the robot into an existing Gazebo instance. To launch the entire
 server environment (i.e., with all server nodes such as
 [rosbridge_server](rosbridge_server)), simply run the following:
 
+
+
 ```
 roslaunch rms_pr2_gazebo_environment rms_pr2_gazebo_environment.launch
 ```
+
+
 
 If instead you wish to start Gazebo and spawn the robot without starting
 the actual server nodes, run the following set of commands in two shell
 sessions:
 
+
+
 ```shell
 roslaunch rail_worlds fuller_318_full_2_tables_world.launch
 roslaunch rms_pr2_gazebo_environment pr2_gazebo_start.launch
 ```
+
+
 
 ## Tutorials
 

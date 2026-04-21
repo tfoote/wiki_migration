@@ -48,6 +48,8 @@ This is the node configuration regardless of which tabpage handlers are
 loaded. For parameters for individual tabpage handlers, check the
 respective documentation.
 
+
+
 ```clearsilver
 name = touchosc_bridge
 desc = TouchOSC to ROS bridge node
@@ -120,3 +122,5 @@ param {
 11.default = None
 }
 ```
+
+

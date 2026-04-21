@@ -68,14 +68,20 @@ although minor patch for vertical resolution issue is included)
 
 -   Launch files for all calibrations scenarios used in the related
     published manuscripts are included. To launch a sample scenario,
-    run: ```
+    run: 
+
+```
 roslaunch velo2cam_gazebo mono_hdl64_p1_real.launch
 ```
+
+
 
 # Citation
 
 If you use this work in your research, please consider citing the
 following paper:
+
+
 
 ```
 @article{beltran2022,  
@@ -86,6 +92,8 @@ following paper:
   doi={10.1109/TITS.2022.3155228}
 }
 ```
+
+
 
 A previous version of this tool is available
 [here](https://github.com/beltransen/velo2cam_calibration/tree/v1.0) and

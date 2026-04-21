@@ -5,6 +5,8 @@ gripper. See packages [katana_description](katana_description) and
 [katana_arm_gazebo](katana_arm_gazebo) for usage examples and for
 information on the Gazebo parameters (not documented here).
 
+
+
 ```clearsilver
 node.0 {
   name = gazebo_ros_katana_gripper
@@ -36,3 +38,5 @@ node.0 {
   }
 }
 ```
+
+

@@ -145,6 +145,8 @@ the [asr_fake_object_recognition](asr_fake_object_recognition) package.
 
 #### Schema
 
+
+
 ```
 <Objects>
 
@@ -155,6 +157,8 @@ the [asr_fake_object_recognition](asr_fake_object_recognition) package.
 
 </Objects>
 ```
+
+
 
 ### Notes
 
@@ -217,9 +221,13 @@ General usage:
 
 **2.** Create a new Recorder instance:
 
+
+
 ```
 Recorder(const std::string& dbfilename)
 ```
+
+
 
 -   *dbfilename:*The path to the database, the recordings should be
     written to.
@@ -227,9 +235,13 @@ Recorder(const std::string& dbfilename)
 **3.** Insert objects of a recorded object configuration into the
 database:
 
+
+
 ```
 void insert(const ObjectSetPtr& set, const std::string& patternName)
 ```
+
+
 
 -   *set:* The objects which should be inserted.
 -   *patternName:* The name of the pattern the objects belong to.
@@ -242,9 +254,13 @@ General usage:
 
 **2.** Create a new Trainer instance:
 
+
+
 ```
 Trainer(std::string dbfilename, bool dropOldModelTables)
 ```
+
+
 
 -   *dbfilename:* Path to the database containing recorded data for
     which an ism should be trained.
@@ -253,14 +269,22 @@ Trainer(std::string dbfilename, bool dropOldModelTables)
 
 **3.1.**Train ism for all patterns inside the database:
 
+
+
 ```
 void trainPattern()
-``` **3.2. **Train ism only for the given pattern
+```
+
+ **3.2. **Train ism only for the given pattern
 (patternName):
+
+
 
 ```
 void trainPattern(const std::string& patternName)
-``` **! **Before using the trainPattern method, the
+```
+
+ **! **Before using the trainPattern method, the
 training parameters should be set. An example how to set those
 parameters can be found at asr_ism/src/trainer.cpp
 
@@ -273,17 +297,25 @@ General usage:
 
 **2.** Create a new !CombinatorialTrainer instance:
 
+
+
 ```
 CombinatorialTrainer(CombinatorialTrainerParameters params)
 ```
+
+
 
 -   *params:* Parameters to configure training process.
 
 **3. **Train ism for all patterns inside the database:
 
+
+
 ```
 std::map<std::string, std::pair<double, TreePtr> > learn()
 ```
+
+
 
 #### Recognizer
 
@@ -293,9 +325,13 @@ General usage:
 
 **2.** Create a new *Recognizer* instance:
 
+
+
 ```
 Recognizer(const std::string& dbfilename, double bin_size, double maxProjectionAngleDeviation, int raterType = 0)
 ```
+
+
 
 -   *dbfilename:* Path to the database containing trained ism.
 -   *bin_size:* Side length of a voxel (bins) of a voxel grid in which
@@ -308,9 +344,13 @@ Recognizer(const std::string& dbfilename, double bin_size, double maxProjectionA
 
 **3. **Recognize most likely pattern for a given object configuration:
 
+
+
 ```
 const std::vector<RecognitionResultPtr> recognizePattern(const ObjectSetPtr& _objectSet_, const double filterThreshold = 0.0, const int resultsPerPattern = -1, const std::string targetPatternName == "")
 ```
+
+
 
 -   *objectSet: *The object configuration in which a pattern should be
     recognized.

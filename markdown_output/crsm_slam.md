@@ -31,11 +31,17 @@ RoboCup-RoboRescue.
 CRSM SLAM is provided through the official ROS repositories. To install
 execute the following command :
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-crsm-slam
 ```
 
+
+
 You can also manually set it up:
+
+
 
 ```
 cd <your_catkin_ws>/src
@@ -43,6 +49,8 @@ git clone https://github.com/etsardou/crsm-slam-ros-pkg.git
 cd ../
 catkin_make
 ```
+
+
 
 # Screenshots/Multimedia
 

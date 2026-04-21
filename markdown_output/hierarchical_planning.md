@@ -1,6 +1,10 @@
+
+
 ```wiki
 '''WARNING:''' This documentation refers to an outdated version of rosjava and is probably incorrect. Use at your own risk.
 ```
+
+
 
 ## Task Planning Problems
 
@@ -38,9 +42,13 @@ Then, to bring up the ROS nodes required for planning/execution:
 Finally, run *bin/clj* to bring up a REPL with all of the necessary code
 on the classpath, and type
 
+
+
 ```clojure
 (use '[ros.planning actions world sahtn])
 ```
+
+
 
 to load the relevant code. Follow the instructions in [rosclj](rosclj)
 to set up a NodeHandle, or (load "ros/teleop") from [clj_pr2](clj_pr2)
@@ -57,6 +65,8 @@ use a preset demo environment for Willow Garage green room, you can use
 Then, to construct a (hopefully) good plan that solves this problem, use
 "sahtn".
 
+
+
 ```clojure
 (def *result* 
   (sahtn nh [[(make-setup-hla [true]) (make-act-hla true)]] 
@@ -70,7 +80,9 @@ Then, to construct a (hopefully) good plan that solves this problem, use
                       (if (or (= ax bx) (= ay by)) 
                           1 
                        (min 5 (int (* 5 (+ (- bx ax) (- by ay))))))))})
-``` This tries to find a good solution to the demo
+```
+
+ This tries to find a good solution to the demo
 environment, with the single initial plan \[get robot to known state,
 then solve the problem by moving things\], with a fairly low sampling
 resolution for most actions, and adaptive sampling for object drop
@@ -84,10 +96,14 @@ If a solution is found, it can be executed using execute-plan (which
 will just fail if any actions fail), or execute-plan-robustly (which
 will keep retrying failed actions until they succeed).
 
+
+
 ```clojure
 (execute-plan nh (first *result))
 (execute-plan-robustly nh (first *result))
 ```
+
+
 
 ## Video
 

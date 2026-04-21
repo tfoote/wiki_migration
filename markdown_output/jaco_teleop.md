@@ -7,6 +7,8 @@ it has not yet been tested.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = jaco_joy_teleop
@@ -84,6 +86,8 @@ node.1 {
 }
 ```
 
+
+
 ## Controls
 
 Controls for the joystick and keyboard teleop nodes are listed below.
@@ -152,13 +156,17 @@ Finger Control Mode:
 ## Installation
 
 To install the `wpi_jaco` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Startup
 
@@ -172,16 +180,32 @@ parameter for the controller type, which can currently be set to either
 and digital triggers, respectively. Example launch syntax is given
 below.
 
-With default parameters: . ```
+With default parameters: . 
+
+```
 roslaunch jaco_teleop jaco_joy_teleop.launch
-``` .
+```
+
+ .
+
+
 ```
 roslaunch jaco_teleop jaco_key_teleop.launch
 ```
 
-Example with parameters: . ```
+
+
+Example with parameters: . 
+
+```
 roslaunch jaco_teleop jaco_joy_teleop.launch linear_throttle_factor:=0.5 angular_throttle_factor:=0.5 finger_throttle_factor:=0.75 controller_type:="analog"
-``` .
+```
+
+ .
+
+
 ```
 roslaunch jaco_teleop jaco_key_teleop.launch linear_throttle_factor:=0.5 angular_throttle_factor:=0.5 finger_throttle_factor:=0.75
 ```
+
+

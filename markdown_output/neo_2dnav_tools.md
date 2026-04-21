@@ -5,7 +5,9 @@ this package contains the following tools:
 ### multiple goal navigation
 
 A tool for setting multiple waypoints which the robot should visit (in
-an infinite loop). ```clearsilver
+an infinite loop). 
+
+```clearsilver
 sub {
   0.name = /clear_way_points
   0.type = std_msgs/Empty
@@ -42,3 +44,5 @@ req_tf {
   0.to = /base_link
 }
 ```
+
+

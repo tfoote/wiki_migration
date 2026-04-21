@@ -9,6 +9,8 @@ This device supports all the drivers implemented in the
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = rfid_node
@@ -35,21 +37,31 @@ node.0 {
 }
 ```
 
+
+
 ## Launch File Examples
 
 -   For the RFID reader of the head: In a terminal window, start an rfid
     node process running:
 
+
+
 ```
 $ roslaunch maggie_rfid rfid_head.launch robot:=maggie
 ```
 
+
+
 -   For the RFID reader of the base: In a terminal window, start an rfid
     node process running:
+
+
 
 ```
 $ roslaunch maggie_rfid rfid_base.launch robot:=maggie
 ```
+
+
 
 ## Examples
 
@@ -57,6 +69,10 @@ An example to read the content of a rfid card could be:
 
 1\. Launch the node. 2. Show the value of the topic:
 
+
+
 ```
 $ rostopic echo /maggie/rfid_write
 ```
+
+

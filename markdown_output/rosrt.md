@@ -13,9 +13,13 @@ important.
 
 Before using any of rosrt you must call:
 
+
+
 ```cplusplus
 rosrt::init();
 ```
+
+
 
 There is an optional
 [InitOptions](http://www.ros.org/doc/api/rosrt/html/structros_1_1rt_1_1InitOptions.html)
@@ -40,6 +44,8 @@ initialize each of those messages with a template message when you
 initialize the `rosrt::Publisher`. Anything that needs to be
 preallocated should be preallocated in this template.
 
+
+
 ```cplusplus
 rosrt::Publisher<std_msgs::UInt32> pub(nh.advertise<std_msgs::String>("topic", 1), 10, std_msgs::UInt32());
 std_msgs::UInt32Ptr msg = pub.allocate();
@@ -49,6 +55,8 @@ if (msg)
   pub.publish(msg);
 }
 ```
+
+
 
 Deallocation of the `Publisher`'s pool of memory is done by a
 separate garbage collection thread, and will not happen until all
@@ -64,6 +72,8 @@ Using the `rosrt::Subscriber` is a bit different from the standard
 `ros::Subscriber`, mainly because it's polling based instead of
 callback based:
 
+
+
 ```cplusplus
 rosrt::Subscriber<std_msgs::UInt32> sub(3, nh, "test");
 std_msgs::UInt32ConstPtr msg = sub.poll();
@@ -73,12 +83,16 @@ if (msg)
 }
 ```
 
+
+
 As with the `rosrt::Publisher`, you must specify a message pool size.
 If you are not going to be storing off received messages the optimal
 size for this is 3 (1 for the ROS-side subscription queue, 1 waiting in
 the Subscriber, 1 in use by realtime).
 
 `poll()` will never return the same message twice. This means:
+
+
 ```
 <message received>
 sub.poll()  <---  returns a message
@@ -87,6 +101,8 @@ sub.poll()  <---  returns NULL
 sub.poll()  <---  returns a message
 ...
 ```
+
+
 
 Deallocation of the `Subscriber`'s pool of memory is done by a
 separate garbage collection thread, and will not happen until all

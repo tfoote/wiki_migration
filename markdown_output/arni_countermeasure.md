@@ -1,8 +1,12 @@
+
+
 ```wiki
 '''This documentation is under construction.'''
 
 It is currently in an alpha state and will be completed soon.
 ```
+
+
 
 ## Overview
 
@@ -38,9 +42,13 @@ Its possible to negate a statement with **not**.
 
 A entry consists of:
 
+
+
 ```
 seuid: { statistic_type: expected_value, another_s_type: another_value }
-``` Where expected_value can be **okay**, **high**,
+```
+
+ Where expected_value can be **okay**, **high**,
 **low**, **unknown**
 
 #### Constraint parameter
@@ -76,7 +84,9 @@ autonomy_level <= config/reaction_autonomy_level get executed.
 ### Example
 
 An example yaml file containing constraints to be loaded to the
-parameter server: ```
+parameter server: 
+
+```
 arni:
   countermeasure:
     constraints:
@@ -119,6 +129,8 @@ arni:
       reaction_autonomy_level: 50
       storage_timeout: 10
 ```
+
+
 
 ### Reloading Constraints
 

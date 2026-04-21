@@ -5,7 +5,9 @@ visualisation of output from an ultrasonic sensor. It provides an output
 in the form of feature interactive markers messages and a laser scan.
 The feature marker messages provide information about each feature
 detected by the ultrasonic sensor whereas the laser scan messages
-provide 360 degrees visualisation. ```clearsilver
+provide 360 degrees visualisation. 
+
+```clearsilver
  name = ultrasonic_node
  desc = The `ultrasonic_node` node publishes <<MsgLink(sensor_msgs/LaserScan)>> and <<MsgLink(visualization_msgs/InteractiveMarker)>> based on the output from an ultrasonic sensor. 
 
@@ -54,8 +56,14 @@ param{
 }
 ```
 
+
+
 ## Usage/Examples
+
+
 
 ```
 roslaunch cob_ultrasonic ultrasonic_node.launch
 ```
+
+

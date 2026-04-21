@@ -22,7 +22,9 @@ than the old vendor based multi-layered architecture.
 The ROS node is a wrapper around the `mtdevice::MTDevice` class to
 publish the data that the IMU streams. It can publish the following
 topics, depending on the configuration of the device (topics are only
-advertised when there is data to publish): ```clearsilver
+advertised when there is data to publish): 
+
+```clearsilver
 pub {
   0.name = imu/data
   0.type = sensor_msgs/Imu
@@ -60,6 +62,8 @@ pub {
 }
 ```
 
+
+
 It also publishes [diagnostics](http://www.ros.org/wiki/diagnostics)
 information.
 
@@ -72,6 +76,8 @@ The covariance information in the
 message are filled with default values from the MTx/MTi/MTi-G
 documentation but may not be exact; it also does not correspond to the
 covariance of the internal XKF.
+
+
 
 ```clearsilver
 param {
@@ -98,6 +104,8 @@ param {
 }
 ```
 
+
+
 ## mtdevice.py
 
 `mtdevice.py` is a Python module that is both a library to communicate
@@ -112,6 +120,8 @@ might require the emergency procedure to recover communication with the
 device.
 
 ### Usage
+
+
 
 ```
 Usage:
@@ -276,6 +286,8 @@ Deprecated options:
         If the value is 0xffff, no data is send unless a ReqData request
         is made.
 ```
+
+
 
 ## Permissions
 

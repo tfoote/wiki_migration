@@ -47,6 +47,8 @@ one action server. In a launch file, the names below should be remapped
 to the appropriate service or action server, such as the ones
 recommended.
 
+
+
 ```clearsilver
 pub {
   no_header= True
@@ -62,6 +64,8 @@ pub {
 }
 ```
 
+
+
 ### Action API
 
 Two action servers are provided. The first action can be used to look at
@@ -74,6 +78,8 @@ to work, for details on the structure of the goal messages please see
 the action definitions in the move_arm_head_monitor package.
 
 #### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -88,7 +94,11 @@ sub {
 }
 ```
 
+
+
 ### Published Topics
+
+
 
 ```clearsilver
 sub{
@@ -102,6 +112,8 @@ sub{
 }
 ```
 
+
+
 ## Example Usage
 
 To use this node, it must be launched with the correct remappings, and
@@ -114,6 +126,8 @@ contains this code.
 
 ### Launch Files
 
+
+
 ```
 <launch>
   <node pkg="move_arm_head_monitor" type="move_arm_head_monitor" respawn="true" name="head_monitor_right_arm" output="screen">
@@ -125,10 +139,14 @@ contains this code.
 </launch>
 ```
 
+
+
 Below is an example of how the above launch file can be used to launch
 the `move_arm` node properly. Note the remaps for
 **head_monitor_action** and **head_look_action** and the various params
 with with the prefix **head_monitor_**
+
+
 
 ```
 <launch>
@@ -169,10 +187,14 @@ with with the prefix **head_monitor_**
 </launch>
 ```
 
+
+
 ### move_arm params
 
 The following params can be given to `move_arm` to control the
 monitoring process:
+
+
 
 ```clearsilver
 param {
@@ -202,3 +224,5 @@ param {
   6.desc= The number of seconds to look into the future for determining where to point the head.
 }
 ```
+
+

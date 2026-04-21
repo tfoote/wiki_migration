@@ -1,7 +1,11 @@
+
+
 ```wiki
 Please be aware that the description below is not valid to all ROS distributions! Presumably its up to date for the current distribution, but in older distributions parameters might have different names, different defaults or might even not exist. 
 [[https://github.com/ros-planning/navigation/issues/90|case example]]
 ```
+
+
 
 ## Overview
 
@@ -219,7 +223,9 @@ specified on initialization. It adheres to the
 [nav_core](nav_core) package.
 
 Example creation of a `base_local_planner::TrajectoryPlannerROS`
-object: ```cplusplus
+object: 
+
+```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <base_local_planner/trajectory_planner_ros.h>
@@ -233,10 +239,14 @@ base_local_planner::TrajectoryPlannerROS tp;
 tp.initialize("my_trajectory_planner", &tf, &costmap);
 ```
 
+
+
 ### API Stability
 
 -   The C++ API is stable
 -   The ROS API is stable
+
+
 
 ```clearsilver
 pub {
@@ -252,6 +262,10 @@ pub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 sub {
   0.name = odom
@@ -259,6 +273,8 @@ sub {
   0.desc = Odometry information that gives the local planner the current speed of the robot. The velocity information in this message is assumed to be in the same coordinate frame as the `robot_base_frame` of the costmap contained within the `TrajectoryPlannerROS object`. See the [[costmap_2d]] package for information about the `robot_base_frame` parameter.
 }
 ```
+
+
 
 ### Parameters
 
@@ -270,6 +286,8 @@ tolerance, forward simulation, trajectory scoring, oscillation
 prevention, and global plan.
 
 #### Robot Configuration Parameters
+
+
 
 ```clearsilver
 param{
@@ -321,8 +339,12 @@ param{
 }
 ```
 
+
+
 The following parameters are only used if `holonomic_robot` is set to
 true:
+
+
 
 ```clearsilver
 param{
@@ -334,7 +356,11 @@ param{
 }
 ```
 
+
+
 #### Goal Tolerance Parameters
+
+
 
 ```clearsilver
 param{
@@ -354,7 +380,11 @@ param{
 }
 ```
 
+
+
 #### Forward Simulation Parameters
+
+
 
 ```clearsilver
 param{
@@ -386,10 +416,14 @@ param{
 }
 ```
 
+
+
 #### Trajectory Scoring Parameters
 
 The cost function used to score each trajectory is in the following
 form:
+
+
 
 ```
 cost = 
@@ -397,6 +431,10 @@ cost =
   + gdist_scale * (distance to local goal from the endpoint of the trajectory in map cells or meters depending on the meter_scoring parameter) 
   + occdist_scale * (maximum obstacle cost along the trajectory in obstacle cost (0-254))
 ```
+
+
+
+
 
 ```clearsilver
 param{
@@ -446,7 +484,11 @@ param{
 }
 ```
 
+
+
 #### Oscillation Prevention Parameters
+
+
 
 ```cplusplus
 #include <tf/transform_listener.h>
@@ -460,10 +502,14 @@ costmap_2d::Costmap2DROS costmap("my_costmap", tf);
 
 base_local_planner::TrajectoryPlannerROS tp;
 tp.initialize("my_trajectory_planner", &tf, &costmap);
-```0
+```
+
+0
 
 #### Global Plan Parameters
 
+
+
 ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -476,7 +522,9 @@ costmap_2d::Costmap2DROS costmap("my_costmap", tf);
 
 base_local_planner::TrajectoryPlannerROS tp;
 tp.initialize("my_trajectory_planner", &tf, &costmap);
-```1
+```
+
+1
 
 ## TrajectoryPlanner
 

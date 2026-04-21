@@ -65,6 +65,8 @@ within the "close_threshold" of the depth, the point will be removed.
 
 ## ROS API
 
+
+
 ```clearsilver
 name = rgbd_self_filter
 desc = Self-filtering for robot point clouds
@@ -117,3 +119,5 @@ param {
   4.default = {}
 }
 ```
+
+

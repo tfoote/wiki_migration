@@ -12,12 +12,18 @@ interface for using this code.
 
 These launch files, properly modified, will publish a pose to the
 /pixel3d topic with every mouse click on the image.
+
+
 ```
 roslaunch pixel_2_3d pixel_2_3d_run.launch # modify the remaps in this file
 roslaunch hrl_clickable_display kinect_clickable_UI.launch
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -52,3 +58,5 @@ param {
  }
 }
 ```
+
+

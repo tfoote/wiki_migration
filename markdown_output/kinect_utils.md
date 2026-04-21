@@ -1,3 +1,5 @@
+
+
 ```clearsilver
 name = corridor_extraction
 desc = This node generates flight commands based on the sensor data provided by the Kinect sensor to navigate a UAV down a corridor.
@@ -27,3 +29,5 @@ pub {
   4.desc = Points which are not contained in one of the wall planes and thus may be part of possible obstacles.
 }
 ```
+
+

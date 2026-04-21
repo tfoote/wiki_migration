@@ -6,15 +6,27 @@ platform.
 
 On `rsv_balance_gazebo` package we have available 3 worlds: 1.
 `empty.world` - Empty world with only the robot.
+
+
 ```
 roslaunch rsv_balance_gazebo simulation_empty.launch
-``` 2. `ramp.world` - Robot on inclined, flat
-terrain. ```
+```
+
+ 2. `ramp.world` - Robot on inclined, flat
+terrain. 
+
+```
 roslaunch rsv_balance_gazebo simulation_ramp.launch
-``` 3. `terrain.world` - Robot on bumpy
-terrain. ```
+```
+
+ 3. `terrain.world` - Robot on bumpy
+terrain. 
+
+```
 roslaunch rsv_balance_gazebo simulation_terrain.launch
 ```
+
+
 
 As you can understand from the spawned robot, the demo model includes a
 dummy, spherical, 5kg load at about 1m height from the center of the
@@ -22,14 +34,20 @@ platform.
 
 ![\|width=100%](attachment:simulation_tutorial1.png)
 
-It also provides RVIZ configured launchfile: ```
+It also provides RVIZ configured launchfile: 
+
+```
 roslaunch rsv_balance_gazebo view.launch
 ```
+
+
 
 ## Gazebo plugin node
 
 The Gazebo model plugin was developed to expose the same ROS interface
 of topics and services as the real platform.
+
+
 
 ```clearsilver
 name=libgazebo_rsv_balance.so
@@ -73,9 +91,13 @@ srv_called {
 }
 ```
 
+
+
 ### Plugin parameters
 
 Example configuration to include in your URDF model.
+
+
 
 ```xml
 <plugin name="rsv_balance_controller" filename="libgazebo_rsv_balance.so">
@@ -101,6 +123,10 @@ Example configuration to include in your URDF model.
   <updateRate>100</updateRate>
 </plugin>
 ```
+
+
+
+
 
 ```clearsilver
 param {
@@ -154,3 +180,5 @@ param {
   11.default = 50
 }
 ```
+
+

@@ -4,9 +4,13 @@ To work with simulated Warthog on your own machine, make sure if have
 [ROS Melodic](melodic/Installation) set up, and install the metapackages
 for desktop and simulation:
 
+
+
 ```
 sudo apt-get install ros-melodic-warthog-simulator ros-melodic-warthog-desktop
 ```
+
+
 
 You should now be good to go!
 

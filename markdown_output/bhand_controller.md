@@ -10,6 +10,8 @@ temperature) and joint positions.
 
 ### launch file
 
+
+
 ```
 <?xml version="1.0"?>
 <launch>
@@ -24,12 +26,16 @@ temperature) and joint positions.
 </launch>
 ```
 
+
+
 -   topic_state: Name of the topic to publish the state.
 -   port: can device connected to the hand.
 -   tactile_sensors: Flag to set if the tactile sensors are available
     and want to be published.
 
 ### config file
+
+
 
 ```
 # Joint ids (don't modify) 
@@ -41,6 +47,8 @@ control_mode: POSITION
 # Desired freq
 desired_freq: 250.0
 ```
+
+
 
 -   joint_ids: ID associated with every joint
 -   joint_names: Joint names associated with every joint id
@@ -61,6 +69,8 @@ desired_freq: 250.0
     [ bhand_controller/State.msg](http://docs.ros.org/hydro/api/bhand_controller/html/msg/State.html)
 -   Example:
 
+
+
 ```
 state: 300
 control_mode: VELOCITY
@@ -74,6 +84,8 @@ temp_f3: [35.0, 54.0]
 temp_spread: [30.0, 62.0]
 ```
 
+
+
 #### tact_array
 
 -   Values from BHand tactile array
@@ -81,6 +93,8 @@ temp_spread: [30.0, 62.0]
 -   Type:
     [ bhand_controller/TactileArray.msg](http://docs.ros.org/hydro/api/bhand_controller/html/msg/TactileArray.html)
 -   Example:
+
+
 
 ```
 header: 
@@ -95,6 +109,8 @@ finger3: [0.0, 0.0, 0.0, 0.0, 0.019999999552965164, 0.029999999329447746, 0.0, 0
 palm: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 ```
 
+
+
 #### joint_states
 
 -   Joint states of the hand.
@@ -102,6 +118,8 @@ palm: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
     [ sensor_msgs/JointState.msg](http://docs.ros.org/indigo/api/sensor_msgs/html/msg/JointState.html)
 -   Fingertip torque sensors are published in *effort* field (N/m)
 -   Example:
+
+
 
 ```
 header: 
@@ -115,6 +133,8 @@ position: [0.0, 0.0, 0.0, -0.0, 0.0, 0.0, 0.0, 0.0]
 velocity: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 effort: [0.03743090386539949, 0.06140198104320094, 0.03743090386539949, 0.06676343437499943, 0.06676343437499943, 0.06140198104320094, 0.0, 0.0]
 ```
+
+
 
 ![BHand Sensors\|width=650](attachment:bhand_sensors.png)
 
@@ -139,6 +159,8 @@ effort: [0.03743090386539949, 0.06140198104320094, 0.03743090386539949, 0.066763
     [ sensor_msgs/JointState.msg](http://docs.ros.org/indigo/api/sensor_msgs/html/msg/JointState.html)
 -   Example:
 
+
+
 ```
 $ rostopic pub /bhand_node/command sensor_msgs/JointState "header:
   seq: 0
@@ -149,6 +171,8 @@ position: [0 , 0, 0, 0]
 velocity: [0]
 effort: [0]"
 ```
+
+
 
 ## Services
 
@@ -162,9 +186,13 @@ effort: [0]"
     [ bhand_controller/Actions.srv](http://docs.ros.org/hydro/api/bhand_controller/html/srv/Actions.html)
 -   Example:
 
+
+
 ```
 $ rosservice call /bhand_node/actions "action: 1"  (Inits the hand)
 ```
+
+
 
 #### set_control_mode
 
@@ -173,6 +201,10 @@ $ rosservice call /bhand_node/actions "action: 1"  (Inits the hand)
     [ bhand_controller/SetControlMode.srv](http://docs.ros.org/hydro/api/bhand_controller/html/srv/SetControlMode.html)
 -   Example:
 
+
+
 ```
 $ rosservice call /bhand_node/set_control_mode "mode: 'VELOCITY'"
 ```
+
+

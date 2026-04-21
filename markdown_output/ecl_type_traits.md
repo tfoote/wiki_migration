@@ -2,6 +2,8 @@
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/type_traits.hpp>
 
@@ -13,6 +15,8 @@ using ecl::is_signed;
 using ecl::is_unsigned;
 using ecl::is_byte;
 ```
+
+
 
 If outside ros, you will also need to link to *ecl_type_traits*.
 

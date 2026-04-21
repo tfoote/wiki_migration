@@ -28,9 +28,13 @@ Further required packages are:
 ## Execution
 
 To start the action servers, run the launch file
+
+
 ```
 roslaunch task_allocation task_allocation.launch
-``` which launches both action servers which listen
+```
+
+ which launches both action servers which listen
 for incoming requests.
 
 The launch file can be configured with following parameters:
@@ -45,6 +49,8 @@ In the `param` subdirectory there is the parameter file
 auction process.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -138,6 +144,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

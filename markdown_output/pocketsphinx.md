@@ -33,12 +33,18 @@ name is Michael*" or "*Bring me the Original Pringles*".
 
 There is nothing to build, however, to install pocketsphinx itself we
 will need to run rosdep. In a directory under your ROS package path, do
-the following: ```
+the following: 
+
+```
 git clone https://github.com/mikeferguson/pocketsphinx
 sudo apt-get install gstreamer0.10-pocketsphinx
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 name=recognizer.py
@@ -67,3 +73,5 @@ param {
   1.default = required
 }
 ```
+
+

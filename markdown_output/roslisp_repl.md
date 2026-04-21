@@ -14,9 +14,13 @@ configuration for Lisp and then starting Slime.
 
 `roslisp_repl` is distributed through the ROS release infrastructure.
 
+
+
 ```
 $ sudo apt-get install ros-DISTRO-roslisp-repl
 ```
+
+
 
 ### Installation from source
 
@@ -24,6 +28,8 @@ The most up-to-date version of `roslisp_repl` code can be found
 [here](https://github.com/code-iai/ros_emacs_utils). Installation
 instructions are in the README file. What you'll need to do will be
 something like the following:
+
+
 
 ```
 $ cd YOUR_CATKIN_WS/src
@@ -35,21 +41,31 @@ $ catkin_make install
 $ emacs -nw ~/.emacs.d/init.el # edit your emacs configuration file
 ```
 
+
+
 ## How to use
 
 To use the `roslisp_repl` just run the executable:
+
+
 
 ```
 $ roslisp_repl
 ```
 
+
+
 If it can't be found try
+
+
 
 ```
 $ source ~/.bashrc
 $ rospack profile
 $ rosrun roslisp_repl roslisp_repl
 ```
+
+
 
 If you would like to use your own Emacs configuration with the REPL and
 you're on ROS Indigo+ see the installation instructions of the

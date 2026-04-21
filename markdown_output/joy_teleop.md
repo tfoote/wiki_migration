@@ -14,6 +14,8 @@ according to the configuration file.
 
 ### Parameters
 
+
+
 ```clearsilver
 param {
   0.name=~teleop
@@ -23,7 +25,11 @@ param {
 }
 ```
 
+
+
 #### Example configuration file
+
+
 
 ```yaml
 
@@ -80,7 +86,11 @@ teleop:
     buttons: [7]
 ```
 
+
+
 ### Topic interface
+
+
 
 ```clearsilver
 sub {
@@ -89,3 +99,5 @@ sub {
   0.desc=Listens to the joystick state
 }
 ```
+
+

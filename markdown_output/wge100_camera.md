@@ -130,11 +130,15 @@ conflicts with identically named cameras on the wan0 interface:
 
 The most general form for a WGE100 camera URL is:
 
+
+
 ```
 name://camera_name[@camera_ip][#local_interface]
 serial://serial_number[@camera_ip][#local_interface]
 any://[@camera_ip][#local_interface]
 ```
+
+
 
 Some example URLs:
 
@@ -145,6 +149,8 @@ Some example URLs:
   -- ----------------------------------- -- -------------------------------------------------------------------------------- --
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -343,7 +349,11 @@ desc=The following imager settings apply only to the alternate register set.
 }
 }
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 node.0 {
 name=wge100_multi_configurator
 desc=`wge100_multi_configurator` is a node that allows multiple `wge100_camera_node`s to receive identical configurations. It acts like a [[dynamic_reconfigure]] that passes each request it receives to each one of the `wge100_camera_node`s that it manages. This node's intended use is to allow both `wge100_camera_node`s in a stereo pair to be configured from one centralized location.
@@ -363,6 +373,8 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 }
 ```
 
+
+
 ## Command-Line Tools
 
 The following command-line tools are helpful when configuring the
@@ -373,15 +385,23 @@ camera.
 The **discover** tool uses a broadcast packet to find cameras on the
 network. It can be run on a single network interface:
 
+
+
 ```
 $ rosrun wge100_camera discover eth1
 Found camera serial://13 name://test MAC: 00:24:cd:00:00:83 iface: eth2:avahi current IP: 169.254.8.124, PCB rev: C HDL rev: 400 FW rev: 118
-``` or on all network interfaces:
+```
+
+ or on all network interfaces:
+
+
 
 ```
 $ rosrun wge100_camera discover
 Found camera serial://13 name://test MAC: 00:24:cd:00:00:83 iface: eth2:avahi current IP: 169.254.8.124, PCB rev: C HDL rev: 400 FW rev: 118
-``` The IP address that is reported by the
+```
+
+ The IP address that is reported by the
 **discover** tool is the currently configured address for the camera.
 This may be different from the IP address stored in the camera's flash,
 and to which the camera defaults when it is reset. This IP may or may
@@ -400,15 +420,21 @@ The camera name and IP address that are stored in the camera's flash
 can be accessed using the **set_name** tool. With a single camera URL
 argument, set_name reports the current settings.
 
+
+
 ```
 $ rosrun wge100_camera set_name serial://15@169.254.8.200
 Previous camera name was: test.
 Previous camera IP: 169.254.8.124.
 ```
 
+
+
 With an additional name and IP argument, the values in the flash are
 modified, and the camera is automatically reset so that they become the
 new defaults.
+
+
 
 ```
 $ rosrun wge100_camera set_name serial://15@169.254.8.200 new_name 169.254.8.200
@@ -420,11 +446,15 @@ Previous camera name was: new_name
 Previous camera IP: 169.254.8.200
 ```
 
+
+
 ### Camera Intrinsics: set_calibration
 
 The camera intrinsics that are stored in the camera's flash can be
 accessed using the **set_calibration** tool. With a single camera URL
 argument, set_name reports the current settings.
+
+
 
 ```
 $ rosrun wge100_camera set_calibration name://wide_stereo_l
@@ -432,12 +462,18 @@ Unable to create ARP entry (are you root?), continuing anyway
 Reading old calibration...
 [image]
 ...
-``` With an additional file name argument, the
+```
+
+ With an additional file name argument, the
 values in the flash are modified.
+
+
 
 ```
 $ rosrun wge100_camera set_calibration serial://15@169.254.8.200 intrinsics.ini
 ```
+
+
 
 In general, calibration of the camera and uploading of the parameters
 should be done through the [ camera calibration ](camera_calibration )
@@ -449,9 +485,13 @@ service call to flash the intrinsics back onto the camera.
 The camera can be reset using the **reset_cam** command, which takes a
 single camera_url argument.
 
+
+
 ```
 $ rosrun wge100_camera reset_cam any://
-``` Note: The **reconfigure_cam** tool currently
+```
+
+ Note: The **reconfigure_cam** tool currently
 has the same effect as **reset_cam**. In future firmware versions
 **reconfigure_cam** will always cause the camera FPGA to reconfigure
 itself, whereas **reset_cam** may do a softer reset that resets all

@@ -37,13 +37,19 @@ configuration file (*sensor.urdf.xacro*).
 
 ## Usage
 
-1\. Create a workspace and clone this repo ```
+1\. Create a workspace and clone this repo 
+
+```
 mkdir -p ~/catkin_ws/src
  cd ~/catkin_ws/src
  git clone https://github.com/fada-catec/leica_gazebo_simulation.git
 ```
 
-2\. Install and compile dependencies: ```
+
+
+2\. Install and compile dependencies: 
+
+```
 sudo apt-get install libeigen3-dev
  mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
  git clone https://github.com/fada-catec/leica_scanstation.git
@@ -52,15 +58,25 @@ sudo apt-get install libeigen3-dev
  catkin_make -DCATKIN_BLACKLIST_PACKAGES="leica_scanstation_ros"
 ```
 
-3\. Compile all: ```
+
+
+3\. Compile all: 
+
+```
 cd ~/catkin_ws
  catkin_make
  source devel/setup.bash
 ```
 
-4\. Launch the environment and the device: ```
+
+
+4\. Launch the environment and the device: 
+
+```
 roslaunch leica_gazebo_simulation c5_system_spawn.launch world:=assembly_line
 ```
+
+
 
 Place the Leica at your convenience.
 
@@ -70,9 +86,13 @@ The plugin created for LeicaScanstation C5 on Gazebo will publish
 LaserScan msg. Use laserscan_to_pointcloud to convert it to PointCloud2.
 Run the plugin to start movement and complete a scan on Gazebo.
 
+
+
 ```
 roslaunch leica_gazebo_simulation c5_init.launch namespace:=c5
 ```
+
+
 
 Tell simulator to start scan with desired window parameters. Point cloud
 is published simultaneously. Once scan is finished, it will store the
@@ -80,13 +100,19 @@ complete point cloud with given file_name on folder specified in ROS
 param server as */pointcloud_folder* (default: package
 leica_scanstation_utils/pointclouds).
 
+
+
 ```
 rosservice call /c5/scan "{file_name: 'scan_sim', vertical_res: 512, horizontal_res: 1024, pan_center: 0.0, tilt_center: 0.0, width: 2, height: 2}"
 ```
 
+
+
 ## ROS API
 
 ### Services
+
+
 
 ```clearsilver
 srv{
@@ -99,7 +125,11 @@ srv{
 }
 ```
 
+
+
 ### Topics
+
+
 
 ```clearsilver
 pub {
@@ -126,6 +156,8 @@ pub {
    }
 }
 ```
+
+
 
 ## Acknowledgement
 

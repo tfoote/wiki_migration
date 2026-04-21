@@ -5,6 +5,8 @@ m4atx battery supply and publish it as a ros message.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = m4atx_battery_monitor_node
@@ -31,15 +33,25 @@ node.0 {
 }
 ```
 
+
+
 ## Permissions
 
 A startup script is provided which will perform the following commands.
+
+
 ```
 lsusb
-``` Locate the bus and device number of the device
-called "MicroChip Technology, Inc.". ```
+```
+
+ Locate the bus and device number of the device
+called "MicroChip Technology, Inc.". 
+
+```
 sudo chmod a+rw /dev/bus/usb/<bus_num>/<device_num>
-``` Where
+```
+
+ Where
 the bus_num and device_num were found above using lsusb.
 
 ## Installation
@@ -49,7 +61,9 @@ either install from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/m4atx_battery_monitor.git
 cd /path/to/your/catkin/workspace
@@ -57,12 +71,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-m4atx-battery-monitor
 ```
+
+
 
 ### Startup
 
@@ -71,9 +91,13 @@ The `ros_ethernet_rmp` package contains a
 the `m4atx_battery_monitor_node`. To launch these nodes the following
 command can be used:
 
+
+
 ```
 roslaunch m4atx_battery_monitor_node m4atx_battery_monitor_node.launch
 ```
+
+
 
 Now the node will publish the information as well as use espeak to
 inform the user of a state of charge less than or equal to 20%.

@@ -17,11 +17,19 @@ RMP series mobile robot platform. On startup the node will announce how
 it is trying to connect to the Segway RMP with a message similar to
 this:
 
+
+
 ```
 Connecting to Segway RMP via serial on serial port: /dev/ttyUSB0
-``` or ```
+```
+
+ or 
+
+```
 Connecting to Segway RMP via usb identified by the device serial number: 00000056
 ```
+
+
 
 If the node is unsuccessful in connecting to the Segway RMP or at any
 point looses connection to the Segway RMP, it will report the error and
@@ -42,6 +50,8 @@ main reason both VCP and D2XX (usb) support is supported in this
 package.
 
 ## ROS API
+
+
 
 ```clearsilver
 node.0 {
@@ -141,3 +151,5 @@ desc= These parameters only apply if you are using the USB interface for communi
 }
 }
 ```
+
+

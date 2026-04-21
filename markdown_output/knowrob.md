@@ -101,6 +101,8 @@ The full list of KnowRob-related publications is available at
 When you publish a paper using KnowRob, please cite the 2013 IJRR
 article:
 
+
+
 ```
 @Article{tenorth13knowrob,
   author  = {Moritz Tenorth and Michael Beetz},
@@ -115,6 +117,8 @@ article:
   year    = {2013}
 }
 ```
+
+
 
 ## Acknowledgments
 

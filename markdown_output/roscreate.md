@@ -29,26 +29,42 @@ cannot run it inside of another ROS package.
 
 To create a new package in the current directory:
 
+
+
 ```
 $ roscreate-pkg pkgname
 ```
 
+
+
 To test that this worked, you can use `roscd`:
+
+
 ```
 $ roscd pkgname
 ```
 
+
+
 You can also specify dependencies of that package:
+
+
 
 ```
 $ roscreate-pkg pkgname depend1 depend2 depend3
 ```
 
+
+
 e.g.
+
+
 
 ```
 $ roscreate-pkg foopkg roslib roscpp std_msgs
 ```
+
+
 
 For common dependencies like [roscpp](roscpp) and [rospy](rospy),
 `roscreate-pkg` may create some additional common directory
@@ -70,9 +86,13 @@ highly recommended.
 
 To create or update a stack in the current directory:
 
+
+
 ```
 $ roscreate-stack .
 ```
+
+
 
 `\--show-deps`
 

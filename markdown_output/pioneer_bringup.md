@@ -5,8 +5,6 @@ MobileRobots Pioneer and Pioneer-compatible robots (Including Pioneer 2,
 Pioneer 3, Pioneer LX, AmigoBot, PeopleBot, PatrolBot, PowerBot, Seekur
 and Seekur Jr.)
 
-<<GitHubIssues(amineHorseman/pioneer_bringup)>>
-
 # Installation
 
 ## Dependencies
@@ -15,12 +13,16 @@ and Seekur Jr.)
 
 RosAria is used to communicate with Pioneer robots hardware:
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/amor-ros-pkg/rosaria.git
 source ~/catkin_ws/devel/setup.bash
 rosdep install rosaria
 ```
+
+
 
 Please refer to the
 [official RosAria documentation](http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA)
@@ -41,14 +43,20 @@ this error message *ros-kinetic-usb-cam package doesn't exist*.
 
 In that case, simply install usb_cam package from source:
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/bosch-ros-pkg/usb_cam.git
 cd ..
 catkin_make
-``` }}}}
+```
+
+ }}}}
 
 ## Get the source and build the workspace
+
+
 
 ```
 cd ~/catkin_ws/src
@@ -56,6 +64,8 @@ git clone https://github.com/amineHorseman/pioneer_bringup.git
 cd ..
 catkin_make
 ```
+
+
 
 # Usage
 
@@ -65,33 +75,49 @@ There are actually 3 bringup modes:
 
 Starts up the robot with a single master ROS environment and ROSARIA:
 
+
+
 ```
 roslaunch pioneer_bringup minimal.launch
 ```
+
+
 
 ## Camera mode
 
 Can do everything minimal mode does, but also launches the usb cam node
 
+
+
 ```
 roslaunch pioneer_bringup camera.launch
 ```
+
+
 
 ## Laser mode
 
 Can do everything minimal mode does, but also launches the Sick LMS1xx
 laser node:
 
+
+
 ```
 roslaunch pioneer_bringup laser_lms1xx.launch
 ```
 
+
+
 If you want to bringup both the laser and camera together use the
 following command:
+
+
 
 ```
 roslaunch pionner_bringup laser_lms1xx.launch _camera:=1
 ```
+
+
 
 # Known issues
 
@@ -108,15 +134,23 @@ value).
 Sometimes however, RosAria need to communicate throught USB port, and
 then, you need to replace the followin line in the minimal.launch file:
 
+
+
 ```
 <param name="port" value="/dev/ttyS0" />
 ```
 
+
+
 with this one:
+
+
 
 ```
 <param name="port" value="/dev/ttyUSB0" />
 ```
+
+
 
 For more information about this modification, please refer to
 [RosAria documentation\|](http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA):
@@ -128,9 +162,13 @@ At the moment of writing this tutorial, usb_cam cannot be located by
 
 Instead try to install it from source:
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/bosch-ros-pkg/usb_cam.git
 cd ..
 catkin_make
 ```
+
+

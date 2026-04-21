@@ -13,9 +13,17 @@ everything is well configured.
 This launch file calls the template
 [description_bringup](qb_device_bringup#description_bringup) with the
 default settings to visualize the desired qb SoftHand Research in
-[rviz](rviz) (and nothing more). ```
+[rviz](rviz) (and nothing more). 
+
+```
 roslaunch qb_hand_description qb_hand.launch
 ```
+
+
+
+
 ```wiki
 If it does not bringup an [[rviz]] node with the ''qbhand'' loaded inside, something is not working as expected and we recommend to check your configuration (cf. [[Robots/qbhand]]).
 ```
+
+

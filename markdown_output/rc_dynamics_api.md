@@ -25,13 +25,21 @@ can be simply printed to std::out or saved as .csv-file.
 
 Simplest example: Connect to rc_visard with specified IP address and
 request the 'imu' stream. A certain amount of messages are received
-and simply print to std::out ```sh
+and simply print to std::out 
+
+```sh
 ./tools/rcdynamics_stream -v 10.0.2.99 -s imu
-``` Different use case
+```
+
+ Different use case
 with more command line parameters: Connect to rc_visard with specified
 IP address and request the 'pose_rt' stream for 10 seconds. The client
 host's network interface to be used to receive the data is specified as
 'eth0'. Messages are stored in the specified file as .csv-lines.
+
+
 ```sh
 ./tools/rcdynamics_stream -v 10.0.2.99 -s pose_rt -i eth0 -a -t10 -o poses.csv
 ```
+
+

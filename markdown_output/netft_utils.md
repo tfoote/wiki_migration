@@ -21,41 +21,65 @@ Derek King, written in 2008 but not updated since ROS groovy.
 It's best to install this package from source. Create a catkin
 workspace for the package:
 
+
+
 ```
 $ mkdir -p ~/Desktop/catkin_ws/src
 $ cd catkin_ws
 $ catkin_make
-``` Clone the package
+```
+
+ Clone the package
+
+
 
 ```
 $ cd src
 $ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
 $ cd ..
-``` Source the new files
+```
+
+ Source the new files
+
+
 
 ```
 $ source devel/setup.bash
-``` (You may have to do this every time you open a
+```
+
+ (You may have to do this every time you open a
 new terminal window, or add this line to your bashrc: *source
 /Desktop/catkin_ws/devel/setup.bash*) Build the package
 
+
+
 ```
 $ catkin_make
-``` Check that it runs
+```
+
+ Check that it runs
+
+
 
 ```
 $ roscore
 $ rosrun netft_utils netft_utils_sim
 $ rostopic echo /netft_data
-``` This handy node is simulating a F/T sensor -
+```
+
+ This handy node is simulating a F/T sensor -
 good for debugging.
 
 ## Launch a F/T Sensor node
 
+
+
 ```
 $ rosrun netft_utils netft_node 192.168.1.84
 $ rostopic echo /netft_data
-``` The IP address should be the IP address of your
+```
+
+ The IP address should be the IP address of your
 sensor. You should see a steady stream of WrenchStamped data.
 
 Optional arguments:
@@ -72,6 +96,8 @@ easily convert between them. If you don't care about tf frames, just
 pass it dummy arguments. The sensor tf frame should be set up to match
 the Y and Z-axis markings on the sensor.
 
+
+
 ```
 $ rosrun netft_utils netft_utils base_frame sensor_frame
 $ rostopic echo /raw_world  (raw data from the sensor, no bias applied, transformed to world frame)
@@ -79,9 +105,15 @@ $ rostopic echo /transformed_tool   (if you biased the sensor, it has an effect 
 $ rostopic echo /transformed_world  (if you biased the sensor, it has an effect here)
 ```
 
-Bias the sensor, i.e. set its values to zero: ```
+
+
+Bias the sensor, i.e. set its values to zero: 
+
+```
 $ rosservice call /bias true 20 10
 ```
+
+
 where 20 is the max force measurement and 10 is the max torque
 measurement you expect. These arguments are useful for getting better
 resolution from the sensor.
@@ -100,12 +132,16 @@ this is mostly true. This assumption is necessary because a
 cross-product can't be inverted and solved, i.e. there are infinite
 solutions.
 
-To test gravity compensation, do ```
+To test gravity compensation, do 
+
+```
 $ rosrun netft_utils netft_node 192.168.1.84
 $ rosrun netft_utils netft_utils base_frame ft_sensor_frame
 $ rostopic echo /transformed_world
 $ rosservice call /gravity_comp true 20 10
 ```
+
+
 
 You should see the World-Z component of force disappear along with any
 moments due to gravity. Gravity compensation will continue to be applied
@@ -119,6 +155,8 @@ The following code covers the gist of how to declare and use a netft
 object with C++. Do `$rosrun netft_utils netft_utils_cpp_test` to see it
 in action (you will have to adjust the IP address of the sensor in the
 source code, as it's hardcoded to 192.168.1.84.
+
+
 
 ```
 ros::init(argc, argv, "netft_utils_cpp_test");
@@ -142,19 +180,29 @@ ros::init(argc, argv, "netft_utils_cpp_test");
   std::future<bool> ftThread;
   ftThread = std::async(std::launch::async, &NetftUtilsLean::run, fti);
   fti->biasSensor(1);
-``` The asynchronous spinner is highly recommended.
+```
 
-To get data in the tool frame, do ```
+ The asynchronous spinner is highly recommended.
+
+To get data in the tool frame, do 
+
+```
 $ cd src
 $ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
 $ cd ..
-```0
+```
 
-And in the world frame: ```
+0
+
+And in the world frame: 
+
+```
 $ cd src
 $ git clone https://github.com/UTNuclearRoboticsPublic/netft_utils.git
 $ cd ..
-```1
+```
+
+1
 
 ## Web Interface
 

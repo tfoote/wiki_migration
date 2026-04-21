@@ -19,6 +19,8 @@ parameter). Your card may output other options. To support them as well
 feel free to adapt the files v4lctl_node.cpp and v4lctlNodeDyn.cfg in
 the repository to your needs.
 
+
+
 ```
 $ v4lctl list
   attribute  | type   | current | default | comment
@@ -44,7 +46,11 @@ $ v4lctl list
   Coring     | int    |       0 |       0 | range is 0 => 3
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -71,15 +77,23 @@ node.0 {
 }
 ```
 
+
+
 #### Starting the node
 
 The package contains a launch file which can be used to start the node.
+
+
 
 ```
 $ roslaunch uavc_v4lctl v4lctl.launch device:=/dev/video1
 ```
 
+
+
 #### Sample service calls
+
+
 
 ```
 $ rosservice call /v4lctlSet bright "77%"
@@ -92,6 +106,8 @@ $ rosservice call /v4lctlSet 'setattr "UV Ratio"' 30%
 $ rosservice call /v4lctlGet "UV Ratio"
 ```
 
+
+
 ## Installation
 
 ### From source
@@ -100,12 +116,16 @@ The sources can be found here: <https://github.com/meuchel/uavc_v4lctl>
 
 To build the package do the following:
 
+
+
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/meuchel/uavc_v4lctl
 cd ~/catkin_ws
 catkin build # depending on your workspace it could also be catkin_make
 ```
+
+
 
 ## References
 

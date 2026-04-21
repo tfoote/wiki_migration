@@ -142,6 +142,8 @@ stand-alone M5e library is contained in *lib_M5e.py*. Now for a
 demonstration, assuming a Linux machine and a M5e (full) reader
 operating at 30dBm (1Watt) output power:
 
+
+
 ```
 import lib_M5e as M5e
 
@@ -156,7 +158,9 @@ r.TrackSingleTag( 'test_tag_id_' )
 
 r.ChangeAntennaPorts( 2, 2 )
 r.QueryEnvironment()
-``` Basically, this code sets up the reader,
+```
+
+ Basically, this code sets up the reader,
 selects antenna port 1 for both transmit and receive, and queries for
 all tags in the environment for 50 ms (returns a list of tuples: \[(ID,
 RSSI), \... \] ). Subsequently, the reader checks for the presence of a
@@ -170,6 +174,8 @@ There is also a *M5e_Poller* class that can run in a thread and
 continuously either query the environment or track a tag \-- issuing
 callbacks with argument *\[antenna_name, ID, RSSI\] *after each read /
 read attempt:
+
+
 
 ```
 import lib_M5e as M5e
@@ -201,13 +207,17 @@ while time.time() - t0 < 3.0:
     time.sleep( 0.1 )
 
 q.stop()
-``` That sums up the stand-alone library. The Robot
+```
+
+ That sums up the stand-alone library. The Robot
 Operating System (ROS) wrappers act in pretty much the same fashion as
 the *M5e_Poller *and can be found in *ros_M5e.py *(server node) and
 *ros_M5e_client.py* (client nodes). Only one *server* node can connect
 to the M5e module's serial port at once due to strict device
 handshaking protocols; any number of client nodes can control / query
 the server. The server code looks like this:
+
+
 
 ```
 import ros_M5e as rm
@@ -228,10 +238,14 @@ ros_rfid = rm.ROS_M5e( name = 'my_rfid_server',
 
 rospy.spin()
 ros_rfid.stop()
-``` By default, the server does nothing (standby to
+```
+
+ By default, the server does nothing (standby to
 save power). A client node must put the server into either *QUERY_MODE
 *or *TRACK_MODE*. This can be accomplished using any client. For
 example, using *rosservice*:
+
+
 
 ```
 >  rosservice call /rfid/my_rfid_server_mode "['query']"
@@ -241,10 +255,14 @@ example, using *rosservice*:
 >  rostopic echo  -c /rfid/my_rfid_server_reader
 [OUTPUT HERE]
 >  rosservice call /rfid/my_rfid_server_mode "['stop']"
-``` The last call puts the reader back into standby
+```
+
+ The last call puts the reader back into standby
 mode (any argument other than 'query' or 'track'). The
 *ros_M5e_client.py* file implements a rudimentary RFID client that can
 perform the same operations.
+
+
 
 ```
 import ros_M5e_client as rmc
@@ -257,5 +275,7 @@ r.track_mode( 'test_tag_id' )
 r.read( antenna = 'AntPort1' )
 
 r.stop()
-``` The *read* method for *ROS_M5e_Client* returns
+```
+
+ The *read* method for *ROS_M5e_Client* returns
 the latest RFID read on the desired antenna as a ROS RFIDread message.

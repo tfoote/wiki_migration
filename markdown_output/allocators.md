@@ -7,6 +7,8 @@ aligned allocation, and an STL-compatible aligned allocator.
 General aligned allocation is done through the `alignedMalloc()` and
 `alignedFree()` functions. For example:
 
+
+
 ```cplusplus
 #include <allocators/aligned.h>
 
@@ -19,8 +21,14 @@ void* mem = allocators::alignedMalloc(1000, 128);
 allocators::alignedFree(mem);
 ```
 
+
+
 There is also an stl-compatible aligned allocator:
+
+
 ```cplusplus
 // All allocations done by the vector will be aligned to 128 bytes
 std::vector<int, allocators::AlignedAllocator<int, 128> > vec;
 ```
+
+

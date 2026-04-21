@@ -12,9 +12,13 @@ complete [Maggie](Robots/Maggie) robot.
 
 In a terminal window, start all the process:
 
+
+
 ```
 $ roslaunch maggie_bringup maggie_start.launch
 ```
+
+
 
 ## HOW TO: Test a specific functionality
 
@@ -26,9 +30,13 @@ run the complete [Maggie](Robots/Maggie) robot.
 
 -   In a terminal window, start the basic process:
 
+
+
 ```
 $ roslaunch maggie_bringup maggie_start_basic.launch
 ```
+
+
 
 -   In a new terminal window, start the process to be tested.
 
@@ -50,12 +58,20 @@ the robot is able to move around the world.
 -   **Cannot be found a device.**
 -   Be sure the robot has the udev rules installed.
 
+
+
 ```
 $ ls -la /etc/udev/rules.d | grep maggie
 ```
 
+
+
 -   If not, install by:
+
+
 
 ```
 $ rosrun maggie_bringup install.sh
 ```
+
+

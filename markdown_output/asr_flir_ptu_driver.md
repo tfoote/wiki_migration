@@ -149,17 +149,25 @@ delivered which allows to move the PTU arround as well as the
 configuration of parameters. When launching the GUI you have to decide
 whether you want simple forbidden area checking or path prediction. If
 you want to use simple forbidden area checking use* *
+
+
 ```
 roslaunch asr_flir_ptu_driver ptu_gui.launch
-``` This setting will result in the following
+```
+
+ This setting will result in the following
 behaviour: If you a endpoint for a movement which is inside a forbidden
 area it will be rejected, nothing will happen. If you choose an endpoint
 outside a forbidden area and the path from the current position will
 move through a forbidden area, this will happen and nothing will be
 rejected. The other option is to launch the GUI using path_prediction.
-This is done by using ```
+This is done by using 
+
+```
 roslaunch asr_flir_ptu_driver ptu_gui.launch path_prediction:=true
-``` Using path_prediction the
+```
+
+ Using path_prediction the
 behaviour will be the following: If you select an endpoint that will lie
 within a forbidden area, the path the PTU would take will be predicted
 and it will stop at the point it would hit the forbidden area. If the
@@ -254,9 +262,13 @@ tutorials.
 If you want to simulate the behaviour a FLIR PTU in a basic way you need
 to launch the package the following way:
 
+
+
 ```
 roslaunch asr_flir_ptu_driver ptu_left_mock.launch
-``` The simulation provides basic functions, like
+```
+
+ The simulation provides basic functions, like
 the simulation of movements after getting a movement command, the check
 if a position lies within a forbidden area, the setting of forbidden
 areas and the setting of maximum and minimum values for pan and tilt.
@@ -278,9 +290,13 @@ power up the PTU first.
 As soon as the initialization of the PTU after the power up is done
 (when it stops moving) start the PTU driver using
 
+
+
 ```
 roslaunch asr_flir_ptu_driver ptu_left.launch
-``` Afterwards, the PTU will perform another set of
+```
+
+ Afterwards, the PTU will perform another set of
 movements. As soon as these movements ended, it is possible to send
 instructions to the PTU using messages or the GUI.
 
@@ -697,9 +713,13 @@ These tutorials will cover the usage of asr_flir_ptu_driver with an own
 node communicating over services and topics. It will be explained how
 certain goals can be achieved. Before starting your own program
 
+
+
 ```
 roslaunch asr_flir_ptu_driver ptu_left.launch
-``` needs to be invoked from the terminal to start
+```
+
+ needs to be invoked from the terminal to start
 the PTU. Make sure it is connected. Configure the forbidden areas in the
 *ptu_properties.yaml *as you need them (details on forbidden areas in
 Chapter 2). Then continue with the tutorials below:

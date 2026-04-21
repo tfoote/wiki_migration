@@ -17,6 +17,8 @@ For higher level exception handling of errors, refer to
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/errors.hpp>
 
@@ -34,6 +36,8 @@ using ecl::UnknownError;
 // Error Handler
 using ecl::Error;
 ```
+
+
 
 If outside ros, you will also need to link to `ecl_errors`.
 

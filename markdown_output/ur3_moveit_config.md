@@ -6,16 +6,24 @@ the MoveIt Setup Assistant.
 
 ## Getting Started
 
+
+
 ```wiki
 The current binary releases of the UR MoveIt configuration packages do not install all required dependencies upon installation (see [[https://github.com/ros-industrial/universal_robot/issues/225|universal_robot/issues/225]]). Be sure to install the `moveit_simple_controller_manager` package in addition to those mentioned below.
 ```
 
+
+
 Install the package from package management, and run the !MoveIt!
-planning demo: ```
+planning demo: 
+
+```
 $ sudo apt-get install ros-$ROS_DISTRO-ur3-moveit-config
 
 $ roslaunch ur3_moveit_config demo.launch
 ```
+
+
 
 This is not a real simulation, just a demonstration of the planning
 capability and the !MoveIt! and RViz integration. For true simulation of

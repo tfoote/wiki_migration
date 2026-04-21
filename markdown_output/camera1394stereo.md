@@ -24,7 +24,9 @@ Finally, debayering on format7 modes has been allowed.
 
 ## Examples
 
-Launch the driver as a node: ```
+Launch the driver as a node: 
+
+```
 <launch>
   <node pkg="camera1394stereo" type="camera1394stereo_node" name="camera1394stereo_node" output="screen" >
     <param name="video_mode" value="format7_mode3" />
@@ -38,7 +40,11 @@ Launch the driver as a node: ```
 </launch>
 ```
 
+
+
 as a nodelet:
+
+
 
 ```
 <launch>
@@ -55,6 +61,8 @@ as a nodelet:
   </node>
 </launch>
 ```
+
+
 
 ## Report a Bug
 

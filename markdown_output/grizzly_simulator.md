@@ -13,16 +13,28 @@ related software [here.](https://github.com/g)
 ## Running the simulation
 
 Starting with a basic ROS install, execute the following in a terminal:
+
+
 ```
 sudo apt-get update
 sudo apt-get install ros-$ROS_DISTRO-grizzly-simulator ros-$ROS_DISTRO-grizzly-desktop ros-$ROS_DISTRO-grizzly-navigation
-``` Open a terminal window, and enter:
+```
+
+ Open a terminal window, and enter:
+
+
 ```
 roslaunch grizzly_gazebo grizzly_empty_world.launch
-``` Open another terminal window, and enter:
+```
+
+ Open another terminal window, and enter:
+
+
 ```
 roslaunch grizzly_viz view_robot.launch
 ```
+
+
 
 The Gazebo window shows the simulation's ground truth, while the
 [rviz](rviz) window shows the robot's perception.
@@ -44,9 +56,13 @@ Gazebo and rviz:
     the model.
 
 If you'd like to command your simulated Grizzly using raw messages,
-open a third terminal window, and enter: ```
+open a third terminal window, and enter: 
+
+```
 rostopic pub /cmd_vel geometry_msgs/Twist -r 50 '{ linear: { x: 0.5 } }'
-``` In the
+```
+
+ In the
 above command, we publish to the cmd_vel topic, of topic type
 geometry_msgs/Twist, at a rate of 50Hz. The data we publish tells the
 simulated Grizzly to go forwards at 0.5m/s, without any rotation. You

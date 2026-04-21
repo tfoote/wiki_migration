@@ -69,37 +69,57 @@ need.
 
 **First, clone this package**:
 
+
+
 ```
 mkdir -p swarm_ros_bridge_ws/src  # or your own ros workspace
 cd swarm_ros_bridge_ws/src
 git clone https://github.com/shupx/swarm_ros_bridge.git
 ```
 
+
+
 or clone its gitee mirror for faster speed:
+
+
 
 ```
 git clone https://gitee.com/shu-peixuan/swarm_ros_bridge.git
 ```
 
+
+
 **Then, install dependencies with apt**:
+
+
 
 ```
 sudo apt install libzmqpp-dev
 ```
 
+
+
 or install dependencies using rosdep:
+
+
 
 ```
 rosdep install --from-path swarm_ros_bridge/
 ```
 
+
+
 **Finally, build this package**:
+
+
 
 ```
 cd ../
 catkin_make
 source devel/setup.bash
 ```
+
+
 
 ## Usage
 
@@ -108,6 +128,8 @@ Make sure that all robots connects to the same network segment.
 1\. Specify the IP and ROS topic information in
 [config/ros_topics.yaml](https://github.com/shupx/swarm_ros_bridge/blob/master/config/ros_topics.yaml)
 in the following form:
+
+
 
 ```
 IP:
@@ -128,6 +150,8 @@ recv_topics:
   srcPort: 3001
 ```
 
+
+
 ,where the IPs and topics can be added and modified in your need. The
 ``max_freq`` will limit the sending frequency once it exceeds
 ``max_freq``. Set ``max_freq`` large enough if you do not want
@@ -135,9 +159,13 @@ to decrease the sending frequency.
 
 2\. Launch the bridge_node:
 
+
+
 ```
 roslaunch swarm_ros_bridge test.launch
 ```
+
+
 
 3\. Publish messages into send_topics and check that remote recv_topics
 are receiving these messages. The console will also print INFO the first
@@ -160,6 +188,8 @@ and <<MsgLink(std_msgs/String)>>. If you need more types:
 then it will generate template functions for different ros message
 types.
 
+
+
 ```c++
 // In ros_sub_pub.hpp
 // uncomment and modify the following lines:
@@ -167,6 +197,8 @@ types.
 #define MSG_TYPE3 "xxx_msgs/yy"
 #define MSG_CLASS3 xxx_msgs::yy
 ```
+
+
 
 We support up to 10 types modification. If that is still not enough,
 then you should modify the `topic_subscriber()`, `topic_publisher()`
@@ -176,6 +208,8 @@ according to their styles.
 
 2\. Add the dependent message package in `find_package()` of
 [CMakeLists.txt](https://github.com/shupx/swarm_ros_bridge/blob/master/CMakeLists.txt):
+
+
 
 ```
 # in CMakeLists.txt
@@ -188,12 +222,18 @@ find_package(catkin REQUIRED COMPONENTS
 )
 ```
 
+
+
 3\. Recompile:
+
+
 
 ```
 cd swarm_ros_bridge_ws/
 catkin_make
 ```
+
+
 
 ### More send_topics
 
@@ -201,21 +241,33 @@ We support up to 50 send_topics. Modify the following lines in
 [include/ros_sub_pub.hpp](https://github.com/shupx/swarm_ros_bridge/blob/master/include/ros_sub_pub.hpp)
 if you need more:
 
+
+
 ```
 git clone https://gitee.com/shu-peixuan/swarm_ros_bridge.git
-```0
+```
+
+0
 
 Then recompile:
 
+
+
 ```
 git clone https://gitee.com/shu-peixuan/swarm_ros_bridge.git
-```1
+```
+
+1
 
 ## Nodes
 
+
+
 ```
 git clone https://gitee.com/shu-peixuan/swarm_ros_bridge.git
-```2
+```
+
+2
 
 ## Future Work
 

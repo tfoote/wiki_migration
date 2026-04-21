@@ -13,29 +13,45 @@ It has also been successfully used with Blackfly, Flea3, and others.
 
 Install from apt, refresh udev:
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-pointgrey-camera-driver
 ```
 
+
+
 List detected cameras:
+
+
 
 ```
 rosrun pointgrey_camera_driver list_cameras
 ```
 
+
+
 Launch camera:
+
+
 
 ```
 roslaunch pointgrey_camera_driver bumblebee.launch
 roslaunch pointgrey_camera_driver camera.launch
 ```
 
+
+
 When multiple Point Grey cameras are in use at a time, specify the
 serial number given by `list_cameras`:
+
+
 
 ```
 roslaunch pointgrey_camera_driver camera.launch camera_serial:=12345678
 ```
+
+
 
 ## Parameters
 

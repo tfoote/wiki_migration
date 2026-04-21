@@ -2,6 +2,8 @@ This package is barely usable alone since it provides only the common
 features to be exploited and expanded in the derived packages (cf.
 [qb_hand](qb_hand) and [qb_move](qb_move)).
 
+
+
 ```clearsilver
 name = qb_device_hardware_interface
 desc = This device-independent library provides all the common structures to interface both the [[qb_hand]] and the [[qb_move]] ROS packages with their related physical devices. It exploits the Communication Handler (cf. [[qb_device_driver]]) to manage the serial communication and inherits its core from the [[hardware_interface]] for the sake of compatibility with other robots which use ROS. This package paves the way for control applications (cf. [[qb_device_control]]).
@@ -51,3 +53,5 @@ param {
   5.default = transmission
 }
 ```
+
+

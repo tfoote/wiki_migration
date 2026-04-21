@@ -14,6 +14,8 @@ either directly play back sensor data or get instances of type
 The basic configuration is done via ros parameters. Plugin parameters
 normally live in sub-namespaces of `world_db_core`.
 
+
+
 ```clearsilver
 
 param {
@@ -30,6 +32,8 @@ param {
   2.desc= The list of topics to record. `world_db_core` supports throttled recording, i.e. it records messages at most at the specified rate. This parameter is a list of lists with every sublist containing exactly two parameters. The topic to record is the first element and the minimum time difference between two messages as the second parameter.
 ```
 
+
+
 ## Example Configuration
 
 This yaml snippet configures `world_db_core` to record the tilting
@@ -37,6 +41,8 @@ laser, tf and the narrow stereo. It loads four plugins and parameterizes
 them. For the parameters of the plugins, please read the documentation
 on [world_db_detector_lib](world_db_detector_lib) and
 [tf_recorder_plugin](tf_recorder_plugin).
+
+
 
 ```
 base_directory: /removable/lorenz/planes
@@ -67,3 +73,5 @@ base_directory: /removable/lorenz/planes
         source_plugin_name: "table_detector"
         playback_rate: 10
 ```
+
+

@@ -29,6 +29,8 @@ some work. Using it standalone is still fairly easy though.
 
 A server callback looks something like this:
 
+
+
 ```cplusplus
 void callback(rve_rpc::CallHandle<RequestMessage, ResponseMessage>& handle)
 {
@@ -40,6 +42,8 @@ void callback(rve_rpc::CallHandle<RequestMessage, ResponseMessage>& handle)
 }
 ```
 
+
+
 `handle` here allows you to either respond immediately (like in the
 example), or store it off and respond later. If an
 `rve_rpc::CallHandle` is destroyed without ever responding, it
@@ -50,15 +54,21 @@ message goes here")`, or you can throw an exception derived from
 `std::exception` from within your callback.
 
 Setting up the server is done using the `rve_rpc::Server` class, like
-so: ```cplusplus
+so: 
+
+```cplusplus
 Server s("server_name", nh);
 s.addMethod<RequestMessage, ResponseMessage>("callMe", callback);
 s.ready();
 ```
 
+
+
 ### Client
 
-Use of a client looks something like this: ```cplusplus
+Use of a client looks something like this: 
+
+```cplusplus
 Client c("server_name", nh);
 Method<RequestMessage, ResponseMessage> m = c.addMethod<RequestMessage, ResponseMessage>("callMe");
 c.connect();
@@ -68,12 +78,20 @@ ReqeustMessagePtr req(new RequestMessagePtr);
 ResponseMessageConstPtr res = m.call(req);
 ```
 
+
+
 Alternatively, you can use it asynchronously like so:
+
+
 ```cplusplus
 m.callAsync(req, callback);
 ```
 
-where `callback` is of the form: ```cplusplus
+
+
+where `callback` is of the form: 
+
+```cplusplus
 void callback(const MethodResponse<ResponseMessage>& res)
 {
   if (res.error_code == rve_rpc::Response::SUCCESS)
@@ -84,13 +102,19 @@ void callback(const MethodResponse<ResponseMessage>& res)
 }
 ```
 
+
+
 ## Internals
 
 An `rve_rpc` client/server pair operate on a "request/response"
-topic. For example: ```
+topic. For example: 
+
+```
 /server_name/request
 /server_name/response
 ```
+
+
 
 These topics are always of the type `rve_rpc::Request` and
 `rve_rpc::Response`. The request/response messages are serialized into

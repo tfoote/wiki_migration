@@ -27,6 +27,8 @@ measurements in the cell.
 ### Class API and usage
 
 An example of how to create an NDT map from a point cloud:
+
+
 ```cplusplus
 #include <ndt_map.h>
 #include <lazy_grid.h>
@@ -47,5 +49,7 @@ int main() {
     //do something with the map ...
 }
 ```
+
+
 
 ## Nodes

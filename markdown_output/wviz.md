@@ -39,9 +39,13 @@ postinstallation.sh. See description of the file below. \*/
 
 # Launching
 
+
+
 ```
 $ roslaunch wviz wviz.launch
 ```
+
+
 
 Should launch all the nodes you need for visualizing your simulator or
 robot over the web.

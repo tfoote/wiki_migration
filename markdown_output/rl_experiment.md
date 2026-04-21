@@ -19,18 +19,30 @@ sum of rewards for each episode to cerr.
 
 To run an RL experiment, you can call rl_experiment like so:
 
+
+
 ```
 rosrun rl_experiment experiment --agent type --env type [options]
-``` where the agent type is one of the following:
+```
+
+ where the agent type is one of the following:
+
+
 
 ```
 qlearner sarsa modelbased rmax texplore dyna savedpolicy
-``` and the environment type is one of the
+```
+
+ and the environment type is one of the
 following:
+
+
 
 ```
 taxi tworooms fourrooms energy fuelworld mcar cartpole car2to7 car7to2 carrandom stocks lightworld
-``` There are a number of options available to set
+```
+
+ There are a number of options available to set
 parameters of both the agent and environment used. More details on the
 agent options are available in the [rl_agent](rl_agent) documentation,
 and more details on the env options are available in the
@@ -95,18 +107,26 @@ As an example, here is how you would run Q-Learning
 ([Watkins 1989](rl-texplore-ros-pkg/rl_references)) on the stochastic
 Taxi task ([Dietterich 1998](rl-texplore-ros-pkg/rl_references)):
 
+
+
 ```
 rosrun rl_experiment experiment --agent qlearner --env taxi --stochastic
-``` Or to run real-time TEXPLORE
+```
+
+ Or to run real-time TEXPLORE
 ([Hester and Stone 2010](rl-texplore-ros-pkg/rl_references),
 [Hester et al 2012](rl-texplore-ros-pkg/rl_references)) at 10 Hz on the
 deterministic Fuel World task
 ([Hester and Stone 2010](rl-texplore-ros-pkg/rl_references)) with 8
 discrete trees:
 
+
+
 ```
 rosrun rl_experiment experiment --agent texplore --nmodels 8 --planner parallel-uct --actrate 10 --env fuelworld --deterministic
-``` While you should find that the qlearner, sarsa,
+```
+
+ While you should find that the qlearner, sarsa,
 dyna, and rmax agents work fine on the easier tasks (tworooms, taxi,
 etc), they will not converge within the default 1000 episodes on more
 complex tasks like Fuel World. As an example, here is how to run
@@ -116,9 +136,13 @@ Fuel World task
 \--nepisodes flag to run it for 1,000,000 episodes, which should be
 enough time for it to converge.
 
+
+
 ```
 rosrun rl_experiment experiment --agent qlearner --env fuelworld --nepisodes 1000000
-``` Another problem you may run into is when
+```
+
+ Another problem you may run into is when
 running these methods on the continuous domains (mcar, cartpole,
 car2to7, car7to2, and carrrandom). For these domains, the tabular RL
 methods (Q-Learning, SARSA, Dyna, R-Max) will need the state to be
@@ -128,6 +152,10 @@ task ([Sutton and Barto 1998](rl-texplore-ros-pkg/rl_references)) while
 discretizing each of the state features into 10 discrete values using
 the \--nstates option.
 
+
+
 ```
 rosrun rl_experiment experiment --agent qlearner --env mcar --nstates 10
-``` [References](rl-texplore-ros-pkg/rl_references)
+```
+
+ [References](rl-texplore-ros-pkg/rl_references)

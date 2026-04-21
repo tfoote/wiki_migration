@@ -7,6 +7,8 @@ message which is published on the /cmd_vel topic.
 
 ## ROS API
 
+
+
 ```clearsilver
 pub {
   0.name=cmd_vel
@@ -24,6 +26,8 @@ srv_called {
   0.desc=Control of the head position 
 }
 ```
+
+
 
 ## Control Layout
 

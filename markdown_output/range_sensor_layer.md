@@ -14,6 +14,8 @@ than the clear_threshold are marked as free space in the master costmap.
 
 ## API
 
+
+
 ```clearsilver
 sub {
   0.name = "topics"
@@ -48,11 +50,17 @@ param {
 }
 ```
 
+
+
 ## Usage
 
 This layer can be used by adding the following values to the plugins
 parameter in your costmap.
 
+
+
 ```
 - {name: sonar,   type: "range_sensor_layer::RangeSensorLayer"}
 ```
+
+

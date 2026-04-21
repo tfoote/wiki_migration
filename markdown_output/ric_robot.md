@@ -10,12 +10,20 @@ and control the different robots which is made by
 
 Users can run the main robot launch file (e.g. lizi.launch or
 komodo.launch) to initiate all the robot controllers and sensors with a
-single command. ```
+single command. 
+
+```
 $ roslaunch ric_robot komodo.launch id:=<ID>
-``` For example, running the launch
-file with komodo id value of 1: ```
+```
+
+ For example, running the launch
+file with komodo id value of 1: 
+
+```
 $ roslaunch ric_robot komodo.launch id:=1
-``` This command
+```
+
+ This command
 should be executed on the robot computer. For remote operation see the
 [ric_base_station](ric_base_station) package. The id number sets the
 robot name to be komodo_<ID>, this is extremely important when
@@ -41,12 +49,16 @@ tutorial.
 
 See [hokuyo_node](hokuyo_node) for package details.
 
-Relevant lines in the launch file: ```shell
+Relevant lines in the launch file: 
+
+```shell
 <node pkg="hokuyo_node" type="hokuyo_node" name="hokuyo_node" output="screen">
       <param name="port" value="/dev/Hokuyo" />
       <param name="frame_id" value="komodo_$(arg id)_Laser_link" />
 </node>
 ```
+
+
 
 The readings are published on the **/komodo_<ID>/scan** topic.
 
@@ -54,17 +66,23 @@ The readings are published on the **/komodo_<ID>/scan** topic.
 
 See [openni2_launch](openni2_launch) for package details.
 
-Relevant lines in the launch file: ```shell
+Relevant lines in the launch file: 
+
+```shell
 <include file="$(find openni2_launch)/launch/openni2.launch">
       <arg name="camera" value="komodo_$(arg id)_Asus_Camera" />
 </include>
 ```
+
+
 
 ### Using the cameras
 
 See [usb_cam](usb_cam) for package details.
 
 Relevant lines in the launch file (for each camera):
+
+
 ```shell
 <node pkg="usb_cam" type="usb_cam_node" name="arm_cam_node" output="screen"  respawn="true">
       <param name="~video_device" value="/dev/video0" />
@@ -74,6 +92,8 @@ Relevant lines in the launch file (for each camera):
       <param name="~image_height" value="240" />
 </node>
 ```
+
+
 
 ### Reading the ultrasonic range finders
 
@@ -88,6 +108,8 @@ are published under the following topics:
 **/komodo_<ID>/Rangers/Right_URF**
 
 ## Nodes
+
+
 
 ```clearsilver
 node {
@@ -274,6 +296,6 @@ sub{
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(robotican/ric)>>
+
+## Report a Bug

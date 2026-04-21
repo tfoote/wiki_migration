@@ -34,15 +34,23 @@ colors/texture won't be differentiated.
 
 Open a terminal and write:
 
+
+
 ```
 svn co http://svn.pointclouds.org/ros/trunk/perception_pcl_unstable
-``` Modify your ROS_PACKAGE_PATH to make sure that
+```
+
+ Modify your ROS_PACKAGE_PATH to make sure that
 perception_pcl_unstable is found before perception_pcl from the
 diamondback release. Then you can do:
+
+
 
 ```
 rosmake pcl
 ```
+
+
 
 ### Getting vfh_recognition, vfh_recognizer_fs and vfh_recognizer_fs_test
 
@@ -52,18 +60,26 @@ all needed packages is:
 
 Open a terminal and write:
 
+
+
 ```
 mkdir cvfh && cd cvfh
 svn co https://code.ros.org/svn/wg-ros-pkg/stacks/tabletop_object_perception/trunk/vfh_recognition
 svn co https://code.ros.org/svn/wg-ros-pkg/stacks/tabletop_object_perception/trunk/vfh_recognizer_fs
 svn co https://code.ros.org/svn/wg-ros-pkg/stacks/tabletop_object_perception/trunk/vfh_recognizer_fs_test
-``` If you created the directory outside of your
+```
+
+ If you created the directory outside of your
 ROS_PACKAGE_PATH, modify it accordingly so ROS finds the packages.
+
+
 
 ```
 cd vfh_recognizer_fs_test
 rosmake
-``` and that should be it!
+```
+
+ and that should be it!
 
 ## vfh_recognition
 
@@ -88,19 +104,31 @@ i.e (/home/cvfh/ply_models)
 
 Step 2) In a terminal, write (REMEMBER to start roscore before this):
 
+
+
 ```
 rosrun vfh_recognizer_fs normals_vfh_db_estimator_server
-``` Step 3) Open a new terminal (Shift + Ctrl + n)
+```
+
+ Step 3) Open a new terminal (Shift + Ctrl + n)
 or a new tab (Shift + Ctrl + t) and write:
+
+
 
 ```
 rosrun vfh_recognizer_fs remove_duplicate_views_server
-``` Step 4) Open a new terminal or tab and write:
+```
+
+ Step 4) Open a new terminal or tab and write:
+
+
 
 ```
 roscd vfh_recognizer_fs
 python scripts/process_training_data.py /home/cvfh/ply_models 1
-``` The last parameter to the Python script (1) is
+```
+
+ The last parameter to the Python script (1) is
 the scale factor to transform the models to meters. If the PLY models
 are in mm, then use 0.001 and so on\...
 
@@ -151,9 +179,13 @@ __How to run it?__
 
 Assuming that you have the Kinect running, you need to:
 
+
+
 ```
 rosrun vfh_recognizer_fs_test scene_vfh_recognizer /home/cvfh/ply_models input_cloud:=/camera/rgb/points
-``` and you should see something like this:
+```
+
+ and you should see something like this:
 
 ![](attachment:cvfh_recognition.png)
 

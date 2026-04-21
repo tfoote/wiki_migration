@@ -16,9 +16,13 @@ These message types contain a header and, respectively, an array of
 <<MsgLink(sensor_msgs/PointCloud2)>>. The intended use for these
 message types is for multi-diode Lidars and similar sensors.
 
+
+
 ```wiki
 '''Note that a moving-object-finding node/nodelet should take input from a single sensor only!'''
 ```
+
+
 
 ### Finding Moving Objects
 
@@ -138,6 +142,8 @@ The node and nodelet used for finding objects in
 <<MsgLink(sensor_msgs/LaserScan)>> message streams have the same
 parameters and publish/subscribe to the same topics. The same is true
 for the other node and nodelet pairs.
+
+
 
 ```clearsilver
 name = laserscan_interpreter_node and LaserScanInterpreterNodelet
@@ -297,12 +303,20 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = laserscanarray_interpreter_node and LaserScanArrayInterpreterNodelet
 desc << EOM
 The node/nodelet which finds moving objects in a [[http://docs.ros.org/kinetic/api/find_moving_objects/html/msg/LaserScanArray.html|find_moving_objects/LaserScanArray]] message stream. 
 The same parameters as specified for the `laserscan_interpreter_node` and `Laser``Scan``Interpreter``Nodelet` above are valid here as well.
 ```
+
+
+
+
 
 ```clearsilver
 name = pointcloud2_interpreter_node and PointCloud2InterpreterNodelet
@@ -362,12 +376,20 @@ param {
 }
 ```
 
+
+
+
+
 ```clearsilver
 name = pointcloud2array_interpreter_node and PointCloud2ArrayInterpreterNodelet
 desc << EOM
 The node/nodelet which finds moving objects in a [[http://docs.ros.org/kinetic/api/find_moving_objects/html/msg/PointCloud2Array.html|find_moving_objects/PointCloud2Array]] message stream. 
 The same parameters as specified for the `pointcloud2_interpreter_node` and `Point``Cloud2``Interpreter``Nodelet` above are valid here as well.
 ```
+
+
+
+
 
 ```clearsilver
 name = moving_objects_confidence_enhancer_node
@@ -465,6 +487,6 @@ param {
 }
 ```
 
-## Bug Reports and Feature Requests
 
-<<GitHubIssues(andreasgustavsson/find_moving_objects)>>
+
+## Bug Reports and Feature Requests

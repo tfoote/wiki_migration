@@ -27,9 +27,13 @@ SSE2, use openmp etc..) are optional.
 
 Run
 
+
+
 ```
 roslaunch text_locator text_locator.launch
-``` The output of the node is advertised on
+```
+
+ The output of the node is advertised on
 text_locator_topic.
 
 ## Documentation

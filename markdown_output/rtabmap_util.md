@@ -15,18 +15,28 @@ the same maps than [rtabmap](rtabmap_slam#rtabmap). See all
 [rtabmap](rtabmap_slam#rtabmap) node. You can also use all `Grid`
 parameters from rtabmap:
 
+
+
 ```
 $ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
+
+
 For example, setting the voxel sixe of the resulting grid/point cloud to
-10 cm: ```
+10 cm: 
+
+```
 <launch>
 <node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
    <param name="Grid/CellSize" type="double" value="0.1"/>
 </node>
 </launch>
 ```
+
+
+
+
 
 ```clearsilver
 sub {
@@ -49,14 +59,20 @@ param {
 }
 ```
 
+
+
 ### map_optimizer
 
 This node is for **advanced usage only** as it is preferred to use graph
 optimization already inside [rtabmap](rtabmap_slam#rtabmap) node (which
 is the default). See related parameters in
-[rtabmap](rtabmap_slam#rtabmap): ```
+[rtabmap](rtabmap_slam#rtabmap): 
+
+```
 $rosrun rtabmap_slam rtabmap --params | grep Optimize
 ```
+
+
 
 This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 `"mapData"` and optimize the graph, then republishes the optimized
@@ -100,6 +116,8 @@ This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 ```
 -   This node should not be used if [rtabmap](rtabmap_slam#rtabmap) node
     is in localization mode.
+
+
 
 ```clearsilver
 sub {
@@ -181,7 +199,11 @@ param {
 }
 ```
 
+
+
 ## Nodelets
+
+
 
 ```clearsilver
 node {
@@ -213,6 +235,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -298,6 +324,10 @@ node {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node {
   name = rtabmap_util/point_cloud_xyz
@@ -374,6 +404,10 @@ node {
 }
 ```
 
+
+
+
+
 ```clearsilver
 node {
   name = rtabmap_util/disparity_to_depth
@@ -393,6 +427,10 @@ node {
   }
 }
 ```
+
+
+
+
 
 ```clearsilver
 node {
@@ -451,13 +489,9 @@ node {
 }
 ```
 
-```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
-```0
+
+
+
 
 ```
 <launch>
@@ -465,7 +499,11 @@ node {
    <param name="Grid/CellSize" type="double" value="0.1"/>
 </node>
 </launch>
-```1
+```
+
+0
+
+
 
 ```
 <launch>
@@ -473,7 +511,21 @@ node {
    <param name="Grid/CellSize" type="double" value="0.1"/>
 </node>
 </launch>
-```2
+```
+
+1
+
+
+
+```
+<launch>
+<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
+   <param name="Grid/CellSize" type="double" value="0.1"/>
+</node>
+</launch>
+```
+
+2
 
 ### rtabmap_util/obstacles_detection
 
@@ -497,13 +549,17 @@ filtered point cloud would be fed to `obstacles_detection`.
      ![obs0\|width="300"](attachment:obs0.png)      ![obs4\|width="300"](attachment:obs4.png)   
   -- --------------------------------------------- -- --------------------------------------------- --
 
+
+
 ```
 <launch>
 <node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
    <param name="Grid/CellSize" type="double" value="0.1"/>
 </node>
 </launch>
-```3
+```
+
+3
 
 ### rtabmap_util/lidar_deskewing
 
@@ -522,10 +578,14 @@ faster (transformed per columns instead per points). For
 class is used directly to project the scan while accounting for robot
 motion.
 
+
+
 ```
 <launch>
 <node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
    <param name="Grid/CellSize" type="double" value="0.1"/>
 </node>
 </launch>
-```4
+```
+
+4

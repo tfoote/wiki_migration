@@ -31,13 +31,21 @@ See the [examples page](http://orocos.org/kdl/examples)
 
 First install the external dependencies such as sip4, python, etc.
 
+
+
 ```
 $ rosdep install kdl
-``` Now build KDL
+```
+
+ Now build KDL
+
+
 
 ```
 $ rosmake kdl
-``` The "rosmake" command checks out code from
+```
+
+ The "rosmake" command checks out code from
 the KDL svn repository (see [kul-ros-pkg](kul-ros-pkg)).
 
 ## External Documentation

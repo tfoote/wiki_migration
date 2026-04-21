@@ -7,6 +7,8 @@ NTRIP server
 
 This node runs on ROS noetic and uses python3.
 
+
+
 ```clearsilver
 node.0 {
  name = ntrip_client
@@ -48,6 +50,8 @@ node.0 {
 }
 ```
 
+
+
 ## Quickstart Tutorials
 
 The github repo for this package is
@@ -57,6 +61,10 @@ instructions for installing and running this package.
 
 Clone the repo into your workspace src directory and follow the
 instructions in the "Build Instructions" section of the README.
+
+
 ```
 git clone https://github.com/LORD-MicroStrain/ntrip_client
 ```
+
+

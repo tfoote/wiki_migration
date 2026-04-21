@@ -8,6 +8,8 @@ a sensor_msgs/JointState publisher.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = back_joint_node
@@ -105,11 +107,15 @@ node.2 {
 }
 ```
 
+
+
 ## Installation
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
 cd /path/to/your/catkin/workspace
@@ -117,12 +123,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-carl-bot
 ```
+
+
 
 ### Startup
 
@@ -134,11 +146,17 @@ metapackage. It also launches the 'back_joints_node' and
 velocity commands. To launch these nodes, the following command can be
 used:
 
-. ```
+. 
+
+```
 roslaunch carl_dynamixel carl_servos.launch
 ```
 
+
+
 Once this launches the following topics becomes available:
+
+
 
 ```clearsilver
 node.0 {
@@ -175,6 +193,8 @@ sub {
 }
 ```
 
+
+
 ## Expansion
 
 This package can support up to 5 servos per USB device.
@@ -199,6 +219,8 @@ specific USBDynamixel it is plugged into. To make sure the servo can be
 moved a YAML file needs to be made. Copy and paste the following code
 into carl_dynamixel/config/example.yaml
 
+
+
 ```
 example_controller:
     controller:
@@ -214,10 +236,14 @@ example_controller:
         max: 1023
 ```
 
+
+
 The id for the servo can be found from the 'motor_states/<port>'
 topic
 
-Now add to the launch file: ```
+Now add to the launch file: 
+
+```
 <!-- Start example joint controller -->
     <rosparam file="$(find carl_dynamixel)/config/example.yaml" command="load"/>
     <node name="example_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py"
@@ -226,6 +252,8 @@ Now add to the launch file: ```
                 example_controller"
           output="screen"/>
 ```
+
+
 
 Now launch the file and the new servo should have specific joint
 information published on the 'example_controller/state' topic and
@@ -238,16 +266,22 @@ Joint state publishers are already set up, however, to add a new servo
 the following lines need to be added to either back_servos.yaml or
 front_servos.yaml depending on which USB port they are plugged into.
 
+
+
 ```
 "2": 
     id: 2
     link_name: joint_2
 ```
 
+
+
 Also the variable num_servos should be changed to match the number of
 servos.
 
 The following is an example of the modified back_servos.yaml file.
+
+
 
 ```
 back_servos: 
@@ -262,6 +296,8 @@ back_servos:
     id: 12
     link_name: joint_3
 ```
+
+
 
 ## Support
 

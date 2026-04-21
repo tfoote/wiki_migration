@@ -37,6 +37,8 @@ service.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = rail_segmentation
@@ -162,16 +164,22 @@ node.0 {
   }
 ```
 
+
+
 ## Installation
 
 To install the `rail_segmentation` package, you can install from
-source with the following commands: . ```shell
+source with the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/rail_segmentation.git
 cd ..
 catkin_make
 catkin_make install
 ```
+
+
 
 ## Defining Segmentation Zones
 
@@ -259,6 +267,10 @@ message, with the following data calculated and filled in:
 ## Startup
 
 The `rail_segmentation` package can be launched by running the
-rail_segmentation node: . ```
+rail_segmentation node: . 
+
+```
 rosrun rail_segmentation rail_segmentation
 ```
+
+

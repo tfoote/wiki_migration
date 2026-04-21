@@ -24,27 +24,47 @@ For example, given two filters `FooFilter` and `BarFilter` where
 `FooFilter`'s output is compatible with `BarFilter`'s input,
 connecting foo to bar could be (in C++):
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar(foo);
-``` or:
+```
+
+ or:
+
+
 
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-``` in Python:
+```
+
+ in Python:
+
+
 
 ```python
 bar(foo)
-``` ```python
+```
+
+ 
+
+```python
 bar.connectInput(foo)
-``` To then connect bar's
+```
+
+ To then connect bar's
 output to your own callback function:
+
+
 
 ```cplusplus
 bar.registerCallback(myCallback);
-``` The signature of `myCallback` is dependent on
+```
+
+ The signature of `myCallback` is dependent on
 the definition of `BarFilter`.
 
 ### registerCallback()
@@ -84,21 +104,33 @@ as its input.
 
 ### Example (C++)
 
+
+
 ```cplusplus
 message_filters::Subscriber<std_msgs::UInt32> sub(nh, "my_topic", 1);
 sub.registerCallback(myCallback);
-``` is the equivalent of:
+```
+
+ is the equivalent of:
+
+
 
 ```cplusplus
 ros::Subscriber sub = nh.subscribe("my_topic", 1, myCallback);
 ```
 
+
+
 ### Example (Python)
+
+
 
 ```python
 sub = message_filters.Subscriber("pose_topic", robot_msgs.msg.Pose)
 sub.registerCallback(myCallback)
 ```
+
+
 
 ## Time Synchronizer
 
@@ -136,6 +168,8 @@ Suppose you are writing a ROS node that needs to process data from two
 time synchronized topics. Your program will probably look something like
 this:
 
+
+
 ```cplusplus
 #include <message_filters/subscriber.h>
 #include <message_filters/time_synchronizer.h>
@@ -165,13 +199,17 @@ int main(int argc, char** argv)
 
   return 0;
 }
-``` (Note: In this particular case you could use
+```
+
+ (Note: In this particular case you could use
 the
 [CameraSubscriber](http://www.ros.org/doc/api/image_transport/html/classimage__transport_1_1CameraSubscriber.html)
 class from [image_transport](image_transport), which essentially wraps
 the filtering code above.)
 
 ### Example (Python)
+
+
 
 ```python
 import message_filters
@@ -187,6 +225,8 @@ ts = message_filters.TimeSynchronizer([image_sub, info_sub], 10)
 ts.registerCallback(callback)
 rospy.spin()
 ```
+
+
 
 ## Time Sequencer
 
@@ -222,11 +262,15 @@ determines how often the sequencer will check its queue for messages
 that are ready to be pass through. The last argument is the number of
 messages to queue up before beginning to throw some away.
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```0
+```
+
+0
 
 ## Cache
 
@@ -241,11 +285,15 @@ ring buffer, from which time intervals of the cache can then be
 retrieved by the client. The timestamp of a message is determined from
 its `header` field.
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```1 The Cache immediately passes messages through
+```
+
+1 The Cache immediately passes messages through
 to its output connections.
 
 ### Connections
@@ -262,26 +310,38 @@ to its output connections.
 
 In C++:
 
-```cplusplus
-FooFilter foo;
-BarFilter bar;
-bar.connectInput(foo);
-```2 In Python:
+
 
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```3 In this example, the `Cache` stores the last
+```
+
+2 In Python:
+
+
+
+```cplusplus
+FooFilter foo;
+BarFilter bar;
+bar.connectInput(foo);
+```
+
+3 In this example, the `Cache` stores the last
 100 messages received on `my_topic`, and `myCallback` is called on
 the addition of every new message. The user can then make calls like
 `cache.getInterval(start, end)` to extract part of the cache.
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```4 }}}}
+```
+
+4 }}}}
 
 ## Policy-Based Synchronizer \[ROS 1.1+\]
 
@@ -327,11 +387,15 @@ channels with the same exact timestamp. The timestamp is read from the
 
 **Example (C++)**
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```5
+```
+
+5
 
 ### ApproximateTime Policy
 
@@ -339,24 +403,36 @@ The `message_filters::sync_policies::ApproximateTime` policy uses
 [an adaptive algorithm](message_filters/ApproximateTime) to match
 messages based on their timestamp.
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```6 **C++ Header:**
+```
+
+6 **C++ Header:**
 `message_filters/sync_policies/approximate_time.h`
 
 **Example (C++)**
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```7 ```cplusplus
+```
+
+7 
+
+```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```8 }}}}
+```
+
+8 }}}}
 
 ## Chain \[ROS 1.1+\]
 
@@ -385,19 +461,31 @@ filters to apply at runtime rather than compile-time.
 
 **Simple Example**
 
+
+
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```9 **Bare Pointers**
+```
+
+9 **Bare Pointers**
 
 It is possible to pass bare pointers in. These will **not** be
 automatically deleted when Chain is destructed.
 
-```python
-bar(foo)
-```0 **Retrieving a Filter**
+
 
 ```python
 bar(foo)
-```1
+```
+
+0 **Retrieving a Filter**
+
+
+
+```python
+bar(foo)
+```
+
+1

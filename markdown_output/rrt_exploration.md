@@ -40,31 +40,51 @@ Recommended is either indigo or kinetic).
 3- Installed the "gmapping" ROS package, you can do that by typing the
 following command in the terminal:
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-gmapping
-``` 4- Install ROS navigation stack. You can do
+```
+
+ 4- Install ROS navigation stack. You can do
 that with the following command:
+
+
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-navigation
-``` 5- You should have Python 2.7. (it was not
+```
+
+ 5- You should have Python 2.7. (it was not
 tested on Python 3).
 
 6-You should have/install the following python modules:
 
 -OpenCV (cv2)
 
+
+
 ```
 sudo apt-get install python-opencv
-``` -Numpy
+```
+
+ -Numpy
+
+
 
 ```
 sudo apt-get install python-numpy
-``` -Sklearn
+```
+
+ -Sklearn
+
+
 
 ```
 sudo apt-get install python-scikits-learn
 ```
+
+
 
 ## Hardware Requirements
 
@@ -175,6 +195,8 @@ structure:
 
 ![](https://github.com/hasauino/storage/blob/master/pictures/fullSchematic.png?raw=true)
 
+
+
 ```clearsilver
 name = global_rrt_frontier_detector
 desc = The global_rrt_frontier_detector node takes an occupancy grid and finds frontier points (which are exploration targets) in it. It publishes the detected points so the filter node can process. In multi-robot configuration, it is intended to have only a single instance of this node running. <<BR>> Running additional instances of the global frontier detector can enhance the speed of frontier points detection, if needed.
@@ -207,7 +229,11 @@ param {
   1.desc = This parameter controls the growth rate of the RRT that is used in the detection of frontier points, the unit is in meters. This parameter should be set according to the map size, a very large value will cause the tree to grow faster and hence detect frontier points faster, but a large growth rate also implies that the tree will be missing small corners in the map.
   1.default = 0.5
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = local_rrt_frontier_detector
 desc = This node is similar to the global_rrt_frontier_detector. However, it works differently, as the tree here keeps resetting every time a frontier point is detected. This node is intended to be run along side the global_rrt_frontier_detector node, it is responsible for fast detection of frontier points that lie in the close vicinity of the robot.<<BR>> In multi-robot configuration, each robot runs an instance of the local_rrt_frontier_detector. So for a team of 3 robots, there will be 4 nodes for detecting frontier points; 3 local detectors and 1 global detector. Running additional instances of the local frontier detector can enhance the speed of frontier points detection, if needed. <<BR>> All detectors will be publishing detected frontier points on the same topic ("/detected_points").
 sub {
@@ -245,6 +271,10 @@ param {
   1.default = 0.5
 }
 ```
+
+
+
+
 ```clearsilver
 name = frontier_opencv_detector
 desc = This node is another frontier detector, but it is not based on RRT. This node uses OpenCV tools to detect frontier points. It is intended to be run alone, and in multi-robot configuration only one instance should be run (running additional instances of this node does not make any difference).<<BR>>Originally this node was implemented for comparison against the RRT-based frontier detectors. Running this node along side the RRT detectors (local and global) may enhance the speed of frotiner points detection.<<BR>>Note: You can run any type and any number of detectors, all the detectors will be publishing on the same topic which the filter node (will be explained in the following section) is subscribing to. on the other hand, the filter will pass the filtered forntier points to the assigner in order to command the robots to explore these points.
@@ -270,7 +300,11 @@ param {
   0.default = "/robot_1/map"
 
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name = filter
 desc = The filter nodes receives the detected frontier points from all the detectors, filters the points, and passes them to the assigner node to command the robots. Filtration includes the delection of old and invalid points, and it also dicards redundant points.
 sub {
@@ -344,6 +378,10 @@ param {
 
 }
 ```
+
+
+
+
 ```clearsilver
 name = Assigner
 desc = This node recieve target exploration goals, which are the filtered frontier points published by the filter node, and commands the robots accordingly. The assigner node commands the robots through the move_base_node. This is why you have bring up the navigation stack on your robots.
@@ -429,6 +467,8 @@ param {
 }
 ```
 
+
+
 ## Tutorials
 
 Tutorials on how to use the package are listed
@@ -453,7 +493,11 @@ University of Sharjah. My thesis advisor is Dr.
 This work has been published on IROS. If you are using this package,
 please cite our [paper](http://ieeexplore.ieee.org/document/8202319).
 
+
+
 ```
 sudo apt-get install ros-$ROS_DISTRO-navigation
-```0 Thesis title:
+```
+
+0 Thesis title:
 "[Multi-Robot Map Exploration Based on Multiple Rapidly-Exploring Randomized Trees](https://dspace.aus.edu:8443/xmlui/handle/11073/8857)"

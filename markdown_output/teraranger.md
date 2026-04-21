@@ -108,6 +108,8 @@ The ROS API of this driver should be considered stable.
 
 ## Nodes
 
+
+
 ```clearsilver
 desc = This node is the official driver for TeraRanger '''Evo 60m''', TeraRanger '''Evo 600Hz''' and TeraRanger '''Evo 3m'''.
 node.0 {
@@ -297,8 +299,14 @@ param {
 }
 ```
 
+
+
 ## Running
 
-To launch a node simply run: ```
+To launch a node simply run: 
+
+```
 rosrun teraranger name_of_the_sensor
 ```
+
+

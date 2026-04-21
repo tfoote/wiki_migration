@@ -96,6 +96,8 @@ based" initial value may be sufficient.
 
 ## Node Information
 
+
+
 ```clearsilver
 node.0{
   name = pose_sensor
@@ -194,3 +196,5 @@ node.1{
 }
 }
 ```
+
+

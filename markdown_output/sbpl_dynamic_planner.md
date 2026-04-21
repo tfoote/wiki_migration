@@ -18,9 +18,13 @@ The search is performed in the (x,y,theta,interval) state space instead
 of (x,y,theta,time) space, providing a large speed-up.
 
 More detail about the planner can be found in this paper.
+
+
 ```
 Mike Phillips and Maxim Likhachev, "SIPP: Safe Interval Path Planning for Dynamic Environments, "Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), 2011.
 ```
+
+
 
 ### How to Use
 
@@ -35,6 +39,8 @@ The motion primitive file format is the same as for [sbpl](sbpl) except
 that the time resolution needs to be added on the second line of the
 file.
 
+
+
 ```
 resolution_m: 0.050000
 timeResolution: 0.001
@@ -42,6 +48,8 @@ numberofangles: 16
 totalnumberofprimitives: 112
 ...
 ```
+
+
 
 Some examples of this can be found in the matlab/mprim folder of the
 package.

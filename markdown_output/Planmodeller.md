@@ -1,7 +1,11 @@
 The Planmodeller is used to design ALICA plans. Binaries are provided.
-It can simply be started by ```
+It can simply be started by 
+
+```
 rosrun Planmodeller start.sh
 ```
+
+
 
 ## Setup
 

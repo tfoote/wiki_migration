@@ -13,6 +13,8 @@ system and ROS wrapper.
 
 This package provides one node - epos_driver_node.
 
+
+
 ```clearsilver
 name = epos_driver_node
 desc = communicates with EPOS driver
@@ -33,3 +35,5 @@ srv {
   1.desc = request to move motor between two given positions
 }
 ```
+
+

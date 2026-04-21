@@ -16,7 +16,9 @@ on other platforms, please
 ## ROS API
 
 The [schunk_sdh](schunk_sdh) package provides a configurable node for
-operating a schunk dexterous hand. ```clearsilver
+operating a schunk dexterous hand. 
+
+```clearsilver
  name = sdh_only
  desc = The `schunk_sdh` node takes in <<MsgLink(trajectory_msgs/JointTrajectory)>> messages and send this directly to the hardware. The joint states can be received by [[Topics|topics]] and the sdh can be initialized, stopped or recovered via [[Services|services]].
 
@@ -98,6 +100,10 @@ req_tf{
 prov_tf{
 }
 ```
+
+
+
+
 ```clearsilver
  name = dsa_only
  desc = The `dsa_only` node publishes data from the tactile sensors in form of <<MsgLink(schunk_sdh/TactileSensor)>> messages.
@@ -123,32 +129,50 @@ param{
 }
 ```
 
+
+
 ## Usage/Examples
 
 This package is not intended to be used directly, but with the
 corresponding launch and yaml files from e.g.
 [schunk_bringup](schunk_bringup) in the [schunk_robots](schunk_robots)
-stack. For using only the sdh use ```
+stack. For using only the sdh use 
+
+```
 roslaunch schunk_bringup sdh_solo.launch
-``` For including
-the sdh in your overall launch file use ```
+```
+
+ For including
+the sdh in your overall launch file use 
+
+```
 <include file="$(find schunk_bringup)/components/sdh.launch" />
-``` All
+```
+
+ All
 hardware configuration is done in the
 [schunk_hardware_config](schunk_hardware_config) package. A sample
 parameter file for the sdh in
 "schunk_hardware_config/sdh/config/sdh.yaml" could look like this
+
+
 ```
 sdhdevicetype: PCAN
 sdhdevicestring: /dev/pcan0
 baudrate: 1000000
 joint_names: ['sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
 OperationMode: position
-``` A sample parameter file for the dsa tactile
+```
+
+ A sample parameter file for the dsa tactile
 sensors in "schunk_hardware_config/sdh/config/dsa.yaml" could look
-like this ```
+like this 
+
+```
 dsadevicestring: /dev/ttyS0
 polling: false
 use_rle: true
 frequency: 30
 ```
+
+

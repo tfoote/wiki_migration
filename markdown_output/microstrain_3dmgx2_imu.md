@@ -37,6 +37,8 @@ exists, it has not been reviewed and should be considered unstable.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=imu_node
@@ -96,6 +98,8 @@ param {
 }
 }
 ```
+
+
 
 ## Communication Protocol Manual
 

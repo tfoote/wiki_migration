@@ -10,6 +10,8 @@ The ROS API of this node should be considered stable.
 
 ## Nodes
 
+
+
 ```clearsilver
 
 node.0 {
@@ -57,6 +59,8 @@ node.0 {
 }
 ```
 
+
+
 ## Using this Package
 
 For an example of using **joy_node** to control a teleoperation node
@@ -69,9 +73,13 @@ on each joystick may be different, it will be necessary to remap buttons
 on one joystick so they can match. See the
 [Joystick Remapper](joystick_remapper) package for details.
 
+
+
 ```wiki
 If you need to use the trigger axes (LT, RT), consider setting ''~default_trig_val'' to ''true''. If this parameter is not set, the triggers report a value of ''0.0'' until they are touched, which is wrong (because the value should be ''1.0'').
 ```
+
+
 
 ### Force feedback
 
@@ -85,9 +93,13 @@ force feedback using the `joy/set_feedback` topic. Before trying it
 out, make sure the jumping gamepad on your table will not destroy
 anything. An example usage can look like this:
 
+
+
 ```
 rostopic pub -1 /joy/set_feedback sensor_msgs/JoyFeedbackArray "array: [ {type: 1, id: 0, intensity: 1.0} ]"
 ```
+
+
 
 The `intensity` field specifies the strength of the vibrations. 0 is
 no vibration, 1 is maximum.
@@ -97,17 +109,27 @@ no vibration, 1 is maximum.
 If you do not know the correct value of the `dev_ff` parameter, here
 are a few tips to figure it out.
 
+
+
 ```wiki
 The name of the file you pass to `~dev_ff` parameter can change between reconnects of the gamepad or reboots of your computer. To get a reliable experience, a udev rule giving an explicit name to this device seems like to best solution. Treat the tips in this section just as something you want to use in the initial development phase when you are testing and developing a feature.
 ```
 
+
+
 One way is to look into folder `/dev/input/by-id`.
+
+
 
 ```
 ls -la /dev/input/by-id/
 ```
 
+
+
 The output can look like this:
+
+
 
 ```
 lrwxrwxrwx 1 root root  10 Aug 12 19:08 usb-Chicony_Electronics_Co._Ltd._Integrated_Camera_0001-event-if00 -> ../event14
@@ -115,6 +137,8 @@ lrwxrwxrwx 1 root root  10 Aug 12 19:08 usb-Chicony_Electronics_Co._Ltd._Integra
 lrwxrwxrwx 1 root root  10 Aug 19 16:02 usb-Microsoft_Controller_3039373132373036323336303438-event-joystick -> ../event18
 lrwxrwxrwx 1 root root   6 Aug 19 16:02 usb-Microsoft_Controller_3039373132373036323336303438-joystick -> ../js0
 ```
+
+
 
 The listing shows a few symbolic links, one of them pointing to your
 `js0` device. The symlink will end with `-joystick`. Look for a
@@ -131,12 +155,18 @@ Xbox ONE gamepad connected via the wireless dongle and `xow` driver.
 In this case, the easiest way to find the force feedback event device is
 to disconnect the gamepad (or dongle) and run
 
+
+
 ```
 udevadm monitor
 ```
 
+
+
 Here is an example output of this command after plugging the gamepad
 back:
+
+
 
 ```
 KERNEL[181478.230525] add      /devices/pci0000:00/0000:00:08.1/0000:06:00.4/usb6/6-2 (usb)
@@ -148,6 +178,8 @@ UDEV  [181481.502263] add      /devices/virtual/input/input24 (input)
 UDEV  [181481.512791] add      /devices/virtual/input/input24/js0 (input)
 UDEV  [181481.551194] add      /devices/virtual/input/input24/event18 (input)
 ```
+
+
 
 You can see that I have connected a gamepad that appeared as
 `/dev/input/js0` with the force feedback device being

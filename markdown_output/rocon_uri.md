@@ -11,9 +11,13 @@ applications together to provide useful robotic solutions.
 
 A typical rocon uri string is of the form:
 
+
+
 ```
 rocon://concert_name/hardware_platform/name/application_framework/operating_system#rocon_app
 ```
+
+
 
 You will see these flung around a rocon concert frequently at the ros
 api level. Examples:
@@ -26,6 +30,8 @@ api level. Examples:
 There is a command line tool for introspecting and testing rocon uri
 strings:
 
+
+
 ```
 Utility for introspecting on rocon uri strings.
 
@@ -34,6 +40,8 @@ Commands:
         rocon_uri fields        print a full list of permitted fields in a rocon uri string.
         rocon_uri rules         print a full list of the ebnf rules for a rocon uri string.
 ```
+
+
 
 ## Python Module
 

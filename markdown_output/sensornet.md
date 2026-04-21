@@ -8,6 +8,8 @@ computer running ROS and the !SensorNet.
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=sensornet_node
@@ -55,6 +57,8 @@ param {
 }
 }
 ```
+
+
 
 ## SensorNet Node Source Code and Schematics
 

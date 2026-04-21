@@ -88,6 +88,8 @@ window size can be altered to smoothen the orientation calculation.
 
 ## ROS API
 
+
+
 ```clearsilver
 pub {
   0.name  = ~<name>/plan
@@ -153,3 +155,5 @@ param {
   13.desc = Outlines the global costmap with lethal obstacles. For the usage of a non static (rolling window) global costmap this needs to be set to false
 }
 ```
+
+

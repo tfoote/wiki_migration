@@ -4,6 +4,8 @@ This driver should works with every pan tilt camera
 
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=corobot_pantilt
@@ -27,21 +29,31 @@ param{
 }
 ```
 
+
+
 ## Troubleshooting
 
 Here is a set of instructions in case you cannot control your pan tilt
 camera:
 
-1\. Install v4l-conf and unvcdynctrl ```
+1\. Install v4l-conf and unvcdynctrl 
+
+```
 {
 sudo apt-get install v4l-conf unvcdynctrl
-```} 2.
-Execute: ```
+```
+
+} 2.
+Execute: 
+
+```
 {
 v4l-info /dev/video0
 uvcdynctrl –cv
 sudo chmod 777 /dev/video0
-```}
+```
+
+}
 
 3\. Disconnect the camera
 

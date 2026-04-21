@@ -14,9 +14,13 @@ directly clone the necessary ros packages from github.
 
 # Usage
 
-To start the robot bringup, simply run: ```
+To start the robot bringup, simply run: 
+
+```
 $ roslaunch nao_bringup nao_full.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip>
 ```
+
+
 
 The first parameter gives the IP of your robot. The second paramter, the
 roscore IP, is the IP of the computer where the roscore is running. This
@@ -43,9 +47,13 @@ publisher:
 Alternatively you can make use of the python SDK, which has to be
 installed and correctly setup in your PYTHONPATH environment variable.
 For more information on that, please refer to [nao](nao).
+
+
 ```
 $ roslaunch nao_bringup nao_full_py.launch nao_ip:=<robot_ip> roscore_ip:=<roscore_ip>
 ```
+
+
 
 Once this is successfully launched, you can simply open RVIZ. The
 bringup package provides already a rviz-config file. Simply open this

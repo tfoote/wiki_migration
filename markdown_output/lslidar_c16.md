@@ -137,15 +137,23 @@ Before running lslidar-c16 driver, make sure you set up IP address
 correctly. Using following command to check if device is communicating.
 Replace `eth0` with your correct computer network interface
 
+
+
 ```
 sudo tcpdump -i eth0
 ```
 
+
+
 Running following commmand to launch lslidar c16 driver
+
+
 
 ```
 roslaunch lslidar_c16_decoder lslidar_c16.launch --screen
 ```
+
+
 
 Note that this launch file launches both the driver and the decoder,
 which is the only launch file needed to be used.

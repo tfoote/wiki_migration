@@ -1,5 +1,7 @@
 ## ROS API
 
+
+
 ```clearsilver
 node.0 {
 name=virtualplume_node
@@ -187,12 +189,18 @@ desc=Parameters for the case of type=pslog.
 }
 ```
 
+
+
 ## PSLog
 
 !PlumeSim allows you to run simulated plumes in ROS from a !VirtualPlume
 log file called PSLog. These are merely .txt files with the following
-structure: ```
+structure: 
+
+```
 Coming soon...
 ```
+
+
 
 ## Tutorials

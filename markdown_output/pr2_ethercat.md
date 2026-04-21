@@ -2,6 +2,8 @@
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name=pr2_ethercat
@@ -15,6 +17,8 @@ node.0 {
     1.desc= Halt the motors.  To reset them, call `reset_motors`.  Most often called from [[pr2_dashboard]].
   }
 ```
+
+
 
 #### Permissions
 
@@ -32,6 +36,8 @@ Running `pr2_ethercat` requires the following "capabilities":
 
 #### Usage
 
+
+
 ```
 Usage: ./pr2_ethercat [options]
   Available options
@@ -42,13 +48,19 @@ Usage: ./pr2_ethercat [options]
     -h, --help                  Print this message and exit
 ```
 
+
+
 #### Example
 
 `pr2_ethercat` is usually executed from a launch file, such as
 [pr2_bringup](pr2_bringup)/pr2.launch. Common configuration:
+
+
 ```
 <node name="realtime_loop" machine="c1" launch-prefix="pr2-grant" pkg="pr2_ethercat" type="pr2_ethercat" args="-i ecat0 -x robot_description"/>
 ```
+
+
 
 ### pr2-grant
 
@@ -61,6 +73,10 @@ Usage: ./pr2_ethercat [options]
 `reset_motors.py` is a simple command-line script that calls the
 `pr2_ethercat/reset_motors` service.
 
+
+
 ```
 $ rosrun pr2_ethercat reset_motors.py
 ```
+
+

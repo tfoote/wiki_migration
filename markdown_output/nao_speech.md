@@ -6,6 +6,8 @@ module via ROS. These packages have been tested with
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = nao_speech
@@ -48,10 +50,14 @@ node.0 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `nao_rail` stack, simply run the following commands in
 your shell:
+
+
 
 ```shell
 cd /path/to/your/ros/stacks
@@ -60,6 +66,8 @@ roscd nao_rail
 rosdep install nao_rail
 rosmake nao_rail
 ```
+
+
 
 ### Startup
 
@@ -72,9 +80,13 @@ NAO's speech module. These are set to the default values in the given
 launch file. This file launches an instance of the `nao_speech` node.
 To launch this node, the following commands can be used:
 
+
+
 ```
 roslaunch nao_speech nao_speech.launch
 ```
+
+
 
 ## Support
 

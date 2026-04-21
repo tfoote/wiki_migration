@@ -19,9 +19,13 @@ interactive manipulation, the segway rmp control nodes, camera servo
 control, teleoperation for the previous packages, launch files for each
 camera, the robot model, and basic safety nodes. This is run as follows:
 
-. ```
+. 
+
+```
 roslaunch carl_bringup carl_bringup.launch
 ```
+
+
 
 Individual modules of the CARL robot can also be launched using the
 `arm.launch`, `base.launch`, and `sensors.launch` files for the
@@ -29,16 +33,24 @@ JACO arm, Segway RMP base, and ASUS and Creative depth sensors,
 respectively. These are run with the following command (replace <module
 name> with the desired module):
 
-. ```
+. 
+
+```
 roslaunch carl_bringup <module name>.launch
 ```
+
+
 
 The `robot_model.launch` file will separately launch nodes required
 for visualization of the robot, and can be run individually to provide
 visualization for individual modules if the `carl_bringup.launch` file
-is not used. This is run as follows: . ```
+is not used. This is run as follows: . 
+
+```
 roslaunch carl_bringup robot_model.launch
 ```
+
+
 
 ## Troubleshooting Sensors
 
@@ -46,27 +58,39 @@ roslaunch carl_bringup robot_model.launch
 
 If problems with the asus occur, try manually installing the drivers:
 
+
+
 ```
 git clone https://github.com/OpenNI/OpenNI.git
 cd OpenNI/Platform/Linux/CreateRedist
 ./RedistMaker
 cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
 sudo ./install.sh
-``` If problems occur regarding failure to stat usb
+```
+
+ If problems occur regarding failure to stat usb
 device, disable xHCI and EHCI Hand-off in BIOS.
 
 ### Hokoyu
 
 If there are issues with the hokoyo, try setting the permissions with:
 
+
+
 ```
 sudo chmod a+rw /dev/ttyACM0
-``` Alternatively, add yourself to the group which
+```
+
+ Alternatively, add yourself to the group which
 has rw access by default, then re-login:
+
+
 
 ```
 sudo adduser $USER dialout
 ```
+
+
 
 ### Phidgets IMU
 
@@ -75,9 +99,13 @@ correctly set. To use the Phidgets IMU as a user other than root, you
 need to create a udev rule. Create a file called `99-phidgets.rules`,
 with the following line:
 
+
+
 ```
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="06c2", ATTRS{idProduct}=="00[3-a][0-f]", MODE="666"
 ```
+
+
 
 Copy this file into the `/etc/udev/rules.d` directory. You may need to
 reboot your computer for this to take effect.

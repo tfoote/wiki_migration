@@ -21,6 +21,8 @@ optional header string, you can pass the pose. If the input type is a
 tuple, you can pass either the complete tuple as one argument or split
 it into two arguments.
 
+
+
 ```python
 import roslib; roslib.load_manifest("hrl_geom")
 from hrl_geom.pose_converter import PoseConv
@@ -66,12 +68,18 @@ print new_pos_euler
 #([0.10000000000000001, 0.20000000000000001, 0.29999999999999999], (0.30000000000000004, -0.0, 0.0))
 ```
 
+
+
 ## Unit Testing
 
 You can also run the main file to see some unit tests converting
 everything to everything else:
 
+
+
 ```
 roscore # if not running already
 rosrun hrl_geom pose_converter.py
 ```
+
+

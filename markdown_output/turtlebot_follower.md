@@ -12,9 +12,13 @@ running any other ros programs.
 To start the follower, open an SSH terminal on the !TurtleBot laptop,
 and run the following command:
 
+
+
 ```
 roslaunch turtlebot_follower follower.launch
 ```
+
+
 
 The follower should now be running. To initiate following, walk in front
 of the !TurtleBot. Then, slowly walk away from the !TurtleBot. The robot

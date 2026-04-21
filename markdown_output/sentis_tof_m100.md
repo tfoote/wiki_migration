@@ -1,6 +1,10 @@
+
+
 ```
 sentis_tof_m100_ros_pkg
 ```
+
+
 
 ------------------------------------------------------------------------
 
@@ -73,15 +77,21 @@ Please read the API instructions to get help for installing them.
 
 Make sure you have the following ROS dependencies already installed:
 
+
+
 ```
 apt-get install ros-hydro-pcl-ros ros-hydro-pcl-conversions ros-hydro-perception-pcl
 ```
+
+
 
 ## Install the package
 
 Clone from repository:
 <https://github.com/voxel-dot-at/sentis_tof_m100_pkg.git> to the src/
 folder in your catkin workspace. Now compile it with:
+
+
 
 ```
 cd catkin_ws
@@ -91,6 +101,8 @@ git clone https://github.com/voxel-dot-at/sentis_tof_m100_pkg.git
 cd ..
 catkin_make
 ```
+
+
 
 # Usage
 
@@ -115,9 +127,13 @@ to show the depth information readed by the ToF camera.
 
 In order to execute it you have just to type the following:
 
+
+
 ```
 roslaunch sentis_tof_m100 start.launch
 ```
+
+
 
 ### Write you own configuration to the parameter server
 
@@ -139,21 +155,31 @@ following steps.
 
 ### Start the ROS core
 
+
+
 ```
 cd catkin_ws
 source devel/setup.bash
 roscore &
 ```
 
+
+
 ### Start capturing
+
+
 
 ```
 rosrun sentis_tof_m100 sentis_tof_m100_node #[options]
 ```
 
+
+
 -   You can change the camera parameters through command option when
     initializing the node.
 -   Use \--help parameter to display parameter initialization usage.
+
+
 
 ```
 Using help for sentis_tof_m100_ros_pkg
@@ -247,11 +273,17 @@ Using help for sentis_tof_m100_ros_pkg
 rosrun sentis_tof_m100 sentis_tof_m100_node -tcp_ip 192.168.0.10 -tcp_port 10001 -it 1500 -mf 20000 -fr 20
 ```
 
+
+
 ### Visualization in rviz
+
+
 
 ```
 rosrun rviz rviz
-``` After the rviz window comes up, set the
+```
+
+ After the rviz window comes up, set the
 following options:
 
 Add a Pointcloud2 topic to visualize the depth clouds. Two different
@@ -276,9 +308,13 @@ To use the filters and change camera parameters at runtime, use
 rqt_reconfigure from ROS. To use it just run (after launching
 sentis_tof_m100_ros_pkg):
 
+
+
 ```
 rosrun rqt_reconfigure rqt_reconfigure
 ```
+
+
 
 -   Select /sentis_tof_m100 to view the available options for
     modifications.

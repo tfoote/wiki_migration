@@ -25,6 +25,8 @@ specified on initialization. It adheres to the
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -50,6 +52,8 @@ param {
   4.desc = The name of the planner to reconfigure parameters on. Specifically the `max_trans_vel` and `max_rot_vel` parameters will be reconfigured within this namespace.
 }
 ```
+
+
 
 ### C++ API
 

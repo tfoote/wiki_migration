@@ -10,10 +10,14 @@ received and written to the parameter server on the other ROS master.
 By default, all parameters will be synchronized. The `blacklist`
 excludes parameters based on their name. The `whitelist` parameters
 are exempt from the `blacklist`. These can both be regular
-expressions. For example: ```
+expressions. For example: 
+
+```
 blacklist = ["/*"]
 whitelist = [/my_parameter]
-``` Would only
+```
+
+ Would only
 synchronize `my_parameter`.
 
 The parameter `use_wall_time` is designed for spawning robots in
@@ -27,6 +31,8 @@ Examples can be found in the
 [launch folder](https://github.com/NicksSimulationsROS/sync_params/blob/ros-kinetic/launch/example1.launch).
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -70,3 +76,5 @@ node.0{
   }
 }
 ```
+
+

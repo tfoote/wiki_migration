@@ -33,6 +33,8 @@ Proper camera calibration strongly affects overall system accuracy.
 Aruco mapping expects calibration file in Videre INI format, see the
 example of expected calibration file below:
 
+
+
 ```
 # Prosilica camera intrinsics
 
@@ -63,7 +65,9 @@ projection
 4827.93789 0.00000 1223.50000 0.00000
 0.00000 4835.62362 1024.50000 0.00000
 0.00000 0.00000 1.00000 0.00000
-``` In order to to calibrate your camera and get
+```
+
+ In order to to calibrate your camera and get
 results in INI format, we stongly suggest
 [camera_calibrator](http://wiki.ros.org/camera_calibration) package.
 
@@ -71,6 +75,8 @@ results in INI format, we stongly suggest
 
 Here is an example of launch file to run **Rviz**, **usb_cam** driver
 and **aruco_mapping**:
+
+
 
 ```
 <launch>
@@ -99,15 +105,21 @@ and **aruco_mapping**:
     <param name="roi_allowed" type="bool" value="false" />
   </node>
 </launch>
-``` In case you use other camera driver, remap
+```
+
+ In case you use other camera driver, remap
 **image_raw** to your topic name. Do not forget to adopt
 **calibration_file**, **marker_size** and other params to your setup. If
 everything is set and ready, launch the aruco_mapping by following
 command:
 
+
+
 ```
 roslaunch aruco_mapping aruco_mapping.launch
 ```
+
+
 
 ### Additional image filter
 
@@ -120,6 +132,8 @@ into your processing pipeline in order to improve the raw image.
 [Youtube](https://www.youtube.com/watch?v=fgW7b1jf4R8)
 
 ## ROS API
+
+
 
 ```clearsilver
 name = aruco_mapping
@@ -174,6 +188,8 @@ prov_tf{
 }
 ```
 
+
+
 ## Demonstration
 
 Aruco_mapping has been successfully used for autonomous indoor UAV
@@ -182,5 +198,3 @@ navigation:
 [Youtube](https://www.youtube.com/watch?v=3mCu_7Ek2fs)
 
 ## Report a Bug
-
-<<GitHubIssues(SmartRoboticSystems/aruco_mapping)>>

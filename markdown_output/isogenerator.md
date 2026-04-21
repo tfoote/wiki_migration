@@ -111,6 +111,10 @@ Startup Disk Creator from the GUI. If you have this problem, close the
 Startup Disk Creator and start a terminal (Applications -> Accessories
 -> Terminal). Type the following in the terminal and go back to step 5:
 
+
+
 ```
 sudo usb-creator-gtk
 ```
+
+

@@ -3,9 +3,13 @@
 [ldd_plan_node](ldd_plan_node) performs kinematic planning for the PR2
 arm using the LDD algorithm, documented here:
 
+
+
 ```
 Paul Vernaza and Daniel D. Lee. Learning dimensional descent planning for a highly-articulated robot arm. In Proceedings of the International Conference on Intelligent Robots and Systems, 2011.
 ```
+
+
 
 ## Usage
 
@@ -17,9 +21,13 @@ Various environment variables can be set that affect the performance of
 the algorithm. A convenient way to experiment with different parameters
 is to prepend them to the launch command as so:
 
+
+
 ```
 option1=true option2=100 roslaunch ldd_plan_node ldd_plan_node.launch
 ```
+
+
 
 ### Parameters
 

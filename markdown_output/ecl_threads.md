@@ -17,6 +17,8 @@ quickly as the framework is still in place.
 
 Include the following at the top of any translation unit:
 
+
+
 ```cplusplus
 #include <ecl/threads.hpp>
 
@@ -40,9 +42,13 @@ using ecl::RealTimePriority3;
 using ecl::RealTimePriority4;
 ```
 
+
+
 If using catkin with ROS, you should make sure to declare a dependency
 on ecl_threads in your package.xml and find_package ecl_threads in your
 CMakeLists.txt:
+
+
 
 ```
 find_package(catkin REQUIRED COMPONENTS
@@ -50,6 +56,8 @@ find_package(catkin REQUIRED COMPONENTS
    # other dependencies ...
 )
 ```
+
+
 
 If outside ros, you will also need to link to *ecl_threads*.
 

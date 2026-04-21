@@ -19,9 +19,13 @@ Further required packages are:
 
 ## Execution
 
-Run the launch file ```
+Run the launch file 
+
+```
 roslaunch uav_local_coverage uav_local_coverage.launch
-``` to launch the
+```
+
+ to launch the
 `uav_local_coverage` node.
 
 The launch file can be configured with following parameters:
@@ -36,6 +40,8 @@ In the `param` subdirectory there is the parameter file
 `uav_local_coverage` node.
 
 ## Nodes
+
+
 
 ```clearsilver
 
@@ -89,6 +95,8 @@ param{
 }
 }
 ```
+
+
 
 ## Acknowledgements
 

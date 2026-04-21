@@ -21,6 +21,8 @@ through those reachability maps.
 Inside you catkin workspace clone the Reuleaux package. Navigate to your
 existing src folder for workspace:
 
+
+
 ```
 $ cd location_of_workspace/src
 $ git clone https://github.com/ros-industrial-consortium/reuleaux
@@ -28,6 +30,8 @@ $ cd ..
 $ rosdep install -r -y --from-paths src --ignore-src
 $ catkin_make
 ```
+
+
 
 ## Setting everything up for your robot
 
@@ -55,11 +59,15 @@ You can obtain moveit_ikfast from here:
 
 To install openrave in ubuntu please follow these commands:
 
+
+
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-``` More detailed instructions are available at
+```
+
+ More detailed instructions are available at
 [openrave.org](http://openrave.org/docs/latest_stable/install/#install)
 
 #### Create collada file for OpenRave
@@ -73,31 +81,51 @@ to collada file. You can get collada_urdf package here:
 If you have only xacro file for your robot, it can be easily changed to
 urdf by
 
+
+
 ```
 rosrun xacro xacro.py model.xacro > model.urdf
-``` When you have the urdf file for your robot, run
+```
+
+ When you have the urdf file for your robot, run
+
+
 
 ```
 rosrun collada_urdf urdf_to_collada <myrobot_name>.urdf <myrobot_name>.dae
-``` where <myrobot_name> is the name of your
+```
+
+ where <myrobot_name> is the name of your
 robot. There is a script in moveit_ikfast package which rounds all the
 numbers to a fixed decimal places in the dae file. If the default dae
 file takes long time for generating Ikfast solution, it is encouraged to
 round up the numbers to 5 decimal places or lower.
 
+
+
 ```
 rosrun moveit_ikfast round_collada_numbers.py <input_dae> <output_dae> <decimal places>
 rosrun moveit_ikfast round_collada_numbers.py <myrobot_name>.dae <myrobot_name>.rounded.dae 5
-``` To see the links in the newly generated Collada
+```
+
+ To see the links in the newly generated Collada
 file
+
+
 
 ```
 /usr/bin/openrave-robot.py <myrobot_name>.dae --info links
-``` To test the newly generated robot in Openrave
+```
+
+ To test the newly generated robot in Openrave
+
+
 
 ```
 openrave <myrobot_name>.dae
 ```
+
+
 
 #### Identify links
 
@@ -105,18 +133,26 @@ You need the link index numbers for the base_link and end_lin between
 which Ik would be calculated. By running this command you can count the
 number of links from a model:
 
+
+
 ```
 openrave-robot.py <myrobot_name>.dae --info links
 ```
+
+
 
 ### Generate Ik Solver
 
 To generate an Ik solution for the robot manipulators base and tool
 frame
 
+
+
 ```
 python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=<myrobot_name>.dae --iktype=transform6d --baselink=1 --eelink=8 --savefile=<ikfast_output_path>
-``` where <ikfast_ouput_path> is path where you
+```
+
+ where <ikfast_ouput_path> is path where you
 want to save the robot ikfast file. Base link is defined as 1 and tool
 link is defined as 8
 
@@ -126,14 +162,22 @@ Now as you already have an ikfast file for you robot, we can link it to
 reuleaux. copy your ikfast solution file and paste it in the
 `map_creator/include` folder:
 
+
+
 ```
 sudo cp -r file_location/<file> <map_creator include folder location>
-``` . For example, suppose `funny_robot_ikfast`
-files is at `/Desktop`: ```
+```
+
+ . For example, suppose `funny_robot_ikfast`
+files is at `/Desktop`: 
+
+```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```0
+```
+
+0
 
 Note you may also need to copy header files that your `\*.cpp`
 includes.
@@ -144,27 +188,39 @@ and block the previuos defined filename (in the case in the link,
 "mh5_ikfast.cpp"). You have to have at least a single ikfast mentioned
 in the header, otherwise the package won't build.
 
-. Concrete example of what's explained above: ```
-sudo add-apt-repository ppa:openrave/release
-sudo apt-get update
-sudo apt-get install openrave0.8-dp-ikfast
-```1
-Include your robots ikfast filename at line 5 and block the motoman_mh5
-ikfast filename ```
-sudo add-apt-repository ppa:openrave/release
-sudo apt-get update
-sudo apt-get install openrave0.8-dp-ikfast
-```2
-
-(please do not put more than 1 ikfast filename here, otherwise the
-system will generate error). Saving the kinematics.h file, go to your
-catkin workspace and run catkin_make once:
+. Concrete example of what's explained above: 
 
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```3 The most difficult part is done. Now you can
+```
+
+1
+Include your robots ikfast filename at line 5 and block the motoman_mh5
+ikfast filename 
+
+```
+sudo add-apt-repository ppa:openrave/release
+sudo apt-get update
+sudo apt-get install openrave0.8-dp-ikfast
+```
+
+2
+
+(please do not put more than 1 ikfast filename here, otherwise the
+system will generate error). Saving the kinematics.h file, go to your
+catkin workspace and run catkin_make once:
+
+
+
+```
+sudo add-apt-repository ppa:openrave/release
+sudo apt-get update
+sudo apt-get install openrave0.8-dp-ikfast
+```
+
+3 The most difficult part is done. Now you can
 start creating workspace maps and visualizing them.
 
 ## Creating maps
@@ -206,17 +262,25 @@ arguments:
 
 To create a reachability map, run:
 
-```
-sudo add-apt-repository ppa:openrave/release
-sudo apt-get update
-sudo apt-get install openrave0.8-dp-ikfast
-```4 with arguments:
+
 
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```5 When the process finishes, the output
+```
+
+4 with arguments:
+
+
+
+```
+sudo add-apt-repository ppa:openrave/release
+sudo apt-get update
+sudo apt-get install openrave0.8-dp-ikfast
+```
+
+5 When the process finishes, the output
 reachability map will be stored in map_creator/maps folder. If you do
 not have the existing maps folder, do not worry. It will create a map
 folder in the map_creator package and store the output there. (Good
@@ -234,11 +298,15 @@ angle that correctly accumulates all the poses on that sphere, is set up
 for that sphere. The command for creating capability map is same as
 creating reachability map:
 
+
+
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```6 The ouput map file will also be stored in
+```
+
+6 The ouput map file will also be stored in
 map_creator/maps folder. ( As for all the outer spheres, the algorithm
 tries to fit different opening angles, the generation process of
 capability map may take upto hours with low resolution)
@@ -254,11 +322,15 @@ also be provided. If no output file name is provided, the system will
 automatically generate a map file with the robot name and resolution
 provided in the reachability map. To create an inverse reachability map:
 
+
+
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```7 Here provided reachability map is of
+```
+
+7 Here provided reachability map is of
 motoman_mh5 robot and resolution is 0.08. The outout of inverse
 reachability map will be stored in map_creator/Inv_map folder unless
 specified otherwise.
@@ -270,11 +342,15 @@ specified otherwise.
 To visualize the created maps from section 4, First in a terminal start
 rviz:
 
+
+
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```8
+```
+
+8
 
 ### visualize reachability map
 
@@ -290,11 +366,15 @@ time, otherwise it may lock up the system).
 
 To load reachability map:
 
+
+
 ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
-```9 The map may take some time to show up. The
+```
+
+9 The map may take some time to show up. The
 load_reachability_map commands run through the whole database file,
 searches for all the spheres and associated poses and then renders them.
 When the map shows up, the whole workspace would most likely show up as
@@ -348,9 +428,13 @@ showing reachability map.
 
 To load capability map:
 
+
+
 ```
 rosrun xacro xacro.py model.xacro > model.urdf
-```0 There are no poses section in the capability
+```
+
+0 There are no poses section in the capability
 map. Only the spheres will be visualized.
 
 . ![\|width="307",height="246"](attachment:capability.jpg)
@@ -368,9 +452,13 @@ a given task. A task can be defined by several task poses.
 
 To start base placement plugin, start by running rviz
 
+
+
 ```
 rosrun xacro xacro.py model.xacro > model.urdf
-```1 1. From Panels add a new panel. Select Base
+```
+
+1 1. From Panels add a new panel. Select Base
 Placement Plug-in 1. Add a MarkerArray display. Set the topic to default
 /visualization_marker_array 1. Add an InteractiveMarker. Se the topic to
 /base_placement_plugin/update 1. Add a ReachabilityMap display. Set the
@@ -482,6 +570,10 @@ Reuleaux. Go crazy.
 If you like this package and want to use Reuleaux in your work, Please
 cite our arXiv paper:
 
+
+
 ```
 rosrun xacro xacro.py model.xacro > model.urdf
-```2
+```
+
+2

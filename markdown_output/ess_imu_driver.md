@@ -188,9 +188,13 @@ catkin workspace *src*/ folder.
     environment variables that may have changed after the catkin build
     process
 
+
+
 ```
 <catkin_workspace>/source devel/setup.bash
 ```
+
+
 
 5\. Modify the appropriate
 [roslaunch/XML](https://wiki.ros.org/roslaunch/XML ) in the launch
@@ -208,9 +212,13 @@ folder to set your desired initialization parameters
     *launch*/ with [roslaunch](https://wiki.ros.org/roslaunch )
 -   For example:
 
+
+
 ```
 <catkin_workspace>/roslaunch ess_imu_driver normal.launch
 ```
+
+
 
 ## USB-UART Latency
 
@@ -237,9 +245,13 @@ folder to set your desired initialization parameters
     1 when an FTDI USB-UART device is plugged in
 -   For example, below is a text file named \*99-ftdi_sio.rules\* that
     can be put in the \*/etc/udev/rules.d\* directory
-    ```
+    
+
+```
 SUBSYSTEM=="usb-serial", DRIVER=="ftdi_sio", ATTR{latency_timer}="1"
 ```
+
+
 
 **NOTE:** Root (sudo) access is required to create or copy file in
 \*/etc/udev/rules.d\* **NOTE:** This is the preferred method because it
@@ -254,6 +266,8 @@ affects **ALL FTDI USB-UART** devices on the host system
     readback.
     -   NOTE:** May require root (sudo su) access on your system**
 
+
+
 ```
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 16
@@ -261,6 +275,8 @@ echo 1 > /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 1
 ```
+
+
 
 ### Modifying \*low_latency\* flag using \*setserial\* utility
 
@@ -271,6 +287,8 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 -   **NOTE:** You may need to install setserial with *sudo apt install
     setserial*
 
+
+
 ```
 user@user:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0
@@ -280,6 +298,8 @@ user@user:~$ setserial /dev/ttyUSB0 low_latency
 user@user:~$ setserial /dev/ttyUSB0
 /dev/ttyUSB0, UART: unknown, Port: 0x0000, IRQ: 0, Flags: low_latency
 ```
+
+
 
 ## Technical Support
 

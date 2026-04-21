@@ -10,6 +10,8 @@ This device supports all the drivers implemented in the
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = base_motor_node
@@ -29,13 +31,19 @@ node.0 {
 }
 ```
 
+
+
 ## Launch File Examples
 
 In a terminal window, start a base node process running:
 
+
+
 ```
 $ roslaunch maggie_base base.launch robot:=maggie
 ```
+
+
 
 ## Examples
 
@@ -43,6 +51,10 @@ An example to read the content of a rfid card could be:
 
 1\. Launch the node. 2. Show the value of the odometry topic:
 
+
+
 ```
 $ rostopic echo /maggie/odom
 ```
+
+

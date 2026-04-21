@@ -43,9 +43,13 @@ For successful calibration the presence of the 3D marker (described in
 
 Following commands will launch the calibration:
 
+
+
 ```
 roslaunch but_calibration_camera_velodyne calibration_coarse.launch
 ```
+
+
 
 -   command will run the coarse calibration using 3D marker (described
     in the \[1\])
@@ -54,16 +58,24 @@ roslaunch but_calibration_camera_velodyne calibration_coarse.launch
 -   upon the success the node ends and prints the 6 Degrees of Freedom
     of the Velodyne related to the camera
 
+
+
 ```
 roslaunch but_calibration_camera_velodyne calibration_fine.launch
 ```
 
+
+
 -   will run the calibration with the refinement. This process will take
     a longer time (approx. 1 minute)
+
+
 
 ```
 roslaunch but_calibration_camera_velodyne coloring.launch
 ```
+
+
 
 -   launches the publisher of colored pointclouds created by the camera
     \-- Velodyne fusion

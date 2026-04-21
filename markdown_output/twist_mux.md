@@ -34,9 +34,13 @@ one input twist topic. This is illustrated in the diagram below.
 The N input twist topics and M input lock topics are configured using
 parameters, which are read when launching the node:
 
+
+
 ```bash
 roslaunch twist_mux twist_mux.launch
 ```
+
+
 
 In the **config** folder there are example yaml files with configuration
 parameters.
@@ -66,6 +70,8 @@ fields that specify each input twist topics:
 Example configuration to multiplex the autonomous navigation from
 [move_base](move_base), a joystick from [joy_teleop](joy_teleop), a
 keyboard from [key_teleop](key_teleop) and a tablet:
+
+
 ```yaml
 topics:
 -
@@ -90,6 +96,8 @@ topics:
   priority: 100
 ```
 
+
+
 The joystick and the tablet are given the maximum priority, then the
 keyboard and finally the autonomous navigation. Note that it is possible
 to use the same priority for several input twist topics, although it is
@@ -113,7 +121,9 @@ fields that specify each input lock topics:
     higher the more priority it has over the others.
 
 Example configuration to pause the navigation and give priority to the
-joystick: ```yaml
+joystick: 
+
+```yaml
 locks:
 -
   name    : pause
@@ -127,6 +137,8 @@ locks:
   timeout : 0.0
   priority: 100
 ```
+
+
 
 ### Publishers
 

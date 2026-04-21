@@ -91,7 +91,9 @@ And creates custom targets for project:
 -   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_dump - Prints
     table of symbols and such
 
-Example: ```
+Example: 
+
+```
 generate_tivac_firmware(
   USB
   STARTUP custom_startup.c
@@ -99,7 +101,9 @@ generate_tivac_firmware(
   INCS .
   BOARD tm4c123gxl
 )
-``` This example sets rosserial
+```
+
+ This example sets rosserial
 communication through USB CDC device. Add two source files to be
 compiled on the project and includes the project directory. It will
 compile the project for tm4c123gxl board.

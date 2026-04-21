@@ -24,6 +24,8 @@ interface found in the [nav_core](nav_core) package.
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   no_header=True
@@ -46,20 +48,30 @@ param {
 }
 ```
 
+
+
 ## Usage example
 
 Planner was tested using [husky_gazebo](husky_gazebo),
 [husky_navigation](husky_navigation) and [husky_viz](husky_viz). To use
 `voronoi_planner` you need to change `base_global_planner` of
-[move_base](move_base) in such a way: ```
+[move_base](move_base) in such a way: 
+
+```
 <arg name="base_global_planner" default="voronoi_planner/VoronoiPlanner"/>
-``` Other
+```
+
+ Other
 parameters changed were global_costmap/width and global_costmap/height
 (in move_base.launch from [husky_navigation](husky_navigation)):
+
+
 ```
 <param name="global_costmap/width" value="35.0" if="$(arg no_static_map)"/>
     <param name="global_costmap/height" value="35.0" if="$(arg no_static_map)"/>
 ```
+
+
 
 Path generated is published in <name>/plan topic. Voronoi grid map is
 published (if publish_voronoi_grid parameter is true) in

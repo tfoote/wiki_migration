@@ -11,10 +11,14 @@ urdf_parser_py display_urdf /tmp/robot.urdf`) or without any argument.
 In this case, it connects to the parameter server to retrieve the robot
 configuration.
 
+
+
 ```shell
 # Display the PR-2 model.
 rosrun urdf_parser_py display_urdf `rospack find pr2_mechanism_model`/pr2.urdf
 ```
+
+
 
 ### History
 
@@ -29,6 +33,8 @@ which redirects here.
 
 Here is a brief example showing the different ways to load/parse a URDF
 model.
+
+
 
 ```python
 
@@ -67,6 +73,8 @@ robot = URDF.from_parameter_server()
 
 # Print the robot
 print(robot)
-``` Once you have retrieved the `robot` object,
+```
+
+ Once you have retrieved the `robot` object,
 please consult the package Python API to know how to browse the
 structure.

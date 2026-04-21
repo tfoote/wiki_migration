@@ -11,6 +11,8 @@ the creation of Interactive Markers in OpenSceneGraph applications.
 Let's have a look to the `osg_interactive_markers_demo.cpp` example,
 inside the `osg_interactive_markers` package:
 
+
+
 ```cplusplus
 #include <osgViewer/Viewer>
 #include <osgViewer/ViewerEventHandlers>
@@ -69,6 +71,8 @@ int main(int argc, char *argv[])
 }
 ```
 
+
+
 The example above creates an OpenSceneGraph application that listens for
 Interactive Markers in the `basic_controls/update` topic. By running the
 above example and the
@@ -76,13 +80,21 @@ above example and the
 tutorial in different terminals you should see something like the
 following:
 
+
+
 ```
 $ rosrun osg_interactive_markers osg_interactive_markers_demo
 ```
 
+
+
+
+
 ```
 $ rosrun interactive_marker_tutorials basic_controls
 ```
+
+
 
 ![OSG Interactive Markers\|width=640](attachment:osg_interactive_markers.png)
 
@@ -98,20 +110,28 @@ instantiate, giving as input the topic where to listen to Interactive
 Markers, a node in your OSG scene that will hold the geometry, and a TF
 client:
 
+
+
 ```cplusplus
 boost::shared_ptr<FrameManager> frame_manager = FrameManager::instance();
 frame_manager->setFixedFrame("/base_link");
 InteractiveMarkerDisplay marker_cli("osg_im","/basic_controls/update", root, *(frame_manager->getTFClient()));
 ```
 
+
+
 Then you need to call the update method at each iteration in your main
 loop, with the Wall and ROS ellapsed times as arguments:
+
+
 
 ```cplusplus
    ...
    marker_cli.update((current_wall_time-last_wall_time).toSec(), (current_ros_time-last_ros_time).toSec());
    ...
 ```
+
+
 
 ## What does not work
 

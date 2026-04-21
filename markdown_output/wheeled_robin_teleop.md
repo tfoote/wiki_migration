@@ -10,9 +10,13 @@ file. A `joy_node `node from [joy](joy) is also loaded.
 
 Just run
 
+
+
 ```
 roslaunch wheeled_robin_teleop thrustmaster_teleop.launch
-``` and use a Thrustmaster T-Wireless gamepad to
+```
+
+ and use a Thrustmaster T-Wireless gamepad to
 teleoperate the robot. Key 5 is used as Deadman Key. Left joystick is
 used to drive the robot forward and backward, right joystick is used for
 rotating the robot.

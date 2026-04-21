@@ -37,15 +37,23 @@ following the instructions [here](scan_tools#Installing).
 
 Next, make sure you have the necessary tools installed:
 
+
+
 ```shell
 rosmake rviz rosbag tf
 ```
 
+
+
 Finally, run the demo:
+
+
 
 ```shell
 roslaunch polar_scan_matcher demo.launch
 ```
+
+
 
 You should see a result similar to the video below. The video shows PSM
 tracking the position of a Hokuyo laser as it is being carried freely
@@ -55,6 +63,8 @@ additional odometry is provided.
 [Youtube](https://www.youtube.com/watch?v=moJP1zGgAoI)
 
 ## Nodes
+
+
 
 ```clearsilver
  name = psm_node
@@ -153,6 +163,8 @@ param{
   }
  }
 ```
+
+
 
 ## References
 

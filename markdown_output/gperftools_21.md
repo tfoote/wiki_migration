@@ -13,13 +13,19 @@ want to use.
 
 Add build and run dependencies to your package.xml:
 
+
+
 ```
 <build_depend>gperftools_21</build_depend>
 <run_depend>gperftools_21</run_depend>
 ```
 
+
+
 Add gperftools_21 to the list of catkin conponents in your
 CMakeLists.txt:
+
+
 
 ```
 find_package(catkin REQUIRED COMPONENTS
@@ -28,18 +34,32 @@ find_package(catkin REQUIRED COMPONENTS
 )
 ```
 
+
+
 ## Choosing which gperftools features you want
 
 You can choose to use tcmalloc, the gperftools profiler, or both.
 
-**tcmalloc:** ```
+**tcmalloc:** 
+
+```
 target_link_libraries(your_target ${GPERFTOOLS_TCMALLOC})
 ```
 
-**profiler:** ```
+
+
+**profiler:** 
+
+```
 target_link_libraries(your_target ${GPERFTOOLS_PROFILER})
 ```
 
-**both:** ```
+
+
+**both:** 
+
+```
 target_link_libraries(your_target ${GPERFTOOLS_TCMALLOC_AND_PROFILER})
 ```
+
+

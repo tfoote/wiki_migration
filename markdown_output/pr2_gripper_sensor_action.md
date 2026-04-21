@@ -123,6 +123,8 @@ namespace of the real-time controller for each of the two PR2 grippers,
 `\*` below indicates that the parameter is not reloadable with the
 [`reload_params` service](#ROS Services).
 
+
+
 ```clearsilver
 param {
   1.name= close_speed
@@ -203,6 +205,8 @@ param {
 
 }
 ```
+
+
 
 ### Action APIs
 
@@ -528,9 +532,13 @@ launching the robot the
 [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller) package
 will be automatically included as a dependency.
 
-Compiling can be done simply by typing: ```
+Compiling can be done simply by typing: 
+
+```
 rosmake pr2_gripper_sensor_action
 ```
+
+
 
 Which will build all action nodes and their dependencies.
 
@@ -539,6 +547,10 @@ Which will build all action nodes and their dependencies.
 All nodes for both the left and right gripper, as well as the
 appropriate real-time controllers for both grippers, can be loaded
 simply by executing the following launch script:
+
+
 ```
 roslaunch pr2_gripper_sensor_action pr2_gripper_sensor_actions.launch
 ```
+
+

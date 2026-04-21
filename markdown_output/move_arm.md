@@ -13,6 +13,8 @@ interface.
 
 ### ROS Parameters
 
+
+
 ```clearsilver
 param {
   1.name= ~move_arm_frequency
@@ -38,6 +40,8 @@ param {
 }
 ```
 
+
+
 ### Action API
 
 The `move_arm` node provides an implementation of a
@@ -49,6 +53,8 @@ their status is by using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 #### Action Subscribed Topics
+
+
 
 ```clearsilver
 sub {
@@ -62,7 +68,11 @@ sub {
 }
 ```
 
+
+
 #### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -79,12 +89,16 @@ pub {
 }
 ```
 
+
+
 ### move_arm required services
 
 Move arm uses service calls to get information about the robot and the
 world, compute IK, call planners and do control. It performs minimal
 computation within the node itself. The service calls are presented
 below categorized according to the type of service they provide.
+
+
 
 ```clearsilver
  srv{
@@ -135,7 +149,11 @@ below categorized according to the type of service they provide.
   }
 ```
 
+
+
 ### move_arm topics
+
+
 
 ```clearsilver
 sub{
@@ -156,6 +174,8 @@ sub{
     }
 }
 ```
+
+
 
 ## Additional Configuration Details
 

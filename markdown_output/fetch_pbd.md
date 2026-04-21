@@ -12,44 +12,72 @@ This PbD is designed for Ubuntu 14.04 and ROS Indigo.
 
 Clone this repository and build on the robot:
 
+
+
 ```
 $ cd ~/catkin_ws/src git clone https://github.com/fetchrobotics/fetch_pbd.git
 $ cd ~/catkin_ws catkin_make
-``` To make sure all dependencies are installed:
+```
+
+ To make sure all dependencies are installed:
+
+
 
 ```
 $ cd ~/catkin_ws source ~/devel/setup.bash rosdep update rosdep install --from-paths src --ignore-src --rosdistro=indigo -y
-``` To make changes to the web interface, you will
+```
+
+ To make changes to the web interface, you will
 want to install all of the web dependencies:
+
+
 
 ```
 $ roscd fetch_pbd_interaction cd web_interface/fetch-pbd-gui
 $ ./install_web_dependencies.sh
-``` Note that the above adds the following paths to
+```
+
+ Note that the above adds the following paths to
 the end of your /.bashrc file:
+
+
 
 ```
 $ export NVM_DIR="/home/USERNAME/.nvm" [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 # This loads nvm
-``` You will want to source your /.bashrc file
+```
+
+ You will want to source your /.bashrc file
 again before running the software. Now all of the dependencies are
 installed. After you make changes to the web interface, to build you can
 run:
 
+
+
 ```
 $ roscd fetch_pbd_interaction cd web_interface/fetch-pbd-gui ./build_frontend.sh
-``` Now when you roslaunch this software it will
+```
+
+ Now when you roslaunch this software it will
 run using your newly built changes!
+
+
 
 ```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch
-``` You can run the backend without the "social
+```
+
+ You can run the backend without the "social
 gaze" head movements or without the sounds by passing arguments to the
 launch file:
 
+
+
 ```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch social_gaze:=false play_sound:=false
-``` You can also pass arguments to the launch file
+```
+
+ You can also pass arguments to the launch file
 to save your actions to a json file or load them from a json file. This
 behaviour is a bit complicated. It is recommended that you specify the
 full path to files or else it will look in your .ros folder. If you
@@ -59,9 +87,13 @@ session database will get stored in a timestamped file in your .ros
 folder (not overwritten). If you specify a to_file then the session you
 are starting will be saved to that file.
 
+
+
 ```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch from_file:=/full/path/from.json to_file:=/full/path/to.json
-``` In your browser go to **ROBOT_HOSTNAME:8080**
+```
+
+ In your browser go to **ROBOT_HOSTNAME:8080**
 in your browser to use the GUI. There is a "mobile" interface, which
 is the same but without the visualization. This can be useful for just
 saving/deleting primitives.
@@ -123,9 +155,13 @@ that adheres to the .srv interface defined by
 and optionally the feedback .msg interface,
 [GraspFeedback.msg](https://github.com/GT-RAIL/rail_manipulation_msgs/blob/develop/msg/GraspFeedback.msg),
 can be used. If you want to start Fetch PbD with a grasp suggestion
-service: ```
+service: 
+
+```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch grasp_suggestion_service:=grasp_service_name grasp_feedback_topic:=grasp_feedback
-``` The grasp_feedback_topic is optional
+```
+
+ The grasp_feedback_topic is optional
 and can be excluded. Then in the interface you can right-click on
 objects in the scene and add a grasp for that object. Initially a grasp
 primitive is generated that is just a placeholder and does not specify
@@ -148,9 +184,13 @@ in combination with other primitives.
 You can also access the actions you've programmed through code. You
 still need to run pbd_backend.launch.
 
+
+
 ```
 $ source ~/catkin_ws/devel/setup.bash rosrun fetch_pbd_interaction demo.py
 ```
+
+
 
 The pbd_interaction_node.py handles the interaction between speech/GUI
 and the rest of the system. Changes happen through the update loop in

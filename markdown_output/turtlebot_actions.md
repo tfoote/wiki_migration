@@ -8,6 +8,8 @@ of standardised turtlebot motion tests - updates welcome.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = turtlebot_move_action_server
 desc = Provides an action server for moving the TurtleBot through a certain distance and rotation.
@@ -45,9 +47,13 @@ req_tf {
 }
 ```
 
+
+
 ## Actions
 
 ### TurtlebotMove.action
+
+
 
 ```
 #goal definition
@@ -63,7 +69,11 @@ float32 turn_distance
 float32 forward_distance
 ```
 
+
+
 ### FindFiducial.action
+
+
 
 ```
 #goal definition
@@ -82,3 +92,5 @@ geometry_msgs/PoseStamped pose
 ---
 #feedback
 ```
+
+

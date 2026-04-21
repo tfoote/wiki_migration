@@ -53,12 +53,16 @@ a specific layout:
 
 An example for a valid constellation file could be the following:
 
+
+
 ```
 <Objects>
     <Object type="Cup" id="011021054100" mesh="package://asr_object_database/rsc/databases/segmentable_objects/Cup/object.dae" angles="quaternion">-1.2902,0.729374,0.755761,0.721985,-0.665815,-0.13442,0.131754 </Object>
     <Object type="CoffeeBox" id="0" mesh="package://asr_object_database/rsc/databases/textured_objects/CoffeeBox/CoffeeBox.dae" angles="euler">1.5,-0.5,1.5,90,0,0 </Object>
 </Objects>
 ```
+
+
 
 ## Usage
 
@@ -95,9 +99,13 @@ scenario (see configuration). After you have chosen the object
 constellation you want to use and set the topics correctly start the
 process:
 
+
+
 ```
 roslaunch fake_object_recognition fake_object_recognition.launch
 ```
+
+
 
 ------------------------------------------------------------------------
 

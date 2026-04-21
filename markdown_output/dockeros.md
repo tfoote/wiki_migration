@@ -56,6 +56,8 @@ We strongly recommend to use
 
 ## The CLI
 
+
+
 ```
 usage: dockeros [-h] [-e | -i HOST:PORT] [-f DOCKERFILE] [-n]
                 {build,run,stop,push} ...
@@ -79,6 +81,8 @@ optional arguments:
                         use a custom Dockerfile
   -n, --no-build        dont (re-)build the image before running
 ```
+
+
 [![screencast of dockeros run](https://github.com/ct2034/dockeROS/raw/master/doc/dockeros_run.gif)](https://github.com/ct2034/dockeROS/blob/master/doc/dockeros_run.gif)
 
 ## Contribution
@@ -103,9 +107,17 @@ server gave HTTP response to HTTPS client"} while trying to push:
 Add the server to your unsafe registries in daemon.json (default at
 /etc/docker/daemon.json )
 
+
+
 ```
 "insecure-registries":["YOUR_REGISTRY:5000"]
-``` and restart your docker deamon.
+```
+
+ and restart your docker deamon.
+
+
 ```
 sudo systemctl restart docker
 ```
+
+

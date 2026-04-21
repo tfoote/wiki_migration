@@ -17,6 +17,8 @@ about distance traveled and estimated cost.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = explore_multirobot
@@ -46,10 +48,14 @@ node.0 {
 }
 ```
 
+
+
 ## Related Documentation
 
 Please refer to the following paper to retrieve more information on the
-node: ```
+node: 
+
+```
 @inproceedings{yz14simpar,
 author = {Zhi Yan and Luc Fabresse and Jannik Laval and Noury Bouraqadi},
 title = {Team Size Optimization for Multi-robot Exploration},
@@ -60,6 +66,8 @@ month = {October},
 year = {2014}
 }
 ```
+
+
 
 ## Support
 

@@ -56,7 +56,9 @@ structures containing user-defined information. If the structure
 approach is used, one element of each structure must be `name`, the
 name of the joint.
 
-Example Format #1 ```
+Example Format #1 
+
+```
 joints:
 
   - joint1
@@ -65,7 +67,11 @@ joints:
   - joint4
 ```
 
-Example Format #2 ```
+
+
+Example Format #2 
+
+```
 joints:
 
   - name: joint1
@@ -84,6 +90,8 @@ joints:
     channel: 2      
     home: 0.785
 ```
+
+
 
 ## C++ Interface
 

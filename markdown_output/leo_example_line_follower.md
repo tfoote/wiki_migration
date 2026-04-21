@@ -1,15 +1,23 @@
+
+
 ```wiki
 '''Note:''' You can also check a detailed integration tutorial on [[https://www.leorover.tech/integrations/line-follower|LeoRover Tech - Line follower|target="_blank"]]
 ```
+
+
 
 ## Overview
 
 This package contains ROS nodes which enable a
 [Leo Rover](Robots/Leo Rover) to perform a line follower task with the
 use of a neural network model, that had been trained on a color mask
-(capturing a line color from the camera). ```wiki
+(capturing a line color from the camera). 
+
+```wiki
 '''Note:''' The model was trained to perform the task on a two-lined track, so it drives between the lines.
-``` In
+```
+
+ In
 the package you can find default configuration, which consists of: 1. A
 few trained neural network models 2. A couple of predefined HSV bounds
 in the *yaml* files for catching the color mask
@@ -26,9 +34,13 @@ stock [Leo Rover](Robots/Leo Rover).
 
 ### Line follower
 
-To run the line follower node, simply type: ```
+To run the line follower node, simply type: 
+
+```
 roslaunch leo_example_line_follower line_follower.launch
-``` It
+```
+
+ It
 will run the default configuration for the line_follower node. However,
 you can specify your configuration by using launch arguments, which are
 as follows: color_mask_file:: The path to the yaml file with the HSV
@@ -41,9 +53,13 @@ messages. model:: The path to the neural network model.
 
 ### Color mask
 
-To run the color mask finder node, simply type: ```
+To run the color mask finder node, simply type: 
+
+```
 roslaunch leo_example_line_follower color_mask.launch
 ```
+
+
 Then you need to run rqt, and from the plugins choose: 1. The **Image
 View** - to see the color mask for the current HSV bounds. 2. The
 **Dynamic Reconfigure** - to choose the HSV bounds with the sliders.
@@ -53,9 +69,13 @@ your configuration on the standard output.
 
 ### Data saver
 
-To run the data saver node, simply type: ```
+To run the data saver node, simply type: 
+
+```
 roslaunch leo_example_line_follower record_data.launch
-``` It
+```
+
+ It
 will run the default configuration for the node. Although, you can
 specify your configuration, by using launch arguments, which are as
 follows: duration:: The information on how long the data will be
@@ -71,17 +91,27 @@ After recording the training data, you need to process it to be ready to
 use in the training. Therefore, the package contains a script that takes
 the names of the directories with the data (with partition for the
 training and validation data), and returns a single zip file. To run the
-script, simply type: ```
+script, simply type: 
+
+```
 rosrun leo_example_line_follower prepare_data.py -t <train_directories> -v <valid_directories> -z <zip_file>
-``` where: train_directories::
+```
+
+ where: train_directories::
 Are the names of the directories with the training data.
 valid_directories:: Are the names of the directories with the validation
 data. zip_file:: Is the name of the final zip file. Therefore, an
-example usage of the script is: ```
+example usage of the script is: 
+
+```
 rosrun leo_example_line_follower prepare_data.py -t train1 train2 -v val1 val2 -z dataset.zip
 ```
 
+
+
 ## ROS API
+
+
 
 ```clearsilver
 name= line_follower
@@ -128,7 +158,11 @@ param {
     6.desc= The minimum val (V from HSV) value for the color_mask.
   }
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
 name= color_mask
 sub {
   group.0 {
@@ -174,6 +208,10 @@ param {
   }
 }
 ```
+
+
+
+
 ```clearsilver
 name= data_saver
 sub {
@@ -187,3 +225,5 @@ sub {
   }
 }
 ```
+
+

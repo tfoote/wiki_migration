@@ -11,16 +11,24 @@ been tested under Python 2.7 under ROS fuerte, Ubuntu precise.
 
 Check out the robot_script package, and `rosmake` to ready the package
 for operation. Currently installation is via checkout from Github:
+
+
 ```
 git clone https://github.com/paepcke-willow-garage/robot_script.git
 cd robot_script
 rosmake
-``` To get the latest version after you've already
+```
+
+ To get the latest version after you've already
 installed the facility, type the following into a terminal window after
-switching to `robot_script` directory: ```
+switching to `robot_script` directory: 
+
+```
 git pull
 rosmake
 ```
+
+
 
 An apt-get package is in the works.
 
@@ -32,12 +40,16 @@ tilt is at -20. The head will take 5 seconds to reach its destination.
 The statement following this conditional will proceed immediately, not
 awaiting the head's motion to complete:
 
+
+
 ```
 if aboutEq('head_tilt_joint', 30):
     pr2.lookAt(-100, -20 , 5, wait=False)
 else:
     pr2.lookAt(+100, +30 , 5, wait=False)
 ```
+
+
 
 The next line moves the robot 30cm straight forward, maintaining a zero
 rotation of its body. The parameters are x (forward/back), y
@@ -83,6 +95,8 @@ Here is a complete list of commands. Details in the following section.
 For all definitions we assume that the script includes the following
 head statements:
 
+
+
 ```
 from robot_scripting import PR2RobotScript as pr2
 from robot_scripting import aboutEq
@@ -95,6 +109,8 @@ LEFT  = pr2.LEFT
 RIGHT = pr2.RIGHT
 BOTH  = pr2.BOTH
 ```
+
+
 
 ### Gripper and Head
 
@@ -150,12 +166,16 @@ sensor might read 30.05, or 29.9. In order to allow for these
 inaccuracies when checking a joint angle, use the following command in
 your conditional statements:
 
--   aboutEq(jointName, value) Example: ```
+-   aboutEq(jointName, value) Example: 
+
+```
 if aboutEq('head_pan_joint', 60):
     do one thing
 else:
     do another thing
 ```
+
+
 
 Currently recognized joint names: 'base', 'bl_caster_l_wheel_joint',
 'bl_caster_rotation_joint', 'bl_caster_r_wheel_joint',
@@ -232,6 +252,8 @@ sequence of gestures. Maybe the function makes the robot's right arm
 wave. The function might be written to have the robot wave twice, and
 then stop, the function returning after the waving is done. Or the
 function might be written to have the robot wave continuously.
+
+
 ```
 from robot_scripting import Motion
 
@@ -245,6 +267,8 @@ from robot_scripting import Motion
     myRotator = Motion(rotatorFunc)
 ```
 
+
+
 Notice that part of creating a Motion object is to specify the function
 that accomplishes the respective motion. A motion function needs to
 ensure just one condition: it must accept at least one argument, the
@@ -254,6 +278,8 @@ functions to have a hold of the motion objects that call them.
 Once you defined the motion objects, you can start, pause, resume, and
 stop them. Like this:
 
+
+
 ```
 myRotator.start()
     myRotator.pause()
@@ -261,9 +287,13 @@ myRotator.start()
     myRotator.stop()
 ```
 
+
+
 You may define motion functions that take more than the obligatory first
 argument. For example, you might want to define the waving function like
 this:
+
+
 
 ```
 def waverFunc(motion, howOften):
@@ -271,20 +301,30 @@ def waverFunc(motion, howOften):
             # make the waving happen
 ```
 
+
+
 Then, to start the waving motion:
+
+
 
 ```
 myWaver.start(4) # wave four times
 ```
+
+
 
 Notice that you don't pass the motion object to `myWaver`'s
 `start()` method. Within a motion function you can call any of the
 robot_script motions you like. But if you wish to do nothing for a
 while, do it like this:
 
+
+
 ```
 motion.sleep_while_running(numOfSeconds)
 ```
+
+
 
 That is, don't call the Python sleep function. The reason is that the
 special sleep_while_running() method of the Motion class ensures that
@@ -295,10 +335,14 @@ as first argument.
 If you wish to learn whether a motion function has finished its work,
 you can use
 
+
+
 ```
 git pull
 rosmake
-```0 That method on the Motion class returns True
+```
+
+0 That method on the Motion class returns True
 or False. Of course, you write a motion function as an infinite loop,
 like 'wave forever,' then `motion.is_done()` will never turn True.
 
@@ -307,10 +351,14 @@ the work horse of some part of your script, and sometimes as part of a
 parallel motion, the best idiom is to 'factor out' the common
 capability:
 
+
+
 ```
 git pull
 rosmake
-```1
+```
+
+1
 
 Sometimes it is necessary that a script is notified when some event
 occurs. For example, a separate program may be using the robot's camera
@@ -391,19 +439,27 @@ queue, it finds the word, and prints it.
 Here is the code, which assumes the existence of the fictitious
 WordFinder. We will do a runnable example in a moment.
 
+
+
 ```
 git pull
 rosmake
-```2 The above code defines a callback function,
+```
+
+2 The above code defines a callback function,
 `printWord()`, which prints the word it receives. Then the script
 enters a sleep loop. Whenever the independently running WordFinder
 discovers a word, it calls the script's `printWord()` function.
 
 Here is the same example using the second event delivery method:
+
+
 ```
 git pull
 rosmake
-```3 The code above again first defines a callback
+```
+
+3 The code above again first defines a callback
 function. In this case, however, the callback function returns the
 upper-cased word. The script then creates the WordFinder instance, and
 starts it, passing the callback function. The `get()` method on the
@@ -418,10 +474,14 @@ events. You can create a very simple schedule that the EventSimulator
 will work through. A schedule is an OrderedDict, a Python data structure
 that is just like a Python dictionary, but remembers the order in which
 items were added. Let's simulate the word finder. Here is the code:
+
+
 ```
 git pull
 rosmake
-```4 The schedule's keys are floating point
+```
+
+4 The schedule's keys are floating point
 numbers that indicate the number of seconds after the script's start
 when the respective event is to be triggered. When the event is
 triggered, the EventSimulator will invoke the callback function with the

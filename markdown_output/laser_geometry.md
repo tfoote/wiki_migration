@@ -33,11 +33,15 @@ The method `projectLaser()` does the simplest possible projection of
 the laser. Each ray is simply projected out along the appropriate angle
 according to:
 
+
+
 ```latex
 \begin{eqnarray*}
 \left(\begin{array}{c}x\\y\\z\end{array}\right) & = & \left(\begin{array}{c}r \cos \theta\\r \sin \theta \\ 0\end{array}\right)
 \end{eqnarray*}
 ```
+
+
 
 The appropriate sine and cosine values are cached, making this a very
 efficient operation. However, the generated
@@ -52,7 +56,9 @@ Please consult the
 for full usage details.
 
 **Example:** To convert a <<MsgLink(sensor_msgs/LaserScan)>> to a
-<<MsgLink(sensor_msgs/PointCloud)>> ```cplusplus
+<<MsgLink(sensor_msgs/PointCloud)>> 
+
+```cplusplus
 laser_geometry::LaserProjection projector_;
 
 void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
@@ -63,6 +69,8 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
   // Do something with cloud.
 }
 ```
+
+
 
 ### High fidelity projection
 
@@ -85,7 +93,9 @@ for full usage details.
 
 **Example:** To convert a <<MsgLink(sensor_msgs/LaserScan)>> to a
 <<MsgLink(sensor_msgs/PointCloud)>> in the base_link frame, using a
-high fidelity transform: ```cplusplus
+high fidelity transform: 
+
+```cplusplus
 laser_geometry::LaserProjection projector_;
 tf::TransformListener listener_;
 
@@ -107,6 +117,8 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
 }
 ```
 
+
+
 ## Python Usage
 
 ### Simple projection
@@ -114,6 +126,8 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
 The method `projectLaser()` projects a single laser scan from a linear
 array into a 3D <<MsgLink(sensor_msgs/PointCloud2)>>. The generated
 cloud will be in the same frame as the original laser scan.
+
+
 
 ```python
 
@@ -164,6 +178,8 @@ def scan_cb(msg):
 rospy.Subscriber("/scan", LaserScan, scan_cb, queue_size=1)
 rospy.spin()
 ```
+
+
 
 ### High fidelity projection
 

@@ -8,9 +8,13 @@ default).
 
 ## Installation
 
--   install dependencies ```
+-   install dependencies 
+
+```
 sudo apt-get install ros-indigo-pepper-robot ros-indigo-pepper-meshes
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -20,32 +24,48 @@ sudo apt-get install ros-indigo-pepper-robot ros-indigo-pepper-meshes
 -   clone [naoqi_dcm_driver](naoqi_dcm_driver)
 -   clone [pepper_dcm_bringup](pepper_dcm_bringup)
 -   optionally, clone [pepper_moveit_config](pepper_moveit_config)
--   compile all packages with ```
+-   compile all packages with 
+
+```
 catkin_make
 ```
+
+
 
 ## How to use it
 
 ### Trajectory control
 
 -   start the DCM bringup providing the IP of your robot
-    ```
+    
+
+```
 roslaunch pepper_dcm_bringup pepper_bringup.launch robot_ip:=<ROBOT_IP>
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   start Naoqi Driver (to get the odom frame) proving your robot's IP
-    ```
+    
+
+```
 roslaunch naoqi_driver naoqi_driver.launch nao_ip:=<ROBOT_IP>
 ```
 
+
+
 #### Control via MoveIt
 
--   start MoveIt! to control the robot via GUI ```
+-   start MoveIt! to control the robot via GUI 
+
+```
 roslaunch pepper_moveit_config moveit_planner.launch
 ```
+
+
 
 ```{=html}
 <!-- -->
@@ -57,15 +77,23 @@ roslaunch pepper_moveit_config moveit_planner.launch
 
 -   you can send a trajectory to the desired controller (actionlib)
 
+
+
 ```
 rosrun actionlib axclient.py <name of the goal topic of the action server>
 ```
 
+
+
 example:
+
+
 
 ```
 rosrun actionlib axclient.py /pepper_dcm/LeftArm_controller/follow_joint_trajectory/goal
 ```
+
+
 
 To choose the controllers you want to load, modify
 pepper_control/launch/pepper_control_trajectory.launch. The list of
@@ -79,14 +107,22 @@ To command joints positions via ROS:
 
 -   start the DCM bringup proving your robot's IP (be aware that the
     package will stop Autonomous Life on your robot):
-    ```
+    
+
+```
 roslaunch pepper_dcm_bringup pepper_dcm_bringup_position.launch robot_ip:=<ROBOT_IP>
 ```
+
+
 
 ```{=html}
 <!-- -->
 ```
 -   send a position to the desired controller, for example
-    ```
+    
+
+```
 rostopic pub /pepper_dcm/HeadYaw_position_controller/command std_msgs/Float64 "data: 1"
 ```
+
+

@@ -40,6 +40,8 @@ the hardware interfaces to work with this ROS package.
 
 The ROS API is currently undergoing additional development.
 
+
+
 ```clearsilver
 node.0{
 name = bmp085_w_sub20
@@ -61,6 +63,8 @@ pub {
   0.desc = time, connection status, temperature data [C], and air pressure [kPa]
 }
 ```
+
+
 
 ## Tools
 

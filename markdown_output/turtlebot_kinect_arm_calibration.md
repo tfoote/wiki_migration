@@ -20,6 +20,8 @@ new electric-style OpenNI drivers.
 
 ## Nodes
 
+
+
 ```clearsilver
 name = calibrate_kinect_checkerboard
 desc = Detects a checkerboard in an image, and then waits for the user to move the arm to specified points on the checkerboard to determine the transform between the kinect and the robot
@@ -107,3 +109,5 @@ prov_tf {
   0.desc = Transform from the camera frame to the calibration pattern
 }
 ```
+
+

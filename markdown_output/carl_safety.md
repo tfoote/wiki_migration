@@ -7,6 +7,8 @@ manual navigation teleoperation, and tipping detection.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = arm_safety
@@ -145,6 +147,8 @@ node.3 {
 }
 ```
 
+
+
 ## Operation
 
 When using the `nav_safety` node, a controller is required to input
@@ -157,7 +161,9 @@ be re-enabled by pressing the start button.
 ## Installation
 
 To install the `carl_safety` package, you can install from source with
-the following commands: . ```shell
+the following commands: . 
+
+```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_safety.git
 cd ..
@@ -165,14 +171,24 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ## Startup
 
 The `carl_safety` package contains safety nodes that are categorized
 into two groups: basic safety functionality that should always be
 active, and remote interface safety that only affects users who are not
 copresent with the robot. As such, the package contains two launch
-files: . ```
+files: . 
+
+```
 roslaunch carl_safety carl_safety_basic.launch
-``` . ```
+```
+
+ . 
+
+```
 roslaunch carl_safety carl_safety_interface.launch
 ```
+
+

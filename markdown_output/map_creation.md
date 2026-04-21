@@ -10,6 +10,8 @@ Otherwise, you'll need to edit the file map_display.cpp in
 \.../rviz/src/rviz/default_plugin directory. Scroll down to
 approximately line 314 and look for the code
 
+
+
 ```
 for( unsigned int pixel_index = 0; pixel_index < num_pixels_to_copy; pixel_index++ )
   {
@@ -23,8 +25,12 @@ for( unsigned int pixel_index = 0; pixel_index < num_pixels_to_copy; pixel_index
   }
 ```
 
+
+
 create an overlay of rviz in your own workspace, and replace the above
 code with
+
+
 
 ```
 for( unsigned int pixel_index = 0; pixel_index < num_pixels_to_copy; pixel_index++ )
@@ -40,8 +46,14 @@ for( unsigned int pixel_index = 0; pixel_index < num_pixels_to_copy; pixel_index
   }
 ```
 
+
+
 ## Running the node
+
+
 
 ```
 rosrun map_creation map_creation
 ```
+
+

@@ -30,6 +30,8 @@ SLAM based on RPLIDAR and ROS Hector Mapping:
 
 ## ROS Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = rplidarNode
@@ -76,46 +78,74 @@ node.0 {
 }
 ```
 
+
+
 ## Device Settings
 
 [RPLIDAR tutorial](https://github.com/robopeak/rplidar_ros/wiki)
 
 Use following udev rules to set permission for a rplidar device.
 
+
+
 ```
 KERNEL=="ttyUSB*", MODE="0666"
-``` For fixed rplidar port, you can using the
+```
+
+ For fixed rplidar port, you can using the
 script file to remap the USB port name:
+
+
 
 ```
 ./scripts/create_udev_rules.sh
-``` Once you have change the USB port remap, you
+```
+
+ Once you have change the USB port remap, you
 can change the launch file about the serial_port value.
+
+
 
 ```
 <param name="serial_port" type="string" value="/dev/rplidar"/>
 ```
 
+
+
 ## Launch File Examples
 
 Check the authority of rplidar's serial-port :
 
+
+
 ```
 ls -l /dev |grep ttyUSB
-``` Add the authority of write: (such as
+```
+
+ Add the authority of write: (such as
 /dev/ttyUSB0)
+
+
 
 ```
 sudo chmod 666 /dev/ttyUSB0
-``` Start a rplidar node and view the scan result
+```
+
+ Start a rplidar node and view the scan result
 in rviz.
+
+
 
 ```
 $ roslaunch rplidar_ros view_rplidar.launch    #for rplidar A1/A2
 or
  $ roslaunch rplidar_ros view_rplidar_a3.launch #for rplidar A3
-``` Start a rplidar node and run rplidar client
+```
+
+ Start a rplidar node and run rplidar client
 process to print the raw scan result
+
+
 
 ```
 $ roslaunch rplidar_ros rplidar.launch  #for rplidar A1/A2
@@ -124,6 +154,8 @@ or
 
  $ rosrun rplidar_ros rplidarNodeClient
 ```
+
+
 
 ## About Slamtec/RoboPeak
 

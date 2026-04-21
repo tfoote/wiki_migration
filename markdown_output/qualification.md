@@ -16,9 +16,13 @@ To run the qualification GUI, go to the "Applications" menu on a test
 system, select "WG Hardware Applications" and run "PR2
 Qualification".
 
-To run from the command-line, run: ```
+To run from the command-line, run: 
+
+```
 rosrun qualification qualify.py
-``` A
+```
+
+ A
 `\--debug` option will enable debug mode. This is for developers only.
 
 ## Qualification System Overview
@@ -229,6 +233,8 @@ The file `wg_map.xml` contains the entries for each computer or
 ("station") that the qualification system can run on. Any new machine
 must be added to this file.
 
+
+
 ```
 <station gui="qual2.willowgarage.com" host="qual2" 
 	   powerboard="1009" breaker0="True"
@@ -236,6 +242,8 @@ must be added to this file.
     <env name="ECAT_PORT" value="ecat0" />
   </station>
 ```
+
+
 
 Parameters in the "station" tag:
 

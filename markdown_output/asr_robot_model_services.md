@@ -23,13 +23,21 @@ package.
 
 This means that, provided a target camera pose
 
+
+
 ```
 (x, y, z, uw, ux, uy, uz)
-``` a robot configuration
+```
+
+ a robot configuration
+
+
 
 ```
 (x, y, alpha, ptu-pan, ptu-tilt)
-``` - with **x**, **y** as the 2D position of the
+```
+
+ - with **x**, **y** as the 2D position of the
 robot's base, **alpha** as the robot's rotation on the 2D map and
 **pan**, **tilt** as the angles of the PTU unit -
 
@@ -207,9 +215,13 @@ For some situations, it can preferable not to move the robot's base in
 order to reach a desired camera position but instead only try to find
 the optimal PTU angles
 
+
+
 ```
 (ptu-pan, ptu-tilt)
-``` to focus the camera on a target view point.
+```
+
+ to focus the camera on a target view point.
 Notice that this is only possible if the PTU angle restrictions allow
 moving to such a configuration and that an optimal distance of the
 camera to the target point can not be guaranteed.
@@ -259,19 +271,31 @@ the map can be reached by the robot.
 
 Starting the RobotModelService for the **real** robot model:
 
+
+
 ```
 launch asr_robot_model_services RobotModelServiceReal.launch
-``` Starting the RobotModelService for the
+```
+
+ Starting the RobotModelService for the
 **simulated** robot model:
+
+
 
 ```
 launch asr_robot_model_services RobotModelServiceSim.launch
-``` Starting the set_focus_point script (see
+```
+
+ Starting the set_focus_point script (see
 tutorial):
+
+
 
 ```
 launch asr_robot_model_services set_focus_point.launch
 ```
+
+
 
 # 4. ROS Nodes
 

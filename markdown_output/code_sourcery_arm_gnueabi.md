@@ -1,11 +1,15 @@
 ## Installation
 
+
+
 ```
 roscd code_sourcery_arm_gnueabi  
 make                             # downloads the toolchain binary.
 make install                     # installs into the /usr/___ directories.
 make uninstall                   # removes the toolchain from your system.
 ```
+
+
 
 ### Toolchain Bridge
 
@@ -21,9 +25,13 @@ Eros provides a ready made [toolchain module](eros_toolchains) you can
 select to globally configure your ros environment. To globally configure
 your ros environment to use this toolchain:
 
+
+
 ```
 rostoolchain select code_sourcery/arm-none-linux-gnueabi
 ```
+
+
 
 ### Development Patterns
 

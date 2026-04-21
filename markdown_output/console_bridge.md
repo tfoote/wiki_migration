@@ -31,12 +31,16 @@ console_bridge comes in.
 console_bridge provides equivalent calls to the ones found in ROS
 console that provide the same functionality:
 
+
+
 ```
 logDebug  -- ROS_DEBUG
 logInform -- ROS_INFO
 logWarn   -- ROS_WARN
 logError  -- ROS_ERROR
 ```
+
+
 
 When these functions are used, the output is directed to stdout rather
 than to both stdout and /rosout. However, here is the most interesting
@@ -53,6 +57,8 @@ respectively.
 
 ## Build Instructions
 
+
+
 ```
 $ git clone git://github.com/ros/console_bridge.git
 $ cd console_bridge
@@ -60,6 +66,8 @@ $ cmake .
 $ make
 $ sudo make install
 ```
+
+
 
 ## See Also
 

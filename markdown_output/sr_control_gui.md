@@ -8,15 +8,23 @@ The GUI is programmed in Python, using **pyqt** and **yapsy** for its
 plugin architecture.
 
 You need to compile it once to get the dependencies right:
+
+
 ```
 $ rosdep install sr_control_gui
 $ rosmake sr_control_gui
 ```
 
+
+
 You can now start the GUI by running the command:
+
+
 ```
 $ rosrun sr_control_gui sr_control_gui
 ```
+
+
 
 The plugins depend on different ROS nodes (e.g. to use sliders to
 control the hand joints, you need the hand ROS node to be started), and
@@ -131,9 +139,13 @@ the parameters to the
 [sr_edc_controller_configuration](sr_edc_controller_configuration)
 folder.
 
+
+
 ```wiki
 The '''Set''' and '''Save''' button are for individual controllers: you need to press this button for each controller you want to save or set.
 ```
+
+
 
 ![](attachment:etherCAT_controller_tuner.png)
 

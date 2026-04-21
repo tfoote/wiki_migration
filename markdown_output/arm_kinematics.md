@@ -4,6 +4,8 @@ This package is intended to be a generic version of
 [pr2_kinematics](pr2_kinematics). The main purpose is to do solid arm
 kinematics for ANY robot.
 
+
+
 ```clearsilver
 name = arm_kinematics
 desc = Forward and backward kinematics for a solid arm
@@ -46,3 +48,5 @@ param {
 5.default = 1e-2
 }
 ```
+
+

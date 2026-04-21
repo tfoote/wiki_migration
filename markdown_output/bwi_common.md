@@ -6,5 +6,3 @@ the University of Texas at Austin.
 See README files of constituent packages.
 
 ## Report a Bug
-
-<<GitHubIssues(utexas-bwi/bwi_common)>>

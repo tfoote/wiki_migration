@@ -32,20 +32,28 @@ recorded Lidar data, acquired from the University of Freiburg
 The ohm_tsd_slam package is based on our CPU version of the well known
 KinectFusion approach, and is available at
 [ Researchgate](http://www.researchgate.net/publication/267694565_A_Generalized_2D_and_3D_Multi-Sensor_Data_Integration_Approach_based_on_Signed_Distance_Functions_for_Multi-Modal_Robotic_Mapping ).
+
+
 ```
 S. May, P. Koch, R. Koch, C. Merkl, C. Pfitzner and A. Nuechter.
 A Generalized 2D and 3D Multi-Sensor Data Integration Approach based on Signed Distance Functions for Multi-Modal Robotic Mapping.
 In Proceedings of the VMV 2014: Vision, Modeling & Visualization, Darmstadt, Germany, 2014.
 ```
 
+
+
 The multi-robot SLAM has been subject of a paper itself and can be
 downloaded at
 [ IEEEexplore](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=7101614&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D7101614 ).
+
+
 ```
 P. Koch, S. May, M. Schmidpeter, M. Kühn, J. Martin, C. Pfitzner, C. Merkl, M. Fees, R. Koch and A. Nüchter.
 Multi-Robot Localization and Mapping based on Signed Distance Functions.
 In Proceedings of the IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC '15), Vila Real, Portugal, April 2015.
 ```
+
+
 
 This video shows an experiment performed for the mentioned publication.
 Both robots of our rescue robot team perform cooperating SLAM of a
@@ -69,6 +77,8 @@ explained here:
 
 Clone the catkin package in your desired catkin workspace with.
 
+
+
 ```
 $ #In your catkin workspace
 $ cd src
@@ -78,45 +88,69 @@ $ git checkout indigo-devel
 $ cd ../..
 ```
 
+
+
 Clone the obviously library. It contains the algorithms used by the SLAM
+
+
 
 ```
 $ wstool update -t src/ohm_tsd_slam
 ```
 
+
+
 If you never used rosdep, run these two commands first. Otherwise you
 can skip them.
+
+
 
 ```
 $ sudo rosdep init
 $ rosdep update
 ```
 
+
+
 Source your workspace and run rosdep to install the necessary system
 dependencies. You maybe need sudo to install necessary dependencies.
+
+
 
 ```
 $ source devel/setup.bash #for example
 $ rosdep install ohm_tsd_slam
 ```
 
+
+
 Now, building the package should be no problem. Just run catkin_make.
 For example:
+
+
 
 ```
 $ catkin_make --only-pkg-with-deps ohm_tsd_slam
 ```
+
+
 
 Finally, you can use the slam.launch launchfile to run the SLAM. If you
 play a bagfile that publishes sensor_msgs::LaserScan on the "/scan"
 topic you will receive a map on topic "/map" and the robot's pose on
 "/pose"
 
+
+
 ```
 $ roslaunch ohm_tsd_slam slam.launch
 ```
 
+
+
 ## ROS Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -260,3 +294,5 @@ node.0 {
  }
 }
 ```
+
+

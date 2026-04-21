@@ -13,9 +13,13 @@ server in that:
     supported by the parameter server, but no client currently supports
     it)
 
-A simple example of using properties: ```cplusplus
+A simple example of using properties: 
+
+```cplusplus
 PropertyNodePtr pn(new PropertyNode);
 uint32_t val = 5;
 pn->set("foo/bar/baz", val);
 val = pn->get<uint32_t>("foo/bar/baz");
 ```
+
+

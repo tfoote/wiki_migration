@@ -43,10 +43,14 @@ will publish 1..n ROS topics.
 
 Command line example:
 
+
+
 ```
 bridge_publisher.py -i bridge_publisher_config.yaml 
 bridge_publisher.py -input bridge_publisher_config.yaml
 ```
+
+
 
 ### Bridge Publisher Configuration File
 
@@ -58,6 +62,8 @@ ROS topics that will be published.
 
 The format for the first group is as follows:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
@@ -65,8 +71,12 @@ machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
 ```
 
+
+
 The key strings must not be changed; they are hard coded into the bridge
 publisher node. Here is an example of this first group:
+
+
 
 ```
 url: localhost
@@ -74,6 +84,8 @@ url_port: 5000
 machine_tool: /cnc
 xml_namespace: urn:mtconnect.org:MTConnectStreams:1.2
 ```
+
+
 
 In order to publish a ROS topic, the following data are required: 1. ROS
 topic name in !CamelCase 1. ROS package that has the message / message
@@ -83,6 +95,8 @@ dictionary defining the conversion between MTConnect and ROS
 The format for the second group is as follows
 **`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
+
+
 ```
 key : string, topic name
     key : string, ROS package/type
@@ -90,11 +104,15 @@ key : string, topic name
             value : dictionary of string:string MTCoonect-->ROS conversions
 ```
 
+
+
 Though the ROS topic string is arbitrary, the string for the ROS package
 and message type and the key for the machine tool event must already
 exist in the ROS package and machine tool configuration file,
 respectively. Here is an example of the second group showing two ROS
 topics, !CncResponseTopic and !CncRequesTopic:
+
+
 
 ```
 CncResponseTopic:
@@ -120,13 +138,19 @@ CncRequestTopic:
             {'ACTIVE':'ENABLED','COMPLETE':'TRUE','READY':'OPEN', 'NOT_READY':'OFF', 'UNAVAILABLE':'UNKNOWN'}
 ```
 
+
+
 Regarding the MTConnect to ROS conversion, note that the ROS !CncRequest
 message type <<MsgLink(mtconnect_msgs/CncRequest)>> consists of an
 array of strings, or from a terminal:
 
+
+
 ```
 rosmsg show mtconnect_msgs/CncRequest
 ```
+
+
 
 For example, during a !MaterialLoad sequence, the bridge publisher
 acquires the MTConnect event state, such as 'ACTIVE' and translates it
@@ -135,9 +159,13 @@ which is set to an integer value. In this case the value for 'ENABLED'
 is 1, which is what is published. The user can verify this by running
 from a terminal:
 
+
+
 ```
 rostopic echo /CncRequestTopic
 ```
+
+
 
 ## Bridge Subscriber
 
@@ -157,10 +185,14 @@ the need for this file.
 
 Command line example:
 
+
+
 ```
 bridge_subscriber.py -i bridge_subscriber_config.yaml 
 bridge_subscriber.py -input bridge_subscriber_config.yaml
 ```
+
+
 
 ### Bridge Subscriber Configuration File
 
@@ -173,18 +205,26 @@ group of key:value pairs.
 
 The format for the first group is as follows:
 
+
+
 ```
 url 	    : string representing the url for the machine tool
 adapter_port: integer identifier for the url port accessed by the MTConnect Agent
 ```
 
+
+
 The key strings must not be changed, as they are hard coded into the ROS
 bridge subscriber node. Here is an example of this first group:
+
+
 
 ```
 url : localhost
 adapter_port : 7878
 ```
+
+
 
 Make sure that the adapter port matches what is specified in the
 MTConnect Agent configuration file for the robot. If this number
@@ -195,12 +235,16 @@ errors between the two systems.
 The format for the second group is as follows
 **`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```0
+```
+
+0
 
 Multiple attributes are possible for a ROS topic so make sure all of the
 attributes are listed with the appropriate conversions in the
@@ -212,12 +256,16 @@ MTConnect Agent configuration file, respectively. Here is an example of
 the second group showing a configuration for a subscription to two ROS
 topics, *!RobotStateTopic* and *!RobotSpindleTopic*:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```1
+```
+
+1
 
 ## Bridge Client
 
@@ -239,12 +287,16 @@ indicating the need for this file.
 
 Command line example:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```2
+```
+
+2
 
 **Important:**The bridge client requires an additional service
 call(SetMTConnectState) to set the MTConnect status to READY/NOT READY.
@@ -266,44 +318,60 @@ key:value pairs.
 
 The format for the first group is as follows:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```3
+```
+
+3
 
 The key strings must not be changed, as they are hard coded into the ROS
 bridge client node. Here is an example of this first group:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```4
+```
+
+4
 
 The format for the second group is as follows
 **`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```5
+```
+
+5
 
 The string for the ROS package and the key for the machine tool event
 must already exist in the ROS package and machine tool configuration
 file, respectively. Here is an example of the second group showing two
 machine tool events that require a ROS action client:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```6
+```
+
+6
 
 Since an action goal will be defined by the machine tool during runtime,
 the initial value for the action goal attributes must be set to
@@ -327,12 +395,16 @@ indicating the need for this file.
 
 Command line example:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```7
+```
+
+7
 
 ### Bridge Server Configuration File
 
@@ -344,32 +416,44 @@ of key:value pairs.
 
 The format for the first group is as follows:
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```8
+```
+
+8
 
 The key strings must not be changed, as they are hard coded into the
 ROS-INDUSTRIAL bridge client node. Here is an example of this first
 group (in the YAML file, do not use tabs, only spaces for indenting):
 
+
+
 ```
 url:            string representing the url for the machine tool
 url_port:       integer identifier for the url http port
 machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
-```9
+```
+
+9
 
 The format for the second group is as follows:
+
+
 
 ```
 url: localhost
 url_port: 5000 
 machine_tool: /cnc
 xml_namespace: urn:mtconnect.org:MTConnectStreams:1.2
-```0
+```
+
+0
 
 The string for the ROS package and the strings for the robot events must
 already exist in the ROS package and robot configuration file,
@@ -379,12 +463,16 @@ not there may be a violation of the action request sequence ('ACTIVE'
 errors. Here is an example of the second group showing two ROS packages
 with unique robot action requests:
 
+
+
 ```
 url: localhost
 url_port: 5000 
 machine_tool: /cnc
 xml_namespace: urn:mtconnect.org:MTConnectStreams:1.2
-```1
+```
+
+1
 
 ## Bridge Library
 

@@ -9,6 +9,8 @@ Ethernet and embeds a server with a proprietary protocol.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name= diagnosis_board_controller
@@ -38,3 +40,5 @@ name= node_action_server
 desc= This is a node which is action server providing facility to start and stop the node(s).
 }
 ```
+
+

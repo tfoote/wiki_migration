@@ -13,6 +13,8 @@ drivers for Ubuntu 14.04. The following instructions were taken from
 The steps below are for a 64-bit system. Use the 32-bit files for a
 32-bit system.
 
+
+
 ```
 $ mkdir ~/src
  $ cd ~/src
@@ -22,6 +24,8 @@ $ mkdir ~/src
  $ cd Sensor-Bin-Linux-x64-v5.1.2.1
  $ sudo ./install.sh
 ```
+
+
 
 ## Overview
 
@@ -74,6 +78,8 @@ on RViz until calibration is complete and tracking begins.
 { }}}}
 
 ## Skeleton Markers From tf Node
+
+
 
 ```clearsilver
 node.0 {
@@ -128,9 +134,13 @@ param {
   7.default = skeleton
 ```
 
+
+
 ### Example Launch File
 
-Use the **markers_from_tf.launch** file: ```
+Use the **markers_from_tf.launch** file: 
+
+```
 <launch>
   <include file="$(find openni_camera)/launch/openni_node.launch" />
   
@@ -143,3 +153,5 @@ Use the **markers_from_tf.launch** file: ```
   </node>
 </launch>
 ```
+
+

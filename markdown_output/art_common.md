@@ -6,6 +6,8 @@ vehicle. They are described in the
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
  name = vehicle_static_tf
@@ -27,8 +29,14 @@ node.0 {
 }
 ```
 
+
+
 #### Usage
+
+
 
 ```
 rosrun art_common vehicle_static_tf
 ```
+
+

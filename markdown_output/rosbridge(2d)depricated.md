@@ -53,26 +53,38 @@ messages.
 
 Topics are sent and received in the following format:
 
+
+
 ```
 {"receiver":"/topic","msg":{},"type":"package/Type"}
 ```
+
+
 
 where /topic is the topic, msg contains a JSON version of the actual ROS
 message, and type contains the type string for the topic.
 
 For example, sending a Twist message to /cmd_vel might look like this:
 
+
+
 ```
 {"receiver":"/cmd_vel","msg":{"linear":{"x":0,"y":0,"z":0},"angular":{"x":0,"y":0,"z":0}},"type":"geometry_msgs/Twist"}
 ```
+
+
 
 ## Service Calls
 
 To make a service call:
 
+
+
 ```
 {"receiver":"/service","msg":[]}
 ```
+
+
 
 where receiver is the service being called and msg is a JSON array of
 arguments (e.g. \[arg1,arg2\]). Answers will come back from rosbridge as

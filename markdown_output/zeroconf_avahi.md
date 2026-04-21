@@ -42,6 +42,8 @@ refer to the [Tutorials](zeroconf_avahi/Tutorials).
 
 ## Ros API
 
+
+
 ```clearsilver
 name = Zeroconf Node
 desc = Provides a ros api for listening and publishing of services.
@@ -93,6 +95,8 @@ param {
   7.default = []
 }
 ```
+
+
 
 See the example on static configuration for an illustration of the usage
 of the *listeners* and *services* parameters:

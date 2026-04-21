@@ -13,15 +13,23 @@ For more information on simulating Warthog, see
 To view the Warthog model in isolation, disconnected from a real or
 simulated robot, use the following launcher:
 
+
+
 ```
 roslaunch warthog_viz view_model.launch
 ```
 
+
+
 To visualize a real or simulated Warthog, launch:
+
+
 
 ```
 roslaunch warthog_viz view_robot.launch
 ```
+
+
 
 For more examples, see
 [Warthog Tutorials](http://www.clearpathrobotics.com/assets/guides/melodic/warthog/).

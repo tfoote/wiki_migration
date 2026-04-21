@@ -25,18 +25,28 @@ device with the VendorID "04d8" and ProductID "ffc3" (all our XDIMAX
 Boxes have these identifiers). The ids can be determined by using
 "lsusb -v".
 
-Open/create the file with ```
+Open/create the file with 
+
+```
 vi /etc/udev/rules.d/65-usb-xdimax.rules
-``` and insert (adjust
-ids if necessary) ```
+```
+
+ and insert (adjust
+ids if necessary) 
+
+```
 # set permission to 666 for xdimax box
 BUS=="usb", SYSFS{idVendor}=="04d8", SYSFS{idProduct}=="ffc3", ACTION=="add", MODE="0666"
 ```
+
+
 
 Once the device is (re)plugged into an USB port the udev rule should set
 the permission of the corresponding character device to 666.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0{
@@ -56,3 +66,5 @@ srv {
   0.desc= Reconfiguration service
 }
 ```
+
+

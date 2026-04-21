@@ -6,6 +6,8 @@ its peripherals.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = carl_estop_node
@@ -53,6 +55,8 @@ node.1 {
 }
 ```
 
+
+
 ## Installation
 
 To install the `carl_estop` package, you can choose to either install
@@ -60,7 +64,9 @@ from source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/catkin/workspace/src
 git clone https://github.com/WPI-RAIL/carl_estop.git
 cd /path/to/your/catkin/workspace
@@ -68,12 +74,18 @@ catkin_make
 catkin_make install
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-indigo-carl-estop
 ```
+
+
 
 ### Startup
 
@@ -82,18 +94,26 @@ which should be launched on **the off board PC**. This file launches an
 instance of the `pc_estop_node`. To launch, the following command can
 be used:
 
+
+
 ```
 roslaunch carl_estop pc_estop.launch
 ```
+
+
 
 The `carl_estop` package also contains a `carl_estop.launch` file
 which should be launched on **the robot**. This file launches an
 instance of the `carl_estop_node`. To launch, the following command
 can be used:
 
+
+
 ```
 roslaunch carl_estop carl_estop.launch
 ```
+
+
 
 After both nodes are launched you should now be able to stop the robot
 by shutting down the pc_estop_node using CTRL\^C.

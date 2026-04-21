@@ -1,18 +1,30 @@
 ## Setup
 
-Check out the dance_demo stack. ```
+Check out the dance_demo stack. 
+
+```
 svn co https://code.ros.org/svn/wg-ros-pkg/branches/trunk_cturtle/stacks/dance_demo/
 ```
 
-Add it to your ROS_PACKAGE_PATH: ```
+
+
+Add it to your ROS_PACKAGE_PATH: 
+
+```
 cd dance_demo
 export ROS_PACKAGE_PATH=`pwd`:$ROS_PACKAGE_PATH
 ```
 
+
+
 Make sure that the joint_trajectory_replay and package is built.
+
+
 ```
 rosmake joint_trajectory_replay
 ```
+
+
 
 ## Recording
 
@@ -44,16 +56,24 @@ You can do this step with as many bags as you like (different shell for
 each bag). Each joint should only be driven by one bag or havoc will
 ensue.
 
-To play bag `foo.bag`: ```
+To play bag `foo.bag`: 
+
+```
 BAG=foo.bag roslaunch joint_replay.launch
 ```
+
+
 
 ### Trigger Replay
 
 Once all the joint_replay commands are ready, trigger the replay:
+
+
 ```
 rosrun trigger_msgs trigger.py _delay:=2.7
 ```
+
+
 
 In this example, replay will start 2.7 seconds after the trigger message
 is sent. In a multi-computer setting, clock synchronization is assumed.
@@ -76,9 +96,13 @@ position to the bag start position. This smooth motion will start as
 soon as the trigger message is received (time t0). If the trigger is set
 to occur at time t1 (time when trigger.py sent the message plus the
 `delay` parameter). The smooth motion will end at time:
+
+
 ```
 t0 * ready_by + t1 * (1 - ready_by)
-``` For example, for `ready_by = 0`, the motion
+```
+
+ For example, for `ready_by = 0`, the motion
 will be instantaneous (not recommended), for `ready_by = 1`, the
 motion will end exactly when the bag replay is due to start, and for
 `ready_by = 0.5`, the motion will end half way between `t0` and

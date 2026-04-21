@@ -21,20 +21,36 @@ motion when the client returns.
 
 **Prerequisite**: the robot is calibrated.
 
-ssh on hrp2014v and run ```sh
+ssh on hrp2014v and run 
+
+```sh
 roslaunch hrp2_bringup cameras.launch
-``` ssh on hrp2014v and run
+```
+
+ ssh on hrp2014v and run
+
+
 ```sh
 roslaunch hrp2_bringup openhrp_bridge.launch
 rosservice call restart_controller
-``` switch relay on, ssh on hrp2014v and run
+```
+
+ switch relay on, ssh on hrp2014v and run
+
+
 ```sh
 rosservice call switch_servo True all
 rosservice call start_dynamic_graph
-``` then put the robot down. ssh -Y on hrp2014v and
-run ```sh
+```
+
+ then put the robot down. ssh -Y on hrp2014v and
+run 
+
+```sh
 roslaunch ball_reaching robot.launch
-``` Then take the ping ball and move it in
+```
+
+ Then take the ping ball and move it in
 front of the robot. When the ball reaches the target position (specified
 in supervisor.py script) in the waist coordinate frame, up to 5 cm, the
 robot grabs the ball and moves back to rest position.

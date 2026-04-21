@@ -38,6 +38,8 @@ Implemented actions:
 
 ### ROS API
 
+
+
 ```clearsilver
 sub {
    0.name= ~<name>/odometry
@@ -95,3 +97,5 @@ param {
   7.desc= name of the optional topic for exit angle (or direction), will only be used if this information is not associated with the edge to traverse
 }
 ```
+
+

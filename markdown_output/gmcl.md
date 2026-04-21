@@ -1,22 +1,34 @@
+
+
 ```wiki
 '''Citation Note'''
 
 If you are using this package in your research work, please cite our article, more info[[https://wiki.ros.org/gmcl#Acknowledgements_.26_Citation|here]].
 ```
 
+
+
 ## Installation
 
 Before installing gmcl package, please install ROS navigation stack in
 your ROS workspace. You can do that with the following command:
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-``` Then download gmcl package and place it inside
+```
+
+ Then download gmcl package and place it inside
 the /src folder of your catkin workspace and compile it, which can be
-done through following commands: ```
+done through following commands: 
+
+```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
 ```
+
+
 
 Following video shows gmcl in comparison to amcl while running on the
 famous turtlebot 3 inside Gazebo simulation in solving the 3
@@ -86,22 +98,38 @@ Message)>>) massege.
 ## Examples
 
 Example of launch file that runs gmcl node and its parameters on
-Differential drive mobile robot ```
+Differential drive mobile robot 
+
+```
 ../gmcl/examples/gmcl_diff.launch
-``` To run gmcl
+```
+
+ To run gmcl
 node with initial estimated pose e.g. at (x, y, yaw) := (-1, 2, 0.6)
+
+
 ```
 $ rosrun gmcl gmcl_diff.launch initial_pose_x:=-1 initial_pose_y:=2 initial_pose_a:=0.6
 ```
 
+
+
 Example of launch file that runs gmcl node and its parameters on
-Holonomic wheeled mobile robot ```
+Holonomic wheeled mobile robot 
+
+```
 ../gmcl/examples/gmcl_omni.launch
-``` To run gmcl node
+```
+
+ To run gmcl node
 with initial estimated pose e.g. at (x, y, yaw) := (-1, 2, 0.6)
+
+
 ```
 $ rosrun gmcl gmcl_omni.launch initial_pose_x:=-1 initial_pose_y:=2 initial_pose_a:=0.6
 ```
+
+
 
 ## gmcl Node
 
@@ -120,6 +148,8 @@ transform accounts for the drift that occurs using Dead Reckoning.
 
 ### Subscribed Topics
 
+
+
 ```clearsilver
   sub{
 no_header=True
@@ -127,7 +157,11 @@ no_header=True
     0.type= sensor_msgs/LaserScan
     0.desc= Laser scans.
 }
-``` ```clearsilver
+```
+
+ 
+
+```clearsilver
  sub{
 no_header=True
 
@@ -136,6 +170,10 @@ no_header=True
     1.desc= Transforms.
 }
 ```
+
+
+
+
 ```clearsilver
  sub{
 no_header=True
@@ -143,39 +181,77 @@ no_header=True
     2.type= geometry_msgs/PoseWithCovarianceStamped
     2.desc= Mean and covariance with which to (re-)initialize the particle filter.
 }
-``` ```
+```
+
+ 
+
+```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```0
+```
+
+0
 
 ### Published Topics
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```1 ```
-$ sudo apt-get install ros-$ROS_DISTRO-navigation
-```2
+```
+
+1 
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```3 ```
+```
+
+2
+
+
+```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```4
+```
+
+3 
+
+```
+$ sudo apt-get install ros-$ROS_DISTRO-navigation
+```
+
+4
 
 ### Services
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```5 ```
-$ sudo apt-get install ros-$ROS_DISTRO-navigation
-```6
+```
+
+5 
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```7
+```
+
+6
+
+
+```
+$ sudo apt-get install ros-$ROS_DISTRO-navigation
+```
+
+7
 
 ### Services Called
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```8
+```
+
+8
 
 ### Parameters
 
@@ -184,22 +260,38 @@ Besides Parameters that amcl uses to configure its node --Please check
 Parameters to overall filter parameters to configure the `gmcl` node
 and they are:
 
+
+
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-navigation
-```9 ```
-$ cd catkin_ws
-$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
-$ catkin_make
-```0
+```
+
+9 
+
 ```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```1 ```
+```
+
+0
+
+
+```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```2 Previous parameters
+```
+
+1 
+
+```
+$ cd catkin_ws
+$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
+$ catkin_make
+```
+
+2 Previous parameters
 define the Flow of gmcl algorithm and can be seen in following
 drawing..... ![\|width="750px"](attachment:flow_chart.png) Full size
 available
@@ -209,51 +301,87 @@ The following table shows name of different techniques based on filters
 implemented, it could be seen that gmcl works with default parameters
 same as amcl..... ![\|width="750px"](attachment:table.png)
 
+
+
 ```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```3
+```
+
+3
 
 ##### 
 
-```
-$ cd catkin_ws
-$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
-$ catkin_make
-```4
+
 
 ```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```5 ```
-$ cd catkin_ws
-$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
-$ catkin_make
-```6
+```
+
+4
+
+
+
 ```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```7 ```
+```
+
+5 
+
+```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```8
+```
+
+6
+
+
+```
+$ cd catkin_ws
+$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
+$ catkin_make
+```
+
+7 
+
+```
+$ cd catkin_ws
+$ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
+$ catkin_make
+```
+
+8
 
 ##### 
 
+
+
 ```
 $ cd catkin_ws
 $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
-```9 ```
-../gmcl/examples/gmcl_diff.launch
-```0
+```
+
+9 
+
 ```
 ../gmcl/examples/gmcl_diff.launch
-```1
+```
+
+0
+
+
+```
+../gmcl/examples/gmcl_diff.launch
+```
+
+1
 
 ## Feedback
 
@@ -281,6 +409,10 @@ This work has been published as an article
 [here](https://www.researchgate.net/publication/359482651_Development_of_a_New_Technique_in_ROS_for_Mobile_Robots_Localization_in_Known-Based_2D_Environments).
 To properly cite it, please use the following:
 
+
+
 ```
 ../gmcl/examples/gmcl_diff.launch
-```2
+```
+
+2

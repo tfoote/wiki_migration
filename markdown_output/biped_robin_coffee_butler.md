@@ -6,6 +6,8 @@ away cups.
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
 name = coffee_butler
@@ -61,3 +63,5 @@ srv {
 }
 }
 ```
+
+

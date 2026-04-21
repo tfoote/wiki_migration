@@ -11,13 +11,23 @@ This package doesn't have a own ROS API, it just configures the
 
 ## Usage/Examples
 
-For starting only the tray use ```
+For starting only the tray use 
+
+```
 roslaunch cob_tray solo.launch
-``` For including
-the tray in your overall launch file use ```
+```
+
+ For including
+the tray in your overall launch file use 
+
+```
 <include file="$(find cob_tray)/ros/launch/tray.launch" />
-``` A
-sample parameter file could look like this ```
+```
+
+ A
+sample parameter file could look like this 
+
+```
 can_module: PCAN
 can_device: /dev/pcan0
 can_baudrate: 500
@@ -25,10 +35,16 @@ module_ids: [10]
 joint_names: [torso_tray_joint]
 max_accelerations: [0.8]
 OperationMode: position
-``` For
+```
+
+ For
 moving the tray start the [cob_dashboard](cob_dashboard)
+
+
 ```
 roslaunch cob_dashboard dashboard.launch
-``` Press the "init" button to call the init
+```
+
+ Press the "init" button to call the init
 service for connecting to the hardware. Afterwards use the buttons to
 move to predefined positions.

@@ -16,5 +16,3 @@ Usage examples can be found in the
 [Code API\|](http://docs.ros.org/kinetic/api/baldor/html/)
 
 ## Report a Bug
-
-<<GitHubIssues(crigroup/baldor)>>

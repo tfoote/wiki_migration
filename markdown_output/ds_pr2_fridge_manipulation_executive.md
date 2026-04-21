@@ -10,6 +10,10 @@ types of action requests for the PR2:
 # Usage:
 
 All nodes required for the state machine to complete the action requests
-are launched by ```
+are launched by 
+
+```
 roslaunch ds_pr2_fridge_manipulation_executive fridge_pr2.launch
 ```
+
+

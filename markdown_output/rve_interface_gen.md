@@ -2,19 +2,29 @@
 proxy class and inheritable server class that use [rve_rpc](rve_rpc) for
 communication.
 
-For example: ```
+For example: 
+
+```
 interface Bar
 {
   bar(uint32 x, uint32 y, string blah) returns (geometry_msgs/Vector3 v);
 }
 ```
 
-generates a number of messages: ```
+
+
+generates a number of messages: 
+
+```
 Bar_barRequest.msg  
 Bar_barResponse.msg
 ```
 
-a proxy class: ```cplusplus
+
+
+a proxy class: 
+
+```cplusplus
 struct BarProxy : public Bar
 {
   BarProxy(rve_rpc::Client& client);
@@ -25,7 +35,11 @@ struct BarProxy : public Bar
 };
 ```
 
-And a server class: ```cplusplus
+
+
+And a server class: 
+
+```cplusplus
 struct BarServer : public Bar
 {
   BarServer(rve_rpc::Server& server);
@@ -34,7 +48,11 @@ struct BarServer : public Bar
 };
 ```
 
-along with a bunch of typedefs in a base class ```cplusplus
+
+
+along with a bunch of typedefs in a base class 
+
+```cplusplus
 struct Bar : public rve_interface_gen::Interface
 {
   virtual ~Bar() {}
@@ -51,3 +69,5 @@ struct Bar : public rve_interface_gen::Interface
 
 };
 ```
+
+

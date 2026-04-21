@@ -23,6 +23,8 @@ This list only includes new parameters. The rest of the parameters (as
 well as subscribers and publishers) can be found at the
 [move_base](move_base) package this one is based on.
 
+
+
 ```clearsilver
 param {
   0.name = planner_frequency
@@ -31,3 +33,5 @@ param {
   0.desc = This is the desired frequency for the global planner. If the value is less than or equal to 0, the node works like the original move_base (only plan when there is a new goal or the local planner fails). By default this node operates like the original move_base.
 }
 ```
+
+

@@ -16,6 +16,8 @@ robots without using IK. Also, if the robot had torque sensor at each
 joint, all of force, position and orientation of fingertip would be
 controlled in hybrid way.
 
+
+
 ```
 author    = {Oussama Khatib},
   title     = {A Unified Approach for Motion and Force Control of Robot Manipulators:	The Operational Space Formulation},
@@ -24,6 +26,8 @@ author    = {Oussama Khatib},
   booktitle = {IEEE Journal of Robotics and Automation (RA-3)},
 }
 ```
+
+
 
 [Youtube](https://www.youtube.com/watch?v=7pHPHKFTwZs)
 

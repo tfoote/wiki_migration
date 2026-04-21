@@ -19,6 +19,8 @@ who are familiar with using rospy to instantiate ROS nodes and use them
 to publish, offer services, subscribe, and get service proxies. This is
 best illustrated by a simple example:
 
+
+
 ```python
 import rosmultimaster
 from std_msgs.msg import String
@@ -45,6 +47,8 @@ for x in range(20):
   pub.Publish("Hello %s! I'm talking to you on port %s!" %( ip, repr(port) ) )
   time.sleep(1)
 ```
+
+
 
 As you can see, this works almost exactly the same way as rospy except
 for the initialization of the Adaptor and the need for the

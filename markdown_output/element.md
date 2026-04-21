@@ -20,6 +20,8 @@ XBEE radios or TTL.
 
 ## Element Node
 
+
+
 ```clearsilver
 node.0 {
 name = element-node.py
@@ -225,6 +227,8 @@ prov_tf {
 }
 ```
 
+
+
 ### Configuration
 
 The Element node is configured using a YAML file specifying the required
@@ -244,6 +248,8 @@ Current valid sensor types names (case-sensitive):
 -   PhidgetsVoltage
 -   PhidgetsCurrent
 -   PhidgetsTemperature
+
+
 
 ```
 port: /dev/ttyUSB0
@@ -277,7 +283,11 @@ analog: { voltage: {pin: 5, type: Voltage, rate: 1}, drive_current: {pin: 1, typ
 #digital: { base_sonar: {pin: 5, type: Ping, rate: 1} }
 ```
 
+
+
 ### Example Launch File
+
+
 
 ```
 <launch>
@@ -287,12 +297,18 @@ analog: { voltage: {pin: 5, type: Voltage, rate: 1}, drive_current: {pin: 1, typ
 </launch>
 ```
 
+
+
 ### Usage Notes
 
 -   If you mess up your parameters in a given session, just do a:\
-    ```
+    
+
+```
 rosparam delete /element
 ```
+
+
 
 ```{=html}
 <!-- -->

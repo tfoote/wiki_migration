@@ -25,9 +25,13 @@ An example of some of the nodes can be found
 
 Node uses OpenCV (HAAR Cascade detector) to detect faces only.
 
+
+
 ```
 roslaunch face_detection face_detection.launch
 ```
+
+
 
 ### face_tracking
 
@@ -39,34 +43,50 @@ tracked faces are then merged into one list.
 
 Node uses OpenCV (HAAR Cascade detector) and CUDA to detect faces only.
 
+
+
 ```
 roslaunch face_detection face_detection_cuda.launch
 ```
+
+
 
 ### face_detection_dlib
 
 Node uses Dlib (HOG Cascade detector) to detect faces only.
 
+
+
 ```
 roslaunch face_detection face_detection_dlib.launch
 ```
+
+
 
 ### face_listener
 
 Example node reading the published face coordinates
 
+
+
 ```
 rosrun face_detection face_listener
 ```
+
+
 
 ### Changing Node settings
 
 All setting can be adjusted dynamicaly using the ROS rqt reconfigure
 setup.
 
+
+
 ```
 rosrun rqt_reconfigure rqt_reconfigure
-``` Once you have the rqt_reconfigure open, change
+```
+
+ Once you have the rqt_reconfigure open, change
 the input image default (/camera/image_raw) to your desired input.
 Additional information about the different settings are annotated in the
 dynamic reconfigure setup (hover over the desired setting in the

@@ -22,18 +22,26 @@ the [rqt_common_plugins](rqt_common_plugins) metapackage.
 
 ### To run
 
+
+
 ```
 $ rqt
 ```
+
+
 
 and select from `Plugins` \--> `Logging` \--> `Bag`.
 
 Or simply the following (with this you can't open `rqt_bag` with
 other rqt tools).
 
+
+
 ```
 $ rqt_bag
 ```
+
+
 
 The main window shows a timeline representing the stream of messages
 contained in the bag file, listed by topic.

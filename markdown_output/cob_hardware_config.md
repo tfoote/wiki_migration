@@ -23,13 +23,21 @@ The robot urdf is composed out of components defined in
 [cob_description](cob_description) and
 [schunk_description](schunk_description).
 
-You can check your urdf settings with ```
+You can check your urdf settings with 
+
+```
 rosrun xacro xacro.py <<xacro_file>> > <<urdf_file>>
 rosrun urdf_parser check_urdf <<urdf_file>>
-``` and
-graphically with ```
+```
+
+ and
+graphically with 
+
+```
 roslaunch urdf_tutorial display.launch gui:=True model:=<<urdf_file>>
-``` <<xacro_file>> is for
+```
+
+ <<xacro_file>> is for
 example `cob3-3/urdf/cob3-3.urdf.xacro`.
 
 ## Calibration

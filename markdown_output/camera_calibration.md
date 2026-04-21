@@ -39,18 +39,28 @@ There are tutorials on how to run the calibration tool for
 To run the `cameracalibrator.py` node for a monocular camera using an
 8x6 chessboard with 108mm squares:
 
+
+
 ```
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/my_camera/image camera:=/my_camera
-``` When you click on the "Save" button after a
+```
+
+ When you click on the "Save" button after a
 succesfull calibration, the data (calibration data and images used for
 calibration) will be written to /tmp/calibrationdata.tar.gz.
 
 To run the `cameracalibrator.py` node for a stereo camera:
 
+
+
 ```
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 right:=/my_stereo/right/image_raw left:=/my_stereo/left/image_raw left_camera:=/my_stereo/left right_camera:=/my_stereo/right
-``` `cameracalibrator.py` supports the following
+```
+
+ `cameracalibrator.py` supports the following
 options:
+
+
 
 ```
 Chessboard Options:
@@ -84,7 +94,11 @@ Chessboard Options:
                         6, default 2)
 ```
 
+
+
 cameracalibrator.py supports the following options:
+
+
 ```
 Chessboard Options:
     You must specify one or more chessboards as pairs of --size and
@@ -141,6 +155,8 @@ Chessboard Options:
                         px/frame. Set to eg. 0.5 for rolling shutter cameras.
 ```
 
+
+
 #### Unsynchronized Stereo
 
 By default, the `image_pipeline` assumes that stereo cameras are
@@ -170,16 +186,26 @@ different dimensions, so the calibration system can tell them apart.
 To run the command-line utility to check the calibration of a monocular
 camera:
 
+
+
 ```
 rosrun camera_calibration cameracheck.py --size 8x6 monocular:=/forearm image:=image_rect
-``` To run the command-line utility to check the
+```
+
+ To run the command-line utility to check the
 calibration of a stereo camera:
+
+
 
 ```
 rosrun camera_calibration cameracheck.py --size 8x6 stereo:=/wide_stereo image:=image_rect
 ```
 
+
+
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -232,3 +258,5 @@ sub{
 }
 }
 ```
+
+

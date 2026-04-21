@@ -1,10 +1,18 @@
+
+
 ```wiki
 As of ROS Electric, the Yamlcpp package has been replaced with a system dependency.  [[/diamondback|Old documentation]]
 ```
 
+
+
+
+
 ```wiki
 From version 0.5, yaml-cpp started using boost as a dependency. If you'd like to continue using the non-boost variant (useful on embedded boards), pull in the ''yaml-cpp-0-3'' ros third party dependency. Note that ubuntu does provide a 0.3 variant, but it cannot be used in parallel. The ros third party dependency namespaces so that you can - see the [[https://github.com/stonier/yaml_cpp_0_3/blob/devel/Readme.md|README]].
 ```
+
+
 
 Starting in ROS Electric, Yamlcpp is installed as a [rosdep](rosdep)
 system dependency. This means that you compile against Yamlcpp without
@@ -16,9 +24,13 @@ requiring any ROS-specific build tools.
 
 You need to explicitly link against against the yaml-cpp library:
 
+
+
 ```
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
 ```
+
+
 
 ### Package/stack dependencies
 
@@ -32,17 +44,25 @@ follows:
 
 1\. `manifest.xml`
 
+
+
 ```
 <depend package="common_rosdeps" />
 
   <rosdep name="yaml-cpp" />
 ```
 
+
+
 2\. `stack.xml`
+
+
 
 ```
 <depend stack="common_rosdeps" />
 ```
+
+
 
 ## External Documentation
 

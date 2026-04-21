@@ -27,6 +27,10 @@ Repeat from step 1. until all vertices and all exits are visited.
 ## Usage
 
 A test launch file can be found in the [lama_test](lama_test) package:
+
+
 ```shell
 roslaunch lama_test test_dfs_explorer.launch
 ```
+
+

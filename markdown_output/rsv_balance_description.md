@@ -7,7 +7,9 @@ to assemble your own robot model using the self-balance platform.
 
 The platform macro is provided by the file:
 *rsv_balance_description/urdf/urdf/balance.urdf.xacro* and can be
-included in your URDF model as such: ```
+included in your URDF model as such: 
+
+```
 <robot name="you_awesome_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find rsv_balance_description)/urdf/balance.urdf.xacro" />
   <xacro:balance/> 
@@ -18,6 +20,8 @@ included in your URDF model as such: ```
 
 </robot>
 ```
+
+
 
 As an example you can look at
 *rsv_balance_description/urdf/urdf/robot.urdf.xacro*, which puts on top

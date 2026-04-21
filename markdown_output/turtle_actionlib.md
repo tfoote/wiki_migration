@@ -5,7 +5,9 @@ This tutorial package provides a `shape_server` and example
 `turtlesim_node`. The default client will draw a pentagon in
 `turtlesim`.
 
-The `Shape.action` is defined below: ```
+The `Shape.action` is defined below: 
+
+```
 #goal definition
 int32 edges
 float32 radius
@@ -17,22 +19,32 @@ float32 apothem
 #feedback
 ```
 
+
+
 ## Running the Tutorial Code
 
 To run the default example, start by getting the required dependencies
 and making the package.
+
+
 
 ```
 $ rosdep install turtle_actionlib
 $ rosmake turtle_actionlib
 ```
 
+
+
 Then in separate terminals `rosrun` the following nodes:
+
+
 ```
 $ rosrun turtlesim turtlesim_node
 $ rosrun turtle_actionlib shape_server
 $ rosrun turtle_actionlib shape_client
 ```
+
+
 
 You will see:
 

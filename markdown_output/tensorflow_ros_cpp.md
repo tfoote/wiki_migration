@@ -2,17 +2,25 @@ A Catkin-friendly package for utilizing the C++ API of Tensorflow.
 
 Get Tensorflow C++ API into ROS as easy as
 
+
+
 ```
 find_package(catkin REQUIRED COMPONENTS
   ... your other packages ...
   tensorflow_ros_cpp
 )
-``` See the usage example at
+```
+
+ See the usage example at
 <https://github.com/tradr-project/tensorflow_ros_test> .
+
+
 
 ```wiki
 Starting with ROS Kinetic, the supported Ubuntu versions started to use C++11 ABI for building system packages. This makes problems when using the pip-installed Tensorflow (as described further). See section ''C++ ABI difference problems'' for hints on how to overcome this limitation.
-``` *Note: If you only intend to use Tensorflow
+```
+
+ *Note: If you only intend to use Tensorflow
 from Python nodes, you don't need this package. Just add
 `<run_depend>python-tensorflow-pip</run_depend>` to your package.xml and
 that's it.*
@@ -50,9 +58,13 @@ not want it to try to install the optional dependencies (currently
 python-tensorflow-pip and tensorflow_catkin). In such case, add the
 following to the rosdep call:
 
+
+
 ```
 rosdep install ... --skip-keys=tensorflow_catkin --skip-keys=python-tensorflow-pip
 ```
+
+
 
 ## C++ ABI difference problems
 

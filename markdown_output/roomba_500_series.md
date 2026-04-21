@@ -53,6 +53,8 @@ work until it can be considered stable.
 
 #### Action Subscribed Topics
 
+
+
 ```clearsilver
 sub {
 no_header= True
@@ -68,7 +70,11 @@ no_header= True
 }
 ```
 
+
+
 #### Action Published Topics
+
+
 
 ```clearsilver
 pub {
@@ -81,6 +87,10 @@ no_header= True
 1.desc= Velocity commands to the robot.
 }
 ```
+
+
+
+
 
 ```clearsilver
 node.0 {
@@ -165,6 +175,8 @@ name=godock_client
 desc=`godock_client` is a client implementation for the !GoDockAction created for testing and debugging.
 }
 ```
+
+
 
 ## Custom Nodes
 

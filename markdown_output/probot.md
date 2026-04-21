@@ -21,5 +21,3 @@ See the [probot-ros](https://github.com/ps-micro/probot_ros) page for an
 overview of the available tutorials.
 
 ## Report a Bug
-
-<<GitHubIssues(ps-micro/probot_ros)>>

@@ -16,12 +16,20 @@ source code using the git or downloading the compressed file.
 
 Use git recommended method is using the git control version system. If
 you don't have git yet, using ubuntu you can install it as follow:
+
+
 ```
 $ sudo apt-get install git-core
-``` after that you can obtain the most up-to-date
-of rt-wmp as follow: ```
+```
+
+ after that you can obtain the most up-to-date
+of rt-wmp as follow: 
+
+```
 $ git clone git://github.com/domesici/speex_audio.git
-``` This, will create a ros
+```
+
+ This, will create a ros
 directory called `speex_audio`.
 
 ## Use .tar.gz or .zip file
@@ -39,19 +47,31 @@ where the directory is should be added to `\$ROS_PACKAGE_PATH` (see
 [here](http://www.ros.org/wiki/ROS/EnvironmentVariables) for details).
 
 It is necessary to configure package as follows:
+
+
 ```
 $ cd speex_audio
     $ cmake .
 ```
 
+
+
 After that we can try to compile the node. In the `speex_audio`
-directory type: ```
+directory type: 
+
+```
 $ rosmake
-``` If all went ok you will read:
+```
+
+ If all went ok you will read:
+
+
 ```
 [ rosmake ] Results:
      [ rosmake ] Built 15 packages with 0 failures.
 ```
+
+
 
 If the built ends succefully, 'bin' folder is created that will
 contain the 'speex_node' binary file.
@@ -65,9 +85,13 @@ Before executing the following command, make sure your microphone is
 enabled and selected as your default audio input device. Besides, you
 could use headphones in order to avoid the annoying voice feedback.
 
+
+
 ```
 $ rosrun speex_audio speex_node speex_capture:=speex_play
 ```
+
+
 
 The above command should play audio from the microphone through the
 speakers. If no audio is heard, make sure your system is setup to

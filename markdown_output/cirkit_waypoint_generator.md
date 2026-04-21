@@ -21,6 +21,8 @@ This package generate waypoints for 2D navigation by using /map and
 
 Generate waypoints.
 
+
+
 ```clearsilver
 sub {
   0.name= /tf
@@ -33,6 +35,10 @@ sub {
 }
 ```
 
+
+
+
+
 ```clearsilver
 param{
   2.name=dist_th
@@ -43,6 +49,8 @@ param{
   3.desc=threshold of yaw angle[rad] for adding new waypoint
 }
 ```
+
+
 
 ### waypoint_saver
 
@@ -57,27 +65,43 @@ Load a CSV file saved by `waypoint_saver` and show the loaded
 
 ### generate waypoints
 
+
+
 ```
 $ rosrun waypoint_generator waypoint_generator
 ```
 
+
+
 If you have already had waypoints file as point.csv,
+
+
 
 ```
 $ rosrun waypoint_generator waypoint_generator --load path/to/point.csv
 ```
 
+
+
 The waypoint file format is below.
+
+
 
 ```
 x, y, z, qx, qy, qz, qw, is_searching_area, reach_threshold
 ```
 
+
+
 ### save waypoint
+
+
 
 ```
 $ rosrun waypoint_generator waypoint_saver
 ```
+
+
 
 ### modify_waypoint
 
@@ -89,6 +113,10 @@ normal color is green.
 
 If you want to check the waypoints, run the command as follows.
 
+
+
 ```
 rosrun waypoint_generator waypoint_server --load path/to/waypoints.csv
 ```
+
+

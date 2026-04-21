@@ -8,10 +8,14 @@ to be accessed using Python code.
 
 In Python, to use cameras declared in this package's camera_config.py:
 
+
+
 ```
 import hrl_camera.hrl_camera as hc
  camera_object = hc.find_camera('CAMERA_NAME')
-``` The function find_camera takes as input a
+```
+
+ The function find_camera takes as input a
 string, looks up that string in the dictionary declared in
 camera_config.py, then instantiate and returns an object of the
 appropriate class.

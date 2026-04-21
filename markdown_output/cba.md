@@ -33,6 +33,8 @@ Intelligence Research.` ` Vol. 34, 2009.`
 
 ## Nodes
 
+
+
 ```clearsilver
 node.0 {
   name = cba
@@ -79,6 +81,8 @@ node.0 {
 }
 ```
 
+
+
 ### Launching CBA
 
 The CBA assumes the the above topics/services are already running. Once
@@ -86,9 +90,13 @@ it receives its first state via the `state_listener` topic, it will
 continuously iterate through the algorithm. To launch the node, the
 following commands can be used:
 
+
+
 ```
 rosrun cba cba
 ```
+
+
 
 Since this node requires additional topics/services to be running, it
 may make sense to create a launch file for your application.
@@ -99,7 +107,9 @@ The `cba` package includes a set of test nodes used to test the
 functionality of the the CBA implementation. These nodes rely on
 semi-random data and a highly-simplified classifier. They are included
 only to serve as point of reference when implementing the nodes required
-to interact with the `cba` node. ```clearsilver
+to interact with the `cba` node. 
+
+```clearsilver
 node.0 {
   name = mock_state_publisher
   desc = The mock state publisher will continuously publish a random 3 dimensional state vector. The values are integers bounded in the range [0,25).
@@ -147,6 +157,8 @@ node.2 {
 }
 ```
 
+
+
 ## Running the CBA Tests
 
 If you would like to run the CBA test nodes, this can be done via the
@@ -154,9 +166,13 @@ included `cba_test.launch` file. This file launches an instance of the
 `cba`, `mock_agent`, `mock_classify`, and `mock_state_publisher`
 nodes. To launch these nodes, the following commands can be used:
 
+
+
 ```
 roslaunch cba_ctrl cba_test.launch
 ```
+
+
 
 ## Installation
 
@@ -165,7 +181,9 @@ source, or from the Ubuntu package:
 
 ### Source
 
-To install from source, execute the following: ```shell
+To install from source, execute the following: 
+
+```shell
 cd /path/to/your/ros/stacks
 git clone https://github.com/WPI-RAIL/lfd.git
 roscd lfd
@@ -173,12 +191,18 @@ rosdep install lfd
 rosmake lfd
 ```
 
+
+
 ### Ubuntu Package
 
 To install the Ubuntu package, execute the following:
+
+
 ```
 sudo apt-get install ros-fuerte-lfd
 ```
+
+
 
 ## Support
 

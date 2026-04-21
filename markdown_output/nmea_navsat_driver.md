@@ -24,9 +24,13 @@ start outputting your GPS data onto ROS topics. This assumes your GPS is
 outputting GGA NMEA sentences, is connected to `/dev/ttyUSB0` and is
 communicating at 38400 baud.
 
+
+
 ```
 $ rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyUSB0 _baud:=38400
 ```
+
+
 
 ## Roadmap
 
@@ -38,6 +42,8 @@ $ rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyUSB0 _baud:=38400
     sentences to generate one cycle of topic outputs.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -132,6 +138,8 @@ node.3 {
  }
 ```
 
+
+
 ## Troubleshooting
 
 If you are using this package for the first time and encountering
@@ -148,5 +156,3 @@ checking to see if the user is part of the "dialout" group. See
 for more information.
 
 ## Report a Bug
-
-<<GitHubIssues(ros-drivers/nmea_navsat_driver)>>

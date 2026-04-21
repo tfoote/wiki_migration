@@ -26,9 +26,13 @@ Each algorithm is supplied with [launch](roslaunch)-files for the
 datasets that give the idea of how to launch algorithms. The `_mit_`
 launch-files can be used in general case if data provided by a dataset
 do not require any preprocessing. For example, tinySLAM can be launched
-in the following way: ```
+in the following way: 
+
+```
 roslaunch slam_constructor tiny_mit_run.launch path:=[path to dataset]
-``` In order to run an
+```
+
+ In order to run an
 algorithm on data received in real time you can remove a dataset player
 node from a launch file, but make sure that sensor data are provided
 through [Subscribed topics](#Subscribed_topics).
@@ -224,10 +228,14 @@ GMapping has the following additional parameters (note that
 The package provides the tool `lslam2d_bag_runner` to launch
 algorithms in the offline mode to process [rosbag](rosbag) datasets.
 
+
+
 ```
 lslam2d_bag_runner <slam type> <bag file>
                    [-v] [-t <traj file>] [-m <map file>] [-p <properties file>]
 ```
+
+
 
 Parameters:
 

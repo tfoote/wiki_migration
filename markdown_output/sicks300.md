@@ -9,17 +9,27 @@ Sick(R) S300 Professional via the lasers serial interface.
 
 Make sure that all dependencies are satisfied:
 
+
+
 ```
 rosmake sicks300 sicks300
 ```
 
+
+
 Run the node:
+
+
 
 ```
 rosrun sicks300 sick300_driver
 ```
 
+
+
 ### Messages
+
+
 
 ```clearsilver
 pub {
@@ -62,3 +72,5 @@ param {
 7.default = 500000
 }
 ```
+
+

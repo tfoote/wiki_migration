@@ -52,9 +52,13 @@ should be adjusted accordingly.
 
 To start this package simply run
 
+
+
 ```
 rosrun asr_object_database asr_object_database
-``` After this you can call a service of your
+```
+
+ After this you can call a service of your
 choice to query the objects stored in this package.
 
 ## ROS Nodes

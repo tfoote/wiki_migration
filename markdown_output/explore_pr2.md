@@ -4,9 +4,13 @@
 
 This launch file will start a demo of the [explore](explore) package
 configured to run on the PR2 platform. Launch the demo by calling:
+
+
 ```
 $ roslaunch explore_pr2 explore_pr2.launch
 ```
+
+
 
 ## Visualization
 

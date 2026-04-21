@@ -1,6 +1,10 @@
+
+
 ```wiki
 nao_ctrl is replaced by [[nao_driver]], now in the [[nao_robot]] stack. Please see the documentation there for the latest updates.
 ```
+
+
 
 To run `nao_ctrl` on the actual Nao robot, you need to
 [crosscompile ROS](nao/Tutorials/Cross-Compiling) for it first.
@@ -11,27 +15,41 @@ your Nao. The current version of `nao_ctrl` works with NaoQI version
 ## Documentation
 
 To start the teleoperation on the Nao, ssh on it and run:
+
+
 ```
 cd ~/naoros/ros/nao_ctrl/scripts
 source naoros.env
 ./nao_walker.py
 ```
 
-The sensor reading node is started with: ```
+
+
+The sensor reading node is started with: 
+
+```
 ./nao_sensors.py
 ```
+
+
 
 The control and sensor nodes should then connect to the running remote
 nodes. Note that you can also run everything on your remote machine
 (PC), connecting to your Nao (or a simulated Nao in Webots) via
-Aldebaran's API. Just run ```
+Aldebaran's API. Just run 
+
+```
 ./nao_walker --pip=ROBOT_IP --pport=NAOQI_PORT &
 ./nao_sensors --pip=ROBOT_IP --pport=NAOQI_PORT
-``` instead. This may be
+```
+
+ instead. This may be
 slower, but avoids other problems e.g. when the times are not
 synchronized between your Nao and PC.
 
 ## Nodes
+
+
 
 ```clearsilver
 node.0 {
@@ -101,3 +119,5 @@ node.2 {
  }
 }
 ```
+
+

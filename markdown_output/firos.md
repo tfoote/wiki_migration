@@ -12,12 +12,18 @@ and vice versa.
 
 Visit <https://github.com/Ikergune/firos/blob/master/README.md> to know
 how to install and configure FIROS. To execute FIROS run:
+
+
 ```
 $ rosrun firos core.py
 ```
 
+
+
 Details can also be found in the following
 [paper](http://fernandoherranz.com/wp-content/uploads/2015/07/HAIS62.pdf):
+
+
 
 ```
 @incollection{herranz2015cloud,
@@ -30,6 +36,6 @@ Details can also be found in the following
 }
 ```
 
-## Report a Bug
 
-<<GitHubIssues(Ikergune/firos)>>
+
+## Report a Bug

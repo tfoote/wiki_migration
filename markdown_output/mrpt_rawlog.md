@@ -9,17 +9,25 @@ This package provides two nodes:
 
 Provided examples:
 
+
+
 ```
 roslaunch mrpt_rawlog demo_play.launch
 ```
+
+
 
 See
 [demo_play.launch](https://github.com/mrpt-ros-pkg/mrpt_navigation/blob/master/mrpt_rawlog/launch/demo_play.launch)
 online.
 
+
+
 ```
 roslaunch mrpt_rawlog demo_record.launch
 ```
+
+
 
 See
 [demo_record.launch](https://github.com/mrpt-ros-pkg/mrpt_navigation/blob/master/mrpt_rawlog/launch/demo_record.launch)
@@ -57,6 +65,8 @@ handling rawlogs:
 
 ## Nodes
 
+
+
 ```clearsilver
  name = rawlog_play_node
  desc = The `rawlog_play_node` node parses a Rawlog file and emit its messages as `rosbag play`.
@@ -84,6 +94,10 @@ handling rawlogs:
  }
 ```
 
+
+
+
+
 ```clearsilver
  name = rawlog_record_node
  desc = The `rawlog_record_node` node subscribes to topics and writes a Rawlog file, like `rosbag record`.
@@ -102,3 +116,5 @@ handling rawlogs:
     0.desc = The output directory in which to store rawlogs.
   }
 ```
+
+

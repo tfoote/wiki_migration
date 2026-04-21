@@ -38,13 +38,21 @@ planning.
 The agent can be run with the following command. It should be initalized
 before starting the environment:
 
+
+
 ```
 rosrun rl_agent agent --agent type [options]
-``` where the agent type is one of the following:
+```
+
+ where the agent type is one of the following:
+
+
 
 ```
 qlearner sarsa modelbased rmax texplore dyna savedpolicy
-``` There are a number of options to specify
+```
+
+ There are a number of options to specify
 particular parameters of the algorithms:
 
 -   \--seed value (integer seed for random number generator)
@@ -80,9 +88,13 @@ particular parameters of the algorithms:
 For example, to run real-time TEXPLORE using 10 continuous trees, at an
 action rate of 25 Hz, with a discount factor of 0.99, you would call:
 
+
+
 ```
 rosrun rl_agent agent --agent texplore --planner parallel-uct --nmodels 10 --model m5tree --actrate 25 --gamma 0.99
 ```
+
+
 
 ### The General Model-Based Agent
 
@@ -106,9 +118,13 @@ With any of these types of models, multiple models can be combined
 together using the \--nmodels option. For example, a random forest with
 10 trees can be created with the options:
 
+
+
 ```
 --model tree --nmodels 10
-``` There are also a number of planning methods
+```
+
+ There are also a number of planning methods
 available:
 
 -   Value Iteration
@@ -227,9 +243,13 @@ To run the basic Q-Learning
 ([Watkins 1989](rl-texplore-ros-pkg/rl_references)) agent, type the
 following:
 
+
+
 ```
 rosrun rl_agent agent --agent qlearner
-``` By default, Q-Learning will be run with greedy
+```
+
+ By default, Q-Learning will be run with greedy
 exploration, a learning rate alpha of 0.3, and initial Q-values of 0.0.
 
 The following options are available for the Q-Learning agent:
@@ -251,9 +271,13 @@ To run the basic Sarsa
 ([Rummery and Niranjan 1994](rl-texplore-ros-pkg/rl_references)) agent,
 type the following:
 
+
+
 ```
 rosrun rl_agent agent --agent sarsa
-``` By default, Sarsa will be run with greedy
+```
+
+ By default, Sarsa will be run with greedy
 exploration, a learning rate alpha of 0.3, initial action-values of 0.0,
 and lambda set to 0.1.
 
@@ -276,9 +300,13 @@ The following options are available for the Sarsa agent:
 To run the basic Dyna ([Sutton 1990](rl-texplore-ros-pkg/rl_references))
 agent, type the following:
 
+
+
 ```
 rosrun rl_agent agent --agent dyna
-``` By default, Dyna will be run with greedy
+```
+
+ By default, Dyna will be run with greedy
 exploration, a learning rate alpha of 0.3, initial action-values of 0.0,
 and k set to 1000.
 
@@ -303,9 +331,13 @@ To run the basic R-Max
 ([Brafman and Tennenholtz 2001](rl-texplore-ros-pkg/rl_references))
 agent, type the following:
 
+
+
 ```
 rosrun rl_agent agent --agent rmax
-``` R-Max uses a tabular model and gives
+```
+
+ R-Max uses a tabular model and gives
 exploration bonuses to any state-actions with fewer than M visits. By
 default, M is set to 5, and R-Max uses value iteration for planning.
 
@@ -330,9 +362,13 @@ To run the basic TEXPLORE or TEXPLORE-VANIR
 ([Hester and Stone 2010, Hester and Stone 2012, Hester et al 2012](rl-texplore-ros-pkg/rl_references))
 agent, type the following:
 
+
+
 ```
 rosrun rl_agent agent --agent texplore
-``` TEXPLORE plans greedily with respect to the
+```
+
+ TEXPLORE plans greedily with respect to the
 average of a number of decision tree models of the domain. By default,
 TEXPLORE uses nmodels = 5, C 4.5 discrete decision trees, and plans
 using the RTMBA real-time architecture
@@ -341,21 +377,33 @@ rate of 10 Hz.
 
 For continuous domains, TEXPLORE can use M5 regression trees instead:
 
+
+
 ```
 --model m5tree
-``` To run TEXPLORE with Variance and Novelty
+```
+
+ To run TEXPLORE with Variance and Novelty
 Rewards (TEXPLORE-VANIR)
 ([Hester and Stone 2012](rl-texplore-ros-pkg/rl_references)), set the
 coefficients for the variance and novelty explorations:
 
-```
-qlearner sarsa modelbased rmax texplore dyna savedpolicy
-```0 For domains with possible state and actuator
-delays, enable TEXPLORE to learn models from the previous k actions:
+
 
 ```
 qlearner sarsa modelbased rmax texplore dyna savedpolicy
-```1 The following options are available for the
+```
+
+0 For domains with possible state and actuator
+delays, enable TEXPLORE to learn models from the previous k actions:
+
+
+
+```
+qlearner sarsa modelbased rmax texplore dyna savedpolicy
+```
+
+1 The following options are available for the
 TEXPLORE agent:
 
 -   \--seed value (integer seed for random number generator)
@@ -384,9 +432,13 @@ There is also an option to run a general model-based agent, using any
 combination of models, planners, and exploration that you wish. To run
 it, type the following:
 
+
+
 ```
 qlearner sarsa modelbased rmax texplore dyna savedpolicy
-```2 The following options are available for the
+```
+
+2 The following options are available for the
 model-based agent:
 
 -   \--seed value (integer seed for random number generator)

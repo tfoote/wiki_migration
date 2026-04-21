@@ -1,5 +1,7 @@
 ## Standard Markers Usage
 
+
+
 ```python
 #!/usr/bin/python
 
@@ -29,9 +31,13 @@ if __name__=='__main__':
         rospy.sleep(.1)
 ```
 
+
+
 ![screenshot\|width=700](attachment:Screenshot-RViz.png)
 
 ## Interactive Usage
+
+
 
 ```python
 #!/usr/bin/python
@@ -51,5 +57,7 @@ if __name__=='__main__':
     ig.makeMarker(controls=["move_y", "rotate_y"], pose=[1,0,0], description="X")
     rospy.spin()
 ```
+
+
 
 ![screenshot\|width=700](attachment:Screenshot-RViz-1.png)

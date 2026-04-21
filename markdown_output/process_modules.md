@@ -14,10 +14,14 @@ low-level parameterization that can be used to execute an action. For
 instance, to move the robot to a location where it can see a specific
 object, we state in the plan:
 
+
+
 ```
 (with-designators ((loc (location `((to see) (obj ,obj)))))
   (pm-execute :navigation loc))
 ```
+
+
 
 This part of a plan would call the navigation process module by its
 alias :navigation and pass to it a designator. The actual action that is

@@ -29,6 +29,8 @@ Is better to illustrate these operations graphically:
 
 ## Examples of usage
 
+
+
 ```cplusplus
 #include <mrpt_cov_ops/mrpt_cov_ops.h>
 
@@ -47,6 +49,8 @@ geometry_msgs::PoseWithCovariance p2, p;
 // Pose composition, including uncertainty only in p2 (and in the output, obviously!):
 pose_cov_ops::compose(p1,p2,  p);
 ```
+
+
 
 ## References
 

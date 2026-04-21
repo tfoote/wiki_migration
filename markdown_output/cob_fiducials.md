@@ -15,16 +15,24 @@ of it the Fast PiTag and the Aruco marker.
 The cob_fiducial package is part of cob_object_perception. It is
 available on Github an can be cloned with
 
+
+
 ```
 git clone https://github.com/ipa320/cob_object_perception.git
 ```
 
+
+
 There are also dependencies to the package cob_perception_common. This
 can be cloned from Github with
+
+
 
 ```
 git clone https://github.com/ipa320/cob_perception_common.git
 ```
+
+
 
 ## Calibration Requirements
 
@@ -44,29 +52,45 @@ At first modify your prefered launch file from ros/launch/ to remap your
 camera image topic e.g. /camera/rgb to the rgb_topic, which is expected
 by the software. Then start the cob_fiducial node
 
+
+
 ```
 roslaunch cob_fiducials fiducials.launch
 ```
 
+
+
 to start the marker detection using the topic interface
+
+
 
 ```
 rostopic hz /fiducials/detect_fiducials
 ```
 
+
+
 to start the marker detection using the service call interface e.g. for
 detecting tag_0. The name is a composite of the string 'tag_' and the
 ID specied in the xml parameter file (see below).
+
+
 
 ```
 rosservice call /fiducials/get_fiducials tag_0
 ```
 
+
+
 For visualization you can use image_view
+
+
 
 ```
 rosrun image_view image_view image:=/fiducials/image
 ```
+
+
 
 ## Marker Selection
 
@@ -75,45 +99,73 @@ the launch file the different marker detections algortihms for PiTag and
 Aruco can be choosen.
 
 For PiTag the following row must be in the launch file
+
+
 ```
 <rosparam command="load" ns="fiducials" file="$(find cob_fiducials)/ros/launch/fiducials_0.yaml"/>
 ```
 
-For Fast PiTag another .yaml file is provided ```
+
+
+For Fast PiTag another .yaml file is provided 
+
+```
 <rosparam command="load" ns="fiducials" file="$(find cob_fiducials)/ros/launch/fiducials_fpitag.yaml"/>
 ```
 
+
+
 For Aruco(WARNING: Aruco is working. But fiducials_1.yaml does't load
-the Aruco detection in the latest release!) ```
+the Aruco detection in the latest release!) 
+
+```
 <rosparam command="load" ns="fiducials" file="$(find cob_fiducials)/ros/launch/fiducials_1.yaml"/>
-``` .
+```
+
+ .
 
 ### Marker Specifications
 
 The Size of a Marker and other spezific parameters can be adjusted
 individually for both Marker Systems. The files are located in
 
+
+
 ```
 cob_fiducials/common/files/models
-``` .The blueprints to use with the parameter files
+```
+
+ .The blueprints to use with the parameter files
 are located in
+
+
 
 ```
 git clone https://github.com/ipa320/cob_perception_common.git
-```0 .They should be printed on white paper to
+```
+
+0 .They should be printed on white paper to
 guarantee a high contrast.
 
 ### Parameter Files
 
 Exemplary parameterfile for PiTag
 
-```
-git clone https://github.com/ipa320/cob_perception_common.git
-```1 Exemplary parameterfile for Aruco
+
 
 ```
 git clone https://github.com/ipa320/cob_perception_common.git
-```2 Notice: PiTag's are distinguished from each
+```
+
+1 Exemplary parameterfile for Aruco
+
+
+
+```
+git clone https://github.com/ipa320/cob_perception_common.git
+```
+
+2 Notice: PiTag's are distinguished from each
 other through the cross ratio. Aruco's only by ID. Miultiple
 discriminable Tag's can be defined in each parameterfile.
 

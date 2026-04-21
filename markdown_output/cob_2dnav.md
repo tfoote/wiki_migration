@@ -10,17 +10,25 @@ stack to navigate with the robot.
 
 ## Usage/Examples
 
-Building all packages needed for cob_2dnav ```
+Building all packages needed for cob_2dnav 
+
+```
 rosdep install cob_2dnav
 rosmake cob_2dnav
 ```
 
+
+
 Make sure you started either a real robot or a simulated one using
 [cob_bringup](cob_bringup).
 
-Start the 2D navigation with ```
+Start the 2D navigation with 
+
+```
 roslaunch cob_2dnav 2dnav.launch
 ```
+
+
 
 ### Using rviz to localize the robot and send goals to the navigation
 

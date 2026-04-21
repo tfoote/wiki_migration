@@ -29,6 +29,8 @@ Top down view of the <<MsgLink(sensor_msgs/LaserScan)>>.
 
 ## Node
 
+
+
 ```clearsilver
 node.0 {
  name = depthimage_to_laserscan
@@ -73,6 +75,8 @@ EOM
 }
 }
 ```
+
+
 
 ## Nodelet
 

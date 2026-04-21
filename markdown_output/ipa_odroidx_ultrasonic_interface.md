@@ -5,6 +5,8 @@ which an array of ultrasonic sensors are connected and distance to the
 surrounding environment can be calculated based on the input gathered
 from the ultrasonic sensors.
 
+
+
 ```clearsilver
  name = us_driver
  desc = The `us_driver` node publishes <<MsgLink(ipa_odroidx_ultrasonic_interface/ExRangeArray)>> messages based on how the ultrasonic sensors are configured and their gathered input. Each sensor can be configured as a pinging sensor or a listening sensor. Pinging sensors are activated to send out an echo which are then received by the themselves and the other sensors configured as listening sensors. Configuration of a sensor as a pinging sensor or as a listening sensor is done by means of the parameter `configurations` as described below.
@@ -27,6 +29,8 @@ param{
  1.desc = Enable it to show debug messages.
 }
 ```
+
+
 
 ## I/O Pin Mapping on controller board
 
@@ -54,9 +58,13 @@ respect to the micro controller.
 
 ## Usage/Examples
 
-The `us_driver` node can be executed by: ```
+The `us_driver` node can be executed by: 
+
+```
 roslaunch ipa_odroidx_ultrasonic_interface us_driver.launch
 ```
+
+
 
 In the following example configuration yaml file, in the first cycle,
 sensor '1' and '2' are set as both pinging and listening sensors,
@@ -64,6 +72,8 @@ sensors '3' and '4' listen to sensor '1' whereas '5' listens to
 sensor '2'. In the second cycle, sensors '10' and '13' are set as
 pinging sensors, sensors '1' and '12' listen to sensor '10' and
 sensor '7' and '8' listen to sensor '13':
+
+
 
 ```highlight
 configurations:
@@ -78,3 +88,5 @@ configurations:
  }
 ]
 ```
+
+

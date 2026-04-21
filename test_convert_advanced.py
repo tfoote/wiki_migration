@@ -46,5 +46,14 @@ class TestAdvancedConversion(unittest.TestCase):
         self.assertEqual(processed, "robot_namespace, `code`, <tag>")
 
 
+    def test_postprocess_code_block_spacing(self):
+        content = "Some text PLACEHOLDER_CODE_BLOCK_0 more text"
+        code_blocks = ["Code content"]
+        
+        processed = postprocess(content, code_blocks)
+        
+        self.assertEqual(processed, "Some text \n\n```\nCode content\n```\n\n more text")
+
+
 if __name__ == "__main__":
     unittest.main()

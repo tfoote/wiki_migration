@@ -174,9 +174,9 @@ def postprocess(content, code_blocks):
         if lines and lines[0].startswith("#!"):
             lang = lines[0][2:].strip().split()[0]
             body = "\n".join(lines[1:])
-            replacement = f"```{lang}\n{body}\n```"
+            replacement = f"\n\n```{lang}\n{body}\n```\n\n"
         else:
-            replacement = f"```\n{block.strip()}\n```"
+            replacement = f"\n\n```\n{block.strip()}\n```\n\n"
             
         # Replace in content!
         content = content.replace(placeholder, replacement)

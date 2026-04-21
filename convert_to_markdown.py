@@ -132,6 +132,9 @@ def preprocess(content):
         content,
     )
 
+    # Handle MoinMoin 4-quote bold monospace
+    content = re.sub(r"''''(.*?)''''", r"**{{{\1}}}**", content)
+
     # Handle MoinMoin 5-quote combined tags
     content = re.sub(r"'''''(.*?)'''(.*?)''", r"//**\1**\2//", content)
     content = re.sub(r"'''''(.*?)''(.*?)'''", r"**//\1//\2**", content)
@@ -148,6 +151,10 @@ def preprocess(content):
 
 
 def postprocess(content, code_blocks):
+    # Remove unnecessary backslashes before quotes in text
+    content = content.replace(r"\'", "'")
+    content = content.replace(r'\"', '"')
+
     # Restore code blocks from placeholders
     for i, block in enumerate(code_blocks):
         placeholder = f"PLACEHOLDER_CODE_BLOCK_{i}"

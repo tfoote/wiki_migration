@@ -18,4 +18,4 @@ available tutorials.
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros-industrial/motoman)\>\>
+<<GitHubIssues(ros-industrial/motoman)>>

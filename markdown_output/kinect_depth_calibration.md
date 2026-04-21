@@ -4,9 +4,9 @@
 ## Stability
 
 Note that [kinect_depth_calibration](kinect_depth_calibration) is part
-of a \<1.0 stack, and thus it is still unreviewed and unstable. We are,
+of a <1.0 stack, and thus it is still unreviewed and unstable. We are,
 however, actively using this stack in-house at Willow Garage with good
-results, and we\'re actively making improvements along the way.
+results, and we're actively making improvements along the way.
 
 We would definitely love to hear about any issues you encounter (via
 answers.ros.org) or any other feedback you may have during the
@@ -20,14 +20,14 @@ development process. Also check out the
 The kinect_depth_calibration package was designed primarily to verify
 the intrinsic calibration of the Kinect infrared camera. It does this by
 comparing the pose of a checkerboard detected in the infrared image, to
-the pose reported by the Kinect\'s internal depth computation.
+the pose reported by the Kinect's internal depth computation.
 
 **High Level Operation**
 
 -   User mounts a checkerboard rigidly in front of a Kinect
--   User covers the Kinect\'s IR projector (e.g. with post-it notes),
+-   User covers the Kinect's IR projector (e.g. with post-it notes),
     and captures the checkerboard pose in the IR camera.
--   User uncovers the Kinect\'s IR projector, and captures the
+-   User uncovers the Kinect's IR projector, and captures the
     checkerboard 3D pointcloud.
 -   The kinect_depth_calibration package computes the difference in
     depth between the two data sets, resulting in a measure for the

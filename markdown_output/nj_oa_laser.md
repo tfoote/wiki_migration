@@ -1,7 +1,7 @@
-The \`nj_oa_laser\` package implements a navigating jockey for the Large
+The `nj_oa_laser` package implements a navigating jockey for the Large
 Maps Framework ([LaMa](Large Maps Framework)) that drives the robot
 while avoiding obstacles. It is based on a laser scan
-(\<\<MsgLink(sensor_msgs/LaserScan)\>\>). It is a reactive, memory-less
+(<<MsgLink(sensor_msgs/LaserScan)>>). It is a reactive, memory-less
 jockey.
 
 Implemented action:
@@ -13,9 +13,9 @@ Implemented action:
 -   INTERRUPT: same as STOP
 -   CONTINUE: same as TRAVERSE
 
-Moreover, the package provides the class \`TwistHandler\` that computes
-an appropriate \<\<MsgLink(geometry_msgs/Twist)\>\> from a
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> in order to go as forward as
+Moreover, the package provides the class `TwistHandler` that computes
+an appropriate <<MsgLink(geometry_msgs/Twist)>> from a
+<<MsgLink(sensor_msgs/LaserScan)>> in order to go as forward as
 possible while avoiding obstacles.
 
 ## Usage

@@ -6,4 +6,4 @@ NaviRadar is a compact 2D radar sensor. A rotated radar ray delivers
 You can find more information about NaviRadar here:
 <http://naviradar.com>
 
-More information about NaviRadar\'s ROS driver will be provided soon.
+More information about NaviRadar's ROS driver will be provided soon.

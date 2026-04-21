@@ -1,4 +1,4 @@
-\`local_map\` provides a simple local cost map for several jockeys for
+`local_map` provides a simple local cost map for several jockeys for
 the Large Maps Framework ([LaMa](Large Maps Framework)). The map is
 centered on the frame of the laser range finder on which it is based but
 its orientation is fixed.
@@ -6,10 +6,10 @@ its orientation is fixed.
 ## Overview
 
 The image shows the map in player on the left and the local map obtained
-from the !LaserScan (red dots) on the right. The robot\'s orientation is
-approximately 45° but the map\'s orientation is fixed.
+from the !LaserScan (red dots) on the right. The robot's orientation is
+approximately 45° but the map's orientation is fixed.
 
-![\|height=\"291\",width=\"751\"](attachment:local_map2.png)
+![\|height="291",width="751"](attachment:local_map2.png)
 
 ## Usage
 

@@ -9,8 +9,8 @@ devices, we are compiling a list of
 
 This package is compatible with the [geographic_info](geographic_info)
 project as well as any other nodes that support
-\<\<MsgLink(sensor_msgs/NavSatFix)\>\> and/or
-\<\<MsgLink(sensor_msgs/TimeReference)\>\>.
+<<MsgLink(sensor_msgs/NavSatFix)>> and/or
+<<MsgLink(sensor_msgs/TimeReference)>>.
 
 No C++ or Python API is provided, only a ROS API.
 
@@ -21,7 +21,7 @@ present in Fuerte and Groovy.
 
 To get up and running quickly, you can use the following command to
 start outputting your GPS data onto ROS topics. This assumes your GPS is
-outputting GGA NMEA sentences, is connected to \`/dev/ttyUSB0\` and is
+outputting GGA NMEA sentences, is connected to `/dev/ttyUSB0` and is
 communicating at 38400 baud.
 
 ```
@@ -143,10 +143,10 @@ been identified for your problem.
 
 If you are having trouble with nmea_serial_driver and connecting to a
 serial port, ensure that the user has permission to access the port by
-checking to see if the user is part of the \"dialout\" group. See
+checking to see if the user is part of the "dialout" group. See
 [here](http://answers.ros.org/question/231957/connection-issue-using-nmea_serial_driver/?answer=231961#post-id-231961)
 for more information.
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros-drivers/nmea_navsat_driver)\>\>
+<<GitHubIssues(ros-drivers/nmea_navsat_driver)>>

@@ -1,9 +1,9 @@
 ## Overview
 
-The \`move_slow_and_clear::MoveSlowAndClear\` is a simple recovery
+The `move_slow_and_clear::MoveSlowAndClear` is a simple recovery
 behavior that clears information in the [ costmap](costmap_2d ) and then
 limits the speed of the robot. Note, this recovery behavior is not truly
-safe, the robot may hit things, it\'ll just happen at a user-specified
+safe, the robot may hit things, it'll just happen at a user-specified
 speed. Also, this recovery behavior is only compatible with local
 planners that allow maximum speeds to be set via
 [dynamic_reconfigure](dynamic_reconfigure) such as the
@@ -11,11 +11,11 @@ planners that allow maximum speeds to be set via
 
 ## MoveSlowAndClear
 
-The \`move_slow_and_clear::MoveSlowAndClear\` object exposes its
+The `move_slow_and_clear::MoveSlowAndClear` object exposes its
 functionality as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It
 operates within a ROS namespace (assumed to be **name** from here on)
 specified on initialization. It adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package.
 
 ### API Stability
@@ -53,8 +53,8 @@ param {
 
 ### C++ API
 
-The C++ \`move_slow_and_clear::MoveSlowAndClear\` class adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+The C++ `move_slow_and_clear::MoveSlowAndClear` class adheres to the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package. For detailed documentation, please see
 [ MoveSlowAndClear Documentation](http://www.ros.org/doc/api/move_slow_and_clear/html/ ).
 
@@ -63,8 +63,8 @@ The C++ \`move_slow_and_clear::MoveSlowAndClear\` class adheres to the
 To use move_slow_and_clear, add the following lines in your move base
 yaml file:
 
-\`recovery_behaviors:\`
+`recovery_behaviors:`
 
-\` - name: \'move_slow_and_clear\'\`
+` - name: 'move_slow_and_clear'`
 
-\` type: \'move_slow_and_clear/MoveSlowAndClear\'\`
+` type: 'move_slow_and_clear/MoveSlowAndClear'`

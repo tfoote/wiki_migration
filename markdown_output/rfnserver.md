@@ -1,12 +1,12 @@
 ## Overview
 
-\`rfnserver\` is a child class of
-[actionlib\'s SimpleActionServer](actionlib#Python_SimpleActionServer)
+`rfnserver` is a child class of
+[actionlib's SimpleActionServer](actionlib#Python_SimpleActionServer)
 which requires a special type of action \-- namely,
-\`FilledSemanticFrame.action\` in
+`FilledSemanticFrame.action` in
 [roboframenet_msgs](roboframenet_msgs).
 
-A relatively stable version of \`RFNServer\` is working in Python.
+A relatively stable version of `RFNServer` is working in Python.
 
 [Initializing an RFNServer](#Initializing an RFNServer) requires a three
 lines of code \-- one each for importing, initializing, and starting.
@@ -35,19 +35,19 @@ server = RFNServer("moo", moo)
 server.start()
 ```
 
-The first argument is the topic where you want the \`RFNServer\`
-(behind-the-scenes: \`SimpleActionServer\`) to publish goal, feedback,
+The first argument is the topic where you want the `RFNServer`
+(behind-the-scenes: `SimpleActionServer`) to publish goal, feedback,
 and preemption messages.
 
 The second argument is a callback function which takes one argument \--
 namely, a filled semantic frame. (The message type is of type
 [roboframenet_msgs](roboframenet_msgs)/FilledSemanticFrame .) The frame
 passed into this callback will be from one of the semantic frames with
-which the \`RFNServer\` has
+which the `RFNServer` has
 [registered](#Registering with a Semantic Frame).
 
 To get arguments for a specific frame element of the semantic frame, the
-helper function \`frame_argument\` is provided:
+helper function `frame_argument` is provided:
 
 ```
 def callback(filled_semantic_frame):
@@ -63,9 +63,9 @@ server.add_frame("../frames/mooing.yaml")
 ```
 
 The filepath is relative to the directory from which the program was
-launched. Typically, this means that before running, you\'ll want to
-either move to the node\'s directory, or you\'ll want to add the
-attribute [cwd=\"node\"](roslaunch/XML/node#Attributes) to the node\'s
+launched. Typically, this means that before running, you'll want to
+either move to the node's directory, or you'll want to add the
+attribute [cwd="node"](roslaunch/XML/node#Attributes) to the node's
 tag in its roslaunch file.
 
 ## Adding Lexical Units
@@ -75,9 +75,9 @@ server.add_lexical_unit("../lu/mooing.yaml")
 ```
 
 The filepath is relative to the directory from which the program was
-launched. Typically, this means that before running, you\'ll want to
-either move to the node\'s directory, or you\'ll want to add the
-attribute [cwd=\"node\"](roslaunch/XML/node#Attributes) to the node\'s
+launched. Typically, this means that before running, you'll want to
+either move to the node's directory, or you'll want to add the
+attribute [cwd="node"](roslaunch/XML/node#Attributes) to the node's
 tag in its roslaunch file.
 
 ## Registering with a Semantic Frame

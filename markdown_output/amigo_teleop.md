@@ -15,6 +15,6 @@ for most amigo parts or a velocity for the base.
 # Use
 
 Launch teleop.lauch, then press a key. For example to drive amigo
-forward a small distance press \'!\', or to put one of his arms in
-handshake position press \'d\'. To get a full list of possible commands
-press \'\<\' (without the quotation marks).
+forward a small distance press '!', or to put one of his arms in
+handshake position press 'd'. To get a full list of possible commands
+press '<' (without the quotation marks).

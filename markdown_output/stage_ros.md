@@ -2,13 +2,13 @@
 
 ### stageros
 
-The \`stageros\` node wraps the Stage 2-D multi-robot simulator, via
-libstage. Stage simulates a world as defined in a \`.world\` file. This
+The `stageros` node wraps the Stage 2-D multi-robot simulator, via
+libstage. Stage simulates a world as defined in a `.world` file. This
 file tells stage everything about the world, from obstacles (usually
 represented via a bitmap to be used as a kind of background), to robots
 and other objects.
 
-This node only exposes a subset of Stage\'s functionality via ROS.
+This node only exposes a subset of Stage's functionality via ROS.
 Specifically, it finds the Stage models of type laser, camera and
 position, and maps these models to the ROS topics given below. If at
 least one laser/camera and position model are not found, stageros exits.
@@ -20,7 +20,7 @@ rosrun stage_ros stageros [-g runs headless] <world> [standard ROS args]
 ``` Parameters:
 
 -   world : The Stage .world file to load.
--   -g : If set, this option will run stage as \"headless,\" no GUI will
+-   -g : If set, this option will run stage as "headless," no GUI will
     be displayed.
 
 #### World syntax
@@ -29,7 +29,7 @@ The .world file syntax is documented in the
 [Stage manual](http://rtv.github.io/Stage/modules.html). stageros only
 exposes models created by a subset of the .world file syntax,
 specifically **laser**, **position** and **camera** models. For
-examples, see the \`world\` directory in the \`stage\` and \`stage_ros\`
+examples, see the `world` directory in the `stage` and `stage_ros`
 packages.
 
 #### Subscribed topics
@@ -37,10 +37,10 @@ packages.
 If there is only one position model defined in the world file, all of
 these topics appear at the top namespace. However, if more than 1
 position models exist, these topics are pushed down into their own
-namespaces, by prefixing the topics with \`robot\_\<i\>/\` , e.g.,
-\`robot_0/cmd_vel\` etc.
+namespaces, by prefixing the topics with `robot_<i>/` , e.g.,
+`robot_0/cmd_vel` etc.
 
-\`cmd_vel\` \<\<MsgLink(geometry_msgs/Twist)\>\> velocity commands to
+`cmd_vel` <<MsgLink(geometry_msgs/Twist)>> velocity commands to
 drive the position model of the robot
 
 #### Published topics
@@ -48,47 +48,47 @@ drive the position model of the robot
 If there is only one position model defined in the world file, all of
 these topics appear at the top namespace. However, if more than 1
 position models exist, these topics are pushed down into their own
-namespaces, by prefixing the topics with \`robot\_\<i\>/\` , e.g.,
-\`robot_0/cmd_vel\` etc.
+namespaces, by prefixing the topics with `robot_<i>/` , e.g.,
+`robot_0/cmd_vel` etc.
 
-\`odom\` (\<\<MsgLink(nav_msgs/Odometry)\>\>) odometry data from the
-position model. \`base_scan\` (\<\<MsgLink(sensor_msgs/LaserScan)\>\>)
-scans from the laser model \`base_pose_ground_truth\`
-(\<\<MsgLink(nav_msgs/Odometry)\>\>) ground truth pose \`image\`
-(\<\<MsgLink(sensor_msgs/Image)\>\>) visual camera image \`depth\`
-(\<\<MsgLink(sensor_msgs/Image)\>\>) depth camera image \`camera_info\`
-(\<\<MsgLink(sensor_msgs/CameraInfo)\>\>) camera calibration info
+`odom` (<<MsgLink(nav_msgs/Odometry)>>) odometry data from the
+position model. `base_scan` (<<MsgLink(sensor_msgs/LaserScan)>>)
+scans from the laser model `base_pose_ground_truth`
+(<<MsgLink(nav_msgs/Odometry)>>) ground truth pose `image`
+(<<MsgLink(sensor_msgs/Image)>>) visual camera image `depth`
+(<<MsgLink(sensor_msgs/Image)>>) depth camera image `camera_info`
+(<<MsgLink(sensor_msgs/CameraInfo)>>) camera calibration info
 
 ##### odom vs. base_pose_ground_truth
 
-The \`odom\` topic gives simulated odometry, which is affected by
+The `odom` topic gives simulated odometry, which is affected by
 settings in the .world file, which can change its origin and noise model
 (the transforms mentioned below use the same data); see the
 [Stage documentation](http://rtv.github.io/Stage/group__model__position.html)
-for details on changing this behavior. The \`base_pose_ground_truth\`
+for details on changing this behavior. The `base_pose_ground_truth`
 topic always provides a perfect, globally referenced pose for the robot
 in the simulation, independent of .world file settings. The
-\`base_pose_ground_truth\` data is intended for testing purposes; it
-should not be used in robot control loops (because it\'s unrealistic).
+`base_pose_ground_truth` data is intended for testing purposes; it
+should not be used in robot control loops (because it's unrealistic).
 
 #### Parameters
 
-\`base_watchdog_timeout\` (default: 0.2) time (in seconds) after
-receiving the last command on \`cmd_vel\` before stopping a position
-model \`is_depth_canonical\` (default: true) whether depth image should
+`base_watchdog_timeout` (default: 0.2) time (in seconds) after
+receiving the last command on `cmd_vel` before stopping a position
+model `is_depth_canonical` (default: true) whether depth image should
 use canonical (32FC1) or OpenNI (16UC1) representation
 
 #### tf transforms provided
 
-\`base_link\` &rarr; \`base_laser\` transform from robot base to
-attached laser \`base_footprint\` &rarr; \`base_link\` identity
-transform \`odom\` &rarr; \`base_footprint\` transform from odometric
-origin to base \`base_link\` &rarr; \`camera\` transform from robot base
+`base_link` &rarr; `base_laser` transform from robot base to
+attached laser `base_footprint` &rarr; `base_link` identity
+transform `odom` &rarr; `base_footprint` transform from odometric
+origin to base `base_link` &rarr; `camera` transform from robot base
 to attached camera
 
 ## Using Stage controllers
 
-Stage supports the use of \"controllers,\" which are chunks of code that
+Stage supports the use of "controllers," which are chunks of code that
 control simulated robots from inside the simulator, instead of being on
 the other end of a ROS connection. There are some situations in which it
 can be advantageous to use Stage controllers. For a discussion of when

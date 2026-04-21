@@ -37,12 +37,12 @@ following script:
 . createemptyDb.sh databaseName
 ```
 
-In general if you have already a user which is different from \'willow\'
+In general if you have already a user which is different from 'willow'
 and database should be assigned to this user, you can specify an
 additional parameter which is the name of the sql user to be used to
 create database. This second command can be used in all previous scripts
 and the one used to restore and delete database. For example to create a
-database with owner the user \'srs_user\', which must be already created
+database with owner the user 'srs_user', which must be already created
 before executing the script.
 
 ```
@@ -115,7 +115,7 @@ The configuration is controlled by the param element inside the launch
 file.
 
 Localhost set the ip addres of the postgreSQL server. For local
-installation use \'localhost\'. ```
+installation use 'localhost'. ```
 <param name="instanceName" value="localhost" type="str"/>
 ```
 
@@ -216,13 +216,13 @@ object_class such as glass. ```
 
 Search by object name: It is possible to search a specific object using
 its name. Use nameas first parameter and provide an object_name such as
-\"milkBox1\". ```
+"milkBox1". ```
 . createemptyDb.sh databaseName
 ```9
 
 ##### how to force retrieve of data with clientTest without user interaction
 
-Adding the key \'retrieve\' after the previous command will allow the
+Adding the key 'retrieve' after the previous command will allow the
 client to direclty retrieve object data, the general data, without
 requiring additional user interaction.
 
@@ -278,7 +278,7 @@ object.
 
 ##### how to force insertion of data with clientTest without user interaction
 
-Adding the key \'insert\' after the previous command will allow the
+Adding the key 'insert' after the previous command will allow the
 client to direclty insert object and its data without requiring
 additional user interaction.
 
@@ -298,7 +298,7 @@ will provide the id of the object to be updated.
 
 ##### how to force update of data with clientTest without user interaction
 
-Adding the key \'update\' after the previous command will allow the
+Adding the key 'update' after the previous command will allow the
 client to direclty update object and its data without requiring
 additional user interaction.
 
@@ -314,7 +314,7 @@ services that other components should invoke.
 
 #### Inserting/Updating Objects
 
-To insert and update object data the service *\"InsertObject\"* should
+To insert and update object data the service *"InsertObject"* should
 be used. Note that you should provide a type of mesh (usually iv.txt)
 and an Image type such as: icon,top-view,front-view.
 
@@ -374,6 +374,6 @@ with the following command line:
 . resetDatabase.sh databaseName
 ```0
 
-The key \'category\' tells the client to enter a submenu where it is
+The key 'category' tells the client to enter a submenu where it is
 possible to query database for the existing category, insert new
 category, search category associated with an object.

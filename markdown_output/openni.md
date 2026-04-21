@@ -1,6 +1,6 @@
 ## Overview
 
-OpenNI is an open-source framework for \"natural interaction\" - using
+OpenNI is an open-source framework for "natural interaction" - using
 your hands and body to interact with your digital devices. See
 [OpenNI.org](http://openni.org) for more information about OpenNI.
 
@@ -10,8 +10,8 @@ camera driver on top of OpenNI. See [openni_kinect](openni_kinect) to
 get started with your Kinect in ROS.
 
 In Electric and Diamondback, to use OpenNI directly in your packages you
-would depend on the \`openni\` wrapper package. As of Fuerte the
-\`openni\` package is deprecated, and you should link against the system
+would depend on the `openni` wrapper package. As of Fuerte the
+`openni` package is deprecated, and you should link against the system
 installation of OpenNI as described in the
 [migration guide](#Fuerte_migration_guide).
 
@@ -24,7 +24,7 @@ These track the [OpenNI](https://github.com/OpenNI/OpenNI) and
 !GitHub.
 
 We apply some patches to the !GitHub sources (e.g. for recognizing
-Kinects, as well as the ASUS Xtion and !PrimeSense\'s prototype
+Kinects, as well as the ASUS Xtion and !PrimeSense's prototype
 devices). These patches and build scripts are located in our
 [openni/drivers](https://kforge.ros.org/openni/drivers) project.
 
@@ -32,15 +32,15 @@ devices). These patches and build scripts are located in our
 
 ### manifest.xml (depending on OpenNI)
 
-Instead of depending on the \`openni\` package, declare the following
+Instead of depending on the `openni` package, declare the following
 [rosdeps](rosdep) in your [manifest.xml](Manifest):
 ```
 <rosdep name="openni-dev" />
 <rosdep name="ps-engine" />
 ```
 
-Now \`rosdep install MY_AWESOME_PACKAGE\` will install OpenNI and the
-\`ps-engine\` device driver.
+Now `rosdep install MY_AWESOME_PACKAGE` will install OpenNI and the
+`ps-engine` device driver.
 
 If you provide headers included by code in other packages, and those
 headers use OpenNI, then you must also export the flags to find OpenNI:
@@ -52,8 +52,8 @@ headers use OpenNI, then you must also export the flags to find OpenNI:
 
 ### CMakeLists.txt (linking against OpenNI)
 
-The OpenNI headers are installed in \`/usr/include/openni\`. The
-libraries are in the standard search path \`/usr/lib\`. In your
+The OpenNI headers are installed in `/usr/include/openni`. The
+libraries are in the standard search path `/usr/lib`. In your
 [CMakeLists.txt](rosbuild/CMakeLists), add the include directory:
 ```
 include_directories(/usr/include/openni)

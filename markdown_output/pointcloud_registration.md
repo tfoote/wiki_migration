@@ -2,10 +2,10 @@
 
 ## Overview
 
-The \`pointcloud_registration\` package primarily subscribes to a
-\`sensor_msgs::PointCloud\` topic to receive point clouds and then
+The `pointcloud_registration` package primarily subscribes to a
+`sensor_msgs::PointCloud` topic to receive point clouds and then
 registers them in a global frame, one cloud at a time. The
-\`pointcloud_registration\` package implements the ICP algorithm but
+`pointcloud_registration` package implements the ICP algorithm but
 with a few modifications as explained below.
 
 ### ICP
@@ -32,51 +32,51 @@ following two criterion:
 
 ## ROS Parameters
 
-\`\<name\>/publish_merged_pointcloud_topic\` (\`string\`, default:
-\"/merged_pointcloud\") Topic to publish the final registered point
+`<name>/publish_merged_pointcloud_topic` (`string`, default:
+"/merged_pointcloud") Topic to publish the final registered point
 cloud
 
-\`\<name\>/subscribe_pointcloud_topic\` (\`string\`, default:
-\"/shoulder_cloud\") Topic to subscribe to receive point clouds
+`<name>/subscribe_pointcloud_topic` (`string`, default:
+"/shoulder_cloud") Topic to subscribe to receive point clouds
 
-\`\<name\>/max_number_of_iterations_icp\` (\`int\`, default: 100)
+`<name>/max_number_of_iterations_icp` (`int`, default: 100)
 Maximum number of iterations for the icp algorithm
 
-\`\<name\>/max_nn_icp\` (\`int\`, default: 10) Maximum number of nearest
+`<name>/max_nn_icp` (`int`, default: 10) Maximum number of nearest
 neigbors to look for in the radius search for the icp algorithm
 
-\`\<name\>/max_nn_overlap\` (\`int\`, default: 20) Maximum number of
+`<name>/max_nn_overlap` (`int`, default: 20) Maximum number of
 nearest neigbors to look for in the radius search to get the overlapping
 region of two point clouds
 
-\`\<name\>/radius_icp\` (\`double\`, default: 0.1) Radius for the radius
+`<name>/radius_icp` (`double`, default: 0.1) Radius for the radius
 search for the icp algorithm
 
-\`\<name\>/radius_overlap\` (\`double\`, default: 0.1) Radius for the
+`<name>/radius_overlap` (`double`, default: 0.1) Radius for the
 radius search to get the overlapping region of two point clouds
 
-\`\<name\>/filter_outliers\` (\`bool\`, default: true) Set true if wish
+`<name>/filter_outliers` (`bool`, default: true) Set true if wish
 to filter outliers using the Statistical Outlier Removal in pcl
 
-\`\<name\>/downsample_pointcloud_before\` (\`bool\`, default: false) Set
+`<name>/downsample_pointcloud_before` (`bool`, default: false) Set
 true if wish to downsample the point cloud before registration (Speeds
 up processing significantly)
 
-\`\<name\>/downsample_pointcloud_after\` (\`bool\`, default: true) Set
+`<name>/downsample_pointcloud_after` (`bool`, default: true) Set
 true if wish to downsample the point cloud after registration
 
-\`\<name\>/downsample_leafsize\` (\`double\`, default: 0.035) Downsample
+`<name>/downsample_leafsize` (`double`, default: 0.035) Downsample
 leaf size
 
-\`\<name\>/epsilon_z\` (\`double\`, default: 0.01) Maximum z-coordinate
+`<name>/epsilon_z` (`double`, default: 0.01) Maximum z-coordinate
 difference between two correspondences which is allowed
 
-\`\<name\>/curvature_check\` (\`bool\`, default: true) Set true if wish
+`<name>/curvature_check` (`bool`, default: true) Set true if wish
 to filter correspondences based on curvature difference
 
-\`\<name\>/epsilon_curvature\` (\`double\`, default: 0.01) Maximum
+`<name>/epsilon_curvature` (`double`, default: 0.01) Maximum
 curvature value difference between two correspondences which is allowed
 
-\`\<name\>/epsilon_transformation\` (\`double\`, default: 1e-8)
+`<name>/epsilon_transformation` (`double`, default: 1e-8)
 Transformation epsilon value to be reached for convergence for the ICP
 algorithm

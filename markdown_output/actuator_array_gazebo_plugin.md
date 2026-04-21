@@ -9,10 +9,10 @@ description URDF by simply adding a Gazebo Actuator Array Controller.
 ## Example Usage
 
 The following XML block inside of robot description [urdf](urdf) creates
-an Actuator Array Driver interface with four joints. The \`\<joint\>\`
-block may be repeated as often as needed. Inside each \`\<joint\>\`
-block, the \`\<name\>\` tag must reference the name of a joint specified
-in the urdf. The \`\<home\>\` tag is used to specify the home position
+an Actuator Array Driver interface with four joints. The `<joint>`
+block may be repeated as often as needed. Inside each `<joint>`
+block, the `<name>` tag must reference the name of a joint specified
+in the urdf. The `<home>` tag is used to specify the home position
 of each joint. Internally, each joint is controlled by a PID loop. The
 tuning parameters for the PID are specified for each joint. This allows
 the simulated performance to be tuned to match the real system.

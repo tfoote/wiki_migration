@@ -1,5 +1,5 @@
-***[kaist_webots](kaist_webots):*** *[webots_run](webots_run) \|
-webots_joy_demo \| [webots_controllers](webots_controllers)*
+**`'[[kaist_webots]]:`**' *[webots_run](webots_run) \| webots_joy_demo
+\| [webots_controllers](webots_controllers)*
 
 This is an example of a Webots Controller written in C++, running as a
 ROS Node. It demonstrates how to build a ROS package linked against the
@@ -8,9 +8,9 @@ simulation from a single launch file. This package is based on
 [webots_joystick](webots_joystick), which uses the C API and a different
 launching method.
 
-The \'joy\' node from the \'joystick_drivers\' stack receives input from
+The 'joy' node from the 'joystick_drivers' stack receives input from
 a USB joystick and publishes the state of the buttons and axes on the
-\'/joy\' topic. This node uses that input to drive a simple simulated
+'/joy' topic. This node uses that input to drive a simple simulated
 robot in Webots. Speed commands are sent to the differential drive model
 using the Webots C++ API.
 
@@ -28,7 +28,7 @@ Tested with Webots 6.4.4 and ROS Fuerte.
 ## Installation
 
 Follow [these instructions](kaist_webots) to install the
-\`kaist_webots\` stack.
+`kaist_webots` stack.
 
 \
 
@@ -71,27 +71,27 @@ For the Xbox-360 joystick, the controls are as follows:
 ```{=html}
 <!-- -->
 ```
--   Ceate a new ROS package e.g. \`myrobot_sim_webots\`. See
+-   Ceate a new ROS package e.g. `myrobot_sim_webots`. See
     [Creating a ROS Package](ROS/Tutorials/CreatingPackage)
 
 ```{=html}
 <!-- -->
 ```
--   Add the Webots .wbt world file to your package, in the \`/world\`
+-   Add the Webots .wbt world file to your package, in the `/world`
     directory
 
 ```{=html}
 <!-- -->
 ```
--   Copy the \`webots_joy_demo\` source to the \`/src\` directory
+-   Copy the `webots_joy_demo` source to the `/src` directory
 
 ```{=html}
 <!-- -->
 ```
--   Edit \`CMakeLists.txt\`, using this package as an example. Note how
+-   Edit `CMakeLists.txt`, using this package as an example. Note how
     the destination of the compiled binary is in the
-    \`controllers/binary_name\` directory to suit Webots requirements,
-    not the default ROS directory \`/bin\`
+    `controllers/binary_name` directory to suit Webots requirements,
+    not the default ROS directory `/bin`
 
 ```{=html}
 <!-- -->
@@ -102,14 +102,14 @@ For the Xbox-360 joystick, the controls are as follows:
 ```{=html}
 <!-- -->
 ```
--   Create a launch file in the \`/launch\` directory, using this
+-   Create a launch file in the `/launch` directory, using this
     package as an example. The Webots world file is specified as an
-    argument to the \`webots_run\` node
+    argument to the `webots_run` node
 
 ```{=html}
 <!-- -->
 ```
--   Build your package: \`rosmake myrobot_sim_webots\`
+-   Build your package: `rosmake myrobot_sim_webots`
 
 For an example of a joint position controller, see the
 [webots_controllers](webots_controllers) package.

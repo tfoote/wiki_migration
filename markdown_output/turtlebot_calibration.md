@@ -1,7 +1,7 @@
 ## Notice
 
   -- ---------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<#FFFF00\> Turtlebot Calibration is used for iRobot create base TurtleBot gyro calibration. Kobuki base does not need any gyro calibration.   
+     <#FFFF00> Turtlebot Calibration is used for iRobot create base TurtleBot gyro calibration. Kobuki base does not need any gyro calibration.   
   -- ---------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Overview

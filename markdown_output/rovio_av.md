@@ -1,10 +1,10 @@
 ## About
 
-The \`rovio_av\` package contains nodes and launch files that can be
+The `rovio_av` package contains nodes and launch files that can be
 used to stream video and play sounds on the Rovio. Additionally,
-included in the \`rovio_av\` package is a selection of \`.wav\` files
+included in the `rovio_av` package is a selection of `.wav` files
 that have been converted to 8000 Hz 16 bit PCM (the native format for
-the Rovio). These files are conversions from Willow Garage\'s
+the Rovio). These files are conversions from Willow Garage's
 [Robot Sound Libraries](http://hri.willowgarage.com/sounds/). These
 sounds can then be sent to the Rovio via a service call and played on
 its internal speakers.
@@ -36,7 +36,7 @@ node.0 {
 
 ## Installation
 
-To install the \`rovio\` stack, you can choose to either install from
+To install the `rovio` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -58,12 +58,12 @@ sudo apt-get install ros-fuerte-rovio
 
 ### Startup
 
-The \`rovio_av\` package contains a \`rovio_av.launch\` file which
+The `rovio_av` package contains a `rovio_av.launch` file which
 should be edited with the hostname, username and password to login to
 your Rovio. Additionally, the username, password, and host should be
-changed in the \`GSCAM_CONFIG\` variable in order to stream video using
-[gscam](gscam). This file launches an instance of the \`rovio_audio\`
-and \`gscam\` nodes. To launch these nodes, the following command can be
+changed in the `GSCAM_CONFIG` variable in order to stream video using
+[gscam](gscam). This file launches an instance of the `rovio_audio`
+and `gscam` nodes. To launch these nodes, the following command can be
 used:
 
 ```
@@ -97,5 +97,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

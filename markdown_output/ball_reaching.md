@@ -1,20 +1,20 @@
 ## Description
 
 ![\|width=760](attachment:control-graph.png) The control graph (picture
-above) is created by python script \"reach_ball.py\". This script is
+above) is created by python script "reach_ball.py". This script is
 parsed by the interperter embedded in the control framework SoT running
 on HRP-2 control CPU.
 
-Script \"hueblob.py\" listen to tf and publishes in topic
-\'/wide/blobs/rose/transform_base_link\' the position of the ball in the
+Script "hueblob.py" listen to tf and publishes in topic
+'/wide/blobs/rose/transform_base_link' the position of the ball in the
 frame of the robot waist. Note that the position of the ball in the
 camera reference frame is computed by package [hueblob](hueblob).
 
-\"watch_zone.py\" implements an [actionlib](actionlib) server that
+"watch_zone.py" implements an [actionlib](actionlib) server that
 tracks the position of the ball and returns when the distance between
 the ball and the target is less than the tolerance distance.
 
-\"supervisor.py\" send a request to watch_zone server and triggers the
+"supervisor.py" send a request to watch_zone server and triggers the
 motion when the client returns.
 
 ## Running the motion on HRP-2 14

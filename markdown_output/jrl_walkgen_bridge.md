@@ -12,7 +12,7 @@ The following algorithms are supported:
 -   *Morisawa2007*
 -   *Kajita2003* usable with HRP-2 only for now.
 
-Algorithm choice is done though the \`algorithm\` parameter of the
+Algorithm choice is done though the `algorithm` parameter of the
 trajectory server node, see below.
 
 ## ROS API

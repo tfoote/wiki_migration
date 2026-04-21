@@ -32,7 +32,7 @@ of the repository of toroboeye_ros.
      [ toroboeye_description](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_description )      A package that has the configuration model infomation of Torobo Eye.                          
      [ toroboeye_examples](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_examples )            A package that has examples (currently only capture example is included) using ros service.   
      [ toroboeye_gui](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_gui )                      A package that has gui tools to control Torobo Eye.                                           
-     [ toroboeye_msgs](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_msgs )                    A packages that defines Torobo Eye\'s original commands.                                      
+     [ toroboeye_msgs](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_msgs )                    A packages that defines Torobo Eye's original commands.                                      
      [ toroboeye_ros](https://github.com/TokyoRobotics/toroboeye_ros/tree/development/toroboeye_ros )                      A metapackage that put together all packages for ros.                                         
   -- ------------------------------------------------------------------------------------------------------------------ -- --------------------------------------------------------------------------------------------- --
 

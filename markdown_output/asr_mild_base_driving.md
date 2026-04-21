@@ -1,13 +1,13 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
-This package sends driving commands to the motors and receives \"Ticks\"
+This package sends driving commands to the motors and receives "Ticks"
 from an incremental encoder to control the movement of a differential
 drive robot.
 
 Also, the real velocity is adjusted to the required velocity, this means
-if the robot should drive straight forward, it doesn\'t drive a curve.
+if the robot should drive straight forward, it doesn't drive a curve.
 
 This package runs on a self-made robot (MILD). But you can take code
 from this package for your own motor control.
@@ -18,14 +18,14 @@ The package includes two components:
 
 **CanListener**
 
-Get \"Ticks\" from the incremental encoder. Calculate the odometry from
+Get "Ticks" from the incremental encoder. Calculate the odometry from
 the ticks and publish them on the ROS-Topic /odom
 ([Odometry.msg](http://docs.ros.org/api/nav_msgs/html/msg/Odometry.html)).
 
 How the driven distance (d) and the rotated angle (angular_d) are
 calculated:
 
-![\|height=\"279\",width=\"412\"](attachment:odometrie.JPG)
+![\|height="279",width="412"](attachment:odometrie.JPG)
 
 **BaseController**
 
@@ -40,13 +40,13 @@ difference. So you can compensate errors if the two motors have
 different speed properties.
 
 You can also speed up the velocity of the motors if the desired velocity
-isn\'t fast enough. But this can result in an inaccurate navigation.
+isn't fast enough. But this can result in an inaccurate navigation.
 
 This picture shows you how a differential drive robot drives, with
-different wheel velocities (al and ar). If al \> ar the robot drives a
+different wheel velocities (al and ar). If al > ar the robot drives a
 curve to the right. If al = ar the robot drives straight.
 
-![\|height=\"200\",width=\"259\"](attachment:differnenzial.jpg)
+![\|height="200",width="259"](attachment:differnenzial.jpg)
 
 ## Usage
 
@@ -70,7 +70,7 @@ We used:
 
 \- They are all connected with a self made circuit board over a CAN-Bus.
 
-![\|height=\"326\",width=\"333\"](attachment:Driving_components.jpg)
+![\|height="326",width="333"](attachment:Driving_components.jpg)
 
 ### Start system
 

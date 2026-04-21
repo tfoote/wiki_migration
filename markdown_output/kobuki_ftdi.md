@@ -1,6 +1,6 @@
 ## Kobuki Udev Rules
 
-[Included page kobuki_ftdi/Tutorials/Udev Rules, ,from=\"## START\", to=\"## END\" not found](Included page kobuki_ftdi/Tutorials/Udev Rules, ,from="## START", to="## END" not found)
+[Included page kobuki_ftdi/Tutorials/Udev Rules, ,from="## START", to="## END" not found](Included page kobuki_ftdi/Tutorials/Udev Rules, ,from="## START", to="## END" not found)
 
 ## Flashing Ftdi Chips
 
@@ -11,4 +11,4 @@ care though, slightly different ftdi usb to serial versions can cause
 problems and leave you with lovely bricks!
 
 You can also find more detailed information on how to flash the chip (as
-is usually done at Yujin\'s factory) in the doxygen api.
+is usually done at Yujin's factory) in the doxygen api.

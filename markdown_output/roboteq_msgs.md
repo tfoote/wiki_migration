@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(roboteq_msgs)\>\>
+<<MsgSrvDoc(roboteq_msgs)>>

@@ -17,7 +17,7 @@ IEEE Transactions on Intelligent Transportation Systems, 2022
 **\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276) \]
 \[ [Preprint](https://arxiv.org/abs/2101.04431) \]**
 
-![\|width=\"750px\"](attachment:velo2cam_calibration_setup.png)
+![\|width="750px"](attachment:velo2cam_calibration_setup.png)
 
 # Gazebo models
 

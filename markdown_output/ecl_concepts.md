@@ -12,11 +12,11 @@ void f(T input) {
 ```
 
 Of course the compile will fail if you try to use an input type, T, that
-doesn\'t have the specialised interface you want, but the compile time
+doesn't have the specialised interface you want, but the compile time
 error message is often very verbose and its difficult to find the error.
 An idea which is merging into the c++ mainstream as well as that used by
 the boost concept checking library is to characterise common behaviours
-into \_Concepts\_. A simplified version of this is utilised here.
+into _Concepts_. A simplified version of this is utilised here.
 
 ## Compiling & Linking
 
@@ -50,12 +50,12 @@ Existing concepts in the ecl include:
 
 \@section conceptsList Existing Concepts
 
--   \`BluePrints\` - checks for blueprint functionality as defined in
+-   `BluePrints` - checks for blueprint functionality as defined in
     ecl_utilities.
--   \`Containers\` - also bytecontainer, simple checks for basic
+-   `Containers` - also bytecontainer, simple checks for basic
     prerequisite container methods.
--   \`NullaryFunctions\` - function objects which require no arguments
+-   `NullaryFunctions` - function objects which require no arguments
     in execution.
--   \`Streams\` - any class with basic char streaming capabilities.
--   \`Devices\` - device functionalities compatible to those in
+-   `Streams` - any class with basic char streaming capabilities.
+-   `Devices` - device functionalities compatible to those in
     ecl_devices.

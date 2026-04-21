@@ -1,4 +1,4 @@
-Note: Full, up-to date documentation is in the project\'s
+Note: Full, up-to date documentation is in the project's
 [README.md on GitHub](https://github.com/uos/basler_tof).
 
 ## ROS API
@@ -97,4 +97,4 @@ group.1 {
 
 ## Report a Bug
 
-\<\<GitHubIssues(uos/basler_tof)\>\>
+<<GitHubIssues(uos/basler_tof)>>

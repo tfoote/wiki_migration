@@ -7,7 +7,7 @@ For synchronization the
 [Master API](http://www.ros.org/wiki/ROS/Master_API) will be used.
 Thereby the regitration of topics/services are performed only on the
 local ROS master. To obtain a complete synchronization of two ROS master
-one master_sync node in each \"ROS system\" have to be started.
+one master_sync node in each "ROS system" have to be started.
 
 The syncronization will be performed on each time the remote ROS master
 is changed. The change detection is done by the

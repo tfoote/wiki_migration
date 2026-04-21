@@ -3,8 +3,8 @@
 To teleop the robot touchlessly skin patches are installed on the back
 and sides of the robot. Then driving actions need to be mapped to the
 ids of skin patches (e.g. patches on the back of the robot are mapped to
-the action \'drive forward\' and patches on the left side of the robot
-are mapped to the action \'drive right\'). This is done by editing the
+the action 'drive forward' and patches on the left side of the robot
+are mapped to the action 'drive right'). This is done by editing the
 yaml file and mapping the skin patch ids to the actions fw, bw, right,
 left, etc. See parameters below and sample yaml file.
 

@@ -2,7 +2,7 @@
 
 The point cluster grasp planner plans grasps on a segmented point cloud
 (typically from the narrow stereo or Kinect) by finding the point
-cloud\'s principal axes and searching for grasps along those axes from
+cloud's principal axes and searching for grasps along those axes from
 the top and side (NOT grasps of the bounding box used for
 visualization\--grasps of the underlying points along the axes of the
 displayed box). It also finds overhead grasps of high points with the
@@ -42,7 +42,7 @@ srv{
 
 ### ROS Parameters
 
-There are lots of params besides this one. They\'re all described in
+There are lots of params besides this one. They're all described in
 point_cluster_grasp_planner.py. ```clearsilver
 param {
   no_header= True
@@ -57,7 +57,7 @@ param {
 
 (In Fuerte and beyond, enable this marker for debugging by setting
 self.draw_gripper to be 1 in point_cluster_grasp_planner.py. The planner
-is much much faster if it doesn\'t have to draw the grasps.)
+is much much faster if it doesn't have to draw the grasps.)
 ```clearsilver
 pub {
   no_header= True

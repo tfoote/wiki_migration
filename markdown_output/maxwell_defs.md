@@ -28,7 +28,7 @@ To start Maxwell, use one of the following launch files:
 
 ### Moving the Base
 
-The base uses a standard \<\<MsgLink(geometry_msgs/Twist)\>\> message on
+The base uses a standard <<MsgLink(geometry_msgs/Twist)>> message on
 the *cmd_vel* topic to set desired velocity.
 
 ### Moving the Arm

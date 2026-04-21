@@ -65,7 +65,7 @@ that can be retrieved via the ROS[topic](http://wiki.ros.org/Topics)
 
 -   cell_type (string, default: "avg") Accepted values: "avg" \--
     modified cell model; "base" \-- original cell model
--   occupancy_estimator (string, default: \"const\") Accepted values:
+-   occupancy_estimator (string, default: "const") Accepted values:
     "const" \-- original occupancy estimator; "area" \-- dynamic
     occupancy estimator
 -   skip_exceeding_lsr_vals (boolean, default: false) Determines how to
@@ -85,5 +85,5 @@ that can be retrieved via the ROS[topic](http://wiki.ros.org/Topics)
 
 #### Provided tf Transforms
 
--   map → robot_pose: the current estimate of the robot\'s pose within
+-   map → robot_pose: the current estimate of the robot's pose within
     the map frame

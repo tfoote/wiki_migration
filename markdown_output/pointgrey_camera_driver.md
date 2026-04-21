@@ -1,4 +1,4 @@
-![\|align=\"right\",width=\"280\"](attachment:ptgreycams.png)
+![\|align="right",width="280"](attachment:ptgreycams.png)
 
 ## Devices
 
@@ -31,7 +31,7 @@ roslaunch pointgrey_camera_driver camera.launch
 ```
 
 When multiple Point Grey cameras are in use at a time, specify the
-serial number given by \`list_cameras\`:
+serial number given by `list_cameras`:
 
 ```
 roslaunch pointgrey_camera_driver camera.launch camera_serial:=12345678
@@ -45,20 +45,20 @@ file for the available parameters.
 
 ## Troubleshooting
 
-When using Point Grey\'s GigE cameras, you may experience an issue with
-dropped packets which results in \`IMAGE_CONSISTENCY_ERROR\` being
+When using Point Grey's GigE cameras, you may experience an issue with
+dropped packets which results in `IMAGE_CONSISTENCY_ERROR` being
 thrown by the !FlyCapture2 SDK. You can adjust the receive buffer
-settings in Linux using \`sysctl\` to correct this. See
+settings in Linux using `sysctl` to correct this. See
 [this knowledge base article from Point Grey](http://www.ptgrey.com/KB/10016)
 for more details.
 
 Similarly, multiple USB cameras may require raising the amount of memory
-allocated to the USB subsystem. The usbcore variable \`usbfs_memory_mb\`
+allocated to the USB subsystem. The usbcore variable `usbfs_memory_mb`
 should be set suitably large.
 [This application note](http://www.ptgrey.com/tan/10685) describes two
 common ways of setting it, via the kernel command line (edit
-\`/boot/grub.conf\`), or module loading (\`modprobe usbcore
-usbfs_memory_mb=1024\` for current session, or adding \`options usbcore
-usbfs_memory_mb=1000\` to an appropriate \`/etc/modprobe.d\` file). It
+`/boot/grub.conf`), or module loading (`modprobe usbcore
+usbfs_memory_mb=1024` for current session, or adding `options usbcore
+usbfs_memory_mb=1000` to an appropriate `/etc/modprobe.d` file). It
 should also be settable at runtime via
-\`/sys/module/usbcore/parameters/usbfs_memory_mb\`
+`/sys/module/usbcore/parameters/usbfs_memory_mb`

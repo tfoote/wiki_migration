@@ -13,7 +13,7 @@ the [Code API.](http://www.ros.org/doc/api/cereal_port/html/)
 
 The following example shows how to use the cereal_port library in your
 ROS projects. This example in particular opens a serial port sends an
-\'R\' and waits for a reply.
+'R' and waits for a reply.
 
 ```cplusplus
 #include <ros/ros.h>
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
     }
 }
 ``` To compile this example.cpp file you should
-make sure you have the serial_communication stack installed and don\'t
+make sure you have the serial_communication stack installed and don't
 forget to add cereal_port as a dependency on your package manifest.xml:
 
 ```

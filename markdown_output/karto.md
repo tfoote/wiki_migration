@@ -5,11 +5,11 @@ migrated into [slam_karto](slam_karto)**.
 
 ## Hardware Requirements
 
-To use \`karto\`, you need a mobile robot that provides odometry data
+To use `karto`, you need a mobile robot that provides odometry data
 and is equipped with a horizontally-mounted, fixed, laser range-finder.
-The \`karto\` node will attempt to transform each incoming scan into the
-\`odom\` (odometry) [tf](tf) frame. See the
-\"[Required tf transforms](#tf)\" for more on required transforms.
+The `karto` node will attempt to transform each incoming scan into the
+`odom` (odometry) [tf](tf) frame. See the
+"[Required tf transforms](#tf)" for more on required transforms.
 
 ## Building Karto in a stand-alone mode
 

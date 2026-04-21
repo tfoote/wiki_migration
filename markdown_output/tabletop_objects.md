@@ -4,7 +4,7 @@
 located on some kind of supporting planar surface (table, countertop).
 
 The object detection is performed in two steps: a *bottom-up* step that
-tries to come up with initial estimation of the object\'s pose, followed
+tries to come up with initial estimation of the object's pose, followed
 by a *top-down* model fitting step that tries to fit 3D models at each
 location estimated in the first step.
 
@@ -24,7 +24,7 @@ poses.
 ![](attachment:tabletop_clusters.png)
 
 We are working on improving the object pose initialization pipeline
-described above by incorporating additional cues about the objects\'s
+described above by incorporating additional cues about the objects's
 location and orientation using a set of 3D features.
 
 This step is implemented in the **tabletop_detector** node.
@@ -33,7 +33,7 @@ This step is implemented in the **tabletop_detector** node.
 
 In this step, the object pose estimations computed in the bottom-up step
 are used to fit 3D models to their respective locations. Doing that
-allows us to determine the object identity and refine the object\'s pose
+allows us to determine the object identity and refine the object's pose
 with high accuracy. For performing the model fitting we are using an
 ICP-like (Iterative Closest Point) algorithm combined with a 3D distance
 transform for fast nearest point computations.
@@ -191,12 +191,12 @@ roslaunch launch/model_fitter.launch
     to go, however it will only start the detection when the
     **table_top/find_object_poses** service is called. For a quick test
     (to make sure everything is running properly), you can run the
-    \'test_service\' node, which just calls the above service:
+    'test_service' node, which just calls the above service:
     ```
 rosrun tabletop_objects test_service
 ```For a more complex example, of how to use
     the tabletop_objects detector and integrate it with the planing
-    pipeline, see the \'simple.cpp\' source file in the
+    pipeline, see the 'simple.cpp' source file in the
     **tabletop_scripts** package.
 
 ## Video

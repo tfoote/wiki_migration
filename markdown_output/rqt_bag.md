@@ -1,9 +1,9 @@
-**\`rqt_bag\` supersedes [rxbag](rxbag)**, which is deprecated since
-\`ROS\` [groovy](groovy).
+**`rqt_bag` supersedes [rxbag](rxbag)**, which is deprecated since
+`ROS` [groovy](groovy).
 
 ## Overview
 
-\`rqt_bag\` is an application for recording and managing bag files.
+`rqt_bag` is an application for recording and managing bag files.
 Primary features:
 
 -   show bag message contents
@@ -12,11 +12,11 @@ Primary features:
 -   publish/record messages on selected topics to/from ROS
 -   export messages in a time range to a new bag
 
-\`rqt_bag\` can be extended via a plugin mechanism. Core plugins are
+`rqt_bag` can be extended via a plugin mechanism. Core plugins are
 contained in the [rqt_bag_plugins](rqt_bag_plugins) package available in
 the [rqt_common_plugins](rqt_common_plugins) metapackage.
 
-![rqt_bag window\|width=\"750\"](attachment:rqt_bag.png)
+![rqt_bag window\|width="750"](attachment:rqt_bag.png)
 
 ## Usage
 
@@ -26,9 +26,9 @@ the [rqt_common_plugins](rqt_common_plugins) metapackage.
 $ rqt
 ```
 
-and select from \`Plugins\` \--\> \`Logging\` \--\> \`Bag\`.
+and select from `Plugins` \--> `Logging` \--> `Bag`.
 
-Or simply the following (with this you can\'t open \`rqt_bag\` with
+Or simply the following (with this you can't open `rqt_bag` with
 other rqt tools).
 
 ```
@@ -41,11 +41,11 @@ contained in the bag file, listed by topic.
 ### Publish ROS topics while playing back from the recorded bag file
 
 Right-click on the name of the topic you want to publish, then select
-\`Publish\` (as in the image below).
+`Publish` (as in the image below).
 
-![publish a topic in rqt_bag\|width=\"700\"](attachment:publish_grab.png)
+![publish a topic in rqt_bag\|width="700"](attachment:publish_grab.png)
 
-**Note:** Don\'t forget to use simulation time when republishing from a
+**Note:** Don't forget to use simulation time when republishing from a
 bag file:
 [Using Sim Time](Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
 
@@ -58,8 +58,8 @@ You can stop recording by re-clicking the red circle button.
 ### Timeline
 
 The messages are shown at the timestamp stored in the bag file. This
-timestamp may differ from the message\'s \`Header\` timestamp (if any),
-e.g. \`rosbag record\` stores the time the message was received.
+timestamp may differ from the message's `Header` timestamp (if any),
+e.g. `rosbag record` stores the time the message was received.
 
 Right-clicking on the timeline opens a menu with options for opening
 detailed message views, choosing which topics to display thumbnails for,
@@ -70,7 +70,7 @@ A subset of the data can be selected by dragging the cursor over a range
 of time at the top of the timeline. This selection is used in any
 message view, such as plot view.
 
-![rqt_bag time selection\|width=\"700\"](attachment:rqt_bag_time_selection.png)
+![rqt_bag time selection\|width="700"](attachment:rqt_bag_time_selection.png)
 
 ### Toolbar
 
@@ -112,7 +112,7 @@ Message views display information about the message immediately
 preceding the position of the timeline playhead (the vertical red line.)
 The message datatype determines which message views are available.
 
-![rqt_bag message views\|width=\"700\"](attachment:rqt_bag_views.png)
+![rqt_bag message views\|width="700"](attachment:rqt_bag_views.png)
 
 For details on common message views such as images and plotting, see
 [rqt_bag_plugins](rqt_bag_plugins).
@@ -135,5 +135,5 @@ Also, the following keyboard shortcuts can be used:
 
 ## Plugin API
 
-\`rqt_bag\` currently has a proof-of-concept plugin API, which is used
+`rqt_bag` currently has a proof-of-concept plugin API, which is used
 in the [rqt_bag_plugins](rqt_bag_plugins) package.

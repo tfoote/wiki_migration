@@ -13,7 +13,7 @@ to install the latest version of OpenNI for your distro.
 
 ## Compiling People Tracker
 
-You\'ll need to point the compiler at the location of OPEN_NI_UNSTABLE
+You'll need to point the compiler at the location of OPEN_NI_UNSTABLE
 and OPEN_NITE_UNSTABLE on your system. Change the corresponding lines in
 the CMakeLists.txt file. eg
 
@@ -30,7 +30,7 @@ rosrun people_tracker tracker
 
 Stand about 1-2 metres in front of the kinect so that it can see your
 whole body. There is no need to pose, the default calibration file is
-for a person 5\'10\" in height so as long as you are roughly this size
+for a person 5'10" in height so as long as you are roughly this size
 you will be detected.
 
 ### Node Description

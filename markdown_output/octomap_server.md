@@ -2,7 +2,7 @@
 
 General information about !OctoMap is available at
 <http://octomap.github.com> and in the publication
-[\"OctoMap: An Efficient Probabilistic 3D Mapping Framework Based on Octrees\"](http://www.informatik.uni-freiburg.de/~hornunga/pub/hornung13auro.pdf)
+["OctoMap: An Efficient Probabilistic 3D Mapping Framework Based on Octrees"](http://www.informatik.uni-freiburg.de/~hornunga/pub/hornung13auro.pdf)
 by A. Hornung, K. M. Wurm, M. Bennewitz, C. Stachniss, and W. Burgard
 (Autonomous Robots Journal, 2013).
 

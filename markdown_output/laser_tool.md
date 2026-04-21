@@ -6,11 +6,11 @@ pointcloud2 datas.
 
 ## Usage
 
-Node \"serial_com\" can be started by running: ```shell
+Node "serial_com" can be started by running: ```shell
 rosrun dlut_move_base serial_com
 ```
 
-Node \"sick_key\" can be started by running: ```shell
+Node "sick_key" can be started by running: ```shell
 rosrun dlut_move_base sick_key
 ```
 

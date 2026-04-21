@@ -7,4 +7,4 @@ See README files of constituent packages.
 
 ## Report a Bug
 
-\<\<GitHubIssues(utexas-bwi/bwi_common)\>\>
+<<GitHubIssues(utexas-bwi/bwi_common)>>

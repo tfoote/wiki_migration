@@ -42,7 +42,7 @@ Please refer to the installation instructions here:
 -   [comp_spatial](comp_spatial): Compute qualitative spatial relations
     from object poses
 -   [comp_temporal](comp_temporal): Compute temporal relations, e.g.
-    Allen\'s interval algebra
+    Allen's interval algebra
 -   [mod_vis](mod_vis): Visualization of the content of the knowledge
     base
 -   [knowrob_cad_models](knowrob_cad_models): Load Collada models for
@@ -94,7 +94,7 @@ Please file bugs and feature requests here:
 
 The most comprehensive overview of the KnowRob system and related
 research can be found in
-[Moritz Tenorth\'s PhD thesis](http://nbn-resolving.de/urn/resolver.pl?urn:nbn:de:bvb:91-diss-20111125-1079930-1-7).
+[Moritz Tenorth's PhD thesis](http://nbn-resolving.de/urn/resolver.pl?urn:nbn:de:bvb:91-diss-20111125-1079930-1-7).
 The full list of KnowRob-related publications is available at
 <http://www.knowrob.org/publications>
 

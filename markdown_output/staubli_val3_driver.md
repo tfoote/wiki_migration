@@ -34,4 +34,4 @@ ROS Discourse.
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros-industrial/staubli_val3_driver)\>\>
+<<GitHubIssues(ros-industrial/staubli_val3_driver)>>

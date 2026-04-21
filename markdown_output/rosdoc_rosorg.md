@@ -1,6 +1,6 @@
 ## Overview
 
-\`rosdoc_rosorg\` is an extension of the [rosdoc](rosdoc) tool to
+`rosdoc_rosorg` is an extension of the [rosdoc](rosdoc) tool to
 support generating resources necessary for the ROS.org web site. This
 includes various indexes used by wiki macros and other tools.
 
@@ -98,13 +98,13 @@ option is required to produce output.
 
 ### create_distro_index.py
 
-Usage: create_distro_index.py \<distro\> \<filename\>
+Usage: create_distro_index.py <distro> <filename>
 
-Writes into \<filename\> a yaml dict: ```
+Writes into <filename> a yaml dict: ```
 {'repos': safe_repo_index, 'stacks': stack_index, 'distro_name': distro_name}
 ``` based on
 rospkg.distro.load_distro(), which in turn reads files from
-code.ros.org/svn/release\..../\<distro\>.rosdistro
+code.ros.org/svn/release\..../<distro>.rosdistro
 
 The transformation does not add any information, it just applies rules
 to generate uris. So this generated all the .yaml files that were placed
@@ -112,9 +112,9 @@ into rosorg_rosdoc/index.
 
 ### generate_index.py
 
-usage: generate_index.py \[options\] \<output-file\>
+usage: generate_index.py \[options\] <output-file>
 
-writes into rosinstall \<out-file\> (default repos.rosinstall), based on
+writes into rosinstall <out-file> (default repos.rosinstall), based on
 rospkg.distro and
 <https://code.ros.org/svn/ros/stacks/rosorg/trunk/rosdoc_rosorg/repos.list>
 
@@ -124,7 +124,7 @@ sources.
 
 ### rosdoc_rosorg
 
-Usage: rosdoc_rosorg \--repos=\<filename\> \[options\] \[packages\...\]
+Usage: rosdoc_rosorg \--repos=<filename> \[options\] \[packages\...\]
 
 ```
 Options:
@@ -147,8 +147,8 @@ Options:
 ```
 
 \--repos is a required option, it takes a rosinstall-like file with
-additional \"meta\" tags to declare membership of an SCM repository to a
-larger \"repo\" (e.g. all lab-wide stacks).
+additional "meta" tags to declare membership of an SCM repository to a
+larger "repo" (e.g. all lab-wide stacks).
 
 \--distro-index is an optional file (e.g. rosdoc_rosorg/distro-\*.yaml)
 : ```
@@ -166,7 +166,7 @@ stacks:
                repo: repo1,
                rules: {git: *id001 } }
 ``` Which contains redundant structural data
-(repo \<-\> stack). Also it contains yaml references (\*0001 points to
+(repo <-> stack). Also it contains yaml references (\*0001 points to
 &0001) The code is parsed by core.py, where the Repo class represents
 one stack (not Repo), and a repo is represented as an aggregate name of
 a stack.
@@ -200,7 +200,7 @@ Other rosdoc_rosorg options relate to the original rosdoc script.
 
 ### install_distro_index
 
-usage: install_distro_index.py \<filename\>
+usage: install_distro_index.py <filename>
 
 calls sudo apt-get install with each stackname mentioned in the YAML
-file dict \'stacks\'.
+file dict 'stacks'.

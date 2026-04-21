@@ -5,11 +5,11 @@
 ## Roch Bringup
 
 Follow the [Roch tutorial](roch/Tutorials/Using package of roch_bringup)
-to start your Ro\`\`ch.
+to start your Ro``ch.
 
 ## Launch Files
 
--   **minimal.launch** - The base launch file for Ro\`\`ch. Starts the
+-   **minimal.launch** - The base launch file for Ro``ch. Starts the
     basic nodes ([roch_base](roch_base)),
     [robot_state_publisher](robot_state_publisher),
     [diagnostic_aggregator](diagnostic_aggregator), and

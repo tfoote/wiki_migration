@@ -2,13 +2,13 @@
 
 This package is a space to stage messages and common GPS-processing
 routines that are undergoing a standardization process. Its contents
-will probably be moved into [ros-pkg](ros-pkg) once they\'ve matured.
+will probably be moved into [ros-pkg](ros-pkg) once they've matured.
 
 ## Messages
 
 gps_common defines two common messages for GPS drivers to output:
-\<\<MsgLink(gps_common/GPSFix)\>\> and
-\<\<MsgLink(gps_common/GPSStatus)\>\>.
+<<MsgLink(gps_common/GPSFix)>> and
+<<MsgLink(gps_common/GPSStatus)>>.
 
 In most cases, these messages should be published simultaneously, with
 identical timestamps.
@@ -47,4 +47,4 @@ node.0 {
 ## Tutorial
 
 See [gpsd_client](gpsd_client) for an example of a sender node that uses
-this package\'s messages.
+this package's messages.

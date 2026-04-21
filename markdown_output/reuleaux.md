@@ -5,8 +5,8 @@ provides tools for creating various types of robot reachability maps and
 finding optimal base locations for a given task specified by poses
 through those reachability maps.
 
--   Maintainer: Abhijit Makhal \<makhabhi AT isu DOT edu\>
--   Author: Abhijit Makhal \<makhabhi AT isu DOT edu\>
+-   Maintainer: Abhijit Makhal <makhabhi AT isu DOT edu>
+-   Author: Abhijit Makhal <makhabhi AT isu DOT edu>
 -   License: Apache
 -   Source: git <https://github.com/ros-industrial-consortium/reuleaux>
     (git)
@@ -32,7 +32,7 @@ $ catkin_make
 ## Setting everything up for your robot
 
 -   If you are interested in creating workspace (TODO needs elaborated
-    what the \"workspace\" is) and utilize reuleux for your own robot,
+    what the "workspace" is) and utilize reuleux for your own robot,
     continue following this section.
 -   If you already have an ikfast solution for your robot, you are
     already saved from all the troubles. please go directly to the
@@ -79,7 +79,7 @@ rosrun xacro xacro.py model.xacro > model.urdf
 
 ```
 rosrun collada_urdf urdf_to_collada <myrobot_name>.urdf <myrobot_name>.dae
-``` where \<myrobot_name\> is the name of your
+``` where <myrobot_name> is the name of your
 robot. There is a script in moveit_ikfast package which rounds all the
 numbers to a fixed decimal places in the dae file. If the default dae
 file takes long time for generating Ikfast solution, it is encouraged to
@@ -116,7 +116,7 @@ frame
 
 ```
 python `openrave-config --python-dir`/openravepy/_openravepy_/ikfast.py --robot=<myrobot_name>.dae --iktype=transform6d --baselink=1 --eelink=8 --savefile=<ikfast_output_path>
-``` where \<ikfast_ouput_path\> is path where you
+``` where <ikfast_ouput_path> is path where you
 want to save the robot ikfast file. Base link is defined as 1 and tool
 link is defined as 8
 
@@ -124,27 +124,27 @@ link is defined as 8
 
 Now as you already have an ikfast file for you robot, we can link it to
 reuleaux. copy your ikfast solution file and paste it in the
-\`map_creator/include\` folder:
+`map_creator/include` folder:
 
 ```
 sudo cp -r file_location/<file> <map_creator include folder location>
-``` . For example, suppose \`funny_robot_ikfast\`
-files is at \`/Desktop\`: ```
+``` . For example, suppose `funny_robot_ikfast`
+files is at `/Desktop`: ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
 ```0
 
-Note you may also need to copy header files that your \`\*.cpp\`
+Note you may also need to copy header files that your `\*.cpp`
 includes.
 
 After copying the file, we have to link it in the
 [map_creator/include/map_creator/kinematics.h header file](https://github.com/ros-industrial-consortium/reuleaux/blob/5404ff6ba878187ff8ff8434f994617509cf8416/map_creator/include/map_creator/kinematics.h)
 and block the previuos defined filename (in the case in the link,
-\"mh5_ikfast.cpp\"). You have to have at least a single ikfast mentioned
-in the header, otherwise the package won\'t build.
+"mh5_ikfast.cpp"). You have to have at least a single ikfast mentioned
+in the header, otherwise the package won't build.
 
-. Concrete example of what\'s explained above: ```
+. Concrete example of what's explained above: ```
 sudo add-apt-repository ppa:openrave/release
 sudo apt-get update
 sudo apt-get install openrave0.8-dp-ikfast
@@ -176,7 +176,7 @@ your needs):
 
 ### Reachability Maps
 
-![\|width=\"761\",height=\"295\"](attachment:reach_map2.jpg)
+![\|width="761",height="295"](attachment:reach_map2.jpg)
 
 The Reachability map describes the reachability of a given robot model
 by discretizing its environment, creating poses in the environment and
@@ -283,7 +283,7 @@ at the lower section). Add a reachability panel. Set the topic to
 /reachability_map
 
 .
-![Visualization menu.jpg\|width=\"534\",height=\"360\"](attachment:Visualization menu.jpg)
+![Visualization menu.jpg\|width="534",height="360"](attachment:Visualization menu.jpg)
 
 In a second terminal load the map file(load any one map at a single
 time, otherwise it may lock up the system).
@@ -304,17 +304,17 @@ while the red ones are sections where the robot can hardly reach (mostly
 in the outer spheres).
 
 If you dont like the colors, you can change it by checking the box
-checkbox \"color by reachability\"
+checkbox "color by reachability"
 
 .
-![color by reachability.jpg\|width=\"628\",height=\"291\"](attachment:color by reachability.jpg)
+![color by reachability.jpg\|width="628",height="291"](attachment:color by reachability.jpg)
 
-By checking the \"show poses\" checkbox , you can visualize all the
+By checking the "show poses" checkbox , you can visualize all the
 reachable poses by arrows. But the poses can be upto 8 digits, so the
 system may lock up.
 
 .
-![show arrows.jpg\|width=\"630\",height=\"291\"](attachment:show arrows.jpg)
+![show arrows.jpg\|width="630",height="291"](attachment:show arrows.jpg)
 
 You can change the sphere and poses properties from their dedicated
 tabs. If you want to visualize a densed map, set the size of sphere in
@@ -325,20 +325,20 @@ highly reachable(blue). if it is lower than 5, then the sphere is hard
 to reach (it is not absolutely reachable, otherwise it would not show up
 in the map. It should have one or two poses that are reachable) By
 visualizing the workspace based on reachability, you can set up the
-values \"lowest reachability index\" and \"highest reachability index\".
+values "lowest reachability index" and "highest reachability index".
 For example, if you set the lowest reachability index to 1 and highest
 reachability index to 10, then the workspace would look like a hull,
 where the outer spheres will only show up, as they have the lowest
 values.
 
 .
-![sphere by reachability\|width=\"570\",height=\"264\"](attachment:sphere by reachability.jpg)
+![sphere by reachability\|width="570",height="264"](attachment:sphere by reachability.jpg)
 
 You can also disect the workspace, if you want to visualize the inner
 spheres of the workspace. It can be done by changing the values in
 disect drop down arrow.
 
-. ![\|width=\"618\",height=\"286\"](attachment:disection.jpg)
+. ![\|width="618",height="286"](attachment:disection.jpg)
 
 The inverse reachability map has the same internal structure as
 reachability map. So it can also be visualized by the same procedure as
@@ -353,7 +353,7 @@ rosrun xacro xacro.py model.xacro > model.urdf
 ```0 There are no poses section in the capability
 map. Only the spheres will be visualized.
 
-. ![\|width=\"307\",height=\"246\"](attachment:capability.jpg)
+. ![\|width="307",height="246"](attachment:capability.jpg)
 
 **Sometimes the changes in the visualization of the maps do not
 instantly take action. Pressing the reset button will bring back
@@ -379,7 +379,7 @@ topic to /reachability_map 1. Set the Fixed frame to base_link
 ### Make Task Plan
 
 .
-![interaction marker.jpg\|width=\"374\",height=\"209\"](attachment:interaction marker.jpg)
+![interaction marker.jpg\|width="374",height="209"](attachment:interaction marker.jpg)
 
 Upto this point an interactive marker should show up with a red arrow.
 The red marker is at the origin. You can drag it to your desired
@@ -391,8 +391,8 @@ You can click the arrow to set a task pose. After clicking a magenta
 arrow will appear describing a task pose. The position and orientation
 of the task pose will also show up the Task pose window. If you are not
 satisfied with the position and orientation you can start fine tuning it
-righ clicking on the task pose. A panel will appear indicating \"fine
-adjustment\". Clicking on the fine adjustment button will bring a 6DOF
+righ clicking on the task pose. A panel will appear indicating "fine
+adjustment". Clicking on the fine adjustment button will bring a 6DOF
 contol for the task pose.
 
 If you do not want this task pose, you can delete it by indicating its
@@ -401,19 +401,19 @@ indicating its position and orientation by changing the values and
 pressing the add point button.
 
 .
-![add task window.jpg\|width=\"469\",height=\"466\"](attachment:add task window.jpg)
+![add task window.jpg\|width="469",height="466"](attachment:add task window.jpg)
 
 A task of several task poses can be saved by the save task button. A
 saved task can also be loaded by load task button.
 
 ### Base Placement Setup
 
-![placement window.jpg\|width=\"507\",height=\"408\"](attachment:placement window.jpg)
+![placement window.jpg\|width="507",height="408"](attachment:placement window.jpg)
 
 Reuleaux searches for two types of bases based on user needs: Robot arm
 base and Robot base. The first argument for the planner is an inverse
-reachability map file which can be loaded by \"Load Inverse Reachability
-Map\" button. Navigate to the location where the inverse reachability
+reachability map file which can be loaded by "Load Inverse Reachability
+Map" button. Navigate to the location where the inverse reachability
 map is stored and load the map you want to work with. The other
 parameters for the planner are :
 
@@ -426,7 +426,7 @@ It also creates an union map based on the inverse reachability solution
 of all the grasp poses. To visualize the union map press the show union
 map button.
 
-![\|width=\"760\",height=\"251\"](attachment:solution.jpg)
+![\|width="760",height="251"](attachment:solution.jpg)
 
 ### Find Arm Locations
 
@@ -451,7 +451,7 @@ find optimal base locations for the given task.Based on your selected
 visualization output, the output can be shown as an arrow or robot
 manipulator.
 
-![\|width=\"750\",height=\"208\"](attachment:4_methods.jpg)
+![\|width="750",height="208"](attachment:4_methods.jpg)
 
 ### Find Robot Base Locations on the Ground
 
@@ -461,14 +461,14 @@ spheres that has the highest inverse reachability index. The
 visualization should be only the robot model or the arrows, not the
 manipulator.
 
-![\|width=\"750\",height=\"208\"](attachment:all_task.jpg)
+![\|width="750",height="208"](attachment:all_task.jpg)
 
 This method also works nicely for mobile manipulators. For visualizing
-more that one base placement location, just change the \"number of base
-placement location\", but the IK solutions different base locations also
+more that one base placement location, just change the "number of base
+placement location", but the IK solutions different base locations also
 increases with the number of base locations.
 
-. ![\|width=\"525\",height=\"335\"](attachment:husky_ur5.jpg)
+. ![\|width="525",height="335"](attachment:husky_ur5.jpg)
 
 The husky robot with an UR5 arm. Two base locations are searched for 3
 task poses(magenta arrow). The manipulator configurations from the the

@@ -44,7 +44,7 @@ that have just the package name.
 
 ### Review Summary
 
-Total number of contents of the review tag\'s attribute status. Case
+Total number of contents of the review tag's attribute status. Case
 sensitive.
 
 ### License Summary
@@ -54,10 +54,10 @@ out comma separated lists.
 
 ### URL Summary
 
-If the \`-web\` tag is not used, the summary will contain whether the
+If the `-web` tag is not used, the summary will contain whether the
 URL tag is specified or not.
 
-If the \`-web\` tag is used, the summary will contain the HTTP response
+If the `-web` tag is used, the summary will contain the HTTP response
 numbers obtained when the given URL is downloaded. Note that this option
 will take a bit longer to run.
 
@@ -65,5 +65,5 @@ will take a bit longer to run.
 
 A list of all the authors and the number and list of all the
 stacks/packages they maintain. Minor parsing is done to separate comma
-delineated lists and email addresses when they are of the form \'My
-name/myemail@gmail.com\'.
+delineated lists and email addresses when they are of the form 'My
+name/myemail@gmail.com'.

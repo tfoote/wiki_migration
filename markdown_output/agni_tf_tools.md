@@ -22,20 +22,20 @@ angular values.
 
 To specify whether rotations should be performed w.r.t. the **s**tatic
 or the moving / **r**otationg frame (corresponding to left resp. right
-matrix multiplication), it\'s possible to prefix the axes order by
-\"**s**\" or \"**r**\". Omitting the prefix, corresponds to \"**r**\" or
+matrix multiplication), it's possible to prefix the axes order by
+"**s**" or "**r**". Omitting the prefix, corresponds to "**r**" or
 right matrix multiplication.
 
 # Computing a transform w.r.t. another parent
 
 The rviz plugin also supports frame transformations. If you want to
 compute the entered transform w.r.t. another parent frame, simply enable
-the checkbox \"`adapt transformation`\" and subsequently change the
+the checkbox "`adapt transformation`" and subsequently change the
 `parent frame`. If the checkbox is not ticked, changing the parent frame
-doesn\'t change the relative transform, but moves the interactive
+doesn't change the relative transform, but moves the interactive
 marker.
 
 # Publishing transforms
 
 The entered transform is published as soon as a empty frame names are
-provided and the \"`publish transform`\" checkbox is enabled.
+provided and the "`publish transform`" checkbox is enabled.

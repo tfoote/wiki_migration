@@ -1,1 +1,1 @@
-![\|width=\"750px\"](attachment:erratic.png)
+![\|width="750px"](attachment:erratic.png)

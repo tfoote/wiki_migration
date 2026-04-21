@@ -1,6 +1,6 @@
 Github: \*<https://github.com/Terabee/follow_me_driver_ros>
 
-This package is a ROS wrapper for \`follow_me_driver\` contained in
+This package is a ROS wrapper for `follow_me_driver` contained in
 [hardware_drivers](https://github.com/Terabee/hardware_drivers) package.
 It enables easy use of Terabee Follow-Me system in ROS environment.
 
@@ -77,7 +77,7 @@ It provides following configuration options of the system:
 #### Running the node
 
 After your workspace is built and sourced, you can run the node (set
-\`\_portname\` to the actual port name where the master beacon is
+`_portname` to the actual port name where the master beacon is
 connected: ```
 rosrun follow_me_driver_ros follow_me_master_beacon _portname:=/dev/ttyACM0
 ```
@@ -86,14 +86,14 @@ rosrun follow_me_driver_ros follow_me_master_beacon _portname:=/dev/ttyACM0
 
 This node subscribes to the following topics:
 
--   \`/follow_me_master_beacon/follow_me_autocalibrate\` : publishing to
+-   `/follow_me_master_beacon/follow_me_autocalibrate` : publishing to
     this topic activates span autocalibration mode
--   \`/follow_me_master_beacon/follow_me_config\` : publishing to this
+-   `/follow_me_master_beacon/follow_me_config` : publishing to this
     topic sets parameters: printout mode, swap beacons, EMA filter
     window, span between the beacons
--   \`/follow_me_master_beacon/follow_me_rs485_config\` : publishing to
+-   `/follow_me_master_beacon/follow_me_rs485_config` : publishing to
     this topic sets slave id, baudrate and parity of RS485 interface
--   \`/follow_me_master_beacon/follow_me_test_cmd\` : publishing to this
+-   `/follow_me_master_beacon/follow_me_test_cmd` : publishing to this
     topic triggers test command which returns actual configuration of
     the device
 
@@ -119,7 +119,7 @@ file.
 
 This node publishes to the topic:
 
--   \`/follow_me_master_beacon/follow_me_polar_point_2d\` : provides
+-   `/follow_me_master_beacon/follow_me_polar_point_2d` : provides
     distance and heading of the remote control with respect to the
     beacons
 
@@ -136,7 +136,7 @@ It provides following configuration options of the remote control:
 #### Running the node
 
 After your workspace is built and sourced, you can run the node (set
-\`\_portname\` to the actual port name where the remote control is
+`_portname` to the actual port name where the remote control is
 connected: ```
 rosrun follow_me_driver_ros follow_me_remote_control _portname:=/dev/ttyUSB0
 ```
@@ -145,10 +145,10 @@ rosrun follow_me_driver_ros follow_me_remote_control _portname:=/dev/ttyUSB0
 
 This node subscribes to the following topics:
 
--   \`/follow_me_remote_control/follow_me_get_config\` : publishing to
+-   `/follow_me_remote_control/follow_me_get_config` : publishing to
     this topic triggers command which returns actual configuration of
     the remote control
--   \`/follow_me_remote_control/follow_me_set_config\` : publishing to
+-   `/follow_me_remote_control/follow_me_set_config` : publishing to
     this topic sets remote control configuration (button mode and buzzer
     state)
 
@@ -163,14 +163,14 @@ file.
 
 ## Example
 
-A basic subscriber is available in subdirectory \`examples\`.
+A basic subscriber is available in subdirectory `examples`.
 
 In order to use the package in your own node, do the following:
 
-In \`CMakeLists.txt\` add the package name \`follow_me_driver_ros\` to
-\`find_package\` and \`catkin_package\` commands.
+In `CMakeLists.txt` add the package name `follow_me_driver_ros` to
+`find_package` and `catkin_package` commands.
 
-In \`package.xml\` add:
+In `package.xml` add:
 
 ```
 cd ~/ros_ws/src

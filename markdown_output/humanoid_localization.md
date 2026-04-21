@@ -34,9 +34,9 @@ lookup (the latter currently requires libdynamicEDT3D from !OctoMap 1.5
 or later). Details about the required sensor data and tf transforms can
 be found below. Once the localization is running, it can initialize the
 particles from a given pose by the intial_pose parameter, or by using
-the \"2D Pose Estimate\" tool in RViz (z, roll, and pitch will be
+the "2D Pose Estimate" tool in RViz (z, roll, and pitch will be
 determined automatically). For visualization, set the fixed frame to
-\"/map\" in RViz.
+"/map" in RViz.
 
 ## ROS Node API
 

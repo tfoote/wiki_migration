@@ -13,7 +13,7 @@ subdirectory and namespaced in a convenient manner.
 
 A more complicated, but more flexible alternative (it allows argument
 parsing from both command line and configuration file simultaneously) is
-the \`boost::program_options\` library.
+the `boost::program_options` library.
 
 ## Compiling & Linking
 
@@ -39,4 +39,4 @@ using ecl::UnlabeledMultiArg; // there are more - see tclap docs
 
 ## Examples
 
--   \`src/examples/command_line.cpp\`.
+-   `src/examples/command_line.cpp`.

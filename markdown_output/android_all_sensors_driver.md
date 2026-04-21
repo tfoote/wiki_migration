@@ -6,14 +6,14 @@ devices in ROS.
 The app currently supports publishing of:
 
 1\. Camera Images as\
-Compressed Image: \<\<MsgLink(sensor_msgs/CompressedImage)\>\>\
-Without Compression: \<\<MsgLink(sensor_msgs/Image)\>\> 1. Fluid
-Pressure data as \<\<MsgLink(sensor_msgs/FluidPressure)\>\> 1.
-Illuminance data as \<\<MsgLink(sensor_msgs/Illuminance)\>\> 1.
-Accelerometer/Gyroscope data as \<\<MsgLink(sensor_msgs/Imu)\>\> 1.
-Magnetic Field data as \<\<MsgLink(sensor_msgs/MagneticField)\>\> 1. GPS
-fixes as \<\<MsgLink(sensor_msgs/NavSatFix)\>\> 1. Temperature data as
-\<\<MsgLink(sensor_msgs/Temperature)\>\>
+Compressed Image: <<MsgLink(sensor_msgs/CompressedImage)>>\
+Without Compression: <<MsgLink(sensor_msgs/Image)>> 1. Fluid
+Pressure data as <<MsgLink(sensor_msgs/FluidPressure)>> 1.
+Illuminance data as <<MsgLink(sensor_msgs/Illuminance)>> 1.
+Accelerometer/Gyroscope data as <<MsgLink(sensor_msgs/Imu)>> 1.
+Magnetic Field data as <<MsgLink(sensor_msgs/MagneticField)>> 1. GPS
+fixes as <<MsgLink(sensor_msgs/NavSatFix)>> 1. Temperature data as
+<<MsgLink(sensor_msgs/Temperature)>>
 
 Some needed improvements:
 
@@ -45,4 +45,4 @@ please see the [tutorials](android_sensors_driver/Tutorials).
 
 Use Github to
 [report bugs](https://github.com/talregev/android_all_sensors_driver/issues/new).
-\`\[\`[View active tickets](https://github.com/talregev/android_all_sensors_driver/issues)\`\]\`
+`\[`[View active tickets](https://github.com/talregev/android_all_sensors_driver/issues)`\]`

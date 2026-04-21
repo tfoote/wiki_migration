@@ -12,7 +12,7 @@ class[mrpt::slam::CRangeBearingKFSLAM2D](http://mrpt.ual.es/reference/devel/clas
 further details.
 
 For the convention on coordinate frames see
-[ROS REP 105: \"Coordinate Frames for Mobile Platforms\"](http://ros.org/reps/rep-0105.html).
+[ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
 
 ## Usage
 

@@ -15,8 +15,8 @@ woken up).
 
 Global pose estimates come from [amcl](amcl):
 
--   Can listen on \`/tf\` for \`odom\` to \`map\` transform.
--   And/or listen to \`/amcl_pose\` and only collect data for pose
+-   Can listen on `/tf` for `odom` to `map` transform.
+-   And/or listen to `/amcl_pose` and only collect data for pose
     estimates with low covariance. We want AMCL to be well-localized
     when gathering data.
 
@@ -25,7 +25,7 @@ Global pose estimates come from [amcl](amcl):
 At least for now, keep two separate databases. One in memory for doing
 the place recognition prefilter. Another containing other associated
 data (poses, keypoints, descriptors) for doing the geometric check and
-pose estimation. Both are keyed on the \"document id\" for that image
+pose estimation. Both are keyed on the "document id" for that image
 (pair, for stereo).
 
 An extension once basic system is working: replace old data when we
@@ -36,7 +36,7 @@ Place recognition database:
 -   Already implemented as
     [vt::Database](http://www.ros.org/doc/api/vocabulary_tree/html/classvt_1_1Database.html).
 -   Need to flush to disk periodically.
--   Or consider storing each \`DocumentVector\` in appropriate row of
+-   Or consider storing each `DocumentVector` in appropriate row of
     SQLite DB to keep everything in one place.
 -   For replacing old data: will need to add methods to remove / replace
     a document.
@@ -48,16 +48,16 @@ Associated data for pose estimation:
 -   Each row contains:
 -   Time stamp.
 -   Pose in map frame from AMCL.
--   Transform from camera frame to \`odom\` as head will be moving.
+-   Transform from camera frame to `odom` as head will be moving.
 -   Keypoints and descriptors (binary BLOB).
 -   Spatial queries
--   Can start with simple \"sort on X, filter on Y\" scheme.
+-   Can start with simple "sort on X, filter on Y" scheme.
 -   Drop in [SQLite R\*Tree module](http://www.sqlite.org/rtree.html)
     if/when we need better scalability.
 
 ### Getting sufficient coverage of building
 
-When some distance (say \>2m) from any place already in database:
+When some distance (say >2m) from any place already in database:
 
 -   Check AMCL well localized.
 -   Halt base movement - need to interact with [move_base](move_base)
@@ -89,5 +89,5 @@ When action / service invoked:
 -   Rotate head to get 4-8 frames.
 -   Do place recognition against known places in database, with
     geometric check.
--   If we get a good match, publish to AMCL\'s \`initialpose\` topic to
+-   If we get a good match, publish to AMCL's `initialpose` topic to
     (re-)initialize the particle filter.

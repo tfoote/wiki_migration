@@ -4,14 +4,14 @@ This package is meant to allow users to analyze WG hardware testing
 data. It is meant for internal WG use only. It will not work unless you
 have access to the WG Inventory system.
 
-In order to use these tools, you\'ll need to
-[install ROS](ROS/Installation) (use the \"pr2all\" install). You\'ll
-also need to have the \`wgtest_data_analysis\` package in your
+In order to use these tools, you'll need to
+[install ROS](ROS/Installation) (use the "pr2all" install). You'll
+also need to have the `wgtest_data_analysis` package in your
 ROS_PACKAGE_PATH.
 
 ## Control Chart / Parameter Review
 
-In order to review (or request a change) of a testing parameter, you\'ll
+In order to review (or request a change) of a testing parameter, you'll
 need data to show that the parameter should be changed.
 
 To make a [control chart](http://en.wikipedia.org/wiki/Control_chart)
@@ -49,8 +49,8 @@ Available tests:
 	22: hokuyo_test (ID: 37)
         ....
 ```
-Enter the index of the test. In this case, select \`20\` for the
-\`head-test\`.
+Enter the index of the test. In this case, select `20` for the
+`head-test`.
 
 ```
 Subtests for head-test
@@ -63,8 +63,8 @@ Subtests for head-test
 Select subtest to examine. Enter index (0, 1, ...):
 ```
 
-Select the subtest you want to examine, in this case \`0\` for \`Tilt
-Hysteresis\`.
+Select the subtest you want to examine, in this case `0` for `Tilt
+Hysteresis`.
 
 Finally, select which measurement you want to plot:
 ```
@@ -82,7 +82,7 @@ Subtest measurements:
 	10: Slope_Negative
 	11: Slope_Positive
 Select measurement to plot (enter index):
-``` Entering \`2\` for \`Max_Range\`, we can make a
+``` Entering `2` for `Max_Range`, we can make a
 plot, or export a CSV.
 
 ### Request a Parameter Change
@@ -104,13 +104,13 @@ Ticket must include:
 ### Troubleshooting
 
 If the plot or CSV has almost no data, select a different parameter. For
-example, instead of \"Positive_Effort_Average\", select
-\"Positive_Effort_Avg\".
+example, instead of "Positive_Effort_Average", select
+"Positive_Effort_Avg".
 
 ## Determining Test Sequences
 
 To determine if a part is fully tested, you can run the
-\`check_tested.py\` script.
+`check_tested.py` script.
 
 ```
 watts@ckb:/wg/stor5_home4/watts$ rosrun  wgtest_data_analysis  check_tested.py -u USER -d -r 680421301037
@@ -128,8 +128,8 @@ Required sequence:
 	wrist-burn (ID: 41)
 	wrist-dummy (ID: 40)
 	wrist-post (ID: 42)
-``` Enter the component\'s serial number (ex:
-\"680421301037\" above).
+``` Enter the component's serial number (ex:
+"680421301037" above).
 
 Note: For any burn in tests completed before 9/15/2010, the completion
 will not be in the log.

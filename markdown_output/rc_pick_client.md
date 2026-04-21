@@ -24,19 +24,19 @@ For detail description of the modules check the following link:
 
 ### Parameters
 
--   \`host\`: The IP address or hostname of the rc_visard that should be
+-   `host`: The IP address or hostname of the rc_visard that should be
     calibrated.
 
-**Since version 2.7, the device ID can be used instead of the sensor\'s
+**Since version 2.7, the device ID can be used instead of the sensor's
 IP address:**
 
--   \`device\`: The ID of the device, i.e. Roboception rc_visard sensor.
+-   `device`: The ID of the device, i.e. Roboception rc_visard sensor.
     This can be either:
 
 ```{=html}
 <!-- -->
 ```
--   serial number, e.g. \`02912345\`. ```wiki
+-   serial number, e.g. `02912345`. ```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://github.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
 ```
 
@@ -53,37 +53,37 @@ The following parameters are available for the
 [ItemPick](https://roboception.com/product/itempick/) and
 [BoxPick](https://roboception.com/product/boxpick/) modules:
 
--   \`max_grasps\`: Maximum number of provided grasps.
--   \`cluster_max_curvature\`: Maximum curvature allowed within one
+-   `max_grasps`: Maximum number of provided grasps.
+-   `cluster_max_curvature`: Maximum curvature allowed within one
     cluster. The smaller this value, the more clusters will be split
     apart.
--   \`clustering_max_surface_rmse\`: Maximum root-mean-square error
+-   `clustering_max_surface_rmse`: Maximum root-mean-square error
     (RMSE) in meters of points belonging to a surface.
--   \`clustering_discontinuity_factor\`: Factor used to discriminate
+-   `clustering_discontinuity_factor`: Factor used to discriminate
     depth discontinuities within a patch. The smaller this value, the
     more clusters will be split apart.
 
 For the [ItemPick](https://roboception.com/product/itempick/) module,
 two additional parameters are available:
 
--   \`cluster_max_dimension\`: Indicates how much the estimated load
+-   `cluster_max_dimension`: Indicates how much the estimated load
     carrier dimensions are allowed to differ from the load carrier model
     dimensions in meters.
--   \`clustering_patch_size\`: Size in pixels of the square patches the
+-   `clustering_patch_size`: Size in pixels of the square patches the
     depth map is subdivided into during the first clustering step.
 
 ### Services
 
 The following services are offered by the nodes:
 
--   \`compute_grasps\`: Triggers the computation of grasping poses for a
+-   `compute_grasps`: Triggers the computation of grasping poses for a
     suction device. All images used by the node are guaranteed to be
     newer than the service trigger time.
 
 The [BoxPick](https://roboception.com/product/boxpick/) node offers an
 additional service:
 
--   \`detect_items\`: Triggers the detection of rectangles.
+-   `detect_items`: Triggers the detection of rectangles.
 
 ## Launch
 
@@ -109,7 +109,7 @@ rosrun rc_pick_client rc_boxpick_client_node _device:=:<serial_number>
 
 ## Report a Bug
 
-\<\<GitHubIssues(roboception/rc_visard_ros)\>\>
+<<GitHubIssues(roboception/rc_visard_ros)>>
 
 ## Acknowledgements
 

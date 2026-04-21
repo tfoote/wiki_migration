@@ -7,7 +7,7 @@ use a simulated version without any hardware, see
 
 ## ROS API
 
-This package doesn\'t have a own ROS API, it just configures the
+This package doesn't have a own ROS API, it just configures the
 [cob_powercube_chain](cob_powercube_chain) with 7 DOF.
 
 ## Usage/Examples
@@ -31,6 +31,6 @@ the arm start the [cob_dashboard](cob_dashboard)
 ```
 export ROBOT=cob3-2
 roslaunch cob_dashboard dashboard.launch
-``` Press the \"init\" button to call the init
+``` Press the "init" button to call the init
 service for connecting to the hardware. Afterwards use the buttons to
 move to predefined positions.

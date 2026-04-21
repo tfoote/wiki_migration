@@ -1,11 +1,11 @@
-![\|height=\"400px\"](attachment:rviz_human.jpg)
+![\|height="400px"](attachment:rviz_human.jpg)
 
 ## Overview
 
 `hri_skeletons` detects and tracks human bodies in both 2D (2D keypoints
 of the body, in the image space) and 3D (generating on the fly URDF
 models for each detected humans, alongside their
-\<\<MsgLink(sensor_msgs/JointState)\>\> and [TF](tf) trees).
+<<MsgLink(sensor_msgs/JointState)>> and [TF](tf) trees).
 
 The detection relies on the open-source
 [Intel OpenVINO toolkit](https://docs.openvinotoolkit.org/), requires
@@ -44,40 +44,40 @@ $ rosrun hri_skeletons run image:=/usb_cam/image_raw _debug:=true _model:=$HOME/
 
 which should display something like that (debug mode = true):
 
-![\|width=\"500px\"](attachment:debug_screnshot.jpg)
+![\|width="500px"](attachment:debug_screnshot.jpg)
 
 ## ROS API
 
 ### Subscribed topics
 
-\`image\` (\<\<MsgLink(sensor_msgs/Image)\>\>)
+`image` (<<MsgLink(sensor_msgs/Image)>>)
 
 . input RGB stream
 
 ### Published topics
 
 For each detected body, an unique id is created, and a corresponding
-topic namespace \`humans/bodies/\<id\>\` is created. Within that
+topic namespace `humans/bodies/<id>` is created. Within that
 namespace, the following topics are published:
 
-\`humans/bodies/\<id\>/joint_states\`
-(\<\<MsgLink(sensor_msgs/JointState)\>\>)
+`humans/bodies/<id>/joint_states`
+(<<MsgLink(sensor_msgs/JointState)>>)
 
 . the human body joint state
 
-\`humans/bodies/\<id\>/skeleton2d\`
-(\<\<MsgLink(hri_msgs/Skeleton2D)\>\>)
+`humans/bodies/<id>/skeleton2d`
+(<<MsgLink(hri_msgs/Skeleton2D)>>)
 
-. the 2D coordinates of the skeleton\'s bones, with respect to the
+. the 2D coordinates of the skeleton's bones, with respect to the
 source image.
 
 ### Parameters
 
-\`model\` (\`string\`)
+`model` (`string`)
 
 . The full path to the OpenVINO model for human 3D pose estimation
 
-\`debug\` (\`bool\`)
+`debug` (`bool`)
 
 . If true, will open 2 debug windows, one with the 2D skeleton overlaid
 onto the input image, one with a 3D view of the skeletons.

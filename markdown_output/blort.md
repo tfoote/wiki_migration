@@ -25,7 +25,7 @@ and tracking of learned models.
 
 The system works with a CAD model of the object provided. The current
 implementation of the BLORT detector module uses SIFT feature
-descriptors to provide an approximate estimation of the object\'s pose
+descriptors to provide an approximate estimation of the object's pose
 for the tracker module which will track the object using edge-based
 methods.
 

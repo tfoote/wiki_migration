@@ -6,12 +6,12 @@ It requires the object 3d model and the object initial pose.
 
 ![ViSP box tracking\|width=400](attachment:visp-box-tracking.png)
 
-The package is composed of one node called \`tracker\` that does the
-tracking and two additional nodes \`client\` (that allows to set the
-initial pose by user mouse click) and \`viewer\` that allows to
+The package is composed of one node called `tracker` that does the
+tracking and two additional nodes `client` (that allows to set the
+initial pose by user mouse click) and `viewer` that allows to
 visualize the result of the tracking.
 
-The \`tracker\` node tries to track the object as fast as possible but
+The `tracker` node tries to track the object as fast as possible but
 needs to be initialized using the client. The viewer can be used to
 monitor the tracking result.
 
@@ -248,9 +248,9 @@ client and viewer.
 
 They are respectively named:
 
--   \`visp_tracker/Tracker\`
--   \`visp_tracker/TrackerClient\`
--   \`visp_tracker/TrackerViewer\`
+-   `visp_tracker/Tracker`
+-   `visp_tracker/TrackerClient`
+-   `visp_tracker/TrackerViewer`
 
 \...and provide the same API than the equivalent nodes.
 

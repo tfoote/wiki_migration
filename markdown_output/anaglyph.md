@@ -6,7 +6,7 @@ filtered right image. When viewed with appropriate glasses, illusion
 depth is created. More about anaglyph images on
 WikiPedia:Anaglyph_image.
 
-Implementation is based on an older version of \`stereo_view\` node in
+Implementation is based on an older version of `stereo_view` node in
 [image_view](image_view).
 
 ## Video

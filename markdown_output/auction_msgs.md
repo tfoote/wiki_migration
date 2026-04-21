@@ -41,10 +41,10 @@ defined according to the tables **auction_msg** and **bid_msg**.
                                                   **Auction.msg**                                                                                                                      
      **Data type**            **Field name**      **Description**                                                                                                                      
      Header                   header              Header information regarding sequence number, timestamp, and frame_id                                                                
-     string                   command             Information about the command sent from node to node. Accepting values \'join_auction\' or \'close_auction\'                         
-     string                   task_type_name      The type of the task. Accepting values \'go_to\'                                                                                     
-     string                   subject             Field to control the audience of the auction. This related with k-hop. Accepting values \'all\' or \'k\'                             
-     string                   metrics             Identify the used metrics for the current auction. Accepting values \'distance\'                                                     
+     string                   command             Information about the command sent from node to node. Accepting values 'join_auction' or 'close_auction'                         
+     string                   task_type_name      The type of the task. Accepting values 'go_to'                                                                                     
+     string                   subject             Field to control the audience of the auction. This related with k-hop. Accepting values 'all' or 'k'                             
+     string                   metrics             Identify the used metrics for the current auction. Accepting values 'distance'                                                     
      duration                 length              Identify the duration for the task. Accepting any value for duration. (Currently not in use)                                         
      geometry_msgs/Point      task_location       Location where the action is needed. Accepting values task_location.x, task_location.y and task_location.z are float64               
   -- --------------------- -- ---------------- -- ------------------------------------------------------------------------------------------------------------------------ -- -- -- -- --
@@ -53,6 +53,6 @@ defined according to the tables **auction_msg** and **bid_msg**.
                                        **Bid.msg**                                                                         
      Data type      Field name         Description                                                                         
      Header         header             Header information regarding sequence number, timestamp, and frame_id               
-     string         buyer_id           Referenced name of the bidding node with role \'buyer\'                             
+     string         buyer_id           Referenced name of the bidding node with role 'buyer'                             
      int64          cost_distance      Value for the cost in terms of Euclidean distance                                   
   -- ----------- -- --------------- -- ----------------------------------------------------------------------- -- -- -- -- --

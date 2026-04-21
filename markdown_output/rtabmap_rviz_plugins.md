@@ -7,7 +7,7 @@
 ![MapCloudType.png](attachment:MapCloudType.png)
 
 This rviz plugin subscribes to /mapData
-(\<\<MsgLink(rtabmap_msgs/MapData)\>\>) topic. A 3D map cloud will be
+(<<MsgLink(rtabmap_msgs/MapData)>>) topic. A 3D map cloud will be
 created incrementally in RVIZ. When the graph is changed, all point
 clouds added in RVIZ will be transformed to new poses. It has the same
 properties as [PointCloud](rviz/DisplayTypes/PointCloud) display but
@@ -29,12 +29,12 @@ with these new ones:
 ### Map Graph Display
 
 This rviz plugin subscribes to /mapGraph
-(\<\<MsgLink(rtabmap_msgs/MapGraph)\>\>) topic. It will show the
-RTAB-Map\'s graph with different colors depending on the links\' type.
+(<<MsgLink(rtabmap_msgs/MapGraph)>>) topic. It will show the
+RTAB-Map's graph with different colors depending on the links' type.
 It has the same properties as [Path](rviz/DisplayTypes/Path) display.
 
 ### Info Display
 
 This rviz plugin subscribes to /info
-(\<\<MsgLink(rtabmap_msgs/Info)\>\>) topic. Information about loop
-closures detected are shown in the \"Status\".
+(<<MsgLink(rtabmap_msgs/Info)>>) topic. Information about loop
+closures detected are shown in the "Status".

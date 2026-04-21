@@ -9,8 +9,8 @@ Instead of using this package, we recommend that you use [[joint_state_publisher
 ## Overview
 
 This package contains two separate nodes for easy publishing of a
-robot\'s state and transform. It is useful for developing URDF models of
-robots, when you don\'t care what the robot is doing, but how the parts
+robot's state and transform. It is useful for developing URDF models of
+robots, when you don't care what the robot is doing, but how the parts
 are laid out relative to one another.
 
 The nodes read in the robot_description from the parameter server and

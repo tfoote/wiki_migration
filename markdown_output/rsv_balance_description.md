@@ -1,4 +1,4 @@
-RoboSavvy\'s self-balance platform URDF model and meshes.
+RoboSavvy's self-balance platform URDF model and meshes.
 
 ## Customization
 

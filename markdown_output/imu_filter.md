@@ -25,8 +25,8 @@ In order to demonstrate the usage of the filter, we are going to develop
 a little sample application.
 
 We will have the IMU lying on the table and running the propagation of
-the filter as when we receive measurements. Every n-th iteration, we\'ll
+the filter as when we receive measurements. Every n-th iteration, we'll
 create an artificial measurement, including the Identity pose (which
-should tell the filter, that the IMU didn\'t move.
+should tell the filter, that the IMU didn't move.
 
 TODO: Step by step walk through \...

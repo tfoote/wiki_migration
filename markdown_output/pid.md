@@ -39,11 +39,11 @@ This wiki page uses several terms from control system theory:
 
 You can install the pid package from binaries or build from source. If
 you install from binaries, the example files discussed below will be in
-/opt/ros/\<release\>/share/pid
+/opt/ros/<release>/share/pid
 
 ### Binary Installation
 
-Replace \"indigo\" with your release in the command below.
+Replace "indigo" with your release in the command below.
 ```
 $ sudo apt-get install ros-indigo-pid
 ```
@@ -94,7 +94,7 @@ the PID controller subscribes to, and publishes on. They can be changed
 so as to support multiple PID controller nodes using standard ROS
 techniques like remapping, or alternatively with parameters.
 
-Run \"rqt_graph\". A window showing the nodes in this simulation opens.
+Run "rqt_graph". A window showing the nodes in this simulation opens.
 
 ![alt text\|width=700](attachment:pid_graph.png)
 
@@ -111,7 +111,7 @@ Servo_sim.launch also opens an rqt_reconfigure window:
 
 ![](attachment:servo_reconfigure.png)
 
-Click on the \"left_wheel_pid\" entry to display the controls that let
+Click on the "left_wheel_pid" entry to display the controls that let
 you dynamically reconfigure the Kp, Ki and Kd parameters: the PID
 proportional, integral and derivative contributions to /control_effort.
 Each parameter has a dropdown scale that lets you select a power of 10
@@ -137,14 +137,14 @@ with as little overshoot as possible.
 The idea of dynamic reconfigure for Kp, Ki and Kd is that you get your
 robot actuator to repeatedly perform a movement, and use
 dynamic_reconfigure to experimentally find good values for Kp, Ki and
-Kd. Once you\'ve found values that work well, you should set those
+Kd. Once you've found values that work well, you should set those
 parameters in the launch-file node entry that launches that controller.
 
 ### Autotune
 
 While servo_sim.launch is running, you can launch a Ziegler-Nichols
 autotuner. It calculates decent values of Kp, Ki, and Kd by cycling
-through a range of Kp values and recording oscillations. I wouldn\'t use
+through a range of Kp values and recording oscillations. I wouldn't use
 this on hardware! The ZN method aims for a fast response time and
 usually results in significant overshoot. To run it:
 
@@ -155,7 +155,7 @@ $ rosrun pid autotune
 If you want to customize the autotuner for your application, these are
 the values in autotune.cpp that need changing:
 
--   nameSpc = \"/left_wheel_pid/\" (may be blank if you are only running
+-   nameSpc = "/left_wheel_pid/" (may be blank if you are only running
     1 PID controller)
 -   numLoops (adjust how long the autotuner observes the plant for each
     Kp it tries)
@@ -219,14 +219,14 @@ The following node-private parameters are read at node startup:
     derivative term (in Hz). Default is 1/4 of the sampling rate.
 -   topic_from_controller: The topic name that control_effort will be
     published to. The plant must subscribe to this topic. Default is
-    \"control_effort\".
+    "control_effort".
 -   topic_from_plant: The topic name that controller subscribes to for
-    updates from the plant. Default is \"state\"
+    updates from the plant. Default is "state"
 -   setpoint_topic: The topic name that controller subscribes to for
     updates to the desired value of plant state. Default is
-    \"setpoint\".
+    "setpoint".
 -   node_name: The name given to the node being launched. Default if not
-    otherwise specified is \"pid_node\".
+    otherwise specified is "pid_node".
 -   max_loop_frequency, min_loop_frequency: The maximum and minimum
     expected frequency at which the plant issues state messages and the
     control loop runs and generates control_effort. The frequency is
@@ -235,14 +235,14 @@ The following node-private parameters are read at node startup:
     arbitrary: minimum 1 Hz, maximum 1000 Hz.
 -   pid_enable_topic: The name of the topic where a Boolean is published
     to turn on/off the PID controller. This is modifiable in case there
-    are multiple PID controllers. The default is \"pid_enable\".
--   angle_error: Set this boolean to \"true\" if the state is a
+    are multiple PID controllers. The default is "pid_enable".
+-   angle_error: Set this boolean to "true" if the state is a
     potentially discontinuous angular error measurement. It will
     maintain the angular error between -pi:pi, or -180:180. The default
-    is \"false.\"
+    is "false."
 -   angle_wrap: Related to angle_error. Helps to maintain an angular
     error (in radians) between -pi:pi. Could be set to 2.0\*180.0 for
-    degree measurements. The defualt is \"2.0\*3.14159.\"
+    degree measurements. The defualt is "2.0\*3.14159."
 -   setpoint_timeout: Setpoint timeout parameter to determine how long
     to keep publishing control_effort messages after last setpoint
     message. -1 indicates publish indefinitely, and positive number sets
@@ -303,12 +303,12 @@ third:
 
 1\. Push each controller node into its own namespace (perhaps together
 with its plant). The controller topic names are then prefixed with the
-namespace. The book \"A Gentle Introduction to ROS\" by Jason O\'Kane,
+namespace. The book "A Gentle Introduction to ROS" by Jason O'Kane,
 [ chapter 6 ]( https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf )
 section 6.3 describes the technique and gives examples. 2. Remap topic
 names, such that the topic name each controller publishes or subscribes
-to is remapped to something appropriate. See \"A Gentle Introduction to
-ROS\"
+to is remapped to something appropriate. See "A Gentle Introduction to
+ROS"
 [ chapter 6 ]( https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf )
 section 6.4 for an explanation with examples. 3. Tell the PID controller
 which topics to publish/subscribe to using parameters. This technique is
@@ -328,21 +328,21 @@ The figure below shows the node graph.
 ![alt text\|width=700](attachment:diff_drv_graph.png)
 
 Each controller and its associated plant simulation has been pushed down
-into a separate namespace, identified as \"left_wheel\" and
-\"right_wheel\". See the \"ns=left/right_wheel\" property in the node
+into a separate namespace, identified as "left_wheel" and
+"right_wheel". See the "ns=left/right_wheel" property in the node
 elements. Since the default topic names used by controller and plant are
 relative names, ROS has prepended their namespaces to the topic name
 paths, and thus each controller node is connected only to the correct
 plant node.
 
 Both controllers should listen to the same /setpoint topic in this
-example. The nodes\' setpoint topic names are remapped to the top-level
+example. The nodes' setpoint topic names are remapped to the top-level
 setpoint topic published by the setpoint node.
 
 The launchfile snippet shown below instantiates the two nodes and their
 plants, connecting the topics properly using the push-down and the
-remapping techniques. The \"ns\" property pushes the controller down
-into a namespace. The remap element remaps the node\'s
+remapping techniques. The "ns" property pushes the controller down
+into a namespace. The remap element remaps the node's
 /namespace/setpoint topic to the global /setpoint topic.
 
 ```
@@ -392,7 +392,7 @@ each simulated wheel to distinguish the plots.
 
 The launch file snippet above has Kp, Ki, Kd all positive in the
 left_wheel controller, and all negative in the right_wheel controller.
-This causes the right wheel controller to emit control_effort that\'s
+This causes the right wheel controller to emit control_effort that's
 opposite polarity to the error.
 
 ### Auto/Manual
@@ -413,7 +413,7 @@ swapping in a different controller or taking over manual control.
 
 The controller node (and other nodes in the pid package) are designed to
 support running simulations faster than wallclock using the standard ROS
-support for this. By setting the \"use_sim_time\" parameter true, roscpp
+support for this. By setting the "use_sim_time" parameter true, roscpp
 listens for time to advance as indicated by new time values published on
 the /clock topic.
 
@@ -437,7 +437,7 @@ This is accomplished by the following launchfile statements:
     </node>
 ```
 
-Setting the global parameter \"use_sim_time\" true causes roscpp and
+Setting the global parameter "use_sim_time" true causes roscpp and
 rospy (which all the nodes use for ros time services like Duration,
 ros::Time::now(), and ros::Rate::sleep()) to behave as if time advances
 according to time markers published on the /clock topic, instead of on
@@ -479,9 +479,9 @@ set a very high cutoff frequency (like 10,000).
 
 ## Known Issues
 
-If you\'re seeing high CPU usage, it\'s probably due to rqt_plot. You
+If you're seeing high CPU usage, it's probably due to rqt_plot. You
 can comment it in the launch files. The PID controller itself (no
-graphics) typically runs at \<10% CPU usage.
+graphics) typically runs at <10% CPU usage.
 
 ## Submit Issues Here
 

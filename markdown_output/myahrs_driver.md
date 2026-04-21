@@ -1,6 +1,6 @@
 ## Overview
 
-This is a driver package for the WITHROBOT\'s
+This is a driver package for the WITHROBOT's
 [myAHRS+](http://www.withrobot.com/myahrs_plus_en/) from
 [lilliputdirect](http://www.lilliputdirect.com/odroid-myahrs) and
 [hardkernel](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G141464363369)

@@ -1,4 +1,4 @@
-\<\<GitHubIssues(appie-17/tello_driver)\>\>
+<<GitHubIssues(appie-17/tello_driver)>>
 
 # tello_driver
 
@@ -53,7 +53,7 @@ $ source devel/setup.bash
 ### Launch
 
 -   Turn on Tello drone
--   Connect to drone\'s WiFi access point (`TELLO_XXXXXX`)
+-   Connect to drone's WiFi access point (`TELLO_XXXXXX`)
     ```
 $ roslaunch tello_driver tello_node.launch
 ```

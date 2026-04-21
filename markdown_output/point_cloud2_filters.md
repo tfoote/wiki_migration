@@ -9,7 +9,7 @@ different from the wrappers of the PCL filters provided by the package
 [pcl_ros](https://wiki.ros.org/pcl_ros/Tutorials/filters).
 
 All the parameters are settable from the config file, but also online
-through the \`dynamic_reconfigure\` server.
+through the `dynamic_reconfigure` server.
 
 ## Usage example
 
@@ -25,28 +25,28 @@ filter
 
 #### Params
 
-\- \`active\` *(bool, default: true)* Activate the filter or not.
+\- `active` *(bool, default: true)* Activate the filter or not.
 
-\- \`input_frame\` *(str, default: \"\")* The input TF frame the data
+\- `input_frame` *(str, default: "")* The input TF frame the data
 should be transformed into before processing
 
-\- \`output_frame\` *(str, default: \"\")* The output TF frame the data
+\- `output_frame` *(str, default: "")* The output TF frame the data
 should be transformed into after processing
 
-\- \`keep_organized\` *(bool, default: true)* Keep the point cloud
+\- `keep_organized` *(bool, default: true)* Keep the point cloud
 organized
-([\`pcl::FilterIndices\<PointT\>::setKeepOrganized  (bool keep_organized)\`](https://pointclouds.org/documentation/classpcl_1_1_filter_indices.html#a21eb00357056c0cc432cd03afa84d08c)
+([`pcl::FilterIndices<PointT>::setKeepOrganized  (bool keep_organized)`](https://pointclouds.org/documentation/classpcl_1_1_filter_indices.html#a21eb00357056c0cc432cd03afa84d08c)
 
-\- \`negative\` *(bool, default: false)* Set to true to return the data
+\- `negative` *(bool, default: false)* Set to true to return the data
 outside the min max limits
 
-\- \`filter_field_name\` *(str, default: z)* The field to be used for
+\- `filter_field_name` *(str, default: z)* The field to be used for
 filtering data
 
-\- \`filter_limit_min\` *(double, default: 0)* The minimum allowed field
+\- `filter_limit_min` *(double, default: 0)* The minimum allowed field
 value a point will be considered
 
-\- \`filter_limit_min\` *(double, default: 1)* The maximum allowed field
+\- `filter_limit_min` *(double, default: 1)* The maximum allowed field
 value a point will be considered
 
 ### CropBoxFilterPointCloud2
@@ -55,42 +55,42 @@ Wrapper for the
 [pcl::CropBox](https://pointclouds.org/documentation/classpcl_1_1_crop_box_3_01pcl_1_1_p_c_l_point_cloud2_01_4.html)
 filter.
 
-**Warning** \`pcl::CrobBox\` parameter \`keep_organized\` is broken on
+**Warning** `pcl::CrobBox` parameter `keep_organized` is broken on
 ROS melodic (on noetic it is ok).
 
 #### Params
 
-\- \`active\` *(bool, default: true)* Activate the filter or not.
+\- `active` *(bool, default: true)* Activate the filter or not.
 
-\- \`input_frame\` *(str, default: \"\")* The input TF frame the data
+\- `input_frame` *(str, default: "")* The input TF frame the data
 should be transformed into before processing
 
-\- \`output_frame\` *(str, default: \"\")* The output TF frame the data
+\- `output_frame` *(str, default: "")* The output TF frame the data
 should be transformed into after processing
 
-\- \`keep_organized\` *(bool, default: true)* Keep the point cloud
+\- `keep_organized` *(bool, default: true)* Keep the point cloud
 organized
-([\`pcl::FilterIndices\<PointT\>::setKeepOrganized  (bool keep_organized)\`](https://pointclouds.org/documentation/classpcl_1_1_filter_indices.html#a21eb00357056c0cc432cd03afa84d08c)
+([`pcl::FilterIndices<PointT>::setKeepOrganized  (bool keep_organized)`](https://pointclouds.org/documentation/classpcl_1_1_filter_indices.html#a21eb00357056c0cc432cd03afa84d08c)
 
-\- \`negative\` *(bool, default: false)* Set to true to return the data
+\- `negative` *(bool, default: false)* Set to true to return the data
 outside the min max limits
 
-\- \`min_x\` *(double, default: -1.0)* The minimum allowed x value a
+\- `min_x` *(double, default: -1.0)* The minimum allowed x value a
 point will be considered from. Range: -1000.0 to 1000.0
 
-\- \`max_x\` *(double, default: -1.0)* The maximum allowed x value a
+\- `max_x` *(double, default: -1.0)* The maximum allowed x value a
 point will be considered from. Range: -1000.0 to 1000.0
 
-\- \`min_y\` *(double, default: -1.0)* The minimum allowed y value a
+\- `min_y` *(double, default: -1.0)* The minimum allowed y value a
 point will be considered from. Range: -1000.0 to 1000.0
 
-\- \`max_y\` *(double, default: -1.0)* The maximum allowed y value a
+\- `max_y` *(double, default: -1.0)* The maximum allowed y value a
 point will be considered from. Range: -1000.0 to 1000.0
 
-\- \`min_z\` *(double, default: -1.0)* The minimum allowed z value a
+\- `min_z` *(double, default: -1.0)* The minimum allowed z value a
 point will be considered from. Range: -1000.0 to 1000.0
 
-\- \`max_z\` *(double, default: -1.0)* The maximum allowed z value a
+\- `max_z` *(double, default: -1.0)* The maximum allowed z value a
 point will be considered from. Range: -1000.0 to 1000.0
 
 ### VoxelGridFilterPointCloud2
@@ -101,39 +101,39 @@ filter.
 
 #### Params
 
-\- \`active\` *(bool, default: true)* Activate the filter or not.
+\- `active` *(bool, default: true)* Activate the filter or not.
 
-\- \`input_frame\` *(str, default: \"\")* The input TF frame the data
+\- `input_frame` *(str, default: "")* The input TF frame the data
 should be transformed into before processing
 
-\- \`output_frame\` *(str, default: \"\")* The output TF frame the data
+\- `output_frame` *(str, default: "")* The output TF frame the data
 should be transformed into after processing
 
-\- \`negative\` *(bool, default: false)* Set to true to return the data
+\- `negative` *(bool, default: false)* Set to true to return the data
 outside the min max limits
 
-\- \`leaf_size_x\` *(double, default: 0.01)* The size of a leaf (on x)
+\- `leaf_size_x` *(double, default: 0.01)* The size of a leaf (on x)
 used for downsampling. Range: 0.0 to 1.0
 
-\- \`leaf_size_y\` *(double, default: 0.01)* The size of a leaf (on y)
+\- `leaf_size_y` *(double, default: 0.01)* The size of a leaf (on y)
 used for downsampling. Range: 0.0 to 1.0
 
-\- \`leaf_size_z\` *(double, default: 0.01)* The size of a leaf (on z)
+\- `leaf_size_z` *(double, default: 0.01)* The size of a leaf (on z)
 used for downsampling. Range: 0.0 to 1.0
 
-\- \`min_points_per_voxel\` *(int, default:0)* Set the minimum number of
+\- `min_points_per_voxel` *(int, default:0)* Set the minimum number of
 points required for a voxel to be used
 
-\- \`downsample_all_data\` *(int, default:0)* Set to true if all fields
+\- `downsample_all_data` *(int, default:0)* Set to true if all fields
 need to be downsampled, or false if just XYZ
 
-\- \`filter_field_name\` *(str, default: z)* The field to be used for
+\- `filter_field_name` *(str, default: z)* The field to be used for
 filtering data, acting like a passthrough
 
-\- \`filter_limit_min\` *(double, default: 0)* The minimum allowed field
+\- `filter_limit_min` *(double, default: 0)* The minimum allowed field
 value a point will be considered
 
-\- \`filter_limit_min\` *(double, default: 1)* The maximum allowed field
+\- `filter_limit_min` *(double, default: 1)* The maximum allowed field
 value a point will be considered
 
 ### SacSegmentationExtractFilterPointCloud2
@@ -145,46 +145,46 @@ and
 
 #### Params
 
-\- \`active\` *(bool, default: true)* Activate the filter or not
+\- `active` *(bool, default: true)* Activate the filter or not
 
-\- \`input_frame\` *(str, default: \"\")* The input TF frame the data
+\- `input_frame` *(str, default: "")* The input TF frame the data
 should be transformed into before processing
 
-\- \`output_frame\` *(str, default: \"\")* The output TF frame the data
+\- `output_frame` *(str, default: "")* The output TF frame the data
 should be transformed into after processing
 
-\- \`negative\` *(bool, default: false)* Set whether to filter out
+\- `negative` *(bool, default: false)* Set whether to filter out
 (remove) the model (true) or all the rest (false)
 
-\- \`model_type\` *(int, default: 16)* Geometric model to look for.
-Default to \`SACMODEL_NORMAL_PARALLEL_PLANE\`. Check
+\- `model_type` *(int, default: 16)* Geometric model to look for.
+Default to `SACMODEL_NORMAL_PARALLEL_PLANE`. Check
 [pcl official doc](https://pointclouds.org/documentation/group__sample__consensus.html)
 
-\- \`method_type\` *(int, default: 0)* Segmentation model to use for.
-Default to \`SAC_RANSAC\` . Check
+\- `method_type` *(int, default: 0)* Segmentation model to use for.
+Default to `SAC_RANSAC` . Check
 [pcl official doc](https://pointclouds.org/documentation/group__sample__consensus.html)
 
-\- \`axis_x\` *(double, default: 0.0)* The x component of the normal to
+\- `axis_x` *(double, default: 0.0)* The x component of the normal to
 the model to be removed. Range: 0.0 to 1.0
 
-\- \`axis_y\` *(double, default: 0.0)* The y component of the normal to
+\- `axis_y` *(double, default: 0.0)* The y component of the normal to
 the model to be removed. Range: 0.0 to 1.0
 
-\- \`axis_z\` *(double, default: 1.0)* The z component of the normal to
+\- `axis_z` *(double, default: 1.0)* The z component of the normal to
 the model to be removed. Range: 0.0 to 1.0
 
-\- \`eps_angle\` *(double, default: 0.15)* Tolerance angle (rad) to the
+\- `eps_angle` *(double, default: 0.15)* Tolerance angle (rad) to the
 model to be considered normal to the axis. Range: -3.15 to 3.15
 
-\- \`distance_threshold\` *(double, default: 0.01)* Range: 0 to 10
+\- `distance_threshold` *(double, default: 0.01)* Range: 0 to 10
 
-\- \`optimize_coefficents\` *(bool, default: 0.01)* Optimize the
+\- `optimize_coefficents` *(bool, default: 0.01)* Optimize the
 coefficents or not.
 
-\- \`max_iterations\` *(bool, default: 50)*
+\- `max_iterations` *(bool, default: 50)*
 
-\- \`probability\` *(bool, default: 0.99)*
+\- `probability` *(bool, default: 0.99)*
 
-\- \`min_radius\` *(bool, default: -1)*
+\- `min_radius` *(bool, default: -1)*
 
-\- \`max_radius\` *(bool, default: 1000)*
+\- `max_radius` *(bool, default: 1000)*

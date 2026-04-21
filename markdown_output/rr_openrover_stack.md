@@ -6,11 +6,11 @@ communication between compute hardware and the Rover Pro and Rover Zero
 platforms, as well as support for remote control using PS4 controllers.
 
 Below is the the Node structure of the packages when launched
-![\|width=\"800px\"](attachment:rover_robotics_ros_stack3.png)
+![\|width="800px"](attachment:rover_robotics_ros_stack3.png)
 
 ## Installation
 
-We recommend running through our \"Ubuntu 18.04 Computer Setup guide\"
+We recommend running through our "Ubuntu 18.04 Computer Setup guide"
 on our docs page <https://roverrobotics.com/pages/docs>
 
 This will install necessary systemd scripts (used for starting ROS on

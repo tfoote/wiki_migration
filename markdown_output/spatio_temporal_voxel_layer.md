@@ -5,8 +5,8 @@ sensors in the form of PointClouds or LaserScans. This information is
 converted into 3D and populated into an efficient voxel grid for each
 sensor cycle.
 
-ROS drop in replacement to the voxel layer which uses OpenVDB\'s
-lightening fast voxel representation originally created for Dreamworks\'
+ROS drop in replacement to the voxel layer which uses OpenVDB's
+lightening fast voxel representation originally created for Dreamworks'
 animations. It runs at significantly less CPU than the existing
 voxel_layer plugin using the voxel_grid structure.
 
@@ -17,7 +17,7 @@ the move_base process.
 It also introduces the concept of global and local voxel decay, which
 temporally and spatially decays voxels rather than raycasting. We find
 major improvements in performance and usability in highly dynamic
-spaces. OpenVDB\'s efficient iterators and speed allow for this new
+spaces. OpenVDB's efficient iterators and speed allow for this new
 technique and is suitable for outdoor environments as well as indoor. It
 also allows for more complex inputs to costmap_2d in the form of
 clustered or tracked depth blobs.

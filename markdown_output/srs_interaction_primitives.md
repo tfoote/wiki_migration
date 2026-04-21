@@ -68,7 +68,7 @@ message.
 
 #### Plane Polygon
 
--   It\'s a variation of the Plane which is defined as a planar polygon.
+-   It's a variation of the Plane which is defined as a planar polygon.
 -   The plane polygon is shown as a transparent plane with the polygon
     inside it. ![\|width=80%](attachment:plane-polygon.png)
 
@@ -79,12 +79,12 @@ message.
 Clickable positions can be added to the scene using
 */clickable_positions* service or ClickablePositions action.
 
-By clicking on the position are it\'s coordinates published on the
+By clicking on the position are it's coordinates published on the
 specified topic.
 
-#### Robot\'s pose prediction
+#### Robot's pose prediction
 
-For visualization of robot\'s predicted movement positions is provided
+For visualization of robot's predicted movement positions is provided
 service */robot_pose_prediction*. Position are visualized using
 [Markers](http://www.ros.org/wiki/rviz/DisplayTypes/Marker).
 
@@ -118,11 +118,11 @@ All services starts with prefix `/interaction_primitives`
      /add_unknown_object                                                              Adds Unknown Object to the scene                     
      /remove_primitive                                                                Removes primitive form the scene                     
      /change_description                                                                                                                   
-     /change_pose                                                                     Changes primitive\'s description                     
-     /change_scale                                                                    Changes primitive\'s scale                           
-     /change_color                                                                    Changes primitive\'s color                           
-     /change_direction                                                                Changes billboard\'s movement direction              
-     /change_velocity                                                                 Changes billboard\'s movement velocity               
+     /change_pose                                                                     Changes primitive's description                     
+     /change_scale                                                                    Changes primitive's scale                           
+     /change_color                                                                    Changes primitive's color                           
+     /change_direction                                                                Changes billboard's movement direction              
+     /change_velocity                                                                 Changes billboard's movement velocity               
      /set_pregrasp_position                                                           Sets pre-grasp position                              
      /remove_pregrasp_position                                                        Removes pre-grasp position                           
      /get_update_topic                                                                Gets update topic for specified action (type)        
@@ -133,7 +133,7 @@ All services starts with prefix `/interaction_primitives`
      /get_object                                       Gets Object                                                                         
      /get_unknown_object                               Gets Unknown Object                                                                 
      /clickable_positions                              Shows clickable positions                                                           
-     /robot_pose_prediction                                                           Shows predicted positions of robot\'s movement       
+     /robot_pose_prediction                                                           Shows predicted positions of robot's movement       
   -- ------------------------------- -- ----------- -- --------------------------- -- ---------------------------------------------------- --
 
 ### Messages

@@ -47,7 +47,7 @@ If outside ros, you will also need to link to *ecl_geometry*.
 
 ## External Components
 
-There are quite a few useful tools also in eigen\'s geometry module. You
+There are quite a few useful tools also in eigen's geometry module. You
 can use these directly from eigen or via the
 [ecl_linear_algebra](ecl_linear_algebra) package.
 

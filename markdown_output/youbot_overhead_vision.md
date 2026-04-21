@@ -111,9 +111,9 @@ node.2 {
 
 ## Startup
 
-The \`youbot_overhead_vision\` package should be launched at the same
-time as the \'rrl_localization\' package with the use of the
-\'path_planner.launch\' or the \'path_planner_sim.launch\" launch files
+The `youbot_overhead_vision` package should be launched at the same
+time as the 'rrl_localization' package with the use of the
+'path_planner.launch' or the 'path_planner_sim.launch" launch files
 depending on whether the camera streams are real or simulated. However,
 the node can be run on its own by using one of the following commands:
 
@@ -138,14 +138,14 @@ rosrun image_view image_view image:="/image_calibration/image_cal"
 
 You may find that the two camera images do not align properly due to
 different overhead camera positions. Changing this requires opening the
-\'image_calibration.h\' and \'create_calibs.h\' files, and changing the
+'image_calibration.h' and 'create_calibs.h' files, and changing the
 SIM_OVERLAP and REAL_OVERLAP constants to match your real or simulated
 camera streams overlaps.
 
 You may also need to modify the calibration files. To do this, first
 change the useFromSimulation parameter found in the
-\'youbot_overhead_vision_create_calibs.launch\' launch file to \'true\'
-if the camera stream comes from gazebo, and \'false\' otherwise. Then,
+'youbot_overhead_vision_create_calibs.launch' launch file to 'true'
+if the camera stream comes from gazebo, and 'false' otherwise. Then,
 run the calibration creation tool using the following commands:
 
 ```shell

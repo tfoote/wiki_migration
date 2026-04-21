@@ -99,10 +99,10 @@ desc= Implements the dynamic_reconfigure interface defined in [[access_point_con
 ### Manual control
 
 This is an example that shows how to set up an access point and control
-its parameters using the \`reconfigure_gui\` interface.
+its parameters using the `reconfigure_gui` interface.
 
-The following launch file starts an AP node on the \`wlan0\` interface
-and the \`reconfigure_gui\`:
+The following launch file starts an AP node on the `wlan0` interface
+and the `reconfigure_gui`:
 
 ```
 <launch>
@@ -120,9 +120,9 @@ running (the enable checkbox is unchecked):
 
 ![](attachment:reconfigure1.png)
 
-The desired configuration is selected: mode \`a\`, channel 44, WPA
+The desired configuration is selected: mode `a`, channel 44, WPA
 security with the chosen password, a TX power level of 8 dBm and a TX
-bitrate of 24Mbit/s. Next the \`enabled\` checkbox is checked at the AP
+bitrate of 24Mbit/s. Next the `enabled` checkbox is checked at the AP
 is started:
 
 ![](attachment:reconfigure2.png)
@@ -160,24 +160,24 @@ if config['status'] != "OK":
 
 ### find_hwsim_iface.py
 
-This script is useful for setting up a \`mac80211_hwsim\`-based setup.
+This script is useful for setting up a `mac80211_hwsim`-based setup.
 mac80211_hwsim is a 802.11 radio simulator. The script takes two
 parameters:
 
--   \`radio index\`
--   \`total number of radios\`
+-   `radio index`
+-   `total number of radios`
 
 If the mac80211_hwsim is not loaded or if the number of radios it has
-currently spawned is smaller than \`total number of radios\` then it is
+currently spawned is smaller than `total number of radios` then it is
 re-loaded with the proper radio count. The script prints to its output
-the name of the \`radio index\`-th interface.
+the name of the `radio index`-th interface.
 
 For example (this is taken from a real setup), suppose that the system
-has a real wireless interface with name \`wlan1\` and we need to spawn
-three virtual interfaces. Their names will be \`wlan0\`, \`wlan1\` and
-\`wlan2\`.
+has a real wireless interface with name `wlan1` and we need to spawn
+three virtual interfaces. Their names will be `wlan0`, `wlan1` and
+`wlan2`.
 
-Using \`find_hwsim_iface.py\`:
+Using `find_hwsim_iface.py`:
 
 ```
 $ echo `rosrun hostapd_access_point find_hwsim_iface.py 1 3`
@@ -208,13 +208,13 @@ least three total interfaces:
 ### hwsim_nat_setup.sh
 
 This script sets up NAT routes and ARP entries so that packets can be
-sent \"over-the-air\" between two interfaces connected to the same host.
+sent "over-the-air" between two interfaces connected to the same host.
 By default, packets addressed to the IP of a local interface get sent
 over the local route.
 
 The script takes six parameters:
 
--   first interface name (e.g. \`wlan0\`)
+-   first interface name (e.g. `wlan0`)
 -   first interface real IP address
 -   first interface fake IP address (pinging this address will send
     packets over-the-air with the second interface as the source and the
@@ -237,24 +237,24 @@ wlan1     Link encap:Ethernet  HWaddr 02:00:00:00:01:00
           inet addr:192.168.69.2  Bcast:192.168.69.255  Mask:255.255.255.0
 ```
 
-A packet with destination IP 192.168.69.1 will travel \"over-the-air\"
+A packet with destination IP 192.168.69.1 will travel "over-the-air"
 from wlan1 to wlan0, while packets with destination IP 192.168.68.2 will
 travel from wlan0 to wlan1.
 
 **Known problems**:
 
 -   starting hostapd on an interface flushes the ARP entries so the
-    \`hwsim_nat_setup.sh\` needs to be run again each time hostapd is
+    `hwsim_nat_setup.sh` needs to be run again each time hostapd is
     restarted
 -   care should be taken if ifb-devices are present on the system (most
     likely these would be the result of using ingress traffic control
-    with \`network_traffic_control\`) as these seem to steal the ARP
+    with `network_traffic_control`) as these seem to steal the ARP
     entries
 
 ## Tips and known bugs
 
--   The \`ap_hostapd_node.py\` as well as the scripts in this package
-    need super-user privileges. It\'s probably easiest if everything is
+-   The `ap_hostapd_node.py` as well as the scripts in this package
+    need super-user privileges. It's probably easiest if everything is
     ran as root.
 -   Note that if a change in configuration fails, hostapd will be
     stopped and remain stopped, until restarted with a good

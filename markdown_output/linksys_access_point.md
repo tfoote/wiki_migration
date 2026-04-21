@@ -15,34 +15,34 @@ The following is a list of known issues with implementing the
 access_point_control API for the Linksys web interface:
 
 -   the Linksys models mentioned previously do not support automatic TX
-    power control so the \`txpower_auto\` parameter should be set to
-    \`False\`
+    power control so the `txpower_auto` parameter should be set to
+    `False`
 -   the Linksys AP models do not support the WPA and WPA2 simultaneous
     security mode
 -   after resetting the Linksys AP configuration (using the reset button
-    on the AP), the \`Manual\` mode should be selected in the web
-    interface under \`Wireless/Basic Wireless Settings\` (by default,
-    the \`Wi-Fi Protected Setup\` mode is selected)
+    on the AP), the `Manual` mode should be selected in the web
+    interface under `Wireless/Basic Wireless Settings` (by default,
+    the `Wi-Fi Protected Setup` mode is selected)
 -   configuration updates are quite slow (5-10 seconds) due to the
     web-based interface
 -   if a configuration parameter is rejected by the access point (e.g.
     an invalid channel) the AP reverts to the old setting; this is also
     reflected in the configuration returned by
-    \`update_configuration()\`
--   the \`wmm\` parameter is shared between the 2.4 and 5GHz interface
+    `update_configuration()`
+-   the `wmm` parameter is shared between the 2.4 and 5GHz interface
     so setting it for one interface will cause it to be set for the
     other as well
--   the dynamic_reconfigure interface supports three modes, \`a\`, \`b\`
-    and \`g\` and a boolean that specifies whether \`n\` mode should be
+-   the dynamic_reconfigure interface supports three modes, `a`, `b`
+    and `g` and a boolean that specifies whether `n` mode should be
     enabled or not. These modes are mapped to those provided by the
     Linksys web interface as:
--   \`a\` \<\-\--\> \`a-only\`
--   \`a\` + \`n\` \<\-\--\> \`mixed\`
--   \`b\` \<\-\--\> \`b-only\`
--   \`b\` + \`n\` \<\-\--\> **should not be used** in order to keep the
+-   `a` <\-\--> `a-only`
+-   `a` + `n` <\-\--> `mixed`
+-   `b` <\-\--> `b-only`
+-   `b` + `n` <\-\--> **should not be used** in order to keep the
     mapping bijective
--   \`g\` \<\-\--\> \`g-only\`
--   \`g\` + \`n\` \<\-\--\> \`mixed\`
+-   `g` <\-\--> `g-only`
+-   `g` + `n` <\-\--> `mixed`
 
 ## ROS API
 

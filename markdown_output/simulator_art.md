@@ -64,7 +64,7 @@ param {
 rosrun simulator_art artstage <world>
 ```
 
-Where \`\<world\>\` is the full path name of the stage world file to
+Where `<world>` is the full path name of the stage world file to
 load. To run one of the world files included in this package, resolve it
 like this (all on one line):
 

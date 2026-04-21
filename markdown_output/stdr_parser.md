@@ -4,7 +4,7 @@
 [STDR Simulator](stdr_simulator). Its job is to parse resource files
 (robots and sensors) and create the according stdr_msgs. Also, provided
 a stdr_msgs message **stdr_parser** can save it to a Yaml or XML file.
-The parser structure is such that it can be \"easily\" extended with
+The parser structure is such that it can be "easily" extended with
 more file types (such as JSON f.e.) by changing only specific source
 files (the filetype parser and writer). A brief overview of the parsing
 steps follow.
@@ -14,7 +14,7 @@ steps follow.
 ### Step 1 : Recursive file parsing
 
 **stdr_parser** takes as input a Yaml or XML file and initially does a
-\"blind\" parsing of the file, meaning that no validation is performed.
+"blind" parsing of the file, meaning that no validation is performed.
 Of course if the file does not exist or is malformed, a
 `ParserException` is thrown. This initial parsing creates a tree
 consisting of stdr_parser::Node objects and represents the initial file.
@@ -104,13 +104,13 @@ the tree will look like that (the levels in \[ \]):
 │ │ │ │ │ │ ├ 1.57 [0]
 ```
 
-### Step 2 : \'filename\' tag elimination
+### Step 2 : 'filename' tag elimination
 
 The second step is to eliminate the `filename` tags from the tree. To do
 so a sanity check is performed: the parent node and the child node of a
 `filename` node must be the same. If the above holds, the `filename`
-node is eliminated, as well as its child and the child\'s children are
-connected to `filename`\'s parent. The result follows:
+node is eliminated, as well as its child and the child's children are
+connected to `filename`'s parent. The result follows:
 ```
 ├ robot [0]
 │ ├ robot_specifications [0]
@@ -187,7 +187,7 @@ as during the value merging, the values with higher level are overridden
 by those with lower level. This helps to easily write resource files by
 changing only some aspects of the included files (in the specific
 example the robot has a laser but the scientist wants to change the
-laser\'s orientation). The final tree follows: ```
+laser's orientation). The final tree follows: ```
 ├ robot [0]
 │ ├ robot_specifications [0]
 │ │ ├ footprint [0]
@@ -218,7 +218,7 @@ This is the final parsing step where the validation is performed.
 Crucial role plays the **stdr_specifications.xml** file under
 `stdr_resources/resources/specifications`. There for every valid tag,
 the allowed and required children are specified. (Look at the end of the
-page for the file\'s contents). The validation step reads this file and
+page for the file's contents). The validation step reads this file and
 performs **allowed** and **required** checks for all tree nodes.
 
 ### Message creation  / saving messages to files

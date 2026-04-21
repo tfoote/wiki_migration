@@ -16,7 +16,7 @@ possibility to communicate with the gazebo simulation.
 
 ## Controllers
 
-Functionally the controllers manage Amigo\'s movement in simulation,
+Functionally the controllers manage Amigo's movement in simulation,
 that is to make sure its movements are as fast and precise as possible
 given the physical and practical limits. The controller library contains
 different controller classes that are used to spawn controllers which
@@ -70,7 +70,7 @@ pub {
 ```
 
 Additional documentation of the c++ files can be found as doxygen at
-\<INSERT LINK HERE\>
+<INSERT LINK HERE>
 
 ## Launch files
 

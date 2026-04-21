@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(novatel_msgs)\>\>
+<<MsgSrvDoc(novatel_msgs)>>
 
 ## Notes
 

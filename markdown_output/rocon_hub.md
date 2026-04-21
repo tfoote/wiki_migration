@@ -2,7 +2,7 @@
 
 Backed by a redis key-value store, a rocon hub provides a centralised
 place to store relevant information for multiple ros systems interacting
-over a LAN. It\'s most common use is to act as a kind of name server
+over a LAN. It's most common use is to act as a kind of name server
 assisting ros subsystems to find each other
 ([gateway model](rocon_gateway)).
 
@@ -23,7 +23,7 @@ of the multimaster system.
 It can also be started with or without zeroconf. Starting without simply
 requires the zeroconf parameter to be set to false. There are two
 default launchers in [rocon_hub](rocon_hub) that can be used to fire up
-\'default\' hub configurations:
+'default' hub configurations:
 
 ```
 > roslaunch rocon_hub hub.launch
@@ -61,10 +61,10 @@ node.0 {
 }
 ```
 
-Of these, the \`name\` and the \`zeroconf\` flag are the most oft used.
+Of these, the `name` and the `zeroconf` flag are the most oft used.
 The name can be used to enable gateways to selectively filter which
-gateway they want to connect to via their own \`hub_whitelist\` and
-\`hub_blacklist\` parameters. The zeroconf flag will depend on whether
+gateway they want to connect to via their own `hub_whitelist` and
+`hub_blacklist` parameters. The zeroconf flag will depend on whether
 you have a local zeroconf implementation. Currently only
 [avahi](zeroconf_avahi) on linux is supported.
 

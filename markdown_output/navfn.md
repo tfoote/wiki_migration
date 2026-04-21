@@ -2,23 +2,23 @@
 
 This package provides an implementation of a fast, interpolated
 navigation function used to create plans for a mobile base through the
-\`navfn::NavFn\` class. It also provides a
+`navfn::NavFn` class. It also provides a
 [ ROS Wrapper](navigation/ROS_Wrappers ) for this class via the
-\`navfn::NavfnROS\` object that adheres to the
-\`nav_core::BaseGlobalPlanner\` interface specified in the
-[nav_core](nav_core) package. The \`navfn::NavfnROS\` object is also
+`navfn::NavfnROS` object that adheres to the
+`nav_core::BaseGlobalPlanner` interface specified in the
+[nav_core](nav_core) package. The `navfn::NavfnROS` object is also
 used as a global planner plugin for the [move_base](move_base) node.
 
 ## NavfnROS
 
-The \`navfn::NavfnROS\` object is a [ wrapper](navigation/ROS_Wrappers )
-for a \`navfn::NavFn\` object that exposes its functionality as a
+The `navfn::NavfnROS` object is a [ wrapper](navigation/ROS_Wrappers )
+for a `navfn::NavFn` object that exposes its functionality as a
 [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates within a ROS
 namespace (assumed to be *name* from here on) specified on
-initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
+initialization. It adheres to the `nav_core::BaseGlobalPlanner`
 interface found in the [nav_core](nav_core) package.
 
-Example creation of a \`navfn::NavfnROS\` object:
+Example creation of a `navfn::NavfnROS` object:
 
 ```cplusplus
 #include <tf/transform_listener.h>
@@ -73,14 +73,14 @@ param {
 
 ### C++ API
 
-\`navfn::NavfnROS\` adheres to the \`nav_core::BaseGlobalPlanner\`
+`navfn::NavfnROS` adheres to the `nav_core::BaseGlobalPlanner`
 interface found in the [nav_core](nav_core) package. For detailed
 documentation, please see
 [ NavfnROS C++ Documentation](http://www.ros.org/doc/api/navfn/html/classnavfn_1_1NavfnROS.html ).
 
 ## NavFN
 
-The \`navfn::NavFn\` object provides an implementation of the navigation
+The `navfn::NavFn` object provides an implementation of the navigation
 function described above. Feel free to use it, but beware that we make
 no guarantees about the stability of its public API.
 
@@ -90,7 +90,7 @@ no guarantees about the stability of its public API.
 
 ### C++ API
 
-Documentation on the C++ API for the \`navfn::NavFn\` class can be found
+Documentation on the C++ API for the `navfn::NavFn` class can be found
 here:
 [ NavFn Documentation](http://www.ros.org/doc/api/navfn/html/classnavfn_1_1NavFn.html ).
 Again, the C++ API is **not** guaranteed to be stable.

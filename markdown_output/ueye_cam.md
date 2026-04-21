@@ -28,15 +28,15 @@ caption for outline of instructions)
 
 This implementation makes use of certain C++11 features (such as
 std::thread, std::to_string, etc), although the CMakeLists.txt is
-configured for GCC \>= 4.6 (and hence uses the *-std=c++0x* flag).
+configured for GCC >= 4.6 (and hence uses the *-std=c++0x* flag).
 
 ## Features
 
 -   implemented as a [nodelet](nodelet)
 -   supports loading from IDS camera parameter files (e.g. obtained from
     *ueyedemo*)
--   supports publishing frames as \"rgb8\", \"mono8\", and
-    \"bayer_rggb8\" (depending on camera model)
+-   supports publishing frames as "rgb8", "mono8", and
+    "bayer_rggb8" (depending on camera model)
 -   camera is deactivated unless there is a subscriber to the published
     image topic
 -   supports dynamic tuning of various camera parameters via
@@ -50,7 +50,7 @@ configured for GCC \>= 4.6 (and hence uses the *-std=c++0x* flag).
 ### Clock Rate
 
 The IDS camera API allows users to have fine-grain control over the
-camera on-board processor\'s clock rate, which determines the range of
+camera on-board processor's clock rate, which determines the range of
 values for frame rates, exposures, and other camera settings. This can
 be adjusted at runtime alongside other parameters, via
 [dynamic_reconfigure](dynamic_reconfigure). It is however not
@@ -62,33 +62,33 @@ and exposure setting.
 ### Bayer Decoding
 
 You may choose to use the underlying IDS camera API to perform bayer
-decoding and publish images as \'rgb8\' or \'mono8\', or alternatively
-choose to publish images as \'bayer_rggb8\' and rely on the standard ROS
+decoding and publish images as 'rgb8' or 'mono8', or alternatively
+choose to publish images as 'bayer_rggb8' and rely on the standard ROS
 [image_pipeline](image_pipeline) package for decoding. Currently, this
 ROS interface does not expose fine-grain control over the bayer decoding
 engine from the underlying IDS camera API.
 
 ### Reduced Area of Interest (AOI) vs. Down-sampled Images
 
-A common mistake is to interpret the \'image_width\' and
-\'image_height\' ROS parameters as the width and height of the resulting
+A common mistake is to interpret the 'image_width' and
+'image_height' ROS parameters as the width and height of the resulting
 ROS image. Unfortunately, these names were chosen to be consistent with
 official camera interfaces provided by IDS, and they refer to the width
-and height of the camera sensor\'s Area of Interest (AOI). Therefore,
-values for \'image_width\' and \'image_height\' that are smaller than
-your camera\'s maximum values will result in **cropped field of view**
+and height of the camera sensor's Area of Interest (AOI). Therefore,
+values for 'image_width' and 'image_height' that are smaller than
+your camera's maximum values will result in **cropped field of view**
 (a.k.a. reduced AOI).
 
-For typical use cases, one should modify values for \'sensor_scaling\' /
-\'binning\' / \'subsampling\' parameters, in order to down-sample the
+For typical use cases, one should modify values for 'sensor_scaling' /
+'binning' / 'subsampling' parameters, in order to down-sample the
 resulting ROS image to the desired dimensions without reducing the field
 of view.
 
 Note that all parameters (both rosparam, roslaunch, and dynamic
 reconfigure) will be automatically capped to valid ranges / values for
-your camera\'s model, upon change. You can also run the \'ueyedemo\'
+your camera's model, upon change. You can also run the 'ueyedemo'
 official camera interface to obtain bounds and current values for the
-camera\'s onboard parameters (which ueye_cam tries faithfully to
+camera's onboard parameters (which ueye_cam tries faithfully to
 replicate in ROS).
 
 ## Build Instructions
@@ -97,20 +97,20 @@ replicate in ROS).
 [here](http://en.ids-imaging.com/download-ueye.html)
 
 -   Pay attention to start the UEye daemon after installation is
-    complete, by running *sudo /etc/init.d/ueye\<usb/eth\>drc start*.
+    complete, by running *sudo /etc/init.d/ueye<usb/eth>drc start*.
     This is not necessary after a system reboot.
 -   **update**: even though ueye_cam will automatically download a
     barebone version of the IDS driver if not present for compilation,
     the daemon (and thus the official IDS driver) is still needed in
     order to connect and grab frames from an uEye camera 2. create
-    catkin workspace *mkdir -p \<your_ueye_cam_ws\>/src*.
+    catkin workspace *mkdir -p <your_ueye_cam_ws>/src*.
 
 3\. initialize and download source code
 
-*cd \<your_ueye_cam_ws\>/src && wstool init && wstool set ueye_cam
+*cd <your_ueye_cam_ws>/src && wstool init && wstool set ueye_cam
 \--git <https://github.com/anqixu/ueye_cam> && wstool update && cd ..*.
 
-4\. Run *catkin_make* under *\<your_ueye_cam_ws\>*.
+4\. Run *catkin_make* under *<your_ueye_cam_ws>*.
 
 ## ROS API
 
@@ -297,8 +297,8 @@ separate screen. **Not recommended for typical use.**
 
 Sample launch file to demonstrate external triggering mode for
 synchronizing multiple UEye cameras. You will need to add additional
-physical modifications to the cameras for this to work; see \'Camera
-Synchronization\' section for more details.
+physical modifications to the cameras for this to work; see 'Camera
+Synchronization' section for more details.
 
 **Do not use this launch file to operate a single UEye camera! Also, any
 camera with the ROS parameter *external_trigger_mode* set to *True*, and
@@ -314,7 +314,7 @@ refer to
 for info on calibrating your own UEye cameras.
 
 All calibration files are stored by default under:
-*/.ros/camera_info/\<camera_name\>.yaml*
+*/.ros/camera_info/<camera_name>.yaml*
 
 ### Camera Synchronization
 

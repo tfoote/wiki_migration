@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -6,7 +6,7 @@ This package stores object models and their information which can be
 used by other packages like object recognizers.
 
 *Samples of objects stored in the database:*
-![\|width=\"600\",height=\"337\"](attachment:objects_1.jpg)
+![\|width="600",height="337"](attachment:objects_1.jpg)
 
 ## Functionality
 
@@ -17,7 +17,7 @@ subdirectories which group the objects together based on their usage
 (mostly depending on the recognizer which is used to detect them in a
 scene). Take note that groups and their objects within can only be
 queried by services if they are declared in config.xml in the *rcs*
-directory. This doesn\'t apply for example to the environment objects,
+directory. This doesn't apply for example to the environment objects,
 which are only used for visualization purposes by other packages; they
 can be accessed by specifying the path to them directly without any
 service call.
@@ -25,13 +25,13 @@ service call.
 Each object is represented as a folder, the (unique) name of the folder
 being the one of the object, and at least a mesh file inside of it. In
 addition there can/should be more information stored inside, for example
-the object\'s normal vectors (by default stored as a file ending with
+the object's normal vectors (by default stored as a file ending with
 .nv.txt) which describe the orientations from where the object is best
-visible (usually created with this package\'s normal generator tool;
+visible (usually created with this package's normal generator tool;
 check the provided tutorial for more information) or a file containing
-information about how large a recognizer\'s uncertainty concerning the
+information about how large a recognizer's uncertainty concerning the
 object is allowed to be (by default stored as a file ending with
-.dev.txt). If those files don\'t exist but are needed when a service
+.dev.txt). If those files don't exist but are needed when a service
 regarding those is called, they are created with default values and
 should be adjusted accordingly.
 
@@ -74,13 +74,13 @@ about the objects within:
 -   object_folder (string): The path to the directory containing the
     files of this object as a package-url (see
     [resource_retriever](resource_retriever) for more information)
--   object_mesh_resource (string): The path to this object\'s mesh file
+-   object_mesh_resource (string): The path to this object's mesh file
     as a package-url
 -   normal_vectors (geometry_msgs/Point\[\]): A list of normals
     representing the orientations the object can be detected the best
     from
 -   deviations (float64\[\]): A list of deviation values describing a
-    recognizer\'s possible uncertainty about this object
+    recognizer's possible uncertainty about this object
 -   is_valid (bool): If this is false, then there is no object in the
     database with the given name and recognizer
 -   is_rotation_invariant (bool): If this is false, then the object can
@@ -113,7 +113,7 @@ about the objects within:
     but can be done manually with meshlab for example)
 -   Parameters:
 -   sourcefile (string): A file path to a mesh which has to end with
-    \"*\_tex.obj*\". There also have to be a *.mtl* and a* .png* file in
+    "*_tex.obj*". There also have to be a *.mtl* and a* .png* file in
     the same directory.
 -   Returns: -
 

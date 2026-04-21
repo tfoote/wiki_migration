@@ -177,4 +177,4 @@ rosrun image_view image_view image:=/nerian_sp1/left_image
 -   [API documentation](https://nerian.com/products/sp1-stereo-vision/api-doc/)
 -   [SP1 user manual](https://nerian.com/products/sp1-stereo-vision/downloads/sp1_manual.pdf)
 
-![\|display=\"none ! important\",hidden=\"\"](http://c.statcounter.com/10599048/0/906ae443/1/)
+![\|display="none ! important",hidden=""](http://c.statcounter.com/10599048/0/906ae443/1/)

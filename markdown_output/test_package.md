@@ -1,19 +1,19 @@
 ## About
 
-\_\_Test \_\_
+__Test __
 
 **bold**
 
 *italics*
 
-***bold italics***
+**`'bold italics`**'
 
 1\. Uno 1. Dos
 
 :)
 
   -- --------------------------- -- --- --
-     \<tablewidth=\"200px\"\>1      1   
+     <tablewidth="200px">1      1   
      1                              1   
      1                              1   
   -- --------------------------- -- --- --

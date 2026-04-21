@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rosserial_msgs)\>\>
+<<MsgSrvDoc(rosserial_msgs)>>

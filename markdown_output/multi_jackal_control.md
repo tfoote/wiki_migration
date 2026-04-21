@@ -1,6 +1,6 @@
 ## Overview
 
-\`multi_jackal_control\` contains the launch files and parameters
+`multi_jackal_control` contains the launch files and parameters
 providing joint and velocity controllers for multiple simulated
 [Clearpath Jackals](http://wiki.ros.org/Robots/Jackal). It has been
 extended from the single robot

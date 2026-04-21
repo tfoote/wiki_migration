@@ -1,21 +1,21 @@
 ## Usage
 
-Any [rxbag](rxbag) plugin in the \`ROS_PACKAGE_PATH\` is detected
-automatically by \`rxbag\` on start-up.
+Any [rxbag](rxbag) plugin in the `ROS_PACKAGE_PATH` is detected
+automatically by `rxbag` on start-up.
 
-To access these plugins, launch the \`rxbag\` GUI tool (see
+To access these plugins, launch the `rxbag` GUI tool (see
 [rxbag](rxbag) for details), right-click on the timeline and select a
 topic and view type from the context menu.
 
 ## Plugins
 
-The following plugins are currently provided for \`rxbag\`:
+The following plugins are currently provided for `rxbag`:
 
 ### Image
 
 The image view displays raw image data for
-\<\<MsgLink(sensor_msgs/Image)\>\> and
-\<\<MsgLink(sensor_msgs/CompressedImage)\>\> messages:
+<<MsgLink(sensor_msgs/Image)>> and
+<<MsgLink(sensor_msgs/CompressedImage)>> messages:
 
 ![](attachment:rxbag_prosilica.png)
 
@@ -64,8 +64,8 @@ Any change to the plot configuration automatically reloads data from the
 
 Each plot in the display shares the same X axis, which shows the number
 of seconds since the start of the bag file. The axis is centered on the
-timeline\'s current playhead position. The range can be configured under
-the \`Interval\` submenu in the context-menu accessible by clicking the
+timeline's current playhead position. The range can be configured under
+the `Interval` submenu in the context-menu accessible by clicking the
 right mouse button on the plot window.
 
 To zoom/pan the plot, use mouse middle click or shift-click. Vertical
@@ -73,5 +73,5 @@ movement zooms, horizontal movement pans.
 
 ## Roadmap
 
-The plugin API for \`rxbag\` is experimental and under development.
+The plugin API for `rxbag` is experimental and under development.
 Please see [rxbag](rxbag) for roadmap information.

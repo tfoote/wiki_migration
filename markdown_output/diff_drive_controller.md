@@ -24,7 +24,7 @@ The controller works with wheel joints through a **velocity** interface.
 
 ### Mathematical Background
 
-![\|align=\"right\"](https://upload.wikimedia.org/wikipedia/commons/2/28/Differential_Drive_Kinematics_of_a_Wheeled_Mobile_Robot.svg)
+![\|align="right"](https://upload.wikimedia.org/wikipedia/commons/2/28/Differential_Drive_Kinematics_of_a_Wheeled_Mobile_Robot.svg)
 
 The illustration on the right shows a sketch of a
 [differential drive wheeled robot](https://en.wikipedia.org/wiki/Differential_wheeled_robot).
@@ -49,33 +49,33 @@ In this sketch, the following notation applies.
 -   {{<https://latex.codecogs.com/svg.image?v_%7BL%7D> }},
     {{<https://latex.codecogs.com/svg.image?v_%7BR%7D> }} - ground
     contact speed of left and right wheel
--   {{[https://latex.codecogs.com/svg.image?\\omega\_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
+-   {{[https://latex.codecogs.com/svg.image?\\omega_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
     }},
-    {{[https://latex.codecogs.com/svg.image?\\omega\_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
+    {{[https://latex.codecogs.com/svg.image?\\omega_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
     }} - angular velocity of left and right wheel
 
 Using the kinematic model (see
 [here](https://en.wikipedia.org/wiki/Differential_wheeled_robot#Kinematics_of_Differential_Drive_Robots)),
 the diff_drive_controller calculates the left
-{{[https://latex.codecogs.com/svg.image?\\omega\_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
+{{[https://latex.codecogs.com/svg.image?\\omega_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
 }} and right angular velocity
-{{[https://latex.codecogs.com/svg.image?\\omega\_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
+{{[https://latex.codecogs.com/svg.image?\\omega_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
 }} to:
 
-{{[https://latex.codecogs.com/svg.image?\\omega\_{L}&space;=&space;\\frac{V-\\omega&space;\\cdot&space;b/2](https://latex.codecogs.com/svg.image?\omega_%7BL%7D&space;=&space;\frac%7BV-\omega&space;\cdot&space;b/2)}{r}
+{{[https://latex.codecogs.com/svg.image?\\omega_{L}&space;=&space;\\frac{V-\\omega&space;\\cdot&space;b/2](https://latex.codecogs.com/svg.image?\omega_%7BL%7D&space;=&space;\frac%7BV-\omega&space;\cdot&space;b/2)}{r}
 }}
 
 and
 
-{{[https://latex.codecogs.com/svg.image?\\omega\_{R}&space;=&space;&space;&space;\\frac{V+\\omega&space;\\cdot&space;b/2](https://latex.codecogs.com/svg.image?\omega_%7BR%7D&space;=&space;&space;&space;\frac%7BV+\omega&space;\cdot&space;b/2)}{r}
+{{[https://latex.codecogs.com/svg.image?\\omega_{R}&space;=&space;&space;&space;\\frac{V+\\omega&space;\\cdot&space;b/2](https://latex.codecogs.com/svg.image?\omega_%7BR%7D&space;=&space;&space;&space;\frac%7BV+\omega&space;\cdot&space;b/2)}{r}
 }}.
 
 ## Robots
 
   -- -------------------------------------------------------------------------------- -- -------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------------------------------------------------- --
-     [![REEM\|width=\"100\"](attachment:reem_boxes.jpg)](Robots/REEM)                    [PAL Robotics REEM](http://www.pal-robotics.com)      ![PMB2\|width=\"150\"](attachment:pmb2.jpg)                                                                                                               [PAL Robotics Mobile Base](http://www.pal-robotics.com)                     
+     [![REEM\|width="100"](attachment:reem_boxes.jpg)](Robots/REEM)                    [PAL Robotics REEM](http://www.pal-robotics.com)      ![PMB2\|width="150"](attachment:pmb2.jpg)                                                                                                               [PAL Robotics Mobile Base](http://www.pal-robotics.com)                     
      [![Husky](attachment:Husky Icon - Small.jpg)](Robots/Husky)                         [Clearpath Robotics Husky](Robots/Husky)              [![Robots/Jackal](attachment:Jackal Icon.png)](Robots/Jackal)                                                                                             [Clearpath Robotics Jackal](Robots/Jackal)                                  
-     [![i-Cart mini\|width=\"150\"](attachment:icart_mini.png)](Robots/i-Cart mini)      [i-Cart mini](Robots/icart_mini)                      ![Remo\|width=\"150\"](https://raw.githubusercontent.com/ros-mobile-robots/ros-mobile-robots.github.io/main/docs/resources/remo/remo_front_side.jpg)      [ros-mobile-robots/diffbot](https://github.com/ros-mobile-robots/diffbot)   
+     [![i-Cart mini\|width="150"](attachment:icart_mini.png)](Robots/i-Cart mini)      [i-Cart mini](Robots/icart_mini)                      ![Remo\|width="150"](https://raw.githubusercontent.com/ros-mobile-robots/ros-mobile-robots.github.io/main/docs/resources/remo/remo_front_side.jpg)      [ros-mobile-robots/diffbot](https://github.com/ros-mobile-robots/diffbot)   
   -- -------------------------------------------------------------------------------- -- -------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------------------------------------------------- --
 
 ## ROS API
@@ -289,7 +289,7 @@ mobile_base_controller:
 #### Skid steer
 
 The diff_drive_controller allows for skid steer driving with the
-geometry_msgs/Twist command interface however it doesn\'t support direct
+geometry_msgs/Twist command interface however it doesn't support direct
 skid commands.
 
 The current implementation allows you to register multiple wheels per
@@ -337,29 +337,29 @@ jackal_velocity_controller:
 ## Further reading
 
 In addition to the robots addressed in chapter 2, tutorials for the
-application of the \`diff_drive_controller\` should be briefly
+application of the `diff_drive_controller` should be briefly
 mentioned.
 
-A basic understanding of the implementation of \`ros_control\` and its
-interaction with the \`hardware_interface\` is explained in
+A basic understanding of the implementation of `ros_control` and its
+interaction with the `hardware_interface` is explained in
 [this](https://slaterobotics.medium.com/how-to-implement-ros-control-on-a-custom-robot-748b52751f2e)
 post.
 
-An overview of the \`diff_drive_controller\` and its integration into
-\`ros_control\` can be found in the
+An overview of the `diff_drive_controller` and its integration into
+`ros_control` can be found in the
 [DiffBot Base Package](https://ros-mobile-robots.com/packages/diffbot_base/)
 tutorial.
 
 A detailed description of the specific execution and application of the
-\`diff_drive_controller\` can also be found in the
+`diff_drive_controller` can also be found in the
 [DiffBot Base Package](https://ros-mobile-robots.com/packages/diffbot_base/low-level/).
 
 In the Jackal Robot, the
 [diff_drive_controller](https://github.com/jackal/jackal/tree/noetic-devel/jackal_control)
 is also applied, and the control commands
-({{[https://latex.codecogs.com/svg.image?\\omega\_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
+({{[https://latex.codecogs.com/svg.image?\\omega_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
 }} and
-{{[https://latex.codecogs.com/svg.image?\\omega\_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
+{{[https://latex.codecogs.com/svg.image?\\omega_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
 }}) are being retrieved in the
 [hardware_interface](https://github.com/jackal/jackal_robot/blob/noetic-devel/jackal_base/src/jackal_hardware.cpp#L49)
 and forwarded to the corresponding drives.

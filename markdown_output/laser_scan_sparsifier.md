@@ -1,12 +1,12 @@
 ## Details
 
 The [laser_scan_sparsifier](laser_scan_sparsifier) package is used to
-downsample \<\<MsgLink(sensor_msgs/LaserScan)\>\> messages.
+downsample <<MsgLink(sensor_msgs/LaserScan)>> messages.
 
 ## Nodes & Nodelets
 
-Two drivers are available: \`laser_scan_sparsifier_nodelet\` and
-\`laser_scan_sparsifier_node\`. Their parameters and topics are
+Two drivers are available: `laser_scan_sparsifier_nodelet` and
+`laser_scan_sparsifier_node`. Their parameters and topics are
 identical.
 
 ```clearsilver

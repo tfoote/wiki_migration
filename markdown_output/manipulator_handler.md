@@ -38,17 +38,17 @@ sim_ext_ros_bridge_manipulator_ctrl_mode_TF_velocity
 sim_ext_ros_bridge_manipulator_ctrl_mode_TF_effort
 ```
 
-You can use the function \"simExtSetFloatCustomDataFromHeader()\" to set
+You can use the function "simExtSetFloatCustomDataFromHeader()" to set
 the control mode you prefer.
 
 -   If you will not set anything the joint will be in controlled in the
-    mode \"position (fixed joint)\" as default.
+    mode "position (fixed joint)" as default.
 -   If you set in the child script of the root of the manipulator a
     given control mode, all the joints will be controlled in that way.
 -   In addition if you want to control some joints in a different way
     with respect the general mode you have defined, you can do it. Just
     add a child script to the joint and use the function
-    \"simExtSetFloatCustomDataFromHeader()\" to set the control mode you
+    "simExtSetFloatCustomDataFromHeader()" to set the control mode you
     prefer.
 
 In the folder *vrep_ros_brigde/SceneVrep* you will find the model of a

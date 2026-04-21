@@ -10,7 +10,7 @@ Robo@FIT group.
 -   but_velodyne_odom - odometry estimation based on point clouds and
     RGB
 
-\<\<GitHubIssues(robofit/but_velodyne)\>\>
+<<GitHubIssues(robofit/but_velodyne)>>
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Robo@FIT group.
 From source:
 
 1\. Clone the github repository. 1. Copy the cloned repository into the
-\'src\' folder of your ROS workspace. 1. Recompile your ROS workspace:
+'src' folder of your ROS workspace. 1. Recompile your ROS workspace:
 \$ catkin_make.
 
 ## Usage

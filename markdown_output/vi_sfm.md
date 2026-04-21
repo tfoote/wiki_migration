@@ -1,6 +1,6 @@
 ## What does vi_sfm do?
 
-\`vi_sfm\` is a ROS package used to solve visual-inertial structure from
+`vi_sfm` is a ROS package used to solve visual-inertial structure from
 motion problems. This package fuses visual and inertial data in a
 closed-form solution. The closed-form solution consists of a single
 equation that determines the initial velocity, the distance to
@@ -16,18 +16,18 @@ The closed-form solution was presented at ICRA 2016.
 
 ## Supported hardware
 
-\`vi_sfm\` will work with any camera driver node satisfying the standard
+`vi_sfm` will work with any camera driver node satisfying the standard
 ROS camera interface and any imu driver node satisfying the sensor
 
 ## Usage of Robot State
 
-To run the \`robot_state\` node :
+To run the `robot_state` node :
 
 ```
 rosrun vi_sfm robot_state imu:=/my_imu feature:=/my_feature camera:=/my_camera
 ```
 
-To run the \`robot_state\` node using rectified features :
+To run the `robot_state` node using rectified features :
 
 ```
 rosrun vi_sfm robot_state imu:=/my_imu feature:=/my_feature camera:=/my_camera isRectified:=True

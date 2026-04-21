@@ -13,5 +13,5 @@
 ## Tutorial
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     For information on how to use estimate_grasp_positions, read the \"How does it work\" section of the [chair_grasping](http://www.ros.org/wiki/chair_grasping) page.   
+     For information on how to use estimate_grasp_positions, read the "How does it work" section of the [chair_grasping](http://www.ros.org/wiki/chair_grasping) page.   
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- --

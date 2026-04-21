@@ -6,7 +6,7 @@ to be accessed using Python code.
 
 ## Usage
 
-In Python, to use cameras declared in this package\'s camera_config.py:
+In Python, to use cameras declared in this package's camera_config.py:
 
 ```
 import hrl_camera.hrl_camera as hc
@@ -21,16 +21,16 @@ appropriate class.
 For the above steps to work, each entry in camera_config.py needs to be
 a dictionary entry mapping from a human friendly name (CAMERA_NAME in
 the above snipplet) to a dictionary of parameters containing the keys
-\'class\' and \'uuid\'. The value specified by \'class\' must be the
+'class' and 'uuid'. The value specified by 'class' must be the
 Python legal class name of the object that needs to be instantiated and
 must be in the PYTHON_PATH of the process that executes find_camera. The
-value in \'uid\' should be the camera\'s UID provided by the utility
+value in 'uid' should be the camera's UID provided by the utility
 camera_uid.py.
 
 ## Writing a New Camera Class
 
 To be compatible with this package new camera classes needs to have an
-\_\_init\_\_() method that takes in the configuration dictionary defined
+__init__() method that takes in the configuration dictionary defined
 in camera_config.py. For examples, look at dragonfly2.py and firefly.py.
 Utilities
 
@@ -40,13 +40,13 @@ Utilities
 <!-- -->
 ```
 -   hrl_ros_camera.py CAMERA_NAME Publishes images over ROS (topic
-    \"cv_camera\_\" + CAMERA_NAME with type Image). Publishes
-    !CameraInfo messages on topic \"cv_camera\_\" + CAMERA_NAME +
-    \"\_info\". Works with cameras defined in camera_config.py
+    "cv_camera_" + CAMERA_NAME with type Image). Publishes
+    !CameraInfo messages on topic "cv_camera_" + CAMERA_NAME +
+    "_info". Works with cameras defined in camera_config.py
 
 ```{=html}
 <!-- -->
 ```
 -   ros_camera.py OPENCV_ID Publishes images over ROS (topic
-    \"cv_camera\" + str(OPENCV_ID) with type Image). Works with any
+    "cv_camera" + str(OPENCV_ID) with type Image). Works with any
     camera openable by OpenCV2.

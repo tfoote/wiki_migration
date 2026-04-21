@@ -1,7 +1,7 @@
 ## Overview
 
 This package is intended to provide you ability to test your controller
-infrastructure without hardware. It\'s simulate ideal servo (achieve
+infrastructure without hardware. It's simulate ideal servo (achieve
 goal immediately).
 
 ## OROCOS API

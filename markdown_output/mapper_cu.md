@@ -3,7 +3,7 @@ information. Initially it receives data from the robot base node (bumper
 hits) and the laser scanner. It can also load data from a bitmap at
 startup.
 
-\`mapper_cu\` is responsible for accumulating sensor data in a map. It
+`mapper_cu` is responsible for accumulating sensor data in a map. It
 provides a service that allows other nodes to request and receive a copy
 of the current map. It also publishes map updates, thus allowing other
 nodes to maintain a current version of the map with limited overhead.

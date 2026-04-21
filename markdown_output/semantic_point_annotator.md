@@ -3,11 +3,11 @@
 This package provides a node that the
 [pr2_navigation_perception](pr2_navigation_perception) package uses for
 removing hits on the ground from
-\<\<MsgLink(geometry_msgs/PointCloud.msg)\>\> messages.
+<<MsgLink(geometry_msgs/PointCloud.msg)>> messages.
 
 ## API Stability
 
-Since the \<\<MsgLink(geometry_msgs/PointCloud.msg)\>\> message will be
+Since the <<MsgLink(geometry_msgs/PointCloud.msg)>> message will be
 deprecated in the near future, and the code in this package will be
 replaced with code using the new !PointCloud format, there are no
 guarantees about the stability of this package. After the

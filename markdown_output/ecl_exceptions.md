@@ -22,7 +22,7 @@ program.
 Another is to provide a path back up the program heirarchy to ascertain
 where bugs really occurred. Often a macro-function will only give you
 the point of failure, which is usually in a library object somewhere -
-it doesn\'t let you retrieve where your program caused the failure
+it doesn't let you retrieve where your program caused the failure
 higher up. Throwing, rethrowing and catching exceptions, in debug mode,
 can do this.
 
@@ -62,26 +62,26 @@ If outside ros, you will also need to link to *ecl_exceptions*.
 
 ## Examples
 
--   \`src/examples/exceptions.cpp\` : coverage style test for
+-   `src/examples/exceptions.cpp` : coverage style test for
     exceptions.
--   \`src/examples/exception_tracer.cpp\` : getting a backtrace via
+-   `src/examples/exception_tracer.cpp` : getting a backtrace via
     exceptions, posix style.
 
 ## Benchmarks
 
 These are in [ecl_core_apps](ecl_core_apps).
 
--   \`/src/benchmarks/exceptions.cpp\` : benchmarks the latencies for
+-   `/src/benchmarks/exceptions.cpp` : benchmarks the latencies for
     exception handling.
 
 ## Errata
 
-The use of exceptions here doesn\'t exactly conform to the c++ \'ideal\'
+The use of exceptions here doesn't exactly conform to the c++ 'ideal'
 for exception handling in a library. For that you should derive from the
 std exception classes, particularly runtime_error and logic_error and
-have a single class for each type of error (we\'ve bundled all the ecl
+have a single class for each type of error (we've bundled all the ecl
 standard errors into two classes here - Standard and Data). However I
-can\'t seem to find a really good reason at this point in time to
+can't seem to find a really good reason at this point in time to
 circumvent the convenient practicality of ecl_exceptions. I think this
 is because the purpose of this library is to present a standard set of
 error types across platforms, no need to keep making new exception

@@ -14,19 +14,19 @@ reply to the request. This can currently be achieved via ROS
 In some cases, however, if the service takes a long time to execute, the
 user might want the ability to cancel the request during execution or
 get periodic feedback about how the request is progressing. The
-\`actionlib\` package provides tools to create servers that execute
+`actionlib` package provides tools to create servers that execute
 long-running goals that can be preempted. It also provides a client
 interface in order to send requests to the server.
 
 ## Detailed Description
 
-For a full discussion of how actionlib operates \"under the hood\",
+For a full discussion of how actionlib operates "under the hood",
 please see the [Detailed Description](/DetailedDescription).
 
 ## Client-Server Interaction
 
-The *!ActionClient* and *!ActionServer* communicate via a *\"ROS Action
-Protocol\"*, which is built on top of ROS messages. The client and
+The *!ActionClient* and *!ActionServer* communicate via a *"ROS Action
+Protocol"*, which is built on top of ROS messages. The client and
 server then provide a simple API for users to request goals (on the
 client side) or to execute goals (on the server side) via function calls
 and callbacks.
@@ -51,7 +51,7 @@ parameters (min angle, max angle, speed, etc).
 **Feedback**\
 Feedback provides server implementers a way to tell an !ActionClient
 about the incremental progress of a goal. For moving the base, this
-might be the robot\'s current pose along the path. For controlling the
+might be the robot's current pose along the path. For controlling the
 tilting laser scanner, this might be the time left until the scan
 completes.
 
@@ -60,22 +60,22 @@ A result is sent from the !ActionServer to the !ActionClient upon
 completion of the goal. This is different than feedback, since it is
 sent exactly once. This is extremely useful when the purpose of the
 action is to provide some sort of information. For move base, the result
-isn\'t very important, but it might contain the final pose of the robot.
+isn't very important, but it might contain the final pose of the robot.
 For controlling the tilting laser scanner, the result might contain a
 point cloud generated from the requested scan.
 
 ## .action File
 
-The action specification is defined using a \`.action\` file. The
-\`.action\` file has the goal definition, followed by the result
+The action specification is defined using a `.action` file. The
+`.action` file has the goal definition, followed by the result
 definition, followed by the feedback definition, with each section
-separated by 3 hyphens (**\`\-\--\`**).
+separated by 3 hyphens (**`\-\--`**).
 
-These files are placed in a package\'s \`./action\` directory, and look
-extremely similar to a service\'s \`.srv\` file. An action specification
+These files are placed in a package's `./action` directory, and look
+extremely similar to a service's `.srv` file. An action specification
 for doing the dishes might look like the following:
 
-\`./action/DoDishes.action\` ```
+`./action/DoDishes.action` ```
 # Define the goal
 uint32 dishwasher_id  # Specify which dishwasher we want to use
 ---
@@ -86,7 +86,7 @@ uint32 total_dishes_cleaned
 float32 percent_complete
 ```
 
-Based on this \`.action\` file, 6 messages need to be generated in order
+Based on this `.action` file, 6 messages need to be generated in order
 for the client and server to communicate. This generation can be
 automatically triggered during the make process:
 
@@ -95,7 +95,7 @@ automatically triggered during the make process:
 #### Build a package that contains .action file
 
 Add the following to your CMakeLists.txt file *before*
-\`catkin_package()\`.
+`catkin_package()`.
 
 ```
 find_package(catkin REQUIRED genmsg actionlib_msgs)
@@ -103,8 +103,8 @@ add_action_files(DIRECTORY action FILES DoDishes.action)
 generate_messages(DEPENDENCIES actionlib_msgs)
 ```
 
-Additionally, the \`package.xml\` of the package that includes
-\`.action\` files must include the following dependencies:
+Additionally, the `package.xml` of the package that includes
+`.action` files must include the following dependencies:
 ```
 <build_depend>actionlib_msgs</build_depend>
 <exec_depend>actionlib_msgs</exec_depend>
@@ -113,15 +113,15 @@ Additionally, the \`package.xml\` of the package that includes
 #### Build a package that depends on actionlib API
 
 Package that depends on actionlib API to implement an action server or
-use an action client needs another dependency on \`actionlib\`.
+use an action client needs another dependency on `actionlib`.
 
-\`CMakeLists.txt\` ```
+`CMakeLists.txt` ```
 find_package(catkin REQUIRED genmsg actionlib_msgs actionlib)
 add_action_files(DIRECTORY action FILES DoDishes.action)
 generate_messages(DEPENDENCIES actionlib_msgs)
 ```
 
-\`package.xml\` ```
+`package.xml` ```
 <build_depend>actionlib</build_depend>
 <build_depend>actionlib_msgs</build_depend>
 <exec_depend>actionlib</exec_depend>
@@ -130,16 +130,16 @@ generate_messages(DEPENDENCIES actionlib_msgs)
 
 ### Results
 
-For the \`DoDishes.action\`, the following messages are generated by
-\`genaction.py\`:
+For the `DoDishes.action`, the following messages are generated by
+`genaction.py`:
 
--   \`DoDishesAction.msg\`
--   \`DoDishesActionGoal.msg\`
--   \`DoDishesActionResult.msg\`
--   \`DoDishesActionFeedback.msg\`
--   \`DoDishesGoal.msg\`
--   \`DoDishesResult.msg\`
--   \`DoDishesFeedback.msg\`
+-   `DoDishesAction.msg`
+-   `DoDishesActionGoal.msg`
+-   `DoDishesActionResult.msg`
+-   `DoDishesActionFeedback.msg`
+-   `DoDishesGoal.msg`
+-   `DoDishesResult.msg`
+-   `DoDishesFeedback.msg`
 
 These messages are then used internally by actionlib to communicate
 between the !ActionClient and !ActionServer.
@@ -152,9 +152,9 @@ Full API Reference for the
 [C++ SimpleActionClient](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1SimpleActionClient.html)
 
 **Quickstart Guide:**\
-Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
+Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to send a goal to a !DoDishes
-!ActionServer called \"do_dishes\". ```cplusplus
+!ActionServer called "do_dishes". ```cplusplus
 #include <chores/DoDishesAction.h> // Note: "Action" is appended
 #include <actionlib/client/simple_action_client.h>
 
@@ -176,10 +176,10 @@ int main(int argc, char** argv)
 }
 ```
 
-**Note:** For the C++ \`SimpleActionClient\`, the \`waitForServer\`
-method will only work if a separate thread is servicing the client\'s
-callback queue. This requires passing in \`true\` for the
-\`spin_thread\` option of the client\'s constructor, running with a
+**Note:** For the C++ `SimpleActionClient`, the `waitForServer`
+method will only work if a separate thread is servicing the client's
+callback queue. This requires passing in `true` for the
+`spin_thread` option of the client's constructor, running with a
 multi-threaded spinner, or using your own thread to service ROS callback
 queues.
 
@@ -188,9 +188,9 @@ queues.
 Full API reference for the
 [Python SimpleActionClient](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html)
 
-Suppose the \`DoDishes.action\` exists in the \`chores\` package. The
+Suppose the `DoDishes.action` exists in the `chores` package. The
 following snippet shows how to send a goal to a !DoDishes !ActionServer
-called \"do_dishes\" using Python.
+called "do_dishes" using Python.
 
 ```python
 #! /usr/bin/env python
@@ -221,9 +221,9 @@ Full API Reference for the
 [ C++ SimpleActionServer](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1SimpleActionServer.html )
 
 **Quickstart Guide:**\
-Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
+Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to write a !DoDishes !ActionServer
-called \"do_dishes\". ```cplusplus
+called "do_dishes". ```cplusplus
 #include <chores/DoDishesAction.h>  // Note: "Action" is appended
 #include <actionlib/server/simple_action_server.h>
 
@@ -252,9 +252,9 @@ Full API Reference for the
 [ Python SimpleActionServer](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1simple__action__server_1_1SimpleActionServer.html )
 
 **Quickstart Guide:**\
-Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
+Suppose you have defined `DoDishes.action` in the `chores` package.
 The following snippet shows how to write a !DoDishes !ActionServer
-called \"do_dishes\".
+called "do_dishes".
 
 ```python
 #! /usr/bin/env python
@@ -284,8 +284,8 @@ if __name__ == '__main__':
 
 ## SimpleActionServer Goal Policies
 
-The \`SimpleActionServer\` implements a single goal policy on top of the
-\`ActionServer\` class. The specification of the policy is as follows:
+The `SimpleActionServer` implements a single goal policy on top of the
+`ActionServer` class. The specification of the policy is as follows:
 
 -   Only one goal can have an active status at a time
 -   New goals preempt previous goals based on the stamp in their GoalID
@@ -296,12 +296,12 @@ The \`SimpleActionServer\` implements a single goal policy on top of the
     and the status of the old goal will be changed automatically to
     reflect this
 
-Calling \`acceptNewGoal\` accepts a new goal when one is available. The
+Calling `acceptNewGoal` accepts a new goal when one is available. The
 status of this goal is set to active upon acceptance, and the status of
 any previously active goal is set to preempted. Preempts received for
-the new goal between checking if \`isNewGoalAvailable\` or invocation of
-a goal callback and the \`acceptNewGoal\` call will not trigger a
-preempt callback. This means, \`isPreemptRequested\` should be called
+the new goal between checking if `isNewGoalAvailable` or invocation of
+a goal callback and the `acceptNewGoal` call will not trigger a
+preempt callback. This means, `isPreemptRequested` should be called
 after accepting the goal even for callback-based implementations to make
 sure the new goal does not have a pending preempt request.
 

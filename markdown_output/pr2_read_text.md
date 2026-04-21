@@ -40,7 +40,7 @@ rosnode kill sound_play
 PR2, it keep generating very low and deep voice for text-to-speech. So,
 instead, we use festival directly as a system call, but we have to kill
 the [sound_play](sound_play) otherwise the sound device will be occupied
-by [sound_play](sound_play) node . It\'s only a temporary solution right
+by [sound_play](sound_play) node . It's only a temporary solution right
 now.
 
 Now you can finally making PR2 literate: ```

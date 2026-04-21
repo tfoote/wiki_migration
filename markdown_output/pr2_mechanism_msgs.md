@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(pr2_mechanism_msgs)\>\>
+<<MsgSrvDoc(pr2_mechanism_msgs)>>

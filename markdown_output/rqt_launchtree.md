@@ -13,8 +13,8 @@ systems):
     files for editing.
 -   **Search for keywords** and filter all entries in the launch
     hierarchy to answer questions like:
--   By which file is node \"foo\" launched?
--   Why is param \"/bar\" initialized with the value 42?
+-   By which file is node "foo" launched?
+-   Why is param "/bar" initialized with the value 42?
 -   To which launch file should I add my new node related to navigation?
 -   **Get an overview** of different launch configurations.
 -   **Find inconsistencies** in param specifications (same param
@@ -26,9 +26,9 @@ systems):
 sudo apt-get install ros-indigo-rqt-launchtree
 ```
 
-Afterwards, launch RQT (you might need to pass \"\--force-discover\" the
-first time) and select the plugin from the \"Plugins\" menu. You find it
-in the \"Configuration\" folder as \"Launch Tree\".
+Afterwards, launch RQT (you might need to pass "\--force-discover" the
+first time) and select the plugin from the "Plugins" menu. You find it
+in the "Configuration" folder as "Launch Tree".
 
 ### Installation from Source
 
@@ -58,9 +58,9 @@ of the widget.
 
 -   Reload the currently open launch file by clicking the blue arrow
     button next to it.
--   Open and edit the chosen launch file by clicking \"Open\".
+-   Open and edit the chosen launch file by clicking "Open".
 -   Pass custom args (like via terminal) by entering them into the
-    \"args\" text field. This might be mandatory if a launch file does
+    "args" text field. This might be mandatory if a launch file does
     not specify default values for all args.
 
 1\. Navigate the launch file hierarchy in the tree view panel.
@@ -77,7 +77,7 @@ of the widget.
 -   Only checked types of entries will be displayed. Only exception is
     if the entry contains children which should be displayed, then it
     will always be displayed as well.
--   If \"Empty\" is checked, launch files without any displayed children
+-   If "Empty" is checked, launch files without any displayed children
     will still be displayed. Otherwise, they are only displayed if some
     of their children are displayed.
 -   If a search phrase is entered in the text field, only entries
@@ -106,4 +106,4 @@ configuration dialog.
 
 ## Report a Bug
 
-\<\<GitHubIssues(pschillinger/rqt_launchtree)\>\>
+<<GitHubIssues(pschillinger/rqt_launchtree)>>

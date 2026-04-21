@@ -13,4 +13,4 @@ You should now be good to go!
 ## Usage
 
 Please see
-[Jackal\'s Simulation Tutorial](http://docs.ros.org/latest-available/api/jackal_tutorials/html/simulation.html).
+[Jackal's Simulation Tutorial](http://docs.ros.org/latest-available/api/jackal_tutorials/html/simulation.html).

@@ -13,10 +13,10 @@ Usage: rosrun cv_mech_turk2 session_results.py \--session=SESSION
 -   \--server - the URI or alias of the server
 -   \--size=640x480 - will convert annotations to 640x480 frame. By
     default, the annotations are converted to the resolution of the
-    downloaded image (\"TRUESIZE\"). \"NONE\" will force no conversion.
+    downloaded image ("TRUESIZE"). "NONE" will force no conversion.
     Otherwise, the annotation will be converted to the specified width
     and height.
--   \--truesize - same as \--size=\"TRUESIZE\"
+-   \--truesize - same as \--size="TRUESIZE"
 -   \--naming - determines how to name the local filenames (image and
     annotations). By default (\--naming=original), the images and
     annotations use the original image name (e.g. frame0001.jpg) that as
@@ -26,7 +26,7 @@ Usage: rosrun cv_mech_turk2 session_results.py \--session=SESSION
     ID will be used as the local name for the image and the submission.
 -   \--filter whether to filter by the quality. By default the filter is
     good and only the submissions that have a good grade are downloaded.
-    \"\--filter=none\" downloads all submissions.
+    "\--filter=none" downloads all submissions.
 
 ## submit_image.py
 
@@ -38,7 +38,7 @@ Usage: rosrun cv_mech_turk2 \--session=SESSION \--server=SERVER
 
 -   session - session ID to submit images to (required).
 -   server - server URI (e.g. <http://vm6.willowgarage.com/> or server
-    alias e.g. \"default\" or \"test\")
+    alias e.g. "default" or "test")
 -   web_jpeg_quality - 0-100 - what jpeg quality should be used for
     imgae display on the server. The server will keep and store the
     original, but the actual tasks would use the reduced quality images.

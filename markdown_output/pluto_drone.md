@@ -1,4 +1,4 @@
-\<\<IncludeCSTemplate(TutorialCSHeaderTemplate)\>\>
+<<IncludeCSTemplate(TutorialCSHeaderTemplate)>>
 
 ## Supported Hardware
 
@@ -30,7 +30,7 @@ catkin_make
 ## Nodes
 
 -   **plutonode**\
-    The \`plutonode\` provides a communication with Pluto/PlutoX drone
+    The `plutonode` provides a communication with Pluto/PlutoX drone
 
 ```
 rosrun plutodrone plutonode
@@ -282,7 +282,7 @@ rosrun plutodrone plutonode
 
 5\. Send data: Use PlutoMsg to send RC data to drone and add plutoIndex
 in every PlutoMsg command. This index is the same as the index of the IP
-within \'all_ips\' vector.\
+within 'all_ips' vector.\
 
 -   **Note**: This feature is possible with ESP wifi and will not work
     over camera wifi of Pluto/PlutoX.\

@@ -32,7 +32,7 @@ sh test.sh
 ```
 
 Which will read in a test image, a letter correlation matrix and a
-dictionary, output an image named **\*\_detection.jpg under the same
+dictionary, output an image named **\*_detection.jpg under the same
 directory, showing detected region with acceptable ocr results and final
 output text in the right side of the image.**
 

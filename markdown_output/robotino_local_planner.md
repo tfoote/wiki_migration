@@ -1,29 +1,29 @@
 ## Overview
 
-The \`robotino_local_planner::RobotinoLocalPlanner\` is a local planner
-for Robotino which complies with the \`nav_core::BaseLocalPlanner\`
+The `robotino_local_planner::RobotinoLocalPlanner` is a local planner
+for Robotino which complies with the `nav_core::BaseLocalPlanner`
 interface.
 
 ![](attachment:robotino_navigation_ros.png)
 
 ## The RobotinoLocalPlanner
 
-The \`robotino_local_planner::RobotinoLocalPlanner\` is a simple local
+The `robotino_local_planner::RobotinoLocalPlanner` is a simple local
 planner that simply follows the path set by the global planner. The
-\`RobotinoLocalPlanner\` looks for a next heading point on the global
+`RobotinoLocalPlanner` looks for a next heading point on the global
 plan (which can be set as a parameter. See below.) and calculates and
 publishes linear and angular velocites for Robotino on the
-\`/robotino_cmd_vel\` topic.
+`/robotino_cmd_vel` topic.
 
-The collision avoidance is carried out by the \`robotino_safety_node\`
+The collision avoidance is carried out by the `robotino_safety_node`
 from the [robotino_safety](robotino_safety) package which is subscribed
-to the \`/robotino_cmd_vel\` topic.
+to the `/robotino_cmd_vel` topic.
 
 ### Usage
 
-The \`robotino_local_planner::RobotinoLocalPlanner\` is loaded as a
+The `robotino_local_planner::RobotinoLocalPlanner` is loaded as a
 local planner plugin for the [move_base](move_base) node by default when
-launching the \`navigation.launch\` file from the
+launching the `navigation.launch` file from the
 [robotino_navigation](robotino_navigation) package.
 
 ### ROS Parameters

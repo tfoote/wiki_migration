@@ -9,7 +9,7 @@ for
 -   Source: git
     <https://github.com/RobotnikAutomation/phantomx_reactor_arm.git>
 
-![PhantomX_Reactor\|width=\"600px\"](attachment:phantomx_reactor.jpg)
+![PhantomX_Reactor\|width="600px"](attachment:phantomx_reactor.jpg)
 
 ## List of packages
 

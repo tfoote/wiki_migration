@@ -1,11 +1,11 @@
 ## WG Inventory System
 
-The Willow Garage Inventory System, known as \"Invent\", stores as
+The Willow Garage Inventory System, known as "Invent", stores as
 device history record (DHR) for components of the PR2 and other Willow
 Garage products. The inventory system is located at
 <http://invent.willowgarage.com>.
 
-A separate, \"debug\", system exists at <http://cmi.willowgarage.com>.
+A separate, "debug", system exists at <http://cmi.willowgarage.com>.
 This system contains a mirror of the real Invent database for debugging
 and testing.
 
@@ -19,14 +19,14 @@ products used at Willow Garage.
 -   **Product/Part** - Type of component. Ex: Hokuyo laser scanner
 -   **Item** - Serialized component. Ex: Prosilica camera #109104
 -   **Reference** - Unique identifier that can be attached to an
-    individual part. This is usually a manufacturer\'s serial number or
+    individual part. This is usually a manufacturer's serial number or
     MAC address.
 -   **Sub-items/Children** - Any items that are assembled into the
     current item.
 -   **Location/Parent** - Location a part can be stored or moved to.
 -   **Key-Value** - Items can have arbitrary keys, stored with
-    designated values. All qualification tests set the \"Test Status\"
-    key to \"PASS\".
+    designated values. All qualification tests set the "Test Status"
+    key to "PASS".
 -   **Attachment** - Attachment files of any binary type can be linked
     to an item or part.
 
@@ -35,16 +35,16 @@ products used at Willow Garage.
 Invent serial numbers are of the form: ```
 68-0XXXX-0YYYY
 ``` The
-first values, \`XXXX\`, are the part number. All Hokuyo laser scanners
-have the part number \"3134\". The second, \`YYYY\`, is the serial
-number of the device. Serial numbers are increasing from \"0000\" for
+first values, `XXXX`, are the part number. All Hokuyo laser scanners
+have the part number "3134". The second, `YYYY`, is the serial
+number of the device. Serial numbers are increasing from "0000" for
 each device.
 
 #### Users
 
 Invent allows users to:
 
--   Lookup items by serial number or \"reference\"
+-   Lookup items by serial number or "reference"
 -   Assemble components together
 -   Move items to a new location
 -   Print barcode labels
@@ -89,7 +89,7 @@ if iv.get_test_status(serial):
     iv.setNote(serial, "Item has finished with all testing")
 ```
 
-Client functions will log in automatically. Calling the \`login()\`
+Client functions will log in automatically. Calling the `login()`
 method can be useful to check a username and password.
 
 ### Analyzing Test Data

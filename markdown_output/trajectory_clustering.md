@@ -2,11 +2,11 @@
 
 ## Installation
 
-This package depends on Kasper Peeters\' tree.hh library for C++. Follow
+This package depends on Kasper Peeters' tree.hh library for C++. Follow
 the instructions [here](http://tree.phi-sci.com/download.html) to
 install and compile it.
 
-You\'ll need to edit CMakeLists.txt to reflect the location of the
+You'll need to edit CMakeLists.txt to reflect the location of the
 tree.hh library. Specifically, set THIRDPARTY_SRCS to the parent
 directory of the *tree-2.81* directory.
 

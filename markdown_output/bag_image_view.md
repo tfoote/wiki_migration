@@ -12,7 +12,7 @@ example of how to access the bagserver.
 
 ## Tutorials
 
-Here\'s how to use it:
+Here's how to use it:
 
 Make all: ```
 rosmake bagserver bag_image_view

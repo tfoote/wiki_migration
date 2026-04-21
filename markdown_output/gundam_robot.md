@@ -12,4 +12,4 @@ $ roslaunch gundam_rx78_gazebo gundam_rx78_world.launch
 
 ## Questions?
 
-\<\<GitHubIssues(gundam-global-challenge/gundam_robot)\>\>
+<<GitHubIssues(gundam-global-challenge/gundam_robot)>>

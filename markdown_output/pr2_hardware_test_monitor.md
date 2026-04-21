@@ -5,34 +5,34 @@ hardware systems on the PR2 during production testing. This package does
 not contain a stable or supported API, but it is used internally by
 Willow Garage production team members to monitor hardware.
 
-The node \`pr2_hw_test_monitor\` is can be run as a \"monitor\" to check
-a robot of device under test. The monitor loads \"listeners\" to observe
+The node `pr2_hw_test_monitor` is can be run as a "monitor" to check
+a robot of device under test. The monitor loads "listeners" to observe
 look for specific events or conditions. The monitor polls the listeners
 for status, and resets or halts listeners as necessary. Using different
 listener configurations, the monitor can check almost any PR2 system or
 sub-system.
 
 The monitor node publishes
-\<\<MsgLink(pr2_self_test_msgs/TestStatus)\>\> on the \`test_status\`
+<<MsgLink(pr2_self_test_msgs/TestStatus)>> on the `test_status`
 topic with data it collects from listeners. It also publishes
-\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\> on \`diagnostics\` that
+<<MsgLink(diagnostic_msgs/DiagnosticArray)>> on `diagnostics` that
 it collects from the listeners.
 
 ## Configuring a Monitor
 
 ### Listeners
 
-Listeners should be subclasses of \`pr2_hw_listener/PR2HWListenerBase\`.
+Listeners should be subclasses of `pr2_hw_listener/PR2HWListenerBase`.
 
-The \`halt\` and \`reset\` methods should halt or reset the device under
+The `halt` and `reset` methods should halt or reset the device under
 test. This could mean, for example, calling the
-\`pr2_etherCAT/reset_motors\` service.
+`pr2_etherCAT/reset_motors` service.
 
 ### Loading Listeners
 
 Listeners are loaded by parameters in the private namespace of the
-\`pr2_hw_test_monitor\` node. This example loads a \`CameraListener\`
-and an \`EthercatListener\`: ```
+`pr2_hw_test_monitor` node. This example loads a `CameraListener`
+and an `EthercatListener`: ```
 ethercat:
   type: EthercatListener
   file: ethercat_listener
@@ -40,9 +40,9 @@ camera:
   type: CameraListener
   file: camera_listener
 ``` The parameters
-\`type\` and \`file\` are mandatory, and specify the class name and
-filename/submodule of the listener, respectively. The \`file\` is
-assumed to be in the package \`pr2_hardware_test_monitor\`.
+`type` and `file` are mandatory, and specify the class name and
+filename/submodule of the listener, respectively. The `file` is
+assumed to be in the package `pr2_hardware_test_monitor`.
 
 ## Monitor Behavior
 
@@ -54,27 +54,27 @@ diags ([ diagnostic_msgs/DiagnosticStatus ]) : Diagnostics to publish
 ```
 
 The monitor collects the status level and message and publishes it to
-the output topic \`test_status\` as a
-\<\<MsgLink(pr2_self_test_msg/TestStatus)\>\>.
+the output topic `test_status` as a
+<<MsgLink(pr2_self_test_msg/TestStatus)>>.
 
 ### Output Level + Message
 
 The output level is set to the maximum of the level of the listeners.
 
 The message is assembled from a string of errors and warning messages.
-If the status is \"0\", the message is \"OK\".
+If the status is "0", the message is "OK".
 
-In order to detect transient errors, the monitor will \"latch\" errors
+In order to detect transient errors, the monitor will "latch" errors
 until it is reset. This latching happens after a grace period ends.
 
 ### Halt/Reset
 
-The monitor advertises the services \`halt_test\` and \`reset_test\`
-(both of type \<\<SrvLink(std_srvs/Empty)\>\>).
+The monitor advertises the services `halt_test` and `reset_test`
+(both of type <<SrvLink(std_srvs/Empty)>>).
 
-When halted, the monitor calls the \`halt\` method on all listeners and
-likewise on \`reset\`. Listeners must start or stop hardware, for
-example by calling \`pr2_etherCAT/reset_motors\`.
+When halted, the monitor calls the `halt` method on all listeners and
+likewise on `reset`. Listeners must start or stop hardware, for
+example by calling `pr2_etherCAT/reset_motors`.
 
 After a reset, any latched errors are cleared and a 30 second grace
 period begins. Any errors that occur in the 30 second grace period are
@@ -82,15 +82,15 @@ not latched.
 
 ### Exceptions and Error Conditions
 
-The monitor node listens to a \`/heartbeat\` topic of type
-\<\<MsgLink(std_msgs/Empty)\>\>. If the there is not traffic on this
+The monitor node listens to a `/heartbeat` topic of type
+<<MsgLink(std_msgs/Empty)>>. If the there is not traffic on this
 topic for 300 seconds, the monitor node will halt all listeners and
 report an error.
 
 If any listener fails to load, the monitor will report an error with a
-message of \"Listener Startup Error\". This can happen if either the
-\`type\` or \`file\` parameters are not specified, a listener doesn\'t
-exist, or a listener returns false on \`create\`.
+message of "Listener Startup Error". This can happen if either the
+`type` or `file` parameters are not specified, a listener doesn't
+exist, or a listener returns false on `create`.
 
 ## Monitor Node ROS API
 
@@ -128,34 +128,34 @@ srv{
 
 ## Listener Info
 
-Each listener is initialized using the \`create()\` method with a given
+Each listener is initialized using the `create()` method with a given
 set of parameters. The descriptions below explain what parameters, if
 any, a listener needs, and the ROS API of each listener.
 
 ### EtherCAT Listener
 
-Monitors \`pr2_etherCAT/motors_halted\` and \`calibrated\` topics.
+Monitors `pr2_etherCAT/motors_halted` and `calibrated` topics.
 Reports an error if motors halted, and a warning if uncalibrated.
 
-\`halt\` method halts motors, \`reset\` method resets them.
+`halt` method halts motors, `reset` method resets them.
 
 The EtherCAT Listener allows at most 10 net dropped packets per hour
 during tests. Net dropped packets are defined as dropped packets minus
-late packets. If more dropped packets are reported by \"EtherCAT
-Master\" in the diagnostics, the listener will halt motors and report
-\"Dropped Packets\". See.
+late packets. If more dropped packets are reported by "EtherCAT
+Master" in the diagnostics, the listener will halt motors and report
+"Dropped Packets". See.
 
 Encoder errors will cause the listener to report an error. This error
-will be cleared on \`reset\`.
+will be cleared on `reset`.
 
 Parameters:
 
--   \`drops_per_hour\` ( \`int\` ) : Allows users to specify a maximum
+-   `drops_per_hour` ( `int` ) : Allows users to specify a maximum
     packet drop rate. Default: 10.
 
 ### Transmission Listener
 
-Monitors \`pr2_transmission_check/trans_status\` for status of all robot
+Monitors `pr2_transmission_check/trans_status` for status of all robot
 transmissions. The [pr2_transmission_check](pr2_transmission_check) node
 must be running for this to work.
 
@@ -169,36 +169,36 @@ trans:
 
 This makes sure the caster does not slip more than a prescribed amount
 during the caster burn in. When the caster slip detection is enabled,
-the \`TransmissionListener\` will subscribe to
-\`pr2_controller_manager/mechanism_statistics\` and verify the caster\'s
+the `TransmissionListener` will subscribe to
+`pr2_controller_manager/mechanism_statistics` and verify the caster's
 rotation.
 
 ### CameraListener
 
-The !CameraListener listens for diagnostics from any \`wge100\` camera
+The !CameraListener listens for diagnostics from any `wge100` camera
 node.
 
 It will report an error if the camera reports error values three times
 (consecutively), or goes more than five second before it reports an
-\"OK\" reading.
+"OK" reading.
 
 The listener will report a warning for transient error conditions, like
 when the camera reports a one-off error.
 
-Reports stale if camera doesn\'t respond for 10 seconds.
+Reports stale if camera doesn't respond for 10 seconds.
 
 A regression test in this package checks for this behavior.
 
 ### Diagnostics Aggregated Listener
 
-Listens to the \`/diagnostics_agg\`
-(\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\>) to check for any
+Listens to the `/diagnostics_agg`
+(<<MsgLink(diagnostic_msgs/DiagnosticArray)>>) to check for any
 problems in the diagnostics.
 
 Parameters:
 
--   \`ignore_diags\` ( \[ \`str\` \] ) - Diagnostic categories to ignore
--   \`whitelist\` ( \[ \`str\` \] ) - Focus only on these categories of
+-   `ignore_diags` ( \[ `str` \] ) - Diagnostic categories to ignore
+-   `whitelist` ( \[ `str` \] ) - Focus only on these categories of
     diagnostics.
 
 ### Hokuyo Listener
@@ -209,17 +209,17 @@ diagnostics.
 
 Parameters:
 
--   \`name\` ( \`str\` ) - Name of hokuyo node. Ex: \`hokuyo_node\`
+-   `name` ( `str` ) - Name of hokuyo node. Ex: `hokuyo_node`
 
 ### ECStats Listener
 
-Listens to dropped packets and/or links from an \`ecstats\` node in the
-\`ectools\` package.
+Listens to dropped packets and/or links from an `ecstats` node in the
+`ectools` package.
 
 ### DriveListener
 
-Listens to \`base_driving\` (\<\<MsgLink(std_msgs/Bool)\>\> topic and
+Listens to `base_driving` (<<MsgLink(std_msgs/Bool)>> topic and
 reports if PR2 is driving during burn in test.
 
--   Halt - Calls \`pr2_base/halt_drive\` service to stop driving.
--   Reset - Calls \`pr2_base/reset_drive\` service to start driving.
+-   Halt - Calls `pr2_base/halt_drive` service to stop driving.
+-   Reset - Calls `pr2_base/reset_drive` service to start driving.

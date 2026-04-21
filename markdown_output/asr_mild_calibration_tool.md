@@ -1,17 +1,17 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 This package provides a tool to collect transformation data between the
-mild\'s laserscanner sensor and it\'s camera head. This data can then
-used calibrate the mild\'s kinematic chain using the
+mild's laserscanner sensor and it's camera head. This data can then
+used calibrate the mild's kinematic chain using the
 [asr_kinematic_chain_optimizer](asr_kinematic_chain_optimizer).
 
 ## Functionality
 
 ### Approach
 
-In order to calibrate the kinematic chain between the mild\'s camera and
+In order to calibrate the kinematic chain between the mild's camera and
 its laserscanner, information about their relative transformation
 towards each other has to be gathered.
 
@@ -20,12 +20,12 @@ Our basic approach will be to recognize an object of known proportions
 simultaneously and retrieve its pose relative to both sensors from the
 data.
 
-![height=\"570\",width=\"566\"](attachment:MILD_Calibration_Approach.png)
+![height="570",width="566"](attachment:MILD_Calibration_Approach.png)
 
 Using these relative transformations, the transformation between camera
 and laserscanner can be calculated easily.
 
-![height=\"331\",width=\"338\"](attachment:MILD_Calibration_PTU_Axis.png)
+![height="331",width="338"](attachment:MILD_Calibration_PTU_Axis.png)
 
 Since the kinematic chain between scanner and camera contains two
 rotational joints, resulting in two degrees of freedom, a set of various
@@ -46,7 +46,7 @@ p,,2 ,,and p,,3,, as well as the priorly known proportions, the pose of
 its top point **T** can be calculated.
 
 From this, the pose of the calibration object relative to the
-laserscanner\'s sensor frame can be determined easily.
+laserscanner's sensor frame can be determined easily.
 
 Unfortunately, the position of the top point can not always be
 determined unambiguously, but using a set of sanity checks and filters,
@@ -55,17 +55,17 @@ implausible poses can often be discarded.
 ### AR-Marker Recognition
 
 Once a plausible pose for the calibration object relative to the
-robot\'s laserscanner has been found, the camera system can be used to
+robot's laserscanner has been found, the camera system can be used to
 recognize the two AR-markers attached to the calibration object.
 
 During recognition, the PTU will be moved to several different joint
 configurations in order to gather the necessary variety in the
-calibration data that will later be needed to calculate the robot\'s
+calibration data that will later be needed to calculate the robot's
 kinematic chain out of it.
 
 Each time a marker is detected, the relative pose between the marker and
-the camera is calculated, which can then be used to get the camera\'s
-pose relative to laserscanner\'s base frame.
+the camera is calculated, which can then be used to get the camera's
+pose relative to laserscanner's base frame.
 
 This transformation, along with the PTU configuration with which the
 transformation has been recorded, can then finally be exported to a set
@@ -126,7 +126,7 @@ comparable to this system is advisable.
 #### Calibration object
 
 A calibration object has been constructed, that can both be recognized
-by the laserscanner as well as the robot\'s 2D cameras.
+by the laserscanner as well as the robot's 2D cameras.
 
 All relevant specifications for the calibration object can be retrieved
 and even changed using the **calibration_object_steep.yaml** file.
@@ -135,14 +135,14 @@ The lower part consist of two identical wooden sides mounted on an
 aluminium frame. The longer side of each triangle measures 1.143 m with
 an angle of 26.6° on top. The diagonal of each side measures 1.28 m.
 
-![height=\"543\",width=\"305\"\|height=\"608\",width=\"305\"](attachment:Calibration_Object_Sides.png)
-![height=\"543\",width=\"306\"](attachment:Calibration_Object_Skeleton.png)
+![height="543",width="305"\|height="608",width="305"](attachment:Calibration_Object_Sides.png)
+![height="543",width="306"](attachment:Calibration_Object_Skeleton.png)
 
 The upper part consists of two AR-markers with an edge length of 8 cm,
 that have been mounted on the top of the frame in a right angle.
 
-![height=\"378\",width=\"275\"\|height=\"446\",width=\"327\"](attachment:Calibration_Object_Assembled.png)
-![height=\"378\",width=\"444\"\|height=\"272\",width=\"320\"](attachment:Calibration_Object_Marker.png)
+![height="378",width="275"\|height="446",width="327"](attachment:Calibration_Object_Assembled.png)
+![height="378",width="444"\|height="272",width="320"](attachment:Calibration_Object_Marker.png)
 
 #### Sensors/Actuators
 
@@ -153,8 +153,8 @@ components are required for the tool work.
 Two **laserscanners** have been integrated into the calibration
 software:
 
-![height=\"265\",width=\"266\"](attachment:Laserscanner_PLS101.png)
-![height=\"264\",width=\"267\"\|height=\"266\",width=\"269\"](attachment:Laserscanner_LMS400.png)
+![height="265",width="266"](attachment:Laserscanner_PLS101.png)
+![height="264",width="267"\|height="266",width="269"](attachment:Laserscanner_LMS400.png)
 
 Both the **SICK PLS 101** (left), which is used in the mild platform, as
 well as the **SICK LMS 400** (right), which has been used for evaluation
@@ -209,7 +209,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   **\<tf_visualizer_camera_input_topic\>**
+-   **<tf_visualizer_camera_input_topic>**
 -   publisher: a[sr_resources_for_vision](asr_resources_for_vision)
 
 ```{=html}
@@ -272,7 +272,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   **\<tf_visualizer_camera_output_topic\>**
+-   **<tf_visualizer_camera_output_topic>**
 -   message type: /sensor_msgs/Image
 -   description: camera image overlayed with the frames specified in the
     **tf_visualizer_frames** parameter
@@ -284,13 +284,13 @@ calibration process are being published:
 
 -   **calibration_transforms**
 -   object_top
--   Frame at the top of the calibration object\'s tetrahedon
+-   Frame at the top of the calibration object's tetrahedon
 
 ```{=html}
 <!-- -->
 ```
 -   object_base
--   Frame at the base of the calibration object\'s tetrahedon
+-   Frame at the base of the calibration object's tetrahedon
 
 ```{=html}
 <!-- -->
@@ -303,38 +303,38 @@ calibration process are being published:
 ```
 -   object_scan_frame
 -   Frame at the intersection of the calibration object with
-    laserscanner\'s sensor plane
+    laserscanner's sensor plane
 
 ```{=html}
 <!-- -->
 ```
 -   marker_left
--   Lower right corner of the calibration object\'s left marker
+-   Lower right corner of the calibration object's left marker
 
 ```{=html}
 <!-- -->
 ```
 -   marker_right
--   Lower left corner of the calibration object\'s right marker
+-   Lower left corner of the calibration object's right marker
 
 ```{=html}
 <!-- -->
 ```
 -   camera_frame
--   Pose of the camera system relative to the calibration object\'s
+-   Pose of the camera system relative to the calibration object's
     markers
 
 ```{=html}
 <!-- -->
 ```
 -   camera_left_frame
--   Pose of the left camera according to the robot\'s kinematic chain
+-   Pose of the left camera according to the robot's kinematic chain
 
 ```{=html}
 <!-- -->
 ```
 -   camera_right_frame
--   Pose of the right camera according to the robot\'s kinematic chain
+-   Pose of the right camera according to the robot's kinematic chain
 
 ### Parameters
 
@@ -345,7 +345,7 @@ calibration_tool_settings.yaml file. The following parameters are
 available:
 
 -   **Laserscanner detection**: This set of parameters are required for
-    the detection of the calibration object with the robot\'s
+    the detection of the calibration object with the robot's
     laserscanner.
 -   **laserscanner_maxVariance: **Used for the max-variance-filter in
     the edge detection. When trying to detect a side of the calibration
@@ -369,17 +369,17 @@ available:
 -   **feasibilityChecker_maxAngleDeviation:** When calculating the pose
     of a detected calibration object, the system can (in the context of
     the mild platform) usually expect the object to stand approximately
-    to parallel to the laserscanner\'s sensor plane. Therefore,
+    to parallel to the laserscanner's sensor plane. Therefore,
     calculation results with poses that deviate too much from this
     orientation can be discarded. This parameter specifies the maximum
-    allowed angle deviation relative to laserscanner\'s sensor plane in
+    allowed angle deviation relative to laserscanner's sensor plane in
     order to be considered a valid result.
 
 ```{=html}
 <!-- -->
 ```
 -   **laserscanner_variationStep: **When trying to find the exact center
-    for calibration object\'s edge, for each candidate point, a set of
+    for calibration object's edge, for each candidate point, a set of
     sampling points aligned in a regular grid around it are considered
     as candidates as well. The distance between two neighbouring points
     in this grid is described by this value.
@@ -404,14 +404,14 @@ available:
 ```
 -   **laserscanner_type: **For detecting the calibration object, two
     laserscanners can be selected. Options are the LMS400 or the PLS101
-    (see \"**Needed Hardware**\" for more information)
+    (see "**Needed Hardware**" for more information)
 
 ```{=html}
 <!-- -->
 ```
 -   **Camera marker detection: **This set of parameters are required to
     detected the calibration object (more precisely, the AR-markers
-    attached to it) via the robot\'s cameras.
+    attached to it) via the robot's cameras.
 -   **tilt_min_angle: **Mininum angle of the tilt joint during the
     automatic marker search
 
@@ -490,7 +490,7 @@ available:
 ```
 -   **Visualization: **The following parameters are need to generate an
     overlay over the camera image, visualizing a set of tf frames over
-    the camera\'s image
+    the camera's image
 -   **tf_visualizer_camera_input_topic: **Name of the topic, to which
     the original camera image is published
 

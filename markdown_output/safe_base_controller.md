@@ -1,19 +1,19 @@
 ## Safe Base Controller
 
-The \`safe_base_controller\` is a modified \`base_controller\` for the
+The `safe_base_controller` is a modified `base_controller` for the
 PR2. It subscribes to a topic where velocity limits for the base can be
 specified (implemented in a deadman manner, limits greater than zero
 have to be periodically granted otherwise the limit will timeout and the
 base stop).
 
 To use this controller the robot has to be started with the
-\`safe_base_controller\` in the package path. This can be either
-achieved by checking out and compiling the package as the \`ros\` user
-or by starting the robot with \`sudo robot start -e\`. See
-\`controller_manager\` help for more info.
+`safe_base_controller` in the package path. This can be either
+achieved by checking out and compiling the package as the `ros` user
+or by starting the robot with `sudo robot start -e`. See
+`controller_manager` help for more info.
 
-Once the robot has been started and the controller is visible (\`rosrun
-pr2_controller_manager pr2_controller_manager list-types\`) you can
+Once the robot has been started and the controller is visible (`rosrun
+pr2_controller_manager pr2_controller_manager list-types`) you can
 start the safe_base_controller with the provided launch file.
 
 ## Nodes

@@ -60,7 +60,7 @@ window where you could see the simulated environment.
 
 ### Loggin screen
 
-To start the program it\'s necessary to log into an Skype account.
+To start the program it's necessary to log into an Skype account.
 
 ### Main window
 
@@ -118,11 +118,11 @@ you to detect a desired object:
 
 ![\|width=80%](attachment:detection_window.png)
 
-If rviz has been runned from the **Tools** menu, the ***Spawn objects in
-RVIZ*** button will be enabled and you will can to spawn detected
-objects into rviz. You can click over the object to see extra info about
-its relative position. Finally, if objects has been detected, *Grasping
-tab will* be activated.
+If rviz has been runned from the **Tools** menu, the
+**`'Spawn objects in RVIZ`**' button will be enabled and you will can
+to spawn detected objects into rviz. You can click over the object to
+see extra info about its relative position. Finally, if objects has been
+detected, *Grasping tab will* be activated.
 
 The **Grasping tab** allows to grasp a desired object without use the
 decision making. The robot tries to grasp the object without move the
@@ -139,7 +139,7 @@ Finally, the **Manual tab** has three sub-menus: Joystick, Interactive
 Markers and Phantom Haptic. Currently, only the second sub-menu is
 working. From there, you can launch different options to the rviz
 window. All the interactive markers that you can launch from this menu
-are also launchable from the **Tools-\>rviz** menu.
+are also launchable from the **Tools->rviz** menu.
 
 ![\|width=80%](attachment:im_window.png)
 
@@ -173,7 +173,7 @@ interact with some markers as the teleop, the assisted arm navigation,
 etc. This window is editable, but first time load the configuration from
 the **srs_ui_pro/rviz_confing/config** file. Some of its features (the
 interactive markers) should be launched from the main window
-(**Tools-\>rviz-\>** or **Manual tab-\>Interactive Markers tab**). It
+(**Tools->rviz->** or **Manual tab->Interactive Markers tab**). It
 should looks like this:
 
 ![\|width=90%](attachment:rviz_window.png)
@@ -190,11 +190,11 @@ rosrun srs_ui_pro srs_ui_pro
 After that, the Main Window should appears. If all is well configured
 (see Instalation section) the *Status log box* should display:
 **\[INFO\] You can now initialize Skype**. Go to
-**Tools-\>skype-\>Start** to run Skype features. The next blue message
+**Tools->skype->Start** to run Skype features. The next blue message
 should be displayed into the Status log: **\[SKYPE\]: Connected!**. If a
 red message appears, something is wrong configured.
 
-As we still don\'t have defined a request protocol, we are using a fake
+As we still don't have defined a request protocol, we are using a fake
 request. So, to start the connection you must double clicking over the
 only one request in the grid: (id=4815162342). By defauly, it tries to
 connect to localhost, so a message like this should be displayed:
@@ -223,7 +223,7 @@ start again the connection.
 ### Skype features
 
 If the *Status log box* shows the message **\[INFO\] You can now
-initialize Skype**. Go to **Tools-\>Skype-\>Start**, a message like this
+initialize Skype**. Go to **Tools->Skype->Start**, a message like this
 should be displayed: **\[SKYPE\]: Connected!**.
 
 Into the **Contacts tab** you can see all the connected contacts. This
@@ -249,31 +249,31 @@ you can accept his call double clicking over the event.
 
 ### rviz tools
 
-After to start rviz (**Tools-\>Rviz-\>Run**) you can run some tools to
+After to start rviz (**Tools->Rviz->Run**) you can run some tools to
 work over it. Some of this tools are runables from his own panel or from
-Tools-\>Rviz-\>Visualization/Manipulation.
+Tools->Rviz->Visualization/Manipulation.
 
 The next list contains all the optional tools runables from the
 **Tools** menu:
 
 **Visualization**:
 
-Visualization-\>Distance: Display a distance line between the selected
+Visualization->Distance: Display a distance line between the selected
 joint and a obstacle.
 
-Visualization-\>Cam Display: Display a cam image over the point cloud.
+Visualization->Cam Display: Display a cam image over the point cloud.
 
-Visualization-\>Spawn Objects: Add/remove movable objects (detected
+Visualization->Spawn Objects: Add/remove movable objects (detected
 objects) or furniture objects (sofa, fridge, table, etc).
 
 **Manipulation**:
 
-Manipulation-\>Assisted arm navigation: Allows to teleoperate the
+Manipulation->Assisted arm navigation: Allows to teleoperate the
 arm/hand.
 
-Manipulation-\>Move base: Allows to teleoperate the robot base.
+Manipulation->Move base: Allows to teleoperate the robot base.
 
-Manipulation-\>Go to\...: Allows to indicate a position for the robot
+Manipulation->Go to\...: Allows to indicate a position for the robot
 base (and it goes there).
 
 ## Limitations
@@ -281,7 +281,7 @@ base (and it goes there).
 At this moment there are some troubles that should be cleared:
 
 . How will we get requests? What format will have this requests? How we
-will accept and connect to the external request? We don\'t have a
+will accept and connect to the external request? We don't have a
 defined request protocol, at this moment we are only working at local.
 
 . Are video options needed? We have found a lot of problems to integrate

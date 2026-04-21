@@ -1,6 +1,6 @@
 ## Overview
 
-The \`rgbd_depth_correction\` package provides a tool for calculating
+The `rgbd_depth_correction` package provides a tool for calculating
 and correcting the depth error (distortion and bias) of a RGBD camera.
 This is done by placing a calibration target on a flat surface, then
 comparing the sensor depth data to the position found using the
@@ -18,8 +18,8 @@ The calibration results are then used by the depth correction nodelet
 which runs in the camera nodelet manager and publishes a corrected point
 cloud.
 
-![RGBD point cloud prior to correction\|width=\"300\"](attachment:uncorrected.jpg)
-![RGBD point cloud after correction\|width=\"300\"](attachment:corrected.jpg)
+![RGBD point cloud prior to correction\|width="300"](attachment:uncorrected.jpg)
+![RGBD point cloud after correction\|width="300"](attachment:corrected.jpg)
 
 ## Motivation
 

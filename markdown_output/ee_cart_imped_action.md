@@ -76,9 +76,9 @@ r_arm_cart_imped_action_node:
 The EECartImpedAction provides an
 [ action server](actionlib#Implementing_an_ActionServer ) that takes in
 goals of the type
-\<\<MsgLink(ee_cart_imped_msgs/EECartImpedActionGoal)\>\> and publishes
+<<MsgLink(ee_cart_imped_msgs/EECartImpedActionGoal)>> and publishes
 feedback of the type
-\<\<MsgLink(ee_cart_imped_msgs/EECartImpedActionFeedback)\>\>.
+<<MsgLink(ee_cart_imped_msgs/EECartImpedActionFeedback)>>.
 
 ```clearsilver
 sub {

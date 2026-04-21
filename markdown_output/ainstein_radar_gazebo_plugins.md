@@ -6,7 +6,7 @@ based on the existing laser
 [RayPlugin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1RayPlugin.html)
 with additional processing to convert laser range detections to radar
 targets and publish them as
-\<\<MsgLink(ainstein_radar_msgs/RadarTargetArray)\>\> messages.
+<<MsgLink(ainstein_radar_msgs/RadarTargetArray)>> messages.
 
 While the `libgazebo_radar_sensor_plugin.so` shared library (plugin) is
 intended to be generic enough to simulate any Ainstein radar, it
@@ -21,7 +21,7 @@ successive scans) and the SNR is filled from the returned ray intensity
 Once the package has been built (as normal in the catkin workspace),
 copy the folder(s) inside the `models/` directory to somewhere on your
 `GAZEBO_MODEL_PATH`, eg. `~/.gazebo/models` which can be added to your
-model path (if it isn\'t already) by adding this to your `.bashrc`:
+model path (if it isn't already) by adding this to your `.bashrc`:
 
 `export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/.gazebo/models`
 

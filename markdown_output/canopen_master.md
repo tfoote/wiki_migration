@@ -98,19 +98,19 @@ however.
 
 For now 2 different implementations exist with allocator plug-ins:
 
--   \`canopen::SimpleMaster::Allocator\`: wait-based implementation,
+-   `canopen::SimpleMaster::Allocator`: wait-based implementation,
     only for one process, uses half the time for reading form the bus
     and half the time for updating an writing, **this is the default**
--   \`canopen::ExternalMaster::Allocator\`: Synchronize to external SYNC
+-   `canopen::ExternalMaster::Allocator`: Synchronize to external SYNC
     message, uses half the time for reading form the bus and half the
     time for updating an writing, might be used in conjunction with
     canopen_sync_node
 
 3 additional IPC-based implementations exist, but got deprecated:
 
--   \`canopen::SharedMaster::Allocator\`: IPC-based master, uses shared
+-   `canopen::SharedMaster::Allocator`: IPC-based master, uses shared
     memory
--   \`canopen::UnrestrictedMaster::Allocator\`: like the shared master,
+-   `canopen::UnrestrictedMaster::Allocator`: like the shared master,
     but the shared memory is not restricted to a certain user
--   \`canopen::LocalMaster::Allocator\`: IPC-based implementation, only
+-   `canopen::LocalMaster::Allocator`: IPC-based implementation, only
     for one process, without shared memory

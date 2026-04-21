@@ -54,16 +54,16 @@ respect to the micro controller.
 
 ## Usage/Examples
 
-The \`us_driver\` node can be executed by: ```
+The `us_driver` node can be executed by: ```
 roslaunch ipa_odroidx_ultrasonic_interface us_driver.launch
 ```
 
 In the following example configuration yaml file, in the first cycle,
-sensor \'1\' and \'2\' are set as both pinging and listening sensors,
-sensors \'3\' and \'4\' listen to sensor \'1\' whereas \'5\' listens to
-sensor \'2\'. In the second cycle, sensors \'10\' and \'13\' are set as
-pinging sensors, sensors \'1\' and \'12\' listen to sensor \'10\' and
-sensor \'7\' and \'8\' listen to sensor \'13\':
+sensor '1' and '2' are set as both pinging and listening sensors,
+sensors '3' and '4' listen to sensor '1' whereas '5' listens to
+sensor '2'. In the second cycle, sensors '10' and '13' are set as
+pinging sensors, sensors '1' and '12' listen to sensor '10' and
+sensor '7' and '8' listen to sensor '13':
 
 ```highlight
 configurations:

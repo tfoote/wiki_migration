@@ -1,6 +1,6 @@
 ## Installation
 
-This package requires SwiftNav\'s
+This package requires SwiftNav's
 [libsbp python library](https://github.com/swift-nav/libsbp). Install
 before installing this package.
 

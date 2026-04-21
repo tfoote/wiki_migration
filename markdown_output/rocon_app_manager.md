@@ -1,7 +1,7 @@
 ## Overview
 
 Designed as an upgrade to the 2011 app manager used on turtlebots and
-pr2\'s.
+pr2's.
 
 ## Current Implementation
 
@@ -9,9 +9,9 @@ pr2\'s.
 
 The current version is a 0.7 version . It has the following features:
 
--   Advertises handles for \`/platform_info\`, \`/list_rapps\`,
-    \`/status\` and \`/invite\` to external, gateway based ros systems.
--   When invited, it will flip \`/start_rapp\` and \`/stop_rapp\`
+-   Advertises handles for `/platform_info`, `/list_rapps`,
+    `/status` and `/invite` to external, gateway based ros systems.
+-   When invited, it will flip `/start_rapp` and `/stop_rapp`
     services across to the ros system doing the inviting (the *remote
     controller*).
 -   Launches and manages a single rapp (robot/rocon app) at a single
@@ -21,7 +21,7 @@ The current version is a 0.7 version . It has the following features:
 ### Advertised Services
 
 These services are freely shared to any ros subsystem that wants to
-consume them via the [gateway\'s](rocon_gateway) advertise/pull
+consume them via the [gateway's](rocon_gateway) advertise/pull
 mechanisms. The purpose is to provide introspection to the robot (i.e.
 the system that runs the app manager) to make a decision as to whether
 it wishes to assume control of the robot. Assuming control is managed by

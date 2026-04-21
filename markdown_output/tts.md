@@ -1,6 +1,6 @@
 ## Overview
 
-The \`tts\` ROS node enables a robot to speak with a human voice by
+The `tts` ROS node enables a robot to speak with a human voice by
 providing a Text-To-Speech service. Out of the box this package listens
 to a speech topic, submits text to the Amazon Polly cloud service to
 generate an audio stream file, retrieves the audio stream from Amazon

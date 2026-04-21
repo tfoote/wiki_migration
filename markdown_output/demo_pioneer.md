@@ -15,7 +15,7 @@ Two demonstrations are provided:
 
 [Youtube](https://www.youtube.com/watch?v=n3UmgCXw5lY)
 
-If you don\'t have a real Pioneer under the hand, it is also possible to
+If you don't have a real Pioneer under the hand, it is also possible to
 use this stack on a simulated Pioneer robot. To this end you may use the
 [vrep_ros_plugin](vrep_ros_plugin) stack and follow the
 [tutorial](http://wiki.ros.org/vrep_ros_bridge/Tutorials/Pioneer%203D-X%20controlling%20its%20pose%20via%20a%20visual%20servoing%20law).
@@ -90,7 +90,7 @@ Check if you have the read/write rights in /dev/ttyUSB0. If not
 ```
 sudo chmod a+rw /dev/ttyUSB0
 ``` or even better edit
-\'/etc/udev/rules.d/51-local.rules\' and add the following line:
+'/etc/udev/rules.d/51-local.rules' and add the following line:
 
 ```
 KERNEL=="ttyUSB*", MODE="0666"
@@ -105,10 +105,10 @@ roslaunch demo_pioneer pioneer-teleop.launch
 
 On the gamepad, select the XInput interface mode. This can be done by
 sliding the a switch on the side of the gamepad to the position marked
-\"X\".
+"X".
 
-Once done, push \"left or right button trigger\" to wake the gamepad
-driver and then use the \"right mini stick\" to move the robot.
+Once done, push "left or right button trigger" to wake the gamepad
+driver and then use the "right mini stick" to move the robot.
 
 ## Start the visual servoing demo on the Pioneer
 
@@ -119,15 +119,15 @@ source ~/catkin_ws/devel/setup.bash
 roslaunch demo_pioneer demo-visual-servo-pioneer.launch
 ```
 
-This will open a windows name \"visp_auto_tracker debug display\" that
+This will open a windows name "visp_auto_tracker debug display" that
 shows the images provided by the camera. Present the target available
 [here](https://github.com/downloads/lagadic/visp_auto_tracker/template-qr-code.pdf)
 in front of the camera. It should be detected automatically. Once
-detected, on the gamepad push \"left or right button trigger\" to apply
+detected, on the gamepad push "left or right button trigger" to apply
 the visual servo command to the robot. As long as one of these two
 buttons are pressed, the command applied to the robot is the one that
 comes from the visual servoing node. If you release the button, the
-robot stops moving. You can then move it with the \"right mini stick\".
+robot stops moving. You can then move it with the "right mini stick".
 
 # Known issues
 

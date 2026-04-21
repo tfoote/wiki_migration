@@ -3,9 +3,9 @@ user-init file.
 
 Two new predicates are added in this file:
 
--   use_ros_module( \<ros-package-name\>, \'\<prolog-file-path\>\' )
+-   use_ros_module( <ros-package-name>, '<prolog-file-path>' )
     Load a prolog module from \$(rospack find
-    \<ros-package-name\>)/prolog/\<prolog-file-path\>.
+    <ros-package-name>)/prolog/<prolog-file-path>.
 -   rospack_package_path( Package, Path ) Get the absolute path of a
     package.
 
@@ -15,5 +15,5 @@ To start a prolog package within rosprolog (incl. calling its init.pl
 file and all init.pl of referenced packages), use:
 `rosrun rosprolog rosprolog <pkgname>`
 
-To generate documentation for a package in the \<pkg\>/doc folder, use:
+To generate documentation for a package in the <pkg>/doc folder, use:
 `rosrun rosprolog rosprolog-doc <pkgname>`

@@ -6,7 +6,7 @@ This package provides basic functionality for create a map.
 
 For launching this project, it is necessary to have the next device:
 
--   [Maggie\'s Base](maggie_base)
+-   [Maggie's Base](maggie_base)
 -   [Sick](sicktoolbox)
 -   [Hokuyo](hokuyo_node)
 

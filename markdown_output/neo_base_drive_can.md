@@ -99,15 +99,15 @@ or
 
 1.  insmod /path/to/pcan.ko
 
-if this still fails you\'ve to rebuild the pcan drivers.
+if this still fails you've to rebuild the pcan drivers.
 
 ** /proc/pcan exists but i fail to communicate with it**
 
 cat /proc/pcan should display your device (for example \[dng\] or
-\[usb\] ) if not you\'ve to recompile the pcan driver with your modules
+\[usb\] ) if not you've to recompile the pcan driver with your modules
 included.
 
-**I don\'t receive any can message although I can send motor commands:**
+**I don't receive any can message although I can send motor commands:**
 
 set the pcan net_dev compile flag to false and recompile the pcan driver
 

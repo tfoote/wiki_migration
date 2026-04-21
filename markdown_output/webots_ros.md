@@ -91,7 +91,7 @@ the developers on [Discord](https://discord.gg/fyPuMM4).
 
 ## Report a Bug
 
-\<\<GitHubIssues(cyberbotics/webots_ros)\>\>
+<<GitHubIssues(cyberbotics/webots_ros)>>
 
 ## Acknowledgement
 
@@ -106,7 +106,7 @@ Supported by OpenDR - Open Deep Learning Toolkit for Robotics.\
 More information: [opendr.eu](https://opendr.eu/)\
 
   -- ------------------------------------------------- -- ----------------------------------------------------------------------------------- --
-     ![EU Flag\|height=45](attachment:opendr_eu.png)      \<99%\> This project has received funding from the European Union's Horizon 2020\   
+     ![EU Flag\|height=45](attachment:opendr_eu.png)      <99%> This project has received funding from the European Union's Horizon 2020\   
                                                           research and innovation programme under grant agreement No. 871449.                 
 
   -- ------------------------------------------------- -- ----------------------------------------------------------------------------------- --

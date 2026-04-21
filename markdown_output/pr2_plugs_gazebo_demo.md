@@ -1,4 +1,4 @@
-![\|width=\"500px\"](attachment:plugs.png)
+![\|width="500px"](attachment:plugs.png)
 
 ## Running this demo
 

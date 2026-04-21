@@ -40,7 +40,7 @@ Afterwards, detect the port where your SBG device is connected (e.g.
 dmesg | grep tty
 ```
 
-and edit \`sbg_device_uart_default.yaml\` accordingly or (recommended)
+and edit `sbg_device_uart_default.yaml` accordingly or (recommended)
 define a [udev](https://wiki.debian.org/udev) rule (e.g. pointing to
 /dev/sbg)
 

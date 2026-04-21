@@ -1,7 +1,7 @@
 ## Example
 
 Using this node is discussed in
-[ROSARIA/Tutorials\|target=\"\_blank\"](ROSARIA/Tutorials/How to use ROSARIA#Using_iPhone.2BAC8-iPad_as_a_joystick).
+[ROSARIA/Tutorials\|target="_blank"](ROSARIA/Tutorials/How to use ROSARIA#Using_iPhone.2BAC8-iPad_as_a_joystick).
 Below is a demo video.
 
 [Youtube](https://www.youtube.com/watch?v=E2Ll3JcqZN0)

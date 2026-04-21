@@ -17,7 +17,7 @@ so it has to be installed on the system.
 To flash the newest firmware, simply type: ```
 rosrun leo_fw update
 ``` To
-flash the firmware from file, use the \`flash\` script:
+flash the firmware from file, use the `flash` script:
 ```
 rosrun leo_fw flash firmware.bin
 ``` The script will guide you through the flashing
@@ -29,7 +29,7 @@ which should be already started by [leo_bringup](leo_bringup), but it
 can also be started manually: ```
 rosrun rosserial_python serial_node.py _port:=/dev/serial0 _baud:=250000
 ``` Once the
-\`serial_node\` connects to the firmware, the firmware\'s ROS API should
+`serial_node` connects to the firmware, the firmware's ROS API should
 be available on the system.
 
 ```wiki

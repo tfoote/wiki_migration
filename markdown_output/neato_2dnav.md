@@ -4,11 +4,11 @@ This package contains configuration and launch files for running the
 navigation stack with the Neato XV-11. It is currently still under
 active development.
 
-\<\<Youtube(<http://www.youtube.com/watch?v=bWwwssBjg6M>)\>\>
+[Youtube](https://www.youtube.com/watch?v=http://www.youtube.com/watch?v=bWwwssBjg6M)
 
 ## Running
 
-You\'ll likely need to create your own map, but:
+You'll likely need to create your own map, but:
 ```
 roslaunch neato_node bringup.launch
 roslaunch neato_2dnav move_base.launch
@@ -17,7 +17,7 @@ roslaunch neato_2dnav move_base.launch
 ## Creating Maps
 
 [gmapping](gmapping) can be used to create maps, as with any other
-robot. We\'ve yet to find just the right set of parameters (work on the
+robot. We've yet to find just the right set of parameters (work on the
 beam likelihood is probably needed), but the following seems to work on
 the Neato for smaller maps such as the one shown below:
 ```

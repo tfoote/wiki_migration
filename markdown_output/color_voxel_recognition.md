@@ -25,15 +25,15 @@ $ roslaunch openni_camera openni_node.launch
 
 **1. learn the environment** ```
 $ bash `rospack find color_voxel_recognition`/demos/SH/learn_env.sh
-``` Press \"Enter\"
-key for saving data, and \"Ctrl+C\" ONLY ONCE for quit. (This step is
+``` Press "Enter"
+key for saving data, and "Ctrl+C" ONLY ONCE for quit. (This step is
 necessary for only once.)
 
 **2. learn objects** ```
 $ bash `rospack find color_voxel_recognition`/demos/SH/learn_obj.sh <object_name>
 ``` Put the target object
 closest from Kinect and confirm the green box contains only the object.
-Press \"Enter\" key for saving data, and \"Ctrl+C\" ONLY ONCE for quit.
+Press "Enter" key for saving data, and "Ctrl+C" ONLY ONCE for quit.
 (This step is necessary once for each object.)
 
 **3. detect one object** ```

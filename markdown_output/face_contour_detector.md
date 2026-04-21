@@ -5,7 +5,7 @@ canny filter from [opencv2](opencv2) to generate a contour image. The
 hard part is to actually find parameters (for the gaussian blur and
 canny) that generate good contour images. For different images you will
 need different parameters. This packages uses two different approaches
-to find parameters and even let\'s the user modify the parameters in a
+to find parameters and even let's the user modify the parameters in a
 gui (if so desired).\
 \
 The centrals components of the face_contour_detector are:
@@ -19,8 +19,8 @@ The centrals components of the face_contour_detector are:
     marked mask. It then tries to find good parameters for the gaussian
     blur and a canny filter, so that a good contour image will result.
     These parameters will be chosen by trying different parameter
-    combinations and returning the best ones (look at \"How does it
-    work\" section for more informations). It also asks the
+    combinations and returning the best ones (look at "How does it
+    work" section for more informations). It also asks the
     **auto_selector.py** for parameter proposals and finally sends all
     parameter proposals to the **gui_service.py**.
 -   **auto_selector.py:** The user can rate edge images - all these
@@ -97,11 +97,11 @@ this
 To improve edge detection, we store statistics about images in a
 database with the settings used for each image area. The user can rate
 images by assigning the edge image a value between 1 and 6 (where 6 is
-the best and 1 is the worst rating). When the user clicks the \"Rate\"
+the best and 1 is the worst rating). When the user clicks the "Rate"
 button, we extract information about the image and store it in the
 database together with all parameter settings (for each area) and the
 rating. To find good parameters for each image area of a new image we
-scan the database and find images \"similar\" to the new image by
+scan the database and find images "similar" to the new image by
 comparing the respective statistics. This results in a set of images,
 similar to the new image (its nearest neighbours). Now we look at each
 area of the new image, applying a set of fixed parameter combinations
@@ -109,7 +109,7 @@ area of the new image, applying a set of fixed parameter combinations
 combination we search through the nearest neighbours for similar
 thresholds in the respective area. The ratings of the images in which
 similar parameters for an area were found are averaged to estimate the
-quality of the area\'s parameter set.
+quality of the area's parameter set.
 
 The idea is as follows: First we find images that are comparable to the
 new image by using the stored image statistics. Then we need the filter

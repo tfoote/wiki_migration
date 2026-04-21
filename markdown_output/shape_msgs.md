@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(shape_msgs)\>\>
+<<MsgSrvDoc(shape_msgs)>>

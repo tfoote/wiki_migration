@@ -35,4 +35,4 @@ bond.breakBond();
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros/bond_core)\>\>
+<<GitHubIssues(ros/bond_core)>>

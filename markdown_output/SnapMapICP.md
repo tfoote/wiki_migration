@@ -40,5 +40,5 @@ trigger a re-initialisation of amcl SnapMapICP/dist_threshold, float,
 meters, minimum position change that will trigger a re-initialisation of
 amcl
 
-SnapMapICP/odom_frame, string, usually \"/odom_combined\"
-SnapMapICP/base_laser_frame, string, usually \"/base_laser_link\"
+SnapMapICP/odom_frame, string, usually "/odom_combined"
+SnapMapICP/base_laser_frame, string, usually "/base_laser_link"

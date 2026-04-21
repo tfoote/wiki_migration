@@ -21,8 +21,8 @@ called from a shell (e.g. Power Shell under Windows) or script and
 controlled by command line parameters. Calling the tools without any
 parameters prints a help text on the standard output.
 
-NOTE: If any tool returns the error \'No transport layers found in path
-\...\', then read the section \'Transport Layer\' below.
+NOTE: If any tool returns the error 'No transport layers found in path
+\...', then read the section 'Transport Layer' below.
 
 -   gc_info . Lists all available systems (i.e. transport layers),
     interfaces and devices with some information. If a device ID is
@@ -72,39 +72,39 @@ There are multiple ways of specifying an ID to identify a device.
 1\. In the most basic version, the device ID is actually defined by the
 GenTL producer (see Transport Layer section below). The GenTL producer
 included in rc_genicam_api uses the lower case MAC address with the
-colons \`:\` replaced by underscores \`\_\`.
+colons `:` replaced by underscores `_`.
 
-Example: \`00_14_2d_2c_6e_bb\`
+Example: `00_14_2d_2c_6e_bb`
 
 2\. The given ID can also be a user defined name. The user defined name
-is set to \`rc_visard\` by default and can be changed with:
+is set to `rc_visard` by default and can be changed with:
 
-gc_config \<ID\> -n \<user-defined-name\>
+gc_config <ID> -n <user-defined-name>
 
 This way of identifying a device can fail if there is more than one
 device with the same name. No device is returned in this case.
 
 If the user defined name contains one or more colons, it must be
-preceded by a colon (e.g. \`:my:name\`) or an interface ID (see below).
+preceded by a colon (e.g. `:my:name`) or an interface ID (see below).
 
 3\. The serial number of the device can also be used as ID. Example:
-\`02911931\`
+`02911931`
 
-All three options can be seen in the output of \`gc_config -l\`.
+All three options can be seen in the output of `gc_config -l`.
 
 ### Optional Interface ID prefix
 
-If the given ID contains a colon (i.e. \`:\`), the part before the
+If the given ID contains a colon (i.e. `:`), the part before the
 (first) colon is interpreted as interface ID and the part after the
-first colon is treated as device ID. This is the format that \`gc_config
--l\` shows. A device with the given ID is only sought on the specified
+first colon is treated as device ID. This is the format that `gc_config
+-l` shows. A device with the given ID is only sought on the specified
 interface. This can be useful if there are several ways to reach a
 device from a host computer, e.g. via wireless and wired network
 connection, but a certain connection type (e.g. wired) is preferred due
 to higher bandwidth and lower latency.
 
-Examples: \`eth0:00_14_2d_2c_6e_bb\`, \`eth1:02911931\` or
-\`wlan0:rc_visard\`
+Examples: `eth0:00_14_2d_2c_6e_bb`, `eth1:02911931` or
+`wlan0:rc_visard`
 
 A colon at the beginning of the ID effectively defines an empty
 interface ID which triggers looking on all interfaces.
@@ -118,7 +118,7 @@ The communication to the device is done through a so called transport
 layer (i.e. GenTL producer version 1.5 or higher). This package provides
 and installs a default transport layer that implements the GigE Vision
 protocol for connecting to the Roboception rc_visard. According to the
-GenICam specification, the transport layer has the suffix \'.cti\'. The
+GenICam specification, the transport layer has the suffix '.cti'. The
 environment variable GENICAM_GENTL32_PATH (for 32 bit applications) or
 GENICAM_GENTL64_PATH (for 64 bit applications) must contain a list of
 paths that contain transport layers. All transport layers are provided
@@ -132,11 +132,11 @@ another location after installation, then the transport layer may not be
 found. In this case, the tools show an error that looks on 64 bit
 systems like:
 
-. \'No transport layers found in path GENICAM_GENTL64_PATH\'
+. 'No transport layers found in path GENICAM_GENTL64_PATH'
 
 In this case, the corresponding environment variable (see above) must be
 set to the directory in which the transport layer (i.e. file with suffix
-\'.cti\') resides.
+'.cti') resides.
 
 Under Windows, as second fall back additionally to the install path, the
 directory of the executable is also added to the environment variable.
@@ -151,7 +151,7 @@ UDP packets fast enough resulting in incomplete image buffers.
 
 ### Test Script
 
-The \`net_perf_check.sh\` script performs some simple checks and should
+The `net_perf_check.sh` script performs some simple checks and should
 be run while or after streaming images via GigE Vision.
 
 ```
@@ -174,15 +174,15 @@ devices/switches between your host and the sensor support this.
 There are several Linux sysctl options that can be modified to increase
 performance for the GigE Vision usecase.
 
-These values can be changed during runtime with \`sysctl\` or written to
-\`/etc/sysctl.conf\` for persistence across reboots.
+These values can be changed during runtime with `sysctl` or written to
+`/etc/sysctl.conf` for persistence across reboots.
 
 #### rmem_max
 
-If the number of UDP \`RcvbufErrors\` increases while streaming,
+If the number of UDP `RcvbufErrors` increases while streaming,
 increasing the socket receive buffer size usually fixes the problem.
 
-Check the \`RcvbufErrors with\` \`net_perf_check.sh\` or
+Check the `RcvbufErrors with` `net_perf_check.sh` or
 
 ```
 netstat -us | grep RcvbufErrors
@@ -197,7 +197,7 @@ sudo sysctl -w net.core.rmem_max=33554432
 Changing these values is usually not necessary, but can help if the
 kernel is already dropping packets.
 
-Check with \`net_perf_check.sh\` and increase the values if needed:
+Check with `net_perf_check.sh` and increase the values if needed:
 
 ```sh
 sudo sysctl -w net.core.netdev_max_backlog=2000

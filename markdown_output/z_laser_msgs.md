@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(z_laser_msgs)\>\>
+<<MsgSrvDoc(z_laser_msgs)>>
 
 ## Acknowledgement
 

@@ -5,7 +5,7 @@
 The object_manipulator provides two
 [SimpleActionServers](actionlib_tutorials/Tutorials/SimpleActionServer(ExecuteCallbackMethod)):
 
--   \`/object_manipulator_pickup\`: requests that an object be picked
+-   `/object_manipulator_pickup`: requests that an object be picked
     up.
 -   action definition:
 -   goal:
@@ -28,7 +28,7 @@ The object_manipulator provides two
     environment
 -   execute the first grasp deemed feasible
 -   see message definitions for more details
--   \`/object_manipulator_place\`: requests that a previously picked up
+-   `/object_manipulator_place`: requests that a previously picked up
     object be placed somewhere in the environment
 -   action definition:
 -   goal:
@@ -82,9 +82,9 @@ Services internal to the manipulation pipeline:
     service call
 -   by default, the object manipulator will look for this service on the
     following topics:
--   \`/default_database_planner\` if the target object is a known model
+-   `/default_database_planner` if the target object is a known model
     from a database of objects
--   \`/default_cluster_planner\` if the target object is an unrecognized
+-   `/default_cluster_planner` if the target object is an unrecognized
     point cloud
 -   the manipulation pipeline provides default implementations for both
     of these cases.
@@ -141,44 +141,44 @@ package.
 
 A hand description must contain the following:
 
--   \`hand_description\`: this is the root of the tree on the parameter
+-   `hand_description`: this is the root of the tree on the parameter
     server. All arm descriptions must be its children
--   \`arm_name\`: this is an identifier for the arm/hand combination
+-   `arm_name`: this is an identifier for the arm/hand combination
     used throughout the system. All individual arm parameters below must
     be its children.
--   \`hand_frame\`: the tf frame for the \"palm\" of the hand; this is
+-   `hand_frame`: the tf frame for the "palm" of the hand; this is
     used to define hand poses.
--   \`robot_frame\`: a frame that is external to the arm, that the
+-   `robot_frame`: a frame that is external to the arm, that the
     entire arm is relative to.
--   \`attached_objects_name\`: the collision environment name that
+-   `attached_objects_name`: the collision environment name that
     object attached to the hand receive when they are attached
--   \`attach_link\`: the link of the hand that attached objects should
+-   `attach_link`: the link of the hand that attached objects should
     be considered attached to once they are picked up
--   \`hand_group_name\`: the name of the group in the collision
+-   `hand_group_name`: the name of the group in the collision
     environment that contains all the links of the hand
--   \`arm_group_name\`: the name of the group in the collision
+-   `arm_group_name`: the name of the group in the collision
     environment that contains all the links of the arm and the hand
--   \`hand_database_name\`: the name of this hand in the
+-   `hand_database_name`: the name of this hand in the
     [household_objects_database](household_objects_database) (if any),
     used for retrieving pre-computed grasps for this hand from the
     database
--   \`hand_joints\`: the joints of the hand
--   \`hand_touch_links\`: the link of the hand that are expected to be
+-   `hand_joints`: the joints of the hand
+-   `hand_touch_links`: the link of the hand that are expected to be
     in contact with grasped objects. When a grasped object is attached
     to the hand in the collision environment, collision checks are
     disabled between the links in this group and the object itself
--   \`hand_fingertip_links\`: the links of the hand that are expected to
+-   `hand_fingertip_links`: the links of the hand that are expected to
     be close to other obstacles in the environment while grasping.
     During the final stages of the grasp, collision padding for these
     links is reduced to 0 to allow grasps that bring the hand very close
     to obstacles (e.g. the table than an object is resting on).
--   \`hand_approach_direction\`: the direction that the hand uses to
+-   `hand_approach_direction`: the direction that the hand uses to
     approach objects, meaning the path from pre-grasp to grasp,
     specified in the coordinate frame of the hand (the one specified as
-    \`hand_frame\` above). The grasp planner(s) and grasp executor(s)
+    `hand_frame` above). The grasp planner(s) and grasp executor(s)
     must be in agreement on how a grasp is to be executed, and this is
     where they get that information.
--   \`arm_joints\`: the names of the joints that comprise the arm
+-   `arm_joints`: the names of the joints that comprise the arm
 
 ## Running the Manipulation Pipeline
 
@@ -304,7 +304,7 @@ To plan motion from pre-grasp to grasp and from grasp to lift we use the
 [interpolated_ik_motion_planner](interpolated_ik_motion_planner), while
 also doing more involved reasoning about which collisions must be
 avoided and which collisions are OK. For example, during the lift
-operation (which is guaranteed to be in the \"up\" direction), we can
+operation (which is guaranteed to be in the "up" direction), we can
 ignore collisions between the object and the table.
 
 The motion of the arm for executing a grasp is: ```

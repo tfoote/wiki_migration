@@ -55,7 +55,7 @@ as you like. Just initialize the Adaptors with the correct hosts and
 ports, create the Subscribers, Services, Publishers, and Service proxies
 for those adaptors, and then call start() on the adaptors. They operate
 completely independently of each other. You can even connect two to the
-same core, as long as they have different \"names\" or are anonymous (as
+same core, as long as they have different "names" or are anonymous (as
 declared in the initialization).
 
 Below is a more detailed breakdown of the differences between rospy and
@@ -68,7 +68,7 @@ a rosmultimaster.Adaptor object.
 There are two major differences between the rospy system and the
 rosmultimaster system: 1. In rosmultimaster you must initialize an
 Adaptor object with the host and port of the roscore to which you wish
-to connect. The \"name\" and \"anonymous\" parameters affect the name of
+to connect. The "name" and "anonymous" parameters affect the name of
 the rosnode that will appear in the specified roscore. 1. You must call
 adaptor.start() before the adaptor will actually be able to publish or
 subscribe to topics. All declarations of Publishers, Subscribers, etc.
@@ -97,14 +97,14 @@ and then starting them in the desired order.
 
 ### No duplicate topics
 
-You can\'t subscribe to the same topic twice, have two publishers to the
+You can't subscribe to the same topic twice, have two publishers to the
 same topic, offer two services with the same names, or get two service
 proxies for the same service using the same adaptor. This may be true of
 rospy too, but it is definitely true of Adaptor.
 
 ### No similar Services
 
-You can\'t offer two services with the same service_class using the same
+You can't offer two services with the same service_class using the same
 adaptor. This is because since rospy.Service does not allow you to pass
 arguments into the service callback in the same way that
 rospy.Subscriber and rospy.Publisher do, which causes problems in the
@@ -112,11 +112,11 @@ implementation of rosmultimaster.
 
 ### No wait_for_service
 
-**Issue:**When using !ServiceProxy\'s in rosmultimaster, it is
+**Issue:**When using !ServiceProxy's in rosmultimaster, it is
 unnecessary (and currently impossible) to make any kind of
-\"wait_for_service\" call. Simply calling
-adaptor.!ServiceProxy(\'topic\', !ServiceClass) will automatically cause
-a call to rospy.wait_for_service(\'topic\') to be made internally when
+"wait_for_service" call. Simply calling
+adaptor.!ServiceProxy('topic', !ServiceClass) will automatically cause
+a call to rospy.wait_for_service('topic') to be made internally when
 adaptor.start() is called. This is not ideal, since the goal of Adaptor
 is to mimic the rospy API as much as possible.
 
@@ -148,18 +148,18 @@ become available.
 ## Implementation
 
 In order to connect to a roscore without actually declaring the
-\_\_main\_\_ process as a node, Adaptor must start a child process,
-which is connected to the \_\_main\_\_ process through pipes. This child
+__main__ process as a node, Adaptor must start a child process,
+which is connected to the __main__ process through pipes. This child
 process becomes a ROS node and sets up all of the publishers,
 subscribers, services, and service proxies that are declared before
 adaptor.start() is called. After this set-up is done, data flows as
 follows:
 
-\_\_main\_\_ process \<\--\> pipes \<\--\> child process/ROS node
-\<\--\> ros protocols (pub/sub/serv) \<\--\> ROS system
+__main__ process <\--> pipes <\--> child process/ROS node
+<\--> ros protocols (pub/sub/serv) <\--> ROS system
 
-The \_\_main\_\_ process is sometimes called the \"Adaptor\" process and
-the child process is sometimes called the \_AdaptorNode process, since
+The __main__ process is sometimes called the "Adaptor" process and
+the child process is sometimes called the _AdaptorNode process, since
 each process hold a reference to an object of that type.
 
 ------------------------------------------------------------------------

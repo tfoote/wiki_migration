@@ -3,7 +3,7 @@ ros0xrobot node provides ROS interface for robot bases in 0x series
 from [Nex Robotics](http://www.nex-robotics.com/). Information from the
 robot base, velocity and acceleration control, is implemented via a
 ros0xrobot node, which publishes topics providing data received from the
-robot\'s embedded controller by 0xRobotCpp library, and sets desired
+robot's embedded controller by 0xRobotCpp library, and sets desired
 velocity, acceleration and other commands in robot when new commands are
 received from command topics.
 
@@ -14,8 +14,8 @@ Instructions on installing ROS can be found
 
 ## Reporting bugs and making feature requests
 
-Bugs and requests can be reported here: \<\<MailTo(support AT
-nex-robotics DOT com)\>\>
+Bugs and requests can be reported here: <<MailTo(support AT
+nex-robotics DOT com)>>
 
 ## ros0xrobot node
 

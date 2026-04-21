@@ -1,22 +1,22 @@
-The \`pm_mcc\` package provides an implementation for polygon matching
+The `pm_mcc` package provides an implementation for polygon matching
 for the Large Maps Framework ([LaMa](Large Maps Framework)). The
 implementation is based on the Multi-scale Convexity Concavity Method:
-Adamek, T. and O\'Connor, N.E., \"A multiscale representation method for
-nonrigid shapes with a single closed contour\", IEEE Transactions on
+Adamek, T. and O'Connor, N.E., "A multiscale representation method for
+nonrigid shapes with a single closed contour", IEEE Transactions on
 Circuits and Systems for Video Technology, 2004.
 
 ## Overview
 
-The \`pm_mcc\` package provides an implementation for polygon matching
+The `pm_mcc` package provides an implementation for polygon matching
 for the Large Maps Framework (LaMa). The implementation is based on the
-Multi-scale Convexity Concavity Method: Adamek, T. and O\'Connor, N.E.,
-\"A multiscale representation method for nonrigid shapes with a single
-closed contour\", IEEE Transactions on Circuits and Systems for Video
+Multi-scale Convexity Concavity Method: Adamek, T. and O'Connor, N.E.,
+"A multiscale representation method for nonrigid shapes with a single
+closed contour", IEEE Transactions on Circuits and Systems for Video
 Technology, 2004.
 
 ## ROS API
 
-\<\<MsgSrvDoc(pm_mcc)\>\>
+<<MsgSrvDoc(pm_mcc)>>
 
 ### Services
 

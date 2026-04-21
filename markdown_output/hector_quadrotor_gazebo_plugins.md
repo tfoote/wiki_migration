@@ -9,42 +9,42 @@ Atmosphere (ISA). See
 
 #### Published Topics
 
--   \`pressure_height\` (\<\<MsgLink(geometry_msgs/PointStamped)\>\>):
+-   `pressure_height` (<<MsgLink(geometry_msgs/PointStamped)>>):
     The z value of the Point contains the current altitude minus the
     configured elevation. x and y are always zero.
 
 #### XML Parameters
 
--   \`updateRate\` (double): output rate of the sensor in milliseconds
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`frameId\` (string): frame_id included in the message header
--   \`topicName\` (string): name of the sensor output topic (defaults to
-    \`pressure_height\`)
+-   `updateRate` (double): output rate of the sensor in milliseconds
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `frameId` (string): frame_id included in the message header
+-   `topicName` (string): name of the sensor output topic (defaults to
+    `pressure_height`)
 
 ```{=html}
 <!-- -->
 ```
--   \`elevation\` (double): elevation of the ground or zero for altitude
+-   `elevation` (double): elevation of the ground or zero for altitude
     above Mean Sea Level MSL (defaults to 0.0)
--   \`qnh\` (double): barometric pressure adjusted to sea level in
+-   `qnh` (double): barometric pressure adjusted to sea level in
     hPa/mbar (defaults to standard pressure 1013.25 hPa, see
     <http://en.wikipedia.org/wiki/QNH>)
 
 ```{=html}
 <!-- -->
 ```
--   \`offset\` (double): a constant offset added to the range
--   \`drift\` (double): standard deviation of the drift error
--   \`driftFrequency\` (double): mean frequency of the drift
--   \`gaussianNoise\` (double): standard deviation of the additive
+-   `offset` (double): a constant offset added to the range
+-   `drift` (double): standard deviation of the drift error
+-   `driftFrequency` (double): mean frequency of the drift
+-   `gaussianNoise` (double): standard deviation of the additive
     Gaussian noise
 
 Notes:
 
--   \<\<MsgLink(mav_msgs/Height)\>\> can be used as alternate message
-    type if compiled with \`-DUSE_MAV_MSGS\`.
+-   <<MsgLink(mav_msgs/Height)>> can be used as alternate message
+    type if compiled with `-DUSE_MAV_MSGS`.
 -   There is no direct output of the atmospheric pressure. The parameter
-    \`qnh\` is currently unused.
+    `qnh` is currently unused.
 -   The plugin uses the sensor error model from package
     [hector_gazebo_plugins](hector_gazebo_plugins).
 
@@ -53,7 +53,7 @@ Notes:
 The simple quadrotor plugin is a generic controller for quadrotors that
 enables teleoperated flying in Gazebo. PID controllers are used to
 control the velocities and yaw rate by calculating the necessary forces
-and torques acting on the body. It is called \"simple controller\" as it
+and torques acting on the body. It is called "simple controller" as it
 makes some assumptions that usually hold for quadrotors during hovering
 and non-aerobatic maneuvers.
 
@@ -66,27 +66,27 @@ control. You can implement your own position controller on top of it.
 
 #### Subscribed Topics
 
--   \`cmd_vel\` (\<\<MsgLink(geometry_msgs/Twist)\>\>): The desired
+-   `cmd_vel` (<<MsgLink(geometry_msgs/Twist)>>): The desired
     velocities and yaw rate of the quadrotor. The angular velocities
     around x- and y-axis are ignored.
 
 #### XML Parameters
 
--   \`updateRate\` (double): update rate of the controller in Hz (should
+-   `updateRate` (double): update rate of the controller in Hz (should
     always be zero = simulation rate)
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`bodyName\` (string): name of the quadrotor body link in Gazebo
--   \`topicName\` (string): name of the twist command input topic
-    (defaults to \`cmd_vel\`)
--   \`imuTopic\` (string): name of the imu topic
-    (\<\<MsgLink(sensor_msgs/Imu)\>\>) to be subscribed and used as
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `bodyName` (string): name of the quadrotor body link in Gazebo
+-   `topicName` (string): name of the twist command input topic
+    (defaults to `cmd_vel`)
+-   `imuTopic` (string): name of the imu topic
+    (<<MsgLink(sensor_msgs/Imu)>>) to be subscribed and used as
     current orientation and angular rates source. If empty, ground truth
     information from Gazebo is used for control (default).
--   \`stateTopic\` (string): name of the state topic
-    (\<\<MsgLink(nav_msgs/Odometry)\>\>) to be subscribed and used as
+-   `stateTopic` (string): name of the state topic
+    (<<MsgLink(nav_msgs/Odometry)>>) to be subscribed and used as
     current velocity and acceleration source. If empty, ground truth
     information from Gazebo is used for control (default).
--   \`maxForce\` (double): if greater than 0, upper limit of total
+-   `maxForce` (double): if greater than 0, upper limit of total
     thrust along the z-axis (defaults to unlimited)
 
 ### Quadrotor Propulsion Plugin / Quadrotor Aerodynamics Plugin
@@ -97,40 +97,40 @@ voltages and the wind vector as input.
 
 #### Subscribed Topics
 
--   \`motor_pwm\` (\<\<MsgLink(hector_uav_msgs/MotorPWM)\>\>): The
+-   `motor_pwm` (<<MsgLink(hector_uav_msgs/MotorPWM)>>): The
     commanded motor voltages for the four motors. The voltage is given
     as pulse width in the range of 0 to 255 (full battery voltage).
--   \`wind\` (\<\<MsgLink(geometry_msgs/Vector3)\>\>): You can specify a
+-   `wind` (<<MsgLink(geometry_msgs/Vector3)>>): You can specify a
     wind vector using this topic, which is substracted from the
-    quadrotor\'s base velocity to calculate the drag forces.
+    quadrotor's base velocity to calculate the drag forces.
 
 #### Published Topics
 
--   \`motor_status\` (\<\<MsgLink(hector_uav_msgs/MotorStatus)\>\>): The
+-   `motor_status` (<<MsgLink(hector_uav_msgs/MotorStatus)>>): The
     simulated motor speeds and currents.
--   \`wrench_out\` (\<\<MsgLink(geometry_msgs/Wrench)\>\>): The
+-   `wrench_out` (<<MsgLink(geometry_msgs/Wrench)>>): The
     resulting forces and moments generated by the propulsion system (for
     debugging purposes mainly).
--   \`supply\` (\<\<MsgLink(hector_uav_msgs/Supply)\>\>): The simulated
+-   `supply` (<<MsgLink(hector_uav_msgs/Supply)>>): The simulated
     motor speeds and currents.
 
 #### XML Parameters
 
--   \`updateRate\` (double): update rate of the controller in Hz (should
+-   `updateRate` (double): update rate of the controller in Hz (should
     always be zero = simulation rate)
--   \`controlRate\` (double): update rate of the controller rate in Hz.
+-   `controlRate` (double): update rate of the controller rate in Hz.
     If greater than 0, the simulation will be throttled if new motor
     voltages arrive slower than this rate.
--   \`controlDelay\` (double): tolerance for the delay of the voltage
+-   `controlDelay` (double): tolerance for the delay of the voltage
     timestamps compared to the simulation time
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`bodyName\` (string): name of the quadrotor body link in Gazebo
--   \`voltageTopicName\` (string): name of the motor voltage input topic
-    (defaults to \`motor_pwm\`)
--   \`statusTopic\` (string): name of the motor status topic (defaults
-    to \`motor_status\`)
--   \`wrenchTopic\` (string): name of the wrench output topic (defaults
-    to \`wrench_out\`)
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `bodyName` (string): name of the quadrotor body link in Gazebo
+-   `voltageTopicName` (string): name of the motor voltage input topic
+    (defaults to `motor_pwm`)
+-   `statusTopic` (string): name of the motor status topic (defaults
+    to `motor_status`)
+-   `wrenchTopic` (string): name of the wrench output topic (defaults
+    to `wrench_out`)
 
 #### ROS Parameters
 

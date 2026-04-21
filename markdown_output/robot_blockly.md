@@ -1,10 +1,10 @@
 ![Blockly_img \| width=800](https://erlerobotics.com/blog/wp-content/uploads/2016/04/erlerobotics_project_5.jpg )
 
 -   Maintainer status: under development
--   Maintainer: Erle Robotics \<contact AT erlerobot DOT com\>
--   Author: Nestor Gonzalez \<nestor94gonzalez AT gmail DOT com \> ,
-    Alejandro Hernández Cordero \<ahcorde AT erlerobot DOT com\>, Víctor
-    Mayoral Vilches \<victor AT erlerobot DOT com\>
+-   Maintainer: Erle Robotics <contact AT erlerobot DOT com>
+-   Author: Nestor Gonzalez <nestor94gonzalez AT gmail DOT com > ,
+    Alejandro Hernández Cordero <ahcorde AT erlerobot DOT com>, Víctor
+    Mayoral Vilches <victor AT erlerobot DOT com>
 -   License: GPLv3
 -   Bug/feature tracker:
     <https://github.com/erlerobot/robot_blockly/issues>
@@ -26,12 +26,12 @@ of effort.
 
 When making our training sessions, one of the first things we try to
 introduce is the concept of the Robot Operating System (ROS). While
-there\'re many resources on this topic, it\'s a fact that learning ROS
+there're many resources on this topic, it's a fact that learning ROS
 takes some effort even at the PhD level so we started prototyping ideas
 to make this proccess as simple as possible.
 
 We wanted to reach high schools students so we realized that we had to
-remove the assumption of \"coding skills\" from the equation. This made
+remove the assumption of "coding skills" from the equation. This made
 us look into systems like Scratch for robot programming. The output of
 these prototypes has become blockly. A multiplatform web-based tool for
 programming robots and drones that use ROS. In fact, Blockly itself is a
@@ -122,7 +122,7 @@ Please ask your questions not related to bugs/feauture requests on:
 
 -   Erle Robotics Forum: <http://forum.erlerobotics.com/>
 
-We\'d like to keep the project bugtracker as free as possible, so please
+We'd like to keep the project bugtracker as free as possible, so please
 contact via the above methods.
 
 ## Related Links

@@ -12,7 +12,7 @@
 ## Hand Detector
 
 This program detects hands. It is still very much under development, so
-don\'t expect a whole lot of stability here! A stable version may appear
+don't expect a whole lot of stability here! A stable version may appear
 under the cturtle branch of mit-ros-pkg soon.
 
 ### Topics
@@ -76,10 +76,10 @@ some tips:
 
 -   This is a (fairly finicky, for ppl not myself) program to play five
     notes.
--   when it detect five fingers, it will first say: \"Hold still\"
+-   when it detect five fingers, it will first say: "Hold still"
     indicating that it is waiting for your hand to remain at a fixed
     position, so it can set up a baseline.
--   When it says: fingers: \<some numbers\> you are ready to go!
+-   When it says: fingers: <some numbers> you are ready to go!
 -   if you dip your finger too much, it will lose sight of it, and it
     will do nothing if it does not see five fingers.
 -   I set the distance threshold low, so you should not have to move

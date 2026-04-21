@@ -6,11 +6,11 @@ supported ROS or code API.
 
 ## Invent Submit Testing
 
-Most tests in this package run during the \"make test\" command to this
+Most tests in this package run during the "make test" command to this
 package. Two scripts must be run manually. These scripts test that
 submitting data to Invent works properly.
 
--   \`test/test_invent/qual_invent_submit.py\` - Tests that
+-   `test/test_invent/qual_invent_submit.py` - Tests that
     qualification data loads properly.
--   \`test/test_invent/test_logger_invent_submit.py\` - Tests that Test
+-   `test/test_invent/test_logger_invent_submit.py` - Tests that Test
     Manager data loads to Invent properly.

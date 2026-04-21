@@ -33,4 +33,4 @@ roslaunch roch_viz view_navigation.launch
 
 ## Report a Bug
 
-\<\<GitHubIssues(SawYer-Robotics/roch_viz)\>\>
+<<GitHubIssues(SawYer-Robotics/roch_viz)>>

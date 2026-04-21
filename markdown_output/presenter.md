@@ -7,7 +7,7 @@ slides or simply go forward and backward.
 You can find the newest version at
 <http://github.com/timn/ros-presenter>
 
-It\'s a very simple version at the moment and unsafe! There are no
+It's a very simple version at the moment and unsafe! There are no
 checks whatsoever performed on the files which should be opened. So do
 not expose this on a network that is not trustworthy, especially
 remember the security track record of Xpdf.

@@ -38,13 +38,13 @@ source ~/ros_catkin_ws/install/setup.bash
 
 ## First steps
 
-Following the steps described in section \"starting\" under
+Following the steps described in section "starting" under
 <https://github.com/SICKAG/sick_line_guidance>
 
 ## Troubleshooting
 
-Following the steps described in section \"Troubleshooting and
-diagnostics\" under <https://github.com/SICKAG/sick_line_guidance>
+Following the steps described in section "Troubleshooting and
+diagnostics" under <https://github.com/SICKAG/sick_line_guidance>
 
 ## Support
 

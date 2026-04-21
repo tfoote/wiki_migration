@@ -4,9 +4,9 @@ The [imu_filter_madgwick](imu_filter_madgwick) package is used to filter
 and fuse raw data from IMU devices. It fuses angular velocities,
 accelerations, and (optionally) magnetic readings from a generic IMU
 device into an orientation quaternion, and publishes the fused data on
-the \`imu/data\` topic. The package has been tested using the raw data
+the `imu/data` topic. The package has been tested using the raw data
 output of a Phidgets IMU (Spatial 3/3/3) device. The package is a
-wrapper of Sebastian Madgwick\'s IMU filter \[1\].
+wrapper of Sebastian Madgwick's IMU filter \[1\].
 
 ## Supported devices
 
@@ -20,7 +20,7 @@ It has been tested with:
 
 ## Example
 
-Here\'s an example of the non-ROS version of the code, courtesy of
+Here's an example of the non-ROS version of the code, courtesy of
 Sebastian Madgwick.
 
 [Youtube](https://www.youtube.com/watch?v=BXsGWoOMtmU)
@@ -29,8 +29,8 @@ Todo: similar video from rviz.
 
 ## ROS API
 
-Two drivers are available: \`imu_filter_node\` and
-\`imu_filter_nodelet\`. Their parameters and topics are identical.
+Two drivers are available: `imu_filter_node` and
+`imu_filter_nodelet`. Their parameters and topics are identical.
 
 ```clearsilver
 sub {
@@ -149,4 +149,4 @@ sub {
 We appreciate the time and effort spent submitting bug reports and
 feature requests.
 
-\<\<GitHubIssues(CCNYRoboticsLab/imu_tools)\>\>
+<<GitHubIssues(CCNYRoboticsLab/imu_tools)>>

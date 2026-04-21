@@ -4,7 +4,7 @@
 
 ### Installing rospkg
 
-Do prefer apt over pip as it\'s updated automatically and faster.
+Do prefer apt over pip as it's updated automatically and faster.
 ```
 sudo apt-get install python-rospkg
 ```

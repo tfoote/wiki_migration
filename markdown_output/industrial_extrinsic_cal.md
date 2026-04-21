@@ -1,6 +1,6 @@
 ## Overview
 
-The \`industrial_extrinsic_cal\` package provides a generic tool for
+The `industrial_extrinsic_cal` package provides a generic tool for
 calibrating sensors to a known reference frame. It is relevant to anyone
 using a system in which the relative position(extrinsics) of multiple
 pieces of equipment must be determined. Common equipment examples
@@ -9,9 +9,9 @@ measurement/sensor systems (i.e. camera(s), laser scanner/trackers,
 radio) and fixturing(accurately produced parts for referencing objects
 of interest).
 
-\<\<Youtube(MRvExKMOH1g&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=MRvExKMOH1g&rel=0)
 
-The calibration uses Google\'s Ceres solver to perform bundle adjustment
+The calibration uses Google's Ceres solver to perform bundle adjustment
 or minimize the reprojection error of the camera to the known points.
 The Ceres software problem and solver are generic and the cost functions
 contain the definition of the error to minimize.
@@ -57,7 +57,7 @@ cmake ..
 make
 sudo make install
 ``` 1.
-Install \`industrial_extrinisc_cal\` from
+Install `industrial_extrinisc_cal` from
 [source](https://github.com/ros-industrial/industrial_calibration.git).
 
 ## Tutorials
@@ -69,4 +69,4 @@ Install \`industrial_extrinisc_cal\` from
 
 Detailed design info can be found in this
 [presentation](http://roscon.ros.org/2014/wp-content/uploads/2014/07/LewisPresentation.pdf)
-presented at ROSCon 2014. \<\<Vimeo(106994711)\>\>
+presented at ROSCon 2014. <<Vimeo(106994711)>>

@@ -1,4 +1,4 @@
-![\|height=\"431px\",width=\"498px\"](attachment:frames2.png)
+![\|height="431px",width="498px"](attachment:frames2.png)
 
 ## What does tf do? Why should I use tf?
 
@@ -86,7 +86,7 @@ tools include:
     transforms.
 -   [tf_monitor](#tf_monitor): monitors transforms between frames.
 -   [tf_echo](#tf_echo): prints specified transform to screen
--   [roswtf](roswtf): with the \`tfwtf\` plugin, helps you track down
+-   [roswtf](roswtf): with the `tfwtf` plugin, helps you track down
     problems with tf.
 -   [static_transform_publisher](#static_transform_publisher) is a
     command line tool for sending static transforms.
@@ -96,7 +96,7 @@ utility node for remapping coordinate transforms.
 
 ### tf_monitor
 
-\`tf_monitor\`
+`tf_monitor`
 
 . Print information about the current coordinate transform tree to
 console. For example:
@@ -117,11 +117,11 @@ Broadcasters:
 Node: /realtime_loop 94.7371 Hz, Average Delay: 0.000599916 Max Delay: 0.001337
 Node: /robot_pose_ekf 30.8259 Hz, Average Delay: 0.0469324 Max Delay: 0.0501503
 Node: /robot_state_publisher 25.8099 Hz, Average Delay: 0.0089224 Max Delay: 0.00960276
-``` \`tf_monitor \<source_frame\>
-\<target_target\>\`
+``` `tf_monitor <source_frame>
+<target_target>`
 
 . Monitor a specific transform. For example, to monitor the transform
-from \`/base_footprint\` to \`/odom\`:
+from `/base_footprint` to `/odom`:
 
 ```
 $ rosrun tf tf_monitor /base_footprint /odom
@@ -141,11 +141,11 @@ Node: /robot_state_publisher 25.9839 Hz, Average Delay: 0.00903061 Max Delay: 0.
 
 ### tf_echo
 
-\`tf_echo \<source_frame\> \<target_frame\>\`
+`tf_echo <source_frame> <target_frame>`
 
 . Print information about a particular transformation between a
-\`source_frame\` and a \`target_frame\`. For example, to echo the
-transform between \`/map\` and \`/odom\`:
+`source_frame` and a `target_frame`. For example, to echo the
+transform between `/map` and `/odom`:
 
 ```
 $ rosrun tf tf_echo /map /odom
@@ -157,8 +157,8 @@ in RPY [0.000, -0.000, -1.570]
 
 ### static_transform_publisher
 
-\`static_transform_publisher x y z yaw pitch roll frame_id
-child_frame_id period_in_ms\`
+`static_transform_publisher x y z yaw pitch roll frame_id
+child_frame_id period_in_ms`
 
 . Publish a static coordinate transform to tf using an x/y/z offset in
 meters and yaw/pitch/roll in radians. (yaw is rotation about Z, pitch is
@@ -166,14 +166,14 @@ rotation about Y, and roll is rotation about X). The period, in
 milliseconds, specifies how often to send a transform. 100ms (10hz) is a
 good value.
 
-\`static_transform_publisher x y z qx qy qz qw frame_id child_frame_id
-period_in_ms\`
+`static_transform_publisher x y z qx qy qz qw frame_id child_frame_id
+period_in_ms`
 
 . Publish a static coordinate transform to tf using an x/y/z offset in
 meters and quaternion. The period, in milliseconds, specifies how often
 to send a transform. 100ms (10hz) is a good value.
 
-\`static_transform_publisher\` is designed both as a command-line tool
+`static_transform_publisher` is designed both as a command-line tool
 for manual use, as well as for use within [roslaunch](roslaunch) files
 for setting static transforms. For example:
 
@@ -185,7 +185,7 @@ for setting static transforms. For example:
 
 ### view_frames
 
-\`view_frames\` is a graphical debugging tool that creates a PDF graph
+`view_frames` is a graphical debugging tool that creates a PDF graph
 of your current transform tree.
 
 ```
@@ -197,7 +197,7 @@ are done, so a typical usage on Ubuntu systems is:
 $ rosrun tf view_frames
 $ evince frames.pdf
 ``` Therefore an helpful shortcut to add in your
-\`.bashrc\` is:
+`.bashrc` is:
 
 ```
 alias tf='cd /var/tmp && rosrun tf view_frames && evince frames.pdf &'
@@ -208,10 +208,10 @@ introspection of the frames.
 
 ### roswtf plugin
 
-\`roswtf\` tf comes with a plugin for [roswtf](roswtf) that
-automatically runs whenever you run \`roswtf\`. This plugin will analyze
+`roswtf` tf comes with a plugin for [roswtf](roswtf) that
+automatically runs whenever you run `roswtf`. This plugin will analyze
 your current tf configuration and attempt to find common problems. To
-run, just invoke \`roswtf\` normally:
+run, just invoke `roswtf` normally:
 
 ```
 $ roswtf

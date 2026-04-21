@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rail_manipulation_msgs)\>\>
+<<MsgSrvDoc(rail_manipulation_msgs)>>

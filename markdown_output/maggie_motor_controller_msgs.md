@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(maggie_motor_controller_msgs)\>\>
+<<MsgSrvDoc(maggie_motor_controller_msgs)>>

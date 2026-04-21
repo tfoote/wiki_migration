@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -8,7 +8,7 @@ from vision sensors (stereo camera systems and kinect).
 *Example of a stereo rig with two AVT Guppy cameras and a Microsoft
 Kinect on top:*
 
-![\|width=\"600\",height=\"337\"](attachment:guppy.png)
+![\|width="600",height="337"](attachment:guppy.png)
 
 ## Functionality
 
@@ -107,7 +107,7 @@ Stereo camera**: **
     of our stereo setups (after calibration of course\...).
 -   /stereo/left/image_raw: Image of left camera, containing raw bayer
     pattern, before demosaicing. Do not mix it up with the grayscale
-    image\... and don\'t use it directly.
+    image\... and don't use it directly.
 -   /stereo/left/image_mono: Grayscale image of left camera of stereo
     pair.
 -   /stereo/left/image_color: RGB image of left camera of stereo pair.
@@ -119,7 +119,7 @@ Stereo camera**: **
     camera of our stereo setups (after calibration of course\...).
 -   /stereo/right/image_raw: Image of right camera, containing raw bayer
     pattern, before demosaicing. Do not mix it up with the grayscale
-    image\... and don\'t use it directly.
+    image\... and don't use it directly.
 -   /stereo/right/image_mono: Grayscale image of right camera of stereo
     pair.
 -   /stereo/right/image_color: RGB image of right camera of stereo pair.
@@ -133,8 +133,8 @@ Kinect camera (important ones only):
 -   /kinect/depth/image_rect: Rectified depth image from the kinect
 -   /kinect/depth/points: Untextured point cloud from the kinect
 -   /kinect/depth_registered/points: Textured point cloud from the
-    kinect, only if the topics which are named under \'Subscribed
-    Topics\' get supplied and a transformation between the kinect and
+    kinect, only if the topics which are named under 'Subscribed
+    Topics' get supplied and a transformation between the kinect and
     that external camera exists
 
 ## Tutorials

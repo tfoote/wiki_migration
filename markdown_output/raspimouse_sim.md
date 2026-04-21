@@ -2,7 +2,7 @@
 
 Sample Screenshot
 
-![\|width=\"300\"](attachment:raspimouse_samplemaze.png)
+![\|width="300"](attachment:raspimouse_samplemaze.png)
 
 ## Usage
 

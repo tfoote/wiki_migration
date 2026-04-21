@@ -6,15 +6,15 @@ For a list of all supported models refer to the
 
 The
 [API review](http://ros.org/wiki/velodyne/Reviews/2012-02-02_API_Review)
-describes the evolution of these interfaces.: the default \`min_range\`
-value is now 0.9 meters.: a new pair of parameters \`view_direction\`
-and \`view_width\` may be used to reduce the output point cloud to a
+describes the evolution of these interfaces.: the default `min_range`
+value is now 0.9 meters.: a new pair of parameters `view_direction`
+and `view_width` may be used to reduce the output point cloud to a
 subset of angular directions. By default, every angle is included in the
-point cloud. Setting \`view_width\` to *pi/2* radians will limit the
+point cloud. Setting `view_width` to *pi/2* radians will limit the
 output to 90 degrees around the forward direction of the device (from
--45 degrees to +45). Also setting \`view_direction\` to *pi* would
-return output only from the device\'s rear facing, instead. Similarly,
-setting \`view_direction\` to *-pi/2* would limit output to 90 degrees
+-45 degrees to +45). Also setting `view_direction` to *pi* would
+return output only from the device's rear facing, instead. Similarly,
+setting `view_direction` to *-pi/2* would limit output to 90 degrees
 around the right facing in the XY plane of the device frame of
 reference.
 
@@ -65,7 +65,7 @@ param {
 #### Examples
 
 Continuously convert raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages. *Running as a
+<<MsgLink(sensor_msgs/PointCloud2)>> messages. *Running as a
 standalone nodelet prevents zero-copy message sharing.*
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
@@ -98,7 +98,7 @@ node.0 {
 #### Examples
 
 Continuously convert raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages.
+<<MsgLink(sensor_msgs/PointCloud2)>> messages.
 ```
 $ rosrun velodyne_pointcloud cloud_node _calibration:=calibration.yaml
 ```
@@ -152,7 +152,7 @@ param {
 #### Examples
 
 Transform raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages into the \`/odom\`
+<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
 frame. *Running as a standalone nodelet prevents zero-copy message
 sharing.* ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/TransformNodelet
@@ -184,20 +184,20 @@ node.0 {
 #### Examples
 
 Transform raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages into the \`/odom\`
+<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
 frame. ```
 $ rosrun velodyne_pointcloud transform_node _calibration:=calibration.yaml
 ```
 
 Transform raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages into the \`/map\`
+<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/map`
 frame. ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```0
 
 ## Launch File Examples
 
-In two separate terminal windows, start a \`velodyne_nodelet_manager\`
+In two separate terminal windows, start a `velodyne_nodelet_manager`
 process running the driver nodelet and the cloud nodelet, which will
 have zero-copy access to the raw data messages the driver publishes.
 
@@ -209,9 +209,9 @@ $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```2
 
-Start a driver nodelet with input from \`tcpdump.pcap\`, in the current
-directory. The \`pwd\` provides a full path name, as required for
-\`roslaunch\`. In another terminal, start the transform nodelet, to
+Start a driver nodelet with input from `tcpdump.pcap`, in the current
+directory. The `pwd` provides a full path name, as required for
+`roslaunch`. In another terminal, start the transform nodelet, to
 publish the data points transformed into the /odom frame of reference.
 
 ```
@@ -222,7 +222,7 @@ $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```4
 
-Start a \`velodyne_nodelet_manager\` process for a Velodyne HDL-32E.
+Start a `velodyne_nodelet_manager` process for a Velodyne HDL-32E.
 This script runs both the driver and the point cloud conversion,
 providing the standard HDL-32E calibration.
 
@@ -230,7 +230,7 @@ providing the standard HDL-32E calibration.
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```5
 
-Start another \`velodyne_nodelet_manager\` for the Velodyne HDL-32E, but
+Start another `velodyne_nodelet_manager` for the Velodyne HDL-32E, but
 provide a PCAP dump file as input.
 
 ```
@@ -242,18 +242,18 @@ $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ### gen_calibration.py
 
 This script generates a YAML calibration file for use by this package
-from the \`db.xml\` file that was provided by Velodyne with the device.
+from the `db.xml` file that was provided by Velodyne with the device.
 
 #### Examples
 
-Read \`db.xml\` from the current directory, writing the required
-calibration data to \`db.yaml\`.
+Read `db.xml` from the current directory, writing the required
+calibration data to `db.yaml`.
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```7
 
-Save generated 32E calibration data in \`my_calibration.yaml\`.
+Save generated 32E calibration data in `my_calibration.yaml`.
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
@@ -264,14 +264,14 @@ $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 C++ interfaces exported by this package:
 
 -   #include
-    [\<velodyne_pointcloud/point_types.h\>](http://ros.org/doc/api/velodyne_pointcloud/html/point__types_8h.html)
-    defines a custom \`velodyne_pointcloud::PointXYZIR\` point, similar
-    to \`pcl::PointXYZI\` (XYZ with intensity) plus an added field
+    [<velodyne_pointcloud/point_types.h>](http://ros.org/doc/api/velodyne_pointcloud/html/point__types_8h.html)
+    defines a custom `velodyne_pointcloud::PointXYZIR` point, similar
+    to `pcl::PointXYZI` (XYZ with intensity) plus an added field
     containing the laser ring number.
 
 ```{=html}
 <!-- -->
 ```
 -   #include
-    [\<velodyne_pointcloud/rawdata.h\>](http://ros.org/doc/api/velodyne_pointcloud/html/rawdata_8h.html)
+    [<velodyne_pointcloud/rawdata.h>](http://ros.org/doc/api/velodyne_pointcloud/html/rawdata_8h.html)
     provides interfaces for interpreting raw packets from the device.

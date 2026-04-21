@@ -13,7 +13,7 @@ community.
 
 ## Instructions:
 
-User manual available in the project\'s folder and
+User manual available in the project's folder and
 [here](https://github.com/miccol/ROS-Behavior-Tree/blob/master/BTUserManual.pdf).
 
 ## Reporting Bugs:

@@ -9,7 +9,7 @@ actively maintained and currently available through ROS Indigo.
 
 ## Overview
 
-The pi_face_tracker ROS package uses OpenCV\'s Haar face detector
+The pi_face_tracker ROS package uses OpenCV's Haar face detector
 together with Good Features to Track and the Lucas-Kanade Optical Flow
 tracker to perform face tracking in a live video stream or recorded
 video file. Works best with an RGB-D camera such as the Kinect so that
@@ -24,8 +24,8 @@ the left image uses only the Haar face detector while the right image
 uses the detector only on the first frame to get the initial face
 region, then relies on Good Features to Track and Optical Flow to follow
 the face through the rest of the video. Notice that the right video
-never loses the face and runs about three times faster (CPS = \"cycles
-per second\").
+never loses the face and runs about three times faster (CPS = "cycles
+per second").
 
 ## How It Works
 
@@ -45,13 +45,13 @@ Over time, feature points will be lost due to occlusions or picked up
 from the background. Therefore, two additional methods are run to
 maintain the integrity of the tracked feature cluster. First, feature
 points are pruned (dropped) if they lie too far outside the current
-cluster in the x-y camera plane (see parameter \`std_err_xy\`) or in
-depth (see \`use_depth_for_tracking\`). At the same time, new feature
+cluster in the x-y camera plane (see parameter `std_err_xy`) or in
+depth (see `use_depth_for_tracking`). At the same time, new feature
 points are added by expanding the current cluster ROI by a small amount
 (10%) and running
 [GoodFeaturesToTrack](http://opencv.willowgarage.com/documentation/python/imgproc_feature_detection.html?highlight=goodfeaturestotrack#GoodFeaturesToTrack)
 over the expanded region. If the feature cluster shrinks below a
-specified minimum number of points (see \`abs_min_features\`), the
+specified minimum number of points (see `abs_min_features`), the
 algorithm returns to the Haar face detector and scans the video to
 relocate the face.
 
@@ -61,7 +61,7 @@ a rectangle over a part of the image.
 
 ## Installation Instructions
 
-First install Eric Perko\'s uvc_cam package if you don\'t have it
+First install Eric Perko's uvc_cam package if you don't have it
 already:
 
 ```
@@ -91,12 +91,12 @@ from the camera.
 First make sure the video window is in the foreground (click on the
 title bar). Then type one of the following characters:
 
--   \'q\' - quit
--   \'c\' - clear all current features and re-detect face
--   \'t\' - toggle text markers off/on
--   \'f\' - toggle features markers off/on
--   \'n\' - toggle night mode on/off (displays markers only)
--   \'a\' - toggle auto face tracking on/off
+-   'q' - quit
+-   'c' - clear all current features and re-detect face
+-   't' - toggle text markers off/on
+-   'f' - toggle features markers off/on
+-   'n' - toggle night mode on/off (displays markers only)
+-   'a' - toggle auto face tracking on/off
 
 ### Tracking with the Kinect RGB-D Camera
 
@@ -151,8 +151,8 @@ title bar):
 ### Tracking a Non-Face Video Patch
 
 To track objects other than faces, first turn off face tracking either
-by typing the letter \'a\' in the image window or by setting the
-\`auto_face_tracking\` parameter to \`False\` in the appropriate launch
+by typing the letter 'a' in the image window or by setting the
+`auto_face_tracking` parameter to `False` in the appropriate launch
 file and re-running the launch file. Then use your mouse to draw a box
 around the object you want to track. You can select a different patch at
 any time.

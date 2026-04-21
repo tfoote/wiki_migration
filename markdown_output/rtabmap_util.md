@@ -4,15 +4,15 @@
 
 ### map_assembler
 
-**Note**: It is recommend to use directly \`cloud_map\` or \`proj_map\`
+**Note**: It is recommend to use directly `cloud_map` or `proj_map`
 published topics from [rtabmap](rtabmap_slam#rtabmap) node instead of
 using this node.
 
 This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
-\`\"mapData\"\` and assembles the 3D map incrementally, then publishes
+`"mapData"` and assembles the 3D map incrementally, then publishes
 the same maps than [rtabmap](rtabmap_slam#rtabmap). See all
-***Mapping*** related topics and parameters of
-[rtabmap](rtabmap_slam#rtabmap) node. You can also use all \`Grid\`
+**`'Mapping`**' related topics and parameters of
+[rtabmap](rtabmap_slam#rtabmap) node. You can also use all `Grid`
 parameters from rtabmap:
 
 ```
@@ -59,14 +59,14 @@ $rosrun rtabmap_slam rtabmap --params | grep Optimize
 ```
 
 This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
-\`\"mapData\"\` and optimize the graph, then republishes the optimized
-\`\"mapData\"\`.
+`"mapData"` and optimize the graph, then republishes the optimized
+`"mapData"`.
 
 -   This node can be used to optimize the graph outside
     [rtabmap](rtabmap_slam#rtabmap) node. The benefice to do that is
     that we can keep optimized the global map instead of the local map
     of [rtabmap](rtabmap_slam#rtabmap). You can then connect output
-    \`mapData_optimized\` to [map_assembler](rtabmap_util#map_assembler)
+    `mapData_optimized` to [map_assembler](rtabmap_util#map_assembler)
     to get the optimized grid, proj and cloud maps assembled again.
     **Note that processing time for map optimization using this node is
     not bounded** (which is the case in [rtabmap](rtabmap_slam#rtabmap)
@@ -76,23 +76,23 @@ This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 <!-- -->
 ```
 -   You could also use your own graph optimization approach instead of
-    this node by modifying \`poses\` values of the
-    \<\<MsgLink(rtabmap_msgs/MapData)\>\> msg. However, implementing
+    this node by modifying `poses` values of the
+    <<MsgLink(rtabmap_msgs/MapData)>> msg. However, implementing
     your graph optimization approach inside
     [rtabmap](rtabmap_slam#rtabmap) is preferred (inherit
     [Optimizer](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/include/rtabmap/core/Graph.h#L44-L109)
     class and add it
     [here](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/src/Graph.cpp#L124-L137)
     with a new number, then you could select it after using the
-    parameter \`RGBD/OptimizeStrategy\`).
+    parameter `RGBD/OptimizeStrategy`).
 
 ```{=html}
 <!-- -->
 ```
 -   When using graph optimization outside
     [rtabmap](rtabmap_slam#rtabmap) node, you should set parameters
-    \`RGBD/OptimizeIterations\` to \`0\`, \`RGBD/OptimizeMaxError\` to
-    \`0\` and \`publish_tf\` to \`false\` for
+    `RGBD/OptimizeIterations` to `0`, `RGBD/OptimizeMaxError` to
+    `0` and `publish_tf` to `false` for
     [rtabmap](rtabmap_slam#rtabmap) node.
 
 ```{=html}
@@ -490,11 +490,11 @@ can be used to downsample the raw point cloud (e.g. like 5 cm voxel) or
 [rtabmap_util/point_cloud_xyz](rtabmap_util#rtabmap_util.2Fpoint_cloud_xyz)
 nodelet can be used to generate a downsampled cloud from a depth image
 (e.g. decimating the depth image by 4 before creating a cloud). That
-filtered point cloud would be fed to \`obstacles_detection\`.
+filtered point cloud would be fed to `obstacles_detection`.
 
   -- --------------------------------------------- -- --------------------------------------------- --
-     ![obs1\|width=\"300\"](attachment:obs1.png)      ![obs2\|width=\"300\"](attachment:obs2.png)   
-     ![obs0\|width=\"300\"](attachment:obs0.png)      ![obs4\|width=\"300\"](attachment:obs4.png)   
+     ![obs1\|width="300"](attachment:obs1.png)      ![obs2\|width="300"](attachment:obs2.png)   
+     ![obs0\|width="300"](attachment:obs0.png)      ![obs4\|width="300"](attachment:obs4.png)   
   -- --------------------------------------------- -- --------------------------------------------- --
 
 ```
@@ -509,15 +509,15 @@ filtered point cloud would be fed to \`obstacles_detection\`.
 
 For
 [sensor_msgs/PointCloud2](http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/PointCloud2.html)
-\`input_cloud\` (3D LiDAR), each point will be deskewed based on their
-timestamp during the rotation of the LiDAR using \`fixed_frame_id\`
-fixed frame. The \`input_cloud\` topic should have timestamp channel as
-\`t\`, \`time\` or \`stamps\`. Supported timestamp formats are FLOAT32
-(seconds since header\'s timestamp) and UINT32 (nanoseconds since
-header\'s timestamp). If \`input_cloud\` is organized, deskewing will be
+`input_cloud` (3D LiDAR), each point will be deskewed based on their
+timestamp during the rotation of the LiDAR using `fixed_frame_id`
+fixed frame. The `input_cloud` topic should have timestamp channel as
+`t`, `time` or `stamps`. Supported timestamp formats are FLOAT32
+(seconds since header's timestamp) and UINT32 (nanoseconds since
+header's timestamp). If `input_cloud` is organized, deskewing will be
 faster (transformed per columns instead per points). For
 [sensor_msgs/LaserScan](http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/LaserScan.html)
-\`input_scan\` (2D LiDAR),
+`input_scan` (2D LiDAR),
 [laser_geometry::LaserProjection](https://docs.ros.org/en/noetic/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html)
 class is used directly to project the scan while accounting for robot
 motion.

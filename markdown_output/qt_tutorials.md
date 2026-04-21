@@ -9,7 +9,7 @@ Simple package to test/demo the [qt_ros](qt_ros) tools. Demo features:
 
 ## Compiling
 
-Compile in place with the usual \`make\` to generate native linux
+Compile in place with the usual `make` to generate native linux
 binaries or use rosbuild2 to build windows binaries with the mingw cross
 compiler (refer to the
 [mingw build environment](mingw_cross/Tutorials/Mingw Build Environment)

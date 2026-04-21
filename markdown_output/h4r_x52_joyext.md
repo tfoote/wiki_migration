@@ -41,4 +41,4 @@ Code API.
 
 ## Bug reports and feature requests
 
-\<\<GitHubIssues(Hacks4ROS/h4r_x52_joyext)\>\>
+<<GitHubIssues(Hacks4ROS/h4r_x52_joyext)>>

@@ -1,16 +1,13 @@
 # Overview
 
-***This documentation is copied from the README.md in the
-kvh_geo_fog_3d/kvh_geo_fog_3d_driver package source code. While every
-effort is made to update the wiki upon updates to the README.md, the
-README.md contains the most up-to-date documentation.***
+**`'This documentation is copied from the README.md in the kvh_geo_fog_3d/kvh_geo_fog_3d_driver package source code. While every effort is made to update the wiki upon updates to the README.md, the README.md contains the most up-to-date documentation.`**'
 
 Driver for the KVH GEO FOG 3D inertial navigation systems. Connects over
 serial to the KVH GEO FOG 3D device and publishes out both KVH-specific
 and generic ROS-ified messages, as well as performs basic transforms to
 convert data to the ROS-conformant conventions.
 
-Initial testing at The MITRE Corporation was done on the \"Dual\" model,
+Initial testing at The MITRE Corporation was done on the "Dual" model,
 which provides dual-antenna heading solutions. However, the API should
 match between the dual and non-dual models.
 
@@ -41,63 +38,63 @@ universally do not conform with ROS REPs (103, 105, or 145).
 
 KVH reports latitude and longitude in radians.
 
--   \`\<node_name\>/kvh_system_state\`
+-   `<node_name>/kvh_system_state`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DSystemState)
--   \`\<node_name\>/kvh_satellites\`
+-   `<node_name>/kvh_satellites`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
--   \`\<node_name\>/kvh_detailed_satellites\`
+-   `<node_name>/kvh_detailed_satellites`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DDetailSatellites)
--   \`\<node_name\>/kvh_local_magnetics\`
+-   `<node_name>/kvh_local_magnetics`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DLocalMagneticField)
--   \`\<node_name\>/kvh_utm_position\`
+-   `<node_name>/kvh_utm_position`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DUTMPosition)
--   \`\<node_name\>/kvh_ecef_pos\`
+-   `<node_name>/kvh_ecef_pos`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DECEFPos)
--   \`\<node_name\>/kvh_north_seeking_status\`
+-   `<node_name>/kvh_north_seeking_status`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DNorthSeekingInitStatus)
--   \`\<node_name\>/kvh_odometer_state\`
+-   `<node_name>/kvh_odometer_state`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
--   \`\<node_name\>/kvh_raw_sensors\`
+-   `<node_name>/kvh_raw_sensors`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawSensors)
--   \`\<node_name\>/kvh_raw_gnss\`
+-   `<node_name>/kvh_raw_gnss`
     (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawGNSS)
 
 #### Conventional ROS messages
 
 Not all of these messages conform to ROS REP-105 or REP-145. See the
-\"ROS Conformance and Conventions\" section below for more details.
+"ROS Conformance and Conventions" section below for more details.
 
-Generally speaking, anything with a \"\_flu\" or a \"\_enu\" suffix
+Generally speaking, anything with a "_flu" or a "_enu" suffix
 conforms to ROS REPs.
 
-All angles are measured in radians unless suffixed with \"\_deg\".
+All angles are measured in radians unless suffixed with "_deg".
 
 [NavSatFix](http://docs.ros.org/kinetic/api/sensor_msgs/html/msg/NavSatFix.html)
 latitude/longitude is measured in degrees (see message definition). This
 is different than the KVH messages, which report latitude/longitude in
 radians.
 
--   \`\<node_name\>/imu/data_raw_frd\` (sensor_msgs/Imu)
--   \`\<node_name\>/imu/data_raw_flu\` (sensor_msgs/Imu) **REP-105,
+-   `<node_name>/imu/data_raw_frd` (sensor_msgs/Imu)
+-   `<node_name>/imu/data_raw_flu` (sensor_msgs/Imu) **REP-105,
     REP-145 compliant**
--   \`\<node_name\>/imu/data_ned\` (sensor_msgs/Imu)
--   \`\<node_name\>/imu/data_enu\` (sensor_msgs/Imu) **REP-105, REP-145
+-   `<node_name>/imu/data_ned` (sensor_msgs/Imu)
+-   `<node_name>/imu/data_enu` (sensor_msgs/Imu) **REP-105, REP-145
     compliant**
--   \`\<node_name\>/imu/rpy_ned\` (geometry_msgs/Vector3Stamped)
--   \`\<node_name\>/imu/rpy_ned_deg\` (geometry_msgs/Vector3Stamped)
--   \`\<node_name\>/imu/rpy_enu\` (geometry_msgs/Vector3Stamped)
--   \`\<node_name\>/imu/rpy_enu_deg\` (geometry_msgs/Vector3Stamped)
--   \`\<node_name\>/gps/fix\` (sensor_msgs/NavSatFix) **Filtered GNSS
+-   `<node_name>/imu/rpy_ned` (geometry_msgs/Vector3Stamped)
+-   `<node_name>/imu/rpy_ned_deg` (geometry_msgs/Vector3Stamped)
+-   `<node_name>/imu/rpy_enu` (geometry_msgs/Vector3Stamped)
+-   `<node_name>/imu/rpy_enu_deg` (geometry_msgs/Vector3Stamped)
+-   `<node_name>/gps/fix` (sensor_msgs/NavSatFix) **Filtered GNSS
     location, in degrees**
--   \`\<node_name\>/gps/raw_fix\` (sensor_msgs/NavSatFix) **Raw GNSS
+-   `<node_name>/gps/raw_fix` (sensor_msgs/NavSatFix) **Raw GNSS
     location, in degrees**
--   \`\<node_name\>/gps/mag\` (sensor_msgs/MagneticField)
--   \`\<node_name\>/gps/utm_ned\` (nav_msgs/Odometry)
--   \`\<node_name\>/gps/utm_enu\` (nav_msgs/Odometry) **REP-105
+-   `<node_name>/gps/mag` (sensor_msgs/MagneticField)
+-   `<node_name>/gps/utm_ned` (nav_msgs/Odometry)
+-   `<node_name>/gps/utm_enu` (nav_msgs/Odometry) **REP-105
     compliant**
--   \`\<node_name\>/odom/wheel_encoder\` (nav_msgs/Odometry)
--   \`\<node_name\>imu/raw_sensor_frd\` (nav_msgs/Odometry)
--   \`\<node_name\>/odom/raw_sensor_flu\` (nav_msgs/Odometry) **REP-105
+-   `<node_name>/odom/wheel_encoder` (nav_msgs/Odometry)
+-   `<node_name>imu/raw_sensor_frd` (nav_msgs/Odometry)
+-   `<node_name>/odom/raw_sensor_flu` (nav_msgs/Odometry) **REP-105
     compliant**
 
 ### Parameters
@@ -108,22 +105,22 @@ directionally (i.e. if you back up, the pulse count decreases) but the
 odometer distance as an absolute distance traveled (i.e. backing up
 increases distance traveled, and it never goes negative). This is the
 only source of non-differentiated data, which is useful to fuse as a
-position in filters since it doesn\'t drift over time (unlike velocity,
+position in filters since it doesn't drift over time (unlike velocity,
 which will drift). The KVH API does not provide a method for obtaining
 its current wheel odometer pulse distance value. Thus, it must be
 hand-coded in as a parameter. In the future, hopefully KVH exposes this
 value over the API.
 
--   \`\<node_name\>/port\` (string, default: /dev/ttyUSB0)
--   \`\<node_name\>/baud\` (int, default: 115200)
--   \`\<node_name\>/debug\` (bool, default: false)
--   \`\<node_name\>/filterVehicleType\` (string, default: 2 (car, see
+-   `<node_name>/port` (string, default: /dev/ttyUSB0)
+-   `<node_name>/baud` (int, default: 115200)
+-   `<node_name>/debug` (bool, default: false)
+-   `<node_name>/filterVehicleType` (string, default: 2 (car, see
     spatial_packets.h))
--   \`\<node_name\>/atmosphericAltitudeEnabled\` (bool, default: true)
--   \`\<node_name\>/velocityHeadingEnabled\` (bool, default: false)
--   \`\<node_name\>/reversingDetectionEnabled\` (bool, default: true)
--   \`\<node_name\>/motionAnalysisEnabled\` (bool, default: true)
--   \`\<node_name\>/odomPulseToMeters\` (double, default: 0.000604)
+-   `<node_name>/atmosphericAltitudeEnabled` (bool, default: true)
+-   `<node_name>/velocityHeadingEnabled` (bool, default: false)
+-   `<node_name>/reversingDetectionEnabled` (bool, default: true)
+-   `<node_name>/motionAnalysisEnabled` (bool, default: true)
+-   `<node_name>/odomPulseToMeters` (double, default: 0.000604)
 
 ## determine_baud_node
 
@@ -133,7 +130,7 @@ manual.
 
 ### Parameters
 
--   \`\<node_name\>/port\` (string, default: /dev/ttyUSB0)
+-   `<node_name>/port` (string, default: /dev/ttyUSB0)
 
 # Setup
 
@@ -153,7 +150,7 @@ this driver without root privileges, you must add your user to the
 dialout group. If you are still having permission errors you can use
 chmod to change the permissions manually.
 
-\`\$ sudo chmod a+rw \<port\> \# E.g., port may be /dev/ttyUSB0\`
+`\$ sudo chmod a+rw <port> \# E.g., port may be /dev/ttyUSB0`
 
 Beware that some COM ports are limited to 115200, which is not enough
 bandwidth to handle large amounts of KVH data. In our case, we had to
@@ -165,27 +162,27 @@ rates.
 
 First you will need to clone and build the repository
 
-\`\$ git clone \<url\> \`
+`\$ git clone <url> `
 
-\`\$ cd kvh_geo_fog_3d \`
+`\$ cd kvh_geo_fog_3d `
 
-\`\$ catkin build kvh_geo_fog_3d \`
+`\$ catkin build kvh_geo_fog_3d `
 
 It is important that you have the KVH messages installed properly. After
 building initially you can check by running:
 
-\`\$ source \.../devel/setup.bash \# May be required after building\`
+`\$ source \.../devel/setup.bash \# May be required after building`
 
-\`\$ rosmsg list \| grep kvh \`
+`\$ rosmsg list \| grep kvh `
 
 You should see the messages listed in the KVH-specific messages section
 above.
 
 Now you should be able to launch the driver by running
 
-\`\$ roslaunch kvh_geo_fog_3d_driver kvh_geo_fog_3d_node.launch
-port:=\<port\> baud:=\<baud\> \# E.g., port=\"/dev/ttyUSB0\"
-baud=\"921600\"\`
+`\$ roslaunch kvh_geo_fog_3d_driver kvh_geo_fog_3d_node.launch
+port:=<port> baud:=<baud> \# E.g., port="/dev/ttyUSB0"
+baud="921600"`
 
 If everything is set up properly, you should be able to see data being
 output on each of the topics listed above. Currently the driver is
@@ -214,8 +211,8 @@ the baud rates and checking for returned data. You can launch this node
 by running the command below. By default it will start at 1200, but the
 starting baud rate setting is available if you believe that the baud
 rate it is finding is incorrect or recieving random data (i.e. allows
-you to skip baud rates).\` \$ roslaunch kvh_geo_fog_3d_driver
-determine_baud.launch starting_baud:=\<baud_rate\> \` Due to the rs232
+you to skip baud rates).` \$ roslaunch kvh_geo_fog_3d_driver
+determine_baud.launch starting_baud:=<baud_rate> ` Due to the rs232
 connecting library we use, the possible baud rates are: 1200, 1800,
 2400, 4800, 9600, 19200, 38400, 57600, 115200, 230400, 460800, 500000,
 576000, 921600, 1000000
@@ -240,9 +237,9 @@ Link: <https://www.ros.org/reps/rep-0105.html>
 Summary:
 
 -   Data will be published by default in sensor conventions (FRD/NED)
-    with the suffixes \_frd and \_ned
+    with the suffixes _frd and _ned
 -   Data will also be published with FLU/ENU topics, with the suffixes
-    \_flu and \_enu
+    _flu and _enu
 
 This sensor, like many navigation sensors, uses the somewhat standard
 Front-Right-Down and North-East-Down (FRD/NED) coordinate frame
@@ -250,9 +247,9 @@ conventions. ROS opts to use the standards Front-Left-Up and
 East-North-Up (FLU/ENU) frames.
 
 All data will be published in the sensor-standard formats (FRD/NED) and
-suffixed with \"\_frd\" and \"\_ned\". The driver will also publish
+suffixed with "_frd" and "_ned". The driver will also publish
 FLU/ENU topics to conform with ROS REP 105. These topics will have the
-suffix \"\_flu\" and \"\_enu\".
+suffix "_flu" and "_enu".
 
 ## REP 145 - Conventions for IMU Sensor Drivers
 
@@ -279,10 +276,10 @@ course-over-ground calculations, among other methods. To conform with
 ROS REP 145, we will publish the raw inertial data, stripped of
 orientation, in both FRD and FLU frames.
 
-We will deviate from REP 145 by explicitly terminating topics with \_frd
-and \_flu. There will be no standard imu/data_raw and imu/data labelled
+We will deviate from REP 145 by explicitly terminating topics with _frd
+and _flu. There will be no standard imu/data_raw and imu/data labelled
 topics. The end user should select the topic with the frame convention
-they\'d like to consume.
+they'd like to consume.
 
 For frame_id strings, we will deviate from REP 103 and use the
 following:
@@ -335,12 +332,12 @@ The KVH driver was written as a standalone driver, and the ROS node
 simply uses and recieves data from that driver. Below is the general
 structure of the ROS side.
 
-\`cpp
+`cpp
 
-. typedef std::pair\<packet_id_e, int\> freqPair; kvh::KvhPacketRequest
+. typedef std::pair<packet_id_e, int> freqPair; kvh::KvhPacketRequest
 packetRequest{ . freqPair(packet_id_utm_position, 50),
 freqPair(packet_id_system_state, 50), . .. * Any additional packets }; *
-Set connected port std::string kvhPort(\"/dev/ttyUSB0\");
+Set connected port std::string kvhPort("/dev/ttyUSB0");
 kvhDriver.Init(kvhPort, packetRequest); system_state_packet_t sysPacket;
 while(1) { . kvhDriver.Once(); * Check for new published packets if
 (kvhDriver.PacketIsUpdated(packet_id_system_state)) { .
@@ -351,7 +348,7 @@ kvhDriver.SetPacketUpdated(packet_id_system_state, false);
 usleep(10000); * Usually will want to sleep for some amount of time }
 
 Developer Note: Notice that at the end we must run
-kvhDriver.SetPacketUpdated(packet_id, bool)\`. The driver has been
+kvhDriver.SetPacketUpdated(packet_id, bool)`. The driver has been
 implemented so that you must explicitly state when you have read its
 data. If you wish to keep track of when new data appears, the driver
 must be used this way. In any case, the driver will always store the
@@ -366,51 +363,51 @@ you need, please see the instructions below for a guide on how to add
 them to the driver.
 
 1\. Add packet information to each set/map currently in
-\`src/kvh_driver/kvh_global_vars.cpp\`.
+`src/kvh_driver/kvh_global_vars.cpp`.
 
 For the most part, you should be able to follow the predefined pattern,
-but you will be adding the packet_id to the supportedPackets\_, the
-packet size to packetSize\_, and the string literal of the packet type
-to packetTypeStr\_. Note, this is essentially registering your desired
+but you will be adding the packet_id to the supportedPackets_, the
+packet size to packetSize_, and the string literal of the packet type
+to packetTypeStr_. Note, this is essentially registering your desired
 packet.
 
-*Developer Note: The packetSize\_ and packetTypeStr\_ could be inferred
+*Developer Note: The packetSize_ and packetTypeStr_ could be inferred
 from the packet_id, except for the fact that some packets exist that
-were not properly implemented in kvh\'s api, and which we have had to
+were not properly implemented in kvh's api, and which we have had to
 manually extend. We have chosen to make these fixes in our code instead
 of modifying their api.*
 
 2\. Add packet-specific decoding function to **DecodePacket** function
-in \`src/kvh_driver/decode_packets.cpp\`
+in `src/kvh_driver/decode_packets.cpp`
 
 You should be able to just follow the pattern shown by the previously
 implemented packets, but will be included here for comprehensiveness.
 
-\`cpp
+`cpp
 
 . case packet_id: . packet_type_t packet; if
-(decode_packet_type(&packet, \_anPacket) == 0) { .
-packetStorage\_.UpdatePacket(packet_type_id, packet);
-packetStorage\_.SetPacketUpdated(packet_type_id, true); }
+(decode_packet_type(&packet, _anPacket) == 0) { .
+packetStorage_.UpdatePacket(packet_type_id, packet);
+packetStorage_.SetPacketUpdated(packet_type_id, true); }
 
-\`
+`
 
 3\. Add packet to initialization mapping in the **Init** function of
-\`src/kvh_driver/packet_storage.cpp\`
+`src/kvh_driver/packet_storage.cpp`
 
 The packet storage is initialized with the requested packets at the
 beginning. You must add a line similar to the following to make sure the
 initialization succeeds.
 
-\`cpp
+`cpp
 
-. case packet_type_id: . packetMap\_\[packet_type_id\] =
-std::make_pair(false, std::make_shared\<packet_type_struct_t\>());
+. case packet_type_id: . packetMap_\[packet_type_id\] =
+std::make_pair(false, std::make_shared<packet_type_struct_t>());
 break;
 
-\`
+`
 
-4\. Add to the \`KvhPacketRequest\` that you are sending upon creation
+4\. Add to the `KvhPacketRequest` that you are sending upon creation
 of the driver.
 
 # Limitations

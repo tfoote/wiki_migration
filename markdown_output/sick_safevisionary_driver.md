@@ -59,5 +59,5 @@ param {
 
 ## Additional Information
 
-You\'ll find additional information in the official
+You'll find additional information in the official
 [Github repository](https://github.com/SICKAG/sick_safevisionary_ros1).

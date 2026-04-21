@@ -1,6 +1,6 @@
 ## Usage
 
-Be sure that the AR.Drone has completed it\'s boot sequence (indicated
+Be sure that the AR.Drone has completed it's boot sequence (indicated
 by a green LED on the bottom), and that it is connected to your computer
 via WiFi. Also, make sure you have plenty of room to safely fly the
 AR.Drone. When using the AR.Drone, keep in mind the range of WiFi, and

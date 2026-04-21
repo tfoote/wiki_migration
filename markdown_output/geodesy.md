@@ -16,15 +16,15 @@ header file:
 
 ### WGS 84
 
--   [\<geodesy/wgs84.h\>](http://docs.ros.org/hydro/api/geodesy/html/c++/wgs84_8h.html)
+-   [<geodesy/wgs84.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/wgs84_8h.html)
 
 This is the base type for communicating geodetic information between ROS
-nodes, using \<\<MsgLink(geographic_msgs/GeoPoint)\>\> and
-\<\<MsgLink(geographic_msgs/GeoPose)\>\> messages.
+nodes, using <<MsgLink(geographic_msgs/GeoPoint)>> and
+<<MsgLink(geographic_msgs/GeoPose)>> messages.
 
 ### UTM
 
--   [\<geodesy/utm.h\>](http://docs.ros.org/hydro/api/geodesy/html/c++/utm_8h.html)
+-   [<geodesy/utm.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/utm_8h.html)
 
 This is a slight generalization of the Universal Transverse Mercator
 projection. It includes grid information from the Military Grid

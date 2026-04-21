@@ -18,28 +18,28 @@ Source: <https://github.com/SherifN/peak_cam>
 
 1\. Generate a ROS workspace
 
-. \`\$ mkdir -p camera_ws/src/\`
+. `\$ mkdir -p camera_ws/src/`
 
 1\. Copy the peak_cam package into your ROS workspace and build it
 
-. \`\$ cp -r peak_cam/ camera_ws/src/\` \`\$ cd camera_ws/ &&
-catkin_make && source devel/setup.bash\`
+. `\$ cp -r peak_cam/ camera_ws/src/` `\$ cd camera_ws/ &&
+catkin_make && source devel/setup.bash`
 
 2\. Set parameters such as ROS topic and acquisition rate under
-\`launch/params/peak_cam_params.yaml\`
+`launch/params/peak_cam_params.yaml`
 
 3\. Plug the IDS vision camera and launch the node
 
-. \`\$ roslaunch peak_cam peak_cam_node.launch\`
+. `\$ roslaunch peak_cam peak_cam_node.launch`
 
-4\. Stop the node with \`Ctrl-C\` (SIGINT) for controlled shutdown
+4\. Stop the node with `Ctrl-C` (SIGINT) for controlled shutdown
 
-For multiple cameras, create a \`.launch\` and a \`.yaml\` file for each
+For multiple cameras, create a `.launch` and a `.yaml` file for each
 camera.
 
 ## Issues
 
-Sometimes the cameras are only accesible as root. Try \` sudo -s\` in
+Sometimes the cameras are only accesible as root. Try ` sudo -s` in
 your terminal and launch the node again to validate.
 
 Maintainer: Sherif Nekkah

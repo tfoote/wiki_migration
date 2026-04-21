@@ -107,8 +107,8 @@ using a HOG cascade.
 
 Since it is uncommon to have Dlib installed, the face_detection_dlib
 node is disabled by default. If you want to use this node, you need to
-enable it in the CMakeLists file under the section \"DLIB\". You will
+enable it in the CMakeLists file under the section "DLIB". You will
 also need to link the installation directory in the CMakeLists
 (include(../dlib/cmake)). The Dlib library can be found on their website
 (<http://dlib.net/>). If your CPU does not support the AVX instruction
-set, you might have to change the line \"#set(USE_AVX_INSTRUCTIONS 1)\"
+set, you might have to change the line "#set(USE_AVX_INSTRUCTIONS 1)"

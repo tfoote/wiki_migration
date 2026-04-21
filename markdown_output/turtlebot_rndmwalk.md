@@ -1,7 +1,7 @@
 ## Hardware Requirements
 
-You\'ll need a TurtleBot!
-[Don\'t have one yet?](http://clearpathrobotics.com/turtlebot)
+You'll need a TurtleBot!
+[Don't have one yet?](http://clearpathrobotics.com/turtlebot)
 
 ## Instructions
 
@@ -12,13 +12,13 @@ You\'ll need a TurtleBot!
 sudo apt-get install ros-diamondback-openni-kinect
 ```
 
-2\. You\'ll also need to checkout the following Clearpath Packages:
+2\. You'll also need to checkout the following Clearpath Packages:
 ```
 svn co http://clearpath-ros-pkg.googlecode.com/svn/trunk/clearpath_kinect ~/clearpath-ros-pkg/clearpath_kinect
 svn co http://clearpath-ros-pkg.googlecode.com/svn/trunk/clearpath_turtlebot ~/clearpath-ros-pkg/clearpath_turtlebot
 ```
 
-3\. Add the following line to your \'.bashrc\' if it does not already
+3\. Add the following line to your '.bashrc' if it does not already
 exist: ```
 export ROS_PACKAGE_PATH=${HOME}/clearpath-ros-pkg:${ROS_PACKAGE_PATH}
 ```
@@ -30,7 +30,7 @@ rosmake clearpath_turtlebot
 
 ### Demo
 
-Make sure the robot starts with a good amount of floor area in it\'s
+Make sure the robot starts with a good amount of floor area in it's
 view so that it can properly calibrate the floor plane.
 
 Use the launch file ```

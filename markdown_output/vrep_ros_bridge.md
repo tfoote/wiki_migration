@@ -23,12 +23,12 @@ simulation engine which is becoming more and more widespread in the
 robotics community thanks to its flexibility (possibility to simulate
 many different robotic platforms), dynamical engine (it supports ODE,
 Bullet and Vortex), and finally customizability (it offers many
-different possibilities to include one\'s own code or to interface it
+different possibilities to include one's own code or to interface it
 with the external world).
 
 ## Description
 
-This plugin is a shared library that is automatically loaded by V-REP\'s
+This plugin is a shared library that is automatically loaded by V-REP's
 main client application at program start-up. Our plugin looks for known
 objects in the scene in order to manage them. It creates ROS publishers
 to send out simulation data (for example pose and velocity of objects
@@ -42,11 +42,11 @@ ROS V-Rep Bridge uses the [pluginlib](pluginlib) package. Pluginlib is a
 C++ library for loading and unloading plugins from within a ROS package.
 Plugins are dynamically loadable classes that are loaded from a runtime
 library (i.e. shared object, dynamically linked library). In this way
-our handlers are actually plugins with some dependencies. If we don\'t
-need a handler or we don\'t have installed its dependencies we are still
+our handlers are actually plugins with some dependencies. If we don't
+need a handler or we don't have installed its dependencies we are still
 able to build our bridge (that plugin will not be available). For
 example, the [quadrotor_tk_handler](quadrotor_tk_handler) needs
-[Telekyb](telekyb). If we don\'t want to install Telekyb we can just add
+[Telekyb](telekyb). If we don't want to install Telekyb we can just add
 a file called CATKIN_IGNORE in the quadrotor_tk_handler folder and it
 will not be considered. In spite of this the other handlers will be
 available.
@@ -78,17 +78,17 @@ The next section show how to link the plugin with an object in V-REP.
 
 ### Handlers
 
-We have an object in the scene (let\'s say a quadrotor) and we want that
+We have an object in the scene (let's say a quadrotor) and we want that
 the plugin [vrep_ros_bridge](vrep_ros_bridge) manage it. To do it we
-will have to tag the object with a predefined string. If we don\'t do it
+will have to tag the object with a predefined string. If we don't do it
 the plugin will not act on the object. We will show how to tag a
 quadrotor but the procedure for the other objects will be similar.
 
 Procedure:
 
 -   Right Click on the object you want to add the custom data (on the
-    \'Scene hierarchy\' (on the right) or directly on the scene)
--   Click on \'Add \--\> Associated child script \--\> Non threated\'
+    'Scene hierarchy' (on the right) or directly on the scene)
+-   Click on 'Add \--> Associated child script \--> Non threated'
 -   The general structure of the child script (written in
     [LUA](http://www.lua.org/)) is: ```
 if (simGetScriptExecutionCount()==0) then
@@ -109,14 +109,14 @@ simExtSetFloatCustomDataFromHeader(quadrotor, sim_ext_ros_bridge_quadrotor_data_
 ```
     withing the initialization code.
 
-The function \'simExtSetFloatCustomDataFromHeader()\' adds a custom data
-to the object related to \'sim_ext_ros_bridge_set_obj_twist_data_main\'.
+The function 'simExtSetFloatCustomDataFromHeader()' adds a custom data
+to the object related to 'sim_ext_ros_bridge_set_obj_twist_data_main'.
 As we can see, the function requires a third input. If requested, we can
 add a value to our custom data, setting the third input of the function.
-In our case, since we don\'t want to use this additional parameter we
+In our case, since we don't want to use this additional parameter we
 set it to zero (it will be ignored). We can add float and int values. If
 you want to add an int value you have to use the function
-\'simExtSetIntCustomDataFromHeader()\'. You can find the list of the
+'simExtSetIntCustomDataFromHeader()'. You can find the list of the
 Custom Lua Variables in the description of each handler. Moreover you
 will find the complete list in the file
 [access.cpp](https://github.com/lagadic/vrep_ros_bridge/blob/master/vrep_ros_plugin/src/access.cpp)
@@ -161,7 +161,7 @@ Add-on script 'vrepAddOnScript-addOnScriptDemo.lua' was loaded.
 <!-- -->
 ```
 -   Open in V-REP the scene called
-    \"vrep_ros_bridge/SceneVrep/Test.ttt\". You will see a quadrotor and
+    "vrep_ros_bridge/SceneVrep/Test.ttt". You will see a quadrotor and
     a six dof manipulator (Viper 850).
 -   Run the simulation
 -   The external console will show the object found in the scene:

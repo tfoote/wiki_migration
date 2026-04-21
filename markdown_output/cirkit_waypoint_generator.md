@@ -5,12 +5,12 @@ This package generate waypoints for 2D navigation by using /map and
 ## About
 
 -   You can add waypoint \...
--   by clicking a point in \`Rviz\`
--   by a ROBOT\'s exploring with \`amcl\` running, which adds a waypoint
-    at every \`dist_th\` meters proceeding.
+-   by clicking a point in `Rviz`
+-   by a ROBOT's exploring with `amcl` running, which adds a waypoint
+    at every `dist_th` meters proceeding.
 -   Tips
 -   You can see the pose (angular-z) of waypoints under conditions that
-    \`tf\`s show up in \`Rviz\` and set \`scale\` to around 10.
+    `tf`s show up in `Rviz` and set `scale` to around 10.
 -   You can tune the pose of a waypoint by dragging a circle around the
     box (stands for the specified waypoint), which is still unstable
     though\...
@@ -46,12 +46,12 @@ param{
 
 ### waypoint_saver
 
-Save generated waypoints by \`waypoint_generator\` to a CSV file.
+Save generated waypoints by `waypoint_generator` to a CSV file.
 
 ### waypoint_server
 
-Load a CSV file saved by \`waypoint_saver\` and show the loaded
-\`waypoints\` in \`Rviz\`.
+Load a CSV file saved by `waypoint_saver` and show the loaded
+`waypoints` in `Rviz`.
 
 ## Usage
 
@@ -82,7 +82,7 @@ $ rosrun waypoint_generator waypoint_saver
 ### modify_waypoint
 
 If the waypoint area is searching area, the you can make last colum
-\`1\`. If you set it correct, the marker color will be yellow. The
+`1`. If you set it correct, the marker color will be yellow. The
 normal color is green.
 
 ### check waypoints

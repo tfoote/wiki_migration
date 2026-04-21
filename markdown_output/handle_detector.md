@@ -15,7 +15,7 @@ If you like this package and use it in your own work, please cite our
 Kinetic 1. Lapack (install in Ubuntu using: sudo apt-get install
 liblapack-dev) 1. [Openni_launch](http://wiki.ros.org/openni_launch)
 (install in Ubuntu using: sudo apt-get install
-ros-\<ROS_VERSION\>-openni-launch)
+ros-<ROS_VERSION>-openni-launch)
 
 ## Installation
 
@@ -26,7 +26,7 @@ ros-\<ROS_VERSION\>-openni-launch)
 
 ### From Source
 
-1\. Cd into the \'src\' folder of your catkin workspace. 1. Clone the
+1\. Cd into the 'src' folder of your catkin workspace. 1. Clone the
 github repository. 1. Recompile your ROS workspace: \$ catkin_make.
 
 ## How to Localize Handles
@@ -38,7 +38,7 @@ Microsoft Kinect.
 
 ### Using a Point Cloud File
 
-1\. Set the parameter \'file\' in
+1\. Set the parameter 'file' in
 handle_detector/launch/localization_pcd_file.launch to the absolute path
 of some pcd file. 1. Start roscore: \$ roscore. 1. Run the handle
 localization: \$ roslaunch handle_detector
@@ -48,7 +48,7 @@ below): \$ rosrun rviz rviz.
 For the given point cloud file (*handle_detector/data/table5.pcd*), the
 output in rviz should look like this:
 
-![Output for PCD file\|width=\"340\"](attachment:handles_pcd.png)
+![Output for PCD file\|width="340"](attachment:handles_pcd.png)
 
 ### Using a Depth Sensor
 
@@ -84,8 +84,8 @@ Show all handles: add a MarkerArray and set the topic to
 \...): add a MarkerArray and set the topic to
 /localization/visualization_handle_i.
 
-![alt text\|height=\"240\",width=\"320\"](http://www.ccs.neu.edu/home/atp/images/stagedcleaning8.png)
-![alt text\|height=\"240\",width=\"320\"](http://www.ccs.neu.edu/home/atp/images/handle_visualization.png)
+![alt text\|height="240",width="320"](http://www.ccs.neu.edu/home/atp/images/stagedcleaning8.png)
+![alt text\|height="240",width="320"](http://www.ccs.neu.edu/home/atp/images/handle_visualization.png)
 
 ## Commands
 

@@ -1,7 +1,7 @@
 The interface has been developed with QtCreator tool and it makes use of
 [PyQt5](https://pypi.org/project/PyQt5/) libraries to run the GUI.
 
-. ![\|width=\"400px\"](attachment:gui_general.png)
+. ![\|width="400px"](attachment:gui_general.png)
 
 This package aims to improve the user experience with the stack. For
 that purpose, several functionalities that ease the interaction with the
@@ -19,7 +19,7 @@ selects the figure type, fills in the fields with necessary data and
 press the add button. Next time the projection is started, this new
 figure will be projected.
 
-. ![\|width=\"400px\"](attachment:gui_line.png)
+. ![\|width="400px"](attachment:gui_line.png)
 
 ## Acknowledgement
 

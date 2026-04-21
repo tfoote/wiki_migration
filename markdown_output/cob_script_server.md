@@ -35,7 +35,7 @@ keyboard input) returns a handle which offers the following commands.
      **command**          **example**               **explanation**                                                                            
      `wait()`             `handle.wait()`           waits forever until the command is finished                                                
      `wait(timeout)`      `handle.wait(2.0)`        waits until the command is finished, but max. for `timeout` seconds                        
-     `get_state()`        `handle.get_state()`      gets the state of the current execution (see \<\<MsgLink(actionlib_msgs/GoalStatus)\>\>)   
+     `get_state()`        `handle.get_state()`      gets the state of the current execution (see <<MsgLink(actionlib_msgs/GoalStatus)>>)   
   -- ----------------- -- ---------------------- -- ------------------------------------------------------------------------------------------ --
 
 ## Terminal API

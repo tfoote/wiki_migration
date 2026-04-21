@@ -8,7 +8,7 @@ The recognition method can be configured and trained with a simple
 interface as explained in the next section.
 
 ![](attachment:people_detection_image.png)
-![\|width=\"280\"](attachment:person_recognition_algorithm.png)
+![\|width="280"](attachment:person_recognition_algorithm.png)
 
 ## Quick Start
 
@@ -70,7 +70,7 @@ people detection node on your computer. To record some data adjust the
 frame rate of the camera, first, by choosing *5 - activate/deactivate
 sensor message gateway* in the client and then enter 1 to activate the
 sensor message gateway. The frame rate should be chosen somewhere
-between 5 and 30 Hz depending on your computer\'s power.
+between 5 and 30 Hz depending on your computer's power.
 ```
 Choose an option:
 1 - capture face images
@@ -161,7 +161,7 @@ please delete all data from
 record two people.
 
 After training, you need to build a recognition model with the new data.
-To do so, just select *4 - load recognition model* from the client\'s
+To do so, just select *4 - load recognition model* from the client's
 menu. In the following prompt you can either list all persons that you
 captured and that shall be recognized by the system, e.g. by typing
 ```
@@ -199,7 +199,7 @@ directly, which are located in your home folder at
 
 ### Overview
 
-![\|width=\"1024\"](attachment:people_detection_scheme.png)
+![\|width="1024"](attachment:people_detection_scheme.png)
 
 The cob_people_detection pipeline contains the steps head detection,
 face detection, face recognition and detection tracking. Around the
@@ -218,16 +218,16 @@ Detector determines the locations of faces within these head regions.
 Then the Face Recognizer identifies the name of each detected face. The
 recognition results are finally collected by the Detection Tracker and
 published as a topic
-\`/cob_people_detection/detection_tracker/face_position_array\` that can
+`/cob_people_detection/detection_tracker/face_position_array` that can
 be subscribed to if continuous detection results are desired. If
 detection of faces is supposed to happen only on demand, use the
-\`get_detections_server\` action of the Coordinator.
+`get_detections_server` action of the Coordinator.
 
 The Face Capture node facilitates learning of new persons or the
-modification of training data. The action \`add_data_server\` realizes
+modification of training data. The action `add_data_server` realizes
 the addition of new training data. After the capture of new training
 data the recognition model has to be rebuilt to incorporate the new
-data. To do so, call the action \`load_model_server\` of the Face
+data. To do so, call the action `load_model_server` of the Face
 Recognizer after recording new images. The People Detection Display node
 can be used to display the results in a live image and to verify which
 data is recorded during training.
@@ -277,14 +277,14 @@ If you are using this software in your work, please cite the Humanoids
 paper from 2013.
 
 1\. Ninghang Hu, Richard Bormann, Thomas Zwölfer, and Ben Kröse,
-\"Multi-User Identification and Efficient User Approaching by Fusing
-Robot and Ambient Sensors,\" in Proceedings of the IEEE Conference on
+"Multi-User Identification and Efficient User Approaching by Fusing
+Robot and Ambient Sensors," in Proceedings of the IEEE Conference on
 Robotics and Automation (ICRA), 2014. 1. Richard Bormann, Thomas
-Zwölfer, Jan Fischer, Joshua Hampp, and Martin Hägele, \"Person
-Recognition for Service Robotics Applications,\" in Proceedings of the
+Zwölfer, Jan Fischer, Joshua Hampp, and Martin Hägele, "Person
+Recognition for Service Robotics Applications," in Proceedings of the
 13th International IEEE-RAS International Conference on Humanoid Robots,
-2013. 1. Jan Fischer, Daniel Seitz, and Alexander Verl, \"Face Detection
-using 3-D Time-of-Flight and Colour Cameras,\" in: Neumann, Kristin
+2013. 1. Jan Fischer, Daniel Seitz, and Alexander Verl, "Face Detection
+using 3-D Time-of-Flight and Colour Cameras," in: Neumann, Kristin
 (Ed.) u.a.; International Federation of Robotics u.a.: Joint
 International Conference of ISR/ROBOTIK2010: Munich, 7-9 June 2010.
 Berlin; Offenbach: VDE-Verlag, 2010, S. 112-116.

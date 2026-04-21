@@ -56,7 +56,7 @@ file at <https://github.com/LORD-MicroStrain/ntrip_client> provides
 instructions for installing and running this package.
 
 Clone the repo into your workspace src directory and follow the
-instructions in the \"Build Instructions\" section of the README.
+instructions in the "Build Instructions" section of the README.
 ```
 git clone https://github.com/LORD-MicroStrain/ntrip_client
 ```

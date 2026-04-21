@@ -23,19 +23,19 @@ minimizes total joint motion.
 Conceptually, it performs the following operations: 1. For every
 trajectory point, calculate all of the inverse kinematic solutions for
 that point. These are calculated using the sampling logic implemented by
-the trajectory point, and the robot model\'s knowledge of
+the trajectory point, and the robot model's knowledge of
 statics/dynamics. 2. For every pair of contiguous points, calculate the
 movement cost and feasibility between each joint solution for the
 starting point and each joint solution for the ending point. 3. Build a
 graph from the data where vertexes represent kinematic solutions and
 edges represent movement costs. 4. Search this graph for the lowest cost
 route from any starting configuration to any ending configuration using
-Dijkstra\'s algorithm.
+Dijkstra's algorithm.
 
 ### Sparse Planner
 
 *Sparse Planner* builds on top of the working principles of dense
-planner, but attempts to save computational time by \'sampling\' a given
+planner, but attempts to save computational time by 'sampling' a given
 trajectory. Sparse planner runs inverse kinematics on a subset of the
 original points and then attempts to solve the rest of the trajectory
 using joint space interpolation and forward kinematics.

@@ -1,5 +1,5 @@
 You can interpolate between the current grasp, and two different grasps
-with this slider. Let\'s have a simple example:
+with this slider. Let's have a simple example:
 
 -   you want to open the Hand, so you double click on the **opened**
     grasp in the grasp selector. This directly sets the Hand to this

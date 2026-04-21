@@ -1,7 +1,7 @@
 ## Overview
 
 The Slam Toolbox package incorporates information from laser scanners in
-the form of a LaserScan message and TF transforms from odom-\>base link,
+the form of a LaserScan message and TF transforms from odom->base link,
 and creates a map 2D map of a space. This package will allow you to
 fully serialize the data and pose-graph of the SLAM map to be reloaded
 to continue mapping, localize, merge, or otherwise manipulate. We allow
@@ -14,10 +14,10 @@ You can find a paper about this work
 
 ROS drop in replacement to gmapping, cartographer, karto, hector, etc
 featuring a feature complete SLAM build on the robust scan matcher at
-the heart of Karto that\'s been souped up and sped up for use in this
+the heart of Karto that's been souped up and sped up for use in this
 package. A new optimization plugin based on Google Ceres is also
-introduced. We also introduce a new localization method called \"elastic
-pose-graph localization\" that takes a sliding window of measurements
+introduced. We also introduce a new localization method called "elastic
+pose-graph localization" that takes a sliding window of measurements
 and adds them to the graph to optimize and refine. This allows for the
 tracking of local features which have changed in the environment rather
 than viewing them as deviations and removes these extra nodes when you
@@ -43,8 +43,8 @@ very useful to rotate maps to be axially aligned.
 More information, ROS API, demos, and resources are given in the
 [GitHub](https://github.com/SteveMacenski/slam_toolbox) page.
 
-Macenski, S., Jambrecic I., \"SLAM Toolbox: SLAM for the dynamic
-world\", Journal of Open Source Software, 6(61), 2783, 2021.
+Macenski, S., Jambrecic I., "SLAM Toolbox: SLAM for the dynamic
+world", Journal of Open Source Software, 6(61), 2783, 2021.
 
-Macenski, S., \"On Use of SLAM Toolbox, A fresh(er) look at mapping and
-localization for the dynamic world\", ROSCon 2019.
+Macenski, S., "On Use of SLAM Toolbox, A fresh(er) look at mapping and
+localization for the dynamic world", ROSCon 2019.

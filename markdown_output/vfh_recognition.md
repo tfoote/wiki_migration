@@ -22,7 +22,7 @@ Be aware that 3D models found on the internet (i.e Google Ware House) DO
 NOT have a valid scale. For the moment, CVFH does not make use of
 color/texture information (it is purely geometrical) so objects which
 exact same surface properties in the geometrical sense but different
-colors/texture won\'t be differentiated.
+colors/texture won't be differentiated.
 
 ## Requisites
 
@@ -137,17 +137,17 @@ Provides test interfaces to classify table top scenes using CVFH.
 
 ### scene_vfh_recognizer
 
-\_\_Input\_\_: a point cloud obtained from a 3D depth sensor like the
+__Input__: a point cloud obtained from a 3D depth sensor like the
 Kinect that contains a stable plane on which the objects to be
 classified stand.
 
-\_\_Output\_\_: Displays in a visualization window the input scene,
+__Output__: Displays in a visualization window the input scene,
 together with the segmented clusters (displayed in red), the best
 training partial view (displayed in green) and the PLY model overlayed
 on top of it. By pressing W or S, the PLY models can be visualized using
 a wireframe or solid representation.
 
-\_\_How to run it?\_\_
+__How to run it?__
 
 Assuming that you have the Kinect running, you need to:
 

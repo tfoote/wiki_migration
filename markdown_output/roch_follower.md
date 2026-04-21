@@ -10,7 +10,7 @@ Before running the follower, make sure your Roch is setup: 1. The
 [Roch](Robots/Roch) must be placed away from walls and objects that
 could confuse the follower. 4. The [Roch](Robots/Roch) must not be
 running any other ros programs. Reference to
-[Turtlebot\'s Follower](turtlebot_follower).
+[Turtlebot's Follower](turtlebot_follower).
 
 ## Tutorials
 

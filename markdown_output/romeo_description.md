@@ -8,7 +8,7 @@ is distributed with Aldebaran Robotics permission.
 
 If you are using this robot to illustrate a document such as a
 scientific publication, you should include the following copyright
-notice: \"(c) Aldebaran Robotics\" near the figure.
+notice: "(c) Aldebaran Robotics" near the figure.
 
 ## Documentation
 
@@ -54,7 +54,7 @@ may change when the package is updated.
 ## SRDF model
 
 The SRDF model contains the half-sitting reference pose called
-\`half_sitting\`. It is meant to used as a statically stable posture
+`half_sitting`. It is meant to used as a statically stable posture
 where the center of mass is near the robot waist. It can be used to
 safely initialize optimization problems or planning algorithms.
 

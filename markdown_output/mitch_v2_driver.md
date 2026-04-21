@@ -25,7 +25,7 @@ a\. Ubuntu 20.04:
 -   Create your
     [ Catkin Workspace](https://github.com/Brabalawuka/RosOnWindows) (in
     this tutorial, we assume that your catkin workspace is located in
-    your \`\`\`c:\\\`\`\` directory)
+    your ```c:\\``` directory)
 
 Tips for Windows:
 
@@ -33,23 +33,23 @@ Tips for Windows:
     short cut (created in the installation step)
 -   Assuming you are exploiting
     [Microsoft Visual Studio 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes),
-    remember to include the \"Desktop development with C++\" workload.
-    Moreover, in the Individual Components, select \"Windows 10 SDK\".
+    remember to include the "Desktop development with C++" workload.
+    Moreover, in the Individual Components, select "Windows 10 SDK".
 -   if you need the Ninja build tool, go to the
     [ releases page](https://github.com/ninja-build/ninja/releases ) and
-    download a suitable binary for Windows. Place \`\`\`ninja.exe\`\`\`
-    in a suitable spot, e.g., \`\`\`C:\\Ninja\`\`\`. Make sure that
-    CMake can find \`\`\`ninja.exe\`\`\` by adding \`\`\`C:\\Ninja\`\`\`
-    to your \`\`\`%PATH%\`\`\`.
+    download a suitable binary for Windows. Place ```ninja.exe```
+    in a suitable spot, e.g., ```C:\\Ninja```. Make sure that
+    CMake can find ```ninja.exe``` by adding ```C:\\Ninja```
+    to your ```%PATH%```.
 
-To set up the \`\`\`catkin_make\`\`\` tools in Visual Studio 2019:
+To set up the ```catkin_make``` tools in Visual Studio 2019:
 
--   From the ROS shortcut, enter \`\`\`devenv\`\`\` to start your Visual
+-   From the ROS shortcut, enter ```devenv``` to start your Visual
     Studio IDE;
 -   Choose to open up your catkin workspace from your local folder;
 -   As Visual Studio is using different settings for CMake projects, we
-    need to configure the CMake file. Thus, click \`\`\`Project \--\>
-    CMake Settings for Project\`\`\` and edit the JSON version of your
+    need to configure the CMake file. Thus, click ```Project \-->
+    CMake Settings for Project``` and edit the JSON version of your
     Cmake settings file as follows:
 
 ```
@@ -72,7 +72,7 @@ To set up the \`\`\`catkin_make\`\`\` tools in Visual Studio 2019:
 In this way, Cmaking and building your project from Visual Studio will
 be equal to a catkin_make outside the Visual Studio environment. You can
 also open the Command Line directly from the Visual Studio
-\`\`\`Tools\`\`\` button.
+```Tools``` button.
 
 ### Install lib221e
 

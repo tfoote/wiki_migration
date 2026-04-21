@@ -1,6 +1,6 @@
 ## Use
 
-The \`turtlebot_teleop\` package provides launch files for teleoperation
+The `turtlebot_teleop` package provides launch files for teleoperation
 with different input devices.
 
 For a keyboard teleoperation use: ```

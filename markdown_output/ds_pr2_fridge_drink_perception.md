@@ -23,7 +23,7 @@ topic is specified in the launch files.
 extract_clusters.launch : All parameters set in the launch file are
 standard pcl parameters.
 
-extract_clusters_offset.launch : The rail_x_offset,rail\_\<int\>\_offset
+extract_clusters_offset.launch : The rail_x_offset,rail_<int>_offset
 parameters are offsets from the right plane and back plane of the
 refrigerator. rail_z_offset is the distance from the ground.
 

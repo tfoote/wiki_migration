@@ -32,4 +32,4 @@ bond.break_bond()
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros/bond_core)\>\>
+<<GitHubIssues(ros/bond_core)>>

@@ -3,7 +3,7 @@
 ### Overview
 
 Cob_read_text detects and recognizes text in natural images. The system
-was trained for indoors household environment with Care-O-bot\'s stereo
+was trained for indoors household environment with Care-O-bot's stereo
 vision colour cameras. Text localisation and OCR occur separately and
 can be evaluated using precision, recall. For locating text on images
 Stroke Width Transformation is used. Text whose baseline was found is
@@ -19,23 +19,23 @@ To use read text clone the repository to your disc and build it.
 To read text on a single image:
 `roslaunch cob_read_text read_text.launch image:=path_to_image`
 
-read_text.launch -\> run_detection -\> text_detect
+read_text.launch -> run_detection -> text_detect
 
 #### Image Stream
 
 To read text from a camera stream:
 `roslaunch cob_read_text read_text_from_camera.launch`
 
-read_text_from_camera.launch -\> text_detect
+read_text_from_camera.launch -> text_detect
 
-Remap \"image_color\" to topic that publishes to be processed images.
+Remap "image_color" to topic that publishes to be processed images.
 
 #### Evaluation Database
 
 To read text on images of database with ground truth data:
 `roslaunch cob_read_text read_text_with_eval.launch xmlfile:=path_to_xmlfile`
 
-read_text_with_eval.launch -\> run_detection -\> text_detect
+read_text_with_eval.launch -> run_detection -> text_detect
 
 ### Parameters for read_text
 
@@ -288,12 +288,12 @@ All rectangles are described via:
 -   their rotation angle (clockwise)
 -   and the text written inside of them.
 
-For every image referenced between \<image\> and \</image\> in the .xml
+For every image referenced between <image> and </image> in the .xml
 file, read_evaluation calls cob_read_text and compares the results with
 the solution.
 
 The evaluation is based on the ICDAR 2005 Robust Reading Competitions
-system using recall and precision as measure: \"Precision p is defined
+system using recall and precision as measure: "Precision p is defined
 as the number of correct estimates divided by the total number of
 estimates. Recall r is defined as the number of correct estimates
 divided by the total number of targets. We define the match m,,p,,
@@ -302,7 +302,7 @@ of the minimum bounding box containing both rectangles. For each
 rectangle in the set of estimates we find the closest match in the set
 of targets, and vice versa. Hence, the best match m(r, R) for a
 rectangle r in a set of Rectangles R is defined as: m(r, R) = max m,,p,,
-(r, r\') \| r\' ∈ R Then, our new more forgiving definitions of
+(r, r') \| r' ∈ R Then, our new more forgiving definitions of
 precision and recall, where T and E are the sets of ground-truth and
 estimated rectangles respectively:
 
@@ -314,7 +314,7 @@ r = ( Σ,,r_t ∈ T,,m(r_t, E) ) / \|T\|
 Int'l Conf. Document Analysis and Recognition, volume 1, pages 80--84,
 2005)
 
-Results are saved in folder \'results\' inside the image containing
+Results are saved in folder 'results' inside the image containing
 folder.
 
 Running the application:
@@ -352,8 +352,8 @@ Running the application:
 -   Press \[r\] to reset complete image.
 -   Press \[ESC\] to quit/move on to next image. -\~
 
-Allowed file types: \'png\', \'PNG\', \'jpg\', \'JPG\', \'jpeg\',
-\'JPEG\', \'bmp\', \'BMP\', \'tiff\', \'TIFF\', \'tif\' or \'TIF\'.
+Allowed file types: 'png', 'PNG', 'jpg', 'JPG', 'jpeg',
+'JPEG', 'bmp', 'BMP', 'tiff', 'TIFF', 'tif' or 'TIF'.
 
 ![example_image1\|width=300](attachment:tutorial3.png)
 

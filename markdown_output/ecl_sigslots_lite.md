@@ -16,7 +16,7 @@ important to make sure your signals and slots finish processing any
 currently executing slots before they self destruct. Most sigslot
 implementations dont do this, [ecl_sigslots](ecl_sigslots) does, but
 [ecl_sigslots_lite](ecl_sigslots_lite) does not. If you have a
-monolothic program with a single thread, this probably doesn\'t matter,
+monolothic program with a single thread, this probably doesn't matter,
 but if not, then you must take care to ensure signals and slots close
 appropriately.
 
@@ -38,7 +38,7 @@ While utilising things like standard error flag constructors (from
 [ecl_errors](ecl_errors)) might be convenient, this package is and
 likely will often be used standalone in a firmware project. As a result,
 its designed with its own internal mechanisms (e.g. error class) so
-it\'s source can be simply copied to a firmware project.
+it's source can be simply copied to a firmware project.
 
 ## Compiling & Linking
 
@@ -58,4 +58,4 @@ using ecl::lite::member_slots_capacity;
 
 ## Examples
 
--   \`src/examples/sigslots.cpp\`
+-   `src/examples/sigslots.cpp`

@@ -2,7 +2,7 @@
 
 Remote monitoring package for navigation with
 [OpenVPN](https://openvpn.net/). We actually succeeded in remotely
-monitoring [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03)\'s pose
+monitoring [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03)'s pose
 running in Tsukuba from Fukuoka
 ([1200 km away](https://www.google.com/maps/dir/%E6%97%A5%E6%9C%ACFukuoka-ken/Tsukuba+Station,+Tsukuba,+Ibaraki+Prefecture,+Japan/@34.8284911,133.016243,7z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x3541817af77eb125:0x97a20ffb4a51384d!2m2!1d130.418297!2d33.6065756!1m5!1m1!1s0x60220c62d3552d37:0x3487ddbc353229bd!2m2!1d140.1116438!2d36.0827702!3e4))
 
@@ -14,7 +14,7 @@ Tutorial to integrate OpenVPN and ROS is
 
 ## Demo Video
 
-[![remote_monitor\|width=\"600\"](attachment:remote_monitor.png)](https://youtu.be/hpAnaV-bylQ)
+[![remote_monitor\|width="600"](attachment:remote_monitor.png)](https://youtu.be/hpAnaV-bylQ)
 
 下記のコマンドで上記動画のように遊べるはずです
 
@@ -28,17 +28,17 @@ $ roslaunch remote_monitor remote_monitor_client_gazebo.launch
 
 ### monitor_server
 
--   遠隔監視PC側\`node\`．\`service\`で受信した位置と姿勢を地図上に表示させる．
+-   遠隔監視PC側`node`．`service`で受信した位置と姿勢を地図上に表示させる．
 
 ### monitor_client
 
--   移動ロボット側\`node\`．一定距離毎に現在位置と姿勢を\`service\`で送信する．
--   デフォルトでは\`/amcl_pose\`を\`subscribe\`する．
+-   移動ロボット側`node`．一定距離毎に現在位置と姿勢を`service`で送信する．
+-   デフォルトでは`/amcl_pose`を`subscribe`する．
 
 ## Installation
 
 以下のコマンドにしたがってインストールしてください．
-なお\`\<catkin_ws\>\`は，任意のcatkinizeされたワークスペースへのパスを表します．
+なお`<catkin_ws>`は，任意のcatkinizeされたワークスペースへのパスを表します．
 
 ### Clone the repository
 
@@ -75,7 +75,7 @@ $ source devel/setup.bash
 ### service server
 
 -   地図の在処として，下記のパッケージ配下のフォルダを見に行きます．
--   \$(find cirkit_unit03_maps)/map/\`
+-   \$(find cirkit_unit03_maps)/map/`
 -   地図名は引数で指定して下さい．
 
 #### 実機の場合のコマンド
@@ -84,7 +84,7 @@ $ source devel/setup.bash
 $ roslaunch remote_monitor remote_monitor_server.launch map_yaml:=hogehoge.yaml
 ```
 
-#### \`Gazebo\`の場合のコマンド
+#### `Gazebo`の場合のコマンド
 
 ```
 $ roslaunch remote_monitor remote_monitor_server_gazebo.launch map_yaml:=hogehoge.yaml
@@ -124,7 +124,7 @@ $ cd <catkin_ws>/src
 $ git clone https://github.com/CIR-KIT/remote_monitor.git
 ```0
 
--   下記のような\`tun\`デバイスが表示される．少し時間がかかる場合がある．
+-   下記のような`tun`デバイスが表示される．少し時間がかかる場合がある．
 
 ```
 $ cd <catkin_ws>/src

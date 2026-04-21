@@ -1,7 +1,7 @@
 ## Background
 
 One of the great things about working on ROS is the ability to see
-everyone else\'s code. So when Joe Romano create the pr2_props demo, I
+everyone else's code. So when Joe Romano create the pr2_props demo, I
 was able to take it apart and see how it worked. The basic idea was to
 
 -   Move the arm to a designated pose
@@ -10,7 +10,7 @@ was able to take it apart and see how it worked. The basic idea was to
 -   Repeat as necessary
 
 This, along with
-[Stanford\'s Demo](http://www.wired.com/gadgetlab/2011/07/light-saber-robot/)
+[Stanford's Demo](http://www.wired.com/gadgetlab/2011/07/light-saber-robot/)
 gave me an idea. Essentially, what if you did the same exact demo, with
 slightly different arm positions, and a plastic lightsaber in the robots
 hand.
@@ -23,8 +23,8 @@ positions are saved and loaded from yaml files.
 
 ## Usage
 
-The launch file duel_with_setup will move the PR2\'s arm to its side,
-and open the gripper. Place the lightsaber in the PR2\'s gripper
+The launch file duel_with_setup will move the PR2's arm to its side,
+and open the gripper. Place the lightsaber in the PR2's gripper
 pointing up and press enter.
 
 ## Cute Video

@@ -1,7 +1,7 @@
 This node is a robot controlled based on the Dynamic Window Approach
-described in \"Fox, D.; Burgard, W.; Thrun, S., \"The dynamic window
-approach to collision avoidance\" Robotics and Automation Magazine, IEEE
-, vol.4, no.1, pp.23-33, Mar 1997\".
+described in "Fox, D.; Burgard, W.; Thrun, S., "The dynamic window
+approach to collision avoidance" Robotics and Automation Magazine, IEEE
+, vol.4, no.1, pp.23-33, Mar 1997".
 
 It differs from the original approach in that the best speed are found
 by random sampling the search space instead of using a fixed step
@@ -49,6 +49,6 @@ frequency while still guaranteeing a good solution.
 ## Code Stability
 
 This code is stable. Although I cannot guarantee the absence of bugs,
-I\'ve used it for several years with different robot platform and it
+I've used it for several years with different robot platform and it
 always proved reliable. Please feel free to send any comment and/or bug
 report to lorenzo.riano (at) gmail.com.

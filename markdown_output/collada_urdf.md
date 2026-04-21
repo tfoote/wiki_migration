@@ -1,7 +1,7 @@
 ## urdf_to_collada command-line tool
 
-The urdf_to_collada tool will convert \`.urdf\` files into COLLADA
-\`.dae\` files.
+The urdf_to_collada tool will convert `.urdf` files into COLLADA
+`.dae` files.
 
 Usage:
 

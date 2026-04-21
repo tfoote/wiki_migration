@@ -7,9 +7,9 @@ IMU sensor. The driver publishes the following data:
 ![](attachment:imu.png)
 
 -   linear acceleration and angular velocities as
-    \<\<MsgLink(sensor_msgs/Imu)\>\>
--   magnetic field as \<\<MsgLink(sensor_msgs/MagneticField)\>\> or as
-    \<\<MsgLink(geometry_msgs/Vector3Stamped)\>\> (deprecated)
+    <<MsgLink(sensor_msgs/Imu)>>
+-   magnetic field as <<MsgLink(sensor_msgs/MagneticField)>> or as
+    <<MsgLink(geometry_msgs/Vector3Stamped)>> (deprecated)
 
 You can use this driver in conjunction with
 [imu_filter_madgwick](imu_filter_madgwick) or a similar IMU filter to

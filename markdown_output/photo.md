@@ -29,4 +29,4 @@ srv {
 ### test_photo
 
 Calls the set_config service of photo_node and attempts to set the
-exptime parameter to \`20\`.
+exptime parameter to `20`.

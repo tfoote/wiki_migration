@@ -21,10 +21,10 @@ timestamp as usual.
 
 The variance defined relates to the coordinate frame it is defined for,
 meaning a variance in x on the base_link would mean that the robot
-location is uncertain but lies on a line along the robot\'s x axis. Seen
+location is uncertain but lies on a line along the robot's x axis. Seen
 from /map, all coordinates within frames that lie under the base_link
 will be affected by this uncertainty, while transforms between frames
-that both lie under base_link in the tree will not \'see\' the
+that both lie under base_link in the tree will not 'see' the
 uncertainty.
 
 The rviz screenshots below show 50 samples each, taken from the
@@ -34,7 +34,7 @@ object frame (top) and the base_link frame (bottom). On the right side,
 an uncertainty in rotation around the z axis of the frames was defined
 similarly.
 
-![\|width=\"600px\"](attachment:uncertain_tf_rviz.png)
+![\|width="600px"](attachment:uncertain_tf_rviz.png)
 
 # Sampling
 
@@ -117,7 +117,7 @@ std::vector<StampedTransform> transform_samples;
 # Math
 
 Simply put, calculating Covariance Matrices from Euler Angles is not the
-best way to look at uncertainty in Rotation and it\'s propagation. We
+best way to look at uncertainty in Rotation and it's propagation. We
 are currently looking into how to implement this package in a more
 canonical way.
 
@@ -145,7 +145,7 @@ USAGE: static_covariance_publisher frame_id var_x  cov_xy cov_xz cov_xZ cov_xY c
  (36 var/cov values in total + period)
 ```
 
-To visualize what\'s going on, we can show samples of a transform as a
+To visualize what's going on, we can show samples of a transform as a
 pose array display in rviz. ```
 rosrun uncertain_tf visualize_samples 
 USAGE: visualize_samples target_frame source_frame num_samples pose_array_topic period(milliseconds)
@@ -171,4 +171,4 @@ rosrun uncertain_tf static_variance_publisher turntable 0 0 0 0 0 0.5
 Will show a moving toroid structure resulting from the combination of
 rotational error in the table and the turntable frames:
 
-![\|width=\"600px\"](attachment:toroid_distribution.png)
+![\|width="600px"](attachment:toroid_distribution.png)

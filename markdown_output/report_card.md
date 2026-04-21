@@ -1,6 +1,6 @@
 # The report_card package
 
-The \`report_card\` is a CRAM package that extends
+The `report_card` is a CRAM package that extends
 [knowrob](http://knowrob.org) system and
 [openEASE](http://www.open-ease.org) environment with functionality of
 generating a PDF file that contains easy to read (e.g. pie charts, bar
@@ -11,13 +11,13 @@ Alternative version of this guide is available
 
 # Under the hood
 
-This package is based on \`Prolog\` and its interpreter - the main log
+This package is based on `Prolog` and its interpreter - the main log
 analysis and computations are done therein. Once the data is prepared
-part of it is passed to \`R\` via \`real\` interface where its processed
-and needed graphs are prepared. \`R\` is also used to store statistics
+part of it is passed to `R` via `real` interface where its processed
+and needed graphs are prepared. `R` is also used to store statistics
 and dump them into CSV and RData formats for easy post-processing. Then,
 links to prepared figures and log statistics are passed via JPL to
-\`Java\` where they are prepared and injected into selected LaTeX
+`Java` where they are prepared and injected into selected LaTeX
 templates with use of *Nixo Soft*
 [JLR library](http://www.nixo-soft.de/tutorials/jlr/JLRTutorial.html).
 Finally, the same library is used to generate a PDF based on prepared
@@ -38,16 +38,16 @@ whole package - see below.
 ## layout
 
 This templates specify overall design of the report card - please see
-\`report_card/report_card/tex_templates/reportCard.tex\` for an example.
-The most important part of it are \`\\ifthenelse{ \\equal{\$section5}{}
-}{}{\\input{\$section5}}\` statements which include specified in
-\`Prolog\` sections. The default layout allows up to 10 sections.
+`report_card/report_card/tex_templates/reportCard.tex` for an example.
+The most important part of it are `\\ifthenelse{ \\equal{\$section5}{}
+}{}{\\input{\$section5}}` statements which include specified in
+`Prolog` sections. The default layout allows up to 10 sections.
 
 ## sections
 
 Section templates specify the structure of each section in the
 document - please see
-\`report_card/report_card/tex_templates/overview.tex\` for an example.
+`report_card/report_card/tex_templates/overview.tex` for an example.
 There are 4 different types of variables that can be used in each
 section:
 
@@ -66,13 +66,13 @@ arguments in the LaTeX sections please consult
 # Adding custom section
 
 To add your custom section to the report card please create a file named
-\`section_name.tex\` in the \`report_card/report_card/tex_templates\`
+`section_name.tex` in the `report_card/report_card/tex_templates`
 directory. Use the arguments naming as described above - the order of
-the arguments is based on the order used in the \`Java\` call done
-within \`Prolog\`.
+the arguments is based on the order used in the `Java` call done
+within `Prolog`.
 
-To generate your section from within \`Prolog\` add a new predicate to
-\`report_card/prolog/report_card.pl\` file:
+To generate your section from within `Prolog` add a new predicate to
+`report_card/prolog/report_card.pl` file:
 
 ```
 generate_section_name(RcHomeOs, SectionPath) :-
@@ -93,16 +93,16 @@ generate_section_name(RcHomeOs, SectionPath) :-
   jpl_call( 'org.knowrob.report_card.Generator', section, [RcHomeOs, Section, Strings, RawStrings, SeqStrings, RawSeqStrings], SectionPath).
 ```
 
-Where \`RcHomeOs\` is path to the temporary directory of current report
-card; \`Section\` is the section name (it MUST contain the exact name
-you gave to your section file without \`.tex\` extension), \`Strings\`
-and \`RawStrings\` are as described above and of type *array of strings*
-and finally, \`SeqStrings\` and \`RawSeqStrings\` are as described above
+Where `RcHomeOs` is path to the temporary directory of current report
+card; `Section` is the section name (it MUST contain the exact name
+you gave to your section file without `.tex` extension), `Strings`
+and `RawStrings` are as described above and of type *array of strings*
+and finally, `SeqStrings` and `RawSeqStrings` are as described above
 and of type *array of array of strings*. If you have no data of specific
 type to be passed to the section creator you should generate empty array
-for the first two types e.g. \`jpl_new(\'\[Ljava.lang.String;\', 0,
-Strings)\` and empty array of arrays for latter two types e.g.
-\`jpl_new(\'\[\[Ljava.lang.String;\', 0, SeqStrings)\`.
+for the first two types e.g. `jpl_new('\[Ljava.lang.String;', 0,
+Strings)` and empty array of arrays for latter two types e.g.
+`jpl_new('\[\[Ljava.lang.String;', 0, SeqStrings)`.
 
 ------------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ also generate the report card manually: for details please see below.
 ## Automated
 
 To alter current generator please append your section to
-\`generate_report_card(card_type(default))\` predicate as follows:
+`generate_report_card(card_type(default))` predicate as follows:
 
 ```
 generate_report_card(card_type(default)) :-
@@ -146,7 +146,7 @@ generate_report_card(card_type(default)) :-
 ```
 
 If you prefer to create custom report card generator first add type
-predicate to the already existing list: \`card_type(custom_card_type).\`
+predicate to the already existing list: `card_type(custom_card_type).`
 and then create custom loader for created type:
 
 ```
@@ -183,7 +183,7 @@ generate_report_card(card_type(custom_card_type)) :-
 
 ## Manual
 
-To manually generate the report card (using \`Prolog\` shell) please use
+To manually generate the report card (using `Prolog` shell) please use
 the following sequence:
 
 ```
@@ -191,7 +191,7 @@ rc_temporary_directory(RcTempDir), create_directory(RcTempDir), prolog_to_os_fil
 ```
 
 Before generating a report card remember to load the data e.g.
-\`load_experiment(\'/home/ros/datasets/ds4/cram_log.owl\').\`!
+`load_experiment('/home/ros/datasets/ds4/cram_log.owl').`!
 
 # Using R commands within Prolog
 
@@ -229,6 +229,6 @@ For details please refer to this
 Any section contributions are welcomed, please make a pull request with
 you custom **report card generators** predicates, **report_card_type**
 declarations, **section.tex** and all additional predicates extending
-\`report_card.pl\`. Please document all your code and wrap it between
-*%%%%section_name - author - \<%%%%* and *%%%%section_name - author -
-\>%%%%*.
+`report_card.pl`. Please document all your code and wrap it between
+*%%%%section_name - author - <%%%%* and *%%%%section_name - author -
+>%%%%*.

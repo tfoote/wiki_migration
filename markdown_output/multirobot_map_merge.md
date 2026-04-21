@@ -1,4 +1,4 @@
-\<\<GitHubIssues(hrnr/m-explore)\>\>
+<<GitHubIssues(hrnr/m-explore)>>
 
 ## Overview
 
@@ -8,14 +8,14 @@ as ROS topics. If your run multiple robots under the same ROS master
 then `multirobot_map_merge` will probably work for you out-of-the-box.
 It is also very easy to setup an simulation experiment.
 
-![\|width=\"755px\"](attachment:screenshot.jpg)
+![\|width="755px"](attachment:screenshot.jpg)
 
 If your run your robots under multiple ROS masters you need to run your
 own way of communication between robots and provide maps from robots on
 local topics (under the same master). Also if you want to distribute
 merged map back to robots your communication must take care of it.
 
-\<\<Youtube(8Adrn29BVbM&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=8Adrn29BVbM&rel=0)
 
 `multirobot_map_merge` does not depend on any particular communication
 between robots.
@@ -25,12 +25,12 @@ between robots.
 `multirobot_map_merge` finds robot maps dynamically and new robots can
 be added to system at any time.
 
-![\|width=\"755px\"](attachment:architecture.svg)
+![\|width="755px"](attachment:architecture.svg)
 
 To make this dynamic behaviour possible there are some constrains placed
 on robots. First all robots must publish map under
-\`\<robot_namespace\>/map\`, where topic name (\`map\`) is configurable,
-but must be same for all robots. For each robot \`\<robot_namespace\>\`
+`<robot_namespace>/map`, where topic name (`map`) is configurable,
+but must be same for all robots. For each robot `<robot_namespace>`
 will be of cause different.
 
 This node support merging maps with known initial positions of the
@@ -41,35 +41,35 @@ robots or without. See below for details.
 Two merging modes are currently supported as orthogonal options. If you
 know initial positions of robots you may preferably use the first mode
 and get exact results (rigid transformation will be computed according
-to initial positions). If you don\'t know robot\'s starting points you
+to initial positions). If you don't know robot's starting points you
 are still able to use the second mode where transformation between grids
 will be determined using heuristic algorithm. You can choose between
-these two modes using the \`known_init_poses\` parameter.
+these two modes using the `known_init_poses` parameter.
 
 ### merging with known initial positions
 
 This is preferred mode whenever you are able to determine exact starting
 point for each robot. You need to provide initial position for each
 robot. You need to provide set of
-\`\<robot_namespace\>/map_merge/init_pose\` parameters. These positions
-should be in \`world_frame\`. See [#ROS API](#ROS API).
+`<robot_namespace>/map_merge/init_pose` parameters. These positions
+should be in `world_frame`. See [#ROS API](#ROS API).
 
 In this merging these parameters are mandatory. If any of the required
-parameters is missing robot won\'t be considered for merging (you will
+parameters is missing robot won't be considered for merging (you will
 get warning with name of affected robot).
 
 ### merging without known initial positions
 
-If you can\'t provide initial poses for robots this mode has minimal
+If you can't provide initial poses for robots this mode has minimal
 configuration requirements. You need to provide only map topic for each
 robot. Transformation between grids is estimated by feature-matching
 algorithm and therefore requires grids to have sufficient amount of
-overlapping space to make a high-probability match. If grids don\'t have
+overlapping space to make a high-probability match. If grids don't have
 enough overlapping space to make a solid match, merged map can differ
 greatly from physical situation.
 
 Estimating transforms between grids is cpu-intesive so you might want to
-tune \`estimation_rate\` parameter to run re-estimation less often if it
+tune `estimation_rate` parameter to run re-estimation less often if it
 causes any troubles.
 
 ## ROS API

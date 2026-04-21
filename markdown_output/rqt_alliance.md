@@ -4,4 +4,4 @@ coming soon
 
 ## Report a Bug
 
-\<\<GitHubIssues(adrianohrl/alliance)\>\>
+<<GitHubIssues(adrianohrl/alliance)>>

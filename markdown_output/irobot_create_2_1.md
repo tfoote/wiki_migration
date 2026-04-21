@@ -29,7 +29,7 @@ You can then run the create driver via:
 rosrun irobot_create_2_1 driver.py
 ```
 
-The node will assume the robot is attached to \`/dev/ttyUSB0\` if it is
+The node will assume the robot is attached to `/dev/ttyUSB0` if it is
 not:
 
 ```
@@ -53,7 +53,7 @@ driver based programs.
 
 ### Messages and Services
 
-\<\<MsgSrvDoc(irobot_create_2_1 False)\>\>
+<<MsgSrvDoc(irobot_create_2_1 False)>>
 
 The ROS driver provides the following services:
 
@@ -106,7 +106,7 @@ Unless otherwise stated, all of these services return a boolean
 indicating whether the service call was successful or not.
 
 The driver publishes a single message type, which exports all of the
-robot\'s sensory information:
+robot's sensory information:
 
 ```
 Header header

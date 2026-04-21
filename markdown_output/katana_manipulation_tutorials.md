@@ -5,7 +5,7 @@ See [katana_driver](katana_driver).
 ## get_fk / get_ik
 
 clone fixed version of arm_navigation (in the official Fuerte version,
-the kinematics services don\'t work): ```
+the kinematics services don't work): ```
 git clone -b fix_kinematics_services_fuerte https://github.com/uos/arm_navigation.git
 rosmake arm_navigation    # for this to work, the directory you just cloned needs to be on the ROS_PACKAGE_PATH *before* /opt/ros/fuerte/...
 ```

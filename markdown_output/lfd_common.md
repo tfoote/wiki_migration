@@ -1,13 +1,13 @@
 ## About
 
-The \`lfd_common\` common package contains a set of common messages and
+The `lfd_common` common package contains a set of common messages and
 services used in Learning from Demonstration algoritms.
 
-\<\<MsgSrvDoc(lfd_common)\>\>
+<<MsgSrvDoc(lfd_common)>>
 
 ## Installation
 
-To install the \`lfd\` stack, you can choose to either install from
+To install the `lfd` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -40,5 +40,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

@@ -20,7 +20,7 @@ There are two main tools provided : setup_xbee.py and xbee_network.
 
 setup_xbee.py is configuration script for Xbees. It takes factory fresh
 xbee and programs it to work with your rosserial network. If XBee is not
-factory fresh, use Digi\'s X-CTU software to program it.
+factory fresh, use Digi's X-CTU software to program it.
 
 ```
 ./setup_xbee.py [options] port my_adr
@@ -52,6 +52,6 @@ subscribes / publishes any topic requested by its hardware nodes
 ```
 ./xbee_network.py <xbee_serial_port> ID1 [ ID2 ID3 ....]
 ``` To run xbee_network.py, supply as arguments to
-the scrip the xbee\'s serial port and the ID \# of all of the hardware
+the scrip the xbee's serial port and the ID \# of all of the hardware
 node xbees. These IDs were programed into the xbee using setup_xbee.py
-or Digi\'s X-CTU software.
+or Digi's X-CTU software.

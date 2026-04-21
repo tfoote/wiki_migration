@@ -10,7 +10,7 @@ for fault detection are highly encouraged.
 ** Important Information **
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<#cce0ff\>**Note:** This package is the result for a master thesis project. Additional information, write a mail to jocamaba1989@gmail.com   
+     <#cce0ff>**Note:** This package is the result for a master thesis project. Additional information, write a mail to jocamaba1989@gmail.com   
   -- --------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Components List
@@ -54,10 +54,10 @@ collision_detector_diagnoser_node
 ```{=html}
 <!-- -->
 ```
--   fault_recovery_behaviors: - name: \'simple_collision_recovery\'
-    type: \'simple_collision_recovery/SimpleCollisionRecovery\' - name:
-    \'mislocalization_collision_recovery\' type:
-    \'mislocalization_collision_recovery/MisLocalizationCollisionRecovery\'
+-   fault_recovery_behaviors: - name: 'simple_collision_recovery'
+    type: 'simple_collision_recovery/SimpleCollisionRecovery' - name:
+    'mislocalization_collision_recovery' type:
+    'mislocalization_collision_recovery/MisLocalizationCollisionRecovery'
 
 ## Main Dependencies
 

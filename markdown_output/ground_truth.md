@@ -57,10 +57,10 @@ already been saved.
                          visualizer window on the screen
 ```
 
-2\. The \`launch/calibrate.launch\` file can be used to specify these
+2\. The `launch/calibrate.launch` file can be used to specify these
 arguments, so that they do not have to be supplied every time. These
 arguments are the ones that are supplied every time you run the binary
-through the \`roslaunch\` command.
+through the `roslaunch` command.
 
 3\. Alternatively, you can supply these parameters at command line
 directly ```
@@ -102,10 +102,10 @@ roslaunch ground_truth detect.launch
                          visualizer window on the screen
 ```
 
-2\. The \`launch/detect.launch\` file can be used to specify these
+2\. The `launch/detect.launch` file can be used to specify these
 arguments, so that they do not have to be supplied every time. These
 arguments are the ones that are supplied every time you run the binary
-through the \`roslaunch\` command.
+through the `roslaunch` command.
 
 3\. Alternatively, you can supply these parameters at command line
 directly ```
@@ -115,12 +115,12 @@ roslaunch ground_truth calibrate.launch
 ##### logFile
 
 Currently nothing is written to the log file. Check
-\`src/nodes/detect.cc\` for comments specifying where you could write to
+`src/nodes/detect.cc` for comments specifying where you could write to
 this log file.
 
 ##### mode
 
-\`mode\` supports 2 values ```
+`mode` supports 2 values ```
 roslaunch ground_truth calibrate.launch
 ```1
 

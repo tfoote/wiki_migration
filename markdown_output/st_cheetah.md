@@ -2,12 +2,11 @@
 
 ------------------------------------------------------------------------
 
-***This page is currently under development, please check back in the
-future for updates***
+**`'This page is currently under development, please check back in the future for updates`**'
 
 ------------------------------------------------------------------------
 
-Welcome to SynTouch\'s new ROS package **st_cheetah**. SynTouch is
+Welcome to SynTouch's new ROS package **st_cheetah**. SynTouch is
 currently developing this package to collect !BioTac data from the
 Cheetah SPI/USB controller. Collected data can be processed using the
 package [st_biotac](st_biotac).
@@ -62,7 +61,7 @@ USB to the host computer when they become available. The !BioTac C
 Library takes advantage of these asynchronous shifts to ensure
 continuous sampling of !BioTac data even if USB communication is
 delayed. During initialization, 16 batches of data are shifted to the
-host adapter\'s queue as a buffer to ensure continuously sampled data.
+host adapter's queue as a buffer to ensure continuously sampled data.
 Each time a batch is collected an identical batch of sampling commands
 is added at the end of the queue. For this reason the minimum batch size
 is one complete sampling sequence, or a *frame*. An integral multiple of

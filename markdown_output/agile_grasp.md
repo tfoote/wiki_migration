@@ -23,8 +23,8 @@ Localize grasps in a point cloud obtained from a range sensor.
 
 ## Requirements
 
-1\. [Lapack](http://www.netlib.org/lapack/) (install in Ubuntu: \`\$
-sudo apt-get install liblapack-dev\`) 1.
+1\. [Lapack](http://www.netlib.org/lapack/) (install in Ubuntu: `\$
+sudo apt-get install liblapack-dev`) 1.
 [OpenNI](http://wiki.ros.org/openni_launch) or a similar range sensor
 driver
 
@@ -33,10 +33,10 @@ driver
 ### From Source, ROS Indigo
 
 1\. Open a terminal 1. Navigate to the \*src\* folder of your ROS
-workspace: \`\$ cd location_of_workspace/src\` 1. Clone the repository:
-\`\$ git clone <https://github.com/atenpas/agile_grasp.git>\` 1.
-Navigate back to the root of your ROS workspace: \`\$ cd ..\` 1.
-Recompile your ROS workspace: \`\$ catkin_make\`
+workspace: `\$ cd location_of_workspace/src` 1. Clone the repository:
+`\$ git clone <https://github.com/atenpas/agile_grasp.git>` 1.
+Navigate back to the root of your ROS workspace: `\$ cd ..` 1.
+Recompile your ROS workspace: `\$ catkin_make`
 
 ### From Source, ROS Hydro
 
@@ -50,7 +50,7 @@ Localize grasps on a robot using a range sensor, such as a Kinect:
 
 `$ roslaunch agile_grasp single_camera_grasps.launch`
 
-![Localize grasps on a robot\|height=\"360\",width=\"640\"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/vlc1.png)
+![Localize grasps on a robot\|height="360",width="640"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/vlc1.png)
 
 Two example ROS launch files, *single_camera_grasps.launch* and
 *baxter_grasps.launch*, are provided that illustrate how to use the
@@ -59,11 +59,11 @@ from one or two range sensors.
 
 ### Instructions for Asus Xtion Pro
 
-1\. Start roscore: \`\$ roscore\` 1. Connect an Asus Xtion Pro range
-sensor 1. Launch the Asus ROS driver: \`\$ roslaunch openni2_launch
-openni2.launch\` 1. Detect grasps: \`\$ roslaunch agile_grasp
-single_camera_grasps.launch\` 1. Start Rviz for visualization: \`\$
-rosrun rviz rviz\` 1. Open the config file
+1\. Start roscore: `\$ roscore` 1. Connect an Asus Xtion Pro range
+sensor 1. Launch the Asus ROS driver: `\$ roslaunch openni2_launch
+openni2.launch` 1. Detect grasps: `\$ roslaunch agile_grasp
+single_camera_grasps.launch` 1. Start Rviz for visualization: `\$
+rosrun rviz rviz` 1. Open the config file
 *agile_grasp/rviz/single_camera.rviz* in Rviz to visualize the grasps.
 
 ### Launch File Parameters
@@ -106,7 +106,7 @@ Localize grasps in a point cloud stored in a *.pcd* file:
 `$ rosrun agile_grasp test_svm /home/userABC/data/input.pcd /home/userABC/ros_ws/src/agile_grasp/svm_032015_20_20_same`
 
 ![input](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/2view_50r.png)
-![output\|height=\"225\",width=\"640\"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/output.png)
+![output\|height="225",width="640"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/output.png)
 
 ### Usage
 
@@ -123,7 +123,7 @@ please increase the *num_samples* parameter. Another option is to modify
 the workspace limits in *src/nodes/test.cpp* (this requires recompiling
 the code).
 
-![output\|height=\"225\",width=\"640\"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/pcl_vis.png)
+![output\|height="225",width="640"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/pcl_vis.png)
 
 ### Parameters
 

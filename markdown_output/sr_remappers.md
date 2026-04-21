@@ -44,6 +44,6 @@ You can find the default mapping matrix in
 ## Internal Mechanics
 
 The current default matrix is not optimal at all. The mapping from the
-Cyberglove to the Dexterous Hand is not a trivial task. There\'s some
+Cyberglove to the Dexterous Hand is not a trivial task. There's some
 research being done on it, and we developed a mapping process using a
-simplex algorithm but it\'s in a very alpha stage and not yet released.
+simplex algorithm but it's in a very alpha stage and not yet released.

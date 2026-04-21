@@ -10,32 +10,32 @@ known to work:
 
 **Intensity mode off**:
 
--   \`cluster\`: 1
--   \`skip\`: 1
--   \`intensity\`: false
--   \`min_ang\`: -2.2689
--   \`max_ang\`: 2.2689
+-   `cluster`: 1
+-   `skip`: 1
+-   `intensity`: false
+-   `min_ang`: -2.2689
+-   `max_ang`: 2.2689
 
 **Intensity mode on**:
 
--   \`cluster\`: 1
--   \`skip\`: 1
--   \`intensity\`: true
--   \`min_ang\`: -1.047
--   \`max_ang\`: 1.047
+-   `cluster`: 1
+-   `skip`: 1
+-   `intensity`: true
+-   `min_ang`: -1.047
+-   `max_ang`: 1.047
 
 ### Allow Unsafe Settings Option
 
-On the UTM-30LX, unless the \`allow_unsafe_settings\` option is
+On the UTM-30LX, unless the `allow_unsafe_settings` option is
 selected, the hokuyo_node will limit the angular range to values that
 are known to work. The angular range limit depends on the firmware
-version, and is proportional to the \`cluster\` parameter.
+version, and is proportional to the `cluster` parameter.
 
   -- ------------------------------------------------------------ -- ------------------------------------------- -- ------------------------- --
-     \<tablestyle=\"text-align: center;\"\>**Firmware version**      **Maximum angular range / cluster (deg)**      **hokuyo_node version**   
-     1.16.01(16/Nov./2009)                                           190                                            \> 1.1.1                  
-     1.16.02(19/Jan./2010)                                           95                                             \> 1.0.3                  
-     Other                                                           95                                             \> 1.0.3                  
+     <tablestyle="text-align: center;">**Firmware version**      **Maximum angular range / cluster (deg)**      **hokuyo_node version**   
+     1.16.01(16/Nov./2009)                                           190                                            > 1.1.1                  
+     1.16.02(19/Jan./2010)                                           95                                             > 1.0.3                  
+     Other                                                           95                                             > 1.0.3                  
   -- ------------------------------------------------------------ -- ------------------------------------------- -- ------------------------- --
 
 ## ROS API
@@ -124,9 +124,9 @@ name=Read-only parameters
 ##### Parameter interactions
 
 Some parameter settings can cause problems, usually due to speed
-limitations of the laser\'s serial interface. For example:
+limitations of the laser's serial interface. For example:
 
--   if \`intensity\` is true and \`skip\` is 0, then the device will
+-   if `intensity` is true and `skip` is 0, then the device will
     likely drop some scans;
--   if \`intensity\` is true and \`min_ang\` / \`max_ang\` are outside
+-   if `intensity` is true and `min_ang` / `max_ang` are outside
     -70 / +70 degrees, then some problems have been observed.

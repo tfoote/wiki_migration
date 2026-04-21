@@ -51,18 +51,18 @@ get things in the correct frame.
 
 -   *geometry_msgs/PoseStamped initial_cam_pose*: The current pose of
     the camera. This should be point (0,0,0) and quaternion (0,0,0,1) in
-    the camera\'s own frame.
+    the camera's own frame.
 
 ```{=html}
 <!-- -->
 ```
 -   *geometry_msgs/PoseStamped target_pose*: Where should the camera
-    look? The orientation actually isn\'t used.
+    look? The orientation actually isn't used.
 
 ```{=html}
 <!-- -->
 ```
--   *geometry_msgs/Vector3Stamped up*: A vector that defines \"UP.\" If
+-   *geometry_msgs/Vector3Stamped up*: A vector that defines "UP." If
     Z of the camera frame is up, then it would be (0,0,1).
 
 The service response is another PoseStamped in the initial camera frame:
@@ -71,7 +71,7 @@ The service response is another PoseStamped in the initial camera frame:
 
 ## Issues/Limitations
 
-It\'s currently assumed that X is the \"lens vector\" of the camera and
+It's currently assumed that X is the "lens vector" of the camera and
 Z of the camera frame should point up. If your situation requires
 something else, please create an issue on the
 [ Github issue tracker]( https://github.com/UTNuclearRoboticsPublic/look_at_pose/issues ).

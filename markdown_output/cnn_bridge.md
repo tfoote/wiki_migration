@@ -46,7 +46,7 @@ Input can be either from camera topics, an OpenCV camera, or a video.
 -   *mode*\
     . type = string\
     required = True\
-    Either \'detection\' or \'segmentation\' depending on the mode.
+    Either 'detection' or 'segmentation' depending on the mode.
 -   *input_tensor*\
     . type = string\
     required = True\

@@ -28,10 +28,10 @@ Development is discussed and planned via the
 
 ## ROS API
 
-These topics are by default provided under a \`/RosAria/\` topic
+These topics are by default provided under a `/RosAria/` topic
 namespace or prefix. You can remap these to different names if desired
 (see [Names](Names), [Remapping Arguments](Remapping Arguments) and
-[the \<remap\> tag for launch files](roslaunch/XML/remap) for
+[the <remap> tag for launch files](roslaunch/XML/remap) for
 information).
 
 ROS topics are channels by which other nodes can communicate with

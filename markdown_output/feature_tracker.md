@@ -1,4 +1,4 @@
-![Caption of the feature_tracker in manual selection mode\|width=\"500\"](attachment:feature_tracker_img1.png)
+![Caption of the feature_tracker in manual selection mode\|width="500"](attachment:feature_tracker_img1.png)
 
 ## Detailled Description
 

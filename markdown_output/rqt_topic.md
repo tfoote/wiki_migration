@@ -9,7 +9,7 @@ mode.
 ## Known issue
 
 -   When monitoring topics that carry large amount of data (e.g.
-    \`sensor_msgs/Image\`), the whole \`rqt\` process or even the entire
+    `sensor_msgs/Image`), the whole `rqt` process or even the entire
     OS might get slow down.
 -   For other issues, please check the existing/closed tickets on the
     issue tracker.

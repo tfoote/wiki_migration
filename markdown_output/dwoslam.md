@@ -59,7 +59,7 @@ number in the terminal window) t:: go to timestamp\...(write the
 timestamp -ns- in the terminal window) e:: exit
 
 When the graph is drawn in the viewer, the program could stop: simply
-press \'q\' in the 3D window.
+press 'q' in the 3D window.
 
 # C++ API
 

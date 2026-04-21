@@ -36,7 +36,7 @@ additional training.
 ## Initial Approach
 
 The initial idea behind this project was to make use of a motion capture
-camera, that has the ability to track a user\'s movements, as a means of
+camera, that has the ability to track a user's movements, as a means of
 converting certain poses or gestures into digital input into a RoS
 controllable robot. The first camera that was to be used in this project
 was made by Orbbec. This camera was initially selected because it has
@@ -45,13 +45,13 @@ would make developing a project from scratch easier than having to
 overcome the inevitable software conflicts involved with using a sensor
 with preloaded software, like the Kinect sensor made by Microsoft.
 
-As far as the methodology was concerned for how the user\'s poses would
+As far as the methodology was concerned for how the user's poses would
 be recognized and converted into input for the robot, there were a few
 ideas I was considering. The first idea came from a user named
 [TanvirParhar](http://wiki.ros.org/TanvirParhar) who published a RoS
 Wiki page, and package called
 [neuro_gesture_kinect](http://wiki.ros.org/action/fullsearch/TanvirParhar/neuro_gesture_kinect?action=fullsearch&context=180&value=linkto:"TanvirParhar/neuro_gesture_kinect").
-The concept of this package was to use a method of \"training\" the
+The concept of this package was to use a method of "training" the
 camera to recognize certain gestures by giving the sensor a series of
 the same gesture. This series would then be stored, and at runtime the
 input being received from the user would then be compared against a
@@ -60,9 +60,9 @@ the gestures stored in the log then a move command would be sent to the
 robot
 
 The second approach was to use the reference frames that were generated
-by the camera, and fixed to each of the user\'s joints, and compare the
+by the camera, and fixed to each of the user's joints, and compare the
 change in these reference frames to the fixed coordinate axes on the
-camera as a means of determining the user\'s joint/body position in
+camera as a means of determining the user's joint/body position in
 space relative to the camera. Based on the determined body position, if
 the input matched the orientation of the reference frame for a given
 pose, that was predefined in the program, then a move command would be
@@ -73,10 +73,10 @@ sent to the robot.
 After experimenting with the Orbbec sensor for a few weeks, and trying
 to integrate the camera into the RoS framework it was determined that
 the open source community did not have an effective means of tracking a
-user\'s body movements or seamlessly integrating with the RoS
+user's body movements or seamlessly integrating with the RoS
 environment. At this point, the decision was made to use the Kinect v2.0
 sensor from Microsoft as it natively comes with the ability to track a
-user\'s joint position. The downside of this camera is that it is not
+user's joint position. The downside of this camera is that it is not
 open source, so the opportunities for expanding or fine tuning the
 sensor for this specific project were greatly limited. To track a user
 within RoS, using the Kinect sensor, a package called
@@ -102,14 +102,14 @@ useable level and began thinking of other means to detect specific
 gestures.
 
 I first started with figuring out how the Kinect sensor was determining
-the position and orientation of the user\'s joints in space. The
+the position and orientation of the user's joints in space. The
 conclusion that I came to was that the camera sets itself as a fixed
 reference frame, and everything else in the world that moves is fixed
 spatially based on the movement relative to the Kinect. When the
 [openni_tracker](http://wiki.ros.org/action/fullsearch/openni_tracker?action=fullsearch&context=180&value=linkto:"openni_tracker")
 package prompts the user to calibrate using the Psi pose it is using
 this preprogrammed pose as a reference point that the sensor is able to
-recognize, and fix the positons of the user\'s joints in space. Once the
+recognize, and fix the positons of the user's joints in space. Once the
 calibration is complete, any movement by the user are published to the
 [tf](http://wiki.ros.org/action/fullsearch/tf?action=fullsearch&context=180&value=linkto:"tf")
 node where the displacement and rotation of each of the joints, relative
@@ -119,7 +119,7 @@ in
 [rviz](http://wiki.ros.org/action/fullsearch/rviz?action=fullsearch&context=180&value=linkto:"rviz")
 led me to the idea of finding a fixed joint position value in the /tf
 node (AKA a gesture), and using a series of conditional statements to
-determine if the user\'s body position fell within the predefined limits
+determine if the user's body position fell within the predefined limits
 for the values previously determined for a specific pose.
 
 My initial idea when using the joint transformations was to determine if
@@ -131,11 +131,11 @@ is that the
 node uses a quaternion based reference frame rather than roll, pitch,
 and yaw (RPY) to define the rotation of a joint in space. The reason for
 this is to prevent a phenomena referred to as gimbal lock.
-\"[Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock) is the loss
+"[Gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock) is the loss
 of one degree of freedom in a three-dimensional, three-gimbal mechanism
 that occurs when the axes of two of the three gimbals are driven into a
-parallel configuration, \"locking\" the system into rotation in a
-degenerate two-dimensional space (Gimbal Lock, Wikipedia).\" In order to
+parallel configuration, "locking" the system into rotation in a
+degenerate two-dimensional space (Gimbal Lock, Wikipedia)." In order to
 overcome this I converted from quaternion to RPY to make more sense of
 the output.
 
@@ -148,8 +148,8 @@ in space would not have yielded the fine-tuned control that was required
 of the autonomous vehicle during motor pool operations. The next
 approach was to use the translation of a joint in space relative to the
 sensor. For this method the position of a joint in space is resolved
-based on its displacement from the calibration \"Psi pose\". Since the
-\"Psi pose\" is used as the \"zero\" for all other joint positions
+based on its displacement from the calibration "Psi pose". Since the
+"Psi pose" is used as the "zero" for all other joint positions
 relative to the Kinect, the translational reference frame remains
 constant between program instances and allows for predictable and
 accurate joint position recognition
@@ -168,7 +168,7 @@ its position in space, and therefore it cannot maintain its lock on the
 user. In order to overcome this problem I propose two possible
 alternatives. The first is to use a different sensor that is capable of
 dynamically updating its own position in space to redefine its origin,
-and allow for a continual lock on the user\'s body orientation as both
+and allow for a continual lock on the user's body orientation as both
 the vehicle and the operator move through space. The second option is to
 set up an array of stationary cameras in the motor pool that cross-talk
 with each other to produce a 360 degree web in order to allow user
@@ -216,7 +216,7 @@ OpenNI.
 
 ### Setting up the Kinect Sensor
 
-\"First of all download the suitable drivers from
+"First of all download the suitable drivers from
 [here](http://www.mira-project.org/downloads/3rdparty/bin-linux/). Start
 by intalling the suitable OpenNI driver, preferably the latest one. The
 OpenNI drivers are needed for the functioning of packages like
@@ -239,7 +239,7 @@ Again uncompress it and install it.
 ```
 $  tar -zxvf filename.tar.gz
 $  sudo ./install.sh
-``` Now, it\'s time to install the Openni_launch
+``` Now, it's time to install the Openni_launch
 for ROS. Simply type:
 
 ```
@@ -250,21 +250,21 @@ installed, just connect the Kinect and type:
 ```
 $  roslaunch openni_launch openni.launch
 ``` If the launch file runs, then all the drivers
-are working fine.\"
+are working fine."
 
 ### Downloading the Autonomy Script
 
 For this portion, my gesture recognition script can be found on my
 GitHub [page](https://github.com/GunnerPatterson/ROS-Kinect-Autonomy).
-The script\'s name is \"gesture.py\". The other two scripts on the page
-are: \"gesture_comment.py\" and \"quat_to_rpy.py\". The
-\"gesture_comment.py\" script contains the same code as \"gesture.py\",
+The script's name is "gesture.py". The other two scripts on the page
+are: "gesture_comment.py" and "quat_to_rpy.py". The
+"gesture_comment.py" script contains the same code as "gesture.py",
 but it is fully commented to describe how everything works. The
-\"quat_to_rpy.py\" script simply converts any outputs that are in
+"quat_to_rpy.py" script simply converts any outputs that are in
 quaternion to the RPY frame. However, for the purposes of this
 walkthrough this script will not be used.
 
-Once the \"gesture.py\" script has been successfully installed, ensure
+Once the "gesture.py" script has been successfully installed, ensure
 it is saved in the Source (/src) directory that within your catkin
 workspace (/catkin_ws). For my instance, my /catkin_ws directory can be
 found in the /home directory. To navigate to this file location and save
@@ -273,7 +273,7 @@ somewhat similar to this:
 
 ```
 $  cd home/catkin_ws/src/
-``` Once the \"gesture.py\" script file is saved in
+``` Once the "gesture.py" script file is saved in
 this directory it can now communicate with all of the other nodes within
 RoS. **It is imperative that this script is in this file location in the
 catkin workspace source folder or else the python file will NOT be able
@@ -288,7 +288,7 @@ type:
 ```
 $  roscore
 ``` Once roscore initializes successfully, open a
-new terminal window and navigate to the location of the \"gesture.py\"
+new terminal window and navigate to the location of the "gesture.py"
 script, and run the script.
 
 ```
@@ -345,7 +345,7 @@ movement that will take place
 
 . For this portion of the walkthrough close everything that was
 previously running, and open a new terminal. An option to visualize the
-different reference frames that are fixed to each of the user\'s joints
+different reference frames that are fixed to each of the user's joints
 is to utilize a program called
 [rviz](http://wiki.ros.org/action/fullsearch/rviz?action=fullsearch&context=180&value=linkto:"rviz").
 Before starting the openni_tracker type:
@@ -366,8 +366,8 @@ transformation node (/tf). Then set the openni_depth_frame as the fixed
 frame. This defines the sensor as the origin in space so that the
 program knows where to generate the coordinate axes. At this point you
 should see an array of reference frames that are labeled according to
-their body part (the \"X\" axis is red, the \"Y\" axis is green, and the
-\"Z\" axis is blue).
+their body part (the "X" axis is red, the "Y" axis is green, and the
+"Z" axis is blue).
 
 Another option is to output the data of the /tf node to show the
 numerical values for the position and rotation of each of the reference
@@ -402,7 +402,7 @@ in order to limit the amount of time and money required to implement
 this system in an operational environment. After controlling the robot
 myself and becoming very familiar with its capabilities it is was
 determined that maintaining consistent and predictable control was not
-an issue. Additionally, while at West Point\'s Projects Day I had the
+an issue. Additionally, while at West Point's Projects Day I had the
 opportunity to teach a group of middle schoolers how to control the
 robot. Within, five minutes of my instruction all of the kids were
 easily maneuvering the robot without any additional help. This served as

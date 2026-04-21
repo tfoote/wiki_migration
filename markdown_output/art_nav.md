@@ -44,7 +44,7 @@ name=Initial Parameters
 
 #### Examples
 
-Run the ART commander, sending \`navigator/cmd\` messages.
+Run the ART commander, sending `navigator/cmd` messages.
 
 ```
 rosrun art_nav commander _rndf:=road_map.rndf _mdf:=mission_ckpts.mdf
@@ -253,7 +253,7 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 
 #### Examples
 
-Run the ART navigator, accepting \`navigator/cmd\` messages.
+Run the ART navigator, accepting `navigator/cmd` messages.
 
 ```
 rosrun art_nav navigator

@@ -10,8 +10,8 @@ Installation and application packages for
 
 The following commands grab all required packages for
 [CIR-KIT-Unit03](Robots/CIR-KIT-Unit03) navigation with [rosdep](rosdep)
-and [wstool](wstool), and then execute \`catkin_make\` and \`catkin_make
-run_tests\`.
+and [wstool](wstool), and then execute `catkin_make` and `catkin_make
+run_tests`.
 
 ### Clone this repository.
 
@@ -29,9 +29,9 @@ sh install.sh
 
 -   optional arguments:
 -   -h: show the help message and exit
--   -i: eneble \`rosdep init\`
--   -t: enable \`catkin_make run_tests\`
--   -r: remove existing \`src/.rosinstall\`
+-   -i: eneble `rosdep init`
+-   -t: enable `catkin_make run_tests`
+-   -r: remove existing `src/.rosinstall`
 
 ## Applications
 
@@ -45,7 +45,7 @@ sh install.sh
     ([timed_roslaunch](timed_roslaunch)) also for stable execution of
     system.
 -   All of them are launched from packages with prefix
-    \`cirkit_unit03\`, whose parameters are already set up in each
+    `cirkit_unit03`, whose parameters are already set up in each
     package.
 
 ## Configuration

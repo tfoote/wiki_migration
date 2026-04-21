@@ -1,24 +1,24 @@
-\<\<GitHubIssues(jstnhuang/robot_markers)\>\>
+<<GitHubIssues(jstnhuang/robot_markers)>>
 
 ## Overview
 
-\`robot_markers\` is a library for creating
+`robot_markers` is a library for creating
 [RViz markers](http://wiki.ros.org/rviz/DisplayTypes/Marker) for a
 robot, given a [URDF](http://wiki.ros.org/urdf).
 
-![\|height=\"400px\",width=\"709px\"](attachment:demo.png)
+![\|height="400px",width="709px"](attachment:demo.png)
 
 ## Quick start
 
-The library\'s generated documentation explains how to use
-\`robot_markers\`.
+The library's generated documentation explains how to use
+`robot_markers`.
 
 [robot_markers::Builder](http://docs.ros.org/indigo/api/robot_markers/html/classrobot__markers_1_1Builder.html)
 is the main interface for building a
 [MarkerArray](http://docs.ros.org/indigo/api/visualization_msgs/html/msg/MarkerArray.html)
 from a URDF.
 
-First, create a \`Builder\` for a given URDF:
+First, create a `Builder` for a given URDF:
 
 ```cplusplus
 #include "robot_markers/builder.h"
@@ -47,9 +47,9 @@ pose.orientation.z = -0.38268343;
 builder.SetPose(pose);
 ```
 
-A notable feature of \`Builder\` is the ability to set the joint angles
+A notable feature of `Builder` is the ability to set the joint angles
 of the robot. To do so, pass in a map that gives the joint angles for a
-set of joint names. \`Builder\` does not check joint angle limits.
+set of joint names. `Builder` does not check joint angle limits.
 
 ```cplusplus
 #include <map>
@@ -61,7 +61,7 @@ joint_positions["head_tilt_joint"] = 0.5;
 builder.SetJointPositions(joint_positions);
 ```
 
-Once you have configured the visualization, call \`Builder::Build\`,
+Once you have configured the visualization, call `Builder::Build`,
 passing in a marker array to append the robot markers to.
 
 ```cplusplus

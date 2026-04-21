@@ -1,15 +1,15 @@
 ## About
 
-The \`rovio_shared\` package contains a library that is used to
+The `rovio_shared` package contains a library that is used to
 communicate with the Rovio. This package and library are intended to be
 used with the packages provided in the [rovio](rovio) stack; however, it
 is possible to compile and use the library in your own packages as well.
 
-\<\<MsgSrvDoc(rovio_shared)\>\>
+<<MsgSrvDoc(rovio_shared)>>
 
 ## Installation
 
-To install the \`rovio\` stack, you can choose to either install from
+To install the `rovio` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -31,12 +31,12 @@ sudo apt-get install ros-fuerte-rovio
 
 ## Library Example
 
-While the \`rovio_http\` library was constructed primarily for use
-within the \`rovio\` stack\'s packages, it is possible to utilize its
+While the `rovio_http` library was constructed primarily for use
+within the `rovio` stack's packages, it is possible to utilize its
 functionality in any ROS node.
 
 The example below has the Rovio drive forwards until the user issues a
-\`ctrl-c\` command. Other information on the \`rovio_http\` library can
+`ctrl-c` command. Other information on the `rovio_http` library can
 be found in the [API](http://www.ros.org/doc/api/rovio_shared/html/).
 
 ### The C++ Code
@@ -87,43 +87,43 @@ int main(int argc, char **argv)
 
 ### Code Explanation
 
-Now that we have a running example, let\'s look at each piece.
+Now that we have a running example, let's look at each piece.
 
-\<\<CodeRef(rovio_http_example,10,11)\>\>
+<<CodeRef(rovio_http_example,10,11)>>
 
 In order to utilize the rovio_http library in ROS, we must import the
 both the standard ROS and rovio_http library headers.
 
-\<\<CodeRef(rovio_http_example,15,17)\>\>
+<<CodeRef(rovio_http_example,15,17)>>
 
 Create and initialize your ROS node as with any other ROS node.
 
-\<\<CodeRef(rovio_http_example,19,20)\>\>
+<<CodeRef(rovio_http_example,19,20)>>
 
-Create a \`rovio_http\` object by supplying it with the username and
-password to your Rovio. This object with use \`libcurl\` to communicate
-to the Rovio\'s HTTP server.
+Create a `rovio_http` object by supplying it with the username and
+password to your Rovio. This object with use `libcurl` to communicate
+to the Rovio's HTTP server.
 
-\<\<CodeRef(rovio_http_example,22,25)\>\>
+<<CodeRef(rovio_http_example,22,25)>>
 
 In this example we enter a loop that runs at 5 Hz.
 
-\<\<CodeRef(rovio_http_example,28,29)\>\>
+<<CodeRef(rovio_http_example,28,29)>>
 
 Even though we do not have any topics or services, it is still good
 practice to spin inside of the main loop in a node.
 
-\<\<CodeRef(rovio_http_example,30,36)\>\>
+<<CodeRef(rovio_http_example,30,36)>>
 
 Here we construct and send an HTTP command based on the
 [Rovio API](http://www.wowwee.com/static/support/rovio/manuals/Rovio_API_Specifications_v1.2.pdf).
 In this example we will tell to Rovio to drive forwards at speed 5. This
-function will return a pointer to a \'rovio_response\' struct containing
+function will return a pointer to a 'rovio_response' struct containing
 the response from the Rovio. Even if this information is not need it is
 important to always free this struct once you are finished to prevent a
 memory leak.
 
-\<\<CodeRef(rovio_http_example,38,39)\>\>
+<<CodeRef(rovio_http_example,38,39)>>
 
 Once the command has been sent we wait for the ROS timer to go off
 before continuing.
@@ -141,5 +141,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

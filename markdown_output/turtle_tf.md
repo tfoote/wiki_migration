@@ -1,7 +1,7 @@
 ## Overview
 
-This tutorial package provides a \`turtle_tf_broadcaster\` and
-\`turtle_tf_listener\` for teaching the basic concepts of tf. The
+This tutorial package provides a `turtle_tf_broadcaster` and
+`turtle_tf_listener` for teaching the basic concepts of tf. The
 default demo will cause turtle2 to follow turtle1, the
 [tf tutorials](tf/Tutorials) extend this demo.
 
@@ -15,7 +15,7 @@ $ rosdep install turtle_tf
 $ rosmake turtle_tf
 ```
 
-Then in \`roslaunch\` the demo: ```
+Then in `roslaunch` the demo: ```
 $ roscd turtle_tf
 $ roslaunch launch/turtle_tf_demo.launch
 ```

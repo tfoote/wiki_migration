@@ -7,9 +7,9 @@ sensors into the same coordinate system.
 
 Cam2lidar will work with any camera driver node satisfying the standard
 ROS camera interface. To be more specific, we have tested it with
-[Intel\'s Realsense d435i](https://www.intelrealsense.com/depth-camera-d435i/)
+[Intel's Realsense d435i](https://www.intelrealsense.com/depth-camera-d435i/)
 and
-[Econ\'s E-cam130 Cameras](https://www.e-consystems.com/nvidia-cameras/jetson-agx-xavier-cameras/four-synchronized-4k-cameras.asp).
+[Econ's E-cam130 Cameras](https://www.e-consystems.com/nvidia-cameras/jetson-agx-xavier-cameras/four-synchronized-4k-cameras.asp).
 
 ## Tutorial
 
@@ -19,17 +19,17 @@ calibration can be found
 
 ## Usage
 
-To run the \`geometric_calibration\` node for a monocular camera set the
+To run the `geometric_calibration` node for a monocular camera set the
 input topics and the configuration parameters in
-\`./config/geometric.yaml\` according to the tutorial and execute:
+`./config/geometric.yaml` according to the tutorial and execute:
 
 ```
 roslaunch cam2lidar geometric.launch
 ```
 
-Accordingly, to run the \`temporal_calibration\` node for a monocular
+Accordingly, to run the `temporal_calibration` node for a monocular
 camera set the input topics and the configuration parameters in
-\`./config/temporal.yaml\` according to the tutorial and execute:
+`./config/temporal.yaml` according to the tutorial and execute:
 
 ```
 roslaunch cam2lidar temporal.launch

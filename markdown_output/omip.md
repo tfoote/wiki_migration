@@ -13,7 +13,7 @@ Oliver Brock (oliver.brock@tu-berlin.de)
 ## A framework to perceive the world through interactions
 
 OMIP creates a interconnected group of recursive loops that cooperate to
-quickly perceive robot\'s environment using knowledge about interactions
+quickly perceive robot's environment using knowledge about interactions
 and how they affect the sensor signals. The framework is based on the
 work presented
 [here](http://www.robotics.tu-berlin.de/fileadmin/fg170/Publikationen_pdf/martinmartin_ip_iros_2014.pdf)
@@ -115,29 +115,29 @@ You can launch OMIP with 3 different system architectures:
 feature-based rigid body tracking, kinematic model estimation. This
 option can execute only using RGB-D images and therefore requires less
 computational power. To try this option, download one of the rosbags
-with the \"\_imgs\" suffix and launch OMIP using the option
-\"\--omip=1\" (or \"\--omip=2\" if you want that the terminals remain
+with the "_imgs" suffix and launch OMIP using the option
+"\--omip=1" (or "\--omip=2" if you want that the terminals remain
 open after finishing the execution, for debugging purposes).
 
 2\. Four estimation levels: feature tracking, feature-based rigid body
 tracking, kinematic model estimation, shape reconstruction. This option
 requires point clouds and is therefore computationally more expensive.
-To try this option, download one of the rosbags with the \"\_full\"
-suffix and launch OMIP using the option \"\--omip=3\".
+To try this option, download one of the rosbags with the "_full"
+suffix and launch OMIP using the option "\--omip=3".
 
 3\. Five estimation levels: feature tracking, feature-based rigid body
 tracking, kinematic model estimation, shape reconstruction, shape-based
 rigid body tracking. This option requires also point clouds and is
 therefore computationally more expensive. To try this option, download
-one of the rosbags with the \"\_full\" suffix and launch OMIP using the
-option \"\--omip=4\".
+one of the rosbags with the "_full" suffix and launch OMIP using the
+option "\--omip=4".
 
 For more information on how to use OMIP and activate/deactivate modules,
 checkout out the documentation, the wiki pages or run:
 `rosrun omip_launch omip.sh --help`
 
 More frequent problem: The feature tracking is not running and looks
-like frozen -\> Check in feature_tracker/cfg/feature_tracker_cfg.yaml
+like frozen -> Check in feature_tracker/cfg/feature_tracker_cfg.yaml
 the depth_img_topic name. Depending if you are using openni or openni2
 (or rosbags generated from one or the other package) the name of the
 topic for the depth maps is different.
@@ -155,7 +155,7 @@ kinematics, \...) and knowledge about the correlation between robot
 actions and responses of the environment.
 
 Based on the recursive estimation schema - prediction/correction - our
-framework can cope with the high amount of data provided by the robot\'s
+framework can cope with the high amount of data provided by the robot's
 sensors **in an online manner**. The key (and the main idea of our
 framework) is to factorize the perceptual problem into smaller
 \*perceptual units\*, solve them with single recursive estimation loops

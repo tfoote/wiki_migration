@@ -3,7 +3,7 @@
 **rosgo** is pure [Go](http://golang.org) implementation of ROS client
 library.
 
--   Author: akio \<akio19937 AT gmail DOT com\>
+-   Author: akio <akio19937 AT gmail DOT com>
 -   License: Apache 2.0
 -   Source: git <https://github.com/akio/rosgo>
 
@@ -32,7 +32,7 @@ go install ros
 
 ```
 go install test_listener test_talker test_param
-``` Example executables are placed in \`bin\`
+``` Example executables are placed in `bin`
 directory.
 
 *In future release, the build system will be integrated with

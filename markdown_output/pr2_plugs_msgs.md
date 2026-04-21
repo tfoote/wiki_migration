@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(pr2_plugs_msgs)\>\>
+<<MsgSrvDoc(pr2_plugs_msgs)>>

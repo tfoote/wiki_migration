@@ -1,13 +1,13 @@
 ## Samples
 
   -- -- -- --------------------------------------------------------------------------- -- -- --
-           \<style=\"text-align: center;\"\> ![](attachment:table_top.png)                   
-           \<style=\"text-align: center;\"\> A table top scene during teleoperation.         
+           <style="text-align: center;"> ![](attachment:table_top.png)                   
+           <style="text-align: center;"> A table top scene during teleoperation.         
   -- -- -- --------------------------------------------------------------------------- -- -- --
 
   -- -- -- ----------------------------------------------------------------------------- -- -- --
-           \<style=\"text-align: center;\"\> ![](attachment:room_narrow.png)                   
-           \<style=\"text-align: center;\"\> A view through the narrow stereo cameras.         
+           <style="text-align: center;"> ![](attachment:room_narrow.png)                   
+           <style="text-align: center;"> A view through the narrow stereo cameras.         
   -- -- -- ----------------------------------------------------------------------------- -- -- --
 
 ## Requirements
@@ -24,20 +24,20 @@ If you are on a machine configured to communicate with a PR2, run this
 node by executing: ```
 rosrun stereo_anaglyph red-cyan-anaglyph.py -d /wide_stereo -d 20
 ``` If you are not on a PR2,
-replace \`/wide_stereo\` with a topic of your choice. The -d option here
+replace `/wide_stereo` with a topic of your choice. The -d option here
 controls the separation distance. To get a feel for what this should be,
 launch the node then press the left and right arrow key while the
-\`stereo-anaglyph\` window has focus. The goal here is to control the
+`stereo-anaglyph` window has focus. The goal here is to control the
 image separation such that the disparity presented to you eye is not too
 large. A large disparity typically results in seeing double instead of
 true depth.
 
   -- -- -- -------------------------------------------------------------------------- -- -- --
-           \<style=\"text-align: center;\"\> ![](attachment:room_wide.png)                  
-           \<style=\"text-align: center;\"\> Typical images from from /wide_stereo.         
+           <style="text-align: center;"> ![](attachment:room_wide.png)                  
+           <style="text-align: center;"> Typical images from from /wide_stereo.         
   -- -- -- -------------------------------------------------------------------------- -- -- --
 
-One thing to note on the \`/wide_stereo\` images is that it\'ll be
+One thing to note on the `/wide_stereo` images is that it'll be
 difficult to adjust the disparity such that subjects far away and
 subjects close up has appropriate disparity for stereo integration. This
 is a known limitation of the system.
@@ -47,7 +47,7 @@ is a known limitation of the system.
 To view video at higher frame rates interleave two
 [republish](http://www.ros.org/wiki/image_transport#republish) nodes,
 one for each image stream. The two launch files provided
-\`pr2_narrow_stereo_view.launch\` and \`pr2_wide_stereo_view.launch\`
+`pr2_narrow_stereo_view.launch` and `pr2_wide_stereo_view.launch`
 does this by default. Run them with the command:
 
 ```

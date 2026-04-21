@@ -124,5 +124,5 @@ param{
 
 ## References
 
-This work is summarized in a yet to be published paper - \"Representing
-and updating object identities in semantic SLAM\".
+This work is summarized in a yet to be published paper - "Representing
+and updating object identities in semantic SLAM".

@@ -29,7 +29,7 @@ computer, when you are connected via a different network device, such as
 wlan0 or vpn0 etc. In case you are not certain which device to use,
 verify with ifconfig and verify which network device has the correct IP.
 
-This will start the robot\'s default configuration with the following
+This will start the robot's default configuration with the following
 publisher:
 
 -   joint_states

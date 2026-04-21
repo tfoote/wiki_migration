@@ -1,6 +1,6 @@
 ## About
 
-The \`battery_monitor_rmp\` package uses the feedback provided by the
+The `battery_monitor_rmp` package uses the feedback provided by the
 RMP to monitor the segway batteries and then uses espeak to tell the
 user if a battery is getting low. It also publishes this information.
 
@@ -47,7 +47,7 @@ node.0 {
 
 ## Installation
 
-To install the \`battery_monitor_rmp\` package, you can choose to either
+To install the `battery_monitor_rmp` package, you can choose to either
 install from source, or from the Ubuntu package:
 
 ### Source
@@ -69,9 +69,9 @@ sudo apt-get install ros-indigo-battery-monitor-rmp
 
 ### Startup
 
-The \`battery_monitor_rmp\` package contains a
-\`battery_monitor_rmp.launch\` file. This file launches an instance of
-the \`battery_monitor_rmp.py\`. To launch these nodes the following
+The `battery_monitor_rmp` package contains a
+`battery_monitor_rmp.launch` file. This file launches an instance of
+the `battery_monitor_rmp.py`. To launch these nodes the following
 command can be used:
 
 ```

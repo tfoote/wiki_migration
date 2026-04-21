@@ -1,7 +1,7 @@
 ## Overview
 
 The parallel_quickstep library is a more or less port of
-[physics_ode/ODE](physics_ode/ODE)\'s [quickstep](physics_ode/ODE)
+[physics_ode/ODE](physics_ode/ODE)'s [quickstep](physics_ode/ODE)
 method to the GPU, providing implementations in CUDA, OpenCL and OpenMP.
 
 The approach operates by dividing the constraints into batches, where
@@ -19,7 +19,7 @@ simulation.
 The package can be used either as a standalone library with ODE, or
 directly with [Gazebo](gazebo)
 
-The API is similar to that of ODE\'s quickstep, exposing the method
+The API is similar to that of ODE's quickstep, exposing the method
 dWorldParallelQuickStep which can be used just as with dWorldQuickStep.
 
 By default, the released version of parallel_quickstep is compiled with
@@ -35,8 +35,8 @@ install [simulator_gazebo](simulator_gazebo) from source,
 rosinstall ~/diamondback_simulator ~/simulator.rosinstall
 ```
 -   Rebuild simulator_gazebo stack, if you have previously checked out
-    gazebo or parallel_quickstep locally, make sure to do a \`\`make
-    clean\`\` first: ```
+    gazebo or parallel_quickstep locally, make sure to do a ``make
+    clean`` first: ```
 roscd gazebo
 make clean
 roscd parallel_quickstep
@@ -53,12 +53,12 @@ rosmake simulator_gazebo
 -- CUDA Target Architecture: sm_10
 ...
 ```
--   Add the line (or modify as) \<stepType\>parallel_quick\</stepType\>
+-   Add the line (or modify as) <stepType>parallel_quick</stepType>
     to your Gazebo world file
 -   Launch the world 1. Alternatively, you can configure the package for
     use with either CUDA, OpenCL or OpenMP directly in the base
-    \`CMakeLists.txt\` file. Note that this will require the relevant
+    `CMakeLists.txt` file. Note that this will require the relevant
     libraries for each implementation, which at this time are not
     necessarily provided by ROS. For instance, for CUDA you will need
-    NVIDIA\'s CUDA Toolkit, and for OpenCL you will need a supported
+    NVIDIA's CUDA Toolkit, and for OpenCL you will need a supported
     driver.

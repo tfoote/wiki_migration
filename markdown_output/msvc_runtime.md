@@ -14,14 +14,14 @@ Fuerte only:
 
 ## Python Executables
 
-These scripts can\'t be run without a \`.py\` extension on windows and
-even then, can\'t be run in the shell without directly calling python
+These scripts can't be run without a `.py` extension on windows and
+even then, can't be run in the shell without directly calling python
 first. Alot of the ros architecture expects these to be directly
 executable, so rather than modifying the whole ros architecture, we sub
 in executables that indirectly execute the python scripts.
 
 ### Adding
 
-Simply copy one of the existing .exe\'s and rename it (they are
-self-calling). More permanently, modify \`CMakeLists.txt\` in the src
+Simply copy one of the existing .exe's and rename it (they are
+self-calling). More permanently, modify `CMakeLists.txt` in the src
 folder.

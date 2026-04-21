@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -7,7 +7,7 @@ visualization with markers in RVIZ.
 
 <attachment:ism_visualization.pdf>:
 
-![\|width=\"840\",height=\"230\"](attachment:ism_visualization.png)
+![\|width="840",height="230"](attachment:ism_visualization.png)
 
 ## Functionality
 
@@ -15,14 +15,14 @@ The *asr_ism_visualizations* package contains several classes for
 visualization of the ISM-datastructures. There are visualizations for
 the ISM itself, the pose prediction, the voting space, as well as for
 the reconstruction of the scene and basic visualizations of objects and
-object-overlays in RVIZ. It doesn\'t contain any nodes and its more like
+object-overlays in RVIZ. It doesn't contain any nodes and its more like
 a library.
 
 The separated visualization components are described now:
 
 ### Recognition Result Visualization
 
-![\|width=\"280\",height=\"180\"](attachment:besteck3.png)
+![\|width="280",height="180"](attachment:besteck3.png)
 
 The recognition result visualization generates markers for the
 visualization of the scene-recognition result and visualizes an ISM
@@ -37,7 +37,7 @@ displaying how good the current object pose matches in the object
 constellation. In addition the Pyramid points to the ISM, the object is
 part of.
 
-![\|width=\"300\",height=\"90\"](attachment:objectMarker.png)
+![\|width="300",height="90"](attachment:objectMarker.png)
 
 An ISM is visualized by a sphere and a cone. The colors of them are
 chosen similar to the pyramids and represents the confidence of the ISM.
@@ -46,7 +46,7 @@ of the sphere is doubled and it has no cone (cause there is no parent to
 point to). Object- and ISM-Markers are connected through lines colored
 in the color of the ISM.
 
-![\|width=\"540\",height=\"160\"](attachment:ismMarker.png)
+![\|width="540",height="160"](attachment:ismMarker.png)
 
 There are several parameters to configure the recognition result
 visualization:
@@ -70,7 +70,7 @@ visualization:
 The poseprediction visualization can be used for visualization of
 missing objects or for the reconstruction of a scene.
 
-![\|width=\"516\",height=\"310\"](attachment:konzept_pp_1.png)
+![\|width="516",height="310"](attachment:konzept_pp_1.png)
 
 Due to many possible object poses for each missing object, the pose
 prediction returns an attributed point cloud with some reasonable object
@@ -79,7 +79,7 @@ position and orientation with a frame on its ending. All poses belonging
 to one object are colored with the same hue value. The prediction always
 starts form the reference of an ISM.
 
-![\|width=\"290\",height=\"94\"](attachment:coordinateArrow.png)
+![\|width="290",height="94"](attachment:coordinateArrow.png)
 
 Additionally, the user can choose a concrete object and a predicted pose
 e. g. for placing the real object like the predicted pose. Therefore,
@@ -89,7 +89,7 @@ difference and deviation in all 6 dimensions. The color is ranged from
 red to green and encodes the derivation relatively, with green being
 very close to the predicted pose.
 
-![\|width=\"180\",height=\"170\"](attachment:poseMarkerColored.png)
+![\|width="180",height="170"](attachment:poseMarkerColored.png)
 
 There are also some parameters to set via dynamic reconfigure:
 
@@ -110,9 +110,9 @@ poses which are valid for an object. In addition a sphere is drawn to
 visualize the whole area in which an object has to be to be recognized
 as part of the current scene.
 
-![\|width=\"230\",height=\"130\"](attachment:Valid_Position1.png)
-![\|width=\"230\",height=\"130\"](attachment:Valid_Position2.png)
-![\|width=\"230\",height=\"130\"](attachment:Valid_Position3.png)
+![\|width="230",height="130"](attachment:Valid_Position1.png)
+![\|width="230",height="130"](attachment:Valid_Position2.png)
+![\|width="230",height="130"](attachment:Valid_Position3.png)
 
 The markers are small spheres to show the position with cones
 visualizing the allowed derivation in orientation exemplarily for an
@@ -121,7 +121,7 @@ axis (by default X-Axis of an object).
 The following parameters can be used in dynamic reconfigure:
 
 -   objectAxisMap: maps objects to visualized axes (e.g.
-    \"Object1-X;Object2-Y\")
+    "Object1-X;Object2-Y")
 -   objectSamples: sample factor for pose prediction
 -   posePredicitonAlpha: alpha value of sphere marker
 -   posePredictionValue: color value (HSV-color model) of sphere marker
@@ -135,12 +135,12 @@ The following parameters can be used in dynamic reconfigure:
 model of an ISM. The visualization of it consists mainly of two
 components:
 
-The votes of an object are drawn as an \"oriented arrow\", which is
+The votes of an object are drawn as an "oriented arrow", which is
 basically a line with a coordinate frame. So position and orientation of
 the votes can be visualized as well as the object they belong to (the
 voter).
 
-![\|width=\"290\",height=\"94\"](attachment:coordinateArrow.png)
+![\|width="290",height="94"](attachment:coordinateArrow.png)
 
 Each object has several votes which results in the votingspace. This
 space is subdivided in voxels, the so called bins. All votes to a bin
@@ -149,8 +149,8 @@ non-empty bins. The color shows the amount of votes relatively to the
 maximum number of votes in one bin. (green: maximum, red = 1, not drawn
 = 0)
 
-![\|width=\"296\",height=\"250\"](attachment:eva_voting_cluster_2.png)
-![\|width=\"296\",height=\"250\"](attachment:eva_voting_no_cluster_3.png)
+![\|width="296",height="250"](attachment:eva_voting_cluster_2.png)
+![\|width="296",height="250"](attachment:eva_voting_no_cluster_3.png)
 
 There are several parameters to set via dynamic reconfigure:
 

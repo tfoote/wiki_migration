@@ -1,20 +1,20 @@
 ## Overview
 
-\`polled_camera\` defines the ROS interface that client nodes use to
+`polled_camera` defines the ROS interface that client nodes use to
 request images from a polling camera driver node (e.g.
 [prosilica_camera](prosilica_camera)). The protocol is:
 
 -   The camera driver advertises a service call
-    \`\<camera\>/request_image\` of type
-    \<\<SrvLink(polled_camera/GetPolledImage)\>\>.
+    `<camera>/request_image` of type
+    <<SrvLink(polled_camera/GetPolledImage)>>.
 -   The client calls the service, specifying an output namespace.
 -   On receiving a request, the driver captures an image and returns its
     time stamp in the service response.
 -   The driver publishes (latching) the
-    \<\<MsgLink(sensor_msgs/Image)\>\> and
-    \<\<MsgLink(sensor_msgs/CameraInfo)\>\> to
-    \`\<response_namespace\>/image_raw\` and
-    \`\<response_namespace\>/camera_info\`.
+    <<MsgLink(sensor_msgs/Image)>> and
+    <<MsgLink(sensor_msgs/CameraInfo)>> to
+    `<response_namespace>/image_raw` and
+    `<response_namespace>/camera_info`.
 -   Clients subscribe to the response topics just like any other camera
     image stream.
 -   When a disconnection causes the number of subscribers to drop to

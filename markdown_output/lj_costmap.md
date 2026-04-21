@@ -1,18 +1,18 @@
 ## Overview
 
-The \`lj_costmap\` package is a localizing jockey for the Large Maps
+The `lj_costmap` package is a localizing jockey for the Large Maps
 Framework ([LaMa](Large Maps Framework)) that computes place
 dissimilarities based on a local cost map, such as those obtained from
 the [local_map](local_map) package.
 
 The role of this jockey is to get the dissimilarity of the
-\<\<MsgLink(lama_msgs/PlaceProfile)\>\> descriptors of all vertices with
+<<MsgLink(lama_msgs/PlaceProfile)>> descriptors of all vertices with
 the current place profile. The action is done when the dissimilarities
 are computed. Implemented actions:
 
--   \`GET_VERTEX_DESCRIPTOR\`: return the PlaceProfile and the computed
+-   `GET_VERTEX_DESCRIPTOR`: return the PlaceProfile and the computed
     Crossing
--   \`GET_SIMILARITY\`: return the dissimilarity based on PlaceProfile
+-   `GET_SIMILARITY`: return the dissimilarity based on PlaceProfile
 
 ## Usage
 
@@ -22,8 +22,8 @@ are computed. Implemented actions:
 
   -- --------------------------- -- ----------------------------------------- -- ----------------------------------- --
      \[Getter\]\[/\]\[Setter\]      message type                                 interface default name              
-     Getter/Setter                  \<\<MsgLink(lama_msgs/PlaceProfile)\>\>      jockey_name + \"\_place_profile\"   
-     Setter                         \<\<MsgLink(lama_msgs/Crossing)\>\>          jockey_name + \"\_crossing\"        
+     Getter/Setter                  <<MsgLink(lama_msgs/PlaceProfile)>>      jockey_name + "_place_profile"   
+     Setter                         <<MsgLink(lama_msgs/Crossing)>>          jockey_name + "_crossing"        
   -- --------------------------- -- ----------------------------------------- -- ----------------------------------- --
 
 ```clearsilver

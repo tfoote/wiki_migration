@@ -1,7 +1,7 @@
 octovis provides visualization for [octomap](octomap) based on Qt and
 libQGLViewer.
 
-octovis is available in the \`ros-\$ROS_DISTRO-octomap\` debian package.
+octovis is available in the `ros-\$ROS_DISTRO-octomap` debian package.
 As an alternative, you can download the package yourself from
 <http://octomap.github.io> and compile it with the library stand-alone
 or against a locally installed [octomap](octomap) library.

@@ -22,12 +22,12 @@ snap to that vertex.
 
 Vertices can be modified after drawing a polygon by selecting the
 polygon from the list and typing in values for x and y coordinates.The
-polygon\'s name specifies text that is drawn in the interface, and the
+polygon's name specifies text that is drawn in the interface, and the
 ID is a unique ID used for referring to the polygon in code.
 
 ### Visualization
 
-Pressing the \`Send Polygons\` button causes the interface to make a
+Pressing the `Send Polygons` button causes the interface to make a
 service call to display the polygons, and also publishes a MarkerArray
 for visualization in rviz. An example visualization is shown below.
 
@@ -36,7 +36,7 @@ for visualization in rviz. An example visualization is shown below.
 ### Units
 
 All units are in meters. By default, the interface displays a grid with
-\`5cm\` spacing. The x and y coordinates of the cursor are displayed in
+`5cm` spacing. The x and y coordinates of the cursor are displayed in
 meters in the status bar. When drawing a polygon, the line connecting
 the last vertex and the cursor displays the length of the edge.
 

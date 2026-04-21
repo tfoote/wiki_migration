@@ -40,7 +40,7 @@ pr2_2dnav_slam application can be commanded via [rviz](rviz),
 roslaunch pr2_navigation_slam rviz_move_base_slam.launch
 ```
 -   The application is now up and ready to receive goals.
--   Click the \"2D Nav Goal\" button in the rviz GUI window.
+-   Click the "2D Nav Goal" button in the rviz GUI window.
 -   Left click on the map at the location of the goal and drag to set
     orientation.
 -   If the robot is surrounded by obstacles, it may not move. Move
@@ -60,7 +60,7 @@ roslaunch pr2_navigation_slam rviz_move_base_slam.launch
 roslaunch pr2_navigation_slam nav_view_move_base_slam.launch
 ```
 -   The application is now up and ready to receive goals.
--   Click the \"Set Goal\" button in the nav_view GUI window.
+-   Click the "Set Goal" button in the nav_view GUI window.
 -   Left click on the map at the location of the goal and drag to set
     orientation.
 -   If the robot is surrounded by obstacles, it may not move. Move

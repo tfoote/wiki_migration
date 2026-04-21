@@ -1,5 +1,5 @@
 ROS driver for serial Roboteq motor controllers. This driver is suitable
-for use with Roboteq\'s Advanced Digital Motor Controllers, as described
+for use with Roboteq's Advanced Digital Motor Controllers, as described
 in this document. Devices include:
 
 Brushed DC: HDC24xx, VDC24xx, MDC22xx, LDC22xx, LDC14xx, SDC1130,

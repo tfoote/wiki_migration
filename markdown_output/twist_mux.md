@@ -19,7 +19,7 @@ messages.
 
 ## Twist multiplexer
 
-The main node of this package is \`twist_mux\`, which provides a
+The main node of this package is `twist_mux`, which provides a
 multiplexer for
 [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 messages. It takes N input twist topics and outputs the messages from a
@@ -43,8 +43,8 @@ parameters.
 
 ### Subscribers
 
-The \`twist_mux\` subscribes to the N input twist topics and M input
-lock topics specified in the parameters \`topics\` and \`locks\`
+The `twist_mux` subscribes to the N input twist topics and M input
+lock topics specified in the parameters `topics` and `locks`
 described below.
 
 #### Twist inputs
@@ -58,7 +58,7 @@ fields that specify each input twist topics:
     [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
     type.
 -   **timeout** : Messages timeout in seconds. If no message arrives
-    after the timeout, other topics are selected. If \`timeout == 0.0\`,
+    after the timeout, other topics are selected. If `timeout == 0.0`,
     the topic never enters in timeout.
 -   **priority** : Priority of the topic from 0 to 255. The higher the
     more priority it has over the others.
@@ -108,8 +108,8 @@ fields that specify each input lock topics:
 -   **timeout** : Messages timeout in seconds. The lock topic is
     supposed to publish at a certain frequency, so the timeout allows to
     detect if the publisher is dead in order to enable the lock. If
-    \`timeout == 0.0\`, it is not used.
--   **priority** : Priority of the topic from \`0\` to \`255\`. The
+    `timeout == 0.0`, it is not used.
+-   **priority** : Priority of the topic from `0` to `255`. The
     higher the more priority it has over the others.
 
 Example configuration to pause the navigation and give priority to the
@@ -152,8 +152,8 @@ the input. Only a small delay is introduced. Here we analyze that
 overhead for different numbers of input twist and lock topics.
 
 The next plot shows one input twist topic vs. the output one. The delay
-is usually 0, and always \`\< 1ms\`.
-![twist_mux_plot_01\|width=\"750\"](attachment:twist_mux_plot_01.png)
+is usually 0, and always `< 1ms`.
+![twist_mux_plot_01\|width="750"](attachment:twist_mux_plot_01.png)
 
 WIP Plot with: delay vs. N + M
 

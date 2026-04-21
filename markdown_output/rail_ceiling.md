@@ -184,12 +184,12 @@ or direct measurement.
 
 ### Calibration from Floor Markers
 
-The \`calibration\` node will run an automatic calibration procedure
+The `calibration` node will run an automatic calibration procedure
 where each camera will take sample poses of an associated marker of
 known position in the environment. Once a sufficient number of samples
 have been taken for each camera, the transforms will be calculated and
-written to the \`ceiling.urdf.xacro\` file in your home directory, and
-must then be copied into the \`urdf\` directory of the \`rail_ceiling\`
+written to the `ceiling.urdf.xacro` file in your home directory, and
+must then be copied into the `urdf` directory of the `rail_ceiling`
 package if you wish to use it.
 
 This process is fully automated and is recommended if you have a marker
@@ -209,7 +209,7 @@ roslaunch rail_ceiling view_calibration.launch
 
 ### Calibration from Mobile Robot
 
-The \`calibration_from_carl\` node provides a method of calibrating the
+The `calibration_from_carl` node provides a method of calibrating the
 camera transforms from a marker placed on a localized mobile robot, such
 as the CARL platform. This calibration method is executed as follows: .
 ```
@@ -219,9 +219,9 @@ roslaunch rail_ceiling calibration_from_carl.launch
 ```
 
 Next, the robot must be driven into the field of view of a camera to be
-calibrated. Once the robot is in the camera\'s field of view and it is
+calibrated. Once the robot is in the camera's field of view and it is
 confirmed to be accurately localized, publishing to the
-\`start_calibration\` topic with the id number of the camera to be
+`start_calibration` topic with the id number of the camera to be
 calibrated replacing \[camera_id\]: . ```
 rostopic pub /start_calibration std_msgs::Int16 "data: [camera_id]"
 ``` This will
@@ -231,30 +231,30 @@ be repeated for all cameras. Note that if the robot is within the field
 of view of multiple cameras, they can be calibrated simultaneously.
 
 Once sufficient samples are collected for all of the cameras, the
-transforms will be calculated and written to the \`ceiling.urdf.xacro\`
-file in your home directory, and must then be copied into the \`urdf\`
-directory of the \`rail_ceiling\` package if you wish to use it.
+transforms will be calculated and written to the `ceiling.urdf.xacro`
+file in your home directory, and must then be copied into the `urdf`
+directory of the `rail_ceiling` package if you wish to use it.
 
 ### Calibration from Direct Measurement
 
 The transforms can also be edited directly in the human-readable urdf
-file, \`urdf/ceiling.urdf.xacro\`. This should only be done if the
+file, `urdf/ceiling.urdf.xacro`. This should only be done if the
 camera positions and orientations can be accurately measured.
 
 ## Furniture Configuration
 
 Furniture footprints and marker information can be configured in the
-\`furniture_footprints.yaml\` and \`markers.yaml\` file in the
-\`config\` directory. The \`furniture_footprints.yaml\` configuration
+`furniture_footprints.yaml` and `markers.yaml` file in the
+`config` directory. The `furniture_footprints.yaml` configuration
 file defines general pieces of furniture with convex polygon footprints
-for localization and navigation, and the \`markers.yaml\` configuration
+for localization and navigation, and the `markers.yaml` configuration
 file defines instances of furniture with attached markers and their
 associated poses.
 
 ### Defining Furniture Footprints
 
 To add a new type of furniture, simply add a new entry to the
-\`furniture_footprints.yaml\` file. Each entry must have a name (for
+`furniture_footprints.yaml` file. Each entry must have a name (for
 identifying the type of furniture) a localization footprint (a set of
 convex polygons that a laser scanner will detect), and a navigation
 footprint (a set of convex polygons that represent the full area
@@ -273,10 +273,10 @@ navigation). The entry format is as follows: . ```
 Points composing the polygons are defined with respect to the center of
 the piece of furniture, according to a coordinate system with x
 increasing right, y increasing forward, and z increasing up. In
-practice, the reference frame\'s position does not have to be at the
+practice, the reference frame's position does not have to be at the
 center of the furniture piece, as long as it is consistent with the
 reference frame defined for instances of the furniture type in the
-\`markers.yaml\` file.
+`markers.yaml` file.
 
 Note that polygons must consist of a minimum of 3 points, and an object
 can be defined with zero or more localization footprint polygons and
@@ -285,9 +285,9 @@ zero or more navigation footprint polygons.
 ### Defining Furniture Instances
 
 Each piece of furniture in th eenvironment must have its own entry in
-the \`markers.yaml\` file. Each entry consists of a required type
+the `markers.yaml` file. Each entry consists of a required type
 (corresponding with the furniture names defined in
-\`furniture_footprints.yaml\`), an optional initial_pose (an initial
+`furniture_footprints.yaml`), an optional initial_pose (an initial
 pose for the piece of furniture in the global coordinate frame), and a
 required set of markers. Markers are defined with the unique id used to
 generate them, and the pose of the marker with respect to the furniture
@@ -316,7 +316,7 @@ with: . ```
 roslaunch rail_ceiling ceiling_description.launch
 ```
 
-The main functionality of the \`rail_ceiling\` package is furniture
+The main functionality of the `rail_ceiling` package is furniture
 tracking. This can be launched with: . ```
 roslaunch rail_ceiling furniture_tracker.launch
 ```

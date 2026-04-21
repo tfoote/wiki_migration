@@ -2,7 +2,7 @@
 similar to how the parameter server works. It differs from the parameter
 server in that:
 
--   It does not require any network lookups, so it\'s much faster
+-   It does not require any network lookups, so it's much faster
 -   It can store arbitrary data in an efficient manner \-- no
     serialization/deserialization required if the type remains the same
 -   It can store extra metadata about a property (to, for example,

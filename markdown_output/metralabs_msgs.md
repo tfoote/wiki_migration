@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(metralabs_msgs)\>\>
+<<MsgSrvDoc(metralabs_msgs)>>

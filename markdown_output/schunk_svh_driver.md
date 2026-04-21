@@ -10,7 +10,7 @@ Schunk SVH driver. For the currently maintained version, please see the
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<style=\"background-color: lightgrey;\"\> Info: The newest Version of this driver (v0.2.0 and above) will support the new hardware versions of the Schunk SVH (2.0 and above).   
+     <style="background-color: lightgrey;"> Info: The newest Version of this driver (v0.2.0 and above) will support the new hardware versions of the Schunk SVH (2.0 and above).   
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Overview
@@ -48,12 +48,12 @@ package comes with udev rules that allow for an easy discovery of the
 brainbox adapters. Install them by calling: ```
 rosrun schunk_svh_driver create_udev_rules
 ```
-this will copy the udev rules to \`/etc/udev/rules.d\` and restart your
+this will copy the udev rules to `/etc/udev/rules.d` and restart your
 udev service.
 
 ### From Source
 
-You will need to checkout the following packages into your workspace\'s
+You will need to checkout the following packages into your workspace's
 src directory:
 
 -   <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_core>
@@ -66,7 +66,7 @@ catkin_make_isolated
 ```
 
 If you have the fzi_icl_core or fzi_icl_comm package in your workspace
-you\'ll have to build it with *catkin_make_isolated*, as those packages
+you'll have to build it with *catkin_make_isolated*, as those packages
 are plain cmake packages. See the
 [REP 134](http://www.ros.org/reps/rep-0134.html) for details.
 
@@ -75,7 +75,7 @@ to install these source your workspace and call the following:
 ```
 rosrun schunk_svh_driver create_udev_rules
 ``` which will copy the udev rules into
-\`/etc/udev/rules.d\` and restart your udev service.
+`/etc/udev/rules.d` and restart your udev service.
 
 ## ROS API
 
@@ -199,7 +199,7 @@ that accept channels will use the following mapping:
 
   -- ------------------------ -- ------------ -- ---- ------------------------------------------------- --
      **Channel Name**            **Number**                                                             
-     ALL                         -1              \<   10\> ![](attachment:svh_finger_description.png)   
+     ALL                         -1              <   10> ![](attachment:svh_finger_description.png)   
      THUMB_FLEXION               0                                                                      
      THUMB_OPPOSITION            1                                                                      
      INDEX_FINGER_DISTAL         2                                                                      
@@ -222,13 +222,13 @@ example: The settings of the Ring Finger would be searching for the
 corresponding hardware version and the entry of RING_FINGER and so
 forth.
 
-When using the launch file \`svh_controller.launch\` all parameters are
+When using the launch file `svh_controller.launch` all parameters are
 read from yaml files residing in the folder *etc*. If you want to give
 custom parameters just edit the file *etc/controller_user.yaml* if you
 are using the source installation. In case of an installation from deb
 you should first copy the file under *etc/controller_user.yaml* to a
 folder with user write acces, make your changes and then use it by
-adding the argument \`controller_config:=path_to_your/logging.xml\` when
+adding the argument `controller_config:=path_to_your/logging.xml` when
 launching the node.
 
 If you want to go back to the original values (and have edited the file,
@@ -266,7 +266,7 @@ ls /dev
 easiest way to check which one you are using is to disconnect the
 adapter shortly and check which of the ttyUSBx devices is gone.
 
-You can change the device used by adding the argument \`serial_device\`
+You can change the device used by adding the argument `serial_device`
 to the launch calls, change it via dynamic reconfigure and then do a
 reconnect or change it permanently by replacing the argument in the
 launch file.
@@ -290,8 +290,8 @@ controller node by calling ```
 roslaunch schunk_svh_driver svh_controller.launch standalone:=true
 ``` This will
 automatically connect the driver to the hardware and call the reset
-routine for all fingers. Upon the message: \"Driver was autostarted!
-Input can now be sent. Have a safe and productive day!\" the hand is
+routine for all fingers. Upon the message: "Driver was autostarted!
+Input can now be sent. Have a safe and productive day!" the hand is
 ready and fingers can be moved by using the Joint State publisher gui
 that has come up.
 
@@ -300,10 +300,10 @@ You can disable the autostart by adding the argument autostart:
 roslaunch schunk_svh_driver svh_controller.launch standalone:=true autostart:=false
 ```
 
-By using the \`standalone\` argument the launchfile will start a joint
+By using the `standalone` argument the launchfile will start a joint
 state publisher for easy input. If you do not activate this as input you
 have to provide the target positions by another node or console input.
-The package folder comes with a file called \"quick_commands\" which
+The package folder comes with a file called "quick_commands" which
 gives you some examples how to controll the hand via rostopic.
 
 ### Together with other packages
@@ -326,7 +326,7 @@ catkin_make_isolated
    source devel_isolated/setup.bash
 ```0 again, fill out the arguments you need, the
 rest will default to predefined values. If you use the svh_node.launch
-file you will have to provide an \"output joint state publisher\" for
+file you will have to provide an "output joint state publisher" for
 the joint states in order to generate the joint states required for the
 URDF (note below). This option is only available from version 0.1.6 and
 up (deb file install is 0.1.5).
@@ -334,7 +334,7 @@ up (deb file install is 0.1.5).
 If you just want to use the node without the configuration files, etc.
 the node will default to hard-coded values.
 
-**NOTE** The urdf of the node makes use of the \`mimic\` tag which is
+**NOTE** The urdf of the node makes use of the `mimic` tag which is
 currently only resolved by the robot joint state publisher. in order to
 generate TFs for the visualization and to get the angles of the coupled
 joints the node is used in conjunction with a joint state publisher and
@@ -346,19 +346,19 @@ relation.
 ### Visualisation
 
 The node will automatically show the input sliders if started with the
-standalone argument. If you additionally provide the \`gui\` argument as
+standalone argument. If you additionally provide the `gui` argument as
 true an rqt gui will be opened when launching the node:
 ```
 catkin_make_isolated
    source devel_isolated/setup.bash
 ```1
 
-The \`rqt\` gui opens always to its default configuration (which is
-usually the last one). The SVH comes with the plugin \`SVH_Reset\` which
+The `rqt` gui opens always to its default configuration (which is
+usually the last one). The SVH comes with the plugin `SVH_Reset` which
 enables easy reset control of the hand. Additionally you can use
 dynamic_reconfigure to change some of the values and the RVIZ plugin to
 visualize the robot model of the SVH. A configuration file for rviz is
-provided with the package at \"urdf/svh.rviz\". Your configuration
+provided with the package at "urdf/svh.rviz". Your configuration
 should look something like this to access all GUI functionalities:
 
 ![](attachment:svh_rqt_gui.jpg)
@@ -372,7 +372,7 @@ catkin_make_isolated
 ```2 as with the
 real hardware you can choose to use the simulation (which is not really
 a simulation but just a visualisation) with convenient sliders or with
-the command line/ your own packages by using the \`standalone\`
+the command line/ your own packages by using the `standalone`
 argument: ```
 catkin_make_isolated
    source devel_isolated/setup.bash
@@ -386,7 +386,7 @@ please beware when you develop poses without the hardware in the loop.
 ### sin test
 
 As a test to see if the hardware is properly working the very simple
-test node \`svh_sin_test\` is provided. Make sure the hand can move
+test node `svh_sin_test` is provided. Make sure the hand can move
 freely and run the test with: ```
 catkin_make_isolated
    source devel_isolated/setup.bash
@@ -412,14 +412,14 @@ node.
 
 In case you do not use the autostart feature of the controller you will
 have to connect and start the controller manually. You should do this by
-using the \`SVH_Reset\` plugin provided with the package. When the
+using the `SVH_Reset` plugin provided with the package. When the
 hardware is ready press the connect button. Afterwards you can either
 reset all or individual fingers by pressing reset. The fingers will be
 disabled after start but are automatically enabled once a target
 position is set.
 
 If you prefer to use the command line to send topics, some predefined
-test inputs are stored in the \"quick_commands\" file for convenience.
+test inputs are stored in the "quick_commands" file for convenience.
 Just copy and paste them to the command line.
 
 ### Argument Listing
@@ -441,11 +441,11 @@ written to the location specified by the logging.xml (/.ros/log by
 default) *controller_config (default:
 schunk_svh_driver/etc/controller_user.yaml)* Full qualified path to a
 yaml file containing the configuration for the low level controllers.
-Copy the file in \"schunk_svh_driver/etc/controller_user.yaml\" for this
+Copy the file in "schunk_svh_driver/etc/controller_user.yaml" for this
 purpose *general_config (default: schunk_svh_driver/etc/svh.yaml)* Full
 qualified path to a yaml file containing the basic configuration of the
 ros node, mainly which finger is disabled. Copy the file in
-\"schunk_svh_driver/etc/svh.yaml\" for this purpose *standalone
+"schunk_svh_driver/etc/svh.yaml" for this purpose *standalone
 (default: false)* Indicates that the controller should be used with
 direct human input when set to true
 
@@ -476,7 +476,7 @@ channel 5 to hard stop. Detection thresholds: Current MIN: -500.000000mA
 MAX: 500.000000mA** or similar and nothing is happening* During reset
 the fingers need to reach a certain percentage of the maximum allowed
 current to detect a hard stop. The amount is configured in the homing
-settings by the \"reset current factor\" which you can find in the
+settings by the "reset current factor" which you can find in the
 \*.yaml files in the *etc* folder. If for example the finger is supposed
 to reach 400mA but is stuck and only manages to get up to 200mA the
 threshold will not be reached. In such cases the reset timeout should
@@ -495,7 +495,7 @@ strong enough to overcome the disturbances the current will rise up to
 the maximum allowed current. If it still can not overcome the
 disturbance most likely a reset is detected. Please make sure that no
 hardware fault is present in case this happens with high enough currents
-*The fingers work but they \"run away\" when they do fast movements or
+*The fingers work but they "run away" when they do fast movements or
 touch something and can not be controlled afterwards* This is the case
 when the current peaks commanded to the current controller are to high.
 The internal driver units will detect overcurrent/voltage and shut down
@@ -508,20 +508,20 @@ suddenly a high P gain leads to a very output for the motor drivers
 resulting in this case. Setting the controllers right is not easy, if
 you are uncertain what to set just use the default settings *A finger is
 broken, can i still use the rest of the finger?* YES! You can disable
-the finger by editing the \"etc/svh.yaml\" file or by copying it and
-then providing it via launch argument. Change the \"disable_flags\"
+the finger by editing the "etc/svh.yaml" file or by copying it and
+then providing it via launch argument. Change the "disable_flags"
 value of the finger you want to disable to true and it will not be used
 during execution. However all calls to this finger will be answered in
 the most positive way possible (i.e. it will register as enabled and
 homed) *The plugin does not show in rqt, or a failure occurs during
-loading* Try resetting the cache of \`rqt\` by calling \`rqt
-\--clear-config\` and then try again *The hand gets very hot* There are
+loading* Try resetting the cache of `rqt` by calling `rqt
+\--clear-config` and then try again *The hand gets very hot* There are
 many motors and electronic circuits on a very small space. A quite high
 temperature is nothing to worry about. You should however still be able
 to touch everything. Otherwise you should check for a hardware fault
 *RVIZ shows nothing like the screenshot when i load it* You need to
 configure it yourself to show the robot model and maybe the TF tree or
-use the provided config file at \"etc/urdf.rviz\" *When i start the node
+use the provided config file at "etc/urdf.rviz" *When i start the node
 with rosrun the URDF tree of a robot state publisher is not complete* We
 used the mimic tag to model the chained kinematic of the fingers. The
 mimic tag however is only evaluated by the joint state publisher. In the
@@ -530,7 +530,7 @@ state publisher just for the purpose of providing the values for these
 mimicked joints *Where is the actual functionality within the ROS
 package? It hardly seems to do anything* The actual driver was developed
 as a standalone library which is then used by the SVHNode to control the
-functionality. Take a look at the \"driver_svh\" folder which is also
+functionality. Take a look at the "driver_svh" folder which is also
 contained in the src folder.
 
 ### Getting Help
@@ -556,7 +556,7 @@ factor that is stated for each joint ![](attachment:svh_joint_names.png)
 The links in the URDF contain many helper and dummy links that are
 needed to create the quite complex kinematic chain why the following
 illustration of the links is only partially accurate. Especially the
-links names \"e\" are mostly virtual and really in one place. Also the
+links names "e" are mostly virtual and really in one place. Also the
 base link is actually further in the back than drawn in the picture. Due
 to the limitations of 2D we could not accurately illustrate this:
 ![](attachment:svh_link_names.png) For proper illustration of the robot

@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_teleop\` package provides various methods for human control
+The `carl_teleop` package provides various methods for human control
 of the CARL robot, such as teleoperation of the base, arm, and sensors
 via keyboard teleoperation and joystick/gamepad teleoperation.
 
@@ -162,7 +162,7 @@ Controls for the joystick and keyboard teleop nodes are listed below.
 
 The joystick teleop node currently supports both gamepads with analog
 triggers and gamepads with digital triggers. The gamepad type can be set
-on launch with the \`controller_type\` parameter. Currently, the node
+on launch with the `controller_type` parameter. Currently, the node
 has been tested with the Logitech Dual Action wired controller (digital
 triggers) and the Logitech Wireless Gamepad (analog triggers). If your
 gamepad does not work with this node, you can remap the axes and buttons
@@ -246,7 +246,7 @@ Base Control Mode:
 
 ## Installation
 
-To install the \`carl_bot\` package, you can install from source with
+To install the `carl_bot` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
@@ -258,12 +258,12 @@ catkin_make install
 ## Startup
 
 Joystick or keyboard teleop can be started with the launch files
-\`carl_joy_teleop.launch\` and \`carl_key_teleop.launch\`, respectively.
+`carl_joy_teleop.launch` and `carl_key_teleop.launch`, respectively.
 Both files have parameters for velocity limits, which can be set on
-launch to limit the velocities of the arm\'s translation, rotation,
+launch to limit the velocities of the arm's translation, rotation,
 finger movement, and base movement. Furthermore,
-\`carl_joy_teleop.launch\` includes a parameter for the controller type,
-which can currently be set to either \"analog\" or \"digital\",
+`carl_joy_teleop.launch` includes a parameter for the controller type,
+which can currently be set to either "analog" or "digital",
 representing controllers with analog triggers and digital triggers,
 respectively. Example launch syntax is given below.
 

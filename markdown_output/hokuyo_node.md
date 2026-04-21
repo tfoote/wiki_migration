@@ -28,32 +28,32 @@ known to work:
 
 **Intensity mode off**:
 
--   \`cluster\`: 1
--   \`skip\`: 1
--   \`intensity\`: false
--   \`min_ang\`: -2.2689
--   \`max_ang\`: 2.2689
+-   `cluster`: 1
+-   `skip`: 1
+-   `intensity`: false
+-   `min_ang`: -2.2689
+-   `max_ang`: 2.2689
 
 **Intensity mode on**:
 
--   \`cluster\`: 1
--   \`skip\`: 1
--   \`intensity\`: true
--   \`min_ang\`: -1.047
--   \`max_ang\`: 1.047
+-   `cluster`: 1
+-   `skip`: 1
+-   `intensity`: true
+-   `min_ang`: -1.047
+-   `max_ang`: 1.047
 
 ### Allow Unsafe Settings Option
 
-On the UTM-30LX, unless the \`allow_unsafe_settings\` option is
+On the UTM-30LX, unless the `allow_unsafe_settings` option is
 selected, the hokuyo_node will limit the angular range to values that
 are known to work. The angular range limit depends on the firmware
-version, and is proportional to the \`cluster\` parameter.
+version, and is proportional to the `cluster` parameter.
 
   -- ----------------------------------------------------------- -- ------------------------------------------- -- ------------------------- --
-     \<tablestyle=\"text-align:center;\"\>**Firmware version**      **Maximum angular range / cluster (deg)**      **hokuyo_node version**   
-     1.16.01(16/Nov./2009)                                          190                                            \> 1.1.1                  
-     1.16.02(19/Jan./2010)                                          95                                             \> 1.0.3                  
-     Other                                                          95                                             \> 1.0.3                  
+     <tablestyle="text-align:center;">**Firmware version**      **Maximum angular range / cluster (deg)**      **hokuyo_node version**   
+     1.16.01(16/Nov./2009)                                          190                                            > 1.1.1                  
+     1.16.02(19/Jan./2010)                                          95                                             > 1.0.3                  
+     Other                                                          95                                             > 1.0.3                  
   -- ----------------------------------------------------------- -- ------------------------------------------- -- ------------------------- --
 
 ## ROS API
@@ -146,16 +146,16 @@ name=Read-only parameters
 ##### Parameter interactions
 
 Some parameter settings can cause problems, usually due to speed
-limitations of the laser\'s serial interface. For example:
+limitations of the laser's serial interface. For example:
 
--   if \`intensity\` is true and \`skip\` is 0, then the device will
+-   if `intensity` is true and `skip` is 0, then the device will
     likely drop some scans;
--   if \`intensity\` is true and \`min_ang\` / \`max_ang\` are outside
+-   if `intensity` is true and `min_ang` / `max_ang` are outside
     -70 / +70 degrees, then some problems have been observed.
 
 ## Command-Line Tools
 
-The \`getID\` and \`getFirmwareVersion\` programs can be used to get
+The `getID` and `getFirmwareVersion` programs can be used to get
 information about a hokuyo laser scanner. Each of them can be invoked in
 a human readable way:
 
@@ -172,7 +172,7 @@ retry for about ten seconds before giving up.
 
 ## Using udev to Give Hokuyos Consistent Device Names
 
-The \`getID\` program can be used to get the hardware ID of a Hokuyo
+The `getID` program can be used to get the hardware ID of a Hokuyo
 device given its port. Combined with udev, this allows a consistent
 device name to be given to each device, even if the order in which they
 are plugged in varies. The following udev rule should work universally
@@ -181,7 +181,7 @@ on any ROS system:
 ```
 KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/hydro/env.sh rosrun hokuyo_node getID %N q", SYMLINK+="sensors/hokuyo_%c"
 ``` This udev rule sets up a device name that is
-based on the Hokuyo\'s hardware ID. The PR2 then has a symlink to that
+based on the Hokuyo's hardware ID. The PR2 then has a symlink to that
 name that gets changed if the Hokuyo is replaced:
 
 ```

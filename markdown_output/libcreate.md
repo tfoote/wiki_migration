@@ -16,4 +16,4 @@ Roomba platforms. For ROS bindings, see
 
 ## Report a Bug
 
-\<\<GitHubIssues(AutonomyLab/libcreate)\>\>
+<<GitHubIssues(AutonomyLab/libcreate)>>

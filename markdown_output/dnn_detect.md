@@ -72,7 +72,7 @@ sudo apt install ros-kinetic-dnn-detect
 ## Sample Usage
 
 The sample launch file uses
-[chuanqi305\'s MobileNet-SSD](https://github.com/chuanqi305/MobileNet-SSD)
+[chuanqi305's MobileNet-SSD](https://github.com/chuanqi305/MobileNet-SSD)
 
 A camera node, such as [usb_cam](usb_cam) needs to be running
 
@@ -80,7 +80,7 @@ For example: ```
 rosrun usb_cam usb_cam_node
 ```
 
-Then \`dnn_detect\` can be launched: ```
+Then `dnn_detect` can be launched: ```
 roslaunch dnn_detect dnn_detect.launch camera:=/usb_cam image:=image_raw
 ``` and the
 results viewed with: {{ rqt_image_view /dnn_images or:

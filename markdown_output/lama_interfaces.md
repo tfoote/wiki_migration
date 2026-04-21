@@ -1,14 +1,14 @@
-\`lama_interfaces\` provides the interfaces to the database as ROS
+`lama_interfaces` provides the interfaces to the database as ROS
 services for the Large Maps Framework ([LaMa](Large Maps Framework)).
 
 ## Overview
 
-\`lama_interfaces\` provides the interfaces to the database as ROS
+`lama_interfaces` provides the interfaces to the database as ROS
 services.
 
 The data storage is realized through a database. All databases supported
 by Python sqlalchemy can be used. The default database is an SQLite
-database which will be save as \`/.ros/lama.sqlite\`. The environment is
+database which will be save as `/.ros/lama.sqlite`. The environment is
 represented as a directed graph, where vertices are points of interest
 such as crossings. Descriptors can be associated to vertices and edges,
 they give some information about the environment, so that jockeys can
@@ -21,29 +21,29 @@ occurs either in binary or clear-text mode.
 ## Usage
 
 The first node that should be used when working with the !LaMa Framework
-is \`map_node\`: ```
+is `map_node`: ```
 rosrun lama_interfaces map_node
 ``` This node will run several
-services: \`/lama_map_agent\`, \`/interface_factory\`,
-\`/lama_object_getter\`, and \`/lama_object_setter\`, which are
+services: `/lama_map_agent`, `/interface_factory`,
+`/lama_object_getter`, and `/lama_object_setter`, which are
 described in further sections.
 
 ### LaMa Map Agent
 
-This service of type \<\<SrvLink(lama_interfaces/ActOnMap)\>\> is used
+This service of type <<SrvLink(lama_interfaces/ActOnMap)>> is used
 for all actions over vertices and edges in the map.
 
 ### Interface Factory
 
-This service of type \<\<SrvLink(lama_interfaces/AddInterface)\>\> is
+This service of type <<SrvLink(lama_interfaces/AddInterface)>> is
 used to generate two services for each descriptor type, one to write the
 descriptor into the database and one to retrieve it. Descriptor storage
 occurs either in binary or clear-text mode (specified through the
-\`interface_type\` service attribute. The name of these two services
-will be the name of the interface (\`interface_name\` attribute) to
-which \"\`\_getter\`\" or \"\`\_setter\`\" are added.
+`interface_type` service attribute. The name of these two services
+will be the name of the interface (`interface_name` attribute) to
+which "`_getter`" or "`_setter`" are added.
 
-For example, to create a clear-text interface for \`float64\` in C++:
+For example, to create a clear-text interface for `float64` in C++:
 ```cplusplus
 ros::NodeHandle nh;
 ros::ServiceClient client = nh.serviceClient<lama_interfaces::AddInterface>("interface_factory");
@@ -61,8 +61,8 @@ if (!client.call(srv))
 ```
 
 To add a database interface in Python, one can either use the
-\`/interface_factory\` service or call the equivalent Python function.
-For example, for a \"\`sensor_msgs/LaserScan\[\]\`\" descriptor with
+`/interface_factory` service or call the equivalent Python function.
+For example, for a "`sensor_msgs/LaserScan\[\]`" descriptor with
 binary storage: ```python
 from lama_interfaces.interface_factory import interface_factory
 interface_name = 'my_laser_descriptor'
@@ -83,6 +83,6 @@ set_srv = iface.setter_service_proxy
 
 ### Direct vertex/edge access
 
-The services \`/lama_object_getter\` and \`/lama_object_setter\` provide
+The services `/lama_object_getter` and `/lama_object_setter` provide
 direct access to the graph vertices or edges. These functionalities are
-provided by the \`/lama_map_agent\`, which should be preferred.
+provided by the `/lama_map_agent`, which should be preferred.

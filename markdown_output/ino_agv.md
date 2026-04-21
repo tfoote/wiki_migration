@@ -3,7 +3,7 @@
 ## Özellikler
 
   -- ---------------------------------------- -- -------- --
-     \<tablewidth=\"400px\"\>** Platform **               
+     <tablewidth="400px">** Platform **               
      En                                          728mm    
      Boy                                         1026mm   
      Yükseklik                                   325mm    
@@ -12,7 +12,7 @@
   -- ---------------------------------------- -- -------- --
 
   -- ----------------------------------------- -- ----------- --
-     \<tablewidth=\"400px\"\>** Sensörler **                  
+     <tablewidth="400px">** Sensörler **                  
      Kızılötesi                                   8x          
      Lazer Tarayıcı                               1x (270')   
   -- ----------------------------------------- -- ----------- --
@@ -122,7 +122,7 @@ Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
 Unzip ~/agvsim_v2_ros/agv2_description/meshes/22-10-2019-OTAv07/OTA-v0.7.stl.zip
 ```6 Hata Aşağıdaki gibi bir hata alınır ise ERROR:
 cannot launch node of type \[agv2_smach/agv_task_plan_service.py\]:
-can\'t locate node \[agv_task_plan_service.py\] in package
+can't locate node \[agv_task_plan_service.py\] in package
 \[agv2_smach\]
 
 ```

@@ -4,7 +4,7 @@ This package provides a new Dynamic Environment Model server partially
 based on OctomapServer from the octomap_mapping stack. The model manages
 information about all detected, permanent, temporary and moving objects
 in the environment. It publishes own topics, subscribes to some of input
-data stream topics and it\'s internal state can be controlled by
+data stream topics and it's internal state can be controlled by
 services. We have created some simple
 [tutorials](srs_env_model/Tutorials) that walk you through basic using
 it.
@@ -18,9 +18,9 @@ detected objects.
 Environment model server is based on core-plugin architecture model.
 Whole this structure can be virtually divided into two parts - plugins
 connected to the octomap and independent data structures. The first part
-serves as a \"raw data\" processor. It tranforms input octomap to the
+serves as a "raw data" processor. It tranforms input octomap to the
 different data structure. The second part of the environment server
-contains some \"higher level\" data structures, added by some detectors
+contains some "higher level" data structures, added by some detectors
 in general.
 
 -   Raw data structures
@@ -186,10 +186,10 @@ aligned_box and bounding_box. All services are published in the
 
   -- ------------------------------------ -- -------------------- -- -------------------- -- --------------------------------------------------------------------------------------------------- --
      **Service Name**                        **Input**               **Output**              **Description**                                                                                     
-     get\_{object_type}                      uint32 object_id        object_description      Gets object from object tree.                                                                       
-     get_similar\_{object_type}              object_description      uint32 object_id        Checks object tree for object similar to object in input parameter. Returns -1 if no such exists.   
-     insert\_{object_type}                   object_description      uint32 object_id        Inserts object into object tree. Replaces object with same id if exists.                            
-     insert\_{object_type}\_by_position      object_description      uint32 object_id        Inserts object into object tree. Replaces similar object if exists.                                 
+     get_{object_type}                      uint32 object_id        object_description      Gets object from object tree.                                                                       
+     get_similar_{object_type}              object_description      uint32 object_id        Checks object tree for object similar to object in input parameter. Returns -1 if no such exists.   
+     insert_{object_type}                   object_description      uint32 object_id        Inserts object into object tree. Replaces object with same id if exists.                            
+     insert_{object_type}_by_position      object_description      uint32 object_id        Inserts object into object tree. Replaces similar object if exists.                                 
   -- ------------------------------------ -- -------------------- -- -------------------- -- --------------------------------------------------------------------------------------------------- --
 
 ### Messages
@@ -319,8 +319,8 @@ Ground plane filtering parameters:
      ** Parameter name **                ** Description **                              **Default value**                       
      *pointcloud_centers_publisher*      Pointcloud publishing topic name               butsrv_pointcloud_centers               
      *pointcloud_subscriber*             Input pointcloud subscriber topic name         /cam3d/depth/points                     
-     *pointcloud_min_z*                  Point cloud minimal z value                    -std::numeric_limits\<double\>::max()   
-     *pointcloud_max_z*                  Point cloud maximal z value                    std::numeric_limits\<double\>::max()    
+     *pointcloud_min_z*                  Point cloud minimal z value                    -std::numeric_limits<double>::max()   
+     *pointcloud_max_z*                  Point cloud maximal z value                    std::numeric_limits<double>::max()    
      *pointcloud_octree_depth*           Used octree depth for objects generation.      0 - whole tree                          
   -- -------------------------------- -- ------------------------------------------- -- --------------------------------------- --
 

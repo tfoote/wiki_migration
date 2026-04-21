@@ -144,9 +144,9 @@ node.4 {
 
 ## Startup
 
-The \`youbot_overhead_localization\` package should be launched at the
-same time as the \'youbot_overhead_vision\' package with the use of the
-\'path_planner.launch\' or the \'path_planner_sim.launch\" launch files
+The `youbot_overhead_localization` package should be launched at the
+same time as the 'youbot_overhead_vision' package with the use of the
+'path_planner.launch' or the 'path_planner_sim.launch" launch files
 depending on whether the camera streams are real or simulated. However,
 the node can be run on its own by using one of the following commands:
 
@@ -164,7 +164,7 @@ roslaunch youbot_overhead_localization youbot_overhead_localization_sim.launch
 
 The path planning itself normally requires a node to create an actionlib
 client to set path goals, but this can be avoided for testing purposes
-by launching the \'path_planner_client\' node with the following
+by launching the 'path_planner_client' node with the following
 command:
 
 ```shell

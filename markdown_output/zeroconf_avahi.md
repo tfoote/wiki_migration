@@ -1,7 +1,7 @@
 ## Overview
 
 This package provides implementations for [zeroconf](zeroconf) on top of
-linux\'s *avahi-daemon*. There are two implementations:
+linux's *avahi-daemon*. There are two implementations:
 
 -   C++ library.
 -   Ros node.
@@ -20,7 +20,7 @@ Both the c++ and node implementations operate on two entities,
 
 **Listeners** are used to discover the appearance and disappearance of
 all services belong to a specific service type (e.g.
-\_ros-master.\_tcp). The usual process is to add a listener and then sit
+_ros-master._tcp). The usual process is to add a listener and then sit
 back and wait for the callbacks (either c++ or ros subscription) to
 arrive signifying addition or removal of the specified services.
 
@@ -31,7 +31,7 @@ it is unique for the lifetime of the current connection.
 
 ## Usage
 
-If you\'re using the library, it should be relatively straightforward -
+If you're using the library, it should be relatively straightforward -
 simply follow the
 [Zeroconf](http://www.ros.org/doc/api/zeroconf_avahi/html/classzeroconf__avahi_1_1Zeroconf.html)
 class documentation. There is also an example in

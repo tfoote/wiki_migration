@@ -10,7 +10,7 @@ gaming console. As the SHIELD is a 100% pure Android device,
 shield_teleop is an Android app. When the app starts running, it will
 begin publish [sensor_msgs/Joy](sensor_msgs/Joy) that mimic the messages
 produced by [ps3_teleop](ps3_teleop) on Ubuntu. The app all displays a
-video stream using [image_transport](image_transport)\'s compressed
+video stream using [image_transport](image_transport)'s compressed
 image messages.
 
 ## ROS API
@@ -51,13 +51,13 @@ source ~/rosjava/devel/setup.bash
 ### Android Studio
 
 1\. Open Android Studio 1. Import project 1. Select
-/shield_teleop_ws/src 1. Select \"shield_teleop\" in dropdown menu 1.
-Hit \"Play\" button, this will build and attempt to upload to either
+/shield_teleop_ws/src 1. Select "shield_teleop" in dropdown menu 1.
+Hit "Play" button, this will build and attempt to upload to either
 device or emulator
 
 ## Running
 
-1\. On your device select \"ROS SHIELD Teleop\" from applications. 1. On
-startup, you\'ll be prompted for a ROS master, choose the one that\'s
+1\. On your device select "ROS SHIELD Teleop" from applications. 1. On
+startup, you'll be prompted for a ROS master, choose the one that's
 running on the robot. 1. You should be now publishing to topic /joy. 1.
 Run either pr2_joystick_teleop or turtlebot_joystick.

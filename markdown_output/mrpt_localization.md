@@ -23,7 +23,7 @@ MRPT particle filtering allows for localization with:
     together.
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \<tablewidth=\"818px\" tableheight=\"419px\"\> ![](attachment:pioneer.jpg) *This Figure shows the mprt pf-localization working together with ROS. RViz can be used to visualize the data and to set an initial pose. *   
+     <tablewidth="818px" tableheight="419px"> ![](attachment:pioneer.jpg) *This Figure shows the mprt pf-localization working together with ROS. RViz can be used to visualize the data and to set an initial pose. *   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
 
 [Youtube](https://www.youtube.com/watch?v=b5glQhT2Zac)
@@ -32,8 +32,8 @@ MRPT particle filtering allows for localization with:
 
 -   **Optimal particle filtering algorithm**
 -   J.L. Blanco, J. Gonzalez-Jimenez, J.A. Fernandez-Madrigal,
-    *\"Optimal Filtering for Non-Parametric Observation Models:
-    Applications to Localization and SLAM\"*, The International Journal
+    *"Optimal Filtering for Non-Parametric Observation Models:
+    Applications to Localization and SLAM"*, The International Journal
     of Robotics Research (IJRR), vol. 29, no. 14, 2010.
     ([PDF](http://ingmec.ual.es/~jlblanco/papers/blanco2010ofn_IJRR.pdf))
 
@@ -42,9 +42,9 @@ MRPT particle filtering allows for localization with:
 ```
 -   **Range-Only localization**
 -   J. Gonzalez-Jimenez, J.L. Blanco, C. Galindo, A. Ortiz-de-Galisteo,
-    J.A. Fernandez-Madrigal, F.A. Moreno, J. Martinez, *\"Mobile Robot
+    J.A. Fernandez-Madrigal, F.A. Moreno, J. Martinez, *"Mobile Robot
     Localization based on Ultra-Wide-Band Ranging: A Particle Filter
-    Approach\"*, Robotics and Autonomous Systems, vol. 57, no. 5, pp.
+    Approach"*, Robotics and Autonomous Systems, vol. 57, no. 5, pp.
     496\--507, 2009.
     ([PDF](http://ingmec.ual.es/~jlblanco/papers/gonzalez2008mrl.pdf))
 
@@ -87,7 +87,7 @@ tutorial shows a pioneer 3DX robot unter the namespace r1.
 -   **roslaunch mrpt_tutorials r1_rviz.launch**\
     it will start RViz. Using the 2D pose Estimation tool, you can reset
     the robot pose. (Since the robot lies within the namespace r1 you
-    have to check the Panel-\>Tool Propertiers to publish the robot pose
+    have to check the Panel->Tool Propertiers to publish the robot pose
     under* /r1/initialpose*)
 -   **roslaunch mrpt_tutorials r1_teleop.launch**\
     Now you can control the robot with the keyboard. The teleop
@@ -99,7 +99,7 @@ tutorial shows a pioneer 3DX robot unter the namespace r1.
 
 ### mrpt_localization
 
-The \`mrpt_localization\` node wraps MRPT particle-filter localization
+The `mrpt_localization` node wraps MRPT particle-filter localization
 algorithms through a ROS interface. See demo launch-file and tutorials
 above.
 

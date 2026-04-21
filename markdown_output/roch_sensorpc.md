@@ -18,4 +18,4 @@ On how to use this package, please see
 
 ## Report a Bug
 
-\<\<GitHubIssues(SawYer-Robotics/roch_robot)\>\>
+<<GitHubIssues(SawYer-Robotics/roch_robot)>>

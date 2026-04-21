@@ -1,22 +1,22 @@
 ## Overview
 
-The \`rotate_recovery::RotateRecovery\` is a simple recovery behavior
-that attempts to clear out space in the navigation stack\'s
+The `rotate_recovery::RotateRecovery` is a simple recovery behavior
+that attempts to clear out space in the navigation stack's
 [ costmaps](costmap_2d ) by rotating the robot 360 degrees if local
-obstacles allow. It adheres to the \`nav_core::RecoveryBehavior\`
+obstacles allow. It adheres to the `nav_core::RecoveryBehavior`
 interface found in the [nav_core](nav_core) package and can be used as a
 recovery behavior [ plugin](pluginlib ) for the [move_base](move_base)
 node.
 
 ## RotateRecovery
 
-The \`rotate_recovery::RotateRecovery\` object exposes its functionality
+The `rotate_recovery::RotateRecovery` object exposes its functionality
 as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates within a
 ROS namespace (assumed to be **name** from here on) specified on
-initialization. It adheres to the \`nav_core::RecoveryBehavior\`
+initialization. It adheres to the `nav_core::RecoveryBehavior`
 interface found in the [nav_core](nav_core) package.
 
-Example creation of a \`rotate_recovery::RotateRecovery\` object:
+Example creation of a `rotate_recovery::RotateRecovery` object:
 
 ```cplusplus
 #include <tf/transform_listener.h>
@@ -41,9 +41,9 @@ rr.runBehavior();
 
 ### ROS Parameters
 
-The \`rotate_recovery::RotateRecovery\` object assumes that the local
+The `rotate_recovery::RotateRecovery` object assumes that the local
 planner used by the [move_base](move_base) node is the
-\`base_local_planner::TrajectoryPlannerROS\` documented in the
+`base_local_planner::TrajectoryPlannerROS` documented in the
 [base_local_planner](base_local_planner) package and reads some of its
 parameters accordingly. It will work on its own, but this requires the
 user to specify additional parameters.
@@ -67,8 +67,8 @@ param {
 #### TrajectoryPlannerROS Parameters
 
 These parameters are already set when using the
-\`base_local_planner::TrajectoryPlannerROS\` local planner, they only
-need to be set explicitly for the \`rotate_recovery::RotateRecovery\`
+`base_local_planner::TrajectoryPlannerROS` local planner, they only
+need to be set explicitly for the `rotate_recovery::RotateRecovery`
 recovery behavior if a different local planne is used with the
 [ navigation stack](navigation ).
 
@@ -96,7 +96,7 @@ param{
 
 ### C++ API
 
-The C++ \`rotate_recovery::RotateRecovery\` class adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+The C++ `rotate_recovery::RotateRecovery` class adheres to the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package. For detailed documentation, please see
 [ RotateRecovery documentation](http://www.ros.org/doc/api/rotate_recovery/html/classrotate__recovery_1_1RotateRecovery.html ).

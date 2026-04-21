@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(touch_skill_msgs)\>\>
+<<MsgSrvDoc(touch_skill_msgs)>>

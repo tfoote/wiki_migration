@@ -1,7 +1,7 @@
 ## Overview
 
 This package has code for two nodelets, Publisher and Subscriber which
-communicate on a common topic \"/big_object\" to which a very large
+communicate on a common topic "/big_object" to which a very large
 timestamped array is published (BigObject).
 
 The nodelets are packaged in a library, and two launch configurations
@@ -27,7 +27,7 @@ communicated to standard output. Ctrl-c to terminate the application.
 
 ### External
 
-The launcher \`external.launch\` launches both publisher and subscriber
+The launcher `external.launch` launches both publisher and subscriber
 as standalone processes. In this situation, the BigObject is copied
 across TCP/IP (some 4MB!), so expect very high latencies here.
 

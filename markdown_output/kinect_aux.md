@@ -1,4 +1,4 @@
-\`kinect_aux\` is now a standalone package. In Electric it was a package
+`kinect_aux` is now a standalone package. In Electric it was a package
 in [kinect](kinect), which is deprecated.
 
 ## Overview
@@ -82,4 +82,4 @@ param {
 
 ## Bug reports and feature requests
 
-\<\<GitHubIssues(muhrix/kinect_aux)\>\>
+<<GitHubIssues(muhrix/kinect_aux)>>

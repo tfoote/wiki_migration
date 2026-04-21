@@ -27,7 +27,7 @@ most embedded GPUs. That means the backend calls CUDA to copy the
 network and data over to the GPU, which on the Tegra is just another
 part of the same main memory, thus doubling the memory used. It may be
 possible for the backends to call CUDA differently (e.g. sharing the
-same memory location) but it isn\'t well-documented and it may be some
+same memory location) but it isn't well-documented and it may be some
 time before someone with time and interest takes on the task.
 
 ## Install from source
@@ -137,7 +137,7 @@ python
 <NDArray 5x5 @cpu(0)>
 ```
 
-If you\'re working on a computer other than the TX1 or TX2, and/or if
+If you're working on a computer other than the TX1 or TX2, and/or if
 the above bindings didn't work for you, follow the mxnet documentation
 on installation and if you are lucky, pip will work for you. If not,
 install from source.
@@ -150,7 +150,7 @@ These will be downloaded automatically by specifying the relevant
 network in the launch file for fast and accurate object detection.
 Several example networks provided out-of-the-box with gluoncv include
 ResNet50, ResNet100, VGG16, mobilenet1.0 among others. See
-[GluonCV\'s Detection Model Zoo](https://gluon-cv.mxnet.io/model_zoo/detection.html)
+[GluonCV's Detection Model Zoo](https://gluon-cv.mxnet.io/model_zoo/detection.html)
 for up-to-date models. Here is the relevant line in the launch file for
 loading a resnet50 (v1) based SSD, trained on the 20-class VOC dataset
 and intended to be run on 512x512 sized images:
@@ -188,7 +188,7 @@ or CUDA/cuDNN/NVidia driver setup.
 
 ## Nodes
 
-\_\_SSD Object Detection\_\_ \_\_Semantic Segmentation\_\_
+__SSD Object Detection__ __Semantic Segmentation__
 
 ### mxnet_ssd_node
 
@@ -204,8 +204,8 @@ node can be configured to crop and resize a single image out of the
 image topic or it can be configured to perform a sliding-window set of
 crops on the image for better distance detection.
 
-\_\_SSD is a single-shot detector, so why are we specifying a sliding
-window pattern?\_\_
+__SSD is a single-shot detector, so why are we specifying a sliding
+window pattern?__
 
 To improve detection distance. The detection layers require meaningful
 features to produce detections and we don't get useful features until
@@ -217,7 +217,7 @@ best for you. Note, your camera image quality will be more important for
 longer distance performance. If you have a 5 megapixel image, try
 zooming in to a 500x500 crop of the image - if this is zoom is
 noticeably blurry, you will not get as much benefit from a sliding
-window. \<show example images?\> For the first-level sliding window we
+window. <show example images?> For the first-level sliding window we
 only need to specify the number of crops across the larger image
 dimension (typically width) as it will take crops that are sized to the
 smaller image dimension (e.g. height). For the second-level sliding
@@ -227,7 +227,7 @@ the crops (depends on your application, you could aim for 20% at first)
 and report this in both dimensions on the node standard output. This
 will require a little trial and error to tune.
 
-\_\_Image Sizes\_\_
+__Image Sizes__
 
 A brief aside on image sizes, most often the x-dimension (width) of an
 image is larger than the y-dimension (height), with an aspect ratio of
@@ -284,16 +284,16 @@ images with bounding boxes and detection strings overlain.
 
 . Publishes object detections in an array of Detection2D.
 
-/detections/\<class name\> std_msgs::Bool
+/detections/<class name> std_msgs::Bool
 
-. Publishes boolean detection for each class. E.g. if classes are \"dog,
-person\", there will be one each of /class_detections/dog and
+. Publishes boolean detection for each class. E.g. if classes are "dog,
+person", there will be one each of /class_detections/dog and
 /class_detections/person and will publish true for a detection above
 threshold on said class and false otherwise.
 
 #### Parameters
 
-image_topic (String, default \"/usb_cam/image_raw\")
+image_topic (String, default "/usb_cam/image_raw")
 
 . Image topic to perform detections on.
 
@@ -309,7 +309,7 @@ throttle_timer (Int32 or Float, default 5)
 
 . Seconds to wait between detections. If timer is set to less than the
 possible detection rate, the node will run inference as fast as possible
-and probably take up most of the computer\'s resources (CPU or GPU).
+and probably take up most of the computer's resources (CPU or GPU).
 
 latency_threshold (Int32 or Float, default 2)
 
@@ -333,7 +333,7 @@ publish_detection_images (Bool, default False)
 . Publish or do not publish images with bounding boxes and detection
 classes displayed.
 
-camera_frame (String, default \"ssd_detector_frame\")
+camera_frame (String, default "ssd_detector_frame")
 
 . Frame ID to use in published Detection2DArray. Note the source_img
 header and data (except for the actual camera data) are copied from the
@@ -355,7 +355,7 @@ mask_overlap percentage with mask==255 pixels. Conversely, if
 mask_overlap is set to 0, then the mask is ignored. Can be set in real
 time and overridden by the mask_overlap topic above.
 
-\_\_MxNet Settings\_\_
+__MxNet Settings__
 
 threshold (Float, default 0.5)
 
@@ -379,35 +379,35 @@ used (if zooming). It does not need to be an even divisor of the total
 number of crops, the code will maximize usage of available batch size
 and number of crops.
 
-model_directory (String, default \"/mxnet/ssd\")
+model_directory (String, default "/mxnet/ssd")
 
 . Location of the MxNet model parameters and symbol on disk.
 
-model_filename (String, default \"ssd_512_resnet50_v1_voc.params\")
+model_filename (String, default "ssd_512_resnet50_v1_voc.params")
 
 . Name of the MxNet model to load and run. This is ignored if using a
 stock network (see network below). This is intended to be used if you
 have custom network weights installed in the model_directory location.
 
-network (String, default \"ssd_512_resnet50_v1_voc\")
+network (String, default "ssd_512_resnet50_v1_voc")
 
 . Name of the network symbol to load. Choices include
-\"ssd_512_resnet50_v1_voc\", \"ssd_512_resnet50_v1_coco\",
-\"ssd_512_resnet50_v1_custom\" and similar with mobilenet1.0, vgg16. See
-[GluonCV\'s Detection Model Zoo](https://gluon-cv.mxnet.io/model_zoo/detection.html)
+"ssd_512_resnet50_v1_voc", "ssd_512_resnet50_v1_coco",
+"ssd_512_resnet50_v1_custom" and similar with mobilenet1.0, vgg16. See
+[GluonCV's Detection Model Zoo](https://gluon-cv.mxnet.io/model_zoo/detection.html)
 for a more complete list.
 
 enable_gpu (Bool, default false)
 
 . Use the GPU or CPU for inference.
 
-classes (String, default \"aeroplane, bicycle, bird, boat, bottle,
+classes (String, default "aeroplane, bicycle, bird, boat, bottle,
 bus,car, cat, chair, cow, diningtable, dog, horse, motorbike,person,
-pottedplant, sheep, sofa, train, tvmonitor\") . The names of classes
+pottedplant, sheep, sofa, train, tvmonitor") . The names of classes
 used to train the model (the VOC-trained models used 20 classes),
 separated by commas.
 
-\_\_Crop Pattern\_\_
+__Crop Pattern__
 
 level0_ncrops (Int32, default 1)
 
@@ -442,7 +442,7 @@ image and the overlap percentage will be reported so watch the overlap
 percentage and try to get it above 0% but below 50% to maximize
 detectability of small objects.
 
-\<TODO: images of crop patterns\>
+<TODO: images of crop patterns>
 
 level1_ycrops (Int32, default 0)
 
@@ -457,13 +457,13 @@ to the detector, which will upsample them to 512 by 512 before running
 detection. As discussed in the node description, this will nevertheless
 improve distance detection if the image quality is good.
 
-\_\_Save Parameters\_\_
+__Save Parameters__
 
 save_detections (Bool, default False)
 
 . Save detected images in jpeg form, with incrementing number.
 
-save_directory (String, default \"/tmp\")
+save_directory (String, default "/tmp")
 
 . Directory to save detection images.
 
@@ -521,15 +521,15 @@ receive True on this topic.
 
 #### Parameters
 
-image_topic (String, default \"/usb_cam/image_raw\")
+image_topic (String, default "/usb_cam/image_raw")
 
 . Input image topic to perform detections on.
 
-mask_topic (String, default \"segmentation_mask\", \_\_latched=True\_\_)
+mask_topic (String, default "segmentation_mask", __latched=True__)
 
 . Output image topic to publish segmentation result.
 
-overlay_topic (String, default \"segmentation_overlay\")
+overlay_topic (String, default "segmentation_overlay")
 
 . Output image topic to publish segmentation result overlain in red on
 input image.
@@ -539,12 +539,12 @@ run_continuous (Bool, default False)
 . Segmentation runs as fast as possible within limits set by throttle
 timer if this is set True.
 
-mask_values (String, default \"9, 12\")
+mask_values (String, default "9, 12")
 
-. Pixel values to use to generate a \"True\" mask. These values in the
+. Pixel values to use to generate a "True" mask. These values in the
 semantic segmentation output are used to set the output mask==255. All
 other segmentation pixel values get mask==0. Alternatively, if set to
-negative values (e.g. \"-9, -12\"), the opposite masking is used, so all
+negative values (e.g. "-9, -12"), the opposite masking is used, so all
 segmentation pixel values that are either 9 or 12 get set to 0, and all
 other pixels get set to 255. For values of pixel masks, refer to the
 [ADE20K](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow/blob/master/ade20k_labels.py)
@@ -552,12 +552,12 @@ or [COCO](https://github.com/nightrome/cocostuff/blob/master/labels.md)
 mask values. For example with ADE20K, person=12, sky=2, grass=9, road=6,
 etc.
 
-network (String, default \"deeplab_resnet50_ade\")
+network (String, default "deeplab_resnet50_ade")
 
 . Name of the network symbol to load. Choices include
-\"vgg_resnet50_ade\", \"psp_resnet50_ade\", \"deeplab_resnet50_ade\" and
+"vgg_resnet50_ade", "psp_resnet50_ade", "deeplab_resnet50_ade" and
 others. See
-[GluonCV\'s Segmentation Model Zoo](https://gluon-cv.mxnet.io/model_zoo/segmentation.html)
+[GluonCV's Segmentation Model Zoo](https://gluon-cv.mxnet.io/model_zoo/segmentation.html)
 for a more complete list.
 
 enable_gpu (Bool, default false)
@@ -568,7 +568,7 @@ throttle_timer (Int32, default 5)
 
 . Seconds to wait between segmentation runs. If timer is set to less
 than the possible inference rate, the node will run inference as fast as
-possible and probably take up most of the computer\'s resources (CPU or
+possible and probably take up most of the computer's resources (CPU or
 GPU).
 
 latency_threshold (Int32, default 2)
@@ -631,15 +631,15 @@ receive True on this topic.
 
 #### Parameters
 
-image_topic (String, default \"/usb_cam/image_raw\")
+image_topic (String, default "/usb_cam/image_raw")
 
 . Input image topic to perform detections on.
 
-mask_topic (String, default \"segmentation_mask\", \_\_latched=True\_\_)
+mask_topic (String, default "segmentation_mask", __latched=True__)
 
 . Output image topic to publish segmentation result.
 
-overlay_topic (String, default \"segmentation_overlay\")
+overlay_topic (String, default "segmentation_overlay")
 
 . Output image topic to publish segmentation result overlain in red on
 input image.
@@ -649,12 +649,12 @@ run_continuous (Bool, default False)
 . Segmentation runs as fast as possible within limits set by throttle
 timer if this is set True.
 
-mask_values (String, default \"9, 12\")
+mask_values (String, default "9, 12")
 
-. Pixel values to use to generate a \"True\" mask. These values in the
+. Pixel values to use to generate a "True" mask. These values in the
 semantic segmentation output are used to set the output mask==255. All
 other segmentation pixel values get mask==0. Alternatively, if set to
-negative values (e.g. \"-9, -12\"), the opposite masking is used, so all
+negative values (e.g. "-9, -12"), the opposite masking is used, so all
 segmentation pixel values that are either 9 or 12 get set to 0, and all
 other pixels get set to 255. For values of pixel masks, refer to the
 [ADE20K](https://github.com/Vladkryvoruchko/PSPNet-Keras-tensorflow/blob/master/ade20k_labels.py)
@@ -662,12 +662,12 @@ or [COCO](https://github.com/nightrome/cocostuff/blob/master/labels.md)
 mask values. For example with ADE20K, person=12, sky=2, grass=9, road=6,
 etc.
 
-network (String, default \"deeplab_resnet50_ade\")
+network (String, default "deeplab_resnet50_ade")
 
 . Name of the network symbol to load. Choices include
-\"vgg_resnet50_ade\", \"psp_resnet50_ade\", \"deeplab_resnet50_ade\" and
+"vgg_resnet50_ade", "psp_resnet50_ade", "deeplab_resnet50_ade" and
 others. See
-[GluonCV\'s Segmentation Model Zoo](https://gluon-cv.mxnet.io/model_zoo/segmentation.html)
+[GluonCV's Segmentation Model Zoo](https://gluon-cv.mxnet.io/model_zoo/segmentation.html)
 for a more complete list.
 
 enable_gpu (Bool, default false)
@@ -678,7 +678,7 @@ throttle_timer (Int32, default 5)
 
 . Seconds to wait between segmentation runs. If timer is set to less
 than the possible inference rate, the node will run inference as fast as
-possible and probably take up most of the computer\'s resources (CPU or
+possible and probably take up most of the computer's resources (CPU or
 GPU).
 
 latency_threshold (Int32, default 2)

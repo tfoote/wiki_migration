@@ -4,14 +4,14 @@ This package contains relevant files for running Svenzva robots in 3D
 simulations. Currently supported simulations are through Gazebo,
 MoveIt!, or both Gazebo and Moveit!.
 
-For control of robot arms in simulation we use \`ros_control\` plugins
+For control of robot arms in simulation we use `ros_control` plugins
 for Gazebo. This provides software level controllers for each joint
 which likely will not translate 1-1 on the real robot.
 
-Tips on tuning PID parameters for \`ros_control\` can be found on
-Gazebo\'s \`ros_control\` plugin page (located
+Tips on tuning PID parameters for `ros_control` can be found on
+Gazebo's `ros_control` plugin page (located
 [ here](http://gazebosim.org/tutorials/?tut=ros_control#UseRQTToSendCommands))
-under the section \"Tuning PID Parameters\".
+under the section "Tuning PID Parameters".
 
 ### Supported Version
 

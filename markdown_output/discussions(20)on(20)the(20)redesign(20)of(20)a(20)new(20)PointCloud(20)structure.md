@@ -7,8 +7,8 @@ without sacrificing efficiency.
 
 ## Messages
 
-The new \`PointCloud\` message interleaves all channels into a binary
-blob, with info about structure in \`fields\`.
+The new `PointCloud` message interleaves all channels into a binary
+blob, with info about structure in `fields`.
 
 PointCloud.msg:
 
@@ -54,10 +54,10 @@ uint8  datatype
 We provide macros for registering a user-defined point struct with the
 publish/subscribe infrastructure. There are two versions. If your struct
 is flat (only scalar data members) and all field names are standard, you
-can use the concise form \`POINT_CLOUD_REGISTER_FLAT_POINT_STRUCT\`. If
+can use the concise form `POINT_CLOUD_REGISTER_FLAT_POINT_STRUCT`. If
 your struct contains struct members, array members, or has any
 non-standard named fields, you should use the more general
-\`POINT_CLOUD_REGISTER_POINT_STRUCT\`. For example:
+`POINT_CLOUD_REGISTER_POINT_STRUCT`. For example:
 
 ```
 #include <stdint.h>
@@ -142,22 +142,22 @@ Limitations:
 
 -   To be strictly portable, point type must be POD (Plain Old Data) -
     essentially a C struct.
--   (Lifted \"flatness\" requirement in r26301)
+-   (Lifted "flatness" requirement in r26301)
 
 Discussion:
 
 -   (Patrick) The POD restriction is hopefully not onerous?
--   \[Josh\] Is there a use-case for non-POD types? I can\'t think of a
+-   \[Josh\] Is there a use-case for non-POD types? I can't think of a
     good reason for it.
 -   (Patrick) People seemed to want hierarchically-defined point types.
     Does the proposed syntax look reasonable?
--   \[Josh} I\'m fine with it
+-   \[Josh} I'm fine with it
 
 ## Publishing point clouds
 
-There is a specialized \`point_cloud::Publisher\` for point clouds
+There is a specialized `point_cloud::Publisher` for point clouds
 ([doc](http://www.ros.org/doc/api/point_cloud_redesign/html/classpoint__cloud_1_1Publisher.html)).
-It\'s templated on a registered point type. The \`publish()\` methods
+It's templated on a registered point type. The `publish()` methods
 take point clouds as a container of points (plus dimensions for
 structured clouds), where the container is anything recognized by
 [Boost.Range](http://www.boost.org/doc/libs/1_40_0/libs/range/index.html).
@@ -191,25 +191,25 @@ int main(int argc, char** argv)
 }
 ``` Discussion:
 
--   (Patrick) Should the unordered version of \`publish()\` assume the
+-   (Patrick) Should the unordered version of `publish()` assume the
     point cloud is dense?
--   (Patrick) Doesn\'t currently follow convention of having a separate
-    class with \`advertise()\`, \`subscriber()\` methods like
-    \`NodeHandle\` and \`ImageTransport\`.
--   \[Josh\] I\'m liking this way more and more, may provide the option
+-   (Patrick) Doesn't currently follow convention of having a separate
+    class with `advertise()`, `subscriber()` methods like
+    `NodeHandle` and `ImageTransport`.
+-   \[Josh\] I'm liking this way more and more, may provide the option
     in the ROS api at some point. This is mainly due to the fact that
-    we\'re creating all these custom publisher/subscribers and it\'d be
+    we're creating all these custom publisher/subscribers and it'd be
     nice to have a uniform API.
 -   \[Josh\] Below you create a
-    \`point_cloud::PointCloud\<my_ns::MyPoint\>\`, can the Publishing
+    `point_cloud::PointCloud<my_ns::MyPoint>`, can the Publishing
     API take these as well?
 
 ## Subscribing to point clouds
 
-There is a specialized \`point_cloud::Subscriber\` for point clouds
+There is a specialized `point_cloud::Subscriber` for point clouds
 ([doc](http://www.ros.org/doc/api/point_cloud_redesign/html/classpoint__cloud_1_1Subscriber.html)).
-It\'s templated on a registered point type. The subscriber callback
-takes a const-ptr to \`point_cloud::PointCloud\`
+It's templated on a registered point type. The subscriber callback
+takes a const-ptr to `point_cloud::PointCloud`
 ([doc](http://www.ros.org/doc/api/point_cloud_redesign/html/structpoint__cloud_1_1PointCloud.html))
 which is also templated on the point type.
 
@@ -239,27 +239,27 @@ int main(int argc, char** argv)
 -   Is very unoptimized. Analysis of how to map serialized data to the
     point struct is only performed on the first message received, but
     for all messages we currently:
--   Deserialize into the \`point_cloud_redesign::PointCloud\` message
+-   Deserialize into the `point_cloud_redesign::PointCloud` message
     type. There is no custom deserializer yet.
 -   (Is it possible to write a stateful deserializer in ROS?)
--   \[Josh\] It may be possible, but I can\'t think of a way off the top
+-   \[Josh\] It may be possible, but I can't think of a way off the top
     of my head. If necessary we can provide a way.
 -   For every field in every point, we perform an individual memcpy.
--   Does not handle conversions. You can\'t publish a field as a double
+-   Does not handle conversions. You can't publish a field as a double
     then deserialize it to a float.
--   Can\'t currently specify alignment of point data. This probably
+-   Can't currently specify alignment of point data. This probably
     means another traits class / registration macro. Do we only care
     about 16-byte alignment, or are there other allocation scenarios we
     want to support?
--   \[Josh\] Can we support a \`std::allocator\` (gross yes, but
-    standard) as a template argument to \`PointCloud\`?
+-   \[Josh\] Can we support a `std::allocator` (gross yes, but
+    standard) as a template argument to `PointCloud`?
 
-#### Ethan\'s Initial Reactions / Questions
+#### Ethan's Initial Reactions / Questions
 
-Stride -\> my understanding was that there was not only a stride, but
+Stride -> my understanding was that there was not only a stride, but
 there was a stride per PointField. This allows for either interleaved or
-separate planes. I\'m not convinced that always interleaving is what we
-want (I like 128 bit alignment for instance, and I don\'t like padding).
+separate planes. I'm not convinced that always interleaving is what we
+want (I like 128 bit alignment for instance, and I don't like padding).
 Is this infeasible for some reason? Perhaps as an alternative some sort
 of point class that is a collection of the new new point clouds, but
 does not have disgusting syntax. Then one could have a piece that is 128
@@ -269,8 +269,8 @@ waste space on padding.
 With all of the possible point structs how does one tell if a given
 point is invalid or valid if the cloud is not dense?
 
-Having loads of custom publishers / subscribers feels wrong (it\'s one
-thing if it\'s just image_transport, it\'s another if you have to look
+Having loads of custom publishers / subscribers feels wrong (it's one
+thing if it's just image_transport, it's another if you have to look
 up the appropriate publisher type every time you want to publish
 something). Can we get around this somehow? Would it require a ROS API
 change? It seems like the hooks should be available to do whatever needs
@@ -285,24 +285,24 @@ imagine scenarios where other alignments might be important. For example
 applications, and will be important in future versions of SSE (SSE5).
 
 It seems like we need some enums to standardize names for fields. I
-don\'t want one person using \"x\" and another using \"X\" for instance.
-I\'d like all the normals called the same things, etc.
+don't want one person using "x" and another using "X" for instance.
+I'd like all the normals called the same things, etc.
 
 #### Notes 11/16/09
 
 -   Useful to add point_stride, row_stride to account for padding
--   Ethan suggests a more flexible field layout. \`PointField\` would
+-   Ethan suggests a more flexible field layout. `PointField` would
     contain an offset to the first instance and a stride to each
     subsequent instance. This allows storing the data in planes, or
     having separate interleaved sections.
--   Or have \`PointCloud\` contain an array of binary blobs?
--   Just publish different planes as separate \`PointCloud\` messages?
+-   Or have `PointCloud` contain an array of binary blobs?
+-   Just publish different planes as separate `PointCloud` messages?
 -   Probably want to support time synching multiple point cloud topics,
     better model for distributed computation. E.g. node 1 publishes XYZ
     data, node 2 computes normals and publishes them as separate point
     cloud message, node 3 synchronizes both for point+normal
     computations.
--   Do this in \`point_cloud::Subscriber\`?
+-   Do this in `point_cloud::Subscriber`?
 -   Will stress our time synchronizer:
 -   Number of point cloud topics could be dynamic.
 -   Synchronize messages before deserialization??

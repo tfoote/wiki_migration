@@ -1,6 +1,6 @@
 ## About
 
-The \`rail_pick_and_place_tools\` package contains rviz plugins to aid
+The `rail_pick_and_place_tools` package contains rviz plugins to aid
 in the grasp demonstration collection and model generation process. This
 package also contains launch files for easier running of this process.
 
@@ -17,7 +17,7 @@ Object Model Generation, shown and described below.
 
 ## Installation
 
-To install the \`rail_pick_and_place\` package, you can install from
+To install the `rail_pick_and_place` package, you can install from
 source with the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_pick_and_place.git
@@ -28,7 +28,7 @@ catkin_make install
 
 ## Startup
 
-The \`rail_pick_and_place_tools\` package contains a launch file for
+The `rail_pick_and_place_tools` package contains a launch file for
 starting up the backend necessary for grasp demonstration collection and
 object model generation, as well as a frontend that launches rviz with
 the relevant panels and topics shown:

@@ -15,25 +15,25 @@ be able to use [hrl_hokuyo](hrl_hokuyo) to get scans from a Hokuyo.
 
 **Once you have the rig set up:**
 
-1\. \`roscd hrl_hokuyo; roslaunch acm0_utm.launch\`
+1\. `roscd hrl_hokuyo; roslaunch acm0_utm.launch`
 
-1\. \`roscd hrl_tilting_hokuyo/src/hrl_tilting_hokuyo\`
+1\. `roscd hrl_tilting_hokuyo/src/hrl_tilting_hokuyo`
 
-1\. \`python tilt_hokuyo_servo.py -h\`
+1\. `python tilt_hokuyo_servo.py -h`
 
 1\. Run it with appropriate parameters. For example:
 
--   \`python tilt_hokuyo_servo.py -d /dev/ttyUSB0 -n0 \--save_scan
-    \--speed=10 \--id=\<servo id\> \--l2=0.035\`
+-   `python tilt_hokuyo_servo.py -d /dev/ttyUSB0 -n0 \--save_scan
+    \--speed=10 \--id=<servo id> \--l2=0.035`
 
 1\. You should see the servo tilt the UTM between the two angles that
 you specified.
 
 1\. Once the code runs, it will save the scans in a pkl. (e.g.
-\`2009Oct05_203107_dict.pkl\`)
+`2009Oct05_203107_dict.pkl`)
 
-1\. To view the point cloud, use \`display_3d_mayavi.py\` (\`python
-display_3d_mayavi.py -h\`)
+1\. To view the point cloud, use `display_3d_mayavi.py` (`python
+display_3d_mayavi.py -h`)
 
 ## Using the Code
 
@@ -59,11 +59,11 @@ Can you use [robotis](robotis) to operate a servo? 1. Walls are not
 vertical or walls and the ceiling do not seem to be at right angles in
 the point cloud:
 
-1\. \`roscd hrl_tilting_hokuyo/doc\`
+1\. `roscd hrl_tilting_hokuyo/doc`
 
-1\. look at the file \`servo_transforms.jpg\`
+1\. look at the file `servo_transforms.jpg`
 
 1\. Ensure that l1 and l2 that you are specifying when you run
-\`tilt_hokuyo_servo.py\` are correct.
+`tilt_hokuyo_servo.py` are correct.
 
 1\. **Note:** l2 can be negative depending on how the UTM is mounted.

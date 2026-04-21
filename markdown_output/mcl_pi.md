@@ -2,7 +2,7 @@
 
 mcl_pi is a package for cooperative robots localization (or for a single
 robot). It is based on using a distributed fusion technique for particle
-filter named \"Particles Intersection\" \[1\]. This package contains two
+filter named "Particles Intersection" \[1\]. This package contains two
 main classes: Monte Carlo Localization (MCL) implementation in python,
 based on \[2\], and a Particles Intersection (PI) algorithm based on
 \[1\].
@@ -104,9 +104,9 @@ pub{
 \[1\] Thrun S, Burgard W, Fox D. Probabilistic robotics. MIT press; 2005
 Aug 19.
 
-\[2\] Tslil, Or, and Avishy Carmi. \"Information fusion using particles
-intersection.\" 2018 IEEE International Conference on Acoustics, Speech
+\[2\] Tslil, Or, and Avishy Carmi. "Information fusion using particles
+intersection." 2018 IEEE International Conference on Acoustics, Speech
 and Signal Processing (ICASSP). IEEE, 2018.
 
-\[3\] Tslil, Or, Feiner Tal, and Avishy Carmi. \"Distributed Information
-Fusion in Tangle Networks\", Under review
+\[3\] Tslil, Or, Feiner Tal, and Avishy Carmi. "Distributed Information
+Fusion in Tangle Networks", Under review

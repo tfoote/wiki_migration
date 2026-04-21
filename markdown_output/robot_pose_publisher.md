@@ -1,7 +1,7 @@
 ## About
 
-The \`robot_pose_publisher\` package contains a ROS node that will
-publish the transform between the \`/base_link\` frame and the \`/map\`
+The `robot_pose_publisher` package contains a ROS node that will
+publish the transform between the `/base_link` frame and the `/map`
 frame as a pose message. This information is useful if you are
 interested in the robots position but do not want to stream the entire
 TF tree to get this information. An example use case is for web widgets.
@@ -25,7 +25,7 @@ node.0 {
 ### Startup
 
 To run the node, ensure that a valid transform exists between the
-\`/base_link\` frame and the \`/map\` frame (e.g., from a navigation
+`/base_link` frame and the `/map` frame (e.g., from a navigation
 node), and run the following: ```
 rosrun robot_pose_publisher robot_pose_publisher
 ```
@@ -43,5 +43,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

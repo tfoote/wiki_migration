@@ -8,8 +8,8 @@ patches in win_ros.
 ### Msvc
 
 This following batch file makes one assumption: you must have all source
-stacks one level below your root. For example, \`C:\\work\\src\` should
-include directories for \`ros\`, \`ros_comm\`, \`rospkg\`, \`win_ros\`
+stacks one level below your root. For example, `C:\\work\\src` should
+include directories for `ros`, `ros_comm`, `rospkg`, `win_ros`
 etc\...
 
 ```

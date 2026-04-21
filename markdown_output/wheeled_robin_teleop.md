@@ -1,9 +1,9 @@
 ## Description
 
-This package contains a launch file for the \`turtlebot_teleop_joy
-\`node in [turtlebot_teleop](turtlebot_teleop) to teleoperate a robot
+This package contains a launch file for the `turtlebot_teleop_joy
+`node in [turtlebot_teleop](turtlebot_teleop) to teleoperate a robot
 with a Thrustmaster T-Wireless gamepad. The launch file also includes
-the \`turtlebot_teleop/launch/includes/velocity_smoother.launch.xml\`
+the `turtlebot_teleop/launch/includes/velocity_smoother.launch.xml`
 file. A `joy_node `node from [joy](joy) is also loaded.
 
 ## Use

@@ -1,9 +1,9 @@
 ## Overview
 
-\`anj_featurenav\` implements a feature-based learning and navigating
+`anj_featurenav` implements a feature-based learning and navigating
 jockey based on free OpenCV feature descriptor and matcher. The package
 defines the feature extractor and the descriptor matcher functions
-required by the \`featurenav_base\` package to obtain a working couple
+required by the `featurenav_base` package to obtain a working couple
 learning/navigating jockeys.
 
 ## Usage

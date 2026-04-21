@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rosflight_msgs)\>\>
+<<MsgSrvDoc(rosflight_msgs)>>

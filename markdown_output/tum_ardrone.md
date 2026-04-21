@@ -149,7 +149,7 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
     in the GUI)
 -   click *Clear and Send* (best to click *Reset* first).
 
-# \> drone will takeoff & initialize PTAM, then fly a small figure (1m up, 1m down, 1x1m horizontal square).
+# > drone will takeoff & initialize PTAM, then fly a small figure (1m up, 1m down, 1x1m horizontal square).
 
 -   you can *interrupt* the figure anytime by interactively setting a
     relative target: click on video (relative to current position); see
@@ -163,8 +163,8 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
 
 ##### Drone does not start
 
--   battery empty? (drone does not start if battery \< 18%)
--   drone in emergency state? (if so, the four LED\'s are red. click
+-   battery empty? (drone does not start if battery < 18%)
+-   drone in emergency state? (if so, the four LED's are red. click
     Emergency to reset).
 
 ##### Cannot control drone
@@ -178,11 +178,11 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
     First, try reducing `aggressiveness`, which should make the drone
     fly slower, but also more stable. If that does not help, reduce the
     differential weights, in particular for roll/pitch control
-    (`Kp_rp`). This may be necessary in particular if PTAM\'s pose
+    (`Kp_rp`). This may be necessary in particular if PTAM's pose
     estimates are inaccurate (e.g. because all keypoints are very far
     away).
 
-##### drone_stateestimation: PTAM initialization fails: \"IMU Baseline smaller than 5cm, try again: XXX\"
+##### drone_stateestimation: PTAM initialization fails: "IMU Baseline smaller than 5cm, try again: XXX"
 
 -   In order to initialize PTAM, the stateestimation node needs some
     metric scale information (i.e. horizontal velocity estimates or
@@ -199,7 +199,7 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
     received for XXXs, which, if it happens continuously, leads to a
     poor state estimate and flight performance. Possible reasons: If the
     publish frequency on /ardrone/navdata (displayed on UI window) is
-    around 50, this means the driver\'s loop_rate is set incorrectly; if
+    around 50, this means the driver's loop_rate is set incorrectly; if
     it is around 15, navdata_demo is set to 1. Another reason might be a
     bad network connection / high pings, try restarting the drone or
     going somewhere with less WLan clutter.
@@ -211,7 +211,7 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
 ## Notes
 
 -   the channel */tum_ardrone/com* is used for communication between the
-    nodes. to see what\'s going on internally, it is generally a good
+    nodes. to see what's going on internally, it is generally a good
     idea to echo this channel.
 
 ## Known Bugs & Issues
@@ -228,6 +228,6 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
 The major part of this software package - that is everything except
 PTAM - is licensed under the GNU General Public License Version 3
 (GPLv3), see <http://www.gnu.org/licenses/gpl.html>. PTAM (comprised of
-all files in /src/stateestimation/PTAM) has it\'s own licence, see
+all files in /src/stateestimation/PTAM) has it's own licence, see
 <http://www.robots.ox.ac.uk/~gk/PTAM/download.html>. This licence in
 particular prohibits commercial use of the software.

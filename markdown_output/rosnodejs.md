@@ -6,7 +6,7 @@ quickly interface with ROS [Topics](Topics), [Services](Services), and
 [Parameters](Parameter Server).
 
 -   Maintainer status: maintained
--   Maintainer: Chris Smith \<csmith AT rethinkrobotics DOT com\>
+-   Maintainer: Chris Smith <csmith AT rethinkrobotics DOT com>
 -   Author: Chris Smith, Ian McMahon
 -   McMahon
 -   License: Apache 2.0
@@ -29,14 +29,14 @@ generation, and Nodejs to install and execute rosnodejs scripts.
 
 ### Install rosnodejs
 
-rosnodejs is hosted by Nodejs\' package manager, npm -
+rosnodejs is hosted by Nodejs' package manager, npm -
 <https://www.npmjs.com/package/rosnodejs>. To install:
 
-\`\$ npm install rosnodejs\`
+`\$ npm install rosnodejs`
 
 ## Tutorials
 
-If you\'re familiar with \`catkin\` workspaces and ROS packages, start
+If you're familiar with `catkin` workspaces and ROS packages, start
 with
 [rosnodejs examples](https://github.com/RethinkRobotics-opensource/rosnodejs_examples).
 

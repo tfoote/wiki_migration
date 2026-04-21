@@ -2,11 +2,11 @@
 
 This package contains two nodes that talk to
 [libviso2](http://www.cvlibs.net/software/libviso2.html) (which is
-included in the [libviso2](libviso2) package): \`mono_odometer\` and
-\`stereo_odometer\`. Both estimate camera motion based on incoming
+included in the [libviso2](libviso2) package): `mono_odometer` and
+`stereo_odometer`. Both estimate camera motion based on incoming
 rectified images from calibrated cameras. To estimate the scale of the
 motion, the mono odometer uses the ground plane and therefore needs
-information about the camera\'s z-coordinate and its pitch. The stereo
+information about the camera's z-coordinate and its pitch. The stereo
 odometer needs no additional parameters and works - if provided with
 images of good quality - out of the box.
 
@@ -15,7 +15,7 @@ a Micro AUV using dense stereo point clouds coming from
 [stereo_image_proc](stereo_image_proc) concatenated in [rviz](rviz)
 using the stereo odometer of this package.
 
-\<\<Youtube(4Ze99YStmPo&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=4Ze99YStmPo&rel=0)
 
 In the repository, you can find a sample launch file, which uses a
 public bagfile available here:
@@ -27,26 +27,26 @@ Please read [REP 105](http://www.ros.org/reps/rep-0105.html) for an
 explanation of odometry frame ids.
 
 The chain of transforms relevant for visual odometry is as follows:
-\`world\` &rarr; \`odom\` &rarr; \`base_link\` &rarr; \`camera\`
+`world` &rarr; `odom` &rarr; `base_link` &rarr; `camera`
 
 Visual odometry algorithms generally calculate *camera motion*. To be
 able to calculate *robot motion* based on *camera motion*, the
 transformation from the camera frame to the robot frame has to be known.
-Therefore this implementation needs to know the tf \`base_link\` &rarr;
-\`camera\` to be able to publish \`odom\` &rarr; \`base_link\`.
+Therefore this implementation needs to know the tf `base_link` &rarr;
+`camera` to be able to publish `odom` &rarr; `base_link`.
 
 The name of the camera frame is taken from the incoming images, so be
 sure your camera driver publishes it correctly. If your camera driver
 does not set frame ids, you can use the fallback parameter
-\`sensor_frame_id\` (see below).
+`sensor_frame_id` (see below).
 
 *NOTE*: The coordinate frame of the camera is expected to be the
-*optical* frame, which means \`x\` is pointing right, \`y\` downwards
-and \`z\` from the camera into the scene. The origin is where the
-camera\'s principle axis hits the image plane (as given in
-\<\<MsgLink(sensor_msgs/CameraInfo)\>\>).
+*optical* frame, which means `x` is pointing right, `y` downwards
+and `z` from the camera into the scene. The origin is where the
+camera's principle axis hits the image plane (as given in
+<<MsgLink(sensor_msgs/CameraInfo)>>).
 
-To learn how to publish the required tf \`base_link\` &rarr; \`camera\`,
+To learn how to publish the required tf `base_link` &rarr; `camera`,
 please refer to the [tf tutorials](tf/Tutorials). If the required tf is
 not available, the odometer assumes it as the identity matrix which
 means the robot frame and the camera frame are identical.
@@ -64,7 +64,7 @@ In general, monocular odometry and SLAM systems cannot estimate motion
 or position on a metric scale. All estimates are relative to some
 unknown scaling factor. libviso2 overcomes this by assuming a fixed
 transformation from the ground plane to the camera (parameters
-\`camera_height\` and \`camera_pitch\`). To introduce these values, in
+`camera_height` and `camera_pitch`). To introduce these values, in
 each iteration the ground plane has to be estimated. That is why
 features on the ground as well as features above the ground are
 mandatory for the mono odometer to work.
@@ -74,7 +74,7 @@ Roughly the steps are the following:
 1\. Find F matrix from point correspondences using RANSAC and 8-point
 algorithm 2. Compute E matrix using the camera calibration 3. Compute 3D
 points and R\|t up to scale 4. Estimate the ground plane in the 3D
-points 5. Use \`camera_height\` and \`camera_pitch\` to scale points and
+points 5. Use `camera_height` and `camera_pitch` to scale points and
 R\|t Unfortunately libviso2 does not provide sufficient introspection to
 signal if one of these steps fails.
 
@@ -300,6 +300,6 @@ Answers (FAQ link above) and you can solve it on your own.
 
 ## Feedback
 
-Please use the stack\'s issue tracker at Github to submit bug reports
+Please use the stack's issue tracker at Github to submit bug reports
 and feature requests regarding the ROS wrapper of libviso2:
 <https://github.com/srv/viso2/issues/new>.

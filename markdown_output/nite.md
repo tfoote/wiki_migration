@@ -7,12 +7,12 @@ with the OpenNI framework. See
 NITE.
 
 As a ROS user, you may find it more convenient to use
-[openni_tracker](openni_tracker) than NITE directly. \`openni_tracker\`
+[openni_tracker](openni_tracker) than NITE directly. `openni_tracker`
 uses NITE to track your skeleton, and publishes the skeleton frames over
 [tf](tf).
 
 In Electric and Diamondback, to use NITE directly in your packages you
-would depend on the \`nite\` wrapper package. As of Fuerte the \`nite\`
+would depend on the `nite` wrapper package. As of Fuerte the `nite`
 package is deprecated, and you should link against the system
 installation as described in the
 [migration guide](#Fuerte_migration_guide).
@@ -21,7 +21,7 @@ installation as described in the
 
 ### manifest.xml (depending on NITE)
 
-Instead of depending on the \`nite\` package, declare the following
+Instead of depending on the `nite` package, declare the following
 [rosdeps](rosdep) in your [manifest.xml](Manifest):
 ```
 <rosdep name="openni-dev" />
@@ -29,8 +29,8 @@ Instead of depending on the \`nite\` package, declare the following
 <rosdep name="nite-dev"/>
 ```
 
-Now \`rosdep install MY_AWESOME_PACKAGE\` will install OpenNI, the
-\`ps-engine\` device driver, and NITE.
+Now `rosdep install MY_AWESOME_PACKAGE` will install OpenNI, the
+`ps-engine` device driver, and NITE.
 
 If you provide headers included by code in other packages, and those
 headers use OpenNI and/or NITE, then you must also export the flags:
@@ -42,8 +42,8 @@ headers use OpenNI and/or NITE, then you must also export the flags:
 
 ### CMakeLists.txt (linking against NITE)
 
-The OpenNI and NITE headers are installed in \`/usr/include/openni\` and
-\`/usr/include/nite\`, respectively. In your
+The OpenNI and NITE headers are installed in `/usr/include/openni` and
+`/usr/include/nite`, respectively. In your
 [CMakeLists.txt](rosbuild/CMakeLists), add the include directories:
 ```
 include_directories(/usr/include/openni /usr/include/nite)
@@ -62,6 +62,6 @@ You can access the OpenNI C++ wrapper in your code with:
 #include <XnCppWrapper.h>
 ```
 
-NITE is a module providing APIs like \`UserGenerator\`. See the
+NITE is a module providing APIs like `UserGenerator`. See the
 [OpenNI documentation](http://openni.org/Documentation/) for more
 information.

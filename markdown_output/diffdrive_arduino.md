@@ -7,14 +7,14 @@ This package provides an interface between [ros_control](ros_control)
 ## Getting Started
 
 1\. Have your robot with an Arduino running the firmware from
-[ros_arduino_bridge](ros_arduino_bridge). 2. Run the node with \`rosrun
-diffdrive_arduino diffdrive_robot\`, specifying any parameters you need
+[ros_arduino_bridge](ros_arduino_bridge). 2. Run the node with `rosrun
+diffdrive_arduino diffdrive_robot`, specifying any parameters you need
 to. 3. Set up the controllers. You will need to run a
 [diff_drive_controller](diff_drive_controller) and a
 [joint_state_controller](joint_state_controller). You may also need to
-set the \`robot_description\` if that information is not provided
-directly to the \`diff_drive_controller\`. 4. Run the controllers. 5.
-Send some input to \`cmd_vel\` (e.g. with
+set the `robot_description` if that information is not provided
+directly to the `diff_drive_controller`. 4. Run the controllers. 5.
+Send some input to `cmd_vel` (e.g. with
 [teleop_twist_joy](teleop_twist_joy)).
 
 ## Nodes

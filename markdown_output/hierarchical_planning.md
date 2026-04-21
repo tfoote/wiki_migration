@@ -21,8 +21,8 @@ in the code itself.
 ## Setup
 
 To use the package, you will first have to follow the setup instructions
-for [rosjava](rosjava) and [rosclj](rosclj), then \"rosmake
-hierarchical_planning\".
+for [rosjava](rosjava) and [rosclj](rosclj), then "rosmake
+hierarchical_planning".
 
 Then, to bring up the ROS nodes required for planning/execution:
 
@@ -43,7 +43,7 @@ on the classpath, and type
 ```
 
 to load the relevant code. Follow the instructions in [rosclj](rosclj)
-to set up a NodeHandle, or (load \"ros/teleop\") from [clj_pr2](clj_pr2)
+to set up a NodeHandle, or (load "ros/teleop") from [clj_pr2](clj_pr2)
 (should automatically be on the classpath) to do this automatically and
 also load teleoperation code.
 
@@ -55,7 +55,7 @@ use a preset demo environment for Willow Garage green room, you can use
 (get-demo-env nh).
 
 Then, to construct a (hopefully) good plan that solves this problem, use
-\"sahtn\".
+"sahtn".
 
 ```clojure
 (def *result* 

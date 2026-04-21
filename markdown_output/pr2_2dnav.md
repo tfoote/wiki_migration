@@ -45,11 +45,11 @@ through code.
     running the following launch file: ```
 roslaunch pr2_navigation_global rviz_move_base.launch
 ```
--   In the rviz window that pops up, you\'ll need to set the pose of the
+-   In the rviz window that pops up, you'll need to set the pose of the
     robot.
 -   Take note of where the robot is in the world.
 -   Right click and drag to zoom on the map.
--   Click the \"2D Pose Estimate\" button in the rviz GUI window.
+-   Click the "2D Pose Estimate" button in the rviz GUI window.
 -   Left click on the map at the location of the robot and drag to set
     orientation.
 -   Verify that the scans from the base laser of the robot match up
@@ -59,7 +59,7 @@ roslaunch pr2_navigation_global rviz_move_base.launch
 <!-- -->
 ```
 -   The application is now up and ready to receive goals.
--   Click the \"2D Nav Goal\" button in the rviz GUI window.
+-   Click the "2D Nav Goal" button in the rviz GUI window.
 -   Left click on the map at the location of the goal and drag to set
     orientation.
 -   If the robot is surrounded by obstacles, it may not move. Move
@@ -78,11 +78,11 @@ roslaunch pr2_navigation_global rviz_move_base.launch
     running the following launch file ```
 roslaunch pr2_navigation_global nav_view_move_base.launch
 ```
--   In the nav_view window that pops up, you\'ll need to set the pose of
+-   In the nav_view window that pops up, you'll need to set the pose of
     the robot.
 -   Take note of where the robot is in the world.
 -   Right click and drag to zoom on the map.
--   Click the \"Set Pose\" button in the nav_view GUI window.
+-   Click the "Set Pose" button in the nav_view GUI window.
 -   Left click on the map at the location of the robot and drag to set
     orientation.
 -   Verify that the scans from the base laser of the robot match up
@@ -92,7 +92,7 @@ roslaunch pr2_navigation_global nav_view_move_base.launch
 <!-- -->
 ```
 -   The application is now up and ready to receive goals.
--   Click the \"Set Goal\" button in the nav_view GUI window.
+-   Click the "Set Goal" button in the nav_view GUI window.
 -   Left click on the map at the location of the goal and drag to set
     orientation.
 -   If the robot is surrounded by obstacles, it may not move. Move

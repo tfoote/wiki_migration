@@ -19,7 +19,7 @@ The ROS Message Types can be described as a
 This approach is very well known and commonly used on the web and in
 distributed systems in general.
 
-A [rosmsg](rosmsg) is defined by the user; an \"IDL compiler\", i.e.
+A [rosmsg](rosmsg) is defined by the user; an "IDL compiler", i.e.
 [gencpp](gencpp), reads this schema and generates a header file that
 contains the source code that the user shall include in his/her
 applications. The inclusion of this header file is needed on both the
@@ -29,18 +29,18 @@ This approach provides strong and type-safe contracts between the
 producer and the consumer of the message and, additionally, is needed to
 implements a fast serialization / deserialization mechanism.
 
-The only \"problem\" is that in very few use cases (for instance if you
+The only "problem" is that in very few use cases (for instance if you
 want to build a plugin to
 [load ROS bags in MATLAB](https://github.com/bcharrow/matlab_rosbag))
-you don\'t know in advance which ROS Messages you will need to read.
-Therefore, you won\'t be able to include the necessary header files.
+you don't know in advance which ROS Messages you will need to read.
+Therefore, you won't be able to include the necessary header files.
 
 ## Ros Type Introspection
 
 The library is composed of three main modules:
 
 -   **Parser**: it performs introspection of a Ros Message using the
-    schema stored in \`ros::message_traits::Definition\`.
+    schema stored in `ros::message_traits::Definition`.
 
 ```{=html}
 <!-- -->

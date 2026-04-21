@@ -1,7 +1,7 @@
 ## Papers
 
 Munoz et al.,
-[\"Contextual Classification with Functional Max-Margin Markov Networks\"](http://www.cs.cmu.edu/~dmunoz/pubs/munoz_cvpr_09.pdf),
+["Contextual Classification with Functional Max-Margin Markov Networks"](http://www.cs.cmu.edu/~dmunoz/pubs/munoz_cvpr_09.pdf),
 CVPR 2009
 
 ## Video

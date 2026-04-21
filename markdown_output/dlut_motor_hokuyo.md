@@ -8,7 +8,7 @@ hokuyo motor to the serial port.
 
 ## Usage
 
-Node \"dlut_motor_hokuyo\" can be started by running:
+Node "dlut_motor_hokuyo" can be started by running:
 ```shell
 rosrun dlut_motor_hokuyo dlut_motor_hokuyo
 ```

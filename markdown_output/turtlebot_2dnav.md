@@ -29,7 +29,7 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch --screen
 <!-- -->
 ```
 -   The application is now up and ready to receive goals.
--   Click the \"2D Nav Goal\" button in the rviz GUI window.
+-   Click the "2D Nav Goal" button in the rviz GUI window.
 -   Left click on the map at the location of the goal and drag to set
     orientation.
 

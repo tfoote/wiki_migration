@@ -5,8 +5,8 @@
 This package provides a driver for the PS3 (SIXAXIS or DUALSHOCK3)
 bluetooth joystick. This joystick is currently used with the PR2 robot.
 
-This driver exists because Linux\'s native support for the PS3 joystick
-is unreliable, and does not give access to the joystick\'s
+This driver exists because Linux's native support for the PS3 joystick
+is unreliable, and does not give access to the joystick's
 accelerometers and gyroscope. This driver solves both problems. However
 in its current form, **this driver will not coexist with any other
 bluetooth device**. In future releases, we plan to allow first non-HID
@@ -36,7 +36,7 @@ Adapters that are known not to work:
 
 ## Supported Distributions
 
-\`ps3joy.py\` is known to work with Ubuntu 12.10, Ubuntu 12.04, Ubuntu
+`ps3joy.py` is known to work with Ubuntu 12.10, Ubuntu 12.04, Ubuntu
 Jaunty 9.04, and Ubuntu Hardy 8.04. To make it work with Ubuntu Karmic
 9.10, you will have to follow these
 [instructions](ps3joy/KarmicInstructions).
@@ -86,7 +86,7 @@ pub {
 
 ## Command-Line Options
 
-This is the same for \`ps3joy.py\` and \`ps3joy_node.py\`.
+This is the same for `ps3joy.py` and `ps3joy_node.py`.
 ```
 $ ./ps3joy.py --help
 usage: ps3joy.py [--inactivity-timeout=<n>] [--no-disable-bluetoothd] [--redirect-output]=<f>
@@ -95,20 +95,20 @@ usage: ps3joy.py [--inactivity-timeout=<n>] [--no-disable-bluetoothd] [--redirec
 Unless --no-disable-bluetoothd is specified, bluetoothd will be stopped.
 ```
 
-\`\--inactivity-timeout\` Turn off the joystick after a certain period
+`\--inactivity-timeout` Turn off the joystick after a certain period
 of inactivity. This is useful to save batteries and reduce contention on
 the 2.4 GHz network.
 
-\`\--no-disable-bluetoothd\` Tells \`ps3joy.py\` not to take down
+`\--no-disable-bluetoothd` Tells `ps3joy.py` not to take down
 bluetoothd. For this option to work, bluetoothd must be configured not
-handle input devices, otherwise you will get an \"Error binding to
-socket\" error message. (New in 1.1.1 and 1.0.3)
+handle input devices, otherwise you will get an "Error binding to
+socket" error message. (New in 1.1.1 and 1.0.3)
 
-\`\--redirect-output\` Allows the standard output and error to be
-redirected to a file. This is useful when \`ps3joy.py\` is run in the
+`\--redirect-output` Allows the standard output and error to be
+redirected to a file. This is useful when `ps3joy.py` is run in the
 background. (New in 1.1.1 and 1.0.3)
 
-\`\--continuous-output\` Output continuous motion sensor streams, and as
+`\--continuous-output` Output continuous motion sensor streams, and as
 a side effect of continuous output, no longer leaves long periods of no
 messages on the /joy topic.
 
@@ -126,7 +126,7 @@ trivial. Here is what you can do: ```
 Or you could write a sudo script for sourcing ROS and starting
 ps3joy_node; I use
 [ps3joy_node_starter.sh](https://gist.github.com/felix-kolbe/8419903) to
-automatically start the \`ps3joy_node\` after booting and a ROS-check.
+automatically start the `ps3joy_node` after booting and a ROS-check.
 
 ### Sending feedback to the controller
 
@@ -147,7 +147,7 @@ pressing on the button, ranging from 0 when there is no press, to -1 for
 a hard press. For these buttons, the axis number is the same as the
 button number.
 
-**ps3joy.py** also exposes the joystick\'s three-axis accelerometer and
+**ps3joy.py** also exposes the joystick's three-axis accelerometer and
 the single-axis gyroscope:
 
   -- ---------- -- ---------------------------------------- --

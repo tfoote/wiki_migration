@@ -19,7 +19,7 @@ objects and create the respective structures in the knowledge base.
 
 The following commands launch KnowRob and start the CoP listener. You
 will get a list of models printed to the console (the current state of
-the CoP database) after calling the cop_listener(\_) predicate.
+the CoP database) after calling the cop_listener(_) predicate.
 ```
 rosrun rosprolog rosprolog comp_cop
  comp_cop:cop_listener(_).

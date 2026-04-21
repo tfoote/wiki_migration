@@ -5,7 +5,7 @@
 This algorithm consists of two main parts;
 
 -   Extracting and matching 2D RGB features from the images
--   Performing a variant of ICP, or \"Joint Optimization\" incorporating
+-   Performing a variant of ICP, or "Joint Optimization" incorporating
     both dense pointcloud information and 2D feature matches
 
 The first step uses standard computer vision approaches to extract and
@@ -13,7 +13,7 @@ match features. Various extraction and matching methods may be
 configured in the launch file. The feature points are then projected
 into 3D space using the associated point clouds. RANSAC is used to find
 a transformation that best fits the movement of 3D points between
-frames. The outliers are discarded and the 3D locations\' of the inliers
+frames. The outliers are discarded and the 3D locations' of the inliers
 are used in the next step.
 
 The next step is the variant of ICP. It combines both 3D visual features
@@ -35,7 +35,7 @@ An evaluation of this approach can be found
 
 The feature extraction and matching has been implemented using opencv.
 The RANSAC step uses some functions from PCL but is mostly implemented
-in this package. The Joint Optimization was done by extending PCL\'s
+in this package. The Joint Optimization was done by extending PCL's
 registration module.
 
 ## Installation Instructions
@@ -68,8 +68,8 @@ they do.
 
 The results can be found in the results directory. The transformed
 pointcloud will be written here, along with other files as selected in
-the launch file. The \"source\" pointcloud is transformed to the
-\"target\". So to see the alignment one should view both the target and
+the launch file. The "source" pointcloud is transformed to the
+"target". So to see the alignment one should view both the target and
 transformed pointclouds together:
 
 ```

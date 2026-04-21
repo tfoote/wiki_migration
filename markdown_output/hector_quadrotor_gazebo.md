@@ -9,8 +9,8 @@ It currently supports the following features:
 -   Publishing of ground truth pose and simulated imu data
 -   Spawnable in gazebo
 -   Dedicated controller for use in gazebo simulation. The UAV can be
-    controlled in gazebo using \<\<MsgLink(geometry_msgs/Twist)\>\>
-    messages on the \'cmd_vel\' topic (as used on may other robots, but
+    controlled in gazebo using <<MsgLink(geometry_msgs/Twist)>>
+    messages on the 'cmd_vel' topic (as used on may other robots, but
     with added climb rate).
 
 ## Use

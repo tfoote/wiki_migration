@@ -4,12 +4,12 @@ The skin_driver provides a high level ROS interface to easily use the
 Sensor skin in ROS on your robot: It publishes a topic containing
 current measurement data (used e.g. by [skin_dashboard](skin_dashboard)
 or a user program) and provides a service (used by
-[skin_config](skin_config)) which can be used to reconfigure the skin\'s
+[skin_config](skin_config)) which can be used to reconfigure the skin's
 parameters.
 
 On the low-level side the skin_driver uses the [sub20](sub20) driver for
 the [Xdimax SUB-20 Device](http://www.xdimax.com/sub20/sub20.html) to
-communicate with the skin\'s controller (called ECU) over I2C and USB as
+communicate with the skin's controller (called ECU) over I2C and USB as
 depicted in the image below:
 
 ![](attachment:skin_driver.png)
@@ -21,9 +21,9 @@ character device of the XDIMAX Box. In Ubuntu this can be easily
 achieved by creating a custom udev rule.
 
 The following udev rule allows write access for every user to every USB
-device with the VendorID \"04d8\" and ProductID \"ffc3\" (all our XDIMAX
+device with the VendorID "04d8" and ProductID "ffc3" (all our XDIMAX
 Boxes have these identifiers). The ids can be determined by using
-\"lsusb -v\".
+"lsusb -v".
 
 Open/create the file with ```
 vi /etc/udev/rules.d/65-usb-xdimax.rules

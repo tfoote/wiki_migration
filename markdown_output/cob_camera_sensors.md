@@ -208,9 +208,9 @@ camera types are supported:
 The Prosilica GC1380CH color camera is supported through the ROS
 *prosilica_camera* package. To get more information, have a look at
 their tutorial. The camera specific launch files have an additional
-parameter specifying the camera\'s ID which is related to the number
+parameter specifying the camera's ID which is related to the number
 within the tag-name in the IPA configuration file e.g.
-*\<AVTPikeCam_0\>*.
+*<AVTPikeCam_0>*.
 
 Knowing the fundamentals, we are now ready to start up the cameras. The
 following table sums up the built-in cameras for each Care-O-Bot.

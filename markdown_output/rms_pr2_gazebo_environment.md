@@ -1,12 +1,12 @@
 ## About
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The \`rms_pr2_gazebo_environment\` package contains launch files that can launch an example RMS Gazebo environment for use with the [rms](rms). These files will launch the simulator with a PR2 world from the [rail_worlds](rail_worlds) package, place a PR2 into the world, and start appropriate server nodes (e.g., [rosbridge_server](rosbridge_server)).      ![](attachment:environment.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The `rms_pr2_gazebo_environment` package contains launch files that can launch an example RMS Gazebo environment for use with the [rms](rms). These files will launch the simulator with a PR2 world from the [rail_worlds](rail_worlds) package, place a PR2 into the world, and start appropriate server nodes (e.g., [rosbridge_server](rosbridge_server)).      ![](attachment:environment.png)   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------- --
 
 ## Installation
 
-To install the \`rms_pr2_gazebo_environment\` stack, you can choose to
+To install the `rms_pr2_gazebo_environment` stack, you can choose to
 either install from source, or from the Ubuntu package:
 
 ### Source
@@ -69,5 +69,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

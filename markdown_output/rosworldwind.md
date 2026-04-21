@@ -3,7 +3,7 @@
 The rosworldwind package provides a simple GUI to display geo-referenced
 information on a virtual globe using the NASA World Wind technology.
 
-![\|height=\"408px\",width=\"700px\"](http://rosworldwind.googlecode.com/files/Screenshot-ROS WorldWind Adapter.png)
+![\|height="408px",width="700px"](http://rosworldwind.googlecode.com/files/Screenshot-ROS WorldWind Adapter.png)
 
 ### NASA World Wind
 

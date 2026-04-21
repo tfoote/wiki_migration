@@ -17,7 +17,7 @@ considers the isoceles triangle formed by the coupled joint to solve the
 inverse kinematics.
 
 .
-![\|height=\"336px\",width=\"393px\"](attachment:finger_approximation.png)
+![\|height="336px",width="393px"](attachment:finger_approximation.png)
 
 ### Limits
 

@@ -102,7 +102,7 @@ $ roslaunch schunk_pg70 pg70_rs232_control.launch
 ```
 $ rostopic echo /joint_states
 ``` you should see actual gripper position being
-published on \"joint_states\" topic approximately 10 times per second:
+published on "joint_states" topic approximately 10 times per second:
 
 ```
 header:
@@ -135,7 +135,7 @@ To get the list of available services type:
 ```
 $ rosservice list
 ``` If everything is okay, you should notice 6
-services being advertised by \"pg70_rs232_control\" node:
+services being advertised by "pg70_rs232_control" node:
 
 ```
 schunk_pg70/reference
@@ -145,10 +145,10 @@ schunk_pg70/get_position
 schunk_pg70/set_position
 schunk_pg70/stop
 ``` These services are ROS user interface to Schunk
-PG70 gripper. Except \"set_position\" all of them use
+PG70 gripper. Except "set_position" all of them use
 [std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
-requests, so you don\'t need to specify any values, just \"rosservice
-call\" as in the example below.
+requests, so you don't need to specify any values, just "rosservice
+call" as in the example below.
 
 #### get_error service
 
@@ -292,8 +292,8 @@ prov_tf{
   1.to   = schunk_pg70_finger_2_link
   1.desc = Finger 2 link
 }
-```1 where \"**position**\" is within a range of
-\<0 - 69\> mm, velocity \<0-83\>mm/s and acceleration \<0-320\>mm/s2.
+```1 where "**position**" is within a range of
+<0 - 69> mm, velocity <0-83>mm/s and acceleration <0-320>mm/s2.
 The gripper should respond with goal_position being accepted or not and
 move to goal position:
 
@@ -416,7 +416,7 @@ prov_tf{
 ## Xacro model
 
 To visualize Schunk PG70 gripper in Rviz use
-\"pg70_visualize_standalone.launch\" file.
+"pg70_visualize_standalone.launch" file.
 
 ```clearsilver
 name = pg70_rs232_control
@@ -475,4 +475,4 @@ prov_tf{
 there is only one joint to control the movement both of them. Use
 joint_state_publisher GUI to test the movement:
 
-![\|height=\"464\",width=\"698\"](attachment:pg70_standalone.jpg)
+![\|height="464",width="698"](attachment:pg70_standalone.jpg)

@@ -1,7 +1,7 @@
 ## Overview
 
 The Willow Garage 100 Mbps Ethernet (WGE100) camera is a 752x480
-Ethernet camera developed for the PR2 robot. The PR2\'s narrow stereo
+Ethernet camera developed for the PR2 robot. The PR2's narrow stereo
 camera is a monochrome WGE100, while its wide stereo camera and forearm
 cameras are in color. This package contains the
 [wge100_camera_node](#Wge100CameraNode), a ROS driver for a monocular
@@ -17,7 +17,7 @@ are brought up at the same time as the robot. Instead they can refer to
 the following sources:
 
 -   For simplified instructions on setting up camera frame rate, or
-    synchronization with the PR2\'s texture projector refer to the
+    synchronization with the PR2's texture projector refer to the
     [pr2_camera_synchronizer](pr2_camera_synchronizer#UsingOnThePr2)
     documentation.
 
@@ -37,7 +37,7 @@ the following sources:
 <!-- -->
 ```
 -   Tutorials are available showing how to dynamically reconfigure a
-    node\'s parameters using
+    node's parameters using
     [a GUI](hokuyo_node/Tutorials/UsingReconfigureGUIToChangeHokuyoLaserParameters),
     [from the command-line, a launch file or C++ code](hokuyo_node/Tutorials/UsingDynparamToChangeHokuyoLaserParameters).
 
@@ -61,18 +61,18 @@ control of the camera.
 
 ### Time Stamping
 
-The timestamps returned by the \`wge100_camera_node\` are with respect
+The timestamps returned by the `wge100_camera_node` are with respect
 to the end of the exposure. The timestamps can be produced in one of two
 ways:
 
 -   If the camera is externally triggered, the driver expects timestamps
-    to be provided on a \<\<MsgLink(roslib/Header)\>\> topic. The topic
+    to be provided on a <<MsgLink(roslib/Header)>> topic. The topic
     the camera subscribes to is defined by the trig_timestamp_topic
     parameter. The driver then attempts to match timestamps with image
     arrival times.
 -   If the camera is internally triggered, the driver uses the arrival
     time of the first packet in the message, offset by
-    \`first_packet_offset\` as an estimate of the end of the exposure.
+    `first_packet_offset` as an estimate of the end of the exposure.
     These estimates are then filtered based on the known frame rate to
     get a more accurate estimate with less jitter.
 
@@ -80,7 +80,7 @@ ways:
 
 When working with a WGE100 camera, the user needs to identify the camera
 she wishes to work with. Cameras are identified using URLs, which can
-refer either to the camera\'s serial number or to its descriptive name
+refer either to the camera's serial number or to its descriptive name
 (set using [set_name](#SetName)). If there is only one camera present, a
 URL can indicate that whatever camera is found should be used.
 
@@ -106,13 +106,13 @@ it will use for communication. However it is sometimes useful to have
 the camera use a different IP address, for example when the IP address
 in flash is invalid, or if is transiently placed on a different network
 from the one it is configured for. In that case, an IP address can be
-added to the URL. An IP address is introduced with the \`@\` sign. E.g.:
+added to the URL. An IP address is introduced with the `@` sign. E.g.:
 `name://my_camera@192.168.1.2`
 
 When an IP address is specified, WGE100 camera tools will configure the
 camera to use that address before they try to work with it. The IP
 address that is specified using @ will get reset each time a new tool is
-used. To set a camera\'s IP address permanently, use the
+used. To set a camera's IP address permanently, use the
 [set_name](#SetName) tool.
 
 ### Specifying a Network Interface
@@ -121,8 +121,8 @@ In some cases, a single camera may be visible on multiple interfaces, or
 cameras with the same name may be visible on different network
 interfaces. In this case, an interface name can be included in the
 camera URL to force a particular interface to be used for communication.
-An interface name is introduced with the \`#\` sign. For example, on the
-PR2, only the \`lan0\` interface is searched to avoid potential
+An interface name is introduced with the `#` sign. For example, on the
+PR2, only the `lan0` interface is searched to avoid potential
 conflicts with identically named cameras on the wan0 interface:
 `name://wide_stereo_l#lan0`
 
@@ -383,7 +383,7 @@ $ rosrun wge100_camera discover
 Found camera serial://13 name://test MAC: 00:24:cd:00:00:83 iface: eth2:avahi current IP: 169.254.8.124, PCB rev: C HDL rev: 400 FW rev: 118
 ``` The IP address that is reported by the
 **discover** tool is the currently configured address for the camera.
-This may be different from the IP address stored in the camera\'s flash,
+This may be different from the IP address stored in the camera's flash,
 and to which the camera defaults when it is reset. This IP may or may
 not be valid for the interface on which the camera is located, and it is
 quite possible that you will not be able to communicate with the camera
@@ -396,7 +396,7 @@ interface other than the one on which it was reported.
 
 ### Camera Setup: set_name
 
-The camera name and IP address that are stored in the camera\'s flash
+The camera name and IP address that are stored in the camera's flash
 can be accessed using the **set_name** tool. With a single camera URL
 argument, set_name reports the current settings.
 
@@ -422,7 +422,7 @@ Previous camera IP: 169.254.8.200
 
 ### Camera Intrinsics: set_calibration
 
-The camera intrinsics that are stored in the camera\'s flash can be
+The camera intrinsics that are stored in the camera's flash can be
 accessed using the **set_calibration** tool. With a single camera URL
 argument, set_name reports the current settings.
 

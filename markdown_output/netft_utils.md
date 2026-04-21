@@ -1,5 +1,5 @@
 The netft_utils package provides a C++ interface and a ROS node for an
-ATI force/torque sensor that\'s connected to an ATI Netbox. There are
+ATI force/torque sensor that's connected to an ATI Netbox. There are
 some handy features like:
 
 1\. specify the rate of data acquistion,
@@ -18,7 +18,7 @@ Derek King, written in 2008 but not updated since ROS groovy.
 
 ## Installing the package
 
-It\'s best to install this package from source. Create a catkin
+It's best to install this package from source. Create a catkin
 workspace for the package:
 
 ```
@@ -68,7 +68,7 @@ Optional arguments:
 After launching this netft_node, you can launch a netft_utils node to
 interact with the netft_node in the usual ROS ways. Pass the tf frame
 for the world and the tf frame for the sensor on the robot and you can
-easily convert between them. If you don\'t care about tf frames, just
+easily convert between them. If you don't care about tf frames, just
 pass it dummy arguments. The sensor tf frame should be set up to match
 the Y and Z-axis markings on the sensor.
 
@@ -88,7 +88,7 @@ resolution from the sensor.
 
 ## Gravity compensation
 
-If the sensor hasn\'t been biased, you can enable gravity compensation
+If the sensor hasn't been biased, you can enable gravity compensation
 to cancel out the force/torque readings due to the mass of the payload.
 The code makes two assumptions:
 
@@ -97,7 +97,7 @@ The code makes two assumptions:
 2\. The center of mass of the payload is located on the central Z-axis
 of the force/torque sensor. Usually payloads are fairly symmetric so
 this is mostly true. This assumption is necessary because a
-cross-product can\'t be inverted and solved, i.e. there are infinite
+cross-product can't be inverted and solved, i.e. there are infinite
 solutions.
 
 To test gravity compensation, do ```
@@ -118,7 +118,7 @@ other axes.
 The following code covers the gist of how to declare and use a netft
 object with C++. Do `$rosrun netft_utils netft_utils_cpp_test` to see it
 in action (you will have to adjust the IP address of the sensor in the
-source code, as it\'s hardcoded to 192.168.1.84.
+source code, as it's hardcoded to 192.168.1.84.
 
 ```
 ros::init(argc, argv, "netft_utils_cpp_test");
@@ -158,7 +158,7 @@ $ cd ..
 
 ## Web Interface
 
-It\'s easy to forget the force/torque sensor has a web interface. Just
+It's easy to forget the force/torque sensor has a web interface. Just
 open a browser and enter its IP address, e.g. 192.168.1.84. Here you can
 see the status of the sensor, change units from metric to imperial,
 adjust its DAQ rate, etc.
@@ -172,10 +172,10 @@ to see a list of IP addresses on your network and find the right one.
 
 If the network latency increases significantly after launching the F/T
 sensor, it is probably pushing too much data. You can reduce its data
-transmission rate through the Netbox\'s web interface. Simply navigate
-to the sensor\'s IP in a browser, e.g.: `http://192.168.1.84` Reduce the
-data transmission rate downward via \"RDT Output Rate.\"
+transmission rate through the Netbox's web interface. Simply navigate
+to the sensor's IP in a browser, e.g.: `http://192.168.1.84` Reduce the
+data transmission rate downward via "RDT Output Rate."
 
-Note that the built-in axes on the ATI sensor don\'t follow the
+Note that the built-in axes on the ATI sensor don't follow the
 right-hand convention. We negate the X-component of the measured wrench
 so it does follow the right-hand convention.

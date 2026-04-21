@@ -24,9 +24,9 @@ $ rosrun rqt_ez_publisher rqt_ez_publisher
 $ rqt
 ```
 
-Plugins -\> Topics -\> Easy Message Publisher
+Plugins -> Topics -> Easy Message Publisher
 
-Input topic name -\> You got GUI
+Input topic name -> You got GUI
 
 ## How to Use
 
@@ -35,8 +35,8 @@ Input topic name -\> You got GUI
 ![](attachment:joint_states_with_caption.png)
 
 You can input topic name and attributes string, like rqt_plot instead of
-topic name. For example, ***/cmd_vel/linear/x*** or
-***/joint_states/position\[1\]***
+topic name. For example, **`'/cmd_vel/linear/x`**' or
+**`'/joint_states/position[1]`**'
 
 ## Examples
 
@@ -72,10 +72,10 @@ $ rm ~/.config/ros.org/rqt_gui.ini
 
 ### Q. How can I change publish repeat rate
 
-A. Click \"config (gear) icon\" -\> set repeat interval \[ms\]
+A. Click "config (gear) icon" -> set repeat interval \[ms\]
 
 ### Q. Can I save/load the settings
 
--   save: Click \"config (gear) icon\" -\> click \"save to file\" button
+-   save: Click "config (gear) icon" -> click "save to file" button
 -   load: rosrun rqt_ez_publisher rqt_ez_publisher \--slider-file
     /a.yaml

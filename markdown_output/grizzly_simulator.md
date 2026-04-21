@@ -24,8 +24,8 @@ roslaunch grizzly_gazebo grizzly_empty_world.launch
 roslaunch grizzly_viz view_robot.launch
 ```
 
-The Gazebo window shows the simulation\'s ground truth, while the
-[rviz](rviz) window shows the robot\'s perception.
+The Gazebo window shows the simulation's ground truth, while the
+[rviz](rviz) window shows the robot's perception.
 
 You can click the [Interact](interactive_markers) button in rviz, and
 use the interactive markers to give Grizzly some motion commands:
@@ -35,15 +35,15 @@ use the interactive markers to give Grizzly some motion commands:
 When you do this, note that the difference between what you observe in
 Gazebo and rviz:
 
--   In Gazebo, you\'re seeing the simulated Grizzly move \"for real\"
+-   In Gazebo, you're seeing the simulated Grizzly move "for real"
     through its simulated environment.
--   In rviz, you\'re observing the output of the
+-   In rviz, you're observing the output of the
     [robot_localization](robot_localization) node, as it processes
     simulated encoder and IMU data, and publishes that result as the
-    \`odom -\> base_link\` [transform](tf), which is how rviz positions
+    `odom -> base_link` [transform](tf), which is how rviz positions
     the model.
 
-If you\'d like to command your simulated Grizzly using raw messages,
+If you'd like to command your simulated Grizzly using raw messages,
 open a third terminal window, and enter: ```
 rostopic pub /cmd_vel geometry_msgs/Twist -r 50 '{ linear: { x: 0.5 } }'
 ``` In the

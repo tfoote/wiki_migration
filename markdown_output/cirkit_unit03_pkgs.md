@@ -4,7 +4,7 @@ tutorials.
 ## About
 
 Minimum required packages for [CIR-KIT-Unit03](Robots/CIR-KIT-Unit03).
-This package doesn\'t include system application launch files so please
+This package doesn't include system application launch files so please
 also check [cirkit_unit03_apps](cirkit_unit03_apps) if you are
 interested in whole navigation system call including both real robot and
 simulation ([Gazebo](http://gazebosim.org/)).
@@ -13,8 +13,8 @@ simulation ([Gazebo](http://gazebosim.org/)).
 
 The following commands grab all required packages for
 [CIR-KIT-Unit03](Robots/CIR-KIT-Unit03) navigation with [rosdep](rosdep)
-and [wstool](wstool), and then execute \`catkin_make\` and \`catkin_make
-run_tests\`.
+and [wstool](wstool), and then execute `catkin_make` and `catkin_make
+run_tests`.
 
 ### Clone this repository.
 
@@ -32,9 +32,9 @@ sh install.sh
 
 -   optional arguments:
 -   -h: show the help message and exit
--   -i: eneble \`rosdep init\`
--   -t: enable \`catkin_make run_tests\`
--   -r: remove existing \`src/.rosinstall\`
+-   -i: eneble `rosdep init`
+-   -t: enable `catkin_make run_tests`
+-   -r: remove existing `src/.rosinstall`
 
 ## Configuration
 

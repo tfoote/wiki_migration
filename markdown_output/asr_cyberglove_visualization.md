@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -8,7 +8,7 @@ the functionalities of the [asr_cyberglove_lib](asr_cyberglove_lib) and
 of a human hand to provide a visualization of the movement data from the
 gloves and the magnet tracking system (Flock of Birds) in RViz.
 
-![\|width=\"690\",height=\"389\"](attachment:asr_cyberglove_visualization.jpg)
+![\|width="690",height="389"](attachment:asr_cyberglove_visualization.jpg)
 
 ## Usage
 
@@ -28,14 +28,14 @@ are needed:
 
 -   Cybergloves
 -   [Ascension Technology Corp](http://www.ascension-tech.com/products/product-history/)
-    magnet tracking system \"Flock of Birds\"
+    magnet tracking system "Flock of Birds"
 
 ### Start system
 
 #### Starting the servers
 
 The main function of the package is to visualize the data received from
-the hardware sensors of the Cybergloves and/or \"Flock of Birds\".
+the hardware sensors of the Cybergloves and/or "Flock of Birds".
 Therefore, the nodes of the corresponding packages asr_cyberglove_lib
 and/or asr_flock_of_birds should be started first. To start the servers
 directly from the PC to which the hardware is connected, use:
@@ -92,26 +92,26 @@ movements in RViz. They are included in the launch files.
 
 ### Subscribed Topics
 
-The sensor data of the Cybergloves is received as ***asr_msgs::!AsrGlove
-***messages published by the asr_cyberglove_lib server. The topics to
-listen to are:
+The sensor data of the Cybergloves is received as
+**`'asr_msgs::!AsrGlove `**'messages published by the
+asr_cyberglove_lib server. The topics to listen to are:
 
--   ***/rightGloveData_radian***
--   ***/leftGloveData_radian***
+-   **`'/rightGloveData_radian`**'
+-   **`'/leftGloveData_radian`**'
 
 The pose data of the Flock of Birds trackers is received as
-***asr_msgs::!AsrObject*** messages published by the asr_flock_of_birds
-server. The topic to listen to is:
+**`'asr_msgs::!AsrObject`**' messages published by the
+asr_flock_of_birds server. The topic to listen to is:
 
--   ***/fob_objects***
+-   **`'/fob_objects`**'
 
 ### Published Topics
 
 The current Cyberglove state data is published to the model as
-***sensor_msgs::!JointState*** messages. They are published to the
+**`'sensor_msgs::!JointState`**' messages. They are published to the
 following topic:
 
--   ***/joint_states***
+-   **`'/joint_states`**'
 
 The Flock of Birds data is published using a
-***tf::!TransformBroadcaster***.
+**`'tf::!TransformBroadcaster`**'.

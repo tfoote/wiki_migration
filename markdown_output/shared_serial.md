@@ -20,7 +20,7 @@ like in
 ```
 
 Possible port types are RS232, RS485_FTDI, RS485_EXAR, RS485_SMSC and
-TCP. For TCP, the port name is \"ip:port\". The default 3mxl baud rate
+TCP. For TCP, the port name is "ip:port". The default 3mxl baud rate
 is 921600.
 
 ## Report a Bug

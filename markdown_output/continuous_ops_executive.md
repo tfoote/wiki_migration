@@ -13,7 +13,7 @@ task does not quit within the allocated 5 minutes, it will get killed.
 When the robot does not have any scheduled tasks, it will go charge
 itself once the battery level drops below 70%.
 
-![\|width=\"750\"](attachment:executive.png)
+![\|width="750"](attachment:executive.png)
 
 ### High battery
 

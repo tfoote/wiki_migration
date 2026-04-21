@@ -3,7 +3,7 @@
 Tianbot Rosecho (Tianecho)，a Chinese speech recognition sensor for
 robots to hear the world.ROSECHO is based on iFlyTek IFLYOS system, the
 AIUI development kit.
-\'\'\'[Rosecho github repo](https://github.com/tianbot/rosecho)
+'''[Rosecho github repo](https://github.com/tianbot/rosecho)
 **[中文语音交互模块使用手册](http://doc.tianbot.com/rosecho/) **
 
 ## Installation
@@ -69,7 +69,7 @@ goal:
 ```
 
 You can use Tab to auto-complete the command and then fill in the goal:
-text: \'你好机器人\'
+text: '你好机器人'
 
 ## Simple Demo
 

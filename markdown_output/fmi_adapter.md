@@ -29,7 +29,7 @@ solver in the C programming language.
 
 fmi_adapter provides a ROS node (fmi_adapter_node.cpp), which takes an
 FMU and creates subscribers and publishers for the input and output
-variables of the FMU, respectively. Then, it runs the FMU\'s solver with
+variables of the FMU, respectively. Then, it runs the FMU's solver with
 a user-definable update period according to the ROS clock. This approach
 is illustrated in the following diagram.
 
@@ -52,18 +52,18 @@ roslaunch fmi_adapter fmi_adapter_node.launch fmu_path:=[PathToTheFMUFile]
 fmi_adapter provides a library with convenience functions based on
 common ROS types to load an FMU during runtime, to retrieve the input,
 output, and parameter names, to set timestamped input values, to run the
-FMU\'s numeric solver, and to query the resulting output. These
+FMU's numeric solver, and to query the resulting output. These
 functions are provided by the class FMIAdapter. Instances of this class
 may be integrated in application-specific ROS nodes or libraries as
 illustrated in the following architecture diagram.
 
 ![\|width=760](attachment:high-level_architecture_with_application_node.png)
 
-For parsing the XML description of an FMU and for running the FMU\'s
+For parsing the XML description of an FMU and for running the FMU's
 solver, fmi_adapter uses the C library
 [FMI Library](http://www.jmodelica.org/FMILibrary). This library is
 downloaded, compiled and linked in CMakeLists.txt of this package using
-cmake\'s *externalproject_add* command.
+cmake's *externalproject_add* command.
 
 ## Examples
 
@@ -100,7 +100,7 @@ ros::Duration stepSize(0.001);
 fmi_adapter::FMIAdapter adapter(fmuPath, stepSize);
 ```
 
-**Step 3:** Create subscribers or timers to set the FMU\'s input values.
+**Step 3:** Create subscribers or timers to set the FMU's input values.
 For example:
 
 ```
@@ -143,8 +143,8 @@ Please note that all characters in the FMU parameter names that are not
 supported by ROS are replaced by an `_`, cf.
 `FMIAdapter::rosifyName(name)`.
 
-**Step 6:** Just before starting the spin thread, exit the FMU\'s
-initialization mode and set the ROS time that refers to the FMU\'s
+**Step 6:** Just before starting the spin thread, exit the FMU's
+initialization mode and set the ROS time that refers to the FMU's
 internal timepoint 0.0.
 
 ```

@@ -26,12 +26,12 @@ rosrun rqt_reconfigure rqt_reconfigure
 ## Screenshots
 
   -- ----------------------------------------------------------------------------------- --
-     \<tablewidth=\"100%\"\> ![\|width=\"100%\"](attachment:tuw_checkerboard_rviz.png)   
+     <tablewidth="100%"> ![\|width="100%"](attachment:tuw_checkerboard_rviz.png)   
      Detected checkerboard with projection and rviz visualization in the background.     
   -- ----------------------------------------------------------------------------------- --
 
   -- ------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"100%\"\> ![\|width=\"400\"](attachment:tuw_checkerboard_dynamic_reconfigure.png)   
+     <tablewidth="100%"> ![\|width="400"](attachment:tuw_checkerboard_dynamic_reconfigure.png)   
      Dynamic reconfigure interface                                                                     
   -- ------------------------------------------------------------------------------------------------- --
 

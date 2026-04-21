@@ -12,7 +12,7 @@ robots (using [roslibjs](roslibjs)).
 -   Live Demo: <https://webviz.io/app/?demo>
 -   Maintainer status: maintained
 -   Maintainer: [Cruise](https://getcruise.com) Webviz team; contact
-    David Crawford \<david.crawford AT Cruise domain\> (Cruise domain =
+    David Crawford <david.crawford AT Cruise domain> (Cruise domain =
     getcruise.com)
 -   License:
     [Apache 2.0](https://github.com/cruise-automation/webviz/blob/master/LICENSE)
@@ -27,9 +27,9 @@ fork the project. You can even write code within Webviz itself using the
 Node Playground panel, to customize it to your needs.
 
 For more documentation on how to use Webviz and how to integrate it with
-other applications, click the \"?\" icon in the top right of the
+other applications, click the "?" icon in the top right of the
 application. Also note that each panel has in-line documentation, again
-using a \"?\" in the top right of that panel.
+using a "?" in the top right of that panel.
 
 We also have a
 [Slack workspace](https://github.com/cruise-automation/webviz/issues/461).

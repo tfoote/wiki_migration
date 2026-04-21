@@ -38,20 +38,20 @@ The launchfile contains the following types of parameters.
     want to read from each sensor. This can vary greatly between sensor
     type. See the Xsens Mti User Manual for more details. If we set this
     value to 0, it will adjust to the maximum possible frequency.
--   Override: If this parameter is true, then the device\'s current
+-   Override: If this parameter is true, then the device's current
     settings will be erased and the configuration set in the launchfile
     will be loaded to the device - Modules Enabled and Frequency. If
     this parameter is false, then the current settings will be used.
     This can be useful for configuring the device with the Windows tool
     provided by Xsens.
 -   Frame_id: This parameter will set the frame on which the topics are
-    published. Default value is \"xsens\"
+    published. Default value is "xsens"
 -   Error: This parameters will be used in the covariance matrix of
     different sensors readings. We are not completely sure of the
     correctness in this. The values were obtained from the Xsens Mti
     User Manual.
 
-Below is an example of an configuration file \"all_zero.launch\" where
+Below is an example of an configuration file "all_zero.launch" where
 all the modules are used with the maximum frequency available.
 
 ```

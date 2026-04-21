@@ -1,11 +1,11 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 This package contains a library which is used to convert image data
 structures between ROS and [IVT](http://ivt.sourceforge.net/).
 
-![\|width=\"600\",height=\"323\"](attachment:Diagramm1.png)
+![\|width="600",height="323"](attachment:Diagramm1.png)
 
 ## Functionality
 

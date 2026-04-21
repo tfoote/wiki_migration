@@ -8,7 +8,7 @@ Furthermore, GripIt provides editable parameters which governs
 particular features of the 2D and 3D scene. As a high-level overview,
 GripIt relies on machine vision algorithms to define the edges within a
 depth map. These edges are then paired and a normal vector calculated
-based on the underlying surface\'s depth map representation.
+based on the underlying surface's depth map representation.
 
 ## Installation
 
@@ -45,7 +45,7 @@ $ rosrun gripit gripit
 GripIt incorporates a set of parameters which may be used to alter the
 edge detection and point-cloud representation of the scene.
 
-**\'Parameters**\'
+**`Parameters`**
 
 -   Auto-Canny Sigma:
 
@@ -93,10 +93,10 @@ Edge-Pair View:
 The first of these tabs, EdgePairs, displays the edge-pairs located in
 the cropped scene. These edge pairs are color coded, and given numeric
 names. The underlying points defining an edge could also be viewed by
-selecting \"Display Edge Points.\" By pressing the left or right keys, a
+selecting "Display Edge Points." By pressing the left or right keys, a
 correspond 2d depth map image will be presented in the image view. To
 view the approach vector of an edge-pair, an edge-pair must be selected
-from the drop-down menu. Clicking \"process face\" generates an approach
+from the drop-down menu. Clicking "process face" generates an approach
 vector for the selected edge-pair. This vector could be viewed by
 switching to the Point-Cloud tab.
 

@@ -1,4 +1,4 @@
-This is a release of the \`async_comm\` library, following the
+This is a release of the `async_comm` library, following the
 guidelines in [REP 136](http://www.ros.org/reps/rep-0136.html).
 
 This C++ library gives a simple interface for asynchronous serial

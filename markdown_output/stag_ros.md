@@ -33,11 +33,11 @@ individual markers and the marker bundles in a yaml file
 
 ## Examples
 
-First, download the example bags. This command will \`\`\` roslaunch
-stag_ros download_examples.launch BAG_DIR \`\`\`
+First, download the example bags. This command will ``` roslaunch
+stag_ros download_examples.launch BAG_DIR ```
 
-Run any of the following launch commands. \`\`\` roslaunch stag_ros
+Run any of the following launch commands. ``` roslaunch stag_ros
 rosNode_single.launch roslaunch stag_ros rosNode_bundle_2.launch
 roslaunch stag_ros rosNode_bundle_4.launch roslaunch stag_ros
 rosNodelet_single.launch roslaunch stag_ros rosNodelet_bundle_2.launch
-roslaunch stag_ros rosNodelet_bundle_4.launch \`\`\`
+roslaunch stag_ros rosNodelet_bundle_4.launch ```

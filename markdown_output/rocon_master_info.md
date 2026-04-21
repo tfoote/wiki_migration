@@ -6,7 +6,7 @@ unique name to store, and a description/icon to relay to the human user
 of the remocon.
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<style=\"text-align: center;\" tablewidth=\"100%\"\>![](attachment:rocon_master_info/Tutorials/indigo/Publishing Master Information/rocon_master_info.png)   
+     <style="text-align: center;" tablewidth="100%">![](attachment:rocon_master_info/Tutorials/indigo/Publishing Master Information/rocon_master_info.png)   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 Refer to the [Tutorials](rocon_master_info/Tutorials) for more

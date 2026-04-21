@@ -1,16 +1,16 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 The purpose of the asr_flir_ptu_driver package is to grant control over
 pan-tilt-units (PTU) being manufactured by FLIR using ROS. This is
-achieved by making the movement of the pan-tilt-unit as well as it\'s
+achieved by making the movement of the pan-tilt-unit as well as it's
 configuration, like the movement speed or acceleration that is used,
 accessable by messages over topics. Therefore this package offers a free
 and ROS-integrated way to control FLIR pan-tilt-units with ease. You can
 see a PTU with a typical use case below.
 
-![height=\"317\",width=\"764\"\|width=\"410\",height=\"170\"](attachment:PTU.png)
+![height="317",width="764"\|width="410",height="170"](attachment:PTU.png)
 
 ## Functionality
 
@@ -20,7 +20,7 @@ The following functionalities are offered by asr_flir_ptu_driver:
     is the control of the movement of a FLIR pan-tilt-unit. Movement
     means hereby the rotation arround the pan or tilt axis, illustrated
     below with the movement direction.**
-    ![height=\"320\",width=\"695\"\|width=\"640\",height=\"294\"](attachment:ptu_movement.png)
+    ![height="320",width="695"\|width="640",height="294"](attachment:ptu_movement.png)
     ** The movement arround the pan and tilt axis is limited and
     influenced by several factors. First of all the movement is
     restricted by the physical limits of the PTU. These values are
@@ -37,10 +37,10 @@ The following functionalities are offered by asr_flir_ptu_driver:
     and tilt rotation works independendly, so to speak acceleration
     phase, deceleration phase and maximum speed phase do not get
     synchronized.
--   ![height=\"388\",width=\"400\"\|width=\"260\",height=\"252\"](attachment:acceleration_model.png)
+-   ![height="388",width="400"\|width="260",height="252"](attachment:acceleration_model.png)
 -   **PTU configuration** Another functionality of asr_flir_ptu_driver
-    is the configuration of the PTU\'s values. As mentioned in the point
-    above the PTU\'s movement is influenced by several factors, as
+    is the configuration of the PTU's values. As mentioned in the point
+    above the PTU's movement is influenced by several factors, as
     position and speed limits, start-up speed, acceleration and maximum
     speed. The configuration of this values is made possible by this
     package.
@@ -50,7 +50,7 @@ The following functionalities are offered by asr_flir_ptu_driver:
     a maximum and minimum pan/tilt value. You can see such a forbidden
     area illustrated below (the rotation angles of pan/tilt are
     illustrated in a 2d coordiante system).**
-    ![height=\"600\",width=\"727\"\|width=\"516\",height=\"425\"](attachment:forbidden_areas.png)
+    ![height="600",width="727"\|width="516",height="425"](attachment:forbidden_areas.png)
     ** The main purpouse of such forbidden areas is to restrict the PTU
     movement in a finer granularity than the minimum and maximum values
     for pan and tilt can. How the forbidden areas are interpreted
@@ -86,22 +86,22 @@ The following functionalities are offered by asr_flir_ptu_driver:
     (lines implied by the points of the associated corners of the
     forbidden areas).
 -   Now it has to be checked if the found point lies between the two
-    points of the path segment and the two points of the \"border\" of
+    points of the path segment and the two points of the "border" of
     the forbidden area. Therefore it is checked if the point lies within
     the bounding rectangle defined by both points and extended by a
-    tolerance value. Furthermore, it is checked if the point\'s distance
+    tolerance value. Furthermore, it is checked if the point's distance
     from the line is less than the same tolerance value (using distance
     calculation based on Hesse normal form). If the check is successful
     for both, the two points of the path segment and the two points of
-    the forbidden area \"border\" and the check point is legit. An
+    the forbidden area "border" and the check point is legit. An
     illustration can be found below.
 -   The path segments get processed one after another, for each path
     segment all forbidden area borders are checked. If a legit
     intersection point is found, the checking continues for the same
-    path segment with the reaming forbidden area \"borders\" of all
+    path segment with the reaming forbidden area "borders" of all
     forbidden areas, then the nearsest legit intersection point (from
     the start point) is chosen and the checking is ended. .
-    ![height=\"310\",width=\"600\"\|width=\"584\",height=\"301\"](attachment:intersection_calculation.png)
+    ![height="310",width="600"\|width="584",height="301"](attachment:intersection_calculation.png)
 
 ## Usage
 
@@ -172,24 +172,24 @@ end point. Pan and tilt movements are independent, so one movement can
 end before the other.** ** **Be aware:** path prediction does not work
 with simulation No matter how you start the GUI and whether you are
 using simulation or a real PTU the GUI will look like this:
-![\|width=\"595\",height=\"366\"](attachment:GUI.png) Originally the GUI
+![\|width="595",height="366"](attachment:GUI.png) Originally the GUI
 was not only developed for controlling the PTU, but also for visualizing
 the data delivered by a stereo camera system being mounted upon it.
 Therefore it is possible to enter up to 2 topics (1) that publish
 picture data (sensor_msgs::Image) and to visualize them (2). The PTU
-itself publishes its current status over a topic (e.g. it\'s position).
+itself publishes its current status over a topic (e.g. it's position).
 This topic has to be selected (3), usually it will look like
-\"/asr_flir_ptu/driver/\" or \"/asr_flir_ptu_driver/ptu\_\". Below it is
+"/asr_flir_ptu/driver/" or "/asr_flir_ptu_driver/ptu_". Below it is
 possible to enter the position the PTU shall rotate to in degrees for
 pan and tilt (4), right of it it is possible to modify the maximum and
 minimum pan/tilt values. Be aware that they cannot be set to a freely
 high/low value because of restrictions of the physical form of the PTU.
-These so called \"hardware limits\" can not be extended, limits out of
+These so called "hardware limits" can not be extended, limits out of
 them will be rejected. Below, further settings like acceleration,
 maxiumum speed, \... for the pan and tilt axis can be set (5). Finally,
 you can send your changes/selected movement position to the PTU all
-together by pressing the \"Update\" button (6). After you pressed the
-update button, mark the \"listen for update\" box directly above to read
+together by pressing the "Update" button (6). After you pressed the
+update button, mark the "listen for update" box directly above to read
 the response from the PTU - this will modify the values in the PTU to
 the current values of the PTU. It is recommended to mark this directly
 after starting the GUI. Always remove the mark after the update is done
@@ -332,45 +332,45 @@ found under */asr_flir_ptu_driver*.
 -   Semantic: Degree
 -   Explanation: The minimum pan angle the PTU is allowed to use.
 
-\_pan_max_angle\_
+_pan_max_angle_
 
 -   Type: double
 -   Semantic: Degree
 -   Explanation: The maximum pan angle the PTU is allowed to use.
 
-\_pan_base_speed\_
+_pan_base_speed_
 
 -   Type: int
 -   Semantic: Positions/Second
 -   Explanation: The speed at which the pan movement of the PTU
     starts/stops instantly.
 
-\_pan_target_speed\_
+_pan_target_speed_
 
 -   Type: int
 -   Semantic: Positions/Second
 -   Explanation: The speed the PTU shall accelerate to on pan axis
     during a movement.
 
-\_pan_upper_speed\_
+_pan_upper_speed_
 
 -   Type: int
 -   Semantic: Positions/Second
 -   Explanation: The upper limit for *pan_target_speed*
 
-\_pan_accel\_
+_pan_accel_
 
 -   Type: int
 -   Semantic: Position/Second²
 -   Explanation: The acceleration for the pan movement.
 
-\_pan_hold\_
+_pan_hold_
 
 -   Type: int
 -   Semantic: 0 = PTU_OFF_POWER, 1 = PTU_LOW_POWER, 2 = PTU_REG_POWER
 -   Explanation: The power level of the PTU pan axis when not moving.
 
-\_pan_move\_
+_pan_move_
 
 -   Type: double
 -   Semantic: 0 = PTU_LOW_POWER, 1 = PTU_REG_POWER, 2 = PTU_HI_POWER
@@ -444,8 +444,8 @@ found under */asr_flir_ptu_driver*.
 
 -   Type: int
 -   Explanation: Number of points that will be used to approximate paths
-    (when the path prediction is used). Higher number -\> higher
-    accuracy -\> higher runtime.
+    (when the path prediction is used). Higher number -> higher
+    accuracy -> higher runtime.
 
 *forbidden_pan_min*
 
@@ -641,7 +641,7 @@ found under */asr_flir_ptu_driver*.
     request, set to 0 if you do not want to use it). If the points are
     out of the bounds of the ptu movement space (pan/tilt limits) but
     within the margin, the point gets set to the border (e.g. margin =
-    2.5, pan upper limit = 110, pan value = 111 -\> pan value will be
+    2.5, pan upper limit = 110, pan value = 111 -> pan value will be
     set to 110 in the return value). The margin only affects pan/tilt
     limits, not forbidden areas. The validity of the point with respect
     to the margin can be determined by the response field *is_valid. *If
@@ -649,14 +649,14 @@ found under */asr_flir_ptu_driver*.
     found in the response for further requests (because of possible
     corrections done to the values).
 
-\_alive_service\_
+_alive_service_
 
 -   Type: std_srvs::Empty
 -   Usage: A service that does nothing. Used to bind a program to the
     node executing the driver for checking if the driver is still alive,
     e.g. via *if*-Statement.
 
-\_path_prediction\_
+_path_prediction_
 
 -   Type: asr_flir_ptu_driver::Predict
 -   Usage: The predict service is used to perform path prediction from
@@ -669,7 +669,7 @@ found under */asr_flir_ptu_driver*.
     within pan/tilt limits. The quality of the result is directly
     affected by the parameter *distance_factor*.
 
-\_update_settings\_
+_update_settings_
 
 -   Type: std_srvs::Empty
 -   Usage: Used to update all parameters listed in the Parameter section
@@ -677,14 +677,14 @@ found under */asr_flir_ptu_driver*.
     service will forward them to the program), EXCEPT: *ptu_base_frame*,
     *update_rate*, all mock hardware limits, *baud*, *port*, *mockPTU*
 
-\_update_speed_control\_
+_update_speed_control_
 
 -   Type: std_srvs::Empty
 -   Usage: Used to update the following speed settings (first set them
     on the parameter server, then forward them using this service):
     *speed_control*, *pan_target_speed*, *tilt_target_speed*
 
-\_get_range\_
+_get_range_
 
 -   Type: asr_flir_ptu_driver::Range
 -   Usage: This service provides the caller with the current pan/tilt

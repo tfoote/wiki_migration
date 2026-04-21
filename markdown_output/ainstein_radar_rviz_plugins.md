@@ -9,5 +9,5 @@ plugins.
 
 Currently, RViz plugins exist for the following custom message types:
 
--   \<\<MsgLink(ainstein_radar_msgs/RadarTargetArray)\>\>
--   \<\<MsgLink(ainstein_radar_msgs/RadarInfo)\>\> (WIP)
+-   <<MsgLink(ainstein_radar_msgs/RadarTargetArray)>>
+-   <<MsgLink(ainstein_radar_msgs/RadarInfo)>> (WIP)

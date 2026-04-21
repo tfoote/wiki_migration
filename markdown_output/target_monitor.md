@@ -18,7 +18,7 @@ The following packages of the
 [sensing and actuation library](https://github.com/cpswarm/sensing_actuation)
 are required:
 
--   \*\_pos_provider
+-   \*_pos_provider
 
 Further required packages are:
 

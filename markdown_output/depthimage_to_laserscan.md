@@ -8,22 +8,22 @@ Here is the scene in which the following screenshots were captured.
 
 ### DepthImage
 
-Note the \<\<MsgLink(sensor_msgs/LaserScan)\>\> overlayed in color on
-the \<\<MsgLink(sensor_msgs/Image)\>\>. Red is close to camera, purple
+Note the <<MsgLink(sensor_msgs/LaserScan)>> overlayed in color on
+the <<MsgLink(sensor_msgs/Image)>>. Red is close to camera, purple
 is far from camera.
 
 ![](attachment:depthimage.png)
 
 ### LaserScan
 
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> projected on top of the
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\>.
+<<MsgLink(sensor_msgs/LaserScan)>> projected on top of the
+<<MsgLink(sensor_msgs/PointCloud2)>>.
 
 ![](attachment:pointcloud.png)
 
 ### Top Down LaserScan
 
-Top down view of the \<\<MsgLink(sensor_msgs/LaserScan)\>\>.
+Top down view of the <<MsgLink(sensor_msgs/LaserScan)>>.
 
 ![](attachment:overhead_scan.png)
 
@@ -80,7 +80,7 @@ Same usage as the Node.
 
 Available as:
 
-\`depthimage_to_laserscan/DepthImageToLaserScanNodelet\`
+`depthimage_to_laserscan/DepthImageToLaserScanNodelet`
 
 ## Installation
 

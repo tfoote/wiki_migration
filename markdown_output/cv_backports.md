@@ -12,7 +12,7 @@ platforms.
 
 ## Usage
 
-The api has been namespaced in a separate namespace, \`cv_backports\` so
+The api has been namespaced in a separate namespace, `cv_backports` so
 as to avoid conflicts with the regular opencv api.
 
 A full listing of the api can be found in each header. Only the commonly

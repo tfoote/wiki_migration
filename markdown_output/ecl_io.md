@@ -17,10 +17,10 @@ using ecl::close_socket;      // a drop in for posix socketpair() on windoze.
 using ecl::socket_pair;       // standardises the api for closing a socket.
 ```
 
-Outside ros, you will also need to link to \`ecl_io\`.
+Outside ros, you will also need to link to `ecl_io`.
 
 ## Examples
 
--   \`src/examples/poll.cpp\`
--   \`src/examples/sockets.cpp\`
--   \`src/examples/socketpair.cpp\`
+-   `src/examples/poll.cpp`
+-   `src/examples/sockets.cpp`
+-   `src/examples/socketpair.cpp`

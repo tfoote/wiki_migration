@@ -66,7 +66,7 @@ are:
     frames, default **0.01**
 -   !MinPoseChangeToFuseData - *double* - Ensures that the model is only
     updated when motion occurs. For kinect/Xtion sensors this is a good
-    idea. Default \"0.01\"
+    idea. Default "0.01"
 -   !ConvergenceCondition - *double* - If the estimated motion
     (described by a velocity vector) has a norm less than this, do no
     further iterations. Default ** 0.0001**
@@ -90,18 +90,18 @@ ROS node.
     listen to the depth_registered topic, default **false**
 -   c_name - *string* - the name of the camera, default is **camera**.
 -   !OutputTriangles - *bool* - if enabled, will cause the node to call
-    the tracker\'s saveTriangles() method before exiting. This will
+    the tracker's saveTriangles() method before exiting. This will
     produce a file in the current directory called triangles.obj,
     generated using the marching tetrahedrons algorithm. Default
     **false**.
 -   !OutputVolume - *bool* - if enabled, will cause the node to call the
-    tracker\'s saveSDF method before exiting. This will produce a file
+    tracker's saveSDF method before exiting. This will produce a file
     in the current directory called sdf_volume.vti. This file can later
     be loaded using the loadSDF method. vti files can be opened using
     Paraview. Default **false**.
 -   !LoadVolume - *string* - Provide the filename (e.g.
-    \"sdf_volume.vti\") of the VTK image file containing an sdf volume
-    that should be loaded at start. Default **\"none\"**.
+    "sdf_volume.vti") of the VTK image file containing an sdf volume
+    that should be loaded at start. Default **"none"**.
 
 ```{=html}
 <!-- -->
@@ -117,7 +117,7 @@ rosrun sdf_tracker sdf_tracker_node _c_name:="camera2" _depth_registered:="true"
 
 This will start the node, listening to /camera2/depth_registered/image,
 using a voxel-size of 2cm in a grid of 300x256x256. Triangles will be
-dumped to \"triangles.obj\" at the end of execution, which can be viewed
+dumped to "triangles.obj" at the end of execution, which can be viewed
 in meshlab.
 
 ![](attachment:mesh.jpg)
@@ -151,8 +151,8 @@ SDFTracker myTracker(myParameters);
 
 ## Shutdown
 
-In the interactive mode, pressing *q* or *\<ESC\>* sets a flag to notify
-the node that it\'s time to shut down. Terminating the program with
+In the interactive mode, pressing *q* or *<ESC>* sets a flag to notify
+the node that it's time to shut down. Terminating the program with
 ctrl-C works, but will not output triangles.
 
 If interactive mode is not enabled, you will need to find some other way

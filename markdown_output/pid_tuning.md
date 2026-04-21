@@ -92,7 +92,7 @@ of Constraint Violation (SCV) columns. Where the Objective Function is
 the sum of all joint errors (joint space) and the SCV is calculated
 considering an Equality Constraint defined as the sum of position error
 measured at the floating base link along the Cartesian trajectory, based
-on a Constraint Handler in this case, *Deb\'s feasibility rules*. If you
+on a Constraint Handler in this case, *Deb's feasibility rules*. If you
 want to implement the constraint approach you will need to get the
 current position of the floating base link, thus you need to build an
 odometry node that publishes the odometry data in the topic: * **/odom**
@@ -119,7 +119,7 @@ Differential Evolution and Harmony Search which will be described below.
 
 ### Differential Evolution
 
-DE is based on \"Differential Mutation\" which in its rand/1/bin version
+DE is based on "Differential Mutation" which in its rand/1/bin version
 consists of adding to a vector of the population, the scaled difference
 between two vectors taken from the same population, in order to direct
 the search considering two operands: mutant factor **F** and crossing
@@ -133,8 +133,8 @@ handler for solving CNOP cases. Thus, two operators are required:
 ** This parameters must be specified by the user in the implementation
 **
 
-Applying this mechanism, the algorithm creates a \"children population
-matrix\" which is evaluated and then compared to their parents; only the
+Applying this mechanism, the algorithm creates a "children population
+matrix" which is evaluated and then compared to their parents; only the
 best individuals between the two matrices will pass to the next
 generation.
 
@@ -147,7 +147,7 @@ controllers of the robot.
 
 Harmony Search is mainly inspired in musical improvisation, on how
 musicians compose and find new harmonies; they do this based on their
-experience and improvising new harmonies combining what they\'ve already
+experience and improvising new harmonies combining what they've already
 learn and new ideas. In this case, the population matrix is called
 *Harmony Memory* and each individual is named a *harmony* composed by
 m-2 notes.
@@ -165,7 +165,7 @@ You need to install numpy and pandas.
 
 ## Installation
 
-Here you\'ll find a description on how you can install the *pid_tuning*
+Here you'll find a description on how you can install the *pid_tuning*
 package in your workspace so you can use it for your projects.
 
 1\. In the terminal, move to the catkin workspace in which you have your

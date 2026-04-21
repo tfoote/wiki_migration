@@ -23,11 +23,11 @@ Public methods:
 Instances behave as the superclass `WordCollection`. However, all added
 words are encoded as if entered via a telephone pad. Each letter group
 of the telephone pad is represented by its first letter. Example:
-\"and\" \--\> \"amd\" (phone buttons 1,5,2).
+"and" \--> "amd" (phone buttons 1,5,2).
 
 The class can thus be used to search words by entering for each real
-word\'s letters \'c\' the first letter of the telephone pad that
-contains \'c\'. For word input, clients need not concern themselves with
+word's letters 'c' the first letter of the telephone pad that
+contains 'c'. For word input, clients need not concern themselves with
 this encoding. That transformation occurs automatically.
 
 However, calls to `search_prefix()` or `contains()` must encode the real
@@ -37,6 +37,6 @@ words with the encoded version. Thus, instead of calling
 returns the encoded version.
 
 Method `search_prefix()` will usually contain a larger number of
-\'remaining possible words\' than a regular
+'remaining possible words' than a regular
 [#WordCollection](#WordCollection). This is because the mapping from
 encoded to real words is one-to-many.

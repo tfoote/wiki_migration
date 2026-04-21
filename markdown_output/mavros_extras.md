@@ -96,7 +96,7 @@ node.1 {
 
 ## Utility commands
 
-All utilities provides \<util\> \--help and \<util\> \<command\> \--help
+All utilities provides <util> \--help and <util> <command> \--help
 information.
 
 ### mavteleop
@@ -120,7 +120,7 @@ optional arguments:
 ### mavftpfuse
 
 **PX4** only. Require [fusepy](https://github.com/terencehonles/fusepy)
-package, use \`sudo pip install fusepy\`.
+package, use `sudo pip install fusepy`.
 
 ```
 usage: mavftpfuse [-h] [-n MAVROS_NS] [-v] [-d] path

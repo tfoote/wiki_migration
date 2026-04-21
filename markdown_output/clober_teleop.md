@@ -4,7 +4,7 @@
 
 ![Clober Robot\|width=400](attachment:clober/clober_right.png)
 
-**clober teleop** packages are currently under development. We\'ll be
+**clober teleop** packages are currently under development. We'll be
 launching our hardware and related packages on the coming months!
 
 ## Clober e-Manual

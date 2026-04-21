@@ -1,9 +1,9 @@
 ## Overview
 
-The \`robotino_node\` package implements the \`robotino_node\` node
-which interfaces the Robotino API2 with ROS. The \`robotino_node\`
+The `robotino_node` package implements the `robotino_node` node
+which interfaces the Robotino API2 with ROS. The `robotino_node`
 publishes the data from Robotino on various topics and also implements a
-few services. The \`robotino_node\` is also subscribed to a few topics
+few services. The `robotino_node` is also subscribed to a few topics
 to receive set values.
 
 NOTE: Kinect Support has been removed in the catkin packages. For Kinect

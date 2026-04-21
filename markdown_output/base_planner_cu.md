@@ -1,7 +1,7 @@
-![\|height=\"293\",width=\"358\"](attachment:base_planner_cu.png)
+![\|height="293",width="358"](attachment:base_planner_cu.png)
 
 This node is responsible for calculating a global path, assuming it is
-provided with a map, a goal location in that map, and the robot\'s
+provided with a map, a goal location in that map, and the robot's
 current pose.
 
 ------------------------------------------------------------------------

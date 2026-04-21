@@ -1,6 +1,6 @@
 <https://github.com/csiro-robotics/dynamixel_interface>
 
-![\|align=\"centre\"](https://i.imgur.com/HCrmRDS.gif)
+![\|align="centre"](https://i.imgur.com/HCrmRDS.gif)
 
 # Overview
 
@@ -13,8 +13,8 @@ it into the driver at launch time.
 
 Features:
 
--   Fast C++ implementation capable of controlling 10\'s of dynamixels
-    at very high (\>\>100Hz) rates.
+-   Fast C++ implementation capable of controlling 10's of dynamixels
+    at very high (>>100Hz) rates.
 -   Easily configure all dynamixels in a single yaml file
 -   Synchronous across multiple serial ports (using threaded IO)
 -   All dynamixel states/commands are exchanged via a single
@@ -134,7 +134,7 @@ driver waits before passing data up to the user application. It
 significantly affects the speed the driver will be able to communicate
 with the dynamixels, resulting in very low achievable loop rates. To
 correct this, a script is included that can change a serial port into
-\'low latency\' mode (a latency_timer value of 1), which requires the
+'low latency' mode (a latency_timer value of 1), which requires the
 installation of the setserial command:
 
 # Related Links

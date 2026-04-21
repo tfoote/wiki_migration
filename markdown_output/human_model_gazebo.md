@@ -29,6 +29,6 @@ Specify a point of spawning the model in Gazebo coordinate.
 roslaunch human_model_gazebo view_human.launch
 ```
 
-![human_model_gazebo1\|width=\"500\"](attachment:human_model_gazebo1.png)
+![human_model_gazebo1\|width="500"](attachment:human_model_gazebo1.png)
 
-![human_model_gazebo2\|width=\"500\"](attachment:human_model_gazebo2.png)
+![human_model_gazebo2\|width="500"](attachment:human_model_gazebo2.png)

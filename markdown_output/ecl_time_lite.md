@@ -26,7 +26,7 @@ using ecl::time_lite::epoch_time;
 using ecl::time_lite::cpu_time;
 ```
 
-If outside ros, you will also need to link to \`ecl_time_lite\`.
+If outside ros, you will also need to link to `ecl_time_lite`.
 
 ## Usage
 
@@ -35,8 +35,8 @@ If outside ros, you will also need to link to \`ecl_time_lite\`.
 The function epoch_time is often not exactly epoch time (i.e. secs from
 1970), but dependant on your platform. Nonetheless, it always provides a
 relative timer measuring in sec/nsecs. Note that the time is only
-guaranteed to be monotonic (i.e. it won\'t jump) if cmake has defined
-the \`ECL_HAS_CLOCK_MONOTONIC\` macro.
+guaranteed to be monotonic (i.e. it won't jump) if cmake has defined
+the `ECL_HAS_CLOCK_MONOTONIC` macro.
 
 The function cpu_time which is the amount of time that the process has
 actually spent executing on the cpu. This is sometimes useful for
@@ -44,7 +44,7 @@ benchmarking tests.
 
 ### Error Handling
 
-Use with the TimeError (an extension of [ecl_errors](ecl_errors)\'s
+Use with the TimeError (an extension of [ecl_errors](ecl_errors)'s
 Error handler) that provides time function specific verbose error
 messages.
 
@@ -62,7 +62,7 @@ if ( error.flag() != ecl::NoError) {
 ### Macros
 
 The cmake detection scripts configure the header
-\`ecl/time_lite/config.hpp\` with many macros that describe your
+`ecl/time_lite/config.hpp` with many macros that describe your
 platform and also your time implementation in detail (particularly with
 posix, there are alot of levels and optionally available api). These are
 mostly for internal purposes, but may be useful to the user.
@@ -79,4 +79,4 @@ mostly for internal purposes, but may be useful to the user.
 
 ## Examples
 
--   \`src/examples/time_functions\`
+-   `src/examples/time_functions`

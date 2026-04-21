@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/rbcar_sim.git>
 
-![RBCAR Gazebo\|width=\"600px\"](attachment:rbcar_gazebo1.png)
+![RBCAR Gazebo\|width="600px"](attachment:rbcar_gazebo1.png)
 
 ## List of packages
 

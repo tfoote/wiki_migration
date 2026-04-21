@@ -34,7 +34,7 @@ antennas.
 
 The technology offers high accuracy and reliability thanks to GNSS+
 algorithms as well as
-[Septentrio\'s Advanced Interference Monitoring and Mitigation (AIM+)](https://www.septentrio.com/en/advanced-interference-monitoring-mitigation-aim)
+[Septentrio's Advanced Interference Monitoring and Mitigation (AIM+)](https://www.septentrio.com/en/advanced-interference-monitoring-mitigation-aim)
 which protects against RF interference (jamming) and spoofing.
 
 For more information about Septentrio products go to
@@ -42,7 +42,7 @@ For more information about Septentrio products go to
 
 ## ROSaic = ROS + mosaic
 
-ROSaic is a C++ driver for Septentrio\'s mosaic receivers and beyond.
+ROSaic is a C++ driver for Septentrio's mosaic receivers and beyond.
 This ROS package publishes
 [sensor_msgs/NavSatFix](https://docs.ros.org/melodic/api/sensor_msgs/html/msg/NavSatFix.html),
 [gps_common/GPSFix](https://docs.ros.org/melodic/api/gps_common/html/msg/GPSFix.html)

@@ -20,6 +20,6 @@ If outside ros, you will also need to link to *ecl_type_traits*.
 
 -   [Numerical Limits](ecl_type_traits/Tutorials/Numerical Limits) -
     fixing a few rough edges around c++ numeric limits.
--   [The \'Is A\' Traits](ecl_type_traits/Tutorials/The 'Is A' Traits) -
-    temporary fillers for the \'is a xxx\' fundamental type traits till
+-   [The 'Is A' Traits](ecl_type_traits/Tutorials/The 'Is A' Traits) -
+    temporary fillers for the 'is a xxx' fundamental type traits till
     C++0x is widespread.

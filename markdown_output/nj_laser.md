@@ -1,8 +1,8 @@
 ## Overview
 
-The \`nj_laser\` package implements a navigation jockey for the Large
+The `nj_laser` package implements a navigation jockey for the Large
 Maps Framework ([LaMa](Large Maps Framework)) based on a
-\<\<MsgSrv(sensor_msgs/LaserScan)\>\>.
+<<MsgSrv(sensor_msgs/LaserScan)>>.
 
 The role of this jockey is to travel to the next crossing. The action is
 done when the robot reaches the crossing center. It is a reactive

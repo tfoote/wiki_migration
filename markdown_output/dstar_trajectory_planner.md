@@ -10,7 +10,7 @@
 
 ------------------------------------------------------------------------
 
-\`dstar_trajectory_planner\` is a [move_base](move_base) plugin
+`dstar_trajectory_planner` is a [move_base](move_base) plugin
 implementing global trajectory planning with
 [D\* informed incremental search algorithm](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.15.3683)
 with external optimizers. It strives to simplify the development of
@@ -53,9 +53,9 @@ DStarGlobalPlanner:
 
 ### Parameters Explained
 
-\<\<Markdown(<https://bafybeihlwdw3gkhszbmtralo5welhdmhsfoxnp5pyy5xz3dls7sg4xneai.ipfs.twdragon.net/parameters.md>)\>\>\
-Here \`cells\` should be considered as elements of
-\<\<MsgLink(nav_msgs/OccupancyGrid)\>\>.
+<<Markdown(<https://bafybeihlwdw3gkhszbmtralo5welhdmhsfoxnp5pyy5xz3dls7sg4xneai.ipfs.twdragon.net/parameters.md>)>>\
+Here `cells` should be considered as elements of
+<<MsgLink(nav_msgs/OccupancyGrid)>>.
 
 ## Development and Roadmap
 
@@ -72,7 +72,7 @@ interested ones can find the published papers here:
 
 ### Roadmap
 
-0\. Improve the initial documentation. 1. Implement the custom \"magic\"
+0\. Improve the initial documentation. 1. Implement the custom "magic"
 linked list that keeps the sorted state. 2. Avoid map copying during the
 initialization. 3. Separate area parsers completely from the kernel
 library.

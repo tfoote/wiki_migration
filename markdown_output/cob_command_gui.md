@@ -2,7 +2,7 @@
 
 ## Hardware Requirements
 
-To use this package you don\'t need any hardware, but it is intended to
+To use this package you don't need any hardware, but it is intended to
 be used with either a real Care-O-bot or a simulated one (see
 [cob_bringup](cob_bringup) or [cob_bringup_sim](cob_bringup_sim)).
 

@@ -1,8 +1,8 @@
 ## Overview
 
-This package provide a \`ros_control\` compatible controller that
+This package provide a `ros_control` compatible controller that
 publishes robot/controller state (e-stopped, in motion, etc) as
-\<\<MsgLink(industrial_msgs/RobotStatus)\>\> messages.
+<<MsgLink(industrial_msgs/RobotStatus)>> messages.
 
 ## Documentation
 
@@ -40,4 +40,4 @@ node.0 {
 
 ## Report a Bug
 
-\<\<GitHubIssues(gavanderhoorn/industrial_robot_status_controller)\>\>
+<<GitHubIssues(gavanderhoorn/industrial_robot_status_controller)>>

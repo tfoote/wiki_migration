@@ -33,7 +33,7 @@ param {
 
 When the Save Log button is pressed, each cue received by the GUI will
 be output into a file based on the formatting defined by the
-\`report_format\` parameter. The default string \`\"t\\tL\\n\"\` will
+`report_format` parameter. The default string `"t\\tL\\n"` will
 output each cue with the time elapsed since the first cue (the relative
 time) and the logged message, separated by a tab, followed by a newline.
 All the fields you can insert are listed below.

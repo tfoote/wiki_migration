@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -37,7 +37,7 @@ will be seen as recognized if the size of the cluster is above a
 specific threshold (**object_rating_min_count**). In the following
 picture the plate and two dishes have been recognized.
 
-![\|height=\"333\",width=\"333\"](attachment:found_objects.png)
+![\|height="333",width="333"](attachment:found_objects.png)
 
 To handle variations in found object positions and orientations it is
 possible to sample around the found objects. There are different
@@ -63,11 +63,11 @@ objects are long, because the angular error will grow over the distance.
 The sampled poses can be used by the asr_recognizer_prediction_ism in
 the scene_recognition. There is a parameter **objectSetMaxCount** in the
 asr_recognizer_prediction_ism to cap the maximum amount of used poses
-per object. This is neccessary because the scene_recognition doesn\'t
+per object. This is neccessary because the scene_recognition doesn't
 scale good with large number of poses at the moment. The param should be
 set to **(#Samples)\^(#InputObjects)**.
-![\|height=\"400\",width=\"500\"](attachment:sampling_orientation.png)
-![\|height=\"400\",width=\"333\"](attachment:winkelfehler.png)
+![\|height="400",width="500"](attachment:sampling_orientation.png)
+![\|height="400",width="333"](attachment:winkelfehler.png)
 
 ## Viewports
 
@@ -160,7 +160,7 @@ samples in +axis and -axis) **deviation_number_of_samples_orientation**:
 Analog for orientation
 
 **objects_to_sample**: Specify the object(s) (type and id) which should
-be sampled to reduce the combinatorial explosion. Leave blank (\"\") to
+be sampled to reduce the combinatorial explosion. Leave blank ("") to
 sample all objects. Example: !HMilkBio,0;MultivitaminJuice,0;
 
 **object_position_distance_threshold**: Threshold Vars (Determines the
@@ -204,7 +204,7 @@ testing purpose, e.g. to search only for a subset of objects. To specify
 the world_description open (maybe make backup of current version
 before):
 
-***rsc/world_descriptions/world_description.yaml***
+**`'rsc/world_descriptions/world_description.yaml`**'
 
 Following information can be inserted:
 
@@ -220,12 +220,12 @@ for segmentable objects. The default id for other objects is 0.
 Following format has to be considered (example for two objects):
 
 **recognizers_string_map:**
-\"*object_type_1*,*recognizer_name*;*object_type_2*,*recognizer_name*\"
+"*object_type_1*,*recognizer_name*;*object_type_2*,*recognizer_name*"
 **weight_string_map:**
-\"*object_type_1*,*intermediate_object_weight*;*object_type_2*,*intermediate_object_weight*\"
+"*object_type_1*,*intermediate_object_weight*;*object_type_2*,*intermediate_object_weight*"
 
 **object_string_map:**
-\"*object_type_1*&*object_id_1*,*object_count*;*object_type_2*&*object_id_2*,*object_count*\"
+"*object_type_1*&*object_id_1*,*object_count*;*object_type_2*&*object_id_2*,*object_count*"
 
 ## Needed Services
 
@@ -241,10 +241,10 @@ Viewports:
 -   viewport to push
 -   !EmptyViewportList (empty_viewport_list)
 -   remove all viewports of the given *object_type*. If object_type is
-    \"all\" or \"\", all viewports will be removed
+    "all" or "", all viewports will be removed
 -   !GetViewportList (get_viewport_list)
 -   get all viewports of the given *object_type*. If object_type is
-    \"all\" or \"\", all viewports will be returned
+    "all" or "", all viewports will be returned
 -   !FilterViewportDependingOnAlreadyVisitedViewports
     (filter_viewport_depending_on_already_visited_viewports)
 -   filters the *object_type_name_list* of the given viewport if there

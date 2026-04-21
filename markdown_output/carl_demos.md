@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_demos\` package contains various nodes and launch
+The `carl_demos` package contains various nodes and launch
 configurations for [CARL robot](carl_bot) demos, such as a web demo for
 running CARL on the [RobotsFor.Me](https://www.robotsfor.me/) project.
 
@@ -20,7 +20,7 @@ node.0 {
 
 ## Installation
 
-To install the \`carl_demos\` package, you can install from source with
+To install the `carl_demos` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_demos.git
@@ -31,8 +31,8 @@ catkin_make install
 
 ## Startup
 
-The \`carl_demos\` package contains the launch file
-\`basic_web_demo.launch\` which will launch a set of nodes on CARL to
+The `carl_demos` package contains the launch file
+`basic_web_demo.launch` which will launch a set of nodes on CARL to
 allow control of navigation and manipulation through a web interface.
 This includes tf publishing, video streaming, interactive markers,
 navigation, and an extra level of safety to allow researchers to cut off

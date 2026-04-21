@@ -25,7 +25,7 @@ Home-Automation system.
     iot_bridge.
 -   The openHAB MQTT location binding indicates that Sarah will be home
     soon and a sensor indicates that the temperature is hot. ROS
-    dispatches the robot to bring Sarah\'s favorite beer. openHAB turns
+    dispatches the robot to bring Sarah's favorite beer. openHAB turns
     on her favorite rock music and lowers the house temperature.
 -   A user clicks on the openHAB GUI on an IPAD and selects a new room
     location for the robot. The message is forwarded by the iot_bridge
@@ -70,7 +70,7 @@ cd catkin_ws/src
 
 -   Update host address and port to match your openHAB server
 
-2\. Edit openHAB\'s item file
+2\. Edit openHAB's item file
 
 -   Create the ROS group: Group ROS (All)
 -   Add the (ROS) group to each item that should send status updates to
@@ -81,7 +81,7 @@ sub-group of the (ROS) group. Note, this is only needed for status
 updates to go from openHAB to ROS - you can send commands from ROS to
 any openHAB item regardless of what group it is in.
 
-. *add ROS_Status to openHAB\'s item file*
+. *add ROS_Status to openHAB's item file*
 
 Sample Open_HAB item definition:
 
@@ -155,9 +155,9 @@ A ROS program wants to turn on a ceiling light. It publishes the
 following to the *iot_command* topic:
 
 -   message type: diagnostic_msgs/KeyValue
--   key: Light_GF_Corridor_Ceiling - key must match openHAB\'s .items
+-   key: Light_GF_Corridor_Ceiling - key must match openHAB's .items
     file
--   value: \"ON\" (string)
+-   value: "ON" (string)
 
 This will turn on the Ground Floor Corridor ceiling light. See sample
 code in iot_test.
@@ -177,8 +177,8 @@ A ROS program running Facial Detection detects that Sarah is present. It
 publishes the following to the *iot_set* topic:
 
 -   message type: diagnostic_msgs/KeyValue
--   key: \"facedetection\" - key must match openHAB\'s .items file
--   value: \"Sarah\" (string)
+-   key: "facedetection" - key must match openHAB's .items file
+-   value: "Sarah" (string)
 
 This will set the facedetection item in openHAB to Sarah, indicating
 Sarah has been detected. See sample code in iot_test.
@@ -199,8 +199,8 @@ For example: A motion detector is triggered in openHAB. The openHAB
 bridge will publish the following to the *iot_updates* topic in ROS
 
 -   message type: diagnostic_msgs/KeyValue
--   key: \"office_motion\" - key matches openHAB\'s .items file
--   value: \"1\" (string) . **NOTE - device states are ONLY published to
+-   key: "office_motion" - key matches openHAB's .items file
+-   value: "1" (string) . **NOTE - device states are ONLY published to
     ROS when they change (or when iot_bridge is started). If you need
     the current state for ALL items in the ROS group, use the Request
     Refresh interface.**
@@ -216,8 +216,8 @@ For Example:
 A ROS program publishes the following to the *iot_command* topic:
 
 -   message type: diagnostic_msgs/KeyValue
--   key: \"ROS_COMMAND\" - key must be added to openHAB\'s .items file
--   value: \"REFRESH\" (string)
+-   key: "ROS_COMMAND" - key must be added to openHAB's .items file
+-   value: "REFRESH" (string)
 
 openHAB will send the current status of every item in the (ROS) group to
 the iot_updates topic. Subsequent status will continue to send only when

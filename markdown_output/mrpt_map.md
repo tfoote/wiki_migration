@@ -2,7 +2,7 @@
 
 ### mrpt_map
 
-The \`mrpt_map\` node publishes (static, prebuilt) metric maps stored in
+The `mrpt_map` node publishes (static, prebuilt) metric maps stored in
 MRPT formats: [.simplemap](http://www.mrpt.org/robotics_file_formats/)
 or [.gridmap](http://www.mrpt.org/robotics_file_formats/).
 

@@ -1,8 +1,8 @@
 ## Overview
 
 This is an extension of [Slime](http://common-lisp.net/project/slime/)
-(a \"contrib\") that helps you to deal with ASDF systems in ROS
-packages. It also adds a REPL shortcut \`ros-load-system\` to the slime
+(a "contrib") that helps you to deal with ASDF systems in ROS
+packages. It also adds a REPL shortcut `ros-load-system` to the slime
 REPL.
 
 ## Installation
@@ -13,7 +13,7 @@ REPL.
 $ sudo apt-get install ros-DISTRO-slime-ros
 ```
 
-Then call the initialization script that generates \`.sbclrc\` in your
+Then call the initialization script that generates `.sbclrc` in your
 home directory for configuring your SBCL.
 
 ```
@@ -29,9 +29,9 @@ And then add the following to your
 
 ### From source
 
-The most up-to-date version of \`slime_ros\` code can be found
+The most up-to-date version of `slime_ros` code can be found
 [here](https://github.com/code-iai/ros_emacs_utils). Installation
-instructions are in the README file. What you\'ll need to do will be
+instructions are in the README file. What you'll need to do will be
 something like the following:
 
 ```
@@ -46,15 +46,15 @@ $ emacs -nw ~/.emacs.d/init.el # edit your emacs configuration file
 
 ## How to use
 
-If you\'ve set up your emacs init file correctly you should be able to
-start the REPL by typing \`M-x slime\`. Now, by pressing \`,\` (coma) in
-an empty REPL prompt, you can select the shortcut \`ros-load-system\`.
+If you've set up your emacs init file correctly you should be able to
+start the REPL by typing `M-x slime`. Now, by pressing `,` (coma) in
+an empty REPL prompt, you can select the shortcut `ros-load-system`.
 Press enter and select a ROS package and an ASDF system inside this ROS
 package. Slime will set the variable
-\`ros-load:\*current-ros-package\*\` and perform a load operation on the
+`ros-load:\*current-ros-package\*` and perform a load operation on the
 selected system.
 
 The package contains one customization variable,
-\`slime-ros-completion-function\`. It allows the user to select ido mode
+`slime-ros-completion-function`. It allows the user to select ido mode
 completion or similar completion mechanisms. To change its value, use
-\`M-x customize-group slime-ros\`.
+`M-x customize-group slime-ros`.

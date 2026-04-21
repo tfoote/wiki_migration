@@ -14,8 +14,8 @@ either
     (no slip detection) or
 -   pr2_tabletop_manipulation_launch/launch/pr2_tabletop_manipulation_slip.launch
     (with slip detection) NOTE: with trunk of c-turtle/d-turtle you must
-    manually edit pr2_tabletop_manipulation.launch and set \<arg
-    name=\"use_slip_controllers\" default=\"true\"/\>
+    manually edit pr2_tabletop_manipulation.launch and set <arg
+    name="use_slip_controllers" default="true"/>
 
 ## ROS API
 
@@ -123,13 +123,13 @@ param {
 ### Action APIs
 
 The reactive_grasp_server node provides implementations of
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )). The
+`SimpleActionServer` (see [ actionlib documentation](actionlib )). The
 action servers for reactive grasp and reactive approach take in goals
-containing \`object_manipulation_msgs/ReactiveGraspGoal\` messages, and
+containing `object_manipulation_msgs/ReactiveGraspGoal` messages, and
 the action server for reactive lift takes in goals containing
-\`object_manipulation_msgs/ReactiveLiftGoal\` messages. You can
+`object_manipulation_msgs/ReactiveLiftGoal` messages. You can
 communicate with these nodes over ROS directly, but the recommended way
-to send goals is by using the \`SimpleActionClient\`. Please see
+to send goals is by using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 #### Reactive Grasp Action Subscribed Topics
@@ -221,11 +221,11 @@ pub {
 Both the compliant close and grasp adjustment services use the
 std_srvs/Empty service. (If you use these services and would prefer that
 they be actions, or that they provide feedback of some sort, email
-hsiao@willowgarage.com with your suggestions, and they\'re likely to be
+hsiao@willowgarage.com with your suggestions, and they're likely to be
 implemented in a later release.)
 
 The compliant close service is called
-\`/l_reactive_grasp/compliant_close\` (or
-\`/r_reactive_grasp/compliant_close\`) and the grasp adjustment service
-is called \`/l_reactive_grasp/grasp_adjustment\` (or
-\`r_reactive_grasp/grasp_adjustment\`).
+`/l_reactive_grasp/compliant_close` (or
+`/r_reactive_grasp/compliant_close`) and the grasp adjustment service
+is called `/l_reactive_grasp/grasp_adjustment` (or
+`r_reactive_grasp/grasp_adjustment`).

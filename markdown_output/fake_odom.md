@@ -1,6 +1,6 @@
 ## Documentation
 
-To start the WheeledRobin in a faked odometry mode the \'\_fake\' launch
+To start the WheeledRobin in a faked odometry mode the '_fake' launch
 files in wheeled_robin_bringup.
 
 ## Nodes

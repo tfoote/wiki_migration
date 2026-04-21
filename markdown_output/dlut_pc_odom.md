@@ -5,7 +5,7 @@ process these data and publish pointcloud2 message.
 
 ## Usage
 
-Node \"dlut_pc_odom\" can be started by running:
+Node "dlut_pc_odom" can be started by running:
 ```shell
 rosrun dlut_pc_odom dlut_pc_odom
 ```

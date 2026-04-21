@@ -2,7 +2,7 @@
 
 This package provides a node that saves [tf](tf) based trajectory data
 given a target and and source frame. The trajectory is saved internally
-as a \<\<MsgLink(nav_msgs/Path)\>\> and can be obtained using a service
+as a <<MsgLink(nav_msgs/Path)>> and can be obtained using a service
 or topic. Internally, a tf::Transformlistener listens to [tf](tf),
 performs the necessary transformations and pushes resulting poses to the
 saved trajectory. The update and publish rates can be modified by

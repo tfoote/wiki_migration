@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(cob_3d_mapping_msgs)\>\>
+<<MsgSrvDoc(cob_3d_mapping_msgs)>>

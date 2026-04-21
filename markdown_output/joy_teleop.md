@@ -1,8 +1,8 @@
 ## Usage
 
-\`joy_teleop\` takes the output of the [joy_node](joy), and publishes
-topics or calls actions according to it\'s configuration. An example of
-using \`joy_teleop\` with TIAGo can be found on the video below.
+`joy_teleop` takes the output of the [joy_node](joy), and publishes
+topics or calls actions according to it's configuration. An example of
+using `joy_teleop` with TIAGo can be found on the video below.
 
 ![](attachment:joy_teleop_drawing.png)
 

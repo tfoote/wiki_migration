@@ -140,7 +140,7 @@ param{
 
 Mech turk ROS generates unique IDs for images to refer to images in the
 annotations. The image unique ID is formed as: `run_id.topic.secs.nsecs`
-. We replace \"/\" with \"-\" in the topic name to ensure that the UID
+. We replace "/" with "-" in the topic name to ensure that the UID
 can be used as part of a URL.
 
 This UID format is used by image_snapper and

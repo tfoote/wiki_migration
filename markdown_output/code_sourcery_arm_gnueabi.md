@@ -38,14 +38,14 @@ Depending on what kind of development you wish to do:
 
 ### Platform (Cpu) Configuration
 
-You\'ll probably want to also globally configure your
+You'll probably want to also globally configure your
 [platform module](eros_platforms) as well (i.e. the
 \$ROS_ROOT/rosconfig.cmake file). A useful example file for arm cores
-can be found in \'eros_platforms/library/arm/arm1176jzf-s.cmake\'.
+can be found in 'eros_platforms/library/arm/arm1176jzf-s.cmake'.
 
 ### Other Sourcery Toolchains
 
 If you use a 64 bit build platform or want a ulibc based toolchain,
-you\'ll have to download yourself from
+you'll have to download yourself from
 [code sourcery](http://www.codesourcery.com/sgpp/lite%5Fedition.html).
 Then make your own [custom toolchain module](eros_toolchains).

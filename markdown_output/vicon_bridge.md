@@ -5,8 +5,8 @@ NOTE: The modern, Catkinized source is now here:
 
 ```
 roslaunch vicon_bridge vicon.launch
-``` You may need to set the \"datastream_hostport\"
-parameter to your vicon computer\'s ip/hostname
+``` You may need to set the "datastream_hostport"
+parameter to your vicon computer's ip/hostname
 
 ## Operation
 
@@ -15,17 +15,17 @@ The vicon_bridge node initiates a connection with the Vicon data source
 datastream_hostport should be set to the IP address or hostname and port
 (joined with a colon) of the !DataStream server machine, e.g.
 192.168.0.254:801 (801 is the default port). The parameter
-\`stream_mode\` is used for the call to the !DataStream
-\`SetStreamMode()\` method; valid values are \`ServerPush\` and
-\`ClientPull\`. **Note:** We experienced buffering problems and
-framedrops when using \`ServerPush\` when more than one object is
-successfully tracked. We therefore recommend \`ClientPull\`,
+`stream_mode` is used for the call to the !DataStream
+`SetStreamMode()` method; valid values are `ServerPush` and
+`ClientPull`. **Note:** We experienced buffering problems and
+framedrops when using `ServerPush` when more than one object is
+successfully tracked. We therefore recommend `ClientPull`,
 unfortunately at the cost of some additional delay.
 
 All available subjects and segments are recognized automatically and are
 published as tf transform and
-\<\<MsgLink(geometry_msgs/TransformStamped)\>\> as
-\`vicon/\<subject_name\>/\<segment_name\>\`.
+<<MsgLink(geometry_msgs/TransformStamped)>> as
+`vicon/<subject_name>/<segment_name>`.
 
 ## Segment Origin Calibration
 
@@ -36,9 +36,9 @@ calibration, and measure/estimate the height (z offset) of your desired
 origin from the floor. Then run ```
 rosrun vicon_bridge calibrate <subject name> <segment name> <z offset>
 ``` Poses are
-grabbed, averaged and the vehicle is placed in the vicon\'s origin. The
+grabbed, averaged and the vehicle is placed in the vicon's origin. The
 calibration parameters are stored on the parameter server as
-/\<subject_name\>/\<segment_name\>/zero_pose (see
+/<subject_name>/<segment_name>/zero_pose (see
 [Origin Calibration Parameters](#Origin_Calibration_Parameters)). On
 startup, the node checks if calibration parameters are available. Do
 this the first time while running rviz and observe what happens (and if
@@ -46,7 +46,7 @@ everything went correct ;-) ).
 
 ## Simulating bad Data
 
-Sometimes vicon data is too perfect ;-) This motivated \`tf_distort\`,
+Sometimes vicon data is too perfect ;-) This motivated `tf_distort`,
 which adds different types of noise, adds delay or reduces the framerate
 to test how robots work with bad data. ```
 rosrun vicon_bridge tf_distort

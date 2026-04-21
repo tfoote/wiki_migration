@@ -12,7 +12,7 @@ Vapor applies to three use cases:
 -   mobile robotics
 -   cloud services
 
-If you find yourself dissatisfied with the rosmaster\'s limitations:
+If you find yourself dissatisfied with the rosmaster's limitations:
 
 -   single point of failure
 -   no hot swap capabilities
@@ -37,7 +37,7 @@ need to stop all other ROS nodes left running on other computers.
 In assembly lines and mobile robots utilizing 3 or more computers,
 vapor_master can be deployed to all compute nodes. While mongodb can be
 deployed to a minimum of 3 nodes. In this scenario the ROS_MASTER_URI
-can be set to \`http:*localhost:11311\` as if each node were its own
+can be set to `http:*localhost:11311` as if each node were its own
 rosmaster. In this way an given compute node can come and go as needed
 without preventing ros parameter access or service discovery.*
 
@@ -55,6 +55,6 @@ Vapor does not:
 -   Replace ROS 2.0
 -   Traverse NATs
 
-Vapor\'s focus is on scaling ROS 1.x for applications which require high
+Vapor's focus is on scaling ROS 1.x for applications which require high
 availability but are unable to be ported to ROS 2.0. It does not address
 the security short comings of ROS 1.

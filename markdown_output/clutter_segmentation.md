@@ -14,8 +14,8 @@ released.
 3\) Edit the file run_segmentation_PR2.py so that DATA_LOCATION points
 to the folder on your computer which contains the 3 training XML files.
 By default these files are stored in clutter_segmentation/classifiers/.
-Also right now be sure this location has sub-folders \'results\' and
-\'data\'. Roadmap: this linking will be default behavior.
+Also right now be sure this location has sub-folders 'results' and
+'data'. Roadmap: this linking will be default behavior.
 
 4\) rosmake the hrl_lib package. This is the only package that requires
 rosmake to run.
@@ -23,22 +23,22 @@ rosmake to run.
 5\) Prep: ```
 $roslaunch pr2_clutter_helper  table_snapshotter.launch
 ``` I usually run this on the PR2 itself.
-This starts saving laserscans from \'/tilt_scan\' to clouds on expected
-default topic name of \'/table_cloud\'.
+This starts saving laserscans from '/tilt_scan' to clouds on expected
+default topic name of '/table_cloud'.
 
 Data Collection Test ```
 $ rosrun pr2_clutter_helper  acquire_pr2_data.py
 ``` This will collect data
 from robot, and publish a colored-point cloud. This should pop up a
 couple of image visuals. View results in RVIZ by adding cloud topic
-listening to \"table_cloud_colored\" This test only tests ability to get
+listening to "table_cloud_colored" This test only tests ability to get
 data from PR2 and manipulate correctly.
 
 Segmentation Test ```
 $ rosrun clutter_segmentation  run_segmentation_PR2.py
 ``` This should pop up a couple
 of visuals View results in RVIZ by adding cloud topic listening to
-\"labeled_cloud\" and another for \"table_cloud_colored\"
+"labeled_cloud" and another for "table_cloud_colored"
 
 Offline Test: These tests both work with Bagged data as long as the
 \--clock attribute is set during playback.
@@ -48,7 +48,7 @@ Offline Test: These tests both work with Bagged data as long as the
 
 ## Clutter Data Set
 
-This package segments a point cloud into \'clutter\' and \'surface\' by
+This package segments a point cloud into 'clutter' and 'surface' by
 combining the 3D information with a camera image. Classifiers were
 trained from 100+ cluttered tables scans.
 
@@ -70,12 +70,12 @@ pcd format - channels are x, y, z, i (intensity), L (labels)
 
 bag format - points (x,y,z), channels (intensities, labels, r, g, b)
 
--   labels channel has values (-1, 0, 1, 2) =\> (Outside camera frame,
+-   labels channel has values (-1, 0, 1, 2) => (Outside camera frame,
     Unlabeled, Surface, Clutter)
 -   Intensities channel has values from original laser scan
 -   color channels (separate r,g,b). These three channels together
-    contain no new information compared to \'labels\'. Allows easy
-    visualization check in RVIZ. Colors are (-1, 0, 1, 2) =\> (navy,
+    contain no new information compared to 'labels'. Allows easy
+    visualization check in RVIZ. Colors are (-1, 0, 1, 2) => (navy,
     blue, green, orange)
 
 png format images
@@ -119,5 +119,5 @@ topic in RVIZ before the bag closes. I have added a color channel (adds
 channel can also be used to color the clouds. (2)
 ```
 $ rosrun pcl_visualization pcd_viewer X.pcd
-``` Doesn\'t allow viewing of the labeled \'L\'
+``` Doesn't allow viewing of the labeled 'L'
 channel as far as I can tell.

@@ -50,10 +50,10 @@ This results in 4 possibilities of storing the Property on the parameter
 server:
 
   -- --------------------------------------------- -- -------------- -- -------------------------------------- --
-     storeProperty(\"propertyName\",true,true)        *stores in *      /nodeName/componentName/propertyName   
-     storeProperty(\"propertyName\",false,true)                         /componentName/propertyName            
-     storeProperty(\"propertyName\",true,false)                         /nodeName/propertyName                 
-     storeProperty(\"propertyName\",false,false)                        /propertyName                          
+     storeProperty("propertyName",true,true)        *stores in *      /nodeName/componentName/propertyName   
+     storeProperty("propertyName",false,true)                         /componentName/propertyName            
+     storeProperty("propertyName",true,false)                         /nodeName/propertyName                 
+     storeProperty("propertyName",false,false)                        /propertyName                          
   -- --------------------------------------------- -- -------------- -- -------------------------------------- --
 
 #### Storing all properties
@@ -96,10 +96,10 @@ This results in 4 possibilities of refreshing the Property from the
 parameter server:
 
   -- ----------------------------------------------- -- ------------------- -- -------------------------------------- --
-     refreshProperty(\"propertyName\",true,true)        *refreshes from *      /nodeName/componentName/propertyName   
-     refreshProperty(\"propertyName\",false,true)                              /componentName/propertyName            
-     refreshProperty(\"propertyName\",true,false)                              /nodeName/propertyName                 
-     refreshProperty(\"propertyName\",false,false)                             /propertyName                          
+     refreshProperty("propertyName",true,true)        *refreshes from *      /nodeName/componentName/propertyName   
+     refreshProperty("propertyName",false,true)                              /componentName/propertyName            
+     refreshProperty("propertyName",true,false)                              /nodeName/propertyName                 
+     refreshProperty("propertyName",false,false)                             /propertyName                          
   -- ----------------------------------------------- -- ------------------- -- -------------------------------------- --
 
 #### Refresh all properties

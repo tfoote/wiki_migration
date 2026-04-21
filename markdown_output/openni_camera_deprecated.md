@@ -4,7 +4,7 @@ This page is provided to help users of the old driver
 [migrate their code](openni_camera_deprecated#Migration_guide), and for
 historical interest.
 
-\`openni_camera_deprecated\` is unmaintained and likely to be removed in
+`openni_camera_deprecated` is unmaintained and likely to be removed in
 Groovy.
 
 ## History
@@ -27,9 +27,9 @@ provided basic access to the depth and RGB image streams. We in the ROS
 community participated in the early development of libfreenect and wrote
 an experimental ROS driver for the Kinect.
 
-In December 2010, !PrimeSense (the company behind the Kinect\'s
+In December 2010, !PrimeSense (the company behind the Kinect's
 depth-sensing technology) released the OpenNI natural interaction
-framework. It provided fuller access to the Kinect\'s hardware as well
+framework. It provided fuller access to the Kinect's hardware as well
 as software depth registration and skeleton tracking. We quickly ported
 our ROS driver to OpenNI.
 
@@ -41,19 +41,19 @@ Diamondback in March 2011 following months of feverish development.
 
 [openni_camera](openni_camera) provides:
 
--   \`bin/openni_node\`
--   Nodelet \`openni_camera/OpenNINodelet\`
--   Example launch file \`launch/openni_node.launch\`
+-   `bin/openni_node`
+-   Nodelet `openni_camera/OpenNINodelet`
+-   Example launch file `launch/openni_node.launch`
 
 #### New API
 
 The new driver (discussed below) was backported to the Diamondback-only
 package [openni_camera_unstable](openni_camera_unstable). It provides:
 
--   \`bin/openni_node\`
--   Nodelet \`openni_camera/driver\`
--   The nodelets from Electric\'s [depth_image_proc](depth_image_proc)
--   Launch file \`launch/openni.launch\` from Electric\'s
+-   `bin/openni_node`
+-   Nodelet `openni_camera/driver`
+-   The nodelets from Electric's [depth_image_proc](depth_image_proc)
+-   Launch file `launch/openni.launch` from Electric's
     [openni_launch](openni_launch)
 
 ### Electric
@@ -64,7 +64,7 @@ same monolithic node. Over time we discovered drawbacks of the original
 ROS API, regretted its lack of flexibility, and found the codebase more
 and more difficult to extend.
 
-In Electric, we introduced a new \"unstable\" version of the driver,
+In Electric, we introduced a new "unstable" version of the driver,
 intended to eventually replace the old monolithic one. It greatly
 slimmed down the driver node(let), splitting most of the
 device-independent data processing into separate nodelets in
@@ -81,13 +81,13 @@ Accessed as in Diamondback.
 
 [openni_camera](openni_camera) also provides the new, minimal driver:
 
--   \`bin/openni_node_unstable\`
--   Nodelet \`openni_camera/driver\`
+-   `bin/openni_node_unstable`
+-   Nodelet `openni_camera/driver`
 
 [depth_image_proc](depth_image_proc) provides various nodelets for 2D/3D
 processing.
 
-[openni_launch](openni_launch) provides \`launch/openni.launch\`, which
+[openni_launch](openni_launch) provides `launch/openni.launch`, which
 composes the driver and processing nodelets into a unified system.
 
 ### Fuerte
@@ -103,23 +103,23 @@ No longer lives in [openni_camera](openni_camera). It has been split off
 into [openni_camera_deprecated](openni_camera_deprecated), which still
 provides:
 
--   \`bin/openni_node\`
--   Nodelet \`openni_camera/OpenNINodelet\`
--   Example launch file \`launch/openni_node.launch\`
+-   `bin/openni_node`
+-   Nodelet `openni_camera/OpenNINodelet`
+-   Example launch file `launch/openni_node.launch`
 
 #### New API
 
 [openni_camera](openni_camera) (now a unary stack) provides only the
 new, minimal driver:
 
--   \`bin/openni_node\` (note the renaming)
--   Nodelet \`openni_camera/driver\`
+-   `bin/openni_node` (note the renaming)
+-   Nodelet `openni_camera/driver`
 
 [depth_image_proc](depth_image_proc) has been moved to
 [image_pipeline](image_pipeline).
 
 [openni_launch](openni_launch) (also a unary stack) still provides
-\`launch/openni.launch\`. It has gained some flexibility since Electric.
+`launch/openni.launch`. It has gained some flexibility since Electric.
 
 ## Migration guide
 
@@ -129,18 +129,18 @@ In the stable API, the driver node(let) is minimal, publishing only the
 device outputs. Instead, the deprecated node(let) API corresponds
 closely to the launch file API of [openni_launch](openni_launch). If you
 need processed outputs such as point clouds, replace use of
-\`openni_camera\[\_deprecated\]/openni_node\` and
-\`openni_camera/OpenNINodelet\` with \`openni_launch\`.
+`openni_camera\[_deprecated\]/openni_node` and
+`openni_camera/OpenNINodelet` with `openni_launch`.
 
-Note the following ROS API changes between \`openni_camera_deprecated\`
-and \`openni_launch\`:
+Note the following ROS API changes between `openni_camera_deprecated`
+and `openni_launch`:
 
--   Namespace \`camera/depth/\` now contains only unregistered (in the
+-   Namespace `camera/depth/` now contains only unregistered (in the
     original depth/IR camera frame) outputs. Outputs registered to the
     RGB camera frame (including the XYZRGB point cloud) are published in
-    namespace \`camera/depth_registered/\`.
--   Topic \`camera/rgb/points\` is replaced by
-    \`camera/depth_registered/points\`.
+    namespace `camera/depth_registered/`.
+-   Topic `camera/rgb/points` is replaced by
+    `camera/depth_registered/points`.
 -   There is no longer a mechanism for publishing an indexed subset of
     points. As far as we are aware, the only use case in practice was
     selecting some (possibly down-sampled) region(s)-of-interest in the
@@ -164,7 +164,7 @@ roslaunch openni_camera_deprecated openni_node.launch
 ```
 
 The node(let) ROS API remains unchanged. The nodelet can still be loaded
-by the same name, \`openni_camera/OpenNINodelet\`.
+by the same name, `openni_camera/OpenNINodelet`.
 
 This package is scheduled for removal in Groovy. Please update your
 packages to use the stable [openni_camera](openni_camera) and
@@ -290,4 +290,4 @@ OpenNI depth registration enabled. The ROS API is as described above.
 ### kinect_frames.launch
 
 Publishes default transforms relating the IR and RGB cameras to
-[tf](tf). Included by \`openni_node.launch\`.
+[tf](tf). Included by `openni_node.launch`.

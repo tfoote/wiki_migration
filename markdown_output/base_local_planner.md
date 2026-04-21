@@ -5,13 +5,13 @@ Please be aware that the description below is not valid to all ROS distributions
 
 ## Overview
 
-The \`base_local_planner\` package provides a controller that drives a
+The `base_local_planner` package provides a controller that drives a
 mobile base in the plane. This controller serves to connect the path
 planner to the robot. Using a map, the planner creates a kinematic
 trajectory for the robot to get from a start to a goal location. Along
 the way, the planner creates, at least locally around the robot, a value
 function, represented as a grid map. This value function encodes the
-costs of traversing through the grid cells. The controller\'s job is to
+costs of traversing through the grid cells. The controller's job is to
 use this value function to determine dx,dy,dtheta velocities to send to
 the robot.
 
@@ -20,8 +20,8 @@ the robot.
 The basic idea of both the Trajectory Rollout and Dynamic Window
 Approach (DWA) algorithms is as follows:
 
-1\. Discretely sample in the robot\'s control space (dx,dy,dtheta) 1.
-For each sampled velocity, perform forward simulation from the robot\'s
+1\. Discretely sample in the robot's control space (dx,dy,dtheta) 1.
+For each sampled velocity, perform forward simulation from the robot's
 current state to predict what would happen if the sampled velocity were
 applied for some (short) period of time. 1. Evaluate (score) each
 trajectory resulting from the forward simulation, using a metric that
@@ -31,7 +31,7 @@ trajectories (those that collide with obstacles). 1. Pick the
 highest-scoring trajectory and send the associated velocity to the
 mobile base. 1. Rinse and repeat.
 
-DWA differs from Trajectory Rollout in how the robot\'s control space is
+DWA differs from Trajectory Rollout in how the robot's control space is
 sampled. Trajectory Rollout samples from the set of achievable
 velocities over the entire forward simulation period given the
 acceleration limits of the robot, while DWA samples from the set of
@@ -46,12 +46,12 @@ gains.
 
 Useful references:
 
--   [Brian P. Gerkey and Kurt Konolige. \"Planning and Control in Unstructured Terrain \"](https://pdfs.semanticscholar.org/dabd/bb636f02d3cff3d546bd1bdae96a058ba4bc.pdf?_ga=2.75374935.412017123.1520536154-80785446.1520536154).
+-   [Brian P. Gerkey and Kurt Konolige. "Planning and Control in Unstructured Terrain "](https://pdfs.semanticscholar.org/dabd/bb636f02d3cff3d546bd1bdae96a058ba4bc.pdf?_ga=2.75374935.412017123.1520536154-80785446.1520536154).
     Discussion of the Trajectory Rollout algorithm in use on the LAGR
     robot.
--   [D. Fox, W. Burgard, and S. Thrun. \"The dynamic window approach to collision avoidance\".](http://www.cs.washington.edu/ai/Mobile_Robotics/postscripts/colli-ieee.ps.gz)
+-   [D. Fox, W. Burgard, and S. Thrun. "The dynamic window approach to collision avoidance".](http://www.cs.washington.edu/ai/Mobile_Robotics/postscripts/colli-ieee.ps.gz)
     The Dynamic Window Approach to local control.
--   [Alonzo Kelly. \"An Intelligent Predictive Controller for Autonomous Vehicles\"](http://www.ri.cmu.edu/pub_files/pub1/kelly_alonzo_1994_7/kelly_alonzo_1994_7.pdf).
+-   [Alonzo Kelly. "An Intelligent Predictive Controller for Autonomous Vehicles"](http://www.ri.cmu.edu/pub_files/pub1/kelly_alonzo_1994_7/kelly_alonzo_1994_7.pdf).
     An previous system that takes a similar approach to control.
 
 ### Map Grid
@@ -68,7 +68,7 @@ This map grid is then used in the scoring of trajectories.
 
 The goal of the global path may often lie outside the small area covered
 by the map_grid, when scoring trajectories for proximity to goal, what
-is considered is the \"local goal\", meaning the first path point which
+is considered is the "local goal", meaning the first path point which
 is inside the area having a consecutive point outside the area. The size
 of the area is determined by move_base.
 
@@ -104,23 +104,23 @@ space of potential trajectories for a most suitable one.
 
 The interfaces and classes below capture the generic local planning
 principles allowing many instantiations. It should be possible to create
-custom local planners using the \`dwa_local_planner\` as template and
+custom local planners using the `dwa_local_planner` as template and
 just adding own cost functions or trajectory generators.
 
 ### TrajectorySampleGenerator
 
 This interface describes a Generator which may generate a finite or
 infinte number of trajectories, returning a new one on each invocation
-of \`nextTrajectory()\`.
+of `nextTrajectory()`.
 
-The \`SimpleTrajectoryGenerator\` class can generate trajectories
+The `SimpleTrajectoryGenerator` class can generate trajectories
 described in the overview, using either the trajectory rollout or the
 DWA principle.
 
 ### TrajectoryCostFunction
 
-This interface contains most importantly \`scoreTrajectory(Trajectory
-&traj)\`, which takes a trajectory and returns a score. A negative score
+This interface contains most importantly `scoreTrajectory(Trajectory
+&traj)`, which takes a trajectory and returns a score. A negative score
 means the trajectory is invalid. For positive value, the semantics are
 that a trajectory with a lower score is preferrable to one with a higher
 score with respect to this cost function.
@@ -128,14 +128,14 @@ score with respect to this cost function.
 Each cost function also has a scale by which its impact can be altered
 in comparison to the other cost functions.
 
-The \`base_local_planner\` package ships with some cost functions used
+The `base_local_planner` package ships with some cost functions used
 on the PR2, described below.
 
 ### SimpleScoredSamplingPlanner
 
 This is a simple implementation of a trajectory search, taking a
-\`TrajectorySampleGenerator\` and a list of \`TrajectoryCostFunction\`.
-It will invoke \`nextTrajectory()\` until the generator stops generating
+`TrajectorySampleGenerator` and a list of `TrajectoryCostFunction`.
+It will invoke `nextTrajectory()` until the generator stops generating
 trajectories. For each, trajectory, it will loop over the list of cost
 functions, adding up their positive values or aborting the scoring if
 one cost function returns a negative value.
@@ -187,7 +187,7 @@ of distances to a path or goal point for all trajectories.
 In the dwa_local_planner, this cost function is instantiated multiple
 times, for different purposes. To keep the trajectory close to the path,
 to make the robot advance towards a local goal, and also to make the
-robot front (\"nose\") point towards a local goal. This cost function is
+robot front ("nose") point towards a local goal. This cost function is
 a heuristics that can give bad results or even fail with unsuitable
 parameters.
 
@@ -209,16 +209,16 @@ may be very undesirable behavior.
 
 ## TrajectoryPlannerROS
 
-The \`base_local_planner::TrajectoryPlannerROS\` object is a
+The `base_local_planner::TrajectoryPlannerROS` object is a
 [ wrapper](navigation/ROS_Wrappers ) for a
-\`base_local_planner::TrajectoryPlanner\` object that exposes its
+`base_local_planner::TrajectoryPlanner` object that exposes its
 functionality as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It
 operates within a ROS namespace (assumed to be *name* from here on)
 specified on initialization. It adheres to the
-\`nav_core::BaseLocalPlanner\` interface found in the
+`nav_core::BaseLocalPlanner` interface found in the
 [nav_core](nav_core) package.
 
-Example creation of a \`base_local_planner::TrajectoryPlannerROS\`
+Example creation of a `base_local_planner::TrajectoryPlannerROS`
 object: ```cplusplus
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
@@ -264,7 +264,7 @@ sub {
 
 There are a large number of ROS [Parameters](Parameters) that can be set
 to customize the behavior of the
-\`base_local_planner::TrajectoryPlannerROS\` wrapper. These parameters
+`base_local_planner::TrajectoryPlannerROS` wrapper. These parameters
 are grouped into several categories: robot configuration, goal
 tolerance, forward simulation, trajectory scoring, oscillation
 prevention, and global plan.
@@ -321,7 +321,7 @@ param{
 }
 ```
 
-The following parameters are only used if \`holonomic_robot\` is set to
+The following parameters are only used if `holonomic_robot` is set to
 true:
 
 ```clearsilver
@@ -480,15 +480,15 @@ tp.initialize("my_trajectory_planner", &tf, &costmap);
 
 ## TrajectoryPlanner
 
-The \`base_local_planner::TrajectoryPlanner\` provides implementations
+The `base_local_planner::TrajectoryPlanner` provides implementations
 of the DWA and Trajectory Rollout algorithms described earlier. In order
-to use the \`base_local_planner::TrajectoryPlanner\` with ROS, please
+to use the `base_local_planner::TrajectoryPlanner` with ROS, please
 use the [TrajectoryPlannerROS wrapper](#TrajectoryPlannerROS). It is not
-recommended to use the \`base_local_planner::TrajectoryPlanner\` on its
+recommended to use the `base_local_planner::TrajectoryPlanner` on its
 own.
 
 ### API Stability
 
 The C++ API is stable. However, it is recommended that you use the
 [TrajectoryPlannerROS wrapper](#TrajectoryPlannerROS) instead of using
-the \`base_local_planner::TrajectoryPlanner\` on its own.
+the `base_local_planner::TrajectoryPlanner` on its own.

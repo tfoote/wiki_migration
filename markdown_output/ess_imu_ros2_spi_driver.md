@@ -4,9 +4,9 @@
 [ Epson IMU ROS2 Driver Node](ess_imu_driver2 )\*****
 
 ****\* This webpage will no longer be updated \* \-\-\-\-\-\-\-\-\-\-\--
-![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)****
+![\|align="right"](attachment:ess_sensors/g552.jpg)
+![\|align="right"](attachment:ess_sensors/g370.jpg)
+![\|align="right"](attachment:ess_sensors/g365.jpg)****
 
 ## Overview
 
@@ -129,7 +129,7 @@ Below is an example IMU SPI connection when using a Raspberry Pi:
 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
 1\. Place this package (including folders) into a new folder within your
-colcon workspace \"src\" folder.
+colcon workspace "src" folder.
 
 2\. Modify the [ CMakeLists.txt](CMakeLists.txt ) to select the desired
 Epson IMU model that is being used in the ROS2 system.
@@ -139,8 +139,8 @@ Epson IMU model that is being used in the ROS2 system.
 -   **NOTE: You \*MUST\* re-build using colcon when changing IMU models
     or any changes in the [ CMakeLists.txt](CMakeLists.txt )**
 
-3\. From the colcon workspace folder run \"colcon build\" to build all
-changed ROS2 packages located in the \<colcon_workspace\>/src/ folder.
+3\. From the colcon workspace folder run "colcon build" to build all
+changed ROS2 packages located in the <colcon_workspace>/src/ folder.
 
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.

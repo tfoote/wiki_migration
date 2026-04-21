@@ -118,7 +118,7 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 
 #### Examples
 
-Run the ART pilot node, accepting \`pilot/drive\` messages.
+Run the ART pilot node, accepting `pilot/drive` messages.
 
 ```
 rosrun art_pilot pilot

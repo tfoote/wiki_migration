@@ -11,7 +11,7 @@ motions and waits. The planner uses a modified version of ARA\* (Anytime
 Repairing A\*) in order to provide solutions quickly.
 
 This planner clusters contiguous blocks of timesteps for an x,y cell
-which have no collisions into \"safe intervals\". While the number of
+which have no collisions into "safe intervals". While the number of
 timesteps in an x,y cell is huge, the number of safe intervals tends be
 very small (generally on the order of the number of dynamic obstacles).
 The search is performed in the (x,y,theta,interval) state space instead

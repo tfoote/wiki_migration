@@ -54,7 +54,7 @@ roslaunch srs_arm_navigation_tests fake_dm_only.launch
 -   move_arm_to_given_positions_assisted
 -   move_arm_from_a_given_position_assisted
 -   Fake_dm will try to use [srs_grasping](srs_grasping) services to
-    obtain pregrasp position. If it\'s not possible fake ones will be
+    obtain pregrasp position. If it's not possible fake ones will be
     used (just to test visualization).
 
 ## Tutorials

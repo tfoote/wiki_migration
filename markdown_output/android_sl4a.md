@@ -66,7 +66,7 @@ Open up a terminal on your PC, have your Android device connected to
 it.```
 $ sudo adb start-server
  $ adb shell
-``` Now you can work on the device\'s shell from
+``` Now you can work on the device's shell from
 the PC and try to execute Python on it:```
 PYTHONPATH=/data/data/com.googlecode.pythonforandroid/files/python/lib/python2.6/lib-dynload
 PYTHONPATH=${PYTHONPATH}:/mnt/sdcard/com.googlecode.pythonforandroid/extras/python
@@ -121,14 +121,14 @@ The following packages are supported and automatically installed at the
 moment:
 
 -   **rospy**
--   **roslib**: Manifests are not working yet, so don\'t add
+-   **roslib**: Manifests are not working yet, so don't add
     *roslib.load_manifest(\...)* at the moment.
 -   **std_msgs**
 -   **sensor_msgs**: especially the *Image* msg
 -   **geometry_msgs**
 -   **cv_bridge**
 
-Currently we only push the ROS package\'s Python code and messages to
+Currently we only push the ROS package's Python code and messages to
 the phone. But in the next few releases we will add support for
 Manifest.xml and thus the installation of ROS Packages on Android will
 be similar to the normal installation on the PC.\
@@ -166,7 +166,7 @@ node can be started.
     *start_roscore.sh* script in *testing*/ folder. This script depends
     on [pyqrcode](http://pyqrcode.sourceforge.net/) Python module.\
     You can also generate your own QR-code using
-    [Google\'s Chart API](http://code.google.com/intl/de-DE/apis/chart/):```
+    [Google's Chart API](http://code.google.com/intl/de-DE/apis/chart/):```
 https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=ROS_MASTER_URI&chld=L|1&choe=UTF-8
 ```
     replace *ROS_MASTER_URI* with your full URI e.
@@ -197,7 +197,7 @@ requested images.\
 ## Create your own ROS node
 
 Simply develop your ROS node using *rospy* and the provided packages and
-push it to SL4A\'s script directory on the Android device:
+push it to SL4A's script directory on the Android device:
 
 ```
 adb install sl4a_r3.apk

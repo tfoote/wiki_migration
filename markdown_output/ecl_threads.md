@@ -1,15 +1,15 @@
 ## Features
 
--   \`Mutex\` - multi-thread variable protection.
--   \`Thread\` - raii style one-shot thread class.
--   \`Threadable\` - an inheritable thread interface.
+-   `Mutex` - multi-thread variable protection.
+-   `Thread` - raii style one-shot thread class.
+-   `Threadable` - an inheritable thread interface.
 
 There are also a few methods for setting thread/process priorities.
 
 ### Cross Platform Support
 
 Currently the windows code is available, but not currently present (need
-to port it from the old version of ecl) because it isn\'t getting
+to port it from the old version of ecl) because it isn't getting
 used/tested frequently. It can be added back in when and as needed
 quickly as the framework is still in place.
 

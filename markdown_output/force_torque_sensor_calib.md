@@ -96,7 +96,7 @@ param {
 
 ## Running the calibration node
 
-Make sure that the robot is still and other objects don\'t obstruct the
+Make sure that the robot is still and other objects don't obstruct the
 arms while they move into the calibration poses.
 
 You can look at the configuration/launch files in the *config* and

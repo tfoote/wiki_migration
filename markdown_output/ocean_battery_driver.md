@@ -9,12 +9,12 @@
 
 ### ocean_server
 
-\`ocean_server\` controls an array of battery controllers. The API below
+`ocean_server` controls an array of battery controllers. The API below
 is for informational purposes only; it is not intended for use by
 anything other than [power_monitor](power_monitor), which is where you
 should look for power data.
 
-The \`ocean_server\` node will report the status of the batteries to
+The `ocean_server` node will report the status of the batteries to
 diagnostics. It will warn on the diagnostics if a battery does not
 update within a timeout.
 

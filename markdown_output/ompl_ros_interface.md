@@ -2,7 +2,7 @@ This is the ROS interface to the OMPL motion planning package. This
 package will allow you to easily create and configure a motion planner
 for your robot. Most configuration is automated, however you will have
 to specify the parts of the robot for which you want to create a motion
-planner. You can also define the planner in a \"task\" space by defining
+planner. You can also define the planner in a "task" space by defining
 your own instance of a state transformation function that will convert
 back and forth between the task and configuration space of the robot.
 

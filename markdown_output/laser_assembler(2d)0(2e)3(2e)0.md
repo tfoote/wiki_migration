@@ -15,9 +15,9 @@ The general data flow can be descibed as follows:
 
 ![](attachment:assembler.png)
 
-The \`LaserScanAssemblerSrv\` simply listens to the appropriate topic
+The `LaserScanAssemblerSrv` simply listens to the appropriate topic
 and accumulates messages in a ring buffer of a specific size. When the
-\`AssembleScans\` service is called, the scans in the requested interval
+`AssembleScans` service is called, the scans in the requested interval
 are assembled into a single cloud and returned.
 
 ## ROS Interface
@@ -32,7 +32,7 @@ exact same set of parameters
 -   **tf_tolerance_secs** (double) - The time (seconds) to wait after
     the transform for scan_in is available.
 -   **max_scans** (unsigned int) - The number of scans to store in the
-    assembler\'s buffer
+    assembler's buffer
 -   **fixed_frame** (string) - A stationary frame to convert the scans
     to on reception
 -   **ignore_laser_skew** (bool) - For the laser_scan_assembler_srv
@@ -51,14 +51,14 @@ exact same set of parameters
 
 -   **scan_in** - Topic on which to receive a stream of scans (or
     clouds). The laser_scan_assembler_srv expects a stream of
-    \`LaserScan\` messages, and the point_cloud_assembler_srv expects a
-    stream of \`PointCloud\` messages
+    `LaserScan` messages, and the point_cloud_assembler_srv expects a
+    stream of `PointCloud` messages
 
 ## Interfacing with a Snapshotter
 
 There are several robot systems (including the PR2) that have an
-articulated laser sensor. In these systems, it\'s often useful to get a
-\"snapshot of the world\". This can be done by writing a snapshotter.
+articulated laser sensor. In these systems, it's often useful to get a
+"snapshot of the world". This can be done by writing a snapshotter.
 
 The general data flow can be described as follows:
 

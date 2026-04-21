@@ -32,7 +32,7 @@ system, called the wouse.
 
 ### The Wouse Device
 
-The wouse (from \"wince mouse\") is, most basically, the
+The wouse (from "wince mouse") is, most basically, the
 position-tracking components of an optical mouse mounted inside the
 temple of a pair of safety goggles. By placing the optical sensor near
 the skin of the temple, just behind the corner of the eye, the sensor
@@ -131,8 +131,8 @@ files if you wish to write over the contained data.
 
 The training data needs to be processed into the feature vectors of
 interest. Currently this is performed by *wouse/scripts/data_parser.py*
-which takes any number of data files\' filenames as inputs. In the data
-processing, mouse movements with a Euclidean magnitude \< 2.5 are
+which takes any number of data files' filenames as inputs. In the data
+processing, mouse movements with a Euclidean magnitude < 2.5 are
 ignored. This seems to be the significant majority of the data produced
 by the wouse, which is also typically uninformative noise. Subsequently,
 a feature vector is produced for each of the remaining points,
@@ -153,13 +153,13 @@ geometry_msgs/Vector3Stamped with the data. This data is received (on
 the same machine) by the second node (*wouse.py*), which normalizes the
 data and classifies the event as a wince or non-wince. If a wince is
 detected, it makes a service call to the node on the robot, which
-engages the \'run-stop\' behaviour. The *wouse.py* node on the local
-machine also maintains a regular \'heartbeat\' of service calls to the
+engages the 'run-stop' behaviour. The *wouse.py* node on the local
+machine also maintains a regular 'heartbeat' of service calls to the
 *run_stop_server.py* node on the robot. Currently, if this signal is
 lost, the robot beeps every 10s, but does not run-stop the robot.
 
-Each of the \'moving parts\' in the system have been abstracted apart
-for easier development and research. In a \'production\' system, each of
+Each of the 'moving parts' in the system have been abstracted apart
+for easier development and research. In a 'production' system, each of
 these functions should likely be condensed into a single node inside the
 real-time framework of the robot, which will enable significantly
 stronger guarantees on operation, and easily halt the robot if failures
@@ -196,7 +196,7 @@ method is to use the evdev_listener node in conjunction with the udev
 rule included in the hardware setup script (above). This udev rule will
 cause the machine with the wouse to create a device file, */dev/wouse*,
 whenever the usb plug is plugged in. The evdev_listener will then read
-the evdev event\'s from this file as the mouse reports movement. The
+the evdev event's from this file as the mouse reports movement. The
 file (modified from a version originally by Derek King) includes
 significantly better error-checking, including confirming the name of
 the device and available functions. In addition, the use of the udev
@@ -233,7 +233,7 @@ wouse node taking the file-path of the svm training data, as their only
 
 ### Recovering from a run-stop
 
-There are two ways to restore the robot\'s function after a run-stop is
+There are two ways to restore the robot's function after a run-stop is
 triggered by the wouse.
 
 #### Physical Run-stop

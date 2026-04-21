@@ -1,4 +1,4 @@
-ros-arnl provides a ROS node that incorporates Adept MobileRobots\' ARNL
+ros-arnl provides a ROS node that incorporates Adept MobileRobots' ARNL
 localization and autonomous navigation system for Adept Mobile Robots
 platforms, providing a basic ROS interface to ARNL.
 

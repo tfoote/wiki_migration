@@ -14,13 +14,13 @@ vision is desired.
 Using the [rosserial_embeddedlinux](rosserial_embeddedlinux) package,
 you can use ROS directly with the these systems. [rosserial](rosserial)
 provides a ROS communication protocol that works over your embedded
-linux system\'s serial UART, or its wifi or network connection. It
+linux system's serial UART, or its wifi or network connection. It
 allows your embedded linux system to run linux processes that are full
 fledged ROS nodes that can directly publish and subscribe to ROS topics,
 advertise services and request services, publish TF transforms, and get
 the ROS system time over any of the supported connection types.
 
-There are three environments you\'ll have to deal with when using an
+There are three environments you'll have to deal with when using an
 embedded linux system: ROS, the embedded system development environment,
 and the embedded system itself. These are depicted below.
 
@@ -75,11 +75,11 @@ ROS.
 
 ## Bugs
 
-Please file new bugs on the project\'s
+Please file new bugs on the project's
 [bug tracker](https://github.com/ros-drivers/rosserial/issues). The bugs
 listed below are the most serious, which you would want to be aware of
 when considering use of this technology. You are encouraged to
-contribute fixes. 1. Service client on the embedded system doesn\'t work
+contribute fixes. 1. Service client on the embedded system doesn't work
 reliably. (Publisher, Subscriber, and Service server are good.) This is
 true on both arduino and embeddedlinux packages. 1. Parameters are not
 supported on the embedded system. 1. APIs are not thread-safe

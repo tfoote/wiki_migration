@@ -99,24 +99,24 @@ emulation result is depending on the usage scenario.
 
 A few definitions:
 
--   \`bandwidth_limit\` is the specified link capacity to be emulated
-    (so either \`bandwidth_egress\` or \`bandwidth_ingress\` depending
+-   `bandwidth_limit` is the specified link capacity to be emulated
+    (so either `bandwidth_egress` or `bandwidth_ingress` depending
     on the direction)
--   \`tx_bandwidth\` is the rate at which data enters the emulation
+-   `tx_bandwidth` is the rate at which data enters the emulation
     mechanism (e.g. the rate at which data is sent from a process or it
     comes in from the network)
--   \`tx_bandwidth_loss_adjusted\` is the adjusted rate after applying
-    the \`loss\` specification; for example if \`tx_bandwidth\` is
-    2Mbit/s and \`loss\` is 50%, then \`tx_bandwidth_loss_adjusted\`
+-   `tx_bandwidth_loss_adjusted` is the adjusted rate after applying
+    the `loss` specification; for example if `tx_bandwidth` is
+    2Mbit/s and `loss` is 50%, then `tx_bandwidth_loss_adjusted`
     will be 1Mbit/s
--   the link is \`saturated\` when bandwidth control is in effect
-    (\`bandwidth_limit \> 0.0\`) and \`tx_bandwidth_loss_adjusted \>
-    bandwidth_limit\` (i.e. even after adjusting for loss the data rate
+-   the link is `saturated` when bandwidth control is in effect
+    (`bandwidth_limit > 0.0`) and `tx_bandwidth_loss_adjusted >
+    bandwidth_limit` (i.e. even after adjusting for loss the data rate
     is greater than the link capacity)
--   \`packet_send_time_at_capacity\` is the time to send one packet at
-    the \`bandwidth_limit\` rate (**Note:** this is where the
-    \`packet_size\` parameter comes into play!)
--   \`measured_bandwidth\`, \`measured_loss\` and \`measured_latency\`
+-   `packet_send_time_at_capacity` is the time to send one packet at
+    the `bandwidth_limit` rate (**Note:** this is where the
+    `packet_size` parameter comes into play!)
+-   `measured_bandwidth`, `measured_loss` and `measured_latency`
     are the metrics measured at the output of the emulation system (i.e.
     on the receiving end)
 
@@ -125,38 +125,38 @@ network metrics that result from the network emulator implementation:
 
 1\. When the link is **not saturated**, the metrics are as expected:
 
--   \`measured_bandwidth == tx_bandwidth_loss_adjusted\`
--   \`measured_latency == latency\`
--   \`measured_loss == loss\`
+-   `measured_bandwidth == tx_bandwidth_loss_adjusted`
+-   `measured_latency == latency`
+-   `measured_loss == loss`
 
 2\. When the link is **saturated** and **only bandwidth control** is in
-place (i.e. \`latency\` and \`loss\` are \`0.0\`). **Note that under
-this scenario all packets with size greater than \`packet_size\` will be
+place (i.e. `latency` and `loss` are `0.0`). **Note that under
+this scenario all packets with size greater than `packet_size` will be
 dropped!**
 
--   \`measured_bandwidth == bandwidth_limit\`
--   \`measured_latency == packet_send_time_at_capacity\`, is not 0ms due
+-   `measured_bandwidth == bandwidth_limit`
+-   `measured_latency == packet_send_time_at_capacity`, is not 0ms due
     to the time spent by each packet in the internal tbf queue (whose
     size is one packet)
--   \`measured_loss = 100% - bandwidth_limit/tx_bandwidth(%)\`, the
+-   `measured_loss = 100% - bandwidth_limit/tx_bandwidth(%)`, the
     percentage by which bitrate overruns the link capacity
 
 3\. When the link is **saturated** and **both bandwidth control and
 latency and/or loss control** is in place:
 
--   \`measured_bandwidth == min(bandwidth_limit,
-    tx_bandwidth_loss_adjusted)\`, either the link capacity or the loss
-    adjusted \`tx_bandwidth\`, whichever is smaller.
--   \`measured_latency\` is the specified \`latency\`, but adjusted up
-    to the nearest multiple of \`packet_send_time_at_capacity\`
--   \`measured_loss\` is either the specified \`loss\` or the \`loss\`
+-   `measured_bandwidth == min(bandwidth_limit,
+    tx_bandwidth_loss_adjusted)`, either the link capacity or the loss
+    adjusted `tx_bandwidth`, whichever is smaller.
+-   `measured_latency` is the specified `latency`, but adjusted up
+    to the nearest multiple of `packet_send_time_at_capacity`
+-   `measured_loss` is either the specified `loss` or the `loss`
     due to capacity overrun, whichever is greater
 
 ## Command-line tools
 
 There are two tools intended to help in determining the effect of a
 combination of link emulation parameters and send bitrate on the
-measured (or \"received\") metrics.
+measured (or "received") metrics.
 
 The first tool infers these values based on the algorithm described in
 the previous section while the second one actually measures them using
@@ -166,13 +166,13 @@ the loopback interface.
 
 This tool takes as parameters:
 
--   the \`bandwidth_limit\`, \`loss\` and \`latency\`
--   the \`packet_size\`
--   the \`tx_bandwidth\` and projects the expected network emulation
+-   the `bandwidth_limit`, `loss` and `latency`
+-   the `packet_size`
+-   the `tx_bandwidth` and projects the expected network emulation
     metrics:
--   \`measured_bandwidth\`
--   \`measured_latency\`
--   \`measured_loss\`
+-   `measured_bandwidth`
+-   `measured_latency`
+-   `measured_loss`
 
 For example, for a link with capacity 1Mbit/s which is saturated since
 the TX rate is 1.5MBit/s:
@@ -215,17 +215,17 @@ Projected metrics: bandwidth 400.00Kbit/s latency 20.00ms loss 20.00%
 ### measure_link_node.py
 
 In order, to verify experimentally the theoretical projections of the
-\`projected_link_metrics.py\` tool, a node (\`measure_link_node.py\`)
-and an associated launch file (\`measure_link.launch\`) have been
-created which implement the network emulation on the \`lo\` (loopback)
+`projected_link_metrics.py` tool, a node (`measure_link_node.py`)
+and an associated launch file (`measure_link.launch`) have been
+created which implement the network emulation on the `lo` (loopback)
 interface and use the [network_monitor_udp](network_monitor_udp) package
 for metric measurement.
 
 This node and the associated launch file live in the
-[network_control_tests](network_control_tests) package in the \`test/\`
+[network_control_tests](network_control_tests) package in the `test/`
 subdirectory.
 
-Here\'s an example, whose results agree quite closely with the
+Here's an example, whose results agree quite closely with the
 theoretical projection made previously:
 
 ```
@@ -242,23 +242,23 @@ theoretical projection made previously:
 
 The launch file (and node) takes the following parameters:
 
--   \`tx_bandwidth\`: the rate at which data is sent. This is the only
+-   `tx_bandwidth`: the rate at which data is sent. This is the only
     **mandatory** parameter.
--   \`bandwidth_limit\`, \`latency\`, \`loss\`: network emulation
+-   `bandwidth_limit`, `latency`, `loss`: network emulation
     parameters (they all default to 0.0 - i.e. control disabled)
--   \`packet_size\`: default 1500 bytes
--   \`max_allowed_latency\`: the maximum latency before which packets
-    are considered lost (default: 100ms). It\'s important that this
+-   `packet_size`: default 1500 bytes
+-   `max_allowed_latency`: the maximum latency before which packets
+    are considered lost (default: 100ms). It's important that this
     parameter is larger then the expected packet latency (in fact, an
     automatic check is made with an estimate obtained with the
-    \`projected_link_metrics.py\` tool and if the condition fails, the
+    `projected_link_metrics.py` tool and if the condition fails, the
     test is rejected)
--   \`max_return_time\`: this parameter is only relevant if the test is
-    ran on a \"real\" interface (i.e. not \`lo\`). It specifies the
+-   `max_return_time`: this parameter is only relevant if the test is
+    ran on a "real" interface (i.e. not `lo`). It specifies the
     maximum delay expected on the return path (i.e. one-way travel time
     on the link). Default: 0.0ms.
--   \`direction\`: \`egress\` or \`ingress\`
--   \`duration\`: in seconds (default: 10 seconds)
+-   `direction`: `egress` or `ingress`
+-   `duration`: in seconds (default: 10 seconds)
 
 Some more examples:
 
@@ -305,7 +305,7 @@ RESULTS: measured_bandwidth 394.65kbit/s measured_latency 20.19ms measured_loss 
 
 An htb qdisc is created on the root of the interface with a single htb
 class with a very high limit (10Gbps). This htb class at the root is
-needed in order to attach the filter as only classful qdisc\'s can have
+needed in order to attach the filter as only classful qdisc's can have
 filters (and tbf is classless).
 
 Next, a tbf
@@ -326,24 +326,24 @@ that described for egress is then created on this ifb interface.
 
 For bandwidth control there are three parameters of interest:
 
--   \`rate\`: the bandwidth limit
--   \`limit\`: the length of the queue in bytes. This is set to the
+-   `rate`: the bandwidth limit
+-   `limit`: the length of the queue in bytes. This is set to the
     packet size which means that exactly one packet can wait in the
     queue. If the size would be smaller than the packet size, all
     packets would be dropped. Larger limit values would mean more time
-    spent in queue when sending at a rate higher than \`rate\` (and thus
+    spent in queue when sending at a rate higher than `rate` (and thus
     a higher added latency). With the current implementation, if the
     incoming bitrate is smaller than the set limit then no delay is
     added to the total travel time of a packet while if the rate limit
-    is overran then a latency equal to one packet\'s transmission time
+    is overran then a latency equal to one packet's transmission time
     is added (e.g. 10ms for a 1500bytes packet at 1.2Mbit/s).
--   \`buffer\`: this defines the maximum packet burst that may be sent
+-   `buffer`: this defines the maximum packet burst that may be sent
     when having a fluctuating send rate. It is currently defined to be
     equal to 5 packet sizes.
 
 ### netem parameters
 
-The parameter of interest for netem is \`limit\` which defines the size
+The parameter of interest for netem is `limit` which defines the size
 of an internal queue in packets. If no bandwidth control is in place,
 then this parameter is set to a high value (1000). If there is bandwidth
 control then the value of this parameter is selected as a function of

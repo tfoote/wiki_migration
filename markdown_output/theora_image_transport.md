@@ -1,20 +1,19 @@
 ## Overview
 
-\`theora_image_transport\` is a plugin package for
+`theora_image_transport` is a plugin package for
 [image_transport](image_transport). It enables any node using
-\`image_transport\` classes to publish and subscribe to image topics
+`image_transport` classes to publish and subscribe to image topics
 compressed over the wire using the Theora video codec.
 
-\`theora_image_transport\` only works with 8-bit color or grayscale
+`theora_image_transport` only works with 8-bit color or grayscale
 images.
 
-***Before reading this page, make sure you understand the
-[image_transport](image_transport) package***
+**`'Before reading this page, make sure you understand the [[image_transport]] package`**'
 
 ## Tutorials
 
 See [image_transport/Tutorials](image_transport/Tutorials) for general
-instruction on using \`image_transport\`.
+instruction on using `image_transport`.
 
 ## ROS API
 

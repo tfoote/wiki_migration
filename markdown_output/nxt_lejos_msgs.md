@@ -13,7 +13,7 @@ details.
 Messages from the [nxt_msgs](nxt_msgs) package are also used by
 [nxt_lejos_lcp_proxy](nxt_lejos_lcp_proxy).
 
-\<\<MsgSrvDoc(nxt_lejos_msgs False)\>\>
+<<MsgSrvDoc(nxt_lejos_msgs False)>>
 
 ## Message Details
 
@@ -42,10 +42,10 @@ The commands currently supported are:
 -   backward
 -   rotateLeft
 -   rotateRight
--   travel \<distance\>
--   rotate \<angle\>
--   setRotateSpeed \<speed\>
--   setTravelSpeed \<speed\>
+-   travel <distance>
+-   rotate <angle>
+-   setRotateSpeed <speed>
+-   setTravelSpeed <speed>
 
 ### JointPosition
 

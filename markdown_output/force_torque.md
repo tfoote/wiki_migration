@@ -17,14 +17,14 @@ the same class FTClient.py (force_torque_client)
 
 ## Commands
 
-force_torque_poller and force_torque_relay both takes a \"\--name\"
+force_torque_poller and force_torque_relay both takes a "\--name"
 parameter for the user given name of the FT device. It is not important
-what these are, but it\'s important that the names given to these two
+what these are, but it's important that the names given to these two
 nodes match. This parameter is then used mainly to for the two to
 communicate via ROS. force_torque_poller takes a \--path argument to
 find the system path to the given FT device.
 
-To actually get data follow the sample code in force_torque_client\'s
+To actually get data follow the sample code in force_torque_client's
 main block.
 
 Sample launch sequence: ```
@@ -33,9 +33,9 @@ Sample launch sequence: ```
 
 ## ROS API
 
--   FT_poller\_ + USER_GIVEN_NAME: grabs data from ATI FT devices and
+-   FT_poller_ + USER_GIVEN_NAME: grabs data from ATI FT devices and
     posts results to !FTRelay using !FloatArrayService.
--   FTRelay\_ + USER_GIVEN_NAME: provides !FloatArrayService service,
+-   FTRelay_ + USER_GIVEN_NAME: provides !FloatArrayService service,
     publishes !FloatArray messages (from hrl_lib.msg).
 -   AMTIForceServer: grab sensor data from AMTI force plate, then
     publish this using !FloatArray messages (from hrl_lib.msg)

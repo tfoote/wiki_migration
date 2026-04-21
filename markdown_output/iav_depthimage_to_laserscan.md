@@ -2,22 +2,22 @@
 
 ### LaserScan
 
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> projected on top of the
-\<\<MsgLink(sensor_msgs/DepthCloud)\>\>.
+<<MsgLink(sensor_msgs/LaserScan)>> projected on top of the
+<<MsgLink(sensor_msgs/DepthCloud)>>.
 
 ![](attachment:Laserscan_pointcloud2.png)
 
 ### 3D LaserScan Example
 
-Example view of the \<\<MsgLink(sensor_msgs/LaserScan)\>\> working like
+Example view of the <<MsgLink(sensor_msgs/LaserScan)>> working like
 a 3D Laserscan.
 
 ![](attachment:Laserscann3D.png)
 
 ### Top View Laserscan - DepthCloud
 
-The image shows the \<\<MsgLink(sensor_msgs/LaserScan)\>\> overlayed in
-color on the \<\<MsgLink(sensor_msgs/DepthCloud)\>\>. Red is close to
+The image shows the <<MsgLink(sensor_msgs/LaserScan)>> overlayed in
+color on the <<MsgLink(sensor_msgs/DepthCloud)>>. Red is close to
 camera, purple is far from camera.
 
 ![](attachment:Laserscan_colors.png)

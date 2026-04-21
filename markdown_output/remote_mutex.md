@@ -27,7 +27,7 @@ RemoteMutex mutex("nameOfMutex");
 ```
 
 the new object can now be used to lock, unlock or get the status of the
-remote mutex using the object\'s methods.
+remote mutex using the object's methods.
 
 For example by calling
 

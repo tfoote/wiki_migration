@@ -12,5 +12,5 @@ variables).
 
 ![](attachment:rxparamedit.png)
 
-Note: This package replaces groovy\'s [rxparamedit](rxparamedit) in
+Note: This package replaces groovy's [rxparamedit](rxparamedit) in
 hydro.

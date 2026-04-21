@@ -2,7 +2,7 @@
 
 This package includes two object detectors which you may choose between,
 YOLOv2 and Deformable R-FCN (DRFCN). Detections from YOLOv2 are a bit
-faster, \>10fps compared to 4fps (on a Titan X), but less accurate than
+faster, >10fps compared to 4fps (on a Titan X), but less accurate than
 the detections from DRFCN.
 
 The YOLOv2 detector uses [darknet](https://github.com/pjreddie/darknet)

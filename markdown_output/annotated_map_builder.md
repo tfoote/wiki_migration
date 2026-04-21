@@ -47,4 +47,4 @@ chmod a+x src/annotated_map_builder/move_head_action.py
 
 Also, to change the head positions that are used as the robot wanders
 around change the **head_configs** parameter in the file
-\"*test/move_head.launch*\".
+"*test/move_head.launch*".

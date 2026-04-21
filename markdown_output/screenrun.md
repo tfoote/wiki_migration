@@ -9,7 +9,7 @@ passed, byobu is used instead of screen.
 
 The programs to run will be read from a local parameter *programs* that
 contains a list of programs to run. Commands will not be executed, but
-inserted into the screen as if they were typed. Thus, Ctrl-C, \<up\>,
+inserted into the screen as if they were typed. Thus, Ctrl-C, <up>,
 etc. should work. To actually run a command append \\015 (Enter) to a
 command.
 

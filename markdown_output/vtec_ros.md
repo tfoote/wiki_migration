@@ -171,7 +171,7 @@ param{
 1\. Technical Report:
 <https://github.com/visiotec/vtec/blob/master/vtec_ibgho_TR.pdf> 1.
 VisioTec C++ Libraries: <https://github.com/visiotec/vtec> 1. Geraldo
-Silveira\'s website: <https://sites.google.com/site/geraldofsilveira/>
+Silveira's website: <https://sites.google.com/site/geraldofsilveira/>
 
 ## Acknowledgment
 
@@ -182,4 +182,4 @@ under Grant 2014/50851-0).
 
 ## Report a Bug
 
-\<\<GitHubIssues(visiotec/vtec_ros)\>\>
+<<GitHubIssues(visiotec/vtec_ros)>>

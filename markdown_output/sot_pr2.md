@@ -3,7 +3,7 @@ simulation and on the robot.
 
 ## Running the simulation with PR2 in Gazebo
 
-1\. Edit the \`sot_pr2.yaml\` to add your own Python path. A cleaner way
+1\. Edit the `sot_pr2.yaml` to add your own Python path. A cleaner way
 should be implemented to replace this temporary mechanism. In this file
 you can also switch between position/force control.
 

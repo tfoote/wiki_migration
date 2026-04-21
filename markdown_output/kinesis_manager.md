@@ -1,7 +1,7 @@
 ## Overview
 
 The kinesis_manager package is a library for interacting with Amazon
-Kinesis Video Streams. It is used by the \`kinesis_video_streamer\`
+Kinesis Video Streams. It is used by the `kinesis_video_streamer`
 package.
 
 ### License

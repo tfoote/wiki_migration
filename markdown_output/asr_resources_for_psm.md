@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -12,7 +12,7 @@ operations on it.
 
 The class *Pose* describes an object pose in 3D. The position is
 represented as an *Eigen::Vector3d*, the orientation as an
-*Eigen::Quaternion\<double\>*. It offers the possibility to transform a
+*Eigen::Quaternion<double>*. It offers the possibility to transform a
 Pose into another frame.
 
 ## Usage

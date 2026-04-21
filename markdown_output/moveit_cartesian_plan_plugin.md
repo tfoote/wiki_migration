@@ -31,9 +31,9 @@ It is essential to set up the RViz enviroment and include all the
 necessary visuals in order to use the plugin. To set up the RViz
 enviroment you need to add the following visuals and the plugin:
 
-1\. On the displays menu go to Add-\>InteractiveMarkers.
+1\. On the displays menu go to Add->InteractiveMarkers.
 
-2\. To add the Plugin Widget go to: Panels-\>Add New Panel-\> Cartesian
+2\. To add the Plugin Widget go to: Panels->Add New Panel-> Cartesian
 Path Planner MoveIt Plugin.
 
 3\. In Displays go to InteractiveMarkers and set the Update Topic to:

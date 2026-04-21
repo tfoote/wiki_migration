@@ -13,13 +13,13 @@ $ ln -s $(rospack find segbot_firmware)/src/libraries .
 ``` Then run Arduino GUI: ```
 $ arduino
 ```
-Select \`File \> Sketchbook \> Libraries\` followed by the desired
-firmware version. Then, click the \`-\>\` icon to compile the microcode
+Select `File > Sketchbook > Libraries` followed by the desired
+firmware version. Then, click the `->` icon to compile the microcode
 and load it into the controller.
 
 ## ROS Driver
 
-When the firmware is loaded, start \`roscore\` and run the ROS device
+When the firmware is loaded, start `roscore` and run the ROS device
 driver: ```
 $ rosrun segbot_sensors sensor_ranges_driver
 ```

@@ -1,9 +1,8 @@
 ------------------------------------------------------------------------
 
-***This page is currently under development, please check back in the
-future for updates***
+**`'This page is currently under development, please check back in the future for updates`**'
 
-Welcome to !SynTouch\'s new ROS package **st_biotac**. !SynTouch is
+Welcome to !SynTouch's new ROS package **st_biotac**. !SynTouch is
 currently developing this package to process !BioTac data collected from
 supported hardware (such as [st_cheetah](st_cheetah)).
 
@@ -40,12 +39,12 @@ in the stack.
 
 ## ROS API
 
-*** INSERT ROS API FIGURE ***
+**`' INSERT ROS API FIGURE `**'
 
 ### Subscribed Topics
 
--   **biotacs/\<port_name\>**: the BioTac data coming from the specified
-    port (i.e. a port named \"left_hand\" would have the topic name\"
+-   **biotacs/<port_name>**: the BioTac data coming from the specified
+    port (i.e. a port named "left_hand" would have the topic name"
     biotacs/left_hand). Each sample appears as a new message for
     compatibility across different hardware. The configuration
     properties of each port are described below.
@@ -63,7 +62,7 @@ in the stack.
 -   *float64 time_stamp* The time at which samples were taken in ROS
     time.
 -   *std_msg/string channel_id* The name of the sample channel collected
-    (can be \"Pac\", \"Pdc\", \"Tac\", \"Tdc\", or *En* where n
+    (can be "Pac", "Pdc", "Tac", "Tdc", or *En* where n
     represents the electrode number, see the BioTac wiki page for
     additional details)
 -   *int16\[\] Biotac_Data* Contains an array of integers of BioTac

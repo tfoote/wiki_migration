@@ -49,7 +49,7 @@ param {
 
 ## Controllers
 
-All topics and parameters are defined in each controller\'s namespace
+All topics and parameters are defined in each controller's namespace
 
 ```clearsilver
 name = usb_cam_controllers/CameraInfoController

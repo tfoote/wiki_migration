@@ -1,6 +1,6 @@
 Each pr2 gripper is equipped with two pressure-sensitive fingertips.
 Each pressure comprises 22 pressure sensing elements: one on the back, 6
-around the edges and a 3x5 array on the front. \`fingertip_pressure\`
+around the edges and a 3x5 array on the front. `fingertip_pressure`
 provides nodes to facilitate the visualization and interpretation of the
 fingertip pressure sensor data.
 
@@ -15,8 +15,8 @@ there may be usability issues with the nodes.
 Overview of how the nodes interact with the robot sensor stream:
 [ {{attachment:overview.gif}}](attachment:overview.gif )
 
-**Note**: All nodes assume that \`\<gripper_motor_name\>\` is either
-\`r_gripper_motor\` or \`l_gripper_motor\`.
+**Note**: All nodes assume that `<gripper_motor_name>` is either
+`r_gripper_motor` or `l_gripper_motor`.
 
 ```clearsilver
 node.0 {
@@ -40,7 +40,7 @@ sub{
  1.desc= Sensor calibration, geometry and tf frame.
 }
 }
-``` Example of \`view_fingertip_pressure\` GUI:
+``` Example of `view_fingertip_pressure` GUI:
 
 [ {{attachment:fingertip_sensors_panel.png}}](attachment:fingertip_sensors_panel.png)
 ```clearsilver
@@ -91,8 +91,8 @@ pub{
 
 ### Launch files
 
-\`launch/fingertip_demo.launch\` is a standalone demo of the package\'s
-capabilities. It runs all the package\'s nodes, and rviz (to view the
+`launch/fingertip_demo.launch` is a standalone demo of the package's
+capabilities. It runs all the package's nodes, and rviz (to view the
 visualization markers). This should demonstrate all the packages
 capabilities.
 

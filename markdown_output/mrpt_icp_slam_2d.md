@@ -15,7 +15,7 @@ which suffices for many practical situations.
 
 ## Further documentation
 
-The ROS node \`mrpt_icp_slam_2d\` is a wrapper for the C++ class
+The ROS node `mrpt_icp_slam_2d` is a wrapper for the C++ class
 [mrpt::slam::CMetricMapBuilderICP](http://reference.mrpt.org/svn/classmrpt_1_1slam_1_1_c_metric_map_builder_i_c_p.html),
 part of MRPT. Thus, check out the documentation of that class for
 further details.
@@ -25,16 +25,16 @@ This node has been designed to provide an interface similar to that of
 already knew that package.
 
 For the convention on coordinate frames see
-[ROS REP 105: \"Coordinate Frames for Mobile Platforms\"](http://ros.org/reps/rep-0105.html).
+[ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
 
 ## Hardware Requirements
 
-Using \`mrpt_icp_slam_2d\` requires a horizontally-mounted, fixed, laser
+Using `mrpt_icp_slam_2d` requires a horizontally-mounted, fixed, laser
 range-finder. Odometry is optional.
 
-The \`mrpt_icp_slam_2d\` node will attempt to transform each incoming
-scan into the \`odom\` (odometry) [tf](tf) frame. See the
-\"[Required tf transforms](#tf)\" for more on required transforms.
+The `mrpt_icp_slam_2d` node will attempt to transform each incoming
+scan into the `odom` (odometry) [tf](tf) frame. See the
+"[Required tf transforms](#tf)" for more on required transforms.
 
 ## Usage
 

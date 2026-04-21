@@ -9,7 +9,7 @@ The main service provided by this package performs the following:
     [rail_pcl_object_segmentation](rail_pcl_object_segmentation)
 -   Names each object and surface, publishes them to various topics, and
     informs
-    [ MoveIt\'s Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview )
+    [ MoveIt's Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview )
     of the results
 -   Returns the named objects
 
@@ -26,7 +26,7 @@ the type !DiscoverObjects.srv.
 
 This service encapsulates the process of naming object and surface point
 clouds, publishing them to various ros topics, clearing the state of
-[MoveIt\'s Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview),
+[MoveIt's Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview),
 and adding all discovered objects and surfaces to the Planning Scene.
 
 ## Launch Files
@@ -87,10 +87,10 @@ received.
 ` ~/target_frame_id ` (string) The tf frame to transform a received
 sensor_msgs/PointCloud2 message in to before extracting objects from it.
 
-` ~/service_name ` (string, default=\"discover_objects\") The name under
+` ~/service_name ` (string, default="discover_objects") The name under
 which this service should appear in ROS.
 
-` ~/extract_objects_service_name ` (string, default=\"extract_objects\")
+` ~/extract_objects_service_name ` (string, default="extract_objects")
 The name of the service to use for extracting objects from a point
 cloud. This service must conform to !ExtractObjects.srv as defined in
 [rail_pcl_object_segmentation](rail_pcl_object_segmentation).
@@ -100,9 +100,9 @@ cloud. This service must conform to !ExtractObjects.srv as defined in
 name specified by /update_environment_service_name.
 
 ` ~/update_environment_service_name ` (string,
-default=\"update_environment\") Defines the name at which to send
+default="update_environment") Defines the name at which to send
 requests to update
-[MoveIt\'s Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview)
+[MoveIt's Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview)
 with object information, if enabled.
 
 ` ~/update_old_cloud_timestamps ` (boolean, default=false) In the event
@@ -119,19 +119,19 @@ service.
 
 #### Parameters
 
-` ~/service_name ` (string, default=\"update_environment\") The name
+` ~/service_name ` (string, default="update_environment") The name
 under which this service should appear in ROS.
 
 ` ~/bounding_box_service_name ` (string,
-default=\"find_cluster_bounding_box2\") The name at which a bounding box
+default="find_cluster_bounding_box2") The name at which a bounding box
 service which fulfills the
 [object_manipulation_msgs](object_manipulation_msgs)
 !FindClusterBoundingBox2.srv interface can be called.
 
 ` ~/output/collision_object_topic_name ` (string,
-default=\"collision_object\") The name of the topic to publish collision
+default="collision_object") The name of the topic to publish collision
 object messages suitable for consumption by
-[ MoveIt\'s Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview ).
+[ MoveIt's Planning Scene](http://moveit.ros.org/wiki/Environment_Representation/Overview ).
 
 ## Using This Package
 
@@ -141,7 +141,7 @@ then launch it with those arguments: ```
 roslaunch rail_object_discovery object_detection.launch
 ```
 
-When you wish to extract objects, call the \`/discover_objects\` service
+When you wish to extract objects, call the `/discover_objects` service
 with the desired constraints. Here are some example ones:
 ```
 rosservice call /discover_objects "constraints:
@@ -151,7 +151,7 @@ object_min_sensor_range: 0.2
   object_max_spherical_radius: 0.1
 plane_slope_tolerance: 2.0"
 ``` Alternately, you can run the
-\`extract_objects.sh\` script included in the package, which uses the
+`extract_objects.sh` script included in the package, which uses the
 constraints in the above example. ```
 rosrun rail_object_detection extract_objects.sh
 ```
@@ -159,10 +159,10 @@ rosrun rail_object_detection extract_objects.sh
 If you wish to view the extracted objects in rviz without using !MoveIt,
 you can view each extracted object and plane cloud separately by making
 a !PointCloud2 display for each of them. The objects are published to
-\`/extract_objects/object\_#\` and the planes are published to
-\`/extract_objects/plane\_#\`, where \# is 0-9.
+`/extract_objects/object_#` and the planes are published to
+`/extract_objects/plane_#`, where \# is 0-9.
 
-Furthermore, a file called \`vision.rviz\` is included in the \`extra/\`
+Furthermore, a file called `vision.rviz` is included in the `extra/`
 folder. If you paste its contents into an rviz configuration file, it
 will add a group of displays for vision-related topics, including Images
 for the rgb and depth images of the camera, !PointCloud2s for the camera

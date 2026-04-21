@@ -76,12 +76,12 @@ For example : ```
 
 Explanation :
 
--   \'name\' : The name you want to use inside the SCXML. It can be
+-   'name' : The name you want to use inside the SCXML. It can be
     different from the class name.
--   \'pkg\' : The python package where the python file containing the
+-   'pkg' : The python package where the python file containing the
     class is located.
--   \'module\' : The python path to the file containing the class.
--   \'class\' : The class name of the SSM State / SMACH State
+-   'module' : The python path to the file containing the class.
+-   'class' : The class name of the SSM State / SMACH State
 
 **WARNING : If you use a SMACH state instead of a SSM state. The
 onEntry, onExit and datamodel/userdata assignment will not be used.**
@@ -98,14 +98,14 @@ onEntry, onExit and datamodel/userdata assignment will not be used.**
 </state>
 ```
 
-Using the \'id\' \"skill\" and set the \'expr\' value to \`\`the name of
-the skill you want to use\`\`. In order to maintain the consistency of
+Using the 'id' "skill" and set the 'expr' value to ``the name of
+the skill you want to use``. In order to maintain the consistency of
 the StateMachine, you have to link every outcome of this State inside
 the SCXML. If you forget to link one, them the StateMachine consistency
 check will fail.
 
 **To help you know every outcomes/userdata of each states link inside
-the skill XML file, you can run the \"ssm_descriptor\"**
+the skill XML file, you can run the "ssm_descriptor"**
 
 This will generate a text file with a small description of every states
 and a list of outcomes and userdata. ```
@@ -122,7 +122,7 @@ are :
 *todo : generate a qt scxml file with a pre-generated states / datamodel
 to ease the authoring*
 
--   Parents states (containing other states) can\'t have a skill assign.
+-   Parents states (containing other states) can't have a skill assign.
     Only atomic states.
 
 ```{=html}
@@ -165,7 +165,7 @@ parent and then be link to the targeted state.
 
 The transition form a parallel state is a bit more complicated because
 of the multiple possible outcomes. In order to use the one that you
-want, they\'re is a syntax. The 3 following states are in a Parallel
+want, they're is a syntax. The 3 following states are in a Parallel
 state : State A has 2 possible outcomes outA1 and outA2. State B has 2
 possible outcomes possible outB1 and outB2. State C has just outC.
 
@@ -188,7 +188,7 @@ Then you will have the following SCXML :
 </parallel>
 ```
 
-The syntax that conditioning the outcome is written in the \"cond\" part
+The syntax that conditioning the outcome is written in the "cond" part
 of the transition. ```
 "/state/./outcome/" "AND/OR" "/state/./outcome/"
 ``` **For now it only support 2
@@ -210,19 +210,19 @@ Input parameter is:
 
 For example : ```
 roslaunch airbus_ssm_core ssm.launch scxml_file:=${airbus_ssm_core}/resources/defaulf.scxml
-``` There is a service to \'load\' a
+``` There is a service to 'load' a
 new SCXML file :
 
--   server_name + \'/srv/init\' (default : \'/ssm/srv/init\')
+-   server_name + '/srv/init' (default : '/ssm/srv/init')
 
 You can also use topics :
 
--   server_name + \'/start\' (default : \'/ssm/start\'), std_msgs/Empty.
+-   server_name + '/start' (default : '/ssm/start'), std_msgs/Empty.
     Trigger the execution of the state machine.
--   server_name + \'/preempt\' (default : \'/ssm/preempt\'),
+-   server_name + '/preempt' (default : '/ssm/preempt'),
     std_msgs/Empty. Trigger the interruption (premption) of the state
     machine.
--   server_name + \'/pause\' (default : \'/ssm/pause\'), std_msgs/Bool.
+-   server_name + '/pause' (default : '/ssm/pause'), std_msgs/Bool.
     If True, pause the execution of the state machine. If False, resume
     the execution.
 
@@ -246,9 +246,9 @@ of the last executed state.
 
 The following topics works as well during execution :
 
--   server_name + \'/preempt\' (default : \'/ssm/preempt\'),
+-   server_name + '/preempt' (default : '/ssm/preempt'),
     std_msgs/Empty. Trigger the interruption (premption) of the state
     machine.
--   server_name + \'/pause\' (default : \'/ssm/pause\'), std_msgs/Bool.
+-   server_name + '/pause' (default : '/ssm/pause'), std_msgs/Bool.
     If True, pause the execution of the state machine. If False, resume
     the execution.

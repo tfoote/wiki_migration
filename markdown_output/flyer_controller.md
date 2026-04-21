@@ -3,7 +3,7 @@
 ## Nodes
 
 There are several nodes (actually implemented as nodelets) that together
-perform the task of high-level control. \'High level\' in this context
+perform the task of high-level control. 'High level' in this context
 means that input is generally a state estimate, plus (optionally) user
 inputs from a joystick, and the output is commanded pitch, roll, yaw or
 yaw rate, and altitude. Other nodes, which will differ depending on the

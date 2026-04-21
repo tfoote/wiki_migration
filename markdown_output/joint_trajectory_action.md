@@ -79,7 +79,7 @@ joint_trajectory_action_node:
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-\<\<MsgLink(pr2_controllers_msgs/JointTrajectoryGoal)\>\>.
+<<MsgLink(pr2_controllers_msgs/JointTrajectoryGoal)>>.
 
 ```clearsilver
 sub {

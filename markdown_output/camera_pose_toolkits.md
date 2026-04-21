@@ -20,17 +20,17 @@ pipeline.
 This is the most important component inside this package. Its function
 can be illustrated using the following figure:
 
-![\|height=\"442px\",width=\"573\"](attachment:transform_finder.JPG)
+![\|height="442px",width="573"](attachment:transform_finder.JPG)
 
 Say, you have a robotic system that has already been calibrated, i.e.
 the tf tree of the robot is known. The tf tree has a camera frame (we
 call it the urdf cam frame). Now you rigidly attach a new camera to one
 of the robot links. You want to add the new camera frame to the tf tree.
-In other words, you want to find out the \'question mark\'
+In other words, you want to find out the 'question mark'
 transformation in the figure.
 
 To do that, the **transform_finder** module will first utilize the
-camera_pose_calibration\'s results to find out the transformation
+camera_pose_calibration's results to find out the transformation
 between the new cam frame and the urdf cam frame. Then it will look up
 tf to get the transformation between the urdf cam frame and the mounting
 frame (since both frames are already in the tf tree.). After that,
@@ -43,7 +43,7 @@ In the first one: the left wide stereo camera is chosen as the urdf
 camera (from the many cameras on the PR2 head); the Kinect is the new
 camera that we want in, and it is mounted on the left side plate. There
 are multiple joints between the stereo camera and the side plate, but
-it\'s OK, since they are in the same tf tree. The transform_finder will
+it's OK, since they are in the same tf tree. The transform_finder will
 output the static transformation between the kinect rgb frame and the
 side plate frame. Please see
 [this tutorial](http://www.ros.org/wiki/camera_pose_toolkits/Tutorials/Add_Kinect_to_PR2)
@@ -51,7 +51,7 @@ for more details.
 
   -- -------------------------------------------------------------------- --
      side-plate mounted                                                   
-     ![\|height=\"512px\",width=\"682\"](attachment:pr2-side-mount.jpg)   
+     ![\|height="512px",width="682"](attachment:pr2-side-mount.jpg)   
   -- -------------------------------------------------------------------- --
 
 In the second example, the mounting frame and urdf cam frame happen to
@@ -61,18 +61,18 @@ not needed.
 
   -- -------------------------------------------------------------------- --
      head mounted                                                         
-     ![\|height=\"512px\",width=\"682\"](attachment:pr2-head-mount.jpg)   
+     ![\|height="512px",width="682"](attachment:pr2-head-mount.jpg)   
   -- -------------------------------------------------------------------- --
 
 **urdf_updater**
 
-This module converts transform_finder\'s output into
+This module converts transform_finder's output into
 [XML Robot Description Format (URDF)](http://www.ros.org/wiki/urdf/XML)
 snippet and then inserts it into your robot description file.
 
 **static_transform_tf_broadcaster**
 
-This module collects transform_finder\'s outputs and publishes them to
+This module collects transform_finder's outputs and publishes them to
 tf. transform_finder can send transforms between different frame pairs.
 The broadcaster keeps track of the frame pairs and only save the most
 recent transform for each frame pair. Right before this module
@@ -81,10 +81,10 @@ terminates, it saves all the transform messages into a bag.
 **transform_message_saver**
 
 Every time transform_finder publishes a message to
-\'camera_pose_static_transform_update\' topic, this module saves it to a
+'camera_pose_static_transform_update' topic, this module saves it to a
 bag file. Upon start-up, if this node detects that there are previously
 saved messages in the bag, it will first try to re-publish them to tf.
-Since there is no \'append\' operation for rosbag, this node has to keep
+Since there is no 'append' operation for rosbag, this node has to keep
 an internal list of frame pairs (it only saves the most updated
 transform message for each frame pair) and then overwrite the rosbag
 file with the updated list every time. This module saves the message to
@@ -94,7 +94,7 @@ your previous calibration work.
 There is a similar node in camera_pose_calibration package. That one
 works with any topic type, but it can only saves the most recent message
 for each topic; this module only works with the
-\'camera_pose_static_transform_update\' topic (of type
+'camera_pose_static_transform_update' topic (of type
 geometry_msgs::TransformStamped), but it can save multiple messages for
 this topic.
 
@@ -122,7 +122,7 @@ when you need to calibrate the poses of multiple cameras.
 
 ### A Simplified Workflow
 
-![\|height=\"1077px\",width=\"696\"](attachment:components2.jpg)
+![\|height="1077px",width="696"](attachment:components2.jpg)
 
 In the workflow chart: black circles are nodes, red rectangles are
 topics, the black solid arrows indicate the message flows between nodes
@@ -132,7 +132,7 @@ operations (read/write). If the color of the arrow is blue, it means the
 flow is a one time deal.
 
 Note 1: this chart shows all the nodes in camera_pose_toolkits package,
-but you don\'t have to use all of them at the same time. You can use
+but you don't have to use all of them at the same time. You can use
 launch files to assemble them based on your need. ( But your launch file
 should always include transform_finder node.)
 
@@ -149,7 +149,7 @@ Note 2: the cal_optimzer node is a component of the
     Both cameras publishes image_rect and camera_info messages under
     their own namespace.
 -   The transformation between the urdf camera frame and the new
-    camera\'s mounting frame is published to tf. (**Not needed** *if the
+    camera's mounting frame is published to tf. (**Not needed** *if the
     mounting frame happens to be the urdf camera frame*)
 -   All the requirements mentioned in the
     [camera_pose_calibration](camera_pose_calibration) page.
@@ -186,20 +186,20 @@ The arguments:
 -   **headless**: suppress the aggregated image view. (as you can see,
     some of the arguments are prepared for *calibrate_2_camera.launch*)
 
-As soon as you see the \"successfully ran optimization\" image (i.e.
+As soon as you see the "successfully ran optimization" image (i.e.
 calibration finished), transform_finder will output an updated
 transformation between the new camera and its mounting frame.
 
-By default, the cal_optimizer doesn\'t monitor the transformation
+By default, the cal_optimizer doesn't monitor the transformation
 between the urdf camera frame and the mounting frame, however,if during
 the calibration, the **urdf camera frame** moves relative to the
 mounting frame, you would want the cal_optimizer node to know it and
 reset the cache for the previous measurements before running the
 optimization again.
 
-To activate cal_optimizer\'s tf monitoring and conditional cache reset
+To activate cal_optimizer's tf monitoring and conditional cache reset
 function, you need to set up a parameter
-\'optimizer_conditional_resetter_enable\' on the parameter server. In
+'optimizer_conditional_resetter_enable' on the parameter server. In
 most cases, if the urdf camera frame and the mounting frame are
 different frames, you will always want to include the following line
 
@@ -215,7 +215,7 @@ pose (relative to the mounting frame) and so the checkerboard
 measurements again. You can choose 3-5 different urdf camera poses.
 
 If you use urdf_writer node, the urdf description of the new camera
-frame will be inserted right before the \</robot\> tag. However, if the
+frame will be inserted right before the </robot> tag. However, if the
 designated input urdf file is not found in the directory, urdf_writer
 will generate an empty file with the same name and then put the urdf
 snippet in it, and you will receive a warning complaining about missing

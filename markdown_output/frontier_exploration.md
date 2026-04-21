@@ -4,33 +4,33 @@ still unsolved.
 
 ## Overview
 
-The best way to try \`frontier_exploration\` is using the demo provided
+The best way to try `frontier_exploration` is using the demo provided
 in [husky_navigation](husky_navigation), see the
 [demo tutorial](husky_navigation/Tutorials/Husky Frontier Exploration Demo).
 
 ### Functionality
 
-The \`frontier_exploration\` package provides a [costmap_2d](costmap_2d)
-layer plugin \`BoundedExploreLayer\`, and [actionlib](actionlib)
-client/server nodes \`explore_client\` and \`explore_server\`.
+The `frontier_exploration` package provides a [costmap_2d](costmap_2d)
+layer plugin `BoundedExploreLayer`, and [actionlib](actionlib)
+client/server nodes `explore_client` and `explore_server`.
 
 The provided nodes can be used to demo the functionality of the costmap
 layer by executing a frontier exploration task bounded by a user-defined
-polygon area. Layer \`BoundedExploreLayer\` can certainly be used for
+polygon area. Layer `BoundedExploreLayer` can certainly be used for
 more complex exploration tasks, functionality is exposed through two
-[Services](Services): \`UpdatePolygonBoundary\` and \`GetNextFrontier\`.
+[Services](Services): `UpdatePolygonBoundary` and `GetNextFrontier`.
 
-\<\<Youtube(3W1ufJ7rpCA&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=3W1ufJ7rpCA&rel=0)
 
 To run this demo on your host, see
 [frontier_exploration#For_running_a_demo](frontier_exploration#For_running_a_demo)
 section.
 
-Also, this video is an example of \`frontier_exploration\` integrated
+Also, this video is an example of `frontier_exploration` integrated
 with [Turtlebot](turtlebot)
 ([turtlebot_samples package is used](https://github.com/130s/turtlebot_samples)).
 
-\<\<Youtube(WMcQRpBpN1s&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=WMcQRpBpN1s&rel=0)
 
 ### Requirements
 
@@ -40,7 +40,7 @@ robot configuration that provides the following functionality:
 1\. Laser scanner or similar sensor that can clear space and mark
 obstacles. 2. Properly configured [navigation](navigation) stack that
 can accept action goals to [move_base](move_base). 3. (Optional) Global
-\`/map\` provided by [map_server](map_server), [gmapping](gmapping), or
+`/map` provided by [map_server](map_server), [gmapping](gmapping), or
 the global costmap from [move_base](move_base)
 
 ## Usage
@@ -68,21 +68,21 @@ roslaunch frontier_exploration global_map.launch
 
 RViz pops up, then a demo robot appears around the center in a map.
 
-3\. Open a \`Marker plugin\` on RViz (RViz plugins can be chosen in a
-popup window that you can open by \"Add\" button).
+3\. Open a `Marker plugin` on RViz (RViz plugins can be chosen in a
+popup window that you can open by "Add" button).
 
-4\. Pull down \"\`Displays \--\> Marker \--\> Marker Topic\`\" menu then
-select \"\`exploration_polygon_marker\`\" topic.
+4\. Pull down "`Displays \--> Marker \--> Marker Topic`" menu then
+select "`exploration_polygon_marker`" topic.
 
 5\. On the map on RViz, think of a region that you like the robot to
 explore.
 
-6\. Click \"\`Publish Point\`\" at the top of RViz.
+6\. Click "`Publish Point`" at the top of RViz.
 
-7\. Click **a single corner** of \`n\` corners of the region (n=4 if
+7\. Click **a single corner** of `n` corners of the region (n=4 if
 your region is square/rectangular, to be pedantic)．
 
-8\. Repeat step 6 and 7 above for n times. After that you\'ll see a
+8\. Repeat step 6 and 7 above for n times. After that you'll see a
 polygon with n corners.
 
 9\. Do the step 6 once again, then this time click anywhere within the
@@ -99,12 +99,12 @@ package,
 helps.
 
 If you like to understand a little more in depth, generally, when
-launched \`explore_server\` will spin until it receives an exploration
+launched `explore_server` will spin until it receives an exploration
 goal. To submit a goal:
 
-1\. Use \`explore_client\` and RViz - create a marker display in Rviz
-for the \`exploration_polygon_marker\` topic, and use the \"Click
-Point\" tool from the toolbar to mark the exploration boundary. Watch
+1\. Use `explore_client` and RViz - create a marker display in Rviz
+for the `exploration_polygon_marker` topic, and use the "Click
+Point" tool from the toolbar to mark the exploration boundary. Watch
 the ROS console for feedback regarding your selected boundary.
 
 2\. Submit a goal to the server with your own node via an
@@ -115,22 +115,22 @@ a polygonal boundary to limit the exploration scope. To run an unbounded
 exploration task, simply leave the boundary blank.
 
 Once the server receives a goal, it will create the initial exploration
-map, start processing sensor/costmap data, and issuing \`move_base\`
+map, start processing sensor/costmap data, and issuing `move_base`
 action goals. By default, the exploration task will explore all areas
 within boundary (whether previously visited or not). Sample launch files
 for several use cases are provided below.
 
 #### Exploration without /map data
 
-When running the action server/client without a global \`/map\`
-information source, enable the \`resize_to_boundary\` parameter to
-dynamically resize the map based on the action goal\'s polygon boundary.
-Error messages thrown up by \`costmap_2d\` regarding the sensor being
+When running the action server/client without a global `/map`
+information source, enable the `resize_to_boundary` parameter to
+dynamically resize the map based on the action goal's polygon boundary.
+Error messages thrown up by `costmap_2d` regarding the sensor being
 outside of map bounds will occur when the robot is traveling outside the
 exploration boundary. These can be safely ignored, and could be
-suppressed using \`rosconsole\` configuration files.
+suppressed using `rosconsole` configuration files.
 
-If not using \`resize_to_boundary\` (e.g. running unbounded
+If not using `resize_to_boundary` (e.g. running unbounded
 exploration), make sure the costmap is configured with a large enough
 height/width.
 
@@ -139,15 +139,15 @@ Sample launch file:
 
 #### Exploration with /map data
 
-When running the action server/client with a global \`/map\` information
-source (either from \`map_server\` or \`gmapping\`), the exploration
+When running the action server/client with a global `/map` information
+source (either from `map_server` or `gmapping`), the exploration
 costmap will match size/resolution to the external map source map loaded
 by the static layer, so it is important to disable the
-\`resize_to_boundary\` parameter and that the \`global_frame\` of the
+`resize_to_boundary` parameter and that the `global_frame` of the
 exploration costmap matches that of the external /map.
 
-When exploring with \`gmapping\`, you must also disable
-\`explore_clear_space\` to prevent the node from re-exploring known
+When exploring with `gmapping`, you must also disable
+`explore_clear_space` to prevent the node from re-exploring known
 areas.
 
 Sample launch file:
@@ -177,7 +177,7 @@ pub{
 
 ### explore_server
 
-The \`explore_server\` node executes exploration actions for any
+The `explore_server` node executes exploration actions for any
 connected clients. It uses a [costmap_2d](costmap_2d) object to keep
 track of the exploration progress, and creates movement goals for
 [move_base](move_base) as necessary.

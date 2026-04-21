@@ -81,4 +81,4 @@ node.0 {
 
 ## Tutorials
 
-\<\<TutorialChain(bluerov_apps/Tutorials/teleop_joy)\>\>
+<<TutorialChain(bluerov_apps/Tutorials/teleop_joy)>>

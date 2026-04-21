@@ -10,7 +10,7 @@ velocities and accelerations.
 
 The controller is templated to work with multiple trajectory
 representations. By default, a spline interpolator is provided, but
-it\'s possible to support other representations. The spline interpolator
+it's possible to support other representations. The spline interpolator
 uses the following interpolation strategies depending on the waypoint
 specification:
 
@@ -41,7 +41,7 @@ mapped to velocity (effort) commands through a PID loop. Example
 controller configurations can be found
 [here](#Controller_configuration_examples).
 
-Similarly to the trajectory representation case above, it\'s possible to
+Similarly to the trajectory representation case above, it's possible to
 support new hardware interfaces, or alternative mappings to an already
 supported interface (eg. a proxy controller for generating effort
 commands).
@@ -60,7 +60,7 @@ commands).
 
 There are two mechanisms for sending trajectories to the controller: by
 means of the **action interface** or the **topic interface**. Both use
-the \<\<MsgLink(trajectory_msgs/JointTrajectory)\>\> message to specify
+the <<MsgLink(trajectory_msgs/JointTrajectory)>> message to specify
 trajectories, and require specifying values for *all* the controller
 joints (as opposed to only a subset) if allow_partial_joints_goal is not
 set to True.
@@ -77,11 +77,11 @@ execution, the action goal is aborted and the client is notified.
 will still attempt to execute the trajectory as best as possible.
 
 The **topic interface** is a fire-and-forget alternative. Use this
-interface if you don\'t care about execution monitoring. The
-controller\'s path and goal tolerance specification is *not* used in
+interface if you don't care about execution monitoring. The
+controller's path and goal tolerance specification is *not* used in
 this case, as there is no mechanism to notify the sender about tolerance
 violations. Note that although some degree of monitoring is available
-through the \`query_state\` service and \`state\` topic (see
+through the `query_state` service and `state` topic (see
 [ROS API](#ROS_API) below), it is much more cumbersome to realize than
 with the action interface.
 
@@ -98,14 +98,14 @@ client is notified.
 Sending an **empty trajectory** message from the **topic interface**
 (not the action interface) will stop the execution of all queued
 trajectories and enter position hold mode. The
-\`stop_trajectory_duration\` parameter controls the duration of the stop
+`stop_trajectory_duration` parameter controls the duration of the stop
 motion.
 
 ### Trajectory replacement
 
 Joint trajectory messages allow to specify the time at which a new
 trajectory should start executing by means of the header timestamp,
-where zero time (the default) means *\"start now\"*.
+where zero time (the default) means *"start now"*.
 
 The arrival of a new trajectory command does *not necessarily* mean that
 the controller will completely discard the currently running trajectory
@@ -122,7 +122,7 @@ page for a detailed description of this behavior.
 
 The controller exposes a
 [control_msgs::FollowJointTrajectoryAction](http://docs.ros.org/api/control_msgs/html/action/FollowJointTrajectory.html)
-interface in the \`follow_joint_trajectory\` namespace of the
+interface in the `follow_joint_trajectory` namespace of the
 controller. See the action definition for more information on what to
 send.
 

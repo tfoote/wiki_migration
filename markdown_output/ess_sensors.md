@@ -2,9 +2,9 @@
 
 \-\-\-\-\-\-\-\-\-\-\--
 
-![\|align=\"right\"](attachment:g552.jpg)
-![\|align=\"right\"](attachment:g370.jpg)
-![\|align=\"right\"](attachment:g365.jpg)
+![\|align="right"](attachment:g552.jpg)
+![\|align="right"](attachment:g370.jpg)
+![\|align="right"](attachment:g365.jpg)
 
 ## Overview
 

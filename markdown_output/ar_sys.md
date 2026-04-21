@@ -237,5 +237,5 @@ cd ~/catkin_ws
 catkin_make
 ```4
 
-\<\<GitHubIssues(Sahloul/ar_sys)\>\> We appreciate the time and effort
+<<GitHubIssues(Sahloul/ar_sys)>> We appreciate the time and effort
 spent submitting bug reports.

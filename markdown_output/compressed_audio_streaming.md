@@ -3,9 +3,9 @@
 The transmission of audio data takes place outside of the ROS
 communication system. Knowledge of hostnames and ports is provided to
 the server and client scripts via parameters. The server and client
-scripts both require a \`client_host\` and \`client_port\`. If both
-scripts are run on the same machine \`client_host\` can be set to
-\`localhost\`.
+scripts both require a `client_host` and `client_port`. If both
+scripts are run on the same machine `client_host` can be set to
+`localhost`.
 
 Example launch file for the server: ```
 <launch>

@@ -10,5 +10,5 @@
 ## Tutorial
 
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     For information on how to use chair_recognition, read the \"How does it work\" section of the [chair_grasping](http://www.ros.org/wiki/chair_grasping) page.   
+     For information on how to use chair_recognition, read the "How does it work" section of the [chair_grasping](http://www.ros.org/wiki/chair_grasping) page.   
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------- --

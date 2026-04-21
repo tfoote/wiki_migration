@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(ixblue_ins_msgs)\>\>
+<<MsgSrvDoc(ixblue_ins_msgs)>>

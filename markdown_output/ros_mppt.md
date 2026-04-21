@@ -50,7 +50,7 @@ interface, it is possible to define more values into the package.
 ### Add the interested values into vemppt_ros
 
 Choose those values you want to send from the topic, and modify the
-python file \"vemppt_ros.py\" adding them with this structure:
+python file "vemppt_ros.py" adding them with this structure:
 
 First, define the value where the other ones are already be defined:
 ```python
@@ -70,7 +70,7 @@ elif "V" in ve_read and "P" not in ve_read: #Filter
             except Exception as e: logging.error('Exception ocurred in V', exc_info=True) #Log info register in case of error
 ```
 
-The first line is the filter, the \"important filters\" are already made
+The first line is the filter, the "important filters" are already made
 so you only need to put the label of the value into a string (see the
 example).
 

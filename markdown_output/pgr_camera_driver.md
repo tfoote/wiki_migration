@@ -6,7 +6,7 @@ cameras (Only tested with
 [Chameleon](http://www.ptgrey.com/products/chameleon/chameleon_usb_camera.asp)
 cameras both monochromatic and color).
 
-This package was branched from Patrick Bouffard\'s
+This package was branched from Patrick Bouffard's
 [ pgr_camera](https://github.com/pbouffard/ros.pgr_camera ) package.
 
 ## Third Party Requirement: FlyCapture2 SDK

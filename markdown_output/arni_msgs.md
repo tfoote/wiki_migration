@@ -8,7 +8,7 @@ information might be out of date, for recent data look here:
 
 ### HostStatistics
 
-Contains statistics about a host\'s resource usage.
+Contains statistics about a host's resource usage.
 ```
 # ip of the host  
 string host
@@ -67,7 +67,7 @@ float32[] bandwidth_max
 
 ### NodeStatistics
 
-Contains statistics about a node\'s resource usage.
+Contains statistics about a node's resource usage.
 ```
 #ip of the host this node belongs to
 string host

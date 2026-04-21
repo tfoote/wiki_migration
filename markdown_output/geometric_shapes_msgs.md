@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(geometric_shapes_msgs)\>\>
+<<MsgSrvDoc(geometric_shapes_msgs)>>
 
 ## ROS API
 

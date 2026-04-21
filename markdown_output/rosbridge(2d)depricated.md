@@ -37,9 +37,9 @@ message format section) are exchanged as normal web-socket messages.
 ## sockets
 
 To start a socket connection with rosbridge, open a socket to port 9090
-of the appropriate host and send the string \"raw\" followed by a
+of the appropriate host and send the string "raw" followed by a
 carriage return, a linefeed, another carriage return, and another
-linefeed (i.e. \"raw\\r\\n\\r\\n\" in python).
+linefeed (i.e. "raw\\r\\n\\r\\n" in python).
 
 After that, all message to or from the server should/will begin with a
 0x00 byte and end with 0xFF.
@@ -82,7 +82,7 @@ topics with the receiver set to the name of the service.
 
 For the most part, the translation of ROS to JSON is straight-forward.
 However, some ROS types (such as images) can optionally be translated
-into special forms such as data-uri\'s. For more details, see the
+into special forms such as data-uri's. For more details, see the
 rosbridge Javascript tutorial.
 
 # Special Services
@@ -91,8 +91,8 @@ The special services portions of the rosjs binding for rosbridge are
 always available, even when rosbridge is being accessed from another
 language or over pure sockets. These services are how rosbridge clients
 discover and subscribe to topics, discover services, and perform other
-tasks. For a full description of these services read the \"rosjs
-Services\" section of the Javascript rosbridge tutorial.
+tasks. For a full description of these services read the "rosjs
+Services" section of the Javascript rosbridge tutorial.
 
 # Writing a rosbridge client
 

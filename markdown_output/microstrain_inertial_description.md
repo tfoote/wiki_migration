@@ -1,7 +1,7 @@
 ## Overview
 
-The \`microstrain_inertial_description\` package contains a collection
-of \`.urdf.xacro\` files that can be included in a user\'s robot
+The `microstrain_inertial_description` package contains a collection
+of `.urdf.xacro` files that can be included in a user's robot
 description to easily integrate MicroStrain sensors on their platform
 and in the tf tree.
 
@@ -9,8 +9,8 @@ and in the tf tree.
 
 ## Usage
 
-Simply include the desired \`.urdf.xacro\` file in your robot\'s
-description file and configure it\'s offset like so:
+Simply include the desired `.urdf.xacro` file in your robot's
+description file and configure it's offset like so:
 
 ```
 <xacro:include filename="$(find microstrain_inertial_description)/urdf/gq7.urdf.xacro" />
@@ -20,12 +20,12 @@ description file and configure it\'s offset like so:
 </xacro:gq7>
 ```
 
-The above example will place a GQ7 with the frame ID \`gq7_link\` with
-it\'s center directly on top of \`base_link\`.
+The above example will place a GQ7 with the frame ID `gq7_link` with
+it's center directly on top of `base_link`.
 
 ## Available Files
 
-The following files can be included in other \`.urdf.xacro\` files to
+The following files can be included in other `.urdf.xacro` files to
 accomodate certain sensors.
 
 -   [gq7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gq7.urdf.xacro)
@@ -67,11 +67,11 @@ accomodate certain sensors.
 
 With the exception of the 3DM-RTK, all of the above mentioned sensors
 have a sensor origin which will be where most measurements are sampled.
-When a user places the sensor on their robot, the \`origin\` is the
+When a user places the sensor on their robot, the `origin` is the
 location of the center of the sensor. The above urdf files will place a
-link there called \`\${name}\_center\`, and then place another link
+link there called `\${name}_center`, and then place another link
 offset from the center of the sensor to the sensor origin called
-\`\${name}\`. For most sensors, this offset is barely noticable, but it
+`\${name}`. For most sensors, this offset is barely noticable, but it
 can be important if precision of measurements is important.
 
 For example, if one were to place a GQ7 on a robot like the example in

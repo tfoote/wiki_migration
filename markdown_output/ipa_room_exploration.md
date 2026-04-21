@@ -14,4 +14,4 @@ Coverage Problem and inside those folders you may find 40 images of the
 individual algorithms each, representing 20 maps with and without
 furniture.
 
-![\|width=\"804\"](attachment:samples.png)
+![\|width="804"](attachment:samples.png)

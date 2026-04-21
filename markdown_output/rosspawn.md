@@ -8,10 +8,10 @@ rosspawn does not try to be another roslaunch. Rather it is meant to
 provide tools for a different use case. During development, nodes are
 started and stopped frequently while people are working on the node.
 With roslaunch, this often means either starting and stopping larger
-ensembles, or getting a hold on the controlling machine\'s terminal for
+ensembles, or getting a hold on the controlling machine's terminal for
 a specific node. rosspawn launches the nodes by itself, usually
 instructed by its companion application [rosspawn_gui](rosspawn_gui)
-from any of the developer\'s machine. It resembles the way Fawkes
+from any of the developer's machine. It resembles the way Fawkes
 plugins are loaded and unloaded. While nodes are running, they are
 monitored by rosspawn and status changes are announced. Other developers
 see if a node has been stopped by someone else.

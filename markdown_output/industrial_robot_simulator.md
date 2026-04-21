@@ -64,4 +64,4 @@ param {
 
 ## Reporting bugs
 
-\<\<GitHubIssues(ros-industrial/industrial_core)\>\>
+<<GitHubIssues(ros-industrial/industrial_core)>>

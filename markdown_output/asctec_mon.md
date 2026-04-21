@@ -8,8 +8,8 @@ the
 
 ## Details
 
-Pressing \'q\' will quit the program and pressing \'r\' will begin
-recording a bag file. Pressing \'r\' again will cause recording to stop.
+Pressing 'q' will quit the program and pressing 'r' will begin
+recording a bag file. Pressing 'r' again will cause recording to stop.
 
 ## Known Bugs
 

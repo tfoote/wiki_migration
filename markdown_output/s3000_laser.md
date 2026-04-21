@@ -13,7 +13,7 @@ RS422 data lines.
 
 This package should work with SICK S3000 safety laser scanners.
 
-![SICK S3000\|width=\"250px\"](attachment:SICK_S3000.jpg)
+![SICK S3000\|width="250px"](attachment:SICK_S3000.jpg)
 
 ## Nodes
 

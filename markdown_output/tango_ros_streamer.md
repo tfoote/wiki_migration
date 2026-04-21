@@ -1,6 +1,6 @@
 ## App summary
 
-\<\<Youtube(VTHlHgoBgvo&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=VTHlHgoBgvo&rel=0)
 
 Tango ROS Streamer is an android application and ROS node for
 Tango-enabled devices. Its main purpose is to provide Tango sensor data
@@ -10,21 +10,21 @@ robots.
 ## Installation
 
 -   From the
-    [Play Store\|target=\"\_blank\"](http://play.google.com/store/apps/details?id=eu.intermodalics.tango_ros_streamer&hl=en)
+    [Play Store\|target="_blank"](http://play.google.com/store/apps/details?id=eu.intermodalics.tango_ros_streamer&hl=en)
 -   From
-    [source\|target=\"\_blank\"](https://github.com/Intermodalics/tango_ros/blob/master/README.md#installation-from-source)
+    [source\|target="_blank"](https://github.com/Intermodalics/tango_ros/blob/master/README.md#installation-from-source)
 
 The app has been developed and tested with ROS indigo on Ubuntu 14.04,
 and kinetic on Ubuntu 16.04.
 
 ## Tutorials
 
-\<\<TutorialChain(tango_ros_streamer/Visualisation)\>\> **Create a new
+<<TutorialChain(tango_ros_streamer/Visualisation)>> **Create a new
 tutorial:**
 
 ## Known Usages
 
--   [Tangobot\|target=\"\_blank\"](http://wiki.ros.org/Robots/Tangobot)
+-   [Tangobot\|target="_blank"](http://wiki.ros.org/Robots/Tangobot)
 -   [RTAB-Map](http://wiki.ros.org/rtabmap_ros/Tutorials/Tango%20ROS%20Streamer)
 
 ## ROS API
@@ -265,9 +265,9 @@ Note that all image topics are published via
 compressed version of the image is available together with its
 compression parameters.
 
-Also note that the service \`tango/connect\` seems to not work properly
+Also note that the service `tango/connect` seems to not work properly
 on Tango Tablet Development Kit.
 
 ## Report a bug
 
-\<\<GitHubIssues(Intermodalics/tango_ros)\>\>
+<<GitHubIssues(Intermodalics/tango_ros)>>

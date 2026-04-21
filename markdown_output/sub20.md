@@ -11,7 +11,7 @@ I2C slave device.
 ## Sub20 Permissions
 
 By default, the file permissions for the Sub20 device does not permit
-writing. This often leads to an error of \"No Sub device found.\" or
+writing. This often leads to an error of "No Sub device found." or
 similar. The device will be located in /dev/bus/usb/xxx/xxx, where a
 chmod operation can be used.
 

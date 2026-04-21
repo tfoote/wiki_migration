@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(robotino_msgs)\>\>
+<<MsgSrvDoc(robotino_msgs)>>

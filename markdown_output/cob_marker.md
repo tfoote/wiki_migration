@@ -59,7 +59,7 @@ Plug in Kinect or Kinect-style camera and start
 `roslaunch cob_marker marker.launch`
 
 cob_marker provides now an action on the topic
-\"/cob_marker/object_detection\". Each action triggers marker
+"/cob_marker/object_detection". Each action triggers marker
 recognition to avoid high CPU usage. The usage of the action is the same
 as with cob_object_detection.
 

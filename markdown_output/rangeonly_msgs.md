@@ -16,4 +16,4 @@ for a radio-based range-only sensor in this
 
 ## Report a Bug
 
-\<\<GitHubIssues(felramfab/rangeonly_driver)\>\>
+<<GitHubIssues(felramfab/rangeonly_driver)>>

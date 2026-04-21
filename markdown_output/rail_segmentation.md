@@ -1,27 +1,27 @@
 ## About
 
-The \`rail_segmentation\` package provides tabletop segmentation
+The `rail_segmentation` package provides tabletop segmentation
 functionality given a point cloud. It also allows for segmentation
-within a robot\'s coordinate frame, so that objects stored on a robot\'s
+within a robot's coordinate frame, so that objects stored on a robot's
 platform can be segmented.
 
-\<\<MsgSrvDoc(rail_segmentation)\>\>
+<<MsgSrvDoc(rail_segmentation)>>
 
 ## Object Segmentation APIs
 
 This package exposes three APIs to perform object segmentation, with
 varying inputs and outputs. Each API uses the same underlying object
-segmentation pipeline, supporting all of the node\'s parameters (listed
+segmentation pipeline, supporting all of the node's parameters (listed
 in the next section). To call each API, simply use the appropriate ROS
 service.
 
 -   **Broadcast API** (*/segment*) - segment objects from the most
-    recent point cloud from the \`point_cloud_topic\` param, and send
-    the result on the \`/segmented_objects\` topic. This API takes an
+    recent point cloud from the `point_cloud_topic` param, and send
+    the result on the `/segmented_objects` topic. This API takes an
     empty service message, and is recommended for cases where multiple
     nodes will need to make use of the segmented object information.
 -   **Direct API** (*/segment_objects*) - segment objects from the most
-    recent point cloud from \`point_cloud_topic\`, and return the
+    recent point cloud from `point_cloud_topic`, and return the
     results in the service response. This API directly returns results
     to the service client that initiated the segmentation call, and is
     recommended for directly incorporating object segmentation into a
@@ -29,7 +29,7 @@ service.
 -   **Static Point Cloud API** (*/segment_objects_from_point_cloud*) -
     segment objects from a given point cloud, and return the results in
     the service response. This API provides object segmentation from
-    arbitrary point clouds, not limited to the \`point_cloud_topic\`
+    arbitrary point clouds, not limited to the `point_cloud_topic`
     param, and is recommended for applications that require multiple
     algorithms (including object segmentation) to run on the same point
     cloud, as the user has control over exactly which point cloud is
@@ -164,7 +164,7 @@ node.0 {
 
 ## Installation
 
-To install the \`rail_segmentation\` package, you can install from
+To install the `rail_segmentation` package, you can install from
 source with the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/rail_segmentation.git
@@ -176,7 +176,7 @@ catkin_make install
 ## Defining Segmentation Zones
 
 Segmentation zones can be defined in yaml config files, an example of
-which can be found in the config directory. The \`zones.yaml\` file
+which can be found in the config directory. The `zones.yaml` file
 defines a segmentation zone that will segment objects on horizontal
 surfaces anywhere above the level of the floor.
 
@@ -258,7 +258,7 @@ message, with the following data calculated and filled in:
 
 ## Startup
 
-The \`rail_segmentation\` package can be launched by running the
+The `rail_segmentation` package can be launched by running the
 rail_segmentation node: . ```
 rosrun rail_segmentation rail_segmentation
 ```

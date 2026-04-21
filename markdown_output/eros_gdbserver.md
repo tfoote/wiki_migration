@@ -5,7 +5,7 @@ This pair of tools allows you to do remote debugging without having to
 run the debugger itself (nor libs with debugging symbols) on the target.
 Very useful for embedded boards with limited memory or oomph.
 
-This package is a component of eros\'
+This package is a component of eros'
 [toolchain bridge](eros/ToolchainBridge).
 
 ## Compiling
@@ -61,14 +61,14 @@ commands.
 
 ## Issues
 
-If the backtrace doesn\'t provide any symbols (all you see is alot of
-??\'s), it means gdb isn\'t finding the debug symbols in the appropriate
+If the backtrace doesn't provide any symbols (all you see is alot of
+??'s), it means gdb isn't finding the debug symbols in the appropriate
 code/libraries. I thought it was supposed to embed these in your build
 when you enable the --with-build-sysroot command, but it seems that is
 only for the build process. So, to point your cross debugger at the
 right place, you can either set some variables while running, or (more
 easily) create a config file to run with gdb on the build platform. The
-following example \`iclebo.gdb\` sets directories in the sysroot to
+following example `iclebo.gdb` sets directories in the sysroot to
 parse standard libraries in:
 
 ```

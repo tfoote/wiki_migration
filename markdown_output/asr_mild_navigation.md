@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -10,28 +10,28 @@ environment.
 
 Our MILD Robot:
 
-![\|width=\"211\",height=\"390\"](attachment:Mild-Photo.jpg)
+![\|width="211",height="390"](attachment:Mild-Photo.jpg)
 
 Our MILD Robot in simulation and with labor furnishings (Table, PC\...).
 You Can see the simulated laserscan data (Red dots/lines), global (pink)
 and local costmap (turquoise around the laserscan).
 
-![\|width=\"464\",height=\"276\"](attachment:Mild.jpg)
-![\|width=\"461\",height=\"275\"](attachment:Mild1.jpg)
-![\|width=\"462\",height=\"275\"](attachment:Mild3.jpg)
+![\|width="464",height="276"](attachment:Mild.jpg)
+![\|width="461",height="275"](attachment:Mild1.jpg)
+![\|width="462",height="275"](attachment:Mild3.jpg)
 
 ### Organization
 
 This graph shows how the components of the MILD and the ROS-Navigation
 systems cooperate together. The robot (MILD) has a PC, motor controll
 (CAN) and laserscanner (sick). All informations are published at
-ROS-Topics. \"move_base_simple/goal\" descripes the goal position.
-\"odom\" the odometry of the robot. \"cmd_vel\" the velocity of the
-robot and \"scan\" the laserscann data. This information are used by the
+ROS-Topics. "move_base_simple/goal" descripes the goal position.
+"odom" the odometry of the robot. "cmd_vel" the velocity of the
+robot and "scan" the laserscann data. This information are used by the
 navigationsystem to calculate a plan to the goal on the map (move_base)
 and locate the robot on the map (amcl).
 
-![\|width=\"652\",height=\"412\"](attachment:navigation-system.JPG)
+![\|width="652",height="412"](attachment:navigation-system.JPG)
 
 ### Launch
 
@@ -39,10 +39,10 @@ The asr_mild_navigation uses the standard
 [ROS_Navigation](http://wiki.ros.org/navigation) with some specific
 components. There are three overlay packages:
 
--   move_base -\>
+-   move_base ->
     [asr_move_base](https://github.com/asr-ros/asr_move_base)
--   nav_core -\> [asr_nav_core](https://github.com/asr-ros/asr_nav_core)
--   navfn -\> [asr_navfn](asr_navfn)
+-   nav_core -> [asr_nav_core](https://github.com/asr-ros/asr_nav_core)
+-   navfn -> [asr_navfn](asr_navfn)
 
 Asr_move_base and asr_navcore are only needed if you use the
 asr_ftc_local_planner which is the standard local planner for the
@@ -81,10 +81,10 @@ files:
 **Simulation: **
 
 To start the simulation run some of the simulation launch files
-depending on your scenario: \"simulation.launch\" is the main launch
+depending on your scenario: "simulation.launch" is the main launch
 file for the simulation. For different maps you can use other launch
-files and start out of them the \"launch/simulation/simulation.launch\",
-like in \"launch/simulation/simulation_manual_rearranged.launch\".
+files and start out of them the "launch/simulation/simulation.launch",
+like in "launch/simulation/simulation_manual_rearranged.launch".
 
 For example:
 
@@ -92,7 +92,7 @@ For example:
 roslaunch asr_mild_navigation simulation_manual_rearranged.launch
 ``` Starts simulation.launch, with the
 manual_rearranged map. There are also launch files for three other
-rooms. How they look you can see on the maps in the folder \"rsc/maps\".
+rooms. How they look you can see on the maps in the folder "rsc/maps".
 
 **Real:**
 
@@ -106,8 +106,8 @@ environment:
 ```
 <node name="map_server" pkg="map_server" type="map_server" args="$(find your_package)/your_map.yaml" required="true"/>
 ``` There are also a launch file
-(launch/amcl_diff.launch\") to start [amcl](http://wiki.ros.org/amcl),
-this is automaticly started if you launch \"launch/navigation.launch\".
+(launch/amcl_diff.launch") to start [amcl](http://wiki.ros.org/amcl),
+this is automaticly started if you launch "launch/navigation.launch".
 
 **Gazebo:**
 
@@ -122,7 +122,7 @@ roslaunch asr_mild_navigation gazebo_mild_manual_rearranged.launch
 The package also includes the parameters for the navigation and the maps
 of the environment.
 
-You can find them in the folder \"param/\" and \"param/simulation/\".
+You can find them in the folder "param/" and "param/simulation/".
 There you can set the parameters for:
 
 -   [costmap](http://wiki.ros.org/costmap_2d) (Paramertes with are valid

@@ -13,4 +13,4 @@ srv {
 }
 ```
 
-\<\<MsgSrvDoc(rovio_common)\>\>
+<<MsgSrvDoc(rovio_common)>>

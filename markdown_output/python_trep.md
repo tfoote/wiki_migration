@@ -31,7 +31,7 @@ tags are supported:
 -   dynamics (damping only)
 
 Additionally, one extra tag is supported on the Joint tag. Specifying
-kinematic=\'True\' creates a kinematic configuration variable in trep
+kinematic='True' creates a kinematic configuration variable in trep
 for that joint.
 
 An example of a system created from a URDF on the parameter server is:
@@ -57,7 +57,7 @@ the `/tf` topic every time `ROSMidpointVI.step()` is called.
 
 ## Example Package
 
-An example package called \`trep_urdf_demo\` is available at
+An example package called `trep_urdf_demo` is available at
 <https://github.com/MurpheyLab/trep_urdf_demo>. This package has two
 demos which can be called from launch files. After cloning the package
 to your ROS workspace, run the following command:

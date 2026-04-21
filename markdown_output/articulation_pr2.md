@@ -52,9 +52,9 @@ next set point (larger values mean that the set point will be placed
 further away; the actual force is still limited by the saturation values
 of the impedance controller, see below the rosparam section. Note that
 this value works in combination with the desired_velocity setting in the
-service call: \<code\>next_set_point = current_point +
+service call: <code>next_set_point = current_point +
 normalized_pulling_direction \* desired_velocity \*
-force_gain\</code\> 1. **vel_saturation_trans, vel_saturation_rot (motor
+force_gain</code> 1. **vel_saturation_trans, vel_saturation_rot (motor
 current?), default: 6.0, good choices: 1 \-- 10**. These parameters
 determine the saturation of the impedance controller (larger values mean
 that the PR2 will pull stronger; when the values are too small, the PR2

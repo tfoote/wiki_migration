@@ -11,7 +11,7 @@ from within a terminal to support debugging a robot live.
 
 ### Problem
 
-Many rosout log messages don\'t get printed to the terminal in the
+Many rosout log messages don't get printed to the terminal in the
 normal course when there are lots of nodes/messages. There is also not a
 convienient way to filter and navigate through them in real time.
 
@@ -35,7 +35,7 @@ log_viewer also supports text searches and jumping from match to match.
 
 Log messages are copied to the clipboard by selecting them.
 
-Like swri_console, log_viewer doesn\'t need roscore to start and will
+Like swri_console, log_viewer doesn't need roscore to start and will
 automatically connect/reconnect with roscore when it becomes available.
 
 #### Keybindings

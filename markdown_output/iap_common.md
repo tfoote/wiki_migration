@@ -25,7 +25,7 @@ anything about this.
 
 #### FeatureSet
 
-A Feature\`\`Set is a set of *different* features at some time
+A Feature``Set is a set of *different* features at some time
 \$frame\$. In particular, a feature set has the notion of time: you can
 assign a frame number \$frame\$ to it (which corresponds to the frame in
 your sequence). It can be viewed as a snapshot of different features at
@@ -35,14 +35,14 @@ It can be constructed from and exported to a PCL point cloud.
 
 #### FeatureTrajectory
 
-A Feature\`\`Trajectory contains the **same** feature at different time
+A Feature``Trajectory contains the **same** feature at different time
 frames. It can be seen as the trajectory of one feature over time in a
 sequence.
 
 #### FeatureTrajectorySet
 
-As the name suggests, a Feature\`\`Trajectory\`\`Set is the combination
-of a Feature\`\`Set and Feature\`\`Trajectory: It contains a set of
+As the name suggests, a Feature``Trajectory``Set is the combination
+of a Feature``Set and Feature``Trajectory: It contains a set of
 features at different points in time.
 
 ### Clusters
@@ -52,19 +52,19 @@ following classes allow dealing with them in an easy manner.
 
 #### Cluster
 
-A Cluster is a specialization of Feature\`\`Set: It contains a set of
+A Cluster is a specialization of Feature``Set: It contains a set of
 *different* features at some time \$frame\$, with an additional *cluster
 id*. It usually appears in the context of segmenting a feature set.
 
 #### ClusterSet
 
-A Cluster\`\`Set is a set of clusters at a fixed time frame. It has no
+A Cluster``Set is a set of clusters at a fixed time frame. It has no
 correspondance to any of the Feature**\* classes.**
 
 #### ClusterTrajectorySet
 
-A Cluster\`\`Trajectory\`\`Set is a specialization of
-Feature\`\`Trajectory\`\`Set. It is a set of Feature\`\`Trajectories all
+A Cluster``Trajectory``Set is a specialization of
+Feature``Trajectory``Set. It is a set of Feature``Trajectories all
 belonging to the group (cluster) at a fixed time frame.
 
 ### Body Motion
@@ -92,18 +92,18 @@ etc.
 
 In particular for the analysis of joints, we are interested in the
 motion of two bodies relative to each other. This relative motion is
-represented using the Body\`\`Trajectory\`\`Pair class which allows for
-the extraction of the local trajectory, i.e. a Body\`\`Trajectory
+represented using the Body``Trajectory``Pair class which allows for
+the extraction of the local trajectory, i.e. a Body``Trajectory
 expressing the movement of one body with respect to the other.
 
 ### Kinematic Structure
 
 iap_common provides messages for sending around kinematic structures. A
-**Kinematic\`\`Structure\`\`Msg** consists of
-**Joint\`\`Estimator\`\`Result\`\`Msg**s, each containing a hypothesis
-per joint type, encoded in **Joint\`\`Msg**. This means a
-Kinematic\`\`Structure\`\`Msg does not only contain the \"most
-probable\" kinematic structure, but for every pair of links an
+**Kinematic``Structure``Msg** consists of
+**Joint``Estimator``Result``Msg**s, each containing a hypothesis
+per joint type, encoded in **Joint``Msg**. This means a
+Kinematic``Structure``Msg does not only contain the "most
+probable" kinematic structure, but for every pair of links an
 estimation of all possible joint types.
 
 ## Package Description
@@ -113,7 +113,7 @@ estimation of all possible joint types.
 **/iap_common/KinematicStructureMsg**
 
 -   description: The kinematic structure. Contains a list of
-    Joint\`\`Estimator\`\`Result\`\`Msg, i.e. the estimation of all
+    Joint``Estimator``Result``Msg, i.e. the estimation of all
     joints
 
 **/iap_common/JointEstimatorResultMsg**
@@ -130,12 +130,12 @@ estimation of all possible joint types.
 
 **/iap_common/BodyTrajectoryMsg**
 
--   description: Message to encode a Body\`\`Trajectory
+-   description: Message to encode a Body``Trajectory
 
 **/iap_common/BodyTrajectoryPairMsg**
 
--   description: Message to encode a Body\`\`Trajectory\`\`Pair
+-   description: Message to encode a Body``Trajectory``Pair
 
 **/iap_common/ClusteredFeatureSetMsg**
 
--   description: Message to encode Clustered\`\`Feature\`\`Set
+-   description: Message to encode Clustered``Feature``Set

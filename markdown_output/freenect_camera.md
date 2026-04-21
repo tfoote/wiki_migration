@@ -214,8 +214,8 @@ studying the differences between [freenect_launch](freenect_launch) and
 ### Migrating to openni_camera
 
 1\. Replace the freenect launch file in your code with the corresponding
-openni launch file. (\`\$(find freenect_launch)/launch/freenect.launch\`
--\> \`\$(find openni_launch)/launch/openni.launch\`). No other
+openni launch file. (`\$(find freenect_launch)/launch/freenect.launch`
+-> `\$(find openni_launch)/launch/openni.launch`). No other
 modifications should be necessary. 2. openni_launch does not support
 diagnostics or appending a namespace as of v1.8.3. Modify your system
 accordingly. *Note: A ticket for ns addition to openni_launch has been
@@ -225,10 +225,10 @@ filed [#63](https://kforge.ros.org/openni/trac/ticket/63)
 ### Migrating from openni_camera
 
 1\. Replace the openni launch file in your code with the corresponding
-freenect launch file. (\`\$(find openni_launch)/launch/openni.launch\`
--\> \`\$(find freenect_launch)/launch/freenect.launch\`). 2. If you were
-using the default \`image_mode\` or \`depth_mode\` parameters in the
-openni_camera driver, then please skip this step. \`freenect_camera\`
+freenect launch file. (`\$(find openni_launch)/launch/openni.launch`
+-> `\$(find freenect_launch)/launch/freenect.launch`). 2. If you were
+using the default `image_mode` or `depth_mode` parameters in the
+openni_camera driver, then please skip this step. `freenect_camera`
 does not support a number of image/depth modes supported by the
 [openni_camera](openni_camera) driver. Please use one of modes mentioned
 in the parameters above (SXGA equivalent to SXGA_15Hz), or (VGA
@@ -241,13 +241,13 @@ methods of selecting devices.
 
 There are a couple of reasons why other devices using the OpenNI
 standard (namely the Primesense PSDK, Asus Xtion Pro and Pro Live) are
-not currently supported: 1. \`libfreenect\` hardcodes information about
+not currently supported: 1. `libfreenect` hardcodes information about
 the Kinect in a way that makes it difficult to gain access to different
 types of OpenNI devices using the same code. It might be easy to patch
 libfreenect to use these other devices, generate separate libraries for
 each device, and make multiple binaries of the driver linking against
 each library separately. 2. Information about each device will have to
-be reverse engineered from the OpenNI driver to modify \`libfreenect\`.
+be reverse engineered from the OpenNI driver to modify `libfreenect`.
 A port for the Asus Xtion Pro is available
 [here](https://github.com/zarvox/libfreenect/tree/xtion) (thanks for
 pointing to this Ivan!). A read through the differences reveal that the

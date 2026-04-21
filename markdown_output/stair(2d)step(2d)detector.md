@@ -14,7 +14,7 @@ The repository contains packages for ROS2 Galactic Geochelone:
   -- ------------------------- -- -------------------------------------------------------- --
 
 \
-The \_pkg\'s are essentially small Python scripts. The actual detector
+The _pkg's are essentially small Python scripts. The actual detector
 is written in C++ and has no dependencies on ROS.
 
 ## Hardware Requirements

@@ -2,12 +2,12 @@
 
 This package provides a convenient gamepad-based control option for
 quadrotor UAVs and similar vehicles. The stick setup in the launch files
-is similar to the \"Mode 2\" setup commonly used on RC helicopters as
+is similar to the "Mode 2" setup commonly used on RC helicopters as
 described
 [ here](http://www.rc-airplane-world.com/rc-helicopter-transmitter-modes.html ).
 The node publishes
 [ geomety_msgs/Twist](http://www.ros.org/doc/api/geometry_msgs/html/msg/Twist.html )
-messages on the \`/cmd_vel\` topic, so the stick input corresponds to
+messages on the `/cmd_vel` topic, so the stick input corresponds to
 desired linear and angular velocities.
 
 We currently provide two launch files:

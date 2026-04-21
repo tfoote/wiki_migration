@@ -8,9 +8,9 @@ specific keycodes that shells use.
 
 The current list of supported colour definitions:
 
--   \`\`Regular\`\`: black, red, green, yellow, blue, magenta, cyan,
+-   ``Regular``: black, red, green, yellow, blue, magenta, cyan,
     white,
--   \`\`Bold\`\`: bold, bold_black, bold_red, bold_green, bold_yellow,
+-   ``Bold``: bold, bold_black, bold_red, bold_green, bold_yellow,
     bold_blue, bold_magenta, bold_cyan, bold_white
 
 ## Usage

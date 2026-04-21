@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -7,8 +7,8 @@ functionalities such as (passive) scene recognition, object pose
 prediction and Next-Best-View estimation to Active Scene Recognition. In
 particular, it is the interface for executing different 3D-object-search
 procedures one of which Active Scene Recognition is. Active Scene
-Recognition is equivalent to the \"object search\", which consists of
-the \"direct search\" and \"indirect search\" modes. The search will be
+Recognition is equivalent to the "object search", which consists of
+the "direct search" and "indirect search" modes. The search will be
 executed by using different packages of the asr framework.
 
 # Functionality
@@ -23,7 +23,7 @@ represent a scene model is needed. Checkout
 to look up how scenes are recorded and trained.
 
 During the 3D-object-search different run time information will be
-generated and saved under the path \"/log/\" according to the start
+generated and saved under the path "/log/" according to the start
 time. The information are log-files, a rosbag file and some other. So it
 is possible to reproduce and comprehend the executed searches.
 
@@ -39,11 +39,11 @@ custom python script specified for a concrete scene set. An example:
 from asr_world_model.msg import !CompletePattern
 
 def evaluateCompletePatterns(completePatterns): for completePattern in
-completePatterns: if ((completePattern.patternName = \"Gedeck_Ende\" or
-completePattern.patternName = \"Gedeck_Schrank_2\" or
-completePattern.patternName = \"Spuelkorb_3\" or
-completePattern.patternName = \"gedeck\") and completePattern.confidence
-\>= 0.85): return True
+completePatterns: if ((completePattern.patternName = "Gedeck_Ende" or
+completePattern.patternName = "Gedeck_Schrank_2" or
+completePattern.patternName = "Spuelkorb_3" or
+completePattern.patternName = "gedeck") and completePattern.confidence
+>= 0.85): return True
 
 return False
 
@@ -54,9 +54,9 @@ change the param/params.yaml. There are multiple configs which you can
 change:
 
 -   **mode**: For indirect search set it to 2
--   **UseFakeMoveBase**: In simulation, you can set it true -\> The
+-   **UseFakeMoveBase**: In simulation, you can set it true -> The
     robot will not move anymore, instead, he will be set directly to the
-    target location -\> faster
+    target location -> faster
 -   **percentageTooManyDeactivatedNormals**: This can be useful if many
     similiar !PosePredictions of the asr_recognizer_prediction_ism were
     made. So that some of them will be skipped later on
@@ -92,9 +92,9 @@ of that the search starts in INDIRECT_SEARCH_INIT with an
 OBJECT_DETECTION. To overcome this restriction the indirect search can
 be combined with the direct search to the object search.
 
-![\|height=\"400\",width=\"680\"](attachment:indirect_ebene0.png)
+![\|height="400",width="680"](attachment:indirect_ebene0.png)
 
-![\|height=\"400\",width=\"400\"](attachment:indirect_ebene11.png)
+![\|height="400",width="400"](attachment:indirect_ebene11.png)
 
 -   **INDIRECT_SEARCH_INIT**: Init search and get first found object(s)
     to predict poses
@@ -133,7 +133,7 @@ be combined with the direct search to the object search.
     calculated. There are different functions included to detect and
     handle erroneous behaviour of the search procedure
 
-![\|height=\"800\",width=\"500\"](attachment:indirect_ebene12.png)
+![\|height="800",width="500"](attachment:indirect_ebene12.png)
 
 ## Direct Search
 
@@ -142,11 +142,11 @@ change the param/params.yaml. There are multiple configs which you can
 change:
 
 -   **mode**: For indirect search set it to 1
--   **!UseFakeMoveBase**: In simulation, you can set it true -\> The
+-   **!UseFakeMoveBase**: In simulation, you can set it true -> The
     robot will not move anymore, instead, he will be set directly to the
-    target location -\> faster
+    target location -> faster
 -   **!SearchAllobject**: Search for all objects or only intermediate
-    objects specified in !**IntermediateObject \_XXX.xml**
+    objects specified in !**IntermediateObject _XXX.xml**
 -   **!StopAtfirst**: Stop search after first object is found
 
 The basic idea behind the direct search is to search for objects without
@@ -174,9 +174,9 @@ shown.
 The CHECK_SEARCH_FINISHED wil be used to handle an early end of the
 search, because of **StopAtfirst **or** **!**SearchAllobject **.
 
-![\|height=\"400\",width=\"500\"](attachment:direct_ebene0.png)
+![\|height="400",width="500"](attachment:direct_ebene0.png)
 
-![\|height=\"600\",width=\"300\"](attachment:direct_ebene-1-part.png)
+![\|height="600",width="300"](attachment:direct_ebene-1-part.png)
 
 ## Object Search
 
@@ -202,7 +202,7 @@ objects. If this happens the direct search will be executed again.
 The object search is designed in a way that the direct and indirect
 search do search at similiar spots after the same objects.
 
-![\|height=\"300\",width=\"500\"](attachment:object_ebene0-ueb.png)
+![\|height="300",width="500"](attachment:object_ebene0-ueb.png)
 
 ## Random Search
 
@@ -211,9 +211,9 @@ change the param/params.yaml. There are multiple configs which you can
 change:
 
 -   **mode**: For random search set it to 4
--   **!UseFakeMoveBase**: In simulation, you can set it true -\> The
+-   **!UseFakeMoveBase**: In simulation, you can set it true -> The
     robot will not move anymore, instead, he will be set directly to the
-    target location -\> faster
+    target location -> faster
 -   **!AllowSameViewInRandomSearch**: If set to false the robot is not
     allowed to have a similar robot_state twice
 
@@ -221,11 +221,11 @@ The basic idea behind the random search is, that the robot will move to
 a random position with a random orientation and tilt, in each iteration
 step. A simplified iteration looks like
 
-GENERATE_RANDOM_POSE -\> MOVE_ROBOT -\> OBJECT_DETECTION -\>
-SCENE_RECOGNITION (if an object was found) -\> GENERATE_RANDOM_POSE -\>
+GENERATE_RANDOM_POSE -> MOVE_ROBOT -> OBJECT_DETECTION ->
+SCENE_RECOGNITION (if an object was found) -> GENERATE_RANDOM_POSE ->
 \...
 
-![\|height=\"300\",width=\"600\"](attachment:random_ebene0.png)
+![\|height="300",width="600"](attachment:random_ebene0.png)
 
 In this mode, the asr_next_best_view will not be used. The key
 difference to the others modes is GENERATE_RANDOM_POSE. It generates a
@@ -243,9 +243,9 @@ If !**AllowSameViewInRandomSearch is false** it will be checked if the
 generated pose is approximately equal to one of the earlier poses. Two
 robot states are approx_equal if the difference of the position,
 orientation and PTU config are under a specific threshold. The threshold
-of the position is the radius of the robot\'s volume. For orientation,
-it is the half of the frustum\'s width. And for the tilt the half of the
-frustum\'s height.
+of the position is the radius of the robot's volume. For orientation,
+it is the half of the frustum's width. And for the tilt the half of the
+frustum's height.
 
 In the progress of the random search, the generation will take longer
 time, because there are more old robot_states to compare with and the
@@ -258,9 +258,9 @@ change the param/params.yaml. There are multiple configs which you can
 change:
 
 -   **mode**: For cropbox search set it to 5
--   **!UseFakeMoveBase**: In simulation, you can set it true -\> The
+-   **!UseFakeMoveBase**: In simulation, you can set it true -> The
     robot will not move anymore, instead, he will be set directly to the
-    target location -\> faster
+    target location -> faster
 -   **min_utility_for_moving**: This param should be set to 0 or a very
     low number. In this mode every view has a poor utility, because the
     placeholders are evenly distributed over the cropboxes
@@ -284,7 +284,7 @@ key difference is that the point_cloud will be set only once in the
 beginning in CROPBOX_SEARCH_INIT. The CROPBOX_SEARCH is the same as the
 RELATION_BASED_SEARCH of the indirect_search.
 
-![\|height=\"300\",width=\"500\"](attachment:cropbox_ebene0-overview.png)
+![\|height="300",width="500"](attachment:cropbox_ebene0-overview.png)
 
 The mOmegaUtility and mOmegaBase, params of asr_next_best_view, can be
 adjusted with dynamic reconfigure so that asr_next_best_view will take
@@ -307,7 +307,7 @@ max_y, max_z. To get more flexibility you can define multiple normals
 per cropbox. The normals will be added to all points which are in the
 cropbox. The cropboxes can overlap.
 
-![\|height=\"250\",width=\"400\"](attachment:cropbox_tisch-k.png)
+![\|height="250",width="400"](attachment:cropbox_tisch-k.png)
 
 ## Cropbox Record
 
@@ -357,7 +357,7 @@ This mode is part of the tutorial !AsrDirectSearchManagerTutorialGrid.
 
 # Usage
 
-Create \"log\" directory under home -\> /log/
+Create "log" directory under home -> /log/
 
 ## Needed packages
 
@@ -429,10 +429,10 @@ simulated.
 
 ### Launch file
 
-**asr_state_machine/launch/scene_exploration(\_sim).launch**
+**asr_state_machine/launch/scene_exploration(_sim).launch**
 
-!**IntermediateObject \_XXX.xml:\_** A file containing the
-\_intermediate_objects, which can be used in the **direct_search** mode.
+!**IntermediateObject _XXX.xml:_** A file containing the
+_intermediate_objects, which can be used in the **direct_search** mode.
 If !**SearchAllobject==false** only the contained objects will be
 searched and not all. The XXX will be replaced with the current database
 name. So the name has not to be changed manually after a database change
@@ -459,29 +459,29 @@ for cropbox search, 6 for cropbox record, 7 for grid init record search
 !**UseFakeMoveBase**: Use !FakeMoveBase if robot should be set on target
 pos, instead of moving to it. This can be useful in simulation to save
 time and ignore errors in navigation !**SearchAllobject**: Only for
-direct search -\> search for all objects or only intermediate objects
-specified in !**IntermediateObject \_XXX.xml** !**StopAtfirst**: Only
-for direct search -\> stop search after first object is found
+direct search -> search for all objects or only intermediate objects
+specified in !**IntermediateObject _XXX.xml** !**StopAtfirst**: Only
+for direct search -> stop search after first object is found
 
 **enableSmachViewer**: If you want to use smach viewer you can set this
 to true. However, it will cost a lot of CPU usage, despite if smach
 viewer runs
 
 **percentageTooManyDeactivatedNormals**: The percentage to determine
-when too many normals are deactivated during SET_NBV_POINT_CLOUD. -\>
-Abort if numberOfDeletedNormals / numberOfActiveNormals \<=
+when too many normals are deactivated during SET_NBV_POINT_CLOUD. ->
+Abort if numberOfDeletedNormals / numberOfActiveNormals <=
 percentageTooManyDeactivatedNormals **min_utility_for_moving**: The
 minimum utility value of a NBV estimate that is required to consider
 moving to it. If utility (not rating!) is below, return *no_nbv_found*
 **filter_viewports**: Filter viewports of NBV which are approx equale to
 already visited viewports !**AllowSameViewInRandomSearch**: Only for
-random search -\> if false robot will not move to approx equale robot
+random search -> if false robot will not move to approx equale robot
 states again
 
 **Placeholder(**!**ObjectType **/**Identifier) **!**InCropboxSearch**:
-Only for cropbox search/record -\> the Type/Identifier of the *points*
+Only for cropbox search/record -> the Type/Identifier of the *points*
 in the *point cloud*. Only for information purpose !**RoomHeight**: Only
-for cropbox search/record -\> the height of the room. Will be used for
+for cropbox search/record -> the height of the room. Will be used for
 generating the *point cloud *!**SavePointClouds**: Used to save
 pointclouds in the log folder so they can be debugged in nbv later
 

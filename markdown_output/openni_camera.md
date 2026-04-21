@@ -11,7 +11,7 @@ and you may meet some incompatible contents, do not worry, the thought
 and path is correct.
 
 The very important doc you should read carefully is that on
-[OpenNI\'s GitHub site](https://github.com/OpenNI/OpenNI/blob/master/README)
+[OpenNI's GitHub site](https://github.com/OpenNI/OpenNI/blob/master/README)
 and that on
 [SensorKinect GitHub site](https://github.com/avin2/SensorKinect/blob/unstable/README).
 
@@ -36,7 +36,7 @@ and that on
 ```{=html}
 <!-- -->
 ```
--   There existed a Readme.txt file which is wriiten in Chinese. Don\'t
+-   There existed a Readme.txt file which is wriiten in Chinese. Don't
     worry, you can ignore it after you suffer this Installation for
     longer than 1 week cuz you will be the expert on this field at that
     time. ;-)
@@ -45,18 +45,18 @@ and that on
 <!-- -->
 ```
 -   When you succeded in using Kinect_for_Windows on Ubuntu, the using
-    of Kinect_for_Xbox is just \'unplug and plugin\'.
+    of Kinect_for_Xbox is just 'unplug and plugin'.
 
 ```{=html}
 <!-- -->
 ```
--   It\'s really easier if you use Kinect_for_XBox with OpenKinect.
+-   It's really easier if you use Kinect_for_XBox with OpenKinect.
     unfortunately, OpenKinect does not support Kinect4Windows.
 
 ```{=html}
 <!-- -->
 ```
--   If you\'re using Virtual Machine launching Ubuntu on it, I don\'t
+-   If you're using Virtual Machine launching Ubuntu on it, I don't
     recommend you continue. I failed too many times in trying to do it
     on VMs. And finally I succeded in real machine.
 

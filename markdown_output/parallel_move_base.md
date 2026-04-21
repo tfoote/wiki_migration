@@ -9,7 +9,7 @@ two planners run on two user-defined frequencies. Running the global
 planner on a clock is particularly useful in changing environments (or
 environments that are only partially known in advance). It can also
 recover quicker when the local planner deviates from the path too much,
-since it doesn\'t need to stop while a new plan is made. The global
+since it doesn't need to stop while a new plan is made. The global
 planner replans on a clock and the local planner always follows the most
 recent path produced by the global planner. The hand-off is done with an
 efficient triple-buffer system with pointer swapping. When the global

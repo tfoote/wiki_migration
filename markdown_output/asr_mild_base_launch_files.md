@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -10,7 +10,7 @@ Includes the mild.launch file which starts the
 
 Our MILD Robot:
 
-![Our MILD Robot\|height=\"402\",width=\"218\",class=\"external_image\"](attachment:Mild-Photo.jpg)
+![Our MILD Robot\|height="402",width="218",class="external_image"](attachment:Mild-Photo.jpg)
 
 This package is only used to start the asr_mild_base_laserscanner node
 of a robot with a SICK PLS 101-312 laserscanner and the

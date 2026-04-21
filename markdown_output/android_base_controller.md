@@ -130,7 +130,7 @@ driver implementation for the Husky, the Kobuki and the Create.
 
 The required serial USB communication is entirely handled in the low
 level base specific drivers, which means that each driver could use
-different USB libraries, or don\'t use USB at all.
+different USB libraries, or don't use USB at all.
 
 The Create, Kobuki and Husky drivers use the same
 [USB serial library for Android](https://github.com/mik3y/usb-serial-for-android).

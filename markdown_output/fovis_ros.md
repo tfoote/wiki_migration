@@ -2,8 +2,8 @@
 
 This package contains two nodes that talk to
 [fovis](https://code.google.com/p/fovis/) (which is build by the
-[fovis package](fovis)): \`mono_depth_odometer\` and
-\`stereo_odometer\`. Both estimate camera motion based on incoming
+[fovis package](fovis)): `mono_depth_odometer` and
+`stereo_odometer`. Both estimate camera motion based on incoming
 rectified images from calibrated cameras. The first one needs a
 registered depth image to associate a depth value to each pixel in the
 incoming image, the second one calculates this depth from a calibrated
@@ -16,24 +16,24 @@ Please read [REP 105](http://www.ros.org/reps/rep-0105.html) for an
 explanation of odometry frame ids.
 
 The chain of transforms relevant for visual odometry is as follows:
-\`world\` &rarr; \`odom\` &rarr; \`base_link\` &rarr; \`camera\`
+`world` &rarr; `odom` &rarr; `base_link` &rarr; `camera`
 
 Visual odometry algorithms generally calculate *camera motion*. To be
 able to calculate *robot motion* based on *camera motion*, the
 transformation from the camera frame to the robot frame has to be known.
-Therefore this implementation needs to know the tf \`base_link\` &rarr;
-\`camera\` to be able to publish \`odom\` &rarr; \`base_link\`.
+Therefore this implementation needs to know the tf `base_link` &rarr;
+`camera` to be able to publish `odom` &rarr; `base_link`.
 
 The name of the camera frame is taken from the incoming images, so be
 sure your camera driver publishes it correctly.
 
 *NOTE*: The coordinate frame of the camera is expected to be the
-*optical* frame, which means \`x\` is pointing right, \`y\` downwards
-and \`z\` from the camera into the scene. The origin is where the
-camera\'s principle axis hits the image plane (as given in
-\<\<MsgLink(sensor_msgs/CameraInfo)\>\>).
+*optical* frame, which means `x` is pointing right, `y` downwards
+and `z` from the camera into the scene. The origin is where the
+camera's principle axis hits the image plane (as given in
+<<MsgLink(sensor_msgs/CameraInfo)>>).
 
-To learn how to publish the required tf \`base_link\` &rarr; \`camera\`,
+To learn how to publish the required tf `base_link` &rarr; `camera`,
 please refer to the [tf tutorials](tf/Tutorials). If the required tf is
 not available, the odometer assumes it as the identity matrix which
 means the robot frame and the camera frame are identical.
@@ -133,6 +133,6 @@ post a question if you could not find an answer.
 
 ## Feedback
 
-Please use the stack\'s issue tracker at Github to submit bug reports
+Please use the stack's issue tracker at Github to submit bug reports
 and feature requests regarding the ROS wrapper of fovis:
 <https://github.com/srv/fovis/issues/new>.

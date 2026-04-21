@@ -4,22 +4,22 @@ Deprecated: `runtime_monitor` is superseded by [[rqt_runtime_monitor]].
 
 ## Overview
 
-The \`runtime_monitor\` package allows robot operators to view raw
+The `runtime_monitor` package allows robot operators to view raw
 diagnostics data for a robot. Using the [diagnostics](diagnostics)
 toolchain, the Runtime Monitor will display the raw data on the
-\`/diagnostics\` topic, of type
-\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\>.
+`/diagnostics` topic, of type
+<<MsgLink(diagnostic_msgs/DiagnosticArray)>>.
 
 For robots with a [diagnostic_aggregator](diagnostic_aggregator), users
 should use the [robot_monitor](robot_monitor) for viewing diagnostics.
-The \`runtime_monitor\` is only useful for simple systems, or for users
+The `runtime_monitor` is only useful for simple systems, or for users
 who need the raw data.
 
 ![](attachment:runtime_monitor.png)
 
 ## Viewing Diagnostics
 
-To start the \`runtime_monitor\`, point to the ROS [Master](Master) for
+To start the `runtime_monitor`, point to the ROS [Master](Master) for
 your robot, e.g. ```
 export ROS_MASTER_URI=http://my_robot:11311
 ```
@@ -33,13 +33,13 @@ For the complete tutorial, see
 
 ### Rxbag Plugin
 
-The \`runtime_monitor\` can view messages of type
-\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\> as an [rxbag](rxbag)
+The `runtime_monitor` can view messages of type
+<<MsgLink(diagnostic_msgs/DiagnosticArray)>> as an [rxbag](rxbag)
 plugin. This features is experimental.
 
 ## Embedding a Monitor Panel in WX Application
 
-The \`MonitorPanel\` class of the \`runtime_monitor\` can be embedded in
+The `MonitorPanel` class of the `runtime_monitor` can be embedded in
 a WX application. To embed the monitor inside a WX notebook panel:
 
 ```python

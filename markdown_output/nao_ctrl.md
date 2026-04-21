@@ -2,10 +2,10 @@
 nao_ctrl is replaced by [[nao_driver]], now in the [[nao_robot]] stack. Please see the documentation there for the latest updates.
 ```
 
-To run \`nao_ctrl\` on the actual Nao robot, you need to
+To run `nao_ctrl` on the actual Nao robot, you need to
 [crosscompile ROS](nao/Tutorials/Cross-Compiling) for it first.
 Alternatively, you can connect remotely without installing anything on
-your Nao. The current version of \`nao_ctrl\` works with NaoQI version
+your Nao. The current version of `nao_ctrl` works with NaoQI version
 1.6 or newer. Versions 0.1x are still compatible to NaoQI 1.3.
 
 ## Documentation
@@ -24,7 +24,7 @@ The sensor reading node is started with: ```
 The control and sensor nodes should then connect to the running remote
 nodes. Note that you can also run everything on your remote machine
 (PC), connecting to your Nao (or a simulated Nao in Webots) via
-Aldebaran\'s API. Just run ```
+Aldebaran's API. Just run ```
 ./nao_walker --pip=ROBOT_IP --pport=NAOQI_PORT &
 ./nao_sensors --pip=ROBOT_IP --pport=NAOQI_PORT
 ``` instead. This may be

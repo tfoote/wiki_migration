@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(bebop_msgs)\>\>
+<<MsgSrvDoc(bebop_msgs)>>

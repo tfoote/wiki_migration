@@ -1,9 +1,9 @@
 ## Overview
 
 This package provides the two nodes, that enable to run and interact
-with different non-ros-programs. \`rosshell\` can be used to start a
+with different non-ros-programs. `rosshell` can be used to start a
 program or any kind of shell-command. If some kind of interaction with
-the programs is required, use \`rosshellX\` to receive and send messages
+the programs is required, use `rosshellX` to receive and send messages
 from stdin, stdout, and stderr.
 
 ## Usage
@@ -44,18 +44,18 @@ $ rosrun rosshell rosshell.py "ls -Shal > test.txt"
 This node is used if you require some interaction with stdin, stdout,
 and stderr.
 
-\`rosshellX\` is by default subscribed to /rosshellX/stdin and publishes
+`rosshellX` is by default subscribed to /rosshellX/stdin and publishes
 at topic /rosshellX/stdout and /rosshellX/stderr, all of type
-\<\<MsgLink(std_msgs/String)\>\>.
+<<MsgLink(std_msgs/String)>>.
 
 #### Some basic calculations
 
-\`bc\` is just a simple commandline-calculator
+`bc` is just a simple commandline-calculator
 
-1\. open three shells 2. start \`bc\` with the following command:
+1\. open three shells 2. start `bc` with the following command:
 ```
 $ rosrun rosshell rosshellX.py "bc"
-``` 3. print the the results of \`bc\` stdout by
+``` 3. print the the results of `bc` stdout by
 running: ```
 $ rostopic echo /rosshellX/stdout
 ``` 4. and now, send some inputs like:
@@ -86,7 +86,7 @@ $ rosrun rosshell rosshellX.py "command"
 
 both are the same but you also have the possibility to change the
 command and topics, also within the launch-file, have a look at
-\`rosshellX.launch\` \...
+`rosshellX.launch` \...
 
 ```
 $ rosrun rosshell rosshellX.py "command"

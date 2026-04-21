@@ -14,7 +14,7 @@ waypoints as interactive markers in RViz.
 
 This class subscribes to the list of waypoints published by the RSM
 package and visualizes them as interactive markers. For each waypoint a
-flagpole with the waypoint\'s number overhead is shown. The waypoints
+flagpole with the waypoint's number overhead is shown. The waypoints
 can be moved on the x-y-plane by dragging them around, clicking on the
 surrounding circle or on the z-axis by dragging them at the arrows
 pointing up or down. Right clicking on the flagpole opens a menu, that

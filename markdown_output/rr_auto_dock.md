@@ -33,12 +33,12 @@ To run the auto-docking code add the below line to your launch file.
 ```
 
 To start the undocking procedure publish a True std_msgs/Bool value to
-\"/auto_dock/undock\". ```
+"/auto_dock/undock". ```
 rostopic pub /auto_dock/undock std_msgs/Bool "true"
 ```
 
 To start the docking procedure publish a True std_msgs/Bool value to
-\"/auto_dock/dock\". ```
+"/auto_dock/dock". ```
 rostopic pub /auto_dock/dock std_msgs/Bool "true"
 ```
 

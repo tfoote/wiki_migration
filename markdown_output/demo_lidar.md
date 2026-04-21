@@ -6,13 +6,13 @@ The code has been removed from the public domain. The technology is available as
 
 Depth Enhanced Monocular Odometry (Demo) is a monocular visual odometry
 method assisted by depth maps. The program contains three major threads
-running parallel. A \"feature tracking\" thread extracts and tracks
-Harris corners by Kanade Lucas Tomasi (KLT) feature tracker. A \"visual
-odometry\" thread computes frame to frame motion using the tracked
+running parallel. A "feature tracking" thread extracts and tracks
+Harris corners by Kanade Lucas Tomasi (KLT) feature tracker. A "visual
+odometry" thread computes frame to frame motion using the tracked
 features. Features associated with depth (either from the depth map or
 triangulated from previously estimated camera motion) are used to solve
 the 6DOF motion, and features without depth help solve orientation. A
-\"bundle adjustment\" thread refines the estimated motion. It processes
+"bundle adjustment" thread refines the estimated motion. It processes
 sequences of images received within certain amount of time using
 Incremental Smoothing and Mapping
 ([iSAM](http://people.csail.mit.edu/kaess/isam/)) open source library.
@@ -77,11 +77,11 @@ visual odometry assisted by IMU
 ## Notes
 
 Camera intrinsic parameters (K and D matrices) are defined in the
-\"src/cameraParameters.h\" file.
+"src/cameraParameters.h" file.
 
 It is possible to accelerate feature tracking with a GPU. To do this,
-simply replace the \"src/featureTracking.cpp\" file with the
-\"src/featureTracking_ocl.cpp\" file and recompile. We use OpenCL to
+simply replace the "src/featureTracking.cpp" file with the
+"src/featureTracking_ocl.cpp" file and recompile. We use OpenCL to
 communicate with the GPU. Users first need to install OpenCL in a
 version no earlier than 1.1 with full profile, then install OpenCV using
 CMake with flag WITH_OPENCL=ON.

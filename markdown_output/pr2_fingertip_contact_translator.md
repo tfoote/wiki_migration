@@ -9,8 +9,8 @@ there may be usability issues with the nodes.
 Please see the [finger tip pressure sensors](fingertip_pressure) we are
 simulating on the PR2 hardware.
 
-**Note**: All nodes assume that \`\<gripper_motor_name\>\` is either
-\`r_gripper_motor\` or \`l_gripper_motor\`.
+**Note**: All nodes assume that `<gripper_motor_name>` is either
+`r_gripper_motor` or `l_gripper_motor`.
 
 ```clearsilver
 

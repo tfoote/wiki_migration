@@ -1,6 +1,6 @@
 ## ROS API
 
-This package provides the \`katana_teleop_key\` ROS node, which provides
+This package provides the `katana_teleop_key` ROS node, which provides
 a keyboard-based teleoperation for the Neuronics Katana 450 arm.
 
 ```clearsilver
@@ -33,16 +33,16 @@ sub{
 
 #### Usage
 
--   Press \'ws\' to increase/decrease the joint position about one
+-   Press 'ws' to increase/decrease the joint position about one
     increment
--   Press \'ad\' to switch to the next/previous joint \* Press \'0-5\'
+-   Press 'ad' to switch to the next/previous joint \* Press '0-5'
     to choose a joint/gripper
--   Press \'+#\' to alter the increment by a +1/-1 increment_step_size
+-   Press '+#' to alter the increment by a +1/-1 increment_step_size
     \* increment_step_scaling
--   Press \',.\' to alter the scaling factor by -/+ 1.0
--   Press \'r\' to return to the arm\'s initial pose
--   Press \'i\' to display this manual and the current joint state
--   Press \'q\' to shutdown the node (the arm will be reset to it\'s
+-   Press ',.' to alter the scaling factor by -/+ 1.0
+-   Press 'r' to return to the arm's initial pose
+-   Press 'i' to display this manual and the current joint state
+-   Press 'q' to shutdown the node (the arm will be reset to it's
     initial pose first)
 -   NOTICE: this initial position might not be a proper resting pose to
-    switch off the arm\'s power supply
+    switch off the arm's power supply

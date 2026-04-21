@@ -45,7 +45,7 @@ Most Roomba models ship with the following accessories:
 
 The
 [go_dock](http://www.ros.org/doc/api/roomba_500_series/html/classGoDock.html)
-library present on the \`roomba560_node\` and \`godock_server\` nodes
+library present on the `roomba560_node` and `godock_server` nodes
 provides an implementation of the !GoDockAction (see
 [ actionlib documentation](actionlib )), that automatically docks the
 Roomba. The !GoDockAction is still experimental, it still needs a lot of

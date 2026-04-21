@@ -3,27 +3,27 @@ configuration.
 
 ## Usage
 
-Add a **build** dependency on roslint to your package\'s
-\`package.xml\`:
+Add a **build** dependency on roslint to your package's
+`package.xml`:
 
 ```
 <build_depend>roslint</build_depend>
 ```
 
-In your package\'s \`CMakeLists.txt\` file, include roslint as one of
+In your package's `CMakeLists.txt` file, include roslint as one of
 your catkin component dependencies:
 
 ```
 find_package(catkin REQUIRED COMPONENTS roslint ...)
 ```
 
-Then, invoke the roslint functions from your \`CMakeLists.txt\`, eg:
+Then, invoke the roslint functions from your `CMakeLists.txt`, eg:
 
 ```
 roslint_cpp()
 ```
 
-If you\'d like more control over what gets linted, you can specify the
+If you'd like more control over what gets linted, you can specify the
 exact files:
 
 ```
@@ -31,8 +31,8 @@ roslint_cpp(src/foo.cpp src/bar.cpp src/baz.cpp)
 ```
 
 To run roslint against your package you must invoke catkin_make with
-your package\'s roslint target. For example, for a package named
-\`my_fancy_package\` you would run:
+your package's roslint target. For example, for a package named
+`my_fancy_package` you would run:
 
 ```
 catkin_make roslint_my_fancy_package
@@ -57,26 +57,26 @@ See the following section for all available functions.
 
 ## Reference
 
-Each \`roslint\_\*\` function create a catkin build target called
-\`roslint\_*pkgname*\`, which runs all specified lint operations for the
+Each `roslint_\*` function create a catkin build target called
+`roslint_*pkgname*`, which runs all specified lint operations for the
 package. Each additionally creates (if it does not yet exist) a master
-\`roslint\` target, which depends on all other \`roslint\_\*\` targets.
+`roslint` target, which depends on all other `roslint_\*` targets.
 
-Each function can be called multiple times, if that\'s more convenient.
+Each function can be called multiple times, if that's more convenient.
 
-\`roslint_cpp(\[files \...\])\` . Lint the specified files using a
+`roslint_cpp(\[files \...\])` . Lint the specified files using a
 modified cpplint. If none are specified, default to a glob of all
-\`cpp\` and \`h\` files contained in the package.
+`cpp` and `h` files contained in the package.
 
-\`roslint_python(\[files \...\])\` . Lint the specified files using
-pep8. If none are specified, default to a glob of all \`py\` files
+`roslint_python(\[files \...\])` . Lint the specified files using
+pep8. If none are specified, default to a glob of all `py` files
 contained in the package. This will not catch extensionless executables
 living in the scripts directory.
 
-\`roslint_custom(linter linter_opts file \[\...\])\` . Lint the
+`roslint_custom(linter linter_opts file \[\...\])` . Lint the
 specified files using a custom lint executable.
 
-\`roslint_add_test()\` . Create a dependency between the package\'s
+`roslint_add_test()` . Create a dependency between the package's
 run_tests target and lint target, so that linter fails are able to break
 the build.
 
@@ -99,7 +99,7 @@ sudo pip install pep8ify
 pep8ify -nw .
 ```
 
-When using automated tools to manipulate source code, it\'s best to push
+When using automated tools to manipulate source code, it's best to push
 changes made by the tool as their own commit, distinct from any manual
 changes made afterward. Since an automated change can be large and
 difficult to review, this ensures that everyone can reproduce the change

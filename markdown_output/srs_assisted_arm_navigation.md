@@ -43,7 +43,7 @@ well as the situation when desired goal position is out of reach.
 ![Position is not reachable.\|width=600px](attachment:arm-nav-example-not-reachable.png)
 
 When the trajectory is planned, user can play its animation several
-times and decide if it\'s reasonable and safe.
+times and decide if it's reasonable and safe.
 
 ![Animation of planned trajectory.\|width=600px](attachment:arm-nav-example.png)
 
@@ -335,7 +335,7 @@ roslaunch srs_assisted_arm_navigation_ui rviz.launch
 ```
 
 There is an example of a [rospy](rospy) script which can be used to
-\"trigger\" manipulation task. Run it and operator should be asked for
+"trigger" manipulation task. Run it and operator should be asked for
 action by messagebox from RVIZ plugin.
 
 ```python

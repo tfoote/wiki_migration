@@ -1,8 +1,8 @@
 ## Deprecated
 
-Please use the [uvc_camera](uvc_camera) package\'s
+Please use the [uvc_camera](uvc_camera) package's
 [stereo_node](uvc_camera#Stereo) or nodelet, both of which provide an
-interface that\'s compatible with \`uvc_stereo\`.
+interface that's compatible with `uvc_stereo`.
 
 ## Nodes
 

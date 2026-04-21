@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_safety\` package contains various nodes for ensuring the safe
+The `carl_safety` package contains various nodes for ensuring the safe
 operation of the [CARL robot](carl_bot) for both local and remote users.
 This includes safety features for arm control, autonomous navigation,
 manual navigation teleoperation, and tipping detection.
@@ -147,7 +147,7 @@ node.3 {
 
 ## Operation
 
-When using the \`nav_safety\` node, a controller is required to input
+When using the `nav_safety` node, a controller is required to input
 stop and restart commands. With a controller connected, pressing the
 back button will cut off all manual base teleoperation commands going
 through the safety node, and all autonomous navigation commands will be
@@ -156,7 +156,7 @@ be re-enabled by pressing the start button.
 
 ## Installation
 
-To install the \`carl_safety\` package, you can install from source with
+To install the `carl_safety` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_safety.git
@@ -167,7 +167,7 @@ catkin_make install
 
 ## Startup
 
-The \`carl_safety\` package contains safety nodes that are categorized
+The `carl_safety` package contains safety nodes that are categorized
 into two groups: basic safety functionality that should always be
 active, and remote interface safety that only affects users who are not
 copresent with the robot. As such, the package contains two launch

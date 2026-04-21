@@ -5,4 +5,4 @@ BipedRobin.
 
 ### Messages
 
-\<\<MsgSrvDoc(biped_robin_msgs)\>\>
+<<MsgSrvDoc(biped_robin_msgs)>>

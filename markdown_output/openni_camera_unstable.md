@@ -23,11 +23,11 @@ Major new features include:
 
 API breakages from [openni_camera](openni_camera):
 
--   The \"camera/depth\" namespace became too overloaded. It has been
+-   The "camera/depth" namespace became too overloaded. It has been
     broken in two:
--   \"camera/depth\" - Contains unregistered depth outputs, including
+-   "camera/depth" - Contains unregistered depth outputs, including
     XYZ point cloud.
--   \"camera/depth_registered\" - Contains registered (aligned with RGB
+-   "camera/depth_registered" - Contains registered (aligned with RGB
     image) outputs, including XYZRGB point cloud.
 -   openni_node now publishes only the raw images from the device, not
     the processed outputs (point clouds, etc.). Use the provided launch
@@ -43,7 +43,7 @@ features.
 
 ### Quick start
 
-Don\'t forget to build the driver if you\'ve installed from source:
+Don't forget to build the driver if you've installed from source:
 ```
 rosmake openni_camera_unstable
 ```
@@ -57,10 +57,10 @@ rosrun rviz rviz
 ```
 
 Set the Fixed Frame (top left of rviz window) to
-\`/camera_depth_optical_frame\`.
+`/camera_depth_optical_frame`.
 
 Add a !PointCloud2 display, and set the topic to
-\`/camera/depth/points\`. Turning the background to light gray can help
+`/camera/depth/points`. Turning the background to light gray can help
 with viewing. This is the *unregistered* point cloud in the frame of the
 depth (IR) camera. It is not matched with the RGB camera images.
 
@@ -68,16 +68,16 @@ Alternatively you can view the disparity image: ```
 rosrun image_view disparity_view image:=/camera/depth/disparity
 ```
 
-Now let\'s look at a *registered* point cloud, aligned with the RGB
+Now let's look at a *registered* point cloud, aligned with the RGB
 data. Open the dynamic reconfigure GUI: ```
 rosrun dynamic_reconfigure reconfigure_gui
 ```
 
-And select \`/camera/driver\` from the drop-down menu. Enable
-\`depth_registration\`: ![](attachment:openni_reconfigure.png)
+And select `/camera/driver` from the drop-down menu. Enable
+`depth_registration`: ![](attachment:openni_reconfigure.png)
 
 Now go back to rviz, and change your !PointCloud2 topic to
-\`/camera/depth_registered/points\`. Set Color Transformer to \`RGB8\`.
+`/camera/depth_registered/points`. Set Color Transformer to `RGB8`.
 You should see a color, 3D point cloud of your scene.
 
 Again, you can view the registered disparity image:

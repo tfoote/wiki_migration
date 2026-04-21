@@ -1,6 +1,6 @@
 ## Overview
 
-\`camera_calibration_parsers\` contains C++ functions for reading and
+`camera_calibration_parsers` contains C++ functions for reading and
 writing camera parameters. These are mainly used internally by camera
 drivers and camera calibration tools, but the formats are
 human-readable.

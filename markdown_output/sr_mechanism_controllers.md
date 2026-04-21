@@ -24,9 +24,9 @@ below (we have two different maps, one for each direction):
 
 ### Hysteresis Deadband
 
-In our controllers, we\'re using what we call an hysteresis deadbands
-for avoiding to drive the motors unnecessarily: when we\'re entering a
-small deadband, if the error changes sign, we\'re not driving the motor,
+In our controllers, we're using what we call an hysteresis deadbands
+for avoiding to drive the motors unnecessarily: when we're entering a
+small deadband, if the error changes sign, we're not driving the motor,
 unless we leave a bigger deadband: ![](attachment:hysteresis.png)
 
 ## Controller Types
@@ -41,17 +41,17 @@ adding the friction compensation, except in the specified deadband.
 ### Velocity Controllers
 
 This is a PID controller transforming a velocity demand into a force
-demand. First (if we\'re outside of a given deadband) the velocity error
+demand. First (if we're outside of a given deadband) the velocity error
 is fed to a pid loop. The friction compensation is then added to the
-output of this loop (if we\'re outside of a certain deadband), and the
+output of this loop (if we're outside of a certain deadband), and the
 motor demand is limited to the range specified by the user.
 
 ### Position Controllers
 
 This is a PID controller transforming a position demand into a force
-demand. First (if we\'re outside of a given deadband) the position error
+demand. First (if we're outside of a given deadband) the position error
 is fed to a pid loop. The friction compensation is then added to the
-output of this loop (if we\'re outside of a certain deadband), and the
+output of this loop (if we're outside of a certain deadband), and the
 motor demand is limited to the range specified by the user.
 
 ### Mixed Position / Velocity Controllers

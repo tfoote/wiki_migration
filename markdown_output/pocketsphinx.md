@@ -12,10 +12,10 @@ the
 [Online Sphinx Knowledge Base Tool](http://www.speech.cs.cmu.edu/tools/lmtool.html).
 Example launch files, language models, and dictionary files can be found
 in the *demo* directory of the package. The *voice_cmd* example controls
-a mobile base using commands such as \"*move forward*\" or \"*stop*\".
+a mobile base using commands such as "*move forward*" or "*stop*".
 The *robocup* example uses some of the standard items and names from the
-RoboCup@Home contest, for instance, it should recognize \"*hello, my
-name is Michael*\" or \"*Bring me the Original Pringles*\".
+RoboCup@Home contest, for instance, it should recognize "*hello, my
+name is Michael*" or "*Bring me the Original Pringles*".
 
 ## Installing
 

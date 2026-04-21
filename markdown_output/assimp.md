@@ -26,12 +26,12 @@ target_link_libraries(${PROJECT_NAME} assimp)
 Assimp is defined in the [common_rosdeps](common_rosdeps) stack/package.
 You will need to update
 
-1\. \`manifest.xml\` ```
+1\. `manifest.xml` ```
 <depend package="common_rosdeps" />
   <rosdep name="assimp" />
 ```
 
-1\. \`stack.xml\` ```
+1\. `stack.xml` ```
 <depend stack="common_rosdeps" />
 ```
 

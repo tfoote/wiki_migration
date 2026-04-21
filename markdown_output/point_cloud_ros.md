@@ -1,5 +1,5 @@
 This is an interface to point_cloud_mapping. It probably needs to be
-fixed as Advait hasn\'t used it since January 08, 2010.
+fixed as Advait hasn't used it since January 08, 2010.
 
 ## Usage
 
@@ -9,12 +9,12 @@ numpy_pc_2009Jun02_181409.pkl: pickle of a 3xN numpy matrix of 3D
 points. This is a real point cloud of a door using a tilting laser range
 finder.
 
-\`python ros_point_clouder.py -h\` will give some information about the
+`python ros_point_clouder.py -h` will give some information about the
 usage.
 
 ### Tests:
 
-\`./ros_point_clouder -h\` will display a help message. Run all tests
+`./ros_point_clouder -h` will display a help message. Run all tests
 from bin
 
 1\. terminal 1 - ./start_downsampler.sh terminal 2 - ./ros_point_clouder
@@ -25,12 +25,12 @@ downsampled point cloud will be displayed using mayavi2.
 1\. terminal 1 - ./start_normal_estimator.sh terminal 2 -
 ./ros_point_clouder \--sphere
 
-A file \"normals_cloud\_\<timestamp\>.pkl\" will get created.
+A file "normals_cloud_<timestamp>.pkl" will get created.
 
 terminal 2 - ./ros_point_clouder -f
 ../data/normals_cloud_2009Jun02_202114.pkl \--plot surface normals and
 curvature for synthetic sphere will get displayed.
 
-1\. Try 2) with \"\--pc numpy_pc_2009Jun01_182408.pkl\" instead of
-\"\--sphere\" to plot surface normals and curvature of a real point
+1\. Try 2) with "\--pc numpy_pc_2009Jun01_182408.pkl" instead of
+"\--sphere" to plot surface normals and curvature of a real point
 cloud.

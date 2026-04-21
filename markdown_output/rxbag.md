@@ -3,11 +3,11 @@
 (!) **[rx](rx) packages are replaced by [rqt](rqt), which is available
 for fuerte and later.**
 
-[../rqt_bag](../rqt_bag) succeeds \`rxbag\`.
+[../rqt_bag](../rqt_bag) succeeds `rxbag`.
 
 ## Overview
 
-\`rxbag\` is an application for recording and managing bag files. Its
+`rxbag` is an application for recording and managing bag files. Its
 primary features are:
 
 -   show tree-view of bag message contents
@@ -17,7 +17,7 @@ primary features are:
 -   export messages in a time range to a new bag
 -   export message contents to comma-separated value (CSV) files
 
-\`rxbag\` can be extended via a plugin mechanism. Core plugins are
+`rxbag` can be extended via a plugin mechanism. Core plugins are
 contained in the [rxbag_plugins](rxbag_plugins) package in the
 [visualization](visualization) stack.
 
@@ -37,17 +37,17 @@ contained in the bag file, listed by topic.
 ## Timeline
 
 The messages are shown at the timestamp stored in the bag file. This
-timestamp may differ from the message\'s \`Header\` timestamp (if any),
-e.g. \`rosbag record\` stores the time the message was received.
+timestamp may differ from the message's `Header` timestamp (if any),
+e.g. `rosbag record` stores the time the message was received.
 
 Right-clicking on the timeline opens a menu with options for opening
 detailed message views, choosing which topics to display thumbnails for,
 managing re-publishing of messages, and exporting a time range of
 messages to another bag.
 
-When using the \`\--record\` option, you can sync the timeline to the
+When using the `\--record` option, you can sync the timeline to the
 latest message by left-clicking to the far right (to the right of the
-latest message), which will make it \"stick\" to real-time.
+latest message), which will make it "stick" to real-time.
 
 ### Toolbar
 
@@ -117,6 +117,6 @@ String representations of message fields are truncated to 50 characters.
 
 ## Plugin API
 
-\`rxbag\` currently has a proof-of-concept plugin API, which is used in
+`rxbag` currently has a proof-of-concept plugin API, which is used in
 the [rxbag_plugins](rxbag_plugins) package. Future versions of ROS will
 have a more stable API to more broadly support plugins.

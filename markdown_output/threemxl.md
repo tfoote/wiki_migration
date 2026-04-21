@@ -12,7 +12,7 @@ class.
 ### Direct communication
 
 You can either communicate using the standard Linux serial port API
-(\`/dev/ttyXXXX\`) or directly using the FTDI driver (if you have an
+(`/dev/ttyXXXX`) or directly using the FTDI driver (if you have an
 FTDI USB to serial converter). The latter is generally faster and more
 reliable.
 
@@ -37,7 +37,7 @@ motor->init(false);
 
 #### LxFTDI
 
-You can find the USB ID using \`lsusb\`.
+You can find the USB ID using `lsusb`.
 
 ```cplusplus
 #include <threemxl/C3mxl.h>
@@ -92,8 +92,8 @@ motor->init(false);
 ## Reading state
 
 For efficiency reasons, reading state information is split in two sets
-of functions, \`get\...()\` and \`present\...()\`. \`get\...()\`
-functions retrieve the state from the motor, while \`present\...()\`
+of functions, `get\...()` and `present\...()`. `get\...()`
+functions retrieve the state from the motor, while `present\...()`
 functions return the information to the caller. An example:
 
 ```cplusplus
@@ -107,16 +107,16 @@ do
 ```
 
 It is possible to retrieve more than one piece of state information at
-the same time, e.g. using \`getState()\`.
+the same time, e.g. using `getState()`.
 
 ## Frequently Asked Questions
 
--   For testing the motor, you can use the \`console\` node in the
+-   For testing the motor, you can use the `console` node in the
     threemxl package. It takes an optional argument for the port name
-    (default \`/dev/ttyUSB0\`).
+    (default `/dev/ttyUSB0`).
 -   By default, the 3mxl board in the hand setup runs at 921600bps with
     ids 108 (testing motor) and 109 (gripper).
--   To avoid having to set permissions on \`/dev/ttyUSB0\` every time
-    you plug in the board, you can add yourself to the \`dialout\` group
+-   To avoid having to set permissions on `/dev/ttyUSB0` every time
+    you plug in the board, you can add yourself to the `dialout` group
     using `sudo usermod -a -G dialout username ` You will need to log
     out and in for the changes to take effect.

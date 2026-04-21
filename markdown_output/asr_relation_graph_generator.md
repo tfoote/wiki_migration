@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -20,7 +20,7 @@ mean higher learning and inference time in [asr_psm](asr_psm). The
 heuristic considers the parallelity of object trajectories. It outputs a
 !SceneModel::!TreeNode representing the root of the generated tree.
 
-![\|width=\"620\",height=\"360\"](attachment:1.png)
+![\|width="620",height="360"](attachment:1.png)
 
 The blue lines show the trajectories of the cup and the plate. The
 distance between them at each step is shown in black, the angles in red.
@@ -68,7 +68,7 @@ Set in [asr_psm](asr_psm) launch files:
 All are used by the heuristic to judge the parallelity of trajectories
 to in each step cluster the two best fits together.
 
-The other trainers don\'t have specific parameters.
+The other trainers don't have specific parameters.
 
 Use the parameter *relation_tree_trainer_type* to specify which trainer
 is to be used. *tree* is the *PSMTrainer*, *fully_meshed* the

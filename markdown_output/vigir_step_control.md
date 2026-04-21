@@ -24,7 +24,7 @@ For detailed information about the system please take a look at the
 
 ### Installation
 
-The **vigir_step_control** packages can be downloaded from Git\`\`Hub:
+The **vigir_step_control** packages can be downloaded from Git``Hub:
 
 -   <https://github.com/team-vigir/vigir_step_control.git> Furthermore
     you may need to download the dependencies as well (if not already
@@ -55,7 +55,7 @@ planner parameter set. Afterwards the direction commands become
 available which allows to generate simple pattern of footsteps. As soon
 a footstep plan has been generated the *Execute* button becomes active
 as well. When you click on this button the previously generated
-footsteps will be executed virtually by the \`StepControllerTestPlugin\`
+footsteps will be executed virtually by the `StepControllerTestPlugin`
 which fakes an footstep execution. During the fake execution, you will
 be able to follow the fake execution in the *step_interface_widget* by
 the progress bar.
@@ -79,7 +79,7 @@ The THORMANG3 provides a nice real world example how to migrate the
 software into an exisiting setup
 [here](https://github.com/thor-mang/ROBOTIS-THORMANG-MPC/tree/indigo-devel/thormang3_step_control_module).
 
-During the Humanoids@Robo\`\`Cup Demo 2016 at Leipzig, the step
+During the Humanoids@Robo``Cup Demo 2016 at Leipzig, the step
 controller was used.
 [Youtube](https://www.youtube.com/watch?v=uoyYznea0Pk)
 

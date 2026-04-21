@@ -137,7 +137,7 @@ the sdh in your overall launch file use ```
 hardware configuration is done in the
 [schunk_hardware_config](schunk_hardware_config) package. A sample
 parameter file for the sdh in
-\"schunk_hardware_config/sdh/config/sdh.yaml\" could look like this
+"schunk_hardware_config/sdh/config/sdh.yaml" could look like this
 ```
 sdhdevicetype: PCAN
 sdhdevicestring: /dev/pcan0
@@ -145,7 +145,7 @@ baudrate: 1000000
 joint_names: ['sdh_knuckle_joint', 'sdh_thumb_2_joint', 'sdh_thumb_3_joint', 'sdh_finger_12_joint', 'sdh_finger_13_joint', 'sdh_finger_22_joint', 'sdh_finger_23_joint']
 OperationMode: position
 ``` A sample parameter file for the dsa tactile
-sensors in \"schunk_hardware_config/sdh/config/dsa.yaml\" could look
+sensors in "schunk_hardware_config/sdh/config/dsa.yaml" could look
 like this ```
 dsadevicestring: /dev/ttyS0
 polling: false

@@ -8,7 +8,7 @@ A demo package for testing and demonstrating the uses of the
 There are a few launch files in the launch folder which show interesting
 situations where a planner that takes dynamic obstacles and time into
 account ([sbpl_dynamic_planner](sbpl_dynamic_planner)) will produce
-intelligent behavior. In the same situations a planner that doesn\'t
+intelligent behavior. In the same situations a planner that doesn't
 handle time (treats dynamic obstacles as static ones) will produce
 incorrect solutions, or no solution at all.
 
@@ -18,7 +18,7 @@ and the dynamic obstacles in green.
 ```
 roscd demo_sbpl_dynamic_env
 roslaunch launch/duck_and_wait.launch
-``` In this demo the robot\'s goal is on the right
+``` In this demo the robot's goal is on the right
 and there is a dynamic obstacle moving toward it in a tight hallway. The
 robot generates a plan that ducks into an alcove waits for the moving
 obstacle to pass and then proceed to its goal. A planner that does not

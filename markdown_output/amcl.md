@@ -4,16 +4,16 @@ Many of the algorithms and their parameters are well-described in the
 book Probabilistic Robotics, by Thrun, Burgard, and Fox. The user is
 advised to check there for more detail. In particular, we use the
 following algorithms from that book:
-**\`sample_motion_model_odometry\`**, **\`beam_range_finder_model\`**,
-**\`likelihood_field_range_finder_model\`**, **\`Augmented_MCL\`**, and
-**\`KLD_Sampling_MCL\`**.
+**`sample_motion_model_odometry`**, **`beam_range_finder_model`**,
+**`likelihood_field_range_finder_model`**, **`Augmented_MCL`**, and
+**`KLD_Sampling_MCL`**.
 
 As currently implemented, this node works only with laser scans and
 laser maps. It could be extended to work with other sensor data.
 
 ## Example
 
-To localize using laser data on the \`base_scan\` topic:
+To localize using laser data on the `base_scan` topic:
 ```
 amcl scan:=base_scan
 ```
@@ -70,7 +70,7 @@ node.0 {
 #### Parameters
 
 There are three categories of ROS [Parameters](Parameters) that can be
-used to configure the \`amcl\` node: overall filter, laser model, and
+used to configure the `amcl` node: overall filter, laser model, and
 odometery model.
 
 ##### Overall filter parameters
@@ -223,23 +223,23 @@ param {
 
 ##### Odometry model parameters
 
-If \`odom_model_type\` is \`\"diff\"\` then we use the
-\`sample_motion_model_odometry algorithm\` from Probabilistic Robotics,
-p136; this model uses the noise parameters \`odom_alpha1\` through
-\`odom_alpha4\`, as defined in the book.
+If `odom_model_type` is `"diff"` then we use the
+`sample_motion_model_odometry algorithm` from Probabilistic Robotics,
+p136; this model uses the noise parameters `odom_alpha1` through
+`odom_alpha4`, as defined in the book.
 
-If \`odom_model_type\` is \`\"omni\"\` then we use a custom model for an
-omni-directional base, which uses \`odom_alpha1\` through
-\`odom_alpha5\`. The meaning of the first four parameters is similar to
-that for the \`\"diff\"\` model. The fifth parameter capture the
+If `odom_model_type` is `"omni"` then we use a custom model for an
+omni-directional base, which uses `odom_alpha1` through
+`odom_alpha5`. The meaning of the first four parameters is similar to
+that for the `"diff"` model. The fifth parameter capture the
 tendency of the robot to translate (without rotating) perpendicular to
 the observed direction of travel.
 
 A [bug](https://github.com/ros-planning/navigation/issues/20) was found
 and fixed. But fixing the old models would have changed or broken the
 localisation of already tuned robot systems, so the new fixed odometry
-models were added as new types \`\"diff-corrected\"\` and
-\`\"omni-corrected\"\`. The default settings of the \`odom_alpha\`
+models were added as new types `"diff-corrected"` and
+`"omni-corrected"`. The default settings of the `odom_alpha`
 parameters only fit the old models, for the new model these values
 probably need to be a lot smaller, see
 <http://answers.ros.org/question/227811/tuning-amcls-diff-corrected-and-omni-corrected-odom-models/>.
@@ -248,10 +248,10 @@ Also, another
 [bug](https://github.com/ros-planning/navigation/issues/499) was found
 but only fixed after Navigation 1.16, while the current release for
 Kinetic is Navigation 1.14.1. This bug only affects robot with type
-\`\"omni\"\` and \`\"omni-corrected\"\`, where \`odom_alpha1\` and
-\`odom_alpha4\` are actually reversed. I.e. \`odom_alpha1\` is for the
+`"omni"` and `"omni-corrected"`, where `odom_alpha1` and
+`odom_alpha4` are actually reversed. I.e. `odom_alpha1` is for the
 translation odometry noise from robot translation-al motion, and
-\`odom_alpha4\` represents the odometry rotation noise from robot\'s
+`odom_alpha4` represents the odometry rotation noise from robot's
 rotation motion.
 
 ```clearsilver
@@ -302,23 +302,23 @@ param {
 
 #### Transforms
 
-\`amcl\` transforms incoming laser scans to the odometry frame
-(\`odom_frame_id\`). So there must exist a path through the [tf](tf)
+`amcl` transforms incoming laser scans to the odometry frame
+(`odom_frame_id`). So there must exist a path through the [tf](tf)
 tree from the frame in which the laser scans are published to the
 odometry frame.
 
-An implementation detail: on receipt of the first laser scan, \`amcl\`
-looks up the transform between the laser\'s frame and the base frame
-(base_frame_id), and latches it forever. So \`amcl\` cannot handle a
+An implementation detail: on receipt of the first laser scan, `amcl`
+looks up the transform between the laser's frame and the base frame
+(base_frame_id), and latches it forever. So `amcl` cannot handle a
 laser that moves with respect to the base.
 
 The drawing below shows the difference between localization using
-odometry and \`amcl\`. During operation \`amcl\` estimates the
+odometry and `amcl`. During operation `amcl` estimates the
 transformation of the base frame (base_frame_id) in respect to the
-global frame (\`global_frame_id\`) but it only publishes the transform
-between the global frame and the odometry frame (\`odom_frame_id\`).
+global frame (`global_frame_id`) but it only publishes the transform
+between the global frame and the odometry frame (`odom_frame_id`).
 Essentially, this transform accounts for the drift that occurs using
 Dead Reckoning. The published transforms are
 [future dated](tf/FAQ#Why_do_I_see_negative_average_delay_in_tf_monitor.3F).
 
-![\|width=\"750px\"](attachment:amcl_localization.png)
+![\|width="750px"](attachment:amcl_localization.png)

@@ -6,8 +6,8 @@ This package is an ROS wrapper for
 [ARToolkit](http://www.hitl.washington.edu/artoolkit/).
 
 [ar_pose](ar_pose) provides two nodes you can run. The program
-\`ar_single\` provides a transform between the camera and a single AR
-Marker. The program \`ar_multi\` provides an array of transforms for
+`ar_single` provides a transform between the camera and a single AR
+Marker. The program `ar_multi` provides an array of transforms for
 multiple markers.
 
 ## Calibration Requirements
@@ -25,10 +25,10 @@ built.
 
 ### Prerecorded Demo: Tracking a single marker
 
-This demo uses \`ar_single\` to track the location of an
+This demo uses `ar_single` to track the location of an
 [AR Marker](http://www.artoolworks.com/support/library/Creating_and_training_new_ARToolKit_markers)
 relative to the location of a fixed camera. The position of the camera
-in the world frame is published by \`static_tf_publisher\` as a static
+in the world frame is published by `static_tf_publisher` as a static
 transform. The tracking process is visualized in [rviz](rviz).
 
 ```wiki
@@ -53,11 +53,11 @@ video below:
 
 ### Prerecorded Demo: Tracking the camera position
 
-This demo uses \`ar_single\` to track the position of the camera
+This demo uses `ar_single` to track the position of the camera
 relative to the location of an
 [AR Marker](http://www.artoolworks.com/support/library/Creating_and_training_new_ARToolKit_markers).
 The position of the marker in the world frame is published by
-\`static_tf_publisher\` as a static transform. The tracking process is
+`static_tf_publisher` as a static transform. The tracking process is
 visualized in [rviz](rviz).
 
 ```wiki
@@ -82,10 +82,10 @@ video below:
 
 ### Prerecorded Demo: Tracking multiple markers
 
-This demo uses \`ar_multi\` to track the location of multiple
+This demo uses `ar_multi` to track the location of multiple
 [AR Markers](http://www.artoolworks.com/support/library/Creating_and_training_new_ARToolKit_markers)
 relative to the location of a fixed camera. The position of the camera
-in the world frame is published by \`static_tf_publisher\` as a static
+in the world frame is published by `static_tf_publisher` as a static
 transform. The tracking process is visualized in [rviz](rviz).
 
 ```wiki
@@ -144,8 +144,8 @@ rosmake rviz rosbag
 
 A workaround for undefined references in libARgsub.a with Ubuntu 11.10:
 
--   delete #include \<AR/gsub.h\> on line 29 in ar_multi.h
--   remove \"argCleanup();\" on line 159 in ar_multi.cpp
+-   delete #include <AR/gsub.h> on line 29 in ar_multi.h
+-   remove "argCleanup();" on line 159 in ar_multi.cpp
 
 ## Bug Reports & Feature Requests
 

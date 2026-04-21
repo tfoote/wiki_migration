@@ -1,4 +1,4 @@
-![\|align=\"right\"](attachment:Docker_logo.png)
+![\|align="right"](attachment:Docker_logo.png)
 
 ## Introduction
 
@@ -7,14 +7,14 @@ applications. You can learn more about Docker by visiting its website,
 [docker.com](https://www.docker.com/). The documentation on ROS.org will
 help you get started using Docker for your ROS applications.
 
-In particular, if you\'re just getting started using Docker with ROS, we
+In particular, if you're just getting started using Docker with ROS, we
 encourage you to make use of the following resources:
 
 -   [What is Docker](https://www.docker.com/whatisdocker/) - A page that
     will give you excellent high level overview of Docker and its
     pupose.
 -   [Documentation](https://docs.docker.com/) - Browse the online
-    documentation and references to find information about Docker\'s
+    documentation and references to find information about Docker's
     various functions and tools.
 -   [Forums](https://forums.docker.com/) - If you need help, just ask!
     Docker has a great user community, with lots of people willing to
@@ -23,7 +23,7 @@ encourage you to make use of the following resources:
     Another way to start a discussion and follow community activities.
 
 For new users of Docker, those resources will provide you with most of
-the information you\'ll need to get familiar with the platform.
+the information you'll need to get familiar with the platform.
 Additional information pertaining to using Docker in your ROS
 applications can be found here on this wiki.
 

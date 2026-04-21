@@ -13,9 +13,9 @@ controller. Some of the features of this package are:
 
 Pair and connect to your DualShock 4 by long-pressing the PS button and
 Share button for up to 10 seconds until the LED starts flashing. Use
-your system\'s Bluetooth settings to connect to the device.
+your system's Bluetooth settings to connect to the device.
 
-This driver depends on \`ds4drv\`. Some features of this driver depend
+This driver depends on `ds4drv`. Some features of this driver depend
 on pull requests have not yet been merged upstream. Until they are
 merged, use [the fork](https://github.com/naoki-mizuno/ds4drv) (devel
 branch).
@@ -42,7 +42,7 @@ $ rosrun ds4_driver ds4_driver_node.py
 ### Disable touchpad input device
 
 Note: You can skip this section if you use the forked version of
-\`ds4drv\` (i.e. \`naoki-mizuno/ds4drv\`) because the following line is
+`ds4drv` (i.e. `naoki-mizuno/ds4drv`) because the following line is
 included in the udev rules by default.
 
 By default the touchpad of the DualShock 4 is recognized as an input
@@ -50,7 +50,7 @@ device. Because of this, the mouse moves to the location on screen that
 corresponds to the location touched, making it very hard to track the
 mouse cursor (and worse, it automatically clicks at that location). If
 you want to prevent the touchpad from being recognized as an input
-device, add the following to the udev rules and run the \`udevadm\`
+device, add the following to the udev rules and run the `udevadm`
 commands (you will still be able to use the touchpad from this driver):
 
 ```
@@ -59,7 +59,7 @@ SUBSYSTEM=="input", ATTRS{name}=="*Wireless Controller Touchpad", RUN+="/bin/rm 
 
 ## Demonstration
 
-Get a glimpse of some of the features of \`ds4_driver\` including
+Get a glimpse of some of the features of `ds4_driver` including
 touchpad, rumble, and LED control:
 
 ```console

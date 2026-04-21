@@ -22,11 +22,11 @@ height.
 
 -   rate (double: default 30.0) publish rate \[Hz\].
 -   device_id (int: default 0) capture device id.
--   frame_id (string: default \"camera\") frame_id of message header.
+-   frame_id (string: default "camera") frame_id of message header.
 -   image_width (int) try to set capture image width.
 -   image_height (int) try to set capture image height.
 -   camera_info_url (string) url of camera info yaml.
--   file (string: default \"\") if not \"\" then use movie file instead
+-   file (string: default "") if not "" then use movie file instead
     of device.
 
 ### Usage

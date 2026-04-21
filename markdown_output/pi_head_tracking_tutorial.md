@@ -10,7 +10,7 @@ TypeError: <unknown> is not a numpy array
 right after selecting a region with the mouse to track. The only fix at
 the moment seems to be to overlay the C-Turtle version of the
 vision_opencv stack and then set your ROS_PACKAGE_PATH and PYTHONPATH
-environment variables to pick up this version before Diamondback\'s
+environment variables to pick up this version before Diamondback's
 version. To do this on your machine, follow these steps:
 
 ```

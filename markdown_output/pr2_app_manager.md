@@ -33,10 +33,10 @@ Enter the robot name (e.g. pri):
 ```
 
 The robot name refers to the identity of the robot. It is important that
-it be the same as the robot\'s host name.
+it be the same as the robot's host name.
 
 Note: version 0.4.5 and earlier had a bug causing the ssh keys of the
-new \"applications\" user to not get set up correctly. If you are using
+new "applications" user to not get set up correctly. If you are using
 that version, or just want to be sure, run this:
 
 ```
@@ -44,13 +44,13 @@ sudo su applications
 ```
 
 If you have the old version, you will be asked if you want to set up
-your SSH keys. Answer \"Y\" for yes. You should see a random ASCII art
-square. Then type `exit` to log back out of the \"applications\" user
+your SSH keys. Answer "Y" for yes. You should see a random ASCII art
+square. Then type `exit` to log back out of the "applications" user
 account.
 
 If you have the new version, you will not be asked anything, you will
 just get a regular shell prompt. Type `exit` to log out of the
-\"applications\" account.
+"applications" account.
 
 Finally, after the script runs and completes successfully, run a test:
 ```
@@ -69,7 +69,7 @@ probably wish to create a QR code first, however.
 The QR codes for the PR2s are specified with a variety of attributes
 stored in YAML to help connect to them. They are generated using
 [the Zebra Crossing QR Code Generator](http://zxing.appspot.com/generator/).
-To create the QR codes, use the \"Text\" mode, type in the text
+To create the QR codes, use the "Text" mode, type in the text
 (examples below) and click generate. When you are finished, you can
 right click and save or print the QR code image. To avoid the hassle of
 printing, many devices can read the QR code directly off of your PC
@@ -84,7 +84,7 @@ CURL: http://pri1/cgi-bin/control.py
 WIFI: priLAN
 ```
 
-Obviously, the three instances of \"pri\" will have to be changed for
+Obviously, the three instances of "pri" will have to be changed for
 your specific robot.
 
 Some robots have secured networks. They need an extra line:

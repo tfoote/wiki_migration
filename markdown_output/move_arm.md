@@ -1,6 +1,6 @@
 ## ROS API
 
-This package provides the \`move_arm\` node which is a major component
+This package provides the `move_arm` node which is a major component
 of the arm navigation stack. The node uses ROS services to connect to an
 environment server for most of its internal needs: e.g. checking
 trajectories and states for collisions, performing inverse kinematics,
@@ -40,12 +40,12 @@ param {
 
 ### Action API
 
-The \`move_arm\` node provides an implementation of a
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )),
-that takes in goals containing \`move_arm/MoveArmGoal\` messages. You
-can communicate with the \`move_arm\` node over ROS directly, but the
-recommended way to send goals to \`move_arm\` if you care about tracking
-their status is by using the \`SimpleActionClient\`. Please see
+The `move_arm` node provides an implementation of a
+`SimpleActionServer` (see [ actionlib documentation](actionlib )),
+that takes in goals containing `move_arm/MoveArmGoal` messages. You
+can communicate with the `move_arm` node over ROS directly, but the
+recommended way to send goals to `move_arm` if you care about tracking
+their status is by using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 #### Action Subscribed Topics

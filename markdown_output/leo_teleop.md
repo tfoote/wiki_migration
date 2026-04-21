@@ -18,7 +18,7 @@ To control the robot with a joystick, use: ```
 roslaunch leo_teleop joy_teleop.launch
 ``` If
 your joystick device is available on a path other than
-\`/dev/input/js0\`, you can specify it using the \`joy_dev\` argument,
+`/dev/input/js0`, you can specify it using the `joy_dev` argument,
 for example: ```
 roslaunch leo_teleop joy_teleop.launch joy_dev:=/dev/input/js1
 ``` The default joy button and axis
@@ -30,6 +30,6 @@ mapping was created for Xbox 360 Controller and it looks as follows:
      Left/Right Axis stick right      Control angular speed of the robot                  
   -- ----------------------------- -- --------------------------------------------------- --
 
-If you would like to use custom mapping, set the \`joy_config_file\`
+If you would like to use custom mapping, set the `joy_config_file`
 argument to a path of a YAML file containing parameters for
 [teleop_twist_joy](teleop_twist_joy) node.

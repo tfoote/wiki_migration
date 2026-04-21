@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -23,7 +23,7 @@ You must build the package and parameterize the connection parameters
 
 ### Needed hardware
 
-![SICK LMS 400 2D Laserscanner\|height=\"362\",width=\"485\"](https://www.sick.com/media/ZOOM/2/02/502/IM0008502.png)
+![SICK LMS 400 2D Laserscanner\|height="362",width="485"](https://www.sick.com/media/ZOOM/2/02/502/IM0008502.png)
 
 A
 [SICK lms400 2D Laserscanner](https://www.sick.com/de/en/detection-and-ranging-solutions/2d-laser-scanners/lms4xx/lms400-1000/p/p109851)
@@ -39,7 +39,7 @@ rosrun asr_sick_lms_400 asr_sick_lms_400
 
 ### Published Topics
 
-\_/laser_scan\_
+_/laser_scan_
 ([sensor_msgs/LaserScan.msg](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)*)*
 
 Includes an array of all scanned points of one iteration, with its
@@ -75,7 +75,7 @@ distance information.
 *enable_eRIS* (int)
 
 -   Enables extended RIS detectivity. If you want to measure objects
-    with remission values \< 10%, you can extend the so-called Remission
+    with remission values < 10%, you can extend the so-called Remission
     Information System (RIS) on the LMS4000.
 
 *mean_filter_parameter* (int)
@@ -86,7 +86,7 @@ distance information.
 *range_filter_parameter_min, range_filter_parameter_max* (int)
 
 -   Define a specific range within which measured values are valid and
-    are output. Possible values: \[+700.0 \... +3000.0 \<bottom limit\>
+    are output. Possible values: \[+700.0 \... +3000.0 <bottom limit>
     \... +3000.0\]
 
 **Lascerscan parameters: **

@@ -4,9 +4,9 @@
 
 The [laser_scan_matcher](laser_scan_matcher) package is an incremental
 laser scan registration tool. The package allows to scan match between
-consecutive \<\<MsgLink(sensor_msgs/LaserScan)\>\> messages, and publish
+consecutive <<MsgLink(sensor_msgs/LaserScan)>> messages, and publish
 the estimated position of the laser as a
-\<\<MsgLink(geometry_msgs/Pose2D)\>\> or a [tf](tf) transform.
+<<MsgLink(geometry_msgs/Pose2D)>> or a [tf](tf) transform.
 
 The package can be used without any odometry estimation provided by
 other sensors. Thus, it can serve as a stand-alone odometry estimator.
@@ -18,9 +18,9 @@ improve the registration speed and accuracy.
 ### Supported message types
 
 The [laser_scan_matcher](laser_scan_matcher) can operate using
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> messages or
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages. When using
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\>, make sure they have no \`nan\`
+<<MsgLink(sensor_msgs/LaserScan)>> messages or
+<<MsgLink(sensor_msgs/PointCloud2)>> messages. When using
+<<MsgLink(sensor_msgs/PointCloud2)>>, make sure they have no `nan`
 values.
 
 ### Scan prediction
@@ -29,36 +29,36 @@ While the [laser_scan_matcher](laser_scan_matcher) can operate by just
 using scan data, we can speed up the scan registration process by
 providing a guess for the current position of the sensor every time a
 new scan message arrives. When no guess is available, a reasonable (and
-widely-used) assumption is that the sensor didn\'t move (zero-velocity
+widely-used) assumption is that the sensor didn't move (zero-velocity
 model). Below is a list of inputs that
 [laser_scan_matcher](laser_scan_matcher) accepts:
 
 1\. **IMU** :An estimation for the change of the orientation angle
-(\`delta-theta\`) of the robot in the form of a
-\<\<MsgLink(sensor_msgs/IMU)\>\> message. We are assuming that the
-\`yaw\` component of the IMU message corresponds to the orientation of
-the robot. Thus, we don\'t really need a full 6DoF IMU sensor - a cheap
+(`delta-theta`) of the robot in the form of a
+<<MsgLink(sensor_msgs/IMU)>> message. We are assuming that the
+`yaw` component of the IMU message corresponds to the orientation of
+the robot. Thus, we don't really need a full 6DoF IMU sensor - a cheap
 1-axis gyro will work as well, as long as its output is packed as an IMU
-message. The required topic is \`imu/data\`.
+message. The required topic is `imu/data`.
 
 2\. **Wheel odometry**: An estimation for the change of x-, y-, and
 orientation angle of the robot from an odometric sensor such as wheel
-encoders. The required topic is \`odom\`.
+encoders. The required topic is `odom`.
 
 3\. **Constant velocity model**: Assumes the robot moved based on an
-estimate of the robot\'s velocity. The velocity estimate can be obtained
+estimate of the robot's velocity. The velocity estimate can be obtained
 from an external sensor, or by derivating and filtering the output of
-the scan matcher itself. The required topic is \`vel\`. For an example
+the scan matcher itself. The required topic is `vel`. For an example
 of how to use a simple filter to achieve this, check out
 [ Alpha-beta tracking for scan matching predictions](AlphaBetaTracking ).
 
-4\. **Zero-velocity model**: Don\'t use any prediction, ie, assume that
+4\. **Zero-velocity model**: Don't use any prediction, ie, assume that
 the robot stayed in the same place.
 
 We can use combinations of the above such as IMU together with wheel
 odometry or IMU together with alpha beta tracking. When several
-prediction modes are enabled, the priority is IMU \> Odometry \>
-Constant Velocity \> Zero Velocity.
+prediction modes are enabled, the priority is IMU > Odometry >
+Constant Velocity > Zero Velocity.
 
 **What should I use in practice?**
 
@@ -84,13 +84,13 @@ still, the incremental transformations might be non-zero. This could
 result in a slow drift of the pose of the robot.
 
 To alleviate this, we implement keyframe-based matching. The change in
-pose is calculated between the current laser scan and a \"keyframe\"
+pose is calculated between the current laser scan and a "keyframe"
 scan. The keyframe scan is updated after the robot moves a certain
 distance. Thus, if the robot is standing still, the keyframe scan will
 not change, and the pose will remain more drift free.
 
 Setting the tolerance for updating the keyframe can be achieved via the
-\`kf_dist_linear\` and \`kf_dist_angular\` parameters. Their default
+`kf_dist_linear` and `kf_dist_angular` parameters. Their default
 values give a more robust performance, both while standing still and
 moving.
 
@@ -117,8 +117,8 @@ additional odometry is provided.
 
 ## ROS API
 
-Two drivers are available: \`laser_scan_matcher_nodelet\` and
-\`laser_scan_matcher_node\`. Their parameters and topics are identical.
+Two drivers are available: `laser_scan_matcher_nodelet` and
+`laser_scan_matcher_node`. Their parameters and topics are identical.
 
 ### Topics
 
@@ -220,8 +220,8 @@ no_header=True
 
 #### Pointcloud input
 
-Parameters when using \<\<MsgLink(sensor_msgs/PointCloud2)\>\> instead
-of \<\<MsgLink(sensor_msgs/LaserScan)\>\> messages.
+Parameters when using <<MsgLink(sensor_msgs/PointCloud2)>> instead
+of <<MsgLink(sensor_msgs/LaserScan)>> messages.
 
 ```clearsilver
 no_header=True
@@ -442,7 +442,7 @@ no_header=True
 
 ## References
 
-\[1\] A. Censi, \"An ICP variant using a point-to-line metric\"
+\[1\] A. Censi, "An ICP variant using a point-to-line metric"
 Proceedings of the IEEE International Conference on Robotics and
 Automation (ICRA), 2008
 

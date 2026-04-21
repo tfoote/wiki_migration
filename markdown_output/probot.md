@@ -7,8 +7,8 @@ packages.
 
 ## Compatibility
 
-The \`probot_driver\` package has been successfully used with system
-versions \`v1.0.0\`.
+The `probot_driver` package has been successfully used with system
+versions `v1.0.0`.
 
 ## Installation
 
@@ -22,4 +22,4 @@ overview of the available tutorials.
 
 ## Report a Bug
 
-\<\<GitHubIssues(ps-micro/probot_ros)\>\>
+<<GitHubIssues(ps-micro/probot_ros)>>

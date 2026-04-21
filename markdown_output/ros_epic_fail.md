@@ -11,7 +11,7 @@ due to a newly introduced bug or the latent random failure bug(s).
 capturing bag files of the test failures. Users can then view the bag
 files using ros tools and locate the source of the problem.
 
-While one could simply add \`rosbag record\` commands to a failing test;
+While one could simply add `rosbag record` commands to a failing test;
 bag files from every run would be stored, and this would consume a great
 deal of disk space. Ros_epic_fail only stores bags from actual test
 failures, and limits the number of stored bags. This prevents excessive

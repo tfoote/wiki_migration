@@ -3,8 +3,8 @@
 ## Overview
 
 This omronsentech_camera package is provided by OMRON SENTECH, CO.,LTD.
-to be used with OMRON SENTECH cameras. This package wraps SentechSDK\'s
-transport layer module to provide generic access to the camera\'s
+to be used with OMRON SENTECH cameras. This package wraps SentechSDK's
+transport layer module to provide generic access to the camera's
 GenICam features and image capture. Any cameras which are supported by
 Linux-based SentechSDK are also supported by this package.
 

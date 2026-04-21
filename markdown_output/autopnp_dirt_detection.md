@@ -262,7 +262,7 @@ recorded into ROS bag-files that contain
     coordinate systems. The next section details which kind of data has
     been recorded under the described conditions.
 
-![Figure 1\|width=640,align=\"middle\"](attachment:dirt-dataset-overview.png)
+![Figure 1\|width=640,align="middle"](attachment:dirt-dataset-overview.png)
 
 ### Dataset
 
@@ -282,7 +282,7 @@ because of the localization of the mobile robot. This proceeding has the
 advantage that each piece of dirt has to be labeled only once per
 bag-file and not for every frame.
 
-![Figure 2\|width=640,align=\"middle\"](attachment:dirt-dataset-dirt-overview.png)
+![Figure 2\|width=640,align="middle"](attachment:dirt-dataset-dirt-overview.png)
 
 ### Download and Usage of the Dirt Dataset
 
@@ -322,27 +322,27 @@ roslaunch autopnp_dirt_detection dirt_detection_labeling.launch
 ``` and then play the recorded bag-file with
 ```
 rosbag play --clock -l <name-of-your-file>
-``` You can also use the -r \<number\> option to
+``` You can also use the -r <number> option to
 play the bag-file at a different speed. After a few seconds, the dirt
 detection software will open two images showing the normal view onto the
 scene as well as the warped image. Click into one of the images to move
-the focus to it and press \'l\' whenever you like to label a view. Now a
-third image with the title \'labeling image\' pops up. Press the \'h\'
+the focus to it and press 'l' whenever you like to label a view. Now a
+third image with the title 'labeling image' pops up. Press the 'h'
 button to list all keys that you can use for labeling your data. By
 pressing the left mouse button if the upper left corner of the dirt item
 and releasing it in the lower right corner you can draw a label box.
 This box can then be changed in size and rotated. When you arranged if
-in the desired position press the \'enter\' key and type a descriptive
-label of your choice. You may use the \'space\' key for multiple words.
-Finish the typing by pressing \'enter\' again. Please notice that you
+in the desired position press the 'enter' key and type a descriptive
+label of your choice. You may use the 'space' key for multiple words.
+Finish the typing by pressing 'enter' again. Please notice that you
 only have to label each particle once per bag-file as the labels are
 converted to fixed world coordinates of the /map frame because the dirt
-is mapped. After labeling all items, press the \'esc\' key. Now, you
+is mapped. After labeling all items, press the 'esc' key. Now, you
 will see the playback stream of the bag-file again. Whenever you like to
-label more items within the stream, press \'l\' again and label. Should
+label more items within the stream, press 'l' again and label. Should
 you receive warnings from tf continuously during the repetitions of the
 playback, restart the rosbag play command. After all data of the
-bag-file has been labeled, press the \'f\' key while the image stream is
+bag-file has been labeled, press the 'f' key while the image stream is
 displayed and the labeling data will be written into
 `autopnp_dirt_detection/common/files/train.xml`. Rename the file to the
 same name as the your bag-file (but keep ending .xml) and place it in
@@ -371,11 +371,11 @@ AutoPnP project and how to test your own algorithm.
 The autopnp_dirt_detection package contains three launch files that
 reproduce the results stated in \[1\]. 1.
 `dirt_detection_dbtest_withoutwarp.launch` starts dirt detection without
-warping the camera images to a bird\'s eye view. 1.
+warping the camera images to a bird's eye view. 1.
 `dirt_detection_dbtest_withwarp.launch` starts the dirt detection
-algorithm that operates on images which are transformed into the bird\'s
+algorithm that operates on images which are transformed into the bird's
 eye perspective. 1. `dirt_detection_dbtest_withlineremoval.launch`
-launches dirt detection on images in bird\'s eye perspective and with
+launches dirt detection on images in bird's eye perspective and with
 the removal of lines to decrease false positives.
 
 There is an index file for database tests which tells the algorithm

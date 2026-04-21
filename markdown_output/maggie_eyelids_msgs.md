@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(maggie_eyelids_msgs)\>\>
+<<MsgSrvDoc(maggie_eyelids_msgs)>>

@@ -29,5 +29,5 @@ robot you will have to execute the following command:
 roslaunch rb1_base_description rb1_base_state.launch
 ```
 
-In case you want to change the robot\'s urdf, this can be found inside
+In case you want to change the robot's urdf, this can be found inside
 the **robots** folder.

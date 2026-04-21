@@ -1,6 +1,6 @@
 ## Overview
 
-The \`ic_barcode_scanner\` provides a ROS wrapper nodelet/node to the
+The `ic_barcode_scanner` provides a ROS wrapper nodelet/node to the
 IC-Barcode library of The Imaging Source (TIS).
 
 See <https://www.theimagingsource.com/support/documentation/ic-barcode>
@@ -24,8 +24,8 @@ provided as a DEB package compatible with Ubuntu LTS. Then, download and
 compile this ROS wrapper from
 <https://github.com/fkie/ic_barcode_scanner>.
 
-To use the wrapper, either run the \`IcBarcodeScannerNodelet\` or
-\`IcBarcodeScannerNode\`, which both provide the same
+To use the wrapper, either run the `IcBarcodeScannerNodelet` or
+`IcBarcodeScannerNode`, which both provide the same
 interface/functionality.
 
 ```

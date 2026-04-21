@@ -60,11 +60,11 @@ mode and load the deploy.ops script in the myRosPkg package:
 Important remarks:
 
 -   The arguments you used to pass to the deployer on the command line,
-    are now passed using the args attribute. You can use \'\$(find
-    myRosPkg)\' syntax to avoid using absolute file paths.
--   The launch-prefix attribute makes the orocos deployer start in it\'s
+    are now passed using the args attribute. You can use '\$(find
+    myRosPkg)' syntax to avoid using absolute file paths.
+-   The launch-prefix attribute makes the orocos deployer start in it's
     own terminal, which makes it possible to interact with it.
--   Always append the arguments with two dashes (\"\--\"). Your launch
+-   Always append the arguments with two dashes ("\--"). Your launch
     file will not work otherwise: the deployer will start but shutdown
     immediately. This has to do with ROS appending extra arguments to
     the args attribute. The 2 dashes are used to separate the deployer

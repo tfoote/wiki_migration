@@ -8,19 +8,19 @@
 rosrun cmvision colorgui image:=<image topic>
 ``` The above command will bring up an interface
 that provides a means for graphically selecting desired colors for
-blobs. \`colorgui\` displays values for \`RGB\` and \`YUV\` which can be
+blobs. `colorgui` displays values for `RGB` and `YUV` which can be
 used in a colors file.
 
 ### Colors File Format
 
-Blob parameters are specified to \`cmvision\` using two components:
+Blob parameters are specified to `cmvision` using two components:
 
--   Blob colors in \`RGB\` color space, specified as follows: (r, g, b)
+-   Blob colors in `RGB` color space, specified as follows: (r, g, b)
     merge expected_num name
--   Blob threshold parameters in \`YUV\` color space, specified as
+-   Blob threshold parameters in `YUV` color space, specified as
     follows: (min_y:max_y, min_u:max_u, min_v:max_v)
 
-Example \`colors.txt\` for detecting a *Research Robot Red* RWI B21r
+Example `colors.txt` for detecting a *Research Robot Red* RWI B21r
 ```
 [colors]
 (159,  62, 71) 0.000000 7 ResearchRobotRed
@@ -30,7 +30,7 @@ Example \`colors.txt\` for detecting a *Research Robot Red* RWI B21r
 ```
 
 Multiple blob colors can be specified in the same file by adding lines
-under \`colors\` and \`thresholds\`.
+under `colors` and `thresholds`.
 
 ### Detecting Blobs
 

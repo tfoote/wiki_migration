@@ -44,7 +44,7 @@ You can do this step with as many bags as you like (different shell for
 each bag). Each joint should only be driven by one bag or havoc will
 ensue.
 
-To play bag \`foo.bag\`: ```
+To play bag `foo.bag`: ```
 BAG=foo.bag roslaunch joint_replay.launch
 ```
 
@@ -69,17 +69,17 @@ Some parameters can be adjusted when replaying a bag:
      ready_by         how fast the robot needs to get into its starting position      
   -- ------------- -- --------------------------------------------------------------- --
 
-The \`ready_by\` parameter deserves more attention. When the replay is
+The `ready_by` parameter deserves more attention. When the replay is
 triggered, the joints will not be in the position at the start of the
 bag. joint_replay.py will generate a smooth trajectory from the current
 position to the bag start position. This smooth motion will start as
 soon as the trigger message is received (time t0). If the trigger is set
 to occur at time t1 (time when trigger.py sent the message plus the
-\`delay\` parameter). The smooth motion will end at time:
+`delay` parameter). The smooth motion will end at time:
 ```
 t0 * ready_by + t1 * (1 - ready_by)
-``` For example, for \`ready_by = 0\`, the motion
-will be instantaneous (not recommended), for \`ready_by = 1\`, the
+``` For example, for `ready_by = 0`, the motion
+will be instantaneous (not recommended), for `ready_by = 1`, the
 motion will end exactly when the bag replay is due to start, and for
-\`ready_by = 0.5\`, the motion will end half way between \`t0\` and
-\`t1\`.
+`ready_by = 0.5`, the motion will end half way between `t0` and
+`t1`.

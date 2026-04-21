@@ -16,7 +16,7 @@ The next scheme shows the relationship between the original nodes of the
 [pcl](pcl) and [navigation](navigation) stacks (gray), and the nodes
 used in this application (white).
 
-![\|width=\"770px\"](attachment:scheme.jpg)
+![\|width="770px"](attachment:scheme.jpg)
 
 **IRI nodes**:
 
@@ -41,14 +41,14 @@ navfn. 1. Double-check your ROS_PACKAGE_PATH to ensure that new navfn
 package is found in the correct precedence order (ROS needs to find the
 new navfn package to use it with the [navigation](navigation) stack,
 thus we indicate firstly the path of the new navfn node in the
-ROS_PACKAGE_PATH). 1. Compile the new navfn package (\`rosmake\`).
+ROS_PACKAGE_PATH). 1. Compile the new navfn package (`rosmake`).
 
 To verify this procedure once the new navfn is compiled, one can run
-\'roscd navfn\' and ensure that the current path is the correct one.
+'roscd navfn' and ensure that the current path is the correct one.
 
 **Vision system:**
 
--   \`roslaunch teo_apps obstacle_hole_detection.launch\`
+-   `roslaunch teo_apps obstacle_hole_detection.launch`
 
 ### Example Videos
 

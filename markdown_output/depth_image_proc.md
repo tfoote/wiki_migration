@@ -1,10 +1,10 @@
-\`depth_image_proc\` has found a new home in
+`depth_image_proc` has found a new home in
 [image_pipeline](image_pipeline). In Electric it resided in
 [openni_kinect](openni_kinect).
 
 ## Overview
 
-\`depth_image_proc\` provides basic processing for depth images, much as
+`depth_image_proc` provides basic processing for depth images, much as
 [image_proc](image_proc) does for traditional 2D images. The two
 packages are complementary; for example, you can (and should!) rectify
 your depth image before converting it to a point cloud.
@@ -18,16 +18,16 @@ A variety of camera technologies can produce depth images:
 See [REP 118](http://www.ros.org/reps/rep-0118.html) for details on
 depth image representation. The REP recommends that, wherever possible,
 producers and consumers of depth data use depth images (of type
-\<\<MsgLink(sensor_msgs/Image)\>\>) instead of
-\<\<MsgLink(sensor_msgs/DisparityImage)\>\>.
+<<MsgLink(sensor_msgs/Image)>>) instead of
+<<MsgLink(sensor_msgs/DisparityImage)>>.
 
-All nodelets (besides \`convert_metric\`) in this package support both
-standard floating point depth images and OpenNI-specific \`uint16\`
+All nodelets (besides `convert_metric`) in this package support both
+standard floating point depth images and OpenNI-specific `uint16`
 depth images. Thus when working with OpenNI cameras (e.g. the Kinect),
-you can save a few CPU cycles by using the \`uint16\` raw topics instead
-of the \`float\` topics.
+you can save a few CPU cycles by using the `uint16` raw topics instead
+of the `float` topics.
 
-For an example of \`depth_image_proc\` in practice, examine the contents
+For an example of `depth_image_proc` in practice, examine the contents
 of [openni_launch](openni_launch).
 
 ## Nodelets
@@ -54,7 +54,7 @@ node.1 {
 ```
 
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> **Input**      **Output**                                                    
+     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                    
      ![Depth\|width=100%](attachment:depth.png)                                            ![Disparity\|width=100%](attachment:disparity.png)            
      Depth image                                                                           Disparity image (colorized by [disparity_view](image_view))   
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
@@ -101,7 +101,7 @@ node.2 {
 ```
 
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 46%\"\> **Input**      **Output**                                            
+     <tablestyle="width: 99%; text-align: center" style="width: 46%"> **Input**      **Output**                                            
      ![Depth\|width=100%](attachment:depth.png)                                            ![Point cloud\|width=100%](attachment:rviz_xyz.png)   
      Depth image                                                                           Point cloud, colorized by distance along Z-axis       
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
@@ -136,8 +136,8 @@ node.3 {
 ```
 
   -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 40%\"\> **Input**      **Output**                                                                       
-     ![Depth\|width=100%](attachment:depth_reg.png)                                        \<                  3\> ![Point cloud\|width=100%](attachment:rviz_xyzrgb.png)   
+     <tablestyle="width: 99%; text-align: center" style="width: 40%"> **Input**      **Output**                                                                       
+     ![Depth\|width=100%](attachment:depth_reg.png)                                        <                  3> ![Point cloud\|width=100%](attachment:rviz_xyzrgb.png)   
      Registered depth image                                                                                                                                                 
      ![RGB\|width=100%](attachment:rgb.jpg)                                                                                                                                 
      RGB image                                                                             Color point cloud                                                                
@@ -176,7 +176,7 @@ node.4 {
 ```
 
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> **Input**      **Output**                                                  
+     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                  
      ![Depth\|width=100%](attachment:depth.png)                                            ![Registered depth\|width=100%](attachment:depth_reg.png)   
      Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera      
   -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
@@ -216,11 +216,11 @@ node.4 {
 
 ## Execution
 
-Since the package is made of \'nodelet\'s, \'nodelet\' execution method
+Since the package is made of 'nodelet's, 'nodelet' execution method
 is used as:
 <http://wiki.ros.org/nodelet/Tutorials/Running%20a%20nodelet>
 
-For example, the launch file to execute a \'point_cloud_xyz\' nodelet is
+For example, the launch file to execute a 'point_cloud_xyz' nodelet is
 like as:
 
 ```

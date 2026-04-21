@@ -7,9 +7,9 @@ using the roboception rc_visard with the
 The rc_cloud_accumulator ROS node subscribes to the following topics of
 the *rc_visard_driver*
 
--   \`/stereo/points2\`
--   \`/pose\`
--   \`/trajectory\`
+-   `/stereo/points2`
+-   `/pose`
+-   `/trajectory`
 
 The received information is stored, such that a registered point cloud
 can be computed and saved to disk. For performance reasons, the point
@@ -21,19 +21,19 @@ live pose (/pose) to position them in the global coordinate frame.
 The trajectory topic can be used to feed an optimized trajectory from
 the SLAM module into the *rc_cloud_accumulator*. The easiest way is to
 start the *rc_visard_driver* with the parameter *autopublish_trajectory*
-set to \`True\` and call the service */rc_visard_driver/get_trajectory*.
+set to `True` and call the service */rc_visard_driver/get_trajectory*.
 The *rc_visard_driver* will then send the trajectory on */trajectory*.
 
 # Running
 
 After starting the *rc_visard_driver*, execute
 
-\`rosrun rc_cloud_accumulator rc_cloud_accumulator\`
+`rosrun rc_cloud_accumulator rc_cloud_accumulator`
 
 Example with parameter:
 
-\`rosrun rc_cloud_accumulator rc_cloud_accumulator
-\_voxel_grid_size_display:=0.01\`
+`rosrun rc_cloud_accumulator rc_cloud_accumulator
+_voxel_grid_size_display:=0.01`
 
 # Known Bugs
 
@@ -70,29 +70,29 @@ result will also be be filtered with a voxel grid using the parameter
 
 The *rc_cloud_accumulator* provides the following services
 
--   \`/rc_cloud_accumulator/toggle_pause\`: Toggle processing of
+-   `/rc_cloud_accumulator/toggle_pause`: Toggle processing of
     received data
--   \`/rc_cloud_accumulator/save_cloud\`: Register stored clouds and
+-   `/rc_cloud_accumulator/save_cloud`: Register stored clouds and
     save them to disk. The stored cloud will be displayed, but updated
     with the next incoming point cloud. To keep the display of the
     stored result pause before saving.
 
 # ROS Parameters
 
--   \`voxel_grid_size_display\` (default = 0.05m): Downsampling grid
+-   `voxel_grid_size_display` (default = 0.05m): Downsampling grid
     size of the point cloud in the live display. Set to zero or below to
     turn off.
--   \`voxel_grid_size_save\` (default = 0.01m): Downsampling grid size
+-   `voxel_grid_size_save` (default = 0.01m): Downsampling grid size
     of the point cloud when saving to disk. Set to zero or below to turn
     off.
--   \`minimum_distance\` (default = 0.0m): Omit points closer to the
+-   `minimum_distance` (default = 0.0m): Omit points closer to the
     rc_visard
--   \`maximum_distance\` (default = 10.0m): Omit points closer farther
+-   `maximum_distance` (default = 10.0m): Omit points closer farther
     from the rc_visard. Set below minimum to turn distance filtering
     off.
--   \`output_filename\` (default = \"cloud.pcd\")
--   \`start_paused\` (default = false)
--   \`keep_high_resolution\` (default = true): Set to false to save
+-   `output_filename` (default = "cloud.pcd")
+-   `start_paused` (default = false)
+-   `keep_high_resolution` (default = true): Set to false to save
     memory and processing time. The original point clouds will not be
     stored and the point cloud saved to disk will be the one that is
     displayed. Only the voxel grid filter for the *live* pose will be

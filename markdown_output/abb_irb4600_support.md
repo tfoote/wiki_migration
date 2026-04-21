@@ -15,6 +15,6 @@ with a
 [Youtube](https://www.youtube.com/watch?v=Jq0-DkEwwj4)
 
 **Note**: the Webots integration shown here is provided by Cyberbotics
-and does not use the models provided by the \`abb_irb4600_support\`
+and does not use the models provided by the `abb_irb4600_support`
 package. Please contact Cyberbotics for support and usage related
 questions of this simulation.

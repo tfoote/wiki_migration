@@ -5,11 +5,11 @@ This package contains dynamic plugins for [ Gazebo](gazebo) and
 
 -   Plugin-Supported Hardware:
 -   [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](pr2_controller_manager):
-    provided by \`GazeboRosControllerManager\`.
+    provided by `GazeboRosControllerManager`.
 -   [ Prosilica Camera](prosilica_camera): provided by
-    \`GazeboRosProsilica\`.
+    `GazeboRosProsilica`.
 -   [Battery Power Monitor](power_monitor): provided by
-    \`GazeboRosPowerMonitor\`.
+    `GazeboRosPowerMonitor`.
 -   Unsupported Features:
 -   [ Power Board Driver](pr2_power_drivers)
 
@@ -22,9 +22,9 @@ hardware components in simulation.
 
 #### Parameters
 
-\`\<robotParam\>\` (string, default: \"robot_description\") Name of ROS
-parameter where robot description is stored. \`\<robotNamespace\>\`
-(string, default: \"/\") Robot namespace.
+`<robotParam>` (string, default: "robot_description") Name of ROS
+parameter where robot description is stored. `<robotNamespace>`
+(string, default: "/") Robot namespace.
 
 #### Example
 
@@ -40,27 +40,27 @@ parameter where robot description is stored. \`\<robotNamespace\>\`
 
 ### gazebo_ros_prosilica
 
-\`GazeboRosProsilica\` plugin provides ROS topic and service interfaces
+`GazeboRosProsilica` plugin provides ROS topic and service interfaces
 similar to those provided by the
 [ Prosilica Camera hardware](prosilica_camera) on PR2.
 
 #### Parameters
 
-\`\<robotNamespace\>\` (string, default: \"/\") Robot namespace.
-\`\<imageTopicName\>\` (string, default: \"image_raw\") ROS topic name
-for publishing image. \`\<cameraInfoTopicName\>\` (string, default:
-\"camera_info\") ROS topic name for publishing camera info.
-\`\<pollServiceName\>\` (string, default: \"request_image\") ROS service
-name for polling. \`\<frameName\>\` (string, default: \"\") Frame name
-of camera. \`\<CxPrime\>\` (integer, default: 320) !CxPrime \`\<Cx\>\`
-(integer, default: 320) Cx \`\<Cy\>\` (integer, default: 240) Cy
-\`\<focal_length\>\` (double, default: 554.256) image_width(px) /
-(2\*tan( hfov(radian) /2)) \`\<distortion_k1\>\` (double, default: 0)
-Distortion k1 value. \`\<distortion_k2\>\` (double, default: 0)
-Distortion k2 value. \`\<distortion_k3\>\` (double, default: 0)
-Distortion k3 value. \`\<distortion_t1\>\` (double, default: 0)
-Distortion t1 value. \`\<distortion_t2\>\` (double, default: 0)
-Distortion t2 value. \`\<hackBaseline\>\` (double, default: 0) Hack for
+`<robotNamespace>` (string, default: "/") Robot namespace.
+`<imageTopicName>` (string, default: "image_raw") ROS topic name
+for publishing image. `<cameraInfoTopicName>` (string, default:
+"camera_info") ROS topic name for publishing camera info.
+`<pollServiceName>` (string, default: "request_image") ROS service
+name for polling. `<frameName>` (string, default: "") Frame name
+of camera. `<CxPrime>` (integer, default: 320) !CxPrime `<Cx>`
+(integer, default: 320) Cx `<Cy>` (integer, default: 240) Cy
+`<focal_length>` (double, default: 554.256) image_width(px) /
+(2\*tan( hfov(radian) /2)) `<distortion_k1>` (double, default: 0)
+Distortion k1 value. `<distortion_k2>` (double, default: 0)
+Distortion k2 value. `<distortion_k3>` (double, default: 0)
+Distortion k3 value. `<distortion_t1>` (double, default: 0)
+Distortion t1 value. `<distortion_t2>` (double, default: 0)
+Distortion t2 value. `<hackBaseline>` (double, default: 0) Hack for
 right stereo camera
 
 #### Example
@@ -98,20 +98,20 @@ right stereo camera
 
 ### gazebo_ros_power_node
 
-\`GazeboRosPowerNode\` plugin provides ROS topics and services similar
+`GazeboRosPowerNode` plugin provides ROS topics and services similar
 to those provided by [PR2 power monitor node](power_monitor) on physical
 PR2.
 
 #### Parameters
 
-\`\<robotNamespace\>\` (string, default: \"/\") Robot namespace
-\`\<powerStateTopic\>\` (string, default: \"power_state\") Topic to
-subscribe to power state on \`\<powerStateRate\>\` (double, default:
-1.0) Power state rate. \`\<fullChargeCapacity\>\` (double, default:
-80.0) Full charge capacity \`\<chargeRate\>\` (double, default: 500.0)
-Charge rate \`\<dischargeVoltage\>\` (double, default: 16.0) Discharge
-voltate \`\<dischargeRate\>\` (double, default: -500.0) Discharge rate
-\`\<chargeVoltage\>\` (double, default: 16.0) Charge voltage.
+`<robotNamespace>` (string, default: "/") Robot namespace
+`<powerStateTopic>` (string, default: "power_state") Topic to
+subscribe to power state on `<powerStateRate>` (double, default:
+1.0) Power state rate. `<fullChargeCapacity>` (double, default:
+80.0) Full charge capacity `<chargeRate>` (double, default: 500.0)
+Charge rate `<dischargeVoltage>` (double, default: 16.0) Discharge
+voltate `<dischargeRate>` (double, default: -500.0) Discharge rate
+`<chargeVoltage>` (double, default: 16.0) Charge voltage.
 
 #### Example
 
@@ -169,7 +169,7 @@ srv {
 
 ### gazebo_ros_controller_manager
 
-\`GazeboRosControllerManager\` plugin provides similar ROS interface as
+`GazeboRosControllerManager` plugin provides similar ROS interface as
 [pr2_etherCAT](pr2_etherCAT) on the physical PR2 robot. This plugin is
 written in a way that [PR2 controller manager](pr2_controller_manager)
 works transparently with either this simulated plugin or the

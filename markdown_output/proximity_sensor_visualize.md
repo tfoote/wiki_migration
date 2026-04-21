@@ -1,7 +1,7 @@
 The proximity_sensor_visualize package contains a node that visualizes
 the proximity sensor in rviz. It shows a circle and a normal as an arrow
 for each patch. The arrow is blue gets whiter the stronger the value of
-the patch differs from the init value. After abs(value) \>= init +
+the patch differs from the init value. After abs(value) >= init +
 noise_threshold + static_threshold is true, the patch is 100% active and
 the color of the circle turns from green into red.
 

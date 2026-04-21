@@ -1,6 +1,6 @@
 ## Overview
 
-\`texas_park\` implements autonomous parking capabilities for the Willow
+`texas_park` implements autonomous parking capabilities for the Willow
 Garage [Texas](texas) robot. This implementation uses [opencv2](opencv2)
 to detect a color pattern on the docking station of Texas and sends
 commands to drive the robot into the dock.

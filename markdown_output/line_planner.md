@@ -42,55 +42,55 @@ Note that min speed should be less or equal to max speed.
 </node>
 ```
 
-Here\'s a diagram showing the possible states of the planner, and which
+Here's a diagram showing the possible states of the planner, and which
 distances each parameter affects:
 
 ![\|width=750](https://github.com/MoffKalast/line_planner/raw/noetic-devel/docs/diagram.png)
 
 ## Subscribed Topics
 
--   \`/move_base_simple/goal\` (PoseStamped), takes the current position
+-   `/move_base_simple/goal` (PoseStamped), takes the current position
     as the starting point and moves towards the goal
--   \`/move_base_simple/clear\` (Empty), stops all movement immediately
--   \`/move_base_simple/waypoints\` (Path), takes each two consecutive
+-   `/move_base_simple/clear` (Empty), stops all movement immediately
+-   `/move_base_simple/waypoints` (Path), takes each two consecutive
     points and navigates along the line between them
 
 ## Published Topics
 
--   \`/cmd_vel\` (JointState), publishes velocity for both
+-   `/cmd_vel` (JointState), publishes velocity for both
     wheels/tracks/propellers
--   \`line_planner/active\` (Bool), publishes the activity state of the
+-   `line_planner/active` (Bool), publishes the activity state of the
     planner
--   \`line_planner/plan\` (Path), publishes a nav plan, also the entire
+-   `line_planner/plan` (Path), publishes a nav plan, also the entire
     route if given
--   \`line_planner/markers\` (MarkerArray), publishes debug markers
+-   `line_planner/markers` (MarkerArray), publishes debug markers
     shown above
 
 ## Dynamic Reconfigure Params
 
--   \`publish_debug_markers\` (bool_t), if set to True, the node will
+-   `publish_debug_markers` (bool_t), if set to True, the node will
     publish markers for debugging purposes.
--   \`max_turning_velocity\` (double_t), the maximum velocity at which
+-   `max_turning_velocity` (double_t), the maximum velocity at which
     the robot can turn.
--   \`max_linear_velocity\` (double_t), the maximum linear velocity of
+-   `max_linear_velocity` (double_t), the maximum linear velocity of
     the robot.
--   \`linear_acceleration\` (double_t), the linear
+-   `linear_acceleration` (double_t), the linear
     acceleration/deceleration of the robot.
--   \`max_line_divergence\` (double_t), the maximum distance that the
+-   `max_line_divergence` (double_t), the maximum distance that the
     robot can diverge from the line between the goals.
--   \`min_project_dist\` (double_t), the minimum projection distance for
+-   `min_project_dist` (double_t), the minimum projection distance for
     the goal.
--   \`max_project_dist\` (double_t), the maximum projection distance for
+-   `max_project_dist` (double_t), the maximum projection distance for
     the goal.
--   \`goal_distance_threshold\` (double_t), the distance at which a goal
+-   `goal_distance_threshold` (double_t), the distance at which a goal
     is considered reached.
--   \`P\` (double_t), the proportional gain for the PID controller that
+-   `P` (double_t), the proportional gain for the PID controller that
     controls the heading of the robot.
--   \`I\` (double_t), the integral gain for the PID controller.
--   \`D\` (double_t), the derivative gain for the PID controller.
--   \`side_offset_mult\` (double_t), multiplier for the side projection
-    of the robot\'s position.
--   \`rate\` (int_t), the rate at which the robot updates its position
+-   `I` (double_t), the integral gain for the PID controller.
+-   `D` (double_t), the derivative gain for the PID controller.
+-   `side_offset_mult` (double_t), multiplier for the side projection
+    of the robot's position.
+-   `rate` (int_t), the rate at which the robot updates its position
     and velocity.
 
 ------------------------------------------------------------------------
@@ -103,12 +103,12 @@ which then get published as a Path that the line planer can execute.
 Right now it provides three different patterns: lawnmower, expanding
 square, and victor sierra.
 
-The lawnmower pattern creates a path in a back-and-forth, or \"mowing
-the lawn\" manner. The expanding square pattern creates a square outward
+The lawnmower pattern creates a path in a back-and-forth, or "mowing
+the lawn" manner. The expanding square pattern creates a square outward
 spiral path. The victor sierra pattern is a coast guard sector search.
 
 It also accepts a home polygon, which it uses to add a final waypoint
-that points back home after following the path, so the robot doesn\'t
+that points back home after following the path, so the robot doesn't
 get stuck out of wifi range.
 
 ## Params
@@ -121,16 +121,16 @@ get stuck out of wifi range.
 
 ## Subscribed Topics
 
--   \`/area_to_path/lawnmower\` (PolygonStamped), takes a 4 vertex
+-   `/area_to_path/lawnmower` (PolygonStamped), takes a 4 vertex
     square and creates a lawnmower path inside it.
--   \`/area_to_path/expanding_square\` (PolygonStamped), takes a 4
+-   `/area_to_path/expanding_square` (PolygonStamped), takes a 4
     vertex square and creates an expanding square (spiral) path inside
     it.
--   \`/area_to_path/victor_sierra\` (PolygonStamped), takes a 4 vertex
+-   `/area_to_path/victor_sierra` (PolygonStamped), takes a 4 vertex
     square and creates a victor sierra (star) path inside it.
--   \`/area_to_path/home\` (PolygonStamped), takes a 4 vertex square and
+-   `/area_to_path/home` (PolygonStamped), takes a 4 vertex square and
     sets the center point as the home position.
 
 ## Published Topics
 
--   \`/move_base_simple/waypoints\` (Path), publishes the created path.
+-   `/move_base_simple/waypoints` (Path), publishes the created path.

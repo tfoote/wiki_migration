@@ -125,7 +125,7 @@ including the lwa in your overall launch file use
 <include file="$(find schunk_bringup)/components/lwa.launch" />
 ``` All hardware configuration is done in the
 [schunk_hardware_config](schunk_hardware_config) package. A sample
-parameter file in \"schunk_hardware_config/lwa/config/lwa.yaml\" could
+parameter file in "schunk_hardware_config/lwa/config/lwa.yaml" could
 look like this ```
 can_module: PCAN
 can_device: /dev/pcan1

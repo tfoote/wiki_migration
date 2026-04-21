@@ -1,9 +1,9 @@
 ## About
 
-The \`rovio_ctrl\` package contains nodes to control the movement of the
+The `rovio_ctrl` package contains nodes to control the movement of the
 Rovio. This includes control the movement of the base itself, as well as
 controlling the head (camera) position. Furthermore, joystick
-teleoperation is provided via the \`rovio_teleop\` node.
+teleoperation is provided via the `rovio_teleop` node.
 
 ## Nodes
 
@@ -91,7 +91,7 @@ node.2 {
 
 ## Installation
 
-To install the \`rovio\` stack, you can choose to either install from
+To install the `rovio` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -113,21 +113,21 @@ sudo apt-get install ros-fuerte-rovio
 
 ### Startup
 
-The \`rovio_ctrl\` package contains a \`rovio_ctrl.launch\` file which
+The `rovio_ctrl` package contains a `rovio_ctrl.launch` file which
 should be edited with the hostname, username and password to login to
-your Rovio. This file launches an instance of the \`rovio_move\` and
-\`rovio_head\` nodes. To launch these nodes, the following command can
+your Rovio. This file launches an instance of the `rovio_move` and
+`rovio_head` nodes. To launch these nodes, the following command can
 be used:
 
 ```
 roslaunch rovio_ctrl rovio_ctrl.launch
 ```
 
-The \`rovio_ctrl\` package also contains a \`rovio_teleop.launch\` file
+The `rovio_ctrl` package also contains a `rovio_teleop.launch` file
 which should be edited with the hostname, username and password to login
-to your Rovio as well as absolute path to the \`wav\` folder within the
+to your Rovio as well as absolute path to the `wav` folder within the
 [rovio_av](rovio_av) package. This file launches an instance of the
-\`rovio_move\`, \`rovio_head\`, \`rovio_audio\` and \`rovio_teleop\`
+`rovio_move`, `rovio_head`, `rovio_audio` and `rovio_teleop`
 nodes. To launch these nodes, the following command can be used:
 
 ```
@@ -149,5 +149,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

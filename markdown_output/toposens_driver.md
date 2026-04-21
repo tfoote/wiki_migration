@@ -3,7 +3,7 @@
 This package functions as a device driver for a Toposens 3D ultrasonic
 sensor. It can be used to setup a serial connection to the sensor, parse
 the received data string and publish it as a
-\<\<MsgLink(toposens_msgs/TsScan)\>\>.
+<<MsgLink(toposens_msgs/TsScan)>>.
 
 ## ROS Nodes
 

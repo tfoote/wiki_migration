@@ -1,1 +1,1 @@
-![\|width=\"731px\"](attachment:icra.png)
+![\|width="731px"](attachment:icra.png)

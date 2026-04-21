@@ -1,7 +1,7 @@
 This package contains two collision avoiding teleops. One teleop that
 should be used with the controller in the
 [reactive_trajectory_controller](reactive_trajectory_controller) and
-another one that implements the collison avoidance routines on it\'s
+another one that implements the collison avoidance routines on it's
 own.
 
 Both teleops are highly experimental! They do not guarantee 100% safety,

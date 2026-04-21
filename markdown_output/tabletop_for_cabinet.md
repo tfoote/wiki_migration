@@ -20,7 +20,7 @@ cabinet door. It fits the plane of the table to the cabinet door.
 ![](attachment:Screenshot-RViz.png)
 
 It uses cluster detection to find all of the clusters in front of the
-tabletop and finds those clusters\' bounding boxes.
+tabletop and finds those clusters' bounding boxes.
 
 ![](attachment:Screenshot-RViz-2.png)
 

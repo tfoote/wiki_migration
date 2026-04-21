@@ -22,11 +22,11 @@ Using this ROS wrapper, the user can specify the following parameters:
     understood as the *number of rays* to cover the scan window. A
     higher resolution means a more detailed cloud but a slower process.
 
-. ![\|width=\"450px\"](attachment:scanparams.png)
+. ![\|width="450px"](attachment:scanparams.png)
 
 ### About Software development
 
-Due to Leica\'s libraries dependencies, the source code relative to SDK
+Due to Leica's libraries dependencies, the source code relative to SDK
 have been developed under **Windows 10**. For that reason,
 *leica_scanstation_ros* will only compile on Windows OS. However, once
 the program is released, it can be executed in either **Windows or
@@ -61,7 +61,7 @@ documentation.
 <!-- -->
 ```
 -   **leica_scanstation_utils**. This package contains common functions
-    that assist in the program\'s execution independently of the OS
+    that assist in the program's execution independently of the OS
     used. Its main purpose is to define the paths for generating and
     collecting the point clouds.
 

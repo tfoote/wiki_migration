@@ -43,8 +43,8 @@ run using your newly built changes!
 
 ```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch
-``` You can run the backend without the \"social
-gaze\" head movements or without the sounds by passing arguments to the
+``` You can run the backend without the "social
+gaze" head movements or without the sounds by passing arguments to the
 launch file:
 
 ```
@@ -62,7 +62,7 @@ are starting will be saved to that file.
 ```
 $ source ~/catkin_ws/devel/setup.bash roslaunch fetch_pbd_interaction pbd.launch from_file:=/full/path/from.json to_file:=/full/path/to.json
 ``` In your browser go to **ROBOT_HOSTNAME:8080**
-in your browser to use the GUI. There is a \"mobile\" interface, which
+in your browser to use the GUI. There is a "mobile" interface, which
 is the same but without the visualization. This can be useful for just
 saving/deleting primitives.
 
@@ -71,10 +71,10 @@ The main page lists all the available actions.
 ![Main Page\|width=100%](attachment:main_page.png)
 
 You can directly run/copy/delete actions from the main page. Or hit the
-\"Edit\" button to see more information on that action.
+"Edit" button to see more information on that action.
 
-On the \"Current Action\" screen, most of the buttons are pretty
-self-explanatory. You can execute the entire action using the \"Run\"
+On the "Current Action" screen, most of the buttons are pretty
+self-explanatory. You can execute the entire action using the "Run"
 button at the bottom of the screen. This will execute all of the
 primitives in the order they appear in the Primitive List. You can click
 on a specific primitive (either the marker or the list item), to
@@ -106,7 +106,7 @@ You can also change the name of the action.
 
 ![Rename\|width=100%](attachment:rename.png)
 
-You can record objects in the environment using the \"Record Objects\"
+You can record objects in the environment using the "Record Objects"
 button. The objects will appear in the viewer. Poses can be relative to
 these objects in the environment.
 
@@ -130,8 +130,8 @@ and can be excluded. Then in the interface you can right-click on
 objects in the scene and add a grasp for that object. Initially a grasp
 primitive is generated that is just a placeholder and does not specify
 any poses. To use the grasp suggestion service to generate grasps, you
-then right click the blue placeholder box and select \"Generate
-grasps\". The service will return a list of grasp poses. Fetch PbD sets
+then right click the blue placeholder box and select "Generate
+grasps". The service will return a list of grasp poses. Fetch PbD sets
 a pre-grasp that is 15 cm away from the grasp. The first grasp generated
 is shown and you can switch to other grasp options by right-clicking the
 grasp marker and selecting one from the list.
@@ -145,7 +145,7 @@ grasp marker and selecting one from the list.
 Grasps are executed like any other primitive and can be added to actions
 in combination with other primitives.
 
-You can also access the actions you\'ve programmed through code. You
+You can also access the actions you've programmed through code. You
 still need to run pbd_backend.launch.
 
 ```
@@ -160,16 +160,16 @@ which notifies it of changes in objects in the world. Through callbacks
 and the update loop, interaction.py hooks in to session.py. session.py
 handles creating actions and primitives and saving them to the database.
 
-The pbd_arm_control_node.py is how the robot\'s arm is controlled to
+The pbd_arm_control_node.py is how the robot's arm is controlled to
 execute actions/primitives. It provides a lower level service interface
 to move the arm. The interaction node interacts with this through the
 interface in robot.py.
 
-The pbd_world_node.py handles the robot\'s perception of the world.
+The pbd_world_node.py handles the robot's perception of the world.
 Other nodes ask the world node about the state of the world and can both
 send and subscribe to updates to the world. Its main function is to
 provide a list of objects currently in the scene.
 
-The social_gaze_server.py handles the movements of the robot\'s head.
+The social_gaze_server.py handles the movements of the robot's head.
 This is also controlled through the robot.py interface. The sounds are
 also provided through this interface.

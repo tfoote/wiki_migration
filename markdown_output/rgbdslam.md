@@ -1,5 +1,5 @@
 This page describes the RGB-D SLAM system for ROS Fuerte. **There is a
-successor**, \`rgbdslam_v2\` for** ROS Hydro and Indigo**. See
+successor**, `rgbdslam_v2` for** ROS Hydro and Indigo**. See
 [README](https://github.com/felixendres/rgbdslam_v2/blob/indigo/README.md).
 
 For the electric version and many details that still hold true, see
@@ -15,13 +15,8 @@ Download rgbdslam with the following command to your
 
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/rgbdslam_freiburg
-``` ***ROS needs to be aware of the folder into
-which you download rgbdslam_freiburg! Make sure that the folder
-containing rgbdslam_freiburg is in your ROS_PACKAGE_PATH (see
-[ros workspace](ROS/Tutorials/InstallingandConfiguringROSEnvironment)
-for how to modify the ROS_PACKAGE_PATH. It is a bad idea to put
-rgbdslam_freiburg into /opt/ros/fuerte/\...). If properly configured
-\"roscd rgbdslam\" will take you to the rgbdslam package directory***
+```
+**`'ROS needs to be aware of the folder into which you download rgbdslam_freiburg! Make sure that the folder containing rgbdslam_freiburg is in your ROS_PACKAGE_PATH (see [[ROS/Tutorials/InstallingandConfiguringROSEnvironment|ros workspace]] for how to modify the ROS_PACKAGE_PATH. It is a bad idea to put rgbdslam_freiburg into /opt/ros/fuerte/...). If properly configured  "roscd rgbdslam" will take you to the rgbdslam package directory`**'
 
 If not yet installed, install [rosdep](rosdep) first, then execute
 
@@ -52,15 +47,15 @@ sudo apt-get install libglew1.5-dev libdevil-dev libsuitesparse-dev
 
 There are several example launch-files that set the parameters of RGB-D
 SLAM for certain use cases, a complete list of all options and their
-current settings can be found in the GUI: \"Settings\"-\>\"View Current
-Settings\". For a definitive list of all settings and the default values
+current settings can be found in the GUI: "Settings"->"View Current
+Settings". For a definitive list of all settings and the default values
 have a look at their quite readable definition in
 src/parameter_server.cpp.
 
 I am still adapting the various use-case launch-files to fuerte and the
 new openni stack, so some of the launchfiles might not work correctly
 yet. You should get them running if you fiddle with the topics
-(\"rostopic list\" and \"rosnode info\" will help you. \"rxgraph\" is
+("rostopic list" and "rosnode info" will help you. "rxgraph" is
 great too).
 
 # Usage
@@ -142,26 +137,26 @@ rosservice call /rgbdslam/ros_ui frame # Capture single frames via
 
 /rgbdslam/ros_ui_b:
 
--   pause \<flag\> *pauses or resumes the capturing of images*
--   record \<flag\> *pauses or stops the recording of bag-files, can be
+-   pause <flag> *pauses or resumes the capturing of images*
+-   record <flag> *pauses or stops the recording of bag-files, can be
     found in the rgbdslam/bin-directory*
 
 /rgbdslam/ros_ui_f:
 
--   set_max \<float\> *filters out all datapoints further away than this
+-   set_max <float> *filters out all datapoints further away than this
     value (in cm, only for saving to files)*
 
 /rgbdslam/ros_ui_s:
 
--   save_features \<filename\> *saves the feature locations and
+-   save_features <filename> *saves the feature locations and
     descriptors in a yaml file with the given filename*
--   save_cloud \<filename\> *saves the cloud to the given filename
+-   save_cloud <filename> *saves the cloud to the given filename
     (should end with .ply or .pcd)*
--   save_individual \<fileprefix\> *saves every scan in its own file
+-   save_individual <fileprefix> *saves every scan in its own file
     (appending a suffix to the given prefix)*
--   save_octomap \<filename\> *saves the cloud to the given filename*
--   save_trajectory \<fileprefix\> *saves the sensor trajectory to the
-    file \<fileprefix\>\_estimate.txt*
+-   save_octomap <filename> *saves the cloud to the given filename*
+-   save_trajectory <fileprefix> *saves the sensor trajectory to the
+    file <fileprefix>_estimate.txt*
 
 # Performance
 
@@ -169,14 +164,14 @@ RGB-D SLAM has many options to customize its behavior. You can speed it
 up significantly by
 
 -   enabling concurrency on multi-core machines. The three corresponding
-    parameter names start with \"concurrent\_\...\"
+    parameter names start with "concurrent_\..."
 -   using SIFTGPU features, if you have a GPU, ORB otherwise
--   compile in \"Release\" configuration (see build type options in
+-   compile in "Release" configuration (see build type options in
     CMakeLists.txt)
--   decreasing the \"max_keypoints\" parameters
--   decreasing the \"geodesic_candidates\" and
-    \"min_sampled_candidates\"
--   setting the kinect driver to QVGA (There\'s a bug in the camera_info
+-   decreasing the "max_keypoints" parameters
+-   decreasing the "geodesic_candidates" and
+    "min_sampled_candidates"
+-   setting the kinect driver to QVGA (There's a bug in the camera_info
     of the driver. See/use the launchfile qvga-kinect+rgbdslam.launch
     for a workaround)
 
@@ -193,10 +188,10 @@ accuracy.
 -   Questions: See the
     [FAQ](http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rgbdslam/page:1/)
 
-# RGB-D SLAM for \"Not-yet\" ROS Users
+# RGB-D SLAM for "Not-yet" ROS Users
 
-If you aren\'t using ROS yet and just want to use RGB-D SLAM on Ubuntu
-(tested with Ubuntu \"precise pangolin\" 12.04), here\'s an installation
+If you aren't using ROS yet and just want to use RGB-D SLAM on Ubuntu
+(tested with Ubuntu "precise pangolin" 12.04), here's an installation
 walkthrough:
 
 ```

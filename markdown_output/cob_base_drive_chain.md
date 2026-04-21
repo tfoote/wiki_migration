@@ -2,17 +2,17 @@
 
 To keep the communication with the Care-O-Bot platform variable (as
 different motors or CAN-hardware could be used),
-\`cob_base_drive_chain::CanCtrlPltfCOb3\` implements the communication
+`cob_base_drive_chain::CanCtrlPltfCOb3` implements the communication
 to different motors through a generic interface
-\`cob_canopen_motor::CanDriveItf\` and for different CAN modules through
-\`cob_generic_can::CanItf\`. The used CAN module is specified in an
+`cob_canopen_motor::CanDriveItf` and for different CAN modules through
+`cob_generic_can::CanItf`. The used CAN module is specified in an
 .ini-File, as well as motor-specific parameters. Each motor-object is
 loaded with appropriate parameters and during initialization each wheel
 is homed.
 
 After initialization, the user can easily command the platform using the
-provided functions of \`cob_base_drive_chain::CanCtrlPltfCOb3\` like
-\`setVelGearRadS\`.
+provided functions of `cob_base_drive_chain::CanCtrlPltfCOb3` like
+`setVelGearRadS`.
 
 To bring these communication facilities to the ROS network, the node
 cob_base_driove_chain_node uses that communication class and provides
@@ -68,10 +68,10 @@ out that data to precisely analyse the data. The described tool makes it
 easy for the user to use this feature. It is preconfigured to record the
 values velocity, position, active current, commanded velocity.
 
-It is implemented in \`cob_base_drive_chain::CanCtrlPltfCOb3\` and again
+It is implemented in `cob_base_drive_chain::CanCtrlPltfCOb3` and again
 provided to the ROS network via services. To use the Elmo Recorder
 without the services, you can use the interface of
-\`cob_base_drive_chain::CanCtrlPltfCOb3\` directly as desribed below.
+`cob_base_drive_chain::CanCtrlPltfCOb3` directly as desribed below.
 
 ### ROS service interface
 
@@ -79,24 +79,24 @@ In order to record and extract data using cob_base_drive_chain node in
 the ROS environment, the only thing you have to do is calling two
 services offered by base_drive_chain_node:
 
--   !ElmoRecorderConfig \<\<SrvLink(cob_srvs/ElmoRecorderConfig)\>\>
-    \_\_\
-    Arguments:\_\_ int64 recordinggap: With that setting, you can
+-   !ElmoRecorderConfig <<SrvLink(cob_srvs/ElmoRecorderConfig)>>
+    __\
+    Arguments:__ int64 recordinggap: With that setting, you can
     specify the time gap between two data points. The entered number is
     multiplied with 4 \* 90µsec. Always 1024 data points are recorded in
     total, so the total recording time is RG \* 4 \* 90\*1024 µsec.
     Configuring the Recorder this way, the recording process starts
     immediately.
--   !ElmoRecorderReadout \<\<SrvLink(cob_srvs/ElmoRecorderReadout)\>\>
-    \_\_\
-    Arguments:\_\_ int64 subindex: Specify the recorded value you want
+-   !ElmoRecorderReadout <<SrvLink(cob_srvs/ElmoRecorderReadout)>>
+    __\
+    Arguments:__ int64 subindex: Specify the recorded value you want
     to download and save. Predefined records are 1: Main Speed, 2: Main
     Position, 10: Active Current Command, 16: Speed Command. string
     fileprefix: path and file-prefix of log files. The record-object and
     motor Ids are automatically attached.
 
 You always get a success code and an answer message. When requesting a
-read-out, you can\'t relay on the success-code, as the availability of
+read-out, you can't relay on the success-code, as the availability of
 the recorder first has to be checked.
 
 All the operations (configuring and reading out the Recorder) are done
@@ -111,19 +111,19 @@ the selected record source.
 
 There are two other levels of "user"-interfaces, to keep the drive
 interface-classes slight. The function
-\`CanCtrlPltfCOb3::ElmoRecordings\` basically is just a wrapper function
+`CanCtrlPltfCOb3::ElmoRecordings` basically is just a wrapper function
 for the main Elmo-Recorder interface in
-\`cob_canopen_motor::CanDriveHarmonica::setRecorder(int iFlag, int
-iParam, std::string sParam)\`. With these arguments you can control all
-of the Recorders features. \`iFlag\` specifies the general task, you are
+`cob_canopen_motor::CanDriveHarmonica::setRecorder(int iFlag, int
+iParam, std::string sParam)`. With these arguments you can control all
+of the Recorders features. `iFlag` specifies the general task, you are
 going to set up:
 
--   \_\_\`iFlag = 0\`:\_\_ Configure Elmo Recorder for new Record
+-   __`iFlag = 0`:__ Configure Elmo Recorder for new Record
 
 iParam = iRecordingGap, which specifies every which time quantum
 (4\*90usec) a new data point is recorded
 
--   \_\_\`iFlag = 1\`:\_\_ Query upload of previous recorded data, data
+-   __`iFlag = 1`:__ Query upload of previous recorded data, data
     is being proceeded after complete upload-data collection and then
     syved into a log file (named filename + Drive_ID + record_value_ID +
     ".log") iParam = recorded ID filename = path + fileprefix
@@ -131,12 +131,12 @@ iParam = iRecordingGap, which specifies every which time quantum
 ```{=html}
 <!-- -->
 ```
--   \_\_\`iFlag = 2\`:\_\_ After initiating the upload process, read the
+-   __`iFlag = 2`:__ After initiating the upload process, read the
     state of data collection and processing
--   \_\_\`iFlag = 99\`:\_\_ Cancel any ongoing Segmented SDO Data
+-   __`iFlag = 99`:__ Cancel any ongoing Segmented SDO Data
     transfer.
 
-Return values are 0: Everything is fine, 1: Recorder hasn\'t been
+Return values are 0: Everything is fine, 1: Recorder hasn't been
 configured yet, 2: Data collection still in progress.
 
 To keep all the CAN communication the process going, be sure to evaluate
@@ -156,11 +156,11 @@ process. From then, the transfer process is running autonomously,
 triggered by the receive of data packets, which are led to the
 appropriate functions after having been fetched from the CAN-buffer.
 During such a segmented SDO transfer, the data is collected in the
-\`cob_canopen_motor::SDOSegmented\` collection class. It also holds some
+`cob_canopen_motor::SDOSegmented` collection class. It also holds some
 SDO-transfer-specific features like the state of the transmission. When
 receiving the last segment of a transfer, the collected data is handed
-to an adequate processing function. In our case, it\'s
-\`ElmoRecorder::processData()\`. Finally, the collected data is saved to
+to an adequate processing function. In our case, it's
+`ElmoRecorder::processData()`. Finally, the collected data is saved to
 a file; you also could imagine of keeping it temporarily in a variable
 to give the calling function the opportunity to process the data itself.
 

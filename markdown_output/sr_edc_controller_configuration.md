@@ -3,8 +3,8 @@
 This package contains the parameters for the different types of
 controllers and the launch files for the controllers as well.
 
-By default , you\'ll load the different controllers from this package,
-using the provided launch files and configurations. You\'ll also save
+By default , you'll load the different controllers from this package,
+using the provided launch files and configurations. You'll also save
 your parameters to those yaml files.
 
 See [sr_edc_mechanism_controllers](sr_edc_mechanism_controllers) for
@@ -21,7 +21,7 @@ The Parameters are saved in the different **.yaml** file:
     controller running on the motor board, all parameters are set to 0,
     so the motors are stopped (useful for testing).
 -   **sr_edc_calibration_controllers.yaml**: just contains the joint
-    names and the calibration controller used for Shadow Robot\'s hand.
+    names and the calibration controller used for Shadow Robot's hand.
     Our calibration controller are not doing any calibration.
 -   **sr_edc_effort_controllers.yaml**: the parameters for the effort
     controllers running on the hostside. Those controllers are dummy

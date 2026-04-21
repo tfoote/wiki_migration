@@ -1,6 +1,6 @@
 ## Overview
 
-As thermal camera simulation isn\'t supported natively by gazebo, this
+As thermal camera simulation isn't supported natively by gazebo, this
 plugin takes the following approach: Objects of interest (OOIs) that
 have to appear hot in thermal vision are modelled using COLLADA and have
 their emissive and ambient material properties set to maximum red like

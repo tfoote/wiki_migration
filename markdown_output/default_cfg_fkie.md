@@ -2,14 +2,14 @@
 
 ## Overview
 
-The \`default_cfg\` node offers a list of nodes, which can be started by
+The `default_cfg` node offers a list of nodes, which can be started by
 calling a service with name of the node. Thus the needed nodes can be
 launched on demand without knowing the details of the configuration to
 run those. To configure the list with nodes a ROS launch file is used.
 
 ## Additional node description
 
-While loading a launch file by the \`default_cfg\` some addtional
+While loading a launch file by the `default_cfg` some addtional
 parameters are parsed to obtain a description of robots, nodes and
 capabilities configured by the launch file. This description is used in
 [Node manager](http://www.ros.org/wiki/node_manager_fkie#capabilities)
@@ -32,7 +32,7 @@ Run the node:
 rosrun default_cfg_fkie default_cfg _package:=@PACKAGE_NAME@ _launch_file:=@FILE_NAME@
 ```
 
-You can run the node without parameter and use the \`load\` service to
+You can run the node without parameter and use the `load` service to
 load a launch configuration.
 
 ### Interface

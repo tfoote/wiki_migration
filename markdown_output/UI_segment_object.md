@@ -41,20 +41,20 @@ method from the Point Cloud Library. Finally, the plane is filtered and
 the remaining 3D point cloud is published and also returned as a
 possible object in the region that the user defined.
 
-![\|height=\"251px\",width=\"362px\"](attachment:full_kinect_cloud.png)
-![\|height=\"250px\",width=\"339px\"](attachment:tabletop_image.png)
-![\|height=\"265px\",width=\"362px\"](attachment:table_top_region.png)
-![\|height=\"264px\",width=\"368px\"](attachment:object.png)
+![\|height="251px",width="362px"](attachment:full_kinect_cloud.png)
+![\|height="250px",width="339px"](attachment:tabletop_image.png)
+![\|height="265px",width="362px"](attachment:table_top_region.png)
+![\|height="264px",width="368px"](attachment:object.png)
 
 The main purpose for publishing the two point clouds during the process
 is for viewing in Rviz for debugging purposes but can also be used
 individually to be passed to nodes like the tabletop_object_detector.
-They are published under the topics \"segment_plane\" and
-\"segment_object\".
+They are published under the topics "segment_plane" and
+"segment_object".
 
 The 2D polygon defined by the user is stored in a global variable in the
 server node and therefore, any subsequent calls to the node no longer
-require user interaction if the Kinect sensor hasn\'t moved. If it has,
+require user interaction if the Kinect sensor hasn't moved. If it has,
 there is also a /UI_reset service call that will allow you to redefine
 the region of interest on the next call to /get_object_on_plane or
 /get_3D_pt.

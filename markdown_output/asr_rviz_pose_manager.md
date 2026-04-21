@@ -1,10 +1,10 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 This package is used to get poses from Rviz by using the goal tool and
 to store them in a XML-file
-![\|width=\"750\",height=\"230\"](attachment:pose_manager.png)
+![\|width="750",height="230"](attachment:pose_manager.png)
 
 ## Functionality
 
@@ -18,20 +18,20 @@ Pose in a XML-file. The name of the XML-file is CURRENT_TIMEposen.xml
 and will be saved at the location the program starts. The format will
 be:
 
-\<Pose X=\"\" Y=\"\" Z=\"\" XQ=\"\" YQ=\"\" ZQ=\"\" WQ=\"\"\>\</Pose\>
+<Pose X="" Y="" Z="" XQ="" YQ="" ZQ="" WQ=""></Pose>
 
 The gotten Pose is also published on the ROS INFO stream for monitoring
 or direct copy/paste purposes.
 
 ## Usage
 
-Start all needet Components (Look at \"Start system)
+Start all needet Components (Look at "Start system)
 
-Then press the \"2D Nav Goal\" Button.
+Then press the "2D Nav Goal" Button.
 
 Click on a desired position on the map.
 
-# \> The Pose of this Click on the map is printed on the console and in the xml file.
+# > The Pose of this Click on the map is printed on the console and in the xml file.
 
 ### Needed software
 

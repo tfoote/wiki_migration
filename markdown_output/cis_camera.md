@@ -3,4 +3,4 @@ Documentation for [cis_camera](cis_camera) is now
 
 [Youtube](https://www.youtube.com/watch?v=LRgwU4dbTSw)
 
-\<\<GitHubIssues(tork-a/cis_camera)\>\>
+<<GitHubIssues(tork-a/cis_camera)>>

@@ -4,7 +4,7 @@
 
 This package provides a driver for the OMRON OS32C EtherNet/IP based
 safety laser. You can learn more about this device on the
-manufacturer\'s website:
+manufacturer's website:
 
 <https://www.ia.omron.com/products/family/2717/>
 

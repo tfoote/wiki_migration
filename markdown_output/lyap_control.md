@@ -12,7 +12,7 @@ is explained
 
 ## Installing the package
 
-At this point, it\'s best to install this package from source. Create a
+At this point, it's best to install this package from source. Create a
 catkin workspace for the package: ```
 $ mkdir -p ~/Desktop/catkin_ws/src
 $ cd ~/Desktop/catkin_ws/src
@@ -54,10 +54,10 @@ $ rosrun lyap_control second_order_plant (publishes data on the state topic)
 ```
 
 You may wish to tune the controller at this point. You can adjust its
-\'aggressiveness\', called *V_dot_target_initial_dB*, in controller.h.
+'aggressiveness', called *V_dot_target_initial_dB*, in controller.h.
 Generally a more negative value performs better, unless the time step is
 too small and it becomes unstable. The saturation limits on the control
-effort (maximum and minimum) and the controller\'s model of the system
+effort (maximum and minimum) and the controller's model of the system
 are also adjusted here.
 
 The time step for the simulation is adjusted as the variable *delta_t*
@@ -74,14 +74,14 @@ control this other system:
 *low_saturation_limit* to one-vectors since there is one input now.
 
 2\. Edit the model definition in *controller.h* to update the
-controller\'s model of the system. Comment the second equation so there
+controller's model of the system. Comment the second equation so there
 is just one state variable
 
 3\. Since there are fewer states and inputs, the messages that the nodes
 pass must be shorter. In *controller.msg*, update *u* to a 1-vector. In
 *plant.msg*, update *x* and *setpoint* to 1-vectors.
 
-That\'s it! Now run the system again\-- ```
+That's it! Now run the system again\-- ```
 $ catkin_make
 ```
 ```
@@ -101,7 +101,7 @@ If you want more aggressive gain, again, change
 ## Recommendations for best performance
 
 In general, the best results are achieved with a very high control rate
-and a very large \'gain.\' Set the loop rate of your plant and the
+and a very large 'gain.' Set the loop rate of your plant and the
 controller as fast as the hardware will allow, then set the gain (a.k.a.
 *V_dot_target_initial*) as high as stability allows. These changes are
 made in *controller.h.*
@@ -116,6 +116,6 @@ more) separate controllers.
 
 For example, forces and torques are often mixed in a 6-vector. We
 recommend one controller for the 3x1 forces and another controller for
-the 3x1 torques (assuming they aren\'t coupled). If they are coupled,
-don\'t worry\-- the controller will most likely still perform quite
+the 3x1 torques (assuming they aren't coupled). If they are coupled,
+don't worry\-- the controller will most likely still perform quite
 well.

@@ -77,11 +77,11 @@ If you need to use the trigger axes (LT, RT), consider setting ''~default_trig_v
 
 Most gamepads offer a force feedback function that can vibrate the
 gamepad. For it to work correctly, you have to specify correctly the
-\`dev_ff\` parameter (on Noetic, when this parameter is empty, an
+`dev_ff` parameter (on Noetic, when this parameter is empty, an
 autodetection algorithm tries to guess it).
 
 Once the force feedback device is correctly set, you can control the
-force feedback using the \`joy/set_feedback\` topic. Before trying it
+force feedback using the `joy/set_feedback` topic. Before trying it
 out, make sure the jumping gamepad on your table will not destroy
 anything. An example usage can look like this:
 
@@ -89,19 +89,19 @@ anything. An example usage can look like this:
 rostopic pub -1 /joy/set_feedback sensor_msgs/JoyFeedbackArray "array: [ {type: 1, id: 0, intensity: 1.0} ]"
 ```
 
-The \`intensity\` field specifies the strength of the vibrations. 0 is
+The `intensity` field specifies the strength of the vibrations. 0 is
 no vibration, 1 is maximum.
 
 #### Finding the correct force feedback device
 
-If you do not know the correct value of the \`dev_ff\` parameter, here
+If you do not know the correct value of the `dev_ff` parameter, here
 are a few tips to figure it out.
 
 ```wiki
 The name of the file you pass to `~dev_ff` parameter can change between reconnects of the gamepad or reboots of your computer. To get a reliable experience, a udev rule giving an explicit name to this device seems like to best solution. Treat the tips in this section just as something you want to use in the initial development phase when you are testing and developing a feature.
 ```
 
-One way is to look into folder \`/dev/input/by-id\`.
+One way is to look into folder `/dev/input/by-id`.
 
 ```
 ls -la /dev/input/by-id/
@@ -117,16 +117,16 @@ lrwxrwxrwx 1 root root   6 Aug 19 16:02 usb-Microsoft_Controller_303937313237303
 ```
 
 The listing shows a few symbolic links, one of them pointing to your
-\`js0\` device. The symlink will end with \`-joystick\`. Look for a
-similarly named file, just ending with \`-event-joystick\`. You can
-either directly pass this value to \`dev_ff\` (in this case
-\`/dev/input/by-id/usb-Microsoft_Controller_3039373132373036323336303438-event-joystick\`),
-or you can follow the symbolic link to one of the \`/dev/input/event\*\`
+`js0` device. The symlink will end with `-joystick`. Look for a
+similarly named file, just ending with `-event-joystick`. You can
+either directly pass this value to `dev_ff` (in this case
+`/dev/input/by-id/usb-Microsoft_Controller_3039373132373036323336303438-event-joystick`),
+or you can follow the symbolic link to one of the `/dev/input/event\*`
 files and set the event file as the parameter value (which would be
-\`/dev/input/event18\` in this example).
+`/dev/input/event18` in this example).
 
-Some gamepads will not appear in the \`/dev/input/by-id\` listing - e.g.
-Xbox ONE gamepad connected via the wireless dongle and \`xow\` driver.
+Some gamepads will not appear in the `/dev/input/by-id` listing - e.g.
+Xbox ONE gamepad connected via the wireless dongle and `xow` driver.
 
 In this case, the easiest way to find the force feedback event device is
 to disconnect the gamepad (or dongle) and run
@@ -150,14 +150,14 @@ UDEV  [181481.551194] add      /devices/virtual/input/input24/event18 (input)
 ```
 
 You can see that I have connected a gamepad that appeared as
-\`/dev/input/js0\` with the force feedback device being
-\`/dev/input/event18\`.
+`/dev/input/js0` with the force feedback device being
+`/dev/input/event18`.
 
 ## Application
 
 ### Microsoft Xbox 360 Wireless Controller for Windows
 
-Table of index number of \`/joy.buttons\`:
+Table of index number of `/joy.buttons`:
 
   -- ------- -- -------------------------------------- --
      Index      Button name on the actual controller   
@@ -178,7 +178,7 @@ Table of index number of \`/joy.buttons\`:
 
 ### Microsoft Xbox 360 Wireless Controller for Linux
 
-Table of index number of \`/joy.buttons\`:
+Table of index number of `/joy.buttons`:
 
   -- ------- -- -------------------------------------- --
      Index      Button name on the actual controller   
@@ -195,7 +195,7 @@ Table of index number of \`/joy.buttons\`:
      10         Button stick right                     
   -- ------- -- -------------------------------------- --
 
-Table of index number of \`/joy.axes\`:
+Table of index number of `/joy.axes`:
 
   -- ------- -- ------------------------------------ --
      Index      Axis name on the actual controller   
@@ -211,7 +211,7 @@ Table of index number of \`/joy.axes\`:
 
 ### Microsoft Xbox 360 Wired Controller for Linux
 
-Table of index number of \`/joy.buttons\`:
+Table of index number of `/joy.buttons`:
 
   -- ------- -- -------------------------------------- --
      Index      Button name on the actual controller   
@@ -228,7 +228,7 @@ Table of index number of \`/joy.buttons\`:
      10         Button stick right                     
   -- ------- -- -------------------------------------- --
 
-Table of index number of \`/joy.axes\`:
+Table of index number of `/joy.axes`:
 
   -- ------- -- ------------------------------------ --
      Index      Axis name on the actual controller   
@@ -244,7 +244,7 @@ Table of index number of \`/joy.axes\`:
 
 ### Logitech Wireless Gamepad F710 (DirectInput Mode)
 
-Table of index number of \`/joy.buttons\`:
+Table of index number of `/joy.buttons`:
 
   -- ------- -- -------------------------------------- --
      Index      Button name on the actual controller   
@@ -262,14 +262,14 @@ Table of index number of \`/joy.buttons\`:
      11         Button stick right                     
   -- ------- -- -------------------------------------- --
 
-Table of index number of \`/joy.axes\`:
+Table of index number of `/joy.axes`:
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------ --
-     \<tablestyle=\"margin:0.5em 0px 0px 0.5em;border-collapse:collapse;border:1px dotted rgb(211, 211, 211);\"style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Index      \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Axis name on the actual controller   
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>0                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Left/Right Axis stick left           
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>1                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Up/Down Axis stick left              
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>2                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Left/Right Axis stick right          
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>3                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>Up/Down Axis stick right             
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>4                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>cross key left/right                 
-     \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>5                                                                                                                  \<style=\"padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);\"\>cross key up/down                    
+     <tablestyle="margin:0.5em 0px 0px 0.5em;border-collapse:collapse;border:1px dotted rgb(211, 211, 211);"style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Index      <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Axis name on the actual controller   
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">0                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Left/Right Axis stick left           
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">1                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Up/Down Axis stick left              
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">2                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Left/Right Axis stick right          
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">3                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">Up/Down Axis stick right             
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">4                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">cross key left/right                 
+     <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">5                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">cross key up/down                    
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------ --

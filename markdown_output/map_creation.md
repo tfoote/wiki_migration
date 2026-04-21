@@ -6,7 +6,7 @@ In order for the nodes to render properly you must have a version of
 rviz where the map_display plugin supports continuous values. Later
 versions of rviz have this.
 
-Otherwise, you\'ll need to edit the file map_display.cpp in
+Otherwise, you'll need to edit the file map_display.cpp in
 \.../rviz/src/rviz/default_plugin directory. Scroll down to
 approximately line 314 and look for the code
 

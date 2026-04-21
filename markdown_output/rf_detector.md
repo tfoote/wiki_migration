@@ -18,12 +18,12 @@ rf_detector subscribes to three ROS topics:
 -   **/t_on_off/caminfo**
 -   **/t_on_off/dense_cloud**
 
-After the \`rf_detector\` node receive all three topics, it will start
+After the `rf_detector` node receive all three topics, it will start
 detecting objects in the image.
 
 ## launch files
 
-\`rf_pcd_hogshape_detector_3Class.launch\` will start the rf_detector
+`rf_pcd_hogshape_detector_3Class.launch` will start the rf_detector
 with some default parameter settings. There are five groups of
 parameters which need to be set.
 

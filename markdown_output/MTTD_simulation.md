@@ -49,5 +49,5 @@ $ roslaunch MTTD_simulation simulation.launch
 then set the robot initial pose using [rviz](rviz), or typing (in a new
 terminal) ```
 $ rosrun MTTD_simulation initial_sender
-``` Remember to kill \`initial_sender\`
+``` Remember to kill `initial_sender`
 node after.

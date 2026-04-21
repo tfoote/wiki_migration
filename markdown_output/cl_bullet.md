@@ -1,6 +1,6 @@
 # Overview
 
-\`cl_bullet\` is a common lisp wrapper around the Bullet physics engine.
+`cl_bullet` is a common lisp wrapper around the Bullet physics engine.
 It consists of a C++ library that wraps Bullet classes and methods into
 C structs and functions and the corresponding common lisp FFI
 definitions. In addition, it provides a higher-level CLOS library that

@@ -11,7 +11,7 @@ as described in [RFC 4122](http://tools.ietf.org/html/rfc4122.html).
 <!-- -->
 ```
 -   C++
-    [\<unique_id/unique_id.h\> header](https://docs.ros.org/en/melodic/api/unique_id/html/c++/namespaceunique__id.html)
+    [<unique_id/unique_id.h> header](https://docs.ros.org/en/melodic/api/unique_id/html/c++/namespaceunique__id.html)
 
 The C++ interface is not released on Fuerte, because the Lucid boost
 (1.40) has no uuid module. Users can compile and use it on other Fuerte

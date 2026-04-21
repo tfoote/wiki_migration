@@ -1,6 +1,6 @@
 A Cartesian ROS-controller for commanding target twists to a robot.
 
-This controller makes use of a \`TwistCommandInterface\` to set a user
+This controller makes use of a `TwistCommandInterface` to set a user
 specified twist message as reference for robot control.
 
 ## Configuration

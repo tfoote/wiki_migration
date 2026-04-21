@@ -68,17 +68,17 @@ param{
 
 #### File Formats
 
-The map file is a text file with a line for each fiducial id: \`
+The map file is a text file with a line for each fiducial id: `
 
-\`id x y z pan tilt roll variance numObservations links\`
+`id x y z pan tilt roll variance numObservations links`
 
-\`x\`, \`y\` and \`z\` specify the translation of the fiducial from the
-origin in meters, and \`pan\`, \`tilt\`, and \`roll\` specify its
-orientation in degrees. The fields \`variance\` and \`numObservations\`
+`x`, `y` and `z` specify the translation of the fiducial from the
+origin in meters, and `pan`, `tilt`, and `roll` specify its
+orientation in degrees. The fields `variance` and `numObservations`
 represent how good the pose estimate is considered to be, and how many
-observations were used to generate it. \`links\` is a list of the ids of
+observations were used to generate it. `links` is a list of the ids of
 fiducials that have been observed at the same time as the current
-fiducial. The coordinate frame used is the \`map\` frame, which is
+fiducial. The coordinate frame used is the `map` frame, which is
 relative to the floor, so markers of the ceiling will have been rotated.
 The supplied launch files specify the map file as
-\`/.ros/slam/map.txt\`.
+`/.ros/slam/map.txt`.

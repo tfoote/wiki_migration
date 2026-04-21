@@ -2,7 +2,7 @@
 
 This package provides a library of cmake platform configuration modules
 for popular platform configurations. They can be found in the
-\`eros_platforms/library\` folder.
+`eros_platforms/library` folder.
 
 ## Usage
 

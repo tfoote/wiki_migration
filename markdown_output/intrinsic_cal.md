@@ -15,7 +15,7 @@ parameters have lower co-variance. In order to run the calibration, you
 will need a linear rail or guide in order to precisely position the
 camera prior to taking each image
 
-![target and rail setup\|width=\"300\"](attachment:rail_setup.jpg)
+![target and rail setup\|width="300"](attachment:rail_setup.jpg)
 
 ## Motivation
 
@@ -25,7 +25,7 @@ may not be sufficient. Depending on the number and quality of the images
 collected by the user, the calibration method can result in widely
 varying focal length values.
 
-![Focal length results, red - ROS camera calibration, green - rail calibration\|width=\"800\"](attachment:focal_length_graph.jpg)
+![Focal length results, red - ROS camera calibration, green - rail calibration\|width="800"](attachment:focal_length_graph.jpg)
 
 A 1-2% error in the focal length calculation could lead to a position
 error of 2cm or more. Such position error could lead to problems if the
@@ -35,7 +35,7 @@ could miss grasping parts or run into the part they are trying to grab.
 ## Technical Notes/Definitions
 
 Error per observation: The industrial calibration package utilizes the
-[Ceres solver\|target=\"\_blank\"](http://ceres-solver.org/) to collect
+[Ceres solver\|target="_blank"](http://ceres-solver.org/) to collect
 all the image observations and optimize the camera parameters (intrinsic
 or extrinsic) to minimize the error. For the intrinsic calibration
 package, an observation is a single circle found in the calibration

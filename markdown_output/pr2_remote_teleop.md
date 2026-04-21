@@ -1,4 +1,4 @@
-Please contact aleeper\<at\>stanford.edu with questions/feedback. If you
+Please contact aleeper<at>stanford.edu with questions/feedback. If you
 find something unclear in the documentation, feel free to ask, or if you
 figure it out, contribute!
 
@@ -15,8 +15,8 @@ As with all applications, you must first
 
 ## Joystick Configuration
 
-The package currently supports two interfaces: a Sony PS3 \"Sixaxis\"
-Controller, and a 3Dconnexion \"Spacenav\" device.
+The package currently supports two interfaces: a Sony PS3 "Sixaxis"
+Controller, and a 3Dconnexion "Spacenav" device.
 
 To configure a Sixaxis device, follow the steps in
 [ps3joy](ps3joy/Tutorials/PairingJoystickAndBluetoothDongle#Pairing) to
@@ -48,7 +48,7 @@ The pr2_remote_teleop package supports the ps3 sixaxis controller. The
 control scheme below is the default one; any of these controls can be
 easily modified by editing the config file in config/sixaxis.yaml.
 
-NOTE that the \"select\" and \"start\" buttons act as a controller
+NOTE that the "select" and "start" buttons act as a controller
 suppress, that is, to change between controllers or camera views, hold
 down start or select FIRST, then press the accompanying button
 selection, then release start/select.
@@ -90,12 +90,12 @@ With the head controller active, the controls are as follows:
 ### Base Controller
 
 With the base controller active, the controls are as follows:
-\|\|**L1**\|\| \"Deadman switch,\" you must hold this down to issue any
+\|\|**L1**\|\| "Deadman switch," you must hold this down to issue any
 commands to the base.
 
   -- -------------------- -- -------------------------------------------------- --
      **Left Joystick**       Translate the robot forward-backward, left-right   
-     **Right Joystick**      Change the robot\'s orientation left-right         
+     **Right Joystick**      Change the robot's orientation left-right         
      **Triangle**            Move the torso up                                  
      **X**                   Move the torso down                                
   -- -------------------- -- -------------------------------------------------- --
@@ -107,9 +107,9 @@ and orientation of the gripper, specifically, the gripper finger tips.
 It is useful to understand the frames used to control the gripper:
 
 -   Translation is controlled in a frame parallel to the ground, but
-    aligned so that \"forward\" aligns with the current camera view (but
+    aligned so that "forward" aligns with the current camera view (but
     parallel to the ground).
--   Rotation is controlled in the gripper\'s local frame; roll, pitch,
+-   Rotation is controlled in the gripper's local frame; roll, pitch,
     and yaw have the same local effect no matter the current position of
     the arm.
 
@@ -135,7 +135,7 @@ after which the joystick lights should stop blinking.
 ## Controlling with a Spacenav
 
   -- ------------------ -- ------------------------------------------------------------------------------------ --
-     \<#FFFF00\> TODO      This will be generalized so that the keyboard keys can be re-assigned by the user.   
+     <#FFFF00> TODO      This will be generalized so that the keyboard keys can be re-assigned by the user.   
   -- ------------------ -- ------------------------------------------------------------------------------------ --
 
 The spacenav has 6 axes of proportional control, and two buttons. These
@@ -155,7 +155,7 @@ mode, which is selected using the keyboard according to the table below.
      **Arm Control Mode**                                                                                  
      space                               position control                                                  
      m                                   rotation control                                                  
-     c                                   6-dof control, best for \"flying\" the gripper like an airplane   
+     c                                   6-dof control, best for "flying" the gripper like an airplane   
      **Frame Control Policy**            The frame of reference for input commands.                        
      z                                   Active camera frame                                               
      x                                   Torso lift frame                                                  

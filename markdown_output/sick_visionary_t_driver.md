@@ -20,7 +20,7 @@ Driver repository:
 
 -   License: Apache 2.0
 -   Source: <https://github.com/SICKAG/sick_visionary_t>
-    \[\[<https://travis-ci.org/SICKAG/sick_visionary_t>\|![build status\|align=\"left\"](https://travis-ci.org/SICKAG/sick_visionary_t.svg?branch=indigo-devel)\|target=\"\_blank\"\]\]
+    \[\[<https://travis-ci.org/SICKAG/sick_visionary_t>\|![build status\|align="left"](https://travis-ci.org/SICKAG/sick_visionary_t.svg?branch=indigo-devel)\|target="_blank"\]\]
 
 ## Supported Hardware
 

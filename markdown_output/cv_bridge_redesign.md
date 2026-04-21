@@ -2,9 +2,9 @@ The redesigned C++ API is now included in [cv_bridge](cv_bridge). Please
 see the documentation there; the released version differs slightly from
 the proposal below.
 
-[cv_bridge](cv_bridge) is the ROS user\'s gateway to the world of
+[cv_bridge](cv_bridge) is the ROS user's gateway to the world of
 OpenCV, and is used ubiquitously in vision nodes. Although it gets the
-job done, I\'ve noticed some recurring issues that trip up new (and
+job done, I've noticed some recurring issues that trip up new (and
 sometimes old) users. I think the C++ API has enough room for
 improvement to warrant a redesign.
 
@@ -29,18 +29,18 @@ class Example {
     cvSaveImage("foo.jpg", saved_image_);
   }
 };
-``` This will work, *unless* \`image_msg\`
-already has \`bgr8\` encoding. In that case \`saved_image\_\` does not
-copy the image data, but instead points to data held by \`image_msg\`
-which is freed when the message goes out of scope. Later \`foo()\` is
-called and probably segfaults. I\'ve seen cases of nodes that worked one
-day, then segfaulted when another image stream with the \"mined\"
+``` This will work, *unless* `image_msg`
+already has `bgr8` encoding. In that case `saved_image_` does not
+copy the image data, but instead points to data held by `image_msg`
+which is freed when the message goes out of scope. Later `foo()` is
+called and probably segfaults. I've seen cases of nodes that worked one
+day, then segfaulted when another image stream with the "mined"
 encoding was used. 1.#2 More counter-intuitive ownership semantics: the
-returned \`IplImage\*\` from \`imgMsgToCv\` is actually owned by the
+returned `IplImage\*` from `imgMsgToCv` is actually owned by the
 bridge, and must not be freed by the user. In practice users look at the
-\`cv_bridge\` code samples; adapt them to actually do something,
-creating more \`IplImage\*\` with intermediate results; and then forget
-to free the images they created. 1. Need to create a \`CvBridge\`
+`cv_bridge` code samples; adapt them to actually do something,
+creating more `IplImage\*` with intermediate results; and then forget
+to free the images they created. 1. Need to create a `CvBridge`
 instance for each image stream. Due to the above behavior,
 ```cplusplus
 void imageCallback(const sensor_msgs::ImageConstPtr& left_msg,
@@ -51,25 +51,25 @@ void imageCallback(const sensor_msgs::ImageConstPtr& left_msg,
   IplImage* right = bridge.imgMsgToCv(right_msg, "bgr8");
 }
 ``` looks plausible but results in unpredictable
-behavior. 1.#4 Lack of const-correctness. \`imgMsgToCv\` returns an
-unqualified \`IplImage\*\`, which may point to \`const\` message data.
+behavior. 1.#4 Lack of const-correctness. `imgMsgToCv` returns an
+unqualified `IplImage\*`, which may point to `const` message data.
 In that case users are free to modify the original message data, and may
 not even realize they are doing it. I anticipate this being another
 source of bugs as more image processing is done in nodelets. 1. It still
-uses \`IplImage\*\`, when we\'ve been actively pushing users towards the
-much safer and more convenient \`cv::Mat\`. 1. Header and encoding
-information is not preserved with the returned \`IplImage\*\`. When
+uses `IplImage\*`, when we've been actively pushing users towards the
+much safer and more convenient `cv::Mat`. 1. Header and encoding
+information is not preserved with the returned `IplImage\*`. When
 publishing, the encoding is specified again as an argument to
-\`cvToImgMsg\`, and the header must be filled in separately. Forgetting
-to copy the header to the new \`Image\` is a common mistake.
+`cvToImgMsg`, and the header must be filled in separately. Forgetting
+to copy the header to the new `Image` is a common mistake.
 
 ## Basic proposal
 
 Note: the current implementation does not exactly match the API proposed
-here, but it\'s essentially the same.
+here, but it's essentially the same.
 
-First we declare an analogue of \<\<MsgLink(sensor_msgs/Image)\>\> that
-uses a \`cv::Mat\` for data storage. ```cplusplus
+First we declare an analogue of <<MsgLink(sensor_msgs/Image)>> that
+uses a `cv::Mat` for data storage. ```cplusplus
 // File cv_bridge/cv_bridge.h
 
 namespace cv_bridge {
@@ -96,16 +96,16 @@ typedef boost::shared_ptr<CvImage const> CvImageConstPtr;
 
 ### ROS message to OpenCV
 
-We will convert \<\<MsgLink(sensor_msgs/Image)\>\> messages into
-\`CvImage\`, which addresses issues 5 and 6.
+We will convert <<MsgLink(sensor_msgs/Image)>> messages into
+`CvImage`, which addresses issues 5 and 6.
 
-There are two basic use cases when converting a \`const
-sensor_msgs::Image\`: 1. We want to modify the data in-place. We have to
-make a copy. 1. We won\'t modify the data. We can safely share instead
+There are two basic use cases when converting a `const
+sensor_msgs::Image`: 1. We want to modify the data in-place. We have to
+make a copy. 1. We won't modify the data. We can safely share instead
 of copying.
 
 Sharing the message data (vision researchers are neurotic about avoiding
-unnecessary copies) motivated the complexity of \`cv_bridge\`. Most of
+unnecessary copies) motivated the complexity of `cv_bridge`. Most of
 the problems come from not distinguishing between the two cases. In the
 proposed API we make them explicit: ```cplusplus
 // Case 1: Always copy, returning a mutable CvImage
@@ -119,23 +119,23 @@ CvImageConstPtr toCvShare(const sensor_msgs::ImageConstPtr& source,
                           const std::string& encoding = std::string());
 ```
 
-The empty default for \`encoding\` takes the place of \`passthrough\`;
-unless specified, the \`CvImage\` has the same encoding as the source.
+The empty default for `encoding` takes the place of `passthrough`;
+unless specified, the `CvImage` has the same encoding as the source.
 
-In the shared case, we return a pointer to \`const CvImage\` to enforce
+In the shared case, we return a pointer to `const CvImage` to enforce
 the immutability of the image data (issue 4). If the desired encoding
-matches that of the source, \`toCvShare\` aliases the source image data.
-It also sets \`CvImage::tracked_object\_\` to the \`source\` pointer,
+matches that of the source, `toCvShare` aliases the source image data.
+It also sets `CvImage::tracked_object_` to the `source` pointer,
 ensuring the data is not deleted prematurely (issue 1). Note there is no
-overload taking a \`const sensor_msgs::Image&\`, because then there\'s
-no way to ensure the \`Image\` out-lives the \`CvImage\`.
+overload taking a `const sensor_msgs::Image&`, because then there's
+no way to ensure the `Image` out-lives the `CvImage`.
 
-Since there\'s no bridge object, and ownership is managed within
-\`CvImage\`, we sidestep issues 2 and 3.
+Since there's no bridge object, and ownership is managed within
+`CvImage`, we sidestep issues 2 and 3.
 
 ### OpenCV to ROS message
 
-Now we\'ll add a couple methods to \`CvImage\` to go the other way:
+Now we'll add a couple methods to `CvImage` to go the other way:
 
 ```cplusplus
 class CvImage
@@ -160,7 +160,7 @@ CvImagePtr cvtColor(const CvImageConstPtr& source,
 ```
 
 And some functions for distinguishing categories of encodings. These
-might be better located in \`sensor_msgs/image_encodings.h\`.
+might be better located in `sensor_msgs/image_encodings.h`.
 ```cplusplus
 bool isColor(const std::string& encoding);
 bool isMono(const std::string& encoding);
@@ -200,7 +200,7 @@ int main(int argc, char** argv)
 
 A more complicated callback example. In this case we want to use color
 if available, otherwise falling back to monochrome. We avoid copies for
-\`bgr8\` and \`mono8\` encodings. In either case, we republish the
+`bgr8` and `mono8` encodings. In either case, we republish the
 source image with color annotations. ```cplusplus
 using namespace cv_bridge;
 
@@ -222,31 +222,31 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
 ## Backwards compatibility
 
 Since the proposal defines entirely new data structures and functions,
-the original \`sensor_msgs::CvBridge\` can continue to exist as-is.
+the original `sensor_msgs::CvBridge` can continue to exist as-is.
 Eventually it would be deprecated and removed.
 
 ## Possible extensions
 
 ### Bayer support
 
-The current \`cv_bridge\` doesn\'t support the Bayer encodings, as
+The current `cv_bridge` doesn't support the Bayer encodings, as
 debayering should normally be done by [image_proc](image_proc). But
 maybe that would be a nice convenience?
 
 ### Using CvImage as a message type
 
-By hooking into the [roscpp](roscpp) serialization API, it\'s possible
-to make \`CvImage\` a real ROS message, wire-compatible with
-\<\<MsgLink(sensor_msgs/Image)\>\>. This is already implemented in the
-\`cv_bridge_redesign\` package, and it\'s quite nice; you can use
+By hooking into the [roscpp](roscpp) serialization API, it's possible
+to make `CvImage` a real ROS message, wire-compatible with
+<<MsgLink(sensor_msgs/Image)>>. This is already implemented in the
+`cv_bridge_redesign` package, and it's quite nice; you can use
 callbacks of the form ```cpluscplus
 void imageCb(const cv_bridge::CvImageConstPtr& image_msg);
-``` and publish \`CvImage\`
-directly. No \`toCvCopy\`/\`toCvShared\`/\`toRos\` required! And when
-publishing, we avoid the copy from converting to \`sensor_msgs::Image\`.
+``` and publish `CvImage`
+directly. No `toCvCopy`/`toCvShared`/`toRos` required! And when
+publishing, we avoid the copy from converting to `sensor_msgs::Image`.
 
 The big issue is how to make this play nice with
-[image_transport](image_transport). \`image_transport\` *could* be
-generalized, by templating the \`publish()\` and \`subscribe()\`
-methods, but it\'s somewhat complicated and would require more coding
+[image_transport](image_transport). `image_transport` *could* be
+generalized, by templating the `publish()` and `subscribe()`
+methods, but it's somewhat complicated and would require more coding
 effort.

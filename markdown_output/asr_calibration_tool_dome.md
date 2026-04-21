@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -22,7 +22,7 @@ variables of a kinematic chain (See
 further information). A sample Dataset is shown in the following
 picture:
 
-![\|height=\"143\",width=\"420\"](attachment:calibration_data.png)
+![\|height="143",width="420"](attachment:calibration_data.png)
 
 This can be done with the following steps:
 
@@ -40,7 +40,7 @@ a tracker of the [Flock of Birds magnet-tracking](asr_flock_of_birds)
 system is attached on a checkerboard detector. Define a transformation
 between the two tracked frames like you did in 1.
 
-3\. Collect several datasets, further described in section \"Usage\"
+3\. Collect several datasets, further described in section "Usage"
 
 4\. Run the
 [asr_kinematic_chain_optimizer](http://wiki.ros.org/asr_kinematic_chain_optimizer)
@@ -63,11 +63,11 @@ rostopic echo /ptu_driver/state
 ```
 rostopic echo /checkerboard_detector/objectdetection_pose
 ``` If there are data published on each topic, you
-can capture data with any key but \'e\' (use \'e\' for exit the
+can capture data with any key but 'e' (use 'e' for exit the
 trackertool). Now just move your construction around in the working area
 and collect as much datasets as you like. Capture your data so, the
 datasets are well distributed in your working area and not all from one
-position. If you feel satisfied with your tracking press \'e\' and exit
+position. If you feel satisfied with your tracking press 'e' and exit
 the tracker tool. Now calibrate your kinematic chain with the kinematic
 chain optimizer.
 
@@ -91,9 +91,9 @@ chain optimizer.
 -   Some Tracking-Construction to close the cinematic chain shown in the
     following picture:
 
-![checkerboad_tracker.jpg\|height=\"252\",width=\"449\"](attachment:checkerboad_tracker.jpg)
-![height=\"252\",width=\"449\"](attachment:i61p124.jpg)
-![height=\"252\",width=\"450\"](attachment:i61p81.jpg)
+![checkerboad_tracker.jpg\|height="252",width="449"](attachment:checkerboad_tracker.jpg)
+![height="252",width="449"](attachment:i61p124.jpg)
+![height="252",width="450"](attachment:i61p81.jpg)
 
 Left: The FoB-magnettracker is attached to a checkerboard.
 

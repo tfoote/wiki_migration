@@ -61,17 +61,17 @@ pub{
 
 ## Command-line Tools
 
-The \`ethercat_hardware\` package\'s primary purpose is to provide a
+The `ethercat_hardware` package's primary purpose is to provide a
 library for communicating with motor controller boards. However, the
 package does provide the [motorconf](#motorconf) command-line tool for
 configuring these boards. In practice, this tool is used during robot
 assembly, and should not be needed after initial bring-up of the robot.
 **NOTE: improper use of this tool could lead to hardware damage,
-\`motorconf\` usage is limited to system administrators only.**
+`motorconf` usage is limited to system administrators only.**
 
 ### motorconf
 
-\`motorconf\` Display the current configuration of motor controller
+`motorconf` Display the current configuration of motor controller
 boards, and allow boards to be programmed with new configuration
 information.
 
@@ -89,7 +89,7 @@ Usage: ./motorconf [options]
 
 When running motorconf, you must specify the interface used to
 communicate with the EtherCAT devices. Without any additional arguments,
-\`motorconf\` will enumerate all of the EtherCAT devices it can find.
+`motorconf` will enumerate all of the EtherCAT devices it can find.
 
 ```
 # ./motorconf -i ecat0
@@ -112,21 +112,21 @@ communicate with the EtherCAT devices. Without any additional arguments,
 
 In order to program an unconfigured device, or re-program a device, you
 must specify a name, motor type, and board type for this motor. If the
-name given (using the \`-n\` option) matches one of the names in the
-actuators configuration file (\`actuators.conf\`, by default), then the
+name given (using the `-n` option) matches one of the names in the
+actuators configuration file (`actuators.conf`, by default), then the
 motor type and board type will be selected automatically. The motor type
-can be specified explicitly with the \`-m\` option, and the board type
-can be specified with the \`-b\` option. A list of valid actuator names
-and motor types can be found with the \`-h\` option. In addition to the
-name, motor, and board types, \`motorconf\` needs to know which device
+can be specified explicitly with the `-m` option, and the board type
+can be specified with the `-b` option. A list of valid actuator names
+and motor types can be found with the `-h` option. In addition to the
+name, motor, and board types, `motorconf` needs to know which device
 in the EtherCAT chain to program. The device number is specified with
-the \`-d\` option. Finally, the \`-p\` option tells \`motorconf\` to
+the `-d` option. Finally, the `-p` option tells `motorconf` to
 actually program the board. The following example programs device #2 to
-be the \`br_caster_r_wheel_motor\`: ```
+be the `br_caster_r_wheel_motor`: ```
 ./motorconf -i ecat0 -n br_caster_r_wheel_motor -d 2 -p
 ```
 
-\`motorconf\` will respond with: ```
+`motorconf` will respond with: ```
 [ INFO] 1263334127.577301000: Programming device 2, to be named: br_caster_r_wheel_motor
 ```
 
@@ -134,13 +134,13 @@ be the \`br_caster_r_wheel_motor\`: ```
 
 actuators.conf is an XML file that specifies the motor parameters and
 common motor names to be programmed into the motor controller boards.
-The file consists of a single \<configuration\> section. The
-\<configuration\> section contains two subsections: \<motors\> and
-\<actuators\>.
+The file consists of a single <configuration> section. The
+<configuration> section contains two subsections: <motors> and
+<actuators>.
 
-The \<motors\> subsection contains a series of \<motor\> definitions.
-Each motor requires a *name* attribute. The \<motor\> also requires
-child elements \<params\> and \<encoder\>. The \<params\> element
+The <motors> subsection contains a series of <motor> definitions.
+Each motor requires a *name* attribute. The <motor> also requires
+child elements <params> and <encoder>. The <params> element
 contains the following attributes:
 
 -   Make
@@ -148,12 +148,12 @@ contains the following attributes:
 -   Maximum current
 -   Speed constant
 -   Resistance
--   Motor Torque Constant The \<encoder\> element contains the following
+-   Motor Torque Constant The <encoder> element contains the following
     attributes:
 -   Pulses per Revolution
 -   Reduction
 
-For example, this element specifies the Maxon RE40 motor used in PR2\'s
+For example, this element specifies the Maxon RE40 motor used in PR2's
 elbow, shoulder and spine: ```
 <!-- Elbow, shoulder, spine -->
   <!-- http://pr.willowgarage.com/wiki/HardwareComponents/Motors?action=AttachFile&do=get&target=maxonRE40.pdf -->
@@ -168,12 +168,12 @@ elbow, shoulder and spine: ```
   </motor>
 ```
 
-The \<actuators\> subsection contains a series of \<actuator\>
-definitions. An \<actuator\> has the following attributes:
+The <actuators> subsection contains a series of <actuator>
+definitions. An <actuator> has the following attributes:
 
 -   Name
 -   Motor
--   Board For example, the following \<actuator\> definition states that
+-   Board For example, the following <actuator> definition states that
     the *l_elbow_flex_motor* should be configured with the motor
     parameters specified in the previous example:
     ```

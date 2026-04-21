@@ -7,8 +7,8 @@ roslaunch nao_teleop teleop_joy.launch
 
 Then start [naoqi_driver](naoqi_driver) either on your local machine or
 on the Nao (nao_walker and nao_controller are required by this node). By
-default, gamepad teleoperation starts paused. Just hit the \"toggle
-control button\" (#8 by default or #9 on PS3 controller) and start
+default, gamepad teleoperation starts paused. Just hit the "toggle
+control button" (#8 by default or #9 on PS3 controller) and start
 walking Nao around by setting the velocities for the !OmniWalk engine
 with the two sticks on the gamepad (see below).
 
@@ -19,21 +19,21 @@ with omnidirectional velocities, very similar to
 [pr2_teleop](pr2_teleop#Controlling). The following commands are
 currently implemented (tested on a Logitech Cordless Rumblepad II, where
 the button numbering should be increased by one as it starts with
-\"1\"):
+"1"):
 
 -   Right analog stick: translational velocity
 -   Left analog stick (left / right): rotational velocity (turning)
--   Button 0: Standing up (\"Init pose\")
+-   Button 0: Standing up ("Init pose")
 -   Button 5: Toggle head movement: hold to control the head directly
     with the analog sticks
 -   Button 8: Toggle gampad control on / off. Enabling gamepad control
     will also enable stiffness on the Nao.
--   Button 9: Go to safe \"crouching\" / \"squatting\" position and
+-   Button 9: Go to safe "crouching" / "squatting" position and
     remove joint stiffness (Enable stiffness again by toggling control
     off and on again)
 
 Initially, gamepad control is off and needs to be enabled with button 8.
-When you\'re done you can either shut down all nodes or toggle gamepad
+When you're done you can either shut down all nodes or toggle gamepad
 control off, Nao will remain standing in its current state.
 
 Below is the default button placement on a Logitech Cordless Rumblepad

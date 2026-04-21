@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(lse_miniq_msgs)\>\>
+<<MsgSrvDoc(lse_miniq_msgs)>>

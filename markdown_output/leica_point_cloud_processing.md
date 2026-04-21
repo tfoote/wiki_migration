@@ -44,7 +44,7 @@ topics.
 This proccedure is developed as a Finite State Machine. The worklow is
 the following.
 
-![\|width=\"720px\"](attachment:fsm.png)
+![\|width="720px"](attachment:fsm.png)
 
 ## Usage
 
@@ -58,20 +58,20 @@ rosrun leica_point_cloud_processing load_and_publish_clouds
 Considerations:
 
 -   Make sure pointcloud files are on the correct folder, specified in
-    ROS param server as \`/pointcloud_folder\` (default: package
+    ROS param server as `/pointcloud_folder` (default: package
     leica_scanstation_utils/pointclouds).
 
 ```{=html}
 <!-- -->
 ```
--   Supported formats: \`.obj\` and \`.ply\` for CAD files and \`.pcd\`
+-   Supported formats: `.obj` and `.ply` for CAD files and `.pcd`
     for scanned files.
 
 ```{=html}
 <!-- -->
 ```
--   Publisher starts when service \`/publish_clouds\` is called:
-    automatically done by \`leica_scanstation_ros_node\` when scan is
+-   Publisher starts when service `/publish_clouds` is called:
+    automatically done by `leica_scanstation_ros_node` when scan is
     finished or manually by user: ```
 rosservice call /publish_clouds "source_cloud_file: 'scan_fods.pcd'
         target_cloud_file: 'cad.ply'"
@@ -82,7 +82,7 @@ rosservice call /publish_clouds "source_cloud_file: 'scan_fods.pcd'
 **node** is the main node that perform alignment and FOD detection. It
 opens subscribers to clouds topics and start process. As the target
 cloud indicated in example above comes from a CAD file, set param
-\`using_CAD\` to true. ```
+`using_CAD` to true. ```
 roslaunch leica_point_cloud_processing leica_point_cloud_processing.launch using_CAD:=true
 ```
 

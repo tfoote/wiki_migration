@@ -19,23 +19,23 @@ $ roslaunch re_vision gazebo.launch
 The first line runs the !ObjectDetector node, which must be notified the
 object models to load via topic. The !ObjectDetectorDummy behaves the
 same as the former, but it also loads a predefined model, available for
-the gazebo simulator (name \"cabinet1\"). The easiest way to run
+the gazebo simulator (name "cabinet1"). The easiest way to run
 !ObjectDetectorDummy is with the gazebo.launch file, because you do not
 have to take care of the location of the predefined model. Both nodes
 need that parameters of the camera that provides the images. These are
-obtained from the \`/camera_info topic\` (see below). You may want to
+obtained from the `/camera_info topic` (see below). You may want to
 remap this topic in the gazebo.launch file or in the command line.
 
 Options:
 
--   \`-d\`: debug flag. If given, debug images of the recognition
-    process are saved in \`./debug/debug\_\[timestamp\]\`.
--   \`-v\`: visualization flag. If given, detection images are sent by
-    the topic \`/re_vision/detector_visualization\`.
--   \`-c\`: predefined_camera: load parameters of a predefined camera.
+-   `-d`: debug flag. If given, debug images of the recognition
+    process are saved in `./debug/debug_\[timestamp\]`.
+-   `-v`: visualization flag. If given, detection images are sent by
+    the topic `/re_vision/detector_visualization`.
+-   `-c`: predefined_camera: load parameters of a predefined camera.
     This option is used for debugging purposes only. The camera models
     and their parameters are defined in
-    \`re_vision/src/CameraBridgeFactory.cpp\`.
+    `re_vision/src/CameraBridgeFactory.cpp`.
 
 ## Interface
 

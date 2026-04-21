@@ -4,9 +4,9 @@
 [ Epson IMU ROS2 Driver Node](ess_imu_driver2 )\*****
 
 ****\* This webpage will no longer be updated \* \-\-\-\-\-\-\-\-\-\-\--
-![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)****
+![\|align="right"](attachment:ess_sensors/g552.jpg)
+![\|align="right"](attachment:ess_sensors/g370.jpg)
+![\|align="right"](attachment:ess_sensors/g365.jpg)****
 
 ## Overview
 
@@ -116,7 +116,7 @@ Epson IMU model that is being used in the ROS2 system.
     or any changes in the [ CMakeLists.txt](CMakeLists.txt )**
 
 3\. From the colcon workspace folder run *colcon build* to build all
-changed ROS2 packages located in the \<colcon_workspace\>/src/ folder.
+changed ROS2 packages located in the <colcon_workspace>/src/ folder.
 
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.

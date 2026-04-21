@@ -28,7 +28,7 @@ param {
 ## Examples
 
 To run the node with a different port and baud rate, for example on
-/dev/ttyACM1, you must specify the \`port\` and \`baud\` parameters on
+/dev/ttyACM1, you must specify the `port` and `baud` parameters on
 the command line:
 
 ```

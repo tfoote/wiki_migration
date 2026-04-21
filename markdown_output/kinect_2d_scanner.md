@@ -1,15 +1,15 @@
 ## Description
 
 The node *kinect_2d_scanner* makes easy to connect to a Kinect sensor
-and publish equivalent 2D \"fake laser\" scans.
+and publish equivalent 2D "fake laser" scans.
 
   -- -------------------------------------------------------------------------------------- --
-     \<:width=\"99%\"\> ![](attachment:kinect_2d_scanner_screenshot_rviz_reconfigure.png)   
+     <:width="99%"> ![](attachment:kinect_2d_scanner_screenshot_rviz_reconfigure.png)   
   -- -------------------------------------------------------------------------------------- --
 
-Internally, the node uses \`mrpt-hwdrivers\` which in turn uses
-\`libfreenect\` to directly open the sensor. Since only 2D scan data is
-published here, you should employ this node only if you won\'t need the
+Internally, the node uses `mrpt-hwdrivers` which in turn uses
+`libfreenect` to directly open the sensor. Since only 2D scan data is
+published here, you should employ this node only if you won't need the
 3D points.
 
 **All obstacles within a frustum** are considered and the minimum
@@ -22,7 +22,7 @@ interest where to look for obstacles. See
 illustration of the frustum geometry and 3D obstacle points.
 
   -- ----------------------------------------------------------------------------- --
-     \<:width=\"99%\"\> ![](attachment:kinect_2d_scanner_screenshot_frustum.png)   
+     <:width="99%"> ![](attachment:kinect_2d_scanner_screenshot_frustum.png)   
   -- ----------------------------------------------------------------------------- --
 
 All spatial transformations are riguorously taken into account in this

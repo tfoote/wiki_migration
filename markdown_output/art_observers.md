@@ -67,6 +67,6 @@ node.0 {
 
 #### To Do List
 
--   Read input in \<\<MsgLink(sensor_msgs/PointCloud2)\>\> format.
--   Publish output in \<\<MsgLink(sensor_msgs/PointCloud2)\>\> format.
+-   Read input in <<MsgLink(sensor_msgs/PointCloud2)>> format.
+-   Publish output in <<MsgLink(sensor_msgs/PointCloud2)>> format.
 -   Make better topic names.

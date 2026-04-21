@@ -14,7 +14,7 @@ from the wxWidgets library to the Qt library.*
 
 ## Hardware Requirements
 
-To use this package you don\'t need any hardware, but it is intended to
+To use this package you don't need any hardware, but it is intended to
 be used with either a real Care-O-bot or a simulated one (see
 [cob_bringup](cob_bringup) or [cob_bringup_sim](cob_bringup_sim)).
 
@@ -27,20 +27,20 @@ Care-O-bot. The command_gui_rviz uses the functionalities of the
 
 ### command_gui_rviz_panel.cpp
 
-\`command_gui_rviz_panel.cpp\` is configurable by a .yaml file to send
+`command_gui_rviz_panel.cpp` is configurable by a .yaml file to send
 [topics](Topics) and [services](Services). Inside the command_gui_rviz
 mainly [actionlib](actionlib) calls are used.
 
 ### command_gui_rviz.cpp
 
-\`command_gui_rviz.cpp\` creates the controls for the plugin, which is
+`command_gui_rviz.cpp` creates the controls for the plugin, which is
 described in the /lib/plugin.yaml file.
 
 ### init.cpp
 
-\`init.cpp\` associates the registered class with the data in the yaml
+`init.cpp` associates the registered class with the data in the yaml
 file and is connected to the running RViz by calls to
-!TypeRegistry.registerDisplay() in the plugin\'s rvizPluginInit()
+!TypeRegistry.registerDisplay() in the plugin's rvizPluginInit()
 function:
 
 ```cplusplus
@@ -68,7 +68,7 @@ The [cob_script_server](cob_script_server) implementation.
 rosdep install cob_command_gui_rviz
 rosmake cob_command_gui_rviz
 ``` You can upload the cob_command_gui_rviz plugin
-by selecting the **Plugins-\>Manage\...** menu item in RViz.
+by selecting the **Plugins->Manage\...** menu item in RViz.
 
 A dialog will pop up letting you manage loading/unloading plugins:
 

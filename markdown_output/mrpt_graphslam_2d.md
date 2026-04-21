@@ -61,7 +61,7 @@ SLAM cases. For more on this see the
 
 ## API Documentation
 
-Use the \`rosdoc_lite\` tool to generate the complete API of this
+Use the `rosdoc_lite` tool to generate the complete API of this
 package:
 
 ## Relevant Links

@@ -27,11 +27,11 @@ TOF P510.
 
 # First step: Get Ros
 
-The **\'bta_ros**\' works with ROS versions hydro, indigo and jade. You
+The **`bta_ros`** works with ROS versions hydro, indigo and jade. You
 can use catkin workspaces or the older rosbuild to configure, compile
 the driver.
 
-The following ROS tutorial links describe how to get ros\_\$ROS_DISTRO
+The following ROS tutorial links describe how to get ros_\$ROS_DISTRO
 and a catkin workspace.
 
 In Ubuntu: Follow the ROS installation tutorial:
@@ -55,7 +55,7 @@ ROS tutorial:
 
 This is a release candidate
 
-# Getting the Bluetechnix \'Time of Flight\' API
+# Getting the Bluetechnix 'Time of Flight' API
 
 The
 [BltToFApi](https://support.bluetechnix.at/wiki/Bluetechnix_ToF_API_v2)
@@ -66,8 +66,8 @@ the support CD of your camera, or you can get if from:
 
 It supports now the last released version of the api (v2.1.0). Move the
 library and the header to the bta_ros directory. You could install the
-library and its headers in the system path i.e. \"/usr/include\" and
-\"/usr/lib\". Finally, you can modify the Findbta.cmake file and add
+library and its headers in the system path i.e. "/usr/include" and
+"/usr/lib". Finally, you can modify the Findbta.cmake file and add
 your own paths.
 
 # Compiling the package
@@ -154,11 +154,11 @@ roslaunch bta_ros nodelet_tof.launch #for running it as nodelet
 roslaunch bta_ros node_tof.launch #for running it as node
 ``` bta_ros will advertise the following topics:
 
-\_\_/nodeName/tof_camera/image_raw\_\_ for amplitudes data
+__/nodeName/tof_camera/image_raw__ for amplitudes data
 
-\_\_/nodeName/tof_camera/compressedDeth\_\_ for distances depth data
+__/nodeName/tof_camera/compressedDeth__ for distances depth data
 
-\_\_/nodeName/tof_camera/point_cloud_xyz\_\_ with 3D coordinates
+__/nodeName/tof_camera/point_cloud_xyz__ with 3D coordinates
 
 They will contain data depending on the selected frame mode of the
 camera (frameMode parameter):
@@ -177,10 +177,10 @@ BTA_FrameModeXYZAmp = 4
 ### Writing a custom configuration to the parameter server
 
 As we commented before, you can load the camera configuration to the
-parameter server. The launch files include, inside the tag \"node\", the
-tag \"rosparam\" in which you can indicate a file containing the server
+parameter server. The launch files include, inside the tag "node", the
+tag "rosparam" in which you can indicate a file containing the server
 parameters for the tof sensor. We have include several the configuration
-files like \"/launch/bta_ros_1.yaml\". This last is an example with a
+files like "/launch/bta_ros_1.yaml". This last is an example with a
 default configuration values for the camera. You may modify these files
 or add yours to load your own configuration.
 
@@ -190,7 +190,7 @@ You also can set the integration time and the frame rate when starting
 the connection with the device.
 
 We need to set the right device in the configuration file. The devices
-id\'s are located in the headers of the BltTofApi.
+id's are located in the headers of the BltTofApi.
 
 ```
 // Generic
@@ -288,10 +288,10 @@ published and it is connected to the world tf. That means, the world
 coordinates system, is the camera coordinates system.
 
 In Rviz, you need to select the fixed frame of reference to show your
-cloud in the 3d space. Just select in Global Options-\>Fixed Frame the
+cloud in the 3d space. Just select in Global Options->Fixed Frame the
 value cloud or world (drop down list).
 
-![rviz\|height=\"467\",width=\"607\"](attachment:rviz.png)
+![rviz\|height="467",width="607"](attachment:rviz.png)
 
 It is also possible to get the xyz 3d coordinates using the calibration
 of the camera. You need to use the
@@ -314,7 +314,7 @@ options for changing the integration time(Integration_Time) and the
 frame rate(Frame_Rate) as well as the possibility of read (Read_reg) and
 write(Write_reg) values to the camera registers(Reg_addr, Reg_val).
 
-![rqt_reconfigure\|height=\"386\",width=\"749\"](attachment:rqt_reconfigure.png)
+![rqt_reconfigure\|height="386",width="749"](attachment:rqt_reconfigure.png)
 
 For using this option in an user interface, run the ROS rqt_reconfigure
 node or rqt_gui with the reconfigure plugin. We have included it to be
@@ -322,14 +322,14 @@ run in the .launch files.
 
 ### Manipulating Camera registers
 
-In the rqt_reconfigure windows the boolean checkboxes \"Read_reg\" and
-\"Write_reg\" work as buttons to limit updates sent to the camera.
+In the rqt_reconfigure windows the boolean checkboxes "Read_reg" and
+"Write_reg" work as buttons to limit updates sent to the camera.
 
-For reading you must set and register address through \"Reg_addr\" and
-then click on Read_reg. The result will be displayed in \"Reg_val\".
+For reading you must set and register address through "Reg_addr" and
+then click on Read_reg. The result will be displayed in "Reg_val".
 
-In case of writing a register just set the address \"Reg_addr\" and the
-value \"Reg_val\" and click on \"Write_reg\".
+In case of writing a register just set the address "Reg_addr" and the
+value "Reg_val" and click on "Write_reg".
 
 For any register operation an info message will inform you about it in
 the console.

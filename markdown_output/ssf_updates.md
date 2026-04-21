@@ -32,11 +32,11 @@ a practical insight to the mentioned steps.
 
 Every update sensor consists of 3 files:
 
--   \[type\]\_sensor.cpp and \[type\]\_sensor.h contain the topic
+-   \[type\]_sensor.cpp and \[type\]_sensor.h contain the topic
     subscription, dynamic reconfigure calls and - most important - the
     calculation of the measurement matrix and residuals passed to
     [ ssf_core](../ssf_core ).
--   \[type\]\_measurements.h contains the initialization values passed
+-   \[type\]_measurements.h contains the initialization values passed
     to the initialization procedure in [ ssf_core](../ssf_core ).
 
 Essentially you can use the example modules *pose_sensor* and
@@ -58,15 +58,15 @@ The dynamic reconfigure part in [ ssf_core](../ssf_core ) contains two
 general noise parameters *meas_noise1* and *meas_noise2*. They can be
 used as dynamically reconfigurable measurement noise parameters.
 However, we suggest to have the measurement noise included in the update
-sensor\'s own information source (e.g. covariance estimate of the visual
-odometry\'s PoseWithCovarianceStamped message).
+sensor's own information source (e.g. covariance estimate of the visual
+odometry's PoseWithCovarianceStamped message).
 
 ### Calculating the Measurement Matrix and Residuals
 
 This is the mos crucial part and varies from sensor type to sensor type.
 Note that the same module can be used for a 6DoF Vicon information or
 for the 6DoF pose information from [ethzasl_ptam](ethzasl_ptam). In the
-former information source the \"visual\" scale estimate should - of
+former information source the "visual" scale estimate should - of
 course - result in 1.0. However, attention must be paid to the
 definition of the 6DoF pose the information source is providing.
 
@@ -91,8 +91,8 @@ is the position scaling factor (not more than 5% off the true value),
 hence we suggest to provide this via dynamic reconfigure GUI upon filter
 initialization. Using the first update sensor measurements together with
 this scaling factors some other states can be calculated. The remaining
-states are not very sensitive to correct initialization - an \"eye
-based\" initial value may be sufficient.
+states are not very sensitive to correct initialization - an "eye
+based" initial value may be sufficient.
 
 ## Node Information
 

@@ -172,7 +172,7 @@ publishes three types of messages for the agent:
     this message provides an experience seed for the agent to use for
     learning.
 -   [rl_msgs/RLStateReward](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLStateReward.html):
-    this is a message from the environment with the agent\'s new state
+    this is a message from the environment with the agent's new state
     and reward received on this time step.
 
 The environment subscribes to one type of message from the agent:
@@ -187,7 +187,7 @@ The environment subscribes to one type of message from the agent:
 When the environment is created, it sends an RLEnvDescription message to
 the agent. Then it will send any experience seeds for the agent in a
 series of RLEnvSeedExperience messages. Then it will send the agent an
-RLStateReward message with the agent\'s initial state in the domain. It
+RLStateReward message with the agent's initial state in the domain. It
 should then receive an RLAction message, which it can apply to the
 domain and send a new RLStateReward message. When the episode has ended,
 the environment will receive an RLExperimentInfo message from the agent,

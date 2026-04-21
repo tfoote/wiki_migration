@@ -46,19 +46,19 @@ formats.
 ## Parameters
 
 -   Port (int, default: 4599)
--   IP (string, default: \"255.255.255.255\")
--   frame_id (string, default: \"ifm\")
--   OutDepthImageTopic (string, default: \"ifm_o3mxxx_depth_image\")
+-   IP (string, default: "255.255.255.255")
+-   frame_id (string, default: "ifm")
+-   OutDepthImageTopic (string, default: "ifm_o3mxxx_depth_image")
 
 ```{=html}
 <!-- -->
 ```
--   PointCloudTopic (string, default: \"ifm_o3mxxx_pc\")
+-   PointCloudTopic (string, default: "ifm_o3mxxx_pc")
 
 ```{=html}
 <!-- -->
 ```
--   RawTopic (string, default: \"ifm_o3mxxx_raw\")
+-   RawTopic (string, default: "ifm_o3mxxx_raw")
 
 # TODO
 

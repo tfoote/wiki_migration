@@ -5,7 +5,7 @@ scanner for Care-O-bot.
 
 ## ROS API
 
-This package doesn\'t have a own ROS API, it just configures the
+This package doesn't have a own ROS API, it just configures the
 [hokuyo_node](hokuyo_node).
 
 ## Usage/Examples

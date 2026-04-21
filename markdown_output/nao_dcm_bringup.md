@@ -1,7 +1,7 @@
 # DCM Bringup for Nao robot
 
 The package contains launch and configuration files required to bring
-the robot\'s DCM Driver up and start the robot controllers. The package
+the robot's DCM Driver up and start the robot controllers. The package
 allows to control a robot from ROS, while communicating with Naoqi. You
 can control the robot either by calling DCM commands or ALMotion (by
 default).
@@ -29,7 +29,7 @@ catkin_make
 
 ### Trajectory control
 
--   start the DCM Bringup providing the robot\'s IP
+-   start the DCM Bringup providing the robot's IP
     ```
 roslaunch nao_dcm_bringup nao_dcm_H25_bringup_remote.launch robot_ip:=<ROBOT_IP>
 ```
@@ -45,14 +45,14 @@ roslaunch nao_moveit_config moveit_planner.launch
 ```{=html}
 <!-- -->
 ```
--   you need to check \"Allow approximate IK solutions\", and then you
+-   you need to check "Allow approximate IK solutions", and then you
     can control the planning_group via an interactive marker
 
 ### Position control
 
 To command joints positions via ROS:
 
--   start the DCM bringup proving your robot\'s IP (be aware that the
+-   start the DCM bringup proving your robot's IP (be aware that the
     package will stop Autonomous Life on your robot):
     ```
 roslaunch nao_dcm_bringup nao_dcm_H25_bringup_position.launch robot_ip:=<ROBOT_IP>

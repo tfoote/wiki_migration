@@ -15,7 +15,7 @@ For additional libraries to help you use OpenCV with ROS, please see the
 
 ### When on Fuerte releasing for Electric
 
-You just need the following: 1. \`manifest.xml\`
+You just need the following: 1. `manifest.xml`
 ```
 <rosdep name="opencv2"/>
 ```
@@ -25,13 +25,13 @@ You just need the following: 1. \`manifest.xml\`
 The OpenCV rosdep is defined in the [vision_opencv](vision_opencv)
 stack. You may depend on OpenCV by adding the following:
 
-1\. \`manifest.xml\` ```
+1\. `manifest.xml` ```
 <depend package="cv_bridge" />
 
   <rosdep name="opencv2.3"/>
 ```
 
-1\. \`stack.xml\` ```
+1\. `stack.xml` ```
 <depend stack="vision_opencv" />
 ```
 
@@ -66,7 +66,7 @@ sudo apt-get install libopencv2.3-dev
 
 ### OpenCV only dependency
 
-You just need the following: 1. \`manifest.xml\`
+You just need the following: 1. `manifest.xml`
 ```
 <rosdep name="opencv2"/>
 ```
@@ -76,13 +76,13 @@ You just need the following: 1. \`manifest.xml\`
 The OpenCV rosdep is defined in the [vision_opencv](vision_opencv)
 stack. You may depend on OpenCV by adding the following:
 
-1\. \`manifest.xml\` ```
+1\. `manifest.xml` ```
 <depend package="cv_bridge" />
 
   <rosdep name="opencv2"/>
 ```
 
-1\. \`stack.xml\` ```
+1\. `stack.xml` ```
 <depend stack="vision_opencv" />
 ```
 

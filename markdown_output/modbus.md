@@ -37,7 +37,7 @@ to be changed inside the Insight or Step7 project.*
 
 Siemens S7-1200 PLC controlled by a Python ROS node:
 
-\<\<Youtube(1YarNPR-FwI&feature=youtu.be)\>\>
+[Youtube](https://www.youtube.com/watch?v=1YarNPR-FwI&feature=youtu.be)
 
 ## Nodes
 

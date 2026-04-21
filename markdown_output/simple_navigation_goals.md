@@ -3,7 +3,7 @@
 -   What it does
 -   Where / you would use it
 -   Known limitations
--   What hardware it\'s been tested with
+-   What hardware it's been tested with
 
 ## Tutorials
 

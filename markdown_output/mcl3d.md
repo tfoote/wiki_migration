@@ -1,6 +1,6 @@
 ## Overview
 
-This package contains one single node: \`mcl3d_node\`, which estimates
+This package contains one single node: `mcl3d_node`, which estimates
 robot localization based on incoming visual odometry, 3D point clouds,
 radio-based measurements and a 3D map of the environment, fused into a
 Monte Carlo Localization (MCL) algorithm.
@@ -10,14 +10,14 @@ Monte Carlo Localization (MCL) algorithm.
 The transforms tree (following
 [REP 105](http://www.ros.org/reps/rep-0105.html)) is as follows:
 
-. \`map\` → \`odom\` → \`base_link\` → \`camera\`
+. `map` → `odom` → `base_link` → `camera`
 
 Visual odometry algorithms generally calculate* camera motion* with
-respect to an initial reference frame \`odom\`.To be able to calculate
+respect to an initial reference frame `odom`.To be able to calculate
 *robot motion* based on *camera motion*, the transformation from the
 camera frame to the robot frame has to be known. Therefore this
-implementation needs to know the tf \`base_link\` → \`camera\` and the
-tf \`odom\` → \`base_link\` to be able to publish map → \`odom\` in
+implementation needs to know the tf `base_link` → `camera` and the
+tf `odom` → `base_link` to be able to publish map → `odom` in
 order to correct odometry drift. The node currently uses default values
 from the sensor setup on the !AscTec Neo Research platform.
 

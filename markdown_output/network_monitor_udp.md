@@ -8,57 +8,57 @@ measurements, constant or adaptive bandwidth rates and more.
 ### MonitorSource and udpmonsink
 
 The basic link measurements are implemented by the class
-\`MonitorSource\` (defined in \`udpmonclient.py\`) and the
-\`udpmonsink\` node. \`MonitorSource\` sends UDP packets at a specified
-rate to \`udpmonsink\` which timestamps them and echoes them back either
+`MonitorSource` (defined in `udpmonclient.py`) and the
+`udpmonsink` node. `MonitorSource` sends UDP packets at a specified
+rate to `udpmonsink` which timestamps them and echoes them back either
 via UDP or via ROS topic message.
 
-\`MonitorSource\` records packets receive times and sorts them into
+`MonitorSource` records packets receive times and sorts them into
 latency bins based on their travel time. These latency bins can be
 periodically retrieved and information such as packet loss, average
 latency and bandwidth can be therefrom determined.
 
-Multiple stream support is built in so multiple \`MonitorSource\`s on
-the same ROS node can ping packets off the same \`udpmonsink\`.
+Multiple stream support is built in so multiple `MonitorSource`s on
+the same ROS node can ping packets off the same `udpmonsink`.
 
-For a ROS independent setup, \`udpmonserv\` can be used instead of
-\`udpmoncli\`. The former is not a ROS node, but rather a standalone UDP
-server. By default, \`MonitorSource\` does not use ROS messages for the
+For a ROS independent setup, `udpmonserv` can be used instead of
+`udpmoncli`. The former is not a ROS node, but rather a standalone UDP
+server. By default, `MonitorSource` does not use ROS messages for the
 return path and no ROS dependency is created on the class.
 
 ### udpmonsourcenode.py
 
-\`udpmonsourcenode\` is a node that implements an action server which
+`udpmonsourcenode` is a node that implements an action server which
 receives link testing goals. It instantiates and collects statistics
-from multiple \`MonitorSource\`s. Each source (i.e. link test) is
+from multiple `MonitorSource`s. Each source (i.e. link test) is
 independent of all others and can be parametrized differently in terms
 of bandwidth, latency bin thresholds, update (i.e. stats collection)
 interval and so on. It sends periodical feedback to the action client.
 
-\`udpmonsourcenode\` also implements logic for adaptive bandwidth tests:
+`udpmonsourcenode` also implements logic for adaptive bandwidth tests:
 link tests that strive to saturate a link in terms of bandwidth while
 maintaining latency and loss within specified thresholds.
 
-Typically there would be one \`udpmonsourcenode.py\` node running on
-every machine in a test setup as each \`sourcenode\` supports any number
+Typically there would be one `udpmonsourcenode.py` node running on
+every machine in a test setup as each `sourcenode` supports any number
 of tests with destination sinks on different machines.
 
 ### linktest.py
 
-The \`linktest.py\` implements the action client for link tests, as well
+The `linktest.py` implements the action client for link tests, as well
 as logging and test control logic via three classes:
 
--   \`UdpmonsourceHandle\`: is a handle to a \`udpmonsourcenode.py\`
+-   `UdpmonsourceHandle`: is a handle to a `udpmonsourcenode.py`
     (i.e. an action client); typically there would be as many instances
-    as there are \`udpmonsourcenode\`s in the test setup.
-    \`UdpmonsourceHandle\` also act as link test factories creating
-    \`Linktest\` objects.
--   \`LinkTest\`: an instance of this class corresponds to one link
-    test. Instances are created from the \`UdpmonsourceHandle\` class.
+    as there are `udpmonsourcenode`s in the test setup.
+    `UdpmonsourceHandle` also act as link test factories creating
+    `Linktest` objects.
+-   `LinkTest`: an instance of this class corresponds to one link
+    test. Instances are created from the `UdpmonsourceHandle` class.
     It receives the periodic link test statistics (measured bandwidth,
     latency and loss) and it logs these measurements in the
-    \`MetricLog\` class.
--   \`MetricLog\`: records a log of measurement for a variable and
+    `MetricLog` class.
+-   `MetricLog`: records a log of measurement for a variable and
     calculates aggregated statistics.
 
 ## ROS API
@@ -178,8 +178,8 @@ desc=`udpmonsink` is a lightweight node that echoes back received packets either
 
 ## Command-line tools
 
-\`udpmoncli.py\` can also be used stand-alone, independent of ROS with
-\`udpmonserv\` as in the example below:
+`udpmoncli.py` can also be used stand-alone, independent of ROS with
+`udpmonserv` as in the example below:
 
 ```
 # rosrun network_monitor_udp udpmonserv 12345
@@ -228,7 +228,7 @@ if __name__ == '__main__':
         source.cancel_all_tests()
 ```
 
-Here\'s an example run:
+Here's an example run:
 
 ```
 # roslaunch launch_nodes.launch

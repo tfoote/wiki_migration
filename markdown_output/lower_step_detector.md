@@ -5,7 +5,7 @@ lower angle.
 
 ## Installation
 
-To install the \`lower_step_detector\` package, you can install from
+To install the `lower_step_detector` package, you can install from
 source with the following commands:
 
 . ```shell

@@ -19,7 +19,7 @@ You can learn more about Aseba in the following papers:
 -   In educational robots
     [FNG 2008 paper](http://infoscience.epfl.ch/getfile.py?recid=128742&mode=best)
     You can also access documentation at
-    [aseba\'s homepage](http://aseba.wikidot.com).
+    [aseba's homepage](http://aseba.wikidot.com).
 
 ### asebaros
 
@@ -30,7 +30,7 @@ topics in a dynamic way, when loading source code.
 
 ## Installation
 
-The following commands will fetch and compile the \`asebaros\` package.
+The following commands will fetch and compile the `asebaros` package.
 The latter will fetch all required dependencies automatically.
 ```
 # Fetch ethzasl_aseba stack
@@ -50,7 +50,7 @@ rosmake
 
 ### Node: asebaros
 
-The bridge with Aseba is called \`asebaros\`:
+The bridge with Aseba is called `asebaros`:
 
 ```
 asebaros [options] [additional targets]
@@ -125,9 +125,9 @@ pub {
 
 ### Developing for Aseba
 
-Once the \`ethzasl_asebaros\` stack is compiled, you will find
-\`aseba/build/studio/asebastudio\` in this stack. \`asebastudio\` is the
+Once the `ethzasl_asebaros` stack is compiled, you will find
+`aseba/build/studio/asebastudio` in this stack. `asebastudio` is the
 Integrated Development Environment that you will use to write programs
 for Aseba nodes. Inside studio, you can find help on the Aseba language
-from \`Help -\> Language\` and on \`asebastudio\` itself from \`Help -\>
-Studio\`.
+from `Help -> Language` and on `asebastudio` itself from `Help ->
+Studio`.

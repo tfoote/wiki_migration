@@ -39,9 +39,9 @@ param {
 
 #### Action API
 
-The \`explore\` node implements a \`SimpleActionClient\` (see
+The `explore` node implements a `SimpleActionClient` (see
 [ actionlib documentation](actionlib )) that generates goals containing
-\`geometry_msgs/PoseStamped\` messages.
+`geometry_msgs/PoseStamped` messages.
 
 ##### Action Published Topics
 
@@ -56,13 +56,13 @@ pub {
 
 #### Component Parameters
 
-The \`explore\` node contains components that have their own ROS APIs
+The `explore` node contains components that have their own ROS APIs
 and parameters. These components are:
 
 -   [costmap_2d](costmap_2d) - Parameters should be set under
-    \<name\>/explore_costmap
+    <name>/explore_costmap
 -   [navfn](navfn) - Parameters should be set under
-    \<name\>/explore_planner
+    <name>/explore_planner
 
 #### Examples
 

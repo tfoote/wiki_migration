@@ -48,15 +48,15 @@ changes the value interpretation is in the next section.
 
 ### Value Interpretation
 
-Given a pixel that has a COLOR value \`x\` in the range \`\[0, 256)\`,
+Given a pixel that has a COLOR value `x` in the range `\[0, 256)`,
 how should we interpret this value when put into the ROS message? First
-we convert integer \`x\` to a floating point number \`p\` depending on
-the interpretation of the \`negate\` flag from the yaml.
+we convert integer `x` to a floating point number `p` depending on
+the interpretation of the `negate` flag from the yaml.
 
--   If \`negate\` is false, \`p = (255 - x) / 255.0\`. This means that
+-   If `negate` is false, `p = (255 - x) / 255.0`. This means that
     black (0) now has the highest value (1.0) and white (255) has the
     lowest (0.0).
--   If \`negate\` is true, \`p = x / 255.0\`. This is the non-standard
+-   If `negate` is true, `p = x / 255.0`. This is the non-standard
     interpretation of images, which is why it is called negate, even
     though the math indicates that x is not negated. Nomenclature is
     hard.
@@ -67,11 +67,11 @@ The standard interpretation is the trinary interpretation, i.e.
 interpret all values so that the output ends up being one of three
 values.
 
--   If \`p \> occupied_thresh\`, output the value \`100\` to indicate
+-   If `p > occupied_thresh`, output the value `100` to indicate
     the cell is occupied.
--   If \`p \< free_thresh\`, output the value \`0\` to indicate the cell
+-   If `p < free_thresh`, output the value `0` to indicate the cell
     is free.
--   Otherwise, output \`-1\` a.k.a. \`255\` (as an unsigned char), to
+-   Otherwise, output `-1` a.k.a. `255` (as an unsigned char), to
     indicate that the cell is unknown.
 
 #### Scale
@@ -79,19 +79,19 @@ values.
 This tweaks the above interpretation to allow for more output values
 than trinary.
 
--   As before if \`p \> occupied_thresh\`, output the value \`100\`. If
-    \`p \< free_thresh\`, output the value \`0\`.
--   Otherwise, output \`99 \* (p - free_thresh) / (occupied_thresh -
-    free_thresh)\`
+-   As before if `p > occupied_thresh`, output the value `100`. If
+    `p < free_thresh`, output the value `0`.
+-   Otherwise, output `99 \* (p - free_thresh) / (occupied_thresh -
+    free_thresh)`
 
 This will allow you to output a full gradient of values ranging from
-\`\[0, 100\]\`. To output \`-1\`, simply use the alpha channel of a png,
+`\[0, 100\]`. To output `-1`, simply use the alpha channel of a png,
 where any transparency will be interpreted as unknown.
 
 #### Raw
 
-This mode will output \`x\` for each pixel, so output values are \`\[0,
-255\]\`.
+This mode will output `x` for each pixel, so output values are `\[0,
+255\]`.
 
 ## Command-line Tools
 
@@ -158,7 +158,7 @@ node {
 
 ```
 rosrun map_server map_saver [--occ <threshold_occupied>] [--free <threshold_free>] [-f <mapname>] map:=/your/costmap/topic
-``` \`map_saver\` retrieves map data and writes it
+``` `map_saver` retrieves map data and writes it
 out to **map.pgm** and **map.yaml**. Use the **-f** option to provide a
 different base name for the output files. The **\--occ** and **\--free**
 options take values between 0 and 100. To save different map topic set

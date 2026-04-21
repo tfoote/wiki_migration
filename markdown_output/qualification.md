@@ -12,14 +12,14 @@ authorization into Willow Garage systems.
 
 ### Run GUI
 
-To run the qualification GUI, go to the \"Applications\" menu on a test
-system, select \"WG Hardware Applications\" and run \"PR2
-Qualification\".
+To run the qualification GUI, go to the "Applications" menu on a test
+system, select "WG Hardware Applications" and run "PR2
+Qualification".
 
 To run from the command-line, run: ```
 rosrun qualification qualify.py
 ``` A
-\`\--debug\` option will enable debug mode. This is for developers only.
+`\--debug` option will enable debug mode. This is for developers only.
 
 ## Qualification System Overview
 
@@ -29,13 +29,13 @@ the data.
 ### Invent Logs
 
 Parts that pass qualification are marked with in Invent with their
-\"Test Status\" key set to \"PASS\". Failed components are marked with
-\"Test Status\" set to \"FAIL\".
+"Test Status" key set to "PASS". Failed components are marked with
+"Test Status" set to "FAIL".
 
 Test data in the form of tarfile attachments are loaded to Invent. Test
 parameters and measurements are also loaded to Invent so they can be
 [analyzed](wgtest_data_analysis) later. The log files are stored in the
-\"/wg_hardware_test/qualification\" directory before they are sent to
+"/wg_hardware_test/qualification" directory before they are sent to
 Invent.
 
 ### ROS Structure of Qualification
@@ -50,12 +50,12 @@ processes and launched using [roslaunch_caller](roslaunch_caller).
 The Qualification Manager advertises services to communicate with
 different subprocesses.
 
--   \`prestartup_done\`
-    (\<\<SrvLink(pr2_self_test_msgs/ScriptDone)\>\>) - When pre-startup
+-   `prestartup_done`
+    (<<SrvLink(pr2_self_test_msgs/ScriptDone)>>) - When pre-startup
     scripts terminate.
--   \`test_result\` (\<\<SrvLink(pr2_self_test_msgs/TestResult)\>\>) -
+-   `test_result` (<<SrvLink(pr2_self_test_msgs/TestResult)>>) -
     For subtests that complete.
--   \`shutdown_done\` (\<\<SrvLink(pr2_self_test_msgs/ScriptDone)\>\>) -
+-   `shutdown_done` (<<SrvLink(pr2_self_test_msgs/ScriptDone)>>) -
     When shutdown scripts terminate.
 
 These services are only advertised when it there is a corresponding
@@ -67,37 +67,37 @@ The qualification system sets parameters to configure different scripts.
 All parameters outside the following namespaces are wiped after each
 qualification test.
 
--   \`/invent\` - Inventory username and password are stored on
+-   `/invent` - Inventory username and password are stored on
     parameter server.
--   \`/qualification\` - Parameters used for the qualification system
+-   `/qualification` - Parameters used for the qualification system
     itself. Includes:
--   \`power_board\` - \"serial\", \"breaker0\", etc of power board.
-    \"serial\" is XXXX, \"breaker0\" is True/False.
--   \`serial\` - Serial number of device-under-test.
--   \`test_name\` - Test name
+-   `power_board` - "serial", "breaker0", etc of power board.
+    "serial" is XXXX, "breaker0" is True/False.
+-   `serial` - Serial number of device-under-test.
+-   `test_name` - Test name
 
 ### Flow of Qualification Tests
 
 The qualification start page shows a prompt for a serial number and a
-\"Continue\" button. When an operator scans a part and presses
-\"Continue\", they are asked to select the correct test to run.
+"Continue" button. When an operator scans a part and presses
+"Continue", they are asked to select the correct test to run.
 
 The following parts are launch files that are launched during the
-qualification system. Each launch file is specified in the \"test.xml\"
+qualification system. Each launch file is specified in the "test.xml"
 file for a particular test.
 
 #### Instructions
 
 Instructions are loaded after a test is selected. The instructions page
 is an HTML document. Any images specified in the document are given
-relative to their local path. If \"Cancel\" is pressed while the
+relative to their local path. If "Cancel" is pressed while the
 instructions are displayed, the qualification system will return to the
 start screen and the device-under-test will **not** be marked as a
-failure. Pressing \"Cancel\" at any other time will fail the component.
+failure. Pressing "Cancel" at any other time will fail the component.
 
 #### Pre-startup Scripts
 
-These launch files run after \"Continue\" is pressed from the
+These launch files run after "Continue" is pressed from the
 instructions. Each prestartup script is designed to prepare the
 device-under-test and the fixture for testing. Prestartup scripts call a
 ROS service when they are complete. The service response can be:
@@ -105,8 +105,8 @@ ROS service when they are complete. The service response can be:
 -   **OK**
 -   **FAIL** - The component is unable to be tested.
 -   **ERROR** - The fixture is not ready or improperly set up. Note: Any
-    \"errors\" at the pretest level will not mark the component as
-    \"FAIL\".
+    "errors" at the pretest level will not mark the component as
+    "FAIL".
 
 Pre-startup scripts are torn down when the ROS service is called, the
 operator presses cancel, or a timeout is hit.
@@ -121,7 +121,7 @@ complete.
 #### Subtests
 
 Subtests are launched sequentially. They terminate with a ROS service
-call, when \"Cancel\" is pressed, or after a timeout.
+call, when "Cancel" is pressed, or after a timeout.
 
 #### Shutdown Scripts
 
@@ -132,29 +132,29 @@ disables power to the device under test.
 
 ### Qualification Manager
 
-The \`qualify.py\` script runs the qualification manager (GUI). Here is
+The `qualify.py` script runs the qualification manager (GUI). Here is
 an overview of the relevant components of the qualification manager.
 
 #### Configuration Loading
 
-Modules \`result_dir.py\`, \`test.py\`, \`test_loader.py\` and
-\`wg_station.py\` load the configuration files to run the qualification
+Modules `result_dir.py`, `test.py`, `test_loader.py` and
+`wg_station.py` load the configuration files to run the qualification
 station, and set up the environment. These modules are well covered by a
 unit test.
 
 #### Manager / GUI
 
-The core of the GUI is in \`qual_frame.py\` and \`component_qual.py\`.
-These modules have no software tests. The module \`cont_frame.py\` is
+The core of the GUI is in `qual_frame.py` and `component_qual.py`.
+These modules have no software tests. The module `cont_frame.py` is
 for continuous operation of the qual system, an experimental feature.
 
 #### Logging and Invent
 
-The \`result.py\` module processes qualification results and submits
+The `result.py` module processes qualification results and submits
 them to Invent. This module has software tests in
 [test_pr2_self_test](test_pr2_self_test).
 
-There is a script in \`test_pr2_self_test/test/test_invent\` that tests
+There is a script in `test_pr2_self_test/test/test_invent` that tests
 that valid qualification data can be loaded to Invent. Any changes to
 Invent submitting should be checked with that script.
 
@@ -181,15 +181,15 @@ The component qualification system run tests like hysteresis tests on
 different sub-assemblies of the robot. To qualify hardware, technicians
 scan components into the system. Each serial number corresponds to one
 or more tests to qualify different types of components. Each test is
-described in an XML file (ex: \"tests.xml\") that has pretests, startup
+described in an XML file (ex: "tests.xml") that has pretests, startup
 scripts, subtests and shutdown tests. Most tests include:
 
--   Programming MCB\'s (using fwprog)
--   Configuring MCB\'s for different components (using motorconf)
+-   Programming MCB's (using fwprog)
+-   Configuring MCB's for different components (using motorconf)
 -   Startup script to launch pr2_etherCAT
--   \"Checkout\" test to make sure all component plugged in
+-   "Checkout" test to make sure all component plugged in
 -   Hysteresis tests for each joint Each subtest calls a
-    \<\<SrvLink(pr2_self_test_msgs/TestResult)\>\> service call, which
+    <<SrvLink(pr2_self_test_msgs/TestResult)>> service call, which
     gives the text of the result, a pass/fail indicator, and any plots
     from the tests. Subtests can pass automatically, which starts the
     next test automatically, or can request a human pass/fail input. The
@@ -210,23 +210,23 @@ following conditions must be me.
 
 ### Accounts
 
-You will need an account in the WG Inventory System or \"Invent\". You
+You will need an account in the WG Inventory System or "Invent". You
 may set up the default Invent username and password by using the
-environment variables \`INVENT_USERNAME\` and \`INVENT_PASSWORD\`.
+environment variables `INVENT_USERNAME` and `INVENT_PASSWORD`.
 
 ### Permissions
 
-The \`/hwlog\` directory must be read/writable to the user. The
+The `/hwlog` directory must be read/writable to the user. The
 qualification system will write bag files of diagnostics to that
 directory.
 
 The user home directory must be read/writable to the user. Temporary log
-files are written in \`/wg_hardware_test\`.
+files are written in `/wg_hardware_test`.
 
 ### Configuration Files
 
-The file \`wg_map.xml\` contains the entries for each computer or
-(\"station\") that the qualification system can run on. Any new machine
+The file `wg_map.xml` contains the entries for each computer or
+("station") that the qualification system can run on. Any new machine
 must be added to this file.
 
 ```
@@ -237,15 +237,15 @@ must be added to this file.
   </station>
 ```
 
-Parameters in the \"station\" tag:
+Parameters in the "station" tag:
 
--   \`gui\` - GUI host for qual system. Should be complete hostname
--   \`host\` - Test host. Tests can run on separate machine..
--   \`powerboard\` \[ optional \] - Power board serial number (ex:
-    \"1002\"). Default: None
--   \`breaker##\` \[ optional \] - Breaker \[0-2\]. Whether that breaker
+-   `gui` - GUI host for qual system. Should be complete hostname
+-   `host` - Test host. Tests can run on separate machine..
+-   `powerboard` \[ optional \] - Power board serial number (ex:
+    "1002"). Default: None
+-   `breaker##` \[ optional \] - Breaker \[0-2\]. Whether that breaker
     is enabled by the power system. Default: False
--   \`env\` \[ optional \] - Any environment variables specific to this
+-   `env` \[ optional \] - Any environment variables specific to this
     machine. Set by the qualification system when the machine is loaded.
 
 When the qualification system starts up, it determines which station the

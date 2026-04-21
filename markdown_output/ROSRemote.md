@@ -1,13 +1,13 @@
 **Package Summary** ROSRemote is a framework that helps users to control
 remote robots and recover information from them as well as from remote
-masters. It is possible to send common ROS commands like \"rostopic
-list\" to a remote master and recover all the topics it is publishing at
+masters. It is possible to send common ROS commands like "rostopic
+list" to a remote master and recover all the topics it is publishing at
 the time.
 
--   Maintainer: Alyson Benoni Matias Pereira \<alysonmp AT gmail DOT
-    com\>
--   Author: Alyson Benoni Matias Pereira \<alysonmp AT gmail DOT com\>,
-    Guilherme Sousa Bastos \<sousa AT unifei.edu DOT br\>
+-   Maintainer: Alyson Benoni Matias Pereira <alysonmp AT gmail DOT
+    com>
+-   Author: Alyson Benoni Matias Pereira <alysonmp AT gmail DOT com>,
+    Guilherme Sousa Bastos <sousa AT unifei.edu DOT br>
 -   Source: git <https://github.com/alysonmp/ROSRemote.git> (branch:
     master)
 
@@ -31,7 +31,7 @@ have a master instance running on them, so, ROSRemote are able to
 connect two masters through [SpaceBrew](http://docs.spacebrew.cc/), as
 shown in the figure below.
 
-![text describing image\|width=\"600\"](attachment:fluxo_pacote.png)
+![text describing image\|width="600"](attachment:fluxo_pacote.png)
 
 Since [SpaceBrew](http://docs.spacebrew.cc/) gives the user the
 possibility to connect two or more masters among themselves, it is

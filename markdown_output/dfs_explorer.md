@@ -1,11 +1,11 @@
 ## Overview
 
-The \`dfs_explorer\` package implements the node \`explorer.py\` which
+The `dfs_explorer` package implements the node `explorer.py` which
 is an explorer with depth-first-search-like algorithm for finite worlds
 for the Large Maps Framework ([LaMa](Large Maps Framework)). It proceeds
 as follows: 0. Go to the first crossing (for example, jockey
 [nj_laser](nj_laser) or [nj_costmap](nj_costmap)). 1. Get a new
-\<\<MsgLink(lama_msgs/Crossing)\>\> descriptor (robot should be at
+<<MsgLink(lama_msgs/Crossing)>> descriptor (robot should be at
 crossing center), compare this descriptor with descriptors saved in the
 map, and add a new vertex in the case that the place is considered to be
 a place that was not already visited. If, on the opposite, the vertex is

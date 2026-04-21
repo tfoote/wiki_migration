@@ -164,29 +164,29 @@ GCS.
 
 Supported schemas:
 
--   Serial: \`/path/to/serial/device\[:baudrate\]\`
+-   Serial: `/path/to/serial/device\[:baudrate\]`
 -   Serial:
-    \`serial:*/path/to/serial/device\[:baudrate\]\[/?ids=sysid,compid\]\`
+    `serial:*/path/to/serial/device\[:baudrate\]\[/?ids=sysid,compid\]`
     \* Serial with hardware flow control:
-    \`serial-hwfc:*/path/to/serial/device\[:baudrate\]\[?ids=sysid,compid\]\`
+    `serial-hwfc:*/path/to/serial/device\[:baudrate\]\[?ids=sysid,compid\]`
 -   UDP:
-    \`udp:*\[bind_host\]\[:port\]@\[remote_host\]\[:port\]\[/?ids=sysid,compid\]\`
+    `udp:*\[bind_host\]\[:port\]@\[remote_host\]\[:port\]\[/?ids=sysid,compid\]`
     \* UDP Broadcast:
-    \`udp-b:*\[bind_host\]\[:port\]@\[:port\]\[/?ids=sysid,compid\]\`
--   TCP client: \`tcp:*\[server_host\]\[:port\]\[/?ids=sysid,compid\]\`
+    `udp-b:*\[bind_host\]\[:port\]@\[:port\]\[/?ids=sysid,compid\]`
+-   TCP client: `tcp:*\[server_host\]\[:port\]\[/?ids=sysid,compid\]`
     \* TCP server:
-    \`tcp-l:*\[bind_host\]\[:port\]\[/?ids=sysid,compid\]\`
+    `tcp-l:*\[bind_host\]\[:port\]\[/?ids=sysid,compid\]`
 
 Notes:
 
--   ids from URL overrides ids given by parameters \`system_id\` and
-    \`component_id\`.
--   \`baudrate\` default value is 57600
--   \`bind_host\` default value is \"0.0.0.0\" (IPv4 ANY)
--   \`remote_host\` by default unknown. mavros will awaiting data at
+-   ids from URL overrides ids given by parameters `system_id` and
+    `component_id`.
+-   `baudrate` default value is 57600
+-   `bind_host` default value is "0.0.0.0" (IPv4 ANY)
+-   `remote_host` by default unknown. mavros will awaiting data at
     bind_host:port
--   \`server_host\` default value is \"localhost\"
--   \`port\` default values: 14555 for UDP bind, 14550 for UDP remote,
+-   `server_host` default value is "localhost"
+-   `port` default values: 14555 for UDP bind, 14550 for UDP remote,
     5760 for TCP
 -   UDP broadcast used on discovery stage, later it switch to GCS
     address
@@ -194,8 +194,8 @@ Notes:
 
 ## Utility commands
 
-All utilities provides \`\<util\> \--help\` and \`\<util\> \<command\>
-\--help\` information.
+All utilities provides `<util> \--help` and `<util> <command>
+\--help` information.
 
 ### mavcmd
 

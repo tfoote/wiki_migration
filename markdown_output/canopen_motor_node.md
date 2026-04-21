@@ -14,22 +14,22 @@ that can be used to spawn [controller_interface](controller_interface)
 compliant controllers. Depending on the motor device different
 interfaces are support.
 
-For each joint a \`hardware_interface::JointStateHandle\` is registered
+For each joint a `hardware_interface::JointStateHandle` is registered
 with the position, velocity and effort of the specific drive. The actual
 value is determined by the conversion functions.
 
 In addition handles for the following command interfaces are available
 if the given modes are supported by the device:
 
--   \`hardware_interface::PositionJointInterface\`:
+-   `hardware_interface::PositionJointInterface`:
 -   Profiled Position
 -   Interpolated Position
 -   Cyclic Synchronous Position
--   \`hardware_interface::VelocityJointInterface\`:
+-   `hardware_interface::VelocityJointInterface`:
 -   Velocity
 -   Profiled Velocity
 -   Cyclic Synchronous Velocity
--   \`hardware_interface::EffortJointInterface\`:
+-   `hardware_interface::EffortJointInterface`:
 -   Profiled Torque
 -   Cyclic Synchronous Torque
 
@@ -47,7 +47,7 @@ handles for soft and saturation limits.
 
 The driver does support mode switching at run-time and mixed modes for
 different joints. In order to determine the mode, a special parameter
-\"required_drive_mode\" must be added to each controller. It should
+"required_drive_mode" must be added to each controller. It should
 contain the [CANopen 402 mode id](canopen_402#Drive_operation_modes).
 
 Since mode switching might be restricted to specific drive states by the
@@ -74,14 +74,14 @@ the following functions are available:
 -   avg(val1,val2,\...): average functions that stops on the first NaN
     value
 
-Further two constants are defined for convenience: \`pi\` and \`nan\`.
+Further two constants are defined for convenience: `pi` and `nan`.
 
 The conversion functions from ROS the device units can read the commands
-from the respective \`pos\`,\`vel\` and \`eff\` variables.
+from the respective `pos`,`vel` and `eff` variables.
 
 The conversion functions from device to ROS supports an extended notion
-with obj prefixes: E.g. \`obj6064\` will read the actual position and
-\`obj6091sub1\` will read the gear ration nominator.
+with obj prefixes: E.g. `obj6064` will read the actual position and
+`obj6091sub1` will read the gear ration nominator.
 
 ```wiki
 Please note that you can write to these variables, but you should avoid it, these writes are not passed to the device anyway and will overwritten in the next call!
@@ -95,16 +95,16 @@ initialized to NaN values.
 The basic configuration is described in
 [canopen_chain_node#Configuration](canopen_chain_node#Configuration).
 
-For the canopen_motor_node to work each node is given a \`joint\`
+For the canopen_motor_node to work each node is given a `joint`
 parameter that defaults to the CANopen node name and is used as joint
 name in the [ros_control](ros_control) interfaces.
 
-For each motor node a \`motor_allocator\` can be specified which is used
+For each motor node a `motor_allocator` can be specified which is used
 to load a motor plugin with [pluginlib](pluginlib), it defaults to the
 [canopen_402](canopen_402) implementation. All settings contained in the
-\'motor_layer\' parameter will be passed to the motor layer instance.
+'motor_layer' parameter will be passed to the motor layer instance.
 
-In summary the following parameters are supported in \`defaults\`
+In summary the following parameters are supported in `defaults`
 section and per node: ```highlight
 defaults: # optional, all defaults can be overwritten per node
   # canopen_chain_node settings ..
@@ -120,8 +120,8 @@ defaults: # optional, all defaults can be overwritten per node
 ``` If omitted, the listed
 values are used.
 
-\`\`The objects used in the conversion functions and the drive modes
-should be mapped to PDOs for best performance.\`\`
+``The objects used in the conversion functions and the drive modes
+should be mapped to PDOs for best performance.``
 
 ## ROS API
 

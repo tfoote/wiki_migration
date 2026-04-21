@@ -1,6 +1,6 @@
 # USB Output 9-axis IMU sensor module
 
-![\|align=\"right\",width=\"250\"](attachment:9axis_imu.png)
+![\|align="right",width="250"](attachment:9axis_imu.png)
 
 [USB Output 9-axis IMU sensor module](https://www.rt-net.jp/products/9axisimu2?lang=en)
 contains a 9-axis sensor (Accelerometer + Gyro + Compass) IC MPU9250

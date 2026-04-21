@@ -1,3 +1,3 @@
 ## Video
 
-\<\<Youtube(<http://www.youtube.com/watch?v=Ge0GduY1rtE>)\>\>
+[Youtube](https://www.youtube.com/watch?v=http://www.youtube.com/watch?v=Ge0GduY1rtE)

@@ -1,1 +1,1 @@
-\<\<Markdown(<https://raw.githubusercontent.com/InnopolisAero/inno_sim_interface/master/README.md>)\>\>
+<<Markdown(<https://raw.githubusercontent.com/InnopolisAero/inno_sim_interface/master/README.md>)>>

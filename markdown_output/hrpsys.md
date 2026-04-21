@@ -14,7 +14,7 @@
 -   API documentation is
     [available on github](http://fkanehiro.github.io/hrpsys-base/).
 -   For writing application, you can use some existing resource from one
-    of the client packages of \`hrpsys\`,
+    of the client packages of `hrpsys`,
     [rtmros_hironx](http://wiki.ros.org/rtmros_nextage/Tutorials/Programming)
 
 ### Notable features
@@ -70,7 +70,7 @@ Steps:
 to update a tag in
 [CMakeLists.txt](https://github.com/fkanehiro/hrpsys-base/blob/master/CMakeLists.txt).
 [Example](https://github.com/fkanehiro/hrpsys-base/pull/231). This way
-community will decide if we\'re ready for the next release. 2. Send a
+community will decide if we're ready for the next release. 2. Send a
 pull request to update
 [start-jsk/hrpsys/Makefile.hrpsys-base](https://github.com/start-jsk/hrpsys/blob/master/Makefile.hrpsys-base).
 [Example](https://github.com/start-jsk/hrpsys/pull/88/files). 3. Send a
@@ -78,20 +78,20 @@ pull request to update
 [start-jsk/hrpsys/CHANGELOG.rst](https://github.com/start-jsk/hrpsys/blob/master/CHANGELOG.rst).
 
 3-1. Use [this script](https://github.com/start-jsk/hrpsys/pull/96) to
-copy commit messages from upstream \`fkanehiro/hrpsys-base\`.
+copy commit messages from upstream `fkanehiro/hrpsys-base`.
 
 3-2. Summarize commit messages into user-meaningful content
 ([discussion](https://github.com/start-jsk/hrpsys/pull/99#issuecomment-49596002)).
 
-3-3. (Rare) If there\'s an update in
+3-3. (Rare) If there's an update in
 [ROS repository (start-jsk/hrpsys)](https://github.com/start-jsk/hrpsys/blob/master/CHANGELOG.rst),
 add change logs into the one created in 3-2. Maybe use
-\`catkin_generate_changelog\` command to auto-generate it, and manually
+`catkin_generate_changelog` command to auto-generate it, and manually
 merge.
 
 4\. After here follow the normal release manner: Update tags and
-\`package.xml\` by using \`catkin_prepare_release\`.
+`package.xml` by using `catkin_prepare_release`.
 
-Notice that we\'re sending pull requests to two different repositories;
-one is the source upstream repository that isn\'t ROS-dependent, another
+Notice that we're sending pull requests to two different repositories;
+one is the source upstream repository that isn't ROS-dependent, another
 repository is used to release a DEB using ROS infrastructure.

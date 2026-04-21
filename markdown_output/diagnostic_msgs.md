@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(diagnostic_msgs)\>\>
+<<MsgSrvDoc(diagnostic_msgs)>>
 
 ## Sending Diagnostics
 

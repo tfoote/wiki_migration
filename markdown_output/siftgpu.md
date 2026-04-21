@@ -12,8 +12,8 @@ Based on GPU list generation\[3\], SiftGPU then uses a GPU/CPU mixed
 method to efficiently build compact keypoint lists. Finally keypoints
 are processed parallely to get their orientations and descriptors.
 
-SiftGPU is inspired by Andrea Vedaldi\'s sift++\[2\] and Sudipta N Sinha
-et al\'s GPU-SIFT\[4\] . Many parameters of sift++ ( for example, number
+SiftGPU is inspired by Andrea Vedaldi's sift++\[2\] and Sudipta N Sinha
+et al's GPU-SIFT\[4\] . Many parameters of sift++ ( for example, number
 of octaves, number of DOG levels, edge threshold, etc) are also
 available in SiftGPU. The shader programs are dynamically generated
 according to the parameters that user specified.
@@ -33,6 +33,6 @@ keypoints . International Journal of Computer Vision, November 2004.**
 pyramids. In Technical Report, June 2006.**
 
 **\[4\] Sudipta N Sinha, Jan-Michael Frahm, Marc Pollefeys and Yakup
-Genc, \"GPU-Based Video Feature Tracking and Matching \", EDGE 2006,
+Genc, "GPU-Based Video Feature Tracking and Matching ", EDGE 2006,
 workshop on Edge Computing Using New Commodity Architectures, Chapel
 Hill, May 2006**

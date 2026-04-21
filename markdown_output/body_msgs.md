@@ -17,7 +17,7 @@ cloud it came from.
 -   in **detecthands**: points near, but not in the hand are clustered
     and marked as the arm. It is pretty accurate in giving the direction
     that the arm is facing.
--   in **detectskelhands**: arm represents the skeleton\'s elbow.
+-   in **detectskelhands**: arm represents the skeleton's elbow.
 -   **palm**: 6D pose of the palm (orientation may not be fully
     functional yet)
 -   **fingers**: for each finger detected, the centroid is given.
@@ -36,5 +36,5 @@ A Skeletons message is a list of Skeleton messages with a header.
 
 -   **joints** The joints are pretty self explanatory. They are the 3d
     position of that joint, plus a confidence. Generally the joints are
-    trusted if the confidence is \> .5
+    trusted if the confidence is > .5
 -   **id** The id of the user.

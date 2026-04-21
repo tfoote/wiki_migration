@@ -1,8 +1,8 @@
 ## General usage
 
-The \`navigator\` is a ROS node that implements a path planner for
+The `navigator` is a ROS node that implements a path planner for
 navigation and is supposed to be used in conjunction with the
-\'operator\' node. Beside this, the whole functionality is provided by
+'operator' node. Beside this, the whole functionality is provided by
 the RobotNavigator class, which is exported by this package and can be
 used from within other nodes as well.
 

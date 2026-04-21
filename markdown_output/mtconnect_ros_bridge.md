@@ -80,8 +80,8 @@ topic name in !CamelCase 1. ROS package that has the message / message
 type 1. XML data item tag for the machine tool event 1. Python
 dictionary defining the conversion between MTConnect and ROS
 
-The format for the second group is as follows ***(in the YAML file, do
-not use tabs, only spaces for indenting)***:
+The format for the second group is as follows
+**`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
 ```
 key : string, topic name
@@ -121,7 +121,7 @@ CncRequestTopic:
 ```
 
 Regarding the MTConnect to ROS conversion, note that the ROS !CncRequest
-message type \<\<MsgLink(mtconnect_msgs/CncRequest)\>\> consists of an
+message type <<MsgLink(mtconnect_msgs/CncRequest)>> consists of an
 array of strings, or from a terminal:
 
 ```
@@ -129,9 +129,9 @@ rosmsg show mtconnect_msgs/CncRequest
 ```
 
 For example, during a !MaterialLoad sequence, the bridge publisher
-acquires the MTConnect event state, such as \'ACTIVE\' and translates it
-into a ROS \'ENABLED\' state. This state is actually a ROS constant,
-which is set to an integer value. In this case the value for \'ENABLED\'
+acquires the MTConnect event state, such as 'ACTIVE' and translates it
+into a ROS 'ENABLED' state. This state is actually a ROS constant,
+which is set to an integer value. In this case the value for 'ENABLED'
 is 1, which is what is published. The user can verify this by running
 from a terminal:
 
@@ -192,8 +192,8 @@ differs, the MTConnect Agent will be sending information to a port not
 accessible by the machine tool agent which will result in sequence
 errors between the two systems.
 
-The format for the second group is as follows ***(in the YAML file, do
-not use tabs, only spaces for indenting)***:
+The format for the second group is as follows
+**`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
 ```
 url:            string representing the url for the machine tool
@@ -225,7 +225,7 @@ This module launches a ROS node that will stream XML data from the
 machine tool and will launch a ROS action client if the machine tool
 requests an action. For example, if the machine tool requests a
 !MaterialLoad action, it will change the !MaterialLoad event tag from
-\'READY\' to \'ACTIVE\'. Once this change is captured by this node, the
+'READY' to 'ACTIVE'. Once this change is captured by this node, the
 node launches a ROS !MaterialLoadAction client. Subsequently, the
 !MaterialLoadAction server must be executed to process the action. If
 not, the system waits until the !MaterialLoadAction server is available.
@@ -283,8 +283,8 @@ machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
 ```4
 
-The format for the second group is as follows ***(in the YAML file, do
-not use tabs, only spaces for indenting)***:
+The format for the second group is as follows
+**`'(in the YAML file, do not use tabs, only spaces for indenting)`**':
 
 ```
 url:            string representing the url for the machine tool
@@ -312,10 +312,10 @@ the initial value for the action goal attributes must be set to
 ## Bridge Server
 
 This module launches a ROS node that blocks until a dedicated action
-request is made by the robot, such as \'OpenDoor\'. Once a request is
+request is made by the robot, such as 'OpenDoor'. Once a request is
 received, the node executes a callback function that monitors the
 machine tool until it completes the requested action. The node then
-returns the \'READY\' handshake to the machine tool agent before
+returns the 'READY' handshake to the machine tool agent before
 returning the action request result to the dedicated action client.
 
 ![](attachment:bridge_server_interaction.png)
@@ -374,8 +374,8 @@ xml_namespace: urn:mtconnect.org:MTConnectStreams:1.2
 The string for the ROS package and the strings for the robot events must
 already exist in the ROS package and robot configuration file,
 respectively. Each package and action request XML tag must be unique. If
-not there may be a violation of the action request sequence (\'ACTIVE\'
-→ \'COMPLETE\' → \'READY\') with the machine tool resulting in sequence
+not there may be a violation of the action request sequence ('ACTIVE'
+→ 'COMPLETE' → 'READY') with the machine tool resulting in sequence
 errors. Here is an example of the second group showing two ROS packages
 with unique robot action requests:
 
@@ -445,7 +445,7 @@ This method takes the following arguments:
 ### Method: xml_get_response
 
 This function determines if an HTTP connection can be made. If so, it
-returns a response to a user specified \"GET\" request.
+returns a response to a user specified "GET" request.
 
 This method takes the following arguments:
 
@@ -462,7 +462,7 @@ This method takes the following arguments:
 
 The method returns:
 
--   response, \"GET\" response
+-   response, "GET" response
 
 ### Method: xml_components
 
@@ -470,9 +470,9 @@ This method finds all elements in the updated XML. If an action goal is
 required, the string acquired from the XML is parsed and returned with
 the appropriate type.
 
-For example, if the goal is \"\'ALUMINUM 6061-T6\', 5.00, 2.50\", the
-method will convert this string into the following list \[\'ALUMINUM
-6061-T6\', 5.00, 2.50\] which contains the following types: \[str,
+For example, if the goal is "'ALUMINUM 6061-T6', 5.00, 2.50", the
+method will convert this string into the following list \['ALUMINUM
+6061-T6', 5.00, 2.50\] which contains the following types: \[str,
 float, float\]
 
 This method takes the following arguments:
@@ -563,7 +563,7 @@ the goal message.
 
 This method takes the following arguments:
 
--   goal_type: string, goal_type from goal msg.\_slot_types
+-   goal_type: string, goal_type from goal msg._slot_types
 -   request: varies, actual goal value that is a float, int, string,
     etc.
 

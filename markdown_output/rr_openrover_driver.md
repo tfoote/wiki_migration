@@ -6,7 +6,7 @@ communications and allows users to quickly get their robots moving
 around and doing cool things! We recommend using an FTDI cable which
 will convert the UART to USB for communicating with a computer.
 
-![\|width=\"600px\"](attachment:rover_robotics_all_robots_1080_2.png)
+![\|width="600px"](attachment:rover_robotics_all_robots_1080_2.png)
 
 ## Running the example
 

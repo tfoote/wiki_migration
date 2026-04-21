@@ -1,5 +1,5 @@
 QT5 based application to display time series in plots, using an
-intuitive \"drag and drop\" interface.
+intuitive "drag and drop" interface.
 
 It can be used either to:
 

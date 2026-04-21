@@ -2,7 +2,7 @@
 
 This repository contains the h264_encoder_core package, a library for
 encoding images into video frames. It is used by the
-\`h264_video_encoder\` node.
+`h264_video_encoder` node.
 
 ### License
 

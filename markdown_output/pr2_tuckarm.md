@@ -7,7 +7,7 @@ As with all applications, you must first
 
 ### Boxturtle
 
-The tuck arm application is a Python script, \`tuckarms.py\`:
+The tuck arm application is a Python script, `tuckarms.py`:
 ```
 USAGE: tuck_arms.py [b | l | r]
 ```
@@ -18,7 +18,7 @@ rosrun pr2_tuckarm tuck_arms.py b
 
 ### C-turtle or newer versions
 
-The tuck arm application is a Python script, \`tuck_arms.py\`:
+The tuck arm application is a Python script, `tuck_arms.py`:
 ```
 USAGE: tuck_arms.py [-r <action>] [-l <action>]; <action> is '(t)uck' or '(u)ntuck'.
 ```

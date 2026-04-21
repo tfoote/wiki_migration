@@ -16,9 +16,9 @@ OpenNI.
 
 This wrapper is intended to be compatible with both the
 [PSDK5.0 device](http://www.primesense.com/?p=1132) and Kinect, though
-this is a work in progress. In order to use \`ps_engine\` with the
+this is a work in progress. In order to use `ps_engine` with the
 Kinect, you will need to set two environment variables. We recommend
-adding the following to your \`.bashrc\`:
+adding the following to your `.bashrc`:
 
 ```
 export XN_SENSOR_VENDOR_ID=0x045E 

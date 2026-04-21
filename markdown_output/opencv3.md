@@ -29,7 +29,7 @@ The reasons to package it ourselves are:
 
 ## Usage
 
-You would use OpenCV3 as you would usually outside of ROS but let\'s
+You would use OpenCV3 as you would usually outside of ROS but let's
 explain a few corner cases:
 
 -   if you have OpenCV2 and OpenCV3 installed, *find_package(OpenCV)* in

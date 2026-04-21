@@ -1,4 +1,4 @@
-\<\<GitHubIssues(hrnr/m-explore)\>\>
+<<GitHubIssues(hrnr/m-explore)>>
 
 ## Overview
 
@@ -7,40 +7,40 @@ running, robot will greedily explore its environment until no frontiers
 could be found. Movement commands will be send to
 [move_base](move_base).
 
-![\|width=\"755px\"](attachment:screenshot.png)
+![\|width="755px"](attachment:screenshot.png)
 
 Unlike similar packages, `explore_lite` does not create its own costmap,
 which makes it easier to configure and more efficient (lighter on
 resources). Node simply subscribes to
-\<\<MsgLink(nav_msgs/OccupancyGrid)\>\> messages. Commands for robot
+<<MsgLink(nav_msgs/OccupancyGrid)>> messages. Commands for robot
 movement are send to [move_base](move_base) node.
 
 Node can do frontier filtering and can operate even on non-inflated
 maps. Goal blacklisting allows to deal with places inaccessible for
 robot.
 
-\<\<Youtube(op0L0LyGNwY&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=op0L0LyGNwY&rel=0)
 
 ## Architecture
 
 `explore_lite` uses [move_base](move_base) for navigation. You need to
 run properly configured [move_base](move_base) node.
 
-![\|width=\"755px\"](attachment:architecture.svg)
+![\|width="755px"](attachment:architecture.svg)
 
-`explore_lite` subscribes to a \<\<MsgLink(nav_msgs/OccupancyGrid)\>\>
-and \<\<MsgLink(map_msgs/OccupancyGridUpdate)\>\> messages to construct
+`explore_lite` subscribes to a <<MsgLink(nav_msgs/OccupancyGrid)>>
+and <<MsgLink(map_msgs/OccupancyGridUpdate)>> messages to construct
 a map where it looks for frontiers. You can either use costmap published
-by [move_base](move_base) (ie. \`\<move_base\>/global_costmap/costmap\`)
+by [move_base](move_base) (ie. `<move_base>/global_costmap/costmap`)
 or you can use map constructed by mapping algorithm (SLAM).
 
 Depending on your environment you may achieve better results with either
-SLAM map or costmap published by \`move_base\`. Advantage of
-\`move_base\` costmap is the inflation which helps to deal with some
+SLAM map or costmap published by `move_base`. Advantage of
+`move_base` costmap is the inflation which helps to deal with some
 very small unexplorable frontiers. When you are using a raw map produced
-by SLAM you should set the \`min_frontier_size\` parameter to some
+by SLAM you should set the `min_frontier_size` parameter to some
 reasonable number to deal with the small frontiers. For details on both
-setups check the \`explore.launch\` and \`explore_costmap.launch\`
+setups check the `explore.launch` and `explore_costmap.launch`
 launch files.
 
 ## Setup
@@ -61,11 +61,11 @@ by default). Navigation through unknown space is required for
 `explore_lite`.
 
 If you want to use costmap provided by [move_base](move_base) you need
-to enable unknown space tracking by setting \`track_unknown_space:
-true\`.
+to enable unknown space tracking by setting `track_unknown_space:
+true`.
 
 If you have [move_base](move_base) configured correctly, you can start
-experimenting with `explore_lite`. Provided \`explore.launch\` should
+experimenting with `explore_lite`. Provided `explore.launch` should
 work out-of-the box in most cases, but as always you might need to
 adjust topic names and frame names according to your setup.
 

@@ -3,7 +3,7 @@ Willow Garage internal use only.
 
 ## Overview
 
-This package contains the \`move_arm_head_monitor\` node, which is
+This package contains the `move_arm_head_monitor` node, which is
 designed primarily for use by [move_arm](move_arm), enabling the
 monitoring of a given arm during its motion. During the monitoring, the
 head is continuously pointed at locations in space where the arm will be
@@ -15,34 +15,34 @@ On the PR2, this sensor is typically the stereo vision.
 
 ### Note on Usage
 
-Normally, you will not interact with \`move_arm_head_monitor\` directly.
-It, along with \`move_arm\`, should be launched with the appropriate
-remappings and parameters, and that\'s it (see Example Usage below). The
+Normally, you will not interact with `move_arm_head_monitor` directly.
+It, along with `move_arm`, should be launched with the appropriate
+remappings and parameters, and that's it (see Example Usage below). The
 API details below are given as a reference.
 
 ### Node Instances
 
-One instance of \`move_arm_head_monitor\` allows the monitoring of one
+One instance of `move_arm_head_monitor` allows the monitoring of one
 arm. The names required for the node to connect to the appropriate
 services need to be remapped properly based on which arm is to be
 monitored.
 
 ## ROS API
 
-The \`move_arm_head_monitor\` node connects to ROS services for querying
+The `move_arm_head_monitor` node connects to ROS services for querying
 arm state and calculating forward kinematics, and to the point head
 action server. It provides two action servers, one to look at a target
 location on a given link, and one to monitor a given link.
 
 ### ROS Parameters
 
-The \`move_arm_head_monitor\` node does not take any parameters, as all
+The `move_arm_head_monitor` node does not take any parameters, as all
 required information is passed in through the action goal at the start
 of monitoring. It might be desirable to change this in the future.
 
 ### Required Services
 
-The \`move_arm_head_monitor\` node requires two external services and
+The `move_arm_head_monitor` node requires two external services and
 one action server. In a launch file, the names below should be remapped
 to the appropriate service or action server, such as the ones
 recommended.
@@ -69,7 +69,7 @@ a target location on a given link at a certain time, without starting to
 monitor. This is useful when we want to make sure the head is pointed at
 the arm before motion starts (NOTE: this action could be removed and a
 monitoring goal with a short time used instead). The second action
-invokes the full monitoring capability. The URL links below don\'t seem
+invokes the full monitoring capability. The URL links below don't seem
 to work, for details on the structure of the goal messages please see
 the action definitions in the move_arm_head_monitor package.
 
@@ -105,10 +105,10 @@ sub{
 ## Example Usage
 
 To use this node, it must be launched with the correct remappings, and
-then \`move_arm\` needs to be launched also with the appropriate
+then `move_arm` needs to be launched also with the appropriate
 remappings as well as the desired monitoring parameters. Below is an
 example launch file that can be used to launch the
-\`move_arm_head_monitor\` node for the right arm. The file
+`move_arm_head_monitor` node for the right arm. The file
 head_monitor_right_arm.launch in pr2_arm_navigation_actions (trunk)
 contains this code.
 
@@ -126,9 +126,9 @@ contains this code.
 ```
 
 Below is an example of how the above launch file can be used to launch
-the \`move_arm\` node properly. Note the remaps for
+the `move_arm` node properly. Note the remaps for
 **head_monitor_action** and **head_look_action** and the various params
-with with the prefix **head_monitor\_**
+with with the prefix **head_monitor_**
 
 ```
 <launch>
@@ -171,7 +171,7 @@ with with the prefix **head_monitor\_**
 
 ### move_arm params
 
-The following params can be given to \`move_arm\` to control the
+The following params can be given to `move_arm` to control the
 monitoring process:
 
 ```clearsilver

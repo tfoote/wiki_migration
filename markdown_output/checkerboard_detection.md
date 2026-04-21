@@ -1,4 +1,4 @@
-## \-\--\>\>\> The Dokumentation is currently outdated, March 2011\<\<\<\-\-\-\--
+## \-\-->>> The Dokumentation is currently outdated, March 2011<<<\-\-\-\--
 
 ## Overview
 
@@ -13,7 +13,7 @@ a yml file. Stored data can be published again with using by using
 published frames using the **checkerboard_pose node**.
 
   -- ------------------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"100px\" tablestyle=\"text-align: center;\"\> ![](attachment:boardpose.jpg) checkerboard pose   
+     <tablewidth="100px" tablestyle="text-align: center;"> ![](attachment:boardpose.jpg) checkerboard pose   
      ![](attachment:camerapose.jpg) camera pose                                                                    
   -- ------------------------------------------------------------------------------------------------------------- --
 

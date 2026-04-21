@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(applanix_msgs)\>\>
+<<MsgSrvDoc(applanix_msgs)>>

@@ -9,15 +9,15 @@ been tested under Python 2.7 under ROS fuerte, Ubuntu precise.
 
 ## Installing the robot_script Package
 
-Check out the robot_script package, and \`rosmake\` to ready the package
+Check out the robot_script package, and `rosmake` to ready the package
 for operation. Currently installation is via checkout from Github:
 ```
 git clone https://github.com/paepcke-willow-garage/robot_script.git
 cd robot_script
 rosmake
-``` To get the latest version after you\'ve already
+``` To get the latest version after you've already
 installed the facility, type the following into a terminal window after
-switching to \`robot_script\` directory: ```
+switching to `robot_script` directory: ```
 git pull
 rosmake
 ```
@@ -30,7 +30,7 @@ The following code snippet checks whether the head tilt joint is roughly
 at 30 degrees. If so, the head is pointed such that pan is -100 degrees,
 tilt is at -20. The head will take 5 seconds to reach its destination.
 The statement following this conditional will proceed immediately, not
-awaiting the head\'s motion to complete:
+awaiting the head's motion to complete:
 
 ```
 if aboutEq('head_tilt_joint', 30):
@@ -129,7 +129,7 @@ The joints and their legal ranges are:
 
 ### Moving the whole robot (the base)
 
-Scripts can move the robot\'s body (also called its \`base\`) to a
+Scripts can move the robot's body (also called its `base`) to a
 place, and rotate its body at the same time:
 
 -   `pr2.moveBase(place=(x,y,z), rotation=deg, duration=3)` For the PR2
@@ -157,29 +157,29 @@ else:
     do another thing
 ```
 
-Currently recognized joint names: \'base\', \'bl_caster_l_wheel_joint\',
-\'bl_caster_rotation_joint\', \'bl_caster_r_wheel_joint\',
-\'br_caster_l_wheel_joint\', \'br_caster_rotation_joint\',
-\'br_caster_r_wheel_joint\', \'fl_caster_l_wheel_joint\',
-\'fl_caster_rotation_joint\', \'fl_caster_r_wheel_joint\',
-\'fr_caster_l_wheel_joint\', \'fr_caster_rotation_joint\',
-\'fr_caster_r_wheel_joint\', \'head_pan_joint\', \'head_tilt_joint\',
-\'laser_tilt_mount_joint\', \'l_elbow_flex_joint\',
-\'l_forearm_roll_joint\', \'l_gripper_joint\',
-\'l_gripper_l_finger_joint\', \'l_gripper_l_finger_tip_joint\',
-\'l_gripper_motor_screw_joint\', \'l_gripper_motor_slider_joint\'
-\'l_gripper_r_finger_joint\', \'l_gripper_r_finger_tip_joint\',
-\'l_shoulder_lift_joint\', \'l_shoulder_pan_joint\',
-\'l_upper_arm_roll_joint\', \'l_wrist_flex_joint\',
-\'l_wrist_roll_joint\', \'r_elbow_flex_joint\',
-\'r_forearm_roll_joint\', \'r_gripper_joint\',
-\'r_gripper_l_finger_joint\', \'r_gripper_l_finger_tip_joint\',
-\'r_gripper_motor_screw_joint\', \'r_gripper_motor_slider_joint\',
-\'r_gripper_r_finger_joint\', \'r_gripper_r_finger_tip_joint\',
-\'r_shoulder_lift_joint\', \'r_shoulder_pan_joint\',
-\'r_upper_arm_roll_joint\', \'r_wrist_flex_joint\',
-\'r_wrist_roll_joint\', \'torso_lift_joint\',
-\'torso_lift_motor_screw_joint\'.
+Currently recognized joint names: 'base', 'bl_caster_l_wheel_joint',
+'bl_caster_rotation_joint', 'bl_caster_r_wheel_joint',
+'br_caster_l_wheel_joint', 'br_caster_rotation_joint',
+'br_caster_r_wheel_joint', 'fl_caster_l_wheel_joint',
+'fl_caster_rotation_joint', 'fl_caster_r_wheel_joint',
+'fr_caster_l_wheel_joint', 'fr_caster_rotation_joint',
+'fr_caster_r_wheel_joint', 'head_pan_joint', 'head_tilt_joint',
+'laser_tilt_mount_joint', 'l_elbow_flex_joint',
+'l_forearm_roll_joint', 'l_gripper_joint',
+'l_gripper_l_finger_joint', 'l_gripper_l_finger_tip_joint',
+'l_gripper_motor_screw_joint', 'l_gripper_motor_slider_joint'
+'l_gripper_r_finger_joint', 'l_gripper_r_finger_tip_joint',
+'l_shoulder_lift_joint', 'l_shoulder_pan_joint',
+'l_upper_arm_roll_joint', 'l_wrist_flex_joint',
+'l_wrist_roll_joint', 'r_elbow_flex_joint',
+'r_forearm_roll_joint', 'r_gripper_joint',
+'r_gripper_l_finger_joint', 'r_gripper_l_finger_tip_joint',
+'r_gripper_motor_screw_joint', 'r_gripper_motor_slider_joint',
+'r_gripper_r_finger_joint', 'r_gripper_r_finger_tip_joint',
+'r_shoulder_lift_joint', 'r_shoulder_pan_joint',
+'r_upper_arm_roll_joint', 'r_wrist_flex_joint',
+'r_wrist_roll_joint', 'torso_lift_joint',
+'torso_lift_motor_screw_joint'.
 
 For legal values of these joints, see
 [the PR2 manual](http://pr2support.willowgarage.com/wiki/PR2%20Manual/Chapter8#Joint_Limits_and_Types).
@@ -189,7 +189,7 @@ negative.
 
 ### Raising/lowering the torso
 
--   `pr2.setTorso(height, duration=10.0, wait=True)` The PR2\'s torso
+-   `pr2.setTorso(height, duration=10.0, wait=True)` The PR2's torso
     can range from 0.3 meters (30cm) to 0 meters.
 
 ### Temporarily pausing execution
@@ -212,7 +212,7 @@ negative.
 ## Advanced Facilities
 
 A script function will often cause the robot to run through some
-sequence of gestures. Maybe the function makes the robot\'s right arm
+sequence of gestures. Maybe the function makes the robot's right arm
 wave. The function might be written to have the robot wave twice, and
 then stop, the function returning after the waving is done. Or the
 function might be written to have the robot wave continuously.
@@ -224,11 +224,11 @@ side to side, as if taking in a big crowd, and you have a second
 function that causes the robot to do just that? You want the waving
 function and the rotate function to run at the same time.
 
-You accomplish this parallelism by creating \`Motion\` objects from the
+You accomplish this parallelism by creating `Motion` objects from the
 waving and the rotating functions. Like this:
 
 A script function will often cause the robot to run through some
-sequence of gestures. Maybe the function makes the robot\'s right arm
+sequence of gestures. Maybe the function makes the robot's right arm
 wave. The function might be written to have the robot wave twice, and
 then stop, the function returning after the waving is done. Or the
 function might be written to have the robot wave continuously.
@@ -277,8 +277,8 @@ Then, to start the waving motion:
 myWaver.start(4) # wave four times
 ```
 
-Notice that you don\'t pass the motion object to \`myWaver\`\'s
-\`start()\` method. Within a motion function you can call any of the
+Notice that you don't pass the motion object to `myWaver`'s
+`start()` method. Within a motion function you can call any of the
 robot_script motions you like. But if you wish to do nothing for a
 while, do it like this:
 
@@ -286,7 +286,7 @@ while, do it like this:
 motion.sleep_while_running(numOfSeconds)
 ```
 
-That is, don\'t call the Python sleep function. The reason is that the
+That is, don't call the Python sleep function. The reason is that the
 special sleep_while_running() method of the Motion class ensures that
 you can stop your motion function at any time. The use of this sleeping
 method is the reason why all motion functions take their Motion object
@@ -300,11 +300,11 @@ git pull
 rosmake
 ```0 That method on the Motion class returns True
 or False. Of course, you write a motion function as an infinite loop,
-like \'wave forever,\' then \`motion.is_done()\` will never turn True.
+like 'wave forever,' then `motion.is_done()` will never turn True.
 
 If you sometimes want to use the business part of a motion function as
 the work horse of some part of your script, and sometimes as part of a
-parallel motion, the best idiom is to \'factor out\' the common
+parallel motion, the best idiom is to 'factor out' the common
 capability:
 
 ```
@@ -313,32 +313,32 @@ rosmake
 ```1
 
 Sometimes it is necessary that a script is notified when some event
-occurs. For example, a separate program may be using the robot\'s camera
+occurs. For example, a separate program may be using the robot's camera
 to find human faces in its surroundings. The script is to take some
 action, like wave its arm, whenever a face is found. How can the face
-finding program \'talk\' to the script?
+finding program 'talk' to the script?
 
-The answer is \`robot_script\`\'s \`EventSimulator\` class. This
+The answer is `robot_script`'s `EventSimulator` class. This
 facility can be used to debug a script by creating events, and
 delivering them to the script at specified times. Or the facility can be
 combined with the actual event-producing program, and function as the
 bridge between that program, and the script. This combination is
-accomplished by an expert user, who will subclass \`EventSimulator\`.
+accomplished by an expert user, who will subclass `EventSimulator`.
 The code contains instructions.
 
 ### Receiving Events from an EventSimulator or Sensors
 
 The script may receive event notifications by one of two means. The
 event simulator can call one of the script functions when an event
-occurs. That function is the script\'s *callback function.* That
+occurs. That function is the script's *callback function.* That
 function implements the robot reaction to the event. This mechnism works
 well when the reaction to the events are of short duration. Here is a
 schematic of what happens. The green part is the only area end users
 needs to worry about. Their script is a collection of functions that may
 call each other. One of the functions (the middle one in the picture),
-functions as an event handler. This function is called by \'the system\'
+functions as an event handler. This function is called by 'the system'
 whenever an event occurs, and it might call the other script functions.
-We\'ll see soon how a function is made into a handler function.
+We'll see soon how a function is made into a handler function.
 
 ![](attachment:synchronousEvents.png)
 
@@ -352,7 +352,7 @@ from sensors may even be lost.
 When events take longer to handle, or when many events arrive in bursts,
 it is better to use the second event delivery channel: a queue. Every
 event simulator provides a data queue. When the simulator calls the
-script\'s callback function, that function may **return** any
+script's callback function, that function may **return** any
 information that might be needed when the event is *eventually* handled
 by other parts of the script. For example, the callback function might
 record the time when the event occurred. The simulator will place the
@@ -395,9 +395,9 @@ WordFinder. We will do a runnable example in a moment.
 git pull
 rosmake
 ```2 The above code defines a callback function,
-\`printWord()\`, which prints the word it receives. Then the script
+`printWord()`, which prints the word it receives. Then the script
 enters a sleep loop. Whenever the independently running WordFinder
-discovers a word, it calls the script\'s \`printWord()\` function.
+discovers a word, it calls the script's `printWord()` function.
 
 Here is the same example using the second event delivery method:
 ```
@@ -406,35 +406,35 @@ rosmake
 ```3 The code above again first defines a callback
 function. In this case, however, the callback function returns the
 upper-cased word. The script then creates the WordFinder instance, and
-starts it, passing the callback function. The \`get()\` method on the
+starts it, passing the callback function. The `get()` method on the
 Queue instance hangs until a word is available. In this example, a
-timeout is added to the \`get()\` call. This exit hatch is optional.
+timeout is added to the `get()` call. This exit hatch is optional.
 
 ### Scheduling EventSimulator Events
 
-Say you don\'t have a fancy word or face finder. Or you will have one in
+Say you don't have a fancy word or face finder. Or you will have one in
 the future, but want to debug the robot reactions to the discovery
 events. You can create a very simple schedule that the EventSimulator
 will work through. A schedule is an OrderedDict, a Python data structure
 that is just like a Python dictionary, but remembers the order in which
-items were added. Let\'s simulate the word finder. Here is the code:
+items were added. Let's simulate the word finder. Here is the code:
 ```
 git pull
 rosmake
-```4 The schedule\'s keys are floating point
-numbers that indicate the number of seconds after the script\'s start
+```4 The schedule's keys are floating point
+numbers that indicate the number of seconds after the script's start
 when the respective event is to be triggered. When the event is
 triggered, the EventSimulator will invoke the callback function with the
 value of the schedule entry. For instance, at 2 seconds after the script
-starts, the EventSimulator will call \`printWord(\'This\')\`. At 5
-seconds after the script start, the call \`printWord(\'is\')\` will be
+starts, the EventSimulator will call `printWord('This')`. At 5
+seconds after the script start, the call `printWord('is')` will be
 made, and so on. The keys in the schedule must be numbers in seconds.
 But the corresponding values may be any Python datastructure. Whatever
-is there will be the parameter to the \`printWord()\` call.
+is there will be the parameter to the `printWord()` call.
 
-Here are the methods on the \`EventSimulator\` class:
+Here are the methods on the `EventSimulator` class:
 
-`start(schedule, callbackFunction, repeat=False)` The \`repeat\`
+`start(schedule, callbackFunction, repeat=False)` The `repeat`
 parameter allows a script to specify that the EventSimulator is to run
 through the schedule over and over again. `getEventQueue()` Return the
-EventSimulator\'s event queue. `stop()` Stop the EventSimulator.
+EventSimulator's event queue. `stop()` Stop the EventSimulator.

@@ -1,6 +1,6 @@
 ## About
 
-The \`robotiq_85_gripper_actions\` package contains ROS actionlib
+The `robotiq_85_gripper_actions` package contains ROS actionlib
 implementations of common gripper actions including executing a
 control_msgs gripper command, closing or opening the gripper until
 contact is made, and verifying whether the gripper is holding something.
@@ -69,18 +69,18 @@ node.0 {
 
 ## Installation
 
-To install the \`robotiq_85_gripper_actions\` package, follow the steps
+To install the `robotiq_85_gripper_actions` package, follow the steps
 below:
 
-1\. \`robotiq_85_gripper_actions\` assumes you are using Stanley
-Innovation\'s \`robotiq_85_gripper\` package to run the arm. If you do
+1\. `robotiq_85_gripper_actions` assumes you are using Stanley
+Innovation's `robotiq_85_gripper` package to run the arm. If you do
 not already have the package installed, you can get it from the Stanley
 Innovation github repository: ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/StanleyInnovation/robotiq_85_gripper.git
 ```
 
-2\. Install \`robotiq_85_gripper_actions\` from source with the
+2\. Install `robotiq_85_gripper_actions` from source with the
 following commands: ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/remote_manipulation_markers.git

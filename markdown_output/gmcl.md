@@ -33,18 +33,18 @@ Many of the algorithms and their parameters are well-described in the
 book Probabilistic Robotics, by Thrun, Burgard, and Fox. The user is
 advised to check there for more detail. In particular, we use the
 following algorithms from that book:
-**\`sample_motion_model_odometry\`**, **\`beam_range_finder_model\`**,
-**\`likelihood_field_range_finder_model\`**, **\`Augmented_MCL\`**, and
-**\`KLD_Sampling_MCL\`**.
+**`sample_motion_model_odometry`**, **`beam_range_finder_model`**,
+**`likelihood_field_range_finder_model`**, **`Augmented_MCL`**, and
+**`KLD_Sampling_MCL`**.
 
 ### New Algorithms
 
 Besides algorithms implemented in amcl, gmcl takes advantage of
-**\`Optimal particle filter\`** as described
-[here](https://ieeexplore.ieee.org/document/4543250) and **\`
-Intelligent particle filter\`** as described
+**`Optimal particle filter`** as described
+[here](https://ieeexplore.ieee.org/document/4543250) and **`
+Intelligent particle filter`** as described
 [here](https://ieeexplore.ieee.org/document/7031437) and
-**\`Self-adaptive particle filter\`** as described
+**`Self-adaptive particle filter`** as described
 [here](https://ieeexplore.ieee.org/document/5262621) to improve the
 performance of amcl while working in real time.
 
@@ -62,11 +62,11 @@ following must be represented:
 
 The robot state publisher node -- more info
 [here](http://wiki.ros.org/robot_state_publisher)-- must be running with
-\`robot_description\` param of the robot's urdf and publishes the tf of
+`robot_description` param of the robot's urdf and publishes the tf of
 robots links (base link and lasers links). In addition, a motion
 controller should publish the estimated robot motion as a transform
-between the odometry frame (\`odom_frame_id\`) and the base frame
-(\`base_frame_id\`).
+between the odometry frame (`odom_frame_id`) and the base frame
+(`base_frame_id`).
 
 ### Occupancy Grid Map
 
@@ -76,12 +76,12 @@ must publish a valid map using correct YAML format.
 ### Laser Scans
 
 Robot must be equipped with at least one laser scanner. All lasers must
-be fixed in place with respect to the robot base because \`gmcl\` looks
-up the transform between the laser\'s frame (\`laser_frame_id\`) and the
-base frame (\`base_frame_id\`), and latches it forever. So \`gmcl\`
+be fixed in place with respect to the robot base because `gmcl` looks
+up the transform between the laser's frame (`laser_frame_id`) and the
+base frame (`base_frame_id`), and latches it forever. So `gmcl`
 "cannot" handle a laser that moves with respect to the base. All lasers
-should publish their scans as (\<\<MsgLink( sensor_msgs/LaserScan
-Message)\>\>) massege.
+should publish their scans as (<<MsgLink( sensor_msgs/LaserScan
+Message)>>) massege.
 
 ## Examples
 
@@ -105,18 +105,18 @@ $ rosrun gmcl gmcl_omni.launch initial_pose_x:=-1 initial_pose_y:=2 initial_pose
 
 ## gmcl Node
 
-Just like [amcl](amcl), \`gmcl\` takes in a laser-based map, laser
+Just like [amcl](amcl), `gmcl` takes in a laser-based map, laser
 scans, and transform messages, and outputs pose estimates. On startup,
-\`gmcl\` initializes its particle filter according to the parameters
+`gmcl` initializes its particle filter according to the parameters
 provided. Note that, because of the defaults, if no parameters are set,
 the initial filter state will be a moderately sized particle cloud
 centered about (0,0,0). The drawing below shows localization using
-\`gmcl\`. During operation \`gmcl\` estimates the transformation of the
-base frame (\`base_frame_id\`) in respect to the map frame
-(\`global_frame_id\`) but it only publishes the transform between map
-frame and the odometry frame (\`odom_frame_id\`). Essentially, this
+`gmcl`. During operation `gmcl` estimates the transformation of the
+base frame (`base_frame_id`) in respect to the map frame
+(`global_frame_id`) but it only publishes the transform between map
+frame and the odometry frame (`odom_frame_id`). Essentially, this
 transform accounts for the drift that occurs using Dead Reckoning.
-![\|width=\"750px\"](attachment:gmcl_localization.png)
+![\|width="750px"](attachment:gmcl_localization.png)
 
 ### Subscribed Topics
 
@@ -181,7 +181,7 @@ $ sudo apt-get install ros-$ROS_DISTRO-navigation
 
 Besides Parameters that amcl uses to configure its node --Please check
 [them](https://wiki.ros.org/amcl#Parameters)-- , gmcl adds eleven
-Parameters to overall filter parameters to configure the \`gmcl\` node
+Parameters to overall filter parameters to configure the `gmcl` node
 and they are:
 
 ```
@@ -201,13 +201,13 @@ $ git clone -b master https://github.com/adler-1994/gmcl src/gmcl
 $ catkin_make
 ```2 Previous parameters
 define the Flow of gmcl algorithm and can be seen in following
-drawing..... ![\|width=\"750px\"](attachment:flow_chart.png) Full size
+drawing..... ![\|width="750px"](attachment:flow_chart.png) Full size
 available
 [here](https://wiki.ros.org/gmcl?action=AttachFile&do=get&target=flow_chart.png).
 
 The following table shows name of different techniques based on filters
 implemented, it could be seen that gmcl works with default parameters
-same as amcl..... ![\|width=\"750px\"](attachment:table.png)
+same as amcl..... ![\|width="750px"](attachment:table.png)
 
 ```
 $ cd catkin_ws
@@ -272,7 +272,7 @@ make sure your question is tagged by **gmcl** so I get notified.
 
 ## Acknowledgements & Citation
 
-This package was written during my master\'s thesis at Tishreen
+This package was written during my master's thesis at Tishreen
 University, Syria. My thesis advisor is
 Dr.[Iyad Hatem](http://iyadhatem.altervista.org/).
 ![](attachment:iyad-mhd.png)

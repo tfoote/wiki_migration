@@ -4,7 +4,7 @@ The sections below describe how to configure the NXT to ROS bindings.
 
 ### Example
 
-Even though the API description looks quite complicated, it\'s very easy
+Even though the API description looks quite complicated, it's very easy
 to configure the bindings. Here is an example configuration:
 ```
 nxt_robot:
@@ -68,7 +68,7 @@ param {
 }
 ```
 
-![\|width=\"200\"](attachment:motor.jpg)
+![\|width="200"](attachment:motor.jpg)
 
 ```clearsilver
 node.0 {
@@ -110,7 +110,7 @@ param {
 7.desc= The maximum distance the ultrasonic sensor can measure (meters)
 }
 }
-``` ![\|width=\"200\"](attachment:ultrasonic.jpg)
+``` ![\|width="200"](attachment:ultrasonic.jpg)
 
 ```clearsilver
 node.0 {
@@ -144,7 +144,7 @@ param {
 4.desc= The frame that the sensor data is published in. 
 }
 }
-``` ![\|width=\"200\"](attachment:touch.jpg)
+``` ![\|width="200"](attachment:touch.jpg)
 
 ```clearsilver
 node.0 {
@@ -178,7 +178,7 @@ param {
 4.desc= The frame that the sensor data is published in. 
 }
 }
-``` ![\|width=\"120\"](attachment:color.jpg)
+``` ![\|width="120"](attachment:color.jpg)
 
 ```clearsilver
 node.0 {
@@ -212,7 +212,7 @@ param {
 4.desc= The frame that the sensor data is published in. 
 }
 }
-``` ![\|width=\"200\"](attachment:gyro.jpg)
+``` ![\|width="200"](attachment:gyro.jpg)
 
 ```clearsilver
 node.0 {
@@ -246,7 +246,7 @@ param {
 4.desc= The frame that the sensor data is published in. 
 }
 }
-``` ![\|width=\"200\"](attachment:accel.jpg)
+``` ![\|width="200"](attachment:accel.jpg)
 
 ```clearsilver
 node.0 {
@@ -280,4 +280,4 @@ param {
 4.desc= The frame that the sensor data is published in. 
 }
 }
-``` ![\|width=\"120\"](attachment:color.jpg)
+``` ![\|width="120"](attachment:color.jpg)

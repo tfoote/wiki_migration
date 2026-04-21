@@ -31,8 +31,8 @@ roslaunch household_objects_database objects_database_remote_server.launch
 rosrun willow_tod recognition_node camera:=/camera/rgb points:=/camera/rgb/points -C detect_config.txt
 ```
 
-Then start rviz and add \"Interactive Object Detection\", \"Object
-Recognition popup window\"
+Then start rviz and add "Interactive Object Detection", "Object
+Recognition popup window"
 
 ### On the desktop
 
@@ -46,7 +46,7 @@ will have to add the following displays:
 
 -   **Interactive Object Detection/Interactive Object Detection**: This
     brings up a control dialog with buttons to trigger segmentation,
-    object recognition and to make the robot\'s head look at a spot
+    object recognition and to make the robot's head look at a spot
     directly in front of the robot.
 
 ```{=html}
@@ -89,7 +89,7 @@ tools like [pr2_interactive_manipulation](pr2_interactive_manipulation).
 ![](attachment:Screenshot-1.png)
 
 The Interactive Object Recognition Dialog will automatically pop up once
-it has been requested. It shows the scene as viewed by the robot\'s
+it has been requested. It shows the scene as viewed by the robot's
 camera with the meshes of all recognized objects being overlaid on top
 of the camera image. When moving the mouse over this window, you will
 see individual meshes being highlighted as you go over them.

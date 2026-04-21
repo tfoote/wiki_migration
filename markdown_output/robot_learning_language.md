@@ -8,7 +8,7 @@ into the program. The experience acquisition in RoLL is designed in a
 way that experiences can be defined outside the primary control program,
 using hybrid automata as a tool for declaratively specifying experience
 and anchoring it to the program. The rich experience concept enables
-convenient abstraction and an economic use of experiences. RoLL\'s
+convenient abstraction and an economic use of experiences. RoLL's
 design allows the inclusion of arbitrary experience-based learning
 algorithms. Upon the completion of the learning process RoLL
 automatically integrates the learned function into the control program

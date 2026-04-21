@@ -9,4 +9,4 @@ base.
 ## Documentation
 
 Up-to-date documentation can be found on
-[quori_controller\'s github page](https://github.com/Quori-ROS/quori_ros/blob/master/src/quori_controller/readme.md).
+[quori_controller's github page](https://github.com/Quori-ROS/quori_ros/blob/master/src/quori_controller/readme.md).

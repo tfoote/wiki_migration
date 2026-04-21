@@ -1,11 +1,11 @@
 ## Overview
 
-The \`pr2_mechanism_diagnostics\` package publishes data from the
-\`mechanism_statistics\` topic onto diagnostics. This data is published
+The `pr2_mechanism_diagnostics` package publishes data from the
+`mechanism_statistics` topic onto diagnostics. This data is published
 by [pr2_controller_manager](pr2_controller_manager). The joints and
 controllers diagnostics come from this package.
 
-The \`mechanism_statistics\` topic contains statistics and information
+The `mechanism_statistics` topic contains statistics and information
 from the joints, actuators and controllers.
 
 ## ROS API

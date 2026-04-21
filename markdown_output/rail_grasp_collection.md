@@ -1,6 +1,6 @@
 ## About
 
-The \`rail_grasp_collection\` package contains nodes to collect
+The `rail_grasp_collection` package contains nodes to collect
 demonstration grasps for detected point cloud objects. These
 demonstrations can then be used to build object models for recognition
 and manipulation using the [rail_recognition](rail_recognition) package.
@@ -143,7 +143,7 @@ node.1 {
 
 ## Installation
 
-To install the \`rail_pick_and_place\` package, you can install from
+To install the `rail_pick_and_place` package, you can install from
 source with the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/rail_pick_and_place.git
@@ -154,7 +154,7 @@ catkin_make install
 
 ## Startup
 
-The \`rail_grasp_collection\` package contains launch files for
+The `rail_grasp_collection` package contains launch files for
 launching either the rail_grasp_collection node or the
 rail_grasp_retriever node individually, and for launching both nodes
 together. These can be launched with the following commands,

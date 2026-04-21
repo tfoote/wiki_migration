@@ -8,7 +8,7 @@
 
 ![](attachment:track_simple.png)
 
-### Colorize trajectory according to its \'track.id\'
+### Colorize trajectory according to its 'track.id'
 
 ![](attachment:track_hue_id.png)
 

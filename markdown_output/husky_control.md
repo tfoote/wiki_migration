@@ -17,4 +17,4 @@ Channels are preconfigured in descending priority for:
 
 1\. teleoperation 2. interactive marker ([husky_viz](husky_viz)) 3.
 autonomous movement ([husky_navigation](husky_navigation)) 4.
-miscellaneous external input on the standard \`cmd_vel\` topic.
+miscellaneous external input on the standard `cmd_vel` topic.

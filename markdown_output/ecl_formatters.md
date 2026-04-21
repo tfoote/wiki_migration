@@ -48,7 +48,7 @@ If outside of ros, you will also need to link to *ecl_formatters*.
 ## Available Formatters
 
 Each standard formatter is a template specialisation of the form
-\`Format\<inputType\>\` where the available input types are:
+`Format<inputType>` where the available input types are:
 
 -   integral types (char, short, int, long, long long and unsigned
     equivalents)

@@ -1,6 +1,6 @@
 ## Overview
 
-![\|width=\"100%\"](attachment:witmotion.jpg)
+![\|width="100%"](attachment:witmotion.jpg)
 
 This package implements a ROS 1 wrapper for
 [Witmotion IMU driver library](https://github.com/ElettraSciComp/witmotion_IMU_QT).
@@ -112,20 +112,20 @@ The module published the following message types (once the incoming data
 is available from the sensor, all the topic names and publisher
 availability are configurable):
 
--   \<\<MsgLink(sensor_msgs/Imu)\>\> for accelerometer/gyroscope data
--   \<\<MsgLink(sensor_msgs/Temperature)\>\> for thermal observation
--   \<\<MsgLink(sensor_msgs/MagneticField)\>\> for magnetometer data
--   \<\<MsgLink(sensor_msgs/FluidPressure)\>\> for barometer output
--   \<\<MsgLink(std_msgs/Float64)\>\> for altimeter output
--   \<\<MsgLink(geometry_msgs/Quaternion)\>\> for orientation output
--   \<\<MsgLink(sensor_msgs/NavSatFix)\>\> for GPS position output
--   \<\<MsgLink(geometry_msgs/Twist)\>\> for GPS ground speed output
--   \<\<MsgLink(geometry_msgs/Vector3)\>\> for GPS accuracy (diagonal
+-   <<MsgLink(sensor_msgs/Imu)>> for accelerometer/gyroscope data
+-   <<MsgLink(sensor_msgs/Temperature)>> for thermal observation
+-   <<MsgLink(sensor_msgs/MagneticField)>> for magnetometer data
+-   <<MsgLink(sensor_msgs/FluidPressure)>> for barometer output
+-   <<MsgLink(std_msgs/Float64)>> for altimeter output
+-   <<MsgLink(geometry_msgs/Quaternion)>> for orientation output
+-   <<MsgLink(sensor_msgs/NavSatFix)>> for GPS position output
+-   <<MsgLink(geometry_msgs/Twist)>> for GPS ground speed output
+-   <<MsgLink(geometry_msgs/Vector3)>> for GPS accuracy (diagonal
     covariance) output
--   \<\<MsgLink(std_msgs/UInt32)\>\> for GPS active satellite IDs
+-   <<MsgLink(std_msgs/UInt32)>> for GPS active satellite IDs
     counter messages
--   \<\<MsgLink(std_msgs/Float32)\>\> for GPS altitude output
--   \<\<MsgLink(rosgraph_msgs/Clock)\>\> for realtime clock output
+-   <<MsgLink(std_msgs/Float32)>> for GPS altitude output
+-   <<MsgLink(rosgraph_msgs/Clock)>> for realtime clock output
 
 ## Nodes
 
@@ -364,16 +364,16 @@ node.0 {
 
 ## Report a Bug
 
--   **ROS driver** - \<\<GitHubIssues(
-    ElettraSciComp/witmotion_IMU_ros)\>\>
--   **Underlying library** - \<\<GitHubIssues(
-    ElettraSciComp/witmotion_IMU_QT)\>\>
+-   **ROS driver** - <<GitHubIssues(
+    ElettraSciComp/witmotion_IMU_ros)>>
+-   **Underlying library** - <<GitHubIssues(
+    ElettraSciComp/witmotion_IMU_QT)>>
 
 ## Usage of controller applications
 
 The underlying library is shipped with a
 [set of controller applications](https://elettrascicomp.github.io/witmotion_IMU_QT/da/dec/unified_applications.html).
-They allow the users to set up sensors\' internal parameters and specify
+They allow the users to set up sensors' internal parameters and specify
 output data. These applications could be run using *rosrun*. Here only
 the brief list and set of usage examples is presented. Please refer to
 the

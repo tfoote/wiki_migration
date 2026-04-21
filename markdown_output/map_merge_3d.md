@@ -1,13 +1,13 @@
-\<\<GitHubIssues(hrnr/map-merge)\>\>
+<<GitHubIssues(hrnr/map-merge)>>
 
 ## Overview
 
 This package provides a 3D global map for multiple robots and the
-respective transformations between robots. It merges robots\' individual
+respective transformations between robots. It merges robots' individual
 maps based on the overlapping space in the maps and requires no
 dependencies on a particular SLAM or communication between the robots.
 
-![\|width=\"755px\"](attachment:screenshot.jpg)
+![\|width="755px"](attachment:screenshot.jpg)
 
 The ROS node can merge maps from the arbitrary number of robots. It
 expects maps from individual robots as ROS topics and does not impose
@@ -26,30 +26,30 @@ transformations back to robots your communication must take care of it.
 
 `map_merge_3d` finds robot maps automatically and new robots can be
 added to the system at any time. 3D maps are expected as
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\>, other map messages are not
+<<MsgLink(sensor_msgs/PointCloud2)>>, other map messages are not
 supported.
 
-![\|width=\"755px\"](attachment:architecture.svg)
+![\|width="755px"](attachment:architecture.svg)
 
-Recommended topics names for robot maps are \`/robot1/map\`,
-\`/robot2/map\` etc. However the names are configurable. All robots are
-expected to publish map under \`\<robot_namespace\>/map\`, where topic
-name (\`map\`) is configurable, but must be the same for all robots. For
-each robot \`\<robot_namespace\>\` is of cause different, but it does
+Recommended topics names for robot maps are `/robot1/map`,
+`/robot2/map` etc. However the names are configurable. All robots are
+expected to publish map under `<robot_namespace>/map`, where topic
+name (`map`) is configurable, but must be the same for all robots. For
+each robot `<robot_namespace>` is of cause different, but it does
 not need to follow any pattern. Further, you can exclude some topics
-using \`robot_namespace\` parameter, to avoid merging unrelated point
+using `robot_namespace` parameter, to avoid merging unrelated point
 clouds.
 
 ## Estimation
 
 Transformations between maps are estimated by feature-matching algorithm
 and therefore it is required to have sufficient amount of overlapping
-space between maps to make a high-probability match. If maps don\'t have
+space between maps to make a high-probability match. If maps don't have
 enough overlapping space to make a solid match, merger might reject
 those matches.
 
 Estimating transforms between maps is cpu-intesive so you might want to
-tune \`estimation_rate\` parameter to run the re-estimation less often.
+tune `estimation_rate` parameter to run the re-estimation less often.
 
 ## ROS API
 
@@ -212,18 +212,18 @@ prov_tf {
 ## Tools
 
 Alongside ROS node `map_merge_3d` provides command-line tools to work
-with point cloud maps saved in \`pcd\` files. Both tools accept any of
+with point cloud maps saved in `pcd` files. Both tools accept any of
 the [#REGISTRATION PARAMETERS](#REGISTRATION PARAMETERS).
 
 The tools use PCL command-line parsing module. PCL command-line parsing
-has some limits (PCL users won\'t be surprised): it supports only
-\`\--param value\` format, \`\--param=value\` is not accepted. Unknown
+has some limits (PCL users won't be surprised): it supports only
+`\--param value` format, `\--param=value` is not accepted. Unknown
 options are ignored. Options may be arbitrarily mixed with filenames.
 There are no short versions for parameters.
 
 ### map_merge_tool
 
-Tool for merging maps offline. Produces \`output.pcd\` with merged
+Tool for merging maps offline. Produces `output.pcd` with merged
 global map. This tool can merge arbitrary number of maps.
 
 #### Usage
@@ -251,10 +251,10 @@ rosrun map_merge_3d registration_visualisation [--param value] map1.pcd map2.pcd
 
 After one step of the estimation a visualisation window appears. You can
 freely navigate the point cloud, save a screenshot or camera parameters
-(press \`h\` to see all shortcuts). After the window is closed,
+(press `h` to see all shortcuts). After the window is closed,
 estimation continues with the next phase and the next visualisation
 window appears. Details about estimation progress are printed to
-\`stdout\`.
+`stdout`.
 
 ## Acknowledgements
 

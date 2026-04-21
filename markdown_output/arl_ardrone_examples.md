@@ -42,7 +42,7 @@ This package was developed because I found myself (at the time a
 beginner to ROS) a little overwhelmed when beginning to use the AR.Drone
 in a linux environment. After talking to other users, I decided to
 formally release a package of the sample nodes I created for my
-laboratory. Explicit use of these nodes isn\'t really expected, as they
+laboratory. Explicit use of these nodes isn't really expected, as they
 are more of a jumping off point for more functional code. Feel free to
 contact me through the github page with additions to the package or
 questions.

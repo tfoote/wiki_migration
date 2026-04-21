@@ -1,6 +1,6 @@
 ## About
 
-The \`jaco_teleop\` package provides various methods for human control
+The `jaco_teleop` package provides various methods for human control
 of the JACO and JACO2 arm via keyboard teleoperation and
 joystick/gamepad teleoperation. This may work for the MICO as well, but
 it has not yet been tested.
@@ -92,7 +92,7 @@ Controls for the joystick and keyboard teleop nodes are listed below.
 
 The joystick teleop node currently supports both gamepads with analog
 triggers and gamepads with digital triggers. The gamepad type can be set
-on launch with the \`controller_type\` parameter. Currently, the node
+on launch with the `controller_type` parameter. Currently, the node
 has been tested with the Logitech Dual Action wired controller (digital
 triggers), the Logitech Wireless Gamepad (analog triggers), and the
 Microsoft XBOX 360 wired controller (analog triggers). If your gamepad
@@ -151,7 +151,7 @@ Finger Control Mode:
 
 ## Installation
 
-To install the \`wpi_jaco\` package, you can install from source with
+To install the `wpi_jaco` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
@@ -163,12 +163,12 @@ catkin_make install
 ## Startup
 
 Joystick or keyboard teleop can be started with the launch files
-\`jaco_joy_teleop.launch\` and \`jaco_key_teleop.launch\`, respectively.
+`jaco_joy_teleop.launch` and `jaco_key_teleop.launch`, respectively.
 Both files have parameters for velocity limits, which can be set on
-launch to limit the velocities of the arm\'s translation, rotation, and
-finger movement. Furthermore, \`jaco_joy_teleop.launch\` includes a
+launch to limit the velocities of the arm's translation, rotation, and
+finger movement. Furthermore, `jaco_joy_teleop.launch` includes a
 parameter for the controller type, which can currently be set to either
-\"analog\" or \"digital\", representing controllers with analog triggers
+"analog" or "digital", representing controllers with analog triggers
 and digital triggers, respectively. Example launch syntax is given
 below.
 

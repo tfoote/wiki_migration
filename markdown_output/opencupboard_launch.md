@@ -8,7 +8,7 @@ This package contains launch files for the opencupboard stack.
 Launch files more specific to the action are located in those packages.
 These include
 
--   [opencupboard_launch](opencupboard_launch)/yaml/(your cabinet\'s
+-   [opencupboard_launch](opencupboard_launch)/yaml/(your cabinet's
     yaml).yaml: Loads the yaml file you write with the parameters for
     the cupboard you are opening.
 -   [pr2_tabletop_manipulation_launch](pr2_tabletop_manipulation_launch)/launch/pr2_tabletop_manipulation.launch:

@@ -1,7 +1,7 @@
 ## Overview
 
 rostest is an extension to [roslaunch](roslaunch) that enables
-\`roslaunch\` files to be used as test fixtures. As a fully running
+`roslaunch` files to be used as test fixtures. As a fully running
 system has more complex behaviors than an individual ROS [node](Nodes),
 this allows you to do full integration testing across multiple nodes.
 

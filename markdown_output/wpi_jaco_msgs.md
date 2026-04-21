@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(wpi_jaco_msgs)\>\>
+<<MsgSrvDoc(wpi_jaco_msgs)>>

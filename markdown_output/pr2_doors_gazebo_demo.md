@@ -1,4 +1,4 @@
-![\|width=\"500px\"](attachment:doors2.png)
+![\|width="500px"](attachment:doors2.png)
 
 ## Running this demo
 

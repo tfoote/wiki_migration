@@ -2,13 +2,13 @@
 
 This code is for those working with the Rover Robotics Rover Zero V1.
 
-![\|width=\"400px\"](attachment:rover-robotics-rover-zero_1024x.jpg)
+![\|width="400px"](attachment:rover-robotics-rover-zero_1024x.jpg)
 
 The Rover Zero V1 uses the
 [RoboClaw 2x15 motor controller](https://www.basicmicro.com/RoboClaw-2x15A-Motor-Controller_p_10.html)
 which communicates via USB.
 
-![\|width=\"150px\"](attachment:roboclaw-rover-robotics.jpg)
+![\|width="150px"](attachment:roboclaw-rover-robotics.jpg)
 
 This package abstracts away the USB communications and allows users to
 quickly get their robots moving around and doing cool things!

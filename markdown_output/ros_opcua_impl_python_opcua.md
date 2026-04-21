@@ -35,4 +35,4 @@ param {
 
 ## Report a Bug
 
-\<\<GitHubIssues(iirob/ros_opcua_communication)\>\>
+<<GitHubIssues(iirob/ros_opcua_communication)>>

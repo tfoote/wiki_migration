@@ -95,10 +95,10 @@ exact command and Dockerfile (if applicable) that you are using
 
 ### Registry with http
 
-When you get this error: {\"errorDetail\":{\"message\":\"Get
+When you get this error: {"errorDetail":{"message":"Get
 <https://YOUR_REGISTRY:5000/v2/>: http: server gave HTTP response to
-HTTPS client\"},\"error\":\"Get <https://YOUR_REGISTRY:5000/v2/>: http:
-server gave HTTP response to HTTPS client\"} while trying to push:
+HTTPS client"},"error":"Get <https://YOUR_REGISTRY:5000/v2/>: http:
+server gave HTTP response to HTTPS client"} while trying to push:
 
 Add the server to your unsafe registries in daemon.json (default at
 /etc/docker/daemon.json )

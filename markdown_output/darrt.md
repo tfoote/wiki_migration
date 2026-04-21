@@ -5,7 +5,7 @@
 ### Downloading DARRT+Sushi code
 
 You need both the DARRT code and the Fuerte version of the
-\"[sushi code](http://kforge.ros.org/Sushi/trac/)\" developed for the
+"[sushi code](http://kforge.ros.org/Sushi/trac/)" developed for the
 mobile manipulation challenge. To obtain both pieces of code:
 
 1\. Download [the rosinstall file](attachment:darrth.rosinstall).
@@ -93,7 +93,7 @@ and output.
 
 The DARRTAction provides an
 [ action server](actionlib#Implementing_an_ActionServer ) that takes in
-goals of the type \<\<MsgLink(darrt_msgs/DARRTGoal)\>\>.
+goals of the type <<MsgLink(darrt_msgs/DARRTGoal)>>.
 
 ```clearsilver
 sub {
@@ -165,7 +165,7 @@ other fields are ignored.
 **Place Goal**
 
 The place goal just tells the planner where the object should end up.
-This may or may not actually be a \"place\" on a surface. It is fine for
+This may or may not actually be a "place" on a surface. It is fine for
 the place goal to in fact be in midair somewhere. The gripper will open
 at the end of the execution only if the object is actually placed on a
 support surface. The following fields of the place goal are used (all
@@ -206,10 +206,10 @@ the moment, DARRT can plan with five different primitives:
 -   BASE_TRANSIT (cannot be used with WARP): Move the PR2 base to better
     manipulate an object. Plans for a full path for the robot base.
 -   WARP (cannot be used with BASE_TRANSIT): Move the PR2 base to better
-    manipulate an object by \"warping\" to a good manipulation location
+    manipulate an object by "warping" to a good manipulation location
     rather than planning the full path. This assumes you will use a
     different planner for the base path. The planner also assumes that
-    after a WARP, any arm being planned for moves down to the robot\'s
+    after a WARP, any arm being planned for moves down to the robot's
     side. This defaults to the position used for move_base in the sushi
     code, but can be set using the last joint configuration of
     `/arm_configurations/side_tuck/trajectory`.
@@ -349,7 +349,7 @@ the joints, not just the ones that move. For example if
 primitive_type\[3\] = ARM_TRANSIT this means that
 primitive_trajectories\[3\] is a collision-free path for the arm.
 primitive_trajectories\[3\] is an
-\<\<MsgLink(arm_navigation_msgs/RobotTrajectory)\>\> and each point
+<<MsgLink(arm_navigation_msgs/RobotTrajectory)>> and each point
 contains a joint value for every joint on the robot regardless of
 whether that joint moves or even whether DARRT planned for the joint.
 However, it is guaranteed that throughout primitive_trajectories\[3\]
@@ -368,7 +368,7 @@ DARRT also returns an error code. The possible values for this code are:
 -   OBJECT_DOES_NOT_EXIST: The collision_object_name from the
     pickup_goal field could not be found in the collision environment.
     This most often happens when you forget to fill in the field.
--   NO_PLACE_LOCATIONS: You didn\'t fill in any place locations in the
+-   NO_PLACE_LOCATIONS: You didn't fill in any place locations in the
     place_goal field.
 -   CONFIGURE_ERROR: There was a problem with configuring the DARRT
     planner. This can happen if you have the wrong planning description
@@ -430,14 +430,14 @@ ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.
 sushi environment maps. You can change the maps being used by setting
 the map_suffix argument. Currently the other map available in the
 repository is g415, which is a map of the robot environment at MIT. You
-can add maps by adding the appropriate map-\<map_suffix\>.pgm,
-map-\<map_suffix\>.yaml, and octomap-\<map_suffix\>.bt files to
-darrt/config and a pr2_both_arms\_\<map-suffix\>.yaml file to
+can add maps by adding the appropriate map-<map_suffix>.pgm,
+map-<map_suffix>.yaml, and octomap-<map_suffix>.bt files to
+darrt/config and a pr2_both_arms_<map-suffix>.yaml file to
 sbpl_full_body_planner/config.
 
 The darrt.launch file also brings up localization when running with a 3D
 map. Because you may want to add things from many parts of the
-environment to the collision environment, it\'s important that any
+environment to the collision environment, it's important that any
 object added to the collision environment be added in the localized /map
 frame and not the /odom_combined frame. This is done by changing the
 parent_frame_id of the multi DOF joint defined in
@@ -458,8 +458,8 @@ See the [tutorials](darrt/Tutorials) for examples of using DARRT.
 
 DARRT is very much a work in progress. There are several known bugs.
 
--   **Running without use_map doesn\'t work:** It has been a while since
-    I have tried running this without an octomap. It\'s possible that is
+-   **Running without use_map doesn't work:** It has been a while since
+    I have tried running this without an octomap. It's possible that is
     broken. Let me know if that is the case.
 
 ```{=html}
@@ -477,7 +477,7 @@ DARRT is very much a work in progress. There are several known bugs.
 -   **Object not on support surface:** Because DARRT reasons about
     support surfaces and knows objects cannot float in midair, objects
     need to start on a support surface (at the planner level they could
-    start in the robot\'s gripper but this is not implemented in the
+    start in the robot's gripper but this is not implemented in the
     action wrapper). DARRT finds the surface supporting an object by
     checking that the bottom of the object is on the support surface.
     However, the object detection sometimes fails to find the full
@@ -498,7 +498,7 @@ DARRT is very much a work in progress. There are several known bugs.
 ```
 -   **It takes too long:** I am working on this problem - this newest
     release actually represents a big improvement. There is a higher
-    initial startup cost right now that I could bring down but I\'ve
+    initial startup cost right now that I could bring down but I've
     been focusing on speeding up the planning. Note that placing on
     tables is still hard for it because, even if you are using warp, it
     has to find a good collision-free base pose near the table. I will
@@ -525,7 +525,7 @@ DARRT is very much a work in progress. There are several known bugs.
 ```{=html}
 <!-- -->
 ```
--   **Canceling doesn\'t cancel the planning:** I have tried to make it
+-   **Canceling doesn't cancel the planning:** I have tried to make it
     possible to cancel the planning but it is not completely consistent
     yet.
 
@@ -542,7 +542,7 @@ DARRT is very much a work in progress. There are several known bugs.
 ```
 -   **The Executor class uses 3D Nav to plan even when DARRT has
     returned a plan for the base:** My current base controller is
-    terrible. I\'m working on a better one but for now it\'s best to use
+    terrible. I'm working on a better one but for now it's best to use
     3D nav even though that re-plans.
 
 ```{=html}
@@ -568,7 +568,7 @@ ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.
     will collide with anything modelled in the collision map as a sphere
     or cylinder. You have to explicitly add these (tabletop detection
     only adds boxes and meshes) so in common use this should not be a
-    problem. We\'re working on updating this though.
+    problem. We're working on updating this though.
 
 ```{=html}
 <!-- -->

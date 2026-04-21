@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -20,7 +20,7 @@ The following hardware components are needed:
 
 -   Cybergloves
 
-![\|width=\"430\",height=\"241\"](attachment:cybergloves.jpg)
+![\|width="430",height="241"](attachment:cybergloves.jpg)
 
 ### Start system
 
@@ -98,10 +98,10 @@ Alternatively, the glove movements can also be visualized with the
 The sensor data of the Cybergloves are published as
 **asr_msgs::!AsrGlove **messages to the following topics:
 
--   ***/rightGloveData***
--   ***/leftGloveData***
--   ***/rightGloveData_radian***
--   ***/leftGloveData_radian***
+-   **`'/rightGloveData`**'
+-   **`'/leftGloveData`**'
+-   **`'/rightGloveData_radian`**'
+-   **`'/leftGloveData_radian`**'
 
 ### Parameters
 
@@ -113,14 +113,14 @@ arguments. The following arguments can be passed:
 -   *glove-right/r*: Indicates that the right glove should be used.
 -   *glove-left/l*: Indicates that the left glove should be used.
 -   *calibration-file-right*: If the right glove should be used, specify
-    the path to its calibration file. Default: *\"\$(find
-    asr_cyberglove_lib)/cfg/GloveCalibrationRight.cal\"*
+    the path to its calibration file. Default: *"\$(find
+    asr_cyberglove_lib)/cfg/GloveCalibrationRight.cal"*
 -   *calibration-file-left*: If the left glove should be used, specify
-    the path to its calibration file. Default: *\"\$(find
-    asr_cyberglove_lib)/cfg/GloveCalibrationLeft.cal\"*
+    the path to its calibration file. Default: *"\$(find
+    asr_cyberglove_lib)/cfg/GloveCalibrationLeft.cal"*
 -   *tty-right*: If the right glove should be used, specify its device
-    path. Default: *\"/dev/ttyD2\"*
+    path. Default: *"/dev/ttyD2"*
 -   *tty-left*: If the left glove should be used, specify its device
-    path. Default: *\"/dev/ttyD3\"*
+    path. Default: *"/dev/ttyD3"*
 -   *debug-level/d*: Defines the debug level. The higher, the more debug
-    infomation. Default: *\"0\"*
+    infomation. Default: *"0"*

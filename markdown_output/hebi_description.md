@@ -1,6 +1,6 @@
 # Overview
 
-The HEBI description package \`hebi_description\` is a collection of
+The HEBI description package `hebi_description` is a collection of
 XACRO files and meshes that help to create URDF files for standard or
 custom HEBI robotics kits.
 
@@ -13,7 +13,7 @@ The source code of this package is located at:
 
 ## Using existing standard kits
 
-In the \`urdf/kits\` folder are several standard HEBI kits, stored as
+In the `urdf/kits` folder are several standard HEBI kits, stored as
 xacro macros so they can be easily edited. To use one of these (for
 example, a 6-DOF arm with a gripper) in a launch file, you could add the
 following tag:

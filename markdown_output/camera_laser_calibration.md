@@ -24,7 +24,7 @@ rosrun camera_laser_calibration detect_image_corners \[image_file_name\]
 \[p3\] : the difference between the the blue channel value and the green
 channel value
 
-And this command will output a file called \"visionpts\*.txt\" which
+And this command will output a file called "visionpts\*.txt" which
 contains the angular points of the camera image.
 
 1.2 Run the following command to get the angular point of the point
@@ -32,9 +32,9 @@ cloud.
 
 rosrun camera_laser_calibration detect_laser_corners \[pcd_file_name\]
 
-\[pcd_file_name\] : the point cloud\'s file name.
+\[pcd_file_name\] : the point cloud's file name.
 
-And this command will output a file called \"laserpts\*.txt\" which
+And this command will output a file called "laserpts\*.txt" which
 contains the angular point of the point cloud.
 
 2.Run the following command to get the rotating tran slational matrix:
@@ -47,8 +47,8 @@ points.
 
 \[all_file_number\] : the number of the groups of angular points.
 
-And this command will output a file called \"rotation.xml\" containing
-the rotation matrix and a file called \"translation.xml\" containing the
+And this command will output a file called "rotation.xml" containing
+the rotation matrix and a file called "translation.xml" containing the
 translation matrix.
 
 ## Bug Reports & Feature Requests

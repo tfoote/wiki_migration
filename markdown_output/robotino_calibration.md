@@ -4,7 +4,7 @@ Code at <https://github.com/squirrel-project/squirrel_calibration>.
 
 ## Introduction
 
-This package lets you calibrate the mounting position of the Robotino\'s
+This package lets you calibrate the mounting position of the Robotino's
 RGB-D sensor (Asus Xtion).
 
 It will later also feature the possibility to calibrate the arm mounting
@@ -23,7 +23,7 @@ rosdep update
 rosdep install --from-paths /src -y -i
 ```
 
-## Calibrating the RGB-D camera\'s mounting position
+## Calibrating the RGB-D camera's mounting position
 
 The calibration process needs an external calibration pattern and can be
 conducted using either one single **checkerboard** or any number of
@@ -90,11 +90,11 @@ which has the same orientation as its parent, the hokuyo laser scanner,
 and which is located at the intersection of the left box edge and the
 wall at ground level.
 
-![Box localization setup\|width=\"250\"](attachment:DSC_1761.jpg)
-![Box localization setup\|width=\"250\"](attachment:DSC_1762.jpg)
+![Box localization setup\|width="250"](attachment:DSC_1761.jpg)
+![Box localization setup\|width="250"](attachment:DSC_1762.jpg)
 
-![Box localization setup\|height=\"300\"](attachment:box-pi-gazebo.png)
-![Box localization setup\|height=\"300\"](attachment:box-pi-1.png)
+![Box localization setup\|height="300"](attachment:box-pi-gazebo.png)
+![Box localization setup\|height="300"](attachment:box-pi-1.png)
 
 There are some properties you may want to edit in order to match your
 calibration environment well. These properties can be found in the
@@ -162,8 +162,8 @@ coordinate system *`landmark_reference_nav`* which has the same
 orientation as its parent, the hokuyo laser scanner, and which is
 located at the intersection of the two walls at ground level.
 
-![Corner localization setup\|height=\"300\"](attachment:corner-pi-gazebo-2.png)
-![Corner localization setup\|height=\"300\"](attachment:corner-pi-1.png)
+![Corner localization setup\|height="300"](attachment:corner-pi-gazebo-2.png)
+![Corner localization setup\|height="300"](attachment:corner-pi-1.png)
 
 The search algorithm will use all laserscanner points within the defined
 *`side_wall_polygon`* to find the side wall. The other points inside the
@@ -237,7 +237,7 @@ camera. You can find some printout templates for suitable markers at
 Mount a calibration checkerboard (e.g. from
 *`robotino_calibration/common/files/checkerboard_a3_6x4_5cm.pdf`* in A3
 size printed at 100%) horizontally on a wall (use a level to be
-precise), approximately at the height of Robotino\'s Kinect (at the
+precise), approximately at the height of Robotino's Kinect (at the
 moment this is left upper chessboard calibration corner approx. at 80 cm
 height above ground).
 
@@ -247,8 +247,8 @@ where 4 squares meet) for simplicity of defining coordinate
 transformations. Align the left side of the box with the leftmost
 calibration points. The following images illustrate this setup.
 
-![Pattern Mounting Position\|width=\"444\"](attachment:DSC_1763.jpg)
-![Pattern Mounting Position\|width=\"250\"](attachment:DSC_1764_cs.jpg)
+![Pattern Mounting Position\|width="444"](attachment:DSC_1763.jpg)
+![Pattern Mounting Position\|width="250"](attachment:DSC_1764_cs.jpg)
 
 Measure the vertical distance between ground plane and the upper left
 checkerboard point and insert this number into file
@@ -280,7 +280,7 @@ the robot, the next triple resides on the floor in front of the robot
 and the last three tags are located on a wall to the left of the robot.
 The following picture visualizes this exemplary setup.
 
-![Pi-Tag Mounting Position\|height=\"400\"](attachment:corner-pi-gazebo-2.png)
+![Pi-Tag Mounting Position\|height="400"](attachment:corner-pi-gazebo-2.png)
 
 To perform a successful calibration it is recommended to align the
 Pi-Tags to the coordinate systems of the robot, i.e. mount Pi-Tags at
@@ -288,7 +288,7 @@ the walls parallel to the ground and place Pi-Tags on the ground
 parallel to the walls, e.g. as depicted above.
 
 Depending on how large you printed the Pi-Tags, you might need to adapt
-the **tags\' side length definitions** in file
+the **tags' side length definitions** in file
 *`squirrel_calibration/robotino_calibration/ros/launch/pi_tag/piTagIni_0.xml`*.
 The size of a Pi-Tag is defined as the length between the **centers of
 two neighboring corner points** on the edge of a tag. The standard is
@@ -350,34 +350,34 @@ file
 *`squirrel_calibration/robotino_calibration/ros/launch/camera_base_calibration_pitag.launch`*
 are mentioned thereafter.
 
-![Pi-Tag Mounting Position Front\|height=\"350\"](attachment:corner-pi-2.png)
+![Pi-Tag Mounting Position Front\|height="350"](attachment:corner-pi-2.png)
 ```
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_25" output="screen" args="0.8 0.75 0.01 0 0 0  landmark_reference_front tag_25 100"/>
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_36" output="screen" args="0.8 0.55 0.01 0 0 0  landmark_reference_front tag_36 100"/>
 <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_landmark_tag_38" output="screen" args="1.0 0.65 0.01 0 0 0  landmark_reference_front tag_38 100"/>
 ```
-![Pi-Tag Mounting Position Ground\|height=\"350\"](attachment:corner-pi-3.png)
+![Pi-Tag Mounting Position Ground\|height="350"](attachment:corner-pi-3.png)
 ```
 rosdep update
 rosdep install --from-paths /src -y -i
 ```0
-![Pi-Tag Mounting Position Left\|height=\"350\"](attachment:corner-pi-4.png)
-![Pi-Tag Mounting Position Left\|height=\"350\"](attachment:corner-pi-5.png)
+![Pi-Tag Mounting Position Left\|height="350"](attachment:corner-pi-4.png)
+![Pi-Tag Mounting Position Left\|height="350"](attachment:corner-pi-5.png)
 ```
 rosdep update
 rosdep install --from-paths /src -y -i
 ```1
 
 The whole transformation chain from laser scanner to Pi-Tags, e.g. at
-the frontal wall, is *`hokuyo_link`* \--\> *`landmark_reference_nav`*
-\--\> *`landmark_reference_front`* \--\> *`tag_25`*, which is
+the frontal wall, is *`hokuyo_link`* \--> *`landmark_reference_nav`*
+\--> *`landmark_reference_front`* \--> *`tag_25`*, which is
 illustrated below.
 
-![Pi-Tag Mounting Position Front\|height=\"350\"](attachment:corner-pi-6.png)
+![Pi-Tag Mounting Position Front\|height="350"](attachment:corner-pi-6.png)
 
 ### Configuration for calibration
 
-![Camera Calibration Setup\|width=\"800\"](attachment:camera_calib_overview.jpg) 1.
+![Camera Calibration Setup\|width="800"](attachment:camera_calib_overview.jpg) 1.
 Enter the *`base_frame`* and the *`child_frame_name`* which are needed
 to ensure the robot is only moving when the reference frame is valid.
 Also insert the correct *`camera_optical_frame`* and
@@ -420,10 +420,10 @@ rosdep update
 rosdep install --from-paths /src -y -i
 ```4 b.
 Alternatively, a **set of robot configurations can be specified
-explicitly**. Fill in a good amount (i.e. \>30) of robot configurations
+explicitly**. Fill in a good amount (i.e. >30) of robot configurations
 for observing the marker(s) measured relative to the
 landmark_reference_nav coordinate system that is similarly aligned as
-the robot\'s base_link when the robot faces the marker. It makes sense
+the robot's base_link when the robot faces the marker. It makes sense
 to have observation positions from close, mid-range, and long distance
 and capture 3x3 images with the marker in all image corners and between
 and 4 additional images around the center. ```
@@ -470,10 +470,10 @@ The program also writes these calibrated values into a text file. The
 file can be found at
 *`~/.ros/robotino_calibration/camera_calibration/camera_calibration_urdf.txt`*.
 
-### Correct the Kinect\'s z_scaling Parameter
+### Correct the Kinect's z_scaling Parameter
 
 The calibration normally gives pretty good results, but the point cloud
-might still appear badly aligned. In this case the point cloud\'s
+might still appear badly aligned. In this case the point cloud's
 scaling could be wrong, i.e. not perfectly matching the metric reality.
 This can be adjusted with dynamic reconfigure. Start a
 dynamic_reconfigure client and go to the `kinect/driver` page and tweak
@@ -515,11 +515,11 @@ as ```
 ## \[NOT YET\] Calibrating the mounting position of the arm
 
 This calibration process needs a calibration checkerboard to calibrate
-the transformation between the robot\'s base and its arm base. It\'s a
+the transformation between the robot's base and its arm base. It's a
 good practice to use a checkerboard gripper that can be screwed on top
-of the arm\'s gripper frame.
+of the arm's gripper frame.
 
-![Checkerboard Gripper\|width=\"500\"](attachment:Checkerboard_Gripper.png)
+![Checkerboard Gripper\|width="500"](attachment:Checkerboard_Gripper.png)
 
 ### Preparation
 
@@ -528,7 +528,7 @@ of the reference corner of the checkerboard relative to the arm link it
 has been attached to. The reference frame should always be located at
 the second upper left corner as shown in the picture.
 
-![Checkerboard Frame\|width=\"500\"](attachment:Pattern_Arm_Calib.png)
+![Checkerboard Frame\|width="500"](attachment:Pattern_Arm_Calib.png)
 
 Also ensure that the checkerboard frame is aligned the same way as in
 the picture with x-axis (red) going from left to right and y-axis
@@ -542,7 +542,7 @@ arm_base_calibration node inside
 
 The following image illustrates an example setup for the RAW robot:
 
-![RAW Setup\|width=\"500\"](attachment:RAW_Calib_Setup.png)
+![RAW Setup\|width="500"](attachment:RAW_Calib_Setup.png)
 
 Afterwards, fill in the corresponding
 *`arm_base_calibration_params_Robotino.yaml`* file which is located in

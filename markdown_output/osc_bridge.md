@@ -1,12 +1,12 @@
 ## Overview
 
-\`osc_bridge\` provides the core functionality of communicating with
+`osc_bridge` provides the core functionality of communicating with
 both the OSC protocol and the ROS system.
 
 [touchosc_bridge](touchosc_bridge) extends this node, so most users will
-not need to interact with \`osc_bridge\`.
+not need to interact with `osc_bridge`.
 
-\`osc_bridge\` may be used to communicate with other OSC-compatible
+`osc_bridge` may be used to communicate with other OSC-compatible
 hardware and software via both TCP and UDP, but these features remain
 largely untested.
 

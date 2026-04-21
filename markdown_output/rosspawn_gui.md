@@ -6,7 +6,7 @@ This ROS package provides a GUI application to instruct and monitor
 a button, and will automatically update if the state of a node changes,
 e.g. if someone else starts or stops a node.
 
-This GUI is based on [Fawkes](http://www.fawkesrobotics.org)\' plugin
+This GUI is based on [Fawkes](http://www.fawkesrobotics.org)' plugin
 GUI. See the rosspawn documentation of some assumptions made and the
 limits of the current version. This is a proof of concept implementation
 and probably not useful in its current state. Comments and patches

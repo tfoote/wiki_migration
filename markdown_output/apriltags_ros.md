@@ -54,5 +54,5 @@ node.1 {
 
 ### apriltags_ros/AprilTagDetectorNodelet
 
-The nodelet functions equivalently to the \`apriltag_detector_node\`
+The nodelet functions equivalently to the `apriltag_detector_node`
 node.

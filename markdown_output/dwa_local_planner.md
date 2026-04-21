@@ -1,12 +1,12 @@
 ## Overview
 
-The \`dwa_local_planner\` package provides a controller that drives a
+The `dwa_local_planner` package provides a controller that drives a
 mobile base in the plane. This controller serves to connect the path
 planner to the robot. Using a map, the planner creates a kinematic
 trajectory for the robot to get from a start to a goal location. Along
 the way, the planner creates, at least locally around the robot, a value
 function, represented as a grid map. This value function encodes the
-costs of traversing through the grid cells. The controller\'s job is to
+costs of traversing through the grid cells. The controller's job is to
 use this value function to determine dx,dy,dtheta velocities to send to
 the robot.
 
@@ -15,8 +15,8 @@ the robot.
 The basic idea of the Dynamic Window Approach (DWA) algorithm is as
 follows:
 
-1\. Discretely sample in the robot\'s control space (dx,dy,dtheta) 1.
-For each sampled velocity, perform forward simulation from the robot\'s
+1\. Discretely sample in the robot's control space (dx,dy,dtheta) 1.
+For each sampled velocity, perform forward simulation from the robot's
 current state to predict what would happen if the sampled velocity were
 applied for some (short) period of time. 1. Evaluate (score) each
 trajectory resulting from the forward simulation, using a metric that
@@ -28,25 +28,25 @@ mobile base. 1. Rinse and repeat.
 
 Useful references:
 
--   [D. Fox, W. Burgard, and S. Thrun. \"The dynamic window approach to collision avoidance\".](http://www.cs.washington.edu/ai/Mobile_Robotics/postscripts/colli-ieee.ps.gz)
+-   [D. Fox, W. Burgard, and S. Thrun. "The dynamic window approach to collision avoidance".](http://www.cs.washington.edu/ai/Mobile_Robotics/postscripts/colli-ieee.ps.gz)
     The Dynamic Window Approach to local control.
--   [Alonzo Kelly. \"An Intelligent Predictive Controller for Autonomous Vehicles\"](http://www.ri.cmu.edu/pub_files/pub1/kelly_alonzo_1994_7/kelly_alonzo_1994_7.pdf).
+-   [Alonzo Kelly. "An Intelligent Predictive Controller for Autonomous Vehicles"](http://www.ri.cmu.edu/pub_files/pub1/kelly_alonzo_1994_7/kelly_alonzo_1994_7.pdf).
     A previous system that takes a similar approach to control.
--   [Brian P. Gerkey and Kurt Konolige. \"Planning and Control in Unstructured Terrain \"](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.330.2120&rep=rep1&type=pdf).
+-   [Brian P. Gerkey and Kurt Konolige. "Planning and Control in Unstructured Terrain "](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.330.2120&rep=rep1&type=pdf).
     Discussion of the Trajectory Rollout algorithm in use on the LAGR
     robot.
 
 ## DWAPlannerROS
 
-The \`dwa_local_planner::DWAPlannerROS\` object is a
+The `dwa_local_planner::DWAPlannerROS` object is a
 [wrapper](navigation/ROS_Wrappers) for a
-\`dwa_local_planner::DWAPlanner\` object that exposes its functionality
+`dwa_local_planner::DWAPlanner` object that exposes its functionality
 as a [C++ ROS Wrapper](navigation/ROS_Wrappers). It operates within a
 ROS namespace (assumed to be *name* from here on) specified on
-initialization. It adheres to the \`nav_core::BaseLocalPlanner\`
+initialization. It adheres to the `nav_core::BaseLocalPlanner`
 interface found in the [nav_core](nav_core) package.
 
-Example creation of a \`dwa_local_planner::DWAPlannerROS\` object:
+Example creation of a `dwa_local_planner::DWAPlannerROS` object:
 
 ```cplusplus
 #include <tf/transform_listener.h>
@@ -87,7 +87,7 @@ sub {
 ### Parameters
 
 There are a large number of ROS [Parameters](Parameters) that can be set
-to customize the behavior of the \`dwa_local_planner::DWAPlannerROS\`
+to customize the behavior of the `dwa_local_planner::DWAPlannerROS`
 wrapper. These parameters are grouped into several categories: robot
 configuration, goal tolerance, forward simulation, trajectory scoring,
 oscillation prevention, and global plan. Most of these parameters can
@@ -281,26 +281,26 @@ param{
 ### C++ API
 
 For C++ level API documentation on the
-\`base_local_planner::TrajectoryPlannerROS\` class, please see the
+`base_local_planner::TrajectoryPlannerROS` class, please see the
 following page:
 [DWAPlannerROS C++ API](http://www.ros.org/doc/api/dwa_local_planner/html/classdwa__local__planner_1_1DWAPlannerROS.html)
 
 ## DWAPlanner
 
-The \`dwa_local_planner::DWAPlanner\` provides implementations of the
+The `dwa_local_planner::DWAPlanner` provides implementations of the
 DWA and Trajectory Rollout algorithms described earlier. In order to use
-the \`dwa_local_planner::DWAPlanner\` with ROS, please use the
+the `dwa_local_planner::DWAPlanner` with ROS, please use the
 [DWAPlannerROS wrapper](#DWAPlannerROS). It is not recommended to use
-the \`dwa_local_planner::DWAPlanner\` on its own.
+the `dwa_local_planner::DWAPlanner` on its own.
 
 ### API Stability
 
 -   The C++ API is stable. However, it is recommended that you use the
     [DWAPlannerROS wrapper](#DWAPlannerROS) instead of using the
-    \`dwa_local_planner::TrajectoryPlanner\` on its own.
+    `dwa_local_planner::TrajectoryPlanner` on its own.
 
 ### C++ API
 
-For C++ level API documentation on the \`dwa_local_planner::DWAPlanner
-class\`, please see the following page:
+For C++ level API documentation on the `dwa_local_planner::DWAPlanner
+class`, please see the following page:
 [DWAPlanner C++ API](http://www.ros.org/doc/api/dwa_local_planner/html/classdwa__local__planner_1_1DWAPlanner.html)

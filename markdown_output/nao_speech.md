@@ -1,6 +1,6 @@
 ## About
 
-The \`nao_speech\` package allows easy control of the NAO\'s speech
+The `nao_speech` package allows easy control of the NAO's speech
 module via ROS. These packages have been tested with
 [NAOqi version 1.10.52](http://users.aldebaran-robotics.com/docs/site_en/index_doc.html).
 
@@ -50,7 +50,7 @@ node.0 {
 
 ## Installation
 
-To install the \`nao_rail\` stack, simply run the following commands in
+To install the `nao_rail` stack, simply run the following commands in
 your shell:
 
 ```shell
@@ -63,13 +63,13 @@ rosmake nao_rail
 
 ### Startup
 
-The \`nao_speech\` package contains a \`nao_speech.launch\` file which
+The `nao_speech` package contains a `nao_speech.launch` file which
 should be edited with the hostname and port of your NAO. Additionally,
-if your local \`PYTHONPATH\` does not include the path to your NAOqi
+if your local `PYTHONPATH` does not include the path to your NAOqi
 /lib folder, an optional parameter can be set in the launch file.
 Parameters are also included to configure the volume and language of the
-NAO\'s speech module. These are set to the default values in the given
-launch file. This file launches an instance of the \`nao_speech\` node.
+NAO's speech module. These are set to the default values in the given
+launch file. This file launches an instance of the `nao_speech` node.
 To launch this node, the following commands can be used:
 
 ```
@@ -89,5 +89,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

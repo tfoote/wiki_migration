@@ -28,7 +28,7 @@ parameters of the Sentis ToF M100.
 
 # First step: Get Ros
 
-The **\'sentis_tof_m100_ros_pkg**\' works with ROS versions groovy and
+The **`sentis_tof_m100_ros_pkg`** works with ROS versions groovy and
 hydro. You can use catkin workspaces or the previous rosbuild to
 configure, compile and get ready ROS.
 
@@ -54,7 +54,7 @@ ROS tutorial:
 
 # Known Problems
 
-Be sure your libboost library version is \>= 1.49. Previous versions as
+Be sure your libboost library version is >= 1.49. Previous versions as
 1.46 generate error while compiling sentis_tof_m100_ros_pkg.
 
 # Installing the sentis_m100 API
@@ -122,10 +122,10 @@ roslaunch sentis_tof_m100 start.launch
 ### Write you own configuration to the parameter server
 
 As we pointed out before, you can load the camera configuration to the
-parameter server. The file \"launch/start.launch\" includes, inside the
-tag \"node\", the tag \"rosparam\" in which you can indicate a file
+parameter server. The file "launch/start.launch" includes, inside the
+tag "node", the tag "rosparam" in which you can indicate a file
 containing the server parameters. We have included the configuration
-file \"/launch/sentis_tof_m100_1.yaml\" that defines default
+file "/launch/sentis_tof_m100_1.yaml" that defines default
 configuration values for the camera. You may modify this file or add
 yours to load your own configuration.
 
@@ -263,11 +263,11 @@ point sets are published with following topic names:
 
 To do this please perform the following steps:
 
-1\. In the \"Display\" panel on the left, open the first group of
-settings called \"Global Options\", set the option \"Fixed frame\" to
-**/tf_sentis_tof** 1. At the bottom in \"Display\" click on the button
-**add** to open a dialog titled \"Create visualization\" 1. In the
-dialog opened after, choose the tab \"By topic\" and select the
+1\. In the "Display" panel on the left, open the first group of
+settings called "Global Options", set the option "Fixed frame" to
+**/tf_sentis_tof** 1. At the bottom in "Display" click on the button
+**add** to open a dialog titled "Create visualization" 1. In the
+dialog opened after, choose the tab "By topic" and select the
 **/depth_non_filtered** topic.
 
 ### Using filters and parameters configuration

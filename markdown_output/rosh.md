@@ -6,7 +6,7 @@ introspection across various ROS APIs, like topics, services,
 parameters, and nodes. It is similar to using tools like
 [rostopic](rostopic) and [rosservice](rosservice), but with Pythonic
 semantics and the convenience of a Python interpreter. You can also
-develop ROS nodes using rosh, which we call \"roshlets\".
+develop ROS nodes using rosh, which we call "roshlets".
 
 ## Setup and Install
 
@@ -28,7 +28,7 @@ See [Cookbook](/Cookbook)
 
 ## Customize
 
-In order customize your default \`rosh\` shell, you can write a
+In order customize your default `rosh` shell, you can write a
 [roshrc file](/roshrc).
 
 ## plugins
@@ -39,7 +39,7 @@ In order customize your default \`rosh\` shell, you can write a
 -   [rosh_geometry](rosh_geometry) (unstable)
 -   transforms
 -   [rosh_visualization](rosh_visualization) (unstable)
--   \`show(cameras.camera)\`
+-   `show(cameras.camera)`
 -   [rosh_robot](rosh_robot): meta-plugin that loads
     [rosh_common](rosh_common) and [rosh_geometry](rosh_geometry)
 -   [rosh_desktop](rosh_desktop): meta-plugin that loads
@@ -49,9 +49,9 @@ In order customize your default \`rosh\` shell, you can write a
 ## Development Status
 
 -   [rosh](rosh): API reviewed, stable.
--   [rosh_common](rosh_common): unstable (part of \`rosh_robot\`).
+-   [rosh_common](rosh_common): unstable (part of `rosh_robot`).
     Integrated with actionlib,
--   [rosh_geometry](rosh_geometry): unstable (part of \`rosh_robot\`).
+-   [rosh_geometry](rosh_geometry): unstable (part of `rosh_robot`).
     Developing APIs for [tf](tf) and [geometry_msgs](geometry_msgs)
 -   [rosh_visualization](rosh_visualization):
 

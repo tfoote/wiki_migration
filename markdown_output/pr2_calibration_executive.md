@@ -1,13 +1,13 @@
 ## Introduction
 
-The PR2 calibration executive\'s sole goal is to aid in collecting
+The PR2 calibration executive's sole goal is to aid in collecting
 bagfiles that hold calibration samples
-(\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>), which can then be
+(<<MsgLink(calibration_msgs/RobotMeasurement)>>), which can then be
 used in [pr2_calibration_estimation](pr2_calibration_estimation).
 
 This page is definitely not a full explanation of how to use this
 package, but rather a tool to help get started in exploring this
-package. If you\'re interested in understanding how calibration data is
+package. If you're interested in understanding how calibration data is
 gathered for the pr2, you can trace through
 [ capture_data.launch](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/cturtle/pr2_calibration_launch/capture_data/capture_data.launch )
 
@@ -28,24 +28,24 @@ preprocessing pipelines for this sample 3. Command the robot to move to
 the specified joint positions for this sample 4. Wait for the camera
 data and joint state data to stabilize 5. Grab sensor data from the
 stable interval via the internal caches 6. Bundle the data together as a
-\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\> and then publish.
+<<MsgLink(calibration_msgs/RobotMeasurement)>> and then publish.
 
 ### Running the Executive
 
-\`./pr2_exec.py \[samples_dir\] \[hardware_config_dir\]\`
+`./pr2_exec.py \[samples_dir\] \[hardware_config_dir\]`
 
--   \`\[samples_dir\]\` - Directory that holds all the samples that need
+-   `\[samples_dir\]` - Directory that holds all the samples that need
     to be collected Each file contains the configuration for each
     sensor, along with commands to send to controllers. We consider each
     file to be a sample. For the PR2, we have many samples for the left
-    and right arm, whereas we have only one sample in the \'far\'
-    directory. This is because for far data, we don\'t have to keep
-    commanding the arms, so we keep the system in this far sample\'s
-    configuration until the user says they\'ve collected enough data.
+    and right arm, whereas we have only one sample in the 'far'
+    directory. This is because for far data, we don't have to keep
+    commanding the arms, so we keep the system in this far sample's
+    configuration until the user says they've collected enough data.
     You will definitely have to modify pr2_exec.py to suit your data
     collection needs. For the PR2, this directory, is
     [ pr2_calibration_launch/capture_data/samples_pr2_beta](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/capture_data/samples_pr2_beta/ )
--   \`\[hardware_config_dir\]\` - Directory that holds definitions for
+-   `\[hardware_config_dir\]` - Directory that holds definitions for
     the sensors and hardware that we want to command, as described in
     [ Defining Sensors/Hardware](#Defining_Sensors.2BAC8-Hardware )
 
@@ -57,8 +57,8 @@ sample. One way of doing this is with
 [dynamic_reconfigure](dynamic_reconfigure). However, the preprocessing
 nodes in [robot_calibration](robot_calibration) all use actions. The
 processing nodes each expose an action interface, where the goals are
-actually the requested configuration. This goal can never \`SUCCEED\`,
-it remains \`ACTIVE\` until it is \`PREEMPTED\` by a new goal.
+actually the requested configuration. This goal can never `SUCCEED`,
+it remains `ACTIVE` until it is `PREEMPTED` by a new goal.
 
 #### Cameras
 
@@ -107,11 +107,11 @@ narrow_left_rect:
         active: False
 ```-\~
 
--   \`cb_detector_config\` - Action namespace for reconfiguring
+-   `cb_detector_config` - Action namespace for reconfiguring
     checkerboard detector
--   \`led_detector_config\` - Action namespace for reconfiguring led
+-   `led_detector_config` - Action namespace for reconfiguring led
     detector (currently unused)
--   \`settler_config\` - Action namespace for reconfiguring the camera
+-   `settler_config` - Action namespace for reconfiguring the camera
     settler
 
 #### Kinematic Chains
@@ -182,7 +182,7 @@ corners on a checkerboard. The pipeline consists of the following:
 
 ![](attachment:tilting_laser_pipeline.png)
 
-Note that the \`laser_checkerboard_interval\` is not passed into
+Note that the `laser_checkerboard_interval` is not passed into
 interval_intersection. Instead, when a interval is requested, the tilt
 laser cache only returns measurements that occur completely within the
 requested interval.
@@ -190,7 +190,7 @@ requested interval.
 #### Controllers
 
 Each controller definition corresponds to a controller accepts
-\<\<MsgLink(trajectory_msgs/JointTrajectory)\>\> messages. For the PR2,
+<<MsgLink(trajectory_msgs/JointTrajectory)>> messages. For the PR2,
 we rely on the
 [ JointSplineTrajectoryController](robot_mechanism_controllers/JointSplineTrajectoryController ):
 One for the head and one for each arm. The controller defintions are
@@ -207,8 +207,8 @@ head_traj_controller:
   - head_tilt_joint
 ```
 
--   \`topic\` - ROS topic on which the controller is expecting commands
--   \`joint_names\` - Names of the joints that we\'ll be sending the
+-   `topic` - ROS topic on which the controller is expecting commands
+-   `joint_names` - Names of the joints that we'll be sending the
     controller commands for.
 
 ### Defining Samples

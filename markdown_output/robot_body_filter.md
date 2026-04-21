@@ -1,6 +1,6 @@
 # robot_body_filter
 
-Filters the robot\'s body out of point clouds and laser scans. It is
+Filters the robot's body out of point clouds and laser scans. It is
 based on [robot_self_filter](robot_self_filter) but it can do a lot more
 things.
 
@@ -14,7 +14,7 @@ things.
 -   Enabling generic point type, removing PCL dependency and unnecessary
     params.
 -   Using bodies.h and shapes.h from geometric_shapes.
--   As a by-product, the filter can compute robot\'s bounding box or
+-   As a by-product, the filter can compute robot's bounding box or
     sphere.
 
 ## Video Tutorial

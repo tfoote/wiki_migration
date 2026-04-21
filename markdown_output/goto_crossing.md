@@ -1,11 +1,11 @@
 The goto_crossing provides a Go-To-Goal behavior to reach the center of
-a crossing (\<\<SrvLink(lama_msgs/Crossing)\>\> message) for the Large
+a crossing (<<SrvLink(lama_msgs/Crossing)>> message) for the Large
 Maps Framework ([LaMa](Large Maps Framework)).
 
 ## Overview
 
 The goto_crossing provides a Go-To-Goal behavior to reach the center of
-a crossing (\<\<SrvLink(lama_msgs/Crossing)\>\> message).
+a crossing (<<SrvLink(lama_msgs/Crossing)>> message).
 
 Can be used as a ROS node or as a class instance, as documented below.
 
@@ -13,12 +13,12 @@ Can be used as a ROS node or as a class instance, as documented below.
 
 ### As ROS Node
 
-Launch the node with \`rosrun goto_crossing goto_crossing\`.
+Launch the node with `rosrun goto_crossing goto_crossing`.
 
 ### As Class Instance
 
-To use the \`goto_crossing::CrossingGoer\` as class instance, one uses
-\`goto_crossing::CrossingGoer::goto_crossing\` to compute the twist
+To use the `goto_crossing::CrossingGoer` as class instance, one uses
+`goto_crossing::CrossingGoer::goto_crossing` to compute the twist
 necessary to reach the crossing center: ```cplusplus
 #include <geometry_msgs/Twist.h>
 #include <goto_crossing/crossing_goer.h>

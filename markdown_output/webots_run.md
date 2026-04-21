@@ -1,4 +1,4 @@
-***[kaist_webots](kaist_webots):*** *webots_run \|
+**`'[[kaist_webots]]:`**' *webots_run \|
 [webots_joy_demo](webots_joy_demo) \|
 [webots_controllers](webots_controllers)*
 
@@ -19,7 +19,7 @@ Tested with Webots 6.4.4 and ROS Fuerte.
 ## Installation
 
 Follow [these instructions](kaist_webots) to install the
-\`kaist_webots\` stack.
+`kaist_webots` stack.
 
 \
 
@@ -38,8 +38,8 @@ card. See the stack [installation instructions](kaist_webots) for more
 information.
 
 To use ROS with your own Webots model, you need to create a new package
-e.g. \`myrobot_sim_webots\` containing the Webots .wbt world file and a
-controller. The launch file loads the \`webots_run\` node with the world
+e.g. `myrobot_sim_webots` containing the Webots .wbt world file and a
+controller. The launch file loads the `webots_run` node with the world
 file specified as an argument.\
 
 For more information and examples, see the

@@ -8,12 +8,12 @@ This node starts the visualization interface of RTAB-Map. It is a
 wrapper of the RTAB-Map GUI library. It has the same purpose as
 [rviz](rviz) but with specific options for RTAB-Map.
 
-![RGB-D Mapping\|width=\"800\"](attachment:rgbd_mapping.png)
+![RGB-D Mapping\|width="800"](attachment:rgbd_mapping.png)
 
 #### Arguments
 
--   \`-d \"config.ini\"\`: Set a RTAB-Map ini file for GUI interface
-    parameters. Default is \`\"/.ros/rtabmapGUI.ini\"\`.
+-   `-d "config.ini"`: Set a RTAB-Map ini file for GUI interface
+    parameters. Default is `"/.ros/rtabmapGUI.ini"`.
 
 ```clearsilver
 sub {

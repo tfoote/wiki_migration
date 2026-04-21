@@ -208,7 +208,7 @@ below for an example). This package can be installed with:
 
 The file k79_node.cpp implements a ROS node using the RadarInterfaceK79
 interface class to create a UDP socket bound to the host IP address and
-port (which must match the radar\'s configuration), launch a thread to
+port (which must match the radar's configuration), launch a thread to
 read and publish data to the RadarData message type.
 
 The python script

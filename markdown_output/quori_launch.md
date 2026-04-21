@@ -7,4 +7,4 @@ contains convenience launch files for common use-cases with the
 ## Documentation
 
 Up-to-date documentation is available on
-[quori_launch\'s github page](https://github.com/Quori-ROS/quori_ros/tree/master/src/quori_launch/readme.md).
+[quori_launch's github page](https://github.com/Quori-ROS/quori_ros/tree/master/src/quori_launch/readme.md).

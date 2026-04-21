@@ -1,10 +1,10 @@
-The \`cob_collision_velocity_filter\` reads the obstacles from a
+The `cob_collision_velocity_filter` reads the obstacles from a
 rolling-window costmap and the velocity commands published by a teleop
 device. It then computes relevant obstacles in driving direction and
 slows down if it gets closer to them. It then stops the robot at a
 specific threshold.
 
-**Note:** The \`cob_collision_velocity_filter\` only works with
+**Note:** The `cob_collision_velocity_filter` only works with
 rectangular footprints at the moment.
 
 ## Hardware Requirements
@@ -120,15 +120,15 @@ prov_tf{
 
 ## Usage/Examples
 
-For starting the \`cob_collision_velocity_filter\` use
+For starting the `cob_collision_velocity_filter` use
 ```
 roslaunch cob_bringup base_collision_observer.launch
 ``` This launches the required rolling window
 [costmap_2d](costmap_2d) as well as the optional
-[cob_footprint_observer](cob_footprint_observer). If you don\'t want to
+[cob_footprint_observer](cob_footprint_observer). If you don't want to
 use the [cob_footprint_observer](cob_footprint_observer) simply comment
 or delete the respective lines in the launch file. For including the
-\`collision_velocity_filter\` in your overall launch file use
+`collision_velocity_filter` in your overall launch file use
 ```
 <include file=$(find cob_bringup/tools/base_collision_observer.launch />
 ``` A sample parameter file for the

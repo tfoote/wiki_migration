@@ -10,13 +10,13 @@ are declared if they are moving above a minimum speed and below a
 maximum. It can also uses a static [costmap_2d](costmap_2d) to help
 prune out static obstacles that appear to be moving due to error (this
 can be a blank map but the tracker will return more false positives). On
-each iteration, after determining what clusters are considered \"moving
-obstacles\" the node runs a basic linear extrapolation to predict where
+each iteration, after determining what clusters are considered "moving
+obstacles" the node runs a basic linear extrapolation to predict where
 the dynamic obstacles will be over the next few seconds and publishes a
 message with this information.
 
-The tracker\'s performance isn\'t too bad when the robot is standing
-still. Once the robot is moving, the tracker\'s performance becomes
+The tracker's performance isn't too bad when the robot is standing
+still. Once the robot is moving, the tracker's performance becomes
 pretty bad especially if there is localization error. In my experience,
 this becomes particularly bad when the robot is turning, and so there is
 an option to disable observation updates when the robot is turning too

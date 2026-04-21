@@ -140,7 +140,7 @@ optional arguments:
 ### image_sequence_publisher.py
 
 Publishes a folder full of images as if it was a normal camera topic and
-it\'s related camera info topic.
+it's related camera info topic.
 
 #### Example Launch File
 

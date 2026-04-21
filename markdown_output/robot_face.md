@@ -12,7 +12,7 @@ First of all you need Blender and an Ogre3D mesh exporter plugin.
 -   [Blender 2.49b](http://www.blender.org/development/release-logs/blender-249/)
 -   [Blender Exporter (OgreMeshExporter)](http://www.ogre3d.org/tikiwiki/Blender+Exporter)
 
-It\'s true that there exist newer versions of Blender and the
+It's true that there exist newer versions of Blender and the
 meshexporter, but the new meshexporter was not showing good results.
 Using the old versions is the safest way.
 
@@ -27,7 +27,7 @@ To get a working model in the *robot_face* application, please follow
 this guidelines.
 
 -   /!\\ All scaling, rotation and translation needs to be done in
-    \"Edit Mode\"
+    "Edit Mode"
 -   Ogre3D perceives only coordinatetransformations of the mesh and
     *not* of the object
 -   /!\\ All normals need to be flipped to be on the outer side
@@ -70,7 +70,7 @@ this guidelines.
 
 Check the following options in the meshexporter GUI:
 
--   Animation Settings of \"\": *Pose*
+-   Animation Settings of "": *Pose*
 -   Material Settings: *Export Materials* (name .material file);
     *Rendering Materials*
 -   *Export Meshes* (choose save path)
@@ -79,7 +79,7 @@ Check the following options in the meshexporter GUI:
 -   *Skeleton name follow mesh*
 -   *Apply Modifiers*
 -   *OgreXMLConverter*
--   Tab \"Preferences\"
+-   Tab "Preferences"
 -   Location: *Auto*
 -   Export Options: *Edge Lists*; tangent; 3 component; *Reorganise
     vertex buffers*; *Optimise animations*

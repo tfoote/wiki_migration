@@ -1,10 +1,10 @@
 ## Overview
 
-The \`robotino_safety\` package implements the \`robotino_safety_node\`
+The `robotino_safety` package implements the `robotino_safety_node`
 which listens for linear and angular velocities published for Robotino
-on the \`robotino_cmd_vel\` topic and based on the laser scan readings,
+on the `robotino_cmd_vel` topic and based on the laser scan readings,
 looks out for potential obstacles and publishes velocities accordingly
-on the \`cmd_vel\` topic.
+on the `cmd_vel` topic.
 
 ![](attachment:robotino_safety_ros.png)
 
@@ -15,7 +15,7 @@ The laser scans received are converted to pointclouds. The points from
 the cloud are checked if they lie in the outer ellipse (as seen in the
 image above). If any points do lie in the outer ellipse, it means
 Robotino is approaching an obstacle and it is decelarated. If the
-obstacle doesn\'t move away (in case it is not a human or a cat walking
+obstacle doesn't move away (in case it is not a human or a cat walking
 by) and approaches the inner ellipse, Robotino continues to decelerate
 and finally stop if the obstacle touches the inner ellipse.
 
@@ -77,7 +77,7 @@ node.0 {
 
 #### Usage
 
-The \`robotino_safety_node\` can be launched as follows.
+The `robotino_safety_node` can be launched as follows.
 ```
 roslaunch robotino_safety robotino_safety_node.launch
 ```

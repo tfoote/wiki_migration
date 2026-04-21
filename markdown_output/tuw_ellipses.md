@@ -30,7 +30,7 @@ rosrun rqt_reconfigure rqt_reconfigure
 ## Screenshots
 
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------------- --
-     \<tablewidth=\"100%\"\> ![\|height=360](attachment:tuw_ellipses_screenshot.png) Detected Ellipses with projected normals of the two possible pose solutions.      ![\|height=360](attachment:tuw_ellipses_reconfigure.png) Dynamic reconfigure interface   
+     <tablewidth="100%"> ![\|height=360](attachment:tuw_ellipses_screenshot.png) Detected Ellipses with projected normals of the two possible pose solutions.      ![\|height=360](attachment:tuw_ellipses_reconfigure.png) Dynamic reconfigure interface   
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------------- --
 
 \

@@ -1,14 +1,14 @@
 ## System Overview
 
-This section gives an overview of the PR2\'s camera systems. Some
+This section gives an overview of the PR2's camera systems. Some
 readers may want to skip directly to
 [the following section](#UsingOnThePr2) for a more practical discussion
-of how to use the robot\'s cameras, or to the [ROS API](#ROS_API) for a
+of how to use the robot's cameras, or to the [ROS API](#ROS_API) for a
 detailed description of the pr2_camera_synchronizer parameters.
 
 ### Hardware Components
 
-![The robot\'s cameras\|align=\"right\"](attachment:PR2Cameras.png)
+![The robot's cameras\|align="right"](attachment:PR2Cameras.png)
 
 The following hardware components are involved in producing vision data
 on the PR2:
@@ -42,7 +42,7 @@ system constraints:
     projection.
 -   The texture projector must be fired at at least 40Hz to avoid very
     unpleasant flickering.
--   The texture projector\'s pulse length is limited in hardware to
+-   The texture projector's pulse length is limited in hardware to
     avoid damaging the projector LED. The maximum pulse length is 2
     milliseconds, but this value may be reduced if pulses are too close
     together.
@@ -53,7 +53,7 @@ system constraints:
     the Prosilica camera is connected to an inhibit input on the texture
     projector controller board to allow this inhibition to occur.
 
-[![Overview of the Camera Systems\|width=\"750\"](attachment:CameraOverview.png)](attachment:CameraOverview.png)
+[![Overview of the Camera Systems\|width="750"](attachment:CameraOverview.png)](attachment:CameraOverview.png)
 
 ### Software Components
 
@@ -62,7 +62,7 @@ software components are involved in producing camera images:
 
 -   A [wge100_camera_node](wge100_camera) per WGE100 camera.
 -   A [wge100_multi_configurator](wge100_camera) for each stereo pair,
-    which replicates its parameters to each camera\'s driver.
+    which replicates its parameters to each camera's driver.
 -   A [prosilica_node](prosilica_camera) for the Prosilica camera.
 -   [pr2_controller_manager](pr2_controller_manager) with suitable
     controllers running:
@@ -76,7 +76,7 @@ software components are involved in producing camera images:
     the projector.
 -   A pr2_camera_syncronizer node in charge of setting the triggers and
     camera drivers into triggering states that are consistent with the
-    user\'s desires.
+    user's desires.
 
 ## Working With the WGE100 Cameras on the PR2
 
@@ -91,7 +91,7 @@ It is not recommended that the user adjust parameters that are not
 listed below as they are likely to leave the system in a non functioning
 state.
 
-This section shows how to use the \`reconfigure_gui\` to set these
+This section shows how to use the `reconfigure_gui` to set these
 parameters, they can be set just as easily using any other
 [dynamic_reconfigure](dynamic_reconfigure) mechanism as demonstrated in
 [these tutorials](dynamic_reconfigure/Tutorials).
@@ -118,10 +118,10 @@ detailed list of which parameters can be set in this way without
 conflicting with the synchronizer can be found
 [below](#SafeParameterLists).
 
-For the forearm cameras, the camera node (\`forearm_camera_l\` or
-\`forearm_camera_r\`) should be configured directly. For the stereo
-pairs, the wge100_multi_configurator node (\`wide_stereo_both\` or
-\`narrow_stereo_both\`) should be configured; this node controls both
+For the forearm cameras, the camera node (`forearm_camera_l` or
+`forearm_camera_r`) should be configured directly. For the stereo
+pairs, the wge100_multi_configurator node (`wide_stereo_both` or
+`narrow_stereo_both`) should be configured; this node controls both
 cameras of a stereo pair, and will dispatch configuration changes to
 both underlying camera nodes.
 
@@ -145,19 +145,19 @@ $ rosrun dynamic_reconfigure reconfigure_gui /forearm_camera_l
 
 Many image level parameters can be safely set:
 
--   **Shared Image Levels**: \`brightness\`, \`black_level\`.
+-   **Shared Image Levels**: `brightness`, `black_level`.
 
 ```{=html}
 <!-- -->
 ```
--   **Untextured Image Levels**: \`auto_exposure\`, \`exposure\`,
-    \`auto_gain\`, \`gain\`, \`companding\`
+-   **Untextured Image Levels**: `auto_exposure`, `exposure`,
+    `auto_gain`, `gain`, `companding`
 
 ```{=html}
 <!-- -->
 ```
--   **Textured Image Levels**: \`auto_gain_alternate\`,
-    \`gain_alternate\`, \`companding\`
+-   **Textured Image Levels**: `auto_gain_alternate`,
+    `gain_alternate`, `companding`
 
 Please refer to the [wge100_camera](wge100_camera#Wge100CameraNode)
 documentation for details on what these parameters mean.
@@ -166,16 +166,16 @@ documentation for details on what these parameters mean.
 
 (Region of Interest is currently broken)
 
-The following parameters can be set: \`width\`, \`height\`,
-\`horizontal_binning\`, \`vertical_binning\`, \`horizontal_offset\`,
-\`vertical_offset\`, \`mirror_x\`, \`mirror_y\`, \`rotate_180\`.
+The following parameters can be set: `width`, `height`,
+`horizontal_binning`, `vertical_binning`, `horizontal_offset`,
+`vertical_offset`, `mirror_x`, `mirror_y`, `rotate_180`.
 
 Please refer to the [wge100_camera](wge100_camera#Wge100CameraNode)
 documentation for details on what these parameters mean.
 
-Note 1: the \`camera_info\` stored in the camera is only valid for the
+Note 1: the `camera_info` stored in the camera is only valid for the
 region of interest parameters that were used when it was created. The
-\`wge100_camera_node\` will refuse to use \`camera_info\` with the wrong
+`wge100_camera_node` will refuse to use `camera_info` with the wrong
 width and height, but will not detect changes in the other parameters.
 
 Note 2: if the data rate needed by region of interest settings is too
@@ -212,8 +212,8 @@ If one of the cameras does not show up after a couple of attempts, it
 may have crashed.
 
 The easiest way to reset all the WGE100 cameras while ROS is running on
-the PR2 is to use the \`camera_reset\` option to true in the
-\`camera_synchronizer_node\` options. This will raise the camera\'s
+the PR2 is to use the `camera_reset` option to true in the
+`camera_synchronizer_node` options. This will raise the camera's
 trigger signal for a few seconds, telling the camera to reset itself.
 The reset will take about 5-10 seconds.```
 $ rosrun dynamic_reconfigure dynparam /camera_synchronizer_node camera_reset true
@@ -222,7 +222,7 @@ $ rosrun dynamic_reconfigure dynparam /camera_synchronizer_node camera_reset tru
 Note: This will only work if the trigger controllers are running.
 
 Alternatively, a single camera can be reset when ROS is not running by
-using the \`reconfigure_cam\` utility in \`wge100_camera\`. For
+using the `reconfigure_cam` utility in `wge100_camera`. For
 <example:```
 $ rosrun wge100_camera reconfigure_cam name://wide_stereo_l
 ```>
@@ -234,19 +234,19 @@ $ rosrun wge100_camera reconfigure_cam name://wide_stereo_l
 In a running PR2, many cameras may be simultaneously in use by different
 users. Whether the projector should be on at any given time is a
 combination of the operating modes requested by the user of each camera.
-The settings of a user\'s camera depend on whether the projector is on
-or off. To avoid spurious changes in the settings of one user\'s camera
-when another user\'s camera is reconfigured, the pr2_camera_synchronizer
-is organized so that there is a master \`projector_mode\` setting, and a
-\`\_trig_mode\` setting for each camera.
+The settings of a user's camera depend on whether the projector is on
+or off. To avoid spurious changes in the settings of one user's camera
+when another user's camera is reconfigured, the pr2_camera_synchronizer
+is organized so that there is a master `projector_mode` setting, and a
+`_trig_mode` setting for each camera.
 
-Users request the \`\_trig_mode\` that their camera should be in, and
+Users request the `_trig_mode` that their camera should be in, and
 the synchronizer decides on the projector state based on the current
-\`projector_mode\`. For a given \`projector_mode\`, the
+`projector_mode`. For a given `projector_mode`, the
 pr2_camera_synchronizer ensures that the settings of one camera do not
-depend on the \`trig_mode\` of the other cameras. In a typical use of
-the synchronizer, the \`projector_mode\` is set once and for all by a
-high-level decision, and users can adjust \`\_trig_mode\` at will.
+depend on the `trig_mode` of the other cameras. In a typical use of
+the synchronizer, the `projector_mode` is set once and for all by a
+high-level decision, and users can adjust `_trig_mode` at will.
 
 The synchronizer can be in one of three modes, depending on which
 strategy it should use:
@@ -285,8 +285,8 @@ modes are not available for all cameras.
     in a stereo pair need to be triggered simultaneously from a common
     source.
 -   **!IgnoreProjector**: The camera is triggered by a motor controller
-    board, but no attempt is made to synchronize the camera\'s
-    triggering with the projector triggering, so the camera\'s frame
+    board, but no attempt is made to synchronize the camera's
+    triggering with the projector triggering, so the camera's frame
     rate is independent of the projector rate. This mode is available on
     all PR2 WGE100 cameras.
 -   Projector aware modes: These modes are not available when the
@@ -297,7 +297,7 @@ modes are not available for all cameras.
     to coincide with the duration of the projector pulse. This mode is
     available on all PR2 WGE100 cameras. On the narrow stereo camera,
     images produced in this mode are published to the
-    \`narrow_stereo_textured\` namespace (this does not apply for other
+    `narrow_stereo_textured` namespace (this does not apply for other
     cameras).
 -   **!WithoutProjector**: The camera is triggered out of phase with the
     projector, resulting in an untextured image. The maximum exposure
@@ -307,18 +307,18 @@ modes are not available for all cameras.
     alternated. The exposure times are set as in the non-alternating
     modes. This mode is only available on the narrow stereo camera as it
     requires special support from the imager chip. Textured images are
-    published to the \`narrow_stereo_textured\` namespace, and
-    untextured images are published to the \`narrow_stereo\` namespace.
+    published to the `narrow_stereo_textured` namespace, and
+    untextured images are published to the `narrow_stereo` namespace.
 
 ### Camera Frame Rates
 
 In many cases, the camera frame rate must be some suitable divisor of
-the \`\`\`projector_rate\`\`\`. When a user sets the frame rate for a
+the ```projector_rate```. When a user sets the frame rate for a
 camera, the synchronizer will round that rate to the nearest suitable
 rate, and report the rounded value back to the user via the
 [dynamic_reconfigure](dynamic_reconfigure) mechanism.
 
-The \`\`\`projector_rate\`\`\` is not affected by the camera settings.
+The ```projector_rate``` is not affected by the camera settings.
 When it is set, it is simply rounded to the nearest divisor of 1 kHz.
 Again the rounded value is reported back via the
 [dynamic_reconfigure](dynamic_reconfigure) mechanism.
@@ -340,16 +340,16 @@ The waveform is entirely determined by three parameters:
 
 ![](attachment:Waveform.png)
 
-The timing of the pulses is as follows, where \'T=1/projector_rate\' is
+The timing of the pulses is as follows, where 'T=1/projector_rate' is
 the average pulse period:
 
 -   Pulses 1 and 3 are spaced by about one pulse-length more than
-    \'2T\'. Cameras that are in the **!AlternatingProjector** mode
+    '2T'. Cameras that are in the **!AlternatingProjector** mode
     expose during pulse 1, and just before pulse 3.
--   Pulses 2 and 4 are spaced by exactly \'2T\'. Cameras in the
+-   Pulses 2 and 4 are spaced by exactly '2T'. Cameras in the
     **!WithProjector** mode expose during pulses 2 and 4.
--   The spacing between pulses 1 and 2 varies from \'T\' to just under
-    one pulse length less than \'2T\', depending on the value of
+-   The spacing between pulses 1 and 2 varies from 'T' to just under
+    one pulse length less than '2T', depending on the value of
     **projector_pulse_shift**. Cameras that are in the
     **!WithoutProjector** mode have their exposure end just before
     pulses 2 and 4. The start of the exposure depends on the exposure

@@ -7,5 +7,5 @@ the Segway Omni base on Cody.
 
 There are two ways to run the code. First, the user runs
 joystick_node.py from the master PC, and run platform_node at the
-Cody\'s control PC. Alternatively, the user can run tmobile.launch at
+Cody's control PC. Alternatively, the user can run tmobile.launch at
 the master PC and it will launch both joystick node and platform node.

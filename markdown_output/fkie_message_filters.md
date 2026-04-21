@@ -14,7 +14,7 @@ sources or sinks of the data flow.
 
 The library requires C++14 or better. Starting with Ubuntu 18.04 (ROS
 Melodic), GCC uses C++14 as default dialect. For older versions, you may
-or may not succeed by passing the command line option \`-std=gnu++1y\`
+or may not succeed by passing the command line option `-std=gnu++1y`
 to the compiler.
 
 ## Design
@@ -64,7 +64,7 @@ The
 is a simple data source which can be used as callback in third-party
 code.
 
-As a simple \"Hello World\" example, consider:
+As a simple "Hello World" example, consider:
 
 ```cplusplus
 #include <ros/ros.h>
@@ -116,29 +116,29 @@ limitation of the library.
 See the [API documentation](https://fkie.github.io/message_filters) for
 more details.
 
--   \`Buffer\`: Store and forward data
--   \`CameraPublisher\`: Publish consumed data to a ROS camera topic
--   \`CameraSubscriber\`: Subscribe to a ROS camera topic as data
+-   `Buffer`: Store and forward data
+-   `CameraPublisher`: Publish consumed data to a ROS camera topic
+-   `CameraSubscriber`: Subscribe to a ROS camera topic as data
     provider
--   \`Combiner\`: Combine multiple sinks into a single source with one
+-   `Combiner`: Combine multiple sinks into a single source with one
     of the following policies:
--   \`Fifo\`: First-In-First-Out
--   \`ExactTime\`: Exactly matching time stamp
+-   `Fifo`: First-In-First-Out
+-   `ExactTime`: Exactly matching time stamp
 -   [ApproximateTime](fkie_message_filters/ApproximateTime):
     Approximately matching time stamp
--   \`Divider\`: Split source with multiple inputs into independent
+-   `Divider`: Split source with multiple inputs into independent
     output sinks
--   \`ImagePublisher\`: Publish consumed data to a ROS image topic
--   \`ImageSubscriber\`: Subscribe to a ROS image topic as data provider
--   \`Publisher\`: Publish consumed data on a ROS topic
--   \`Selector\`: Choose an arbitrary set of inputs to be forwarded
--   \`Sequencer\`: Enforce correct temporal order
--   \`SimpleUserFilter\`: Simplified filter with user-defined callback
+-   `ImagePublisher`: Publish consumed data to a ROS image topic
+-   `ImageSubscriber`: Subscribe to a ROS image topic as data provider
+-   `Publisher`: Publish consumed data on a ROS topic
+-   `Selector`: Choose an arbitrary set of inputs to be forwarded
+-   `Sequencer`: Enforce correct temporal order
+-   `SimpleUserFilter`: Simplified filter with user-defined callback
     function
--   \`Subscriber\`: Subscribe to a ROS topic as data provider
--   \`TfFilter\`: Wait for TF transformations for incoming messages
--   \`UserFilter\`: Generic filter with user-defined callback function
--   \`UserSource\`: Manually operated data source
+-   `Subscriber`: Subscribe to a ROS topic as data provider
+-   `TfFilter`: Wait for TF transformations for incoming messages
+-   `UserFilter`: Generic filter with user-defined callback function
+-   `UserSource`: Manually operated data source
 
 ## Implementation Details
 
@@ -150,8 +150,8 @@ processing for the offending message immediately, even if not all
 downstream sinks have received the message yet. If there is no upstream
 user-defined filter that catches the exception, the uncaught exception
 will eventually terminate the program. The library will detect cycles in
-the pipeline and abort with a \`std::logic_error\` exception.
+the pipeline and abort with a `std::logic_error` exception.
 
-Certain filters, such as the \`Buffer\` or the \`TfFilter\`, can
+Certain filters, such as the `Buffer` or the `TfFilter`, can
 interoperate with ROS callback queues for convenient workload
 scheduling.

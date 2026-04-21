@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/summit_x_sim.git>
 
-![SummitX Gazebo\|width=\"600px\"](attachment:summit_x_gazebo.png)
+![SummitX Gazebo\|width="600px"](attachment:summit_x_gazebo.png)
 
 ## List of packages
 
@@ -32,5 +32,5 @@ configuration this package only controls the pan-tilt camera joints.
 When used as main controller of the simulated robot, this node also
 computes the odometry of the robot using the joint movements and a IMU
 and publish this odometry to /odom. The node has a flag in the yaml
-files that forces the publication or not of the odom-\>base_footprint
+files that forces the publication or not of the odom->base_footprint
 frames, needed by the localization and mapping algorithms.

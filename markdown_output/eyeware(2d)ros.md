@@ -18,7 +18,7 @@ In addition, this tracking data can be visualized in Rviz:
 
 Left: GazeSense eye tracking. Right: ROS bridge eye tracking. Both
 visualizations show the position of a camera (purple glyph) and a
-tracked person\'s estimated gaze (orange rays), as the person is looking
+tracked person's estimated gaze (orange rays), as the person is looking
 at different areas of the environment (yellow screens).
 
 The area that is being fixated at a given instant is highlighted in red.

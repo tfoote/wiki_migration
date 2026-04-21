@@ -4,7 +4,7 @@ Tracking PID
 
 Tracking PID offers a tuneable PID control loop to accurately follow a
 trajectory. An interpolator moves a goal over a
-\`\`\`nav_msgs/Path\`\`\` with a tuneable velocity, and a separate node
+```nav_msgs/Path``` with a tuneable velocity, and a separate node
 tracks the given point.
 
 The PID contains three loops: Longitudinal, lateral and angular loops.
@@ -17,7 +17,7 @@ robot to determine the velocity commands based on the lateral and
 longitudinal error between current Global Point (GP) and the Control
 point (CP):
 
-![\|width=\"600\"](attachment:tracking.png)
+![\|width="600"](attachment:tracking.png)
 
 ### Tracking the base link
 
@@ -26,7 +26,7 @@ path with the base_link directly instead of lagging behind a carrot. In
 this case a Projected Global Point (PGP) is computed as well which is
 tracked by the CP.
 
-![\|width=\"600\"](attachment:tracking_base_link.png)
+![\|width="600"](attachment:tracking_base_link.png)
 
 ## Tutorials
 

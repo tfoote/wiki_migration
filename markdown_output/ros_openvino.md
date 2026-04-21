@@ -1,7 +1,7 @@
 **Wiki** <https://github.com/gbr1/ros_openvino/wiki>.
 
 A ROS package to wrap openvino inference engine and get it working with
-**Myriad** and **Intel CPU/GPUs**\<br\> The main topic is to accelerate
+**Myriad** and **Intel CPU/GPUs**<br> The main topic is to accelerate
 robotics developing using ROS with OpenVINO.
 
 This package is designed on async api of Intel

@@ -4,9 +4,9 @@ ROS driver for the BNO055 IMU using UART communication. It allows the
 configuration and calibration of the IMU
 
 -   Maintainer status: maintained
--   Maintainer: Robert Vasquez Zavaleta \<roboticarts1 AT gmail DOT
-    com\>
--   Author: Robert Vasquez zavaleta \<roboticarts1 AT gmail DOT com\>
+-   Maintainer: Robert Vasquez Zavaleta <roboticarts1 AT gmail DOT
+    com>
+-   Author: Robert Vasquez zavaleta <roboticarts1 AT gmail DOT com>
 -   License: BSD
 -   Bug / feature tracker:
     [ https://github.com/RoboticArts/ros_imu_bno055/issues ]( https://github.com/RoboticArts/ros_imu_bno055/issues )
@@ -31,9 +31,9 @@ and configuration
 The driver publishes the following data:
 
 -   linear acceleration, angular velocities and quaternion orientation
-    as \<\<MsgLink(sensor_msgs/Imu)\>\>
--   magnetic field as \<\<MsgLink(sensor_msgs/MagneticField)\>\>
--   temperature as \<\<MsgLink(sensor_msgs/Temperature)\>\>
+    as <<MsgLink(sensor_msgs/Imu)>>
+-   magnetic field as <<MsgLink(sensor_msgs/MagneticField)>>
+-   temperature as <<MsgLink(sensor_msgs/Temperature)>>
 
 ## Requisites
 
@@ -56,7 +56,7 @@ inverted, so the PS1 bridge must be unsolder.
 
 ```wiki
 '''Note:''' For different board, for example the Adafruit board or a different Chinese board, use [[https://gr33nonline.wordpress.com/2019/04/19/dont-get-the-wrong-bno055/ | this link]]
-``` \_\_
+``` __
 
 Finally, connect the IMU to the serial to USB converter. The Rx and Tx
 cables are crossed. The power of the BNO055 module is 5V

@@ -24,8 +24,8 @@ Alternatively:
 > make uninstall     # remove ~/mingw and delete modifications in ~/.bashrc
 ```
 
-Installation location can be moved if the \`MINGW_INSTALL_PREFIX\`
-environment variable is set before running \`make install\`.
+Installation location can be moved if the `MINGW_INSTALL_PREFIX`
+environment variable is set before running `make install`.
 
 Further build recipes can be compiled into the toolchain by simply
 switching to the mingw root and making the appropriate target. A list of

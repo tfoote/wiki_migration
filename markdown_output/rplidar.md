@@ -22,7 +22,7 @@ scanning frequency from 2hz to 10hz freely by control the speed of the
 scanning motor. RPLIDAR will self-adapt the current scanning speed.
 
 The driver publishes device-dependent
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> data.
+<<MsgLink(sensor_msgs/LaserScan)>> data.
 
 SLAM based on RPLIDAR and ROS Hector Mapping:
 
@@ -98,7 +98,7 @@ can change the launch file about the serial_port value.
 
 ## Launch File Examples
 
-Check the authority of rplidar\'s serial-port :
+Check the authority of rplidar's serial-port :
 
 ```
 ls -l /dev |grep ttyUSB

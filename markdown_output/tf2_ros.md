@@ -8,8 +8,8 @@ function within ROS.
 
 \$ROS_DISTRO
 
--   \`tf2_ros::TransformBroadcaster()\`, constructor
--   \`tf2_ros::TransformBroadcaster::sendTransform\` to send transforms
+-   `tf2_ros::TransformBroadcaster()`, constructor
+-   `tf2_ros::TransformBroadcaster::sendTransform` to send transforms
     Please refer to the
     [ C++ API](http://docs.ros.org/latest/api/tf2_ros/html/c++/classtf2__ros_1_1TransformBroadcaster.html)
     or
@@ -17,8 +17,8 @@ function within ROS.
 
 Similarly static transforms can be sent by:
 
--   \`tf2_ros::StaticTransformBroadcaster()\`, constructor,
--   \`tf2_ros::StaticTransformBroadcaster::sendTransform\` to send
+-   `tf2_ros::StaticTransformBroadcaster()`, constructor,
+-   `tf2_ros::StaticTransformBroadcaster::sendTransform` to send
     static transforms Please refer to the
     [ C++ API](http://docs.ros.org/latest/api/tf2_ros/html/c++/classtf2__ros_1_1StaticTransformBroadcaster.html)
     or
@@ -26,18 +26,18 @@ Similarly static transforms can be sent by:
 
 ### Using Published Transforms
 
-For most purposes using tf2_ros will be done using \`tf2_ros::Buffer\`.
-It\'s main public API is defined by \`tf2_ros::BufferInterface\`.
-Typically it will be populated using a \`tf2_ros::TransformListener\`
+For most purposes using tf2_ros will be done using `tf2_ros::Buffer`.
+It's main public API is defined by `tf2_ros::BufferInterface`.
+Typically it will be populated using a `tf2_ros::TransformListener`
 which subscribes to the appropriate topics.
 
--   \`tf2_ros::Buffer::transform\` is the main method for applying
+-   `tf2_ros::Buffer::transform` is the main method for applying
     transforms.
--   \`canTransform\` allows to know if a transform is available
--   \`lookupTransform\` is a lower level method which returns the
+-   `canTransform` allows to know if a transform is available
+-   `lookupTransform` is a lower level method which returns the
     transform between two coordinate frames. This method is the core
     functionality of the tf2 library.
--   \`getFrames\` is a service method providing the frames in the graph
+-   `getFrames` is a service method providing the frames in the graph
     as a yaml tree
 
 Please refer to the
@@ -52,16 +52,16 @@ there is transform data available. This follows the pattern from the
 message_filters package. Here is a brief list of functions that the user
 is most likely to use.
 
--   \`tf2_ros::MessageFilter()\`, constructor
--   \`connectInput()\` allows to connect filters together
--   \`setTargetFrame()\` set the frame you want to be able to transform
+-   `tf2_ros::MessageFilter()`, constructor
+-   `connectInput()` allows to connect filters together
+-   `setTargetFrame()` set the frame you want to be able to transform
     to before getting a message callback
--   \`setTargetFrames()\` set the frames you want to be able to
+-   `setTargetFrames()` set the frames you want to be able to
     transform to before getting a message callback
--   \`setTolerance()\` specifies the time tolerance for the transform
+-   `setTolerance()` specifies the time tolerance for the transform
     data
--   \`clear\` flushes the message queue
--   \`setQueueSize()\`
+-   `clear` flushes the message queue
+-   `setQueueSize()`
 
 Please refer to the
 [ C++ API](http://docs.ros.org/latest/api/tf2_ros/html/c++/classtf2__ros_1_1MessageFilter.html )
@@ -72,12 +72,12 @@ or [ Python Api]( )
 Here is the list of exceptions that can be thrown by tf2_ros and are
 inherited from tf2.
 
--   \`tf2::ConnectivityException\`
--   \`tf2::LookupException\`
--   \`tf2::ExtrapolationException\`
--   \`tf2::InvalidArgumentException\`
--   \`tf2::TimeoutException\`
--   \`tf2::TransformException\`
+-   `tf2::ConnectivityException`
+-   `tf2::LookupException`
+-   `tf2::ExtrapolationException`
+-   `tf2::InvalidArgumentException`
+-   `tf2::TimeoutException`
+-   `tf2::TransformException`
 
 For more information see
 [ C++ exceptions](http://docs.ros.org/latest/api/tf2/html/exceptions_8h.html)
@@ -88,21 +88,21 @@ or
 
 #### static_transform_publisher
 
-\`static_transform_publisher x y z yaw pitch roll frame_id
-child_frame_id\`
+`static_transform_publisher x y z yaw pitch roll frame_id
+child_frame_id`
 
 . Publish a static coordinate transform to tf2 using an x/y/z offset in
 meters and yaw/pitch/roll in radians. (yaw is rotation about Z, pitch is
 rotation about Y, and roll is rotation about X).
 
-\`static_transform_publisher x y z qx qy qz qw frame_id child_frame_id\`
+`static_transform_publisher x y z qx qy qz qw frame_id child_frame_id`
 
 . Publish a static coordinate transform to tf2 using an x/y/z offset in
 meters and quaternion.
 
 Unlike in tf, there is no period argument, and a latched topic is used.
 
-\`static_transform_publisher\` is designed both as a command-line tool
+`static_transform_publisher` is designed both as a command-line tool
 for manual use, as well as for use within [roslaunch](roslaunch) files
 for setting static transforms. For example:
 

@@ -1,6 +1,6 @@
 ## Overview
 
-This package contains one single node: \`rgbdodom_node\`, which
+This package contains one single node: `rgbdodom_node`, which
 estimates robot motion based on incoming raw color and depth images from
 an RGB-D camera and an on-board IMU.
 
@@ -9,13 +9,13 @@ an RGB-D camera and an on-board IMU.
 The transforms tree (following
 [REP 105](http://www.ros.org/reps/rep-0105.html)) is as follows:
 
-. \`odom\` → \`base_link\` → \`camera\`
+. `odom` → `base_link` → `camera`
 
 Visual odometry algorithms generally calculate* camera motion.* To be
 able to calculate *robot motion* based on *camera motion*, the
 transformation from the camera frame to the robot frame has to be known.
-Therefore this implementation needs to know the tf \`base_link\` →
-\`camera\` to be able to publish \`odom\` → \`base_link\`. The node
+Therefore this implementation needs to know the tf `base_link` →
+`camera` to be able to publish `odom` → `base_link`. The node
 currently uses default values from the sensor setup on the !AscTec Neo
 Research platform.
 

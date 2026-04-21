@@ -113,8 +113,8 @@ events are already planned. Stay tuned!
 
 \[1\] Stefan Kohlbrecher, Karen Petersen, Gerald Steinbauer, Johannes
 Maurer, Peter Lepej, Suzana Uran, Rodrigo Ventura, Christian Dornhege,
-Andreas Hertle, Raymond Sheh, Johannes Pellenz, \"Community-Driven
-Development of Standard Software Modules for Search and Rescue Robots\",
+Andreas Hertle, Raymond Sheh, Johannes Pellenz, "Community-Driven
+Development of Standard Software Modules for Search and Rescue Robots",
 Proc. IEEE International Symposium on Safety, Security and Rescue
 Robotics (SSRR), November 2012.
 

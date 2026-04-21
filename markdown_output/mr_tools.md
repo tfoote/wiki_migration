@@ -1,7 +1,7 @@
 ## Overview
 
 This package contains 2 nodes that communicate with the input devices
-and publishes \<\<MsgLink(geometry_msgs/Twist)\>\> to an arbitrary
+and publishes <<MsgLink(geometry_msgs/Twist)>> to an arbitrary
 number of output topics, which allows control over a multiple number of
 robots.
 

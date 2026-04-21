@@ -1,8 +1,8 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
-This package provides information about the PbD dome\'s kinematic chain
+This package provides information about the PbD dome's kinematic chain
 and contains launch-files to publish the chain to a
 robot_state_publisher. Available launchfiles are: dome with real PTU,
 dome with simulated PTU, dome with real PTU and Flock of Birds magnet
@@ -13,11 +13,11 @@ in this package only an urdf file and launch-files/-scripts. A
 screenshot of RVIZ shows the visualization and the kinematic chain. The
 red Box is the Flock of Birds magnet tracking system.
 
-![height=\"417\",width=\"498\"\|width=\"493\",height=\"413\"](attachment:dome_1.png)
+![height="417",width="498"\|width="493",height="413"](attachment:dome_1.png)
 
 ## Functionality
 
-![height=\"241\",width=\"396\"\|width=\"254\",height=\"155\"](attachment:dome_2.png)
+![height="241",width="396"\|width="254",height="155"](attachment:dome_2.png)
 
 The kinematic chain consists of two major parts: The camera-system (PTU,
 Guppy-Cameras and Kinect) and the Flock of Birds magnet tracking system
@@ -40,8 +40,8 @@ an identity transformation to **/map** which is mostly used.
 -   /ptu_pan_link - the origin of the pan joint
 -   /ptu_tilt_link - the origin of the tilt joint
 -   /ptu_tilted_link - the rotated part of the tilt joint
--   /camera_left_frame - the left camera\'s origin
--   /camera_right_frame - the right camera\'s origin
+-   /camera_left_frame - the left camera's origin
+-   /camera_right_frame - the right camera's origin
 
 **Additional optional TF-Links for kinect**
 
@@ -50,7 +50,7 @@ an identity transformation to **/map** which is mostly used.
 
 An total overview of the frames:
 
-![height=\"406\",width=\"957\"\|width=\"1113\",height=\"472\"](attachment:domke_frames.jpg)
+![height="406",width="957"\|width="1113",height="472"](attachment:domke_frames.jpg)
 
 ## Usage
 

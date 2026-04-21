@@ -5,7 +5,7 @@ laser range finders. While some laser range finders are now available
 that create 3D scans, such as the Velodyne Puck, there are still gaps in
 the data, and 2D laser range finders provide even less data. By
 connecting a 2D sensor to a servo, the amount of data acquired can be
-significantly increased and improve the robot\'s perception of its
+significantly increased and improve the robot's perception of its
 environment. This package includes the code to operate such a setup and
 generates a point cloud that then be visualized in rviz or used to
 create an OctoMap.

@@ -52,7 +52,7 @@ file launch all the services. ```
 launch/grasping_services.py
 ```
 
-This file contains the mesh of the hand. It\'s needed to calculate
+This file contains the mesh of the hand. It's needed to calculate
 grasps and other tasks. ```
 robos/care-o-bot3.zae
 ```

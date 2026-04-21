@@ -1,6 +1,6 @@
 ## Overview
 
-\`librealsense\` is a cross-platform library (Linux, OSX, Windows) for
+`librealsense` is a cross-platform library (Linux, OSX, Windows) for
 capturing data from the Intel® RealSense™ R200, F200, and SR300 cameras.
 This effort was initiated to better support researchers, creative
 coders, and app developers in domains such as robotics, virtual reality,
@@ -20,7 +20,7 @@ without additional computer vision algorithms.
 
 ### uvcvideo Driver Patches
 
-\`librealsense\` requires patches to the \`uvcvideo\` loadable kernel
+`librealsense` requires patches to the `uvcvideo` loadable kernel
 module to support various cameras. Intel® RealSense™ R200 camera support
 is upstreamed in the 4.4.x linux kernel, but older kernels and all other
 Intel® RealSense™ cameras require patches.
@@ -47,9 +47,9 @@ or
 
 ##### Method 2 (Manual)
 
-Update your \`/etc/apt/sources.list\` file and/or
-\`/etc/apt/sources.list.d/\*.list\` to uncomment (or add) the
-\`deb-src\` entries for all of the entries for the \`main\`
+Update your `/etc/apt/sources.list` file and/or
+`/etc/apt/sources.list.d/\*.list` to uncomment (or add) the
+`deb-src` entries for all of the entries for the `main`
 repositories. Below is an **example** for ubuntu 16.04 (Xenial).
 
 ```

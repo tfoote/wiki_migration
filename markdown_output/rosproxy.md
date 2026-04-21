@@ -6,26 +6,26 @@ this experiment.
 
 ## Setting up the proxy
 
-When using \`rosproxy\`, we refer to the \`internal\` side of the proxy
+When using `rosproxy`, we refer to the `internal` side of the proxy
 to mean the ROS graph that is providing the desired data, e.g. inside
-the firewall. The \`external\` side refers to one or more ROS graphs
+the firewall. The `external` side refers to one or more ROS graphs
 that are connecting to the proxy to retrieve this data.
 
 Steps:
 
-1\. Run the \`proxy\` node. The \`proxy\` accepts a whitelist of
+1\. Run the `proxy` node. The `proxy` accepts a whitelist of
 services and topics that it proxies. You probably want to explicitly set
 the TCPROS and XML-RPC ports as well to simplify configuration. 2. *For
-each external master*, run the \`register.py\` script for each service
+each external master*, run the `register.py` script for each service
 and topic that you wish to proxy into the external master.
 
 ## Scripts
 
-\`register.py service /service_name rosrpc:*HOSTNAME:PORT\` Register the
+`register.py service /service_name rosrpc:*HOSTNAME:PORT` Register the
 service on the current ROS master.*
 
-\`register.py pub /topic_name topic/Type
-[http://HOSTNAME:PORT](http://HOSTNAME:PORT)\` Register the publication
+`register.py pub /topic_name topic/Type
+[http://HOSTNAME:PORT](http://HOSTNAME:PORT)` Register the publication
 on the current ROS master.
 
 ## Nodes

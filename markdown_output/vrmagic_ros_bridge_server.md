@@ -6,7 +6,7 @@ This package contains a ROS bridge for the VRMagic smart cameras. It
 includes a ROS server node named `vrmagic_ros_bridge_server`, and a
 firmware interface for VRMagic smart cams. The firmware interface is
 implemented as C++ class (`VrMagicHandler_camhost`) and needs to be
-included in the user\'s application. Smart cam images are transmitted to
+included in the user's application. Smart cam images are transmitted to
 the `vrmagic_ros_bridge_server` via this interface. The camhost server
 provides a ROS multi-channel publisher for the multi-sensor devices.
 
@@ -25,15 +25,15 @@ The node receives from the VRMagic smart cam an image via the
 a specific channel. An individual publisher is instanciated for each ID.
 The node verifies for incoming images whether a publisher is already
 instanciated. New publishers are created during runtime with the
-following convention for the topic name: \<base_topic\> + ID, (e.g.
-base_topic:\"topicname\", ID:1 -\> \"topicname1\").
+following convention for the topic name: <base_topic> + ID, (e.g.
+base_topic:"topicname", ID:1 -> "topicname1").
 
 ### Parameter
 
   -- -------------------- -- ------------------------------------------------------------------- -- --------------------- --
      **Parameter Name**      **Description**                                                        **Default Values**    
-     pub_name                Topic name of image publisher (topicname and ID are concatenated)      \"vrmagic_image\_\"   
-     ip_smartcam             IP address of the VRMagic smart cam                                    \"192.168.3.101       
+     pub_name                Topic name of image publisher (topicname and ID are concatenated)      "vrmagic_image_"   
+     ip_smartcam             IP address of the VRMagic smart cam                                    "192.168.3.101       
      port_smartcam           PORT of the VRMagic smart cam                                          1234                  
   -- -------------------- -- ------------------------------------------------------------------- -- --------------------- --
 
@@ -43,8 +43,8 @@ base_topic:\"topicname\", ID:1 -\> \"topicname1\").
 
 ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=<topicname> _ip_smartcam:=<ip> _port_smartcam:=<port>
-``` Example with base_topic: \"vrmagic_image\_\",
-ip: \"192.168.3.100\", PORT: 1234
+``` Example with base_topic: "vrmagic_image_",
+ip: "192.168.3.100", PORT: 1234
 
 ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=vrmagic_image_ _ip_smartcam:=192.168.3.100 _port_smartcam:=1234
@@ -68,7 +68,7 @@ The following steps need to be executed:
 
 To use the ROS bridge in your applications, the folder
 `VrMagicHandler_camhost` in `firmware/src/` has to be copied in your
-application\'s source folder. You have to add all `.cpp` files in
+application's source folder. You have to add all `.cpp` files in
 `VrMagicHandler_camhost` to your `Makefile`.
 
 The following image shows a uml class diagram for the API of the smart
@@ -146,8 +146,8 @@ Typically, this method has to be called after image grabbing.
 ### Compiling
 
 To compile your application including the ROS bridge class, all source
-files in the folder `VrMagicHandler_camhost`(don\'t forget the
-TCP/TCP.cpp file) must be included in the `Makefile`. Don\'t forget to
+files in the folder `VrMagicHandler_camhost`(don't forget the
+TCP/TCP.cpp file) must be included in the `Makefile`. Don't forget to
 add the include path to the folder `VrMagicHandler_camhost/`.
 
 Compile your VRMagic application on your host PC or virtual machine as

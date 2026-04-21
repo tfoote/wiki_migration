@@ -6,5 +6,5 @@ class. Some examples can be found in the
 [ tests directory](https://github.com/larsys/socrob-ros-pkg/tree/master/soccer-msl/socrob_multicast/tests )
 in the package root.
 
-This library\'s theoretical basis is fully documented in my thesis,
+This library's theoretical basis is fully documented in my thesis,
 [ Distributed Communications System for Multi-Robot Systems](https://dspace.ist.utl.pt/bitstream/2295/1262185/1/dissertacao_jreis.pdf ).

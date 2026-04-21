@@ -23,7 +23,7 @@ art methods for detection and learning of novel objects, and recognition
 and tracking of learned models.
 
 A typical situation where one would need the exact pose of an object is
-when a robot needs to manipulate an object. BLORT doesn\'t need any
+when a robot needs to manipulate an object. BLORT doesn't need any
 markers but in exchange it has to be trained for the specific object to
 detect and estimate the pose of. The speed of the system is defined by
 the two modules. The feature-based detector is sufficiently slower than
@@ -56,7 +56,7 @@ sudo apt-get install ros-hydro-pal-vision-segmentation
 
 The system works with a CAD model of the object provided. The current
 implementation of the BLORT detector module uses SIFT feature
-descriptors to provide an approximate estimation of the object\'s pose
+descriptors to provide an approximate estimation of the object's pose
 for the tracker module which will track the object using edge-based
 methods.
 

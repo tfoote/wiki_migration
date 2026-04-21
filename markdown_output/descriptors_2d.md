@@ -4,7 +4,7 @@
 
 ## Descriptors
 
-\`descriptors_2d\` is a package for providing a common interface to many
+`descriptors_2d` is a package for providing a common interface to many
 different image descriptors. Currently, the descriptors that are
 recommended for use are:
 
@@ -18,16 +18,16 @@ it BSD licensed.
 
 Notes
 
--   \`descriptor.getName()\` is guaranteed to be unique for any setting
+-   `descriptor.getName()` is guaranteed to be unique for any setting
     of parameters.
--   All descriptors work with both BGR and grayscale (\`IPL_DEPTH_8U\`)
+-   All descriptors work with both BGR and grayscale (`IPL_DEPTH_8U`)
     images unless otherwise noted.
 -   SURF will give you different numbers on 32 and 64bit machines, at
     least in our tests.
 
 ## Tutorials
 
-See \`descriptors_2d/src/example.cpp\`.
+See `descriptors_2d/src/example.cpp`.
 
 ## Video (Hand detection)
 

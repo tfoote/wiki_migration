@@ -84,10 +84,10 @@ param {
 
 ## Additional Information
 
-You\'ll find additional information under the following links about
+You'll find additional information under the following links about
 
 -   the
-    [SVH\'s channel (finger) mappings](http://wiki.ros.org/schunk_svh_driver#Channel_Mapping)
+    [SVH's channel (finger) mappings](http://wiki.ros.org/schunk_svh_driver#Channel_Mapping)
 -   a
     [trouble shooting section](http://wiki.ros.org/schunk_svh_driver#Troubleshooting)
 -   and

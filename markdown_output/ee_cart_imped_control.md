@@ -13,7 +13,7 @@ is ignored.
 The controller is an open-loop Jacobian-transpose force controller. At
 every point on the trajectory the desired stiffness or desired wrench is
 converted into a Cartesian force/wrench vector and ultimately into a
-joint torque vector using the transpose of the arm\'s instantaneous
+joint torque vector using the transpose of the arm's instantaneous
 Jacobian matrix. No guarantee is made to the *magnitude* of the applied
 force/wrench/impedance because this is an open-loop controller. There is
 currently not adequate feedback on the arm to determine the applied
@@ -120,7 +120,7 @@ around this problem. For example, when the gripper is in contact with a
 surface, the gripper force sensors can be used as feedback. Although the
 controller itself cannot integrate this information, it can be done a
 higher level using the information from the
-\"/pressure/r_gripper_motor\" or \"/pressure/l_gripper_motor\" topics.
+"/pressure/r_gripper_motor" or "/pressure/l_gripper_motor" topics.
 Similarly, ensuring that the end effector moves a certain distance while
 constantly exerting a force in that direction (as in pushing an object)
 can be done by monitoring the position of the gripper and exerting ever

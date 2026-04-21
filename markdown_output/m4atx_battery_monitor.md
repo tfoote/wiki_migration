@@ -1,6 +1,6 @@
 ## About
 
-The \`m4atx_battery_monitor\` package will read the information from a
+The `m4atx_battery_monitor` package will read the information from a
 m4atx battery supply and publish it as a ros message.
 
 ## Nodes
@@ -37,14 +37,14 @@ A startup script is provided which will perform the following commands.
 ```
 lsusb
 ``` Locate the bus and device number of the device
-called \"MicroChip Technology, Inc.\". ```
+called "MicroChip Technology, Inc.". ```
 sudo chmod a+rw /dev/bus/usb/<bus_num>/<device_num>
 ``` Where
 the bus_num and device_num were found above using lsusb.
 
 ## Installation
 
-To install the \`m4atx_battery_monitor\` package, you can choose to
+To install the `m4atx_battery_monitor` package, you can choose to
 either install from source, or from the Ubuntu package:
 
 ### Source
@@ -66,9 +66,9 @@ sudo apt-get install ros-indigo-m4atx-battery-monitor
 
 ### Startup
 
-The \`ros_ethernet_rmp\` package contains a
-\`m4atx-battery-monitor.launch\` file. This file launches an instance of
-the \`m4atx_battery_monitor_node\`. To launch these nodes the following
+The `ros_ethernet_rmp` package contains a
+`m4atx-battery-monitor.launch` file. This file launches an instance of
+the `m4atx_battery_monitor_node`. To launch these nodes the following
 command can be used:
 
 ```

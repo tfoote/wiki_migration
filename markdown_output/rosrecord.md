@@ -1,6 +1,6 @@
   -- ----------------------------------------------------------------- --
-     \<#FFFF00\> **As of ROS 1.1.5, rosrecord has been deprecated.**   
-     \<#FFFF00\> **For C Turtle, see [rosbag](rosbag)**                
+     <#FFFF00> **As of ROS 1.1.5, rosrecord has been deprecated.**   
+     <#FFFF00> **For C Turtle, see [rosbag](rosbag)**                
   -- ----------------------------------------------------------------- --
 
 ## Status
@@ -21,13 +21,13 @@ deprecation.
 
 ### ros::record::Recorder
 
-The \`ros::record::Recorder\` allows you to populate a bag file without
+The `ros::record::Recorder` allows you to populate a bag file without
 going through ros.
 
-The \`Recorder\` has a fairly simpe interface for pushing messages into
-a bag file. \`open\` is used to open the file. Messages can then be
-added with sequential calls to \`record\`. When the bag file is
-complete, close it using \`close\`.
+The `Recorder` has a fairly simpe interface for pushing messages into
+a bag file. `open` is used to open the file. Messages can then be
+added with sequential calls to `record`. When the bag file is
+complete, close it using `close`.
 
 **Example:** To put your own message into a bag file
 ```cplusplus
@@ -57,20 +57,20 @@ The `ros::record::Player` class enables parsing of bag files without
 going through ros. This is very useful for converting .bag files to
 different formats.
 
-The \`Player\` has an unfortunately complicated API at the moment. A set
-of callbacks can be registered on the Player using the \`addHandler\`
-call. This call takes a topic (which may be specified as \"\*\"), and is
+The `Player` has an unfortunately complicated API at the moment. A set
+of callbacks can be registered on the Player using the `addHandler`
+call. This call takes a topic (which may be specified as "\*"), and is
 templated on a particular type. The corresponding callback will be
 invoked when a message matching this topic and type is extracted from
-the bag through a call to \`player.nextMsg()\`.
+the bag through a call to `player.nextMsg()`.
 
 *NOTE:* The Player also has the ability to optionally construct a
 shifted and scaled time-line for your messages. This is what the
-\`start_time\` in the open call corresponds to. When the The callback is
+`start_time` in the open call corresponds to. When the The callback is
 invoked it is passed TWO times. The first is a shifted and scaled
 representation of time, the second is the original timestamp stored in
 the bag. Internally rosplay does a remapping from the first time-stamp
-in your bag to whatever time is passed in as \`start_time\` to the open
+in your bag to whatever time is passed in as `start_time` to the open
 call. Additionally, if you have constructed your bag with a time_scale,
 the Player will scale the duration beween subsequent messages
 appropriately. For example, supposing your bag contains 3 messages with
@@ -135,10 +135,10 @@ For more information see the
 
 ### rosrecord.py
 
-The \`rosrecord\` module provides a simple API for iterating through
+The `rosrecord` module provides a simple API for iterating through
 messages in a bag file. By default, it will automatically deserialize
-each message for you into the appropriate \`Message\` instance. For
-higher performance, it can also operate in \'raw\' mode, which returns
+each message for you into the appropriate `Message` instance. For
+higher performance, it can also operate in 'raw' mode, which returns
 the serialized bytes for each message.
 
 Iterating over messages: ```python
@@ -175,7 +175,7 @@ new md5sums. ```
 old/name OLDMD5 new/name NEWMD5
 ```
 
-It is up to the user to generate these. I\'ve attached an example file
+It is up to the user to generate these. I've attached an example file
 for our recent changes for ros release 0.4
 <attachment:combined_md5s.fixed>
 
@@ -195,7 +195,7 @@ rosrecord/scripts/fixed_moved_messages.py combined_md5s.fixed old.bag new.bag
 When logging incoming messages are buffered but there is a race
 condition for getting a lock on the output file. Depending on how things
 work out this may mean that the order of items in the bag is out of
-order(up to seconds off, which can\'t be easily buffered). There is a
+order(up to seconds off, which can't be easily buffered). There is a
 script bagsort.py which will sort the bag to be in chronological order.
 This will get rid of dropped packets due to this.
 
@@ -339,7 +339,7 @@ int main(int argc, char **argv)
 }
 ```1
 
-\`rosrecord\` will generate a \".bag\" file (so named for historical
+`rosrecord` will generate a ".bag" file (so named for historical
 reasons) with the contents of all topics that you pass to it. The file
 simply contains interlaced, serialized ros messages dumped directly to a
 single file as they come in over the wire. This is the most performance
@@ -348,7 +348,7 @@ messages at a high-bandwidth, such as from cameras, it is strongly
 recommended you run rosrecord on the same machine as the camera, and
 specify the file destination as being on the local machine disk.
 
-If you run \`rosrecord\` with the \"-a\" option, it will attempt to
+If you run `rosrecord` with the "-a" option, it will attempt to
 record ALL messages available in the system. However, since this
 information requires polling the master periodically, it will likely
 miss the first several messages published on any topic.
@@ -359,7 +359,7 @@ buffer), which can be triggered by calling `rosrecord -t`. The API for
 using rosrecord in snapshot mode will likely change in ROS-0.11 based on
 feedback about 0.10.
 
-\`rosrecord\` is installed to the `$ROS_ROOT/bin` directory and so can
+`rosrecord` is installed to the `$ROS_ROOT/bin` directory and so can
 be used without needing rosrun.
 
 #### Example usages
@@ -418,7 +418,7 @@ int main(int argc, char **argv)
 ```{=html}
 <!-- -->
 ```
--   Record all messages on the topics \`chatter\` and \`babble\`
+-   Record all messages on the topics `chatter` and `babble`
     ```cplusplus
 #include "ros/ros.h"
 #include <string>
@@ -524,7 +524,7 @@ int main(int argc, char **argv)
 
   return 0;
 }
-```4 \`rosplay\` will take the contents of 1 or
+```4 `rosplay` will take the contents of 1 or
 more bag file, and play them back in a time-synchronized fashion. Time
 synchronization occurs based on the global time-stamps at which messages
 were received. Playing will begin immediately, and then future messages
@@ -535,18 +535,18 @@ bag, wait an hour, and record a second bag, when you play them back
 together you will have an hour-long dead period in the middle of your
 playback.
 
-If you do not want to observe playback timing, the \"-a\" option will
+If you do not want to observe playback timing, the "-a" option will
 playback all messages from the file as fast as possible. Note that for
 large files this will often lead to exceeding your incoming buffers.
 
 Additionally, during playing, you can pause at any time by hitting
 space. When paused, you can step through messages by pressing s.
 
-To check the contents of a bag, run with the \"-c\" option. This will
+To check the contents of a bag, run with the "-c" option. This will
 not play back the logfile, but will instead determine the count of each
 type of message in the file.
 
-\`rosplay\` is installed to the `$ROS_ROOT/bin` directory and so can be
+`rosplay` is installed to the `$ROS_ROOT/bin` directory and so can be
 used without needing rosrun.
 
 Example usage: ```cplusplus
@@ -604,15 +604,15 @@ int main(int argc, char **argv)
 
 This command has been replaced by [rosbag filter](rosbag#filter)
 
-\`rosrebag\` is a command-line tool for converting bag files using
+`rosrebag` is a command-line tool for converting bag files using
 Python expressions. The Python expression can access any of the Python
 builtins plus:
 
--   \`topic\`: the topic of the message
--   \`m\`: the message
--   \`t\`: time of message. The time is represented as a [rospy](rospy)
+-   `topic`: the topic of the message
+-   `m`: the message
+-   `t`: time of message. The time is represented as a [rospy](rospy)
     [Time](http://pr.willowgarage.com/pr-docs/ros-packages/rospy/html/classrospy_1_1msg_1_1Time.html)
-    object (\`t.secs\`, \`t.nsecs\`)
+    object (`t.secs`, `t.nsecs`)
 
 ```cplusplus
 #include "ros/ros.h"

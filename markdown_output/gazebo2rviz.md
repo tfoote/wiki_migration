@@ -9,7 +9,7 @@ a SDF as MoveIt collision objects.
 This package contains the following (Python) nodes:
 
 -   *gazebo2tf_node.py* translates /gazebo/link_states to TF in a
-    hierarchical manner corresponding to SDF \<include\>.
+    hierarchical manner corresponding to SDF <include>.
 -   *gazebo2marker_node.py* retrieves the current gazebo models from
     /gazebo/model_states, parses their corresponding SDF file and sends
     visualization_msgs/Marker messages for each link (either visual or

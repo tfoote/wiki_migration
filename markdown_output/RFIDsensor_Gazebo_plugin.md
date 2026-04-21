@@ -1,21 +1,21 @@
 EOL distros:
 
   -- --------------------- -- -- -- --------------------------- --
-     \<#00FF00\> Melodic            \<#00FF00\> (./) Released   
+     <#00FF00> Melodic            <#00FF00> (./) Released   
   -- --------------------- -- -- -- --------------------------- --
 
 Interface for using ROS with the Gazebo simulator.
 
 -   Maintainer status: developed
 -   Maintainer\\Support: Abdussalam Alajami
-    \<Abdussalam.alajami@upf.edu\>
+    <Abdussalam.alajami@upf.edu>
 -   Developers from UBICALAB, Pompeu Fabra Universitat: Abdussalam
-    Alajami \<Abdussalam.alajami@upf.edu\>, Guillem Moreno
-    \<guillem.moreno01@estudiant.upf.edu\>, Dr.Rafael Pous
-    \<rafael.pous@upf.edu\>.
+    Alajami <Abdussalam.alajami@upf.edu>, Guillem Moreno
+    <guillem.moreno01@estudiant.upf.edu>, Dr.Rafael Pous
+    <rafael.pous@upf.edu>.
 -   Source: git
     <https://github.com/Abdu-lybot/RFID_Sensor_Plugin_gazebo.git>
-    (branch: master \--\> Tested on turtlebot, branch uav_tested \--\>
+    (branch: master \--> Tested on turtlebot, branch uav_tested \-->
     tested with iris drone).
 
 # RFID System Gazebo Plugin
@@ -79,8 +79,8 @@ detection are:
 <!-- -->
 ```
 -   `<azimuth_beamwidth>`: Beamwidth is the angle from which the
-    majority of the antenna\'s power, as illustrated on the radiation
-    pattern\'s main lobe radiates. It may be measured in the horizontal
+    majority of the antenna's power, as illustrated on the radiation
+    pattern's main lobe radiates. It may be measured in the horizontal
     or vertical planes and is the distance between two points where the
     power is less than half of the maximum.
     ![](https://raw.githubusercontent.com/abdu-bot/AdvanDiptera_VIO/master/rfid-antennas-beamwidth-directivity-1.png)
@@ -166,7 +166,7 @@ Admonitions should be used with care. A page riddled with admonitions will look 
 
 The second plugin (RFID_tag_plugin): Contains the plugin that simulates
 RFID tags that are usually attached to a product/box called a
-\"fixture\" This plugin/package is compiled using catkin_make or catkin
+"fixture" This plugin/package is compiled using catkin_make or catkin
 build. In real life, RFID Tags are small objects that contain a small
 antenna. Similarly, in simulation, the plugin does two major tasks.
 First, it reads a file called **map.txt** which exists in the plugin
@@ -275,7 +275,7 @@ Run your gazebo simulation, then run the tf tree node:
 A video of a UAV equipped with 4 RFID antennas in an environment
 containing 1000 RFID tags, while only having the attached antenna facing
 the right side of the UAV active.
-[target=\"UAV equipped with 4 RFID antennas in an environment of 1000 RFID tags\"](https://www.youtube.com/watch?v=xMaFSDsqnAc site)
+[target="UAV equipped with 4 RFID antennas in an environment of 1000 RFID tags"](https://www.youtube.com/watch?v=xMaFSDsqnAc site)
 
 ------------------------------------------------------------------------
 

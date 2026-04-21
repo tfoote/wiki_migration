@@ -9,7 +9,7 @@ This means plans will assume a set of process modules, and if the robot
 has suitable process modules, the plan will run. More specifically, a
 high-level plan parameterizes a process module symbolically, by using a
 designator. The process module then resolves the designator, depending
-on the robot\'s capabilities and the current context and creates a
+on the robot's capabilities and the current context and creates a
 low-level parameterization that can be used to execute an action. For
 instance, to move the robot to a location where it can see a specific
 object, we state in the plan:

@@ -9,7 +9,7 @@ usage on the [main Care-O-bot site](care-o-bot).
 
 ### Map information
 
-For each environment there\'s a map.pgm and a map.yaml file which are
+For each environment there's a map.pgm and a map.yaml file which are
 used inside the navigation packages [cob_navigation](cob_navigation) by
 the [map_server](map_server).
 

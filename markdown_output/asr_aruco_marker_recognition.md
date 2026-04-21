@@ -4,10 +4,10 @@ This package contains a recognition system for square, binary 2D-markers
 using either a mono or a stereo camera setup.
 
 *Examples of used (printed) markers:*
-![\|width=\"600\",height=\"337\"](attachment:aruco_markers.jpg)
+![\|width="600",height="337"](attachment:aruco_markers.jpg)
 
 *Close-up of a marker with its orientation:*
-![\|width=\"600\",height=\"355\"](attachment:aruco_marker_orientation_2.jpg)
+![\|width="600",height="355"](attachment:aruco_marker_orientation_2.jpg)
 
 ## Functionality
 
@@ -42,15 +42,15 @@ markers each have the size of 1.5x1.5mm and the used cameras have a
 resolution of 1292x964.
 
 *Camera image of the stereo setup:*
-![\|width=\"700\",height=\"232\"](attachment:aruco_results_3.png)
+![\|width="700",height="232"](attachment:aruco_results_3.png)
 
 *Resulting rviz-visualization of the found markers:*
-![\|width=\"700\",height=\"232\"](attachment:aruco_results.png)
+![\|width="700",height="232"](attachment:aruco_results.png)
 
 *Resulting 3D-rviz-visualization of the found markers (as two of the
-markers don\'t have a corresponding object only their marker orientation
+markers don't have a corresponding object only their marker orientation
 is shown):*
-![\|width=\"600\",height=\"405\"](attachment:aruco_results_2.png)
+![\|width="600",height="405"](attachment:aruco_results_2.png)
 
 ## Usage
 
@@ -140,9 +140,9 @@ The following parameters can be changed in the
 -   *image_left_topic*: The topic of the left camera image
 -   *image_right_topic*: The topic of the right camera image (only used
     if *use_stereo* is true)
--   i*mage_left_cam_info_topic*: The topic of the left camera\'s
+-   i*mage_left_cam_info_topic*: The topic of the left camera's
     parameters
--   *image_right_cam_info_topic*: The topic of the right camera\'s
+-   *image_right_cam_info_topic*: The topic of the right camera's
     parameters (only used if *use_stereo* is true)
 -   *vis_markers_topic*: The topic name of the visualization markers
     used in rviz

@@ -1,13 +1,13 @@
 The CRAM-language is a set of macros and functions on top of Common
-Lisp. It is based on the ideas of Drew !McDermott\'s RPL. Programs in
+Lisp. It is based on the ideas of Drew !McDermott's RPL. Programs in
 the CRAM language are compiled down to native machine code and make
-heavy use of the operating system\'s native multithreading
+heavy use of the operating system's native multithreading
 implementation.
 
 ## Installation and usage
 
 It is suggested to use SLIME for interactive lisp development. If you
-are using rosemacs, you can use \`M-x slime-ros\` to start up slime with
+are using rosemacs, you can use `M-x slime-ros` to start up slime with
 the version of sbcl that is distributed with the
 [roslisp_support](roslisp_support) stack. If you have [roslisp](roslisp)
 setup properly, you can load the cram language by invoking
@@ -15,7 +15,7 @@ setup properly, you can load the cram language by invoking
 `(ros-load:load-system "cram_language" :cram-language)` in the slime
 REPL. Change to the CPL package.
 
-If you create a package that uses the CRAM language, don\'t use the
+If you create a package that uses the CRAM language, don't use the
 package COMMON-LISP but the package CPL instead. Example:
 ```
 (defpackage cpl-user
@@ -45,26 +45,26 @@ fluent networks which allow to express complex conditions. They are an
 elegant and powerful way to add reactivity to a control program or
 synchronize between threads.
 
-With the function \`(wait-for fluent)\`, the current thread blocks if
-\`(value fluent)\` is nil, until it is non-nil. The function \`(wait-for
-(pulsed fluent))\` blocks until the value of fluent changes, or the
+With the function `(wait-for fluent)`, the current thread blocks if
+`(value fluent)` is nil, until it is non-nil. The function `(wait-for
+(pulsed fluent))` blocks until the value of fluent changes, or the
 fluent gets pulsed.
 
-The macro \`(whenever fluent)\` iteratively repeats the body except when
-\`(value fluent)\` is nil before a new iteration. If the fluent is nil
+The macro `(whenever fluent)` iteratively repeats the body except when
+`(value fluent)` is nil before a new iteration. If the fluent is nil
 at that time, whenever blocks until the fluent becomes true. The
-whenever form never terminates unless \`return\` is called explicitly in
-the body. See fluent pulse below for details on \`(whenever (pulsed
-fluent))\`
+whenever form never terminates unless `return` is called explicitly in
+the body. See fluent pulse below for details on `(whenever (pulsed
+fluent))`
 
-Fluents are created with the function `make-fluent`. The fluent\'s value
+Fluents are created with the function `make-fluent`. The fluent's value
 can be accessed through the reader `value`, can be set with
 `(setf (value fluent) <value>)`, and can be pulsed with
 `(pulse fluent)`.
 
 In the following example, a fluent is created and passed to a function
 that, for instance, spawns a thread and executes a perception routine.
-The result is put into the fluent\'s value. The main program sleeps
+The result is put into the fluent's value. The main program sleeps
 until it receives the value and prints it. ```
 (let ((fl (make-fluent :test-fluent :value nil)))
   (spawn-perception fl)
@@ -72,7 +72,7 @@ until it receives the value and prints it. ```
   (format t "Received value: ~a~%" (value fl))
 ```
 
-We can extend the example to do the print until the fluent\'s value
+We can extend the example to do the print until the fluent's value
 changes to :done: ```
 (let ((fl (make-fluent :test-fluent :value nil)))
   (spawn-perception fl)
@@ -82,8 +82,8 @@ changes to :done: ```
     (format t "Received value: ~a~%" (value fl))))
 ``` Please note that the
 `whenever` body is executed continuously, in a loop, as long as the
-value of \`fl\` is non-NIL. If you want to execute the body only on
-changes, you can use \`pulsed\`: ```
+value of `fl` is non-NIL. If you want to execute the body only on
+changes, you can use `pulsed`: ```
 (whenever ((pulsed fl))
   ...)
 ``` see fluent
@@ -94,14 +94,14 @@ pulses below.
 Fluents can be combined to fluent networks. A fluent network updates its
 value whenever one of the fluents it is constructed from changes its
 value. In the CPL package, the most important comparison and math
-operators (\<, \>, =, eq, eql, +, -, \*, /) are overloaded to construct
+operators (<, >, =, eq, eql, +, -, \*, /) are overloaded to construct
 a fluent network whenever they are called with at least one fluent as
 parameter. Example: ```
 (wait-for (> fl 20))
 (wait-for (< (/ fl 3) 1))
 ``` In addition, the logical
 operators `fl-and`, `fl-or` and `fl-not` are defined. Please note that
-they this is necessary since common lisp\'s logical operators have a
+they this is necessary since common lisp's logical operators have a
 slightly different semantics. For instance, AND returns the first
 non-nil value, whereas FL-AND returns a fluent containing T or nil.
 
@@ -122,41 +122,41 @@ fluent containing a pose object with the slots x, y and z:
 
 Whenever the value of a fluent is set to a different value, the fluent
 is pulsed. To trigger a wait-for to wake up or a whenever body to
-execute without actually changing the fluent\'s value, fluents can also
-be pulsed with the \`pulse\` method. To construct a fluent network that
-reacts if its parameter gets pulsed, the combinator \`pulsed\` can be
+execute without actually changing the fluent's value, fluents can also
+be pulsed with the `pulse` method. To construct a fluent network that
+reacts if its parameter gets pulsed, the combinator `pulsed` can be
 used.
 
-The combinator \`(pulsed fl)\` has 3 optional keywords to deal with
-\"missed pulses\" within a \`(whenever)\` block. Those are all pulses
-that occured during execution of the \`whenever\` body. \`whenever\` in
+The combinator `(pulsed fl)` has 3 optional keywords to deal with
+"missed pulses" within a `(whenever)` block. Those are all pulses
+that occured during execution of the `whenever` body. `whenever` in
 combination with a pulse can be imagined as an infinite loop waiting for
-a pulse, then executing the body. \`pulsed\` supports three different
-ways to handle pulses that occur during the execution of a \`whenever\`
+a pulse, then executing the body. `pulsed` supports three different
+ways to handle pulses that occur during the execution of a `whenever`
 body:
 
--   \`(pulsed fl :handle-missed-pulses :once)\` means that any number of
+-   `(pulsed fl :handle-missed-pulses :once)` means that any number of
     missed pulses cause exactly one additional execution of the
-    \`whenever\` body. This is the default behavior.
+    `whenever` body. This is the default behavior.
 
 ```{=html}
 <!-- -->
 ```
--   \`(pulsed fl :handle-missed-pulses :never)\` means that missed
-    pulses don\'t cause another execution of the \`whenever\` body.
+-   `(pulsed fl :handle-missed-pulses :never)` means that missed
+    pulses don't cause another execution of the `whenever` body.
 
 ```{=html}
 <!-- -->
 ```
--   \`(pulsed fl :handle-missed-pulses :always)\` means that the number
-    of iterations of the \`whenever\` body exactly matches the number of
+-   `(pulsed fl :handle-missed-pulses :always)` means that the number
+    of iterations of the `whenever` body exactly matches the number of
     missed pulses. That means that for every value change, the whenever
     body gets executed. Please note that fluents do not support a
     history of values.
 
-Note: \`(pulsed)\` should never be used outside \`(whenever (pulsed
-\...))\` or \`(wait-for (pulsed \...))\`. In particular the result of
-\`(pulsed)\` should not be stored in variables or passed around, as the
+Note: `(pulsed)` should never be used outside `(whenever (pulsed
+\...))` or `(wait-for (pulsed \...))`. In particular the result of
+`(pulsed)` should not be stored in variables or passed around, as the
 nature and behavior of the return object is unspecified on purpose and
 may change over time.
 
@@ -165,7 +165,7 @@ may change over time.
 Although it is possible to call normal common lisp functions and methods
 within a CRAM program, it is strongly encouraged to use
 `def-cram-function`. The reason is that plans that are defined with
-\`def-cram-function\` are transparent to the execution system. That
+`def-cram-function` are transparent to the execution system. That
 means, calls to them can be traced (automatic logging), and their code
 can be replaced on the fly by transformation rules. In addition, they
 can be referenced by the function `task` by specifying a code path. Top
@@ -227,7 +227,7 @@ succeeded. Those concepts are captured by (par), (pursue) and (try-all).
 ##### seq
 
 Execute forms sequentially. This is essentially equivalent to Common
-Lisp\'s `progn`. `seq` fails if one of its sub-forms fails and succeeds
+Lisp's `progn`. `seq` fails if one of its sub-forms fails and succeeds
 when all succeed.
 
 ##### par
@@ -281,7 +281,7 @@ Meaning as soon as the construct (par, pursue, try) ends by either
 success or failure, the other child threads are evaporated.
 
 The evaporation of threads also allows the lisp construct
-(\`unwind-protect\`), with which code blocks can have guard blocks that
+(`unwind-protect`), with which code blocks can have guard blocks that
 get executed in any case (normal course of action, evaporation and
 failure).
 
@@ -294,8 +294,8 @@ threads have evaporated.
 #### fail
 
 plan failures are generated and thrown using the (fail \...) function.
-Fail is similar to Common Lisp\'s \`error\` but adds some special
-handling of conditions that are a sub-type of \`plan-failure\`. These
+Fail is similar to Common Lisp's `error` but adds some special
+handling of conditions that are a sub-type of `plan-failure`. These
 should not cause Lisp to enter the debugger.
 
 #### with-failure-handling
@@ -317,16 +317,16 @@ meaning we just run the body again on each failure until we succeed.
 In Cram goals are a concept to ground plans in a first-order
 representation. That allows to reason about the purpose of plans. A goal
 is an expression that describes the semantics of the corresponding code.
-For instance, the goal \`(achieve ?occ)\` indicates that the code only
+For instance, the goal `(achieve ?occ)` indicates that the code only
 succeeds if the system beliefs that it could make the occasion ?occ
-hold. A more concrete example is \`(achieve (loc ?obj ?loc))\` which
+hold. A more concrete example is `(achieve (loc ?obj ?loc))` which
 indicates that the purpose of the code is to achieve that an object is
 placed at a specific location.
 
 Which kinds of occasions are needed for a platform depends on the domain
 it operates in. It is up to the goal designer to decide which occasion
 types to declare. To start with, a common choice could be a general
-occasion like \`(achieve \<occasion\>)\`.
+occasion like `(achieve <occasion>)`.
 
 Declaring occasion types is done like this: ```
 (top-level
@@ -366,4 +366,4 @@ the context of current purposes.
 ## Further References
 
 A clear and complete introduction is
-[Tobias Christian Rittweiler\'s bachelor thesis on CRAM](https://common-lisp.net/~trittweiler/bachelor-thesis.pdf)
+[Tobias Christian Rittweiler's bachelor thesis on CRAM](https://common-lisp.net/~trittweiler/bachelor-thesis.pdf)

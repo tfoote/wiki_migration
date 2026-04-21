@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -17,13 +17,13 @@ objects will be found.
 
 The following images describe basic concepts to understand the
 next_best_view node:
-![\|height=\"200\",width=\"333\"](attachment:frustum.png)
-![\|height=\"200\",width=\"500\"](attachment:hypothesis.png)
-![\|height=\"200\",width=\"150\"](attachment:normals.png)
+![\|height="200",width="333"](attachment:frustum.png)
+![\|height="200",width="500"](attachment:hypothesis.png)
+![\|height="200",width="150"](attachment:normals.png)
 
 The first image shows the robot and its frustum (view field), which
 indicates the area where objects can be found. This view field is also
-named \'view\'. The second image shows object hypotheses. An object
+named 'view'. The second image shows object hypotheses. An object
 hypothesis is a pose (position and orientation) of an object, which are
 predictions where this object could probably be found. The more objects
 are in a cluster, the more likely the recognizers can find objects at
@@ -86,13 +86,13 @@ Each arrow on the sphere shows the endposition of one direction vector
 which starts in the center of the sphere. The red rectangle limits the
 space sampling area. All hexagon corners and the center of the rectangle
 are used to generate viewports.
-![\|height=\"270\",width=\"333\"](attachment:orientationsampling.png)
-![\|height=\"333\",width=\"333\"](attachment:spacesampling.png)
+![\|height="270",width="333"](attachment:orientationsampling.png)
+![\|height="333",width="333"](attachment:spacesampling.png)
 
 Filter steps:
 
-1\. Positions that can\'t be navigated by the robot are removed when
-generating positions. 1. Orientations that can\'t be reached by the PTU
+1\. Positions that can't be navigated by the robot are removed when
+generating positions. 1. Orientations that can't be reached by the PTU
 are removed. 1. Positions that are too far away from hypotheses are
 removed using a kd-tree/radius search (this is also used to get a first
 set of nearby hypotheses that might be in the frustum of a view). 1.
@@ -205,14 +205,14 @@ visualization. Those topics are:
     rsc/CropBoxList\*.xml file (the path is configured in the launch
     file). The XML file will be created with the
     !RegionsToCropBoxAndNormals.py script, which converts the
-    regions\_\*.csv to the XML file. In the csv file it is possible to
+    regions_\*.csv to the XML file. In the csv file it is possible to
     configure normals for the cropboxes. If the normals are defined, the
     points in the point_cloud will get these normals and their own will
     be ignored. If no normals are defined, the original normals of the
     objects will be used.
 -   Rating
 -   **ratingModuleId**: which rating module should be used
--   1 =\> !DefaultRatingModule
+-   1 => !DefaultRatingModule
 -   **useTargetRobotState**: whether it should be checked if the
     calculated target robot state is reachable
 -   Weights of the components of the rating for a viewport:
@@ -247,10 +247,10 @@ visualization. Those topics are:
     next_best_view node gets them.
 -   Camera model filter
 -   **cameraFilterId**: which camera filter should be used:
--   1 =\> Raytracing3DBasedStereoCameraModelFilter
--   2 =\> !StereoCameraModelFilter
--   3 =\> Raytracing3DBasedSingleCameraModelFilter
--   4 =\> !SingleCameraModelFilter
+-   1 => Raytracing3DBasedStereoCameraModelFilter
+-   2 => !StereoCameraModelFilter
+-   3 => Raytracing3DBasedSingleCameraModelFilter
+-   4 => !SingleCameraModelFilter
 -   **fovx**: horizontal field of view in degree
 -   **fovy**: vertical field of view in degree
 -   **ncp**: distance of near clipping plane in meters
@@ -263,23 +263,23 @@ visualization. Those topics are:
 -   **visualizeRaytracing**: whether the raytracing shall be visualized
 -   Hypothesis updater
 -   **hypothesisUpdaterId**: which hypothesis updater should be used:
--   1 =\> !PerspectiveHypothesisUpdater
--   2 =\> !DefaultHypothesisUpdater
+-   1 => !PerspectiveHypothesisUpdater
+-   2 => !DefaultHypothesisUpdater
 -   **mHypothesisUpdaterAngleThreshold**: maximum angle threshold, used
     by the HypothesisUpdater to remove normals within that angle. The
     angle used for comparison is the angle between the camera
     orientation and the object normal.
 -   Space sampler
 -   **spaceSamplerId**: which sampler should be used:
--   1 =\> !MapBasedHexagonSpaceSampler
--   2 =\> !MapBasedRandomSpaceSampler
+-   1 => !MapBasedHexagonSpaceSampler
+-   2 => !MapBasedRandomSpaceSampler
 -   **radius**: the radius of the hexagons if using the
     !MapBasedHexagonSpaceSampler
 -   **sampleSizeMapBasedRandomSpaceSampler**: the number of samples that
     should be generated if using the !MapBasedRandomSpaceSampler
 -   Unit sphere sampler
 -   **sphereSamplerId**:
--   1 =\> !SpiralApproxUnitSphereSampler
+-   1 => !SpiralApproxUnitSphereSampler
 -   **sampleSizeUnitSphereSampler**: the amount of sampled points on the
     unit sphere
 -   Map

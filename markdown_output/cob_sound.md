@@ -73,12 +73,12 @@ sudo ldconfig
 ```{=html}
 <!-- -->
 ```
--   apply fix for Ubuntu \> 12.04 ```
+-   apply fix for Ubuntu > 12.04 ```
 roscd cob_sound
 sudo ./fix_swift_for_precise.sh
 ```
 
-if that fix doesn\'t help, try to install alsa-oss
+if that fix doesn't help, try to install alsa-oss
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."
 ```0 and modify /usr/local/bin/swift_fix to contain

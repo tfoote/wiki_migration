@@ -1,13 +1,13 @@
 ## Package Overview
 
-\`diagnostics_handler\` is a *tabpage handler* for the
+`diagnostics_handler` is a *tabpage handler* for the
 [touchosc_bridge](touchosc_bridge) package. It provides an interface to
 the diagnostics and diagnostics_agg topics that many pieces of hardware
 utilize. It gives an at-a-glance look at the status of hardware and
 software systems on your robot.
 
 This package includes layouts for both iPad and iPhone-sized devices in
-the \`diagnostics_handler/layouts\` directory. When launched, the node
+the `diagnostics_handler/layouts` directory. When launched, the node
 will respond to incoming OSC messages from both sized layouts.
 
 ## Video Demo
@@ -26,7 +26,7 @@ will respond to incoming OSC messages from both sized layouts.
 
 ## Features
 
-Some of the main features of the \`diagnostics_handler\`. These features
+Some of the main features of the `diagnostics_handler`. These features
 may be seen in the above YouTube video.
 
 -   Multiple client support
@@ -40,10 +40,10 @@ may be seen in the above YouTube video.
 ## Configuration
 
 Example launch and configuration files are included for the
-\`diagnostics_handler\` in it\'s package directory. Also, an example
-\`diagnostics.yaml\` file is included below. This file should be loaded
+`diagnostics_handler` in it's package directory. Also, an example
+`diagnostics.yaml` file is included below. This file should be loaded
 to the [Parameter Server](Parameter Server) using your configured
-\`.launch\` file.
+`.launch` file.
 
 ```
 # Handler specific information

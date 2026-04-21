@@ -8,7 +8,7 @@ the creation of Interactive Markers in OpenSceneGraph applications.
 
 ## Setting an Interactive Markers client in OSG
 
-Let\'s have a look to the `osg_interactive_markers_demo.cpp` example,
+Let's have a look to the `osg_interactive_markers_demo.cpp` example,
 inside the `osg_interactive_markers` package:
 
 ```cplusplus
@@ -90,7 +90,7 @@ Unlike in rviz, here you need to press the Control key for enabling
 interaction. For instance, if you want to interact with a marker, you
 have to press the Control key, and then click on the marker and drag.
 
-Let\'s have a look to the code required for setting the Interactive
+Let's have a look to the code required for setting the Interactive
 Markers client. First you need to create a FrameManager instance and set
 the fixed frame where you expect the markers to be referenced to. After
 that, InteractiveMarkerDisplay is the main class you have to

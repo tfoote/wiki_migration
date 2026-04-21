@@ -12,7 +12,7 @@ instructions at <http://april.eecs.umich.edu/wiki/index.php/April_Tags>
 Since the [april_tags_node](april_tags_node) package subscribes to a ROS
 image topic for the camera stream, it is *not essential* for this node
 to work. However, if you intend to run the standalone tools in the
-[april_tk](april_tk) package, you\'ll need this viewer to work.
+[april_tk](april_tk) package, you'll need this viewer to work.
 ```
 rosrun april_tk execute april.jcam.JCamView
 ```
@@ -34,7 +34,7 @@ working. Note that the focal length of the camera as well as the tag
 size is hard-coded into Tag Test, so the detection might be projected
 incorrectly. ```
 rosrun april_tk execute april.tag.TagTest --url <cam-url> [--tagfamily <tag-family>]
-``` You can determine \`cam-url\`
+``` You can determine `cam-url`
 through the Cam Viewer utility. Run Tag Test without any arguments to
 see the help menu.
 

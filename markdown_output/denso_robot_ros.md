@@ -38,7 +38,7 @@ configuration package.
 ## Installation
 
 The packages in the main repository have been released into ROS Indigo
-on Ubuntu, making installation through \`apt-get\` or synaptic possible.
+on Ubuntu, making installation through `apt-get` or synaptic possible.
 Other Linux distributions will have to build from source.
 
 To install all released Indigo packages, run the following on the
@@ -53,4 +53,4 @@ the available tutorials.
 
 ## Report a Bug
 
-\<\<GitHubIssues(DENSORobot/denso_robot_ros)\>\>
+<<GitHubIssues(DENSORobot/denso_robot_ros)>>

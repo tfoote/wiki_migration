@@ -57,7 +57,7 @@ $ sudo apt-get install r-cran-rcpp
 ``` Then simply download the rosR package via git
 from the repository and run catkin_make.
 
-That\'s all folks!
+That's all folks!
 
 ## R-Side
 
@@ -261,7 +261,7 @@ format, like for example a laserscan, you wil get the following result:
 ```bash
 $ sudo apt-get install r-cran-rcpp
 ```9 A message in this case is always a composition
-of lists, therefor single elements are accessed with \"\$\". Thus, the
+of lists, therefor single elements are accessed with "\$". Thus, the
 structure of a message is quite similar to the structures in other
 languages, but instead of a point, you have to use a dollar. Changing
 and reading the header sequence would than be done as follows:

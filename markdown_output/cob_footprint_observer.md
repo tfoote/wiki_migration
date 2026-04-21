@@ -1,10 +1,10 @@
-The \`cob_footprint_observer\` observes the setup of the Care-O-Bot
+The `cob_footprint_observer` observes the setup of the Care-O-Bot
 (including arm and tray) and inflates the footprint to contain the arm
 and the tray. It allows for reading the adjusted footprint using either
-the \`GetFootprint\` service or the published \`adjusted_footprint\`
+the `GetFootprint` service or the published `adjusted_footprint`
 topic.
 
-**Note:** The \`cob_footprint_observer\` only works with rectangular
+**Note:** The `cob_footprint_observer` only works with rectangular
 footprints.
 
 ## Hardware Requirements
@@ -74,7 +74,7 @@ prov_tf{
 
 This package is not intended to be used directly, but with the
 corresponding launch and yaml files. For starting the footprint observer
-with the \`collision_velocity_filter\` use ```
+with the `collision_velocity_filter` use ```
 roslaunch cob_bringup base_collision_observer.launch
 ``` For
 including the footprint observer in your overall launch file use

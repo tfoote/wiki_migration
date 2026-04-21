@@ -1,5 +1,5 @@
 A successor of [pr2_dashboard](pr2_dashboard) with enhancements based on
-\`rqt\` framework.
+`rqt` framework.
 
 ## Install
 

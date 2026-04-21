@@ -63,21 +63,21 @@ roscd srs_user_tests/ros/config/ipa-apartment
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch map:=$(pwd)/map.yaml
 ```0
 
-\`exp\` Experiment.
+`exp` Experiment.
 
-\`task\` Code of the task.
+`task` Code of the task.
 
-\`cond\` Condition or subtask.
+`cond` Condition or subtask.
 
-\`sim\` Set \`sim\` to true for simulated scenario, otherwise omit this
+`sim` Set `sim` to true for simulated scenario, otherwise omit this
 argument or set to false.
 
-\`log\` When setted to true, logs will be recorded (to
+`log` When setted to true, logs will be recorded (to
 srs_user_tests/data/logs/p1/e2/man2/a for given example) on the robot.
 Topics for logging are specified separately for each task in
 configuration directory.
 
-\`id\` Argument \`id\` can be arbitrary string and it can be used to tag
+`id` Argument `id` can be arbitrary string and it can be used to tag
 test/participant.
 
 ### on remote pc
@@ -87,11 +87,11 @@ roscd srs_user_tests/ros/config/ipa-apartment
 roslaunch cob_navigation_global 2dnav_ros_dwa.launch map:=$(pwd)/map.yaml
 ```1
 
-Arguments \`exp\`, \`task\`, \`cond\`, \`sim\` and \`id\` have the same
-meaning for both launch files. Just \`id\` has slightly different
+Arguments `exp`, `task`, `cond`, `sim` and `id` have the same
+meaning for both launch files. Just `id` has slightly different
 function:
 
-\`log\` When setted to true, screenshots will be recorded (to
+`log` When setted to true, screenshots will be recorded (to
 srs_user_tests/data/logs/p1/e2/man2/a for given example) on the remote
 machine.
 

@@ -1,8 +1,8 @@
-Maintainer: Nemanja Babic \< nemanja.babic@hotmail.com \>, Charles
-Blouin \< charles.blouin@rcbenchmark.com \>
+Maintainer: Nemanja Babic < nemanja.babic@hotmail.com >, Charles
+Blouin < charles.blouin@rcbenchmark.com >
 
-Author: Nemanja Babic \< nemanja.babic@hotmail.com \> Charles Blouin \<
-charles.blouin@rcbenchmark.com \>
+Author: Nemanja Babic < nemanja.babic@hotmail.com > Charles Blouin <
+charles.blouin@rcbenchmark.com >
 
 License: Apache
 
@@ -16,7 +16,7 @@ using `git clone`:
 
 ```
 $ git clone https://gitlab.com/TytoRobotics/rcbenchmark_ros_pkg.git
-``` If you\'d like to contribute to the package,
+``` If you'd like to contribute to the package,
 feel free to check it out from GitLab and submit pull requests.
 
 To learn more about the RCbenchmark Tracking Lab, see the our website
@@ -51,13 +51,13 @@ sent to Gazebo. The package is written in C++.
 
 Copyright 2017 Tyto Robotics Inc.
 
-Licensed under the Apache License, Version 2.0 (the \"License\"); you
+Licensed under the Apache License, Version 2.0 (the "License"); you
 may not use this file except in compliance with the License. You may
 obtain a copy of the License at
 
 <http://www.apache.org/licenses/LICENSE-2.0> Unless required by
 applicable law or agreed to in writing, software distributed under the
-License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR
+License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied. See the License for
 the specific language governing permissions and limitations under the
 License.

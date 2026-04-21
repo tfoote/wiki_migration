@@ -2,7 +2,7 @@
 
 This package contains nodes to enable the use of Toposens ECHO ONE
 sensor within ROS. Data will be published as
-\<\<MsgLink(toposens_msgs/TsScan)\>\>.
+<<MsgLink(toposens_msgs/TsScan)>>.
 
 ## ROS Nodes
 

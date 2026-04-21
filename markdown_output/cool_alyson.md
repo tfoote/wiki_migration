@@ -1,7 +1,7 @@
 # Package Summary
 
 This is just a test for upload to ROS webside.And the source code is
-about how ROS \"TOPIC\" work.
+about how ROS "TOPIC" work.
 
 **Maintainer status:** maintained
 

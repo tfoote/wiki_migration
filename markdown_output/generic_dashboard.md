@@ -4,7 +4,7 @@ This package is a work in progress. The goal is to be able to create
 PR2/Turtlebot-like dashboards without an intimate knowledge of RX.
 
 The system is built around having
-\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\> messages published by
+<<MsgLink(diagnostic_msgs/DiagnosticArray)>> messages published by
 the robot drivers.
 
 ## Documentation

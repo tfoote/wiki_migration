@@ -6,17 +6,17 @@ for details on many of the parameters listed below.
 
 ## Hardware Requirements
 
-To use \`slam_gmapping\`, you need a mobile robot that provides odometry
+To use `slam_gmapping`, you need a mobile robot that provides odometry
 data and is equipped with a horizontally-mounted, fixed, laser
-range-finder. The \`slam_gmapping\` node will attempt to transform each
-incoming scan into the \`odom\` (odometry) [tf](tf) frame. See the
-\"[Required tf transforms](#Required_tf_Transforms)\" for more on
+range-finder. The `slam_gmapping` node will attempt to transform each
+incoming scan into the `odom` (odometry) [tf](tf) frame. See the
+"[Required tf transforms](#Required_tf_Transforms)" for more on
 required transforms.
 
 ## Example
 
 To make a map from a robot with a laser publishing scans on the
-\`base_scan\` topic:
+`base_scan` topic:
 
 ```
 rosrun gmapping slam_gmapping scan:=base_scan

@@ -13,7 +13,7 @@ features of our SLAM.
 
 `1.` RANSAC-aided registration This is more robust also it is slower
 than the ICP registration. This feature can already be tested by
-changing the parameter \"registration_mode\". You need to use lower ICP
+changing the parameter "registration_mode". You need to use lower ICP
 distance filter values for this! `2.` Multi-robot SLAM Multiple robots
 build one map simultaneously. This approach has the benefit that no map
 merging is necessary after the mission. This strategy has been deployed
@@ -108,9 +108,9 @@ $ catkin_make --only-pkg-with-deps ohm_tsd_slam
 ```
 
 Finally, you can use the slam.launch launchfile to run the SLAM. If you
-play a bagfile that publishes sensor_msgs::LaserScan on the \"/scan\"
-topic you will receive a map on topic \"/map\" and the robot\'s pose on
-\"/pose\"
+play a bagfile that publishes sensor_msgs::LaserScan on the "/scan"
+topic you will receive a map on topic "/map" and the robot's pose on
+"/pose"
 
 ```
 $ roslaunch ohm_tsd_slam slam.launch

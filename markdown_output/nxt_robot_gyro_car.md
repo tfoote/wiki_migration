@@ -4,7 +4,7 @@
 
 After building the robot, make sure the sensors and servos are connected
 as listed in the robot.yaml file.
-\<\<GetCode(<http://nxt.foote-ros-pkg.googlecode.com/hg/nxt_robots/nxt_robot_gyro_car/robot.yaml,#!python>)\>\>
+<<GetCode(<http://nxt.foote-ros-pkg.googlecode.com/hg/nxt_robots/nxt_robot_gyro_car/robot.yaml,#!python>)>>
 
 Now you can start your base robot: ```
 roslaunch nxt_robot_gyro_car robot.launch

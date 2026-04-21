@@ -2,7 +2,7 @@
 
 The database interface provides an easy way to access SQL databases from
 C++ code. In particular, it allows the user to focus on the conceptual
-\"objects\" stored in the database, rather than the database itself. A
+"objects" stored in the database, rather than the database itself. A
 C++ class definition is wrapped around an entry in a database table, and
 a row of the table corresponds to an instance of the C++ class. For most
 common functionality, the user never writes explicit SQL queries.

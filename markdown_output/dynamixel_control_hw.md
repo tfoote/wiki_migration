@@ -16,7 +16,7 @@ acceleration, encoder\...).
 -   works with both version of Dynamixel protocol (1 and 2)
 -   uses radians uniformly over all Dynamixel models (no need to worry
     about ticks-to-angle conversion)
--   you can set an offset for each actuator\'s position
+-   you can set an offset for each actuator's position
 -   set names for your dynamixels in a configuration file
 -   joint limits
 
@@ -33,21 +33,21 @@ We are currently working on the following features:
 
 [dynamixel_control_hw](https://github.com/resibots/dynamixel_control_hw)
 depends on the [libdynamixel](https://github.com/resibots/libdynamixel)
-library. Please install it, it\'s light and quick.
+library. Please install it, it's light and quick.
 
-Then, you\'ll need to store the installation path of libdynamixel in the
+Then, you'll need to store the installation path of libdynamixel in the
 **LIBDYNAMIXEL** environment variable.
 
 Install the ros package ros_control. In apt-get, it is called
-\`ros-YourDistro-ros-control\` (where \*YourDistro\* must be changed by
-the ROS distribution\'s name, like indigo or jade).
+`ros-YourDistro-ros-control` (where \*YourDistro\* must be changed by
+the ROS distribution's name, like indigo or jade).
 
-Clone the \`dynamixel_control_hw\` repository in your catkin
-workspace\'s source directory and run a \`catkin_make\`.
+Clone the `dynamixel_control_hw` repository in your catkin
+workspace's source directory and run a `catkin_make`.
 
 ## Parameters
 
-For sample configuration files, see the ones in \`config/\`. Here are
+For sample configuration files, see the ones in `config/`. Here are
 the accepted parameters.
 
 ```
@@ -106,31 +106,31 @@ the accepted parameters.
 If you want to use the sample launch files or to use one of the default
 controllers, please install with apt-get:
 
-\- \`ros-YourDistro-ros-controllers\` and -
-\`ros-YourDistro-joint-state-publisher\`.
+\- `ros-YourDistro-ros-controllers` and -
+`ros-YourDistro-joint-state-publisher`.
 
-Have a look at the \`launch/sample.launch\` file. It will by default
+Have a look at the `launch/sample.launch` file. It will by default
 launch two feed-forward only controllers (one position and one velocity)
 and a virtual controller that publishes the states of the two actuators.
 
--   Before starting\* it, check \`config/sample.yaml\` for the \`id\`
-    parameters, the \`serial_interface\` and \`baudrate\` settings. Once
-    you are sure that it\'s correct, you can \`roslaunch
-    dynamixel_control_hw sample.launch\`. By looking at the available
+-   Before starting\* it, check `config/sample.yaml` for the `id`
+    parameters, the `serial_interface` and `baudrate` settings. Once
+    you are sure that it's correct, you can `roslaunch
+    dynamixel_control_hw sample.launch`. By looking at the available
     topics, you should find two, for the commands the joints, and one
     for the joint state.
 
 ## Troubleshooting read time
 
 If the reading time seems too long, check the value of the USB latency
-timer. On ubuntu this value is retrieved with this command \`cat
-/sys/bus/usb-serial/devices/ttyUSB0/latency_timer\`. It is the time, in
+timer. On ubuntu this value is retrieved with this command `cat
+/sys/bus/usb-serial/devices/ttyUSB0/latency_timer`. It is the time, in
 milliseconds, for which the device driver buffers data before making it
 available.
 
-You can change this timer with the command \`echo 4 \| sudo tee
-/sys/bus/usb-serial/devices/ttyUSB0/latency_timer\` which sets it to 4
-ms for the device \`/dev/ttyUSB0\`.
+You can change this timer with the command `echo 4 \| sudo tee
+/sys/bus/usb-serial/devices/ttyUSB0/latency_timer` which sets it to 4
+ms for the device `/dev/ttyUSB0`.
 
 ## Alternative software
 

@@ -27,7 +27,7 @@ rosmake pointing_markers
 roslaunch pointing_markers pointing_markers.launch
 ```
 
-RViz : File\>\>Open Config\>\>RViz_pointing_markers.vcg
+RViz : File>>Open Config>>RViz_pointing_markers.vcg
 
 <attachment:RViz_pointing_markers.vcg>
 

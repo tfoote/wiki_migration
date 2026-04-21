@@ -34,8 +34,8 @@ roscore_ip : Since there is no roscore running on the robot, we have to
 tell it the IP of the roscore to use. 3. network_interface : By default,
 we assume that your computer is connected via eth0. When you are
 connected via WLAN or VPN, name the correct network interface here
-(eth1, wlan0, vpn0 etc). \`\`\`This is only available in the C++
-version\`\`\`
+(eth1, wlan0, vpn0 etc). ```This is only available in the C++
+version```
 
 See the [naoqi_driver](naoqi_driver) and
 [naoqi_driver_py](naoqi_driver_py) for further details.

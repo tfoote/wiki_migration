@@ -11,7 +11,7 @@ you have to do is:
 -   make sure the package.xml actually contains all the packages you
     depend on.
 
-If you don\'t want to agree to this, there are ways to get this done as
+If you don't want to agree to this, there are ways to get this done as
 well. This will require you to modify our template file a bit.
 
 On the other hand, you get a lot of things for free:
@@ -31,4 +31,4 @@ On the other hand, you get a lot of things for free:
 For more information, please refer to the documentation
 [within the repository](https://github.com/KIT-MRT/mrt_cmake_modules)
 
-\<\<GitHubIssues(KIT-MRT/mrt_cmake_modules)\>\>
+<<GitHubIssues(KIT-MRT/mrt_cmake_modules)>>

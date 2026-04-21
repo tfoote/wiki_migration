@@ -1,6 +1,6 @@
 # system_modes
 
-\`system_modes\` is a small ROS 2 C++ package that assumes that the ROS
+`system_modes` is a small ROS 2 C++ package that assumes that the ROS
 2 system is built from components with a lifecycle
 ([managed nodes](http://design.ros2.org/articles/node_lifecycle.html)).
 It adds a notion of (sub-)systems, hierarchically grouping these nodes,

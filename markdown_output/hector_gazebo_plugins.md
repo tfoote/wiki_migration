@@ -7,7 +7,7 @@ using differential drive.
 
 ### GazeboRosImu
 
-\`GazeboRosImu\` is a replacement for the \`GazeboRosImu\` plugin in
+`GazeboRosImu` is a replacement for the `GazeboRosImu` plugin in
 package [gazebo_plugins](gazebo_plugins). It simulates an Inertial
 Measurement Unit (IMU) affected by Gaussian noise and low-frequency
 random drift. The orientation returned mimics a simple Attitude and
@@ -16,90 +16,90 @@ accelerations.
 
 #### Published Topics
 
--   \`imu\` (\<\<MsgLink(sensor_msgs/Imu)\>\>):
+-   `imu` (<<MsgLink(sensor_msgs/Imu)>>):
 
 . The simulated IMU measurements (in body coordinates) and estimated
 orientation relative to the world frame.
 
 #### Advertised Services
 
--   \`imu/calibrate\` (\<\<SrvLink(std_srvs/Empty)\>\>):
+-   `imu/calibrate` (<<SrvLink(std_srvs/Empty)>>):
 
 . Resets the offset and drift error of the gyroscopes.
 
--   \`imu/set_accel_bias\`
-    (\<\<SrvLink(hector_gazebo_plugins/SetBias)\>\>):
+-   `imu/set_accel_bias`
+    (<<SrvLink(hector_gazebo_plugins/SetBias)>>):
 
 . Sets the current offset error of the accelerometers and resets random
 drift.
 
--   \`imu/set_gyro_bias\`
-    (\<\<SrvLink(hector_gazebo_plugins/SetBias)\>\>):
+-   `imu/set_gyro_bias`
+    (<<SrvLink(hector_gazebo_plugins/SetBias)>>):
 
 . Sets the current offset error of the gyroscopes and resets the random
 drift.
 
 #### XML Parameters
 
--   \`updateRate\` (double): the update rate of the sensor in hertz
--   \`robotNamespace\` (string): namespace prefix for topic and service
+-   `updateRate` (double): the update rate of the sensor in hertz
+-   `robotNamespace` (string): namespace prefix for topic and service
     names
--   \`bodyName\` (string, required): name of the body which holds the
+-   `bodyName` (string, required): name of the body which holds the
     IMU sensor
--   \`topicName\` (string): name of the sensor output topic and prefix
-    of service names (defaults to \`imu\`)
--   \`serviceName\` (string): name of the calibrate service (for
+-   `topicName` (string): name of the sensor output topic and prefix
+    of service names (defaults to `imu`)
+-   `serviceName` (string): name of the calibrate service (for
     compatibility with [gazebo_plugins](gazebo_plugins), defaults to
-    \`\[topicName\]/calibrate\`)
+    `\[topicName\]/calibrate`)
 
 ```{=html}
 <!-- -->
 ```
--   \`accelOffset\` (Vector3): constant acceleration offset
--   \`accelDrift\` (Vector3): standard deviation of the acceleration
+-   `accelOffset` (Vector3): constant acceleration offset
+-   `accelDrift` (Vector3): standard deviation of the acceleration
     drift error
--   \`accelDriftFrequency\` (Vector3): mean frequency of the
+-   `accelDriftFrequency` (Vector3): mean frequency of the
     acceleration drift
--   \`accelGaussianNoise\` (Vector3): standard deviation of the additive
+-   `accelGaussianNoise` (Vector3): standard deviation of the additive
     Gaussian acceleration noise
 
 ```{=html}
 <!-- -->
 ```
--   \`rateOffset\` (Vector3): constant rate offset
--   \`rateDrift\` (Vector3): standard deviation of the rate drift error
--   \`rateDriftFrequency\` (Vector3): mean frequency of the rate drift
--   \`rateGaussianNoise\` (Vector3): standard deviation of the additive
+-   `rateOffset` (Vector3): constant rate offset
+-   `rateDrift` (Vector3): standard deviation of the rate drift error
+-   `rateDriftFrequency` (Vector3): mean frequency of the rate drift
+-   `rateGaussianNoise` (Vector3): standard deviation of the additive
     Gaussian rate noise
 
 ```{=html}
 <!-- -->
 ```
--   \`yawOffset\` (double): constant yaw/heading offset
--   \`yawDrift\` (double): standard deviation of the yaw/heading drift
+-   `yawOffset` (double): constant yaw/heading offset
+-   `yawDrift` (double): standard deviation of the yaw/heading drift
     error
--   \`yawDriftFrequency\` (double): mean frequency of the yaw/heading
+-   `yawDriftFrequency` (double): mean frequency of the yaw/heading
     drift
--   \`yawGaussianNoise\` (double): standard deviation of the yaw/heading
+-   `yawGaussianNoise` (double): standard deviation of the yaw/heading
     additive Gaussian noise
 
 ```{=html}
 <!-- -->
 ```
--   \`rpyOffsets\` (Vector3): if non-zero, used to calculate
-    \`accelOffset\` and \`yawOffset\` so that resulting roll, pitch and
+-   `rpyOffsets` (Vector3): if non-zero, used to calculate
+    `accelOffset` and `yawOffset` so that resulting roll, pitch and
     yaw errors correspond to this values when the platform is leveled
     (for compatibility with [gazebo_plugins](gazebo_plugins))
--   \`gaussianNoise\` (double): if non-zero, this value is used as
+-   `gaussianNoise` (double): if non-zero, this value is used as
     standard deviation of Gaussian noise for acceleration and angular
     rate measurements (for compatibility with
     [gazebo_plugins](gazebo_plugins))
 
 ### GazeboRosGps
 
-\`GazeboRosGps\` simulates a GNSS (Global Navigation Satellite System)
+`GazeboRosGps` simulates a GNSS (Global Navigation Satellite System)
 receiver which is attached to a robot. It publishs
-\<\<MsgLink(sensor_msgs/NavSatFix)\>\> messages with the robot\'s
+<<MsgLink(sensor_msgs/NavSatFix)>> messages with the robot's
 position and altitude in WGS84 coordinates. The reference point that
 corresponds to the origin of the gazebo frame can be configured using
 the XML parameters. The conversion between gazebo coordinates and WGS84
@@ -111,78 +111,78 @@ regions.
 
 #### Published Topics
 
--   \`fix\` (\<\<MsgLink(sensor_msgs/NavSatFix)\>\>):
+-   `fix` (<<MsgLink(sensor_msgs/NavSatFix)>>):
 
 . The simulated GNSS position in WGS84 coordinates (latitude, longitude
 and altitude).
 
--   \`fix_velocity\` (\<\<MsgLink(geometry_msgs/Vector3Stamped)\>\>):
+-   `fix_velocity` (<<MsgLink(geometry_msgs/Vector3Stamped)>>):
 
 . The GNSS velocity vector in NWU (north, west, up) coordinates.
 
 #### XML Parameters
 
--   \`updateRate\` (double): the update rate of the sensor in
+-   `updateRate` (double): the update rate of the sensor in
     milliseconds
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`bodyName\` (string, required): name of the body the GNSS receiver
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `bodyName` (string, required): name of the body the GNSS receiver
     is attached to
--   \`frameId\` (string): frame_id included in the message headers
+-   `frameId` (string): frame_id included in the message headers
     (defaults to empty)
--   \`topicName\` (string): fix output topic (defaults to \`fix\`)
--   \`velocityTopicName\` (string): velocity output topic (defaults to
-    \`fix_velocity\`)
+-   `topicName` (string): fix output topic (defaults to `fix`)
+-   `velocityTopicName` (string): velocity output topic (defaults to
+    `fix_velocity`)
 
 ```{=html}
 <!-- -->
 ```
--   \`referenceLatitude\` (double): latitude of the reference point in
+-   `referenceLatitude` (double): latitude of the reference point in
     degrees north (defaults to 49.9)
--   \`referenceLongitude\` (double): longitude of the reference point in
+-   `referenceLongitude` (double): longitude of the reference point in
     degrees east (defaults to 8.9)
--   \`referenceHeading\` (double): geographic heading of gazebo frame\'s
+-   `referenceHeading` (double): geographic heading of gazebo frame's
     x axis in degrees (defaults to 0.0)
--   \`referenceAltitude\` (double): altitude (height above WGS84
+-   `referenceAltitude` (double): altitude (height above WGS84
     ellipsoid) of the reference point in meters (defaults to 0.0)
 
 ```{=html}
 <!-- -->
 ```
--   \`status\` (int8): status flag in the fix message (defaults to
-    \`STATUS_FIX\`, see \<\<MsgLink(sensor_msgs/NavSatStatus)\>\>)
--   \`service\` (uint16): service flag in the fix message (defaults to
-    \`SERVICE_GPS\`, see \<\<MsgLink(sensor_msgs/NavSatStatus)\>\>)
+-   `status` (int8): status flag in the fix message (defaults to
+    `STATUS_FIX`, see <<MsgLink(sensor_msgs/NavSatStatus)>>)
+-   `service` (uint16): service flag in the fix message (defaults to
+    `SERVICE_GPS`, see <<MsgLink(sensor_msgs/NavSatStatus)>>)
 
 ```{=html}
 <!-- -->
 ```
--   \`offset\` (Vector3): a constant position offset in meters given in
+-   `offset` (Vector3): a constant position offset in meters given in
     gazebo coordinates
--   \`drift\` (Vector3): standard deviation of the position drift error
+-   `drift` (Vector3): standard deviation of the position drift error
 
 . **Note:** The current velocity error is added to the position drift in
 each update step. Even if this parameter is zero, the velocity error is
 also reflected in the position.
 
--   \`driftFrequency\` (Vector3): mean frequency of the position drift
--   \`gaussianNoise\` (Vector3): standard deviation of the additive
+-   `driftFrequency` (Vector3): mean frequency of the position drift
+-   `gaussianNoise` (Vector3): standard deviation of the additive
     Gaussian noise added to the position
 
 ```{=html}
 <!-- -->
 ```
--   \`velocityOffset\` (Vector3): constant velocity offset in
+-   `velocityOffset` (Vector3): constant velocity offset in
     meters/seconds given in gazebo coordinates
--   \`velocityDrift\` (Vector3): standard deviation of the velocity
+-   `velocityDrift` (Vector3): standard deviation of the velocity
     error
--   \`velocityDriftFrequency\` (Vector3): mean frequency of the velocity
+-   `velocityDriftFrequency` (Vector3): mean frequency of the velocity
     drift
--   \`velocityGaussianNoise\` (Vector3): standard deviation of the
+-   `velocityGaussianNoise` (Vector3): standard deviation of the
     additive Gaussian noise added to the velocity
 
 ### GazeboRosMagnetic
 
-This plugin simulates a 3-axis magnetometer like PNI Corp\'s
+This plugin simulates a 3-axis magnetometer like PNI Corp's
 [MicroMag](http://www.pnicorp.com/products/micromag-modules). Like for
 the GPS plugin, the orientation of the gazebo frame can be specified via
 the referenceHeading parameter. Declination, inclination and field
@@ -193,60 +193,60 @@ magnitude information (normalized vector). Check
 
 #### Published Topics
 
--   \`magnetic\` (\<\<MsgLink(geometry_msgs/Vector3Stamped)\>\>):
+-   `magnetic` (<<MsgLink(geometry_msgs/Vector3Stamped)>>):
 
 . The magnetic field vector given in body coordinates.
 
 #### XML Parameters
 
--   \`updateRate\` (double): the update rate of the sensor in
+-   `updateRate` (double): the update rate of the sensor in
     milliseconds
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`bodyName\` (string, required): name of the body the sensor is
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `bodyName` (string, required): name of the body the sensor is
     attached to
--   \`topicName\` (string): fix output topic (defaults to /fix)
--   \`magnitude\` (double): magnitude of the magnetic field in whatever
+-   `topicName` (string): fix output topic (defaults to /fix)
+-   `magnitude` (double): magnitude of the magnetic field in whatever
     unit you want (defaults to 1.0)
 
 ```{=html}
 <!-- -->
 ```
--   \`referenceHeading\` (double): geographic heading of gazebo frame\'s
+-   `referenceHeading` (double): geographic heading of gazebo frame's
     x axis in degrees (defaults to 0.0)
--   \`declination\` (double): declination (angle between true and
+-   `declination` (double): declination (angle between true and
     magnetic north) in degrees (defaults to 0.0)
--   \`inclination\` (double): inclination (angle between the horizontal
+-   `inclination` (double): inclination (angle between the horizontal
     plane and the magnetic field) in degrees (defaults to 60.0)
 
 ```{=html}
 <!-- -->
 ```
--   \`offset\` (Vector3): a constant offset added to the magnetic field
+-   `offset` (Vector3): a constant offset added to the magnetic field
     vector. This parameter can be used to simulate deviation caused by
     magnetized iron within the robot.
--   \`drift\` (Vector3): standard deviation of the drift error
--   \`driftFrequency\` (Vector3): mean frequency of the drift
--   \`gaussianNoise\` (Vector3): standard deviation of the additive
+-   `drift` (Vector3): standard deviation of the drift error
+-   `driftFrequency` (Vector3): mean frequency of the drift
+-   `gaussianNoise` (Vector3): standard deviation of the additive
     Gaussian noise added to the magnetic field
 
 ### GazeboRosSonar
 
-The \`GazeboRosSonar\` plugin is a ROS controller for gazebo\'s built-in
+The `GazeboRosSonar` plugin is a ROS controller for gazebo's built-in
 ray sensor. The value returned as sonar range is the minimum of all
 rays, as a sonar ranger returns the distance corresponding to the first
-echo returned from a object within it\'s field of view. The behavior of
+echo returned from a object within it's field of view. The behavior of
 this controller plugin depends mainly on the parameters of the sensor it
 is attached to.
 
-The \<controller:hector_gazebo_ros_sonar\> tag is only valid within a
-surrounding \`\<sensor:ray\>\` tag. You should use the macro defined in
-\`sonar_sensor.urdf.xacro\` in package
+The <controller:hector_gazebo_ros_sonar> tag is only valid within a
+surrounding `<sensor:ray>` tag. You should use the macro defined in
+`sonar_sensor.urdf.xacro` in package
 [hector_sensors_description](hector_sensors_description) to include a
 sonar sensor to your model.
 
 #### Published Topics
 
--   \`sonar\` (\<\<MsgLink(sensor_msgs/Range)\>\>):
+-   `sonar` (<<MsgLink(sensor_msgs/Range)>>):
 
 . A Range message containing the minimum distance of all rays. The
 field_of_view, min_range and max_range values reflect the parameters of
@@ -254,21 +254,21 @@ the ray sensor.
 
 #### XML Parameters
 
--   \`updateRate\` (double): the update rate of the sensor in
+-   `updateRate` (double): the update rate of the sensor in
     milliseconds, should be equal to the update rate of the containing
-    sensor\'s updateRate
--   \`robotNamespace\` (string): namespace prefix for topic names
--   \`frameId\` (string): frame_id included in the message header
--   \`topicName\` (string): name of the sensor output topic (defaults to
-    \`sonar\`)
+    sensor's updateRate
+-   `robotNamespace` (string): namespace prefix for topic names
+-   `frameId` (string): frame_id included in the message header
+-   `topicName` (string): name of the sensor output topic (defaults to
+    `sonar`)
 
 ```{=html}
 <!-- -->
 ```
--   \`offset\` (double): a constant offset added to the range
--   \`drift\` (double): standard deviation of the drift error
--   \`driftFrequency\` (double): mean frequency of the drift
--   \`gaussianNoise\` (double): standard deviation of the additive
+-   `offset` (double): a constant offset added to the range
+-   `drift` (double): standard deviation of the drift error
+-   `driftFrequency` (double): mean frequency of the drift
+-   `gaussianNoise` (double): standard deviation of the additive
     Gaussian noise
 
 ## Sensor Error Model

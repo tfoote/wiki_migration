@@ -58,7 +58,7 @@ elements.
     **RobotEnvironments** and **TasksEnvironments**, which directly
     connect to Gazebo (because they inherit from **GazeboEnvironment**)
 
-![OpenAi ROS pipeline\|width=\"1000\"](attachment:pipeline.png)
+![OpenAi ROS pipeline\|width="1000"](attachment:pipeline.png)
 
 In general terms, the structure of the figure can be divided in 2 big
 parts:
@@ -85,9 +85,9 @@ just use the desired ones and concentrate on the learning algorithm.
 
 In case you want to use a non-provided robot or a different task
 training, you will only have to deal with the first two classes, in
-order to specify the task and/or the robot. The
-**\'GazeboEnvironment**\' is already provided by the **\'openai_ros**\'
-and you don\'t have to modify it.
+order to specify the task and/or the robot. The **`GazeboEnvironment`**
+is already provided by the **`openai_ros`** and you don't have to
+modify it.
 
 -   **Training Script**: The training script will **define and set up
     the learning algorithm** that you are going to use in order to train
@@ -114,7 +114,7 @@ openai_ros package.
 
 #### The Gazebo Environment
 
-As I\'ve said before, the Gazebo Environment is mainly used to connect
+As I've said before, the Gazebo Environment is mainly used to connect
 the simulated environment to the Gazebo simulator. For instance, it
 takes care of the **resets of the simulator after each step**, or the
 **resets of the controllers** (if needed), it also takes care of all the
@@ -139,9 +139,9 @@ This class also publishes the last episode reward on the topic
 
 Anyways, the most important thing you need to know about this
 environment, is that it will be transparent to you. And what does this
-mean? Well, it basically means that you don\'t have to worry about it.
+mean? Well, it basically means that you don't have to worry about it.
 **This environment will always be the same, regardless of the robot or
-the kind of training you want to perform**. So, you won\'t have to
+the kind of training you want to perform**. So, you won't have to
 change it or work over it. Good news, right?
 
 **THIS CLASS IS INDEPENDENT OF THE ROBOT AND OF THE TASK**
@@ -246,7 +246,7 @@ This means that:
     *Gazebo Environment*
 -   You will have to do a small mod to the *training script*
 -   In case you want **another robot to learn the same task**, then it
-    may be necessary to change this class too, if the new robot doesn\'t
+    may be necessary to change this class too, if the new robot doesn't
     have the same interface.
 
 In our *Turtlebot2 in the maze* example, the *task environment class* is
@@ -255,18 +255,18 @@ created in the **turtlebot2_maze.py** file.
 **Task Environment** specifies the following required for the training:
 
 -   How to apply the selected action to the robot: function
-    **\_set_action**
+    **_set_action**
 -   How to get the observations resulting from the action: function
-    **\_get_obs**
--   How to compute the reward: function **\_compute_reward**
+    **_get_obs**
+-   How to compute the reward: function **_compute_reward**
 -   Detect if the training for current episode has finished: function
-    **\_is_done**
+    **_is_done**
 
 Additionally, it has a couple of functions for handling the simulation:
 
--   function **\_init_env_variables**: used to initialise any var that
+-   function **_init_env_variables**: used to initialise any var that
     need to be set back to initial value on every episode
--   function **\_set_init_pose**: used to initialise the robot position
+-   function **_set_init_pose**: used to initialise the robot position
     on every episode
 
 **NOTE**: the training step is not defined here. Here it just defines
@@ -274,7 +274,7 @@ how to do the actions inside the training step
 
 #### The Simulations Needed for each Robot and Task
 
-In the ***version2*** of OpenAI_ROS, each task_environment and
+In the **`'version2`**' of OpenAI_ROS, each task_environment and
 robot_environment have a launch file asociated.
 
 This makes the system even simpler because you now dont have to worry
@@ -315,7 +315,7 @@ environments structure**.
 All the code for the tutorials you can find it here:
 [OpenAI_ROS_Examples-Git](https://bitbucket.org/theconstructcore/openai_examples_projects/src/master/)
 
-\<\<TutorialChain(openai_ros/TurtleBot2 with openai_ros)\>\>
+<<TutorialChain(openai_ros/TurtleBot2 with openai_ros)>>
 
 **Create a new tutorial:**
 

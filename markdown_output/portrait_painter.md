@@ -65,8 +65,8 @@ to the upper left, upper right and lower left corner of the canvas
 manually. There is a *Set Corners* button in the gui that will call a
 *alubsc/node_instr/manual_canvas_setting* server provided by
 ManualCanvasSetting. After the button is clicked the GUI will display
-instructions like \"move Gripper to upper left corner of the canvas and
-press button\".
+instructions like "move Gripper to upper left corner of the canvas and
+press button".
 
 Once the last point is set the node will call the *canvas_setting*
 server of PainterMain to report the canvas coordinates.

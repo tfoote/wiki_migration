@@ -20,7 +20,7 @@ cloud it came from.
 -   in **detecthands**: points near, but not in the hand are clustered
     and marked as the arm. It is pretty accurate in giving the direction
     that the arm is facing.
--   in **detectskelhands**: arm represents the skeleton\'s elbow.
+-   in **detectskelhands**: arm represents the skeleton's elbow.
 -   **palm**: 6D pose of the palm (orientation may not be fully
     functional yet)
 -   **fingers**: for each finger detected, the centroid is given.

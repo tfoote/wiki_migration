@@ -11,7 +11,7 @@ addition the app uses WebRTC for telepresence.
 ## Installation
 
 -   From the
-    [Play Store\|target=\"\_blank\"](http://play.google.com/store/apps/details?id=com.tesseractmobile.pocketbot)
+    [Play Store\|target="_blank"](http://play.google.com/store/apps/details?id=com.tesseractmobile.pocketbot)
 
 This app has been tested with ROS indigo, kinetic and lunar. On Ubuntu
 14.04, 16.04, 17.04 and HypriotOS on the Rapberry Pi 3.

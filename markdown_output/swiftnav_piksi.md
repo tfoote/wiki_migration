@@ -7,7 +7,7 @@ See the [[http://wiki.ros.org/swiftnav_ros | swiftnav_ros]] page, which is maint
 ## Description
 
 This package is a ROS release of a driver for
-[Swift Navigation\'s Piksi](http://swiftnav.com/piksi.html) RTK GPS
+[Swift Navigation's Piksi](http://swiftnav.com/piksi.html) RTK GPS
 receiver module. A pair of Piksi modules connected by a wireless link
 provides the location of each receiver relative to the other with
 accuracy as good as a couple of centimetres, and in addition, each Piksi
@@ -17,7 +17,7 @@ at a surveyed point, while the other is mounted on a rover and provides
 ROS navigation software with a highly accurate position relative to the
 base station.
 
-See Wikipedia\'s
+See Wikipedia's
 [Real Time Kinematic](https://en.wikipedia.org/wiki/Real_Time_Kinematic)
 article for an explanation of RTK GPS. It is important to understand
 that RTK GPS does not give a 2cm-precision absolute position
@@ -29,7 +29,7 @@ relative to the base station.
 
 Other configurations of two modules are possible, such as placing both
 on moving platforms. Each Piksi computes its position relative to the
-other. This symmetry of operation enables the robot\'s position to be
+other. This symmetry of operation enables the robot's position to be
 found using position data from either the base station or the rover.
 
 In a configuration with a base station and a rover one unit can be
@@ -40,7 +40,7 @@ This driver also publishes major status and diagnostic information on
 diagnostic topics.
 
 It is crucial to a successful integration of Piksi into your robot that
-you understand Piksi\'s and the antenna\'s mechanical, electrical, and
+you understand Piksi's and the antenna's mechanical, electrical, and
 performance characteristics. Refer to the
 [ Piksi deployment guide.](http://docs.swiftnav.com/wiki/Deploying_Piksi_in_your_application )
 
@@ -55,7 +55,7 @@ This driver publishes the following data on the ROS topics listed.
      gps/time        sensor_msgs::TimeReference      GPS time                                                                                                                                                                                                                                                                                                                                             
   -- ------------ -- ---------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
-The frame_id field of messages is populated with \"gps\".
+The frame_id field of messages is populated with "gps".
 
 ## Hardware
 
@@ -65,9 +65,9 @@ You need:
     link over which they exchange GPS correction data, and associated
     mounting for the device and antenna (ground-plane recommended). RTK
     GPS is very sensitive to obstacles between the receiver and the
-    satellite, and both modules\' antennas must be located with a clear
+    satellite, and both modules' antennas must be located with a clear
     view of the sky or they will not work properly.
--   A way of powering one of the Piksis through it\'s USB cable. It does
+-   A way of powering one of the Piksis through it's USB cable. It does
     not need to be attached to a computer - it can be standalone and can
     be powered by any device that provides power on a USB connector,
     e.g. a USB AC adaptor or a battery with USB output.
@@ -86,7 +86,7 @@ The following steps build and install libsbp, which is needed to support
 the swiftnav_piksi package. Clone libsbp into a local directory, and
 build and install it. Comments follow a \# below - they explain the
 step; do not type them. Caution: do not build libsbp in your catkin
-workspace - it is not \"catkinized\". ```
+workspace - it is not "catkinized". ```
 cd mysrc       # cd to a directory where you will download and build libsbp
 git clone https://github.com/PaulBouchier/libsbp
 cd libsbp/c
@@ -162,26 +162,26 @@ in a circle. ![](attachment:piksi_status.png)
 
 #### View simulated path in rviz
 
-In another terminal, start rviz. In \"Global Options\" change the fixed
-frame to \"gps\". In Grid, set Cell Size to 5. Click Add -\> By Topic
-and add the Odometry message under /gps/rtkfix. Change it\'s color to
-yellow to make it more visible, set \"Keep\" to 1000, and zoom way out.
+In another terminal, start rviz. In "Global Options" change the fixed
+frame to "gps". In Grid, set Cell Size to 5. Click Add -> By Topic
+and add the Odometry message under /gps/rtkfix. Change it's color to
+yellow to make it more visible, set "Keep" to 1000, and zoom way out.
 You should see the simulated vehicle circling the grid at a large radius
 as shown below. ![](attachment:rviz_piksi.png)
 
 ### RTK mode with rviz
 
 This test must be done outdoors, with a clear view of the sky. Take care
-not to obscure the antenna\'s view of the sky with your body.
+not to obscure the antenna's view of the sky with your body.
 
 -   Power one Piksi, which will be the base station, and sit it outside
     in an open area with the antenna on a ground-plane.
 -   Connect the other unit, which will be the rover, to your ROS
-    computer and take them both outside and sit the rover\'s antenna on
-    a ground-plane close to the base station\'s antenna.
+    computer and take them both outside and sit the rover's antenna on
+    a ground-plane close to the base station's antenna.
 -   Run piksi_console and ensure simulation mode is false.
--   On the Baseline tab, wait for the mode to change to \"Fixed RTK\",
-    indicating that the two Piksi\'s are in RTK (high precision) mode.
+-   On the Baseline tab, wait for the mode to change to "Fixed RTK",
+    indicating that the two Piksi's are in RTK (high precision) mode.
     The baseline plot should show the Base Position and RTK Position
     close to each other, and Dist. should be the actual distance between
     them (in meters).
@@ -200,22 +200,22 @@ outdoor robotic projects.
 
 -   Piksi needs a clear view of the sky, without nearby tall obstacles
     to work properly.
--   Like all RTK GPS devices, Piksi is susceptible to \"cycle-slip\",
+-   Like all RTK GPS devices, Piksi is susceptible to "cycle-slip",
     and in some cases you may see an error in reported position that is
     a multiple of the GPS carrier wavelength (22cm).
--   If the swiftnav_piksi driver isn\'t publishing data, it may not be
+-   If the swiftnav_piksi driver isn't publishing data, it may not be
     getting connected to the serial port. Run piksi_console as
     instructed in section 4.3 of the wiki page with piksi in simulation
     mode as instructed in the link in section 5 that should take you to
-    the Piksi User Getting Started Guide. If it doesn\'t work that
+    the Piksi User Getting Started Guide. If it doesn't work that
     indicates a serial port problem. The most common fault is that you
-    aren\'t a member of the dialout group. Run minicom and see if
-    you\'re getting data from the serial port on the serial device.
-    Perhaps your serial port isn\'t at /dev/ttyUSB0 (some USB-serial
+    aren't a member of the dialout group. Run minicom and see if
+    you're getting data from the serial port on the serial device.
+    Perhaps your serial port isn't at /dev/ttyUSB0 (some USB-serial
     ports turn up at /dev/ttyACM0. Look at the ROS logfile for errors -
-    perhaps the serial port wasn\'t opened successfully.
+    perhaps the serial port wasn't opened successfully.
 -   If you follow the instructions above, and the piksi console works
-    but you don\'t get any data published to topics, and
+    but you don't get any data published to topics, and
     rqt_robot_monitor shows no rtk or llh data but time is getting
     received, you may have run into a known problem where you built the
     swiftnav_piksi driver against a wrong version of the libsbp library.

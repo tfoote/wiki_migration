@@ -6,7 +6,7 @@
 86Hexapod has 12 DOF and employs the low-cost
 [TowerPro](http://www.towerpro.com.tw/) SG90 servos as its actuators.
 With 86Duino Zero/One as its controller, you can easily edit
-86Hexapod\'s motion and automatically generate its control program using
+86Hexapod's motion and automatically generate its control program using
 86ME.
 
 [Youtube](https://www.youtube.com/watch?v=tW_QmSS2TaY)
@@ -61,6 +61,6 @@ void loop()
 
 By this work, we can connect multiple 86Duinos to ROS through wifi. Here
 is a demonstration to controll two 86Hexapods by a ROS topic
-\"chatter\".
+"chatter".
 
 [Youtube](https://www.youtube.com/watch?v=yWgQdA1mVpQ)

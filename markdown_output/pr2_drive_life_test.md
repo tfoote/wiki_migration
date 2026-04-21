@@ -1,34 +1,34 @@
 ## Overview
 
-The \`pr2_drive_life_test\` package contains a tool to shuffle the PR2
+The `pr2_drive_life_test` package contains a tool to shuffle the PR2
 during a [PR2 Burn In Test](life_test/PR2 Burn In). This tool should be
 launched with the file
-\`pr2_drive_life_test/pr2_drive_life_test.launch\`.
+`pr2_drive_life_test/pr2_drive_life_test.launch`.
 
-The script \`pr2_drive_life_test.py\` commands the PR2 base during the
+The script `pr2_drive_life_test.py` commands the PR2 base during the
 PR2 burn in test. It runs a 500 Hz loop to command the base along a
 sinusoidal path inside the PR2 burn-in test fixture.
 
 The launch file contains a [map_server](map_server) and [amcl](amcl) to
-localize the robot in the test fixture. The map \`life_test.pgm\` is
+localize the robot in the test fixture. The map `life_test.pgm` is
 specific to the PR2 burn in text fixture.
 
 ### Reset / Relocalize
 
 If the script detects that motors are halted, it will stop sending drive
-commands until the service \`pr2_base/reset_drive\` is called. When the
+commands until the service `pr2_base/reset_drive` is called. When the
 service is called, the robot is relocalized to the center of the test
-fixture by publishing on the \`initialpose\` topic.
+fixture by publishing on the `initialpose` topic.
 
 This reset ability allows an operator to recenter a robot that has
 gotten lost in the burn in test fixture.
 
 ### Listener
 
-A special \"listener\" in
+A special "listener" in
 [pr2_hardware_test_monitor](pr2_hardware_test_monitor) listens to the
-output from the \`pr2_drive_life_test.py\` script. It will call the
-\`pr2_base/reset_drive\` service when needed.
+output from the `pr2_drive_life_test.py` script. It will call the
+`pr2_base/reset_drive` service when needed.
 
 ## ROS API
 

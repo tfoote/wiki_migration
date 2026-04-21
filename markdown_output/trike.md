@@ -42,7 +42,7 @@ printer. This design can be found on
 ### Assemble
 
 We then fabricated a small stand to mount the tripod on. This was cut
-from 3/4\" MDF and screwed down to the Create using the cargo bay
+from 3/4" MDF and screwed down to the Create using the cargo bay
 mounts. We installed three wood screws to which the legs of the tripod
 were tie-strapped:
 

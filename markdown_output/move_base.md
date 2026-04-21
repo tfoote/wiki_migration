@@ -1,4 +1,4 @@
-**NOTE: The \`move_base\` package lets you move a robot to desired
+**NOTE: The `move_base` package lets you move a robot to desired
 positions using the navigation stack. If you just want to drive the PR2
 robot around in the odometry frame, you might be interested in this
 tutorial:
@@ -15,7 +15,7 @@ move_base is exclusively a ROS 1 package. It is succeeded by Navigation
 
 ## Nodes
 
-This package provides the \`move_base\` ROS Node which is a major
+This package provides the `move_base` ROS Node which is a major
 component of the [ navigation stack](navigation ). A detailed
 description of this Node and its configuration options is found below.
 
@@ -23,13 +23,13 @@ description of this Node and its configuration options is found below.
 
 [ {{attachment:overview_tf_small.png}}](attachment:overview_tf.png )
 
-The \`move_base\` node provides a ROS interface for configuring,
+The `move_base` node provides a ROS interface for configuring,
 running, and interacting with the [ navigation stack](navigation ) on a
 robot. A high-level view of the move_base node and its interaction with
 other components is shown above. The blue vary based on the robot
 platform, the gray are optional but are provided for all systems, and
 the white nodes are required but also provided for all systems. For more
-information on configuration of the \`move_base\` node, and the
+information on configuration of the `move_base` node, and the
 navigation stack as a whole, please see the
 [ navigation setup and configuration](navigation/Tutorials/RobotSetup )
 tutorial.
@@ -38,18 +38,18 @@ tutorial.
 
 ![](attachment:recovery_behaviors.png)
 
-Running the \`move_base\` node on a robot that is properly configured
+Running the `move_base` node on a robot that is properly configured
 (please see [ navigation stack documentation](navigation ) for more
 details) results in a robot that will attempt to achieve a goal pose
 with its base to within a user-specified tolerance. In the absence of
 dynamic obstacles, the move_base node will eventually get within this
-tolerance of its goal or signal failure to the user. The \`move_base\`
+tolerance of its goal or signal failure to the user. The `move_base`
 node may optionally perform recovery behaviors when the robot perceives
 itself as stuck. By default, the [move_base](move_base) node will take
 the following actions to attempt to clear out space:
 
 First, obstacles outside of a user-specified region will be cleared from
-the robot\'s map. Next, if possible, the robot will perform an in-place
+the robot's map. Next, if possible, the robot will perform an in-place
 rotation to clear out space. If this too fails, the robot will more
 aggressively clear its map, removing all obstacles outside of the
 rectangular region in which it can rotate in place. This will be
@@ -61,12 +61,12 @@ These recovery behaviors can be configured using the
 
 #### Action API
 
-The \`move_base\` node provides an implementation of the
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )),
-that takes in goals containing \`geometry_msgs/PoseStamped\` messages.
-You can communicate with the \`move_base\` node over ROS directly, but
-the recommended way to send goals to \`move_base\` if you care about
-tracking their status is by using the \`SimpleActionClient\`. Please see
+The `move_base` node provides an implementation of the
+`SimpleActionServer` (see [ actionlib documentation](actionlib )),
+that takes in goals containing `geometry_msgs/PoseStamped` messages.
+You can communicate with the `move_base` node over ROS directly, but
+the recommended way to send goals to `move_base` if you care about
+tracking their status is by using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 ##### Action Subscribed Topics
@@ -184,27 +184,27 @@ param {
 
 #### Component APIs
 
-The \`move_base\` node contains components that have their own ROS APIs.
+The `move_base` node contains components that have their own ROS APIs.
 These components may vary based on the values of the
-\`base_global_planner\`, \`base_local_planner\`, and
-\`recovery_behaviors\` respectively. Links to the APIs for the default
+`base_global_planner`, `base_local_planner`, and
+`recovery_behaviors` respectively. Links to the APIs for the default
 components can be found below:
 
 -   [costmap_2d](costmap_2d) - Documentation on the
     [costmap_2d](costmap_2d) package used in move_base
 -   [nav_core](nav_core) - Documentation on the
-    \`nav_core::BaseGlobalPlanner\` and \`nav_core::BaseLocalPlanner\`
-    interfaces used by \`move_base\`.
+    `nav_core::BaseGlobalPlanner` and `nav_core::BaseLocalPlanner`
+    interfaces used by `move_base`.
 -   [base_local_planner](base_local_planner) - Documentation on the
-    [base_local_planner](base_local_planner) used in \`move_base\`
+    [base_local_planner](base_local_planner) used in `move_base`
 -   [navfn](navfn) - Documentation on the [navfn](navfn) global planner
-    used in \`move_base\`
+    used in `move_base`
 -   [clear_costmap_recovery](clear_costmap_recovery) - Documentation on
     the [clear_costmap_recovery](clear_costmap_recovery) recovery
-    behavior used in \`move_base\`
+    behavior used in `move_base`
 -   [rotate_recovery](rotate_recovery) - Documentation on the
     [rotate_recovery](rotate_recovery) recovery behavior used in
-    \`move_base\`
+    `move_base`
 
 Class Diagram (partially & not strictly drawn) is available
 [here](https://docs.google.com/drawings/d/1rKY4yxI0ibHqgQoLFZPuEayRp8Bs4FpRyaNKsMxqpX4/edit?usp=sharing).

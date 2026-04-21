@@ -21,9 +21,9 @@ This tree was trained on the C-descriptors devised by Michael Calonder
 own training stage which produces a random forest classifier. The
 classifier used to generate the above tree is available in two ways:
 
--   Do \`roscd calonder_descriptor && make test\`. This will
-    automatically download the classifier \`current.rtc\` to the
-    \`calonder_descriptor\` package directory.
+-   Do `roscd calonder_descriptor && make test`. This will
+    automatically download the classifier `current.rtc` to the
+    `calonder_descriptor` package directory.
 -   Download it directly from
     <http://pr.willowgarage.com/data/calonder_descriptor/current.rtc>
 

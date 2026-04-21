@@ -22,7 +22,7 @@ model with the name **equidistant**, according to
 
 ## Supported hardware
 
-\`camera_calibration\` will work with any camera driver node satisfying
+`camera_calibration` will work with any camera driver node satisfying
 the standard ROS camera interface. See the
 [image_pipeline hardware requirements](image_pipeline#Hardware_Requirements).
 
@@ -36,20 +36,20 @@ There are tutorials on how to run the calibration tool for
 
 ### Camera Calibrator
 
-To run the \`cameracalibrator.py\` node for a monocular camera using an
+To run the `cameracalibrator.py` node for a monocular camera using an
 8x6 chessboard with 108mm squares:
 
 ```
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 image:=/my_camera/image camera:=/my_camera
-``` When you click on the \"Save\" button after a
+``` When you click on the "Save" button after a
 succesfull calibration, the data (calibration data and images used for
 calibration) will be written to /tmp/calibrationdata.tar.gz.
 
-To run the \`cameracalibrator.py\` node for a stereo camera:
+To run the `cameracalibrator.py` node for a stereo camera:
 
 ```
 rosrun camera_calibration cameracalibrator.py --size 8x6 --square 0.108 right:=/my_stereo/right/image_raw left:=/my_stereo/left/image_raw left_camera:=/my_stereo/left right_camera:=/my_stereo/right
-``` \`cameracalibrator.py\` supports the following
+``` `cameracalibrator.py` supports the following
 options:
 
 ```
@@ -143,7 +143,7 @@ Chessboard Options:
 
 #### Unsynchronized Stereo
 
-By default, the \`image_pipeline\` assumes that stereo cameras are
+By default, the `image_pipeline` assumes that stereo cameras are
 triggered to capture images simultaneously, and that matching image
 pairs have identical timestamps. This is the ideal situation, but
 requires hardware support.
@@ -152,8 +152,8 @@ Starting in Diamondback, you will be able to calibrate stereo pairs that
 are not (or inexactly) synchronized.
 
 To enable approximate timestamp matching, give the
-\`\--approximate=0.01\` option. This permits a \"slop\" of 0.01s between
-image pairs. If you still don\'t see a display window, or it is
+`\--approximate=0.01` option. This permits a "slop" of 0.01s between
+image pairs. If you still don't see a display window, or it is
 sporadically updated, try increasing the slop.
 
 #### Dual Checkerboards
@@ -161,8 +161,8 @@ sporadically updated, try increasing the slop.
 Starting in Diamondback, you will be able to use multiple size
 checkerboards to calibrate a camera.
 
-To use multiple checkerboards, give multiple \`\--size\` and
-\`\--square\` options for additional boards. Make sure the boards have
+To use multiple checkerboards, give multiple `\--size` and
+`\--square` options for additional boards. Make sure the boards have
 different dimensions, so the calibration system can tell them apart.
 
 ### Camera Check

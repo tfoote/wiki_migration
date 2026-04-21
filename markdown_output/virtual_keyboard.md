@@ -4,8 +4,8 @@ windows that are being displayed, the following methods are available.
 For details, consult the API:
 
 -   `typeControlCharToActiveWindow()`: Type a given keystroke. Examples
-    being \"alt+r\", \"Control_L+J\", \"ctrl+alt+n\", \"BackSpace\",
-    \"Linefeed\".
+    being "alt+r", "Control_L+J", "ctrl+alt+n", "BackSpace",
+    "Linefeed".
 -   `typeTextToActiveWindow()`: Type a given string, which must not
     contain control chars. For sending individual control chars, use
     `typeControlCharToActiveWindow()`.

@@ -4,7 +4,7 @@ Roslisp is a client library for writing ROS nodes in idiomatic Common
 Lisp. The library is written to support ease of use, quick scripting of
 nodes, and interactive debugging of a running ROS system.
 
-See the [roslisp overview](/Overview) for a guide to roslisp\'s
+See the [roslisp overview](/Overview) for a guide to roslisp's
 features.
 
 ## Status

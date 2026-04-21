@@ -10,7 +10,7 @@ upper left corner of the dark-skin colored square.
 
 It will compute the 3x3 color calibration and place it in the parameter:
 ` topic_name/image_label/color_calib`. For example, if the topic name is
-\"videre/images\" and the image label is \"left\", the color calibration
+"videre/images" and the image label is "left", the color calibration
 will be placed in the parameter: `videre/images/left/color_calib`.
 
 The following code snippet can be used to retrieve the color calibration
@@ -37,7 +37,7 @@ Once you have the color calibration matrix, you can use it to transform
 an existing opencv image. Note, for the videre cameras, you will very
 likely want to decompand the image first. Decompand is a function
 contained in libcolorcalib. To use it, make your package depend on
-color_calib, and then include the header: \"colorcalib.h\"
+color_calib, and then include the header: "colorcalib.h"
 
 The following snippet will decompand an image and then transform it
 according to the color calibration: ```

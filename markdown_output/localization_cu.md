@@ -1,6 +1,6 @@
 The localization system is responsible for merging date from the various
 sensors that provide position and orientation information (or pose), and
-then publishing the posterior best estimate of the Robot\'s pose to the
+then publishing the posterior best estimate of the Robot's pose to the
 rest of the system. Assumed sensors include the Stargazer (indoor)
 global positioning system and wheel odometers. Pose can also be defined
 by the user.

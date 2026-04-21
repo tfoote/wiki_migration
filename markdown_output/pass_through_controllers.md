@@ -22,7 +22,7 @@ on progress.
 
 Note that most of the work has to be done in the hardware abstraction of
 the robot. And, unfortunately, this is very robot specific and hard to
-generalize. It\'s somewhat similar to the \`read()\` and \`write()\`
+generalize. It's somewhat similar to the `read()` and `write()`
 functions of ROS-control, which need to implement robot-specific
 protocols. This package provides the necessary HW interfaces to
 implement this feature.

@@ -1,7 +1,7 @@
 ## Description
 
 This package is a ROS release of an SBP driver for
-[Swift Navigation\'s](http://swiftnav.com) localization devices - Piksi
+[Swift Navigation's](http://swiftnav.com) localization devices - Piksi
 Multi and Duro. A connected pair of these devices can provide the
 location of each receiver relative to the other with accuracy as good as
 a couple of centimetres. Additionally, each Piksi module provides its
@@ -10,7 +10,7 @@ module is a stationary base station, which may be located at a surveyed
 point, while the other is mounted on a rover and provides ROS navigation
 software with a highly accurate position relative to the base station.
 
-See Wikipedia\'s
+See Wikipedia's
 [Real Time Kinematic](https://en.wikipedia.org/wiki/Real_Time_Kinematic)
 article for an explanation of RTK GPS. It is important to understand
 that RTK GPS does not give a 2cm-precision absolute position
@@ -22,7 +22,7 @@ relative to the base station.
 
 Other configurations of two modules are possible, such as placing both
 on moving platforms. Each device computes its position relative to the
-other. This symmetry of operation enables the robot\'s position to be
+other. This symmetry of operation enables the robot's position to be
 found using position data from either the base station or the rover.
 
 In a configuration with a base station and a rover, one unit can be
@@ -48,7 +48,7 @@ This driver publishes the following data on the ROS topics listed.
      gps/time        sensor_msgs::TimeReference      GPS time                                                                                                                                                                                                                                                                                                                                           
   -- ------------ -- ---------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
-The frame_id field of messages is populated with \"gps\".
+The frame_id field of messages is populated with "gps".
 
 ## Software
 
@@ -66,7 +66,7 @@ Clone libsbp into a local directory, and build and install it.
 Comments follow a \# below - they explain the step; do not type them.
 
 Caution: do not build libsbp in your catkin workspace - it is not
-\"catkinized\".
+"catkinized".
 
 ```
 cd mysrc       # cd to a directory where you will download and build libsbp

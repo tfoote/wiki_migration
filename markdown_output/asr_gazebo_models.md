@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -21,7 +21,7 @@ It contains the following models:
 ## Usage
 
 To use these models with gazebo, copy the according folder to
-\"/.gazebo/models\" following
+"/.gazebo/models" following
 [this guide](http://gazebosim.org/tutorials?tut=build_world&cat=build_world#AddingModelfromtheModelDatabase).
 
 You can now start gazebo and insert the model into your world.
@@ -29,8 +29,8 @@ You can now start gazebo and insert the model into your world.
 This two pictures shows you our experiment room and how it looks in
 RIVZ.
 
-![\|height=\"249\",width=\"418\"](attachment:Gazebo.jpg)
-![\|height=\"261\",width=\"837\"](attachment:Gazebo1.jpg)
+![\|height="249",width="418"](attachment:Gazebo.jpg)
+![\|height="261",width="837"](attachment:Gazebo1.jpg)
 
 ### Needed software
 
@@ -39,7 +39,7 @@ One need [gazebo](http://gazebosim.org/) to use the models.
 ## Tutorials
 
 To use these models with gazebo, copy the according folder to
-\"/.gazebo/models\" following
+"/.gazebo/models" following
 [this guide](http://gazebosim.org/tutorials?tut=build_world&cat=build_world#AddingModelfromtheModelDatabase).
 
 You can now start gazebo and insert the model into your world.

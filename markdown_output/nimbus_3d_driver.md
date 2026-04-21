@@ -8,7 +8,7 @@ This package is still in development and the API might change in the future. Ple
 
 ## Overview
 
-![Nimbus 3D (Nimbus 3D is a ToF camera in the Raspberry Pi form factor.)\|width=\"350\"](attachment:raspberry_nimbus.png)
+![Nimbus 3D (Nimbus 3D is a ToF camera in the Raspberry Pi form factor.)\|width="350"](attachment:raspberry_nimbus.png)
 
 ### Time-of-flight measuring principle
 
@@ -77,9 +77,9 @@ The following topics are provided.
 The following coordinate frames are relevant for interpreting the data
 provided by the Nimbus 3D:
 
--   \`camera\`: The imager center of the Nimbus 3D camera. All camera
+-   `camera`: The imager center of the Nimbus 3D camera. All camera
     data such as images and point clouds are given in this frame.
--   \`world\`: Transformation from the camera to the world coordinates.
+-   `world`: Transformation from the camera to the world coordinates.
     By default, a simple static transform is published in the launch
     file. This should be changed according to the given application.
 
@@ -90,4 +90,4 @@ Detailed Information to install the driver can be found in the
 
 ## Report a Bug
 
-\<\<GitHubIssues(pieye/nimbus-ros)\>\>
+<<GitHubIssues(pieye/nimbus-ros)>>

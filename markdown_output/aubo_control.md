@@ -20,9 +20,9 @@ A teleop control panel to move the real robot,run
 roslaunch aubo_description aubo_i5_rviz.launch
 ```
 
-Choose PCAN bus interface, and select \"Continuous move\" mode.
+Choose PCAN bus interface, and select "Continuous move" mode.
 
-Then we can control 6 joints with press button \"+\" and \"-\".
+Then we can control 6 joints with press button "+" and "-".
 
 ## Additional information
 

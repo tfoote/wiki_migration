@@ -30,7 +30,7 @@ $ svn co http://uji-ros-pkg.googlecode.com/svn/trunk/rostweet
 ```
 
 After downloading and placing it in a folder inside your
-\`ROS_PACKAGE_PATH\`, it should compile with:
+`ROS_PACKAGE_PATH`, it should compile with:
 
 ```
 $ rosmake rostweet
@@ -47,9 +47,9 @@ afterwards (by running the node for the first time, you implicitly
 accept rostweet as a twitter application in your account, and allow it
 to read your timeline and publish tweets). Once the node is running,
 other nodes can subscribe to incoming tweets at
-\`/rostweet/incomingTweet\` (of type \`rostweet_msgs/IncomingTweet\`),
-and publish tweets by calling to the service \`/rostweet/postTweet\` (of
-type \`rostweet_msgs/postTweet\`). There is an example node for posting
+`/rostweet/incomingTweet` (of type `rostweet_msgs/IncomingTweet`),
+and publish tweets by calling to the service `/rostweet/postTweet` (of
+type `rostweet_msgs/postTweet`). There is an example node for posting
 e.g.:
 
 View incoming tweets:
@@ -64,7 +64,7 @@ Send a tweet:
 $ rosrun rostweet post "Hello world from rostweet"
 ```
 
-With rostweet your robots can also share pictures. Use the \`post\`
+With rostweet your robots can also share pictures. Use the `post`
 executable for an example:
 
 ```

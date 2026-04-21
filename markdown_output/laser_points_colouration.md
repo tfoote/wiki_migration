@@ -13,7 +13,7 @@ rosrun laser_points_colouration \[pcd_file_name\]
 
 The dyeing effect of one scene is showed as below:
 
-![\|height=\"215px\",width=\"624px\"](attachment:dyeing_effect.png)
+![\|height="215px",width="624px"](attachment:dyeing_effect.png)
 
 ## Bug Reports & Feature Requests
 

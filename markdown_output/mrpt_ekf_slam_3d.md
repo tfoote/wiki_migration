@@ -12,7 +12,7 @@ The ROS node mrpt_ekf_slam_3d is a wrapper for the C++ class
 further details.
 
 For the convention on coordinate frames see
-[ROS REP 105: \"Coordinate Frames for Mobile Platforms\"](http://ros.org/reps/rep-0105.html).
+[ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
 
 ## Usage
 

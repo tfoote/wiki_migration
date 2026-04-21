@@ -21,7 +21,7 @@ upstream [spacenav](spacenav) package.
 
 ## API Stability
 
-This package\'s API is expected to be stable.
+This package's API is expected to be stable.
 
 ## Nodes
 

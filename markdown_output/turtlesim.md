@@ -11,11 +11,11 @@ turtlesim: ```
 $ rosrun turtlesim turtlesim_node
 ```
 
-You\'ll see the turtlesim window:
+You'll see the turtlesim window:
 
 ![](attachment:turtlesim.png)
 
-## Nodes == As of //Hydro// turtlesim uses the \[\[geometry_msgs\]\]/Twist message instead of its own custom one (//turtlesim/Velocity// in //Groovy// and older). Also the topic has been changed to \`cmd_vel\` (instead of \`command_velocity\` before).
+## Nodes == As of //Hydro// turtlesim uses the \[\[geometry_msgs\]\]/Twist message instead of its own custom one (//turtlesim/Velocity// in //Groovy// and older). Also the topic has been changed to `cmd_vel` (instead of `command_velocity` before).
 
 ```clearsilver
 node.0 {

@@ -13,7 +13,7 @@ The following packages of the swarm functions library are required:
 
 -   [area_division](area_division)
 -   [coverage_path](coverage_path)
--   [target_monitor](target_monitor) (only if \`single_target=true\`)
+-   [target_monitor](target_monitor) (only if `single_target=true`)
 
 Further required packages are:
 

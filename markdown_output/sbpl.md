@@ -17,7 +17,7 @@ The API documentation for this package can be found
 [here](http://www.ros.org/doc/api/sbpl/html/index.html).
 
 A good resource for technical information on the planners in the SBPL
-package is Maxim Likhachev\'s presentation
+package is Maxim Likhachev's presentation
 ([pdf](http://www.ros.org/wiki/Events/CoTeSys-ROS-School?action=AttachFile&do=get&target=robschooltutorial_oct10.pdf),[movie](http://fallschool2010.cs.tum.edu/public/lectures/saturday/index.html#maxim))
 at the ROS Cotesys School at TUM, Germany in November 2010.
 
@@ -54,7 +54,7 @@ these motions are a reasonable choice for many other robots).
 Sometimes the pre-made will not be good enough either because you are
 using a map of a different resolution (a motion primitive file only
 works on a map with its corresponding resolution) or because your
-robot\'s motions don\'t match with any of the pre-made motions.
+robot's motions don't match with any of the pre-made motions.
 
 In the matlab/mprim folder there are several matlab scripts which are
 easy to modify and generate new motion primitives. They are named
@@ -72,14 +72,14 @@ according to the types of motions they generate.
 Parameters
 
 -   Resolution - Near the top of each of these files there is a
-    \"resolution\" variable which you can set you your map\'s
+    "resolution" variable which you can set you your map's
     resolution.
--   Number of angles - The variable \"numberofangles\" represents the
+-   Number of angles - The variable "numberofangles" represents the
     yaw discretization. The more you have the better your paths will
     look but the planning time will also increase because there are more
     states to search. Be careful changing this as you will need to
     add/remove motion vectors in the rest of the script.
--   Number of motions - The variable \"numberofprimsperangle\"
+-   Number of motions - The variable "numberofprimsperangle"
     represents the number of motions
 -   Multipliers - There is a multiplier for each type of motion
     (forwardcostmult, backwardcostmult, etc) which is multiplied by the
@@ -91,7 +91,7 @@ Parameters
     representing (dx, dy, dyaw, multiplier). You can change what
     multiplier a motion uses and how it moves by changing these.
     Remember that the number of 4-tuples in each vector must equal the
-    \"numberofprimsperangle\" variable.
+    "numberofprimsperangle" variable.
 
 ## ROS API
 

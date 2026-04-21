@@ -6,7 +6,7 @@ Spring 2014 Symposium on Qualitative Representations for Robots
 (AAAI-SSS), March 2014.
 ([pdf](http://www.aaai.org/ocs/index.php/SSS/SSS14/paper/viewFile/7726/7699))
 
-The \`bwi_guidance_concert\` package wraps this experiment to use the
+The `bwi_guidance_concert` package wraps this experiment to use the
 [Robotics in Concert](rocon) framework.
 
 ## Overview
@@ -15,14 +15,14 @@ The goal of the multi-robot guidance project is to allow an automated
 system to efficiently guide a person unfamiliar with the environment to
 their goal using multiple robots. In the experiment available through
 this package, a single controller decides where to position robots in
-the environment and what direction should be displayed on each robot\'s
+the environment and what direction should be displayed on each robot's
 screen to guide the person.
 
 This package currently wraps preliminary work on this project, where a
 central positioner node teleports each robot to a desired location using
-Gazebo\'s \`set_model_state\` service. Additionally, each robot
+Gazebo's `set_model_state` service. Additionally, each robot
 subscribes to an image stream which is displayed on its simulated robot
-screen (ex. \'/robot1/image\'), and these images are also published by
+screen (ex. '/robot1/image'), and these images are also published by
 the positioner.
 
 Apart from the positioner node, an experiment controller node decides
@@ -64,13 +64,13 @@ The workflow of the system is as follows:
 -   Follow the instructions at
     [segbot_gazebo_concert#Installation](segbot_gazebo_concert#Installation)
     to install all the base code required by this package.
--   Additionally, you\'ll need to install a web server. This package has
+-   Additionally, you'll need to install a web server. This package has
     only been tested using the apache web server:
     ```
 sudo apt-get install apache2
 ```
 -   Next, install the following rosinstall entry. You may already have
-    some of these packages if you\'ve already installed the
+    some of these packages if you've already installed the
     [segbot_gazebo_concert](segbot_gazebo_concert) demo. A patched
     version of rosbridge is used here
     ([#104](https://github.com/RobotWebTools/rosbridge_suite/issues/104))
@@ -80,15 +80,15 @@ sudo apt-get install apache2
 - git: {local-name: rl_pursuit, uri: 'https://github.com/utexas-bwi/rl_pursuit.git', version: master}
 - git: {local-name: rosbridge_suite, uri: 'https://github.com/piyushk/rosbridge_suite.git', version: patch-1}
 ```
--   You\'ll need to copy/symlink the necessary files so that they can be
-    displayed by the webserver. If you\'ve got home directory encryption
-    enabled, then the following command won\'t work and you\'ll have to
+-   You'll need to copy/symlink the necessary files so that they can be
+    displayed by the webserver. If you've got home directory encryption
+    enabled, then the following command won't work and you'll have to
     copy the files. The following command also assumes standard
-    installation with the web home directory being \`/var/www\`.
+    installation with the web home directory being `/var/www`.
     ```
 sudo ln -sf `rospack find bwi_guidance`/www /var/www/exp1
 ```
--   Finally, you\'ll need to copy some data files to the bwi_guidance
+-   Finally, you'll need to copy some data files to the bwi_guidance
     package which are required by the experiment:
     ```
 roscd bwi_guidance_solver/data/exp2/cache
@@ -122,21 +122,21 @@ The user interface can be run on any browser that can connect to the
 machine on which the software was run. The connection is made using the
 rosbridge library over websockets.
 
-Typically, you\'ll have to type the following link into the web-browser
+Typically, you'll have to type the following link into the web-browser
 to launch the user side GUI. This link will only work on the machine
 from where you ran the command line application.
 ```
 http://localhost/exp1/index.html
 ```
 
-If you want to run on a different machine, you\'ll have to supply the
+If you want to run on a different machine, you'll have to supply the
 hostname/IP of the machine where the command line application ran, so
 that your browser knows to connect to it: ```
 http://robot-devil.csres.utexas.edu/exp1/index.html?host=robot-devil.csres.utexas.edu
 ```
 
-Additionally, if you\'re running the concert version of the demo,
-you\'ll have to supply an additional parameters:
+Additionally, if you're running the concert version of the demo,
+you'll have to supply an additional parameters:
 ```
 http://robot-devil.csres.utexas.edu/exp1/index.html?host=robot-devil.csres.utexas.edu&concert=true
 ```
@@ -146,5 +146,5 @@ redirected to the correct link is available at: ```
 http://robot-devil.csres.utexas.edu/exp1/link.html
 ```
 
-Once you get to the \`index.html\` page, follow the instructions to run
+Once you get to the `index.html` page, follow the instructions to run
 through the experiment!

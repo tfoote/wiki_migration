@@ -1,23 +1,23 @@
 ## Overview
 
-The \`clear_costmap_recovery::ClearCostmapRecovery\` is a simple
-recovery behavior that clears out space in the navigation stack\'s
+The `clear_costmap_recovery::ClearCostmapRecovery` is a simple
+recovery behavior that clears out space in the navigation stack's
 [ costmaps](costmap_2d ) by reverting to the static map outside of a
 given radius away from the robot. It adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package and can be used as a recovery behavior
 [ plugin](pluginlib ) for the [move_base](move_base) node.
 
 ## ClearCostmapRecovery
 
-The \`clear_costmap_recovery::ClearCostmapRecovery\` object exposes its
+The `clear_costmap_recovery::ClearCostmapRecovery` object exposes its
 functionality as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It
 operates within a ROS namespace (assumed to be **name** from here on)
 specified on initialization. It adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package.
 
-Example creation of a \`clear_costmap_recovery::ClearCostmapRecovery\`
+Example creation of a `clear_costmap_recovery::ClearCostmapRecovery`
 object:
 
 ```cplusplus
@@ -64,7 +64,7 @@ param {
 
 ### C++ API
 
-The C++ \`clear_costmap_recovery::ClearCostmapRecovery\` class adheres
-to the \`nav_core::RecoveryBehavior\` interface found in the
+The C++ `clear_costmap_recovery::ClearCostmapRecovery` class adheres
+to the `nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package. For detailed documentation, please see
 [ ClearCostmapRecovery Documentation](http://www.ros.org/doc/api/clear_costmap_recovery/html/classclear__costmap__recovery_1_1ClearCostmapRecovery.html ).

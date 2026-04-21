@@ -8,24 +8,24 @@ This is the main node of this package. It is a wrapper of the RTAB-Map
 Core library. This is where the graph of the map is incrementally built
 and optimized when a loop closure is detected. The online output of the
 node is the local graph with the latest added data to the map. The
-default location of the RTAB-Map database is \"/.ros/rtabmap.db\" and
-the workspace is also set to \"/.ros\". To get a 3D point cloud or a 2D
-occupancy grid of the environment, subscribe to \`cloud_map\` or
-\`grid_map\` topics.
+default location of the RTAB-Map database is "/.ros/rtabmap.db" and
+the workspace is also set to "/.ros". To get a 3D point cloud or a 2D
+occupancy grid of the environment, subscribe to `cloud_map` or
+`grid_map` topics.
 
--   There are two set of parameters: ROS and RTAB-Map\'s parameters. The
+-   There are two set of parameters: ROS and RTAB-Map's parameters. The
     ROS parameters are for connection stuff to interface the RTAB-Map
-    library with ROS. The RTAB-Map\'s parameters are those from the
+    library with ROS. The RTAB-Map's parameters are those from the
     RTAB-Map library.
 
 ```{=html}
 <!-- -->
 ```
--   One way to know RTAB-Map\'s parameters is to look at this file :
+-   One way to know RTAB-Map's parameters is to look at this file :
     [Parameters.h](https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h#L161).
     There is a description for each parameter. Here two examples (use
-    string type for all RTAB-Map\'s parameters) by either using
-    \`param\` member or by passing as arguments:
+    string type for all RTAB-Map's parameters) by either using
+    `param` member or by passing as arguments:
     ```
 <launch>
 <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" args="--Grid/RangeMax 5">
@@ -38,7 +38,7 @@ occupancy grid of the environment, subscribe to \`cloud_map\` or
 <!-- -->
 ```
 -   Another way to show available parameters from the terminal is to
-    call the node with \"\--params\" argument: ```
+    call the node with "\--params" argument: ```
 $ rosrun rtabmap_slam rtabmap --params
 or
 $ rtabmap --params
@@ -49,8 +49,8 @@ $ rtabmap --params
 ```
 -   By default, rtabmap is in mapping mode. To set in localization mode
     with a previously created map, you should set the memory not
-    incremental (make sure that arguments don\'t contain
-    \`\"\--delete_db_on_start\"\` too!): ```
+    incremental (make sure that arguments don't contain
+    `"\--delete_db_on_start"` too!): ```
 <launch>
 <node name="rtabmap" pkg="rtabmap_slam" type="rtabmap" args="">
    <!-- LOCALIZATION MODE -->
@@ -61,11 +61,11 @@ $ rtabmap --params
 
 #### Arguments
 
--   \`\"\--delete_db_on_start\"\` or \`\"-d\"\`: Delete the database
+-   `"\--delete_db_on_start"` or `"-d"`: Delete the database
     before starting, otherwise the previous mapping session is loaded.
--   \`\"\--udebug\"\`: Show RTAB-Map\'s debug/info/warning/error logs.
--   \`\"\--uinfo\"\`: Show RTAB-Map\'s info/warning/error logs.
--   \`\"\--params\"\`: Show RTAB-Map\'s parameters related to this node
+-   `"\--udebug"`: Show RTAB-Map's debug/info/warning/error logs.
+-   `"\--uinfo"`: Show RTAB-Map's info/warning/error logs.
+-   `"\--params"`: Show RTAB-Map's parameters related to this node
     and exit.
 
 ```clearsilver

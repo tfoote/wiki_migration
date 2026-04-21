@@ -8,7 +8,7 @@ This package contains the different controllers and launch files for the
 -   Source: git
     <https://github.com/RobotnikAutomation/summit_x_common.git>
 
-![SummitX RViz\|width=\"600px\"](attachment:summit_x_rviz.png)
+![SummitX RViz\|width="600px"](attachment:summit_x_rviz.png)
 
 ## List of packages
 

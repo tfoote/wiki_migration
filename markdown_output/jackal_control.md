@@ -1,6 +1,6 @@
 ## Overview
 
-[Jackal](Robots/Jackal)\'s mobility is controlled by
+[Jackal](Robots/Jackal)'s mobility is controlled by
 [diff_drive_controller](diff_drive_controller).
 
 This package contains launchfiles for the elements of Jackal which are

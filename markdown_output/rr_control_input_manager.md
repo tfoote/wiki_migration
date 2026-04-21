@@ -19,8 +19,8 @@ message stamp is expired discard the message.
 
 ## Default PS4 Controller and Xbox 360 Controller Button Mapping
 
-![\|width=\"600px\"](attachment:Xbox360_controller-button-mapping.jpg)
-![\|width=\"600px\"](attachment:rover_robotics_ps4_controller_mapping.png)
+![\|width="600px"](attachment:Xbox360_controller-button-mapping.jpg)
+![\|width="600px"](attachment:rover_robotics_ps4_controller_mapping.png)
 
 ## Nodes
 

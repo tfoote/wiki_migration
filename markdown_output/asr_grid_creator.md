@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -16,7 +16,7 @@ combination a grid will be generated and the one with the most grid
 points will be outputted. At the end the grid points will be sorted with
 TSP (nearest_neighbour and two_opt).
 
-![\|height=\"400\",width=\"450\"](attachment:grid_simulated.png)
+![\|height="400",width="450"](attachment:grid_simulated.png)
 
 # Usage
 

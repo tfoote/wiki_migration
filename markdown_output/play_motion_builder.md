@@ -4,46 +4,46 @@ The Play Motion Builder project is an open-source tool that allows the
 design and creation of predefined motions for a robot, as well as an
 RQT-based GUI, and a Javascript library to interface with said node.
 
-The code can be accesed at the project\'s
+The code can be accesed at the project's
 [ GitHub page](https://github.com/pal-robotics/play_motion_builder )
 
 The motions created with this project are intended to be used with the
-\`play_motion\` (see [ play_motion documentation](play_motion ))
+`play_motion` (see [ play_motion documentation](play_motion ))
 package, and as such the motions are stored in YAML format following
-that project\'s structure. This project (as the \`play_motion\` project)
-makes use of the \`move_it\` (See
+that project's structure. This project (as the `play_motion` project)
+makes use of the `move_it` (See
 [ MoveIt page](https://moveit.ros.org/ ) for more details) project,
 particularly, of the SRDF definition of the robot.
 
 ### Usage
 
 In order to use this project the node must be ran on the robot or on a
-simulation. The project requires that the \`robot_description_param\`,
-the \`semantic_description\`, and \`extra_joints_param_name\` parameters
+simulation. The project requires that the `robot_description_param`,
+the `semantic_description`, and `extra_joints_param_name` parameters
 are properly set.
 
 The node can be run using the command: ```
 rosrun play_motion_builder play_motion_builder_node
 ```
 
-Once the node is running starting the \`build\` action needs to be
+Once the node is running starting the `build` action needs to be
 invoked in order to start creating or editing a motion. This action must
 remain active during the editing process.
 
-With the action running the services \`edit_motion\` and
-\`change_joints\` can be used to operate with the motion being created,
-and the \`run\` action can be used to run it for testing purposes.
+With the action running the services `edit_motion` and
+`change_joints` can be used to operate with the motion being created,
+and the `run` action can be used to run it for testing purposes.
 
-Finally, the \`store_motion\` service can be used to generate the motion
+Finally, the `store_motion` service can be used to generate the motion
 code in YAML format, wither as a string or saved into a given file.
 
 ### Action API
 
-The \`play_motion_builder_node\` node provides an implementation of the
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )) to
+The `play_motion_builder_node` node provides an implementation of the
+`SimpleActionServer` (see [ actionlib documentation](actionlib )) to
 start and stop the creation of a motion. Another implementation of the
-\`SimpleActionServer\` is used to trigger an execution for the motion.
-To execute this motions \`play_motion\` (see
+`SimpleActionServer` is used to trigger an execution for the motion.
+To execute this motions `play_motion` (see
 [ play_motion documentation](play_motion )) is used.
 
 #### Action Subscribed Topics
@@ -145,23 +145,23 @@ param {
 
 ## rqt_play_motion_builder
 
-The \`rqt_play_motion_builder\` package provides an RQT-based (See
+The `rqt_play_motion_builder` package provides an RQT-based (See
 [ RQT documentation](rqt )) frontend that simplifies the use of the
-\`play_motion_builder\` node.
+`play_motion_builder` node.
 
 The GUI can be started by running: ```
 rosrun rqt_play_motion_builder rqt_play_motion_builder
 ``` on a system
-in which the \`play_motion_builder_node\` is running.
+in which the `play_motion_builder_node` is running.
 
 ## play_motion_builder_js
 
 A Javascript library has been implemented, based on roslibjs (See
 [ roslibjs documentation](roslibjs )) to integrate the
-\`play_motion_builder\` package in an HTML-based environment. This
+`play_motion_builder` package in an HTML-based environment. This
 library contains a simplified wrapper around the functionalities and
-usage of the \`play_motion_builder_node\`.
+usage of the `play_motion_builder_node`.
 
 In addition, a ready-to-deploy HTML frontend for the
-\`play_motion_builder\` has been developed, which can be used as is, or
+`play_motion_builder` has been developed, which can be used as is, or
 as an implementation example.

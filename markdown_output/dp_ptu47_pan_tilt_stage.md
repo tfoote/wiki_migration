@@ -1,6 +1,6 @@
 ## Interface
 
-The \`dp_ptu47_pan_tilt_stage\` package provides a \`dp_ptu47\` node
+The `dp_ptu47_pan_tilt_stage` package provides a `dp_ptu47` node
 that controls the actual hardware. The node advertises 4 different
 services:
 
@@ -59,7 +59,7 @@ $ rosrun dp_ptu47_pan_tilt_stage dp_ptu47_trigger
 ## Data capture
 
 The main purpose of the unit is to facilitate data acquisition using
-other sensing devices. Here\'s an example for capturing data from
+other sensing devices. Here's an example for capturing data from
 several topics on the PR2 robot, by following a given trajectory:
 ```
 1 # Topics to record

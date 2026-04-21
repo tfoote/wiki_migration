@@ -8,7 +8,7 @@ retrieve data from ros messages.
   -- ---------------------------------------------------------------------------------------------------------------- -- --------------------------------- --
      ros message type                                                                                                    tf2 datatype                      
      [geometry_msgs::Quaternion](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Quaternion.html)                    tf2::Quaternion                   
-     [geometry_msgs::QuaternionStamped](http://docs.ros.org/jade/api/geometry_msgs/html/msg/QuaternionStamped.html)      tf2::Stamped\<tf2::Quaternion\>   
+     [geometry_msgs::QuaternionStamped](http://docs.ros.org/jade/api/geometry_msgs/html/msg/QuaternionStamped.html)      tf2::Stamped<tf2::Quaternion>   
      [geometry_msgs::Transform](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Transform.html)                      tf2::Transform                    
      [geometry_msgs::Pose](http://docs.ros.org/jade/api/geometry_msgs/html/msg/Pose.html)                                tf2::Transform                    
   -- ---------------------------------------------------------------------------------------------------------------- -- --------------------------------- --

@@ -5,8 +5,8 @@
 This repository contains the 3D models of xArm series and demo packages
 for ROS development and simulations.Developing and testing environment:
 Ubuntu 16.04 + ROS Kinetic Kame + Gazebo 9. **Instructions below is
-based on xArm7, other model user can replace \'xarm7\' with \'xarm6\' or
-\'xarm5\' where applicable.**
+based on xArm7, other model user can replace 'xarm7' with 'xarm6' or
+'xarm5' where applicable.**
 
 ## Update Summary
 
@@ -36,14 +36,14 @@ Gazebo ROS Control: <http://gazebosim.org/tutorials/?tut=ros_control>\
 Moveit tutorial:
 <http://docs.ros.org/kinetic/api/moveit_tutorials/html/>
 
-### Download the \'table\' 3D model
+### Download the 'table' 3D model
 
-  In Gazebo simulator, navigate through the model database for \'table\'
+  In Gazebo simulator, navigate through the model database for 'table'
 item, drag and place the 3D model inside the virtual environment. It
-will then be downloaded locally, as \'table\' is needed for running the
+will then be downloaded locally, as 'table' is needed for running the
 demo.
 
-### Install \"mimic_joint_plugin\" for xArm Gripper simulation in Gazebo
+### Install "mimic_joint_plugin" for xArm Gripper simulation in Gazebo
 
   If simulating xArm Gripper in Gazebo is needed, mimic_joint_plugin by
 courtesy of Konstantinos Chatzilygeroudis (@costashatz) needs to be
@@ -60,13 +60,13 @@ ros_control: <http://wiki.ros.org/ros_control> (remember to select your
 correct ROS distribution)\
 moveit_core: <https://moveit.ros.org/install/>
 
-## Getting started with \'xarm_ros\'
+## Getting started with 'xarm_ros'
 
 ### Create a catkin workspace.
 
   If you already have a workspace, skip and move on to next part. Follow
 the instructions in this page. Please note that this readme instruction
-assumes the user continues to use \'/catkin_ws\' as directory of the
+assumes the user continues to use '/catkin_ws' as directory of the
 workspace.
 
 ### Obtain the package
@@ -81,19 +81,19 @@ $ git clone https://github.com/xArm-Developer/xarm_ros.git
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-``` Please change \'kinetic\' to the ROS
+``` Please change 'kinetic' to the ROS
 distribution you use. If there are any missing dependencies listed. Run
 the following command to install: ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ``` And chane
-\'kinetic\' to the ROS distribution you use.
+'kinetic' to the ROS distribution you use.
 
 ## Package Description & Usage Guidance
 
 ### xarm_description
 
   xArm description files, mesh files and gazebo plugin configurations,
-etc. It\'s not recommended to change the xarm description file since
+etc. It's not recommended to change the xarm description file since
 other packages depend on it.
 
 ### xarm_gazebo
@@ -108,7 +108,7 @@ executable source, scripts and launch files. User can deploy their
 program inside this package or create their own. Note that effort
 controllers defined in xarm_controller/config are just examples for
 simulation purpose, when controlling the real arm, only
-\'position_controllers/JointTrajectoryController\' interface is
+'position_controllers/JointTrajectoryController' interface is
 provided. User can add their self-defined controllers as well, refer to:
 <http://wiki.ros.org/ros_control> (controllers)
 
@@ -139,7 +139,7 @@ $ roslaunch xarm_gazebo xarm7_beside_table.launch add_gripper:=true
 ```
 $ roslaunch xarm7_gripper_moveit_config xarm7_gripper_moveit_gazebo.launch
 ``` If you have a satisfied motion planned in
-Moveit!, hit the \"Execute\" button and the virtual arm in Gazebo will
+Moveit!, hit the "Execute" button and the virtual arm in Gazebo will
 execute the trajectory.
 
 To run Moveit! motion planner to control the real xArm: First make sure
@@ -175,7 +175,7 @@ To launch the xarm simple motion planner together with the real xArm:
 ```
 $ rosdep update
 $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
-```0 Argument \'robot_dof\' specifies the number of
+```0 Argument 'robot_dof' specifies the number of
 joints of your xArm (default is 7).
 
 ### xarm_api/xarm_msgs:
@@ -186,14 +186,14 @@ names) supported:
 
 -   move_joint: joint space point to point command, given target joint
     angles, max joint velocity and acceleration. Corresponding function
-    in SDK is \"set_servo_angle()\".
+    in SDK is "set_servo_angle()".
 
 ```{=html}
 <!-- -->
 ```
 -   move_line: straight-line motion to the specified Cartesian Tool
     Centre Point(TCP) target. Corresponding function in SDK is
-    \"set_position()\"\[blending radius not specified\].
+    "set_position()"\[blending radius not specified\].
 
 ```{=html}
 <!-- -->
@@ -201,14 +201,14 @@ names) supported:
 -   move_lineb: a list of via points followed by target Cartesian point.
     Each segment is straight-line with Arc blending at the via points,
     to make velocity continuous. Corresponding function in SDK is
-    \"set_position()\"\[blending radius specified\].
+    "set_position()"\[blending radius specified\].
 
 ```{=html}
 <!-- -->
 ```
 -   move_line_tool: straight-line motion based on the Tool coordinate
     system rather than the base system. Corresponding function in SDK is
-    \"set_tool_position()\".Please keep in mind that before calling the
+    "set_tool_position()".Please keep in mind that before calling the
     4 motion services above, first set robot mode to be 0, then set
     robot state to be 0, by calling relavent services. Meaning of the
     commands are consistent with the descriptions in product user
@@ -285,7 +285,7 @@ $ rosdep check --from-paths . --ignore-src --rosdistro kinetic
 ```8 Motion service Return:   Please Note the above
 motion services will return immediately by default. If you wish to
 return until actual motion is finished, set the ros parameter
-\"/xarm/wait_for_finish\" to be true in advance. That is:
+"/xarm/wait_for_finish" to be true in advance. That is:
 
 ```
 $ rosdep update
@@ -305,23 +305,23 @@ $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 set one of the Digital output: ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```2   You have to
-make sure the operation is successful by checking responding \"ret\" to
+make sure the operation is successful by checking responding "ret" to
 be 0.
 
 Getting status feedback:   Having connected with a real xArm robot by
-running \'xarm7_server.launch\', user can subscribe to the topic
-\"xarm/xarm_states\" for feedback information about current robot
+running 'xarm7_server.launch', user can subscribe to the topic
+"xarm/xarm_states" for feedback information about current robot
 states, including joint angles, TCP position, error/warning code, etc.
 Refer to RobotMsg.msg for content details.   Another option is
-subscribing to \"/joint_states\" topic, which is reporting in
-JointState.msg, however, currently only \"position\" field is valid;
-\"velocity\" is non-filtered numerical differentiation based on 2
+subscribing to "/joint_states" topic, which is reporting in
+JointState.msg, however, currently only "position" field is valid;
+"velocity" is non-filtered numerical differentiation based on 2
 adjacent position data, so it is just for reference; and we do not
-provide \"effort\" feedback yet.   In consideration of performance,
+provide "effort" feedback yet.   In consideration of performance,
 current update rate of above two topics are set at 10Hz.
 
 Setting Tool Center Point Offset:   The tool tip point offset values can
-be set by calling service \"/xarm/set_tcp_offset\". Refer to the figure
+be set by calling service "/xarm/set_tcp_offset". Refer to the figure
 below, please note this offset coordinate is expressed with respect to
 initial tool frame (Frame B), which is located at flange center, with
 roll, pitch, yaw rotations of (PI, 0, 0) from base frame (Frame A).
@@ -340,25 +340,25 @@ Clearing Errors:   Sometimes controller may report error or warnings
 that would affect execution of further commands. The reasons may be
 power loss, position/speed limit violation, planning errors, etc. It
 needs additional intervention to clear. User can check error code in the
-message of topic \"xarm/xarm_states\" .
+message of topic "xarm/xarm_states" .
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```4   If it is non-zero, the corresponding reason
 can be found out in the user manual. After solving the problem, this
-error satus can be removed by calling service \"/xarm/clear_err\" with
+error satus can be removed by calling service "/xarm/clear_err" with
 empty argument.
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```5   If using Moveit!, call
-\"/xarm/moveit_clear_err\" instead to avoid the need of setting mode 1
+"/xarm/moveit_clear_err" instead to avoid the need of setting mode 1
 again manually.
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```6   After calling this service, please check the
-err status again in \'xarm/xarm_states\', if it becomes 0, the clearing
+err status again in 'xarm/xarm_states', if it becomes 0, the clearing
 is successful. Otherwise, it means the error/exception is not properly
 solved. If clearing error is successful, remember to set robot state to
 0 to make it ready to move again!
@@ -373,14 +373,14 @@ grasp speed:
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```7    Proper range of the speed is from 1 to
-5000. 1500 is used as an example. \'ret\' value is 0 for success. (2)
+5000. 1500 is used as an example. 'ret' value is 0 for success. (2)
 Give position command (open distance) to xArm gripper:
 
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```8    Proper range of the open distance is from 0
 to 850. 0 is closed, 850 is fully open. 500 is used as an example.
-\'ret\' value is 0 for success.
+'ret' value is 0 for success.
 
 \(3\) To get the current status (position and error_code) of xArm
 gripper:
@@ -388,12 +388,12 @@ gripper:
 ```
 $ rosdep install --from-paths . --ignore-src --rosdistro kinetic -y
 ```9    If error code is non-zero, please refer to
-user manual for the cause of error, the \"/xarm/clear_err\" service can
+user manual for the cause of error, the "/xarm/clear_err" service can
 still be used to clear the error code of xArm Gripper.
 
 2\. Gripper action:    The xArm gripper move action is defined in
 Move.action. The goal consists of target pulse position and the pulse
-speed. By setting \"true\" of \"use_gripper_action\" argument in
+speed. By setting "true" of "use_gripper_action" argument in
 xarm_bringup/launch/xarm7_server.launch, the action server will be
 started. Gripper action can be called by:
 
@@ -404,7 +404,7 @@ $ roslaunch xarm7_moveit_config demo.launch
 ```1
 Tool Modbus communication: If modbus communication with the tool device
 is needed, please first set the proper baud rate and timeout parameters
-through the \"xarm/config_tool_modbus\" service (refer to
+through the "xarm/config_tool_modbus" service (refer to
 ConfigToolModbus.srv). For example:
 
 ```
@@ -441,7 +441,7 @@ bytes.
 
   xArm may operate under different modes depending on different
 controling methods. Current mode can be checked in the message of topic
-\"xarm/xarm_states\". And there are circumstances that demand user to
+"xarm/xarm_states". And there are circumstances that demand user to
 switch between operation modes.
 
 ### Mode Explanation

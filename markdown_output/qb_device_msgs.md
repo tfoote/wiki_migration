@@ -1,5 +1,5 @@
 Each *qbrobotics®* device-independent custom ROS message is documented
-directly in its \`.msg\` specification and it is designed to fit most of
+directly in its `.msg` specification and it is designed to fit most of
 the users needs. Indeed we recommend to use these messages as they are
 whenever it is possible. However we understand that your application may
 require few specific additional information. Since it is difficult to
@@ -8,4 +8,4 @@ coherent custom message, and feel free to propose your changes with a
 Pull Request in our repository if you think that it could be helpful for
 someone else.
 
-\<\<MsgSrvDoc(qb_device_msgs)\>\>
+<<MsgSrvDoc(qb_device_msgs)>>

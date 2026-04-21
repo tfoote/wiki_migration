@@ -8,7 +8,7 @@ provides tools to create a map of detected markers in 2D/3D space. It is
 designed for **static markers - moving camera **scenario** **and can be
 used for various navigation tasks for UAVs, UGVs, etc.
 
-\<\<Youtube(MlOy9qt_K4Y&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=MlOy9qt_K4Y&rel=0)
 
 ## Usage
 
@@ -16,13 +16,13 @@ used for various navigation tasks for UAVs, UGVs, etc.
 
 Mapping utilizes chaining principle:
 
-1\. first marker is identified with world´s origin 1. second marker\'s
-position is computed with respect to first one 1. third\'s marker
+1\. first marker is identified with world´s origin 1. second marker's
+position is computed with respect to first one 1. third's marker
 position is computed with respect to second one 1. \...
 
 In order to achieve successfull mapping, everytime when a new marker is
 detected, previous marker needs to be visible in the actual image to
-allow computing new marker\'s position. (See
+allow computing new marker's position. (See
 [demonstration video](https://www.youtube.com/watch?t=2&v=3mCu_7Ek2fs)
 for better understanding). Keep this principle in mind when placing
 markers in your environment and do not overdo their mutual distances.
@@ -183,4 +183,4 @@ navigation:
 
 ## Report a Bug
 
-\<\<GitHubIssues(SmartRoboticSystems/aruco_mapping)\>\>
+<<GitHubIssues(SmartRoboticSystems/aruco_mapping)>>

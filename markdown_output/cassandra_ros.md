@@ -5,7 +5,7 @@ which can be used to store any types of ROS-messages in column families,
 similar to MongoDB. But in contrast to MongoDB you are able to choose
 the format you would like to store your messages. You can choose between
 various formats and thus, explore your data afterwards by using
-Cassandra\'s CQL capabilities.
+Cassandra's CQL capabilities.
 
 # Installation
 
@@ -14,7 +14,7 @@ apache:
 
 <http://cassandra.apache.org/download/>
 
-Then change the Cassandra partitioner to \"ByteOrdered\", which can be
+Then change the Cassandra partitioner to "ByteOrdered", which can be
 set in
 
 cassandra-install/conf/cassandra.yaml
@@ -247,7 +247,7 @@ topicContainer.getData('04', '20')
 As mentioned before, we support different ways of storing data, it is
 either possible to store messages in a binary format, which enables fast
 conversion and storing. But currently it is also possible to store
-messages as \"strings\", \"yaml\", or \"ros\" format. The type of
+messages as "strings", "yaml", or "ros" format. The type of
 conversion is defined at the creation of a topic-container:
 
 ```python
@@ -261,7 +261,7 @@ rosCas.addTopic(topic,
 ```
 
 If you would like to run CQL-Queries on your stored messages, you will
-have to use the \'ros\' -- format (might not work with every datatype).
+have to use the 'ros' -- format (might not work with every datatype).
 Every message is therefore translated into a linar form and column are
 strongly typed, according to the defined message formats. A Message of
 type "geometry_msgs/TransformStamped":
@@ -303,8 +303,8 @@ which allows to query and analyze your data afterwards, by using CQL (as
 described within the next section).
 
 How does it work? If you take a look into cassandra_ros/lib \... you
-will see a couple of files in the form of CassandraTopic\_\'format\'.py,
-which are all descendants of CassandraTopic\_.py. And each of them
+will see a couple of files in the form of CassandraTopic_'format'.py,
+which are all descendants of CassandraTopic_.py. And each of them
 overwrites the methods:
 
 -   getColumnValidationClasses: as the name suggests, is used to define
@@ -362,7 +362,7 @@ $ roslaunch cassandra_ros recordCamera.launch
 ```3
 
 To get a list of all currently stored topics, use the parameter
-\'list\':
+'list':
 
 ```
 $ roslaunch cassandra_ros recordCamera.launch

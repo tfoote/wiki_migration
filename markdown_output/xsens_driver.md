@@ -19,7 +19,7 @@ than the old vendor based multi-layered architecture.
 
 ## mtnode.py
 
-The ROS node is a wrapper around the \`mtdevice::MTDevice\` class to
+The ROS node is a wrapper around the `mtdevice::MTDevice` class to
 publish the data that the IMU streams. It can publish the following
 topics, depending on the configuration of the device (topics are only
 advertised when there is data to publish): ```clearsilver
@@ -63,8 +63,8 @@ pub {
 It also publishes [diagnostics](http://www.ros.org/wiki/diagnostics)
 information.
 
-If the IMU is set to raw mode, the values in of the \`/imu/data\`,
-\`/velocity\` and \`/magnetic\` topics are the 16 bits output of the AD
+If the IMU is set to raw mode, the values in of the `/imu/data`,
+`/velocity` and `/magnetic` topics are the 16 bits output of the AD
 converters.
 
 The covariance information in the
@@ -100,8 +100,8 @@ param {
 
 ## mtdevice.py
 
-\`mtdevice.py\` is a Python module that is both a library to communicate
-to devices through the \`MTDevice\` class, and a standalone script to
+`mtdevice.py` is a Python module that is both a library to communicate
+to devices through the `MTDevice` class, and a standalone script to
 configure such a device. Note that you can use the module in an
 interactive session to diagnose or configure the device with a bit more
 flexibility.
@@ -279,5 +279,5 @@ Deprecated options:
 
 ## Permissions
 
-It might be necessary to add the user to the \`dialout\` group so that
+It might be necessary to add the user to the `dialout` group so that
 the node can communicate with the device.

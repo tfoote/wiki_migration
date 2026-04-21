@@ -17,10 +17,10 @@ but should be instructive for other setups as well.
 
 ## Put Pipette in Bluetooth mode
 
-1\. Use back `<-` button on pipette to get into \'Main Menu\'. 1. Scroll
-to bottom of menu and select \'Toolbox\' option 1. In \'Toolbox\' menu,
-select \'Communications\' option 1. In \'Communications\' menu, scroll
-to \'Bluetooth\' and select to enter bluetooth mode.
+1\. Use back `<-` button on pipette to get into 'Main Menu'. 1. Scroll
+to bottom of menu and select 'Toolbox' option 1. In 'Toolbox' menu,
+select 'Communications' option 1. In 'Communications' menu, scroll
+to 'Bluetooth' and select to enter bluetooth mode.
 
 ### Local computer setup
 
@@ -110,6 +110,6 @@ ssh pri2
 ![](attachment:pipette-diagnostics.png)
 
 When using the PR2 and dashboard, the pipette diagnostics will be put in
-the \"Other\" category
+the "Other" category
 
 ![](attachment:pipette-diagnostics-dashboard.png)

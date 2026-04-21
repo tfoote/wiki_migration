@@ -35,7 +35,7 @@ using ecl::UnknownError;
 using ecl::Error;
 ```
 
-If outside ros, you will also need to link to \`ecl_errors\`.
+If outside ros, you will also need to link to `ecl_errors`.
 
 ## Usage
 

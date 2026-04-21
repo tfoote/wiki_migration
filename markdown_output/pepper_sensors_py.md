@@ -7,7 +7,7 @@ sensors specific to Pepper.
 
 ### Laser
 
-Pepper has 6 laser sensors. Three of them watch the robot\'s
+Pepper has 6 laser sensors. Three of them watch the robot's
 surroundings and project their line horizontally. They are called:
 
 -   srd_front

@@ -109,7 +109,7 @@ result {
 See `face_detector/launch/face_detector.<camera>.launch` to see how to
 run the face detector continuously, or
 `face_detector/launch/face_detector_action.<camera>.launch` to run it as
-an action. \`launch\` files above are stored
+an action. `launch` files above are stored
 [in the repository](https://github.com/wg-perception/people/tree/indigo-devel/face_detector/launch).
 
 Possible pitfall may be the argument names (in
@@ -124,9 +124,9 @@ for example):
   <arg name="fixed_frame" default="camera_rgb_optical_frame" />
 ```
 
-\`camera\` and \`depth_ns\` together consists the namespace prefix, and
-\`\*\_topic\` makes the body of the topic to subscribe. In the example
-above, you\'re looking for:
+`camera` and `depth_ns` together consists the namespace prefix, and
+`\*_topic` makes the body of the topic to subscribe. In the example
+above, you're looking for:
 
 -   /camera/rgb/image_rect_color
 -   /camera/depth_ns/image_rect_raw
@@ -150,7 +150,7 @@ for the name of the topics you need to correct.
 
 ### Example with robots
 
-No doubt \`face_detector\` works on the robots on simulator. Examples
+No doubt `face_detector` works on the robots on simulator. Examples
 below show how you can run this package using stereo camera on
 [PR2](pr2) and [Turtlebot](turtlebot). Additionally, using some other
 useful packages, you can visualize face detection result on
@@ -158,19 +158,19 @@ useful packages, you can visualize face detection result on
 
 1\. Install some useful packages ([jsk_pr2_startup](jsk_pr2_startup)
 that depends on [jsk_rviz_plugins](jsk_rviz_plugins), which provides a
-feature to show the result of \`face_detector\` on \`RViz\`) :
+feature to show the result of `face_detector` on `RViz`) :
 ```
 apt-get install jsk_pr2_startup
 ```
 
-2\. Run the robot\'s launch files:
+2\. Run the robot's launch files:
 
-For \`PR2\`: ```
+For `PR2`: ```
 roslaunch pr2_gazebo pr2_empty_world.launch
 roslaunch face_detector facedetector_rgb_pr2.launch  (*a)
 ```
 
-For \`Turtlebot\`: ```
+For `Turtlebot`: ```
 roslaunch turtlebot_gazebo turtlebot_world.launch
 roslaunch turtlebot_miscsample_cpp facedetector_rgb.launch (*b)
 ```
@@ -180,15 +180,15 @@ roslaunch turtlebot_miscsample_cpp facedetector_rgb.launch (*b)
 roslaunch jsk_pr2_startup rviz.launch
 ```
 
-4\. (Simulation only) Add a \`standing person\` model on Gazebo; On
-Gazebo, \`Insert\` -\> \`Standing person\` then place him at certain
+4\. (Simulation only) Add a `standing person` model on Gazebo; On
+Gazebo, `Insert` -> `Standing person` then place him at certain
 location.
 
-5\. You may want to open \`Image\` plugin on \`RViz\` then specify
-\`/head_mount_kinect/rgb/image_raw\` on \`Image Topic\` row, to make
-sure that the robot is seeing the person\'s face.
+5\. You may want to open `Image` plugin on `RViz` then specify
+`/head_mount_kinect/rgb/image_raw` on `Image Topic` row, to make
+sure that the robot is seeing the person's face.
 
-6\. You may want to move the robot\` so that the human is in the sight.
+6\. You may want to move the robot` so that the human is in the sight.
 
 (\*a)\...Requires
 [this pull request](https://github.com/wg-perception/people/pull/31)
@@ -202,4 +202,4 @@ PR2:
 
 Turtlebot:
 
-![Tutelebot\|width=\"85%\"](attachment:facedetect_turtlebot_gazebo_jsk-rviz_axis.png)
+![Tutelebot\|width="85%"](attachment:facedetect_turtlebot_gazebo_jsk-rviz_axis.png)

@@ -1,7 +1,7 @@
 ## Installation
 
-You\'ll need a working copy of the heyu software installed at the
-standard location (/usr/local/bin/heyu). Here\'s a good
+You'll need a working copy of the heyu software installed at the
+standard location (/usr/local/bin/heyu). Here's a good
 [FAQ](http://www.grep-ros.net/x10/heyu-x10/heyu-x10-install/) on how to
 install it.
 
@@ -18,7 +18,7 @@ Locate the full path to heyu_X10 ros package and add it to the code to
 your ROS_PACKAGE_PATH (you should probably add this to your .bashrc)
 e.g.: export ROS_PACKAGE_PATH=/path/to/code:\${ROS_PACKAGE_PATH}
 
-Then build it: eventhough it\'s a python node, you need to generate the
+Then build it: eventhough it's a python node, you need to generate the
 services, etc\... ```
 rosmake heyu_X10
 ```

@@ -68,7 +68,7 @@ node.0{
 }
 ```
 
-The \`robot_pose_ekf\` node does not require all three sensor sources to
+The `robot_pose_ekf` node does not require all three sensor sources to
 be available all the time. Each source gives a pose estimate and a
 covariance. The sources operate at different rates and with different
 latencies. A source can appear and disappear over time, and the node
@@ -119,8 +119,8 @@ however is localization, not odometry.*
 Imagine the robot pose filter was last updated at time t_0. The node
 will not update the robot pose filter until at least one measurement of
 *each* sensor arrived with a timestamp later than t_0. When e.g. a
-message was received on the \`odom\` topic with timestamp t_1 \> t_0,
-and on the \`imu_data\` topic with timestamp t_2 \> t_1 \> t_0, the
+message was received on the `odom` topic with timestamp t_1 > t_0,
+and on the `imu_data` topic with timestamp t_2 > t_1 > t_0, the
 filter will now update to the latest time at which information about all
 sensors is available, in this case to time t_1. The odom pose at t_1 is
 directly given, and the imu pose at t_1 is obtained by linear
@@ -135,7 +135,7 @@ from a given initial position (green dot), driven around, and returned
 to the initial position. A perfect odometry x-y plot should show an
 exact loop closure. The blue line shows the input from the wheel
 odometry, with the blue dot the estimated end position. The red line
-shows the output of the \`robot_pose_ekf\`, which combined information
+shows the output of the `robot_pose_ekf`, which combined information
 of wheel odometry and imu, with the red dot the estimated end position.
 
 ## Package Status
@@ -153,8 +153,8 @@ below).
 -   The filter is currently designed for the three sensor signals (wheel
     odometry, imu and vo) that we use on the PR2 robot. We plan to make
     this package more generic: future versions will be able to listen to
-    \'n\' sensor sources, all publishing a
-    (\<\<MsgLink(nav_msgs/Odometry)\>\>) message. Each source will set
+    'n' sensor sources, all publishing a
+    (<<MsgLink(nav_msgs/Odometry)>>) message. Each source will set
     the covariance of the 3D pose in the Odometry message to specify
     which part of the 3D pose it actually measured.
 -   We would like to add velocity to the state of the extended Kalman

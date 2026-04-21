@@ -1,25 +1,25 @@
 ## Overview
 
-\`sync_params\` provides a means to synchronize parameter servers
+`sync_params` provides a means to synchronize parameter servers
 between multiple ROS masters. The parameter server is polled, and new
 parameters are published as a topic. The topic is then synchronized
 across masters using
 [multimaster_fkie](http://wiki.ros.org/multimaster_fkie). The topic is
 received and written to the parameter server on the other ROS master.
 
-By default, all parameters will be synchronized. The \`blacklist\`
-excludes parameters based on their name. The \`whitelist\` parameters
-are exempt from the \`blacklist\`. These can both be regular
+By default, all parameters will be synchronized. The `blacklist`
+excludes parameters based on their name. The `whitelist` parameters
+are exempt from the `blacklist`. These can both be regular
 expressions. For example: ```
 blacklist = ["/*"]
 whitelist = [/my_parameter]
 ``` Would only
-synchronize \`my_parameter\`.
+synchronize `my_parameter`.
 
-The parameter \`use_wall_time\` is designed for spawning robots in
+The parameter `use_wall_time` is designed for spawning robots in
 Gazebo. Gazebo pauses the ROS clock when loading a robot, and waits for
-the \`robot_description\` parameter. But that parameter might not get
-synchronized if \`sync_params\` uses the ROS clock.
+the `robot_description` parameter. But that parameter might not get
+synchronized if `sync_params` uses the ROS clock.
 
 ## Usage
 

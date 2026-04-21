@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(clearpath_base)\>\>
+<<MsgSrvDoc(clearpath_base)>>

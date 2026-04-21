@@ -1,6 +1,6 @@
-This is an external library that provides access to the segway rmp\'s.
+This is an external library that provides access to the segway rmp's.
 It is maintained by William Woodall
-[\<wjwwood@gmail.com\>](mailto:wjwwood@gmail.com).
+[<wjwwood@gmail.com>](mailto:wjwwood@gmail.com).
 
 The repository is here:
 

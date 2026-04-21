@@ -64,8 +64,8 @@ param {
 
 ## C++ API
 
-The teleop translation functionality is embeddable, if you\'d like to
-compile it into a larger \"base\" node for your robot. See the
+The teleop translation functionality is embeddable, if you'd like to
+compile it into a larger "base" node for your robot. See the
 [TeleopTwistJoy](http://docs.ros.org/latest-available/api/teleop_twist_joy/html/classteleop__twist__joy_1_1TeleopTwistJoy.html)
 class for details or
 [teleop_node.cpp](http://docs.ros.org/latest-available/api/teleop_twist_joy/html/teleop__node_8cpp_source.html)

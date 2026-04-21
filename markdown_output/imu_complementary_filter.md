@@ -14,7 +14,7 @@ It has been tested with:
 
 ## Example
 
-Here\'s an example of the filter in operation:
+Here's an example of the filter in operation:
 
 [Youtube](https://www.youtube.com/watch?v=RmWpire__Zw)
 
@@ -124,4 +124,4 @@ sub {
 We appreciate the time and effort spent submitting bug reports and
 feature requests.
 
-\<\<GitHubIssues(CCNYRoboticsLab/imu_tools)\>\>
+<<GitHubIssues(CCNYRoboticsLab/imu_tools)>>

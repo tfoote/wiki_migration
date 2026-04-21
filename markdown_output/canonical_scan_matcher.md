@@ -11,18 +11,18 @@ The information below be preserved for a while while people switch.
 ## Details
 
 The [canonical_scan_matcher](canonical_scan_matcher) package is a
-wrapper around Andrea Censi\'s Canonical Scan Matcher \[1\]
+wrapper around Andrea Censi's Canonical Scan Matcher \[1\]
 implementation. The package allows to scan match between consecutive
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> messages, and publish the
+<<MsgLink(sensor_msgs/LaserScan)>> messages, and publish the
 estimated position of the laser as a
-\<\<MsgLink(geometry_msgs/Pose2D)\>\> or a [tf](tf) transform.
+<<MsgLink(geometry_msgs/Pose2D)>> or a [tf](tf) transform.
 
 The package is intended to be used without any odometry estimation
 provided by other sensors. Thus, it can serve as a stand-alone odometry
 estimator.
 
 An estimation for theta can optionally be provided to improve accuracy,
-in the form of a \<\<MsgLink(sensor_msgs/Imu)\>\>. This message would
+in the form of a <<MsgLink(sensor_msgs/Imu)>>. This message would
 typically be published by an IMU or other angular rate sensor.
 
 Alternatively, an estimation for x, y, and theta can optionally be
@@ -263,7 +263,7 @@ param{
 
 ## References
 
-\[1\] A. Censi, \"An ICP variant using a point-to-line metric\"
+\[1\] A. Censi, "An ICP variant using a point-to-line metric"
 Proceedings of the IEEE International Conference on Robotics and
 Automation (ICRA), 2008
 

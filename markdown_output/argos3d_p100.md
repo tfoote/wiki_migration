@@ -32,9 +32,9 @@ please visit Bluetechnix website:
 
 # First step: Get ROS
 
-The **\'argos3d_p100_ros_pkg**\' works with ROS versions groovy and
-hydro. You can use catkin workspaces or the previous rosbuild to
-configure, compile and get ready ROS.
+The **`argos3d_p100_ros_pkg`** works with ROS versions groovy and hydro.
+You can use catkin workspaces or the previous rosbuild to configure,
+compile and get ready ROS.
 
 The following are links to tutorials on setup and basic use of ROS to
 get you get started:
@@ -58,7 +58,7 @@ ROS tutorial:
 
 # Known Problems
 
-Be sure your libboost library version is \>= 1.49. Previous versions as
+Be sure your libboost library version is >= 1.49. Previous versions as
 1.46 generate errors while compiling argos3d_p100-ros-pkg.
 
 # Configuration
@@ -248,11 +248,11 @@ point sets are published with following topic names:
 
 To do this please perform the following steps:
 
-1\. In the \"Display\" panel on the left, open the first group of
-settings called \"Global Options\", set the option \"Fixed frame\" to
-**/tf_argos3d** 1. At the bottom in \"Display\" click on the button
-**add** to open a dialog titled \"Create visualization\" 1. In the
-dialog opened after, choose the tab \"By topic\" and select the
+1\. In the "Display" panel on the left, open the first group of
+settings called "Global Options", set the option "Fixed frame" to
+**/tf_argos3d** 1. At the bottom in "Display" click on the button
+**add** to open a dialog titled "Create visualization" 1. In the
+dialog opened after, choose the tab "By topic" and select the
 **/depth_non_filtered** topic.
 
 ## Using filters and parameters configuration

@@ -28,7 +28,7 @@ package will be supported by
 ## IPS ROS Package Setup
 
   -- ------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:package_setup.png)   
+     ![\|align="middle",width="80%"](attachment:package_setup.png)   
   -- ------------------------------------------------------------------- --
 
 ## Studies
@@ -51,7 +51,7 @@ The sample usage of the system is given in figure below. S and A
 represent anchors and Ti represent tags.
 
   -- --------------------------------------------------------------------------------------------- --
-     ![multiple tags 3A v2.PNG\|align=\"middle\",width=\"80%\"](attachment:multiple tags 2A.PNG)   
+     ![multiple tags 3A v2.PNG\|align="middle",width="80%"](attachment:multiple tags 2A.PNG)   
   -- --------------------------------------------------------------------------------------------- --
 
 Decawave development kits are used in tests which has a good performance
@@ -66,7 +66,7 @@ are placed which are not far than 10m from each other. In previous
 works, it was observed that anchors can be far away as much as 100m from
 each other.
 
-![\|align=\"middle\",width=\"80%\"](attachment:2-anchors.png)
+![\|align="middle",width="80%"](attachment:2-anchors.png)
 
 Tests are done at 6 different tag distance - d which are 0.15m, 0.30m,
 0.45m, 0.60m, 0.75m, 0.90m. The refresh rate is selected as 25Hz.
@@ -81,18 +81,18 @@ The histogram and fitted gaussian pdf graphs of test results are shown
 in figure below:
 
   -- ---------------------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:distance_histogram_1D_2A_ite.png)   
+     ![\|align="middle",width="80%"](attachment:distance_histogram_1D_2A_ite.png)   
   -- ---------------------------------------------------------------------------------- --
 
 Mean, mean error, standart deviation for each test are given in table
 below:
 
   -- ------------------------------------- -- ------------ -- ------------------- -- ---------------------- --
-     \<tablewidth=\"600px\"\>Distance(d)      Mean(µ)(m)      Mean Error(µe)(m)      Std. Deviation(m)(﻿σ)   
+     <tablewidth="600px">Distance(d)      Mean(µ)(m)      Mean Error(µe)(m)      Std. Deviation(m)(﻿σ)   
   -- ------------------------------------- -- ------------ -- ------------------- -- ---------------------- --
 
   -- ------------------------------- -- ------- -- ------- -- ------- --
-     \<tablewidth=\"600px\"\>0.15m      0.174      0.024      0.112   
+     <tablewidth="600px">0.15m      0.174      0.024      0.112   
      0.30m                              0.306      0.006      0.05    
      0.45m                              0.443      0.007      0.028   
      0.60m                              0.605      0.005      0.042   
@@ -117,13 +117,13 @@ is given in figure below. S, A and B represent anchors and Ti represent
 tags.
 
   -- ----------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:2d_3a_ortam.png)   
+     ![\|align="middle",width="80%"](attachment:2d_3a_ortam.png)   
   -- ----------------------------------------------------------------- --
 
 Tests are done at 6 different points of the tag which are;
 
   -- -------------------------- -- ------ -- ------ -- ------ --
-     \<tablewidth=\"200px\"\>      x(m)      y(m)      z(m)   
+     <tablewidth="200px">      x(m)      y(m)      z(m)   
      P1                            2.25      1.35      1.72   
      P2                            3.60      1.35      ﻿1.72   
      P3                            4.95      1.35      ﻿1.72   
@@ -139,14 +139,14 @@ The graph of 2D test results is shown in figure below. Red dots indicate
 the real points and blue dots indicate the measurement results:
 
   -- ----------------------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:2d_calculated_positions_graph.png)   
+     ![\|align="middle",width="80%"](attachment:2d_calculated_positions_graph.png)   
   -- ----------------------------------------------------------------------------------- --
 
 Mean, mean error, standart deviation for each test are given in table
 below:
 
   -- -------------------------------- -- ---------------- -- ------------------- -- --------------------- --
-     \<tablewidth=\"550px\"\>Points      ﻿Mean(µ)(m)          ﻿Mean Error(µe)(m)      ﻿Std.﻿Deviation(m)(﻿σ)   
+     <tablewidth="550px">Points      ﻿Mean(µ)(m)          ﻿Mean Error(µe)(m)      ﻿Std.﻿Deviation(m)(﻿σ)   
      P1                                  ﻿(2.293, 1.373)      ﻿0.197                  ﻿0.124                 
      P2                                  ﻿(3.607, 1.360)      ﻿0.151                  ﻿0.097                 
      P3                                  ﻿(4.947, 1.355)      ﻿0.115                  ﻿0.072                 
@@ -172,13 +172,13 @@ of the system is given in figure below. S, A, B and C represent anchors
 and Ti represent tags.
 
   -- ----------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:3d_4a_ortam.png)   
+     ![\|align="middle",width="80%"](attachment:3d_4a_ortam.png)   
   -- ----------------------------------------------------------------- --
 
 Tests are done at 8 different points of the tag which are;
 
   -- -------------------------- -- ------ -- ------ -- ------ --
-     \<tablewidth=\"200px\"\>      x(m)      y(m)      z(m)   
+     <tablewidth="200px">      x(m)      y(m)      z(m)   
      P1                            2.70      1.35      0.44   
      P2                            3.60      1.35      ﻿0.44   
      P3                            2.70      2.25      ﻿0.44   
@@ -197,14 +197,14 @@ the real points, blue dots indicate the measurement results and black
 dots indicate the places of anchor S,A,B and C :
 
   -- ----------------------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:3d_calculated_positions_graph.png)   
+     ![\|align="middle",width="80%"](attachment:3d_calculated_positions_graph.png)   
   -- ----------------------------------------------------------------------------------- --
 
 Mean, mean error, standart deviation for each test are given in table
 below:
 
   -- -------------------------------- -- -------------------- -- ------------------- -- --------------------- --
-     \<tablewidth=\"600px\"\>Points      ﻿﻿Mean(µ)(m)              ﻿Mean Error(µe)(m)      ﻿﻿Std.﻿Deviation(m)(﻿σ)   
+     <tablewidth="600px">Points      ﻿﻿Mean(µ)(m)              ﻿Mean Error(µe)(m)      ﻿﻿Std.﻿Deviation(m)(﻿σ)   
      P1                                  ﻿(2.73, 1.37, 0.45)      ﻿0.067                  ﻿0.034                 
      P2                                  ﻿(3.60, 1.34, 0.43)      ﻿0.055                  ﻿0.028                 
      P3                                  ﻿(2.70, 2.25, 0.44)      ﻿0.065                  ﻿0.037                 
@@ -246,7 +246,7 @@ smaller than 2 meters. For this study, DRMS is used for measure of
 estimated error for 2D respectively. DRMS is defined as follows:
 
   -- ------------------------------------------------------------ --
-     ![\|align=\"middle\",width=\"80%\"](attachment:formul.png)   
+     ![\|align="middle",width="80%"](attachment:formul.png)   
   -- ------------------------------------------------------------ --
 
 #### Validation of the Algorithm
@@ -254,7 +254,7 @@ estimated error for 2D respectively. DRMS is defined as follows:
 In 2D Positioning algorithm , the real tests done for the validation of
 the 2D localization algorithm. In those tests, the position was
 calculated 3000 times for each test point. For each test point,
-experimental ![\|width=\"63\",height=\"41\"](attachment:formul2.png) is
+experimental ![\|width="63",height="41"](attachment:formul2.png) is
 calculated from the standard deviation of these 3000 instances.
 
 σ(das) = σ(dbs) = σ(c) = 0.0625 is calculated. This values depends on
@@ -264,13 +264,13 @@ In following table, comparison of estimated DRMS with experimental DRMS
 at 6 test points.
 
   -- -------------------------- -- -------- -- -------- -- -------- -- -------- -- -------- -- -------- --
-     \<tablewidth=\"500px\"\>      P1          P2          P3          P4          P5          P6       
+     <tablewidth="500px">      P1          P2          P3          P4          P5          P6       
      Experimental DRMS             0.1350      0.0779      0.0779      0.1450      0.1011      0.0677   
      Accuracy Analysis DRMS        0.1373      0.1080      ﻿0.0816      0.1510      0.1159      ﻿0.0922   
   -- -------------------------- -- -------- -- -------- -- -------- -- -------- -- -------- -- -------- --
 
   -- ------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:graph_of_drms.png)   
+     ![\|align="middle",width="80%"](attachment:graph_of_drms.png)   
   -- ------------------------------------------------------------------- --
 
 ### Anchor Selection
@@ -290,7 +290,7 @@ In literature PDOP is the term describing the quality of the geometry
 and in 2D it can be defined as:
 
   -- ----------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:pdop_formul.png)   
+     ![\|align="middle",width="80%"](attachment:pdop_formul.png)   
   -- ----------------------------------------------------------------- --
 
 Low PDOP value refers to good anchors geometry therefore indicates high
@@ -324,13 +324,13 @@ has the lowest PDOP. The 2 example cases are given below:
 Case 1:
 
   -- ------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:anc_sel_case1.png)   
+     ![\|align="middle",width="80%"](attachment:anc_sel_case1.png)   
   -- ------------------------------------------------------------------- --
 
 Case 2:
 
   -- ------------------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"80%\"](attachment:anc_sel_case2.png)   
+     ![\|align="middle",width="80%"](attachment:anc_sel_case2.png)   
   -- ------------------------------------------------------------------- --
 
 ### Key Performance Indicators (KPI) Calculation
@@ -365,7 +365,7 @@ specified period such as working hours. It is defined as the summation
 of all individual distances taken over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_1.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_1.png)   
   -- ----------------------------------------------------------- --
 
 It's a simple metric but it serves as the cornerstone. This KPI shows
@@ -378,7 +378,7 @@ it is running over the specified period . It is defined as the summation
 of all individual stationary times over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_2.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_2.png)   
   -- ----------------------------------------------------------- --
 
 This KPI generally shows that how much time the mobile robot is unused.
@@ -391,7 +391,7 @@ the specified period. It is defined as the summation of all individual
 movement times over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_3.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_3.png)   
   -- ----------------------------------------------------------- --
 
 This KPI generally shows that how much time the mobile robot is used.
@@ -405,7 +405,7 @@ defined as how much of the period it moves. It is defined as the
 percentage of the motion time to specified period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_4.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_4.png)   
   -- ----------------------------------------------------------- --
 
 The period used in Efficiency KPI and Motion Time KPI must be the same.
@@ -419,7 +419,7 @@ uses only distances taken in the specified region over the specified
 period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_5.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_5.png)   
   -- ----------------------------------------------------------- --
 
 This KPI can be used for regional analysis of the mobility. It can also
@@ -433,7 +433,7 @@ the specified region over the specified period . It is defined as the
 summation of all individual elapsed times in the region over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_6.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_6.png)   
   -- ----------------------------------------------------------- --
 
 This KPI can be used for regional analysis of the presence. It can also
@@ -447,7 +447,7 @@ is defined as the summation of all individual stationary times in the
 region over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_7.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_7.png)   
   -- ----------------------------------------------------------- --
 
 This KPI can be used for regional analysis of the idle time of the
@@ -462,7 +462,7 @@ It is defined as the summation of all individual movement times in the
 region over the period.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_8.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_8.png)   
   -- ----------------------------------------------------------- --
 
 This KPI shows how much time the mobile robot is used in that region.
@@ -476,7 +476,7 @@ defined as the percentage of the Region Based Motion Time to the Region
 Based Total Time.
 
   -- ----------------------------------------------------------- --
-     ![\|align=\"middle\",width=\"60%\"](attachment:kpi_9.png)   
+     ![\|align="middle",width="60%"](attachment:kpi_9.png)   
   -- ----------------------------------------------------------- --
 
 The region used Region Based Motion Time and Region Based Total Time

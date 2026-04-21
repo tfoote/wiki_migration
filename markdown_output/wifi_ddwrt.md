@@ -40,7 +40,7 @@ information about all the Access Points that the router can see.
 ### monitor
 
 The monitor node publishes a visualization marker to [rviz](rviz) that
-displays between 1-5 bars over the robot\'s head according to the signal
+displays between 1-5 bars over the robot's head according to the signal
 strength of the Access Point the robot is currently connected to.
 
 ```clearsilver
@@ -83,5 +83,5 @@ information on a map which it saves as a png image.
 
 ### output
 
-The analysis node will save a file called \"static_map.png\" on exit
+The analysis node will save a file called "static_map.png" on exit
 that displays signal strength information for a run.

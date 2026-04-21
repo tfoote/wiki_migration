@@ -34,7 +34,7 @@ calibration does not significantly alter the CAD-based frame position of
 the gripper cameras.
 
 As a result it seems sufficient to copy the gripper stereo urdf
-information into the bottom of any existing robot\'s calibrated urdf.
+information into the bottom of any existing robot's calibrated urdf.
 
 A patch to pr2_calibration_launch is available for those who would like
 to investigate it further.

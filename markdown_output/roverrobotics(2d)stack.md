@@ -5,4 +5,4 @@ The roverrobotics_stack is a replacement for rr_openrover_stack
 everyone who is currently using rr_openrover_stack to update to this
 repository as soon as possible.
 
-\<\<GitHubIssues(roverrobotics/roverrobotics_stack)\>\>
+<<GitHubIssues(roverrobotics/roverrobotics_stack)>>

@@ -1,12 +1,12 @@
 ## About
 
-The intended use for \`rail_mesh_icp\` is to allow RGBD sensing
+The intended use for `rail_mesh_icp` is to allow RGBD sensing
 platforms using ROS to match a mesh model (e.g. an STL file) to point
 clouds. This is useful in cases where an accurate estimate of the
-model\'s 6-DoF pose in the point cloud is needed (e.g.
+model's 6-DoF pose in the point cloud is needed (e.g.
 grasping/manipulation).
 
-\<\<MsgSrvDoc(rail_mesh_icp)\>\>
+<<MsgSrvDoc(rail_mesh_icp)>>
 
 ## Nodes
 
@@ -141,7 +141,7 @@ node.2 {
 
 ## Installation
 
-To install the \`rail_mesh_icp\` package, you can install from source
+To install the `rail_mesh_icp` package, you can install from source
 with the following commands:
 
 . ```shell
@@ -154,78 +154,78 @@ catkin build rail_mesh_icp
 ## Making the Mesh (Source) Cloud
 
 1\. After you have mesh model for your object, convert it to a PLY (i.e.
-\`.ply\`) file format so the mesh sampling tool
+`.ply`) file format so the mesh sampling tool
 
 can read the file format and convert it to a point cloud. In Ubuntu,
 \[Mesh Lab\](<http://meshlab.sourceforge.net>) allows you to import many
 mesh model formats (e.g. STL, PLY, DAE) and convert them to PLY via the
-\`Import Mesh\` and \`Export Mesh\` options.
+`Import Mesh` and `Export Mesh` options.
 
 1\. With the mesh model in PLY format, you can call the mesh sampling
-tool via \`rosrun rail_mesh_icp mesh_sampler_node
+tool via `rosrun rail_mesh_icp mesh_sampler_node
 
-\[INPUT_MESH_MODEL\].ply \[OUTPUT_POINT_CLOUD\].pcd\`. Optional
-arguments, like sampling density, are detailed using \`-h\`.
+\[INPUT_MESH_MODEL\].ply \[OUTPUT_POINT_CLOUD\].pcd`. Optional
+arguments, like sampling density, are detailed using `-h`.
 
-1\. If the sampling tool was successful, there should now be a \`.pcd\`
-file in the \`cad_models\` folder.
+1\. If the sampling tool was successful, there should now be a `.pcd`
+file in the `cad_models` folder.
 
 ## Running a demo using the Fetch platform
 
-1\. An example launch file to match the \`corner.pcd\` template in the
-\`cad_models\` folder to a static environment object is
-\`template_match_demo.launch\`. It\'s intended use is with the
+1\. An example launch file to match the `corner.pcd` template in the
+`cad_models` folder to a static environment object is
+`template_match_demo.launch`. It's intended use is with the
 [Fetchit Challenge](https://github.com/fetchrobotics/fetch_gazebo/tree/gazebo9/fetchit_challenge)
 environment. Please follow tutorials found
 [here](http://docs.fetchrobotics.com/gazebo.html) to install the
 environment and robot simulator. 1. Launch a simulation of the fetch and
-simulation environment using \`roslaunch fetchit_challenge
-main.launch\`. 1. Launch the navigation stack to enable localization via
-\`roslaunch fetch_navigation build_map.launch\`. 1. AFTER launching
+simulation environment using `roslaunch fetchit_challenge
+main.launch`. 1. Launch the navigation stack to enable localization via
+`roslaunch fetch_navigation build_map.launch`. 1. AFTER launching
 navigation, teleop the Fetch to face the front corver of the large
-recangular machine using keyboard teleop via \`rosrun
-teleop_twist_keyboard teleop_twist_keyboard.py\` making sure the
-Fetch\'s published point cloud under topic
-\`/head_camera/depth_registered/points\` clearly captures the corner of
+recangular machine using keyboard teleop via `rosrun
+teleop_twist_keyboard teleop_twist_keyboard.py` making sure the
+Fetch's published point cloud under topic
+`/head_camera/depth_registered/points` clearly captures the corner of
 the machine as shown below:
 
-![\|width=\"600\"](attachment:align.png)
+![\|width="600"](attachment:align.png)
 
 1\. Start the template matching and icp nodes using the demo launch file
-via \`roslaunch rail_mesh_icp template_match_demo.launch\`. This should
+via `roslaunch rail_mesh_icp template_match_demo.launch`. This should
 launch a version of the generic template matching node (i.e.
-\`template_matcher_node\`) specific to matching the \`corner\` template
-along with an ICP matching node (i.e. \`icp_matcher_node\`)
-automatically. 1. Verify that the new \`initial_estimate\` frame in tf
+`template_matcher_node`) specific to matching the `corner` template
+along with an ICP matching node (i.e. `icp_matcher_node`)
+automatically. 1. Verify that the new `initial_estimate` frame in tf
 is near the corner of the schunk machine. This initial guess is used to
-initialize the \`template_matcher_node\` for ICP. If the
-\`initial_estimate\` is off by more than 0.1 m and/or 20 degrees along
+initialize the `template_matcher_node` for ICP. If the
+`initial_estimate` is off by more than 0.1 m and/or 20 degrees along
 each axis, ICP might not find a registration between the template and
 viewing point cloud. If the estimate is too far, adjust it in the launch
-file (i.e. adjust variable \`initial_estimate\` inside
-\`template_match_demo.launch\`). This can also be done faster using
-\`static_transform_publisher\` directly. 1. A service call to detect the
-corner via \`rosservice call
-/template_matcher_demo_node/match_template\` will start the template
-matching. Once matched, an estimated frame named \`template_pose\`
+file (i.e. adjust variable `initial_estimate` inside
+`template_match_demo.launch`). This can also be done faster using
+`static_transform_publisher` directly. 1. A service call to detect the
+corner via `rosservice call
+/template_matcher_demo_node/match_template` will start the template
+matching. Once matched, an estimated frame named `template_pose`
 should appear in tf with the x-axis aligned to the center of the
 cylindrical part of the machine as shown below:
 
-![\|width=\"600\"](attachment:match.png)
+![\|width="600"](attachment:match.png)
 
-1\. Note that this \`template pose\` can be changed arbitrarily with
-respect to the matched template using the \`template_offset\` launch
-argument. Additionally, if \`debug\` is enabled you can view the target,
+1\. Note that this `template pose` can be changed arbitrarily with
+respect to the matched template using the `template_offset` launch
+argument. Additionally, if `debug` is enabled you can view the target,
 template, and matched template point clouds in rviz by subscribing to
-\`target_points\`, \`template_points\`, \`matched_template_points\`,
+`target_points`, `template_points`, `matched_template_points`,
 respectively.
 
 ## Matching to other templates (bin, handle, etc.)
 
 1\. To do this, simply create another launch similar to the
-\`template_match_demo.launch\` which is currently set up specifically
+`template_match_demo.launch` which is currently set up specifically
 for the machine matched in the demo. The main changes will be updating
-\`initial_estimate\`, \`template_offset\`, \`provide_processed_cloud\`,
-\`latch_initial_estimate\`, and \`template_filename\`. 1. Note that for
-moveable objects in the environment, the \`initial_estimate\` can be
-given along with each \`match_template\` service call.
+`initial_estimate`, `template_offset`, `provide_processed_cloud`,
+`latch_initial_estimate`, and `template_filename`. 1. Note that for
+moveable objects in the environment, the `initial_estimate` can be
+given along with each `match_template` service call.

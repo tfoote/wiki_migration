@@ -1,6 +1,6 @@
 # Package Summary
 
-A package that decomposes the \`/tf\` topic into multiple ones.
+A package that decomposes the `/tf` topic into multiple ones.
 
 -   Author: Zhi Yan
 -   License: BSD
@@ -9,8 +9,8 @@ A package that decomposes the \`/tf\` topic into multiple ones.
 
 ## About
 
-The \`tf_splitter\` package contains a ROS node that decomposes the
-\`/tf\` topic into multiple ones according to the number of robots. This
+The `tf_splitter` package contains a ROS node that decomposes the
+`/tf` topic into multiple ones according to the number of robots. This
 package can be used in multi-robot systems to alleviate the network
 traffic load.
 

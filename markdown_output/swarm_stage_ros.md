@@ -6,10 +6,10 @@ computational cost, with homogeneous and heterogeneous robots, different
 perceptions systems, to the main tasks of robot swarm.
 
 -   Maintainer status: maintained
--   Maintainer: Vivian Cremer Kalempa \<vivian.kalempa AT udesc DOT br\>
--   Author: Vivian Cremer Kalempa \<vivian.kalempa AT udesc DOT br\>,
-    André Schneider de Oliveira \<andreoliveira AT utfpr DOT edu DOT
-    br\>
+-   Maintainer: Vivian Cremer Kalempa <vivian.kalempa AT udesc DOT br>
+-   Author: Vivian Cremer Kalempa <vivian.kalempa AT udesc DOT br>,
+    André Schneider de Oliveira <andreoliveira AT utfpr DOT edu DOT
+    br>
 -   Source: git <https://github.com/VivianCremerKalempa/swarm_stage_ros>
     (branch: catkin)
 -   Developed at the Federal University of Technology - Parana (UTFPR)

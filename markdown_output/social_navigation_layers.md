@@ -9,8 +9,8 @@ They can be used in
 [costmap configurations](http://wiki.ros.org/costmap_2d/Tutorials/Configuring%20Layered%20Costmaps)
 with the following types:
 
--   \`social_navigation_layers::ProxemicLayer\`
--   \`social_navigation_layers::PassingLayer\`
+-   `social_navigation_layers::ProxemicLayer`
+-   `social_navigation_layers::PassingLayer`
 
 ```clearsilver
 name = ProxemicLayer/PassingLayer
@@ -59,7 +59,7 @@ with the parameters specified above. If the person is stationary, the
 gaussian is perfectly round. However, if the person is moving, then the
 costs will be increased in the direction of their motion. How far in
 front of the person the costs are increased is proportional to the
-\`factor\` parameter.
+`factor` parameter.
 
 #### Stationary Person
 

@@ -1,11 +1,11 @@
-\<\<MsgSrvDoc(warthog_msgs)\>\>
+<<MsgSrvDoc(warthog_msgs)>>
 
 ## Notes
 
 These messages are the low-level interface between
-[Warthog](Robots/Warthog)\'s ARM MCU and integrated PC. Most users of
+[Warthog](Robots/Warthog)'s ARM MCU and integrated PC. Most users of
 Warthog should be able to use standard ROS interfaces (eg.
-\<\<MsgLink(geometry_msgs/Twist)\>\>, [diagnostics](diagnostics)) to
+<<MsgLink(geometry_msgs/Twist)>>, [diagnostics](diagnostics)) to
 command and monitor the robot. Possible exceptions are:
 
 -   If you wish to disable

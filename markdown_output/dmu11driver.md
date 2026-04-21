@@ -3,9 +3,9 @@
 The dmu_ros package:
 
 -   Maintainer status: developed
--   Maintainer: Leo Muhendislik \`\<leo AT leomuhendislik DOT com\>\`
--   Author: Leutrim Gruda \`\<leutrim.gruda AT leomuhendislik DOT
-    com\>\`
+-   Maintainer: Leo Muhendislik `<leo AT leomuhendislik DOT com>`
+-   Author: Leutrim Gruda `<leutrim.gruda AT leomuhendislik DOT
+    com>`
 -   License: BSD
 -   Source: <https://github.com/leo-muhendislik/dmu_ros.git>
     (branch:master)

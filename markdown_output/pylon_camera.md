@@ -13,20 +13,20 @@ ROS-Framwork.
 
 The package supports Baslers USB 3.0, GigE as well as the DART cameras.
 
-Images can continuously be published over ***/image_raw*** or the
-***/image_rect*** topic. The latter just in case the intrinsic
+Images can continuously be published over **`'/image_raw`**' or the
+**`'/image_rect`**' topic. The latter just in case the intrinsic
 calibration matrices are provided through the **camera_info_url**
 parameter.
 
 The camera-characteristic parameter such as hight, width, projection
-matrices and camera_frame were published over the ***/camera_info***
+matrices and camera_frame were published over the **`'/camera_info`**'
 topic. Furthermore an action-based image grabbing with desired exposure,
 gain, gamma and / or brightness is provided. Hence one can grab a
 sequence of images with above target settings as well as a single image.
 
-Adapting camera\'s settings regarding binning (in x and y direction),
+Adapting camera's settings regarding binning (in x and y direction),
 exposure, gain, gamma and brightness can be done using provided
-***set\_**\** services. These changes effect the continuous image
+**`'set_*`**' services. These changes effect the continuous image
 acquisition and hence the images provided through the image topics.
 
 The default node operates in Software-Trigger Mode. This means that the
@@ -34,13 +34,13 @@ image acquisition is triggered with a certain rate and the camera is not
 running in the continuous mode.
 
 The package opens either a predefined camera (using a given
-\'device_user_id\' parameter) or, if no camera id is predefined the
+'device_user_id' parameter) or, if no camera id is predefined the
 first camera device it can find.
 
 ## Installation
 
 The package has been tested for ROS-Indigo and ROS-Kinetic. For other
-ROS versions than Indigo, please replace \'indigo\' with your installed
+ROS versions than Indigo, please replace 'indigo' with your installed
 ROS-version in the following install instructions.
 
 The pylon_camera-pkg requires the pylonSDK to be installed on your
@@ -100,7 +100,7 @@ This URL string will be parsed from the
 [CameraInfoManager](http://docs.ros.org/api/camera_info_manager/html/classcamera__info__manager_1_1CameraInfoManager.html#details): -
 **binning_x & binning_y** Binning factor to get downsampled images. It
 refers here to any camera setting which combines rectangular
-neighborhoods of pixels into larger \"super-pixels.\" It reduces the
+neighborhoods of pixels into larger "super-pixels." It reduces the
 resolution of the output image to (width / binning_x) x (height /
 binning_y). The default values binning_x = binning_y = 0 are considered
 the same as binning_x = binning_y = 1 (no subsampling).****
@@ -120,33 +120,33 @@ opening the camera.
 
 \- **gain** The target gain in percent of the maximal value the camera
 supports. For USB-Cameras, the gain is in dB, for GigE-Cameras it is
-given in so called \'device specific units\'.
+given in so called 'device specific units'.
 
 \- **gamma** Gamma correction of pixel intensity. Adjusts the brightness
-of the pixel values output by the camera\'s sensor to account for a
+of the pixel values output by the camera's sensor to account for a
 non-linearity in the human perception of brightness or of the display
 system (such as CRT).
 
 \- **brightness** The average intensity value of the images. It depends
-the exposure time as well as the gain setting. If \'**exposure**\' is
+the exposure time as well as the gain setting. If '**exposure**' is
 provided, the interface will try to reach the desired brightness by only
 varying the gain. (What may often fail, because the range of possible
 exposure values is many times higher than the gain range). If
-\'**gain**\' is provided, the interface will try to reach the desired
-brightness by only varying the exposure time. If \'**gain**\' AND
-\'**exposure**\' are given, it is not possible to reach the brightness,
+'**gain**' is provided, the interface will try to reach the desired
+brightness by only varying the exposure time. If '**gain**' AND
+'**exposure**' are given, it is not possible to reach the brightness,
 because both are assumed to be fix.
 
-\- **brightness_continuous** Only relevant, if **\'brightness**\' is
-set: The brightness_continuous flag controls the auto brightness
-function. If it is set to false, the brightness will only be reached
-once. Hence changing light conditions lead to changing brightness
-values. If it is set to true, the given brightness will be reached
-continuously, trying to adapt to changing light conditions. This is only
-possible for values in the possible auto range of the pylon API which is
-e.g. \[50 - 205\] for acA2500-14um and acA1920-40gm
+\- **brightness_continuous** Only relevant, if **`brightness`** is set:
+The brightness_continuous flag controls the auto brightness function. If
+it is set to false, the brightness will only be reached once. Hence
+changing light conditions lead to changing brightness values. If it is
+set to true, the given brightness will be reached continuously, trying
+to adapt to changing light conditions. This is only possible for values
+in the possible auto range of the pylon API which is e.g. \[50 - 205\]
+for acA2500-14um and acA1920-40gm
 
-\- **exposure_auto & gain_auto** Only relevant, if **\'brightness**\' is
+\- **exposure_auto & gain_auto** Only relevant, if **`brightness`** is
 set: If the camera should try to reach and / or keep the brightness,
 hence adapting to changing light conditions, at least one of the
 following flags must be set. If both are set, the interface will use the
@@ -195,4 +195,4 @@ rosrun image_view image_view image:=/pylon_camera_node/image_raw
 ## Questions
 
 Please provide your qustions via <http://answers.ros.org/questions/> and
-tag them with **\'pylon_camera**\'
+tag them with **`pylon_camera`**

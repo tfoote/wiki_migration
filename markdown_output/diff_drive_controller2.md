@@ -25,9 +25,9 @@ The controller works with wheel joints through a **velocity** interface.
 ## Robots
 
   -- -------------------------------------------------------------------------------- -- -------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------------------------------------------------- --
-     [![REEM\|width=\"100\"](attachment:reem_boxes.jpg)](Robots/REEM)                    [PAL Robotics REEM](http://www.pal-robotics.com)      ![PMB2\|width=\"150\"](attachment:pmb2.jpg)                                                                                                               [PAL Robotics Mobile Base](http://www.pal-robotics.com)                     
+     [![REEM\|width="100"](attachment:reem_boxes.jpg)](Robots/REEM)                    [PAL Robotics REEM](http://www.pal-robotics.com)      ![PMB2\|width="150"](attachment:pmb2.jpg)                                                                                                               [PAL Robotics Mobile Base](http://www.pal-robotics.com)                     
      [![Husky](attachment:Husky Icon - Small.jpg)](Robots/Husky)                         [Clearpath Robotics Husky](Robots/Husky)              [![Robots/Jackal](attachment:Jackal Icon.png)](Robots/Jackal)                                                                                             [Clearpath Robotics Jackal](Robots/Jackal)                                  
-     [![i-Cart mini\|width=\"150\"](attachment:icart_mini.png)](Robots/i-Cart mini)      [i-Cart mini](Robots/icart_mini)                      ![Remo\|width=\"150\"](https://raw.githubusercontent.com/ros-mobile-robots/ros-mobile-robots.github.io/main/docs/resources/remo/remo_front_side.jpg)      [ros-mobile-robots/diffbot](https://github.com/ros-mobile-robots/diffbot)   
+     [![i-Cart mini\|width="150"](attachment:icart_mini.png)](Robots/i-Cart mini)      [i-Cart mini](Robots/icart_mini)                      ![Remo\|width="150"](https://raw.githubusercontent.com/ros-mobile-robots/ros-mobile-robots.github.io/main/docs/resources/remo/remo_front_side.jpg)      [ros-mobile-robots/diffbot](https://github.com/ros-mobile-robots/diffbot)   
   -- -------------------------------------------------------------------------------- -- -------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------------------------------------------------- --
 
 ## ROS API
@@ -241,7 +241,7 @@ mobile_base_controller:
 #### Skid steer
 
 The diff_drive_controller allows for skid steer driving with the
-geometry_msgs/Twist command interface however it doesn\'t support direct
+geometry_msgs/Twist command interface however it doesn't support direct
 skid commands.
 
 The current implementation allows you to register multiple wheels per

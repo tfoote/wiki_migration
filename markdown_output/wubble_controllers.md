@@ -5,7 +5,7 @@ and arm of the Wubble robot. All motor ids and angles (in motor ticks)
 are specific to the hardware on the Wubble robot. If you are using the
 Wubble robot, you should not have to re-configure any of the parameters
 in yaml files in this package. All yaml files are used by
-[ax12_controller_core](ax12_controller_core) package\'s
+[ax12_controller_core](ax12_controller_core) package's
 controller_manager.py to setup topics and services which can be used to
 control motors. The launch files provided will place the appropriate
 yaml file on the param server and load the correct controller(s).

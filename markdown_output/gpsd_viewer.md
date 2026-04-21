@@ -8,7 +8,7 @@ Open Street Maps GTK Widget.
 ## Details
 
 Map Viewer for GPS position data provided by
-\<\<MsgLink(gps_common/GPSFix)\>\> messages provided by
+<<MsgLink(gps_common/GPSFix)>> messages provided by
 [gpsd_client](gpsd_client). Due to GPS library and API synchronization
 issues this package requires Ubunut 10.04 or newer.
 

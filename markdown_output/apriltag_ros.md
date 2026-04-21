@@ -6,54 +6,54 @@ The package works as shown in the above figure. The following default
 input topics are subscribed to (which can be remapped based on your
 needs):
 
--   \`/camera_rect/image_rect\`: a \<\<MsgLink(sensor_msgs/Image)\>\>
+-   `/camera_rect/image_rect`: a <<MsgLink(sensor_msgs/Image)>>
     topic which contains the image (e.g. a frame of a video stream
     coming from a camera). *The image is assumed to be undistorted, i.e.
     produced by a pinhole camera*. Laptop webcams typically already
     provide such an image while other cameras may require undistortion
     by an intermediate node such as [image_proc](image_proc);
--   \`/camera_rect/camera_info\`: a
-    \<\<MsgLink(sensor_msgs/CameraInfo)\>\> topic which contains the
-    camera calibration matrix in \`/camera/camera_info/K\`. One can
-    obtain a specific camera\'s \`K\` via camera intrinsics calibration
+-   `/camera_rect/camera_info`: a
+    <<MsgLink(sensor_msgs/CameraInfo)>> topic which contains the
+    camera calibration matrix in `/camera/camera_info/K`. One can
+    obtain a specific camera's `K` via camera intrinsics calibration
     using e.g. [camera_calibration](camera_calibration) or
     [Kalibr](https://github.com/ethz-asl/kalibr) (the former seemed to
     work better for laptop webcam calibration).
 
 The behavior of the ROS wrapper is fully defined by the two
-configuration files \`config/tags.yaml\` (which defines the tags and tag
-bundles to look for) and \`config/settings.yaml\` (which configures the
+configuration files `config/tags.yaml` (which defines the tags and tag
+bundles to look for) and `config/settings.yaml` (which configures the
 core !AprilTag 2 algorithm itself). Then, the following topics are
 output:
 
--   \`/tf\`: relative pose between the camera frame and each detected
-    tag\'s or tag bundle\'s frame (specified in \`tags.yaml\`) using
-    [tf](tf). Published only if \`publish_tf: true\` in
-    \`config/settings.yaml\`;
--   \`/tag_detections\`: the same information as provided by the \`/tf\`
+-   `/tf`: relative pose between the camera frame and each detected
+    tag's or tag bundle's frame (specified in `tags.yaml`) using
+    [tf](tf). Published only if `publish_tf: true` in
+    `config/settings.yaml`;
+-   `/tag_detections`: the same information as provided by the `/tf`
     topic but as a custom message carrying the tag ID(s), size(s) and
-    \<\<MsgLink(geometry_msgs/PoseWithCovarianceStamped)\>\> pose
+    <<MsgLink(geometry_msgs/PoseWithCovarianceStamped)>> pose
     information (where plural applies for tag bundles). This is always
     published;
--   \`/tag_detections_image\`: the same image as input by
-    \`/camera/image_rect\` but with the detected tags highlighted.
-    Published only if \`publish_tag_detections_image==true\` in
-    \`launch/continuous_detection.launch\`.
+-   `/tag_detections_image`: the same image as input by
+    `/camera/image_rect` but with the detected tags highlighted.
+    Published only if `publish_tag_detections_image==true` in
+    `launch/continuous_detection.launch`.
 
 ## Tutorials
 
 The [tutorials](apriltag_ros/Tutorials) teach you how to operate the
-wrapper. The main idea is to fill out \`config/tags.yaml\` with the
+wrapper. The main idea is to fill out `config/tags.yaml` with the
 standalone tags and tag bundles which you would like to detect (bundles
-potentially require a calibration process) and \`config/settings.yaml\`
+potentially require a calibration process) and `config/settings.yaml`
 with the wrapper and !AprilTag 2 core parameters. Then, you simply run
 the continuous or single image detector. The tutorials walk you through
 how to do this.
 
 ## Citing
 
-While this ROS wrapper is original code originating from the author\'s
-master thesis, the core !AprilTag 2 algorithm in \`apriltags2/\` is
+While this ROS wrapper is original code originating from the author's
+master thesis, the core !AprilTag 2 algorithm in `apriltags2/` is
 wholly the work of the
 [APRIL Robotics Lab](https://april.eecs.umich.edu/software/apriltag.html)
 at The University of Michigan. If you use this package, please kindly
@@ -64,7 +64,7 @@ cite:
     Master thesis, Jet Propulsion Laboratory, 4800 Oak Grove Drive,
     Pasadena, CA 91109, USA, December 2017.
 -   J. Wang and E. Olson,
-    \"[AprilTag 2: Efficient and robust fiducial detection](http://ieeexplore.ieee.org/document/7759617/),\"
+    "[AprilTag 2: Efficient and robust fiducial detection](http://ieeexplore.ieee.org/document/7759617/),"
     in *Proceedings of the IEEE/RSJ International Conference on
     Intelligent Robots and Systems (IROS)*, October 2016.
 

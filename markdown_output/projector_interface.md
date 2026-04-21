@@ -13,7 +13,7 @@ calibration node will exit.
 
 At this point the interface node is ready to display the cursor, object
 circles, and any polygons sent to it using the
-\<\<SrvLink(projector_interface/DrawPolygon)\>\> service.
+<<SrvLink(projector_interface/DrawPolygon)>> service.
 
 ## Nodes
 

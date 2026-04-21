@@ -16,4 +16,4 @@ see more information.
 
 ## Report a Bug
 
-\<\<GitHubIssues(SawYer-Robotics/roch_robot)\>\>
+<<GitHubIssues(SawYer-Robotics/roch_robot)>>

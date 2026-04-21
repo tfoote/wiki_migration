@@ -27,7 +27,7 @@ calibration_executive
 
 The calibration routine will look at the led in different angles by
 moving the head. After some observations were made, a transform is
-calculated, it\'s called \"kinect post\", for convenience the RPY angles
+calculated, it's called "kinect post", for convenience the RPY angles
 are also displayed. The longer the calibration runs the more point
 correspondances it will collect, so make sure you give it a few minutes
 if you want to get a good calibration. You can watch how the values
@@ -41,7 +41,7 @@ New pose of head_mount_kinect_ir_link in head_mount_link translation: x:
 
 RPY 0.0060906 -0.0129728 -0.0121087
 
-\<joint name=\"head_mount_kinect_ir_joint\" type=\"fixed\"\> \<origin
-rpy=\"0.0060906 -0.0129728 -0.0121087\" xyz=\"-0.0324269 0.0276795
-.0946061\"/\> \<parent link=\"head_mount_link\"/\> \<child
-link=\"head_mount_kinect_ir_link\"/\> \</joint\>
+<joint name="head_mount_kinect_ir_joint" type="fixed"> <origin
+rpy="0.0060906 -0.0129728 -0.0121087" xyz="-0.0324269 0.0276795
+.0946061"/> <parent link="head_mount_link"/> <child
+link="head_mount_kinect_ir_link"/> </joint>

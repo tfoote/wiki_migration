@@ -40,12 +40,12 @@ following URLs:
 
 ### Available URLs
 
--   Overview of available ROS topics: \`http:*localhost:8080/\` \*
+-   Overview of available ROS topics: `http:*localhost:8080/` \*
     Webpage showing a video stream:
-    \`http:*localhost:8080/stream_viewer?topic={ROS_TOPIC}\`
--   Video stream URL: \`http:*localhost:8080/stream?topic={ROS_TOPIC}\`
+    `http:*localhost:8080/stream_viewer?topic={ROS_TOPIC}`
+-   Video stream URL: `http:*localhost:8080/stream?topic={ROS_TOPIC}`
     \* Snapshot of next image:
-    \`http:*localhost:8080/snapshot?topic={ROS_TOPIC}\`
+    `http:*localhost:8080/snapshot?topic={ROS_TOPIC}`
 
 Several parameters can be configure via the video stream URL - Example:
 <http://localhost:8888/stream?topic=depthcloud_encoded&bitrate=250000&type=vp8>
@@ -164,11 +164,11 @@ parameter of the VP8 codec can be found here:
 
 #### Control image subscription rate
 
-Rate at which \`web_video_server\` subscribes a image topic depends on
-the publisher\'s publish rate. With a fast publish rate, a client host
+Rate at which `web_video_server` subscribes a image topic depends on
+the publisher's publish rate. With a fast publish rate, a client host
 may unintentionally get busy.
 
-As of version 0.2.1, \`web_video_server\` does not come with a feature
+As of version 0.2.1, `web_video_server` does not come with a feature
 to control the rate at which the frontend subscribes to an image topic.
 You can work this around on your client.
 
@@ -186,15 +186,15 @@ $ rostopic list
 ```
 
 View compressed stream at:
-\`http:*localhost:8080/stream?topic=/usb_cam/image_raw&type=ros_compressed\`*
+`http:*localhost:8080/stream?topic=/usb_cam/image_raw&type=ros_compressed`*
 
 Node and topic diagram (output of [rqt_graph](rqt_graph)). **NOTE** this
 graph is **NOT** showing compressed image topic, so this screenshot
-isn\'t showing exactly the same situation we\'re running above where the
+isn't showing exactly the same situation we're running above where the
 box in the middle should be the compressed image topic. Hope this still
 gives an idea of relationship:
 
-![alt Node and topic diagram\|width=\"700\"](attachment:rqt_graph-output-usb_cam-sample.png)
+![alt Node and topic diagram\|width="700"](attachment:rqt_graph-output-usb_cam-sample.png)
 
 ## Latency
 

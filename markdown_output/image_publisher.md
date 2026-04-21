@@ -1,6 +1,6 @@
 ## Overview
 
-\`image_publisher\` provides a node/nodelets for publishing image as a
+`image_publisher` provides a node/nodelets for publishing image as a
 ROS image topic.
 
 Simplest example are

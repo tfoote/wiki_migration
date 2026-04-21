@@ -23,38 +23,38 @@ db_port will default to 62345.
 ## Starting the MongoDB Store: mongodb_server
 
 First set the host and port you want the datacentre to run on. We do
-this via \`rosparam\` so that other nodes know where to find the server.
+this via `rosparam` so that other nodes know where to find the server.
 
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
 ``` If these are not set the server uses a
-generated port number and \`localhost\` then sets the above parameters
+generated port number and `localhost` then sets the above parameters
 to its chosen values.
 
 Start the server:
 
 ```
 rosrun mongodb_store mongodb_server.py
-``` This runs the \`mongod\` server and also
+``` This runs the `mongod` server and also
 provides some utility functions around this. By default, the mongod
-database will be stored in \`/opt/ros/mongodb_store\`. This can be
+database will be stored in `/opt/ros/mongodb_store`. This can be
 overridden by setting the private parameter database_path for the node.
 If it is the first time that the database is used, be sure to first
-create the database path (e.g. \`mkdir -p /opt/strands/mongodb_store\`).
+create the database path (e.g. `mkdir -p /opt/strands/mongodb_store`).
 
 ## Logging of Topics: mongodb_log
 
-To create \"[rosbag](rosbag) record\"-like logging of topics to the
-\`mongodb_store\` use [mongodb_log](mongodb_log). This has been updated
+To create "[rosbag](rosbag) record"-like logging of topics to the
+`mongodb_store` use [mongodb_log](mongodb_log). This has been updated
 to store logged data in a format that can be easily recreated into ROS
 messages for replay.
 
 ## Replay of Topics: mongodb_play
 
-The \`mongodb_play\` node reads logged messages from the store and
+The `mongodb_play` node reads logged messages from the store and
 replays them on their original topics. This provides a similar function
-to \"[rosbag](rosbag) play\". Currently this node always creates its own
+to "[rosbag](rosbag) play". Currently this node always creates its own
 [sim clock](Clock) in order to play back the messages at the time they
 were originally recorded.
 
@@ -71,8 +71,8 @@ Options:
 ```
 rosrun mongodb_store mongodb_play.py  /map /tf /scan
 ``` will play back messages previously from the
-\`/map\` \`/tf\` and \`/scan\` topics which were previously stored in
-the default database (\`roslog\`). \`mongodb_log\` and \`mongodb_play\`
+`/map` `/tf` and `/scan` topics which were previously stored in
+the default database (`roslog`). `mongodb_log` and `mongodb_play`
 respect latched topics.
 
 ## Parameter persistence: config_manager.py
@@ -80,35 +80,35 @@ respect latched topics.
 The config manager provides a centralised way to store robot application
 parameters, with optional site-specific overrides. All configurations
 are stored inside the mongodb_store mongodb, within a database named
-\"configs\".
+"configs".
 
 Two levels of parameters are considered:
 
-1\. **Global default parameters**. These should be \"working
-defaults\" - so all essential parameters at least have a default value.
+1\. **Global default parameters**. These should be "working
+defaults" - so all essential parameters at least have a default value.
 For example, if a robot application requires some calibration data then
 default values should be provided. Default parameters can be shared
 among sites and stored inside a shared ROS package. When the config
-manager is started, all .yaml files stored in a \'defaults\' folder will
+manager is started, all .yaml files stored in a 'defaults' folder will
 be examined. Any new default parameters will automatically be inserted
-into the \"defaults\" collection within the configs database. The
+into the "defaults" collection within the configs database. The
 defaults folder should be supplied as a private parameter:
-\`defaults_path\` either set to a system path or in the form
-\`pkg:*ros_package_name/inside/package\`.*
+`defaults_path` either set to a system path or in the form
+`pkg:*ros_package_name/inside/package`.*
 
 2\. **Local parameters**. These parameters override the same named
 global default parameters, allowing site-specific parameter setting.
-They are stored within the database inside the \"local\" collection.
+They are stored within the database inside the "local" collection.
 
 At start up, the config manager places all parameters onto the ros
 parameter server to allow interoperability with existing software.
-Parameters can also be queried using the \`/config_manager/get_param
-service\`, or by directly connection to and querying the mongo database
+Parameters can also be queried using the `/config_manager/get_param
+service`, or by directly connection to and querying the mongo database
 server.
 
 Likewise, local parameter overrides can be set using the
-\`/config_manager/set_param\` service or by directly editing the
-\"local\" collection in the configs database.
+`/config_manager/set_param` service or by directly editing the
+"local" collection in the configs database.
 
 To start the config manager, make sure that you have the mongo db
 running then:
@@ -167,7 +167,7 @@ parameter into the locals database
 ## Message Persistence: message_store_node.py
 
 The message store node provides services to allow clients to add, update
-and remove ROS messages in the mongo store via the \`MessageStoreProxy\`
+and remove ROS messages in the mongo store via the `MessageStoreProxy`
 object in both Python and C++. This is best demonstrated by examples.
 With the mongodb server running, run the message store:
 
@@ -193,10 +193,10 @@ rosparam set mongodb_host bob
 ## Replicating Stored Messages: replicator_node.py
 
 If the constructor argument to the message store node
-\`replicate_on_write\` is set to true, replication of the message store
+`replicate_on_write` is set to true, replication of the message store
 parts of the store is done manually to allow different content to appear
 on different hosts. A list of hosts and ports where replications should
-be made can be set via the \`mongodb_store_extras\` ros parameter:
+be made can be set via the `mongodb_store_extras` ros parameter:
 
 ```
 rosparam set mongodb_port 62345
@@ -204,8 +204,8 @@ rosparam set mongodb_host bob
 ```4 Inserts and updates are performed across the
 main and replicant stores.
 
-If \`mongodb_store_extras\` is set (regardless of
-\`replicate_on_write\`), queries are performed on the main first, and if
+If `mongodb_store_extras` is set (regardless of
+`replicate_on_write`), queries are performed on the main first, and if
 nothing found, the replicants are tried.
 
 You can launch additional datacentres as follows, e.g.
@@ -220,17 +220,17 @@ are replicated), then running queries.
 
 ### Action Server for Replication
 
-The \`MoveEntries\` action and the corresponding action server:
+The `MoveEntries` action and the corresponding action server:
 
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```6 (which is included in \`datacentre.launch\`)
+```6 (which is included in `datacentre.launch`)
 
 allows you to bulk copy or move entries from message store collections
-to the mongod instances defined under \`mongodb_store_extras\`. The
+to the mongod instances defined under `mongodb_store_extras`. The
 client accepts a list of collection names and uses the
-\`meta\[\"inserted_at\"\]\` field of the message store entries to
+`meta\["inserted_at"\]` field of the message store entries to
 replicate or move all entries that were inserted before a particular
 time. If no time is provided then the default is 24 hours ago. There is
 an example client that does this for a list of collections specified on
@@ -240,7 +240,7 @@ earlier.
 ```
 rosparam set mongodb_port 62345
 rosparam set mongodb_host bob
-```7 **\*NOTE THAT this all makes \`update\`
+```7 **\*NOTE THAT this all makes `update`
 operations a bit uncertain, so please do not use this type of
 replication on collections you plan to use update on.**\*
 

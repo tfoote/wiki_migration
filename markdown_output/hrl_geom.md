@@ -2,10 +2,10 @@
 
 Each of the methods in PoseConv converts a pose-like Python tuple, numpy
 matrix or tuple, or ROS message into another. Each of the methods is
-called using PoseConv.to\_%pose_type% where %pose_type% is in
+called using PoseConv.to_%pose_type% where %pose_type% is in
 PoseConv.POSE_TYPES. Notes on various types:
 
--   *\*\_msg* - refers to a ROS message of similar name.
+-   *\*_msg* - refers to a ROS message of similar name.
 -   *homo_mat* - homogeneous matrix 4x4 numpy.mat.
 -   *pos_rot* - 3x1 numpy.mat position, 3x3 numpy.mat
 -   *pos_quat* - list of length 3, list of length 4

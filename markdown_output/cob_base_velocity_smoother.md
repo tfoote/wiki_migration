@@ -1,12 +1,12 @@
 The [cob_base_velocity_smoother](cob_base_velocity_smoother) package
 provides two implementations for a velocity smoother that both read
 velocity messages (geometry_msgs::Twist) and then publish messages of
-the same type for \"smoothed\" velocity to avoid jerky behavior.
+the same type for "smoothed" velocity to avoid jerky behavior.
 
 The two nodes available are:
 
--   \`cob_base_velocity_smoother\`
--   \`velocity_smoother\`
+-   `cob_base_velocity_smoother`
+-   `velocity_smoother`
 
 ## Hardware Requirements
 
@@ -16,7 +16,7 @@ respectively).
 
 ## ROS API
 
-The following states the ROS API for the \`cob_base_velocity_smoother\`
+The following states the ROS API for the `cob_base_velocity_smoother`
 node.
 
 ```clearsilver
@@ -73,5 +73,5 @@ param{
 
 All hardware configuration is done in the
 [cob_hardware_config](cob_hardware_config) package. Parameter files for
-both nodes have to be placed in \"cob_hardware_config/\$(env
-ROBOT)/config/\" for each ROBOT.
+both nodes have to be placed in "cob_hardware_config/\$(env
+ROBOT)/config/" for each ROBOT.

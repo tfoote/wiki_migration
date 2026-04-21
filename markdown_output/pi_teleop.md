@@ -151,4 +151,4 @@ $ cd mjpeg_server
 $ rosmake --rosdep-install
 ```2
 
-Try the controls and observe the fake robot\'s motion in RViz.
+Try the controls and observe the fake robot's motion in RViz.

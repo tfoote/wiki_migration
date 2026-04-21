@@ -30,7 +30,7 @@ The usage of this plugin is very similar to the original
 plugin, which documentation can be found
 [here](https://classic.gazebosim.org/tutorials?tut=ros_control)
 
-To use the plugin, add the following to your robot\'s URDF:
+To use the plugin, add the following to your robot's URDF:
 ```
 <gazebo>
   <plugin name="gazebo_ros_control_select_joints" filename="libgazebo_ros_control_select_joints.so">
@@ -40,9 +40,9 @@ To use the plugin, add the following to your robot\'s URDF:
 </gazebo>
 ```
 
-with \`\<joints\>\` tag being the feature brought by this package. It
+with `<joints>` tag being the feature brought by this package. It
 expects a space separated list of joint names.
 
-If no \`\<joints\>\` tag is specified, or if the list is empty, the
+If no `<joints>` tag is specified, or if the list is empty, the
 plugin simply grabs all transmissions available in the model (as the
 standard gazebo_ros_control would do).

@@ -53,7 +53,7 @@ sudo apt install ros-${ROS_DISTRO}-rosmon
 source /opt/ros/${ROS_DISTRO}/setup.bash # Needed to use the 'mon launch' shortcut
 ```
 
-If you just need the rosmon CLI and don\'t require the `rqt_rosmon` rqt
+If you just need the rosmon CLI and don't require the `rqt_rosmon` rqt
 plugin, you can install the smaller package
 `ros-${ROS_DISTRO}-rosmon-core` instead.
 
@@ -107,14 +107,14 @@ rosmon features a basic console interface. Each node is assigned a
 dedicated key, which can be used to open the action menu for that node.
 Available actions are:
 
--   Starting/stopping the node (keys \'s\' and \'k\')
+-   Starting/stopping the node (keys 's' and 'k')
 -   Starting a debugger, either attached to the running process or
-    post-mortem against a collected coredump (key \'d\')
+    post-mortem against a collected coredump (key 'd')
 
 ## GUI interface
 
 rosmon can also be controlled remotely using an [rqt](rqt) plugin, which
-uses rosmon\'s ROS interface. The context menu offers starting and
+uses rosmon's ROS interface. The context menu offers starting and
 stopping control. Additionally collected statistics (CPU and memory
 usage) are displayed.
 

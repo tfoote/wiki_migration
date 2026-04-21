@@ -90,7 +90,7 @@ An example calibration file required to run this node can be found under
 [force_torque_sensor_calib](force_torque_sensor_calib) package.
 
 You can launch the node using the **gravity_compensation.launch** file
-contained in the \`launch\` folder of the package and setting a few
+contained in the `launch` folder of the package and setting a few
 roslaunch arguments, e.g.:
 
 ```
@@ -109,8 +109,8 @@ where the arguments are:
     published.
 -   **loop_rate**: frequency (in Hz) of the main loop of the node.
 -   **ns**: namespace under which to publish the topics for the
-    compensated force-torque measurements (\`ns/ft_zeroed\` and
-    \`ns/ft_compensated\`).
+    compensated force-torque measurements (`ns/ft_zeroed` and
+    `ns/ft_compensated`).
 -   **gripper_com_child_frame_id**: ID of the (child) frame of the
     gripper center of mass. This can be freely chosen by the user.
 

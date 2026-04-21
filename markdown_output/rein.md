@@ -41,11 +41,11 @@ is added to the pipeline will have to inherit from one of these classes.
 
 #### AttentionOperator
 
-The \`rein::AttentionOperator\` represents the base class for attention
+The `rein::AttentionOperator` represents the base class for attention
 operators. An attention operator takes as input an image and/or point
 cloud to compute interesting regions in the image. The output of an
 attention operator is a list of regions of interest (ROI) and masks. The
-\`rein::AttentionOperator\` has the following pure virtual methods which
+`rein::AttentionOperator` has the following pure virtual methods which
 have to be implemented by a subclass.
 
 ```cplusplus
@@ -66,11 +66,11 @@ attention operator has run.
 
 #### Detector
 
-The \`rein::Detector\` represents the base class for detectors. A
+The `rein::Detector` represents the base class for detectors. A
 detector takes as input an image and/or point cloud and/or some regions
 of interest and detects the objects present in the image/point cloud.
 The output of a detector is a list of detections
-(\<\<MsgLink(rein/Detection)\>\>).The \`rein::Detector\` has the
+(<<MsgLink(rein/Detection)>>).The `rein::Detector` has the
 following pure virtual methods which have to be implemented by a
 subclass.
 
@@ -92,11 +92,11 @@ DetectionArray getDetections() const; // output detections
 
 #### PoseEstimator
 
-The \`rein::PoseEstimator\` represents the base class for pose estimator
+The `rein::PoseEstimator` represents the base class for pose estimator
 algorithms. A pose estimator takes as input an image and/or point cloud
 and/or a list of detections and computes/refines the poses of the
 objects in the image/point cloud. The output of a pose estimator is a
-list of poses. The \`rein::PoseEstimator\` has the following pure
+list of poses. The `rein::PoseEstimator` has the following pure
 virtual methods which have to be implemented by a subclass.
 
 ```cplusplus
@@ -116,7 +116,7 @@ geometry_msgs::PoseArray getPoses() const; // output poses
 
 #### Trainable
 
-The \`rein::Trainable\` is an interface that must be implemented by all
+The `rein::Trainable` is an interface that must be implemented by all
 the algorithms (usually detectors) that support online training. The
 interface contains the following pure virtual methods:
 
@@ -128,9 +128,9 @@ void endTraining(const std::string& name) = 0; // called when training is finish
 
 #### ModelStorage
 
-The \`rein::ModelStorage\` is an interface that different algorithms can
+The `rein::ModelStorage` is an interface that different algorithms can
 use to persist models. It may have several implementations, one of them
-being \`rein::ModelDatabase\`, that uses a database (postgresql and
+being `rein::ModelDatabase`, that uses a database (postgresql and
 sqlite3 are currently supported) for persistence. The interface has the
 following methods:
 
@@ -242,11 +242,11 @@ MaskArray getMasks() const; // output masks
 
 #### TrainerServer
 
-The \`rein::TrainerServer\` class is a \'server\' class that when
+The `rein::TrainerServer` class is a 'server' class that when
 instantiated by a node/nodelet advertises three services which can be
 used to train a new detector. The detector to be trained must implement
-the \`rein::Trainable\` interface and is passed as a parameter to the
-constructor of \`TrainerServer\`.
+the `rein::Trainable` interface and is passed as a parameter to the
+constructor of `TrainerServer`.
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image

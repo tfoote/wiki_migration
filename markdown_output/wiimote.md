@@ -1,6 +1,6 @@
 1.  keywords joystick, wiimote, wii
 
-![A Wiimote\|align=\"right\"](attachment:wiimoteOverview.jpg)
+![A Wiimote\|align="right"](attachment:wiimoteOverview.jpg)
 
 ## API Stability
 
@@ -11,9 +11,9 @@ the Classic controller, which requires additional testing.
 
 The package depends on the third-party cwiid wiimote bluetooth
 interface. With permission of the author, Donnie Smith, cwiid is
-distributed as the ROS package \`cwiid\`. **NOTE:** The cwiid library
-currently only recognizes Wiimotes which report the name as \"Nintendo
-RVL-CNT-01\"; the latest Wiimotes will not be discovered. See
+distributed as the ROS package `cwiid`. **NOTE:** The cwiid library
+currently only recognizes Wiimotes which report the name as "Nintendo
+RVL-CNT-01"; the latest Wiimotes will not be discovered. See
 <http://wiibrew.org/wiki/Wiimote#SDP_information>.
 
 Python needs to be installed on your system. This package has been
@@ -21,13 +21,13 @@ tested under Python 2.5.2 and 2.6.5.
 
 ## Installing the wiimote Package
 
-Check out the wiimote package, and \`rosmake\` to ready the package for
-operation. Plug the Bluetooth dongle into your machine\'s USB port.
+Check out the wiimote package, and `rosmake` to ready the package for
+operation. Plug the Bluetooth dongle into your machine's USB port.
 
 If you have the Motion+ Wiimote attachment, plug it into the bottom of
 your Wiimote device.
 
-Make sure your Wiimote\'s batteries are charged.
+Make sure your Wiimote's batteries are charged.
 
 ## Nodes
 
@@ -87,21 +87,21 @@ desc= Service to request that the Wiimote be re-calibrated.
 
 ## The State Message
 
-The \`State\` message communicates all data that is available from your
+The `State` message communicates all data that is available from your
 Wiimote device. Samples are taken and broadcast at 100Hz. Here are
 comments on some of the fields:
 
-The message header\'s time \`stamp\` is set to reflect the time when the
-respective message\'s sample was taken from the Wiimote device.
+The message header's time `stamp` is set to reflect the time when the
+respective message's sample was taken from the Wiimote device.
 
-The \`angular_velocity_zeroed\` shows the Motion+ gyroscope reading.
+The `angular_velocity_zeroed` shows the Motion+ gyroscope reading.
 These values are valid only if the Motion+ attachment is plugged into
 the Wiimote. Else they are held at constant zero, and matrix entry
 \[0,0\] in message field angular_velocity_covariance is set to -1.
 
 The gyro reading is corrected by the zero-motion bias of the gyro. This
 bias was determined during the initial pairing/calibration process. The
-\`angular_velocity_raw\` is the uncorrected, raw gyro reading.
+`angular_velocity_raw` is the uncorrected, raw gyro reading.
 
 It is safe to remove the Motion+ from the Wiimote device while the
 wiimote node is running. However, plugging the appendage back in will
@@ -110,7 +110,7 @@ not resume readings. You will need to stop and restart the Wiimote node.
 The accelerometer readings are shown analogously to the gyro readings.
 However, the accelerometer bias is not obtained through observation
 during calibration, but is read from the Wiimote. The devices come with
-this information factory installed. The \`buttons\` array shows which
+this information factory installed. The `buttons` array shows which
 buttons are currently depressed on the Wiimtoe device. The position
 mapping is as follows: ```
 Position   Button Name
@@ -128,19 +128,19 @@ Position   Button Name
 ``` LED and Rumble
 (vibrator) states are simple Booleans.
 
-The \`ir_tracking\` are four sets of x/y/\[z\], and size measures, for
+The `ir_tracking` are four sets of x/y/\[z\], and size measures, for
 the four infrared light sources that the Wiimote device can track. When
 no lights are detected, the respective values are set to -1. The z axis
 is always -1, as it is not measured.
 
-The \`ir_sizes\` array are four intensity measures of the lights that
+The `ir_sizes` array are four intensity measures of the lights that
 the camera observes. The meaning of these measures are unclear to the
 author.
 
-The \`raw_battery\` entry is the battery charge reading. The unit of
-this number is unclear. Field \`percent_battery\` returns the remaining
+The `raw_battery` entry is the battery charge reading. The unit of
+this number is unclear. Field `percent_battery` returns the remaining
 charge as a percentage of full charge.
 
-The \`zeroing_time\` is the time of the most recent device calibration.
+The `zeroing_time` is the time of the most recent device calibration.
 
-The \`errors\` field is currently not used.
+The `errors` field is currently not used.

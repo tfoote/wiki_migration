@@ -4,7 +4,7 @@ This package provides the functionality of libelas in the form of a ROS
 node. In addition it provides simple point cloud construction
 functionality.
 
-![St Lucia Point Cloud\|width=\"600\"](http://cyphy-elas-ros.googlecode.com/files/prev.png)
+![St Lucia Point Cloud\|width="600"](http://cyphy-elas-ros.googlecode.com/files/prev.png)
 
 This shows an example point cloud that can be constructed. This uses the
 St Lucia dataset, which is available at
@@ -109,7 +109,7 @@ node.1 {
 This code should be used in conjunction with visual odometry to
 concatenate point clouds. Testing so far has used the
 [ROS wrapper for libviso](viso2), but any visual odometry node that
-publishes a \<\<MsgLink(sensor_msgs/PoseStamped)\>\> message is
+publishes a <<MsgLink(sensor_msgs/PoseStamped)>> message is
 suitable.
 
 Usage steps:
@@ -117,25 +117,25 @@ Usage steps:
 1\. Publish transforms from the pose frame to the camera frame 1.
 Publish left/right images and camera info 1. Run [libviso](viso2) or
 similar on the images, which generates pose topic used by the
-\`pc_construction\` node 1. Run \`elas_ros\` on the images, which
-generates elas frame data used by the \`pc_construction\` node 1. Run
-\`pc_construction\` to generate reconstructed 3D point clouds
+`pc_construction` node 1. Run `elas_ros` on the images, which
+generates elas frame data used by the `pc_construction` node 1. Run
+`pc_construction` to generate reconstructed 3D point clouds
 
 A sample launch file, given that images are published on
-\`/stereo/left/image_rect\` and \`/stereo/right/image_rect\` and camera
-info is published on \`/stereo/left/camera_info\` and
-\`/stereo/right/camera_info\` is supplied below.
+`/stereo/left/image_rect` and `/stereo/right/image_rect` and camera
+info is published on `/stereo/left/camera_info` and
+`/stereo/right/camera_info` is supplied below.
 
-The relevant frames are: \`odom_combined\` → \`base_footprint\` →
-\`base_link\` → \`camera_0\`
+The relevant frames are: `odom_combined` → `base_footprint` →
+`base_link` → `camera_0`
 
-libviso publishes the transform from \`odom_combined\` →
-\`base_footprint\`, and in this example the other two transforms were
+libviso publishes the transform from `odom_combined` →
+`base_footprint`, and in this example the other two transforms were
 static (and published using
 [static_transform_publisher](static_transform_publisher)).
 
-The current frame\'s point cloud is published to \`/elas/point_cloud\`,
-the concatenated point cloud is published to \`/elas_pc/point_cloud\`
+The current frame's point cloud is published to `/elas/point_cloud`,
+the concatenated point cloud is published to `/elas_pc/point_cloud`
 
 ```
 <launch>

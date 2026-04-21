@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_phidgets\` package provides a ROS wrapper for the
+The `carl_phidgets` package provides a ROS wrapper for the
 [ PhidgetSpatial Precision 3/3/3 High Resolution](http://www.phidgets.com/products.php?product_id=1044 )
 or the
 [ PhidgetSpatial 3/3/3 Basic](http://www.phidgets.com/products.php?product_id=1042 )
@@ -92,7 +92,7 @@ node.1 {
 
 ## Installation
 
-To install the \`carl_bot\` package, you can install from source with
+To install the `carl_bot` package, you can install from source with
 the following commands:
 
 . ```shell
@@ -106,19 +106,19 @@ catkin_make install
 ## First Time Sensor Setup
 
 To use the Phidgets IMU as a user other than root, you need to create a
-udev rule. Create a file called \`99-phidgets.rules\`, with the
+udev rule. Create a file called `99-phidgets.rules`, with the
 following line:
 
 . ```
 SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="06c2", ATTRS{idProduct}=="00[3-a][0-f]", MODE="666"
 ```
 
-Copy this file into the \`/etc/udev/rules.d\` directory. You may need to
+Copy this file into the `/etc/udev/rules.d` directory. You may need to
 reboot your computer for this to take effect.
 
 ## Startup
 
-The two IMU\'s placed on CARL can be launched with the following launch
+The two IMU's placed on CARL can be launched with the following launch
 file:
 
 . ```
@@ -130,7 +130,7 @@ rosrun carl_phidgets orientation_filter
 ```
 
 Individual IMUs can be started with by running the IMU node separately,
-and specifying the sensor\'s unique serial number.
+and specifying the sensor's unique serial number.
 
 . ```
 rosrun carl_phidgets phidgets_imu_node _serial_number:=xxxxxx

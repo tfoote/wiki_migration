@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(cob_object_detection_msgs)\>\>
+<<MsgSrvDoc(cob_object_detection_msgs)>>

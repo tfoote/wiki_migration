@@ -2,7 +2,7 @@
 
 This tutorial package provides one teleop node:
 
--   \`turtle_teleop_joy\` node which can be interfaced with any node
+-   `turtle_teleop_joy` node which can be interfaced with any node
     publishing joy messages to drive turtle1 in turtlesim.
 
 ## Running the Tutorial Code

@@ -150,15 +150,15 @@ srv{
 
 These scripts are located in either the global bin directory or are
 rosrunnable from the rocon_gateway package (prefixing the latter with a
-\`\` to distinguish them)
+`` to distinguish them)
 
--   \`gateway_info\` : pretty prints local gateway info
--   \`remote_gateway_info\` : pretty prints remote gateway info
--   \`flip\` : manual command line tool to flip connections (useful for
+-   `gateway_info` : pretty prints local gateway info
+-   `remote_gateway_info` : pretty prints remote gateway info
+-   `flip` : manual command line tool to flip connections (useful for
     debugging)
--   \`advertise\` : manual command line tool to advertise connections
+-   `advertise` : manual command line tool to advertise connections
     (useful for \*
--   \`pull\` : manual command line tool to pull connections (useful for
+-   `pull` : manual command line tool to pull connections (useful for
     debugging)
 
 ## Tutorials

@@ -1,4 +1,4 @@
-![Shipwreck scenario UWSim v1.1\|align=\"middle\"](attachment:UWSim_v1.1.jpg)
+![Shipwreck scenario UWSim v1.1\|align="middle"](attachment:UWSim_v1.1.jpg)
 
 ## Requirements
 
@@ -15,7 +15,7 @@ GNU/Linux. Have a look to the
 that are known to be working\]. If you see strange visualization
 effects, or it just crashes before beginning, it probably means your
 card does not meet the requirements (if this is the case, try with the
-\<tt\>\--disableShaders\</tt\> option). As an example, it runs fluently
+<tt>\--disableShaders</tt> option). As an example, it runs fluently
 on a MacBook Pro 2.26 Ghz Intel Core 2 Duo, 4 GB DDR3 with an NVIDIA
 GeForce 9400M, running Ubuntu 11.04.
 
@@ -62,7 +62,7 @@ rostopic list
 
 and subscribe/publish to them with rostopic and rospub, or with your
 custom ros control nodes. The are some example ROS interface nodes in
-the \<tt\>interface_examples\</tt\> folder. For example, the following
+the <tt>interface_examples</tt> folder. For example, the following
 command should update the vehicle position in the default scenario (2
 meters along positive X axis):
 
@@ -105,7 +105,7 @@ package will be built.
 ## Source-based installation in Groovy and later distributions
 
 This section explain how to build UWSim from sources in ROS Groovy. For
-hydro or later distributions, just replace \'groovy\' by \'hydro\' or
+hydro or later distributions, just replace 'groovy' by 'hydro' or
 the corresponding distro name.
 
 ### Download sources

@@ -70,8 +70,8 @@ following issues while generating new stl file:
 -   define a new reference coordinate system in SolidWorks and export
     the stl file using this reference coordinate system.
 -   the mesh size (amount of triangles) is limited to ?32000?
--   the stl file should not begin with \"solid\", therefore substitute
-    the string \"solid\" e.g. with \"robot\" using
+-   the stl file should not begin with "solid", therefore substitute
+    the string "solid" e.g. with "robot" using
     ```
 sed -i '0,/RE/s/solid/robot/' */*.stl
 ```

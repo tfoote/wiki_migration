@@ -11,20 +11,20 @@ roslaunch ipa_kuka_rsi test_driver.launch
 
 To enable the arm to communicate with ROS driver the machting KUKA Robot
 Language script has to be started. All necessary files are stored in
-\"common/KUKA\". Copy the configuraiton files:
+"common/KUKA". Copy the configuraiton files:
 
 -   RSI_UniversalEthernetConfig.xml
 -   RSI_UniversalEthernet.rsi
 -   RSI_UniversalEthernet.rsi.diagram
 -   RSI_UniversalEthernet.rsi.xml to
-    \"C:\\KRC\\Roboter\\Config\\User\\Common\\SensorInterface\" on your
-    KR16 arm. Use \"RSI_UniversalEthernet.src\" to start the script on
+    "C:\\KRC\\Roboter\\Config\\User\\Common\\SensorInterface" on your
+    KR16 arm. Use "RSI_UniversalEthernet.src" to start the script on
     the arm which uses the other configuration files and enables RSI
     communication.
 
 ## How to use the driver?
 
-Please refer to the test scripts in \"ros/test\". The test scripts are
+Please refer to the test scripts in "ros/test". The test scripts are
 simple examples of the joint or cartesian control with the action
 server.
 
@@ -151,8 +151,8 @@ prov_tf{
 
 ## Action API
 
-The \`ipa_kuka_rsi\` node provides an implementation of two
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )), for
+The `ipa_kuka_rsi` node provides an implementation of two
+`SimpleActionServer` (see [ actionlib documentation](actionlib )), for
 movement of joint based trajectories or cartesian trajectories.
 
 ##### Action Subscribed Topics

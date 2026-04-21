@@ -6,7 +6,7 @@ do.
 
 ![](attachment:voronoi_planner.jpg)
 
-\`voronoi_planner\` uses [dynamicvoronoi](dynamicvoronoi) package to
+`voronoi_planner` uses [dynamicvoronoi](dynamicvoronoi) package to
 make generalized Voronoi diagrams (GVD) which is made up of regions
 around obstacles on costmap.
 
@@ -16,10 +16,10 @@ Then it searches a path from robot position to given goal on GVD.
 
 ## VoronoiPlanner
 
-The \`voronoi_planner::VoronoiPlanner\` object exposes its functionality
+The `voronoi_planner::VoronoiPlanner` object exposes its functionality
 as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates withing a
 ROS namespace (assumed to be *name* from here on) specified on
-initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
+initialization. It adheres to the `nav_core::BaseGlobalPlanner`
 interface found in the [nav_core](nav_core) package.
 
 ### ROS Parameters
@@ -50,7 +50,7 @@ param {
 
 Planner was tested using [husky_gazebo](husky_gazebo),
 [husky_navigation](husky_navigation) and [husky_viz](husky_viz). To use
-\`voronoi_planner\` you need to change \`base_global_planner\` of
+`voronoi_planner` you need to change `base_global_planner` of
 [move_base](move_base) in such a way: ```
 <arg name="base_global_planner" default="voronoi_planner/VoronoiPlanner"/>
 ``` Other
@@ -61,9 +61,9 @@ parameters changed were global_costmap/width and global_costmap/height
     <param name="global_costmap/height" value="35.0" if="$(arg no_static_map)"/>
 ```
 
-Path generated is published in \<name\>/plan topic. Voronoi grid map is
+Path generated is published in <name>/plan topic. Voronoi grid map is
 published (if publish_voronoi_grid parameter is true) in
-\<name\>/voronoi_grid. You should configure RViz to view it.
+<name>/voronoi_grid. You should configure RViz to view it.
 
 [husky_navigation/Tutorials/Husky Move Base Demo](husky_navigation/Tutorials/Husky Move Base Demo)
 may be useful.

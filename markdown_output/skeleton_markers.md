@@ -51,7 +51,7 @@ To easiest way to use skeleton markers is as follows:
 
 { }}}}
 
-Then assume the \"Psi Pose\" in front of the camera while keeping an eye
+Then assume the "Psi Pose" in front of the camera while keeping an eye
 on RViz until calibration is complete and tracking begins.
 
 ### Method 2
@@ -62,7 +62,7 @@ You can also view the TF frames for each joint:
 
 { }}}}
 
-Then assume the \"Psi Pose\" in front of the camera while keeping an eye
+Then assume the "Psi Pose" in front of the camera while keeping an eye
 on RViz until calibration is complete and tracking begins.
 
 { }}}}

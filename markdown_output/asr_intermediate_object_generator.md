@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -17,13 +17,13 @@ less likely it is to be an intermediate object. To get this value, first
 we need to get the average position, and then calculate the distance
 between the average object qnd the seen object in every snapshot.
 
-![\|height=\"200\",width=\"400\"](attachment:Download.png)
+![\|height="200",width="400"](attachment:Download.png)
 
 2\. The average distance between the current tested object and others
 objects in the scene. The value is calculated with the average distance
 in each snapshot. Then we average the value between all snaposhots.
 
-![height=\"200\",width=\"333\"](attachment:Download (1).png)
+![height="200",width="333"](attachment:Download (1).png)
 
 3\. The presence of the object in the scene. This value is quite simple
 to calculate : It is number of snapshot where the object is present
@@ -32,12 +32,12 @@ divided by the total number of snapshots.
 The second part of the process is to normalize all values to hqve the
 same scale of comparison between all 3 criteria.
 
-![height=\"200\",width=\"333\"](attachment:Download (2).png)
+![height="200",width="333"](attachment:Download (2).png)
 
 Then we apply the Evaluation Function F (either by addition or by
 multiplication ):
 
-![height=\"200\",width=\"333\"](attachment:Download (3).png)
+![height="200",width="333"](attachment:Download (3).png)
 
 After that we can apply the following algorithm to filter the object
 list and only get the intermediate object.
@@ -48,7 +48,7 @@ process. In addition, we have to test the validity of the list at each
 steps (Each scene is represented by at least one object). Please note
 that the list is sorted by F value before applying the Filter.
 
-![height=\"200\",width=\"333\"](attachment:Download (4).png)
+![height="200",width="333"](attachment:Download (4).png)
 
 This package needs a database of objects and their absolute positions
 during the time (can be set in the

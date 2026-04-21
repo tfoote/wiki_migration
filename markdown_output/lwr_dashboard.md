@@ -1,6 +1,6 @@
 ## Running
 
-Run \`lwr_dashboard\` with: ```
+Run `lwr_dashboard` with: ```
 rosrun lwr_dashboard lwr_dashboard
 ```
 

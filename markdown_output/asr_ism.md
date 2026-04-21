@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -14,7 +14,7 @@ trees. In addition to the implementation of the tools provided by
 [asr_ism_visualizations](asr_ism_visualizations)) and utility tools to
 make the usage of the scene recognition system more convenient.
 
-![\|height=\"380\",width=\"234\"](attachment:example_recognizer_viz.png)
+![\|height="380",width="234"](attachment:example_recognizer_viz.png)
 
 ## Functionality
 
@@ -28,8 +28,8 @@ but as they use different algorithms the trained models result in a
 difference in recognition quality mostly in terms of speed as the latter
 has a shorter computation time. The input of both trainers is a
 recording of a scene consisting of multiple objects which is stored in a
-sqlite database and can be created using the \"Recorder\" tool. The
-\"Recognizer\" tool uses the trained models and tries to find the most
+sqlite database and can be created using the "Recorder" tool. The
+"Recognizer" tool uses the trained models and tries to find the most
 likely match given a set of objects.
 
 In general the steps required are the recording of a scene, training a
@@ -73,7 +73,7 @@ data point.
 **voteViewer**: Provide two different vote visualizations, the first
 just visualizes all votes from a fixed pose for a selected object in a
 selected subpattern and the second visualizes a given configuration with
-each object\'s votes that the model of a selected pattern provides.
+each object's votes that the model of a selected pattern provides.
 
 ### Additional Nodes/Classes
 
@@ -140,7 +140,7 @@ description of the nodes and their parameters should be sufficient.
 
 -   *outputDataPath (string)*: The path to a directory. Data such as the
     visualization of the ISMs created during the training process are
-    stored here. (default: \"\")
+    stored here. (default: "")
 -   *swapRelations (bool)*: This parameter influences the neighbourhood
     of a topology T. If *swapRelations* == true, then topologies that
     can be created by swapping one relation that is part of that
@@ -152,16 +152,16 @@ description of the nodes and their parameters should be sufficient.
     topology T are considered neighbours of T. This parameter only
     effects !TopologyGeneratorPaper. (default: true)
 -   *loadValidTestSetsFrom (string)*: The path to the sql database that
-    contains valid testsets. If *loadValidTestSetsFrom* == \"\" new
-    valid testsets are generated. (default: \"\")
+    contains valid testsets. If *loadValidTestSetsFrom* == "" new
+    valid testsets are generated. (default: "")
 -   *loadInvalidTestSetsFrom (string)*: The path to the sql database
-    that contains invalid testsets. If *loadInvalidTestSetsFrom* == \"\"
-    new invalid testsets are generated. (default: \"\")
+    that contains invalid testsets. If *loadInvalidTestSetsFrom* == ""
+    new invalid testsets are generated. (default: "")
 -   *loadStartTopologiesFrom (string)*: The path(s) to the file(s) that
     contain the topologies from which to optimization process is
     started. Paths must be separated by a semicolon. If
     *loadStartTopologiesFrom* is not specified for a pattern, new start
-    topologies are generated. (default: \"\")
+    topologies are generated. (default: "")
 -   *startFromRandomTopology (bool)*: If no start topology was provided,
     the optimization will be started from a random topology. If
     *startFromRandomTopology* == true, else the best star topology will
@@ -169,10 +169,10 @@ description of the nodes and their parameters should be sufficient.
     (default: true)
 -   *storeValidTestSetsTo (string)*: The path to where the valid
     testsets will be stored. If left empty, the testsets are not stored.
-    (default: \"\")
+    (default: "")
 -   *storeInvalidTestSets (string)*: The path to where the invalid
     testsets will be stored. If left empty, the testsets are not stored.
-    (default: \"\")
+    (default: "")
 -   *storeFullyMeshedISM (bool)*: Whether to write the ism of the fully
     meshed topology to a sql database or not. (default: false)
 -   *storeStartTopologyISM (bool)*: Whether to write the ism of the
@@ -182,24 +182,24 @@ description of the nodes and their parameters should be sufficient.
 -   *confidenceThreshold (double)*: Threshold for how big the confidence
     for a recognition result must be to be accepted. (default: 0.99)
 -   *evaluatorId (uint)*: Which evaluator is used. (default: 0)
-    (*evaluatorId* == 0 =\> Tester)
+    (*evaluatorId* == 0 => Tester)
 -   *testForFalseNegatives (bool)*: Whether the test for false negatives
     should be run or not. False negatives have no influence on the
     rating of topologies. (default: false)
 -   *costFunctionId (uint)*: Which cost function is used. (default: 0)
-    (*costFunctionId* == 0 =\> !WeightedSum)
+    (*costFunctionId* == 0 => !WeightedSum)
 -   *alpha (double)*: The weight for the normalised false positives.
     (default: 5)
 -   *beta (double)*: The weight for the normalised average recognition
     runtime. (default: 1)
 -   *topologyGeneratorId (uint)*: Which topologyGenerator is used
-    (default: 0) (0 =\> !TopologyGeneratorPaper; 1 =\>
+    (default: 0) (0 => !TopologyGeneratorPaper; 1 =>
     !TopologyGeneratorNaive)
 -   *treeValidatorId (uint)*: Which treeValidator is used. (default: 0)
-    (*treeValidatorId* == 0 =\> !HeightChecker)
+    (*treeValidatorId* == 0 => !HeightChecker)
 -   *optimizationAlgorithmId (uint)*: Which optimization algorithm is
-    used. (default: 2) (0 =\> HillClimbing; 1 =\> !SimulatedAnnealing; 2
-    =\> !RecordHunt)
+    used. (default: 2) (0 => HillClimbing; 1 => !SimulatedAnnealing; 2
+    => !RecordHunt)
 -   *hillClimbingStrictMonoton (bool)*: Whether hillclimbing continues
     if a new evaluation result is exactly equal to the best evaluation
     result (*hillClimbingStrictMonoton* = false) or whether a true
@@ -220,7 +220,7 @@ description of the nodes and their parameters should be sufficient.
     annealing. Only used if Simulated Annealing is used for the
     optimization. (default: 1)
 -   *endTemperature (double)*: The end temperature of simulated
-    annealing, if temperature \< *endTemperature* simulated annealing
+    annealing, if temperature < *endTemperature* simulated annealing
     stops. Only used if Simulated Annealing is used for the
     optimization. (default: 0.005)
 -   *temperatureFactor (double)*: Used to calculate the next
@@ -233,7 +233,7 @@ description of the nodes and their parameters should be sufficient.
 -   *initialAcceptableCostDelta (double)*: Used to initialize
     currentAcceptableCostDelta in !RecordHunt. If new_cost is the cost
     we want to check and lowest_cost is the lowest cost we have
-    encountered so far, then new_cost is accepted if: new_cost \<= (1 +
+    encountered so far, then new_cost is accepted if: new_cost <= (1 +
     currentAcceptableCostDelta) \* lowest_cost. Only used if Record Hunt
     is used for the optimzation. (default: 0.02)
 -   *costDeltaDecreaseFactor (double)*: Used to update the current
@@ -251,7 +251,7 @@ description of the nodes and their parameters should be sufficient.
 
 **launch/data_merger.launch:**
 
--   *target *(string): Resulting merged database. (default: \"\")
+-   *target *(string): Resulting merged database. (default: "")
 -   *sources *(string\[\]): A list of databases which should be merged
     into target. (default: empty-list)
 -   *merge_records *(bool): Whether recordings should be merged into
@@ -270,30 +270,30 @@ description of the nodes and their parameters should be sufficient.
 
 **launch/marker_rotator.launch:**
 
--   *source *(string): Source database. (default: \"\")
--   *target *(string): Resulting database. (default: \"\")
+-   *source *(string): Source database. (default: "")
+-   *target *(string): Resulting database. (default: "")
 
 **launch/modelViewer.launch:**
 
 -   *sceneName* (string): Name of the scene which should be visualized.
-    (default: \"\")
+    (default: "")
 
 **launch/object_configuration_generator.launch:**
 
 -   *object_configuration_pattern_names *(string\[\]): List of selected
     patterns from database. (default: empty-list) **(optional)**
 -   *output_file_path *(string): Output path for the resulting XML-file.
-    (default: \"\")
+    (default: "")
 -   *config_file_path *(string): Path to a previously created
     configuration XML-file. If this parameter is defined the data from
-    the given database will be ignored. (default: \"\") **(optional)**
+    the given database will be ignored. (default: "") **(optional)**
 
 **launch/pose_interpolator.launch:**
 
--   *source *(string): Source database. (default: \"\")
--   *target *(string): Resulting interpolated database. (default: \"\")
+-   *source *(string): Source database. (default: "")
+-   *target *(string): Resulting interpolated database. (default: "")
 -   *step_number *(int): Number of interpolated poses between two object
-    poses (default: \"\")
+    poses (default: "")
 
 **launch/recognizer.launch:**
 
@@ -314,14 +314,14 @@ description of the nodes and their parameters should be sufficient.
     !SceneConfigurator is Auto Processing. (default: false)
 -   *configurationFolderPath* (string): Path to the folder where the
     configuration xml files should be stored. If left empty, no
-    configuration files are created. (default: \"\")
+    configuration files are created. (default: "")
 
 **launch/recorded_objects_transformer.launch:**
 
--   *source* (string): Source database. (default: \"\")
--   *target *(string): Resulting transformed database. (default: \"\")
--   *object_type *(string): Type of a reference object. (default: \"\")
--   *object_id* (string): Id of a reference object. (default: \"\")
+-   *source* (string): Source database. (default: "")
+-   *target *(string): Resulting transformed database. (default: "")
+-   *object_type *(string): Type of a reference object. (default: "")
+-   *object_id* (string): Id of a reference object. (default: "")
 -   *position *(double\[\]): Define a reference position. (default:
     empty-list)
 -   *orientation* (double\[\]): Define a reference orientation.
@@ -335,14 +335,14 @@ description of the nodes and their parameters should be sufficient.
 **launch/recordViewer.launch: **
 
 -   *sceneName *(string): Name of the scene which should be visualized.
-    (default: \"\")
+    (default: "")
 
 **launch/rotation_invariant_objects_rotator.launch:**
 
--   *source *(string): Source database. (default: \"\")
--   *target *(string): Resulting transformed database. (default: \"\")
--   *object_type* (string): Type of a reference object. (default: \"\")
--   *object_id* (string): Id of a reference object. (default: \"\")
+-   *source *(string): Source database. (default: "")
+-   *target *(string): Resulting transformed database. (default: "")
+-   *object_type* (string): Type of a reference object. (default: "")
+-   *object_id* (string): Id of a reference object. (default: "")
 -   *rotation_invariant_types *(string\[\]): List of rotation invariant
     object-types, which should be normalized. (default: empty-list)
 
@@ -355,9 +355,9 @@ description of the nodes and their parameters should be sufficient.
 -   *useUserDefCluster* (bool): Whether user defined cluster from
     clusterListFile should be used. (default: false)
 -   *clusterListFile* (string): Path to a file with user defined
-    cluster. (default: \"\")
+    cluster. (default: "")
 -   *preDefRefListFile* (string): Path to a file with predefined
-    references for (sub-)patterns. (default: \"\")
+    references for (sub-)patterns. (default: "")
 -   *staticBreakRatio* (double): Threshold for directional heuristic.
     (default: 0.01)
 -   *togetherRatio* (double): Threshold for directional heuristic.
@@ -368,9 +368,9 @@ description of the nodes and their parameters should be sufficient.
 **launch/voteViewer.launch: **
 
 -   *sceneName* (string): Name of the scene which should be visualized.
-    (default: \"\")
+    (default: "")
 -   *config_file_path *(string): The path to a previously created
-    configuration XML-file. (default: \"\") **(optional) **
+    configuration XML-file. (default: "") **(optional) **
 
 #### YAML files
 
@@ -384,7 +384,7 @@ description of the nodes and their parameters should be sufficient.
 -   *queueSizePbdObjectCallback* (int): The queue size for the
     objectTopic-Subscriber to buffer messages if the processing of new
     messages is slower as the time for new estimations to arrive.
-    (default: 100)**\' **
+    (default: 100)**' **
 -   *object_input_thread_count *(int): The amount of threads used to
     process incoming object estimation messages. (default: 4)
 -   *use_confidence_from_msg *(bool): Whether to use the confidence from
@@ -392,7 +392,7 @@ description of the nodes and their parameters should be sufficient.
     use confidence 1.0 for every recognized object. (default: false)
 -   *enableRotationMode* (int): Whether the object orientation should be
     rotated to the baseFrame or to an object. This only affects rotation
-    invariant objects. (0: don\'t rotate; 1: rotate to rotationFrame; 2:
+    invariant objects. (0: don't rotate; 1: rotate to rotationFrame; 2:
     rotate to rotationObject) (default: 1)
 -   *rotationFrame* (string): Defines the frame to which the objects
     should be rotated. The rotation only takes place if baseFrame ==
@@ -401,10 +401,10 @@ description of the nodes and their parameters should be sufficient.
 -   *rotationObjectType* (string): Defines the object type to which the
     objects should be rotated. The rotation only takes place if
     enableRotationMode = 2. This only affects rotation invariant
-    objects.(default: \"\")* *** ** \* *rotationObjectId* (string):
+    objects.(default: "")* *** ** \* *rotationObjectId* (string):
     Defines the object id to which the objects should be rotated. The
     rotation only takes place if enableRotationMode = 2. This only
-    affects rotation invariant objects. (default: \"\") \*
+    affects rotation invariant objects. (default: "") \*
     *keyboard_poll_rate *(int): The rate (Hz) in which the
     keyboard-thread polls the keyboard for user input. (default: 10) \*
     *input_objects_visualization_topic* (string): The topic on which the
@@ -432,7 +432,7 @@ description of the nodes and their parameters should be sufficient.
 
 -   *dbfilename* (string): The path to the database which should be used
     in the system. The recorder node will create this database if no
-    such database exists. (default: \"\")
+    such database exists. (default: "")
 -   *baseFrame* (string): Frame to which incoming object messages are
     transformed. Used to unify their coordinate frames. (default: /map)
 
@@ -470,7 +470,7 @@ information about recognizable objects from the
 ## Troubleshooting
 
 **Problem:** Missing object estimations when using a !SceneConfigurator
--Node and the [asr_flir_ptu](asr_flir_ptu)\_driver GUI.
+-Node and the [asr_flir_ptu](asr_flir_ptu)_driver GUI.
 
 If you are using the *ptu_gui.launch* from
 [asr_flir_ptu_driver](asr_flir_ptu_driver) and you checked the option

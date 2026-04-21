@@ -11,7 +11,7 @@ translation and rotation between them.
 ## How it works
 
 The Ubiquity Robotics localization system uses a number of fiducial
-markers of known size to determine the robot\'s position. Detection of
+markers of known size to determine the robot's position. Detection of
 the markers is done by the
 [aruco_detect node](http://wiki.ros.org/aruco_detect). For each marker
 visible in the image, a set of vertices in image coordinates is
@@ -26,27 +26,27 @@ which has a length of *2d*. The image coordinates *(x, y)* of each
 vertex correspond to a ray from the camera. The pose estimation code
 solves a set of linear equations to determine the world *(X, Y, Z)*
 coordinate of each of the vertices. From this, we obtain the
-\*transform\* of the fiducial\'s coordinate system to the camera\'s
-coordinate system *\`T_fid_cam\`*. This represents the \*pose\* of the
-marker in the camera\'s coordinate system. Since we know the camera\'s
+\*transform\* of the fiducial's coordinate system to the camera's
+coordinate system *`T_fid_cam`*. This represents the \*pose\* of the
+marker in the camera's coordinate system. Since we know the camera's
 pose in the coordinate system of the robot,c image. In the diagram
 below, two fiducials, *fid1* and *fid2* are shown. If *fid1* is at a
-known pose in the world, *\`T_map_fid1\`* and we know the marker to
+known pose in the world, *`T_map_fid1`* and we know the marker to
 camera transforms for both markers, we can compute the pose of *fid2*
 thus:
 
-*\`T_map_fid2\` = \`T_map_fid1\` \* \`T_cam_fid2\` \* \`T_fid1_cam\`*
+*`T_map_fid2` = `T_map_fid1` \* `T_cam_fid2` \* `T_fid1_cam`*
 
 In this way, the map is built up as more fiducial pairs are observed.
 multiple observations are combined with weighting, to produce an
 estimate of the 6DOF pose of each fiducial marker.
 
-![\|width=\"300px\"](attachment:two_fiducials.png)
+![\|width="300px"](attachment:two_fiducials.png)
 
 ## Getting Started
 
 A camera is required, and it is necessary to know the position of the
-camera relative to the robot\'s \`base_link\`. Software for the
+camera relative to the robot's `base_link`. Software for the
 Raspberry Pi is available at:
 
 <https://github.com/UbiquityRobotics/raspicam_node>
@@ -62,7 +62,7 @@ Fiducial markers can be generated with a command like this:
 ```
 rosrun aruco_detect create_markers.py 100 112 fiducials.pdf
 ``` Once printed, they can be affixed to the
-environment. They don\'t need to be placed in any particular pattern but
+environment. They don't need to be placed in any particular pattern but
 the density should be such that two or more markers can be seen by the
 camera on the robot, so the map can be built. Placing them on the
 ceiling reduces problems with occlusion, but is not required, since a
@@ -71,7 +71,7 @@ full 6DOF pose is estimated.
 Two nodes should be run, [aruco_detect](aruco_detect), which handles the
 detection of the fiducials, and [fiducial_slam](fiducial_slam), which
 combines the fiducial pose estimates and builds the map and makes an
-estimate of the robot\'s position. The map is in the form of a text file
+estimate of the robot's position. The map is in the form of a text file
 specifying the 6DOF pose of each of the markers, and is automatically
 saved.
 
@@ -103,8 +103,8 @@ layout of the physical markers.
 
 If the map is empty, then it will auto-initialize when a fiducial is
 visible. The auto-initialization calculates the pose of the nearest
-fiducial in the \`map\` frame, such that \`base_link\` of the robot is
-at the origin of \`map\`. For best results, this should be done with the
+fiducial in the `map` frame, such that `base_link` of the robot is
+at the origin of `map`. For best results, this should be done with the
 robot stationary.
 
 ### Clearing the Map
@@ -118,4 +118,4 @@ rosservice call /fiducial_slam/clear_map
 After this command is issued, the map can be auto-initialized, as
 described above.
 
-![\|width=\"750px\"](attachment:fiducial_rviz.png)
+![\|width="750px"](attachment:fiducial_rviz.png)

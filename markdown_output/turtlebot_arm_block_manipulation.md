@@ -2,7 +2,7 @@
 
 This
 [Tutorial](turtlebot_block_manipulation/Tutorials/TurtleBotBlockManipulationDemo)
-will walk you through running this demo on your own !TurtleBot. \<!\>
+will walk you through running this demo on your own !TurtleBot. <!>
 *The tutorial is for the fuerte (pre-moveit) version of this package, so
 be careful and flexible when following it!. Trust this page (already
 updated) in case of contradiction.*

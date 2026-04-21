@@ -15,7 +15,7 @@ rosrun topic_op derivative input_topic output_topic
 ```
 
 If input_topic varies in time, then the derivative will be published to
-output_topic. Because the basic types aren\'t stamped the derivative is
+output_topic. Because the basic types aren't stamped the derivative is
 based on the timestamp of the reception of the published input topic.
 
 <https://github.com/lucasw/topic_op_ros>

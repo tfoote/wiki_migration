@@ -1,6 +1,6 @@
 ## About
 
-The \`rmscpp\` package is a client library, written in C++, for the
+The `rmscpp` package is a client library, written in C++, for the
 [rms](rms) (Robot Management System) [REST API](rms/rest). This library
 allows for external programs to interact with the RMS MySQL database. By
 doing so, we are able to do things like parse log data from user studies
@@ -9,7 +9,7 @@ within the RMS system itself.
 
 ## Installation
 
-To install the \`librms\` stack, you can choose to either install from
+To install the `librms` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -91,35 +91,35 @@ int main(int argc, char **argv)
 
 ### Code Explanation
 
-Now that we have a running example, let\'s look at each piece.
+Now that we have a running example, let's look at each piece.
 
-\<\<CodeRef(rmscpp_example,10,11)\>\>
+<<CodeRef(rmscpp_example,10,11)>>
 
 In order to utilize the RMS library, we must import the single client
-header file. We also include the \`iostream\` header to allow for
+header file. We also include the `iostream` header to allow for
 terminal printing.
 
-\<\<CodeRef(rmscpp_example,17,18)\>\>
+<<CodeRef(rmscpp_example,17,18)>>
 
-We start by creating a client object that will connect to \`localhost\`
-using the default parameters (i.e., port \`80\`, and using HTTP).
+We start by creating a client object that will connect to `localhost`
+using the default parameters (i.e., port `80`, and using HTTP).
 
-\<\<CodeRef(rmscpp_example,20,32)\>\>
+<<CodeRef(rmscpp_example,20,32)>>
 
 First, we will make a call that requires no authentication. This basic
 example will grab a list of all content pages in the RMS, and then count
 the number of articles that were found for that given page. This
 information is printed to the terminal.
 
-\<\<CodeRef(rmscpp_example,34,42)\>\>
+<<CodeRef(rmscpp_example,34,42)>>
 
 Next, we attempt to grab a list of all of the user accounts. This call
 requires an admin to be authenticated. To illustrate what will happen if
-you do not authenticate, we surround the call in a \`try-catch\` block.
+you do not authenticate, we surround the call in a `try-catch` block.
 The error string that is reported is the one that comes from the
 [API](rms/rest).
 
-\<\<CodeRef(rmscpp_example,44,47)\>\>
+<<CodeRef(rmscpp_example,44,47)>>
 
 Finally, we authenticate (using the default admin password supplied with
 the base install of RMS), and make the call again. We then report the
@@ -138,5 +138,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

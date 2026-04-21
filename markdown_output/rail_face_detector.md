@@ -84,5 +84,5 @@ Type: `bool`
 Default: `false`
 
 Change to compressed image stream or not. Simply appends a
-\"/compressed\" to the image topic name. This lightens the load your
+"/compressed" to the image topic name. This lightens the load your
 local network if the images are being transmitted to the detector.

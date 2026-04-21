@@ -1,7 +1,7 @@
 ## About
 
-The \`ros_ethernet_rmp\` package is used to bridge ROS and a Segway RMP.
-It will convert \`cmd_vel\` topic messages to the RMPCommand format and
+The `ros_ethernet_rmp` package is used to bridge ROS and a Segway RMP.
+It will convert `cmd_vel` topic messages to the RMPCommand format and
 then publish the feedback from the RMP. There is also a joint state
 publisher to read in the feedback and publish the changing joint states
 as necessary.
@@ -154,8 +154,8 @@ node.1 {
 
 #### Transforms
 
-\`rmp_pose_updater\` broadcasts the robot frame (\'/base_footprint\')
-with respect to the odometry frame (\`/odom\`).
+`rmp_pose_updater` broadcasts the robot frame ('/base_footprint')
+with respect to the odometry frame (`/odom`).
 
 ```clearsilver
 node.2 {
@@ -198,7 +198,7 @@ node.2 {
 
 ## Installation
 
-To install the \`ros_ethernet_rmp\` package, you can choose to either
+To install the `ros_ethernet_rmp` package, you can choose to either
 install from source, or from the Ubuntu package:
 
 ### Source
@@ -220,10 +220,10 @@ sudo apt-get install ros-indigo-ros-ethernet-rmp
 
 ### Startup
 
-The \`ros_ethernet_rmp\` package contains a \`ros_ethernet_rmp.launch\`
-file. This file launches an instance of the \`ethernet_rmp.py\`,
-\'rmp_pose_updater.py\' and \`rmp_joint_states.py\` nodes.
-\'battery_monitor_rmp.launch\' from \'battery_monitor_rmp\' will also be
+The `ros_ethernet_rmp` package contains a `ros_ethernet_rmp.launch`
+file. This file launches an instance of the `ethernet_rmp.py`,
+'rmp_pose_updater.py' and `rmp_joint_states.py` nodes.
+'battery_monitor_rmp.launch' from 'battery_monitor_rmp' will also be
 launched if the argument, include_batt_monitor, is true. It is defaulted
 to true. To launch these nodes, **with** the battery monitor the
 following command can be used:

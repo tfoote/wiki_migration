@@ -1,4 +1,4 @@
-\`pm_fourier\` implements a place matching based on FTT for the Large
+`pm_fourier` implements a place matching based on FTT for the Large
 Maps Framework ([LaMa](Large Maps Framework)).
 
 ## Usage

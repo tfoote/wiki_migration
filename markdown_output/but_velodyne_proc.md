@@ -5,21 +5,21 @@ Velodyne HDL-32E). There are three main nodes:
 
 -   **Laserscan Node** - simulates conventional 2D scanner by using data
     from 3D LiDAR.
--   **Groundmap Node** - estimates \"safe ground\" (i.e. not too rough,
+-   **Groundmap Node** - estimates "safe ground" (i.e. not too rough,
     without high steps and other obstacles) around the robot.
 -   **Cloud Assembler Node** - combines several consecutive point clouds
     into a more dense cloud.
 
-Each node has it\'s nodelet counterpart with same ROS API.
+Each node has it's nodelet counterpart with same ROS API.
 
-\<\<GitHubIssues(robofit/but_velodyne)\>\>
+<<GitHubIssues(robofit/but_velodyne)>>
 
 ## Installation
 
 From source:
 
 1\. Clone the github repository. 1. Copy the cloned repository into the
-\'src\' folder of your ROS workspace. 1. Recompile your ROS workspace:
+'src' folder of your ROS workspace. 1. Recompile your ROS workspace:
 \$ catkin_make.
 
 ## Laserscan Node
@@ -103,7 +103,7 @@ no_header=True
 
 ## Groundmap Node
 
-Estimates frame-to-frame *bumpiness* of robot\'s surrounding and
+Estimates frame-to-frame *bumpiness* of robot's surrounding and
 publishes it as an occupancy grid. This might be used by autonomous
 rovers supposed to navigate on a rough terrain.
 

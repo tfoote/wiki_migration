@@ -64,4 +64,4 @@ param {
 
 ## Report a Bug
 
-\<\<GitHubIssues(mdrwiega/depth_nav_tools)\>\>
+<<GitHubIssues(mdrwiega/depth_nav_tools)>>

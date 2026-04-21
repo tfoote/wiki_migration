@@ -6,7 +6,7 @@ be used with custom navigation and exploration as well as mapping
 procedures and routines. It can be controlled by the provided plugins
 for RViz and/or rqt. Below, from left to right exploration,
 waypoint_following and simple goal navigation can be seen in RViz with
-the RSM\'s GUI plugin.
+the RSM's GUI plugin.
 
 ![](attachment:rsm_demo.png)
 
@@ -23,7 +23,7 @@ interactive marker visualization for waypoints can be found in
 also be added as a plugin for rqt and is included in the
 [rsm_rqt_plugins package](rsm_rqt_plugins).
 
-For a detailed description of the state machine\'s operation as well as
+For a detailed description of the state machine's operation as well as
 tutorials and examples describing how to write plugins, integrate them
 into the RSM and setup your robot to use the RSM go to the
 [rsm_core package](rsm_core).

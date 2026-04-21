@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rocon_device_msgs)\>\>
+<<MsgSrvDoc(rocon_device_msgs)>>

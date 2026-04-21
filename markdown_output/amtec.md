@@ -258,5 +258,5 @@ param {
 
 A node that will attempt to establish a connection to an amtec unit,
 reset it, home it and then exit. the device and baud_rate should be
-specified on the command line. Uses libamtec directly, it doesn\'t go
+specified on the command line. Uses libamtec directly, it doesn't go
 through amtec_node.

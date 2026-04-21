@@ -4,9 +4,9 @@ This package calculates graspable regions at unknown (or known) objects.
 
 HAF_GRASPING calculates grasp points for unknown and known objects
 represented by object point cloud data. For scientific foundation see:
-[\*\*D. Fischinger, A. Weiss, M. Vincze: \"Learning Grasps with Topographic Features\", The International Journal of Robotics Research. (2015)\*\*](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features)
+[\*\*D. Fischinger, A. Weiss, M. Vincze: "Learning Grasps with Topographic Features", The International Journal of Robotics Research. (2015)\*\*](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features)
 
-\<\<Youtube(3V29-xR-aFM&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=3V29-xR-aFM&rel=0)
 
 ## SIMPLE START: HOW TO USE HAF_GRASPING
 
@@ -29,7 +29,7 @@ environment variable ROS_PACKAGE_PATH if needed)
 
 ```
 >> git clone https://github.com/davidfischinger/haf_grasping.git
-``` Execute \"make\" in the libsvm folder:
+``` Execute "make" in the libsvm folder:
 
 ```
 >> roscd haf_grasping/libsvm-3.12
@@ -87,15 +87,15 @@ approaching direction (for a parallel two finger gripper)
 
 *Visualization of the grasp calculation process in rviz:*
 
-![\|height=\"212\",width=\"379\"](attachment:haf_in_rviz1.png)
-![haf_in_rviz1.png\|height=\"207\",width=\"372\"](attachment:haf_in_rviz2.png)
+![\|height="212",width="379"](attachment:haf_in_rviz1.png)
+![haf_in_rviz1.png\|height="207",width="372"](attachment:haf_in_rviz2.png)
 
 *Red line indicates currently tested gripper opening direction, red
 points indicate positions where no grasp was found, green bars indicate
 positions where grasps were found - the higher the bar, the better the
 quality.*
 
-![haf_in_rviz1.png\|height=\"312\",width=\"554\"](attachment:haf_in_rviz3.png)
+![haf_in_rviz1.png\|height="312",width="554"](attachment:haf_in_rviz3.png)
 
 Finally the top grasp (position and approaching direction of the
 gripper) is shown by the black arrow together with the gripper
@@ -108,7 +108,7 @@ orientation (red line).
 The package haf_grasping provides one
 [SimpleActionServer](actionlib_tutorials/Tutorials/SimpleActionServer(ExecuteCallbackMethod)):
 
--   \`/calc_grasppoints_svm_action_server\`: requests the calculation of
+-   `/calc_grasppoints_svm_action_server`: requests the calculation of
     a grasp for a given point cloud. A simple implementation of the
     client can be found here:
     [calc_grasppoints_action_client.cpp](https://github.com/davidfischinger/haf_grasping/blob/master/src/calc_grasppoints_action_client.cpp):
@@ -180,7 +180,7 @@ only the overall top-rated grasp:
 cd location_of_workspace/src
 ```2 Gripper opening width: this factor f is used
 to simulate a gripper that is opened 1/f-times the maximal gripper
-opening width (e.g.: value 3 =\> gripper only one third opened):
+opening width (e.g.: value 3 => gripper only one third opened):
 
 ```
 cd location_of_workspace/src
@@ -276,7 +276,7 @@ be provided on request.
 
 Grasp points and approach vectors are detected using Support Vector
 Machines. We have included LIBSVM to work as our classifier (go to
-folder libsvm-3.12 and type \"make\" after checking out):
+folder libsvm-3.12 and type "make" after checking out):
 
 Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support vector
 machines. ACM Transactions on Intelligent Systems and Technology,
@@ -294,5 +294,5 @@ cd location_of_workspace/src
 
 ## REPORT A BUG
 
-\<\<GitHubIssues(davidfischinger/haf_grasping)\>\> or contact the
+<<GitHubIssues(davidfischinger/haf_grasping)>> or contact the
 package maintainer directly.

@@ -5,7 +5,7 @@ all the handlers.
 
 Vrep_ros_plugin contains the main code of the bridge. We wrote
 Vrep_ros_plugin starting from a template called v_repExtPluginSkeleton,
-available in the V-REP folder \"/programming\" with the porpoise to
+available in the V-REP folder "/programming" with the porpoise to
 create your own plugin. You can find more information about the plugins
 in V-REP
 [here](http://www.coppeliarobotics.com/helpFiles/en/plugins.htm/).

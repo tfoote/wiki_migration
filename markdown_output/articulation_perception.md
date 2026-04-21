@@ -1,4 +1,4 @@
-Please see the tutorials for a demo of this package using Microsoft\'s
+Please see the tutorials for a demo of this package using Microsoft's
 Kinect sensor.
 
 ## Introduction
@@ -92,7 +92,7 @@ on the homepage of
 ## Report a Bug
 
 If you run into any problems, please feel free to contact Juergen Sturm
-\<juergen.sturm@in.tum.de\>.
+<juergen.sturm@in.tum.de>.
 
 ## References
 

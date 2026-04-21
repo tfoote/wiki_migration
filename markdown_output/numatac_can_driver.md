@@ -11,15 +11,15 @@ To bring up the NumaTac tactile sensors, plug in the USB connector.
 Configure the CAN interface by running the following command in a
 command line prompt:
 
-\`sudo ip link set can0 type can bitrate 1000000\`
+`sudo ip link set can0 type can bitrate 1000000`
 
 and finally bring-up the CAN interface using:
 
-\`sudo ifconfig can0 up\`
+`sudo ifconfig can0 up`
 
 To run the driver use:
 
-\`roslaunch numatac_can_driver numatac_can_driver.launch\`
+`roslaunch numatac_can_driver numatac_can_driver.launch`
 
 ## ROS API
 

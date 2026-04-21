@@ -48,5 +48,5 @@ rostopic pub /speech std_msgs/String "Hello World"
 
 It is also possible to use self generated voice files (e.g. by recording
 the own voice). In this case one has to copy the files into the folder
-defined by the parameter \'audioPath\' and edit the json file defined by
-\'jsonPath\' by simply adding lines for every entry.
+defined by the parameter 'audioPath' and edit the json file defined by
+'jsonPath' by simply adding lines for every entry.

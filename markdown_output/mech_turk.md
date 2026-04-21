@@ -17,7 +17,7 @@ only raw data.
 
 Much of the server API requires authenticated user. To avoid typing the
 passwords all the time, the mech_turk package uses a config file
-(\"/.ros/.mech_turk/auth.txt\") to keep the user credentials. The file
+("/.ros/.mech_turk/auth.txt") to keep the user credentials. The file
 has very simple format: ```
 server_alias:{
   server: server_name[:port],
@@ -40,8 +40,8 @@ default: {
 ```
 
 After a server alias is declared in the `auth.txt`, it can be used in
-all mech turk commands using \"\--server=ALIAS\". For convenience,
-\"\--server=default\" is assumed as a default value.
+all mech turk commands using "\--server=ALIAS". For convenience,
+"\--server=default" is assumed as a default value.
 
 ## Using command line tools
 

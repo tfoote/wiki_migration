@@ -1,7 +1,7 @@
 ## Other Vicon Packages
 
 There are some other packages with different capabilities; it is
-recommended that you also consider these in light of your own project\'s
+recommended that you also consider these in light of your own project's
 needs:
 
 -   [vicon_bridge](vicon_bridge) - A fork of vicon_mocap with some

@@ -3,4 +3,4 @@
 Documentation for [adi_driver](adi_driver) is now
 [hosted on github](https://github.com/tork-a/adi_driver/releases).
 
-\<\<GitHubIssues(tork-a/adi_driver)\>\>
+<<GitHubIssues(tork-a/adi_driver)>>

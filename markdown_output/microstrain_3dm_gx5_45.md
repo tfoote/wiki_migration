@@ -16,7 +16,7 @@ communicate with the device. Includes the following applications:
     3DM-GX3-45, but the interface (MIP) should be the same. Please let
     us know if you find issues.
 -   Limited testing has been done using the 3DM-GX4-25 (AHRS-only)
-    device. See the \`microstrain_25.launch\` file for an example of how
+    device. See the `microstrain_25.launch` file for an example of how
     to configure the driver for use with the -25.
 
 ## ROS Nodes
@@ -158,7 +158,7 @@ For the 3DM-GX4-45 and 3DM-GX5-45 devices tested the base rates were\...
 
 Position covariance is populated with diagonals based on reported
 horizontal and vertical accuracy. The status.status field is the LLH
-position data \"valid flag\"-1. The valid flag mapping from the 3DM
+position data "valid flag"-1. The valid flag mapping from the 3DM
 protocol is
 
 -   0x0001 -- Latitude and Longitude Valid

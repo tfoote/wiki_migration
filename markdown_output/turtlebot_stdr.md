@@ -1,5 +1,5 @@
   -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<style=\"border: 1px solid black; background-color:#FFFF00; text-align: center; vertical-align:top;\" tablewidth=\"100%\"\> /!\\ Warning! This package is unstable.   
+     <style="border: 1px solid black; background-color:#FFFF00; text-align: center; vertical-align:top;" tablewidth="100%"> /!\\ Warning! This package is unstable.   
   -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Overview
@@ -24,5 +24,5 @@ run.
 ```{=html}
 <!-- -->
 ```
--   Currently, STDR doesn\'t offer an option to simulate odometry noise.
+-   Currently, STDR doesn't offer an option to simulate odometry noise.
     It is only possible to simulate noise in laser or sonar sensors.

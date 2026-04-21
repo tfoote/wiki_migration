@@ -34,8 +34,8 @@ for controlling the Hand.
 
 The movement Recorder plugins permits you to record and replay timed
 movements based on saved grasps. You can save and reload different
-movements. There\'s a simple interpolation between two successive
-grasps, so make sure you don\'t ask for an impossible movement. You can
+movements. There's a simple interpolation between two successive
+grasps, so make sure you don't ask for an impossible movement. You can
 choose how long you want to pause on a given grasp as well as the
 interpolation time between the previous grasp and this grasp. You can
 also loop between different steps of your recorded movement.
@@ -56,7 +56,7 @@ Selected Joints** slider.
 ### Grasp Controller
 
 You can interpolate between the current grasp, and two different grasps
-with this slider. Let\'s have a simple example:
+with this slider. Let's have a simple example:
 
 -   you want to open the Hand, so you double click on the **opened**
     grasp in the grasp selector. This directly sets the Hand to this
@@ -122,10 +122,10 @@ button (it will check which controllers are currently loaded).
 
 You can modify the different parameters (to see all the different
 parameters, you can also click on **Advanced**). To set the new values,
-press **Set**. For some controllers, you\'re able to plot the relevant
+press **Set**. For some controllers, you're able to plot the relevant
 data and move the joint on a predefined movement.
 
-Once you\'re happy with one controller, you can press the **Save**
+Once you're happy with one controller, you can press the **Save**
 button. This button will ask you for a file, by default, you should save
 the parameters to the
 [sr_edc_controller_configuration](sr_edc_controller_configuration)
@@ -190,7 +190,7 @@ of concentric ellipsoids to the selected finger, using the joints 3 and
 another. It is particularly useful to visualize the Diamond: just select
 the 2 targets topics (e.g. */sh_ffj3_position_controller/command* and
 */sh_ffj4_position_controller/command*), then add a new pair of topics
-to be plotted, by clicking on the **+** sign (don\'t forget to change
+to be plotted, by clicking on the **+** sign (don't forget to change
 the color), and plot the 2 position topics (e.g. */joint_states/FFJ3*
 and */joint_states/FFJ4*).
 

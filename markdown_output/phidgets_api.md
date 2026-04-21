@@ -3,7 +3,7 @@
 The [phidgets_api](phidgets_api) package contains a C++ API built on top
 of the [phidgets_c_api](phidgets_c_api) package.
 
-The package provides a base \`Phidget\` class, from which all other
+The package provides a base `Phidget` class, from which all other
 Phidgets inherit. Currently, we have implemented classes for the
 following devices:
 
@@ -18,7 +18,7 @@ following devices:
 
 Creating a class is fairly easy - feel free to request devices to be
 added to the stack. If you write a class for any device using the
-following example as reference and submit a patch, we\'ll add it to the
+following example as reference and submit a patch, we'll add it to the
 package.
 
 ## Example
@@ -27,7 +27,7 @@ In this example, we go through creating an IMU phidget using the C++
 API.
 
 We first define the Imu class, which is inherited from the base
-\`Phidget\` class:
+`Phidget` class:
 
 ```cplusplus
 class Imu: public Phidget
@@ -51,7 +51,7 @@ class Imu: public Phidget
 };
 ```
 
-The \`Imu\` class has a \`CPhidgetSpatialHandle\`, which is a special
+The `Imu` class has a `CPhidgetSpatialHandle`, which is a special
 handle for the Phidget Spatial device. Different devices will have
 different handle types.
 
@@ -80,7 +80,7 @@ Imu::Imu(): Phidget(), imu_handle_(0)
 }
 ```
 
-The \`zero()\` and \`setDataRate\` functions implement sepcific calls to
+The `zero()` and `setDataRate` functions implement sepcific calls to
 the IMU device using the C API. The data handler function receives
 spatial data events.
 
@@ -97,8 +97,8 @@ void Imu::zero()
 }
 ```
 
-The \`SpatialDataHandler\` is a static callback function which forwards
-the data to the correct \`Imu\` class instance.
+The `SpatialDataHandler` is a static callback function which forwards
+the data to the correct `Imu` class instance.
 
 ```cplusplus
 int Imu::SpatialDataHandler(CPhidgetSpatialHandle handle, void *userptr, CPhidgetSpatial_SpatialEventDataHandle *data, int count)
@@ -109,10 +109,10 @@ int Imu::SpatialDataHandler(CPhidgetSpatialHandle handle, void *userptr, CPhidge
 }
 ```
 
-Finally, the virtual \`dataHandler\` function is the one which is called
+Finally, the virtual `dataHandler` function is the one which is called
 back when Spatial data arrives. In this example, the function just
 prints out a message. However, you can create a class which inherits
-from the \`Imu\` class and overwrites this behavior.
+from the `Imu` class and overwrites this behavior.
 
 ```cplusplus
 void Imu::dataHandler(CPhidgetSpatial_SpatialEventDataHandle *data, int count)

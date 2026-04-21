@@ -22,4 +22,4 @@ functions for importing standard parameters in ROS-Industrial
 
 ## Reporting bugs
 
-\<\<GitHubIssues(ros-industrial/industrial_core)\>\>
+<<GitHubIssues(ros-industrial/industrial_core)>>

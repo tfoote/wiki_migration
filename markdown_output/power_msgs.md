@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(power_msgs)\>\>
+<<MsgSrvDoc(power_msgs)>>

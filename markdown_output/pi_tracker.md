@@ -1,7 +1,7 @@
 ## End of Life
 
 The pi_tracker package was created a long time ago as an entry for the
-early ROS 3D contest and I don\'t have plans to develop it in the
+early ROS 3D contest and I don't have plans to develop it in the
 future.
 
 Note that the pi_tracker package depends on either the openni_tracker
@@ -15,22 +15,22 @@ tracking on newer USB 3.0 machines and Ubuntu 14.04.
 The pi_tracker package uses four interrelated but independent ROS nodes
 that communicate over ROS topics and services:
 
--   \`skeleton_tracker\` (from the [skeleton_markers](skeleton_markers)
+-   `skeleton_tracker` (from the [skeleton_markers](skeleton_markers)
     package) for talking to the OpenNI skeleton tracking API and
     publishing the joint configuration and tf frames. Publishes joints
     names, positions, orientations and confidence values to the
-    \`/skeleton\` topic.
--   \`tracker_command\` for detecting gesture commands and connecting to
-    services that control the robot. Subscribes to the \`/skeleton\`
+    `/skeleton` topic.
+-   `tracker_command` for detecting gesture commands and connecting to
+    services that control the robot. Subscribes to the `/skeleton`
     topic and makes calls to services on other nodes. New gestures and
     commands can be added easily by defining simple functions over the
     joint configurations.
--   \`tracker_base_controller\` for controlling the movements of a
+-   `tracker_base_controller` for controlling the movements of a
     differential drive (either holonomic or non-holonomic) mobile base.
-    Subscribes to \`/skeleton\` and publishes to \`/cmd_vel\`.
--   \`tracker_joint_controller\` for teleoperating the joints of the
-    robot including arms, torso and head. Subscribes to \`/skeleton\`
-    and publishes to \`/cmd_joints\`.
+    Subscribes to `/skeleton` and publishes to `/cmd_vel`.
+-   `tracker_joint_controller` for teleoperating the joints of the
+    robot including arms, torso and head. Subscribes to `/skeleton`
+    and publishes to `/cmd_joints`.
 
 ## Skeleton Tracker Node (from the skeleton_markers package)
 
@@ -146,8 +146,8 @@ param {
 
 Tracker command requires one or more services from each node it
 commands. In its current form, the tracker command node sends simple
-string commands to control nodes via their \`set_command\` service. For
-example, sending the command \"STOP\" to the \`tracker_base_controller\`
+string commands to control nodes via their `set_command` service. For
+example, sending the command "STOP" to the `tracker_base_controller`
 node (see below) tells the base to stop moving.
 
 ## Tracker Base Controller Node

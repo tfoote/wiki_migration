@@ -18,7 +18,7 @@ transformation tree is constructed as follows:
     *left_hip_yaw*, *left_hip_roll*, *left_hip_pitch*,
     *left_knee_pitch*, *left_ankle_pitch* and *left_ankle_roll*. These
     joints connect three actual links on the robot: *left_upperleg*,
-    *left_lowerleg* and *left_foot*, and three \'massless\' virtual
+    *left_lowerleg* and *left_foot*, and three 'massless' virtual
     links: *left_hipRoll2hipYaw*, *left_hipPitch2hipRoll*,
     *left_ankleRoll2anklePitch*. The left leg is connected to the torso
     through *left_hip_yaw*. At each corner of the left foot a force
@@ -28,7 +28,7 @@ transformation tree is constructed as follows:
     *right_knee_pitch*, *right_ankle_pitch* and *right_ankle_roll*.
     These joints connect three actual links on the robot:
     *right_upperleg*, *right_lowerleg* and *right_foot*, and three
-    \'massless\' virtual links: *right_hipRoll2hipYaw*,
+    'massless' virtual links: *right_hipRoll2hipYaw*,
     *right_hipPitch2hipRoll*, *right_ankleRoll2anklePitch*. The right
     leg is connected to the torso through *right_hip_yaw*. At each
     corner of the right foot a force sensor is placed.
@@ -57,16 +57,16 @@ transformation tree is constructed as follows:
 
 ## Folders and files
 
-### Folder: \"Media\"
+### Folder: "Media"
 
 **materials/scripts:** Contains scripts for material properties of
 TUlip.
 
-### Folder: \"meshes\"
+### Folder: "meshes"
 
 Contains the Collada meshes (dae) of all links of TUlip.
 
-### Folder: \"urdf\"
+### Folder: "urdf"
 
 Contains xacro macros that generate the urdf model of TUlip. The main
 xacro macro is tulip.xacro. Also contains an urdf model of a soccer

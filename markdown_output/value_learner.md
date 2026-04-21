@@ -13,7 +13,7 @@ certain times of day due to traffic etc.
 
 ### Services
 
-\`agent_env\` (\<\<SrvLink(value_learner/agent_env)\>\>) This service
+`agent_env` (<<SrvLink(value_learner/agent_env)>>) This service
 expects a variable length array of type Float64 called state, a Float64
 called reward, and responds with the value as a Float64. This service
 also takes in a bool called isStateTerminal which is used in episodic

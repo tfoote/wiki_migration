@@ -21,50 +21,50 @@ with ROS kinetic.
 
 Package contains self-defined ROS message type used for lslidar-c32
 
--   \<\<MsgLink(lslidar_c32_msgs/LslidarC32Packet)\>\> Original UDP
+-   <<MsgLink(lslidar_c32_msgs/LslidarC32Packet)>> Original UDP
     packet block data
--   \<\<MsgLink(lslidar_c32_msgs/LslidarC32Point)\>\> Resolved point
+-   <<MsgLink(lslidar_c32_msgs/LslidarC32Point)>> Resolved point
     infomation
--   \<\<MsgLink(lslidar_c32_msgs/LslidarC32Scan)\>\> Point information
+-   <<MsgLink(lslidar_c32_msgs/LslidarC32Scan)>> Point information
     for specific channel
--   \<\<MsgLink(lslidar_c32_msgs/LslidarC32Sweep)\>\> Whole point cloud
+-   <<MsgLink(lslidar_c32_msgs/LslidarC32Sweep)>> Whole point cloud
     data of 16 channels
 
 ### lslidar_c32_driver
 
 #### Parameters
 
--   \`lidar_ip\` (\`string\`, \`default: 192.168.1.200\`) By default,
+-   `lidar_ip` (`string`, `default: 192.168.1.200`) By default,
     the IP address of the device is 192.168.1.200.
 
 ```{=html}
 <!-- -->
 ```
--   \`device_port\` (\`int\`, \`default: 2368\`) By default, the Port
+-   `device_port` (`int`, `default: 2368`) By default, the Port
     address of the device is 2368.
 
 ```{=html}
 <!-- -->
 ```
--   \`frame_id\` (\`string\`, \`default: laser\`) The frame ID entry for
+-   `frame_id` (`string`, `default: laser`) The frame ID entry for
     the sent messages.
 
 ```{=html}
 <!-- -->
 ```
--   \`add_multicast\` (\`bool\`, \`default: false\`) Whether using group
+-   `add_multicast` (`bool`, `default: false`) Whether using group
     multicast or not
 
 ```{=html}
 <!-- -->
 ```
--   \`group_ip\` (\`string\`, \`default: 234.2.3.2\`) The group IP
+-   `group_ip` (`string`, `default: 234.2.3.2`) The group IP
     address of the device. Only useful when setting add_multicast to
     true
 
 #### Published Topics
 
--   \`lslidar_packets\` (\`lslidar_c32_msgs/LslidarC32Packet\`) Each
+-   `lslidar_packets` (`lslidar_c32_msgs/LslidarC32Packet`) Each
     message corresponds to a lslidar packet sent by the device through
     the Ethernet.
 
@@ -72,62 +72,62 @@ Package contains self-defined ROS message type used for lslidar-c32
 
 #### Parameters
 
--   \`min_range\` (\`double\`, \`0.15\`)
+-   `min_range` (`double`, `0.15`)
 
 ```{=html}
 <!-- -->
 ```
--   \`max_range\` (\`double\`, \`150.0\`) Points outside this range will
+-   `max_range` (`double`, `150.0`) Points outside this range will
     be removed.
 
 ```{=html}
 <!-- -->
 ```
--   \`frequency\` (\`frequency\`, \`10.0\`) Note that the driver does
+-   `frequency` (`frequency`, `10.0`) Note that the driver does
     not change the frequency of the sensor.
 
 ```{=html}
 <!-- -->
 ```
--   \`publish_point_cloud\` (\`bool\`, \`true\`) If set to true, the
+-   `publish_point_cloud` (`bool`, `true`) If set to true, the
     decoder will send out a full revolution point cloud data
 
 ```{=html}
 <!-- -->
 ```
--   \`use_gps_ts\` (\`bool\`, \`false\`) If set to true, the decoder
+-   `use_gps_ts` (`bool`, `false`) If set to true, the decoder
     synchronized with GPS timestamp
 
 ```{=html}
 <!-- -->
 ```
--   \`angle3_disable_min\` (\`double\`, \`-1\`) Ignore 3D point cloud
+-   `angle3_disable_min` (`double`, `-1`) Ignore 3D point cloud
     data from angle3_disable_min to angle3_disable_max; Default -1 means
     disable this function; Value should from 0 to 2\*pi
 
 ```{=html}
 <!-- -->
 ```
--   \`angle3_disable_max\` (\`double\`, \`-1\`) Ignore 3D point cloud
+-   `angle3_disable_max` (`double`, `-1`) Ignore 3D point cloud
     data from angle3_disable_min to angle3_disable_max; Default -1 means
     disable this function; Value should from 0 to 2\*pi
 
 #### Published Topics
 
--   \`lslidar_sweep\` (\`lslidar_c32_msgs/LslidarC32Sweep\`) The message
+-   `lslidar_sweep` (`lslidar_c32_msgs/LslidarC32Sweep`) The message
     arranges the points within each sweep based on its scan index and
     azimuth.
 
 ```{=html}
 <!-- -->
 ```
--   \`lslidar_point_cloud\` (\`sensor_msgs/PointCloud2\`) This is only
-    published when the \`publish_point_cloud\` is set to \`true\` in the
+-   `lslidar_point_cloud` (`sensor_msgs/PointCloud2`) This is only
+    published when the `publish_point_cloud` is set to `true` in the
     launch file.
 
 #### Subscribed Topics
 
--   \`lslidar_packets\` (\`lslidar_c32_msgs/LslidarC32Packet\`) Each
+-   `lslidar_packets` (`lslidar_c32_msgs/LslidarC32Packet`) Each
     message corresponds to a lslidar packet sent by the device through
     the Ethernet.
 
@@ -135,7 +135,7 @@ Package contains self-defined ROS message type used for lslidar-c32
 
 Before running lslidar-c32 driver, make sure you set up IP address
 correctly. Using following command to check if device is communicating.
-Replace \`eth0\` with your correct computer network interface
+Replace `eth0` with your correct computer network interface
 
 ```
 sudo tcpdump -i eth0

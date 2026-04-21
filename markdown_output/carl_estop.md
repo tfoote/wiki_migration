@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_estop\` package is a software estop which contains nodes to
+The `carl_estop` package is a software estop which contains nodes to
 stop the Segway RMP without having to kill power to the Segway RMP and
 its peripherals.
 
@@ -55,7 +55,7 @@ node.1 {
 
 ## Installation
 
-To install the \`carl_estop\` package, you can choose to either install
+To install the `carl_estop` package, you can choose to either install
 from source, or from the Ubuntu package:
 
 ### Source
@@ -77,18 +77,18 @@ sudo apt-get install ros-indigo-carl-estop
 
 ### Startup
 
-The \`carl_estop\` package also contains a \`pc_estop.launch\` file
+The `carl_estop` package also contains a `pc_estop.launch` file
 which should be launched on **the off board PC**. This file launches an
-instance of the \`pc_estop_node\`. To launch, the following command can
+instance of the `pc_estop_node`. To launch, the following command can
 be used:
 
 ```
 roslaunch carl_estop pc_estop.launch
 ```
 
-The \`carl_estop\` package also contains a \`carl_estop.launch\` file
+The `carl_estop` package also contains a `carl_estop.launch` file
 which should be launched on **the robot**. This file launches an
-instance of the \`carl_estop_node\`. To launch, the following command
+instance of the `carl_estop_node`. To launch, the following command
 can be used:
 
 ```

@@ -18,8 +18,8 @@ $ rosrun kobuki_dashboard kobuki_dashboard
 3\. Play with it!
 
   -- ----------------------------------------------------------------------------------------------------- --
-     \<tablestyle=\"width: 100%\"\>                                                                        
-     \<style=\"text-align: center;\"\>![Kobuki\'s dashboard\|width=70%](attachment:kobuki_dashboard.png)   
+     <tablestyle="width: 100%">                                                                        
+     <style="text-align: center;">![Kobuki's dashboard\|width=70%](attachment:kobuki_dashboard.png)   
   -- ----------------------------------------------------------------------------------------------------- --
 
 The kobuki_dashboard is also part of the

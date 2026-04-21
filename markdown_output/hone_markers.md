@@ -10,7 +10,7 @@
 
 [Youtube](https://www.youtube.com/watch?v=4RHrLfmyuyM)
 
-This is a simple skeleton markers. \"hone\" is the meaning of the
+This is a simple skeleton markers. "hone" is the meaning of the
 skeleton in Japanese.
 
 ## Documentation
@@ -27,7 +27,7 @@ rosmake hone_markers
 roslaunch hone_markers hone_markers.launch
 ```
 
-RViz : File\>\>Open Config\>\>RViz_hone_markers.vcg
+RViz : File>>Open Config>>RViz_hone_markers.vcg
 
 <attachment:RViz_hone_markers.vcg>
 

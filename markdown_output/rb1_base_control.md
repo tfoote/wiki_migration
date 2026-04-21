@@ -28,7 +28,7 @@ located in the config directory
 \- **id_robot:** (default: robot) Name identifier of the robot. Used for
 namespaces
 
-\- **prefix:** (default: robot\_) Name identifier with an underscore
+\- **prefix:** (default: robot_) Name identifier with an underscore
 
 \- **has_elevator:** (default: False) Whether the robot has an elevator.
 This arg will overwrite the param with the same name located in the

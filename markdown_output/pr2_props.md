@@ -6,13 +6,13 @@ everyone there! [Youtube](https://www.youtube.com/watch?v=0K_0vSAzA3w)
 ## Overview
 
 The goal of pr2_props, aside from just generally being awesome and
-making you feel good, is to demonstrate the PR2\'s ability to do dynamic
+making you feel good, is to demonstrate the PR2's ability to do dynamic
 human interaction. It has been designed to use low-latency real-time
 controller packages like
 [joint_trajectory_action](joint_trajectory_action) and
 [pr2_gripper_sensor_action](pr2_gripper_sensor_action) so that PR2 is
 capable of quickly and sensitively responding to a human slapping the
-robot\'s hand.
+robot's hand.
 
 Currently [pr2_props](pr2_props) supports 3 main behaviors:
 
@@ -43,7 +43,7 @@ svn co https://mediabox.grasp.upenn.edu/svn/penn-ros-pkgs/pr2_props_stack/trunk/
 
 #### Compiling
 
-Before using pr2_props you must compile it and it\'s dependencies. This
+Before using pr2_props you must compile it and it's dependencies. This
 can be done simply by running: ```
 rosmake pr2_props
 ``` If you have not
@@ -75,4 +75,4 @@ rosrun pr2_props repeat_high_five
 rosrun pr2_props hug
 ``` In the above commands the values inside
 () are optional. The robot is naturally right-handed if no hand is
-specified. \`explode\` and \`explosion\` have the same effect.
+specified. `explode` and `explosion` have the same effect.

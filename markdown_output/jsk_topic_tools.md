@@ -20,7 +20,7 @@ rosrun jsk_topic_tools transform_merger
 
 ## SAMPLE
 
-### topic_buffer\_\[server/client\] Sample
+### topic_buffer_\[server/client\] Sample
 
 ```
 roslaunch jsk_topic_tools topic_buffer_server_sample.launch
@@ -30,7 +30,7 @@ roslaunch jsk_topic_tools topic_buffer_server_sample.launch
 roslaunch jsk_topic_tools topic_buffer_client_sample.launch
 ```
 
-### tf_buffer\_\[server/client\] Sample
+### tf_buffer_\[server/client\] Sample
 
 ```
 roslaunch jsk_topic_tools tf_buffer_server_sample.launch
@@ -40,7 +40,7 @@ roslaunch jsk_topic_tools tf_buffer_server_sample.launch
 roslaunch jsk_topic_tools tf_buffer_client_sample.launch
 ```
 
-### specific_transform\_\[publisher/subscriber\] Sample
+### specific_transform_\[publisher/subscriber\] Sample
 
 ```
 roslaunch jsk_topic_tools specific_transform_publisher_sample.launch

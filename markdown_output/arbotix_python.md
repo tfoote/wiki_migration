@@ -96,13 +96,13 @@ param {
 
 ### Submodules
 
-The \`arbotix_python\` package also offers several controllers which add
+The `arbotix_python` package also offers several controllers which add
 higher-level interfaces to common hardware. These include:
 
 -   [diff_controller](arbotix_python/diff_controller) - A controller for
     a differential drive base.
 -   [follow_controller](arbotix_python/follow_controller) - A controller
-    offering a \`control_msgs/FollowJointTrajectoryAction\` input.
+    offering a `control_msgs/FollowJointTrajectoryAction` input.
 
 This package also offers complete access to the digital and analog IO on
 the ArbotiX:
@@ -166,8 +166,8 @@ head_pan and head_tilt are enabled.
 
 Working with Dynamixel servos often requires some setup of the servos
 themselves. This is made easy with the ArbotiX terminal tool. The
-terminal works like a typical Linux terminal, you can type \`ls\` to
-query which servos are attached, \`mv 1 2\` will \`move\` the servo with
+terminal works like a typical Linux terminal, you can type `ls` to
+query which servos are attached, `mv 1 2` will `move` the servo with
 ID 1 to an ID of 2, etc:
 
 ```
@@ -184,7 +184,7 @@ OK
 .... .... .... .... .... .... .... .... ....
 ```
 
-The terminal has several other commands. Typing \`help\` will list all
+The terminal has several other commands. Typing `help` will list all
 commands: ```
 >>  help
 ArbotiX Terminal V0.1

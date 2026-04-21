@@ -1,6 +1,6 @@
 ## Overview
 
-The \`industrial_robot_client\` package provides a standardized
+The `industrial_robot_client` package provides a standardized
 interface for controlling industrial robots, based on the ROS-Industrial
 [Specification](Industrial/Industrial_Robot_Driver_Spec). This package
 includes a C++ reference implementation of the specification, using the
@@ -42,7 +42,7 @@ recommended that the integrator use a derived-class approach to only
 re-implement the minimal functionality required. Wherever possible, the
 new code should call the base class reference-implementation functions
 to avoid code duplication and maintain consistent operations. It may be
-helpful to review the library\'s [design](/design) to determine which
+helpful to review the library's [design](/design) to determine which
 functionality may need replacing. Simple joint reordering and renaming
 can be handled through existing capabilities, as described
 [here](/joint_naming).
@@ -239,4 +239,4 @@ node.2 {
 
 ## Reporting bugs
 
-\<\<GitHubIssues(ros-industrial/industrial_core)\>\>
+<<GitHubIssues(ros-industrial/industrial_core)>>

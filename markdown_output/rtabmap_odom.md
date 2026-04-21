@@ -11,12 +11,12 @@ various odometry approaches of RTAB-Map. When a transformation cannot be
 computed, a null transformation is sent to notify the receiver that
 odometry is not updated or lost.
 
--   There are two set of parameters: ROS and RTAB-Map\'s parameters. The
+-   There are two set of parameters: ROS and RTAB-Map's parameters. The
     ROS parameters are for connection stuff to interface the RTAB-Map
-    library with ROS. The RTAB-Map\'s parameters are those from the
+    library with ROS. The RTAB-Map's parameters are those from the
     RTAB-Map library.
 -   Parameters available for odometry can be shown from the terminal by
-    using the \"\--params\" argument:
+    using the "\--params" argument:
 
 ```
 $ rosrun rtabmap_odom rgbd_odometry --params
@@ -28,7 +28,7 @@ $ rosrun rtabmap_odom icp_odometry --params
 
 #### Arguments
 
--   \`\"\--params\"\`: Show RTAB-Map\'s parameters related to this node
+-   `"\--params"`: Show RTAB-Map's parameters related to this node
     and exit.
 
 ```clearsilver

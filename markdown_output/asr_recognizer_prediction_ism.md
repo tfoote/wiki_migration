@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -25,7 +25,7 @@ main parts are:
 
 The following picture illustrates the process of the package:
 
-![\|height=\"500\",width=\"800\"](attachment:szene_partikelfilter.png)
+![\|height="500",width="800"](attachment:szene_partikelfilter.png)
 
 Initially, the objects that were found are used to compute which scenes
 could be present (scene recognition). In the second step, these scenes
@@ -106,8 +106,8 @@ You have to set some parameters in:
 -   data type: int
 -   description: Whether the orientation of rotation invariant objects
     should be rotated to the rotationFrame or to an object.
--   1 =\> rotationFrame is used
--   2 =\> the specified rotation object is used
+-   1 => rotationFrame is used
+-   2 => the specified rotation object is used
 -   rotationFrame:
 -   data type: string
 -   description: Defines the rotation frame. The rotation only takes
@@ -134,10 +134,10 @@ You have to set some parameters in:
     recognition
 -   vizSamplesClientName:
 -   data type: string
--   description: name of service call \"visualize_sampled_poses\"
+-   description: name of service call "visualize_sampled_poses"
 -   pushCompletePatternsName:
 -   data type:string
--   description: name of service call \"push_complete_patterns\"
+-   description: name of service call "push_complete_patterns"
 
 **param/pose_prediction.yaml**
 
@@ -154,10 +154,10 @@ You have to set some parameters in:
     results that importance sampling is going to draw.
 -   foundObjectClientName:
 -   data type: string
--   description: name of service call \"get_found_object_list\"
+-   description: name of service call "get_found_object_list"
 -   !PointCloudServerName:
 -   data type:string
--   description: name of service call \"get_point_cloud\"
+-   description: name of service call "get_point_cloud"
 -   posePredictionMarkersPublisherName:
 -   data type:string
 -   description: visualization topic name for the predicted poses for

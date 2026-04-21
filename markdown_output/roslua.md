@@ -46,7 +46,7 @@ constructs like locking are unnecessary.
 
 For information about requirements and how to get started please read
 the [README](http://github.com/timn/roslua/blob/master/README) file in
-the package. In the package\'s doc directory you find auto-generated API
+the package. In the package's doc directory you find auto-generated API
 documentation. Volunteers are welcome to help out with tutorials.
 
 Full API documentation is available at <http://timn.github.com/roslua/>.

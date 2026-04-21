@@ -24,15 +24,15 @@ to generate urdf model of robot and publishing tf tree.
 
 #### vrep_common
 
-Clock server make use of message type from package \"vrep_common\". This
+Clock server make use of message type from package "vrep_common". This
 package is also useful for service type of communication with V-rep
 environment.
 
 ##### Installation and compilation
 
-1\. Link folder \"{V-rep installation
-folder}/programming/ros_packages/vrep_common\" to your ROS workspace
-folder \"{ROS workspace folder}/src\". 2. Run \"catkin_make\" in
+1\. Link folder "{V-rep installation
+folder}/programming/ros_packages/vrep_common" to your ROS workspace
+folder "{ROS workspace folder}/src". 2. Run "catkin_make" in
 terminal.
 
 ## Nodes
@@ -167,15 +167,15 @@ parameter is taken.
 #### vrep_index
 
 In case of multiple same robots in V-rep environment simulator
-automatically adds unique ID\'s to new instances of same object. Sensor
+automatically adds unique ID's to new instances of same object. Sensor
 scripts in
 [model repository](https://github.com/hrnr/robo-rescue-simulation-vrep)
 publish unique topics for each sensor and each robot. This parameter is
-robot\'s number in V-rep.
+robot's number in V-rep.
 
 #### tf_prefix
 
-Published messages to ROS use [tf_prefixes](tf) to prefix frame_id\'s in
+Published messages to ROS use [tf_prefixes](tf) to prefix frame_id's in
 messages. <Example:%5Btf_prefix%5D/base_link>.
 
 ### Global

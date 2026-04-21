@@ -18,8 +18,8 @@ rocon://concert_name/hardware_platform/name/application_framework/operating_syst
 You will see these flung around a rocon concert frequently at the ros
 api level. Examples:
 
--   \`rocon:/turtlebot2/cybernetic_pirate#rocon_apps/im_here_to_make_you_lazy\`
--   \`rocon:/pr2/bob#rocon_apps/look_menacing\`
+-   `rocon:/turtlebot2/cybernetic_pirate#rocon_apps/im_here_to_make_you_lazy`
+-   `rocon:/pr2/bob#rocon_apps/look_menacing`
 
 ## Command Line Tools
 

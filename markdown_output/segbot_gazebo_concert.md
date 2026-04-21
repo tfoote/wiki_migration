@@ -1,15 +1,15 @@
-The \`segbot_gazebo_concert\` package provides a simple demo which
+The `segbot_gazebo_concert` package provides a simple demo which
 demonstrates running the [Robotics in Concert](rocon) framework with
 multiple simulated robots in Gazebo.
 
 ## Installation
 
--   You\'ll need to install the [Robotics in Concert](rocon) framework.
+-   You'll need to install the [Robotics in Concert](rocon) framework.
     Follow the instructions at
     [rocon/Tutorials/indigo/Installation](rocon/Tutorials/indigo/Installation)
-    to install \`hydro-devel\` sources into your catkin workspace.
+    to install `hydro-devel` sources into your catkin workspace.
 -   Install all the code from the UTexas BWI project *(As of May 3 2014,
-    this package is only available in \`ros-shadow-fixed\`)*:
+    this package is only available in `ros-shadow-fixed`)*:
     ```
 sudo apt-get install ros-hydro-bwi-desktop
 ```

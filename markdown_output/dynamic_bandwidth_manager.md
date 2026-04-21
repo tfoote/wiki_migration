@@ -19,7 +19,7 @@ developers create new optimization strategies. Node
 linear optimization problem calculating new frequencies for each topic,
 considering topic priority and message size.
 
-![text describing image\|align=\"middle\"](attachment:ClassDiagram.png)
+![text describing image\|align="middle"](attachment:ClassDiagram.png)
 
 ## Paper
 
@@ -138,16 +138,16 @@ To create the independence of the optimization algorithm used by the
 library, a module that takes care of the bandwidth optimization was
 created. **DBMOptimizer** is a ROS library that helps the development of
 more complex strategies for the optimization problem. It runs every time
-as \`/dbm/optimization_rate parameter\` and assigns the result of the
+as `/dbm/optimization_rate parameter` and assigns the result of the
 calculated frequencies in parameter
-\`\[topic_name\]/dbm/frequency/current_value\`. Using **DBMOptimizer**,
-\`default_optimizer\` node solves a linear optimization problem and sets
+`\[topic_name\]/dbm/frequency/current_value`. Using **DBMOptimizer**,
+`default_optimizer` node solves a linear optimization problem and sets
 the calculated frequency for each topic considering the priorities (see
-\`\[topic_name\]/dbm/priority\` parameter).
+`\[topic_name\]/dbm/priority` parameter).
 
 ### Writing new optimization strategies
 
-Using **DBMOptimizer** it\'s possible create new optimization
+Using **DBMOptimizer** it's possible create new optimization
 strategies. Code below presents a example of how create a node with a
 optimization algorithm.
 
@@ -180,7 +180,7 @@ treated as a managed channel. But the question is how to manage channels
 that just send messages to other nodes that are running in the same
 machine? In these cases, the topic has no impact in the bandwidth and
 should be ignored when optimization is running. Thus, the
-\`DBMOptimizer\` decides which topics should be managed in a specific
+`DBMOptimizer` decides which topics should be managed in a specific
 time verifying if there are external nodes communicating with the topic.
 If there is no external node subscribing to the topic, it is not treated
 as a managed channel and has its frequency adjusted to its maximum
@@ -192,11 +192,11 @@ the system limits the global sampling and publishing rate for that
 topic, this would mean that a local process, not subject to the same
 bandwidth limitations, would not get the full rate data from the topic.
 To solve this problem, the system creates two topics for each managed
-topic: a full rate topic (\`\[topic_name\]\`) and a managed rate topic
-(\`\[topic_name\]/managed\`). Thus, when a client of the topic is
+topic: a full rate topic (`\[topic_name\]`) and a managed rate topic
+(`\[topic_name\]/managed`). Thus, when a client of the topic is
 running in the same machine of the managed topic, it subscribes in the
 full rate topic. However, if the client is running in an external
 machine, it is subscribed in the managed rate topic. So, the full rate
 topic stream would still be available for local processing/logging.
 
-![text describing image\|align=\"middle\"](attachment:DBMScheme.png)
+![text describing image\|align="middle"](attachment:DBMScheme.png)

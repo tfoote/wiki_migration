@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(arm_navigation_msgs)\>\>
+<<MsgSrvDoc(arm_navigation_msgs)>>

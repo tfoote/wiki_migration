@@ -4,7 +4,7 @@
 [CMakeLists](CMakeLists#rosbuild_add_roslaunch_check) file to test all
 launch files.
 
-\`roslaunch_parse_tester\` has tools that allow users to parse and check
+`roslaunch_parse_tester` has tools that allow users to parse and check
 launch files, or an entire package. It can be used with command line
 tools, or as a library as part of a build test system.
 
@@ -21,7 +21,7 @@ Using various options, roslaunch_parse_tester can check:
 
 ### Launch Parser
 
-\`launch_parser.py\` parses and checks a launch file.
+`launch_parser.py` parses and checks a launch file.
 
 ```
 Usage: ./launch_parser.py file [options]
@@ -38,8 +38,8 @@ Options:
 
 ### Package Parser
 
-\`package_parse_test.py\` checks all the launch files in a package.
-Users can choose to \"blacklist\" individual files or entire
+`package_parse_test.py` checks all the launch files in a package.
+Users can choose to "blacklist" individual files or entire
 directories.
 
 ```
@@ -61,7 +61,7 @@ files.
 
 ## RPT as a Python Library
 
-\`roslaunch_parse_tester\` can be used as a library in a Python script,
+`roslaunch_parse_tester` can be used as a library in a Python script,
 and be added to an automated build test.
 
 ### Example

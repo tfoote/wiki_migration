@@ -1,6 +1,6 @@
 ## Overview
 
-Currently just fundamental type \<-\> byte array converters. These are
+Currently just fundamental type <-> byte array converters. These are
 common for control io operations (e.g. on a serial port).
 
 ## Compiling & Linking

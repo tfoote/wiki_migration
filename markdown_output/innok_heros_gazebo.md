@@ -8,5 +8,5 @@ that you use Gazebo6**. To install Gazebo6 see
 
 # Tutorials
 
-\<\<TutorialChain(innok_heros_gazebo/Tutorials/Simulating Innok
-Heros)\>\>
+<<TutorialChain(innok_heros_gazebo/Tutorials/Simulating Innok
+Heros)>>

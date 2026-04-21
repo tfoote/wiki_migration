@@ -8,7 +8,7 @@ and [Imu](http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html)
 sensor messages are combined by means of an extended Kalman filter. This
 node is capable of estimating vehicle position and linear velocity as
 well as the position of detected landmarks in real-time. It is entirely
-written in python for ROS Fuerte. It\'s philosophy is similar to package
+written in python for ROS Fuerte. It's philosophy is similar to package
 [robot_pose_ekf](http://www.ros.org/wiki/robot_pose_ekf) but with
 several enchancements.
 
@@ -70,4 +70,4 @@ More information about this node can be found at:
 
 N. Palomeras, S. Nagappa, D. Ribas, N. Gracias and M. Carreras.
 Vision-based localization and mapping system for AUV intervention.
-OCEANS\'13 MTS/IEEE. Bergen, 2013.
+OCEANS'13 MTS/IEEE. Bergen, 2013.

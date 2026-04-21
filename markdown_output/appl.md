@@ -24,7 +24,7 @@ go to /appl/src folder and type: ./pomdpsol
 ../examples/POMDPX/Tiger.pomdpx (we have an example pomdpx file in the
 above indicated position). The generated policy is written to out.policy
 by default. The pomdpsol executable has already been compiled and placed
-in the src folder. You don\'t need to recompile again.
+in the src folder. You don't need to recompile again.
 
 3\. After you have the PolicyX file, you can use rosmake to compile the
 node.
@@ -72,7 +72,7 @@ states in xstate(if you have) you are in
 3\. cmd=2 actual communication. You need to specify the obs and
 xstate(if you have).
 
-For obs , if there\'s only one observable variable, you just copy the
+For obs , if there's only one observable variable, you just copy the
 enumerable value of the variable as specified in the PomdpX file. If
 there are more than one variable, you need to first concatenate those
 values together in the ascending order of the variable names.
@@ -82,7 +82,7 @@ The rule of xstate is the same as obs.
 For example, in the below PomdpX variable declaration script, it has 3
 fully observable variables: RobPos,RobVel,PedPose.It has only one
 observation variable oPed. A valid assignment to xstate can be
-\"sx00y00sR00sV0\". And a valid assignment to obs can be \"ox00y00\".
+"sx00y00sR00sV0". And a valid assignment to obs can be "ox00y00".
 ```
 <Variable>
 <StateVar vnamePrev="RobPose_0" vnameCurr="RobPose_1" fullyObs="true">

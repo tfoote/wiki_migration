@@ -2,7 +2,7 @@
 
 This package contains additional experiments used to test
 [twoLevelMTTD](twoLevelMTTD) algorithm. These experiments could be
-considered \`stand alone\`, infact they just used OROCOS component. In
+considered `stand alone`, infact they just used OROCOS component. In
 order to visualize results, Ipython is needed.
 
 ## Experiments

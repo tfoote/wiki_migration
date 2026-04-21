@@ -1,2 +1,2 @@
-\<\<MsgSrvDoc(dwb_msgs)\>\>
+<<MsgSrvDoc(dwb_msgs)>>
 [See full documentation on Github](https://github.com/locusrobotics/robot_navigation/tree/master/dwb_msgs)

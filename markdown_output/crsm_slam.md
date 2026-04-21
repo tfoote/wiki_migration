@@ -48,7 +48,7 @@ catkin_make
 
 The following environment was created in the Gazebo simulator :
 
-![RoboCup-RoboRescue arena\|height=\"400\"](attachment:gaz.png)
+![RoboCup-RoboRescue arena\|height="400"](attachment:gaz.png)
 
 One video that demonstrates CRSM SLAM in the above environment is the
 following :
@@ -57,7 +57,7 @@ following :
 
 The final map produced by CRSM SLAM is the following :
 
-![CRSM SLAM result\|height=\"400\"](attachment:result_slam.png)
+![CRSM SLAM result\|height="400"](attachment:result_slam.png)
 
 # Package Input / Output
 
@@ -76,7 +76,7 @@ On the other hand, CRSM outputs :
 ```{=html}
 <!-- -->
 ```
--   A [tf](http://wiki.ros.org/tf) transformation with the robot\'s
+-   A [tf](http://wiki.ros.org/tf) transformation with the robot's
     pose.
 
 ```{=html}
@@ -89,68 +89,68 @@ On the other hand, CRSM outputs :
 # Parameters
 
 CRSM is fully parameterizable by changing the parameter file
-\"crsm_slam/config/crsm_slam/crsm_slam_parameters.yaml\". The meaning of
+"crsm_slam/config/crsm_slam/crsm_slam_parameters.yaml". The meaning of
 each parameter, as well as the expected effect on the algorithm follow:
 
 -   **occupancy_grid_publish_topic**
 -   Description : The occupancy grid publishing topic
--   Default : \`/crsm_slam/map\`
+-   Default : `/crsm_slam/map`
 
 ```{=html}
 <!-- -->
 ```
 -   **robot_trajectory_publish_topic**
 -   Description : The trajectory publishing topic
--   Default : \`/crsm_slam/trajectory\`
+-   Default : `/crsm_slam/trajectory`
 
 ```{=html}
 <!-- -->
 ```
 -   **trajectory_publisher_frame_id**
 -   Description : The trajectory frame ID
--   Default : \`map\`
+-   Default : `map`
 
 ```{=html}
 <!-- -->
 ```
 -   **laser_subscriber_topic**
 -   Description : The laser subscriber topic
--   Default : \`/crsm_slam/laser_scan\`
+-   Default : `/crsm_slam/laser_scan`
 
 ```{=html}
 <!-- -->
 ```
 -   **world_frame**
 -   Description : Holds the world frame
--   Default : \`world\`
+-   Default : `world`
 
 ```{=html}
 <!-- -->
 ```
 -   **base_footprint_frame**
 -   Description : Holds the base footprint frame - (x,y,yaw)
--   Default : \`base_footprint_link\`
+-   Default : `base_footprint_link`
 
 ```{=html}
 <!-- -->
 ```
 -   **base_frame**
 -   Description : Holds the base frame
--   Default : \`base_link\`
+-   Default : `base_link`
 
 ```{=html}
 <!-- -->
 ```
 -   **map_frame**
 -   Description : Holds the map frame
--   Default : \`map\`
+-   Default : `map`
 
 ```{=html}
 <!-- -->
 ```
 -   **laser_frame**
 -   Description : Holds the laser frame
--   Default : \`laser_link\`
+-   Default : `laser_link`
 
 ```{=html}
 <!-- -->
@@ -199,7 +199,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 -   Description : Coefficient for obstacle update density (0+)
 -   Default : 3.0
 -   Effect : In CRSM SLAM the obstacles probabilities update with a
-    higher rate than the free space\'s ones. This aims at creating a
+    higher rate than the free space's ones. This aims at creating a
     better reference for the RRHC algorithm.
 
 ```{=html}
@@ -273,5 +273,5 @@ each parameter, as well as the expected effect on the algorithm follow:
 CRSM SLAM can be executed either with `rosrun` or by `roslaunch`.
 
 The package includes two launchers, one for a simulated laser
-(\`crsm_slam_simulation.launch\`) and one for a real one
-(\`crsm_slam_real.launch\`), which \"listens\" to a \`hokuyo_node\`.
+(`crsm_slam_simulation.launch`) and one for a real one
+(`crsm_slam_real.launch`), which "listens" to a `hokuyo_node`.

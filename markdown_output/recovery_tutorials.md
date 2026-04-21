@@ -53,7 +53,7 @@ expert GUI.
 Now to the most important part of this tutorial. How does all this
 work??
 
-Initially you\'ll have to initialize the state machine by inheriting the
+Initially you'll have to initialize the state machine by inheriting the
 state machine base class and setting the oracle flag, this operation
 would be very similar to SMACH state machines. Also specify a read/write
 location for the failure and transition matrices.

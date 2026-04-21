@@ -18,8 +18,8 @@ rosrun fzi_icl_can install_pcan_module.sh
 during execution.
 
 You can also build the driver from source by hand, see the PEAK website
-for instructions. **IMPORTANT:** Build the driver in ***CHARDEV*** mode,
-not the default netdev mode.
+for instructions. **IMPORTANT:** Build the driver in **`'CHARDEV`**'
+mode, not the default netdev mode.
 
 Please note that the fzi_icl_can library is linked against version
 7.15.2. If you decide to use a different driver version for the kernel
@@ -42,7 +42,7 @@ catkin_make_isolated
 ```
 
 If you have the fzi_icl_core or fzi_icl_can package in your workspace
-you\'ll have to build it with *catkin_make_isolated*, as those packages
+you'll have to build it with *catkin_make_isolated*, as those packages
 are plain cmake packages. See the
 [REP 134](http://www.ros.org/reps/rep-0134.html) for details.
 
@@ -69,8 +69,8 @@ which the robot will drive to with internal interpolation. It is not
 guaranteed (and might almost never happen), that all joints finish
 moving at the same time. If multiple waypoints are given, a new waypoint
 is started for all joints at the same time as soon as the last joint
-reached it\'s previous destination. Ramping up and down between
-waypoints is done by the robot internally depending on it\'s
+reached it's previous destination. Ramping up and down between
+waypoints is done by the robot internally depending on it's
 configuration. The ramping setup will be treated later on.
 
 The *ros_control*-interface provides a position controller in joint
@@ -150,7 +150,7 @@ This launchfile gives a ready-to-use action interface to simply access
 position configurations. It also loads a urdf description of the arm and
 starts a robot state publisher. Parameters:
 
-. pcan_device: Device name of the can adapter. Defaults to \"auto\".
+. pcan_device: Device name of the can adapter. Defaults to "auto".
 
 #### standalone_interpolated_position
 
@@ -165,10 +165,10 @@ be used (when using ros_control). Defaults to
 
 #### move_to_home_position.launch
 
-This moves the robot to it\'s zero position using the profile_position
+This moves the robot to it's zero position using the profile_position
 mode. Parameters:
 
-. pcan_device: Device name of the can adapter. Defaults to \"auto\".
+. pcan_device: Device name of the can adapter. Defaults to "auto".
 
 ## Advanced usage
 
@@ -209,5 +209,5 @@ reached within one control cycle. As a workaround prefer the
 Sometimes the robot gets into a fault mode after enabling the
 interpolated position mode (ros_control mode) when the arm is at a
 non-zero position. This should not happen with a recent version of
-ros_control, but if it happens, move the robot to it\'s zero position
+ros_control, but if it happens, move the robot to it's zero position
 using the move_to_home_position.launch launchfile.

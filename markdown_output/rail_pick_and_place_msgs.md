@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rail_pick_and_place_msgs)\>\>
+<<MsgSrvDoc(rail_pick_and_place_msgs)>>

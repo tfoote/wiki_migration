@@ -3,8 +3,8 @@
 ## Details
 
 The [laser_scan_splitter](laser_scan_splitter) takes in a
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> message and splits it into a
-number of other \`LaserScan\` messages. Each of the resulting laser
+<<MsgLink(sensor_msgs/LaserScan)>> message and splits it into a
+number of other `LaserScan` messages. Each of the resulting laser
 scans can be assigned an arbitrary coordinate frame, and is published on
 a separate topic.
 
@@ -35,8 +35,8 @@ original scan.
 
 ## Nodes & Nodelets
 
-Two drivers are available: \`laser_scan_splitter_node\` and
-\`laser_scan_splitter_nodelet\`. Their parameters and topics are
+Two drivers are available: `laser_scan_splitter_node` and
+`laser_scan_splitter_nodelet`. Their parameters and topics are
 identical.
 
 ```clearsilver

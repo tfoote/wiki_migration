@@ -18,7 +18,7 @@ Examples of usage of this driver can be found in:
     indoor and outdoor applications such as localization or Range-Only
     Simultaneous Localization And Mapping (RO-SLAM).
 
-![Range-only sensors in structures - ARCAS project\|width=\"480\"](http://grvc.us.es/staff/felramfab/roslam_datasets/img/manipulation.jpg)
+![Range-only sensors in structures - ARCAS project\|width="480"](http://grvc.us.es/staff/felramfab/roslam_datasets/img/manipulation.jpg)
 
 -   RTLS application from Nanotron company (sensor manufacturer):
     <http://nanotron.com/EN/index.php>
@@ -69,4 +69,4 @@ param {
 
 ## Report a Bug
 
-\<\<GitHubIssues(felramfab/rangeonly_driver)\>\>
+<<GitHubIssues(felramfab/rangeonly_driver)>>

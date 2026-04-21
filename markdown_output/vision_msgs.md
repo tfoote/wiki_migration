@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(vision_msgs)\>\>
+<<MsgSrvDoc(vision_msgs)>>

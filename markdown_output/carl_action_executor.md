@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_action_executor\` package contains nodes to manage and
+The `carl_action_executor` package contains nodes to manage and
 execute a sequence of actions ont he CARL robot. The actions are stored
 and executed in a queue, and will report common failures to facilitate
 plan repair. Examples of actions include base navigation, object
@@ -79,7 +79,7 @@ node.0 {
 
 ## Actions Supported
 
-Actions are specified using the \`carl_action_executor/GeneralAction\`
+Actions are specified using the `carl_action_executor/GeneralAction`
 message type. The message defines a set of supported action types, a set
 of common error codes, and a variety of input data whose use is
 determined by the action type. Action types and explanations of their
@@ -126,7 +126,7 @@ specified pose.
 
 ## Installation
 
-To install the \`carl_action_executor\` package, you can install from
+To install the `carl_action_executor` package, you can install from
 source with the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_action_executor.git
@@ -137,7 +137,7 @@ catkin_make install
 
 ## Startup
 
-The \`carl_action_executor\` can be started by simply running the node:
+The `carl_action_executor` can be started by simply running the node:
 
 . ```
 rosrun carl_action_executor carl_action_executor

@@ -1,8 +1,8 @@
 ## Overview
 
-The \`stepback_and_steerturn_recovery::StepbackAndSteerturnRecovery\` is
+The `stepback_and_steerturn_recovery::StepbackAndSteerturnRecovery` is
 designed for a robot with a car-like steering mechanism. It adheres to
-the \`nav_core::RecoveryBehavior\` interface found in the
+the `nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package and can be used as a recovery behavior
 [ plugin](pluginlib ) for the [move_base](move_base) node.
 
@@ -13,11 +13,11 @@ follows:
 
 1\. A robot stucks, which disable the robot turn in any direction. 2.
 Step back for space to turn with steering. 3. Scan the navigation
-stack\'s [ costmaps](costmap_2d ) at the point where the robot stepped
+stack's [ costmaps](costmap_2d ) at the point where the robot stepped
 back. 4. Detect the direction to the nearest obstacle and attempts to
 turn in the opposite direction.
 
-![stepback_and_steerturn_recovery\|width=\"700\"](attachment:stepback_and_steerturn_recovery.png)
+![stepback_and_steerturn_recovery\|width="700"](attachment:stepback_and_steerturn_recovery.png)
 
 The plugin frequently check if there is a obstacle in the proceeding
 direction during recovery for protection of a robot. Detecting an
@@ -106,7 +106,7 @@ param {
 
 ### C++ API
 
-The C++ \`rotate_recovery::RotateRecovery\` class adheres to the
-\`nav_core::RecoveryBehavior\` interface found in the
+The C++ `rotate_recovery::RotateRecovery` class adheres to the
+`nav_core::RecoveryBehavior` interface found in the
 [nav_core](nav_core) package. For detailed documentation, please see
 [ RotateRecovery documentation](http://www.ros.org/doc/api/rotate_recovery/html/classrotate__recovery_1_1RotateRecovery.html ).

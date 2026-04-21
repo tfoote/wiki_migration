@@ -1,9 +1,9 @@
-\<\<MsgSrvDoc(carl_dynamixel)\>\>
+<<MsgSrvDoc(carl_dynamixel)>>
 
 ## About
 
-The \`carl_dynamixel\` package is a package which launches the correct
-nodes and controllers from the \'dynamixel_motors\' package. It also has
+The `carl_dynamixel` package is a package which launches the correct
+nodes and controllers from the 'dynamixel_motors' package. It also has
 a sensor_msgs/JointState publisher.
 
 ## Nodes
@@ -126,11 +126,11 @@ sudo apt-get install ros-indigo-carl-bot
 
 ### Startup
 
-The \`carl_dynamixel\` package contains a \`carl_servos.launch\` This
-file launches an instance of the \`dynamixel_manager\` and
-\`tilt_controller_spawner\` nodes from the \'dynamixel_motor\'
-metapackage. It also launches the \'back_joints_node\' and
-\`front_joints_node\`, as well as the \`servo_pan_tilt\` node for
+The `carl_dynamixel` package contains a `carl_servos.launch` This
+file launches an instance of the `dynamixel_manager` and
+`tilt_controller_spawner` nodes from the 'dynamixel_motor'
+metapackage. It also launches the 'back_joints_node' and
+`front_joints_node`, as well as the `servo_pan_tilt` node for
 velocity commands. To launch these nodes, the following command can be
 used:
 
@@ -187,14 +187,14 @@ distribution board.
 
 ### Code
 
-To make sure the newly attached servo has its \'sensor_msgs/JointState\'
+To make sure the newly attached servo has its 'sensor_msgs/JointState'
 published and that it can be controlled a controller and the joint state
 information needs to be added.
 
 #### Controller
 
 Just by attaching the servo, some information will automatically be
-published to the \'motor_states/\<port\>\' topic, where the port is the
+published to the 'motor_states/<port>' topic, where the port is the
 specific USBDynamixel it is plugged into. To make sure the servo can be
 moved a YAML file needs to be made. Copy and paste the following code
 into carl_dynamixel/config/example.yaml
@@ -214,7 +214,7 @@ example_controller:
         max: 1023
 ```
 
-The id for the servo can be found from the \'motor_states/\<port\>\'
+The id for the servo can be found from the 'motor_states/<port>'
 topic
 
 Now add to the launch file: ```
@@ -228,8 +228,8 @@ Now add to the launch file: ```
 ```
 
 Now launch the file and the new servo should have specific joint
-information published on the \'example_controller/state\' topic and
-publishing a Float64 to the \'example_controller/command\' will move the
+information published on the 'example_controller/state' topic and
+publishing a Float64 to the 'example_controller/command' will move the
 servo to that position.
 
 #### Joint State

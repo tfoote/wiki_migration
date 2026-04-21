@@ -35,7 +35,7 @@ param {
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-\<\<MsgLink(pr2_controllers_msgs/SingleJointPositionGoal)\>\>.
+<<MsgLink(pr2_controllers_msgs/SingleJointPositionGoal)>>.
 
 ```clearsilver
 sub {

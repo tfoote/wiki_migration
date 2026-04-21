@@ -56,11 +56,11 @@ check out the source for that or
 [download a recent package](http://code.google.com/p/alufr-ros-pkg/downloads/list)).
 
 For interactive planning (without any plan execution by a robot),
-you\'re almost set now. Simply run ```
+you're almost set now. Simply run ```
 roslaunch footstep_planner footstep_planner_complete.launch
 ``` which loads
 a sample map, starts up the planner, and launches RViz to interact with
-it. Set a \"2D pose estimate\" as start, and a \"2D nav goal\" as goal
+it. Set a "2D pose estimate" as start, and a "2D nav goal" as goal
 (Hotkeys **P** and **G**). After some time (depending on footsteps,
 heuristic and the environment), the planner will visualize the footstep
 plan in RViz or output an error on the terminal.
@@ -88,10 +88,10 @@ Currently, there are three heuristics available to the planner,
 described in detail in the paper. They can be selected with the
 `heuristic_type` parameter:
 
--   \"!EuclideanHeuristic\": Straight-line distance to the goal
--   \"!EuclStepCostHeuristic\": Straight-line distance to the goal with
+-   "!EuclideanHeuristic": Straight-line distance to the goal
+-   "!EuclStepCostHeuristic": Straight-line distance to the goal with
     added footstep costs
--   \"!PathCostHeuristic\": Distance along 2D path pre-planned with A\*
+-   "!PathCostHeuristic": Distance along 2D path pre-planned with A\*
     (preferred). This heuristic works best in most cases, as it is most
     informed of the environment. Note that it is potentially
     inadmissible in the case of stepping over obstacles.
@@ -100,29 +100,29 @@ described in detail in the paper. They can be selected with the
 
 ### Model
 
-![\|height=\"150px\"](attachment:footstep_model2.png)
+![\|height="150px"](attachment:footstep_model2.png)
 
 Since version 0.3, footsteps are parameterized as a general 2D transform
-(x,y,theta) of the swinging (walking) leg\'s foot from the current
-supporting leg\'s foot origin. Footstep sets are specified in the
-parameter arrays \`footsteps/{x,y,theta}\` (see below).
+(x,y,theta) of the swinging (walking) leg's foot from the current
+supporting leg's foot origin. Footstep sets are specified in the
+parameter arrays `footsteps/{x,y,theta}` (see below).
 
 #### Old Model (v0.2 and before)
 
-![\|height=\"150px\"](attachment:footstep_model.png)
+![\|height="150px"](attachment:footstep_model.png)
 
 Before, footsteps were parametrized by the displacement (x,y,theta) of
-the swinging (walking) leg\'s foot from its default position next to the
-current supporting leg\'s foot, which was specific to the Nao\'s old
+the swinging (walking) leg's foot from its default position next to the
+current supporting leg's foot, which was specific to the Nao's old
 walking algorithm. For a displacement of (0,0,0), the walking foot is
-placed next to the supporting foot at a distance of \`foot/separation\`.
+placed next to the supporting foot at a distance of `foot/separation`.
 
 ### Parameterization for the Nao
 
 ![\|](attachment:footsteps_nao.png)
 
 A footstep parameterization for the [Nao humanoid](Robots/Nao) is given
-in \`config/footsteps_nao.yaml\`.
+in `config/footsteps_nao.yaml`.
 
 ### Parameterization for larger humanoids
 
@@ -130,7 +130,7 @@ in \`config/footsteps_nao.yaml\`.
 
 A footstep set for a larger humanoid which is capable of stepping over
 obstacles (e.g. Asimo or HRP-2) is given in
-\`config/footsteps_asimo.yaml\`.
+`config/footsteps_asimo.yaml`.
 
 ![\|](attachment:footstep_plan_asimo.png)
 

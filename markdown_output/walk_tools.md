@@ -17,7 +17,7 @@ computation and makes the following assuption:
     (X forward, Y to the left and Z up),
 -   two force sensors localized in the feet/ankles and synchronized data
     from them are available as
-    \<\<MsgLink(geometry_msgs/WrenchStamped)\>\> messages.
+    <<MsgLink(geometry_msgs/WrenchStamped)>> messages.
 -   the robot is biped.
 
 ```clearsilver
@@ -115,7 +115,7 @@ During movement execution, effort monitoring on each actuator prevents
 robot dammage.
 
 This script regularly checks that the current torques reported by the
-\`joint_states\` topic are lower than the limit indicated in the robot
+`joint_states` topic are lower than the limit indicated in the robot
 URDF model. If the effort is higher that 85% of the limit, a warning is
 issued. Warning and errors are reported using the ROS diagnostics stack.
 

@@ -18,17 +18,17 @@ node.0 {
 
 #### Permissions
 
-Running \`pr2_ethercat\` requires the following \"capabilities\":
+Running `pr2_ethercat` requires the following "capabilities":
 
 -   **CAP_IPC_LOCK** Lock memory (mlockall())
 -   **CAP_SYS_NICE** Set real-time scheduling policies
 -   **CAP_NET_RAW** Use raw sockets (for EtherCAT communications)
     Superuser has these capabilities, but they can also be granted to
     another executable by setting file system attributes on the
-    executable file. The \`pr2-grant\` program is a setuid-root program
-    which copies \`pr2_ethercat\` to a part of the filesystem where
-    attributes can be set (\`/var/tmp\`), and then grants the necessary
-    capabilities to be able to run \`pr2_ethercaat\`.
+    executable file. The `pr2-grant` program is a setuid-root program
+    which copies `pr2_ethercat` to a part of the filesystem where
+    attributes can be set (`/var/tmp`), and then grants the necessary
+    capabilities to be able to run `pr2_ethercaat`.
 
 #### Usage
 
@@ -44,7 +44,7 @@ Usage: ./pr2_ethercat [options]
 
 #### Example
 
-\`pr2_ethercat\` is usually executed from a launch file, such as
+`pr2_ethercat` is usually executed from a launch file, such as
 [pr2_bringup](pr2_bringup)/pr2.launch. Common configuration:
 ```
 <node name="realtime_loop" machine="c1" launch-prefix="pr2-grant" pkg="pr2_ethercat" type="pr2_ethercat" args="-i ecat0 -x robot_description"/>
@@ -52,14 +52,14 @@ Usage: ./pr2_ethercat [options]
 
 ### pr2-grant
 
-\`pr2-grant\` is a utility that allows a regular user to run
-\`pr2_ethercat\` with appropriate capabilities. See the section in
-\`pr2_ethercat\` on \"Permissions.\"
+`pr2-grant` is a utility that allows a regular user to run
+`pr2_ethercat` with appropriate capabilities. See the section in
+`pr2_ethercat` on "Permissions."
 
 ## reset_motors.py
 
-\`reset_motors.py\` is a simple command-line script that calls the
-\`pr2_ethercat/reset_motors\` service.
+`reset_motors.py` is a simple command-line script that calls the
+`pr2_ethercat/reset_motors` service.
 
 ```
 $ rosrun pr2_ethercat reset_motors.py

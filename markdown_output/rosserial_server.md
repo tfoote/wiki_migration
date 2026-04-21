@@ -25,7 +25,7 @@ link. If the port is not specified it defaults to /dev/ttyACM0.
 
 ```
 roslaunch rosserial_server serial.launch port:=/dev/ttyUSB0
-``` There\'s also a launchfile for starting a
+``` There's also a launchfile for starting a
 socket link, which defaults to listening on port 11411.
 ```
 roslaunch rosserial_server socket.launch
@@ -68,10 +68,10 @@ param {
 
 ## Require API
 
-The \`require\` parameter to the server allows it to enforce that the
+The `require` parameter to the server allows it to enforce that the
 client(s) must publish and subscribe to a certain set of topics. This is
 important because a serial connection provides no guarantee of delivery,
-and the rosserial protocol doesn\'t inherently contain any such checks.
+and the rosserial protocol doesn't inherently contain any such checks.
 
 Example usage in a launch file:
 
@@ -91,10 +91,10 @@ Example usage in a launch file:
 ```
 
 When the Arduino client connects to this server, the server will verify
-that the status, cmd, and lights topics get set up. If they don\'t after
+that the status, cmd, and lights topics get set up. If they don't after
 1 second, the server will re-initialize the connection.
 
-Use of the \`require\` parameter is completely optional, but may be of
+Use of the `require` parameter is completely optional, but may be of
 value to users needing to deploy ROS-connected microcontrollers into
 environments where the occasional failed initialization is not
 acceptable.
@@ -107,5 +107,5 @@ is missing key features of the
 parameters, logging, and services. If you require these features, please
 stick to the standard Python server for now.
 
-Or be prepared to implement them yourself, which we\'d really
+Or be prepared to implement them yourself, which we'd really
 appreciate!

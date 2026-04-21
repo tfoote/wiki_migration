@@ -35,23 +35,23 @@ little bit trickier, as we have to guarantee that:
 -   each robot model in Gazebo has a different name,
 -   the robots use different ROS topic and services names,
 -   the robots use different [tf](tf) frame names. For this purpose, you
-    can use the \`model_name\` and \`robot_ns\` launch file arguments.
+    can use the `model_name` and `robot_ns` launch file arguments.
 
 For example, to spawn a second robot when Gazebo is running, type:
 ```
 roslaunch leo_gazebo spawn_robot.launch model_name:=another_leo robot_ns:=leo1
-``` This will spawn \`another_leo\` model in
-Gazebo, start all the nodes and gazebo plugins in the \`leo1\` namespace
-and add \`leo1/\` prefix to all published tf transformations (e.g.
-\`base_link\` becomes \`leo1/base_link\`).
+``` This will spawn `another_leo` model in
+Gazebo, start all the nodes and gazebo plugins in the `leo1` namespace
+and add `leo1/` prefix to all published tf transformations (e.g.
+`base_link` becomes `leo1/base_link`).
 
 Now, to use the newly spawned Leo in ROS, you just have to run the nodes
-in the \`leo1\` namespace and use the prefixed tf frames, for example:
+in the `leo1` namespace and use the prefixed tf frames, for example:
 ```
 ROS_NAMESPACE=leo1 rosrun leo_teleop key_teleop
 ``` To use RViz, change the **Fixed Frame** to
-\`leo1/base_footprint\` and set the **TF Prefix** parameter in the
-[RobotModel](rviz/DisplayTypes/RobotModel) display to \`leo1\`.
+`leo1/base_footprint` and set the **TF Prefix** parameter in the
+[RobotModel](rviz/DisplayTypes/RobotModel) display to `leo1`.
 
 ## Nodes
 
@@ -81,7 +81,7 @@ additional nodes to simulate ROS API of the real robot.
 spawn_robot.launch:: Spawns the complete robot into the simulation
 environment. leo_gazebo.launch:: Starts the gazebo simulator with the
 empty world and spawns the robot in it. leo_marsyard.launch:: Starts the
-gazebo simulator with the \`marsyard\` world and spawns the robot in it.
+gazebo simulator with the `marsyard` world and spawns the robot in it.
 
 ## Gazebo plugins
 

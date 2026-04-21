@@ -2,7 +2,7 @@
 
 This package provides a library of cmake toolchain modules for popular
 toolchain configurations. They can be found in the
-\`eros_toolchains/library\` folder.
+`eros_toolchains/library` folder.
 
 ## Usage
 

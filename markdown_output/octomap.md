@@ -2,7 +2,7 @@
 
 General information about !OctoMap is available at
 <http://octomap.github.io> and in the publication
-[\"OctoMap: An Efficient Probabilistic 3D Mapping Framework Based on Octrees\"](http://www.informatik.uni-freiburg.de/~hornunga/pub/hornung13auro.pdf)
+["OctoMap: An Efficient Probabilistic 3D Mapping Framework Based on Octrees"](http://www.informatik.uni-freiburg.de/~hornunga/pub/hornung13auro.pdf)
 by A. Hornung, K. M. Wurm, M. Bennewitz, C. Stachniss, and W. Burgard
 (Autonomous Robots Journal, 2013).
 
@@ -42,10 +42,10 @@ to install !OctoMap as stand-alone libraries with no ROS dependencies
 (so the package can also be used in a non-ROS setting).
 
 This means that you compile against !OctoMap without requiring any
-ROS-specific build tools or catkin macros (in fact, they won\'t work).
+ROS-specific build tools or catkin macros (in fact, they won't work).
 For convenience, the system install includes CMake config files for
 easily finding and configuring !OctoMap in your CMakeLists.txt using the
-regular \`find_package()\` macro:
+regular `find_package()` macro:
 
 ```
 find_package(octomap REQUIRED)
@@ -53,8 +53,8 @@ include_directories(${OCTOMAP_INCLUDE_DIRS})
 target_link_libraries(${OCTOMAP_LIBRARIES})
 ```
 
-(Add \`\`\`link_directories(\${OCTOMAP_LIBRARY_DIRS})\`\`\` only if
-required - usually it\'s not needed).
+(Add ```link_directories(\${OCTOMAP_LIBRARY_DIRS})``` only if
+required - usually it's not needed).
 
 ```
 {#!wiki version groovy_and_newer

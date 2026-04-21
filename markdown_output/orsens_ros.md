@@ -1,5 +1,5 @@
 [Included page orsens_ros/menu not found](Included page orsens_ros/menu not found)
-![OrSens camera\|align=\"right\",width=\"434\"](attachment:orsens_v1_1.png)
+![OrSens camera\|align="right",width="434"](attachment:orsens_v1_1.png)
 
 ## Overview
 
@@ -24,8 +24,8 @@ folder contains several files for different purposes:
 
 ### orsens_node
 
-Main node that publishes camera\'s data, as well as some results of
-SDK\'s integrated CV functions.
+Main node that publishes camera's data, as well as some results of
+SDK's integrated CV functions.
 
 ```clearsilver
 
@@ -147,7 +147,7 @@ param {
 
 ## Calibration
 
-1\. Camera\'s depth engine is precalibrated, but if you need to
+1\. Camera's depth engine is precalibrated, but if you need to
 recalibrate it for some reason, please contact us at
 support@oriense-tech.com for instructions and software.
 

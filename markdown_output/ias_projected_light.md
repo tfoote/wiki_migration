@@ -4,18 +4,18 @@
 
 Parameters:
 
--   Initial block size (int \> 0)
+-   Initial block size (int > 0)
 -   Folder for patterns saved as text files (for example
-    [\"txt_patterns\"](#Text_patterns))
+    ["txt_patterns"](#Text_patterns))
 -   Bool that describes if the node should be started as a service
     (true) or not (false == default)
 
 If this node is started as a service the current pattern can be changed
 by other nodes via service calls, what is required for running the
 adjust_exposure or the blur_estimation node. The patterns can also be
-changed within the terminal with \"rosservice call change_pattern
-\<pattern_index\> \<block_size\>\" (0 = black, 1 = white, 2 = block, 3 =
-stripe, 4 = random, \>4 = patterns from textfiles)
+changed within the terminal with "rosservice call change_pattern
+<pattern_index> <block_size>" (0 = black, 1 = white, 2 = block, 3 =
+stripe, 4 = random, >4 = patterns from textfiles)
 
 If the node is not started as a service, the pattern can be changed with
 the keyboard:
@@ -35,8 +35,8 @@ Captures one image with no pattern and one image with a white pattern
 and computes the illuminated area as the difference between both and
 publishes it
 
-Input topic (default: \"stereo/left/image_rect\") and output topic
-(default \"stereo/left/roi\") can be overwritten by calling:
+Input topic (default: "stereo/left/image_rect") and output topic
+(default "stereo/left/roi") can be overwritten by calling:
 
 ```
 roi_diff_image (input || output)_topic:=<new topic>
@@ -58,8 +58,8 @@ Uses background subtraction to compute the illuminated area
 
 ![](attachment:bgsub.PNG)
 
-Input topic (default: \"stereo/left/image_rect\") and output topic
-(default \"stereo/left/roi\") can be overwritten by calling
+Input topic (default: "stereo/left/image_rect") and output topic
+(default "stereo/left/roi") can be overwritten by calling
 
 ```
 roi_bgfg_codebooks (input_image || output)_topic:=<new topic>
@@ -80,8 +80,8 @@ Adjust the exposure time so that the average brightness of the area
 illuminated by the projector is set to a fixed value (default 120) to
 avoid overexposing that region.
 
-Default image input topic is \"/stereo/left/image_mono\", default Region
-of Interest input topic is \"/stereo/left/roi\" if other topics should
+Default image input topic is "/stereo/left/image_mono", default Region
+of Interest input topic is "/stereo/left/roi" if other topics should
 be used they should be overwritten with:
 
 ```
@@ -91,7 +91,7 @@ adjust_exposure input:=<topic_new>"
 ```
 "adjust_exposure roi_input:=<topic_new>"
 ``` Default namespace for the camera parameters is
-\"/stereo/stereodcam2701/\" for the videre camera. That can also be
+"/stereo/stereodcam2701/" for the videre camera. That can also be
 overwritten by calling:
 
 ```
@@ -116,7 +116,7 @@ Parameters:
     (Zero is stripe pattern)
 -   Image input topic
 -   (Optional) Region of Interest input topic (default
-    \"/stereo/left/roi\")
+    "/stereo/left/roi")
 
 Subscribes to two topics (image and Region of Interest) and publishes
 the image extended with the illuminated area (green) and all the sharp
@@ -169,7 +169,7 @@ for blur_estimation node
 ## Text patterns
 
 The folder txt_patterns contains several patterns that are created as
-proposed in \"Projected texture stereo\" by Kurt Konolige
+proposed in "Projected texture stereo" by Kurt Konolige
 
 -   pat-opt-p6_12_2.0.txt: Optimized simulated annealing with array size
     6 \* 65

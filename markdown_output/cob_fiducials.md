@@ -5,7 +5,7 @@ object detection. Right now we implemented the PiTag marker, a variation
 of it the Fast PiTag and the Aruco marker.
 
 -   Maintainer status: maintained
--   Maintainer: Jan Fischer \<Jan.Fischer@ipa.fraunhofer.de\>
+-   Maintainer: Jan Fischer <Jan.Fischer@ipa.fraunhofer.de>
 -   Author: Matthias Nösner
 -   source: git
     <https://github.com/ipa320/cob_object_perception/tree/groovy_dev/cob_fiducials>
@@ -55,7 +55,7 @@ rostopic hz /fiducials/detect_fiducials
 ```
 
 to start the marker detection using the service call interface e.g. for
-detecting tag_0. The name is a composite of the string \'tag\_\' and the
+detecting tag_0. The name is a composite of the string 'tag_' and the
 ID specied in the xml parameter file (see below).
 
 ```
@@ -83,7 +83,7 @@ For Fast PiTag another .yaml file is provided ```
 <rosparam command="load" ns="fiducials" file="$(find cob_fiducials)/ros/launch/fiducials_fpitag.yaml"/>
 ```
 
-For Aruco(WARNING: Aruco is working. But fiducials_1.yaml does\'t load
+For Aruco(WARNING: Aruco is working. But fiducials_1.yaml does't load
 the Aruco detection in the latest release!) ```
 <rosparam command="load" ns="fiducials" file="$(find cob_fiducials)/ros/launch/fiducials_1.yaml"/>
 ``` .
@@ -113,9 +113,9 @@ git clone https://github.com/ipa320/cob_perception_common.git
 
 ```
 git clone https://github.com/ipa320/cob_perception_common.git
-```2 Notice: PiTag\'s are distinguished from each
-other through the cross ratio. Aruco\'s only by ID. Miultiple
-discriminable Tag\'s can be defined in each parameterfile.
+```2 Notice: PiTag's are distinguished from each
+other through the cross ratio. Aruco's only by ID. Miultiple
+discriminable Tag's can be defined in each parameterfile.
 
 ## Overview of the Markers
 
@@ -129,7 +129,7 @@ There is a PiTag generator in
 <https://github.com/raultron/PiTag-generator>. The Picture below
 displays 5 different encoded markers.
 
-![Exemplary PiTag detection\|width=\"500\"](attachment:5marker_wiki.png)
+![Exemplary PiTag detection\|width="500"](attachment:5marker_wiki.png)
 
 #### Creation of PiTag
 
@@ -139,7 +139,7 @@ The lines with the highest cross ratio are attached to the top left
 corner. The lines with the lowest cross ratios are attached to the
 bottom right corner.
 
-![Creating a PiTag Marker\|width=\"400\"](attachment:pifiducial.png)
+![Creating a PiTag Marker\|width="400"](attachment:pifiducial.png)
 
 ### Fast PiTag
 
@@ -150,7 +150,7 @@ determined to apply the PiTag detection algorithm. Especially in highly
 structured areas or when using high resolution cameras it enables a fast
 marker detection and a lower false positive rate.
 
-![Creating a PiTag Marker\|width=\"300\"](attachment:FPiTag.png)
+![Creating a PiTag Marker\|width="300"](attachment:FPiTag.png)
 
 ### Aruco
 
@@ -158,7 +158,7 @@ Aruco was made for educational purpose, the belongig webpage can be
 found here [Aruco](http://www.uco.es/investiga/grupos/ava/node/26). A
 Marker with the coding 341 is displayed below.
 
-![Exemplary Aruco Marker\|width=\"200\"](attachment:arucomarker10.png)
+![Exemplary Aruco Marker\|width="200"](attachment:arucomarker10.png)
 
 #### Creation of Aruco
 

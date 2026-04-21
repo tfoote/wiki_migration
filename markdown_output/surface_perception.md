@@ -1,13 +1,13 @@
-\<\<GitHubIssues(jstnhuang/surface_perception)\>\>
+<<GitHubIssues(jstnhuang/surface_perception)>>
 
 ## Overview
 
 ![demo\|width=100%](attachment:demoImage.png)
 
-\`surface_perception\` is a simple tabletop/shelf perception pipeline.
+`surface_perception` is a simple tabletop/shelf perception pipeline.
 
 [surface_perception::Segmentation](http://docs.ros.org/indigo/api/surface_perception/html/classsurface__perception_1_1Segmentation.html)
-is the main API. It takes in a point cloud, where the positive \"z\"
+is the main API. It takes in a point cloud, where the positive "z"
 direction points up. It also assumes that the point cloud has been
 cropped down to a tabletop/shelf scene.
 
@@ -51,8 +51,8 @@ bool success = seg.Segment(&surface_objects);
 To run the demo: ```
 rosrun surface_perception demo target_point_cloud_frame cloud_in:=input_point_cloud_topic
 ``` If
-\`target_point_cloud_frame\` is not provided, the point cloud will be
-processed in \`base_link\`.
+`target_point_cloud_frame` is not provided, the point cloud will be
+processed in `base_link`.
 
 [surface_perception::SurfaceViz](http://docs.ros.org/indigo/api/surface_perception/html/classsurface__perception_1_1SurfaceViz.html)
 visualizes the result: ```cplusplus

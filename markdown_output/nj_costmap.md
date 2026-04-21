@@ -1,6 +1,6 @@
 ## Overview
 
-The \`nj_costmap\` package implements a navigation jockey for the Large
+The `nj_costmap` package implements a navigation jockey for the Large
 Maps Framework ([LaMa](Large Maps Framework)) based on a local costmap
 such as those provided by the [local_map](local_map) package (costmap
 position is relative to the sensor but orientation is absolute).

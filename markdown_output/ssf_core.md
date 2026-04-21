@@ -79,13 +79,13 @@ provided in the [asctec_mav_framework](asctec_mav_framework):
 
 **Generally the noise values accessible in the dynamic reconfigure GUI
 should not be tuning parameters.** Please check the acceleration and
-gyroscope noises and their bias noises in the manufacturer\'s data sheet
+gyroscope noises and their bias noises in the manufacturer's data sheet
 of your IMU. Furthermore the noise values of the remaining states should
 be kept to zero since they are not temporally drifting. Instead, if you
 work with a keyframe based visual odomtery as update sensor you may add
 uncertainty to the visual scale and visual drift the moment a new
 keyframe is created. This reflects the *spatial* nature of these
-state\'s uncertainty.
+state's uncertainty.
 
 ### EKF Update
 
@@ -106,7 +106,7 @@ sensor specific calculations are done in
 ## Scripts
 
 There are several scripts to plot the different states.
-*plot\_\[states\] T* plots the states \[states\] in an rxgraph with a
+*plot_\[states\] T* plots the states \[states\] in an rxgraph with a
 time history of T seconds (without T the default time history is used).
 
 ## Node Information

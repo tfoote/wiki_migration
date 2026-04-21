@@ -1,4 +1,4 @@
-![\|width=\"600px\"](attachment:gazebo_video_monitor_plugins.png)
+![\|width="600px"](attachment:gazebo_video_monitor_plugins.png)
 
 ## Tutorials
 

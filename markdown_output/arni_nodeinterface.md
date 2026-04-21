@@ -35,7 +35,7 @@ execute some other command. The service-type has these fields:
      **field**          **description**                                                   
      node               Name of the node, the action should be executed on                
      action             Type of action to execute, valid values:stop,restart,command      
-     command            If action was \'command\' this gives the command to be executed   
+     command            If action was 'command' this gives the command to be executed   
      returnmessage      Return value, message about success of action                     
   -- --------------- -- ----------------------------------------------------------------- --
 

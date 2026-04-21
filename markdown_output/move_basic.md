@@ -1,27 +1,27 @@
 ## Nodes
 
-This package provides the \`move_basic\` ROS Node a very basic
+This package provides the `move_basic` ROS Node a very basic
 navigation node.
 
 ### move_basic
 
-The \`move_basic\` node performs basic navigation tasks. Path planning
+The `move_basic` node performs basic navigation tasks. Path planning
 consists of rotating in place to face the goal and then driving straight
 towards it. It is designed to provide the same software interfaces as
-[move_base](move_base), that is, it implements a \`QueuedActionServer\`
-(similar to \`SimpleActionServer\`, see
+[move_base](move_base), that is, it implements a `QueuedActionServer`
+(similar to `SimpleActionServer`, see
 [ actionlib documentation](actionlib )), that queues up to two goals
-containing \`geometry_msgs/PoseStamped\` messages.
+containing `geometry_msgs/PoseStamped` messages.
 
 It is assumed that we are dealing with imperfect localization data:
-\`map\`-\>\`base_link\` is accurate but may be delayed and is at a slow
-rate and \`odom\`-\>\`base_link\` is more frequent, but drifts,
-particularly after rotating. To counter these issues, \`move_basic\`
-plans in the \`map\` frame, and waits a short time after each step, and
-executes movement in the \`odom\` frame. If goals in the \`base_link\`
-frame are received, they are interpreted as relative to the robot\'s
-current position. This behavior is different to that of \`move_base\`,
-which will not accept goals in the \`base_link\` frame.
+`map`->`base_link` is accurate but may be delayed and is at a slow
+rate and `odom`->`base_link` is more frequent, but drifts,
+particularly after rotating. To counter these issues, `move_basic`
+plans in the `map` frame, and waits a short time after each step, and
+executes movement in the `odom` frame. If goals in the `base_link`
+frame are received, they are interpreted as relative to the robot's
+current position. This behavior is different to that of `move_base`,
+which will not accept goals in the `base_link` frame.
 
 #### Collision Avoidance
 
@@ -31,21 +31,21 @@ attempt to avoid a collision.
 
 #### Visualization
 
-Some of the data produced by \`move_basic\` can be visualized with
+Some of the data produced by `move_basic` can be visualized with
 [ rviz](rviz ). In the screen shot below, the portion of the laser scan
 data (in white) which is currently in the path of the robot is depicted
 as a red line. The light purple line shows the path planned by the
-robot. A navigation goal can be sent to \`move_basic\` by \`rviz\` by
-pressing the \`2D nav goal\` button and clicking on the map.
+robot. A navigation goal can be sent to `move_basic` by `rviz` by
+pressing the `2D nav goal` button and clicking on the map.
 
-![\|width=\"350px\"](attachment:move_basic.png)
+![\|width="350px"](attachment:move_basic.png)
 
 During rotation, the footprint of the robot is shown as a blue
 rectangle. The red box, if shown shows the rotation that can be
 performed without collision. If no obstacles are detected that obstruct
 a rotation, the red box is not shown.
 
-![\|width=\"150px\"](attachment:rotation.png)
+![\|width="150px"](attachment:rotation.png)
 
 ```clearsilver
 sub {
@@ -227,6 +227,6 @@ pose:
     w: 1.0"
 ```
 
-This is an example of a relative goal, since the \`frame_id\` is set to
-\`base_link\`. The position of the target pose is set to 1 meter in the
+This is an example of a relative goal, since the `frame_id` is set to
+`base_link`. The position of the target pose is set to 1 meter in the
 forward direction, and the orientation is the identity quaternion.

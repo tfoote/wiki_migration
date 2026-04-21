@@ -12,7 +12,7 @@ configuration for Lisp and then starting Slime.
 
 ### Installation from a Debian package
 
-\`roslisp_repl\` is distributed through the ROS release infrastructure.
+`roslisp_repl` is distributed through the ROS release infrastructure.
 
 ```
 $ sudo apt-get install ros-DISTRO-roslisp-repl
@@ -20,9 +20,9 @@ $ sudo apt-get install ros-DISTRO-roslisp-repl
 
 ### Installation from source
 
-The most up-to-date version of \`roslisp_repl\` code can be found
+The most up-to-date version of `roslisp_repl` code can be found
 [here](https://github.com/code-iai/ros_emacs_utils). Installation
-instructions are in the README file. What you\'ll need to do will be
+instructions are in the README file. What you'll need to do will be
 something like the following:
 
 ```
@@ -37,13 +37,13 @@ $ emacs -nw ~/.emacs.d/init.el # edit your emacs configuration file
 
 ## How to use
 
-To use the \`roslisp_repl\` just run the executable:
+To use the `roslisp_repl` just run the executable:
 
 ```
 $ roslisp_repl
 ```
 
-If it can\'t be found try
+If it can't be found try
 
 ```
 $ source ~/.bashrc
@@ -52,12 +52,12 @@ $ rosrun roslisp_repl roslisp_repl
 ```
 
 If you would like to use your own Emacs configuration with the REPL and
-you\'re on ROS Indigo+ see the installation instructions of the
+you're on ROS Indigo+ see the installation instructions of the
 [slime_ros](slime_ros) package. It is automatically installed as a
-dependency of \`roslisp_repl\`. If you\'re sure you will always be using
+dependency of `roslisp_repl`. If you're sure you will always be using
 the REPL only with your own Emacs configuration, consider installing
-solely [slime_ros](slime_ros) instead of \`roslisp_repl\` in the future.
+solely [slime_ros](slime_ros) instead of `roslisp_repl` in the future.
 
-If you\'re on earlier versions of ROS, look through the \`roslisp_repl\`
-configuration file, \`repl-config.el\` and copy-paste the relevant code
+If you're on earlier versions of ROS, look through the `roslisp_repl`
+configuration file, `repl-config.el` and copy-paste the relevant code
 into your Emacs config file.

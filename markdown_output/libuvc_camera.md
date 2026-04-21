@@ -16,7 +16,7 @@ zoom.
 
 Current features include:
 
--   Dynamic reconfiguration and monitoring of the camera\'s control
+-   Dynamic reconfiguration and monitoring of the camera's control
     settings
 -   Camera calibration ([camera_info_manager](camera_info_manager))
 -   Image pipeline integration ([image_transport](image_transport))
@@ -31,8 +31,8 @@ run the node as root:
 
 ```
 $ sudo -E rosrun libuvc_camera camera_node vendor:=...
-``` This command gives information on the webcam\'s
-vendor and product ID\'s:
+``` This command gives information on the webcam's
+vendor and product ID's:
 
 ```
 lsusb -v
@@ -72,16 +72,16 @@ sudo chmod o+w /dev/bus/usb/001/024 <-- where 024 is port# from the error code
 
 ### Running the driver
 
-You may need to disable your operating system\'s builtin USB video or
-audio drivers. On Linux, the \`snd-usb-audio\` and \`uvcvideo\` modules
-conflict with libuvc. Try unloading them with \`sudo rmmod
-snd-usb-audio; sudo rmmod uvcvideo\` and consider blacklisting them \--
-e.g., add the lines \`blacklist uvcvideo\` and \`blacklist
-snd-usb-audio\` to an \`/etc/modprobe.d/uvc.conf\` file. (Applications
-that don\'t use libuvc will be unable to stream from the camera.)
+You may need to disable your operating system's builtin USB video or
+audio drivers. On Linux, the `snd-usb-audio` and `uvcvideo` modules
+conflict with libuvc. Try unloading them with `sudo rmmod
+snd-usb-audio; sudo rmmod uvcvideo` and consider blacklisting them \--
+e.g., add the lines `blacklist uvcvideo` and `blacklist
+snd-usb-audio` to an `/etc/modprobe.d/uvc.conf` file. (Applications
+that don't use libuvc will be unable to stream from the camera.)
 
 Get started with the following launch file. If you need assistance with
-your webcam\'s supported resolutions and frame rates, try:
+your webcam's supported resolutions and frame rates, try:
 
 ```
 v4l2-ctl --list-formats-ext

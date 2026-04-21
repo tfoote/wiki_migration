@@ -52,7 +52,7 @@ Provides an implementation of !ExtractObjects.srv using the
 object/surface discovery and filtering primitives provided by this
 package.
 
-This service always assumes the name \"extract_objects\" in ROS.
+This service always assumes the name "extract_objects" in ROS.
 
 #### Parameters
 
@@ -63,7 +63,7 @@ No parameters are accepted at this time.
 ### extract_objects
 
 This tool extracts objects from a given .pcd point cloud file and saves
-the resulting objects as \"object\_\*.pcd\" with unique numbers in the
+the resulting objects as "object_\*.pcd" with unique numbers in the
 current working directory. Run the tool with no arguments for additional
 usage information.
 

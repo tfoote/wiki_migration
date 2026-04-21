@@ -23,7 +23,7 @@ Other set of components are visualizers:
 
 #### Distance Linear Visualizer
 
-This tool visualizes distances between specified robot\'s link and the
+This tool visualizes distances between specified robot's link and the
 relevant closest point.
 
 ![\|width=90%](attachment:distance_linear_visualizer.png)
@@ -31,14 +31,14 @@ relevant closest point.
 #### Distance Circular Indicator
 
 This tools shows set of circles in particular distances around specified
-robot\'s link.
+robot's link.
 
 ![\|width=90%](attachment:distance_circular_indicator.png)
 
 #### COB Stretch Indicator
 
 This tools visualizes stretch of the Care-O-bot. It also allows to show
-robot\'s bounding box
+robot's bounding box
 
 ![\|width=90%](attachment:cob_stretch_indicator.png)
 
@@ -58,7 +58,7 @@ are visualized as
 [Object](http://ros.org/wiki/srs_interaction_primitives#Object) and can
 be moved or rotated.
 
-Object Manager also provides service which \"detects\" all added
+Object Manager also provides service which "detects" all added
 objects.
 
 ![\|width=90%](attachment:object_manager.png)
@@ -66,7 +66,7 @@ objects.
 ### Data fusion
 
 This component experiments with 3D scene and video stream fusion, used
-in visualization of scene around Care-O-bot. So far there\'s one
+in visualization of scene around Care-O-bot. So far there's one
 possibility to visualize point cloud and video from camera in one 3D
 view implemented. It shows view frustum in front of the robot visualized
 with standard Markers, and also rectangular polygon inside of this view
@@ -92,7 +92,7 @@ An overview of all newly created ROS nodes.
   -- ----------------------- -- ---------------------- -- ------------------------------------------------------------------------------------ --
      **Node Name**              **Published Topics**      **Description**                                                                      
      but_services_server                                  This node publishes but services.                                                    
-     cob_stretch_publisher                                This node publishes COB\'s actual stretch.                                           
+     cob_stretch_publisher                                This node publishes COB's actual stretch.                                           
      view                                                 Counts both view frustum and camera view polygon position and orientation in time.   
   -- ----------------------- -- ---------------------- -- ------------------------------------------------------------------------------------ --
 
@@ -102,9 +102,9 @@ List of all new services.
 
   -- ------------------------------------- -- ----------- -- ----------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------- --
      **Service Name**                         **Input**      **Output**                                                                                         **Description**                                                     
-     /but_services/get_closest_point                         This service calculates closest point between specified robot\'s link and actual point cloud.                                                                          
+     /but_services/get_closest_point                         This service calculates closest point between specified robot's link and actual point cloud.                                                                          
      /but_services/set_point_cloud_topic                                                                                                                        Sets the topic from which the closest point should be calculated.   
-     /but_services/get_added_objects                                                                                                                            \"Detects\" all objects added by Object Manager.                    
+     /but_services/get_added_objects                                                                                                                            "Detects" all objects added by Object Manager.                    
   -- ------------------------------------- -- ----------- -- ----------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------- --
 
 ### Messages
@@ -115,7 +115,7 @@ List of all newly defined messages.
      **Msg Name**      **Content**      **Description**                                                    
      ClosestPoint                       Closest point data (distance and position of the closest point).   
      ButCamMsg                          Reduced Marker message, covering all needs of CButCamDisplay.      
-     COBStretch                         Data with calculated robot\'s stretch.                             
+     COBStretch                         Data with calculated robot's stretch.                             
   -- -------------- -- ------------- -- ------------------------------------------------------------------ --
 
 ### Published topics
@@ -126,7 +126,7 @@ List of all published topics.
      **Topic Name**                     **Message**                     **Description**                                                           
      /but_data_fusion/view_frustum      visualization_msgs::Marker      Line list representing view frustum                                       
      /but_data_fusion/cam_view          srs_ui_but::ButCamMsg           Geometry of camera view polygon used by CButCamDisplay display in Rviz.   
-     /but_services/cob_stretch          srs_ui_but::COBStretch          COB\'s stretch                                                            
+     /but_services/cob_stretch          srs_ui_but::COBStretch          COB's stretch                                                            
   -- ------------------------------- -- ---------------------------- -- ------------------------------------------------------------------------- --
 
 ## SRS API
@@ -311,8 +311,8 @@ You can set these options:
 
 -   **Frame** - Fixed Frame
 -   **Position** - position where you want to put the object
--   **Description** - object\'s description
--   **Color** - object\'s color
+-   **Description** - object's description
+-   **Color** - object's color
 
 #### Add object
 

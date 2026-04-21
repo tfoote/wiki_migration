@@ -3,8 +3,8 @@
 *NOTE: This package is currently unreleased and contains experimental
 code.*
 
-\`pose_follower_3d\` is based on the [pose_follower](pose_follower)
-local planner and adheres to the \`nav_core::BaseLocalPlanner\`
+`pose_follower_3d` is based on the [pose_follower](pose_follower)
+local planner and adheres to the `nav_core::BaseLocalPlanner`
 interface found in the [nav_core](nav_core) package. It is supposed to
 work as a local planner in accordance with the
 [sbpl_lattice_planner_3d](sbpl_lattice_planner_3d) in
@@ -12,10 +12,10 @@ work as a local planner in accordance with the
 
 pose_follower_3d will try to follow the originally planned poses of the
 path as close as possible, while performing 3D collision checks of the
-robot\'s full kinematic configuration against a 3D map. This map should
+robot's full kinematic configuration against a 3D map. This map should
 be built and provided by [octomap_server](octomap_server). A
 downprojected 2D map for [costmap_2d](costmap_2d) should be also
-provided by octomap_server to perform fast checks agains the robot\'s
+provided by octomap_server to perform fast checks agains the robot's
 footprint.
 
 ## Documentation

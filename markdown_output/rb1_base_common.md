@@ -1,4 +1,4 @@
-![RB1 BASE \|width=\"600px\"](attachment:rb1_base.jpg)
+![RB1 BASE \|width="600px"](attachment:rb1_base.jpg)
 
 ## Overview
 
@@ -17,7 +17,7 @@ the RB1-Base joint controllers.
 ### rb1_base_description
 
 This package contains the URDF, meshes and other elements needed in the
-robot\'s descriptions contained here. This package includes the
+robot's descriptions contained here. This package includes the
 description for RB1-Base with and without elevator.
 
 ### rb1_base_localization

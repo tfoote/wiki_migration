@@ -51,7 +51,7 @@ srv {
 
 ## Plugins
 
-ml_classifiers comes with 3 plugins built in: A \"zero\" classifier that
+ml_classifiers comes with 3 plugins built in: A "zero" classifier that
 classifies everything as class 0 no matter what, a nearest neighbor
 classifier, and an SVM classifier based on
 [libSVM](http://www.csie.ntu.edu.tw/~cjlin/libsvm/). More classifiers

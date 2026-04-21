@@ -2,7 +2,7 @@
 
 The range_sensor_layer is a plugin for the !LayeredCostmap in
 [costmap_2d](costmap_2d), that uses the
-\<\<MsgLink(sensor_msgs/Range)\>\> message. It is intended for use with
+<<MsgLink(sensor_msgs/Range)>> message. It is intended for use with
 sonar and infrared data.
 
 The Range messages are integrated into the costmap by using a

@@ -1,4 +1,4 @@
-![Bosch\|align=\"right\",width=200](attachment:Bosch_SL-en_4C_S.png)\
+![Bosch\|align="right",width=200](attachment:Bosch_SL-en_4C_S.png)\
 \
 \
 \
@@ -7,13 +7,13 @@
 
 Before using this package, the firmware of the Arduino must be updated.
 The necessary code and a Makefile are included in the
-\`arduino_firmare\` directory of the package.
+`arduino_firmare` directory of the package.
 
 ### Install Arduino Development Environment
 
 The Arduino development environment 1.0.1 or greater must be installed
-before the firmware can be built. The \`apt-get\` package name is
-\"\`arduino\`\". Note that for Ubuntu 12.04, the 1.0.1 version must be
+before the firmware can be built. The `apt-get` package name is
+"`arduino`". Note that for Ubuntu 12.04, the 1.0.1 version must be
 installed from the backports repository.
 
 ### Building the Firmware
@@ -29,12 +29,12 @@ If you are using the I^2^C interface on the Arduino with external pull-up resist
 71 // digitalWrite(SCL, 1);
 ``` }}}}
 
-Open a terminal and change to the \`arduino_firmware\` directory. Set
+Open a terminal and change to the `arduino_firmware` directory. Set
 the Arduino board type by setting an environment variable:
 ```
 $ export BOARD=uno
-``` Alternatively, the \`Makefile\` defualt on line
-281 can be changed. To see supported boards type \`make boards\`.
+``` Alternatively, the `Makefile` defualt on line
+281 can be changed. To see supported boards type `make boards`.
 
 Build the firmware by typing ```
 $ make
@@ -48,23 +48,23 @@ After the firmware is successfully built, upload it to the Arduino using
 ```
 $ make upload
 ``` The Arduino is now ready for use with the
-\`arduino_interface\` package.
+`arduino_interface` package.
 
 The Makefile supports additional options, as described in the table
 below:
 
   -- ------------------- -- ----------------------------------------------------------- --
      **Command**            **Description**                                             
-     \`make\`               Build the firmware and display the size of the code         
-     \`make target\`        Build the firmware                                          
-     \`make libs\`          Build the Arduino libraries                                 
-     \`make clean\`         Remove all build files and libraries                        
-     \`make size\`          Determine the size of the copiled code                      
-     \`make upload\`        Upload the firmware (\`\*.hex\`) to the Arduino             
-     \`make download\`      Download the firmware from the Arduino to a \`.hex\` file   
-     \`make erase\`         Erase the firmware on the Arduino                           
-     \`make boards\`        List the different Arduino boards this makefile supports    
-     \`make monitor\`       Run the serial monitor for talking to the Arduino           
+     `make`               Build the firmware and display the size of the code         
+     `make target`        Build the firmware                                          
+     `make libs`          Build the Arduino libraries                                 
+     `make clean`         Remove all build files and libraries                        
+     `make size`          Determine the size of the copiled code                      
+     `make upload`        Upload the firmware (`\*.hex`) to the Arduino             
+     `make download`      Download the firmware from the Arduino to a `.hex` file   
+     `make erase`         Erase the firmware on the Arduino                           
+     `make boards`        List the different Arduino boards this makefile supports    
+     `make monitor`       Run the serial monitor for talking to the Arduino           
   -- ------------------- -- ----------------------------------------------------------- --
 
 ## Using the Package

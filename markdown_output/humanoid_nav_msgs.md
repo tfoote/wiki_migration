@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(humanoid_nav_msgs)\>\>
+<<MsgSrvDoc(humanoid_nav_msgs)>>

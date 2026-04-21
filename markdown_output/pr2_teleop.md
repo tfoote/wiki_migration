@@ -12,7 +12,7 @@ The PR2 is equipped with a Playstation3 (PS3) controller.
 
 ### Pairing
 
-Before use, the PS3 controller must be \"paired\" with the robot. If
+Before use, the PS3 controller must be "paired" with the robot. If
 your controller is not already paired, you can pair it by pressing the
 center button, shown in the image. If you need to pair a new PS3
 controller to the PR2 (i.e. not the controller that came with it), see
@@ -31,7 +31,7 @@ Launch joystick teleop: ```
 roslaunch pr2_teleop teleop_joystick.launch
 ```
 
-Now you should be able to control the robot\'s base and spine with its
+Now you should be able to control the robot's base and spine with its
 PS3 controller.
 
 ### Controlling
@@ -63,13 +63,13 @@ Control is configured as follows:
 
   -- ----------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ --
      **Button**           **Control Action**                                                                                                                                     
-     **L1**               The \"deadman\" control allows the joystick to send commands to the robot; the robot will only respond to the joystick when this button is held down   
-     **L2**               The \"head\" button allows the sticks to control the head instead of the base                                                                          
+     **L1**               The "deadman" control allows the joystick to send commands to the robot; the robot will only respond to the joystick when this button is held down   
+     **L2**               The "head" button allows the sticks to control the head instead of the base                                                                          
      **Left stick**       Rotate (yaw) the base                                                                                                                                  
      **Right stick**      Move (translate) the base                                                                                                                              
      **Triangle**         Move the torso up                                                                                                                                      
      **X**                Move the torso down                                                                                                                                    
-     **R1**               The \"run\" button commands the base to drive faster                                                                                                   
+     **R1**               The "run" button commands the base to drive faster                                                                                                   
      **Circle**           Open right gripper                                                                                                                                     
      **Square**           Close right gripper                                                                                                                                    
      **D-pad right**      Open left gripper                                                                                                                                      

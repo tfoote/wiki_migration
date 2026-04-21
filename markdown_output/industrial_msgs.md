@@ -8,4 +8,4 @@ contains message definitions used by other packages in the
 
 ## Reporting bugs
 
-\<\<GitHubIssues(ros-industrial/industrial_core)\>\>
+<<GitHubIssues(ros-industrial/industrial_core)>>

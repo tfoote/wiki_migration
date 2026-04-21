@@ -6,12 +6,12 @@ library avalaible from <https://visp.inria.fr>. The image feed used for
 calibration is a set of clearly distinguishible points. The planar
 disposition of the points is of no importance.
 
-This package uses ViSP\'s camera model described in
+This package uses ViSP's camera model described in
 [ViSP geometric transformation and objetcs manual](https://visp.inria.fr/manuals/visp-tutorial-geometric-objects.pdf)
 and camera calibration capabilities described in
 [ViSP computer vision algorithms manual](https://visp.inria.fr/manuals/visp-tutorial-computer-vision.pdf).
 The output camera parameters are given in the
-\<\<MsgLink(sensor_msgs/CameraInfo)\>\> format.
+<<MsgLink(sensor_msgs/CameraInfo)>> format.
 
 ## Supported hardware
 
@@ -63,7 +63,7 @@ module needs to load several parameters:
 -   3D coordinates of all points of the calibration pattern
 -   tracking parameters used in image processing
 -   behaviour of the interface. Set pause_at_each_frame to True if
-    you\'re using the experimental camera shipped with this package. For
+    you're using the experimental camera shipped with this package. For
     any other ROS camera, set it to False. ```xml
 <node pkg="visp_camera_calibration" name="visp_camera_calibration_image_processing" type="visp_camera_calibration_image_processing">
       <!-- 3D coordinates of 4 points the user has to select to initialise the calibration process -->

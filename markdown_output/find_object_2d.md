@@ -37,7 +37,7 @@ tutorials.
     ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
     )
 -   **Publish detected objects** (with **position**, **rotation**,
-    **scale** and **shear**) as topic \"objects\":
+    **scale** and **shear**) as topic "objects":
     ```
 $ rosrun find_object_2d print_objects_detected
   (...)
@@ -56,8 +56,8 @@ $ rosrun find_object_2d print_objects_detected
 -   Take a look at the sample launch file
     [find_object_2d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_2d.launch)
     to know how to start the node without the GUI and with pre-loaded
-    objects (from previously saved objects using the gui File-\>\"save
-    objects\").
+    objects (from previously saved objects using the gui File->"save
+    objects").
 
 ## 3D position of the objects
 
@@ -94,8 +94,8 @@ $ roslaunch find_object_2d find_object_3d_kinect2.launch
     )
 -   Position of the objects are published over TF (center of the object
     with rotation). You can set ROS parameter **object_prefix** to
-    change the prefix used on TF (default is \"object\" which gives
-    \"/object_1\" and \"/object_2\" for objects 1 and 2 respectively).
+    change the prefix used on TF (default is "object" which gives
+    "/object_1" and "/object_2" for objects 1 and 2 respectively).
 -   If you are on a robot, you may want to have the pose of the objects
     in the **/map** frame. Take a look at this
     [example](https://github.com/introlab/find-object/blob/master/src/ros1/tf_example_node.cpp).

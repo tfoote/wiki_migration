@@ -11,24 +11,24 @@ version is being developed and will be released in short time periods.
 
 ![alt text\|width=500](attachment:model.jpg)
 
-ALLIANCE model is a natural extension of Brooks\' famous subsumption
+ALLIANCE model is a natural extension of Brooks' famous subsumption
 model, which is applicable to fault-tolerant cooperative multi-robot
 systems. As shown in the figure above, each single robots in the
 cooperative team should obey a same ALLIANCE model. The model is
 composed of several behavior sets and behavior layers. Both of them are
 implemented by following the subsumption model. The behavior sets
 correspond to some high-level task-achieving functions. The module named
-\'motivational behavior\' can activate the behavior sets to select a
-task adaptively. The \'F\' circles in the figure above connect the
+'motivational behavior' can activate the behavior sets to select a
+task adaptively. The 'F' circles in the figure above connect the
 output of each motivational behavior with the output of its
 corresponding behavior set indicating that a motivational behavior
 either allows all or none of the outputs of its behavior set to pass
-through to the robot\'s actuators. The lower several layers of the
+through to the robot's actuators. The lower several layers of the
 ALLIANCE architecture composed a subsumption model, we can also use the
 subsumption method to coordinate the behavior inside the behavior sets.
 Note that the motivational behavior needs to receive the sensor
 information. Besides, the output of some behavior set can also be used
-as the sensor information, which is called \`virtual sensors\' in
+as the sensor information, which is called `virtual sensors' in
 ALLIANCE model(imaginary lines in the figure above).
 
 # General Overview
@@ -42,7 +42,7 @@ establish message passing channels among them) to construct Behavior
 Layers quite conveniently. To do that, one could focus only on
 application logic, leaving others to the framework. Besides, several
 ALLIANCE elements including Inhibitors, Suppressors and Forwarders (i.e.
-the \'I\', \'S\' and \'F\' circles) are all available, which can be
+the 'I', 'S' and 'F' circles) are all available, which can be
 directly put between Behavior Layers to construct Behavior Sets. A
 Motivational Behavior template is also available for developers. Once
 again, one could focus only on the parameters of the Motivational
@@ -68,9 +68,9 @@ The UML graph shows the overall software architecture of the package.
 The main APIs are shown below. The parameter names present the parameter
 function clearly. As mentioned above, each motivational behavior is
 responsible for activating a forwarder to forward the messges sent from
-the attached behavior set. So the \'MotivationalBehavior\' class should
-have a parameter named \'forwarder_name\' indicating that which
-forwarder it activates. The paramters of the topics in \'Forwarder\'
+the attached behavior set. So the 'MotivationalBehavior' class should
+have a parameter named 'forwarder_name' indicating that which
+forwarder it activates. The paramters of the topics in 'Forwarder'
 indicate which behavior set they attach.
 
 ```
@@ -132,7 +132,7 @@ micros_mars_task_alloc in your workspace.
 git clone https://github.com/liminglong/micros_mars_task_alloc.git
 ``` Finally, even all the codes are witten in
 python, you should compile the files in your workspace again. Such that
-the added message files can be imported by the python modules. Don\'t
+the added message files can be imported by the python modules. Don't
 forget to source your setup.bash.
 
 -   run the demo First, launch the simulated multi-robot environment.

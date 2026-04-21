@@ -39,7 +39,7 @@ param {
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-\<\<MsgLink(pr2_controllers_msgs/PointHeadGoal)\>\>. It reports success
+<<MsgLink(pr2_controllers_msgs/PointHeadGoal)>>. It reports success
 when the head is pointed at the target.
 
 ```clearsilver

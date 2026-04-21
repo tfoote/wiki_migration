@@ -18,7 +18,7 @@ on how to install, compile, and use this package
 Check out the code at:
 <https://github.com/toddhester/rl-texplore-ros-pkg>
 
-![\|width=\"480\"](attachment:reinforcement_stack_overview.png)
+![\|width="480"](attachment:reinforcement_stack_overview.png)
 
 Agents from the [rl_agent](rl_agent) package can communicate with
 environments from the [rl_env](rl_env) package through this interface.
@@ -58,12 +58,12 @@ environments in your own style.
 <!-- -->
 ```
 -   **RLEnvSeedExperience**: This message provides a full experience
-    \<s, a, s\', r\> seed for the agent to use for learning. In addition
+    <s, a, s', r> seed for the agent to use for learning. In addition
     to the state, action, next state, and reward, it also includes a
     boolean indicating if it is a terminal transition or not.
     [rl_msgs/RLEnvSeedExperience](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLEnvSeedExperience.html)
 -   **RLStateReward**: This is a message from the environment with the
-    agent\'s new state, the reward received on this time step, and
+    agent's new state, the reward received on this time step, and
     whether this transition is terminal or not.
     [rl_msgs/RLStateReward](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLStateReward.html)
 

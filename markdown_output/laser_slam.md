@@ -1,6 +1,6 @@
 ## Overview
 
-This package specializes \`graph_slam\` for SLAM using laser scans and
+This package specializes `graph_slam` for SLAM using laser scans and
 scan matching. It contains code for:
 
 -   Overlaying laser scans into a grid

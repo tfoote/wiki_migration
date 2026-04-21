@@ -5,7 +5,7 @@ debug scripts on a Jenkins cluster.
 
 ## Installation
 
-After you\'ve set up the ros apt sources, you can simply install
+After you've set up the ros apt sources, you can simply install
 jenkins-tools using apt: ```
 sudo apt-get install python-jenkins-tools
 ```
@@ -32,14 +32,14 @@ Arguments:
 -   **ubuntu_distro**: the ubuntu distribution you want to run in your
     chroot. Examples are lucid, oneiric, precise, etc
 -   **arch**: the architecture you want to run in your chroot. You can
-    either use \'amd64\' or \'i386\'. Note that when the base
-    installation of your own system is 32 bit, you can\'t use the amd64
+    either use 'amd64' or 'i386'. Note that when the base
+    installation of your own system is 32 bit, you can't use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
 -   **workspace**: this is a local folder on your machine that will get
-    mounted into the chroot. So it\'s pretty much a shared folder
+    mounted into the chroot. So it's pretty much a shared folder
     between your local machine and the chroot. When your script runs, it
-    can store data in this workspace folder, and you\'ll have access to
+    can store data in this workspace folder, and you'll have access to
     this data from your local machine, even when the chroot disappears.
 -   **script**: the name of the script you want to run. This must be a
     name of a script in the jenkins_scripts repository. You can check
@@ -52,17 +52,17 @@ Example: ```
 run_chroot_local precise amd64 /home/user/workspace prerelease groovy common_msgs
 ```
 
-Script Development: When you\'re developing a script in the
-jenkins_scripts repository, you obviously don\'t want to commit every
+Script Development: When you're developing a script in the
+jenkins_scripts repository, you obviously don't want to commit every
 little change to try it out. Therefore there is a special option to run
 on a local copy of the jenkins_scripts repository. When you run the
 run_chroot_local script, it will check out a copy of jenkins_scripts in
 the workspace. You could start developing new code in this local
 checkout, but your changes would be wiped out every time you run the
 run_chroot_local script. To avoid the wipe, you can put a file called
-\'run_debug_mode\' in the root of your workspace. When this file exists,
+'run_debug_mode' in the root of your workspace. When this file exists,
 the jenkins_scripts repository will not get wiped. Make sure you commit
-your changes before you remove the \'run_debug_mode\' file!
+your changes before you remove the 'run_debug_mode' file!
 
 ### run_chroot_jenkins_now
 
@@ -79,13 +79,13 @@ Arguments:
 -   **ubuntu_distro**: the ubuntu distribution you want to run in your
     chroot. Examples are lucid, oneiric, precise, etc
 -   **arch**: the architecture you want to run in your chroot. You can
-    either use \'amd64\' or \'i386\'. Note that when the base
-    installation of your own system is 32 bit, you can\'t use the amd64
+    either use 'amd64' or 'i386'. Note that when the base
+    installation of your own system is 32 bit, you can't use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
 -   **job_name**: a string you can freely choose, to create a unique
     name for your job on Jenkins. The resulting name will be:
-    \'script-job_name-ubuntu_distro-arch\'
+    'script-job_name-ubuntu_distro-arch'
 -   **email**: the email address where Jenkins will send the script
     results to
 -   **script**: the name of the script you want to run. This must be a
@@ -114,17 +114,17 @@ Arguments:
 -   **ubuntu_distro**: the ubuntu distribution you want to run in your
     chroot. Examples are lucid, oneiric, precise, etc
 -   **arch**: the architecture you want to run in your chroot. You can
-    either use \'amd64\' or \'i386\'. Note that when the base
-    installation of your own system is 32 bit, you can\'t use the amd64
+    either use 'amd64' or 'i386'. Note that when the base
+    installation of your own system is 32 bit, you can't use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
 -   **job_name**: a string you can freely choose, to create a unique
     name for your job on Jenkins. The resulting name will be:
-    \'script-job_name-ubuntu_distro-arch\'
+    'script-job_name-ubuntu_distro-arch'
 -   **email**: the email address where Jenkins will send the script
     results to
 -   **period**: when you want the script to run. Acceptable values are
-    \'continuous\', \'nightly\', \'daily\', \'weekly\' or \'monthly\'.
+    'continuous', 'nightly', 'daily', 'weekly' or 'monthly'.
 -   **script**: the name of the script you want to run. This must be a
     name of a script in the jenkins_scripts repository. You can check
     out a copy of this repo here at
@@ -151,17 +151,17 @@ Arguments:
 -   **ubuntu_distro**: the ubuntu distribution you want to run in your
     chroot. Examples are lucid, oneiric, precise, etc
 -   **arch**: the architecture you want to run in your chroot. You can
-    either use \'amd64\' or \'i386\'. Note that when the base
-    installation of your own system is 32 bit, you can\'t use the amd64
+    either use 'amd64' or 'i386'. Note that when the base
+    installation of your own system is 32 bit, you can't use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
 -   **job_name**: a string you can freely choose, to create a unique
     name for your job on Jenkins. The resulting name will be:
-    \'script-job_name-ubuntu_distro-arch\'
+    'script-job_name-ubuntu_distro-arch'
 -   **email**: the email address where Jenkins will send the script
     results to
 -   **vcs**: the type of vcs repository that is used to trigger this
-    job. Acceptable values are \'git\', \'hg\' or \'svn\'.
+    job. Acceptable values are 'git', 'hg' or 'svn'.
 -   **uri**: the url of the vcs repository that is used to trigger this
     job.
 -   **branch**: the branch in the vcs repository that is used to trigger

@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(door_msgs)\>\>
+<<MsgSrvDoc(door_msgs)>>

@@ -14,8 +14,8 @@ through the extraction of appearance-based (e.g. SURF) features.
 ## Usage
 
 OpenFABMAP can be used in two modes, training or testing. Examples of
-training and testing are provided in the launch files **\'learn**\' and
-**\'run**\' respectively.
+training and testing are provided in the launch files **`learn`** and
+**`run`** respectively.
 
 Datasets are available at the
 [CyPhy Lab](https://wiki.qut.edu.au/display/cyphy/Datasets), with
@@ -28,13 +28,13 @@ Below are examples of training and testing on the garden_loop.bag file.
 In practice you do not train your codebook on the test-set but for
 simplicity we use a single bag file, available
 [here](https://wiki.qut.edu.au/display/cyphy/Datasets). The included
-codebook\'s are trained on various indoor and outdoor datasets, details
+codebook's are trained on various indoor and outdoor datasets, details
 and downloads available on the same page.
 
 ### Training
 
-The learning of a codebook is typically completed \'offline\' although a
-case can be made for the creation of incremental \'online\' codebooks.
+The learning of a codebook is typically completed 'offline' although a
+case can be made for the creation of incremental 'online' codebooks.
 In any case it can be useful to train a codebook on data gathered in
 various conditions and locations stored in multiple
 [rosbag](http://www.ros.org/wiki/rosbag) files.
@@ -50,10 +50,10 @@ rosbag play garden_loop.bag --clock
 ```
 
 This will process images on the supplied topic for a number of frame and
-then save the codebook and descriptor files to the \'path\' location.
+then save the codebook and descriptor files to the 'path' location.
 
-Default parameters used within the **\'learn**\' launch file are
-provided below:
+Default parameters used within the **`learn`** launch file are provided
+below:
 
 -   Detector Type: SURF
 -   Sample Rate: 0.5Hz
@@ -69,7 +69,7 @@ provided below:
 
 While testing, the node describes the stream of images by words in the
 provided codebook and publishes candidate matches to previous images
-observed in the test-set. This process is typically run \'online\', the
+observed in the test-set. This process is typically run 'online', the
 following example is provided.
 
 ```
@@ -86,7 +86,7 @@ This example will will visualise the matches between images as a
 confusion matrix. Time along the vertical axis and frame ID on the
 horizontal (origin top left), white representing the matches found.
 
-Default parameters used within the **\'run**\' launch file are provided
+Default parameters used within the **`run`** launch file are provided
 below:
 
 -   Detector Type: SURF

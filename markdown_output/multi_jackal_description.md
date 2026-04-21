@@ -1,6 +1,6 @@
 ## Overview
 
-\`multi_jackal_description\` contains the robot model description for a
+`multi_jackal_description` contains the robot model description for a
 [Clearpath Jackal](http://wiki.ros.org/Robots/Jackal). It has been
 extended from the single robot
 [jackal_description](http://wiki.ros.org/jackal_description) to separate

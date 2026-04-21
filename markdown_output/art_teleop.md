@@ -75,19 +75,19 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 #### Examples
 
 Run stage simulation with joystick controlling steering and speed. Sets
-\`use_navigator\` to \`False\`. ```
+`use_navigator` to `False`. ```
 roslaunch art_run joy_stage.launch
 ```
 
 Run stage simulation with joystick controlling autonomous operation, and
 only controlling steering and speed when suspended. Sets
-\`use_navigator\` to \`True\`. ```
+`use_navigator` to `True`. ```
 roslaunch art_run joy_auto_stage.launch
 ```
 
 Run the real vehicle with joystick controlling autonomous operation, and
 only controlling steering and speed when suspended. Sets
-\`use_navigator\` to \`True\`. ```
+`use_navigator` to `True`. ```
 roslaunch art_run joy_auto_drive.launch
 ```
 
@@ -101,19 +101,19 @@ button, causing the blinking to stop, and the controller to connect.
 
 Controls:
 
-1\. Press \"PS\" button when controller first attached. 1. Use thumb
-wheel to steer left or right. 1. Press blue \"X\" button to speed up. 1.
-Press purple square button to slow down. 1. Press \"START\" button to
-begin autonomous operation. 1. Press red \"O\" button to halt autonomous
+1\. Press "PS" button when controller first attached. 1. Use thumb
+wheel to steer left or right. 1. Press blue "X" button to speed up. 1.
+Press purple square button to slow down. 1. Press "START" button to
+begin autonomous operation. 1. Press red "O" button to halt autonomous
 operation. 1. Press green triangle button to suspend autonomous
-operation and drive using the joystick. 1. Press \"up\" button to shift
-transmission into Drive. 1. Press \"left\" button to shift transmission
-into Park. 1. Press \"down\" button to shift transmission into Reverse.
+operation and drive using the joystick. 1. Press "up" button to shift
+transmission into Drive. 1. Press "left" button to shift transmission
+into Park. 1. Press "down" button to shift transmission into Reverse.
 
-When running with autonomous navigation software (i.e. \`use_navigator\`
-is \`True\`), the joystick does not control the vehicle unless
+When running with autonomous navigation software (i.e. `use_navigator`
+is `True`), the joystick does not control the vehicle unless
 autonomous operation has been suspended using the green triangle button
-(7). Otherwise, only the \"START\" (5), red \"O\" (6), and green
+(7). Otherwise, only the "START" (5), red "O" (6), and green
 triangle (7) buttons are active.
 
 /!\\ *Be very careful resuming autonomous operation after being

@@ -1,5 +1,5 @@
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"100%\"#ccccff style=\"border:1px solid black;text-align:center;vertical-align:top;\"\>This is part of the [Robotics in Concert](http://www.robotconcert.org/wiki/Main_Page) project.   
+     <tablewidth="100%"#ccccff style="border:1px solid black;text-align:center;vertical-align:top;">This is part of the [Robotics in Concert](http://www.robotconcert.org/wiki/Main_Page) project.   
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Overview

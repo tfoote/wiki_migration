@@ -10,8 +10,8 @@ hardware interface (cf.
 The launch files start a ROS node for the *qb SoftHand Research* or the
 *qb SoftHand2 Research* to control it through a GUI and through
 predefined configurable waypoints (stored in the
-\`config/qbhand_waypoints.yaml\`). In both cases the controllers setup
-can be found in the \`config/qbhand_controllers.yaml\`; it is
+`config/qbhand_waypoints.yaml`). In both cases the controllers setup
+can be found in the `config/qbhand_controllers.yaml`; it is
 recommended not to change the default settings though.
 
 ### gui_control

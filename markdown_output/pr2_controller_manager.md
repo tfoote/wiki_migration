@@ -2,7 +2,7 @@
 
 ### Hard realtime control loop
 
-The \`pr2_controller_manager\` provides a
+The `pr2_controller_manager` provides a
 **[hard realtime](http://www.oit.uci.edu/dcslib/digital_unix/digital-v40d/APS33DTE/TITLE.HTM)**
 loop to control the robot mechanism. The robot mechanism is represented
 by a set of effort controlled joints (see
@@ -26,16 +26,16 @@ the [safety limits](pr2_controller_manager/safety_limits) page.
 ### Joint State Publishing
 
 The controller manager publishes the state of all joints over ROS, as
-\<\<MsgLink(sensor_msgs/JointState)\>\> messages. These messages appear
-on the \`joint_state\` topic, at 100 Hz. You can change this publishing
-frequency by setting the \`joint_state_publish_rate\` parameter.
+<<MsgLink(sensor_msgs/JointState)>> messages. These messages appear
+on the `joint_state` topic, at 100 Hz. You can change this publishing
+frequency by setting the `joint_state_publish_rate` parameter.
 
 ### Tools for running controllers
 
-![\|width=\"400px\"](attachment:controller state.png)
+![\|width="400px"](attachment:controller state.png)
 
 The controller manager provides the infrastructure to interact with
-controllers. Depending on if you\'re running controllers form a launch
+controllers. Depending on if you're running controllers form a launch
 file, from the command line or from a ROS node, the controller manager
 provides different tools to run controllers.
 
@@ -44,19 +44,19 @@ provides different tools to run controllers.
 ### pr2_controller_manager
 
 To interact with controllers from the command line, use the
-\`pr2_controller_manager\` tool. To interact with a specific controller,
+`pr2_controller_manager` tool. To interact with a specific controller,
 use:
 
 ```
 $ rosrun pr2_controller_manager pr2_controller_manager <command> <controller_name>
 ``` The following commands are available:
 
--   \`load\`: load a controller (construct and initialize)
--   \`unload\`: unload a controller (destruct)
--   \`start\`: start a controller
--   \`stop\`: stop a controller
--   \`spawn\`: load and start a controller
--   \`kill\`: stop and unload a controller
+-   `load`: load a controller (construct and initialize)
+-   `unload`: unload a controller (destruct)
+-   `start`: start a controller
+-   `stop`: stop a controller
+-   `spawn`: load and start a controller
+-   `kill`: stop and unload a controller
 
 To get the state of the controllers, use:
 
@@ -64,19 +64,19 @@ To get the state of the controllers, use:
 $ rosrun pr2_controller_manager pr2_controller_manager <command>
 ``` The following commands are available:
 
--   \`list\`: list all the controllers in the order they are executed,
+-   `list`: list all the controllers in the order they are executed,
     and give the state of each controller
--   \`list-types\`: list all the controller types the controller manager
-    knows about. If your controller is not in this list, you won\'t be
+-   `list-types`: list all the controller types the controller manager
+    knows about. If your controller is not in this list, you won't be
     able to spawn it.
--   \`list-joints\`: lists all the joint and actuator names that are
+-   `list-joints`: lists all the joint and actuator names that are
     used by the controller manager.
--   \`reload-libraries\`: Reloads all the controller libraries that are
+-   `reload-libraries`: Reloads all the controller libraries that are
     available as plugins. This is convenient when you are developing a
     controller and you want to test your new controller code, without
     restarting the robot every time. This does not restart controllers
     which were running before.
--   \`reload-libraries \--restore\`: Reloads all the controller
+-   `reload-libraries \--restore`: Reloads all the controller
     libraries that are available as plugins and restores all controllers
     to their original state.
 
@@ -84,7 +84,7 @@ $ rosrun pr2_controller_manager pr2_controller_manager <command>
 
 To automatically load and start a set of controllers at once, and
 automatically stop and unload those same controllers at once, use the
-\`spawner\` tool: ```
+`spawner` tool: ```
 $ rosrun pr2_controller_manager spawner [--stopped] name1 name2 name3
 ``` When you run spawner, the
 listed controllers will get loaded and started (unless you specify
@@ -95,7 +95,7 @@ controllers it initially started.
 ### unspawner
 
 To automatically stop a set of controllers, and restart them later, you
-can use the \`unspawner\` tool: ```
+can use the `unspawner` tool: ```
 $ rosrun pr2_controller_manager unspawner name1 name2 name3
 ``` The listed
 controllers will be *stopped*, but not unloaded. Once spawner is shut
@@ -103,12 +103,12 @@ down, the controllers will be restarted.
 
 ## Creating launch files
 
-You could run \`pr2_controller_manager\` to start controllers from
+You could run `pr2_controller_manager` to start controllers from
 within a launch file. However, the controller would then stay up even
-after the launch file is taken down. Instead, use the \`spawner \`tool
+after the launch file is taken down. Instead, use the `spawner `tool
 to automatically load, start, stop and unload a controller from within a
-launch file. When you start \`spawner\`, it will load and start the
-controller. When you stop \`spawner\` (when the launch file is taken
+launch file. When you start `spawner`, it will load and start the
+controller. When you stop `spawner` (when the launch file is taken
 down) it will stop and unload the controller. Your launch file would
 look something like this:
 

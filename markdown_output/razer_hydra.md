@@ -48,7 +48,7 @@ raw over USB) seems to be far back along the paddles, behind where the
 cord attaches to each paddle. This leads to un-intuitive motion.
 
 To correct for this, two frames are computed from the transform reported
-by the hydra driver, a \"pivot\" frame and a \"grab\" frame. Parameters
+by the hydra driver, a "pivot" frame and a "grab" frame. Parameters
 can be specified to define a translation to each frame from the raw
 frame along the local coordinate axes. Another parameter specifies which
 of the two frames should be used in the hydra messages.
@@ -58,7 +58,7 @@ and how the paddles are held) as well as the interaction paradigm that
 the hydra paddles represent and the resulting location of a virtual
 center-of-rotation (e.g. imagining the paddles are at the wrist of a
 long end-effector, vs. imagining that the point under the joystick is a
-\"grab point\" for manipulating objects, etc.).
+"grab point" for manipulating objects, etc.).
 
 (Note: The existence of two frames is useful for debugging while looking
 at the tf tree. Otherwise, it would be sufficient to just have a single

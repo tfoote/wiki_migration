@@ -14,7 +14,7 @@ nav_core::BaseGlobalPlanner interface specified in
 
 ## Overview
 
-The \`sbpl_3dnav_planner::Sbpl3DNavPlanner\` is a global planner that
+The `sbpl_3dnav_planner::Sbpl3DNavPlanner` is a global planner that
 adheres to the nav_core::BaseGlobalPlanner interface found in the
 [nav_core](http://www.ros.org/wiki/nav_core) package and can be used as
 a global planner [plugin](http://www.ros.org/wiki/pluginlib) for the

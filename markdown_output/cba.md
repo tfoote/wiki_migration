@@ -7,28 +7,28 @@ the it feels uncertain about an action policy decision and requests a
 demonstration from its human user. This ROS package contains the core
 components of the the algorithm. In addition to running the main CBA
 node, the following components must be implemented in a manner that
-suits the agent\'s needs:
+suits the agent's needs:
 
 -   State Publisher \-- a node to constantly publish the state of the
-    agent via the \`state_listener\` topic.
+    agent via the `state_listener` topic.
 -   Confidence Based Classifier \-- a classifier node that is able to
     provide a confidence measurement. This node will receive data points
-    via the \`add_point\` and \`change_point\` topics and queried via
-    the \`classify\` service.
+    via the `add_point` and `change_point` topics and queried via
+    the `classify` service.
 -   Action Execution \-- a node to listen for execution requests via the
-    \`execute\` topic and notify the CBA node that it has finished the
+    `execute` topic and notify the CBA node that it has finished the
     action execution and provide any correction information via the
-    \`a_complete\` service.
+    `a_complete` service.
 -   Demonstration Request \-- a node that is able to ask the human user
-    to provide demonstration information via the \`demonstration\`
+    to provide demonstration information via the `demonstration`
     service.
 
 For additional details on CBA, please refer to the following
 publication:
 
-\`Sonia Chernova and Manuela Veloso. Interactive Policy Learning
-through\` \` Confidence-Based Autonomy. Journal of Artificial
-Intelligence Research.\` \` Vol. 34, 2009.\`
+`Sonia Chernova and Manuela Veloso. Interactive Policy Learning
+through` ` Confidence-Based Autonomy. Journal of Artificial
+Intelligence Research.` ` Vol. 34, 2009.`
 [PDF](http://web.cs.wpi.edu/~rail/files/ChernovaVelosoJAIR09.pdf)
 
 ## Nodes
@@ -82,7 +82,7 @@ node.0 {
 ### Launching CBA
 
 The CBA assumes the the above topics/services are already running. Once
-it receives its first state via the \`state_listener\` topic, it will
+it receives its first state via the `state_listener` topic, it will
 continuously iterate through the algorithm. To launch the node, the
 following commands can be used:
 
@@ -95,11 +95,11 @@ may make sense to create a launch file for your application.
 
 ## CBA Test Nodes
 
-The \`cba\` package includes a set of test nodes used to test the
+The `cba` package includes a set of test nodes used to test the
 functionality of the the CBA implementation. These nodes rely on
 semi-random data and a highly-simplified classifier. They are included
 only to serve as point of reference when implementing the nodes required
-to interact with the \`cba\` node. ```clearsilver
+to interact with the `cba` node. ```clearsilver
 node.0 {
   name = mock_state_publisher
   desc = The mock state publisher will continuously publish a random 3 dimensional state vector. The values are integers bounded in the range [0,25).
@@ -150,8 +150,8 @@ node.2 {
 ## Running the CBA Tests
 
 If you would like to run the CBA test nodes, this can be done via the
-included \`cba_test.launch\` file. This file launches an instance of the
-\`cba\`, \`mock_agent\`, \`mock_classify\`, and \`mock_state_publisher\`
+included `cba_test.launch` file. This file launches an instance of the
+`cba`, `mock_agent`, `mock_classify`, and `mock_state_publisher`
 nodes. To launch these nodes, the following commands can be used:
 
 ```
@@ -160,7 +160,7 @@ roslaunch cba_ctrl cba_test.launch
 
 ## Installation
 
-To install the \`lfd\` stack, you can choose to either install from
+To install the `lfd` stack, you can choose to either install from
 source, or from the Ubuntu package:
 
 ### Source
@@ -193,5 +193,5 @@ free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

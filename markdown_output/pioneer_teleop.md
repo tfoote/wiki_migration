@@ -12,7 +12,7 @@ In case you have a different robot, please read
 [\|What if my robot is not Pionner-compatible?](http://wiki.ros.org/pioneer_teleop#What_if_my_robot_is_not_Pionner-compatible)
 section
 
-\<\<GitHubIssues(amineHorseman/pioneer_teleop)\>\>
+<<GitHubIssues(amineHorseman/pioneer_teleop)>>
 
 # Dependencies
 
@@ -73,8 +73,8 @@ want to move the robot using a web interface via internet/LAN).
 roslaunch pionner_teleop socket_teleop.launch
 ```
 
-The expected commands are \"*forward*\", \"*backward*\", \"*left*\" or
-\"*right*\"
+The expected commands are "*forward*", "*backward*", "*left*" or
+"*right*"
 
 By default, the script listens to port 50001, and the robot moves only
 for 1.5 seconds. To change these parameters, you can use extra arguments
@@ -93,8 +93,8 @@ terminal or ssh:
 roslaunch pionner_teleop socket_commandline.launch _direction:=forward
 ```
 
-The expected commands (*\_direction* argument) are \"*forward*\",
-\"*backward*\", \"*left*\" or \"*right*\"
+The expected commands (*_direction* argument) are "*forward*",
+"*backward*", "*left*" or "*right*"
 
 By default, the robot moves only for 1.5 seconds at 0.2 speed. To change
 these parameters, you can use extra arguments as mentionned bellow:

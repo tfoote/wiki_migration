@@ -1,5 +1,5 @@
-If you\'re trying to create a virtual laserscan from your RGBD device,
-and your sensor is forward-facing, you\'ll find
+If you're trying to create a virtual laserscan from your RGBD device,
+and your sensor is forward-facing, you'll find
 [depthimage_to_laserscan](depthimage_to_laserscan) will be much more
 straightforward and efficient since it operates on image data instead of
 bulky pointclouds. However, if your sensor is angled, or you have some
@@ -77,4 +77,4 @@ node.0 {
 ## Nodelet
 
 Same API as node, available as
-\`pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet\`.
+`pointcloud_to_laserscan/pointcloud_to_laserscan_nodelet`.

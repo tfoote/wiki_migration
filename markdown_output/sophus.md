@@ -1,6 +1,6 @@
 ## About
 
-This is a ros 3rd party package that provides Hauke Strasdat\'s
+This is a ros 3rd party package that provides Hauke Strasdat's
 [sophus](https://github.com/stonier/sophus) library.
 
 ## Installation From Deb

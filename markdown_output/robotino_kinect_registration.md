@@ -18,7 +18,7 @@ step 3 by rotating it by 40 degrees \* iteration number along the Z
 axis. 5. Publish the cloud 6. Repeat again from step 2 until Robotino
 has completed 360 degrees of rotation.
 
-**Note:** The above method doesn\'t use any registration algorithms such
+**Note:** The above method doesn't use any registration algorithms such
 as ICP etc. It only performs basic registration because the
 transformation is known in advance.
 

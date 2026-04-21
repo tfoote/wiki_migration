@@ -5,20 +5,20 @@ The laser_geometry package contains a single C++ class:
 There is no ROS API.
 
 This class has two relevant functions for transforming from
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> to
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> or
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\>.
+<<MsgLink(sensor_msgs/LaserScan)>> to
+<<MsgLink(sensor_msgs/PointCloud)>> or
+<<MsgLink(sensor_msgs/PointCloud2)>>.
 
--   \`projectLaser()\` is simple and fast. It does not change the frame
+-   `projectLaser()` is simple and fast. It does not change the frame
     of your data.
--   \`transformLaserScanToPointCloud()\` is slower but more precise. It
+-   `transformLaserScanToPointCloud()` is slower but more precise. It
     makes uses of [tf](tf) and the
-    \<\<MsgLink(sensor_msgs/LaserScan)\>\> time increment to transform
+    <<MsgLink(sensor_msgs/LaserScan)>> time increment to transform
     each individual ray appropriately. This is the recommended means of
     transformation for tilting laser scanners or moving robots.
 
 Both of these functions have a final optional argument that augments the
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> which is created to include
+<<MsgLink(sensor_msgs/PointCloud)>> which is created to include
 extra channels. These channels may include intensities, distances,
 timestamps, the index or thew viewpoint from the original laser array.
 
@@ -29,7 +29,7 @@ There is a simple Python implementation here
 
 ### Simple projection
 
-The method \`projectLaser()\` does the simplest possible projection of
+The method `projectLaser()` does the simplest possible projection of
 the laser. Each ray is simply projected out along the appropriate angle
 according to:
 
@@ -41,9 +41,9 @@ according to:
 
 The appropriate sine and cosine values are cached, making this a very
 efficient operation. However, the generated
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> is in the same frame as the
-original \<\<MsgLink(sensor_msgs/LaserScan)\>\>. While this has the
-advantage that it does not require an instance of a \`tf::transformer\`
+<<MsgLink(sensor_msgs/PointCloud)>> is in the same frame as the
+original <<MsgLink(sensor_msgs/LaserScan)>>. While this has the
+advantage that it does not require an instance of a `tf::transformer`
 or message notifier, it does not hold up in situations where the laser
 is moving and skew needs to be accounted for.
 
@@ -51,8 +51,8 @@ Please consult the
 [API Documentation](http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html#f9dae281a663ebfcf0aa6f295241b60b)
 for full usage details.
 
-**Example:** To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\> to a
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> ```cplusplus
+**Example:** To convert a <<MsgLink(sensor_msgs/LaserScan)>> to a
+<<MsgLink(sensor_msgs/PointCloud)>> ```cplusplus
 laser_geometry::LaserProjection projector_;
 
 void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
@@ -66,7 +66,7 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
 
 ### High fidelity projection
 
-The \`transformLaserScanToPointCloud()\` method does a more advanced
+The `transformLaserScanToPointCloud()` method does a more advanced
 projection, but requires that you have set up a [tf](tf) transform
 listener. (If you are unfamiliar with [tf](tf), it is recommended you go
 through the [tf/Tutorials](tf/Tutorials) first.)
@@ -74,7 +74,7 @@ through the [tf/Tutorials](tf/Tutorials) first.)
 Since we are gathering data across the time of the scan, it is often
 important that the chosen target_frame is actually a fixed frame.
 
-Because the stamp of a \<\<MsgLink(sensor_msgs/LaserScan)\>\> is the
+Because the stamp of a <<MsgLink(sensor_msgs/LaserScan)>> is the
 time of the **first** measurement, one cannot simply wait for a
 transform to target_frame at this stamp. Instead one also has to wait
 for a transform at the **last** measurement of the scan.
@@ -83,8 +83,8 @@ Please consult the
 [API Documentation](http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html#b7ce0e0fa1bb6ab0f6d7d477d71284e9)
 for full usage details.
 
-**Example:** To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\> to a
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> in the base_link frame, using a
+**Example:** To convert a <<MsgLink(sensor_msgs/LaserScan)>> to a
+<<MsgLink(sensor_msgs/PointCloud)>> in the base_link frame, using a
 high fidelity transform: ```cplusplus
 laser_geometry::LaserProjection projector_;
 tf::TransformListener listener_;
@@ -111,8 +111,8 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
 
 ### Simple projection
 
-The method \`projectLaser()\` projects a single laser scan from a linear
-array into a 3D \<\<MsgLink(sensor_msgs/PointCloud2)\>\>. The generated
+The method `projectLaser()` projects a single laser scan from a linear
+array into a 3D <<MsgLink(sensor_msgs/PointCloud2)>>. The generated
 cloud will be in the same frame as the original laser scan.
 
 ```python

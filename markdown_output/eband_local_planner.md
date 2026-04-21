@@ -4,7 +4,7 @@ The original implementation for this ROS [move_base](move_base) local
 planner only supported omni-directional (holonomic) robots.
 
 The current version was modified to work with differential drive
-machines. Set \`differential_drive\` to \`false\` to enable
+machines. Set `differential_drive` to `false` to enable
 lateral/holonomic motion, but that mode has not been tested for a long
 time and should be considered experimental.
 
@@ -14,8 +14,8 @@ time and should be considered experimental.
 
 ## Credits
 
-Quinlan, S. and Khatib, O. \"Elastic Bands: Connecting Path Planning and
-Robot Control.\" Proc. IEEE International Conference on Robotics and
+Quinlan, S. and Khatib, O. "Elastic Bands: Connecting Path Planning and
+Robot Control." Proc. IEEE International Conference on Robotics and
 Automation, Atlanta, Georgia 1993, vol 2. pp. 802-807
 
 ## EBand Local Planner Operation
@@ -32,30 +32,30 @@ differential drive control.
 A differential drive robot can be in one of three actions when computing
 velocity prior to reaching the goal location and orienation:
 
-1\. The robot is within lateral tolerance (\`xy_goal_tolerance\`) of the
+1\. The robot is within lateral tolerance (`xy_goal_tolerance`) of the
 goal location, and is rotating in place to reach the goal
 orientation. 1. The robot is outside the lateral tolerance of the goal
 location, and must move towards the goal. Given the orientation of the
 robot, and the orientation of the next point in the elastic band, the
 robot first calculates the difference between these two locations. If
 this difference is less than the parameter
-\`rotation_threshold_multiplier\`, then the robot executes both linear
+`rotation_threshold_multiplier`, then the robot executes both linear
 and angular velocity components to arc towards the next point in the
 band. Once the robot is close to the goal location such that the x and y
-distances to the goal are less than 0.6 \* \`xy_goal_tolerance\` then
+distances to the goal are less than 0.6 \* `xy_goal_tolerance` then
 proceed to step 1. Here, 0.6 was chosen as the robot gets closer to the
 goal than the tolerance requires before starting the final turn, as the
 final turn may cause the robot to move slightly out of position. 1. If
 the difference computed in the previous step is greater than the
-parameter \`rotation_threshold_multiplier\`, then the robot turns in
+parameter `rotation_threshold_multiplier`, then the robot turns in
 place until the difference becomes smaller, and the robot can execute
 action 2.
 
 ## ROS Interface
 
 This plugin runs inside the move_base process. Its parameter namespace
-is prefixed by that of \`move_base\` and the \`base_local_planner\` name
-under which it was launched, typically \`EBandPlannerROS\`, e.g.:
+is prefixed by that of `move_base` and the `base_local_planner` name
+under which it was launched, typically `EBandPlannerROS`, e.g.:
 
 ```
 <node pkg="move_base" type="move_base" name="move_base">

@@ -82,7 +82,7 @@ specific settings in the EDS/DCF.
 
 Each node (or in the defaults) can be passed a publish parameter with a
 list of object names. The topic types correspond to the object types,
-e.g. UNSIGNED16 to \<\<MsgLink(std_msgs/UInt16)\>\>. It is meant for
+e.g. UNSIGNED16 to <<MsgLink(std_msgs/UInt16)>>. It is meant for
 debugging or for simple CANopen interfaces, since it blocks the control
 loop. Each entry can have an exclamation mark appended that forces the
 driver to reread the object form the node in each step.
@@ -101,11 +101,11 @@ nodes:
 ``` will publish on three topics with
 the sync/update_rate:
 
--   node1_1003sub0 (\<\<MsgLink(std_msgs/UInt8)\>\>): number of errors
+-   node1_1003sub0 (<<MsgLink(std_msgs/UInt8)>>): number of errors
     for node1 (not cached)
--   node2_1001 (\<\<MsgLink(std_msgs/UInt8)\>\>): error register of
+-   node2_1001 (<<MsgLink(std_msgs/UInt8)>>): error register of
     node2 (cached)
--   node3_1001 (\<\<MsgLink(std_msgs/UInt8)\>\>): error register of
+-   node3_1001 (<<MsgLink(std_msgs/UInt8)>>): error register of
     node3 (cached)
 
 The [diagnostic_updater](diagnostic_updater) can be passed the
@@ -166,7 +166,7 @@ the publish parameters.
 
 ## C++ API
 
-This package provides a \`canopen::RosChain\` class that implements a
-\`canopen::LayerStack\` interface and takes care of the parameter
+This package provides a `canopen::RosChain` class that implements a
+`canopen::LayerStack` interface and takes care of the parameter
 parsing and the life-cycle. It can be customized via its virtual
-interface, especially with \`RosChain::nodeAdded\`
+interface, especially with `RosChain::nodeAdded`

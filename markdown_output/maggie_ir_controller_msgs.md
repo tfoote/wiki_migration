@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(maggie_ir_controller_msgs)\>\>
+<<MsgSrvDoc(maggie_ir_controller_msgs)>>

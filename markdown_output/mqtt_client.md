@@ -1,8 +1,8 @@
-\<\<GitHubIssues(ika-rwth-aachen/mqtt_client)\>\>
+<<GitHubIssues(ika-rwth-aachen/mqtt_client)>>
 
 ## Full Documentation from GitHub
 
-\<\<Markdown(<https://raw.githubusercontent.com/ika-rwth-aachen/mqtt_client/main/README.md>)\>\>
+<<Markdown(<https://raw.githubusercontent.com/ika-rwth-aachen/mqtt_client/main/README.md>)>>
 
 ## Nodelets
 

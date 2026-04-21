@@ -3,7 +3,7 @@
 This package contains the node that controls the demo by telling the
 robot where to navigate using rl_2dnav and where to pick up the objects
 using openloop_object_manipulation. It uses the param server for the
-object locations and for the \"executive_script\" which is the order the
+object locations and for the "executive_script" which is the order the
 objects should be picked up and put down.
 
 ```

@@ -1,12 +1,12 @@
 ## Details
 
 The [scan_to_cloud_converter](scan_to_cloud_converter) converts
-\<\<MsgLink(sensor_msgs/LaserScan)\>\> to
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages.
+<<MsgLink(sensor_msgs/LaserScan)>> to
+<<MsgLink(sensor_msgs/PointCloud2)>> messages.
 
-The ouput cloud message has the \`is_dense\` attribute set to \`false\`.
-Ranges in the scan message which are outside \`(min_range, max range)\`
-are represented by \`nan\` values in the output cloud.
+The ouput cloud message has the `is_dense` attribute set to `false`.
+Ranges in the scan message which are outside `(min_range, max range)`
+are represented by `nan` values in the output cloud.
 
 ## Nodes
 

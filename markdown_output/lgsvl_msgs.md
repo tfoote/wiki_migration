@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(lgsvl_msgs)\>\>
+<<MsgSrvDoc(lgsvl_msgs)>>

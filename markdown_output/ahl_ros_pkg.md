@@ -1,5 +1,5 @@
 ahl_ros_pkg is a ROS package for hand motion capture system. It includes
-some packages for neural network, OpenGL\'s wrapper, OpenCV\'s wrapper
+some packages for neural network, OpenGL's wrapper, OpenCV's wrapper
 and so on. Hand motion capture system is under development.
 
 ## Overview

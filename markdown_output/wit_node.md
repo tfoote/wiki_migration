@@ -2,7 +2,7 @@
 
 Maintainer status: maintained
 
-Maintainer: Rocwang \<825213566@qq.com\>
+Maintainer: Rocwang <825213566@qq.com>
 
 Download: <https://github.com/yowlings/wit_node.git>
 
@@ -16,7 +16,7 @@ program.The wit motion 9-axies IMU and GPS module provides abundant
 types of data for user, including nine axises data, atmosphere pressure,
 temperature, latitude,longitude, altitude, satellites number .etc
 
-![\|width=\"100%\"](attachment:wit.jpg)
+![\|width="100%"](attachment:wit.jpg)
 
 ## Usage
 
@@ -30,7 +30,7 @@ roslaunch wit_node wit.launch
 
 1\. ROS
 
-2\. ros-\<distro\>-ecl
+2\. ros-<distro>-ecl
 
 Install ecl by
 

@@ -23,14 +23,14 @@ target_link_libraries(${PROJECT_NAME} yaml-cpp)
 ### Package/stack dependencies
 
 *If you have previously used yaml_cpp with ROS, make sure you remove
-\`\<depend package=\"yaml_cpp\" /\>\` from your manifest.*
+`<depend package="yaml_cpp" />` from your manifest.*
 
-The \`yaml-cpp\` [rosdep](rosdep) is defined in the ROS
+The `yaml-cpp` [rosdep](rosdep) is defined in the ROS
 [common_rosdeps](common_rosdeps) stack/package. In order to get this
-rule, you need to edit your \`manifest.xml\` and \`stack.xml\` as
+rule, you need to edit your `manifest.xml` and `stack.xml` as
 follows:
 
-1\. \`manifest.xml\`
+1\. `manifest.xml`
 
 ```
 <depend package="common_rosdeps" />
@@ -38,7 +38,7 @@ follows:
   <rosdep name="yaml-cpp" />
 ```
 
-2\. \`stack.xml\`
+2\. `stack.xml`
 
 ```
 <depend stack="common_rosdeps" />

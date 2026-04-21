@@ -1,7 +1,7 @@
 # DCM Bringup for Pepper robot
 
 The package contains launch and configuration files required to bring
-the robot\'s DCM Driver up and start the robot controllers. The package
+the robot's DCM Driver up and start the robot controllers. The package
 allows to control a robot from ROS, while communicating with Naoqi. You
 can control the robot either by calling DCM commands or ALMotion (by
 default).
@@ -36,7 +36,7 @@ roslaunch pepper_dcm_bringup pepper_bringup.launch robot_ip:=<ROBOT_IP>
 ```{=html}
 <!-- -->
 ```
--   start Naoqi Driver (to get the odom frame) proving your robot\'s IP
+-   start Naoqi Driver (to get the odom frame) proving your robot's IP
     ```
 roslaunch naoqi_driver naoqi_driver.launch nao_ip:=<ROBOT_IP>
 ```
@@ -50,7 +50,7 @@ roslaunch pepper_moveit_config moveit_planner.launch
 ```{=html}
 <!-- -->
 ```
--   check \"Allow approximate IK solutions\"
+-   check "Allow approximate IK solutions"
 -   control a planning_group via an interactive marker
 
 #### Control via Actionlib
@@ -77,7 +77,7 @@ stop the ros-controllers using the rqt plugin ControllerManager.
 
 To command joints positions via ROS:
 
--   start the DCM bringup proving your robot\'s IP (be aware that the
+-   start the DCM bringup proving your robot's IP (be aware that the
     package will stop Autonomous Life on your robot):
     ```
 roslaunch pepper_dcm_bringup pepper_dcm_bringup_position.launch robot_ip:=<ROBOT_IP>

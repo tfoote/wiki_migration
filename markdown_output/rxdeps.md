@@ -1,6 +1,6 @@
 ## Package Summary
 
-\`rxdeps\` is a ROS command-line visualization tool for generating PDFs
+`rxdeps` is a ROS command-line visualization tool for generating PDFs
 of ROS package structure and dependencies. It enables you to visualize
 package dependencies, including hooks to color based on different status
 types.
@@ -35,9 +35,9 @@ Options:
 ```
 
 It will generate a file like below. The default filename is
-\`deps.pdf\`.
+`deps.pdf`.
 
 ## Example Output
 
-[See Full Size\|height=\"420\",width=\"717\"](attachment:rxdeps_graph.png)
-![\|height=\"420\",width=\"717\"](attachment:rxdeps_graph.png)
+[See Full Size\|height="420",width="717"](attachment:rxdeps_graph.png)
+![\|height="420",width="717"](attachment:rxdeps_graph.png)

@@ -4,8 +4,8 @@ aligned allocation, and an STL-compatible aligned allocator.
 
 ## Aligned Allocation
 
-General aligned allocation is done through the \`alignedMalloc()\` and
-\`alignedFree()\` functions. For example:
+General aligned allocation is done through the `alignedMalloc()` and
+`alignedFree()` functions. For example:
 
 ```cplusplus
 #include <allocators/aligned.h>

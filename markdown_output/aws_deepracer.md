@@ -9,7 +9,7 @@ to prototype robotics applications for use with AWS
 [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) hardware.
 
 The AWS [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) comes with all
-required libraries and packages preinstalled. The vehicle\'s device
+required libraries and packages preinstalled. The vehicle's device
 software includes **Ubuntu 20.04 Focal Fossa**, **Intel® OpenVINO™
 toolkit 2021.1.110**, **ROS 2 Foxy Fitzroy**, and **Python 3.8**.
 
@@ -74,7 +74,7 @@ support.
 
 ### Perception
 
-Use these nodes to enable the AWS DeepRacer device\'s use of sensors for
+Use these nodes to enable the AWS DeepRacer device's use of sensors for
 perceiving its environment.
 
 -   [camera_node](https://github.com/aws-deepracer/aws-deepracer-camera-pkg):
@@ -94,7 +94,7 @@ perform based on the data it perceives.
 
 ### Navigation
 
-Use these nodes to enable the vehicle\'s use of its motor and hardware
+Use these nodes to enable the vehicle's use of its motor and hardware
 to move through the environment.
 
 -   [deepracer_navigation_node](https://github.com/aws-deepracer/aws-deepracer-navigation-pkg):

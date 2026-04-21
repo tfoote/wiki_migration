@@ -183,9 +183,9 @@ prov_tf {
 ### Configuration
 
 The Arduino node is configured using a YAML file specifying the required
-parameters. A sample parameter file called \`arduino_params.yaml\` is
+parameters. A sample parameter file called `arduino_params.yaml` is
 included in the config directory and is shown below. Make a copy of this
-file(e.g. \`my_arduino_params.yaml\`) before editing. Note that many of
+file(e.g. `my_arduino_params.yaml`) before editing. Note that many of
 the parameters are commented out and must be set and un-commented before
 you can use the node with your Arduino.
 

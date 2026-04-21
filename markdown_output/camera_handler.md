@@ -1,7 +1,7 @@
 # Vision sensor
 
 In V-REP it is possible to simulate a vision sensor. Vision sensors are
-added to the scene with \[menu bar \--\> Add \--\> Vision sensor\].
+added to the scene with \[menu bar \--> Add \--> Vision sensor\].
 After a double-click on a vision-sensor, we can set some parameters like
 the resolution and the field of view of the camera. In addition we added
 a GUI to set the frequency of acquisition and the type of color coding
@@ -14,13 +14,13 @@ parameters in the GUI.
 
 The handler will publish a stream of images in low-bandwidth compressed
 formats using image_transport. In addition a topic called
-\'/vrep/camera_info\' will be created. It contains the intrinsic camera
+'/vrep/camera_info' will be created. It contains the intrinsic camera
 parameters.
 
 ## Publishers
 
-Let\'s suppose we have a vision sensor in V-REP called
-\"Vision_sensor_0\". The plugin will create the following topics:
+Let's suppose we have a vision sensor in V-REP called
+"Vision_sensor_0". The plugin will create the following topics:
 
 ```
 /vrep/Vision_sensor_0

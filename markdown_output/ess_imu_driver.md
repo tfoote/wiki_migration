@@ -1,9 +1,9 @@
 # Epson IMU ROS1 Driver Node
 
 \-\-\-\-\-\-\-\-\-\-\--
-![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)
+![\|align="right"](attachment:ess_sensors/g552.jpg)
+![\|align="right"](attachment:ess_sensors/g370.jpg)
+![\|align="right"](attachment:ess_sensors/g365.jpg)
 
 ## Overview
 
@@ -161,10 +161,10 @@
     function 1PPS signal to the EXT/GPIO2 pin of the Epson device 2.
     Edit the appropriate
     [roslaunch/XML](https://wiki.ros.org/roslaunch/XML ) in *launch*/ to
-    set **ext_sel** to External Counter Reset, set *\<param
-    name=\"ext_sel\" type=\"int\" value=\"1\" /\>* 3. In the same launch
-    file, enable **time_correction**, set *\<param
-    name=\"time_correction\" type=\"int\" value=\"1\" /\>*
+    set **ext_sel** to External Counter Reset, set *<param
+    name="ext_sel" type="int" value="1" />* 3. In the same launch
+    file, enable **time_correction**, set *<param
+    name="time_correction" type="int" value="1" />*
 -   The use of **time_correction** is intended to give a more accurate
     timestamp of the inertial data by minimizing the effects of link &
     host processing delays
@@ -184,7 +184,7 @@ catkin workspace *src*/ folder.
     the **PLATFORM** or **INTERFACE** or making any changes in the
     **CMakeLists.txt** 3. From the catkin workspace folder run
     *catkin_make* to build all changed ROS packages located in the
-    \<catkin_workspace\>/src/ folder 4. Reload the current ROS
+    <catkin_workspace>/src/ folder 4. Reload the current ROS
     environment variables that may have changed after the catkin build
     process
 

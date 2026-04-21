@@ -71,7 +71,7 @@ There are the following action types:
   -- ----------------- -- ---------------------------------------------- -- ------------------------ --
 
 Additionally a **autonomy_level** can be set. Only reactions with an
-autonomy_level \<= config/reaction_autonomy_level get executed.
+autonomy_level <= config/reaction_autonomy_level get executed.
 
 ### Example
 

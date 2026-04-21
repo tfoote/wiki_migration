@@ -2,7 +2,7 @@
 
 The sections below describe the API of this package for Range-Only (RO)
 SLAM, based on a mixture of Rao-Blackwellized Particle Filters (RBPF)
-and EKF for each particle\'s map of beacons. This packages publishes
+and EKF for each particle's map of beacons. This packages publishes
 particles that represent the robot and the radio beacons into ROS.
 
 ## Demos

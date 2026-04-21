@@ -1,13 +1,13 @@
 ## Overview
 
 This package enables conversion of messages of type
-\<\<MsgLink(toposens_msgs/TsScan)\>\> into messages of type
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\>.
+<<MsgLink(toposens_msgs/TsScan)>> into messages of type
+<<MsgLink(sensor_msgs/PointCloud2)>>.
 
 ### Surface Normals
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \<#FFFFCC\>Since **version 2.0** the package makes use of the standard PointCloud type **PointXYZINormal** instead of the custom type **TsPoint**. As a result the PointCloud also contains information about the surface normals.   
+     <#FFFFCC>Since **version 2.0** the package makes use of the standard PointCloud type **PointXYZINormal** instead of the custom type **TsPoint**. As a result the PointCloud also contains information about the surface normals.   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
 
 Due to the specular reflection behavior of ultrasound, the surface

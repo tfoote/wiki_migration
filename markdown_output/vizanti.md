@@ -4,7 +4,7 @@
 
 Vizanti is a web-based visualization and control tool developed for more
 convenient operation of outdoor robots running the Robot Operating
-System (ROS). The application attempts to replicate RViz\'s orthographic
+System (ROS). The application attempts to replicate RViz's orthographic
 2D view as closely as possible with a smartphone friendly interface. The
 second goal is to allow planning and executing movement and mission
 commands, i.e. goals and waypoints, with custom buttons and parameter
@@ -39,13 +39,13 @@ socket communication.
 ```bash
 roslaunch vizanti server.launch
 ``` The web app can be accessed at
-\`http:*\<host_ip\>:5000\`. Client settings are automatically saved in
+`http:*<host_ip>:5000`. Client settings are automatically saved in
 localStorage. The satelite imagery renderer also uses the indexedDB to
 store tiles for offline use (note that this is IP specific). By default
 the rosbridge instance also occupies port 5001.*
 
-If you\'re using a mobile device connected to a robot\'s hotspot that
-doesn\'t have internet access, make sure to turn off mobile data. This
+If you're using a mobile device connected to a robot's hotspot that
+doesn't have internet access, make sure to turn off mobile data. This
 will prevent Android from sending packets to the wrong gateway.
 
 ------------------------------------------------------------------------
@@ -54,11 +54,11 @@ will prevent Android from sending packets to the wrong gateway.
 
 Desktop demo (SLAM, node manager, dynamic reconfigure):
 
-\<\<Youtube(IM6ix1stPnc&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=IM6ix1stPnc&rel=0)
 
 Mobile demo (GPS navigation, OSM tile map):
 
-\<\<Youtube(uXDBWc23ZdQ&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=uXDBWc23ZdQ&rel=0)
 
 ## More info
 

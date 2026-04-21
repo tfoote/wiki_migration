@@ -32,8 +32,8 @@ planning by exploiting a generally applicable property of tabletop
 manipulation, that the object is cleared for grasping above. Our
 technique is designed to be a faster and lighter behavior-based response
 to tabletop manipulation and was inspired by the research presented in
-Advait Jain and Charles C. Kemp\'s \"EL-E: An Assistive Mobile
-Manipulator that Autonomously Fetches Objects from Flat Surfaces\".
+Advait Jain and Charles C. Kemp's "EL-E: An Assistive Mobile
+Manipulator that Autonomously Fetches Objects from Flat Surfaces".
 
 ### Robotic Arm Perception
 
@@ -56,7 +56,7 @@ perception monitored in real-time.
 
 ## Grasping Details
 
-\<\<Youtube(<http://www.youtube.com/watch?v=fUDIk505lVo>)\>\>
+[Youtube](https://www.youtube.com/watch?v=http://www.youtube.com/watch?v=fUDIk505lVo)
 
 ### Grasping
 
@@ -78,7 +78,7 @@ interfaced to detect objects and the
 pose. When grasping the closest object to a point, the poses of all the
 objects on the table are found, the closest x-y object is selected, and
 the rotation is found by aligning the gripper with the z-rotation of the
-bounding box. The box is identified by projecting the object\'s point
+bounding box. The box is identified by projecting the object's point
 cloud into the table and using PCA to find the major and minor axis and
 the minimum and maximum points along these directions to find the edges.
 The robot is blind for the remainder of the grasp.
@@ -97,9 +97,9 @@ each sensor value at each time step to determine the probability this
 sensor value was sampled from the expected sensor data. An abnormality
 is reported when the joint probability of all of the sensor streams
 following the model (with a naive independence assumption) falls below a
-threshold. This approach is similar to Peter Pastor et. al.\'s failure
-condition detection described in \"Skill Learning and Performance
-Prediction for Manipulation\", accepted for publication in the
+threshold. This approach is similar to Peter Pastor et. al.'s failure
+condition detection described in "Skill Learning and Performance
+Prediction for Manipulation", accepted for publication in the
 proceedings of the 2011 International Conference on Robotics and
 Automation. While their technique uses single z-tests over each
 coordinate, this method uses a joint probability over all coordinates
@@ -109,7 +109,7 @@ simultaneously.
 
 The [laser_interface](laser_interface) package offers functionality that
 allows users to point and click at locations in the world using a laser
-pointer \"mouse\" so that users can naturally direct the robot to
+pointer "mouse" so that users can naturally direct the robot to
 perform actions at those places. This grasping package contains a demo
 which allows users to control tabletop manipulation using only the laser
 pointer. By pointing at an object on a table and double-clicking, the

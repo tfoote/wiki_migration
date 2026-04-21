@@ -28,7 +28,7 @@ shoulder_mount_joint a positive y offset.
 
 ## Folders and files
 
-### Folder: \"Description\"
+### Folder: "Description"
 
 **arm_extra_visuals:** In here all visual links and corresponding joints
 in the arms that cannot be mapped to the tf-tree are found. So it
@@ -80,7 +80,7 @@ textures for rviz.
 **definitions.urdf:** Contains the definitions for the my_link and
 my_joint macro's.
 
-### Folder: \"Media\"
+### Folder: "Media"
 
 **materials/scripts:** Contains a script for each texture used in the
 robot description.

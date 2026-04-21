@@ -5,11 +5,11 @@ An example of usage of this plugin can be seen in
 ## About
 
 This package provides 4-wheel car-like robot model with steer mechanism
-for Gazebo simulation, by using \`gazebo_ros_control\` plugin.
+for Gazebo simulation, by using `gazebo_ros_control` plugin.
 
-\`steer_bot_hardware_gazebo::SteerBotHardwareGazebo\` inherits
-\`gazebo_ros_control::RobotHWSim\` so that the plugin is integrated to
-\`Gazebo\`.
+`steer_bot_hardware_gazebo::SteerBotHardwareGazebo` inherits
+`gazebo_ros_control::RobotHWSim` so that the plugin is integrated to
+`Gazebo`.
 
 We developed this plugins assuming that
 [steer_drive_controller](steer_drive_controller) is selected as the
@@ -22,23 +22,23 @@ driving controller.
 [steer_drive_controller](steer_drive_controller) is designed to have two
 joint interfaces, one is velocity_joint_interface for the single rear
 wheel joint and the other is position_joint_interface for the single
-front steer joint. This concept keeps the controller\'s abstraction to
+front steer joint. This concept keeps the controller's abstraction to
 be applied in various types of configuration by converting the joint
-interfaces in the controller to ones on an actual robot via \`RobotHW\`
-or \`RobotHWSim\`.
+interfaces in the controller to ones on an actual robot via `RobotHW`
+or `RobotHWSim`.
 
 ### Converting cmd_vel command to Gazebo joint command
 
 Now we need to do it for a Gazebo model too, which is the main role of
 this plugin. The following figure shows how a velocity command of
-\`geometry_msgs::Twist\` converted to a joint command to \`Gazebo\` via
+`geometry_msgs::Twist` converted to a joint command to `Gazebo` via
 [steer_drive_controller](steer_drive_controller).
 
-![steerbot_steer_drive_controller_integrate_01\|width=\"700\"](attachment:steerbot_steer_drive_controller_integrate_01.png)
+![steerbot_steer_drive_controller_integrate_01\|width="700"](attachment:steerbot_steer_drive_controller_integrate_01.png)
 
 Each type of joint interface on
 [steer_drive_controller](steer_drive_controller) is split into two
-interface for right and left. This is because \`URDF\` doesn\'t support
+interface for right and left. This is because `URDF` doesn't support
 closed links (e.g. parallel link or Ackermann link), which means we need
 to virtually imitate such links by software.
 
@@ -46,20 +46,20 @@ to virtually imitate such links by software.
 
 In order to achieve the conversion mentioned above, you need to register
 joint interfaces for both
-[steer_drive_controller](steer_drive_controller) and \`Gazebo\` in
-\`steer_bot_hardware_gazebo\`.
+[steer_drive_controller](steer_drive_controller) and `Gazebo` in
+`steer_bot_hardware_gazebo`.
 
-![register_joint_interfaces\|width=\"700\"](attachment:register_joint_interfaces.png)
+![register_joint_interfaces\|width="700"](attachment:register_joint_interfaces.png)
 
-For \`steer_drive_controller\`, it\'s simple to just register two joint
+For `steer_drive_controller`, it's simple to just register two joint
 interface for a rear wheel and a front steer as mentioned previously.
 
-For \`Gazebo\`, 4 more velocity joint interfaces for wheels and 2 more
+For `Gazebo`, 4 more velocity joint interfaces for wheels and 2 more
 position joint interface for front steers (in total 2 + 4 + 2 = 8 joint
 interface are registered in this plugin).
 
 -   The 2 rear wheel velocity joint interfaces are used as command
-    interface for controlling linear drive on \`Gazebo\`.
+    interface for controlling linear drive on `Gazebo`.
 -   The other 2 front wheel joints just grabs current angle to update
     joint_states, namely [tf](tf).
 -   The front 2 steer joints virtually behave like parallel link or
@@ -68,7 +68,7 @@ interface are registered in this plugin).
 These joint interfaces are mapped with joints shown in the sub section
 2.
 
-![Registering joint \_nterfaces_in_URDF_model\|width=\"700\"](attachment:Registering joint _nterfaces_in_URDF_model.png)
+![Registering joint _nterfaces_in_URDF_model\|width="700"](attachment:Registering joint _nterfaces_in_URDF_model.png)
 
 An example of registering such joint interfaces can be seen in
 [cirkit_unit03_gazebo](cirkit_unit03_gazebo).
@@ -77,7 +77,7 @@ An example of registering such joint interfaces can be seen in
 
 ### URDF
 
-In \`URDF\` in your robot, add the following tag to apply
+In `URDF` in your robot, add the following tag to apply
 [steer_bot_hardware_gazebo](steer_bot_hardware_gazebo).
 
 ```
@@ -90,7 +90,7 @@ In \`URDF\` in your robot, add the following tag to apply
   </gazebo>
 ```
 
-An example of a xacro is \`description.gazebo.xacro\` in
+An example of a xacro is `description.gazebo.xacro` in
 [steer_bot_hardware_gazebo](steer_bot_hardware_gazebo).
 
 ### Paremters
@@ -149,4 +149,4 @@ gains:
 [cirkit_unit03_simulator](cirkit_unit03_simulator) has an example launch
 file to spawn [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03) with
 [steer_bot_hardware_gazebo](steer_bot_hardware_gazebo) named
-\`cirkit_unit03_world.launch\`.
+`cirkit_unit03_world.launch`.

@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(rotors_comm)\>\>
+<<MsgSrvDoc(rotors_comm)>>

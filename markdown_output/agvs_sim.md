@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/agvs_sim.git>
 
-![AGVS Gazebo\|width=\"600px\"](attachment:agvs_gazebo.png)
+![AGVS Gazebo\|width="600px"](attachment:agvs_gazebo.png)
 
 ## List of packages
 

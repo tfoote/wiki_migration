@@ -1,6 +1,6 @@
 The pr2_fridge_manipulation_executive serves as an intermediate layer
 between the master_executive and all action_servers provided in the
-ds_pr2\_\* packages. It contains a statemachine that responds to two
+ds_pr2_\* packages. It contains a statemachine that responds to two
 types of action requests for the PR2:
 
 -   retrieving a drink from the fridge given the ID of the shelf rail.

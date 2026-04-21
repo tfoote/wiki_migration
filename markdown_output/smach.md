@@ -50,7 +50,7 @@ interesting things.
 
 You can build a finite state machine using SMACH, but SMACH can do much
 more. SMACH is a library for task-level execution and coordination, and
-provides several types of \"state containers\". One such container, is a
+provides several types of "state containers". One such container, is a
 finite state machine, but this container can also be a state in another
 container. See the [tutorials page](smach/Tutorials) for a list of
 containers and states built into SMACH.

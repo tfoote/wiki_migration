@@ -48,12 +48,12 @@ All parts and dimensions are specified in the /hardware folder which
 includes two manuals for constructing the playpen and the conveyor
 system as seen below.
 
-![\|height=\"228px\",width=\"344px\"](attachment:playpen_pr2.jpg)
-![\|height=\"227px\",width=\"344px\"](attachment:playpen_pr2_shoulder.jpg)
+![\|height="228px",width="344px"](attachment:playpen_pr2.jpg)
+![\|height="227px",width="344px"](attachment:playpen_pr2_shoulder.jpg)
 
-![\|height=\"146px\",width=\"219px\"](attachment:playpen_cone.jpg)
-![\|height=\"146px\",width=\"222px\"](attachment:playpen_conveyor.jpg)
-![\|height=\"146px\",width=\"219px\"](http://www.ros.org/wiki/pr2_playpen?action=AttachFile&do=get&target=playpen_attached.jpg)
+![\|height="146px",width="219px"](attachment:playpen_cone.jpg)
+![\|height="146px",width="222px"](attachment:playpen_conveyor.jpg)
+![\|height="146px",width="219px"](http://www.ros.org/wiki/pr2_playpen?action=AttachFile&do=get&target=playpen_attached.jpg)
 
 This system is designed to allow the PR2 to manipulate multiple objects
 over long periods of time without human interaction.
@@ -67,7 +67,7 @@ were able to mount a Kinect to the PR2 head as well as on the conveyor
 system. The following is a view in Rviz of the 3D data generated from
 the Kinect.
 
-![\|height=\"469px\",width=\"631px\"](attachment:rviz_screenshot.png)
+![\|height="469px",width="631px"](attachment:rviz_screenshot.png)
 
 ## Autonomous Grasping for 60 Hours
 
@@ -92,18 +92,18 @@ particular, we are using the Kinect instead of textured stereo and we
 require that the head be stationary to aid in segmenting objects from
 the table top more easily.
 
-\_\_[Youtube](https://www.youtube.com/watch?v=Fls1WSs5sBE)\_\_
+__[Youtube](https://www.youtube.com/watch?v=Fls1WSs5sBE)__
 
 ### First Overnight Data Set
 
 We recently (May 2011) ran the playpen with our overhead
 [grasping code](http://www.ros.org/wiki/pr2_grasp_behaviors) using
-Willow Garage\'s
+Willow Garage's
 [tabletop object detection](http://www.ros.org/wiki/tabletop_object_detector)
 and the Kinect for eight hours. We started it at 7:30 PM and it ran
 without supervision or human intervention until the specified timeout
 eight hours later. We learned a lot about needed changes to our code and
-methods of auto detection for success and failure. However, we\'re very
+methods of auto detection for success and failure. However, we're very
 pleased that the system was robust enough to run overnight.
 
 In the future we hope to objectively compare manipulation code from
@@ -112,8 +112,8 @@ learning (joint torques, tactile sensor readings, etc.).
 
 ## Acknowledgements
 
-We\'d like to thank Alex Mcneely and Travis Deyle for their work on
-early prototyping of the playpen system. We\'d also like to acknowledge
+We'd like to thank Alex Mcneely and Travis Deyle for their work on
+early prototyping of the playpen system. We'd also like to acknowledge
 Joel Mathew for his work in compiling and building the Solid Works part
 assemblies, the assembly manual and the bill of materials which are
 included in the /hardware folder.

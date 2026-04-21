@@ -1,10 +1,10 @@
-\`pr2_bringup\` is a package that collects together the scripts,
+`pr2_bringup` is a package that collects together the scripts,
 [roslaunch](roslaunch) files, and dependencies that are required to
 bring a PR2 robot into a running state.
 
 ## pr2.launch
 
-The user\'s entry point for this package is the file \`pr2.launch\`.
+The user's entry point for this package is the file `pr2.launch`.
 This launch file contains all nodes to run a complete PR2 system.
 However, you cannot use pr2.launch to start up the robot (see
 [pr2_robot](pr2_robot) for instructions), because pr2.launch requires
@@ -14,7 +14,7 @@ the parameter server first.
 ### Disable Prosilica Camera
 
 To disable the [prosilica_camera](prosilica_camera) set the
-\"no-prosilica\" arg to \"true\" in \"/etc/ros/robot.launch\" when
+"no-prosilica" arg to "true" in "/etc/ros/robot.launch" when
 launching your PR2:
 
 ```
@@ -66,11 +66,11 @@ Hydro if Hydro was the ROS distro set beforehand.
 When the PR2 starts up for the first time since a power down, it will
 move its arms, casters, head and later platform to find the reference
 position of each joint. This is done by the calibration script
-\`pr2_bringup/scripts/calibrate_pr2.py\`. When finished, the PR2 joint
+`pr2_bringup/scripts/calibrate_pr2.py`. When finished, the PR2 joint
 calibration script stores the joint reference positions locally in the
 motor controller board (MCB) of the corresponding joint. So the next
 time you start the PR2, it will remember the reference positions and
-won\'t have to repeat the same calibration routine over and over again.
+won't have to repeat the same calibration routine over and over again.
 
 If you want to force the PR2 to run the calibration routine again, you
 can erase the stored reference positions from the MCBs by disabling the

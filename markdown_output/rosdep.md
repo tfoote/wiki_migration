@@ -1,8 +1,8 @@
-\`rosdep\` is a command-line tool for installing system dependencies.
+`rosdep` is a command-line tool for installing system dependencies.
 
 ## New documentation
 
-As of ROS [fuerte](fuerte), \`rosdep\` is now a stand-alone tool that
+As of ROS [fuerte](fuerte), `rosdep` is now a stand-alone tool that
 you can download and use separately:
 [External rosdep documentation](http://ros.org/doc/independent/api/rosdep/html/).
 
@@ -10,7 +10,7 @@ you can download and use separately:
 
 ### Installing rosdep
 
-Do prefer \`apt\` over \`pip\` as it\'s updated automatically and
+Do prefer `apt` over `pip` as it's updated automatically and
 faster. ```
 # ROS Noetic
 sudo apt-get install python3-rosdep
@@ -32,7 +32,7 @@ sudo rosdep init
 ```
 
 Needs to be called at least once or when updating (there might be new
-needed definitions your local installation of \`rosdep\` doesn\'t know
+needed definitions your local installation of `rosdep` doesn't know
 about yet):
 
 ```wiki
@@ -56,9 +56,9 @@ If you experienced network error, you may use a mirror site like
 
 #### Install dependency of a particular package
 
-You can use \`rosdep\` and [catkin](catkin) to build any package in the
+You can use `rosdep` and [catkin](catkin) to build any package in the
 ROS repository. Say that you want to build a package called
-AMAZING_PACKAGE, that you hadn\'t built on your machine before.
+AMAZING_PACKAGE, that you hadn't built on your machine before.
 
 ```
 rosdep install AMAZING_PACKAGE
@@ -66,10 +66,10 @@ rosdep install AMAZING_PACKAGE
 
 #### Install dependency of all packages in the workspace
 
-This usecase shows even more powerful feature of \`rosdep\`.
+This usecase shows even more powerful feature of `rosdep`.
 
 Go to the top directory of your [catkin workspace](catkin/workspaces)
-where the source code of the ROS packages you\'d like to use are. Then
+where the source code of the ROS packages you'd like to use are. Then
 run:
 
 ```
@@ -77,18 +77,18 @@ rosdep install --from-paths src --ignore-src -r -y
 ```
 
 This command magically installs all the packages that the packages in
-your \`catkin workspace\` depend upon but are missing on your computer.
+your `catkin workspace` depend upon but are missing on your computer.
 
 ### Use source-installed rosdep
 
-Clone the development repository. This doesn\'t need to be done in a
-directory in \`ROS_PACKAGE_PATH\`. Then at its top directory, source
-\`setup.sh\`. In concrete: ```
+Clone the development repository. This doesn't need to be done in a
+directory in `ROS_PACKAGE_PATH`. Then at its top directory, source
+`setup.sh`. In concrete: ```
 $ git clone https://github.com/ros-infrastructure/rosdep
 $ cd rosdep
 $ source setup.sh
 ``` Then calling
-\`rosdep\` should use the source just downloaded.
+`rosdep` should use the source just downloaded.
 
 ## Change list
 
@@ -101,5 +101,5 @@ See
 
 ## Tutorial
 
-See [this page](ROS/Tutorials/rosdep). There\'s also
+See [this page](ROS/Tutorials/rosdep). There's also
 [a list of rosdep tutorials](rosdep/Tutorials).

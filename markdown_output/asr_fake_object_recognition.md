@@ -1,8 +1,8 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
-This package provides a \'perception algorithm\'-independent simulation
+This package provides a 'perception algorithm'-independent simulation
 of 6-D object localization for 3D object search by a mobile robot: Based
 on the poses of the searched objects with respect to the current viewing
 frustum(s) of the robot, the detectability of the objects is estimated.
@@ -14,7 +14,7 @@ recognizes them based on the current camera position (for both, left and
 right camera). For a single object at first the given pose is
 transformed from the world to the camera frames. For each camera frame
 the transformed pose is rated based on its position in the camera
-frustum (the distance to the camera and the angles to the camera\'s
+frustum (the distance to the camera and the angles to the camera's
 visual axis (azimut and elevation) are used). If the rating is higher
 than a specified threshold value the pose is valid and the object is
 marked as found and returned.
@@ -46,7 +46,7 @@ a specific layout:
     meta information of the objects in the
     [asr_object_database](asr_object_database)):
 -   type: The name of the object
--   mesh: The path to the object\'s mesh file (as a package-url)
+-   mesh: The path to the object's mesh file (as a package-url)
 -   id: The id of the object
 -   angles: Specifies how the orientation is denoted in the pose (can be
     either quaternion or euler)

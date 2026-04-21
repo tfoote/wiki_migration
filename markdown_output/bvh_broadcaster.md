@@ -12,8 +12,8 @@ Input contains two string parameters:
 
 -   A path to BVH file, e.g.,
     [example.bvh](https://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/Example1.bvh)
--   A name of frame for motion capture to be loaded on, e.g., \"world\"
-    frame, or \"odom\" frame.
+-   A name of frame for motion capture to be loaded on, e.g., "world"
+    frame, or "odom" frame.
 
 You can find relevant BVH-formatted CMU MoCap from
 [this post](https://github.com/mingfeisun/bvh_broadcaster/blob/master/cmu_mocap_bvh.md).

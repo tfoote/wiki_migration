@@ -1,3 +1,3 @@
 ## Report a Bug
 
-\<\<GitHubIssues(tu-darmstadt-ros-pkg/blob_tools)\>\>
+<<GitHubIssues(tu-darmstadt-ros-pkg/blob_tools)>>

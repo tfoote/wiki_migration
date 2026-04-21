@@ -1,12 +1,12 @@
   -- ----------------------------------------------------------------------- --
-     \<#FFFF00\> **As of ROS 1.3.0, rosbagmigration has been deprecated.**   
-     \<#FFFF00\> **Please see [rosbag/migration](rosbag/migration)**         
+     <#FFFF00> **As of ROS 1.3.0, rosbagmigration has been deprecated.**   
+     <#FFFF00> **Please see [rosbag/migration](rosbag/migration)**         
   -- ----------------------------------------------------------------------- --
 
 ## Rule Files
 
 Rule files define one or more Python classes which subclass
-\`rosbagmigration.MessageUpdateRule\` and override the appropriate
+`rosbagmigration.MessageUpdateRule` and override the appropriate
 fields and functions. Since they take a specific form, we use the
 extention `.bmr` (bag migration rule) in place of the typical `.py`
 extension.
@@ -21,7 +21,7 @@ The following fields must be overridden:
 -   **new_full_text**: The full message text.
 -   If necessary, this can be generated from a message using:
     `rosrun rosbagmigration savemsg.py msgname`
--   **order**: Every message with the same \`old_type\` *must* have a
+-   **order**: Every message with the same `old_type` *must* have a
     unique order number which constains the order in which they are
     chained together. Ordering is from lowest to highest order number.
 -   **migrated_types**: A list of pairs of
@@ -38,12 +38,12 @@ The following method must be overridden:
 ### The update function
 
 For the most part just about all of the rule definition will be
-generated for you by \`rosbag check\` or \`makerule.py\`. The place
+generated for you by `rosbag check` or `makerule.py`. The place
 where the most user intervention is necessary is the **update**
-function. The update function takes two inputs: \`old_msg\`, and
-\`new_msg\`. The intent is to fill in the fields of \`new_msg\`
+function. The update function takes two inputs: `old_msg`, and
+`new_msg`. The intent is to fill in the fields of `new_msg`
 appropriately with a combination of default values or values moved over
-from \`old_msg\`.
+from `old_msg`.
 
 There are a few important helper classes to make this substantially
 easier:
@@ -60,9 +60,9 @@ easier:
     message ever changes.
 -   **self.migrate_array(old_sub_msg_array, new_sub_msg_array,
     type_name)** works to migrate an array instead of a sub-message. The
-    extra argument, \`type_name\`, is necessary since in most cases;
-    \`new_sub_msg_array\` is a empty. \`type_name\` will be internally
-    passed through to \`get_new_class\`.
+    extra argument, `type_name`, is necessary since in most cases;
+    `new_sub_msg_array` is a empty. `type_name` will be internally
+    passed through to `get_new_class`.
 
 An example rule file for a message and its sub-message. **Note**: With
 the exception of changing the valid member to True, this entire file was
@@ -163,7 +163,7 @@ $ rosrun rosbagmigration makerule.py MyMsg.saved myrule.bmr
 
 If you have moved the message, it will prompt you for the new location.
 
-Now you can edit the file \`myrule.bmr\` according to
+Now you can edit the file `myrule.bmr` according to
 [Rule Files](#rulefiles).
 
 Finally, if you want the rule to be permanently exported for people to
@@ -181,11 +181,11 @@ get loaded whenever the message migrator is instantiated.
 
 **NOTE:** in order for a plugin to be exported correctly, you must
 depend on the package the plugin is used for. In this case your package
-MUST have a dependency on \`rosbagmigration\` to export migration rules.
+MUST have a dependency on `rosbagmigration` to export migration rules.
 
 ### Alternative Approach to Making Rules
 
-\`rosbag check\` can also be used to populate most of the rule templates
+`rosbag check` can also be used to populate most of the rule templates
 for you so long as the type names still match.
 
 To generate rules: ```
@@ -198,10 +198,10 @@ arbitrarily old bag files is likely to skip intermediate changes and
 lead to ordering confusion. However, if a bag is missing rules, this is
 intended to be the quickest pathway to making it functional.
 
-At this point, you will need to edit \`myrules.bmr\` by hand. See
+At this point, you will need to edit `myrules.bmr` by hand. See
 [Rule Files](#rulefiles) for more info.
 
 To make sure your rules are sufficient, you can now pass the rule file
-into \`rosbag check\` explicitly: ```
+into `rosbag check` explicitly: ```
 $ rosbag check in.bag myrules.bmr
 ```

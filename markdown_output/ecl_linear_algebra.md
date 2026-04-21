@@ -38,7 +38,7 @@ using namespace ecl::linear_algebra
 
 Note that the namespace is simply an alias to the Eigen namespace. You
 can use either namespace, however the ecl namespace is preferred so its
-clear we\'re using our extended interface (via the eigen plugins).
+clear we're using our extended interface (via the eigen plugins).
 
 ## Tutorials
 

@@ -49,7 +49,7 @@ simulation launch file:
 
 Here is and example of the Komodo robot launched with default settings:
 ```
-![alt text\|width=\"600\"](attachment:gazeboo.png)
+![alt text\|width="600"](attachment:gazeboo.png)
 
 To launch multiple robots in the same simulation add another block on
 the launch file as bellow:
@@ -78,80 +78,80 @@ the launch file as bellow:
   <arg name="Y" value="0.0" />
   </include>
 ```
-![alt text\|width=\"600\"](attachment:gazeboo2.png)
+![alt text\|width="600"](attachment:gazeboo2.png)
 
 You can view the robots sensors using rviz:
 
-![alt text\|width=\"600\"](attachment:rviz.png)
+![alt text\|width="600"](attachment:rviz.png)
 
 ## Topics that are good to know (only komodo models)
 
 ### Subscribers
 
-1\. komodo\_\<ID\>/base_rotation_controller/command
+1\. komodo_<ID>/base_rotation_controller/command
 
 -   Function: Rotate the arm.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/shoulder_controller/command
+    komodo_<ID>/shoulder_controller/command
 -   Function: Move the shoulder of the arm up and down.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/elbow1_controller/command
+    komodo_<ID>/elbow1_controller/command
 -   Function: Move the first elbow of the arm left and right.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/elbow2_controller/command
+    komodo_<ID>/elbow2_controller/command
 -   Function: Move the second elbow of the arm up and down.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/wrist_controller/command
+    komodo_<ID>/wrist_controller/command
 -   Function: Rotate the wrist left and right.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/right_finger_controller/command
+    komodo_<ID>/right_finger_controller/command
 -   Function: move the right finger, left or right.
 -   Msg type: std_msgs/Float64 1.
-    komodo\_\<ID\>/left_finger_controller/command
+    komodo_<ID>/left_finger_controller/command
 -   Function: move the left finger, left or right.
--   Msg type: std_msgs/Float64 1. komodo\_\<ID\>/diff_driver/command
+-   Msg type: std_msgs/Float64 1. komodo_<ID>/diff_driver/command
 -   Function: steering the robot.
 -   Msg type: geometry_msgs/Twist
 
 **Subscribers that are only present in the komodo with elevator and
 arm**
 
-1\. komodo\_\<ID\>/elevator_controller/command
+1\. komodo_<ID>/elevator_controller/command
 
 -   Function: Move the komodo elevator up and down.
 -   Msg type: std_msgs/Float64
 
 ### Publishers
 
-1\. komodo\_\<ID\>/scan
+1\. komodo_<ID>/scan
 
 -   Function: Publish the laser scan.
 -   Msg type: sensor_msgs/LaserScan 1.
-    komodo\_\<ID\>/arm_camera/image_raw
+    komodo_<ID>/arm_camera/image_raw
 -   Function: Publish images from the arm camera.
--   Msg type: sensor_msgs/Image 1. komodo\_\<ID\>/Front_Camera/image_raw
+-   Msg type: sensor_msgs/Image 1. komodo_<ID>/Front_Camera/image_raw
 -   Function: Publish images from the front camera.
--   Msg type: sensor_msgs/Image 1. komodo\_\<ID\>/diff_driver/odometry
+-   Msg type: sensor_msgs/Image 1. komodo_<ID>/diff_driver/odometry
 -   Function: Publish the odometry of the robot.
 -   Msg type: nav_msgs/Odometry
 
 **Publishers that are only prasent in the komodo with elevator and arm**
 
-1\. komodo\_\<ID\>/Creative_Camera/rgb/image_raw
+1\. komodo_<ID>/Creative_Camera/rgb/image_raw
 
 -   Function: Publish images from the arm camera.
 -   Msg type: sensor_msgs/Image 1.
-    komodo\_\<ID\>/Creative_Camera/depth/image_raw
+    komodo_<ID>/Creative_Camera/depth/image_raw
 -   Function: Publish a depth images from the arm camera.
 -   Msg type: sensor_msgs/Image 1.
-    komodo\_\<ID\>/Asus_Camera/rgb/image_raw
+    komodo_<ID>/Asus_Camera/rgb/image_raw
 -   Function: Publish images from the top asus camera.
 -   Msg type: sensor_msgs/Image 1.
-    komodo\_\<ID\>/Asus_Camera/depth/image_raw
+    komodo_<ID>/Asus_Camera/depth/image_raw
 -   Function: Publish a depth images from the asus camera
--   Msg type: sensor_msgs/Image 1. komodo\_\<ID\>/rear_camera/image_raw
+-   Msg type: sensor_msgs/Image 1. komodo_<ID>/rear_camera/image_raw
 -   Function: Publish images from the rear camera.
--   Msg type: sensor_msgs/Image 1. komodo\_\<ID\>/top_camera/image_raw
+-   Msg type: sensor_msgs/Image 1. komodo_<ID>/top_camera/image_raw
 -   Function: Publish images from the top camera
 -   Msg type: sensor_msgs/Image
 

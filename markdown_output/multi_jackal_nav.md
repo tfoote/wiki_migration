@@ -1,6 +1,6 @@
 ## Overview
 
-\`multi_jackal_nav\` contains the launch files and parameters providing
+`multi_jackal_nav` contains the launch files and parameters providing
 localization and waypoint following for multiple simulated
 [Clearpath Jackals](http://wiki.ros.org/Robots/Jackal). It has been
 extended from the single robot

@@ -17,7 +17,7 @@ nominal joint position and a set of tolerances for each joint.
 ### CartTrajectoryPt
 
 `descartes_trajectory::CartTrajectoryPt` represents a robot
-configuration where the robot\'s tool tip is at a specified 6-D pose.
+configuration where the robot's tool tip is at a specified 6-D pose.
 Unlike a joint trajectory point, a Cartesian point may have many
 possible joint solutions. Both the Cartesian and rotational components
 of a pose can be toleranced.

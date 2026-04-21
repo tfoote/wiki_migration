@@ -1,6 +1,6 @@
 ## Overview
 
-This package contains one single node: \`viodom_node\`, which estimates
+This package contains one single node: `viodom_node`, which estimates
 robot motion based on incoming raw images and IMU mesaurements from the
 [Visual-Inertial (VI-) Sensor](vi_sensor). To correctly estimate the
 motion, the node first needs to wait for a few seconds to initialize an
@@ -11,13 +11,13 @@ IMU filter.
 The transforms tree (following
 [REP 105](http://www.ros.org/reps/rep-0105.html)) is as follows:
 
-. \`odom\` → \`base_link\` → \`camera\`
+. `odom` → `base_link` → `camera`
 
 Visual odometry algorithms generally calculate* camera motion.* To be
 able to calculate *robot motion* based on *camera motion*, the
 transformation from the camera frame to the robot frame has to be known.
-Therefore this implementation needs to know the tf \`base_link\` →
-\`camera\` to be able to publish \`odom\` → \`base_link\`. The node
+Therefore this implementation needs to know the tf `base_link` →
+`camera` to be able to publish `odom` → `base_link`. The node
 currently uses default values from the sensor setup on the !AscTec Neo
 Research platform.
 

@@ -6,7 +6,7 @@ marker localization using point cloud data from a Kinect.
 
 [ar_kinect](ar_kinect) has a single node that can be run, which takes
 RGB point clouds from the Kinect and outputs a transform between the
-camera and a recognized marker. This is based on the \`ar_multi\` node
+camera and a recognized marker. This is based on the `ar_multi` node
 from the [ar_pose](ar_pose) package.
 
 The node works by creating an RGB image from the point cloud, finding

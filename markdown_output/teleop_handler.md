@@ -1,12 +1,12 @@
 ## Package Overview
 
-\`teleop_handler\` is a *tabpage handler* for the
+`teleop_handler` is a *tabpage handler* for the
 [touchosc_bridge](touchosc_bridge) package. It provides a basic
 teleoperation example that you can run out of the box on your robot, or
 modify for your own purposes.
 
 This package includes layouts for both iPad and iPhone-sized devices in
-the \`teleop_handler/layouts\` directory. When launched, the node will
+the `teleop_handler/layouts` directory. When launched, the node will
 respond to incoming OSC messages from both sized layouts.
 
 ## Video Demo
@@ -25,29 +25,29 @@ respond to incoming OSC messages from both sized layouts.
 
 ## Features
 
-Some of the main features of the \`teleop_handler\`. These features may
+Some of the main features of the `teleop_handler`. These features may
 be seen in the above YouTube video.
 
--   Control \"Master\"
--   When the node starts, all devices are \"reset\" to a default status
+-   Control "Master"
+-   When the node starts, all devices are "reset" to a default status
     (joysticks center on screen, control button deselects.
--   When a client touches the \"Control\" button in the center of the
+-   When a client touches the "Control" button in the center of the
     screen, then control privileges are set to that device, and all
     other devices are notified of the new master client.
--   If the client closes, or the tabpage switches, then \"master\"
+-   If the client closes, or the tabpage switches, then "master"
     status will be lost.
 -   Display sync
--   All active clients (for a discussion of what constitutes \"active\",
+-   All active clients (for a discussion of what constitutes "active",
     check the [touchosc_bridge](touchosc_bridge) documentation) will
     synchronize their displays to the master.
 
 ## Configuration
 
 Example launch and configuration files are included for the
-\`teleop_handler\` in it\'s package directory. Also, an example
-\`teleop.yaml\` file is included below. This file should be loaded to
+`teleop_handler` in it's package directory. Also, an example
+`teleop.yaml` file is included below. This file should be loaded to
 the [Parameter Server](Parameter Server) using your configured
-\`.launch\` file.
+`.launch` file.
 
 ```
 teleop:

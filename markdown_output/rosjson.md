@@ -15,4 +15,4 @@ implementation, but it is currently in high design flux.
 No further features are planned for the ROS JSON library as JSON itself
 is just a data representation. Python 2.6 has a json module that would
 simplify the existing code and make it more robust, but as the current
-package is \< 50 lines of Python, there\'s not much to improve upon.
+package is < 50 lines of Python, there's not much to improve upon.

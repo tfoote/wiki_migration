@@ -194,7 +194,7 @@ Swarm s = Swarm(1);  //create a swarm s with id 1
 #### neighbors foreach function
 
 foreach function perform a function that has no return value on each
-robot\'s data
+robot's data
 
 ```
 Swarm s = Swarm(1);  //create a swarm s with id 1
@@ -202,8 +202,8 @@ Swarm s = Swarm(1);  //create a swarm s with id 1
 
 #### neighbors map function
 
-map function perform a function that has a return value on each robot\'s
-data. generating a new Neighbors structure. Key is robot\'s id and value
+map function perform a function that has a return value on each robot's
+data. generating a new Neighbors structure. Key is robot's id and value
 is the new data after transforming.
 
 ```
@@ -294,7 +294,7 @@ int id=s.id();
 
 #### create a Neighbor Communication
 
-#### broadcast a \<key, value\> tuple
+#### broadcast a <key, value> tuple
 
 #### listen to a key, execute the corresponding callback
 

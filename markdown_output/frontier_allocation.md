@@ -11,7 +11,7 @@ random frontier and nearest frontier
 More informations:
 
 -   Maintainer status: developed
--   Maintainer: Xuan Sang LE: \< xsang.le AT gmail DOT com\>
+-   Maintainer: Xuan Sang LE: < xsang.le AT gmail DOT com>
 -   Licence: MIT
 -   Author site: [ lxsang.me ]( https://lxsang.me)
 -   Source: [ Github ]( https://github.com/lxsang/ROS-packages )

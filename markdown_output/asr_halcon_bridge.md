@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -7,7 +7,7 @@ and images between ROS and
 [HALCON](http://www.mvtec.com/products/halcon/) specific data
 structures.
 
-![\|width=\"600\",height=\"299\"](attachment:halcon_bridge_overview.png)
+![\|width="600",height="299"](attachment:halcon_bridge_overview.png)
 
 ## Functionality
 
@@ -34,7 +34,7 @@ data types has not changed (build tests have been conducted with version
 12 as well).
 
 The environment variables *HALCONROOT* and *HALCONARCH* need to be set
-correctly, otherwise cmake won\'t be able to find your HALCON
+correctly, otherwise cmake won't be able to find your HALCON
 installation. Usually this should be the case if you have followed the
 installation guide of HALCON.
 

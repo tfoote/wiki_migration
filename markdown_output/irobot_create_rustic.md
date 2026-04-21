@@ -1,13 +1,13 @@
 The Create platform itself outputs state information from on-board
 sensors including odometers, bump sensors, cliff sensors, and battery
 statistics. It can also receive differential drive commands that move
-the robot. The \`irobot_create_cu\` and \`irobot_create_rustic\` ROS
+the robot. The `irobot_create_cu` and `irobot_create_rustic` ROS
 nodes are responsible for linking the create with the rest of the
 system. Together, they read state information from the Create and then
-periodically publish it to the rest of the system. \`irobot_create_cu\`
+periodically publish it to the rest of the system. `irobot_create_cu`
 receives high-level drive commands and/or paths from the system, check
 them for validity, and then sends the necessary low-level commands to
-the robot via \`irobot_create\`.
+the robot via `irobot_create`.
 
 ------------------------------------------------------------------------
 

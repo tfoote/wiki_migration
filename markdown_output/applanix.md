@@ -25,12 +25,12 @@ Options:
 
 ### Examples
 
-Read the Applanix POS-LV, publishing \`gps\` and \`odom\` messages.
+Read the Applanix POS-LV, publishing `gps` and `odom` messages.
 ```
 $ rosrun applanix odometry
 ```
 
-Read previously captured Applanix packets from \`dump.pcap\` file.
+Read previously captured Applanix packets from `dump.pcap` file.
 ```
 $ rosrun applanix odometry -f dump.pcap
 ```

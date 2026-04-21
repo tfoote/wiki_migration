@@ -4,13 +4,13 @@ visp_hand2eye_calibration is a ROS package that computes extrinsic
 camera parameters : the constant transformation from the hand to the
 camera coordinates.
 
-Let\'s consider a camera attached to a robotic hand, as shown in the
+Let's consider a camera attached to a robotic hand, as shown in the
 following diagram: ![](attachment:calibrations.png)
 
 The interest of this package is to perform the hand to eye calibration
 part.
 
-To do so, two sets of transformations are fed to the \`calibrator\`
+To do so, two sets of transformations are fed to the `calibrator`
 node.
 
 -   a list of camera-to-object transformations
@@ -19,7 +19,7 @@ node.
 Once the node has enough transformations, it can estimate the
 camera-to-hand transformation which is the goal of the calibration.
 
-The package consists of a \`calibrator\` node and an experimental client
+The package consists of a `calibrator` node and an experimental client
 doing a sample calibration from a few poses.
 
 The experimental client is merely there for a quick demonstration of the
@@ -44,14 +44,14 @@ sudo apt-get install ros-$ROS_DISTRO-vision-visp
 
 ## Usage
 
-To run the \`calibrator\` node: ```
+To run the `calibrator` node: ```
 rosrun visp_hand2eye_calibration visp_hand2eye_calibration_calibrator
 ```
 
 ## Example
 
 An example client is shipped with this package. It feeds different
-transformations (camera-\>object and world-\>hand) to the calibrator
+transformations (camera->object and world->hand) to the calibrator
 which computes the relative transformation between the the camera and
 the hand.
 

@@ -2,7 +2,7 @@
 
 This package provides an implementation of a fast, interpolated global
 planner for navigation. This class adheres to the
-\`nav_core::BaseGlobalPlanner\` interface specified in the
+`nav_core::BaseGlobalPlanner` interface specified in the
 [nav_core](nav_core) package. It was built as a more flexible
 replacement to [navfn](navfn), which in turn is based on
 [NF1](http://cs.stanford.edu/group/manips/publications/pdfs/Brock_1999_ICRA.pdf).
@@ -15,21 +15,21 @@ All parameters default. ![](attachment:GlobalPlanner.png)
 
 ### Grid Path
 
-\`use_grid_path=True\` ![](attachment:GridPath.png) Path follows the
+`use_grid_path=True` ![](attachment:GridPath.png) Path follows the
 grid boundaries.
 
 ### Simple Potential Calculation
 
-\`use_quadratic=False\` ![](attachment:Nonquad.png) Slightly different
+`use_quadratic=False` ![](attachment:Nonquad.png) Slightly different
 calculation for the potential. Note that the original potential
 calculation from [navfn](navfn) is a quadratic approximation. Of what,
 the maintainer of this package has no idea.
 
 ### A\* Path
 
-\`use_dijkstra=False\` ![](attachment:AStar.png) Note that a lot less of
+`use_dijkstra=False` ![](attachment:AStar.png) Note that a lot less of
 the potential has been calculated (indicated by the colored areas). This
-is indeed faster than using Dijkstra\'s, but has the effect of not
+is indeed faster than using Dijkstra's, but has the effect of not
 necessarily producing the same paths. Another thing to note is that in
 this implementation of A\*, the potentials are computed using
 4-connected grid squares, while the path found by tracing the potential
@@ -38,10 +38,10 @@ gradient from the goal back to the start uses the same grid in an
 optimal in an 8-connected sense. (Also, no visited-state set is tracked
 while computing potentials, as in a more typical A\* implementation,
 because such is unnecessary for 4-connected grids). To see the
-differences between the behavior of Dijkstra\'s and the behavior of A\*,
+differences between the behavior of Dijkstra's and the behavior of A\*,
 consider the following example.
 
-#### Dijkstra\'s
+#### Dijkstra's
 
 ![](attachment:Dijkstra.png)
 
@@ -51,7 +51,7 @@ consider the following example.
 
 ### Old Navfn Behavior
 
-\`old_navfn_behavior=True\` For reproducing paths just like
+`old_navfn_behavior=True` For reproducing paths just like
 [NavFn](navfn) did. ![](attachment:OldNavFn.png)
 
 Note:
@@ -66,25 +66,25 @@ As a post-processing step, an orientation can be added to the points on
 the path. With use of the orientation_mode parameter (dynamic
 reconfigure), the following orientation modes can be set:
 
--   \`None=0\` (No orientations added except goal orientation)
--   \`Forward=1\` (Positive x axis points along path, except for the
+-   `None=0` (No orientations added except goal orientation)
+-   `Forward=1` (Positive x axis points along path, except for the
     goal orientation)
--   \`Interpolate=2\` (Orientations are a linear blend of start and goal
+-   `Interpolate=2` (Orientations are a linear blend of start and goal
     pose)
--   \`ForwardThenInterpolate=3\` (Forward orientation until last
+-   `ForwardThenInterpolate=3` (Forward orientation until last
     straightaway, then a linear blend until the goal pose)
--   \`Backward=4\` (Negative x axis points along the path, except for
+-   `Backward=4` (Negative x axis points along the path, except for
     the goal orientation)
--   \`Leftward=5\` (Positive y axis points along the path, except for
+-   `Leftward=5` (Positive y axis points along the path, except for
     the goal orientation)
--   \`Rightward=6\` (Negative y axis points along the path, except for
+-   `Rightward=6` (Negative y axis points along the path, except for
     the goal orientation)
 
-The orientation of point i is calculated using the positions of \`i -
-orientation_window_size\` and \`i + orientation_window_size\`. The
+The orientation of point i is calculated using the positions of `i -
+orientation_window_size` and `i + orientation_window_size`. The
 window size can be altered to smoothen the orientation calculation.
 
-\<\<Youtube(NQ2z90i5V2I&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=NQ2z90i5V2I&rel=0)
 
 ## ROS API
 

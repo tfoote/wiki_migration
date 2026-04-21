@@ -4,7 +4,7 @@ See also [rosserial/Overview](rosserial/Overview).
 
 This package contains all necessary extensions on
 [rosserial_client](rosserial_client) to bring two Tiva C Launchpad
-boards from [TI\'s Launchpad ecosystem](http://www.ti.com/launchpad) to
+boards from [TI's Launchpad ecosystem](http://www.ti.com/launchpad) to
 ROS. All boards can use both debug USB and device USB to communicate
 with rosserial.
 
@@ -14,9 +14,9 @@ with rosserial.
 Due to changes in USB library of !TivaWare. **Compatible with
 SW-TM4C-2.1.3.156 onwards**
 
-This package contains the prepares the required libraries for Energia\'s
-IDE and also prepares a build configuration for \`catkin\` packages
-based on \`arm-none-eabi\` GNU compiler toolchain and TI\'s !TivaWare
+This package contains the prepares the required libraries for Energia's
+IDE and also prepares a build configuration for `catkin` packages
+based on `arm-none-eabi` GNU compiler toolchain and TI's !TivaWare
 libraries.
 
 **Repositories:**
@@ -38,9 +38,9 @@ with your ROS computer. On your application, you must pay attention not
 to disable or change the peripherals configuration.
 
 The !SystemTick interrupt service must be available for
-\`rosserial_tivac\` to use, so it can keep the execution time.
+`rosserial_tivac` to use, so it can keep the execution time.
 
-\`rosserial_tivac\` will communicate either through UART0 or USB0:
+`rosserial_tivac` will communicate either through UART0 or USB0:
 
 -   **UART0** which is connected directly to the ICDI device of the
     board, available as USB serial converter on the debug USB port.
@@ -56,21 +56,21 @@ line.
 ## CMakeLists.txt (not for Energia projects)
 
 After going through the [Tutorials](rosserial_tivac/Tutorials) you
-should have understood that each project requires a \`CMakeLists.txt\`
-which calls the function \`generate_tivac_firmware\` to prepare the
+should have understood that each project requires a `CMakeLists.txt`
+which calls the function `generate_tivac_firmware` to prepare the
 build files.
 
 This function requires two environment variables:
 
--   \`TIVA_WARE_PATH\` - TI !TivaWare SDK path
--   \`TIVA_FLASH_EXECUTABLE\` - lm4flash tool executable
+-   `TIVA_WARE_PATH` - TI !TivaWare SDK path
+-   `TIVA_FLASH_EXECUTABLE` - lm4flash tool executable
 
 And takes the arguments:
 
 -   USB - Optional argument, if you wish to have rosserial over USB CDC
     device.
 -   DEVICE_SILICON - Optional argument. e.g.
-    \`\`\`TARGET_IS_TM4C123_RB1\`\`\` Defines the specific chip\'s
+    ```TARGET_IS_TM4C123_RB1``` Defines the specific chip's
     silicon revision.
 -   DEVICE_SERIAL - Optional argument. Creates flash target for specific
     device.
@@ -82,13 +82,13 @@ And takes the arguments:
 
 And creates custom targets for project:
 
--   \<parent_catkin_project\>\_\${CMAKE_PROJECT_NAME}.axf - Build binary
+-   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}.axf - Build binary
     file
--   \<parent_catkin_project\>\_\${CMAKE_PROJECT_NAME}\_flash - Flashes
+-   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_flash - Flashes
     board with binary file
--   \<parent_catkin_project\>\_\${CMAKE_PROJECT_NAME}\_size - Prints out
+-   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_size - Prints out
     the size of sections and totals of binary file
--   \<parent_catkin_project\>\_\${CMAKE_PROJECT_NAME}\_dump - Prints
+-   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_dump - Prints
     table of symbols and such
 
 Example: ```

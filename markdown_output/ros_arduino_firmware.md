@@ -12,7 +12,7 @@ supported:
 -   [Pololu MC33926 dual motor shield](http://www.pololu.com/catalog/product/2502=3)
 -   [Robogaia Mega Encoder shield](http://www.robogaia.com/two-axis-encoder-counter-mega-shield-version-2.html)
 
-If you don\'t have the hardware required for base control, you can still
+If you don't have the hardware required for base control, you can still
 use the library and the rest of the ROS Arduino packages for reading
 sensors and controlling PWM servos by undefining the USE_BASE macro in
 the source. See the README on the GitHub repository for a more detailed

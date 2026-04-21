@@ -1,28 +1,28 @@
-. ![\|height=\"400px\"](attachment:GimbalHeader.jpg)
+. ![\|height="400px"](attachment:GimbalHeader.jpg)
 
 ## Overview
 
 This is probably the worst way to control the DJI Ronin gimbal, but it
-works great and **nowadays that\'s the only way to control it**.
+works great and **nowadays that's the only way to control it**.
 
 ## About
 
-Part of a research \'Autonomous Robot Based On Acoustic Signals\' - by
+Part of a research 'Autonomous Robot Based On Acoustic Signals' - by
 Yossi Yovel, Gabor Kosa, Itamar Eliakim.
 
 Robotics Lab, Tel Aviv University, Israel.
 
-Based on the \'Komodo\' platform made by Robotican.
+Based on the 'Komodo' platform made by Robotican.
 
 ## HOW? WHY?
 
 DJI Ronin, 3 Axis gimbal, DJI decided to release their device without
 any API for developers, which makes it absolutely useless.
 
-\_\_The Easy Way\_\_ - Just buy gimbal which is based on
+__The Easy Way__ - Just buy gimbal which is based on
 Basecam/Alexmos, they DO have Serial API.
 
-\_\_The Hard Way\_\_ - Creating a server which runs the DJI Ronin app on
+__The Hard Way__ - Creating a server which runs the DJI Ronin app on
 android and continuously transmits screen capture of the app to a server
 on the robot through ADB(using sji), using KNN to recognize the digits
 from the screen capture and publish Pan, Tilt, Roll as custom ROS
@@ -34,7 +34,7 @@ rosservice call.
 
 In my case, The gimbal is mounted on the front of robot aiming the
 sensing unit at different directions, i already had the ronin so instead
-of buying a new gimbal i looked for a \'creative\' way to control it.
+of buying a new gimbal i looked for a 'creative' way to control it.
 
 ## Hardware
 
@@ -56,7 +56,7 @@ link:
 
 Thanks to Learning about Electronics
 
-. ![\|height=\"400px\"](attachment:PotCircuit.png)
+. ![\|height="400px"](attachment:PotCircuit.png)
 
 Instead of LED at the diagram you should connect one of the axis from
 the DJI remote pan/tilt/roll potentiometer. After creating the circuit
@@ -86,12 +86,12 @@ in DJIRonin_Control.py.
 
 ## Examples
 
-![\|height=\"400px\"](attachment:DigitRecognition.png)
+![\|height="400px"](attachment:DigitRecognition.png)
 
 . Image processing using OpenCV
 
-. ![\|height=\"300px\"](attachment:Gimbal.gif) . DJI Ronin controlled by
-dji_ronin node . ![\|height=\"200px\"](attachment:RCRemote.png) .
+. ![\|height="300px"](attachment:Gimbal.gif) . DJI Ronin controlled by
+dji_ronin node . ![\|height="200px"](attachment:RCRemote.png) .
 Arduino RC Circuit
 
 ### ROS Interface
@@ -115,7 +115,7 @@ The package will do most of the things for you, download DJI Ronin App
 to your android mobile, connect it through usb.
 
 Running the launch file will open the app on your mobile, just press
-\'MOTORS\'.
+'MOTORS'.
 
 ### ROS Interface
 

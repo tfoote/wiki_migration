@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -8,7 +8,7 @@ KIT. The two environments (mild and dome) contained in this package
 refer to the two lab-rooms the shown models are currently placed in.
 
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<tableclass=\"twikiTable\"rowclass=\"twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0\"#ffffff class=\"twikiTableCol0 twikiFirstCol twikiLast\" style=\"vertical-align:top\"\>*Mild environment <example://> ![\|width=\"350\",height=\"239\"](attachment:dome_viz.png) \|\|\<#ffffff class=\"twikiTableCol1 twikiLastCol twikiLast\" style=\"vertical-align:top\"\>*Dome environment <example://> ![\|width=\"350\",height=\"239\"](attachment:vis_server_mild_rviz.png)   
+     <tableclass="twikiTable"rowclass="twikiTableOdd twikiTableRowdataBgSorted0 twikiTableRowdataBg0"#ffffff class="twikiTableCol0 twikiFirstCol twikiLast" style="vertical-align:top">*Mild environment <example://> ![\|width="350",height="239"](attachment:dome_viz.png) \|\|<#ffffff class="twikiTableCol1 twikiLastCol twikiLast" style="vertical-align:top">*Dome environment <example://> ![\|width="350",height="239"](attachment:vis_server_mild_rviz.png)   
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Functionality
@@ -76,25 +76,25 @@ default.
 You can add or delete objects from the environments by altering those
 files or you can use your own file if it has the same layout as the ones
 provided. To be valid the file needs to have a root node called
-\"markers\", the actual objects are child nodes of this node and are
-called \"marker\". Each marker node needs to have the following
+"markers", the actual objects are child nodes of this node and are
+called "marker". Each marker node needs to have the following
 attributes:
 
--   *name*: The name of the object (e.g. \"table\")
+-   *name*: The name of the object (e.g. "table")
 -   *scale*: Three scaling factors, one for each dimension, stored as a
     comma separated string. The values of this attribute depend on the
-    scale of your mesh-model (e.g. \"0.1,0.1,0.1\")
+    scale of your mesh-model (e.g. "0.1,0.1,0.1")
 -   *mesh*: The path to a mesh-file which containes a 3D-model of the
     object. The format is the URI-form used by the resource_retriever of
     ROS (see
     [here](http://wiki.ros.org/rviz/DisplayTypes/Marker#Mesh_Resource_.28MESH_RESOURCE.3D10.29_.5B1.1.2B-.5D)).
     As all provided markers in the default xml-configs use models stored
     in the object_database-package this package is needed during runtime
-    or rviz won\'t be able to visualize them (e.g.
-    \"package:*asr_object_database/rsc/databases/environment/TableDome/TableDome.dae\")
+    or rviz won't be able to visualize them (e.g.
+    "package:*asr_object_database/rsc/databases/environment/TableDome/TableDome.dae")
     \* *use_mat*: If this is true and the mesh is of a type which
     supports embedded materials (such as COLLADA), the material defined
-    in that file will be used instead of a default color (e.g. \"1\")*
+    in that file will be used instead of a default color (e.g. "1")*
 
 The value of the marker node is the pose of the object relative to the*
 \\map* frame (stored as position_x, position_y, position_z, rotation_w,

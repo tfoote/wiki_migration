@@ -53,6 +53,6 @@ Example launch file:
 
 Note that the camera_self_filter node expects the robot urdf on the
 parameter server. If has not been loaded automatically (for instance
-when replaying a .bag file), set the \"robot_description\" parameter
-manually (e.g. run \"cat robot.urdf \| xargs rosparam set
-robot_description\").
+when replaying a .bag file), set the "robot_description" parameter
+manually (e.g. run "cat robot.urdf \| xargs rosparam set
+robot_description").

@@ -1,3 +1,3 @@
   -- ------------------------------------------------------------------------------------------------------ --
-     \<style=\"background-color:#ffff00; text-align: center;\" tablewidth=\"100%\"\>Todo : wiki tutorials   
+     <style="background-color:#ffff00; text-align: center;" tablewidth="100%">Todo : wiki tutorials   
   -- ------------------------------------------------------------------------------------------------------ --

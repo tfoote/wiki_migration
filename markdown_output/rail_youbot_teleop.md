@@ -1,8 +1,8 @@
 ## About
 
-The \`rail_youbot_teleop\` package contains a node that can be used to
+The `rail_youbot_teleop` package contains a node that can be used to
 teleoperate a Kuka youBot with a joystick. The node is responsible for
-converting \`sensor_msgs/Joy\` messages into \`geometry_msgs/Twist\`
+converting `sensor_msgs/Joy` messages into `geometry_msgs/Twist`
 messages. A launch file is also included to launch both the
 teleoperation node and the joy stick listener node.
 
@@ -27,12 +27,12 @@ node.0 {
 
 ## Installation
 
-Before installing the \`rail_youbot\` stack, be sure to install the
+Before installing the `rail_youbot` stack, be sure to install the
 necessary dependencies. Instructions on installing the various youBot
 packages can be found
 [in this tutorial](rail_youbot/Tutorials/AddingAUserAndInstallingTheirLocalDrivers).
 
-To install the \`rail_youbot\` stack, simply run the following commands
+To install the `rail_youbot` stack, simply run the following commands
 in your shell:
 
 ```shell
@@ -44,10 +44,10 @@ rosmake rail_youbot
 
 ### Startup
 
-The \`rail_youbot_teleop\` package contains a
-\`youbot_joy_teleop.launch\` that can be used to control your robot.
-This file launches an instance of the \`youbot_joy_teleop\` and
-\`joy_node\` nodes. To launch these nodes, the following command can be
+The `rail_youbot_teleop` package contains a
+`youbot_joy_teleop.launch` that can be used to control your robot.
+This file launches an instance of the `youbot_joy_teleop` and
+`joy_node` nodes. To launch these nodes, the following command can be
 used:
 
 ```
@@ -69,5 +69,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

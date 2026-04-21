@@ -1,5 +1,5 @@
   -- --------------------------------------- --
-     \<#FF0000\>*DEPRECATED* (Diamondback)   
+     <#FF0000>*DEPRECATED* (Diamondback)   
   -- --------------------------------------- --
 
 Please convert to using PointCloud2, alternatively you can checkout it

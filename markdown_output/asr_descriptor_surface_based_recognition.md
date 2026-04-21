@@ -1,10 +1,10 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 This package contains an object localization system that returns 6-DoF
 poses for textured objects in RGBD-data.
-![\|width=\"600\",height=\"248\"](attachment:descriptor_overview_eng.png)
+![\|width="600",height="248"](attachment:descriptor_overview_eng.png)
 
 ## Functionality
 
@@ -23,14 +23,14 @@ parameters) and it uses images of the object, taken from different
 orientations (we call them views), as references for the matching with
 the scene image (therefore a coarse orientation of the object can
 already be computed.\
-![\|width=\"600\",height=\"241\"](attachment:descriptor_2d_search_eng.png)\
+![\|width="600",height="241"](attachment:descriptor_2d_search_eng.png)\
 
 1\. Once a texture (view) of the searched object is found in the image,
 the point cloud is reduced with the diameter of the object at the
 corresponding location (this correspondence exists because of the
 registration of the camera image to the depth image). In the training
-phase the object\'s diameter was set and so was the location of the
-found view\'s center. As the matching returns a homography as a result
+phase the object's diameter was set and so was the location of the
+found view's center. As the matching returns a homography as a result
 which describes the transformation of the trained view into the scene
 image, it is possible to transform the set center point with this
 homography into the image. For the pixel which results from this
@@ -42,14 +42,14 @@ pixel location and the corresponding 3D-points are taken into account
 for the calculation of the median. Now the point cloud is reduced with
 the diameter of the object around this median point.\
 \
-*Transformation into the scene image (abstracted; view\'s center
+*Transformation into the scene image (abstracted; view's center
 depicted as cross; descriptor points depicted as red dots):*\
-![\|width=\"600\",height=\"187\"](attachment:descriptor_cloud_reduction.png)\
+![\|width="600",height="187"](attachment:descriptor_cloud_reduction.png)\
 \
 \
 *Cloud reduction:\
 *
-![\|width=\"600\",height=\"241\"](attachment:descriptor_2d_search_eng.png) 1.
+![\|width="600",height="241"](attachment:descriptor_2d_search_eng.png) 1.
 The reduced point cloud, which should only contain the object, now is
 used for a 3D matching with the trained object model (see
 [here](http://www.mvtec.com/doc/halcon/11/en/create_surface_model.html)
@@ -68,11 +68,11 @@ found and how it is transformed into the image we can approximate the
 orientation of the object).\
 \
 *Rotation-invariance (from left: no rotation, cylindrical, spherical):*\
-![\|width=\"600\",height=\"255\"](attachment:descriptor_rot_invariance.png)\
+![\|width="600",height="255"](attachment:descriptor_rot_invariance.png)\
 \
 *Geometrical view problem (both views on the left appear as the cloud on
 the right):*\
-![\|width=\"600\",height=\"417\"](attachment:descriptor_geom_view.png)\
+![\|width="600",height="417"](attachment:descriptor_geom_view.png)\
 1. The last step is optional and is used to add another validation layer
 to the recognition process. The textured mesh of the found object is
 rendered to an artificial image with the found pose. Now the 2D matching
@@ -82,7 +82,7 @@ artificial image, it can be checked whether the found pose is valid and
 can be returned.\
 \
 *Real scene image left, artificial one right:*\
-![\|width=\"600\",height=\"243\"](attachment:descriptor_pose_val.png)\
+![\|width="600",height="243"](attachment:descriptor_pose_val.png)\
 
 In addition to the object recognizer, the package offers a graphical
 training application which is used to add new objects to the list of
@@ -143,20 +143,20 @@ to add or remove objects to/from the list of recognizable ones.
     the point cloud the recognizer uses for each object after it was
     found in 2D (default:
     /asr_descriptor_surface_based_recognition/object_boxes)\
-    ![\|width=\"600\",height=\"243\"](attachment:descriptor_vis_boxes.png)
+    ![\|width="600",height="243"](attachment:descriptor_vis_boxes.png)
 -   *sensor_msgs/PointCloud2*: A visualization of the reduced point
     clouds the recognizer uses for the 3D recognition (one color for
     each object) (default:
     /asr_descriptor_surface_based_recognition/object_clouds)\
-    ![\|width=\"600\",height=\"246\"](attachment:descriptor_vis_cloud.png)
+    ![\|width="600",height="246"](attachment:descriptor_vis_cloud.png)
 -   *sensor_msgs/Image*: A visualization of the 2D recognition results\
-    ![\|width=\"600\",height=\"242\"](attachment:descriptor_vis_2d.png)
+    ![\|width="600",height="242"](attachment:descriptor_vis_2d.png)
 -   *asr_msgs/AsrObject*: The found objects as an !AsrObject-message
     which can be used by other packages and contains information like
     the name, pose etc. (default: /stereo/objects)
 -   *visualization_msgs/Marker*: A visualization of the found objects as
     meshes (default: /stereo/visualization_marker)\
-    ![\|width=\"600\",height=\"244\"](attachment:descriptor_results.png)
+    ![\|width="600",height="244"](attachment:descriptor_results.png)
 
 ### Parameters
 
@@ -230,11 +230,11 @@ Dynamic parameters:
 -   useVisualisationColor (boolean): Use a colorized image for the
     visualisation of the 2D recognition
 -   visualisationColorPointsRed (integer): Red component of the
-    visualized points\' color
+    visualized points' color
 -   visualisationColorPointsGreen (integer): Green component of the
-    visualized points\' color
+    visualized points' color
 -   visualisationColorPointsBlue (integer): Blue component of the
-    visualized points\' color
+    visualized points' color
 -   visualisationColorBoxRed (integer): Red component of the visualized
     bounding box color
 -   visualisationColorBoxGreen (integer): Green component of the
@@ -257,7 +257,7 @@ Dynamic parameters:
     points which were projected with the found projection matrix in the
     original image and the one in the rendered image
 -   aggressivePoseValidation (boolean): Discard a pose if the searched
-    view can\'t be found in the rendered image during pose validation
+    view can't be found in the rendered image during pose validation
     (e.g. because of the bad resolution of the rendered mesh model). If
     disabled, a pose is always set as valid when no view was found,
     otherwise it is set as invalid in that case

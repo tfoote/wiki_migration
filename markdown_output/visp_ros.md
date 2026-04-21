@@ -118,7 +118,7 @@ int main()
 ```
 
 It is also possible to subscribe to a jpeg topic named for example
-\"/camera/image_jpg\" using the following code: ```
+"/camera/image_jpg" using the following code: ```
 ...
   vpROSGrabber g; 
   g.setImageTopic("/camera/image_jpg"); // Name of the compressed topic
@@ -201,7 +201,7 @@ performed with a simulated Franka robot.
 
 There is a tutorial that explains how to start with this simulator to
 implement an image-based or position-based visual-servoing, or also an
-impedance controller, but right now this tutorial doesn\'t appear in
+impedance controller, but right now this tutorial doesn't appear in
 visp_ros
 [C++ API documentation](http://docs.ros.org/noetic/api/visp_ros/html/index.html).
 To generate this tutorial from source code we suggest to

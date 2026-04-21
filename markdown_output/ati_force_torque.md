@@ -236,4 +236,4 @@ Please check sensor_configuration.yaml to see them.
 
 ## Issues
 
-\<\<GitHubIssues(iirob/ati_force_torque)\>\>
+<<GitHubIssues(iirob/ati_force_torque)>>

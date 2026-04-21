@@ -51,12 +51,12 @@ it will need to be loaded from source.
 [here](http://developer.android.com/sdk/installing/installing-adt.html). 1.
 Set your workspace to be the google_glass_driver/android directory. 1.
 Import the RobotManager project by going to
-File-\>Import-\>General-\>Existing Projects Into
-Workspace-\>RobotManager 1. Connect Glass through USB and the press the
+File->Import->General->Existing Projects Into
+Workspace->RobotManager 1. Connect Glass through USB and the press the
 green circle with a white arrow at the top of the ADT Eclipse screen.
-The tooltip should say \"Run RobotManager\". This should load the
+The tooltip should say "Run RobotManager". This should load the
 application onto your Glass. 1. You may want to screencast your Glass to
-your computer or get Log output. To do this, you must enable Glass\'s
+your computer or get Log output. To do this, you must enable Glass's
 Debug mode. Follow
 [these instructions](http://stackoverflow.com/questions/21542577/how-can-we-enable-debugging-mode-on-google-glass-for-testing-an-android-app-on-g)
 to do so.
@@ -69,8 +69,8 @@ commands in a limited set and finds a closest match within tolerance.
 The limited set changes based on the context of the command. For
 example, on startup Glass needs to know which Bluetooth device it should
 connect to. No other commands can be given if a Bluetooth connection has
-not been established. Because of this, Glass only listens for \"Connect
-to \...\" commands.
+not been established. Because of this, Glass only listens for "Connect
+to \..." commands.
 
 The set of all possible commands Glass can understand is called the
 Vocabulary. The limited sets of commands, which may or may not be

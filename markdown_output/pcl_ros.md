@@ -6,7 +6,7 @@ and C++ interfaces.
 
 ## ROS nodelets
 
-\`pcl_ros\` includes several
+`pcl_ros` includes several
 [PCL filters](http://www.ros.org/wiki/pcl_ros/Filters) packaged as ROS
 nodelets. These links provide details for using those interfaces:
 
@@ -19,30 +19,30 @@ nodelets. These links provide details for using those interfaces:
 
 ## ROS C++ interface
 
-\`pcl_ros\` extends the ROS [C++ client library](roscpp) to support
+`pcl_ros` extends the ROS [C++ client library](roscpp) to support
 message passing with [PCL](pcl) native data types. Simply add the
 following include to your ROS node source code: ```
 #include <pcl_ros/point_cloud.h>
 ```
 
 This header allows you to publish and subscribe
-[pcl::PointCloud\<T\>](http://www.ros.org/doc/api/pcl/html/classpcl_1_1PointCloud.html)
+[pcl::PointCloud<T>](http://www.ros.org/doc/api/pcl/html/classpcl_1_1PointCloud.html)
 objects as ROS messages. These appear to ROS as
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages, offering seamless
+<<MsgLink(sensor_msgs/PointCloud2)>> messages, offering seamless
 interoperability with non-PCL-using ROS nodes. For example, you may
-publish a \`pcl::PointCloud\<T\>\` in one of your nodes and visualize it
+publish a `pcl::PointCloud<T>` in one of your nodes and visualize it
 in [rviz](rviz) using a
 [Point Cloud2 display](rviz/DisplayTypes/PointCloud). It works by
 hooking into the
 [roscpp serialization](roscpp/Overview/MessagesSerializationAndAdaptingTypes)
 infrastructure.
 
-The old format \<\<MsgLink(sensor_msgs/PointCloud)\>\> is not supported
+The old format <<MsgLink(sensor_msgs/PointCloud)>> is not supported
 in PCL.
 
 ### Publishing point clouds
 
-You may publish PCL point clouds using the standard \`ros::Publisher\`:
+You may publish PCL point clouds using the standard `ros::Publisher`:
 
 ```cplusplus
 #include <ros/ros.h>
@@ -77,7 +77,7 @@ int main(int argc, char** argv)
 ### Subscribing to point clouds
 
 You may likewise subscribe to PCL point clouds using the standard
-\`ros::Subscriber\`:
+`ros::Subscriber`:
 
 ```cplusplus
 #include <ros/ros.h>
@@ -121,15 +121,15 @@ $ rosrun pcl_ros bag_to_pcd <input_file.bag> <topic> <output_directory>
 
 Where:
 
--   \<input_file.bag\> is the bag file name to read.
--   \<topic\> is the topic in the bag file containing messages to save.
--   \<output_directory\> is the directory on disk in which to create PCD
+-   <input_file.bag> is the bag file name to read.
+-   <topic> is the topic in the bag file containing messages to save.
+-   <output_directory> is the directory on disk in which to create PCD
     files from the point cloud messages.
 
 #### Example
 
-Read messages from the \`/laser_tilt_cloud\` topic in \`data.bag\`,
-saving a PCD file for each message into the \`./pointclouds\`
+Read messages from the `/laser_tilt_cloud` topic in `data.bag`,
+saving a PCD file for each message into the `./pointclouds`
 subdirectory.
 
 ```
@@ -152,7 +152,7 @@ pub {
 $ rosrun pcl_ros convert_pcd_to_image <cloud.pcd>
 ```
 
-Read the point cloud in \<cloud.pcd\> and publish it in ROS image
+Read the point cloud in <cloud.pcd> and publish it in ROS image
 messages at 5Hz. ```clearsilver
 node.0 {
 name=convert_pointcloud_to_image
@@ -172,8 +172,8 @@ pub {
 
 #### Examples
 
-Subscribe to the \`/my_cloud\` topic and republish each message on the
-\`/my_image\` topic.
+Subscribe to the `/my_cloud` topic and republish each message on the
+`/my_image` topic.
 
 ```
 $ rosrun pcl_ros convert_pointcloud_to_image input:=/my_cloud output:=/my_image
@@ -273,15 +273,15 @@ int main(int argc, char** argv)
 
 Where:
 
--   \<file.pcd\> is the (required) file name to read.
--   \<interval\> is the (optional) number of seconds to sleep between
-    messages. If \<interval\> is zero or not specified the message is
+-   <file.pcd> is the (required) file name to read.
+-   <interval> is the (optional) number of seconds to sleep between
+    messages. If <interval> is zero or not specified the message is
     published once.
 
 #### Examples
 
-Publish the contents of \`point_cloud_file.pcd\` once in the
-\`/base_link\` frame of reference.
+Publish the contents of `point_cloud_file.pcd` once in the
+`/base_link` frame of reference.
 
 ```cplusplus
 #include <ros/ros.h>
@@ -313,8 +313,8 @@ int main(int argc, char** argv)
 }
 ```3
 
-Publish the contents of \`cloud_file.pcd\` approximately ten times a
-second in the \`/odom\` frame of reference.
+Publish the contents of `cloud_file.pcd` approximately ten times a
+second in the `/odom` frame of reference.
 
 ```cplusplus
 #include <ros/ros.h>
@@ -376,9 +376,9 @@ int main(int argc, char** argv)
 
 #### Examples
 
-Subscribe to the \`/velodyne/pointcloud2\` topic and save each message
+Subscribe to the `/velodyne/pointcloud2` topic and save each message
 in the current directory. File names look like
-\`1285627014.833100319.pcd\`, the exact names depending on the message
+`1285627014.833100319.pcd`, the exact names depending on the message
 time stamps.
 
 ```cplusplus
@@ -411,8 +411,8 @@ int main(int argc, char** argv)
 }
 ```6
 
-Set the \`prefix\` parameter in the current namespace, save messages to
-files with names like \`/tmp/pcd/vel_1285627015.132700443.pcd\`.
+Set the `prefix` parameter in the current namespace, save messages to
+files with names like `/tmp/pcd/vel_1285627015.132700443.pcd`.
 
 ```cplusplus
 #include <ros/ros.h>

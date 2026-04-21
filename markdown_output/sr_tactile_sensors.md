@@ -10,7 +10,7 @@ sr_tactile_sensors come in three flavours: dummy sensors, simulated
 sensors and real sensors.
 
 -   The **dummy** sensors are useful to check the main steps of your
-    algorithm, they\'re very lightweight and don\'t do much except
+    algorithm, they're very lightweight and don't do much except
     return a pressure value for each sensors. The output value of those
     **dummy** sensors is just computed from the joint positions of the
     finger joints.
@@ -23,7 +23,7 @@ sensors and real sensors.
     information, have a look at this
     [tutorial](sr_tactile_sensors/Tutorials/Real).
 
-There\'s a good example on how to use the data coming from the tactile
+There's a good example on how to use the data coming from the tactile
 sensors in the
 [Fancy Touch Demo example](http://bazaar.launchpad.net/~shadowrobot/sr-ros-interface/trunk/view/head:/shadow_robot/sr_hand/examples/fancy_touch_demo.py)
 
@@ -46,11 +46,11 @@ Here is a list of the published topics:
 ### Parameters
 
 A parameter file containing the sensor names to use is loaded into the
-parameter server. By default it\'s in
+parameter server. By default it's in
 sr_tactile_sensors/param/sensor_names.yaml. This file contains:
 
 -   **display_names**: the names which will be used in the published
-    topics (e.g. \"ff\")
+    topics (e.g. "ff")
 -   **sensor_touch_names**: the names under which the touch sensors are
     available in the robot (e.g. FF_Touch).
 

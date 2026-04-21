@@ -82,5 +82,5 @@ To run the head pose estimator with a Kinect sensor, first start up the
 openni driver from [openni_launch](openni_launch).
 
 estimator.launch runs the estimator with default parameters. Assuming
-the Kinect camera namespace is \`camera\`, estimator.launch can be run
-with \`roslaunch head_pose_estimation estimator.launch\`.
+the Kinect camera namespace is `camera`, estimator.launch can be run
+with `roslaunch head_pose_estimation estimator.launch`.

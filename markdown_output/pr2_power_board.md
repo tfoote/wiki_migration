@@ -1,11 +1,11 @@
 ## Overview
 
-\`power_node2\` controls with the PR2 power board. The API below is for
+`power_node2` controls with the PR2 power board. The API below is for
 informational purposes only; it is not intended for use by anything
 other than [power_monitor](power_monitor), which is where you should
 look for power data.
 
-The \`power_node2\` runs on the PR2 and controls the PR2 power board.
+The `power_node2` runs on the PR2 and controls the PR2 power board.
 The node regulates the main fan speed of the PR2 based on battery and
 power board temperature.
 

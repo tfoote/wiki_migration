@@ -4,59 +4,59 @@
 
 At the moment, the following model classes are implemented:
 
--   \`rigid\`: a rigid model, describes a static link (with Gaussian
+-   `rigid`: a rigid model, describes a static link (with Gaussian
     noise)
--   \`prismatic\`: a prismatic joint model, describes for example a
+-   `prismatic`: a prismatic joint model, describes for example a
     drawer or a sliding cabinet door
--   \`rotational\`: a rotary joint model, describes for example a door
+-   `rotational`: a rotary joint model, describes for example a door
     or a door handle
--   \`pca_gp\`: a non-parametric model, capable of describing many other
+-   `pca_gp`: a non-parametric model, capable of describing many other
     articulation models, like garage doors, or combinations of sliding
     and rotary motion.
 
-All nodes in this package query the ROS parameter \`filter_models\`,
+All nodes in this package query the ROS parameter `filter_models`,
 which names the model classes that will be considered during model
-selection. The default is \`rigid prismatic rotational\`. Globally, all
-model classes accept the parameters \`sigma_position\` and
-\`sigma_orientation\`, that define the properties of the Gaussian noise
+selection. The default is `rigid prismatic rotational`. Globally, all
+model classes accept the parameters `sigma_position` and
+`sigma_orientation`, that define the properties of the Gaussian noise
 process.
 
 ### Model Parameters
 
 The model estimators fit the models to the data, and store the found
-parameters in the \`ModelMsg::params\` vector.
+parameters in the `ModelMsg::params` vector.
 
-The parameters of the \`rigid\` model are:
+The parameters of the `rigid` model are:
 
--   \`rigid_position\[3\]\`, gives the estimated position of the rigid
+-   `rigid_position\[3\]`, gives the estimated position of the rigid
     object.
--   \`rigid_orientation\[4\]\`, gives the estimated orientation of the
+-   `rigid_orientation\[4\]`, gives the estimated orientation of the
     rigid object.
--   \`rigid_width\`, gives the estimated width of the rigid object (only
-    if a \`width\` channel is present in \`ModelMsg::track.channels\`).
--   \`rigid_height\`, gives the estimated height of the rigid object
-    (only if a \`height\` channel is present in
-    \`ModelMsg::track.channels\`).
+-   `rigid_width`, gives the estimated width of the rigid object (only
+    if a `width` channel is present in `ModelMsg::track.channels`).
+-   `rigid_height`, gives the estimated height of the rigid object
+    (only if a `height` channel is present in
+    `ModelMsg::track.channels`).
 
-The parameters of the \`prismatic\` model are:
+The parameters of the `prismatic` model are:
 
--   \`rigid_position\[3\]\`, gives the average position of the
-    articulated object (inherited from the \`rigid\` model)
--   \`rigid_orientation\[4\]\`, gives the average orientation of the
-    articulated object (inherited from the \`rigid\` model)
--   \`prismatic_dir\[3\]\`, gives the line direction of the prismatic
+-   `rigid_position\[3\]`, gives the average position of the
+    articulated object (inherited from the `rigid` model)
+-   `rigid_orientation\[4\]`, gives the average orientation of the
+    articulated object (inherited from the `rigid` model)
+-   `prismatic_dir\[3\]`, gives the line direction of the prismatic
     joint
 
-The parameters of the \`rotational\` model are:
+The parameters of the `rotational` model are:
 
--   \`rot_center\[3\]\`, points to the rotational center of the
+-   `rot_center\[3\]`, points to the rotational center of the
     rotational joint
--   \`rot_axis\[4\]\`, gives the rotational axis of the rotational joint
--   \`rot_radius\`, gives the radius of the rotational joint
--   \`rot_orientation\[4\]\`, gives the orientation of the articulated
+-   `rot_axis\[4\]`, gives the rotational axis of the rotational joint
+-   `rot_radius`, gives the radius of the rotational joint
+-   `rot_orientation\[4\]`, gives the orientation of the articulated
     object
 
-The \`pca_gp\` model is parameter-free, but requires the data points of
+The `pca_gp` model is parameter-free, but requires the data points of
 the trajectory to make predictions.
 
 ## Nodes
@@ -251,4 +251,4 @@ on the homepage of
 ## Report a Bug
 
 If you run into any problems, please feel free to contact Juergen Sturm
-\<juergen.sturm@in.tum.de\>.
+<juergen.sturm@in.tum.de>.

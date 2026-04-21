@@ -17,7 +17,7 @@ $ sudo apt install ros-$ROS_DISTRO-bota-driver
 
 ### Installing from Source
 
-In order to install the \`bota_driver\` package from source, you need to
+In order to install the `bota_driver` package from source, you need to
 have the following dependencies:
 
 #### Dependencies
@@ -27,11 +27,11 @@ have the following dependencies:
 -   [soem](https://github.com/mgruhler/soem)
 
 **Note:** The [soem](http://wiki.ros.org/soem) dependency is released in
-ROS, so it\'s a binary dependency for a source installation.
+ROS, so it's a binary dependency for a source installation.
 
 #### Fetching the code
 
-To build the \`bota_driver\` from source, clone the latest version from
+To build the `bota_driver` from source, clone the latest version from
 the source code repository into your catkin workspace:
 ```
 $ cd catkin_workspace/src
@@ -49,15 +49,15 @@ $ cd catkin_workspace && rosdep update && rosdep install --from-path src --ignor
 
 Compile the package using:
 
-1\. The \`catkin_tools\` package:
+1\. The `catkin_tools` package:
 
 ```
 $ cd catkin_workspace
 $ catkin build bota_driver
 ```
 
-2\. If you don\'t have the \`catkin_tools\` package, you can still build
-from source with \`catkin_make\`:
+2\. If you don't have the `catkin_tools` package, you can still build
+from source with `catkin_make`:
 
 ```
 $ cd catkin_workspace
@@ -66,7 +66,7 @@ $ catkin_make --only-pkg-with-deps bota_driver
 # catkin_make -DCATKIN_WHITELIST_PACKAGES=""
 ```
 
-3\. Finally, you can build from source with \`catkin_make_isolated\`.
+3\. Finally, you can build from source with `catkin_make_isolated`.
 The only difference is that each package will be processed sequentially:
 
 ```
@@ -76,39 +76,39 @@ $ catkin_make_isolated --pkg bota_driver
 
 ## Packages
 
-**\*\`rokubimini\`**: The core C++ library to interface one or multiple
+**\*`rokubimini`**: The core C++ library to interface one or multiple
 rokubimini devices. Contains abstract interfaces to start the
 communication.
 
-**\*\`rokubimini_ethercat\`**: The ethercat implementation of
+**\*`rokubimini_ethercat`**: The ethercat implementation of
 rokubimini.
 
-**\*\`rokubimini_serial\`**: The serial implementation of rokubimini.
+**\*`rokubimini_serial`**: The serial implementation of rokubimini.
 
-**\*\`rokubimini_manager\`**: The manager of multiple rokubiminis,
+**\*`rokubimini_manager`**: The manager of multiple rokubiminis,
 independently of their implementation (ethercat or serial).
 
-**\*\`rokubimini_bus_manager\`**: An abstract class for managing a bus.
+**\*`rokubimini_bus_manager`**: An abstract class for managing a bus.
 
-**\*\`rokubimini_factory\`**: The factory that creates each
-implementation based on the configuration file \`setup.yaml\`.
+**\*`rokubimini_factory`**: The factory that creates each
+implementation based on the configuration file `setup.yaml`.
 
-**\*\`bota_device_driver\`**: Contains a ROS node that communicates with
+**\*`bota_device_driver`**: Contains a ROS node that communicates with
 a manager that handles one or multiple rokubiminis (depends on the
-config file \`setup.yaml\`). This package contains config files
-\`config/setup.yaml\` and \`config/rokubimini_sensor.yaml\` to configure
+config file `setup.yaml`). This package contains config files
+`config/setup.yaml` and `config/rokubimini_sensor.yaml` to configure
 the communication and the sensor itself.
 
-**\*\`bota_node\`**: ROS node wrapper with some convenience functions
-using **\`bota_worker\`**.
+**\*`bota_node`**: ROS node wrapper with some convenience functions
+using **`bota_worker`**.
 
-**\*\`bota_worker\`**: High resolution and threaded version of the ROS
+**\*`bota_worker`**: High resolution and threaded version of the ROS
 rate class.
 
-**\*\`bota_signal_handler\`**: Contains a static signal handling helper
+**\*`bota_signal_handler`**: Contains a static signal handling helper
 class.
 
-**\*\`rokubimini_msgs\`**: Contains the definitions of the ROS messages
+**\*`rokubimini_msgs`**: Contains the definitions of the ROS messages
 and services used for communication over ROS.
 
 ## Nodes
@@ -158,42 +158,42 @@ param {
 
 ### Configuration Parameters
 
-The following parameters can be set in the \`setup.yaml\`:
+The following parameters can be set in the `setup.yaml`:
 
--   \`name\`: The name of the rokubimini devices. Needed to handle
-    multiple devices on the master side. **Note:** The \`\<name\>\` in
+-   `name`: The name of the rokubimini devices. Needed to handle
+    multiple devices on the master side. **Note:** The `<name>` in
     the published topics is taken from this configuration parameter.
--   \`configuration_file\`: The relative path to the configuration file
+-   `configuration_file`: The relative path to the configuration file
     of the sensor
--   \`product_code\`: The product code of each device.
+-   `product_code`: The product code of each device.
 -   For the ethercat devices:
--   \`ethercat_bus\`: The ethercat bus containing the sensor. Is the
+-   `ethercat_bus`: The ethercat bus containing the sensor. Is the
     ethernet adapter name on which the sensor is connected, as indicated
-    in the \`ifconfig\` command output.
--   \`ethercat_address\`: The address of the slave. Ethercat addresses
+    in the `ifconfig` command output.
+-   `ethercat_address`: The address of the slave. Ethercat addresses
     are distributed to each slave incrementally. The slave closest to
     the master has address 1, the second one 2 etc.
 -   For the serial devices:
--   \`port\`: The serial port to connect to communicate with the serial
+-   `port`: The serial port to connect to communicate with the serial
     sensor.
--   \`baud_rate\`: The baud rate used for serial communication.
+-   `baud_rate`: The baud rate used for serial communication.
 
-The following parameters can be set in \`rokubimini_sensor.yaml\` in the
-\`bota_device_driver\` package:
+The following parameters can be set in `rokubimini_sensor.yaml` in the
+`bota_device_driver` package:
 
--   \`set_reading_to_nan_on_disconnect\`: (\`true\`\|\`false\`) Sets the
+-   `set_reading_to_nan_on_disconnect`: (`true`\|`false`) Sets the
     reading to nan when the sensor disconnects
--   \`imu_acceleration_range\`:
+-   `imu_acceleration_range`:
 -   0 = ±2g,
 -   1 = ±4g,
 -   2 = ±8g,
 -   3 = ±16g
--   \`imu_angular_rate_range\`:
+-   `imu_angular_rate_range`:
 -   0 = ±250°/s,
 -   1 = ±500°/s,
 -   2 = ±1000°/s,
 -   3 = ±2000°/s
--   \`imu_acceleration_filter\`: (cut-off Freq)
+-   `imu_acceleration_filter`: (cut-off Freq)
 -   1 = 460Hz,
 -   2 = 184Hz,
 -   3 = 92Hz,
@@ -201,47 +201,47 @@ The following parameters can be set in \`rokubimini_sensor.yaml\` in the
 -   5 = 21Hz,
 -   6 = 10Hz,
 -   7 = 5Hz
--   \`imu_angular_rate_filter\`: (cut-off Freq)
+-   `imu_angular_rate_filter`: (cut-off Freq)
 -   3 = 184Hz,
 -   4 = 92Hz,
 -   5 = 41Hz,
 -   6 = 21Hz,
 -   7 = 10Hz,
 -   8 = 5Hz
--   \`sinc_filter_size\`: (cut-off Freq high/low@sampling Freq)
+-   `sinc_filter_size`: (cut-off Freq high/low@sampling Freq)
 -   51 = 1674/252Hz@1000Hz,
 -   64 = 1255/189Hz@800Hz,
 -   128 = 628/94.5hz@400Hz,
 -   205 = 393/59.5Hz@250Hz,
 -   256 = 314/47.5Hz@200Hz,
 -   512 = 157/23.5@100Hz
--   \`fir_disable\`:
+-   `fir_disable`:
 -   false = low cut-off frequency,
 -   true = high cut-off frequency from the above result
 -   e.g. for sinc filter_size: 48 and fir_disable: 1 you get cut-off
     freq 1674Hz@1000Hz sample rate
--   \`chop_enable\`: should be always false
--   \`fast_enable\`: (only applies if fir_disable is false) True = will
+-   `chop_enable`: should be always false
+-   `fast_enable`: (only applies if fir_disable is false) True = will
     result in low cut-off frequency but would be still able to catch
     step impulses of high cut-off frequency
--   \`calibration_matrix_active\`: Use the calibration matrix to compute
+-   `calibration_matrix_active`: Use the calibration matrix to compute
     sensor output
--   \`temperature_compensation_active\`: Compensate drift due to
+-   `temperature_compensation_active`: Compensate drift due to
     temperature !not supported yet!
--   \`imu_active\`: Chooses which IMU type is active:
+-   `imu_active`: Chooses which IMU type is active:
 -   0 = no imu active,
 -   1 = internal IMU active,
 -   2 = external IMU active (if available),
 -   3 = both IMUs active
--   \`coordinate_system_active\`: Set a user-defined coordinate system
--   \`inertia_compensation_active\`: Enables compensation due to inertia
+-   `coordinate_system_active`: Set a user-defined coordinate system
+-   `inertia_compensation_active`: Enables compensation due to inertia
     effect
--   \`orientation_estimation_active\`: Enables orientation estimation
+-   `orientation_estimation_active`: Enables orientation estimation
     and outputs a quaternion
 
 ### Configuration File Examples
 
-1\. \`setup.yaml\` example ```
+1\. `setup.yaml` example ```
 rokubiminis:
   - name:                     ft_sensor0
     configuration_file:       rokubimini_sensor.yaml
@@ -254,7 +254,7 @@ rokubiminis:
     ethercat_bus:             eth0
     ethercat_address:         1
 ``` 2.
-\`rokubimini_sensor.yaml\` example ```
+`rokubimini_sensor.yaml` example ```
 set_reading_to_nan_on_disconnect:  false
 
 imu_acceleration_range: 3
@@ -331,7 +331,7 @@ sensor_calibration:
 
 **Note:** You need to have root privileges to the network card, if you
 want to have access to the EtherCAT devices. For example, this can be
-done with escalated privileges (e.g. \`su root\`):
+done with escalated privileges (e.g. `su root`):
 
 ```
 $ su root
@@ -339,11 +339,11 @@ $ su root
 # roslaunch bota_device_driver rokubimini.launch
 ```
 
-**Note:** In the above example it is assumed that the \`root\` user has
-a bash terminal. If this isn\'t the case change it accordingly.
+**Note:** In the above example it is assumed that the `root` user has
+a bash terminal. If this isn't the case change it accordingly.
 
 **Note:** If no EtherCAT device is present, the above command could work
-without \`root\` privileges provided that the user is in the \`dialout\`
+without `root` privileges provided that the user is in the `dialout`
 group. This can be done with:
 
 ```
@@ -354,12 +354,12 @@ changes to take effect!
 
 ### Custom parameters
 
-1\. Example with custom \`time_step\`: ```
+1\. Example with custom `time_step`: ```
 $ cd catkin_workspace/src
 $ git clone https://gitlab.com/botasys/bota_driver.git
 ```1
 
-2\. Example with custom \`rokubimini_setup_file\`:
+2\. Example with custom `rokubimini_setup_file`:
 ```
 $ cd catkin_workspace/src
 $ git clone https://gitlab.com/botasys/bota_driver.git
@@ -372,4 +372,4 @@ No unit tests so far.
 ## Support
 
 For any queries or problems found with the software provided, please
-contact us at \`sw-support@botasys.com\`
+contact us at `sw-support@botasys.com`

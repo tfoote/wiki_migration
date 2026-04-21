@@ -1,6 +1,6 @@
 ## Meta-Documentation
 
-Let\'s be honest. Documentation is hard. This package is an attempt to
+Let's be honest. Documentation is hard. This package is an attempt to
 make it easier.
 
 Using the source code of your packages, this package applies a set of
@@ -32,19 +32,19 @@ Here are the patterns that roswiki_node currently looks for.
 
   -- ------------------------ -- -------------- -- -------------- --
                                  C++               Python         
-     Name                        \<#00FF00\>o      \<#00FF00\>o   
-     Subscriptions               \<#00FF00\>o      \<#00FF00\>o   
-     Publications                \<#00FF00\>o      \<#00FF00\>o   
-     Services Used               \<#00FF00\>o      \<#00FF00\>o   
-     Services Called             \<#00FF00\>o      \<#00FF00\>o   
-     Parameters Used             \<#FFFF00\>1      \<#00FF00\>o   
-     Parameters Set              \<#00FF00\>o      \<#00FF00\>o   
-     Transforms Used             \<#00ff00\>o      \<#00ff00\>o   
-     Transforms Set              \<#FF0000\>x      \<#FF0000\>x   
-     actionlib Goals             \<#FF0000\>x      \<#FF0000\>x   
-     actionlib Feedback          \<#FF0000\>x      \<#FF0000\>x   
-     actionlib Result            \<#FF0000\>x      \<#FF0000\>x   
-     actionlib Actions Used      \<#FF0000\>x      \<#FF0000\>x   
+     Name                        <#00FF00>o      <#00FF00>o   
+     Subscriptions               <#00FF00>o      <#00FF00>o   
+     Publications                <#00FF00>o      <#00FF00>o   
+     Services Used               <#00FF00>o      <#00FF00>o   
+     Services Called             <#00FF00>o      <#00FF00>o   
+     Parameters Used             <#FFFF00>1      <#00FF00>o   
+     Parameters Set              <#00FF00>o      <#00FF00>o   
+     Transforms Used             <#00ff00>o      <#00ff00>o   
+     Transforms Set              <#FF0000>x      <#FF0000>x   
+     actionlib Goals             <#FF0000>x      <#FF0000>x   
+     actionlib Feedback          <#FF0000>x      <#FF0000>x   
+     actionlib Result            <#FF0000>x      <#FF0000>x   
+     actionlib Actions Used      <#FF0000>x      <#FF0000>x   
   -- ------------------------ -- -------------- -- -------------- --
 
 1\) Only parses the name of the service, not the type

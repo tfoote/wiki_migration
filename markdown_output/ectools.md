@@ -1,6 +1,6 @@
 ## Tools
 
-\`ectools\` contains a utility for recording dropped packers over a
+`ectools` contains a utility for recording dropped packers over a
 loopback link.
 
 ```clearsilver

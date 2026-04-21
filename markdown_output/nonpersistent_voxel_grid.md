@@ -16,7 +16,7 @@ for a similar tool. This is to make that possible.
 Source and bug tracker:
 <https://github.com/SteveMacenski/nonpersistent_voxel_layer>
 
-Maintainer: Steve Macenski \<stevenmacenski AT gmail DOT com\>
+Maintainer: Steve Macenski <stevenmacenski AT gmail DOT com>
 
 Author: Steve Macenski, based on work from: Eitan Marder-Eppstein, David
 V. Lu!!, Dave Hershberger, contradict@gmail.com
@@ -63,7 +63,7 @@ param {
 }
 ```
 
-Each *\`source_name\`* in \`observation_sources\` defines a namespace in
+Each *`source_name`* in `observation_sources` defines a namespace in
 which parameters can be set:
 
 ```clearsilver

@@ -10,7 +10,7 @@ This is a multi-robot version of the
 
 ## About
 
-The \`explore_multirobot\` package is a multi-robot version of the
+The `explore_multirobot` package is a multi-robot version of the
 [explore](http://wiki.ros.org/explore) package. It can additionally
 subscribe to external topics such as map and goal, and publish messages
 about distance traveled and estimated cost.

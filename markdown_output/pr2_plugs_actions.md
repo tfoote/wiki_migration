@@ -10,4 +10,4 @@
 -   [ vision_detect_plug_action](/vision_detect_plug_action)
 -   [ wiggle_plug_action](/wiggle_plug_action)
 
-![\|width=\"700\"](attachment:smach.png)
+![\|width="700"](attachment:smach.png)

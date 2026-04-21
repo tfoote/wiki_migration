@@ -1,42 +1,42 @@
 ## Overview
 
-\`gscam\` is meant as a simple approach to using a webcam in ROS that
-maximizes compatibility. \`gscam\` leverages
+`gscam` is meant as a simple approach to using a webcam in ROS that
+maximizes compatibility. `gscam` leverages
 [Gstreamer](http://www.gstreamer.net/), a multimedia framework similar
 to !DirectShow. Specifically: Gstreamer can be used to build up
-multimedia \"pipelines\" consisting of sources, sinks, and filters. For
+multimedia "pipelines" consisting of sources, sinks, and filters. For
 example: a v4l webcam *source* might be *filtered* by an upscaler before
 being sent to the screen (a *sink*). Alternately, a mp4 file might act
 as a source and be filtered into an avi file as a sink. There are many
 possibilities. For an overview see:
 [Using Gstreamer](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/faq/html/chapter-using.html).
 
-\`gscam\` can attach itself to a specially formatted pipeline. Provided
-this pipeline is processing RGB video, \`gscam\` will rebroadcast the
+`gscam` can attach itself to a specially formatted pipeline. Provided
+this pipeline is processing RGB video, `gscam` will rebroadcast the
 video over as *both* a standard ROS image transport *and* a ROS Camera.
 Since Gstreamer is compatibile with almost every video capture standard
-under Linux (and many on OSX), \`gscam\` makes ROS defacto compatible
+under Linux (and many on OSX), `gscam` makes ROS defacto compatible
 with almost every Linux webcam or video system available. Moreover,
 because there are a number of Gstreamer filters for processing video
 (e.g. white-balancing, cropping, etc.) gscam allows for a more advanced
 video processing even with cheaper webcams.
 
 Gstreamer is an extremely rich framework, but basic usage is fairly
-simple. Please see the \"Basic Usage\" section to get started. You may
+simple. Please see the "Basic Usage" section to get started. You may
 also find the Gstreamer documentation on their website to be helpful.
 
 ## Running
 
-\`gscam\` expects an environmental variable, \`GSCAM_CONFIG\`, to
+`gscam` expects an environmental variable, `GSCAM_CONFIG`, to
 contain a gstreamer pipeline definition for it to launch. There is one
 important restriction:
 
--   At the end of the pipeline where \`gscam\` will attach itself, the
+-   At the end of the pipeline where `gscam` will attach itself, the
     pipeline *must* be carrying RGB formatted video.
 
-Here\'s an example launch that should work on almost any machine where
+Here's an example launch that should work on almost any machine where
 Gstreamer is installed and a camera of some kind is available attached
-to \`/dev/video2\`. Note that \`gscam\` expects to start *within* the
+to `/dev/video2`. Note that `gscam` expects to start *within* the
 bin directory:
 
 ```
@@ -46,22 +46,22 @@ export GSCAM_CONFIG="v4l2src device=/dev/video2 ! video/x-raw-rgb,framerate=30/1
 rosrun gscam gscam
 ```
 
-If you see a message about a \"failure to PAUSE\" or something similar,
+If you see a message about a "failure to PAUSE" or something similar,
 the most likely cause is a permission issue with the available video
 devices.
 
-If you see a \"Processing\...\" message, it means \`gscam\` is happily
+If you see a "Processing\..." message, it means `gscam` is happily
 publishing.
 
 You can graphically explore many of the available video devices with the
-gstreamer-properties utility. \`gst-inspect-0.10\` (or .09 or whatever
+gstreamer-properties utility. `gst-inspect-0.10` (or .09 or whatever
 is your Gstreamer version number) will list all of the available
-plugins. For more help on specifying the \`GSCAM_CONFIG\`, see
+plugins. For more help on specifying the `GSCAM_CONFIG`, see
 [this cheatsheet](http://wiki.oz9aec.net/index.php/Gstreamer_cheat_sheet).
 
 ## Advanced Usage
 
-\`gscam\` is fully compatible with the ROS Camera interface and can be
+`gscam` is fully compatible with the ROS Camera interface and can be
 calibrated to provided rectified images. For details, see the
 appropriate ROS documentation on the [image_pipeline](image_pipeline)
 wiki page.
@@ -97,7 +97,7 @@ An example launch file which includes loading calibration data is
 ```
 
 Note it assumes calibration data is stored in a subdirectory of the ROS
-package \'localcam\'.
+package 'localcam'.
 
 ## ROS API
 
@@ -130,4 +130,4 @@ srv {
 ```
 MessageFilter [target=/map ]: Discarding message from [/gscam_publisher] due to empty frame_id.  This message will only print once.
 ``` You need to set the TF frame via the
-\`set_camera_info\` service described above.
+`set_camera_info` service described above.

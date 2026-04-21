@@ -1,8 +1,8 @@
 ## About
 
-The \`carl_tools\` package contains miscellaneous functionality and
+The `carl_tools` package contains miscellaneous functionality and
 tools for the CARL robot. This currently includes an automatic
-calibration system for the transforms between CARL\'s sensors and their
+calibration system for the transforms between CARL's sensors and their
 respective mounts, and an arm current logger.
 
 ## Nodes
@@ -46,7 +46,7 @@ node.1 {
 
 ## Installation
 
-To install the \`carl_bot\` package, you can install from source with
+To install the `carl_bot` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_bot.git
@@ -66,7 +66,7 @@ be launched with: . ```
 roslaunch carl_tools view_calibration.launch
 ``` Current logging can be
 started by running the current_logger node, with an optional parameter
-for the output file name (replace \<output_filename\>), and it will
+for the output file name (replace <output_filename>), and it will
 continue to log currents until the node is terminated. .
 ```
 rosrun carl_tools current_logger _filename:=<output_filename>
@@ -77,7 +77,7 @@ rosrun carl_tools current_logger _filename:=<output_filename>
 To calibrate the cameras, first make sure a unique AR tag is placed in a
 known location with respect to the robot. By default, the calibration
 node expects a maximum size (12 cm) AR marker with ID 200 centered on
-the screw holes of CARL\'s top plate. Once this marker is placed and
+the screw holes of CARL's top plate. Once this marker is placed and
 unobstructed, simply launch the calibration node and wait. When the
 transform is calculated, further instructions will be provided in the
 terminal where the node was launched.

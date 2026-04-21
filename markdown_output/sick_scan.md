@@ -80,13 +80,14 @@ roslaunch sick_scan sick_mrs_1xxx.launch
 ``` 1. Launch rviz
 ```
 rviz rviz
-``` 1. Select ***laser*** as fixed frame. And add a
-new PointCloud decoder subscribed at topic ***cloud***. 1. Enjoy.
+``` 1. Select **`'laser`**' as fixed frame. And
+add a new PointCloud decoder subscribed at topic **`'cloud`**'. 1.
+Enjoy.
 
 ## Troubleshooting
 
 1\. Check Scanner IP in the launch file. 1. Check Ethernet connection to
-scanner with netcat e.g. \`nc -z -v -w5 \$SCANNERIPADDRESS 2112\`.
+scanner with netcat e.g. `nc -z -v -w5 \$SCANNERIPADDRESS 2112`.
 
 -   For further details about setting up the correct ip settings see
     [IP configuration](https://github.com/SICKAG/sick_scan/blob/master/doc/ipconfig/ipconfig.md) 1.
@@ -107,7 +108,7 @@ scanner with netcat e.g. \`nc -z -v -w5 \$SCANNERIPADDRESS 2112\`.
     and switch on the intensity flag in the lauch file 1. In case of
     network problems check your own ip address and the ip address of
     your laser scanner (by using SOPAS ET).
--   List of own IP-addresses: ifconfig\|grep \"inet addr\"
+-   List of own IP-addresses: ifconfig\|grep "inet addr"
 -   Try to ping scanner ip address (used in launch file) 1. If the
     driver stops during init phase please stop the driver with ctrl-c
     and restart (could be caused due to protocol ASCII/Binary

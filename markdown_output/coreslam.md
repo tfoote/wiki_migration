@@ -3,7 +3,7 @@
 To use CoreSLAM, you need a mobile robot that provides odometry data and
 is equipped with a horizontally-mounted, fixed, laser range-finder. The
 slam_coreslam node will attempt to transform each incoming scan into the
-odom (odometry) tf frame. See the \"Required tf transforms\" for more on
+odom (odometry) tf frame. See the "Required tf transforms" for more on
 required transforms.
 
 ## Example

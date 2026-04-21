@@ -1,12 +1,12 @@
 ## Description
 
-The \`fake_localization\` package provides a single node,
-\`fake_localization\`, which substitutes for a localization system,
+The `fake_localization` package provides a single node,
+`fake_localization`, which substitutes for a localization system,
 providing a subset of the ROS API used by [amcl](amcl). This node is
 most frequently used during simulation as a method to provide perfect
 localization in a computationally inexpensive manner.
 
-Specifically, \`fake_localization\` converts odometry data into pose,
+Specifically, `fake_localization` converts odometry data into pose,
 particle cloud, and transform data of the form published by
 [amcl](amcl).
 

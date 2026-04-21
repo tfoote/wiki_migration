@@ -5,7 +5,7 @@ code. The documentation below describes the current version in the
 [arm_navigation_metrics branch](https://code.ros.org/svn/wg-ros-pkg/stacks/motion_planning_common/branches/arm_navigation_metrics/collider)
 of motion_planning_common*, *which might be released in E-turtle.*
 
-\`collider\` provides a collision map for tabletop manipulation. Various
+`collider` provides a collision map for tabletop manipulation. Various
 sources of input data (e.g. laser and textured stereo) are fused and
 integrated into an [octomap](octomap) with raycasting in 3D. This
 enables a dynamically updated collision map for manipulation and serves

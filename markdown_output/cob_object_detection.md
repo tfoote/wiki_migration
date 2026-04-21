@@ -1,5 +1,5 @@
   -- ------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \<#ffff00\>These tutorials require packages that are not open to the public. If you want to run the packages, please write to jsf@ipa.fhg.de .   
+     <#ffff00>These tutorials require packages that are not open to the public. If you want to run the packages, please write to jsf@ipa.fhg.de .   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------ --
 
 ## Hardware Requirements
@@ -224,7 +224,7 @@ detect_min_inlier_size: 10
 
 The frame of the object is defined like the following picture.
 
-![\|height=\"300\"](attachment:bounding_box_conventions.png)
+![\|height="300"](attachment:bounding_box_conventions.png)
 
 The front side of the object is the native object front like you would
 place an object into a shelf. The the coordinate system is oriented to
@@ -249,4 +249,4 @@ roscd cob_object_detection/common/files/models/ObjectModels/
 you write the name correct inside the file. ```
 rm Info.txt
 ``` The
-object names must be \"Model\_\<object_name\>.txt\".
+object names must be "Model_<object_name>.txt".

@@ -5,7 +5,7 @@ The easiest way to get the mocap_nokov package in Ubuntu is using
 $ sudo apt-get install ros-noetic-mocap-nokov
 ```
 
-If you\'d like to contribute to the package, feel free to check it out
+If you'd like to contribute to the package, feel free to check it out
 from Github and submit pull requests.
 
 ## Configuring XINGYING Software
@@ -13,17 +13,17 @@ from Github and submit pull requests.
 You will need to configure it for streaming of rigid bodies to the
 (virtual)machine running the mocap_nokov ROS node.
 
-1\. Open the View Menu -\> Data Casting Pane, turn off the SDK Enable
+1\. Open the View Menu -> Data Casting Pane, turn off the SDK Enable
 checkbox. 2. Focus the local Address label and select the NIC Addresss
-combox, choose the boradcast interface. 3. Focus the \"SDK Streaming\"
-region, then enable the \"SDK Enabled\" checkbox.
+combox, choose the boradcast interface. 3. Focus the "SDK Streaming"
+region, then enable the "SDK Enabled" checkbox.
 ![](attachment:xingying3.0.png)
 
 ## Configuring mocap_nokov
 
 Once motion capture data is being streamed to the mocap_nokov node, the
 mapping of trackables to ROS topics must be defined. A sample
-configuration file called \"mocap.yaml\" is included with the package,
+configuration file called "mocap.yaml" is included with the package,
 you can find it in the config directory of the package.
 
 ```
@@ -57,7 +57,7 @@ rigid_bodies:
 nokov_config:
         server_address: "192.168.1.20"
 ``` If any of the topics is left unconfigured,
-nothing will be published for that datatype. E.g. for trackable \"2\",
+nothing will be published for that datatype. E.g. for trackable "2",
 no pose2d or frame_id is configured so no Pose2D or TF messages will be
 published. ![](attachment:rostopic.png)
 

@@ -1,7 +1,7 @@
 ## Overview
 
 [pytouchosc](pytouchosc) is a package for manipulating and loading
-\`.touchosc\` files. It features a Python library for parsing layout
+`.touchosc` files. It features a Python library for parsing layout
 files that are created by the TouchOSC Editor. It also has a
 command-line script for displaying details of layout files, as well as a
 script and node for loading layout files to a compatible device.
@@ -56,11 +56,11 @@ This will create a single layout server on port 9658.
 ### Example Launch File for Multiple Layouts
 
 This will create a layout server hosting
-\`rososc_tutorials/layouts/ROS-Demo-iPad.touchosc\` on port 9658, and a
+`rososc_tutorials/layouts/ROS-Demo-iPad.touchosc` on port 9658, and a
 second layout server hosting
-\`rososc_tutorials/layouts/ROS-Demo-iPhone.touchosc\` on port 9659.
+`rososc_tutorials/layouts/ROS-Demo-iPhone.touchosc` on port 9659.
 
-In this case, two \"Found Hosts\" will appear in the \"Add Layout\"
+In this case, two "Found Hosts" will appear in the "Add Layout"
 screen of TouchOSC, with the name of their respective layouts as a
 listing. ```
 <launch>

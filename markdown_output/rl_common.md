@@ -15,11 +15,11 @@ Check out the code at:
 
 ### Experience
 
-First, an experience \<s,a,r,s\'\> tuple is defined, which is used to
+First, an experience <s,a,r,s'> tuple is defined, which is used to
 update the model. The state s the agent came from is a vector of floats,
 the action it took is an int, the reward it received is a float, and the
-next state s\' it transitioned to is a vector of floats. In addition,
-there\'s a bool indicating if the transition was terminal or not. Full
+next state s' it transitioned to is a vector of floats. In addition,
+there's a bool indicating if the transition was terminal or not. Full
 documentation for the experience struct is available
 [here](http://www.ros.org/doc/indigo/api/rl_common/html/structexperience.html).
 
@@ -27,7 +27,7 @@ documentation for the experience struct is available
 
 !StateActionInfo is the struct that the model must return when quering
 the model for its predictions for a given state action. It has a
-confidence (a float), a boolean telling if it is a \'known\' transition
+confidence (a float), a boolean telling if it is a 'known' transition
 or not, a float predicting the reward, a float predicting the
 termination probability, and a map of states (vectors of floats) to
 floats that gives the probabilities of next states. Full documentation
@@ -67,7 +67,7 @@ implement:
 -   updateWithExperience(experience) updates the model on single new
     experience.
 -   getStateActionInfo(state, action, !StateActionInfo&) returns the
-    model\'s prediction (!StateActionInfo) for the queried state and
+    model's prediction (!StateActionInfo) for the queried state and
     action.
 -   getCopy() returns a copy of the model.
 
@@ -79,7 +79,7 @@ Full documentation for the MDPModelclass is available
 A planner must implement a few methods. Here are the key ones:
 
 -   updateModelWithExperience(state, action, next state, reward,
-    terminal) updates the agent\'s model with the new experience.
+    terminal) updates the agent's model with the new experience.
 -   planOnNewModel() is called when the model has changed. It runs the
     planner on the model to compute a new policy.
 -   getBestAction(state) returns the best action for the given state.

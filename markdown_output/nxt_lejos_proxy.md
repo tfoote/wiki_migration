@@ -7,7 +7,7 @@ and is recommended.
 
 ### Example
 
-Even though the API description looks quite complicated, it\'s very easy
+Even though the API description looks quite complicated, it's very easy
 to configure the bindings. Here is an example configuration:
 ```
 nxt_robot:

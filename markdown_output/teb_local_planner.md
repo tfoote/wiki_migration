@@ -20,7 +20,7 @@ scalarized multi-objective optimization problem. The user can provide
 weights to the optimization problem in order to specify the behavior in
 case of conflicting objectives.
 
-The approach called \"Timed-Elastic-Band\" is presented in:
+The approach called "Timed-Elastic-Band" is presented in:
 
 -   C. Rösmann, W. Feiten, T. Wösch, F. Hoffmann and T. Bertram:
     Trajectory modification considering dynamic constraints of
@@ -61,7 +61,7 @@ The extension to car-like robots is described in
 Get started by completing the tutorials in the
 [Tutorials](teb_local_planner/Tutorials) section.
 
-\<\<GitHubIssues(rst-tu-dortmund/teb_local_planner)\>\>
+<<GitHubIssues(rst-tu-dortmund/teb_local_planner)>>
 
 ## Video
 
@@ -69,12 +69,12 @@ The following video presents the features of the package and shows
 examples from simulation and real robot situations. Some spoken
 explanations are included in the audio track of the video.
 
-\<\<Youtube(e1Bw6JOgHME&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=e1Bw6JOgHME&rel=0)
 
 Features introduced in **version 0.2** are presented in the following
 video (supporting car-like robots and costmap conversion).
 
-\<\<Youtube(o5wnRCzdUMo&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=o5wnRCzdUMo&rel=0)
 
 ## Node API
 

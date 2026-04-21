@@ -1,7 +1,7 @@
 ## Overview
 
 This package currently requires two sensors to be connected; a
-[CH Robotics IMU](http://www.chrobotics.com/) on port \"/dev/imu\" and a
+[CH Robotics IMU](http://www.chrobotics.com/) on port "/dev/imu" and a
 Microsoft Kinect.
 
 ## Launchfiles

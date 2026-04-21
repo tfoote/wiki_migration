@@ -29,7 +29,7 @@ rosrun urdf_parser check_urdf <<urdf_file>>
 ``` and
 graphically with ```
 roslaunch urdf_tutorial display.launch gui:=True model:=<<urdf_file>>
-``` \<\<xacro_file\>\> is for
+``` <<xacro_file>> is for
 example `cob3-3/urdf/cob3-3.urdf.xacro`.
 
 ## Calibration

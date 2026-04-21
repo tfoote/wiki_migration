@@ -2,9 +2,9 @@
 
 This package provides two nodes:
 
--   \`mrpt_rawlog/rawlog_record_node\`: Grabs
+-   `mrpt_rawlog/rawlog_record_node`: Grabs
     [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) from ROS topics.
--   \`mrpt_rawlog/rawlog_play_node\`: Like \`rosbag play\` but takes
+-   `mrpt_rawlog/rawlog_play_node`: Like `rosbag play` but takes
     [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) as input.
 
 Provided examples:

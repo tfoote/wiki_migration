@@ -20,7 +20,7 @@ mainly located on the barcode. Finally, the tracker is also able to
 detect loss of tracking and recover from it entering in a new barcode
 detection and localization stage.
 
-The package is composed of one node called \`visp_auto_tracker\`. This
+The package is composed of one node called `visp_auto_tracker`. This
 node tries to track the object as fast as possible. The viewer coming
 with [visp_tracker](visp_tracker) package can be used to monitor the
 tracking result.
@@ -95,9 +95,9 @@ downloaded
 ### Live video examples
 
 You have a ready-to-use roslaunch file in
-\`launch/tracklive_firewire.launch\`. This works with a firewire (1394)
+`launch/tracklive_firewire.launch`. This works with a firewire (1394)
 camera. If you have an usb camera (like a webcam) you can use
-\`launch/tracklive_usb.launch\` launch file.
+`launch/tracklive_usb.launch` launch file.
 
 You can launch with the following command line:
 
@@ -178,8 +178,8 @@ outer-coordinates= 0.000
 
 The following detectors are supported
 
--   \`detector-type= zbar\`: uses libzbar to detect QRcodes
--   \`detector-type= dmtx\`: uses libdmtx to detect flashcodes
+-   `detector-type= zbar`: uses libzbar to detect QRcodes
+-   `detector-type= dmtx`: uses libdmtx to detect flashcodes
 
 #### flashcode-coordinates
 
@@ -196,9 +196,9 @@ flashcode).
 
 #### ad-hoc-recovery
 
-When set (\`tracker-type= 1\`) this parameter activates the tracking
-lost detection and recovery using \`flashcode-coordinates\`,
-\`inner-coordinates\` and \`outer-coordinates\` point coordinates.
+When set (`tracker-type= 1`) this parameter activates the tracking
+lost detection and recovery using `flashcode-coordinates`,
+`inner-coordinates` and `outer-coordinates` point coordinates.
 
 ## Tracker states
 
@@ -239,14 +239,14 @@ states used:
 ## Viewer
 
 When you track a model, you probably want a visual feedback. You can get
-one by connecting rviz to the outputed \`/object_position\` topic.
+one by connecting rviz to the outputed `/object_position` topic.
 [visp_auto_tracker](visp_auto_tracker) does not have a dedicated viewer.
 It can use the viewer provided with [visp_tracker](visp_tracker)
-package, specifically \`visp_tracker/visp_tracker_viewer\` node.
+package, specifically `visp_tracker/visp_tracker_viewer` node.
 
 Without connecting another node, you can also open a debug graphical
-output directly from the \`visp_auto_tracker\` node by setting the
-\`debug_display\` parameter.
+output directly from the `visp_auto_tracker` node by setting the
+`debug_display` parameter.
 
 The following figure shows the debug output (left) next to the external
 [visp_tracker](visp_tracker)/viewer (right) in the case of the hybrid

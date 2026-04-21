@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(auv_msgs)\>\>
+<<MsgSrvDoc(auv_msgs)>>

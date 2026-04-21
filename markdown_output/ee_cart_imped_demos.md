@@ -23,7 +23,7 @@ Now you can run a demo. Since they are simply demos for the controller
 package, they make very specific assumptions about the location of
 things relative robot. Namely, to run the drawing demos (draw_square and
 pr2_write_mit) at MIT, position the robot, table, and paper in
-accordance with the red tape and lower the robot\'s torso all the way.
+accordance with the red tape and lower the robot's torso all the way.
 Then run
 
 `rosrun ee_cart_imped_demos draw_square`

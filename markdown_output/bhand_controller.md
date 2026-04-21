@@ -45,7 +45,7 @@ desired_freq: 250.0
 -   joint_ids: ID associated with every joint
 -   joint_names: Joint names associated with every joint id
 -   control_mode: Default hand control mode
--   desired_freq: Desired frequency of the controller\'s control loop. A
+-   desired_freq: Desired frequency of the controller's control loop. A
     frequency higher than 300 Hz is not recommendable for now.
 
 ![BHand Joints\|width=650](attachment:bhand_joints.png)
@@ -124,11 +124,11 @@ effort: [0.03743090386539949, 0.06140198104320094, 0.03743090386539949, 0.066763
 
 -   Sets the position/velocity of the hand joints.
 -   Joints available to set positions/velocities:
--   *bh_j32_joint* -\> F3-Base
--   *bh_j11_joint* -\> F1-Spread
--   *bh_j12_joint* -\> F1-Base
--   *bh_j21_joint* -\> F2-Spread
--   *bh_j22_joint* -\> F2-Base
+-   *bh_j32_joint* -> F3-Base
+-   *bh_j11_joint* -> F1-Spread
+-   *bh_j12_joint* -> F1-Base
+-   *bh_j21_joint* -> F2-Spread
+-   *bh_j22_joint* -> F2-Base
 -   bh_j11_joint and bh_j21_joint set the same motor (able publishing on
     both)
 

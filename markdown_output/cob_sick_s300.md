@@ -93,7 +93,7 @@ roslaunch cob_bringup laser_rear.launch
 <include file="$(find cob_bringup)/components/laser_rear.launch" />
 ``` All hardware configuration is done in the
 [cob_hardware_config](cob_hardware_config) package. A sample parameter
-file in \"cob_hardware_config/cob3-3/config/laser_front.yaml\" could
+file in "cob_hardware_config/cob3-3/config/laser_front.yaml" could
 look like this ```
 port: /dev/ttyScan1
 baud: 500000

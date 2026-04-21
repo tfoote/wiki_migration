@@ -12,7 +12,7 @@ We put our best effort in making this package working safely. However,
 usage is completely on your own risk. We disclaim any liability for
 injuries, damages of the helicopter or to objects. It is your
 responsibility to ensure a safe operation environment! Always comply
-with Ascending Technologies\' safety guidelines. Additionally:
+with Ascending Technologies' safety guidelines. Additionally:
 
 -   A safety pilot must always be present and he must have the training
     and ability to fly the UAV manually in any situation.
@@ -21,8 +21,8 @@ with Ascending Technologies\' safety guidelines. Additionally:
 -   Always wear proper protection gear (gloves, safety goggles). The
     safety pilot as well as spectators.
 -   In case of any unexpected behavour, the safety pilot should switch
-    **both** the serial interface switch to \"off\" and the flight mode
-    switch to \"acc\" (both switches point away from the pilot then).
+    **both** the serial interface switch to "off" and the flight mode
+    switch to "acc" (both switches point away from the pilot then).
 -   When having a new or changed setup (new/other controller, different
     parameters etc), carefully check the expected outputs **before**
     flying.
@@ -35,28 +35,28 @@ Using a wired connection is recommended, e.g. to the Ascending
 Technologies
 [AtomBoard](http://wiki.asctec.de/display/AR/AscTec+Atomboard). The
 cable supplied with the !AtomBoard can be used. Connect to the serial
-port 0 of the Highlevel Processor (\"HL serial 0\") as shown in the
+port 0 of the Highlevel Processor ("HL serial 0") as shown in the
 !AscTec
 [AutoPilot documentation](http://www.asctec.de/assets/Downloads/Manuals/AscTec-Autopilot-Manual-v10.pdf)
-in chapter 4.1. In this case, set \`serial_port\` to the correct port,
-and leave \`serial_port_rx\` and \`serial_port_tx\` empty.
+in chapter 4.1. In this case, set `serial_port` to the correct port,
+and leave `serial_port_rx` and `serial_port_tx` empty.
 
 If you plan to use a wireless serial link, it might be useful to use a
 dedicated link for each rx and tx for higher bandwidth. In that case,
-set \`serial_port_rx\` and \`serial_port_tx\` accordingly and leave
-\`serial_port\` empty.
+set `serial_port_rx` and `serial_port_tx` accordingly and leave
+`serial_port` empty.
 
 ### Baudrate
 
-The baudrate at which the \`hl_node\` communicates with the HLP can be
-set with the \`baudrate\` parameter. If it doesn\'t match a supported
+The baudrate at which the `hl_node` communicates with the HLP can be
+set with the `baudrate` parameter. If it doesn't match a supported
 standard baudrate, the closest standard baudrate is chosen. The HLP
 tries to detect the baudrate automatically at startup or if there
-wasn\'t any communication with the hl_node for longer than 10 seconds.
-\`hl_node\` sets up its serial port(s) with the desired baudrate and
-sends a packet (\'a\') which the HLP uses to detect the correct
+wasn't any communication with the hl_node for longer than 10 seconds.
+`hl_node` sets up its serial port(s) with the desired baudrate and
+sends a packet ('a') which the HLP uses to detect the correct
 baudrate. In order for this to work, always switch on the HLP first,
-then start \`hl_node\`. In case you need to restart \`hl_node\` with a
+then start `hl_node`. In case you need to restart `hl_node` with a
 different baudrate, you have to wait 10 s until the HLP accepts new
 baudrate configure packets. Restarting with the same baudrate works
 immediately. Tested baudrates are: 57600, 115200, 230400, 460800,
@@ -65,7 +65,7 @@ immediately. Tested baudrates are: 57600, 115200, 230400, 460800,
 ### Configurable Packet Rates
 
 Packet rates of certain packets can be configured with the
-\`packet_rate\_\*\` parameters. No polling is done - instead a
+`packet_rate_\*` parameters. No polling is done - instead a
 configuration packet is sent to the HLP which will send the packets in
 the desired rate accordingly. Note that no checking is done if the
 packet rates exceed the available bandwidth, so check the correct rate
@@ -76,26 +76,26 @@ rostopic hz <topic> -w <expected rate>
 ## Modes of Operation
 
 In all operation modes, you can enable/disable control output to the LLP
-by setting the \`/enable\_\*\` parameters accordingly. This is helpful,
+by setting the `/enable_\*` parameters accordingly. This is helpful,
 e.g. to debug a controller on a single axis first. Directions and
 orientations follow the
 [ROS coordinate frame conventions](geometry/CoordinateFrameConventions).
 As with the direct interface to the LLP, it only accepts commands when
 the serial enable switch is on. In failure, flip off this switch and put
-the flightmode switch to \"acc\". There are three modes you can operate
-the helicopter which you can select with the \`/position_control\`
+the flightmode switch to "acc". There are three modes you can operate
+the helicopter which you can select with the `/position_control`
 parameter:
 
 ### Direct Acceleration Commands
 
-Set \`/position_control\` to \"off\". This mode just forwards roll,
+Set `/position_control` to "off". This mode just forwards roll,
 pitch, yaw (angular velocity) and thrust commands to the LLP. This is
-similar to directly send commands to the LLP\'s serial interface. Set
-the values in \<\<MsgLink(asctec_hl_comm/mav_ctrl)\>\> in rad for roll
+similar to directly send commands to the LLP's serial interface. Set
+the values in <<MsgLink(asctec_hl_comm/mav_ctrl)>> in rad for roll
 and pitch, in rad/s for yaw and 0.0 \... 1.0 for thrust and set
-\<\<MsgLink(asctec_hl_comm/mav_ctrl)\>\>/type to \"acceleration\". For
-the scaling to work correctly, you need to set \`/k_stick\` and
-\`/k_stick_yaw\` to the values you can read out from the LLP with the
+<<MsgLink(asctec_hl_comm/mav_ctrl)>>/type to "acceleration". For
+the scaling to work correctly, you need to set `/k_stick` and
+`/k_stick_yaw` to the values you can read out from the LLP with the
 !AscTec control software (default 25, 120). Messages have to arrive at
 least at 10 Hz, otherwise nothing will be forwarded to the LLP.
 **Note:** yaw rates are limited to +- 85% so that the motors cannot be
@@ -104,13 +104,13 @@ yaw).
 
 ### GPS Based Velocity Control
 
-Set \`/position_control\` to \"GPS\" and set
-\<\<MsgLink(asctec_hl_comm/mav_ctrl)\>\>/type to \"velocity\" in your
+Set `/position_control` to "GPS" and set
+<<MsgLink(asctec_hl_comm/mav_ctrl)>>/type to "velocity" in your
 messages. Commands are also forwarded to the LLP, but the GPS bit is set
-additionally. The values in \<\<MsgLink(asctec_hl_comm/mav_ctrl)\>\>
+additionally. The values in <<MsgLink(asctec_hl_comm/mav_ctrl)>>
 correnspond to velocities in boady coordinates in m/s and rad/s
 respectively. For the scaling to work correctly, you need to set
-\`/max_velocity\_\*\` according to the maximum \"stick-GPS\" velocites
+`/max_velocity_\*` according to the maximum "stick-GPS" velocites
 which you can read out from the LLP with the !AscTec control software.
 Defaults are 5 m/s for x/y, and 2 m/s for z. Messages have to arrive at
 least at 10 Hz, otherwise nothing will be forwarded to the LLP.
@@ -403,7 +403,7 @@ node.2{
 
 ## Scripts
 
-All plot\_\* scripts plot IMU data from the LLP and debug data from the
+All plot_\* scripts plot IMU data from the LLP and debug data from the
 SSDK running on the HLP. For the SSDK, data is displayed in the North
 East Down (NED) convention, i.e. data is rotated 180° around the x-axis.
 y(NED) = -y(ENU), z(NED) = -z(ENU) (height is negative!) and angles

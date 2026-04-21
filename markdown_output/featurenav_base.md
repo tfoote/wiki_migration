@@ -1,6 +1,6 @@
 ## Overview
 
-\`featurenav_base\` provides base class for feature-based navigation for
+`featurenav_base` provides base class for feature-based navigation for
 the Large Maps Framework ([LaMa](Large Maps Framework)). Feature-based
 navigation implement the base functionalities of two jockeys. The first
 one, the learning jockey learns a path while the robot is driving

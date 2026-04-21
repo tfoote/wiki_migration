@@ -33,10 +33,10 @@ Subscribes to sensor_msgs/LaserScan.
 ## Troubleshooting
 
 1\. roslaunch ele_utm.launch gives this error: Failed to open port
-/dev/robot/hokuyo_hokuyo_serial_number\> error=2 : No such file or
-directory 1. Restart udev: 1. \`sudo /etc/init.d/udev restart\` (For
-Hardy Heron, Ubuntu 8.04) 1. \`sudo restart udev\` (For Lucid Lynx,
-Ubuntu 10.04) 1. \`ls /dev/robot\` - you should see your Hokuyo
-device. 1. If you don\'t see it, try unplugging it from the usb port,
+/dev/robot/hokuyo_hokuyo_serial_number> error=2 : No such file or
+directory 1. Restart udev: 1. `sudo /etc/init.d/udev restart` (For
+Hardy Heron, Ubuntu 8.04) 1. `sudo restart udev` (For Lucid Lynx,
+Ubuntu 10.04) 1. `ls /dev/robot` - you should see your Hokuyo
+device. 1. If you don't see it, try unplugging it from the usb port,
 power cycling the UTM, plugging the UTM back into the usb port and
 restarting udev.

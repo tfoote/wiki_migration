@@ -16,7 +16,7 @@ see its [datasheet](https://www.chrobotics.com/docs/UM6_datasheet.pdf).
 
 ### Axes Convention
 
-As an avionics device, the UM6\'s serial protocol reports values in NED.
+As an avionics device, the UM6's serial protocol reports values in NED.
 The driver contained in this package converts vectors and quaternions to
 the ROS convention (ENU) before publishing, which is:
 

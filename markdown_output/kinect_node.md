@@ -13,13 +13,13 @@ The [kinect_node](kinect_node) package provides a driver for using the
 Kinect RGB-D sensor with ROS. Currently this package depends on the
 [libfreenect_install](libfreenect_install) package which is a wrapper
 around the [libfreenect](http://git.marcansoft.com/?p=libfreenect.git)
-driver. The library is patched using Stéphane Magnenat\'s memory trash
+driver. The library is patched using Stéphane Magnenat's memory trash
 patch.
 
 This package currently outputs a
-\<\<MsgLink(sensor_msgs/PointCloud)\>\>, a RGB
-\<\<MsgLink(sensor_msgs/Image)\>\> and it\'s associated
-\<\<MsgLink(sensor_msgs/CameraInfo)\>\>. The PointCloud, Image, and
+<<MsgLink(sensor_msgs/PointCloud)>>, a RGB
+<<MsgLink(sensor_msgs/Image)>> and it's associated
+<<MsgLink(sensor_msgs/CameraInfo)>>. The PointCloud, Image, and
 CameraInfo are published with the same timestamp (the node will hold
 data until all 3 have become available).
 
@@ -62,8 +62,8 @@ rosrun rviz rviz >& /dev/null &
 rosbag play -q -l kinect_node_subset.bag
 ```
 
-In rviz select \'File \> Open Config\' from the main menu then open the
-\'kinect_node/launch/demo.vcg\' config file.
+In rviz select 'File > Open Config' from the main menu then open the
+'kinect_node/launch/demo.vcg' config file.
 
 [Youtube](https://www.youtube.com/watch?v=jQgnuupBUI4)
 
@@ -138,7 +138,7 @@ param{
 ## References
 
 \[1\] H. Martin,
-[\"Open source Kinect driver\"](http://git.marcansoft.com/?p=libfreenect.git),
+["Open source Kinect driver"](http://git.marcansoft.com/?p=libfreenect.git),
 The Internets, 2010
 
 ## Bug Reports & Feature Requests

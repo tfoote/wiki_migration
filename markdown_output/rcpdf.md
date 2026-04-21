@@ -9,7 +9,7 @@ RCPDF XML files.
 For a complete specification, please see the
 [RCPDF XML reference](rcpdf/XML).
 
-The root node \`robot\` is shared with the [URDF](urdf) and [SRDF](srdf)
+The root node `robot` is shared with the [URDF](urdf) and [SRDF](srdf)
 specifications. It allows to fuse all the robot informations into a
 single file as the parser will safely ignore the tags which are not part
 of the specification.
@@ -22,7 +22,7 @@ browse through. For more details, take a look at the
 
 ### RCPDF Validator
 
-The package includes the command line tool \`check_rcpdf\`. It\'s called
+The package includes the command line tool `check_rcpdf`. It's called
 with a single command line argument naming a file. It attempts to parse
 the file as a RCPDF description, and either prints a description of the
 resulting contact zones description, or an error message.

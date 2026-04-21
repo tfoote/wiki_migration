@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(kinematics_msgs)\>\>
+<<MsgSrvDoc(kinematics_msgs)>>
 
 ## Examples
 

@@ -31,6 +31,6 @@ button, causing the blinking to stop, and the controller to connect.
 
 Controls:
 
-1\. Press \"PS\" button when controller first attached. 1. Use thumb
-wheel to steer left or right. 1. Press blue \"X\" button to speed up. 1.
+1\. Press "PS" button when controller first attached. 1. Use thumb
+wheel to steer left or right. 1. Press blue "X" button to speed up. 1.
 Press purple square button to slow down.

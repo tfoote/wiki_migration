@@ -48,7 +48,7 @@ Now open the file /etc/default/gpsd ```
 {
 sudo gedit /etc/default/gpsd
 ```} and change
-the line DEVICES=\"\" by DEVICES=\"/dev/ttyUSB0\" making sure that the
+the line DEVICES="" by DEVICES="/dev/ttyUSB0" making sure that the
 port is the one the command dmesg gave you.
 
 Lastely, create a rules file to get permission to use the gps device

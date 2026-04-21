@@ -1,5 +1,5 @@
 \
-![\|width=\"170\"](https://i.imgur.com/ct8e7T4.png)
+![\|width="170"](https://i.imgur.com/ct8e7T4.png)
 
 ## State Representations
 
@@ -7,14 +7,14 @@ This package provides two ways to describe an articulated robot state,
 one in cartesian (=task) space, the other in joint (=configuration)
 space. Each of these states has a corresponding ROS message
 [xpp_msgs](xpp_msgs), where conversion function are provided in
-\`convert.h\`.
+`convert.h`.
 
 ### Cartesian Representation
 
 In this representation
 ([robot_state_cartesian.h](http://docs.ros.org/api/xpp_states/html/robot__state__cartesian_8h_source.html)),
 the robot is described by the position, velocity and acceleration of
-it\'s endeffectors and the Cartesian force they exert.
+it's endeffectors and the Cartesian force they exert.
 ```cplusplus
 class RobotStateCartesian {
 public:

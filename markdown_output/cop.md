@@ -11,22 +11,22 @@ parameter to the cop_srv and starts a set of rosservices in the node
 named by the second command line parameter (careful with ros launch
 files here).
 
-. A cop config is a xml file. it contains a \<config\> node with the
+. A cop config is a xml file. it contains a <config> node with the
 following sub elements:
 
-. . \<[VisualFinder](cop/VisualFinder)/\>: Configures algorithms used
+. . <[VisualFinder](cop/VisualFinder)/>: Configures algorithms used
 for localizing special objects or concepts.
 
-. . \<[VisLearner](cop/VisLearner)/\>: Configures algorithms used to
+. . <[VisLearner](cop/VisLearner)/>: Configures algorithms used to
 learn new Descriptors or to classify existing objects
 
-. . \<[ImageInputSystem](cop/ImageInputSystem)/\>: Configures the sensor
+. . <[ImageInputSystem](cop/ImageInputSystem)/>: Configures the sensor
 setup loaded on start up
 
-. . \<[SignatureDB](cop/SignatureDB)/\> Configures the available
+. . <[SignatureDB](cop/SignatureDB)/> Configures the available
 Descriptors on start up
 
-. . \<[AttentionManager](cop/AttentionManager)/\>:
+. . <[AttentionManager](cop/AttentionManager)/>:
 
 An example might look like:
 
@@ -98,7 +98,7 @@ Next to the default service cop_call cop provides an additional service:
 
 This service is thought to provide a possibility to share some learned
 models with other robots. It allows to send an ObjectID (see
-\<[SignatureDB](cop/SignatureDB)/\>) and the result will be a local path
+<[SignatureDB](cop/SignatureDB)/>) and the result will be a local path
 of XML-file saving the necessary parameters. Additionally there is a
 list of relative paths returned which contains all files referred in the
 XML-file that are necessary to create the model.

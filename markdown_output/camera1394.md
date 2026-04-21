@@ -20,7 +20,7 @@ No C++ API is provided. There are no utility commands or launch files.
 
 For help, please check
 [http://answers.ros.org](http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:camera1394/page:1/).
-If your question is not answered, open a new one with the \`camera1394\`
+If your question is not answered, open a new one with the `camera1394`
 tag, so we can see it and respond.
 
 To report problems or request new features:
@@ -32,16 +32,16 @@ The [camera1394_node](#Camera1394Node) driver was first released with
 ROS C-Turtle. That API is stable.
 
 Additional features have been added since. They are all compatible with
-the previous release, except for the default \`reset_on_open\` value.
+the previous release, except for the default `reset_on_open` value.
 
 -   There is now a [version of the driver](#camera1394_nodelet) that
     runs as a [nodelet](nodelet).
 -   Format7 modes.
 -   Focus and Zoom features.
--   The \`reset_on_open\` parameter now defaults to \`False\`.
--   The driver will only set \`video_mode\` or \`frame_rate\` parameters
+-   The `reset_on_open` parameter now defaults to `False`.
+-   The driver will only set `video_mode` or `frame_rate` parameters
     to values supported by the device.
--   : \`camera1394\` is now released as a separate, unary stack.
+-   : `camera1394` is now released as a separate, unary stack.
     Previously, it was included in the [camera_drivers](camera_drivers)
     stack.
 -   : pan feature.
@@ -74,8 +74,8 @@ provide trigger synchronization over the 1394 bus or via external
 hardware.
 
 By default, [stereo_image_proc](stereo_image_proc) requires the message
-timestamps for both images to match exactly, which the \`camera1394\`
-driver cannot do. The Diamondback release of \`stereo_image_proc\`
+timestamps for both images to match exactly, which the `camera1394`
+driver cannot do. The Diamondback release of `stereo_image_proc`
 provided a solution for this problem (enhancement
 [#4217](https://code.ros.org/trac/ros-pkg/ticket/4217)).
 
@@ -96,7 +96,7 @@ specifications of the camera: manufacturers have great latitude in
 determining which features to support, what values they can take, and
 the meanings of those values.
 
-For each supported feature there is a corresponding \`auto\_\` parameter
+For each supported feature there is a corresponding `auto_` parameter
 providing user control. Different cameras handle these controls in
 various ways.
 
@@ -117,7 +117,7 @@ the corresponding control state to **Manual** (3), otherwise the
 corresponding value will be ignored unless the device is already in the
 **Manual** state when the driver starts.
 
-For example, to set \`brightness\` to 256 on the command line:
+For example, to set `brightness` to 256 on the command line:
 ```
 $ rosrun camera1394 camera1394_node _auto_brightness:=3 _brightness:=256.0
 ```
@@ -126,9 +126,9 @@ $ rosrun camera1394 camera1394_node _auto_brightness:=3 _brightness:=256.0
 
 Many IIDC cameras use
 [Bayer filtering](http://en.wikipedia.org/wiki/Bayer_filter) to provide
-color information. For cameras of this type, set \`video_mode\` to an
-appropriate \`mono8\` value, and select the correct \`bayer_pattern\`.
-If the \`bayer_pattern\` is \`\"\"\`, all \`mono8\` images are
+color information. For cameras of this type, set `video_mode` to an
+appropriate `mono8` value, and select the correct `bayer_pattern`.
+If the `bayer_pattern` is `""`, all `mono8` images are
 monochrome.
 
 This driver provides two alternate mechanisms for decoding Bayer color
@@ -136,7 +136,7 @@ information:
 
 -   Standard ROS [image_pipeline](image_pipeline) decoding.
 
-To use this, set the \`bayer_method\` parameter to \`\"\"\` (the
+To use this, set the `bayer_method` parameter to `""` (the
 default). This is the preferred method, it behaves like the other ROS
 camera drivers.
 
@@ -144,7 +144,7 @@ camera drivers.
     [libdc1394 conversions](http://damien.douxchamps.net/ieee1394/libdc1394/v2.x/api/conversions)
     (*now Deprecated*).
 
-To use this, select one of the other \`bayer_method\` options. They may
+To use this, select one of the other `bayer_method` options. They may
 have less CPU overhead in some systems, in others they may slow down the
 camera frame rate since decoding is done in the main driver thread.
 Performance depends on image size, decoding method, CPU speed and number
@@ -152,12 +152,12 @@ of processors available. Experimenting with the different options may
 reveal the best setting for a specific camera and system.
 
 Best performance is likely to come from using the default
-\`bayer_decoding\` method while running \`image_proc/debayer\` and
-\`camera1394/driver\` nodelets both in a single process (see the
+`bayer_decoding` method while running `image_proc/debayer` and
+`camera1394/driver` nodelets both in a single process (see the
 [camera1394_nodelet](#camera1394_nodelet) example below).
 
-In both cases the \`camera/image_raw\` image stream is compatible with
-the ROS \`image_pipeline\`.
+In both cases the `camera/image_raw` image stream is compatible with
+the ROS `image_pipeline`.
 
 ## Format7
 
@@ -171,26 +171,26 @@ Format7 modes may provide binning, combining groups of hardware pixels
 into a single image pixel. The Format7 Region of Interest (ROI) selects
 a rectangular subset from the full hardware image. These options
 sometimes allow the camera to send images at a faster rate. (The
-\`frame_rate\` parameter has no effect in Format7.)
+`frame_rate` parameter has no effect in Format7.)
 
-With an available \`video_mode\` selected, a number of Format7-specific
+With an available `video_mode` selected, a number of Format7-specific
 parameters *may* be supported, depending on the device:
 
--   \`binning_x\` and \`binning_y\` are typically determined by the
+-   `binning_x` and `binning_y` are typically determined by the
     specific Format7 mode selected, but may need to be provided if the
     driver fails to automatically detect them.
--   \`roi_width\` and \`roi_height\` specify ROI size in units of
+-   `roi_width` and `roi_height` specify ROI size in units of
     unbinned pixels.
--   \`x_offset\` and \`y_offset\` specify top left corner of the ROI, in
+-   `x_offset` and `y_offset` specify top left corner of the ROI, in
     unbinned pixels.
--   \`format7_color_coding\` defines the pixel format.
+-   `format7_color_coding` defines the pixel format.
 
-For devices providing Bayer color coding, use the \`raw8\` coding and
-specify the default \`bayer_method\`, *the other Bayer methods are not
+For devices providing Bayer color coding, use the `raw8` coding and
+specify the default `bayer_method`, *the other Bayer methods are not
 supported for Format7*. The camera should normally define its own
-\`bayer_pattern\` in this mode.
+`bayer_pattern` in this mode.
 
-All these parameters are ignored when \`video_mode\` is not one of the
+All these parameters are ignored when `video_mode` is not one of the
 Format7 options.
 
 ## ROS API
@@ -411,8 +411,8 @@ as the [camera1394_node](#camera1394_node) version.
 
 #### Examples
 
-Run a standalone \`camera1394_nodelet\`, this behaves almost the same as
-running \`camera1394_node\`. *Running the nodelet standalone does not
+Run a standalone `camera1394_nodelet`, this behaves almost the same as
+running `camera1394_node`. *Running the nodelet standalone does not
 provide zero-copy message sharing.* For that, see the following example.
 ```
 $ rosrun nodelet nodelet standalone camera1394/driver
@@ -458,5 +458,5 @@ a [roslaunch XML file](roslaunch/XML) like this:
 </launch>
 ```
 
-Depending on specific needs, some of the \`image_proc\` nodelets could
+Depending on specific needs, some of the `image_proc` nodelets could
 be omitted. But, they do not incur much overhead when not being used.

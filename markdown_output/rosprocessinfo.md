@@ -21,7 +21,7 @@ $ rosrun rosprocessinfo /node/name1 /node/name2
 ```
 
 This will should publish new topics with names
-\"/node/name1/processinfo\", \"/node/name2/processinfo\".
+"/node/name1/processinfo", "/node/name2/processinfo".
 
 ```
 $ rostopic list | grep processinfo

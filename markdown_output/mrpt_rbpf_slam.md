@@ -22,7 +22,7 @@ These algorithms allow building **grid map or range-only map**.
 
 ## Further documentation
 
-The ROS node \`mrpt_rbpf_slam\` is a wrapper for the C++ class**
+The ROS node `mrpt_rbpf_slam` is a wrapper for the C++ class**
 **[mrpt::slam::CMetricMapBuilderRBPF](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_metric_map_builder_r_b_p_f.html),
 part of MRPT. Check out the documentation of this class for further
 details.
@@ -32,7 +32,7 @@ This node has been designed to provide an interface similar to that of
 know this package.
 
 The coordinate frames are implemented according to the convention
-[ROS REP 105: \"Coordinate Frames for Mobile Platforms\"](http://ros.org/reps/rep-0105.html).
+[ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
 
 ## Usage
 
@@ -49,7 +49,7 @@ simulations with RBPF SLAM.
 The following video demonstrates the work of the gridmap RBPF-based SLAM
 using Rviz and MRPT GUI:
 
-\<\<Youtube(KLMrDmq3G5E&feature)\>\>
+[Youtube](https://www.youtube.com/watch?v=KLMrDmq3G5E&feature)
 
 To run the example of the gridmap RBPF SLAM in online mode, use the
 following command:

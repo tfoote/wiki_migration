@@ -2,8 +2,8 @@
 
 ## Overview
 
-This package publishes \<\<MsgLink(sensor_msgs/JointState)\>\> messages
-for a robot. The package reads the \`robot_description\` parameter from
+This package publishes <<MsgLink(sensor_msgs/JointState)>> messages
+for a robot. The package reads the `robot_description` parameter from
 the [parameter server](Parameter Server), finds all of the non-fixed
 joints and publishes a !JointState message with all those joints
 defined.
@@ -29,7 +29,7 @@ The GUI functionality has been split out of the main `joint_state_publisher` pac
 ```
 
 If GUI is present, the package displays the joint positions in a window
-as sliders. Each slider is set to the joints\' min and max limits,
+as sliders. Each slider is set to the joints' min and max limits,
 except for continuous joints, which range from -Pi to +Pi. Joint
 velocity limits are not taken into account when publishing joint state
 messages.
@@ -38,7 +38,7 @@ messages.
 
 ### Subscribing JointState messages
 
-Set the \`source_list\` parameter, see below.
+Set the `source_list` parameter, see below.
 
 ### Dependent Joints
 
@@ -50,14 +50,14 @@ Or, if you had two unequally sized pulleys, and wanted to have one
 pulley drive the other, you could constrain the second pulley to turn 3
 times as fast as the other.
 
-This is can be specified through the \`dependent_joints\` parameter or
-the \`mimic\` tag in the [URDF](URDF).
+This is can be specified through the `dependent_joints` parameter or
+the `mimic` tag in the [URDF](URDF).
 
 ### Default value
 
 The default value is zero. If zero is not a permissible value
 *(max+min)/2* is used. To override the default value for some joints,
-use the \`zeros\` parameter. An example YAML file is seen below.
+use the `zeros` parameter. An example YAML file is seen below.
 
 ## Node API
 
@@ -116,9 +116,9 @@ param {
 ### Example YAML file for dependent_joints and zeros parameters
 
 The following YAML snippets show examples of how to set the
-\`dependent_joints\` and the \`zeros\` parameters using YAML syntax.
+`dependent_joints` and the `zeros` parameters using YAML syntax.
 These can be loaded to the parameter server using the
-[\<rosparam\> tag](roslaunch/XML/rosparam) in a launch file.
+[<rosparam> tag](roslaunch/XML/rosparam) in a launch file.
 
 ```
 dependent_joints:

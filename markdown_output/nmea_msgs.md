@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(nmea_msgs)\>\>
+<<MsgSrvDoc(nmea_msgs)>>

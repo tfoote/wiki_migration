@@ -12,7 +12,7 @@ This package provides an indicator that displays the status of ROS. It
 shows the topics available and the nodes that are currently running. It
 is also possible to kill and restart ROS Core using this tool.
 
-roscore does not save it\'s pid to a file by default so to stop roscore
+roscore does not save it's pid to a file by default so to stop roscore
 when it is manually started it must be run with the following option.
 
 `roscore --pid ~/.ros/roscore.pid`

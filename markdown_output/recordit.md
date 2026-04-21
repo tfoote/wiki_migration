@@ -10,7 +10,7 @@
 
 ![](attachment:ur_recordit.gif)
 
-\"An animation is worth a thousand lines of markdown.\"
+"An animation is worth a thousand lines of markdown."
 
 The RecordIt tool allows to record any ROS application. The resulting 3D
 animation can be visualized in the web or as well be converted into a
@@ -47,8 +47,8 @@ frames.
 ![](attachment:pr2_keyframes.gif)
 
 During a running application the internal and external motions are
-extracted from the ROS topics \`/joint_states\` and \`/tf
-respectively\`. The topics can be throttled by rate and by change to
+extracted from the ROS topics `/joint_states` and `/tf
+respectively`. The topics can be throttled by rate and by change to
 reduce the recorded key frames.
 
 The tool can either be used in automatic mode which records as long as

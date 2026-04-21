@@ -1,8 +1,8 @@
 If you decide to use UHF RFID in *your* project, we kindly suggest
-taking a look at our lab\'s
+taking a look at our lab's
 [RFID in Robotics project page](http://www.hsi.gatech.edu/hrl/project_rfid.shtml)
 or the Pervasive Computing article:
-\"[RFID-Guided Robots for Pervasive Automation](http://www.computer.org/portal/web/csdl/doi/10.1109/MPRV.2010.17)\"
+"[RFID-Guided Robots for Pervasive Automation](http://www.computer.org/portal/web/csdl/doi/10.1109/MPRV.2010.17)"
 (registration-free
 [pdf](http://www.hsi.gatech.edu/hrl/pdf/pervasive_computing_2010.pdf)).
 
@@ -12,7 +12,7 @@ My UHF RFID reader of choice is the
 [ThingMagic Mercury5e (M5e)](http://www.thingmagic.com/embedded-rfid-readers/mercury5e/1-embedded-rfid-readers/3-mercury5e)
 and/or
 [Mercury5e-Compact (M5e-C)](http://www.thingmagic.com/embedded-rfid-readers/m5e-compact/1-embedded-rfid-readers/1-m5e-compact),
-pictured below left. I have personally verified these readers\'
+pictured below left. I have personally verified these readers'
 operation with over 32 different UHF RFID tag variants, pictured below
 right (not to scale). Generally, I prefer Alien Squiggle tags; they are
 available for roughly \$0.29-0.59 ea. in quantities of 500-1000 from
@@ -23,8 +23,8 @@ expensive; AtlasRFIDstore as a nice set of
 [sample packs](http://www.atlasrfidstore.com/RFID_Tag_Sample_Pack_UHF_Passive_p/rfid_tag_sample_pack.htm)
 that give you the opportunity to explore different variants.
 
-![\|height=\"200\"](attachment:ThingMagicMercury5e.jpg)
-![\|height=\"200/\"](attachment:UHF_RFID_Tags.jpg)
+![\|height="200"](attachment:ThingMagicMercury5e.jpg)
+![\|height="200/"](attachment:UHF_RFID_Tags.jpg)
 
 ThingMagic Mercury5e:
 
@@ -63,17 +63,17 @@ useful, as it can be powered solely off of USB (a hardware design I
 *might* elaborate on at a later date). Anyway, ThingMagic has
 [dev-kits](http://www.thingmagic.com/store/) available for \$1,500 that
 include the cabling, power regulation, an antenna, and some tags \-- not
-a bad deal if you\'re starting fresh. However, for roughly \$60, you can
+a bad deal if you're starting fresh. However, for roughly \$60, you can
 build your own carrier board with TTL RS232→USB (FTDI) already built in.
 My PCB design ([Eagle CAD](http://cadsoft.de/)) can be found her
 (<attachment:Design.zip>); it can be fabricated by
 [Advanced Circuits](http://4pcb.com/) for \$33 each.
 
-One of the ***most important*** considerations when designing your UHF
-RFID system is the selection of reader antennas (the same considerations
-apply to tag antennas, but specifications are generally unpublished).
-This topic is too deep to fully explore here; most critically, you\'ll
-want to pay attention to:
+One of the **`'most important`**' considerations when designing your
+UHF RFID system is the selection of reader antennas (the same
+considerations apply to tag antennas, but specifications are generally
+unpublished). This topic is too deep to fully explore here; most
+critically, you'll want to pay attention to:
 
 -   **Physical size:** Drastically affects robot integration. High-gain
     / directionality antennas are generally much larger and unwieldy.
@@ -104,13 +104,13 @@ want to pay attention to:
 -   **Polarization:** Circularly-polarized antennas tend to have less
     mismatch when exciting tags at off-angles.
 
-![\|height=\"250\"](attachment:RFID_antennas.jpg)
-![\|height=\"250\"](attachment:ELE_large_antennas.jpg)
-![\|height=\"250\"](attachment:ELE_Small_Antennas.jpg)
+![\|height="250"](attachment:RFID_antennas.jpg)
+![\|height="250"](attachment:ELE_large_antennas.jpg)
+![\|height="250"](attachment:ELE_Small_Antennas.jpg)
 
 Over the last several years, I have experimented with *numerous*
 antennas, both purchased and constructed: whips, dipoles, patches,
-loaded-microstrips, etc. Ultimately, I\'ve settled on these two patch
+loaded-microstrips, etc. Ultimately, I've settled on these two patch
 antennas (articulated using
 [Robotis Dynamixel servos](http://www.hizook.com/blog/2010/03/14/robotis-dynamixel-servos-overview-applications-tear-down-and-open-source-software));
 generally choosing the largest antenna possible given robot integration
@@ -133,7 +133,7 @@ size constraints (see EL-E photos above):
 
 ## Software Overview:
 
-The communication / software API for ThingMagic\'s module is obtained
+The communication / software API for ThingMagic's module is obtained
 upon purchase; I do not believe I am at liberty to distribute my
 personal copy. However, my open source Python library (depending only on
 [Pyserial](http://pyserial.sourceforge.net/)) implements a sufficiently
@@ -205,7 +205,7 @@ q.stop()
 Operating System (ROS) wrappers act in pretty much the same fashion as
 the *M5e_Poller *and can be found in *ros_M5e.py *(server node) and
 *ros_M5e_client.py* (client nodes). Only one *server* node can connect
-to the M5e module\'s serial port at once due to strict device
+to the M5e module's serial port at once due to strict device
 handshaking protocols; any number of client nodes can control / query
 the server. The server code looks like this:
 
@@ -242,7 +242,7 @@ example, using *rosservice*:
 [OUTPUT HERE]
 >  rosservice call /rfid/my_rfid_server_mode "['stop']"
 ``` The last call puts the reader back into standby
-mode (any argument other than \'query\' or \'track\'). The
+mode (any argument other than 'query' or 'track'). The
 *ros_M5e_client.py* file implements a rudimentary RFID client that can
 perform the same operations.
 

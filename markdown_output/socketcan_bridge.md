@@ -76,5 +76,5 @@ Several aspects to take into account:
 -   Error frames from the device are also converted to a message and
     published on the topic. A warning is displayed for every error
     frame.
--   The timestamp of the messages is based on \`ros::Time::now()\` at
+-   The timestamp of the messages is based on `ros::Time::now()` at
     the moment the frame is read from SocketCAN.

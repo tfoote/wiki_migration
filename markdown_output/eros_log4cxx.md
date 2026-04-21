@@ -1,6 +1,6 @@
 ## Overview
 
-This package is a component of eros\'
+This package is a component of eros'
 [toolchain bridge](eros/Tutorials/Toolchain Bridge).
 
 ## Tested

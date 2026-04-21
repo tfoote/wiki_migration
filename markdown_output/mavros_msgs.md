@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(mavros_msgs)\>\>
+<<MsgSrvDoc(mavros_msgs)>>

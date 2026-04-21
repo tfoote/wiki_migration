@@ -9,7 +9,7 @@ This wrapper for the ARToolKitPlus has two modes:
 -   Single Marker (Every tag creates a tf)
 -   Multi Marker (A predefined set of markers creates only on tf)
 
-The \"Multi Marker\" mode is especially useful if you would like to
+The "Multi Marker" mode is especially useful if you would like to
 estimate your camera pose and to estimate other markers. Nearly all
 parameters can be tuned by using the dynamic reconfigure package
 on-line. The note is able to deal with distorted as well as with
@@ -17,13 +17,13 @@ undistorted images as long as the provided camera_info message is
 correct.
 
   -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"710px\" tableheight=\"590px\"\> ![](attachment:multi_marker_with_pionerr.png) *This figure shows the node running the multi marker mode; The marker combination/pattern under the robot is used to estimate the camera pose while the marker on top is used to estimate the robot pose. *   
+     <tablewidth="710px" tableheight="590px"> ![](attachment:multi_marker_with_pionerr.png) *This figure shows the node running the multi marker mode; The marker combination/pattern under the robot is used to estimate the camera pose while the marker on top is used to estimate the robot pose. *   
   -- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Node
 
 There are a large number of ROS [Parameters](Parameters) that can be set
-to customize the behavior of the \`ARToolKitPlus\` wrapper. Most of
+to customize the behavior of the `ARToolKitPlus` wrapper. Most of
 these parameters can also be changed using
 [dynamic_reconfigure](dynamic_reconfigure) but some of them must be set
 at start-up.

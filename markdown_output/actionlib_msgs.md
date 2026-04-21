@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(actionlib_msgs)\>\>
+<<MsgSrvDoc(actionlib_msgs)>>

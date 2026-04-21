@@ -1,5 +1,5 @@
 This package only contained a simple script for checking on the
-netbook\'s battery level.
+netbook's battery level.
 
 This functionality has been moved out in indigo in favour of using the
 standard drivers in the [ros-drivers](https://github.com/ros-drivers)

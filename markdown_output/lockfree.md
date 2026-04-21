@@ -13,7 +13,7 @@ and
 The
 [FreeList](http://www.ros.org/doc/api/lockfree/html/classlockfree_1_1FreeList.html)
 class provides a fixed number of fixed-size blocks that you can allocate
-and free from multiple threads. \`FreeList\` is lock-free but not
+and free from multiple threads. `FreeList` is lock-free but not
 wait-free.
 
 ### Example
@@ -31,15 +31,15 @@ if (mem)
 }
 ```
 
-## ObjectPool\<T\>
+## ObjectPool<T>
 
-While the \`FreeList\` class simply provides allocation of
+While the `FreeList` class simply provides allocation of
 specific-sized blocks of memory, the
 [ObjectPool](http://www.ros.org/doc/api/lockfree/html/classlockfree_1_1ObjectPool.html)
 class builds on top of that to provide allocation of specific object
 types, initialized using a template object. It also allows you to
-allocate either \`boost::shared_ptr\`s or bare pointers, depending on
-your needs. \`ObjectPool\` is lock-free but not wait-free.
+allocate either `boost::shared_ptr`s or bare pointers, depending on
+your needs. `ObjectPool` is lock-free but not wait-free.
 
 ### Example
 

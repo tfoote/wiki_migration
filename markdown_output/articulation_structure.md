@@ -63,4 +63,4 @@ on the homepage of
 ## Report a Bug
 
 If you run into any problems, please feel free to contact Juergen Sturm
-\<juergen.sturm@in.tum.de\>.
+<juergen.sturm@in.tum.de>.

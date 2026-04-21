@@ -1,9 +1,9 @@
-\<\<MsgSrvDoc(simple_arm_server)\>\>
+<<MsgSrvDoc(simple_arm_server)>>
 
 ## Node API
 
-The \`simple_arm_server\` package contains a single node,
-\`simple_arm_server.py\` which offers an action-based interface. This
+The `simple_arm_server` package contains a single node,
+`simple_arm_server.py` which offers an action-based interface. This
 server can generate joint trajectories for 4 and 5 DOF arms using the
 [arm_kinematics](arm_kinematics) package for IK. It transparently
 handles the issues of low-dof manipulators being unable to reach all
@@ -40,13 +40,13 @@ param {
 
 ### Action API
 
-The \`simple_arm_server.py\` node provides an implementation of a
-\`SimpleActionServer\` (see [ actionlib documentation](actionlib )),
-that takes in goals containing \`simple_arm_server/MoveArmGoal\`
-messages. You can communicate with the \`simple_arm_server\` node over
+The `simple_arm_server.py` node provides an implementation of a
+`SimpleActionServer` (see [ actionlib documentation](actionlib )),
+that takes in goals containing `simple_arm_server/MoveArmGoal`
+messages. You can communicate with the `simple_arm_server` node over
 ROS directly, but the recommended way to send goals to
-\`simple_arm_server\` if you care about tracking their status is by
-using the \`SimpleActionClient\`. Please see
+`simple_arm_server` if you care about tracking their status is by
+using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 #### Action Subscribed Topics

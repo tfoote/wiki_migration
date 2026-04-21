@@ -2,13 +2,13 @@
 
 Checks transmissions status of PR2 transmissions.
 
-To do this, it loads the URDF from the \`robot_description\` param, and
+To do this, it loads the URDF from the `robot_description` param, and
 checks that each actuator calibration flag corresponds to the correct
 joint position. It works for all joints with simple transmissions, and
 wrist transmissions.
 
 Once a transmission reports invalid data, the
-\"pr2_etherCAT/halt_motors\" service will be called. Users must reset
+"pr2_etherCAT/halt_motors" service will be called. Users must reset
 motors using the pr2_dashboard.
 
 ## Nodes

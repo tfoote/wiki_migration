@@ -20,7 +20,7 @@ combination with ABB IRB1200 and MoveIt.
 This package is part of the
 [binpicking_utils](http://wiki.ros.org/binpicking_utils) stack, The main
 repository have been released into ROS Kinetic on Ubuntu, making
-installation through \`apt-get\`or synaptic possible. Other
+installation through `apt-get`or synaptic possible. Other
 distributions will have build from source.
 
 ```
@@ -32,7 +32,7 @@ sudo apt-get install ros-kinetic-binpicking-utils
 Bin Pose Emulator uses .yaml config file to parse initial settings.
 Configure following settings to adopt for your use-case:
 
-Virtual Bin is defined by bin_center\_ and bin_size\_ parameters, while
+Virtual Bin is defined by bin_center_ and bin_size_ parameters, while
 allowed orientation is set by **roll_range**, **pitch_range** and
 **yaw_range**.
 
@@ -127,4 +127,4 @@ visualize the pose of the virtual bin and the location of the current
 grasp point. Both Markers are published with *base_link* as a reference
 frame.
 
-![\|height=\"400\",width=\"750\"](attachment:bin_pose_visualization.jpg)
+![\|height="400",width="750"](attachment:bin_pose_visualization.jpg)

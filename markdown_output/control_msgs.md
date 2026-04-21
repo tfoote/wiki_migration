@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(control_msgs)\>\>
+<<MsgSrvDoc(control_msgs)>>

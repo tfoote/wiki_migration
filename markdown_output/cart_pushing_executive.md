@@ -9,23 +9,23 @@ customizations you might want to make.
 See the
 [tutorial](http://www.ros.org/wiki/cart_pushing/Tutorials/Configuring%20a%20new%20cart)
 for how to do this. The files
-\`launch/move_base/wg_holonomic_cart_params.yaml\` and
-\`launch/move_base/wg_holonomic_cart_filter_params.yaml\` are the ones
+`launch/move_base/wg_holonomic_cart_params.yaml` and
+`launch/move_base/wg_holonomic_cart_filter_params.yaml` are the ones
 that need to be edited.
 
 ## Using a different map
 
-Edit the parameter to \`map_server\` in
-\`launch/cart_pushing_robot.launch\`.
+Edit the parameter to `map_server` in
+`launch/cart_pushing_robot.launch`.
 
 ## Changing the initial robot pose
 
-Edit the parameter to \`set_initial_robot_pose\` in
-\`launch/cart_pushing_robot.launch\`.
+Edit the parameter to `set_initial_robot_pose` in
+`launch/cart_pushing_robot.launch`.
 
 ## Modifying general navigation and costmap parameters
 
-The files in \`launch/move_base\` correspond to those in the standard
+The files in `launch/move_base` correspond to those in the standard
 [PR2 nav stack](pr2_2dnav).
 
 ## Making the planning faster

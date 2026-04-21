@@ -4,7 +4,7 @@ Data Processing Layer (DPL) is a second layer in experimental robotic
 stack. The main task of this package is to fuse multiple sources of data
 from [HAL](p3dx_hal_vrep). The output from nodes in DPL are standard
 higher level messages like
-\<\<MsgLink(nav_msgs/Odometry)\>\>,\<\<MsgLink(sensor_msgs/PointCloud)\>\>\...
+<<MsgLink(nav_msgs/Odometry)>>,<<MsgLink(sensor_msgs/PointCloud)>>\...
 
 ## Architecture
 

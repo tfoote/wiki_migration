@@ -35,7 +35,7 @@ $ roslaunch ros2opencv avi2ros.launch input:=/path/to/avi/file
 $ rosrun ros2opencv avi2ros.py _input:=/path/to/avi/file output:=/your_topic
 ```
 
-(Note the underscore in front of \_input but not in front of output.)
+(Note the underscore in front of _input but not in front of output.)
 
 ## Nodes
 

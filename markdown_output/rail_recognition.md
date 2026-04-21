@@ -1,6 +1,6 @@
 ## About
 
-The \`rail_recognition\` package contains nodes for object recognition
+The `rail_recognition` package contains nodes for object recognition
 and demonstration grasp selection using models from a grasp database,
 handled by [graspdb](graspdb). The package also contains a node used for
 generating object models from grasp demonstrations collected with the
@@ -402,7 +402,7 @@ node.8 {
 
 ## The Recognition Pipeline
 
-![\|width=\"500\"](attachment:recognition_pipeline.png)
+![\|width="500"](attachment:recognition_pipeline.png)
 
 The full recognition pipeline takes in a list of unrecognized segmented
 objects, such as what the [rail_segmentation](rail_segmentation) package
@@ -441,7 +441,7 @@ The recognizer uses a bag-of-words model with a neural network
 classifier. The next step is to train the dictionary for the
 bag-of-words, which can be done by running the node below. Note that if
 the recognizer is being retrained for added objects or data, the same
-dictionaries can be re-used if the dataset hasn\'t changed dramatically,
+dictionaries can be re-used if the dataset hasn't changed dramatically,
 and this step can be skipped.
 
 . ```
@@ -471,7 +471,7 @@ models.
 
 ## Installation
 
-To install the \`rail_pick_and_place\` package, you can install from
+To install the `rail_pick_and_place` package, you can install from
 source with the following commands:
 
 . ```shell
@@ -484,7 +484,7 @@ catkin_make install
 
 ## Startup
 
-The \`rail_recognition\` package contains a launch file for launching
+The `rail_recognition` package contains a launch file for launching
 the object_recognition_listener node with the various database,
 segmentation, and recognition parameters set, executed with:
 

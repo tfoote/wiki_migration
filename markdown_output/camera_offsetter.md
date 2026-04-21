@@ -14,11 +14,11 @@ disparities between the 3D laser or robot data and stereo/image data.
 
 The package contains 3 main nodes:
 
--   \`mono_offsetter\` - Creates a virtual monocular camera and
-    republishes \`camera_info\` and various image topics
--   \`stereo_offsetter\` - Creates a virtual stereo camera and
-    republishes \`camera_info\` and image_raw topics
--   \`keyboard_interface\` - Sends simple twist and baseline offsets
+-   `mono_offsetter` - Creates a virtual monocular camera and
+    republishes `camera_info` and various image topics
+-   `stereo_offsetter` - Creates a virtual stereo camera and
+    republishes `camera_info` and image_raw topics
+-   `keyboard_interface` - Sends simple twist and baseline offsets
     using the keyboard.
 
 ### Limitations
@@ -82,7 +82,7 @@ node.0{
 
 #### Example
 
-Suppose that you want to offset a camera in the \`/prosilica\`
+Suppose that you want to offset a camera in the `/prosilica`
 namespace. You could use the following launch file:
 ```
 <launch>
@@ -95,10 +95,10 @@ namespace. You could use the following launch file:
 ```
 
 This launches a camera_offsetter that subscribes to
-\`/prosilica/image_rect_color\` and \`/prosilica/camera_info\`. It
-copies the data from these messages, appends \`\_offset\` to the
-frame_ids, and republishes on \`prosilica_offset/image_rect_color\` and
-\`/prosilica/camera_info\`.
+`/prosilica/image_rect_color` and `/prosilica/camera_info`. It
+copies the data from these messages, appends `_offset` to the
+frame_ids, and republishes on `prosilica_offset/image_rect_color` and
+`/prosilica/camera_info`.
 
 ```clearsilver
 node.0{
@@ -138,7 +138,7 @@ node.0{
 }
 ```
 
-Suppose that you want to offset a stereocamera in the \`/narrow_stereo\`
+Suppose that you want to offset a stereocamera in the `/narrow_stereo`
 namespace. You could use the following launch file:
 ```
 <launch>
@@ -152,8 +152,8 @@ namespace. You could use the following launch file:
   </group>
 </launch>
 ``` This will create a virtual stereocamera in the
-\`/narrow_stereo_offset\` namespace. This file also launches the
-\`stereo_image_proc\` node on the offset camera.
+`/narrow_stereo_offset` namespace. This file also launches the
+`stereo_image_proc` node on the offset camera.
 
 ## Use the keyboard to move a virtual camera (Node API)
 
@@ -188,7 +188,7 @@ node.2{
 
 To start the keyboard interface, all you need to do is start the node in
 the same namespace as the offsetter. If the offsetter is in the global
-namespace, then a simple \`rosrun\` is sufficient:
+namespace, then a simple `rosrun` is sufficient:
 ```
 rosrun camera_offsetter keyboard_interface
 ```

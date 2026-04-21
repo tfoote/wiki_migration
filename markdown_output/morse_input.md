@@ -56,7 +56,7 @@ Once the cursor has reached the rest zone, release the mouse button. The
 cursor will then be constrained to move horizontally. Morser will also
 prevent the cursor from penetrating into the dot and dash button areas.
 If moved against one of these buttons, the cursor is kept touching the
-respective button\'s edge. This constraint enables the user to \'slam\'
+respective button's edge. This constraint enables the user to 'slam'
 the cursor into the button edges, while keeping the return distance into
 the rest zone constant.
 
@@ -85,16 +85,16 @@ dot-dot-dot*)
 
 ## Options Panel
 
-A number of operational parameters can be adjusted in the \'\'Options
-Panel,\'\' which is reached either via the Edit menu, or the keyboard
-shortcut \`cnt-O\` (that is *oh* as in option). Hovering over any of the
+A number of operational parameters can be adjusted in the ''Options
+Panel,'' which is reached either via the Edit menu, or the keyboard
+shortcut `cnt-O` (that is *oh* as in option). Hovering over any of the
 elements raises a short tooltip that explains the purpose of each
 widget.
 
 ![](attachment:morserOptions.png)
 
-The options panel consists of several sections. The \'\'\'Dwell
-segmentation*\' section\'s *Word stop\'\' checkbox controls whether or
+The options panel consists of several sections. The '''Dwell
+segmentation*' section's *Word stop'' checkbox controls whether or
 not pauses beyond a certain threshold between Morse letters
 automatically insert a space. When a long enough pause is detected, the
 crosshair in the rest zone briefly blinks yellow. The length of the
@@ -115,25 +115,25 @@ generally recommended to slow the cursor in the zone. The slider
 controls the factor by which the cursor is slowed, relative to the
 current mouse cursor speed as set in the operating system settings.
 
-The **Speed Controls** section holds three controls. The \'\'Key
-speed\'\' adjusts the speed at which dots and dashes are generated while
+The **Speed Controls** section holds three controls. The ''Key
+speed'' adjusts the speed at which dots and dashes are generated while
 the cursor abuts the respective *dot* or *dash* button. The
 *Inter-letter delay* controls the threshold of time lapse between
 successive dots or dashes that has Morser conclude that one Morse letter
 has been entered to completion. For example: a Morse *dot* encodes the
-letter \'e\', while *dot-dot* encodes the letter \'i\'. Morsing the
-sequence \'ei\' requires a brief pause between the first *dot* and the
+letter 'e', while *dot-dot* encodes the letter 'i'. Morsing the
+sequence 'ei' requires a brief pause between the first *dot* and the
 following sequence of two *dots*. This pause is the inter-letter delay.
 If the operator does not provide this pause, then Morser interprets the
-total of three *dots* as a single letter \'s\'. The inter-letter delay
+total of three *dots* as a single letter 's'. The inter-letter delay
 is measured in milliseconds.
 
 The *Inter-word delay* is only relevant when Word stop is turned on. The
-slider\'s units are milliseconds, and its setting determines when Morser
+slider's units are milliseconds, and its setting determines when Morser
 concludes that an inter-word space is to be inserted.
 
-All options settings are permanently stored below the user\'s home
-directory, in \`\$HOME/.morser/morser.cfg\`.
+All options settings are permanently stored below the user's home
+directory, in `\$HOME/.morser/morser.cfg`.
 
 ## Speed Timer
 
@@ -149,7 +149,7 @@ button.
 ## Morse Reference Table
 
 The View menu allows users to raise a Morse code reference table. The
-keyboard shortcut \`cnt-m\` also exposes the table. All Morse letters in
+keyboard shortcut `cnt-m` also exposes the table. All Morse letters in
 the table are standard, except for horizontal space and backspace.
 
 ![](attachment:morserRefTable.png)
@@ -160,9 +160,9 @@ The MorseChallenger program is a simple game that comes with Morser.
 Users select a level of difficulty, and the characters they have already
 learned to key. Random selections of these characters will then descend
 from the top of the MorseChallenger window. If they reach the bottom of
-the window, they \'explode.\' However, any letter that is keyed in as
+the window, they 'explode.' However, any letter that is keyed in as
 Morse code before the letter reaches the bottom of the MorseChallenger
-application window is \'defused\' and disappears.
+application window is 'defused' and disappears.
 
 Difficulty level settings include the speed at which the letters
 descend, and the number of letters in flight at the same time. To start

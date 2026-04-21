@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(tedusar_box_detection_msgs)\>\>
+<<MsgSrvDoc(tedusar_box_detection_msgs)>>

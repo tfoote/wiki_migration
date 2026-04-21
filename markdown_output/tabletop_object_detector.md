@@ -23,11 +23,11 @@ To perform these tasks we rely the following **assumptions**:
     (3cm in our demo)
 -   in addition, object recognition can only handle 2 degrees of
     freedom: translation along the X and Y axes (with the Z axis assumed
-    to be pointing \"up\" relative to the table). Therefore, in order to
+    to be pointing "up" relative to the table). Therefore, in order to
     recognize an object:
 -   it must be rotationally symmetric
 -   it must have a known orientation, such as a glass or a bowl sitting
-    \"upright\" on the table.
+    "upright" on the table.
 
 The sensor data that we use consists of a point cloud from the narrow
 stereo or Kinect cameras. We perform the following steps:
@@ -137,7 +137,7 @@ param {
 
 All of these parameters are applied to decide what part of the point
 cloud the detector should focus on. They must make sense in the
-\`processing_frame\`. If \`processing_frame\` is unspecified, all
+`processing_frame`. If `processing_frame` is unspecified, all
 processing takes place in the native frame of the incoming cloud, which
 on the PR2 robot is the camera frame. Therefore, all these parameters
 have default values which makes sense in the camera frame.

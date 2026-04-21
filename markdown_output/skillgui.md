@@ -26,7 +26,7 @@ the [skiller](skiller).
 After starting the GUI, it will immediately connect to the ROS master.
 If a skiller or luaagent instance is registered with the master, it will
 connect automatically. As new graphs are issued they are displayed in
-the SkillGUI. Use the buttons labeled \"Agent\" and \"Skiller\" to
+the SkillGUI. Use the buttons labeled "Agent" and "Skiller" to
 switch between the two.
 
 On initial connect, the graph view might stay empty if no update is

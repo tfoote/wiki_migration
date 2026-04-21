@@ -1,7 +1,7 @@
 This package is a lightweight wrapper around the
 [Zbar](http://zbar.sourceforge.net/) barcode processing library. It
-provides a node and a nodelet with equivalent interface. The \`image\`
-topic is a lazy subscription that is active only when the \`barcode\`
+provides a node and a nodelet with equivalent interface. The `image`
+topic is a lazy subscription that is active only when the `barcode`
 topic has a client.
 
 ## Node API
@@ -28,4 +28,4 @@ param {
 
 ## Nodelet API
 
-Same API as node, available as \`zbar_ros/barcode_reader_nodelet\`.
+Same API as node, available as `zbar_ros/barcode_reader_nodelet`.

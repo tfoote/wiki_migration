@@ -1,12 +1,12 @@
 ## About
 
-The \`carl_moveit_package\` includes configuration files for running the
+The `carl_moveit_package` includes configuration files for running the
 [CARL robot](carl_bot) with MoveIt!. The package also includes a ros
 node that acts as a wrapper for relevant MoveIt! functionality that CARL
 uses, and a node that provides simple execution of common actions such
 as arm readying, retracting, and lifting.
 
-\<\<MsgSrvDoc(carl_moveit)\>\>
+<<MsgSrvDoc(carl_moveit)>>
 
 ## Nodes
 
@@ -137,7 +137,7 @@ node.1 {
 
 ## Installation
 
-To install the \`carl_moveit\` package, you can install from source with
+To install the `carl_moveit` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/WPI-RAIL/carl_moveit.git
@@ -148,12 +148,12 @@ catkin_make install
 
 ## Startup
 
-The \`carl_moveit\` package contains many launch files that are used for
+The `carl_moveit` package contains many launch files that are used for
 configuring MoveIt! for CARL. They can be used to run MoveIt! on CARL,
 on a simulated robot, run benchmarks, visualize motion planning, and
-adjust parameters. Primarily, the \`carl_moveit_full.launch\` file can
+adjust parameters. Primarily, the `carl_moveit_full.launch` file can
 be used to run everything required for MoveIt! on CARL, as well as
-\`carl_moveit_wrapper\` and \`carl_moveit_common_actions\`: .
+`carl_moveit_wrapper` and `carl_moveit_common_actions`: .
 ```
 roslaunch carl_moveit carl_moveit_full.launch
 ```

@@ -1,15 +1,15 @@
 ## ROS API
 
-This package provides the \`katana\` ROS node, which provides four sets
-of functionality at once: the \`joint_state_publisher\`, the
-\`joint_movement_controller\`, the
-\`joint_trajectory_action_controller\` and the
-\`gripper_grasp_controller\`. They are combined into one single node for
+This package provides the `katana` ROS node, which provides four sets
+of functionality at once: the `joint_state_publisher`, the
+`joint_movement_controller`, the
+`joint_trajectory_action_controller` and the
+`gripper_grasp_controller`. They are combined into one single node for
 technical reasons (only one single process can access the Katana), but
 documented separately below for clarity.
 
 Also there is a second node in this package, called
-\`katana_arm_kinematics\`, documented at the end.
+`katana_arm_kinematics`, documented at the end.
 
 ```clearsilver
 node.0 {

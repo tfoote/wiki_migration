@@ -11,7 +11,7 @@ required:
 
 The following packages of the swarm functions library are required:
 
--   [target_monitor](target_monitor) (only if \`single_target=true\`)
+-   [target_monitor](target_monitor) (only if `single_target=true`)
 
 The following packages of the
 [sensing and actuation library](https://github.com/cpswarm/sensing_actuation)

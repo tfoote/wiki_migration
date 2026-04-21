@@ -32,7 +32,7 @@ First, the DMP server must be running. Type:
 roslaunch dmp dmp.launch
 ```
 
-Now, let\'s look at some sample code to learn a DMP from demonstration,
+Now, let's look at some sample code to learn a DMP from demonstration,
 set it as the active DMP on the server, and use it to plan, given a new
 start and goal:
 

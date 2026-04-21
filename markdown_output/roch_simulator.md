@@ -22,4 +22,4 @@ For how to using simulators with Roch, please see
 
 ## Report a Bug
 
-\<\<GitHubIssues(SawYer-Robotics/roch_simulator)\>\>
+<<GitHubIssues(SawYer-Robotics/roch_simulator)>>

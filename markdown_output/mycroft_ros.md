@@ -20,8 +20,8 @@ package for use.
 
 ### Mycroft setup
 
-Mycroft can be configured using either ***/.mycroft/mycroft.conf*** or
-***/etc/mycroft/mycroft.conf***
+Mycroft can be configured using either **`'~/.mycroft/mycroft.conf`**'
+or **`'/etc/mycroft/mycroft.conf`**'
 
 ## Usage
 
@@ -35,7 +35,7 @@ roslaunch mycroft_ros mycroft.launch
 
 ### Creating Mycroft Skills from ROS nodes
 
-ROS nodes that are used as !MycroftSkill\'s should be placed within
+ROS nodes that are used as !MycroftSkill's should be placed within
 their own directory under your packages **scripts** directory with any
 relevent **vocab**, **dialog** and **regex** directories which should
 contain required intent and entity files.
@@ -43,7 +43,7 @@ contain required intent and entity files.
 ### Using the RosMycroftSkill
 
 The **mycroft_ros** Python module provides helper functions and classes
-for convenience such as the **\'!RosMycroftSkill**\' class which can be
+for convenience such as the **`!RosMycroftSkill`** class which can be
 used to register nodes as Mycroft Skills within the Skill Manager of
 Mycroft.
 
@@ -79,8 +79,8 @@ if __name__ == "__main__":
 
 ## catkin_virtualenv
 
-This package makes use of the **\'catkin_virtualenv**\' ROS package to
-run the *mycroft_message_bus*, *mycroft_tts*, *mycroft_stt* and
+This package makes use of the **`catkin_virtualenv`** ROS package to run
+the *mycroft_message_bus*, *mycroft_tts*, *mycroft_stt* and
 *mycroft_skills* nodes in a seperate Python virtual environment.
 
 ## ROS Nodes

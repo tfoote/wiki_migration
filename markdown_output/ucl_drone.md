@@ -5,7 +5,7 @@ master theses:
 
 -   Towards 3D Visual SLAM for an Autonomous Quadcopter Running on ROS.
     (A. Leclère, A. Jacques)
--   Suivi d\'une cible mobile par des drones autonomes. (J. Gérardy, F.
+-   Suivi d'une cible mobile par des drones autonomes. (J. Gérardy, F.
     Schiltz)
 
 Abstract 1 --- In a context where multi-copters gain in attractiveness
@@ -38,7 +38,7 @@ available sensors informations.
 This is a video of an AR.Drone 2.0 executing a demonstration, using this
 package:
 
-\<\<Youtube(eWDQgP83RXs&feature=share)\>\>
+[Youtube](https://www.youtube.com/watch?v=eWDQgP83RXs&feature=share)
 
 Abstract 2 --- In this thesis, we describe a system that enables a
 low-cost quadcopter coupled with a ground-based laptop and a router
@@ -51,13 +51,13 @@ goes back to its starting position.
 This is a video of two AR.Drone 2.0 executing the mission, using this
 package:
 
-\<\<Youtube(IaHg9J8_VjA&feature=share)\>\>
+[Youtube](https://www.youtube.com/watch?v=IaHg9J8_VjA&feature=share)
 
 ## Quickstart
 
 ### Installation
 
-It is advised to use \"indigo\" version of ROS.
+It is advised to use "indigo" version of ROS.
 
 1\. Install the
 [ardrone_autonomy](http://github.com/AutonomyLab/ardrone_autonomy#installation)
@@ -84,7 +84,7 @@ catkin_make
 
 As several drones communicate during this mission, it is mandatory to
 use a router and make the drones act as clients instead of hosts. The
-model we used was the \"TPlink « TL-WR841N »\" but any model should do.
+model we used was the "TPlink « TL-WR841N »" but any model should do.
 
 The first step is to collect the MAC addresses of the drone you will
 use.

@@ -62,13 +62,13 @@ roslaunch cob_bringup dashboard.launch
 
 On the [cob_command_gui](cob_command_gui) you can move all modules of
 the [care-o-bot](care-o-bot). However, planned motion can only be
-performed for the arm. To do so, enable the \"Planning\" check-box on
-the left side of the dashboard. As long as \"Planning\" is active all
+performed for the arm. To do so, enable the "Planning" check-box on
+the left side of the dashboard. As long as "Planning" is active all
 movements are planned.
 
-Please note that the robot\'s initial configuration needs to be
+Please note that the robot's initial configuration needs to be
 collision-free. If you are in a collision, simply deactivate
-\"Planning\" and move the arm without planned motion until it is
+"Planning" and move the arm without planned motion until it is
 collision-free again.
 
 #### Planned motion within scripts
@@ -77,5 +77,5 @@ Planned motion for the [care-o-bot](care-o-bot) has also been included
 into the [cob_script_server](cob_script_server). If you want to use
 planned motion in a more complex scenario, use the tutorials in
 [cob_script_server/Tutorials](cob_script_server/Tutorials) and use
-\"sss.move_planned()\" instead of \"sss.move()\". Again, planned motion
+"sss.move_planned()" instead of "sss.move()". Again, planned motion
 is only available for arm movements.

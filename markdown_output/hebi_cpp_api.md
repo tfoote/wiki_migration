@@ -5,14 +5,14 @@ of the API from a ROS node coded in C++.
 
 ## Using from your own project
 
-To add this as a dependency in your package, add to your \`package.xml\`
-file: \`\<depend\>hebi_cpp_api\</depend\>\`
+To add this as a dependency in your package, add to your `package.xml`
+file: `<depend>hebi_cpp_api</depend>`
 
-and in your package\'s \`CMakeLists.txt\` file, add to the
-\`find_package(catkin REQUIRED)\` statement: \`hebi_cpp_api\`
+and in your package's `CMakeLists.txt` file, add to the
+`find_package(catkin REQUIRED)` statement: `hebi_cpp_api`
 
-Also, in your \`catkin_package\` statement, ensure \`hebi_cpp_api\` is
-listed in the \`CATKIN_DEPENDS\`.
+Also, in your `catkin_package` statement, ensure `hebi_cpp_api` is
+listed in the `CATKIN_DEPENDS`.
 
 ## Examples
 

@@ -29,14 +29,14 @@ The ROS node wrapper provides some of the most common database queries
 as ROS services. It requires the following node parameters on startup to
 establish a connection with the database server:
 
--   \`/household_objects_database/database_host\`: the address of the
+-   `/household_objects_database/database_host`: the address of the
     database server
--   \`/household_objects_database/database_port\`: the port to establish
+-   `/household_objects_database/database_port`: the port to establish
     the connection on
--   \`/household_objects_database/database_user\`: the database username
--   \`/household_objects_database/database_password\`: the password for
+-   `/household_objects_database/database_user`: the database username
+-   `/household_objects_database/database_password`: the password for
     the database username
--   \`/household_objects_database/database_name\`: the name of the
+-   `/household_objects_database/database_name`: the name of the
     database to connect to
 
 Once started, the wrapper node provides the following ROS services:
@@ -55,7 +55,7 @@ Once started, the wrapper node provides the following ROS services:
     package for an example of this description.
 
 In general, information about database objects recognized in the
-robot\'s environment are passed around the system in the form of
+robot's environment are passed around the system in the form of
 [DatabaseModelPose](http://www.ros.org/doc/api/household_objects_database_msgs/html/msg/DatabaseModelPose.html)
 messages.
 
@@ -79,6 +79,6 @@ Note that remote read-only access to a server hosted at Willow Garage is
 available, but the overhead of keeping the ROS wrapper always up at
 Willow ended up being too high.
 
-If you\'d like to set up that service for yourself, the documentation
+If you'd like to set up that service for yourself, the documentation
 for the client side is still at
 [tutorial for remote use of the database](household_objects_database/Tutorials/Use the household_objects_database remotely from a Willow Garage server).

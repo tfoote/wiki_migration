@@ -60,7 +60,7 @@ PTAM has been ported to be compatible to the Robot Operating System
 <!-- -->
 ```
 -   the 6DoF pose is published as a pose with a covariance estimation
-    calculated from PTAM\'s internal bundle adjustment.
+    calculated from PTAM's internal bundle adjustment.
 
 ```{=html}
 <!-- -->
@@ -161,7 +161,7 @@ To use ETHZASL_PTAM you need an environment with sufficient contrast
 (i.e. texture) and light. If your shutter speed is above 5ms to obtain
 an image with sufficient contrast it is very likely that the algorithm
 does not work properly because of motion blur. This depends on
-vehicle\'s motion and vibrations. For good performance on MAVs you may
+vehicle's motion and vibrations. For good performance on MAVs you may
 ensure:
 
 -   a shutter speed below 5ms
@@ -170,7 +170,7 @@ ensure:
 
 ### Camera Calibration
 
-The camera model used in PTAM is made for wide angle lenses (\>90°). The
+The camera model used in PTAM is made for wide angle lenses (>90°). The
 [cameracalibrator](/cameracalibrator) node in this package is unchanged
 with respect to the original code - except the ROS compatibility. You
 should have a re-projection error of below 0.5. If you have problems

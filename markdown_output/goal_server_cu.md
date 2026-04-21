@@ -1,4 +1,4 @@
-The goal server remembers the robot\'s goal and makes this information
+The goal server remembers the robot's goal and makes this information
 available to the rest of the system. It is advantageous to have a single
 node in charge of this, in order to keep the overall system consistent.
 Whenever a change in the goal is desired, a message containing the new

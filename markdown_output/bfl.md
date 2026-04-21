@@ -1,4 +1,4 @@
-![\|height=\"504px\",width=\"519px\"](attachment:estimation.png)
+![\|height="504px",width="519px"](attachment:estimation.png)
 
 ## External Documentation
 

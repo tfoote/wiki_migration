@@ -6,9 +6,9 @@ constraints. The algorithm does not require gradients, and can thus
 optimize arbitrary terms in the cost function like motor efforts.
 
 To use this planner, simply launch
-\`launch/stomp_motion_planner.launch\` in place of the motion planner
+`launch/stomp_motion_planner.launch` in place of the motion planner
 you normally use, and send motion planning requests to the service name
-\`/stomp_motion_planner/plan_path\`. The motion planner uses the same
+`/stomp_motion_planner/plan_path`. The motion planner uses the same
 ROS interface that move_arm expects, and acts as a drop-in replacement
 for OMPL or CHOMP.
 

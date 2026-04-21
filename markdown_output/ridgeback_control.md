@@ -1,6 +1,6 @@
 ## Overview
 
-[Ridgeback](Robots/Ridgeback)\'s mobility is controlled by
+[Ridgeback](Robots/Ridgeback)'s mobility is controlled by
 mecanum_drive_controller.
 
 This package contains launchfiles for the elements of Ridgeback which

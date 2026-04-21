@@ -1,6 +1,6 @@
   -- ------------------------------------------------------------------- -- ------------------------------------------------------------------------- --
      ![REEM visualization model\|width=350](attachment:reem_model.png)      ![REEM collision model\|width=350](attachment:reem_model_collision.png)   
-     \<style=\"text-align: center;\"\>REEM visualization model              \<style=\"text-align: center;\"\>REEM collision model                     
+     <style="text-align: center;">REEM visualization model              <style="text-align: center;">REEM collision model                     
   -- ------------------------------------------------------------------- -- ------------------------------------------------------------------------- --
 
 ------------------------------------------------------------------------

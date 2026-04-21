@@ -14,7 +14,7 @@ the origin axes of the active user-defined reference system and the
 projector reference system. Read more info in
 [z_laser_zlp1/Reference coordinate systems](http://wiki.ros.org/z_laser_zlp1#Reference_coordinate_systems)
 
-. ![\|width=\"400px\"](attachment:viz.png)
+. ![\|width="400px"](attachment:viz.png)
 
 ## Acknowledgement
 

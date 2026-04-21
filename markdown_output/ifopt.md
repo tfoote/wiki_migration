@@ -1,5 +1,5 @@
 \
-![\|width=\"220\"](https://i.imgur.com/ZOfGZwB.png)
+![\|width="220"](https://i.imgur.com/ZOfGZwB.png)
 
 ## Installation
 
@@ -13,7 +13,7 @@ binaries or for additional information, visit
 
 Nonlinear with constraints.
 
-![\|width=\"220\"](https://i.imgur.com/YGi4LrR.png)
+![\|width="220"](https://i.imgur.com/YGi4LrR.png)
 
 ## Solution
 

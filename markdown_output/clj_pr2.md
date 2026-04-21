@@ -16,7 +16,7 @@ to use the package as a whole for teleoperation of the PR2.
 ## Setup
 
 To use the package, you will first have to follow the setup instructions
-for [rosjava](rosjava) and [rosclj](rosclj), then \"rosmake clj_pr2\".
+for [rosjava](rosjava) and [rosclj](rosclj), then "rosmake clj_pr2".
 
 Then, to bring up the ROS nodes required for teleoperation:
 
@@ -37,7 +37,7 @@ on the classpath, and type
 ```
 
 to load all of the rosjava, rosclj, and teleoperation code, import/refer
-to it in the current namespace, initialize ROS, and define \"nh\" to
+to it in the current namespace, initialize ROS, and define "nh" to
 point at a fresh NodeHandle.
 
 ## Teleoperation

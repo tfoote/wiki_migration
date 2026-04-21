@@ -9,7 +9,7 @@ The geometric, inertial and visual properties of TUlip are described in
 
 ## Controller
 
-Functionally the controllers manage TUlip\'s movement in simulation. The
+Functionally the controllers manage TUlip's movement in simulation. The
 structure of the controller is as follows: ```clearsilver
 name = TUlipController
 desc = Generic controller which parses <<MsgLink(sensor_msgs/JointState)>> messages and calculates the torques on the corresponding joints. The controller also returns the current position of the joints as <<MsgLink(sensor_msgs/JointState)>> messages. This generic controller is used as leg, arm and head controller. Currently, the desired joint angles are imported from a yaml parameter file. In the future, we may release our walking algorithm which publishes joint angles such that the controller can subscribe to these. 

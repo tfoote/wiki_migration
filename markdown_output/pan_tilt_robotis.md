@@ -15,5 +15,5 @@ Options:
   --tilt=TILT        tilt angle (degrees).
 ```
 
-The \`pan_id\` and \`tilt_id\` are the servo ids of the pan and tilt
+The `pan_id` and `tilt_id` are the servo ids of the pan and tilt
 Robotis servos.

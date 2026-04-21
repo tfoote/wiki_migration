@@ -82,9 +82,9 @@ Three python applications are provided:
 
 ## Tutorials
 
-\<\<TutorialChain(real_time_simulator/Tutorials/Using the command
-line)\>\> \<\<TutorialChain(real_time_simulator/Tutorials/Using your GNC
-project)\>\>
+<<TutorialChain(real_time_simulator/Tutorials/Using the command
+line)>> <<TutorialChain(real_time_simulator/Tutorials/Using your GNC
+project)>>
 
 ## Report a Bug
 

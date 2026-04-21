@@ -108,7 +108,7 @@ node.0 {
 
 ## Xacro Files
 
-The included \`urdf/usv_gazebo_dynamics_plugin.xacro\` file sets all of
+The included `urdf/usv_gazebo_dynamics_plugin.xacro` file sets all of
 the parameters for the plugin, intended as a example for customization.
 
 ## Examples

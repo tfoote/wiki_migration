@@ -8,7 +8,7 @@ keyboard.
 
 ## GUI
 
-![\|height=\"345px\",width=\"338px\"](attachment:prairiedog_gui.png)
+![\|height="345px",width="338px"](attachment:prairiedog_gui.png)
 
 ### Display
 
@@ -36,7 +36,7 @@ The GUI buttons control the system as follows:
 -   **Set Goal**: Use left mouse button to set the goal position and
     orientation (click on position and drag in the direction of
     orientation).
--   **Set Pose**: Use left mouse button to set the robot\'s position and
+-   **Set Pose**: Use left mouse button to set the robot's position and
     orientation (click on position and drag in the direction of
     orientation).
 -   **reload Map**: Explicitly requests the latest map from the map
@@ -54,9 +54,9 @@ The GUI buttons control the system as follows:
 
 Note: the display resolution is only used for visualization purposes and
 does not affect the mapper or planner. It is useful when
-\`visualization_cu\` is being bogged down by the drawing requirements
+`visualization_cu` is being bogged down by the drawing requirements
 (this is only an issue in complex environments, when
-\`visualization_cu\` is sharing cpu time with the rest of prairiedog).
+`visualization_cu` is sharing cpu time with the rest of prairiedog).
 
 ### Keyboard Shortcuts
 
@@ -66,7 +66,7 @@ Functionality can also be accessed using the keyboard as follows:
     robot (Move Robot mode)
 -   **space-bar**: stop all movement (always), resume path following
     after a stop (Autonomous mode)
--   **-/\_**: zoom-in
+-   **-/_**: zoom-in
 -   **+/=**: zoom-out
 -   **m/M**: switch to Autonomous mode
 -   **g/G**: switch to Set Goal mode
@@ -80,10 +80,10 @@ Functionality can also be accessed using the keyboard as follows:
 
 Note: the display resolution is only used for visualization purposes and
 does not affect the mapper or planner. It is useful when
-\`visualization_cu\` is being bogged down by the drawing requirements
+`visualization_cu` is being bogged down by the drawing requirements
 (this is only an issue in complex environments, when
-\`visualization_cu\` is sharing cpu time with the rest of
-\`prairiedog\`).
+`visualization_cu` is sharing cpu time with the rest of
+`prairiedog`).
 
 ------------------------------------------------------------------------
 

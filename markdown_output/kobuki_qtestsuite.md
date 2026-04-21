@@ -1,4 +1,4 @@
-This is a simple plugin we use to put the kobuki through it\'s paces
+This is a simple plugin we use to put the kobuki through it's paces
 (testing). It records data for various features - battery profile, gyro
 drift, events amongst others.
 

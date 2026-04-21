@@ -6,10 +6,10 @@ the user to control the recording process and improve the results by
 manually removing incorrect clouds. By default, 2 types of models with
 the following names are created for each object:
 
--   \`kinectmodel.zip\`: Contains all the data collected during the
+-   `kinectmodel.zip`: Contains all the data collected during the
     scanning process. This model files can be used by
     [re_kinect_object_detector](re_kinect_object_detector).
--   \`2dcammodel.zip\`: A more space efficient object model. These files
+-   `2dcammodel.zip`: A more space efficient object model. These files
     can be used by [re_vision](re_vision). If a !RoboEarth connection is
     established, you can also upload the object model files to the
     database.
@@ -50,7 +50,7 @@ consider the following hints:
     a mail to our mailing list:
     <https://lists.roboearth.org/mailman/listinfo/roboearth-users_roboearth.org>
 
-### \'detected X markers in the image; at least 3 markers are necessary to estimate a coordinate system. please check your camera setup.\'
+### 'detected X markers in the image; at least 3 markers are necessary to estimate a coordinate system. please check your camera setup.'
 
 ar_bounding_box tries to detect the 3 markers closest to the Kinect and
 create a coordinate system; this warning gets displayed whenever there
@@ -68,7 +68,7 @@ are less than 3 markers detected.
     object under consideration (see also
     [openni_kinect/kinect_accuracy](openni_kinect/kinect_accuracy)).
 
-### \'distance X/X too large: XXXX\'
+### 'distance X/X too large: XXXX'
 
 This message indicates that the ar_bounding_box node was unable to
 calculate a coordinate frame from the detected markers.
@@ -84,15 +84,15 @@ There are multiple ways to address this problem:
 -   Check that your camera setup allows the Kinect to always have at
     least three markers fully in its view. You can check this with e.g.
     the rviz tool.
--   Remove objects that look similar to markers from the Kinect\'s field
+-   Remove objects that look similar to markers from the Kinect's field
     of view.
 -   Try to improve the lighting conditions (see above).
 -   Make sure the marker template has the right size (each marker must
     have an edge length of exactly 80 mm), is assembled precisely (the
     !RoboEarth logo should form a perfect circle) and is completely
     planar.
--   As a last resort you can increase the \'marker_dist_threshold\'
-    parameter in ar_bounding_box/launch/ar_kinect.launch\'. Increasing
+-   As a last resort you can increase the 'marker_dist_threshold'
+    parameter in ar_bounding_box/launch/ar_kinect.launch'. Increasing
     this parameter will however imply that the maximum allowable error
     on the pattern_base coordinate frame increases, hereby allowing
     larger deviations between measured scans.
@@ -106,5 +106,5 @@ that.
 
 ## Subscribed Topics
 
-. \`/resulting_pcl\` (\<\<MsgLink(sensor_msgs/PointCloud2)\>\>) . The
-object\'s pointcloud (from [ar_bounding_box](ar_bounding_box)).
+. `/resulting_pcl` (<<MsgLink(sensor_msgs/PointCloud2)>>) . The
+object's pointcloud (from [ar_bounding_box](ar_bounding_box)).

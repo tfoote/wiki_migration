@@ -1,13 +1,13 @@
 ## Overview
 
 This package is still under development. The goal is to have an
-automatic way of tuning the PID parameters on our controllers. We\'re
+automatic way of tuning the PID parameters on our controllers. We're
 using [eodev](eodev) to implement our evolutionary algorithm.
 
 Here is an overview of the early results obtained with the automatic pid
 tuning. The algorithm was run on the simulated version of the hand in
-Gazebo. The middle \"wave\" of the third plot shows an excellent tuning
-in term of error minimization, but it\'s slightly unstable so we won\'t
+Gazebo. The middle "wave" of the third plot shows an excellent tuning
+in term of error minimization, but it's slightly unstable so we won't
 use it.
 
 ![ Before tuning](attachment:rfj3_gazebo_hand_tuning.png )

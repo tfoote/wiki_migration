@@ -42,16 +42,16 @@ where we:
 -   set the **min** to 0.0 and the **max** to 1.57
 -   set the publish_rate to 100
 -   set the number of **repetition** to 5
--   set the number of samples taken from the image (**\_nb_step**) to
+-   set the number of samples taken from the image (**_nb_step**) to
     1000
--   set the type of data (**\_msg_type**) received from **inputs** to
-    \"sr\" to indicate that it\'s sr_robot_msgs. (the other possible
-    value being \"pr2\" to indicate that it\'s pr2_controllers_msgs
+-   set the type of data (**_msg_type**) received from **inputs** to
+    "sr" to indicate that it's sr_robot_msgs. (the other possible
+    value being "pr2" to indicate that it's pr2_controllers_msgs
 
 ## Notes
 
 If you have more than one point in the same row, the higher point will
 be taken into account.
 
-If there\'s a gap in your drawn line, then we\'ll continue publishing
+If there's a gap in your drawn line, then we'll continue publishing
 the last value until we get to a new value.

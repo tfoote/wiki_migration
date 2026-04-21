@@ -40,7 +40,7 @@ Tutorials and demonstration of the Crops can be found from
 be found in ICRA2024
 \[<https://2024.ieee-icra.org/program/#Workshops-Tutorials>\].
 
-\<\<EmbedObject(ICRA24.pdf,width=100%)\>\>
+<<EmbedObject(ICRA24.pdf,width=100%)>>
 
 # Deployment Advantages
 

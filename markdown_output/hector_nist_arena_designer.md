@@ -8,4 +8,4 @@ can be exported to both electric gazebo and the new fuerte gazebo (.sdf)
 formats.
 
 An guide on how to extend the system with custom scenario elements can
-be obtained by using the \"help\" menu.
+be obtained by using the "help" menu.

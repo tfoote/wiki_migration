@@ -1,7 +1,7 @@
 ## Overview
 
 This package provides a C++ API for working with road map and coordinate
-representations. These classes are exported in an \`artmap\` library.
+representations. These classes are exported in an `artmap` library.
 
 There is also a ROS node that publishes a road map for the ART
 autonomous vehicle to follow, plus some related test utilities.
@@ -44,8 +44,8 @@ param {
 
 #### Examples
 
-Run the ART map server, publishing \`roadmap_global\` and
-\`roadmap_local\` messages using the RNDF from the 2007 DARPA site visit
+Run the ART map server, publishing `roadmap_global` and
+`roadmap_local` messages using the RNDF from the 2007 DARPA site visit
 at Southwest Research Institute.
 
 ```
@@ -72,7 +72,7 @@ $ rosrun art_map getpoints
 ```
 
 Enter waypoints for lanes, zones or parking spots by pressing the
-corresponding letter and \<Enter\>. ```
+corresponding letter and <Enter>. ```
 Valid instructions are:
  L record lane point
  P record zone perimeter point

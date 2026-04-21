@@ -18,7 +18,7 @@ hardware and generates the tf transform messages required by the ROS
 navigation stack.
 
 See also the [knex-ros](http://code.google.com/p/knex-ros/) page for an
-example hacked K\'nex robot.
+example hacked K'nex robot.
 
 This package provides the following nodes:
 
@@ -57,7 +57,7 @@ Publishes the odometry (the current pose and twist) of the robot.
 
 `tf` -
 
-Broadcasts the transform between the odometry frame and the robot\'s
+Broadcasts the transform between the odometry frame and the robot's
 base_link.
 
 ### Subscribed Topics
@@ -77,13 +77,13 @@ messages are published (Hz).
 
 `ticks_meter` (int, default:50) .
 
-`~base_width` (float, default:0.245) The robot\'s wheel base in meters.
+`~base_width` (float, default:0.245) The robot's wheel base in meters.
 (The distance between the wheels)
 
-`~base_frame_id` (string, default:\"base_link\") The name of the base
+`~base_frame_id` (string, default:"base_link") The name of the base
 frame of the robot.
 
-`~odom_frame_id` (string, default:\"odom\") The name of the odometry
+`~odom_frame_id` (string, default:"odom") The name of the odometry
 reference frame.
 
 `encoder_min` (int, default:-32768)
@@ -157,10 +157,10 @@ with other nodes.
 
 `vel_threshold` (float, default: 0.001) If the velocity drops below
 `vel_threshold`, we consider the wheel stopped. This is needed because
-technically we can never really know that a wheel\'s velocity is zero.
+technically we can never really know that a wheel's velocity is zero.
 As we approach zero meters/sec, the rotary encoder ticks get spaced
 further apart, so we can only really estimate an upper bound of velocity
-from the time the last tick was received. If that upper bound is \<
+from the time the last tick was received. If that upper bound is <
 `vel_threshold`, we consider it 0.
 
 `encoder_min` (int, default:-32768)
@@ -200,7 +200,7 @@ ignored.
 
 ### Parameters
 
-`~base_width` - (float, default:0.1) The distance between the robot\'s
+`~base_width` - (float, default:0.1) The distance between the robot's
 wheels in meters.
 
 `~rate` - (int, default:50) The rate that the output velocity target

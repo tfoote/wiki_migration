@@ -1,7 +1,7 @@
 ## Description
 
 This package provides all the necessary URDF model extensions, worlds
-and launch files for successfully simulating RoboSavvy\'s self-balance
+and launch files for successfully simulating RoboSavvy's self-balance
 platform.
 
 On `rsv_balance_gazebo` package we have available 3 worlds: 1.

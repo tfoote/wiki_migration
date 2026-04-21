@@ -27,11 +27,11 @@ was run.
 
 The interface provides visual feedback using the
 [mjeg_server](http://www.ros.org/wiki/mjpeg_server) from
-\`bosch-ros-pkg\` to stream images from the PR2\'s right wide_stereo
+`bosch-ros-pkg` to stream images from the PR2's right wide_stereo
 camera, either of the forearm cameras, and an added kinect sensor on the
 head of the robot. The forearm camera image streams are rotated using
 the [image_rotate](http://www.ros.org/wiki/image_rotate) package so that
-the image is always \'right-side-up\'. Buttons beneath the image stream
+the image is always 'right-side-up'. Buttons beneath the image stream
 allow for user camera selection. Also, when using *Normal Approach*, the
 camera stream will be modified to include an arrow indicating the point
 in the image and normal direction which has been selected, in order to
@@ -47,7 +47,7 @@ constantly aware of what the robot is doing.
 
 ### Control
 
-In order to manage the PR2\'s many degrees of freedom, control of the
+In order to manage the PR2's many degrees of freedom, control of the
 robot has been heavily subdivided based on the part of the robot being
 controlled and the form of control being used. Under the default
 controls tab, the selection of a component to control is placed on the
@@ -61,7 +61,7 @@ the page is refreshed.
 #### Control Head
 
 When **Control Head** is selected, the control inputs provide arrows for
-looking up(\^), down(v), left(\<), and right(\>). In addition, the
+looking up(\^), down(v), left(<), and right(>). In addition, the
 center button will point the head at the base of the robot, which can be
 used for navigation while driving. Lastly, this also exposes controls to
 direct the head to persistently follow either the left or right gripper.
@@ -70,7 +70,7 @@ direct the head to persistently follow either the left or right gripper.
 
 **Control Right/Left Arm** provides access to low-level control of the
 arm position of the PR2. The arrow buttons send commands in either the
-\`/torso_lift_link\` or \'l/r_gripper_tool_frame\', as selected in the
+`/torso_lift_link` or 'l/r_gripper_tool_frame', as selected in the
 dropdown menu. These commands attempt to move the arm a small distance
 in the given direction while maintaining the gripper pose, or else
 rotate the gripper about the tool frame while maintaining this
@@ -98,9 +98,9 @@ control the robot.
 #### Control Right/Left Hand
 
 Selecting **Control Right/Left Hand** exposes controls for directly
-commanding the joints of the PR2\'s \'wrist\': Forearm Roll, Wrist Flex,
+commanding the joints of the PR2's 'wrist': Forearm Roll, Wrist Flex,
 and Wrist Roll. The position of the arm is determined by the origin of
-the \`/wrist_roll_link\`, and so these commands can extend the reach of
+the `/wrist_roll_link`, and so these commands can extend the reach of
 the PR2 by extending the wrist flex beyond the current position of the
 arm.
 
@@ -134,7 +134,7 @@ large commands.
 #### Run-Stop (Persistent)
 
 At the bottom of the interface, a large button labeled *STOP ROBOT* acts
-as a user-controlled run-stop, and immediately halts the PR2\'s motors.
+as a user-controlled run-stop, and immediately halts the PR2's motors.
 This replaces the interface with a warning message, and a *Reactivate*
 button to restart the motors. Be careful of the movement of the robot
 when run-stopped (gravity acting on head and arms, spring tension in

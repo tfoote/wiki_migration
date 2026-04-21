@@ -6,7 +6,7 @@ publishes the data as a laser_scan msg.
 Supported are all microScan3, nanoScan3 and outdoorScan3 variants with
 Ethernet connection.
 
-![SICK microScan3\|width=\"750px\"](attachment:SICK-safetyscanners.jpeg)
+![SICK microScan3\|width="750px"](attachment:SICK-safetyscanners.jpeg)
 
 # Getting started
 
@@ -24,8 +24,8 @@ be installed from binaries or from source.
 
 ## Installation
 
-In the following instructions, replace \`\<rosdistro\>\` with the name
-of your ROS distro (e.g., \`kinetic\`).
+In the following instructions, replace `<rosdistro>` with the name
+of your ROS distro (e.g., `kinetic`).
 
 ### From Binaries
 
@@ -119,7 +119,7 @@ fields for the sensor.
      host_ip                    String        192.168.1.9       ✔                            Host IP address. Can be passed as an argument to the launch file.                                                                                                     
      host_udp_port              Integer       6061                                           Host UDP Port. Can be passed as an argument to the launch file. Zero allows system chosen port.                                                                       
      frame_id                   String        scan                                           The frame name of the sensor message                                                                                                                                  
-     skip                       Integer       0                                              The number of scans to skip between each measured scan. For a 25Hz laser, setting \'skip\' to 0 makes it publish at 25Hz, \'skip\' to 1 makes it publish at 12.5Hz.   
+     skip                       Integer       0                                              The number of scans to skip between each measured scan. For a 25Hz laser, setting 'skip' to 0 makes it publish at 25Hz, 'skip' to 1 makes it publish at 12.5Hz.   
      angle_start                Double        0.0                                            Start angle of scan in radians, if both start and end angle are equal, all angels are regarded                                                                        
      angle_end                  Double        0.0                                            End angle of scan in radians, if both start and end angle are equal, all angels are regarded                                                                          
      channel_enabled            Boolean       true                                           If the channel should be enabled                                                                                                                                      

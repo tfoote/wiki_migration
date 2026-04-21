@@ -12,7 +12,7 @@ a dynamic reconfigure rqt gui is available to manipulate v4l parameter.
 
 The below v4lctl list output is based on an Osprey 440 bttv capture
 card.
-[This node\'s dynamic reconfigure GUI](http://wiki.ros.org/uavc_v4lctl?action=AttachFile&do=view&target=v4lctlgui.png)
+[This node's dynamic reconfigure GUI](http://wiki.ros.org/uavc_v4lctl?action=AttachFile&do=view&target=v4lctlgui.png)
 is optimized for this card (but the services provided by this ROS node
 are generic and can be used for any hardware related available v4l
 parameter). Your card may output other options. To support them as well

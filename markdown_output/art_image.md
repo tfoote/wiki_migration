@@ -1,5 +1,5 @@
 ## Launch Files
 
 This package includes several launch files for running and monitoring
-images on the vehicle. See the \`launch\` subdirectory for a complete
+images on the vehicle. See the `launch` subdirectory for a complete
 list.

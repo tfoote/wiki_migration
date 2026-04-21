@@ -21,17 +21,17 @@ wheel joints through a **velocity** interface for a linear wheel and a
 **position** interface for a front steer wheel, which is the the most
 basic configuration for the steer driving mechanism.
 
-### Converting controller\'s interfaces to actual controller\'s interfaces
+### Converting controller's interfaces to actual controller's interfaces
 
-If you want [rviz](rviz) to show states of robot\'s actual joint
-interfaces\' [tf](tf) through
+If you want [rviz](rviz) to show states of robot's actual joint
+interfaces' [tf](tf) through
 [joint_state_controller](joint_state_controller) and
 [robot_state_publisher](robot_state_publisher), you need to convert the
-two interfaces of \`steer_drive_controller\` to your robot\'s specific
+two interfaces of `steer_drive_controller` to your robot's specific
 ones via
 [RobotHW](https://github.com/ros-controls/ros_control/wiki/hardware_interface)
 or RobotHWSim (generally used for [GAZEBO](http://gazebosim.org/)). This
-is because the controller only update it\'s basic interfaces mentioned
+is because the controller only update it's basic interfaces mentioned
 in the previous section.
 
 ### Other features
@@ -44,7 +44,7 @@ in the previous section.
 ## Robots
 
   -- ----------------------------------------------------------------------------------------- -- ----------------------------------------- --
-     [![CIR-KIT-Unit03\|width=\"100\"](attachment:cirkit_unit03.jpg)](Robots/CIR-KIT-Unit03)      [CIR-KIT-Unit03](Robots/CIR-KIT-Unit03)   
+     [![CIR-KIT-Unit03\|width="100"](attachment:cirkit_unit03.jpg)](Robots/CIR-KIT-Unit03)      [CIR-KIT-Unit03](Robots/CIR-KIT-Unit03)   
   -- ----------------------------------------------------------------------------------------- -- ----------------------------------------- --
 
 ## ROS API
@@ -262,7 +262,7 @@ pub {
 
 ### RobotHW
 
-An example for usage of \`steer_drive_controller\` with
+An example for usage of `steer_drive_controller` with
 [RobotHW](https://github.com/ros-controls/ros_control/wiki/hardware_interface)
 can be grabbed from [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03).
 

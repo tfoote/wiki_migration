@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(batteries_skill_msgs)\>\>
+<<MsgSrvDoc(batteries_skill_msgs)>>

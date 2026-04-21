@@ -1,20 +1,20 @@
 This package pulls in Mongo DB 1.8 as a 3rd party dependency. Run the db
-server using \`wrapper.py\` in this package.
+server using `wrapper.py` in this package.
 
 ## ROS Parameters
 
-Private parameters of \`wrapper.py\`
+Private parameters of `wrapper.py`
 
--   \`database_path\`: where the db is stored. Defaults to \`/tmp/db\`.
--   \`overwrite\`: whether to overwrite existing db. Defaults to false.
+-   `database_path`: where the db is stored. Defaults to `/tmp/db`.
+-   `overwrite`: whether to overwrite existing db. Defaults to false.
 
 There are also some parameters in the parent namespace. These are used
-both by \`wrapper.py\` and client libraries.
+both by `wrapper.py` and client libraries.
 
--   \`warehouse_host\`: The hostname of the machine on which the db
-    runs. Currently defaults to \`localhost\` (a smarter default will
+-   `warehouse_host`: The hostname of the machine on which the db
+    runs. Currently defaults to `localhost` (a smarter default will
     eventually be used).
--   \`warehouse_port\`: The port on which the db server listens for
+-   `warehouse_port`: The port on which the db server listens for
     connections. Defaults to 27017.
 
 ## Notes

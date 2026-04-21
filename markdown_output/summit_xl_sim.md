@@ -8,7 +8,7 @@ This package contains the different controllers and launch files for the
 -   Source: git
     <https://github.com/RobotnikAutomation/summit_xl_sim.git>
 
-![SummitXL Gazebo\|width=\"600px\"](attachment:summit_xl_gazebo.png)
+![SummitXL Gazebo\|width="600px"](attachment:summit_xl_gazebo.png)
 
 ## List of packages
 
@@ -39,7 +39,7 @@ configuration this package only controls the pan-tilt camera joints.
 When used as main controller of the simulated robot, this node also
 computes the odometry of the robot using the joint movements and a IMU
 and publish this odometry to /odom. The node has a flag in the yaml
-files that forces the publication or not of the odom-\>base_footprint
+files that forces the publication or not of the odom->base_footprint
 frames, needed by the localization and mapping algorithms.
 
 ### summit_xl_sim_bringup
@@ -58,5 +58,5 @@ Launch files that launch the complete simulation of the robot
 
 -   roslaunch summit_xl_sim_bringup summit_xl_complete.launch
 
-3\. Enjoy! You can use the topic \"/summit_xl_control/cmd_vel\" to
+3\. Enjoy! You can use the topic "/summit_xl_control/cmd_vel" to
 control the Summit XL robot.

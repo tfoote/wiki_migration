@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(cob_msgs True)\>\>
+<<MsgSrvDoc(cob_msgs True)>>

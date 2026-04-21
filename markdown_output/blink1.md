@@ -49,4 +49,4 @@ colors. See the examples folder to the code of this example.
 
 To permanently change the permissions of the device and run the node in
 the user mode, please refer to the
-[instructions of the device\'s manufacturer](https://github.com/todbot/blink1/blob/master/commandline/hidapi/udev/99-hid.rules).
+[instructions of the device's manufacturer](https://github.com/todbot/blink1/blob/master/commandline/hidapi/udev/99-hid.rules).

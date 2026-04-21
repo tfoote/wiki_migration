@@ -9,12 +9,12 @@ using ecl::Semaphore;
 using ecl::SharedMemory;
 ```
 
-If outside of ros, you will also need to link to \`ecl_ipc\`.
+If outside of ros, you will also need to link to `ecl_ipc`.
 
 ## Cross Platform Support
 
 Currently there is only the posix structures. There is win32 code lying
-around from an earlier version of the ecl, but since we\'re not using
+around from an earlier version of the ecl, but since we're not using
 windows these days, it is largely untested against more recent updates.
 When we have a need, it will be reintroduced.
 

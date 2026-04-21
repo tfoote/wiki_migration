@@ -1,4 +1,4 @@
-\<\<MsgSrvDoc(ros_arduino_msgs)\>\>
+<<MsgSrvDoc(ros_arduino_msgs)>>
 
 ## Report a Bug
 

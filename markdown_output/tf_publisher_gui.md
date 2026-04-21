@@ -1,6 +1,6 @@
 ## Description
 
-The tf_publisher_gui is based on David Lu!!\'s joint_state_publisher.
+The tf_publisher_gui is based on David Lu!!'s joint_state_publisher.
 Here is how it looks:
 
 ![](attachment:tf_publisher_gui.png)

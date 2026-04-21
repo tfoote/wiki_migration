@@ -6,8 +6,8 @@ rosrun Planmodeller start.sh
 ## Setup
 
 In order to work in a domain, the Planmodeller needs four projects to be
-defined. All of them can be created by clicking the button \"Create
-Projects\". Specifically these are:
+defined. All of them can be created by clicking the button "Create
+Projects". Specifically these are:
 
 -   Plans: Holds all the executable plans
 -   Roles: Holds information about the roles available to the robots.

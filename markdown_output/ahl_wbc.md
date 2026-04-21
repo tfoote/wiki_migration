@@ -4,12 +4,12 @@ Here,*whole body control* means a control framework proposed by Prof.
 Oussama Khatib. The framework is also known as *task space control*,
 *operational space control*, or *operational space formulation*.
 
-When you control a robot with many joints, it\'s hard to compute a
+When you control a robot with many joints, it's hard to compute a
 desired angle/torque set of joints. Traditional approach is inverse
 kinematics(IK), which is a geometric solution. IK-based control is still
 good, but here is a different approach, whole body control. ahl_wbc
 computes a desired angle/torque set, given a desired
-position/orientation of a robot\'s fingertip.
+position/orientation of a robot's fingertip.
 
 Therefore, if you used this framework, you could easily control complex
 robots without using IK. Also, if the robot had torque sensor at each

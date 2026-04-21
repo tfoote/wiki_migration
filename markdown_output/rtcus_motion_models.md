@@ -10,7 +10,7 @@ For instance the state could consider dynamic variables or not. Moreover
 the state, actions or time could be represented with a probabilistic
 description following the Probabilistic Robotic Foundations.
 
-From the simplest transition function x\_\[t+1\]=F(x_t,u,Delta t) a set
+From the simplest transition function x_\[t+1\]=F(x_t,u,Delta t) a set
 of more complex functions are generated. Including: sample a trajectory,
 obtain the final state after a set of asynchronous action history,
 obtain the final state after a set of actions, etc.

@@ -8,7 +8,7 @@ until ubuntu releases a system version of nanomsg.
 
 [Nanomsg](http://nanomsg.org/) is a very lightweight (smaller brother of
 zeromq) communications library accomodating various design patterns. It
-can be useful for specialised instances where ros doesn\'t really fit.
+can be useful for specialised instances where ros doesn't really fit.
 e.g. Bridging connections to lightweight embedded boards or in grafting
 your own custom messaging architecture for a specific use case.
 

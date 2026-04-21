@@ -14,9 +14,9 @@ dynamic-graph and stack of tasks control framework.
 
 The loader automatically adds a free floating joint as the root joint of
 the kinematic tree in order to link the world frame origin to the robot
-root body (i.e. \`base_link\`).
+root body (i.e. `base_link`).
 
-\`jrl-dynamics\` also requires additional data to define foot and hand
+`jrl-dynamics` also requires additional data to define foot and hand
 parameters. These information are not setted currently.
 
 ## Displaying robots structure in a console

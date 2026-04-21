@@ -5,7 +5,7 @@
 
 ![](https://nerian.com/nerian-images/scarlet-ros-wiki.jpg)
 
-Nerian\'s
+Nerian's
 [Scarlet](https://nerian.com/products/scarlet-3d-depth-camera/) and
 [SceneScan](https://nerian.com/products/scenescan-stereo-vision/)
 product lines are stereo vision based 3D imaging systems for real-time
@@ -217,4 +217,4 @@ rosrun rqt_reconfigure rqt_reconfigure
 -   [Github project page](https://github.com/nerian-vision/nerian_stereo)
 -   [API documentation](https://nerian.com/support/documentation/api-doc/html/index.html)
 
-![\|display=\"none ! important\",hidden=\"\"](http://c.statcounter.com/10599048/0/906ae443/1/)
+![\|display="none ! important",hidden=""](http://c.statcounter.com/10599048/0/906ae443/1/)

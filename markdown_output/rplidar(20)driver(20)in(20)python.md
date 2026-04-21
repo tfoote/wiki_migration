@@ -4,7 +4,7 @@
 port name, if you wanna custom you setting.
 
 -   Maintainer status: maintained
--   Maintainer: Zhihao Xu \< zhihao@iscas.ac.cn\>
+-   Maintainer: Zhihao Xu < zhihao@iscas.ac.cn>
 -   Download: <https://github.com/DinnerHowe/rplidar_python.git>
 -   Author: Zhihao Xu
 -   License: TODO
@@ -41,19 +41,19 @@ roslaunch rplidar_python rplidar_demo.launch
 ## Node
 
 . driver for RPlidar. Automatically starts sensor and convert data
-stream into \<\<MsgLink(sensor_msgs/LaserScan)\>\> type. sensor publish
+stream into <<MsgLink(sensor_msgs/LaserScan)>> type. sensor publish
 topic every frame, one frame contain 360 laser data.
 
 ### Published Topic
 
-. /scan(\<\<MsgLink(sensor_msgs/LaserScan)\>\>) . output Laser scans to
+. /scan(<<MsgLink(sensor_msgs/LaserScan)>>) . output Laser scans to
 create the map from
 
 ### Parameters
 
 . range_min (flaot default 0.15) . the min range that laser can scan
 range_max (float default 6.0) . the min range that laser can scan
-frame_id (string default \'laser\') . rplidar frame angle_max(float
+frame_id (string default 'laser') . rplidar frame angle_max(float
 default pi) . the max angle that laser can reach angle_min(float default
 -pi) . the min angle that laser can reach angle_increment(float default
 -0.017453292519943295) . angular distance between measurements scan_time

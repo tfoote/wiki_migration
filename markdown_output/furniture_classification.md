@@ -104,6 +104,6 @@ ROS_PACKAGE_PATH=/your_install_dir:$ROS_PACKAGE_PATH
 
 Then run classify_live executable. Point your Kinect to a scene. In the
 scene the floor should be visible, because it is used for alignment.
-Press \'c\' to start classification process. ```
+Press 'c' to start classification process. ```
 ROS_PACKAGE_PATH=/your_install_dir:$ROS_PACKAGE_PATH
 ```2

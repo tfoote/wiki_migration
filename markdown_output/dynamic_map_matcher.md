@@ -2,8 +2,8 @@
 
 dynamic_map_matcher is a package for cooperative robots SLAM. It is
 based on a regularized particle filter and the technical details will be
-published once our paper \"Dynamic map matching using particle
-filtering\" is published.
+published once our paper "Dynamic map matching using particle
+filtering" is published.
 
 The main contribution of this package is its capability to work with any
 SLAM algorithm that produces an occupancy grid based map. The provided
@@ -82,5 +82,5 @@ param {
 
 ## References
 
-This work is summarized in a yet to be published paper - \"Dynamic map
-matching using particle filtering\".
+This work is summarized in a yet to be published paper - "Dynamic map
+matching using particle filtering".

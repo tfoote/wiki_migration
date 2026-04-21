@@ -14,7 +14,7 @@ Wide Web, IEEE International Conference on Robotics and Automation
 ## Description:
 
 Using the computables defined here, it is possible to query for a plan
-by giving a natural-language command like \'set the table\' and retrieve
+by giving a natural-language command like 'set the table' and retrieve
 a description of all required steps in form of an OWL TBOX
 specification.
 
@@ -32,7 +32,7 @@ roscd opencyc make roslaunch opencyc opencyc.launch
 ## Usage:
 
 You can either start a ROS service that responds with an OWL action
-description to a natural language command like \'set a table\' or use
+description to a natural language command like 'set a table' or use
 the system from within KnowRob.
 
 For the first option, just call roslaunch comp_ehow comp_ehow.launch

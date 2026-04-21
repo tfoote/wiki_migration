@@ -21,7 +21,7 @@ The package consists of three major components:
 
 ### Depth map segmentation
 
-The depth map segmentation node\'s main purpose is to divide Kinect
+The depth map segmentation node's main purpose is to divide Kinect
 depth image into several regions of interest. It is supposed to be the
 preprocessing task for 3D environment creation but also for the other
 possible detectors (object detection etc.). For depth map segmentation
@@ -125,7 +125,7 @@ set up yet.
 
 ### Depth map segmentation
 
-List of but_segmenter\'s optional parameters:
+List of but_segmenter's optional parameters:
 
 -   **-type \[TYPE\]**
 -   Parameter type specifies type of segmenting method **\*depth** -
@@ -144,12 +144,12 @@ List of but_segmenter\'s optional parameters:
 **\*-maxdepth \[NUM\]**
 
 -   Number how deep point should be considered for computation (in
-    milimeters)\"
+    milimeters)"
 -   Default is 3000
 
 ### Plane Fitting
 
-List of but_plane+detector\'s optional parameters:
+List of but_plane+detector's optional parameters:
 
 **\*-input \[VAL\]** **\*pcl** - Plane detector will suppose pcl point
 cloud as an input **\*kinect** - Plane detector will suppose Kinect

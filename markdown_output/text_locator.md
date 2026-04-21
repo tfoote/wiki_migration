@@ -19,7 +19,7 @@ be a static library file, libccv.a. Copy this file to the /lib folder of
 the package.
 
 To compile CCV, extract the tarball, cd to \[extractedCCV\]/lib folder,
-run ./configure followed by make. When configuring, the \'swscale\' is
+run ./configure followed by make. When configuring, the 'swscale' is
 the only component that is needed. The other compilation options (enable
 SSE2, use openmp etc..) are optional.
 
@@ -34,5 +34,5 @@ text_locator_topic.
 
 ## Documentation
 
-More detailed documentation is included in the git repo\'s readme file
+More detailed documentation is included in the git repo's readme file
 [here](https://github.com/vonovak/text_locator).

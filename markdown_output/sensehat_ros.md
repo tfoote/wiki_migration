@@ -1,4 +1,4 @@
-\[\[<https://www.raspberrypi.org/products/sense-hat/>\|![Astro PI Sense HAT\|width=400](https://raw.githubusercontent.com/allxone/sensehat_ros/master/doc/images/sense_hat.jpg)\|target=\"\_blank\"\]\]
+\[\[<https://www.raspberrypi.org/products/sense-hat/>\|![Astro PI Sense HAT\|width=400](https://raw.githubusercontent.com/allxone/sensehat_ros/master/doc/images/sense_hat.jpg)\|target="_blank"\]\]
 
 ## Overview
 
@@ -20,9 +20,9 @@ Simulated deployments were tested on x86 Ubuntu Bionic and Debian Buster
 (via WSL 2) and with Docker on both x86 and QEMU-based arm32v7.
 
 The Sense HAT Emulator GUI can be easily started with the
-\`sense_emu_gui\` command.
+`sense_emu_gui` command.
 
-\[\[<https://pypi.org/project/sense-emu/>\|![ debug level log output\|width=400](https://raw.githubusercontent.com/allxone/sensehat_ros/master/doc/images/sense_emu_gui.png)\|target=\"\_blank\"\]\]
+\[\[<https://pypi.org/project/sense-emu/>\|![ debug level log output\|width=400](https://raw.githubusercontent.com/allxone/sensehat_ros/master/doc/images/sense_emu_gui.png)\|target="_blank"\]\]
 
 ## Setup
 

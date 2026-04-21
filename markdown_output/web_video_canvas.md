@@ -26,8 +26,8 @@ npm install @techming/web-video-canvas // or
 yarn add @techming/web-video-canvas
 ```
 
-Once you installed the package, you can import the \`View\` or
-\`MultiStreamViewer\` in your file:
+Once you installed the package, you can import the `View` or
+`MultiStreamViewer` in your file:
 
 ```javascript
 import { View } from '@techming/web-video-canvas';
@@ -54,7 +54,7 @@ and
 
 Source code is available at
 <https://github.com/Techming/web-video-canvas>. Pull requests should be
-made to the \`develop\` branch.
+made to the `develop` branch.
 
 ## Support
 

@@ -2,8 +2,8 @@ This package provides communication driver to control the status led of
 Erle-Brain
 
 -   Maintainer status: developed
--   Maintainer: Erle Robotics \<contact AT erlerobot DOT com\>
--   Author: Alejandro Hernández Cordero \<ahcorde AT erlerobot DOT com\>
+-   Maintainer: Erle Robotics <contact AT erlerobot DOT com>
+-   Author: Alejandro Hernández Cordero <ahcorde AT erlerobot DOT com>
 -   License:
 -   Bug/feature tracker:
     <https://github.com/erlerobot/ros_erle_statusled/issues>
@@ -87,7 +87,7 @@ Please ask your questions not related to bugs/feauture requests on:
 
 -   Erle Robotics Forum: <http://forum.erlerobotics.com/>
 
-We\'d like to keep the project bugtracker as free as possible, so please
+We'd like to keep the project bugtracker as free as possible, so please
 contact via the above methods.
 
 ## Related Links

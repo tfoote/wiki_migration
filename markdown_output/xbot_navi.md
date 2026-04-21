@@ -39,7 +39,7 @@ roslaunch xbot_navi navi_carto.launch
 
 The service aggregates navigation, face recognition, and voice
 conversation into a single service. Users need to modify the
-configuration files \`param/kp.json\`\` and param/greet.json\` to manage
+configuration files `param/kp.json`` and param/greet.json` to manage
 keypoints and face greetings. Operation can refer to:
 ```
 roslaunch xbot_navi demo.launch

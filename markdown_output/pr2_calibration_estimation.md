@@ -1,6 +1,6 @@
 ## Introduction
 
-Given a bagfile of \<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>
+Given a bagfile of <<MsgLink(calibration_msgs/RobotMeasurement)>>
 collected using the
 [pr2_calibration_executive](pr2_calibration_executive) package (or
 similar), pr2_calibration_estimation uses this data along with several
@@ -8,7 +8,7 @@ configuration configuration files to estimate various parameters for the
 PR2.
 
 *Technical Explanation:* This is a multi-step nonlinear optimizer that
-uses scipy\'s levenberg-marquardt optimizer,
+uses scipy's levenberg-marquardt optimizer,
 [ scipy.optimize.leastsq](http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html ),
 to estimate various parameters of the PR2 using a bundle adjustment like
 framework.
@@ -37,95 +37,95 @@ server and then launches the estimator (multistep_cov_estimator.py).
 
 #### Estimator Command Line Usage
 
-**\`multistep_cov_estimator.py\`**\` \[bagfile\] \[target_dir\]\`
+**`multistep_cov_estimator.py`**` \[bagfile\] \[target_dir\]`
 
--   \`\[bagfile\]\` - Path to the bag that contains calibration samples.
+-   `\[bagfile\]` - Path to the bag that contains calibration samples.
     These messages must be of type
-    \<\<MsgLink(calibration_msgs/RobotMeasurement)\>\> under the topic
+    <<MsgLink(calibration_msgs/RobotMeasurement)>> under the topic
     &ldquo;/robot_measurement&rdquo;
--   \`\[target_dir\]\` - Directory at which to store intermediate data
+-   `\[target_dir\]` - Directory at which to store intermediate data
     files after each calibration step
 
 #### Estimation Configuration (Parameter Server)
 
-The estimator looks for it\'s configuration in the
-\`/calibration_config\` namespace. The PR2\'s configuration is stored in
+The estimator looks for it's configuration in the
+`/calibration_config` namespace. The PR2's configuration is stored in
 [ pr2_calibration_launch/estimate_params/head_then_arms_params.launch]( https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/trunk/pr2_calibration_launch/estimate_params/head_then_arms_params.launch )
 
--   \`initial_system\` - yaml blob that defines all of the robot\'s
+-   `initial_system` - yaml blob that defines all of the robot's
     primitives
--   \`sensors\` - Every parameter in this namespace must be a yaml blob
+-   `sensors` - Every parameter in this namespace must be a yaml blob
     that defines sensors on the robot.
--   \`cal_steps\` - Defines each of the calibration steps. Each step is
-    defined by a namespace within \`cal_steps\`, and the steps are
+-   `cal_steps` - Defines each of the calibration steps. Each step is
+    defined by a namespace within `cal_steps`, and the steps are
     executed in alphabetical order by namespace names.
--   \`use_cov\` (\`bool\`) - Specify whether or not to use measurement
-    covariances during this step. If \`True\`, then covariances are used
--   \`free_params\` - yaml blob that defines which parameters are being
+-   `use_cov` (`bool`) - Specify whether or not to use measurement
+    covariances during this step. If `True`, then covariances are used
+-   `free_params` - yaml blob that defines which parameters are being
     estimated during this step
--   \`sensors\` - list of sensor_ids that defines which sensors to use
+-   `sensors` - list of sensor_ids that defines which sensors to use
     during this calibration step. Any sensor specified must have a full
-    definition in the higher level \`sensors\` namespace.
--   \`output_filename\` - Identifier for the results of this calibration
-    step. This name is prepended to the step\'s results, and stored in
-    the estimator\'s previously defined \`\[target_dir\]\`
+    definition in the higher level `sensors` namespace.
+-   `output_filename` - Identifier for the results of this calibration
+    step. This name is prepended to the step's results, and stored in
+    the estimator's previously defined `\[target_dir\]`
 
 ### The Calibration Bagfile
 
 The estimator relies on calibration samples in the specified bagfile in
 order to run the calibration. These messages must be of type
-\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\> under the topic
-\`/robot_measurement\`. Below is a description of all of the fields, and
+<<MsgLink(calibration_msgs/RobotMeasurement)>> under the topic
+`/robot_measurement`. Below is a description of all of the fields, and
 what they mean:
 
--   \`sample_id\` - This simply a string identifier to help the user
-    understand where this calibration sample came from. It doesn\'t even
+-   `sample_id` - This simply a string identifier to help the user
+    understand where this calibration sample came from. It doesn't even
     have to be unique across samples
--   \`target_id\` - Specifies which target the sensors in the sample are
+-   `target_id` - Specifies which target the sensors in the sample are
     looking at. This must correspond to the name of a checkerboard
-    primitive. For the PR2, this can be either \`small_cb_4x5\` or
-    \`large_cb_7x6\`.
--   \`M_cam\` - Stores data from a single camera measurement
--   \`header\` - Not Used
--   \`sensor_id\` - Name of the camera sensor. This must correspond to a
+    primitive. For the PR2, this can be either `small_cb_4x5` or
+    `large_cb_7x6`.
+-   `M_cam` - Stores data from a single camera measurement
+-   `header` - Not Used
+-   `sensor_id` - Name of the camera sensor. This must correspond to a
     camera primitive defined for the robot. (See
     [#Rectified_Cameras](#Rectified_Cameras))
--   \`image_points\` - Stores the corners of the detected checkerboard
+-   `image_points` - Stores the corners of the detected checkerboard
     target. This list is ordered, and must correspond to the same
-    ordering of corners as openCV\'s checkerboard detector would detect
-    the checkerboard specified in \`target_id\`.
--   \`cam_info\` - Store the intrinsics for this camera
--   \`M_laser\` - Stores data for a tilting laser sensor
--   \`header\` - Not used
--   \`laser_id\` - Name of the tilting laser. Must correspond to a
+    ordering of corners as openCV's checkerboard detector would detect
+    the checkerboard specified in `target_id`.
+-   `cam_info` - Store the intrinsics for this camera
+-   `M_laser` - Stores data for a tilting laser sensor
+-   `header` - Not used
+-   `laser_id` - Name of the tilting laser. Must correspond to a
     tilting laser primitive defined for the robot. See
     [#Tilting_Lasers-1](#Tilting_Lasers-1).
--   \`joint_points\` - Each joint point corresponds to a tilt, bearing,
+-   `joint_points` - Each joint point corresponds to a tilt, bearing,
     and range for a single detected corner.
--   \`M_chain\` - Stores data for a specific kinematic chain
--   \`header\` - Not used
--   \`chain_id\` - Name of the chain. Must correspond to a chain
+-   `M_chain` - Stores data for a specific kinematic chain
+-   `header` - Not used
+-   `chain_id` - Name of the chain. Must correspond to a chain
     primitive defined for the robot. See [#DH_Chains](#DH_Chains)
--   \`chain_state\` - Store the state of the joints that are a part of
+-   `chain_state` - Store the state of the joints that are a part of
     this chain. Must be ordered from root to tip of the chain and cannot
-    have any joints that don\'t correspond to this chain
+    have any joints that don't correspond to this chain
 
-### Defining the Robot\'s Primitives
+### Defining the Robot's Primitives
 
 The calibration estimator relies on a yaml file that stores the
-configuration of the robot\'s various kinematic and sensor primitives
+configuration of the robot's various kinematic and sensor primitives
 that we may want to estimate. For the PR2, this file is
 [ pr2_calibration_launch/estimate_params/config_pr2_beta/system.yaml]( https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/estimate_params/config_pr2_beta/system.yaml ).
 The currently support primitives are dh_chains, tilting_lasers,
-transforms, and rectified cameras. Although not necessarily a \"robot
-primitive\", checkerboard intrinsics are also defined in this file.
+transforms, and rectified cameras. Although not necessarily a "robot
+primitive", checkerboard intrinsics are also defined in this file.
 
 #### DH Chains
 
 A DH Chain primitive is used to represent a kinematic linkage using
 [ Denavit-Hartenberg parameters](http://en.wikipedia.org/wiki/Denavit-Hartenberg_Parameters ).
 Each DH Chain primitive must be included as a dictionary element under
-the \`dh_chains\` section of the config file. The parameters defined
+the `dh_chains` section of the config file. The parameters defined
 below are used in
 [ pr2_calibration_estimation/dh_chain.py](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_estimation/src/pr2_calibration_estimation/dh_chain.py )
 
@@ -144,7 +144,7 @@ right_arm_chain:
    gearing: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 ```
 
--   **dh** - Each list item under \`dh\` stores the 4 DH parameters for
+-   **dh** - Each list item under `dh` stores the 4 DH parameters for
     a link. They are ordered as \[theta, alpha, a, d\]. In the example
     above, there are 7 links.
 -   **cov/joint_angles** - Defines a standard deviation (in radians) for
@@ -223,7 +223,7 @@ tilt_laser:
     measurement is along the y axis of the resulting frame.
 -   **gearing** - Prescalar for the tilting joint, before applying
     forward kinematics. Similar to the *gearing* element in the dh
-    chain, except we only have 1 joint, and thus don\'t need a list.
+    chain, except we only have 1 joint, and thus don't need a list.
 -   **cov**
 -   **bearing** - !StDev for the bearing angle for the tilting laser (in
     radians)
@@ -248,21 +248,21 @@ wide_left_rect:
     cov: {u: 0.125, v: 0.125}
 ```
 
--   **baseline_shift** - Value to add to the \`-baseline\*Tx\` term in
-    the projection matrix (\`camera_info.P\[3\]\`)
+-   **baseline_shift** - Value to add to the `-baseline\*Tx` term in
+    the projection matrix (`camera_info.P\[3\]`)
 -   **f_shift** - Value to add to the focal length term in the projetion
-    matrix (\`camera_info.P\[0\]\` & \`camera_info.P\[5\]\`)
+    matrix (`camera_info.P\[0\]` & `camera_info.P\[5\]`)
 -   **cx_shift** - Value to add to the cx term in the projetion matrix
-    (\`camera_info.P\[2\]\`)
+    (`camera_info.P\[2\]`)
 -   **cy_shift** - Value to add to the cy term in the projetion matrix
-    (\`camera_info.P\[6\]\`)
+    (`camera_info.P\[6\]`)
 -   **cov**
 -   **u** - !StDev of uncertainty along u axis of the image (in pixels)
 -   **v** - !StDev of uncertainty along v axis of the image (in pixels)
 
 #### Checkerboards
 
-Although the checkerboards themselves aren\'t really a part of the
+Although the checkerboards themselves aren't really a part of the
 robot, they still have parameters that need to be defined and could be
 estimated. Thus this file becomes a convenient location to define them.
 
@@ -287,13 +287,13 @@ small_cb_4x5:
 corners_y and spacing_y have the same semantics as corners_x and
 spacing_x
 
-### Defining the Robot\'s Sensors
+### Defining the Robot's Sensors
 
 Once we have a set of primitives defined for the robot, we need to
 define a set of sensors that are attached to the robot. The sensors
 simply string various primitives together into actual measurement
-models. There currently are three types of sensors: \`camera_chains\`,
-\`tilting_lasers\`, \`chains\`.
+models. There currently are three types of sensors: `camera_chains`,
+`tilting_lasers`, `chains`.
 
 The sensors used in the PR2 estimation are defined at
 [ pr2_calibration_launch/estimate_params/config_pr2_beta/sensors.yaml ]( https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/estimate_params/config_pr2_beta/sensors.yaml ).
@@ -328,7 +328,7 @@ camera_chains:
 -   **chain_id** - DH chain primitive to attach to the end of the
     *before chain* tranforms.
 -   **dh_link_num** - Define how many DH links to use. In many cases, we
-    don\'t want to use the entire DH Chain. In this example, the forearm
+    don't want to use the entire DH Chain. In this example, the forearm
     camera is attached to the DH link indexed at 4 (which is the
     forearm_roll_link).
 -   **after_chain** - Transforms to apply after applying the DH chain.
@@ -336,13 +336,13 @@ camera_chains:
     assuming a &ldquo;Z Forward, X Right, Y Down&rdquo; camera
 
 This sensor will only be used with a sample
-(\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>) with the following
+(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
 requirements:
 
 -   The message must have a !CameraMeasurement that matches the
-    sensor\'s \`camera_id\`
--   The message must have a !ChainMeasurement that matches sensor\'s
-    \`chain_id\`
+    sensor's `camera_id`
+-   The message must have a !ChainMeasurement that matches sensor's
+    `chain_id`
 
 #### Chains
 
@@ -363,12 +363,12 @@ chains:
     attached the the kinematic chain after after_chain transforms.
 
 This sensor will only be used with a sample
-(\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>) with the following
+(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
 requirements:
 
--   The message must have a !ChainMeasurement that matches sensor\'s
-    \`chain_id\`
--   The message\'s \`chain_id\` must match the sensor\'s \`chain_id\`.
+-   The message must have a !ChainMeasurement that matches sensor's
+    `chain_id`
+-   The message's `chain_id` must match the sensor's `chain_id`.
     This ensures that the target is in fact being held with the
     specified chain.
 
@@ -385,27 +385,27 @@ tilting_lasers:
 ```
 
 This sensor will only be used with a sample
-(\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>) with the following
+(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
 requirements:
 
--   The message must have a !LaserMeasurement that matches sensor\'s
-    \`laser_id\`
+-   The message must have a !LaserMeasurement that matches sensor's
+    `laser_id`
 
 ### Defining Which Parameters to Estimate
 
 For each estimation step, we need to specify which parameters we want to
 estimate. This is done using a yaml file that looks extremely to the
 primitives definition file, except that instead of having values for all
-the parameters, it is filled with \`0\`s and \`1\`s. All parameters with
-\`1\`s will be estimated. These are defined for the pr2 as
-[ pr2_calibration_launch/estimate_params/config_pr2_beta/free\_\*.yaml](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/estimate_params/config_pr2_beta ).
+the parameters, it is filled with `0`s and `1`s. All parameters with
+`1`s will be estimated. These are defined for the pr2 as
+[ pr2_calibration_launch/estimate_params/config_pr2_beta/free_\*.yaml](https://code.ros.org/svn/wg-ros-pkg/stacks/pr2_calibration/tags/boxturtle/pr2_calibration_launch/estimate_params/config_pr2_beta ).
 
 ## How the estimation works
 
 The main thing that the package does is take all of these previously
 specified configuration files and generate a Jacobian based on the
 measurements in the previously collected calibration bagfile
-(\`cal_measurements.bag\`). The following diagram gives an overview of
+(`cal_measurements.bag`). The following diagram gives an overview of
 what this Jacobian looks like:
 
 ![](attachment:jacobian.png)
@@ -413,8 +413,8 @@ what this Jacobian looks like:
 ### Rows
 
 There is one blockrow for each
-\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\> on the
-\`robot_measurement\` topic. Each of the messages is called a sample.
+<<MsgLink(calibration_msgs/RobotMeasurement)>> on the
+`robot_measurement` topic. Each of the messages is called a sample.
 For each sample, there are multiple sensor measurements inside, where
 each sensor is its own sub-blockrow. Each sensor has multiple rows,
 where the number of rows is determined based on the number of feature
@@ -428,13 +428,13 @@ The columns are separated into two sections: system parameters and
 checkerboard poses.
 
 -   **System parameters** This section is based off of the
-    \`system.yaml\` file passed into the estimation. This contains all
+    `system.yaml` file passed into the estimation. This contains all
     of various parameters that define the robot system: transforms, dh
     parameters, tilting laser kinematics, stereo baselines, etc. These
-    columns answer the question of *\"If I change parameter X in my
-    system, how does the error residual of my samples change?\"*.
+    columns answer the question of *"If I change parameter X in my
+    system, how does the error residual of my samples change?"*.
 -   **Checkerboard Poses** This section defines a checkerboard pose for
-    each robot measurement. This answers the question of *\"If I move
-    checkerboard J, how does the error residual of my samples change?\"*
+    each robot measurement. This answers the question of *"If I move
+    checkerboard J, how does the error residual of my samples change?"*
     Note that this part of the Jacobian is block diagonal. That is,
     altering the 1st checkerboard pose does not affect the 2nd sample.

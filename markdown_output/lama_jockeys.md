@@ -1,13 +1,13 @@
-The \`lama_jockeys\` package provides base class for Learning,
+The `lama_jockeys` package provides base class for Learning,
 Localizing, Navigating, and custom jockeys for the Large Maps Framework
 ([LaMa](Large Maps Framework)). A jockey provides a specific capability
 to the robot. These modules are called jockeys since, in a certain
 sense, they are riding the robot. It means that these modules have
-direct access to the robot hardware and are able to control the robot\'s
+direct access to the robot hardware and are able to control the robot's
 actuators, to read its sensors and to process raw data gathered from its
 sensors.
 
-The jockeys are \`actionlib\` servers. The \`lama_jockeys\` packages
+The jockeys are `actionlib` servers. The `lama_jockeys` packages
 provides standard action messages for Learning, Localizing, and
 Navigating jockeys.
 
@@ -121,14 +121,14 @@ has to interact with the environment.
 
 /\* TODO: add links to the API \*/ In the case that the functionalities
 of a jockey cannot be described by the predefined actions
-\`Navigate.action\`, \`Learn.action\`, and \`Localize.action\`, the
-jockey can be based on the \`lama_jockeys::Jockey\` class instead. Basic
+`Navigate.action`, `Learn.action`, and `Localize.action`, the
+jockey can be based on the `lama_jockeys::Jockey` class instead. Basic
 map and jockey functionalities are already implemented.
 
 ## Implementation
 
-The \`lama_jockeys::Jockey\` provides the mechanisms to interfere with
-the map in the form of the member variable \`map_agent\_\`. For example,
+The `lama_jockeys::Jockey` provides the mechanisms to interfere with
+the map in the form of the member variable `map_agent_`. For example,
 to get the vertex with id 243 from the map, one can write:
 ```cplusplus
 #include <lama_jockeys/jockey.h>
@@ -147,29 +147,29 @@ ROS_DEBUG("Received response PULLL_VERTEX");
 lama_interfaces::LamaObject vertex = srv.response.objects[0];
 ```
 
-The three subclasses \`lama_jockeys::LearningJockey\`,
-\`lama_jockeys::LocalizingJockey\`, and
-\`lama_jockeys::NavigattingJockey\` handle reception of the goal, which
-is then stored in the \`goal\_\` member variable. Upon goal reception,
+The three subclasses `lama_jockeys::LearningJockey`,
+`lama_jockeys::LocalizingJockey`, and
+`lama_jockeys::NavigattingJockey` handle reception of the goal, which
+is then stored in the `goal_` member variable. Upon goal reception,
 one specific function is called. Most of these functions are implemented
 are pure virtual method, so that the jockey implementer must only define
 these methods to have a working jockey. A default implementation is
-provided for the common actions \`\"INTERRUPT\"\`
-(\`\"onInterrupt()\"\`) and \`\"CONTINUE\"\` (\`\"onContinue()\"\`),
+provided for the common actions `"INTERRUPT"`
+(`"onInterrupt()"`) and `"CONTINUE"` (`"onContinue()"`),
 they only manage to pause the stop watch which is otherwise running when
 an action is running.
 
 ### Learrning Jockeys
 
-The user must implement \`\"onStartLearn()\"\` and
-\`\"onStopLearn()\"\`.
+The user must implement `"onStartLearn()"` and
+`"onStopLearn()"`.
 
 ### Localizing Jockeys
 
-The user must implement \`\"onGetVertexDescriptor()\"\`,
-\`\"onGetEdgesDescriptors()\"\`, \"\`onLocalizeInVertex()\`\",
-\`\"onLocalizeEdge()\`\", \`\"onGetDissimilarity()\"\`.
+The user must implement `"onGetVertexDescriptor()"`,
+`"onGetEdgesDescriptors()"`, "`onLocalizeInVertex()`",
+`"onLocalizeEdge()`", `"onGetDissimilarity()"`.
 
 ### Navigating Jockeys
 
-The user must implement \`\"onTraverse()\"\` and \`\"onStop()\"\`.
+The user must implement `"onTraverse()"` and `"onStop()"`.

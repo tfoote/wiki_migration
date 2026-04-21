@@ -32,7 +32,7 @@ command records the skeleton state during the time (20 secs).
 **RECOMENDED**
 
 You should store the bag file into the
-rtcus_kinect_gestures/data/bags/\<gesture_name_folder\>/\<bag_gesture_file.bag\>
+rtcus_kinect_gestures/data/bags/<gesture_name_folder>/<bag_gesture_file.bag>
 then this bag file will be included in the system database and no futher
 database configuration will be needed. ```
 $ mkdir `rospack find rtcus_kinect_gestures`/data/bags/my_gesture_name
@@ -53,14 +53,14 @@ $ wget ftp://anon:anon@conde.eii.us.es/gestures_bags.tar.gz
 After having your raw kinect gesture bag file check if it has been
 created properly. For this propose you can use a launch file designed in
 our package: reproduce_gesture.launch For instance if we want to test
-the file: \"come_here/come_here_2_2011-11-06-18-25-54.bag\" do this:
+the file: "come_here/come_here_2_2011-11-06-18-25-54.bag" do this:
 ```
 $ roslaunch rtcus_kinect_gestures reproduce_gesture.launch bag_file:=`rospack find rtcus_kinect_gestures`/data/bags/come_here/come_here_2_2011-11-06-18-25-54.bag use_bag:=True
 ```
 
 ### CREATING THE GESTURE LATENT-SPACE FILE
 
-After this we have to generate \"the gestures latent-space files\" from
+After this we have to generate "the gestures latent-space files" from
 the raw kinect data of the wave and come_here gestures. They are stored
 in the folders: rtcus_kinect_gestures/data/bags/wave and
 rtcus_kinect_gestures/data/bags/come_here Notice that each of these
@@ -85,9 +85,9 @@ $ cat data/bags/wave/wave.config.yaml
 ```
 
 Once created (if not is already created) this file, we can reproduce the
-bag file and create the \"gesture latent-space file\". This kind of
+bag file and create the "gesture latent-space file". This kind of
 files will be stored in the folder:
-rtcus_kinect_gestures/data/bags/\<gesture_name\>/). Here we show an
+rtcus_kinect_gestures/data/bags/<gesture_name>/). Here we show an
 example to get the gesture come_here: the gesture file.
 
 First we will create the wave gesture from the bags files stored in
@@ -134,7 +134,7 @@ $ rosrun rtcus_kinect_gestures batch_evaluate_gestures.py --gesture-entries come
 
 INTERNAL NOTE: A cache json file with the result will be stored in the
 report folder (internal and time saving proposes). Then the report style
-can be changed. Add the parameter \"-r True\" to rebuild and regenerate
+can be changed. Add the parameter "-r True" to rebuild and regenerate
 the cache.
 
 The resulting report will be stored in the

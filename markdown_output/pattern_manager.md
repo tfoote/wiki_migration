@@ -3,7 +3,7 @@
 Simply put, pattern_manager is a tool for describing, arranging, and
 managing transforms. This package allows you to create a tree of
 transforms and to iterate through selected transforms within that tree.
-This is done by manually \'activating\' transforms for iteration and
+This is done by manually 'activating' transforms for iteration and
 specifying the order in which they should be iterated.
 
 An obvious example of an application of such a tool is in palletizing
@@ -60,8 +60,8 @@ An RQt-plugin has also been created as a GUI for pattern_manager. It can
 be found
 [here](https://github.com/teknologisk-institut/rqt_pattern_manager.git).
 
-![\|height=\"558px\",width=\"334px\"](attachment:rqt_pattern_manager.png)
-![\|height=\"380px\",width=\"275px\"](attachment:rqt_pattern_manager2.png)
+![\|height="558px",width="334px"](attachment:rqt_pattern_manager.png)
+![\|height="380px",width="275px"](attachment:rqt_pattern_manager2.png)
 
 Currently,
 [rqt_pattern_manager](https://github.com/teknologisk-institut/rqt_pattern_manager.git)

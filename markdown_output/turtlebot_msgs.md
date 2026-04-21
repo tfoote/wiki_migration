@@ -4,4 +4,4 @@
 
 ## Documentation
 
-\<\<MsgSrvDoc(turtlebot_msgs)\>\>
+<<MsgSrvDoc(turtlebot_msgs)>>

@@ -23,11 +23,11 @@ the action will be able to follow.
 #### Action API
 
 The collision_free_arm_trajectory_controller node provides an
-implementation of a \`SimpleActionServer\` (see
+implementation of a `SimpleActionServer` (see
 [ actionlib documentation](actionlib )), that takes in goals containing
-\`pr2_controllers_msgs/JointTrajectoryAction\` messages. The recommended
+`pr2_controllers_msgs/JointTrajectoryAction` messages. The recommended
 way to send goals to this node if you care about tracking their status
-is by using the \`SimpleActionClient\`. Please see
+is by using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information. Also, see
 the [tutorials](collision_free_arm_trajectory_controller/Tutorials) for
 this package for a better idea on how to use the interface.

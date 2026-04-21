@@ -9,9 +9,9 @@ interface (cf.
 
 The two launch files start a ROS node for the *qbmove* respectively to
 control it through a GUI and through predefined configurable waypoints
-(stored in the \`config/qbmove_waypoints.yaml\`). In both cases the
+(stored in the `config/qbmove_waypoints.yaml`). In both cases the
 controllers setup can be found in the
-\`config/qbmove_controllers.yaml\`; it is recommended not to change the
+`config/qbmove_controllers.yaml`; it is recommended not to change the
 default settings though.
 
 ### gui_control

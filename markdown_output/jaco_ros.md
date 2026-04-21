@@ -4,8 +4,8 @@ C++ hardware API through ROS. This documentation will usually refer to
 the JACO arm, but the instructions work with both the JACO and the MICO
 unless otherwise noted.
 
-**\_\_For fuerte and groovy version of this package, that supports only
-JACO, please see \_\_**[jaco](jaco)
+**__For fuerte and groovy version of this package, that supports only
+JACO, please see __**[jaco](jaco)
 
 ## Overview
 
@@ -26,7 +26,7 @@ for controlling the arm.
 The services available are: in/home_arm, in/stop, and in/start. These
 services require no input goals, and are intended for quick control of
 basic arm functions. When called, home_arm will halt all other movement
-and return the arm to its \"home\" position. The stop service is a
+and return the arm to its "home" position. The stop service is a
 software e-stop, which instantly stops the arm and prevents any further
 movement until the start service is called.
 
@@ -54,7 +54,7 @@ a transform which may be used in visualization programs such as rviz.
 
 Cartesian control is accomplished via actionserver. The Cartesian
 co-ordinates are published as a separate topic. The arm has a maximum
-reach of about 0.9m (90cm), so the \"position\" range is about +/-0.9
+reach of about 0.9m (90cm), so the "position" range is about +/-0.9
 for all three dimensions. The three wrist joints are capable of
 continuous rotation, and therefore capable of being commanded up to
 +/-174.5 rad. You may want to limit to +/-6.28 rad in software to
@@ -321,7 +321,7 @@ float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
 ```2 To access the arm via usb copy the udev rule
 file 99-jaco-arm.rules from
-\<your_workspace\>/ros-jaco-arm/jaco_driver/udev to /etc/udev/rules.d/:
+<your_workspace>/ros-jaco-arm/jaco_driver/udev to /etc/udev/rules.d/:
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -344,8 +344,8 @@ relevant /core.dfolder.
 This version of jaco-ros supports multiple arms. In order to use
 multiple arms you must set the theserial_number parameter for that arm
 and a tf_prefix for both the arm_driver node and thetf_updater node. For
-example, include the following lines in the launch file between \<node
-pkg=\"jaco_driver\" type=\"jaco_arm_driver\" \...\> and \</node\>:
+example, include the following lines in the launch file between <node
+pkg="jaco_driver" type="jaco_arm_driver" \...> and </node>:
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -359,8 +359,8 @@ float64 orientation.y – end effector quaternion orientation
 float64 orientation.z – end effector quaternion orientation
 float64 orientation.w – end effector quaternion orientation
 ```4 And the following line in the launch file
-between \<node pkg=\"jaco_driver\" type=\"jaco_tf_updater\" \...\> and
-\</node\>:
+between <node pkg="jaco_driver" type="jaco_tf_updater" \...> and
+</node>:
 
 ```
 /jaco_arm_driver/out/tool_position
@@ -593,7 +593,7 @@ Parameters on the parameter server (can be set in the launch file):
 1\. The joint_state topic currently reports only the arm position.
 Velocity and Effort are placeholders for future compatibility. 1. When
 updating the firmware on the arm (e.g., using Jacosoft) the serial
-number will be set to \"Not set\" which will cause multiple arms to be
+number will be set to "Not set" which will cause multiple arms to be
 unusable. The solution is to make sure that the serial number is reset
 after updating the arm firmware. 1. After using angular control, the arm
 may not respond to Cartesian commands (e.g., arm_pose or figer_position)
@@ -601,7 +601,7 @@ until the arm has been homed. 1. Some virtualization software products
 are known to work well with this package, while others do not. The issue
 appears to be related to proper handover of access to the USB port to
 the API. Parallels and VMWare are able to do this properly, while
-VirtualBox causes the API to fail with a \"1015\" error. 1. With the
+VirtualBox causes the API to fail with a "1015" error. 1. With the
 latest firmware, the JACO arm will sag slightly when gripper commands
 are sent. This behavior has not been observed with the MICO arm. 1.
 Previously, files under jaco-ros/jaco_driver/lib/i386-linux-gnu had a

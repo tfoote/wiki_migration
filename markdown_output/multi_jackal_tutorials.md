@@ -1,6 +1,6 @@
 ## Overview
 
-\`multi_jackal_tutorials\` provides examples on how to simulate multiple
+`multi_jackal_tutorials` provides examples on how to simulate multiple
 [Clearpath Jackals](http://wiki.ros.org/Robots/Jackal) in Gazebo.
 
 ![multi_jackal\|width=800](attachment:multi_jackal_tutorials_gazebo.png)
@@ -36,8 +36,8 @@ starts up Gazebo:
 </include>
 ``` Gazebo will be generating the ROS clock, so it
 can simulate faster or slower than real time (this is set in the world
-description). If \`gui\` is set to \`true\`, the Gazebo client will also
-appear. This can also be done after launching by running \`gzclient\` in
+description). If `gui` is set to `true`, the Gazebo client will also
+appear. This can also be done after launching by running `gzclient` in
 a new terminal.
 
 Secondly, the launch file spawns a robot into Gazebo:
@@ -50,12 +50,12 @@ Secondly, the launch file spawns a robot into Gazebo:
   <arg name="config_id"     value="$(arg config_id)"/>
   <arg name="use_move_base" value="true"/>
 </include>
-``` The namespace \`ns\` must be unique (like
+``` The namespace `ns` must be unique (like
 jackal0, jackal1, etc), so that individual robots can be identified. The
-configuration type \`config\` specifies the components on the jackal.
+configuration type `config` specifies the components on the jackal.
 This string must match a file located in
 [multi_jackal_description/urdf/configs](https://github.com/NicksSimulationsROS/multi_jackal/tree/ros-kinetic/multi_jackal_description/urdf/configs).
-The configuration ID \`config_id\` is used if required by the
+The configuration ID `config_id` is used if required by the
 configuration. Movement to goal locations is provided through
 [move_base](http://wiki.ros.org/move_base). The model description
 ([multi_jackal_description](http://wiki.ros.org/multi_jackal_description)),
@@ -80,7 +80,7 @@ Robot topics have been prefixed with the selected namespace (jackal0):
 
 ![rostopic list\|width=600](attachment:multi_jackal_tutorials_topics.png)
 
-Frames have also been prefixed by the namespace (right click -\> view
+Frames have also been prefixed by the namespace (right click -> view
 image to zoom in):
 
 ![rosrun rqt_tf_tree rqt_tf_tree\|width=800](attachment:multi_jackal_tutorials_tf.png)

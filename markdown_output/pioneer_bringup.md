@@ -5,7 +5,7 @@ MobileRobots Pioneer and Pioneer-compatible robots (Including Pioneer 2,
 Pioneer 3, Pioneer LX, AmigoBot, PeopleBot, PatrolBot, PowerBot, Seekur
 and Seekur Jr.)
 
-\<\<GitHubIssues(amineHorseman/pioneer_bringup)\>\>
+<<GitHubIssues(amineHorseman/pioneer_bringup)>>
 
 # Installation
 
@@ -35,9 +35,9 @@ Allow to communicate with Sick LMS1xx/LMS200 Laser Range Finders. { }}}}
 
 Allows to communicate with usb cameras and webcams
 
-Skip this section if you don\'t want to use usb cameras, or if you want
+Skip this section if you don't want to use usb cameras, or if you want
 to invoke it yourself using another package { }}}} { }}}} { You may get
-this error message *ros-kinetic-usb-cam package doesn\'t exist*.
+this error message *ros-kinetic-usb-cam package doesn't exist*.
 
 In that case, simply install usb_cam package from source:
 
@@ -101,8 +101,8 @@ All the bringup modes call first RosAria package which is responsible to
 link ROS with the robot hardware.
 
 Generally, the pioneer robots come with an onboard computer which
-communicate with the hardware throught Serial port, that\'s why, in the
-minimal.launch file we specify the port value as \"/dev/ttyS0\" (default
+communicate with the hardware throught Serial port, that's why, in the
+minimal.launch file we specify the port value as "/dev/ttyS0" (default
 value).
 
 Sometimes however, RosAria need to communicate throught USB port, and
@@ -121,10 +121,10 @@ with this one:
 For more information about this modification, please refer to
 [RosAria documentation\|](http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA):
 
-## \'ros-kinetic-usb-cam package doesn\'t exist\'
+## 'ros-kinetic-usb-cam package doesn't exist'
 
 At the moment of writing this tutorial, usb_cam cannot be located by
-\'sudo apt-get install\'
+'sudo apt-get install'
 
 Instead try to install it from source:
 

@@ -1,4 +1,4 @@
-![\|width=\"70%\"](attachment:turtlebot_exploration_icon.png)
+![\|width="70%"](attachment:turtlebot_exploration_icon.png)
 
 ## What is it ?
 

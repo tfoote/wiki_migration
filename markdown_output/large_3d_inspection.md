@@ -30,7 +30,7 @@ In this video we show a use case of the libraries developed with real
 aeronautical parts. Due to confidentiality issues, the pointclouds and
 the cads associated to such test are not provided.
 
-\<\<Youtube(Cf6_jud7Uo0&t)\>\>
+[Youtube](https://www.youtube.com/watch?v=Cf6_jud7Uo0&t)
 
 Watch this video to see the simulated model of the ScanStation C5
 created for Gazebo and the virtual industrial environment used to

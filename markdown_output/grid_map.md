@@ -9,7 +9,7 @@ Features:
     mapping with support for any number of layers.
 -   **Efficient map re-positioning:** Data storage is implemented as
     two-dimensional circular buffer. This allows for non-destructive
-    shifting of the map\'s position (e.g. to follow the robot) without
+    shifting of the map's position (e.g. to follow the robot) without
     copying data in memory.
 -   **Based on Eigen:** Grid map data is stored as
     [Eigen](http://eigen.tuxfamily.org/) data types. Users can apply
@@ -34,7 +34,7 @@ More documentation on the grid map library is given
 
 ![](attachment:grid_map_rviz_plugin_example.png)
 
-\<\<MsgSrvDoc(grid_map_msgs)\>\>
+<<MsgSrvDoc(grid_map_msgs)>>
 
 ## Reporting bugs
 

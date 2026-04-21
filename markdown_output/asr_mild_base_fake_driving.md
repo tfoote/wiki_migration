@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -20,7 +20,7 @@ movement. This movement is published on the odom topic. So the
 navigation (or other components) thinks a robot drives as it was
 planned.
 
-![\|width=\"585\",height=\"383\"](attachment:simulation.png)
+![\|width="585",height="383"](attachment:simulation.png)
 
 ## Usage
 

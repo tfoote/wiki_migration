@@ -17,8 +17,8 @@ LIDAR actuated by motor for scanning.
 ## PODO
 
 PODO is a real-time robot controlling framework which name stands for
-\"grape\" in Korean. It provides users with multiple processes called
-ALs (which means \"grape berries\" in Korean). Software architecture of
+"grape" in Korean. It provides users with multiple processes called
+ALs (which means "grape berries" in Korean). Software architecture of
 PODO is shown in the below figure.
 
 ![](attachment:podo.png)
@@ -86,8 +86,8 @@ sudo apt-get install ros-indigo-gazebo5-*
 ```
 
 3\. Move the contents of
-\"home/{user_name}/catkin_ws/src/drc_hubo/gazebo_model\" in the source
-to \"home/{user_name}/.gazebo/models/\".
+"home/{user_name}/catkin_ws/src/drc_hubo/gazebo_model" in the source
+to "home/{user_name}/.gazebo/models/".
 
 Change the absolute paths in the source.
 
@@ -281,7 +281,7 @@ sudo apt-get update
 sudo apt-get install ros-indigo-gazebo5-*
 ```0
 
-d\. make wheel mode using PODOGUI and click the \"ROS MODE\"
+d\. make wheel mode using PODOGUI and click the "ROS MODE"
 
 e\. use [teleop_twist_joy](teleop_twist_joy) to make a map
 
@@ -317,7 +317,7 @@ sudo apt-get update
 sudo apt-get install ros-indigo-gazebo5-*
 ```2
 
-d\. make wheel mode using PODOGUI and click the \"ROS MODE\"
+d\. make wheel mode using PODOGUI and click the "ROS MODE"
 
 e\. use [rviz](rviz) to give an initial position and a goal command
 

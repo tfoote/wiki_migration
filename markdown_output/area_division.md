@@ -14,8 +14,8 @@ The following packages of the
 are required:
 
 -   area_provider
--   \*\_pos_provider
--   \*\_pos_controller
+-   \*_pos_provider
+-   \*_pos_controller
 
 ## Execution
 

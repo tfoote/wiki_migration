@@ -5,7 +5,7 @@ to [rviz](rviz) focused on visualization 2D data.
 
 ![Screenshot of mapviz with several plugins active\|width=100%](attachment:mapviz.png)
 
-\<\<Youtube(3yy1J1Ci98c&rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=3yy1J1Ci98c&rel=0)
 
 ## Plug-ins
 

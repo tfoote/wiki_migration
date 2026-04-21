@@ -145,7 +145,7 @@ the backend and rviz packages
 
 ## Pkg: radial_menu_msgs
 
-Defines \<\<MsgLink(radial_menu_msgs/State)\>\>
+Defines <<MsgLink(radial_menu_msgs/State)>>
 
 ## Pkg: radial_menu_examples
 

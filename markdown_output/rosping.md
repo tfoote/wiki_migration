@@ -1,13 +1,13 @@
-\`rosping\` is the tool to send ICMP ECHO_REQUEST to network hosts and
+`rosping` is the tool to send ICMP ECHO_REQUEST to network hosts and
 send back to you as rostopic message
 
 ## rosping Usage
 
-\`rosping \<host\>\`
+`rosping <host>`
 
-send ICMP ECHO_REQUEST to \<host\>
+send ICMP ECHO_REQUEST to <host>
 
--   \`host\`: network address or hostname to ping
+-   `host`: network address or hostname to ping
 
 ## Examples
 

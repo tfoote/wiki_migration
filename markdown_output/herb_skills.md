@@ -20,8 +20,8 @@ Some notes about the particular features demonstrated. armskill.lua:: An
 auto-generator for a common class of skills, which order instruction of
 different actions on the same entity, therefore resulting in a uniform
 appearance of all such skills. grab.lua and noop.lua:: Before
-implementing armskill.lua, the skill was implemented \"by hand\". This
-file contains such a skill and serves as an example of a \"regular\"
+implementing armskill.lua, the skill was implemented "by hand". This
+file contains such a skill and serves as an example of a "regular"
 skill. grab_object.lua:: This higher order skill employs several simpler
 skills to form a more complex behavior. In particular in our environment
 during action execution updates must be prevented to be added to the

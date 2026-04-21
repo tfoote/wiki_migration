@@ -25,7 +25,7 @@ Since the only difference w.r.t. the [full_bringup](#full_bringup)
 launch file is the includes of the
 [load_description_template](qb_device_description#load_description_template)
 rather than the [description_bringup](#description_bringup), the
-parameters are exactly the same as the other a part from \`use_rviz\`
+parameters are exactly the same as the other a part from `use_rviz`
 which is not used. ```clearsilver
 name = control_bringup
 desc = This launch file starts the device control node with the given parameters.
@@ -117,6 +117,6 @@ for a single device.
 #### Parameters
 
 It provides basically the same configuration parameters as the other
-launch files a part from \`frequency\` and \`source_list\` of the
+launch files a part from `frequency` and `source_list` of the
 [description_bringup](#description_bringup) which are not exported
 outside.

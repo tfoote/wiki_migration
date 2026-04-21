@@ -8,10 +8,10 @@ The code has been removed from the public domain. The technology is available as
 
 Laser Odometry and Mapping (Loam) is a realtime method for state
 estimation and mapping using a 3D lidar. The program contains two major
-threads running in parallel. An \"odometry\" thread computes motion of
+threads running in parallel. An "odometry" thread computes motion of
 the lidar between two sweeps, at a higher frame rate. It also removes
 distortion in the point cloud caused by motion of the lidar. A
-\"mapping\" thread takes the undistorted point cloud and incrementally
+"mapping" thread takes the undistorted point cloud and incrementally
 builds a map, while simultaneously computes pose of the lidar on the map
 at a lower frame rate. The lidar state estimation is combination of the
 outputs from the two threads.

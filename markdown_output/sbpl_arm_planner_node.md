@@ -5,7 +5,7 @@ This package contains the ROS interface for the
 
 ## How to Use It
 
-This package is intended to be used as the planner\'s interface to the
+This package is intended to be used as the planner's interface to the
 arm_navigation stack. If you already know how to make planning requests
 to move_arm, then you are almost ready to go.
 
@@ -28,7 +28,7 @@ planner you need to:
  my_msg.planner_service_name = std::string("sbpl_planning/plan_path");
 ```
 
-If you don\'t already know how to send planning requests to move_arm, I
+If you don't already know how to send planning requests to move_arm, I
 suggest you check out the useful
 [ arm navigation tutorials](arm_navigation/Tutorials).
 
@@ -291,7 +291,7 @@ The planner keeps failing what is going wrong?
 
 -   The planner tries to come up with the best possible solution within
     the allotted planning time. You should try raising the
-    \"allowed_planning_time\" field in the
+    "allowed_planning_time" field in the
     [ MoveArmGoal](http://www.ros.org/doc/api/move_arm_msgs/html/msg/MoveArmGoal.html )
     message. ```clearsilver
 sub {
@@ -312,7 +312,7 @@ sub {
 ```
 -   The planner uses a cylindrical collision model of the arm. If your
     goal is set too close to an obstacle, the planner may not be able to
-    find a solution that\'s collision free.
+    find a solution that's collision free.
 
 ```{=html}
 <!-- -->

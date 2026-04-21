@@ -2,28 +2,28 @@
 
 ### stdr_server_node
 
-The \`stdr_server_node\` node implements the synchronization and
-coordination functionalities of \`stdr_simulator\`. It is used to serve
+The `stdr_server_node` node implements the synchronization and
+coordination functionalities of `stdr_simulator`. It is used to serve
 the static map, which represents the simulated environment and keeps
 track of active robots.
 
 #### Action API (Internal Usage)
 
-The \`stdr_server_node\` node provides several action server
+The `stdr_server_node` node provides several action server
 implementations used for robot handling and coordination.
 
 ##### Action Topics
 
-\`spawn_robot\`
+`spawn_robot`
 ([stdr_msgs/SpawnRobotAction](http://docs.ros.org/api/stdr_msgs/html/action/SpawnRobot.html))
 Action to spawn a new robot. Called either from [STDR GUI](stdr_gui) or
-from [robot_handler](stdr_robot#robot_handler) node. \`delete_robot\`
+from [robot_handler](stdr_robot#robot_handler) node. `delete_robot`
 ([stdr_msgs/DeleteRobotAction](http://docs.ros.org/api/stdr_msgs/html/action/DeleteRobot.html))
 Action to handle robot deletion. Called either from [STDR GUI](stdr_gui)
 or from [robot_handler](stdr_robot#robot_handler) node.
-\`register_robot\`
+`register_robot`
 ([stdr_msgs/RegisterRobotAction](http://docs.ros.org/api/stdr_msgs/html/action/RegisterRobot.html))
-Action to register a newly spawned robot. Called from \`stdr_robot\`
+Action to register a newly spawned robot. Called from `stdr_robot`
 nodelet itself, serves synchronization purposes.
 
 ```clearsilver
@@ -74,22 +74,22 @@ prov_tf {
 
 #### Command-Line Usage
 
-\`stdr_server_node\` can run without any command-line arguments and
-simply waits until someone calls either \`load_static_map\` or
-\`load_static_map_external\` service. There is an option to run
-\`stdr_server_node\` passing an image file to load as the static map or
-you can include it to a launch file using the \`args\` option.
+`stdr_server_node` can run without any command-line arguments and
+simply waits until someone calls either `load_static_map` or
+`load_static_map_external` service. There is an option to run
+`stdr_server_node` passing an image file to load as the static map or
+you can include it to a launch file using the `args` option.
 ```
 $ rosrun stdr_server stdr_server_node <map_file.yaml>
 ```
 
 ### map_loader_node
 
-The \`map_loader_node\` node uses [map_server](map_server)\'s
-\`image_loader\` library to load an map image from a file, fill a
-\<\<MsgLink(nav_msgs/OccupancyGrid)\>\> message, call
-\`load_static_map_external\` service and load it to the simulator. The
-loading functionality is also provided in \`map_loader\` library and can
+The `map_loader_node` node uses [map_server](map_server)'s
+`image_loader` library to load an map image from a file, fill a
+<<MsgLink(nav_msgs/OccupancyGrid)>> message, call
+`load_static_map_external` service and load it to the simulator. The
+loading functionality is also provided in `map_loader` library and can
 be used by other packages.
 
 #### Command-Line Usage

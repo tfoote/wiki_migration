@@ -1,6 +1,6 @@
 # Package Summary
 
-A package to read voltage from Phidgets\'s analog and digital channels.
+A package to read voltage from Phidgets's analog and digital channels.
 
 -   Maintainer: Luciana Borges
 -   Author: Luciana Borges/ lumoreno.borges@gmail.com
@@ -54,7 +54,7 @@ Its necessary to call the method setup to work properly. You need to
 copy and paste the constructor and the setup method to each channel you
 desire to read the voltage.
 
-Don\'t forget to save the changes!
+Don't forget to save the changes!
 
 ## Run it
 

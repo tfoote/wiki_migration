@@ -3,12 +3,12 @@ Node lifecycle is coming to ROS 2.0 in form of
 not bring it to ROS already?
 
 [robot_activity](http://wiki.ros.org/robot_activity) is a ROS package,
-which implements node lifecycle. The idea is that you don\'t have to
+which implements node lifecycle. The idea is that you don't have to
 write a lot of bolier-plate code in C++ when making a new ROS node and
 you get a lot of features for free!
 
-A minimal example using \`robot_activity\` is available in the
-\`robot_activity_tutorials\` package. Check the
+A minimal example using `robot_activity` is available in the
+`robot_activity_tutorials` package. Check the
 [robot_activity_tutorials_minimal_node.cpp](https://github.com/snt-robotics/robot_activity/blob/master/robot_activity_tutorials/src/robot_activity_tutorials_minimal_node.cpp)
 
 The main features of the package are:
@@ -25,13 +25,13 @@ a node supervisor using heartbeat and error messages.
 
 The node lifecycle can be represented as a Finite State Machine (FSM):
 ![robot_activity-FSM](attachment:fsm-resized.png) When you inherit from
-\`robot_activity::ManagedRobotActivity\`, the subscribers and services
+`robot_activity::ManagedRobotActivity`, the subscribers and services
 are managed for you, meaning that they will only be executed in the
 **RUNNING** state.
 
 1\. In **PAUSED** state, they are invoked, but immediately return
 without executing the actual body of the callback (services return
-\`false\`). 2. In **STOPPED** state, all registered subscribers and
+`false`). 2. In **STOPPED** state, all registered subscribers and
 services are shutdown, so that no IPC or TCP/IP traffic occurs. 3. When
 transitioning back to **PAUSED** state from **STOPPED**, the subscribers
 and services are once again advertised for you (with the same
@@ -90,4 +90,4 @@ node.0 {
 }
 ```
 
-\<\<GitHubIssues(snt-robotics/robot_activity)\>\>
+<<GitHubIssues(snt-robotics/robot_activity)>>

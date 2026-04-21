@@ -1,6 +1,6 @@
 ## Overview
 
-![alt text\|width=\"500\"](attachment:box_grasp.png)
+![alt text\|width="500"](attachment:box_grasp.png)
 
 This package provides an interface for a grasp adjustment algorithm that
 finds suitable grasp poses near an input pose. This can be used to

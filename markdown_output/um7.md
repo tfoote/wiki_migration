@@ -13,7 +13,7 @@ e.g. pololu.com. It is available in two forms: the UM7-LT which is an
 unenclosed circuit board and the UM7 which provides an enclosure. This
 driver supports both.
 
-CH Robotics also provides \"CHRobotics Serial Interface\" software which
+CH Robotics also provides "CHRobotics Serial Interface" software which
 allows complete configuration of the sensor, testing capability and
 Calibration for the magnetometer. This software runs on Windows.
 
@@ -22,7 +22,7 @@ Calibration for the magnetometer. This software runs on Windows.
 ## Hardware Installation:
 
 The sensor should be mounted on the vehicle in the default configuration
-if possible (see below). If you don\'t, you will have to perform
+if possible (see below). If you don't, you will have to perform
 transforms of the data in your applications to restore the proper
 orientation of the readings.
 
@@ -48,7 +48,7 @@ device, the UM6, can be found at:
 www.chrobotics.com/docs/AN-1003-GettingStartedUM6.pdf and will work with
 minor adaptations.
 
-![\|align=\"center\",width=\"611\"](attachment:orientB.jpg)
+![\|align="center",width="611"](attachment:orientB.jpg)
 
 testing
 
@@ -61,18 +61,18 @@ in later versions.
 sudo apt-get install ros-$ROS_DISTRO-um7
 ``` Run the driver:
 
-. **note**: replace \"ttyUSB0\" below with the port number of your UM7
+. **note**: replace "ttyUSB0" below with the port number of your UM7
 device. See /dev
 
 ```
 rosrun um7 um7_driver _port:=/dev/ttyUSB0
-``` **Note:** the \"port\" assignment actually
-defaults to \"/dev/ttyUSB0\", so if your sensor is on that port, the
+``` **Note:** the "port" assignment actually
+defaults to "/dev/ttyUSB0", so if your sensor is on that port, the
 parameter setting shown above is unnecessary.
 
-**Note:** if you get a \"Couldn\'t find executable named um7_driver
-below /opt/ros/\$ROS_DISTRO/share/um7\" message, try restarting linux. I
-don\'t know why; but it has happened to me a couple times. It should
+**Note:** if you get a "Couldn't find executable named um7_driver
+below /opt/ros/\$ROS_DISTRO/share/um7" message, try restarting linux. I
+don't know why; but it has happened to me a couple times. It should
 only happen on the first attempt to run.
 
 ## Nodes
@@ -89,7 +89,7 @@ meters/second/second.
 
 . Note: each of these has a covariance matrix in the topic format. The
 UM7 does not supply covariance data so these matrices are set to all
-zeros, meaning \"data unknown\". A parameter (below) is available to set
+zeros, meaning "data unknown". A parameter (below) is available to set
 covariance of the quaternion data to alternate fixed values if you need
 to do so.
 
@@ -133,7 +133,7 @@ configuration. They can all be modified with the CHRobotics Serial
 Interface software. However the um7_driver has a default configuration
 which sets the transmission rate of all the parameters to 20 hz and the
 baud rate of the sensor to 115200. . . Note: Be aware that while all
-these are \"private\" parameters, they are stored on the parameter
+these are "private" parameters, they are stored on the parameter
 server. Any parameters you set to a non-default condition will be used
 again the next time you restart um7_driver unless you specifically set
 them back to the default. . . . **port(string, default: /dev/ttyUSB0)**
@@ -156,7 +156,7 @@ them back to the default. . . . **port(string, default: /dev/ttyUSB0)**
         This command causes the sensor to average gyro readings over
         about 1 second to determine the null value of the gyros. The
         vehicle must be stationary during this command. **
-        covariance(string, default: \"0 0 0 0 0 0 0 0 0\")** . The UM7
+        covariance(string, default: "0 0 0 0 0 0 0 0 0")** . The UM7
         sensor does not provide covariance data so the default imu/data
         values are set to all zero indicating unknown data. However,
         some ROS applications may require covariance data for the

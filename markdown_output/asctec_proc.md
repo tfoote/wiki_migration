@@ -14,13 +14,13 @@ published by and sent to \[asctec_autopilot\]\] are defined by the
 [ AscTec Autopilot SDK](http://robotics.ccny.cuny.edu/wiki/AscTec/Docs ).
 They are not in SI units, and are specific to the vehicle hardware.
 Translating them into conventional ROS messages (such as
-\<\<MsgLink(sensor_msgs/IMU)\>\>, \<\<MsgLink(geometry_msgs/Pose)\>\>
+<<MsgLink(sensor_msgs/IMU)>>, <<MsgLink(geometry_msgs/Pose)>>
 etc) enables the development of generic micro-air vehicle tools that can
 be shared among various hardware platforms.
 
 Apart from translating messages, the package can (optionally) monitor a
-**state** topic and send engage/disengage the vehicle\'s motors whenever
-appropriate by sending the \"motors on\"/\"motors off\" command to the
+**state** topic and send engage/disengage the vehicle's motors whenever
+appropriate by sending the "motors on"/"motors off" command to the
 [asctec_autopilot](asctec_autopilot).
 
 ## Notes

@@ -1,7 +1,7 @@
 ## Overview
 
-The \`carrot_planner::CarrotPlanner\` is a simple global planner that
-adheres to the \`nav_core::BaseGlobalPlanner\` interface found in the
+The `carrot_planner::CarrotPlanner` is a simple global planner that
+adheres to the `nav_core::BaseGlobalPlanner` interface found in the
 [nav_core](nav_core) package and can be used as a global planner
 [ plugin](pluginlib ) for the [move_base](move_base) node. The planner
 takes a goal point from an external user, checks if the user-specified
@@ -15,13 +15,13 @@ the robot to get as close to a user-specified goal point as possible.
 
 ## CarrotPlanner
 
-The \`carrot_planner::CarrotPlanner\` object exposes its functionality
+The `carrot_planner::CarrotPlanner` object exposes its functionality
 as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates within a
 ROS namespace (assumed to be *name* from here on) specified on
-initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
+initialization. It adheres to the `nav_core::BaseGlobalPlanner`
 interface found in the [nav_core](nav_core) package.
 
-Example creation of a \`carrot_planner::CarrotPlanner\` object:
+Example creation of a `carrot_planner::CarrotPlanner` object:
 
 ```cplusplus
 #include <tf/transform_listener.h>
@@ -59,7 +59,7 @@ param {
 
 ### C++ API
 
-The C++ \`carrot_planner::CarrotPlanner\` class adheres to the
-\`nav_core::BaseGlobalPlanner\` interface found in the
+The C++ `carrot_planner::CarrotPlanner` class adheres to the
+`nav_core::BaseGlobalPlanner` interface found in the
 [nav_core](nav_core) package. For detailed documentation, please see
 [ CarrotPlanner Documentation](http://www.ros.org/doc/api/carrot_planner/html/classcarrot__planner_1_1CarrotPlanner.html ).

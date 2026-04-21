@@ -1,5 +1,5 @@
 ## Overview
 
-\`wire_msgs\` contains all message types used in the [wire](wire) stack.
+`wire_msgs` contains all message types used in the [wire](wire) stack.
 
-\<\<MsgSrvDoc(wire_msgs)\>\>
+<<MsgSrvDoc(wire_msgs)>>

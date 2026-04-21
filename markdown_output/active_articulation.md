@@ -5,7 +5,7 @@ method provides a probabilistic model that integrates visual
 observations with feedback from manipulation actions to best
 characterize a distribution of possible articulation models.
 
-![\|height=\"231px\",width=\"358px\"](attachment:action1.png)![\|height=\"231px\",width=\"358px\"](attachment:cabinet_closed.png)
+![\|height="231px",width="358px"](attachment:action1.png)![\|height="231px",width="358px"](attachment:cabinet_closed.png)
 
 ## Installation Instruction
 

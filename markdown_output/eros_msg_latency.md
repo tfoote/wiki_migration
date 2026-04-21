@@ -8,12 +8,12 @@ passing in various contexts.
 -   Passing a pointer to a float64 between two threads.
 
 all of course, via topics. It is also worth perusing this code just to
-make sure you\'re clear on the syntax which separates the above passing
-methods, it can be subtle if you\'re new to it.
+make sure you're clear on the syntax which separates the above passing
+methods, it can be subtle if you're new to it.
 
 ## Usage
 
-For all of these, make sure you have pre-run \`roscore\`.
+For all of these, make sure you have pre-run `roscore`.
 
 ### InterProcessCopy
 

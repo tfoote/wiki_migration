@@ -41,4 +41,4 @@ node.0 {
 ## Nodelet
 
 Same API as node, available as
-\`imu_transformer/imu_transformer_nodelet\`.
+`imu_transformer/imu_transformer_nodelet`.

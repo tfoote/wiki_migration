@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/rb1_base_sim.git>
 
-![RB1 BASE Gazebo\|width=\"600px\"](attachment:rb1_base_gazebo.png)
+![RB1 BASE Gazebo\|width="600px"](attachment:rb1_base_gazebo.png)
 
 ## List of packages
 
@@ -51,5 +51,5 @@ base.
 
 -   roslaunch rb1_base_sim rb1_sim.launch
 
-3\. Enjoy! You can use the topic \"/rb1_base_control/cmd_vel\" to
+3\. Enjoy! You can use the topic "/rb1_base_control/cmd_vel" to
 control the RB1 BASE robot.

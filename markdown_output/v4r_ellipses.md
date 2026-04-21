@@ -12,7 +12,7 @@ ECCV 2004, Springer Berlin Heidelberg, 2004, 3023, 521-532,
 <http://link.springer.com/chapter/10.1007/978-3-540-24672-5_41>
 
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"100%\"\> ![\|height=\"329\",width=\"418\"](attachment:ellipse_detection.jpg) Detected Ellipses with projected normals of the two possible pose solutions.      ![\|height=\"422\",width=\"311\"](attachment:ellipse_reconfigure.jpg) Dynamic reconfigure interface   
+     <tablewidth="100%"> ![\|height="329",width="418"](attachment:ellipse_detection.jpg) Detected Ellipses with projected normals of the two possible pose solutions.      ![\|height="422",width="311"](attachment:ellipse_reconfigure.jpg) Dynamic reconfigure interface   
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------- --
 
 ## Examples

@@ -1,13 +1,13 @@
 ## Overview
 
 This component is doing interpolation between two sequential points
-specified by \<\<MsgLink(trajectory_msgs/JointTrajectoryPoint)\>\>
-message. It output \<\<MsgLink(oro_servo_msgs/Setpoints)\>\> message
+specified by <<MsgLink(trajectory_msgs/JointTrajectoryPoint)>>
+message. It output <<MsgLink(oro_servo_msgs/Setpoints)>> message
 containing position, velocity and acceleration for current interpolation
 point.
 
 Interpolation type depend on which data was supplied by
-\<\<MsgLink(trajectory_msgs/JointTrajectoryPoint)\>\> message:
+<<MsgLink(trajectory_msgs/JointTrajectoryPoint)>> message:
 
 position and time - linear interpolation.
 

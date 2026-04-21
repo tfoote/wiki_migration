@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(oro_servo_msgs)\>\>
+<<MsgSrvDoc(oro_servo_msgs)>>

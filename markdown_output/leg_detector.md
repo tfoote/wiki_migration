@@ -1,17 +1,17 @@
 ## The Leg Detector
 
-This leg detector package takes \<\<MsgLink(sensor_msgs/LaserScan)\>\>s
+This leg detector package takes <<MsgLink(sensor_msgs/LaserScan)>>s
 as input and uses a machine-learning-trained classifier to detect groups
 of laser readings as possible legs. Sadly, the training dataset has been
-lost to Willow Garage history (it wasn\'t even available before they
+lost to Willow Garage history (it wasn't even available before they
 closed). The code is in the repository for retraining, but is
 unsupported at this time.
 
 This node will publish
-\<\<MsgLink(people_msgs/PositionMeasurementArray)\>\>s for the
+<<MsgLink(people_msgs/PositionMeasurementArray)>>s for the
 individual legs, and it can also attempt to pair the legs together and
 publish their average as an estimate of where the center of one person
-is as a \<\<MsgLink(people_msgs/PositionMeasurement)\>\>. The node will
+is as a <<MsgLink(people_msgs/PositionMeasurement)>>. The node will
 also optionally publish visualization Marker messages to indicate where
 detections happened.
 
@@ -25,7 +25,7 @@ In the seeded mode, the algorithm will use another source of
 !PositionMeasurement messages to guide the algorithm to possible
 locations for people. Historically, this has been used with a face
 detection algorithm that alerts the leg_detector that there is probably
-a pair of legs underneath. This mode is enabled using the \`use_seeds\`
+a pair of legs underneath. This mode is enabled using the `use_seeds`
 parameter.
 
 ```clearsilver

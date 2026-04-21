@@ -22,7 +22,7 @@ develop or run rosclj nodes you first need to download and build
 [Clojure](http://clojure.org). Then, you must create a new directly
 somewhere, symlink clojure.jar and other additional jars you want on
 your classpath (e.g., clojure-contrib.jar) into this directory, and set
-the environmental variable \"CLJ_HOME\" to point at this directory.
+the environmental variable "CLJ_HOME" to point at this directory.
 
 To create a new package that uses rosclj, your manifest.xml must include
 a dependency on rosclj: -```
@@ -100,8 +100,8 @@ message classes below them. It will also import all such Message Classes
 into the current namespace, so they can be referred to by their
 unqualified names (except where this would case a name conflict).
 
-In particular, after declaring a message, you can use *msg-\>map* to
-convert a rosjava Message into a rosclj map, and *map-\>msg* to go back
+In particular, after declaring a message, you can use *msg->map* to
+convert a rosjava Message into a rosclj map, and *map->msg* to go back
 in the other direction: ```
 <depend package="rosclj"/>
 ```0 As you can see, the
@@ -109,13 +109,13 @@ Clojure representation of a message is a map from keyword-ized field
 names to values, plus a *:class* field that maps to the java.lang.Class
 object corresponding to the message type.
 
-msg-\>map simply converts a Message to this form, recursively converting
+msg->map simply converts a Message to this form, recursively converting
 all submessages into maps. Arrays of submessage types are transformed
 into lazy sequences of submessage maps, but primitive arrays are left
 intact to allow for efficient manipulation if desired. If the input to
-msg-\>map is already a map, it is returned unchanged.
+msg->map is already a map, it is returned unchanged.
 
-map-\>msg goes in the other direction, using message field type
+map->msg goes in the other direction, using message field type
 information to do its best to construct a Message out of what you give
 it. If you pass a Message, it is returned unchanged. Otherwise, you must
 pass a map with the outermost *:class* filled in, or pass the Message
@@ -124,7 +124,7 @@ The outermost map will be converted to a Message of the given type, with
 numbers being coerced to the proper types, submessages being recursively
 converted, and sequences being transformed to arrays. An error will be
 produced if any fields are missing. The only exception is the Header
-type, for which only the \":frame_id\" is required.
+type, for which only the ":frame_id" is required.
 
 A number of other methods for manipulating and introspecting Messages
 can also be found in ros.clj. A potentially useful example is
@@ -161,7 +161,7 @@ request, and then shuts down the service. ```
 
 These are primarily meant for interactive development at the REPL,
 although they may find some use in more mature programs as well. In such
-cases, rosclj also provides \"-cached\" versions of each function (e.g.,
+cases, rosclj also provides "-cached" versions of each function (e.g.,
 put-message-cached) that keep the Publisher/Subscriber/ServiceClient
 around after the first call, for efficiency comparable to manually
 managing these rosjava objects. The cached persistent connections will
@@ -174,7 +174,7 @@ compilation/execution classpaths, or use multiple Java/Clojure source
 trees.
 
 There is also a known issue with Message and Service definitions in
-rosclj packages. In particular, packages must be \"made\" twice for
+rosclj packages. In particular, packages must be "made" twice for
 locally defined Message and Service .class files to be generated.
 
 Patches are welcome.

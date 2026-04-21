@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -22,7 +22,7 @@ The functionality by asr_flir_ptu_controller will be shown below in a
 sequence diagram. For knowledge of the invoked functions check out
 [asr_flir_ptu_driver](asr_flir_ptu_driver).
 
-![height=\"1030\",width=\"584\"](attachment:interaction.png)
+![height="1030",width="584"](attachment:interaction.png)
 
 Basic knowledge of the PTU movement (e.g. orientation of axis, movement
 area, etc.) can be obtained from the documentation of
@@ -72,7 +72,7 @@ After starting the asr_flir_ptu_driver, start the
 asr_flir_ptu_controller. Interaction is then done over the ActionServer
 launched by asr_flir_ptu_controller.
 
-How to use the corresponding \"goal\" topic can be found in subsection
+How to use the corresponding "goal" topic can be found in subsection
 4.1.
 
 #### Simulation
@@ -136,7 +136,7 @@ which can be found inside the action folder of the package.
 
 ### Published Topics
 
-\_/asr_flir_ptu_driver/state_cmd\_
+_/asr_flir_ptu_driver/state_cmd_
 
 -   Type: asr_flir_ptu_driver::State
 -   Usage: Used by the asr_flir_ptu_controller to send movement commands
@@ -176,7 +176,7 @@ found inside the action folder of the package.
 
 ### Parameters
 
-\_/PTUController/actionServerName\_
+_/PTUController/actionServerName_
 
 -   Type: string
 -   Explanation: Namespace under which the !ActionServer will publish
@@ -228,7 +228,7 @@ found inside the action folder of the package.
 
 ### Needed Services
 
-\_/asr_flir_ptu_driver/validation_service\_
+_/asr_flir_ptu_driver/validation_service_
 
 -   Type: asr_flir_ptu_driver::Predict
 -   Usage: The asr_flir_ptu_driver uses this service to validate
@@ -239,7 +239,7 @@ found inside the action folder of the package.
 
 -   Type: std_srvs::Empty
 -   Usage: The asr_flir_ptu_controller uses this service to check if the
-    asr_flir_ptu_driver is alive (binding to the \"publisher\").
+    asr_flir_ptu_driver is alive (binding to the "publisher").
 
 # 5. Tutorials
 

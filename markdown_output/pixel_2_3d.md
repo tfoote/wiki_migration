@@ -1,5 +1,5 @@
-![\|height=\"250px\"](attachment:pixel_2_3d_clickable.jpg)
-![\|height=\"250px\"](attachment:pixel_2_3d.jpg)
+![\|height="250px"](attachment:pixel_2_3d_clickable.jpg)
+![\|height="250px"](attachment:pixel_2_3d.jpg)
 
 ## Usage
 

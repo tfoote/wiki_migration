@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -25,7 +25,7 @@ This package does not need any additional packages.
 ## Tutorials
 
 To automatically generate C++ files from your XSD-schema add this
-package as a dependency to your project. In your project\'s
+package as a dependency to your project. In your project's
 *CMakeLists.txt* add the following lines:
 
 ```
@@ -35,4 +35,4 @@ xsd2cpp()
 (created according to the W3C specifications) you want to convert in a
 directory called *xsd* in the base directory of your project. Now build
 your project and the generated files will be located in the *xsd_gen*
-directory in your project\'s base directory.
+directory in your project's base directory.

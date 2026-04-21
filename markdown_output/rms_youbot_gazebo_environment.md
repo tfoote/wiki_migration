@@ -1,12 +1,12 @@
 ## About
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The \`rms_youbot_gazebo_environment\` package contains launch files that can launch an example RMS Gazebo environment for use with the [rms](rms). These files will launch the simulator with a youBot world from the [rail_worlds](rail_worlds) package, place a youBot into the world, and start appropriate server nodes (e.g., [mjpeg_server](mjpeg_server)). In addition, localization and path planning services are started via the [youbot_overhead_localization](youbot_overhead_localization) package.      ![](attachment:environment.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The `rms_youbot_gazebo_environment` package contains launch files that can launch an example RMS Gazebo environment for use with the [rms](rms). These files will launch the simulator with a youBot world from the [rail_worlds](rail_worlds) package, place a youBot into the world, and start appropriate server nodes (e.g., [mjpeg_server](mjpeg_server)). In addition, localization and path planning services are started via the [youbot_overhead_localization](youbot_overhead_localization) package.      ![](attachment:environment.png)   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -- --------------------------------- --
 
 ## Installation
 
-To install the \`rms_youbot_gazebo_environment\` package, simply run the
+To install the `rms_youbot_gazebo_environment` package, simply run the
 following commands in your shell:
 
 ```shell
@@ -62,5 +62,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

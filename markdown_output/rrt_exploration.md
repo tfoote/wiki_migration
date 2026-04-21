@@ -10,7 +10,7 @@ these papers:
 
 ## Introduction
 
-\"rrt_exploration\" is a ROS package that implements a multi-robot map
+"rrt_exploration" is a ROS package that implements a multi-robot map
 exploration algorithm for mobile robots. It is based on the
 Rapidly-Exploring Random Tree (RRT) algorithm. It uses occupancy grids
 as a map representation.The package has 5 different ROS nodes:
@@ -24,7 +24,7 @@ as a map representation.The package has 5 different ROS nodes:
 This is a playlist showing the package running on real robots and on
 Gazebo simulation:
 
-\<\<Youtube(abGyA3K1lzU?list=PLoGH52eUIHsc1B_xPLL6ogzYxrWy675kr)\>\>
+[Youtube](https://www.youtube.com/watch?v=abGyA3K1lzU?list=PLoGH52eUIHsc1B_xPLL6ogzYxrWy675kr)
 
 ## Package Requirements
 
@@ -37,7 +37,7 @@ Recommended is either indigo or kinetic).
 
 2- Created a workspace.
 
-3- Installed the \"gmapping\" ROS package, you can do that by typing the
+3- Installed the "gmapping" ROS package, you can do that by typing the
 following command in the terminal:
 
 ```
@@ -72,7 +72,7 @@ A mobile robot that can be used with the
 [navigation stack](http://wiki.ros.org/navigation) (publishes /odom and
 /tf. Receives velocity commands ..). The robot must also be equipped
 with a laser scanner or any sensor that publishes laser scan message
-(\<\<MsgLink(sensor_msgs/LaserScan Message)\>\>).
+(<<MsgLink(sensor_msgs/LaserScan Message)>>).
 
 ## Installation
 
@@ -84,7 +84,7 @@ workspace. And then compile using catkin_make.
 This package provides an exploration strategy for single or multiple
 robots. However, for it to work, you should have set your robots ready
 using the navigation stack. And each robot should run the
-\"slam_gmapping\" node from the
+"slam_gmapping" node from the
 [gmapping](http://wiki.ros.org/gmapping/) package.
 
 Additionally, the robots must be set and prepared as follows.
@@ -118,22 +118,22 @@ The robot should have a local map generated from the
 
 #### Robots Network
 
-For the multi-robot configuration, the package doesn\'t require special
+For the multi-robot configuration, the package doesn't require special
 network configuration, it simply works by having a single ROS master
 (can be one of the robots). So on the other robots, the
-**ROS_MASTER_URI** parameter should be pointing at the master\'s
+**ROS_MASTER_URI** parameter should be pointing at the master's
 address. For more information on setting up ROS on multiple machines,
 follow [this](http://wiki.ros.org/ROS/NetworkSetup/) link.
 
-#### Robot\'s frame names in tf
+#### Robot's frame names in tf
 
-All robot\'s frames should be prefixed by its name. Naming of robots
-starts from \"/robot_1\", \"/robot_2\", \"/robot_3\", .. and so on. So
+All robot's frames should be prefixed by its name. Naming of robots
+starts from "/robot_1", "/robot_2", "/robot_3", .. and so on. So
 for robot_1, the frames in the **tf** tree should look like this:
 
 ![](https://github.com/hasauino/storage/blob/master/pictures/framesTf.png?raw=true)
 
-#### Robot\'s node and topic names
+#### Robot's node and topic names
 
 All the nodes and topics running on a robot must also be prefixed by its
 name. For robot 1, node names should look like: /robot_1/move_base_node,
@@ -160,8 +160,8 @@ Each robot should have a local map generated from the
 
 There should be a node that merges all the local maps into one global
 map. You can use the
-[\"multirobot_map_merge\"](http://wiki.ros.org/multirobot_map_merge/)
-package developed by Jiri Horner. /!\\ The \"multirobot_map_merge\" has
+["multirobot_map_merge"](http://wiki.ros.org/multirobot_map_merge/)
+package developed by Jiri Horner. /!\\ The "multirobot_map_merge" has
 been updated, some users have reported problems getting correct map
 merging. However, the old version still works fine. You can get the
 forked old version [here](https://github.com/hasauino/m-explore)
@@ -446,7 +446,7 @@ notified.
 
 ## Acknowledgements & Citation
 
-This package was written during my master\'s thesis at the American
+This package was written during my master's thesis at the American
 University of Sharjah. My thesis advisor is Dr.
 [Shayok Mukhopadhyay](https://sites.google.com/site/shayok/Home).
 
@@ -456,4 +456,4 @@ please cite our [paper](http://ieeexplore.ieee.org/document/8202319).
 ```
 sudo apt-get install ros-$ROS_DISTRO-navigation
 ```0 Thesis title:
-\"[Multi-Robot Map Exploration Based on Multiple Rapidly-Exploring Randomized Trees](https://dspace.aus.edu:8443/xmlui/handle/11073/8857)\"
+"[Multi-Robot Map Exploration Based on Multiple Rapidly-Exploring Randomized Trees](https://dspace.aus.edu:8443/xmlui/handle/11073/8857)"

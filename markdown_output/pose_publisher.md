@@ -10,7 +10,7 @@ the map.
 
 ## About
 
-The \`pose_publisher\` package contains a ROS node that provides current
+The `pose_publisher` package contains a ROS node that provides current
 position and orientation of the robot in the map. This package can be
 used in multi-robot systems.
 

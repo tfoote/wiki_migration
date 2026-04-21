@@ -101,7 +101,7 @@ NODELET_DEBUG_STREAM_COND( 1 == 1, "my debug statement " << (double) 1.0)
 #### Publishing from a Nodelet
 
 If you want the no-copy pub/sub to work you must publish your messages
-as \`shared_ptr\`s. See
+as `shared_ptr`s. See
 [roscpp/Overview/Publishers and Subscribers#Intraprocess_Publishing](roscpp/Overview/Publishers and Subscribers#Intraprocess_Publishing)
 for more details.
 
@@ -109,7 +109,7 @@ for more details.
 
 A nodelet manager has a pool of threads which is shared across all
 nodelets run within the manager. This is set by the parameter
-\"num_worker_threads\".
+"num_worker_threads".
 
 There are two possible threading APIs to use in code running in
 nodelets. The default threading model has a single thread for all
@@ -149,7 +149,7 @@ thread of the pool per nodelet.
 ### List all declared nodelets
 
 Following commands are helpful to list all nodelets available on your
-system found in \`ROS_PACKAGE_PATH\`. Note that it\'s NOT the list of
+system found in `ROS_PACKAGE_PATH`. Note that it's NOT the list of
 currently running nodelet nor nodelet managers.
 
 ```

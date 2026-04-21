@@ -24,8 +24,8 @@ git clone http://code.in.tum.de/git/mapping.git
 ```
 $ rosrun vosch example_vosch `rospack find vosch`/data/sample_cone_green.pcd
 ``` This executable reads color point cloud
-\"sample_cone_green.pcd\" and writes its VOSCH descriptor into
-\"vosch.pcd\" in the current directory.
+"sample_cone_green.pcd" and writes its VOSCH descriptor into
+"vosch.pcd" in the current directory.
 
 If you have pcl_visualization, you can see the histogram by:
 
@@ -39,7 +39,7 @@ $ rosrun pcl_visualization pcd_viewer vosch.pcd
 The following code (test/example_vosch.cpp) snippet will estimate a set
 of VOSCH features for all the points in the input dataset.
 
-\<\<GetCode(<http://code.in.tum.de/indefero/index.php//p/mapping/source/file/master/vosch/test/example_vosch.cpp,cplusplus>)\>\>
+<<GetCode(<http://code.in.tum.de/indefero/index.php//p/mapping/source/file/master/vosch/test/example_vosch.cpp,cplusplus>)>>
 
 If you use the following two lines instead of the corresponding lines in
 above example code, you can get a set of VOSCH feature vectors extracted

@@ -4,7 +4,7 @@ This package provides a simple way of processing and extracting camera
 images from a stored bag file. Many bags will store only the raw_image
 and camera_info, either because the creators want to avoid the overhead
 of running image_proc or to minimize the amount of redundant information
-stored in the bag. \`bag_to_images\` runs on a bag file, performs the
+stored in the bag. `bag_to_images` runs on a bag file, performs the
 same processing as an image_proc node, and saves the resulting images to
 disk as separate files. One of the main advantages of bag_to_images is
 that unlike setting up a full ROS graph to do the same processing there

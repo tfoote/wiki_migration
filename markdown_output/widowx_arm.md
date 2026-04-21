@@ -8,7 +8,7 @@ for
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/widowx_arm.git>
 
-![WidowX\|width=\"600px\"](attachment:widowx.jpg)
+![WidowX\|width="600px"](attachment:widowx.jpg)
 
 ## List of packages
 

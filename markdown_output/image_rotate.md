@@ -6,11 +6,11 @@ To produce a version of the forearm camera view that always points up:
 ```
 rosrun image_rotate image_rotate image:=l_forearm_cam/image_color \
 rotated/image:=l_forearm_cam/image_color_rotated __name:=image_rotater
-``` You can then view it with \`image_view\`.
+``` You can then view it with `image_view`.
 ```
 rosrun image_view image_view image:=l_forearm_cam/image_color_rotated
 ``` It is easy to adjust the settings using
-\`rqt_reconfigure\`. ```
+`rqt_reconfigure`. ```
 rosrun rqt_reconfigure rqt_reconfigure image_rotater
 ```
 

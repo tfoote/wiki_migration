@@ -2,7 +2,7 @@
 
 This package is part of the [ROS-Industrial](Industrial) program. It
 currently contains nodes that support communication with Universal
-Robots\' industrial robot controllers.
+Robots' industrial robot controllers.
 
 ## Deprecation
 
@@ -64,4 +64,4 @@ The packages can now be used as regular ROS packages.
 
 ## Report a Bug
 
-\<\<GitHubIssues(ros-industrial/ur_modern_driver)\>\>
+<<GitHubIssues(ros-industrial/ur_modern_driver)>>

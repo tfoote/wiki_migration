@@ -19,7 +19,7 @@ into your mock_apps/turtlebot_apps.installed file.
 ```
 
 Access to your robot by App Chooser of your Android device, and select
-\'Tilt Teleop\'. Enjoy!
+'Tilt Teleop'. Enjoy!
 
 ## Node Info
 

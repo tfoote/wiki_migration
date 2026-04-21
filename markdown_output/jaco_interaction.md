@@ -1,6 +1,6 @@
 ## About
 
-The \`jaco_interaction\` package provides interactive marker-based
+The `jaco_interaction` package provides interactive marker-based
 control of the end effector pose and issuing of manipulation commands
 for the JACO and JACO2.
 
@@ -47,7 +47,7 @@ node.0 {
 
 ## Installation
 
-To install the \`wpi_jaco\` package, you can install from source with
+To install the `wpi_jaco` package, you can install from source with
 the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/RIVeR-Lab/wpi_jaco.git
@@ -59,11 +59,11 @@ catkin_make install
 ## Startup
 
 The interactive markers can be launched using two launch files:
-\`im_backend.launch\` and \`im_frontend.launch\`. The
-\`im_backend.launch\` file launches all of the necessary ROS nodes to
+`im_backend.launch` and `im_frontend.launch`. The
+`im_backend.launch` file launches all of the necessary ROS nodes to
 publish the interactive markers and send commands back to the arm, and
 as such it should be launched first on a computer connected directly to
-the JACO arm. The \`im_frontend.launch\` file launches rviz with a
+the JACO arm. The `im_frontend.launch` file launches rviz with a
 preset configuration to show the arm model and the interactive markers.
 This can be launched on any computer capable of displaying a GUI. The
 syntax for launching these nodes is as follows:

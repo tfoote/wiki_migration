@@ -26,23 +26,23 @@ be able to perform autonomous navigation from the very beginning of the
 filter execution (otherwise the estimated pose would jump until it
 converges to the actual pose, making the robot uncontrollable).
 
-. ![\|height=\"250px\",width=\"600px\"](attachment:montecarlo.jpg)
+. ![\|height="250px",width="600px"](attachment:montecarlo.jpg)
 
 ### Prediction
 
-*\_\_Input\_\_*: Odometry
+*__Input__*: Odometry
 
-*\_\_Description\_\_*: It is the part in charge of carrying out the
+*__Description__*: It is the part in charge of carrying out the
 propagation of the particles so that, using the input odometry, it
 proposes a new set of particles that potentially contain the position of
 the robot.
 
 ### Update
 
-*\_\_Input\_\_*: Map (known map of the environment), Radio-Range Sensor
+*__Input__*: Map (known map of the environment), Radio-Range Sensor
 Measurements, 3D Laser Sensor Measurements
 
-*\_\_Description\_\_*: It is responsible for evaluating the weights of
+*__Description__*: It is responsible for evaluating the weights of
 the particles. It tries to verify how correctly is the pose ofeach
 particle by using the point-cloud of the 3D laser sensor and the
 measurements of the radio-range sensors. Depending on how likely each
@@ -52,7 +52,7 @@ from the two sensor technologies (laser and radio).
 
 ### Resampling
 
-*\_\_Description\_\_*: It is responsible for suppressing those particles
+*__Description__*: It is responsible for suppressing those particles
 that have smaller weights. Without this part, the algorithm would not
 converge to the correct position.
 
@@ -85,41 +85,41 @@ URL = {https://doi.org/10.1177/1729881417732757}
 
 The package is structured as follows:
 
-![\|height=\"514px\",width=\"700px\"](attachment:files.png)
+![\|height="514px",width="700px"](attachment:files.png)
 
 ### Source file
 
 -   \[amcl3d/src\]
--   **Grid.h**: defines the class \"Grid3d\". It works with the grid
+-   **Grid.h**: defines the class "Grid3d". It works with the grid
     from the map.bt, opening it, building the grid message and
     pointcloud map and calculating compute the weights.
--   **Grid.cpp**: implements the functions of the class \"!Grid3d\".
--   **!PointCloudTools.h**: defines the class \"!Grid3dCell\",
-    \"!Grid3dInfo\" and \"!PointCloudInfo\". It creates the grid from
+-   **Grid.cpp**: implements the functions of the class "!Grid3d".
+-   **!PointCloudTools.h**: defines the class "!Grid3dCell",
+    "!Grid3dInfo" and "!PointCloudInfo". It creates the grid from
     the map.bt, computing the weights of the grid.
 -   **!PointCloudTools.cpp**: implements the functions mentionated in
-    \"!PointCloudTools.h\". It is relationated with the information of
+    "!PointCloudTools.h". It is relationated with the information of
     the grid.
--   **main.cpp**: inits the function \"spin\" of the class \"Node\".
--   **Node.cpp**: implements the functions of the class \"Node\". It
+-   **main.cpp**: inits the function "spin" of the class "Node".
+-   **Node.cpp**: implements the functions of the class "Node". It
     contains all the subscribers and publishers of the package, so it
     has the responsibility to start the map grid and follow the steps of
     the particle filter.
--   **Node.h**: defines the class \"Node\". It runs the grid and the
+-   **Node.h**: defines the class "Node". It runs the grid and the
     particle filter with the parameters that were introduced into the
     roslaunch file.
 -   **Parameters.cpp**: implements the parameter readings, and shows
     errors if the parameters have not been initialized, in addition to
     displaying the value of all of them on the screen. For more
-    information, see section **\_\_3.1.3. Parameters\_\_**.
--   **Parameters.h**: defines the class \"Parameters\". It declares all
+    information, see section **__3.1.3. Parameters__**.
+-   **Parameters.h**: defines the class "Parameters". It declares all
     the generic parameters of the node.
 -   **!ParticleFilter.cpp**: implements the functions of the class
-    \"!ParticleFilter\". It has the steps mentioned before: functions of
+    "!ParticleFilter". It has the steps mentioned before: functions of
     prediction, update, and resampling. Furthermore, it has other
     functions such as one that allows calculating the weight of the
     particle taking into account the error in the range sensors.
--   **!ParticleFilter.h**: defines the class \"!ParticleFilter\". It
+-   **!ParticleFilter.h**: defines the class "!ParticleFilter". It
     runs the steps of the Monte-Carlo method.
 
 ### RViz
@@ -144,7 +144,7 @@ roslaunch amcl3d amcl3d_rosin.launch
 -   **range_pose.msg**: It is the message used for the radio-range
     sensor measurements in the package.
 
-For more information, see **\_\_3.2.1 Radio-Range Message\_\_**.
+For more information, see **__3.2.1 Radio-Range Message__**.
 
 ## Node
 
@@ -287,13 +287,13 @@ param {
 
 It contains several topics:
 
--   rosinrange_msg/RangePose -\> It has the measurements of radio-range
+-   rosinrange_msg/RangePose -> It has the measurements of radio-range
     sensors.
--   sensor_msgs/PointCloud2 -\> It contain the information about the
+-   sensor_msgs/PointCloud2 -> It contain the information about the
     pointcloud of Ouster Lidar.
--   sensor_msgs/Imu -\> It contain the information about the IMU of
+-   sensor_msgs/Imu -> It contain the information about the IMU of
     Ouster Lidar.
--   geometry_msgs/TransformStamped -\> It contains the odometry of the
+-   geometry_msgs/TransformStamped -> It contains the odometry of the
     UAV.
 
 #### Radio-Range Messages
@@ -301,7 +301,7 @@ It contains several topics:
 In this case, the demo uses three sensors. One of them was mounted
 onboard the aerial robot, and measured distances with respect to the
 other two, that were statically integrated around the flight volume. The
-sensors used in this demo are \"swarm bee ER\" from
+sensors used in this demo are "swarm bee ER" from
 [Nanotron](https://nanotron.com/). It should be noted that the algorithm
 needs the distance measurements and the position of each sensor. That is
 why we created this message with the following structure:
@@ -321,11 +321,11 @@ used octomap_server from [Octomap](http://wiki.ros.org/octomap_server/)
 to create it. Using a rosbag with VICON odometry, we have the below
 result:
 
-. ![\|height=\"466px\",width=\"700px\"](attachment:map.gif)
+. ![\|height="466px",width="700px"](attachment:map.gif)
 
 It should be noted that the algorithm accepts both files with the
-extension \".bt\" and \".ot\". The next roslaunch itself creates the
-.grid from \".bt\"/\".ot\" introduced like parameter.
+extension ".bt" and ".ot". The next roslaunch itself creates the
+.grid from ".bt"/".ot" introduced like parameter.
 ```
 roslaunch amcl3d amcl3d_rosin.launch
 ```
@@ -350,15 +350,15 @@ algorithm and the relationships among them.
 -   **world**: is the origin of the map.
 -   **odom**: is the odometry origin of the UAV.
 -   **base_link**: is the robot frame. .
-    ![\|height=\"300px\",width=\"300px\"](attachment:tf.png)
+    ![\|height="300px",width="300px"](attachment:tf.png)
 
 ## Demostration Video
 
-\<\<Youtube(Dn6LxH-WLRA&)\>\>
+[Youtube](https://www.youtube.com/watch?v=Dn6LxH-WLRA&)
 
 ## Acknowledgement
 
-![\|height=\"200px\",width=\"575px\"](attachment:rosin.png)
+![\|height="200px",width="575px"](attachment:rosin.png)
 
 Supported by ROSIN - ROS-Industrial Focused Technical Projects (FTP).
 

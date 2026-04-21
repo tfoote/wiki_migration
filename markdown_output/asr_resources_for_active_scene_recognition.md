@@ -1,4 +1,4 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 # Description
 
@@ -69,13 +69,13 @@ images.
 
 -   **roscore** - roscore in the upper panel, gazebo in the lower panel.
 
-![\|height=\"200\",width=\"333\"](attachment:roscore.png)
+![\|height="200",width="333"](attachment:roscore.png)
 
 -   **control** - a python script that can be used to interact with some
     modules.
 -   **rviz** - rviz visualization.
 
-![\|height=\"200\",width=\"333\"](attachment:roscore.png)
+![\|height="200",width="333"](attachment:roscore.png)
 
 -   **ism** -
     [asr_recognizer_prediction_ism](http://wiki.ros.org/asr_recognizer_prediction_ism)
@@ -83,7 +83,7 @@ images.
     panel can be used to start recognizers/object detection to ensure
     objects can be detected from a certain position.
 
-![\|height=\"200\",width=\"333\"](attachment:ism.png)
+![\|height="200",width="333"](attachment:ism.png)
 
 -   **nbv** - the upper panel is running the
     [asr_next_best_view](http://wiki.ros.org/asr_next_best_view) module
@@ -92,46 +92,46 @@ images.
     holds information about the world, e.g. found objects, navigated
     views.
 
-![\|height=\"200\",width=\"333\"](attachment:nbv.png)
+![\|height="200",width="333"](attachment:nbv.png)
 
 -   **viz_server** - used to publish visualization stuff for rviz.
 
-![\|height=\"200\",width=\"333\"](attachment:viz_server.png)
+![\|height="200",width="333"](attachment:viz_server.png)
 
 -   **state_machine** - core that uses all modules to detect scenes. It
     has some configurable modes which change the behavior/requirements
     for scene detection.
 
-![\|height=\"200\",width=\"333\"](attachment:state_machine.png)
+![\|height="200",width="333"](attachment:state_machine.png)
 
 -   **direct_search_manager** - used for the direct search/relation
     based search.
 
-![\|height=\"200\",width=\"333\"](attachment:direct_search_manager.png)
+![\|height="200",width="333"](attachment:direct_search_manager.png)
 
 -   **move_mock** - responsible for movement in simulation.
 
-![\|height=\"200\",width=\"333\"](attachment:move_mock.png)
+![\|height="200",width="333"](attachment:move_mock.png)
 
 -   **ptu_mock** - contains the ptu mock, which is used to rotate the
     camera in simulation. the lower right panels can be used to modify
     its state/show the camera frustum.
 
-![\|height=\"200\",width=\"333\"](attachment:ptu_mock.png)
+![\|height="200",width="333"](attachment:ptu_mock.png)
 
 -   **fake_recognizer** - in simulation we have no real camera
     data/recogizers, so this is used to simulate recognition.
 
-![\|height=\"200\",width=\"333\"](attachment:fake_recognizer.png)
+![\|height="200",width="333"](attachment:fake_recognizer.png)
 
 -   **recognition_for_grasping**,
     **descriptor_surface_based_recognition**,
     **aruco_marker_recognition** - used to recognize different type of
     objects in reality.
 
-![\|height=\"200\",width=\"333\"](attachment:recognition_for_grasping.png)
-![\|height=\"200\",width=\"333\"](attachment:descriptor_surface.png)
-![\|height=\"200\",width=\"333\"](attachment:aruko.png)
+![\|height="200",width="333"](attachment:recognition_for_grasping.png)
+![\|height="200",width="333"](attachment:descriptor_surface.png)
+![\|height="200",width="333"](attachment:aruko.png)
 
 -   **object_database** -
     [asr_object_database](http://wiki.ros.org/asr_object_database)
@@ -143,11 +143,11 @@ images.
     as the ism window.
 -   **vision** - guppy_head_full_mild
 
-![\|height=\"200\",width=\"333\"](attachment:vision.png)
+![\|height="200",width="333"](attachment:vision.png)
 
 -   **kinect** - kinect driver.
 
-![\|height=\"200\",width=\"333\"](attachment:kinect.png)
+![\|height="200",width="333"](attachment:kinect.png)
 
 The control script (in the control tmux window) can be used to do almost
 anything the state_machine is capable of, but in a more manual way. The
@@ -181,8 +181,8 @@ interface/in other python scripts:
     state_machine.
 -   getSMResult() - false if state_machine has not finished yet,
     otherwise the result as a string.
--   setConfig(cfg\_\*) - can be used to swap fast between different
-    scenes, the cfg\_\* objects contain start positions, scene database
+-   setConfig(cfg_\*) - can be used to swap fast between different
+    scenes, the cfg_\* objects contain start positions, scene database
     files, world description files, fake object recognizer configs. This
     command will also restart the required tmux panels/modules after
     writing to the parameter files. CAUTION: This will override your
@@ -201,7 +201,7 @@ interface/in other python scripts:
 -   getCurrentCameraPose() - returns the current camera pose of the
     robot.
 -   showPoses(poses)/showNBVs(nbvs) - displays views at
-    \"/nbv/viewportsVisualization\" topic as MarkerArray.
+    "/nbv/viewportsVisualization" topic as MarkerArray.
 -   rateViewport(pose) - rates a view, the rating result might differ
     from getNBV() since getNBV() uses a different utility normalization.
 -   nbvUpdate(pose, obj_types) - does a update/removes normals from a
@@ -242,7 +242,7 @@ interface/in other python scripts:
     different scene.
 -   getNBVs(folder) - returns a list of navigated nbvs.
 
-You can use tab complete if you don\'t know function names. The
+You can use tab complete if you don't know function names. The
 personal_stuff.py is for personal python code.
 
 ## Needed packages
@@ -283,17 +283,17 @@ required object recognizers need to be launched in advance (See above:
 you can use the **start_recognizers** script to do so).
 
 To find the object types of a recognizer you can run e.g. rosservice
-call /asr_object_database/object_type_list \"recognizer:
-\'segmentable\'\" to get all segmentable objects, for more information
+call /asr_object_database/object_type_list "recognizer:
+'segmentable'" to get all segmentable objects, for more information
 see [asr_object_database](http://wiki.ros.org/asr_object_database).
 
 The following commands are supported by the script:
 
 -   **start,markers **- starts detection for all markers
 -   **stop,markers **- stops detection for all markers
--   **start,\<textured\|segmentable\|descriptor\>,\<object_name\> **-
+-   **start,<textured\|segmentable\|descriptor>,<object_name> **-
     starts detection for the given object using a certain recognizer
--   **stop,\<textured\|segmentable\|descriptor\>,\<object_name\> **-
+-   **stop,<textured\|segmentable\|descriptor>,<object_name> **-
     stops detection for the given object using a certain recognizer
 
 ## constellation_transformation_tool
@@ -303,9 +303,9 @@ transformation of a list of multiple object poses by a predefined
 rotation and translation. Furthermore, the original as well as the
 transformed object pose are visualized and printed to the console in a
 loop until interrupted. The topic must be added in rviz and it is named
-\"transformation_tool\". You can visualize only the new/original pose
-visualization by using the namespaces \"transformation_orig\" and
-\"transformation_new\".
+"transformation_tool". You can visualize only the new/original pose
+visualization by using the namespaces "transformation_orig" and
+"transformation_new".
 
 Note, that currently each object and its pose needs to be added directly
 to the code in the main function. The translation and rotation values
@@ -324,7 +324,7 @@ objects:
 -   **descriptor_surface_based_recognition**: Detects arbitrary shaped
     objects by their texture. Its usage is free, but it depends on
     Halcon (<http://www.mvtec.com/products/halcon/>, last runtime-tests
-    with Halcon 11). Thus it\'s optional for ASR. Further information:
+    with Halcon 11). Thus it's optional for ASR. Further information:
     asr_descriptor_surface_based_recognition.
 -   Two proprietary recognizers (one shape-based (segmentable) for
     unicolored objects and one texture-based (textured) for textured
@@ -342,12 +342,12 @@ asr_next_best_view
 -   param/next_best_view_settings_real/sim.yaml (used in the simulation)
     and rsc/next_best_view_settings_real/real.yaml (used on real
     robots)\
--   **radius** - to adapt the resolution of position sampling, lower -\>
+-   **radius** - to adapt the resolution of position sampling, lower ->
     higher resolution. The value gets adapted during the calculation.
 -   **sampleSizeUnitSphereSampler** - to adapt the resolution of
-    orientation sampling, higher -\> higher resolution (but computation
+    orientation sampling, higher -> higher resolution (but computation
     takes longer). If you set it too low, the robot might miss objects
-    because the robot doesn\'t take its orientations into account.
+    because the robot doesn't take its orientations into account.
 -   **colThresh** - Minimum distance between the robot and objects.
     Increase the default if you want the robot to move closer to
     objects, but be aware that if you set it too low, the robot might
@@ -359,7 +359,7 @@ asr_state_machine
 -   param/params.yaml
 -   **mode** - the mode specifies the method which is used to find
     scenes (see this file for possible values).
--   **UseFakeMoveBase** - can be set to true in simulation to \"jump\"
+-   **UseFakeMoveBase** - can be set to true in simulation to "jump"
     to the target instead of using the navigation.
 -   rsc/CompletePatterns\*.py - a optional file which can be used to
     have a different abort criterion, beside **found_all_objects**. The
@@ -382,25 +382,25 @@ asr_world_model
     world. It has a object type and id per object and a recognizer type,
     which is used to detect them. Usually those information can be
     retrieved from the sqlite database explained below, so the
-    world_description file isn\'t necessary.
+    world_description file isn't necessary.
 
 asr_recognizer_prediction_ism
 
 -   param/scene_recognition.yaml.
 -   **dbfilename** - Location of a sqlite database for scene
     recognition. It stores the recorded scene. If the database is
-    incomplete or you want to search for a subset ob objects only, it\'s
+    incomplete or you want to search for a subset ob objects only, it's
     possible to overwrite/add information by using the world_description
     file, see
     \![AsrWorldModel#4_2_3_world_description_optional.](AsrWorldModel#A4_2_3_world_description_optional.)
 -   param/sensitivity.yaml
 -   **bin_size** - Deviation of the object position of the recognized
     objects against the recorded position (in meters). Depends on the
-    \"real\" deviation of the objects, the inaccuracy of the object
+    "real" deviation of the objects, the inaccuracy of the object
     recognition and the inaccuracy of the robot position.
 -   **maxProjectionAngleDeviation** - Deviation the object rotation of
     the recognized objects against the recorded position (in degree).
-    Depends on the \"real\" deviation of the objects, the inaccuracy of
+    Depends on the "real" deviation of the objects, the inaccuracy of
     the object recognition and the inaccuracy of the robot position.
 
 asr_ism

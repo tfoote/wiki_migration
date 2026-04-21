@@ -40,7 +40,7 @@ All [ALSA](http://www.alsa-project.org/main/index.php/Main_Page)
 compatible microphones work with ROAR. When doing precise audio
 detection it is best to pick a microphone that has a clear crisp
 response. Directional microphones work very well, but tend to perform
-poorly if you move away from their \"sweet spot\". A few microphones we
+poorly if you move away from their "sweet spot". A few microphones we
 have personally tested include the
 [Samson C01U](http://www.samsontech.com/products/productpage.cfm?prodid=1810),
 the [ Roland UA-25ex](http://www.roland.com/products/en/UA-25EX/ ), and
@@ -69,17 +69,17 @@ computers microphone input (duh). Each microphone is a little different,
 so it is hard to give generic instructions,but here are a few tips:
 
 -   **The microphone input channel used by ROAR can be configured in the
-    launch/audio_parameters.yaml file. It\'s default setting is
-    \'default\', your computers default microphone channel input**. To
+    launch/audio_parameters.yaml file. It's default setting is
+    'default', your computers default microphone channel input**. To
     find out what other options you have on your computer try typing
-    \'aplay -l\' on the command line.
+    'aplay -l' on the command line.
 -   For USB microphones:
     <http://wiki.audacityteam.org/index.php?title=USB_mic_on_Linux>
 -   Generic ALSA configuration info:
     <http://www.volkerschatz.com/noise/alsa.html>
 -   Here are some tips on setting up a asound.conf file:
     <http://alsa.opensrc.org/.asoundrc> Generally, when you can record
-    using gnome-sound-recorder, then you\'ve got the microphone setup
+    using gnome-sound-recorder, then you've got the microphone setup
     properly. You may want to store these settings or load some settings
     you previously stored with. ```
 alsactl -f ~/roar_microphone.state store
@@ -100,7 +100,7 @@ The proper way to aquire the ROAR software is to download the entire
 stack to the folder of your choosing (below we download to /ros):
 ```
 svn co https://mediabox.grasp.upenn.edu/svn/penn-ros-pkgs/roar_stack/trunk ~/ros/roar_stack
-``` If /ros isn\'t already on your ROS_PACKAGE_PATH
+``` If /ros isn't already on your ROS_PACKAGE_PATH
 you will need to add it by typing the following before continuing with
 the installation: ```
 export ROS_PACKAGE_PATH=~/ros:${ROS_PACKAGE_PATH}

@@ -91,7 +91,7 @@ param{
 
 ## Acknowledgements
 
-\`QuadTree_Alog.alog\` used with the permission of Dr. Paul Newman,
+`QuadTree_Alog.alog` used with the permission of Dr. Paul Newman,
 Oxford University.
 
 M. Smith, I. Baldwin, W. Churchill, R. Paul, and P. Newman, The new

@@ -58,7 +58,7 @@ to suit your own.
 
 After a *.yaml* calibration file has been properly generated, the actual
 rectified images can be processed further via
-[image_pipeline](image_pipeline)\'s [image_proc](image_proc). Thus, the
+[image_pipeline](image_pipeline)'s [image_proc](image_proc). Thus, the
 following launchers achieve that, respectively. ```shell
 roslaunch mv_bluefox_driver camera_node_proc.launch
 ```

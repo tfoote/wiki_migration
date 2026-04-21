@@ -9,8 +9,8 @@ MoveIt Cartesian motion plan), simple (300 lines), and easy to use
 Below, the first image shows a mobile manipulator which is too far to
 grasp the object of interest. The desired EE pose is shown in green. The
 second image shows the freshly-calculated base position (red cube) which
-will allow the robot to reach that pose. \<\<Please ignore the bad
-camera calibration\>\>
+will allow the robot to reach that pose. <<Please ignore the bad
+camera calibration>>
 
 ![alt text\|width=700](attachment:1.png)
 
@@ -95,13 +95,13 @@ their default values. They are:
 <!-- -->
 ```
 -   */move_base_to_manip/prompt_before_motion*: Ask the user before
-    making any motion? This is useful if you\'re just starting to use
-    the package and aren\'t sure what to expect. Default: true.
+    making any motion? This is useful if you're just starting to use
+    the package and aren't sure what to expect. Default: true.
 
 ```{=html}
 <!-- -->
 ```
--   */move_base_to_manip/shutdown*: This is the \"request\" part of the
+-   */move_base_to_manip/shutdown*: This is the "request" part of the
     service call. Can be used as a signal that the server can shutdown.
     Default: true (which I use to signal the pose provider node to shut
     down).
@@ -116,13 +116,13 @@ their default values. They are:
 ```{=html}
 <!-- -->
 ```
--   */move_base_to_manip/move_group_name*: Default \"right_ur5\"
+-   */move_base_to_manip/move_group_name*: Default "right_ur5"
 
 ```{=html}
 <!-- -->
 ```
 -   */move_base_to_manip/move_group_planner*: Default
-    \"RRTConnectkConfigDefault\"
+    "RRTConnectkConfigDefault"
 
 ```{=html}
 <!-- -->
@@ -133,7 +133,7 @@ their default values. They are:
 ```{=html}
 <!-- -->
 ```
--   */move_base_to_manip/base_frame_name*: Default \"base_link\"
+-   */move_base_to_manip/base_frame_name*: Default "base_link"
 
 ```{=html}
 <!-- -->
@@ -196,9 +196,9 @@ fails, it will generally be close to the goal.
 Some potential ROS alternatives for mobile manipulation planning:
 
 -   (untested) Use the [ Reuleaux]( http://wiki.ros.org/reuleaux )
-    package to calculate a good location for the manipulator\'s base.
-    From the manipulator\'s position, calculate a mobile base location.
-    This is the \"inverse reachability database\" approach.
+    package to calculate a good location for the manipulator's base.
+    From the manipulator's position, calculate a mobile base location.
+    This is the "inverse reachability database" approach.
 
 ```{=html}
 <!-- -->

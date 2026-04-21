@@ -29,6 +29,6 @@ simExtSetIntCustomDataFromHeader(twist_handl, sim_ext_ros_bridge_set_obj_twist_d
 ```
 
 In this case the received velocities will be automatically applied to
-the object. If the third argument of the function is \"0\" the velocity
-is taken referred to the body frame, if equal to \"1\" is taken referred
+the object. If the third argument of the function is "0" the velocity
+is taken referred to the body frame, if equal to "1" is taken referred
 to the world frame.

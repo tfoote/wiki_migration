@@ -11,7 +11,7 @@ dependences ```
 sudo apt install ros-*-rgbd-launch ros-*-libuvc ros-*-libuvc-camera ros-*-libuvc-ros
 ``` 1. Create a
 [ROS Workspace](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)(if
-you don\'t have one) ```
+you don't have one) ```
 mkdir -p
 /catkin_ws/src
 /catkin_ws/
@@ -42,7 +42,7 @@ catkin_make \--pkg astra_camera -DFILTER=OFF
 
 ## Run astra_camera
 
-If you didn\'t add source \$YOUR_WORKSPACE/devel/setup.bash to your
+If you didn't add source \$YOUR_WORKSPACE/devel/setup.bash to your
 .bashrc, remember to source it when open a new terminal :)
 
 ### Examples
@@ -121,7 +121,7 @@ For the other services, the usage is same as the above example.
 To launch multiple cameras, you could modify multi_astra.launch to match
 your setting. The important settings are device_x_id(serial number of
 your devices), 3d_sensor(name of launch file), and has_uvc_serial(does
-your camera\'s uvc have serial number).
+your camera's uvc have serial number).
 
 If you received USB Buffer Error, you could try to increase your USBFS
 buffer size by the following command.

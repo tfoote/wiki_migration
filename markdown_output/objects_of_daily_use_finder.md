@@ -23,7 +23,7 @@ Daily Use Finder **(ODUfinder)** perception system that can deal with
 some aspects of this challenge. The system can detect and recognize
 textured objects in typical kitchen scenes. The models for perceiving
 the objects to be detected and recognized can be acquired autonomously
-using the robot\'s camera as well as by loading large object catalogs
+using the robot's camera as well as by loading large object catalogs
 such as the one by [Germandeli](http://www.germandeli.com) into the
 system. In the system configuration described in this package the robot
 is equipped with an object model library containing about 3500 objects

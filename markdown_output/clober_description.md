@@ -14,12 +14,12 @@ accessories onto the research robot platform.
 
 ## URDF Files
 
--   \`clober.urdf.xacro\` - Defines the \`clober\`\'s specifications of
+-   `clober.urdf.xacro` - Defines the `clober`'s specifications of
     links and joints.
--   \`clober.gazebo.xacro\` - Defines the \`clober\`\'s parameters of
+-   `clober.gazebo.xacro` - Defines the `clober`'s parameters of
     link and library of drive, imu and lidar.
--   \`d435.urdf.xacro\` - Defines the depth camera \`d435\`
--   \`tim571.urdf.xacro\` - Defines the lidar sensor \`tim571\`
+-   `d435.urdf.xacro` - Defines the depth camera `d435`
+-   `tim571.urdf.xacro` - Defines the lidar sensor `tim571`
 
 ## References related to Clober
 

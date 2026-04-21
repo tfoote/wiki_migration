@@ -11,7 +11,7 @@ incremental way, adding more and more knowledge over time.
 
 ### Prerequisite
 
-\- Put the object in PR2\'s gripper and bring the object into the field
+\- Put the object in PR2's gripper and bring the object into the field
 of view of the camera. Make sure the background is neutral (e.g. white
 wall).
 
@@ -50,16 +50,16 @@ There are several parameters that control the object modeling process:
 -   *width*, *height*, *fovy* - are the width, height and vertical focal
     length of the camera used;
 -   *image_topic* - input images topic;
--   *tf_topic* - robot\'s TF tree;
+-   *tf_topic* - robot's TF tree;
 -   *save_images* - a parameter to save the images (by default saved in
     the home/.ros folder);
 -   *min_nn* - an integer value for the minimum number of neighbors
     allowed when using the radiusSearch function;
 -   *knn* - the number of neighbors searched with knnSearch function;
 -   *mode* - which function to use to get rid of outlier features.
-    Options are: \"manual\", \"radius_search\", \"knn_search\" (see an
+    Options are: "manual", "radius_search", "knn_search" (see an
     explanation below on the meaning of the parameters);
--   *robot_description* - upload robot\'s URDF if working on rosbags.
+-   *robot_description* - upload robot's URDF if working on rosbags.
 
 To start the program run: ```
 $ roslaunch model_completion getMask.launch
@@ -72,7 +72,7 @@ $ roslaunch model_completion getMask.launch
 ### Intuition Behind the Use of radiusSearch and knnSearch
 
 As it can be seen, images contain a considerable number of outliers (see
-figure below), especially on the robot\'s gripper and the goal is to
+figure below), especially on the robot's gripper and the goal is to
 remove these SIFT features through nearest-neighbor search. We are going
 to use two methods: radius search and knn search. For this all the
 features need to be extracted in order to check the nearest neighbors in

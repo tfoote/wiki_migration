@@ -1,6 +1,6 @@
 ## Package Summary
 
-This package provides tools for interfacing with a hacked K\'nex set to
+This package provides tools for interfacing with a hacked K'nex set to
 create a differential-drive robot.
 
 -   Author: Jon Stephan
@@ -10,7 +10,7 @@ create a differential-drive robot.
 ## Tutorials
 
 See <http://code.google.com/p/knex-ros/wiki/ProjectOverview> for an
-overview of the hacked K\'nex robot.
+overview of the hacked K'nex robot.
 
 This pacakge depends on the [differential_drive](differential_drive)
 package.
@@ -36,7 +36,7 @@ points. The IR reading to range is converted by the formula
 #### Subscribed Topics
 
 `range` - (std_msgs/Int16) The output of an IR range filter. In the
-example K\'nex hacked robot, this is read and returned by an Arduino.
+example K'nex hacked robot, this is read and returned by an Arduino.
 Any points outside the `min_valid <= range <= max_valid` are discarded.
 
 #### Parameters
@@ -48,11 +48,11 @@ Any points outside the `min_valid <= range <= max_valid` are discarded.
 equation ` coefficient * range ** exponent`
 
 `~min_valid` - (int, default:1) The minimum valid input range value. Any
-`range` points \< `min_valid` will be discarded. If the exponent is
+`range` points < `min_valid` will be discarded. If the exponent is
 negative, min_valid cannot be zero. If the exponent is not a whole
 number, the min_valid cannot be negative.
 
-`~max_valid` The maximum valid input range value. Any `range` points \>
+`~max_valid` The maximum valid input range value. Any `range` points >
 `max_valid` will be discarded. `max_valid` must be greater than
 `min_valid`.
 

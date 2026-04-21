@@ -6,9 +6,9 @@
 ****\* This webpage will no longer be updated \*
 \-\-\-\-\-\-\-\-\-\-\--****
 
-![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)
+![\|align="right"](attachment:ess_sensors/g552.jpg)
+![\|align="right"](attachment:ess_sensors/g370.jpg)
+![\|align="right"](attachment:ess_sensors/g365.jpg)
 
 ## Overview
 
@@ -132,15 +132,15 @@ Below is an example IMU SPI connection when using a Raspberry Pi:
 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
 1\. Place this package (including folders) into a new folder within your
-catkin workspace \"src\" folder.
+catkin workspace "src" folder.
 
 2\. Modify the [ CMakeLists.txt](CMakeLists.txt ) to select the desired
 Epson IMU model that is being used in the ROS system.
 
 -   **NOTE: You \*MUST\* re-build using catkin_make when changing IMU
     models or any changes in the [ CMakeLists.txt](CMakeLists.txt )** 3.
-    From the catkin workspace folder run \"catkin_make\" to build all
-    changed ROS1 packages located in the \<catkin_workspace\>/src/
+    From the catkin workspace folder run "catkin_make" to build all
+    changed ROS1 packages located in the <catkin_workspace>/src/
     folder. 4. Reload the current ROS1 environment variables that may
     have changed after the catkin build process.
 

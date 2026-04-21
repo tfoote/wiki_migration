@@ -22,7 +22,7 @@ Users who have the EGM option available, consider using
 [abb_robot_driver](https://github.com/ros-industrial/abb_robot_driver),
 as it will offer the best possible motion quality.
 
-The driver does not include any robot models (ie: \`\_description\`
+The driver does not include any robot models (ie: `_description`
 packages) however. Various sources for those exist, one of which could
 be [kth-ros-pkg/yumi](https://github.com/kth-ros-pkg/yumi).
 
@@ -56,9 +56,9 @@ and multiple parallel tasks. The code was originally tested on an IRC5
 controller, with an IRB-2400 robot, but other combinations should also
 work. The following controller options are required:
 
--   \`623-1\`: *Multitasking*
--   \`672-1\`: *Socket Messaging* (in recent !RobotWare versions, this
-    option is included with \`616-1\`: *PC Interface*)
+-   `623-1`: *Multitasking*
+-   `672-1`: *Socket Messaging* (in recent !RobotWare versions, this
+    option is included with `616-1`: *PC Interface*)
 
 !RobotWare OS version 5.13 or later is required due to the use of
 certain socket options. Earlier versions may work, but will require

@@ -1,11 +1,11 @@
 ## Nodes
 
-This package provide the \`visualize\` ROS Node that convert
+This package provide the `visualize` ROS Node that convert
 [MTTD_msgs/People.msg](MTTD_msgs) to
 [visualization_msgs/Markers.msg](visualization_msgs) compatible with
 rviz.
 
-In this way it\'s possible to visualize on rviz detected people (as
+In this way it's possible to visualize on rviz detected people (as
 Markers) and relative Identification Number (ID).
 
 ![](attachment:visualize_screen.png)

@@ -25,7 +25,7 @@ a\. Ubuntu 20.04:
 -   Create your
     [ Catkin Workspace](https://github.com/Brabalawuka/RosOnWindows) (in
     this tutorial, we assume that your catkin workspace is located in
-    your \`\`\`c:\\\`\`\` directory)
+    your ```c:\\``` directory)
 
 Tips for Windows:
 
@@ -33,23 +33,23 @@ Tips for Windows:
     short cut (created in the installation step)
 -   Assuming you are exploiting
     [Microsoft Visual Studio 2019](https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes),
-    remember to include the \"Desktop development with C++\" workload.
-    Moreover, in the Individual Components, select \"Windows 10 SDK\".
+    remember to include the "Desktop development with C++" workload.
+    Moreover, in the Individual Components, select "Windows 10 SDK".
 -   if you need the Ninja build tool, go to the
     [ releases page](https://github.com/ninja-build/ninja/releases ) and
-    download a suitable binary for Windows. Place \`\`\`ninja.exe\`\`\`
-    in a suitable spot, e.g., \`\`\`C:\\Ninja\`\`\`. Make sure that
-    CMake can find \`\`\`ninja.exe\`\`\` by adding \`\`\`C:\\Ninja\`\`\`
-    to your \`\`\`%PATH%\`\`\`.
+    download a suitable binary for Windows. Place ```ninja.exe```
+    in a suitable spot, e.g., ```C:\\Ninja```. Make sure that
+    CMake can find ```ninja.exe``` by adding ```C:\\Ninja```
+    to your ```%PATH%```.
 
-To set up the \`\`\`catkin_make\`\`\` tools in Visual Studio 2019:
+To set up the ```catkin_make``` tools in Visual Studio 2019:
 
--   From the ROS shortcut, enter \`\`\`devenv\`\`\` to start your Visual
+-   From the ROS shortcut, enter ```devenv``` to start your Visual
     Studio IDE;
 -   Choose to open up your catkin workspace from your local folder;
 -   As Visual Studio is using different settings for CMake projects, we
-    need to configure the CMake file. Thus, click \`\`\`Project \--\>
-    CMake Settings for Project\`\`\` and edit the JSON version of your
+    need to configure the CMake file. Thus, click ```Project \-->
+    CMake Settings for Project``` and edit the JSON version of your
     Cmake settings file as follows:
 
 ```
@@ -72,7 +72,7 @@ To set up the \`\`\`catkin_make\`\`\` tools in Visual Studio 2019:
 In this way, Cmaking and building your project from Visual Studio will
 be equal to a catkin_make outside the Visual Studio environment. You can
 also open the Command Line directly from the Visual Studio
-\`\`\`Tools\`\`\` button.
+```Tools``` button.
 
 ### Install lib221e
 
@@ -119,9 +119,9 @@ $ roslaunch muse_v2_driver shutdown.launch
 
 ### Configuration
 
-***Get configuration parameters.*** Assuming the ROS node of your MUSE
-V2 sensor is active \[step 3.1\], launch the following command from your
-catkin workspace: ```
+**`'Get configuration parameters.`**' Assuming the ROS node of your
+MUSE V2 sensor is active \[step 3.1\], launch the following command from
+your catkin workspace: ```
 $ roslaunch muse_v2_driver get_configuration_params.launch
 ```
 
@@ -134,14 +134,14 @@ It will output the configuration parameters of your device:
 -   log mode;
 -   log frequency.
 
-By default, \`\`\`launch/get_configuration_params.launch\`\`\` enables
+By default, ```launch/get_configuration_params.launch``` enables
 the request of all parameters. You can freely *enable/disable* each
 parameter transmission by setting to *true/false* its corresponding
 argument in this launch file.
 
-***Set configuration parameters.*** To change the configuration
+**`'Set configuration parameters.`**' To change the configuration
 parameters of your MUSE V2 sensor, you can edit the
-\`\`\`muse_v2_config.yaml\`\`\` file in the \`\`\`config\`\`\` folder.
+```muse_v2_config.yaml``` file in the ```config``` folder.
 The following parameters can be configured:
 
 -   gyroscope full-scale value (Default: 0 Available: {500, 1000, 2000,
@@ -152,7 +152,7 @@ The following parameters can be configured:
     400});
 -   magnetometer full-scale value (Default: 0 Available: {2, 4, 8, 12});
 -   log mode (Default: UINT8_MAX Available: {0, 1, 2, 3, 4, 5});
--   log frequency (Default: UINT(\_MAX Available: \<= 250).
+-   log frequency (Default: UINT(_MAX Available: <= 250).
 
 Assuming the ROS node of your MUSE V2 sensor is active \[step 3.1\],
 launch the following command to write the new parameters on your device:
@@ -162,7 +162,7 @@ $ roslaunch muse_v2_driver set_configuration_params.launch
 
 ### Calibration
 
-***Get calibration params.*** Assuming the ROS node of your MUSE V2
+**`'Get calibration params.`**' Assuming the ROS node of your MUSE V2
 sensor is active \[step 3.1\], launch the following command from your
 catkin workspace: ```
 $ roslaunch muse_v2_driver get_calibration_params.launch
@@ -174,11 +174,11 @@ It will output the calibration parameters of your device:
 -   accelerometer calibration parameters;
 -   magnetometer calibration parameters.
 
-Such parameters will be stored in \`\`\`config/muse_v2_calib.txt\`\`\`.
+Such parameters will be stored in ```config/muse_v2_calib.txt```.
 By default, the launch file enables the request of all parameters. You
 can freely *enable/disable* each parameter retrieval by setting to
 *true/false* its argument in
-\`\`\`launch/get_calibration_params.launch\`\`\`.
+```launch/get_calibration_params.launch```.
 
 ### Memory
 
@@ -204,7 +204,7 @@ Focusing on the log files,
     i-th;
 -   *read_memory:=true* will store the content of all log files.
 
-Log files are stored in the \`\`\`config\`\`\` folder.
+Log files are stored in the ```config``` folder.
 
 ### Data acquisition
 
@@ -231,7 +231,7 @@ pub {
 }
 ```
 
-***Start acquisition.*** We assume that the ROS node of your MUSE V2
+**`'Start acquisition.`**' We assume that the ROS node of your MUSE V2
 device is active \[step 3(a)\]. To start raw data transmission, launch
 the following command from your catkin workspace:
 ```
@@ -240,7 +240,7 @@ $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
 ```0
 
-By default, \`\`\`start_transmission.launch\`\`\` starts to publish the
+By default, ```start_transmission.launch``` starts to publish the
 following data:
 
 -   IMU;
@@ -255,7 +255,7 @@ You can freely *enable/disable* each data publisher by setting to
 choose the desired sampling *frequency* (Default: 150 Hz - Admitted
 range: \[1-150\] (Hz)).
 
-***Plots.*** While streaming raw data, you can plot them by means of
+**`'Plots.`**' While streaming raw data, you can plot them by means of
 ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
@@ -263,16 +263,16 @@ $ catkin_make
 ```1 To enable the activation of one or more plots,
 you should set to *true* its corresponding argument.
 
-***Raw data subscriber.*** While streaming raw data, you can subscribe
-to the *publisher* node and publish data back on your terminal. Assuming
-your transmission node is active, launch the following command from your
-catkin workspace: ```
+**`'Raw data subscriber.`**' While streaming raw data, you can
+subscribe to the *publisher* node and publish data back on your
+terminal. Assuming your transmission node is active, launch the
+following command from your catkin workspace: ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```2 ***Stop acquisition.*** If
-your acquisition node is active and you want to stop data transmission:
-```
+```2
+**`'Stop acquisition.`**' If your acquisition node is active and you
+want to stop data transmission: ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
@@ -280,15 +280,15 @@ $ catkin_make
 
 ### Miscellaneous
 
-***Get battery charge and voltage.*** Assuming the ROS node of your MUSE
-V2 sensor is active \[step 3.1\], type the following command from your
-catkin workspace: ```
+**`'Get battery charge and voltage.`**' Assuming the ROS node of your
+MUSE V2 sensor is active \[step 3.1\], type the following command from
+your catkin workspace: ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```4 The node will send back the
-battery charge, its voltage, or both depending on whether the arguments
-*charge* and *voltage* are set to *true*.
+```4 The node will send back
+the battery charge, its voltage, or both depending on whether the
+arguments *charge* and *voltage* are set to *true*.
 
 ## Example
 

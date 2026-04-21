@@ -3,14 +3,14 @@ stack page.
 
 ## Cue
 
-\<\<MsgLink(polonius_msgs/Cue)\>\>
+<<MsgLink(polonius_msgs/Cue)>>
 
 This message not only represents a simple log message, but also can
 trigger Polonius to move from one state to another.
 
 ## Interface Update
 
-\<\<MsgLink(polonius_msgs/InterfaceUpdate)\>\>
+<<MsgLink(polonius_msgs/InterfaceUpdate)>>
 
 This message is sent from the Polonius engine to the GUI to communicate
 what elements of the graphical interface to display. It contains 4 main

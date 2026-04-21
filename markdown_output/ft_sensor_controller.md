@@ -2,7 +2,7 @@
 
 The ft_sensor_controller shows how to access the force/torque data
 provided by netft_ethercat_hardware plugin. This controller transforms
-the measured x-,y- and z-force to the \'gripper_tool_frame\' and shows
+the measured x-,y- and z-force to the 'gripper_tool_frame' and shows
 how to compensate for the inertial forces from the gripper using the
 (filtered) gripper accelerations. Note that the controller assumes a
 constant horizontal pose of the gripper!

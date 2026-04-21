@@ -3,7 +3,7 @@ field as local planner, it allows the robot to navigate flexibly in
 narrow space.
 
 -   Maintainer status: developed
--   Maintainer: Xuan Sang LE: \< xsang.le AT gmail DOT com\>
+-   Maintainer: Xuan Sang LE: < xsang.le AT gmail DOT com>
 -   Licence: MIT
 -   Author site: [lxsang.me](https://lxsang.me)
 -   Source: [ github ]( https://github.com/lxsang/ROS-packages)

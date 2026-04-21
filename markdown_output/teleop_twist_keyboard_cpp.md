@@ -12,7 +12,7 @@ commands are identified as such.
 
 ## Installing the Package
 
-As per standard ROS practice, make a workspace, go to the workspace\'s
+As per standard ROS practice, make a workspace, go to the workspace's
 src directory, and clone this repository, then run catkin_make in the
 root of the workspace, and source the resulting setup.bash!
 

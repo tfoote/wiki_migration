@@ -25,7 +25,7 @@ pub {
 #### Parameters
 
 There are two categories of ROS [Parameters](Parameters) that can be
-used to configure the \`aruco_detect\` node: general and detection.
+used to configure the `aruco_detect` node: general and detection.
 
 ##### General parameters
 
@@ -58,7 +58,7 @@ param {
 
 The
 [detector parameters](http://docs.opencv.org/trunk/d1/dcd/structcv_1_1aruco_1_1DetectorParameters.html)
-used in the library are paramaters of the \`aruco_detect\` node. They
+used in the library are paramaters of the `aruco_detect` node. They
 can also be set via [dynamic reconfigure](dyncamic_reconfigure).
 
 ```clearsilver

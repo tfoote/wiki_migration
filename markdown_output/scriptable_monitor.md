@@ -65,10 +65,10 @@ You can activate the script using rqt plugin -
 
 ### Configuration parameters
 
-Parameters are preceded by \'#!\'. Syntax: ```parameter_name
+Parameters are preceded by '#!'. Syntax: ```parameter_name
 
 ```
-There is one required parameter: \"name\" - the identification name of
+There is one required parameter: "name" - the identification name of
 the script, it must be unique.
 
 Example: ```name

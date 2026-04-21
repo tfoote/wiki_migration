@@ -63,7 +63,7 @@ that requires action.
 This application harnesses the voice recognition ability of Google Glass
 to enable the control of multiple robots. The user can send commands to
 all robots, a single robot, or to a global command by simply saying
-\"all\" , \"robot n\", or \"execute\" before stating the command. The
+"all" , "robot n", or "execute" before stating the command. The
 command is then sent to the ROS voice_control.py script for processing.
 
 ## Setup
@@ -82,7 +82,7 @@ Next, the ROS tools must be configured as to enable communication in and
 functionality between the ROS and the Google Glasses. Obtain the source
 code from github (<https://github.com/unl-nimbus-lab/ros_glass_tools>)
 and build the package using the catkin tools. It is important that the
-\"Commands\" and \"Topics\" services are built. After building, the ROS
+"Commands" and "Topics" services are built. After building, the ROS
 system is ready to be run.
 
 ### Glass Setup
@@ -97,11 +97,11 @@ Glassware must also have debug mode enabled. The instructions to do so
 are also found on the Google Glass development site above.
 
 After the environment is setup, the applications must be imported into
-the Eclipse Android environment. This is done by selecting \"import\"
--\> \"Existing Android Code Into Workspace\" -\> and selecting the
-\"Applications\" directory in the ros_glass_tools package. All three
+the Eclipse Android environment. This is done by selecting "import"
+-> "Existing Android Code Into Workspace" -> and selecting the
+"Applications" directory in the ros_glass_tools package. All three
 applications can be imported in this way. After importing, ensure that
-the \"Glass Development Kit Sneak Peek\" is selected as the Android
+the "Glass Development Kit Sneak Peek" is selected as the Android
 Build Target in the project properties. Additionally, this project
 relies on the Autobahn Websocket library (<http://autobahn.ws/>). Ensure
 that these jars are in the libs directory and on the build path.
@@ -114,7 +114,7 @@ default the websocket server operates on port 9090. The line that needs
 to be edited appears below and is the same in each projects.
 
 public final static String HOST_ADDRESS =
-\"<ws://>[192.168.1.142:9090](http://192.168.1.142:9090/)\";
+"<ws://>[192.168.1.142:9090](http://192.168.1.142:9090/)";
 
 ### Running and Usage
 
@@ -122,7 +122,7 @@ Each of the glass applications rely on one of the the ROS nodes for
 functionality and all of the applications rely on the rosbridge
 webserver for communication. The rosbridge can be launched using the
 example launch script provided in their distribution with the command
-\"roslaunch rosbridge_server rosbridge_websocket.launch\". Outlined
+"roslaunch rosbridge_server rosbridge_websocket.launch". Outlined
 below are the steps to ensure that each of the applications can be run
 correctly.
 
@@ -158,8 +158,8 @@ application and select the desired topic.
 The configuration of the ROS node associated with this application is
 the most complex part of using GlassROSMonitor. In order to run
 correctly, the monitors must be correctly defined in the ROS parameter
-server under the parameter \"monitors.\" Using the server, any number of
-monitors can be created. The \"monitors\" parameter is a list of
+server under the parameter "monitors." Using the server, any number of
+monitors can be created. The "monitors" parameter is a list of
 dictionaries; one for each monitor that the user creates. In each
 dictionary, five key/value pairs must be defined, as explained below.
 
@@ -183,14 +183,14 @@ violated.
 
 Example Launch file input:
 
-\<rosparam name=\"monitors\"\>
+<rosparam name="monitors">
 
-\[ { topic: \'/a/subject_pose\', field: \'translation/x\', op:
-\'outside\', val : 2 , msg: \'Exceeded Bounds\'}, { topic:
-\'/a/subject_pose\', field: \'translation/z\', op: \'gt\', val : 2 ,
-msg: \'Too high!!!\'} \]
+\[ { topic: '/a/subject_pose', field: 'translation/x', op:
+'outside', val : 2 , msg: 'Exceeded Bounds'}, { topic:
+'/a/subject_pose', field: 'translation/z', op: 'gt', val : 2 ,
+msg: 'Too high!!!'} \]
 
-\</rosparam\>
+</rosparam>
 
 #### Usage
 
@@ -217,30 +217,30 @@ specific commands and behaviors must be defined in the ROS parameters.
 
 Three separate parameters are needed to correctly setup the ROS node to
 accept voice commands. The first parameter deals with global commands
-that will be run after saying the keyword \"execute\" while in the
+that will be run after saying the keyword "execute" while in the
 Google Glass application. This parameter is a N x 2 array. Each row in
 the array contains the name of the command and the topic on which to
 publish the command. An example of this is shown below.
 
-\<rosparam param=\"global_commands\"\> \[ \[stop, /all_stop\], \[go,
+<rosparam param="global_commands"> \[ \[stop, /all_stop\], \[go,
 /all_go\] \]
 
-\</rosparam\>
+</rosparam>
 
-The individual robot commands require both the \"robots\" parameter and
-the \"robot_commands\" parameter to work correctly. This section of the
+The individual robot commands require both the "robots" parameter and
+the "robot_commands" parameter to work correctly. This section of the
 tool assumes that ROS is configured so that each robot that will be
-controlled has a unique namespace. The \"robots\" parameter maps each
+controlled has a unique namespace. The "robots" parameter maps each
 namespace to a robot number. An array of namespaces is passed into the
 tool and the position of the namespace becomes the robot number. In the
-following example input \"robot one\" would issue commands on namespace
-\"a\" and robot two maps to namespace \"b\".
+following example input "robot one" would issue commands on namespace
+"a" and robot two maps to namespace "b".
 
-\<rosparam param=\"robots\"\>
+<rosparam param="robots">
 
-\[a, b\] \</rosparam\>
+\[a, b\] </rosparam>
 
-The \"robot_commands\" parameter provides the mapping between the
+The "robot_commands" parameter provides the mapping between the
 command the user says and the topics within each namespace that will
 cause the robot to execute the command. The structure of the parameter
 is the same as the global_commands. The first string in the pair is the
@@ -251,42 +251,42 @@ is created for each robot with the namespace prepended to the front of
 the topic. For example consider the following launch file parameter in
 combination with the two robots above:
 
-\<rosparam param=\"robot_commands\"\> \[ \[forward, move_forward\],
-\[backward, move_backward\] \] \</rosparam\>
+<rosparam param="robot_commands"> \[ \[forward, move_forward\],
+\[backward, move_backward\] \] </rosparam>
 
 In this example, the node would open up four topics for publishing:
 a/forward, a/backward, b/forward, and b/backward. The following also
 maps out which voice commands would lead to messages being published on
 which topics.
 
-\"robot one forward\" -\> a/move_forward
+"robot one forward" -> a/move_forward
 
-\"robot two backward\" -\> b/move_backward
+"robot two backward" -> b/move_backward
 
-\"all forward\" -\> a/move_forward & b/move_forward
+"all forward" -> a/move_forward & b/move_forward
 
 #### Usage
 
-To use this app simply start the application by either using the \"ok
-glass robot control\" voice command or navigate to it on the menu. Once
+To use this app simply start the application by either using the "ok
+glass robot control" voice command or navigate to it on the menu. Once
 started the prompt will be displayed asking for input. At this point
 there are three options possible.
 
-Saying \"execute\" and then a command will publish a message on the
+Saying "execute" and then a command will publish a message on the
 corresponding command that has been established in the ROS node.
 
-Saying \"all\" and then a command will publish a message on each
+Saying "all" and then a command will publish a message on each
 namespace corresponding to the topic defined in the ROS node.
 
-Saying \"robot n\" and then a command command will publish a message on
-robot n\'s namespace on the topic that has been paired with command in
+Saying "robot n" and then a command command will publish a message on
+robot n's namespace on the topic that has been paired with command in
 the ROS node.
 
 Using the same parameters as defined above, saying the following will
 publish on the following topics.
 
-\"execute stop\" --\> /stop
+"execute stop" --> /stop
 
-\"execute go\" --\> /go
+"execute go" --> /go
 
-\"robot one forward\" --\> /a/forward
+"robot one forward" --> /a/forward

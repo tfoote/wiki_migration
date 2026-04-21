@@ -1,6 +1,6 @@
 ## About
 
-The \`carl_interactive_manipulation\` package provides a backend and
+The `carl_interactive_manipulation` package provides a backend and
 frontend for object manipulation based on interactive markers. It
 includes markers to directly control the end-effector pose,
 visualization of segmented and recognized objects, and commands to
@@ -87,7 +87,7 @@ menus for interacting with both. Segmented but unrecognized objects will
 be shown in red, and recognized objects will be shown in blue, labeled
 with their names.
 
-![\|height=\"451\",width=\"670\"](attachment:objects.png)
+![\|height="451",width="670"](attachment:objects.png)
 
 Selecting the pickup option for an unrecognized object will initiate an
 attempt to recognize the object, and upon successful recognition, pick
@@ -98,7 +98,7 @@ object from the segmented/recognized object list.
 
 ## Installation
 
-To install the \`carl_bot\` package, you can install from source with
+To install the `carl_bot` package, you can install from source with
 the following commands:
 
 . ```shell

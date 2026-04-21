@@ -72,7 +72,7 @@ the hwboard in your overall launch file use ```
 hardware configuration is done by using a yaml-file stored in the
 [cob_hardware_config](cob_hardware_config) package. The file which
 contains all necessary parameters is located in
-\"cob_hardware_config/cob3-3/config/hwboard.yaml\" and should be similar
+"cob_hardware_config/cob3-3/config/hwboard.yaml" and should be similar
 to this ```
 devicestring: /dev/ttyHwBoard
 head_sensor: 0x103AEE7A

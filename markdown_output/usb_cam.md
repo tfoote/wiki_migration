@@ -12,9 +12,9 @@ Please note that the documentation for previously released (`0.3.7` and earlier)
 
 This package provides a configurable ROS interface to the
 [kernel API](https://www.kernel.org/doc/html/v4.9/media/uapi/v4l/v4l2.html)
-of \`libv4l2\` library that implements a common driver for standard USB
+of `libv4l2` library that implements a common driver for standard USB
 web cameras. The module uses a monopolistic way of entry point (virtual
-filesystem) access model with the policy \"one device = one node\". The
+filesystem) access model with the policy "one device = one node". The
 ROS node running over the
 [libv4l2 API](https://www.kernel.org/doc/html/v4.9/media/uapi/v4l/v4l2.html)
 also queries the kernel about the intrinsic parameters of the camera and
@@ -29,7 +29,7 @@ supported to publish actual frame parameters.
 ### Supported device access models
 
 -   *Memory Mapping* - for the device with direct monopolistic USB port
-    access model implemented via \`libusb\`
+    access model implemented via `libusb`
 -   *User Pointer Exchange* - for the devices supporting userspace
     memory pointer requests
 -   *Virtual Block Device* - for the devices supporting block I/O model
@@ -37,34 +37,34 @@ supported to publish actual frame parameters.
 
 ### Published message types
 
--   \<\<MsgLink(sensor_msgs/CameraInfo)\>\> for publishing camera
+-   <<MsgLink(sensor_msgs/CameraInfo)>> for publishing camera
     calibration matrices
--   \<\<MsgLink(sensor_msgs/Image)\>\> for uncompressed
+-   <<MsgLink(sensor_msgs/Image)>> for uncompressed
     OpenCV-compatible images
--   \<\<MsgLink(sensor_msgs/CompressedImage)\>\> for binary packets
+-   <<MsgLink(sensor_msgs/CompressedImage)>> for binary packets
     containing PNG/JPEG-compressed images published under the
-    \`compressed\` topic suffix. **NOTE**: also on-the-fly encoding of
+    `compressed` topic suffix. **NOTE**: also on-the-fly encoding of
     the images into 16-bit depth matrices is supported. The
-    PNG-compressed frames are published under \`compressedDepth\` topic
+    PNG-compressed frames are published under `compressedDepth` topic
     suffix.
--   \<\<MsgLink(theora_image_transport/Packet)\>\> for binary packages
+-   <<MsgLink(theora_image_transport/Packet)>> for binary packages
     containing Theora/H.263 YUV420-encoded stacks of images published
-    under \`theora\` topic suffix
--   \<\<MsgLink(dynamic_reconfigure/Config)\>\> for publishing actual
-    frame parameters under \`parameter_updates\` topic suffix
--   \<\<MsgLink(dynamic_reconfigure/ConfigDescription)\>\> for
+    under `theora` topic suffix
+-   <<MsgLink(dynamic_reconfigure/Config)>> for publishing actual
+    frame parameters under `parameter_updates` topic suffix
+-   <<MsgLink(dynamic_reconfigure/ConfigDescription)>> for
     publishing [dynamic_reconfigure](dynamic_reconfigure) description
-    messages under \`parameter_descriptions\` topic suffix
+    messages under `parameter_descriptions` topic suffix
 
 ### Topic names abbreviation policy
 
 The node formulates topic namespaces and affixes using the following
 policy: 1. **Node name** taken from ROS launch server 2. **Transport
-suffix** configured with \`camera_transport_suffix\` parameter 3.
+suffix** configured with `camera_transport_suffix` parameter 3.
 **[image_transport](image_transport) mode suffix** 4. **Description
 suffix** provided from [dynamic_reconfigure](dynamic_reconfigure) API
-For example, if the node runs under the name \`usb_cam\` and
-\`camera_transport_suffix\` is set to \`image_raw\` (default invocation
+For example, if the node runs under the name `usb_cam` and
+`camera_transport_suffix` is set to `image_raw` (default invocation
 case), the node will publish the following list of topics:
 
 ```
@@ -87,7 +87,7 @@ The support for a hardware-accelerated decoder in the package is now
 **experimental**. It is implemented in the dedicated
 [branch](https://github.com/ros-drivers/usb_cam/tree/hardware-decoder)
 in the repository. The feature is not enabled by default and it is
-supported only from \`libavcodec\` library version \`52.00.100\`.
+supported only from `libavcodec` library version `52.00.100`.
 
 ## Nodes
 
@@ -239,32 +239,32 @@ param {
 
 ### I/O modes reference ===The node supports the following I/O mode names for the given device:
 
--   \`read\` - for devices supporting virtual filesystem or block I/O
--   \`mmap\` - for devices supporting direct \`libusb\` memory mapping
--   \`userptr\` - for DMA devices supporting userspace pointer exchange
+-   `read` - for devices supporting virtual filesystem or block I/O
+-   `mmap` - for devices supporting direct `libusb` memory mapping
+-   `userptr` - for DMA devices supporting userspace pointer exchange
 
-### Pixel formats/encodings reference ===Selection of the pixel format name automatically selects the decoder library and pixel representation for FFMPEG/\`libavcodec\` processing. The node supports the following pixel format names and decoders (all names are case-sensitive):
+### Pixel formats/encodings reference ===Selection of the pixel format name automatically selects the decoder library and pixel representation for FFMPEG/`libavcodec` processing. The node supports the following pixel format names and decoders (all names are case-sensitive):
 
--   \`yuyv\` - YUV420
--   \`yuv\` - synonym for \`yuyv\`
--   \`uyvy\` - UVY240, MESECAM
--   \`yuvmono10\` - Monochrome 10-bit pseudo-YUV
--   \`rgb24\` - Linear 8-bit RGB matrix
--   \`bgr24\` - OpenCV-compatible 8-bit BGR
--   \`grey\` - Grayscale 8-bit linear monochrome matrix
--   \`yu12\` - YU-reversed YUV420
--   \`mjpeg\` - FFMPEG-decoded MotionJPEG. Requires compatible hardware
--   \`h264\` - FFMPEG-decoded H.264. Requires compatible hardware. May
-    also require setting \`color_format\` parameter to \`yuv420p\`
+-   `yuyv` - YUV420
+-   `yuv` - synonym for `yuyv`
+-   `uyvy` - UVY240, MESECAM
+-   `yuvmono10` - Monochrome 10-bit pseudo-YUV
+-   `rgb24` - Linear 8-bit RGB matrix
+-   `bgr24` - OpenCV-compatible 8-bit BGR
+-   `grey` - Grayscale 8-bit linear monochrome matrix
+-   `yu12` - YU-reversed YUV420
+-   `mjpeg` - FFMPEG-decoded MotionJPEG. Requires compatible hardware
+-   `h264` - FFMPEG-decoded H.264. Requires compatible hardware. May
+    also require setting `color_format` parameter to `yuv420p`
 
 **NOTE**: In its current state, the node does not support
 hardware-accelerated decoding!
 
 ### Color representation formats reference ===The node supports the following color representation mode names (case-sensitive):
 
--   \`yuv422p\` - YUV422 - default, compatible with most MJPEG hardware
+-   `yuv422p` - YUV422 - default, compatible with most MJPEG hardware
     encoders
--   \`yuv420p\` - YUV420 - may be required by H.264 and H.265 hardware
+-   `yuv420p` - YUV420 - may be required by H.264 and H.265 hardware
     encoders
 
 ### Intrinsic control configuration ===The node queries V4L kernel driver for available intrinsic control names and data types they require, in the same way, that one can query from terminal with the following command:
@@ -272,9 +272,9 @@ hardware-accelerated decoding!
 ```
 v4l2-ctl --device=/dev/video<ID> -L
 ``` The node supports the following types of
-intrinsic controls provided by \`libv4l2\`:
+intrinsic controls provided by `libv4l2`:
 
--   Booleans (\`true/false\`)
+-   Booleans (`true/false`)
 -   Integers (32-bit)
 -   Integers (64-bit)
 -   Menus (integer-indexed sets of operating modes)
@@ -282,21 +282,21 @@ intrinsic controls provided by \`libv4l2\`:
     The data type for the given parameter is determined automatically.
 
 The queried names become ROS parameters and are placed under
-\`intrinsic_controls\` multilist of the configuration file. Its main
+`intrinsic_controls` multilist of the configuration file. Its main
 namespace contains:
 
 -   Unique names of the generated ROS parameters. **NOTE**: if the
     parameter name reported from V4L kernel driver **exists but not
     mentioned here**, it will be processed and set up with *default
     value*, also provided by the driver.
--   \`ignore\` - the string list containing control names that should be
+-   `ignore` - the string list containing control names that should be
     **ignored**. If the existing intrinsic control is mentioned here,
     its value will be **left intact**.
 
 #### Example configuration
 
 This example configuration is obtained using *Logitech HD Pro Webcam
-C920* web camera with standard \`V4L2\` kernel driver from Ubuntu 22.04
+C920* web camera with standard `V4L2` kernel driver from Ubuntu 22.04
 with 5.15.0 kernel installed. The manually queried control names:
 ```
 v4l2-ctl --device=/dev/video0 -L
@@ -346,14 +346,14 @@ intrinsic_controls:
     ]
 ``` Here are the following intrinsic
 controls that are mentioned in the **root namespace** of the
-\`intrinsic_controls\` multilist, so they will be processed and set up:
+`intrinsic_controls` multilist, so they will be processed and set up:
 
--   \`focus_auto\` (boolean)
--   \`exposure_auto_priority\` (boolean)
--   \`exposure_auto\` (menu)
--   \`white_balance_temperature_auto\` (boolean)
--   \`power_line_frequency\` (menu)
+-   `focus_auto` (boolean)
+-   `exposure_auto_priority` (boolean)
+-   `exposure_auto` (menu)
+-   `white_balance_temperature_auto` (boolean)
+-   `power_line_frequency` (menu)
 
-All the other intrinsic control names reported by \`v4l2-ctl\` are
-enumerated in the \`ignore\` string list, so their values will be left
+All the other intrinsic control names reported by `v4l2-ctl` are
+enumerated in the `ignore` string list, so their values will be left
 intact.

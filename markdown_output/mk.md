@@ -1,26 +1,26 @@
-/!\\ ***NOTE:*** when using \`rospack\` to find the \`mk\`-package, the
-\`ROS_PACKAGE_PATH\` needs to be set accordingly. Thus, you should have
-a dependency to \`roslib\` in your \`package.xml\`, as this provides the
-respective
+/!\\ **`'NOTE:`**' when using `rospack` to find the `mk`-package,
+the `ROS_PACKAGE_PATH` needs to be set accordingly. Thus, you should
+have a dependency to `roslib` in your `package.xml`, as this
+provides the respective
 [environment hooks](https://github.com/ros/ros/blob/jade-devel/core/roslib/env-hooks/10.ros.sh.em)
 that set this.
 
 ## CMake-driven builds
 
 Most packages, and all stacks, use CMake to build. But every package
-must provide a \`Makefile\` if it does any building. The following files
-are provided to simplify the \`Makefile\` in most packages, and all
+must provide a `Makefile` if it does any building. The following files
+are provided to simplify the `Makefile` in most packages, and all
 stacks:
 
--   \`cmake.mk\`
--   \`cmake_stack.mk\` Use these files by including them, as explained
+-   `cmake.mk`
+-   `cmake_stack.mk` Use these files by including them, as explained
     in the [rosbuild documentation](rosbuild) and
     [stack-building documentation](StackBuildFiles).
 
 ## 3rdparty code, from tarball
 
 For a 3rdparty package that pulls code from an tarball (or equivalent
-downloadable file), you should use \`download_unpack_build.mk\`, like
+downloadable file), you should use `download_unpack_build.mk`, like
 so: ```
 all: paramiko
 
@@ -42,34 +42,34 @@ clean:
 wipe: clean
         -rm -rf build
 ``` The following variables should be defined
-prior to including \`download_unpack_build.mk\`:
+prior to including `download_unpack_build.mk`:
 
--   \`TARBALL\`: local path to which the tarball should be downloaded;
-    it **must** start with \`build/\`
--   \`TARBALL_URL\`: fully-qualified URL from which to retrieve the
+-   `TARBALL`: local path to which the tarball should be downloaded;
+    it **must** start with `build/`
+-   `TARBALL_URL`: fully-qualified URL from which to retrieve the
     tarball
--   \`SOURCE_DIR\`: source directory that you want the tarball unpacked
-    into; it **must** start with \`build/\`
--   \`INITIAL_DIR\` (optional): the name that the tarball will naturally
-    unpack into, if different from \`SOURCE_DIR\`; it **must** start
-    with \`build/\`
--   \`UNPACK_CMD\` (optional): the command to apply to the tarball to
-    unpack it (default: \`tar xzf\`)
--   \`MD5SUM_FILE\` (optional, but highly recommended): The name of a
+-   `SOURCE_DIR`: source directory that you want the tarball unpacked
+    into; it **must** start with `build/`
+-   `INITIAL_DIR` (optional): the name that the tarball will naturally
+    unpack into, if different from `SOURCE_DIR`; it **must** start
+    with `build/`
+-   `UNPACK_CMD` (optional): the command to apply to the tarball to
+    unpack it (default: `tar xzf`)
+-   `MD5SUM_FILE` (optional, but highly recommended): The name of a
     file containing the md5 hash of the tarball, in the format produced
-    by the UNIX command \`md5sum\`
--   \`TARBALL_PATCH\` (optional): a list of patch files to apply to the
-    tarball after unpacking (e.g. \'TARBALL_PATCH = patch1.patch
-    patch2.patch\')
+    by the UNIX command `md5sum`
+-   `TARBALL_PATCH` (optional): a list of patch files to apply to the
+    tarball after unpacking (e.g. 'TARBALL_PATCH = patch1.patch
+    patch2.patch')
 
-After including \`download_unpack_build.mk\`, you can make targets
-depend on the \`\$(SOURCE_DIR)/unpacked\` file; it will be created (and
+After including `download_unpack_build.mk`, you can make targets
+depend on the `\$(SOURCE_DIR)/unpacked` file; it will be created (and
 updated) after the tarball has been downloaded, unpacked, and
 (optionally) patched.
 
 ### Examples
 
-Some packages that use \`download_unpack_build.mk\`:
+Some packages that use `download_unpack_build.mk`:
 
 -   [pycrypto](pycrypto)
 -   [gtest](gtest)
@@ -79,7 +79,7 @@ Some packages that use \`download_unpack_build.mk\`:
 ## 3rdparty code, from SVN
 
 For a 3rdparty package that pulls code from an SVN repository, you
-should use \`svn_checkout.mk\`, like so: ```
+should use `svn_checkout.mk`, like so: ```
 all: installed
 
 SVN_DIR = build/stage-svn
@@ -101,24 +101,24 @@ wipe: clean
         rm -rf $(SVN_DIR)
 ``` The
 following variables should be defined prior to including
-\`svn_checkout.mk\`:
+`svn_checkout.mk`:
 
--   \`SVN_DIR\`: the name of the local working copy to be created
--   \`SVN_URL\`: the URL of the repository to check out from
--   \`SVN_REVISION\` (optional, but highly recommended): the revision to
-    check out at, including the \`-r\` flag (e.g., \`-r 8262\`)
--   \`SVN_CMDLINE\` (optional): how to invoke \`svn\` (useful if you
-    want to pass extra arguments, e.g. \`svn \--non-interactive\`)
--   \`SVN_PATCH\`: list of patch files to apply to the working copy
+-   `SVN_DIR`: the name of the local working copy to be created
+-   `SVN_URL`: the URL of the repository to check out from
+-   `SVN_REVISION` (optional, but highly recommended): the revision to
+    check out at, including the `-r` flag (e.g., `-r 8262`)
+-   `SVN_CMDLINE` (optional): how to invoke `svn` (useful if you
+    want to pass extra arguments, e.g. `svn \--non-interactive`)
+-   `SVN_PATCH`: list of patch files to apply to the working copy
     after checkout
 
-After including \`svn_checkout.mk\`, you can make your targets depend on
-the \`patched\` file; it will be created after the working copy is
+After including `svn_checkout.mk`, you can make your targets depend on
+the `patched` file; it will be created after the working copy is
 checked out and (optionally) patched.
 
 ### Examples
 
-Some packages that use \`svn_checkout.mk\`:
+Some packages that use `svn_checkout.mk`:
 
 -   [kdl](kdl)
 -   [gazebo](gazebo)
@@ -127,14 +127,14 @@ Some packages that use \`svn_checkout.mk\`:
 
 ## 3rdparty code, from Git, Mercurial, Bazaar
 
-Similar to \`svn_checkout.mk\`, there are also:
+Similar to `svn_checkout.mk`, there are also:
 
--   \`git_checkout.mk\`
--   \`hg_checkout.mk\`
--   \`bzr_checkout.mk\`
+-   `git_checkout.mk`
+-   `hg_checkout.mk`
+-   `bzr_checkout.mk`
 
-These are based on \`svn_checkout.mk\`, so you can generally use them by
-substituting the appropriate three-letter abbreviation for \`SVN\`.
+These are based on `svn_checkout.mk`, so you can generally use them by
+substituting the appropriate three-letter abbreviation for `SVN`.
 
 ## Optimizing SVN
 

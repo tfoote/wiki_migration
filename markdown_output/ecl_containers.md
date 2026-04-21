@@ -27,5 +27,5 @@ using ecl::PushAndPop;
 
 ## Examples
 
-See the programs in the \`src/test\` and \`src/examples\`
+See the programs in the `src/test` and `src/examples`
 subdirectories.

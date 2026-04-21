@@ -63,7 +63,7 @@ req_tf {
 
 This demo requires [mvsim](mvsim). It simulates one robot with 2 laser
 scanners and builds and publish the local obstacle maps to
-\`/local_map_pointcloud\`:
+`/local_map_pointcloud`:
 
 ```
 roslaunch mrpt_local_obstacles demo_with_mvsim.launch

@@ -4,7 +4,7 @@ The main components of using TouchOSC with ROS are:
 
 -   The TouchOSC app for iPad or iPhones
 -   A TouchOSC layout, which is composed of *tabpages*
--   The \`touchosc_bridge\` ROS node, which is composed of *tabpage
+-   The `touchosc_bridge` ROS node, which is composed of *tabpage
     handlers*
 
 ### TouchOSC
@@ -18,7 +18,7 @@ is available on the \[Apple App Store for
 4.99\](<http://itunes.apple.com/app/touchosc/id288120394?mt=8>).
 
 TouchOSC allows for the creation of touch interactive control layouts
-separated onto \"tabpages\". The app supports up to 25 tabpages in a
+separated onto "tabpages". The app supports up to 25 tabpages in a
 single layout file. Layouts are created using the freely available
 \[TouchOSC Editor\](<http://hexler.net/software/touchosc>). For more
 information on all of the controls available, as well as their behavior

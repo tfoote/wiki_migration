@@ -24,7 +24,7 @@ drivers to build, develop and run the UWU_Bot
 # 1. Introduction
 
 This is UWU_Bot which is made for 3D mapping in outdoor purposes but it
-is capable for indoor also. Turtlebot\'s keyboard teleop over 3G network
+is capable for indoor also. Turtlebot's keyboard teleop over 3G network
 is used instead of short range wifi connection. Teamviewer is used to
 control UWU_Bot remotely. The UWU_Bot is made with an low cost concept
 with an Arduino pro mini and a RGBD camera (MS Kinect). Arduino recieves
@@ -40,7 +40,7 @@ controller. Hardware information will be available at
     TEAMVIEWER
 -   Clone the git to your workspace
 -   Upload the provided Arduino sketch in the directory called
-    \"UWU_Bot_Arduino\"
+    "UWU_Bot_Arduino"
 -   Switch ON the UWU_Bot
 -   Run commands as follows
 
@@ -71,7 +71,7 @@ preffered to do**
 
 **2.3** **Use pcd2ply command to convert saved .pcd files to convert to
 .ply format. Because you need .ply file to see the generated map over
-\"*meshlab*\" or \"*cloud compare*\" **
+"*meshlab*" or "*cloud compare*" **
 
 **Ex: *pcd2ply path/myMap.pcd path/myMap.ply**//*****
 

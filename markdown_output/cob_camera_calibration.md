@@ -1,6 +1,6 @@
 ## Nodes
 
-The \`mono_calibration\` and \`stereo_calibration\` node can be used to
+The `mono_calibration` and `stereo_calibration` node can be used to
 calibrate monocular and stereo cameras and can be used for every
 robot/camera. They are general purpose calibration nodes which perform
 automatic calibration; only images of a checkerboard calibration object

@@ -1,6 +1,6 @@
 # Raspberry Pi Gibbon
 
-![\|align=\"right\",width=\"250\"](attachment:raspberrypigibbon.jpg)
+![\|align="right",width="250"](attachment:raspberrypigibbon.jpg)
 
 -   Usage
 -   <http://github.com/rt-net/RaspberryPiGibbon/wiki>

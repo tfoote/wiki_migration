@@ -14,8 +14,8 @@ The following packages of the
 [sensing and actuation library](https://github.com/cpswarm/sensing_actuation)
 are required:
 
--   \*\_vel_provider
--   \*\_vel_controller
+-   \*_vel_provider
+-   \*_vel_controller
 
 ## Libraries
 

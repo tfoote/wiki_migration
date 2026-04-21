@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/rbcar_common.git>
 
-![RBCAR RViz\|width=\"600px\"](attachment:rbcar_rviz.png)
+![RBCAR RViz\|width="600px"](attachment:rbcar_rviz.png)
 
 ## List of packages
 

@@ -6,14 +6,14 @@ This script can delay the launch of a roslaunch file.
 
 ### apt
 
-To install the \`timed_roslaunch\` package via apt, type the command as
+To install the `timed_roslaunch` package via apt, type the command as
 follows. ```shell
 sudo apt install ros-${ROS_DISTRO}-timed-roslaunch
 ```
 
 ### source
 
-To install the \`timed_roslaunch\` package, you can install from source
+To install the `timed_roslaunch` package, you can install from source
 with the following commands:
 
 ```shell

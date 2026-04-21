@@ -3,18 +3,18 @@ Willow Garage internal use only.
 
 ## Overview
 
-This package contains the \`multi_table_node\`, which is a node that
+This package contains the `multi_table_node`, which is a node that
 processes point clouds of type PointCloud2 to detect tables and objects,
 and generates good pick and place poses around the tables. Good pick
 poses are defined as those that are near high object density areas, and
 good place poses are those that are located far from table corners and
-near areas of low object density. The \`multi_table_node\` is invoked
+near areas of low object density. The `multi_table_node` is invoked
 with a service call, typically from a high level application such as one
 implemented in [SMACH](smach).
 
 ## ROS API
 
-\`multi_table_node\` contains many parameters for tweaking many aspects
+`multi_table_node` contains many parameters for tweaking many aspects
 of the table and object detection, as well as the manipulation pose
 generation. In addition, the node needs to connect to the navigation
 stack in order to test the reachability of possible manipulation poses.
@@ -108,7 +108,7 @@ param {
 
 ### Required Services
 
-\`multi_table_node\` requires an external service to test the
+`multi_table_node` requires an external service to test the
 reachability of candidate poses, which is usually done with the
 navigation stack. In a launch file, the topic name below should be
 remapped to the appropriate service, such as the one given.
@@ -157,7 +157,7 @@ pub {
 
 ## Example Usage
 
-Before launching the \`multi_table_node\`, you should make sure to
+Before launching the `multi_table_node`, you should make sure to
 correctly configure the source of the point clouds that will be
 processed. Although any point cloud source could work, the best results
 are obtained when a persistent collision map, such as

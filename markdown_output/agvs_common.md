@@ -7,7 +7,7 @@ This package contains the different controllers and launch files for the
 -   License: BSD
 -   Source: git <https://github.com/RobotnikAutomation/agvs_common.git>
 
-![AGVS RViz\|width=\"600px\"](attachment:agvs_rviz.png)
+![AGVS RViz\|width="600px"](attachment:agvs_rviz.png)
 
 ## List of packages
 

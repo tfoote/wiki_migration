@@ -113,16 +113,16 @@ param {
 
 ## Troubleshooting
 
-**I can\'t communicate with the Serial Relay Board, though it powers on
+**I can't communicate with the Serial Relay Board, though it powers on
 and displays stuff on the LCD:**
 
 Make sure that your config file does not enably any non existing
-expansion boards/motors and that you\'ve choose the right relayboard
+expansion boards/motors and that you've choose the right relayboard
 version and poweroff the serial relay board afterwards.
 
 **Launching relayboard.launch fails because the \$ROBOT_drive\*.yaml
 files are missing:**
 
-Set the arg \"loadDrives\" to \"false\"
+Set the arg "loadDrives" to "false"
 
 *Add your own Problem and Solution here*

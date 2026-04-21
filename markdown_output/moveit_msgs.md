@@ -1,3 +1,3 @@
-\<\<MsgSrvDoc(moveit_msgs)\>\>
+<<MsgSrvDoc(moveit_msgs)>>
 
 ## ROS Action Types

@@ -5,7 +5,7 @@ The Element package consists of a Python driver and ROS node for the
 cmRobot. The Element connects to a PC or SBC using either a USB port,
 XBEE radios or TTL.
 
-![float\|align=\"right\"](attachment:element.png)
+![float\|align="right"](attachment:element.png)
 
 **Features**
 
@@ -228,7 +228,7 @@ prov_tf {
 ### Configuration
 
 The Element node is configured using a YAML file specifying the required
-parameters. A sample parameter file called \`element_params.yaml\` is
+parameters. A sample parameter file called `element_params.yaml` is
 included in the distribution in the config directory and is shown below.
 Note that many of the parameters are commented out and must be set and
 un-commented before you can use the node with your Element.
@@ -304,7 +304,7 @@ rosparam delete /element
 <!-- -->
 ```
 -   Most of the Element functions have been implemented though a few
-    have not been tested since I don\'t currently have some of the
+    have not been tested since I don't currently have some of the
     supported sensors. The functions that have NOT been tested are:
 
 ```{=html}

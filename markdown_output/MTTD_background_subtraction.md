@@ -4,12 +4,12 @@ Laser Scanner measurements (or a rangefinder sensor) require to be
 pre-processed before to be analized by the twoLevelMTTD. The algorithm
 will elaborate only non-environment measurements (people or object in
 movement), so separate environment and non-environment measurements is
-necessary. This package provide \`background\` node which is
+necessary. This package provide `background` node which is
 responsabile of this operation: if an pre-builted environment map is
 avaiable by [map_server](map_server), laser measurements will be
 compared with the environment and only non-environment measurement will
 be used. The output is a [sensor_msgs/PointCloud](sensor_msgs) referred
-to a target_frame (\`\"/map\"\` as default).
+to a target_frame (`"/map"` as default).
 
 ## Nodes
 

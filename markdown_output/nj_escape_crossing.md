@@ -1,6 +1,6 @@
 ## Overview
 
-The \`nj_escape_crossing\` package implements a navigating jockey for
+The `nj_escape_crossing` package implements a navigating jockey for
 the Large Maps Framework ([LaMa](Large Maps Framework)) which role is to
 drive the robot away from the crossing center, where the robot is
 awaited to be when the jockey is started.
@@ -32,8 +32,8 @@ Implemented actions:
 
   -- --------------------------- -- -------------------- -- ------------------------ --
      \[Getter\]\[/\]\[Setter\]      message type            interface default name   
-     Getter                         lama_msgs/Crossing      \"crossing\"             
-     Getter                         float64                 \"exit_angle\"           
+     Getter                         lama_msgs/Crossing      "crossing"             
+     Getter                         float64                 "exit_angle"           
   -- --------------------------- -- -------------------- -- ------------------------ --
 
 ### ROS API

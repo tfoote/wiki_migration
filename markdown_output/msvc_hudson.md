@@ -13,7 +13,7 @@ doxygen.
 ## Machine Setup
 
 -   Install [java](http://www.java.com/en/download/index.jsp)
--   Create a user \`rosbuild\`.
+-   Create a user `rosbuild`.
 
 This is an *ugly*, but necessary constraint of the script on the hudson
 server. It also needs a specific directory in which to operate (i.e.

@@ -24,7 +24,7 @@ multiple scanners simultaneously.
 
 ## Report a Bug
 
-\<\<GitHubIssues(PilzDE/psen_scan)\>\>
+<<GitHubIssues(PilzDE/psen_scan)>>
 
 ## Further information
 
@@ -38,7 +38,7 @@ the environment. In addition to the head office in Ostfildern near
 Stuttgart, the family business is represented by over 2,400 employees at
 42 subsidiaries and branches on all continents.
 
-The company\'s products include sensor technology, electronic monitoring
+The company's products include sensor technology, electronic monitoring
 relays, safety relays, configurable and programmable control systems,
 automation solutions with motion control, systems for industrial
 communication as well as visualization solutions and operator terminals.

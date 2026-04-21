@@ -38,27 +38,27 @@ Right now, the rosjava code is broken up into three packages.
     and [Services](Services) classes, as well as Time and Duration
     [message field types](msg).
 -   **ros.roscpp**, which contains specific implementations of the
-    \`ros\` interfaces that call into roscpp via JNI, and should
+    `ros` interfaces that call into roscpp via JNI, and should
     eventually be replaced by a pure Java implementation. *Users of the
     client library should never refer to anything in this package; they
-    should only use the public API in the \`ros\` and
-    \`ros.communication\` packages*.
+    should only use the public API in the `ros` and
+    `ros.communication` packages*.
 
 ### Messages and Services
 
 When a package (with a Java target) is compiled, a Java source files for
 each [Message](Messages) and [Service](Services) of all dependencies is
-automatically generated and placed in the \`msg_gen/java\` and
-\`srv_gen\`/java folders respectively. Currently, a package\'s messages
-and services live in the ros.pkg.\<package-name\>.msg and
-ros.pkg.\<package-name\>.srv Java packages, and extend the
+automatically generated and placed in the `msg_gen/java` and
+`srv_gen`/java folders respectively. Currently, a package's messages
+and services live in the ros.pkg.<package-name>.msg and
+ros.pkg.<package-name>.srv Java packages, and extend the
 java.communication.Message and java.communication.Service classes.
 
 In addition to the interface defined in the java.communication.Message
 and java.communication.Service classes, each message will have one
 public member for each data element, with the name defined in the
 message declaration, and each Service will have inner class Message
-types named \"Request\" and \"Response\".
+types named "Request" and "Response".
 
 ROS Message data types are mapped to Java data types as follows:
 
@@ -75,23 +75,23 @@ ROS Message data types are mapped to Java data types as follows:
      float64                    double                                 
      bool                       boolean                                
      type\[\]                   type\[\] for primitive types           
-     type\[\]                   !ArrayList\<type\> for complex types   
+     type\[\]                   !ArrayList<type> for complex types   
      type\[5\]                  type\[5\]                              
   -- ----------------------- -- -------------------------------------- --
 
 In particular, because Java lacks unsigned types, **note that unsigned
-message types are currently mapped to Java\'s next bigger signed
-types**. Since there is no next bigger type for \`long\`, \`uing64\` and
-\`int64\` are both mapped to \`long\`. Fixed size arrays are mapped to
+message types are currently mapped to Java's next bigger signed
+types**. Since there is no next bigger type for `long`, `uing64` and
+`int64` are both mapped to `long`. Fixed size arrays are mapped to
 Java arrays. Variable size arrays over primitive types are also mapped
 to Java arrays to ensure that processing can be done efficiently. All
-other arrays are mapped to \`ArrayList\`s.
+other arrays are mapped to `ArrayList`s.
 
 Message constants are mapped to final static members of a message class.
 
 Finally, when a new Message subtype instance is created, all the fields
 are initialized to legal default values. In particular, primitives will
-be 0 (or 0.0), strings will be \"\", times and durations will have 0
+be 0 (or 0.0), strings will be "", times and durations will have 0
 secs and nsecs, variable arrays will be created with size 0 and
 fixed-length arrays will be created with the given size, and submessages
 will be recursively initialized by these same rules.
@@ -100,7 +100,7 @@ will be recursively initialized by these same rules.
 
 Because rosjava currently wraps roscpp via JNI, it requires header files
 and shared libraries only provided with the Java Development Kit (JDK).
-You will need a copy of the JDK (version \>= 5) installed to compile or
+You will need a copy of the JDK (version >= 5) installed to compile or
 run rosjava and any nodes that depend on it.
 [client_rosjava](client_rosjava) contains a rosdep.yaml file so that
 rosdep should work as expected.
@@ -112,7 +112,7 @@ e.g.,:
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
-``` Once you\'ve installed the JDK and maybe set
+``` Once you've installed the JDK and maybe set
 your JAVA_HOME, you should be ready to build and use existing rosjava
 nodes. To test this out, assuming you have already downloaded and build
 ROS, you should be able to:
@@ -121,19 +121,19 @@ ROS, you should be able to:
 roscd test_rosjava
 make test
 ``` and see a bunch of printouts, followed by a
-successful test result. If things don\'t build or run properly, you
-probably have a bad version of Java installed or haven\'t set your
+successful test result. If things don't build or run properly, you
+probably have a bad version of Java installed or haven't set your
 JAVA_HOME correctly.
 
 When running rosjava nodes, you should always use the provided scripts
 (which can be autogenerated, see the next section) rather than directly
-launching them via the \"java\" command. This is because two
+launching them via the "java" command. This is because two
 environmental variables need to be set for rosjava nodes to run
 correctly. First, rosjava nodes need to be able to dynamically link to
-the rosjava JNI library: LD_LIBRARY_PATH= \<rosjava\>/bin. Second,
+the rosjava JNI library: LD_LIBRARY_PATH= <rosjava>/bin. Second,
 roscpp installs signal handlers that can interfere with the Java virtual
-machine\'s handlers, causing unexpected and hard-to-diagnose problems.
-To avoid this, you need to set LD_PRELOAD=\"path to libjsig.so\", which
+machine's handlers, causing unexpected and hard-to-diagnose problems.
+To avoid this, you need to set LD_PRELOAD="path to libjsig.so", which
 is part of the JDK distribution.
 
 ### Creating new rosjava packages
@@ -156,24 +156,24 @@ directory of the current package.
 ```
 rospack_add_java_executable(<exec-name> <class-name>)
 ``` . This will generate a script in
-bin/\<exec-name\> that automatically sets the proper environmental
+bin/<exec-name> that automatically sets the proper environmental
 variables, then launches java on your class with the proper classpath.
 
 -   Currently, rosjava provides several additional parameters for
-    \`javac\` and the generated wrapper script. These macros are:
--   \`add_classpath(path)\`: Add a classpath to be used by javac (only
+    `javac` and the generated wrapper script. These macros are:
+-   `add_classpath(path)`: Add a classpath to be used by javac (only
     at build time)
--   \`add_runtime_classpath(path)\`: Add a classpath to be used by the
+-   `add_runtime_classpath(path)`: Add a classpath to be used by the
     wrapper script
--   \`add_jar_dir(dir)\`: Add all jar files under a given directory to
+-   `add_jar_dir(dir)`: Add all jar files under a given directory to
     the classpath
--   \`add_jni_path(dir)\`: Add all the .jnilib files under a given
+-   `add_jni_path(dir)`: Add all the .jnilib files under a given
     directory to the classpath
--   \`add_ld_preload(lib)\`: Add a library to LD_PRELOAD in the wrapper
+-   `add_ld_preload(lib)`: Add a library to LD_PRELOAD in the wrapper
     script
 -   You can append additional entries to the compile and runtime
     classpath by setting the environment variable
-    \`ROSJAVA_AUX_CLASSPATH\`
+    `ROSJAVA_AUX_CLASSPATH`
 
 Currently, there is no support for more advanced features, such as
 setting JVM arguments. Patches are always welcome!
@@ -233,7 +233,7 @@ export JAVA_HOME=/usr/lib/jvm/java-6-sun/
 ```
 export JAVA_HOME=/usr/lib/jvm/java-6-sun/
 ```1 (this could be made less ugly by importing the
-String message class, except that in this case it clashes with Java\'s
+String message class, except that in this case it clashes with Java's
 built-in String type.)
 
 -   Calling a service

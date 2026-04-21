@@ -14,7 +14,7 @@ If outside of ros, you will also need to link to *ecl_statistics*.
 
 ## Tutorials
 
-Currently we\'ve only implemented simple, fast algorithms for 2x2, 3x3
+Currently we've only implemented simple, fast algorithms for 2x2, 3x3
 covariance matrices.
 
 -   [Covariance Ellipsoids](ecl_statistics/Tutorials/Covariance Ellipsoids) -

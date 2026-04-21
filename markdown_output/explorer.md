@@ -37,13 +37,13 @@ narrowed subset of elements.
 
 As a single robot explores, communicational capabilities are irrelevant
 and exploration strategy is uncoordinated. Frontiers are therefore
-detected and selected according to \"Nearest Frontier\" strategy. The
+detected and selected according to "Nearest Frontier" strategy. The
 following video depicts single robot exploration utilizing Stage and
-\"Nearest Frontier\" strategy. Robots detect frontiers and represent
+"Nearest Frontier" strategy. Robots detect frontiers and represent
 them accordingly as red spheres in RVIZ, indicating selected frontiers
 as pink sphere.
 
-\<\<Youtube(5mU1wE69z3I?rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=5mU1wE69z3I?rel=0)
 
 ### Multi Robot Exploration
 
@@ -58,7 +58,7 @@ two robots explore an environment emulated by Stage, where one robot is
 depicted in RVIZ visualizing clusters, frontiers and selected goal
 points.
 
-\<\<Youtube(md29t2Xbdug?rel=0)\>\>
+[Youtube](https://www.youtube.com/watch?v=md29t2Xbdug?rel=0)
 
 ## Related Documentation
 

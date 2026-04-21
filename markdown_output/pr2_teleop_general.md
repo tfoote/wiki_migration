@@ -1,4 +1,4 @@
-Note: This package originated as \`pr2_teleop_booth\` and wasn\'t
+Note: This package originated as `pr2_teleop_booth` and wasn't
 released before [ROS Hydro](hydro).
 
 ## Overview
@@ -46,7 +46,7 @@ the arms.
 
 ### Pairing
 
-Before use, the PS3 controller must be \"paired\" with the robot. If
+Before use, the PS3 controller must be "paired" with the robot. If
 your controller is not already paired, you can pair it by pressing the
 center button, shown in the image.
 
@@ -75,7 +75,7 @@ the torso.
 
 This mode permits the operator to control the head, control the tilt of
 the laser, turn the projected light display on or off, and to set the
-\"follow me\" mode.
+"follow me" mode.
 
 #### Arm control mappings
 

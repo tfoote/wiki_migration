@@ -4,7 +4,7 @@ The official ROS driver for Xsens industrial Motion Trackers (MTi) can
 be found in the Linux installation package of the
 [MT Software Suite](https://www.xsens.com/mt-software-suite/) (versions
 2019.0 and later). Extract the downloaded installation package, execute
-the mtsdk_linux-x##\_####.#.sh and locate the xsens_ros_mti_driver
+the mtsdk_linux-x##_####.#.sh and locate the xsens_ros_mti_driver
 folder.
 
 Full documentation for the ROS node and XDA library is available at:
@@ -14,7 +14,7 @@ Full documentation for the ROS node and XDA library is available at:
 ## Supported devices
 
 This ROS driver is actively supported and maintained in order to be
-compatible with the latest generation MTi\'s.
+compatible with the latest generation MTi's.
 
 -   MTi 1-series
 -   MTi 10-series
@@ -35,7 +35,7 @@ connecting, packet parsing and log file handling. The implementation of
 this driver is done in C/C++, so you can build and run it on a different
 platforms. You can also configure an MTi using Public XDA by extending
 XdaInterface class, for more information about how to do that have a
-look at the \'Public XDA receive data example\', found in the MT SDK
+look at the 'Public XDA receive data example', found in the MT SDK
 folder of the MT Software Suite.
 
 ## Requirements
@@ -51,7 +51,7 @@ folder of the MT Software Suite.
 -   Configure your MTi device to output desired data (e.g. orientation
     output) using MT Manager or the MT SDK example codes.
 -   Copy xsens_mti_driver folder from your MT SDK directory into your
-    catkin workspace \'src\' folder. Make sure the permissions are set
+    catkin workspace 'src' folder. Make sure the permissions are set
     to o+rw on your files and directories. For details on creating a
     catkin workspace environment refer to
     [Creating a workspace for catkin](catkin/Tutorials/create_a_workspace).
@@ -102,7 +102,7 @@ To change the configuration of the Xsens MTi node you can edit the
 not configured to output the corresponding data messages. Refer to the
 **Workflow** section of this page for more details.
 
--   ***imu/data*** (sensor_msgs/Imu)\
+-   **`'imu/data`**' (sensor_msgs/Imu)\
     quaternion, angular velocity and linear acceleration
 -   ***imu/acceleration* **(geometry_msgs/Vector3Stamped)\
     calibrated linear acceleration
@@ -110,28 +110,28 @@ not configured to output the corresponding data messages. Refer to the
     calibrated angular velocity
 -   ***imu/mag* **(geometry_msgs/Vector3Stamped)\
     calibrated magnetic field
--   ***imu/dq*** (geometry_msgs/QuaternionStamped)\
+-   **`'imu/dq`**' (geometry_msgs/QuaternionStamped)\
     integrated angular velocity from sensor (in quaternion
     representation)
 -   ***imu/dv* **(geometry_msgs/Vector3Stamped)\
     integrated linear acceleration from sensor
--   ***imu/time_ref ***(sensor_msgs/TimeReference)\
+-   **`'imu/time_ref `**'(sensor_msgs/TimeReference)\
     timestamp from device
--   ***filter/quaternion*** (geometry_msgs/QuaternionStamped)\
+-   **`'filter/quaternion`**' (geometry_msgs/QuaternionStamped)\
     quaternion from filter
--   ***filter/free_acceleration*** (geometry_msgs/Vector3Stamped)\
+-   **`'filter/free_acceleration`**' (geometry_msgs/Vector3Stamped)\
     linear acceleration from filter
 -   ***filter/twist** *(geometry_msgs/TwistStamped)\
     velocity and angular velocity
--   ***filter/positionlla*** (geometry_msgs/Vector3Stamped)
+-   **`'filter/positionlla`**' (geometry_msgs/Vector3Stamped)
     (MTSS2019.3.2 and later)\
     filtered position output in latitude (x), longitude (y) and
     altitude (z) as Vector3
--   ***filter/velocity*** (MTSS2019.3.2 and later)\
+-   **`'filter/velocity`**' (MTSS2019.3.2 and later)\
     filtered velocity output as Vector3
--   ***temperature*** (sensor_msgs/Temperature)\
+-   **`'temperature`**' (sensor_msgs/Temperature)\
     temperature from device
--   ***pressure*** (sensor_msgs/FluidPressure)\
+-   **`'pressure`**' (sensor_msgs/FluidPressure)\
     barometric pressure from device
 -   ***gnss** *(sensor_msgs/NavSatFix)\
     raw 4 Hz latitude, longitude, altitude and status data from GNSS
@@ -182,7 +182,7 @@ crw-rw---- 1 root dialout 188, 0 May  6 16:21 /dev/ttyUSB0
 $ groups
 
 dialout audio video usb users plugdev
-``` If you aren\'t in the correct group, you can
+``` If you aren't in the correct group, you can
 fix this in two ways:
 
 1\) Add yourself to the correct group. You can add yourself to it by
@@ -209,7 +209,7 @@ adm, plugdev, or usb). .
 When having problems with the device being busy the first 20 seconds
 after plugin, purge the modemmanager application.
 
-**RViz doesn\'t show an MTi model.**\
+**RViz doesn't show an MTi model.**\
 It is a known issue with urdfdom in ROS Melodic. A workaround is to
 unset/modify the LC_NUMERIC environment variable:
 
@@ -217,7 +217,7 @@ unset/modify the LC_NUMERIC environment variable:
 $ catkin_make
 ```2
 
-**Error \"Skipping incompatible xxx when searching for xxx\" after
+**Error "Skipping incompatible xxx when searching for xxx" after
 catkin_make.**\
 Try inserting the following at the end of your CMakeLists.txt:
 ```

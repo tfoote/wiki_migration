@@ -194,7 +194,7 @@ prov_tf {
 
 The recommended way to configure the Serializer node is to use a YAML
 file specifying the required parameters. A sample parameter file called
-\`sample_params.yaml\` is included in the distribution and is shown
+`sample_params.yaml` is included in the distribution and is shown
 below. Note that many of the parameters are commented out and must be
 set and un-commented before you can use the node with your Serialzier:
 
@@ -258,7 +258,7 @@ rosparam delete /serializer
 <!-- -->
 ```
 -   Most of the Serializer functions have been implemented though a few
-    have not been tested since I don\'t currently have some of the
+    have not been tested since I don't currently have some of the
     supported sensors. The functions that have NOT been tested are:
 
 ```{=html}

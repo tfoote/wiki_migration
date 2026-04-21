@@ -4,13 +4,13 @@ This package provides a way to control the thrust output
 
 ## Details
 
-\'q\' - quit
+'q' - quit
 
-\'w\' - Throttle Up
+'w' - Throttle Up
 
-\'s\' - Throttle Down
+'s' - Throttle Down
 
-\'z\' - Zero Throttle
+'z' - Zero Throttle
 
 ## Known Bugs
 

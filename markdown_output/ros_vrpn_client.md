@@ -49,7 +49,7 @@ $ rostopic hz /Trackable1/pose
 1\. Every tracked object has a coord frame whose TF name is the name of
 the ros node (given from the launch file or command line).
 
--   Hitting \"Reset To Current Orientation\" in the Tracking Tools
+-   Hitting "Reset To Current Orientation" in the Tracking Tools
     software (Trackable properties) aligns the object coord frame with
     the /optitrak frame.
 

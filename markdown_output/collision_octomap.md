@@ -6,16 +6,16 @@ NOTE: At *this* point, this package has been superseded by
 
 ## Overview
 
-This package contains the \`collision_octomap_node\` node, which builds
+This package contains the `collision_octomap_node` node, which builds
 a 3D representation of sensed data, much like
 [collision_map](collision_map). In fact, this node is designed to be a
-\"drop-in\" replacement for \`collision_map_node\`. The difference
-between the two is that \`collision_octomap_node\` maintains its
+"drop-in" replacement for `collision_map_node`. The difference
+between the two is that `collision_octomap_node` maintains its
 internal representation as an octree of free and occupied space, using
 the [octomap2](octomap2) library. This allows the generation collision
 maps in a large volume, whereas the implementation of
 [collision_map](collision_map) only maintains a collision map in the
-space currently visible to the robot\'s sensors.
+space currently visible to the robot's sensors.
 
 [Youtube](https://www.youtube.com/watch?v=l6u06j_VsXc)
 
@@ -25,7 +25,7 @@ The sensor sources can be any point cloud of type PointCloud. However,
 for reasons explained below, sources that contain a very large number of
 points and update relatively rapidly, such as stereo vision points,
 should not be used. The overall point cloud insertion time for
-\`collision_octomap_node\` is much longer than for \`collision_map\`
+`collision_octomap_node` is much longer than for `collision_map`
 because it uses the octree representation, which needs to clear out
 freespace as well as inserting occupied cells. If large, rapidly
 updating point clouds need to be temporarily incorporated into the
@@ -36,17 +36,17 @@ them into the octree.
 
 ### Development Note
 
-\`collision_octomap_node\` publishes the exact same type of the 3D
-collision map as \`collision_map\`, so its output can be used directly
+`collision_octomap_node` publishes the exact same type of the 3D
+collision map as `collision_map`, so its output can be used directly
 by other nodes for collision checking. However,
-\`collision_octomap_node\` will typically publish its collision map in a
-world frame (odom_combined, map, etc.) whereas \`collision_map\`
+`collision_octomap_node` will typically publish its collision map in a
+world frame (odom_combined, map, etc.) whereas `collision_map`
 publishes in the base_link frame. While testing
-\`collision_octomap_node\`, I noticed that some of the other nodes that
+`collision_octomap_node`, I noticed that some of the other nodes that
 process the collision map would occasionally time out trying to convert
 the collision map from the world frame, causing poor performance for
-things like arm collision checking. I\'m not sure if this was because I
-was heavily loading the system with other processes as well, but it\'s
+things like arm collision checking. I'm not sure if this was because I
+was heavily loading the system with other processes as well, but it's
 something to look out for.
 
 ## ROS API
@@ -129,8 +129,8 @@ sub{
 
 ## Example Usage
 
-The \`collision_octomap_node\` should be launched the same way as as
-\`collision_map_node\`. An example launch file is shown below.
+The `collision_octomap_node` should be launched the same way as as
+`collision_map_node`. An example launch file is shown below.
 
 ```
 <launch>
@@ -151,13 +151,13 @@ The \`collision_octomap_node\` should be launched the same way as as
 </launch>
 ```
 
-In the above launch file, we are using the \"map\" fixed frame, which is
+In the above launch file, we are using the "map" fixed frame, which is
 provided by the navigation stack. Make sure you launch some flavor of
 the navigation stack if you wish to use the map frame, otherwise use
-something like \"odom_combined\". If you want to insert laser snapshots
+something like "odom_combined". If you want to insert laser snapshots
 (recommended) instead of individual laser scans, you should configure
 your assembler with the same fixed frame used by
-\`collision_octomap_node\`. Example launch file below.
+`collision_octomap_node`. Example launch file below.
 
 ```
 <launch>

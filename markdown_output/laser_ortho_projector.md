@@ -40,12 +40,12 @@ laser scan, in a base frame of the robot. Next, we discard the z-values
 of the points, to obtain the set of points in the horizontal plane.
 
 We also calculate a transformation between the world frame and a
-orthogonally-projected base frame of the robot (labeled \`/base_ortho\`
+orthogonally-projected base frame of the robot (labeled `/base_ortho`
 in the figure above), and publish it as a [tf](tf) transform.
 
 Note that projecting the scan from an arbitrary roll and pitch results
 in points that are no longer equal angles apart. Thus, we pubish the
-projected scan as a \<\<MsgLink(pcl/PointCloudXYZ)\>\>. The point cloud
+projected scan as a <<MsgLink(pcl/PointCloudXYZ)>>. The point cloud
 is published in the base_ortho frame of reference.
 
 ## Example
@@ -74,8 +74,8 @@ displayed in [rviz](rviz), similar to the video below:
 
 ## Nodes & Nodelets
 
-Two drivers are available: \`laser_ortho_projector_node\` and
-\`laser_ortho_projector_nodelet\`. Their parameters and topics are
+Two drivers are available: `laser_ortho_projector_node` and
+`laser_ortho_projector_nodelet`. Their parameters and topics are
 identical.
 
 ```clearsilver

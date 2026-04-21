@@ -59,7 +59,7 @@ ros/launch to the wanted algorithms and settings.
     are used as edge weights for the TSP solver. For this you can set
     this parameter to reduce the size of the map, which speeds up the
     pathfinding. The originally sized map is checked, if no path for the
-    downsampled map could be found. **Range**: 0\<factor\<=1
+    downsampled map could be found. **Range**: 0<factor<=1
 -   check_accessibility_of_rooms: Choose if you want the action server
     to check which given roomcenters are accessible from the starting
     position.
@@ -105,13 +105,13 @@ based on ipa_building_msgs/RoomSequence.msg and gives for each clique
 
 -   room_indices: The room indices, corresponding to the positions in
     room_information_in_pixel, belonging to this clique.
--   checkpoint_position_in_pixel/..\_in_meter: The trolley location for
+-   checkpoint_position_in_pixel/.._in_meter: The trolley location for
     this clique.
 
 A Client also can change the parameters of the server by using
 dynamic_reconfigure. This can be done using the
 dynamic_reconfigure_client.h file that provides a client for this
-purpose. With client.setConfig(\"param_name\", value) one specific
+purpose. With client.setConfig("param_name", value) one specific
 parameter can be changed from the client, see
 ros/src/room_sequence_planning_action_client.cpp for an example. Of
 course rqt_reconfigure can also be used to change specific parameters.

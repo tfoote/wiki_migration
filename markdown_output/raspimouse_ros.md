@@ -2,7 +2,7 @@
 
 日本語版wikiは[こちら](http://wiki.ros.org/ja/raspimouse_ros)です。
 
-![\|align=\"right\",width=\"250\"](attachment:raspberrypimouse.png)
+![\|align="right",width="250"](attachment:raspberrypimouse.png)
 
 ## Charastaristics
 
@@ -17,8 +17,8 @@
 -   Device Driver
 -   <https://github.com/rt-net/RaspberryPiMouse>
 -   ROS Package
--   maintained package for the book \"Raspberry Piで学ぶ
-    ROSロボット入門\"
+-   maintained package for the book "Raspberry Piで学ぶ
+    ROSロボット入門"
 -   <https://github.com/ryuichiueda/raspimouse_ros>
 -   current version package for ROS Kinetic, Melodic, Noetic
 -   <https://github.com/ryuichiueda/raspimouse_ros_2>

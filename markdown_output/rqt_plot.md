@@ -11,10 +11,10 @@ OR
 
 ```
 $ rosdep install rqt_plot
-``` Also if you\'re on Ubuntu and like to know the
-most recommended plotting result, simply get a \`.deb\` file of
-\`pyqtgraph\` [here](http://www.pyqtgraph.org/), which is not available
-via \`rosdep\`. And run it by something like:
+``` Also if you're on Ubuntu and like to know the
+most recommended plotting result, simply get a `.deb` file of
+`pyqtgraph` [here](http://www.pyqtgraph.org/), which is not available
+via `rosdep`. And run it by something like:
 
 ```
 $ dpkg -i %NAME_OF_DOT_DEB_FILE%.deb
@@ -39,7 +39,7 @@ $ rostopic list
 
 ### To give topic names to plot
 
-There are two ways to give the topic names to \`rqt_plot\` as explained
+There are two ways to give the topic names to `rqt_plot` as explained
 in following sections. In both ways, topics that are set in previous run
 is resumed (as far as the program was shut down without error).
 
@@ -55,49 +55,49 @@ plot, you need to restart the program and give the new topic names.
 
 #### From GUI
 
-Type in the \"Topic\" input field the full path of the topic name, and
-press \"+\" button.
-![\|width=\"100%\"](attachment:ROS/Tutorials/UnderstandingTopics/rqt_plot.png)
+Type in the "Topic" input field the full path of the topic name, and
+press "+" button.
+![\|width="100%"](attachment:ROS/Tutorials/UnderstandingTopics/rqt_plot.png)
 
-\"Topic\" field auto-completes the topic name (although it\'s not fully
+"Topic" field auto-completes the topic name (although it's not fully
 working as noticed).
 
 #### Note for the input value syntax
 
 The input value should be the full path to the value, not only the topic
-name. E.g., in above case the topic \`/turtle1/pose/x\` is a member
-\"x\" in a published topic \"/turtle1/pose\", which is defined as
-[\"turtlesim/Pose\" message](http://docs.ros.org/kinetic/api/turtlesim/html/msg/Pose.html).
+name. E.g., in above case the topic `/turtle1/pose/x` is a member
+"x" in a published topic "/turtle1/pose", which is defined as
+["turtlesim/Pose" message](http://docs.ros.org/kinetic/api/turtlesim/html/msg/Pose.html).
 
 New short example to show this; say you want to plot a topic called
-position \`x\` of \`/your_robot/pose\` topic, which is a type of
+position `x` of `/your_robot/pose` topic, which is a type of
 [geometry_msgs/Pose](http://docs.ros.org/api/geometry_msgs/html/msg/Pose.html)
-message. This can be plotted by \`/your_robot/pose/position/x\`.
+message. This can be plotted by `/your_robot/pose/position/x`.
 Possiblly you can figure out this plot name by following steps like
 this:
 
 -   [geometry_msgs/Pose](http://docs.ros.org/api/geometry_msgs/html/msg/Pose.html)
-    contains a member \`position\`. Look into its definition by clicking
-    the link at \`geometry_msgs/Point\` in the api page.
--   You see \`x\` as a member of \`geometry_msgs/Point\`.
+    contains a member `position`. Look into its definition by clicking
+    the link at `geometry_msgs/Point` in the api page.
+-   You see `x` as a member of `geometry_msgs/Point`.
 
 ### To choose plotting backend type
 
-Currently \`rqt_plot\` has three plotting backend options (**numbered in
+Currently `rqt_plot` has three plotting backend options (**numbered in
 recommended order**) which can be configured using the setting dialog
 available via the gear icon in the window title bar:
 
-1\. [pyqtgraph](http://www.pyqtgraph.org/) (fast and needs \`pyqtgraph\`
-to be manually installed which is not in the \`Ubuntu\` binary
+1\. [pyqtgraph](http://www.pyqtgraph.org/) (fast and needs `pyqtgraph`
+to be manually installed which is not in the `Ubuntu` binary
 repository as of Sep 2013) 1. [matplotlib](http://matplotlib.org/) (slow
-but always available) 1. \`qwt plot\` (fast, but not using message
+but always available) 1. `qwt plot` (fast, but not using message
 timestamps and needs python-qwt bindings)
 
 By default, backend option is chosen in the order above; the first one
-found on your system gets used (eg. if your system has \`matplotlib\`
-but not \`pyqtgraph\`, your \`rqt_plot\` runs with the \`matplotlib\`).
+found on your system gets used (eg. if your system has `matplotlib`
+but not `pyqtgraph`, your `rqt_plot` runs with the `matplotlib`).
 
-User can also select one of them from GUI; click \"gear\" icon next to
+User can also select one of them from GUI; click "gear" icon next to
 question symbol and a dialog should pop up.
 
 ### Zoom out on time axis
@@ -115,9 +115,9 @@ Check the following:
     [sensor_msgs/JointState/position](http://www.ros.org/doc/api/sensor_msgs/html/msg/JointState.html))
 -   specify an array index
     ([see this thread](http://answers.ros.org/question/60194/oddity-in-rxplot/?answer=60203#post-id-60203))
--   You didn\'t give the full path of your topic
+-   You didn't give the full path of your topic
 -   Topic is not being published
--   Use [rqt_topic](rqt_topic) to see the \`topic\`s being published.
+-   Use [rqt_topic](rqt_topic) to see the `topic`s being published.
 -   You are plotting data from a bag file?
 -   [Use simulation time.](http://wiki.ros.org/Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
 

@@ -34,7 +34,7 @@ roslaunch elp_stereo_camera elp_stereo_camera.launch
 roslaunch elp_stereo_camera stereo_image_proc.launch
 ``` You now have available topics such as
 `/elp/left/image_rect_color`, `/elp/left/image_rect_color`, and
-`/elp/points2`. You\'ll likely also want to include the
+`/elp/points2`. You'll likely also want to include the
 `elp_stereo_camera` macro in your urdf file. Look at the
 [elp_standalone.urdf.xacro](https://github.com/joshvillbrandt/elp-stereo-camera-ros-pkg/blob/master/description/elp_standalone.urdf.xacro)
 file in the source code for an example of how to do that.
@@ -45,9 +45,9 @@ the included rviz configuration:
 ```
 # terminal 3
 roslaunch elp_stereo_camera rviz.launch
-``` Click the \"Point Cloud\" saved camera view in
+``` Click the "Point Cloud" saved camera view in
 the Views pane on the right. You should now be able to your objects in
-3D! Keep in mind that objects closer than 70 cm won\'t show up in the
+3D! Keep in mind that objects closer than 70 cm won't show up in the
 point cloud with this particular camera.
 
 ![rviz screenshot](attachment:rviz-screenshot.jpg)
@@ -75,7 +75,7 @@ four key attributes: X, Y, size, and skew. Hold the checkerboard up in
 front of the cameras and vary each of the parameters. (So move the
 checkerboard left and right, up and down, father and closer, and at
 different angles.) Make sure that the entire calibration grid stays
-within view of both cameras. You\'ll know the calibration process is
+within view of both cameras. You'll know the calibration process is
 working when you can see a colored grid in each camera view and when the
 size of attribute bars are increasing.
 
@@ -84,11 +84,11 @@ size of attribute bars are increasing.
 When the calibration process has gathered enough information about a
 particular attribute, the corresponding bar will turn green. With
 practice, the calibration process should take about one minute to
-complete. Hit the \"calibrate\" button once all four bars are green.
+complete. Hit the "calibrate" button once all four bars are green.
 After a few moments, new rectified images should be displayed.
 Real-world straight edges should now appear straight in the video feed.
 
-Hit the \"commit\" button to complete the process. This saves the
+Hit the "commit" button to complete the process. This saves the
 calibration information locally to `~/.ros/camera_info/`. Check out
 [elp_stereo_camera.launch](https://github.com/joshvillbrandt/elp-stereo-camera-ros-pkg/blob/master/launch/elp_stereo_camera.launch)
 for an example of how to specify the calibration files.

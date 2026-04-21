@@ -18,7 +18,7 @@ tested. Eigen should be installed properly (located in
 dependencies. Install Orocos KDL with sudo apt-get install
 ros-fuerte-orocos-kinematics-dynamics (some more dependencies could
 occur) Now check out this repository and rosmake the ros_lfd_lat
-package. If he can\'t find any packages while making, please install
+package. If he can't find any packages while making, please install
 them. rosmake the fake_or package, if you need it.
 
 If you want to use the Katana 300 copy the katana package from this

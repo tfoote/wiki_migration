@@ -20,7 +20,7 @@ The following table lists all supported drive modes and their data
 objects. The objects used should be mapped to PDOs.
 
   -- --------------------------------- -- -------- -- ------------------- -- ---------------------------- -- ---------------- --
-     \<tablewidth=\"100%\"\>**Name**      **ID**      **target object**      **RPDO mapping parameter**      comments         
+     <tablewidth="100%">**Name**      **ID**      **target object**      **RPDO mapping parameter**      comments         
      Profiled Position                    1           607A                   0x607a0020                                       
      Velocity                             2           6042                   ﻿0x60420010                                       
      Profiled Velocity                    3           60FF                   0x60ff0020                                       
@@ -64,7 +64,7 @@ tested*
 ### SCHUNK
 
   -- --------------------------------------------------------------------------------------------------------------- -- ------ -- ------ -- ---- -- ---- -- ------ -- ------ -- ----- -- ----- -- ----- --
-     \<tablewidth=\"100%\"\>Device Name                                                                                 PP        VL        PV      PT      HM        IP        CSP      CSV      CST   
+     <tablewidth="100%">Device Name                                                                                 PP        VL        PV      PT      HM        IP        CSP      CSV      CST   
      [SCHUNK LWA4D](http://mobile.schunk-microsite.com/en/produkte/produkte/dextrous-lightweight-arm-lwa-4d.html)       (./)      (./)      \-      \-      ?         (./)      \-       \-       \-    
      [SCHUNK LWA4P](http://mobile.schunk-microsite.com/en/produkte/produkte/powerball-lightweight-arm-lwa-4p.html)      (./)      (./)      \-      \-      ?         (./)      \-       \-       \-    
      [PG+ 70](http://mobile.schunk-microsite.com/en/produkte/produkte/pg-plus-70-2-finger-parallel-gripper.html)        (./)      (./)      \-      \-      (./)      (./)      \-       \-       \-    
@@ -74,13 +74,13 @@ tested*
 ### ELMO
 
   -- ---------------------------------------------------------------------------------- -- ------ -- ---- -- ------ -- ---- -- ------ -- ------ -- ----- -- ----- -- ----- --
-     \<tablewidth=\"100%\"\>Device Name                                                    PP        VL      PV        PT      HM        IP        CSP      CSV      CST   
+     <tablewidth="100%">Device Name                                                    PP        VL      PV        PT      HM        IP        CSP      CSV      CST   
      [Elmo Whistle Gold](http://www.elmomc.com/products/whistle-servo-drive-gold.htm)      (./)      \-      (./)      ?       (./)      (./)      ?        ?        ?     
   -- ---------------------------------------------------------------------------------- -- ------ -- ---- -- ------ -- ---- -- ------ -- ------ -- ----- -- ----- -- ----- --
 
 ### maxon
 
   -- ------------------------------------------- -- ------ -- ---- -- ------ -- ---- -- ------ -- ---- -- ------ -- ----- -- ----- --
-     \<tablewidth=\"100%\"\>Device Name             PP        VL      PV        PT      HM        IP      CSP       CSV      CST   
+     <tablewidth="100%">Device Name             PP        VL      PV        PT      HM        IP      CSP       CSV      CST   
      [maxon EPOS4](http://epos.maxongroup.com)      (./)      \-      (./)      \-      (./)      \-      (./)      ?        ?     
   -- ------------------------------------------- -- ------ -- ---- -- ------ -- ---- -- ------ -- ---- -- ------ -- ----- -- ----- --

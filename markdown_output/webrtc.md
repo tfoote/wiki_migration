@@ -18,14 +18,14 @@ will be faster.
 
 ## Usage
 
-The \`webrtc\` package does not export any include directories,
+The `webrtc` package does not export any include directories,
 libraries, or compiler options directly. This is because there are a
 substantial number of options and libraries that may cause issues with
-other libraries. Instead \`webrtc\` exports a number of CMake variables
+other libraries. Instead `webrtc` exports a number of CMake variables
 that can be used. See [webrtc_ros](webrtc_ros) for example usage.
 
--   webrtc_LIBRARIES - target_link_libraries(\<target\>
+-   webrtc_LIBRARIES - target_link_libraries(<target>
     \${webrtc_LIBRARIES})
--   webrtc_INCLUDE_DIRS - target_include_directories(\<target\> PUBLIC
+-   webrtc_INCLUDE_DIRS - target_include_directories(<target> PUBLIC
     \${webrtc_INCLUDE_DIRS})
 -   webrtc_DEFINITIONS - preprocessor macro definitions

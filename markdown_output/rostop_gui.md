@@ -6,8 +6,8 @@ only available for local nodes running on the same computer as the rqt
 instance.
 
 The node list can be filtered using the text box at the top. Unless the
-\`regex\` box is checked, the node list will contain any node whose name
-contains the text in the filter box. If the \`regex\` box is checked,
+`regex` box is checked, the node list will contain any node whose name
+contains the text in the filter box. If the `regex` box is checked,
 the filter will be treated as a python-style regular expression, and the
 list will contain any node whose name matches the expression.
 
@@ -19,7 +19,7 @@ virtual memory for the node in mebibytes.
 
 This plugin requires a newer version of psutil than is available in the
 rosdep-supported version on Ubuntu Precise (12.04). A newer version is
-available from pip with \`pip install psutil\`.
+available from pip with `pip install psutil`.
 
 ## Screenshot
 

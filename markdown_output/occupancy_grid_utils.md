@@ -1,7 +1,7 @@
 ## Documentation
 
 This unary stack contains libraries for various operations on the
-\<\<MsgLink(nav_msgs/OccupancyGrid)\>\> type, specifically:
+<<MsgLink(nav_msgs/OccupancyGrid)>> type, specifically:
 
 -   Coordinate conversions between points, grid cell coordinates, and
     raw indices.

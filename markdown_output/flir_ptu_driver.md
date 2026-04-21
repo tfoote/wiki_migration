@@ -1,4 +1,4 @@
-![\|align=\"right\"](attachment:PTU-D46.png)
+![\|align="right"](attachment:PTU-D46.png)
 
 ## Overview
 
@@ -10,7 +10,7 @@ adaptable without too much trouble.
 
 ### URDF
 
-![\|width=\"200\",align=\"right\"](attachment:flir-ptu-frames.png)
+![\|width="200",align="right"](attachment:flir-ptu-frames.png)
 
 Alongside the basic serial driver, there is also included a URDF
 description of the D46. This is structured as a xacro macro, so it

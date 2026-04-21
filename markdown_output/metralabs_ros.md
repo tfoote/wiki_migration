@@ -1,9 +1,9 @@
 ## Documentation
 
 This package contains a driver that integrates !MetraLabs Scitos G5
-robots into ROS using !MetraLabs\' former *MLRobotic* libraries.
+robots into ROS using !MetraLabs' former *MLRobotic* libraries.
 
-If your Scitos is newer and *only* runs \"MIRA\" try
+If your Scitos is newer and *only* runs "MIRA" try
 [scitos_drivers](https://github.com/cburbridge/scitos_drivers) or
 [cognidrive_ros](https://github.com/benadler/cognidrive_ros)
 
@@ -17,7 +17,7 @@ If your Scitos is newer and *only* runs \"MIRA\" try
 -   publish sonar data as
     [Range message](http://ros.org/doc/api/sensor_msgs/html/msg/Range.html)
     with automatic sonar (de)activation when nodes (un)subscribe (to
-    disable sonar remove the \<sonar\> tag from the scitos-config-xml)
+    disable sonar remove the <sonar> tag from the scitos-config-xml)
 -   bumper status / reset supported via topics
 -   \...
 

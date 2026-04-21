@@ -6,17 +6,17 @@ This package allows you to control any robot that accepts
 geometry_msgs::Twist messages (usually, in a cmd_vel topic). It can use
 either (or both) keyboard and joystick as input. Besides controlling the
 robot, the input sources generate events
-(\<\<MsgLink(universal_teleop/Event)\>\>) which are user-defined
+(<<MsgLink(universal_teleop/Event)>>) which are user-defined
 text-based commands.
 
 While this node allows you to tele-operate a robot, it is intended to be
 used together with other nodes that autonomously control the robot. The
 universal_teleop node is designed so that, by default, it will not
 control the robot unless specified. This is done by mapping a keyboard
-key or joystick button to a special \"override\" event. When this
+key or joystick button to a special "override" event. When this
 key/button is pressed, the universal_teleop node will then start sending
 geometry_msgs::Twist messages to the robot. At the same time, this
-\"override\" event should be received by node that controls the robot
+"override" event should be received by node that controls the robot
 autonomously so that it can stop controlling the robot.
 
 Keyboard/joystick mappings and linear/angular velocity scales can be

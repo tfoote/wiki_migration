@@ -1,7 +1,7 @@
 # DCM Bringup for Romeo robot
 
 The package contains launch and configuration files required to bring
-the robot\'s DCM Driver up and start the robot controllers. The package
+the robot's DCM Driver up and start the robot controllers. The package
 allows to control a robot from ROS, while communicating with Naoqi. You
 can control the robot either by calling DCM commands or ALMotion (by
 default).

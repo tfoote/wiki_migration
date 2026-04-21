@@ -31,7 +31,7 @@ package [alica_turtle](alica_turtle).
     from within a generated
     [GetConstraint](http://cn-alica-ros-pkg.googlecode.com/git/AlicaEngine/doc/AlicaEngine/Alica/GetConstraint.html)
     method. This version of AutoDiff is an adaptation of
-    [Alex Shtof\'s AutoDiff](http://autodiff.codeplex.com/).
+    [Alex Shtof's AutoDiff](http://autodiff.codeplex.com/).
 -   The currently preferred solver for these constraints is
     [CGSolver](http://cn-alica-ros-pkg.googlecode.com/git/AlicaEngine/doc/CGSolver/Alica.Reasoner/CGSolver.html),
     however, direct interaction with the solver is never necessary.

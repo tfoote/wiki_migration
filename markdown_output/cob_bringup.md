@@ -1,4 +1,4 @@
-\`cob_bringup\` is a package that collects together the scripts,
+`cob_bringup` is a package that collects together the scripts,
 [roslaunch](roslaunch) files, and dependencies that are required to
 bring a Care-O-bot robot into a running state.
 

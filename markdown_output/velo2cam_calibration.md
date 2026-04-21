@@ -17,7 +17,7 @@ IEEE Transactions on Intelligent Transportation Systems, 2022
 **\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276) \]
 \[ [Preprint](https://arxiv.org/abs/2101.04431) \]**
 
-![\|width=\"750px\"](attachment:real_results.png)
+![\|width="750px"](attachment:real_results.png)
 
 # Setup
 
@@ -25,8 +25,8 @@ This software is provided as a ROS package. To install:
 
 1\. Clone the repository into your *catkin_ws/src*/ folder.
 
-2\. Install run dependencies: \`\`\`sudo apt-get install
-ros-\<distro\>-opencv-apps\`\`\`
+2\. Install run dependencies: ```sudo apt-get install
+ros-<distro>-opencv-apps```
 
 3\. Build your workspace
 [as usual](http://wiki.ros.org/ROS/Tutorials/BuildingPackages).
@@ -47,7 +47,7 @@ The following picture shows a possible embodiment of the proposed
 calibration target used by this algorithm and its corresponding
 dimensional drawing.
 
-![\|width=\"750px\"](attachment:calibration_target_real_scheme_journal.png)
+![\|width="750px"](attachment:calibration_target_real_scheme_journal.png)
 
 **Note:** Other size may be used for convenience. If so, please
 configure node parameters accordingly.

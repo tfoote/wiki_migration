@@ -53,7 +53,7 @@ $ rosrun nodelet nodelet standalone velodyne_height_map/HeightMapNodelet
 This launch file runs the height map nodelet in the same process with
 the Velodyne device driver and a
 [velodyne_pointcloud](velodyne_pointcloud) nodelet which publishes the
-points transformed into the \"/odom\" frame. *This approach minimizes
+points transformed into the "/odom" frame. *This approach minimizes
 data copying.*
 
 ```

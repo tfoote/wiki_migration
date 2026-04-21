@@ -523,34 +523,34 @@ dji_sdk.h, including Horizontal, Vertical, Yaw, Coordinate Frame, and
 the Breaking Mode.
 
   -- --------------------------------------- -- ------------------------------- -- ------------- -- ----------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\> Horizontal      description                        reference        limit                   
-     \<rowbgcolor=\"#e6f3ff\"\>0x00             Command roll and pitch angle       Ground/Body      0.611 rad (35 degree)   
-     \<rowbgcolor=\"#e6f3ff\"\>0x40             Command horizontal velocities      Ground/Body      30 m/s                  
-     \<rowbgcolor=\"#e6f3ff\"\>0x80             Command position offsets           Ground/Body      N/A                     
-     \<rowbgcolor=\"#e6f3ff\"\>0xC0             Command angular rates              Ground/Body      5&frasl;6&pi; rad/s     
+     <rowbgcolor="#FFFFE0"> Horizontal      description                        reference        limit                   
+     <rowbgcolor="#e6f3ff">0x00             Command roll and pitch angle       Ground/Body      0.611 rad (35 degree)   
+     <rowbgcolor="#e6f3ff">0x40             Command horizontal velocities      Ground/Body      30 m/s                  
+     <rowbgcolor="#e6f3ff">0x80             Command position offsets           Ground/Body      N/A                     
+     <rowbgcolor="#e6f3ff">0xC0             Command angular rates              Ground/Body      5&frasl;6&pi; rad/s     
   -- --------------------------------------- -- ------------------------------- -- ------------- -- ----------------------- --
 
   -- ------------------------------------- -- ---------------------------- -- ----------- -- ------------- --
-     \<rowbgcolor=\"#FFFFE0\"\> Vertical      description                     reference      limit         
-     \<rowbgcolor=\"#e6f3ff\"\>0x00           Command the vertical speed      Ground         -5 to 5 m/s   
-     \<rowbgcolor=\"#e6f3ff\"\>0x10           Command altitude                Ground         0 to 120 m    
-     \<rowbgcolor=\"#e6f3ff\"\>0x20           Command thrust                  Body           0% to 100%    
+     <rowbgcolor="#FFFFE0"> Vertical      description                     reference      limit         
+     <rowbgcolor="#e6f3ff">0x00           Command the vertical speed      Ground         -5 to 5 m/s   
+     <rowbgcolor="#e6f3ff">0x10           Command altitude                Ground         0 to 120 m    
+     <rowbgcolor="#e6f3ff">0x20           Command thrust                  Body           0% to 100%    
   -- ------------------------------------- -- ---------------------------- -- ----------- -- ------------- --
 
   -- -------------------------------- -- ------------------- -- ----------- -- --------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\> Yaw      description            reference      limit                 
-     \<rowbgcolor=\"#e6f3ff\"\>0x00      Command yaw angle      Ground         -&pi; to &pi;         
-     \<rowbgcolor=\"#e6f3ff\"\>0x08      Command yaw rate       Ground         5&frasl;6&pi; rad/s   
+     <rowbgcolor="#FFFFE0"> Yaw      description            reference      limit                 
+     <rowbgcolor="#e6f3ff">0x00      Command yaw angle      Ground         -&pi; to &pi;         
+     <rowbgcolor="#e6f3ff">0x08      Command yaw rate       Ground         5&frasl;6&pi; rad/s   
   -- -------------------------------- -- ------------------- -- ----------- -- --------------------- --
 
   -- --------------------------------------- -- ---------------------------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\> Coordinate      description                              
-     \<rowbgcolor=\"#e6f3ff\"\>0x00             Horizontal command is ground_ENU frame   
-     \<rowbgcolor=\"#e6f3ff\"\>0x02             Horizontal command is body_FLU frame     
+     <rowbgcolor="#FFFFE0"> Coordinate      description                              
+     <rowbgcolor="#e6f3ff">0x00             Horizontal command is ground_ENU frame   
+     <rowbgcolor="#e6f3ff">0x02             Horizontal command is body_FLU frame     
   -- --------------------------------------- -- ---------------------------------------- --
 
   -- ----------------------------------------- -- ------------------------------------------------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\> Active Break      description                                                   
-     \<rowbgcolor=\"#e6f3ff\"\>0x00               No active break                                               
-     \<rowbgcolor=\"#e6f3ff\"\>0x01               Actively break to hold position after stop sending setpoint   
+     <rowbgcolor="#FFFFE0"> Active Break      description                                                   
+     <rowbgcolor="#e6f3ff">0x00               No active break                                               
+     <rowbgcolor="#e6f3ff">0x01               Actively break to hold position after stop sending setpoint   
   -- ----------------------------------------- -- ------------------------------------------------------------- --

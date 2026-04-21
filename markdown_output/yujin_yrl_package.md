@@ -1,4 +1,4 @@
-![Yujin Robot\|width=30%,align=\"right\"](attachment:yujin.jpg)
+![Yujin Robot\|width=30%,align="right"](attachment:yujin.jpg)
 
 ## About Yujin LiDAR
 
@@ -11,8 +11,8 @@ and security.
 ## Supported Hardware
 
   -- --------------------- -- --------- ---------------------------------------------------------------------- --
-     \<30%\>                  \<70%\>                                                                          
-     • YRL2-05 (2D, 5m)       \<        6\>![Yujin Robot YRL\|width=50%](attachment:LiDAR_3D_Silver.192.png)   
+     <30%>                  <70%>                                                                          
+     • YRL2-05 (2D, 5m)       <        6>![Yujin Robot YRL\|width=50%](attachment:LiDAR_3D_Silver.192.png)   
      • YRL2-10 (2D, 10m)                                                                                       
      • YRL2-20 (2D, 20m)                                                                                       
      • YRL3-05 (3D, 5m)                                                                                        

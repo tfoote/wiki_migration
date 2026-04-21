@@ -10,7 +10,7 @@ that need direct access to the hardware should be using the PR2 hardware
 interface.
 
 -   **[Hardware Interface](http://www.ros.org/doc/api/pr2_hardware_interface/html/classpr2__hardware__interface_1_1HardwareInterface.html):**
-    The \`HardwareInterface\` class provides access to the PR2 hardware
+    The `HardwareInterface` class provides access to the PR2 hardware
     components that are controlled via EtherCAT. These components
     include:
 
@@ -40,7 +40,7 @@ interface.
 <!-- -->
 ```
 -   **[Digital out](http://www.ros.org/doc/api/pr2_hardware_interface/html/classpr2__hardware__interface_1_1DigitalOut.html):**
-    The PR2\'s motor controller boards have one or more digital I/O
+    The PR2's motor controller boards have one or more digital I/O
     pins. The digital I/Os can be used to control a variety of hardware
     such as a calibration LED or a camera trigger.
 

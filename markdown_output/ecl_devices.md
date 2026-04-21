@@ -3,12 +3,12 @@
 Devices provide a c++ interface (usually on top of a lower level api
 such as posix) for input-output manipulation.
 
-It\'s pretty hard to find a library that treats devices in anything but
+It's pretty hard to find a library that treats devices in anything but
 an ad-hoc way. There is no consistent interface. This attempts to bring
 that to the subset of devices that control systems use. It also allows
 hooking of streams to each and any of the devices. Also of interest,
 there are a few very theoretical approaches to writing c++ devices
-(sources, sinks, seekable, etc ..). The ecl\'s first version too was
+(sources, sinks, seekable, etc ..). The ecl's first version too was
 along these lines, but ultimately for control systems, being practical
 wins over syntactic correctness.
 
@@ -40,14 +40,14 @@ If outside ros, you will also need to link against *ecl_devices*.
 
 ## Examples
 
--   \`src/examples/serial_timeout.cpp\` : shows off the low latency
+-   `src/examples/serial_timeout.cpp` : shows off the low latency
     timeout code \[posix only\].
 
 These are in [ecl_core_apps](ecl_core_apps).
 
--   \`src/benchmarks/files.cpp\`
--   \`src/demos/socket_client.cpp\`
--   \`src/demos/socket_server.cpp\`
--   \`src/utils/hex.cpp\` : simple utility for reading/writing hex
+-   `src/benchmarks/files.cpp`
+-   `src/demos/socket_client.cpp`
+-   `src/demos/socket_server.cpp`
+-   `src/utils/hex.cpp` : simple utility for reading/writing hex
     across the serial cable.
--   \`src/utils/serial.cpp\` : simple serial testing utility.
+-   `src/utils/serial.cpp` : simple serial testing utility.

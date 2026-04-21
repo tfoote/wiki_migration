@@ -27,7 +27,7 @@ this simulator, the following parameters can be specified:
     understood as the *number of rays* to cover the scan window. A
     higher resolution means a more detailed cloud but a slower process.
 
-. ![\|width=\"450px\"](attachment:scanparams.png)
+. ![\|width="450px"](attachment:scanparams.png)
 
 ### About Software Development
 
@@ -64,7 +64,7 @@ roslaunch leica_gazebo_simulation c5_system_spawn.launch world:=assembly_line
 
 Place the Leica at your convenience.
 
-. ![\|width=\"450px\"](attachment:C5_simulator.jpg)
+. ![\|width="450px"](attachment:C5_simulator.jpg)
 
 The plugin created for LeicaScanstation C5 on Gazebo will publish
 LaserScan msg. Use laserscan_to_pointcloud to convert it to PointCloud2.

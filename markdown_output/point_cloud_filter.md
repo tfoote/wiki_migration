@@ -2,11 +2,11 @@
 
 ## Details
 
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> messages provide space for
+<<MsgLink(sensor_msgs/PointCloud)>> messages provide space for
 additional channels, allowing values such as confidence or intensity to
 be attached to each point in the cloud. The
 [point_cloud_filter](point_cloud_filter) reads in a
-\<\<MsgLink(sensor_msgs/PointCloud)\>\> message, and discards any points
+<<MsgLink(sensor_msgs/PointCloud)>> message, and discards any points
 whose channel value falls outside a specified threshold interval.
 
 ## Example

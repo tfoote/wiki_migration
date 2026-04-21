@@ -3,10 +3,10 @@
 Autonomous mobile robots produce an astonishing amount of run-time data
 during their operation. Data is acquired from sensors and actuator
 feedback, processed to extract information, and further refined as the
-basis for decision making or parameter estimation. In today\'s robot
+basis for decision making or parameter estimation. In today's robot
 systems, this data is typically volatile. It is generated, used, and
 disposed right away. However, some of this data might be useful later,
-for example to analyze faults or evaluate the robot\'s performance. A
+for example to analyze faults or evaluate the robot's performance. A
 system is required to store this data as well as enable efficient and
 flexible querying mechanisms.
 
@@ -32,7 +32,7 @@ long-term autonomous robots.
 ## How to get started
 
 You can obtain mongodb_log either via the official ROS repositories
-(e.g. \`apt install ros-melodic-mongodb-log\`) or install via source.
+(e.g. `apt install ros-melodic-mongodb-log`) or install via source.
 Source code is available with the
 [mongodb_store repository](https://github.com/strands-project/mongodb_store).
 The original source for the project can be found in
@@ -51,7 +51,7 @@ below to analyze this.
 
 The logger regularly creates graphs based an a round-robin database
 (RRD) using [RRDtool](http://oss.oetiker.ch/rrdtool/). Additionally, the
-\`mongodb_rrd\` script can be run to create graphs showing the
+`mongodb_rrd` script can be run to create graphs showing the
 performance of MongoDB. Example graphs look like the following.
 
 ![](http://www.fawkesrobotics.org/media/blog_images/robodb-rrd-opcounters-20101221.png)
@@ -68,7 +68,7 @@ there is a node to store all messags of one specific topic to the
 database, for another it provides a library for other nodes to interact
 with the database. This mongodb_log package compares to the former part.
 
-The \`record_to_db\` node of the [mongo_ros](mongo_ros) package stores
+The `record_to_db` node of the [mongo_ros](mongo_ros) package stores
 incoming messages as serialized blobs, much like rosbag does. This way,
 queries can only be made based on the time of the message. More powerful
 queries and usage of the data is only possible of a specific node has

@@ -38,7 +38,7 @@ sub {
 
 ### Train
 
-First, make \`dataset/traian\` directory in this pkg. Then move there.
+First, make `dataset/traian` directory in this pkg. Then move there.
 
 ```
 roscd target_object_detector
@@ -53,14 +53,14 @@ rosrun target_object_detector segment_cluster_creator_node
 ```
 
 Take a poingcloud by running the robot or play bag file include
-\`pointclioud2\` msg. You will get a lot of pcd files in the directory.
+`pointclioud2` msg. You will get a lot of pcd files in the directory.
 Next, classify the pcd files.
 
 ```
 rosrun target_object_detector train_data_create_tool
 ```
 
-After classified all pcd files, you will get \`train.csv\` in the
+After classified all pcd files, you will get `train.csv` in the
 directory. Third, making svm model.
 
 ```
@@ -78,12 +78,12 @@ roslaunch target_object_detector target_object_detector.launch
 
 #### Fake detaction
 
-You can utilied \`fake_target_detector\` to assume a target is virtually
+You can utilied `fake_target_detector` to assume a target is virtually
 detected, if you just check navigation behaivior **\*without actual
 human detection.**\*
 
 A virtually detected target human point can be set by clicking a point
-in a map with \`Publish point\` in \`Rviz\`.
+in a map with `Publish point` in `Rviz`.
 
 The following command shows a coordinate of clicked point.
 
@@ -91,7 +91,7 @@ The following command shows a coordinate of clicked point.
 rostopic echo /clicked_point
 ```
 
-Save the coordinate \`x, y\` to\`targetlist/targetlist.csv\` (\[a sample
+Save the coordinate `x, y` to`targetlist/targetlist.csv` (\[a sample
 file\](<https://github.com/CIR-KIT/human_detector/blob/mm/add/document/fake_target_detector/targetfiles/targetlist.csv>)).
 
 To place an virtual target, run the following command.
@@ -101,7 +101,7 @@ rosrun fake_target_detector fake_target_detector
 ```
 
 Bounding boxes will be showin at positions specified in
-\`targetlist.csv\` and the virtually detected positions are also to be
+`targetlist.csv` and the virtually detected positions are also to be
 published.
 
 #### Common specification

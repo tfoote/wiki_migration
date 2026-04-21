@@ -2,7 +2,7 @@ ROS driver for the [Innok Heros](Robots/Innok-Heros) robot plattform.
 
 {
 
-Make sure that the \`host\` parameter in \`heros_base.launch\` is set to
+Make sure that the `host` parameter in `heros_base.launch` is set to
 the correct address of your Heros (default host is 192.168.1.213).
 
 ## Nodes

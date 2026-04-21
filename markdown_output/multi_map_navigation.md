@@ -3,12 +3,12 @@
 ## Introduction
 
 Multi-map navigation allows multiple 2D maps to be linked together with
-\"transitions\" that allow the robot to travel between the two maps.
+"transitions" that allow the robot to travel between the two maps.
 This approach solves the problem of having large maps that are too big
-for the robot\'s memory or are too difficult to make in one SLAM
+for the robot's memory or are too difficult to make in one SLAM
 session. In addition, it allows for easy navigation of multi-floor
 buildings. Each of the transitions can lead to the execution of a
-separate program via \"transition\" actions as it is taken. This allows
+separate program via "transition" actions as it is taken. This allows
 the operation of door opening software or elevator management software.
 
 ## Map Creation
@@ -60,18 +60,18 @@ wormholes:
 The wormholes tag specifies the list of transitions. The -name: elements
 may be repeated to define as many transitions as you wish. The name of
 each transition (hallway-door) in this case, must be unique. The
-\"type:\" tag describes the type of transition, which may be normal or
+"type:" tag describes the type of transition, which may be normal or
 the name of a transition action (see below on creating your own
-transition). The \"radius:\" tag defines the limits to the radius, a
+transition). The "radius:" tag defines the limits to the radius, a
 circle which the robot must enter to travel through the transition - if
 it is omitted, then the robot will attempt to get all the way to the
 location before executing the transition. In addition to these
 parameters, the location may contain other parameters that are fed to
 the transition action, so long as they do not conflict with
-\"locations\", \"name\", and \"radius\" at the will of the transition
+"locations", "name", and "radius" at the will of the transition
 action writer.
 
-The \"locations:\" tag begins a list of locations, and each of the two
+The "locations:" tag begins a list of locations, and each of the two
 lines defines a location. Locations are the endpoints of a transition.
 Most transitions (such as doors) have two locations, but some may have
 more (e.g. an elevator in a four story building might have four
@@ -87,8 +87,8 @@ specifies an angle the robot must face when it reaches the location,
 which ensures that the robot is facing the right way to perform the
 action required. In addition to these parameters, the location may
 contain other parameters that are fed to the transition action, so long
-as they do not conflict with \"map\", \"position\", \"angle\", or
-\"direction\", at the will of the transition action writer.
+as they do not conflict with "map", "position", "angle", or
+"direction", at the will of the transition action writer.
 
 ## Launching
 
@@ -103,7 +103,7 @@ multi_map_navigation, add this code to your launch file:
 
 Where YAML is the absolute path to your configuration YAML and TYPES is
 a list of transition actions that could be present in the map. TYPES can
-be the empty string if you have no transitions outside of \"normal\"
+be the empty string if you have no transitions outside of "normal"
 transitions that do not trigger any actions.
 
 You can also add lines to set the initial pose of the base:
@@ -118,18 +118,18 @@ You can also add lines to set the initial pose of the base:
 Once multi-map navigation is launched, you must specify a position in
 the maps. If you did not specify a proper initial position, then you
 must use rviz to place the robot properly in the map. You must also
-launch on the proper map, if you haven\'t, then you must properly set
+launch on the proper map, if you haven't, then you must properly set
 the map from the command line: ```
 rosservice call /multi_map_navigation/set_map <map-name>
 ``` Where
-\<map-name\> is the target \<map-name\> which the robot is starting on.
+<map-name> is the target <map-name> which the robot is starting on.
 
 Once multi-map navigation is launched, you can give the robot a goal. To
 achieve this from the command line: ```
 rosrun multi_map_navigation multi_map_navigation_test 12 10 willow-down
 ``` Where 12
 and 10 are the floating point x-y coordinate of the target and
-\"willow-down\" is the target map name.
+"willow-down" is the target map name.
 
 ## Calling Multi-Map Navigation Pragmatically
 
@@ -160,9 +160,9 @@ transition is simply an action server implementing the
 MultiMapNavigationTransitionAction. We recommend hard-coding the server
 name so that map files can easily access it. The transition action feeds
 data to your code that may be of use. The first is the string
-\"wormhole\" which contains the entire YAML data as a string of the
+"wormhole" which contains the entire YAML data as a string of the
 transition from the YAML map configuration file. The second are
-\"start\" and \"end\" which contain the numeric index of the starting
+"start" and "end" which contain the numeric index of the starting
 and ending wormholes, which is useful to determine, e.g. what floor an
 elevator should exit on.
 
@@ -181,7 +181,7 @@ run through our office. It thus contains software such as a elevator
 management and door openning software for dealing the doors in our
 building. These may or may not work for your environment and are
 unsupported - however they serve as advanced examples of multi-map
-navigation\'s ablities.
+navigation's ablities.
 
 ## TODO
 

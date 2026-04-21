@@ -129,8 +129,8 @@ recv_topics:
 ```
 
 ,where the IPs and topics can be added and modified in your need. The
-\`\`max_freq\`\` will limit the sending frequency once it exceeds
-\`\`max_freq\`\`. Set \`\`max_freq\`\` large enough if you do not want
+``max_freq`` will limit the sending frequency once it exceeds
+``max_freq``. Set ``max_freq`` large enough if you do not want
 to decrease the sending frequency.
 
 2\. Launch the bridge_node:
@@ -152,8 +152,8 @@ refer to
 ### More ROS message types
 
 The default supported ROS message types are only
-\<\<MsgLink(sensor_msgs/Imu)\>\>, \<\<MsgLink(geometry_msgs/Twist)\>\>
-and \<\<MsgLink(std_msgs/String)\>\>. If you need more types:
+<<MsgLink(sensor_msgs/Imu)>>, <<MsgLink(geometry_msgs/Twist)>>
+and <<MsgLink(std_msgs/String)>>. If you need more types:
 
 1\. Modify the macros about MSG_TYPEx and MSG_CLASSx in
 [include/ros_sub_pub.hpp](https://github.com/shupx/swarm_ros_bridge/blob/master/include/ros_sub_pub.hpp),
@@ -169,12 +169,12 @@ types.
 ```
 
 We support up to 10 types modification. If that is still not enough,
-then you should modify the \`topic_subscriber()\`, \`topic_publisher()\`
-and \`deserialize_publish()\` in
+then you should modify the `topic_subscriber()`, `topic_publisher()`
+and `deserialize_publish()` in
 [include/ros_sub_pub.hpp](https://github.com/shupx/swarm_ros_bridge/blob/master/include/ros_sub_pub.hpp)
 according to their styles.
 
-2\. Add the dependent message package in \`find_package()\` of
+2\. Add the dependent message package in `find_package()` of
 [CMakeLists.txt](https://github.com/shupx/swarm_ros_bridge/blob/master/CMakeLists.txt):
 
 ```

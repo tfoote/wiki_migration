@@ -9,15 +9,15 @@ The floor maps lie in .png format under common/files/test_maps
 The relevant are the ones which are existing in several versions, shown
 by following name extensions:
 
--   \_furnitures : The original map with furnitures drawn in
--   \_trashbins : The original map with trashbins as blue pixels drawn
+-   _furnitures : The original map with furnitures drawn in
+-   _trashbins : The original map with trashbins as blue pixels drawn
     in
 
 And the combinations of these extensions, resulting in 4 versions for
 each map.
 
 Additionally there are ground-truth maps, that show how a human might
-intersect these maps, shown by the name extension \_gt. If you want to
+intersect these maps, shown by the name extension _gt. If you want to
 colour these ground-truth maps, to show the different segments, you can
 use a flood-fill algorithm for the white pixels to collect each pixel
 that belong to one segment, because the drawn lines seperates the white
@@ -46,7 +46,7 @@ the wanted algorithms and settings.
     border in the feature-based segmentation method has a little
     addition. If found segments are too big they become separated by
     randomly putting centers in the segment and splitting it by using a
-    wavefront algorithm. It\'s better to turn this off by setting the
+    wavefront algorithm. It's better to turn this off by setting the
     allowed maximal area very high.
 -   Some algorithms have specific parameters that change some
     functionalities of it, which is described in detail in the .yaml
@@ -96,7 +96,7 @@ following parts
 A client also can change the parameters of the server by using
 dynamic_reconfigure. This can be done using the
 dynamic_reconfigure_client.h file that provides a client for this
-purpose. With client.setConfig(\"param_name\", value) one specific
+purpose. With client.setConfig("param_name", value) one specific
 parameter can be changed from the client, see
 ros/src/room_segmentation_client.cpp for an example. Of course
 rqt_reconfigure can also be used to change specific parameters.
@@ -119,7 +119,7 @@ chapter **6. Segmentation results**.
 1\. Morphological segmentation: Given the map as binary image, a binary
 erosion is iteratively applied. After each step, the algorithm searches
 for separate regions that have an area in the defined range. If it finds
-one, this region is saved and drawn black such that it doesn\'t need to
+one, this region is saved and drawn black such that it doesn't need to
 be looked at any further. After all white regions are black, the
 algorithm stops and draws the segments in an image, then applies a
 wavefront algorithm to fill remaining white spaces.
@@ -221,14 +221,14 @@ the IEEE International Conference on Robotics and Automation (ICRA)*,
 without furniture
 
   -- ----------------------------------------------------------------------------------------------------------------------- -- ---------------------------- -- ----------------------------- -- ---------------------------------- -- --------------------------------- -- ----------------------------------- --
-     \<tablewidth=\"870px\" tableheight=\"58px\" tablestyle=\"text-align:left; ;text-align:center\"\>ground truth labeling      morphological segmentation      distance-based segmentation      Voronoi graph-based segmentation      feature-based room segmentation      voronoi random field segmentation   
+     <tablewidth="870px" tableheight="58px" tablestyle="text-align:left; ;text-align:center">ground truth labeling      morphological segmentation      distance-based segmentation      Voronoi graph-based segmentation      feature-based room segmentation      voronoi random field segmentation   
   -- ----------------------------------------------------------------------------------------------------------------------- -- ---------------------------- -- ----------------------------- -- ---------------------------------- -- --------------------------------- -- ----------------------------------- --
 
-![\|width=\"850\"](attachment:without_furniture.png)
+![\|width="850"](attachment:without_furniture.png)
 
 with furniture
 
-![\|width=\"850\"](attachment:with_furniture.png)
+![\|width="850"](attachment:with_furniture.png)
 
 ## Optimization of Work Order
 

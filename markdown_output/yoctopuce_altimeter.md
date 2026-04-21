@@ -4,8 +4,8 @@ This package provides a publisher that interfaces with the yoctopuce
 altimeter:
 <http://www.yoctopuce.com/EN/products/usb-position-sensors/yocto-altimeter>.
 
-To use, you must have the following dependencies: \`ros_cpp\`,
-\`ros_py\`, \`std_msgs\`, \`nav_msgs\`, \`sensor_msgs\`.
+To use, you must have the following dependencies: `ros_cpp`,
+`ros_py`, `std_msgs`, `nav_msgs`, `sensor_msgs`.
 
 # Sample Usage
 
@@ -36,8 +36,8 @@ in seeing support for other distros, please email the maintainer.
 
 ### Published Topics
 
-\`/yocto/raw\` Uses custom \`yocto_msg\` which publishes a header,
+`/yocto/raw` Uses custom `yocto_msg` which publishes a header,
 altitude, pressure, and temperature.
 
-\`/yocto/odom\` Uses standard \`nav_msgs/odom\`. Edits the linear z
+`/yocto/odom` Uses standard `nav_msgs/odom`. Edits the linear z
 value.

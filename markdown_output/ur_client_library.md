@@ -10,19 +10,19 @@ robotic arms from the CB3- or e-Series. It is the base of the
 
 This package does not support CB2 controllers.
 
-For robots with Polyscope \`v1.8.x\` or older, please see whether
+For robots with Polyscope `v1.8.x` or older, please see whether
 [ur_modern_driver](ur_modern_driver) is sufficient.
 
 ### Polyscope v3.x and v5.x
 
-Make sure the controller runs \`v3.7\` or newer for CB3, or \`v5.1\` or
+Make sure the controller runs `v3.7` or newer for CB3, or `v5.1` or
 newer for e-Series controllers.
 
 ## Library Contents
 
 Currently, this library contains the following components:
 
--   **Basic primary interface**: The primary interface isn\'t fully
+-   **Basic primary interface**: The primary interface isn't fully
     implemented at the current state and provides only basic
     functionality. See A word on the primary / secondary interface for
     further information about the primary interface.
@@ -44,4 +44,4 @@ files.
 
 ## Contributing
 
-\<\<GitHubIssues(UniversalRobots/Universal_Robots_Client_Library)\>\>
+<<GitHubIssues(UniversalRobots/Universal_Robots_Client_Library)>>

@@ -25,7 +25,7 @@ Extra options:
     distribution (e.g. lucid, maverick, \...). It is allowed to specify
     multiple \--ubuntu x blocks
 -   **\--delete**: If there is an old (running) job with the same name,
-    don\'t wait for that old job to finish, but instead just delete the
+    don't wait for that old job to finish, but instead just delete the
     old job.
 
 ## Devel
@@ -38,6 +38,6 @@ rosrun job_generation generate_devel.py --rosdistro diamondback --stack stacknam
 
 Extra options:
 
--   **\--os**: Specify the operating system. \'ubuntu\' and \'osx\' are
-    supported, default is \'ubuntu\'.
+-   **\--os**: Specify the operating system. 'ubuntu' and 'osx' are
+    supported, default is 'ubuntu'.
 -   **\--delete**: Delete the corresponding job(s)

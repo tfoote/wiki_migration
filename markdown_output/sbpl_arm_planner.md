@@ -28,7 +28,7 @@ window that is 86cm wide.
 
 [Youtube](https://www.youtube.com/watch?v=KrMsyDVWo8A)
 
-The following video is somewhat repetitive. It\'s intended to show you
+The following video is somewhat repetitive. It's intended to show you
 that the planner is robust in cluttered environments. First the PR2
 plans a couple of paths to navigate the gripper between shelves of the
 cabinet. Then, The PR2 navigates the gripper above and below a tabletop

@@ -5,7 +5,7 @@
 The ZLP software has a modular architecture. These modules communicate
 via TCP/IP and have to be located within the same network.
 
-. ![\|width=\"700px\"](attachment:architecture.png)
+. ![\|width="700px"](attachment:architecture.png)
 
 Z-Laser offers different solutions depending on where you prefer to have
 zService running. This package has been developed in a device with
@@ -44,7 +44,7 @@ coordinate systems:
 
 Note that a coordinate system needs **4 points** to be fully defined.
 
-. ![\|width=\"450px\"](attachment:projector_origin.png)
+. ![\|width="450px"](attachment:projector_origin.png)
 
 #### Setting user-defined reference system manually
 
@@ -54,7 +54,7 @@ system's **resolution** to set a position. See the differences in the
 scheme below. This value is non-dimensional, i.e., do not represent real
 world dimensions.
 
-. ![\|width=\"400px\"](attachment:resolution.png)
+. ![\|width="400px"](attachment:resolution.png)
 
 For the following example, we use a resolution of 1000. Then, the user
 should indicate the **position** of the four points that define the
@@ -77,7 +77,7 @@ know.
 
 This is a scheme of the example:
 
-![\|width=\"800px\"](attachment:square.png)
+![\|width="800px"](attachment:square.png)
 
 In the image above, the point T,,x,, = (300, 300) referenced from User
 Reference System {T}, will be located on the real projection surface at
@@ -92,7 +92,7 @@ previous example, while Projector Reference System {P} changed to:
 .P,,0,, = (0, -100) \[mm\] .P,,1,, = (100, 0) \[mm\] .P,,2,, = (0, 100)
 \[mm\] .P,,3,, = (-100, 0) \[mm\]
 
-![\|width=\"600px\"](attachment:rotate.jpg)
+![\|width="600px"](attachment:rotate.jpg)
 
 Finally, notice that real world coordinates specified in Projector
 Reference System {P} depends on the projection **distance** (distance
@@ -104,7 +104,7 @@ If it is incorrectly indicated as a greater distance 'D', the projected
 points would be located more distant ('W') to the coordinate system
 origin than the user has specified ('w').
 
-. ![\|width=\"390px\"](attachment:distance.jpg)
+. ![\|width="390px"](attachment:distance.jpg)
 
 For that reason, the installation projection distance must be correctly
 indicated, and it can be calculated using the following formula: *d = f
@@ -119,7 +119,7 @@ For example:
 Given a length of the desired projection area of 2000mm and an opening
 angle of 56\^o\^, it results in an installation distance of 1880.7mm:
 
-. ![\|width=\"600px\"](attachment:angle.png)
+. ![\|width="600px"](attachment:angle.png)
 
 #### Setting user-defined reference system by targets scan
 

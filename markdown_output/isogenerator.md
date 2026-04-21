@@ -32,10 +32,10 @@ desired USB key with the appropriate files. 1. Go to the
 [hudson page](http://build.willowgarage.com/job/ros-live-iso-generator/build?delay=0sec)
 and log in 1. Choose the desired CUSTOMIZATION_SCRIPT 1. Choose the
 desired architecture. Note that currently, only amd64 is supported 1.
-Click the \"Build\" button 1. Click the first item in the list of builds
+Click the "Build" button 1. Click the first item in the list of builds
 (it should be flashing) 1. Wait until the build finishes (approximately
-10 minutes) 1. Click the \"Console Output\" link 1. Find the line that
-says \"Storing at:\". It should be near the end of the output 1. Use
+10 minutes) 1. Click the "Console Output" link 1. Find the line that
+says "Storing at:". It should be near the end of the output 1. Use
 either ssh or http to copy the file to your computer. If using http, the
 url is in the form of
 pub1.willowgarage.com/hudson_logs/\[SCRIPT_NAME\]-\[ARCHITECTURE\].iso 1.
@@ -55,19 +55,19 @@ directory for the extracted ISO 1. cd to the working directory 1. Run
 extract_cd.sh with the linux ISO file as its argument
 
 To run a modification script: 1. Ensure you are in the working
-directory 1. Run sudo \`which edit_cd.sh\` with the modification script
+directory 1. Run sudo `which edit_cd.sh` with the modification script
 as its argument
 
 To open a terminal inside the cd: 1. Ensure you are in the working
-directory 1. Run sudo \`which edit_cd.sh\` without any arguments 1. You
+directory 1. Run sudo `which edit_cd.sh` without any arguments 1. You
 are now in a terminal chrooted to the livecd and can begin typing
 commands 1. Exit the terminal by typing control-D or exit. Do not close
 the terminal window or kill the process through other means
 
 To create a new ISO: 1. Ensure you are in the working directory 1. Run
 create_iso.sh with the file name for the new ISO as its argument 1. Run
-sudo \`which clean_cd.sh\` to clean up the temporary directories. You
-will need to add \"yes\" as its argument 1. You are now ready to install
+sudo `which clean_cd.sh` to clean up the temporary directories. You
+will need to add "yes" as its argument 1. You are now ready to install
 the generated ISO
 
 ## Creating a Customization Script
@@ -95,21 +95,21 @@ file and a computer running Ubuntu. All files on the USB key will be
 erased.
 
 1\. Locate the ISO on your computer 1. Plug the USB key into the
-computer 1. Open the Ubuntu Startup Disk Creator by choosing System -\>
-Administration -\> Startup Disk Creator 1. Choose the disk in the lower
-list and click \"Erase Disk\" 1. Wait for the disk to be erased 1.
+computer 1. Open the Ubuntu Startup Disk Creator by choosing System ->
+Administration -> Startup Disk Creator 1. Choose the disk in the lower
+list and click "Erase Disk" 1. Wait for the disk to be erased 1.
 Ensure that the disk is still clicked in the lower list 1. Click
-\"Other\...\" below the list of ISO files 1. Choose your ISO file in the
-file chooser 1. Click \"Make Startup Disk\" 1. Wait until the copying
+"Other\..." below the list of ISO files 1. Choose your ISO file in the
+file chooser 1. Click "Make Startup Disk" 1. Wait until the copying
 process is finished 1. Close the Startup Disk Creator 1. Eject the USB
 Disk by right clicking it on the desktop and choosing Eject 1. Remove
 the USB Disk from the computer
 
 **If you are asked for your root password:** sometimes Ubuntu will ask
-for your root password instead of doing a \"sudo\" when you launch
+for your root password instead of doing a "sudo" when you launch
 Startup Disk Creator from the GUI. If you have this problem, close the
-Startup Disk Creator and start a terminal (Applications -\> Accessories
--\> Terminal). Type the following in the terminal and go back to step 5:
+Startup Disk Creator and start a terminal (Applications -> Accessories
+-> Terminal). Type the following in the terminal and go back to step 5:
 
 ```
 sudo usb-creator-gtk

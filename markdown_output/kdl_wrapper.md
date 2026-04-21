@@ -69,7 +69,7 @@ sudo apt-get install ros-<rosdistro>-pr2-common
 ``` 2. Upload the PR2 URDF:
 ```
 roslaunch pr2_description upload_pr2.launch kinect:=TRUE
-``` 3. Compile the \`kdl_wrapper\` package.
+``` 3. Compile the `kdl_wrapper` package.
 
 4\. Run the pr2_kdl_wrapper_example : ```
 rosrun kdl_wrapper pr2_kdl_wrapper_example
@@ -77,4 +77,4 @@ rosrun kdl_wrapper pr2_kdl_wrapper_example
 
 ## Report a Bug
 
-\<\<GitHubIssues(kth-ros-pkg/kdl_wrapper)\>\>
+<<GitHubIssues(kth-ros-pkg/kdl_wrapper)>>

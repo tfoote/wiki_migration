@@ -65,19 +65,19 @@ This also can be fixed with the parameter file.
 ### Bodies/Links
 
 Each Body element in the XML has a possibly non-unique name tag. These
-are converted to (\"%s%d\", name tag, lowest unused natural number)
+are converted to ("%s%d", name tag, lowest unused natural number)
 
 ### Reference Frames
 
 The exported XML includes three types of reference frames for each body.
-\"CG\" refers to the center of gravity, \"CS1\" refers to the root
+"CG" refers to the center of gravity, "CS1" refers to the root
 coordinate system for the STL, and all of the rest refer to joints
-attaching points. The first two use TF frames named (\"%s%s\", body\'s
+attaching points. The first two use TF frames named ("%s%s", body's
 unique name, CG or CS1). All of the rest use the reference attribute of
 the Frame.
 
 The script also defines one extra reference frame for each body, named
-(\"X%s\", body\'s unique name). This is the origin for the Link element
+("X%s", body's unique name). This is the origin for the Link element
 in the URDF. It is defined to have the offset equal to the reference
 frame of the joint connecting it to its parent, and the orientation
 equal to that of CS1. In the URDF, the visual origin, collision origin
@@ -85,7 +85,7 @@ and all other relative offsets are calculated from this point.
 
 ### Joints
 
-Joints follow a similar naming scheme to Links, (\"%s%d\", name tag,
+Joints follow a similar naming scheme to Links, ("%s%d", name tag,
 lowest unused natural number). However, often they are referred to by a
 their base connection frame. In the following snippet, the joint number
 would be 11. ```xml
@@ -123,23 +123,23 @@ NOT loaded into the parameter server.
 ### Root Parameters
 
 -   `root` (String, default: first STL body in the file) - Changes the
-    root node of the tree. Namespace: body\'s unique id.
+    root node of the tree. Namespace: body's unique id.
 -   `baseframe` (String, default: the origin) - Used for calculating the
     origin of the root node. Useful if connecting multiple models.
     Namespace: TF Frame
 
 ### STL Parameters
 
--   `filenameformat` (String, default: \"%s\") - Used for translating
+-   `filenameformat` (String, default: "%s") - Used for translating
     the filenames in the exported XML to the URDF filenames, using a
-    formatting string. Example: \"package:*my_package*folder/%sb\" -
-    resolves to the package name and adds a \"b\" at the end to indicate
+    formatting string. Example: "package:*my_package*folder/%sb" -
+    resolves to the package name and adds a "b" at the end to indicate
     a binary stl.
 -   `forcelowercase` (Boolean, default: False) - Used for translating
     the filenames\...if True, it forces all filenames to be lower case.
 -   `scale` (String, default: None) - If this parameter is defined, the
     scale attribute of the mesh in the URDF will be set to its value.
-    Example: \"0.01 0.01 0.01\" - if your meshes were saved using
+    Example: "0.01 0.01 0.01" - if your meshes were saved using
     centimeters as units instead of meters.
 
 ### Redefining Joints

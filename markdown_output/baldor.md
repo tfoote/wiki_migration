@@ -17,4 +17,4 @@ Usage examples can be found in the
 
 ## Report a Bug
 
-\<\<GitHubIssues(crigroup/baldor)\>\>
+<<GitHubIssues(crigroup/baldor)>>

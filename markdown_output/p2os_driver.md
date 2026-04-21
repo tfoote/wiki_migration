@@ -9,7 +9,7 @@ p2os_driver contains p2os, the main node controlling the pioneer base.
 
 Parameters used:
 
--   port (string, default=\"/dev/ttyS0\")
+-   port (string, default="/dev/ttyS0")
 -   use_sonar (bool, default=false): is used to decide whether to use
     sonar or not.
 -   pulse (float32): is used to control the frequency of checking

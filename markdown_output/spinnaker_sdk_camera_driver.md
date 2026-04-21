@@ -37,8 +37,8 @@ source ~/spinnaker_ws/devel/setup.bash
 
 ### Running the drivers
 
-Modify the \`params/test_params.yaml\` file replacing the cam-ids and
-master cam serial number to match your camera\'s serial number. Then run
+Modify the `params/test_params.yaml` file replacing the cam-ids and
+master cam serial number to match your camera's serial number. Then run
 the code as:
 
 ```

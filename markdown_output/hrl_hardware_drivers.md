@@ -7,7 +7,7 @@ communication with the servos) can be purchased online.
 This package includes a stand-alone library (lib_robotis.py) for
 querying and controlling Robotis Dynamixel Servos. The code is written
 entirely in Python and is thread-safe, so that multiple servo objects
-can be controlled / queried \"simultaneously\" on the same USB2Dynamixel
+can be controlled / queried "simultaneously" on the same USB2Dynamixel
 bus (within the same process). The library should function on Linux,
 Mac, and Windows (yay, python!), and the only dependency is pyserial for
 communications. The code has only been tested on the RX-28 and RX-64

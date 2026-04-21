@@ -1,4 +1,4 @@
-![\|width=\"498px\"](attachment:frames2.png)
+![\|width="498px"](attachment:frames2.png)
 
 ## What does tf2 do? Why should I use tf2?
 
@@ -79,25 +79,25 @@ such as for quick calibration-by-eye tuning, try
 The [design page](tf2/Design) described the high level design of the tf2
 library.
 
-\`tf2\` is the core of a group of packages which form the 2nd generation
+`tf2` is the core of a group of packages which form the 2nd generation
 of [tf](tf). There are three types of packages.
 
 ### Supported Datatypes
 
-\`tf2\` implements templated datatype support. This allows the core
+`tf2` implements templated datatype support. This allows the core
 packages to have minimal dependencies and there be packages which add
 support for converting to and from different datatypes as well as
 transforming those data types. Please see
 [tf2 conversions](http://docs.ros.org/latest/api/tf2/html/) overview,
 and [this tutorial](tf2/Tutorials/Migration/DataConversions) for how to
-use tf2 with different datatypes. \`tf2\` does have an internal
-datatypes which are based on \`bullet\`\'s !LinearMath library. However
-it\'s recommended to use a fully supported math datatype which best
-supports your application. \`tf2\` conversion methods also support
+use tf2 with different datatypes. `tf2` does have an internal
+datatypes which are based on `bullet`'s !LinearMath library. However
+it's recommended to use a fully supported math datatype which best
+supports your application. `tf2` conversion methods also support
 converting between and transforming between multiple different datatypes
 too.
 
-At it\'s core \`tf2\` relies on the
+At it's core `tf2` relies on the
 [stamped data types](http://docs.ros.org/latest/api/tf2/html/classtf2_1_1Stamped.html)
 which can be conveniently correlated to ROS messages which have a
 [Messages#Header](Messages#Header).
@@ -137,25 +137,25 @@ There are several sources of conventions for using coordinate frames.
 
 #### Naming
 
-Coordinate frames in ROS are identified by a string \`frame_id\` in the
+Coordinate frames in ROS are identified by a string `frame_id` in the
 format lower case underscore separated. This string has to be unique in
-the system. All data produced can simply identify it\'s \`frame_id\` to
+the system. All data produced can simply identify it's `frame_id` to
 state where it is in the world.
 
-** No \`tf_prefix\`:** In previous versions there was a concept of a
-\`tf_prefix\` which would be prepended to the frame name using a \`/\`
+** No `tf_prefix`:** In previous versions there was a concept of a
+`tf_prefix` which would be prepended to the frame name using a `/`
 separator. A leading slash used to indicate that it had already been
-prefixed. For backwards compatibility tf2 will strip any leading \`/\`
+prefixed. For backwards compatibility tf2 will strip any leading `/`
 character.
 
 **No Remapping:**
 
-The concept of \`tf\` \`frame_ids\` is not scoped in the same way as
+The concept of `tf` `frame_ids` is not scoped in the same way as
 [ROS Names](Names). In particular, namespacing a specific subpart of a
-computation graph does not change the physical layout which the \`tf\`
-tree represents. Because of this \`frame_id\`s do not follow namespace
+computation graph does not change the physical layout which the `tf`
+tree represents. Because of this `frame_id`s do not follow namespace
 remapping rules. It is common to support a
-[ROS parameter](Parameter Server) to allow changing \`frame_id\`s used
+[ROS parameter](Parameter Server) to allow changing `frame_id`s used
 in algorithms.
 
 **Multiple Robots:**
@@ -176,7 +176,7 @@ masters. For more information please see the
 
 ### Geometry
 
-\`tf2\` provides basic geometry data types, such as
+`tf2` provides basic geometry data types, such as
 [Vector3](http://docs.ros.org/kinetic/api/tf2/html/Vector3_8h.html),
 [Matrix3x3](http://docs.ros.org/kinetic/api/tf2/html/classtf2_1_1Matrix3x3.html),
 [Quaternion](http://docs.ros.org/kinetic/api/tf2/html/classtf2_1_1Quaternion.html),
@@ -189,11 +189,11 @@ These packages provide the primary interface for developers using
 [tf2](tf2).
 
 -   [tf2_ros](tf2_ros) Provides [roscpp](roscpp) bindings for tf2,
-    including classes for \`BufferListener\`, \`BufferBroadcaster\`,
-    \`BufferServer\`, and \`BufferClient\`
+    including classes for `BufferListener`, `BufferBroadcaster`,
+    `BufferServer`, and `BufferClient`
 -   [tf2_ros](tf2_ros) also provides [rospy](rospy) bindings for tf2,
-    including classes for \`BufferListener\` \`BufferBroadcaster\` and
-    \`BufferClient\`
+    including classes for `BufferListener` `BufferBroadcaster` and
+    `BufferClient`
 
 ### Migration from tf
 
@@ -203,7 +203,7 @@ For more information about migrating from [tf](tf) see
 ### Adding static transform support
 
 The goal of static transforms was to remove the need for recommunicating
-things that don\'t change. The ability to update the values was
+things that don't change. The ability to update the values was
 implemented in case they are subject to uncertainty and might be
 re-estimated later with improved values. But importantly those updated
 values are expected to be true at all times.
@@ -223,13 +223,13 @@ transform should never lookup, However if queried at time t=3.5 a lookup
 of at timestamp 2.5 will pass if a static transform is used.
 
 These incorrect results will also be produced if you break the tree by
-changing the connectivity. If you have a frame that\'s coming and going
+changing the connectivity. If you have a frame that's coming and going
 you should really use a standard frame and publish it at an
-appropriately low rate that\'s appropriate to capture the expected
+appropriately low rate that's appropriate to capture the expected
 frequency of changing the topology of your robot.
 
 The biggest way that static transforms differ from regular transforms is
-that they don\'t keep a time history This primarily saves storage and
+that they don't keep a time history This primarily saves storage and
 lookup time, though the publishing overhead is also better.
 
 ## Frequently asked questions

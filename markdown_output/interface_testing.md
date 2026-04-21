@@ -3,7 +3,7 @@ This package provides basic functions for testing ROS interfaces.
 ## Testing Node Existence
 
 For example a Google Test can check if a node named
-\"/navigation/plannerNode\" exists as follows:
+"/navigation/plannerNode" exists as follows:
 
 ```
 TEST(NAVIGATIONtest, plannerNode) {

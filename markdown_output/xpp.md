@@ -1,5 +1,5 @@
 \
-![\|width=\"130\"](https://i.imgur.com/ct8e7T4.png)
+![\|width="130"](https://i.imgur.com/ct8e7T4.png)
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ $ roslaunch xpp_examples hyq_bag.launch
 clone the repo into your catkin workspace and build from source, as
 described [here](https://github.com/leggedrobotics/xpp).
 
-![\|width=\"100%\"](attachment:anymal.gif)
+![\|width="100%"](attachment:anymal.gif)
 
 ## Generating messages
 
@@ -68,15 +68,15 @@ The visualized trajectories in the rosbags can be easily plotted.
 ```
 $ roscd xpp_examples/bags/
 $ rqt_bag hyq.bag
-``` Then simply right-click on \`xpp/state_des\`
-and \`View\` -\> \`Plot\`.
+``` Then simply right-click on `xpp/state_des`
+and `View` -> `Plot`.
 
-[![\|width=\"400\"](https://i.imgur.com/T79RxR6.png)](https://i.imgur.com/T79RxR6.png)
+[![\|width="400"](https://i.imgur.com/T79RxR6.png)](https://i.imgur.com/T79RxR6.png)
 
 Or load the rosbag in
 [PlotJuggler](https://github.com/facontidavide/PlotJuggler)
 
-[![\|width=\"400\"](https://i.imgur.com/lUSAZDO.png)](https://i.imgur.com/lUSAZDO.png)
+[![\|width="400"](https://i.imgur.com/lUSAZDO.png)](https://i.imgur.com/lUSAZDO.png)
 
 ## Visualize your own robot
 
@@ -98,14 +98,14 @@ here:[urdf_visualizer_hyq1.cc](https://github.com/leggedrobotics/xpp/blob/master
     [UrdfVisualizer()](http://docs.ros.org/melodic/api/xpp_vis/html/classxpp_1_1UrdfVisualizer.html#a6bbd996415f4078330f2119ac81b7415)
     and run as ros node.
 -   Send out the state of the robot using
-    \<\<MsgLink(xpp_msgs/RobotStateJoint)\>\>.
--   (optional) Send out \<\<MsgLink(xpp_msgs/RobotStateCartesian)\>\>
+    <<MsgLink(xpp_msgs/RobotStateJoint)>>.
+-   (optional) Send out <<MsgLink(xpp_msgs/RobotStateCartesian)>>
     and supply inverse kinematics function to transform to
-    \<\<MsgLink(xpp_msgs/RobotStateJoint)\>\>.
+    <<MsgLink(xpp_msgs/RobotStateJoint)>>.
 -   Add the ROS parameter robot name (defined in step 1) of your urdf to
     [rviz](rviz):
 
-![\|width=\"40%\"](attachment:rviz_add_robot2.png)
+![\|width="40%"](attachment:rviz_add_robot2.png)
 
 ### Contribute
 
@@ -162,4 +162,4 @@ This software has been used in the following
 
 Please post any questions you have at
 [ROS Answers](https://answers.ros.org/questions/scope:all/sort:activity-desc/tags:xpp/page:1/)
-using the tag \`xpp\`.
+using the tag `xpp`.

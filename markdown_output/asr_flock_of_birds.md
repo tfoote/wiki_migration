@@ -1,10 +1,10 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 The asr_flock_of_birds package is the driver for
 [Ascension Technology Corp](http://www.ascension-tech.com/products/product-history/)
-magnet tracking system \"Flock of Birds\" (FoB). It provides the remote
+magnet tracking system "Flock of Birds" (FoB). It provides the remote
 server which publishes two 6d posemarker and the necessary TF from the
 magnet tracking system. It also contains launch-files and calibration
 tools for the use of it.
@@ -19,8 +19,8 @@ the node publishes periodically the pose of the trackers as TF-publisher
 as well as **asr_msgs::!AsrObject**-Messages on the
 **/fob_object**-Topic.
 
-![\|width=\"333\",height=\"200\"](attachment:index.png)
-![\|width=\"333\",height=\"200\"](attachment:index.jpeg)
+![\|width="333",height="200"](attachment:index.png)
+![\|width="333",height="200"](attachment:index.jpeg)
 
 Left image: Flock of Birds magnet-tracker receiver with its controller
 PC.
@@ -42,7 +42,7 @@ fob_objects.
 ### Needed hardware
 
 [Ascension Technology Corp](http://www.ascension-tech.com/products/product-history/)
-magnet tracking system \"Flock of Birds\" is needed.
+magnet tracking system "Flock of Birds" is needed.
 
 ### Start system
 

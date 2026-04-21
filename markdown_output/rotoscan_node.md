@@ -4,7 +4,7 @@
 
 This package adapts the Leuze rotoScan series of laser range finders.
 Therefore it behaves like any other ROS laser range finder driver and
-publishes a \<\<MsgLink(sensor_msgs/LaserScan)\>\> on the \"**scan**\"
+publishes a <<MsgLink(sensor_msgs/LaserScan)>> on the "**scan**"
 topic whenever a new scan comes in.
 
 Configuration of the laser range finder is not supported and requires a
@@ -27,7 +27,7 @@ confirmed to work with following models:
 
 ## Node configuration
 
-frame_id(string, default: \"laser\"):: Transform frame id to be used in
+frame_id(string, default: "laser"):: Transform frame id to be used in
 the message header.
 
 range_max(float, default: 40.):: *range_max* to be used in message body.
@@ -36,16 +36,16 @@ Differs among models.
 ### Ethernet specific
 
 The underlying network protocol implementation has been stable for more
-than a year now. All testing has been done with a \"ROD4 plus\" unit.
+than a year now. All testing has been done with a "ROD4 plus" unit.
 
-host(string, default: \"192.168.1.1\") :: Hostname/IP address of the
+host(string, default: "192.168.1.1") :: Hostname/IP address of the
 laser range finder.
 
-port(string, default: \"9008\") :: Port of of the laser range finder.
+port(string, default: "9008") :: Port of of the laser range finder.
 
 ### Serial port specific
 
-device(string, default: \"/dev/ttyUSB0\") :: Serial port device where
+device(string, default: "/dev/ttyUSB0") :: Serial port device where
 the rotoScan is connected to.
 
 baudrate(int, default: 57600) :: Serial baudrate configured in rotoScan.

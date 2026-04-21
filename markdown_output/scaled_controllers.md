@@ -1,5 +1,5 @@
 This repository contains controllers and hardware interface for
-\`ros_control\` that are leveraging an on-the-fly speed scaling
+`ros_control` that are leveraging an on-the-fly speed scaling
 mechanism. For example, they are used by the
 [ur_robot_driver](http://wiki.ros.org/ur_robot_driver).
 

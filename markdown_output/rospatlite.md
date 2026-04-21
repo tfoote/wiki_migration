@@ -1,10 +1,10 @@
-\`rospatlite\` is a ROS driver for patlite Signal Tower NHx series.
+`rospatlite` is a ROS driver for patlite Signal Tower NHx series.
 
 ## rospatlite Usage
 
-\`roslaunch rospatlite patlite.launch IP:=\<patlite ip\>\`
+`roslaunch rospatlite patlite.launch IP:=<patlite ip>`
 
--   \`patlite ip\`: network address or hostname of your patlite device
+-   `patlite ip`: network address or hostname of your patlite device
 
 ## Examples
 

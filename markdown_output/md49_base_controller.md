@@ -1,7 +1,7 @@
 ROS Package for the serial dual motor driver board MD49, designed for
 use with two EMG49 motors
 
-\<\<GitHubIssues(scheik/md49_base_controller)\>\>
+<<GitHubIssues(scheik/md49_base_controller)>>
 
 ## Documentation
 

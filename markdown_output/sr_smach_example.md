@@ -3,7 +3,7 @@
 This uses the [smach](smach) package to implement a small demo using a
 State Machine. The demo is simply a succession of simple movements (e.g.
 beckon with a finger, show your muscles, etc\...), with a state for
-checking if we\'re getting to the targets or not between each of the
+checking if we're getting to the targets or not between each of the
 different positions.
 
 You can see the state machine below:

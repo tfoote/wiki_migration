@@ -1,38 +1,38 @@
 ## About
 
-The \`rail_worlds\` package contains a set of worlds developed by the
+The `rail_worlds` package contains a set of worlds developed by the
 [RAIL lab](http://web.cs.wpi.edu/~rail/) at [WPI](http://www.wpi.edu/)
 for [gazebo](gazebo). The worlds were developed with the Kuka youBot and
-\`PR2\` robots in mind, but can be used with other types of robots as
+`PR2` robots in mind, but can be used with other types of robots as
 well.
 
 ## Worlds
 
-The \`rail_worlds\` package contains several pre-defined worlds: the
-\`YouBot\` world and the \`PR2\` world. These worlds contain appropriate
+The `rail_worlds` package contains several pre-defined worlds: the
+`YouBot` world and the `PR2` world. These worlds contain appropriate
 cameras and objects for their respective robots.
 
 ### youBot World
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- -------------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The youBot world populates the upper portion of the lab model from the [rail_models](rail_models) package (closest to the window) with children's furniture and objects that are appropriate for the youBot. In particular, the children\'s kitchen, table and chair set, toy chest, stool, cups, and cookware are placed throughout the room. Furthermore, overhead cameras are placed above the room.      ![](attachment:youbot_lab.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The youBot world populates the upper portion of the lab model from the [rail_models](rail_models) package (closest to the window) with children's furniture and objects that are appropriate for the youBot. In particular, the children's kitchen, table and chair set, toy chest, stool, cups, and cookware are placed throughout the room. Furthermore, overhead cameras are placed above the room.      ![](attachment:youbot_lab.png)   
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- -------------------------------- --
 
 ### PR2 World
 
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The PR2 world populates the lower portion of the lab model from the [rail_models](rail_models) package (closest to the door) with furniture that is appropriate for the PR2. In particular, the lab table is placed inside of the room. Furthermore, overhead cameras are placed above the room.      ![](attachment:pr2_lab.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The PR2 world populates the lower portion of the lab model from the [rail_models](rail_models) package (closest to the door) with furniture that is appropriate for the PR2. In particular, the lab table is placed inside of the room. Furthermore, overhead cameras are placed above the room.      ![](attachment:pr2_lab.png)   
   -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------- --
 
 ### Fuller 318 Two Tables World
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- -------------------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The Fuller 318 Two Tables world populates the full lab model from the [rail_models](rail_models) package with furniture that is appropriate for the PR2. In particular, two lab tables are placed near the window inside of the room. Furthermore, overhead cameras are placed above the room. A map from the [rail_maps](rail_maps) stack can be used with this world.      ![](attachment:318_2_tables_lab.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The Fuller 318 Two Tables world populates the full lab model from the [rail_models](rail_models) package with furniture that is appropriate for the PR2. In particular, two lab tables are placed near the window inside of the room. Furthermore, overhead cameras are placed above the room. A map from the [rail_maps](rail_maps) stack can be used with this world.      ![](attachment:318_2_tables_lab.png)   
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- -------------------------------------- --
 
 ## Installation
 
-To install the \`rail_gazebo\` stack, you can choose to either install
+To install the `rail_gazebo` stack, you can choose to either install
 from source, or from the Ubuntu package:
 
 ### Source
@@ -70,8 +70,8 @@ command: ```
 roslaunch rail_worlds fuller_318_full_2_tables_world
 ```
 
-Note that these launch files will ***not*** place any robots inside of
-the world.
+Note that these launch files will **`'not`**' place any robots inside
+of the world.
 
 ## Support
 
@@ -86,5 +86,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

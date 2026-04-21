@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(leo_msgs)\>\>
+<<MsgSrvDoc(leo_msgs)>>

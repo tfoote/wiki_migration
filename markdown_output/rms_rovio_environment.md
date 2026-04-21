@@ -1,12 +1,12 @@
 ## About
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------- --
-     \<tablewidth=\"100%\" tablestyle=\"text-align:left\"\>The \`rms_rovio_environment\` package contains launch files that can launch an example RMS environment for use with the [rms](rms). These files will launch the appropriate nodes to control and query the Rovio and start appropriate server nodes (e.g., [rosbridge_server](rosbridge_server)).      ![](attachment:rovio.png)   
+     <tablewidth="100%" tablestyle="text-align:left">The `rms_rovio_environment` package contains launch files that can launch an example RMS environment for use with the [rms](rms). These files will launch the appropriate nodes to control and query the Rovio and start appropriate server nodes (e.g., [rosbridge_server](rosbridge_server)).      ![](attachment:rovio.png)   
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------- --
 
 ## Installation
 
-To install the \`rms_rovio_environment\` stack, you can choose to either
+To install the `rms_rovio_environment` stack, you can choose to either
 install from source, or from the Ubuntu package:
 
 ### Source
@@ -62,5 +62,5 @@ Feel free to contact me at any point with questions and comments.
 ------------------------------------------------------------------------
 
   -- ------------------------------------------------- -- ---------- -- -------------------------- --
-     \<tablewidth=\"100%\"\> ![](attachment:wpi.png)      \<:99%\>      ![](attachment:rail.png)   
+     <tablewidth="100%"> ![](attachment:wpi.png)      <:99%>      ![](attachment:rail.png)   
   -- ------------------------------------------------- -- ---------- -- -------------------------- --

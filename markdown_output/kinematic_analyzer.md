@@ -7,7 +7,7 @@ a ROS infrastructure, and reads in and publishes data via ROS.
 
 -   Revolute joints
 -   Prismatic joints
--   Rigid \"joints\"
+-   Rigid "joints"
 
 ## Implemented Joint Detection Methods
 
@@ -38,7 +38,7 @@ resulting moved point cloud and the original point cloud at the first
 frame. 4. As result of the previous steps we obtain the set of motions
 of the moving body without the motion of the reference body, that is,
 the **local motions** of the moving body with respect to the reference
-body (**careful**, don\'t mix it with the reference as origin of
+body (**careful**, don't mix it with the reference as origin of
 coordinates, we refer always the transformations to the same origin of
 coordinates, even the local motions).
 
@@ -64,7 +64,7 @@ belief is changed according to the difference.
 The point of application of the joint is unnecessary. As convention, we
 select as point of application the middle point between the centers of
 both point clusters defining the rigid bodies. Since it is not
-necessary, we don\'t filter it within the RE framework. It is taken as
+necessary, we don't filter it within the RE framework. It is taken as
 it is from the last measurement.
 
 #### Revolute Joint
@@ -148,7 +148,7 @@ solution.
 ### Circle and Cylinder fitting
 
 The method has been devised by Dov Katz and colleagues:
-[Dov Katz\'s PhD Thesis](http://www.robotics.tu-berlin.de/fileadmin/fg170/Theses/Interactive%20Perception%20of%20Articulated%20Objects%20for%20Autonomous%20Manipulation.pdf)
+[Dov Katz's PhD Thesis](http://www.robotics.tu-berlin.de/fileadmin/fg170/Theses/Interactive%20Perception%20of%20Articulated%20Objects%20for%20Autonomous%20Manipulation.pdf)
 
 It is called **feature_based** within the framework.
 
@@ -165,18 +165,18 @@ There are some steps to be taken to implement your own joint estimation
 method.
 
 -   Create a new folder in *include/joint_estimation* and
-    *src/joint_estimation*, e.g. we will use \"my_method\" in the
+    *src/joint_estimation*, e.g. we will use "my_method" in the
     following
--   In the message iap_common::Joint\`\`Msg add a constant for your
+-   In the message iap_common::Joint``Msg add a constant for your
     joint type
--   Create a My\`\`Method\`\`Joint class which **virtually** inherits
+-   Create a My``Method``Joint class which **virtually** inherits
     from Joint and implement the *getType* and *getTypeStr* as well as
     the *getJoint\...Uncertainty* methods
 -   Implement a class for every joint type, i.e.
-    My\`\`Method\`\`Revolute\`\`Joint,
-    My\`\`Method\`\`Prismatic\`\`Joint etc.
+    My``Method``Revolute``Joint,
+    My``Method``Prismatic``Joint etc.
 -   Implement a Joint Factory for your method
--   Add an else-branch in the Kinematic\`\`Analyzer\`\`Node, so that
+-   Add an else-branch in the Kinematic``Analyzer``Node, so that
     your method can be selected using a ROS parameter
 
 Take a look at the other methods to see what has to be implemented and
@@ -283,7 +283,7 @@ input and output data.
 
 -   type: *sensor_msgs/PointCloud2*
 -   description: A set of 3D features at a time. Will be transformed
-    into an iap_common::Feature\`\`Set. Kinematic analyzer only
+    into an iap_common::Feature``Set. Kinematic analyzer only
     subscribes if parameter */3d_from_sensor* is true.
 
 **/iap/estimated_feature_set_3d**

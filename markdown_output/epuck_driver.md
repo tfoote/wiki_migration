@@ -4,4 +4,4 @@
 
 ## Report a Bug
 
-\<\<GitHubIssues(verlab/verlab-e-puck-ros)\>\>
+<<GitHubIssues(verlab/verlab-e-puck-ros)>>

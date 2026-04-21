@@ -3,7 +3,7 @@
 Motion capture is an excellent tool for examining and analyzing human
 and robot movement. It tracks the locations of specific points through
 time. To represent such data, we present the
-\<\<MsgLink(mocap_point_cloud/MotionCapture)\>\> message.
+<<MsgLink(mocap_point_cloud/MotionCapture)>> message.
 
 ### Message Details
 
@@ -23,7 +23,7 @@ Missing data is demarcated with the point (0,0,0).
 Reading motion capture data from their original compressed formats (i.e.
 [c3d](c3d)) can often be a slow process. Instead, we have started
 storing the data as [rosbag](rosbag) files, containing
-\<\<MsgLink(mocap_point_cloud/MotionCapture)\>\> messages.
+<<MsgLink(mocap_point_cloud/MotionCapture)>> messages.
 
 ## Library
 
@@ -35,17 +35,17 @@ the four nodes described below.
 This library contains basic operations for reading in and converting
 mocap files.
 
--   \`load(filename)\` - reads in mocap data from a file. If the
-    filename contains \"c3d\", it reads in the c3d file. Otherwise, it
+-   `load(filename)` - reads in mocap data from a file. If the
+    filename contains "c3d", it reads in the c3d file. Otherwise, it
     reads in the bag file. It returns an array of !MotionCapture
     messages.
--   \`read_from_c3d(filename)\` - reads in c3d file, returns as a
+-   `read_from_c3d(filename)` - reads in c3d file, returns as a
     !MotionCapture
--   \`read_from_bag(filename)\` - reads in bag file, returns array of
+-   `read_from_bag(filename)` - reads in bag file, returns array of
     !MotionCaptures
--   \`write_to_bag(filename, mocaps)\` - writes the array of
+-   `write_to_bag(filename, mocaps)` - writes the array of
     !MotionCaptures to a bag file
--   There are also a number of helper functions (\`center\`, \`rotate\`,
+-   There are also a number of helper functions (`center`, `rotate`,
     etc.)
 
 ### mcpc_player
@@ -58,7 +58,7 @@ player = MocapPlayer(scale=100.0)
 player.add(mocap, "/mocap0")
 player.play()
 ``` You can also send the messages for a particular
-frame using \`play_frame(t)\`.
+frame using `play_frame(t)`.
 
 The MocapPlayer will broadcast the data points as !PointClouds, with the
 labels sent out in Markers. It is also possible to create an additional
@@ -72,7 +72,7 @@ data.
 ### C3d Converter
 
 This node uses the [c3d](c3d) package to convert c3d motion capture
-files to \<\<MsgLink(mocap_point_cloud/MotionCapture)\>\> messages,
+files to <<MsgLink(mocap_point_cloud/MotionCapture)>> messages,
 stored in bag files.
 
 ```
@@ -102,7 +102,7 @@ rosrun mocap_point_cloud play_gui.py file1.bag
 
 ### Statistics
 
-The final node is a statistics utility that we\'ve found useful in our
+The final node is a statistics utility that we've found useful in our
 own work. Given a list of c3d/bag files as parameters, it will print out
 the following statistics for each individual !MotionCapture contained in
 the files.
@@ -110,11 +110,11 @@ the files.
 -   filename
 -   id
 -   Number of frames
--   Number of points per frame (\"tracks\")
--   Number of non-zero points in first time frame (\"initial\")
+-   Number of points per frame ("tracks")
+-   Number of non-zero points in first time frame ("initial")
 -   Minimum/Maximum/Average number of non-zero points in any time frame
-    (\"minTrks\"/\"maxTrks\"/\"avgTrks\")
+    ("minTrks"/"maxTrks"/"avgTrks")
 -   Minimum/Maximum/Average coverage of a given track over all time
-    frames (\"minCov\"/\"maxCov\"/\"avgCov\")
--   Number of tracks that are non-zero in all time frames (\"full\")
+    frames ("minCov"/"maxCov"/"avgCov")
+-   Number of tracks that are non-zero in all time frames ("full")
 -   Number of tracks that are non-zero in 90% of time frames

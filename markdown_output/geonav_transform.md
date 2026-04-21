@@ -32,8 +32,8 @@ geonav_tranform_node can perform the following functions:
 -   utm
 -   odom
 -   Broadcasts the following tf2 tranforms
--   utm-\>odom
--   odom-\>base_link
+-   utm->odom
+-   odom->base_link
 
 The use-case that motivated this project is integrating sensors that
 provide a GPS-aided INS solution (e.g., microstrain, advanced
@@ -154,4 +154,4 @@ geonav_tranform: Transform between lat/lon and x/y using UTM
 coordinates.
 
 The use of both modules is documented in the API documentation and there
-are examples in the \`examples\` directory.
+are examples in the `examples` directory.

@@ -1,4 +1,4 @@
-This package contains an implementation of a \"remote\" watchdog. There
+This package contains an implementation of a "remote" watchdog. There
 exists one watchdog monitor that monitors all watchdogs and many
 watchdogs.
 
@@ -72,7 +72,7 @@ or you could include it in a .launch file
 ## Technical Information
 
 This watchdog implementation does not try to reset any nodes or perform
-any other action. It\'s sole purpose is to notify that a node has failed
+any other action. It's sole purpose is to notify that a node has failed
 to reset in time a watchdog.
 
 The watchdog implementation has a couple of services and topics. At the

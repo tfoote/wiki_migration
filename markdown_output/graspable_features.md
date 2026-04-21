@@ -5,7 +5,7 @@ display. It will be integrated to the package
 [pr2_gripper_click](pr2_gripper_click) in the future and will be started
 as part of the
 [pr2_interactive_manipulation](pr2_interactive_manipulation) package and
-please refer to that package\'s document on how to start the entire
+please refer to that package's document on how to start the entire
 interactive manipulation pipeline then.
 
 For now, please follow the steps as in below:
@@ -40,7 +40,7 @@ that you need, although some of them will be disabled on launch.
 
 The display will not display anything unless called by the interactive
 manipulation pipeline. An image from the narrow angle robot camera will
-be shown if called. Points which doesn\'t have associated depth
+be shown if called. Points which doesn't have associated depth
 information will be marked in light red, and those are not usable for
 grasp selection.
 
@@ -48,7 +48,7 @@ grasp selection.
 
 You just need to select a location, which is supposed to be roughly the
 location on the object to be grasped, and drag an arrow, denoting the
-projection of the gripper\'s approaching direction on the image plane
+projection of the gripper's approaching direction on the image plane
 
 -   left click on a non-red point on the image to select the gripper
     location
@@ -63,7 +63,7 @@ If you want to approach the object perpendicular to the image plane,
 
 ![](attachment:gripper_click_voxelgrid2.png)
 
-Possible 6-d gripper poses based on the user\'s input will be sampled
+Possible 6-d gripper poses based on the user's input will be sampled
 and evaluated. Some gripper pose suggestions will be made based on the
 evaluation results and the gripper will be shown on the interface.
 
@@ -73,8 +73,8 @@ evaluation results and the gripper will be shown on the interface.
 
 ### Placing
 
-Since it\'s not integrated with [pr2_gripper_click](pr2_gripper_click)
-yet, there\'s no placing functionality in this tool. Simply open the
+Since it's not integrated with [pr2_gripper_click](pr2_gripper_click)
+yet, there's no placing functionality in this tool. Simply open the
 gripper, object will fall out of the robot hand.
 
 ## ROS API
@@ -96,7 +96,7 @@ srv{
 
 ## Technical Details
 
-Please refer to Emma Zhang\'s intern presentation for technical details.
+Please refer to Emma Zhang's intern presentation for technical details.
 You can read the slide either from this
 [link](https://docs.google.com/a/willowgarage.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B6b9ztPGybotMzk2MjM3YTctNDc2MS00MWE2LTlmMmUtMGI5ZjRkYWE4YmQz&hl=en)
 or the incoming intern blog post on <http://www.willowgarage.com/blog>

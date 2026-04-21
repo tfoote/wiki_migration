@@ -59,18 +59,18 @@ roslaunch pr2_computer_monitor cpu_monitor.launch
 
 #### Implementation details
 
-\`cpumonitor.py\` uses command line tools to monitor the CPU. These
+`cpumonitor.py` uses command line tools to monitor the CPU. These
 commands are called in timer threads every 10 seconds or so to keep load
 down.
 
   -- ----------------------------------------- ------------ ------------------------------------------------------- -------------------------------------------------------------------------------------- --
      Command                                                Result                                                                                                                                         
-     \`sudo ipmitool sdr\`                                  Temperature, fan speed, temperature alarms                                                                                                     
-     \`cat /proc/cpuinfo                       grep MHz\`                                                           Clock speed of the computers, which shows them throttling if temperature is too high   
-     \`uptime\`                                             Give load average, number of users                                                                                                             
-     \`free -m\`                                            Free memory                                                                                                                                    
-     \`mpstat -P ALL 1 1\`                                  CPU usage                                                                                                                                      
-     \`find /sys/devices -name temp1_input\`                Gives names of CPU core temps, only called at startup                                                                                          
+     `sudo ipmitool sdr`                                  Temperature, fan speed, temperature alarms                                                                                                     
+     `cat /proc/cpuinfo                       grep MHz`                                                           Clock speed of the computers, which shows them throttling if temperature is too high   
+     `uptime`                                             Give load average, number of users                                                                                                             
+     `free -m`                                            Free memory                                                                                                                                    
+     `mpstat -P ALL 1 1`                                  CPU usage                                                                                                                                      
+     `find /sys/devices -name temp1_input`                Gives names of CPU core temps, only called at startup                                                                                          
   -- ----------------------------------------- ------------ ------------------------------------------------------- -------------------------------------------------------------------------------------- --
 
 ```clearsilver
@@ -93,7 +93,7 @@ node.0 {
 #### Usage
 
 Since many robots use a network filesystem and have the same files on
-all machines, it doesn\'t make sense to monitor drive space on all
+all machines, it doesn't make sense to monitor drive space on all
 drives. ```
 Usage: hd_monitor.py [--diag-hostname=cX]
 
@@ -101,7 +101,7 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-``` If the HOME_DIR directory above isn\'t
+``` If the HOME_DIR directory above isn't
 specified, the monitor will not check disk space remaining.
 
 To try it locally: ```
@@ -110,14 +110,14 @@ roslaunch pr2_computer_monitor hd_monitor.launch
 
 #### Implementation details
 
-\`hd_monitor.py\` uses command line tools to monitor the HD.
+`hd_monitor.py` uses command line tools to monitor the HD.
 
   -- ------------------------------------- -- ---------------------------------------------------- --
      Command                                  Result                                               
-     \`df -P \--block-size=1G HOME_DIR\`      Disk space remaining on the user\'s home directory   
+     `df -P \--block-size=1G HOME_DIR`      Disk space remaining on the user's home directory   
   -- ------------------------------------- -- ---------------------------------------------------- --
 
-\`hd_monitor.py\` will only check the disk usage if the home directory
+`hd_monitor.py` will only check the disk usage if the home directory
 argument is set from the command line.
 
 To check hard drive temperature, it opens a socket to hddtemp, a daemon
@@ -159,7 +159,7 @@ roslaunch pr2_computer_monitor ntp_monitor.launch
 
 #### Implementation Details
 
-\`ntp_monitor.py\` uses ntpdate to check the offset in clocks, using the
+`ntp_monitor.py` uses ntpdate to check the offset in clocks, using the
 NTP protocol. ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -168,15 +168,15 @@ Options:
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
 ```0 Give the offset from the NTP
-server, and the computer\'s self offset.
+server, and the computer's self offset.
 
 #### Computer Clocks and Self-Offset
 
-Each computer has two times: the time \`chrony\` thinks it is, and the
-system time. When they disagree, \`chrony\` slowly slews the system time
-until they match again. When you do \`ntpdate -q \<server\>\` you
-compare host\'s chrony time with the local system time. Doing \`ntpdate
--q \<hostname\>\` allows you to verify that the chrony time and the
+Each computer has two times: the time `chrony` thinks it is, and the
+system time. When they disagree, `chrony` slowly slews the system time
+until they match again. When you do `ntpdate -q <server>` you
+compare host's chrony time with the local system time. Doing `ntpdate
+-q <hostname>` allows you to verify that the chrony time and the
 system time match.
 
 ```
@@ -201,7 +201,7 @@ Options:
 
 #### Implementation Details
 
-The \`nvidia_temp.py\` script uses the command:
+The `nvidia_temp.py` script uses the command:
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
 
@@ -236,7 +236,7 @@ Options:
 
 ## Installation and setup
 
-With proper system dependencies, \`pr2_computer_monitor\` can work on
+With proper system dependencies, `pr2_computer_monitor` can work on
 almost any linux system. Use [rosdep](rosdep) to install required
 packages from the operating system: ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
@@ -249,11 +249,11 @@ Options:
 
 ### Verifying hddtemp Daemon
 
-It\'s a good idea to verify the installation of \`hddtemp\`. To contact
-\`hddtemp\` (which measures hard drive temperature),
-pr2_computer_monitor opens a socket to the \`hddtemp\` daemon.
+It's a good idea to verify the installation of `hddtemp`. To contact
+`hddtemp` (which measures hard drive temperature),
+pr2_computer_monitor opens a socket to the `hddtemp` daemon.
 
-First, verify that the \`hddtemp\` daemon is running.
+First, verify that the `hddtemp` daemon is running.
 
 ```
 Usage: cpu_monitor.py [--diag-hostname=cX]
@@ -272,7 +272,7 @@ Options:
   -h, --help            show this help message and exit
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
-```8 If \`hddtemp\` isn\'t up and running, start it
+```8 If `hddtemp` isn't up and running, start it
 by typing:
 
 ```
@@ -283,38 +283,38 @@ Options:
   --diag-hostname=DIAG_HOSTNAME
                         Computer name in diagnostics output (ex: 'c1')
 ```9 This will start it in daemon mode. Replace
-\"/dev/sda\" above with the name of your hard drive if it\'s different.
+"/dev/sda" above with the name of your hard drive if it's different.
 
 ### Configuring ipmitool
 
-Now, check if you have \`ipmitool\` installed correctly. If you choose
+Now, check if you have `ipmitool` installed correctly. If you choose
 not to use ipmitool to monitor CPU temperature and fan speed, disable it
-with \`check_ipmi_tool\` parameter to False. ```
+with `check_ipmi_tool` parameter to False. ```
 roslaunch pr2_computer_monitor cpu_monitor.launch
 ```0
 If this command returns with an error (below), then you will need to
-disable the ipmitool checks using the \`check_ipmi_tool\` parameter.
+disable the ipmitool checks using the `check_ipmi_tool` parameter.
 ```
 roslaunch pr2_computer_monitor cpu_monitor.launch
 ```1
 
-The \`ipmitool\` command needs to work properly without a password. If
-the above command asks for a \"sudo\" password, you\'ll need to edit the
+The `ipmitool` command needs to work properly without a password. If
+the above command asks for a "sudo" password, you'll need to edit the
 sudoers file: ```
 roslaunch pr2_computer_monitor cpu_monitor.launch
 ```2 Add the following line to use
-\`ipmitool\` without typing your password: ```
+`ipmitool` without typing your password: ```
 roslaunch pr2_computer_monitor cpu_monitor.launch
 ```3
 
 ### Other Configuration
 
-If your computers uses NFS, then you should enable the \`check_nfs\`
+If your computers uses NFS, then you should enable the `check_nfs`
 parameter for CPU monitor. The NFS status messages will have no data if
 not enabled.
 
 CPU monitor will warn if the CPU cores start throttling below 2240 MHz.
 This is appropriate for the PR2, but if your computer is different,
-disable the \`enforce_clock_speed\` parameter.
+disable the `enforce_clock_speed` parameter.
 
 ------------------------------------------------------------------------

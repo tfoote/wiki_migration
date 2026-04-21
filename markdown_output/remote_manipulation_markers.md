@@ -1,6 +1,6 @@
 ## About
 
-The \`remote_manipulation_markers\` package contains interactive marker
+The `remote_manipulation_markers` package contains interactive marker
 servers for a set of remote manipulation interaction approaches. The
 approaches include Free Positioning, Constrained Positioning, and
 Point-and-Click. These interactive marker servers are intended for use
@@ -14,7 +14,7 @@ approaches are shown below, with interaction points for setting initial
 poses shown in yellow, and interaction points for adjusting poses shown
 in blue.
 
-![\|width=\"700px\"](attachment:interaction.png)
+![\|width="700px"](attachment:interaction.png)
 
 Free positioning uses a ring-and-arrow marker which can be clicked and
 dragged to individually adjust translation along and rotation about each
@@ -37,7 +37,7 @@ Videos of the approaches in action can be found
 
 ## Messages and Services
 
-\<\<MsgSrvDoc(remote_manipulation_markers)\>\>
+<<MsgSrvDoc(remote_manipulation_markers)>>
 
 ## Nodes
 
@@ -199,7 +199,7 @@ node.3 {
 
 ## Installation
 
-To install the \`remote_manipulation_markers\` package, you can install
+To install the `remote_manipulation_markers` package, you can install
 from source with the following commands: . ```shell
 cd /(your catkin workspace)/src
 git clone https://github.com/GT-RAIL/remote_manipulation_markers.git
@@ -225,10 +225,10 @@ roslaunch remote_manipulation_markers constrained_positioning.launch
 roslaunch remote_manipulation_markers point_and_click.launch
 ```
 
-Note that \`free_positioning.launch\` and
-\`constrained_positioning.launch\` include a boolean parameter
-\`run_separate_vis\`. Setting \`run_seperate_vis\` to true will launch a
-\`gripper_marker_vis\` node that corresponds to the free or constrained
+Note that `free_positioning.launch` and
+`constrained_positioning.launch` include a boolean parameter
+`run_separate_vis`. Setting `run_seperate_vis` to true will launch a
+`gripper_marker_vis` node that corresponds to the free or constrained
 positioning node.
 
 ## Citation

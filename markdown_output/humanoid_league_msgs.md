@@ -1,6 +1,6 @@
 # Overview
 
-The \"humanoid_league_msgs\" package contains a set of messages which
+The "humanoid_league_msgs" package contains a set of messages which
 are specially designed for the RoboCup Humanoid League.
 
 More information and the message definitions can be found:

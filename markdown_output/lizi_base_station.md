@@ -10,7 +10,7 @@ You must complete the
 tutorial before using this package.
 
 The base station computer should have the entire lizi_robot meta-package
-built. You should also answer \'y\' (yes) to all steps of the setup.sh
+built. You should also answer 'y' (yes) to all steps of the setup.sh
 file (see the
 [Lizi robot installation](lizi_robot/Tutorials/Lizi robot installation)
 tutorial)
@@ -22,7 +22,7 @@ $ sudo apt-get install ros-hydro-joystick-drivers
 
 ## Launching the Lizi robots
 
-For the following examples we assume we have two Lizi robots with id\'s
+For the following examples we assume we have two Lizi robots with id's
 1 and 2 with IP addresses 192.168.0.101 and 192.168.0.102 respectively.
 The base station computer IP address is 192.168.0.100. One can use any
 other IP addresses.
@@ -48,10 +48,10 @@ the above Lizi robots addresses: ```shell
 </group>
 ```
 
-Make sure that the \<machine/\> parameters are all correct according to
+Make sure that the <machine/> parameters are all correct according to
 your network setup and to the specific robot computer username and
-password. Note that from the factory the default username is \"lizi\"
-and password is \"a\". .
+password. Note that from the factory the default username is "lizi"
+and password is "a". .
 
 In order to select exactly what will be launched on the lizi robots, see
 the lizi_robot/lizi_base_station/launch/remote_lizi.launch file.

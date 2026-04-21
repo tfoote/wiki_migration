@@ -16,24 +16,24 @@ You can select multiple nodes.
 
 ![ Reconfiguring multiple nodes](attachment:reconfigure_gui3.png )
 
-You can also launch the \`reconfigure_gui\` via [rqt_gui](rqt_gui):
+You can also launch the `reconfigure_gui` via [rqt_gui](rqt_gui):
 ```
 rosrun rqt_gui rqt_gui
 ```
 
 ### Limitation
 
--   [Incompatible with nodes running on ROS that\'s older than \`Groovy\`](https://github.com/ros-visualization/rqt_common_plugins/issues/40)
-    (won\'t fix)
+-   [Incompatible with nodes running on ROS that's older than `Groovy`](https://github.com/ros-visualization/rqt_common_plugins/issues/40)
+    (won't fix)
 -   Parameters are only picked up when this tool boots. Workaroud:
-    Refresh plugin (by blue \"whirling arrow\"(?)) button on each
-    plugin\'s toolbar
+    Refresh plugin (by blue "whirling arrow"(?)) button on each
+    plugin's toolbar
     ([ticket](https://github.com/ros-visualization/rqt_common_plugins/issues/154))
 
 ## Troubleshoot
 
 Generally speaking, try isolating GUI and non-GUI issue.
-\`dynamic_reconfigure\`\'s
+`dynamic_reconfigure`'s
 [command line tools](http://wiki.ros.org/dynamic_reconfigure/#dynamic_reconfigure.2BAC8-groovy.dynparam_command-line_tool)
 are helpful for doing that.
 
@@ -48,8 +48,8 @@ are returned:
 rosrun dynamic_reconfigure dynparam list
 ```
 
-If nothing returned then the issue is your \`dynamic_reconfigure\`
-itself, not \`rqt-reconfigure\`.
+If nothing returned then the issue is your `dynamic_reconfigure`
+itself, not `rqt-reconfigure`.
 
 ## Internal design
 

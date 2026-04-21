@@ -1,9 +1,9 @@
-![\|height=\"200\",width=\"333\"](attachment:Logo-white-medium.jpg)
+![\|height="200",width="333"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
 This package provides an implementation of the
-\"[Follow the Carrot](http://www8.cs.umu.se/kurser/TDBD17/VT06/utdelat/Assignment%20Papers/Path%20Tracking%20for%20a%20Miniature%20Robot.pdf)\"
+"[Follow the Carrot](http://www8.cs.umu.se/kurser/TDBD17/VT06/utdelat/Assignment%20Papers/Path%20Tracking%20for%20a%20Miniature%20Robot.pdf)"
 algorithm to local robot navigation on a flat plane. Given a global plan
 to follow and a costmap, the local planner produces velocity commands to
 send to a mobile base. The parameters for this planner are also
@@ -15,12 +15,12 @@ interface for a local planner. For this to work the standard
 
 ## Functionality
 
-The \"Follow the Carrot\" planer tries to follow the global plan as
+The "Follow the Carrot" planer tries to follow the global plan as
 accurately as possible. Based on the global plan it computes velocity
 commands to get to a point in that plan. As it uses the global plan to
 move around obstacles that plan needs to be updated continuously.
 
-![\|height=\"281\",width=\"327\"](attachment:donkeycarrotbellcurve.jpg)
+![\|height="281",width="327"](attachment:donkeycarrotbellcurve.jpg)
 
 ### Phases
 
@@ -37,7 +37,7 @@ The planner is divided into three phases after setting a new goal:
 How the calculation of the velocity works can be seen in the following
 picture:
 
-![\|height=\"578\",width=\"673\"](attachment:ftc_local_planner.jpg)
+![\|height="578",width="673"](attachment:ftc_local_planner.jpg)
 
 The planner goes along the global plan until the maximal distance or
 angle is reached. With this maximal distance or angle calculates the
@@ -64,16 +64,16 @@ real driven velocity (The motor controll could produce other velocitys
 than required).
 
 In this pictures you can see the function graph of the slow down factor.
-The first one depicts braking without a slow down factor -\> the robot
+The first one depicts braking without a slow down factor -> the robot
 rotates a long time with minimal rotation velocity. With the slow down
 factor in the second picture the robot rotates not as long with a
 minimal rotation velocity.
 
-![\|height=\"221\",width=\"530\"](attachment:slow_down_factor.png)
+![\|height="221",width="530"](attachment:slow_down_factor.png)
 
 ### Safety function
 
-The planner has a safety function. The robot doesn\'t drive to an area
+The planner has a safety function. The robot doesn't drive to an area
 which is near an obstacle. For this to work the planner checks the
 global costmap: If the to driven way is in high rated area of the global
 costmap (very near at a obstacle) the robot will stop! It will only
@@ -129,7 +129,7 @@ Manually adapt the two packages
 
 **Move_base:**
 
-In the move_base package in file \"move_base.cpp\" at line 132 add:
+In the move_base package in file "move_base.cpp" at line 132 add:
 (After the initialization of the local planner)
 
 ```
@@ -161,14 +161,14 @@ yaml files you can addapt them like descript below.
 To work correctly the global plan must be calculated periodically. If
 the global planner is not updated, the planner will fail.
 
-So you must set the \"planner_frequency\" at move_base to a number
+So you must set the "planner_frequency" at move_base to a number
 higher than 0, e.g. 5.
 
 Also, the local planner update frequency must be set higher than 0, e.g.
 controller_frequency = 5.
 
-The move_base parameter \"base_local_planner" must be set to
-\"ftc_local_planner/FTCPlanner\" in the move_base launch file.
+The move_base parameter "base_local_planner" must be set to
+"ftc_local_planner/FTCPlanner" in the move_base launch file.
 
 This could look like this:
 
@@ -181,13 +181,13 @@ This could look like this:
 
 </node>
 ``` For example you can look at the launch file
-\"launch/navigation.launch\" in the asr_mild_navigation package.
+"launch/navigation.launch" in the asr_mild_navigation package.
 
 #### Drive around local obstacles
 
-To drive around local obstacles, with aren\'t located on the global
+To drive around local obstacles, with aren't located on the global
 costmap you must update the global costmap. You must set the
-\"update_frequency\" higher than 0 in your global_costmap yaml.
+"update_frequency" higher than 0 in your global_costmap yaml.
 
 Then there are two ways to put a local obstacle into the global costmap:
 
@@ -198,12 +198,12 @@ global_costmap/obstacle_layer:
     enabled: true
 ``` **OR**
 
-**2. Set the \"join_obstacle\" parameter of the ftc_local_planner to
+**2. Set the "join_obstacle" parameter of the ftc_local_planner to
 true:**
 
 ```
 join_obstacle: true
-``` **Don\'t use both methods together!**
+``` **Don't use both methods together!**
 
 ### Start system
 

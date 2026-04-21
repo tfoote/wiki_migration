@@ -3,7 +3,7 @@
 This package provides a driver for the
 [Thymio II](https://aseba.wikidot.com/en:thymio) robot using the
 [asebaros](asebaros) package. This driver listens to velocity commands
-and outputs odometry and \`tf\` data. In addition, we provide launch
+and outputs odometry and `tf` data. In addition, we provide launch
 files to do SLAM and path planning with [gmapping](gmapping) and
 [navigation](navigation) stack, should an [Hokuyo sensor](hokuyo_node)
 be taped on top of the Thymio, like in this picture:
@@ -69,8 +69,8 @@ complete integration with [gmapping](gmapping) and the
 
 [Youtube](https://www.youtube.com/watch?v=c6IToN1KJvk)
 
-The file to launch is \`aseba_slam_nav_viewer.launch\`. For this launch
+The file to launch is `aseba_slam_nav_viewer.launch`. For this launch
 file to work, you must first connect the Hokuyo and then the Thymio, so
-that the Hokuyo gets \`/dev/ttyACM0\` as device and the Thymio
-\`/dev/ttyACM1\`. This also means that you should have no other
+that the Hokuyo gets `/dev/ttyACM0` as device and the Thymio
+`/dev/ttyACM1`. This also means that you should have no other
 USB-serial device plugged in.

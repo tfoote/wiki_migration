@@ -62,7 +62,7 @@ You can play with it directly if you have an
 roscd ethzasl_icp_mapper 
 roslaunch launch/openni/tracker_viewer.launch
 ``` You
-can then have a look into the \`launch/openni/\` files to see how the
+can then have a look into the `launch/openni/` files to see how the
 openni tracker is configured. This file roughly corresponds to the
 following chain:
 
@@ -138,34 +138,34 @@ prov_tf {
 
 ### Parameters
 
-\`icpConfig\` (\`string\`, no default)
+`icpConfig` (`string`, no default)
 
 . Name of the YAML file configuring the modular ICP chain, see
 [Configuration](#Chain_configuration) section.
 
-\`useROSLogger\` (\`bool\`, default: \`false\`)
+`useROSLogger` (`bool`, default: `false`)
 
 . If true, use ROS console for logging, otherwise use logger defined in
 config file.
 
-\`cloudTopic\` (\`string\`, default: \`\"/camera/rgb/points\"\`)
+`cloudTopic` (`string`, default: `"/camera/rgb/points"`)
 
 . The node listens to the topic whose name is defined by this parameter
-and expects a \`sensor_msgs/PointCloud2\`.
+and expects a `sensor_msgs/PointCloud2`.
 
-\`deltaPoseTopic\` (\`string\`, default: \`\"/openni_delta_pose\"\`)
+`deltaPoseTopic` (`string`, default: `"/openni_delta_pose"`)
 
 . Topic on which to send delta pose.
 
-\`fixedFrame\` (\`string\`, default: \`\"/world\"\`)
+`fixedFrame` (`string`, default: `"/world"`)
 
 . Frame name used as fixed frame in the [tf](tf) published by the node.
 
-\`sensorFrame\` (\`string\`, default: \`\"/openni_rgb_optical_frame\"\`)
+`sensorFrame` (`string`, default: `"/openni_rgb_optical_frame"`)
 
 . Frame name used as moving frame in the [tf](tf) published by the node.
 
-\`startupDropCount\` (\`unsigned\`, default: \`0\`)
+`startupDropCount` (`unsigned`, default: `0`)
 
 . Number of clouds to drop on startup, useful if sensor is producing
 garbage in a startup phase.
@@ -176,25 +176,25 @@ This node provides a service to match two point clouds.
 
 ### Services offered
 
-\`match_clouds\` (ethzasl_icp_mapper/MatchClouds.srv - custom messages
+`match_clouds` (ethzasl_icp_mapper/MatchClouds.srv - custom messages
 in the package)
 
-. This service takes two \`sensor_msgs/PointCloud2\` messages as inputs
+. This service takes two `sensor_msgs/PointCloud2` messages as inputs
 (the first is the reference and the second the reading) and provides a
-\`geometry_msgs/Transform\` message as output. The resulting
+`geometry_msgs/Transform` message as output. The resulting
 transformation can be used to move the reading point cloud.
 
 ### Parameters
 
-As with the \`mapper\` node, the chain is configured through a
+As with the `mapper` node, the chain is configured through a
 [YAML file](ethzasl_icp_configuration).
 
-\`config\` (\`string\`, no default)
+`config` (`string`, no default)
 
 . Name of the YAML file configuring the modular ICP chain, see
 [ICP chain configuration](ethzasl_icp_configuration) file.
 
-\`useROSLogger\` (\`bool\`, default: \`false\`)
+`useROSLogger` (`bool`, default: `false`)
 
 . If true, use ROS console for logging, otherwise use logger defined in
 config file.

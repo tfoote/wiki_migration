@@ -27,7 +27,7 @@ The current version has only been tested for kinetic distro.
 
 ### Robot descriptions and MoveIt packages
 
-Robot description and MoveIt configurations from the \`elfin_robot\`
+Robot description and MoveIt configurations from the `elfin_robot`
 stack can be used.
 
 ## Installation
@@ -75,13 +75,13 @@ available tutorials.
 ## Contact us/Technical support
 
 For questions about this package , please contact the developers by
-writting to \<support (at) canonicalrobots.com\> or by posting a message
+writting to <support (at) canonicalrobots.com> or by posting a message
 in the [ROS Driver category](https://discourse.ros.org/c/drivers/) on
 ROS Discourse.
 
 ## Report a Bug
 
-\<\<GitHubIssues(canonical-robots/elfin_robot)\>\>
+<<GitHubIssues(canonical-robots/elfin_robot)>>
 
 ## Acknowledgement
 

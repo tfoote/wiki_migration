@@ -41,4 +41,4 @@ rosrun vnc_image_client vnc_image_client.py \
      _host:=<vnc_host> _port:=<vnc_port> _password:=<your_secret> \
      _image_topic:=<image_output_topic> _publish_rate:=<image_publish_rate>
 ``` An example launch file is provieded in the
-\`launch\` folder.
+`launch` folder.

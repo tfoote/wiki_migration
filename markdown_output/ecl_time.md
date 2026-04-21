@@ -61,8 +61,8 @@ for 1x10\^9 units.
 ### MacOSX Timers
 
 MacOSX timers are mostly posix, however they are missing the extensions
-provided by the librt library, e.g. \`clock_gettime\` and
-\`clock_nanosleep\`. The real downside of this is that it is not
+provided by the librt library, e.g. `clock_gettime` and
+`clock_nanosleep`. The real downside of this is that it is not
 possible to use absolute time with the macosx posix timers (i.e.
 periodic timers will drift).
 

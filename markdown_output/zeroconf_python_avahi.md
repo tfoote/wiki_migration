@@ -35,7 +35,7 @@ make install
 ### Service types
 
 Avahi does not currently support ROS service types and the build script
-isn\'t installed by default.
+isn't installed by default.
 
 The following commands will install updated files if you have not
 modified them, if you have previously modified these files you should
@@ -137,7 +137,7 @@ masters:
 make install
 ```0
 
-\<\<MsgSrvDoc(zeroconf)\>\>
+<<MsgSrvDoc(zeroconf)>>
 
 ## Known Bugs
 

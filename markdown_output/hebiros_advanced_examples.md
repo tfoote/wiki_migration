@@ -32,13 +32,13 @@ roslaunch hebiros_advanced_examples x_demo_rviz.launch
 ```\
 
 You should see rviz open. First, add a new display and select
-\`RobotModel\`.
+`RobotModel`.
 
 ![](attachment:rviz_displays.png)
 
 \
 
-Next, type \`robot_description\` as the parameter for the Robot
+Next, type `robot_description` as the parameter for the Robot
 Description. This parameter should contain the URDF of the robot. You
 should be able to see the model move as in the following video when you
 move the physical robot.
@@ -52,11 +52,11 @@ This example demonstrates using [gazebo](gazebo) in order to simulate
 the 3-dof-arm robot. The actual controller is the same as in Example 3
 of [hebiros_basic_examples](hebiros_basic_examples), the virtual spring.
 The difference is that the group is constructed using
-\`/hebiros/add_group_from_urdf\`, thus the *same* program can be used
+`/hebiros/add_group_from_urdf`, thus the *same* program can be used
 either in simulation via Gazebo or on the hardware.
 
 First, launch the setup file. This will load the urdf to
-\`robot_parameter\`, open Gazebo and start the \`hebiros_node\` and
+`robot_parameter`, open Gazebo and start the `hebiros_node` and
 example node.
 
 ```
@@ -87,12 +87,12 @@ This example demonstrates using [moveit](moveit) in order to visualize
 trajectory planning of the 3-dof-arm robot. You can also use this to
 command the physical robot.
 
-The launch file assumes that you have a package named \`x_demo\`. In
-order to create the package, follow MoveIt!\'s
+The launch file assumes that you have a package named `x_demo`. In
+order to create the package, follow MoveIt!'s
 [setup assistant tutorial](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html).
 This will take you through selecting a URDF, assigning joints, assigning
 labeled positions, and more. There is also an example generated package
-called \`x_demo\` in the \`hebiros_advanced_examples\` source files. To
+called `x_demo` in the `hebiros_advanced_examples` source files. To
 use it, place the folder in your catkin workspace.
 
 Launch the visualization file in order to visualize planning and

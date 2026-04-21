@@ -1,18 +1,18 @@
 ## Overview
 
-\`world_db_core\` provides the basic functionality for creating and
+`world_db_core` provides the basic functionality for creating and
 maintaining a persistent belief state. It uses an interface to rosbag to
 record low-level sensor data and creates an index in an SQLite database.
 Plugins have access to the database through
 [model_database](model_database) and can store their state for later
 calls. Further, plugins have access to the recorded bag files. They can
 either directly play back sensor data or get instances of type
-\`rosbag::MessageInstance\` to publish or process them on their own.
+`rosbag::MessageInstance` to publish or process them on their own.
 
 ## Configuration
 
 The basic configuration is done via ros parameters. Plugin parameters
-normally live in sub-namespaces of \`world_db_core\`.
+normally live in sub-namespaces of `world_db_core`.
 
 ```clearsilver
 
@@ -32,7 +32,7 @@ param {
 
 ## Example Configuration
 
-This yaml snippet configures \`world_db_core\` to record the tilting
+This yaml snippet configures `world_db_core` to record the tilting
 laser, tf and the narrow stereo. It loads four plugins and parameterizes
 them. For the parameters of the plugins, please read the documentation
 on [world_db_detector_lib](world_db_detector_lib) and

@@ -1,8 +1,8 @@
-![\|width=\"700\"](attachment:ur5.png)
+![\|width="700"](attachment:ur5.png)
 
 The pretty mesh model
 
-![\|width=\"700\"](attachment:ur5-collision.png)
+![\|width="700"](attachment:ur5-collision.png)
 
 The cylinder-based efficient collision model.
 

@@ -1,6 +1,6 @@
 ## Overview
 
-The \`nav_core\` package contains key interfaces for the navigation
+The `nav_core` package contains key interfaces for the navigation
 stack. All planners and recovery behaviors that wish to be used as
 [ plugins](pluginlib ) in the [move_base](move_base) node must adhere to
 these interfaces.
@@ -9,21 +9,21 @@ these interfaces.
 
 ## BaseGlobalPlanner
 
-The \`nav_core::BaseGlobalPlanner\` provides an interface for global
+The `nav_core::BaseGlobalPlanner` provides an interface for global
 planners used in navigation. All global planners written as plugins for
 the [move_base](move_base) node must adhere to this interface. Current
-global planners using the \`nav_core::BaseGlobalPlanner\` interface are:
+global planners using the `nav_core::BaseGlobalPlanner` interface are:
 
 -   [global_planner](global_planner) - A fast, interpolated global
     planner built as a more flexible replacement to navfn. (pluginlib
-    name: \"global_planner/GlobalPlanner\")
+    name: "global_planner/GlobalPlanner")
 -   [navfn](navfn) - A grid-based global planner that uses a navigation
     function to compute a path for a robot. (pluginlib name:
-    \"navfn/NavfnROS\")
+    "navfn/NavfnROS")
 -   [carrot_planner](carrot_planner) - A simple global planner that
     takes a user-specified goal point and attempts to move the robot as
     close to it as possible, even when that goal point is in an
-    obstacle. (pluginlib name: \"carrot_planner/CarrotPlanner\")
+    obstacle. (pluginlib name: "carrot_planner/CarrotPlanner")
 
 ### API Stability
 
@@ -31,16 +31,16 @@ global planners using the \`nav_core::BaseGlobalPlanner\` interface are:
 
 ### BaseGlobalPlanner C++ API
 
-Documentation on the C++ API for the \`nav_core::BaseGlobalPlanner\` can
+Documentation on the C++ API for the `nav_core::BaseGlobalPlanner` can
 be found here:
 [ BaseGlobalPlanner documentation](http://www.ros.org/doc/api/nav_core/html/classnav__core_1_1BaseGlobalPlanner.html ).
 
 ## BaseLocalPlanner
 
-The \`nav_core::BaseLocalPlanner\` provides an interface for local
+The `nav_core::BaseLocalPlanner` provides an interface for local
 planners used in navigation. All local planners written as plugins for
 the [move_base](move_base) node must adhere to this interface. Current
-local planners using the \`nav_core::BaseLocalPlanner\` interface are:
+local planners using the `nav_core::BaseLocalPlanner` interface are:
 
 -   [base_local_planner](base_local_planner) - Provides implementations
     of the Dynamic Window Approach(DWA)and Trajectory Rollout approaches
@@ -48,7 +48,7 @@ local planners using the \`nav_core::BaseLocalPlanner\` interface are:
 -   [dwa_local_planner](dwa_local_planner) - Modular DWA implementation
     with a lot cleaner and easier interface to understand and more
     flexible y axis variables for holonomic robots than
-    [base_local_planner](base_local_planner)\'s DWA
+    [base_local_planner](base_local_planner)'s DWA
 -   [eband_local_planner](eband_local_planner) - Implements the Elastic
     Band method on the SE2 manifold
 -   [teb_local_planner](teb_local_planner) - Implements the
@@ -62,16 +62,16 @@ local planners using the \`nav_core::BaseLocalPlanner\` interface are:
 
 ### BaseLocalPlanner C++ API
 
-Documentation on the C++ API for the \`nav_core::BaseLocalPlanner\` can
+Documentation on the C++ API for the `nav_core::BaseLocalPlanner` can
 be found here:
 [ BaseLocalPlanner documentation](http://www.ros.org/doc/api/nav_core/html/classnav__core_1_1BaseLocalPlanner.html ).
 
 ## RecoveryBehavior
 
-The \`nav_core::RecoveryBehavior\` provides an interface for recovery
+The `nav_core::RecoveryBehavior` provides an interface for recovery
 behaviors used in navigation. All recovery behaviors written as plugins
 for the [move_base](move_base) node must adhere to this interface.
-Current recovery behaviors using the \`nav_core::RecoveryBehavior\`
+Current recovery behaviors using the `nav_core::RecoveryBehavior`
 interface are:
 
 -   [clear_costmap_recovery](clear_costmap_recovery) - A recovery
@@ -87,6 +87,6 @@ interface are:
 
 ### RecoveryBehavior C++ API
 
-Documentation on the C++ API for the \`nav_core::RecoveryBehavior\` can
+Documentation on the C++ API for the `nav_core::RecoveryBehavior` can
 be found here:
 [ RecoveryBehavior Documentation](http://www.ros.org/doc/api/nav_core/html/classnav__core_1_1RecoveryBehavior.html )

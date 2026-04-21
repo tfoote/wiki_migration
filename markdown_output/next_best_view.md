@@ -22,7 +22,7 @@ make the following steps:
 -   estimate the normals in some of the points of this boundary surface;
 -   mark the connected components that have similar surface normals and
     filter those that are either too high or too low, as they are
-    outside of the sensor\'s reach;
+    outside of the sensor's reach;
 -   assume that the biggest surface patches cover bigger unknown
     volumes. Multiple scan poses that are directed towards the unknown
     space are then generated.

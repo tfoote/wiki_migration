@@ -24,11 +24,11 @@ started with Cartesian control.
 
 -   **Add Cartesian functionality to ROS control**. This brings new
     interfaces for controller design, such as a
-    \`\`\`PoseCommandInterface\`\`\`, a
-    \`\`\`TwistCommandInterface\`\`\`, and a new Cartesian trajectory
+    ```PoseCommandInterface```, a
+    ```TwistCommandInterface```, and a new Cartesian trajectory
     definition. Example controllers include a
-    \`\`\`TwistController\`\`\` and a
-    \`\`\`CartesianTrajectoryController\`\`\`.
+    ```TwistController``` and a
+    ```CartesianTrajectoryController```.
 
 ```{=html}
 <!-- -->
@@ -37,16 +37,16 @@ started with Cartesian control.
     Specify your task comfortably with waypoints in task space. ROS-side
     interpolation and streaming of setpoints over the new interfaces is
     only one of several alternatives. See the
-    [\`cartesian_control_msgs\`](https://github.com/UniversalRobots/Universal_Robots_ROS_cartesian_control_msgs)
+    [`cartesian_control_msgs`](https://github.com/UniversalRobots/Universal_Robots_ROS_cartesian_control_msgs)
     package for details about the interface definition.
 
 ```{=html}
 <!-- -->
 ```
 -   **Use (conventional) ROS control** for Cartesian trajectory
-    execution. You don\'t need to change anything in the driver\'s
+    execution. You don't need to change anything in the driver's
     HW-abstraction of your specific robot if that supports current ROS
-    control. The \`position_controllers/CartesianTrajectoryController\`
+    control. The `position_controllers/CartesianTrajectoryController`
     controller uses an IK solver to generate joint commands from the
     Cartesian trajectory during runtime. Thus, existing joint command
     interfaces (which should be present in most ROS-Control-enabled
@@ -56,8 +56,8 @@ started with Cartesian control.
 <!-- -->
 ```
 -   **Hand-over control to the robot by forwarding trajectories**. Two
-    new interfaces \`\`\`CartesianTrajectoryInterface\`\`\` and
-    \`\`\`JointTrajectoryInterface\`\`\` let robots take care of
+    new interfaces ```CartesianTrajectoryInterface``` and
+    ```JointTrajectoryInterface``` let robots take care of
     driver-side interpolation to achieve best performance. This
     functionality lives in a
     [separate repository](https://github.com/UniversalRobots/Universal_Robots_ROS_passthrough_controllers).

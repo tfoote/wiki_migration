@@ -27,7 +27,7 @@ Training images are listed in the **train.text** file.\
 The **train.txt** follows a specific format which is best understood by
 looking at the example **train.txt** file provided in the package. Note
 that person numbers start from 1, and spaces or special characters are
-not allowed in persons\' names).\
+not allowed in persons' names).\
 The program trains from the training examples listed in the
 **train.txt** and create an Eigenfaces database which is stored in the
 **facedata.xml** file.\
@@ -35,7 +35,7 @@ Face detection is performed using a haarcascade classifier
 (haarcascade_frontalface_alt.xml).\
 The **data** folder, and **train.txt**, **facedata.xml** and
 **haarcascade_frontalface_alt.xml** files should be placed in the
-program\'s working directory (i.e. the directory from which you execute
+program's working directory (i.e. the directory from which you execute
 the program).\
 
 When the face_recognition program starts:\
@@ -87,16 +87,16 @@ goals:
     value are sent back to the client as feedback. This goal is
     persuaded for infinite time until it is cancelled or preempted by
     another goal.
--   **order_id** = 2 and **order_argument** = \'person_name\'
+-   **order_id** = 2 and **order_argument** = 'person_name'
     add_face_images: Goal is to acquire training images for a NEW
     person. The video stream is processed for detecting a face which is
     saved and used as a training image for the new person. This process
     is continued until the desired number of training images for the new
     person is acquired. The name of the new person is provided as
-    **order_argument**. The acquired images are stored in the \'data\'
+    **order_argument**. The acquired images are stored in the 'data'
     folder and are added to the list of training images in **train.txt**
 -   **order_id** = 3 train: Goal is to (re)train the Eigenfaces database
-    from the training images listed in the \'train.txt\'.
+    from the training images listed in the 'train.txt'.
 -   **order_id** = 4 exit: Goal is to exit the program.
 
 ### Subscribed Topic:
@@ -106,7 +106,7 @@ goals:
 ### Parameters:
 
 -   **confidence_value** (*double*, default = 0.88) A face recognized
-    with confidence value higher than the \"confidence_value\" threshold
+    with confidence value higher than the "confidence_value" threshold
     is accepted as valid.
 
 ```{=html}
@@ -119,15 +119,15 @@ goals:
 <!-- -->
 ```
 -   **add_face_number** (*int*, default = 25) A parameter for the
-    \'add_face_images\' goal (order_id = 2) which determines the number
+    'add_face_images' goal (order_id = 2) which determines the number
     of training images for a new person to be acquired from the video
     stream
 
 ## Fclient
 
 **Fclient** is a ROS node that implements an actionlib client example
-for the face_recognition simple actionlib server (i.e. \'Fserver\').
-\'Fclient\' is provided for demonstration and testing purposes.
+for the face_recognition simple actionlib server (i.e. 'Fserver').
+'Fclient' is provided for demonstration and testing purposes.
 
 ### Subscribed topics
 
@@ -197,10 +197,10 @@ $ rosmake face_recognition
 
 Training images are stored in the **data** directory.\
 Training images are listed in the **train.text** file.\
-The \'train.txt\' follows a specific format which is best understood by
+The 'train.txt' follows a specific format which is best understood by
 looking at the example **train.txt** file provided in the package. Note
 that person numbers start from 1, and spaces or special characters are
-not allowed in persons\' names).\
+not allowed in persons' names).\
 The program trains from the training examples listed in the
 **train.txt** and create an Eigenfaces database which is stored in the
 **facedata.xml** file.\
@@ -208,7 +208,7 @@ Face detection is performed using a haarcascade classifier
 (haarcascade_frontalface_alt.xml).\
 The **data** folder, and **train.txt**, **facedata.xml** and
 **haarcascade_frontalface_alt.xml** files should be placed in the
-program\'s working directory (i.e. the directory from which you execute
+program's working directory (i.e. the directory from which you execute
 the program).\
 
 When the face_recognition program starts:\
@@ -259,16 +259,16 @@ goals:
     value are sent back to the client as feedback. This goal is
     persuaded for infinite time until it is cancelled or preempted by
     another goal.
--   **order_id** = 2 and **order_argument** = \'person_name\'
+-   **order_id** = 2 and **order_argument** = 'person_name'
     add_face_images: Goal is to acquire training images for a NEW
     person. The video stream is processed for detecting a face which is
     saved and used as a training image for the new person. This process
     is continued until the desired number of training images for the new
     person is acquired. The name of the new person is provided as
-    **order_argument**. The acquired images are stored in the \'data\'
+    **order_argument**. The acquired images are stored in the 'data'
     folder and are added to the list of training images in **train.txt**
 -   **order_id** = 3 train: Goal is to (re)train the Eigenfaces database
-    from the training images listed in the \'train.txt\'.
+    from the training images listed in the 'train.txt'.
 -   **order_id** = 4 exit: Goal is to exit the program.
 
 ### Subscribed Topic:
@@ -278,7 +278,7 @@ goals:
 ### Parameters:
 
 -   **confidence_value** (*double*, default = 0.88) A face recognized
-    with confidence value higher than the \"confidence_value\" threshold
+    with confidence value higher than the "confidence_value" threshold
     is accepted as valid.
 
 ```{=html}
@@ -291,15 +291,15 @@ goals:
 <!-- -->
 ```
 -   **add_face_number** (*int*, default = 25) A parameter for the
-    \'add_face_images\' goal (order_id = 2) which determines the number
+    'add_face_images' goal (order_id = 2) which determines the number
     of training images for a new person to be acquired from the video
     stream
 
 ## Fclient
 
 **Fclient** is a ROS node that implements an actionlib client example
-for the face_recognition simple actionlib server (i.e. \'Fserver\').
-\'Fclient\' is provided for demonstration and testing purposes.
+for the face_recognition simple actionlib server (i.e. 'Fserver').
+'Fclient' is provided for demonstration and testing purposes.
 
 ### Subscribed topics
 

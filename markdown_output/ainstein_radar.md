@@ -5,7 +5,7 @@ simulation, visualization and processing tools and utilities for working
 with generic radar data.
 
 -   Maintainer status: developed
--   Maintainer: Nick Rotella \<nick.rotella AT ainstein DOT ai\>
+-   Maintainer: Nick Rotella <nick.rotella AT ainstein DOT ai>
 -   Author: Nick Rotella
 -   License: BSD
 -   Bug / feature tracker:

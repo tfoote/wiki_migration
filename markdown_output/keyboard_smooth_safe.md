@@ -28,7 +28,7 @@ The keyboard_smooth_safe node takes 3 parameters:
 -   scale_angular: The speed of turning the robot
 -   scale_linear: The speed of linear movement
 -   dbl_max_x_orientation: The maximum x orientation a patch is allowed
-    to have before it is considered to be in the front (if the patch\'s
-    x orientation is positive) or in the back (if the patch\'s
-    orientation is negative). Patches in the \"front\" or in the
-    \"back\" that are activated stop linear movements in this direction.
+    to have before it is considered to be in the front (if the patch's
+    x orientation is positive) or in the back (if the patch's
+    orientation is negative). Patches in the "front" or in the
+    "back" that are activated stop linear movements in this direction.

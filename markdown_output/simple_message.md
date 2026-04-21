@@ -60,4 +60,4 @@ at !GitHub. See the readme for information on how to install it.
 
 ## Reporting bugs
 
-\<\<GitHubIssues(ros-industrial/industrial_core)\>\>
+<<GitHubIssues(ros-industrial/industrial_core)>>

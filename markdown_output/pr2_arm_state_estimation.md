@@ -1,4 +1,4 @@
-This package uses Bosch MEMS sensors to estimate the pose of the PR2\'s
+This package uses Bosch MEMS sensors to estimate the pose of the PR2's
 arm. The cost of accelerometers and gyroscopes has dropped to a point
 where they have become ubiquitous sensors, as seen by their presence in
 mobile phones and video game controllers. It is possible to use these

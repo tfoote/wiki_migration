@@ -129,11 +129,11 @@ $ rosrun optris_drivers optris_imager_node _xmlConfig:=config/12090031.xml
 ``` The xml configuration file is camera specific.
 It comprises the following values:
 
--   fov: optic\'s field of view
+-   fov: optic's field of view
 -   temperature min: minimum value of temperature range
 -   temperature max: maximum value of temperature range
 -   framerate: desired framerate for the grabbing callback. This value
-    needs to be less or equal the camera\'s maximum framerate.
+    needs to be less or equal the camera's maximum framerate.
 -   controller: HID (=1) or pure UVC (=2) interface. In most cases this
     option is HID (cameras having a pure UVC controller interface need a
     special firmware version).
@@ -151,7 +151,7 @@ representation.
 ```
 $ rosrun optris_drivers optris_colorconvert_node _palette:=6 _paletteScaling:=2 _temperatureMin:=10 _temperatureMax:=30
 ``` Alternatively, both nodes are started in the
-namespace \"optris\" with
+namespace "optris" with
 
 ```
 $ roslaunch optris_drivers.launch
@@ -174,7 +174,7 @@ $ rosservice call /optris/optris_imager_node/force_flag
 The default image transport format is raw. If you have to tunnel data
 over a low-bandwidth network, you can employ the PNG compression
 mechanism of image_transport. Launch the subscriber of the thermal_image
-topic with the following \_image_transport option:
+topic with the following _image_transport option:
 
 ```
 $ rosrun optris_drivers optris_colorconvert_node _palette:=6 _paletteScaling:=2 _temperatureMin:=10 _temperatureMax:=30 _image_transport:=compressed
@@ -342,14 +342,14 @@ srv{
   desc = switches color conversion palette (valid values: 1..12).
   }
 }
-```3 and remind the namespace \"optris\".
+```3 and remind the namespace "optris".
 
 ### Using BI-SPECTRAL technology
 
 PI 200/230 cameras support a second image channel. Verify that in the
 corresponding configuration file, bispectral is set to 1. The topic
 visible_image is providing a yuv422 image format, either in raw or PNG
-coding depending on \_image_transport. Ensure that the compression is
+coding depending on _image_transport. Ensure that the compression is
 set to PNG, JPEG is not supporting yuv422 for the moment. Starting
 optris_colorconvert_node subscribes to visible_image and publishes
 visible_image_view, which is in rgb8 format. Either raw or PNG/JPEG
@@ -406,7 +406,7 @@ If you cannot get image data from above mentioned topics, check
     lsusb -t. Ensure that the thermal imager is the only device on a
     certain bus.
 -   \... if you can get data with guvcview or a similar UVC grabbing
-    module. The frame rate should be \>\> 1, if not the \"nodrop\"
+    module. The frame rate should be >> 1, if not the "nodrop"
     option might help. If permissions are missing, you need to apply
     udev rules before connecting the device. An example for those udev
     rules is included in this package.

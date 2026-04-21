@@ -1,4 +1,4 @@
-![\|width=\"333\",height=\"200\"](attachment:Logo-white-medium.jpg)
+![\|width="333",height="200"](attachment:Logo-white-medium.jpg)
 
 ## Description
 
@@ -16,7 +16,7 @@ The **Learner** collects objects from a database and learns a gaussian
 mixture model (GMM) with expectation maximization. The GMM represents
 the relation between to objects. The training process is done offline.
 
-![\|width=\"618\",height=\"360\"](attachment:1.png)
+![\|width="618",height="360"](attachment:1.png)
 
 *Figure 1: The learner uses observed object trajectories as the basis
 for its calculations. Here, the blue lines indicate the movement of the
@@ -25,9 +25,9 @@ can be used to find a set of relations; see below.*
 
 The learner also learns probabability tables representing the
 probabilites that an object was not observed in some of the steps of the
-trajectory used for learning (\"Object Existence\") or that an object
+trajectory used for learning ("Object Existence") or that an object
 was misclassified as another by the independent object recognizer
-(\"Object Appearence\"). The current implementation assumes that every
+("Object Appearence"). The current implementation assumes that every
 object was visible and correctly classified in every step.
 
 Output: XML File that contains the learned Object Constallation Models
@@ -35,7 +35,7 @@ Output: XML File that contains the learned Object Constallation Models
 <https://en.wikipedia.org/wiki/Constellation_model>), Object Appearence
 and Object Existence for the new scene.
 
-![\|width=\"480\",height=\"520\"](attachment:2.png)
+![\|width="480",height="520"](attachment:2.png)
 
 *Figure 2: An example for the models created by the learner. The
 xml-file contains the scene model of a breakfast scene with a coffee box
@@ -53,7 +53,7 @@ tables.
 
 Since the PSM is a parametric model and the learned models are stored in
 a human readable xml file, the paramteres of the model can be edited in
-a text editor and one doesn\'t need to train a whole new model if e.g.
+a text editor and one doesn't need to train a whole new model if e.g.
 an object should be exchanged with a new one.
 
 Compare [asr_psm_visualizations](asr_psm_visualizations) and the general
@@ -130,62 +130,62 @@ Use the camera and object recognizers to create object messages.
 -   *scene_model_name*: Name of the output .xml file containing the
     model.
 -   *scene_model_type*: The type of the scene that should be learned.
-    \"ocm\" be default, since no other types are currently implemented.
+    "ocm" be default, since no other types are currently implemented.
 -   *scene_model_directory*: path to the directory where the resulting
     model xml file should be stored.
--   *workspace_volume*: The volume of the workspace we\'re working in in
+-   *workspace_volume*: The volume of the workspace we're working in in
     cubic meters. Dependent on your recording setup and scene. Default:
-    \"8.0\".
--   *static_break_ratio*: for the relation graph generator\'s heuristic
+    "8.0".
+-   *static_break_ratio*: for the relation graph generator's heuristic
     selecting relations: static breaks are misalignments in angle
     between two objects at different trajectory steps. If there are more
     static breaks than static_break_ratio (multiplied with the sample
     range), two trajectories are considered not parallel. Default:
-    \"1.01\".
+    "1.01".
 -   *together_ratio*: for relation graph generator, which uses
     agglomerative clustering to build a tree of the relations: if two
     objects do not appear together in more than together_ratio of the
     trajectory steps, they are considered not parallel. Default:
-    \"0.9\".
+    "0.9".
 -   *intermediate_results*: whether or not to show intermediate results.
-    Default: \"false\".
+    Default: "false".
 -   *timestamps*: whether or not to add timestamps to the result file
-    name. Default: \"false\".
--   \_kernels_min\_\*: the minimal number of kernels per GMM. Default:
-    \"1\".
--   \_kernels_max\_\*: the maximal number of kernels per GMM. Default:
-    \"1\". A higher number of kernels leads to more precise results, but
+    name. Default: "false".
+-   _kernels_min_\*: the minimal number of kernels per GMM. Default:
+    "1".
+-   _kernels_max_\*: the maximal number of kernels per GMM. Default:
+    "1". A higher number of kernels leads to more precise results, but
     longer training time.
--   \_runs_per_kernel\_\*: The number of separate runs per kernel to
-    possibly improve the resulting kernel. Default: \"1\".
--   \_synthetic_samples\_\*: the number of additional samples to create
-    around every recorded sample. Default: \"0\".
--   \_interval_position\_\*: asr_psm uses sample relaxation to improve
+-   _runs_per_kernel_\*: The number of separate runs per kernel to
+    possibly improve the resulting kernel. Default: "1".
+-   _synthetic_samples_\*: the number of additional samples to create
+    around every recorded sample. Default: "0".
+-   _interval_position_\*: asr_psm uses sample relaxation to improve
     results. This parameter determines the interval for the sample
-    relaxation for the position (in meters). Default: \"0.50\"
--   \_interval_orientation\_\*: determines the interval for the sample
-    relaxation for orientation (in degrees). Default: \"10\".
+    relaxation for the position (in meters). Default: "0.50"
+-   _interval_orientation_\*: determines the interval for the sample
+    relaxation for orientation (in degrees). Default: "10".
 -   *orientation_plot_path*: if this parameter is not set to
-    \"UNDEFINED\", a gnuplot file for each Gaussian Kernel for
+    "UNDEFINED", a gnuplot file for each Gaussian Kernel for
     orientation in roll, pitch and yaw is written and the gnuplot shown
     on screen. Since this leads to a lot of plots and files for large
     numbers of kernels, it is deactivated by default. Default:
-    \"UNDEFINED\".
+    "UNDEFINED".
 -   *max_angle_deviation*: for relation graph generator heuristic: the
     value in degrees above which an angle is considered a misalignment.
-    Default: \"45\".
+    Default: "45".
 -   *base_frame_id*: The name of the frame the objects should be
-    transformed to. default: \"/PTU\".
--   *scale_factor*: to enlarge the visualization. Default: \"1.0\".
+    transformed to. default: "/PTU".
+-   *scale_factor*: to enlarge the visualization. Default: "1.0".
 -   *sigma_multiplier*: multiplier to the sigma of the standard
-    deviation. Default: \"3.0\".
--   \_attempts_per_run\_\*: How often the learner attempts to learn a
+    deviation. Default: "3.0".
+-   _attempts_per_run_\*: How often the learner attempts to learn a
     valid model in each run until it gives up and throws an error. After
     half the attempts, the learner switches from a generic to a less
     precise but more stable diagonal matrix as base for the covariance
-    matrices. Use \"2\" if each matrix type should be tried exactly once
-    and \"1\" if only a generic matrix should be used once. Default:
-    \"10\".
+    matrices. Use "2" if each matrix type should be tried exactly once
+    and "1" if only a generic matrix should be used once. Default:
+    "10".
 
 ```{=html}
 <!-- -->
@@ -193,36 +193,36 @@ Use the camera and object recognizers to create object messages.
 -   The parameters *kernels_min*, *kernels_max*, *runs_per_kernel*,
     *synthetic_samples*, *interval_position*, *interval_orientation *and
     *attempts_per_run *can be specified for each scene separately by
-    setting \"\<scene name\>/\<parameter name\>\". If unspecified, the
-    default (without added \"\<scene name\>/\") is used. This can be
+    setting "<scene name>/<parameter name>". If unspecified, the
+    default (without added "<scene name>/") is used. This can be
     done for each parameter separately.
 
 **inference.launch**:
 
 -   *plot*: set true to show the gnuplot bar diagram of the scene
-    probabilities. Default: \"true\".
+    probabilities. Default: "true".
 -   *object_topic*: the topic to get the !AsrObject messages from.
-    Default: \"/stereo/objects\".
+    Default: "/stereo/objects".
 -   *scene_graph_topic*: the topic to get the !AsrSceneGraph messages
-    from. Default: \"/scene_graphs\".
+    from. Default: "/scene_graphs".
 -   *scene_model_filename*: path to the file containing the PSM .xml
     file.
 -   *bag_filenames_list*: path to the bag file that contains the
     learning data.
 -   *base_frame_id*: The name of the frame the objects should be
-    transformed to. Default: \"/PTU\".
--   *scale_factor*: to enlarge the visualization. Default: \"1.0\".
+    transformed to. Default: "/PTU".
+-   *scale_factor*: to enlarge the visualization. Default: "1.0".
 -   *sigma_multiplier*: multiplier to the sigma of the standard
-    deviation. Default: \"2.0\" (different from above).
+    deviation. Default: "2.0" (different from above).
 -   *targeting_help*: set true to overwrite the visualizations of
     results and plot the target distributions instead. Default:
-    \"false\".
+    "false".
 -   *evidence_timeout*: the timeout for object evidence in milliseconds.
-    Default: \"100\".
+    Default: "100".
 -   *inference_algorithm*: the name of the inference algorithm. There
-    are \'powerset\', \'summarized\', \'multiplied\' and \'maximum\',
+    are 'powerset', 'summarized', 'multiplied' and 'maximum',
     which determine how different subresults are combined with each
-    other. Default: \"maximum\"
+    other. Default: "maximum"
 -   *runtime_log_path*: the path to the directory that should hold the
     log files containing the runtime outputs for the different scenes.
     To deactivate logging, remove this parameter from the launch file.
@@ -254,13 +254,13 @@ several familiar parameters (compare above), a couple of new ones have
 to be provided, as in **combinatorial_optimization.yaml**:
 
 -   *optimization_algorithm*: type of optimization algorithm to use.
-    From \" !HillClimbing\", \"!RecordHunt\", \" !SimulatedAnnealing\".
+    From " !HillClimbing", "!RecordHunt", " !SimulatedAnnealing".
     Record Hunt stores the record and allows to consider worse relation
     sets if their cost is inside a certain delta. Default:
     !HillClimbing.
 -   *starting_topologies_type*: type of starting topology (relation set)
-    to use. From \"!BestStarOrFullyMeshed\" (uses the best set of
-    star-shaped relations or containing all relations), \"Random\".
+    to use. From "!BestStarOrFullyMeshed" (uses the best set of
+    star-shaped relations or containing all relations), "Random".
     Default: !BestStarOrFullyMeshed.
 -   *number_of_starting_topologies*: number of topologies to start
     separate optimization runs from. Default: 1.
@@ -286,10 +286,10 @@ to be provided, as in **combinatorial_optimization.yaml**:
 -   *false_negatives_weight*: the weight to give the number of false
     negatives in the weighted sum.Default: 5.
 -   *test_set_generator_type*: type of test set generation to use. From
-    \"absolute\" (picks random observations off the trajectories for
-    each object, for visualization), \"relative\" (same, but transforms
+    "absolute" (picks random observations off the trajectories for
+    each object, for visualization), "relative" (same, but transforms
     the poses into the frame of a randomly chosen reference object),
-    \"reference\" (same, but does not transform the reference pose
+    "reference" (same, but does not transform the reference pose
     itself. Generates mostly invalid sets, since the reference tends to
     be far away from the others). Default: relative. See *Figure 3 *for
     an example of two test sets.
@@ -321,12 +321,12 @@ to be provided, as in **combinatorial_optimization.yaml**:
     created invalid testsets to. Test sets are not written if they were
     loaded from files above or this parameter is set to *. Default: *.
 -   *conditional_probability_algorithm*: algorithm used to determine
-    probabilities depending on multiple parents. From \"minimum\" (uses
-    the minimum of the single parent probabilities), \"multiplied\"
+    probabilities depending on multiple parents. From "minimum" (uses
+    the minimum of the single parent probabilities), "multiplied"
     (multiplies them, which makes the invalid assumption that they are
-    independent from each other), \"root_of_multiplied\" (multiplies
+    independent from each other), "root_of_multiplied" (multiplies
     them and takes the \|parents\|-th root to keep a consistent range of
-    values), \"average\" (uses the average of the single parent
+    values), "average" (uses the average of the single parent
     probabilities). For trees, as from the heuristical method, this is
     irrelevant. Default: minimum. Compare *Figure 4*.
 -   *revisit_topologies*: whether to revisit topologies already seen in
@@ -370,19 +370,19 @@ to be provided, as in **combinatorial_optimization.yaml**:
     temperature changes. Optional if another algorithm is used. Default:
     0.9.
 -   *xml_output*: output type for the partial PSMs learned on
-    intermediate sets. From \"none\", \"screen\" (terminal), \"file\"
+    intermediate sets. From "none", "screen" (terminal), "file"
     (to xml file). Default: file. Compare *Figure 5* for an example of a
     partial model as an xml tree.
 -   *xml_file_path*: path to write partial models to. Optional if
-    *xml_output* is not set to \"file\".
+    *xml_output* is not set to "file".
 -   *optimization_history_output*: output type for the history of the
-    last optimization run. from \"none\", \"screen\", \"txt\" (as txt
-    file), \"svg\" (as svg graphic where the sets are represented as
+    last optimization run. from "none", "screen", "txt" (as txt
+    file), "svg" (as svg graphic where the sets are represented as
     circles). Default: svg. Compare *Figure 6* for an example of the svg
     output.
 -   *optimization_history_file_path*: path to write the history file to.
-    Optional if *optimization_history_output* is not set to \"txt\" or
-    \"svg\".
+    Optional if *optimization_history_output* is not set to "txt" or
+    "svg".
 -   *create_runtime_log*: whether to write a log of the runtimes to
     file. If set to false, the runtimes are printed to screen. Default:
     false.
@@ -391,25 +391,25 @@ to be provided, as in **combinatorial_optimization.yaml**:
 -   *visualize_inference*: whether to visualize intermediate inference
     runs in Rviz. Default: true. Compare *Figure 7*.
 
-![\|width=\"360\",height=\"200\"](attachment:3.png)
-![\|width=\"360\",height=\"200\"](attachment:3_2.png)
+![\|width="360",height="200"](attachment:3.png)
+![\|width="360",height="200"](attachment:3_2.png)
 
 *Figure 3: Two test sets randomly picked from the trajectories (lower
 objects; one valid and one invalid)*
 
-![\|width=\"200\",height=\"280\"](attachment:4.png)
+![\|width="200",height="280"](attachment:4.png)
 
 *Figure 4: There are relations between B and D as well as C and D. B and
 C are called the parents of D. Each node can have several parents in
 graphs generated by combinatorial optimization, other than in the trees
 from the heuristical method.*
 
-![\|width=\"420\",height=\"170\"](attachment:5.png)
+![\|width="420",height="170"](attachment:5.png)
 
 *Figure 5: A partial model. Compare to the complete model above. Only
 the OCM part is used here.*
 
-![\|width=\"730\",height=\"250\"](attachment:6.png)
+![\|width="730",height="250"](attachment:6.png)
 
 *Figure 6: A short optimization history, visualized through circles
 representing relation sets. The size depends on their cost (middle
@@ -419,7 +419,7 @@ errors. Dotted lines divide optimization steps. A bright blue circle
 indicates the set selected in each step, a dark blue one the final,
 optimal set. The blue line shows the path taken through the sets.*
 
-![\|width=\"550\",height=\"300\"](attachment:7.png)
+![\|width="550",height="300"](attachment:7.png)
 
 *Figure 7: Intermediate visualization of the recognition results of a
 triangle shaped set against two test sets.*

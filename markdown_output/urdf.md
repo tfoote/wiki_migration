@@ -9,14 +9,14 @@ robot models, sensors, scenes, etc. Each XML specification has a
 corresponding parser in one or more languages.
 
   -- ---------------------------- -- --------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\>      **XML Description**            **C++**                                                                                                                                     **Python**                                       **XML Schema**                                                                  
+     <rowbgcolor="#FFFFE0">      **XML Description**            **C++**                                                                                                                                     **Python**                                       **XML Schema**                                                                  
      Model                           [model](urdf/XML/model)        [Parser API](http://www.ros.org/doc/api/urdf/html/) [Model API](https://github.com/ros/urdfdom_headers/tree/master/include/urdf_model)      [Model API](http://wiki.ros.org/urdfdom_py)      [urdf.xsd](https://raw.githubusercontent.com/ros/urdfdom/master/xsd/urdf.xsd)   
      Sensor                          [sensor](urdf/XML/sensor)                                                                                                                                                                                                                                                                                   
   -- ---------------------------- -- --------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
 
 ## Components == A number of different packages and components make up urdf. The following diagram attempts to explain the relationship between these components:
 
-![\|width=\"780\"](attachment:urdf_diagram.png)
+![\|width="780"](attachment:urdf_diagram.png)
 
 ### Current Status of URDF Components in Hydro:
 
@@ -65,7 +65,7 @@ model.
 
 ### Verification
 
-A command line tool \`\`check_urdf\`\` attempts to parse a file as a
+A command line tool ``check_urdf`` attempts to parse a file as a
 URDF description, and either prints a description of the resulting
 kinematic chain, or an error message.
 
@@ -76,7 +76,7 @@ rosrun xacro xacro.py `rospack find pr2_description`/robots/pr2.urdf.xacro -o /t
 
 Then run the check by running:
 
-Note: You may need to run \`sudo apt-get install liburdfdom-tools\`.
+Note: You may need to run `sudo apt-get install liburdfdom-tools`.
 
 ```
 check_urdf pr2.urdf
@@ -123,9 +123,9 @@ Visual Studio Code has a
 that supports URDF visualization.
 
 To get a graphviz diagram of your urdf file, do the following: In
-Indigo, the \`urdf_to_graphiz\` tool has moved to the
-\`liburdfdom-tools\` package. You may need to run \`sudo apt-get install
-liburdfdom-tools\` if you can\'t use \`urdf_to_graphiz\`
+Indigo, the `urdf_to_graphiz` tool has moved to the
+`liburdfdom-tools` package. You may need to run `sudo apt-get install
+liburdfdom-tools` if you can't use `urdf_to_graphiz`
 ```
 urdf_to_graphiz pr2.urdf
 ``` ```
@@ -134,7 +134,7 @@ urdf_to_graphiz pr2.urdf
 
 The result is a file called pr2.pdf that looks something like this:
 
-![\|width=\"700\"](attachment:graphiz.png)
+![\|width="700"](attachment:graphiz.png)
 
 ### Creating URDF
 

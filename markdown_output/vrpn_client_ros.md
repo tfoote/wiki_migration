@@ -1,5 +1,5 @@
-To debug connection issues, try to use \`vrpn\`\'s CLI tools, such as
-\`vrpn_print_devices \<tracker_name\>@\<vrpn_server\>\`, to verify that
+To debug connection issues, try to use `vrpn`'s CLI tools, such as
+`vrpn_print_devices <tracker_name>@<vrpn_server>`, to verify that
 a connection to the Tracker object of interest can be established. If
 you cannot get this to work, note that debugging networking or VRPN
 issues is outside the scope of this ROS interface package, and see

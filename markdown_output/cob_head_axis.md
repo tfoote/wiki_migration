@@ -101,7 +101,7 @@ prov_tf{
 
 All hardware configuration is done in the
 [cob_hardware_config](cob_hardware_config) package. A sample parameter
-file in \"cob_hardware_config/cob3-3/config/head.yaml\" could look like
+file in "cob_hardware_config/cob3-3/config/head.yaml" could look like
 this ```
 CanDevice: PCAN:0
 CanBaudrate: 500

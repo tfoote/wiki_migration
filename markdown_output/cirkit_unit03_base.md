@@ -3,10 +3,10 @@ tutorials.
 
 ## Overview
 
-The \`cirkit_unit03_base\` package contains a node for communicating
+The `cirkit_unit03_base` package contains a node for communicating
 with the CIR-KIT-Unit03 MCU, and launch files to bring up the
 CIR-KIT-Unit03 control and diagnostic systems. The
-\`cirkit_unit03_node\` hardware interface is configured through the
+`cirkit_unit03_node` hardware interface is configured through the
 [cirkit_unit03_control](cirkit_unit03_control) package.
 
 ```clearsilver

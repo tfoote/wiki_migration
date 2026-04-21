@@ -3,7 +3,7 @@
 Different platforms have minor differences in their implementations of
 c/c++. The most obvious of these is integer representations (e.g.
 16/32/64 bit types). This package uses cmake detection scripts to check
-your platform\'s implementation and define some cross platform macros,
+your platform's implementation and define some cross platform macros,
 types and classes that facilitate easy handling of these fundamental
 properties.
 
@@ -32,12 +32,12 @@ using ecl::uint8;
 CMake can do the hard yards on most platforms/toolchains and autodetect
 what variables and headers can be used - this works mostly for the main
 platforms as outlined above. The result of this guesswork are a suite of
-macros stored in the \`ecl/config/ecl.hpp\` header. All macros are
-prefixed by an \`ECL\`, e.g. \`ECL_IS_POSIX\`.
+macros stored in the `ecl/config/ecl.hpp` header. All macros are
+prefixed by an `ECL`, e.g. `ECL_IS_POSIX`.
 
 When autodetection fails (you have a very embedded board, or your
 toolchain has been patched together in a very non-standard way) there is
-provision to manually supply details via the \`ECL_IS_CUSTOM\` macro.
+provision to manually supply details via the `ECL_IS_CUSTOM` macro.
 Refer to the
 [custom platform detection tutorial](ecl_config/Tutorials/Custom Platform Detection).
 

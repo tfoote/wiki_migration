@@ -62,7 +62,7 @@ packages for complex service robots, e.g.
 
 -   a new manipulator controller
 -   a new script
--   a new application The tester doesn\'t have to care about the
+-   a new application The tester doesn't have to care about the
     installation of the simulation environment or a running robot
     hardware, respectively.
 
@@ -81,7 +81,7 @@ $ sudo apt-get install python-setuptools python-paramiko screen python2.*-dev
 
 ## Installing Trac
 
-If you don\'t have trac installed already, grab a copy of the latest
+If you don't have trac installed already, grab a copy of the latest
 version from the
 [Trac Download Page](http://trac.edgewall.org/wiki/TracDownload). We use
 version 1.0 in this scenario. When your download finished install trac
@@ -95,14 +95,14 @@ $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
 ``` In case
-you don\'t get any error you can check whether the installation was
+you don't get any error you can check whether the installation was
 successful via the python interactive shell: ```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
 ``` If
-you get the output \'1.0\' as well, then trac is installed correctly.
+you get the output '1.0' as well, then trac is installed correctly.
 
 ## Creating a Trac environment
 
@@ -118,7 +118,7 @@ Follow instructions
 
 ## Setting up Apache
 
-After you set up a trac environment, it\'s time to make it accessible
+After you set up a trac environment, it's time to make it accessible
 from your browser. You can use trac with many different web servers,
 including the standalone version tracd. For a complete list see
 [DeployingTrac](http://trac.edgewall.org/wiki/TracInstall#DeployingTrac).
@@ -160,7 +160,7 @@ apache2-mpm-prefork package
 Your apache web server is now almost ready to serve your trac
 environment. However, we need to make a few more configurations first.
 In a first step, we need to deploy the trac configuration to play nicely
-with apache and wsgi. An elaborate guide can be found on the Trac\'s
+with apache and wsgi. An elaborate guide can be found on the Trac's
 [ModWSGI Wiki Page](http://trac.edgewall.org/wiki/TracModWSGI). We
 deploy our environment like this: ```
 $ sudo trac-admin /usr/local/trac/webportal deploy /usr/local/trac/webportal
@@ -197,7 +197,7 @@ $ sudo easy_install Trac==1.0
 
 Now you should be able to view your trac environment in the browser.
 Browse the following location <http://localhost/webportal>. You should
-see trac\'s default landing page with the following header **Welcome to
+see trac's default landing page with the following header **Welcome to
 Trac 1.0**.
 
 In a next step we configure an access authentication. The robotcontrol
@@ -221,7 +221,7 @@ $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
 ```4
 
-We also need to enable apache\'s mod_rewrite module and as usual you
+We also need to enable apache's mod_rewrite module and as usual you
 need to restart apache afterwards: ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
@@ -235,8 +235,8 @@ should be prompted a dialog requiring you to enter your user
 credentials. If your browser does not require you to login, you can take
 a look at our final apache configuration
 [#final_apache_configuration](#final_apache_configuration) and compare
-it to yours. Make sure you restarted the server correctly and it didn\'t
-producte any errors. In the browser\'s login box use *admin* as the
+it to yours. Make sure you restarted the server correctly and it didn't
+producte any errors. In the browser's login box use *admin* as the
 username and enter your previously chosen password in the password
 field. Apache will verify your username/password combination and you
 should be able to see the default trac screen again. You can spot a
@@ -257,7 +257,7 @@ $ sudo easy_install Trac==1.0
 
 These modules are required to bypass the ajax same-domain-policy. All
 information and configuration options for mod_proxy and mod_proxy_http
-can be found on Apache\'s
+can be found on Apache's
 [mod_proxy](http://httpd.apache.org/docs/2.2/mod/mod_proxy.html) and
 [mod_proxy_http](http://httpd.apache.org/docs/2.2/mod/mod_proxy_http.html)
 page respectively. Now open /etc/apache2/sites-available/webportal and
@@ -277,7 +277,7 @@ $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```8 If anything doesn\'t work out, you can compare
+```8 If anything doesn't work out, you can compare
 your configuration to our final apache configuration. After following
 our three steps above your apache webportal configuration file looks
 like this: ```
@@ -297,7 +297,7 @@ $ python
 >>> trac.__version__
 '1.0'
 ```0
-Create the python egg for trac, copy it into your environment\'s plugin
+Create the python egg for trac, copy it into your environment's plugin
 folder and restart your server: ```
 $ python
 >>> import trac
@@ -309,7 +309,7 @@ When you browse to your trac environment under
 <http://localhost/webportal> you can notice a new item called
 *Robotcontrol* in the navigation menu right next to the items *View
 Tickets* and *Search*. When you click on it, you will get the error
-message ***Exception: No Background Server running***. That\'s fine.
+message **`'Exception: No Background Server running`**'. That's fine.
 
 ## Starting the webportal daemon
 
@@ -322,20 +322,20 @@ being:
 
   -- ------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------------------------------------------------------------------- --
      **Parameter name**                                                                                                     **Explanation**                                                                                           
-     \<-2\>***Required Parameters***                                                                                                                                                                                                  
+     <-2>**`'Required Parameters`**'                                                                                                                                                                                               
      \--timeout=                                                                                                            Set a timeout ( in seconds ) after which all running components for the active user are shut down.        
      \--trac=                                                                                                               Path to your trac environment. In our example: /usr/local/trac/webportal                                  
      \--log=                                                                                                                Path to your log file, e.g log.txt                                                                        
      \--webPort=                                                                                                            Port that you configured in your proxy configuration. In our example 81, see [#proxy_conf](#proxy_conf)   
-     \<-2\>***Optional Parameters***                                                                                                                                                                                                  
+     <-2>**`'Optional Parameters`**'                                                                                                                                                                                               
      \--console                                                                                                             Print log messages on stdout                                                                              
      \--logLevel=                                                                                                           Choose one of following log levels: DEBUG, INFO, WARN, ERROR                                              
-     \<-2\>You configure the daemon to use either MySQL or sqlite. For MySQL the following parameters are interesting:                                                                                                                
+     <-2>You configure the daemon to use either MySQL or sqlite. For MySQL the following parameters are interesting:                                                                                                                
      \--mysqlHost=                                                                                                          The hostname which runs the MySQL-Server                                                                  
      \--mysqlDB=                                                                                                            Databasename to use                                                                                       
      \--mysqlUser=                                                                                                          MySQL Username                                                                                            
      \--mysqlPw=                                                                                                            MySQL Passwort for given user                                                                             
-     \<-2\>In case you prefer a sqlite database, the following parameter is for you                                                                                                                                                   
+     <-2>In case you prefer a sqlite database, the following parameter is for you                                                                                                                                                   
      \--sqliteDb=                                                                                                           Filename in which to store the database                                                                   
   -- ------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------------------------------------------------------------------- --
 
@@ -347,14 +347,14 @@ memory. But be aware that any changes are lost after you shutdown the
 server.
 
 The server has to be started by the superuser at the moment. Furthermore
-it\'s recommended to start the server in a separate screen, for example:
+it's recommended to start the server in a separate screen, for example:
 ```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
 ```2 You can detach from the screen using the
-keyboard shortcut *\<Ctrl-a\>d*. To reconnect to the screen run the
+keyboard shortcut *<Ctrl-a>d*. To reconnect to the screen run the
 command ```
 $ python
 >>> import trac
@@ -363,14 +363,14 @@ $ python
 ```3 To learn more about screens see *man
 screen*.
 
-Once you have started the server and it\'s fully initialized (indicated
+Once you have started the server and it's fully initialized (indicated
 by the log message DEBUG - Serve forever in case you set your
 debug-level to DEBUG and print messages to stdout like in the example
-above) you can browse to <http://localhost/webportal> (don\'t forget to
+above) you can browse to <http://localhost/webportal> (don't forget to
 login) click on Robotcontrol and you should be see the default webportal
 interface. The default user *admin* is granted all available rights. If
 you want to access the page using a different user, make sure to set
-it\'s permissions first. You can do that via the *User Manager*.
+it's permissions first. You can do that via the *User Manager*.
 
 As a first step you need to reserve the server instance using the server
 **reservation link**. After that you need to setup a host system by

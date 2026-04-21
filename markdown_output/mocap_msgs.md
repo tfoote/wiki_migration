@@ -1,1 +1,1 @@
-\<\<MsgSrvDoc(mocap_msgs)\>\>
+<<MsgSrvDoc(mocap_msgs)>>

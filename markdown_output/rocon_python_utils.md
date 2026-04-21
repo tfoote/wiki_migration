@@ -13,7 +13,7 @@ An example of some of the functions included (this will quickly get
 outdated):
 
 -   **Network**
--   Wrapper around the \`ping\` command to monitor connectivity of
+-   Wrapper around the `ping` command to monitor connectivity of
     remote machines.
 -   **Ros**
 -   Catkin package crawler, generates a complete index of all catkin
@@ -22,7 +22,7 @@ outdated):
 -   Find [resource](ROS/Concepts#Names.Package_Resource_Names) helpers
 -   Retrieve the ros version in runtime.
 -   **System**
--   Pythonic \`which\` command.
+-   Pythonic `which` command.
 -   Pid manipulators.
--   A subprocess style \`Popen\` that automagically manages groups and
+-   A subprocess style `Popen` that automagically manages groups and
     accepts a callback function for process termination.

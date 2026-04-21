@@ -18,7 +18,7 @@ The keyboard interface is as follows:
   1      2      3
 ```
 
-### Moving the Arm\'s Joints:
+### Moving the Arm's Joints:
 
 -   Shoulder pan joint: e/d
 -   Shoulder lift joint: r/f

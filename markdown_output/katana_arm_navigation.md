@@ -1,6 +1,6 @@
 ## ROS Versions
 
-This package is tested with Diamondback and won\'t run under CTurtle.
+This package is tested with Diamondback and won't run under CTurtle.
 
 As a source of sensor data, a Kinect is used. At the moment, the Kinect
 camera is mounted separately from the arm, although in the future, it

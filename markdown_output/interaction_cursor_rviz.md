@@ -38,12 +38,12 @@ Add the following repositories to your catkin workspace:
 ```
 
 You may also need
-\`https:*github.com/ros-visualization/visualization_tutorials\`, which
+`https:*github.com/ros-visualization/visualization_tutorials`, which
 unfortunately must go in a rosbuild workspace.*
 
 Build your catkin workspace, and build interactive_marker_tutorials.
 
-If you haven\'t configured udev rules for the hydra before, do:
+If you haven't configured udev rules for the hydra before, do:
 ```
 roscd razer_hydra
 ./configure_udev_rules
@@ -53,20 +53,20 @@ Then run: ```
 roslaunch interaction_cursor_demo demo.launch
 ``` You can add the option
 start_hydra:=false, or change the radius of the hydra workspace with
-radius:=\<a number\>.
+radius:=<a number>.
 
 ### Controls
 
-Using the \"right\" hydra controller, the buttons are:
+Using the "right" hydra controller, the buttons are:
 
--   **rb** - \"grab\" and move the workspace
+-   **rb** - "grab" and move the workspace
 -   **rt** - grab interactive marker controls
 -   **joystick click** - bring up interactive marker menus
 -   **joystick directions** - navigate interactive marker menus
 -   **3** - Select the currently highlighted menu entry
 -   **1** - Close the interactive marker menu
 
-The \"left\" controller also works, but it is not able to grab and move
+The "left" controller also works, but it is not able to grab and move
 the workspace.
 
 ## Support

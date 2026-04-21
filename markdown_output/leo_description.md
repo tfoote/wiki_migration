@@ -4,7 +4,7 @@ This package provides a [URDF](urdf) model of
 [Leo Rover](Robots/Leo Rover) in [xacro](xacro) format.
 ![](attachment:leo_model_rviz.png)
 
-Here\'s a graphical representation of the description (click to see the
+Here's a graphical representation of the description (click to see the
 PDF version): [![](attachment:leo_urdf.png)](attachment:leo_urdf.pdf)
 
 ## Coordinate frames
@@ -17,12 +17,12 @@ forward like in the picture below:
 
 Because it lies so close to the rocker axis, it is assumed to be the
 center of rotation in differential driving. base_footprint:: The root
-link of the robot. Projection of the \`base_link\` frame into the ground
+link of the robot. Projection of the `base_link` frame into the ground
 (assuming the ground is flat). camera_frame:: Attached to the camera
 sensor. Represents the viewport of the camera and allows to express
 relative pose in the standard convention. camera_optical_frame:: The
-\"optical\" frame of the camera. Located at the same position as the
-\`camera_frame\`, but uses a slightly different convention for the axis
+"optical" frame of the camera. Located at the same position as the
+`camera_frame`, but uses a slightly different convention for the axis
 orientation (see
 [REP 103](https://www.ros.org/reps/rep-0103.html#axis-orientation)).
 

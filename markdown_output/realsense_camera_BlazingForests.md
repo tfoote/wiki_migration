@@ -11,13 +11,13 @@ It supports the Intel(R) RealSense(TM) 3D Camera (Front F200) Depth.
 
 Infrared raw stream for realsense camera.
 
-![\|width=\"100%\"](attachment:realsense_ir.png)
+![\|width="100%"](attachment:realsense_ir.png)
 
 ## Screenshot
 
-![\|width=\"100%\"](attachment:point_cloud_hand.jpg)
+![\|width="100%"](attachment:point_cloud_hand.jpg)
 
-![\|width=\"100%\"](attachment:pen_robot.jpg)
+![\|width="100%"](attachment:pen_robot.jpg)
 
 ## Usage
 

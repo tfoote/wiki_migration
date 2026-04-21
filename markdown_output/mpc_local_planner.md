@@ -12,16 +12,16 @@ The following paper describes the approach:
 -   C. Rösmann, A. Makarow, and T. Bertram: Online Motion Planning based
     on Nonlinear Model Predictive Control with Non-Euclidean Rotation
     Groups, \[\[<https://arxiv.org/abs/2006.03534%7CarXiv:2006.03534>
-    \'\[cs.RO\]\'\]\], June 2020.
+    '\[cs.RO\]'\]\], June 2020.
 
-\<\<GitHubIssues(rst-tu-dortmund/mpc_local_planner)\>\>
+<<GitHubIssues(rst-tu-dortmund/mpc_local_planner)>>
 
 ## Get Started
 
 The best way to get started is to look at one of the example
 configurations in the
 [related GitHub repository](https://github.com/rst-tu-dortmund/mpc_local_planner/tree/master/mpc_local_planner_examples).
-The \`cfg\` directory contains several example *yaml* configurations.
+The `cfg` directory contains several example *yaml* configurations.
 
 It is **highly recommended** to be familiar with the
 [navigation](navigation) stack and all its components (global planner,
@@ -33,5 +33,5 @@ from the API and parameter point of view (the teb_local_planner wiki
 page already provides several tutorials which do not exist for this
 planner yet).
 
-Please also have a look at the repository\'s
+Please also have a look at the repository's
 [wiki page](https://github.com/rst-tu-dortmund/mpc_local_planner/wiki).

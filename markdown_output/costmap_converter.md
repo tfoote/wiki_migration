@@ -44,8 +44,8 @@ Examples are depicted in the following figures. Only yellow cells are
 occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map.
 
-![Conversion to convex polygons\|width=\"350\"](attachment:costmap_converter_convex_hull.png)
-![Conversion to convex polygons\|width=\"325\"](attachment:CostmapToPolygonsDBSMCCH_2.png)
+![Conversion to convex polygons\|width="350"](attachment:costmap_converter_convex_hull.png)
+![Conversion to convex polygons\|width="325"](attachment:CostmapToPolygonsDBSMCCH_2.png)
 
 #### Parameters
 
@@ -84,7 +84,7 @@ Examples are depicted in the following figures. Only yellow cells are
 occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map.
 
-![Conversion to concave polygons\|width=\"350\"](attachment:costmap_converter_concave_hull.png)
+![Conversion to concave polygons\|width="350"](attachment:costmap_converter_concave_hull.png)
 
 #### Parameters
 
@@ -128,8 +128,8 @@ occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map. Converted points
 and polygons are colored in red while lines are colored in green.
 
-![Conversion to lines\|width=\"350\"](attachment:costmap_converter_convex_hull_lines.png)
-![Conversion to lines\|width=\"350\"](attachment:CostmapToLinesDBSMCCH_1.png)
+![Conversion to lines\|width="350"](attachment:costmap_converter_convex_hull_lines.png)
+![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSMCCH_1.png)
 
 #### Parameters
 
@@ -183,8 +183,8 @@ occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map. Converted points
 and polygons are colored in red while lines are colored in green.
 
-![Conversion to lines\|width=\"350\"](attachment:CostmapToLinesDBSRANSAC_2.png)
-![Conversion to lines\|width=\"350\"](attachment:CostmapToLinesDBSRANSAC_4.png)
+![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSRANSAC_2.png)
+![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSRANSAC_4.png)
 
 #### Parameters
 
@@ -239,10 +239,10 @@ param{
 
 The costmap_converter interface is intended to be directly included in
 the source code. However, sometimes it could be useful to convert an
-incoming \<\<MsgLink(nav_msgs/OccupancyGrid)\>\> Message (e.g. as
+incoming <<MsgLink(nav_msgs/OccupancyGrid)>> Message (e.g. as
 published by [navigation](navigation)).
 
-For that purpose the internal \`standalone_converter\` node
+For that purpose the internal `standalone_converter` node
 (*costmap_converter_node.cpp*) might be employed. Currently, parameters
 are hardcoded. These are going to be substituted with changeble
 parameters in an upcoming release. Before then please inspect the source

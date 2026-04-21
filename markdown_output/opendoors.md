@@ -4,12 +4,12 @@
 
 ### Action API
 
-The opendoors node provides an implementation of a \`SimpleAcionServer\`
+The opendoors node provides an implementation of a `SimpleAcionServer`
 (see [ actionlib documentation](actionlib )), that take in goals
-containing \`opendoors/GraspHandleGoal\` messages. You can communicate
-with the \`move_arm\` node over ROS directly, but the recommended way to
-send goals to \`move_arm\` if you care about tracking their status is by
-using the \`SimpleActionClient\`. Please see
+containing `opendoors/GraspHandleGoal` messages. You can communicate
+with the `move_arm` node over ROS directly, but the recommended way to
+send goals to `move_arm` if you care about tracking their status is by
+using the `SimpleActionClient`. Please see
 [ actionlib documentation](actionlib ) for more information.
 
 ## Downloading
@@ -27,7 +27,7 @@ The tutorials for this package are in the
 
 ## Videos
 
-\<\<Youtube( QBLN7bywr_k)\>\>
+[Youtube](https://www.youtube.com/watch?v= QBLN7bywr_k)
 
 In this video, the PR2 first finds the position the handle of the
 cupboard by using point clouds from its laser scan. Then, it moves it
@@ -35,15 +35,15 @@ gripper 10cm away from where it thinks the cupboard handle is and opens
 it gripper to prepare to grasp the handle. Then moves the arm 10cm
 forward to get to the handle, where it finally closes the gripper.
 
-\<\<Youtube( xdRunXqpQPE)\>\>
+[Youtube](https://www.youtube.com/watch?v= xdRunXqpQPE)
 
 Here, PR2 is opening the cupboard door from a position where its right
 elbow is to the right of the robot and its arm is bended.
 
-\<\<Youtube( EXfgc5sM9x8)\>\>
+[Youtube](https://www.youtube.com/watch?v= EXfgc5sM9x8)
 
 Here, PR2 is opening the cupboard door from an initial arm configuration
-in which PR2\'s shoulder joint is forced to move while bending the arm
+in which PR2's shoulder joint is forced to move while bending the arm
 to open door.
 
 ## Improvements

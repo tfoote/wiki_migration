@@ -78,7 +78,7 @@ desc=If `~ip_address` is set, the node opens the camera at that IP. If only `~gu
 
 Sets the camera to a fixed IP address. The camera must be visible to
 [ListCameras](prosilica_gige_sdk#ListCameras), and must be the only
-camera listed. The camera must be unopened (i.e. \`prosilica_node\`
+camera listed. The camera must be unopened (i.e. `prosilica_node`
 should not be running). This tool is normally used once to configure a
 new camera (see the [tutorials](prosilica_camera/Tutorials)).
 

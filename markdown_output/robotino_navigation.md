@@ -1,6 +1,6 @@
 ## Overview
 
-The \`robotino_navigation\` package offers the ability to map
+The `robotino_navigation` package offers the ability to map
 environments and then autonomously navigate through those environments.
 
 ## Prerequisites

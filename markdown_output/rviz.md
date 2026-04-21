@@ -11,7 +11,7 @@
 
 ## Tutorials
 
-\<\<TutorialChain(rviz/Tutorials/Markers: Basic Shapes)\>\>
+<<TutorialChain(rviz/Tutorials/Markers: Basic Shapes)>>
 
 ## API Documentation
 

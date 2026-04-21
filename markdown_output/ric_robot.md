@@ -18,12 +18,12 @@ $ roslaunch ric_robot komodo.launch id:=1
 ``` This command
 should be executed on the robot computer. For remote operation see the
 [ric_base_station](ric_base_station) package. The id number sets the
-robot name to be komodo\_\<ID\>, this is extremely important when
+robot name to be komodo_<ID>, this is extremely important when
 working with several robots as a group of robots. This allows giving
 each robot in the group a unique name. The id argument can be any
 desired id number. The id number affect the namespace and the robot
 description file links and joint names. All the topics, services and
-parameters will have a komodo\_\<ID\> prefix. The robot launch file is
+parameters will have a komodo_<ID> prefix. The robot launch file is
 also used to load nodes for the webcams, the Asus RGB-D camera, the
 Hokuyo laser scanner and the robot arm launch file (komodo_arm.launch).
 
@@ -48,7 +48,7 @@ Relevant lines in the launch file: ```shell
 </node>
 ```
 
-The readings are published on the **/komodo\_\<ID\>/scan** topic.
+The readings are published on the **/komodo_<ID>/scan** topic.
 
 ### Using the depth sensor (ASUS Xtion PRO LIVE)
 
@@ -81,11 +81,11 @@ The Komodo and Lizi robots have three ultrasonic range finders (URF)
 mounted on the sides and on the back of the robot. The range readings
 are published under the following topics:
 
-**/komodo\_\<ID\>/Rangers/Left_URF**
+**/komodo_<ID>/Rangers/Left_URF**
 
-**/komodo\_\<ID\>/Rangers/Rear_URF**
+**/komodo_<ID>/Rangers/Rear_URF**
 
-**/komodo\_\<ID\>/Rangers/Right_URF**
+**/komodo_<ID>/Rangers/Right_URF**
 
 ## Nodes
 
@@ -276,4 +276,4 @@ sub{
 
 ## Report a Bug
 
-\<\<GitHubIssues(robotican/ric)\>\>
+<<GitHubIssues(robotican/ric)>>

@@ -50,9 +50,9 @@ CTRL-C to quit
 ```
 
 The operation of teleop_legged_robots is represented in video below.
-\<\<Youtube(VvZM1hyVEOo&t=18sg)\>\> The package can be used for
-teleoperation of the multiple legged robots (see video below).
-[Youtube](https://www.youtube.com/watch?v=Oy3aWgkpuaM)
+[Youtube](https://www.youtube.com/watch?v=VvZM1hyVEOo&t=18sg) The
+package can be used for teleoperation of the multiple legged robots (see
+video below). [Youtube](https://www.youtube.com/watch?v=Oy3aWgkpuaM)
 
 ## Inspiration
 

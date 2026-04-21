@@ -4,7 +4,7 @@ The rmp_base package provides a ros interface to control a Segway
 Robotics Mobility Platform (<http://rmp.segway.com/>). It supports USB
 and UDP interfaces.
 
-Please refer to the RMP documentation for a description of the sensors\'
+Please refer to the RMP documentation for a description of the sensors'
 coordinate system.
 
 This package has only been tested on the RMP 440LE

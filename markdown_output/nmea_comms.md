@@ -2,20 +2,20 @@
 
 This package provides nodes which enable bidirectional communication
 between socket (server) or serial devices and the
-\<\<MsgLink(nmea_msgs/Sentence)\>\> message type. This may be useful for
+<<MsgLink(nmea_msgs/Sentence)>> message type. This may be useful for
 a number of scenarios, including if you:
 
--   want your device\'s raw NMEA sentences to be available to other
+-   want your device's raw NMEA sentences to be available to other
     nodes, or to be bagged
 -   have a network-connected navsat device
 -   are particularly sensitive to the CPU usage incurred by
     [PySerial](http://pyserial.sourceforge.net/)
 
-Finally, the combination of a \`serial_node\` connected directly to a
-\`socket_node\` can create a tee, where a device\'s serial data is
+Finally, the combination of a `serial_node` connected directly to a
+`socket_node` can create a tee, where a device's serial data is
 directly available to ROS, but also served over a socket such that a
 remote machine may listen to it via netcat. This is particularly
-valuable if your device has a proprietary Windows-only GUI, which you\'d
+valuable if your device has a proprietary Windows-only GUI, which you'd
 like to be able to use while the device is part of a running ROS system.
 An example of this usage is
 [supplied in the package](https://github.com/ros-drivers/nmea_comms/blob/indigo-devel/launch/tee.launch),
@@ -26,8 +26,8 @@ roslaunch nmea_comms tee.launch port:=<serial port> baud:=<baud rate>
 ```
 
 Once running, you should see the output of your serial NMEA device on
-the \`/navsat/nmea_sentence\` topic, as well as when running \`nc
-localhost 29500\`.
+the `/navsat/nmea_sentence` topic, as well as when running `nc
+localhost 29500`.
 
 ## API
 

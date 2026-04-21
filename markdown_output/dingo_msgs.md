@@ -1,11 +1,11 @@
-\<\<MsgSrvDoc(dingo_msgs)\>\>
+<<MsgSrvDoc(dingo_msgs)>>
 
 ## Notes
 
 These messages are the low-level interface between
-[Dingo](Robots/Dingo)\'s MCU and integrated PC. Most users of Dingo
+[Dingo](Robots/Dingo)'s MCU and integrated PC. Most users of Dingo
 should be able to use standard ROS interfaces (eg.
-\<\<MsgLink(geometry_msgs/Twist)\>\>, [diagnostics](diagnostics)) to
+<<MsgLink(geometry_msgs/Twist)>>, [diagnostics](diagnostics)) to
 command and monitor the robot. Possible exceptions are:
 
 -   If you wish to disable

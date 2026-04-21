@@ -1,11 +1,11 @@
-/!\\ This pkg is no longer actively maintained and superceded by \`rqt\`
+/!\\ This pkg is no longer actively maintained and superceded by `rqt`
 plugin, [rqt_robot_monitor](rqt_robot_monitor).
 
 ## Robot Monitor Overview
 
-The \`robot_monitor\` package provides the Robot Monitor GUI that
+The `robot_monitor` package provides the Robot Monitor GUI that
 displays the aggregated diagnostics from a robot. The Robot Monitor
-subscribes to the \`/diagnostics_agg\` topic, which is published by the
+subscribes to the `/diagnostics_agg` topic, which is published by the
 [diagnostic_aggregator](diagnostic_aggregator), and displays the
 diagnostics in a tree form. The Robot Monitor is integrated as part of
 the [pr2_dashboard](pr2_dashboard), but it can also be used as a
@@ -22,11 +22,11 @@ rosrun robot_monitor robot_monitor
 
 ### Rxbag Plugin
 
-The \`robot_monitor\` can view messages of type
-\<\<MsgLink(diagnostic_msgs/DiagnosticArray)\>\> when used as an
+The `robot_monitor` can view messages of type
+<<MsgLink(diagnostic_msgs/DiagnosticArray)>> when used as an
 [rxbag](rxbag) plugin. This feature is experimental.
 
-You\'ll have to toggle the \"Pause\" button to start moving along with
+You'll have to toggle the "Pause" button to start moving along with
 normal time again.
 
 ## Main Window

@@ -10,4 +10,4 @@ It can be divided into different parts:
     motion control)
 -   ROS interfaces, motion control through ros_control
 
-![ros canopen package structure\|width=\"100%\"](attachment:ros_canopen_structure.png)
+![ros canopen package structure\|width="100%"](attachment:ros_canopen_structure.png)

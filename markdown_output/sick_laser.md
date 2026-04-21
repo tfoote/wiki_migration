@@ -13,7 +13,7 @@
 
 ## Usage
 
-1.The node \"scan\" must be run first: ```shell
+1.The node "scan" must be run first: ```shell
 rosurn sick_laser scan
 ```
 
@@ -26,14 +26,14 @@ data save as pcd file\].
 
 \[port_number\] : port number;
 
-\[direction\] : \'0\' or \'1\';
+\[direction\] : '0' or '1';
 
 \[frequency\] : The frequency which motor rotate at;
 
 \[the first degree\] : To ensure the coordinate system is prefect,so you
 should give a first degree.
 
-\[if data save as pcd file\] : \'y\' -\> yes or \'n\'-\> no.
+\[if data save as pcd file\] : 'y' -> yes or 'n'-> no.
 
 For example:
 
@@ -41,7 +41,7 @@ For example:
 rosrun sick_laser point_cloud 2 1 3600 360 0 y
 ```
 
-And this node will output the point cloud as \"laserdata.pcd\".
+And this node will output the point cloud as "laserdata.pcd".
 
 3.If you want to get the 3D point cloud and the image.Please run the
 following command:
@@ -52,14 +52,14 @@ data save as pcd file\]
 
 \[port_number\] : port number;
 
-\[direction\] : \'0\' or \'1\';
+\[direction\] : '0' or '1';
 
 \[frequency\] : The frequency which motor rotate at;
 
 \[the first degree\] : To ensure the coordinate system is prefect,so you
 should give a first degree.
 
-\[if data save as pcd file\] : \'y\' -\> yes or \'n\'-\> no.
+\[if data save as pcd file\] : 'y' -> yes or 'n'-> no.
 
 For example:
 

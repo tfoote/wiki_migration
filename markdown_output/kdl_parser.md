@@ -1,4 +1,4 @@
-![\|height=\"362\",width=\"524\"](attachment:parser2.png)
+![\|height="362",width="524"](attachment:parser2.png)
 
 ## What is the KDL parser
 

@@ -1,6 +1,6 @@
 **For [hydro](hydro) onward, see [orocos_kdl](orocos_kdl).**
 
-![\|height=\"413px\",width=\"224px\"](attachment:chain.png)
+![\|height="413px",width="224px"](attachment:chain.png)
 
 ## What can I use KDL for?
 
@@ -37,7 +37,7 @@ $ rosdep install kdl
 
 ```
 $ rosmake kdl
-``` The \"rosmake\" command checks out code from
+``` The "rosmake" command checks out code from
 the KDL svn repository (see [kul-ros-pkg](kul-ros-pkg)).
 
 ## External Documentation

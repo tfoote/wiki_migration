@@ -82,9 +82,9 @@ $ rosmake pi_vision
 
 ## How To Use
 
-\'\'\'Note:\'\'\' Best results are obtained at video resolutions of
-640x480 or higher. Lower resolutions will work OK if the face is not too
-far away from the camera.
+**Note:** Best results are obtained at video resolutions of 640x480 or
+higher. Lower resolutions will work OK if the face is not too far away
+from the camera.
 
 ### Keyboard Commands Once Tracking Has Started
 

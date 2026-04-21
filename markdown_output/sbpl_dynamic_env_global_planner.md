@@ -23,11 +23,11 @@ version of ARA\* (Anytime Repairing A\*) in order to produce a
 sub-optimal plan quickly and improve toward being optimal as time
 allows. This is particularly important in dynamic environments.
 
-\'\'\'Important\'\'\': This planner\'s performance is highly dependent
-on the quality of the predicted dynamic obstacle trajectories! The basic
-tracker in this stack [lidar_tracking](lidar_tracking) is
-\'\'\'not\'\'\' robust especially once the robot is moving. Users are
-encouraged to provide better trackers which publish the appropriate
+**Important**: This planner\'s performance is highly dependent on the
+quality of the predicted dynamic obstacle trajectories! The basic
+tracker in this stack [lidar_tracking](lidar_tracking) is **not** robust
+especially once the robot is moving. Users are encouraged to provide
+better trackers which publish the appropriate
 [dynamic_obs_msgs](dynamic_obs_msgs). In simulation, this stack provides
 [fake_tracking](fake_tracking) which polls the simulator for the
 locations of other robots and works reasonably well.
@@ -53,7 +53,7 @@ Some launch files to run the planner in simulation are in the
 [demo_sbpl_dynamic_env](demo_sbpl_dynamic_env) package. Also, there is a
 launch file in this package \"launch/pr2_dynamic_planner.launch\" which
 runs the planner on the PR2 robot and can be easily modified for other
-platforms. \'\'\'Note\'\'\': the real robot launch file uses
+platforms. **Note**: the real robot launch file uses
 [lidar_tracking](lidar_tracking) to track and predict dynamic obstacle
 trajectories. This node is not robust!
 

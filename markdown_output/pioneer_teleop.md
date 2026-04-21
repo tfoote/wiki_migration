@@ -73,8 +73,8 @@ want to move the robot using a web interface via internet/LAN).
 roslaunch pionner_teleop socket_teleop.launch
 ```
 
-The expected commands are \"\'\'forward\'\'\", \"\'\'backward\'\'\",
-\"\'\'left\'\'\" or \"\'\'right\'\'\"
+The expected commands are \"*forward*\", \"*backward*\", \"*left*\" or
+\"*right*\"
 
 By default, the script listens to port 50001, and the robot moves only
 for 1.5 seconds. To change these parameters, you can use extra arguments
@@ -93,9 +93,8 @@ terminal or ssh:
 roslaunch pionner_teleop socket_commandline.launch _direction:=forward
 ```
 
-The expected commands (\'\'\_direction\'\' argument) are
-\"\'\'forward\'\'\", \"\'\'backward\'\'\", \"\'\'left\'\'\" or
-\"\'\'right\'\'\"
+The expected commands (*\_direction* argument) are \"*forward*\",
+\"*backward*\", \"*left*\" or \"*right*\"
 
 By default, the robot moves only for 1.5 seconds at 0.2 speed. To change
 these parameters, you can use extra arguments as mentionned bellow:
@@ -108,19 +107,18 @@ roslaunch pionner_teleop socket_teleop.launch _direction:=backward _speed:=0.3 _
 
 This package is compatible with any robot using ROS as long as:
 
-The velocity commands are published in \'\'/cmd_vel\'\' topic (see the
-next section). You modify the .launch scripts to remove the
-pionner_bringup call, or you execute directly the python scripts located
-in \'\'/nodes\'\' folder.
+The velocity commands are published in */cmd_vel* topic (see the next
+section). You modify the .launch scripts to remove the pionner_bringup
+call, or you execute directly the python scripts located in */nodes*
+folder.
 
 # Known issues
 
 ## Velocity command topic
 
-By default, the scripts publish velocity commands to \'\'/cmd_vel\'\'
-topic.
+By default, the scripts publish velocity commands to */cmd_vel* topic.
 
 In case your velocity commands topic has a different name, or you are
 not using Pionner-compatible robots, you will have to remap your
-velocity topic to \'\'/cmd_vel\'\' or change the topic name in the
-python scripts which are located in \'\'/nodes\'\' folder
+velocity topic to */cmd_vel* or change the topic name in the python
+scripts which are located in */nodes* folder

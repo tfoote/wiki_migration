@@ -51,6 +51,6 @@ the control mode you prefer.
     \"simExtSetFloatCustomDataFromHeader()\" to set the control mode you
     prefer.
 
-In the folder \'\'vrep_ros_brigde/SceneVrep\'\' you will find the model
-of a manipulator with the joints controlled in velocity:
-\'\'ManipulatorViper.ttt\'\'.
+In the folder *vrep_ros_brigde/SceneVrep* you will find the model of a
+manipulator with the joints controlled in velocity:
+*ManipulatorViper.ttt*.

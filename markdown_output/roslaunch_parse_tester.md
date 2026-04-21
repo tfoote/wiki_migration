@@ -1,8 +1,8 @@
 ## Overview
 
-{X} \'\'\'Warning:\'\'\' This package, and all tools within, are
-deprecated. Use [CMakeLists](CMakeLists#rosbuild_add_roslaunch_check)
-file to test all launch files.
+{X} **Warning:** This package, and all tools within, are deprecated. Use
+[CMakeLists](CMakeLists#rosbuild_add_roslaunch_check) file to test all
+launch files.
 
 \`roslaunch_parse_tester\` has tools that allow users to parse and check
 launch files, or an entire package. It can be used with command line

@@ -7,11 +7,11 @@ over a navigation task, like collisions or faulty sensors. By default we
 provide some plugins for collision detection. However, new approaches
 for fault detection are highly encouraged.
 
-\'\'\' Important Information \'\'\'
+** Important Information **
 
-  -- ----------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<#cce0ff\>\'\'\'Note:\'\'\' This package is the result for a master thesis project. Additional information, write a mail to jocamaba1989@gmail.com   
-  -- ----------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- --------------------------------------------------------------------------------------------------------------------------------------------- --
+     \<#cce0ff\>**Note:** This package is the result for a master thesis project. Additional information, write a mail to jocamaba1989@gmail.com   
+  -- --------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Components List
 

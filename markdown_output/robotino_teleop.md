@@ -41,8 +41,8 @@ node.0 {
 
 #### Joystick note
 
-\'\'\'Please note\'\'\' that depending on your joystick, you might have
-to modify the axes parameters in the launch file for it to work.
+**Please note** that depending on your joystick, you might have to
+modify the axes parameters in the launch file for it to work.
 
 #### Usage
 

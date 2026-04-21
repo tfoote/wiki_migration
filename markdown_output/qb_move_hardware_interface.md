@@ -1,5 +1,5 @@
 This package is barely usable alone since it provides only the hardware
-interface for the \'\'qbrobotics® qbmove\'\' device.
+interface for the *qbrobotics® qbmove* device.
 
 ## API
 

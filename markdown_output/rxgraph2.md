@@ -1,4 +1,4 @@
-\'\'\'Invoking rxgraph2: \'\'\'
+**Invoking rxgraph2: **
 
 You will need to have roscore running on a machine somewhere that you
 can access over the network before rxgraph2 will be able to do anything
@@ -9,12 +9,12 @@ it should be possible to launch it using rosrun after we have figured
 out how to package the necessary jar files. It should also be possible
 to launch it from a browser using Java Web Start.
 
-\'\'\'Possibly setting the ROS_MASTER_URI:\'\'\' On startup, rxgraph2
-may prompt you to enter the ROS_MASTER_URI if it can\'t access your
-environment variables or ROS_MASTER_URI is not defined in your
-environment variables.
+**Possibly setting the ROS_MASTER_URI:** On startup, rxgraph2 may prompt
+you to enter the ROS_MASTER_URI if it can\'t access your environment
+variables or ROS_MASTER_URI is not defined in your environment
+variables.
 
-\'\'\'The default view, topics=vertices:\'\'\'
+**The default view, topics=vertices:**
 
 Typically, this step shouldn\'t be necessary, and rxgraph2 should
 immediately make two windows, one containing a graph and one containing
@@ -29,7 +29,7 @@ vertex to a topic vertex indicates that the node publishes the topic,
 and an arrow going from a topic vertex to a node vertex indicates that
 the node subscribes to the topic. Each vertex has its name displayed.
 
-\'\'\'Navigating in the graph view:\'\'\'
+**Navigating in the graph view:**
 
 Drag: move camera
 
@@ -44,7 +44,7 @@ Shift-drag: Rotates the view
 Option-drag: Moves whole window (probably won\'t do this if you aren\'t
 running Gnome; it is part of Gnome \"look and feel\")
 
-\'\'\'The topics=edges view:\'\'\'
+**The topics=edges view:**
 
 It is also possible to draw topics as edges. This shows node-to-node
 connectivity more explicity and reduces graph clutter. However, some
@@ -59,7 +59,7 @@ By default, the names of topics are not displayed in topics=edges mode
 because the text gets too cluttered. However, the \"\...with labels\"
 checkbox may be used to turn them on.
 
-\'\'\'The magnifying glass:\'\'\'
+**The magnifying glass:**
 
 To read the labels on tightly packed vertices without losing your camera
 position, check the \"Use magnifying glass\" checkbox. This displays a
@@ -68,7 +68,7 @@ magnifying glass by dragging the small circle at its center, and change
 its magnification power using ctrl+the scroll wheel of the mouse. You
 can resize the magnifying glass by dragging on its border.
 
-\'\'\'The filter manager:\'\'\'
+**The filter manager:**
 
 In the \"rxgraph controls\" window there is a panel labeled \"Filters
 (applied top to bottom)\". This box controls both which vertices and
@@ -126,7 +126,7 @@ warn about a node can\'t be run at the current moment. Note: if one
 filter has already turned warnings on for a node/topic, but another
 filter is unable to run, the display color will be red, not green.
 
-\'\'\'The preloaded filters\'\'\'
+**The preloaded filters**
 
 The preloaded filters each serve a particular purpose.
 
@@ -146,7 +146,7 @@ actually being used. It can be useful for tracking down naming problems.
 Exclude topics with no subscribers: This excludes unused topics and can
 reduce graph clutter considerably in the topics=vertices view.
 
-\'\'\'Changing the ROS_MASTER_URI:\'\'\'
+**Changing the ROS_MASTER_URI:**
 
 If the ROS core goes down or becomes uncontactable while rxgraph2 is
 running, it will prompt you to enter a new ROS_MASTER_URI. You can wait
@@ -154,6 +154,6 @@ as long as you want to enter the new URI, so you can always bring up the
 old core and enter the same URI again. You can also click \"cancel\" to
 quit rxgraph2.
 
-\'\'\'Quitting rxgraph2:\'\'\'
+**Quitting rxgraph2:**
 
 To quit at any time, close the graph display window.

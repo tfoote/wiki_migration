@@ -29,20 +29,20 @@ class Example {
     cvSaveImage("foo.jpg", saved_image_);
   }
 };
-``` This will work, \'\'unless\'\'
-\`image_msg\` already has \`bgr8\` encoding. In that case
-\`saved_image\_\` does not copy the image data, but instead points to
-data held by \`image_msg\` which is freed when the message goes out of
-scope. Later \`foo()\` is called and probably segfaults. I\'ve seen
-cases of nodes that worked one day, then segfaulted when another image
-stream with the \"mined\" encoding was used. 1.#2 More counter-intuitive
-ownership semantics: the returned \`IplImage\*\` from \`imgMsgToCv\` is
-actually owned by the bridge, and must not be freed by the user. In
-practice users look at the \`cv_bridge\` code samples; adapt them to
-actually do something, creating more \`IplImage\*\` with intermediate
-results; and then forget to free the images they created. 1. Need to
-create a \`CvBridge\` instance for each image stream. Due to the above
-behavior, ```cplusplus
+``` This will work, *unless* \`image_msg\`
+already has \`bgr8\` encoding. In that case \`saved_image\_\` does not
+copy the image data, but instead points to data held by \`image_msg\`
+which is freed when the message goes out of scope. Later \`foo()\` is
+called and probably segfaults. I\'ve seen cases of nodes that worked one
+day, then segfaulted when another image stream with the \"mined\"
+encoding was used. 1.#2 More counter-intuitive ownership semantics: the
+returned \`IplImage\*\` from \`imgMsgToCv\` is actually owned by the
+bridge, and must not be freed by the user. In practice users look at the
+\`cv_bridge\` code samples; adapt them to actually do something,
+creating more \`IplImage\*\` with intermediate results; and then forget
+to free the images they created. 1. Need to create a \`CvBridge\`
+instance for each image stream. Due to the above behavior,
+```cplusplus
 void imageCallback(const sensor_msgs::ImageConstPtr& left_msg,
                    const sensor_msgs::ImageConstPtr& right_msg)
 {
@@ -50,18 +50,18 @@ void imageCallback(const sensor_msgs::ImageConstPtr& left_msg,
   IplImage* left  = bridge.imgMsgToCv(left_msg, "bgr8");
   IplImage* right = bridge.imgMsgToCv(right_msg, "bgr8");
 }
-``` looks plausible but results in
-unpredictable behavior. 1.#4 Lack of const-correctness. \`imgMsgToCv\`
-returns an unqualified \`IplImage\*\`, which may point to \`const\`
-message data. In that case users are free to modify the original message
-data, and may not even realize they are doing it. I anticipate this
-being another source of bugs as more image processing is done in
-nodelets. 1. It still uses \`IplImage\*\`, when we\'ve been actively
-pushing users towards the much safer and more convenient \`cv::Mat\`. 1.
-Header and encoding information is not preserved with the returned
-\`IplImage\*\`. When publishing, the encoding is specified again as an
-argument to \`cvToImgMsg\`, and the header must be filled in separately.
-Forgetting to copy the header to the new \`Image\` is a common mistake.
+``` looks plausible but results in unpredictable
+behavior. 1.#4 Lack of const-correctness. \`imgMsgToCv\` returns an
+unqualified \`IplImage\*\`, which may point to \`const\` message data.
+In that case users are free to modify the original message data, and may
+not even realize they are doing it. I anticipate this being another
+source of bugs as more image processing is done in nodelets. 1. It still
+uses \`IplImage\*\`, when we\'ve been actively pushing users towards the
+much safer and more convenient \`cv::Mat\`. 1. Header and encoding
+information is not preserved with the returned \`IplImage\*\`. When
+publishing, the encoding is specified again as an argument to
+\`cvToImgMsg\`, and the header must be filled in separately. Forgetting
+to copy the header to the new \`Image\` is a common mistake.
 
 ## Basic proposal
 
@@ -246,7 +246,7 @@ directly. No \`toCvCopy\`/\`toCvShared\`/\`toRos\` required! And when
 publishing, we avoid the copy from converting to \`sensor_msgs::Image\`.
 
 The big issue is how to make this play nice with
-[image_transport](image_transport). \`image_transport\` \'\'could\'\' be
+[image_transport](image_transport). \`image_transport\` *could* be
 generalized, by templating the \`publish()\` and \`subscribe()\`
 methods, but it\'s somewhat complicated and would require more coding
 effort.

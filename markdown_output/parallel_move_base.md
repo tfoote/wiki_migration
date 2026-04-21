@@ -1,4 +1,4 @@
-\'\'\'Note:\'\'\' This package has been integrated into the ROS
+**Note:** This package has been integrated into the ROS
 [navigation](navigation) stack as of E-Turtle.
 
 ## Overview

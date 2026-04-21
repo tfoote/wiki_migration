@@ -1,13 +1,12 @@
 # Epson IMU ROS2 Node SPI \*\* Deprecated \*\*
 
-\'\'\'**\* NOTE: This package has been superceded by
-[ Epson IMU ROS2 Driver Node](ess_imu_driver2 )**\*\'\'\'
+****\* NOTE: This package has been superceded by
+[ Epson IMU ROS2 Driver Node](ess_imu_driver2 )\*****
 
-\'\'\'**\* This webpage will no longer be updated **\*\'\'\'
-\-\-\-\-\-\-\-\-\-\-\--
+****\* This webpage will no longer be updated \* \-\-\-\-\-\-\-\-\-\-\--
 ![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
 ![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)
+![\|align=\"right\"](attachment:ess_sensors/g365.jpg)****
 
 ## Overview
 
@@ -42,20 +41,20 @@
     messages but requires minor changes to redirect the low-level
     function calls (i.e. bcm2835 C library, etc)
 -   Accurate timing delays are necessary to optimize throughput for high
-    \'\'dout_rate\'\' when using the SPI interface (refer to IMU
-    datasheets for timing specifications)
+    *dout_rate* when using the SPI interface (refer to IMU datasheets
+    for timing specifications)
 
 Below is an example IMU SPI connection when using a Raspberry Pi:
 
-  -- ----------------------- -- -------------------------------- --
-     \'\'\'Epson IMU\'\'\'      \'\'\'Raspberry Pi\'\'\'         
-     EPSON_RESET Input          RPI_GPIO_P1_15 (GPIO22) Output   
-     EPSON_DRDY Output          RPI_GPIO_P1_18 (GPIO24) Input    
-     EPSON_CS Input             RPI_GPIO_P1_16 (GPIO23) Output   
-     EPSON_SCLK Input           RPI_GPIO_P1_23 (GPIO11) Output   
-     EPSON_DOUT Output          RPI_GPIO_P1_19 (GPIO10) Input    
-     EPSON_DIN Input            RPI_GPIO_P1_21 (GPIO9) Output    
-  -- ----------------------- -- -------------------------------- --
+  -- ------------------- -- -------------------------------- --
+     **Epson IMU**          **Raspberry Pi**                 
+     EPSON_RESET Input      RPI_GPIO_P1_15 (GPIO22) Output   
+     EPSON_DRDY Output      RPI_GPIO_P1_18 (GPIO24) Input    
+     EPSON_CS Input         RPI_GPIO_P1_16 (GPIO23) Output   
+     EPSON_SCLK Input       RPI_GPIO_P1_23 (GPIO11) Output   
+     EPSON_DOUT Output      RPI_GPIO_P1_19 (GPIO10) Input    
+     EPSON_DIN Input        RPI_GPIO_P1_21 (GPIO9) Output    
+  -- ------------------- -- -------------------------------- --
 
 ### Support for Timer Delays
 
@@ -105,21 +104,19 @@ Below is an example IMU SPI connection when using a Raspberry Pi:
     in the launch folder of this package is used to pass the init
     parameters to configure the IMU at runtime using ros2 launch
 -   Changes to init parameters by editing the launch file does not
-    require rebuilding with \'\'colcon build\'\'
--   \'\'\'Typically, the user only needs to modify \'\'imu_dout_rate\'\'
-    & \'\'imu_filter_sel\'\' as needed based on system
-    requirements\'\'\'
+    require rebuilding with *colcon build*
+-   **Typically, the user only needs to modify *imu_dout_rate* &
+    *imu_filter_sel* as needed based on system requirements**
 -   Only use the specific IMU model launch file associated with the same
-    IMU model built using \'\'colcon build\'\'
+    IMU model built using *colcon build*
 
 ### Timestamping With EXT Signal
 
 -   The G3xx series Epson IMU has 3.3V I/O EXT (GPIO2) pin which can be
     connected to a cyclic external sync signal such as a GNSS 1PPS
     signal
--   When the init parameter \'\'time_correction\'\' is enabled
-    (including \'\'ext_sel\'\' set to \'\'reset counter\'\' &
-    \'\'count_out enabled\'\')
+-   When the init parameter *time_correction* is enabled (including
+    *ext_sel* set to *reset counter* & *count_out enabled*)
 -   The ROS2 driver attempts to correct the time stamp field in
     [sensor_msgs/Imu](sensor_msgs/Imu) based on the reset counter value
     (measured delay since latest GNSS 1PPS)
@@ -139,9 +136,8 @@ Epson IMU model that is being used in the ROS2 system.
 
 -   Refer to the comment lines inside the
     [ CMakeLists.txt](CMakeLists.txt ) for additional info.
--   \'\'\'NOTE: You \*MUST\* re-build using colcon when changing IMU
-    models or any changes in the
-    [ CMakeLists.txt](CMakeLists.txt )\'\'\'
+-   **NOTE: You \*MUST\* re-build using colcon when changing IMU models
+    or any changes in the [ CMakeLists.txt](CMakeLists.txt )**
 
 3\. From the colcon workspace folder run \"colcon build\" to build all
 changed ROS2 packages located in the \<colcon_workspace\>/src/ folder.
@@ -158,8 +154,8 @@ From the <colcon_workspace>: . install/setup.bash
 to set your desired IMU init parameters for the specific IMU model in
 the launch folder that you selected and built
 
--   \'\'\'Typically, only the \'\'imu_dout_rate\'\' &
-    \'\'imu_filter_sel\'\' needs to be edited\'\'\'
+-   **Typically, only the *imu_dout_rate* & *imu_filter_sel* needs to be
+    edited**
 
 ## Running the ROS2 Node
 

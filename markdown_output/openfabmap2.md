@@ -14,8 +14,8 @@ through the extraction of appearance-based (e.g. SURF) features.
 ## Usage
 
 OpenFABMAP can be used in two modes, training or testing. Examples of
-training and testing are provided in the launch files
-\'\'\'\'learn\'\'\'\' and \'\'\'\'run\'\'\'\' respectively.
+training and testing are provided in the launch files **\'learn**\' and
+**\'run**\' respectively.
 
 Datasets are available at the
 [CyPhy Lab](https://wiki.qut.edu.au/display/cyphy/Datasets), with
@@ -52,7 +52,7 @@ rosbag play garden_loop.bag --clock
 This will process images on the supplied topic for a number of frame and
 then save the codebook and descriptor files to the \'path\' location.
 
-Default parameters used within the \'\'\'\'learn\'\'\'\' launch file are
+Default parameters used within the **\'learn**\' launch file are
 provided below:
 
 -   Detector Type: SURF
@@ -86,8 +86,8 @@ This example will will visualise the matches between images as a
 confusion matrix. Time along the vertical axis and frame ID on the
 horizontal (origin top left), white representing the matches found.
 
-Default parameters used within the \'\'\'\'run\'\'\'\' launch file are
-provided below:
+Default parameters used within the **\'run**\' launch file are provided
+below:
 
 -   Detector Type: SURF
 -   FABMAP Version: FABMAP2

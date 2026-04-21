@@ -4,7 +4,7 @@ device. It then computes relevant obstacles in driving direction and
 slows down if it gets closer to them. It then stops the robot at a
 specific threshold.
 
-\'\'\'Note:\'\'\' The \`cob_collision_velocity_filter\` only works with
+**Note:** The \`cob_collision_velocity_filter\` only works with
 rectangular footprints at the moment.
 
 ## Hardware Requirements

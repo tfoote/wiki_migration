@@ -67,11 +67,10 @@ req_tf {
 
 ## Setting up launch file
 
-The \'\'\'hokuyo_listener_cu\'\'\' node interacts with the
-\'\'\'hokuyo\'\'\' node that is included in the ROS kitchen-sink
-install. To set up the ROS \'\'\'hokuyo\'\'\' node, add the following
-commands to the .launch file that kicks-off your code:
-```
+The **hokuyo_listener_cu** node interacts with the **hokuyo** node that
+is included in the ROS kitchen-sink install. To set up the ROS
+**hokuyo** node, add the following commands to the .launch file that
+kicks-off your code: ```
 <group ns="hokuyo">
  <param name="calibrate_time" type="bool" value="false" />
  <param name="hokuyoLaserModel04LX" type="bool" value="true" />

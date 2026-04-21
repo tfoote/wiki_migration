@@ -1,4 +1,4 @@
-\'\'\'OMPL is now a standalone library\'\'\'. Please see
+**OMPL is now a standalone library**. Please see
 <http://ompl.kavrakilab.org> on how to use it directly. Please see
 [MoveIt!](moveit) for more on motion planning.
 

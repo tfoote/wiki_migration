@@ -1,8 +1,8 @@
 # Overview
 
-The \'\'\'stdr_samples\'\'\' package provides code and launchers to
-demonstrate the [STDR Simulator](stdr_simulator) functionalities. The
-available samples follow.
+The **stdr_samples** package provides code and launchers to demonstrate
+the [STDR Simulator](stdr_simulator) functionalities. The available
+samples follow.
 
 ## Obstacle avoidance
 

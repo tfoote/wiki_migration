@@ -2,30 +2,29 @@
 
 Communication is an important component in multi-robots systems; system
 performance may get affected when the number of robots or communication
-channels increases. The \'\'\'dynamic_bandwidth_manager\'\'\' was
-designed to provide a way of maximizing bandwidth usage in multi-robots
-systems. The developed system prioritizes communication channels
-according to environment events and offers greater bandwidth for the
-most important channels.
+channels increases. The **dynamic_bandwidth_manager** was designed to
+provide a way of maximizing bandwidth usage in multi-robots systems. The
+developed system prioritizes communication channels according to
+environment events and offers greater bandwidth for the most important
+channels.
 
 The package architecture was divided in five libraries and one ROS node.
-\'\'\'DBMParam\'\'\' is a library to help developers manipulate the
-parameters of the module. \'\'\'DBMRate\'\'\' is a library that extends
-the function of the rospy.Rate and helps to run loops at a dynamic
-frequency. Classes \'\'\'DBMSubscriber\'\'\' and
-\'\'\'DBMPublisher\'\'\' inherits the characteristics of
-rospy.Subscriber and rospy.Publisher. \'\'\'DBMOptimizer\'\'\' class
-helps developers create new optimization strategies. Node
-\'\'\'default_optimizer\'\'\' uses the class \'\'\'DBMOptimizer\'\'\'
-and solves a linear optimization problem calculating new frequencies for
-each topic, considering topic priority and message size.
+**DBMParam** is a library to help developers manipulate the parameters
+of the module. **DBMRate** is a library that extends the function of the
+rospy.Rate and helps to run loops at a dynamic frequency. Classes
+**DBMSubscriber** and **DBMPublisher** inherits the characteristics of
+rospy.Subscriber and rospy.Publisher. **DBMOptimizer** class helps
+developers create new optimization strategies. Node
+**default_optimizer** uses the class **DBMOptimizer** and solves a
+linear optimization problem calculating new frequencies for each topic,
+considering topic priority and message size.
 
 ![text describing image\|align=\"middle\"](attachment:ClassDiagram.png)
 
 ## Paper
 
-A paper named \'\'Dynamic Bandwidth Management Library for Multi-Robot
-Systems\'\' will be presented at IROS 2015.
+A paper named *Dynamic Bandwidth Management Library for Multi-Robot
+Systems* will be presented at IROS 2015.
 
 ## System Parameters
 
@@ -137,19 +136,18 @@ if __name__ == '__main__':
 
 To create the independence of the optimization algorithm used by the
 library, a module that takes care of the bandwidth optimization was
-created. \'\'\'DBMOptimizer\'\'\' is a ROS library that helps the
-development of more complex strategies for the optimization problem. It
-runs every time as \`/dbm/optimization_rate parameter\` and assigns the
-result of the calculated frequencies in parameter
-\`\[topic_name\]/dbm/frequency/current_value\`. Using
-\'\'\'DBMOptimizer\'\'\', \`default_optimizer\` node solves a linear
-optimization problem and sets the calculated frequency for each topic
-considering the priorities (see \`\[topic_name\]/dbm/priority\`
-parameter).
+created. **DBMOptimizer** is a ROS library that helps the development of
+more complex strategies for the optimization problem. It runs every time
+as \`/dbm/optimization_rate parameter\` and assigns the result of the
+calculated frequencies in parameter
+\`\[topic_name\]/dbm/frequency/current_value\`. Using **DBMOptimizer**,
+\`default_optimizer\` node solves a linear optimization problem and sets
+the calculated frequency for each topic considering the priorities (see
+\`\[topic_name\]/dbm/priority\` parameter).
 
 ### Writing new optimization strategies
 
-Using \'\'\'DBMOptimizer\'\'\' it\'s possible create new optimization
+Using **DBMOptimizer** it\'s possible create new optimization
 strategies. Code below presents a example of how create a node with a
 optimization algorithm.
 

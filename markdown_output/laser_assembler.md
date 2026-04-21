@@ -126,7 +126,7 @@ node.1{
 
 ### Example Launch
 
-\'\'\'laser_scan_assembler:\'\'\'
+**laser_scan_assembler:**
 
 Launch an assembler operating on \`tilt_scan\`
 \<\<MsgLink(sensor_msgs/LaserScan)\>\> messages in the base_link frame,
@@ -143,7 +143,7 @@ with a buffer of 400 scans.\<\<MsgLink(sensor_msgs/LaserScan)\>\>
 </launch>
 ```
 
-\'\'\'point_cloud_assembler:\'\'\'
+**point_cloud_assembler:**
 
 Launch an assembler operating on \`my_cloud_in\`
 \<\<MsgLink(sensor_msgs/PointCloud)\>\> messages in the \`base_link\`

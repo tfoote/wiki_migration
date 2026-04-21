@@ -14,18 +14,18 @@ stream it in the corresponding ROS topics
 
 Here a list of the available sensors with their respective ROS topics:
 
--   \'\'\'2MP color camera\'\'\' streams on
+-   **2MP color camera** streams on
 -   \`/nicla/camera/camera_info\`
 -   \`/nicla/camera/image_raw\`
 -   \`/nicla/camera/image_raw/compressed\`
--   \'\'\'Time-of-Flight (distance) sensor\'\'\' streams on:
+-   **Time-of-Flight (distance) sensor** streams on:
 -   \`/nicla/tof\`
--   \'\'\'Microphone\'\'\' streams on:
+-   **Microphone** streams on:
 -   \`/nicla/audio\`
 -   \`/nicla/audio_info\`
 -   \`/nicla/audio_stamped\`
 -   \`/nicla/audio_recognized\`
--   \'\'\'Imu\'\'\' streams on:
+-   **Imu** streams on:
 -   \`/nicla/imu\`
 
 The user can easily configure this package, by launch parameters, to

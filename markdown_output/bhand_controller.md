@@ -100,7 +100,7 @@ palm: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 -   Joint states of the hand.
 -   Type:
     [ sensor_msgs/JointState.msg](http://docs.ros.org/indigo/api/sensor_msgs/html/msg/JointState.html)
--   Fingertip torque sensors are published in \'\'effort\'\' field (N/m)
+-   Fingertip torque sensors are published in *effort* field (N/m)
 -   Example:
 
 ```
@@ -124,11 +124,11 @@ effort: [0.03743090386539949, 0.06140198104320094, 0.03743090386539949, 0.066763
 
 -   Sets the position/velocity of the hand joints.
 -   Joints available to set positions/velocities:
--   \'\'bh_j32_joint\'\' -\> F3-Base
--   \'\'bh_j11_joint\'\' -\> F1-Spread
--   \'\'bh_j12_joint\'\' -\> F1-Base
--   \'\'bh_j21_joint\'\' -\> F2-Spread
--   \'\'bh_j22_joint\'\' -\> F2-Base
+-   *bh_j32_joint* -\> F3-Base
+-   *bh_j11_joint* -\> F1-Spread
+-   *bh_j12_joint* -\> F1-Base
+-   *bh_j21_joint* -\> F2-Spread
+-   *bh_j22_joint* -\> F2-Base
 -   bh_j11_joint and bh_j21_joint set the same motor (able publishing on
     both)
 

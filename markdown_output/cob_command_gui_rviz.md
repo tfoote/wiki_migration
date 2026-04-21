@@ -4,11 +4,11 @@ This package provides the implementation of the
 [cob_command_gui](cob_command_gui) as a RViz Plugin for operating
 Care-O-bot.
 
-\'\'Note: The cob_command_gui_rviz package is written for ROS Electric
+*Note: The cob_command_gui_rviz package is written for ROS Electric
 using the wxWidgets library. As of the ROS Fuerte release Rviz is moving
-from the wxWidgets library to the Qt library.\'\'
+from the wxWidgets library to the Qt library.*
 
-\'\'\'There is no version for ROS Fuerte available at the moment!\'\'\'
+**There is no version for ROS Fuerte available at the moment!**
 
 ![\|width=100%](attachment:cob_command_gui_rviz.png)
 
@@ -68,13 +68,13 @@ The [cob_script_server](cob_script_server) implementation.
 rosdep install cob_command_gui_rviz
 rosmake cob_command_gui_rviz
 ``` You can upload the cob_command_gui_rviz plugin
-by selecting the \'\'\'Plugins-\>Manage\...\'\'\' menu item in RViz.
+by selecting the **Plugins-\>Manage\...** menu item in RViz.
 
 A dialog will pop up letting you manage loading/unloading plugins:
 
 ![\|width=60%](attachment:manage_plugins.png)
 
-To add the panel, click the \'\'\'Add\'\'\' button at the bottom:
+To add the panel, click the **Add** button at the bottom:
 
 ![\|width=60%](attachment:new display.png)
 

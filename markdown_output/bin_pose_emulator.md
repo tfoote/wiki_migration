@@ -1,15 +1,14 @@
 ## Overview
 
-Generator of random bin poses. It provides \'\'\'/bin_pose\'\'\' service
-which returns a combination of 3 bin picking points in predefined bin:
+Generator of random bin poses. It provides **/bin_pose** service which
+returns a combination of 3 bin picking points in predefined bin:
 
-1\. \'\'\'Grasp Point\'\'\' 1. \'\'\'Approach Point\'\'\' 1.
-\'\'\'Deapproach point\'\'\'
+1\. **Grasp Point** 1. **Approach Point** 1. **Deapproach point**
 
-The \'\'\'Grasp point \'\'\'is the goal pose in predefined Virtual Bin.
-The \'\'\'Approach point\'\'\' is located at the normal vector given by
-Grasp Point orientation and the \'\'\'Deapproach point\'\'\' is located
-right above the Grasp point.
+The **Grasp point **is the goal pose in predefined Virtual Bin. The
+**Approach point** is located at the normal vector given by Grasp Point
+orientation and the **Deapproach point** is located right above the
+Grasp point.
 
 Following video demonstrates the capabilities of bin_pose_emulator in
 combination with ABB IRB1200 and MoveIt.
@@ -34,21 +33,20 @@ Bin Pose Emulator uses .yaml config file to parse initial settings.
 Configure following settings to adopt for your use-case:
 
 Virtual Bin is defined by bin_center\_ and bin_size\_ parameters, while
-allowed orientation is set by \'\'\'roll_range\'\'\',
-\'\'\'pitch_range\'\'\' and \'\'\'yaw_range\'\'\'.
+allowed orientation is set by **roll_range**, **pitch_range** and
+**yaw_range**.
 
 By default we assume approaching in the Z-axis of tool0 link
-(\'\'\'roll_default\'\'\' : 0, \'\'\'pitch_default\'\'\': 3.14,
-\'\'\'yaw_default\'\'\': 0). \'\'\'roll_range\'\'\',
-\'\'\'pitch_range\'\'\' and \'\'\'yaw_range\'\'\' extend the default
+(**roll_default** : 0, **pitch_default**: 3.14, **yaw_default**: 0).
+**roll_range**, **pitch_range** and **yaw_range** extend the default
 orientation into allowed grasp cone range.
 
-\'\'\'Approach distance\'\'\' defines how far in the direction of the
-normal vector given by the Grasp Point orientation is the location of
-Approach point.
+**Approach distance** defines how far in the direction of the normal
+vector given by the Grasp Point orientation is the location of Approach
+point.
 
-\'\'\'Deapproach_height\'\'\' configures height of vertical movement
-when moving away from the Grasp Point.
+**Deapproach_height** configures height of vertical movement when moving
+away from the Grasp Point.
 
 Example config file is located at the config folder. Change launch file
 parameter filepath to adopt launch to your custom config file.
@@ -126,7 +124,7 @@ deapproach_pose:
 In order to simplify configuration, bin_pose_emulator publishes two
 messages to bin_pose_visualization topic. Use Marker plugin in RViz to
 visualize the pose of the virtual bin and the location of the current
-grasp point. Both Markers are published with \'\'base_link\'\' as a
-reference frame.
+grasp point. Both Markers are published with *base_link* as a reference
+frame.
 
 ![\|height=\"400\",width=\"750\"](attachment:bin_pose_visualization.jpg)

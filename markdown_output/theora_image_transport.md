@@ -8,8 +8,8 @@ compressed over the wire using the Theora video codec.
 \`theora_image_transport\` only works with 8-bit color or grayscale
 images.
 
-\'\'\'\'\'Before reading this page, make sure you understand the
-[image_transport](image_transport) package\'\'\'\'\'
+***Before reading this page, make sure you understand the
+[image_transport](image_transport) package***
 
 ## Tutorials
 

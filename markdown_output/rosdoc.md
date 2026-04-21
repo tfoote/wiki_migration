@@ -1,5 +1,5 @@
-\'\'\'DEPRECATION NOTICE: \`rosdoc\` is now deprecated in favor of
-[rosdoc_lite](rosdoc_lite)\'\'\'
+**DEPRECATION NOTICE: \`rosdoc\` is now deprecated in favor of
+[rosdoc_lite](rosdoc_lite)**
 
 See also: [Doxygen](Doxygen), [Sphinx](Sphinx), and [Epydoc](Epydoc)
 
@@ -60,7 +60,7 @@ Options:
   -o OUTPUT_DIRECTORY   directory to write documentation to
 ```
 
-\'\'Generate documentation for specific packages\'\':
+*Generate documentation for specific packages*:
 
 ```
 roscd rosdoc
@@ -76,7 +76,7 @@ you point your Web browser to open
 doxygen\`). You may also need to install sphinx for certain Python
 packages.
 
-\'\'Generate documentation for all packages\'\':
+*Generate documentation for all packages*:
 
 ```
 roscd rosdoc
@@ -86,7 +86,7 @@ roscd rosdoc
 \`rosdoc\` will find all packages on your package path and generate
 documentation for them in the \'doc\' folder.
 
-\'\'Generate documentation in your home directory\'\':
+*Generate documentation in your home directory*:
 
 Sometimes, the \`rosdoc\` package directory may not be writable, perhaps
 it was installed as a binary package. In that case, use the \`-o\`
@@ -135,13 +135,12 @@ use.
 The YAML configuration file should contain a list of dictionaries, where
 each dictionary has the following standard keys:
 
--   \'\'\'builder\'\'\': name of documentation builder (\`doxygen\`,
-    \`epydoc\`, or \`sphinx\`)
--   \'\'\'output_dir\'\'\': (optional) name of sub-directory to write
+-   **builder**: name of documentation builder (\`doxygen\`, \`epydoc\`,
+    or \`sphinx\`)
+-   **output_dir**: (optional) name of sub-directory to write
     documentation to. If you have multiple builders, you must specify
     this property to avoid builders writing to the same directory.
--   \'\'\'name\'\'\': (optional) name of documentation set (e.g.
-    \"Python API\")
+-   **name**: (optional) name of documentation set (e.g. \"Python API\")
 
 Each builder may specify additional configuration keys.
 
@@ -169,26 +168,24 @@ necessary to configure this option if:
 
 The \"doxygen\" builder may specify the following additional keys:
 
--   \'\'\'file_patterns\'\'\': (optional) override the Doxygen
-    \`FILE_PATTERNS\` property
--   \'\'\'excludes\'\'\': (optional) override the Doxygen \`EXCLUDE\`
+-   **file_patterns**: (optional) override the Doxygen \`FILE_PATTERNS\`
     property
--   \'\'\'homepage\'\'\': (optional) link to project home page
--   \'\'\'exclude_patterns\'\'\': \'\'\'ROS C-Turtle\'\'\' (optional)
-    override Doxygen \`EXCLUDE_PATTERNS\` property.
--   \'\'\'javadoc_autobrief\'\'\': (optional) override Doxygen
+-   **excludes**: (optional) override the Doxygen \`EXCLUDE\` property
+-   **homepage**: (optional) link to project home page
+-   **exclude_patterns**: **ROS C-Turtle** (optional) override Doxygen
+    \`EXCLUDE_PATTERNS\` property.
+-   **javadoc_autobrief**: (optional) override Doxygen
     \`JAVADOC_AUTOBRIEF\` property. Default \`NO\`.
--   \'\'\'multiline_cpp_is_brief\'\'\': (optional) override Doxygen
-    property \`MULTILINE_CPP_IS_BRIEF\`. Default \`NO\`.
--   \'\'\'tab_size\'\'\': (optional) override Doxygen property
-    \`TAB_SIZE\`. Default \`8\`.
--   \'\'\'aliases\'\'\': (optional) override Doxygen property
-    \`ALIASES\`. Default \"\"
--   \'\'\'example_patterns\'\'\': (optional) override Doxygen property
+-   **multiline_cpp_is_brief**: (optional) override Doxygen property
+    \`MULTILINE_CPP_IS_BRIEF\`. Default \`NO\`.
+-   **tab_size**: (optional) override Doxygen property \`TAB_SIZE\`.
+    Default \`8\`.
+-   **aliases**: (optional) override Doxygen property \`ALIASES\`.
+    Default \"\"
+-   **example_patterns**: (optional) override Doxygen property
     \`EXAMPLE_PATTERNS\`. Default \"\"
--   \'\'\'image_path\'\'\': (optional) override Doxygen property
-    \`IMAGE_PATH\`.
--   \'\'\'exclude_symbols\'\'\': (optional) override Doxygen property
+-   **image_path**: (optional) override Doxygen property \`IMAGE_PATH\`.
+-   **exclude_symbols**: (optional) override Doxygen property
     \`EXCLUDE_SYMBOLS\`. Default \"\"
 
 #### Builder: Epydoc
@@ -196,16 +193,15 @@ The \"doxygen\" builder may specify the following additional keys:
 The \"epydoc\" builder will enable running [Epydoc](Epydoc) on a
 package.
 
-\'\'\'Note\'\'\': Epydoc\'s \"introspection\" capability currently
-breaks when trying to process some ros python modules, so this feature
-should not be enabled in a custom epydoc config file.
+**Note**: Epydoc\'s \"introspection\" capability currently breaks when
+trying to process some ros python modules, so this feature should not be
+enabled in a custom epydoc config file.
 
 The \"epydoc\" builder may specify the following additional keys:
 
--   \'\'\'exclude\'\'\': (optional) override the Epydoc \`\--exclude\`
-    option
--   \'\'\'config\'\'\': (optional) override the Epydoc \`\--config\`
-    option, which passes in a separate Epydoc configuration file.
+-   **exclude**: (optional) override the Epydoc \`\--exclude\` option
+-   **config**: (optional) override the Epydoc \`\--config\` option,
+    which passes in a separate Epydoc configuration file.
 
 #### Builder: Sphinx
 
@@ -214,10 +210,10 @@ package.
 
 The \"sphinx\" builder may specify the following additional keys:
 
--   \'\'\'sphinx_root_dir\'\'\': (optional) root directory of Sphinx
-    documents, i.e. the location of \`index.rst\` and \`conf.py\`. If
-    not specified, it will look for an \`index.rst\` file in the root of
-    the ROS package.
+-   **sphinx_root_dir**: (optional) root directory of Sphinx documents,
+    i.e. the location of \`index.rst\` and \`conf.py\`. If not
+    specified, it will look for an \`index.rst\` file in the root of the
+    ROS package.
 
 #### Builder: external
 
@@ -227,13 +223,13 @@ the link to the specified URL.
 
 The \"external\" builder takes in the following additional keys:
 
--   \'\'\'external_url\'\'\': URL of external documentation
--   \'\'\'external_label\'\'\': (optional) link text
+-   **external_url**: URL of external documentation
+-   **external_label**: (optional) link text
 
 #### Builder: rosmake
 
-\'\'\'Removed in ROS Fuerte\'\'\': this builder has been removed as it
-has problematic side-effects.
+**Removed in ROS Fuerte**: this builder has been removed as it has
+problematic side-effects.
 
 The \"rosmake\" builder specifies that \`rosdoc\` must run
 [rosmake](rosmake) on the package before generating documentation. This
@@ -245,8 +241,8 @@ and \"output_dir\" options are ignored.
 
 ## Linking to External Third Party Documentation
 
-\'\'NOTE: starting with C Turtle, you can also use the \'external\'
-builder specified above\'\'
+*NOTE: starting with C Turtle, you can also use the \'external\' builder
+specified above*
 
 For third party packages, rosdoc can automatically create a doxygen main
 page for the package, that includes a link to the third party
@@ -277,5 +273,5 @@ be evolved to better support the configuration requirements of the
 documentation tools it invokes (i.e. Doxygen), and it will also better
 support documenting specific stacks.
 
-The code API of \`rosdoc\` should \'\'\'not\'\'\' be used as it is an
-internal library that is frequently changed.
+The code API of \`rosdoc\` should **not** be used as it is an internal
+library that is frequently changed.

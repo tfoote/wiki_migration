@@ -1,12 +1,11 @@
 ## Overview
 
-The \'\'\'vigir_step_control\'\'\' provides a step queue management
-system and a state machine to keep track of current step plan execution.
-It is able to feed the low-level motion layer with the proper number of
-steps required for seamless execution while continuously merging
-incoming step plans provided by the
-[footstep planner](vigir_footstep_planning). This allows even for
-continuous walking using our
+The **vigir_step_control** provides a step queue management system and a
+state machine to keep track of current step plan execution. It is able
+to feed the low-level motion layer with the proper number of steps
+required for seamless execution while continuously merging incoming step
+plans provided by the [footstep planner](vigir_footstep_planning). This
+allows even for continuous walking using our
 [footstep planning](vigir_footstep_planning) stack. This package
 provides following features:
 
@@ -25,8 +24,7 @@ For detailed information about the system please take a look at the
 
 ### Installation
 
-The \'\'\'vigir_step_control\'\'\' packages can be downloaded from
-Git\`\`Hub:
+The **vigir_step_control** packages can be downloaded from Git\`\`Hub:
 
 -   <https://github.com/team-vigir/vigir_step_control.git> Furthermore
     you may need to download the dependencies as well (if not already
@@ -52,26 +50,26 @@ roslaunch vigir_step_control step_controller_test.launch
 roslaunch vigir_footstep_planning step_interface_rqt.launch
 ```
 
-In the \'\'step_interface_widget\'\' you have first to select a footstep
+In the *step_interface_widget* you have first to select a footstep
 planner parameter set. Afterwards the direction commands become
 available which allows to generate simple pattern of footsteps. As soon
-a footstep plan has been generated the \'\'Execute\'\' button becomes
-active as well. When you click on this button the previously generated
+a footstep plan has been generated the *Execute* button becomes active
+as well. When you click on this button the previously generated
 footsteps will be executed virtually by the \`StepControllerTestPlugin\`
 which fakes an footstep execution. During the fake execution, you will
-be able to follow the fake execution in the
-\'\'step_interface_widget\'\' by the progress bar.
+be able to follow the fake execution in the *step_interface_widget* by
+the progress bar.
 
-\'\'\'Note:\'\'\' If you would like to see the system running with a
-real robot, then you can get in touch with it using the THORMANG3 in
-simulation. The full install instruction can be found
+**Note:** If you would like to see the system running with a real robot,
+then you can get in touch with it using the THORMANG3 in simulation. The
+full install instruction can be found
 [here](vigir_footstep_planning#thormang3_demo).
 
 ## Tutorial
 
-\'\'\'A Tutorial will be added step by step
+**A Tutorial will be added step by step
 [here](vigir_step_control/Tutorials) soon. In the meantime feel free to
-contact us, if you have further questions!\'\'\'
+contact us, if you have further questions!**
 
 ## Sample Applications
 

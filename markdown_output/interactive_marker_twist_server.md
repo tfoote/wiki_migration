@@ -39,5 +39,5 @@ param {
 
 ## Roadmap
 
-Package is \'\'\'experimental\'\'\'. Please see the feature tracker for
-planned enhancements.
+Package is **experimental**. Please see the feature tracker for planned
+enhancements.

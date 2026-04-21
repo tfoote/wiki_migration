@@ -4,8 +4,8 @@ C++ hardware API through ROS. This documentation will usually refer to
 the JACO arm, but the instructions work with both the JACO and the MICO
 unless otherwise noted.
 
-\'\'\'\_\_For fuerte and groovy version of this package, that supports
-only JACO, please see \_\_\'\'\'[jaco](jaco)
+**\_\_For fuerte and groovy version of this package, that supports only
+JACO, please see \_\_**[jaco](jaco)
 
 ## Overview
 

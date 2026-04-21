@@ -22,7 +22,7 @@ the intrinsic calibration of the Kinect infrared camera. It does this by
 comparing the pose of a checkerboard detected in the infrared image, to
 the pose reported by the Kinect\'s internal depth computation.
 
-\'\'\'High Level Operation\'\'\'
+**High Level Operation**
 
 -   User mounts a checkerboard rigidly in front of a Kinect
 -   User covers the Kinect\'s IR projector (e.g. with post-it notes),
@@ -33,7 +33,7 @@ the pose reported by the Kinect\'s internal depth computation.
     depth between the two data sets, resulting in a measure for the
     Kinect intrinsic calibration accuracy.
 
-\'\'\'Requirements\'\'\'
+**Requirements**
 
 -   Checkerboard is mounted rigidly in front of the Kinect. It cannot
     move between samples.
@@ -41,7 +41,7 @@ the pose reported by the Kinect\'s internal depth computation.
     [openni_camera/calibration](openni_camera/calibration) for more
     details.
 
-\'\'\'Running\'\'\' Bring up the Kinect camera first. Then, launch the
+**Running** Bring up the Kinect camera first. Then, launch the
 calibration: ```
 roslaunch kinect_depth_calibration test_calibration.launch image_ns:=camera/ir depth_ns:=camera/depth
 ```
@@ -51,7 +51,7 @@ roslaunch kinect_depth_calibration test_calibration.launch image_ns:=camera/ir d
 You can also use this package to verify both the intrinsics and
 extrinsics of an external camera attached to a Kinect.
 
-\'\'\'Requirements\'\'\'
+**Requirements**
 
 -   Checkerboard is mounted rigidly in front of the Kinect. It cannot
     move between samples.
@@ -65,7 +65,7 @@ extrinsics of an external camera attached to a Kinect.
     extrinsicly calibrated to the Kinect (see
     [camera_pose_calibration](camera_pose_calibration))
 
-\'\'\'Running\'\'\' Bring up the Kinect camera and the external camera.
-Then, launch the calibration: ```
+**Running** Bring up the Kinect camera and the external camera. Then,
+launch the calibration: ```
 roslaunch kinect_depth_calibration test_calibration.launch image_ns:=external_camera/rgb depth_ns:=camera/depth
 ```

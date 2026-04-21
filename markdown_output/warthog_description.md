@@ -14,7 +14,7 @@ variables specified at the time the [xacro](xacro) is rendered to URDF.
 Available accessory vars are:
 
   -- ---------------------------------- -- ---------------------- -- ------------------------------------------------------------------------------------------------------- --
-     \'\'\'Variable\'\'\'                  \'\'\'Default\'\'\'       \'\'\'Description\'\'\'                                                                                 
+     **Variable**                          **Default**               **Description**                                                                                         
      \`WARTHOG_TRACKS\`                    \`0\`                     Enable tracks instead of wheels.                                                                        
      \`WARTHOG_URDF_EXTRAS\`               \`empty.urdf.xacro\`      Path to a URDF file to extend the base Warthog with additional accessories, links, joints, etc\...      
      \`WARTHOG_NAVSAT_SMART6\`             \`0\`                     Enable the Smart6 GPS sensor.                                                                           
@@ -32,12 +32,12 @@ configurations are provided in the package. These can be specified using
 the \`config\` arg to \`description.launch\`, and are intended
 especially as a convenience for simulation launch.
 
-  -- -------------------- -- ------------------------------------------- --
-     \'\'\'Config\'\'\'      \'\'\'Description\'\'\'                     
-     \`base\`                Base Warthog.                               
-     \`arm_mount\`           Include the bulkhead and arm mount.         
-     \`bulkhead\`            Includes bulkhead, but not the arm mount.   
-  -- -------------------- -- ------------------------------------------- --
+  -- --------------- -- ------------------------------------------- --
+     **Config**         **Description**                             
+     \`base\`           Base Warthog.                               
+     \`arm_mount\`      Include the bulkhead and arm mount.         
+     \`bulkhead\`       Includes bulkhead, but not the arm mount.   
+  -- --------------- -- ------------------------------------------- --
 
 Please see [warthog_simulator](warthog_simulator) for more information
 on simulating Warthog.

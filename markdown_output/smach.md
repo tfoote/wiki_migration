@@ -8,7 +8,7 @@
 
 ## About SMACH
 
-\'\'\'When should I use SMACH?\'\'\'
+**When should I use SMACH?**
 
 SMACH is useful when you want a robot to execute some complex plan,
 where all possible states and state transitions can be described
@@ -35,18 +35,18 @@ interesting things.
     machines, state transitions, data flow, etc. See the
     [smach_viewer](smach_viewer) for more details.
 
-\'\'\'When should I NOT use SMACH?\'\'\'
+**When should I NOT use SMACH?**
 
 -   Unstructured tasks: SMACH will fall short as the scheduling of your
     task becomes less structured.
 -   Low-level systems: SMACH is not meant to be used as a state machine
-    for \'\'low-level\'\' systems that require high efficiency, SMACH is
-    a \'\'task-level\'\' architecture.
+    for *low-level* systems that require high efficiency, SMACH is a
+    *task-level* architecture.
 -   Smash: Do not use SMACH when you want to smash something, for that
     use
     [ smash](https://en.wikipedia.org/wiki/Hulk_and_the_Agents_of_S.M.A.S.H.).
 
-\'\'\'Is SMACH only a finite state machine library?\'\'\'
+**Is SMACH only a finite state machine library?**
 
 You can build a finite state machine using SMACH, but SMACH can do much
 more. SMACH is a library for task-level execution and coordination, and

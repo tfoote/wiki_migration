@@ -45,7 +45,7 @@ $ rosrun gripit gripit
 GripIt incorporates a set of parameters which may be used to alter the
 edge detection and point-cloud representation of the scene.
 
-\'\'\'\'Parameters\'\'\'\'
+**\'Parameters**\'
 
 -   Auto-Canny Sigma:
 

@@ -13,11 +13,11 @@ interface as explained in the next section.
 ## Quick Start
 
 To use people detection and recognition clone the repository to your
-disc and build it. \'\'\'Remark: the current cob_perception_common
-release is not yet compatible with cob_people_detection. You might need
-to download and build it manually from
+disc and build it. **Remark: the current cob_perception_common release
+is not yet compatible with cob_people_detection. You might need to
+download and build it manually from
 <https://github.com/ipa-rmb/cob_perception_common.git> if you encounter
-build problems.\'\'\'
+build problems.**
 
 For beginners: go to your home folder, create a catkin workspace,
 download the code, install dependencies, build: ```
@@ -41,12 +41,12 @@ roslaunch openni2_launch openni2.launch
 sensor.
 
 When using the openni or openni2 driver, please ensure that
-\'\'\'depth_registration\'\'\' is activated (e.g. by using rosrun
+**depth_registration** is activated (e.g. by using rosrun
 rqt_reconfigure rqt_reconfigure). Also check that the
-\'\'\'camera_namespace\'\'\' argument and the camera topics
-\'\'\'colorimage_in_topic\'\'\' and \'\'\'pointcloud_rgb_in_topic\'\'\',
-which are set in the `ros/launch/people_detection.launch` file,
-correspond to the topic names of your camera driver.
+**camera_namespace** argument and the camera topics
+**colorimage_in_topic** and **pointcloud_rgb_in_topic**, which are set
+in the `ros/launch/people_detection.launch` file, correspond to the
+topic names of your camera driver.
 
 Then launch people detection with ```
 roslaunch cob_people_detection people_detection.launch
@@ -67,9 +67,9 @@ rosrun cob_people_detection people_detection_client
 
 No identification data will be available the first time you start the
 people detection node on your computer. To record some data adjust the
-frame rate of the camera, first, by choosing \'\'5 - activate/deactivate
-sensor message gateway\'\' in the client and then enter 1 to activate
-the sensor message gateway. The frame rate should be chosen somewhere
+frame rate of the camera, first, by choosing *5 - activate/deactivate
+sensor message gateway* in the client and then enter 1 to activate the
+sensor message gateway. The frame rate should be chosen somewhere
 between 5 and 30 Hz depending on your computer\'s power.
 ```
 Choose an option:
@@ -86,15 +86,15 @@ At which target frame rate (Hz) shall the sensor message gateway operate: 20
 Gateway successfully opened.
 ```
 
-Now select \'\'1 - capture face images\'\' from the menu of the client
-and enter the name of the first person to capture. \'\'\'Please do not
-use any whitespaces in the name.\'\'\' Following, you are asked to
-select how to record the data: manually by pressing a button or
-automatically. In the manual mode, you have to press \'\'c\'\' each time
-an image shall be captured and \'\'q\'\' to finish recording. Make sure
-that only one person is in the image during recording, otherwise no data
-will be accepted because the matching between face and label would be
-ambiguous. ```
+Now select *1 - capture face images* from the menu of the client and
+enter the name of the first person to capture. **Please do not use any
+whitespaces in the name.** Following, you are asked to select how to
+record the data: manually by pressing a button or automatically. In the
+manual mode, you have to press *c* each time an image shall be captured
+and *q* to finish recording. Make sure that only one person is in the
+image during recording, otherwise no data will be accepted because the
+matching between face and label would be ambiguous.
+```
 Choose an option:
 >> 1 - capture face images <<
 2 - update database labels
@@ -152,8 +152,8 @@ If you are using one of the more modern recognition methods (choices
 2=LDA2D or 3=PCA2D, can be set in file
 `cob_people_detection/ros/launch/face_recognizer_params.yaml` as
 parameter `recognition_method`) then please be aware that they require
-at least \'\'\'two different people in the training data\'\'\'. The next
-step, building a recognition model, will not start with only one person
+at least **two different people in the training data**. The next step,
+building a recognition model, will not start with only one person
 available with these algorithms. If you quit the program before
 recording a second person, the program might not start anymore. Then
 please delete all data from
@@ -161,10 +161,10 @@ please delete all data from
 record two people.
 
 After training, you need to build a recognition model with the new data.
-To do so, just select \'\'4 - load recognition model\'\' from the
-client\'s menu. In the following prompt you can either list all persons
-that you captured and that shall be recognized by the system, e.g. by
-typing ```
+To do so, just select *4 - load recognition model* from the client\'s
+menu. In the following prompt you can either list all persons that you
+captured and that shall be recognized by the system, e.g. by typing
+```
 Choose an option:
 1 - capture face images
 2 - update database labels
@@ -186,8 +186,8 @@ A new recognition model is currently loaded or generated by the server. The foll
    - OlliKahn
 The new recognition model has been successfully loaded.
 Current State: SUCCEEDED   Message: Model successfully loaded.
-``` or you can directly enter \'\'q\'\' and
-all available persons will be trained.
+``` or you can directly enter *q* and all available
+persons will be trained.
 
 After all steps succeeded, you can watch the recognition results in the
 display. Although you may access all training data functions (update,
@@ -239,24 +239,24 @@ of the people detection software. Its source code is furthermore a good
 place to learn the C++ interface of people detection if it shall be
 called directly from your software.
 
-The menu provides you with the following functions: 1. \'\'\'Capture
-face images\'\'\' records images for the face recognition component. Its
-modes of operation have already been discussed in the Quick Start
-section. 1. \'\'\'Update database labels\'\'\' updates the label of
-training data items. The entries that shall be updated can be selected
-either by index or by label. 1. \'\'\'Delete database entries\'\'\'
-deletes data from the training set. The data is selected either by index
-or by label. 1. \'\'\'Load recognition model\'\'\' This function loads
-or trains a recognition model for the desired compilation of people from
-the training set. See example in the Quick Start section. It is
-necessary to run this function whenever new training data has been
-recorded and shall be used. 1. \'\'\'Activate/deactivate sensor message
-gateway\'\'\' controls the gateway which passes sensory data at a given
-rate to the pipeline. 1. \'\'\'Get detections\'\'\' is an example for
-the action interface to the results. The action can also be called when
-the gateway is closed - then it will be automatically opened for a short
-time until the detections are received. The other way of accessing the
-detection results is to simply open the gateway and subscribe to the
+The menu provides you with the following functions: 1. **Capture face
+images** records images for the face recognition component. Its modes of
+operation have already been discussed in the Quick Start section. 1.
+**Update database labels** updates the label of training data items. The
+entries that shall be updated can be selected either by index or by
+label. 1. **Delete database entries** deletes data from the training
+set. The data is selected either by index or by label. 1. **Load
+recognition model** This function loads or trains a recognition model
+for the desired compilation of people from the training set. See example
+in the Quick Start section. It is necessary to run this function
+whenever new training data has been recorded and shall be used. 1.
+**Activate/deactivate sensor message gateway** controls the gateway
+which passes sensory data at a given rate to the pipeline. 1. **Get
+detections** is an example for the action interface to the results. The
+action can also be called when the gateway is closed - then it will be
+automatically opened for a short time until the detections are received.
+The other way of accessing the detection results is to simply open the
+gateway and subscribe to the
 /cob_people_detection/detection_tracker/face_position_array topic.
 
 ```

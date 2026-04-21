@@ -35,5 +35,5 @@ inverse kinematics.
 The node proposes the same services and parameters as the
 [arm_kinematics](arm_kinematics)
 
-NOTE that \'\'\'epsilon\'\'\' parameter is used to detect singularities
-for J4 joint.
+NOTE that **epsilon** parameter is used to detect singularities for J4
+joint.

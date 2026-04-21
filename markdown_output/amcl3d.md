@@ -1,10 +1,10 @@
 ## Overview
 
-The \'\'\'Adaptive Monte-Carlo Localization in 3D\'\'\' is a particle
-filter that allows you to estimate where a robot is within a 3D
-environment without using GPS, for example in indoor environments. This
-package extends previous Monte-Carlo Localization solutions meant for
-ground robots only, making possible to use it also with aerial robots.
+The **Adaptive Monte-Carlo Localization in 3D** is a particle filter
+that allows you to estimate where a robot is within a 3D environment
+without using GPS, for example in indoor environments. This package
+extends previous Monte-Carlo Localization solutions meant for ground
+robots only, making possible to use it also with aerial robots.
 
 The algorithm uses radio-range sensors, laser sensors, and a known map
 of the environment for calculating the particles weights. The algorithm
@@ -30,21 +30,21 @@ converges to the actual pose, making the robot uncontrollable).
 
 ### Prediction
 
-\'\'\_\_Input\_\_\'\': Odometry
+*\_\_Input\_\_*: Odometry
 
-\'\'\_\_Description\_\_\'\': It is the part in charge of carrying out
-the propagation of the particles so that, using the input odometry, it
+*\_\_Description\_\_*: It is the part in charge of carrying out the
+propagation of the particles so that, using the input odometry, it
 proposes a new set of particles that potentially contain the position of
 the robot.
 
 ### Update
 
-\'\'\_\_Input\_\_\'\': Map (known map of the environment), Radio-Range
-Sensor Measurements, 3D Laser Sensor Measurements
+*\_\_Input\_\_*: Map (known map of the environment), Radio-Range Sensor
+Measurements, 3D Laser Sensor Measurements
 
-\'\'\_\_Description\_\_\'\': It is responsible for evaluating the
-weights of the particles. It tries to verify how correctly is the pose
-ofeach particle by using the point-cloud of the 3D laser sensor and the
+*\_\_Description\_\_*: It is responsible for evaluating the weights of
+the particles. It tries to verify how correctly is the pose ofeach
+particle by using the point-cloud of the 3D laser sensor and the
 measurements of the radio-range sensors. Depending on how likely each
 particle would receive such sensor readings at its current pose, they
 are assigned a corresponding weight by combining the weights computed
@@ -52,17 +52,17 @@ from the two sensor technologies (laser and radio).
 
 ### Resampling
 
-\'\'\_\_Description\_\_\'\': It is responsible for suppressing those
-particles that have smaller weights. Without this part, the algorithm
-would not converge to the correct position.
+*\_\_Description\_\_*: It is responsible for suppressing those particles
+that have smaller weights. Without this part, the algorithm would not
+converge to the correct position.
 
 ### Original Paper
 
 More information about the algorithm can be found in the following
 paper:
 
--   \'\'\'Francisco J.Perez-Grau, Fernando Caballero, Antidio Viguria
-    and Anibal Ollero\'\'\':
+-   **Francisco J.Perez-Grau, Fernando Caballero, Antidio Viguria and
+    Anibal Ollero**:
 
 [Multi-sensor 3D Monte Carlo Localization (MCL) for long-term aerial robot navigation, 2017](https://journals.sagepub.com/doi/pdf/10.1177/1729881417732757/)
 
@@ -90,52 +90,50 @@ The package is structured as follows:
 ### Source file
 
 -   \[amcl3d/src\]
--   \'\'\'Grid.h\'\'\': defines the class \"Grid3d\". It works with the
-    grid from the map.bt, opening it, building the grid message and
+-   **Grid.h**: defines the class \"Grid3d\". It works with the grid
+    from the map.bt, opening it, building the grid message and
     pointcloud map and calculating compute the weights.
--   \'\'\'Grid.cpp\'\'\': implements the functions of the class
-    \"!Grid3d\".
--   \'\'\'!PointCloudTools.h\'\'\': defines the class \"!Grid3dCell\",
+-   **Grid.cpp**: implements the functions of the class \"!Grid3d\".
+-   **!PointCloudTools.h**: defines the class \"!Grid3dCell\",
     \"!Grid3dInfo\" and \"!PointCloudInfo\". It creates the grid from
     the map.bt, computing the weights of the grid.
--   \'\'\'!PointCloudTools.cpp\'\'\': implements the functions
-    mentionated in \"!PointCloudTools.h\". It is relationated with the
-    information of the grid.
--   \'\'\'main.cpp\'\'\': inits the function \"spin\" of the class
-    \"Node\".
--   \'\'\'Node.cpp\'\'\': implements the functions of the class
-    \"Node\". It contains all the subscribers and publishers of the
-    package, so it has the responsibility to start the map grid and
-    follow the steps of the particle filter.
--   \'\'\'Node.h\'\'\': defines the class \"Node\". It runs the grid and
-    the particle filter with the parameters that were introduced into
-    the roslaunch file.
--   \'\'\'Parameters.cpp\'\'\': implements the parameter readings, and
-    shows errors if the parameters have not been initialized, in
-    addition to displaying the value of all of them on the screen. For
-    more information, see section \'\'\'\_\_3.1.3. Parameters\_\_\'\'\'.
--   \'\'\'Parameters.h\'\'\': defines the class \"Parameters\". It
-    declares all the generic parameters of the node.
--   \'\'\'!ParticleFilter.cpp\'\'\': implements the functions of the
-    class \"!ParticleFilter\". It has the steps mentioned before:
-    functions of prediction, update, and resampling. Furthermore, it has
-    other functions such as one that allows calculating the weight of
-    the particle taking into account the error in the range sensors.
--   \'\'\'!ParticleFilter.h\'\'\': defines the class
-    \"!ParticleFilter\". It runs the steps of the Monte-Carlo method.
+-   **!PointCloudTools.cpp**: implements the functions mentionated in
+    \"!PointCloudTools.h\". It is relationated with the information of
+    the grid.
+-   **main.cpp**: inits the function \"spin\" of the class \"Node\".
+-   **Node.cpp**: implements the functions of the class \"Node\". It
+    contains all the subscribers and publishers of the package, so it
+    has the responsibility to start the map grid and follow the steps of
+    the particle filter.
+-   **Node.h**: defines the class \"Node\". It runs the grid and the
+    particle filter with the parameters that were introduced into the
+    roslaunch file.
+-   **Parameters.cpp**: implements the parameter readings, and shows
+    errors if the parameters have not been initialized, in addition to
+    displaying the value of all of them on the screen. For more
+    information, see section **\_\_3.1.3. Parameters\_\_**.
+-   **Parameters.h**: defines the class \"Parameters\". It declares all
+    the generic parameters of the node.
+-   **!ParticleFilter.cpp**: implements the functions of the class
+    \"!ParticleFilter\". It has the steps mentioned before: functions of
+    prediction, update, and resampling. Furthermore, it has other
+    functions such as one that allows calculating the weight of the
+    particle taking into account the error in the range sensors.
+-   **!ParticleFilter.h**: defines the class \"!ParticleFilter\". It
+    runs the steps of the Monte-Carlo method.
 
 ### RViz
 
 -   \[amcl3d/rviz\]
--   \'\'\'amcl3d.rviz\'\'\': it contains a configuration of RViz that
-    allows displaying the topics of interest: the different point-clouds
-    used in the algorithm, the particles, the transformations, and the
+-   **amcl3d.rviz**: it contains a configuration of RViz that allows
+    displaying the topics of interest: the different point-clouds used
+    in the algorithm, the particles, the transformations, and the
     localization of range-sensor.
 
 ### Launch
 
 -   \[amcl3d/launch\]
--   \'\'\'amcl3d_rosin.launch\'\'\': starts amcl3d node with a selected
+-   **amcl3d_rosin.launch**: starts amcl3d node with a selected
     configuration of parameters. ```
 roslaunch amcl3d amcl3d_rosin.launch
 ```
@@ -143,10 +141,10 @@ roslaunch amcl3d amcl3d_rosin.launch
 ### Msg
 
 -   \[rosinrange_msg/msg\]
--   \'\'\'range_pose.msg\'\'\': It is the message used for the
-    radio-range sensor measurements in the package.
+-   **range_pose.msg**: It is the message used for the radio-range
+    sensor measurements in the package.
 
-For more information, see \'\'\'\_\_3.2.1 Radio-Range Message\_\_\'\'\'.
+For more information, see **\_\_3.2.1 Radio-Range Message\_\_**.
 
 ## Node
 
@@ -349,9 +347,9 @@ The terminal will show you the next lines:
 In this section, you can see the TF tree that you will find in the
 algorithm and the relationships among them.
 
--   \'\'\'world\'\'\': is the origin of the map.
--   \'\'\'odom\'\'\': is the odometry origin of the UAV.
--   \'\'\'base_link\'\'\': is the robot frame. .
+-   **world**: is the origin of the map.
+-   **odom**: is the odometry origin of the UAV.
+-   **base_link**: is the robot frame. .
     ![\|height=\"300px\",width=\"300px\"](attachment:tf.png)
 
 ## Demostration Video

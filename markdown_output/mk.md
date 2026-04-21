@@ -1,7 +1,7 @@
-/!\\ \'\'\'\'\'NOTE:\'\'\'\'\' when using \`rospack\` to find the
-\`mk\`-package, the \`ROS_PACKAGE_PATH\` needs to be set accordingly.
-Thus, you should have a dependency to \`roslib\` in your
-\`package.xml\`, as this provides the respective
+/!\\ ***NOTE:*** when using \`rospack\` to find the \`mk\`-package, the
+\`ROS_PACKAGE_PATH\` needs to be set accordingly. Thus, you should have
+a dependency to \`roslib\` in your \`package.xml\`, as this provides the
+respective
 [environment hooks](https://github.com/ros/ros/blob/jade-devel/core/roslib/env-hooks/10.ros.sh.em)
 that set this.
 
@@ -45,14 +45,14 @@ wipe: clean
 prior to including \`download_unpack_build.mk\`:
 
 -   \`TARBALL\`: local path to which the tarball should be downloaded;
-    it \'\'\'must\'\'\' start with \`build/\`
+    it **must** start with \`build/\`
 -   \`TARBALL_URL\`: fully-qualified URL from which to retrieve the
     tarball
 -   \`SOURCE_DIR\`: source directory that you want the tarball unpacked
-    into; it \'\'\'must\'\'\' start with \`build/\`
+    into; it **must** start with \`build/\`
 -   \`INITIAL_DIR\` (optional): the name that the tarball will naturally
-    unpack into, if different from \`SOURCE_DIR\`; it \'\'\'must\'\'\'
-    start with \`build/\`
+    unpack into, if different from \`SOURCE_DIR\`; it **must** start
+    with \`build/\`
 -   \`UNPACK_CMD\` (optional): the command to apply to the tarball to
     unpack it (default: \`tar xzf\`)
 -   \`MD5SUM_FILE\` (optional, but highly recommended): The name of a

@@ -25,9 +25,9 @@ You will see the turtlesim start with two turtles.
 . ![](attachment:tf/Tutorials/Introduction to tf/turtle_tf_start.png)
 
 Once the turtlesim is started you can drive the center turtle around in
-the turtlesim using the keyboard arrow keys, \'\'\'select the roslaunch
-terminal window\'\'\' so that your keystrokes will be captured to drive
-the turtle.
+the turtlesim using the keyboard arrow keys, **select the roslaunch
+terminal window** so that your keystrokes will be captured to drive the
+turtle.
 
 . ![](attachment:tf/Tutorials/Introduction to tf/turtle_tf_drive.png)
 

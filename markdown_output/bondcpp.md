@@ -6,7 +6,7 @@ please see the example below as well as the
 
 ## Example usage
 
-\'\'\'Process A:\'\'\' ```cplusplus
+**Process A:** ```cplusplus
 #include <bondcpp/bond.h>
 
 std::string id = generateUniqueId();
@@ -23,7 +23,7 @@ bond.waitUntilBroken(ros::Duration(-1.0));
 printf("B has broken the bond\n");
 ```
 
-\'\'\'Process B:\'\'\' ```cplusplus
+**Process B:** ```cplusplus
 #include <bondcpp/bond.h>
 
 // Receives id from A using a service or action

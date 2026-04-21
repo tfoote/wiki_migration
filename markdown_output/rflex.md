@@ -9,13 +9,13 @@ in separate classes which define the nodes.
 The RFlex driver provides a means of controlling and getting data from
 six different subsystems.
 
--   \'\'\'Motor\'\'\' - Controls position, brake and reads odometry
--   \'\'\'Sonar\'\'\' - Controls the different sets of sonar sensors
--   \'\'\'IR\'\'\' - Infared sensors
--   \'\'\'Digitial IO\'\'\' - Varies per robot\...possibly bump sensors
--   \'\'\'Joystick\'\'\' - For use with external joysticks that plug
-    directly into the robot
--   \'\'\'System\'\'\' - Monitors things like battery status
+-   **Motor** - Controls position, brake and reads odometry
+-   **Sonar** - Controls the different sets of sonar sensors
+-   **IR** - Infared sensors
+-   **Digitial IO** - Varies per robot\...possibly bump sensors
+-   **Joystick** - For use with external joysticks that plug directly
+    into the robot
+-   **System** - Monitors things like battery status
 
 The RFlex driver takes care of all of the input/output to the device and
 packet parsing. It saves the input to the protected variables. This

@@ -46,10 +46,10 @@ There are different boards that incorporate the BNO055 IMU. The cheapest
 one is from Aliexpress. This board has two solder bridges called PS0 and
 PS1 used to select the type of communication.
 
-\'\'\'To use the IMU in this package, it must be configured in UART mode
-\'\'\' to be able to communicate with the serial to USB converter.
-Therefore PS0 = 0 and PS1 = 1. Remember that on this board the solder
-bridges are inverted, so the PS1 bridge must be unsolder.
+**To use the IMU in this package, it must be configured in UART mode **
+to be able to communicate with the serial to USB converter. Therefore
+PS0 = 0 and PS1 = 1. Remember that on this board the solder bridges are
+inverted, so the PS1 bridge must be unsolder.
 
 ![this\|width=40%](attachment:bno055_uart.jpg)
 ![this\|width=40%](attachment:bno055_aliexpress.jpg)

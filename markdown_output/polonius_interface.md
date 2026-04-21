@@ -42,11 +42,10 @@ All the capital letters represent global time, i.e. time since the
 epoch. Lower case letters represent time relative to the first received
 cue.
 
--   \'\'\'T\'\'\' - Global time, as a float
--   \'\'\'t\'\'\' - Relative time, as a float
--   \'\'\'S\'\'\' - Global time, integer number of seconds
--   \'\'\'s\'\'\' - Relative time, integer number of seconds
--   \'\'\'N\'\'\' - Global time, integer number of nanoseconds
--   \'\'\'n\'\'\' - Relative time, integer number of nanoseconds
--   \'\'\'L\'\'\', \'\'\'l\'\'\' - Log message (no difference for upper
-    or lower case)
+-   **T** - Global time, as a float
+-   **t** - Relative time, as a float
+-   **S** - Global time, integer number of seconds
+-   **s** - Relative time, integer number of seconds
+-   **N** - Global time, integer number of nanoseconds
+-   **n** - Relative time, integer number of nanoseconds
+-   **L**, **l** - Log message (no difference for upper or lower case)

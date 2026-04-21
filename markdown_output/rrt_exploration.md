@@ -107,7 +107,7 @@ robot, must be running. This package (rrt_exploration) generates target
 exploration goals, each robot must be able to receive these points and
 move towards them. This is why the navigation stack is needed.
 Additionally, each robot must have a global and local cost maps. All of
-these are proivded from the \'\'\'move_base_node\'\'\'.
+these are proivded from the **move_base_node**.
 
 #### A mapping node
 
@@ -121,7 +121,7 @@ The robot should have a local map generated from the
 For the multi-robot configuration, the package doesn\'t require special
 network configuration, it simply works by having a single ROS master
 (can be one of the robots). So on the other robots, the
-\'\'\'ROS_MASTER_URI\'\'\' parameter should be pointing at the master\'s
+**ROS_MASTER_URI** parameter should be pointing at the master\'s
 address. For more information on setting up ROS on multiple machines,
 follow [this](http://wiki.ros.org/ROS/NetworkSetup/) link.
 
@@ -129,8 +129,7 @@ follow [this](http://wiki.ros.org/ROS/NetworkSetup/) link.
 
 All robot\'s frames should be prefixed by its name. Naming of robots
 starts from \"/robot_1\", \"/robot_2\", \"/robot_3\", .. and so on. So
-for robot_1, the frames in the \'\'\'tf\'\'\' tree should look like
-this:
+for robot_1, the frames in the **tf** tree should look like this:
 
 ![](https://github.com/hasauino/storage/blob/master/pictures/framesTf.png?raw=true)
 
@@ -150,7 +149,7 @@ robot, must be running. This package (rrt_exploration) generates target
 exploration goals, each robot must be able to receive these points and
 move towards them. This is why the navigation stack is needed.
 Additionally, each robot must have a global and local cost maps. All of
-these are proivded from the \'\'\'move_base_node\'\'\'.
+these are proivded from the **move_base_node**.
 
 #### A mapping node
 
@@ -442,8 +441,8 @@ To report a bug, or suggest an enhancement, please create a Github issue
 
 If you have a question, please post it on
 [ROS answers](http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rrt_exploration/page:1/),
-make sure your question is tagged by \'\'\'rrt_exploration\'\'\' so I
-get notified.
+make sure your question is tagged by **rrt_exploration** so I get
+notified.
 
 ## Acknowledgements & Citation
 

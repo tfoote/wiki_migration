@@ -33,8 +33,8 @@ should work with higher versions as well as the basic structure of the
 data types has not changed (build tests have been conducted with version
 12 as well).
 
-The environment variables \'\'HALCONROOT\'\' and \'\'HALCONARCH\'\' need
-to be set correctly, otherwise cmake won\'t be able to find your HALCON
+The environment variables *HALCONROOT* and *HALCONARCH* need to be set
+correctly, otherwise cmake won\'t be able to find your HALCON
 installation. Usually this should be the case if you have followed the
 installation guide of HALCON.
 
@@ -63,19 +63,19 @@ want to convert.
 
 ------------------------------------------------------------------------
 
-\'\'\'Convert an image:\'\'\'
+**Convert an image:**
 
-To convert a \'\'sensor_msgs::Image\'\' to a \'\'!HalconCpp::HImage\'\'
-call one of the following functions:
+To convert a *sensor_msgs::Image* to a *!HalconCpp::HImage* call one of
+the following functions:
 
 ```
 HalconImagePtr toHalconCopy(const sensor_msgs::ImageConstPtr& source)
 HalconImagePtr toHalconCopy(const sensor_msgs::Image& source);
-``` The return-value is a \'\'!HalconImagePtr
-\'\'object, which contains a\'\' !HalconCpp::HImage\'\'-Pointer as a
-member called \'\'image\'\'.
+``` The return-value is a *!HalconImagePtr *object,
+which contains a* !HalconCpp::HImage*-Pointer as a member called
+*image*.
 
-To convert a \'\'!HalconImage\'\' to ROS again call one of the following
+To convert a *!HalconImage* to ROS again call one of the following
 member functions:
 
 ```
@@ -85,7 +85,7 @@ void toImageMsg(sensor_msgs::Image& ros_image) const;
 
 ------------------------------------------------------------------------
 
-\'\'\'Convert a point cloud:\'\'\'
+**Convert a point cloud:**
 
 This step is similar to the image conversion. The important functions
 are
@@ -93,9 +93,9 @@ are
 ```
 HalconPointcloudPtr toHalconCopy(const sensor_msgs::PointCloud2ConstPtr& source);
 HalconPointcloudPtr toHalconCopy(const sensor_msgs::PointCloud2& source);
-``` to convert a \'\'sensor_msgs::!PointCloud2\'\'
-to a\'\' !HalconCpp::HObjectModel3D\'\' (the member in the returned
-\'\'!HalconPointcloud\'\' is called \'\'model\'\').
+``` to convert a *sensor_msgs::!PointCloud2* to a*
+!HalconCpp::HObjectModel3D* (the member in the returned
+*!HalconPointcloud* is called *model*).
 
 To convert it back to ROS call:
 

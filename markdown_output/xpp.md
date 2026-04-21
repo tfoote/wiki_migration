@@ -119,22 +119,22 @@ design for your robot could look similar to this: [xpp_hyq](xpp_hyq).
 
 The core packages that this ROS stack offers are:
 
--   \'\'\'[xpp_states](xpp_states):\'\'\' Classes to define robot states
-    in cartesian and joint space.
--   \'\'\'[xpp_msgs](xpp_msgs):\'\'\' ROS message representation of the
-    above states.
--   \'\'\'[xpp_vis](xpp_vis):\'\'\' Visualization of states and robots
-    through [rviz](rviz).
+-   **[xpp_states](xpp_states):** Classes to define robot states in
+    cartesian and joint space.
+-   **[xpp_msgs](xpp_msgs):** ROS message representation of the above
+    states.
+-   **[xpp_vis](xpp_vis):** Visualization of states and robots through
+    [rviz](rviz).
 
 Some optional packages include:
 
--   \'\'\'[xpp_examples](xpp_examples):\'\'\' Some examples of how to
-    generate and visualize motion plans in [rviz](rviz).
--   \'\'\'[xpp_hyq](xpp_hyq):\'\'\' [urdf](urdf) file and inverse
-    kinematics functions to display the HyQ robot with 1,2 or 4 legs in
+-   **[xpp_examples](xpp_examples):** Some examples of how to generate
+    and visualize motion plans in [rviz](rviz).
+-   **[xpp_hyq](xpp_hyq):** [urdf](urdf) file and inverse kinematics
+    functions to display the HyQ robot with 1,2 or 4 legs in
     [rviz](rviz).
--   \'\'\'[xpp_quadrotor](xpp_quadrotor):\'\'\' [urdf](urdf) file of a
-    quadrotor used in one of the [xpp_examples](xpp_examples).
+-   **[xpp_quadrotor](xpp_quadrotor):** [urdf](urdf) file of a quadrotor
+    used in one of the [xpp_examples](xpp_examples).
 
 ## Publications
 

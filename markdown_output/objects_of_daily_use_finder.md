@@ -19,8 +19,8 @@ rosmake objects_of_daily_use_finder
 ## Overview
 
 In this package we report on the design and implementation of Objects of
-Daily Use Finder \'\'\'(ODUfinder)\'\'\' perception system that can deal
-with some aspects of this challenge. The system can detect and recognize
+Daily Use Finder **(ODUfinder)** perception system that can deal with
+some aspects of this challenge. The system can detect and recognize
 textured objects in typical kitchen scenes. The models for perceiving
 the objects to be detected and recognized can be acquired autonomously
 using the robot\'s camera as well as by loading large object catalogs
@@ -29,9 +29,9 @@ system. In the system configuration described in this package the robot
 is equipped with an object model library containing about 3500 objects
 from Germandeli and more than 40 objects from the
 [Semantic3D](http://ias.cs.tum.edu/download/semantic-3d) database.
-\'\'\'ODUfinder\'\'\' achieves an object detection rate of 10 FPS and
-recognizes objects reliably with an accuracy over 90%. Object detection
-and recognition is fast enough so that it does not cause delays in the
+**ODUfinder** achieves an object detection rate of 10 FPS and recognizes
+objects reliably with an accuracy over 90%. Object detection and
+recognition is fast enough so that it does not cause delays in the
 execution of the robot tasks.
 
 ![](attachment:teaser.png)

@@ -3,11 +3,11 @@
 -   camera_self_filter: The camera_self_filter node renders the mesh
     model of its current configuration into a camera view. It publishes
     a binary mask image stream and optionally the original camera image
-    with the binary mask in the alpha channel as shown below. \'\'Note:
-    The node requires an X-server to render the mask. It is recommended
-    to run it on an external Ubuntu desktop machine with OpenGL enabled
+    with the binary mask in the alpha channel as shown below. *Note: The
+    node requires an X-server to render the mask. It is recommended to
+    run it on an external Ubuntu desktop machine with OpenGL enabled
     graphics. If the node is to be run on the PR2 check out
-    pr2_camera_self_filter package.\'\'
+    pr2_camera_self_filter package.*
 
 ```{=html}
 <!-- -->

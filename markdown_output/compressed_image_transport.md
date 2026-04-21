@@ -6,8 +6,8 @@
 topics. Compression format (JPEG or PNG) and quality can be changed on
 the fly.
 
-\'\'\'\'\'Before reading this page, make sure you understand the
-[image_transport](image_transport) package\'\'\'\'\'
+***Before reading this page, make sure you understand the
+[image_transport](image_transport) package***
 
 ## Tutorials
 

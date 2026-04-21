@@ -11,8 +11,8 @@ Unless you need the dynamics functionality, please use [[rc_genicam_driver]] whi
 
 ## Overview
 
-The \'\'rc_visard\'\' is the world's first 3D sensor that allows robots
-to perceive their environment in 3D and localize themselves in space.
+The *rc_visard* is the world's first 3D sensor that allows robots to
+perceive their environment in 3D and localize themselves in space.
 
 -   Passive perception enables recognition of the environment both in
     natural light outdoors and in enclosed spaces with poor lighting.
@@ -34,11 +34,10 @@ to perceive their environment in 3D and localize themselves in space.
 ![rc_visard (65 mm baseline, color)\|width=\"350\"](attachment:rc_visard_65_colored.png)
 ![rc_visard (160 mm baseline, color)\|width=\"350\"](attachment:rc_visard_160_colored.png)
 
-The \'\'rc_visard_driver\'\' is the official ROS driver for the
-\'\'rc_visard\'\' which provides ROS parameters (configuration), ROS
-services (control of rc_visards dynamic module) and ROS topics (sensor
-data: Images, Stereo Data, Point Clouds, Dynamic State i.e. poses and
-IMU data, TF).
+The *rc_visard_driver* is the official ROS driver for the *rc_visard*
+which provides ROS parameters (configuration), ROS services (control of
+rc_visards dynamic module) and ROS topics (sensor data: Images, Stereo
+Data, Point Clouds, Dynamic State i.e. poses and IMU data, TF).
 
 ## Configuration
 

@@ -10,4 +10,4 @@ CROM robot description. It includes urdf and mesh files.
 
 To visualize the model in [RVIZ](rviz).
 
-\'\'roslaunch crom_description crom_rviz.launch\'\'
+*roslaunch crom_description crom_rviz.launch*

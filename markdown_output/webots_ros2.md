@@ -1,9 +1,9 @@
 # Webots ROS2 Interface
 
-\'\'\'webots_ros2\'\'\' is a package that provides the necessary
-interfaces to simulate a robot in the [Webots](https://cyberbotics.com/)
-open-source 3D robots simulator. It integrates with ROS2 using ROS2
-messages, services, and actions.
+**webots_ros2** is a package that provides the necessary interfaces to
+simulate a robot in the [Webots](https://cyberbotics.com/) open-source
+3D robots simulator. It integrates with ROS2 using ROS2 messages,
+services, and actions.
 
 [Youtube](https://www.youtube.com/watch?v=O7U3sX_ubGc)
 

@@ -9,21 +9,21 @@ It communicates with the skin_serv Service of the
 [skin_driver](skin_driver) node and can be used to reconfigure the
 following settings of the skin driver:
 
-1\. \'\'\'Number of sensor elements:\'\'\' Enter the number of connected
-sensor elements and press set to save. 1. \'\'\'Static Threshold:\'\'\'
-Enter the static threshold. Default: 10. (relevant only for
-\"Go\"/\"NoGo\" detection). If a new threshold is entered also enter
-range of sensor ids to which the new threshold should be applied to. 1.
-\'\'\'Dynamic Threshold:\'\'\' Enter the dynamic threshold. Default: 64.
-(relevant only for \"Go\"/\"NoGo\" detection).
+1\. **Number of sensor elements:** Enter the number of connected sensor
+elements and press set to save. 1. **Static Threshold:** Enter the
+static threshold. Default: 10. (relevant only for \"Go\"/\"NoGo\"
+detection). If a new threshold is entered also enter range of sensor ids
+to which the new threshold should be applied to. 1. **Dynamic
+Threshold:** Enter the dynamic threshold. Default: 64. (relevant only
+for \"Go\"/\"NoGo\" detection).
 
 The two command buttons on the bottom of the window have the following
 functionality:
 
-1\. \'\'\'Ram to Flash:\'\'\' Save the config to the Ram of the Skin\'s
-hardware interface. This config will be loaded when the skin is reset at
-power up. 1. \'\'\'Init Skin:\'\'\' Initialize skin and set \"Ini\"
-values to current \"X\" values. This is needed to calibrate the skin.
+1\. **Ram to Flash:** Save the config to the Ram of the Skin\'s hardware
+interface. This config will be loaded when the skin is reset at power
+up. 1. **Init Skin:** Initialize skin and set \"Ini\" values to current
+\"X\" values. This is needed to calibrate the skin.
 
 ## Nodes
 

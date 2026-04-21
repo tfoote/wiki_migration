@@ -16,8 +16,8 @@ $ roswtf
 ``` which
 will check the current package or stack for problems.
 
-\'\'\'IMPORTANT\'\'\': \`roswtf\` performs those checks based on the
-directory you run it from. For example, if you run it in the
+**IMPORTANT**: \`roswtf\` performs those checks based on the directory
+you run it from. For example, if you run it in the
 [navigation](navigation) stack, it will perform it\'s filesystem checks
 based on files in the \`navigation\` stack and its dependencies.
 

@@ -43,7 +43,7 @@ The calibration object in the form of a
 [mirrored sphenoid](https://en.wikipedia.org/wiki/Tetrahedron)could be
 recognized by a 2D laserscanner and, using its detected edges p,,1,,,
 p,,2 ,,and p,,3,, as well as the priorly known proportions, the pose of
-its top point \'\'\'T\'\'\' can be calculated.
+its top point **T** can be calculated.
 
 From this, the pose of the calibration object relative to the
 laserscanner\'s sensor frame can be determined easily.
@@ -129,8 +129,7 @@ A calibration object has been constructed, that can both be recognized
 by the laserscanner as well as the robot\'s 2D cameras.
 
 All relevant specifications for the calibration object can be retrieved
-and even changed using the \'\'\'calibration_object_steep.yaml\'\'\'
-file.
+and even changed using the **calibration_object_steep.yaml** file.
 
 The lower part consist of two identical wooden sides mounted on an
 aluminium frame. The longer side of each triangle measures 1.143 m with
@@ -151,27 +150,26 @@ Since the tool is designed to gather transformation data between a
 laserscanner sensor and a camera mounted on a ptu unit, all of those
 components are required for the tool work.
 
-Two \'\'\'laserscanners\'\'\' have been integrated into the calibration
+Two **laserscanners** have been integrated into the calibration
 software:
 
 ![height=\"265\",width=\"266\"](attachment:Laserscanner_PLS101.png)
 ![height=\"264\",width=\"267\"\|height=\"266\",width=\"269\"](attachment:Laserscanner_LMS400.png)
 
-Both the \'\'\'SICK PLS 101\'\'\' (left), which is used in the mild
-platform, as well as the \'\'\'SICK LMS 400\'\'\' (right), which has
-been used for evaluation of the calibration tool, have been integrated
-into the package and can be selected by changing a single parameter
-(\'\'\'laserscanner_type).\'\'\'
+Both the **SICK PLS 101** (left), which is used in the mild platform, as
+well as the **SICK LMS 400** (right), which has been used for evaluation
+of the calibration tool, have been integrated into the package and can
+be selected by changing a single parameter (**laserscanner_type).**
 
 While the PLS 101 scanner operates on infrared light, the LMS 400
 laserscanner uses visible light wave ranges, which makes evaluating the
 calibration data much easier.
 
-The supported types of \'\'\'PTU\'\'\' units depend on the
+The supported types of **PTU** units depend on the
 [asr_flir_ptu_driver](asr_flir_ptu_driver) package and are described
 there.
 
-All \'\'\'cameras\'\'\' supported by the
+All **cameras** supported by the
 [asr_resources_for_vision](asr_resources_for_vision) package can be used
 for calibration.
 
@@ -187,7 +185,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 
 ### Subscribed Topics
 
--   /\'\'\'scan\'\'\'
+-   /**scan**
 -   publisher: [asr_sick_lms_400](asr_sick_lms_400) (LMS 400) /
     [asr_mild_base_laserscanner](asr_mild_base_laserscanner) (PLS 101)
 
@@ -199,7 +197,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   /\'\'\'stereo/objects\'\'\'
+-   /**stereo/objects**
 -   publisher:
     [asr_aruco_marker_recognition](asr_aruco_marker_recognition)
 
@@ -211,13 +209,13 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'\<tf_visualizer_camera_input_topic\>\'\'\'
+-   **\<tf_visualizer_camera_input_topic\>**
 -   publisher: a[sr_resources_for_vision](asr_resources_for_vision)
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'topic name has to be set in parameter file!\'\'\'
+-   **topic name has to be set in parameter file!**
 
 ```{=html}
 <!-- -->
@@ -226,14 +224,14 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 
 ### Published Topics
 
--   \'\'\'/calibrationObject/Object\'\'\'
+-   **/calibrationObject/Object**
 -   message type: /visualization_msgs/Marker
 -   description: publishes the recognized calibration object
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'/calibrationObject/Marker\'\'\'
+-   **/calibrationObject/Marker**
 -   message type: /visualization_msgs/Marker
 -   description: publishes the calibration markers relative to the
     recognized calibration object
@@ -241,7 +239,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'/calibrationObject/Camera\'\'\'
+-   **/calibrationObject/Camera**
 -   message type: /visualization_msgs/Marker
 -   description: publishes the camera pose relative to the calibration
     marker
@@ -249,7 +247,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'/average_scan_data\'\'\'
+-   **/average_scan_data**
 -   message type: /sensor_msgs/LaserScan
 -   description: A set of Laserscan ranges averaged over the last 100
     values
@@ -257,7 +255,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'/segment_border_scan_data\'\'\'
+-   **/segment_border_scan_data**
 -   message type: /visualization_msgs/MarkerArray
 -   description: A set of Laserscan ranges colored either black (border
     area) or white (inner area) depending on how far the points are to
@@ -266,7 +264,7 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'/segmented_scan_data\'\'\'
+-   **/segmented_scan_data**
 -   message type: /visualization_msgs/MarkerArray
 -   description: A set of Laserscan ranges colored according to which
     segment each point belongs to.
@@ -274,17 +272,17 @@ roslaunch asr_mild_calibration_tool calibration_tool.launch
 ```{=html}
 <!-- -->
 ```
--   \'\'\'\<tf_visualizer_camera_output_topic\>\'\'\'
+-   **\<tf_visualizer_camera_output_topic\>**
 -   message type: /sensor_msgs/Image
 -   description: camera image overlayed with the frames specified in the
-    \'\'\'tf_visualizer_frames\'\'\' parameter
+    **tf_visualizer_frames** parameter
 
 ### Published Frames
 
 During calibration, several frames containing frames used in the
 calibration process are being published:
 
--   \'\'\'calibration_transforms\'\'\'
+-   **calibration_transforms**
 -   object_top
 -   Frame at the top of the calibration object\'s tetrahedon
 
@@ -346,122 +344,121 @@ The general settings for the mild calibration tool are specified in the
 calibration_tool_settings.yaml file. The following parameters are
 available:
 
--   \'\'\'Laserscanner detection\'\'\': This set of parameters are
-    required for the detection of the calibration object with the
-    robot\'s laserscanner.
--   \'\'\'laserscanner_maxVariance: \'\'\'Used for the
-    max-variance-filter in the edge detection. When trying to detect a
-    side of the calibration object with the laserscanner, this value
-    specifies the maximum variance among a set of measured range points
-    to be still considered as a candidate for a side of the calibration
-    object.
+-   **Laserscanner detection**: This set of parameters are required for
+    the detection of the calibration object with the robot\'s
+    laserscanner.
+-   **laserscanner_maxVariance: **Used for the max-variance-filter in
+    the edge detection. When trying to detect a side of the calibration
+    object with the laserscanner, this value specifies the maximum
+    variance among a set of measured range points to be still considered
+    as a candidate for a side of the calibration object.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laserscanner_maxAngleDeviation: \'\'\'Used for the angle
-    filter in the edge detection. Once two candidates for the left and
-    the right side of the calibration object have been found, their
-    angle towards each other should be approximately 90°. This value
-    specifies the maximum deviation from a right angle for those two
-    measured sides to be still considered a valid edge.
+-   **laserscanner_maxAngleDeviation: **Used for the angle filter in the
+    edge detection. Once two candidates for the left and the right side
+    of the calibration object have been found, their angle towards each
+    other should be approximately 90°. This value specifies the maximum
+    deviation from a right angle for those two measured sides to be
+    still considered a valid edge.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'feasibilityChecker_maxAngleDeviation:\'\'\' When calculating
-    the pose of a detected calibration object, the system can (in the
-    context of the mild platform) usually expect the object to stand
-    approximately to parallel to the laserscanner\'s sensor plane.
-    Therefore, calculation results with poses that deviate too much from
-    this orientation can be discarded. This parameter specifies the
-    maximum allowed angle deviation relative to laserscanner\'s sensor
-    plane in order to be considered a valid result.
+-   **feasibilityChecker_maxAngleDeviation:** When calculating the pose
+    of a detected calibration object, the system can (in the context of
+    the mild platform) usually expect the object to stand approximately
+    to parallel to the laserscanner\'s sensor plane. Therefore,
+    calculation results with poses that deviate too much from this
+    orientation can be discarded. This parameter specifies the maximum
+    allowed angle deviation relative to laserscanner\'s sensor plane in
+    order to be considered a valid result.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laserscanner_variationStep: \'\'\'When trying to find the
-    exact center for calibration object\'s edge, for each candidate
-    point, a set of sampling points aligned in a regular grid around it
-    are considered as candidates as well. The distance between two
-    neighbouring points in this grid is described by this value.
+-   **laserscanner_variationStep: **When trying to find the exact center
+    for calibration object\'s edge, for each candidate point, a set of
+    sampling points aligned in a regular grid around it are considered
+    as candidates as well. The distance between two neighbouring points
+    in this grid is described by this value.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laserscanner_variationStepCount: \'\'\'Used for the generation
-    of the grid described above. This parameters describes the number of
-    rows and columns of the sampling grid.
+-   **laserscanner_variationStepCount: **Used for the generation of the
+    grid described above. This parameters describes the number of rows
+    and columns of the sampling grid.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laserscanner_segmentation_lambda: \'\'\'During edge detection,
-    the measured distance points are segmented first. This parameter
+-   **laserscanner_segmentation_lambda: **During edge detection, the
+    measured distance points are segmented first. This parameter
     specifies the maximum distance between two consecutive points, to be
     still considered part of the same segment.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laserscanner_type: \'\'\'For detecting the calibration object,
-    two laserscanners can be selected. Options are the LMS400 or the
-    PLS101 (see \"\'\'\'Needed Hardware\'\'\'\" for more information)
+-   **laserscanner_type: **For detecting the calibration object, two
+    laserscanners can be selected. Options are the LMS400 or the PLS101
+    (see \"**Needed Hardware**\" for more information)
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Camera marker detection: \'\'\'This set of parameters are
-    required to detected the calibration object (more precisely, the
-    AR-markers attached to it) via the robot\'s cameras.
--   \'\'\'tilt_min_angle: \'\'\'Mininum angle of the tilt joint during
-    the automatic marker search
-
-```{=html}
-<!-- -->
-```
--   \'\'\'tilt_max_angle\'\'\': Maximum angle of the tilt joint during
-    the automatic marker search
-
-```{=html}
-<!-- -->
-```
--   \'\'\'pan_min_angle\'\'\': Mininum angle of the pan joint during the
+-   **Camera marker detection: **This set of parameters are required to
+    detected the calibration object (more precisely, the AR-markers
+    attached to it) via the robot\'s cameras.
+-   **tilt_min_angle: **Mininum angle of the tilt joint during the
     automatic marker search
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'pan_max_angle\'\'\': Maximum angle of the pan joint during the
+-   **tilt_max_angle**: Maximum angle of the tilt joint during the
     automatic marker search
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'tilt_step_count:\'\'\' Number of steps to iterate from the
-    mininum angle to the maximum angle of the tilt joint during the
+-   **pan_min_angle**: Mininum angle of the pan joint during the
     automatic marker search
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'pan_step_count\'\'\': Number of steps to iterate from the
-    mininum angle to the maximum angle of the pan joint during the
+-   **pan_max_angle**: Maximum angle of the pan joint during the
     automatic marker search
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'marker_recognizer_timeout: \'\'\'Time (in seconds) to wait for
-    data from the marker recognizer in each iteration step of the
-    automatic marker search
+-   **tilt_step_count:** Number of steps to iterate from the mininum
+    angle to the maximum angle of the tilt joint during the automatic
+    marker search
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'marker_recognizer_early_abort_timeout: \'\'\'Time (in seconds)
-    to wait for the first set of data from the marker recognizer in each
+-   **pan_step_count**: Number of steps to iterate from the mininum
+    angle to the maximum angle of the pan joint during the automatic
+    marker search
+
+```{=html}
+<!-- -->
+```
+-   **marker_recognizer_timeout: **Time (in seconds) to wait for data
+    from the marker recognizer in each iteration step of the automatic
+    marker search
+
+```{=html}
+<!-- -->
+```
+-   **marker_recognizer_early_abort_timeout: **Time (in seconds) to wait
+    for the first set of data from the marker recognizer in each
     iteration step of the automatic marker search. If no data arrives
     before during this period, the marker search will automatically
     advance to the next iteration step.
@@ -469,45 +466,45 @@ available:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'marker_min_distance: \'\'\'Minimum distance between a detected
-    marker pose and the camera to be considered a valid pose. Used to
-    detect outliers.
+-   **marker_min_distance: **Minimum distance between a detected marker
+    pose and the camera to be considered a valid pose. Used to detect
+    outliers.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'marker_max_distance: \'\'\'Maximum distance between a detected
-    marker pose and the camera to be considered a valid pose. Used to
-    detect outliers.
+-   **marker_max_distance: **Maximum distance between a detected marker
+    pose and the camera to be considered a valid pose. Used to detect
+    outliers.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'useAveragedMarkerData: \'\'\'If true, the measured poses of
-    marker during each iteration of the automatic marker search are
-    being averaged using [SLERP](https://en.wikipedia.org/wiki/Slerp)
-    Only the average value will be saved for each iteration step.
+-   **useAveragedMarkerData: **If true, the measured poses of marker
+    during each iteration of the automatic marker search are being
+    averaged using [SLERP](https://en.wikipedia.org/wiki/Slerp) Only the
+    average value will be saved for each iteration step.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Visualization: \'\'\'The following parameters are need to
-    generate an overlay over the camera image, visualizing a set of tf
-    frames over the camera\'s image
--   \'\'\'tf_visualizer_camera_input_topic: \'\'\'Name of the topic, to
-    which the original camera image is published
+-   **Visualization: **The following parameters are need to generate an
+    overlay over the camera image, visualizing a set of tf frames over
+    the camera\'s image
+-   **tf_visualizer_camera_input_topic: **Name of the topic, to which
+    the original camera image is published
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'tf_visualizer_camera_output_topic: \'\'\'Name of the topic, to
-    which the overlayed image will be published
+-   **tf_visualizer_camera_output_topic: **Name of the topic, to which
+    the overlayed image will be published
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'tf_visualizer_frames: \'\'\'Name of frames, that should be
-    visualized\'\'\' \'\'\'
+-   **tf_visualizer_frames: **Name of frames, that should be
+    visualized** **
 
 ### Needed Services
 

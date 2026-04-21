@@ -28,9 +28,9 @@ parameters of the Sentis ToF M100.
 
 # First step: Get Ros
 
-The \'\'\'\'sentis_tof_m100_ros_pkg\'\'\'\' works with ROS versions
-groovy and hydro. You can use catkin workspaces or the previous rosbuild
-to configure, compile and get ready ROS.
+The **\'sentis_tof_m100_ros_pkg**\' works with ROS versions groovy and
+hydro. You can use catkin workspaces or the previous rosbuild to
+configure, compile and get ready ROS.
 
 The following ROS tutorial links describe how to get ros_hydro and a
 catkin workspace.
@@ -257,18 +257,18 @@ following options:
 Add a Pointcloud2 topic to visualize the depth clouds. Two different
 point sets are published with following topic names:
 
--   \'\'\'/depth_non_filtered :\'\'\' raw data from the pmd camera.
--   \'\'\'/depth_filtered : \'\'\' after applying amplitude threshold,
-    if selected.
+-   **/depth_non_filtered :** raw data from the pmd camera.
+-   **/depth_filtered : ** after applying amplitude threshold, if
+    selected.
 
 To do this please perform the following steps:
 
 1\. In the \"Display\" panel on the left, open the first group of
 settings called \"Global Options\", set the option \"Fixed frame\" to
-\'\'\'/tf_sentis_tof\'\'\' 1. At the bottom in \"Display\" click on the
-button \'\'\'add\'\'\' to open a dialog titled \"Create
-visualization\" 1. In the dialog opened after, choose the tab \"By
-topic\" and select the \'\'\'/depth_non_filtered\'\'\' topic.
+**/tf_sentis_tof** 1. At the bottom in \"Display\" click on the button
+**add** to open a dialog titled \"Create visualization\" 1. In the
+dialog opened after, choose the tab \"By topic\" and select the
+**/depth_non_filtered** topic.
 
 ### Using filters and parameters configuration
 
@@ -288,62 +288,58 @@ rosrun rqt_reconfigure rqt_reconfigure
 Here you will find a quick description of the camera parameter that can
 be set in this package:
 
--   \'\'\'Network Options\'\'\'
+-   **Network Options**
 
-\'\'\'Note1:\'\'\' Make sure your network is correctly configured. We
-recommend you to follow the API instructions to check whether the camera
-and your network are working without any problem.
+**Note1:** Make sure your network is correctly configured. We recommend
+you to follow the API instructions to check whether the camera and your
+network are working without any problem.
 
-\'\'\'Note2:\'\'\' Network parameters cannot be changed at runtime.
+**Note2:** Network parameters cannot be changed at runtime.
 
-. \'\'\'TCP_IP_Address :\'\'\' The control connection with your
-sentis_tof_m100 camera. . \'\'\'TCP_IP_Port :\'\'\' The port used by the
-control connection. . \'\'\'UDP_IP_Address :\'\'\' The multicast data
-connection. . \'\'\'UDP_IP_Port :\'\'\' The port used by the data
-connection.
+. **TCP_IP_Address :** The control connection with your sentis_tof_m100
+camera. . **TCP_IP_Port :** The port used by the control connection. .
+**UDP_IP_Address :** The multicast data connection. . **UDP_IP_Port :**
+The port used by the data connection.
 
-\'\'\'Note3 :\'\'\' Following camera parameters and filtering methods
-can be accessed in runtime using the rqt_reconfigure.
+**Note3 :** Following camera parameters and filtering methods can be
+accessed in runtime using the rqt_reconfigure.
 
--   \'\'\'Basic options\'\'\'
+-   **Basic options**
 
-. \'\'\'Integration_Time :\'\'\' Modifies the integration time of the
-sensor (in usec). . \'\'\'Modulation_Frequency :\'\'\' Modifies the
-modulation frequency of the sensor (in Hz). . \'\'\'Frame_Rate :\'\'\'
-Changes the camera capturing frame rate (in frames/s).
+. **Integration_Time :** Modifies the integration time of the sensor (in
+usec). . **Modulation_Frequency :** Modifies the modulation frequency of
+the sensor (in Hz). . **Frame_Rate :** Changes the camera capturing
+frame rate (in frames/s).
 
--   \'\'\'Camera filters\'\'\'
+-   **Camera filters**
 
-. \'\'\'Median_Filter :\'\'\' Activates the median filter. .
-\'\'\'Average_Filter :\'\'\' Activates the average filter. .
-\'\'\'Gauss_Filter :\'\'\' Activates the gauss filter. .
-\'\'\'Wiggling_Compensation :\'\'\' Activates the wiggling compensation.
-. \'\'\'FPPN_Compensation :\'\'\' Activates the FPPN compensation. .
-\'\'\'ModFreq_Scaling :\'\'\' Activates the ModFreq scaling. .
-\'\'\'Scaling_to_MM :\'\'\' Activates scaling to millimeters. .
-\'\'\'Additive_Offset :\'\'\' Activates the additive offset.
+. **Median_Filter :** Activates the median filter. . **Average_Filter
+:** Activates the average filter. . **Gauss_Filter :** Activates the
+gauss filter. . **Wiggling_Compensation :** Activates the wiggling
+compensation. . **FPPN_Compensation :** Activates the FPPN compensation.
+. **ModFreq_Scaling :** Activates the ModFreq scaling. . **Scaling_to_MM
+:** Activates scaling to millimeters. . **Additive_Offset :** Activates
+the additive offset.
 
-. \'\'\'Temperature_Compensation :\'\'\' Activates the temperature
-compensation. . \'\'\'Scaling_DistCalibGradient :\'\'\' Activates
-scaling via the register DistCalibGradient. .
-\'\'\'Scaling_DistCalibOffset :\'\'\' Activates scaling via the register
-DistCalibOffset.
+. **Temperature_Compensation :** Activates the temperature compensation.
+. **Scaling_DistCalibGradient :** Activates scaling via the register
+DistCalibGradient. . **Scaling_DistCalibOffset :** Activates scaling via
+the register DistCalibOffset.
 
--   \'\'\'Camera filters options\'\'\'
+-   **Camera filters options**
 
-. \'\'\'Median_Filter_Iterations :\'\'\' Defines the number of
-iterations for the median filter. A high value will decrease the frame
-time. . \'\'\'Average_filter_Pixels :\'\'\' Defines the pixel matrix for
-the average filter. 3x3 or 5x5 pixels. . \'\'\'Average_Filter_Iterations
-:\'\'\' Defines the number of iterations for the average filter. A high
-value will decrease the frame time.. . \'\'\'Gauss_filter_Pixels :\'\'\'
-Defines the pixel matrix for the gauss filter. 3x3 or 5x5 pixels. .
-\'\'\'Gauss_Filter_Iterations :\'\'\' Defines the number of iterations
-for the gauss filter. . \'\'\'SLAF_Filter_Windows_Size :\'\'\' Defines
-the windows size for the SLAF filter.
+. **Median_Filter_Iterations :** Defines the number of iterations for
+the median filter. A high value will decrease the frame time. .
+**Average_filter_Pixels :** Defines the pixel matrix for the average
+filter. 3x3 or 5x5 pixels. . **Average_Filter_Iterations :** Defines the
+number of iterations for the average filter. A high value will decrease
+the frame time.. . **Gauss_filter_Pixels :** Defines the pixel matrix
+for the gauss filter. 3x3 or 5x5 pixels. . **Gauss_Filter_Iterations :**
+Defines the number of iterations for the gauss filter. .
+**SLAF_Filter_Windows_Size :** Defines the windows size for the SLAF
+filter.
 
--   \'\'\'PCL filter \'\'\' . \'\'\'Amplitude_Filter_On :\'\'\'
-    Indicates if the amplitude filter should be used or not. .
-    \'\'\'Amplitude_Threshold :\'\'\' Image pixels with smaller
-    amplitude values will be filtered out. Amplitude_Filter_On status
-    should be true to apply this filter.
+-   **PCL filter ** . **Amplitude_Filter_On :** Indicates if the
+    amplitude filter should be used or not. . **Amplitude_Threshold :**
+    Image pixels with smaller amplitude values will be filtered out.
+    Amplitude_Filter_On status should be true to apply this filter.

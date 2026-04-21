@@ -14,8 +14,8 @@ them.
 
 [![](attachment:Screenshot-rxgraph.png)](attachment:Screenshot-rxgraph.png)
 
-\'\'NOTE: Screenshot is of rxgraph in ROS 1.1. Older version does not
-have right-hand pane or filter bar.\'\'
+*NOTE: Screenshot is of rxgraph in ROS 1.1. Older version does not have
+right-hand pane or filter bar.*
 
 #### Usage
 
@@ -32,13 +32,13 @@ Options:
 [GraphViz](http://www.graphviz.org/) \"dot\" file of the ROS graph. This
 is useful for producing documentation of your online system.
 
-\'\'\'New in ROS 1.1\'\'\'
+**New in ROS 1.1**
 
 \`\--nodens=NAMESPACE\` Only display nodes in specified namespace.
 
 \`\--topicns=NAMESPACE\` Only display topics in specified namespace.
 
-\'\'\'Removed in ROS 1.1\'\'\'
+**Removed in ROS 1.1**
 
 The \`-q\` and \`-t\` options were removed from the command-line and
 replaced with \'quiet\' and \'All topics\' check-boxes in the toolbar.

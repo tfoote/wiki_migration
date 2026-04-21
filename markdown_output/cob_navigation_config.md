@@ -15,23 +15,21 @@ a folder with configuration files for each of the
 
 ## Configuration Files
 
--   \'\'\'\`common/rviz.vcg\`\'\'\': Default [rviz](rviz) configuration
-    for the cob_navigation stack.
+-   **\`common/rviz.vcg\`**: Default [rviz](rviz) configuration for the
+    cob_navigation stack.
 
 ```{=html}
 <!-- -->
 ```
 -   robot\* is the folder of the specific robot (e.g. `cob3-2`,
     `raw3-1`).
--   \'\'\'\`\*robot\*/costmap_common_params.yaml\`\'\'\': Holds the
-    common configuration for the [ costmap\'s](costmap_2d ) run on the
-    robot. Those can differ between the different robot versions
-    concerning e.g. the footprint.
--   \'\'\'\`\*robot\*/base_local_planner_params.yaml\`\'\'\': Parameters
-    for the [base_local_planner](base_local_planner) for the respective
-    robot.
--   \'\'\'\`\*robot\*/dwa_local_planner_params.yaml\`\'\'\': Parameters
-    for the [dwa_local_planner](dwa_local_planner) for the respective
-    robot.
--   \'\'\'\`\*robot\*/linear/ctrl_params.yaml\`\'\'\': Parameters for
-    the [cob_linear_nav](cob_linear_nav) node.
+-   **\`\*robot\*/costmap_common_params.yaml\`**: Holds the common
+    configuration for the [ costmap\'s](costmap_2d ) run on the robot.
+    Those can differ between the different robot versions concerning
+    e.g. the footprint.
+-   **\`\*robot\*/base_local_planner_params.yaml\`**: Parameters for the
+    [base_local_planner](base_local_planner) for the respective robot.
+-   **\`\*robot\*/dwa_local_planner_params.yaml\`**: Parameters for the
+    [dwa_local_planner](dwa_local_planner) for the respective robot.
+-   **\`\*robot\*/linear/ctrl_params.yaml\`**: Parameters for the
+    [cob_linear_nav](cob_linear_nav) node.

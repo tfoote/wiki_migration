@@ -31,8 +31,8 @@ rosbag are available [here](rosbag/Commandline#record);
 rosrun color_table color_table
 ```
 
-2\. Open up a bag file \'\'(Ctrl + 0)\'\'
+2\. Open up a bag file *(Ctrl + 0)*
 
 3\. The default color table is automatically loaded. Use the
-classification window to adjust the color table. \'\'Remember to save
-the table when you are done!\'\'
+classification window to adjust the color table. *Remember to save the
+table when you are done!*

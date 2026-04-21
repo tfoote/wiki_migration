@@ -82,7 +82,7 @@ beyond a certain distance from the position where the flag was set.
 
 ## Generic Local Planning
 
-\'\'\'New in navigation 1.10.0\'\'\'
+**New in navigation 1.10.0**
 
 The groovy release of ROS includes a new implementation of the
 [dwa_local_planner](dwa_local_planner) package. The implementation
@@ -213,8 +213,8 @@ The \`base_local_planner::TrajectoryPlannerROS\` object is a
 [ wrapper](navigation/ROS_Wrappers ) for a
 \`base_local_planner::TrajectoryPlanner\` object that exposes its
 functionality as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It
-operates within a ROS namespace (assumed to be \'\'name\'\' from here
-on) specified on initialization. It adheres to the
+operates within a ROS namespace (assumed to be *name* from here on)
+specified on initialization. It adheres to the
 \`nav_core::BaseLocalPlanner\` interface found in the
 [nav_core](nav_core) package.
 

@@ -2,8 +2,8 @@
 
 This package contains launch files for the opencupboard stack.
 
--   \'\'\'opendoors_executive.launch\'\'\' begins the detection and
-    grasping servers and the force controller for the arms.
+-   **opendoors_executive.launch** begins the detection and grasping
+    servers and the force controller for the arms.
 
 Launch files more specific to the action are located in those packages.
 These include

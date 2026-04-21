@@ -19,7 +19,7 @@ without interrupting the program execution.
 [Reference Manual](attachment:roll-reference.pdf) containing complete
 language specification and examples of use.
 
-\'\'\'Background information:\'\'\'
+**Background information:**
 
 -   [Robot learning language --- Integrating programming and learning for cognitive systems](http://www.sciencedirect.com/science/article/pii/S0921889009000785)
     a journal paper describing RoLL

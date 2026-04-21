@@ -12,8 +12,8 @@ back and forth between the task and configuration space of the robot.
 
 #### ROS Electric
 
-To install this package, you will have to install the
-\'\'arm_navigation\'\' stack:
+To install this package, you will have to install the *arm_navigation*
+stack:
 
 ` sudo apt-get install ros-electric-arm-navigation`
 

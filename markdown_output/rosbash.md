@@ -225,8 +225,8 @@ bass source ~/catkin_ws/devel/setup.bash
 ```2 For more information about remapping, see:
 [Remapping Arguments](https://wiki.ros.org/Remapping%20Arguments)
 
-Starting in \'\'\'Indigo\'\'\', rosrun has a \`\--prefix\` option which
-can be used to run a node in gdb or valgrind.
+Starting in **Indigo**, rosrun has a \`\--prefix\` option which can be
+used to run a node in gdb or valgrind.
 
 Example:
 

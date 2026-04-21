@@ -7,7 +7,7 @@ XBEE radios or TTL.
 
 ![float\|align=\"right\"](attachment:element.png)
 
-\'\'\'Features\'\'\'
+**Features**
 
 -   Direct support for a wide variety of commonly used sensors including
     sonar (Ping, MaxEZ, SRF04, SRF05, SRF08, SRF10), infrared (Sharp

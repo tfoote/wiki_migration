@@ -4,9 +4,8 @@ The \`dp_ptu47_pan_tilt_stage\` package provides a \`dp_ptu47\` node
 that controls the actual hardware. The node advertises 4 different
 services:
 
--   \'\'\'control\'\'\' - accepts a service request
-    (\'\'SendCommand.srv\'\') that controls the unit via pan/tilt angles
-    ```
+-   **control** - accepts a service request (*SendCommand.srv*) that
+    controls the unit via pan/tilt angles ```
 1 float32 pan_angle
   2 float32 tilt_angle
   3 bool wait_finished
@@ -14,10 +13,9 @@ services:
   5 float32 pan_angle
   6 float32 tilt_angle
 ```
--   \'\'\'control_trajectory\'\'\' - accepts a service request
-    (\'\'SendTrajectory.srv\'\') that controls a set of angles
-    (trajectory) together with a certain tolerance
-    ```
+-   **control_trajectory** - accepts a service request
+    (*SendTrajectory.srv*) that controls a set of angles (trajectory)
+    together with a certain tolerance ```
 1 float32[] pan_angles
   2 float32[] tilt_angles
   3 float32 tolerance
@@ -25,32 +23,32 @@ services:
   5 float32 pan_angle
   6 float32 tilt_angle
 ```
--   \'\'\'get_limits\'\'\' - accepts a service request
-    (\'\'GetLimits.srv\'\') that obtains the current set of software
-    limits set for the unit ```
+-   **get_limits** - accepts a service request (*GetLimits.srv*) that
+    obtains the current set of software limits set for the unit
+    ```
 1 ---
   2 float32 min_pan
   3 float32 max_pan
   4 float32 min_tilt
   5 float32 max_tilt
 ```
--   \'\'\'reset\'\'\' - sends a service request (\'\'Reset.srv\'\') that
-    resets the unit ```
+-   **reset** - sends a service request (*Reset.srv*) that resets the
+    unit ```
 1 ---
 ```
 
 ## Usage examples
 
 The easiest way to send the unit to a specific pan/tilt angle is to use
-the \'\'SendCommand\'\' and/or \'\'SendTrajectory\'\' sevice requests.
-Start the service node with
+the *SendCommand* and/or *SendTrajectory* sevice requests. Start the
+service node with
 
 ```
 $ roslaunch dp_ptu47_pan_tilt_stage dp.launch
 ```
 
 Note: the head cart HCC has the PT unit on the /dev/ttyUSB3 device port,
-which is what \'\'dp.launch\'\' contains.
+which is what *dp.launch* contains.
 
 A small tool part of the package can issue commands conveniently:
 ```

@@ -27,9 +27,9 @@ not available, we created a
 However, it is possible to feed this program with pointclouds from other
 sources and it will run the same way.
 
-NOTE: you will need \'\'leica_scanstation_msgs\'\' and
-\'\'leica_scanstation_utils\'\' packages from \'\'leica_scanstation\'\'
-to use this one.
+NOTE: you will need *leica_scanstation_msgs* and
+*leica_scanstation_utils* packages from *leica_scanstation* to use this
+one.
 
 ## Workflow
 
@@ -50,8 +50,8 @@ the following.
 
 ### Publish clouds
 
-\'\'\'load_and_publish_clouds\'\'\' node will load both source and
-target clouds into ROS environment. ```
+**load_and_publish_clouds** node will load both source and target clouds
+into ROS environment. ```
 rosrun leica_point_cloud_processing load_and_publish_clouds
 ```
 
@@ -79,10 +79,10 @@ rosservice call /publish_clouds "source_cloud_file: 'scan_fods.pcd'
 
 ### Start process
 
-\'\'\'node\'\'\' is the main node that perform alignment and FOD
-detection. It opens subscribers to clouds topics and start process. As
-the target cloud indicated in example above comes from a CAD file, set
-param \`using_CAD\` to true. ```
+**node** is the main node that perform alignment and FOD detection. It
+opens subscribers to clouds topics and start process. As the target
+cloud indicated in example above comes from a CAD file, set param
+\`using_CAD\` to true. ```
 roslaunch leica_point_cloud_processing leica_point_cloud_processing.launch using_CAD:=true
 ```
 

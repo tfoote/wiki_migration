@@ -15,26 +15,25 @@ segmentation pipeline, supporting all of the node\'s parameters (listed
 in the next section). To call each API, simply use the appropriate ROS
 service.
 
--   \'\'\'Broadcast API\'\'\' (\'\'/segment\'\') - segment objects from
-    the most recent point cloud from the \`point_cloud_topic\` param,
-    and send the result on the \`/segmented_objects\` topic. This API
-    takes an empty service message, and is recommended for cases where
-    multiple nodes will need to make use of the segmented object
-    information.
--   \'\'\'Direct API\'\'\' (\'\'/segment_objects\'\') - segment objects
-    from the most recent point cloud from \`point_cloud_topic\`, and
-    return the results in the service response. This API directly
-    returns results to the service client that initiated the
-    segmentation call, and is recommended for directly incorporating
-    object segmentation into a linear pipeline.
--   \'\'\'Static Point Cloud API\'\'\'
-    (\'\'/segment_objects_from_point_cloud\'\') - segment objects from a
-    given point cloud, and return the results in the service response.
-    This API provides object segmentation from arbitrary point clouds,
-    not limited to the \`point_cloud_topic\` param, and is recommended
-    for applications that require multiple algorithms (including object
-    segmentation) to run on the same point cloud, as the user has
-    control over exactly which point cloud is used as input.
+-   **Broadcast API** (*/segment*) - segment objects from the most
+    recent point cloud from the \`point_cloud_topic\` param, and send
+    the result on the \`/segmented_objects\` topic. This API takes an
+    empty service message, and is recommended for cases where multiple
+    nodes will need to make use of the segmented object information.
+-   **Direct API** (*/segment_objects*) - segment objects from the most
+    recent point cloud from \`point_cloud_topic\`, and return the
+    results in the service response. This API directly returns results
+    to the service client that initiated the segmentation call, and is
+    recommended for directly incorporating object segmentation into a
+    linear pipeline.
+-   **Static Point Cloud API** (*/segment_objects_from_point_cloud*) -
+    segment objects from a given point cloud, and return the results in
+    the service response. This API provides object segmentation from
+    arbitrary point clouds, not limited to the \`point_cloud_topic\`
+    param, and is recommended for applications that require multiple
+    algorithms (including object segmentation) to run on the same point
+    cloud, as the user has control over exactly which point cloud is
+    used as input.
 
 ## Nodes
 

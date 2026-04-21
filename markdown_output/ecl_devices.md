@@ -32,7 +32,7 @@ using ecl::SocketClient; // Simple and does ipv4 only.
 using ecl::SocketServer; // Simple and does ipv4 only.
 ```
 
-If outside ros, you will also need to link against \'\'ecl_devices\'\'.
+If outside ros, you will also need to link against *ecl_devices*.
 
 ## Tutorials
 

@@ -1,15 +1,15 @@
 This package contains the ROS control node and its structures to control
-the \'\'qb SoftHand Research\'\' or the \'\'qb SoftHand2 Research\'\'
-device. It exploits the features provided by the base device-independent
-control library (cf. [qb_device_control](qb_device_control)) and the
-specific hardware interface (cf.
+the *qb SoftHand Research* or the *qb SoftHand2 Research* device. It
+exploits the features provided by the base device-independent control
+library (cf. [qb_device_control](qb_device_control)) and the specific
+hardware interface (cf.
 [qb_hand_hardware_interface](qb_hand_hardware_interface)).
 
 ## Launch files
 
-The launch files start a ROS node for the \'\'qb SoftHand Research\'\'
-or the \'\'qb SoftHand2 Research\'\' to control it through a GUI and
-through predefined configurable waypoints (stored in the
+The launch files start a ROS node for the *qb SoftHand Research* or the
+*qb SoftHand2 Research* to control it through a GUI and through
+predefined configurable waypoints (stored in the
 \`config/qbhand_waypoints.yaml\`). In both cases the controllers setup
 can be found in the \`config/qbhand_controllers.yaml\`; it is
 recommended not to change the default settings though.

@@ -60,15 +60,15 @@ source devel/setup.bash
 
 ### follow_me_master_beacon
 
-With this node you can receive data (distance \'\'in meters\'\' and
-heading \'\'in degrees\'\') from the system. It is intended to use with
-master beacon connected to the computer.
+With this node you can receive data (distance *in meters* and heading
+*in degrees*) from the system. It is intended to use with master beacon
+connected to the computer.
 
 It provides following configuration options of the system:
 
 -   switching between text and binary printout modes,
 -   swapping beacons,
--   setting \'\'Exponential Moving Average\'\' filter number of samples
+-   setting *Exponential Moving Average* filter number of samples
     (window size),
 -   setting span between the beacons (in millimeters),
 -   settings parameters for RS485 connection (Modbus slave id, baudrate,
@@ -155,8 +155,8 @@ This node subscribes to the following topics:
 Example of usage: ```
 rostopic pub /follow_me_remote_control/follow_me_set_config follow_me_driver_ros/FollowMeRemoteControlConfig "button_mode: 'Hold'
 buzzer_active: false"
-``` Sets button mode to
-\'\'Hold\'\' and deactivates buzzer.
+``` Sets button mode to *Hold*
+and deactivates buzzer.
 
 To see list of valid values for each parameter, open respective \*.msg
 file.

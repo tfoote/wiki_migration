@@ -2,22 +2,22 @@
 
 [![](http://philserver.bplaced.net/img/rqt_launchtree_small.png)](http://philserver.bplaced.net/img/rqt_launchtree_screenshot.png)
 
-\'\'(click on the image for a larger version)\'\'
+*(click on the image for a larger version)*
 
 ## Purpose
 
 Some examples where rqt_launchtree can help you (especially in larger
 systems):
 
--   \'\'\'Quickly navigate\'\'\' through the launch file hierarchy and
-    open files for editing.
--   \'\'\'Search for keywords\'\'\' and filter all entries in the launch
+-   **Quickly navigate** through the launch file hierarchy and open
+    files for editing.
+-   **Search for keywords** and filter all entries in the launch
     hierarchy to answer questions like:
 -   By which file is node \"foo\" launched?
 -   Why is param \"/bar\" initialized with the value 42?
 -   To which launch file should I add my new node related to navigation?
--   \'\'\'Get an overview\'\'\' of different launch configurations.
--   \'\'\'Find inconsistencies\'\'\' in param specifications (same param
+-   **Get an overview** of different launch configurations.
+-   **Find inconsistencies** in param specifications (same param
     initialized with different values across included files).
 
 ## Installation

@@ -6,7 +6,7 @@ You can also set a lifetime for obstacles since obstacles should
 disappear from the collision map after a while when they cannot be
 detected anymore.
 
-In \'\'conf/add_obstacles.yaml\'\' there are the two parameters:
+In *conf/add_obstacles.yaml* there are the two parameters:
 
 ```
 int_buffer_size: 10 // Number of maximum obstacles per patch

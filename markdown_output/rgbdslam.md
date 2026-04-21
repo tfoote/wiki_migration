@@ -1,6 +1,5 @@
-This page describes the RGB-D SLAM system for ROS Fuerte. \'\'\'There is
-a successor\'\'\', \`rgbdslam_v2\` for\'\'\' ROS Hydro and Indigo\'\'\'.
-See
+This page describes the RGB-D SLAM system for ROS Fuerte. **There is a
+successor**, \`rgbdslam_v2\` for** ROS Hydro and Indigo**. See
 [README](https://github.com/felixendres/rgbdslam_v2/blob/indigo/README.md).
 
 For the electric version and many details that still hold true, see
@@ -16,14 +15,13 @@ Download rgbdslam with the following command to your
 
 ```
 svn co http://alufr-ros-pkg.googlecode.com/svn/trunk/rgbdslam_freiburg
-``` \'\'\'\'\'ROS needs to be aware of the folder
-into which you download rgbdslam_freiburg! Make sure that the folder
+``` ***ROS needs to be aware of the folder into
+which you download rgbdslam_freiburg! Make sure that the folder
 containing rgbdslam_freiburg is in your ROS_PACKAGE_PATH (see
 [ros workspace](ROS/Tutorials/InstallingandConfiguringROSEnvironment)
 for how to modify the ROS_PACKAGE_PATH. It is a bad idea to put
 rgbdslam_freiburg into /opt/ros/fuerte/\...). If properly configured
-\"roscd rgbdslam\" will take you to the rgbdslam package
-directory\'\'\'\'\'
+\"roscd rgbdslam\" will take you to the rgbdslam package directory***
 
 If not yet installed, install [rosdep](rosdep) first, then execute
 
@@ -130,42 +128,40 @@ rosservice call /rgbdslam/ros_ui frame # Capture single frames via
 
 /rgbdslam/ros_ui:
 
--   reset \'\'resets the graph, delets all nodes (refreshes only when
-    capturing new images)\'\'
--   frame \'\'capture one frame from the sensor\'\'
--   optimize \'\'trigger graph optimizer\'\'
--   reload_config \'\'reloads the paramters from the ROS paramter
-    server\'\'
--   quick_save \'\'saves all pointclouds in one file quicksave.pcd in
-    rgbdslam/bin-directory\'\'
--   send_all \'\'sends all pointclouds to /rgbdslam/transformed_cloud
-    (can be visualized with rviz)\'\'
--   delete_frame \'\'delete the last frame from the graph (refreshes
-    only when capturing new images)\'\'
+-   reset *resets the graph, delets all nodes (refreshes only when
+    capturing new images)*
+-   frame *capture one frame from the sensor*
+-   optimize *trigger graph optimizer*
+-   reload_config *reloads the paramters from the ROS paramter server*
+-   quick_save *saves all pointclouds in one file quicksave.pcd in
+    rgbdslam/bin-directory*
+-   send_all *sends all pointclouds to /rgbdslam/transformed_cloud (can
+    be visualized with rviz)*
+-   delete_frame *delete the last frame from the graph (refreshes only
+    when capturing new images)*
 
 /rgbdslam/ros_ui_b:
 
--   pause \<flag\> \'\'pauses or resumes the capturing of images\'\'
--   record \<flag\> \'\'pauses or stops the recording of bag-files, can
-    be found in the rgbdslam/bin-directory\'\'
+-   pause \<flag\> *pauses or resumes the capturing of images*
+-   record \<flag\> *pauses or stops the recording of bag-files, can be
+    found in the rgbdslam/bin-directory*
 
 /rgbdslam/ros_ui_f:
 
--   set_max \<float\> \'\'filters out all datapoints further away than
-    this value (in cm, only for saving to files)\'\'
+-   set_max \<float\> *filters out all datapoints further away than this
+    value (in cm, only for saving to files)*
 
 /rgbdslam/ros_ui_s:
 
--   save_features \<filename\> \'\'saves the feature locations and
-    descriptors in a yaml file with the given filename\'\'
--   save_cloud \<filename\> \'\'saves the cloud to the given filename
-    (should end with .ply or .pcd)\'\'
--   save_individual \<fileprefix\> \'\'saves every scan in its own file
-    (appending a suffix to the given prefix)\'\'
--   save_octomap \<filename\> \'\'saves the cloud to the given
-    filename\'\'
--   save_trajectory \<fileprefix\> \'\'saves the sensor trajectory to
-    the file \<fileprefix\>\_estimate.txt\'\'
+-   save_features \<filename\> *saves the feature locations and
+    descriptors in a yaml file with the given filename*
+-   save_cloud \<filename\> *saves the cloud to the given filename
+    (should end with .ply or .pcd)*
+-   save_individual \<fileprefix\> *saves every scan in its own file
+    (appending a suffix to the given prefix)*
+-   save_octomap \<filename\> *saves the cloud to the given filename*
+-   save_trajectory \<fileprefix\> *saves the sensor trajectory to the
+    file \<fileprefix\>\_estimate.txt*
 
 # Performance
 

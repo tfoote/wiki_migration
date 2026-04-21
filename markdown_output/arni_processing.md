@@ -11,27 +11,27 @@ to specifications stored in the parameter namespace
 For parameters shared across the arni packages see
 [this list](arni#Used_Parameters).
 
-  -- ------------------------------------------------------------------------------------ -- ---------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Parameter\'\'\'      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Default value\'\'\'      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Description\'\'\'                                                               
-                                                                                                                                                                                         \<(\>\'\'\'arni_processing provides a storage with rated data for the GUI widgets.\'\'\'                                                           
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/timeout            \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>300(s)                         \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The time in seconds since when data is considered old and will be removed.            
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/auto_cleanup       \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>True                           \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Enable or disable the automatic cleanup.                                              
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/cleanup_timer      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>30(s)                          \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The time in s giving the interval of automatic cleanup.                               
-                                                                                                                                                                                         \<(\>\'\'\'Statistics about topics are generated from the `/statistics` topic and aggregated over time.\'\'\'                                      
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>aggregation_window         \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>3(s)                           \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The duration of time over which the processing node aggregates messages on a topic.   
-                                                                                                                                                                                         \<(\>\'\'\'Connections are tested if they still send data\'\'\'                                                                                    
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>alive_interval             \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>5(s)                           \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Interval to check all registered connections.                                         
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>alive_timer                \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>10(s)                          \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Default timer afther when a connections is regarded as \"dead\".                      
-                                                                                                                                                                                         \<(\>\'\'\'All references for rating the incoming statistics are stored as specifications in a list on the parameterserver.\'\'\'                  
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>/arni/specifications       \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\[\]                           \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>See the Specification format below.                                                   
-  -- ------------------------------------------------------------------------------------ -- ---------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ------------------------------------------------------------------------------------ -- -------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Parameter**              \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Default value**      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Description**                                                                       
+                                                                                                                                                                                 \<(\>**arni_processing provides a storage with rated data for the GUI widgets.**                                                                   
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/timeout            \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>300(s)                 \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The time in seconds since when data is considered old and will be removed.            
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/auto_cleanup       \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>True                   \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Enable or disable the automatic cleanup.                                              
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>storage/cleanup_timer      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>30(s)                  \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The time in s giving the interval of automatic cleanup.                               
+                                                                                                                                                                                 \<(\>**Statistics about topics are generated from the `/statistics` topic and aggregated over time.**                                              
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>aggregation_window         \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>3(s)                   \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>The duration of time over which the processing node aggregates messages on a topic.   
+                                                                                                                                                                                 \<(\>**Connections are tested if they still send data**                                                                                            
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>alive_interval             \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>5(s)                   \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Interval to check all registered connections.                                         
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>alive_timer                \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>10(s)                  \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Default timer afther when a connections is regarded as \"dead\".                      
+                                                                                                                                                                                 \<(\>**All references for rating the incoming statistics are stored as specifications in a list on the parameterserver.**                          
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>/arni/specifications       \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\[\]                   \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>See the Specification format below.                                                   
+  -- ------------------------------------------------------------------------------------ -- -------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 Additionaly some commands can be send as service calls:
 
-  -- ----------------------------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Service\'\'\'                         \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Content\'\'\'      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>\'\'\'Effect\'\'\'                                                                    
-     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>/monitoring_node/reload_specifications      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>std_srvs.srv.Empty       \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Reloads all specifications from the namespace /arni/specifications (see Parameters)   
-  -- ----------------------------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ----------------------------------------------------------------------------------------------------- -- --------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Service**                                 \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Content**             \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>**Effect**                                                                            
+     \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>/monitoring_node/reload_specifications      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>std_srvs.srv.Empty      \<style=\"border:1px solid #ccc;border-collapse:collapse;\"\>Reloads all specifications from the namespace /arni/specifications (see Parameters)   
+  -- ----------------------------------------------------------------------------------------------------- -- --------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Specifications
 
@@ -57,8 +57,8 @@ fields can be basically every field in the respective
 [messagetypes](arni_msgs). See theses for comments on units.
 
 Additionally the field `alive_timer` determines when the specified item
-is regarded as \"dead\" (see above). \'\'\'Note\'\'\' that this field
-expects a single number unlike the other fields!
+is regarded as \"dead\" (see above). **Note** that this field expects a
+single number unlike the other fields!
 
 For reference all fields are listed below.
 
@@ -68,10 +68,10 @@ Usually the limits for a measurement are given as list with minimum and
 maximum value. If a third parameter is set as \"relative\", the limits
 will be calculated as `minvalue = value * (1 - deviation)` etc.
 
-\'\'\'Note\'\'\': If a measured value returns an array (for example
+**Note**: If a measured value returns an array (for example
 bandwidth_max for multiple network adapters) you can give an array of
 such limits. If you receive more values than you defined limits, spare
-values will be rated as \'\'unknown\'\'. If you don\'t give an array of
+values will be rated as *unknown*. If you don\'t give an array of
 limits, the given limit will be used for each value.
 
 ### Specification Fields

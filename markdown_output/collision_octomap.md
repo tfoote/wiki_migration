@@ -1,7 +1,7 @@
 NOTE: This package is unreleased at this point, the documentation is for
 Willow Garage internal use only.
 
-NOTE: At \'\'this\'\' point, this package has been superseded by
+NOTE: At *this* point, this package has been superseded by
 [collider](collider).
 
 ## Overview

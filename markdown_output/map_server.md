@@ -29,26 +29,22 @@ origin: [0.0, 0.0, 0.0]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 0
-``` Required fields:
+``` Required fields: **\*image** : Path to the
+image file containing the occupancy data; can be absolute, or relative
+to the location of the YAML file **\*resolution** : Resolution of the
+map, meters / pixel **\*origin** : The 2-D pose of the lower-left pixel
+in the map, as (x, y, yaw), with yaw as counterclockwise rotation (yaw=0
+means no rotation). Many parts of the system currently ignore yaw.
+**\*occupied_thresh** : Pixels with occupancy probability greater than
+this threshold are considered completely occupied. **\*free_thresh** :
+Pixels with occupancy probability less than this threshold are
+considered completely free. **\*negate** : Whether the white/black
+free/occupied semantics should be reversed (interpretation of thresholds
+is unaffected)
 
--   \'\'\'image\'\'\' : Path to the image file containing the occupancy
-    data; can be absolute, or relative to the location of the YAML file
--   \'\'\'resolution\'\'\' : Resolution of the map, meters / pixel
--   \'\'\'origin\'\'\' : The 2-D pose of the lower-left pixel in the
-    map, as (x, y, yaw), with yaw as counterclockwise rotation (yaw=0
-    means no rotation). Many parts of the system currently ignore yaw.
--   \'\'\'occupied_thresh\'\'\' : Pixels with occupancy probability
-    greater than this threshold are considered completely occupied.
--   \'\'\'free_thresh\'\'\' : Pixels with occupancy probability less
-    than this threshold are considered completely free.
--   \'\'\'negate\'\'\' : Whether the white/black free/occupied semantics
-    should be reversed (interpretation of thresholds is unaffected)
-
-Optional parameter:
-
--   \'\'\'mode\'\'\' : Can have one of three values: trinary, scale, or
-    raw. Trinary is the default. More information on how this changes
-    the value interpretation is in the next section.
+Optional parameter: **\*mode** : Can have one of three values: trinary,
+scale, or raw. Trinary is the default. More information on how this
+changes the value interpretation is in the next section.
 
 ### Value Interpretation
 
@@ -163,11 +159,10 @@ node {
 ```
 rosrun map_server map_saver [--occ <threshold_occupied>] [--free <threshold_free>] [-f <mapname>] map:=/your/costmap/topic
 ``` \`map_saver\` retrieves map data and writes it
-out to \'\'\'map.pgm\'\'\' and \'\'\'map.yaml\'\'\'. Use the
-\'\'\'-f\'\'\' option to provide a different base name for the output
-files. The \'\'\'\--occ\'\'\' and \'\'\'\--free\'\'\' options take
-values between 0 and 100. To save different map topic set
-\'\'\'map\'\'\' to your costmap topic.
+out to **map.pgm** and **map.yaml**. Use the **-f** option to provide a
+different base name for the output files. The **\--occ** and **\--free**
+options take values between 0 and 100. To save different map topic set
+**map** to your costmap topic.
 
 #### Examples
 

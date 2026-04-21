@@ -66,10 +66,10 @@ for interprocess communication.
 ### usb_cam_to_shm.launch: copies a image into the shared memory and back
 
 This example publishes images using the usb_cam package and copies the
-image into the shared memory using the \'\'image2shm\'\' note. The
-\'\'shmimageviewer\'\' is able to draw images stored in the shared
-memory and the \'\'shm2image\'\' note pipes the image back to a
-rostopic. ```shell
+image into the shared memory using the *image2shm* note. The
+*shmimageviewer* is able to draw images stored in the shared memory and
+the *shm2image* note pipes the image back to a rostopic.
+```shell
 rosmake usb_cam ak_shm 
 rosrun ak_shm shmadmin -c # clears the shared memory
 roslaunch ak_shm usb_cam_to_shm.launch
@@ -94,8 +94,7 @@ signals. ```shell
 rosrun ak_shm shmadmin -c # clears the shared memory
 rosrun ak_shm example01
 ``` After you run the example01 you can
-use the \'\'\'shmadmin\'\'\' to view the variables.
-```shell
+use the **shmadmin** to view the variables. ```shell
 rosrun ak_shm shmadmin -a # -a lists all shared variables
 rosrun ak_shm shmadmin -u MyPoint3D # -a Unlocks variables
 ```
@@ -111,7 +110,7 @@ rosrun ak_shm example02
 ### Shared images and opencv image processing
 
 This example shows how you create a shared image and how you can view it
-with the \'\'\'shmimageviewer\'\'\'. ```shell
+with the **shmimageviewer**. ```shell
 rosrun ak_shm shmadmin -c # clears the shared memory
 # opens a image and porcesses a canny image
 rosrun ak_shm example03 [path to a color image] 
@@ -125,8 +124,8 @@ rosrun ak_shm shmimageview --rgb ImgSrc --gray ImgCanny
 
 ## System installation
 
-If you want the library to be available outside of ros you can run
-\'\'make install\'\' in your build folder ```shell
+If you want the library to be available outside of ros you can run *make
+install* in your build folder ```shell
 roscd ak_shm
 cd build
 make install # with sudo

@@ -4,13 +4,13 @@ Markov Decision Making (MDM) is a library to support the deployment of
 decision-making methodologies based on Markov Decision Processes (MDPs)
 to teams of robots using ROS.
 
-MDM helps you map between the abstract representations of
-\'\'states\'\', \'\'actions\'\' and \'\'observations\'\' that are used
-in decision-theoretic frameworks, and the actual actuators and sensors
-of your robots. It also interprets your decision-making policies and
-lets you configure an appropriate run-time execution strategy. Note that
-\'\'\'MDM isn\'t a solver / planning algorithm for decision-theoretic
-problems\'\'\'. For that you can use ROS-independent toolboxes such as
+MDM helps you map between the abstract representations of *states*,
+*actions* and *observations* that are used in decision-theoretic
+frameworks, and the actual actuators and sensors of your robots. It also
+interprets your decision-making policies and lets you configure an
+appropriate run-time execution strategy. Note that **MDM isn\'t a solver
+/ planning algorithm for decision-theoretic problems**. For that you can
+use ROS-independent toolboxes such as
 [MADP](http://www.fransoliehoek.net/index.php?fuseaction=software.madp).
 But once you have a decision-theoretic policy, MDM helps you execute
 that policy on your robot.
@@ -63,7 +63,7 @@ use-cases of MDM in the page:
 
 ## FAQ
 
-Q: \'\'Does MDM support \<My favorite framework\>-MDPs?\'\'\
+Q: *Does MDM support \<My favorite framework\>-MDPs?*\
 A: There are so many generalizations and variants of the MDP framework
 that it is virtually impossible to design a library that supports all of
 them out-of-the-box. Rather than trying to explicitly support all MDP
@@ -77,7 +77,7 @@ you\'re encouraged to contribute to the library with your own
 modifications, since that may help other users in the future. Feel free
 to contact us, in that case!
 
-Q: \'\'What\'s with the predicates? I want a grid world!\'\'\
+Q: *What\'s with the predicates? I want a grid world!*\
 A: Without going into a discussion as to why regular discretizations
 aren\'t a particularly good idea, note that as long as your state space
 is discrete and finite, then your states can be indexed by a
@@ -86,13 +86,13 @@ as long as you have enough predicates, you can represent any (finite)
 discrete state space. The [predicate_manager](predicate_manager) package
 is lightweight and designed to handle a very large number of predicates,
 if needed. If you really want a \"grid world\"-like representation of
-your state space, you can either write a generic \'\'IsInCellX\'\'
-predicate and instantiate it for each your cells, or use the
-pose_labeler package (included in topological_tools) together with a map
-of the environment in which each cell is uniquely colored.
+your state space, you can either write a generic *IsInCellX* predicate
+and instantiate it for each your cells, or use the pose_labeler package
+(included in topological_tools) together with a map of the environment
+in which each cell is uniquely colored.
 
-Q: \'\'That\'s nice, but my state / action space is continuous.. How can
-I implement those?\'\'\
+Q: *That\'s nice, but my state / action space is continuous.. How can I
+implement those?*\
 A: Although the default MDM State and Action Layers implicitly describe
 discrete state and action spaces, you can potentially use the same node
 layout, and implement a State Layer that outputs real-valued scalars or
@@ -102,8 +102,8 @@ have any plans at this time to extend MDM by ourselves to
 continuously-valued domains, but if you\'re interested in doing so,
 please feel free to contact us.
 
-Q: \'\'I see that by default, the control layer accepts a pre-computed
-policy. Does MDM support Reinforcement Learning?\'\'\
+Q: *I see that by default, the control layer accepts a pre-computed
+policy. Does MDM support Reinforcement Learning?*\
 A: Yes, there is a (currently experimental) branch in the Git repository
 that already supports some of the most basic RL algorithms for MDPs
 (Q-learning, SARSA).

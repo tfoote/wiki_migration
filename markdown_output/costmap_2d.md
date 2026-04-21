@@ -1,12 +1,11 @@
 ## Overview
 
-![\|width=\"100%\"](attachment:costmap_rviz.png) \'\'Note: In the
-picture above, the red cells represent obstacles in the costmap, the
-blue cells represent obstacles inflated by the inscribed radius of the
-robot, and the red polygon represents the footprint of the robot. For
-the robot to avoid collision, the footprint of the robot should never
-intersect a red cell and the center point of the robot should never
-cross a blue cell.\'\'
+![\|width=\"100%\"](attachment:costmap_rviz.png) *Note: In the picture
+above, the red cells represent obstacles in the costmap, the blue cells
+represent obstacles inflated by the inscribed radius of the robot, and
+the red polygon represents the footprint of the robot. For the robot to
+avoid collision, the footprint of the robot should never intersect a red
+cell and the center point of the robot should never cross a blue cell.*
 
 The \`costmap_2d\` package provides a configurable structure that
 maintains information about where the robot should navigate in the form

@@ -110,20 +110,20 @@ Consider, that all the data you get is "Little Endian" formatted. That
 means, the least significant byte of a value stands first in the stream.
 The first 7 bytes of the emitted stream contain header information:
 
-  -- ------------------------------------------ -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------------------------- --
-                                                                                                                                                                                                       \<tablewidth=\"100%\"style=\"text-align: center;\"\>\'\'\'Header byte of emitted data stream\'\'\'   
+  -- ----------------------------------------- -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------- --
+                                                                                                                                                                                                      \<tablewidth=\"100%\"style=\"text-align: center;\"\>**Header byte of emitted data stream**   
 
-                                                   \<33% height=\"19px\" style=\"text-align: center;\"\>Byte 1      \<33%\>Byte 2 - 3                                                                  \<33%\>Byte 4 - 7                                                                                    
+                                                  \<33% height=\"19px\" style=\"text-align: center;\"\>Byte 1      \<33%\>Byte 2 - 3                                                                  \<33%\>Byte 4 - 7                                                                            
 
-     \<18% height=\"20px\"\>4 Bit \'\'Int\'\'      \<15%\>4 Bit \'\'Int\'\'                                         \<33%\>\'\'Integer\'\'                                                             \<33%\>\'\'Float\'\'                                                                                 
+     \<18% height=\"20px\"\>4 Bit *Int*           \<15%\>4 Bit *Int*                                               \<33%\>*Integer*                                                                   \<33%\>*Float*                                                                               
 
-     \<18% height=\"67px\"\>Type of values:\       \<15%\>DeltaT between data points in N \* TS(90µsec)             \<33%\>Number of recorded data points = number of data items (á 4 or 2 bytes)      \<33%\>Factor, which every data value has to be multiplied with                                      
-     4 = 32bit Int\                                                                                                                                                                                                                                                                                         
-     1 = 16bit Float\                                                                                                                                                                                                                                                                                       
-     5 = 32bit Float                                                                                                                                                                                                                                                                                        
-  -- ------------------------------------------ -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------------------------- --
+     \<18% height=\"67px\"\>Type of values:\      \<15%\>DeltaT between data points in N \* TS(90µsec)             \<33%\>Number of recorded data points = number of data items (á 4 or 2 bytes)      \<33%\>Factor, which every data value has to be multiplied with                              
+     4 = 32bit Int\                                                                                                                                                                                                                                                                                
+     1 = 16bit Float\                                                                                                                                                                                                                                                                              
+     5 = 32bit Float                                                                                                                                                                                                                                                                               
+  -- ----------------------------------------- -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------- --
 
-\'\'Remember always to apply "Little Endian" conversion byte-wise.\'\'
+*Remember always to apply "Little Endian" conversion byte-wise.*
 
 Float values are given in IEEE 754 representation and have to be
 converted (see <http://en.wikipedia.org/wiki/IEEE_754-1985>).

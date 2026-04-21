@@ -4,8 +4,7 @@ This package broadcasts
 [BVH files (a motion capture data format)](https://research.cs.wisc.edu/graphics/Courses/cs-838-1999/Jeff/BVH.html)
 as [tf transfromations](http://wiki.ros.org/rviz/DisplayTypes/TF).
 
-\'\'\'GitHub repository\'\'\':
-<https://github.com/mingfeisun/bvh_broadcaster>
+**GitHub repository**: <https://github.com/mingfeisun/bvh_broadcaster>
 
 ## Data input
 

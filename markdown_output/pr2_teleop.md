@@ -61,23 +61,23 @@ moves slowly.
 
 Control is configured as follows:
 
-  -- ------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \'\'\'Button\'\'\'           \'\'\'Control Action\'\'\'                                                                                                                             
-     \'\'\'L1\'\'\'               The \"deadman\" control allows the joystick to send commands to the robot; the robot will only respond to the joystick when this button is held down   
-     \'\'\'L2\'\'\'               The \"head\" button allows the sticks to control the head instead of the base                                                                          
-     \'\'\'Left stick\'\'\'       Rotate (yaw) the base                                                                                                                                  
-     \'\'\'Right stick\'\'\'      Move (translate) the base                                                                                                                              
-     \'\'\'Triangle\'\'\'         Move the torso up                                                                                                                                      
-     \'\'\'X\'\'\'                Move the torso down                                                                                                                                    
-     \'\'\'R1\'\'\'               The \"run\" button commands the base to drive faster                                                                                                   
-     \'\'\'Circle\'\'\'           Open right gripper                                                                                                                                     
-     \'\'\'Square\'\'\'           Close right gripper                                                                                                                                    
-     \'\'\'D-pad right\'\'\'      Open left gripper                                                                                                                                      
-     \'\'\'D-pad left\'\'\'       Close left gripper                                                                                                                                     
-  -- ------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ --
+  -- ----------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ --
+     **Button**           **Control Action**                                                                                                                                     
+     **L1**               The \"deadman\" control allows the joystick to send commands to the robot; the robot will only respond to the joystick when this button is held down   
+     **L2**               The \"head\" button allows the sticks to control the head instead of the base                                                                          
+     **Left stick**       Rotate (yaw) the base                                                                                                                                  
+     **Right stick**      Move (translate) the base                                                                                                                              
+     **Triangle**         Move the torso up                                                                                                                                      
+     **X**                Move the torso down                                                                                                                                    
+     **R1**               The \"run\" button commands the base to drive faster                                                                                                   
+     **Circle**           Open right gripper                                                                                                                                     
+     **Square**           Close right gripper                                                                                                                                    
+     **D-pad right**      Open left gripper                                                                                                                                      
+     **D-pad left**       Close left gripper                                                                                                                                     
+  -- ----------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------ --
 
-Note: The \'\'\'L1\'\'\', \'\'\'L2\'\'\', \'\'\'R1\'\'\', and
-\'\'\'R2\'\'\' buttons are all labeled on the controller.
+Note: The **L1**, **L2**, **R1**, and **R2** buttons are all labeled on
+the controller.
 
 ### Unpairing the Joystick
 

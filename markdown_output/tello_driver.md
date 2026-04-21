@@ -180,7 +180,7 @@ None
 
 ## Troubleshooting
 
--   \'\'\'No more video output after reconnect\'\'\' . Relaunch the
+-   **No more video output after reconnect** . Relaunch the
     `tello_driver_node` to continue the video stream after WiFi
     reconnection. Only an issue when using PyAV to decode h264 video
     instead of ROS
@@ -188,7 +188,7 @@ None
 
 ## Notes
 
--   \'\'\'Stream raw video\'\'\'
+-   **Stream raw video**
 
 . Depends on [PyAV](https://github.com/mikeboers/PyAV) package: .
 ```

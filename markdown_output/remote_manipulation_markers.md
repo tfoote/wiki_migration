@@ -238,4 +238,4 @@ If you use this package in your work, please cite our
 
 David Kent, Carl Saldanha, and Sonia Chernova. Leveraging Depth Data in
 Remote Robot Teleoperation Interfaces for General Object Manipulation.
-\'\'The International Journal of Robotics Research\'\', 2019.
+*The International Journal of Robotics Research*, 2019.

@@ -1,6 +1,6 @@
 ## Package Overview
 
-\`teleop_handler\` is a \'\'tabpage handler\'\' for the
+\`teleop_handler\` is a *tabpage handler* for the
 [touchosc_bridge](touchosc_bridge) package. It provides a basic
 teleoperation example that you can run out of the box on your robot, or
 modify for your own purposes.

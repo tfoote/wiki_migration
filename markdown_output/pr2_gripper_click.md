@@ -26,15 +26,15 @@ with position and orientation selection.
 ### Grasping
 
 The grasp selection pop-up window will also offer two options for
-selecting grasps, \'\'\'3D Gripper\'\'\' and \'\'\'Line selection\'\'\'.
-You can choose between them using the drop-down list in the bottom right
-corner of the window.
+selecting grasps, **3D Gripper** and **Line selection**. You can choose
+between them using the drop-down list in the bottom right corner of the
+window.
 
 #### Line selection
 
-This method assumes the gripper will approach the object coming
-\'\'\'from the viewpoint of the camera\'\'\'. You just need to select a
-location and a gripper \'\'\'roll\'\'\' angle:
+This method assumes the gripper will approach the object coming **from
+the viewpoint of the camera**. You just need to select a location and a
+gripper **roll** angle:
 
 -   left click on a non-red point on the image to select the gripper
     location
@@ -47,15 +47,15 @@ location and a gripper \'\'\'roll\'\'\' angle:
 This method allows you to completely specify the grasp point in 6D:
 
 -   double left-click on a non-red point to choose grasp location
--   click and drag the left button to select gripper \'\'\'pitch\'\'\'
-    and \'\'\'yaw\'\'\'
--   turn the mouse wheel to select gripper \'\'\'roll\'\'\'
+-   click and drag the left button to select gripper **pitch** and
+    **yaw**
+-   turn the mouse wheel to select gripper **roll**
 -   click and drag the right button up and down to translate the gripper
     along the current approach direction
--   click and drag the mouse wheel to modify gripper opening.
-    \'\'\'Note\'\'\': this component is currently disregarded when the
-    grasp is actually executed, and the gripper always approaches the
-    grasp fully open. We will fix this soon.
+-   click and drag the mouse wheel to modify gripper opening. **Note**:
+    this component is currently disregarded when the grasp is actually
+    executed, and the gripper always approaches the grasp fully open. We
+    will fix this soon.
 
 ![](attachment:gripper_click_1.png)
 

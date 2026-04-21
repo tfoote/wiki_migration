@@ -145,8 +145,8 @@ file, supplying the correct root, tip and dof values for your robot.
 
 ### Command Line Usage
 
-The \'\'simple_arm_server_test.py\'\' script allows you to move the arm,
-using the server, through the command line:
+The *simple_arm_server_test.py* script allows you to move the arm, using
+the server, through the command line:
 
 ```
 $ simple_arm_server_test.py

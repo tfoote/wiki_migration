@@ -22,7 +22,7 @@ pre-existing packages, which leads to errors in build files and
 manifests.
 
 IMPORTANT: the directory that you run \`roscreate-pkg\` in matters. You
-\'\'\'must\'\'\' run it in a directory that can be located from your
+**must** run it in a directory that can be located from your
 \`ROS_PACKAGE_PATH\` (see
 [ROS environment variables](ROS/EnvironmentVariables)). Furthermore, you
 cannot run it inside of another ROS package.
@@ -56,7 +56,7 @@ structures.
 
 ### roscreate-stack
 
-\'\'\'Note:\'\'\' No longer supported in [fuerte](fuerte), see
+**Note:** No longer supported in [fuerte](fuerte), see
 [fuerte/Migration#No_more_roscreate-stack](fuerte/Migration#No_more_roscreate-stack).
 
 The \`roscreate-stack\` command-line tool creates or updates a ROS

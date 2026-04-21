@@ -1,5 +1,5 @@
-\'\'\'Welcome Arduino powered UWU_Bot at Uva Wellassa University of Sri
-lanka\'\'\'
+**Welcome Arduino powered UWU_Bot at Uva Wellassa University of Sri
+lanka**
 
 ```
 {#!wiki buildsystem catkin
@@ -44,36 +44,36 @@ controller. Hardware information will be available at
 -   Switch ON the UWU_Bot
 -   Run commands as follows
 
-\'\'\'2.1.0 Launch openni \'\'\'
+**2.1.0 Launch openni **
 
--   \'\'\$ roslaunch UWU_Bot openni.launch\'\'
+-   *\$ roslaunch UWU_Bot openni.launch*
 
-\'\'\'2.1.1 Launch map building in a new tab \'\'\'
+**2.1.1 Launch map building in a new tab **
 
--   \'\'\$ roslaunch UWU_Bot mapBuilding.launch\'\'
+-   *\$ roslaunch UWU_Bot mapBuilding.launch*
 
-\'\'\'2.1.2 Run the other specific nodes in new sell tabs to get work
-UWU_Bot \'\'\'
+**2.1.2 Run the other specific nodes in new sell tabs to get work
+UWU_Bot **
 
--   \'\'\$ rosrun UWU_Bot uwu_bot_serial.py\'\' (\'\'\'Starts serial
-    communication to send velocity commands\'\'\')
--   \'\'\$ roslaunch UWU_Bot keyboard_teleop.launch\'\' (\'\'\'Starts
-    keyboard tele operation\'\'\')
--   \'\'\$ rosrun rviz rviz\'\' (\'\'\'Load the given Mapbuilding.rviz
-    config file\'\'\')
+-   *\$ rosrun UWU_Bot uwu_bot_serial.py* (**Starts serial communication
+    to send velocity commands**)
+-   *\$ roslaunch UWU_Bot keyboard_teleop.launch* (**Starts keyboard
+    tele operation**)
+-   *\$ rosrun rviz rviz* (**Load the given Mapbuilding.rviz config
+    file**)
 
-\'\'\'2.2 After navigate some distance and SAVE the map to somewhere you
-preffered to do\'\'\'
+**2.2 After navigate some distance and SAVE the map to somewhere you
+preffered to do**
 
--   \'\'\$ rosservice call /generate_graph\'\'
--   \'\'\$ rosservice call /solve_graph\'\'
--   \'\'\$ rosservice call /save_pcd_map /path/to/dir/myMap.PCD\'\'
+-   *\$ rosservice call /generate_graph*
+-   *\$ rosservice call /solve_graph*
+-   *\$ rosservice call /save_pcd_map /path/to/dir/myMap.PCD*
 
-\'\'\'2.3\'\'\' \'\'\'Use pcd2ply command to convert saved .pcd files to
-convert to .ply format. Because you need .ply file to see the generated
-map over \"\'\'meshlab\'\'\" or \"\'\'cloud compare\'\'\" \'\'\'
+**2.3** **Use pcd2ply command to convert saved .pcd files to convert to
+.ply format. Because you need .ply file to see the generated map over
+\"*meshlab*\" or \"*cloud compare*\" **
 
-\'\'\'Ex: \'\'pcd2ply path/myMap.pcd path/myMap.ply\'\'\'\'\'
+**Ex: *pcd2ply path/myMap.pcd path/myMap.ply**//*****
 
 Above details for the on-bot run. For remote control the UWU_Bot use
 teamviewer. SO first start it on UWU_Bot and keep it. Log in to another

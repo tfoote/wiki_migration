@@ -24,7 +24,7 @@ Amazon Lex require it.
 The ROS \`lex_node\` wraps the
 [aws-sdk-c++](https://github.com/aws/aws-sdk-cpp) in a ROS service API.
 
-\'\'\'Amazon Lex Summary\'\'\': Amazon Lex is a service for building
+**Amazon Lex Summary**: Amazon Lex is a service for building
 conversational interfaces into any application using voice and text.
 Amazon Lex provides the advanced deep learning functionality of
 automatic speech recognition (ASR) for converting speech to text, and

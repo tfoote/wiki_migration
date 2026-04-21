@@ -28,49 +28,47 @@ in xml-format is given now:
 
 ### Frame-file
 
-To specify an input-file use the \'\'\'\<Data\>\'\'\'-tag. This
-surrounds the whole file.
+To specify an input-file use the **\<Data\>**-tag. This surrounds the
+whole file.
 
 To specify the structure of your kinematic chain use the
-\'\'\'\<Frames\>\'\'\'-tag. In this area the tf-frames are defined.
-There are some different types of frames:
+**\<Frames\>**-tag. In this area the tf-frames are defined. There are
+some different types of frames:
 
-A simple parent-child relation is defined as \'\'\'\<Frame
-name=\"Frame2\" base=\"Frame1\"/\>\'\'\', with Frame1 is the parent node
-of Frame 2.
+A simple parent-child relation is defined as **\<Frame name=\"Frame2\"
+base=\"Frame1\"/\>**, with Frame1 is the parent node of Frame 2.
 
 A fixed transformation between parent and child is defined as follows
 
-\'\'\'\<Frame name=\"Frame2\" base=\"Frame1\" x=\"0.1\" y=\"0.1\"
-z=\"0.1\" qx=\"1\" qy=\"0\" qz=\"0\" qw=\"0\"/\>\'\'\'.
+**\<Frame name=\"Frame2\" base=\"Frame1\" x=\"0.1\" y=\"0.1\" z=\"0.1\"
+qx=\"1\" qy=\"0\" qz=\"0\" qw=\"0\"/\>**.
 
 To tell the algorithm which frame can be used for optimization,
 boundaries are set:
 
-\'\'\'\<Frame name=\"Frame2\" base=\"Frame1\" max_x=\"0.3\"
-min_y=\"-0.3\" max_y=\"0.3\" min_z=\"-0.3\" max_z=\"0.3\"
-min_ry=\"-3.0\" max_ry=\"3.0\" min_rx=\"-3.0\" max_rx=\"3.0\"
-min_rz=\"-3.0\" max_rz=\"3.0\"/\>\'\'\'
+**\<Frame name=\"Frame2\" base=\"Frame1\" max_x=\"0.3\" min_y=\"-0.3\"
+max_y=\"0.3\" min_z=\"-0.3\" max_z=\"0.3\" min_ry=\"-3.0\"
+max_ry=\"3.0\" min_rx=\"-3.0\" max_rx=\"3.0\" min_rz=\"-3.0\"
+max_rz=\"3.0\"/\>**
 
 Non-fixed frames are defined with parameters. These parameters are given
 to the optimizer within an extra file. To define a parameter, simply use
 square-brackets and count upwards starting at 1. Add data=\"true\":
 
-\'\'\'\<Frame name=\"Frame2\" base=\"Frame1\" qx=\"(\[1\])\"
-qy=\"(\[2\])\" qz=\"(\[3\])\" qw=\"(\[4\])\" x=\"(\[5\])\" y=\"(\[6\])\"
-z=\"(\[7\])\" data=\"true\"/\>\'\'\'
+**\<Frame name=\"Frame2\" base=\"Frame1\" qx=\"(\[1\])\" qy=\"(\[2\])\"
+qz=\"(\[3\])\" qw=\"(\[4\])\" x=\"(\[5\])\" y=\"(\[6\])\" z=\"(\[7\])\"
+data=\"true\"/\>**
 
 This is all need to specify a kinematic chain.
 
 To specify the goal function (for closing you kinematic chain) use the
-\'\'\'\<Goal\>\'\'\'-tag. The goal can be ether the position,
-orientation or both.
+**\<Goal\>**-tag. The goal can be ether the position, orientation or
+both.
 
-The position use the \'\'\'\<Position first=\"Frame1\" second=\"Frame2\"
-/\>\'\'\'-Tag. With this goal, the algorithm tries to set the position
-of Frame1 equal to the one of Frame2. Same for \'\'\'\<Orientation
-first=\"Frame1\" second=\"Frame2\" /\>\'\'\' with the frames
-orientations.
+The position use the **\<Position first=\"Frame1\" second=\"Frame2\"
+/\>**-Tag. With this goal, the algorithm tries to set the position of
+Frame1 equal to the one of Frame2. Same for **\<Orientation
+first=\"Frame1\" second=\"Frame2\" /\>** with the frames orientations.
 
 A sample frame-file is given in the tutorial section.
 

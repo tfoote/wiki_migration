@@ -1,6 +1,6 @@
 ## Download and Run
 
-\'\'\'Version:\'\'\' DARRT only compiles and runs against Fuerte.
+**Version:** DARRT only compiles and runs against Fuerte.
 
 ### Downloading DARRT+Sushi code
 
@@ -76,8 +76,8 @@ This starts [interactive manipulation](pr2_interactive_manipulation) on
 the robot side and the sushi code for use in executing DARRT plans. It
 also starts the darrt_action which can be sent DARRTGoal messages. If
 you want to use interactive manipulation while running DARRT, you only
-need to launch the desktop file. On the \'\'\'desktop computer\'\'\'
-(not the robot) launch
+need to launch the desktop file. On the **desktop computer** (not the
+robot) launch
 
 ```
 roslaunch pr2_interactive_manipulation pr2_interactive_manipulation_desktop.launch
@@ -115,7 +115,7 @@ example, only two fields matter: the `pickup_goal` and the `place_goal`.
 For [other tasks](darrt/Tutorials/Using Other Primitives), it is
 necessary to tell DARRT which primitives it should use.
 
-\'\'\'Pickup Goal\'\'\'
+**Pickup Goal**
 
 Within the pickup message, the following fields must be defined. All
 other fields are ignored.
@@ -162,7 +162,7 @@ other fields are ignored.
     as the root of the arm group, which is the /torso_lift_link frame.
     The distances can be left at zero.
 
-\'\'\'Place Goal\'\'\'
+**Place Goal**
 
 The place goal just tells the planner where the object should end up.
 This may or may not actually be a \"place\" on a surface. It is fine for
@@ -195,7 +195,7 @@ others are ignored):
     object is not placed onto a support surface, the last action will be
     a rigid transfer.
 
-\'\'\'Primitives\'\'\'
+**Primitives**
 
 DARRT plans over primitives that can be used to manipulate objects. At
 the moment, DARRT can plan with five different primitives:
@@ -220,7 +220,7 @@ WARP. If no primitives that allow base movement are given (i.e. no
 BASE_TRANSIT or WARP), DARRT will only do collision checking for the arm
 rather than the whole robot.
 
-\'\'\'Optional Parameters\'\'\'
+**Optional Parameters**
 
 The DARRT action also has a number of optional parameters:
 
@@ -310,7 +310,7 @@ possible to execute a DARRT plan by just sending the result. The
 DARRT plans. For using the Python script, see the
 [tutorials](darrt/Tutorials).
 
-\'\'\'Primitive Trajectories\'\'\'
+**Primitive Trajectories**
 
 DARRT returns a plan consisting of many trajectories each corresponding
 to one primitive. The primitives in DARRTResult do not match those in
@@ -358,7 +358,7 @@ only the arm joints actually do change.
 For examples of interpreting and executing DARRT plans, see
 [the tutorials](darrt/Tutorials).
 
-\'\'\'Error Codes\'\'\'
+**Error Codes**
 
 DARRT also returns an error code. The possible values for this code are:
 
@@ -383,7 +383,7 @@ DARRT also returns an error code. The possible values for this code are:
     means a direction was specified in the wrong frame, but it can also
     be returned if a service call fails. Check rosout for details.
 
-\'\'\'Notes\'\'\'
+**Notes**
 
 -   DARRT returns a plan not a trajectory; none of the points have any
     time information.
@@ -458,28 +458,28 @@ See the [tutorials](darrt/Tutorials) for examples of using DARRT.
 
 DARRT is very much a work in progress. There are several known bugs.
 
--   \'\'\'Running without use_map doesn\'t work:\'\'\' It has been a
-    while since I have tried running this without an octomap. It\'s
-    possible that is broken. Let me know if that is the case.
+-   **Running without use_map doesn\'t work:** It has been a while since
+    I have tried running this without an octomap. It\'s possible that is
+    broken. Let me know if that is the case.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Object/Robot Collision:\'\'\' The July 18 tag has a known bug
-    that will allow the robot to collide with objects it can manipulate
-    in the environment. The July-18-2012-Bug-Fix tag (currently the one
+-   **Object/Robot Collision:** The July 18 tag has a known bug that
+    will allow the robot to collide with objects it can manipulate in
+    the environment. The July-18-2012-Bug-Fix tag (currently the one
     downloaded from the rosinstall) should have fixed that bug. Let me
     know if you still see it.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Object not on support surface:\'\'\' Because DARRT reasons
-    about support surfaces and knows objects cannot float in midair,
-    objects need to start on a support surface (at the planner level
-    they could start in the robot\'s gripper but this is not implemented
-    in the action wrapper). DARRT finds the surface supporting an object
-    by checking that the bottom of the object is on the support surface.
+-   **Object not on support surface:** Because DARRT reasons about
+    support surfaces and knows objects cannot float in midair, objects
+    need to start on a support surface (at the planner level they could
+    start in the robot\'s gripper but this is not implemented in the
+    action wrapper). DARRT finds the surface supporting an object by
+    checking that the bottom of the object is on the support surface.
     However, the object detection sometimes fails to find the full
     length of the object causing this check and consequently the
     planning to fail.
@@ -487,8 +487,8 @@ DARRT is very much a work in progress. There are several known bugs.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Self-Collisions with Unused Arm:\'\'\' When given primitives
-    that involve moving the base (WARP or BASE_TRANSIT), DARRT has to do
+-   **Self-Collisions with Unused Arm:** When given primitives that
+    involve moving the base (WARP or BASE_TRANSIT), DARRT has to do
     full-body collision checks. This includes checking collisions for
     the unused arm so if that arm starts in a self-collision with the
     robot the planning will fail.
@@ -496,15 +496,15 @@ DARRT is very much a work in progress. There are several known bugs.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'It takes too long:\'\'\' I am working on this problem - this
-    newest release actually represents a big improvement. There is a
-    higher initial startup cost right now that I could bring down but
-    I\'ve been focusing on speeding up the planning. Note that placing
-    on tables is still hard for it because, even if you are using warp,
-    it has to find a good collision-free base pose near the table. I
-    will be trying to make that better in coming months but for now,
-    expect that to be slow. To speed DARRT up, the first thing you can
-    do is try using the laser map rather than an octomap. In addition,
+-   **It takes too long:** I am working on this problem - this newest
+    release actually represents a big improvement. There is a higher
+    initial startup cost right now that I could bring down but I\'ve
+    been focusing on speeding up the planning. Note that placing on
+    tables is still hard for it because, even if you are using warp, it
+    has to find a good collision-free base pose near the table. I will
+    be trying to make that better in coming months but for now, expect
+    that to be slow. To speed DARRT up, the first thing you can do is
+    try using the laser map rather than an octomap. In addition,
     adjustments to planning_time, tries, and goal_bias can help a lot.
     If the scene is mostly empty, set planning time low (about 5 s) and
     increase tries (to probably 10) and increase the goal_bias (to about
@@ -515,40 +515,40 @@ DARRT is very much a work in progress. There are several known bugs.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Trajectory filter fails on arm plans with a collision:\'\'\' I
-    think this is a problem with different link padding between the
-    planner and the filter. When I allow those plans to run they do not
-    have collisions although they do usually get close to objects. If
-    the trajectory filter fails, I would recommend just assigning times
+-   **Trajectory filter fails on arm plans with a collision:** I think
+    this is a problem with different link padding between the planner
+    and the filter. When I allow those plans to run they do not have
+    collisions although they do usually get close to objects. If the
+    trajectory filter fails, I would recommend just assigning times
     yourself and letting the plan run.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Canceling doesn\'t cancel the planning:\'\'\' I have tried to
-    make it possible to cancel the planning but it is not completely
-    consistent yet.
+-   **Canceling doesn\'t cancel the planning:** I have tried to make it
+    possible to cancel the planning but it is not completely consistent
+    yet.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'The planner just stops. I see an error message in the output
-    that has something to do with the planning:\'\'\' For debugging, I
-    have certain errors halt the planning. I tried to remove it in the
-    tagged version but it might still happen. Just press enter.
+-   **The planner just stops. I see an error message in the output that
+    has something to do with the planning:** For debugging, I have
+    certain errors halt the planning. I tried to remove it in the tagged
+    version but it might still happen. Just press enter.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'The Executor class uses 3D Nav to plan even when DARRT has
-    returned a plan for the base:\'\'\' My current base controller is
+-   **The Executor class uses 3D Nav to plan even when DARRT has
+    returned a plan for the base:** My current base controller is
     terrible. I\'m working on a better one but for now it\'s best to use
     3D nav even though that re-plans.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Plans collide with everything:\'\'\' The released version of
+-   **Plans collide with everything:** The released version of
     distance_field will break collision checking for DARRT. Make sure
     that ```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
@@ -563,20 +563,20 @@ ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Plans collide with spheres and cylinders:\'\'\': Collision
-    checking currently only works for boxes, meshes and collision maps.
-    Plans will collide with anything modelled in the collision map as a
-    sphere or cylinder. You have to explicitly add these (tabletop
-    detection only adds boxes and meshes) so in common use this should
-    not be a problem. We\'re working on updating this though.
+-   **Plans collide with spheres and cylinders:**: Collision checking
+    currently only works for boxes, meshes and collision maps. Plans
+    will collide with anything modelled in the collision map as a sphere
+    or cylinder. You have to explicitly add these (tabletop detection
+    only adds boxes and meshes) so in common use this should not be a
+    problem. We\'re working on updating this though.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'abort: consistency error adding group!\'\'\' When using
-    rosinstall to add the sushi repository. This appears to be an issue
-    with mercurial and large files. Everything else will be installed so
-    just manually install the sushi repository into sushi_all:
+-   **abort: consistency error adding group!** When using rosinstall to
+    add the sushi repository. This appears to be an issue with mercurial
+    and large files. Everything else will be installed so just manually
+    install the sushi repository into sushi_all:
     ```
 ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.sh
 ```5 This may take several tries - the
@@ -585,8 +585,8 @@ ERROR: Invalid scm entry having no uri attribute for path /opt/ros/fuerte/setup.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Rosinstall throws an error:\'\'\' You need the latest version
-    of rosinstall for the darrth.rosinstall file. If you have an earlier
+-   **Rosinstall throws an error:** You need the latest version of
+    rosinstall for the darrth.rosinstall file. If you have an earlier
     version, comment out the setup-file line. You may get some later
     errors about not finding ros stacks but it will install everything
     OK.

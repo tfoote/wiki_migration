@@ -1,6 +1,6 @@
-\'\'\'rve_interface_gen\'\'\' turns an interface definition into an easy
-to use proxy class and inheritable server class that use
-[rve_rpc](rve_rpc) for communication.
+**rve_interface_gen** turns an interface definition into an easy to use
+proxy class and inheritable server class that use [rve_rpc](rve_rpc) for
+communication.
 
 For example: ```
 interface Bar

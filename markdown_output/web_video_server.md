@@ -188,11 +188,11 @@ $ rostopic list
 View compressed stream at:
 \`http:*localhost:8080/stream?topic=/usb_cam/image_raw&type=ros_compressed\`*
 
-Node and topic diagram (output of [rqt_graph](rqt_graph)).
-\'\'\'NOTE\'\'\' this graph is \'\'\'NOT\'\'\' showing compressed image
-topic, so this screenshot isn\'t showing exactly the same situation
-we\'re running above where the box in the middle should be the
-compressed image topic. Hope this still gives an idea of relationship:
+Node and topic diagram (output of [rqt_graph](rqt_graph)). **NOTE** this
+graph is **NOT** showing compressed image topic, so this screenshot
+isn\'t showing exactly the same situation we\'re running above where the
+box in the middle should be the compressed image topic. Hope this still
+gives an idea of relationship:
 
 ![alt Node and topic diagram\|width=\"700\"](attachment:rqt_graph-output-usb_cam-sample.png)
 

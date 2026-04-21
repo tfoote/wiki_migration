@@ -78,16 +78,16 @@ sudo apt-get install ros-indigo-carl-estop
 ### Startup
 
 The \`carl_estop\` package also contains a \`pc_estop.launch\` file
-which should be launched on \'\'\'the off board PC\'\'\'. This file
-launches an instance of the \`pc_estop_node\`. To launch, the following
-command can be used:
+which should be launched on **the off board PC**. This file launches an
+instance of the \`pc_estop_node\`. To launch, the following command can
+be used:
 
 ```
 roslaunch carl_estop pc_estop.launch
 ```
 
 The \`carl_estop\` package also contains a \`carl_estop.launch\` file
-which should be launched on \'\'\'the robot\'\'\'. This file launches an
+which should be launched on **the robot**. This file launches an
 instance of the \`carl_estop_node\`. To launch, the following command
 can be used:
 

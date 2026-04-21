@@ -45,11 +45,12 @@ possible.
 -   Use the robot\'s speed-scaling. When speed scaling is active due to
     safety constraints or the speed slider is used, this gets correctly
     handled on the ROS side, as well slowing down trajectory execution
-    accordingly. \'\'\'Note:\'\'\' Other ros-controllers based on a
-    position interface can be used with this driver, but may behave
-    wrong if the speed slider isn\'t set to 100% or if speed scaling
-    slows down the robot. Also, the pausing function can only be used if
-    the default scaled trajectory controller is used.
+    accordingly.
+    -   Note:** Other ros-controllers based on a position interface can
+        be used with this driver, but may behave wrong if the speed
+        slider isn\'t set to 100% or if speed scaling slows down the
+        robot. Also, the pausing function can only be used if the
+        default scaled trajectory controller is used.**
 -   ROS-Service-based replacement of most every-day TP-interactions
     offer using UR robots without interacting with the teach pendant at
     all, if desired. The robot can be started, stopped and even recovery

@@ -7,16 +7,16 @@ were taken, the whole floor and the robot.
 
 It contains the following models:
 
--   \'\'\'institut: \'\'\'A model of the whole floor
--   \'\'\'mild: \'\'\'The robot used
--   \'\'\'room_epxeriments_manual: \'\'\'manually created model based on
-    the floor plan in real scale
--   \'\'\'room_experiments_manual_rearranged: \'\'\'same, but different
+-   **institut: **A model of the whole floor
+-   **mild: **The robot used
+-   **room_epxeriments_manual: **manually created model based on the
+    floor plan in real scale
+-   **room_experiments_manual_rearranged: **same, but different
     arrangement
--   \'\'\'room_experiments_manual_rearranged_pascal: \'\'\'later model
-    of the same room
--   \'\'\'room_experiments_slam: \'\'\'same room but walls are derived
-    from a SLAM map.
+-   **room_experiments_manual_rearranged_pascal: **later model of the
+    same room
+-   **room_experiments_slam: **same room but walls are derived from a
+    SLAM map.
 
 ## Usage
 

@@ -19,8 +19,8 @@ roslaunch ds_pr2_fridge_handle_detector handle_detector.launch
 ```
 
 The handles will be published on a topic:
-\'\'\'drawer_handles_detector/handle_projected_inliers/output\'\'\'
-which you can use for viewing in rviz.
+**drawer_handles_detector/handle_projected_inliers/output** which you
+can use for viewing in rviz.
 
 The topic is fed directly to Perception3d.cpp of
 [ias_drawer_executive](ias_drawer_executive) and used in the fridge

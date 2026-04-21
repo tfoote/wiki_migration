@@ -35,7 +35,7 @@ $ sudo su
 
 ## Note
 
-\'\'\'\'\'Only for hydro\'\'\'\'\'
+***Only for hydro***
 
 Try USB1 USB2 if you can\'t connect to the port.
 

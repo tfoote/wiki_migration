@@ -49,11 +49,11 @@ roslocate info --prefix /home/bob/ros-pkg rospy
         uri: https://code.ros.org/svn/ros/stacks/ros_comm/trunk/clients/rospy
 ```
 
-\`\--distro=DISTRO\` \'\'(Since 0.5.17)\'\' Get installation information
-for stack released into a specific ROS distribution. \'\'(Released
-stacks only)\'\'
+\`\--distro=DISTRO\` *(Since 0.5.17)* Get installation information for
+stack released into a specific ROS distribution. *(Released stacks
+only)*
 
-\`\--dev\` \'\'(Since 0.5.17)\'\' Fetch the development branch instead
-of versioned release (e.g. \"trunk\"). \'\'(Released stacks only)\'\'
+\`\--dev\` *(Since 0.5.17)* Fetch the development branch instead of
+versioned release (e.g. \"trunk\"). *(Released stacks only)*
 
 [roadmap](/Roadmap)

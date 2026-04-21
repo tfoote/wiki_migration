@@ -6,9 +6,9 @@ This package enables conversion of messages of type
 
 ### Surface Normals
 
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \<#FFFFCC\>Since \'\'\'version 2.0\'\'\' the package makes use of the standard PointCloud type \'\'\'PointXYZINormal\'\'\' instead of the custom type \'\'\'TsPoint\'\'\'. As a result the PointCloud also contains information about the surface normals.   
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
+     \<#FFFFCC\>Since **version 2.0** the package makes use of the standard PointCloud type **PointXYZINormal** instead of the custom type **TsPoint**. As a result the PointCloud also contains information about the surface normals.   
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
 
 Due to the specular reflection behavior of ultrasound, the surface
 normal of the detected object can be represented by a vector pointing

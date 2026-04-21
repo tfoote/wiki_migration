@@ -1,1 +1,1 @@
-\'\'\'\`densowave\` package is renamed to [denso](denso)\'\'\'.
+**\`densowave\` package is renamed to [denso](denso)**.

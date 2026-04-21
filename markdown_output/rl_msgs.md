@@ -35,21 +35,21 @@ environments in your own style.
 
 ### Messages passed from Agent to Environment
 
--   \'\'\'RLAction\'\'\': This message sends the environment the action
-    (an integer) that the agent has selected.
+-   **RLAction**: This message sends the environment the action (an
+    integer) that the agent has selected.
     [rl_msgs/RLAction](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLAction.html)
--   \'\'\'RLExperimentInfo\'\'\': This message provides information on
-    the results of the latest episode of the experiment, namely an
-    episode number, the sum of rewards for that episode, and the number
-    of actions the agent took in that episode. The episode_reward can be
+-   **RLExperimentInfo**: This message provides information on the
+    results of the latest episode of the experiment, namely an episode
+    number, the sum of rewards for that episode, and the number of
+    actions the agent took in that episode. The episode_reward can be
     plotted to look at rewards per episode.
     [rl_msgs/RLExperimentInfo](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLExperimentInfo.html)
 
 ### Messages passed from Environment to Agent
 
--   \'\'\'RLEnvDescription\'\'\': This message describes the environment
-    with a title, the number of actions, the number of states, the range
-    of each state feature, the maximum one-step reward, the range of
+-   **RLEnvDescription**: This message describes the environment with a
+    title, the number of actions, the number of states, the range of
+    each state feature, the maximum one-step reward, the range of
     rewards, if the task is episodic or not, and if the task is
     deterministic or stochastic.
     [rl_msgs/RLEnvDescription](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLEnvDescription.html)
@@ -57,14 +57,14 @@ environments in your own style.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'RLEnvSeedExperience\'\'\': This message provides a full
-    experience \<s, a, s\', r\> seed for the agent to use for learning.
-    In addition to the state, action, next state, and reward, it also
-    includes a boolean indicating if it is a terminal transition or not.
+-   **RLEnvSeedExperience**: This message provides a full experience
+    \<s, a, s\', r\> seed for the agent to use for learning. In addition
+    to the state, action, next state, and reward, it also includes a
+    boolean indicating if it is a terminal transition or not.
     [rl_msgs/RLEnvSeedExperience](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLEnvSeedExperience.html)
--   \'\'\'RLStateReward\'\'\': This is a message from the environment
-    with the agent\'s new state, the reward received on this time step,
-    and whether this transition is terminal or not.
+-   **RLStateReward**: This is a message from the environment with the
+    agent\'s new state, the reward received on this time step, and
+    whether this transition is terminal or not.
     [rl_msgs/RLStateReward](http://www.ros.org/doc/indigo/api/rl_msgs/html/msg/RLStateReward.html)
 
 [References](rl-texplore-ros-pkg/rl_references)

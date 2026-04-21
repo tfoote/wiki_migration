@@ -195,19 +195,19 @@ all the time, as soon as the button is released a stop will be send to
 all hardware components. Have a look at the following image to see which
 buttons command which components. ![\|width=100%](attachment:teleop.png)
 
-For \'\'\'moving the base\'\'\': Hold the \`deadman\` button and use the
-base \`rotation\` and \`translation\` axis to move the base.
+For **moving the base**: Hold the \`deadman\` button and use the base
+\`rotation\` and \`translation\` axis to move the base.
 
-For \'\'\'moving the torso\'\'\': Hold the \`deadman\` button and the
-\`upper\` or \`lower\` neck button, then use the \`up_down\` or
-\`left_right\` axis to move the torso.
+For **moving the torso**: Hold the \`deadman\` button and the \`upper\`
+or \`lower\` neck button, then use the \`up_down\` or \`left_right\`
+axis to move the torso.
 
-For \'\'\'moving the tray\'\'\': Hold the \`deadman\` button and the
-\`tray\` button, then use the \`up_down\` axis to move the tray.
+For **moving the tray**: Hold the \`deadman\` button and the \`tray\`
+button, then use the \`up_down\` axis to move the tray.
 
-For \'\'\'moving the arm\'\'\': Hold the \`deadman\` button and one of
-the \`arm\` buttons, then use the \`up_down\` or \`left_right\` axis to
-move the selected arm joints.
+For **moving the arm**: Hold the \`deadman\` button and one of the
+\`arm\` buttons, then use the \`up_down\` or \`left_right\` axis to move
+the selected arm joints.
 
 ### Parameter file
 

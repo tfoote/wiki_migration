@@ -47,21 +47,19 @@ the following launch file:
 
 There are several parameters that control the object modeling process:
 
--   \'\'width\'\', \'\'height\'\', \'\'fovy\'\' - are the width, height
-    and vertical focal length of the camera used;
--   \'\'image_topic\'\' - input images topic;
--   \'\'tf_topic\'\' - robot\'s TF tree;
--   \'\'save_images\'\' - a parameter to save the images (by default
-    saved in the home/.ros folder);
--   \'\'min_nn\'\' - an integer value for the minimum number of
-    neighbors allowed when using the radiusSearch function;
--   \'\'knn\'\' - the number of neighbors searched with knnSearch
-    function;
--   \'\'mode\'\' - which function to use to get rid of outlier features.
+-   *width*, *height*, *fovy* - are the width, height and vertical focal
+    length of the camera used;
+-   *image_topic* - input images topic;
+-   *tf_topic* - robot\'s TF tree;
+-   *save_images* - a parameter to save the images (by default saved in
+    the home/.ros folder);
+-   *min_nn* - an integer value for the minimum number of neighbors
+    allowed when using the radiusSearch function;
+-   *knn* - the number of neighbors searched with knnSearch function;
+-   *mode* - which function to use to get rid of outlier features.
     Options are: \"manual\", \"radius_search\", \"knn_search\" (see an
     explanation below on the meaning of the parameters);
--   \'\'robot_description\'\' - upload robot\'s URDF if working on
-    rosbags.
+-   *robot_description* - upload robot\'s URDF if working on rosbags.
 
 To start the program run: ```
 $ roslaunch model_completion getMask.launch

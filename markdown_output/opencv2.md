@@ -47,7 +47,7 @@ rosdep install <your-package>
 and [rosdep](rosdep) will automatically bring in the appropriate OpenCV
 for your system.
 
-\'\'Manual apt-get install\'\'
+*Manual apt-get install*
 
 If you need to install OpenCV manually on Ubuntu, please follow the
 instructions below.
@@ -98,7 +98,7 @@ rosdep install <your-package>
 and [rosdep](rosdep) will automatically bring in the appropriate OpenCV
 for your system.
 
-\'\'Manual apt-get install\'\'
+*Manual apt-get install*
 
 If you need to install OpenCV manually on Ubuntu, please follow the
 instructions below. ```

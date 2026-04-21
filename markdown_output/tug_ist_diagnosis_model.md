@@ -1,12 +1,11 @@
 ## Overview
 
 The diagnosis model server is an action server that provides the
-diagnosis model. The diagnosis model is stored as a \'\'YAML\'\' file
-(similar to XML) and contains five sections: (1) a string that denotes
-the proposition that represents the \'\'AB\'\' predicate, (2) the same
-for \'\'AB\'\', (3) a string for a prefix denoting a negative literal,
-(4) a set of all propositions, (5) a set of clauses that defines the
-diagnosis model.
+diagnosis model. The diagnosis model is stored as a *YAML* file (similar
+to XML) and contains five sections: (1) a string that denotes the
+proposition that represents the *AB* predicate, (2) the same for *AB*,
+(3) a string for a prefix denoting a negative literal, (4) a set of all
+propositions, (5) a set of clauses that defines the diagnosis model.
 
 ## Nodes
 

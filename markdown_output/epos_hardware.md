@@ -34,9 +34,9 @@ the values may not be the same if the units are different) See the
 [EPOS Command Library](http://www.maxonmotorusa.com/medias/sys_master/root/8815100788766/EPOS-Command-Library-En.pdf)
 documentation for more information.
 
-\'\'\'NOTE:\'\'\' while amps and seconds are used for most parameters,
-all position and velocity parameters and control inputs are in the
-device units (this is normally rotations and rpm by default).
+**NOTE:** while amps and seconds are used for most parameters, all
+position and velocity parameters and control inputs are in the device
+units (this is normally rotations and rpm by default).
 
 ### Device Parameters
 

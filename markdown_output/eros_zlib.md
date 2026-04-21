@@ -7,5 +7,5 @@ around as its often required by other packages.
 
 ## Tested
 
--   \'\'Native\'\': linux
--   \'\'Cross-Compile\'\': arm
+-   *Native*: linux
+-   *Cross-Compile*: arm

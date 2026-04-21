@@ -12,15 +12,14 @@ The transforms tree (following
 
 . \`map\` → \`odom\` → \`base_link\` → \`camera\`
 
-Visual odometry algorithms generally calculate\'\' camera motion\'\'
-with respect to an initial reference frame \`odom\`.To be able to
-calculate \'\'robot motion\'\' based on \'\'camera motion\'\', the
-transformation from the camera frame to the robot frame has to be known.
-Therefore this implementation needs to know the tf \`base_link\` →
-\`camera\` and the tf \`odom\` → \`base_link\` to be able to publish map
-→ \`odom\` in order to correct odometry drift. The node currently uses
-default values from the sensor setup on the !AscTec Neo Research
-platform.
+Visual odometry algorithms generally calculate* camera motion* with
+respect to an initial reference frame \`odom\`.To be able to calculate
+*robot motion* based on *camera motion*, the transformation from the
+camera frame to the robot frame has to be known. Therefore this
+implementation needs to know the tf \`base_link\` → \`camera\` and the
+tf \`odom\` → \`base_link\` to be able to publish map → \`odom\` in
+order to correct odometry drift. The node currently uses default values
+from the sensor setup on the !AscTec Neo Research platform.
 
 ## Nodes
 

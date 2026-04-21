@@ -27,18 +27,18 @@ $ rosrun sr_friction_compensation sr_friction_compensation.py /sr_friction_compe
 
 The following parameters can be specified:
 
--   \'\'\'joint_name\'\'\': the name of the joint for which you want to
-    record the map (default to FFJ3)
--   \'\'\'sign\'\'\' 1 or -1, make sure that when you start the node,
-    the finger goes toward the minimum of its range (default to -1)
--   \'\'\'nb_repetition\'\'\': the number of time each map is recorded.
-    The bigger the number, the more data you\'ll have (default to 2)
--   \'\'\'min\'\'\': the minimum of the range (default to 0)
--   \'\'\'max\'\'\': the maximum of the range (default to 1.55)
+-   **joint_name**: the name of the joint for which you want to record
+    the map (default to FFJ3)
+-   **sign** 1 or -1, make sure that when you start the node, the finger
+    goes toward the minimum of its range (default to -1)
+-   **nb_repetition**: the number of time each map is recorded. The
+    bigger the number, the more data you\'ll have (default to 2)
+-   **min**: the minimum of the range (default to 0)
+-   **max**: the maximum of the range (default to 1.55)
 
 The result is a plot saved to the current directory. The file is:
-\'\'\'friction_compensation_ffj3.png\'\'\' (ffj3 is replaced by the
-joint you ran the friction compensation on).
+**friction_compensation_ffj3.png** (ffj3 is replaced by the joint you
+ran the friction compensation on).
 
 ## Results
 

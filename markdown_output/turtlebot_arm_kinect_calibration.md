@@ -3,10 +3,9 @@
 Refer to the
 [Tutorial](turtlebot_kinect_arm_calibration/Tutorials/CalibratingKinectToTurtleBotArm)
 for instructions on how to calibrate a Kinect to the
-[turtlebot_arm](turtlebot_arm). \<!\> \'\'The tutorial is for the fuerte
+[turtlebot_arm](turtlebot_arm). \<!\> *The tutorial is for the fuerte
 version of this package, so be careful and flexible when following it!.
-Trust this page (already updated for indigo) in case of
-contradiction.\'\'
+Trust this page (already updated for indigo) in case of contradiction.*
 
 ## Video
 

@@ -23,6 +23,6 @@ and ROS Lunar. Installation instructions for ROS can be found here:
 If you require any assistance using this code, please email
 support@advancednavigation.com.au .
 
-\'\'\'\'\'Installation, build, device configuration, and execution
-instructions can be found in the file \"Advanced Navigation ROS Driver
-Notes.txt\".\'\'\'\'\'
+***Installation, build, device configuration, and execution instructions
+can be found in the file \"Advanced Navigation ROS Driver
+Notes.txt\".***

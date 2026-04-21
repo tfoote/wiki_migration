@@ -1,10 +1,10 @@
 # Overview
 
-The \'\'\'stdr_gui\'\'\' package provides a Graphical User Interface for
+The **stdr_gui** package provides a Graphical User Interface for
 [STDR Simulator](stdr_simulator) developed with QT4.
 
-A detailed description of \'\'\'stdr_gui\'\'\' can be examined through
-the following tutorials:
+A detailed description of **stdr_gui** can be examined through the
+following tutorials:
 
 -   [GUI toolbar](stdr_simulator/Tutorials/GUI toolbar)
 -   [Basic usage (Load a map, add a robot)](stdr_simulator/Tutorials/Basic GUI usage)

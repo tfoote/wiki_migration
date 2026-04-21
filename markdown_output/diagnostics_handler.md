@@ -1,6 +1,6 @@
 ## Package Overview
 
-\`diagnostics_handler\` is a \'\'tabpage handler\'\' for the
+\`diagnostics_handler\` is a *tabpage handler* for the
 [touchosc_bridge](touchosc_bridge) package. It provides an interface to
 the diagnostics and diagnostics_agg topics that many pieces of hardware
 utilize. It gives an at-a-glance look at the status of hardware and

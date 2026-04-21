@@ -5,21 +5,21 @@ matrix or tuple, or ROS message into another. Each of the methods is
 called using PoseConv.to\_%pose_type% where %pose_type% is in
 PoseConv.POSE_TYPES. Notes on various types:
 
--   \'\'\*\_msg\'\' - refers to a ROS message of similar name.
--   \'\'homo_mat\'\' - homogeneous matrix 4x4 numpy.mat.
--   \'\'pos_rot\'\' - 3x1 numpy.mat position, 3x3 numpy.mat
--   \'\'pos_quat\'\' - list of length 3, list of length 4
--   \'\'pos_euler\'\' - list of length 3, list of length 3
+-   *\*\_msg* - refers to a ROS message of similar name.
+-   *homo_mat* - homogeneous matrix 4x4 numpy.mat.
+-   *pos_rot* - 3x1 numpy.mat position, 3x3 numpy.mat
+-   *pos_quat* - list of length 3, list of length 4
+-   *pos_euler* - list of length 3, list of length 3
 
 The input parsing is fairly forgiving on the exact type and shape of the
 Python/numpy arguments.
 
 The first argument can optionally be a string, representing the designed
-header \'\'frame_id\'\' if the requested type is a stamped message. The
-\'\'stamp\'\' is always set as the current time and \'\'seq\'\' is 0.
-After the optional header string, you can pass the pose. If the input
-type is a tuple, you can pass either the complete tuple as one argument
-or split it into two arguments.
+header *frame_id* if the requested type is a stamped message. The
+*stamp* is always set as the current time and *seq* is 0. After the
+optional header string, you can pass the pose. If the input type is a
+tuple, you can pass either the complete tuple as one argument or split
+it into two arguments.
 
 ```python
 import roslib; roslib.load_manifest("hrl_geom")

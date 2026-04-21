@@ -188,10 +188,10 @@ $ echo `rosrun hostapd_access_point find_hwsim_iface.py 3 3`
 wlan1
 ```
 
-The script can be used to launch nodes on the \'\'n-th virtual
-interface\'\' with roslaunch. The following example, launches two nodes
-on the first and second mac80211_hwsim interfaces while ensuring that
-there are at least three total interfaces:
+The script can be used to launch nodes on the *n-th virtual interface*
+with roslaunch. The following example, launches two nodes on the first
+and second mac80211_hwsim interfaces while ensuring that there are at
+least three total interfaces:
 
 ```
 <launch>
@@ -241,7 +241,7 @@ A packet with destination IP 192.168.69.1 will travel \"over-the-air\"
 from wlan1 to wlan0, while packets with destination IP 192.168.68.2 will
 travel from wlan0 to wlan1.
 
-\'\'\'Known problems\'\'\':
+**Known problems**:
 
 -   starting hostapd on an interface flushes the ARP entries so the
     \`hwsim_nat_setup.sh\` needs to be run again each time hostapd is

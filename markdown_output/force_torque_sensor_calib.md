@@ -7,19 +7,18 @@ parameters related to a wrist-mounted force-torque sensor:
 -   Mass of the gripper
 -   Location of the center of mass of the attached gripper
 
-Running this software assumes that you have an
-\'\'\'accelerometer/imu\'\'\' whose reference frame is already
-calibrated with respect to some reference frame on the robot
-manipulator. It also assumes that you have a manipulator previously
-configured to be controlled through [MoveIt!](moveit).
+Running this software assumes that you have an **accelerometer/imu**
+whose reference frame is already calibrated with respect to some
+reference frame on the robot manipulator. It also assumes that you have
+a manipulator previously configured to be controlled through
+[MoveIt!](moveit).
 
 The software calibrates the F/T sensor by moving the manipulator into a
 number of different poses and using the resulting F/T sensor and
 accelerometer signals for computing a least-squares estimate of the
 parameters. Calibration can be done by either manually specifying
 explicitly the manipulator poses in the parameter server (parameters
-\'\'\'pose0, pose1, pose2, \... poseN\'\'\') or by executing N random
-poses.
+**pose0, pose1, pose2, \... poseN**) or by executing N random poses.
 
 ## ROS API
 
@@ -100,13 +99,13 @@ param {
 Make sure that the robot is still and other objects don\'t obstruct the
 arms while they move into the calibration poses.
 
-You can look at the configuration/launch files in the \'\'config\'\' and
-\'\'launch\'\' folders for examples on how to set the parameters and
-launch the software for your robot.
+You can look at the configuration/launch files in the *config* and
+*launch* folders for examples on how to set the parameters and launch
+the software for your robot.
 
-The calibration software will produce a \'\'\'yaml\'\'\' calibration
-file that can later be used for gravity compensation. By default the
-file will be written in the \'\'\'/.ros/ft_calib/\'\'\' directory.
+The calibration software will produce a **yaml** calibration file that
+can later be used for gravity compensation. By default the file will be
+written in the **/.ros/ft_calib/** directory.
 
 For more detailed instructions please visit the
 [force_torque_tools tutorials page](force_torque_tools/Tutorials).
@@ -114,7 +113,7 @@ For more detailed instructions please visit the
 ## Example calibration file
 
 An example calibration file output from this calibration node can be
-found under \'\'\'config/ft_calib_data_example.yaml\'\'\' in the
+found under **config/ft_calib_data_example.yaml** in the
 force_torque_sensor_calib package.
 
 ## Tutorials

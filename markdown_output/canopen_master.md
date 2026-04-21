@@ -100,8 +100,7 @@ For now 2 different implementations exist with allocator plug-ins:
 
 -   \`canopen::SimpleMaster::Allocator\`: wait-based implementation,
     only for one process, uses half the time for reading form the bus
-    and half the time for updating an writing, \'\'\'this is the
-    default\'\'\'
+    and half the time for updating an writing, **this is the default**
 -   \`canopen::ExternalMaster::Allocator\`: Synchronize to external SYNC
     message, uses half the time for reading form the bus and half the
     time for updating an writing, might be used in conjunction with

@@ -5,8 +5,8 @@ estimate full 6 DOF position only by means of single calibrated camera
 is well known approach that has been utilized for quite a long time now.
 This package leverages basic [aruco_ros](aruco_ros) functionality and
 provides tools to create a map of detected markers in 2D/3D space. It is
-designed for \'\'\'static markers - moving camera \'\'\'scenario\'\'\'
-\'\'\'and can be used for various navigation tasks for UAVs, UGVs, etc.
+designed for **static markers - moving camera **scenario** **and can be
+used for various navigation tasks for UAVs, UGVs, etc.
 
 \<\<Youtube(MlOy9qt_K4Y&rel=0)\>\>
 
@@ -69,8 +69,8 @@ results in INI format, we stongly suggest
 
 ### Launch file
 
-Here is an example of launch file to run \'\'\'Rviz\'\'\',
-\'\'\'usb_cam\'\'\' driver and \'\'\'aruco_mapping\'\'\':
+Here is an example of launch file to run **Rviz**, **usb_cam** driver
+and **aruco_mapping**:
 
 ```
 <launch>
@@ -100,10 +100,10 @@ Here is an example of launch file to run \'\'\'Rviz\'\'\',
   </node>
 </launch>
 ``` In case you use other camera driver, remap
-\'\'\'image_raw\'\'\' to your topic name. Do not forget to adopt
-\'\'\'calibration_file\'\'\', \'\'\'marker_size\'\'\' and other params
-to your setup. If everything is set and ready, launch the aruco_mapping
-by following command:
+**image_raw** to your topic name. Do not forget to adopt
+**calibration_file**, **marker_size** and other params to your setup. If
+everything is set and ready, launch the aruco_mapping by following
+command:
 
 ```
 roslaunch aruco_mapping aruco_mapping.launch

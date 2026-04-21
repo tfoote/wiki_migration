@@ -157,11 +157,10 @@ the concatenated point cloud is published to \`/elas_pc/point_cloud\`
 
 ## Contacts
 
-\'\'\'Patrick Ross\'\'\': patrick.ross@connect.qut.edu.au (Code
-maintainer)
+**Patrick Ross**: patrick.ross@connect.qut.edu.au (Code maintainer)
 
-\'\'\'Andreas Geiger\'\'\': geiger@kit.edu (libelas author)
+**Andreas Geiger**: geiger@kit.edu (libelas author)
 
-\'\'\'Ben Upcroft\'\'\': ben.upcroft@qut.edu.au
+**Ben Upcroft**: ben.upcroft@qut.edu.au
 
-\'\'\'David Ball\'\'\': david.ball@qut.edu.au
+**David Ball**: david.ball@qut.edu.au

@@ -17,7 +17,7 @@ datastream_hostport should be set to the IP address or hostname and port
 192.168.0.254:801 (801 is the default port). The parameter
 \`stream_mode\` is used for the call to the !DataStream
 \`SetStreamMode()\` method; valid values are \`ServerPush\` and
-\`ClientPull\`. \'\'\'Note:\'\'\' We experienced buffering problems and
+\`ClientPull\`. **Note:** We experienced buffering problems and
 framedrops when using \`ServerPush\` when more than one object is
 successfully tracked. We therefore recommend \`ClientPull\`,
 unfortunately at the cost of some additional delay.

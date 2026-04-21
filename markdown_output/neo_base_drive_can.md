@@ -83,7 +83,7 @@ param {
 
 ## Troubleshooting
 
-\'\'\'the neo_base_drive_can_node does not start properly\'\'\'
+**the neo_base_drive_can_node does not start properly**
 
 are the pcan modules are loaded properly?
 
@@ -101,21 +101,19 @@ or
 
 if this still fails you\'ve to rebuild the pcan drivers.
 
-\'\'\' /proc/pcan exists but i fail to communicate with it\'\'\'
+** /proc/pcan exists but i fail to communicate with it**
 
 cat /proc/pcan should display your device (for example \[dng\] or
 \[usb\] ) if not you\'ve to recompile the pcan driver with your modules
 included.
 
-\'\'\'I don\'t receive any can message although I can send motor
-commands:\'\'\'
+**I don\'t receive any can message although I can send motor commands:**
 
 set the pcan net_dev compile flag to false and recompile the pcan driver
 
-\'\'\' neo_base_drive_can fails to load the parameters for my drives
-\'\'\'
+** neo_base_drive_can fails to load the parameters for my drives **
 
 make sure that the configuration ( param: drive\*/) exists for every
 drive ( param: numberOfMotors )
 
-\'\'Add your own Problem and Solution here\'\'
+*Add your own Problem and Solution here*

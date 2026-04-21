@@ -1,6 +1,5 @@
-\'\'\'\'\'[kaist_webots](kaist_webots):\'\'\'\'\'
-\'\'[webots_run](webots_run) \| [webots_joy_demo](webots_joy_demo) \|
-webots_controllers\'\'
+***[kaist_webots](kaist_webots):*** *[webots_run](webots_run) \|
+[webots_joy_demo](webots_joy_demo) \| webots_controllers*
 
 The idea behind this package was to create a controller manager for
 Webots, similar to GazeboRosControllerManager. This would enable users

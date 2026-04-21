@@ -10,9 +10,8 @@ to prototype robotics applications for use with AWS
 
 The AWS [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) comes with all
 required libraries and packages preinstalled. The vehicle\'s device
-software includes \'\'\'Ubuntu 20.04 Focal Fossa\'\'\', \'\'\'Intel®
-OpenVINO™ toolkit 2021.1.110\'\'\', \'\'\'ROS 2 Foxy Fitzroy\'\'\', and
-\'\'\'Python 3.8\'\'\'.
+software includes **Ubuntu 20.04 Focal Fossa**, **Intel® OpenVINO™
+toolkit 2021.1.110**, **ROS 2 Foxy Fitzroy**, and **Python 3.8**.
 
 The
 [DeepRacer Launcher ROS package](https://github.com/aws-deepracer/aws-deepracer-launcher)
@@ -38,34 +37,32 @@ The source code is released under
 The AWS [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) device with
 the upgraded OpenSource software contains the following:
 
-1\. \'\'\'ROS 2 Foxy and dependencies\'\'\': ROS 2 Foxy
-(\'\'\'ros-foxy-desktop\'\'\'), CV Bridge
-(\'\'\'ros-foxy-cv-bridge\'\'\'), image transport
-(\'\'\'ros-foxy-image-transport\'\'\'), standard messages
-(\'\'\'ros-foxy-std-msgs\'\'\'), and sensor messages
-(\'\'\'ros-foxy-sensor-msgs\'\'\') are installed on the
-[DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) device.
+1\. **ROS 2 Foxy and dependencies**: ROS 2 Foxy (**ros-foxy-desktop**),
+CV Bridge (**ros-foxy-cv-bridge**), image transport
+(**ros-foxy-image-transport**), standard messages
+(**ros-foxy-std-msgs**), and sensor messages (**ros-foxy-sensor-msgs**)
+are installed on the [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG)
+device.
 
-2\. \'\'\'Intel OpenVino toolkit and its dependencies:\'\'\' Intel
-OpenVino toolkit (\'\'\'intel-openvino-dev-ubuntu20-2021.1.110\'\'\')
-and its dependencies are preinstalled on the AWS DeepRacer device. The
-AWS [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) core application
-uses Intel OpenVino to optimize reinforcement learning models and run
+2\. **Intel OpenVino toolkit and its dependencies:** Intel OpenVino
+toolkit (**intel-openvino-dev-ubuntu20-2021.1.110**) and its
+dependencies are preinstalled on the AWS DeepRacer device. The AWS
+[DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) core application uses
+Intel OpenVino to optimize reinforcement learning models and run
 inference on them.
 
-3\. \'\'\'Tensorflow:\'\'\' A custom built \'\'\'Tensorflow v2.4.0\'\'\'
-wheel with no AVX support is installed on the AWS
+3\. **Tensorflow:** A custom built **Tensorflow v2.4.0** wheel with no
+AVX support is installed on the AWS
 [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) device.
 
-4\. \'\'\'AWS DeepRacer Debian packages\'\'\': 1.
-\'\'\'aws-deepracer-sample-models\'\'\': This package installs three
-sample models deployed by default on the AWS DeepRacer device. 2.
-\'\'\'aws-deepracer-util\'\'\': This package installs utility scripts
-required by the AWS DeepRacer core application. 3.
-\'\'\'aws-deepracer-device-console\'\'\': This package installs the UI
-component of the AWS DeepRacer device console. 4.
-\'\'\'aws-deepracer-core\'\'\': This package installs all ROS 2 Foxy
-packages required for AWS
+4\. **AWS DeepRacer Debian packages**: 1.
+**aws-deepracer-sample-models**: This package installs three sample
+models deployed by default on the AWS DeepRacer device. 2.
+**aws-deepracer-util**: This package installs utility scripts required
+by the AWS DeepRacer core application. 3.
+**aws-deepracer-device-console**: This package installs the UI component
+of the AWS DeepRacer device console. 4. **aws-deepracer-core**: This
+package installs all ROS 2 Foxy packages required for AWS
 [DeepRacer](https://www.amazon.com/dp/B07JMHRKQG) core application
 functionality.
 
@@ -117,10 +114,8 @@ Use these nodes to support core application functionality.
     API calls.
 -   [software_update_node](https://github.com/aws-deepracer/aws-deepracer-systems-pkg):
     This node is responsible for the software update system managing the
-    following packages: \'\'\'aws-deepracer-core\'\'\',
-    \'\'\'aws-deepracer-util\'\'\',
-    \'\'\'aws-deepracer-sample-models\'\'\', and
-    \'\'\'aws-deepracer-webserver\'\'\'.
+    following packages: **aws-deepracer-core**, **aws-deepracer-util**,
+    **aws-deepracer-sample-models**, and **aws-deepracer-webserver**.
 -   [model_loader_node](https://github.com/aws-deepracer/aws-deepracer-systems-pkg):
     This node is responsible for extracting tar.gz model files from USB
     and those uploaded from the console.

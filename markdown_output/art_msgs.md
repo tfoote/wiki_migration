@@ -58,13 +58,13 @@ Many of these messages are primarily associated with specific
 
 [art_pilot](art_pilot)
 
--   \<\<MsgLink(art_msgs/CarCommand)\>\> (\'\'deprecated\'\', use
+-   \<\<MsgLink(art_msgs/CarCommand)\>\> (*deprecated*, use
     \<\<MsgLink(art_msgs/CarDriveStamped)\>\>)
--   \<\<MsgLink(art_msgs/CarControl)\>\> (\'\'deprecated\'\', use
+-   \<\<MsgLink(art_msgs/CarControl)\>\> (*deprecated*, use
     \<\<MsgLink(art_msgs/CarDrive)\>\>)
 -   \<\<MsgLink(art_msgs/CarDrive)\>\>
 -   \<\<MsgLink(art_msgs/CarDriveStamped)\>\>
--   \<\<MsgLink(art_msgs/LearningCommand)\>\> (\'\'deprecated\'\', use
+-   \<\<MsgLink(art_msgs/LearningCommand)\>\> (*deprecated*, use
     \<\<MsgLink(art_msgs/CarDrive)\>\>)
 -   \<\<MsgLink(art_msgs/PilotState)\>\>
 

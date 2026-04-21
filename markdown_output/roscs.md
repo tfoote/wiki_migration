@@ -65,10 +65,9 @@ CSHARP_ADD_PKG_DEPENDENCY(myLibrary gtk-sharp-2.0)
 
 This command, similar to rosbuild_genmsg() will generate and compile all
 neccessary code. The major difference to rosbuild_genmsg() is that code
-for \'\'\'all\'\'\' messages that occur in packages your package depends
-on will be generated and built. In other words, all messages stemming
-from the complete dependency graph, starting from your package will be
-wrapped.
+for **all** messages that occur in packages your package depends on will
+be generated and built. In other words, all messages stemming from the
+complete dependency graph, starting from your package will be wrapped.
 
 -   If you want to use service or define services, additionally call
     `rosbuild_gensrv()` from within the CMakeLists.txt

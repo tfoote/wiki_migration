@@ -11,9 +11,8 @@ formats correctly the incoming packets. The incoming data is stored in a
 vector of actuators (defined in the [sr_robot_lib](sr_robot_lib)
 package). Those actuators are then passed to the controllers for the
 1kHz control loop. The controllers are publishing the relevant data
-(position / effort / velocity) at 100Hz on the \'\'\'/joint_states\'\'\'
-topic, and the hardware diagnostics on the \'\'\'/diagnostics\'\'\'
-topic at 1Hz.
+(position / effort / velocity) at 100Hz on the **/joint_states** topic,
+and the hardware diagnostics on the **/diagnostics** topic at 1Hz.
 
 The protocol used to interpret or build the etherCAT packets can be
 found in [sr_external_dependencies](sr_external_dependencies).

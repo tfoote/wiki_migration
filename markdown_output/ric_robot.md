@@ -48,8 +48,7 @@ Relevant lines in the launch file: ```shell
 </node>
 ```
 
-The readings are published on the \'\'\'/komodo\_\<ID\>/scan\'\'\'
-topic.
+The readings are published on the **/komodo\_\<ID\>/scan** topic.
 
 ### Using the depth sensor (ASUS Xtion PRO LIVE)
 
@@ -82,11 +81,11 @@ The Komodo and Lizi robots have three ultrasonic range finders (URF)
 mounted on the sides and on the back of the robot. The range readings
 are published under the following topics:
 
-\'\'\'/komodo\_\<ID\>/Rangers/Left_URF\'\'\'
+**/komodo\_\<ID\>/Rangers/Left_URF**
 
-\'\'\'/komodo\_\<ID\>/Rangers/Rear_URF\'\'\'
+**/komodo\_\<ID\>/Rangers/Rear_URF**
 
-\'\'\'/komodo\_\<ID\>/Rangers/Right_URF\'\'\'
+**/komodo\_\<ID\>/Rangers/Right_URF**
 
 ## Nodes
 

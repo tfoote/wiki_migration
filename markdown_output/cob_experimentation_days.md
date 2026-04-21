@@ -1,11 +1,10 @@
 ## Event data
 
--   \'\'\'Location:\'\'\' Nobelstraße 12, 70569 Stuttgart, Germany
+-   **Location:** Nobelstraße 12, 70569 Stuttgart, Germany
     ([How to find us](http://www.ipa.fraunhofer.de/index.php?id=40&L=2))
--   \'\'\'Date:\'\'\' Wednesday November 30 2011 - Thursday December 1
-    2011
--   \'\'\'Time:\'\'\' 9am - 6pm
--   \'\'\'Flyer:\'\'\'
+-   **Date:** Wednesday November 30 2011 - Thursday December 1 2011
+-   **Time:** 9am - 6pm
+-   **Flyer:**
     [flyer](http://www.care-o-bot-research.org/wp-content/uploads/2011/10/1st-Care-O-bot-Workshop_12.10.11.pdf)
 
 ## Preparation and tutorials

@@ -32,8 +32,8 @@ please visit Bluetechnix website:
 
 # First step: Get ROS
 
-The \'\'\'\'argos3d_p100_ros_pkg\'\'\'\' works with ROS versions groovy
-and hydro. You can use catkin workspaces or the previous rosbuild to
+The **\'argos3d_p100_ros_pkg**\' works with ROS versions groovy and
+hydro. You can use catkin workspaces or the previous rosbuild to
 configure, compile and get ready ROS.
 
 The following are links to tutorials on setup and basic use of ROS to
@@ -76,7 +76,7 @@ browse to the directory of your operating system version.
 Install the driver for using the ToF camera:
 
 In Ubuntu/linux copy the file from the driver folder to
-\'\'\'/etc/udev/rules.d/\'\'\'
+**/etc/udev/rules.d/**
 
 ```
 cd driver 
@@ -92,13 +92,11 @@ Add PMDSDK to your system (use the right version for your system 32 or
 -   1\. Add the dynamically linked shared object library libpmdaccess2.
     Use one of the following options:
 
-1\. You have different ways to add it to the
-\'\'\'LD_LIBRARY_PATH\'\'\'. 1. You can simply copy the libpmdaccess2.so
-file to \'\'\'/usr/local/lib\'\'\' as root (or the defauld search
-library path of your system) 1. Add a .conf file (like
-pmd_camera_L64.conf) with the path of your library in
-\'\'\'/etc/ld.so.conf.d\'\'\'. The file must contaning the following
-lines:
+1\. You have different ways to add it to the **LD_LIBRARY_PATH**. 1. You
+can simply copy the libpmdaccess2.so file to **/usr/local/lib** as root
+(or the defauld search library path of your system) 1. Add a .conf file
+(like pmd_camera_L64.conf) with the path of your library in
+**/etc/ld.so.conf.d**. The file must contaning the following lines:
 
 ```
 #PMD camera support
@@ -106,8 +104,7 @@ lines:
 /.../PMDSDK/include
 ```
 
--   \'\'\'replace the dots with the absolute path to the PMDSDK
-    directory\'\'\'
+-   **replace the dots with the absolute path to the PMDSDK directory**
 
 ```{=html}
 <!-- -->
@@ -245,18 +242,18 @@ following options.
 Add a Pointcloud2 topic to visualize the depth clouds. Two different
 point sets are published with following topic names:
 
--   \'\'\'/depth_non_filtered :\'\'\' raw data from the pmd camera.
--   \'\'\'/depth_filtered : \'\'\' after applying amplitude threshold,
-    if selected.
+-   **/depth_non_filtered :** raw data from the pmd camera.
+-   **/depth_filtered : ** after applying amplitude threshold, if
+    selected.
 
 To do this please perform the following steps:
 
 1\. In the \"Display\" panel on the left, open the first group of
 settings called \"Global Options\", set the option \"Fixed frame\" to
-\'\'\'/tf_argos3d\'\'\' 1. At the bottom in \"Display\" click on the
-button \'\'\'add\'\'\' to open a dialog titled \"Create
-visualization\" 1. In the dialog opened after, choose the tab \"By
-topic\" and select the \'\'\'/depth_non_filtered\'\'\' topic.
+**/tf_argos3d** 1. At the bottom in \"Display\" click on the button
+**add** to open a dialog titled \"Create visualization\" 1. In the
+dialog opened after, choose the tab \"By topic\" and select the
+**/depth_non_filtered** topic.
 
 ## Using filters and parameters configuration
 
@@ -275,25 +272,24 @@ sudo cp 10-pmd-ubuntu.rules /etc/udev/rules.d/
 Following camera parameters and filtering methods can be accessed using
 the dynamic reconfigure
 
-. \'\'\'Integration_Time :\'\'\' Modifies the integration time of the
+. **Integration_Time :** Modifies the integration time of the sensor.
+
+. **Modulation_Frequency :** Modifies the modulation frequency of the
 sensor.
 
-. \'\'\'Modulation_Frequency :\'\'\' Modifies the modulation frequency
-of the sensor.
-
-. \'\'\'Frame_Rate :\'\'\' Sets the frame rate by changing the Phase
-Time. \'\'\'NOTE\'\'\' Please be careful when setting values higher than
-40 FPS without using an extra cooling system. The camera can stress by
+. **Frame_Rate :** Sets the frame rate by changing the Phase Time.
+**NOTE** Please be careful when setting values higher than 40 FPS
+without using an extra cooling system. The camera can stress by
 overheating and be damaged.
 
-. \'\'\'Flip_X :\'\'\' Flip 3d data in the x coordinate.
+. **Flip_X :** Flip 3d data in the x coordinate.
 
-. \'\'\'Flip_Y :\'\'\' Flip 3d data in the y coordinate.
+. **Flip_Y :** Flip 3d data in the y coordinate.
 
-. \'\'\'Bilateral_Filter :\'\'\' Turns bilateral filtering on or off.
+. **Bilateral_Filter :** Turns bilateral filtering on or off.
 
-. \'\'\'Amplitude_Filter_On :\'\'\' Use the amplitude filter or not.
+. **Amplitude_Filter_On :** Use the amplitude filter or not.
 
-. \'\'\'Amplitude_Threshold :\'\'\' Image pixels with smaller amplitude
-values will be filtered out. Amplitude_Filter_On status needs to be true
-to apply this filter value.
+. **Amplitude_Threshold :** Image pixels with smaller amplitude values
+will be filtered out. Amplitude_Filter_On status needs to be true to
+apply this filter value.

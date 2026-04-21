@@ -21,11 +21,11 @@ dictionary: {a: b, c: d}
 YAML dictionaries can occur as the argument to the \`load\` and \`set\`
 commands of \`rosparam\`. Dictionaries in this context are interpreted
 differently from namespace dictionaries that are set as the value of a
-parameter (e.g. from a C++ or Python node). Instead of \'\'replacing\'\'
-a parameter namespace, dictionaries \'\'in \`rosparam\`\'\' are unpacked
-into individual parameters to be set on the Parameter Server. Thus,
-\`rosparam\` dictionaries can be thought of as \'\'adding\'\' new values
-to a parameter namespace.
+parameter (e.g. from a C++ or Python node). Instead of *replacing* a
+parameter namespace, dictionaries *in \`rosparam\`* are unpacked into
+individual parameters to be set on the Parameter Server. Thus,
+\`rosparam\` dictionaries can be thought of as *adding* new values to a
+parameter namespace.
 
 There are also special converters for angle radian/degree
 representations. Any Python-legal mathematical expression can be used
@@ -95,7 +95,7 @@ value.```
 $ rosparam get parameter_name
 ```
 
-\`-p\` Pretty-print output. \'\'WARNING: this is not YAML-safe\'\'.
+\`-p\` Pretty-print output. *WARNING: this is not YAML-safe*.
 
 \`-v\` Show verbose output.
 
@@ -106,10 +106,9 @@ value. \`parameter-value\` is required unless \`\--textfile\` or
 \`\--binfile\` are specified. ```
 $ rosparam set parameter_name value
 ```NOTE: if parameter
-value is a dictionary, this will \'\'add\'\' to the currently set
-values.\
-\'\'Examples\'\': Setting a list with one as a string, integer, and
-float: ```
+value is a dictionary, this will *add* to the currently set values.\
+*Examples*: Setting a list with one as a string, integer, and float:
+```
 $ rosparam set /foo "['1', 1, 1.0]"
 ```
 
@@ -162,7 +161,7 @@ angle2: deg(180)
 
 \`load \<yaml-file\> \[namespace\]\` Load parameters from a YAML file
 into the specified \`\[namespace\]\` (defaults to \`/\`). NOTE: this
-will \'\'add\'\' to the currently set values.```
+will *add* to the currently set values.```
 angle1: rad(2*pi)
 angle2: deg(180)
 ```4

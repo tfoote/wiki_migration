@@ -20,8 +20,8 @@ Blob parameters are specified to \`cmvision\` using two components:
 -   Blob threshold parameters in \`YUV\` color space, specified as
     follows: (min_y:max_y, min_u:max_u, min_v:max_v)
 
-Example \`colors.txt\` for detecting a \'\'Research Robot Red\'\' RWI
-B21r ```
+Example \`colors.txt\` for detecting a *Research Robot Red* RWI B21r
+```
 [colors]
 (159,  62, 71) 0.000000 7 ResearchRobotRed
 

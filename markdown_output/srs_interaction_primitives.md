@@ -77,7 +77,7 @@ message.
 #### Clickable positions
 
 Clickable positions can be added to the scene using
-\'\'/clickable_positions\'\' service or ClickablePositions action.
+*/clickable_positions* service or ClickablePositions action.
 
 By clicking on the position are it\'s coordinates published on the
 specified topic.
@@ -85,13 +85,13 @@ specified topic.
 #### Robot\'s pose prediction
 
 For visualization of robot\'s predicted movement positions is provided
-service \'\'/robot_pose_prediction\'\'. Position are visualized using
+service */robot_pose_prediction*. Position are visualized using
 [Markers](http://www.ros.org/wiki/rviz/DisplayTypes/Marker).
 
 Service takes 2 arguments:
 
--   \'\'\'geometry_msgs/Pose\[\] positions\'\'\' - predicted positions
--   \'\'\'ttl\'\'\' - markers lifetime
+-   **geometry_msgs/Pose\[\] positions** - predicted positions
+-   **ttl** - markers lifetime
 
 ![\|width=80%](attachment:robot_pose_prediction.png)
 
@@ -99,64 +99,64 @@ Service takes 2 arguments:
 
 ### Nodes
 
-  -- --------------------------------------- -- ------------------------------ -- ------------------------------------------------------ --
-     \'\'\'Node Name\'\'\'                      \'\'\'Published Topics\'\'\'      \'\'\'Description\'\'\'                                
-     interaction_primitives_service_server                                        This node publishes interaction_primitives services.   
-  -- --------------------------------------- -- ------------------------------ -- ------------------------------------------------------ --
+  -- --------------------------------------- -- ---------------------- -- ------------------------------------------------------ --
+     **Node Name**                              **Published Topics**      **Description**                                        
+     interaction_primitives_service_server                                This node publishes interaction_primitives services.   
+  -- --------------------------------------- -- ---------------------- -- ------------------------------------------------------ --
 
 ### Services
 
 All services starts with prefix `/interaction_primitives`
 
-  -- ------------------------------- -- ------------------- -- --------------------------- -- ---------------------------------------------------- --
-     \'\'\'Service Name\'\'\'           \'\'\'Input\'\'\'      \'\'\'Output\'\'\'             \'\'\'Description\'\'\'                              
-     /add_billboard                                                                           Adds billboard to the scene                          
-     /add_bounding_box                                                                        Adds Bounding Box to the scene                       
-     /add_plane                                                                               Adds Plane to the scene                              
-     /add_plane_polygon                                                                       Adds Plane Polygon to the scene                      
-     /add_object                                                                              Adds Object to the scene                             
-     /add_unknown_object                                                                      Adds Unknown Object to the scene                     
-     /remove_primitive                                                                        Removes primitive form the scene                     
-     /change_description                                                                                                                           
-     /change_pose                                                                             Changes primitive\'s description                     
-     /change_scale                                                                            Changes primitive\'s scale                           
-     /change_color                                                                            Changes primitive\'s color                           
-     /change_direction                                                                        Changes billboard\'s movement direction              
-     /change_velocity                                                                         Changes billboard\'s movement velocity               
-     /set_pregrasp_position                                                                   Sets pre-grasp position                              
-     /remove_pregrasp_position                                                                Removes pre-grasp position                           
-     /get_update_topic                                                                        Gets update topic for specified action (type)        
-     /set_allow_object_interaction                                                            Allows od denies interaction with specified Object   
-     /get_billboard                                            Gets billboard                                                                      
-     /get_bounding_box                                         Ges Bounding Box                                                                    
-     /get_plane                                                Gets Plane                                                                          
-     /get_object                                               Gets Object                                                                         
-     /get_unknown_object                                       Gets Unknown Object                                                                 
-     /clickable_positions                                      Shows clickable positions                                                           
-     /robot_pose_prediction                                                                   Shows predicted positions of robot\'s movement       
-  -- ------------------------------- -- ------------------- -- --------------------------- -- ---------------------------------------------------- --
+  -- ------------------------------- -- ----------- -- --------------------------- -- ---------------------------------------------------- --
+     **Service Name**                   **Input**      **Output**                     **Description**                                      
+     /add_billboard                                                                   Adds billboard to the scene                          
+     /add_bounding_box                                                                Adds Bounding Box to the scene                       
+     /add_plane                                                                       Adds Plane to the scene                              
+     /add_plane_polygon                                                               Adds Plane Polygon to the scene                      
+     /add_object                                                                      Adds Object to the scene                             
+     /add_unknown_object                                                              Adds Unknown Object to the scene                     
+     /remove_primitive                                                                Removes primitive form the scene                     
+     /change_description                                                                                                                   
+     /change_pose                                                                     Changes primitive\'s description                     
+     /change_scale                                                                    Changes primitive\'s scale                           
+     /change_color                                                                    Changes primitive\'s color                           
+     /change_direction                                                                Changes billboard\'s movement direction              
+     /change_velocity                                                                 Changes billboard\'s movement velocity               
+     /set_pregrasp_position                                                           Sets pre-grasp position                              
+     /remove_pregrasp_position                                                        Removes pre-grasp position                           
+     /get_update_topic                                                                Gets update topic for specified action (type)        
+     /set_allow_object_interaction                                                    Allows od denies interaction with specified Object   
+     /get_billboard                                    Gets billboard                                                                      
+     /get_bounding_box                                 Ges Bounding Box                                                                    
+     /get_plane                                        Gets Plane                                                                          
+     /get_object                                       Gets Object                                                                         
+     /get_unknown_object                               Gets Unknown Object                                                                 
+     /clickable_positions                              Shows clickable positions                                                           
+     /robot_pose_prediction                                                           Shows predicted positions of robot\'s movement       
+  -- ------------------------------- -- ----------- -- --------------------------- -- ---------------------------------------------------- --
 
 ### Messages
 
-  -- ---------------------- -- --------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------- --
-     \'\'\'Msg Name\'\'\'      \'\'\'Content\'\'\'                                                                              \'\'\'Description\'\'\'                                                          
-     PrimitiveType             [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PrimitiveType.html)         Types of Primitives                                                              
-     BillboardType             [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/BillboardType.html)         Types of Billboard                                                               
-     PoseType                  [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PoseType.html)              Specifies if the coordinates are in the center or in the base of the primitive   
-     MenuClicked               [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/MenuClicked.html)           Message for update topic                                                         
-     MovementChanged           [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/MovementChanged.html)       Message for update topic                                                         
-     PoseChanged               [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PoseChanged.html)           Message for update topic                                                         
-     ScaleChanged              [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/ScaleChanged.html)          Message for update topic                                                         
-     TagChanged                [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/TagChanged.html)            Message for update topic                                                         
-     PositionClicked           [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PositionsClicked.html)      Message for position clicked topic                                               
-  -- ---------------------- -- --------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------- --
+  -- ----------------- -- --------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------- --
+     **Msg Name**         **Content**                                                                                      **Description**                                                                  
+     PrimitiveType        [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PrimitiveType.html)         Types of Primitives                                                              
+     BillboardType        [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/BillboardType.html)         Types of Billboard                                                               
+     PoseType             [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PoseType.html)              Specifies if the coordinates are in the center or in the base of the primitive   
+     MenuClicked          [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/MenuClicked.html)           Message for update topic                                                         
+     MovementChanged      [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/MovementChanged.html)       Message for update topic                                                         
+     PoseChanged          [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PoseChanged.html)           Message for update topic                                                         
+     ScaleChanged         [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/ScaleChanged.html)          Message for update topic                                                         
+     TagChanged           [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/TagChanged.html)            Message for update topic                                                         
+     PositionClicked      [content](http://ros.org/doc/api/srs_interaction_primitives/html/msg/PositionsClicked.html)      Message for position clicked topic                                               
+  -- ----------------- -- --------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------- --
 
 ### Published topics
 
 All topics starts with prefix `interaction_primitives`.
 
   -- ----------------------------------------- -- -------------------------------------------- -- --------------------------------------------------------------- --
-     \'\'\'Topic Name\'\'\'                       \'\'\'Message\'\'\'                             \'\'\'Description\'\'\'                                         
+     **Topic Name**                               **Message**                                     **Description**                                                 
      /primitive_name/update/pose_changed          srs_interaction_primitives/PoseChanged          Publishes pose changes of the primitive                         
      /primitive_name/update/scale_changed         srs_interaction_primitives/ScaleChanged         Publishes scale changes of the primitive                        
      /primitive_name/update/menu_clicked          srs_interaction_primitives/MenuClicked          Publishes information about menu interaction of the primitive   
@@ -211,8 +211,8 @@ rosrun rviz rviz
 ```{=html}
 <!-- -->
 ```
--   Add \'\'\'Interactive Marker Display\'\'\' and set \'\'\'Update
-    Topic\'\'\' to `/interaction_primitives/update`.
+-   Add **Interactive Marker Display** and set **Update Topic** to
+    `/interaction_primitives/update`.
 
 Now you can call services and add or update Primitives.
 

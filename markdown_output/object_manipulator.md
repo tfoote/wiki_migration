@@ -47,14 +47,14 @@ The object_manipulator provides two
     previous Pickup action execution, this information is returned by
     the Pickup action.
 -   Note that, in general place_location is intended to show where you
-    want the \'\'\'object to go in the world\'\'\', while grasp is meant
-    to show how the object is grasped (where the \'\'\'hand is relative
-    to the object\'\'\'). Ultimately, what matters is where the hand
-    goes when you place the object; this is computed internally by
-    simply \'\'\'multiplying the two transforms\'\'\' above. If you
-    already know where you want the \'\'\'hand to go in the world\'\'\'
-    when placing, feel free to put that in the place_location, and make
-    the transform in grasp equal to identity.
+    want the **object to go in the world**, while grasp is meant to show
+    how the object is grasped (where the **hand is relative to the
+    object**). Ultimately, what matters is where the hand goes when you
+    place the object; this is computed internally by simply
+    **multiplying the two transforms** above. If you already know where
+    you want the **hand to go in the world** when placing, feel free to
+    put that in the place_location, and make the transform in grasp
+    equal to identity.
 -   the action will then:
 -   check if it possible to place the object at the desired location
     without colliding with the environment
@@ -249,8 +249,8 @@ environment.
 
 For unknown objects, we use a module that operates strictly on the
 perceived point cluster. Details on this module can be found in the
-following paper: \'\'\'Contact-Reactive Grasping of Objects with Partial
-Shape Information\'\'\' that Willow researchers presented at the
+following paper: **Contact-Reactive Grasping of Objects with Partial
+Shape Information** that Willow researchers presented at the
 [ICRA 2010 Workshop on Mobile Manipulation](http://mobilemanipulation.org/mediawiki/index.php/Schedule).
 
 For recognized objects, our model database also contains a large number
@@ -293,12 +293,12 @@ The motion planner only works in collision-free robot states. Grasping,
 by nature, means that the gripper must get very close to the object, and
 that immediately after grasping, the object, now attached to the
 gripper, is very close to the table. Since we can not use the motion
-planner for these states, we introduce the notion of a \'\'\'pre-grasp
-position\'\'\': a pre-grasp is very close to the final grasp position,
-but far enough from the object that the motion planner will compute a
-path to it. The same happens after pickup: we use a \'\'\'lift
-position\'\'\' which is far enough above the table that the motion
-planner can be used from there.
+planner for these states, we introduce the notion of a **pre-grasp
+position**: a pre-grasp is very close to the final grasp position, but
+far enough from the object that the motion planner will compute a path
+to it. The same happens after pickup: we use a **lift position** which
+is far enough above the table that the motion planner can be used from
+there.
 
 To plan motion from pre-grasp to grasp and from grasp to lift we use the
 [interpolated_ik_motion_planner](interpolated_ik_motion_planner), while
@@ -339,23 +339,22 @@ starting_arm_position
 
 ![](attachment:grasp1.png)
 
-\'\'Interpolated IK path from pre-grasp to grasp planned for a grasp
-point of an unknown object\'\'
+*Interpolated IK path from pre-grasp to grasp planned for a grasp point
+of an unknown object*
 
 ![](attachment:grasp2.png)
 
-\'\'A path to get the arm to the pre-grasp position has been planned
-using the motion planner and executed.\'\'
+*A path to get the arm to the pre-grasp position has been planned using
+the motion planner and executed.*
 
 ![](attachment:grasp3.png)
 
-\'\'The interpolated IK path from pre-grasp to grasp has been
-executed.\'\'
+*The interpolated IK path from pre-grasp to grasp has been executed.*
 
 ![](attachment:grasp4.png)
 
-\'\'The object has been lifted. Note that the object Collision Model has
-been attached to the gripper.\'\'
+*The object has been lifted. Note that the object Collision Model has
+been attached to the gripper.*
 
 ### Reactive Grasping Using Tactile Sensing
 
@@ -370,7 +369,7 @@ We can correct for some of these errors by using the tactile sensors in
 the fingertips. We use a grasp execution module that slots in during the
 move from pre-grasp to grasp and uses a set of heuristics to correct for
 errors detected by the tactile sensors. Details on this module can be
-found in the following paper: \'\'\'Contact-Reactive Grasping of Objects
-with Partial Shape Information\'\'\' that Willow researchers presented
-at the
+found in the following paper: **Contact-Reactive Grasping of Objects
+with Partial Shape Information** that Willow researchers presented at
+the
 [ICRA 2010 Workshop on Mobile Manipulation](http://mobilemanipulation.org/mediawiki/index.php/Schedule).

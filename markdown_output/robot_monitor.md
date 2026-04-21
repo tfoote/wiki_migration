@@ -33,12 +33,12 @@ normal time again.
 
 ![](attachment:main.png)
 
-The \'\'Errors\'\' and \'\'Warnings\'\' boxes always show any available
-errors or warnings respectively in a list view \-- i.e. there is no tree
+The *Errors* and *Warnings* boxes always show any available errors or
+warnings respectively in a list view \-- i.e. there is no tree
 structure.
 
-The \'\'All\'\' box contains the tree of all the items in the
-diagnostics tree, with errors and warnings signaled by icons.
+The *All* box contains the tree of all the items in the diagnostics
+tree, with errors and warnings signaled by icons.
 
 The timeline on the bottom allows you to scrub through time to help
 debug intermittent errors. When you start scrubbing through time the

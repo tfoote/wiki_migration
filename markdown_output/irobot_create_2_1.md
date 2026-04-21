@@ -45,8 +45,8 @@ Additionally, you can check ROS/Create functionality by running:
 rosrun irobot_create_2_1 bumpGo.py
 ```
 
-\'\'while\'\' also running the driver. This will run a primitive bump
-and go program using the ROS driver.
+*while* also running the driver. This will run a primitive bump and go
+program using the ROS driver.
 [bumpGo.py](http://code.google.com/p/brown-ros-pkg/source/browse/trunk/unstable/irobot_create_2_1/bin/bumpGo.py?spec=svn353&r=353 )
 is a good place for new ROS users to get started with writing Brown ROS
 driver based programs.

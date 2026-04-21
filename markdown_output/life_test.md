@@ -68,22 +68,19 @@ more than one test.
 
 The fields under the \"test\" tag include:
 
--   \'\'\'serial\'\'\' - First 7 serial digits number of the device
-    under test.
--   \'\'\'name\'\'\' - Full name of test
--   \'\'\'id\'\'\' - ID of test, used for creating test BoM
--   \'\'\'short\'\'\' - Short name of test, displayed on title
--   \'\'\'desc\'\'\' - Test decription. Displayed in the
-    \"instructions\" panel
--   \'\'\'script\'\'\' - Launch file to load. Path is given relative to
-    the \`life_test\` package.
--   \'\'\'power\'\'\' - Whether the test needs power board
-    enabled/disabled
--   \'\'\'type\'\'\' - String for type of test. Generally \"Life Test\".
--   \'\'\'duration\'\'\' - Test duration in hours. Set \"0\" or leave
-    empty for continuous. Default: 0
--   \'\'\'debug\'\'\' - Whether the test can run outside of debug mode
-    (default: False)
+-   **serial** - First 7 serial digits number of the device under test.
+-   **name** - Full name of test
+-   **id** - ID of test, used for creating test BoM
+-   **short** - Short name of test, displayed on title
+-   **desc** - Test decription. Displayed in the \"instructions\" panel
+-   **script** - Launch file to load. Path is given relative to the
+    \`life_test\` package.
+-   **power** - Whether the test needs power board enabled/disabled
+-   **type** - String for type of test. Generally \"Life Test\".
+-   **duration** - Test duration in hours. Set \"0\" or leave empty for
+    continuous. Default: 0
+-   **debug** - Whether the test can run outside of debug mode (default:
+    False)
 
 #### Test Room Configuration
 
@@ -106,12 +103,12 @@ computer. All slaves are given in \"bay\" tags.
 
 Fields for \"bay\" tag:
 
--   \'\'\'name\'\'\' - Name of bay.
--   \'\'\'machine\'\'\' - Hostname of bay
--   \'\'\'board\'\'\' - Power board serial (ex: 1000). Optional
--   \'\'\'breaker\'\'\' - 0, 1, 2. Optional If the power board and
-    breaker aren\'t specified, tests that need power won\'t be able to
-    run on that bay.
+-   **name** - Name of bay.
+-   **machine** - Hostname of bay
+-   **board** - Power board serial (ex: 1000). Optional
+-   **breaker** - 0, 1, 2. Optional If the power board and breaker
+    aren\'t specified, tests that need power won\'t be able to run on
+    that bay.
 
 Note that a single machine can have multiple bays.
 

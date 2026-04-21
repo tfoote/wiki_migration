@@ -3,12 +3,12 @@
 This package contains launch files for the ee_cart_imped control stack.
 There are two launch files:
 
--   \'\'\'ee_cart_imped.launch\'\'\' inhibits the usual arm controllers
-    and starts the EECartImped controller on both arms. The arm
-    controllers cannot be re-started until this launch file is killed.
-    To launch the controller on just one arm, use the launch files in
+-   **ee_cart_imped.launch** inhibits the usual arm controllers and
+    starts the EECartImped controller on both arms. The arm controllers
+    cannot be re-started until this launch file is killed. To launch the
+    controller on just one arm, use the launch files in
     [ee_cart_imped_action](ee_cart_imped_action)/launch.
--   \'\'\'load_ee_cart_imped.launch\'\'\' loads but does not start the
+-   **load_ee_cart_imped.launch** loads but does not start the
     EECartImped controller. The controller can be stopped and started,
     allowing it to be swapped out with other controllers, using the
     [pr2_controller_interface](http://www.ros.org/doc/electric/api/pr2_controller_manager/html/pr2__controller__manager__interface_8py.html)

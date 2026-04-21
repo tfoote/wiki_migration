@@ -1,6 +1,6 @@
-Imagine you whould never have to write a \'\'\'CMakeLists.txt\'\'\' file
-again. Never forget to install everything, no need to update it whenever
-you add a file, not time lost for figuring out how to call and use
+Imagine you whould never have to write a **CMakeLists.txt** file again.
+Never forget to install everything, no need to update it whenever you
+add a file, not time lost for figuring out how to call and use
 find_package for your dependencies, etc.
 
 Well, this is exactly what mrt_cmake_modules do for you! The only thing

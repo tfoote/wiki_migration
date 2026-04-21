@@ -1,13 +1,12 @@
 # Epson IMU ROS2 Node UART \*\* Deprecated \*\*
 
-\'\'\'**\* NOTE: This package has been superceded by
-[ Epson IMU ROS2 Driver Node](ess_imu_driver2 )**\*\'\'\'
+****\* NOTE: This package has been superceded by
+[ Epson IMU ROS2 Driver Node](ess_imu_driver2 )\*****
 
-\'\'\'**\* This webpage will no longer be updated **\*\'\'\'
-\-\-\-\-\-\-\-\-\-\-\--
+****\* This webpage will no longer be updated \* \-\-\-\-\-\-\-\-\-\-\--
 ![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
 ![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
-![\|align=\"right\"](attachment:ess_sensors/g365.jpg)
+![\|align=\"right\"](attachment:ess_sensors/g365.jpg)****
 
 ## Overview
 
@@ -38,12 +37,12 @@
     recommended if possible (i.e. embedded platforms)
 -   Below is an example IMU UART connection when using a Raspberry Pi:
 
-  -- ----------------------- -- ------------------------------------------- --
-     \'\'\'Epson IMU\'\'\'      \'\'\'Raspberry Pi\'\'\'                    
-     EPSON_SIN Input            RPI_GPIO_P1_8 (GPIO14/UART_TXD) Output      
-     EPSON_SOUT Output          RPI_GPIO_P1_10 (GPIO15/UART_RXD) Input      
-     EPSON_RESET Input          RPI_GPIO_P1_15 (GPIO22) Output \*Optional   
-  -- ----------------------- -- ------------------------------------------- --
+  -- ------------------- -- ------------------------------------------- --
+     **Epson IMU**          **Raspberry Pi**                            
+     EPSON_SIN Input        RPI_GPIO_P1_8 (GPIO14/UART_TXD) Output      
+     EPSON_SOUT Output      RPI_GPIO_P1_10 (GPIO15/UART_RXD) Input      
+     EPSON_RESET Input      RPI_GPIO_P1_15 (GPIO22) Output \*Optional   
+  -- ------------------- -- ------------------------------------------- --
 
 -   When connecting the Epson G552PR to a ROS2 system using a RS422 UART
     interface:
@@ -51,13 +50,13 @@
     I/O signal levels
 -   Below is an example IMU RS422 connection to a RS422 Host:
 
-  -- ----------------------- -- ------------------------ --
-     \'\'\'Epson IMU\'\'\'      \'\'\'RS422 Host\'\'\'   
-     EPSON_TD+ Output           HOST_RD+ Input           
-     EPSON_TD- Output           HOST_RD- Input           
-     EPSON_RD+ Input            HOST_TD+ Output          
-     EPSON_RD- Input            HOST_TD- Output          
-  -- ----------------------- -- ------------------------ --
+  -- ------------------ -- ----------------- --
+     **Epson IMU**         **RS422 Host**    
+     EPSON_TD+ Output      HOST_RD+ Input    
+     EPSON_TD- Output      HOST_RD- Input    
+     EPSON_RD+ Input       HOST_TD+ Output   
+     EPSON_RD- Input       HOST_TD- Output   
+  -- ------------------ -- ----------------- --
 
 ## ROS2 Node
 
@@ -70,13 +69,12 @@
 
 ### Published Topics
 
--   For IMU models that support \'\'quaternion output function\'\' the
+-   For IMU models that support *quaternion output function* the
     orientation field in [sensor_msgs/Imu](sensor_msgs/Imu) can update
-    with valid data and publish on \'\'\'imu/data\'\'\'
--   For IMU models that \'\'do not\'\' support \'\'quaternion output
-    function\'\' the orientation field in
-    [sensor_msgs/Imu](sensor_msgs/Imu) \'\'will not\'\' update with
-    valid data and publish on \'\'\'imu/data_raw\'\'\'
+    with valid data and publish on **imu/data**
+-   For IMU models that *do not* support *quaternion output function*
+    the orientation field in [sensor_msgs/Imu](sensor_msgs/Imu) *will
+    not* update with valid data and publish on **imu/data_raw**
 
 ### Launch File
 
@@ -85,19 +83,18 @@
     in the launch folder of this package is used to pass the init
     parameters to configure the IMU at runtime using ros2 launch
 -   Changes to init parameters by editing the launch file does not
-    require rebuilding with \'\'colcon\'\'
--   \'\'\'Typically, the user only needs to modify \'\'imu_dout_rate\'\'
-    & \'\'imu_filter_sel\'\' as needed based on system
-    requirements\'\'\'
+    require rebuilding with *colcon*
+-   **Typically, the user only needs to modify *imu_dout_rate* &
+    *imu_filter_sel* as needed based on system requirements**
 -   Only use the specific IMU model launch file associated with the same
-    IMU model built using \'\'colcon build\'\'
+    IMU model built using *colcon build*
 
 ### Timestamping With EXT Signal (Time Correction)
 
 -   The G3xx series Epson IMU has 3.3V I/O EXT (GPIO2) pin which can be
     connected to a cyclic external sync signal such as a GNSS 1PPS
     signal
--   When the init parameter \'\'time_correction_en\'\' is enabled
+-   When the init parameter *time_correction_en* is enabled
 -   The ROS2 driver attempts to correct the time stamp field in
     [sensor_msgs/Imu](sensor_msgs/Imu) based on the reset counter value
     (measured delay since latest GNSS 1PPS)
@@ -110,18 +107,16 @@
 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
 1\. Place this package (including folders) into a new folder within your
-colcon workspace \'\'src/\'\' folder.
+colcon workspace *src*/ folder.
 
 2\. Modify the [ CMakeLists.txt](CMakeLists.txt ) to select the desired
 Epson IMU model that is being used in the ROS2 system.
 
--   \'\'\'NOTE: You \*MUST\* re-build using colcon when changing IMU
-    models or any changes in the
-    [ CMakeLists.txt](CMakeLists.txt )\'\'\'
+-   **NOTE: You \*MUST\* re-build using colcon when changing IMU models
+    or any changes in the [ CMakeLists.txt](CMakeLists.txt )**
 
-3\. From the colcon workspace folder run \'\'colcon build\'\' to build
-all changed ROS2 packages located in the \<colcon_workspace\>/src/
-folder.
+3\. From the colcon workspace folder run *colcon build* to build all
+changed ROS2 packages located in the \<colcon_workspace\>/src/ folder.
 
 4\. Reload the current ROS2 environment variables that may have changed
 after the colcon build process.
@@ -135,8 +130,8 @@ From the <colcon_workspace>: source install/setup.bash
 to set your desired IMU init parameters for the specific IMU model in
 the launch folder that you selected and built
 
--   \'\'\'Typically, only the \'\'imu_dout_rate\'\' &
-    \'\'imu_filter_sel\'\' needs to be edited\'\'\'
+-   **Typically, only the *imu_dout_rate* & *imu_filter_sel* needs to be
+    edited**
 
 ## Running the ROS2 Node
 
@@ -174,8 +169,8 @@ the launch folder that you selected and built
 -   The example below reads the latency_timer setting for /dev/ttyUSB0
     which returns 16msec
 -   Then, the latency_timer is set to 1msec, and confirmed by readback.
--   \'\'\'NOTE:\'\'\' May require root (sudo su) access on your system
-    to modify.
+-   **NOTE:** May require root (sudo su) access on your system to
+    modify.
 
 ```
 cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
@@ -191,8 +186,8 @@ cat /sys/bus/usb-serial/devices/ttyUSB0/latency_timer
 -   This will have the same effect as setting the latency_timer to
     1msec.
 -   This can be confirmed by running the setserial command again.
--   \'\'\'NOTE:\'\'\' You may need to install setserial with \'\'sudo
-    apt install setserial\'\'
+-   **NOTE:** You may need to install setserial with *sudo apt install
+    setserial*
 
 ```
 user@user-VirtualBox:~$ setserial /dev/ttyUSB0

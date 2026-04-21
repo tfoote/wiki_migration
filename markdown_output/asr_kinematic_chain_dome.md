@@ -22,11 +22,10 @@ red Box is the Flock of Birds magnet tracking system.
 The kinematic chain consists of two major parts: The camera-system (PTU,
 Guppy-Cameras and Kinect) and the Flock of Birds magnet tracking system
 (Receiver and Tracker). Colors form the picture above. The fixed
-reference Frame is in the PTU and is called \'\'\'/ptu_pan_link\'\'\'.
-There is an identity transformation to \'\'\'/map\'\'\' which is mostly
-used.
+reference Frame is in the PTU and is called **/ptu_pan_link**. There is
+an identity transformation to **/map** which is mostly used.
 
-\'\'\'Map to Flock of Birds\'\'\'
+**Map to Flock of Birds**
 
 -   /map - the origin of the map in which the robot is located (=
     /ptu_pan_link)
@@ -36,7 +35,7 @@ used.
 -   /tracker_left_raw - the left tracker
 -   /tracker_right_raw - the right tracker
 
-\'\'\'Map to Camera \'\'\'
+**Map to Camera **
 
 -   /ptu_pan_link - the origin of the pan joint
 -   /ptu_tilt_link - the origin of the tilt joint
@@ -44,7 +43,7 @@ used.
 -   /camera_left_frame - the left camera\'s origin
 -   /camera_right_frame - the right camera\'s origin
 
-\'\'\'Additional optional TF-Links for kinect\'\'\'
+**Additional optional TF-Links for kinect**
 
 -   /kinect_depth_frame - the kinects depth camera origin
 -   /kinect_rgb_frame - the kinects RGB camera frame
@@ -55,29 +54,27 @@ An total overview of the frames:
 
 ## Usage
 
--   \'\'\'dome_mock.launch\'\'\': Starts the \'\'\'simulation of the
-    PTU\'\'\' and launches the TF-publisher of the dome, as well as its
-    visualization.
--   \'\'\'dome.launch\'\'\': Starts the \'\'\'real PTU\'\'\' and
-    launches the transformation publisher of the Dome, as well as its
-    visualization.
--   \'\'\'dome_with_fob.launch\'\'\': Starts the \'\'\'real PTU\'\'\'
-    and launches the transformation publisher of the Dome, as well as
-    its visualization. In addition the Flock of Birds server is started
-    and its TF-publisher are added to the kinematic chain.
--   \'\'\'dome_with_fob.sh\'\'\': Same as dome_with_fob.launch but sets
-    system variables before launching, e. g. when the Flock of Birds
-    server is not on the same PC like the ROS_MASTER.
--   \'\'\'transformation_publisher_for_kinect_left.launch\'\'\': Adds to
-    the kinematic chain TF-Publisher form the normal camara System to
-    the kinect camera.
+-   **dome_mock.launch**: Starts the **simulation of the PTU** and
+    launches the TF-publisher of the dome, as well as its visualization.
+-   **dome.launch**: Starts the **real PTU** and launches the
+    transformation publisher of the Dome, as well as its visualization.
+-   **dome_with_fob.launch**: Starts the **real PTU** and launches the
+    transformation publisher of the Dome, as well as its visualization.
+    In addition the Flock of Birds server is started and its
+    TF-publisher are added to the kinematic chain.
+-   **dome_with_fob.sh**: Same as dome_with_fob.launch but sets system
+    variables before launching, e. g. when the Flock of Birds server is
+    not on the same PC like the ROS_MASTER.
+-   **transformation_publisher_for_kinect_left.launch**: Adds to the
+    kinematic chain TF-Publisher form the normal camara System to the
+    kinect camera.
 
 The TF is published at topic /tf. The visualization is available in the
 !RobotModel.
 
 ### Needed packages
 
-\'\'\'run depend: \'\'\'
+**run depend: **
 
 -   asr_flir_ptu_driver: TF of real and simulated PTU.
 -   asr_flock_of_birds: TF and sensordata of Flock of Birds magnet
@@ -112,5 +109,5 @@ above and
 
 ```
 roslauch asr_kinematic_chain_dome transformation_publishers_for_kinect_left.launch
-``` start rviz and\'\'\' enable the !RobotModel for
-visualization\'\'\'
+``` start rviz and** enable the !RobotModel for
+visualization**

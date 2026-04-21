@@ -53,11 +53,11 @@ node.1 {
 }
 ```
 
-  -- ------------------------------------------------------------------------------------------ -- ------------------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> \'\'\'Input\'\'\'      \'\'\'Output\'\'\'                                            
-     ![Depth\|width=100%](attachment:depth.png)                                                    ![Disparity\|width=100%](attachment:disparity.png)            
-     Depth image                                                                                   Disparity image (colorized by [disparity_view](image_view))   
-  -- ------------------------------------------------------------------------------------------ -- ------------------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
+     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> **Input**      **Output**                                                    
+     ![Depth\|width=100%](attachment:depth.png)                                            ![Disparity\|width=100%](attachment:disparity.png)            
+     Depth image                                                                           Disparity image (colorized by [disparity_view](image_view))   
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
 
 ```clearsilver
   sub {
@@ -100,11 +100,11 @@ node.2 {
 }
 ```
 
-  -- ------------------------------------------------------------------------------------------ -- ----------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 46%\"\> \'\'\'Input\'\'\'      \'\'\'Output\'\'\'                                    
-     ![Depth\|width=100%](attachment:depth.png)                                                    ![Point cloud\|width=100%](attachment:rviz_xyz.png)   
-     Depth image                                                                                   Point cloud, colorized by distance along Z-axis       
-  -- ------------------------------------------------------------------------------------------ -- ----------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
+     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 46%\"\> **Input**      **Output**                                            
+     ![Depth\|width=100%](attachment:depth.png)                                            ![Point cloud\|width=100%](attachment:rviz_xyz.png)   
+     Depth image                                                                           Point cloud, colorized by distance along Z-axis       
+  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
 
 ```clearsilver
   sub {
@@ -135,13 +135,13 @@ node.3 {
 }
 ```
 
-  -- ------------------------------------------------------------------------------------------ -- -------------------- ------------------------------------------------------------ --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 40%\"\> \'\'\'Input\'\'\'      \'\'\'Output\'\'\'                                                                
-     ![Depth\|width=100%](attachment:depth_reg.png)                                                \<                   3\> ![Point cloud\|width=100%](attachment:rviz_xyzrgb.png)   
-     Registered depth image                                                                                                                                                          
-     ![RGB\|width=100%](attachment:rgb.jpg)                                                                                                                                          
-     RGB image                                                                                     Color point cloud                                                                 
-  -- ------------------------------------------------------------------------------------------ -- -------------------- ------------------------------------------------------------ --
+  -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
+     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 40%\"\> **Input**      **Output**                                                                       
+     ![Depth\|width=100%](attachment:depth_reg.png)                                        \<                  3\> ![Point cloud\|width=100%](attachment:rviz_xyzrgb.png)   
+     Registered depth image                                                                                                                                                 
+     ![RGB\|width=100%](attachment:rgb.jpg)                                                                                                                                 
+     RGB image                                                                             Color point cloud                                                                
+  -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
 
 ```clearsilver
   sub {
@@ -175,11 +175,11 @@ node.4 {
 }
 ```
 
-  -- ------------------------------------------------------------------------------------------ -- ----------------------------------------------------------- --
-     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> \'\'\'Input\'\'\'      \'\'\'Output\'\'\'                                          
-     ![Depth\|width=100%](attachment:depth.png)                                                    ![Registered depth\|width=100%](attachment:depth_reg.png)   
-     Depth image as captured by depth sensor                                                       Depth image registered to frame of separate RGB camera      
-  -- ------------------------------------------------------------------------------------------ -- ----------------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
+     \<tablestyle=\"width: 99%; text-align: center\" style=\"width: 50%\"\> **Input**      **Output**                                                  
+     ![Depth\|width=100%](attachment:depth.png)                                            ![Registered depth\|width=100%](attachment:depth_reg.png)   
+     Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera      
+  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
 
 ```clearsilver
   sub {

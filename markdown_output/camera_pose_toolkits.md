@@ -15,7 +15,7 @@ pipeline.
 
 ### Package Components
 
-\'\'\'transform_finder \'\'\'
+**transform_finder **
 
 This is the most important component inside this package. Its function
 can be illustrated using the following figure:
@@ -29,12 +29,12 @@ of the robot links. You want to add the new camera frame to the tf tree.
 In other words, you want to find out the \'question mark\'
 transformation in the figure.
 
-To do that, the \'\'\'transform_finder\'\'\' module will first utilize
-the camera_pose_calibration\'s results to find out the transformation
+To do that, the **transform_finder** module will first utilize the
+camera_pose_calibration\'s results to find out the transformation
 between the new cam frame and the urdf cam frame. Then it will look up
 tf to get the transformation between the urdf cam frame and the mounting
 frame (since both frames are already in the tf tree.). After that,
-\'\'\'transform_finder\'\'\' will automatically figure out the fixed
+**transform_finder** will automatically figure out the fixed
 transformation between the new camera frame and its mounting frame.
 
 Here are two examples setups on PR2:
@@ -64,13 +64,13 @@ not needed.
      ![\|height=\"512px\",width=\"682\"](attachment:pr2-head-mount.jpg)   
   -- -------------------------------------------------------------------- --
 
-\'\'\'urdf_updater\'\'\'
+**urdf_updater**
 
 This module converts transform_finder\'s output into
 [XML Robot Description Format (URDF)](http://www.ros.org/wiki/urdf/XML)
 snippet and then inserts it into your robot description file.
 
-\'\'\'static_transform_tf_broadcaster\'\'\'
+**static_transform_tf_broadcaster**
 
 This module collects transform_finder\'s outputs and publishes them to
 tf. transform_finder can send transforms between different frame pairs.
@@ -78,7 +78,7 @@ The broadcaster keeps track of the frame pairs and only save the most
 recent transform for each frame pair. Right before this module
 terminates, it saves all the transform messages into a bag.
 
-\'\'\'transform_message_saver\'\'\'
+**transform_message_saver**
 
 Every time transform_finder publishes a message to
 \'camera_pose_static_transform_update\' topic, this module saves it to a
@@ -98,7 +98,7 @@ for each topic; this module only works with the
 geometry_msgs::TransformStamped), but it can save multiple messages for
 this topic.
 
-\'\'\'transform_replay\'\'\'
+**transform_replay**
 
 This module extracts the transform messages from previously generated
 bag (either by tf broadcaster or transform_message_saver) and
@@ -112,7 +112,7 @@ rosrun camera_pose_toolkits transform_playback_node [your_bag_name]
 
 And all the transform messages in the bag are published to tf.
 
-\'\'\'camera_dispatcher & dispatcher_gui\'\'\'
+**camera_dispatcher & dispatcher_gui**
 
 These two modules together allow the user to dynamically switch the
 camera frames they want to calibrate (without restarting the
@@ -149,8 +149,8 @@ Note 2: the cal_optimzer node is a component of the
     Both cameras publishes image_rect and camera_info messages under
     their own namespace.
 -   The transformation between the urdf camera frame and the new
-    camera\'s mounting frame is published to tf. (\'\'\'Not needed\'\'\'
-    \'\'if the mounting frame happens to be the urdf camera frame\'\')
+    camera\'s mounting frame is published to tf. (**Not needed** *if the
+    mounting frame happens to be the urdf camera frame*)
 -   All the requirements mentioned in the
     [camera_pose_calibration](camera_pose_calibration) page.
 
@@ -160,33 +160,31 @@ Launching camera_pose_urdf_updater with arguments could look like this:
 
 ```
 roslaunch camera_pose_toolkits urdf_updater.launch new_cam_ns:=MS_Kinect/rgb urdf_cam_ns:=/wide_stereo/left mounting_frame:=torso_lift_link urdf_input_file:=/etc/ros/diamondback/urdf/robot.xml urdf_output_file:=/u/yiping/new.xml checker_rows:=4 checker_cols:=5 checker_size:=0.0249 headless:=1
-``` The \'\'\'urdf_updater.launch\'\'\' includes
-\'\'\'calibrate_2_camera.launch\'\'\', which is located in the
-\'\'\'launch_extrinsics\'\'\' directory in the camera_pose_calibration
-package path.
+``` The **urdf_updater.launch** includes
+**calibrate_2_camera.launch**, which is located in the
+**launch_extrinsics** directory in the camera_pose_calibration package
+path.
 
 The arguments:
 
--   \'\'\'new_cam_ns\'\'\': the name space of the newly added camera.
--   \'\'\'urdf_cam_ns\'\'\': the name space of the calibrated camera
-    (a.k.a. urdf camera).
+-   **new_cam_ns**: the name space of the newly added camera.
+-   **urdf_cam_ns**: the name space of the calibrated camera (a.k.a.
+    urdf camera).
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'checker_rows\'\'\': the number of checker corners
-    horizontally.
--   \'\'\'checker_cols\'\'\': the number of checker corners vertically.
--   \'\'\'checker_size\'\'\': the size of one checker (in meters).
--   \'\'\'urdf_input_file\'\'\': original urdf file (no information of
-    the new camera frame).
--   \'\'\'urdf_output_file\'\'\': updated urdf file (with information of
-    the new camera frame).
--   \'\'\'mounting_frame\'\'\': the id of the frame on which the new
-    camera is mounted
--   \'\'\'headless\'\'\': suppress the aggregated image view. (as you
-    can see, some of the arguments are prepared for
-    \'\'calibrate_2_camera.launch\'\')
+-   **checker_rows**: the number of checker corners horizontally.
+-   **checker_cols**: the number of checker corners vertically.
+-   **checker_size**: the size of one checker (in meters).
+-   **urdf_input_file**: original urdf file (no information of the new
+    camera frame).
+-   **urdf_output_file**: updated urdf file (with information of the new
+    camera frame).
+-   **mounting_frame**: the id of the frame on which the new camera is
+    mounted
+-   **headless**: suppress the aggregated image view. (as you can see,
+    some of the arguments are prepared for *calibrate_2_camera.launch*)
 
 As soon as you see the \"successfully ran optimization\" image (i.e.
 calibration finished), transform_finder will output an updated
@@ -194,7 +192,7 @@ transformation between the new camera and its mounting frame.
 
 By default, the cal_optimizer doesn\'t monitor the transformation
 between the urdf camera frame and the mounting frame, however,if during
-the calibration, the \'\'\'urdf camera frame\'\'\' moves relative to the
+the calibration, the **urdf camera frame** moves relative to the
 mounting frame, you would want the cal_optimizer node to know it and
 reset the cache for the previous measurements before running the
 optimization again.

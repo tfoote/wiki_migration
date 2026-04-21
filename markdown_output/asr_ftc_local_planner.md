@@ -127,14 +127,14 @@ Manually adapt the two packages
 [move_base](http://wiki.ros.org/move_base) and
 [nav_core](http://wiki.ros.org/nav_core?distro=kinetic):
 
-\'\'\'Move_base:\'\'\'
+**Move_base:**
 
 In the move_base package in file \"move_base.cpp\" at line 132 add:
 (After the initialization of the local planner)
 
 ```
 tc_->setGlobalCostmap(planner_costmap_ros_);
-``` \'\'\'Nav_core:\'\'\'
+``` **Nav_core:**
 
 In the nav_core package in file nav_core/include/base_local_planner.h
 
@@ -191,19 +191,19 @@ costmap you must update the global costmap. You must set the
 
 Then there are two ways to put a local obstacle into the global costmap:
 
-\'\'\'1. Activate the obstacle in the global_costmap.yaml:\'\'\'
+**1. Activate the obstacle in the global_costmap.yaml:**
 
 ```
 global_costmap/obstacle_layer:
     enabled: true
-``` \'\'\'OR\'\'\'
+``` **OR**
 
-\'\'\'2. Set the \"join_obstacle\" parameter of the ftc_local_planner to
-true:\'\'\'
+**2. Set the \"join_obstacle\" parameter of the ftc_local_planner to
+true:**
 
 ```
 join_obstacle: true
-``` \'\'\'Don\'t use both methods together!\'\'\'
+``` **Don\'t use both methods together!**
 
 ### Start system
 

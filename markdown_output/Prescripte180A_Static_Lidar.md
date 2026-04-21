@@ -33,21 +33,21 @@ desired.
 
 ## Features
 
-\'\'\'1 - Fully integrated module:\'\'\'
+**1 - Fully integrated module:**
 
 -Size:120x75mm
 
-\'\'\'2 - Fast and accurate long distance ranging:\'\'\'
+**2 - Fast and accurate long distance ranging:**
 
 -20 cm to 400 cm distance measurement
 
 -20 Hz ranging frequency
 
-\'\'\'3 - 180 degrees field of view:\'\'\'
+**3 - 180 degrees field of view:**
 
 -9 distance sensor with 20 deegres FOV
 
-\'\'\'4 - Easyintegration:\'\'\'
+**4 - Easyintegration:**
 
 -Software driver and code examples for turnkey ranging
 

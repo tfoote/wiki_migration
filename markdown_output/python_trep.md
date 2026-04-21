@@ -62,14 +62,13 @@ An example package called \`trep_urdf_demo\` is available at
 demos which can be called from launch files. After cloning the package
 to your ROS workspace, run the following command:
 
--   \'\'\'RRbot simulator:\'\'\' ```
+-   **RRbot simulator:** ```
 roslaunch trep_urdf_demo rrbot.launch
 ```
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Interactive marionette simulator:\'\'\'
-    ```
+-   **Interactive marionette simulator:** ```
 roslaunch trep_urdf_demo puppet.launch
 ```

@@ -14,14 +14,14 @@ The controller is an open-loop Jacobian-transpose force controller. At
 every point on the trajectory the desired stiffness or desired wrench is
 converted into a Cartesian force/wrench vector and ultimately into a
 joint torque vector using the transpose of the arm\'s instantaneous
-Jacobian matrix. No guarantee is made to the \'\'magnitude\'\' of the
-applied force/wrench/impedance because this is an open-loop controller.
-There is currently not adequate feedback on the arm to determine the
-applied force/wrench/impedance. Joint stiction, joint position limits,
-motor torque limits, and sometimes the arm configuration (at a
-singularity, for example) will cause the applied force/wrench/impedance
-to deviate from the desired values. Generally, unless the arm is at a
-singularity or a joint is at its limit, the \'\'direction\'\' of the
+Jacobian matrix. No guarantee is made to the *magnitude* of the applied
+force/wrench/impedance because this is an open-loop controller. There is
+currently not adequate feedback on the arm to determine the applied
+force/wrench/impedance. Joint stiction, joint position limits, motor
+torque limits, and sometimes the arm configuration (at a singularity,
+for example) will cause the applied force/wrench/impedance to deviate
+from the desired values. Generally, unless the arm is at a singularity
+or a joint is at its limit, the *direction* of the
 force/wrench/impedance will be correct.
 
 The controller takes trajectory points and linearly interpolates, in
@@ -38,24 +38,24 @@ with it should take place through the
 [Youtube](https://www.youtube.com/watch?v=Z9Pnj2UzPq0)
 
 In this video, the PR2 first moves its gripper to the center of its body
-and then applies a constant force in the \'\'x\'\' direction
-(towards/away from the robot). As you can see, the force is light so the
-human can easily stop the motion. However, with no intervention, the
-robot hand will continue to move as far in the \'\'x\'\' direction as it
-can go. There is no sense of trying to achieve a goal in this direction.
-This type of control is useful if you wish to exert a constant force
-against something.
+and then applies a constant force in the *x* direction (towards/away
+from the robot). As you can see, the force is light so the human can
+easily stop the motion. However, with no intervention, the robot hand
+will continue to move as far in the *x* direction as it can go. There is
+no sense of trying to achieve a goal in this direction. This type of
+control is useful if you wish to exert a constant force against
+something.
 
 [Youtube](https://www.youtube.com/watch?v=AfRUwsIOvqo)
 
 In this video, the PR2 first moves its gripper to the center of its body
 and then tries to extend the gripper about 25 cm farther away, but with
-low stiffness in the \'\'x\'\' direction (towards/away from the robot).
-Since the stiffness is low, it is easy for a human to move the hand away
-from the center of the body in the \'\'x\'\' direction and it returns
-slowly. In the \'\'y\'\' and \'\'z\'\' directions, however, where the
-stiffness is set to the maximum, it takes a lot of strength to displace
-the gripper and it returns very quickly to its set point.
+low stiffness in the *x* direction (towards/away from the robot). Since
+the stiffness is low, it is easy for a human to move the hand away from
+the center of the body in the *x* direction and it returns slowly. In
+the *y* and *z* directions, however, where the stiffness is set to the
+maximum, it takes a lot of strength to displace the gripper and it
+returns very quickly to its set point.
 
 [Youtube](https://www.youtube.com/watch?v=FOkAt_EMZLA)
 

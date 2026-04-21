@@ -1,13 +1,13 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Overview
 
 ![Clober Robot\|width=400](attachment:myahrs_ros2_driver/myahrs.png)
 
-\'\'\'Myahrs ROS2 Driver\'\'\' package is a ROS2 driver for the myAHRS+
-which is a low cost high performance AHRS(Attitude Heading Reference
-System). Using this package, users can create the format of IMU
-sensor_msgs in ROS2 system.
+**Myahrs ROS2 Driver** package is a ROS2 driver for the myAHRS+ which is
+a low cost high performance AHRS(Attitude Heading Reference System).
+Using this package, users can create the format of IMU sensor_msgs in
+ROS2 system.
 
 ## ROS Wiki related to related to Myahrs ROS2 Driver
 

@@ -7,13 +7,12 @@ used. A schematic overview is given in figure below:
 
 ![alt text\|width=680](http://cstwiki.wtb.tue.nl/images/Amigo_gazebo_structure.png)
 
-The file \'\'controller_plugins.xml\'\' connects the
-libamigo_controllers library, which includes the different controller
-classes, to the [pr2_controller_manager](pr2_controller_manager). With
-use of the spawner node in the
-[pr2_controller_manager](pr2_controller_manager) package, instances of
-these controllers can be spawned that have the possibility to
-communicate with the gazebo simulation.
+The file *controller_plugins.xml* connects the libamigo_controllers
+library, which includes the different controller classes, to the
+[pr2_controller_manager](pr2_controller_manager). With use of the
+spawner node in the [pr2_controller_manager](pr2_controller_manager)
+package, instances of these controllers can be spawned that have the
+possibility to communicate with the gazebo simulation.
 
 ## Controllers
 
@@ -89,11 +88,9 @@ This file loads the parameter files from the
 package and spawns the following controller nodes that communicate with
 the simulator via the [pr2_controller_manager](pr2_controller_manager) :
 
--   \'\'\'Basecontroller\'\'\' base_controller
--   \'\'\'Baseodometry\'\'\' base_odometry
--   \'\'\'Positioncontroller\'\'\' arm_left_controller
--   \'\'\'Positioncontroller\'\'\' arm_right_controller
--   \'\'\'Positioncontroller\'\'\' gripper_left_controller
--   \'\'\'Positioncontroller\'\'\' gripper_right_controller
--   \'\'\'Positioncontroller\'\'\' head_controller
--   \'\'\'Positioncontroller\'\'\' spindle_controller
+**\*Basecontroller** base_controller **\*Baseodometry** base_odometry
+**\*Positioncontroller** arm_left_controller **\*Positioncontroller**
+arm_right_controller **\*Positioncontroller** gripper_left_controller
+**\*Positioncontroller** gripper_right_controller
+**\*Positioncontroller** head_controller **\*Positioncontroller**
+spindle_controller

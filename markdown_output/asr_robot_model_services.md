@@ -29,10 +29,9 @@ This means that, provided a target camera pose
 
 ```
 (x, y, alpha, ptu-pan, ptu-tilt)
-``` - with \'\'\'x\'\'\', \'\'\'y\'\'\' as the 2D
-position of the robot\'s base, \'\'\'alpha\'\'\' as the robot\'s
-rotation on the 2D map and \'\'\'pan\'\'\', \'\'\'tilt\'\'\' as the
-angles of the PTU unit -
+``` - with **x**, **y** as the 2D position of the
+robot\'s base, **alpha** as the robot\'s rotation on the 2D map and
+**pan**, **tilt** as the angles of the PTU unit -
 
 should be found, that moves the camera as close as possible to this
 requested pose.
@@ -71,8 +70,8 @@ requested field of view as closely as possible.
 
 The goal is to find a camera pose (and a corresponding view frustum -
 red), that faces the center of the target view frustum (black) in the
-same distance \'\'\'l\'\'\' while minimizing the angle deviation
-\'\'\'U0001d6ff\'\'\' as much as possible.
+same distance **l** while minimizing the angle deviation **U0001d6ff**
+as much as possible.
 
 Using this optimization goal, an optimal robot configuration is
 calculated in two consecutive steps:
@@ -82,7 +81,7 @@ calculated in two consecutive steps:
 First of all, a set of assumptions will be made, that can be considered
 to be true about the mild\'s kinematic chain:
 
--   The distance of the ptu_base frame (\'\'\'/ptu_base_link\'\'\') (and
+-   The distance of the ptu_base frame (**/ptu_base_link**) (and
     therefore the pan_base frame) to the ground plane is constant.
 
 ```{=html}
@@ -90,7 +89,7 @@ to be true about the mild\'s kinematic chain:
 ```
 -   The rotational axis of the pan frame is orthogonal to the ground,
     which implicates that the distance of the tilt_base frame
-    (\'\'\'/ptu_tilt_link\'\'\') to the ground is constant as well.
+    (**/ptu_tilt_link**) to the ground is constant as well.
 
 ```{=html}
 <!-- -->
@@ -113,14 +112,13 @@ horizontal line corresponds to the blue plane in the graphic above.
 
 ![\|width=\"394\",height=\"252\"](attachment:index3.png)
 
-Given the position of the target view frustum center
-\'\'\'P,,View,,\'\'\', the camera distance to the center \'\'\'a\'\'\',
-the projected distance between tilt joint and camera center point
-\'\'\'c\'\'\' as well as the tilt joint\'s constant height above ground
-\'\'\'h\'\'\', the tilt angle can be determined.
+Given the position of the target view frustum center **P,,View,,**, the
+camera distance to the center **a**, the projected distance between tilt
+joint and camera center point **c** as well as the tilt joint\'s
+constant height above ground **h**, the tilt angle can be determined.
 
 Once a solution for the tilt angle has been found, the position of
-\'\'\'P,,Tilted ,,\'\'\'can be calculated directly.
+**P,,Tilted ,,**can be calculated directly.
 
 #### II - Calculating optimal pan angle and the corresponding base pose
 
@@ -139,19 +137,19 @@ robot pose.
 
 ![\|width=\"407\",height=\"244\"](attachment:index4.png)
 
-\'\'Visualized sampling of possible pan angles and the resulting
-position of the robot\'s base (small dots). Green dots are more
-favourable poses whereas non reachable or less favourable poses are
-displayed in red. Notice, that the robot\'s kinematic chain has been
-altered in this example, to show the criterias of selecting the best
-angle more clearly.\'\'
+*Visualized sampling of possible pan angles and the resulting position
+of the robot\'s base (small dots). Green dots are more favourable poses
+whereas non reachable or less favourable poses are displayed in red.
+Notice, that the robot\'s kinematic chain has been altered in this
+example, to show the criterias of selecting the best angle more
+clearly.*
 
 Several heuristics have been implemented to assess the feasibility of a
 given robot pose. Since rotations of the base are the most time
 consuming factor in this optimization process, all heuristics will focus
 on minimizing the those:
 
-1\. \'\'\'ANGLE_APPROXIMATION:\'\'\'
+1\. **ANGLE_APPROXIMATION:**
 
 -   This approach draws a straight line between the current robot
     position and the target position. It then sums up the absolute angle
@@ -163,7 +161,7 @@ on minimizing the those:
     narrow space that includes a lot of obstacles, this heuristic might
     become imprecise.
 
-1\. \'\'\'NAVIGATION_PATH:\'\'\'
+1\. **NAVIGATION_PATH:**
 
 -   This heuristic calculates the complete change of the base\'s
     orientation over the full path from the current base pose to the
@@ -176,7 +174,7 @@ on minimizing the those:
     complete navigation path, it is also the most perfomance-intensive
     one.
 
-1\. \'\'\'SIMPLE:\'\'\'
+1\. **SIMPLE:**
 
 -   The simple heuristic compares the current orientation of the base
     with the target orientation and returns an absolute angle difference
@@ -197,11 +195,11 @@ returned by the algorithm.
 ![\|width=\"333\",height=\"200\"](attachment:index6.png)
 ![\|width=\"333\",height=\"200\"](attachment:index7.png)
 
-\'\'Requested camera poses (\'\'\'green\'\'\') and approximated robot
-configurations (\'\'\'blue\'\'\'). Poses close to the camera\'s movement
-space can be approximated almost exactly (left), while poses below or
-above can only be roughly approximated (center). Poses too far above or
-below can not be approximated at all (right).\'\'
+*Requested camera poses (**green**) and approximated robot
+configurations (**blue**). Poses close to the camera\'s movement space
+can be approximated almost exactly (left), while poses below or above
+can only be roughly approximated (center). Poses too far above or below
+can not be approximated at all (right).*
 
 ## 2.2 Inverse Kinematics - without base movement (PTU pose correction)
 
@@ -259,12 +257,12 @@ the map can be reached by the robot.
 
 ## 3.3. Start system
 
-Starting the RobotModelService for the \'\'\'real\'\'\' robot model:
+Starting the RobotModelService for the **real** robot model:
 
 ```
 launch asr_robot_model_services RobotModelServiceReal.launch
 ``` Starting the RobotModelService for the
-\'\'\'simulated\'\'\' robot model:
+**simulated** robot model:
 
 ```
 launch asr_robot_model_services RobotModelServiceSim.launch
@@ -311,51 +309,47 @@ launch asr_robot_model_services set_focus_point.launch
 This file specifies general settings for the robot model as well as
 debug options
 
--   \'\'\'Omega-Factors: \'\'\'These values are only used for the
-    approximated calculation of the inverse kinematic. Each factor
-    declares, how favourable it is to reach a pose by moving the
-    respective part of the robot. The higher a factor is, the more will
-    the algorithm try to avoid the respective movement.
--   \'\'\'mOmegaPan: \'\'\'affects movement of the pan joint
+-   **Omega-Factors: **These values are only used for the approximated
+    calculation of the inverse kinematic. Each factor declares, how
+    favourable it is to reach a pose by moving the respective part of
+    the robot. The higher a factor is, the more will the algorithm try
+    to avoid the respective movement.
+-   **mOmegaPan: **affects movement of the pan joint
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'mOmegaTilt: \'\'\'affects movement of the tilt joint
+-   **mOmegaTilt: **affects movement of the tilt joint
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'mOmegaRot: \'\'\'affects rotational movements of the robot\'s
-    base
+-   **mOmegaRot: **affects rotational movements of the robot\'s base
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'mOmegaBase:\'\'\' affects translational movements of the
-    robot\'s base
+-   **mOmegaBase:** affects translational movements of the robot\'s base
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'mSigma: \'\'\'When calculating movement costs, the
-    translational movement costs will be specified as\'\'\'
-    ![\|width=\"149\",height=\"65\"](attachment:formel1.gif) \'\'\'
-    \'\'\'with mSigma defining the steepness of the resulting function.
-    \'\'\'
+-   **mSigma: **When calculating movement costs, the translational
+    movement costs will be specified as**
+    ![\|width=\"149\",height=\"65\"](attachment:formel1.gif) ** **with
+    mSigma defining the steepness of the resulting function. **
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'tolerance\'\'\': Used for the global planner. This value
-    affects how tolerant the planner will be when navigating around the
-    map.
+-   **tolerance**: Used for the global planner. This value affects how
+    tolerant the planner will be when navigating around the map.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'useGlobalPlanner\'\'\': Whether the global planner will be
-    used to calculate a path for every possible solution of the inverse
+-   **useGlobalPlanner**: Whether the global planner will be used to
+    calculate a path for every possible solution of the inverse
     kinematic. If enabled, the calculation might be more precise,
     although this is performance intensive. If disabled, the euclidean
     distance will be used instead of the exact path.
@@ -363,14 +357,14 @@ debug options
 ```{=html}
 <!-- -->
 ```
--   \'\'\'ncp\'\'\': Near-Clipping-Plane. Distance of the closest point,
-    that can still be recognized to the camera.
+-   **ncp**: Near-Clipping-Plane. Distance of the closest point, that
+    can still be recognized to the camera.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'fcp\'\'\': Far-Clipping-Plane. Distance of the farthest point,
-    that can still be recognized to the camera.
+-   **fcp**: Far-Clipping-Plane. Distance of the farthest point, that
+    can still be recognized to the camera.
 
 ```{=html}
 <!-- -->
@@ -380,9 +374,9 @@ debug options
     specified as IKVisualization parameter). Should only be used for
     debugging, since the additional visualization adds additional
     performance overhead.
--   \'\'\'IKAngleApproximation\'\'\': The heuristic algorithm used to
-    determine the best solution for the mild\'s base\'s rotation during
-    the calculation of the exact inverse kinematic. Options are:
+-   **IKAngleApproximation**: The heuristic algorithm used to determine
+    the best solution for the mild\'s base\'s rotation during the
+    calculation of the exact inverse kinematic. Options are:
 -   ANGLE_APPROXIMATION: Uses a straight line between the robot\'s
     current position and its target position. Calculates both the angle
     between the robot\'s current orientation and this line as well as
@@ -397,8 +391,8 @@ debug options
 ```{=html}
 <!-- -->
 ```
--   \'\'\'robotModelId\'\'\': Determines which algorithm should be used
-    to solve the inverse kinematics problem. Options are:
+-   **robotModelId**: Determines which algorithm should be used to solve
+    the inverse kinematics problem. Options are:
 -   1 - MILDRobotModelWithExactIK: Uses a geometrical approach to solve
     the tilt angle and the robot\'s head\'s pose. The pan angle and the
     robot\'s base pose is then calculated by sampling possible pan
@@ -410,8 +404,8 @@ debug options
 ```{=html}
 <!-- -->
 ```
--   \'\'\'PTU angle limits\'\'\': All angles are specified in degrees,
-    with the robot\'s initial position as pan=0, tilt=0.
+-   **PTU angle limits**: All angles are specified in degrees, with the
+    robot\'s initial position as pan=0, tilt=0.
 -   panMin
 -   panMax
 -   tiltMin
@@ -420,99 +414,95 @@ debug options
 ```{=html}
 <!-- -->
 ```
--   \'\'\'colThresh\'\'\': Collission threshold, that determines if the
-    robot is colliding with an obstacle. Only used for the
-    isPositionAllowed service call.
+-   **colThresh**: Collission threshold, that determines if the robot is
+    colliding with an obstacle. Only used for the isPositionAllowed
+    service call.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'panAngleSamplingStepsPerIteration\'\'\': Used for the exact
-    inverse kinematic\'s angle iteration. This value specifies the
-    number of sampling angles used per iteration.
+-   **panAngleSamplingStepsPerIteration**: Used for the exact inverse
+    kinematic\'s angle iteration. This value specifies the number of
+    sampling angles used per iteration.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'inverseKinematicIterationAccuracy\'\'\': A threshold used for
-    the exact inverse kinematic\'s angle iteration. The sampling will
-    stop after the angle change, compared to the previous iteration, is
+-   **inverseKinematicIterationAccuracy**: A threshold used for the
+    exact inverse kinematic\'s angle iteration. The sampling will stop
+    after the angle change, compared to the previous iteration, is
     smaller than this value.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'debugLevels\'\'\': Specifies which debug messages should be
-    displayed.\'\'\' \'\'\'
+-   **debugLevels**: Specifies which debug messages should be
+    displayed.** **
 
 ### TopicsConfig.yaml:
 
 This file specifies topic names, to which results will be published
 
--   \'\'\'IKVisualization\'\'\': Topic, to which the visualization
-    objects of the inverse kinematics will be published
+-   **IKVisualization**: Topic, to which the visualization objects of
+    the inverse kinematics will be published
 
 ### robot_model_frames.yaml:
 
 This file specifies the names of key frames in the robot\'s kinematic
-chain.\'\'\' \'\'\'See\'\'\'
-[asr_mild_kinematic_chain](asr_mild_kinematic_chain) \'\'\'for an
-overview over the mild\'s kinematic chain.
+chain.** **See** [asr_mild_kinematic_chain](asr_mild_kinematic_chain)
+**for an overview over the mild\'s kinematic chain.
 
--   map_frame: \'\'\'Map base frame \'\'\'
-
-```{=html}
-<!-- -->
-```
--   base_frame: \'\'\'The mild\'s base frame \'\'\'
+-   map_frame: **Map base frame **
 
 ```{=html}
 <!-- -->
 ```
--   ptu_base_frame: \'\'\'The base frame of the PTU \'\'\'
+-   base_frame: **The mild\'s base frame **
 
 ```{=html}
 <!-- -->
 ```
--   ptu_pan_frame: \'\'\'The pan joint\'s frame \'\'\'
+-   ptu_base_frame: **The base frame of the PTU **
 
 ```{=html}
 <!-- -->
 ```
--   ptu_pan_frame_rotated: \'\'\'The pan joint\'s frame after rotation
-    \'\'\'
+-   ptu_pan_frame: **The pan joint\'s frame **
 
 ```{=html}
 <!-- -->
 ```
--   ptu_tilt_frame: \'\'\'The tilt joint\'s frame \'\'\'
+-   ptu_pan_frame_rotated: **The pan joint\'s frame after rotation **
 
 ```{=html}
 <!-- -->
 ```
--   ptu_tilt_frame_rotated: \'\'\'The tilt joint\'s frame after rotation
-    \'\'\'
+-   ptu_tilt_frame: **The tilt joint\'s frame **
 
 ```{=html}
 <!-- -->
 ```
--   camera_mount_frame: \'\'\'The mount frame for all cameras \'\'\'
+-   ptu_tilt_frame_rotated: **The tilt joint\'s frame after rotation **
 
 ```{=html}
 <!-- -->
 ```
--   camera_left_frame: \'\'\'The frame for the left camera \'\'\'
+-   camera_mount_frame: **The mount frame for all cameras **
 
 ```{=html}
 <!-- -->
 ```
--   camera_right_frame: \'\'\'The frame for the right camera \'\'\'
+-   camera_left_frame: **The frame for the left camera **
+
+```{=html}
+<!-- -->
+```
+-   camera_right_frame: **The frame for the right camera **
 
 ## 4.3. Needed Services
 
--   \'\'\'(/move_base/make_plan): \'\'\'Provided by\'\'\'
-    [move_base](move_base) , \'\'\'only needed if the option
-    useGlobalPlanner is enabled.
+-   **(/move_base/make_plan): **Provided by** [move_base](move_base) ,
+    **only needed if the option useGlobalPlanner is enabled.
 
 ## 4.4. Provided Services
 
@@ -597,17 +587,17 @@ overview over the mild\'s kinematic chain.
 
 # 5. Tutorials
 
--   [asr_robot_model_services/SetFocusPoint](asr_robot_model_services/SetFocusPoint)\'\'\'
-    \'\'\'
+-   [asr_robot_model_services/SetFocusPoint](asr_robot_model_services/SetFocusPoint)**
+    **
 
 ```{=html}
 <!-- -->
 ```
--   [asr_robot_model_services/ServicesTestingInverseKinematics](asr_robot_model_services/ServicesTestingInverseKinematics)\'\'\'
-    \'\'\'
+-   [asr_robot_model_services/ServicesTestingInverseKinematics](asr_robot_model_services/ServicesTestingInverseKinematics)**
+    **
 
 # 6. References
 
-The functionality for the pose correction is described here:\'\'\'
+The functionality for the pose correction is described here:**
 [posecorrection.pdf](http://wiki.ros.org/asr_robot_model_services?action=AttachFile&do=view&target=posecorrection.pdf)
-\'\'\'
+**

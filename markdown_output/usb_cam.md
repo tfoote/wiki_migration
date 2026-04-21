@@ -28,12 +28,12 @@ supported to publish actual frame parameters.
 
 ### Supported device access models
 
--   \'\'Memory Mapping\'\' - for the device with direct monopolistic USB
-    port access model implemented via \`libusb\`
--   \'\'User Pointer Exchange\'\' - for the devices supporting userspace
+-   *Memory Mapping* - for the device with direct monopolistic USB port
+    access model implemented via \`libusb\`
+-   *User Pointer Exchange* - for the devices supporting userspace
     memory pointer requests
--   \'\'Virtual Block Device\'\' - for the devices supporting block I/O
-    model via virtual userspace filesystem kernel driver
+-   *Virtual Block Device* - for the devices supporting block I/O model
+    via virtual userspace filesystem kernel driver
 
 ### Published message types
 
@@ -43,8 +43,8 @@ supported to publish actual frame parameters.
     OpenCV-compatible images
 -   \<\<MsgLink(sensor_msgs/CompressedImage)\>\> for binary packets
     containing PNG/JPEG-compressed images published under the
-    \`compressed\` topic suffix. \'\'\'NOTE\'\'\': also on-the-fly
-    encoding of the images into 16-bit depth matrices is supported. The
+    \`compressed\` topic suffix. **NOTE**: also on-the-fly encoding of
+    the images into 16-bit depth matrices is supported. The
     PNG-compressed frames are published under \`compressedDepth\` topic
     suffix.
 -   \<\<MsgLink(theora_image_transport/Packet)\>\> for binary packages
@@ -59,14 +59,13 @@ supported to publish actual frame parameters.
 ### Topic names abbreviation policy
 
 The node formulates topic namespaces and affixes using the following
-policy: 1. \'\'\'Node name\'\'\' taken from ROS launch server 2.
-\'\'\'Transport suffix\'\'\' configured with \`camera_transport_suffix\`
-parameter 3. \'\'\'[image_transport](image_transport) mode suffix\'\'\'
-4. \'\'\'Description suffix\'\'\' provided from
-[dynamic_reconfigure](dynamic_reconfigure) API For example, if the node
-runs under the name \`usb_cam\` and \`camera_transport_suffix\` is set
-to \`image_raw\` (default invocation case), the node will publish the
-following list of topics:
+policy: 1. **Node name** taken from ROS launch server 2. **Transport
+suffix** configured with \`camera_transport_suffix\` parameter 3.
+**[image_transport](image_transport) mode suffix** 4. **Description
+suffix** provided from [dynamic_reconfigure](dynamic_reconfigure) API
+For example, if the node runs under the name \`usb_cam\` and
+\`camera_transport_suffix\` is set to \`image_raw\` (default invocation
+case), the node will publish the following list of topics:
 
 ```
 /usb_cam/camera_info
@@ -85,7 +84,7 @@ following list of topics:
 ### Hardware-accelerated decoder
 
 The support for a hardware-accelerated decoder in the package is now
-\'\'\'experimental\'\'\'. It is implemented in the dedicated
+**experimental**. It is implemented in the dedicated
 [branch](https://github.com/ros-drivers/usb_cam/tree/hardware-decoder)
 in the repository. The feature is not enabled by default and it is
 supported only from \`libavcodec\` library version \`52.00.100\`.
@@ -258,7 +257,7 @@ param {
 -   \`h264\` - FFMPEG-decoded H.264. Requires compatible hardware. May
     also require setting \`color_format\` parameter to \`yuv420p\`
 
-\'\'\'NOTE\'\'\': In its current state, the node does not support
+**NOTE**: In its current state, the node does not support
 hardware-accelerated decoding!
 
 ### Color representation formats reference ===The node supports the following color representation mode names (case-sensitive):
@@ -286,19 +285,19 @@ The queried names become ROS parameters and are placed under
 \`intrinsic_controls\` multilist of the configuration file. Its main
 namespace contains:
 
--   Unique names of the generated ROS parameters. \'\'\'NOTE\'\'\': if
-    the parameter name reported from V4L kernel driver \'\'\'exists but
-    not mentioned here\'\'\', it will be processed and set up with
-    \'\'default value\'\', also provided by the driver.
+-   Unique names of the generated ROS parameters. **NOTE**: if the
+    parameter name reported from V4L kernel driver **exists but not
+    mentioned here**, it will be processed and set up with *default
+    value*, also provided by the driver.
 -   \`ignore\` - the string list containing control names that should be
-    \'\'\'ignored\'\'\'. If the existing intrinsic control is mentioned
-    here, its value will be \'\'\'left intact\'\'\'.
+    **ignored**. If the existing intrinsic control is mentioned here,
+    its value will be **left intact**.
 
 #### Example configuration
 
-This example configuration is obtained using \'\'Logitech HD Pro Webcam
-C920\'\' web camera with standard \`V4L2\` kernel driver from Ubuntu
-22.04 with 5.15.0 kernel installed. The manually queried control names:
+This example configuration is obtained using *Logitech HD Pro Webcam
+C920* web camera with standard \`V4L2\` kernel driver from Ubuntu 22.04
+with 5.15.0 kernel installed. The manually queried control names:
 ```
 v4l2-ctl --device=/dev/video0 -L
                      brightness 0x00980900 (int)    : min=0 max=255 step=1 default=128 value=128
@@ -346,7 +345,7 @@ intrinsic_controls:
         zoom_absolute
     ]
 ``` Here are the following intrinsic
-controls that are mentioned in the \'\'\'root namespace\'\'\' of the
+controls that are mentioned in the **root namespace** of the
 \`intrinsic_controls\` multilist, so they will be processed and set up:
 
 -   \`focus_auto\` (boolean)

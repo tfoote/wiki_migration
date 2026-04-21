@@ -1,6 +1,6 @@
-\'\'For documentation on console output and logging APIs for
+*For documentation on console output and logging APIs for
 [roscpp](roscpp), please see the
-[roscpp logging overview](roscpp/Overview/Logging).\'\'
+[roscpp logging overview](roscpp/Overview/Logging).*
 
 \`rosconsole\` is a C++ package that supports console output and logging
 in [roscpp](roscpp). It provides a macro-based interface which allows
@@ -47,8 +47,8 @@ rosconsole will load a config file from
 
 rosconsole also lets you define your own configuration file that will be
 used by log4cxx, defined by the ROSCONSOLE_CONFIG_FILE environment
-variable. Anything defined in this config file will \'\'\'override\'\'\'
-the default config file.
+variable. Anything defined in this config file will **override** the
+default config file.
 
 A simple example:
 
@@ -61,7 +61,7 @@ log4j.logger.ros.my_package_name=DEBUG
 \"log4j\" not \"log4cxx\". This is because log4cxx is directly
 compatible with log4j\'s configuration files.
 
-ROS output is set to \'\'\'info\'\'\' and higher by default.
+ROS output is set to **info** and higher by default.
 
 For more detailed information on the config file, and log4cxx in
 general, please see the
@@ -128,10 +128,9 @@ if( ros::console::set_logger_level(ROSCONSOLE_DEFAULT_NAME, ros::console::levels
 }
 ``` If you change one of the \`Logger\`\'s
 verbosity levels after any logging statements using that logger, you
-\'\'\'must\'\'\' call \`ros::console::notifyLoggerLevelsChanged()\`. If
-you do not, logging statements that have already been hit once (and
-therefore initialized) may continue to print when they should not, and
-vice-versa.
+**must** call \`ros::console::notifyLoggerLevelsChanged()\`. If you do
+not, logging statements that have already been hit once (and therefore
+initialized) may continue to print when they should not, and vice-versa.
 
 For examples of this behavior, please see the \`examples/example.cpp\`
 file.
@@ -147,7 +146,7 @@ export ROSCONSOLE_FORMAT='[${severity}] [${time}]: ${message}'
 ``` The full list of possible options follows.
 
   -- ----------------------------------------------------------------------------------------------------------------- ------------- ---------------------------------------------------------------------------- ---------------------- --
-     \'\'\'Token\'\'\'                                                                                                               \'\'\'Sample Output\'\'\'                                                                           
+     **Token**                                                                                                                       **Sample Output**                                                                                   
      severity                                                                                                                        ERROR                                                                                               
      message                                                                                                                         hello world 0                                                                                       
      \<style=\"text-align:left;vertical-align:top\"                                                                    4\>time                                                                                    1284058208.824620563   
@@ -177,10 +176,9 @@ course, change the value depending on your needs):
 
 It gives the user control over how dates and times can be represented.
 
-You need to finish \'\'\'time\'\'\' or \'\'\'walltime\'\'\' token with
-colon and then specify \'\'\'format string\'\'\', which can contain
-normal text together with argument specifiers like \'\'\'%M\'\'\' and
-\'\'\'%S\'\'\'. It looks like:
+You need to finish **time** or **walltime** token with colon and then
+specify **format string**, which can contain normal text together with
+argument specifiers like **%M** and **%S**. It looks like:
 
 ```
 export ROSCONSOLE_FORMAT='${time:format string}'
@@ -194,12 +192,12 @@ for formatting dates/times.
 
 The following table lists examples available for both C++ and Python.
 
-  -- ------------------------------ -- ---------------------- --
-     \'\'\'Format Specifier\'\'\'      \'\'Example\'\'\'      
-     \`%Y-%m-%d %H:%M:%S\`             2020-04-29 20:02:1     
-     \`%y-%b-%d %I:%M:%S%p\`           20-Apr-29 08:20:40PM   
-     \`%x %r\`                         04/29/20 08:31:30 PM   
-  -- ------------------------------ -- ---------------------- --
+  -- ------------------------- -- ---------------------- --
+     **Format Specifier**         *Example*\'            
+     \`%Y-%m-%d %H:%M:%S\`        2020-04-29 20:02:1     
+     \`%y-%b-%d %I:%M:%S%p\`      20-Apr-29 08:20:40PM   
+     \`%x %r\`                    04/29/20 08:31:30 PM   
+  -- ------------------------- -- ---------------------- --
 
 ### Changed default value in Python === the default format (if the environment variable is not set) for Python is now the same as for C++. If you want to keep the previous format for backward compatibility you can set the following:
 

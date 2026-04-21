@@ -1,6 +1,6 @@
 [Source link (temp)](https://github.com/ipa-jfh/robot_recorder)
 
-\'\'\'Look at me!\'\'\'
+**Look at me!**
 
 ![](attachment:pr2_waving.gif)
 

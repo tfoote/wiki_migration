@@ -3,16 +3,16 @@
 Rocon interactions are designed to fill a hole in the ros ecosystem for
 the human user/developer. They address the following problems:
 
--   How can I \'\'\'interact\'\'\' with this running ros system?
--   How can I easily configure (\'\'\'params\'\'\' and
-    \'\'\'remaps\'\'\') android and web apps?
+-   How can I **interact** with this running ros system?
+-   How can I easily configure (**params** and **remaps**) android and
+    web apps?
 -   How can I filter the set of interactions for a particular kind of
     user (e.g. dev, admin, user)?
 
-Interactions can be one of any number of means of connecting
-\'\'\'you\'\'\', with your ros system. It could be as simple as finding
-documentation, running monitoring programs, introspecting the system or
-directly interacting with some part via a qt, android or web app.
+Interactions can be one of any number of means of connecting **you**,
+with your ros system. It could be as simple as finding documentation,
+running monitoring programs, introspecting the system or directly
+interacting with some part via a qt, android or web app.
 
 For a ros environment, the problem isn\'t so dramatic. You can usually
 poke around the documentation and installed packages and roslaunchers,

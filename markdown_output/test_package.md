@@ -2,11 +2,11 @@
 
 \_\_Test \_\_
 
-\'\'\'bold\'\'\'
+**bold**
 
-\'\'italics\'\'
+*italics*
 
-\'\'\'\'\'bold italics\'\'\'\'\'
+***bold italics***
 
 1\. Uno 1. Dos
 

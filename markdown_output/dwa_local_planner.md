@@ -42,7 +42,7 @@ The \`dwa_local_planner::DWAPlannerROS\` object is a
 [wrapper](navigation/ROS_Wrappers) for a
 \`dwa_local_planner::DWAPlanner\` object that exposes its functionality
 as a [C++ ROS Wrapper](navigation/ROS_Wrappers). It operates within a
-ROS namespace (assumed to be \'\'name\'\' from here on) specified on
+ROS namespace (assumed to be *name* from here on) specified on
 initialization. It adheres to the \`nav_core::BaseLocalPlanner\`
 interface found in the [nav_core](nav_core) package.
 

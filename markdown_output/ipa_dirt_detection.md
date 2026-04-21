@@ -4,9 +4,9 @@
 
 Complementary experimental evaluation data on the paper submission
 
-\'\'Richard Bormann, Xinjie Wang, Jiawen Xu. DirtNet: Visual Dirt
-Detection for Autonomous Cleaning Robots. Submitted to the IEEE
-International Conference on Robotics and Automation (ICRA), 2020.\'\'
+*Richard Bormann, Xinjie Wang, Jiawen Xu. DirtNet: Visual Dirt Detection
+for Autonomous Cleaning Robots. Submitted to the IEEE International
+Conference on Robotics and Automation (ICRA), 2020.*
 
 is available from here:
 
@@ -31,7 +31,7 @@ ground and put them into a map of the environment. This documentation is
 split into three parts: the first describes the dirt detection system,
 the second introduces the dirt dataset that has been recorded to test
 the dirt detection algorithm and the third explains how to use the test
-framework to evaluate the \'\'`ipa_dirt_detection`\'\' or your own dirt
+framework to evaluate the *`ipa_dirt_detection`* or your own dirt
 detection algorithm on the dirt dataset.
 
 ## Dirt Detection Software
@@ -62,8 +62,7 @@ The dirt detection software expects to receive the topics `/tf`
 from the RGB-D sensor). If you are using a different robot make sure
 that the topics are remapped accordingly in the launch-file. As long as
 you provide a proper transformation from the `/map` frame to the camera
-frame the dirt detection software should \'\'\'work with any
-robot\'\'\'.
+frame the dirt detection software should **work with any robot**.
 
 The algorithm publishes the topic `/dirt_detection/detection_map` which
 displays the detected dirt as dark cells in a grid map. You can use RViz

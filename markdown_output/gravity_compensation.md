@@ -86,12 +86,12 @@ param {
 ## Launching the node
 
 An example calibration file required to run this node can be found under
-\'\'\'config/ft_calib_data_example.yaml\'\'\' in the
+**config/ft_calib_data_example.yaml** in the
 [force_torque_sensor_calib](force_torque_sensor_calib) package.
 
-You can launch the node using the
-\'\'\'gravity_compensation.launch\'\'\' file contained in the \`launch\`
-folder of the package and setting a few roslaunch arguments, e.g.:
+You can launch the node using the **gravity_compensation.launch** file
+contained in the \`launch\` folder of the package and setting a few
+roslaunch arguments, e.g.:
 
 ```
 roslaunch gravity_compensation gravity_compensation.launch node_name:=gravity_compensation calib_data_file:=$HOME/.ros/ft_calib/ft_calib_data.yaml ft_raw:=/ft_sensor/ft_raw imu:=/imu/data loop_rate:=650.0 ns=/ft_sensor gripper_com_child_frame_id:=gripper_com
@@ -99,21 +99,20 @@ roslaunch gravity_compensation gravity_compensation.launch node_name:=gravity_co
 
 where the arguments are:
 
--   \'\'\'node_name\'\'\' sets the name of the gravity_compensation node
-    being launched.
--   \'\'\'calib_data_file\'\'\': location of the force-torque sensor
-    calibration data.
--   \'\'\'ft_raw\'\'\': name of topic where raw force-torque sensor
-    readings are published.
--   \'\'\'imu\'\'\': name of the topic where the accelerometer readings
-    are published.
--   \'\'\'loop_rate\'\'\': frequency (in Hz) of the main loop of the
-    node.
--   \'\'\'ns\'\'\': namespace under which to publish the topics for the
+-   **node_name** sets the name of the gravity_compensation node being
+    launched.
+-   **calib_data_file**: location of the force-torque sensor calibration
+    data.
+-   **ft_raw**: name of topic where raw force-torque sensor readings are
+    published.
+-   **imu**: name of the topic where the accelerometer readings are
+    published.
+-   **loop_rate**: frequency (in Hz) of the main loop of the node.
+-   **ns**: namespace under which to publish the topics for the
     compensated force-torque measurements (\`ns/ft_zeroed\` and
     \`ns/ft_compensated\`).
--   \'\'\'gripper_com_child_frame_id\'\'\': ID of the (child) frame of
-    the gripper center of mass. This can be freely chosen by the user.
+-   **gripper_com_child_frame_id**: ID of the (child) frame of the
+    gripper center of mass. This can be freely chosen by the user.
 
 ## Tutorials
 

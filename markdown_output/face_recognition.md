@@ -22,34 +22,34 @@ $ rosmake face_recognition
 
 ## How the face recognition works:
 
-Training images are stored in the \'\'\'data\'\'\' directory.\
-Training images are listed in the \'\'\'train.text\'\'\' file.\
-The \'\'\'train.txt\'\'\' follows a specific format which is best
-understood by looking at the example \'\'\'train.txt\'\'\' file provided
-in the package. Note that person numbers start from 1, and spaces or
-special characters are not allowed in persons\' names).\
+Training images are stored in the **data** directory.\
+Training images are listed in the **train.text** file.\
+The **train.txt** follows a specific format which is best understood by
+looking at the example **train.txt** file provided in the package. Note
+that person numbers start from 1, and spaces or special characters are
+not allowed in persons\' names).\
 The program trains from the training examples listed in the
-\'\'\'train.txt\'\'\' and create an Eigenfaces database which is stored
-in the \'\'\'facedata.xml\'\'\' file.\
+**train.txt** and create an Eigenfaces database which is stored in the
+**facedata.xml** file.\
 Face detection is performed using a haarcascade classifier
 (haarcascade_frontalface_alt.xml).\
-The \'\'\'data\'\'\' folder, and \'\'\'train.txt\'\'\',
-\'\'\'facedata.xml\'\'\' and \'\'\'haarcascade_frontalface_alt.xml\'\'\'
-files should be placed in the program\'s working directory (i.e. the
-directory from which you execute the program).\
+The **data** folder, and **train.txt**, **facedata.xml** and
+**haarcascade_frontalface_alt.xml** files should be placed in the
+program\'s working directory (i.e. the directory from which you execute
+the program).\
 
 When the face_recognition program starts:\
-If \'\'\'facedata.xml\'\'\' exists, the Eigenfaces database is loaded
-from \'\'\'facedata.xml\'\'\'.\
-If \'\'\'facedata.xml\'\'\' does not exist, the program tries to train
-and create Eigenfaces database from the training images listed in
-\'\'\'train.txt\'\'\', if any.\
+If **facedata.xml** exists, the Eigenfaces database is loaded from
+**facedata.xml**.\
+If **facedata.xml** does not exist, the program tries to train and
+create Eigenfaces database from the training images listed in
+**train.txt**, if any.\
 Regardless of if the Eigenfaces database is loaded/created at start up
 or not, you can always add training images directly from the video
 stream and then update the Eigenfaces database by (re)training.\
-Note: when the program (re)trains, the content of
-\'\'\'facedata.xml\'\'\' is disregarded and the program trains only
-based on the training images listed in \'\'\'train.txt\'\'\'.
+Note: when the program (re)trains, the content of **facedata.xml** is
+disregarded and the program trains only based on the training images
+listed in **train.txt**.
 
 ## Fserver
 
@@ -66,83 +66,78 @@ $ rosrun face_recognition Fserver
 
 This message includes 2 fields:
 
--   \'\'int\'\' \'\'\'order_id\'\'\'
--   \'\'string\'\' \'\'\'order_argument\'\'\'
+-   *int* **order_id**
+-   *string* **order_argument**
 
-The FaceRecognitionGoal message has 2 fields: an \'\'\'order_id\'\'\'
-which is an integer specifying a goal and an \'\'\'order_argument\'\'\'
-which is a string used to specify an argument for the goal if necessary.
-The face recognition actionlib server (i.e. \'\'\'Fserver\'\'\') accepts
-5 different goals:
+The FaceRecognitionGoal message has 2 fields: an **order_id** which is
+an integer specifying a goal and an **order_argument** which is a string
+used to specify an argument for the goal if necessary. The face
+recognition actionlib server (i.e. **Fserver**) accepts 5 different
+goals:
 
--   \'\'\'order_id\'\'\' = 0 recognise_once: Goal is to acknowledge the
-    first face recognized in the video stream. When the first face is
+-   **order_id** = 0 recognise_once: Goal is to acknowledge the first
+    face recognized in the video stream. When the first face is
     recognized with a confidence value higher than the desirable
     confidence value threshold, the name of the recognized person and
     its confidence value are sent back to the client as result.
--   \'\'\'order_id\'\'\' = 1 recognise_continuous: Goal is to
-    continuously recognise faces in the video stream. For every face
-    recognized with a confidence value higher than the desirable
-    confidence value threshold, the name of the recognized person and
-    its confidence value are sent back to the client as feedback. This
-    goal is persuaded for infinite time until it is cancelled or
-    preempted by another goal.
--   \'\'\'order_id\'\'\' = 2 and \'\'\'order_argument\'\'\' =
-    \'person_name\' add_face_images: Goal is to acquire training images
-    for a NEW person. The video stream is processed for detecting a face
-    which is saved and used as a training image for the new person. This
-    process is continued until the desired number of training images for
-    the new person is acquired. The name of the new person is provided
-    as \'\'\'order_argument\'\'\'. The acquired images are stored in the
-    \'data\' folder and are added to the list of training images in
-    \'\'\'train.txt\'\'\'
--   \'\'\'order_id\'\'\' = 3 train: Goal is to (re)train the Eigenfaces
-    database from the training images listed in the \'train.txt\'.
--   \'\'\'order_id\'\'\' = 4 exit: Goal is to exit the program.
+-   **order_id** = 1 recognise_continuous: Goal is to continuously
+    recognise faces in the video stream. For every face recognized with
+    a confidence value higher than the desirable confidence value
+    threshold, the name of the recognized person and its confidence
+    value are sent back to the client as feedback. This goal is
+    persuaded for infinite time until it is cancelled or preempted by
+    another goal.
+-   **order_id** = 2 and **order_argument** = \'person_name\'
+    add_face_images: Goal is to acquire training images for a NEW
+    person. The video stream is processed for detecting a face which is
+    saved and used as a training image for the new person. This process
+    is continued until the desired number of training images for the new
+    person is acquired. The name of the new person is provided as
+    **order_argument**. The acquired images are stored in the \'data\'
+    folder and are added to the list of training images in **train.txt**
+-   **order_id** = 3 train: Goal is to (re)train the Eigenfaces database
+    from the training images listed in the \'train.txt\'.
+-   **order_id** = 4 exit: Goal is to exit the program.
 
 ### Subscribed Topic:
 
--   \'\'\'/camera/image_raw\'\'\' (standard ROS image transport) A video
-    stream
+-   **/camera/image_raw** (standard ROS image transport) A video stream
 
 ### Parameters:
 
--   \'\'\'confidence_value\'\'\' (\'\'double\'\', default = 0.88) A face
-    recognized with confidence value higher than the
-    \"confidence_value\" threshold is accepted as valid.
+-   **confidence_value** (*double*, default = 0.88) A face recognized
+    with confidence value higher than the \"confidence_value\" threshold
+    is accepted as valid.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'show_screen_flag\'\'\' (\'\'boolean\'\', default = true) If
-    output screen is shown.
+-   **show_screen_flag** (*boolean*, default = true) If output screen is
+    shown.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'add_face_number\'\'\' (\'\'int\'\', default = 25) A parameter
-    for the \'add_face_images\' goal (order_id = 2) which determines the
-    number of training images for a new person to be acquired from the
-    video stream
+-   **add_face_number** (*int*, default = 25) A parameter for the
+    \'add_face_images\' goal (order_id = 2) which determines the number
+    of training images for a new person to be acquired from the video
+    stream
 
 ## Fclient
 
-\'\'\'Fclient\'\'\' is a ROS node that implements an actionlib client
-example for the face_recognition simple actionlib server (i.e.
-\'Fserver\'). \'Fclient\' is provided for demonstration and testing
-purposes.
+**Fclient** is a ROS node that implements an actionlib client example
+for the face_recognition simple actionlib server (i.e. \'Fserver\').
+\'Fclient\' is provided for demonstration and testing purposes.
 
 ### Subscribed topics
 
--   \'\'\'fr_order\'\'\' (face_recognition/FRClientGoal) Each
-    \'\'\'FRClientGoal\'\'\' message has an \'\'\'order_id\'\'\' and an
-    \'\'\'order_argument\'\'\' which specify a goal to be executed by
-    the \'\'\'Fserver\'\'\'. After receiving a message,
-    \'\'\'Fclient\'\'\' sends the corresponding goal to the
-    \'\'\'Fserver\'\'\'. By registering relevant call back functions,
-    \'\'\'Fclient\'\'\' receives feedback and result information from
-    the execution of goals in the \'\'\'Fserver\'\'\' and prints such
-    information on its terminal.
+-   **fr_order** (face_recognition/FRClientGoal) Each **FRClientGoal**
+    message has an **order_id** and an **order_argument** which specify
+    a goal to be executed by the **Fserver**. After receiving a message,
+    **Fclient** sends the corresponding goal to the **Fserver**. By
+    registering relevant call back functions, **Fclient** receives
+    feedback and result information from the execution of goals in the
+    **Fserver** and prints such information on its terminal.
 
 ## Tutorial
 
@@ -153,9 +148,9 @@ Fserver and Fclient:\
 $ roscore
 ```
 -   In a separate terminal publish a video stream on topic
-    \'\'\'/camera/image_raw\'\'\'. If you have the gscam package
-    installed and configured, you can use it to publish images from your
-    web cam as follows: ```
+    **/camera/image_raw**. If you have the gscam package installed and
+    configured, you can use it to publish images from your web cam as
+    follows: ```
 $ roscd gscam/bin
 $ rosrun gscam gscam /gscam/image_raw:=/camera/image_raw
 ```
@@ -200,34 +195,34 @@ $ rosmake face_recognition
 
 ## How the face recognition works:
 
-Training images are stored in the \'\'\'data\'\'\' directory.\
-Training images are listed in the \'\'\'train.text\'\'\' file.\
+Training images are stored in the **data** directory.\
+Training images are listed in the **train.text** file.\
 The \'train.txt\' follows a specific format which is best understood by
-looking at the example \'\'\'train.txt\'\'\' file provided in the
-package. Note that person numbers start from 1, and spaces or special
-characters are not allowed in persons\' names).\
+looking at the example **train.txt** file provided in the package. Note
+that person numbers start from 1, and spaces or special characters are
+not allowed in persons\' names).\
 The program trains from the training examples listed in the
-\'\'\'train.txt\'\'\' and create an Eigenfaces database which is stored
-in the \'\'\'facedata.xml\'\'\' file.\
+**train.txt** and create an Eigenfaces database which is stored in the
+**facedata.xml** file.\
 Face detection is performed using a haarcascade classifier
 (haarcascade_frontalface_alt.xml).\
-The \'\'\'data\'\'\' folder, and \'\'\'train.txt\'\'\',
-\'\'\'facedata.xml\'\'\' and \'\'\'haarcascade_frontalface_alt.xml\'\'\'
-files should be placed in the program\'s working directory (i.e. the
-directory from which you execute the program).\
+The **data** folder, and **train.txt**, **facedata.xml** and
+**haarcascade_frontalface_alt.xml** files should be placed in the
+program\'s working directory (i.e. the directory from which you execute
+the program).\
 
 When the face_recognition program starts:\
-If \'\'\'facedata.xml\'\'\' exists, the Eigenfaces database is loaded
-from \'\'\'facedata.xml\'\'\'.\
-If \'\'\'facedata.xml\'\'\' does not exist, the program tries to train
-and create Eigenfaces database from the training images listed in
-\'\'\'train.txt\'\'\', if any.\
+If **facedata.xml** exists, the Eigenfaces database is loaded from
+**facedata.xml**.\
+If **facedata.xml** does not exist, the program tries to train and
+create Eigenfaces database from the training images listed in
+**train.txt**, if any.\
 Regardless of if the Eigenfaces database is loaded/created at start up
 or not, you can always add training images directly from the video
 stream and then update the Eigenfaces database by (re)training.\
-Note: when the program (re)trains, the content of
-\'\'\'facedata.xml\'\'\' is disregarded and the program trains only
-based on the training images listed in \'\'\'train.txt\'\'\'.
+Note: when the program (re)trains, the content of **facedata.xml** is
+disregarded and the program trains only based on the training images
+listed in **train.txt**.
 
 ## Fserver
 
@@ -243,83 +238,78 @@ $ rosmake face_recognition
 
 This message includes 2 fields:
 
--   \'\'int\'\' \'\'\'order_id\'\'\'
--   \'\'string\'\' \'\'\'order_argument\'\'\'
+-   *int* **order_id**
+-   *string* **order_argument**
 
-The FaceRecognitionGoal message has 2 fields: an \'\'\'order_id\'\'\'
-which is an integer specifying a goal and an \'\'\'order_argument\'\'\'
-which is a string used to specify an argument for the goal if necessary.
-The face recognition actionlib server (i.e. \'\'\'Fserver\'\'\') accepts
-5 different goals:
+The FaceRecognitionGoal message has 2 fields: an **order_id** which is
+an integer specifying a goal and an **order_argument** which is a string
+used to specify an argument for the goal if necessary. The face
+recognition actionlib server (i.e. **Fserver**) accepts 5 different
+goals:
 
--   \'\'\'order_id\'\'\' = 0 recognise_once: Goal is to acknowledge the
-    first face recognized in the video stream. When the first face is
+-   **order_id** = 0 recognise_once: Goal is to acknowledge the first
+    face recognized in the video stream. When the first face is
     recognized with a confidence value higher than the desirable
     confidence value threshold, the name of the recognized person and
     its confidence value are sent back to the client as result.
--   \'\'\'order_id\'\'\' = 1 recognise_continuous: Goal is to
-    continuously recognise faces in the video stream. For every face
-    recognized with a confidence value higher than the desirable
-    confidence value threshold, the name of the recognized person and
-    its confidence value are sent back to the client as feedback. This
-    goal is persuaded for infinite time until it is cancelled or
-    preempted by another goal.
--   \'\'\'order_id\'\'\' = 2 and \'\'\'order_argument\'\'\' =
-    \'person_name\' add_face_images: Goal is to acquire training images
-    for a NEW person. The video stream is processed for detecting a face
-    which is saved and used as a training image for the new person. This
-    process is continued until the desired number of training images for
-    the new person is acquired. The name of the new person is provided
-    as \'\'\'order_argument\'\'\'. The acquired images are stored in the
-    \'data\' folder and are added to the list of training images in
-    \'\'\'train.txt\'\'\'
--   \'\'\'order_id\'\'\' = 3 train: Goal is to (re)train the Eigenfaces
-    database from the training images listed in the \'train.txt\'.
--   \'\'\'order_id\'\'\' = 4 exit: Goal is to exit the program.
+-   **order_id** = 1 recognise_continuous: Goal is to continuously
+    recognise faces in the video stream. For every face recognized with
+    a confidence value higher than the desirable confidence value
+    threshold, the name of the recognized person and its confidence
+    value are sent back to the client as feedback. This goal is
+    persuaded for infinite time until it is cancelled or preempted by
+    another goal.
+-   **order_id** = 2 and **order_argument** = \'person_name\'
+    add_face_images: Goal is to acquire training images for a NEW
+    person. The video stream is processed for detecting a face which is
+    saved and used as a training image for the new person. This process
+    is continued until the desired number of training images for the new
+    person is acquired. The name of the new person is provided as
+    **order_argument**. The acquired images are stored in the \'data\'
+    folder and are added to the list of training images in **train.txt**
+-   **order_id** = 3 train: Goal is to (re)train the Eigenfaces database
+    from the training images listed in the \'train.txt\'.
+-   **order_id** = 4 exit: Goal is to exit the program.
 
 ### Subscribed Topic:
 
--   \'\'\'/camera/image_raw\'\'\' (standard ROS image transport) A video
-    stream
+-   **/camera/image_raw** (standard ROS image transport) A video stream
 
 ### Parameters:
 
--   \'\'\'confidence_value\'\'\' (\'\'double\'\', default = 0.88) A face
-    recognized with confidence value higher than the
-    \"confidence_value\" threshold is accepted as valid.
+-   **confidence_value** (*double*, default = 0.88) A face recognized
+    with confidence value higher than the \"confidence_value\" threshold
+    is accepted as valid.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'show_screen_flag\'\'\' (\'\'boolean\'\', default = true) If
-    output screen is shown.
+-   **show_screen_flag** (*boolean*, default = true) If output screen is
+    shown.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'add_face_number\'\'\' (\'\'int\'\', default = 25) A parameter
-    for the \'add_face_images\' goal (order_id = 2) which determines the
-    number of training images for a new person to be acquired from the
-    video stream
+-   **add_face_number** (*int*, default = 25) A parameter for the
+    \'add_face_images\' goal (order_id = 2) which determines the number
+    of training images for a new person to be acquired from the video
+    stream
 
 ## Fclient
 
-\'\'\'Fclient\'\'\' is a ROS node that implements an actionlib client
-example for the face_recognition simple actionlib server (i.e.
-\'Fserver\'). \'Fclient\' is provided for demonstration and testing
-purposes.
+**Fclient** is a ROS node that implements an actionlib client example
+for the face_recognition simple actionlib server (i.e. \'Fserver\').
+\'Fclient\' is provided for demonstration and testing purposes.
 
 ### Subscribed topics
 
--   \'\'\'fr_order\'\'\' (face_recognition/FRClientGoal) Each
-    \'\'\'FRClientGoal\'\'\' message has an \'\'\'order_id\'\'\' and an
-    \'\'\'order_argument\'\'\' which specify a goal to be executed by
-    the \'\'\'Fserver\'\'\'. After receiving a message,
-    \'\'\'Fclient\'\'\' sends the corresponding goal to the
-    \'\'\'Fserver\'\'\'. By registering relevant call back functions,
-    \'\'\'Fclient\'\'\' receives feedback and result information from
-    the execution of goals in the \'\'\'Fserver\'\'\' and prints such
-    information on its terminal.
+-   **fr_order** (face_recognition/FRClientGoal) Each **FRClientGoal**
+    message has an **order_id** and an **order_argument** which specify
+    a goal to be executed by the **Fserver**. After receiving a message,
+    **Fclient** sends the corresponding goal to the **Fserver**. By
+    registering relevant call back functions, **Fclient** receives
+    feedback and result information from the execution of goals in the
+    **Fserver** and prints such information on its terminal.
 
 ## Tutorial
 
@@ -329,9 +319,9 @@ An exercise of using Fserver and Fclient:\
 $ rosmake face_recognition
 ```5
 -   In separate terminal publish a video stream on topic
-    \'\'\'/camera/image_raw\'\'\'.
--   For example you can use \'\'\'usb_cam\'\'\' to publish images from
-    your web cam as follows:
+    **/camera/image_raw**.
+-   For example you can use **usb_cam** to publish images from your web
+    cam as follows:
 -   Install [http://wiki.ros.org/usb_cam](usb_cam) package
 -   Run ```
 $ rosmake face_recognition

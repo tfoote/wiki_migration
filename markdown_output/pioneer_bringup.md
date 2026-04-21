@@ -37,7 +37,7 @@ Allows to communicate with usb cameras and webcams
 
 Skip this section if you don\'t want to use usb cameras, or if you want
 to invoke it yourself using another package { }}}} { }}}} { You may get
-this error message \'\'ros-kinetic-usb-cam package doesn\'t exist\'\'.
+this error message *ros-kinetic-usb-cam package doesn\'t exist*.
 
 In that case, simply install usb_cam package from source:
 

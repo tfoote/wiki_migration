@@ -27,8 +27,7 @@ higher up. Throwing, rethrowing and catching exceptions, in debug mode,
 can do this.
 
 However, again, be careful of using exceptions in areas of your code
-which need to be fast. The stack winding \'\'will\'\' slow your program
-down.
+which need to be fast. The stack winding *will* slow your program down.
 
 ### Provides
 
@@ -55,7 +54,7 @@ using ecl::InvalidInputError;
 // ...
 ```
 
-If outside ros, you will also need to link to \'\'ecl_exceptions\'\'.
+If outside ros, you will also need to link to *ecl_exceptions*.
 
 ## Tutorials
 
@@ -92,5 +91,5 @@ ecl.
 The only reason that might motivate a change in policy is if the ecl is
 used in very heirarchical programs which require floating different
 exception types to different levels depending on their type (e.g. you
-might want to catch an \'\'is_busy\'\' error early and recover, whilst
-letting a \'\'configuration_error\'\' float to the top).
+might want to catch an *is_busy* error early and recover, whilst letting
+a *configuration_error* float to the top).

@@ -60,10 +60,10 @@ descriptors to provide an approximate estimation of the object\'s pose
 for the tracker module which will track the object using edge-based
 methods.
 
-More information: \[\'\'\'Mörwald, T.; Prankl, J.; Richtsfeld, A.;
-Zillich, M.; Vincze, M. BLORT - The Blocks World Robotic Vision Toolbox
-Best Practice in 3D Perception and Modeling for Mobile Manipulation (in
-conjunction with ICRA 2010), 2010.\'\'\'\] or you can also visit the
+More information: \[**Mörwald, T.; Prankl, J.; Richtsfeld, A.; Zillich,
+M.; Vincze, M. BLORT - The Blocks World Robotic Vision Toolbox Best
+Practice in 3D Perception and Modeling for Mobile Manipulation (in
+conjunction with ICRA 2010), 2010.**\] or you can also visit the
 [BLORT Homepage](http://www.acin.tuwien.ac.at/?id=290).
 
 ## Usage

@@ -19,8 +19,8 @@ The full algorithmic description can be found in the following paper:
 
 <http://link.springer.com/article/10.1007/s10846-012-9811-5#>!
 
-CRSM SLAM does \'\'\'not\'\'\' have a close loop behaviour, but it gives
-very good results in featured spaces.
+CRSM SLAM does **not** have a close loop behaviour, but it gives very
+good results in featured spaces.
 
 Finally, it was used in the [PANDORA](http://pandora.ee.auth.gr/)
 autonomous vehicle that takes part in the world-wide robotic competition
@@ -92,70 +92,70 @@ CRSM is fully parameterizable by changing the parameter file
 \"crsm_slam/config/crsm_slam/crsm_slam_parameters.yaml\". The meaning of
 each parameter, as well as the expected effect on the algorithm follow:
 
--   \'\'\'occupancy_grid_publish_topic\'\'\'
+-   **occupancy_grid_publish_topic**
 -   Description : The occupancy grid publishing topic
 -   Default : \`/crsm_slam/map\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'robot_trajectory_publish_topic\'\'\'
+-   **robot_trajectory_publish_topic**
 -   Description : The trajectory publishing topic
 -   Default : \`/crsm_slam/trajectory\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'trajectory_publisher_frame_id\'\'\'
+-   **trajectory_publisher_frame_id**
 -   Description : The trajectory frame ID
 -   Default : \`map\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laser_subscriber_topic\'\'\'
+-   **laser_subscriber_topic**
 -   Description : The laser subscriber topic
 -   Default : \`/crsm_slam/laser_scan\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'world_frame\'\'\'
+-   **world_frame**
 -   Description : Holds the world frame
 -   Default : \`world\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'base_footprint_frame\'\'\'
+-   **base_footprint_frame**
 -   Description : Holds the base footprint frame - (x,y,yaw)
 -   Default : \`base_footprint_link\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'base_frame\'\'\'
+-   **base_frame**
 -   Description : Holds the base frame
 -   Default : \`base_link\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'map_frame\'\'\'
+-   **map_frame**
 -   Description : Holds the map frame
 -   Default : \`map\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'laser_frame\'\'\'
+-   **laser_frame**
 -   Description : Holds the laser frame
 -   Default : \`laser_link\`
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'hill_climbing_disparity\'\'\'
+-   **hill_climbing_disparity**
 -   Description : Disparity of mutation in pixels at hill climbing
 -   Default : 40
 -   Effect : If the disparity is increased, hill climbing searches for
@@ -165,7 +165,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'slam_container_size\'\'\'
+-   **slam_container_size**
 -   Description : Map size of initial allocated map
 -   Default : 500
 -   Effect : This variable controls the initial size of the container of
@@ -175,7 +175,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'slam_occupancy_grid_dimentionality\'\'\'
+-   **slam_occupancy_grid_dimentionality**
 -   Description : \[OC\]cupancy \[G\]rid \[D\]imentionality - the width
     and height in meters of a pixel
 -   Default : 0.02
@@ -185,7 +185,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'map_update_density\'\'\'
+-   **map_update_density**
 -   Description : Map update density (0-127)
 -   Default : 30
 -   Effect : If the current variable increases, the map probabilities
@@ -195,7 +195,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'map_update_obstacle_density\'\'\'
+-   **map_update_obstacle_density**
 -   Description : Coefficient for obstacle update density (0+)
 -   Default : 3.0
 -   Effect : In CRSM SLAM the obstacles probabilities update with a
@@ -205,7 +205,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'scan_density_lower_boundary\'\'\'
+-   **scan_density_lower_boundary**
 -   Description : Scan density lower boundary for a scan-part
     identification
 -   Default : 0.3
@@ -216,7 +216,7 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'max_hill_climbing_iterations\'\'\'
+-   **max_hill_climbing_iterations**
 -   Description : Maximum RRHC iterations
 -   Default : 40000
 -   Effect : If more search power is needed, you can increase this
@@ -225,28 +225,28 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'occupancy_grid_map_freq\'\'\'
+-   **occupancy_grid_map_freq**
 -   Description : The occupancy grid map publishing frequency
 -   Default : 1.0 Hz
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'robot_pose_tf_freq\'\'\'
+-   **robot_pose_tf_freq**
 -   Description : The robot pose publishing frequency
 -   Default : 5.0 Hz
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'trajectory_freq\'\'\'
+-   **trajectory_freq**
 -   Description : The trajectory publishing frequency
 -   Default : 1.0 Hz
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'desired_number_of_picked_rays\'\'\'
+-   **desired_number_of_picked_rays**
 -   Description : The desired number of picked rays \[algorithm
     specific\]
 -   Default : 40
@@ -257,14 +257,14 @@ each parameter, as well as the expected effect on the algorithm follow:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'robot_width\'\'\'
+-   **robot_width**
 -   Description : The robot width in meters
 -   Default : 0.5
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'robot_length\'\'\'
+-   **robot_length**
 -   Description : The robot length in meters
 -   Default : 0.5
 

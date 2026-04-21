@@ -15,14 +15,14 @@ and a 3DoF position sensor.
 
 The provided nodes are only examples of update sensor modules. Since
 your hardware set-up and transformation conventions may differ from
-ours, before you use these examples you \'\'must\'\' check their code
-and adjust it to your needs.
+ours, before you use these examples you *must* check their code and
+adjust it to your needs.
 
-\'\'\'pose_sensor\'\'\': sample for a 6DoF pose sensor as update sensor
-(for example using Vicon or [ethzasl_ptam](ethzasl_ptam))
+**pose_sensor**: sample for a 6DoF pose sensor as update sensor (for
+example using Vicon or [ethzasl_ptam](ethzasl_ptam))
 
-\'\'\'position_sensor\'\'\': sample for a 3DoF position sensor as update
-sensor (for example using a Leica Totalstation)
+**position_sensor**: sample for a 3DoF position sensor as update sensor
+(for example using a Leica Totalstation)
 
 ## Designing an Update Sensor Module
 
@@ -39,8 +39,8 @@ Every update sensor consists of 3 files:
 -   \[type\]\_measurements.h contains the initialization values passed
     to the initialization procedure in [ ssf_core](../ssf_core ).
 
-Essentially you can use the example modules \'\'pose_sensor\'\' and
-\'\'position_sensor\'\' and adapt them to your needs.
+Essentially you can use the example modules *pose_sensor* and
+*position_sensor* and adapt them to your needs.
 
 The main.cpp file only provides the wrapper to instantiate a sensor
 module.
@@ -55,11 +55,11 @@ state propagation is done automatically by [ ssf_core](../ssf_core ).
 ### Registering Dynamic Reconfigure Calls
 
 The dynamic reconfigure part in [ ssf_core](../ssf_core ) contains two
-general noise parameters \'\'meas_noise1\'\' and \'\'meas_noise2\'\'.
-They can be used as dynamically reconfigurable measurement noise
-parameters. However, we suggest to have the measurement noise included
-in the update sensor\'s own information source (e.g. covariance estimate
-of the visual odometry\'s PoseWithCovarianceStamped message).
+general noise parameters *meas_noise1* and *meas_noise2*. They can be
+used as dynamically reconfigurable measurement noise parameters.
+However, we suggest to have the measurement noise included in the update
+sensor\'s own information source (e.g. covariance estimate of the visual
+odometry\'s PoseWithCovarianceStamped message).
 
 ### Calculating the Measurement Matrix and Residuals
 
@@ -77,9 +77,9 @@ papers to get some insights to this:
 [ pdf2](http://publications.asl.ethz.ch/files/weiss11real.pdf ),
 [ pdf3](http://publications.asl.ethz.ch/files/weiss12realtime.pdf )
 
-The code examples in \'\'pose_sensor\'\' and \'\'position_sensor\'\'
-already cover the two most important \'\'types\'\' of sensors and may be
-adapted to your needs.
+The code examples in *pose_sensor* and *position_sensor* already cover
+the two most important *types* of sensors and may be adapted to your
+needs.
 
 ### Designing the Initialization
 

@@ -62,8 +62,8 @@ Running following commmand to launch lslidar n301 drive
 roslauch lslidar_n301_decoder lslidar_n301_decoder_nodelet.launch
 ```
 
-\'\'\'Note\'\'\' that this launch file launches both the driver and the
-decoder, which is the only launch file needed to be used.
+**Note** that this launch file launches both the driver and the decoder,
+which is the only launch file needed to be used.
 
 ## FAQ
 

@@ -1,4 +1,4 @@
-\'\'\'Note:\'\'\' in electric, this node can be found in the
+**Note:** in electric, this node can be found in the
 [pr2_arm_navigation_perception](pr2_arm_navigation_perception) package.
 
 ## Nodes

@@ -17,15 +17,15 @@ rosmake ft_sensor_controller
 
 Next, be sure to run pr2_etherCAT with netft plugin. Use directions
 [here](netft_ethercat_hardware/Tutorials/UsingNetFTPluginWithPR2EtherCAT).
-Now you should see \'\'ft_sensor_controller/ForceInterfacePlugin\'\' in
-the list when doing:
+Now you should see *ft_sensor_controller/ForceInterfacePlugin* in the
+list when doing:
 
 . ```
 rosrun pr2_controller_manager pr2_controller_manager list-types
 ```
 
-If that is the case, you can use the \'\'FT_controller.launch\'\' script
-which loads the parameters and spawns the controller:
+If that is the case, you can use the *FT_controller.launch* script which
+loads the parameters and spawns the controller:
 
 . ```
 roslaunch ft_sensor_controller FT_controller.launch

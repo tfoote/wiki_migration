@@ -28,24 +28,24 @@ The indicators are broken into four categories:
 
 ### Diagnostic
 
-  -- ----------------------- -- ------------------------------------- -- --------------------------------------- -- ---------------------------------------- -- ---------------------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------- --
-     \'\'\'Component\'\'\'      \'\'\'OK\'\'\'                           \'\'\'Warn\'\'\'                           \'\'\'Error\'\'\'                           \'\'\'Stale\'\'\'                           \'\'\'Description\'\'\'                                                                                                                   
-     \<\^\>Diagnostics          \<\^\>![](attachment:diag_ok.png)        \<\^\>![](attachment:diag_warn.png)        \<\^\>![](attachment:diag_error.png)        \<\^\>![](attachment:diag_stale.png)        \<\^\>Clicking pops up the [Robot Monitor](robot_monitor). The OK/Warn/Error state is determined from the top level of its tree.          
-     \<\^\>Rosout               \<\^\>![](attachment:rosout_ok.png)      \<\^\>![](attachment:rosout_warn.png)      \<\^\>![](attachment:rosout_error.png)      \<\^\>![](attachment:rosout_stale.png)      \<\^\>Clicking pops up [rxconsole](rxconsole). The OK/Warn/Error state is determined by the messages received over the last 30 seconds.   
-     \<\^\>Motors               \<\^\>![](attachment:motors_ok.png)      \<\^\>N/A                                  \<\^\>![](attachment:motors_error.png)      \<\^\>![](attachment:motors_stale.png)      \<\^\>Clicking pops up a menu allowing you to halt or reset motors: ![](attachment:motors_menu.png)                                       
-  -- ----------------------- -- ------------------------------------- -- --------------------------------------- -- ---------------------------------------- -- ---------------------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ------------------- -- ------------------------------------- -- --------------------------------------- -- ---------------------------------------- -- ---------------------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------- --
+     **Component**          **OK**                                   **Warn**                                   **Error**                                   **Stale**                                   **Description**                                                                                                                           
+     \<\^\>Diagnostics      \<\^\>![](attachment:diag_ok.png)        \<\^\>![](attachment:diag_warn.png)        \<\^\>![](attachment:diag_error.png)        \<\^\>![](attachment:diag_stale.png)        \<\^\>Clicking pops up the [Robot Monitor](robot_monitor). The OK/Warn/Error state is determined from the top level of its tree.          
+     \<\^\>Rosout           \<\^\>![](attachment:rosout_ok.png)      \<\^\>![](attachment:rosout_warn.png)      \<\^\>![](attachment:rosout_error.png)      \<\^\>![](attachment:rosout_stale.png)      \<\^\>Clicking pops up [rxconsole](rxconsole). The OK/Warn/Error state is determined by the messages received over the last 30 seconds.   
+     \<\^\>Motors           \<\^\>![](attachment:motors_ok.png)      \<\^\>N/A                                  \<\^\>![](attachment:motors_error.png)      \<\^\>![](attachment:motors_stale.png)      \<\^\>Clicking pops up a menu allowing you to halt or reset motors: ![](attachment:motors_menu.png)                                       
+  -- ------------------- -- ------------------------------------- -- --------------------------------------- -- ---------------------------------------- -- ---------------------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------- --
 
 ### Circuit Breakers
 
-The circuit breakers are labeled L/B/R, which stand for \'\'Left
-Arm\'\', \'\'Base/Spine\'\', and \'\'Right Arm\'\'. Each breaker can be
-in one of four states, and clicking on any of the breakers will pop up a
-menu allowing you to change the state of one or all of them:
+The circuit breakers are labeled L/B/R, which stand for *Left Arm*,
+*Base/Spine*, and *Right Arm*. Each breaker can be in one of four
+states, and clicking on any of the breakers will pop up a menu allowing
+you to change the state of one or all of them:
 
 ![](attachment:breakers_menu.png)
 
   -- -------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------------- --
-     \<tablestyle=\"width: 100%; text-align: center;\"\> \'\'\'Enabled\'\'\'                               \'\'\'Standby\'\'\'                                                                                                  \'\'\'Disabled\'\'\'                                                                                                    \'\'\'Stale\'\'\'                                                                                           
+     \<tablestyle=\"width: 100%; text-align: center;\"\> **Enabled**                                       **Standby**                                                                                                          **Disabled**                                                                                                            **Stale**                                                                                                   
      ![](attachment:breaker_l_ok.png)![](attachment:breaker_b_ok.png)![](attachment:breaker_r_ok.png)      ![](attachment:breaker_l_standby.png)![](attachment:breaker_b_standby.png)![](attachment:breaker_r_standby.png)      ![](attachment:breaker_l_disabled.png)![](attachment:breaker_b_disabled.png)![](attachment:breaker_r_disabled.png)      ![](attachment:breaker_l_stale.png)![](attachment:breaker_b_stale.png)![](attachment:breaker_r_stale.png)   
   -- -------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------------------------------- --
 
@@ -63,7 +63,7 @@ robot.
 The runstops can be in one of four states:
 
   -- ---------------------------------------------------------------------------- -- ------------------------------------------------------------------------------ -- ----------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------- --
-     \<tablestyle=\"width: 100%; text-align: center;\"\>\'\'\'OK\'\'\'               \<:\>\'\'\'Physical Stopped\'\'\'                                                 \<:\>\'\'\'Wireless Stopped\'\'\'                                                      \'\'\'Stale\'\'\'                                                                  
+     \<tablestyle=\"width: 100%; text-align: center;\"\>**OK**                       \<:\>**Physical Stopped**                                                         \<:\>**Wireless Stopped**                                                              **Stale**                                                                          
      \<:\>![](attachment:runstop_ok.png)![](attachment:runstop_wireless_ok.png)      \<:\>![](attachment:runstop_stop.png)![](attachment:runstop_wireless_ok.png)      \<:\>![](attachment:runstop_unknown.png)![](attachment:runstop_wireless_stop.png)      \<:\>![](attachment:runstop_stale.png)![](attachment:runstop_wireless_stale.png)   
   -- ---------------------------------------------------------------------------- -- ------------------------------------------------------------------------------ -- ----------------------------------------------------------------------------------- -- ---------------------------------------------------------------------------------- --
 
@@ -78,10 +78,10 @@ The battery will change its color and % filled based on the amount of
 battery remaining. It will also show a power-plug symbol if the robot is
 charging.
 
-  -- ------------------------------------------------------------------------------ -- ------------------------------------ -- --------------------------------- -- -------------------------------------- --
-     \<tablestyle=\"width: 100%; text-align: center;\"\> \'\'\'Charge \>50%\'\'\'      \'\'\'Charge 30-50%\'\'\'               \'\'\'Charge \<30%\'\'\'             \'\'\'Charging\'\'\'                   
-     ![](attachment:battery_green.png)                                                 ![](attachment:battery_yellow.png)      ![](attachment:battery_red.png)      ![](attachment:battery_charging.png)   
-  -- ------------------------------------------------------------------------------ -- ------------------------------------ -- --------------------------------- -- -------------------------------------- --
+  -- ---------------------------------------------------------------------- -- ------------------------------------ -- --------------------------------- -- -------------------------------------- --
+     \<tablestyle=\"width: 100%; text-align: center;\"\> **Charge \>50%**      **Charge 30-50%**                       **Charge \<30%**                     **Charging**                           
+     ![](attachment:battery_green.png)                                         ![](attachment:battery_yellow.png)      ![](attachment:battery_red.png)      ![](attachment:battery_charging.png)   
+  -- ---------------------------------------------------------------------- -- ------------------------------------ -- --------------------------------- -- -------------------------------------- --
 
 ## ROS API
 

@@ -1,9 +1,9 @@
 # Overview
 
-\'\'\'\'\'This documentation is copied from the README.md in the
+***This documentation is copied from the README.md in the
 kvh_geo_fog_3d/kvh_geo_fog_3d_driver package source code. While every
 effort is made to update the wiki upon updates to the README.md, the
-README.md contains the most up-to-date documentation.\'\'\'\'\'
+README.md contains the most up-to-date documentation.***
 
 Driver for the KVH GEO FOG 3D inertial navigation systems. Connects over
 serial to the KVH GEO FOG 3D device and publishes out both KVH-specific
@@ -78,27 +78,27 @@ is different than the KVH messages, which report latitude/longitude in
 radians.
 
 -   \`\<node_name\>/imu/data_raw_frd\` (sensor_msgs/Imu)
--   \`\<node_name\>/imu/data_raw_flu\` (sensor_msgs/Imu) \'\'\'REP-105,
-    REP-145 compliant\'\'\'
+-   \`\<node_name\>/imu/data_raw_flu\` (sensor_msgs/Imu) **REP-105,
+    REP-145 compliant**
 -   \`\<node_name\>/imu/data_ned\` (sensor_msgs/Imu)
--   \`\<node_name\>/imu/data_enu\` (sensor_msgs/Imu) \'\'\'REP-105,
-    REP-145 compliant\'\'\'
+-   \`\<node_name\>/imu/data_enu\` (sensor_msgs/Imu) **REP-105, REP-145
+    compliant**
 -   \`\<node_name\>/imu/rpy_ned\` (geometry_msgs/Vector3Stamped)
 -   \`\<node_name\>/imu/rpy_ned_deg\` (geometry_msgs/Vector3Stamped)
 -   \`\<node_name\>/imu/rpy_enu\` (geometry_msgs/Vector3Stamped)
 -   \`\<node_name\>/imu/rpy_enu_deg\` (geometry_msgs/Vector3Stamped)
--   \`\<node_name\>/gps/fix\` (sensor_msgs/NavSatFix) \'\'\'Filtered
-    GNSS location, in degrees\'\'\'
--   \`\<node_name\>/gps/raw_fix\` (sensor_msgs/NavSatFix) \'\'\'Raw GNSS
-    location, in degrees\'\'\'
+-   \`\<node_name\>/gps/fix\` (sensor_msgs/NavSatFix) **Filtered GNSS
+    location, in degrees**
+-   \`\<node_name\>/gps/raw_fix\` (sensor_msgs/NavSatFix) **Raw GNSS
+    location, in degrees**
 -   \`\<node_name\>/gps/mag\` (sensor_msgs/MagneticField)
 -   \`\<node_name\>/gps/utm_ned\` (nav_msgs/Odometry)
--   \`\<node_name\>/gps/utm_enu\` (nav_msgs/Odometry) \'\'\'REP-105
-    compliant\'\'\'
+-   \`\<node_name\>/gps/utm_enu\` (nav_msgs/Odometry) **REP-105
+    compliant**
 -   \`\<node_name\>/odom/wheel_encoder\` (nav_msgs/Odometry)
 -   \`\<node_name\>imu/raw_sensor_frd\` (nav_msgs/Odometry)
--   \`\<node_name\>/odom/raw_sensor_flu\` (nav_msgs/Odometry)
-    \'\'\'REP-105 compliant\'\'\'
+-   \`\<node_name\>/odom/raw_sensor_flu\` (nav_msgs/Odometry) **REP-105
+    compliant**
 
 ### Parameters
 
@@ -224,9 +224,9 @@ This will give you the option to set the buad rate as well. It is
 currently recommended to set the baud rate to 921600 as that is the
 smallest baud rate that will never overflow.
 
-\'\'\'Note: this number can be smaller and still work, but due to the
+**Note: this number can be smaller and still work, but due to the
 possibility of the detailed satellites packet being the maximum size we
-recommend this.\'\'\'
+recommend this.**
 
 # ROS conformance and Conventions
 
@@ -374,14 +374,14 @@ packet size to packetSize\_, and the string literal of the packet type
 to packetTypeStr\_. Note, this is essentially registering your desired
 packet.
 
-\'\'Developer Note: The packetSize\_ and packetTypeStr\_ could be
-inferred from the packet_id, except for the fact that some packets exist
-that were not properly implemented in kvh\'s api, and which we have had
-to manually extend. We have chosen to make these fixes in our code
-instead of modifying their api.\'\'
+*Developer Note: The packetSize\_ and packetTypeStr\_ could be inferred
+from the packet_id, except for the fact that some packets exist that
+were not properly implemented in kvh\'s api, and which we have had to
+manually extend. We have chosen to make these fixes in our code instead
+of modifying their api.*
 
-2\. Add packet-specific decoding function to \'\'\'DecodePacket\'\'\'
-function in \`src/kvh_driver/decode_packets.cpp\`
+2\. Add packet-specific decoding function to **DecodePacket** function
+in \`src/kvh_driver/decode_packets.cpp\`
 
 You should be able to just follow the pattern shown by the previously
 implemented packets, but will be included here for comprehensiveness.
@@ -395,8 +395,8 @@ packetStorage\_.SetPacketUpdated(packet_type_id, true); }
 
 \`
 
-3\. Add packet to initialization mapping in the \'\'\'Init\'\'\'
-function of \`src/kvh_driver/packet_storage.cpp\`
+3\. Add packet to initialization mapping in the **Init** function of
+\`src/kvh_driver/packet_storage.cpp\`
 
 The packet storage is initialized with the requested packets at the
 beginning. You must add a line similar to the following to make sure the

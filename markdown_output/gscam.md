@@ -5,21 +5,21 @@ maximizes compatibility. \`gscam\` leverages
 [Gstreamer](http://www.gstreamer.net/), a multimedia framework similar
 to !DirectShow. Specifically: Gstreamer can be used to build up
 multimedia \"pipelines\" consisting of sources, sinks, and filters. For
-example: a v4l webcam \'\'source\'\' might be \'\'filtered\'\' by an
-upscaler before being sent to the screen (a \'\'sink\'\'). Alternately,
-a mp4 file might act as a source and be filtered into an avi file as a
-sink. There are many possibilities. For an overview see:
+example: a v4l webcam *source* might be *filtered* by an upscaler before
+being sent to the screen (a *sink*). Alternately, a mp4 file might act
+as a source and be filtered into an avi file as a sink. There are many
+possibilities. For an overview see:
 [Using Gstreamer](http://gstreamer.freedesktop.org/data/doc/gstreamer/head/faq/html/chapter-using.html).
 
 \`gscam\` can attach itself to a specially formatted pipeline. Provided
 this pipeline is processing RGB video, \`gscam\` will rebroadcast the
-video over as \'\'both\'\' a standard ROS image transport \'\'and\'\' a
-ROS Camera. Since Gstreamer is compatibile with almost every video
-capture standard under Linux (and many on OSX), \`gscam\` makes ROS
-defacto compatible with almost every Linux webcam or video system
-available. Moreover, because there are a number of Gstreamer filters for
-processing video (e.g. white-balancing, cropping, etc.) gscam allows for
-a more advanced video processing even with cheaper webcams.
+video over as *both* a standard ROS image transport *and* a ROS Camera.
+Since Gstreamer is compatibile with almost every video capture standard
+under Linux (and many on OSX), \`gscam\` makes ROS defacto compatible
+with almost every Linux webcam or video system available. Moreover,
+because there are a number of Gstreamer filters for processing video
+(e.g. white-balancing, cropping, etc.) gscam allows for a more advanced
+video processing even with cheaper webcams.
 
 Gstreamer is an extremely rich framework, but basic usage is fairly
 simple. Please see the \"Basic Usage\" section to get started. You may
@@ -32,12 +32,12 @@ contain a gstreamer pipeline definition for it to launch. There is one
 important restriction:
 
 -   At the end of the pipeline where \`gscam\` will attach itself, the
-    pipeline \'\'must\'\' be carrying RGB formatted video.
+    pipeline *must* be carrying RGB formatted video.
 
 Here\'s an example launch that should work on almost any machine where
 Gstreamer is installed and a camera of some kind is available attached
-to \`/dev/video2\`. Note that \`gscam\` expects to start \'\'within\'\'
-the bin directory:
+to \`/dev/video2\`. Note that \`gscam\` expects to start *within* the
+bin directory:
 
 ```
 roscd gscam

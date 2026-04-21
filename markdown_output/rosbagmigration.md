@@ -1,7 +1,7 @@
-  -- ------------------------------------------------------------------------------- --
-     \<#FFFF00\> \'\'\'As of ROS 1.3.0, rosbagmigration has been deprecated.\'\'\'   
-     \<#FFFF00\> \'\'\'Please see [rosbag/migration](rosbag/migration)\'\'\'         
-  -- ------------------------------------------------------------------------------- --
+  -- ----------------------------------------------------------------------- --
+     \<#FFFF00\> **As of ROS 1.3.0, rosbagmigration has been deprecated.**   
+     \<#FFFF00\> **Please see [rosbag/migration](rosbag/migration)**         
+  -- ----------------------------------------------------------------------- --
 
 ## Rule Files
 
@@ -13,34 +13,33 @@ extension.
 
 The following fields must be overridden:
 
--   \'\'\'old_type\'\'\': The full type of the old message.
--   \'\'\'old_full_text\'\'\': The full message text.
+-   **old_type**: The full type of the old message.
+-   **old_full_text**: The full message text.
 -   If necessary, this can be generated from a message using:
     `rosrun rosbagmigration savemsg.py msgname`
--   \'\'\'new_type\'\'\': The full type of the new message.
--   \'\'\'new_full_text\'\'\': The full message text.
+-   **new_type**: The full type of the new message.
+-   **new_full_text**: The full message text.
 -   If necessary, this can be generated from a message using:
     `rosrun rosbagmigration savemsg.py msgname`
--   \'\'\'order\'\'\': Every message with the same \`old_type\`
-    \'\'must\'\' have a unique order number which constains the order in
-    which they are chained together. Ordering is from lowest to highest
-    order number.
--   \'\'\'migrated_types\'\'\': A list of pairs of
+-   **order**: Every message with the same \`old_type\` *must* have a
+    unique order number which constains the order in which they are
+    chained together. Ordering is from lowest to highest order number.
+-   **migrated_types**: A list of pairs of
     `("oldsubtype", "newsubtype")` which can be used with the migrate
     helper function.
--   \'\'\'valid\'\'\': This must be set to True manually to verify that
-    a human has interacted with the rule file.
+-   **valid**: This must be set to True manually to verify that a human
+    has interacted with the rule file.
 
 The following method must be overridden:
 
--   \'\'\'update(self, old_msg, new_msg)\'\'\': The instance of new_msg
-    passed into this function should be populated from the old_msg.
+-   **update(self, old_msg, new_msg)**: The instance of new_msg passed
+    into this function should be populated from the old_msg.
 
 ### The update function
 
 For the most part just about all of the rule definition will be
 generated for you by \`rosbag check\` or \`makerule.py\`. The place
-where the most user intervention is necessary is the \'\'\'update\'\'\'
+where the most user intervention is necessary is the **update**
 function. The update function takes two inputs: \`old_msg\`, and
 \`new_msg\`. The intent is to fill in the fields of \`new_msg\`
 appropriately with a combination of default values or values moved over
@@ -49,25 +48,25 @@ from \`old_msg\`.
 There are a few important helper classes to make this substantially
 easier:
 
--   \'\'\'self.migrate(old_sub_msg, new_sub_msg)\'\'\' can be used to
-    migrate a sub-message. This migration has the full power of the
-    message migration system behind it and will make use of all
-    available rules (including those defined later in the file).
--   \'\'\'self.get_new_class(type_name)\'\'\' returns a Python class
-    corresponding to the name of the type passed to it.
-    \'\'\'Important:\'\'\' only instantiate classes using this approach.
-    Never use a message definition imported from a system package as it
-    means the update rule will break in the future if the system
-    definition of the message ever changes.
--   \'\'\'self.migrate_array(old_sub_msg_array, new_sub_msg_array,
-    type_name)\'\'\' works to migrate an array instead of a sub-message.
-    The extra argument, \`type_name\`, is necessary since in most cases;
+-   **self.migrate(old_sub_msg, new_sub_msg)** can be used to migrate a
+    sub-message. This migration has the full power of the message
+    migration system behind it and will make use of all available rules
+    (including those defined later in the file).
+-   **self.get_new_class(type_name)** returns a Python class
+    corresponding to the name of the type passed to it. **Important:**
+    only instantiate classes using this approach. Never use a message
+    definition imported from a system package as it means the update
+    rule will break in the future if the system definition of the
+    message ever changes.
+-   **self.migrate_array(old_sub_msg_array, new_sub_msg_array,
+    type_name)** works to migrate an array instead of a sub-message. The
+    extra argument, \`type_name\`, is necessary since in most cases;
     \`new_sub_msg_array\` is a empty. \`type_name\` will be internally
     passed through to \`get_new_class\`.
 
-An example rule file for a message and its sub-message.
-\'\'\'Note\'\'\': With the exception of changing the valid member to
-True, this entire file was generated by following the directions in
+An example rule file for a message and its sub-message. **Note**: With
+the exception of changing the valid member to True, this entire file was
+generated by following the directions in
 [Migrating Messages](#migrating). ```
 class update_mypkg_MyMsg_cdeceeac6a1a98788dbcb8bf5f31b49b(MessageUpdateRule):
         old_type = "mypkg/MyMsg"
@@ -180,10 +179,9 @@ use, add:
 to your manifest file. This will cause the rule file to be automatically
 get loaded whenever the message migrator is instantiated.
 
-\'\'\'NOTE:\'\'\' in order for a plugin to be exported correctly, you
-must depend on the package the plugin is used for. In this case your
-package MUST have a dependency on \`rosbagmigration\` to export
-migration rules.
+**NOTE:** in order for a plugin to be exported correctly, you must
+depend on the package the plugin is used for. In this case your package
+MUST have a dependency on \`rosbagmigration\` to export migration rules.
 
 ### Alternative Approach to Making Rules
 
@@ -194,12 +192,11 @@ To generate rules: ```
 $ rosbag check in.bag -g myrules.bmr
 ```
 
-\'\'\'Note\'\'\': Using this functionality is not generally advised for
-creating permanent rules to check into the system. Creating rules
-directly from arbitrarily old bag files is likely to skip intermediate
-changes and lead to ordering confusion. However, if a bag is missing
-rules, this is intended to be the quickest pathway to making it
-functional.
+**Note**: Using this functionality is not generally advised for creating
+permanent rules to check into the system. Creating rules directly from
+arbitrarily old bag files is likely to skip intermediate changes and
+lead to ordering confusion. However, if a bag is missing rules, this is
+intended to be the quickest pathway to making it functional.
 
 At this point, you will need to edit \`myrules.bmr\` by hand. See
 [Rule Files](#rulefiles) for more info.

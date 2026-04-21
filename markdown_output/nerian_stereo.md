@@ -20,9 +20,9 @@ possible to reconstruct the 3D location of every observed scene points.
 
 ------------------------------------------------------------------------
 
-\'\'\'Please note: since version 3.0.0 this node is no longer compatible
-to SP1 -- the predecessor of SceneScan. Please use an older version with
-SP1 or the now discontinued [nerian_sp1](nerian_sp1) node\'\'\'
+**Please note: since version 3.0.0 this node is no longer compatible to
+SP1 -- the predecessor of SceneScan. Please use an older version with
+SP1 or the now discontinued [nerian_sp1](nerian_sp1) node**
 
 ------------------------------------------------------------------------
 

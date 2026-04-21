@@ -1,7 +1,7 @@
 ## Overview
 
-\'\'NOTE: This package is currently unreleased and contains experimental
-code.\'\'
+*NOTE: This package is currently unreleased and contains experimental
+code.*
 
 \`sbpl_lattice_planner_3d\` is based on the
 [sbpl_lattice_planner](sbpl_lattice_planner) global planner and adheres

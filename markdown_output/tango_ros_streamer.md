@@ -19,8 +19,8 @@ and kinetic on Ubuntu 16.04.
 
 ## Tutorials
 
-\<\<TutorialChain(tango_ros_streamer/Visualisation)\>\> \'\'\'Create a
-new tutorial:\'\'\'
+\<\<TutorialChain(tango_ros_streamer/Visualisation)\>\> **Create a new
+tutorial:**
 
 ## Known Usages
 

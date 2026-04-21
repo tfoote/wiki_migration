@@ -6,14 +6,14 @@ monitor the system behavior. These are general software entities
 implemented as ROS nodes that monitor particular aspects of the system.
 There are different kinds of observers supervising different aspects or
 properties. The result of the observation is published on the
-\'\'/observations\'\' topic as a first order logic (FOL) sentence. The
+*/observations* topic as a first order logic (FOL) sentence. The
 sentence is a representation of the observed property and its status.
 Observations are published as a set of strings. Each string represents a
-single FOL sentence like \'\'ok(topic)\'\', \'\'running(node)\'\',.etc.
-There are different kinds of observers namely Diagnostic Observer
-(DObs), General Observer (GObs), Node Observer (NObs), Qualitative
-Observer (QObs), Binary Qualitative Observer (BiQObs), Multiple Observer
-(MObs), Hardware Observer (HObs) and Property Observer (PObs).
+single FOL sentence like *ok(topic)*, *running(node)*,.etc. There are
+different kinds of observers namely Diagnostic Observer (DObs), General
+Observer (GObs), Node Observer (NObs), Qualitative Observer (QObs),
+Binary Qualitative Observer (BiQObs), Multiple Observer (MObs), Hardware
+Observer (HObs) and Property Observer (PObs).
 
 ## Nodes
 

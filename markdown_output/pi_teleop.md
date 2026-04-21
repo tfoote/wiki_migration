@@ -13,9 +13,8 @@ Please note that this is a very early beta version of the package.
 
 ### Install the rosbridge package
 
-\'\'\'NOTE\'\'\': This package uses version 1.0 of rosbridge, not
-version 2.0. To get version 1.0, move into your personal ROS directory
-and run:
+**NOTE**: This package uses version 1.0 of rosbridge, not version 2.0.
+To get version 1.0, move into your personal ROS directory and run:
 
 ```
 $ svn co http://brown-ros-pkg.googlecode.com/svn/trunk/distribution/brown_remotelab/rosbridge

@@ -1,28 +1,25 @@
 ## Overview
 
-This package localizes antipodal grasps in 3D point clouds.
-\'\'\'AGILE\'\'\' stands for \'\'\'A\'\'\'ntipodal \'\'\'G\'\'\'rasp
-\'\'\'I\'\'\'dentification and \'\'\'LE\'\'\'arning. The reference for
-this package is:
+This package localizes antipodal grasps in 3D point clouds. **AGILE**
+stands for **A**ntipodal **G**rasp **I**dentification and **LE**arning.
+The reference for this package is:
 [Using Geometry to Detect Grasps](http://www.ccs.neu.edu/home/atp/publications/grasp_poses_isrr2015.pdf).
 
 The package already comes with pre-trained machine learning classifiers
-and can be used (almost) out-of-the-box, in particular with an \'\'Asus
-Xtion Pro\'\' range sensor.
+and can be used (almost) out-of-the-box, in particular with an *Asus
+Xtion Pro* range sensor.
 
 [Youtube](https://www.youtube.com/watch?v=Dm64UC3uGVY)
 
-For a complete \'\'\'grasping demo\'\'\' on a Baxter robot, check out
-our [grasp_selection](http://github.com/atenpas/grasp_selection)
-package.
+For a complete **grasping demo** on a Baxter robot, check out our
+[grasp_selection](http://github.com/atenpas/grasp_selection) package.
 
 The package contains two command line tools and one ROS node:
 
-1\. \'\'\'train_svm:\'\'\' (command line tool) Train an SVM to localize
-grasps in point clouds. 1. \'\'\'test_svm:\'\'\' (command line tool)
-Localize grasps in a \'\'.pcd\'\' file using a trained SVM. 1.
-\'\'\'find_grasps:\'\'\' (ROS node) Localize grasps in a point cloud
-obtained from a range sensor.
+1\. **train_svm:** (command line tool) Train an SVM to localize grasps
+in point clouds. 1. **test_svm:** (command line tool) Localize grasps in
+a *.pcd* file using a trained SVM. 1. **find_grasps:** (ROS node)
+Localize grasps in a point cloud obtained from a range sensor.
 
 ## Requirements
 
@@ -55,10 +52,10 @@ Localize grasps on a robot using a range sensor, such as a Kinect:
 
 ![Localize grasps on a robot\|height=\"360\",width=\"640\"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/vlc1.png)
 
-Two example ROS launch files, \'\'single_camera_grasps.launch\'\' and
-\'\'baxter_grasps.launch\'\', are provided that illustrate how to use
-the \'\'\'find_grasps\'\'\' ROS node to localize grasps in a point cloud
-obtained from one or two range sensors.
+Two example ROS launch files, *single_camera_grasps.launch* and
+*baxter_grasps.launch*, are provided that illustrate how to use the
+**find_grasps** ROS node to localize grasps in a point cloud obtained
+from one or two range sensors.
 
 ### Instructions for Asus Xtion Pro
 
@@ -67,15 +64,14 @@ sensor 1. Launch the Asus ROS driver: \`\$ roslaunch openni2_launch
 openni2.launch\` 1. Detect grasps: \`\$ roslaunch agile_grasp
 single_camera_grasps.launch\` 1. Start Rviz for visualization: \`\$
 rosrun rviz rviz\` 1. Open the config file
-\'\'agile_grasp/rviz/single_camera.rviz\'\' in Rviz to visualize the
-grasps.
+*agile_grasp/rviz/single_camera.rviz* in Rviz to visualize the grasps.
 
 ### Launch File Parameters
 
 The most important parameters to increase the number of grasps found are
-\'\'num_samples\'\' and \'\'workspace\'\'. A higher sample number means
-that a larger subset of points in the point cloud will be considered. A
-smaller workspace means that less samples are required to find grasps.
+*num_samples* and *workspace*. A higher sample number means that a
+larger subset of points in the point cloud will be considered. A smaller
+workspace means that less samples are required to find grasps.
 
 The most important parameters are listed below.
 
@@ -99,13 +95,13 @@ The most important parameters are listed below.
     Rviz)
 -   marker_lifetime: the lifetime of visual markers in Rviz
 
-\'\'\'Remark\'\'\': If you want to adjust the grasp parameters, you can
-do this from the launch file. For the available parameters, see
-\'\'src/nodes/find_grasps.cpp\'\'.
+**Remark**: If you want to adjust the grasp parameters, you can do this
+from the launch file. For the available parameters, see
+*src/nodes/find_grasps.cpp*.
 
 ## Localize Grasps in a Point Cloud File
 
-Localize grasps in a point cloud stored in a \'\'.pcd\'\' file:
+Localize grasps in a point cloud stored in a *.pcd* file:
 
 `$ rosrun agile_grasp test_svm /home/userABC/data/input.pcd /home/userABC/ros_ws/src/agile_grasp/svm_032015_20_20_same`
 
@@ -116,17 +112,16 @@ Localize grasps in a point cloud stored in a \'\'.pcd\'\' file:
 
 `$ rosrun agile_grasp test_svm pcd_filename svm_filename [num_samples] [num_threads] [min_handle_inliers]`
 
-This localizes grasps in the point cloud file \'\'pcd_filename\'\' using
-the SVM stored in the file \'\'svm_filename\'\'. The last three
-parameters are optional. \'\'num_samples\'\' sets the number of samples,
-\'\'num_threads\'\' sets the number of CPU threads used, and
-\'\'min_handle_inliers\'\' sets the minimum number of grasps required to
-have a cluster of grasps.
+This localizes grasps in the point cloud file *pcd_filename* using the
+SVM stored in the file *svm_filename*. The last three parameters are
+optional. *num_samples* sets the number of samples, *num_threads* sets
+the number of CPU threads used, and *min_handle_inliers* sets the
+minimum number of grasps required to have a cluster of grasps.
 
-\'\'\'Notice:\'\'\' When no handles or not enough antipodal grasps are
-found, please increase the \'\'num_samples\'\' parameter. Another option
-is to modify the workspace limits in \'\'src/nodes/test.cpp\'\' (this
-requires recompiling the code).
+**Notice:** When no handles or not enough antipodal grasps are found,
+please increase the *num_samples* parameter. Another option is to modify
+the workspace limits in *src/nodes/test.cpp* (this requires recompiling
+the code).
 
 ![output\|height=\"225\",width=\"640\"](https://raw.githubusercontent.com/atenpas/agile_grasp/master/readme/pcl_vis.png)
 
@@ -145,52 +140,51 @@ requires recompiling the code).
 ## Training the SVM
 
 To train the SVM to predict grasps, first create a directory that
-contains the \'\'.pcd\'\' files used for training.
+contains the *.pcd* files used for training.
 
 ### Method A
 
-\'\'\'Preparations:\'\'\'
+**Preparations:**
 
--   Each point cloud file needs to be called \'\'obji.pcd\'\' where
-    \'\'i\'\' goes from \'\'0\'\' to \'\'num_files\'\'
--   \'\'pcd_directory\'\' is the location of the directory plus the root
-    name of the training files, e.g., \'\'/home/userA/data/obj\'\'.
+-   Each point cloud file needs to be called *obji.pcd* where *i* goes
+    from *0* to *num_files*
+-   *pcd_directory* is the location of the directory plus the root name
+    of the training files, e.g., */home/userA/data/obj*.
 
-\'\'\'Training:\'\'\'
+**Training:**
 
 `$ rosrun agile_grasp train_svm num_files pcd_directory/obj svm_filename [plots_hands] [num_samples] [num_threads]`
 
 ### Method B
 
-\'\'\'Preparations:\'\'\'
+**Preparations:**
 
--   Set \'\'num_files\'\' to 0.
--   Provide a \'\'files.txt\'\' text file within \'\'pcd_directory\'\'
-    that lists all file names that are used for training, and a
-    \'\'workspace.txt\'\' that lists the workspace dimensions for each
-    file.
+-   Set *num_files* to 0.
+-   Provide a *files.txt* text file within *pcd_directory* that lists
+    all file names that are used for training, and a *workspace.txt*
+    that lists the workspace dimensions for each file.
 
-\'\'\'Example: files.txt\'\'\'
-
-```
-file1
-file2
-...
-``` \'\'\'Example: workspace.txt\'\'\'
+**Example: files.txt**
 
 ```
 file1
 file2
 ...
-``` \'\'\'Training\'\'\'
+``` **Example: workspace.txt**
+
+```
+file1
+file2
+...
+``` **Training**
 
 `$ rosrun agile_grasp train_svm num_files pcd_directory svm_filename [plots_hands] [num_samples] [num_threads]`
 
 ### Parameters
 
--   num_files: the number of files within \'\'pcd_directory\'\'
+-   num_files: the number of files within *pcd_directory*
 -   pcd_directory: the location of the directory plus the root name of
-    the \'\'.pcd\'\' files used for training
+    the *.pcd* files used for training
 -   svm_filename: the location plus name of the file that will store the
     SVM model
 -   plots_hands: (optional) whether the grasps found are visualized
@@ -203,6 +197,6 @@ file2
 If you like this package and use it in your own work, please cite our
 [ISRR2015 paper](http://www.ccs.neu.edu/home/atp/publications/grasp_poses_isrr2015.pdf):
 
-Andreas ten Pas and Robert Platt. \'\'\'Using Geometry to Detect Grasp
-Poses in 3D Point Clouds.\'\'\' International Symposium on Robotics
-Research (ISRR), Italy, September 2015.
+Andreas ten Pas and Robert Platt. **Using Geometry to Detect Grasp Poses
+in 3D Point Clouds.** International Symposium on Robotics Research
+(ISRR), Italy, September 2015.

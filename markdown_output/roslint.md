@@ -3,7 +3,7 @@ configuration.
 
 ## Usage
 
-Add a \'\'\'build\'\'\' dependency on roslint to your package\'s
+Add a **build** dependency on roslint to your package\'s
 \`package.xml\`:
 
 ```
@@ -58,10 +58,9 @@ See the following section for all available functions.
 ## Reference
 
 Each \`roslint\_\*\` function create a catkin build target called
-\`roslint\_\'\'pkgname\'\'\`, which runs all specified lint operations
-for the package. Each additionally creates (if it does not yet exist) a
-master \`roslint\` target, which depends on all other \`roslint\_\*\`
-targets.
+\`roslint\_*pkgname*\`, which runs all specified lint operations for the
+package. Each additionally creates (if it does not yet exist) a master
+\`roslint\` target, which depends on all other \`roslint\_\*\` targets.
 
 Each function can be called multiple times, if that\'s more convenient.
 

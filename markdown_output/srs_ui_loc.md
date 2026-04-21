@@ -56,11 +56,11 @@ Settings-\>Applications-\>Development-\>USB debugging-\>check.\
 
 UI_LOC has been tested on several devices:
 
-  -- ---------------------- -- ------------------------- -- ---------------- -- ------------------------------------------- --
-     \'\'Device name\'\'       \'\'Android version\'\'      \'\'rooted\'\'      \'\'supported\'\'                           
-     Samsung Galaxy SII        2.3.5                        yes                 full support                                
-     easypix Easypad 1370      2.3.1                        no                  full support                                
-     HTC Sense 3.0             2.3.5                        no                  full support                                
-     Huawei G300               2.3.6                        no                  no support at all                           
-     HTC Sense 3.6             4.0                          yes                 skype and editing etc/hosts does not work   
-  -- ---------------------- -- ------------------------- -- ---------------- -- ------------------------------------------- --
+  -- ---------------------- -- ------------------- -- ---------- -- ------------------------------------------- --
+     *Device name*             *Android version*      *rooted*      *supported*                                 
+     Samsung Galaxy SII        2.3.5                  yes           full support                                
+     easypix Easypad 1370      2.3.1                  no            full support                                
+     HTC Sense 3.0             2.3.5                  no            full support                                
+     Huawei G300               2.3.6                  no            no support at all                           
+     HTC Sense 3.6             4.0                    yes           skype and editing etc/hosts does not work   
+  -- ---------------------- -- ------------------- -- ---------- -- ------------------------------------------- --

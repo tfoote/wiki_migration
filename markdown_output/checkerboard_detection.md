@@ -4,14 +4,13 @@
 
 The checkerboard_detection package can be used to determinate the
 position and the orientation of a checkerboard of the known size within
-an image and calibration information (\'\'\'checkerboard_pose
-node\'\'\'). The position of the board/camera will be published as
-[tf frame](tf). In the background the node uses the OpenCV functions
-cv::findChessboardCorners, cvFindCornerSubPix and cv::solvePnP. The pose
-can be optional stored in a yml file. Stored data can be published again
-with using by using \'\'\'static_pose node\'\'\' with constant frequency
-or synchronized with published frames using the \'\'\'checkerboard_pose
-node\'\'\'.
+an image and calibration information (**checkerboard_pose node**). The
+position of the board/camera will be published as [tf frame](tf). In the
+background the node uses the OpenCV functions cv::findChessboardCorners,
+cvFindCornerSubPix and cv::solvePnP. The pose can be optional stored in
+a yml file. Stored data can be published again with using by using
+**static_pose node** with constant frequency or synchronized with
+published frames using the **checkerboard_pose node**.
 
   -- ------------------------------------------------------------------------------------------------------------- --
      \<tablewidth=\"100px\" tablestyle=\"text-align: center;\"\> ![](attachment:boardpose.jpg) checkerboard pose   

@@ -15,28 +15,27 @@ markers of known size to determine the robot\'s position. Detection of
 the markers is done by the
 [aruco_detect node](http://wiki.ros.org/aruco_detect). For each marker
 visible in the image, a set of vertices in image coordinates is
-produced. Since the \'\'intrinsic parameters\'\' of the camera and the
-size of the fiducial are known, the pose of the fiducial relative to the
-camera can be estimated. Note that if the camera intrinsics are not
-known, they can be determined using the process described in the
+produced. Since the *intrinsic parameters* of the camera and the size of
+the fiducial are known, the pose of the fiducial relative to the camera
+can be estimated. Note that if the camera intrinsics are not known, they
+can be determined using the process described in the
 [camera calibration tutorial](https://github.com/UbiquityRobotics/raspicam_node/#calibration).
 
 The diagram below shows the coordinate system of a fiducial marker,
-which has a length of \'\'2d\'\'. The image coordinates \'\'(x, y)\'\'
-of each vertex correspond to a ray from the camera. The pose estimation
-code solves a set of linear equations to determine the world \'\'(X, Y,
-Z)\'\' coordinate of each of the vertices. From this, we obtain the
+which has a length of *2d*. The image coordinates *(x, y)* of each
+vertex correspond to a ray from the camera. The pose estimation code
+solves a set of linear equations to determine the world *(X, Y, Z)*
+coordinate of each of the vertices. From this, we obtain the
 \*transform\* of the fiducial\'s coordinate system to the camera\'s
-coordinate system \'\'\`T_fid_cam\`\'\'. This represents the \*pose\* of
-the marker in the camera\'s coordinate system. Since we know the
-camera\'s pose in the coordinate system of the robot,c image. In the
-diagram below, two fiducials, \'\'fid1\'\' and \'\'fid2\'\' are shown.
-If \'\'fid1\'\' is at a known pose in the world, \'\'\`T_map_fid1\`\'\'
-and we know the marker to camera transforms for both markers, we can
-compute the pose of \'\'fid2\'\' thus:
+coordinate system *\`T_fid_cam\`*. This represents the \*pose\* of the
+marker in the camera\'s coordinate system. Since we know the camera\'s
+pose in the coordinate system of the robot,c image. In the diagram
+below, two fiducials, *fid1* and *fid2* are shown. If *fid1* is at a
+known pose in the world, *\`T_map_fid1\`* and we know the marker to
+camera transforms for both markers, we can compute the pose of *fid2*
+thus:
 
-\'\'\`T_map_fid2\` = \`T_map_fid1\` \* \`T_cam_fid2\` \*
-\`T_fid1_cam\`\'\'
+*\`T_map_fid2\` = \`T_map_fid1\` \* \`T_cam_fid2\` \* \`T_fid1_cam\`*
 
 In this way, the map is built up as more fiducial pairs are observed.
 multiple observations are combined with weighting, to produce an

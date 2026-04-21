@@ -102,21 +102,20 @@ various ways.
 
 The control states are:
 
--   \'\'\'Off\'\'\'(0): turns the feature off (if possible)
--   \'\'\'Query\'\'\'(1): returns the current mode and (if possible) the
-    value of the feature, with no change to the device
--   \'\'\'Auto\'\'\'(2): the camera sets the value continuously (if
-    possible)
--   \'\'\'Manual\'\'\'(3): sets a specific value from the corresponding
+-   **Off**(0): turns the feature off (if possible)
+-   **Query**(1): returns the current mode and (if possible) the value
+    of the feature, with no change to the device
+-   **Auto**(2): the camera sets the value continuously (if possible)
+-   **Manual**(3): sets a specific value from the corresponding
     parameter (if possible)
--   \'\'\'!OnePush\'\'\'(4): the camera sets the value once, then holds
-    it constant (if possible)
--   \'\'\'None\'\'\'(5): the camera does not provide this feature
+-   **!OnePush**(4): the camera sets the value once, then holds it
+    constant (if possible)
+-   **None**(5): the camera does not provide this feature
 
 When setting an IIDC feature to a specific value, it is necessary to set
-the corresponding control state to \'\'\'Manual\'\'\' (3), otherwise the
+the corresponding control state to **Manual** (3), otherwise the
 corresponding value will be ignored unless the device is already in the
-\'\'\'Manual\'\'\' state when the driver starts.
+**Manual** state when the driver starts.
 
 For example, to set \`brightness\` to 256 on the command line:
 ```
@@ -143,7 +142,7 @@ camera drivers.
 
 -   Built-in decoding provided by
     [libdc1394 conversions](http://damien.douxchamps.net/ieee1394/libdc1394/v2.x/api/conversions)
-    (\'\'now Deprecated\'\').
+    (*now Deprecated*).
 
 To use this, select one of the other \`bayer_method\` options. They may
 have less CPU overhead in some systems, in others they may slow down the
@@ -175,7 +174,7 @@ sometimes allow the camera to send images at a faster rate. (The
 \`frame_rate\` parameter has no effect in Format7.)
 
 With an available \`video_mode\` selected, a number of Format7-specific
-parameters \'\'may\'\' be supported, depending on the device:
+parameters *may* be supported, depending on the device:
 
 -   \`binning_x\` and \`binning_y\` are typically determined by the
     specific Format7 mode selected, but may need to be provided if the
@@ -187,8 +186,8 @@ parameters \'\'may\'\' be supported, depending on the device:
 -   \`format7_color_coding\` defines the pixel format.
 
 For devices providing Bayer color coding, use the \`raw8\` coding and
-specify the default \`bayer_method\`, \'\'the other Bayer methods are
-not supported for Format7\'\'. The camera should normally define its own
+specify the default \`bayer_method\`, *the other Bayer methods are not
+supported for Format7*. The camera should normally define its own
 \`bayer_pattern\` in this mode.
 
 All these parameters are ignored when \`video_mode\` is not one of the
@@ -413,9 +412,9 @@ as the [camera1394_node](#camera1394_node) version.
 #### Examples
 
 Run a standalone \`camera1394_nodelet\`, this behaves almost the same as
-running \`camera1394_node\`. \'\'Running the nodelet standalone does not
-provide zero-copy message sharing.\'\' For that, see the following
-example. ```
+running \`camera1394_node\`. *Running the nodelet standalone does not
+provide zero-copy message sharing.* For that, see the following example.
+```
 $ rosrun nodelet nodelet standalone camera1394/driver
 ```
 

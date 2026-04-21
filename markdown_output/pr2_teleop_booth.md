@@ -83,21 +83,21 @@ Please refer to the above legend for the top of the joystick to see what
 buttons the ids in the table labels refer to. If a button is not
 mentioned it is not used in a mapping.
 
-  -- -------------------------- -- ------------------------------------------------------------------------------------------ --
-     \'\'\'Button\'\'\'            \'\'\'Control Action\'\'\'                                                                 
-     \'\'\'1\'\'\'                 Translates the rviz view up                                                                
-     \'\'\'4\'\'\'                 Translates the rviz view down                                                              
-     \'\'\'2\'\'\'                 Disables the current rviz display and enables the previous view (up in the rviz display)   
-     \'\'\'3\'\'\'                 Disables the current rviz display and enables the next view (down in the rviz display)     
-     \'\'\'7 (Triangle)\'\'\'      Move the rviz display selection up                                                         
-     \'\'\'10 (X)\'\'\'            Move the rviz display selection down                                                       
-     \'\'\'8 (Square)\'\'\'        Disables the currently selected display                                                    
-     \'\'\'9 (Circle)\'\'\'        Enables the currently selected display                                                     
-     \'\'\'rx+/-\'\'\'             Tilts the rviz view up/down                                                                
-     \'\'\'ry+/-\'\'\'             Rotates the rviz view left/right                                                           
-     \'\'\'lx+/-\'\'\'             Zooms the rviz view in/out                                                                 
-     \'\'\'ly+/-\'\'\'             Translates the rviz view left/right                                                        
-  -- -------------------------- -- ------------------------------------------------------------------------------------------ --
+  -- ------------------ -- ------------------------------------------------------------------------------------------ --
+     **Button**            **Control Action**                                                                         
+     **1**                 Translates the rviz view up                                                                
+     **4**                 Translates the rviz view down                                                              
+     **2**                 Disables the current rviz display and enables the previous view (up in the rviz display)   
+     **3**                 Disables the current rviz display and enables the next view (down in the rviz display)     
+     **7 (Triangle)**      Move the rviz display selection up                                                         
+     **10 (X)**            Move the rviz display selection down                                                       
+     **8 (Square)**        Disables the currently selected display                                                    
+     **9 (Circle)**        Enables the currently selected display                                                     
+     **rx+/-**             Tilts the rviz view up/down                                                                
+     **ry+/-**             Rotates the rviz view left/right                                                           
+     **lx+/-**             Zooms the rviz view in/out                                                                 
+     **ly+/-**             Translates the rviz view left/right                                                        
+  -- ------------------ -- ------------------------------------------------------------------------------------------ --
 
 One very useful view for 3D data is to use ly- and ry+ at the same
 time - this rotates the view while translating for a 3D fly around
@@ -108,17 +108,17 @@ effect.
 Accessing this mapping requires that the upper right front button be
 depressed - see the above image.
 
-  -- ----------------------------------- -- -------------------------------------------------------------------------------------------------------- --
-     \'\'\'Button\'\'\'                     \'\'\'Control Action\'\'\'                                                                               
-     \'\'\'1\'\'\'                          Cycles the head mode (see below)                                                                         
-     \'\'\'2\'\'\'                          Cycles the laser between Off, Slow Scan, and Fast Scan                                                   
-     \'\'\'3\'\'\'                          Toggles the projected light between off and on                                                           
-     \'\'\'5 (Select) double-tap\'\'\'      Moves the arms to follow mode position (see below)                                                       
-     \'\'\'5 (Select)\'\'\'                 Exits follow mode (see below)                                                                            
-     \'\'\'6 (Start)\'\'\'                  Initiates follow mode if the arms are in proper position and select has been double-tapped (see below)   
-     \'\'\'ly+/-\'\'\'                      Pans the head right/left if in position control mode                                                     
-     \'\'\'rx+/-\'\'\'                      Tilts the head up/down if in position control mode                                                       
-  -- ----------------------------------- -- -------------------------------------------------------------------------------------------------------- --
+  -- --------------------------- -- -------------------------------------------------------------------------------------------------------- --
+     **Button**                     **Control Action**                                                                                       
+     **1**                          Cycles the head mode (see below)                                                                         
+     **2**                          Cycles the laser between Off, Slow Scan, and Fast Scan                                                   
+     **3**                          Toggles the projected light between off and on                                                           
+     **5 (Select) double-tap**      Moves the arms to follow mode position (see below)                                                       
+     **5 (Select)**                 Exits follow mode (see below)                                                                            
+     **6 (Start)**                  Initiates follow mode if the arms are in proper position and select has been double-tapped (see below)   
+     **ly+/-**                      Pans the head right/left if in position control mode                                                     
+     **rx+/-**                      Tilts the head up/down if in position control mode                                                       
+  -- --------------------------- -- -------------------------------------------------------------------------------------------------------- --
 
 ### Head control modes
 
@@ -144,14 +144,14 @@ The base control is accessible by pushing the top left front button.
 Base and torso controls are essentially the same as that described in
 [pr2_teleop](pr2_teleop).
 
-  -- -------------------------- -- --------------------------------------- --
-     \'\'\'Button\'\'\'            \'\'\'Control Action\'\'\'              
-     \'\'\'7 (Triangle)\'\'\'      Raises torso                            
-     \'\'\'10 (X)\'\'\'            Lowers torso                            
-     \'\'\'rx+/-\'\'\'             Translates the robot forward/backward   
-     \'\'\'rx+/-\'\'\'             Translates the robot right/left         
-     \'\'\'ry+/-\'\'\'             Rotates the robot right/left            
-  -- -------------------------- -- --------------------------------------- --
+  -- ------------------ -- --------------------------------------- --
+     **Button**            **Control Action**                      
+     **7 (Triangle)**      Raises torso                            
+     **10 (X)**            Lowers torso                            
+     **rx+/-**             Translates the robot forward/backward   
+     **rx+/-**             Translates the robot right/left         
+     **ry+/-**             Rotates the robot right/left            
+  -- ------------------ -- --------------------------------------- --
 
 ## Arm control mappings
 
@@ -159,14 +159,14 @@ The lower front buttons control the arms. The arms may be controlled
 individually by pressing only one of the front two buttons. If both arm
 buttons are held any commands will be issued to both arms.
 
-  -- -------------------------- -- ----------------------------------------------------------------------------------------------------------- --
-     \'\'\'Button\'\'\'            \'\'\'Control Action\'\'\'                                                                                  
-     \'\'\'1\'\'\'                 Cycles are in between controller modes. Modes are no controllers, position control, and mannequin control   
-     \'\'\'7 (Triangle)\'\'\'      Rotates the wrist or wrists counter-clockwise                                                               
-     \'\'\'10 (X)\'\'\'            Rotates the wrist or wrists clockwise                                                                       
-     \'\'\'8 (Square)\'\'\'        Closes the gripper or grippers                                                                              
-     \'\'\'9 (Circle)\'\'\'        Opens the gripper or grippers                                                                               
-     \'\'\'rx+/-\'\'\'             When arm or arms are in position control mode, move wrist forward/back                                      
-     \'\'\'ry+/-\'\'\'             When arm or arms are in position control mode, move wrist right/left                                        
-     \'\'\'lx+/-\'\'\'             When arm or arms are in position control mode, move wrist up/down                                           
-  -- -------------------------- -- ----------------------------------------------------------------------------------------------------------- --
+  -- ------------------ -- ----------------------------------------------------------------------------------------------------------- --
+     **Button**            **Control Action**                                                                                          
+     **1**                 Cycles are in between controller modes. Modes are no controllers, position control, and mannequin control   
+     **7 (Triangle)**      Rotates the wrist or wrists counter-clockwise                                                               
+     **10 (X)**            Rotates the wrist or wrists clockwise                                                                       
+     **8 (Square)**        Closes the gripper or grippers                                                                              
+     **9 (Circle)**        Opens the gripper or grippers                                                                               
+     **rx+/-**             When arm or arms are in position control mode, move wrist forward/back                                      
+     **ry+/-**             When arm or arms are in position control mode, move wrist right/left                                        
+     **lx+/-**             When arm or arms are in position control mode, move wrist up/down                                           
+  -- ------------------ -- ----------------------------------------------------------------------------------------------------------- --

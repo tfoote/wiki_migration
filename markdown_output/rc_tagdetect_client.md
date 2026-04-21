@@ -23,8 +23,8 @@ check the
 -   \`host\`: The IP address or hostname of the rc_visard that should be
     used.
 
-\'\'\'Since version 2.7, the device ID can be used instead of the
-sensor\'s IP address:\'\'\'
+**Since version 2.7, the device ID can be used instead of the sensor\'s
+IP address:**
 
 -   \`device\`: The ID of the device, i.e. Roboception rc_visard sensor.
     This can be either:
@@ -64,7 +64,7 @@ rosrun rc_tagdetect_client rc_april_node _host:=<sensor_ip>
 rosrun rc_tagdetect_client rc_qr_node _host:=<sensor_ip>
 ```
 
-\'\'\'Since version 2.7:\'\'\'
+**Since version 2.7:**
 
 ```bash
 rosrun rc_tagdetect_client rc_april_node _device:=:<serial_number>

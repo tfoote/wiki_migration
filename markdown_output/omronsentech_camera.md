@@ -23,4 +23,4 @@ for the details.
 If you have any questions/feedbacks or found any bugs, please either
 directly contact support-ros AT sentech.co DOT jp or post your question
 at <https://answers.ros.org/questions/> (please use tag
-\'\'\'omronsentech_camera\'\'\').
+**omronsentech_camera**).

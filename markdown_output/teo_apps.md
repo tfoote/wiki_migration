@@ -18,7 +18,7 @@ used in this application (white).
 
 ![\|width=\"770px\"](attachment:scheme.jpg)
 
-\'\'\'IRI nodes\'\'\':
+**IRI nodes**:
 
 -   [average_point_cloud_node](average_point_cloud_node)
 -   [iri_obstacle_detection_normals](iri_obstacle_detection_normals)
@@ -30,7 +30,7 @@ used in this application (white).
 This section indicates the steps to follow to run the application once
 the related dependences have been acquired.
 
-\'\'\'B-spline addition to global planner:\'\'\'
+**B-spline addition to global planner:**
 
 To use this software it is expected to launch your robot with the ROS
 navigation stack, inwhich the navfn node will be modified by a B-spline
@@ -46,7 +46,7 @@ ROS_PACKAGE_PATH). 1. Compile the new navfn package (\`rosmake\`).
 To verify this procedure once the new navfn is compiled, one can run
 \'roscd navfn\' and ensure that the current path is the correct one.
 
-\'\'\'Vision system:\'\'\'
+**Vision system:**
 
 -   \`roslaunch teo_apps obstacle_hole_detection.launch\`
 

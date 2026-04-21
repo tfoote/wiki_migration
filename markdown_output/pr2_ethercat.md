@@ -20,15 +20,15 @@ node.0 {
 
 Running \`pr2_ethercat\` requires the following \"capabilities\":
 
--   \'\'\'CAP_IPC_LOCK\'\'\' Lock memory (mlockall())
--   \'\'\'CAP_SYS_NICE\'\'\' Set real-time scheduling policies
--   \'\'\'CAP_NET_RAW\'\'\' Use raw sockets (for EtherCAT
-    communications) Superuser has these capabilities, but they can also
-    be granted to another executable by setting file system attributes
-    on the executable file. The \`pr2-grant\` program is a setuid-root
-    program which copies \`pr2_ethercat\` to a part of the filesystem
-    where attributes can be set (\`/var/tmp\`), and then grants the
-    necessary capabilities to be able to run \`pr2_ethercaat\`.
+-   **CAP_IPC_LOCK** Lock memory (mlockall())
+-   **CAP_SYS_NICE** Set real-time scheduling policies
+-   **CAP_NET_RAW** Use raw sockets (for EtherCAT communications)
+    Superuser has these capabilities, but they can also be granted to
+    another executable by setting file system attributes on the
+    executable file. The \`pr2-grant\` program is a setuid-root program
+    which copies \`pr2_ethercat\` to a part of the filesystem where
+    attributes can be set (\`/var/tmp\`), and then grants the necessary
+    capabilities to be able to run \`pr2_ethercaat\`.
 
 #### Usage
 

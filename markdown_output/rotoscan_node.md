@@ -4,13 +4,13 @@
 
 This package adapts the Leuze rotoScan series of laser range finders.
 Therefore it behaves like any other ROS laser range finder driver and
-publishes a \<\<MsgLink(sensor_msgs/LaserScan)\>\> on the
-\"\'\'\'scan\'\'\'\" topic whenever a new scan comes in.
+publishes a \<\<MsgLink(sensor_msgs/LaserScan)\>\> on the \"**scan**\"
+topic whenever a new scan comes in.
 
 Configuration of the laser range finder is not supported and requires a
 vendor-provided tool.
 
-\'\'Formerly named rod4_node.\'\'
+*Formerly named rod4_node.*
 
 ## Supported Hardware
 
@@ -30,8 +30,8 @@ confirmed to work with following models:
 frame_id(string, default: \"laser\"):: Transform frame id to be used in
 the message header.
 
-range_max(float, default: 40.):: \'\'range_max\'\' to be used in message
-body. Differs among models.
+range_max(float, default: 40.):: *range_max* to be used in message body.
+Differs among models.
 
 ### Ethernet specific
 

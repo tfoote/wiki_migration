@@ -83,9 +83,8 @@ Explanation :
 -   \'module\' : The python path to the file containing the class.
 -   \'class\' : The class name of the SSM State / SMACH State
 
-\'\'\'WARNING : If you use a SMACH state instead of a SSM state. The
-onEntry, onExit and datamodel/userdata assignment will not be
-used.\'\'\'
+**WARNING : If you use a SMACH state instead of a SSM state. The
+onEntry, onExit and datamodel/userdata assignment will not be used.**
 
 -   Assign a SMACH State or a SSM State to the SCXML state by using the
     datamodel of the state.
@@ -105,8 +104,8 @@ the StateMachine, you have to link every outcome of this State inside
 the SCXML. If you forget to link one, them the StateMachine consistency
 check will fail.
 
-\'\'\'To help you know every outcomes/userdata of each states link
-inside the skill XML file, you can run the \"ssm_descriptor\"\'\'\'
+**To help you know every outcomes/userdata of each states link inside
+the skill XML file, you can run the \"ssm_descriptor\"**
 
 This will generate a text file with a small description of every states
 and a list of outcomes and userdata. ```
@@ -117,11 +116,11 @@ are :
 -   skill_xml_file: the skill.xml file you want to scan. It should be
     located in the airbus_ssm_core/resources folder. If you want to put
     the skill.xml file in a different folder/pkg, use this syntax
-    \'\'\${pkg_name}/directory/file.scxml\'\'
+    *\${pkg_name}/directory/file.scxml*
 -   output_file: the absolute path for the output text file.
 
-\'\'todo : generate a qt scxml file with a pre-generated states /
-datamodel to ease the authoring\'\'
+*todo : generate a qt scxml file with a pre-generated states / datamodel
+to ease the authoring*
 
 -   Parents states (containing other states) can\'t have a skill assign.
     Only atomic states.
@@ -140,7 +139,7 @@ parent states :
 The transition has to be done through a final state from inside the
 parent and then be link to the targeted state.
 
-\'\'\'SCXML\'\'\'
+**SCXML**
 
 ```
 <state id="Parent">
@@ -158,7 +157,7 @@ parent and then be link to the targeted state.
 </state>
 ```
 
-\'\'\'Qt Authoring\'\'\'
+**Qt Authoring**
 
 ![\|width=40%](attachment:SSM_parent_transition.png)
 
@@ -192,8 +191,8 @@ Then you will have the following SCXML :
 The syntax that conditioning the outcome is written in the \"cond\" part
 of the transition. ```
 "/state/./outcome/" "AND/OR" "/state/./outcome/"
-``` \'\'\'For now it only
-support 2 states in the conditions !!\'\'\'
+``` **For now it only support 2
+states in the conditions !!**
 
 ## Execution
 
@@ -206,8 +205,8 @@ Input parameter is:
 -   scxml_file: the scxml file you want to execute. It should be located
     in the airbus_ssm_core/resources folder. If you want to put scxml
     files in a different folder, use this syntax
-    \'\'\${pkg_name}/directory/file.scxml\'\' or you can give the pull
-    path to the file.
+    *\${pkg_name}/directory/file.scxml* or you can give the pull path to
+    the file.
 
 For example : ```
 roslaunch airbus_ssm_core ssm.launch scxml_file:=${airbus_ssm_core}/resources/defaulf.scxml

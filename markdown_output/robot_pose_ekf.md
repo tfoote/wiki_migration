@@ -35,7 +35,7 @@ something like this:
 
 ### Running
 
--   \'\'\'Build\'\'\' the package ```
+-   **Build** the package ```
 $ rosdep install robot_pose_ekf
  $ roscd robot_pose_ekf
  $ rosmake
@@ -44,7 +44,7 @@ $ rosdep install robot_pose_ekf
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Run\'\'\' the robot pose ekf ```
+-   **Run** the robot pose ekf ```
 $ roslaunch robot_pose_ekf.launch
 ```
 
@@ -97,11 +97,11 @@ prov_tf {
 ### Pose interpretation
 
 All the sensor sources that send information to the filter node can have
-their own \'\'world\'\' reference frame, and each of these \'\'world\'\'
-reference frames can drift arbitrary over time. Therefore, the
-\'\'\'absolute poses\'\'\' sent by the different sensors cannot be
-compared to each other. The node uses the \'\'\'relative pose
-differences\'\'\' of each sensor to update the extended Kalman filter.
+their own *world* reference frame, and each of these *world* reference
+frames can drift arbitrary over time. Therefore, the **absolute poses**
+sent by the different sensors cannot be compared to each other. The node
+uses the **relative pose differences** of each sensor to update the
+extended Kalman filter.
 
 ### Covariance interpretation
 
@@ -110,15 +110,15 @@ reference continues to grow larger and larger. Over time, the covariance
 would grow without bounds. Therefore it is not useful to publish the
 covariance on the pose itself, instead the sensor sources publish how
 the covariance changes over time, i.e. the covariance on the velocity.
-\'\'Note that using observations of the world (e.g. measuring the
-distance to a known wall) will reduce the uncertainty on the robot pose;
-this however is localization, not odometry.\'\'
+*Note that using observations of the world (e.g. measuring the distance
+to a known wall) will reduce the uncertainty on the robot pose; this
+however is localization, not odometry.*
 
 ### Timing
 
 Imagine the robot pose filter was last updated at time t_0. The node
 will not update the robot pose filter until at least one measurement of
-\'\'each\'\' sensor arrived with a timestamp later than t_0. When e.g. a
+*each* sensor arrived with a timestamp later than t_0. When e.g. a
 message was received on the \`odom\` topic with timestamp t_1 \> t_0,
 and on the \`imu_data\` topic with timestamp t_2 \> t_1 \> t_0, the
 filter will now update to the latest time at which information about all

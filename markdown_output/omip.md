@@ -111,11 +111,11 @@ gsettings set org.gnome.desktop.default-applications.terminal exec 'gnome-termin
 
 You can launch OMIP with 3 different system architectures:
 
-1\. \'\'\'Main architecture\'\'\'. Three estimation levels: feature
-tracking, feature-based rigid body tracking, kinematic model estimation.
-This option can execute only using RGB-D images and therefore requires
-less computational power. To try this option, download one of the
-rosbags with the \"\_imgs\" suffix and launch OMIP using the option
+1\. **Main architecture**. Three estimation levels: feature tracking,
+feature-based rigid body tracking, kinematic model estimation. This
+option can execute only using RGB-D images and therefore requires less
+computational power. To try this option, download one of the rosbags
+with the \"\_imgs\" suffix and launch OMIP using the option
 \"\--omip=1\" (or \"\--omip=2\" if you want that the terminals remain
 open after finishing the execution, for debugging purposes).
 
@@ -156,8 +156,8 @@ actions and responses of the environment.
 
 Based on the recursive estimation schema - prediction/correction - our
 framework can cope with the high amount of data provided by the robot\'s
-sensors \'\'\'in an online manner\'\'\'. The key (and the main idea of
-our framework) is to factorize the perceptual problem into smaller
+sensors **in an online manner**. The key (and the main idea of our
+framework) is to factorize the perceptual problem into smaller
 \*perceptual units\*, solve them with single recursive estimation loops
 and connect all the loops tightly. The connection of the loops defines a
 bidirectional information flow between loops: a bottom-up flow to pass
@@ -180,7 +180,7 @@ estimation loops and propagate their information (estimations and
 predictions).
 
 Each recursive estimation level is realized as a ROS node that
-implements the interface \'\'\'RecursiveEstimatorNodeInterface\'\'\'. A
+implements the interface **RecursiveEstimatorNodeInterface**. A
 recursive estimation level is defined by:
 
 -   Measurement
@@ -204,9 +204,9 @@ based on extra priors.
 
 Internally, each level contains at least one recursive estimation
 filter. These filters implement the interface
-\'\'\'RecursiveEstimatorFilterInterface\'\'\'. The levels call the
-corresponding correct-predict methods of the filters and pass the
-measurements/states up and down.
+**RecursiveEstimatorFilterInterface**. The levels call the corresponding
+correct-predict methods of the filters and pass the measurements/states
+up and down.
 
 You can extend the OMIP framework with new recursive loops. To do that,
 create a filter that implements the filter interface. Then create a node

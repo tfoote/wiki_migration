@@ -8,15 +8,16 @@ Input can be either from camera topics, an OpenCV camera, or a video.
 
 ## ROS Nodes
 
--   \'\'\'cnn_publisher\'\'\'\
+-   **cnn_publisher**\
     ROS node that opens a freeze graph and run it on images.
--   \'\'\'Publishes\'\'\'
--   \'\'detection\'\'\
+-   **Publishes**
+-   *detection*\
     . type = cnn_bridge/Detection\
     Detection data. Published as boxes, scores, and classes. In
     addition, the header of the image that the network was run on
-    (useful for statistics, and for hmi). \'\'\'OR\'\'\'
--   \'\'segmentation\'\'\
+    (useful for statistics, and for hmi).
+    -   OR\*\*
+-   *segmentation*\
     . type = cnn_bridge/Netmask\
     Segmentation data. Published a 2-dimensional array of mask values.
     In addition, the header of the image that the network was run on
@@ -25,8 +26,8 @@ Input can be either from camera topics, an OpenCV camera, or a video.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Parameters\'\'\'
--   \'\'source\'\'\
+-   **Parameters**
+-   *source*\
     type = String\
     required = True\
     The source of the images to be run through the network. There are
@@ -34,32 +35,32 @@ Input can be either from camera topics, an OpenCV camera, or a video.
     1. A path to a video file (any OpenCV compatible files will work).\
     2. A device number (0, 1, 2, 3,\...) for an OpenCV device.\
     3. A ROS Image or CompressedImage topic.
--   \'\'logdir\'\'\
+-   *logdir*\
     . type = string\
     required = True\
     Path to the hypes file. See bellow for an example JSON file.
--   \'\'metadata_source\'\'\
+-   *metadata_source*\
     . type = string\
     required = True\
     Path to the metadata file. See bellow for an example JSON file.
--   \'\'mode\'\'\
+-   *mode*\
     . type = string\
     required = True\
     Either \'detection\' or \'segmentation\' depending on the mode.
--   \'\'input_tensor\'\'\
+-   *input_tensor*\
     . type = string\
     required = True\
     Self explanatory.
--   \'\'output_tensor\'\'\
+-   *output_tensor*\
     . type = string/\[string\]\
     required = True\
     If segmentation, self explanatory. If detection an array of three
     tensors that are \[boxes,scores,classes\]
--   \'\'display\'\'\
+-   *display*\
     . type = Boolean\
     default = True\
     Whether to display the output or not
--   \'\'save_mode\'\'\
+-   *save_mode*\
     . type = Integer\
     default = 0\
     Mode to save the inputs / outputs of the network. Add the modes to
@@ -72,12 +73,12 @@ Input can be either from camera topics, an OpenCV camera, or a video.
     a video\
     16 - Save the outputted mask\
     32 - Save the outputted mask as a video
--   \'\'cpu\'\'\
+-   *cpu*\
     . type = string\
     default = False\
-    \'\'\'Not currently implemented!\'\'\' Sets whether to run the
-    network on the CPU if an Nvidia GPU is present.
--   \'\'gpu_percent\'\'\
+    **Not currently implemented!** Sets whether to run the network on
+    the CPU if an Nvidia GPU is present.
+-   *gpu_percent*\
     . type = Float\
     default = 1.0\
     Sets the percentage of an Nvidia GPU to use. This is used generally

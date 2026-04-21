@@ -67,8 +67,8 @@ rc_visard manual: <https://doc.rc-visard.com>.
     only when changed in a manual or periodic calibration request
     (default).
 
-\'\'\'Since version 2.7, the device ID can be used instead of the
-sensor\'s IP address:\'\'\'
+**Since version 2.7, the device ID can be used instead of the sensor\'s
+IP address:**
 
 -   \`device\`: The ID of the device, i.e. Roboception rc_visard sensor.
     This can be either:
@@ -124,7 +124,7 @@ Using command line parameters: ```bash
 rosrun rc_hand_eye_calibration_client rc_hand_eye_calibration_client_node _host:=<sensor_ip>
 ```
 
-\'\'\'Since version 2.7:\'\'\'
+**Since version 2.7:**
 
 ```bash
 rosrun rc_hand_eye_calibration_client rc_hand_eye_calibration_client_node _device:=:<serial_number>

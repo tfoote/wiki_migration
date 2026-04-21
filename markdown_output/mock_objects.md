@@ -56,7 +56,7 @@ EXPECT_CALL(irSubscriber, subscriberActualCallback(
 ))).Times(AtLeast(0));
 ```
 
-where the \'\'IsBetween\'\' is a matcher defined as follows:
+where the *IsBetween* is a matcher defined as follows:
 ```
 MATCHER_P2(IsBetween, a, b, std::string(negation ? "isn't" : "is")
 + " between " + PrintToString(a) + " and " + PrintToString(b)) {

@@ -40,7 +40,7 @@ using [rviz](rviz), as well as monitoring your overall system using
 
 This driver assumes that your unit has been configured with the ethernet
 port enabled for TCP. There are various ways this can be set up, but the
-easiest is to connect to your receiver with \'\'\'Novatel Connect\'\'\'
+easiest is to connect to your receiver with **Novatel Connect**
 ([zip](http://www.novatel.com/assets/Documents/Downloads/NovAtelConnect_Setup_1_6_0.zip)),
 using the serial or USB interface. Then, using the device\'s console:
 
@@ -60,10 +60,10 @@ log wificonfig once
 log ethconfig once
 log icomconfig once
 log ipconfig once
-``` From the \'\'\'Wizards\'\'\' menu, select
-\'\'\'SPAN Alignment\'\'\', which will take you through the position and
-orientation of the IMU relative to your vehicle\'s base_link, and the
-relative position of the GNSS antenna(s).
+``` From the **Wizards** menu, select **SPAN
+Alignment**, which will take you through the position and orientation of
+the IMU relative to your vehicle\'s base_link, and the relative position
+of the GNSS antenna(s).
 
 Note that if you only need the console and won\'t need to run the SPAN
 setup wizard, you may bypass Novatel Connect and just use an ordinary

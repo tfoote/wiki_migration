@@ -39,8 +39,8 @@ access_point_control API for the Linksys web interface:
 -   \`a\` \<\-\--\> \`a-only\`
 -   \`a\` + \`n\` \<\-\--\> \`mixed\`
 -   \`b\` \<\-\--\> \`b-only\`
--   \`b\` + \`n\` \<\-\--\> \'\'\'should not be used\'\'\' in order to
-    keep the mapping bijective
+-   \`b\` + \`n\` \<\-\--\> **should not be used** in order to keep the
+    mapping bijective
 -   \`g\` \<\-\--\> \`g-only\`
 -   \`g\` + \`n\` \<\-\--\> \`mixed\`
 

@@ -131,5 +131,4 @@ roslaunch asr_calibration_tool_dome checkerboard_detector_single.launch
 ```{=html}
 <!-- -->
 ```
--   Checkerborad Detector:
-    \'\'/checkerboard_detector/objectdetection_pose\'\'
+-   Checkerborad Detector: */checkerboard_detector/objectdetection_pose*

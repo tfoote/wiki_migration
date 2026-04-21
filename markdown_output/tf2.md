@@ -2,21 +2,21 @@
 
 ## What does tf2 do? Why should I use tf2?
 
-You want to \'\'\'see\'\'\' what tf can do instead of just reading about
-it? Check out the
+You want to **see** what tf can do instead of just reading about it?
+Check out the
 [tf2 introduction demo](tf2/Tutorials/Introduction to tf2).
 
 A robotic system typically has many 3D
 [coordinate frames](geometry/CoordinateFrameConventions) that change
-over \'\'\'time\'\'\', such as a world frame, base frame, gripper frame,
-head frame, etc. tf2 keeps track of all these frames over time, and
-allows you to ask questions like:
+over **time**, such as a world frame, base frame, gripper frame, head
+frame, etc. tf2 keeps track of all these frames over time, and allows
+you to ask questions like:
 
 -   Where was the head frame relative to the world frame, 5 seconds ago?
 -   What is the pose of the object in my gripper relative to my base?
 -   What is the current pose of the base frame in the map frame?
 
-tf2 can operate in a \'\'\'distributed system\'\'\'. This means all the
+tf2 can operate in a **distributed system**. This means all the
 information about the coordinate frames of a robot is available to all
 ROS components on any computer in the system. Tf2 can operate with a
 central server that contains all transform information, or you can have
@@ -43,17 +43,16 @@ listening for transforms and broadcasting transforms.
 
 Anyone using tf2 will need to listen for transforms:
 
--   \'\'\'Listening for transforms\'\'\' - Receive and buffer all
-    coordinate frames that are broadcasted in the system, and query for
-    specific transforms between frames. Check out the writing a tf2
-    listener tutorial
-    [(Python)](tf2/Tutorials/Writing a tf2 listener (Python))
+-   **Listening for transforms** - Receive and buffer all coordinate
+    frames that are broadcasted in the system, and query for specific
+    transforms between frames. Check out the writing a tf2 listener
+    tutorial [(Python)](tf2/Tutorials/Writing a tf2 listener (Python))
     [(C++)](tf2/Tutorials/Writing a tf2 listener (C++)).
 
 To extend the capabilities of a robot you will need to start
 broadcasting transforms.
 
--   \'\'\'Broadcasting transforms\'\'\' - Send out the relative pose of
+-   **Broadcasting transforms** - Send out the relative pose of
     coordinate frames to the rest of the system. A system can have many
     broadcasters that each provide information about a different part of
     the robot. Check out the writing a tf2 broadcaster tutorial
@@ -143,13 +142,13 @@ format lower case underscore separated. This string has to be unique in
 the system. All data produced can simply identify it\'s \`frame_id\` to
 state where it is in the world.
 
-\'\'\' No \`tf_prefix\`:\'\'\' In previous versions there was a concept
-of a \`tf_prefix\` which would be prepended to the frame name using a
-\`/\` separator. A leading slash used to indicate that it had already
-been prefixed. For backwards compatibility tf2 will strip any leading
-\`/\` character.
+** No \`tf_prefix\`:** In previous versions there was a concept of a
+\`tf_prefix\` which would be prepended to the frame name using a \`/\`
+separator. A leading slash used to indicate that it had already been
+prefixed. For backwards compatibility tf2 will strip any leading \`/\`
+character.
 
-\'\'\'No Remapping:\'\'\'
+**No Remapping:**
 
 The concept of \`tf\` \`frame_ids\` is not scoped in the same way as
 [ROS Names](Names). In particular, namespacing a specific subpart of a
@@ -159,7 +158,7 @@ remapping rules. It is common to support a
 [ROS parameter](Parameter Server) to allow changing \`frame_id\`s used
 in algorithms.
 
-\'\'\'Multiple Robots:\'\'\'
+**Multiple Robots:**
 
 For use cases with multiple robots it is generally recommended to use
 multiple masters and forward specific tf information between the robots.

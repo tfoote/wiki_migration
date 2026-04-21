@@ -100,23 +100,22 @@ to activate this function.
 
 ### Launch file
 
-\'\'\'asr_intermediate_object_generator/launch/asr_intermediate_object_generator.launch\'\'\'
+**asr_intermediate_object_generator/launch/asr_intermediate_object_generator.launch**
 
-!\'\'\'AutomatPath\'\'\': The path were the intermediate_objects xml
-file should be created. If there is an XXX in the name, the XXX will be
-replaced with the current database name. So the name has not to be
-changed manually after a database change.
+!**AutomatPath**: The path were the intermediate_objects xml file should
+be created. If there is an XXX in the name, the XXX will be replaced
+with the current database name. So the name has not to be changed
+manually after a database change.
 
-\'\'\'NBVPath\'\'\': The path were the intermediate_object_weights xml
-file should be created. The XXX works analog here, too.
+**NBVPath**: The path were the intermediate_object_weights xml file
+should be created. The XXX works analog here, too.
 
 ### yaml file
 
-\'\'\'asr_intermediate_object_generator/param/Domain.yaml\'\'\'
+**asr_intermediate_object_generator/param/Domain.yaml**
 
-!\'\'\'RankingMethod\'\'\' : 0 or 1, 0 is additive and 1 is
-multiplicative \'\'\'Alpha\'\'\' : weight for the presence in scene
-criteria \'\'\'Beta\'\'\' : weight for the position variance criteria
-\'\'\'Gamma\'\'\' : weight for the average distance between object
-criterias! \'\'\'GainValueThreshold\'\'\' : gain threshold for the
-object filtering !\'\'\'DomainName\'\'\' : name of the domain
+!**RankingMethod** : 0 or 1, 0 is additive and 1 is multiplicative
+**Alpha** : weight for the presence in scene criteria **Beta** : weight
+for the position variance criteria **Gamma** : weight for the average
+distance between object criterias! **GainValueThreshold** : gain
+threshold for the object filtering !**DomainName** : name of the domain

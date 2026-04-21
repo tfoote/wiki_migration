@@ -1,11 +1,11 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Clober Simulation Package
 
 ![Clober Robot\|width=400](attachment:clober/clober_right.png)
 
-\'\'\'Clober Simulation\'\'\' package contains the launch files needed
-for simulation of the Clober Research Platform. Simulation within the
+**Clober Simulation** package contains the launch files needed for
+simulation of the Clober Research Platform. Simulation within the
 virtual world would mitigate the risks and likelihood of failure of
 systems when it is applied into the real world. We aim to provide more
 realistic environments such that more accurate results can be reproduced

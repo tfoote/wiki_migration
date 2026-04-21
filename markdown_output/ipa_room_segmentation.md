@@ -42,8 +42,8 @@ the wanted algorithms and settings.
     of this training method see the further document.
 -   Every algorithm has its own specific range of allowed room areas.
     Segments that are out of this range will not be drawn and are going
-    to be filled by the surrounding valid rooms. \'\'\'Remark:\'\'\' The
-    upper border in the feature-based segmentation method has a little
+    to be filled by the surrounding valid rooms. **Remark:** The upper
+    border in the feature-based segmentation method has a little
     addition. If found segments are too big they become separated by
     randomly putting centers in the segment and splitting it by using a
     wavefront algorithm. It\'s better to turn this off by setting the
@@ -64,8 +64,8 @@ which lies in ipa_building_msgs/action. The goal consists of the
 following parts
 
 -   input_map: The map that should be segmented, as sensor_msgs/Image.
-    \'\'\'Has to be a 8-Bit single channel image, with 0 as occupied
-    space and 255 as free space\'\'\'.
+    **Has to be a 8-Bit single channel image, with 0 as occupied space
+    and 255 as free space**.
 -   map_resolution: The resolution the map has been sampled with
     \[meter/cell\].
 -   map_origin: The origin of the map in \[meter\] to bring the provided
@@ -81,8 +81,8 @@ following parts
 -   segmented_map: The map with the N found segments drawn in. The value
     of a pixel indicates its ID, which can be used to find pixels
     belonging to one room. The IDs start at 1 and go up to N, the
-    \'\'\'return format is 32-Bit single channel\'\'\', because it
-    allows to have more rooms than the 8-Bit format.
+    **return format is 32-Bit single channel**, because it allows to
+    have more rooms than the 8-Bit format.
 -   RoomInformation: For each found room the min/max x/y coordinate of
     points belonging to this room and the center is provided. See
     ipa_building_msgs/msg/RoomInformation.msg for details. This can be
@@ -112,7 +112,7 @@ segmentation, especially the feature-based and voronoi random field
 segmentation. If you want fast results, the morphological and distance
 segmentation are the fastest, but they might return not the best results
 if you have wide open spaces. To see results on different maps, see the
-chapter \'\'\'6. Segmentation results\'\'\'.
+chapter **6. Segmentation results**.
 
 ## Available algorithms
 
@@ -171,9 +171,8 @@ These algorithms are the feature-based segmentation and the voronoi
 random field segmentation. The training procedure starts as soon, as you
 start the action server.
 
-\'\'\'Important\'\'\': The algorithms assume that the maps are given as
-8-Bit single channel image, with 0 as occupied space and 255 as free
-space.
+**Important**: The algorithms assume that the maps are given as 8-Bit
+single channel image, with 0 as occupied space and 255 as free space.
 
 1\. The feature-based segmentation uses two AdaBoost classifiers, one to
 detect hallways and one to detect rooms, based on simulated
@@ -213,9 +212,9 @@ If you use this work please cite our ICRA 2016 paper,
 <attachment:article.pdf> :
 
 R. Bormann, F. Jordan, W. Li, J. Hampp, and M. Hägele. Room
-Segmentation: Survey, Implementation, and Analysis. In \'\'Proceedings
-of the IEEE International Conference on Robotics and Automation
-(ICRA)\'\', 2016.
+Segmentation: Survey, Implementation, and Analysis. In *Proceedings of
+the IEEE International Conference on Robotics and Automation (ICRA)*,
+2016.
 
 ## Segmentation results
 

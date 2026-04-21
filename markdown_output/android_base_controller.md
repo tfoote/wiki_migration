@@ -5,20 +5,19 @@ robot computer, instead of just for controller a PC based ROS robot.
 
 This package provides three nodes:
 
--   \'\'\'!BaseControllerNode\'\'\': Listens /cmd_vel and sends commands
-    to the attached base.
--   \'\'\'!BaseOdomPublisher\'\'\': Publishes the /odom topic with the
-    odometry information reported by the base.
--   \'\'\'!BaseStatusPublisher\'\'\': Publishes other topics with base
-    specific information, like cliff sensors or battery status.
+-   **!BaseControllerNode**: Listens /cmd_vel and sends commands to the
+    attached base.
+-   **!BaseOdomPublisher**: Publishes the /odom topic with the odometry
+    information reported by the base.
+-   **!BaseStatusPublisher**: Publishes other topics with base specific
+    information, like cliff sensors or battery status.
 
 It is design to be easily extended to support different robotic bases,
 currently it supports:
 
--   \'\'\'iRobot Create\'\'\': Only !BaseControllerNode.
--   \'\'\'Yujin Kobuki\'\'\': Full support.
--   \'\'\'Clearpath Husky\'\'\': !BaseControllerNode and
-    !BaseOdomPublisher.
+-   **iRobot Create**: Only !BaseControllerNode.
+-   **Yujin Kobuki**: Full support.
+-   **Clearpath Husky**: !BaseControllerNode and !BaseOdomPublisher.
 
 This package works with Android devices which support USB host mode (or
 USB OTG). It has been tested on:
@@ -68,7 +67,7 @@ nodeMainExecutor.execute(baseOdomPublisher, odomPublisherNodeConf);
 This package is a
 [Catkin-Gradle](http://wiki.ros.org/rosjava/Anatomy%20of%20a%20RosJava%20Package)
 package. To use it in your rosjava project you need to add the
-dependency to your \'\'build.gradle\'\' file:
+dependency to your *build.gradle* file:
 
 ```groovy
 compile 'com.github.creativa77.base_controller:base_controller:0.1.+'
@@ -113,14 +112,14 @@ To add a new base, a new base_driver should be created, implementing the
     OdometryStatus getOdometryStatus();
 ```
 
--   \'\'\'initialize()\'\'\': executed when bringing up the base and is
+-   **initialize()**: executed when bringing up the base and is
     responsible for any configuration the base may need.
--   \'\'\'move()\'\'\': transforms twist speeds (linear and rotation) to
-    base commands. It should send the required command to the base.
--   \'\'\'getBaseStatus()\'\'\': returns the aggregated base status
-    information, containing cliff sensors and other peripherals.
--   \'\'\'getOdometyStatus()\'\'\': returns the current odometry
-    information provided by the base.
+-   **move()**: transforms twist speeds (linear and rotation) to base
+    commands. It should send the required command to the base.
+-   **getBaseStatus()**: returns the aggregated base status information,
+    containing cliff sensors and other peripherals.
+-   **getOdometyStatus()**: returns the current odometry information
+    provided by the base.
 
 When programming a new base driver the developer may need to create
 helper classes. Those classes should be grouped in a directory with the

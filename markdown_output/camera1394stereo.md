@@ -20,7 +20,7 @@ Finally, debayering on format7 modes has been allowed.
 
 ### Stereo methods
 
-\'\'\'Supported methods\'\'\': Interlaced stereo, field stereo.
+**Supported methods**: Interlaced stereo, field stereo.
 
 ## Examples
 

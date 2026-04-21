@@ -21,15 +21,15 @@ information and is also supported.
 The radar_omipresense driver is built automatically by the ROS build
 farm. Subsequently, the standard way of installing drivers works for the
 radar omnipresense driver. Namely, apt install
-ros-\'\'distro\'\'-radar-omnipresense. So, for example, if you are
-running with ROS \"melodic\" and are not logged in as root, you could
-issue the command; ```
+ros-*distro*-radar-omnipresense. So, for example, if you are running
+with ROS \"melodic\" and are not logged in as root, you could issue the
+command; ```
 sudo apt install ros-melodic-radar-omnipresense
-``` You can also download the
-driver as source code and build it yourself. All external dependencies
-have been removed, so a beginner should be able to accomplish it without
-too many complications. The instructions on the wiki are very thorough
-on walking a developer through the steps. A good place to start is
+``` You can also download the driver as
+source code and build it yourself. All external dependencies have been
+removed, so a beginner should be able to accomplish it without too many
+complications. The instructions on the wiki are very thorough on walking
+a developer through the steps. A good place to start is
 [wiki.ros.org/ROS/Tutorials/BuildingPackages](ROS/Tutorials/BuildingPackages)
 
 ## Support

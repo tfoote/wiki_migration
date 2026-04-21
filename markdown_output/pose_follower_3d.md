@@ -1,7 +1,7 @@
 ## Overview
 
-\'\'NOTE: This package is currently unreleased and contains experimental
-code.\'\'
+*NOTE: This package is currently unreleased and contains experimental
+code.*
 
 \`pose_follower_3d\` is based on the [pose_follower](pose_follower)
 local planner and adheres to the \`nav_core::BaseLocalPlanner\`

@@ -1,8 +1,8 @@
 ## Disclaimer and condition of use
 
-\'\'\'Disclaimer\'\'\': this stack is not maintained by Aldebaran
-Robotics. Stack maintainers do not hold copyright for the model
-information. This stack is based on
+**Disclaimer**: this stack is not maintained by Aldebaran Robotics.
+Stack maintainers do not hold copyright for the model information. This
+stack is based on
 [information freely available](http://projetromeo.com/index_en.html) and
 is distributed with Aldebaran Robotics permission.
 
@@ -24,15 +24,15 @@ This package contains the following information:
 -   [RCPDF](rcpdf) containing contact information (sole and toe
     information).
 
-\'\'\'The current model is based on the robot model v1.0.\'\'\'
+**The current model is based on the robot model v1.0.**
 
 ### Additional information
 
-  -- -------------------------------------------- -- --------------------------------------------------- -- -- --
-                                                     \'\'\'Stepping information with static toes\'\'\'         
-     Maximum forward step (X axis / front-rear)      0.245m (safe) / 0.32m (unsafe)                            
-     Maximum lateral step (Y axis / left-right)      0.316141m                                                 
-  -- -------------------------------------------- -- --------------------------------------------------- -- -- --
+  -- -------------------------------------------- -- ------------------------------------------- -- -- --
+                                                     **Stepping information with static toes**         
+     Maximum forward step (X axis / front-rear)      0.245m (safe) / 0.32m (unsafe)                    
+     Maximum lateral step (Y axis / left-right)      0.316141m                                         
+  -- -------------------------------------------- -- ------------------------------------------- -- -- --
 
 ## URDF model
 

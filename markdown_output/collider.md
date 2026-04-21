@@ -1,10 +1,9 @@
 ## Overview
 
-\'\'NOTE: This package is currently unreleased and contains experimental
+*NOTE: This package is currently unreleased and contains experimental
 code. The documentation below describes the current version in the
 [arm_navigation_metrics branch](https://code.ros.org/svn/wg-ros-pkg/stacks/motion_planning_common/branches/arm_navigation_metrics/collider)
-of motion_planning_common\'\', \'\'which might be released in
-E-turtle.\'\'
+of motion_planning_common*, *which might be released in E-turtle.*
 
 \`collider\` provides a collision map for tabletop manipulation. Various
 sources of input data (e.g. laser and textured stereo) are fused and

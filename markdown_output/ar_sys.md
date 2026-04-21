@@ -40,8 +40,8 @@ configuration, and then use:
 ```shell
 roslaunch ar_sys single_board.launch
 ``` To track more boards, follow the same as of a
-single board, but modify the \'\'\'data/multi/boards.yml\'\'\' file to
-include all your board configuration files, and then launch:
+single board, but modify the **data/multi/boards.yml** file to include
+all your board configuration files, and then launch:
 
 ```shell
 roslaunch ar_sys multi-boards.launch

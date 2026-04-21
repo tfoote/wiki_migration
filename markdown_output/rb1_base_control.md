@@ -19,26 +19,24 @@ roslaunch rb1_base_control rb1_base_control.launch
 
 There are some arguments to keep in mind inside the launch file:
 
-\- \'\'\'sim:\'\'\' (default: False) Whether we are running the
-simulation
+\- **sim:** (default: False) Whether we are running the simulation
 
-\- \'\'\'cmd_vel:\'\'\' (default: robotnik_base_control/cmd_vel) Name of
-the cmd input topic. This arg will overwrite the param with the same
-name located in the config directory
-
-\- \'\'\'id_robot:\'\'\' (default: robot) Name identifier of the robot.
-Used for namespaces
-
-\- \'\'\'prefix:\'\'\' (default: robot\_) Name identifier with an
-underscore
-
-\- \'\'\'has_elevator:\'\'\' (default: False) Whether the robot has an
-elevator. This arg will overwrite the param with the same name located
-in the config directory
-
-\- \'\'\'wheel_diameter:\'\'\' (default: 0.1524) Indicates the diameter
-of the wheel. This arg will overwrite the param with the same name
+\- **cmd_vel:** (default: robotnik_base_control/cmd_vel) Name of the cmd
+input topic. This arg will overwrite the param with the same name
 located in the config directory
+
+\- **id_robot:** (default: robot) Name identifier of the robot. Used for
+namespaces
+
+\- **prefix:** (default: robot\_) Name identifier with an underscore
+
+\- **has_elevator:** (default: False) Whether the robot has an elevator.
+This arg will overwrite the param with the same name located in the
+config directory
+
+\- **wheel_diameter:** (default: 0.1524) Indicates the diameter of the
+wheel. This arg will overwrite the param with the same name located in
+the config directory
 
 ## Nodes
 

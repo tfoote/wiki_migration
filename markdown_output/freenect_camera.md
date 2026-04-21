@@ -218,9 +218,9 @@ openni launch file. (\`\$(find freenect_launch)/launch/freenect.launch\`
 -\> \`\$(find openni_launch)/launch/openni.launch\`). No other
 modifications should be necessary. 2. openni_launch does not support
 diagnostics or appending a namespace as of v1.8.3. Modify your system
-accordingly. \'\'Note: A ticket for ns addition to openni_launch has
-been filed [#63](https://kforge.ros.org/openni/trac/ticket/63)
-[#64](https://kforge.ros.org/openni/trac/ticket/64)\'\'
+accordingly. *Note: A ticket for ns addition to openni_launch has been
+filed [#63](https://kforge.ros.org/openni/trac/ticket/63)
+[#64](https://kforge.ros.org/openni/trac/ticket/64)*
 
 ### Migrating from openni_camera
 

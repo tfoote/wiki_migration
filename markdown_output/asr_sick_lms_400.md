@@ -40,30 +40,30 @@ rosrun asr_sick_lms_400 asr_sick_lms_400
 ### Published Topics
 
 \_/laser_scan\_
-([sensor_msgs/LaserScan.msg](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)\'\')\'\'
+([sensor_msgs/LaserScan.msg](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)*)*
 
 Includes an array of all scanned points of one iteration, with its
 distance information.
 
 ### Parameters
 
-\'\'\'Connection parameters: \'\'\'
+**Connection parameters: **
 
-\'\'hostname\'\' (string)
+*hostname* (string)
 
 -   Hostname of the PC (IP address).
 
-\'\'passwort\'\' (string)
+*passwort* (string)
 
 -   Passwort of the laserscanner.
 
-\'\'port\'\' (int)
+*port* (int)
 
 -   Number of the port, to which the laserscanner is connected.
 
-\'\'\'Filter parameters: \'\'\'
+**Filter parameters: **
 
-\'\'filter\'\' (int)
+*filter* (int)
 
 -   Indicates which filter should be used.
 -   0 (disabled)\
@@ -72,40 +72,40 @@ distance information.
     4 (enable range filter)\
     8 (enable mean filter)
 
-\'\'enable_eRIS\'\' (int)
+*enable_eRIS* (int)
 
 -   Enables extended RIS detectivity. If you want to measure objects
     with remission values \< 10%, you can extend the so-called Remission
     Information System (RIS) on the LMS4000.
 
-\'\'mean_filter_parameter\'\' (int)
+*mean_filter_parameter* (int)
 
 -   Defines the number of means for the mean filter. Possible values: 2
     \... 200
 
-\'\'range_filter_parameter_min, range_filter_parameter_max\'\' (int)
+*range_filter_parameter_min, range_filter_parameter_max* (int)
 
 -   Define a specific range within which measured values are valid and
     are output. Possible values: \[+700.0 \... +3000.0 \<bottom limit\>
     \... +3000.0\]
 
-\'\'\'Lascerscan parameters: \'\'\'
+**Lascerscan parameters: **
 
-\'\'angular_resolution\'\' (double)
+*angular_resolution* (double)
 
 -   Angular resolution. Valid values are: 0.1 \... 1 (with 0.1 degree
     increments)
 
-\'\'scanning_frequency\'\' (int)
+*scanning_frequency* (int)
 
 -   Scanning frequency. Valid values are: -200 \... 500Hz (on the
     LMS400-0000) / 360 \... 500Hz (on the LMS400-1000)
 
-\'\'enable_laser\'\' (bool)
+*enable_laser* (bool)
 
 -   Enables/Disables the laserscanner.
 
-\'\'min_angle, max_angle\'\' (int)
+*min_angle, max_angle* (int)
 
 -   Defines the minimum / maximum angle of the laser unit (where the
     scan should start / end). Valid values: 55 \... 125 degrees

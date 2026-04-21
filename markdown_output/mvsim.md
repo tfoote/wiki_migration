@@ -1,5 +1,5 @@
-ROS node for the \"multivehicle simulator\" framework. \'\'\'****Under
-development!\'\'\'****
+ROS node for the \"multivehicle simulator\" framework. ******Under
+development!\*\*******
 
 ## Installing
 

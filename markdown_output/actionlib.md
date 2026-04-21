@@ -25,22 +25,22 @@ please see the [Detailed Description](/DetailedDescription).
 
 ## Client-Server Interaction
 
-The \'\'!ActionClient\'\' and \'\'!ActionServer\'\' communicate via a
-\'\'\"ROS Action Protocol\"\'\', which is built on top of ROS messages.
-The client and server then provide a simple API for users to request
-goals (on the client side) or to execute goals (on the server side) via
-function calls and callbacks.
+The *!ActionClient* and *!ActionServer* communicate via a *\"ROS Action
+Protocol\"*, which is built on top of ROS messages. The client and
+server then provide a simple API for users to request goals (on the
+client side) or to execute goals (on the server side) via function calls
+and callbacks.
 
 ![](attachment:client_server_interaction.png)
 
 ## Action Specification: Goal, Feedback, & Result
 
 In order for the client and server to communicate, we need to define a
-few messages on which they communicate. This is with an \'\'action
-specification\'\'. This defines the Goal, Feedback, and Result messages
+few messages on which they communicate. This is with an *action
+specification*. This defines the Goal, Feedback, and Result messages
 with which clients and servers communicate:
 
-\'\'\'Goal\'\'\'\
+**Goal**\
 To accomplish tasks using actions, we introduce the notion of a goal
 that can be sent to an !ActionServer by an !ActionClient. In the case of
 moving the base, the goal would be a !PoseStamped message that contains
@@ -48,14 +48,14 @@ information about where the robot should move to in the world. For
 controlling the tilting laser scanner, the goal would contain the scan
 parameters (min angle, max angle, speed, etc).
 
-\'\'\'Feedback\'\'\'\
+**Feedback**\
 Feedback provides server implementers a way to tell an !ActionClient
 about the incremental progress of a goal. For moving the base, this
 might be the robot\'s current pose along the path. For controlling the
 tilting laser scanner, this might be the time left until the scan
 completes.
 
-\'\'\'Result\'\'\'\
+**Result**\
 A result is sent from the !ActionServer to the !ActionClient upon
 completion of the goal. This is different than feedback, since it is
 sent exactly once. This is extremely useful when the purpose of the
@@ -69,7 +69,7 @@ point cloud generated from the requested scan.
 The action specification is defined using a \`.action\` file. The
 \`.action\` file has the goal definition, followed by the result
 definition, followed by the feedback definition, with each section
-separated by 3 hyphens (\'\'\'\`\-\--\`\'\'\').
+separated by 3 hyphens (**\`\-\--\`**).
 
 These files are placed in a package\'s \`./action\` directory, and look
 extremely similar to a service\'s \`.srv\` file. An action specification
@@ -94,7 +94,7 @@ automatically triggered during the make process:
 
 #### Build a package that contains .action file
 
-Add the following to your CMakeLists.txt file \'\'before\'\'
+Add the following to your CMakeLists.txt file *before*
 \`catkin_package()\`.
 
 ```
@@ -151,7 +151,7 @@ between the !ActionClient and !ActionServer.
 Full API Reference for the
 [C++ SimpleActionClient](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1SimpleActionClient.html)
 
-\'\'\'Quickstart Guide:\'\'\'\
+**Quickstart Guide:**\
 Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
 The following snippet shows how to send a goal to a !DoDishes
 !ActionServer called \"do_dishes\". ```cplusplus
@@ -176,12 +176,12 @@ int main(int argc, char** argv)
 }
 ```
 
-\'\'\'Note:\'\'\' For the C++ \`SimpleActionClient\`, the
-\`waitForServer\` method will only work if a separate thread is
-servicing the client\'s callback queue. This requires passing in
-\`true\` for the \`spin_thread\` option of the client\'s constructor,
-running with a multi-threaded spinner, or using your own thread to
-service ROS callback queues.
+**Note:** For the C++ \`SimpleActionClient\`, the \`waitForServer\`
+method will only work if a separate thread is servicing the client\'s
+callback queue. This requires passing in \`true\` for the
+\`spin_thread\` option of the client\'s constructor, running with a
+multi-threaded spinner, or using your own thread to service ROS callback
+queues.
 
 ### Python SimpleActionClient
 
@@ -220,7 +220,7 @@ if __name__ == '__main__':
 Full API Reference for the
 [ C++ SimpleActionServer](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1SimpleActionServer.html )
 
-\'\'\'Quickstart Guide:\'\'\'\
+**Quickstart Guide:**\
 Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
 The following snippet shows how to write a !DoDishes !ActionServer
 called \"do_dishes\". ```cplusplus
@@ -251,7 +251,7 @@ int main(int argc, char** argv)
 Full API Reference for the
 [ Python SimpleActionServer](http://www.ros.org/doc/api/actionlib/html/classactionlib_1_1simple__action__server_1_1SimpleActionServer.html )
 
-\'\'\'Quickstart Guide:\'\'\'\
+**Quickstart Guide:**\
 Suppose you have defined \`DoDishes.action\` in the \`chores\` package.
 The following snippet shows how to write a !DoDishes !ActionServer
 called \"do_dishes\".

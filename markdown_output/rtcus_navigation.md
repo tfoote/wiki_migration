@@ -32,11 +32,11 @@ it is high coupled with the grid-based costmap world model, another
 example is if the obstacle avoidance algorithm accepts multiple goals or
 a probabilistic description of the goal.
 
-\'\'\'Note\'\'\': This is still an unestable component in development.
-For an stable API see the standard \[navigation\]. Here an example of
+**Note**: This is still an unestable component in development. For an
+stable API see the standard \[navigation\]. Here an example of
 navigation node developed with this framework it is shown:
 
 [Youtube](https://www.youtube.com/watch?v=8cfzUUonIic)
 
-\'\'\'Note\'\'\': this software is still in active delopment and will be
-renamed soon to RNTL: mobile Robot Navigation Template Library.
+**Note**: this software is still in active delopment and will be renamed
+soon to RNTL: mobile Robot Navigation Template Library.

@@ -10,41 +10,40 @@ frequency while still guaranteeing a good solution.
 
 ## Input
 
--   \'\'odom\'\': the robot [nav_msgs/Odometry](odometry) message.
--   \'\'base_scan\'\': the laser
+-   *odom*: the robot [nav_msgs/Odometry](odometry) message.
+-   *base_scan*: the laser
     [sensor_msgs/laserscan](sensor_msgs/laserscan) message.
--   \'\'cmd_vel_dwc\'\': the desired linear/rotational speed as a
+-   *cmd_vel_dwc*: the desired linear/rotational speed as a
     [geometry_msgs/twists](geometry_msgs/twists) message.
--   \'\'base_link\'\': the robot base frame of referece.
+-   *base_link*: the robot base frame of referece.
 
 ## Output
 
--   \'\'cmd_vel_dwc\'\': the node publishes the linear/rotational speeds
-    as [geometry_msgs/twists](geometry_msgs/twists) messages.
--   \'\'debug_point_cloud\'\': if enabled, the node publishes
+-   *cmd_vel_dwc*: the node publishes the linear/rotational speeds as
+    [geometry_msgs/twists](geometry_msgs/twists) messages.
+-   *debug_point_cloud*: if enabled, the node publishes
     [sensor_msgs/Pointcloud](sensor_msgs/Pointcloud) messages
     corresponding to the laser scan.
 
 ## Parameters
 
--   \'\'alpha, beta, gamma\'\': the importance weights given to heading,
+-   *alpha, beta, gamma*: the importance weights given to heading,
     clearance and speed. See the original paper for the mathematical
     meaning of this parameters.
--   \'\'vmax: \'\'the maximum linear velocity of the robot.
--   \'\'vpmax, vpbrake\'\': maximum linear acceleration and brake
-    (reverse acceleration) of the robot.
--   \'\'wmin, wmax\'\': minimum and maximum rotational velocities of the
+-   *vmax: *the maximum linear velocity of the robot.
+-   *vpmax, vpbrake*: maximum linear acceleration and brake (reverse
+    acceleration) of the robot.
+-   *wmin, wmax*: minimum and maximum rotational velocities of the
     robot.
--   \'\'wpmin, wpmax\'\': minimum and maximum rotational accelerations
-    of the robot
--   \'\'tcmax\'\': for how long (in seconds) should the controller
-    search for an optimal value.It is the inverse of the frequency at
-    which the controller should run.
--   \'\'laser_max\'\': any laser reading below this value is not
-    considered.
--   \'\'robot_radius\'\': this is the radius of the circle that
-    approximates the robot base.
--   \'\'publish_pcl\'\'; if the pointcloud showing the laser will be
+-   *wpmin, wpmax*: minimum and maximum rotational accelerations of the
+    robot
+-   *tcmax*: for how long (in seconds) should the controller search for
+    an optimal value.It is the inverse of the frequency at which the
+    controller should run.
+-   *laser_max*: any laser reading below this value is not considered.
+-   *robot_radius*: this is the radius of the circle that approximates
+    the robot base.
+-   *publish_pcl*; if the pointcloud showing the laser will be
     published.
 
 ## Code Stability

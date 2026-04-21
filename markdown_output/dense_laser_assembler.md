@@ -4,13 +4,12 @@ This package is still unstable, and does not have a released API.
 
 ## Overview
 
-\'\'\'Terminology\'\'\'\
-- \'\'\'Ray\'\'\' - A single range/intensity reading from a laser
-scanner. Takes approx 17 &#965;s to acquire\
-- \'\'\'Scan\'\'\' - Data collected during a single revolution of a
-laser scanner. Takes approx 25 ms to acquire, and consists of 100\'s of
-rays\
-- \'\'\'Sweep\'\'\' - Data collected during monotonic motion of the
+**Terminology**\
+- **Ray** - A single range/intensity reading from a laser scanner. Takes
+approx 17 &#965;s to acquire\
+- **Scan** - Data collected during a single revolution of a laser
+scanner. Takes approx 25 ms to acquire, and consists of 100\'s of rays\
+- **Sweep** - Data collected during monotonic motion of the
 tilting_stage on the PR2. Usually takes 2-10 seconds to acquire, and
 consists of 100\'s of scans\
 

@@ -187,10 +187,9 @@ The simulation is a physical simulation with a model that has been
 accurately identified from a real Franka robot. All the details are in
 the [paper](http://rainbow-doc.irisa.fr/publi/publi/Gaz19a-eng.html):
 
-\'\'C. Gaz, M. Cognetti, A. Oliva, P. Robuffo Giordano, A. De Luca,
-Dynamic Identification of the Franka Emika Panda Robot With Retrieval of
-Feasible Parameters Using Penalty-Based Optimization. IEEE RA-L,
-2019\'\'.
+*C. Gaz, M. Cognetti, A. Oliva, P. Robuffo Giordano, A. De Luca, Dynamic
+Identification of the Franka Emika Panda Robot With Retrieval of
+Feasible Parameters Using Penalty-Based Optimization. IEEE RA-L, 2019*.
 
 If you are using this simulator we would appreciate that you cite this
 [paper](http://rainbow-doc.irisa.fr/publi/publi/Gaz19a-eng.html).
@@ -207,7 +206,7 @@ visp_ros
 [C++ API documentation](http://docs.ros.org/noetic/api/visp_ros/html/index.html).
 To generate this tutorial from source code we suggest to
 [instructions](https://github.com/lagadic/visp_ros#build-documentation-and-tutorials)
-described in \'\'\'Build documentation and tutorials\'\'\' section using
+described in **Build documentation and tutorials** section using
 rosdoc_lite to generate the package Doxygen documentation.
 
 # Installation

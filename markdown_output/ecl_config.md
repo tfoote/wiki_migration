@@ -93,7 +93,7 @@ are available.
 
 ### Platform Sniffers
 
-Checking for \'\'endianness\'\':
+Checking for *endianness*:
 
 ```
 // The function operates like a macro, and a good compiler will compile

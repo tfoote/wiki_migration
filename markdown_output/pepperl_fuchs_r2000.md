@@ -14,7 +14,7 @@ additionally a ROS-Node interface to the Robot Operating System
 
 ## Sensor information
 
-\'\'The new 2-dimensional laser range sensor operates using
+*The new 2-dimensional laser range sensor operates using
 tried-and-tested Pulse Ranging Technology and boasts a range of unique
 features. For example, the device features a laser emitter with a
 visible red light. Users can see where the scanning level is and can
@@ -24,7 +24,7 @@ health hazard to people. The device has a measuring angle of 360° and
 boasts a measuring frequency of up to 250,000 individual measurements
 per second. Combined with a scanning frequency of up to 50 Hz, the
 device is extremely well suited to highspeed applications. Another
-feature is the display integrated in the lens aperture.\'\' (from the
+feature is the display integrated in the lens aperture.* (from the
 official datasheet with permission from Pepperl+Fuchs)
 
 Official Website:

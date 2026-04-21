@@ -1,6 +1,6 @@
-\'\'\'rve_properties\'\'\' provides a way to store configuration data in
-a node similar to how the parameter server works. It differs from the
-parameter server in that:
+**rve_properties** provides a way to store configuration data in a node
+similar to how the parameter server works. It differs from the parameter
+server in that:
 
 -   It does not require any network lookups, so it\'s much faster
 -   It can store arbitrary data in an efficient manner \-- no

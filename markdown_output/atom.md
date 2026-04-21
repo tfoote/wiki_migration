@@ -1,6 +1,6 @@
-\'\'\'ATOM\'\'\' is a set of calibration tools for multi-sensor,
-multi-modal, robotic systems, based on the optimization of atomic
-transformations as provided by a ROS based robot description.
+**ATOM** is a set of calibration tools for multi-sensor, multi-modal,
+robotic systems, based on the optimization of atomic transformations as
+provided by a ROS based robot description.
 
 <https://github.com/lardemua/atom>
 
@@ -27,8 +27,8 @@ calibration procedure. Available functionalities include:
 -   Calibration
 -   Several evaluation methods to assess the calibration
 
-\'\'\'ATOM\'\'\' is extensively integrated into ROS, making use of
-several ROS features to implement nice functionalities.
+**ATOM** is extensively integrated into ROS, making use of several ROS
+features to implement nice functionalities.
 
 ## How to use
 

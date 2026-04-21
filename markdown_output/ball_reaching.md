@@ -19,7 +19,7 @@ motion when the client returns.
 
 ## Running the motion on HRP-2 14
 
-\'\'\'Prerequisite\'\'\': the robot is calibrated.
+**Prerequisite**: the robot is calibrated.
 
 ssh on hrp2014v and run ```sh
 roslaunch hrp2_bringup cameras.launch

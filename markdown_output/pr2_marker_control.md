@@ -29,8 +29,8 @@ roslaunch pr2_interactive_manipulation_frontend pr2_interactive_manipulation_des
 ```
 
 In Rviz, add a \"Interactive Markers\" topic, and subscribe to
-\'\'\'/pr2_markercontrol/update\'\'\'. Finally, select the \"Interact\"
-button in Rviz tool bar (upper-left).
+**/pr2_markercontrol/update**. Finally, select the \"Interact\" button
+in Rviz tool bar (upper-left).
 
 ## Controls
 
@@ -68,9 +68,9 @@ projector and allows you to turn it on and off.
     cylinder will appear in front of the PR2 head.
 -   To turn the projector off use the same menu option from the PR2
     head, or simply click the red cylinder.
--   \'\'\'Please Note:\'\'\' turning the projector on and off can take
-    up to 5 seconds. Please avoid clicking on the projector control
-    multiple times during this period.
+-   **Please Note:** turning the projector on and off can take up to 5
+    seconds. Please avoid clicking on the projector control multiple
+    times during this period.
 
 ### Arm Control
 
@@ -128,8 +128,8 @@ pair of red and green arrows located on the back of the PR2.
 
 ![alt text\|width=\"250\"](attachment:base_control.jpg)
 
-\'\'\' \* Please use with extreme caution!! \* \'\'\' There is
-\'\'\'NO\'\'\' collision avoidance provided with these controls.
+** \* Please use with extreme caution!! \* ** There is **NO** collision
+avoidance provided with these controls.
 
 This control allows you to move the base of the PR2.
 

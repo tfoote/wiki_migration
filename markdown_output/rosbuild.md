@@ -52,7 +52,7 @@ The following variables are defined in
     increasing priority (i.e., later settings overwrite earlier ones):
 
 1\. The current package\'s CMakeLists.txt (i.e., the content
-\*preceding\* the \'\'\'rosbuild_init()\'\'\' invocation), e.g.:
+\*preceding\* the **rosbuild_init()** invocation), e.g.:
 
 -   Turn on static libs, but turn off shared libs:
     ```
@@ -93,9 +93,9 @@ set(ROS_BUILD_STATIC_LIBS true)
 set(ROS_BUILD_SHARED_LIBS false)
 ```
 
-\'\'\'NOTE\'\'\': this ordering is a little non-intuitive, in that the
-setting in the package\'s \`CMakeLists.txt\` is overridden by the
-settings in the \`rosconfig.cmake\` files.
+**NOTE**: this ordering is a little non-intuitive, in that the setting
+in the package\'s \`CMakeLists.txt\` is overridden by the settings in
+the \`rosconfig.cmake\` files.
 
 ## ROS #defines
 

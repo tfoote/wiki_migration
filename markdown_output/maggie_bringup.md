@@ -47,7 +47,7 @@ the robot is able to move around the world.
 
 ## Troubleshooting
 
--   \'\'\'Cannot be found a device.\'\'\'
+-   **Cannot be found a device.**
 -   Be sure the robot has the udev rules installed.
 
 ```

@@ -12,7 +12,7 @@ fused in the particle filter. While designated for humanoid robots
 useful e.g. for UAVs.
 
 Details are available in the corresponding publication
-\'\'\'[Humanoid Robot Localization in Complex Indoor Environments](http://hrl.informatik.uni-freiburg.de/papers/hornung10iros.pdf)\'\'\'
+**[Humanoid Robot Localization in Complex Indoor Environments](http://hrl.informatik.uni-freiburg.de/papers/hornung10iros.pdf)**
 by A. Hornung, K. M. Wurm, and M. Bennewitz (IROS 2010).
 ```
 @INPROCEEDINGS{hornung10iros,

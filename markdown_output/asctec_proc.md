@@ -19,9 +19,9 @@ etc) enables the development of generic micro-air vehicle tools that can
 be shared among various hardware platforms.
 
 Apart from translating messages, the package can (optionally) monitor a
-\'\'\'state\'\'\' topic and send engage/disengage the vehicle\'s motors
-whenever appropriate by sending the \"motors on\"/\"motors off\" command
-to the [asctec_autopilot](asctec_autopilot).
+**state** topic and send engage/disengage the vehicle\'s motors whenever
+appropriate by sending the \"motors on\"/\"motors off\" command to the
+[asctec_autopilot](asctec_autopilot).
 
 ## Notes
 
@@ -38,15 +38,15 @@ running them on the onboard computer.
 
 ## Namespaces
 
-Our convention is to use \'\'\'/asctec/\'\'\' as the namespace for the
-messages provided by and sent to [asctec_autopilot](asctec_autopilot),
-and \'\'\'/mav\'\'\' for the hardware-independent MAV messages.
+Our convention is to use **/asctec/** as the namespace for the messages
+provided by and sent to [asctec_autopilot](asctec_autopilot), and
+**/mav** for the hardware-independent MAV messages.
 
 ![](attachment:asctec_proc.png)
 
 ## Coordinate frames
 
-At the moment, the package publishes information in the \'\'\'ENU\'\'\'
+At the moment, the package publishes information in the **ENU**
 (East-North-Up) frame. While this frame is typically not used for aerial
 vehicles, it makes for easier integration with the rest of the ROS tools
 .

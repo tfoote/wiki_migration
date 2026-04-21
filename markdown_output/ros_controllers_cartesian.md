@@ -22,8 +22,8 @@ started with Cartesian control.
 
 ## Major features at a glance
 
--   \'\'\'Add Cartesian functionality to ROS control\'\'\'. This brings
-    new interfaces for controller design, such as a
+-   **Add Cartesian functionality to ROS control**. This brings new
+    interfaces for controller design, such as a
     \`\`\`PoseCommandInterface\`\`\`, a
     \`\`\`TwistCommandInterface\`\`\`, and a new Cartesian trajectory
     definition. Example controllers include a
@@ -33,17 +33,17 @@ started with Cartesian control.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Enable Cartesian trajectory control\'\'\' in your
-    applications. Specify your task comfortably with waypoints in task
-    space. ROS-side interpolation and streaming of setpoints over the
-    new interfaces is only one of several alternatives. See the
+-   **Enable Cartesian trajectory control** in your applications.
+    Specify your task comfortably with waypoints in task space. ROS-side
+    interpolation and streaming of setpoints over the new interfaces is
+    only one of several alternatives. See the
     [\`cartesian_control_msgs\`](https://github.com/UniversalRobots/Universal_Robots_ROS_cartesian_control_msgs)
     package for details about the interface definition.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Use (conventional) ROS control\'\'\' for Cartesian trajectory
+-   **Use (conventional) ROS control** for Cartesian trajectory
     execution. You don\'t need to change anything in the driver\'s
     HW-abstraction of your specific robot if that supports current ROS
     control. The \`position_controllers/CartesianTrajectoryController\`
@@ -55,9 +55,8 @@ started with Cartesian control.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Hand-over control to the robot by forwarding
-    trajectories\'\'\'. Two new interfaces
-    \`\`\`CartesianTrajectoryInterface\`\`\` and
+-   **Hand-over control to the robot by forwarding trajectories**. Two
+    new interfaces \`\`\`CartesianTrajectoryInterface\`\`\` and
     \`\`\`JointTrajectoryInterface\`\`\` let robots take care of
     driver-side interpolation to achieve best performance. This
     functionality lives in a
@@ -66,11 +65,11 @@ started with Cartesian control.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Speed-scale trajectory execution\'\'\'. All trajectory
-    executions (both Cartesian and joint-based) can be speed-scaled
-    within 0 to 100% at runtime. This gives you flexibility in
-    setting-up new applications and during test runs. Changing this
-    continuously even lets you reshape trajectory execution without
-    re-teaching. This functionality lives in a
+-   **Speed-scale trajectory execution**. All trajectory executions
+    (both Cartesian and joint-based) can be speed-scaled within 0 to
+    100% at runtime. This gives you flexibility in setting-up new
+    applications and during test runs. Changing this continuously even
+    lets you reshape trajectory execution without re-teaching. This
+    functionality lives in a
     [separate repository](https://github.com/UniversalRobots/Universal_Robots_ROS_scaled_controllers)
     but is used for controllers in this repository.

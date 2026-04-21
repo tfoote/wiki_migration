@@ -10,7 +10,7 @@ robots.
 
 Git clone
 [source](https://github.com/SmartRoboticSystems/schunk_grippers.git) to
-your \"\'\'catkin_ws/src\" \'\'folder and \'\'catkin_make\'\' as usual.
+your \"*catkin_ws/src\" *folder and *catkin_make* as usual.
 
 This package depends on [libusb1.0-0](http://www.libusb.org/) library
 which should be part of ROS installation. To check availibility type:
@@ -98,10 +98,10 @@ prov_tf{
 
 ## Usage
 
-\'\'Note: Before interfacing Schunk EZN64 gripper from Linux, we highly
+*Note: Before interfacing Schunk EZN64 gripper from Linux, we highly
 recomend to use original Windows application Schunk MTS Tool to verify
 that gripper is fully functional and there are no wiring or other
-hardware issues. \'\'
+hardware issues. *
 
 ### Launch
 
@@ -138,8 +138,8 @@ name: ['ezn64_finger_1_joint', 'ezn64_finger_2_joint', 'ezn64_finger_3_joint']
 position: [0.01197367763519287, 0.01197367763519287, 0.01197367763519287]
 velocity: []
 effort: []
-``` \'\'Note: In case of initialization problems,
-try to unplug and plug the USB cable again. \'\'
+``` *Note: In case of initialization problems, try
+to unplug and plug the USB cable again. *
 
 ### Test the driver
 
@@ -165,7 +165,7 @@ call\" as in the example below.
 
 #### get_error service
 
-To test the driver start by calling the \'\'get_error\'\' service
+To test the driver start by calling the *get_error* service
 ([std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 request):
 
@@ -180,7 +180,7 @@ error_code: 0
 
 #### get_position
 
-To get actual gripper position, call \'\'get_position\'\' service
+To get actual gripper position, call *get_position* service
 ([std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 request):
 
@@ -205,8 +205,7 @@ MODE:="0666"
 
 #### set_position
 
-To move the gripper to target position, call \'\'set_position\'\'
-service
+To move the gripper to target position, call *set_position* service
 ([std_msgs::float32](http://docs.ros.org/api/std_msgs/html/msg/Float32.html)
 request):
 
@@ -216,10 +215,10 @@ ATTR{idVendor}=="7358"
 ATTR{idProduct}=="371"
 ACTION=="add"
 MODE:="0666"
-```2 where \"\'\'\'value\'\'\'\" is within a range
-of \<0 - 12\> mm. The current driver supports\'\'\' only position
-control\'\'\', which means that \"goal_velocity\" and
-\"goal_acceleration\" are permanently set to default values.
+```2 where \"**value**\" is within a range of \<0 -
+12\> mm. The current driver supports** only position control**, which
+means that \"goal_velocity\" and \"goal_acceleration\" are permanently
+set to default values.
 
 If goal_position within a range, the gripper should respond with
 goal_position being accepted and move to desired position:
@@ -234,7 +233,7 @@ MODE:="0666"
 
 #### reference
 
-To reference gripper, call \'\'reference\'\' service
+To reference gripper, call *reference* service
 ([std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 request). Referencing may also help in cases you are not able to move
 the gripper although everything else looks okay:

@@ -206,12 +206,12 @@ The following node-private parameters are read at node startup:
 
 -   Kp, Ki, Kd: The values to be used for proportional, integral, and
     derivative gains. These values are used by the node unless
-    overridden by dynamic reconfiguration. \'\'\'Kp, Ki and Kd should
-    all have the same sign!\'\'\' Use all positive values for
-    direct-acting loops (where an increase in control effort produces an
-    increase in state). Use all negative values for reverse-acting loops
-    (where an increase in control effort produces a decrease in state).
-    Defaults are 1.0, 0, and 0 for Kp, Ki and Kd.
+    overridden by dynamic reconfiguration. **Kp, Ki and Kd should all
+    have the same sign!** Use all positive values for direct-acting
+    loops (where an increase in control effort produces an increase in
+    state). Use all negative values for reverse-acting loops (where an
+    increase in control effort produces a decrease in state). Defaults
+    are 1.0, 0, and 0 for Kp, Ki and Kd.
 -   upper_limit, lower_limit: the maximum and minimum limits for
     control_effort. Defaults are 1000, -1000.
 -   windup_limit: The maximum limit for error integral. Default is 1000.

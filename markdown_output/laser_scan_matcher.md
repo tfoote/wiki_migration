@@ -33,34 +33,34 @@ widely-used) assumption is that the sensor didn\'t move (zero-velocity
 model). Below is a list of inputs that
 [laser_scan_matcher](laser_scan_matcher) accepts:
 
-1\. \'\'\'IMU\'\'\' :An estimation for the change of the orientation
-angle (\`delta-theta\`) of the robot in the form of a
+1\. **IMU** :An estimation for the change of the orientation angle
+(\`delta-theta\`) of the robot in the form of a
 \<\<MsgLink(sensor_msgs/IMU)\>\> message. We are assuming that the
 \`yaw\` component of the IMU message corresponds to the orientation of
 the robot. Thus, we don\'t really need a full 6DoF IMU sensor - a cheap
 1-axis gyro will work as well, as long as its output is packed as an IMU
 message. The required topic is \`imu/data\`.
 
-2\. \'\'\'Wheel odometry\'\'\': An estimation for the change of x-, y-,
-and orientation angle of the robot from an odometric sensor such as
-wheel encoders. The required topic is \`odom\`.
+2\. **Wheel odometry**: An estimation for the change of x-, y-, and
+orientation angle of the robot from an odometric sensor such as wheel
+encoders. The required topic is \`odom\`.
 
-3\. \'\'\'Constant velocity model\'\'\': Assumes the robot moved based
-on an estimate of the robot\'s velocity. The velocity estimate can be
-obtained from an external sensor, or by derivating and filtering the
-output of the scan matcher itself. The required topic is \`vel\`. For an
-example of how to use a simple filter to achieve this, check out
+3\. **Constant velocity model**: Assumes the robot moved based on an
+estimate of the robot\'s velocity. The velocity estimate can be obtained
+from an external sensor, or by derivating and filtering the output of
+the scan matcher itself. The required topic is \`vel\`. For an example
+of how to use a simple filter to achieve this, check out
 [ Alpha-beta tracking for scan matching predictions](AlphaBetaTracking ).
 
-4\. \'\'\'Zero-velocity model\'\'\': Don\'t use any prediction, ie,
-assume that the robot stayed in the same place.
+4\. **Zero-velocity model**: Don\'t use any prediction, ie, assume that
+the robot stayed in the same place.
 
 We can use combinations of the above such as IMU together with wheel
 odometry or IMU together with alpha beta tracking. When several
 prediction modes are enabled, the priority is IMU \> Odometry \>
 Constant Velocity \> Zero Velocity.
 
-\'\'\'What should I use in practice?\'\'\'
+**What should I use in practice?**
 
 IMU and (to some extent) wheel odometry inputs significantly improve
 convergence speed for rotational motion. The addition of an IMU input is

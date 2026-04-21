@@ -1,10 +1,10 @@
 ## Overview
 
 This package provides a method for construction of a 3D representation
-of sensed data that we label a \'\'\'collision_map\'\'\'. A collision
-map is a set of boxes whose extents and orientation is specified. It is
-typically generated using point-cloud data from laser range sensors,
-stereo cameras and other 3-D sensing devices.
+of sensed data that we label a **collision_map**. A collision map is a
+set of boxes whose extents and orientation is specified. It is typically
+generated using point-cloud data from laser range sensors, stereo
+cameras and other 3-D sensing devices.
 
 Note: This node requires input of type PointCloud. If using an OpenNI
 device that outputs only PointCloud2, you should look at

@@ -35,8 +35,7 @@ The dirt detection software expects to receive the topics `/tf`
 from the RGB-D sensor). If you are using a different robot make sure
 that the topics are remapped accordingly in the launch-file. As long as
 you provide a proper transformation from the `/map` frame to the camera
-frame the dirt detection software should \'\'\'work with any
-robot\'\'\'.
+frame the dirt detection software should **work with any robot**.
 
 The algorithm publishes the topic `/dirt_detection/detection_map` which
 displays the detected dirt as dark cells in a grid map. You can use RViz

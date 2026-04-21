@@ -5,12 +5,12 @@ library to provide 3D navigation with full-body collision checking to
 nav_core::BaseGlobalPlanner interface specified in
 [nav_core](http://ros.org/wiki/nav_core).
 
-\'\'\'Source of SBPL Full-Body Planner:\'\'\'
+**Source of SBPL Full-Body Planner:**
 
-\'\'\' (for ROS Electric only) \'\'\'
+** (for ROS Electric only) **
 
-\'\'\'git clone
-<https://sbpl.pc.cs.cmu.edu/redmine/people/mike/full-body-nav.git>\'\'\'
+**git clone
+<https://sbpl.pc.cs.cmu.edu/redmine/people/mike/full-body-nav.git>**
 
 ## Overview
 

@@ -54,8 +54,8 @@ Run the driver like so:
 rosrun um6 um6_driver _port:=/dev/ttyUSB0
 ```
 
-\'\'\'Note:\'\'\' A rosbuild branch is also available in the repository,
-for users working with rosbuild workspaces under Fuerte or Groovy.
+**Note:** A rosbuild branch is also available in the repository, for
+users working with rosbuild workspaces under Fuerte or Groovy.
 
 ## Nodes
 

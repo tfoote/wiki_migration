@@ -26,7 +26,7 @@ Make sure you have copies of your binary both locally and on the
 embedded board. The embedded board copy may even be stripped, but the
 local one must absolutely be non-stripped and have debug symbols.
 
-\'\'\'Embedded Board\'\'\'
+**Embedded Board**
 
 ```
 gdbserver 192.168.0.66:5200 ./hello
@@ -35,7 +35,7 @@ gdbserver 192.168.0.66:5200 ./hello
 Note that the ip is actually ignored, the port number is the only thing
 that is important.
 
-\'\'\'Build Platform\'\'\'
+**Build Platform**
 
 ```
 arm-samsung-linux-gnueabi-gdb ./hello

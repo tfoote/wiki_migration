@@ -27,11 +27,11 @@ bootstrapping reasons:```
 import roslib; roslib.load_manifest('YOUR_PACKAGE_NAME')
 ```
 
-Otherwise, the simple answer is \'\'\'use [rospy](rospy)\'\'\'. Unless
-you\'re more familiar with ROS Python development, \`rospy\` should
-provide you with all the APIs you need to run a node, call services,
-access the Parameter Server, etc\... roslib is primarily an internal
-library used by ROS core developers to write tools.
+Otherwise, the simple answer is **use [rospy](rospy)**. Unless you\'re
+more familiar with ROS Python development, \`rospy\` should provide you
+with all the APIs you need to run a node, call services, access the
+Parameter Server, etc\... roslib is primarily an internal library used
+by ROS core developers to write tools.
 
 ## Developer tools for client library authors
 

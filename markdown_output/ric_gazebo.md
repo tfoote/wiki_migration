@@ -113,8 +113,8 @@ You can view the robots sensors using rviz:
 -   Function: steering the robot.
 -   Msg type: geometry_msgs/Twist
 
-\'\'\'Subscribers that are only present in the komodo with elevator and
-arm\'\'\'
+**Subscribers that are only present in the komodo with elevator and
+arm**
 
 1\. komodo\_\<ID\>/elevator_controller/command
 
@@ -135,8 +135,7 @@ arm\'\'\'
 -   Function: Publish the odometry of the robot.
 -   Msg type: nav_msgs/Odometry
 
-\'\'\'Publishers that are only prasent in the komodo with elevator and
-arm\'\'\'
+**Publishers that are only prasent in the komodo with elevator and arm**
 
 1\. komodo\_\<ID\>/Creative_Camera/rgb/image_raw
 

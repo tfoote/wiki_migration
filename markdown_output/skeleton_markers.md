@@ -130,8 +130,7 @@ param {
 
 ### Example Launch File
 
-Use the \'\'\'markers_from_tf.launch\'\'\' file:
-```
+Use the **markers_from_tf.launch** file: ```
 <launch>
   <include file="$(find openni_camera)/launch/openni_node.launch" />
   

@@ -18,9 +18,9 @@ step 3 by rotating it by 40 degrees \* iteration number along the Z
 axis. 5. Publish the cloud 6. Repeat again from step 2 until Robotino
 has completed 360 degrees of rotation.
 
-\'\'\'Note:\'\'\' The above method doesn\'t use any registration
-algorithms such as ICP etc. It only performs basic registration because
-the transformation is known in advance.
+**Note:** The above method doesn\'t use any registration algorithms such
+as ICP etc. It only performs basic registration because the
+transformation is known in advance.
 
 A result of the kinect_registration_node can be seen below:
 
@@ -65,8 +65,8 @@ them and publish the output. This is done repeatedly until Robotino has
 rotated a whole 360 degrees.
 
 If you would like to save the pointclouds published by the
-kinect_registration_node, run the following command. \'\'\'Note:\'\'\'
-If you have modified the launch file then your publish topic might be
+kinect_registration_node, run the following command. **Note:** If you
+have modified the launch file then your publish topic might be
 different. ```
 rosrun pcl_ros pointcloud_to_pcd /input:=/kinect_registration_node/registered_cloud
 ```

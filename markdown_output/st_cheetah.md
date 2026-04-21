@@ -2,13 +2,13 @@
 
 ------------------------------------------------------------------------
 
-\'\'\'\'\'This page is currently under development, please check back in
-the future for updates\'\'\'\'\'
+***This page is currently under development, please check back in the
+future for updates***
 
 ------------------------------------------------------------------------
 
-Welcome to SynTouch\'s new ROS package \'\'\'st_cheetah\'\'\'. SynTouch
-is currently developing this package to collect !BioTac data from the
+Welcome to SynTouch\'s new ROS package **st_cheetah**. SynTouch is
+currently developing this package to collect !BioTac data from the
 Cheetah SPI/USB controller. Collected data can be processed using the
 package [st_biotac](st_biotac).
 
@@ -40,9 +40,9 @@ This package provides a ROS interface for the !BioTac sensors through the Cheeta
 
 ![hardware interface\|width=600](attachment:cheetah_hardware_interface.png)
 
-\'\'\'NOTE:\'\'\' Do \'\'\'not\'\'\' Download the latest library from
-Total Phase. Our software is only compatible with the version that is
-included in this package.
+**NOTE:** Do **not** Download the latest library from Total Phase. Our
+software is only compatible with the version that is included in this
+package.
 
 ```html
 <a name="working"></a>
@@ -56,29 +56,29 @@ USB cable.
 
 ![software interface\|width=600](attachment:cheetah_software_interface.png)
 
-The Cheetah SPI Host is capable of queueing \'\'batches\'\' of !BioTac
-SPI sampling commands that execute asynchronously and are transmitted
-over USB to the host computer when they become available. The !BioTac C
+The Cheetah SPI Host is capable of queueing *batches* of !BioTac SPI
+sampling commands that execute asynchronously and are transmitted over
+USB to the host computer when they become available. The !BioTac C
 Library takes advantage of these asynchronous shifts to ensure
 continuous sampling of !BioTac data even if USB communication is
 delayed. During initialization, 16 batches of data are shifted to the
 host adapter\'s queue as a buffer to ensure continuously sampled data.
 Each time a batch is collected an identical batch of sampling commands
 is added at the end of the queue. For this reason the minimum batch size
-is one complete sampling sequence, or a \'\'frame\'\'. An integral
-multiple of frames can be structured into a batch. Using more frames per
-batch is efficient and reduces the USB bandwidth of the computer, which
-may be necessary for slower computers; fewer frames per batch allows for
-faster access to data, but may cause discontinuous sampling if the
-computer is not fast enough to keep up. When this happens and the
-computer cannot shift batches to the Cheetah SPI host faster than they
-are acquired it is referred to as \'\'buffer underrun\'\' and indicates
-that the collected !BioTac data is not continuous. When this happens,
-increasing the batch length can solve the problem. Setting this value
-generally requires some tuning, it is recommended that you start with a
-batch length of 30ms and adjust either higher or lower depending on
-computer performance. Program behavior in response to buffer underrun
-can be configured as indicated below.
+is one complete sampling sequence, or a *frame*. An integral multiple of
+frames can be structured into a batch. Using more frames per batch is
+efficient and reduces the USB bandwidth of the computer, which may be
+necessary for slower computers; fewer frames per batch allows for faster
+access to data, but may cause discontinuous sampling if the computer is
+not fast enough to keep up. When this happens and the computer cannot
+shift batches to the Cheetah SPI host faster than they are acquired it
+is referred to as *buffer underrun* and indicates that the collected
+!BioTac data is not continuous. When this happens, increasing the batch
+length can solve the problem. Setting this value generally requires some
+tuning, it is recommended that you start with a batch length of 30ms and
+adjust either higher or lower depending on computer performance. Program
+behavior in response to buffer underrun can be configured as indicated
+below.
 
 ## ROS API
 
@@ -141,64 +141,63 @@ param {
 <a name="frame types"></a>
 ```
 
--   0 - \'\'Default Sampling Sequence\'\' - Vibrations (P,,AC,,) signals
-    are sampled at high frequency and interleaved with all other
+-   0 - *Default Sampling Sequence* - Vibrations (P,,AC,,) signals are
+    sampled at high frequency and interleaved with all other
     measurements. This is the recommended sampling sequence for most
     applications and is recommended to have an overall sampling rate of
     4400Hz.
--   Sequence (\'\'44 Samples/frame\'\'): P,,AC,,, E,,1,,, P,,AC,,,
-    E,,2,,, \... P,,AC,,, E,,18,,, P,,AC,,, E,,19,,, P,,AC,,, P,,DC,,,
-    P,,AC,,, T,,AC,,, P,,AC,,, T,,DC,,,
+-   Sequence (*44 Samples/frame*): P,,AC,,, E,,1,,, P,,AC,,, E,,2,,,
+    \... P,,AC,,, E,,18,,, P,,AC,,, E,,19,,, P,,AC,,, P,,DC,,, P,,AC,,,
+    T,,AC,,, P,,AC,,, T,,DC,,,
 
 ```{=html}
 <!-- -->
 ```
--   1 - \'\'Default with Hall\'\' - This sampling sequence is for
-    !BioTacs versions 2.3 and later with integrated Hall Sensor that
-    require the sensing of this channel. The recommended sampling rate
-    for this sequence is 4600Hz.
--   Sequence (\'\'46 Samples/frame\'\'): P,,AC,,, E,,1,,, P,,AC,,,
-    E,,2,,, \... P,,AC,,, E,,18,,, P,,AC,,, E,,19,,, P,,AC,,, P,,DC,,,
-    P,,AC,,, T,,AC,,, P,,AC,,, T,,DC,,, P,,AC,,, Hall
+-   1 - *Default with Hall* - This sampling sequence is for !BioTacs
+    versions 2.3 and later with integrated Hall Sensor that require the
+    sensing of this channel. The recommended sampling rate for this
+    sequence is 4600Hz.
+-   Sequence (*46 Samples/frame*): P,,AC,,, E,,1,,, P,,AC,,, E,,2,,,
+    \... P,,AC,,, E,,18,,, P,,AC,,, E,,19,,, P,,AC,,, P,,DC,,, P,,AC,,,
+    T,,AC,,, P,,AC,,, T,,DC,,, P,,AC,,, Hall
 
 ```{=html}
 <!-- -->
 ```
--   2 - \'\'All Channels\'\' - This sampling sequence is recommended
-    when high bandwidth vibration data is not necessary. It reduces the
-    sampling rate of P,,AC,, to conserve bandwidth. Recommended sampling
-    rate is 2400Hz, however lower sampling rates can be used if desired.
-    NOTE: when using this sampling sequence P,,AC,, is vulnerable to
-    aliasing.
--   Sequence (\'\'24 Samples/frame\'\'): P,,AC,,, P,,DC,,, T,,AC,,,
-    T,,DC,,, Hall, E,,1,,, E,,2,,, \... E,,18,,, E,,19,,,
+-   2 - *All Channels* - This sampling sequence is recommended when high
+    bandwidth vibration data is not necessary. It reduces the sampling
+    rate of P,,AC,, to conserve bandwidth. Recommended sampling rate is
+    2400Hz, however lower sampling rates can be used if desired. NOTE:
+    when using this sampling sequence P,,AC,, is vulnerable to aliasing.
+-   Sequence (*24 Samples/frame*): P,,AC,,, P,,DC,,, T,,AC,,, T,,DC,,,
+    Hall, E,,1,,, E,,2,,, \... E,,18,,, E,,19,,,
 
 ```{=html}
 <!-- -->
 ```
--   3 - \'\'Electrodes Only\'\' - This sampling sequence is recommended
-    for force extraction algorithms that make use of the !BioTac
-    electrodes, preferably for light forces. The recommended sampling
-    rate is 1900Hz.
--   Sequence (\'\'19 Samples/frame\'\'): E,,1,,, E,,2,,, \... E,,18,,,
+-   3 - *Electrodes Only* - This sampling sequence is recommended for
+    force extraction algorithms that make use of the !BioTac electrodes,
+    preferably for light forces. The recommended sampling rate is
+    1900Hz.
+-   Sequence (*19 Samples/frame*): E,,1,,, E,,2,,, \... E,,18,,,
     E,,19,,,
 
 ```{=html}
 <!-- -->
 ```
--   4 - \'\'AC/DC Pressure\'\' - This sampling sequence is recommended
-    for high-resolution sampling of vibration signals and contact, it
+-   4 - *AC/DC Pressure* - This sampling sequence is recommended for
+    high-resolution sampling of vibration signals and contact, it
     alternates between the P,,AC,, and P,,DC,, channels. The recommended
     sampling rate is 4400Hz.
--   Sequence (\'\'2 Samples/frame\'\'): P,,AC,,, P,,DC,,,
+-   Sequence (*2 Samples/frame*): P,,AC,,, P,,DC,,,
 
 ```{=html}
 <!-- -->
 ```
--   5 - \'\'AC Pressure Only\'\' - This sampling sequence is recommended
-    for extremely low-noise vibration measurements. The recommended
-    sampling rate is 2200Hz.
--   Sequence (\'\'2 Samples/frame\'\'): P,,AC,,, P,,DC,,,
+-   5 - *AC Pressure Only* - This sampling sequence is recommended for
+    extremely low-noise vibration measurements. The recommended sampling
+    rate is 2200Hz.
+-   Sequence (*2 Samples/frame*): P,,AC,,, P,,DC,,,
 
 ##### Batch Parameters
 

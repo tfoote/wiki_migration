@@ -11,8 +11,8 @@ configurations from a \`rostoolchain.cmake\` and \`rosconfig.cmake\`
 
 ## Tested
 
--   \'\'Native\'\': linux
--   \'\'Cross-Compile\'\': arm, mingw32
+-   *Native*: linux
+-   *Cross-Compile*: arm, mingw32
 
 ## Usage
 
@@ -30,8 +30,8 @@ noted here.
 This package will have to be revalidated every time ros updates the
 opencv - we should always try and sync our opencv package with theirs.
 At the moment (cturtle), this is using a vanilla version from opencv
-directly, whereas the ros opencv2 uses a patched branch - \'\'this needs
-to be updated\'\'.
+directly, whereas the ros opencv2 uses a patched branch - *this needs to
+be updated*.
 
 ### Build Flags Used
 

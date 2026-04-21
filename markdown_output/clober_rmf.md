@@ -1,10 +1,10 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Overview
 
 ![4 robots simulation\|width=400](attachment:clober_rmf/4robots.png)
 
-\'\'\'Clober RMF\'\'\' package is Robot Middleware Framework for Clober.
+**Clober RMF** package is Robot Middleware Framework for Clober.
 
 ## Clober e-Manual
 

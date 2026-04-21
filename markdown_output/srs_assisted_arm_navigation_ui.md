@@ -56,9 +56,9 @@ arm_nav_presets:
 
 Node for publishing text marker indicating state of arm planning - tells
 user if the arm is in collision or the requested position is not
-reachable etc. It needs \'\'rviz_cam_add\'\' TF frame published by
-assisted arm navigation node to visualize text marker near the end
-effector when planning.
+reachable etc. It needs *rviz_cam_add* TF frame published by assisted
+arm navigation node to visualize text marker near the end effector when
+planning.
 
 ![Text marker tells user if there is some problem.\|width=600px](attachment:statevis.png)
 
@@ -133,5 +133,5 @@ pub {
 ```
 
 Example of action client for assisted detection plugin can be found in
-\'\'detect_unknown_object_assisted\'\' SMACH generic state implemented
-in [srs_arm_navigation_tests](srs_arm_navigation_tests).
+*detect_unknown_object_assisted* SMACH generic state implemented in
+[srs_arm_navigation_tests](srs_arm_navigation_tests).

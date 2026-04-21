@@ -16,13 +16,13 @@ generation results, others are maintained manually.
 
 -   <https://code.ros.org/svn/release/trunk>
 -   distros/\*.rosdistro:
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   is read by:
 -   rospkg.distro.distro_uri()
 -   ros_release/job_generation\... (several references)
 -   ros_release/rosdistro/src/rosdistro.py
 -   distros/\*.excludes
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   is read by:
 -   ros_release/release/scripts/is_excluded
 -   ros_release/rosdeb/scripts/list_missing
@@ -31,11 +31,11 @@ generation results, others are maintained manually.
 <!-- -->
 ```
 -   release_resources/rosinstalls
--   \'\'\'manually maintained\'\'\'
--   \'\'no reference found, seems cturtle was last time it was used\'\'
+-   **manually maintained**
+-   *no reference found, seems cturtle was last time it was used*
 -   release_resources/repos
--   \'\'\'manually maintained\'\'\'
--   \'\'no reference found, seems cturtle was last time it was used\'\'
+-   **manually maintained**
+-   *no reference found, seems cturtle was last time it was used*
 
 ```{=html}
 <!-- -->
@@ -43,16 +43,16 @@ generation results, others are maintained manually.
 -   rosdoc_rosorg
 -   rosdoc_rosorg/repos.list
 -   list of repo groups (all, electric, unstable?)
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   rosdoc_rosorg/repos.fuerte.list
 -   list of all known repo groups for fuerte
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   rosdoc_rosorg/repos/\*.rosinstall
 -   referenced by repos.\[\*\]list
 -   define sets of SCM repositories
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   rosdoc_rosorg/index/repos-\*.rosinstall
--   \'\'\'manually maintained\'\'\'
+-   **manually maintained**
 -   rosinstall file as to create a workspace against apt-get installed
     distros
 
@@ -60,15 +60,15 @@ generation results, others are maintained manually.
 <!-- -->
 ```
 -   rosdoc_rosorg/index/distro-\*.yaml
--   \'\'\'redundant\'\'\', only restructures data
--   \'\'\'generated\'\'\' solely from release/distros/\*.rosdistro using
+-   **redundant**, only restructures data
+-   **generated** solely from release/distros/\*.rosdistro using
     create_distro_index.py
 -   used for rosdoc_rosorg \--distro-index
 
 ### Generated files not under version control
 
 -   repos.rosinstall
--   \'\'\'generated\'\'\' from repos.list and therein referenced
+-   **generated** from repos.list and therein referenced
     repos/\*.rosinstall
 -   is a single huge rosinstall file as the sum of all that went into it
 -   created using generate_index.py

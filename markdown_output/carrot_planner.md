@@ -17,7 +17,7 @@ the robot to get as close to a user-specified goal point as possible.
 
 The \`carrot_planner::CarrotPlanner\` object exposes its functionality
 as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates within a
-ROS namespace (assumed to be \'\'name\'\' from here on) specified on
+ROS namespace (assumed to be *name* from here on) specified on
 initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
 interface found in the [nav_core](nav_core) package.
 

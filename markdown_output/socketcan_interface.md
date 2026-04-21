@@ -6,16 +6,15 @@ implementation.
 
 The interface is divided into three parts:
 
--   \'\'!StateInterface\'\': Listener interface for the state of the
-    driver
--   \'\'!CommInterface\'\': Listener interface for receiving messages
-    and send functionality
--   \'\'!DriverInterface\'\': inherits from both and adds management
+-   *!StateInterface*: Listener interface for the state of the driver
+-   *!CommInterface*: Listener interface for receiving messages and send
+    functionality
+-   *!DriverInterface*: inherits from both and adds management
     interfaces
 
 The listeners are based on
 \--([FastDelegate](https://github.com/dreamcat4/FastDelegate))\--
-\'\'std::function\'\' (since melodic) and use RAII-pointers.
+*std::function* (since melodic) and use RAII-pointers.
 
 The SocketCAN driver interface is based on
 [Boost.Asio](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html)
@@ -37,15 +36,15 @@ drivers, other devices are supported by vendor-provided implementations.
 
 The following devices were tested with socketcan_interface:
 
-  -- ----------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------ ---------------------------- ----------------- ---------------------------------------------------------------------------------------------- ----------------------------------- ---------------------------- ---------------------------- ------------------------------------------ -- --
-     Vendor                                                                                                                                                                         Device                                         Driver                                                                                                                             Status                                                    Comments                                      
-     \<style=\"text-align:center\"                                                                                     3\>[PEAK-System Technik GmbH](http://www.peak-system.com/)                                PEAK-USB                                                                                                         Kernel peak_usb                                                  \<bgcolor=\"green\"\>Works                                                 
-     \<style=\"text-align:center\"                                                                                     2\>PEAK-cPCI                                                                              Kernel peak_pci                                                                                                  \<bgcolor=\"yellow\"\>Not working                                IRQ problems                                                               
-     [Vendor](http://www.peak-system.com/fileadmin/media/linux/index.htm) (NETDEV!)                                                                                                 \<bgcolor=\"green\"\>Works                                                                                                                                                                                                                                                                
-     [esd electronic system design gmbh](https://esd.eu)                                                                                                                            CAN-USB/2                                      Kernel esd_usb2                                                                                                                    \<bgcolor=\"green\"\>Works                                                                              
-     [Ixxat (HMS Networks)](https://www.ixxat.com)                                                                                                                                  USB-to-CAN V2 compact                          [Vendor](https://www.ixxat.com/support/file-and-documents-download/drivers/socketcan-driver)                                       \<bgcolor=\"green\"\>Works                                optional requirement: \'\'libelf-dev\'\'      
-     [PICAN2 (SK Pang Electronics)](http://skpang.co.uk/catalog/pican2-canbus-board-for-raspberry-pi-23-p-1475.html)                                                                PICAN2                                         Kernel mcp2515                                                                                                                     \<bgcolor=\"green\"\>Works                                                                              
-  -- ----------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------ ---------------------------- ----------------- ---------------------------------------------------------------------------------------------- ----------------------------------- ---------------------------- ---------------------------- ------------------------------------------ -- --
+  -- ----------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------ ---------------------------- ----------------- ---------------------------------------------------------------------------------------------- ----------------------------------- ---------------------------- ---------------------------- ------------------------------------ -- --
+     Vendor                                                                                                                                                                         Device                                         Driver                                                                                                                             Status                                                    Comments                                
+     \<style=\"text-align:center\"                                                                                     3\>[PEAK-System Technik GmbH](http://www.peak-system.com/)                                PEAK-USB                                                                                                         Kernel peak_usb                                                  \<bgcolor=\"green\"\>Works                                           
+     \<style=\"text-align:center\"                                                                                     2\>PEAK-cPCI                                                                              Kernel peak_pci                                                                                                  \<bgcolor=\"yellow\"\>Not working                                IRQ problems                                                         
+     [Vendor](http://www.peak-system.com/fileadmin/media/linux/index.htm) (NETDEV!)                                                                                                 \<bgcolor=\"green\"\>Works                                                                                                                                                                                                                                                          
+     [esd electronic system design gmbh](https://esd.eu)                                                                                                                            CAN-USB/2                                      Kernel esd_usb2                                                                                                                    \<bgcolor=\"green\"\>Works                                                                        
+     [Ixxat (HMS Networks)](https://www.ixxat.com)                                                                                                                                  USB-to-CAN V2 compact                          [Vendor](https://www.ixxat.com/support/file-and-documents-download/drivers/socketcan-driver)                                       \<bgcolor=\"green\"\>Works                                optional requirement: *libelf-dev*      
+     [PICAN2 (SK Pang Electronics)](http://skpang.co.uk/catalog/pican2-canbus-board-for-raspberry-pi-23-p-1475.html)                                                                PICAN2                                         Kernel mcp2515                                                                                                                     \<bgcolor=\"green\"\>Works                                                                        
+  -- ----------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------ ---------------------------- ----------------- ---------------------------------------------------------------------------------------------- ----------------------------------- ---------------------------- ---------------------------- ------------------------------------ -- --
 
 ## Preparation
 
@@ -73,7 +72,7 @@ sudo ip link set can0 up type can bitrate 500000 # adjust bitrate as needed
 ``` Further options are availabe, please consult
 [SocketCAN Readme, section 6.5](https://www.kernel.org/doc/Documentation/networking/can.txt).
 For automatic set-up, the network can be configured in
-\'\'/etc/network/interfaces\'\', e.g.:
+*/etc/network/interfaces*, e.g.:
 
 ```
 allow-hotplug can0

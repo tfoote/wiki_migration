@@ -5,7 +5,7 @@ Systems 6 axis force-torque sensors. Since 17/11/2020, the driver
 supports Rokubi and SenseONE sensors in both configurations with
 Serial(RS422) and EtherCAT electronics.
 
-\'\'\'Authors(s):\'\'\' Ilias Patsiaouras, Mike Karamousadakis
+**Authors(s):** Ilias Patsiaouras, Mike Karamousadakis
 
 ## Installation
 
@@ -26,8 +26,8 @@ have the following dependencies:
     robotics - obviously),
 -   [soem](https://github.com/mgruhler/soem)
 
-\'\'\'Note:\'\'\' The [soem](http://wiki.ros.org/soem) dependency is
-released in ROS, so it\'s a binary dependency for a source installation.
+**Note:** The [soem](http://wiki.ros.org/soem) dependency is released in
+ROS, so it\'s a binary dependency for a source installation.
 
 #### Fetching the code
 
@@ -76,74 +76,40 @@ $ catkin_make_isolated --pkg bota_driver
 
 ## Packages
 
--   \'\'\'\`rokubimini\`\'\'\': The core C++ library to interface one or
-    multiple rokubimini devices. Contains abstract interfaces to start
-    the communication.
+**\*\`rokubimini\`**: The core C++ library to interface one or multiple
+rokubimini devices. Contains abstract interfaces to start the
+communication.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_ethercat\`\'\'\': The ethercat implementation of
-    rokubimini.
+**\*\`rokubimini_ethercat\`**: The ethercat implementation of
+rokubimini.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_serial\`\'\'\': The serial implementation of
-    rokubimini.
+**\*\`rokubimini_serial\`**: The serial implementation of rokubimini.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_manager\`\'\'\': The manager of multiple
-    rokubiminis, independently of their implementation (ethercat or
-    serial).
+**\*\`rokubimini_manager\`**: The manager of multiple rokubiminis,
+independently of their implementation (ethercat or serial).
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_bus_manager\`\'\'\': An abstract class for
-    managing a bus.
+**\*\`rokubimini_bus_manager\`**: An abstract class for managing a bus.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_factory\`\'\'\': The factory that creates each
-    implementation based on the configuration file \`setup.yaml\`.
+**\*\`rokubimini_factory\`**: The factory that creates each
+implementation based on the configuration file \`setup.yaml\`.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`bota_device_driver\`\'\'\': Contains a ROS node that
-    communicates with a manager that handles one or multiple rokubiminis
-    (depends on the config file \`setup.yaml\`). This package contains
-    config files \`config/setup.yaml\` and
-    \`config/rokubimini_sensor.yaml\` to configure the communication and
-    the sensor itself.
+**\*\`bota_device_driver\`**: Contains a ROS node that communicates with
+a manager that handles one or multiple rokubiminis (depends on the
+config file \`setup.yaml\`). This package contains config files
+\`config/setup.yaml\` and \`config/rokubimini_sensor.yaml\` to configure
+the communication and the sensor itself.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`bota_node\`\'\'\': ROS node wrapper with some convenience
-    functions using \'\'\'\`bota_worker\`\'\'\'.
+**\*\`bota_node\`**: ROS node wrapper with some convenience functions
+using **\`bota_worker\`**.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`bota_worker\`\'\'\': High resolution and threaded version of
-    the ROS rate class.
+**\*\`bota_worker\`**: High resolution and threaded version of the ROS
+rate class.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`bota_signal_handler\`\'\'\': Contains a static signal
-    handling helper class.
+**\*\`bota_signal_handler\`**: Contains a static signal handling helper
+class.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'\`rokubimini_msgs\`\'\'\': Contains the definitions of the ROS
-    messages and services used for communication over ROS.
+**\*\`rokubimini_msgs\`**: Contains the definitions of the ROS messages
+and services used for communication over ROS.
 
 ## Nodes
 
@@ -195,9 +161,8 @@ param {
 The following parameters can be set in the \`setup.yaml\`:
 
 -   \`name\`: The name of the rokubimini devices. Needed to handle
-    multiple devices on the master side. \'\'\'Note:\'\'\' The
-    \`\<name\>\` in the published topics is taken from this
-    configuration parameter.
+    multiple devices on the master side. **Note:** The \`\<name\>\` in
+    the published topics is taken from this configuration parameter.
 -   \`configuration_file\`: The relative path to the configuration file
     of the sensor
 -   \`product_code\`: The product code of each device.
@@ -364,9 +329,9 @@ sensor_calibration:
 
 ### Default parameters
 
-\'\'\'Note:\'\'\' You need to have root privileges to the network card,
-if you want to have access to the EtherCAT devices. For example, this
-can be done with escalated privileges (e.g. \`su root\`):
+**Note:** You need to have root privileges to the network card, if you
+want to have access to the EtherCAT devices. For example, this can be
+done with escalated privileges (e.g. \`su root\`):
 
 ```
 $ su root
@@ -374,12 +339,12 @@ $ su root
 # roslaunch bota_device_driver rokubimini.launch
 ```
 
-\'\'\'Note:\'\'\' In the above example it is assumed that the \`root\`
-user has a bash terminal. If this isn\'t the case change it accordingly.
+**Note:** In the above example it is assumed that the \`root\` user has
+a bash terminal. If this isn\'t the case change it accordingly.
 
-\'\'\'Note:\'\'\' If no EtherCAT device is present, the above command
-could work without \`root\` privileges provided that the user is in the
-\`dialout\` group. This can be done with:
+**Note:** If no EtherCAT device is present, the above command could work
+without \`root\` privileges provided that the user is in the \`dialout\`
+group. This can be done with:
 
 ```
 $ cd catkin_workspace/src

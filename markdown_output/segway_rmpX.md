@@ -4,7 +4,7 @@
 
 This package provides support for the RMP50, RMP100, and RMP200 Segway
 mobile bases. For RMP400 support: [segway_rmp400](segway_rmp400)
-\'\'\'Coming Soon\'\'\'.
+**Coming Soon**.
 
 ## API Stability
 
@@ -36,8 +36,8 @@ of device, VCP and D2XX. The VCP (Virtual COM Port) driver allows the
 device to show up as a normal serial port in the OS. The D2XX driver
 allows you to directly communicate to the Segway RMP using the USB
 protocol. In Linux the default driver is the VCP, and in fact you have
-to disable the VCP driver for \'\'\'all\'\'\' FTDI devices on the system
-in order to use the D2XX to communicate with the Segway RMP. This is the
+to disable the VCP driver for **all** FTDI devices on the system in
+order to use the D2XX to communicate with the Segway RMP. This is the
 main reason both VCP and D2XX (usb) support is supported in this
 package.
 

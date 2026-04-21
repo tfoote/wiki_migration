@@ -44,8 +44,7 @@ roslaunch mv_bluefox_driver camera_node.launch
 
 OR
 
-The driver can be launched as a \'\'nodelet\'\' as:
-```shell
+The driver can be launched as a *nodelet* as: ```shell
 roslaunch mv_bluefox_driver camera_nodelet.launch
 ```
 
@@ -54,11 +53,11 @@ The camera can be calibrated via the
 [image_pipeline](image_pipeline) by launching: ```shell
 roslaunch mv_bluefox_driver calibrate_camera.launch
 ```
-\'\'\'NOTE:\'\'\' You must modify the checkerboard patter calibration
-parameters to suit your own.
+**NOTE:** You must modify the checkerboard patter calibration parameters
+to suit your own.
 
-After a \'\'.yaml\'\' calibration file has been properly generated, the
-actual rectified images can be processed further via
+After a *.yaml* calibration file has been properly generated, the actual
+rectified images can be processed further via
 [image_pipeline](image_pipeline)\'s [image_proc](image_proc). Thus, the
 following launchers achieve that, respectively. ```shell
 roslaunch mv_bluefox_driver camera_node_proc.launch

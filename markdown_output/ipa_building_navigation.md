@@ -42,26 +42,24 @@ ros/launch to the wanted algorithms and settings.
     want to use (only applies to CheckpointBasedPlanning (2)
     problem_setting).
 -   max_clique_path_length: for both planning methods the parameter
-    \'\'\'max_clique_path_length\'\'\' determines how far two rooms can
-    be away from each other until they get separated into two different
-    cliques.
+    **max_clique_path_length** determines how far two rooms can be away
+    from each other until they get separated into two different cliques.
 -   maximum_clique_size: for both planning methods the parameter
-    \'\'\'max_clique_size\'\'\' determines how many room-centers one
-    clique is allowed to have. this can be useful e.g. when you have a
-    limited number of rooms the robot can clean with one battery
-    loading. If you want to allow all cliques, simply set this parameter
-    very high. E.g. for the cases that result from the
-    room-segmentations in <http://wiki.ros.org/ipa_room_segmentation> a
-    value of \'\'\'9001\'\'\' was more than enough. Of course if in your
-    case more than 9001 centers occur, this is not enough, so when
-    setting this parameter you unfortunately have to think of the way
-    you use this package.
+    **max_clique_size** determines how many room-centers one clique is
+    allowed to have. this can be useful e.g. when you have a limited
+    number of rooms the robot can clean with one battery loading. If you
+    want to allow all cliques, simply set this parameter very high. E.g.
+    for the cases that result from the room-segmentations in
+    <http://wiki.ros.org/ipa_room_segmentation> a value of **9001** was
+    more than enough. Of course if in your case more than 9001 centers
+    occur, this is not enough, so when setting this parameter you
+    unfortunately have to think of the way you use this package.
 -   map_downsampling_factor: The algorithm plans an Astar-path trough
     the environment to determine distances between the room-centers that
     are used as edge weights for the TSP solver. For this you can set
     this parameter to reduce the size of the map, which speeds up the
     pathfinding. The originally sized map is checked, if no path for the
-    downsampled map could be found. \'\'\'Range\'\'\': 0\<factor\<=1
+    downsampled map could be found. **Range**: 0\<factor\<=1
 -   check_accessibility_of_rooms: Choose if you want the action server
     to check which given roomcenters are accessible from the starting
     position.
@@ -70,8 +68,8 @@ ros/launch to the wanted algorithms and settings.
     roomcenters and trolley positions, and also shows the visiting order
     of each clique and in each clique.
 -   display_map: If true, the server displays the sequence map.
-    \'\'\'REMARK\'\'\': Only possible if the sequence map should be
-    returned, since this enables the computation of it.
+    **REMARK**: Only possible if the sequence map should be returned,
+    since this enables the computation of it.
 
 2\. Start the action server using the file
 /ros/launch/room_sequence_planning_action_server.launch, which executes
@@ -85,8 +83,8 @@ which lies in ipa_building_msgs/action. The goal consists of the
 following parts
 
 -   input_map: The map for which the visiting sequence should be
-    planned, as sensor_msgs/Image. \'\'\'Has to be a 8-Bit single
-    channel image, with 0 as occupied space and 255 as free space\'\'\'.
+    planned, as sensor_msgs/Image. **Has to be a 8-Bit single channel
+    image, with 0 as occupied space and 255 as free space**.
 -   map_resolution: The resolution the map has been sampled with
     \[meter/cell\].
 -   map_origin: The origin of the map in \[meter\] to bring the provided

@@ -1,9 +1,9 @@
 ## Use Kinect on Ubuntu with OpenNI
 
-Note: This is the \'\'\'prerequisite\'\'\' for your usage of
-openni_camera / openni_launch for Kinect in ROS. You have to firstly
-install the Driver for Kinect on Ubuntu and make sure your kinect can
-work properly on ubuntu.
+Note: This is the **prerequisite** for your usage of openni_camera /
+openni_launch for Kinect in ROS. You have to firstly install the Driver
+for Kinect on Ubuntu and make sure your kinect can work properly on
+ubuntu.
 
 To get started, please Refer
 [this blog](http://www.20papercups.net/programming/kinect-on-ubuntu-with-openni/)

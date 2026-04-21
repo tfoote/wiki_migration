@@ -80,8 +80,8 @@ topic name in !CamelCase 1. ROS package that has the message / message
 type 1. XML data item tag for the machine tool event 1. Python
 dictionary defining the conversion between MTConnect and ROS
 
-The format for the second group is as follows \'\'\'\'\'(in the YAML
-file, do not use tabs, only spaces for indenting)\'\'\'\'\':
+The format for the second group is as follows ***(in the YAML file, do
+not use tabs, only spaces for indenting)***:
 
 ```
 key : string, topic name
@@ -192,8 +192,8 @@ differs, the MTConnect Agent will be sending information to a port not
 accessible by the machine tool agent which will result in sequence
 errors between the two systems.
 
-The format for the second group is as follows \'\'\'\'\'(in the YAML
-file, do not use tabs, only spaces for indenting)\'\'\'\'\':
+The format for the second group is as follows ***(in the YAML file, do
+not use tabs, only spaces for indenting)***:
 
 ```
 url:            string representing the url for the machine tool
@@ -210,7 +210,7 @@ The string for the ROS topic, package and message type and the key for
 the robot event must already exist in the ROS package and the robot
 MTConnect Agent configuration file, respectively. Here is an example of
 the second group showing a configuration for a subscription to two ROS
-topics, \'\'!RobotStateTopic\'\' and \'\'!RobotSpindleTopic\'\':
+topics, *!RobotStateTopic* and *!RobotSpindleTopic*:
 
 ```
 url:            string representing the url for the machine tool
@@ -246,7 +246,7 @@ machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
 ```2
 
-\'\'\'Important:\'\'\'The bridge client requires an additional service
+**Important:**The bridge client requires an additional service
 call(SetMTConnectState) to set the MTConnect status to READY/NOT READY.
 The service exists in the same namespace as the action and must be
 called manually from the action server. The NOT READY state is used by
@@ -283,8 +283,8 @@ machine_tool:   string representing the machine tool
 xml_namespace:  string representing the XML namespace for the machine tool
 ```4
 
-The format for the second group is as follows \'\'\'\'\'(in the YAML
-file, do not use tabs, only spaces for indenting)\'\'\'\'\':
+The format for the second group is as follows ***(in the YAML file, do
+not use tabs, only spaces for indenting)***:
 
 ```
 url:            string representing the url for the machine tool
@@ -307,7 +307,7 @@ xml_namespace:  string representing the XML namespace for the machine tool
 
 Since an action goal will be defined by the machine tool during runtime,
 the initial value for the action goal attributes must be set to
-\'\'\'None\'\'\'.
+**None**.
 
 ## Bridge Server
 
@@ -408,11 +408,11 @@ the following methods:
     add_event
 -   Uses the MTConnect Adapter class to add process events 1.
     split_event
--   Converts the data item string from \'\'!DataItem\'\' to
-    \'\'data_item\'\' 1. action_cb
+-   Converts the data item string from *!DataItem* to *data_item* 1.
+    action_cb
 -   Sets a value for an Adapter event 1. type_check
--   Verifies that the goal type matches a Python type (\'\'to be
-    augmented\'\')
+-   Verifies that the goal type matches a Python type (*to be
+    augmented*)
 
 ### Method : obtain_dataMap
 
@@ -432,8 +432,7 @@ specified time.
 
 This method takes the following arguments:
 
--   \'\'\'data\'\'\': data is a tuple containing the following
-    parameters:
+-   **data**: data is a tuple containing the following parameters:
 
 ```{=html}
 <!-- -->
@@ -450,8 +449,7 @@ returns a response to a user specified \"GET\" request.
 
 This method takes the following arguments:
 
--   \'\'\'data\'\'\': data is a tuple containing the following
-    parameters:
+-   **data**: data is a tuple containing the following parameters:
 
 ```{=html}
 <!-- -->
@@ -505,7 +503,7 @@ diameter.
 
 The method takes the following arguments:
 
--   tag: string of the event tag, i.e. \'\'!MaterialLoad\'\'
+-   tag: string of the event tag, i.e. *!MaterialLoad*
 -   goals: dictionary of the goal (str):goal attributes (list of
     strings)
 -   root: XML !ElementTree object that converted the XML in string
@@ -516,22 +514,16 @@ The method takes the following arguments:
 The method returns:
 
 -   action_goals, dictionary, hash table of XML <tag:goal> pairs
--   \'\'\'None\'\'\' type if the action goal tag is not present in the
-    XML
+-   **None** type if the action goal tag is not present in the XML
 
 ### Method: add_event
 
 This method creates instances of the Adapter event class for each of the
 XML tags provided to the method.
 
-This method takes the following arguments:
+This method takes the following arguments: **\*data**: data is a tuple
+containing the following parameters:
 
--   \'\'\'data\'\'\': data is a tuple containing the following
-    parameters:
-
-```{=html}
-<!-- -->
-```
 -   adapter: Adapter class object
 -   tag_list: list of XML tags culled from node configuration file
 -   di_dict: dictionary {string:string}, stored Adapter event class
@@ -541,28 +533,22 @@ This method takes the following arguments:
 
 ### Method: split_event
 
-This method converts a data item event string from \'\'!CamelCase\'\' to
-\'\'camel_case\'\'.
+This method converts a data item event string from *!CamelCase* to
+*camel_case*.
 
 This method takes and returns the following arguments:
 
--   xml_tag: string, event data item in \'\'!DataItem\'\' format
--   return: data_item, string, event data item in \'\'data_item\'\'
-    format
+-   xml_tag: string, event data item in *!DataItem* format
+-   return: data_item, string, event data item in *data_item* format
 
 ### Method: action_cb
 
 This method sets the value of an Adapter event. It is used to port XML
 tag changes back to machine tool.
 
-This method takes the following arguments:
+This method takes the following arguments: **\*data**: data is a tuple
+containing the following parameters:
 
--   \'\'\'data\'\'\': data is a tuple containing the following
-    parameters:
-
-```{=html}
-<!-- -->
-```
 -   adapter: Adapter class object
 -   di_dict: dictionary {string:string}, stored Adapter event class
     instances for each xml_tag

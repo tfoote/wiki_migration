@@ -15,7 +15,7 @@ get_db_grasps (
 Reads the grasping configurations from the database. If the info is not
 stored, it tries to generate it. get_feasible_grasps (
 [srs_grasping/GetFeasibleGrasps](https://github.com/mrodriguez-robotnik/srs_public/blob/master/srs_grasping/srv/GetFeasibleGrasps.srv))
-Returns the feasible grasping configurations (in \'\'\'/base_link\'\'\'
+Returns the feasible grasping configurations (in **/base_link**
 coordinates system) for a given object ID and object pose.
 
 get_pregrasps (

@@ -1,6 +1,5 @@
-\'\'\'DEPRECATED: This package is considered deprecated by its authors.
-See the ecto package at ecto.willowgarage.com for the current
-approach.\'\'\'
+**DEPRECATED: This package is considered deprecated by its authors. See
+the ecto package at ecto.willowgarage.com for the current approach.**
 
 ## Overview
 
@@ -9,18 +8,17 @@ is supposed to make the addition of new vision algorithms that work on
 the PR2 much simpler. The recognition infrastructure contains the
 following main components:
 
--   \'\'Attention Operator\'\' - takes an image and (optionally) a point
-    cloud as input and generates masks and/or regions of interest (ROI)
-    in the image
--   \'\'Detector\'\' - takes an image and optionally a point cloud and a
-    list of ROIs or masks and generates detections. A detection is a ROS
+-   *Attention Operator* - takes an image and (optionally) a point cloud
+    as input and generates masks and/or regions of interest (ROI) in the
+    image
+-   *Detector* - takes an image and optionally a point cloud and a list
+    of ROIs or masks and generates detections. A detection is a ROS
     message that contains the name of the detected object (label), the
     name of the detector that found the object, a confidence score, a
     mask/ROI in the image and an optional pose of the object.
--   \'\'Pose estimator/Model fitter\'\' - takes as input a point cloud
-    and/or image, a list of detection and (optionally) a list of
-    approximate poses and computes/refines the 6D poses of each detected
-    object
+-   *Pose estimator/Model fitter* - takes as input a point cloud and/or
+    image, a list of detection and (optionally) a list of approximate
+    poses and computes/refines the 6D poses of each detected object
 
 [Youtube](https://www.youtube.com/watch?v=tlC2O9T9jks)
 
@@ -154,7 +152,7 @@ of writing new nodelets.
 
 #### AttentionOperatorNodelet
 
-\'\'\'Subscribed Topics\'\'\'
+**Subscribed Topics**
 
 ```clearsilver
 sub {
@@ -168,7 +166,7 @@ no_header=True
 }
 ```
 
-\'\'\'Published Topics\'\'\'
+**Published Topics**
 
 ```clearsilver
 pub {
@@ -182,7 +180,7 @@ no_header=True
 }
 ```
 
-\'\'\'Parameters\'\'\'
+**Parameters**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -192,7 +190,7 @@ MaskArray getMasks() const; // output masks
 
 #### DetectorNodelet
 
-\'\'\'Subscribed Topics\'\'\'
+**Subscribed Topics**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -200,7 +198,7 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 MaskArray getMasks() const; // output masks
 ```1
 
-\'\'\'Published Topics\'\'\'
+**Published Topics**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -208,7 +206,7 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 MaskArray getMasks() const; // output masks
 ```2
 
-\'\'\'Parameters\'\'\'
+**Parameters**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -218,7 +216,7 @@ MaskArray getMasks() const; // output masks
 
 #### PoseEstimatorNodelet
 
-\'\'\'Subscribed Topics\'\'\'
+**Subscribed Topics**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -226,7 +224,7 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 MaskArray getMasks() const; // output masks
 ```4
 
-\'\'\'Published Topics\'\'\'
+**Published Topics**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -234,7 +232,7 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 MaskArray getMasks() const; // output masks
 ```5
 
-\'\'\'Parameters\'\'\'
+**Parameters**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image
@@ -256,7 +254,7 @@ void setPointCloud(const sensor_msgs::PointCloud2ConstPtr point_cloud); // input
 MaskArray getMasks() const; // output masks
 ```7
 
-\'\'\'Services advertised\'\'\'
+**Services advertised**
 
 ```cplusplus
 void setImage(const cv::Mat& image);  // input image

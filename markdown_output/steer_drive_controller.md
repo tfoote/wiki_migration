@@ -16,11 +16,10 @@ velocity. Velocities on other components are ignored.
 
 ### Hardware interface type
 
-The controller inherits \'\'\'multi_interface_controller\'\'\' to work
-with wheel joints through a \'\'\'velocity\'\'\' interface for a linear
-wheel and a \'\'\'position\'\'\' interface for a front steer wheel,
-which is the the most basic configuration for the steer driving
-mechanism.
+The controller inherits **multi_interface_controller** to work with
+wheel joints through a **velocity** interface for a linear wheel and a
+**position** interface for a front steer wheel, which is the the most
+basic configuration for the steer driving mechanism.
 
 ### Converting controller\'s interfaces to actual controller\'s interfaces
 
@@ -37,7 +36,7 @@ in the previous section.
 
 ### Other features
 
--   \'\'\'Realtime-safe\'\'\' implementation.
+-   **Realtime-safe** implementation.
 -   Odometry publishing
 -   Task-space velocity, acceleration and jerk limits
 -   Automatic stop after command time-out

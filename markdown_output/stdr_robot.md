@@ -66,7 +66,7 @@ Publishes sonar measurements. Example: \`robot0/sonar_2\`
 ## Services
 
 All services are prefixed with the name \`robot_manager\`. This is the
-name of the nodelet manager and should \'\'\'not\'\'\' change.
+name of the nodelet manager and should **not** change.
 
 \`load_nodelet\` (\<\<SrvLink(nodelet/NodeletLoad)\>\>) Called to load a
 new robot.

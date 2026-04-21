@@ -13,12 +13,12 @@ The package supports ROS distributions
 The driver supports at least the devices listed below and has also been
 tested with these devices:
 
-  -- ------------------------- -- ------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------- -- --------------------- --
-     \'\'\'device name\'\'\'      \'\'\'part no.\'\'\'                                                                                                         \'\'\'description\'\'\'                                    \'\'\'tested?\'\'\'   
-     OLS10                        [1092169](https://www.sick.com/de/en/line-guidance-sensors/optical-line-guidance-sensors/ols/ols10-bp112311/p/p553247)       Optical line guidance sensor with CANopen-Interface        ✔ \[stable\]          
-     OLS20                        [1095594](https://www.sick.com/de/en/line-guidance-sensors/optical-line-guidance-sensors/ols/ols20-bb1114142/p/p614644)      Optical line guidance sensor with CANopen-Interface        ✔ \[stable\]          
-     MLS                          [1092496](https://www.sick.com/de/en/mls/mlse-0200a2tp0/p/p585645)                                                           Magnetic line guidance sensors with CANopen-Interface      ✔ \[stable\]          
-  -- ------------------------- -- ------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------- -- --------------------- --
+  -- ----------------- -- ------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------- -- -------------- --
+     **device name**      **part no.**                                                                                                                 **description**                                            **tested?**    
+     OLS10                [1092169](https://www.sick.com/de/en/line-guidance-sensors/optical-line-guidance-sensors/ols/ols10-bp112311/p/p553247)       Optical line guidance sensor with CANopen-Interface        ✔ \[stable\]   
+     OLS20                [1095594](https://www.sick.com/de/en/line-guidance-sensors/optical-line-guidance-sensors/ols/ols20-bb1114142/p/p614644)      Optical line guidance sensor with CANopen-Interface        ✔ \[stable\]   
+     MLS                  [1092496](https://www.sick.com/de/en/mls/mlse-0200a2tp0/p/p585645)                                                           Magnetic line guidance sensors with CANopen-Interface      ✔ \[stable\]   
+  -- ----------------- -- ------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------- -- -------------- --
 
 ## Installation from sources
 

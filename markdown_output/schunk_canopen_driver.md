@@ -18,8 +18,8 @@ rosrun fzi_icl_can install_pcan_module.sh
 during execution.
 
 You can also build the driver from source by hand, see the PEAK website
-for instructions. \'\'\'IMPORTANT:\'\'\' Build the driver in
-\'\'\'\'\'CHARDEV\'\'\'\'\' mode, not the default netdev mode.
+for instructions. **IMPORTANT:** Build the driver in ***CHARDEV*** mode,
+not the default netdev mode.
 
 Please note that the fzi_icl_can library is linked against version
 7.15.2. If you decide to use a different driver version for the kernel
@@ -42,8 +42,8 @@ catkin_make_isolated
 ```
 
 If you have the fzi_icl_core or fzi_icl_can package in your workspace
-you\'ll have to build it with \'\'catkin_make_isolated\'\', as those
-packages are plain cmake packages. See the
+you\'ll have to build it with *catkin_make_isolated*, as those packages
+are plain cmake packages. See the
 [REP 134](http://www.ros.org/reps/rep-0134.html) for details.
 
 ### Installing via package manager
@@ -64,19 +64,19 @@ The package offers two different interfaces, which both differ in the
 action topics, parameters and the way commanded waypoints are
 interpreted by the hardware.
 
-The simpler \'\'profile_position\'\'-interface accepts series of
-waypoints which the robot will drive to with internal interpolation. It
-is not guaranteed (and might almost never happen), that all joints
-finish moving at the same time. If multiple waypoints are given, a new
-waypoint is started for all joints at the same time as soon as the last
-joint reached it\'s previous destination. Ramping up and down between
+The simpler *profile_position*-interface accepts series of waypoints
+which the robot will drive to with internal interpolation. It is not
+guaranteed (and might almost never happen), that all joints finish
+moving at the same time. If multiple waypoints are given, a new waypoint
+is started for all joints at the same time as soon as the last joint
+reached it\'s previous destination. Ramping up and down between
 waypoints is done by the robot internally depending on it\'s
 configuration. The ramping setup will be treated later on.
 
-The \'\'ros_control\'\'-interface provides a position controller in
-joint space which will interpolate between waypoints inside the
-controller (on the host PC). You can set joint velocities and time
-constraints for each waypoint which the controller will take care of.
+The *ros_control*-interface provides a position controller in joint
+space which will interpolate between waypoints inside the controller (on
+the host PC). You can set joint velocities and time constraints for each
+waypoint which the controller will take care of.
 
 ```clearsilver
 
@@ -155,13 +155,13 @@ starts a robot state publisher. Parameters:
 #### standalone_interpolated_position
 
 This launchfile gives a ready-to-use action interface for ros_control.
-It loads controllers defined in \'\'config/arm_controllers.yaml\'\'
-(This can be changed in the ros_control.launch file). Parameters:
+It loads controllers defined in *config/arm_controllers.yaml* (This can
+be changed in the ros_control.launch file). Parameters:
 
 . pcan_device: Device name of the can adapter. Defaults to
 /dev/pcanusb1. controller_name::Name of a loaded controller that should
 be used (when using ros_control). Defaults to
-\'\'pos_based_pos_traj_controller\'\'
+*pos_based_pos_traj_controller*
 
 #### move_to_home_position.launch
 
@@ -175,11 +175,10 @@ mode. Parameters:
 ### Defining custom canopen IDs
 
 If your robot arm does use custom canopen IDs, you can modify those in
-the \'\'config/example_config\'\' file. When modifying the canopen IDs
-you will also have to modify the node mapping in
-\'\'config/node_mapping.yaml\'\' which will perform the mapping between
-the canopen IDs and the URDF joint names. See the example config file
-for a syntax explanation.
+the *config/example_config* file. When modifying the canopen IDs you
+will also have to modify the node mapping in *config/node_mapping.yaml*
+which will perform the mapping between the canopen IDs and the URDF
+joint names. See the example config file for a syntax explanation.
 
 In Principal you can configure multiple canopen chains, for example an
 arm and a gripper. The example configuration file already contains such
@@ -189,11 +188,11 @@ a setup, however this is untested and might not work.
 
 When using the simple profile position mode Ramping up and down is
 controlled by the hardware. The velocity and acceleration can be
-configured in the \'\'config/example_config.yaml\'\'file. Also, targets
-can be commanded as a relative motion to the current position or as an
-absolute position relative to the home position (which is the default).
-Change the \'\'ppm_use_relative_targets\'\' parameter if you like to
-change this behavior.
+configured in the *config/example_config.yaml*file. Also, targets can be
+commanded as a relative motion to the current position or as an absolute
+position relative to the home position (which is the default). Change
+the *ppm_use_relative_targets* parameter if you like to change this
+behavior.
 
 ## Troubleshooting
 
@@ -203,7 +202,7 @@ Canceling a goal at high speeds seems to set the robot into a fault
 state. This comes from within the used position controller as it
 commands the robot to hold a position which is too far away to be
 reached within one control cycle. As a workaround prefer the
-\'\'quick_stop_nodes\'\' service
+*quick_stop_nodes* service
 
 ### Fault after starting ros_control mode
 

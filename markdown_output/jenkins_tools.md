@@ -29,25 +29,24 @@ run_chroot_local ubuntu_distro arch workspace script [script_args]
 
 Arguments:
 
--   \'\'\'ubuntu_distro\'\'\': the ubuntu distribution you want to run
-    in your chroot. Examples are lucid, oneiric, precise, etc
--   \'\'\'arch\'\'\': the architecture you want to run in your chroot.
-    You can either use \'amd64\' or \'i386\'. Note that when the base
+-   **ubuntu_distro**: the ubuntu distribution you want to run in your
+    chroot. Examples are lucid, oneiric, precise, etc
+-   **arch**: the architecture you want to run in your chroot. You can
+    either use \'amd64\' or \'i386\'. Note that when the base
     installation of your own system is 32 bit, you can\'t use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
--   \'\'\'workspace\'\'\': this is a local folder on your machine that
-    will get mounted into the chroot. So it\'s pretty much a shared
-    folder between your local machine and the chroot. When your script
-    runs, it can store data in this workspace folder, and you\'ll have
-    access to this data from your local machine, even when the chroot
-    disappears.
--   \'\'\'script\'\'\': the name of the script you want to run. This
-    must be a name of a script in the jenkins_scripts repository. You
-    can check out a copy of this repo here at
+-   **workspace**: this is a local folder on your machine that will get
+    mounted into the chroot. So it\'s pretty much a shared folder
+    between your local machine and the chroot. When your script runs, it
+    can store data in this workspace folder, and you\'ll have access to
+    this data from your local machine, even when the chroot disappears.
+-   **script**: the name of the script you want to run. This must be a
+    name of a script in the jenkins_scripts repository. You can check
+    out a copy of this repo here at
     <https://github.com/ros-infrastructure/jenkins_scripts.git>
--   \'\'\'\[script_args\]\'\'\': a list of arguments for the script you
-    are running.
+-   **\[script_args\]**: a list of arguments for the script you are
+    running.
 
 Example: ```
 run_chroot_local precise amd64 /home/user/workspace prerelease groovy common_msgs
@@ -77,24 +76,24 @@ run_chroot_jenkins_now ubuntu_distro arch job_name email script [script_args]
 
 Arguments:
 
--   \'\'\'ubuntu_distro\'\'\': the ubuntu distribution you want to run
-    in your chroot. Examples are lucid, oneiric, precise, etc
--   \'\'\'arch\'\'\': the architecture you want to run in your chroot.
-    You can either use \'amd64\' or \'i386\'. Note that when the base
+-   **ubuntu_distro**: the ubuntu distribution you want to run in your
+    chroot. Examples are lucid, oneiric, precise, etc
+-   **arch**: the architecture you want to run in your chroot. You can
+    either use \'amd64\' or \'i386\'. Note that when the base
     installation of your own system is 32 bit, you can\'t use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
--   \'\'\'job_name\'\'\': a string you can freely choose, to create a
-    unique name for your job on Jenkins. The resulting name will be:
+-   **job_name**: a string you can freely choose, to create a unique
+    name for your job on Jenkins. The resulting name will be:
     \'script-job_name-ubuntu_distro-arch\'
--   \'\'\'email\'\'\': the email address where Jenkins will send the
-    script results to
--   \'\'\'script\'\'\': the name of the script you want to run. This
-    must be a name of a script in the jenkins_scripts repository. You
-    can check out a copy of this repo here at
+-   **email**: the email address where Jenkins will send the script
+    results to
+-   **script**: the name of the script you want to run. This must be a
+    name of a script in the jenkins_scripts repository. You can check
+    out a copy of this repo here at
     <https://github.com/ros-infrastructure/jenkins_scripts.git>
--   \'\'\'\[script_args\]\'\'\': a list of arguments for the script you
-    are running.
+-   **\[script_args\]**: a list of arguments for the script you are
+    running.
 
 Example: ```
 run_chroot_jenkins_now precise amd64 groovy-common_msgs you@hidof.com prerelease groovy common_msgs
@@ -112,27 +111,26 @@ run_chroot_jenkins_periodic ubuntu_distro arch job_name email period script [scr
 
 Arguments:
 
--   \'\'\'ubuntu_distro\'\'\': the ubuntu distribution you want to run
-    in your chroot. Examples are lucid, oneiric, precise, etc
--   \'\'\'arch\'\'\': the architecture you want to run in your chroot.
-    You can either use \'amd64\' or \'i386\'. Note that when the base
+-   **ubuntu_distro**: the ubuntu distribution you want to run in your
+    chroot. Examples are lucid, oneiric, precise, etc
+-   **arch**: the architecture you want to run in your chroot. You can
+    either use \'amd64\' or \'i386\'. Note that when the base
     installation of your own system is 32 bit, you can\'t use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
--   \'\'\'job_name\'\'\': a string you can freely choose, to create a
-    unique name for your job on Jenkins. The resulting name will be:
+-   **job_name**: a string you can freely choose, to create a unique
+    name for your job on Jenkins. The resulting name will be:
     \'script-job_name-ubuntu_distro-arch\'
--   \'\'\'email\'\'\': the email address where Jenkins will send the
-    script results to
--   \'\'\'period\'\'\': when you want the script to run. Acceptable
-    values are \'continuous\', \'nightly\', \'daily\', \'weekly\' or
-    \'monthly\'.
--   \'\'\'script\'\'\': the name of the script you want to run. This
-    must be a name of a script in the jenkins_scripts repository. You
-    can check out a copy of this repo here at
+-   **email**: the email address where Jenkins will send the script
+    results to
+-   **period**: when you want the script to run. Acceptable values are
+    \'continuous\', \'nightly\', \'daily\', \'weekly\' or \'monthly\'.
+-   **script**: the name of the script you want to run. This must be a
+    name of a script in the jenkins_scripts repository. You can check
+    out a copy of this repo here at
     <https://github.com/ros-infrastructure/jenkins_scripts.git>
--   \'\'\'\[script_args\]\'\'\': a list of arguments for the script you
-    are running.
+-   **\[script_args\]**: a list of arguments for the script you are
+    running.
 
 Example: ```
 run_chroot_jenkins_periodic precise amd64 groovy-common_msgs you@hidof.com nightly prerelease groovy common_msgs
@@ -150,30 +148,30 @@ chroot_jenkins_vcs ubuntu_distro arch job_name email vcs uri branch script [scri
 
 Arguments:
 
--   \'\'\'ubuntu_distro\'\'\': the ubuntu distribution you want to run
-    in your chroot. Examples are lucid, oneiric, precise, etc
--   \'\'\'arch\'\'\': the architecture you want to run in your chroot.
-    You can either use \'amd64\' or \'i386\'. Note that when the base
+-   **ubuntu_distro**: the ubuntu distribution you want to run in your
+    chroot. Examples are lucid, oneiric, precise, etc
+-   **arch**: the architecture you want to run in your chroot. You can
+    either use \'amd64\' or \'i386\'. Note that when the base
     installation of your own system is 32 bit, you can\'t use the amd64
     option. When the base installation of your system is 64 bit, you can
     use both amd64 and i386.
--   \'\'\'job_name\'\'\': a string you can freely choose, to create a
-    unique name for your job on Jenkins. The resulting name will be:
+-   **job_name**: a string you can freely choose, to create a unique
+    name for your job on Jenkins. The resulting name will be:
     \'script-job_name-ubuntu_distro-arch\'
--   \'\'\'email\'\'\': the email address where Jenkins will send the
-    script results to
--   \'\'\'vcs\'\'\': the type of vcs repository that is used to trigger
-    this job. Acceptable values are \'git\', \'hg\' or \'svn\'.
--   \'\'\'uri\'\'\': the url of the vcs repository that is used to
-    trigger this job.
--   \'\'\'branch\'\'\': the branch in the vcs repository that is used to
-    trigger this job.
--   \'\'\'script\'\'\': the name of the script you want to run. This
-    must be a name of a script in the jenkins_scripts repository. You
-    can check out a copy of this repo here at
+-   **email**: the email address where Jenkins will send the script
+    results to
+-   **vcs**: the type of vcs repository that is used to trigger this
+    job. Acceptable values are \'git\', \'hg\' or \'svn\'.
+-   **uri**: the url of the vcs repository that is used to trigger this
+    job.
+-   **branch**: the branch in the vcs repository that is used to trigger
+    this job.
+-   **script**: the name of the script you want to run. This must be a
+    name of a script in the jenkins_scripts repository. You can check
+    out a copy of this repo here at
     <https://github.com/ros-infrastructure/jenkins_scripts.git>
--   \'\'\'\[script_args\]\'\'\': a list of arguments for the script you
-    are running.
+-   **\[script_args\]**: a list of arguments for the script you are
+    running.
 
 Example: ```
 run_chroot_jenkins_vcs precise amd64 groovy-common_msgs you@hidof.com git https://github.com/ros-infrastructure/jenkins_scripts.git default prerelease groovy common_msgs
@@ -192,12 +190,11 @@ generate_jenkins_devel ros_distro [--delete] [--run]
 
 Arguments:
 
--   \'\'\'ros_distro\'\'\': the ros distribution you want to generate
-    jobs for.
--   \'\'\'\--delete\'\'\': Delete all doc jobs for the distro specified
-    that are no longer in the index.
--   \'\'\'\--run\'\'\': In addition to scheduling jobs to be triggered
-    by commits, schedule a build of each repository immediately.
+-   **ros_distro**: the ros distribution you want to generate jobs for.
+-   **\--delete**: Delete all doc jobs for the distro specified that are
+    no longer in the index.
+-   **\--run**: In addition to scheduling jobs to be triggered by
+    commits, schedule a build of each repository immediately.
 
 Example: ```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
@@ -216,16 +213,14 @@ run_chroot_local ubuntu_distro arch workspace script [script_args]
 
 Options:
 
--   \'\'\'\--delete\'\'\': Delete all doc jobs for the distro specified
-    that are no longer in the index.
--   \'\'\'\--run\'\'\': In addition to scheduling jobs to be run
-    periodically on Jenkins, schedule a build of each repository
-    immediately.
+-   **\--delete**: Delete all doc jobs for the distro specified that are
+    no longer in the index.
+-   **\--run**: In addition to scheduling jobs to be run periodically on
+    Jenkins, schedule a build of each repository immediately.
 
 Arguments:
 
--   \'\'\'ros_distro\'\'\': the ros distribution you want to generate
-    jobs for.
+-   **ros_distro**: the ros distribution you want to generate jobs for.
 
 Example: ```
 run_chroot_local ubuntu_distro arch workspace script [script_args]
@@ -242,10 +237,9 @@ run_chroot_local ubuntu_distro arch workspace script [script_args]
 
 Arguments:
 
--   \'\'\'ros_distro\'\'\': the ros distribution you want to generate
+-   **ros_distro**: the ros distribution you want to generate jobs for.
+-   **distro_name**: the name of the distribution you want to generate
     jobs for.
--   \'\'\'distro_name\'\'\': the name of the distribution you want to
-    generate jobs for.
 
 Example: ```
 run_chroot_local ubuntu_distro arch workspace script [script_args]

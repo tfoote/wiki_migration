@@ -13,12 +13,11 @@ with Ascending Technologies\' safety guidelines. Additionally:
 -   Always wear proper protection gear (gloves, safety goggles). The
     safety pilot as well as spectators.
 -   In case of any unexpected behavour, the safety pilot should switch
-    \'\'\'both\'\'\' the serial interface switch to \"off\" and the
-    flight mode switch to \"acc\" (both switches point away from the
-    pilot then).
+    **both** the serial interface switch to \"off\" and the flight mode
+    switch to \"acc\" (both switches point away from the pilot then).
 -   When having a new or changed setup (new/other controller, different
-    parameters etc), carefully check the expected outputs
-    \'\'\'before\'\'\' flying.
+    parameters etc), carefully check the expected outputs **before**
+    flying.
 
 ## Flashing the Higlevel Processor
 

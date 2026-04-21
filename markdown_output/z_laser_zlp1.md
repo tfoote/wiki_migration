@@ -11,15 +11,15 @@ Z-Laser offers different solutions depending on where you prefer to have
 zService running. This package has been developed in a device with
 zService built-in to the projector itself.
 
-In this case, zService IP address is \'\'\'192.168.10.11\'\'\', on port
-\'\'\'9090\'\'\'. In case you have zService running on your PC, contact
-z-laser to get the specific IP address of your device.
+In this case, zService IP address is **192.168.10.11**, on port
+**9090**. In case you have zService running on your PC, contact z-laser
+to get the specific IP address of your device.
 
-Projector is expected to be reachable under \'\'\'192.168.10.10\'\'\'
-(factory default configuration).
+Projector is expected to be reachable under **192.168.10.10** (factory
+default configuration).
 
 To get more information about Thrift and zService, refer to
-\'\'ZLP1-quickstart-guide\'\' (provided by z-laser).
+*ZLP1-quickstart-guide* (provided by z-laser).
 
 ### Reference coordinate systems
 
@@ -42,8 +42,7 @@ coordinate systems:
 -   User Reference System {T}. The user can set the coordinate system
     origin, its resolution and orientation. It must be related to {P}.
 
-Note that a coordinate system needs \'\'\'4 points\'\'\' to be fully
-defined.
+Note that a coordinate system needs **4 points** to be fully defined.
 
 . ![\|width=\"450px\"](attachment:projector_origin.png)
 
@@ -51,15 +50,15 @@ defined.
 
 An example of manual system definition is going to be developed in order
 to guide this section. First, the user must decide the coordinate
-system's \'\'\'resolution\'\'\' to set a position. See the differences
-in the scheme below. This value is non-dimensional, i.e., do not
-represent real world dimensions.
+system's **resolution** to set a position. See the differences in the
+scheme below. This value is non-dimensional, i.e., do not represent real
+world dimensions.
 
 . ![\|width=\"400px\"](attachment:resolution.png)
 
 For the following example, we use a resolution of 1000. Then, the user
-should indicate the \'\'\'position\'\'\' of the four points that define
-the coordinate system in real world values (millimetres). This means to
+should indicate the **position** of the four points that define the
+coordinate system in real world values (millimetres). This means to
 specify the desired correspondent points in Projector Reference System
 {P}. For example: .P,,0,, = (-100, -100) \[mm\] .P,,1,, = (-100, 100)
 \[mm\] .P,,2,, = (100, 100) \[mm\] .P,,3,, = (100, -100) \[mm\] Please,
@@ -85,20 +84,20 @@ Reference System {T}, will be located on the real projection surface at
 P,,x,, = (-40mm, -40mm) from the origin of Projector Reference System
 {P}.
 
-On the other hand, some situations may require a \'\'\'rotation\'\'\' of
-the reference system. To achieve that, the user should set the
-appropriate coordinates in Projector Reference System {P}. In the scheme
-below, note that User Reference System {T} remains the same with respect
-to the previous example, while Projector Reference System {P} changed
-to: .P,,0,, = (0, -100) \[mm\] .P,,1,, = (100, 0) \[mm\] .P,,2,, = (0,
-100) \[mm\] .P,,3,, = (-100, 0) \[mm\]
+On the other hand, some situations may require a **rotation** of the
+reference system. To achieve that, the user should set the appropriate
+coordinates in Projector Reference System {P}. In the scheme below, note
+that User Reference System {T} remains the same with respect to the
+previous example, while Projector Reference System {P} changed to:
+.P,,0,, = (0, -100) \[mm\] .P,,1,, = (100, 0) \[mm\] .P,,2,, = (0, 100)
+\[mm\] .P,,3,, = (-100, 0) \[mm\]
 
 ![\|width=\"600px\"](attachment:rotate.jpg)
 
 Finally, notice that real world coordinates specified in Projector
-Reference System {P} depends on the projection \'\'\'distance\'\'\'
-(distance between the laser projector and the projection surface), as it
-is a beam.
+Reference System {P} depends on the projection **distance** (distance
+between the laser projector and the projection surface), as it is a
+beam.
 
 In this example, the real distance between projector and surface is 'd'.
 If it is incorrectly indicated as a greater distance 'D', the projected
@@ -108,8 +107,8 @@ origin than the user has specified ('w').
 . ![\|width=\"390px\"](attachment:distance.jpg)
 
 For that reason, the installation projection distance must be correctly
-indicated, and it can be calculated using the following formula: \'\'d =
-f \* 0.5 / (tan(&alpha;/2))\'\' where
+indicated, and it can be calculated using the following formula: *d = f
+\* 0.5 / (tan(&alpha;/2))* where
 
 -   d: is the projection distance in \[mm\]
 -   f: longest side of the projection surface in \[mm\]
@@ -132,10 +131,10 @@ reference system with the exact ones.
 
 ## ROS API
 
-The \'\'\'zlp_projector_zlp1\'\'\' provides a collection of topics,
-services and parameters in order to operate the projector device from
-ROS environment, as connecting, disconnecting, defining coordinate
-systems, starting and stopping projection, etc.
+The **zlp_projector_zlp1** provides a collection of topics, services and
+parameters in order to operate the projector device from ROS
+environment, as connecting, disconnecting, defining coordinate systems,
+starting and stopping projection, etc.
 
 ### Topics
 

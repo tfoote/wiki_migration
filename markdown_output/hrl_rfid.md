@@ -1,4 +1,4 @@
-If you decide to use UHF RFID in \'\'your\'\' project, we kindly suggest
+If you decide to use UHF RFID in *your* project, we kindly suggest
 taking a look at our lab\'s
 [RFID in Robotics project page](http://www.hsi.gatech.edu/hrl/project_rfid.shtml)
 or the Pervasive Computing article:
@@ -37,7 +37,7 @@ ThingMagic Mercury5e:
 -   Maximum tag read rate of over 170 tags per second
 -   30 feet (9 m) max. read range with 6 dBi antenna
 -   4 general purpose I/O lines
--   \'\'\'Approx Cost: \$500.00\'\'\'
+-   **Approx Cost: \$500.00**
 
 ThingMagic Mercury5e-Compact:
 
@@ -54,13 +54,13 @@ ThingMagic Mercury5e-Compact:
 -   Maximum tag read rate of over 160 tags per second
 -   20 feet (6 m) max. read range with 6 dBi antenna
 -   4 general purpose I/O lines
--   \'\'\'Approx Cost: \$400.00\'\'\'
+-   **Approx Cost: \$400.00**
 
 Generally speaking, I prefer the extra RF output power afforded by the
 M5e (full), as it translates into greater read ranges; the added antenna
 port is particularly useful for servoing applications. The M5e-C is also
 useful, as it can be powered solely off of USB (a hardware design I
-\'\'might\'\' elaborate on at a later date). Anyway, ThingMagic has
+*might* elaborate on at a later date). Anyway, ThingMagic has
 [dev-kits](http://www.thingmagic.com/store/) available for \$1,500 that
 include the cabling, power regulation, an antenna, and some tags \-- not
 a bad deal if you\'re starting fresh. However, for roughly \$60, you can
@@ -69,49 +69,46 @@ My PCB design ([Eagle CAD](http://cadsoft.de/)) can be found her
 (<attachment:Design.zip>); it can be fabricated by
 [Advanced Circuits](http://4pcb.com/) for \$33 each.
 
-One of the \'\'\'\'\'most important\'\'\'\'\' considerations when
-designing your UHF RFID system is the selection of reader antennas (the
-same considerations apply to tag antennas, but specifications are
-generally unpublished). This topic is too deep to fully explore here;
-most critically, you\'ll want to pay attention to:
+One of the ***most important*** considerations when designing your UHF
+RFID system is the selection of reader antennas (the same considerations
+apply to tag antennas, but specifications are generally unpublished).
+This topic is too deep to fully explore here; most critically, you\'ll
+want to pay attention to:
 
--   \'\'\'Physical size:\'\'\' Drastically affects robot integration.
-    High-gain / directionality antennas are generally much larger and
-    unwieldy.
-
-```{=html}
-<!-- -->
-```
--   \'\'\'Radiation pattern:\'\'\' A specification of gain /
-    directionality versus bearing-azimuth (polar) angles will
-    essentially determine how far tags can be read at various angles.
+-   **Physical size:** Drastically affects robot integration. High-gain
+    / directionality antennas are generally much larger and unwieldy.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Gain:\'\'\' Simply put, higher gain equates to longer read
-    range.
+-   **Radiation pattern:** A specification of gain / directionality
+    versus bearing-azimuth (polar) angles will essentially determine how
+    far tags can be read at various angles.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Beamwidth:\'\'\' Determines the \'\'sharpness\'\' (width) of
-    the high-gain region. Larger beamwidths will have more angle / area
-    coverage, but are less discriminative in angle (for determining
-    direction of tag) and generally suffer from more multipath signal
-    interference.
+-   **Gain:** Simply put, higher gain equates to longer read range.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Polarization:\'\'\' Circularly-polarized antennas tend to have
-    less mismatch when exciting tags at off-angles.
+-   **Beamwidth:** Determines the *sharpness* (width) of the high-gain
+    region. Larger beamwidths will have more angle / area coverage, but
+    are less discriminative in angle (for determining direction of tag)
+    and generally suffer from more multipath signal interference.
+
+```{=html}
+<!-- -->
+```
+-   **Polarization:** Circularly-polarized antennas tend to have less
+    mismatch when exciting tags at off-angles.
 
 ![\|height=\"250\"](attachment:RFID_antennas.jpg)
 ![\|height=\"250\"](attachment:ELE_large_antennas.jpg)
 ![\|height=\"250\"](attachment:ELE_Small_Antennas.jpg)
 
-Over the last several years, I have experimented with \'\'numerous\'\'
+Over the last several years, I have experimented with *numerous*
 antennas, both purchased and constructed: whips, dipoles, patches,
 loaded-microstrips, etc. Ultimately, I\'ve settled on these two patch
 antennas (articulated using
@@ -119,8 +116,8 @@ antennas (articulated using
 generally choosing the largest antenna possible given robot integration
 size constraints (see EL-E photos above):
 
--   \'\'\'Laird Technologies S9028PC12NF\'\'\': Circularly polarized, 25
-    x 25 cm, 65° beamwidth, 7.5 dB gain. Available from
+-   **Laird Technologies S9028PC12NF**: Circularly polarized, 25 x 25
+    cm, 65° beamwidth, 7.5 dB gain. Available from
     [Hutton Communications](http://www.hol4g.com/ac/product.aspx?number=CCS-S9028PC12NF&p=163850&sc=3572)
     for \$215.
     ([Datasheet](hrl_rfid/sites/default/files/users/Travis%20Deyle/Laird_S9028PC12NF.pdf))
@@ -128,8 +125,8 @@ size constraints (see EL-E photos above):
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Laird Technologies S9025P:\'\'\' Circularly polarized, 13.5 x
-    13.5 cm, 100° beamwidth, 5.5 dB gain. Available from
+-   **Laird Technologies S9025P:** Circularly polarized, 13.5 x 13.5 cm,
+    100° beamwidth, 5.5 dB gain. Available from
     [Arcadian Inc](http://www.arcadianinc.com/part/S9025PLNF/88239/LAIRDTechnologiesAntenexCenturionCushcraftandPacificWireless/)
     for \$100.
     ([Datasheet](hrl_rfid/sites/default/files/users/Travis%20Deyle/Laird_S9025P_Antenna.pdf))
@@ -141,7 +138,7 @@ upon purchase; I do not believe I am at liberty to distribute my
 personal copy. However, my open source Python library (depending only on
 [Pyserial](http://pyserial.sourceforge.net/)) implements a sufficiently
 rich subset of the API and functions on Windows, Linux, and Mac OS. The
-stand-alone M5e library is contained in \'\'lib_M5e.py\'\'. Now for a
+stand-alone M5e library is contained in *lib_M5e.py*. Now for a
 demonstration, assuming a Linux machine and a M5e (full) reader
 operating at 30dBm (1Watt) output power:
 
@@ -164,15 +161,15 @@ selects antenna port 1 for both transmit and receive, and queries for
 all tags in the environment for 50 ms (returns a list of tuples: \[(ID,
 RSSI), \... \] ). Subsequently, the reader checks for the presence of a
 specific 96-bit tag ID (returns RSSI if read was successful, -1
-otherwise). Then the \'\'ChangeTagID\'\' function changes the ID of the
+otherwise). Then the *ChangeTagID* function changes the ID of the
 nearest tag (the one read first), and then queries the environment and
 tracks the tag again. Finally, the last two statements query the
 environment using the other antenna port.
 
-There is also a \'\'M5e_Poller\'\' class that can run in a thread and
+There is also a *M5e_Poller* class that can run in a thread and
 continuously either query the environment or track a tag \-- issuing
-callbacks with argument \'\'\[antenna_name, ID, RSSI\] \'\'after each
-read / read attempt:
+callbacks with argument *\[antenna_name, ID, RSSI\] *after each read /
+read attempt:
 
 ```
 import lib_M5e as M5e
@@ -206,11 +203,11 @@ while time.time() - t0 < 3.0:
 q.stop()
 ``` That sums up the stand-alone library. The Robot
 Operating System (ROS) wrappers act in pretty much the same fashion as
-the \'\'M5e_Poller \'\'and can be found in \'\'ros_M5e.py \'\'(server
-node) and \'\'ros_M5e_client.py\'\' (client nodes). Only one
-\'\'server\'\' node can connect to the M5e module\'s serial port at once
-due to strict device handshaking protocols; any number of client nodes
-can control / query the server. The server code looks like this:
+the *M5e_Poller *and can be found in *ros_M5e.py *(server node) and
+*ros_M5e_client.py* (client nodes). Only one *server* node can connect
+to the M5e module\'s serial port at once due to strict device
+handshaking protocols; any number of client nodes can control / query
+the server. The server code looks like this:
 
 ```
 import ros_M5e as rm
@@ -232,9 +229,9 @@ ros_rfid = rm.ROS_M5e( name = 'my_rfid_server',
 rospy.spin()
 ros_rfid.stop()
 ``` By default, the server does nothing (standby to
-save power). A client node must put the server into either
-\'\'QUERY_MODE \'\'or \'\'TRACK_MODE\'\'. This can be accomplished using
-any client. For example, using \'\'rosservice\'\':
+save power). A client node must put the server into either *QUERY_MODE
+*or *TRACK_MODE*. This can be accomplished using any client. For
+example, using *rosservice*:
 
 ```
 >  rosservice call /rfid/my_rfid_server_mode "['query']"
@@ -246,8 +243,8 @@ any client. For example, using \'\'rosservice\'\':
 >  rosservice call /rfid/my_rfid_server_mode "['stop']"
 ``` The last call puts the reader back into standby
 mode (any argument other than \'query\' or \'track\'). The
-\'\'ros_M5e_client.py\'\' file implements a rudimentary RFID client that
-can perform the same operations.
+*ros_M5e_client.py* file implements a rudimentary RFID client that can
+perform the same operations.
 
 ```
 import ros_M5e_client as rmc
@@ -260,6 +257,5 @@ r.track_mode( 'test_tag_id' )
 r.read( antenna = 'AntPort1' )
 
 r.stop()
-``` The \'\'read\'\' method for
-\'\'ROS_M5e_Client\'\' returns the latest RFID read on the desired
-antenna as a ROS RFIDread message.
+``` The *read* method for *ROS_M5e_Client* returns
+the latest RFID read on the desired antenna as a ROS RFIDread message.

@@ -74,7 +74,7 @@ Options:
   -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
                         If specified, will generate a doxygen tagfile in this
                         location. Ex: /home/user/tags/package.tag
-``` \'\'Generate documentation for a package\'\':
+``` *Generate documentation for a package*:
 
 ```
 rosdoc_lite <path_of_package>
@@ -116,16 +116,15 @@ behavior is old:
 The YAML configuration file should contain a list of dictionaries, where
 each dictionary has the following standard keys:
 
--   \'\'\'builder\'\'\': name of documentation builder (\`doxygen\`,
-    \`epydoc\`, or \`sphinx\`)
--   \'\'\'output_dir\'\'\': (optional) name of sub-directory to write
+-   **builder**: name of documentation builder (\`doxygen\`, \`epydoc\`,
+    or \`sphinx\`)
+-   **output_dir**: (optional) name of sub-directory to write
     documentation to. If you have multiple builders, you must specify
     this property to avoid builders writing to the same directory.
--   \'\'\'name\'\'\': (optional) name of documentation set (e.g.
-    \"Python API\")
--   \'\'\'required\'\'\': (optional) if set to True, the build will fail
-    if any documentation builder fails. The default behavior is to
-    ignore builder errors.
+-   **name**: (optional) name of documentation set (e.g. \"Python API\")
+-   **required**: (optional) if set to True, the build will fail if any
+    documentation builder fails. The default behavior is to ignore
+    builder errors.
 
 Each builder may specify additional configuration keys.
 
@@ -153,39 +152,37 @@ necessary to configure this option if:
 
 The \"doxygen\" builder may specify the following additional keys:
 
--   \'\'\'file_patterns\'\'\': (optional) override the Doxygen
-    \`FILE_PATTERNS\` property
--   \'\'\'excludes\'\'\': (optional) override the Doxygen \`EXCLUDE\`
+-   **file_patterns**: (optional) override the Doxygen \`FILE_PATTERNS\`
     property
--   \'\'\'homepage\'\'\': (optional) link to project home page
--   \'\'\'exclude_patterns\'\'\': \'\'\'ROS C-Turtle\'\'\' (optional)
-    override Doxygen \`EXCLUDE_PATTERNS\` property.
--   \'\'\'javadoc_autobrief\'\'\': (optional) override Doxygen
+-   **excludes**: (optional) override the Doxygen \`EXCLUDE\` property
+-   **homepage**: (optional) link to project home page
+-   **exclude_patterns**: **ROS C-Turtle** (optional) override Doxygen
+    \`EXCLUDE_PATTERNS\` property.
+-   **javadoc_autobrief**: (optional) override Doxygen
     \`JAVADOC_AUTOBRIEF\` property. Default \`NO\`.
--   \'\'\'multiline_cpp_is_brief\'\'\': (optional) override Doxygen
-    property \`MULTILINE_CPP_IS_BRIEF\`. Default \`NO\`.
--   \'\'\'tab_size\'\'\': (optional) override Doxygen property
-    \`TAB_SIZE\`. Default \`8\`.
--   \'\'\'aliases\'\'\': (optional) override Doxygen property
-    \`ALIASES\`. Default \"\"
--   \'\'\'example_patterns\'\'\': (optional) override Doxygen property
+-   **multiline_cpp_is_brief**: (optional) override Doxygen property
+    \`MULTILINE_CPP_IS_BRIEF\`. Default \`NO\`.
+-   **tab_size**: (optional) override Doxygen property \`TAB_SIZE\`.
+    Default \`8\`.
+-   **aliases**: (optional) override Doxygen property \`ALIASES\`.
+    Default \"\"
+-   **example_patterns**: (optional) override Doxygen property
     \`EXAMPLE_PATTERNS\`. Default \"\"
--   \'\'\'image_path\'\'\': (optional) override Doxygen property
-    \`IMAGE_PATH\`.
--   \'\'\'exclude_symbols\'\'\': (optional) override Doxygen property
+-   **image_path**: (optional) override Doxygen property \`IMAGE_PATH\`.
+-   **exclude_symbols**: (optional) override Doxygen property
     \`EXCLUDE_SYMBOLS\`. Default \"\"
--   \'\'\'predefined\'\'\': (optional) override Doxygen property
-    \`PREDEFINED\`. Default \"\"
--   \'\'\'use_mdfile_as_mainpage\'\'\': (optional) override Doxygen
-    property USE_MDFILE_AS_MAINPAGE. Default \"\"
--   \'\'\'generate_treeview\'\'\': (optional) override Doxygen property
+-   **predefined**: (optional) override Doxygen property \`PREDEFINED\`.
+    Default \"\"
+-   **use_mdfile_as_mainpage**: (optional) override Doxygen property
+    USE_MDFILE_AS_MAINPAGE. Default \"\"
+-   **generate_treeview**: (optional) override Doxygen property
     GENERATE_TREEVIEW to specify whether a treeview side panel should be
     generated. Default \"NO\"
--   \'\'\'input_filter\'\'\': (optional) override Doxygen property
-    INPUT_FILTER to specify a script to transform the source files with
-    before being passed to Doxygen. Default \"\"
--   \'\'\'include_path\'\'\': (optional) override Doxygen property
-    INCLUDE_PATH. Default \"\"
+-   **input_filter**: (optional) override Doxygen property INPUT_FILTER
+    to specify a script to transform the source files with before being
+    passed to Doxygen. Default \"\"
+-   **include_path**: (optional) override Doxygen property INCLUDE_PATH.
+    Default \"\"
 
 Simple example:
 
@@ -210,16 +207,15 @@ Simple example:
 The \"epydoc\" builder will enable running [Epydoc](Epydoc) on a
 package.
 
-\'\'\'Note\'\'\': Epydoc\'s \"introspection\" capability currently
-breaks when trying to process some ros python modules, so this feature
-should not be enabled in a custom epydoc config file.
+**Note**: Epydoc\'s \"introspection\" capability currently breaks when
+trying to process some ros python modules, so this feature should not be
+enabled in a custom epydoc config file.
 
 The \"epydoc\" builder may specify the following additional keys:
 
--   \'\'\'exclude\'\'\': (optional) override the Epydoc \`\--exclude\`
-    option
--   \'\'\'config\'\'\': (optional) override the Epydoc \`\--config\`
-    option, which passes in a separate Epydoc configuration file.
+-   **exclude**: (optional) override the Epydoc \`\--exclude\` option
+-   **config**: (optional) override the Epydoc \`\--config\` option,
+    which passes in a separate Epydoc configuration file.
 
 Simple example:
 
@@ -237,10 +233,10 @@ package.
 
 The \"sphinx\" builder may specify the following additional keys:
 
--   \'\'\'sphinx_root_dir\'\'\': (optional) root directory of Sphinx
-    documents, i.e. the location of \`index.rst\` and \`conf.py\`. If
-    not specified, it will look for an \`index.rst\` file in the root of
-    the ROS package.
+-   **sphinx_root_dir**: (optional) root directory of Sphinx documents,
+    i.e. the location of \`index.rst\` and \`conf.py\`. If not
+    specified, it will look for an \`index.rst\` file in the root of the
+    ROS package.
 
 Simple example:
 
@@ -259,8 +255,8 @@ with the link to the specified URL.
 
 The \"external\" builder takes in the following additional keys:
 
--   \'\'\'external_url\'\'\': URL of external documentation
--   \'\'\'external_label\'\'\': (optional) link text
+-   **external_url**: URL of external documentation
+-   **external_label**: (optional) link text
 
 ### (Option) Using Doxygen Tag Files
 
@@ -286,11 +282,11 @@ rosdoc_lite -o doc -g doc/tags/my_package.tag /path/to/my/package
 with the \`-t\` option. This yaml file should contain a list of
 dictionaries, where each dictionary has the following standard keys:
 
--   \'\'\'docs_url\'\'\': The URL that corresponds to the entry point of
-    the documentation associated with the tag file.
--   \'\'\'location\'\'\': The location of the tag file to pass to
-    Doxygen. This can be on the local file system (use <file://>) or a
-    URL (use <http://>).
+-   **docs_url**: The URL that corresponds to the entry point of the
+    documentation associated with the tag file.
+-   **location**: The location of the tag file to pass to Doxygen. This
+    can be on the local file system (use <file://>) or a URL (use
+    <http://>).
 
 An example tags (example_tags.yaml) file is shown below:
 
@@ -375,5 +371,5 @@ needs of \`ros.org\`. In the future, the \`rosdoc_lite\` tool will
 hopefully be evolved to better support the configuration requirements of
 the documentation tools it invokes (i.e. Doxygen).
 
-The code API of \`rosdoc_lite\` should \'\'\'not\'\'\' be used as it is
-an internal library that is frequently changed.
+The code API of \`rosdoc_lite\` should **not** be used as it is an
+internal library that is frequently changed.

@@ -3,11 +3,11 @@
 Experimental research code for the detection of planar objects and
 articulation models using stereo data.
 
-\'\'\'This package is deprecated. Please look at the
+**This package is deprecated. Please look at the
 [articulation](articulation) stack for the replacing packages. Tutorials
 are available in [articulation_tutorials](articulation_tutorials) and a
 demo using Microsoft Kinect is available in
-[articulation_perception](articulation_perception).\'\'\'
+[articulation_perception](articulation_perception).**
 
 ## Video
 
@@ -17,8 +17,7 @@ demo using Microsoft Kinect is available in
 
 Jürgen Sturm
 
-\'\'Autonomous Intelligent Systems Lab, University of Freiburg,
-Germany\'\'
+*Autonomous Intelligent Systems Lab, University of Freiburg, Germany*
 
 ### Description:
 

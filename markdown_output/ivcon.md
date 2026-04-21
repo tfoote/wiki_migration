@@ -5,7 +5,6 @@ This is a thirdparty package with
 
 ## Example Usage
 
-1\. Convert a \'\'.obj\'\' file into \'\'.stlb\'\' format:
-```
+1\. Convert a *.obj* file into *.stlb* format: ```
 rosrun ivcon ivcon `rospack find gazebo_worlds`/meshes/000.580.67.obj 000.580.67.stlb
 ```

@@ -53,18 +53,18 @@ $ make upload
 The Makefile supports additional options, as described in the table
 below:
 
-  -- --------------------- -- ----------------------------------------------------------- --
-     \'\'\'Command\'\'\'      \'\'\'Description\'\'\'                                     
-     \`make\`                 Build the firmware and display the size of the code         
-     \`make target\`          Build the firmware                                          
-     \`make libs\`            Build the Arduino libraries                                 
-     \`make clean\`           Remove all build files and libraries                        
-     \`make size\`            Determine the size of the copiled code                      
-     \`make upload\`          Upload the firmware (\`\*.hex\`) to the Arduino             
-     \`make download\`        Download the firmware from the Arduino to a \`.hex\` file   
-     \`make erase\`           Erase the firmware on the Arduino                           
-     \`make boards\`          List the different Arduino boards this makefile supports    
-     \`make monitor\`         Run the serial monitor for talking to the Arduino           
-  -- --------------------- -- ----------------------------------------------------------- --
+  -- ------------------- -- ----------------------------------------------------------- --
+     **Command**            **Description**                                             
+     \`make\`               Build the firmware and display the size of the code         
+     \`make target\`        Build the firmware                                          
+     \`make libs\`          Build the Arduino libraries                                 
+     \`make clean\`         Remove all build files and libraries                        
+     \`make size\`          Determine the size of the copiled code                      
+     \`make upload\`        Upload the firmware (\`\*.hex\`) to the Arduino             
+     \`make download\`      Download the firmware from the Arduino to a \`.hex\` file   
+     \`make erase\`         Erase the firmware on the Arduino                           
+     \`make boards\`        List the different Arduino boards this makefile supports    
+     \`make monitor\`       Run the serial monitor for talking to the Arduino           
+  -- ------------------- -- ----------------------------------------------------------- --
 
 ## Using the Package

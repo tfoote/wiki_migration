@@ -1,5 +1,5 @@
-The \'\'\'iap_common\'\'\' package provides basic functions and classes
-for the interactive perception library (IAP).
+The **iap_common** package provides basic functions and classes for the
+interactive perception library (IAP).
 
 ## Core Concepts
 
@@ -25,7 +25,7 @@ anything about this.
 
 #### FeatureSet
 
-A Feature\`\`Set is a set of \'\'different\'\' features at some time
+A Feature\`\`Set is a set of *different* features at some time
 \$frame\$. In particular, a feature set has the notion of time: you can
 assign a frame number \$frame\$ to it (which corresponds to the frame in
 your sequence). It can be viewed as a snapshot of different features at
@@ -35,9 +35,9 @@ It can be constructed from and exported to a PCL point cloud.
 
 #### FeatureTrajectory
 
-A Feature\`\`Trajectory contains the \'\'\'same\'\'\' feature at
-different time frames. It can be seen as the trajectory of one feature
-over time in a sequence.
+A Feature\`\`Trajectory contains the **same** feature at different time
+frames. It can be seen as the trajectory of one feature over time in a
+sequence.
 
 #### FeatureTrajectorySet
 
@@ -53,9 +53,8 @@ following classes allow dealing with them in an easy manner.
 #### Cluster
 
 A Cluster is a specialization of Feature\`\`Set: It contains a set of
-\'\'different\'\' features at some time \$frame\$, with an additional
-\'\'cluster id\'\'. It usually appears in the context of segmenting a
-feature set.
+*different* features at some time \$frame\$, with an additional *cluster
+id*. It usually appears in the context of segmenting a feature set.
 
 #### ClusterSet
 
@@ -100,10 +99,10 @@ expressing the movement of one body with respect to the other.
 ### Kinematic Structure
 
 iap_common provides messages for sending around kinematic structures. A
-\'\'\'Kinematic\`\`Structure\`\`Msg\'\'\' consists of
-\'\'\'Joint\`\`Estimator\`\`Result\`\`Msg\'\'\'s, each containing a
-hypothesis per joint type, encoded in \'\'\'Joint\`\`Msg\'\'\'. This
-means a Kinematic\`\`Structure\`\`Msg does not only contain the \"most
+**Kinematic\`\`Structure\`\`Msg** consists of
+**Joint\`\`Estimator\`\`Result\`\`Msg**s, each containing a hypothesis
+per joint type, encoded in **Joint\`\`Msg**. This means a
+Kinematic\`\`Structure\`\`Msg does not only contain the \"most
 probable\" kinematic structure, but for every pair of links an
 estimation of all possible joint types.
 
@@ -111,32 +110,32 @@ estimation of all possible joint types.
 
 ### ROS Messages
 
-\'\'\'/iap_common/KinematicStructureMsg\'\'\'
+**/iap_common/KinematicStructureMsg**
 
 -   description: The kinematic structure. Contains a list of
     Joint\`\`Estimator\`\`Result\`\`Msg, i.e. the estimation of all
     joints
 
-\'\'\'/iap_common/JointEstimatorResultMsg\'\'\'
+**/iap_common/JointEstimatorResultMsg**
 
 -   description: A set of joint hypothesis with according probabilities
 
-\'\'\'/iap_common/JointMsg\'\'\'
+**/iap_common/JointMsg**
 
 -   description: A joint with axis information, goodness of fit etc.
 
-\'\'\'/iap_common/AxisMsg\'\'\'
+**/iap_common/AxisMsg**
 
 -   description: An axis definition for prismatic or revolute joints
 
-\'\'\'/iap_common/BodyTrajectoryMsg\'\'\'
+**/iap_common/BodyTrajectoryMsg**
 
 -   description: Message to encode a Body\`\`Trajectory
 
-\'\'\'/iap_common/BodyTrajectoryPairMsg\'\'\'
+**/iap_common/BodyTrajectoryPairMsg**
 
 -   description: Message to encode a Body\`\`Trajectory\`\`Pair
 
-\'\'\'/iap_common/ClusteredFeatureSetMsg\'\'\'
+**/iap_common/ClusteredFeatureSetMsg**
 
 -   description: Message to encode Clustered\`\`Feature\`\`Set

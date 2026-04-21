@@ -14,33 +14,31 @@ A minimal example using \`robot_activity\` is available in the
 The main features of the package are:
 
 1\. Controllable node lifecycle - nodes automatically expose ROS
-services that allow you to \'\'pause\'\', \'\'stop\'\', \'\'restart\'\',
-\'\'reconfigure\'\' and \'\'terminate\'\' a given node 2. ROS
-subscribers and services are automatically managed for you during the
-lifecycle. Services and callbacks will not be called if you request your
-node to exit \'\'\'RUNNING\'\'\' state. This means that you can now
-safely reconfigure your nodes without relaunching! 3. Creation of
-super-nodes, multiple ROS nodes in a single process (similar to
-nodelets) 4. Easy integration with a node supervisor using heartbeat and
-error messages.
+services that allow you to *pause*, *stop*, *restart*, *reconfigure* and
+*terminate* a given node 2. ROS subscribers and services are
+automatically managed for you during the lifecycle. Services and
+callbacks will not be called if you request your node to exit
+**RUNNING** state. This means that you can now safely reconfigure your
+nodes without relaunching! 3. Creation of super-nodes, multiple ROS
+nodes in a single process (similar to nodelets) 4. Easy integration with
+a node supervisor using heartbeat and error messages.
 
 The node lifecycle can be represented as a Finite State Machine (FSM):
 ![robot_activity-FSM](attachment:fsm-resized.png) When you inherit from
 \`robot_activity::ManagedRobotActivity\`, the subscribers and services
 are managed for you, meaning that they will only be executed in the
-\'\'\'RUNNING\'\'\' state.
+**RUNNING** state.
 
-1\. In \'\'\'PAUSED\'\'\' state, they are invoked, but immediately
-return without executing the actual body of the callback (services
-return \`false\`). 2. In \'\'\'STOPPED\'\'\' state, all registered
-subscribers and services are shutdown, so that no IPC or TCP/IP traffic
-occurs. 3. When transitioning back to \'\'\'PAUSED\'\'\' state from
-\'\'\'STOPPED\'\'\', the subscribers and services are once again
-advertised for you (with the same arguments), but still not yet fully
-executed 4. When transitioning back to \'\'\'RUNNING\'\'\' state from
-\'\'\'PAUSED\'\'\', the subscibers and services are now functional.
-However, all callback invocation that occured out of \'\'\'RUNNING\'\'\'
-state are lost.
+1\. In **PAUSED** state, they are invoked, but immediately return
+without executing the actual body of the callback (services return
+\`false\`). 2. In **STOPPED** state, all registered subscribers and
+services are shutdown, so that no IPC or TCP/IP traffic occurs. 3. When
+transitioning back to **PAUSED** state from **STOPPED**, the subscribers
+and services are once again advertised for you (with the same
+arguments), but still not yet fully executed 4. When transitioning back
+to **RUNNING** state from **PAUSED**, the subscibers and services are
+now functional. However, all callback invocation that occured out of
+**RUNNING** state are lost.
 
 ## Library
 

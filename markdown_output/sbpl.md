@@ -1,7 +1,7 @@
-\'\'\'Please note that the source link above is wrong. Please download
-the SBPL here:\'\'\'
+**Please note that the source link above is wrong. Please download the
+SBPL here:**
 
-\'\'\'git clone <https://github.com/sbpl/sbpl.git>\'\'\'
+**git clone <https://github.com/sbpl/sbpl.git>**
 
 This package implements a generic set of motion planners using search
 based planning. It was developed by Maxim Likhachev at the University of

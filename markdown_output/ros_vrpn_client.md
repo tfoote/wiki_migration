@@ -58,9 +58,9 @@ the ros node (given from the launch file or command line).
 ### ros_vrpn_client
 
 -   Run a new instance of this node for each tracked object.
--   The name of this node should be the same as the \'\'Trackable\'\'
-    name published via VRPN, and will be the name of the TF coordinate
-    frame for this object.
+-   The name of this node should be the same as the *Trackable* name
+    published via VRPN, and will be the name of the TF coordinate frame
+    for this object.
 
 ```clearsilver
 pub {

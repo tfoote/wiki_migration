@@ -12,7 +12,7 @@ Please see the tutorial on
 It will explain how you can publish the state of your robot to [tf](tf),
 using the robot state publisher.
 
-\'\'Note:\'\' All fixed transforms are
+*Note:* All fixed transforms are
 [future dated](tf/FAQ#Why_do_I_see_negative_average_delay_in_tf_monitor.3F)
 by 0.5s.
 

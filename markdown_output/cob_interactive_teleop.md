@@ -19,10 +19,10 @@ Brief description of provided ROS services, published topics, etc.
 
 An overview of all newly created ROS nodes:
 
-  -- ----------------------- -- ------------------------------ -- ---------------------------------------------------------- --
-     \'\'\'Node Name\'\'\'      \'\'\'Published Topics\'\'\'      \'\'\'Description\'\'\'                                    
-     but_cob_teleop_marker      \-                                This node publishes interactive markers for driving COB.   
-  -- ----------------------- -- ------------------------------ -- ---------------------------------------------------------- --
+  -- ----------------------- -- ---------------------- -- ---------------------------------------------------------- --
+     **Node Name**              **Published Topics**      **Description**                                            
+     but_cob_teleop_marker      \-                        This node publishes interactive markers for driving COB.   
+  -- ----------------------- -- ---------------------- -- ---------------------------------------------------------- --
 
 ## Usage
 
@@ -38,7 +38,7 @@ roslaunch cob_interactive_teleop interactive_teleop.launch
 roslaunch cob_interactive_teleop rviz.launch
 ``` 4. Setup RViz:
 
--   Switch to \'\'\'Interaction mode\'\'\'
+-   Switch to **Interaction mode**
 
 ### How to control robot using the marker
 

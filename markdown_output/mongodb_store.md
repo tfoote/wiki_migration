@@ -5,7 +5,7 @@ ROS-related data in a [MongoDB](http://www.mongodb.org) database using
 C++ and Python. It is intended to support data persistence and
 inspection, including in running systems (i.e. introspection). The main
 functions are the storage and retrieval of single message (this is the
-\'\'message store\'\'); the rosbag-like logging of topics to the db (via
+*message store*); the rosbag-like logging of topics to the db (via
 [mongodb_log](mongodb_log)) and their playback (mongodb_play); and the
 storage and recreation of parameters.
 
@@ -84,7 +84,7 @@ are stored inside the mongodb_store mongodb, within a database named
 
 Two levels of parameters are considered:
 
-1\. \'\'\'Global default parameters\'\'\'. These should be \"working
+1\. **Global default parameters**. These should be \"working
 defaults\" - so all essential parameters at least have a default value.
 For example, if a robot application requires some calibration data then
 default values should be provided. Default parameters can be shared
@@ -96,10 +96,9 @@ defaults folder should be supplied as a private parameter:
 \`defaults_path\` either set to a system path or in the form
 \`pkg:*ros_package_name/inside/package\`.*
 
-2\. \'\'\'Local parameters\'\'\'. These parameters override the same
-named global default parameters, allowing site-specific parameter
-setting. They are stored within the database inside the \"local\"
-collection.
+2\. **Local parameters**. These parameters override the same named
+global default parameters, allowing site-specific parameter setting.
+They are stored within the database inside the \"local\" collection.
 
 At start up, the config manager places all parameters onto the ros
 parameter server to allow interoperability with existing software.

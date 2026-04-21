@@ -66,8 +66,8 @@ catkin_make_isolated
 ```
 
 If you have the fzi_icl_core or fzi_icl_comm package in your workspace
-you\'ll have to build it with \'\'catkin_make_isolated\'\', as those
-packages are plain cmake packages. See the
+you\'ll have to build it with *catkin_make_isolated*, as those packages
+are plain cmake packages. See the
 [REP 134](http://www.ros.org/reps/rep-0134.html) for details.
 
 The package comes with UDEV rules for the Brainbox USB to Serial adapter
@@ -197,19 +197,19 @@ pub{
 The SVH has 9 degrees of freedom which are addressed as channels. Topics
 that accept channels will use the following mapping:
 
-  -- -------------------------- -- -------------------- -- ---- ------------------------------------------------- --
-     \'\'\'Channel Name\'\'\'      \'\'\'Number\'\'\'                                                             
-     ALL                           -1                      \<   10\> ![](attachment:svh_finger_description.png)   
-     THUMB_FLEXION                 0                                                                              
-     THUMB_OPPOSITION              1                                                                              
-     INDEX_FINGER_DISTAL           2                                                                              
-     INDEX_FINGER_PROXIMAL         3                                                                              
-     MIDDLE_FINGER_DISTAL          4                                                                              
-     MIDDLE_FINGER_PROXIMAL        5                                                                              
-     RING_FINGER                   6                                                                              
-     PINKY                         7                                                                              
-     FINGER_SPREAD                 8                                                                              
-  -- -------------------------- -- -------------------- -- ---- ------------------------------------------------- --
+  -- ------------------------ -- ------------ -- ---- ------------------------------------------------- --
+     **Channel Name**            **Number**                                                             
+     ALL                         -1              \<   10\> ![](attachment:svh_finger_description.png)   
+     THUMB_FLEXION               0                                                                      
+     THUMB_OPPOSITION            1                                                                      
+     INDEX_FINGER_DISTAL         2                                                                      
+     INDEX_FINGER_PROXIMAL       3                                                                      
+     MIDDLE_FINGER_DISTAL        4                                                                      
+     MIDDLE_FINGER_PROXIMAL      5                                                                      
+     RING_FINGER                 6                                                                      
+     PINKY                       7                                                                      
+     FINGER_SPREAD               8                                                                      
+  -- ------------------------ -- ------------ -- ---- ------------------------------------------------- --
 
 ### Parameter sets
 
@@ -223,21 +223,21 @@ corresponding hardware version and the entry of RING_FINGER and so
 forth.
 
 When using the launch file \`svh_controller.launch\` all parameters are
-read from yaml files residing in the folder \'\'etc\'\'. If you want to
-give custom parameters just edit the file
-\'\'etc/controller_user.yaml\'\' if you are using the source
-installation. In case of an installation from deb you should first copy
-the file under \'\'etc/controller_user.yaml\'\' to a folder with user
-write acces, make your changes and then use it by adding the argument
-\`controller_config:=path_to_your/logging.xml\` when launching the node.
+read from yaml files residing in the folder *etc*. If you want to give
+custom parameters just edit the file *etc/controller_user.yaml* if you
+are using the source installation. In case of an installation from deb
+you should first copy the file under *etc/controller_user.yaml* to a
+folder with user write acces, make your changes and then use it by
+adding the argument \`controller_config:=path_to_your/logging.xml\` when
+launching the node.
 
 If you want to go back to the original values (and have edited the file,
 residing in etc) you can simply delete the file and copy the
-\'\'controller_default.yaml\'\' to the name \'\'controller_user.yaml\'\'
-and start again. If no \'\'controller_user.yaml\'\' file is present the
-values of the default file will be used. If both files are missing or
-the node use used without the launch file hardcoded default values that
-are safe will be used.
+*controller_default.yaml* to the name *controller_user.yaml* and start
+again. If no *controller_user.yaml* file is present the values of the
+default file will be used. If both files are missing or the node use
+used without the launch file hardcoded default values that are safe will
+be used.
 
 ```wiki
 WARNING: These settings enable control of very low level concepts. Setting wrong values here may lead to permanent damage in the hardware. Especially the maximum allowed currents should not be exceeded. Consult the [[attachment:svh_hardware_information.pdf]] before you change things.
@@ -251,9 +251,9 @@ the fingers. To test the package or your hardware we recommend that you
 run the standalone version first and get familiar with the behavior of
 the Hand.
 
-In any case \'\'\'you should use the provided launch script\'\'\' as it
-sets up many variables, the parameter sets and some additional packages
-that are needed for correct operation and visualization.
+In any case **you should use the provided launch script** as it sets up
+many variables, the parameter sets and some additional packages that are
+needed for correct operation and visualization.
 
 ### Hardware setup
 
@@ -309,18 +309,18 @@ gives you some examples how to controll the hand via rostopic.
 ### Together with other packages
 
 By default the node will await input from another node. To use the
-svh_controller with your project \'\'\'it is highly recommended that you
-include it via its launch file\'\'\' like this: ```
+svh_controller with your project **it is highly recommended that you
+include it via its launch file** like this: ```
 <include file="$(find schunk_svh_driver)/launch/svh_controller.launch">
         <arg name="standalone" value="False" />
         <arg name="gui" value="False" />
   </include>
-```
-The argmuments are not strictly necessary as the values default to
-these. This way of including the node may however be more than you want
-because the launch script already contains things like a robot state
-publisher etc. if you just want the node, but do not want to care about
-the config files and so on you can use the very simple include file:
+``` The
+argmuments are not strictly necessary as the values default to these.
+This way of including the node may however be more than you want because
+the launch script already contains things like a robot state publisher
+etc. if you just want the node, but do not want to care about the config
+files and so on you can use the very simple include file:
 ```
 catkin_make_isolated
    source devel_isolated/setup.bash
@@ -334,14 +334,14 @@ up (deb file install is 0.1.5).
 If you just want to use the node without the configuration files, etc.
 the node will default to hard-coded values.
 
-\'\'\'NOTE\'\'\' The urdf of the node makes use of the \`mimic\` tag
-which is currently only resolved by the robot joint state publisher. in
-order to generate TFs for the visualization and to get the angles of the
-coupled joints the node is used in conjunction with a joint state
-publisher and a robot state publisher. If you include the node without
-these nodes the TF tree will not be complete as the joints that use
-mimic are not working. See the URDF section for details on joints, their
-naming and relation.
+**NOTE** The urdf of the node makes use of the \`mimic\` tag which is
+currently only resolved by the robot joint state publisher. in order to
+generate TFs for the visualization and to get the angles of the coupled
+joints the node is used in conjunction with a joint state publisher and
+a robot state publisher. If you include the node without these nodes the
+TF tree will not be complete as the joints that use mimic are not
+working. See the URDF section for details on joints, their naming and
+relation.
 
 ### Visualisation
 
@@ -378,11 +378,10 @@ catkin_make_isolated
    source devel_isolated/setup.bash
 ```3
 
-\'\'\'Note\'\'\': The SVH uses relative encoders that need a hard stop
-to reset. Especially the finger spread however also contains springs
-that will lead to a slightly different pose than commanded in real
-execution. So please beware when you develop poses without the hardware
-in the loop.
+**Note**: The SVH uses relative encoders that need a hard stop to reset.
+Especially the finger spread however also contains springs that will
+lead to a slightly different pose than commanded in real execution. So
+please beware when you develop poses without the hardware in the loop.
 
 ### sin test
 
@@ -428,34 +427,33 @@ Just copy and paste them to the command line.
 The following arguments are possible for the main launch file and can be
 mixed freely (most are just passed to the parameters of the node):
 
-\'\'gui (default: true)\'\' Autostarts an rqt gui if set to true
-\'\'autostart (default: true)\'\' Immediately connect to the hardware
-and reset the fingers upon start if set to true \'\'serial_device
-(default: /dev/ttyUSB0)\'\' Sets the serial device to use for the
-connection \'\'simulation (default: false)\'\' Only starts the
-visualization part of the SVH and no driver node if set to true.
-\'\'logging_config (default: schunk_svh_driver/etc/logging.xml)\'\' Full
-qualified path to the location of the logging.xml. The file is used to
-configure the output of the internal logging framework
-\'\'use_internal_logging (default: false)\'\' If set to true the log
-output (DEBUG and TRACE) of the SVH driver will be written to the
-location specified by the logging.xml (/.ros/log by default)
-\'\'controller_config (default:
-schunk_svh_driver/etc/controller_user.yaml)\'\' Full qualified path to a
+*gui (default: true)* Autostarts an rqt gui if set to true *autostart
+(default: true)* Immediately connect to the hardware and reset the
+fingers upon start if set to true *serial_device (default:
+/dev/ttyUSB0)* Sets the serial device to use for the connection
+*simulation (default: false)* Only starts the visualization part of the
+SVH and no driver node if set to true. *logging_config (default:
+schunk_svh_driver/etc/logging.xml)* Full qualified path to the location
+of the logging.xml. The file is used to configure the output of the
+internal logging framework *use_internal_logging (default: false)* If
+set to true the log output (DEBUG and TRACE) of the SVH driver will be
+written to the location specified by the logging.xml (/.ros/log by
+default) *controller_config (default:
+schunk_svh_driver/etc/controller_user.yaml)* Full qualified path to a
 yaml file containing the configuration for the low level controllers.
 Copy the file in \"schunk_svh_driver/etc/controller_user.yaml\" for this
-purpose \'\'general_config (default: schunk_svh_driver/etc/svh.yaml)\'\'
-Full qualified path to a yaml file containing the basic configuration of
-the ros node, mainly which finger is disabled. Copy the file in
-\"schunk_svh_driver/etc/svh.yaml\" for this purpose \'\'standalone
-(default: false)\'\' Indicates that the controller should be used with
+purpose *general_config (default: schunk_svh_driver/etc/svh.yaml)* Full
+qualified path to a yaml file containing the basic configuration of the
+ros node, mainly which finger is disabled. Copy the file in
+\"schunk_svh_driver/etc/svh.yaml\" for this purpose *standalone
+(default: false)* Indicates that the controller should be used with
 direct human input when set to true
 
 ## Troubleshooting
 
-\'\'After an autostart (default setting) of the software the fingers do
-not begin to move\'\' The autostart tries to connect to the hand and run
-and autostart immediately. Check the output of the driver. After a
+*After an autostart (default setting) of the software the fingers do not
+begin to move* The autostart tries to connect to the hand and run and
+autostart immediately. Check the output of the driver. After a
 successful connect it should read: ```
 catkin_make_isolated
    source devel_isolated/setup.bash
@@ -465,43 +463,42 @@ catkin_make_isolated
    source devel_isolated/setup.bash
 ```8 the serial device could not ne
 opened. Check that you have installed the udev rules and that the device
-shows up as /dev/ttyUSBx when you connect it \'\'After an autostart of
-the software it says \'\'\'Send packages = 28, received packages =
-20\'\'\' or something similar\'\' In this case the device could be
-opened but the connection has quality issues and loses packets. You can
-try to connect again using the connect button of the plugin or the
-connect topic. The problem most likely stems from a bad connection (to
-long cables, bad connectors) or in rare cases from to little processing
-power on the executing hardware (which is not able to keep up with the
-data rate of the connection) \'\'During reset of the fingers it states
-\'\'\' Driving channel 5 to hard stop. Detection thresholds: Current
-MIN: -500.000000mA MAX: 500.000000mA\'\'\' or similar and nothing is
-happening\'\' During reset the fingers need to reach a certain
-percentage of the maximum allowed current to detect a hard stop. The
-amount is configured in the homing settings by the \"reset current
-factor\" which you can find in the \*.yaml files in the \'\'etc\'\'
-folder. If for example the finger is supposed to reach 400mA but is
-stuck and only manages to get up to 200mA the threshold will not be
-reached. In such cases the reset timeout should abort the timeout after
-the amount of seconds specified. However the timeout is only active once
-there is no measurable difference in current. In case the current
-changes a little bit but does not reach the threshold it will be in an
-infinite loop. In this (rare) case stop the driver execution, maybe
-restart the hardware, and set a lower reset current factor. \'\'During
-reset the finger stops as soon as it touches any resistance and is
-initialized in an odd position\'\' In this case the value for the reset
-current factor and/or the overall allowed current for the motor
-controller is set to low. As state above the hard stop is based on a
-current threshold. If this threshold is very low even small disturbances
-can be detected as hard stop. Also if the finger is not strong enough to
-overcome the disturbances the current will rise up to the maximum
-allowed current. If it still can not overcome the disturbance most
-likely a reset is detected. Please make sure that no hardware fault is
-present in case this happens with high enough currents \'\'The fingers
-work but they \"run away\" when they do fast movements or touch
-something and can not be controlled afterwards\'\' This is the case when
-the current peaks commanded to the current controller are to high. The
-internal driver units will detect overcurrent/voltage and shut down
+shows up as /dev/ttyUSBx when you connect it *After an autostart of the
+software it says **Send packages = 28, received packages = 20** or
+something similar* In this case the device could be opened but the
+connection has quality issues and loses packets. You can try to connect
+again using the connect button of the plugin or the connect topic. The
+problem most likely stems from a bad connection (to long cables, bad
+connectors) or in rare cases from to little processing power on the
+executing hardware (which is not able to keep up with the data rate of
+the connection) *During reset of the fingers it states ** Driving
+channel 5 to hard stop. Detection thresholds: Current MIN: -500.000000mA
+MAX: 500.000000mA** or similar and nothing is happening* During reset
+the fingers need to reach a certain percentage of the maximum allowed
+current to detect a hard stop. The amount is configured in the homing
+settings by the \"reset current factor\" which you can find in the
+\*.yaml files in the *etc* folder. If for example the finger is supposed
+to reach 400mA but is stuck and only manages to get up to 200mA the
+threshold will not be reached. In such cases the reset timeout should
+abort the timeout after the amount of seconds specified. However the
+timeout is only active once there is no measurable difference in
+current. In case the current changes a little bit but does not reach the
+threshold it will be in an infinite loop. In this (rare) case stop the
+driver execution, maybe restart the hardware, and set a lower reset
+current factor. *During reset the finger stops as soon as it touches any
+resistance and is initialized in an odd position* In this case the value
+for the reset current factor and/or the overall allowed current for the
+motor controller is set to low. As state above the hard stop is based on
+a current threshold. If this threshold is very low even small
+disturbances can be detected as hard stop. Also if the finger is not
+strong enough to overcome the disturbances the current will rise up to
+the maximum allowed current. If it still can not overcome the
+disturbance most likely a reset is detected. Please make sure that no
+hardware fault is present in case this happens with high enough currents
+*The fingers work but they \"run away\" when they do fast movements or
+touch something and can not be controlled afterwards* This is the case
+when the current peaks commanded to the current controller are to high.
+The internal driver units will detect overcurrent/voltage and shut down
 leaving the finger in an odd state. You can reset the finger manually
 and resume operation, however this is an indication that your current
 controller parameters are not right. As a general direction: Choose a
@@ -509,32 +506,32 @@ low P value and a higher I value as the current controller will try to
 negate an error in the desired current. In case the error changes
 suddenly a high P gain leads to a very output for the motor drivers
 resulting in this case. Setting the controllers right is not easy, if
-you are uncertain what to set just use the default settings \'\'A finger
-is broken, can i still use the rest of the finger?\'\' YES! You can
-disable the finger by editing the \"etc/svh.yaml\" file or by copying it
-and then providing it via launch argument. Change the \"disable_flags\"
+you are uncertain what to set just use the default settings *A finger is
+broken, can i still use the rest of the finger?* YES! You can disable
+the finger by editing the \"etc/svh.yaml\" file or by copying it and
+then providing it via launch argument. Change the \"disable_flags\"
 value of the finger you want to disable to true and it will not be used
 during execution. However all calls to this finger will be answered in
 the most positive way possible (i.e. it will register as enabled and
-homed) \'\'The plugin does not show in rqt, or a failure occurs during
-loading\'\' Try resetting the cache of \`rqt\` by calling \`rqt
-\--clear-config\` and then try again \'\'The hand gets very hot\'\'
-There are many motors and electronic circuits on a very small space. A
-quite high temperature is nothing to worry about. You should however
-still be able to touch everything. Otherwise you should check for a
-hardware fault \'\'RVIZ shows nothing like the screenshot when i load
-it\'\' You need to configure it yourself to show the robot model and
-maybe the TF tree or use the provided config file at \"etc/urdf.rviz\"
-\'\'When i start the node with rosrun the URDF tree of a robot state
-publisher is not complete\'\' We used the mimic tag to model the chained
-kinematic of the fingers. The mimic tag however is only evaluated by the
-joint state publisher. In the launch file of the controller you can see
-how you can use the joint state publisher just for the purpose of
-providing the values for these mimicked joints \'\'Where is the actual
-functionality within the ROS package? It hardly seems to do anything\'\'
-The actual driver was developed as a standalone library which is then
-used by the SVHNode to control the functionality. Take a look at the
-\"driver_svh\" folder which is also contained in the src folder.
+homed) *The plugin does not show in rqt, or a failure occurs during
+loading* Try resetting the cache of \`rqt\` by calling \`rqt
+\--clear-config\` and then try again *The hand gets very hot* There are
+many motors and electronic circuits on a very small space. A quite high
+temperature is nothing to worry about. You should however still be able
+to touch everything. Otherwise you should check for a hardware fault
+*RVIZ shows nothing like the screenshot when i load it* You need to
+configure it yourself to show the robot model and maybe the TF tree or
+use the provided config file at \"etc/urdf.rviz\" *When i start the node
+with rosrun the URDF tree of a robot state publisher is not complete* We
+used the mimic tag to model the chained kinematic of the fingers. The
+mimic tag however is only evaluated by the joint state publisher. In the
+launch file of the controller you can see how you can use the joint
+state publisher just for the purpose of providing the values for these
+mimicked joints *Where is the actual functionality within the ROS
+package? It hardly seems to do anything* The actual driver was developed
+as a standalone library which is then used by the SVHNode to control the
+functionality. Take a look at the \"driver_svh\" folder which is also
+contained in the src folder.
 
 ### Getting Help
 

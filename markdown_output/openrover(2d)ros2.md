@@ -51,7 +51,7 @@ emitted from the rover, in unprocessed form (see
 
 /diagnostics: diagnostic_msgs/msg/DiagnosticArray:: :: diagnostic data
 being emitted by the rover, suitable for consumption by
-\'\'\'rqt_robot_monitor\'\'\' or \'\'\'diagnostic-aggregator\'\'\'.
+**rqt_robot_monitor** or **diagnostic-aggregator**.
 
 /motor_efforts: openrover_core_msgs/msg/RawMotorCommand:: :: Motor
 efforts (left, right, flipper) being sent to the rover

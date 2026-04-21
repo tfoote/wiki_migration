@@ -5,10 +5,10 @@ The qualification system is the core of the
 Garage production team members to test, evaluate and debug hardware
 components of the PR2 or Texai.
 
-\'\'\'Note:\'\'\' The qualification system is only designed to run on
-specific machines at Willow Garage. This package has no external ROS or
-code API. Tools in this package will not work without proper
-configuration and/or authorization into Willow Garage systems.
+**Note:** The qualification system is only designed to run on specific
+machines at Willow Garage. This package has no external ROS or code API.
+Tools in this package will not work without proper configuration and/or
+authorization into Willow Garage systems.
 
 ### Run GUI
 
@@ -92,9 +92,8 @@ Instructions are loaded after a test is selected. The instructions page
 is an HTML document. Any images specified in the document are given
 relative to their local path. If \"Cancel\" is pressed while the
 instructions are displayed, the qualification system will return to the
-start screen and the device-under-test will \'\'\'not\'\'\' be marked as
-a failure. Pressing \"Cancel\" at any other time will fail the
-component.
+start screen and the device-under-test will **not** be marked as a
+failure. Pressing \"Cancel\" at any other time will fail the component.
 
 #### Pre-startup Scripts
 
@@ -103,11 +102,11 @@ instructions. Each prestartup script is designed to prepare the
 device-under-test and the fixture for testing. Prestartup scripts call a
 ROS service when they are complete. The service response can be:
 
--   \'\'\'OK\'\'\'
--   \'\'\'FAIL\'\'\' - The component is unable to be tested.
--   \'\'\'ERROR\'\'\' - The fixture is not ready or improperly set up.
-    Note: Any \"errors\" at the pretest level will not mark the
-    component as \"FAIL\".
+-   **OK**
+-   **FAIL** - The component is unable to be tested.
+-   **ERROR** - The fixture is not ready or improperly set up. Note: Any
+    \"errors\" at the pretest level will not mark the component as
+    \"FAIL\".
 
 Pre-startup scripts are torn down when the ROS service is called, the
 operator presses cancel, or a timeout is hit.

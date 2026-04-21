@@ -59,12 +59,12 @@ radius:=\<a number\>.
 
 Using the \"right\" hydra controller, the buttons are:
 
--   \'\'\'rb\'\'\' - \"grab\" and move the workspace
--   \'\'\'rt\'\'\' - grab interactive marker controls
--   \'\'\'joystick click\'\'\' - bring up interactive marker menus
--   \'\'\'joystick directions\'\'\' - navigate interactive marker menus
--   \'\'\'3\'\'\' - Select the currently highlighted menu entry
--   \'\'\'1\'\'\' - Close the interactive marker menu
+-   **rb** - \"grab\" and move the workspace
+-   **rt** - grab interactive marker controls
+-   **joystick click** - bring up interactive marker menus
+-   **joystick directions** - navigate interactive marker menus
+-   **3** - Select the currently highlighted menu entry
+-   **1** - Close the interactive marker menu
 
 The \"left\" controller also works, but it is not able to grab and move
 the workspace.

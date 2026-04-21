@@ -1,14 +1,14 @@
 ## Overview
 
 The single sensor fusion (ssf) part of this stack is divided into the
-common Kalman Filter steps \'\'prediction\'\' (or propagation) and
-\'\'update\'\' (or measurement). We assume to always have an IMU as
-propagation sensor on the vehicle while we can change the update sensors
-depending on the users preferences. Hence, the propagation part remains
-unchanged for different update sensors. Essentially, for every different
-update sensor only the measurement matrix, and the calculation of the
-residuals change - the rest of the filter framework remains the same.
-This constant, core, part is incorporated in this package
+common Kalman Filter steps *prediction* (or propagation) and *update*
+(or measurement). We assume to always have an IMU as propagation sensor
+on the vehicle while we can change the update sensors depending on the
+users preferences. Hence, the propagation part remains unchanged for
+different update sensors. Essentially, for every different update sensor
+only the measurement matrix, and the calculation of the residuals
+change - the rest of the filter framework remains the same. This
+constant, core, part is incorporated in this package
 [ ssf_core](../ssf_core )
 
 ## Nodes
@@ -24,7 +24,7 @@ an IMU as core (propagation) sensor we can incorporate the entire EKF
 propagation steps in the core framework. This leaves only the
 measurements as variable parts. More precisely, only the calculation of
 the measurement matrix and the residuals vary between the different
-measurement sensor \'\'types\'\'. Their handling is again fix and is
+measurement sensor *types*. Their handling is again fix and is
 incorporated in this package.
 
 ### States
@@ -69,24 +69,23 @@ The [ ssf_core](../ssf_core ) package has a built-in propagation
 procedure. However, you may also use an external state propagation as
 provided in the [asctec_mav_framework](asctec_mav_framework):
 
--   imuCallback() with the \'\'sensor_msg::Imu\'\' message invokes the
+-   imuCallback() with the *sensor_msg::Imu* message invokes the
     internal state propagation
--   stateCallback() with the custom \'\'ssf_core::ext_ekf\'\' message
-    uses the external state propagation. You can still force the
-    internal state propagation by setting the fix parameter
-    \'\'data_playback=True\'\'.
+-   stateCallback() with the custom *ssf_core::ext_ekf* message uses the
+    external state propagation. You can still force the internal state
+    propagation by setting the fix parameter *data_playback=True*.
 
 ### Setting the Noise Values
 
-\'\'\'Generally the noise values accessible in the dynamic reconfigure
-GUI should not be tuning parameters.\'\'\' Please check the acceleration
-and gyroscope noises and their bias noises in the manufacturer\'s data
-sheet of your IMU. Furthermore the noise values of the remaining states
-should be kept to zero since they are not temporally drifting. Instead,
-if you work with a keyframe based visual odomtery as update sensor you
-may add uncertainty to the visual scale and visual drift the moment a
-new keyframe is created. This reflects the \'\'spatial\'\' nature of
-these state\'s uncertainty.
+**Generally the noise values accessible in the dynamic reconfigure GUI
+should not be tuning parameters.** Please check the acceleration and
+gyroscope noises and their bias noises in the manufacturer\'s data sheet
+of your IMU. Furthermore the noise values of the remaining states should
+be kept to zero since they are not temporally drifting. Instead, if you
+work with a keyframe based visual odomtery as update sensor you may add
+uncertainty to the visual scale and visual drift the moment a new
+keyframe is created. This reflects the *spatial* nature of these
+state\'s uncertainty.
 
 ### EKF Update
 
@@ -107,9 +106,8 @@ sensor specific calculations are done in
 ## Scripts
 
 There are several scripts to plot the different states.
-\'\'plot\_\[states\] T\'\' plots the states \[states\] in an rxgraph
-with a time history of T seconds (without T the default time history is
-used).
+*plot\_\[states\] T* plots the states \[states\] in an rxgraph with a
+time history of T seconds (without T the default time history is used).
 
 ## Node Information
 

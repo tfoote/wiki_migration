@@ -1,7 +1,7 @@
-Each \'\'qbrobotics®\'\' device-independent custom ROS service is
-documented directly in its \`.srv\` specification and it is designed to
-fit the Communication Handler requirements (cf.
+Each *qbrobotics®* device-independent custom ROS service is documented
+directly in its \`.srv\` specification and it is designed to fit the
+Communication Handler requirements (cf.
 [qb_device_driver](qb_device_driver)). We recommend not to use these
-services for other purposes outside the \'\'qbrobotics®\'\' ecosystem.
+services for other purposes outside the *qbrobotics®* ecosystem.
 
 \<\<MsgSrvDoc(qb_device_srvs)\>\>

@@ -13,41 +13,40 @@ The main functionality of this package is prediction missing or unfound
 objects in an ISM-scene. It provides four algorithms for solving the
 problem:
 
--   \'\'\'shortest path:\'\'\' This algorithm uses Breadth-first search
-    to find a paths to all unfound objects. Which path to choose depends
-    on the length of the path. The following picture illustrates this.
-    In example, \"Object 1\" can be found in \"Subrefernce 1\" and
+-   **shortest path:** This algorithm uses Breadth-first search to find
+    a paths to all unfound objects. Which path to choose depends on the
+    length of the path. The following picture illustrates this. In
+    example, \"Object 1\" can be found in \"Subrefernce 1\" and
     \"Subreference 4\". The algorithm will return all predicted poses of
     \"Object 1\" from \"Subreference 1\" because the path to it is
     shorter.
 
 ![\|height=\"300\",width=\"500\"](attachment:Download.png)
 
--   \'\'\'best path:\'\'\' This algorithm uses Breadth-first search and
-    a goodness function to find a paths to all unfound objects. Which
-    path to choose depends on the goodness. Therefore, each path gets
-    costs assigned. The algorithm chooses the path with the best
-    goodness (=least costs). This is shown in the following pictures.
-    The numbers on the paths are the costs. The algorithm will return
-    all predicted poses of \"Subreference 4\", because the path is
-    better (Cost for \"Subreference 1\"=11; Cost for \"Subreference
-    4\"=7):
+-   **best path:** This algorithm uses Breadth-first search and a
+    goodness function to find a paths to all unfound objects. Which path
+    to choose depends on the goodness. Therefore, each path gets costs
+    assigned. The algorithm chooses the path with the best goodness
+    (=least costs). This is shown in the following pictures. The numbers
+    on the paths are the costs. The algorithm will return all predicted
+    poses of \"Subreference 4\", because the path is better (Cost for
+    \"Subreference 1\"=11; Cost for \"Subreference 4\"=7):
 
 ![Download (1).png\|height=\"300\",width=\"500\"](attachment:Download (1).png)
 
--   \'\'\'random path:\'\'\' This algorithm evaluates all paths from
-    reference to a missing object and picks randomly one due prediciton.
-    The probability for a path depends on the path\'s goodness (The
-    higher the goodness, the higher the probability). The following
-    picture shows this. Like in the example above, the path to
-    \"Subreference 4\" is better. Due to that, it has a higher
-    probability. The algorithm will return 30% of the predicted poses
-    form \"Subreference 1\" and 70 % from \"Subreference 4\":
+-   **random path:** This algorithm evaluates all paths from reference
+    to a missing object and picks randomly one due prediciton. The
+    probability for a path depends on the path\'s goodness (The higher
+    the goodness, the higher the probability). The following picture
+    shows this. Like in the example above, the path to \"Subreference
+    4\" is better. Due to that, it has a higher probability. The
+    algorithm will return 30% of the predicted poses form \"Subreference
+    1\" and 70 % from \"Subreference 4\":
 
 ![Download (2).png\|height=\"300\",width=\"500\"](attachment:Download (2).png)
 
--   \'\'\'old (non) normalized:\'\'\' old naive pose prediction. It is
-    not recommended to use it due its bad performance.
+-   **old (non) normalized:** old naive pose prediction. It is not
+    recommended to use it due its bad performance.
 
 It is very important to set the parameter \"sampleFactor\" wisely (see
 Section Tutorial). The sampleFactor indirectly affects the returned
@@ -63,13 +62,13 @@ desired algorithm and see the code tutorial described below.
 
 ## Needed packages
 
--   \'\'\'asr_lib_ism:\'\'\' for complex ISM-data-structure and
-    data-base connection
+-   **asr_lib_ism:** for complex ISM-data-structure and data-base
+    connection
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'asr_msgs:\'\'\' basic data-structure and messages
+-   **asr_msgs:** basic data-structure and messages
 
 ## Start system
 

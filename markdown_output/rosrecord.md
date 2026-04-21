@@ -1,7 +1,7 @@
-  -- ------------------------------------------------------------------------- --
-     \<#FFFF00\> \'\'\'As of ROS 1.1.5, rosrecord has been deprecated.\'\'\'   
-     \<#FFFF00\> \'\'\'For C Turtle, see [rosbag](rosbag)\'\'\'                
-  -- ------------------------------------------------------------------------- --
+  -- ----------------------------------------------------------------- --
+     \<#FFFF00\> **As of ROS 1.1.5, rosrecord has been deprecated.**   
+     \<#FFFF00\> **For C Turtle, see [rosbag](rosbag)**                
+  -- ----------------------------------------------------------------- --
 
 ## Status
 
@@ -29,7 +29,7 @@ a bag file. \`open\` is used to open the file. Messages can then be
 added with sequential calls to \`record\`. When the bag file is
 complete, close it using \`close\`.
 
-\'\'\'Example:\'\'\' To put your own message into a bag file
+**Example:** To put your own message into a bag file
 ```cplusplus
 #include "rosrecord/Recorder.h"
 
@@ -64,7 +64,7 @@ templated on a particular type. The corresponding callback will be
 invoked when a message matching this topic and type is extracted from
 the bag through a call to \`player.nextMsg()\`.
 
-\'\'NOTE:\'\' The Player also has the ability to optionally construct a
+*NOTE:* The Player also has the ability to optionally construct a
 shifted and scaled time-line for your messages. This is what the
 \`start_time\` in the open call corresponds to. When the The callback is
 invoked it is passed TWO times. The first is a shifted and scaled
@@ -78,7 +78,7 @@ times: 30, 40, 50. If start_time is specified as 100 and time_scale is
 specified as 5, the shifted/scaled times passed into your callback would
 be 100, 102, 104.
 
-\'\'\'Example:\'\'\' Iterating through a bag file programmatically
+**Example:** Iterating through a bag file programmatically
 ```cplusplus
 #include "ros/ros.h"
 #include <string>

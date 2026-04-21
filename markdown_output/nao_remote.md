@@ -10,14 +10,14 @@ its own package at [nao_teleop](nao_teleop).
 When the remote nodes for Nao are up and running, you can visualize the
 following topics in [rviz](rviz) (set fixed and target frame to /odom):
 
--   \'\'\'Robot Model\'\'\': Basic visualization of Nao\'s joint state
-    (from [nao_description](nao_description) through
+-   **Robot Model**: Basic visualization of Nao\'s joint state (from
+    [nao_description](nao_description) through
     [robot_state_publisher](robot_state_publisher)), topic
     \"robot_description\"
--   \'\'\'TF\'\'\': full transforms to all joints and cameras (from
+-   **TF**: full transforms to all joints and cameras (from
     [nao_description](nao_description) through
     [robot_state_publisher](robot_state_publisher))
--   \'\'\'Odometry\'\'\': topic \"/odom\"
+-   **Odometry**: topic \"/odom\"
 
 ## Nodes
 

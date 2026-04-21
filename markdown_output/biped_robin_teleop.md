@@ -77,9 +77,9 @@ req_tf{
 
 There are several launch files to start up the teleoperation:
 
--   \'\'\'joystick.launch \'\'\'- starts the joystick_teleop and
-    biped_teleop nodes.
--   \'\'\'joystick_real.launch\'\'\' - like joystick.launch but also
-    starts the drivers for BipedRobin
--   \'\'\'joystick_simulated.launch \'\'\'- like joystick.launch but
-    also starts a simulation of BipedRobin.
+-   **joystick.launch **- starts the joystick_teleop and biped_teleop
+    nodes.
+-   **joystick_real.launch** - like joystick.launch but also starts the
+    drivers for BipedRobin
+-   **joystick_simulated.launch **- like joystick.launch but also starts
+    a simulation of BipedRobin.

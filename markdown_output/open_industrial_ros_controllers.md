@@ -1,6 +1,6 @@
 [Included page Industrial/Software_Status/Experimental not found](Included page Industrial/Software_Status/Experimental not found)
 
-/!\\ The development of this package is done and you\'re \'\'\'NOT\'\'\'
+/!\\ The development of this package is done and you\'re **NOT**
 encouraged to create new packages that depend on this. New users should
 consider using [ros_control](ros_control). Also, this package has
 nothing to do with any of ROS-Industrial packages.

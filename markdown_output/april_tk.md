@@ -10,8 +10,8 @@ instructions at <http://april.eecs.umich.edu/wiki/index.php/April_Tags>
 ### Camera Viewer
 
 Since the [april_tags_node](april_tags_node) package subscribes to a ROS
-image topic for the camera stream, it is \'\'not essential\'\' for this
-node to work. However, if you intend to run the standalone tools in the
+image topic for the camera stream, it is *not essential* for this node
+to work. However, if you intend to run the standalone tools in the
 [april_tk](april_tk) package, you\'ll need this viewer to work.
 ```
 rosrun april_tk execute april.jcam.JCamView

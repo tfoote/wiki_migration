@@ -63,8 +63,8 @@ param {
 }
 ```
 
-Each \'\'\`source_name\`\'\' in \`observation_sources\` defines a
-namespace in which parameters can be set:
+Each *\`source_name\`* in \`observation_sources\` defines a namespace in
+which parameters can be set:
 
 ```clearsilver
 param {

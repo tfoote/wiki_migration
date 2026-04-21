@@ -3,7 +3,7 @@ Also check the [xsens_mti](xsens_mti) package.
 ## Supported Hardware
 
   -- ------------------------------- -- --------------------------- --
-     \'\'\'Xsens MTi\'\'\'              \'\'\'Xsens MTi-G\'\'\'     
+     **Xsens MTi**                      **Xsens MTi-G**             
      ![](attachment:xsens_mti.jpg)      ![](attachment:MTi-G.jpg)   
   -- ------------------------------- -- --------------------------- --
 

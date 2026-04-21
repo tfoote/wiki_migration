@@ -10,7 +10,7 @@ using ecl::CovarianceEllipsoid;
 using ecl::CovarianceEllipsoid2f; // also 2d, 3f, 3d typedef variants
 ```
 
-If outside of ros, you will also need to link to \'\'ecl_statistics\'\'.
+If outside of ros, you will also need to link to *ecl_statistics*.
 
 ## Tutorials
 

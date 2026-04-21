@@ -1,11 +1,11 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Overview
 
 ![Clober Robot\|width=400](attachment:clober/clober_right.png)
 
-\'\'\'Clober Free Fleet\'\'\' packages are based \'free_fleet\' provided
-by open-rmf. Clober Free Fleet can integrate multiple clobers.
+**Clober Free Fleet** packages are based \'free_fleet\' provided by
+open-rmf. Clober Free Fleet can integrate multiple clobers.
 
 ## Clober e-Manual
 

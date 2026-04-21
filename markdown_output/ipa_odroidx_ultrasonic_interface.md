@@ -34,23 +34,23 @@ The following table summarizes the input and output connections to and
 from the sensors connected to the controller board. The table is with
 respect to the micro controller.
 
-  -- ---------------------------- -- ------------------------ -- ----------------------- --
-     \'\'\'Sensor Address\'\'\'      \'\'\'Output Pin\'\'\'      \'\'\'Input Pin\'\'\'   
-     0                               PA0                         PB0                     
-     1                               PA1                         PB1                     
-     2                               PA2                         PB2                     
-     3                               PA3                         PB3                     
-     4                               PA4                         PB4                     
-     5                               PA5                         PB6                     
-     6                               PA6                         PC7                     
-     7                               PD0                         PA7                     
-     8                               PD1                         PC6                     
-     9                               PD2                         PC5                     
-     10                              PD3                         PC4                     
-     11                              PD4                         PC3                     
-     12                              PD5                         PC2                     
-     13                              PD6                         PD7                     
-  -- ---------------------------- -- ------------------------ -- ----------------------- --
+  -- -------------------- -- ---------------- -- --------------- --
+     **Sensor Address**      **Output Pin**      **Input Pin**   
+     0                       PA0                 PB0             
+     1                       PA1                 PB1             
+     2                       PA2                 PB2             
+     3                       PA3                 PB3             
+     4                       PA4                 PB4             
+     5                       PA5                 PB6             
+     6                       PA6                 PC7             
+     7                       PD0                 PA7             
+     8                       PD1                 PC6             
+     9                       PD2                 PC5             
+     10                      PD3                 PC4             
+     11                      PD4                 PC3             
+     12                      PD5                 PC2             
+     13                      PD6                 PD7             
+  -- -------------------- -- ---------------- -- --------------- --
 
 ## Usage/Examples
 

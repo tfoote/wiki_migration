@@ -2,9 +2,9 @@
 
 ![\|height=\"740px\"](attachment:miahand1.png)
 
-\'\'\'Mia\'\'\' is a robotic anthropomorphic end-effector, suitable in:
-flexible manufacturing plants, social and/or humanoid collaborative
-robots, bio-automation, ergonomics, prosthetics, human-machine interface
+**Mia** is a robotic anthropomorphic end-effector, suitable in: flexible
+manufacturing plants, social and/or humanoid collaborative robots,
+bio-automation, ergonomics, prosthetics, human-machine interface
 research, and wherever a gripper with hand-like features may become
 handy. The three embedded motors allow to interact with the environment
 and to grasp objects and tools using power, precision and lateral
@@ -26,7 +26,7 @@ see [ Mia home page](https://www.prensilia.com/portfolio/mia/).
 
 ## Repository
 
-The \'\'\'mia_hand_ros_pkgs\'\'\'
+The **mia_hand_ros_pkgs**
 [repository](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/)
 contains packages for controlling the robotic hand in real and in Gazebo
 simulated environment. This metapackage provides also URDF models of the
@@ -91,9 +91,9 @@ To report bug or issues please use
 
 ### Acknowledgments
 
-The development of the \'\'\'mia_hand_ros_pkgs repository\'\'\' was
-supported by by the European Commission under the Horizon 2020 framework
-program for Research and Innovation within
+The development of the **mia_hand_ros_pkgs repository** was supported by
+by the European Commission under the Horizon 2020 framework program for
+Research and Innovation within
 [ the APRIL project](http://aprilproject.eu/) (multipurpose robotics for
 mAniPulation of defoRmable materIaLs in manufacturing processes, number:
 870142).

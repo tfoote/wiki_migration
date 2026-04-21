@@ -1,12 +1,12 @@
-\'\'\'Maintainer:\'\'\' Mirza A. Shah\
-\'\'\'Author:\'\'\' Mirza A. Shah\
-\'\'\'URL:\'\'\' <https://github.com/mirzashah/shield_teleop>\
-\'\'\'License:\'\'\' BSD\
+**Maintainer:** Mirza A. Shah\
+**Author:** Mirza A. Shah\
+**URL:** <https://github.com/mirzashah/shield_teleop>\
+**License:** BSD\
 
 ## Overview
 
-\'\'\'shield_teleop\'\'\' is an application for the nVidia SHIELD
-handheld gaming console. As the SHIELD is a 100% pure Android device,
+**shield_teleop** is an application for the nVidia SHIELD handheld
+gaming console. As the SHIELD is a 100% pure Android device,
 shield_teleop is an Android app. When the app starts running, it will
 begin publish [sensor_msgs/Joy](sensor_msgs/Joy) that mimic the messages
 produced by [ps3_teleop](ps3_teleop) on Ubuntu. The app all displays a

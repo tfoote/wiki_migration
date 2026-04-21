@@ -275,9 +275,9 @@ somewhat similar to this:
 $  cd home/catkin_ws/src/
 ``` Once the \"gesture.py\" script file is saved in
 this directory it can now communicate with all of the other nodes within
-RoS. \'\'\'It is imperative that this script is in this file location in
-the catkin workspace source folder or else the python file will NOT be
-able to interface with the Kinect sensor or the Turtle Bot.\'\'\'
+RoS. **It is imperative that this script is in this file location in the
+catkin workspace source folder or else the python file will NOT be able
+to interface with the Kinect sensor or the Turtle Bot.**
 
 ### Putting Everything Together
 
@@ -316,11 +316,11 @@ new user has been identified, assume the
 to calibrate the Kinect sensor to your body. Hold this pose until the
 program has successfully calibrated itself.
 
-\'\'\'The body tracking will NOT work until you have successfully
-calibrated the Kinect sensor. Also note that the python script will NOT
-work if the user is not defined as USER 1. If a different user number is
-assigned type CTRL + C in the terminal and enter the previous command
-again until User 1 is defined as the current user.\'\'\'
+**The body tracking will NOT work until you have successfully calibrated
+the Kinect sensor. Also note that the python script will NOT work if the
+user is not defined as USER 1. If a different user number is assigned
+type CTRL + C in the terminal and enter the previous command again until
+User 1 is defined as the current user.**
 
 #### How to Control the Robot
 

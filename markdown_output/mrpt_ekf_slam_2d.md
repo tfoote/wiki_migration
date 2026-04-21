@@ -7,9 +7,9 @@ form of range-bearing observations.
 ## Further documentation
 
 The ROS node mrpt_ekf_slam_2d is a wrapper for the C++
-class[mrpt::slam::CRangeBearingKFSLAM2D](http://mrpt.ual.es/reference/devel/classmrpt_1_1slam_1_1_c_range_bearing_k_f_s_l_a_m2_d.html)\'\'\'
-\'\'\', part of MRPT. Thus, check out the documentation of that class
-for further details.
+class[mrpt::slam::CRangeBearingKFSLAM2D](http://mrpt.ual.es/reference/devel/classmrpt_1_1slam_1_1_c_range_bearing_k_f_s_l_a_m2_d.html)**
+**, part of MRPT. Thus, check out the documentation of that class for
+further details.
 
 For the convention on coordinate frames see
 [ROS REP 105: \"Coordinate Frames for Mobile Platforms\"](http://ros.org/reps/rep-0105.html).

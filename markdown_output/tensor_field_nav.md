@@ -31,18 +31,18 @@ global path planning for efficient scene scanning.
 
 Our tensor_field_nav package is composed of five sub-packages:
 
-1\) \'\'\'octomap_tensor_field\'\'\' for mapping based on
+1\) **octomap_tensor_field** for mapping based on
 [Octomap](https://octomap.github.io/%Octomap)
 
-2\) \'\'\'odom_tf_publish\'\'\' for monitoring robot position
+2\) **odom_tf_publish** for monitoring robot position
 
-3\) \'\'\'pure_pursuit_controller\'\'\' for controlling robot movement
+3\) **pure_pursuit_controller** for controlling robot movement
 
-4\) \'\'\'rviz_textured_quads\'\'\' for visualizing tensor field in rviz
+4\) **rviz_textured_quads** for visualizing tensor field in rviz
 
-5\) \'\'\'tensor_field_nav_core\'\'\' is the core sub-package of our
-method used for computing and updating tensor field and achieving
-field-guided robot exploration and scanning.
+5\) **tensor_field_nav_core** is the core sub-package of our method used
+for computing and updating tensor field and achieving field-guided robot
+exploration and scanning.
 
 ## Contributors and Publication
 

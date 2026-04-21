@@ -3,11 +3,10 @@
 Streams provide a standardised c++ interface for connecting to ecl
 input-output devices.
 
--   \'\'speed\'\' : control cannot afford serious slowdowns for
-    convenience.
--   \'\'extensible\'\' : must be able to create new devices easily.
--   \'\'streams\'\' : all devices should connect in a standardised way
-    to streams.
+-   *speed* : control cannot afford serious slowdowns for convenience.
+-   *extensible* : must be able to create new devices easily.
+-   *streams* : all devices should connect in a standardised way to
+    streams.
 
 ## Other Streaming Libraries
 
@@ -44,7 +43,7 @@ using ecl::endl;
 using ecl::clrscr;
 ```
 
-If outside ros, you will also need to link to \'\'ecl_streams\'\'.
+If outside ros, you will also need to link to *ecl_streams*.
 
 ## Tutorials
 

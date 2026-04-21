@@ -15,9 +15,9 @@ Steps:
 
 1\. Run the \`proxy\` node. The \`proxy\` accepts a whitelist of
 services and topics that it proxies. You probably want to explicitly set
-the TCPROS and XML-RPC ports as well to simplify configuration. 2.
-\'\'For each external master\'\', run the \`register.py\` script for
-each service and topic that you wish to proxy into the external master.
+the TCPROS and XML-RPC ports as well to simplify configuration. 2. *For
+each external master*, run the \`register.py\` script for each service
+and topic that you wish to proxy into the external master.
 
 ## Scripts
 

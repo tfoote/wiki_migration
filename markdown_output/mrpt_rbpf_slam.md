@@ -18,12 +18,12 @@ This package supports the following Particle Filter SLAM algorithms
     approximation to the optimal proposal when a closed-form expression
     is not available (enum value: pfAuxiliaryPFOptimal)
 
-These algorithms allow building \'\'\'grid map or range-only map\'\'\'.
+These algorithms allow building **grid map or range-only map**.
 
 ## Further documentation
 
-The ROS node \`mrpt_rbpf_slam\` is a wrapper for the C++ class\'\'\'
-\'\'\'[mrpt::slam::CMetricMapBuilderRBPF](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_metric_map_builder_r_b_p_f.html),
+The ROS node \`mrpt_rbpf_slam\` is a wrapper for the C++ class**
+**[mrpt::slam::CMetricMapBuilderRBPF](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_metric_map_builder_r_b_p_f.html),
 part of MRPT. Check out the documentation of this class for further
 details.
 

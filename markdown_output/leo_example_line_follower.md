@@ -12,12 +12,12 @@ use of a neural network model, that had been trained on a color mask
 ``` In
 the package you can find default configuration, which consists of: 1. A
 few trained neural network models 2. A couple of predefined HSV bounds
-in the \'\'yaml\'\' files for catching the color mask
+in the *yaml* files for catching the color mask
 
 The package also contains nodes, scripts, and notebooks prepared for
 gathering and processing your training data, and training your own
 model, if you would like to (detailed instructions about training, your
-own model in the \'\'\'note\'\'\' above the contents).
+own model in the **note** above the contents).
 
 It is one of a couple of packages made for showing an example usage of a
 stock [Leo Rover](Robots/Leo Rover).
@@ -44,10 +44,9 @@ messages. model:: The path to the neural network model.
 To run the color mask finder node, simply type: ```
 roslaunch leo_example_line_follower color_mask.launch
 ```
-Then you need to run rqt, and from the plugins choose: 1. The
-\'\'\'Image View\'\'\' - to see the color mask for the current HSV
-bounds. 2. The \'\'\'Dynamic Reconfigure\'\'\' - to choose the HSV
-bounds with the sliders.
+Then you need to run rqt, and from the plugins choose: 1. The **Image
+View** - to see the color mask for the current HSV bounds. 2. The
+**Dynamic Reconfigure** - to choose the HSV bounds with the sliders.
 
 After specifying your bounds, you can kill the node and it will print
 your configuration on the standard output.

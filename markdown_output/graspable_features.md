@@ -29,7 +29,7 @@ roslaunch graspable_features pr2_interactive_manipulation_with_GripperClick_Voxe
 Note that this launch file will bring up rviz. The PR2 Interactive
 Manipulation tools are implemented as
 [rviz plugins](rviz/UserGuide#Plugins). In particular, you will see the
-\'\'\'Interactive manipulation\'\'\' dialog pop up:
+**Interactive manipulation** dialog pop up:
 
 ![](attachment:interactive_manip_screenshot.png)
 

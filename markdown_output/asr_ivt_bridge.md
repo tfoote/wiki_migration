@@ -28,18 +28,17 @@ subscribed/published topics or services.
 
 ## Tutorials
 
-Include\'\' ivt_image.h\'\' and/or \'\'ivt_calibration.h\'\' to your
-code, depending on what you want to convert (images or camera
-calibrations).
+Include* ivt_image.h* and/or *ivt_calibration.h* to your code, depending
+on what you want to convert (images or camera calibrations).
 
 ------------------------------------------------------------------------
 
-\'\'\'Convert an image\'\'\'
+**Convert an image**
 
-To convert a \'\'sensor_msgs::Image\'\' to a \'\'CByteImag\'\'e of the
-IVT-library call one of the following functions (notice that the
-\'\'toIvtCopy\'\'-functions create a copy of the input messages while
-the other ones try to share the data if possible):
+To convert a *sensor_msgs::Image* to a *CByteImag*e of the IVT-library
+call one of the following functions (notice that the
+*toIvtCopy*-functions create a copy of the input messages while the
+other ones try to share the data if possible):
 
 ```
 IvtImagePtr toIvtCopy(const sensor_msgs::ImageConstPtr& source, const std::string& encoding = std::string());
@@ -49,12 +48,11 @@ IvtImagePtr toIvtCopy(const sensor_msgs::Image& source, const std::string& encod
 ```
 IvtImageConstPtr toIvtShare(const sensor_msgs::ImageConstPtr& source, const std::string& encoding = std::string());
 IvtImageConstPtr toIvtShare(const sensor_msgs::Image& source, const boost::shared_ptr<void const>& tracked_object, const std::string& encoding = std::string());
-``` The return-value is a
-\'\'!IvtImagePtr\'\'-object, which contains a \'\'CByteImage\*\'\'
-member called image.
+``` The return-value is a *!IvtImagePtr*-object,
+which contains a *CByteImage\** member called image.
 
-To convert such an \'\'!IvtImage\'\' back to ROS call one of the
-following member functions:
+To convert such an *!IvtImage* back to ROS call one of the following
+member functions:
 
 ```
 sensor_msgs::ImagePtr toImageMsg() const;
@@ -63,14 +61,14 @@ void toImageMsg(sensor_msgs::Image& ros_image) const;
 
 ------------------------------------------------------------------------
 
-\'\'\'Convert camera calibration messages:\'\'\'
+**Convert camera calibration messages:**
 
-To convert a ROS \'\'sensor_msgs::!CameraInfo\'\' to an IVT
-\'\'CCalibration\'\' instantiate either an \'\'!IvtCalibration\'\' or an
-\'\'!IvtStereoCalibration\'\' object (depends on your camera system:
-mono or stereo). Then call one of the provided member functions with the
-ROS-!CameraInfo-message you want to convert (for a stereo system you
-have to provide messages of both cameras of course):
+To convert a ROS *sensor_msgs::!CameraInfo* to an IVT *CCalibration*
+instantiate either an *!IvtCalibration* or an *!IvtStereoCalibration*
+object (depends on your camera system: mono or stereo). Then call one of
+the provided member functions with the ROS-!CameraInfo-message you want
+to convert (for a stereo system you have to provide messages of both
+cameras of course):
 
 ```
 bool fromCameraInfo(const sensor_msgs::CameraInfo& msg);

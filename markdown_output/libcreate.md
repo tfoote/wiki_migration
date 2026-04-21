@@ -1,7 +1,7 @@
 ## About
 
-\'\'\'libcreate\'\'\' is a C++ library for interfacing with iRobot
-Create and Roomba platforms. For ROS bindings, see
+**libcreate** is a C++ library for interfacing with iRobot Create and
+Roomba platforms. For ROS bindings, see
 [create_autonomy](create_autonomy).
 
 ## Supported Robots

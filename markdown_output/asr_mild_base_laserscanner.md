@@ -73,7 +73,7 @@ laserscanner!
 ### Published Topics
 
 \_/scan\_ (
-[sensor_msgs/LaserScan.msg](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)\'\')\'\'
+[sensor_msgs/LaserScan.msg](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)*)*
 
 Includes an array of all scanned points of one iteration with its
 distance information.

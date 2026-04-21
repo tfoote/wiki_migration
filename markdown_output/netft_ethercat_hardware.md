@@ -8,8 +8,7 @@ controllers to obtain force/torque values as
 [analog inputs](http://www.ros.org/doc/api/pr2_hardware_interface/html/classpr2__hardware__interface_1_1AnalogIn.html)
 
 If force/torque data is not needed by realtime controllers, consider
-using \'\'\'netft_node\'\'\' from [netft_rdt_driver](netft_rdt_driver)
-package.
+using **netft_node** from [netft_rdt_driver](netft_rdt_driver) package.
 
 ## Install
 

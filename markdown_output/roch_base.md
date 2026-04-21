@@ -11,9 +11,9 @@ And also refrence [husky_base](husky_base).
 
 The \`roch_base\` package has some demos for testing whether normal for
 data of sensors, such as ultrasonic， psd, cliff etc. And also has a
-demo of launch files, you can checkout what in. \'\'\'roch_node\'\'\' is
-core node for \`roch_base\` package. And all hardware interface is
-configured by [roch_control](roch_control) package. { }}}}
+demo of launch files, you can checkout what in. **roch_node** is core
+node for \`roch_base\` package. And all hardware interface is configured
+by [roch_control](roch_control) package. { }}}}
 
 ## Demos
 
@@ -31,7 +31,7 @@ At first, make sure you had finished under:
 
 -   1.Roch has power on.
 -   2.USB cable Roch and your computer.
--   3.Make sure you has run \'\'\'\'\'roscore\'\'\'\'\'.
+-   3.Make sure you has run ***roscore***.
 
 ```
 rosrun roch_base test_<name_you_want>

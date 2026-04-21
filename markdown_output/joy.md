@@ -59,8 +59,8 @@ node.0 {
 
 ## Using this Package
 
-For an example of using \'\'\'joy_node\'\'\' to control a teleoperation
-node with a joystick, see the [tutorials](joy/Tutorials).
+For an example of using **joy_node** to control a teleoperation node
+with a joystick, see the [tutorials](joy/Tutorials).
 
 In some cases, multiple joysticks may control a single robot. For
 example, a user may use the default joystick to drive a robot, but a

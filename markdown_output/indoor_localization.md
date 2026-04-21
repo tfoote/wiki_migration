@@ -358,7 +358,7 @@ using location. Regions can be defined with corners coordinates.
 The following KPIs are defined for mobile robots whose positions are
 determined by the positioning system.
 
-\'\'\'KPI 1: Distance Travelled\'\'\'
+**KPI 1: Distance Travelled**
 
 Distance Travelled shows total distance taken by mobile robot over the
 specified period such as working hours. It is defined as the summation
@@ -371,7 +371,7 @@ of all individual distances taken over the period.
 It's a simple metric but it serves as the cornerstone. This KPI shows
 the mobility of the mobile robot.
 
-\'\'\'KPI 2: Idle Time\'\'\'
+**KPI 2: Idle Time**
 
 Idle Time is the total of time that the mobile robot is stationary while
 it is running over the specified period . It is defined as the summation
@@ -384,7 +384,7 @@ of all individual stationary times over the period.
 This KPI generally shows that how much time the mobile robot is unused.
 Most of the case, more Idle Time indicates less Efficiency.
 
-\'\'\'KPI 3: Motion Time\'\'\'
+**KPI 3: Motion Time**
 
 Motion Time is the total of time that the mobile robot is moving over
 the specified period. It is defined as the summation of all individual
@@ -398,7 +398,7 @@ This KPI generally shows that how much time the mobile robot is used.
 Motion time can be interpreted as the working time of the mobile robot.
 Most of the case, more Motion Time indicates high Efficiency.
 
-\'\'\'KPI 4: Efficiency\'\'\'
+**KPI 4: Efficiency**
 
 The main duty of a mobile robot is to move. Therefore, efficiency can be
 defined as how much of the period it moves. It is defined as the
@@ -412,7 +412,7 @@ The period used in Efficiency KPI and Motion Time KPI must be the same.
 This KPI, with the working time versions, is one of the main indicators
 used in all industrial sectors.
 
-\'\'\'KPI 5: Region Based Distance Travelled\'\'\'
+**KPI 5: Region Based Distance Travelled**
 
 This KPI is a region specific version of the Distance Travelled KPI. It
 uses only distances taken in the specified region over the specified
@@ -426,7 +426,7 @@ This KPI can be used for regional analysis of the mobility. It can also
 be used to check forbidden zones enterance and travelled distance in
 them.
 
-\'\'\'KPI 6: Region Based Total Time\'\'\'
+**KPI 6: Region Based Total Time**
 
 Region Based Total Time is the total of time that the mobile robot is in
 the specified region over the specified period . It is defined as the
@@ -439,7 +439,7 @@ summation of all individual elapsed times in the region over the period.
 This KPI can be used for regional analysis of the presence. It can also
 be used to check forbidden zones enterance and time elapsed in them.
 
-\'\'\'KPI 7: Region Based Idle Time\'\'\'
+**KPI 7: Region Based Idle Time**
 
 This KPI is a region specific version of the Idle Time KPI. It uses only
 stationary times in the specified region over the specified period. It
@@ -454,7 +454,7 @@ This KPI can be used for regional analysis of the idle time of the
 mobile robot. Generally, the less efficient regions have more region
 based idle time.
 
-\'\'\'KPI 8: Region Based Motion Time\'\'\'
+**KPI 8: Region Based Motion Time**
 
 This KPI is a region specific version of the Motion Time KPI. It uses
 only movement times in the specified region over the specified period.
@@ -469,7 +469,7 @@ This KPI shows how much time the mobile robot is used in that region.
 Generally, the less efficient regions have less region based movement
 time.
 
-\'\'\'KPI 9: Region Based Efficiency\'\'\'
+**KPI 9: Region Based Efficiency**
 
 This KPI is a region specific version of the Efficiency KPI. It is
 defined as the percentage of the Region Based Motion Time to the Region

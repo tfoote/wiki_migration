@@ -4,9 +4,9 @@
 simplifies interpreting images geometrically using the parameters from
 \<\<MsgLink(sensor_msgs/CameraInfo)\>\>. Although \`CameraInfo\`
 contains all the information required to rectify a raw image and project
-points onto it, \'\'\'it is highly recommended that you use this
-library\'\'\', since performing these operations correctly over the
-space of all camera options can be non-trivial.
+points onto it, **it is highly recommended that you use this library**,
+since performing these operations correctly over the space of all camera
+options can be non-trivial.
 
 The camera parameters in \`CameraInfo\` are for a full-resolution image;
 region-of-interest alone significantly complicates the creation of

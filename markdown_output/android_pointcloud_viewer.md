@@ -18,11 +18,11 @@ messages via ros.
 For using this application as-is, without code modifications: 1. Install
 the app on your phone, using android-studio. 1. Run the application. 1.
 Enter details for ros-master, and press connect. 1. Publish a
-PointCloud2 message that you wish to view. \'\'\'\'\'NOTE\'\'\'\'\': it
-may take a few seconds (up to 30 seconds) until the message is being
-fully processed. Details about the default structure of the message can
-be found [here](#structure). 1. Use the different controls available to
-view the Pointcloud2 message. Details about the controls can be found
+PointCloud2 message that you wish to view. ***NOTE***: it may take a few
+seconds (up to 30 seconds) until the message is being fully processed.
+Details about the default structure of the message can be found
+[here](#structure). 1. Use the different controls available to view the
+Pointcloud2 message. Details about the controls can be found
 [here](#controls).
 
 ## Controls
@@ -32,12 +32,12 @@ slider, which can be found on the right side of the screen. Sliding this
 contol up will move the camera in (\"step in\"), and sliding it down
 will have the same effect to the opposite direction. 1. A 2-dimensional
 joystick, which can be found beneath the slider. Use it to move the
-camera vertically or horizontally. 1. Gestures: a. \'\'Rotation\'\' -
-will rotate the camera on its z-axis (clockwise/counter-clockwise). a.
-\'\'1-Finger swiping\'\' - will move the camera\'s view horizontally or
-vertically. a. \'\'2-Finger swiping\'\' - will rotate the point cloud on
-its center. a. \'\'Double click\'\' - will reset the view, and move the
-camera to the center of the point cloud.
+camera vertically or horizontally. 1. Gestures: a. *Rotation* - will
+rotate the camera on its z-axis (clockwise/counter-clockwise). a.
+*1-Finger swiping* - will move the camera\'s view horizontally or
+vertically. a. *2-Finger swiping* - will rotate the point cloud on its
+center. a. *Double click* - will reset the view, and move the camera to
+the center of the point cloud.
 
 ## Default structure for PointCloud2 message
 

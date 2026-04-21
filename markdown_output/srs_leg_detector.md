@@ -4,7 +4,7 @@ SRS human sensing uses the laser range finders of the Care-O-bot to
 locate a person arond the robot.
 
 The results of the detection, i.e. the coordinates of the tracked people
-are published to a topic,i.e \'\'\'/tracked_people\'\'\'
+are published to a topic,i.e **/tracked_people**
 
 ## Usage/Examples
 

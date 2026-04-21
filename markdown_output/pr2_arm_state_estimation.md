@@ -25,18 +25,17 @@ is optional to include Bosch SMI540 gyroscopes.
 The state of a three-dimensional robotic manipulator considered here is
 the joint angles and velocities. By incorporating a gyroscope on each
 link, the joint velocities can be directly and accurately measured.
-Joint acceleration is not considered. Using \'\'a priori\'\' knowledge
-of the manipulator kinematics and the corresponding accelerometer
-mounting, a unified state estimate for the joint angles can be obtained
-using an Extended Kalman Filter. A critical requirement for the proposed
-approach is the accelerometer must be able to sense the acceleration due
-to gravity at all times. Our approach utilizes the gravity component of
-the acceleration while ignoring the centripetal and centrifugal
-components. The robot moves slowly to be safe around humans, and the
-movements are slow enough to justify this assumption. However, any high
-frequency motions of the manipulator arm may result in unstable readings
-from the accelerometers, thereby introducing offsets which cannot be
-compensated.
+Joint acceleration is not considered. Using *a priori* knowledge of the
+manipulator kinematics and the corresponding accelerometer mounting, a
+unified state estimate for the joint angles can be obtained using an
+Extended Kalman Filter. A critical requirement for the proposed approach
+is the accelerometer must be able to sense the acceleration due to
+gravity at all times. Our approach utilizes the gravity component of the
+acceleration while ignoring the centripetal and centrifugal components.
+The robot moves slowly to be safe around humans, and the movements are
+slow enough to justify this assumption. However, any high frequency
+motions of the manipulator arm may result in unstable readings from the
+accelerometers, thereby introducing offsets which cannot be compensated.
 
 When the joint axis is not parallel to the gravity vector, the joint
 angle is estimated using accelerometer measurements and compensated

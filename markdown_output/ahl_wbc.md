@@ -1,9 +1,8 @@
 # What is Whole Body Control ?
 
-Here,\'\'whole body control\'\' means a control framework proposed by
-Prof. Oussama Khatib. The framework is also known as \'\'task space
-control\'\', \'\'operational space control\'\', or \'\'operational space
-formulation\'\'.
+Here,*whole body control* means a control framework proposed by Prof.
+Oussama Khatib. The framework is also known as *task space control*,
+*operational space control*, or *operational space formulation*.
 
 When you control a robot with many joints, it\'s hard to compute a
 desired angle/torque set of joints. Traditional approach is inverse

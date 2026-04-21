@@ -14,7 +14,7 @@ This node subscribe to the specified
 [sensor_msgs](sensor_msgs)/joint_states topic, and publishes a remapped
 vector on the specified sendupdate topic. It simply multiplies the input
 vector by a mapping matrix which is loaded into the parameter server by
-the \'\'\'remapper_glove.launch\'\'\' file.
+the **remapper_glove.launch** file.
 
 You can find the default mapping matrix in
 [sr_control_gui](sr_control_gui)/param/GloveToHandMappings_generic.
@@ -23,24 +23,23 @@ You can find the default mapping matrix in
 
 ### Subscribed Topics
 
--   \'\'\'{cyberglove_prefix}/calibrated/joint_states\'\'\': Subscribes
-    to the calibrated data coming from the Cyberglove.
-    \'\'\'{cyberglove_prefix}\'\'\' is defined in the parameters.
+-   **{cyberglove_prefix}/calibrated/joint_states**: Subscribes to the
+    calibrated data coming from the Cyberglove. **{cyberglove_prefix}**
+    is defined in the parameters.
 
 ### Published Topics
 
--   \'\'\'{sendupdate_prefix}/sendupdate\'\'\': Publishes the targets to
-    this topic, where \'\'\'{sendupdate_prefix}\'\'\' is defined in the
-    parameters.
+-   **{sendupdate_prefix}/sendupdate**: Publishes the targets to this
+    topic, where **{sendupdate_prefix}** is defined in the parameters.
 
 ### Parameters
 
--   \'\'\'cyberglove_prefix\'\'\': The prefix on which the Cyberglove
-    published data, generally \'\'\'/cyberglove\'\'\'.
--   \'\'\'sendupdate_prefix\'\'\': The prefix on which the robot listens
-    for targets, generally \'\'\'/srh\'\'\'
--   \'\'\'cyberglove_mapping_path\'\'\': The path to the file containing
-    the mapping matrix.
+-   **cyberglove_prefix**: The prefix on which the Cyberglove published
+    data, generally **/cyberglove**.
+-   **sendupdate_prefix**: The prefix on which the robot listens for
+    targets, generally **/srh**
+-   **cyberglove_mapping_path**: The path to the file containing the
+    mapping matrix.
 
 ## Internal Mechanics
 

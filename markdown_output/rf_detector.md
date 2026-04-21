@@ -14,9 +14,9 @@ input from the [texture_light_on_off](texture_light_on_off) node.
 
 rf_detector subscribes to three ROS topics:
 
--   \'\'\'/t_on_off/image\'\'\'
--   \'\'\'/t_on_off/caminfo\'\'\'
--   \'\'\'/t_on_off/dense_cloud\'\'\'
+-   **/t_on_off/image**
+-   **/t_on_off/caminfo**
+-   **/t_on_off/dense_cloud**
 
 After the \`rf_detector\` node receive all three topics, it will start
 detecting objects in the image.

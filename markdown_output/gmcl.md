@@ -33,19 +33,18 @@ Many of the algorithms and their parameters are well-described in the
 book Probabilistic Robotics, by Thrun, Burgard, and Fox. The user is
 advised to check there for more detail. In particular, we use the
 following algorithms from that book:
-\'\'\'\`sample_motion_model_odometry\`\'\'\',
-\'\'\'\`beam_range_finder_model\`\'\'\',
-\'\'\'\`likelihood_field_range_finder_model\`\'\'\',
-\'\'\'\`Augmented_MCL\`\'\'\', and \'\'\'\`KLD_Sampling_MCL\`\'\'\'.
+**\`sample_motion_model_odometry\`**, **\`beam_range_finder_model\`**,
+**\`likelihood_field_range_finder_model\`**, **\`Augmented_MCL\`**, and
+**\`KLD_Sampling_MCL\`**.
 
 ### New Algorithms
 
 Besides algorithms implemented in amcl, gmcl takes advantage of
-\'\'\'\`Optimal particle filter\`\'\'\' as described
-[here](https://ieeexplore.ieee.org/document/4543250) and \'\'\'\`
-Intelligent particle filter\`\'\'\' as described
+**\`Optimal particle filter\`** as described
+[here](https://ieeexplore.ieee.org/document/4543250) and **\`
+Intelligent particle filter\`** as described
 [here](https://ieeexplore.ieee.org/document/7031437) and
-\'\'\'\`Self-adaptive particle filter\`\'\'\' as described
+**\`Self-adaptive particle filter\`** as described
 [here](https://ieeexplore.ieee.org/document/5262621) to improve the
 performance of amcl while working in real time.
 
@@ -269,7 +268,7 @@ requests please visit
 
 If you have a question, please post it on
 [ROS answers](http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:gmcl/page:1/),
-make sure your question is tagged by \'\'\'gmcl\'\'\' so I get notified.
+make sure your question is tagged by **gmcl** so I get notified.
 
 ## Acknowledgements & Citation
 

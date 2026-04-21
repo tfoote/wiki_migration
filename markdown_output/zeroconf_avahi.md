@@ -1,7 +1,7 @@
 ## Overview
 
 This package provides implementations for [zeroconf](zeroconf) on top of
-linux\'s \'\'avahi-daemon\'\'. There are two implementations:
+linux\'s *avahi-daemon*. There are two implementations:
 
 -   C++ library.
 -   Ros node.
@@ -16,18 +16,18 @@ exposed by the.
 ## How it Works
 
 Both the c++ and node implementations operate on two entities,
-\'\'Listeners\'\' and \'\'Services\'\'.
+*Listeners* and *Services*.
 
-\'\'\'Listeners\'\'\' are used to discover the appearance and
-disappearance of all services belong to a specific service type (e.g.
+**Listeners** are used to discover the appearance and disappearance of
+all services belong to a specific service type (e.g.
 \_ros-master.\_tcp). The usual process is to add a listener and then sit
 back and wait for the callbacks (either c++ or ros subscription) to
 arrive signifying addition or removal of the specified services.
 
-\'\'\'Services\'\'\' are zeroconf services you wish to publish on the
-network. They require a name, service type, port and description. If
-there is a name collision, this package and avahi will rename the
-service so that it is unique for the lifetime of the current connection.
+**Services** are zeroconf services you wish to publish on the network.
+They require a name, service type, port and description. If there is a
+name collision, this package and avahi will rename the service so that
+it is unique for the lifetime of the current connection.
 
 ## Usage
 
@@ -95,4 +95,4 @@ param {
 ```
 
 See the example on static configuration for an illustration of the usage
-of the \'\'listeners\'\' and \'\'services\'\' parameters:
+of the *listeners* and *services* parameters:

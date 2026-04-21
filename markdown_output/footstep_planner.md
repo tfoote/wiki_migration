@@ -13,7 +13,7 @@ Details are available at
 and in the following publications. Please consider citing our paper if
 you use the footstep planner in your research.
 
--   \'\'\'[Anytime Search-Based Footstep Planning with Suboptimality Bounds](http://hrl.informatik.uni-freiburg.de/papers/hornung12humanoids.pdf)\'\'\'
+-   **[Anytime Search-Based Footstep Planning with Suboptimality Bounds](http://hrl.informatik.uni-freiburg.de/papers/hornung12humanoids.pdf)**
     by A. Hornung, A. Dornbush, M. Likhachev, and M. Bennewitz
     (Humanoids 2012). ```
 @INPROCEEDINGS{hornung12humanoids,
@@ -30,7 +30,7 @@ you use the footstep planner in your research.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'[Humanoid Navigation with Dynamic Footstep Plans](http://hrl.informatik.uni-freiburg.de/papers/garimort11icra.pdf)\'\'\'
+-   **[Humanoid Navigation with Dynamic Footstep Plans](http://hrl.informatik.uni-freiburg.de/papers/garimort11icra.pdf)**
     by J. Garimort, A. Hornung, and M. Bennewitz (ICRA 2011).
     ```
 @INPROCEEDINGS{garimort11icra,
@@ -61,9 +61,9 @@ roslaunch footstep_planner footstep_planner_complete.launch
 ``` which loads
 a sample map, starts up the planner, and launches RViz to interact with
 it. Set a \"2D pose estimate\" as start, and a \"2D nav goal\" as goal
-(Hotkeys \'\'\'P\'\'\' and \'\'\'G\'\'\'). After some time (depending on
-footsteps, heuristic and the environment), the planner will visualize
-the footstep plan in RViz or output an error on the terminal.
+(Hotkeys **P** and **G**). After some time (depending on footsteps,
+heuristic and the environment), the planner will visualize the footstep
+plan in RViz or output an error on the terminal.
 
 ![\|](attachment:footsteps_rviz_sample.png)
 

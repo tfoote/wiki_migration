@@ -49,30 +49,29 @@ series robots. Please see the compatibility notes below.
 The latest MotoROS binary (\`v1.5.0\` or higher) requires the following
 controller firmware (or a newer version):
 
-  -- ---------------------------------------------------- -- -------------------------------------------------------------- --
-     \'\'\'Controller\'\'\'                                  \'\'\'Version\'\'\'                                            
-     FS100                                                   \`FS3.30.00-00\` (or newer)                                    
-     DX100                                                   \`DS4.12.00-14\` (or newer, \'\'and\'\' must end in \`-14\`)   
-     DX200                                                   \`DN2.21.00-00\` (or newer)                                    
-     YRC1000                                                 \`YAS1.11.00-00\` (or newer)                                   
-     YRC1000 ([HC robot](attachment:HC Notes.pdf))           \`YAS2.80.00-00\` (or newer)                                   
-     YRC1000micro                                            All controller versions                                        
-     YRC1000micro ([HC robot](attachment:HC Notes.pdf))      \`YBS2.31.00-00\` (or newer)                                   
-  -- ---------------------------------------------------- -- -------------------------------------------------------------- --
+  -- ---------------------------------------------------- -- -------------------------------------------------------- --
+     **Controller**                                          **Version**                                              
+     FS100                                                   \`FS3.30.00-00\` (or newer)                              
+     DX100                                                   \`DS4.12.00-14\` (or newer, *and* must end in \`-14\`)   
+     DX200                                                   \`DN2.21.00-00\` (or newer)                              
+     YRC1000                                                 \`YAS1.11.00-00\` (or newer)                             
+     YRC1000 ([HC robot](attachment:HC Notes.pdf))           \`YAS2.80.00-00\` (or newer)                             
+     YRC1000micro                                            All controller versions                                  
+     YRC1000micro ([HC robot](attachment:HC Notes.pdf))      \`YBS2.31.00-00\` (or newer)                             
+  -- ---------------------------------------------------- -- -------------------------------------------------------- --
 
 ### MotoPlus Runtime License
 
-\'\'\'Note\'\'\': this is required for the \'\'DX100 controller
-only\'\'.
+**Note**: this is required for the *DX100 controller only*.
 
 The following part number must be ordered for the DX100 robot
 controller:
 
-  -- ------------------------- -- ------------------------- --
-     \'\'\'Region\'\'\'           \'\'\'Part number\'\'\'   
-     Americas (North, South)      \`180014-1\`              
-     Europe                       \`167536\`                
-  -- ------------------------- -- ------------------------- --
+  -- ------------------------- -- ----------------- --
+     **Region**                   **Part number**   
+     Americas (North, South)      \`180014-1\`      
+     Europe                       \`167536\`        
+  -- ------------------------- -- ----------------- --
 
 \
 The MotoROS application and source is available for public download.
@@ -82,20 +81,20 @@ and all internal parameters are properly configured.
 
 ### MotoPlus SDK (optional)
 
-\'\'\'Note\'\'\': This is \'\'optional for all controller models\'\',
-but will allow you to modify the MotoROS driver which runs on the robot
-controller. The !MotoPlus SDK is \'\'\'not\'\'\' required to be able to
-develop ROS applications, it is only needed if the MotoROS application
-is to be changed.
+**Note**: This is *optional for all controller models*, but will allow
+you to modify the MotoROS driver which runs on the robot controller. The
+!MotoPlus SDK is **not** required to be able to develop ROS
+applications, it is only needed if the MotoROS application is to be
+changed.
 
-  -- ------------------------ -- --------------------------------- -- -------------------------------- --
-     \'\'\'Controller\'\'\'      \'\'\'America Part Number\'\'\'      \'\'\'Europe Part Number\'\'\'   
-     FS100                       \`169272-3\`                         \`158302\`                       
-     DX100                       \`169272-1\`                         \`147961\`                       
-     DX200                       \`169272-2\`                         \`166386\`                       
-     YRC1000                     \`169272-4\`                         \`183387\`                       
-     YRC1000micro                \`169272-5\`                         \`206078\`                       
-  -- ------------------------ -- --------------------------------- -- -------------------------------- --
+  -- ---------------- -- ------------------------- -- ------------------------ --
+     **Controller**      **America Part Number**      **Europe Part Number**   
+     FS100               \`169272-3\`                 \`158302\`               
+     DX100               \`169272-1\`                 \`147961\`               
+     DX200               \`169272-2\`                 \`166386\`               
+     YRC1000             \`169272-4\`                 \`183387\`               
+     YRC1000micro        \`169272-5\`                 \`206078\`               
+  -- ---------------- -- ------------------------- -- ------------------------ --
 
 ### More information
 

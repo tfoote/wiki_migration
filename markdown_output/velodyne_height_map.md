@@ -44,8 +44,8 @@ param {
 
 #### Examples
 
-Start the height map nodelet in a separate process. \'\'Running as a
-standalone nodelet prevents zero-copy message sharing.\'\'
+Start the height map nodelet in a separate process. *Running as a
+standalone nodelet prevents zero-copy message sharing.*
 ```
 $ rosrun nodelet nodelet standalone velodyne_height_map/HeightMapNodelet
 ```
@@ -53,8 +53,8 @@ $ rosrun nodelet nodelet standalone velodyne_height_map/HeightMapNodelet
 This launch file runs the height map nodelet in the same process with
 the Velodyne device driver and a
 [velodyne_pointcloud](velodyne_pointcloud) nodelet which publishes the
-points transformed into the \"/odom\" frame. \'\'This approach minimizes
-data copying.\'\'
+points transformed into the \"/odom\" frame. *This approach minimizes
+data copying.*
 
 ```
 <launch>

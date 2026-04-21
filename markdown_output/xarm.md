@@ -4,9 +4,9 @@
 
 This repository contains the 3D models of xArm series and demo packages
 for ROS development and simulations.Developing and testing environment:
-Ubuntu 16.04 + ROS Kinetic Kame + Gazebo 9. \'\'\'Instructions below is
+Ubuntu 16.04 + ROS Kinetic Kame + Gazebo 9. **Instructions below is
 based on xArm7, other model user can replace \'xarm7\' with \'xarm6\' or
-\'xarm5\' where applicable.\'\'\'
+\'xarm5\' where applicable.**
 
 ## Update Summary
 
@@ -227,8 +227,8 @@ names) supported:
     before using them. Please read the guidance carefully at chapter
     7.2-7.3
 
-\'\'\'Starting xArm by ROS service:\'\'\'   First startup the service
-server for xarm7, ip address is just an example:
+**Starting xArm by ROS service:**   First startup the service server for
+xarm7, ip address is just an example:
 
 ```
 $ rosdep update

@@ -5,19 +5,19 @@ This package is a ROS release of
 variety of functionality related to linear algebra and spacial
 processing.
 
-  -- ------------------------------------ -- -------------------------------------------- --
-     \'\'\'Official Documentation\'\'\'      <http://docs.swift-nav.com/libswiftnav>      
-     \'\'\'Upstream Source\'\'\'             <https://github.com/swift-nav/libswiftnav>   
-                                                                                          
-  -- ------------------------------------ -- -------------------------------------------- --
+  -- ---------------------------- -- -------------------------------------------- --
+     **Official Documentation**      <http://docs.swift-nav.com/libswiftnav>      
+     **Upstream Source**             <https://github.com/swift-nav/libswiftnav>   
+                                                                                  
+  -- ---------------------------- -- -------------------------------------------- --
 
 The versions released to ROS are:
 
-  -- ------------------------ -- ------- --
-     \'\'\'ROS Hydro\'\'\'       v0.8    
-     \'\'\'ROS Indigo\'\'\'      v0.13   
-                                         
-  -- ------------------------ -- ------- --
+  -- ---------------- -- ------- --
+     **ROS Hydro**       v0.8    
+     **ROS Indigo**      v0.13   
+                                 
+  -- ---------------- -- ------- --
 
 All libswiftnav releases are here:
 <https://github.com/swift-nav/libswiftnav/releases>

@@ -3,13 +3,13 @@
 This package contains the code for controlling the rb1_base with a
 joystick. The package has the following folders:
 
-\- \'\'\'config:\'\'\' In this folder you will find the different config
-files available for the different possible joysticks
+\- **config:** In this folder you will find the different config files
+available for the different possible joysticks
 
-\- \'\'\'launch:\'\'\' In this folder you will find the launch file to
-execute the node
+\- **launch:** In this folder you will find the launch file to execute
+the node
 
-\- \'\'\'src:\'\'\' In this folder you will find the source code
+\- **src:** In this folder you will find the source code
 
 ## Usage
 

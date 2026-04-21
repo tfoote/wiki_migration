@@ -7,12 +7,12 @@ time. To represent such data, we present the
 
 ### Message Details
 
-!MotionCapture messages have four primary features. 1. \'\'\'id\'\'\' -
-An optional string describing the motion capture 2. \'\'\'labels\'\'\' -
-An optional array of strings labeling each of the points in the cloud 3.
-\'\'\'frames\'\'\' - An array of PointClouds representing the locations
-of the markers through time. 4. \'\'\'rate\'\'\' - A float specifying
-the number of frames per second.
+!MotionCapture messages have four primary features. 1. **id** - An
+optional string describing the motion capture 2. **labels** - An
+optional array of strings labeling each of the points in the cloud 3.
+**frames** - An array of PointClouds representing the locations of the
+markers through time. 4. **rate** - A float specifying the number of
+frames per second.
 
 The labels should correspond to the points in the pointclouds such that
 label\[i\] is the label for the point stored at frames\[t\].points\[i\].

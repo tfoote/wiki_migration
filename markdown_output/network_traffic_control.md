@@ -114,7 +114,7 @@ A few definitions:
     bandwidth_limit\` (i.e. even after adjusting for loss the data rate
     is greater than the link capacity)
 -   \`packet_send_time_at_capacity\` is the time to send one packet at
-    the \`bandwidth_limit\` rate (\'\'\'Note:\'\'\' this is where the
+    the \`bandwidth_limit\` rate (**Note:** this is where the
     \`packet_size\` parameter comes into play!)
 -   \`measured_bandwidth\`, \`measured_loss\` and \`measured_latency\`
     are the metrics measured at the output of the emulation system (i.e.
@@ -123,17 +123,16 @@ A few definitions:
 Using these definitions we distinguish a few scenarios and the actual
 network metrics that result from the network emulator implementation:
 
-1\. When the link is \'\'\'not saturated\'\'\', the metrics are as
-expected:
+1\. When the link is **not saturated**, the metrics are as expected:
 
 -   \`measured_bandwidth == tx_bandwidth_loss_adjusted\`
 -   \`measured_latency == latency\`
 -   \`measured_loss == loss\`
 
-2\. When the link is \'\'\'saturated\'\'\' and \'\'\'only bandwidth
-control\'\'\' is in place (i.e. \`latency\` and \`loss\` are \`0.0\`).
-\'\'\'Note that under this scenario all packets with size greater than
-\`packet_size\` will be dropped!\'\'\'
+2\. When the link is **saturated** and **only bandwidth control** is in
+place (i.e. \`latency\` and \`loss\` are \`0.0\`). **Note that under
+this scenario all packets with size greater than \`packet_size\` will be
+dropped!**
 
 -   \`measured_bandwidth == bandwidth_limit\`
 -   \`measured_latency == packet_send_time_at_capacity\`, is not 0ms due
@@ -142,8 +141,8 @@ control\'\'\' is in place (i.e. \`latency\` and \`loss\` are \`0.0\`).
 -   \`measured_loss = 100% - bandwidth_limit/tx_bandwidth(%)\`, the
     percentage by which bitrate overruns the link capacity
 
-3\. When the link is \'\'\'saturated\'\'\' and \'\'\'both bandwidth
-control and latency and/or loss control\'\'\' is in place:
+3\. When the link is **saturated** and **both bandwidth control and
+latency and/or loss control** is in place:
 
 -   \`measured_bandwidth == min(bandwidth_limit,
     tx_bandwidth_loss_adjusted)\`, either the link capacity or the loss
@@ -244,7 +243,7 @@ theoretical projection made previously:
 The launch file (and node) takes the following parameters:
 
 -   \`tx_bandwidth\`: the rate at which data is sent. This is the only
-    \'\'\'mandatory\'\'\' parameter.
+    **mandatory** parameter.
 -   \`bandwidth_limit\`, \`latency\`, \`loss\`: network emulation
     parameters (they all default to 0.0 - i.e. control disabled)
 -   \`packet_size\`: default 1500 bytes

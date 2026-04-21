@@ -4,13 +4,13 @@ This package requires SwiftNav\'s
 [libsbp python library](https://github.com/swift-nav/libsbp). Install
 before installing this package.
 
-\'\'\'Option 1 (Recommended)\'\'\' Install binaries via aptitude package
-manager ```
+**Option 1 (Recommended)** Install binaries via aptitude package manager
+```
 sudo apt install ros-kinetic-rr-swiftnav-piksi
 ```
 
-\'\'\'Option 2\'\'\' Install source from github (only use if you want to
-make custom changes to the source code) ```
+**Option 2** Install source from github (only use if you want to make
+custom changes to the source code) ```
 cd ~/catkin_ws/src/
 git clone https://github.com/RoverRobotics/rr_swiftnav_piksi.git
 cd ~/catkin_ws/

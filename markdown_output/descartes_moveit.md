@@ -1,6 +1,6 @@
 ## Overview
 
-This package implements a Descartes \'\'Robot Model\'\' using MoveIt to
+This package implements a Descartes *Robot Model* using MoveIt to
 provide both forward and inverse kinematic solutions and configuration
 validity checking. Users of Descartes will typically not have to use the
 robot model directly after creating/initializing it. The path planners

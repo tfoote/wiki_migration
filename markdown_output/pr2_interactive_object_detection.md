@@ -44,23 +44,23 @@ Note that this launch file will bring up rviz. The tool is implemented
 as an [rviz plugin](rviz/UserGuide#Plugins). For everything to work, you
 will have to add the following displays:
 
--   \'\'\'Interactive Object Detection/Interactive Object
-    Detection\'\'\': This brings up a control dialog with buttons to
-    trigger segmentation, object recognition and to make the robot\'s
-    head look at a spot directly in front of the robot.
+-   **Interactive Object Detection/Interactive Object Detection**: This
+    brings up a control dialog with buttons to trigger segmentation,
+    object recognition and to make the robot\'s head look at a spot
+    directly in front of the robot.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Object Recognition GUI/Object Recognition Pop-Up Window\'\'\':
-    This will create a pop-up window once interactive object recognition
-    has been requested. It does not have to run in the same rviz
-    instance as the control dialog.
+-   **Object Recognition GUI/Object Recognition Pop-Up Window**: This
+    will create a pop-up window once interactive object recognition has
+    been requested. It does not have to run in the same rviz instance as
+    the control dialog.
 
 Note that the control dialog does not contain any actual functionality
 but redirects all user input to an additional node called
-\'\'pr2_interactive_object_detection_backend\'\'. This allows the front
-end to be replaced by other user interfaces.
+*pr2_interactive_object_detection_backend*. This allows the front end to
+be replaced by other user interfaces.
 
 ## Using the PR2 Interactive Manipulation Tool
 
@@ -94,15 +94,15 @@ camera with the meshes of all recognized objects being overlaid on top
 of the camera image. When moving the mouse over this window, you will
 see individual meshes being highlighted as you go over them.
 
--   \'\'\'Accept or reject matches\'\'\': If a mesh is displayed in
-    \'\'red\'\' color, this means that it is considered a wrong
-    recognition result and is going to be omitted, while \'\'green\'\'
-    indicates a correct recognition result. You can switch between the
-    two states by right-clicking on the object.
+-   **Accept or reject matches**: If a mesh is displayed in *red* color,
+    this means that it is considered a wrong recognition result and is
+    going to be omitted, while *green* indicates a correct recognition
+    result. You can switch between the two states by right-clicking on
+    the object.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Cycle through results\'\'\': For each segment, there will be a
-    number of possibly matching objects. To cycle through these matches,
+-   **Cycle through results**: For each segment, there will be a number
+    of possibly matching objects. To cycle through these matches,
     left-click on the corresponding mesh.

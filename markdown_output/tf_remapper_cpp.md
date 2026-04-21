@@ -4,21 +4,20 @@ This package is an alternative to official ROS node
 [tf/tf_remap](https://github.com/ros/geometry/blob/melodic-devel/tf/scripts/tf_remap)
 with the following advantages:
 
--   Works natively with \'\'\'TF2\'\'\'
+-   Works natively with **TF2**
 -   that could probably save a few data conversions
--   \'\'\'Performance\'\'\': handles tens of TF subscribers with
-    thousands of TF messages/sec with ease
+-   **Performance**: handles tens of TF subscribers with thousands of TF
+    messages/sec with ease
 -   the official node fully utilizes 2 i7 CPU cores if you have 10
     subscribers and publish 2000 TF messages per second
     ([ros/geometry#175](//github.com/ros/geometry/issues/175))
 -   this package needs about 0.4 CPU cores for the same
--   Can also remap \'\'\'\`/tf_static\`\'\'\'
+-   Can also remap **\`/tf_static\`**
 -   the official package can not do that correctly
--   Can also \'\'\'remove frames\'\'\' (if you pass empty string to
-    \`new\`)
+-   Can also **remove frames** (if you pass empty string to \`new\`)
 -   this can come handy if you e.g. want to recompute your map in
     bagfiles using a brand new algorithm
--   Can \'\'\'work in both ways\'\'\'
+-   Can **work in both ways**
 -   not only taking frames published on \`/tf_old\` and remapping and
     publishing them to \`/tf\`, but it can also watch \`/tf\`, perform a
     reverse remapping, and publish new TF messages to \`/tf_old\`
@@ -28,8 +27,8 @@ with the following advantages:
     coordination algorithm which wants to see the maps of each robot as
     \`/ugv1/map\`, \`/ugv2/map\` and so on, and also wants to publish a
     \`/global_map\` frame available to all robots.
--   Backwards \'\'\'compatible with
-    [tf/tf_remap](//github.com/ros/geometry/blob/melodic-devel/tf/scripts/tf_remap)\'\'\'
+-   Backwards **compatible with
+    [tf/tf_remap](//github.com/ros/geometry/blob/melodic-devel/tf/scripts/tf_remap)**
 -   to use this remapper, just change package name from \`tf\` to
     \`tf_remapper_cpp\` in your launch files
 -   all the new functionality should not endanger the basic usage, since
@@ -51,18 +50,18 @@ The node that performs the TF remapping.
 
 #### Private parameters
 
--   \'\'\'\`mappings\`\'\'\' (\`array of dicts\`): The rules for TF
-    frame name remapping, e.g. \`\[{\"old\": \"b\", \"new\": \"d\"}\]\`.
-    Each dict presents one remapping rule. Each dict contains keys
-    \`old\` and \`new\`. If either of these keys is missing or its value
-    is empty string, it means the TF frame should be deleted.
+-   **\`mappings\`** (\`array of dicts\`): The rules for TF frame name
+    remapping, e.g. \`\[{\"old\": \"b\", \"new\": \"d\"}\]\`. Each dict
+    presents one remapping rule. Each dict contains keys \`old\` and
+    \`new\`. If either of these keys is missing or its value is empty
+    string, it means the TF frame should be deleted.
 -   Until [ros/ros_comm#1498](//github.com/ros/ros_comm/issues/1498) is
     fixed, you can not pass this parameter from \`rosrun\` commandline -
     either set it in a launch file, or use \`rosparam set
     /tf_remapper/mappings \'\[{\"old\": \"b\", \"new\": \"d\"}\]\'\`
     before launching this node.
--   \'\'\'\`static_tf\`\'\'\' (\`bool\`): Whether the remapper acts on
-    static TFs or not. If not set, it is autodetected from
+-   **\`static_tf\`** (\`bool\`): Whether the remapper acts on static
+    TFs or not. If not set, it is autodetected from
     \`new_tf_topic_name\` parameter.
 -   Static TFs need special handling, so be sure to have this parameter
     set correctly, otherwise it can cause performance issues (when used
@@ -71,13 +70,13 @@ The node that performs the TF remapping.
 -   Autodetection checks if the \`new_tf_topic_name\` is \`tf_static\`
     or \`/tf_static\`, and if it is, then \`static_tf\` is set to
     \`True\`, otherwise it is set to \`False\`.
--   \'\'\'\`old_tf_topic_name\`\'\'\' (\`string\`, default
-    \`\'/tf_old\'\`): The topic on which old TFs are subscribed.
--   \'\'\'\`new_tf_topic_name\`\'\'\' (\`string\`, default \`\'/tf\'\`):
-    The topic on which remapped TFs are published.
--   \'\'\'\`is_bidirectional\`\'\'\' (\`bool\`, default \`False\`): If
-    \`True\`, the remapper will also allow passing TFs published on the
-    \"remapped end\" to the \"old end\" via a reverse mapping.
+-   **\`old_tf_topic_name\`** (\`string\`, default \`\'/tf_old\'\`): The
+    topic on which old TFs are subscribed.
+-   **\`new_tf_topic_name\`** (\`string\`, default \`\'/tf\'\`): The
+    topic on which remapped TFs are published.
+-   **\`is_bidirectional\`** (\`bool\`, default \`False\`): If \`True\`,
+    the remapper will also allow passing TFs published on the \"remapped
+    end\" to the \"old end\" via a reverse mapping.
 -   Pay special attention if you use any kind of multimaster solution or
     a custom topic transport. This node needs CallerIDs to be unchanged.
     If this contract is broken, the node will probably enter an infinite
@@ -85,26 +84,24 @@ The node that performs the TF remapping.
 
 #### Subscribed topics
 
--   \'\'\'\`/tf_old\`\'\'\' (or any other topic set in
-    \`old_tf_topic_name\`; type \`tf2_ros/TFMessage\`): The original TF
-    messages that are to be remapped.
--   \'\'\'\`/tf\`\'\'\' (or any other topic set in
-    \`new_tf_topic_name\`; only if \`is_bidirectional == True\`; type
-    \`tf2_ros/TFMessage\`): The TF messages with remapped frames. If
-    some node publises to this topic and this remapper is running in
-    bidirectional mode, it sends the newly published transforms back to
-    \`/tf_old\`.
+-   **\`/tf_old\`** (or any other topic set in \`old_tf_topic_name\`;
+    type \`tf2_ros/TFMessage\`): The original TF messages that are to be
+    remapped.
+-   **\`/tf\`** (or any other topic set in \`new_tf_topic_name\`; only
+    if \`is_bidirectional == True\`; type \`tf2_ros/TFMessage\`): The TF
+    messages with remapped frames. If some node publises to this topic
+    and this remapper is running in bidirectional mode, it sends the
+    newly published transforms back to \`/tf_old\`.
 
 #### Published topics
 
--   \'\'\'\`/tf\`\'\'\' (or any other topic set in
-    \`new_tf_topic_name\`; type \`tf2_ros/TFMessage\`): The TF messages
-    with remapped frames.
--   \'\'\'\`/tf_old\`\'\'\' (or any other topic set in
-    \`old_tf_topic_name\`; only if \`is_bidirectional == True\`; type
-    \`tf2_ros/TFMessage\`): The original TF messages. If some node
-    publises to \`/tf\` and this remapper is running in bidirectional
-    mode, it sends the newly published transforms back to this topic.
+-   **\`/tf\`** (or any other topic set in \`new_tf_topic_name\`; type
+    \`tf2_ros/TFMessage\`): The TF messages with remapped frames.
+-   **\`/tf_old\`** (or any other topic set in \`old_tf_topic_name\`;
+    only if \`is_bidirectional == True\`; type \`tf2_ros/TFMessage\`):
+    The original TF messages. If some node publises to \`/tf\` and this
+    remapper is running in bidirectional mode, it sends the newly
+    published transforms back to this topic.
 
 ## Example usage in launch files
 

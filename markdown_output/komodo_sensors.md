@@ -22,7 +22,7 @@ fused data on the imu/data topic.
 
 Package configuration files are:
 
-○ \'\'\'\\launch\\sensors_launch.launch\'\'\' - This launch file runs
-the serial comunication node from the rosserial package. Users can
-specify the GPS frame id. This file can be launched from the main launch
-file (komodo_launch.launch).
+○ **\\launch\\sensors_launch.launch** - This launch file runs the serial
+comunication node from the rosserial package. Users can specify the GPS
+frame id. This file can be launched from the main launch file
+(komodo_launch.launch).

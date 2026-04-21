@@ -1,8 +1,8 @@
-\'\'\'Package Summary\'\'\' ROSRemote is a framework that helps users to
-control remote robots and recover information from them as well as from
-remote masters. It is possible to send common ROS commands like
-\"rostopic list\" to a remote master and recover all the topics it is
-publishing at the time.
+**Package Summary** ROSRemote is a framework that helps users to control
+remote robots and recover information from them as well as from remote
+masters. It is possible to send common ROS commands like \"rostopic
+list\" to a remote master and recover all the topics it is publishing at
+the time.
 
 -   Maintainer: Alyson Benoni Matias Pereira \<alysonmp AT gmail DOT
     com\>
@@ -41,8 +41,8 @@ receive the answer.
 
 ## Paper
 
-A paper named \'\'ROSRemote, using ROS on cloud to access robots
-remotely\'\' was presented at ICAR 2017.
+A paper named *ROSRemote, using ROS on cloud to access robots remotely*
+was presented at ICAR 2017.
 
 ## Basic Usage
 
@@ -69,10 +69,10 @@ This will create [Spacebrew](http://docs.spacebrew.cc/) client as well
 as start the service /send_data, that will be called to send the
 information to the remote devices. The last thing the user needs to do
 to connect the devices is open the
-[Spacebrew](http://docs.spacebrew.cc/) \'\'Web Admin Tool\'\' and
-connect the clients, this tool is opened by typing the server URL in the
-browser. If the user is using the [Spacebrew](http://docs.spacebrew.cc/)
-free server, the address would be
+[Spacebrew](http://docs.spacebrew.cc/) *Web Admin Tool* and connect the
+clients, this tool is opened by typing the server URL in the browser. If
+the user is using the [Spacebrew](http://docs.spacebrew.cc/) free
+server, the address would be
 [Spacebrew server](http://spacebrew.github.io/spacebrew/admin/admin.html?server=sandbox.spacebrew.cc/).
 
 After the connection is made, all the user has to do is type the ros

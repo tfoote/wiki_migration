@@ -17,8 +17,8 @@ use it.
 ![ Excellent tuning, but a bit unstable](attachment:amazing_tuning.png )
 
 Finally we obtained a very well tuned joint using this optimization
-algorithm, after a \'\'\'35min\'\'\' cycle. Here is the plot for the
-same movement at different speed (please note that no targets is being
+algorithm, after a **35min** cycle. Here is the plot for the same
+movement at different speed (please note that no targets is being
 published for a short time when changing the movement speed, which
 explains the difference between the (interpolated) target line and the
 position line):
@@ -28,9 +28,9 @@ position line):
 ## Running the tuning
 
 You should edit the starting seed of the algorithm (it is recommended to
-use some working values) in the \'\'\'seed.yaml\'\'\' file. The
-\'\'\'max_variations\'\'\' parameter in this file defines the range
-which will be explored by the algorithm.
+use some working values) in the **seed.yaml** file. The
+**max_variations** parameter in this file defines the range which will
+be explored by the algorithm.
 
 You can run the algorithm with the following command line:
 ```
@@ -39,10 +39,10 @@ $ rosparam load `rospack find sr_automatic_pid_tuning`/seed.yaml ; rosrun sr_aut
 
 Other useful parameters:
 
--   \'\'\'\--targetFitness=0\'\'\' set a target for the fitness: if the
-    target is reached, then stop.
--   \'\'\'\--plotSRAutomaticPidTuningStat \--plotHisto\'\'\': generate a
-    .xg file which you can plot with gnuplot.
+-   **\--targetFitness=0** set a target for the fitness: if the target
+    is reached, then stop.
+-   **\--plotSRAutomaticPidTuningStat \--plotHisto**: generate a .xg
+    file which you can plot with gnuplot.
 
 ### More options
 

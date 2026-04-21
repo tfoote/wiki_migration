@@ -13,7 +13,7 @@ package [alica_turtle](alica_turtle).
     [Alica](http://cn-alica-ros-pkg.googlecode.com/git/AlicaEngine/doc/AlicaEngine/Alica/index.html)
 -   Typical interactions take place through the singleton class
     [AlicaEngine](http://cn-alica-ros-pkg.googlecode.com/git/AlicaEngine/doc/AlicaEngine/Alica/AlicaEngine.html).
--   Action programs, called \'\'Behaviours\'\' inherit from
+-   Action programs, called *Behaviours* inherit from
     [BasicBehaviour](http://cn-alica-ros-pkg.googlecode.com/git/AlicaEngine/doc/AlicaEngine/Alica/BasicBehaviour.html)
 -   Domain specific components such as conditions and behaviours
     interact with specific parts of the internal state, encapsulated by

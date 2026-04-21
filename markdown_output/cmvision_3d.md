@@ -7,7 +7,7 @@ its camera frame, and 2. frames in the tf stack for each color.
 
 Frames are broadcasted with the camera\'s frame_id as their
 parent_frame, and from there they can be transformed as necessary.
-\'\'\'Note:\'\'\' this package depends on cmvision\'s commit
+**Note:** this package depends on cmvision\'s commit
 [fac7a32](https://github.com/utexas-bwi/cmvision/commit/fac7a32665366236397955011734dd1092d977e5#diff-d41d8cd98f00b204e9800998ecf8427e).
 This should be released into Hydro, but if it is not yet, make sure to
 grab the latest changes.
@@ -52,10 +52,10 @@ both cmvision and color_controller using
 roslaunch cmvision_3d color_tracker.launch
 ```
 
-\'\'\'Note:\'\'\' This stuff will pretty much work out of the box if
-you\'re running \'\'openni_launch openni.launch depth_registration:=
-true\'\' on a Microsoft Kinect, as the defaults for the above arguments
-are set to the relevant topics for the Kinect environment.
+**Note:** This stuff will pretty much work out of the box if you\'re
+running *openni_launch openni.launch depth_registration:= true* on a
+Microsoft Kinect, as the defaults for the above arguments are set to the
+relevant topics for the Kinect environment.
 
 ## Nodes
 

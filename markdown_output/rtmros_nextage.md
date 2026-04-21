@@ -19,12 +19,12 @@ See [the set of tutorials](rtmros_nextage/Tutorials).
 ### Software update notice for NEXTAGE OPEN (March, 2015)
 
 Please read the
-\'\'\'[important announcement for all NEXTAGE OPEN users](https://github.com/tork-a/rtmros_nextage/issues/153)\'\'\'.
+**[important announcement for all NEXTAGE OPEN users](https://github.com/tork-a/rtmros_nextage/issues/153)**.
 
 ### IROS/iREX 2013 DVD content
 
-/!\\ \'\'\'(2/1/2014)\'\'\' The content of this DVD has become obsolete.
-Please refer to
+/!\\ **(2/1/2014)** The content of this DVD has become obsolete. Please
+refer to
 [installation](rtmros_nextage/Tutorials/Install NEXTAGE OPEN software on your machine)
 tutorial page and get the software.
 

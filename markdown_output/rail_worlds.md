@@ -70,8 +70,8 @@ command: ```
 roslaunch rail_worlds fuller_318_full_2_tables_world
 ```
 
-Note that these launch files will \'\'\'\'\'not\'\'\'\'\' place any
-robots inside of the world.
+Note that these launch files will ***not*** place any robots inside of
+the world.
 
 ## Support
 

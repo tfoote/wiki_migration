@@ -9,8 +9,8 @@ with [ROS-control](http://wiki.ros.org/ros_control).
 Please see the install instructions in the official
 [Github repository](https://github.com/SCHUNK-GmbH-Co-KG/schunk_svh_ros_driver).
 The driver communicates via a RS485-based protocol, for which the
-\'\'Brainbox\'\' USB to Serial converters have proven to work well. They
-are usually distributed together with the hand.
+*Brainbox* USB to Serial converters have proven to work well. They are
+usually distributed together with the hand.
 
 ## ROS API
 

@@ -1,6 +1,6 @@
 [hebiros:](hebiros) [hebiros_description](hebiros_description) \|
 [hebiros_basic_examples](hebiros_basic_examples) \|
-\'\'\'hebiros_advanced_examples\'\'\'
+**hebiros_advanced_examples**
 
 # Setup
 
@@ -52,8 +52,8 @@ This example demonstrates using [gazebo](gazebo) in order to simulate
 the 3-dof-arm robot. The actual controller is the same as in Example 3
 of [hebiros_basic_examples](hebiros_basic_examples), the virtual spring.
 The difference is that the group is constructed using
-\`/hebiros/add_group_from_urdf\`, thus the \'\'same\'\' program can be
-used either in simulation via Gazebo or on the hardware.
+\`/hebiros/add_group_from_urdf\`, thus the *same* program can be used
+either in simulation via Gazebo or on the hardware.
 
 First, launch the setup file. This will load the urdf to
 \`robot_parameter\`, open Gazebo and start the \`hebiros_node\` and

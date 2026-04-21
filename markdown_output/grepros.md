@@ -113,7 +113,7 @@ given as \`\"linear.x=2\\.?5\"\`.
 grepros is written in Python, supporting both Python 2 and Python 3.
 
 Developed and tested under ROS1 Noetic and ROS2 Foxy, should also work
-in later ROS2 versions; \'\'may\'\' work in earlier ROS1 versions.
+in later ROS2 versions; *may* work in earlier ROS1 versions.
 
 ```
 pip install grepros

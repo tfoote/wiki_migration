@@ -19,7 +19,7 @@
 
 Örnek
 
-\'\'italic\'\'
+*italic*
 
 ## İlk Görsel
 

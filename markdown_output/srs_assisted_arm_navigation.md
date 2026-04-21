@@ -11,12 +11,12 @@ set by a 6 DOF Interactive Marker or by using [SpaceNavigator](spacenav)
 device. For collision free trajectory planning a collision map produced
 by [Environment Model](srs_env_model) is used.
 
-\'\'\'Current version has been tested only with ROS Electric.\'\'\'
+**Current version has been tested only with ROS Electric.**
 
 Assisted arm navigation is divided into following packages:
 
--   \'\'srs_assisted_arm_navigation\'\': Main functionality.
--   \'\'srs_assisted_arm_navigation_msgs\'\': Definition of services and
+-   *srs_assisted_arm_navigation*: Main functionality.
+-   *srs_assisted_arm_navigation_msgs*: Definition of services and
     action interface.
 -   [srs_assisted_arm_navigation_ui](srs_assisted_arm_navigation_ui):
     RVIZ plugin.

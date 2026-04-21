@@ -1,6 +1,6 @@
 ## API Stability
 
-This package is in an \'\'\'experimental\'\'\' stage.
+This package is in an **experimental** stage.
 
 ## System Dependencies
 
@@ -62,7 +62,7 @@ Here is a complete list of commands. Details in the following section.
 -   `pr2.setTorso(height, duration=10.0, wait=True)`
 -   `pr2.pause(seconds)`
 
-\'\'\'Advanced: Motion Methods:\'\'\'
+**Advanced: Motion Methods:**
 
 -   `myMotion = Motion(aMotionFunction)`
 -   `motion.start(anyArgsThatTheMotionFunctionTakes)`
@@ -72,7 +72,7 @@ Here is a complete list of commands. Details in the following section.
 -   `motion.sleep_while_running()`
 -   `motion.is_done()`
 
-\'\'\'Advanced: EventSimulator Methods:\'\'\'
+**Advanced: EventSimulator Methods:**
 
 -   `start(schedule, callbackFunction, repeat=False)`
 -   `getEventQueue()`
@@ -330,7 +330,7 @@ The code contains instructions.
 
 The script may receive event notifications by one of two means. The
 event simulator can call one of the script functions when an event
-occurs. That function is the script\'s \'\'callback function.\'\' That
+occurs. That function is the script\'s *callback function.* That
 function implements the robot reaction to the event. This mechnism works
 well when the reaction to the events are of short duration. Here is a
 schematic of what happens. The green part is the only area end users
@@ -352,12 +352,12 @@ from sensors may even be lost.
 When events take longer to handle, or when many events arrive in bursts,
 it is better to use the second event delivery channel: a queue. Every
 event simulator provides a data queue. When the simulator calls the
-script\'s callback function, that function may \'\'\'return\'\'\' any
-information that might be needed when the event is \'\'eventually\'\'
-handled by other parts of the script. For example, the callback function
-might record the time when the event occurred. The simulator will place
-the returned value into its data queue, where the script may pick it up
-in its main loop at any time. If many events occur in quick succession,
+script\'s callback function, that function may **return** any
+information that might be needed when the event is *eventually* handled
+by other parts of the script. For example, the callback function might
+record the time when the event occurred. The simulator will place the
+returned value into its data queue, where the script may pick it up in
+its main loop at any time. If many events occur in quick succession,
 they are all added to the queue. Python queues allow a script to pause
 until an event appears in the queue. The Method-2 picture below shows
 the principle.

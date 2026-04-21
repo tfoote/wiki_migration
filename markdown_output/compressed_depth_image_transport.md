@@ -9,8 +9,8 @@ the dynamic_reconfigure package.
 \`compressed_depth_image_transport\` works only with floating-point or
 16-bit integer encoded depth images.
 
-\'\'\'\'\'Before reading this page, make sure you understand the
-[image_transport](image_transport) package\'\'\'\'\'
+***Before reading this page, make sure you understand the
+[image_transport](image_transport) package***
 
 ## Tutorials
 

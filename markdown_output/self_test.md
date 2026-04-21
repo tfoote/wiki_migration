@@ -10,8 +10,8 @@ You can then run the self test using rosservice:```
 $ rosservice call /hokuyo_node/self_test
 ```
 
-You can get different output with the \'\'deprecated\'\'
-\`run_selftest\` node: ```
+You can get different output with the *deprecated* \`run_selftest\`
+node: ```
 $ rosrun self_test run_selftest /hokuyo_node/self_test
 ```
 

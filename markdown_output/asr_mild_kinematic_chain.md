@@ -9,31 +9,30 @@ and dynamic joints connecting frames among each other.
 ![height=\"590\",width=\"335\"\|height=\"661\",width=\"377\"](attachment:MILD_Degrees_Of_Freedom.png)
 ![height=\"590\",width=\"335\"\|height=\"659\",width=\"365\"](attachment:MILD_Transformations.png)
 
-\'\'Left: The robot\'s rotational and translational degrees of freedom.
+*Left: The robot\'s rotational and translational degrees of freedom.
 Right: Overview over the robot\'s most important frames and
-transformations.\'\'
+transformations.*
 
 ## Functionality
 
 The mild\'s kinematic chain is described in
-\'\'\'robot_description/mild.urdf \'\'\'within this package. (See the
+**robot_description/mild.urdf **within this package. (See the
 [ros wiki](http://wiki.ros.org/urdf/Tutorials) for a detailed
 explanation of the urdf format)
 
 The kinematic chain consists of two major parts: The robot\'s
 environment (map) as well as the robot\'s base and the camera-system
 including PTU, Guppy-Cameras (and Kinect as an optional component). The
-fixed reference Frame is in the PTU and is called
-\'\'\'/ptu_pan_link\'\'\'.
+fixed reference Frame is in the PTU and is called **/ptu_pan_link**.
 
-\'\'\'Map to Robot Base\'\'\'
+**Map to Robot Base**
 
 -   /map - the origin of the map in which the robot is located
 -   /odom - the robot\'s position in the map, located by the odometry
 -   /base_link - the robot\'s base center point
 -   /base_laser - the 2D-laserscanner\'s sensor frame
 
-\'\'\'PTU Base to Camera\'\'\'
+**PTU Base to Camera**
 
 -   /ptu_base_link - the base frame of the pan-tilt-unit
 -   /ptu_pan_link - the origin of the pan joint
@@ -50,7 +49,7 @@ fixed reference Frame is in the PTU and is called
 
 ### Needed packages
 
-\'\'\'run depend: \'\'\'
+**run depend: **
 
 -   [asr_flir_ptu_driver](asr_flir_ptu_driver): TF of real and simulated
     PTU.

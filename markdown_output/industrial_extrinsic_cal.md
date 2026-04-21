@@ -26,10 +26,9 @@ The industrial extrinsic calibration package depends on the google
 [Ceres Solver](http://ceres-solver.org/). The steps below walk through a
 minimal installation of Ceres on Ubuntu 14.04 as required for this
 package, more detailed instructions or different Ubuntu versions can be
-found [here](http://ceres-solver.org/installation.html).
-\'\'\'NOTE:\'\'\' These instructions download and install dependencies
-from your home directory. Once installed, these tarballs and directories
-can be deleted.
+found [here](http://ceres-solver.org/installation.html). **NOTE:** These
+instructions download and install dependencies from your home directory.
+Once installed, these tarballs and directories can be deleted.
 
 1\. Install gflags ```
 cd

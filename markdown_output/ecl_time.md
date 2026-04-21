@@ -26,7 +26,7 @@ using ecl::TimeData;
 using ecl::TimeStamp;
 ```
 
-If outside ros, you will also need to link to \'\'ecl_time\'\'.
+If outside ros, you will also need to link to *ecl_time*.
 
 ## Tutorials
 

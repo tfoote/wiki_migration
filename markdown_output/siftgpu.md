@@ -1,7 +1,7 @@
 ## Overview
 
-\'\'\'\[0\] Changchang Wu SiftGPU: A GPU Implementation of Scale
-Invariant Feature Transform (SIFT), 2007\'\'\'
+**\[0\] Changchang Wu SiftGPU: A GPU Implementation of Scale Invariant
+Feature Transform (SIFT), 2007**
 
 For more details go to the
 [SiftGPU homepage](http://www.cs.unc.edu/~ccwu/siftgpu/)
@@ -23,17 +23,16 @@ It basically multiplies the descriptor matrix on GPU and finds the
 closest feature matches on GPU. Both GLSL and CUDA implementations are
 provided.
 
-\'\'\'\[1\] D. G. Lowe. Distinctive image features from scale-invariant
-keypoints . International Journal of Computer Vision, November
-2004.\'\'\'
+**\[1\] D. G. Lowe. Distinctive image features from scale-invariant
+keypoints . International Journal of Computer Vision, November 2004.**
 
-\'\'\'\[2\] A. Vedaldi. sift++,
-<http://www.vlfeat.org/~vedaldi/code/siftpp.html>.\'\'\'
+**\[2\] A. Vedaldi. sift++,
+<http://www.vlfeat.org/~vedaldi/code/siftpp.html>.**
 
-\'\'\'\[3\] G. Ziegler, et al. GPU point list generation through
-histogram pyramids. In Technical Report, June 2006.\'\'\'
+**\[3\] G. Ziegler, et al. GPU point list generation through histogram
+pyramids. In Technical Report, June 2006.**
 
-\'\'\'\[4\] Sudipta N Sinha, Jan-Michael Frahm, Marc Pollefeys and Yakup
+**\[4\] Sudipta N Sinha, Jan-Michael Frahm, Marc Pollefeys and Yakup
 Genc, \"GPU-Based Video Feature Tracking and Matching \", EDGE 2006,
 workshop on Edge Computing Using New Commodity Architectures, Chapel
-Hill, May 2006\'\'\'
+Hill, May 2006**

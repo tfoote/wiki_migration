@@ -21,16 +21,16 @@ for [rosjava](rosjava) and [rosclj](rosclj), then \"rosmake clj_pr2\".
 Then, to bring up the ROS nodes required for teleoperation:
 
 -   First, bring up the robot/simulator and nav stack
--   For a robot, bring up \'\'prx.launch\'\' and
-    2dnav_pr2/\'\'move_base/2dnav_pr2.launch\'\'
--   For the simulator, use \'\'launch/sim1.launch\'\' or
-    \'\'launch/sim2.launch\'\', or modify these as desired.
--   Second, roslaunch \'\'launch/both_arms.launch\'\' or
-    \'\'launch/right_arm.launch\'\', depending on the arm configuration
-    of your (possibly simulated) robot.
+-   For a robot, bring up *prx.launch* and
+    2dnav_pr2*/move_base/2dnav_pr2.launch*
+-   For the simulator, use *launch/sim1.launch* or *launch/sim2.launch*,
+    or modify these as desired.
+-   Second, roslaunch *launch/both_arms.launch* or
+    *launch/right_arm.launch*, depending on the arm configuration of
+    your (possibly simulated) robot.
 
-Finally, run \'\'bin/clj\'\' to bring up a REPL with all of the
-necessary code on the classpath, and type
+Finally, run *bin/clj* to bring up a REPL with all of the necessary code
+on the classpath, and type
 
 ```clojure
 (load "ros/teleop")
@@ -46,8 +46,7 @@ At this point, you have a wide range of functions available for
 controlling the sensors, head, torso, base, arms, and grippers of the
 PR2. This page will survey the most useful such functions. For
 exhaustive lists of functions and more detailed documentation, look at
-the files in \'\'src_clj/ros/pr2/\*.clj\'\', and
-\'\'src_clj/ros/teleop.clj\'\'.
+the files in *src_clj/ros/pr2/\*.clj*, and *src_clj/ros/teleop.clj*.
 
 ### Head
 
@@ -106,7 +105,7 @@ checking, are also provided. These are unsafe; be careful!
 ```
 
 Many other methods for relative, precise, unsafe, etc. base movement can
-be found in \'\'src_clj/ros/pr2/base.clj\'\'.
+be found in *src_clj/ros/pr2/base.clj*.
 
 ### Arms
 
@@ -125,7 +124,7 @@ To move the gripper relatively (in base_link), use move-arm-rel:
 
 If you know the precise set of joint angles you want to move to, you can
 use move-arm-to-state instead. It takes a robot-arm-state as argument
-(see \'\'src_clj/ros/pr2/arm.clj\'\'). The easiest way to create a
+(see *src_clj/ros/pr2/arm.clj*). The easiest way to create a
 robot-arm-state is to use the arm-joint-state function. For instance, to
 move the left arm to straight out (all 0 angles), run
 
@@ -143,7 +142,7 @@ retrieved by name.
 These functions all also come in unsafe variants (suffixed with
 -unsafe), which directly move the arm using the trajectory controller,
 with no collision checking. These and other potentially useful functions
-are defined in \'\'src_clj/ros/pr2/arm.clj\'\'.
+are defined in *src_clj/ros/pr2/arm.clj*.
 
 ### Grippers
 
@@ -200,7 +199,7 @@ Limited access to TF is provided by transform-point-tf and
 transform-pose-tf ```clojure
 (point-head nh {:header {:frame_id "/map"} :point (make-point [1 2 3])})
 ```0 These and other useful
-geometric primitives are defined in \'\'src_clj/ros/geometry.clj\'\'.
+geometric primitives are defined in *src_clj/ros/geometry.clj*.
 
 Finally, all of the functionality of [rosclj](rosclj) is provided. For
 instance, you can easily publish a single message on a topic, or get a

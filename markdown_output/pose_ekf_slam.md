@@ -1,7 +1,7 @@
 # Package Summary
 
-Package \'\'pose-ekf-slam\'\' is a modular localization and mapping
-system for 6DoF vehicles. Standard navigation messages as
+Package *pose-ekf-slam* is a modular localization and mapping system for
+6DoF vehicles. Standard navigation messages as
 [PoseWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/PoseWithCovarianceStamped.html),
 [TwistWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/TwistWithCovarianceStamped.html),
 and [Imu](http://www.ros.org/doc/api/sensor_msgs/html/msg/Imu.html)
@@ -18,7 +18,7 @@ several enchancements.
 
 ## How to use Pose EKF-SLAM
 
-Package \'\'pose_ekf_slam\'\' contains two nodes:
+Package *pose_ekf_slam* contains two nodes:
 
 -   pose_ekf_slam.py
 -   test_pose_ekf_slam.py
@@ -43,7 +43,7 @@ message. Finally, landmark updates have to be published at
 ```
 /pose_ekf_slam/landmark_update/landmark_id
 ``` in order to be discovered by the
-\'\'pose_ekf_slam\'\' node. They are also
+*pose_ekf_slam* node. They are also
 [PoseWithCovarianceStamped](http://www.ros.org/doc/api/geometry_msgs/html/msg/PoseWithCovarianceStamped.html)
 messages.\
 
@@ -59,10 +59,10 @@ indicating the position and covariance of each landmark, published at
 
 ### test_pose_ekf_slam
 
-This node can be used to test \'\'pose_ekf_slam\'\' but the main idea is
-to be modified for every user in order to transform their navigation
-messages, with position, twist or landmarks information, into the kind
-of messages expected by the \'\'pose_ekf_slam\'\' node.
+This node can be used to test *pose_ekf_slam* but the main idea is to be
+modified for every user in order to transform their navigation messages,
+with position, twist or landmarks information, into the kind of messages
+expected by the *pose_ekf_slam* node.
 
 ## More information
 

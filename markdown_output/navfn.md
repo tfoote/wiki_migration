@@ -14,7 +14,7 @@ used as a global planner plugin for the [move_base](move_base) node.
 The \`navfn::NavfnROS\` object is a [ wrapper](navigation/ROS_Wrappers )
 for a \`navfn::NavFn\` object that exposes its functionality as a
 [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates within a ROS
-namespace (assumed to be \'\'name\'\' from here on) specified on
+namespace (assumed to be *name* from here on) specified on
 initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
 interface found in the [nav_core](nav_core) package.
 
@@ -86,15 +86,14 @@ no guarantees about the stability of its public API.
 
 ### API Stability
 
--   The C++ API is \'\'\'not\'\'\' stable. It is subject to change at
-    any time.
+-   The C++ API is **not** stable. It is subject to change at any time.
 
 ### C++ API
 
 Documentation on the C++ API for the \`navfn::NavFn\` class can be found
 here:
 [ NavFn Documentation](http://www.ros.org/doc/api/navfn/html/classnavfn_1_1NavFn.html ).
-Again, the C++ API is \'\'\'not\'\'\' guaranteed to be stable.
+Again, the C++ API is **not** guaranteed to be stable.
 
 ## Reference
 

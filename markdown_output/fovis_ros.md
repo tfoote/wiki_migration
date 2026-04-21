@@ -18,20 +18,19 @@ explanation of odometry frame ids.
 The chain of transforms relevant for visual odometry is as follows:
 \`world\` &rarr; \`odom\` &rarr; \`base_link\` &rarr; \`camera\`
 
-Visual odometry algorithms generally calculate \'\'camera motion\'\'. To
-be able to calculate \'\'robot motion\'\' based on \'\'camera
-motion\'\', the transformation from the camera frame to the robot frame
-has to be known. Therefore this implementation needs to know the tf
-\`base_link\` &rarr; \`camera\` to be able to publish \`odom\` &rarr;
-\`base_link\`.
+Visual odometry algorithms generally calculate *camera motion*. To be
+able to calculate *robot motion* based on *camera motion*, the
+transformation from the camera frame to the robot frame has to be known.
+Therefore this implementation needs to know the tf \`base_link\` &rarr;
+\`camera\` to be able to publish \`odom\` &rarr; \`base_link\`.
 
 The name of the camera frame is taken from the incoming images, so be
 sure your camera driver publishes it correctly.
 
-\'\'NOTE\'\': The coordinate frame of the camera is expected to be the
-\'\'optical\'\' frame, which means \`x\` is pointing right, \`y\`
-downwards and \`z\` from the camera into the scene. The origin is where
-the camera\'s principle axis hits the image plane (as given in
+*NOTE*: The coordinate frame of the camera is expected to be the
+*optical* frame, which means \`x\` is pointing right, \`y\` downwards
+and \`z\` from the camera into the scene. The origin is where the
+camera\'s principle axis hits the image plane (as given in
 \<\<MsgLink(sensor_msgs/CameraInfo)\>\>).
 
 To learn how to publish the required tf \`base_link\` &rarr; \`camera\`,

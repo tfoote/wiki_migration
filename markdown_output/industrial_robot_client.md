@@ -11,8 +11,8 @@ Primarily, this package provides the industrial_robot_client library.
 The intent is for robot-specific implementations to reuse code from this
 library using standard C++ derived-class mechanisms, to avoid much of
 the copy/paste duplication in current industrial-robot driver
-implementations. \'\'Modification to adapt the library to new robot
-needs is discussed in more detail [below](#modification).\'\'
+implementations. *Modification to adapt the library to new robot needs
+is discussed in more detail [below](#modification).*
 
 This package also provides generic nodes exposing the base
 industrial_robot_client functionality. If a robot does not require any

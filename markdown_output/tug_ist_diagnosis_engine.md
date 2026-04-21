@@ -1,7 +1,7 @@
 ## Overview
 
-Diagnosis engine takes observations in the form of \'\'FOL\'\' sentences
-and an abstract diagnosis model (system description) to generate a
+Diagnosis engine takes observations in the form of *FOL* sentences and
+an abstract diagnosis model (system description) to generate a
 diagnosis, a set of components that are faulty and a set of components
 that are still working properly. It follows the principles of
 model-based diagnosis which uses an abstract model that defines correct

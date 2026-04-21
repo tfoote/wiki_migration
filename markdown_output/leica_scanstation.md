@@ -15,26 +15,24 @@ The Leica Scanstation C5 is a scalable and flexible laser scanner, which
 means that user can set some parameters to better fit the scanning area.
 Using this ROS wrapper, the user can specify the following parameters:
 
--   \'\'\'Pan center\'\'\' and \'\'\'tilt center\'\'\'. Middle point of
-    the scan process.
--   \'\'\'Width\'\'\' and \'\'\'height\'\'\' are the size of the scan
-    window.
--   \'\'\'Vertical resolution\'\'\' and \'\'\'horizontal
-    resolution\'\'\'. Can be understood as the \'\'number of rays\'\' to
-    cover the scan window. A higher resolution means a more detailed
-    cloud but a slower process.
+-   **Pan center** and **tilt center**. Middle point of the scan
+    process.
+-   **Width** and **height** are the size of the scan window.
+-   **Vertical resolution** and **horizontal resolution**. Can be
+    understood as the *number of rays* to cover the scan window. A
+    higher resolution means a more detailed cloud but a slower process.
 
 . ![\|width=\"450px\"](attachment:scanparams.png)
 
 ### About Software development
 
 Due to Leica\'s libraries dependencies, the source code relative to SDK
-have been developed under \'\'\'Windows 10\'\'\'. For that reason,
-\'\'leica_scanstation_ros\'\' will only compile on Windows OS. However,
-once the program is released, it can be executed in either \'\'\'Windows
-or Linux\'\'\' (with tools such us Wine).
+have been developed under **Windows 10**. For that reason,
+*leica_scanstation_ros* will only compile on Windows OS. However, once
+the program is released, it can be executed in either **Windows or
+Linux** (with tools such us Wine).
 
-For \'\'\'development purposes\'\'\', please refer to
+For **development purposes**, please refer to
 [leica_scanstation_ros](https://github.com/fada-catec/leica_scanstation/tree/master/leica_scanstation_ros)
 documentation.
 
@@ -42,10 +40,10 @@ documentation.
 
 -   Source: git <https://github.com/fada-catec/leica_scanstation>
     (branch: master)
--   \'\'\'leica_scanstation_ros\'\'\'. Based on Leica SDK, this package
-    contains functions to communicate with the device using a computer.
-    Note that this package is meant to be compiled and executed in
-    Windows. It includes a ROS node with the following options:
+-   **leica_scanstation_ros**. Based on Leica SDK, this package contains
+    functions to communicate with the device using a computer. Note that
+    this package is meant to be compiled and executed in Windows. It
+    includes a ROS node with the following options:
 -   operating the device through ROS services.
 -   to read and understand the information sent by the scanstation which
     is published in a ROS topic.
@@ -55,17 +53,17 @@ documentation.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'leica_scanstation_msgs\'\'\'. This package defines the
-    messages and services that allow for interpretation of the scanner
-    information. It is OS independent.
+-   **leica_scanstation_msgs**. This package defines the messages and
+    services that allow for interpretation of the scanner information.
+    It is OS independent.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'leica_scanstation_utils\'\'\'. This package contains common
-    functions that assist in the program\'s execution independently of
-    the OS used. Its main purpose is to define the paths for generating
-    and collecting the point clouds.
+-   **leica_scanstation_utils**. This package contains common functions
+    that assist in the program\'s execution independently of the OS
+    used. Its main purpose is to define the paths for generating and
+    collecting the point clouds.
 
 ## Usage
 

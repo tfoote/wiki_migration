@@ -1,8 +1,8 @@
-\'\'\'NOTE: The \`move_base\` package lets you move a robot to desired
+**NOTE: The \`move_base\` package lets you move a robot to desired
 positions using the navigation stack. If you just want to drive the PR2
 robot around in the odometry frame, you might be interested in this
 tutorial:
-[pr2_controllers/Tutorials/Using the base controller with odometry and transform information](pr2_controllers/Tutorials/Using the base controller with odometry and transform information).\'\'\'
+[pr2_controllers/Tutorials/Using the base controller with odometry and transform information](pr2_controllers/Tutorials/Using the base controller with odometry and transform information).**
 
 # ROS 2 succession
 

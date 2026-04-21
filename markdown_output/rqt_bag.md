@@ -1,5 +1,5 @@
-\'\'\'\`rqt_bag\` supersedes [rxbag](rxbag)\'\'\', which is deprecated
-since \`ROS\` [groovy](groovy).
+**\`rqt_bag\` supersedes [rxbag](rxbag)**, which is deprecated since
+\`ROS\` [groovy](groovy).
 
 ## Overview
 
@@ -45,8 +45,8 @@ Right-click on the name of the topic you want to publish, then select
 
 ![publish a topic in rqt_bag\|width=\"700\"](attachment:publish_grab.png)
 
-\'\'\'Note:\'\'\' Don\'t forget to use simulation time when republishing
-from a bag file:
+**Note:** Don\'t forget to use simulation time when republishing from a
+bag file:
 [Using Sim Time](Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
 
 ### To stop recording
@@ -128,10 +128,10 @@ displays the fields of the message in a tree view:
 
 Also, the following keyboard shortcuts can be used:
 
-  -- ---------------- -- ----------------------------------- --
-     \'\'Ctrl-A\'\'      Select all fields in message        
-     \'\'Ctrl-C\'\'      Copy selected fields to clipboard   
-  -- ---------------- -- ----------------------------------- --
+  -- ---------- -- ----------------------------------- --
+     *Ctrl-A*      Select all fields in message        
+     *Ctrl-C*      Copy selected fields to clipboard   
+  -- ---------- -- ----------------------------------- --
 
 ## Plugin API
 

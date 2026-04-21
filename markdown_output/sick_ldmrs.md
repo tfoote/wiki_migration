@@ -1,6 +1,6 @@
 This package provides a driver node for the SICK LD-MRS400001 Laser
-Scanner. The node can be initiated using: \'\'rosrun sick_ldmrs
-sickldmrs.py\'\'
+Scanner. The node can be initiated using: *rosrun sick_ldmrs
+sickldmrs.py*
 
 The node publishes on five separate topics:
 
@@ -10,8 +10,8 @@ The node publishes on five separate topics:
     [LaserScan](http://www.ros.org/doc/api/sensor_msgs/html/msg/LaserScan.html)
     topics (one for each scan layer of the device).
 
-Parameters can be modified via the dynamic_reconfigure gui: \'\'rosrun
-dynamic_reconfigure reconfigure_gui\'\'
+Parameters can be modified via the dynamic_reconfigure gui: *rosrun
+dynamic_reconfigure reconfigure_gui*
 
 The node is written in Python/Numpy.
 

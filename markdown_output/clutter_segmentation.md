@@ -96,16 +96,10 @@ txt info - metadata associated with each set
 -   rotation (applied first) and tranlation btw original laser scan
     frame and pointcloud frame
 
-```{=html}
-<!-- -->
-```
--   \'\'\'Note: transformation matrix btw laser frame and camera, as
-    well as camera intrinsic parameters are the same for each set and
-    included in the file clutter_calibration_info.txt.\'\'\'
+**\*Note: transformation matrix btw laser frame and camera, as well as
+camera intrinsic parameters are the same for each set and included in
+the file clutter_calibration_info.txt.**
 
-```{=html}
-<!-- -->
-```
 -   original polygons (hand-labeled) used to generate labels. Lists of
     (x,y) points in the image frame.
 -   three 3D points on floor plane used to calculate ground_plane normal

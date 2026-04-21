@@ -6,10 +6,9 @@ comes from the [grabcut_3d](grabcut_3d) package.
 
 This package is based on the following paper:
 
-B. Pitzer, M. Styer, C. Bersch, C. DuHadway, and J. Becker,
-\'\'\'Towards Perceptual Shared Autonomy for Robotic Mobile
-Manipulation,\'\'\' in Proc. IEEE International Conference on Robotics &
-Automation (ICRA), 2011.
+B. Pitzer, M. Styer, C. Bersch, C. DuHadway, and J. Becker, **Towards
+Perceptual Shared Autonomy for Robotic Mobile Manipulation,** in Proc.
+IEEE International Conference on Robotics & Automation (ICRA), 2011.
 [Link to PDF](http://www.pitzer.de/benjamin/_media/pdf/pitzer11_icra.pdf)
 
 ### Installation
@@ -49,8 +48,8 @@ The following [rosinstall](rosinstall) file will get everything for you:
 
 Note: To use the rosinstall file, create a new directory (e.g.
 interactive_segmentation), create a file named
-\'\'interactive_segmentation.rosinstall\'\' in this folder and paste the
-above text into it, go to the directory in a terminal and type
+*interactive_segmentation.rosinstall* in this folder and paste the above
+text into it, go to the directory in a terminal and type
 
 ```
 rosinstall . interactive_segmentation.rosinstall /opt/ros/electric

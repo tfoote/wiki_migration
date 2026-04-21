@@ -20,12 +20,12 @@ $ rosclean check
 
 ### rosclean purge
 
-\'\'\'WARNING: use with care. This will delete files from disk!\'\'\'
+**WARNING: use with care. This will delete files from disk!**
 
 \`rosclean purge\` will remove directories associated with storing
 ROS-related log files. You will be asked to confirm each deletion and it
 is important that you verify the command that \`rosclean purge\`
-executes is correct. Otherwise you \'\'may lose important files.\'\'
+executes is correct. Otherwise you *may lose important files.*
 
 ```
 $ rosclean purge

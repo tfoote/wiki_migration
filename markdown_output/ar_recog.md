@@ -49,8 +49,7 @@ ROS parameter (\`aov\`), or determined using the
 
 ## Calibrating Distance
 
-\'\'\'This is only necessary when \'\'not\'\' using a calibrated
-camera.\'\'\'
+**This is only necessary when *not* using a calibrated camera.**
 
 -   Set up a clear, recognized AR tag at a known distance from the
     camera.
@@ -78,7 +77,7 @@ rosservice call ar/calibrate_distance dist
 
 ## ARToolKit Compatibility/Interoperability
 
-\'\'\'ar_recog\'\'\' is compatible with standard ARToolKit pattern and
+**ar_recog** is compatible with standard ARToolKit pattern and
 object_data files. When not used with ROS\' [image_proc](image_proc),
 \`ar_recog\` utilizes an ARToolkit \`camera_para.dat\` file. See the
 files within the \`bin\` directory and the

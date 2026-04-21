@@ -38,8 +38,8 @@ Overview in addition:
 
 ## Stability
 
-The rosbag command-line tool and code APIs are \'\'\'stable\'\'\'. Every
-effort will be made to maintain backwards compatibility.
+The rosbag command-line tool and code APIs are **stable**. Every effort
+will be made to maintain backwards compatibility.
 
 The main new feature being planned for \`rosbag\` is the addition of a
 ROS API for interacting with the playing and recording nodes via service

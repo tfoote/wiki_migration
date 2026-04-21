@@ -18,7 +18,7 @@ as to avoid conflicts with the regular opencv api.
 A full listing of the api can be found in each header. Only the commonly
 used ones are shown here.
 
-\'\'\'cv_backports/imshow.hpp\'\'\'
+**cv_backports/imshow.hpp**
 
 ```cplusplus
 void imshow(const std::string& winname, cv::InputArray mat);
@@ -42,7 +42,7 @@ void addText( const cv::Mat& img, const std::string& text, cv::Point org, CvFont
 
 ## Examples
 
-\'\'\'imshow\'\'\'
+**imshow**
 
 ```cplusplus
 #include <cv_backports/imshow.hpp>

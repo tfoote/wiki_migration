@@ -6,17 +6,16 @@ recognizer. It uses gstreamer to automatically split the incoming audio
 into utterances to be recognized, and offers services to start and stop
 recognition.
 
-Currently, the recognizer \'\'requires\'\' a language model and
-dictionary file. These can be automatically built from a corpus of
-sentances using the
+Currently, the recognizer *requires* a language model and dictionary
+file. These can be automatically built from a corpus of sentances using
+the
 [Online Sphinx Knowledge Base Tool](http://www.speech.cs.cmu.edu/tools/lmtool.html).
 Example launch files, language models, and dictionary files can be found
-in the \'\'demo\'\' directory of the package. The \'\'voice_cmd\'\'
-example controls a mobile base using commands such as \"\'\'move
-forward\'\'\" or \"\'\'stop\'\'\". The \'\'robocup\'\' example uses some
-of the standard items and names from the RoboCup@Home contest, for
-instance, it should recognize \"\'\'hello, my name is Michael\'\'\" or
-\"\'\'Bring me the Original Pringles\'\'\".
+in the *demo* directory of the package. The *voice_cmd* example controls
+a mobile base using commands such as \"*move forward*\" or \"*stop*\".
+The *robocup* example uses some of the standard items and names from the
+RoboCup@Home contest, for instance, it should recognize \"*hello, my
+name is Michael*\" or \"*Bring me the Original Pringles*\".
 
 ## Installing
 

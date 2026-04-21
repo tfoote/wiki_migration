@@ -28,10 +28,10 @@ the outside and can be easily integrated in other packages.
 -   [Modbus package for a Siemens S7-1200 PLC](http://www.generationrobots.com/en/content/89-plc-siemens-modbus-ros-package)
 -   [Modbus package for a Cognex Insight 7200C](http://www.generationrobots.com/en/content/88-modbus-cognex-in-sight)
 
-\'\'Even is the modbus packages have only been tested with a few Siemens
+*Even is the modbus packages have only been tested with a few Siemens
 PLCs and Insight cameras, the package may also work for other models, as
 long as they support a modbus TCP server. However the hardware model has
-to be changed inside the Insight or Step7 project.\'\'
+to be changed inside the Insight or Step7 project.*
 
 ## Examples
 

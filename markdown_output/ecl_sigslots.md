@@ -13,16 +13,16 @@ slot. It also implements a few conditional (event) related classes.
 
 ## Features
 
--   \'\'Lightweight\'\' - implements only the necessary features for
-    practical usage.
--   \'\'Fully typesafe\'\' - signal-slot pairs \'\'must\'\' have the
-    same type, loaded functions must also agree.
--   \'\'Convenient slot loading\'\' - global/static and member functions
-    can be loaded with the same api.
--   \'\'Naming\'\' - can use posix style names to identify and perform
+-   *Lightweight* - implements only the necessary features for practical
+    usage.
+-   *Fully typesafe* - signal-slot pairs *must* have the same type,
+    loaded functions must also agree.
+-   *Convenient slot loading* - global/static and member functions can
+    be loaded with the same api.
+-   *Naming* - can use posix style names to identify and perform
     convenient connections/disconnections.
--   \'\'Thread safe\'\' - slots can disconnect/self-destruct without
-    worrying about segfaulting across threads.
+-   *Thread safe* - slots can disconnect/self-destruct without worrying
+    about segfaulting across threads.
 
 ## Definitions
 
@@ -64,7 +64,7 @@ using ecl::Signal;
 using ecl::Slots;
 ```
 
-You will also need to link to \'\'ecl_sigslots\'\'.
+You will also need to link to *ecl_sigslots*.
 
 ## Tutorials
 

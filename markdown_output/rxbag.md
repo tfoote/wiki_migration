@@ -1,7 +1,7 @@
 ## Deprecated
 
-(!) \'\'\'[rx](rx) packages are replaced by [rqt](rqt), which is
-available for fuerte and later.\'\'\'
+(!) **[rx](rx) packages are replaced by [rqt](rqt), which is available
+for fuerte and later.**
 
 [../rqt_bag](../rqt_bag) succeeds \`rxbag\`.
 
@@ -58,18 +58,18 @@ playhead and zooming the display:
 
 From left to right, the buttons on the toolbars allow you to:
 
--   move playhead to start of timeline (Keyboard shortcut: \'\'Home\'\')
--   rewind or slow playback (\'\'Numpad -\'\')
--   play (\'\'Space\'\')
--   fastforward or slow rewind (\'\'Numpad +\'\')
--   move playhead to end of timeline (\'\'End\'\')
--   zoom in (\'\'Page Up\'\')
--   zoom out (\'\'Page Down\'\')
+-   move playhead to start of timeline (Keyboard shortcut: *Home*)
+-   rewind or slow playback (*Numpad -*)
+-   play (*Space*)
+-   fastforward or slow rewind (*Numpad +*)
+-   move playhead to end of timeline (*End*)
+-   zoom in (*Page Up*)
+-   zoom out (*Page Down*)
 -   reset zoom level
 -   toggle thumbnail display
 
 Also, the timeline can be shifted later or earlier using the arrow keys
-(\'\'Left\'\' and \'\'Right\'\' respectively.)
+(*Left* and *Right* respectively.)
 
 ### Status Bar
 
@@ -108,10 +108,10 @@ displays the fields of the message in a tree view:
 
 Also, the following keyboard shortcuts can be used:
 
-  -- ---------------- -- ----------------------------------- --
-     \'\'Ctrl-A\'\'      Select all fields in message        
-     \'\'Ctrl-C\'\'      Copy selected fields to clipboard   
-  -- ---------------- -- ----------------------------------- --
+  -- ---------- -- ----------------------------------- --
+     *Ctrl-A*      Select all fields in message        
+     *Ctrl-C*      Copy selected fields to clipboard   
+  -- ---------- -- ----------------------------------- --
 
 String representations of message fields are truncated to 50 characters.
 

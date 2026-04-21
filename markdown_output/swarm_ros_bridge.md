@@ -24,33 +24,33 @@ swarm_ros_bridge is shown below:
 Compared with ROS1 multi-robot wireless communication way, it has the
 following benefits:
 
--   \'\'\'Robust\'\'\': No need for central ROS master launching first.
-    Each robot has its own ROS master and they can launch in a random
+-   **Robust**: No need for central ROS master launching first. Each
+    robot has its own ROS master and they can launch in a random
     sequence, connect with each other autonomously and reconnect if
     disconnected.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Flexible\'\'\': You can choose the sending/receiving ROS
-    topics rather than transferring all topic (names) as ROS1 does.
+-   **Flexible**: You can choose the sending/receiving ROS topics rather
+    than transferring all topic (names) as ROS1 does.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Easy to use\'\'\': Specify all the IPs and ROS topics in one
+-   **Easy to use**: Specify all the IPs and ROS topics in one
     configuration file.
 
 Compared with ROS2 DDS communication, it has the following benefits:
 
--   \'\'\'Lightweight\'\'\': It is a small ROS bridge node subscribing
-    and sending remote ROS topics, so connecting with other ROS nodes is
+-   **Lightweight**: It is a small ROS bridge node subscribing and
+    sending remote ROS topics, so connecting with other ROS nodes is
     easy.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Reliable\'\'\': It uses [ZeroMQ](https://zeromq.org) socket
+-   **Reliable**: It uses [ZeroMQ](https://zeromq.org) socket
     communication based on TCP protocol while ROS2 is based on DDS,
     whose default protocol is UDP (unreliable). DDS is mainly designed
     for data exchange between native processes under wired communication
@@ -67,7 +67,7 @@ Instead of installing from binary form, this package can only be
 installed from source code since the ROS topic types depend on your
 need.
 
-\'\'\'First, clone this package\'\'\':
+**First, clone this package**:
 
 ```
 mkdir -p swarm_ros_bridge_ws/src  # or your own ros workspace
@@ -81,7 +81,7 @@ or clone its gitee mirror for faster speed:
 git clone https://gitee.com/shu-peixuan/swarm_ros_bridge.git
 ```
 
-\'\'\'Then, install dependencies with apt\'\'\':
+**Then, install dependencies with apt**:
 
 ```
 sudo apt install libzmqpp-dev
@@ -93,7 +93,7 @@ or install dependencies using rosdep:
 rosdep install --from-path swarm_ros_bridge/
 ```
 
-\'\'\'Finally, build this package\'\'\':
+**Finally, build this package**:
 
 ```
 cd ../

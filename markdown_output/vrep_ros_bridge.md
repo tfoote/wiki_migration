@@ -1,10 +1,10 @@
 # Documentation
 
-/!\\ \'\'\'UNDER CONSTRUCTION\'\'\' /!\\
+/!\\ **UNDER CONSTRUCTION** /!\\
 
 ## Introduction
 
-\'\'\'vrep_ros_bridge\'\'\' is a plugin for V-Rep developed by the Inria
+**vrep_ros_bridge** is a plugin for V-Rep developed by the Inria
 [Lagadic](http://team.inria.fr/lagadic) team located at
 [Rennes](http://www.inria.fr/rennes).
 
@@ -16,7 +16,7 @@ The main application of the plugin is to provide a communication
 interface between V-Rep and ROS. The aim is to control the V-Rep
 simulation externally using ROS messages and ROS services.
 
-\'\'\'V-Rep\'\'\', developed by
+**V-Rep**, developed by
 [Coppelia Robotics](http://www.coppeliarobotics.com/), is an open-source
 state-of-the-art (and freely available for academic use) 3D physical
 simulation engine which is becoming more and more widespread in the

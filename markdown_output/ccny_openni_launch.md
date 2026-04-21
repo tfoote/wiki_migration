@@ -66,23 +66,23 @@ and
 
 There are four configuration files of interes
 
--   \'\'\'rgb.yml\'\'\': RGB camera intrinsics and distortion
--   \'\'\'depth.yml\'\'\': Depth (or more accurately, IR) camera
-    intrinsics and distortion
--   \'\'\'extr.yml\'\'\': Extrinsic matrix between the RGB and Depth
-    cameras (rotation and translation)
--   \'\'\'warp.yml\'\'\': Per-pixel depth unwarping of the depth image,
+-   **rgb.yml**: RGB camera intrinsics and distortion
+-   **depth.yml**: Depth (or more accurately, IR) camera intrinsics and
+    distortion
+-   **extr.yml**: Extrinsic matrix between the RGB and Depth cameras
+    (rotation and translation)
+-   **warp.yml**: Per-pixel depth unwarping of the depth image,
     according to some polynomial model.
 
-\'\'\'rgb.yaml\'\'\' and \'\'\'depth.yml\'\'\' are passed to the OpenNI
-driver ,which distributes them as CameraInfo topics. They can be
-generated using the [camera_calibration](camera_calibration) package.
+**rgb.yaml** and **depth.yml** are passed to the OpenNI driver ,which
+distributes them as CameraInfo topics. They can be generated using the
+[camera_calibration](camera_calibration) package.
 
-\'\'\'extr.yml\'\'\'and \'\'\'warp.yml\'\'\' are passed to
-\`rgbd_image_proc\`. They can be generated using
-[ccny_rgbd_calibrate](ccny_rgbd_calibrate) (coming soon).
+**extr.yml**and **warp.yml** are passed to \`rgbd_image_proc\`. They can
+be generated using [ccny_rgbd_calibrate](ccny_rgbd_calibrate) (coming
+soon).
 
-Using \'\'\'warp.yml\'\'\' is optional and be disabled using a flag in
+Using **warp.yml** is optional and be disabled using a flag in
 \`rgbd_image_proc\`.
 
 ## Bug Reports & Feature Requests

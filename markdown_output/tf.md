@@ -2,24 +2,23 @@
 
 ## What does tf do? Why should I use tf?
 
-You want to \'\'\'see\'\'\' what tf can do instead of just reading about
-it? Check out the
-[tf introduction demo](tf/Tutorials/Introduction to tf).
+You want to **see** what tf can do instead of just reading about it?
+Check out the [tf introduction demo](tf/Tutorials/Introduction to tf).
 
 A robotic system typically has many 3D
 [coordinate frames](geometry/CoordinateFrameConventions) that change
-over \'\'\'time\'\'\', such as a world frame, base frame, gripper frame,
-head frame, etc. tf keeps track of all these frames over time, and
-allows you to ask questions like:
+over **time**, such as a world frame, base frame, gripper frame, head
+frame, etc. tf keeps track of all these frames over time, and allows you
+to ask questions like:
 
 -   Where was the head frame relative to the world frame, 5 seconds ago?
 -   What is the pose of the object in my gripper relative to my base?
 -   What is the current pose of the base frame in the map frame?
 
-tf can operate in a \'\'\'distributed system\'\'\'. This means all the
+tf can operate in a **distributed system**. This means all the
 information about the coordinate frames of a robot is available to all
-ROS components on any computer in the system. There is \'\'\'no central
-server\'\'\' of transform information.
+ROS components on any computer in the system. There is **no central
+server** of transform information.
 
 For more information on the design see [/Design](/Design)
 
@@ -41,17 +40,16 @@ listening for transforms and broadcasting transforms.
 
 Anyone using tf will need to listen for transforms:
 
--   \'\'\'Listening for transforms\'\'\' - Receive and buffer all
-    coordinate frames that are broadcasted in the system, and query for
-    specific transforms between frames. Check out the writing a tf
-    listener tutorial
-    [(Python)](tf/Tutorials/Writing a tf listener (Python))
+-   **Listening for transforms** - Receive and buffer all coordinate
+    frames that are broadcasted in the system, and query for specific
+    transforms between frames. Check out the writing a tf listener
+    tutorial [(Python)](tf/Tutorials/Writing a tf listener (Python))
     [(C++)](tf/Tutorials/Writing a tf listener (C++)).
 
 To extend the capabilities of a robot you will need to start
 broadcasting transforms.
 
--   \'\'\'Broadcasting transforms\'\'\' - Send out the relative pose of
+-   **Broadcasting transforms** - Send out the relative pose of
     coordinate frames to the rest of the system. A system can have many
     broadcasters that each provide information about a different part of
     the robot. Check out the writing a tf broadcaster tutorial

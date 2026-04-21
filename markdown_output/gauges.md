@@ -28,7 +28,7 @@ Source the new files ```
 $ source devel/setup.bash
 ``` (You may have to do this
 every time you open a new terminal window, or add this line to your
-bashrc: \'\'source /Desktop/catkin_ws/devel/setup.bash\'\')
+bashrc: *source /Desktop/catkin_ws/devel/setup.bash*)
 
 ## Launch
 

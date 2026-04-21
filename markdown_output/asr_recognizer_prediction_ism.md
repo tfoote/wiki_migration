@@ -18,10 +18,10 @@ This package is the connection between pose prediction and scene
 recognition. It provides several services for controlling purpose. Its
 main parts are:
 
--   \'\'\'scene recognition\'\'\' for ISM logic
--   \'\'\'pose prediction\'\'\' for handling unfound objects
--   \'\'\'shared recognition results manager\'\'\' for managing ISM
-    datastructes in both parts aforementioned
+-   **scene recognition** for ISM logic
+-   **pose prediction** for handling unfound objects
+-   **shared recognition results manager** for managing ISM datastructes
+    in both parts aforementioned
 
 The following picture illustrates the process of the package:
 
@@ -54,12 +54,12 @@ AsrObjects.
 Before you can start the rp_ism_node, you have to launch the
 world_model:
 
-\'\'\'roslaunch asr_world_model world_model.launch\'\'\'
+**roslaunch asr_world_model world_model.launch**
 
 All functionality goes to one ros-node: the rp_ism_node. To launch it
 simply call:
 
-\'\'\'roslaunch asr_recognizer_prediction_ism rp_ism_node.launch\'\'\'
+**roslaunch asr_recognizer_prediction_ism rp_ism_node.launch**
 
 # ROS Nodes
 
@@ -83,7 +83,7 @@ visualization. Those topics are:
 
 You have to set some parameters in:
 
-\'\'\'param/scene_recognition.yaml\'\'\'
+**param/scene_recognition.yaml**
 
 -   dbfilename:
 -   data type: string
@@ -139,7 +139,7 @@ You have to set some parameters in:
 -   data type:string
 -   description: name of service call \"push_complete_patterns\"
 
-\'\'\'param/pose_prediction.yaml\'\'\'
+**param/pose_prediction.yaml**
 
 -   predictionGenerationFactor:
 -   data type:double
@@ -172,14 +172,12 @@ You have to set some parameters in:
 
 ## Services
 
--   \'\'\'processGetPointCloudServiceCall\'\'\': Actual pose prediction
--   \'\'\'processFindScenesServiceCall\'\'\': Actual scene recognition
--   \'\'\'setLogFilePathServiceCall\'\'\': set path to file for writing
-    object constellation
--   \'\'\'processToggleVisualizationServiceCall\'\'\': toggles
-    visualization
--   \'\'\'processResetServiceCall\'\'\': Clears the old recognition
-    results
+-   **processGetPointCloudServiceCall**: Actual pose prediction
+-   **processFindScenesServiceCall**: Actual scene recognition
+-   **setLogFilePathServiceCall**: set path to file for writing object
+    constellation
+-   **processToggleVisualizationServiceCall**: toggles visualization
+-   **processResetServiceCall**: Clears the old recognition results
 
 # Tutorials
 

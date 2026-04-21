@@ -75,7 +75,7 @@ modified. Here is how you can do it:
 ### Remote ROS access to database hosted at Willow Garage
 
 Note that remote read-only access to a server hosted at Willow Garage is
-\'\'\'no longer officially supported\'\'\'. The infrastructure is still
+**no longer officially supported**. The infrastructure is still
 available, but the overhead of keeping the ROS wrapper always up at
 Willow ended up being too high.
 

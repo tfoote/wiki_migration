@@ -25,10 +25,10 @@ than one observed object, the first object in the object list that is
 part of the scene will be treated as reference objects. The reference
 object is the root node of the scene graph.
 
-Output: \'\'asr_next_best_view/AttributedPointCloud pose_hypothesis\'\'
-(see topics) and \'\'bool all_scene_objects_found\'\': true if all scene
-objects of ALL scenes in the .xml have been found. The automat can then
-go to success state, false otherwise.
+Output: *asr_next_best_view/AttributedPointCloud pose_hypothesis* (see
+topics) and *bool all_scene_objects_found*: true if all scene objects of
+ALL scenes in the .xml have been found. The automat can then go to
+success state, false otherwise.
 
 # Usage
 
@@ -56,25 +56,25 @@ go to success state, false otherwise.
 
 ## Start system
 
-\'\'\'with inference:\'\'\'
+**with inference:**
 
-start \'\'roscore \'\'and the kinematic chain:
+start *roscore *and the kinematic chain:
 
-\'\'roslaunch asr_kinematic_chain_dome
-transformation_publishers_for_kinect_left.launch\'\'
+*roslaunch asr_kinematic_chain_dome
+transformation_publishers_for_kinect_left.launch*
 
-start the server: \'\'roslaunch asr_recognizer_prediction_psm
-psm_node.launch\'\'
+start the server: *roslaunch asr_recognizer_prediction_psm
+psm_node.launch*
 
-\'\'\'without inference:\'\'\'
+**without inference:**
 
-start \'\'roscore \'\'and the kinematic chain (see above).
+start *roscore *and the kinematic chain (see above).
 
-start the server: \'\'roslaunch asr_recognizer_prediction_psm
-recognizer_prediction_psm.launch\'\'
+start the server: *roslaunch asr_recognizer_prediction_psm
+recognizer_prediction_psm.launch*
 
-Visualization: Start \'\'RViz \'\'(\'\'rviz\'\') and open the config
-file \'\'doc/recognizer_prediction_psm. rviz\'\'
+Visualization: Start *RViz *(*rviz*) and open the config file
+*doc/recognizer_prediction_psm. rviz*
 
 ### Simulation
 
@@ -90,68 +90,68 @@ messages.
 
 ## Parameters
 
-\'\'\'with inference: \'\'\'(\'\'psm_node.launch)\'\'
+**with inference: **(*psm_node.launch)*
 
--   \'\'string path\'\' - path to the xml file that contains the scenes
-    (e.g. \'\'models/breakfast.xml\'\')
--   \'\'string\[\] bag_filename_list\'\': the object trajectories. These
-    are generated during
+-   *string path* - path to the xml file that contains the scenes (e.g.
+    *models/breakfast.xml*)
+-   *string\[\] bag_filename_list*: the object trajectories. These are
+    generated during
     [AsrPSM](file:///C:/Users/Felix/Desktop/ROS/twiki%202/bin/view/IlcasProjects/AsrPSM.html)
     training.
--   \'\'uint32 num_votes\'\': the overall number of hypotheses that
-    should be generated.
--   \'\'string base_frame_id\'\': the base frame to which the observed
-    objects and the hypothesis should be transformed into.
+-   *uint32 num_votes*: the overall number of hypotheses that should be
+    generated.
+-   *string base_frame_id*: the base frame to which the observed objects
+    and the hypothesis should be transformed into.
 
-\'\'\'without inference:\'\'\'
+**without inference:**
 
--   \'\'string path\'\': see above
--   \'\'string\[\] scenes\'\': the name of the scenes. It generates
-    hypotheses only for these scenes.
--   \'\'float32\[\] scene_probabilities\'\': contains the probability of
-    the scene.
--   \'\'uint32 num_votes\'\': the overall number of hypotheses that
-    should be created.
--   \'\'asr_msgs::\'\'!\'\'AsrObject\[\] objects\'\': the list of all
-    observed objects.
--   \'\'string base_frame_id\'\': see above.
+-   *string path*: see above
+-   *string\[\] scenes*: the name of the scenes. It generates hypotheses
+    only for these scenes.
+-   *float32\[\] scene_probabilities*: contains the probability of the
+    scene.
+-   *uint32 num_votes*: the overall number of hypotheses that should be
+    created.
+-   *asr_msgs::*!*AsrObject\[\] objects*: the list of all observed
+    objects.
+-   *string base_frame_id*: see above.
 
-The number of the \'\'scene_probabilities\'\' has to be equal to the
-number of scenes.
+The number of the *scene_probabilities* has to be equal to the number of
+scenes.
 
-The sum of the \'\'scene_probabilites\'\' should be 1.0, otherwise the
-number of hypotheses will not be correct.
+The sum of the *scene_probabilites* should be 1.0, otherwise the number
+of hypotheses will not be correct.
 
 There has to be at least one observed object.
 
-\'\'\'further parameters:\'\'\'
+**further parameters:**
 
-In the \'\'recognizer_prediction_psm.launch\'\' file you can set the
-lifetime of the rviz markers. You can also enable additional console
-output for debugging.
+In the *recognizer_prediction_psm.launch* file you can set the lifetime
+of the rviz markers. You can also enable additional console output for
+debugging.
 
 AsrPSM parameters (compare [there](http://wiki.ros.org/asr_psm)) are
-stored in \'\'param/properties.yaml\'\'
+stored in *param/properties.yaml*
 
 ## Needed Services
 
-\'\'asr_msgs::\'\'!\'\'AsrObject\[\] objects\'\': input. The list of all
-observed objects (with inference)
+*asr_msgs::*!*AsrObject\[\] objects*: input. The list of all observed
+objects (with inference)
 
 ## Provided Services
 
-\'\'\'/recognizer_prediction_psm\'\'\',
+**/recognizer_prediction_psm**,
 
-\'\'\'/psm_node\'\'\':
+**/psm_node**:
 
-Returns an \'\'asr_next_best_view::\'\'!\'\'AttributedPointCloud\'\'
-message named\'\' pose_hypothesis.\'\'
+Returns an *asr_next_best_view::*!*AttributedPointCloud* message named*
+pose_hypothesis.*
 
 This represents the generated hypotheses for all unobserved objects that
 are part of the scenes.
 
-Each point in the cloud (!AsrAttributedPoint) consists of a \'\'string
-type\'\' and a predicted \'\'geometry_msgs::Pose pose\'\'
+Each point in the cloud (!AsrAttributedPoint) consists of a *string
+type* and a predicted *geometry_msgs::Pose pose*
 
 of the object.
 
@@ -160,10 +160,10 @@ package.
 
 Also returns whether all scene objects have been found (true or false).
 
-\'\'psm_node_server\'\', which offers the \'\'/psm_node\'\' service,
-uses the \'\'/recognizer_prediction_psm\'\' service offered by
-\'\'recognizer_prediction_psm\'\' internally (through the
-\'\'asr_recognizer_prediction_psm_client\'\').
+*psm_node_server*, which offers the */psm_node* service, uses the
+*/recognizer_prediction_psm* service offered by
+*recognizer_prediction_psm* internally (through the
+*asr_recognizer_prediction_psm_client*).
 
 # Tutorials
 

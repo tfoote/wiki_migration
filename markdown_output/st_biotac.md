@@ -1,11 +1,11 @@
 ------------------------------------------------------------------------
 
-\'\'\'\'\'This page is currently under development, please check back in
-the future for updates\'\'\'\'\'
+***This page is currently under development, please check back in the
+future for updates***
 
-Welcome to !SynTouch\'s new ROS package \'\'\'st_biotac\'\'\'. !SynTouch
-is currently developing this package to process !BioTac data collected
-from supported hardware (such as [st_cheetah](st_cheetah)).
+Welcome to !SynTouch\'s new ROS package **st_biotac**. !SynTouch is
+currently developing this package to process !BioTac data collected from
+supported hardware (such as [st_cheetah](st_cheetah)).
 
 For more information visit:
 [SynTouch Website](http://www.syntouchllc.com)
@@ -15,10 +15,10 @@ For more information visit:
 # Package Summary (temp)
 
 This package contains all messages specific to the SynTouch stack,
-configuration of data acquisition hardware, as well as the \'\'future
-home\'\' for other useful tools for programming with the !BioTacs (such
-as a GUI, data saving utilities, and other functions relevant to the
-status of the !BioTac).
+configuration of data acquisition hardware, as well as the *future home*
+for other useful tools for programming with the !BioTacs (such as a GUI,
+data saving utilities, and other functions relevant to the status of the
+!BioTac).
 
 -   Authors: Abhishek Pawar, Gary Lin, and Jeremy Fishel, contact:
     ros@syntouchllc.com
@@ -35,18 +35,18 @@ in the stack.
 
 ### Planned Development
 
--   \'\'GUI for visualizing BioTac data\'\'
--   \'\'Data saving tools for exporting to CSV\'\'
+-   *GUI for visualizing BioTac data*
+-   *Data saving tools for exporting to CSV*
 
 ## ROS API
 
-\'\'\'\'\' INSERT ROS API FIGURE \'\'\'\'\'
+*** INSERT ROS API FIGURE ***
 
 ### Subscribed Topics
 
--   \'\'\'biotacs/\<port_name\>\'\'\': the BioTac data coming from the
-    specified port (i.e. a port named \"left_hand\" would have the topic
-    name\" biotacs/left_hand). Each sample appears as a new message for
+-   **biotacs/\<port_name\>**: the BioTac data coming from the specified
+    port (i.e. a port named \"left_hand\" would have the topic name\"
+    biotacs/left_hand). Each sample appears as a new message for
     compatibility across different hardware. The configuration
     properties of each port are described below.
 
@@ -58,20 +58,19 @@ in the stack.
 
 ### Messages Explained
 
--   \'\'\'!BioTac_Port_Data\'\'\': data published from supported
-    acquisition hardware port. It contains:
--   \'\'float64 time_stamp\'\' The time at which samples were taken in
-    ROS time.
--   \'\'std_msg/string channel_id\'\' The name of the sample channel
-    collected (can be \"Pac\", \"Pdc\", \"Tac\", \"Tdc\", or \'\'En\'\'
-    where n represents the electrode number, see the BioTac wiki page
-    for additional details)
--   \'\'int16\[\] Biotac_Data\'\' Contains an array of integers of
-    BioTac measurements. The length of the array is equal to the number
-    of !BioTacs supported by the hardware. Values range from 0 to 4095
-    for connected !BioTacs; -1 is passed for !BioTacs that are not
-    connected or the data is corrupted during transmission (i.e. has bad
-    parity).
+-   **!BioTac_Port_Data**: data published from supported acquisition
+    hardware port. It contains:
+-   *float64 time_stamp* The time at which samples were taken in ROS
+    time.
+-   *std_msg/string channel_id* The name of the sample channel collected
+    (can be \"Pac\", \"Pdc\", \"Tac\", \"Tdc\", or *En* where n
+    represents the electrode number, see the BioTac wiki page for
+    additional details)
+-   *int16\[\] Biotac_Data* Contains an array of integers of BioTac
+    measurements. The length of the array is equal to the number of
+    !BioTacs supported by the hardware. Values range from 0 to 4095 for
+    connected !BioTacs; -1 is passed for !BioTacs that are not connected
+    or the data is corrupted during transmission (i.e. has bad parity).
 
 ## Installation Instructions
 

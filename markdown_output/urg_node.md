@@ -18,7 +18,7 @@ The UTM-30LX laser can report corrupt data and even crash if settings
 with an excessive data rate are requested. The following settings are
 known to work:
 
-\'\'\'Intensity mode off\'\'\':
+**Intensity mode off**:
 
 -   \`cluster\`: 1
 -   \`skip\`: 1
@@ -26,7 +26,7 @@ known to work:
 -   \`min_ang\`: -2.2689
 -   \`max_ang\`: 2.2689
 
-\'\'\'Intensity mode on\'\'\':
+**Intensity mode on**:
 
 -   \`cluster\`: 1
 -   \`skip\`: 1

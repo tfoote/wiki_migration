@@ -6,7 +6,7 @@ installed.
 ## Example code for PR2
 
 An example C++ code for doing inverse kinematics with the PR2 is given
-under \'\'\'src/pr2_kdl_wrapper_example.cpp\'\'\' :
+under **src/pr2_kdl_wrapper_example.cpp** :
 
 ```cplusplus
 

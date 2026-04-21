@@ -68,9 +68,9 @@ For more options, consult the individual app pages.
 
 ## References
 
-Ivan Dryanovski, Roberto G. Valenti, Jizhong Xiao. \'\'Fast Visual
-Odometry and Mapping from RGB-D Data\'\'. 2013 International Conference
-on Robotics and Automation (ICRA2013).
+Ivan Dryanovski, Roberto G. Valenti, Jizhong Xiao. *Fast Visual Odometry
+and Mapping from RGB-D Data*. 2013 International Conference on Robotics
+and Automation (ICRA2013).
 
 ## Bug Reports & Feature Requests
 

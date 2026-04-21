@@ -188,7 +188,7 @@ context is required, meaning either a plan defined with
      (robot-at location)))
 ```
 
-\'\'\'TODO:\'\'\' Explain code-tree and task hierarchy.
+**TODO:** Explain code-tree and task hierarchy.
 
 ### Control Flow
 
@@ -232,8 +232,8 @@ when all succeed.
 
 ##### par
 
-Execute forms in parallel. Fail if one fails, succeed after
-\'\'\'all\'\'\' succeeded. Example: ```
+Execute forms in parallel. Fail if one fails, succeed after **all**
+succeeded. Example: ```
 (par
   (park-left-arm)
   (park-right-arm))
@@ -241,28 +241,28 @@ Execute forms in parallel. Fail if one fails, succeed after
 
 ##### pursue
 
-Execute forms in parallel. Fail if one fails, succeed when
-\'\'\'one\'\'\' succeeds. All other forms are evaporated when one form
-succeeds. This is especially useful for implementing monitors or run
-code until a condition holds: ```
+Execute forms in parallel. Fail if one fails, succeed when **one**
+succeeds. All other forms are evaporated when one form succeeds. This is
+especially useful for implementing monitors or run code until a
+condition holds: ```
 (top-level
   (par
     (format t "task 1~%")
     (format t "task 2~%")))
-```0 In the example
-above, the form terminates successfully when the robot is at the
-waypoint. Navigation commands to approach the waypoint are sent to the
-robot repeatedly.
+```0 In the example above, the
+form terminates successfully when the robot is at the waypoint.
+Navigation commands to approach the waypoint are sent to the robot
+repeatedly.
 
 ##### try-all
 
-Perform concurrently. Fail if \'\'\'all\'\'\' fail, succeed if
-\'\'\'one\'\'\' succeeded.
+Perform concurrently. Fail if **all** fail, succeed if **one**
+succeeded.
 
 ##### try-in-order
 
-Perform in sequence like seq, but only fail if \'\'\'all\'\'\' fail,
-succeed after \'\'\'one\'\'\' succeeded.
+Perform in sequence like seq, but only fail if **all** fail, succeed
+after **one** succeeded.
 
 #### with-tags
 

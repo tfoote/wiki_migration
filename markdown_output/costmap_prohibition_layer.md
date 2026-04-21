@@ -13,11 +13,11 @@ world coordinates. Prohibited ares can have three different forms:
 The plugin reads at initializing the costmap all the parameters from the
 ROS-parameter server and set the costs of this areas to LETHAL.
 
-\'\'\'Warning:\'\'\' If used in combination with a local costmap, make
-sure that the global-frame parameter of the local costmap coincides with
-global costmap\'s parameter. Furthermore, the global-frame should be
-fixed (e.g. /map and not /odom), since currently no coordinate
-transformations are performed internally.
+**Warning:** If used in combination with a local costmap, make sure that
+the global-frame parameter of the local costmap coincides with global
+costmap\'s parameter. Furthermore, the global-frame should be fixed
+(e.g. /map and not /odom), since currently no coordinate transformations
+are performed internally.
 
 # Configuration
 
@@ -47,9 +47,8 @@ The costmap2D from ros is able to add plugins (see
 [Costmap2D Tutorial](http://wiki.ros.org/costmap_2d/Tutorials/Configuring%20Layered%20Costmaps)).
 In step two you see how to add the YAML file to the parameters. If
 you\'re doing this in the launch file of the move base, you should load
-them into the namespace
-\'\'global_costmap/costmap_prohibition_layer\'\'. The underlayed
-namespace (\'\'costmap_prohibition_layer\'\' should accord with the
+them into the namespace *global_costmap/costmap_prohibition_layer*. The
+underlayed namespace (*costmap_prohibition_layer* should accord with the
 plugin name, defined in the next step: In step three it is described how
 to add the plugin itself. For this plugin you have to add:
 ```
@@ -58,6 +57,6 @@ plugins:
      - {name: costmap_prohibition_layer,       type: costmap_prohibition_layer_namespace::CostmapProhibitionLayer"}
 ```
 
-  -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<tablewidth=\"90%\" #E0E0FF\> \'\'\'NOTE:\'\'\' If you\'re using the inflation_layer and want, that your prohibitions get also inflated you have to add the costmap_prohibition_layer plugin above the inflation_layer plugin.   
-  -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     \<tablewidth=\"90%\" #E0E0FF\> **NOTE:** If you\'re using the inflation_layer and want, that your prohibitions get also inflated you have to add the costmap_prohibition_layer plugin above the inflation_layer plugin.   
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --

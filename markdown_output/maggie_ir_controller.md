@@ -3,8 +3,8 @@
 This package provides basic functionality for controlling a device
 compatible with an IR controller embeded in a robot.
 
-The \'\'TVLabo\'\' file contains all possible commands to use with a TV.
-To generate new commands for another TV consult the Users Manual.
+The *TVLabo* file contains all possible commands to use with a TV. To
+generate new commands for another TV consult the Users Manual.
 
 ### Devices Supported
 

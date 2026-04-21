@@ -2,8 +2,7 @@
 
 ## Hardware
 
-\'\'Information on the wouse hardware can be found
-[here](/hardware).\'\'
+*Information on the wouse hardware can be found [here](/hardware).*
 
 ## Concept
 
@@ -109,21 +108,20 @@ moving on to the next expression. This script can be run with:
 rosrun wouse train.py filename -l ### -d ##
 ```
 
--   \'\'filename\'\' is the \'\'\'required\'\'\' filename in which to
-    store collected data. This is a .csv file in \'\'wouse/data/\'\'
+-   *filename* is the **required** filename in which to store collected
+    data. This is a .csv file in *wouse/data*/
 
 ```{=html}
 <!-- -->
 ```
--   The \'\'-l\'\' arg is the total length (duration) in seconds of the
-    training session (\'\'-l 600\'\' runs for 10 minutes).
+-   The *-l* arg is the total length (duration) in seconds of the
+    training session (*-l 600* runs for 10 minutes).
 
 ```{=html}
 <!-- -->
 ```
--   The \'\'-d\'\' arg is the duration in seconds to spend in each
-    expression (\'\'-t 3.5\'\' gives a new expression every 3.5
-    seconds).
+-   The *-d* arg is the duration in seconds to spend in each expression
+    (*-t 3.5* gives a new expression every 3.5 seconds).
 
 Multiple sessions run with the same filename will append new data so
 that data collection can be performed in multiple sessions. Delete old
@@ -132,19 +130,18 @@ files if you wish to write over the contained data.
 ### Pre-processing Training Data
 
 The training data needs to be processed into the feature vectors of
-interest. Currently this is performed by
-\'\'wouse/scripts/data_parser.py\'\' which takes any number of data
-files\' filenames as inputs. In the data processing, mouse movements
-with a Euclidean magnitude \< 2.5 are ignored. This seems to be the
-significant majority of the data produced by the wouse, which is also
-typically uninformative noise. Subsequently, a feature vector is
-produced for each of the remaining points, consisting of the
-instantaneous magnitude and direction of that mouse event, in addition
-to the (inclusive) number of events in the preceding 250ms (a measure of
-the rate of event occurrence), the total magnitude, and average
-direction of events in this window. This produces a 5-vector descriptor.
-Each descriptor is saved in a list, along with a list of matching labels
-(wince or not-wince).
+interest. Currently this is performed by *wouse/scripts/data_parser.py*
+which takes any number of data files\' filenames as inputs. In the data
+processing, mouse movements with a Euclidean magnitude \< 2.5 are
+ignored. This seems to be the significant majority of the data produced
+by the wouse, which is also typically uninformative noise. Subsequently,
+a feature vector is produced for each of the remaining points,
+consisting of the instantaneous magnitude and direction of that mouse
+event, in addition to the (inclusive) number of events in the preceding
+250ms (a measure of the rate of event occurrence), the total magnitude,
+and average direction of events in this window. This produces a 5-vector
+descriptor. Each descriptor is saved in a list, along with a list of
+matching labels (wince or not-wince).
 
 ### Using the Wouse
 
@@ -153,14 +150,13 @@ two on the machine which the wouse in plugged in to, and one on the
 robot itself. The first node on the local (wouse) machine reads the
 mouse data from a linux device file and published a
 geometry_msgs/Vector3Stamped with the data. This data is received (on
-the same machine) by the second node (\'\'wouse.py\'\'), which
-normalizes the data and classifies the event as a wince or non-wince. If
-a wince is detected, it makes a service call to the node on the robot,
-which engages the \'run-stop\' behaviour. The \'\'wouse.py\'\' node on
-the local machine also maintains a regular \'heartbeat\' of service
-calls to the \'\'run_stop_server.py\'\' node on the robot. Currently, if
-this signal is lost, the robot beeps every 10s, but does not run-stop
-the robot.
+the same machine) by the second node (*wouse.py*), which normalizes the
+data and classifies the event as a wince or non-wince. If a wince is
+detected, it makes a service call to the node on the robot, which
+engages the \'run-stop\' behaviour. The *wouse.py* node on the local
+machine also maintains a regular \'heartbeat\' of service calls to the
+*run_stop_server.py* node on the robot. Currently, if this signal is
+lost, the robot beeps every 10s, but does not run-stop the robot.
 
 Each of the \'moving parts\' in the system have been abstracted apart
 for easier development and research. In a \'production\' system, each of
@@ -169,26 +165,25 @@ real-time framework of the robot, which will enable significantly
 stronger guarantees on operation, and easily halt the robot if failures
 occur.
 
-To actually use the wouse with a PR2, \'\'\'on the robot\'\'\', first
-run: ```
+To actually use the wouse with a PR2, **on the robot**, first run:
+```
 rosrun wouse run_stop_server.py
 ```
 
 This will bring up the node which communicates with the power-board
 node, and is responsible for run-stopping the robot.
 
-Then, \'\'\'on the machine with the wouse\'\'\', run:
-```
+Then, **on the machine with the wouse**, run: ```
 roslaunch wouse wouse.launch
 ```
 
-This will launch both the local nodes. The \'\'wouse.py\'\' will read in
-the formatted training data from the specified pickle file, and trains
-an SVM classifier (using the scikit-learn library). The pickle file
-should be specified using the args in
-\'\'/wouse/launch/wouse.launch\'\'. This file will issue a warning and
-exit if it fails to find the run-stop service of the run_stop_server on
-the robot (above), which should be started first, for this reason.
+This will launch both the local nodes. The *wouse.py* will read in the
+formatted training data from the specified pickle file, and trains an
+SVM classifier (using the scikit-learn library). The pickle file should
+be specified using the args in */wouse/launch/wouse.launch*. This file
+will issue a warning and exit if it fails to find the run-stop service
+of the run_stop_server on the robot (above), which should be started
+first, for this reason.
 
 Once both nodes are running, if a wince is detected by the wouse, it
 should signal a run-stop to the robot, which should halt the motors and
@@ -199,35 +194,35 @@ place the power boards into standby.
 There are two ways to read the device files for the wouse. The preferred
 method is to use the evdev_listener node in conjunction with the udev
 rule included in the hardware setup script (above). This udev rule will
-cause the machine with the wouse to create a device file,
-\'\'/dev/wouse\'\', whenever the usb plug is plugged in. The
-evdev_listener will then read the evdev event\'s from this file as the
-mouse reports movement. The file (modified from a version originally by
-Derek King) includes significantly better error-checking, including
-confirming the name of the device and available functions. In addition,
-the use of the udev rule also prevents the X-server from treating the
-wouse as a regular mouse and moving the cursor. However, it is somewhat
-more difficult to setup.
+cause the machine with the wouse to create a device file, */dev/wouse*,
+whenever the usb plug is plugged in. The evdev_listener will then read
+the evdev event\'s from this file as the mouse reports movement. The
+file (modified from a version originally by Derek King) includes
+significantly better error-checking, including confirming the name of
+the device and available functions. In addition, the use of the udev
+rule also prevents the X-server from treating the wouse as a regular
+mouse and moving the cursor. However, it is somewhat more difficult to
+setup.
 
-The second method is \'\'mouse_listener.py\'\', which reads
-PS/2-formatted bytes from a /dev/input/mouse# file. This method
-publishes the same information as the evdev_listener, and can be used
-interchangeably with it. In addition, it does not require the use of the
-udev rules, and so may be preferred if experimenting with different
-mice, as linux produces PS/2 mouse data files readily for most mice. The
-drawbacks are less error-checking for the device type, and that the
-X-server will still use the wouse as a mouse to move the cursor, which
-is typically undesirable (though this may be acceptable for testing.)
+The second method is *mouse_listener.py*, which reads PS/2-formatted
+bytes from a /dev/input/mouse# file. This method publishes the same
+information as the evdev_listener, and can be used interchangeably with
+it. In addition, it does not require the use of the udev rules, and so
+may be preferred if experimenting with different mice, as linux produces
+PS/2 mouse data files readily for most mice. The drawbacks are less
+error-checking for the device type, and that the X-server will still use
+the wouse as a mouse to move the cursor, which is typically undesirable
+(though this may be acceptable for testing.)
 
 When no udev-rule is used, evdev_listener can still read data from
-\'\'/dev/input/event#\'\', where the \'\'#\'\' corresponds to the wouse.
-The X-server will continue to use the wouse to move the cursor, however.
-Similarly, even when the udev rule is used, a \'\'/dev/input/mouse#\'\'
-file is still created, which may be read with mouse_listener.py, and the
+*/dev/input/event#*, where the *\#* corresponds to the wouse. The
+X-server will continue to use the wouse to move the cursor, however.
+Similarly, even when the udev rule is used, a */dev/input/mouse#* file
+is still created, which may be read with mouse_listener.py, and the
 X-server will continue ignoring the wouse.
 
-The \'\'wouse.launch\'\' launch file contains arguments for specifying
-the method to use, and the linux device file where the wouse data can be
+The *wouse.launch* launch file contains arguments for specifying the
+method to use, and the linux device file where the wouse data can be
 read to receive new data. The default uses the evdev_listener to read
 evdev data from /dev/wouse.
 
@@ -255,7 +250,7 @@ python ...???.../wouse/scripts/reset_wouse.py
 the power boards and motors.
 
 For easier access, a desktop launcher may be created to run
-\'\'wouse/reset_wouse_launcher.sh\'\', which will invoke the python
-script. This allows a disabled user to easily reset the robot after a
-wouse run-stop without needing to reach a physical run-stop or type
-commands into a terminal.
+*wouse/reset_wouse_launcher.sh*, which will invoke the python script.
+This allows a disabled user to easily reset the robot after a wouse
+run-stop without needing to reach a physical run-stop or type commands
+into a terminal.

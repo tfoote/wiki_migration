@@ -21,12 +21,11 @@ with Ascending Technologies\' safety guidelines. Additionally:
 -   Always wear proper protection gear (gloves, safety goggles). The
     safety pilot as well as spectators.
 -   In case of any unexpected behavour, the safety pilot should switch
-    \'\'\'both\'\'\' the serial interface switch to \"off\" and the
-    flight mode switch to \"acc\" (both switches point away from the
-    pilot then).
+    **both** the serial interface switch to \"off\" and the flight mode
+    switch to \"acc\" (both switches point away from the pilot then).
 -   When having a new or changed setup (new/other controller, different
-    parameters etc), carefully check the expected outputs
-    \'\'\'before\'\'\' flying.
+    parameters etc), carefully check the expected outputs **before**
+    flying.
 
 ## Setup
 
@@ -99,9 +98,9 @@ the scaling to work correctly, you need to set \`/k_stick\` and
 \`/k_stick_yaw\` to the values you can read out from the LLP with the
 !AscTec control software (default 25, 120). Messages have to arrive at
 least at 10 Hz, otherwise nothing will be forwarded to the LLP.
-\'\'\'Note:\'\'\' yaw rates are limited to +- 85% so that the motors
-cannot be switched on/off accidentally in case of bad commands (motors
-idle, full yaw).
+**Note:** yaw rates are limited to +- 85% so that the motors cannot be
+switched on/off accidentally in case of bad commands (motors idle, full
+yaw).
 
 ### GPS Based Velocity Control
 
@@ -115,9 +114,9 @@ respectively. For the scaling to work correctly, you need to set
 which you can read out from the LLP with the !AscTec control software.
 Defaults are 5 m/s for x/y, and 2 m/s for z. Messages have to arrive at
 least at 10 Hz, otherwise nothing will be forwarded to the LLP.
-\'\'\'Note:\'\'\' yaw rates are limited to +- 85% so that the motors
-cannot be switched on/off accidentally in case of bad commands (full
-descend rate, full yaw)
+**Note:** yaw rates are limited to +- 85% so that the motors cannot be
+switched on/off accidentally in case of bad commands (full descend rate,
+full yaw)
 
 Sending GPS waypoints over the HLP to the LLP is currently not
 implemented as it is not available on the interface between HLP and LLP.

@@ -25,8 +25,8 @@ parameter to the encoder node (the name provided must be discoverable by
 Certain scenarios may require offline caching of video streams which is
 not yet performed by this node.
 
-\'\'\'Amazon Kinesis Video Streams\'\'\': Amazon Kinesis Video Streams
-makes it easy to securely stream video from connected devices to AWS for
+**Amazon Kinesis Video Streams**: Amazon Kinesis Video Streams makes it
+easy to securely stream video from connected devices to AWS for
 analytics, machine learning (ML), playback, and other processing.
 Kinesis Video Streams automatically provisions and elastically scales
 all the infrastructure needed to ingest streaming video data from
@@ -38,11 +38,11 @@ advantage of computer vision and video analytics through integration
 with Amazon Recognition Video, and libraries for ML frameworks such as
 Apache Mx\`\`Net, Tensor\`\`Flow, and Open\`\`CV.
 
-\'\'\'Amazon Rekognition\'\'\': The easy-to-use Rekognition API allows
-you to automatically identify objects, people, text, scenes, and
-activities, as well as detect any inappropriate content. Developers can
-quickly build a searchable content library to optimize media workflows,
-enrich recommendation engines by extracting text in images, or integrate
+**Amazon Rekognition**: The easy-to-use Rekognition API allows you to
+automatically identify objects, people, text, scenes, and activities, as
+well as detect any inappropriate content. Developers can quickly build a
+searchable content library to optimize media workflows, enrich
+recommendation engines by extracting text in images, or integrate
 secondary authentication into existing applications to enhance end-user
 security. With a wide variety of use cases, Amazon Rekognition enables
 you to easily add the benefits of computer vision to your business.

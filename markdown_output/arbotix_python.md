@@ -145,9 +145,9 @@ then start the ArbotiX node using a launch file such as:
 
 The ControllerGUI is a test/teleop node that allows you to control a
 mobile base and/or your Dynamixel servos. The ControllerGUI publishes
-geometry_msgs/Twist commands to the \'\'cmd_vel\'\' topic, and commands
-to individual servos. It will automatically determine the names and
-limits of your servos from your YAML specification file. Launching the
+geometry_msgs/Twist commands to the *cmd_vel* topic, and commands to
+individual servos. It will automatically determine the names and limits
+of your servos from your YAML specification file. Launching the
 ControllerGUI is as easy as: ```
 rosrun arbotix_python controllerGUI.py
 ``` You should then
@@ -158,9 +158,9 @@ see a window like:
 Moving the red dot up drives the robot forward, moving left/right turns
 in place, etc. The slider bars move servos, but must be checked to be
 enabled. When not enabled, they will be updated with the values of the
-last joint_states message, so that when enabled they will not
-\'\'snap\'\' to a position, but just torque-on in place. In the above
-image, only head_pan and head_tilt are enabled.
+last joint_states message, so that when enabled they will not *snap* to
+a position, but just torque-on in place. In the above image, only
+head_pan and head_tilt are enabled.
 
 ## Terminal
 

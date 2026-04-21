@@ -1,12 +1,12 @@
 # Overview
 
-The \'\'velo2cam_calibration\'\' software implements a state-of-the-art
+The *velo2cam_calibration* software implements a state-of-the-art
 automatic calibration algorithm for pair of sensors composed of LiDAR
 and camera devices in any possible combination, as described in this
 paper:
 
-\'\'\'Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor
-Setups\'\'\'
+**Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor
+Setups**
 
 [Jorge Beltrán](https://beltransen.github.io/),
 [Carlos Guindel](https://cguindel.github.io/), Arturo de la Escalera,
@@ -14,8 +14,8 @@ Fernando García
 
 IEEE Transactions on Intelligent Transportation Systems, 2022
 
-\'\'\'\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276)
-\] \[ [Preprint](https://arxiv.org/abs/2101.04431) \]\'\'\'
+**\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276) \]
+\[ [Preprint](https://arxiv.org/abs/2101.04431) \]**
 
 ![\|width=\"750px\"](attachment:real_results.png)
 
@@ -23,7 +23,7 @@ IEEE Transactions on Intelligent Transportation Systems, 2022
 
 This software is provided as a ROS package. To install:
 
-1\. Clone the repository into your \'\'catkin_ws/src/\'\' folder.
+1\. Clone the repository into your *catkin_ws/src*/ folder.
 
 2\. Install run dependencies: \`\`\`sudo apt-get install
 ros-\<distro\>-opencv-apps\`\`\`
@@ -49,7 +49,7 @@ dimensional drawing.
 
 ![\|width=\"750px\"](attachment:calibration_target_real_scheme_journal.png)
 
-\'\'\'Note:\'\'\' Other size may be used for convenience. If so, please
+**Note:** Other size may be used for convenience. If so, please
 configure node parameters accordingly.
 
 # Citation

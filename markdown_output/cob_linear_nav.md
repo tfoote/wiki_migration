@@ -1,10 +1,10 @@
 The [cob_linear_nav](cob_linear_nav) package provides a configurable
 node for simple navigation. It drives the robot on a linear path from
-its current position to its goal position \'\'\'without any obstacle
-avoidance\'\'\'. This should be carried out in another package. If the
-robot doesn\'t move anymore (e.g. due to an obstacle that stays on the
-robot path), the robot stops trying to reach the goal after a certain
-period of time (to be specified over a parameter).
+its current position to its goal position **without any obstacle
+avoidance**. This should be carried out in another package. If the robot
+doesn\'t move anymore (e.g. due to an obstacle that stays on the robot
+path), the robot stops trying to reach the goal after a certain period
+of time (to be specified over a parameter).
 
 ## ROS API
 

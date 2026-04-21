@@ -56,8 +56,8 @@ the \`mimic\` tag in the [URDF](URDF).
 ### Default value
 
 The default value is zero. If zero is not a permissible value
-\'\'(max+min)/2\'\' is used. To override the default value for some
-joints, use the \`zeros\` parameter. An example YAML file is seen below.
+*(max+min)/2* is used. To override the default value for some joints,
+use the \`zeros\` parameter. An example YAML file is seen below.
 
 ## Node API
 

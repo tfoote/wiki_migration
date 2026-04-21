@@ -52,11 +52,11 @@ provided it starts an online session. To see a complete list of options:
 ```
 rosrun dwoslam dwo_node --help
 ``` Commands caught by the OpenCV window:\
-\'\'online session\'\' spacebar:: restart g:: write the graph to pdf
-\'\'testing session\'\' spacebar:: restart g:: write the graph to pdf
-s:: skip frame c:: continue (track this frame) f:: go to frame
-no\...(write the frame number in the terminal window) t:: go to
-timestamp\...(write the timestamp -ns- in the terminal window) e:: exit
+*online session* spacebar:: restart g:: write the graph to pdf *testing
+session* spacebar:: restart g:: write the graph to pdf s:: skip frame
+c:: continue (track this frame) f:: go to frame no\...(write the frame
+number in the terminal window) t:: go to timestamp\...(write the
+timestamp -ns- in the terminal window) e:: exit
 
 When the graph is drawn in the viewer, the program could stop: simply
 press \'q\' in the 3D window.

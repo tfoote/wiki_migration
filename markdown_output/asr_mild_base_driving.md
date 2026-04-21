@@ -16,7 +16,7 @@ from this package for your own motor control.
 
 The package includes two components:
 
-\'\'\'CanListener\'\'\'
+**CanListener**
 
 Get \"Ticks\" from the incremental encoder. Calculate the odometry from
 the ticks and publish them on the ROS-Topic /odom
@@ -27,7 +27,7 @@ calculated:
 
 ![\|height=\"279\",width=\"412\"](attachment:odometrie.JPG)
 
-\'\'\'BaseController\'\'\'
+**BaseController**
 
 Get ROS cmd_vel messages. Calculate velocities for the left and right
 wheel based on the cmd_vel messages and transmit them to the

@@ -1,17 +1,16 @@
-\'\'\'Author(s):\'\'\' Jacobo Torres (of We-R22), Mariana Sosa (of
-We-R22), Edgar Alfredo Portilla, José Alejandro Vásquez, Luis Felipe
-Marín.
+**Author(s):** Jacobo Torres (of We-R22), Mariana Sosa (of We-R22),
+Edgar Alfredo Portilla, José Alejandro Vásquez, Luis Felipe Marín.
 
-\'\'\'Maintainer(s):\'\'\' Mariana Sosa, Jacobo Torres, José Alejandro
-Vásquez, Edgar Alfredo Portilla, Luis Felipe Marín.
+**Maintainer(s):** Mariana Sosa, Jacobo Torres, José Alejandro Vásquez,
+Edgar Alfredo Portilla, Luis Felipe Marín.
 
-\'\'\'License:\'\'\' BSD-3
+**License:** BSD-3
 
-\'\'\'Website:\'\'\' <http://wiki.ros.org/pid_tuning>
+**Website:** <http://wiki.ros.org/pid_tuning>
 
-\'\'\'Source:\'\'\' <https://github.com/We-R22/pid_tuning.git>
+**Source:** <https://github.com/We-R22/pid_tuning.git>
 
-\'\'\'API documentation:\'\'\'
+**API documentation:**
 
 ## Summary
 
@@ -66,8 +65,8 @@ After selecting between one of the Evolutive Algorithms, you need to
 choose between two options depending on the level of accuracy that you
 want or need, these options are:
 
--   \'\'\'Sending the joint and floating base trajectories\'\'\': this
-    will consider both the joint error and the floating base error, this
+-   **Sending the joint and floating base trajectories**: this will
+    consider both the joint error and the floating base error, this
     means it will not only take in count the accuracy in joint space but
     in the trajectory following task too (Cartesian space). In
     optimization this is approached as a Constrained Numerical
@@ -76,8 +75,8 @@ want or need, these options are:
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Sending the joint trajectories\'\'\': this will only consider
-    the joint error, In optimization this is known as Unconstrained
+-   **Sending the joint trajectories**: this will only consider the
+    joint error, In optimization this is known as Unconstrained
     Numerical Optimization Problem, which is a particular case of a
     CNOP.
 
@@ -93,22 +92,20 @@ of Constraint Violation (SCV) columns. Where the Objective Function is
 the sum of all joint errors (joint space) and the SCV is calculated
 considering an Equality Constraint defined as the sum of position error
 measured at the floating base link along the Cartesian trajectory, based
-on a Constraint Handler in this case, \'\'Deb\'s feasibility rules\'\'.
-If you want to implement the constraint approach you will need to get
-the current position of the floating base link, thus you need to build
-an odometry node that publishes the odometry data in the topic: \'\'
-\'\'\'/odom\'\'\' \'\', the pid_tuning algorithms will automatically
-subscribe to this topic, so you don't need to modify anything inside the
-pid_tuning classes.
+on a Constraint Handler in this case, *Deb\'s feasibility rules*. If you
+want to implement the constraint approach you will need to get the
+current position of the floating base link, thus you need to build an
+odometry node that publishes the odometry data in the topic: * **/odom**
+*, the pid_tuning algorithms will automatically subscribe to this topic,
+so you don't need to modify anything inside the pid_tuning classes.
 
 Then, each individual of the first generation gets evaluated in Gazebo,
 one after the other, restarting both the Gazebo simulation and
 controllers once an individual has finished the evaluation, this is done
 by updating the PID gains in the rosparam and sending the joint
-trajectories to the \'\' \'\'\'/pid/command\'\'\' \'\' topic, and
-calculating the OF using the data error available in the \'\'
-\'\'\'/pid/state\'\'\' \'\' topic and SCV is calculated using the
-odometry data.
+trajectories to the * **/pid/command** * topic, and calculating the OF
+using the data error available in the * **/pid/state** * topic and SCV
+is calculated using the odometry data.
 
 In order to achieve this without trouble in Gazebo, a class has been
 created to control the flow simulation, for example: stop, restart,
@@ -125,17 +122,16 @@ Differential Evolution and Harmony Search which will be described below.
 DE is based on \"Differential Mutation\" which in its rand/1/bin version
 consists of adding to a vector of the population, the scaled difference
 between two vectors taken from the same population, in order to direct
-the search considering two operands: mutant factor \'\'\'F\'\'\' and
-crossing factor \'\'\'C\'\'\'. Although originally DE was designed for
-unconstrained optimization problems, it is possible to incorporate a
-constraint handler for solving CNOP cases. Thus, two operators are
-required:
+the search considering two operands: mutant factor **F** and crossing
+factor **C**. Although originally DE was designed for unconstrained
+optimization problems, it is possible to incorporate a constraint
+handler for solving CNOP cases. Thus, two operators are required:
 
--   \'\'\'F\'\'\' = floating number between 0 and 1
--   \'\'\'C\'\'\' = floating number between 0 and 1
+-   **F** = floating number between 0 and 1
+-   **C** = floating number between 0 and 1
 
-\'\'\' This parameters must be specified by the user in the
-implementation \'\'\'
+** This parameters must be specified by the user in the implementation
+**
 
 Applying this mechanism, the algorithm creates a \"children population
 matrix\" which is evaluated and then compared to their parents; only the
@@ -153,15 +149,15 @@ Harmony Search is mainly inspired in musical improvisation, on how
 musicians compose and find new harmonies; they do this based on their
 experience and improvising new harmonies combining what they\'ve already
 learn and new ideas. In this case, the population matrix is called
-\'\'Harmony Memory\'\' and each individual is named a \'\'harmony\'\'
-composed by m-2 notes.
+*Harmony Memory* and each individual is named a *harmony* composed by
+m-2 notes.
 
 The Harmony Search algorithm requires 3 operators:
 
--   \'\'\'r_accept\'\'\' = r acceptance (random number between 0 and 1)
--   \'\'\'r_pa\'\'\' = pitch adjustment (value between 0 and 1)
--   \'\'\'bw\'\'\' = band width (value close to 0, if 0, the algorithm
-    will automatically calculate bw by applying an equation)
+-   **r_accept** = r acceptance (random number between 0 and 1)
+-   **r_pa** = pitch adjustment (value between 0 and 1)
+-   **bw** = band width (value close to 0, if 0, the algorithm will
+    automatically calculate bw by applying an equation)
 
 ## Requirements
 
@@ -169,9 +165,8 @@ You need to install numpy and pandas.
 
 ## Installation
 
-Here you\'ll find a description on how you can install the
-\'\'pid_tuning\'\' package in your workspace so you can use it for your
-projects.
+Here you\'ll find a description on how you can install the *pid_tuning*
+package in your workspace so you can use it for your projects.
 
 1\. In the terminal, move to the catkin workspace in which you have your
 robot description package. ```

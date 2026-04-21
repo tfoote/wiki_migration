@@ -8,9 +8,8 @@ on the \`cmd_vel\` topic.
 
 ![](attachment:robotino_safety_ros.png)
 
-\'\'\'Note:\'\'\' The obstacle above is visualized in red. The yellow
-cylinder is the next heading point on the global path and not the
-obstacle.
+**Note:** The obstacle above is visualized in red. The yellow cylinder
+is the next heading point on the global path and not the obstacle.
 
 The laser scans received are converted to pointclouds. The points from
 the cloud are checked if they lie in the outer ellipse (as seen in the

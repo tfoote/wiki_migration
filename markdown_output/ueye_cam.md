@@ -1,4 +1,4 @@
-\'\'\'Fuerte (or older ROS release) checkout:\'\'\' git clone
+**Fuerte (or older ROS release) checkout:** git clone
 <https://github.com/anqixu/ueye_cam.git> \--branch fuerte
 
 ## Overview
@@ -11,17 +11,16 @@ and is compatible with [image_pipeline](image_pipeline),
 [camera_calibration](camera_calibration), and
 [image_geometry](image_geometry).
 
-This package has been tested with the \'\'\'Software Package for USB and
-GigE uEye Cameras Version 4.20 64 Bit for Linux\'\'\', on \'\'\'Ubuntu
-12.04 x64 & Ubuntu 13.04 x64\'\'\', operating with \'\'\'UEye UI122xLE-C
-USB 2.0\'\'\' cameras.
+This package has been tested with the **Software Package for USB and
+GigE uEye Cameras Version 4.20 64 Bit for Linux**, on **Ubuntu 12.04 x64
+& Ubuntu 13.04 x64**, operating with **UEye UI122xLE-C USB 2.0**
+cameras.
 
 The package with the version 1.0.17
 ([Github Release](https://github.com/anqixu/ueye_cam/releases/tag/1.0.17))
-has been tested with the \'\'\'Software Package for USB uEye Cameras
-Version 4.94 64 Bit for Linux\'\'\' and \'\'\'ROS Noetic\'\'\', on
-\'\'\'Ubuntu 20.04 x64\'\'\', operating with \'\'\'UEye UI-3240LE-M-GL
-USB 3.0\'\'\' camera.
+has been tested with the **Software Package for USB uEye Cameras Version
+4.94 64 Bit for Linux** and **ROS Noetic**, on **Ubuntu 20.04 x64**,
+operating with **UEye UI-3240LE-M-GL USB 3.0** camera.
 
 (side-note: it is technically possible to
 [run ueye_cam on ARM devices](http://youtu.be/nU1u6vHoZ-I); see video
@@ -29,13 +28,13 @@ caption for outline of instructions)
 
 This implementation makes use of certain C++11 features (such as
 std::thread, std::to_string, etc), although the CMakeLists.txt is
-configured for GCC \>= 4.6 (and hence uses the \'\'-std=c++0x\'\' flag).
+configured for GCC \>= 4.6 (and hence uses the *-std=c++0x* flag).
 
 ## Features
 
 -   implemented as a [nodelet](nodelet)
 -   supports loading from IDS camera parameter files (e.g. obtained from
-    \'\'ueyedemo\'\')
+    *ueyedemo*)
 -   supports publishing frames as \"rgb8\", \"mono8\", and
     \"bayer_rggb8\" (depending on camera model)
 -   camera is deactivated unless there is a subscriber to the published
@@ -77,8 +76,8 @@ ROS image. Unfortunately, these names were chosen to be consistent with
 official camera interfaces provided by IDS, and they refer to the width
 and height of the camera sensor\'s Area of Interest (AOI). Therefore,
 values for \'image_width\' and \'image_height\' that are smaller than
-your camera\'s maximum values will result in \'\'\'cropped field of
-view\'\'\' (a.k.a. reduced AOI).
+your camera\'s maximum values will result in **cropped field of view**
+(a.k.a. reduced AOI).
 
 For typical use cases, one should modify values for \'sensor_scaling\' /
 \'binning\' / \'subsampling\' parameters, in order to down-sample the
@@ -98,21 +97,20 @@ replicate in ROS).
 [here](http://en.ids-imaging.com/download-ueye.html)
 
 -   Pay attention to start the UEye daemon after installation is
-    complete, by running \'\'sudo /etc/init.d/ueye\<usb/eth\>drc
-    start\'\'. This is not necessary after a system reboot.
--   \'\'\'update\'\'\': even though ueye_cam will automatically download
-    a barebone version of the IDS driver if not present for compilation,
+    complete, by running *sudo /etc/init.d/ueye\<usb/eth\>drc start*.
+    This is not necessary after a system reboot.
+-   **update**: even though ueye_cam will automatically download a
+    barebone version of the IDS driver if not present for compilation,
     the daemon (and thus the official IDS driver) is still needed in
     order to connect and grab frames from an uEye camera 2. create
-    catkin workspace \'\'mkdir -p \<your_ueye_cam_ws\>/src\'\'.
+    catkin workspace *mkdir -p \<your_ueye_cam_ws\>/src*.
 
 3\. initialize and download source code
 
-\'\'cd \<your_ueye_cam_ws\>/src && wstool init && wstool set ueye_cam
-\--git <https://github.com/anqixu/ueye_cam> && wstool update && cd
-..\'\'.
+*cd \<your_ueye_cam_ws\>/src && wstool init && wstool set ueye_cam
+\--git <https://github.com/anqixu/ueye_cam> && wstool update && cd ..*.
 
-4\. Run \'\'catkin_make\'\' under \'\'\<your_ueye_cam_ws\>\'\'.
+4\. Run *catkin_make* under *\<your_ueye_cam_ws\>*.
 
 ## ROS API
 
@@ -293,7 +291,7 @@ images. Also publishes on /camera/image_raw.
 ### launch/debug.launch
 
 Same as rgb8.launch, but spawns the nodelet (manager) in gdb on a
-separate screen. \'\'\'Not recommended for typical use.\'\'\'
+separate screen. **Not recommended for typical use.**
 
 ### launch/master_slaves_rgb8.launch
 
@@ -302,10 +300,10 @@ synchronizing multiple UEye cameras. You will need to add additional
 physical modifications to the cameras for this to work; see \'Camera
 Synchronization\' section for more details.
 
-\'\'\'Do not use this launch file to operate a single UEye camera! Also,
-any camera with the ROS parameter \'\'external_trigger_mode\'\' set to
-\'\'True\'\', and does not have a valid triggering signal, will not
-return valid images and will behave unpredictably.\'\'\'
+**Do not use this launch file to operate a single UEye camera! Also, any
+camera with the ROS parameter *external_trigger_mode* set to *True*, and
+does not have a valid triggering signal, will not return valid images
+and will behave unpredictably.**
 
 ## Camera Calibration
 
@@ -316,7 +314,7 @@ refer to
 for info on calibrating your own UEye cameras.
 
 All calibration files are stored by default under:
-\'\'/.ros/camera_info/\<camera_name\>.yaml\'\'
+*/.ros/camera_info/\<camera_name\>.yaml*
 
 ### Camera Synchronization
 

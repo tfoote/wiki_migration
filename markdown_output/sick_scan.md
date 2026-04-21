@@ -23,30 +23,30 @@ data should be used.
 The driver supports at least the scanners listed below and has also been
 tested with these devices:
 
-  -- ------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------- -- --------------------- --
-     \'\'\'device name\'\'\'      \'\'\'part no.\'\'\'                                                                                                                   \'\'\'description\'\'\'                                  \'\'\'tested?\'\'\'   
-     MRS6124                      [6065086](https://www.sick.com/de/de/mess-und-detektionsloesungen/3d-lidar-sensoren/mrs6000/mrs6124r-131001/p/p533545)                 24 layer (standard)                                      ✔ \[stable\]          
-     MRS1104                      [1081208](https://www.sick.com/sg/en/detection-and-ranging-solutions/3d-lidar-sensors/mrs1000/mrs1104c-111011/p/p495044)               4 layer                                                  ✔ \[stable\]          
-     LMS1104                      [1092445](https://www.sick.com/us/en/detection-and-ranging-solutions/2d-lidar-sensors/lms1000/c/g387151)                               1 layer (based on MRS1104 technology)                    ✔ \[stable\]          
-     TiM551                       [1060445](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 10m, ang. resol. 1.00\[deg\]         ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     TiM561                       [1071419](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 10m, ang. resol. 0.33 \[deg\]        ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     TiM571                       [1079742](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 25m, ang. resol. 0.33 \[deg\]        ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     TiM781                       [1096807](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781-2174101/p/p594148)                   1 layer max. range: 25 m, ang. resol. 0.33 \[deg\]       ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     TiM781S                      [1096363](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781s-2174104/p/p594149)                  1 layer max. range: 25 m, ang. resol. 0.33 \[deg\]       ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     LMS4xxx-Family               [1091423](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/lms4000/lms4111r-13000/p/p578044?ff_data)          1 layer max. range: 3 m, ang. resol. 0,0833 \[deg\]      ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 600 Hz                                                              
-     LMS511-10100 PRO             [1046135](https://www.sick.com/media/docs/4/14/514/Operating_instructions_LMS5xx_LASER_MEASUREMENT_SENSORS_en_IM0037514.PDF)           1 layer max. range: 80m, ang. resol. 0.167 \[deg\]       ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 100 Hz                                                              
-     LMS1xx-Family                [e.g. 1041114](https://www.sick.com/media/docs/1/31/331/Operating_instructions_LMS1xx_Laser_Measurement_Sensors_en_IM0031331.PDF)      1 layer max. range: 28m, ang. resol. 0.25 \[deg\]        ✔ \[stable\]          
-                                                                                                                                                                         Scan-Rate: 15 Hz                                                               
-     RMS3xx                       [8021530](https://www.sick.com/media/docs/4/04/504/Operating_instructions_RMS3xx_en_IM0075504.PDF)                                     Radar Sensor                                             ✔ \[stable\]          
-                                                                                                                                                                         Opening angle: +/- 50 \[deg\]                                                  
-  -- ------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------- -- --------------------- --
+  -- ------------------ -- ----------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------- -- -------------- --
+     **device name**       **part no.**                                                                                                                           **description**                                          **tested?**    
+     MRS6124               [6065086](https://www.sick.com/de/de/mess-und-detektionsloesungen/3d-lidar-sensoren/mrs6000/mrs6124r-131001/p/p533545)                 24 layer (standard)                                      ✔ \[stable\]   
+     MRS1104               [1081208](https://www.sick.com/sg/en/detection-and-ranging-solutions/3d-lidar-sensors/mrs1000/mrs1104c-111011/p/p495044)               4 layer                                                  ✔ \[stable\]   
+     LMS1104               [1092445](https://www.sick.com/us/en/detection-and-ranging-solutions/2d-lidar-sensors/lms1000/c/g387151)                               1 layer (based on MRS1104 technology)                    ✔ \[stable\]   
+     TiM551                [1060445](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 10m, ang. resol. 1.00\[deg\]         ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     TiM561                [1071419](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 10m, ang. resol. 0.33 \[deg\]        ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     TiM571                [1079742](https://www.sick.com/media/docs/9/29/229/Operating_instructions_TiM55x_TiM56x_TiM57x_de_IM0051229.PDF)                       1 layer max. range: 25m, ang. resol. 0.33 \[deg\]        ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     TiM781                [1096807](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781-2174101/p/p594148)                   1 layer max. range: 25 m, ang. resol. 0.33 \[deg\]       ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     TiM781S               [1096363](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/tim7xx/tim781s-2174104/p/p594149)                  1 layer max. range: 25 m, ang. resol. 0.33 \[deg\]       ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     LMS4xxx-Family        [1091423](https://www.sick.com/de/de/mess-und-detektionsloesungen/2d-lidar-sensoren/lms4000/lms4111r-13000/p/p578044?ff_data)          1 layer max. range: 3 m, ang. resol. 0,0833 \[deg\]      ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 600 Hz                                                       
+     LMS511-10100 PRO      [1046135](https://www.sick.com/media/docs/4/14/514/Operating_instructions_LMS5xx_LASER_MEASUREMENT_SENSORS_en_IM0037514.PDF)           1 layer max. range: 80m, ang. resol. 0.167 \[deg\]       ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 100 Hz                                                       
+     LMS1xx-Family         [e.g. 1041114](https://www.sick.com/media/docs/1/31/331/Operating_instructions_LMS1xx_Laser_Measurement_Sensors_en_IM0031331.PDF)      1 layer max. range: 28m, ang. resol. 0.25 \[deg\]        ✔ \[stable\]   
+                                                                                                                                                                  Scan-Rate: 15 Hz                                                        
+     RMS3xx                [8021530](https://www.sick.com/media/docs/4/04/504/Operating_instructions_RMS3xx_en_IM0075504.PDF)                                     Radar Sensor                                             ✔ \[stable\]   
+                                                                                                                                                                  Opening angle: +/- 50 \[deg\]                                           
+  -- ------------------ -- ----------------------------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------- -- -------------- --
 
 For scanners of the series Tim3xx this driver should work but has not
 been tested yet.
@@ -80,9 +80,8 @@ roslaunch sick_scan sick_mrs_1xxx.launch
 ``` 1. Launch rviz
 ```
 rviz rviz
-``` 1. Select \'\'\'\'\'laser\'\'\'\'\' as fixed
-frame. And add a new PointCloud decoder subscribed at topic
-\'\'\'\'\'cloud\'\'\'\'\'. 1. Enjoy.
+``` 1. Select ***laser*** as fixed frame. And add a
+new PointCloud decoder subscribed at topic ***cloud***. 1. Enjoy.
 
 ## Troubleshooting
 

@@ -1,7 +1,7 @@
-\'\'\'Warning:\'\'\' this package provides an install target that should
-be run before using this package, unlike others ROS package. I.e. type
-\`make install -C \$(rospack find dynamic_graph_bridge)\` before using
-this package.
+**Warning:** this package provides an install target that should be run
+before using this package, unlike others ROS package. I.e. type \`make
+install -C \$(rospack find dynamic_graph_bridge)\` before using this
+package.
 
 This package provides three
 [dynamic-graph](http://jrl-umi3218.github.com/dynamic-graph/doxygen/HEAD/)
@@ -43,15 +43,15 @@ The published topics after executing this sample are:
 
 \`dynamic_graph_bridge\` supports the following conversion:
 
-  -- ---------------------------------------------- -- --------------------------------------- -- ---------------------------------------------- --
-     \'\'\'ROS message type\'\'\'                      \'\'\'dynamic-graph signal type\'\'\'      \'\'\'Type name\'\'\' (normal/stamped)         
-     \<\<MsgLink(std_msgs/Float64)\>\>                 \`double\`                                 double / n/a                                   
-     \<\<MsgLink(dynamic_graph_bridge/Matrix)\>\>      \`ml::Matrix\`                             matrix / n/a                                   
-     \<\<MsgLink(dynamic_graph_bridge/Vector)\>\>      \`ml::Vector\`                             vector / n/a                                   
-     \<\<MsgLink(geometry_msgs/Vector3)\>\>            \`ml::Vector\`                             vector3 / vector3stamped                       
-     \<\<MsgLink(geometry_msgs/Transform)\>\>          \`sot::MatrixHomogeneous\`                 matrixHomogeneous / matrixHomogeneousStamped   
-     \<\<MsgLink(geometry_msgs/Twist)\>\>              \`ml::Vector\`                             twist / twistStamped                           
-  -- ---------------------------------------------- -- --------------------------------------- -- ---------------------------------------------- --
+  -- ---------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
+     **ROS message type**                              **dynamic-graph signal type**      **Type name** (normal/stamped)                 
+     \<\<MsgLink(std_msgs/Float64)\>\>                 \`double\`                         double / n/a                                   
+     \<\<MsgLink(dynamic_graph_bridge/Matrix)\>\>      \`ml::Matrix\`                     matrix / n/a                                   
+     \<\<MsgLink(dynamic_graph_bridge/Vector)\>\>      \`ml::Vector\`                     vector / n/a                                   
+     \<\<MsgLink(geometry_msgs/Vector3)\>\>            \`ml::Vector\`                     vector3 / vector3stamped                       
+     \<\<MsgLink(geometry_msgs/Transform)\>\>          \`sot::MatrixHomogeneous\`         matrixHomogeneous / matrixHomogeneousStamped   
+     \<\<MsgLink(geometry_msgs/Twist)\>\>              \`ml::Vector\`                     twist / twistStamped                           
+  -- ---------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
 
 The last column matches the type name which must be passed as the first
 argument of the \`add\` command.

@@ -13,7 +13,7 @@ To use it from your own catkin package you need to make sure you get the
 dependency syntax right. The cmake commands in particular are subtly
 different from depending on a catkin package. An example:
 
-\'\'\'CMakeLists.txt\'\'\'
+**CMakeLists.txt**
 
 ```highlight
 find_package(catkin REQUIRED COMPONENTS                                   
@@ -35,7 +35,7 @@ catkin_package(
     )
 ```
 
-\'\'\'package.xml\'\'\' ```highlight
+**package.xml** ```highlight
   <build_depend>ecl_linear_algebra</build_depend>
   <build_depend>ecl_time</build_depend>
   <build_depend>sophus</build_depend>

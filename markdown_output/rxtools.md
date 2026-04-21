@@ -21,7 +21,7 @@ the [Code API](http://www.ros.org/doc/api/rxtools/html/).
 
 ## Roadmap/Stability
 
-\`rxconsole\` and \`rxplot\` are \'\'\'stable\'\'\' tools. For future
+\`rxconsole\` and \`rxplot\` are **stable** tools. For future
 development, the hope is to add other forms of plotting to \`rxplot\`,
 such as plotting distributions. \`rxplot\` may also get a plugin API
 that would enable it to plot common message types with default settings.

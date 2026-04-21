@@ -15,7 +15,7 @@ The current list of supported colour definitions:
 
 ## Usage
 
-\'\'\' Freeform Style \'\'\'
+** Freeform Style **
 
 Simply intersperse colour definitions throughout your printing
 statements, e.g.
@@ -25,7 +25,7 @@ statements, e.g.
    print(console.cyan + "    Name" + console.reset + ": " + console.yellow + "Dude" + console.reset)
 ```
 
-\'\'\' Logging Style \'\'\'
+** Logging Style **
 
 ```highlight
    import rocon_console.console as console

@@ -6,5 +6,5 @@
 
 ## robot_localization
 
-The \'\'[robot_localization](robot_localization)\'\' package contains
-nodes for performing nonlinear state estimation through sensor fusion.
+The *[robot_localization](robot_localization)* package contains nodes
+for performing nonlinear state estimation through sensor fusion.

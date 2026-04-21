@@ -38,8 +38,8 @@ parameters, which are read when launching the node:
 roslaunch twist_mux twist_mux.launch
 ```
 
-In the \'\'\'config\'\'\' folder there are example yaml files with
-configuration parameters.
+In the **config** folder there are example yaml files with configuration
+parameters.
 
 ### Subscribers
 
@@ -49,20 +49,19 @@ described below.
 
 #### Twist inputs
 
-The \'\'\'topics\'\'\' parameter contains a list of structs with the
-following fields that specify each input twist topics:
+The **topics** parameter contains a list of structs with the following
+fields that specify each input twist topics:
 
--   \'\'\'name\'\'\' : Human readable name, only for diagnostics
-    purposes.
--   \'\'\'topic\'\'\' : Input topic name. The node will subscribe to it.
-    It must be of
+-   **name** : Human readable name, only for diagnostics purposes.
+-   **topic** : Input topic name. The node will subscribe to it. It must
+    be of
     [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
     type.
--   \'\'\'timeout\'\'\' : Messages timeout in seconds. If no message
-    arrives after the timeout, other topics are selected. If \`timeout
-    == 0.0\`, the topic never enters in timeout.
--   \'\'\'priority\'\'\' : Priority of the topic from 0 to 255. The
-    higher the more priority it has over the others.
+-   **timeout** : Messages timeout in seconds. If no message arrives
+    after the timeout, other topics are selected. If \`timeout == 0.0\`,
+    the topic never enters in timeout.
+-   **priority** : Priority of the topic from 0 to 255. The higher the
+    more priority it has over the others.
 
 Example configuration to multiplex the autonomous navigation from
 [move_base](move_base), a joystick from [joy_teleop](joy_teleop), a
@@ -98,21 +97,20 @@ not recommended.
 
 #### Lock inputs
 
-The \'\'\'locks\'\'\' parameter contains a list of structs with the
-following fields that specify each input lock topics:
+The **locks** parameter contains a list of structs with the following
+fields that specify each input lock topics:
 
--   \'\'\'name\'\'\' : Human readable name, only for diagnostics
-    purposes.
--   \'\'\'topic\'\'\' : Input topic name. The node will subscribe to it.
-    It must be of
+-   **name** : Human readable name, only for diagnostics purposes.
+-   **topic** : Input topic name. The node will subscribe to it. It must
+    be of
     [std_msgs::Bool](http://docs.ros.org/api/std_msgs/html/msg/Bool.html)
     type.
--   \'\'\'timeout\'\'\' : Messages timeout in seconds. The lock topic is
+-   **timeout** : Messages timeout in seconds. The lock topic is
     supposed to publish at a certain frequency, so the timeout allows to
     detect if the publisher is dead in order to enable the lock. If
     \`timeout == 0.0\`, it is not used.
--   \'\'\'priority\'\'\' : Priority of the topic from \`0\` to \`255\`.
-    The higher the more priority it has over the others.
+-   **priority** : Priority of the topic from \`0\` to \`255\`. The
+    higher the more priority it has over the others.
 
 Example configuration to pause the navigation and give priority to the
 joystick: ```yaml
@@ -136,7 +134,7 @@ A single topic is selected every time a new message arrives through the
 input twist topics; this is needed in order to check for the timeouts,
 locks, and priorities. The messages are published in:
 
--   \'\'\'cmd_vel\'\'\' : Output
+-   **cmd_vel** : Output
     [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
     topic of the twist multiplexer.
 

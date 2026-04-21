@@ -83,10 +83,9 @@ this:
 
 ### To choose plotting backend type
 
-Currently \`rqt_plot\` has three plotting backend options
-(\'\'\'numbered in recommended order\'\'\') which can be configured
-using the setting dialog available via the gear icon in the window title
-bar:
+Currently \`rqt_plot\` has three plotting backend options (**numbered in
+recommended order**) which can be configured using the setting dialog
+available via the gear icon in the window title bar:
 
 1\. [pyqtgraph](http://www.pyqtgraph.org/) (fast and needs \`pyqtgraph\`
 to be manually installed which is not in the \`Ubuntu\` binary

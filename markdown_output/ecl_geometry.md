@@ -30,7 +30,7 @@ using ecl::TensionSpline;
 using ecl::Pose2D;
 ```
 
-If outside ros, you will also need to link to \'\'ecl_geometry\'\'.
+If outside ros, you will also need to link to *ecl_geometry*.
 
 ## Tutorials
 

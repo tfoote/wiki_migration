@@ -64,9 +64,9 @@ API key at the web interface of the !RoboEarth database:
 
 It is possible to search for database entries, which share a common
 prefix for their unique identifier (UID) using the
-\'\'/re_comm/search\_\<type\>\'\' services. As the class of an entity is
-built from categories and subcategories (separated by dots) a prefix
-search can be used to find all entities that are part of the same
+*/re_comm/search\_\<type\>* services. As the class of an entity is built
+from categories and subcategories (separated by dots) a prefix search
+can be used to find all entities that are part of the same
 category/subcategory. For example:
 
 ```
@@ -88,8 +88,8 @@ animal.mammal.d    // => UID2 found
 
 By using the
 [SeRQL query language](http://www.openrdf.org/doc/sesame2/users/ch09.html)
-and the \'\'/re_comm/query\_\<type\>\'\' services, you may access
-server-side reasoning based on the RDF triples. Example queries:
+and the */re_comm/query\_\<type\>* services, you may access server-side
+reasoning based on the RDF triples. Example queries:
 
 -   Get all OWL classes:
 

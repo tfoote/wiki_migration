@@ -51,8 +51,8 @@ Please consult the
 [API Documentation](http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html#f9dae281a663ebfcf0aa6f295241b60b)
 for full usage details.
 
-\'\'\'Example:\'\'\' To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\>
-to a \<\<MsgLink(sensor_msgs/PointCloud)\>\> ```cplusplus
+**Example:** To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\> to a
+\<\<MsgLink(sensor_msgs/PointCloud)\>\> ```cplusplus
 laser_geometry::LaserProjection projector_;
 
 void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
@@ -75,17 +75,17 @@ Since we are gathering data across the time of the scan, it is often
 important that the chosen target_frame is actually a fixed frame.
 
 Because the stamp of a \<\<MsgLink(sensor_msgs/LaserScan)\>\> is the
-time of the \'\'\'first\'\'\' measurement, one cannot simply wait for a
+time of the **first** measurement, one cannot simply wait for a
 transform to target_frame at this stamp. Instead one also has to wait
-for a transform at the \'\'\'last\'\'\' measurement of the scan.
+for a transform at the **last** measurement of the scan.
 
 Please consult the
 [API Documentation](http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html#b7ce0e0fa1bb6ab0f6d7d477d71284e9)
 for full usage details.
 
-\'\'\'Example:\'\'\' To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\>
-to a \<\<MsgLink(sensor_msgs/PointCloud)\>\> in the base_link frame,
-using a high fidelity transform: ```cplusplus
+**Example:** To convert a \<\<MsgLink(sensor_msgs/LaserScan)\>\> to a
+\<\<MsgLink(sensor_msgs/PointCloud)\>\> in the base_link frame, using a
+high fidelity transform: ```cplusplus
 laser_geometry::LaserProjection projector_;
 tf::TransformListener listener_;
 

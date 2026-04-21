@@ -8,10 +8,10 @@ bluetooth joystick. This joystick is currently used with the PR2 robot.
 This driver exists because Linux\'s native support for the PS3 joystick
 is unreliable, and does not give access to the joystick\'s
 accelerometers and gyroscope. This driver solves both problems. However
-in its current form, \'\'\'this driver will not coexist with any other
-bluetooth device\'\'\'. In future releases, we plan to allow first
-non-HID and later any bluetooth device to coexist with this driver. If
-you have a need for such functionality, let it be known.
+in its current form, **this driver will not coexist with any other
+bluetooth device**. In future releases, we plan to allow first non-HID
+and later any bluetooth device to coexist with this driver. If you have
+a need for such functionality, let it be known.
 
 It has been observed that coexistence is possible, at least in the two
 following cases:
@@ -147,16 +147,16 @@ pressing on the button, ranging from 0 when there is no press, to -1 for
 a hard press. For these buttons, the axis number is the same as the
 button number.
 
-\'\'\'ps3joy.py\'\'\' also exposes the joystick\'s three-axis
-accelerometer and the single-axis gyroscope:
+**ps3joy.py** also exposes the joystick\'s three-axis accelerometer and
+the single-axis gyroscope:
 
-  -- ------------------ -- ---------------------------------------- --
-     \'\'\'Axis\'\'\'      \'\'\'Description\'\'\'                  
-     16                    Right-Left (positive is left)            
-     17                    Forward-Backward (positive is forward)   
-     18                    Up-Down (positive is up)                 
-     19                    Yaw axis (positive is clockwise)         
-  -- ------------------ -- ---------------------------------------- --
+  -- ---------- -- ---------------------------------------- --
+     **Axis**      **Description**                          
+     16            Right-Left (positive is left)            
+     17            Forward-Backward (positive is forward)   
+     18            Up-Down (positive is up)                 
+     19            Yaw axis (positive is clockwise)         
+  -- ---------- -- ---------------------------------------- --
 
 ### Button number macros for C++
 

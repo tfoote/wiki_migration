@@ -37,8 +37,8 @@ e.g.```
 $ rosservice call /add_two_ints 1 2
 ```
 
-\`\--wait\` (\'\'New in ROS 1.1\'\') Wait until service is advertised
-before calling.
+\`\--wait\` (*New in ROS 1.1*) Wait until service is advertised before
+calling.
 
 #### YAML syntax
 

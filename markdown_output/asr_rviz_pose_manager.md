@@ -13,10 +13,10 @@ publish the pose in the corresponding topic. You can use this tool if
 you need to know a particular pose ( position and orientation ). The
 tools works also in simulation mode.
 
-This package subscribes to \'\'\'move_base/goal \'\'\'an saves every
-incoming Pose in a XML-file. The name of the XML-file is
-CURRENT_TIMEposen.xml and will be saved at the location the program
-starts. The format will be:
+This package subscribes to **move_base/goal **an saves every incoming
+Pose in a XML-file. The name of the XML-file is CURRENT_TIMEposen.xml
+and will be saved at the location the program starts. The format will
+be:
 
 \<Pose X=\"\" Y=\"\" Z=\"\" XQ=\"\" YQ=\"\" ZQ=\"\" WQ=\"\"\>\</Pose\>
 
@@ -50,4 +50,4 @@ ROS-Navigation or asr_mild_navigation.
 
 ### Subscribed Topics
 
-\'\'\'move_base/goal \'\'\'(geometry_msgs/Pose): The poses to record
+**move_base/goal **(geometry_msgs/Pose): The poses to record

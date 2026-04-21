@@ -1,5 +1,5 @@
-\'\' \'\'\'DEPRECATED\'\'\': This node/package has been generalized to
-[rotoscan_node](rotoscan_node).\'\'
+* **DEPRECATED**: This node/package has been generalized to
+[rotoscan_node](rotoscan_node).*
 
 ![](attachment:leuze-rod4plus.jpg)
 

@@ -18,7 +18,7 @@ Then it searches a path from robot position to given goal on GVD.
 
 The \`voronoi_planner::VoronoiPlanner\` object exposes its functionality
 as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It operates withing a
-ROS namespace (assumed to be \'\'name\'\' from here on) specified on
+ROS namespace (assumed to be *name* from here on) specified on
 initialization. It adheres to the \`nav_core::BaseGlobalPlanner\`
 interface found in the [nav_core](nav_core) package.
 

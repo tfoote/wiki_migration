@@ -85,7 +85,7 @@ of common error codes, and a variety of input data whose use is
 determined by the action type. Action types and explanations of their
 input are as follows:
 
-\'\'Navigate\'\' - plan and move the robot base to a specified location.
+*Navigate* - plan and move the robot base to a specified location.
 
 -   nav_pose - a pose goal for navigation; this is the default for
     specifying a navigate action.
@@ -93,34 +93,33 @@ input are as follows:
     [ rail_lab_location_server](carl_navigation ), used only if nav_pose
     is unspecified.
 
-\'\'Ready Arm\'\' - plan and move the arm to the ready position.
+*Ready Arm* - plan and move the arm to the ready position.
 
 -   No further input is used.
 
-\'\'Retract Arm\'\' - plan and move the arm to the retracted position.
+*Retract Arm* - plan and move the arm to the retracted position.
 
 -   No further input is used.
 
-\'\'Pickup\'\' - pick up a recognized object, or perform a pick up
-action at a specified pose.
+*Pickup* - pick up a recognized object, or perform a pick up action at a
+specified pose.
 
 -   object_name - name of the object to be picked up, this is the
     default for specifying a pickup action.
 -   manipulaiton_pose - end-effector pose at which to perform a pickup
     action, used only if object_name is unspecified.
 
-\'\'Store\'\' - store an object in a specified location.
+*Store* - store an object in a specified location.
 
 -   manipulation_pose - end-effector pose at which to release the
     object.
 
-\'\'Segment\'\' - perform tabletop segmentation.
+*Segment* - perform tabletop segmentation.
 
 -   surface_frame - (optional) name of the frame to look at before
     segmentation.
 
-\'\'Recognize\'\' - perform tabletop segmentation and object
-recognition.
+*Recognize* - perform tabletop segmentation and object recognition.
 
 -   surface_frame - (optional) name of the frame to look at before
     segmentation and recognition.

@@ -12,8 +12,8 @@ For more information on simulating Grizzly, see
 ### View Model
 
 To view the Grizzly model and TF transform tree in isolation,
-\'\'\'disconnected\'\'\' from a real or simulated robot, use the
-following launcher:
+**disconnected** from a real or simulated robot, use the following
+launcher:
 
 ```
 roslaunch grizzly_viz view_model.launch

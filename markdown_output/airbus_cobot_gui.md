@@ -30,8 +30,7 @@ roslaunch airbus_cobot_gui default.launch
 ![\|width=100%](attachment:cobot_gui.png)
 
 The user can also call this launch file to run a different
-configuration, using the input parameters \'\'config_path\'\' and
-\'\'file_name\'\'
+configuration, using the input parameters *config_path* and *file_name*
 
 ```
 roslaunch airbus_cobot_gui default.launch config_path:='${PKG_NAME}/folder' file_name:='file.conf'
@@ -119,9 +118,8 @@ the dashboards and the plugins:
         </launcher>
     </window>
 </app>
-``` Where the
-\'\'default_dashboards_register.xm\'\'l includes an entry for a new
-dashboard:
+``` Where the *default_dashboards_register.xm*l
+includes an entry for a new dashboard:
 
 ```
 <?xml version='1.0' encoding='utf8'?>

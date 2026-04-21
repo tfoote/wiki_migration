@@ -33,9 +33,9 @@ This package is still in development and the API might change in the future. Ple
 -   Imager: Infineon REAL3 IRS1125A
 -   Output: 3D-point cloud, amplitude, radial and confidence
 
-The \'\'nimbus_3d_driver\'\' is the official ROS driver for the
-\'\'Nimbus 3D\'\' which provides ROS parameters (configuration) and ROS
-topics (sensor data: Images and Point Cloud).
+The *nimbus_3d_driver* is the official ROS driver for the *Nimbus 3D*
+which provides ROS parameters (configuration) and ROS topics (sensor
+data: Images and Point Cloud).
 
 Fruthermore here is the official
 [documentation](https://nimbus-docs.readthedocs.io/en/latest/index.html)

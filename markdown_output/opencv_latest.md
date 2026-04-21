@@ -1,2 +1,2 @@
-\'\'\'************ THIS PACKAGE IS DEPRECATED - use [opencv2](opencv2)
-instead ******\'\'\'******************
+************** THIS PACKAGE IS DEPRECATED - use [opencv2](opencv2)
+instead ******\*\*********************

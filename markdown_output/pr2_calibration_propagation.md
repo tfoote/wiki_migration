@@ -14,8 +14,8 @@ This script generates a calibrated URDF by combining an exisiting URDF
 with the results of
 [pr2_calibration_estimation](pr2_calibration_estimation).
 
-\'\'\'\`./propagate_config\`\'\'\'\` \[initial.yaml\]
-\[calibrated.yaml\] \[cal_measurements.bag\] \[cal_output.xml\]\`
+**\`./propagate_config\`**\` \[initial.yaml\] \[calibrated.yaml\]
+\[cal_measurements.bag\] \[cal_output.xml\]\`
 
 -   \`\[initial.yaml\]\` - The system definition before running
     calibration
@@ -31,7 +31,7 @@ with the results of
 This script should be run on a running robot in order to update a
 stereocamera\'s baseline parameter.
 
-\'\'\'\`./propagae_baseline.py\`\'\'\'\` camera:=\[camera_namespace\]
+**\`./propagae_baseline.py\`**\` camera:=\[camera_namespace\]
 \[calibration_bagfile\] \[system_filename\] \[config_camera_name\]\`
 
 -   \`\[camera_namespace\]\` - Ros name to prepend onto the call to

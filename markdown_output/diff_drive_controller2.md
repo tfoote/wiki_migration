@@ -13,12 +13,11 @@ velocity. Velocities on other components are ignored.
 
 ### Hardware interface type
 
-The controller works with wheel joints through a \'\'\'velocity\'\'\'
-interface.
+The controller works with wheel joints through a **velocity** interface.
 
 ### Other features
 
--   \'\'\'Realtime-safe\'\'\' implementation.
+-   **Realtime-safe** implementation.
 -   Odometry publishing
 -   Task-space velocity, acceleration and jerk limits
 -   Automatic stop after command time-out

@@ -7,17 +7,17 @@ The code API listed for this package is for convenience only. This
 package has no supported code API.
 
 For pinhole type cameras this package names the distortion model as
-\'\'\'plumb_bob\'\'\' or \'\'\'rational_polynomial\'\'\', depending on
-number of parameters used. See
+**plumb_bob** or **rational_polynomial**, depending on number of
+parameters used. See
 [documentation](http://docs.ros.org/melodic/api/sensor_msgs/html/distortion__models_8h.html)
 
 Support for fisheye type of camera introduced in melodic.
 
-For fisheye type cameras this package uses \'\'\'equidistant\'\'\'
-distortion model but names it as \'\'\'fisheye\'\'\'.
+For fisheye type cameras this package uses **equidistant** distortion
+model but names it as **fisheye**.
 
-For fisheye type cameras this package uses \'\'\'equidistant\'\'\'
-distortion model with the name \'\'\'equidistant\'\'\', according to
+For fisheye type cameras this package uses **equidistant** distortion
+model with the name **equidistant**, according to
 [documentation](http://docs.ros.org/melodic/api/sensor_msgs/html/distortion__models_8h.html).
 
 ## Supported hardware

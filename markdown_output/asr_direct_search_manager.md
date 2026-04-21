@@ -88,16 +88,15 @@ the poses of the objects.
 The communication with this package is implemented with an action
 server. The following action can be used.
 
-1.  goal definition \'\'\'command\'\'\': the command which should be
-    executed:
+1.  goal definition **command**: the command which should be executed:
 
--   \'\'\'Reset\'\'\': resets the manager to the initial state
+-   **Reset**: resets the manager to the initial state
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'!BackToInitial\'\'\': call this if there were other search
-    steps between
+-   **!BackToInitial**: call this if there were other search steps
+    between
     [GetNextRobotState](http://i61pc053.itec.uni-karlsruhe.de/twiki/bin/edit/IlcasProjects/GetNextRobotState?topicparent=IlcasProjects.AsrDirectSearchManager;nowysiwyg=0)
     calls. The poses will be filtered depending on already visited
     viewports and reordered depending on the current position.
@@ -105,97 +104,91 @@ server. The following action can be used.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'!GetNextRobotState\'\'\': gets the next \'\'robot state\'\' to
-    take with additional information (see below)
+-   **!GetNextRobotState**: gets the next *robot state* to take with
+    additional information (see below)
 
-\'\'\'searchedObjectTypesAndIds\'\'\': the \'\'object_types_and_ids\'\'
-which are search at the moment
+**searchedObjectTypesAndIds**: the *object_types_and_ids* which are
+search at the moment
 
-1.  result definition \'\'\'goalRobotPose\'\'\': the next \'\'robot
-    pose\'\' \'\'\'goalCameraPose\'\'\': the next \'\'camera pose\'\'
-    (belonging to the goalRobotPose) if present \'\'\'pan\'\'\': the
-    next pan to take \'\'\'tilt\'\'\': the next tilt to take
-    \'\'\'remainingPTUPoses\'\'\': the PTU poses which are left for this
-    goalRobotPose (just as information) \'\'\'remainingRobotPoses\'\'\':
-    the \'\'robot poses\'\' which are left (just as information)
-    \'\'\'remainingPosesDistances\'\'\': the remaining distance for the
-    remainingRobotPoses to take (just as information)
-    \'\'\'isSameRobotPoseAsBefore\'\'\': if goalRobotPose is the same as
-    the one from the call before \'\'\'isNoPoseLeft\'\'\': if there are
-    no poses left at all \'\'\'arePosesFromDemonstrationLeft\'\'\': if
-    there are poses left after this one, which are sorted based on the
-    prior knwoledge \'\'\'filteredSearchedObjectTypesAndIds\'\'\': the
-    searchedObjectTypesAndIds which were filtered. It will be filtered,
-    if at the goalCameraPose were already some objects searched or if it
-    is more likely to find a subset of objects
+1.  result definition **goalRobotPose**: the next *robot pose*
+    **goalCameraPose**: the next *camera pose* (belonging to the
+    goalRobotPose) if present **pan**: the next pan to take **tilt**:
+    the next tilt to take **remainingPTUPoses**: the PTU poses which are
+    left for this goalRobotPose (just as information)
+    **remainingRobotPoses**: the *robot poses* which are left (just as
+    information) **remainingPosesDistances**: the remaining distance for
+    the remainingRobotPoses to take (just as information)
+    **isSameRobotPoseAsBefore**: if goalRobotPose is the same as the one
+    from the call before **isNoPoseLeft**: if there are no poses left at
+    all **arePosesFromDemonstrationLeft**: if there are poses left after
+    this one, which are sorted based on the prior knwoledge
+    **filteredSearchedObjectTypesAndIds**: the searchedObjectTypesAndIds
+    which were filtered. It will be filtered, if at the goalCameraPose
+    were already some objects searched or if it is more likely to find a
+    subset of objects
 
 ## Usage
 
-\'\'\'!GridMode\'\'\':
+**!GridMode**:
 
 -   Generate Views (See
 -   With prior knowledge:
--   \'\'\'In
-    asr_direct_search_manager/launch/direct_search_manager.launch\'\'\'
--   Adapt the path to the file of the generated/recorded views\'\'\'
-    initializedGridFilePath\'\'\'
+-   **In asr_direct_search_manager/launch/direct_search_manager.launch**
+-   Adapt the path to the file of the generated/recorded views**
+    initializedGridFilePath**
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'In
-    asr_direct_search_manager/param/direct_search_manager_settings.yaml\'\'\'
--   Set \'\'\'directSearchMode \'\'\'to 1/grid_manager
+-   **In
+    asr_direct_search_manager/param/direct_search_manager_settings.yaml**
+-   Set **directSearchMode **to 1/grid_manager
 
 ```{=html}
 <!-- -->
 ```
--   Set \'\'\'reorderPosesByNBV\'\'\' to true
+-   Set **reorderPosesByNBV** to true
 
 ```{=html}
 <!-- -->
 ```
--   Without prior knowledge (like above with
-    \'\'\'reorderPosesByNBV\'\'\' = false or like below):
--   \'\'\'In
-    asr_direct_search_manager/launch/direct_search_manager.launch\'\'\'
--   Adapt the path to the file of the generated views\'\'\'
-    gridFilePath\'\'\'
+-   Without prior knowledge (like above with **reorderPosesByNBV** =
+    false or like below):
+-   **In asr_direct_search_manager/launch/direct_search_manager.launch**
+-   Adapt the path to the file of the generated views** gridFilePath**
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'In
-    asr_direct_search_manager/param/direct_search_manager_settings.yaml\'\'\'
--   Set \'\'\'directSearchMode \'\'\'to 3/grid_initialisation
+-   **In
+    asr_direct_search_manager/param/direct_search_manager_settings.yaml**
+-   Set **directSearchMode **to 3/grid_initialisation
 
 ```{=html}
 <!-- -->
 ```
--   Set \'\'\'reorderPosesByNBV\'\'\' to false
+-   Set **reorderPosesByNBV** to false
 
-\'\'\'!RecordMode\'\'\':
+**!RecordMode**:
 
 -   Generate Views (See Tutorials)
--   \'\'\'In
-    asr_direct_search_manager/launch/direct_search_manager.launch\'\'\'
--   Adapt the path to the file of the recorded views\'\'\'
-    recordFilePath\'\'\'
+-   **In asr_direct_search_manager/launch/direct_search_manager.launch**
+-   Adapt the path to the file of the recorded views** recordFilePath**
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'In
-    asr_direct_search_manager/param/direct_search_manager_settings.yaml\'\'\'
--   Set \'\'\'directSearchMode \'\'\'to 2/recording_manager
+-   **In
+    asr_direct_search_manager/param/direct_search_manager_settings.yaml**
+-   Set **directSearchMode **to 2/recording_manager
 
 ```{=html}
 <!-- -->
 ```
--   Depending on use of prior knowledge: Set
-    \'\'\'reorderPosesByNBV\'\'\' to false/true
+-   Depending on use of prior knowledge: Set **reorderPosesByNBV** to
+    false/true
 
-\'\'\'For both: \'\'\'
+**For both: **
 
 -   Start system like described in \"3.4. Start system\" of
     [asr_resources_for_active_scene_recognition](http://wiki.ros.org/asr_resources_for_active_scene_recognition)
@@ -226,25 +219,24 @@ this node will be started automatically.
 
 To use it standalone it can be started with
 
--   \'\'\'roslaunch asr_direct_search_manager
-    direct_search_manager.launch\'\'\'
+-   **roslaunch asr_direct_search_manager direct_search_manager.launch**
 
 However, it needs most of the nodes of the active_scene_recognition to
 be run.
 
 Unit tests can be run with
 
--   \'\'\'roscore\'\'\'
+-   **roscore**
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'cd catkin_ws/build\'\'\'
+-   **cd catkin_ws/build**
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'make run_tests_asr_direct_search_manager\'\'\'
+-   **make run_tests_asr_direct_search_manager**
 
 ## ROS Nodes
 
@@ -257,87 +249,82 @@ asr_flir_ptu_driver: needed to use the prior knowledge
 
 #### Launch file
 
-\'\'\'asr_direct_search_manager/launch/direct_search_manager.launch\'\'\'
+**asr_direct_search_manager/launch/direct_search_manager.launch**
 
-\'\'\'gridFilePath\'\'\': the path to the config.xml generated by the
+**gridFilePath**: the path to the config.xml generated by the
 [asr_grid_creator](http://wiki.ros.org/asr_grid_creator), which
-contains\'\' robot poses\'\' of the grid
-\'\'\'initializedGridFilePath\'\'\': the path to the initialized grid,
-which contains \'\'robot and camera poses\'\' of the grid. Can be
-generated by the \'\'grid init mode\'\' of the asr_state_machine
+contains* robot poses* of the grid **initializedGridFilePath**: the path
+to the initialized grid, which contains *robot and camera poses* of the
+grid. Can be generated by the *grid init mode* of the asr_state_machine
 
 #### yaml file
 
-\'\'\'asr_direct_search_manager/param/direct_search_manager_settings.yaml\'\'\'
+**asr_direct_search_manager/param/direct_search_manager_settings.yaml**
 
-\'\'\'fovH\'\'\': camera fiels of view angles (will be used in
-\'\'grid_initialisation\'\') \'\'\'fovV\'\'\': camera fiels of view
-angles (will be used in \'\'grid_initialisation\'\')
-\'\'\'clearVision\'\'\': PTU angle free of vision obstacles (will be
-used in \'\'grid_initialisation\'\')
+**fovH**: camera fiels of view angles (will be used in
+*grid_initialisation*) **fovV**: camera fiels of view angles (will be
+used in *grid_initialisation*) **clearVision**: PTU angle free of vision
+obstacles (will be used in *grid_initialisation*)
 
-\'\'\'directSearchMode\'\'\': can be 1 for \'\'grid_manager\'\', 2 for
-\'\'recording_manager\'\' and 3 for \'\'grid_initialisation\'\'
+**directSearchMode**: can be 1 for *grid_manager*, 2 for
+*recording_manager* and 3 for *grid_initialisation*
 
--   \'\'\'grid_manager\'\'\': the poses will be read from the
-    \'\'initializedGridFilePath\'\'. It is possible to use the
-    \'\'reorderPosesByNBV\'\'
-
-```{=html}
-<!-- -->
-```
--   \'\'\'recording_manager\'\'\': the poses will be read from the
-    \'\'recordFilePath\'\'. it is possible to use the
-    \'\'reorderPosesByNBV\'\', \'\'reorderPosesByTSP\'\',
-    \'\'filterMinimumNumberOfDeletedNormals\'\',
-    \'\'filterIsPositionAllowed\'\' and \'\'concatApproxEqualsPoses\'\'
+-   **grid_manager**: the poses will be read from the
+    *initializedGridFilePath*. It is possible to use the
+    *reorderPosesByNBV*
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'grid_initialisation\'\'\': the poses will be calculated from
-    the config and the \'\'fovH\'\', \'\'fovV\'\' and
-    \'\'clearVision\'\'. It is not possible to use the
-    \'\'reorderPosesByNBV\'\' here, because only \'\'robot poses\'\' and
-    no \'\'camera poses\'\' are known. Because of that, this mode will
-    be used to initialize the grid for the \'\'grid_manager\'\' mode.
-    See the tutorials for more information
+-   **recording_manager**: the poses will be read from the
+    *recordFilePath*. it is possible to use the *reorderPosesByNBV*,
+    *reorderPosesByTSP*, *filterMinimumNumberOfDeletedNormals*,
+    *filterIsPositionAllowed* and *concatApproxEqualsPoses*
 
-\'\'\'distanceFunc\'\'\': the distance function to use. 1 for the
-service call GetDistance of
+```{=html}
+<!-- -->
+```
+-   **grid_initialisation**: the poses will be calculated from the
+    config and the *fovH*, *fovV* and *clearVision*. It is not possible
+    to use the *reorderPosesByNBV* here, because only *robot poses* and
+    no *camera poses* are known. Because of that, this mode will be used
+    to initialize the grid for the *grid_manager* mode. See the
+    tutorials for more information
+
+**distanceFunc**: the distance function to use. 1 for the service call
+GetDistance of
 [asr_robot_model_services](http://wiki.ros.org/asr_robot_model_services)
 (accurate, slow) or 2: the euclidean distance (approximative, fast)
 
-\'\'\'reorderPosesByNBV\'\'\': enables the use of prior knwolege by
-reordering the poses by
+**reorderPosesByNBV**: enables the use of prior knwolege by reordering
+the poses by
 [asr_next_best_view](http://wiki.ros.org/asr_next_best_view), so that
 poses which have a higher chance to detect an object will be taken
 first. The reordering takes place on the basis of the
-\'\'recorded_object_poses\'\' from the current SQL-database
-\'\'\'reorderPosesByTSP\'\'\': if the poses of the \'\'robot states\'\'
-should be reordered with TSP (\'\'nearest_neighbour\'\' and
-\'\'two_opt\'\')
+*recorded_object_poses* from the current SQL-database
+**reorderPosesByTSP**: if the poses of the *robot states* should be
+reordered with TSP (*nearest_neighbour* and *two_opt*)
 
-\'\'\'viewCenterPositionDistanceThreshold\'\'\': the threshold when two
-positions of \'\'viewcenter poses\'\' will be seen as approx equale.
-This will be used to filter poses depending on already seen viewports
-taken from other search modes (\'\'indirect search\'\') The threshold
-for orientation will be /nbv/mHypothesisUpdaterAngleThreshold
+**viewCenterPositionDistanceThreshold**: the threshold when two
+positions of *viewcenter poses* will be seen as approx equale. This will
+be used to filter poses depending on already seen viewports taken from
+other search modes (*indirect search*) The threshold for orientation
+will be /nbv/mHypothesisUpdaterAngleThreshold
 
-\'\'\'filterMinimumNumberOfDeletedNormals\'\'\': remove all \'\'robot
-states\'\' which have not at least this number of normals deleted while
-the poses were recorded \'\'\'filterIsPositionAllowed\'\'\': remove all
-\'\'robot states\'\' which the robot can not reach (this was need due a
-bug in asr_next_best_view). It could also be neccessary if the colThresh
-(asr_next_best_viewparam) has changed since the recording of the poses
+**filterMinimumNumberOfDeletedNormals**: remove all *robot states* which
+have not at least this number of normals deleted while the poses were
+recorded **filterIsPositionAllowed**: remove all *robot states* which
+the robot can not reach (this was need due a bug in asr_next_best_view).
+It could also be neccessary if the colThresh (asr_next_best_viewparam)
+has changed since the recording of the poses
 
-\'\'\'concatApproxEqualsPoses\'\'\': concatenate \'\'robot poses\'\'
-which are approx equale to one with multiple \'\'PTU-configs.\'\' As a
-result the robot will move less.
+**concatApproxEqualsPoses**: concatenate *robot poses* which are approx
+equale to one with multiple *PTU-configs.* As a result the robot will
+move less.
 
-\'\'\'concatRobotPosePositionDistanceThreshold\'\'\': the threshold when
-two \'\'positions\'\' of \'\'robot poses\'\' will be seen as approx
-equale for concatenating two \'\'robot poses\'\'
+**concatRobotPosePositionDistanceThreshold**: the threshold when two
+*positions* of *robot poses* will be seen as approx equale for
+concatenating two *robot poses*
 
 ### Needed Services
 

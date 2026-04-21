@@ -3,7 +3,7 @@
 ## Overview
 
 This is probably the worst way to control the DJI Ronin gimbal, but it
-works great and \'\'\'nowadays that\'s the only way to control it\'\'\'.
+works great and **nowadays that\'s the only way to control it**.
 
 ## About
 

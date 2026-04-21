@@ -15,7 +15,7 @@ Note that it is possible to avoid segmentation as well and select grasp
 points without knowing object boundaries. The current pipeline does not
 have this functionality, but it might gain it in the future.
 
-To perform these tasks we rely the following \'\'\'assumptions\'\'\':
+To perform these tasks we rely the following **assumptions**:
 
 -   the objects are resting on a table, which is the dominant plane in
     the scene
@@ -38,7 +38,7 @@ stereo or Kinect cameras. We perform the following steps:
 -   points above the table are considered to belong to graspable
     objects. We use a clustering algorithm to identify individual
     objects. We refer to the points corresponding to an individual
-    object as \'\'\'clusters\'\'\'.
+    object as **clusters**.
 -   recognition
 -   for each cluster, a simple iterative fitting technique (a distant
     cousin of ICP) is used to see how well it corresponds to each mesh
@@ -55,14 +55,14 @@ objects.
 
 ![](attachment:detect_1.png)
 
-\'\'Narrow Stereo image of a table and three objects\'\'
+*Narrow Stereo image of a table and three objects*
 
 ![](attachment:detect_2.png)
 
-\'\'Detection result: table plane has been detected (note the yellow
+*Detection result: table plane has been detected (note the yellow
 contour). Objects have been segmented (note the different color point
 clouds superimposed on them). The bottle and the glass have also been
-recognized (as shown by the cyan mesh further superimposed on them)\'\'
+recognized (as shown by the cyan mesh further superimposed on them)*
 
 ## Nodes
 

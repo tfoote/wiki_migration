@@ -1,5 +1,5 @@
-\'\'\'Note that the prairiedog platform uses the more advanced
-\`visualization_cu\` for user interaction.\'\'\'
+**Note that the prairiedog platform uses the more advanced
+\`visualization_cu\` for user interaction.**
 
 \`nav_view_cu\` is a minimalistic `OpenGl` based substitute for an early
 release of \`nav_view\` (circa ROS V0.8) . It can be used to interact

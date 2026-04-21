@@ -26,20 +26,20 @@ Driver repository:
 
 This driver works with the following products
 
-  -- ------------------------------------- -- ------------------------------------------------------------------------------------------------------- -- ---------------------- --
-     \'\'\'device name\'\'\'                  \'\'\'type\'\'\'                                                                                           \'\'\'part no.\'\'\'   
-     visionary-T CX                           [V3S100-1AAAAAA](https://www.mysick.com/partnerPortal/ProductCatalog/DataSheet.aspx?ProductID=106219)      1067189                
-     visionary-T CX without cooling fins      [V3S100-1AABAAB](https://www.mysick.com/partnerPortal/ProductCatalog/DataSheet.aspx?ProductID=106220)      1075027                
-     visionary-T AG                           V3S110-1AAAAAA                                                                                             1075613                
-     visionary-T AG without cooling fins      V3S110-1AABAAB                                                                                             1075614                
-  -- ------------------------------------- -- ------------------------------------------------------------------------------------------------------- -- ---------------------- --
+  -- ------------------------------------- -- ------------------------------------------------------------------------------------------------------- -- -------------- --
+     **device name**                          **type**                                                                                                   **part no.**   
+     visionary-T CX                           [V3S100-1AAAAAA](https://www.mysick.com/partnerPortal/ProductCatalog/DataSheet.aspx?ProductID=106219)      1067189        
+     visionary-T CX without cooling fins      [V3S100-1AABAAB](https://www.mysick.com/partnerPortal/ProductCatalog/DataSheet.aspx?ProductID=106220)      1075027        
+     visionary-T AG                           V3S110-1AAAAAA                                                                                             1075613        
+     visionary-T AG without cooling fins      V3S110-1AABAAB                                                                                             1075614        
+  -- ------------------------------------- -- ------------------------------------------------------------------------------------------------------- -- -------------- --
 
 ## API Stability
 
 The 3D data streaming part of the ROS API is stable.
 
 The digital i/o channel interface of this driver is considered
-\'\'unstable\'\' and \'\'not implemented\'\' yet.
+*unstable* and *not implemented* yet.
 
 ## Installation
 

@@ -20,15 +20,12 @@ The Leica Scanstation C5 is a configurable laser scanner, which means
 that the user can adjust the settings to define a scanning window. Using
 this simulator, the following parameters can be specified:
 
--   \'\'\'Pan center\'\'\' and \'\'\'tilt center\'\'\'. Middle point of
-    the scan window.
--   \'\'\'Width\'\'\' and \'\'\'height\'\'\' are the dimensions of the
-    scanning window at a distance of one metre from the Leica
-    Scanstation.
--   \'\'\'Vertical resolution\'\'\' and \'\'\'horizontal
-    resolution\'\'\' can be understood as the \'\'number of rays\'\' to
-    cover the scan window. A higher resolution means a more detailed
-    cloud but a slower process.
+-   **Pan center** and **tilt center**. Middle point of the scan window.
+-   **Width** and **height** are the dimensions of the scanning window
+    at a distance of one metre from the Leica Scanstation.
+-   **Vertical resolution** and **horizontal resolution** can be
+    understood as the *number of rays* to cover the scan window. A
+    higher resolution means a more detailed cloud but a slower process.
 
 . ![\|width=\"450px\"](attachment:scanparams.png)
 
@@ -36,7 +33,7 @@ this simulator, the following parameters can be specified:
 
 Currently, the simulator is still in its development stage, so the
 configuration of the scanning window must be conducted via the
-configuration file (\'\'sensor.urdf.xacro\'\').
+configuration file (*sensor.urdf.xacro*).
 
 ## Usage
 
@@ -80,7 +77,7 @@ roslaunch leica_gazebo_simulation c5_init.launch namespace:=c5
 Tell simulator to start scan with desired window parameters. Point cloud
 is published simultaneously. Once scan is finished, it will store the
 complete point cloud with given file_name on folder specified in ROS
-param server as \'\'/pointcloud_folder\'\' (default: package
+param server as */pointcloud_folder* (default: package
 leica_scanstation_utils/pointclouds).
 
 ```

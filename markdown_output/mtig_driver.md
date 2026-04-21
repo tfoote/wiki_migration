@@ -33,7 +33,7 @@ The launchfile contains the following types of parameters.
 
 -   Module Enabler: This type of parameters enables or disables the
     different sensor readings available in the device. This parameters
-    have no use if the \'\'\'override\'\'\' parameter is false.
+    have no use if the **override** parameter is false.
 -   Module Frequency: This parameters set the frequency with which we
     want to read from each sensor. This can vary greatly between sensor
     type. See the Xsens Mti User Manual for more details. If we set this

@@ -12,12 +12,11 @@ The current version is a 0.7 version . It has the following features:
 -   Advertises handles for \`/platform_info\`, \`/list_rapps\`,
     \`/status\` and \`/invite\` to external, gateway based ros systems.
 -   When invited, it will flip \`/start_rapp\` and \`/stop_rapp\`
-    services across to the ros system doing the inviting (the \'\'remote
-    controller\'\').
+    services across to the ros system doing the inviting (the *remote
+    controller*).
 -   Launches and manages a single rapp (robot/rocon app) at a single
     time.
--   Flips the rapp specified connections to the \'\'remote
-    controller\'\'.
+-   Flips the rapp specified connections to the *remote controller*.
 
 ### Advertised Services
 

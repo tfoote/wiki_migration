@@ -34,7 +34,7 @@ rosrun phantom_omni omni
 
 ## Troubleshooting
 
--   \'\'\'64-bit installation\'\'\': you will need to edit
+-   **64-bit installation**: you will need to edit
     install_open_haptics.sh and replace instances of \'32-bit\' with
     \'64-bit\' and \'i386\' with \'amd64\' (someone should update this
     script so that the platform architecture is detected automatically).
@@ -44,12 +44,12 @@ rosrun phantom_omni omni
     best way to solve this is to create a file
     /etc/ld.so.conf.d/openhaptics.conf with the line \'/usr/lib64\' and
     then run ldconfig.
--   \'\'\'Ubuntu versions 11.04 and later\'\'\': Ubuntu no longer uses
-    raw1394, so you cannot use the Open\`\`Haptics v3.0 drivers out of
-    the box. Until v3.1 is released, you have two options: 1.
-    (recommended) Replace the drivers with the unstable \"JUJU\" drivers
-    that are available in the DSC forums. 2. Create a \"dummy\" raw1394
-    module according to this
+-   **Ubuntu versions 11.04 and later**: Ubuntu no longer uses raw1394,
+    so you cannot use the Open\`\`Haptics v3.0 drivers out of the box.
+    Until v3.1 is released, you have two options: 1. (recommended)
+    Replace the drivers with the unstable \"JUJU\" drivers that are
+    available in the DSC forums. 2. Create a \"dummy\" raw1394 module
+    according to this
     [HowTo article](https://wiki.sofa-framework.org/tdev/wiki/HowTo/SensableWithoutRaw1394).
     One consequence of this is that the set_permissions_1394.sh script
     will fail. Instead of using this script, follow the instructions at
@@ -58,14 +58,14 @@ rosrun phantom_omni omni
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Drift\'\'\': the Omni\'s pose will drift from time to time, to
-    correct for this restart the node with the stylus outside the
-    calibration well, then place the stylus in when prompted.
+-   **Drift**: the Omni\'s pose will drift from time to time, to correct
+    for this restart the node with the stylus outside the calibration
+    well, then place the stylus in when prompted.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Device not found \'\'\'errors
+-   **Device not found **errors
 -   This can happen if your Omni is not paired with your computer fix by
     running /usr/sbin/PHANToMConfiguration again.
 -   You might not have access to /dev/raw1394 to fix execute
@@ -74,11 +74,11 @@ rosrun phantom_omni omni
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Using more than one device\'\'\' on one Linux machine:
-    currently, the Linux Omni driver is restricted to operating on only
-    one device at a time. To use two devices (i.e. for controller a
-    humanoid robot), you will need two different machines. It\'s a good
-    thing that ROS is around : )
+-   **Using more than one device** on one Linux machine: currently, the
+    Linux Omni driver is restricted to operating on only one device at a
+    time. To use two devices (i.e. for controller a humanoid robot), you
+    will need two different machines. It\'s a good thing that ROS is
+    around : )
 
 ## ROS API
 

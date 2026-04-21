@@ -1,10 +1,10 @@
 # Epson IMU ROS1 Node SPI \*\* Deprecated \*\*
 
-\'\'\'**\* NOTE: This package has been superceded by
-[ Epson IMU ROS1 Driver Node](ess_imu_driver )**\*\'\'\'
+****\* NOTE: This package has been superceded by
+[ Epson IMU ROS1 Driver Node](ess_imu_driver )\*****
 
-\'\'\'**\* This webpage will no longer be updated **\*\'\'\'
-\-\-\-\-\-\-\-\-\-\-\--
+****\* This webpage will no longer be updated \*
+\-\-\-\-\-\-\-\-\-\-\--****
 
 ![\|align=\"right\"](attachment:ess_sensors/g552.jpg)
 ![\|align=\"right\"](attachment:ess_sensors/g370.jpg)
@@ -43,20 +43,20 @@
     messages but requires minor changes to redirect the low-level
     function calls (i.e. bcm2835 C library, etc)
 -   Accurate timing delays are necessary to optimize throughput for high
-    \'\'dout_rate\'\' when using the SPI interface (refer to IMU
-    datasheets for timing specifications)
+    *dout_rate* when using the SPI interface (refer to IMU datasheets
+    for timing specifications)
 
 Below is an example IMU SPI connection when using a Raspberry Pi:
 
-  -- ----------------------- -- -------------------------------- --
-     \'\'\'Epson IMU\'\'\'      \'\'\'Raspberry Pi\'\'\'         
-     EPSON_RESET Input          RPI_GPIO_P1_15 (GPIO22) Output   
-     EPSON_DRDY Output          RPI_GPIO_P1_18 (GPIO24) Input    
-     EPSON_CS Input             RPI_GPIO_P1_16 (GPIO23) Output   
-     EPSON_SCLK Input           RPI_GPIO_P1_23 (GPIO11) Output   
-     EPSON_DOUT Output          RPI_GPIO_P1_19 (GPIO10) Input    
-     EPSON_DIN Input            RPI_GPIO_P1_21 (GPIO9) Output    
-  -- ----------------------- -- -------------------------------- --
+  -- ------------------- -- -------------------------------- --
+     **Epson IMU**          **Raspberry Pi**                 
+     EPSON_RESET Input      RPI_GPIO_P1_15 (GPIO22) Output   
+     EPSON_DRDY Output      RPI_GPIO_P1_18 (GPIO24) Input    
+     EPSON_CS Input         RPI_GPIO_P1_16 (GPIO23) Output   
+     EPSON_SCLK Input       RPI_GPIO_P1_23 (GPIO11) Output   
+     EPSON_DOUT Output      RPI_GPIO_P1_19 (GPIO10) Input    
+     EPSON_DIN Input        RPI_GPIO_P1_21 (GPIO9) Output    
+  -- ------------------- -- -------------------------------- --
 
 ### Support for Timer Delays
 
@@ -94,13 +94,12 @@ Below is an example IMU SPI connection when using a Raspberry Pi:
 
 ### Published Topics
 
--   For IMU models that support \'\'quaternion output function\'\' the
+-   For IMU models that support *quaternion output function* the
     orientation field in [sensor_msgs/Imu](sensor_msgs/Imu) can update
-    with valid data and publish on \'\'\'imu/data\'\'\'
--   For IMU models that \'\'do not\'\' support \'\'quaternion output
-    function\'\' the orientation field in
-    [sensor_msgs/Imu](sensor_msgs/Imu) \'\'will not\'\' update with
-    valid data and publish on \'\'\'imu/data_raw\'\'\'
+    with valid data and publish on **imu/data**
+-   For IMU models that *do not* support *quaternion output function*
+    the orientation field in [sensor_msgs/Imu](sensor_msgs/Imu) *will
+    not* update with valid data and publish on **imu/data_raw**
 
 ### Launch File
 
@@ -108,21 +107,19 @@ Below is an example IMU SPI connection when using a Raspberry Pi:
     this package is used to pass the init parameters to configure the
     IMU at runtime using [roslaunch](roslaunch )
 -   Changes to init parameters is made by editing the launch file which
-    does not require rebuilding with \'\'catkin_make\'\'
--   \'\'\'Typically, the user only needs to modify \'\'imu_dout_rate\'\'
-    & \'\'imu_filter_sel\'\' as needed based on system
-    requirements\'\'\'
+    does not require rebuilding with *catkin_make*
+-   **Typically, the user only needs to modify *imu_dout_rate* &
+    *imu_filter_sel* as needed based on system requirements**
 -   Only use the specific IMU model launch file associated with the same
-    IMU model built using \'\'catkin_make\'\'
+    IMU model built using *catkin_make*
 
 ### Timestamping With EXT Signal
 
 -   The G3xx series Epson IMU has 3.3V I/O EXT (GPIO2) pin which can be
     connected to a cyclic external sync signal such as a GNSS 1PPS
     signal
--   When the init parameter \'\'time_correction\'\' is enabled in unison
-    with \'\'ext_sel\'\' set to \'\'reset counter\'\' &
-    \'\'count_out\'\' enabled
+-   When the init parameter *time_correction* is enabled in unison with
+    *ext_sel* set to *reset counter* & *count_out* enabled
 -   The ROS driver attempts to correct the time stamp field in
     [sensor_msgs/Imu](sensor_msgs/Imu) based on the reset counter value
     (measured delay since latest GNSS 1PPS)
@@ -140,13 +137,12 @@ catkin workspace \"src\" folder.
 2\. Modify the [ CMakeLists.txt](CMakeLists.txt ) to select the desired
 Epson IMU model that is being used in the ROS system.
 
--   \'\'\'NOTE: You \*MUST\* re-build using catkin_make when changing
-    IMU models or any changes in the
-    [ CMakeLists.txt](CMakeLists.txt )\'\'\' 3. From the catkin
-    workspace folder run \"catkin_make\" to build all changed ROS1
-    packages located in the \<catkin_workspace\>/src/ folder. 4. Reload
-    the current ROS1 environment variables that may have changed after
-    the catkin build process.
+-   **NOTE: You \*MUST\* re-build using catkin_make when changing IMU
+    models or any changes in the [ CMakeLists.txt](CMakeLists.txt )** 3.
+    From the catkin workspace folder run \"catkin_make\" to build all
+    changed ROS1 packages located in the \<catkin_workspace\>/src/
+    folder. 4. Reload the current ROS1 environment variables that may
+    have changed after the catkin build process.
 
 ```
 <catkin_workspace>/source devel/setup.bash
@@ -156,8 +152,8 @@ Epson IMU model that is being used in the ROS system.
 your desired IMU init parameters for the specific IMU model in the
 launch folder that you selected and built
 
--   \'\'\'Typically, only the \'\'dout_rate\'\' & \'\'filter_sel\'\'
-    needs to be edited\'\'\'
+-   **Typically, only the *dout_rate* & *filter_sel* needs to be
+    edited**
 
 ## Running the ROS1 Node
 

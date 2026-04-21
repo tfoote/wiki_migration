@@ -227,7 +227,7 @@ optional arguments:
 
 ### mavftp
 
-\'\'\'PX4\'\'\' only. ```
+**PX4** only. ```
 usage: mavftp [-h] [-n MAVROS_NS] [-v]
               {cd,list,cat,remove,mkdir,rmdir,download,upload,verify,reset}
               ...

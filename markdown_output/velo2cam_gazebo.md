@@ -5,8 +5,8 @@ algorithms extrinsic calibration of pair of sensors composed of LiDAR
 and camera devices in any possible combination, as described in this
 paper:
 
-\'\'\'Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor
-Setups\'\'\'
+**Automatic Extrinsic Calibration Method for LiDAR and Camera Sensor
+Setups**
 
 [Jorge Beltrán](https://beltransen.github.io/),
 [Carlos Guindel](https://cguindel.github.io/), Arturo de la Escalera,
@@ -14,8 +14,8 @@ Fernando García
 
 IEEE Transactions on Intelligent Transportation Systems, 2022
 
-\'\'\'\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276)
-\] \[ [Preprint](https://arxiv.org/abs/2101.04431) \]\'\'\'
+**\[ [Paper](https://ieeexplore.ieee.org/abstract/document/9733276) \]
+\[ [Preprint](https://arxiv.org/abs/2101.04431) \]**
 
 ![\|width=\"750px\"](attachment:velo2cam_calibration_setup.png)
 

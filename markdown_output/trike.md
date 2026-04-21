@@ -62,12 +62,11 @@ Lastly, we gave the robot some character, with some awesome orange hair:
 Trike has his own software package, with launch files just for him.
 Currently, this includes:
 
--   \'\'\'trike_tf.launch\'\'\' - configures tf frames for the Kinect
-    and mobile base.
--   \'\'\'trike_perception.launch\'\'\' - starts the Kinect with VGA
-    color image and QQVGA point cloud. Includes \'\'trike_tf.launch\'\'
-    internally.
--   \'\'\'trike_bringup.launch\'\'\' - starts everything, includes
-    \'\'trike_perception.launch\'\' and also connects to the iRobot
-    Create mobile base on /dev/ttyUSB0. Will eventually include a URDF
-    model for visualizations.
+-   **trike_tf.launch** - configures tf frames for the Kinect and mobile
+    base.
+-   **trike_perception.launch** - starts the Kinect with VGA color image
+    and QQVGA point cloud. Includes *trike_tf.launch* internally.
+-   **trike_bringup.launch** - starts everything, includes
+    *trike_perception.launch* and also connects to the iRobot Create
+    mobile base on /dev/ttyUSB0. Will eventually include a URDF model
+    for visualizations.

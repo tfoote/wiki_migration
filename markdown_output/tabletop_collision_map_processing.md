@@ -33,14 +33,14 @@ This stack has two main roles:
 
 ![](attachment:coll_map1.png)
 
-\'\'Image of the Collision Map. Note the points from the tilting laser
-(in cyan) and the explicitly recognized objects (in green)\'\'
+*Image of the Collision Map. Note the points from the tilting laser (in
+cyan) and the explicitly recognized objects (in green)*
 
 ![](attachment:coll_map2.png)
 
-\'\'Detail of the Collision Map. Note that the recognized objects have
-been added as triangle meshes, while the unrecognized object has been
-added as a bounding box.\'\'
+*Detail of the Collision Map. Note that the recognized objects have been
+added as triangle meshes, while the unrecognized object has been added
+as a bounding box.*
 
 ## ROS API
 

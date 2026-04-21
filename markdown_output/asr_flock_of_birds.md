@@ -16,8 +16,8 @@ position and orientation of three sensors in a magnetic field in front
 of the receiver. Each tracker is connected to an data-glove and so only
 two trackers are used currently (for left and right hand). If started,
 the node publishes periodically the pose of the trackers as TF-publisher
-as well as \'\'\'asr_msgs::!AsrObject\'\'\'-Messages on the
-\'\'\'/fob_object\'\'\'-Topic.
+as well as **asr_msgs::!AsrObject**-Messages on the
+**/fob_object**-Topic.
 
 ![\|width=\"333\",height=\"200\"](attachment:index.png)
 ![\|width=\"333\",height=\"200\"](attachment:index.jpeg)
@@ -36,8 +36,8 @@ tracker system, but it is recommended to use it as a part of the
 
 ### Needed packages
 
-This package depends on \'\'\'asr_msgs\'\'\'-Package for the publication
-of the fob_objects.
+This package depends on **asr_msgs**-Package for the publication of the
+fob_objects.
 
 ### Needed hardware
 
@@ -48,13 +48,13 @@ magnet tracking system \"Flock of Birds\" is needed.
 
 There are mainly two ways to start the Flock of Birds server: To start
 it directly form the PC which the hardware is connected with, use
-\'\'\'roslaunch asr_flock_of_birds flock_of_birds.launch\'\'\' To start
-from another PC, the package provides a remote script. But Firstly, a
-ssh connection have to be set up. Secondly, use \'\'\'rosrun
-asr_flock_of_birds flock_of_birds_remote.sh\'\'\'
+**roslaunch asr_flock_of_birds flock_of_birds.launch** To start from
+another PC, the package provides a remote script. But Firstly, a ssh
+connection have to be set up. Secondly, use **rosrun asr_flock_of_birds
+flock_of_birds_remote.sh**
 
 ## ROS Nodes
 
-The launched Node publishes \'\'\'asr_msgs::!AsrObject\'\'\'-Messages on
-the \'\'\'/fob_object\'\'\'-Topic. There are no configuration or
-controlling elements.
+The launched Node publishes **asr_msgs::!AsrObject**-Messages on the
+**/fob_object**-Topic. There are no configuration or controlling
+elements.

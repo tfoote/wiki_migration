@@ -21,10 +21,9 @@ The following paper describes the approach:
 The best way to get started is to look at one of the example
 configurations in the
 [related GitHub repository](https://github.com/rst-tu-dortmund/mpc_local_planner/tree/master/mpc_local_planner_examples).
-The \`cfg\` directory contains several example \'\'yaml\'\'
-configurations.
+The \`cfg\` directory contains several example *yaml* configurations.
 
-It is \'\'\'highly recommended\'\'\' to be familiar with the
+It is **highly recommended** to be familiar with the
 [navigation](navigation) stack and all its components (global planner,
 local planner, costmap_2d, \...).
 

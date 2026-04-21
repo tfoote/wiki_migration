@@ -1,5 +1,5 @@
-\'\'\'The pilz_command_planner has been moved to MoveIt.
-pilz_industrial_motion is no longer maintained. \'\'\'
+**The pilz_command_planner has been moved to MoveIt.
+pilz_industrial_motion is no longer maintained. **
 
 ## Documentation
 

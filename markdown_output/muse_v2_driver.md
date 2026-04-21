@@ -119,9 +119,9 @@ $ roslaunch muse_v2_driver shutdown.launch
 
 ### Configuration
 
-\'\'\'\'\'Get configuration parameters.\'\'\'\'\' Assuming the ROS node
-of your MUSE V2 sensor is active \[step 3.1\], launch the following
-command from your catkin workspace: ```
+***Get configuration parameters.*** Assuming the ROS node of your MUSE
+V2 sensor is active \[step 3.1\], launch the following command from your
+catkin workspace: ```
 $ roslaunch muse_v2_driver get_configuration_params.launch
 ```
 
@@ -135,12 +135,12 @@ It will output the configuration parameters of your device:
 -   log frequency.
 
 By default, \`\`\`launch/get_configuration_params.launch\`\`\` enables
-the request of all parameters. You can freely \'\'enable/disable\'\'
-each parameter transmission by setting to \'\'true/false\'\' its
-corresponding argument in this launch file.
+the request of all parameters. You can freely *enable/disable* each
+parameter transmission by setting to *true/false* its corresponding
+argument in this launch file.
 
-\'\'\'\'\'Set configuration parameters.\'\'\'\'\' To change the
-configuration parameters of your MUSE V2 sensor, you can edit the
+***Set configuration parameters.*** To change the configuration
+parameters of your MUSE V2 sensor, you can edit the
 \`\`\`muse_v2_config.yaml\`\`\` file in the \`\`\`config\`\`\` folder.
 The following parameters can be configured:
 
@@ -162,9 +162,9 @@ $ roslaunch muse_v2_driver set_configuration_params.launch
 
 ### Calibration
 
-\'\'\'\'\'Get calibration params.\'\'\'\'\' Assuming the ROS node of
-your MUSE V2 sensor is active \[step 3.1\], launch the following command
-from your catkin workspace: ```
+***Get calibration params.*** Assuming the ROS node of your MUSE V2
+sensor is active \[step 3.1\], launch the following command from your
+catkin workspace: ```
 $ roslaunch muse_v2_driver get_calibration_params.launch
 ```
 
@@ -176,8 +176,8 @@ It will output the calibration parameters of your device:
 
 Such parameters will be stored in \`\`\`config/muse_v2_calib.txt\`\`\`.
 By default, the launch file enables the request of all parameters. You
-can freely \'\'enable/disable\'\' each parameter retrieval by setting to
-\'\'true/false\'\' its argument in
+can freely *enable/disable* each parameter retrieval by setting to
+*true/false* its argument in
 \`\`\`launch/get_calibration_params.launch\`\`\`.
 
 ### Memory
@@ -198,12 +198,11 @@ will output:
 
 Focusing on the log files,
 
--   \'\'get_files:=true\'\' will output the list \'\'\[(1,
-    file_name_1.txt), \..., (n, file_name_n.txt)\]\'\' of log files
-    stored in your device;
--   \'\'read_file:=i\'\' (with i ={1, \..., n}) will store the content
-    of file i-th;
--   \'\'read_memory:=true\'\' will store the content of all log files.
+-   *get_files:=true* will output the list *\[(1, file_name_1.txt),
+    \..., (n, file_name_n.txt)\]* of log files stored in your device;
+-   *read_file:=i* (with i ={1, \..., n}) will store the content of file
+    i-th;
+-   *read_memory:=true* will store the content of all log files.
 
 Log files are stored in the \`\`\`config\`\`\` folder.
 
@@ -232,9 +231,9 @@ pub {
 }
 ```
 
-\'\'\'\'\'Start acquisition.\'\'\'\'\' We assume that the ROS node of
-your MUSE V2 device is active \[step 3(a)\]. To start raw data
-transmission, launch the following command from your catkin workspace:
+***Start acquisition.*** We assume that the ROS node of your MUSE V2
+device is active \[step 3(a)\]. To start raw data transmission, launch
+the following command from your catkin workspace:
 ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
@@ -251,29 +250,29 @@ following data:
 -   acceleration;
 -   magnetic field.
 
-You can freely \'\'enable/disable\'\' each data publisher by setting to
-\'\'true/false\'\' its corresponding argument. The launch file also
-enables to choose the desired sampling \'\'frequency\'\' (Default: 150
-Hz - Admitted range: \[1-150\] (Hz)).
+You can freely *enable/disable* each data publisher by setting to
+*true/false* its corresponding argument. The launch file also enables to
+choose the desired sampling *frequency* (Default: 150 Hz - Admitted
+range: \[1-150\] (Hz)).
 
-\'\'\'\'\'Plots.\'\'\'\'\' While streaming raw data, you can plot them
-by means of ```
+***Plots.*** While streaming raw data, you can plot them by means of
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```1 To enable the activation of one or
-more plots, you should set to \'\'true\'\' its corresponding argument.
+```1 To enable the activation of one or more plots,
+you should set to *true* its corresponding argument.
 
-\'\'\'\'\'Raw data subscriber.\'\'\'\'\' While streaming raw data, you
-can subscribe to the \'\'publisher\'\' node and publish data back on
-your terminal. Assuming your transmission node is active, launch the
-following command from your catkin workspace: ```
+***Raw data subscriber.*** While streaming raw data, you can subscribe
+to the *publisher* node and publish data back on your terminal. Assuming
+your transmission node is active, launch the following command from your
+catkin workspace: ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```2
-\'\'\'\'\'Stop acquisition.\'\'\'\'\' If your acquisition node is active
-and you want to stop data transmission: ```
+```2 ***Stop acquisition.*** If
+your acquisition node is active and you want to stop data transmission:
+```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
@@ -281,16 +280,15 @@ $ catkin_make
 
 ### Miscellaneous
 
-\'\'\'\'\'Get battery charge and voltage.\'\'\'\'\' Assuming the ROS
-node of your MUSE V2 sensor is active \[step 3.1\], type the following
-command from your catkin workspace: ```
+***Get battery charge and voltage.*** Assuming the ROS node of your MUSE
+V2 sensor is active \[step 3.1\], type the following command from your
+catkin workspace: ```
 $ cd ~/catkin_ws/src/
 $ git clone https://github.com/221eROS/muse_v2_driver.git
 $ catkin_make
-```4 The node
-will send back the battery charge, its voltage, or both depending on
-whether the arguments \'\'charge\'\' and \'\'voltage\'\' are set to
-\'\'true\'\'.
+```4 The node will send back the
+battery charge, its voltage, or both depending on whether the arguments
+*charge* and *voltage* are set to *true*.
 
 ## Example
 

@@ -8,8 +8,8 @@ F200 and SR300 cameras.
 ### Installation Prerequisites
 
 This package requires the [librealsense](librealsense) package as the
-underlying camera drivers for all Intel® RealSense™ cameras.
-\'\'\'BEFORE\'\'\' installing the realsense-camera package, follow the
+underlying camera drivers for all Intel® RealSense™ cameras. **BEFORE**
+installing the realsense-camera package, follow the
 [Install Prerequisites for librealsense](librealsense#Installation_Prerequisites).
 
 ### ROS Debian Package
@@ -35,8 +35,8 @@ review the
 [librealsense compatible device information](https://github.com/IntelRealSense/librealsense#compatible-devices).
 If the camera requires a firmware upgrade, please refer to the
 [Intel® RealSense™ Camera software support](http://www.intel.com/realsense)
-page. \'\'\'Note\'\'\': Currently there is no native Linux tool for FW
-updates; all updates require a system with Microsoft Windows.
+page. **Note**: Currently there is no native Linux tool for FW updates;
+all updates require a system with Microsoft Windows.
 
 ### Supported Camera Types
 

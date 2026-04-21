@@ -9,10 +9,10 @@ time and duration handling, and logging.
 You can find the newest version at <http://github.com/timn/roslua>.
 
 It does most likely not contain all the features roscpp and rospy can
-offer. It does \'\'not\'\' aim to replace any of these, rather it
-provides an option for situations where Lua might be more suitable or
-more desirable, e.g. on constrained systems or for behavior description
-and programming.
+offer. It does *not* aim to replace any of these, rather it provides an
+option for situations where Lua might be more suitable or more
+desirable, e.g. on constrained systems or for behavior description and
+programming.
 
 The implementation is written purely in Lua, with some functionality
 coming from external Lua modules written in Lua and C

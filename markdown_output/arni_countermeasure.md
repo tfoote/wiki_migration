@@ -32,23 +32,23 @@ A constraint consists of:
 #### Constraint statement
 
 A statement has to start with only one entry. Multiple statements can be
-combined with \'\'\'or\'\'\' and \'\'\'and\'\'\'.
+combined with **or** and **and**.
 
-Its possible to negate a statement with \'\'\'not\'\'\'.
+Its possible to negate a statement with **not**.
 
 A entry consists of:
 
 ```
 seuid: { statistic_type: expected_value, another_s_type: another_value }
-``` Where expected_value can be \'\'\'okay\'\'\',
-\'\'\'high\'\'\', \'\'\'low\'\'\', \'\'\'unknown\'\'\'
+``` Where expected_value can be **okay**, **high**,
+**low**, **unknown**
 
 #### Constraint parameter
 
 A constraint has the following parameters:
 
   -- ----------------------- -- --------------------------------------------------------------------------------------------- --
-     \'\'\'parameter\'\'\'      \'\'\'description\'\'\'                                                                       
+     **parameter**              **description**                                                                               
      constraint                 Contains a statement that gets evaluated.                                                     
      min_reaction_interval      The time (in seconds) that the constraint has to be true to execute the reactions.            
      reaction_timeout           Time (in seconds) that the constraint has to wait till its reactions can be executed again.   
@@ -62,16 +62,16 @@ true for min_reaction_interval seconds.
 
 There are the following action types:
 
-  -- ------------------------- -- ---------------------------------------------- -- -------------------------------- --
-     \'\'\'action type\'\'\'      \'\'\'description\'\'\'                           \'\'\'additional entries\'\'\'   
-     publish                      Publish a message to rosout.                      message, loglevel                
-     stop                         Stops a node.                                     node                             
-     restart                      Restarts a node.                                  node                             
-     run                          Runs a command on the host the node runs on.      node, command                    
-  -- ------------------------- -- ---------------------------------------------- -- -------------------------------- --
+  -- ----------------- -- ---------------------------------------------- -- ------------------------ --
+     **action type**      **description**                                   **additional entries**   
+     publish              Publish a message to rosout.                      message, loglevel        
+     stop                 Stops a node.                                     node                     
+     restart              Restarts a node.                                  node                     
+     run                  Runs a command on the host the node runs on.      node, command            
+  -- ----------------- -- ---------------------------------------------- -- ------------------------ --
 
-Additionally a \'\'\'autonomy_level\'\'\' can be set. Only reactions
-with an autonomy_level \<= config/reaction_autonomy_level get executed.
+Additionally a **autonomy_level** can be set. Only reactions with an
+autonomy_level \<= config/reaction_autonomy_level get executed.
 
 ### Example
 

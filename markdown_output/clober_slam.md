@@ -1,4 +1,4 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Clober SLAM Package
 

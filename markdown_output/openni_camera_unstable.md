@@ -61,15 +61,15 @@ Set the Fixed Frame (top left of rviz window) to
 
 Add a !PointCloud2 display, and set the topic to
 \`/camera/depth/points\`. Turning the background to light gray can help
-with viewing. This is the \'\'unregistered\'\' point cloud in the frame
-of the depth (IR) camera. It is not matched with the RGB camera images.
+with viewing. This is the *unregistered* point cloud in the frame of the
+depth (IR) camera. It is not matched with the RGB camera images.
 
 Alternatively you can view the disparity image: ```
 rosrun image_view disparity_view image:=/camera/depth/disparity
 ```
 
-Now let\'s look at a \'\'registered\'\' point cloud, aligned with the
-RGB data. Open the dynamic reconfigure GUI: ```
+Now let\'s look at a *registered* point cloud, aligned with the RGB
+data. Open the dynamic reconfigure GUI: ```
 rosrun dynamic_reconfigure reconfigure_gui
 ```
 

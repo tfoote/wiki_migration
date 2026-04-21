@@ -11,15 +11,15 @@ with rosserial.
 -   EK-TM4C123GXL
 -   EK-TM4C1294XL
 
-Due to changes in USB library of !TivaWare. \'\'\'Compatible with
-SW-TM4C-2.1.3.156 onwards\'\'\'
+Due to changes in USB library of !TivaWare. **Compatible with
+SW-TM4C-2.1.3.156 onwards**
 
 This package contains the prepares the required libraries for Energia\'s
 IDE and also prepares a build configuration for \`catkin\` packages
 based on \`arm-none-eabi\` GNU compiler toolchain and TI\'s !TivaWare
 libraries.
 
-\'\'\'Repositories:\'\'\'
+**Repositories:**
 
 <https://github.com/vmatos/rosserial_tivac>
 
@@ -42,10 +42,9 @@ The !SystemTick interrupt service must be available for
 
 \`rosserial_tivac\` will communicate either through UART0 or USB0:
 
--   \'\'\'UART0\'\'\' which is connected directly to the ICDI device of
-    the board, available as USB serial converter on the debug USB port.
--   \'\'\'USB0\'\'\' which behaves as CDC USB device over the device USB
-    port.
+-   **UART0** which is connected directly to the ICDI device of the
+    board, available as USB serial converter on the debug USB port.
+-   **USB0** which behaves as CDC USB device over the device USB port.
 
 If you use rosserial over UART0, you are free to use USB0. Or if you use
 rosserial over USB0, you have available UART0.

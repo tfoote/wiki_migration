@@ -30,8 +30,8 @@ $ rosrun  camera_calibration_parsers convert  cal.yml cal.ini
 
 ##### ost.txt to yml
 
-\'\'(\'\'\'ost.txt\'\'\' file is in the calibrationdata.tar.gz file
-saved during the calibraton process)\'\'
+*(**ost.txt** file is in the calibrationdata.tar.gz file saved during
+the calibraton process)*
 
 ```
 $ mv ost.txt ost.ini

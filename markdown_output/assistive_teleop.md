@@ -32,11 +32,10 @@ camera, either of the forearm cameras, and an added kinect sensor on the
 head of the robot. The forearm camera image streams are rotated using
 the [image_rotate](http://www.ros.org/wiki/image_rotate) package so that
 the image is always \'right-side-up\'. Buttons beneath the image stream
-allow for user camera selection. Also, when using \'\'Normal
-Approach\'\', the camera stream will be modified to include an arrow
-indicating the point in the image and normal direction which has been
-selected, in order to provide confirmation that the robot is attempting
-the desired behavior.
+allow for user camera selection. Also, when using *Normal Approach*, the
+camera stream will be modified to include an arrow indicating the point
+in the image and normal direction which has been selected, in order to
+provide confirmation that the robot is attempting the desired behavior.
 
 #### Text
 
@@ -61,56 +60,55 @@ the page is refreshed.
 
 #### Control Head
 
-When \'\'\'Control Head\'\'\' is selected, the control inputs provide
-arrows for looking up(\^), down(v), left(\<), and right(\>). In
-addition, the center button will point the head at the base of the
-robot, which can be used for navigation while driving. Lastly, this also
-exposes controls to direct the head to persistently follow either the
-left or right gripper.
+When **Control Head** is selected, the control inputs provide arrows for
+looking up(\^), down(v), left(\<), and right(\>). In addition, the
+center button will point the head at the base of the robot, which can be
+used for navigation while driving. Lastly, this also exposes controls to
+direct the head to persistently follow either the left or right gripper.
 
 #### Control Right/Left Arm
 
-\'\'\'Control Right/Left Arm\'\'\' provides access to low-level control
-of the arm position of the PR2. The arrow buttons send commands in
-either the \`/torso_lift_link\` or \'l/r_gripper_tool_frame\', as
-selected in the dropdown menu. These commands attempt to move the arm a
-small distance in the given direction while maintaining the gripper
-pose, or else rotate the gripper about the tool frame while maintaining
-this end-effector position.
+**Control Right/Left Arm** provides access to low-level control of the
+arm position of the PR2. The arrow buttons send commands in either the
+\`/torso_lift_link\` or \'l/r_gripper_tool_frame\', as selected in the
+dropdown menu. These commands attempt to move the arm a small distance
+in the given direction while maintaining the gripper pose, or else
+rotate the gripper about the tool frame while maintaining this
+end-effector position.
 
 Additionally, this sub-division also exposes controls for performing a
-\'\'\'Normal Approach\'\'\', which will attempt to place the gripper
+**Normal Approach**, which will attempt to place the gripper
 perpendicular to any arbitrarily indicated point visible in the kinect
-image. This is performed by selecting \'\'Normal Approach\'\' for the
-desired arm, and clicking a desired point on the image. Using
+image. This is performed by selecting *Normal Approach* for the desired
+arm, and clicking a desired point on the image. Using
 [pixel_2_3d](http://www.ros.org/wiki/pixel_2_3d) to determine the
 associated 3D point in space and a vector normal to the surface at that
 point, the interface attempts to use move_arm motion planning to place
 the gripper 20cm away from the point, with the tips of the gripper
 pointing perpendicular to the surface.
 
-In combination with this function are controls to \'\'Advance\'\' and
-\'\'Retreat\'\' the gripper. These commands will move the gripper
-directly forward or backward along the current orientation, allowing for
-easy grasping and manipulation at arbitrary gripper orientations. While
-designed for use with \'\'Normal Approach\'\', these functions are
-completely general, and will work at any point in time when using the
-interface to control the robot.
+In combination with this function are controls to *Advance* and
+*Retreat* the gripper. These commands will move the gripper directly
+forward or backward along the current orientation, allowing for easy
+grasping and manipulation at arbitrary gripper orientations. While
+designed for use with *Normal Approach*, these functions are completely
+general, and will work at any point in time when using the interface to
+control the robot.
 
 #### Control Right/Left Hand
 
-Selecting \'\'\'Control Right/Left Hand\'\'\' exposes controls for
-directly commanding the joints of the PR2\'s \'wrist\': Forearm Roll,
-Wrist Flex, and Wrist Roll. The position of the arm is determined by the
-origin of the \`/wrist_roll_link\`, and so these commands can extend the
-reach of the PR2 by extending the wrist flex beyond the current position
-of the arm.
+Selecting **Control Right/Left Hand** exposes controls for directly
+commanding the joints of the PR2\'s \'wrist\': Forearm Roll, Wrist Flex,
+and Wrist Roll. The position of the arm is determined by the origin of
+the \`/wrist_roll_link\`, and so these commands can extend the reach of
+the PR2 by extending the wrist flex beyond the current position of the
+arm.
 
 #### Control Base
 
-When \'\'\'Control Base\'\'\' is selected, control inputs are exposed
-for driving the robot forward/backward, strafing left/right, and turning
-in place. Driving is the only motion which receives velocity inputs, and
+When **Control Base** is selected, control inputs are exposed for
+driving the robot forward/backward, strafing left/right, and turning in
+place. Driving is the only motion which receives velocity inputs, and
 consistent motion can be achieved with a click-and-hold.
 
 #### Sliders (Persistent)
@@ -135,13 +133,13 @@ large commands.
 
 #### Run-Stop (Persistent)
 
-At the bottom of the interface, a large button labeled \'\'STOP
-ROBOT\'\' acts as a user-controlled run-stop, and immediately halts the
-PR2\'s motors. This replaces the interface with a warning message, and a
-\'\'Reactivate\'\' button to restart the motors. Be careful of the
-movement of the robot when run-stopped (gravity acting on head and arms,
-spring tension in arms, etc. ) as well as the possibility of the robot
-dropping any held objects.
+At the bottom of the interface, a large button labeled *STOP ROBOT* acts
+as a user-controlled run-stop, and immediately halts the PR2\'s motors.
+This replaces the interface with a warning message, and a *Reactivate*
+button to restart the motors. Be careful of the movement of the robot
+when run-stopped (gravity acting on head and arms, spring tension in
+arms, etc. ) as well as the possibility of the robot dropping any held
+objects.
 
 ## Acknowledgements
 

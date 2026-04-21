@@ -24,7 +24,7 @@ software.
 ## Tutorials
 
 We created set of tutorials that will walk you through using
-\'\'siemens_cp1616\'\' package step by step. You can get started on
+*siemens_cp1616* package step by step. You can get started on
 [Introduction to siemens_cp1616](http://wiki.ros.org/siemens_cp1616/Tutorials/Introduction%20to%20siemens_cp1616)
 tutorial. For a complete list, check out the
 [Tutorials](http://wiki.ros.org/siemens_cp1616/Tutorials) page.

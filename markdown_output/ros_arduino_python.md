@@ -4,7 +4,7 @@ This package consists of a Python driver and ROS node for
 Arduino-compatible controllers. The Arduino must be connected to a PC or
 SBC using either a USB port or an RF serial link (e.g. XBee).
 
-\'\'\'Features\'\'\'
+**Features**
 
 -   Direct support for the following sensors:
 -   Ping sonar

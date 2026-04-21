@@ -2,15 +2,15 @@
 
 Simply running ros nodes in docker containers on remote robots.
 
-This is supposed to deliver tools to use the methods of \'\'\'edge
-computing\'\'\' for ROS enabled robots. These methods include fast and
+This is supposed to deliver tools to use the methods of **edge
+computing** for ROS enabled robots. These methods include fast and
 seamless deployment of software to edge devices (i.e. robots, and
 others).
 
-The \'\'\'dockeros library\'\'\' is designed to create and update docker
-images for ros packages. There is a CLI to use these capabilities in
-your development lifecycle that makes use of these tools in a
-client-server structure.
+The **dockeros library** is designed to create and update docker images
+for ros packages. There is a CLI to use these capabilities in your
+development lifecycle that makes use of these tools in a client-server
+structure.
 
 ## Media
 
@@ -18,13 +18,13 @@ client-server structure.
 
 [![video](https://camo.githubusercontent.com/7bed72d77c3b76b94516e2ac5d1a75556849facc/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f556264633936476b4f334d2f312e6a7067)](https://www.youtube.com/watch?v=Ubdc96GkO3M)
 
-\'\'Presentation at ROS Industrial Conference 2018\'\'
+*Presentation at ROS Industrial Conference 2018*
 
 ### Podcast
 
 [![podcast](https://camo.githubusercontent.com/26d9add454e04c0825b4e35bea837e3f277a5313/68747470733a2f2f6173736574732e6c696273796e2e636f6d2f7365637572652f636f6e74656e742f32393238323537392f3f6865696768743d39302677696474683d3930)](https://www.theconstructsim.com/rdp-034-docker-ros-dockeros-christian-henkel/)
 
-\'\'Podcast with Ricardo Tellez\'\'
+*Podcast with Ricardo Tellez*
 
 ## Prerequesits
 

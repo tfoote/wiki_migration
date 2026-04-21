@@ -160,9 +160,9 @@ and altitude).
     gazebo coordinates
 -   \`drift\` (Vector3): standard deviation of the position drift error
 
-. \'\'\'Note:\'\'\' The current velocity error is added to the position
-drift in each update step. Even if this parameter is zero, the velocity
-error is also reflected in the position.
+. **Note:** The current velocity error is added to the position drift in
+each update step. Even if this parameter is zero, the velocity error is
+also reflected in the position.
 
 -   \`driftFrequency\` (Vector3): mean frequency of the position drift
 -   \`gaussianNoise\` (Vector3): standard deviation of the additive

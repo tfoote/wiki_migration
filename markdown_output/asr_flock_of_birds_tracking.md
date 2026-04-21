@@ -42,10 +42,10 @@ degree and directly set as the target pan and tilt on the PTU.
 
 To successfully run this tool the whole kinematic chain of the PbD -Dome
 has to be started (PTU and Flock of Birds) first and the correct topic-
-and framenames have to set in \"\'\'\'tracker_settings.yaml\'\'\'\".
-With keys \"R\" or \"L\" the PTU can look at the right or left tracker
-(autonomous tracking). In addition the PTU can be moved with the
-arrwokeys (direct PTU controlling).
+and framenames have to set in \"**tracker_settings.yaml**\". With keys
+\"R\" or \"L\" the PTU can look at the right or left tracker (autonomous
+tracking). In addition the PTU can be moved with the arrwokeys (direct
+PTU controlling).
 
 ### Needed packages
 
@@ -76,12 +76,12 @@ roslaunch asr_flock_of_birds_tracking tracker.launch
 
 ### Subscribed Topics
 
--   \'\'\'/fob_objects\'\'\': current pose of FoB -Tracker
--   \'\'\'/ptu_state\'\'\': current joint angles
+-   **/fob_objects**: current pose of FoB -Tracker
+-   **/ptu_state**: current joint angles
 
 ### Published Topics
 
--   \'\'\'/ptu_cmd\'\'\': new PTU command
+-   **/ptu_cmd**: new PTU command
 
 ## Source
 

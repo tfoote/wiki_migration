@@ -22,8 +22,8 @@ You can create your own plugin implementation of kinematics -
 essentially a wrapper that wraps your custom kinematics solver by
 inheriting from the base class defined in this package. The typical
 procedure for this would be to create your own package (named
-example_kinematics) and have a dependency on both the
-\'\'kinematics_base\'\' and \'\'pluginlib\'\' packages.
+example_kinematics) and have a dependency on both the *kinematics_base*
+and *pluginlib* packages.
 
 Then, have a look at the
 [Code API](http://www.ros.org/doc/api/kinematics_base/html/classkinematics_1_1KinematicsBase.html#_details).
@@ -39,7 +39,7 @@ involves several steps outlined below.
 #### Setup the correct dependencies
 
 Make sure you add the following lines to the manifest.xml file in
-\'\'example_kinematics\'\'.
+*example_kinematics*.
 
 ```
 <depend package="pluginlib"/>
@@ -48,7 +48,7 @@ Make sure you add the following lines to the manifest.xml file in
 
 #### Setup the plugins file
 
-In a file named \'\'example_plugins.xml\'\' in your example_kinematics
+In a file named *example_plugins.xml* in your example_kinematics
 package, add the following lines and modify them to match the names you
 have chosen for your components.
 
@@ -62,23 +62,23 @@ have chosen for your components.
 </library>
 ```
 
-1\. Replace \'\'arm_kinematics_constraint_aware_lib\'\' with the name of
-the library object that contains your implementation of the kinematics.
-E.g. if you named your library \'\'example_kinematics\'\', the first
-line above should read: ```
+1\. Replace *arm_kinematics_constraint_aware_lib* with the name of the
+library object that contains your implementation of the kinematics. E.g.
+if you named your library *example_kinematics*, the first line above
+should read: ```
 <library path="lib/libexample_kinematics">
-``` 1. Rename the class
-name to be \'\'namespace/class_name\'\'. E.g. if your code is in the
-namespace \'\'example_kinematics\'\' and you named your class
-!ExampleKinematics, replace the class name with
-\'\'example_kinematics/ExampleKinematicsPlugin\'\'. 1. Rename the type
-to be \'\'namespace::class_name\'\'. E.g.
-\'\'example_kinematics::ExampleKinematicsPlugin\'\'.
+``` 1. Rename the class name to be
+*namespace/class_name*. E.g. if your code is in the namespace
+*example_kinematics* and you named your class !ExampleKinematics,
+replace the class name with
+*example_kinematics/ExampleKinematicsPlugin*. 1. Rename the type to be
+*namespace::class_name*. E.g.
+*example_kinematics::ExampleKinematicsPlugin*.
 
 #### Export the plugins file
 
 In the manifest.xml file for example_kinematics, make sure the following
-lines are present in the \'\'export\'\' tag:
+lines are present in the *export* tag:
 
 ```
 <kinematics_base plugin="${prefix}/example_plugins.xml" />

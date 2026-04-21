@@ -11,26 +11,25 @@ currently in the directory are:
     [collision_map](collision_map) package. This implementation takes
     self-occlusions into account, i.e. it retains parts of the collision
     map that may be temporarily occluded by the body parts of the robot.
--   launch/laser-perception.launch - This launches the \'\'laser
-    pipeline\'\' that goes from raw laser scans to a complete collision
-    map representation of the world taking self-occlusions into account.
+-   launch/laser-perception.launch - This launches the *laser pipeline*
+    that goes from raw laser scans to a complete collision map
+    representation of the world taking self-occlusions into account.
 -   launch/laser+stereo-perception.launch - This uses both laser and
     stereo information to go from raw laser scans to a complete
     collision map representation of the world taking self-occlusions
     into account.
--   tilt_laser_self_filter.launch - This launches a \'\'self filter\'\',
-    i.e. a filter that removes the robot body parts from sensor
-    information. The filter is located in the
-    [robot_self_filter](robot_self_filter) package.
+-   tilt_laser_self_filter.launch - This launches a *self filter*, i.e.
+    a filter that removes the robot body parts from sensor information.
+    The filter is located in the [robot_self_filter](robot_self_filter)
+    package.
 -   collision_map_sources.yaml - This file contains configuration
     information about the source of sensor data used for collision map
     generation.
 -   self_filter.yaml - This file contains configuration information to
     configure the robot_self_filter for the PR2 robot.
 -   shadow_filter.yaml - This file contains configuration information
-    configure a \'\'shadow filter\'\', i.e. a filter that can remove
-    noise in laser and stereo data due to sensor rays grazing object
-    boundaries.
+    configure a *shadow filter*, i.e. a filter that can remove noise in
+    laser and stereo data due to sensor rays grazing object boundaries.
 
 ## Stability
 

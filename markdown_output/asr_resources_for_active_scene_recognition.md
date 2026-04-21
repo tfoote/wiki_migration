@@ -5,44 +5,41 @@
 This package contains various helpers and resources for our Active Scene
 Recognition - System. The package includes the following submodules:
 
--   \'\'\'constellation_transformation_tool \'\'\'- python script, that
-    allows the simultaneous transformation of multiple object poses by a
-    fixed rotation and translation.
--   \'\'\'launch \'\'\'- contains several launch files to start the
+-   **constellation_transformation_tool **- python script, that allows
+    the simultaneous transformation of multiple object poses by a fixed
+    rotation and translation.
+-   **launch **- contains several launch files to start the
     scene-recognition state machines and all its depending packages
     using tmux.
--   \'\'\'recognition_manual_manager \'\'\'- python script, that allows
-    to start and stop object detectors manually.
--   \'\'\'rviz_configurations \'\'\'- contains predefined
-    rviz-configurations that include all available visualization topics
-    for the default Active Scene Recognition scenario. Shows object
-    normals by default, turn this of if it degrades your rviz
-    performance.
--   \'\'\'scene_recordings \'\'\'- resource folder that contains all
-    recorded scenes as a database file.
--   \'\'\'control\'\'\' - python script to control some parts of the
-    state machine, including moving the ptu/robot, detecting objects,
-    finding nbvs.
+-   **recognition_manual_manager **- python script, that allows to start
+    and stop object detectors manually.
+-   **rviz_configurations **- contains predefined rviz-configurations
+    that include all available visualization topics for the default
+    Active Scene Recognition scenario. Shows object normals by default,
+    turn this of if it degrades your rviz performance.
+-   **scene_recordings **- resource folder that contains all recorded
+    scenes as a database file.
+-   **control** - python script to control some parts of the state
+    machine, including moving the ptu/robot, detecting objects, finding
+    nbvs.
 
 Launch files:
 
--   \'\'\'start_modules_sim.sh/sim.launch\'\'\' - starts all required
-    modules to do scene recognition in simulation.
--   \'\'\'start_modules_real.sh/real.launch\'\'\' - starts all required
-    modules to do scene recognition in simulation, excluding object
-    recognizers.
--   \'\'\'start_recognizers.sh\'\'\' - must be run with real.launch on
-    gui/robot to start object recognizers.
--   \'\'\'start_modules_scene_learning.sh\'\'\' - starts modules for
-    scene recording.
--   \'\'\'control.sh\'\'\' - starts control script without any
-    dependencies.
--   \'\'\'start_modules_with_kinect.sh\'\'\' - starts the real robot
-    platform without the Active Scene Recognition. Also starts all
-    components required to use the kinect sensor. \'\'Note, that you
-    still need to launch the base_modules manually.\'\'
--   \'\'\'rviz_scene_exploration.launch\'\'\' starts rviz preconfigured
-    to show relevant visualizations.
+-   **start_modules_sim.sh/sim.launch** - starts all required modules to
+    do scene recognition in simulation.
+-   **start_modules_real.sh/real.launch** - starts all required modules
+    to do scene recognition in simulation, excluding object recognizers.
+-   **start_recognizers.sh** - must be run with real.launch on gui/robot
+    to start object recognizers.
+-   **start_modules_scene_learning.sh** - starts modules for scene
+    recording.
+-   **control.sh** - starts control script without any dependencies.
+-   **start_modules_with_kinect.sh** - starts the real robot platform
+    without the Active Scene Recognition. Also starts all components
+    required to use the kinect sensor. *Note, that you still need to
+    launch the base_modules manually.*
+-   **rviz_scene_exploration.launch** starts rviz preconfigured to show
+    relevant visualizations.
 
 # Functionality
 
@@ -70,18 +67,17 @@ usage/module is described here. If you are wondering how the tmux
 windows should look like after a successful lauch, take a look at the
 images.
 
--   \'\'\'roscore\'\'\' - roscore in the upper panel, gazebo in the
-    lower panel.
+-   **roscore** - roscore in the upper panel, gazebo in the lower panel.
 
 ![\|height=\"200\",width=\"333\"](attachment:roscore.png)
 
--   \'\'\'control\'\'\' - a python script that can be used to interact
-    with some modules.
--   \'\'\'rviz\'\'\' - rviz visualization.
+-   **control** - a python script that can be used to interact with some
+    modules.
+-   **rviz** - rviz visualization.
 
 ![\|height=\"200\",width=\"333\"](attachment:roscore.png)
 
--   \'\'\'ism\'\'\' -
+-   **ism** -
     [asr_recognizer_prediction_ism](http://wiki.ros.org/asr_recognizer_prediction_ism)
     module, which is used to detect scenes from known objects, the lower
     panel can be used to start recognizers/object detection to ensure
@@ -89,7 +85,7 @@ images.
 
 ![\|height=\"200\",width=\"333\"](attachment:ism.png)
 
--   \'\'\'nbv\'\'\' - the upper panel is running the
+-   **nbv** - the upper panel is running the
     [asr_next_best_view](http://wiki.ros.org/asr_next_best_view) module
     which is used to determine the next navigation goal, the lower panel
     runs [asr_world_model](http://wiki.ros.org/asr_world_model) which
@@ -98,59 +94,58 @@ images.
 
 ![\|height=\"200\",width=\"333\"](attachment:nbv.png)
 
--   \'\'\'viz_server\'\'\' - used to publish visualization stuff for
-    rviz.
+-   **viz_server** - used to publish visualization stuff for rviz.
 
 ![\|height=\"200\",width=\"333\"](attachment:viz_server.png)
 
--   \'\'\'state_machine\'\'\' - core that uses all modules to detect
-    scenes. It has some configurable modes which change the
-    behavior/requirements for scene detection.
+-   **state_machine** - core that uses all modules to detect scenes. It
+    has some configurable modes which change the behavior/requirements
+    for scene detection.
 
 ![\|height=\"200\",width=\"333\"](attachment:state_machine.png)
 
--   \'\'\'direct_search_manager\'\'\' - used for the direct
-    search/relation based search.
+-   **direct_search_manager** - used for the direct search/relation
+    based search.
 
 ![\|height=\"200\",width=\"333\"](attachment:direct_search_manager.png)
 
--   \'\'\'move_mock\'\'\' - responsible for movement in simulation.
+-   **move_mock** - responsible for movement in simulation.
 
 ![\|height=\"200\",width=\"333\"](attachment:move_mock.png)
 
--   \'\'\'ptu_mock\'\'\' - contains the ptu mock, which is used to
-    rotate the camera in simulation. the lower right panels can be used
-    to modify its state/show the camera frustum.
+-   **ptu_mock** - contains the ptu mock, which is used to rotate the
+    camera in simulation. the lower right panels can be used to modify
+    its state/show the camera frustum.
 
 ![\|height=\"200\",width=\"333\"](attachment:ptu_mock.png)
 
--   \'\'\'fake_recognizer\'\'\' - in simulation we have no real camera
+-   **fake_recognizer** - in simulation we have no real camera
     data/recogizers, so this is used to simulate recognition.
 
 ![\|height=\"200\",width=\"333\"](attachment:fake_recognizer.png)
 
--   \'\'\'recognition_for_grasping\'\'\',
-    \'\'\'descriptor_surface_based_recognition\'\'\',
-    \'\'\'aruco_marker_recognition\'\'\' - used to recognize different
-    type of objects in reality.
+-   **recognition_for_grasping**,
+    **descriptor_surface_based_recognition**,
+    **aruco_marker_recognition** - used to recognize different type of
+    objects in reality.
 
 ![\|height=\"200\",width=\"333\"](attachment:recognition_for_grasping.png)
 ![\|height=\"200\",width=\"333\"](attachment:descriptor_surface.png)
 ![\|height=\"200\",width=\"333\"](attachment:aruko.png)
 
--   \'\'\'object_database\'\'\' -
+-   **object_database** -
     [asr_object_database](http://wiki.ros.org/asr_object_database)
     contains information about object recognizers/types and their model,
     so they can be displayed in rviz.
--   \'\'\'recorder\'\'\' - this window is used when recording new
-    scenes, the upper panel is used to add detected objects to the list
-    of recorded objects. The lower panel can be used to detect objects
-    the same way as the ism window.
--   \'\'\'vision\'\'\' - guppy_head_full_mild
+-   **recorder** - this window is used when recording new scenes, the
+    upper panel is used to add detected objects to the list of recorded
+    objects. The lower panel can be used to detect objects the same way
+    as the ism window.
+-   **vision** - guppy_head_full_mild
 
 ![\|height=\"200\",width=\"333\"](attachment:vision.png)
 
--   \'\'\'kinect\'\'\' - kinect driver.
+-   **kinect** - kinect driver.
 
 ![\|height=\"200\",width=\"333\"](attachment:kinect.png)
 
@@ -276,17 +271,16 @@ above.
 
 [tmux](https://tmux.github.io/)
 
-If you source the ROS environment inside your /.bashrc, \'\'\'pay
-attentation\'\'\' that tmux reads only /.profile by default. Thus you
-might need to source your ROS environment in /.profile too.
+If you source the ROS environment inside your /.bashrc, **pay
+attentation** that tmux reads only /.profile by default. Thus you might
+need to source your ROS environment in /.profile too.
 
 ## recognition_manual_manager
 
-Contains the \'\'\'manager.py \'\'\'script, that allows to manually
-start and stop detection of single objects. In order for the script to
-work, all required object recognizers need to be launched in advance
-(See above: you can use the \'\'\'start_recognizers\'\'\' script to do
-so).
+Contains the **manager.py **script, that allows to manually start and
+stop detection of single objects. In order for the script to work, all
+required object recognizers need to be launched in advance (See above:
+you can use the **start_recognizers** script to do so).
 
 To find the object types of a recognizer you can run e.g. rosservice
 call /asr_object_database/object_type_list \"recognizer:
@@ -295,14 +289,12 @@ see [asr_object_database](http://wiki.ros.org/asr_object_database).
 
 The following commands are supported by the script:
 
--   \'\'\'start,markers \'\'\'- starts detection for all markers
--   \'\'\'stop,markers \'\'\'- stops detection for all markers
--   \'\'\'start,\<textured\|segmentable\|descriptor\>,\<object_name\>
-    \'\'\'- starts detection for the given object using a certain
-    recognizer
--   \'\'\'stop,\<textured\|segmentable\|descriptor\>,\<object_name\>
-    \'\'\'- stops detection for the given object using a certain
-    recognizer
+-   **start,markers **- starts detection for all markers
+-   **stop,markers **- stops detection for all markers
+-   **start,\<textured\|segmentable\|descriptor\>,\<object_name\> **-
+    starts detection for the given object using a certain recognizer
+-   **stop,\<textured\|segmentable\|descriptor\>,\<object_name\> **-
+    stops detection for the given object using a certain recognizer
 
 ## constellation_transformation_tool
 
@@ -327,13 +319,13 @@ the script.
 There are currently two recognizers integrated into the system to detect
 objects:
 
--   \'\'\'aruco_marker_recognition:\'\'\' Detects objects by atached
-    markers. Further information: asr_aruco_marker_recognition.
--   \'\'\'descriptor_surface_based_recognition\'\'\': Detects arbitrary
-    shaped objects by their texture. Its usage is free, but it depends
-    on Halcon (<http://www.mvtec.com/products/halcon/>, last
-    runtime-tests with Halcon 11). Thus it\'s optional for ASR. Further
-    information: asr_descriptor_surface_based_recognition.
+-   **aruco_marker_recognition:** Detects objects by atached markers.
+    Further information: asr_aruco_marker_recognition.
+-   **descriptor_surface_based_recognition**: Detects arbitrary shaped
+    objects by their texture. Its usage is free, but it depends on
+    Halcon (<http://www.mvtec.com/products/halcon/>, last runtime-tests
+    with Halcon 11). Thus it\'s optional for ASR. Further information:
+    asr_descriptor_surface_based_recognition.
 -   Two proprietary recognizers (one shape-based (segmentable) for
     unicolored objects and one texture-based (textured) for textured
     objects) used to be supported. However, we suggest integrating
@@ -350,39 +342,37 @@ asr_next_best_view
 -   param/next_best_view_settings_real/sim.yaml (used in the simulation)
     and rsc/next_best_view_settings_real/real.yaml (used on real
     robots)\
--   \'\'\'radius\'\'\' - to adapt the resolution of position sampling,
-    lower -\> higher resolution. The value gets adapted during the
-    calculation.
--   \'\'\'sampleSizeUnitSphereSampler\'\'\' - to adapt the resolution of
+-   **radius** - to adapt the resolution of position sampling, lower -\>
+    higher resolution. The value gets adapted during the calculation.
+-   **sampleSizeUnitSphereSampler** - to adapt the resolution of
     orientation sampling, higher -\> higher resolution (but computation
     takes longer). If you set it too low, the robot might miss objects
     because the robot doesn\'t take its orientations into account.
--   \'\'\'colThresh\'\'\' - Minimum distance between the robot and
-    objects. Increase the default if you want the robot to move closer
-    to objects, but be aware that if you set it too low, the robot might
+-   **colThresh** - Minimum distance between the robot and objects.
+    Increase the default if you want the robot to move closer to
+    objects, but be aware that if you set it too low, the robot might
     collide with objects. For further information about the threshold,
     take a look at <http://wiki.ros.org/costmap_2d#Inflation>
 
 asr_state_machine
 
 -   param/params.yaml
--   \'\'\'mode\'\'\' - the mode specifies the method which is used to
-    find scenes (see this file for possible values).
--   \'\'\'UseFakeMoveBase\'\'\' - can be set to true in simulation to
-    \"jump\" to the target instead of using the navigation.
+-   **mode** - the mode specifies the method which is used to find
+    scenes (see this file for possible values).
+-   **UseFakeMoveBase** - can be set to true in simulation to \"jump\"
+    to the target instead of using the navigation.
 -   rsc/CompletePatterns\*.py - a optional file which can be used to
-    have a different abort criterion, beside
-    \'\'\'found_all_objects\'\'\'. The abort criterion is
-    \'\'\'found_all_required_scenes\'\'\'. The python snippet should
-    contain a method which gets all CompletePatterns and returns true or
-    false depending on the CompletePatterns. For an example see
+    have a different abort criterion, beside **found_all_objects**. The
+    abort criterion is **found_all_required_scenes**. The python snippet
+    should contain a method which gets all CompletePatterns and returns
+    true or false depending on the CompletePatterns. For an example see
     [asr_state_machine](file:///C:/Users/Felix/Desktop/ROS/twiki%202/bin/view/IlcasProjects/AsrStateMachine.html).
 
 asr_fake_object_recognition
 
 -   param/params.yaml
--   \'\'\'config_file_path\'\'\' - path to a xml file that contains the
-    location of objects. These objects can be detected in simulation.
+-   **config_file_path** - path to a xml file that contains the location
+    of objects. These objects can be detected in simulation.
 
 asr_world_model
 
@@ -397,28 +387,26 @@ asr_world_model
 asr_recognizer_prediction_ism
 
 -   param/scene_recognition.yaml.
--   \'\'\'dbfilename\'\'\' - Location of a sqlite database for scene
+-   **dbfilename** - Location of a sqlite database for scene
     recognition. It stores the recorded scene. If the database is
     incomplete or you want to search for a subset ob objects only, it\'s
     possible to overwrite/add information by using the world_description
     file, see
     \![AsrWorldModel#4_2_3_world_description_optional.](AsrWorldModel#A4_2_3_world_description_optional.)
 -   param/sensitivity.yaml
--   \'\'\'bin_size\'\'\' - Deviation of the object position of the
-    recognized objects against the recorded position (in meters).
+-   **bin_size** - Deviation of the object position of the recognized
+    objects against the recorded position (in meters). Depends on the
+    \"real\" deviation of the objects, the inaccuracy of the object
+    recognition and the inaccuracy of the robot position.
+-   **maxProjectionAngleDeviation** - Deviation the object rotation of
+    the recognized objects against the recorded position (in degree).
     Depends on the \"real\" deviation of the objects, the inaccuracy of
     the object recognition and the inaccuracy of the robot position.
--   \'\'\'maxProjectionAngleDeviation\'\'\' - Deviation the object
-    rotation of the recognized objects against the recorded position (in
-    degree). Depends on the \"real\" deviation of the objects, the
-    inaccuracy of the object recognition and the inaccuracy of the robot
-    position.
 
 asr_ism
 
 -   param/sqlitedb.yaml
--   \'\'\'dbfilename\'\'\' - location of a sqlite database for scene
-    recording
+-   **dbfilename** - location of a sqlite database for scene recording
 
 # Tutorials
 

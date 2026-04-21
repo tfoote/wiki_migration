@@ -429,8 +429,8 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 
 #### Examples
 
-Should publish a customized \'\'\'tracks\'\'\' topic containing sparse
-optical flow information.
+Should publish a customized **tracks** topic containing sparse optical
+flow information.
 
 ```
 $ roslaunch thermalvis flow_example.launch
@@ -543,8 +543,8 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 
 #### Examples
 
-I recommend making sure that you have got the \'\'\'flow\'\'\' node
-working effectively before trying to run the \'\'\'monoslam\'\'\' node.
+I recommend making sure that you have got the **flow** node working
+effectively before trying to run the **monoslam** node.
 ```
 $ roslaunch thermalvis monoslam_example.launch
 ```

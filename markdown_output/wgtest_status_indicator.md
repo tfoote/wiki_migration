@@ -18,8 +18,8 @@ export ROS_MASTER_URI=http://wgburn1:11311
 bin/wgtest_indicator
 ```
 
-\'\'\'Note:\'\'\' You don\'t have to set the \`ROS_MASTER_URI\` if
-you\'re running on the same machine as Test Manager.
+**Note:** You don\'t have to set the \`ROS_MASTER_URI\` if you\'re
+running on the same machine as Test Manager.
 
 The driver is persistent, and will still operate if Test Manager goes
 down. Notice how the driver needs to be run as root.

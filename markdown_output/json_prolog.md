@@ -131,20 +131,20 @@ srv{
 
 ## JSON Format
 
-Prolog expressions are either \'\'terms\'\', \'\'atoms\'\',
-\'\'numbers\'\', \'\'lists\'\' or \'\'variables\'\'. All types apart
-from terms, lists and variables are represented by their native JSON
-format. Terms, lists and variables are represented as dictionaries with
-exactly one mapping. For terms, they contain a mapping from \`term\` to
-a list with the name of the term as first element and the parameters as
-the rest of the list. For lists, they contain a mapping from \`list\` to
-the (JSON) list of the members. For variables, they contain a mapping
-from \`variable\` to the name of the variable. Strings should always be
-enclosed by \\\" to prevent the JSON parser from doing something stupid.
-The following example shows how a the Prolog query
-```
+Prolog expressions are either *terms*, *atoms*, *numbers*, *lists* or
+*variables*. All types apart from terms, lists and variables are
+represented by their native JSON format. Terms, lists and variables are
+represented as dictionaries with exactly one mapping. For terms, they
+contain a mapping from \`term\` to a list with the name of the term as
+first element and the parameters as the rest of the list. For lists,
+they contain a mapping from \`list\` to the (JSON) list of the members.
+For variables, they contain a mapping from \`variable\` to the name of
+the variable. Strings should always be enclosed by \\\" to prevent the
+JSON parser from doing something stupid. The following example shows how
+a the Prolog query ```
 member(X, [1, 2, 3]), Y = foo(X)
-``` should be encoded: ```
+``` should be encoded:
+```
 {\"term\":[\",\",{\"term\":[\"MEMBER\",{\"variable\":\"X\"},{\"list\":[1,2,3]}]},{\"term\":[\"=\",{\"variable\":\"Y\"},{\"term\":[\"foo\",{\"variable\":\"X\"}]}]}]}
 ```
 

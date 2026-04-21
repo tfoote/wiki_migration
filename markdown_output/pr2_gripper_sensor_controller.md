@@ -11,13 +11,13 @@ functionality to allow more complex gripper actions in real-time that
 are able to delicately and sensitively control the gripper position and
 force, as well as provide a wealth of sensory feedback.
 
-\'\'\'Currently the
+**Currently the
 [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller) can only
 be accessed over the
 [pr2_gripper_sensor_action](pr2_gripper_sensor_action) action interface.
 There is no other API support at this time. Please refer to the
 [pr2_gripper_sensor_action](pr2_gripper_sensor_action) wiki page for
-usage and feature information.\'\'\'
+usage and feature information.**
 
 ![alt text\|width=780](attachment:wiki_control_flow_diagram_controller.png)
 
@@ -32,7 +32,7 @@ users.
 ## Hardware Dependecies
 
 The [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller)
-\'\'\'requires\'\'\' two important PR2 sensors to be available:
+**requires** two important PR2 sensors to be available:
 
 -   A
     [palm-mounted accelerometer](ethercat_hardware/Tutorials/GripperAccelerometer),
@@ -57,15 +57,15 @@ If you are not using a prebuilt installation you may have to compile the
 [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller) package.
 Since the [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller)
 package is a real-time controller, it is important to remember to
-compile the package \'\'\'before\'\'\' launching your robot, otherwise
-it will fail to register and load correctly with [pluginlib](pluginlib).
+compile the package **before** launching your robot, otherwise it will
+fail to register and load correctly with [pluginlib](pluginlib).
 Compiling can be done simply by typing: ```
 rosmake pr2_gripper_sensor_controller
 ```
 
 Or by building any of the higher-level packages (such as
 [pr2_gripper_sensor_action](pr2_gripper_sensor_action) which depend on
-this package) \'\'\'before\'\'\' launching your robot.
+this package) **before** launching your robot.
 
 ### Launching
 

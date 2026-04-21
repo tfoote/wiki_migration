@@ -4,16 +4,16 @@
 
 ## API Stability
 
-This package should be considered as \'\'\'stable,\'\'\' except for
-support of the Classic controller, which requires additional testing.
+This package should be considered as **stable,** except for support of
+the Classic controller, which requires additional testing.
 
 ## System Dependencies
 
 The package depends on the third-party cwiid wiimote bluetooth
 interface. With permission of the author, Donnie Smith, cwiid is
-distributed as the ROS package \`cwiid\`. \'\'\'NOTE:\'\'\' The cwiid
-library currently only recognizes Wiimotes which report the name as
-\"Nintendo RVL-CNT-01\"; the latest Wiimotes will not be discovered. See
+distributed as the ROS package \`cwiid\`. **NOTE:** The cwiid library
+currently only recognizes Wiimotes which report the name as \"Nintendo
+RVL-CNT-01\"; the latest Wiimotes will not be discovered. See
 <http://wiibrew.org/wiki/Wiimote#SDP_information>.
 
 Python needs to be installed on your system. This package has been

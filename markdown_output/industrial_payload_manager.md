@@ -26,8 +26,8 @@ industrial robot operations by providing the following functionality:
 
 Source: <https://github.com/arminstitute/industrial_payload_manager>
 
-\'\'\'Warning: This software is under development. API and message
-formats and subject to change.\'\'\'
+**Warning: This software is under development. API and message formats
+and subject to change.**
 
 ## Nodes
 

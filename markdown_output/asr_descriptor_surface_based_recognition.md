@@ -42,13 +42,13 @@ pixel location and the corresponding 3D-points are taken into account
 for the calculation of the median. Now the point cloud is reduced with
 the diameter of the object around this median point.\
 \
-\'\'Transformation into the scene image (abstracted; view\'s center
-depicted as cross; descriptor points depicted as red dots):\'\'\
+*Transformation into the scene image (abstracted; view\'s center
+depicted as cross; descriptor points depicted as red dots):*\
 ![\|width=\"600\",height=\"187\"](attachment:descriptor_cloud_reduction.png)\
 \
 \
-\'\'Cloud reduction:\
-\'\'
+*Cloud reduction:\
+*
 ![\|width=\"600\",height=\"241\"](attachment:descriptor_2d_search_eng.png) 1.
 The reduced point cloud, which should only contain the object, now is
 used for a 3D matching with the trained object model (see
@@ -67,12 +67,11 @@ results are compared and the pose is adjusted (as we know which view was
 found and how it is transformed into the image we can approximate the
 orientation of the object).\
 \
-\'\'Rotation-invariance (from left: no rotation, cylindrical,
-spherical):\'\'\
+*Rotation-invariance (from left: no rotation, cylindrical, spherical):*\
 ![\|width=\"600\",height=\"255\"](attachment:descriptor_rot_invariance.png)\
 \
-\'\'Geometrical view problem (both views on the left appear as the cloud
-on the right):\'\'\
+*Geometrical view problem (both views on the left appear as the cloud on
+the right):*\
 ![\|width=\"600\",height=\"417\"](attachment:descriptor_geom_view.png)\
 1. The last step is optional and is used to add another validation layer
 to the recognition process. The textured mesh of the found object is
@@ -82,7 +81,7 @@ the resulting homographies of the matching on both the real and the
 artificial image, it can be checked whether the found pose is valid and
 can be returned.\
 \
-\'\'Real scene image left, artificial one right:\'\'\
+*Real scene image left, artificial one right:*\
 ![\|width=\"600\",height=\"243\"](attachment:descriptor_pose_val.png)\
 
 In addition to the object recognizer, the package offers a graphical
@@ -131,34 +130,32 @@ to add or remove objects to/from the list of recognizable ones.
 
 ### Subscribed Topics
 
--   \'\'sensor_msgs/Image\'\': The RGB-camera image (default:
+-   *sensor_msgs/Image*: The RGB-camera image (default:
     /stereo/left/image_rect_color)
--   \'\'sensor_msgs/Image\'\': The same as the camera image above but as
-    a greyscale image (default: /stereo/left/image_rect)
--   \'\'sensor_msgs/PointCloud2\'\': The point cloud the images above
-    are registered to (default:
-    /kinect/depth_registered_with_guppy/points)
+-   *sensor_msgs/Image*: The same as the camera image above but as a
+    greyscale image (default: /stereo/left/image_rect)
+-   *sensor_msgs/PointCloud2*: The point cloud the images above are
+    registered to (default: /kinect/depth_registered_with_guppy/points)
 
 ### Published Topics
 
--   \'\'visualization_msgs/MarkerArray\'\': A visualization of the
-    volume in the point cloud the recognizer uses for each object after
-    it was found in 2D (default:
+-   *visualization_msgs/MarkerArray*: A visualization of the volume in
+    the point cloud the recognizer uses for each object after it was
+    found in 2D (default:
     /asr_descriptor_surface_based_recognition/object_boxes)\
     ![\|width=\"600\",height=\"243\"](attachment:descriptor_vis_boxes.png)
--   \'\'sensor_msgs/PointCloud2\'\': A visualization of the reduced
-    point clouds the recognizer uses for the 3D recognition (one color
-    for each object) (default:
+-   *sensor_msgs/PointCloud2*: A visualization of the reduced point
+    clouds the recognizer uses for the 3D recognition (one color for
+    each object) (default:
     /asr_descriptor_surface_based_recognition/object_clouds)\
     ![\|width=\"600\",height=\"246\"](attachment:descriptor_vis_cloud.png)
--   \'\'sensor_msgs/Image\'\': A visualization of the 2D recognition
-    results\
+-   *sensor_msgs/Image*: A visualization of the 2D recognition results\
     ![\|width=\"600\",height=\"242\"](attachment:descriptor_vis_2d.png)
--   \'\'asr_msgs/AsrObject\'\': The found objects as an
-    !AsrObject-message which can be used by other packages and contains
-    information like the name, pose etc. (default: /stereo/objects)
--   \'\'visualization_msgs/Marker\'\': A visualization of the found
-    objects as meshes (default: /stereo/visualization_marker)\
+-   *asr_msgs/AsrObject*: The found objects as an !AsrObject-message
+    which can be used by other packages and contains information like
+    the name, pose etc. (default: /stereo/objects)
+-   *visualization_msgs/Marker*: A visualization of the found objects as
+    meshes (default: /stereo/visualization_marker)\
     ![\|width=\"600\",height=\"244\"](attachment:descriptor_results.png)
 
 ### Parameters
@@ -272,11 +269,11 @@ Dynamic parameters:
 The process calls services from the asr_object_database to get
 information about the objects which are recognizable:
 
--   \'\'/asr_object_database/object_meta_data\'\': Is called to get
-    basic information about recognizable objects
--   \'\'/asr_object_database/recognizer_list_meshes\'\': Is called to
-    get all available object meshes. This information is needed due to
-    internal implementation details of the pose validation step.
+-   */asr_object_database/object_meta_data*: Is called to get basic
+    information about recognizable objects
+-   */asr_object_database/recognizer_list_meshes*: Is called to get all
+    available object meshes. This information is needed due to internal
+    implementation details of the pose validation step.
 
 ### Provided Services
 

@@ -1,6 +1,6 @@
-  -- --------------------------------------------- --
-     \<#FF0000\>\'\'DEPRECATED\'\' (Diamondback)   
-  -- --------------------------------------------- --
+  -- --------------------------------------- --
+     \<#FF0000\>*DEPRECATED* (Diamondback)   
+  -- --------------------------------------- --
 
 Please convert to using PointCloud2, alternatively you can checkout it
 by yourself at:
@@ -14,17 +14,17 @@ sensor_msgs/PointCloud and the new sensor_msgs/PointCloud2 data formats,
 and viceversa. To achieve this, the node accepts inputs on two ROS
 topics:
 
--   \'\'\'points_in\'\'\' for PointCloud,
--   and \'\'\'points2_in\'\'\' for PointCloud2.
+-   **points_in** for PointCloud,
+-   and **points2_in** for PointCloud2.
 
 The outputs will be generated as follows:
 
--   if the input data is coming in on \'\'\'points_in\'\'\' as
-    PointCloud messages, the output will go on \'\'\'points2_out\'\'\'
-    as PointCloud2 messages;
--   if the input data is coming in on \'\'\'points2_in\'\'\' as
-    PointCloud2 messages, the output will go on \'\'\'points_out\'\'\'
-    as PointCloud messages.
+-   if the input data is coming in on **points_in** as PointCloud
+    messages, the output will go on **points2_out** as PointCloud2
+    messages;
+-   if the input data is coming in on **points2_in** as PointCloud2
+    messages, the output will go on **points_out** as PointCloud
+    messages.
 
 Examples: ```
 $  rosrun point_cloud_converter point_cloud_converter points2_in:=/my_input_pointcloud2_topic points_out:=/my_output_pointcloud_topic

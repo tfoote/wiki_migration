@@ -30,16 +30,16 @@ base_topic:\"topicname\", ID:1 -\> \"topicname1\").
 
 ### Parameter
 
-  -- ---------------------------- -- ------------------------------------------------------------------- -- ---------------------------- --
-     \'\'\'Parameter Name\'\'\'      \'\'\'Description\'\'\'                                                \'\'\'Default Values\'\'\'   
-     pub_name                        Topic name of image publisher (topicname and ID are concatenated)      \"vrmagic_image\_\"          
-     ip_smartcam                     IP address of the VRMagic smart cam                                    \"192.168.3.101              
-     port_smartcam                   PORT of the VRMagic smart cam                                          1234                         
-  -- ---------------------------- -- ------------------------------------------------------------------- -- ---------------------------- --
+  -- -------------------- -- ------------------------------------------------------------------- -- --------------------- --
+     **Parameter Name**      **Description**                                                        **Default Values**    
+     pub_name                Topic name of image publisher (topicname and ID are concatenated)      \"vrmagic_image\_\"   
+     ip_smartcam             IP address of the VRMagic smart cam                                    \"192.168.3.101       
+     port_smartcam           PORT of the VRMagic smart cam                                          1234                  
+  -- -------------------- -- ------------------------------------------------------------------- -- --------------------- --
 
 ### Running the ROS Node
 
-\'\'\'Starting the node using rosrun with parameters:\'\'\'
+**Starting the node using rosrun with parameters:**
 
 ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=<topicname> _ip_smartcam:=<ip> _port_smartcam:=<port>
@@ -76,8 +76,7 @@ cam firmware
 
 ![](attachment:class_diagram_vrmagic_api.png)
 
-\'\'\'Note:\'\'\' the following explanations are extracted from
-demo_app.
+**Note:** the following explanations are extracted from demo_app.
 
 In the first step a `VrMagicHandler_camhost` - object must be
 instanciated. For that the header file from the class needs to be
@@ -101,7 +100,7 @@ transmitted to the ROS server. Create and fill an instance of
 `ohm::ImageType` with information about the image format. Image data is
 passed via the pointer variable `image_ptr`.
 
-\-\-\-\-\-\-\-\-\-- \'\'\'IMPORTANT\'\'\' The ROS bridge can handle only
+\-\-\-\-\-\-\-\-\-- **IMPORTANT** The ROS bridge can handle only
 monoscaled and BGR images, either with 8 or 16 Bit pixeldepth.
 
 -   If the image is monoscaled, the field `unsigned int channels` needs
@@ -122,7 +121,7 @@ monoscaled and BGR images, either with 8 or 16 Bit pixeldepth.
 ```
 
   -- ---------------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------- --
-     \'\'\'Field\'\'\'                     \'\'\'Description\'\'\'                                                                                                            
+     **Field**                             **Description**                                                                                                                    
      `ohm::ImageType.id`                   ID for a channel e.g. sensor port                                                                                                  
      `ohm::ImageType.dataSize`             size of the image data in \[byte\]                                                                                                 
      `ohm::ImageType.dataType`             Type of data. For now just image type is available                                                                                 
@@ -156,8 +155,8 @@ it is described in the user guide of the smart cam.
 
 ### Example Application
 
-\'\'\'Note:\'\'\' The demo application is written for a D3-Multisensor
-smart cam from VRMagic.
+**Note:** The demo application is written for a D3-Multisensor smart cam
+from VRMagic.
 
 This application is based on the simple grabbing example application of
 VRMagic. The demo application is extended with the ROS bridge interface.
@@ -190,8 +189,8 @@ $ rosrun image_view image_view image:=/<your_base_topicname>1
 
 ------------------------------------------------------------------------
 
-\'\'\'Note:\'\'\' The ROS bridge specific code in the demo application
-is labeled with the following comments: ```
+**Note:** The ROS bridge specific code in the demo application is
+labeled with the following comments: ```
 $ rosrun vrmagic_ros_bridge_server vrmagic_ros_bridge_server_node _pub_name:=<topicname> _ip_smartcam:=<ip> _port_smartcam:=<port>
 ```0
 

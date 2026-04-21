@@ -4,8 +4,8 @@ and the tray. It allows for reading the adjusted footprint using either
 the \`GetFootprint\` service or the published \`adjusted_footprint\`
 topic.
 
-\'\'\'Note:\'\'\' The \`cob_footprint_observer\` only works with
-rectangular footprints.
+**Note:** The \`cob_footprint_observer\` only works with rectangular
+footprints.
 
 ## Hardware Requirements
 

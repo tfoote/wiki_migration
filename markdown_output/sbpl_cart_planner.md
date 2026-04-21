@@ -78,9 +78,9 @@ There are currently two sets of motion primitive files available for
 cart pushing.
 
 -   sbpl_cart_planner/launch/pr2_cart_articulate.mprim - This set of
-    primitives includes \'\'articulation\'\' primitives that allow the
-    robot to articulate the cart about the articulation point defined by
-    the parameters above.
+    primitives includes *articulation* primitives that allow the robot
+    to articulate the cart about the articulation point defined by the
+    parameters above.
 -   sbpl_cart_planner/launch/pr2_cart.mprim - This set of primitives
     encodes basic motions of the PR2+cart system. It allows for forward,
     backwards, rotation in place and sideways strafing. It essentially

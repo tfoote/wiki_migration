@@ -2,11 +2,11 @@
 
 ### Indigo and Jade
 
-Since Indigo, there is a package for OpenCV3. It contains the
-\'\'opencv\'\' and \'\'opencv_contrib\'\' repos from
-<https://github.com/Itseez>. Some modules might not get included because
-the dependencies are hard to package for all platforms (e.g. the optical
-character recognition module that needs tesseract).
+Since Indigo, there is a package for OpenCV3. It contains the *opencv*
+and *opencv_contrib* repos from <https://github.com/Itseez>. Some
+modules might not get included because the dependencies are hard to
+package for all platforms (e.g. the optical character recognition module
+that needs tesseract).
 
 ### Kinetic and above
 
@@ -32,10 +32,9 @@ The reasons to package it ourselves are:
 You would use OpenCV3 as you would usually outside of ROS but let\'s
 explain a few corner cases:
 
--   if you have OpenCV2 and OpenCV3 installed,
-    \'\'find_package(OpenCV)\'\' in CMake will first find OpenCV3. If
-    you want to explicitly link to OpenCV2, use \'\'find_package(OpenCV
-    2)\'\'
+-   if you have OpenCV2 and OpenCV3 installed, *find_package(OpenCV)* in
+    CMake will first find OpenCV3. If you want to explicitly link to
+    OpenCV2, use *find_package(OpenCV 2)*
 -   if you have OpenCV2 and OpenCV3 installed, OpenCV3 is not on your
     path: libraries and headers are renamed to only be visible through
     CMake. Python is the only exception but you can use the guide below
@@ -53,7 +52,7 @@ package be part of your source workspace.
 Switching code to OpenCV3 can be done following the official guide at
 <http://docs.opencv.org/master/db/dfa/tutorial_transition_guide.html>.
 
-The rosdep key is \'\'opencv3\'\'.
+The rosdep key is *opencv3*.
 
 ## Dual Compatibility
 
@@ -85,9 +84,8 @@ else:
 
 Also, if you write OpenCV3 code, chances are high that it will also
 compile with OpenCV 2.4.9+. E.g., in color conversion, when replacing
-\'\'CV_BGR2GRAY\'\' by \'\'cv::COLOR_RGB2GRAY\'\', your code will also
-compile in OpenCV2 as this API has been backported (and not documented
-\...).
+*CV_BGR2GRAY* by *cv::COLOR_RGB2GRAY*, your code will also compile in
+OpenCV2 as this API has been backported (and not documented \...).
 
 ### CMake
 
@@ -101,16 +99,15 @@ endif()
 
 ### package.xml
 
-Instead of depending on \'\'\'opencv3\'\'\', you should depend on
-\'\'\'cv_bridge\'\'\' or \'\'\'image_geometry\'\'\'. Depending on one of
-those two keys transitively makes you depend on
-\'\'\'libopencv-dev\'\'\' on Jade and below, or \'\'\'opencv3\'\'\' on
-Kinetic and above.
+Instead of depending on **opencv3**, you should depend on **cv_bridge**
+or **image_geometry**. Depending on one of those two keys transitively
+makes you depend on **libopencv-dev** on Jade and below, or **opencv3**
+on Kinetic and above.
 
-\'\'\'image_pipeline\'\'\' will only pull in \'\'\'sensor_msgs\'\'\' as
-an extra dependency while \'\'\'cv_bridge\'\'\' will also pull in
-\'\'\'boost\'\'\', \'\'\'python\'\'\' and \'\'\'rosconsole\'\'\' so it
-depends on whether you go for something small or something you need.
+**image_pipeline** will only pull in **sensor_msgs** as an extra
+dependency while **cv_bridge** will also pull in **boost**, **python**
+and **rosconsole** so it depends on whether you go for something small
+or something you need.
 
 ## Building the Package
 

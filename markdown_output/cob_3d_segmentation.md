@@ -21,13 +21,13 @@ roslaunch cob_3d_segmentation simple_segmentation.launch
 ``` The following arguments are used to define
 subscription and publication topics:
 
-  -- ---------------------- -- ---------------------------------- -- -------------------------------- -- ----------------------------------------------- --
-     \'\'\'argument\'\'\'      \'\'\'message type\'\'\'              \'\'\'default topic\'\'\'           \'\'\'description\'\'\'                         
-     `point_cloud_in`          `sensor_msgs/PointCloud2`             /cam3d/depth_registered/points      input point cloud                               
-     `segmented_cloud`         `sensor_msgs/PointCloud2`             /segmentation/segmented_cloud       output point cloud colorized by segments        
-     `classified_cloud`        `sensor_msgs/PointCloud2`             /segmentation/classified_cloud      output point cloud colorized by surface types   
-     `shape_array`             `cob_3d_mapping_msgs/ShapeArray`      /segmentation/shape_array           output array of planar shapes                   
-  -- ---------------------- -- ---------------------------------- -- -------------------------------- -- ----------------------------------------------- --
+  -- -------------------- -- ---------------------------------- -- -------------------------------- -- ----------------------------------------------- --
+     **argument**            **message type**                      **default topic**                   **description**                                 
+     `point_cloud_in`        `sensor_msgs/PointCloud2`             /cam3d/depth_registered/points      input point cloud                               
+     `segmented_cloud`       `sensor_msgs/PointCloud2`             /segmentation/segmented_cloud       output point cloud colorized by segments        
+     `classified_cloud`      `sensor_msgs/PointCloud2`             /segmentation/classified_cloud      output point cloud colorized by surface types   
+     `shape_array`           `cob_3d_mapping_msgs/ShapeArray`      /segmentation/shape_array           output array of planar shapes                   
+  -- -------------------- -- ---------------------------------- -- -------------------------------- -- ----------------------------------------------- --
 
 ### Simple C++ Example
 

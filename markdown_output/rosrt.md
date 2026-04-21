@@ -1,10 +1,10 @@
 ## Overview
 
 rosrt is a package that contains realtime-safe tools for interacting
-with ROS. It is currently \'\'\'experimental\'\'\' and \'\'\'not API
-stable\'\'\', so use at your own risk. Used together with a Xenomai
-Kernel the ROS processes get guaranteed CPU time and are not affected by
-other processes. rosrt can also slightly improve performance by avoiding
+with ROS. It is currently **experimental** and **not API stable**, so
+use at your own risk. Used together with a Xenomai Kernel the ROS
+processes get guaranteed CPU time and are not affected by other
+processes. rosrt can also slightly improve performance by avoiding
 memory allocations by preallocating. Those speed-ups should probably be
 helpful even if not running a real time system if small margins are
 important.

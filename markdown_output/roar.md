@@ -68,10 +68,10 @@ None of the ROAR software will work properly unless you enable your
 computers microphone input (duh). Each microphone is a little different,
 so it is hard to give generic instructions,but here are a few tips:
 
--   \'\'\'The microphone input channel used by ROAR can be configured in
-    the launch/audio_parameters.yaml file. It\'s default setting is
-    \'default\', your computers default microphone channel input\'\'\'.
-    To find out what other options you have on your computer try typing
+-   **The microphone input channel used by ROAR can be configured in the
+    launch/audio_parameters.yaml file. It\'s default setting is
+    \'default\', your computers default microphone channel input**. To
+    find out what other options you have on your computer try typing
     \'aplay -l\' on the command line.
 -   For USB microphones:
     <http://wiki.audacityteam.org/index.php?title=USB_mic_on_Linux>

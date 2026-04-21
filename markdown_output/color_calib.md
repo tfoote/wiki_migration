@@ -5,8 +5,8 @@ At the moment, color-calibration node only runs on image_array topics.
 To run the color calibration run, for instance: ```
 rosrun color_calib calib_node images:=videre/images
 ```
-Then click on the 4 corners in \'\'\'clockwise\'\'\' order, beginning
-with the upper left corner of the dark-skin colored square.
+Then click on the 4 corners in **clockwise** order, beginning with the
+upper left corner of the dark-skin colored square.
 
 It will compute the 3x3 color calibration and place it in the parameter:
 ` topic_name/image_label/color_calib`. For example, if the topic name is

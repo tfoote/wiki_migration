@@ -18,11 +18,9 @@ feature (with a cleaner implementation), as stated by Wim in the
 ### Input Topics
 
 The node subscribes to the two topics to merge:
-\'\'\'/srh/position/joint_states\'\'\' and
-\'\'\'/sr_arm/position/joint_states\'\'\'. These are hard coded for the
-time being.
+**/srh/position/joint_states** and **/sr_arm/position/joint_states**.
+These are hard coded for the time being.
 
 ### Output Topics
 
-Publishes the merged joint state messages to
-\'\'\'/position/joint_states\'\'\'.
+Publishes the merged joint state messages to **/position/joint_states**.

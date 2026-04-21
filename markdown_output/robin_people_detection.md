@@ -34,7 +34,7 @@ param {
 
 Use roslaunch files to load this files.
 
--   \'\'\'robin_people_detection.launch\'\'\' - Launches
+-   **robin_people_detection.launch** - Launches
     [openni_tracker](openni_tracker), 3dsensor of the
     [turtlebot_bringup](turtlebot_bringup) package, rviz and the
     robin_people_detection node.

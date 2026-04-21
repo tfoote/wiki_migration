@@ -3,17 +3,17 @@
 This package contains the the urdf, meshes and other files needed to
 create the rb1_base description. The package has the following folders:
 
-\- \'\'\'launch:\'\'\' In this folder you will find the launch files
-ready to be executed
+\- **launch:** In this folder you will find the launch files ready to be
+executed
 
-\- \'\'\'meshes:\'\'\' In this folder you will find the STL files of the
+\- **meshes:** In this folder you will find the STL files of the
 different parts of the robots
 
-\- \'\'\'robots:\'\'\' In this folder you will find the final
-description of the robot, where all the parts are integrated
+\- **robots:** In this folder you will find the final description of the
+robot, where all the parts are integrated
 
-\- \'\'\'urdf:\'\'\' Here you will find the different possible parts of
-the robot. Each one is a xacro file that will be included in the final
+\- **urdf:** Here you will find the different possible parts of the
+robot. Each one is a xacro file that will be included in the final
 description
 
 ## Usage
@@ -30,4 +30,4 @@ roslaunch rb1_base_description rb1_base_state.launch
 ```
 
 In case you want to change the robot\'s urdf, this can be found inside
-the \'\'\'robots\'\'\' folder.
+the **robots** folder.

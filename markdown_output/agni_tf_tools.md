@@ -20,12 +20,11 @@ given Euler angle representation into another one, simply enter the
 desired axes order - replacing the whole text field including the
 angular values.
 
-To specify whether rotations should be performed w.r.t. the
-\'\'\'s\'\'\'tatic or the moving / \'\'\'r\'\'\'otationg frame
-(corresponding to left resp. right matrix multiplication), it\'s
-possible to prefix the axes order by \"\'\'\'s\'\'\'\" or
-\"\'\'\'r\'\'\'\". Omitting the prefix, corresponds to \"\'\'\'r\'\'\'\"
-or right matrix multiplication.
+To specify whether rotations should be performed w.r.t. the **s**tatic
+or the moving / **r**otationg frame (corresponding to left resp. right
+matrix multiplication), it\'s possible to prefix the axes order by
+\"**s**\" or \"**r**\". Omitting the prefix, corresponds to \"**r**\" or
+right matrix multiplication.
 
 # Computing a transform w.r.t. another parent
 

@@ -1,32 +1,32 @@
 # Overview
 
-\'\'\'stdr_parser\'\'\' is a Yaml/XML parser created for
+**stdr_parser** is a Yaml/XML parser created for
 [STDR Simulator](stdr_simulator). Its job is to parse resource files
 (robots and sensors) and create the according stdr_msgs. Also, provided
-a stdr_msgs message \'\'\'stdr_parser\'\'\' can save it to a Yaml or XML
-file. The parser structure is such that it can be \"easily\" extended
-with more file types (such as JSON f.e.) by changing only specific
-source files (the filetype parser and writer). A brief overview of the
-parsing steps follow.
+a stdr_msgs message **stdr_parser** can save it to a Yaml or XML file.
+The parser structure is such that it can be \"easily\" extended with
+more file types (such as JSON f.e.) by changing only specific source
+files (the filetype parser and writer). A brief overview of the parsing
+steps follow.
 
 ## How the stdr_parser works
 
 ### Step 1 : Recursive file parsing
 
-\'\'\'stdr_parser\'\'\' takes as input a Yaml or XML file and initially
-does a \"blind\" parsing of the file, meaning that no validation is
-performed. Of course if the file does not exist or is malformed, a
+**stdr_parser** takes as input a Yaml or XML file and initially does a
+\"blind\" parsing of the file, meaning that no validation is performed.
+Of course if the file does not exist or is malformed, a
 `ParserException` is thrown. This initial parsing creates a tree
 consisting of stdr_parser::Node objects and represents the initial file.
 As the following sections describe, for convenience reasons you can have
-\'\'\'filename\'\'\' tags in your robot or sensor file, which are used
-for including other resources (for example in a robot you can include
-laser and sonar sensors without writing them from the scratch). During
-the parsing the specific filenames are parsed also recursively.
+**filename** tags in your robot or sensor file, which are used for
+including other resources (for example in a robot you can include laser
+and sonar sensors without writing them from the scratch). During the
+parsing the specific filenames are parsed also recursively.
 
-When a \'\'\'filename\'\'\' tag is found, during the parsing step, a
-stdr_parser::Node is created tagged as \'\'filename\'\'. For example a
-robot XML resource follows: ```
+When a **filename** tag is found, during the parsing step, a
+stdr_parser::Node is created tagged as *filename*. For example a robot
+XML resource follows: ```
 <robot>
   <robot_specifications>
     <footprint>
@@ -42,8 +42,8 @@ robot XML resource follows: ```
     </laser>
   </robot_specifications>
 <robot>
-``` where `hokuyo.xml`
-,may contain the following (not fully functional, just to showcase):
+``` where `hokuyo.xml` ,may
+contain the following (not fully functional, just to showcase):
 ```
 <laser>
   <laser_specifications>
@@ -58,7 +58,7 @@ robot XML resource follows: ```
     </noise>
   </laser_specifications>
 </laser>
-``` and the \'\'\'gauss_small.xml\'\'\'
+``` and the **gauss_small.xml**
 ```
 <noise>
   <noise_specifications>
@@ -143,7 +143,7 @@ connected to `filename`\'s parent. The result follows:
 ### Step 3 : Node merging
 
 The third step is the recursive node merging. In this step the
-\'\'\'stdr_multiple_allowed.xml\'\'\' file under
+**stdr_multiple_allowed.xml** file under
 `stdr_resources/resources/specifications` is of crucial importance.
 There, the tags that can have multiple occurrences under a specific tag
 are placed. The current implementation allows multiple occurrences in
@@ -215,24 +215,23 @@ laser\'s orientation). The final tree follows: ```
 ### Step 5 : Validation
 
 This is the final parsing step where the validation is performed.
-Crucial role plays the \'\'\'stdr_specifications.xml\'\'\' file under
+Crucial role plays the **stdr_specifications.xml** file under
 `stdr_resources/resources/specifications`. There for every valid tag,
 the allowed and required children are specified. (Look at the end of the
 page for the file\'s contents). The validation step reads this file and
-performs \'\'\'allowed\'\'\' and \'\'\'required\'\'\' checks for all
-tree nodes.
+performs **allowed** and **required** checks for all tree nodes.
 
 ### Message creation  / saving messages to files
 
-After the tree is fully created, \'\'\'stdr_parser\'\'\' can create the
-according \'\'\'stdr_msgs\'\'\'. This is performed seamlessly by using
-templates. An example of creating a \'\'\'stdr_msgs::RobotMsg\'\'\'
-follows: ```
+After the tree is fully created, **stdr_parser** can create the
+according **stdr_msgs**. This is performed seamlessly by using
+templates. An example of creating a **stdr_msgs::RobotMsg** follows:
+```
 stdr_msgs::RobotMsg msg = stdr_parser::Parser::createMessage<stdr_msgs::RobotMsg>("simple_robot.yaml");
 ```
 
-In a similar way a \'\'\'stdr_msgs\'\'\' message can be saved to a Yaml
-or XML file: ```
+In a similar way a **stdr_msgs** message can be saved to a Yaml or XML
+file: ```
 stdr_msgs::RobotMsg msg = stdr_parser::Parser::createMessage<stdr_msgs::RobotMsg>("simple_robot.yaml");
 stdr_parser::Parser::saveMessage(msg,"test.xml");
 ```
@@ -459,7 +458,7 @@ five basic message types will be provided.
 ## stdr_specifications.xml
 
 The contents of the `stdr_specifications.xml` file follow (not all tags
-are functional in the current \'\'\'STDR Simulator\'\'\' version):
+are functional in the current **STDR Simulator** version):
 
 ### environment
 

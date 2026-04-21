@@ -4,10 +4,9 @@ Many of the algorithms and their parameters are well-described in the
 book Probabilistic Robotics, by Thrun, Burgard, and Fox. The user is
 advised to check there for more detail. In particular, we use the
 following algorithms from that book:
-\'\'\'\`sample_motion_model_odometry\`\'\'\',
-\'\'\'\`beam_range_finder_model\`\'\'\',
-\'\'\'\`likelihood_field_range_finder_model\`\'\'\',
-\'\'\'\`Augmented_MCL\`\'\'\', and \'\'\'\`KLD_Sampling_MCL\`\'\'\'.
+**\`sample_motion_model_odometry\`**, **\`beam_range_finder_model\`**,
+**\`likelihood_field_range_finder_model\`**, **\`Augmented_MCL\`**, and
+**\`KLD_Sampling_MCL\`**.
 
 As currently implemented, this node works only with laser scans and
 laser maps. It could be extended to work with other sensor data.

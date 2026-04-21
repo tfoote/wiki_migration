@@ -7,7 +7,7 @@
 $ sudo apt-get install ros-<distro>-ifopt
 ``` If this package has not yet made it to the
 binaries or for additional information, visit
-\'\'\'<https://github.com/ethz-adrl/ifopt>\'\'\'.
+**<https://github.com/ethz-adrl/ifopt>**.
 
 ## Problem
 

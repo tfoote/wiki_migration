@@ -4,7 +4,7 @@ Tianbot Rosecho (Tianecho)，a Chinese speech recognition sensor for
 robots to hear the world.ROSECHO is based on iFlyTek IFLYOS system, the
 AIUI development kit.
 \'\'\'[Rosecho github repo](https://github.com/tianbot/rosecho)
-\'\'\'[中文语音交互模块使用手册](http://doc.tianbot.com/rosecho/) \'\'\'
+**[中文语音交互模块使用手册](http://doc.tianbot.com/rosecho/) **
 
 ## Installation
 

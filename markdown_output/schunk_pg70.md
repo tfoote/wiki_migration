@@ -19,7 +19,7 @@ schunk_pg70[source](https://github.com/SmartRoboticSystems/schunk_grippers.git).
 The right to access a serial port is determined by the permissions of
 the device file (e.g. /dev/ttyS0). Serial ports are usualy owned by root
 and group dialout, so to access the serial device as non-root user it is
-convenient to add yourself to \'\'\'dialout\'\'\' group:
+convenient to add yourself to **dialout** group:
 
 ```
 $ usermod -a -G dialout USER_NAME
@@ -84,12 +84,12 @@ prov_tf{
 
 ## Usage
 
-\'\'Note: Before interfacing Schunk PG70 gripper from Linux, we highly
+*Note: Before interfacing Schunk PG70 gripper from Linux, we highly
 recomend to use original Windows application Schunk MTS Tool to verify
 that gripper is fully functional and there are no wiring or other
 hardware issues. Depending on default configuration it might be also
-necessary to perform \'\'\'memory reset\'\'\' to allow serial
-communication with the gripper for a first time.\'\'
+necessary to perform **memory reset** to allow serial communication with
+the gripper for a first time.*
 
 ### Launch
 
@@ -152,7 +152,7 @@ call\" as in the example below.
 
 #### get_error service
 
-To test the driver start by calling the \'\'get_error\'\' service
+To test the driver start by calling the *get_error* service
 ([std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 request):
 
@@ -167,7 +167,7 @@ error_code: 0
 
 #### get_position
 
-To get actual gripper position, call \'\'get_position\'\' service
+To get actual gripper position, call *get_position* service
 ([std_msgs::Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 request):
 
@@ -235,8 +235,7 @@ prov_tf{
 
 #### set_position
 
-To move the gripper to target position, call \'\'set_position\'\'
-service
+To move the gripper to target position, call *set_position* service
 ([std_msgs::float32](http://docs.ros.org/api/std_msgs/html/msg/Float32.html)
 request):
 
@@ -293,10 +292,10 @@ prov_tf{
   1.to   = schunk_pg70_finger_2_link
   1.desc = Finger 2 link
 }
-```1 where \"\'\'\'position\'\'\'\" is within a
-range of \<0 - 69\> mm, velocity \<0-83\>mm/s and acceleration
-\<0-320\>mm/s2. The gripper should respond with goal_position being
-accepted or not and move to goal position:
+```1 where \"**position**\" is within a range of
+\<0 - 69\> mm, velocity \<0-83\>mm/s and acceleration \<0-320\>mm/s2.
+The gripper should respond with goal_position being accepted or not and
+move to goal position:
 
 ```clearsilver
 name = pg70_rs232_control
@@ -355,7 +354,7 @@ prov_tf{
 
 #### reference
 
-To reference gripper, call \'\'reference\'\' service (empty request).
+To reference gripper, call *reference* service (empty request).
 Referencing may also help in cases when you are not able to move the
 gripper although everything else looks okay:
 

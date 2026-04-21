@@ -6,8 +6,8 @@ start your !TurtleBot.
 
 ## Launch Files
 
--   \'\'\'minimal.launch\'\'\' - The base launch file for !TurtleBot.
-    Starts the basic nodes ([kobuki_node](kobuki_node) or
+-   **minimal.launch** - The base launch file for !TurtleBot. Starts the
+    basic nodes ([kobuki_node](kobuki_node) or
     [create_node](create_node)),
     [laptop_battery_monitor](http://www.ros.org/wiki/turtlebot_node#laptop_battery_monitor),
     [robot_state_publisher](robot_state_publisher),
@@ -17,5 +17,5 @@ start your !TurtleBot.
 ```{=html}
 <!-- -->
 ```
--   \'\'\'app_manager.launch\'\'\' - Starts the !TurtleBot app managers
-    and loads the !TurtleBot app list.
+-   **app_manager.launch** - Starts the !TurtleBot app managers and
+    loads the !TurtleBot app list.

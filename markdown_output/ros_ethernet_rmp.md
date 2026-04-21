@@ -225,15 +225,15 @@ file. This file launches an instance of the \`ethernet_rmp.py\`,
 \'rmp_pose_updater.py\' and \`rmp_joint_states.py\` nodes.
 \'battery_monitor_rmp.launch\' from \'battery_monitor_rmp\' will also be
 launched if the argument, include_batt_monitor, is true. It is defaulted
-to true. To launch these nodes, \'\'\'with\'\'\' the battery monitor the
+to true. To launch these nodes, **with** the battery monitor the
 following command can be used:
 
 ```
 roslaunch ros_ethernet_rmp ros_ethernet_rmp.launch
 ```
 
-To launch these nodes \'\'\'without\'\'\' the battery monitor, the
-following command can be used:
+To launch these nodes **without** the battery monitor, the following
+command can be used:
 
 ```
 roslaunch ros_etehrnet_rmp ros_ethernet_rmp.launch include_batt_monitor:=false

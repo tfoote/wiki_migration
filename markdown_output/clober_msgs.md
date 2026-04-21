@@ -1,4 +1,4 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Clober Github page
 
@@ -10,21 +10,21 @@
 
 ## ROS Message Types
 
-\'\'\'Command.msg\'\'\'\
+**Command.msg**\
 Commanding message to control each motor via rpm.
 
-\'\'\'!ControllerState.msg\'\'\'\
+**!ControllerState.msg**\
 Controller status information for battery voltage, temperature, fault
 conditions and emergency stop.
 
-\'\'\'Feedback.msg\'\'\'\
+**Feedback.msg**\
 Feedback message for controller and motor state
 
-\'\'\'!MotorState.msg\'\'\'\
+**!MotorState.msg**\
 Motor status information for RPM motor encoder RPM value, actual
 position by the encoder value, and current flowing through the motors.
 
 ## ROS Service Types
 
-\'\'\'Reset.srv\'\'\'\
+**Reset.srv**\
 Service resetting each message

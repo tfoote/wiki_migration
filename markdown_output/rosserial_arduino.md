@@ -12,7 +12,7 @@ Some features can be enabled depending of `#define` statements added
 before including `ros.h` in the sketch.
 
   -- ----------------------------------------------------------------- -- -------------------------------------------- -- ------------------------- --
-     \'\'\'Platform\'\'\'                                                 \'\'\'Feature\'\'\'                             \'\'\'`#define`\'\'\'     
+     **Platform**                                                         **Feature**                                     **`#define`**             
      Arduino based on 32u4 (Leonardo, Micro)                              USB Serial (not pin 0 & 1)                      `USE_USBCON`              
      All Arduino variants                                                 Use Ethernet shield for rosserial over TCP      `ROSSERIAL_ARDUINO_TCP`   
      Teensy 3.x                                                           Hardware Serial (not USB)                       `USE_TEENSY_HW_SERIAL`    

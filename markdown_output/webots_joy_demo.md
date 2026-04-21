@@ -1,6 +1,5 @@
-\'\'\'\'\'[kaist_webots](kaist_webots):\'\'\'\'\'
-\'\'[webots_run](webots_run) \| webots_joy_demo \|
-[webots_controllers](webots_controllers)\'\'
+***[kaist_webots](kaist_webots):*** *[webots_run](webots_run) \|
+webots_joy_demo \| [webots_controllers](webots_controllers)*
 
 This is an example of a Webots Controller written in C++, running as a
 ROS Node. It demonstrates how to build a ROS package linked against the

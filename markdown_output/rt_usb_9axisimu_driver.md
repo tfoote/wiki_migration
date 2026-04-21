@@ -27,48 +27,48 @@ made by Inven Sense Corp.
 
 ## Published topics
 
--   \'\'\'imu/data_raw (sensor_msgs/Imu)\'\'\'
+-   **imu/data_raw (sensor_msgs/Imu)**
 -   raw data of linear acceleration and angular velocity
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'imu/mag (sensor_msgs/MagneticField)\'\'\'
+-   **imu/mag (sensor_msgs/MagneticField)**
 -   raw data of magnetic flux density
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'imu/temperature (sensor_msgs/Float64)\'\'\'
+-   **imu/temperature (sensor_msgs/Float64)**
 -   data of the sensor IC temperature
 
 ## Parameters
 
--   \'\'\'port (string, default: /dev/ttyACM0)\'\'\'
+-   **port (string, default: /dev/ttyACM0)**
 -   USB port name connected the sensor module
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'frame_id (string, default: imu_link)\'\'\'
+-   **frame_id (string, default: imu_link)**
 -   link name of the sensor module defined in URDF
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'linear_acceleration_stddev (double, default: 0.023145)\'\'\'
+-   **linear_acceleration_stddev (double, default: 0.023145)**
 -   standard deviation of linear acceleration (m/s\^2)
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'angular_velocity_stddev (double, default: 0.0010621)\'\'\'
+-   **angular_velocity_stddev (double, default: 0.0010621)**
 -   standard deviation of angular velocity (rad/s)
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'magnetic_field_stddev (double, default: 0.00000080786)\'\'\'
+-   **magnetic_field_stddev (double, default: 0.00000080786)**
 -   standard deviation of magnetic flux density (T)
 
 ## Examples

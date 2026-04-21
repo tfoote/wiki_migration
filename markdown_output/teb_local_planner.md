@@ -1,7 +1,7 @@
 ## Overview
 
-\'\'\'\'\'Update:\'\' Two tutorials on planning with dynamic obstacles
-added ([click here](teb_local_planner/Tutorials))\'\'\'
+***Update:* Two tutorials on planning with dynamic obstacles added
+([click here](teb_local_planner/Tutorials))**
 
 This package implements an online optimal local trajectory planner for
 navigation and control of mobile robots as a plugin for the ROS
@@ -71,8 +71,8 @@ explanations are included in the audio track of the video.
 
 \<\<Youtube(e1Bw6JOgHME&rel=0)\>\>
 
-Features introduced in \'\'\'version 0.2\'\'\' are presented in the
-following video (supporting car-like robots and costmap conversion).
+Features introduced in **version 0.2** are presented in the following
+video (supporting car-like robots and costmap conversion).
 
 \<\<Youtube(o5wnRCzdUMo&rel=0)\>\>
 
@@ -212,7 +212,7 @@ param{
 The following parameters are relevant for the footprint model used for
 optimization (see
 [Tutorial Obstacle Avoidance and Robot Footprint Model](teb_local_planner/Tutorials/Obstacle Avoidance and Robot Footprint Model)).
-\'\'\' New in version 0.3\'\'\'
+** New in version 0.3**
 
 ```clearsilver
 param{

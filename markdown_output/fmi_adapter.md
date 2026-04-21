@@ -1,14 +1,14 @@
-\'\'\'Please see
+**Please see
 <https://index.ros.org/p/fmi_adapter/github-boschresearch-fmi_adapter_ros2>
-for the ROS 2 version of this package.\'\'\'
+for the ROS 2 version of this package.**
 
 # fmi_adapter
 
-fmi_adapter is a small ROS package for wrapping \'\'functional mockup
-units (FMUs)\'\' for co-simulation of physical models into ROS nodes.
-FMUs are defined in the [FMI standard](http://fmi-standard.org/).
-Currently, this package supports co-simulation FMUs according to the FMI
-2.0 standard only.
+fmi_adapter is a small ROS package for wrapping *functional mockup units
+(FMUs)* for co-simulation of physical models into ROS nodes. FMUs are
+defined in the [FMI standard](http://fmi-standard.org/). Currently, this
+package supports co-simulation FMUs according to the FMI 2.0 standard
+only.
 
 FMUs can be created with a variety of modeling and simulation tools.
 Examples are
@@ -41,7 +41,7 @@ parameter and variable in the
 initializes the FMU correspondingly.
 
 For this purpose, this package provide a launch file with argument
-\'\'fmu_path\'\'. Simply call
+*fmu_path*. Simply call
 
 ```
 roslaunch fmi_adapter fmi_adapter_node.launch fmu_path:=[PathToTheFMUFile]
@@ -63,7 +63,7 @@ For parsing the XML description of an FMU and for running the FMU\'s
 solver, fmi_adapter uses the C library
 [FMI Library](http://www.jmodelica.org/FMILibrary). This library is
 downloaded, compiled and linked in CMakeLists.txt of this package using
-cmake\'s \'\'externalproject_add\'\' command.
+cmake\'s *externalproject_add* command.
 
 ## Examples
 
@@ -84,25 +84,24 @@ for details.
 In the following, we give some code snippets how to load and run an FMU
 file from an application-specific ROS node or library.
 
-\'\'\'Step 1:\'\'\' Include the FMIAdapter.h from the fmi_adapter
-package in your C++ code.
+**Step 1:** Include the FMIAdapter.h from the fmi_adapter package in
+your C++ code.
 
 ```
 #include "fmi_adapter/FMIAdapter.h"
 ```
 
-\'\'\'Step 2:\'\'\' Instantiate the adapter class with the path to the
-FMU file and the desired simulation step size. If the step-size argument
-is omitted, the default step size specified in the FMU file will be
-used.
+**Step 2:** Instantiate the adapter class with the path to the FMU file
+and the desired simulation step size. If the step-size argument is
+omitted, the default step size specified in the FMU file will be used.
 
 ```
 ros::Duration stepSize(0.001);
 fmi_adapter::FMIAdapter adapter(fmuPath, stepSize);
 ```
 
-\'\'\'Step 3:\'\'\' Create subscribers or timers to set the FMU\'s input
-values. For example:
+**Step 3:** Create subscribers or timers to set the FMU\'s input values.
+For example:
 
 ```
 ros::Subscriber subscriber =
@@ -117,8 +116,8 @@ corresponding input variable of the FMU.
 Use `adapter.getInputVariableNames()` to get a list of all input
 variables.
 
-\'\'\'Step 4:\'\'\' Create a timer or subscriber that triggers the
-simulation of the FMU using `adapter.doStepsUntil(..)`. For example:
+**Step 4:** Create a timer or subscriber that triggers the simulation of
+the FMU using `adapter.doStepsUntil(..)`. For example:
 
 ```
 ros::Timer timer = nHandle.createTimer(ros::Duration(0.01), [&](const ros::TimerEvent& event) {
@@ -131,7 +130,7 @@ ros::Timer timer = nHandle.createTimer(ros::Duration(0.01), [&](const ros::Timer
 Use `adapter.getOutputVariableNames()` to get a list of all output
 variables.
 
-\'\'\'Step 5:\'\'\' Sets parameters and initial values of the FMU:
+**Step 5:** Sets parameters and initial values of the FMU:
 
 ```
 adapter.setInitialValue("dampingParam", 0.21);
@@ -144,9 +143,9 @@ Please note that all characters in the FMU parameter names that are not
 supported by ROS are replaced by an `_`, cf.
 `FMIAdapter::rosifyName(name)`.
 
-\'\'\'Step 6:\'\'\' Just before starting the spin thread, exit the
-FMU\'s initialization mode and set the ROS time that refers to the
-FMU\'s internal timepoint 0.0.
+**Step 6:** Just before starting the spin thread, exit the FMU\'s
+initialization mode and set the ROS time that refers to the FMU\'s
+internal timepoint 0.0.
 
 ```
 adapter.exitInitializationMode(ros::Time::now());

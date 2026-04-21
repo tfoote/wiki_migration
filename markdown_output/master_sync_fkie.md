@@ -17,7 +17,7 @@ for a synchronization, the XML-RPC server of the
 [master_discovery](http://www.ros.org/wiki/master_discovery_fkie) node
 is used to get the current state of the remote ROS master.
 
-\'\'Note:\'\' in the current state the
+*Note:* in the current state the
 [ROS Parameter server](http://www.ros.org/wiki/ROS/Parameter%20Server%20API)
 will be not synchronized.
 
@@ -35,9 +35,9 @@ Run this node:
 rosrun master_sync_fkie master_sync
 ```
 
-\'\'\'Note:\'\'\' do not rename the master_sync node! If it does, use
-the ignore_nodes filter to prevent synchronization of the master_sync
-nodes, otherwise unpredictable effects will occur
+**Note:** do not rename the master_sync node! If it does, use the
+ignore_nodes filter to prevent synchronization of the master_sync nodes,
+otherwise unpredictable effects will occur
 
 The services and published topics of the master_discovery node are
 detected automatically!

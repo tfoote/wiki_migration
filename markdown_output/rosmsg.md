@@ -142,23 +142,22 @@ line. Useful for backtick invocations.
 
 #### rosmsg users
 
-\'\'\'Only available in ROS Electric and earlier\'\'\'
+**Only available in ROS Electric and earlier**
 
 \`users \<message type\>\` Search for code files that use the message
 type. This is useful when renaming message types. This command may take
 a long time, depending on the size of your code base.
 
-\'\'NOTE: As ROS supports many different coding languages, \`rosmsg
-users\` is not guaranteed to find every file that uses the message type
-and should only be used as a supplementary
-tool.\'\'```
+*NOTE: As ROS supports many different coding languages, \`rosmsg users\`
+is not guaranteed to find every file that uses the message type and
+should only be used as a supplementary tool.*```
 $ rostopic type rosout
 roslib/Log
 ```1
 
 #### rosmsg md5
 
-\'\'NOTE: The md5 command is meant for expert users only.\'\'
+*NOTE: The md5 command is meant for expert users only.*
 
 \`md5 \<message type\>\` Display the md5 sum of a message. This will
 will also warn if the compiled version doesn\'t match.

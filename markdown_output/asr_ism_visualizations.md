@@ -11,7 +11,7 @@ visualization with markers in RVIZ.
 
 ## Functionality
 
-The \'\'asr_ism_visualizations\'\' package contains several classes for
+The *asr_ism_visualizations* package contains several classes for
 visualization of the ISM-datastructures. There are visualizations for
 the ISM itself, the pose prediction, the voting space, as well as for
 the reconstruction of the scene and basic visualizations of objects and
@@ -190,11 +190,11 @@ and provides no independent components.
 ### Subscribed Topics
 
 Only topics of dynamic reconfigure are being subscribed to. (e. g.
-\'\'/recognizer/pose_prediction_visualizer/parameter_updates\'\')
+*/recognizer/pose_prediction_visualizer/parameter_updates*)
 
 ### Published Topics
 
 All generated markers of ISM-result-visualization,
 pose-prediction-visualization and voting-space-visualization are
-published (by default) on \'\'/ism_results_visualization\'\' (msg-Type:
+published (by default) on */ism_results_visualization* (msg-Type:
 Markerarray)

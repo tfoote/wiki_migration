@@ -47,39 +47,37 @@ Further, the discrete steps taken by the ROS node are shown below:
 
 -   At initialization, the node sets all data buffers and storage arrays
     to zero. It then initializes the server socket, and waits for a
-    client socket request \'\'(this separately implies that the
+    client socket request *(this separately implies that the
     \`Modelica\` model cannot be run before the ROS architecture is
     constructed, because otherwise the sockets will not successfully
-    bind to the ports)\'\'.
--   Upon receiving a client request, say the \'\'\`n\`\'\'th such
-    request, the server stores the incoming model data into a storage
-    array for later use.
--   In response to this \'\'\`n\`\'\'th request, the server sends back
-    the control data calculated from the previous request, the control
-    data from request \'\'\`n-1\`\'\'. \'\'When the socket has just
-    started, the first values sent back to the model will be zeros\'\'.
+    bind to the ports)*.
+-   Upon receiving a client request, say the *\`n\`*th such request, the
+    server stores the incoming model data into a storage array for later
+    use.
+-   In response to this *\`n\`*th request, the server sends back the
+    control data calculated from the previous request, the control data
+    from request *\`n-1\`*. *When the socket has just started, the first
+    values sent back to the model will be zeros*.
 -   After responding to the request, the node publishes the previously
-    stored feedback data, from request \'\'\`n\`\'\', to a
-    feedback-specific topic, for the rest of the ROS architecture to
-    read.
+    stored feedback data, from request *\`n\`*, to a feedback-specific
+    topic, for the rest of the ROS architecture to read.
 -   Finally, the node spins all callbacks, so that it can then receive
     the newly calculated control input, read from a control-specific
     topic. This newly calculated set of control input is determined from
-    request \'\'\`n\`\'\', to be sent to the socket upon the next
-    request \'\'\`n+1\`\'\'.
+    request *\`n\`*, to be sent to the socket upon the next request
+    *\`n+1\`*.
 -   Although there is a \`samplePeriod\` parameter within \`Modelica\`
     to control the speed at which the model samples the control input,
     this is based off of simulation time, which may vary from machine
-    time, based on solver. Hence, it is \'\'\'highly recommended to run
-    the model in real-time, with fixed solver step sizes\'\'\'.
+    time, based on solver. Hence, it is **highly recommended to run the
+    model in real-time, with fixed solver step sizes**.
 
 ### System Requirements
 
 \`modelica_bridge\` is a ROS package, and so can only be run in Linux;
-\`ROS_Bridge\` similarly can only be run on \'\'\*nix\'\' systems, due
-to the current method of implementing sockets. Below is a list of
-\`Modelica\` tools and operating systems \`ROS_Bridge\` has been tested
-on:
+\`ROS_Bridge\` similarly can only be run on *\*nix* systems, due to the
+current method of implementing sockets. Below is a list of \`Modelica\`
+tools and operating systems \`ROS_Bridge\` has been tested on:
 
 -   [SystemModeler 5.0.0 and higher](https://www.wolfram.com/system-modeler/quick-revision-history.html),
     on macOS High Sierra and Ubuntu 16.04

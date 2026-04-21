@@ -33,14 +33,14 @@ Gapter is available through the
 
 ## Demos
 
-\'\'\'Gapter out of box\'\'\'
+**Gapter out of box**
 [Youtube](https://www.youtube.com/watch?v=7qL0Q3Ggq6k)
 
-\'\'\'Gapter Flight Modes and Fly Test Instructions\'\'\'
+**Gapter Flight Modes and Fly Test Instructions**
 [Youtube](https://www.youtube.com/watch?v=AtrV7aZqr1c)
 
-\'\'\'Indoor Flight Setup & Test
-\'\'\'[Youtube](https://www.youtube.com/watch?v=zIRzHNBuWKg)
+**Indoor Flight Setup & Test
+**[Youtube](https://www.youtube.com/watch?v=zIRzHNBuWKg)
 
-\'\'\'Gapter calibration\'\'\'
+**Gapter calibration**
 [Youtube](https://www.youtube.com/watch?v=vFc6fNIbez0)

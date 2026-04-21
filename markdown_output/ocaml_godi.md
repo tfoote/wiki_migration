@@ -14,8 +14,8 @@ self-contained manner inside of ROS.
 for OCaml and a significant number of supplementary OCaml modules, and
 then building these. Therefore, this step may take a while.
 
-\'\'\'Please note that the installation process will modify your
-/.bash_profile.\'\'\' Specifically, it will append some lines to set
+**Please note that the installation process will modify your
+/.bash_profile.** Specifically, it will append some lines to set
 environment variables necessary for OCaml compilation to proceed
 successfully. If your shell is invoked in such a way that /.bash_profile
 is not sourced (or if you use a shell besides bash), you will need to

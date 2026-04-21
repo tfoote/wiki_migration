@@ -1,6 +1,6 @@
 ## OpenNI_Viewer
 
-\'\'\'OpenNI Viewer\'\'\' is a lightweight PointCloud2 viewer.
+**OpenNI Viewer** is a lightweight PointCloud2 viewer.
 
 ```
 $ rosrun openni_pcl openni_viewer ~input:=/camera/depth/points2

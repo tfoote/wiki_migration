@@ -7,8 +7,8 @@ similar), pr2_calibration_estimation uses this data along with several
 configuration configuration files to estimate various parameters for the
 PR2.
 
-\'\'Technical Explanation:\'\' This is a multi-step nonlinear optimizer
-that uses scipy\'s levenberg-marquardt optimizer,
+*Technical Explanation:* This is a multi-step nonlinear optimizer that
+uses scipy\'s levenberg-marquardt optimizer,
 [ scipy.optimize.leastsq](http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html ),
 to estimate various parameters of the PR2 using a bundle adjustment like
 framework.
@@ -37,8 +37,7 @@ server and then launches the estimator (multistep_cov_estimator.py).
 
 #### Estimator Command Line Usage
 
-\'\'\'\`multistep_cov_estimator.py\`\'\'\'\` \[bagfile\]
-\[target_dir\]\`
+**\`multistep_cov_estimator.py\`**\` \[bagfile\] \[target_dir\]\`
 
 -   \`\[bagfile\]\` - Path to the bag that contains calibration samples.
     These messages must be of type
@@ -145,18 +144,18 @@ right_arm_chain:
    gearing: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 ```
 
--   \'\'\'dh\'\'\' - Each list item under \`dh\` stores the 4 DH
-    parameters for a link. They are ordered as \[theta, alpha, a, d\].
-    In the example above, there are 7 links.
--   \'\'\'cov/joint_angles\'\'\' - Defines a standard deviation (in
-    radians) for each joint angle. This list must be the same length as
-    the dh parameter list.
--   \'\'\'gearing\'\'\' - Defines a prescalar for each joint angle,
-    before applying forward kinematics. This list must be the same
-    length as the dh parameter list. In general, these values are known
-    extremely well (since you can count the gear teeth in the
-    transmission). However, it is important to estimate these parameters
-    when dealing with belts and drums.
+-   **dh** - Each list item under \`dh\` stores the 4 DH parameters for
+    a link. They are ordered as \[theta, alpha, a, d\]. In the example
+    above, there are 7 links.
+-   **cov/joint_angles** - Defines a standard deviation (in radians) for
+    each joint angle. This list must be the same length as the dh
+    parameter list.
+-   **gearing** - Defines a prescalar for each joint angle, before
+    applying forward kinematics. This list must be the same length as
+    the dh parameter list. In general, these values are known extremely
+    well (since you can count the gear teeth in the transmission).
+    However, it is important to estimate these parameters when dealing
+    with belts and drums.
 
 Note that we have not defined where this kinematic chain is rooted on
 the robot. This is done later, when defining sensors.
@@ -179,12 +178,12 @@ head_plate_frame_joint:    [   .0232, .0, .0645, 0, 0, 0]
 
 Each transform is defined by a list with 6 elements:
 
--   \'\'\'Elements 0:2\'\'\' - Translation terms. Elements 0,1,2
-    correspond to an x,y,z translation vector
--   \'\'\'Elements 3:5\'\'\' - Rotation terms. Elements 3,4,5 correspond
-    to an x,y,z rotation vector. The direction of the vector is the axis
-    of rotation, and the magnitude of the rotation vector is the
-    rotation angle. See
+-   **Elements 0:2** - Translation terms. Elements 0,1,2 correspond to
+    an x,y,z translation vector
+-   **Elements 3:5** - Rotation terms. Elements 3,4,5 correspond to an
+    x,y,z rotation vector. The direction of the vector is the axis of
+    rotation, and the magnitude of the rotation vector is the rotation
+    angle. See
     [ Wikipedia: Rotation Representation](http://en.wikipedia.org/wiki/Rotation_representation#Euler_axis_and_angle_.28rotation_vector.29 )
 -   Why are we using this rotation representation? We could very well
     have used rotation matrices or quaternions. Both of these
@@ -214,26 +213,24 @@ tilt_laser:
 
 ![](attachment:tilting_laser.png)
 
--   \'\'\'before_joint\'\'\' - Transform from the system origin to the
-    joint axis of the tilting platform. The tilting platform rotates
-    around the y-axis of the resulting frame
--   \'\'\'after_joint\'\'\' - Transform from the rotating axis on the
-    tilting platform to the optical center of the laser rangefinder. We
-    assume that a a 0 degree bearing measurement from the laser
-    rangefinder is along the x axis of the resulting frame, and a 90
-    degress bearing measurement is along the y axis of the resulting
-    frame.
--   \'\'\'gearing\'\'\' - Prescalar for the tilting joint, before
-    applying forward kinematics. Similar to the \'\'gearing\'\' element
-    in the dh chain, except we only have 1 joint, and thus don\'t need a
-    list.
--   \'\'\'cov\'\'\'
--   \'\'\'bearing\'\'\' - !StDev for the bearing angle for the tilting
-    laser (in radians)
--   \'\'\'range\'\'\' - !StDev for range measurement for the tilting
-    laser (in radians)
--   \'\'\'tilt\'\'\' - !StDev for tilting angle for the tilting laser
-    platform (in radians)
+-   **before_joint** - Transform from the system origin to the joint
+    axis of the tilting platform. The tilting platform rotates around
+    the y-axis of the resulting frame
+-   **after_joint** - Transform from the rotating axis on the tilting
+    platform to the optical center of the laser rangefinder. We assume
+    that a a 0 degree bearing measurement from the laser rangefinder is
+    along the x axis of the resulting frame, and a 90 degress bearing
+    measurement is along the y axis of the resulting frame.
+-   **gearing** - Prescalar for the tilting joint, before applying
+    forward kinematics. Similar to the *gearing* element in the dh
+    chain, except we only have 1 joint, and thus don\'t need a list.
+-   **cov**
+-   **bearing** - !StDev for the bearing angle for the tilting laser (in
+    radians)
+-   **range** - !StDev for range measurement for the tilting laser (in
+    radians)
+-   **tilt** - !StDev for tilting angle for the tilting laser platform
+    (in radians)
 
 #### Rectified Cameras
 
@@ -251,19 +248,17 @@ wide_left_rect:
     cov: {u: 0.125, v: 0.125}
 ```
 
--   \'\'\'baseline_shift\'\'\' - Value to add to the \`-baseline\*Tx\`
-    term in the projection matrix (\`camera_info.P\[3\]\`)
--   \'\'\'f_shift\'\'\' - Value to add to the focal length term in the
-    projetion matrix (\`camera_info.P\[0\]\` & \`camera_info.P\[5\]\`)
--   \'\'\'cx_shift\'\'\' - Value to add to the cx term in the projetion
-    matrix (\`camera_info.P\[2\]\`)
--   \'\'\'cy_shift\'\'\' - Value to add to the cy term in the projetion
-    matrix (\`camera_info.P\[6\]\`)
--   \'\'\'cov\'\'\'
--   \'\'\'u\'\'\' - !StDev of uncertainty along u axis of the image (in
-    pixels)
--   \'\'\'v\'\'\' - !StDev of uncertainty along v axis of the image (in
-    pixels)
+-   **baseline_shift** - Value to add to the \`-baseline\*Tx\` term in
+    the projection matrix (\`camera_info.P\[3\]\`)
+-   **f_shift** - Value to add to the focal length term in the projetion
+    matrix (\`camera_info.P\[0\]\` & \`camera_info.P\[5\]\`)
+-   **cx_shift** - Value to add to the cx term in the projetion matrix
+    (\`camera_info.P\[2\]\`)
+-   **cy_shift** - Value to add to the cy term in the projetion matrix
+    (\`camera_info.P\[6\]\`)
+-   **cov**
+-   **u** - !StDev of uncertainty along u axis of the image (in pixels)
+-   **v** - !StDev of uncertainty along v axis of the image (in pixels)
 
 #### Checkerboards
 
@@ -284,11 +279,10 @@ small_cb_4x5:
     spacing_y: .108
 ```
 
--   \'\'\'corners_x\'\'\' - Number of corners along the x-axis of the
+-   **corners_x** - Number of corners along the x-axis of the
     checkerboard. This is an integer parameter, and will not be changed
     by the estimator.
--   \'\'\'spacing_x\'\'\' - The x-axis spacing between checkerboard
-    corners.
+-   **spacing_x** - The x-axis spacing between checkerboard corners.
 
 corners_y and spacing_y have the same semantics as corners_x and
 spacing_x
@@ -324,22 +318,22 @@ camera_chains:
       dh_link_num:  4
 ```
 
--   \'\'\'sensor_id\'\'\' - Unique identifier for this sensor
--   \'\'\'camera_id\'\'\' - Monocular camera being used for this sensor.
-    Must match a rectified camera primitive
--   \'\'\'chain\'\'\' - (Collectively define the linkage that the camera
-    is attached to)
--   \'\'\'before_chain\'\'\' - Ordered list of transforms to apply
-    before attaching DH Chain. Must all be transform primitives
--   \'\'\'chain_id\'\'\' - DH chain primitive to attach to the end of
-    the \'\'before chain\'\' tranforms.
--   \'\'\'dh_link_num\'\'\' - Define how many DH links to use. In many
-    cases, we don\'t want to use the entire DH Chain. In this example,
-    the forearm camera is attached to the DH link indexed at 4 (which is
-    the forearm_roll_link).
--   \'\'\'after_chain\'\'\' - Transforms to apply after applying the DH
-    chain. The camera is then attached to the end of these transforms.
-    We are assuming a &ldquo;Z Forward, X Right, Y Down&rdquo; camera
+-   **sensor_id** - Unique identifier for this sensor
+-   **camera_id** - Monocular camera being used for this sensor. Must
+    match a rectified camera primitive
+-   **chain** - (Collectively define the linkage that the camera is
+    attached to)
+-   **before_chain** - Ordered list of transforms to apply before
+    attaching DH Chain. Must all be transform primitives
+-   **chain_id** - DH chain primitive to attach to the end of the
+    *before chain* tranforms.
+-   **dh_link_num** - Define how many DH links to use. In many cases, we
+    don\'t want to use the entire DH Chain. In this example, the forearm
+    camera is attached to the DH link indexed at 4 (which is the
+    forearm_roll_link).
+-   **after_chain** - Transforms to apply after applying the DH chain.
+    The camera is then attached to the end of these transforms. We are
+    assuming a &ldquo;Z Forward, X Right, Y Down&rdquo; camera
 
 This sensor will only be used with a sample
 (\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>) with the following
@@ -363,11 +357,10 @@ chains:
     dh_link_num:  6
 ```
 
--   \'\'\'sensor_id\'\'\' - Unique identifier for this sensor
--   The \'\'\'before_chain\'\'\', \'\'\'chain_id\'\'\', and
-    \'\'\'after_chain\'\'\' have the same meaning as in the
-    camera_chain. The checkerboard target is attached the the kinematic
-    chain after after_chain transforms.
+-   **sensor_id** - Unique identifier for this sensor
+-   The **before_chain**, **chain_id**, and **after_chain** have the
+    same meaning as in the camera_chain. The checkerboard target is
+    attached the the kinematic chain after after_chain transforms.
 
 This sensor will only be used with a sample
 (\<\<MsgLink(calibration_msgs/RobotMeasurement)\>\>) with the following
@@ -434,15 +427,14 @@ rows per feature point (image u,v).
 The columns are separated into two sections: system parameters and
 checkerboard poses.
 
--   \'\'\'System parameters\'\'\' This section is based off of the
+-   **System parameters** This section is based off of the
     \`system.yaml\` file passed into the estimation. This contains all
     of various parameters that define the robot system: transforms, dh
     parameters, tilting laser kinematics, stereo baselines, etc. These
-    columns answer the question of \'\'\"If I change parameter X in my
-    system, how does the error residual of my samples change?\"\'\'.
--   \'\'\'Checkerboard Poses\'\'\' This section defines a checkerboard
-    pose for each robot measurement. This answers the question of
-    \'\'\"If I move checkerboard J, how does the error residual of my
-    samples change?\"\'\' Note that this part of the Jacobian is block
-    diagonal. That is, altering the 1st checkerboard pose does not
-    affect the 2nd sample.
+    columns answer the question of *\"If I change parameter X in my
+    system, how does the error residual of my samples change?\"*.
+-   **Checkerboard Poses** This section defines a checkerboard pose for
+    each robot measurement. This answers the question of *\"If I move
+    checkerboard J, how does the error residual of my samples change?\"*
+    Note that this part of the Jacobian is block diagonal. That is,
+    altering the 1st checkerboard pose does not affect the 2nd sample.

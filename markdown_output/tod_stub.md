@@ -46,10 +46,10 @@ rosinstall ~/tod_stub_dev https://code.ros.org/svn/wg-ros-pkg/branches/trunk_dia
 
 That just installed:
 
--   \'\'\'tod_stub\'\'\' - The code you\'ll be working with directly.
--   \'\'\'tod_core\'\'\' - Core Textured Object Recognition library.
--   \'\'\'tod_training\'\'\' - Textured Object Training library.
--   \'\'\'vision_bleeding\'\'\' - misc vision algorithms 3
+-   **tod_stub** - The code you\'ll be working with directly.
+-   **tod_core** - Core Textured Object Recognition library.
+-   **tod_training** - Textured Object Training library.
+-   **vision_bleeding** - misc vision algorithms 3
 
 ------------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ the third, go to the data directory `roscd fiducial/data`
 <!-- -->
 ```
 -   You can run `rosrun fiducial pose_estimator camera:=/camera/rgb `
-    with other options (\'\'append \--help to get these options\'\'):
+    with other options (*append \--help to get these options*):
 -   Append `--use_3d` To use 3D information for pose fitting instead of
     OpenCV\'s `solvePNP()`.
 -   3D information is more accurate since small differences in 2D

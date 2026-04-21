@@ -1,4 +1,4 @@
-\'\'\'Diamondback Users Please Note\'\'\'
+**Diamondback Users Please Note**
 
 With the release of Diamondback, the Python Camshift function in OpenCV
 somehow got broken and will crash with the following error:

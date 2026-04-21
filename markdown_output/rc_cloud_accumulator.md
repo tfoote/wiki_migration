@@ -5,7 +5,7 @@ using the roboception rc_visard with the
 [ROS driver](http://wiki.ros.org/rc_visard_driver).
 
 The rc_cloud_accumulator ROS node subscribes to the following topics of
-the \'\'rc_visard_driver\'\'
+the *rc_visard_driver*
 
 -   \`/stereo/points2\`
 -   \`/pose\`
@@ -13,21 +13,20 @@ the \'\'rc_visard_driver\'\'
 
 The received information is stored, such that a registered point cloud
 can be computed and saved to disk. For performance reasons, the point
-clouds are preprocessed. See \'\'Filters\'\' below for more details.
+clouds are preprocessed. See *Filters* below for more details.
 
 The node displays point clouds received on the first topic using the
 live pose (/pose) to position them in the global coordinate frame.
 
 The trajectory topic can be used to feed an optimized trajectory from
-the SLAM module into the \'\'rc_cloud_accumulator\'\'. The easiest way
-is to start the \'\'rc_visard_driver\'\' with the parameter
-\'\'autopublish_trajectory\'\' set to \`True\` and call the service
-\'\'/rc_visard_driver/get_trajectory\'\'. The \'\'rc_visard_driver\'\'
-will then send the trajectory on \'\'/trajectory\'\'.
+the SLAM module into the *rc_cloud_accumulator*. The easiest way is to
+start the *rc_visard_driver* with the parameter *autopublish_trajectory*
+set to \`True\` and call the service */rc_visard_driver/get_trajectory*.
+The *rc_visard_driver* will then send the trajectory on */trajectory*.
 
 # Running
 
-After starting the \'\'rc_visard_driver\'\', execute
+After starting the *rc_visard_driver*, execute
 
 \`rosrun rc_cloud_accumulator rc_cloud_accumulator\`
 
@@ -49,8 +48,8 @@ Example with parameter:
 
 For performance reasons the point clouds are by default filtered in
 several stages. The filters are parameterized via ROS parameters. All
-filters can be turned off using appropriate settings. See \'\'ROS
-Parameters\'\' for a detailed description of the parameters.
+filters can be turned off using appropriate settings. See *ROS
+Parameters* for a detailed description of the parameters.
 
 When a point cloud is received, the points will first be filtered by a
 minimum and maximum distance along the optical axis.
@@ -60,16 +59,16 @@ A copy of the resulting cloud will be stored in memory for later use.
 The point cloud will then be transformed to the global coordinate frame
 and merged into the currently displayed point cloud. To keep the
 visualization snappy, the displayed point cloud will be filtered with a
-voxel grid using the parameter \'\'voxel_grid_size_display\'\'.
+voxel grid using the parameter *voxel_grid_size_display*.
 
 When the save_cloud service (see below) is used, the stored point clouds
 will be merged (considering pose updates received in the meantime). The
 result will also be be filtered with a voxel grid using the parameter
-\'\'voxel_grid_size_save\'\'.
+*voxel_grid_size_save*.
 
 # ROS Services
 
-The \'\'rc_cloud_accumulator\'\' provides the following services
+The *rc_cloud_accumulator* provides the following services
 
 -   \`/rc_cloud_accumulator/toggle_pause\`: Toggle processing of
     received data
@@ -96,6 +95,6 @@ The \'\'rc_cloud_accumulator\'\' provides the following services
 -   \`keep_high_resolution\` (default = true): Set to false to save
     memory and processing time. The original point clouds will not be
     stored and the point cloud saved to disk will be the one that is
-    displayed. Only the voxel grid filter for the \'\'live\'\' pose will
-    be applied. Also, correction of the point cloud poses via the SLAM
+    displayed. Only the voxel grid filter for the *live* pose will be
+    applied. Also, correction of the point cloud poses via the SLAM
     trajectory is not possible in this mode.

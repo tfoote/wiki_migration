@@ -29,10 +29,10 @@ plugins are welcome!
 This plugin converts occupied cells to a set of convex polygons. The
 conversion is performed in two stages: 1. Clusters are determined using
 the DBSCAN Algorithm (<https://en.wikipedia.org/wiki/DBSCAN>).
-Reference: Ester, Martin et al. \'\'A density-based algorithm for
-discovering clusters in large spatial databases with noise\'\'.
-Proceedings of the Second International Conference on Knowledge
-Discovery and Data Mining. AAAI Press. 1996. pp. 226--231.
+Reference: Ester, Martin et al. *A density-based algorithm for
+discovering clusters in large spatial databases with noise*. Proceedings
+of the Second International Conference on Knowledge Discovery and Data
+Mining. AAAI Press. 1996. pp. 226--231.
 
 2\. In the subsequent stage, clusters are converted into convex polgons.
 Refer to the Code-API documentation for details.
@@ -77,9 +77,8 @@ This plugin converts occupied cells to a set of non-convex (concave)
 polygons. The conversion is performed in three stages: 1. Generate
 clusters using DBSCAN. 2. Convert clusters to convex polygons. 3.
 Convert convex polygons to concave polygons Reference: J.-S. Park et al.
-\'\'A New Concave Hull Algorithm and Concaveness Measure for
-n-dimensional Datasets\'\'. Journal of Information Science & Engineering
-28 (2012) 3.
+*A New Concave Hull Algorithm and Concaveness Measure for n-dimensional
+Datasets*. Journal of Information Science & Engineering 28 (2012) 3.
 
 Examples are depicted in the following figures. Only yellow cells are
 occupied cost cells (without inflation)! Additionally, just the local
@@ -244,7 +243,7 @@ incoming \<\<MsgLink(nav_msgs/OccupancyGrid)\>\> Message (e.g. as
 published by [navigation](navigation)).
 
 For that purpose the internal \`standalone_converter\` node
-(\'\'costmap_converter_node.cpp\'\') might be employed. Currently,
-parameters are hardcoded. These are going to be substituted with
-changeble parameters in an upcoming release. Before then please inspect
-the source code for further details.
+(*costmap_converter_node.cpp*) might be employed. Currently, parameters
+are hardcoded. These are going to be substituted with changeble
+parameters in an upcoming release. Before then please inspect the source
+code for further details.

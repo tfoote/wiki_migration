@@ -1,12 +1,12 @@
-\'\'ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)\'\'
+*ROS Software Maintainer: [Clobot](http://wiki.ros.org/clobot)*
 
 ## Overview
 
 ![Clober URDF\|width=400](attachment:clober_description/clober_description.png)
 
-\'\'\'Clober Description\'\'\' contains the URDF model files for Clober
-robot simulations. It can be used to express additional extension models
-or accessories onto the research robot platform.
+**Clober Description** contains the URDF model files for Clober robot
+simulations. It can be used to express additional extension models or
+accessories onto the research robot platform.
 
 ## Clober e-Manual
 

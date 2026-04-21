@@ -1,12 +1,12 @@
 [hebiros:](hebiros) [hebiros_description](hebiros_description) \|
-\'\'\'hebiros_basic_examples\'\'\' \|
+**hebiros_basic_examples** \|
 [hebiros_advanced_examples](hebiros_advanced_examples)
 
 # Setup
 
-The following examples are demonstrated using three \'\'\'physical\'\'\'
-modules in the following configuration of a 3-dof-arm. For instructions
-on hardware setup, please see [docs.hebi.us](http://docs.hebi.us).
+The following examples are demonstrated using three **physical** modules
+in the following configuration of a 3-dof-arm. For instructions on
+hardware setup, please see [docs.hebi.us](http://docs.hebi.us).
 
 ![\|width=\"744\",height=\"557\"](attachment:3_dof_arm_photo.jpg)
 

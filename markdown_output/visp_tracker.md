@@ -261,9 +261,9 @@ An example launch file is also provided: ```
 roslaunch visp_tracker tutorial-nodelet.launch
 ```
 
-\'\'Note:\'\' even if a nodelet is available for the client and viewer,
-one should avoid running them in the same process than the vision
-pipeline to avoid crashing the whole pipeline if something goes wrong.
+*Note:* even if a nodelet is available for the client and viewer, one
+should avoid running them in the same process than the vision pipeline
+to avoid crashing the whole pipeline if something goes wrong.
 
 ## Launch file example
 

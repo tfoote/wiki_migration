@@ -19,7 +19,7 @@ nodes.
 ### Parameter
 
   -- ------------------------------ -- ------------------------------------------------------------------------------- --
-     \'\'\'parameter\'\'\'             \'\'\'description\'\'\'                                                         
+     **parameter**                     **description**                                                                 
      window_max_elements               The maximum number of data for one time window                                  
      publish_intervall                 The intervall in which statistics about the collected stats will be published   
      /arni/check_enabled_interval      Periodically checks if enable_statistics is true, no data will be collected     
@@ -31,13 +31,13 @@ nodes.
 arni_nodeinterface provides an interface to shut down, restart nodes or
 execute some other command. The service-type has these fields:
 
-  -- ------------------- -- ----------------------------------------------------------------- --
-     \'\'\'field\'\'\'      \'\'\'description\'\'\'                                           
-     node                   Name of the node, the action should be executed on                
-     action                 Type of action to execute, valid values:stop,restart,command      
-     command                If action was \'command\' this gives the command to be executed   
-     returnmessage          Return value, message about success of action                     
-  -- ------------------- -- ----------------------------------------------------------------- --
+  -- --------------- -- ----------------------------------------------------------------- --
+     **field**          **description**                                                   
+     node               Name of the node, the action should be executed on                
+     action             Type of action to execute, valid values:stop,restart,command      
+     command            If action was \'command\' this gives the command to be executed   
+     returnmessage      Return value, message about success of action                     
+  -- --------------- -- ----------------------------------------------------------------- --
 
 ### Third Party Packages
 

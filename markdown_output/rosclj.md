@@ -100,14 +100,14 @@ message classes below them. It will also import all such Message Classes
 into the current namespace, so they can be referred to by their
 unqualified names (except where this would case a name conflict).
 
-In particular, after declaring a message, you can use \'\'msg-\>map\'\'
-to convert a rosjava Message into a rosclj map, and \'\'map-\>msg\'\' to
-go back in the other direction: ```
+In particular, after declaring a message, you can use *msg-\>map* to
+convert a rosjava Message into a rosclj map, and *map-\>msg* to go back
+in the other direction: ```
 <depend package="rosclj"/>
-```0 As you can
-see, the Clojure representation of a message is a map from keyword-ized
-field names to values, plus a \'\':class\'\' field that maps to the
-java.lang.Class object corresponding to the message type.
+```0 As you can see, the
+Clojure representation of a message is a map from keyword-ized field
+names to values, plus a *:class* field that maps to the java.lang.Class
+object corresponding to the message type.
 
 msg-\>map simply converts a Message to this form, recursively converting
 all submessages into maps. Arrays of submessage types are transformed
@@ -118,18 +118,17 @@ msg-\>map is already a map, it is returned unchanged.
 map-\>msg goes in the other direction, using message field type
 information to do its best to construct a Message out of what you give
 it. If you pass a Message, it is returned unchanged. Otherwise, you must
-pass a map with the outermost \'\':class\'\' filled in, or pass the
-Message Class directly along with a map of field data (no
-\'\':class\'\'es required). The outermost map will be converted to a
-Message of the given type, with numbers being coerced to the proper
-types, submessages being recursively converted, and sequences being
-transformed to arrays. An error will be produced if any fields are
-missing. The only exception is the Header type, for which only the
-\":frame_id\" is required.
+pass a map with the outermost *:class* filled in, or pass the Message
+Class directly along with a map of field data (no *:class*es required).
+The outermost map will be converted to a Message of the given type, with
+numbers being coerced to the proper types, submessages being recursively
+converted, and sequences being transformed to arrays. An error will be
+produced if any fields are missing. The only exception is the Header
+type, for which only the \":frame_id\" is required.
 
 A number of other methods for manipulating and introspecting Messages
 can also be found in ros.clj. A potentially useful example is
-\'\'import-all-msgs-and-srvs\'\', which imports the Java classes for all
+*import-all-msgs-and-srvs*, which imports the Java classes for all
 defined Messages and Services into the current namespace, which can be
 useful for debugging at the REPL.
 
@@ -138,27 +137,25 @@ useful for debugging at the REPL.
 rosclj also provides a very minimal suite of convenience functions for
 interacting with rosjava callbacks, topics, and services.
 
-\'\'make-subscriber-callback\'\' and \'\'make-service-callback\'\' take
-a Clojure function that expects a message, and wrap it into a Subscriber
-or ServiceServer callback. More conveniently, \'\'sub-cb\'\' and
-\'\'srv-cb\'\' define a \'\'fn\'\'-like syntax for directly declaring
-subscriber and service callbacks that take (and return) Clojure maps,
-which are converted to/from rosjava Messages of the proper types behind
-the scenes.
+*make-subscriber-callback* and *make-service-callback* take a Clojure
+function that expects a message, and wrap it into a Subscriber or
+ServiceServer callback. More conveniently, *sub-cb* and *srv-cb* define
+a *fn*-like syntax for directly declaring subscriber and service
+callbacks that take (and return) Clojure maps, which are converted
+to/from rosjava Messages of the proper types behind the scenes.
 
 ```
 <depend package="rosclj"/>
 ```1
 
 At an even higher level, functions are provided for writing or reading a
-single message from a topic, and calling a service. \'\'put-message\'\'
+single message from a topic, and calling a service. *put-message*
 advertises a topic, waits until a given number of subscribers are
 achieved, publishes the given message, and then shuts down the
-Publisher. \'\'get-message\'\' subscribes to a topic, returns the first
+Publisher. *get-message* subscribes to a topic, returns the first
 message received, and then shuts down the Subscriber. Finally,
-\'\'call-service\'\' creates a ServiceClient, calls the service with the
-given request, and then shuts down the service.
-```
+*call-service* creates a ServiceClient, calls the service with the given
+request, and then shuts down the service. ```
 <depend package="rosclj"/>
 ```2
 

@@ -46,118 +46,116 @@ The following parameters are common for all provided SLAM algorithms:
 
 ### ROS-specific parameters
 
--   \`in/lscan2D/ros/topic/name\` (\'\'string\'\', default:
-    \`/base_scan\`) -- the laser scan topic name
--   \`in/odometry/ros/tf/odom_frame_id\` (\'\'string\'\', default:
+-   \`in/lscan2D/ros/topic/name\` (*string*, default: \`/base_scan\`) --
+    the laser scan topic name
+-   \`in/odometry/ros/tf/odom_frame_id\` (*string*, default:
     \`odom_combined\`) -- the odometry tf frame id
--   \`ros/tf/map_frame_id\` (\'\'string\'\', default: \`map\`) -- the
-    map tf frame id
--   \`ros/tf/robot_pose_frame_id\` (\'\'string\'\', default:
-    \`robot_pose\`) -- the output robot pose frame id
--   \`ros/tf/async_correction\` (\'\'bool\'\', default: \`false\`) --
-    set to \`true\` to publish the \`map\` → \`odom\` transformation
+-   \`ros/tf/map_frame_id\` (*string*, default: \`map\`) -- the map tf
+    frame id
+-   \`ros/tf/robot_pose_frame_id\` (*string*, default: \`robot_pose\`)
+    -- the output robot pose frame id
+-   \`ros/tf/async_correction\` (*bool*, default: \`false\`) -- set to
+    \`true\` to publish the \`map\` → \`odom\` transformation
     asynchronous
 -   tf listener parameters (refer to
     [tf::MessageFilter](http://docs.ros.org/diamondback/api/tf/html/c++/classtf_1_1MessageFilter.html#ab85a2ee3e8fdd13ff19ee966bd73888d)
     documentation):
--   \`ros/subscribers_queue_size\` (\'\'int\'\', default: \`1000\`) --
-    the queue size for
+-   \`ros/subscribers_queue_size\` (*int*, default: \`1000\`) -- the
+    queue size for
     [message_filters::Subscriber](http://docs.ros.org/jade/api/message_filters/html/c++/classmessage__filters_1_1Subscriber.html)
--   \`ros/tf/buffer_duration\` (\'\'double\'\', default: \`5.0\`) -- the
+-   \`ros/tf/buffer_duration\` (*double*, default: \`5.0\`) -- the
     buffer size in seconds for
     [tf::TranformListner](http://docs.ros.org/diamondback/api/tf/html/c++/classtf_1_1TransformListener.html)
--   \`ros/filter_queue_size\` (\'\'int\'\', default: \`1000\`) -- the
-    filter queue size
--   \`ros/rviz/map_publishing_rate\` (\'\'double\'\', default: \`5.0\`)
-    -- the map publishing interval in seconds
--   \`ros/skip_exceeding_lsr_vals\` (\'\'bool\'\', default: \`false\`)
-    -- set to \`true\` to skip laser scan outliers or to \`false\` to
-    insert such measurements in a map as a free space
+-   \`ros/filter_queue_size\` (*int*, default: \`1000\`) -- the filter
+    queue size
+-   \`ros/rviz/map_publishing_rate\` (*double*, default: \`5.0\`) -- the
+    map publishing interval in seconds
+-   \`ros/skip_exceeding_lsr_vals\` (*bool*, default: \`false\`) -- set
+    to \`true\` to skip laser scan outliers or to \`false\` to insert
+    such measurements in a map as a free space
 
 ### General SLAM parameters
 
--   \`slam/map/height_in_meters\` (\'\'double\'\', default: \`10.0\`) --
-    the map height in meters
--   \`slam/map/width_in_meters\` (\'\'double\'\', default: \`10.0\`) --
-    the map width in meters
--   \`slam/map/meters_per_cell\` (\'\'double\'\', default: \`0.1\`) --
-    the map resolution in meters
--   \`slam/performance/use_trig_cache\` (\'\'bool\'\', default:
-    \`false\`) -- use trigonometry cache to speed up scan point
-    operations
+-   \`slam/map/height_in_meters\` (*double*, default: \`10.0\`) -- the
+    map height in meters
+-   \`slam/map/width_in_meters\` (*double*, default: \`10.0\`) -- the
+    map width in meters
+-   \`slam/map/meters_per_cell\` (*double*, default: \`0.1\`) -- the map
+    resolution in meters
+-   \`slam/performance/use_trig_cache\` (*bool*, default: \`false\`) --
+    use trigonometry cache to speed up scan point operations
 -   cell occupancy estimator parameters:
--   \`slam/occupancy_estimator/type\` (\'\'string\'\', default:
-    \`const\`) -- the type of the cell occupancy estimator:
+-   \`slam/occupancy_estimator/type\` (*string*, default: \`const\`) --
+    the type of the cell occupancy estimator:
 -   \`const\` -- a cell is considered occupied if a laser scan point is
     inside the cell
 -   \`area\` -- a cell occupancy estimation is based on how a laser beam
     splits the cell
--   \`slam/occupancy_estimator/base_occupied/prob\` (\'\'double\'\',
-    default: \`0.95\`) -- the cell\'s probability to be occupied if a
-    scan point is inside the cell
--   \`slam/occupancy_estimator/base_occupied/qual\` (\'\'double\'\',
-    default: \`1.0\`)
--   \`slam/occupancy_estimator/base_empty/prob\` (\'\'double\'\',
-    default: \`0.01\`) -- the cell\'s probability to be empty if a laser
-    beam passes through the cell
--   \`slam/occupancy_estimator/base_empty/qual\` (\'\'double\'\',
-    default: \`1.0\`)
--   \`slam/mapping/blur\` (\'\'double\'\', default: \`0.0\`) -- blur
-    obstacles along the direction of a laser beam in the specified range
-    (in meters)
--   \`slam/mapping/max_range\` (\'\'double\'\', default:
-    \`\<infinity\>\`) -- maximum valid range for laser scan measurements
-    when updating a map with a new laser scan
+-   \`slam/occupancy_estimator/base_occupied/prob\` (*double*, default:
+    \`0.95\`) -- the cell\'s probability to be occupied if a scan point
+    is inside the cell
+-   \`slam/occupancy_estimator/base_occupied/qual\` (*double*, default:
+    \`1.0\`)
+-   \`slam/occupancy_estimator/base_empty/prob\` (*double*, default:
+    \`0.01\`) -- the cell\'s probability to be empty if a laser beam
+    passes through the cell
+-   \`slam/occupancy_estimator/base_empty/qual\` (*double*, default:
+    \`1.0\`)
+-   \`slam/mapping/blur\` (*double*, default: \`0.0\`) -- blur obstacles
+    along the direction of a laser beam in the specified range (in
+    meters)
+-   \`slam/mapping/max_range\` (*double*, default: \`\<infinity\>\`) --
+    maximum valid range for laser scan measurements when updating a map
+    with a new laser scan
 
 ### Scan matcher parameters
 
--   \`slam/scmtch/type\` (\'\'string\'\', default: \`\<undefined\>\`) --
-    the scan matcher (SM) to be used. Currently the following scan
-    matchers are supported:
+-   \`slam/scmtch/type\` (*string*, default: \`\<undefined\>\`) -- the
+    scan matcher (SM) to be used. Currently the following scan matchers
+    are supported:
 -   \`MC\` -- Monte-Carlo scan matcher. Parameters:
--   \`slam/scmtch/MC/attempts_limit\` (\'\'unsigned int\'\', default:
-    \`100\`) -- the maximum number of SM iterations
--   \`slam/scmtch/MC/seed\` (\'\'int\'\', default: \`\<random\>\`) --
-    the seed value for RNG
--   \`slam/scmtch/MC/dispersion/translation\` (\'\'double\'\', default:
+-   \`slam/scmtch/MC/attempts_limit\` (*unsigned int*, default: \`100\`)
+    -- the maximum number of SM iterations
+-   \`slam/scmtch/MC/seed\` (*int*, default: \`\<random\>\`) -- the seed
+    value for RNG
+-   \`slam/scmtch/MC/dispersion/translation\` (*double*, default:
     \`0.2\`)
--   \`slam/scmtch/MC/dispersion/rotation\` (\'\'double\'\', default:
-    \`0.1\`)
--   \`slam/scmtch/MC/dispersion/failed_attempts_limit\` (\'\'unsigned
-    int\'\', default: \`20\`)
+-   \`slam/scmtch/MC/dispersion/rotation\` (*double*, default: \`0.1\`)
+-   \`slam/scmtch/MC/dispersion/failed_attempts_limit\` (*unsigned int*,
+    default: \`20\`)
 -   \`HC\` -- hill climbing scan matcher. Parameters:
--   \`slam/scmtch/HC/distortion/translation\` (\'\'double\'\', default:
+-   \`slam/scmtch/HC/distortion/translation\` (*double*, default:
     \`0.1\`) -- the initial step size in x/y direction in meters
--   \`slam/scmtch/HC/distortion/rotation\` (\'\'double\'\', default:
-    \`0.1\`) -- the initial step size in th direction in radians
--   \`slam/scmtch/HC/distortion/failed_attempts_limit\` (\'\'unsigned
-    int\'\', default: \`6\`)
+-   \`slam/scmtch/HC/distortion/rotation\` (*double*, default: \`0.1\`)
+    -- the initial step size in th direction in radians
+-   \`slam/scmtch/HC/distortion/failed_attempts_limit\` (*unsigned int*,
+    default: \`6\`)
 -   \`BF\` -- brute-force scan matcher. Searches for the best scan
     position around the initial guess. Parameters set the search ranges
     and search steps for each coordinate (in meters for translation,
     radians for rotation):
--   \`slam/scmtch/BF/\[x, y, t\]/from\` (\'\'double\'\', default:
-    \`-0.5\`, \`-0.5\`, \`-5°\`)
--   \`slam/scmtch/BF/\[x, y, t\]/to\` (\'\'double\'\', default: \`0.5\`,
+-   \`slam/scmtch/BF/\[x, y, t\]/from\` (*double*, default: \`-0.5\`,
+    \`-0.5\`, \`-5°\`)
+-   \`slam/scmtch/BF/\[x, y, t\]/to\` (*double*, default: \`0.5\`,
     \`0.5\`, \`5°\`)
--   \`slam/scmtch/BF/\[x, y, t\]/step\` (\'\'double\'\', default:
-    \`0.1\`, \`0.1\`, \`1°\`)
+-   \`slam/scmtch/BF/\[x, y, t\]/step\` (*double*, default: \`0.1\`,
+    \`0.1\`, \`1°\`)
 -   \`slam/scmtch/spe/type\` (\*string\*, default: \`\<undefined\>\`) --
     the scan probability estimator type. Currently only \`wmpp\`
     (weighted mean point probability) is supported. Parameters:
--   \`slam/scmtch/spe/wmpp/weighting/type\` (\'\'string\'\', default:
+-   \`slam/scmtch/spe/wmpp/weighting/type\` (*string*, default:
     \`\<undefined\>\`)
 -   \`even\` -- each point in a scan has the equal weight
 -   \`viny\` -- weighting scheme used in vinySLAM
     ([details](https://ieeexplore.ieee.org/document/8206595/))
 -   \`ahr\` -- weighting scheme based on angle histograms
--   \`slam/scmtch/spe/wmpp/sp_skip_rate\` (\'\'unsigned int\'\',
-    default: \`0\`) -- skip every \'\'n\'\'-th point in scan
--   \`slam/scmtch/spe/wmpp/sp_max_usable_range\` (\'\'double\'\',
-    default: \`-1.0\`) -- max valid scan measurement range used in scan
+-   \`slam/scmtch/spe/wmpp/sp_skip_rate\` (*unsigned int*, default:
+    \`0\`) -- skip every *n*-th point in scan
+-   \`slam/scmtch/spe/wmpp/sp_max_usable_range\` (*double*, default:
+    \`-1.0\`) -- max valid scan measurement range used in scan
     probability estimation
--   \`slam/scmtch/oope/type\` (\'\'string\'\', default: \`obstacle\`) --
-    the occupancy observation probability estimator type. Currently the
+-   \`slam/scmtch/oope/type\` (*string*, default: \`obstacle\`) -- the
+    occupancy observation probability estimator type. Currently the
     following types are supported:
 -   \`obstacle\`
 -   \`max\`
@@ -168,8 +166,8 @@ The following parameters are common for all provided SLAM algorithms:
 
 #### tinySLAM
 
--   \`slam/cell/type\` (\'\'string\'\', default: \`base\`) -- the cell
-    model type. Accepted values:
+-   \`slam/cell/type\` (*string*, default: \`base\`) -- the cell model
+    type. Accepted values:
 -   \`base\` -- the cell model used in original tinySLAM
 -   \`avg\` -- the cell model proposed in
     [this paper](https://ieeexplore.ieee.org/document/7849536/)
@@ -177,29 +175,24 @@ The following parameters are common for all provided SLAM algorithms:
 #### GMapping
 
 GMapping has the following additional parameters (note that
-\`slam/scmtch/oope/type\` shouldn\'t be provided or \'\'\'must\'\'\' be
+\`slam/scmtch/oope/type\` shouldn\'t be provided or **must** be
 \`custom\`), see [gmapping](gmapping) documentation for details:
 
--   \`slam/particles/number\` (\'\'unsigned int\'\', default: \`30\`)
--   \`slam/particles/sample/xy/mean\` (\'\'double\'\', default: \`0.0\`)
--   \`slam/particles/sample/xy/sigma\` (\'\'double\'\', default:
-    \`0.1\`)
--   \`slam/particles/sample/theta/mean\` (\'\'double\'\', default:
-    \`0.0\`)
--   \`slam/particles/sample/theta/sigma\` (\'\'double\'\', default:
-    \`0.03\`)
--   \`slam/particles/sm_delta_lim/xy/min\` (\'\'double\'\', default:
-    \`0.6\`)
--   \`slam/particles/sm_delta_lim/xy/max\` (\'\'double\'\', default:
-    \`0.8\`)
--   \`slam/particles/sm_delta_lim/theta/min\` (\'\'double\'\', default:
+-   \`slam/particles/number\` (*unsigned int*, default: \`30\`)
+-   \`slam/particles/sample/xy/mean\` (*double*, default: \`0.0\`)
+-   \`slam/particles/sample/xy/sigma\` (*double*, default: \`0.1\`)
+-   \`slam/particles/sample/theta/mean\` (*double*, default: \`0.0\`)
+-   \`slam/particles/sample/theta/sigma\` (*double*, default: \`0.03\`)
+-   \`slam/particles/sm_delta_lim/xy/min\` (*double*, default: \`0.6\`)
+-   \`slam/particles/sm_delta_lim/xy/max\` (*double*, default: \`0.8\`)
+-   \`slam/particles/sm_delta_lim/theta/min\` (*double*, default:
     \`0.3\`)
--   \`slam/particles/sm_delta_lim/theta/max\` (\'\'double\'\', default:
+-   \`slam/particles/sm_delta_lim/theta/max\` (*double*, default:
     \`0.4\`)
--   \`slam/scmtch/oope/custom/fullness_threshold\` (\'\'double\'\',
-    default: \`0.1\`)
--   \`slam/scmtch/oope/custom/window_size\` (\'\'unsigned int\'\',
-    default: \`1\`)
+-   \`slam/scmtch/oope/custom/fullness_threshold\` (*double*, default:
+    \`0.1\`)
+-   \`slam/scmtch/oope/custom/window_size\` (*unsigned int*, default:
+    \`1\`)
 
 ## Subscribed topics
 

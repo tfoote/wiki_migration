@@ -33,51 +33,51 @@ packet rates for them.\
 
 ## ROS Nodes
 
--   \'\'\'velodyne_node\'\'\'\
+-   **velodyne_node**\
     ROS node that captures Velodyne 3D LIDAR data and publishes it in
     raw form. This uses the same device driver class as
     [velodyne_driver/DriverNodelet](#DriverNodelet).
--   \'\'\'Publishes\'\'\'
--   \'\'velodyne_packets\'\'\
+-   **Publishes**
+-   *velodyne_packets*\
     type = velodyne_msgs/VelodyneScan\
     Velodyne data packets (typically for one entire revolution of the
     device) in the \`/velodyne\` frame of reference.
--   \'\'diagnostics\'\'\
+-   *diagnostics*\
     type = diagnostic_msgs/DiagnosticStatus\
     Diagnostic status information.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Parameters\'\'\'
--   \'\'frame_id\'\'\
+-   **Parameters**
+-   *frame_id*\
     type = string\
     default = velodyne\
     Transform frame ID for the device (resolved using \`tf_prefix\`, if
     defined).
--   \'\'model\'\'\
+-   *model*\
     type = string\
     default = \"64E\"\
     Device model: \"32E\", \"64E\", \"64E_S2\" or \"64E_S2.1\",:
     \"64E_S3\"
--   \'\'npackets\'\'\
+-   *npackets*\
     type = int\
     default = enough for a complete revolution\
     Number of packets to publish per message.
--   \'\'pcap\'\'\<\<BR\> type = string\
+-   *pcap*\<\<BR\> type = string\
     default = use real device (empty)\
     PCAP dump input file name.
--   \'\'rpm\'\'\
+-   *rpm*\
     type = double\
     default = 600\
-    Device rotation speed in Revolutions per Minute. \'\'\'Note:\'\'\'
-    This does not modify the device configuration, it is just a value
-    that the driver uses for calculating the packets per rotation.
--   \'\'port\'\'\
+    Device rotation speed in Revolutions per Minute. **Note:** This does
+    not modify the device configuration, it is just a value that the
+    driver uses for calculating the packets per rotation.
+-   *port*\
     type = int\
     default = 2368\
     : UDP port to read.
--   \'\'device_ip\'\'\
+-   *device_ip*\
     type = string\
     default = use any device\
     : dotted decimal IP address of device.

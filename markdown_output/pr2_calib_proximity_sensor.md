@@ -34,7 +34,7 @@ arm planning environment for the scan method.
 ```
 roslaunch pr2_calib_proximity_sensor both_arm_navigation.launch
 ``` If you did not configure your scan method yet,
-you should do it now. Let\'s take a look into the \'\'conf/scan.yaml\'\'
+you should do it now. Let\'s take a look into the *conf/scan.yaml*
 
 Forearm and upper arm are scanned one after the other. So there is one
 configuration for each.
@@ -99,8 +99,8 @@ completed. First run rviz.
 
 ```
 rosrun rviz rviz
-``` Now you can visualize the data for patch
-\'\'n\'\' by running
+``` Now you can visualize the data for patch *n* by
+running
 
 ```
 roslaunch pr2_calib_proximity_sensor visualize_data.launch patch_id:=n

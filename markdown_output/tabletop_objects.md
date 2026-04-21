@@ -1,13 +1,12 @@
 ## Overview
 
-\'\'\'tabletop_objects\'\'\' is a package for detecting and localizing
-objects located on some kind of supporting planar surface (table,
-countertop).
+**tabletop_objects** is a package for detecting and localizing objects
+located on some kind of supporting planar surface (table, countertop).
 
-The object detection is performed in two steps: a \'\'bottom-up\'\' step
-that tries to come up with initial estimation of the object\'s pose,
-followed by a \'\'top-down\'\' model fitting step that tries to fit 3D
-models at each location estimated in the first step.
+The object detection is performed in two steps: a *bottom-up* step that
+tries to come up with initial estimation of the object\'s pose, followed
+by a *top-down* model fitting step that tries to fit 3D models at each
+location estimated in the first step.
 
 #### Bottom-up pose estimation
 
@@ -28,7 +27,7 @@ We are working on improving the object pose initialization pipeline
 described above by incorporating additional cues about the objects\'s
 location and orientation using a set of 3D features.
 
-This step is implemented in the \'\'\'tabletop_detector\'\'\' node.
+This step is implemented in the **tabletop_detector** node.
 
 #### Top-down model fitting
 
@@ -43,7 +42,7 @@ transform for fast nearest point computations.
 
 ![](attachment:tabletop_models.png)
 
-This step is implemented in the \'\'\'model_fitter\'\'\' node.
+This step is implemented in the **model_fitter** node.
 
 ## Nodes
 
@@ -166,7 +165,7 @@ node.2{
 
 This is a tutorial on how to use functionality provided by this package.
 
--   Build the \'\'tabletop_objects\'\' package:```
+-   Build the *tabletop_objects* package:```
 rosmake tabletop_objects
 ```
 
@@ -190,15 +189,15 @@ roslaunch launch/model_fitter.launch
 ```
 -   At this point the tabletop object detection pipeline is up and ready
     to go, however it will only start the detection when the
-    \'\'\'table_top/find_object_poses\'\'\' service is called. For a
-    quick test (to make sure everything is running properly), you can
-    run the \'test_service\' node, which just calls the above service:
+    **table_top/find_object_poses** service is called. For a quick test
+    (to make sure everything is running properly), you can run the
+    \'test_service\' node, which just calls the above service:
     ```
 rosrun tabletop_objects test_service
 ```For a more complex example, of how to use
     the tabletop_objects detector and integrate it with the planing
     pipeline, see the \'simple.cpp\' source file in the
-    \'\'\'tabletop_scripts\'\'\' package.
+    **tabletop_scripts** package.
 
 ## Video
 

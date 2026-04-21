@@ -28,9 +28,9 @@ rosrun stage_ros stageros [-g runs headless] <world> [standard ROS args]
 The .world file syntax is documented in the
 [Stage manual](http://rtv.github.io/Stage/modules.html). stageros only
 exposes models created by a subset of the .world file syntax,
-specifically \'\'\'laser\'\'\', \'\'\'position\'\'\' and
-\'\'\'camera\'\'\' models. For examples, see the \`world\` directory in
-the \`stage\` and \`stage_ros\` packages.
+specifically **laser**, **position** and **camera** models. For
+examples, see the \`world\` directory in the \`stage\` and \`stage_ros\`
+packages.
 
 #### Subscribed topics
 

@@ -1,25 +1,24 @@
-The \'\'cob_camera_sensors\'\' package is a collection of ROS compatible
+The *cob_camera_sensors* package is a collection of ROS compatible
 drivers for the cameras installed on Care-O-bot 3. These include two
-color cameras (either of type \'\'AVT Pike C145\'\' or \'\'AVT Prosilica
-GC1380CH\'\') and one \'\'Swissranger 4000\'\' time-of-flight sensor
-from Mesa Imaging or the \'\'Microsoft Kinect\'\' sensor. All camera
-types are supported for Windows and Linux. To enable Windows
-compatibility, remove all `-D__LINUX__` flags from
-\'\'CMakeLists.txt\'\' located at \'\'cob_driver/cob_camera_sensors\'\'.
-The two Prosilica GC1380CH are natively supported by ROS with the
-\'\'prosilica_camera\'\' package. The binaries of the
-\'\'prosilica_camera\'\' package are executed within the related launch
+color cameras (either of type *AVT Pike C145* or *AVT Prosilica
+GC1380CH*) and one *Swissranger 4000* time-of-flight sensor from Mesa
+Imaging or the *Microsoft Kinect* sensor. All camera types are supported
+for Windows and Linux. To enable Windows compatibility, remove all
+`-D__LINUX__` flags from *CMakeLists.txt* located at
+*cob_driver/cob_camera_sensors*. The two Prosilica GC1380CH are natively
+supported by ROS with the *prosilica_camera* package. The binaries of
+the *prosilica_camera* package are executed within the related launch
 files. The same holds for the Kinect whose driver is located in the
-\'\'openni_camera\'\' package.
+*openni_camera* package.
 
-Setting the camera parameters for the \'\'AVT Pike C145\'\' and
-\'\'Swissranger 4000\'\' is different from the suggested ROS standard.
-Instead of setting all parameters within the ROS launch file, camera
-specific parameters are set within IPA specific configuration files.
-This originates from IPA internal requirements to maintain backward
-compatibility to existing components. The ROS launch file only holds
-parameters related to the camera setup (e.g. specifying the used camera
-types) and a link to the IPA internal configuration file.
+Setting the camera parameters for the *AVT Pike C145* and *Swissranger
+4000* is different from the suggested ROS standard. Instead of setting
+all parameters within the ROS launch file, camera specific parameters
+are set within IPA specific configuration files. This originates from
+IPA internal requirements to maintain backward compatibility to existing
+components. The ROS launch file only holds parameters related to the
+camera setup (e.g. specifying the used camera types) and a link to the
+IPA internal configuration file.
 
 ## Quick launch guide
 
@@ -127,12 +126,12 @@ desc=
 ## IPA configuration files
 
 The IPA configuration file is located at
-\'\'cob_driver/cob_camera_sensors/common/files\'\' in a folder related
-to your sensor setup e.g. \'\'cob3-1\'\' or \'\'cob3-2\'\'. The
-configuration is XML-based. It holds one XML-tag for each camera e.g.
-`<AVTPikeCam_0>` for a AVT Pike C145 camera. The number within the
-tag-name is used to differentiate several camera of the same type. Here
-is an excerpt from the IPA configuration file of one of our Care-O-bots.
+*cob_driver/cob_camera_sensors/common/files* in a folder related to your
+sensor setup e.g. *cob3-1* or *cob3-2*. The configuration is XML-based.
+It holds one XML-tag for each camera e.g. `<AVTPikeCam_0>` for a AVT
+Pike C145 camera. The number within the tag-name is used to
+differentiate several camera of the same type. Here is an excerpt from
+the IPA configuration file of one of our Care-O-bots.
 
 ```
 <!-- Camera sensors initialization file -->
@@ -168,15 +167,14 @@ one of the Care-O-bot configuration files to get an impression of the
 possible settings.
 
 Camera intrinsics may be set for each camera within the designated tags.
-The information is later published with the images using the ROS
-\'\'Camera Publisher\'\' from the \'\'image_transport\'\' package. The
-user has the possibility of specifying different intrinsic for one
-camera. This is related to stereo vision, where intrinsics are optimize
-to fit to another camera. Within the ROS node that publishes camera
-images, the non-optimized intrinsic are published with the images.
-Extrinsic specify the rotation and translation relative to another
-camera. These parameters are not yet published and for IPA internal
-usage only.
+The information is later published with the images using the ROS *Camera
+Publisher* from the *image_transport* package. The user has the
+possibility of specifying different intrinsic for one camera. This is
+related to stereo vision, where intrinsics are optimize to fit to
+another camera. Within the ROS node that publishes camera images, the
+non-optimized intrinsic are published with the images. Extrinsic specify
+the rotation and translation relative to another camera. These
+parameters are not yet published and for IPA internal usage only.
 
 For each camera there is also a related `<VirtualXXXCam_X>` tag. This is
 also related to backward compatibility issues and not used within ROS.
@@ -201,42 +199,42 @@ configuration files are located in the
 `cob_driver/cob_camera_sensors/ros/launch/$ROBOT` folders. The following
 camera types are supported:
 
--   \'\'\'CAM_SWISSRANGER\'\'\' - For Mesa Swissranger 3000/4000
-    time-of-flight camera
--   \'\'\'CAM_AVTPIKE\'\'\' - For AVT Pike 145C color camera
--   \'\'\'Prosilica GC1380CH GigE\'\'\' - Through the ROS driver
--   \'\'\'Kinect\'\'\' - Through the ROS driver
+-   **CAM_SWISSRANGER** - For Mesa Swissranger 3000/4000 time-of-flight
+    camera
+-   **CAM_AVTPIKE** - For AVT Pike 145C color camera
+-   **Prosilica GC1380CH GigE** - Through the ROS driver
+-   **Kinect** - Through the ROS driver
 
 The Prosilica GC1380CH color camera is supported through the ROS
-\'\'prosilica_camera\'\' package. To get more information, have a look
-at their tutorial. The camera specific launch files have an additional
+*prosilica_camera* package. To get more information, have a look at
+their tutorial. The camera specific launch files have an additional
 parameter specifying the camera\'s ID which is related to the number
 within the tag-name in the IPA configuration file e.g.
-\'\'\<AVTPikeCam_0\>\'\'.
+*\<AVTPikeCam_0\>*.
 
 Knowing the fundamentals, we are now ready to start up the cameras. The
 following table sums up the built-in cameras for each Care-O-Bot.
 
-  -- ------------------- -- ----------------------------------------------- -- ------------------------------------------------------------- --
-     \'\'\'Robot\'\'\'      \'\'\'3D Sensor\'\'\'                              \'\'\'Left/Right Camera Sensors\'\'\'                         
-     cob3-1                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [AVT Pike C145](cob_camera_sensors/AVT_Pike)                  
-     cob3-2                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
-     cob3-3                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
-     cob3-4                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
-     cob3-5                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
-     cob3-6                 [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
-  -- ------------------- -- ----------------------------------------------- -- ------------------------------------------------------------- --
+  -- ----------- -- ----------------------------------------------- -- ------------------------------------------------------------- --
+     **Robot**      **3D Sensor**                                      **Left/Right Camera Sensors**                                 
+     cob3-1         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [AVT Pike C145](cob_camera_sensors/AVT_Pike)                  
+     cob3-2         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
+     cob3-3         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
+     cob3-4         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
+     cob3-5         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
+     cob3-6         [Kinect](cob_camera_sensors/Microsoft_Kinect)      [Prosilica GC1380CH GigE](cob_camera_sensors/AVT_Prosilica)   
+  -- ----------- -- ----------------------------------------------- -- ------------------------------------------------------------- --
 
 ## AVT Pike C145
 
-A detailed guide for configuring and starting the stereo pair of
-\'\'Pike C145\'\' cameras can be found in the
+A detailed guide for configuring and starting the stereo pair of *Pike
+C145* cameras can be found in the
 [Care-O-Bot AVT Pike Guide](cob_camera_sensors/AVT_Pike).
 
 ## AVT Prosilica Gig E
 
 A detailed guide for configuring and starting the stereo pair of
-\'\'Prosilica GC1380CH\'\' cameras can be found in the
+*Prosilica GC1380CH* cameras can be found in the
 [Care-O-Bot AVT Prosilica Guide](cob_camera_sensors/AVT_Prosilica).
 
 ## Swissranger

@@ -66,10 +66,10 @@ the URL string passed to !CameraInfoManager.
 class
 
 For compatibility with C Turtle, the global \`CameraInfoManager\` class
-name was still supported, but it was \'\'\'deprecated\'\'\' in
-Electric.: the global \`CameraInfoManager\` class is no longer
-available, use \`camera_info_manager::CameraInfoManager\` instead.: a
-new \`setCameraInfo()\` method allows the caller to set \`CameraInfo\`
+name was still supported, but it was **deprecated** in Electric.: the
+global \`CameraInfoManager\` class is no longer available, use
+\`camera_info_manager::CameraInfoManager\` instead.: a new
+\`setCameraInfo()\` method allows the caller to set \`CameraInfo\`
 parameters directly.
 
 ### Examples

@@ -17,10 +17,10 @@ goals get filtered out from the beginning - they get rejected.
 ## Functionality
 
 The asr_flir_ptu_controller serves a single purpose: It makes the
-movement of a Flir pan-tilt-unit accessable by a
-\'\'ros::!ActionClient\'\'. The functionality by asr_flir_ptu_controller
-will be shown below in a sequence diagram. For knowledge of the invoked
-functions check out [asr_flir_ptu_driver](asr_flir_ptu_driver).
+movement of a Flir pan-tilt-unit accessable by a *ros::!ActionClient*.
+The functionality by asr_flir_ptu_controller will be shown below in a
+sequence diagram. For knowledge of the invoked functions check out
+[asr_flir_ptu_driver](asr_flir_ptu_driver).
 
 ![height=\"1030\",width=\"584\"](attachment:interaction.png)
 
@@ -66,7 +66,7 @@ workspace and build them.
 
 Being mounted upon the [asr_flir_ptu_driver](asr_flir_ptu_driver) it is
 necessary that you have a running instance of asr_flir_ptu_driver, so
-start it \'\'\'first\'\'\'.
+start it **first**.
 
 After starting the asr_flir_ptu_driver, start the
 asr_flir_ptu_controller. Interaction is then done over the ActionServer
@@ -89,15 +89,14 @@ configuration needs to be done before launch if you did not change the
 topic names used by asr_flir_ptu_driver. Otherwise you need to adjust
 the corrsponding topic names found in the ptu_controller_settings.yaml
 file in the param folder. Most of the values there should be fine,
-nevertheless two should be reconsidered: \'\'maxSteps\'\' and
-\'\'margin. \'\'The first one describes the maximum amount of steps that
-will be done before a movement is considered a failure. A step means
-hereby a spin of ROS (to be totally fair, it means a publishing from the
-asr_flir_ptu_driver about his current position, what happens each spin).
-The second one describes the margin parameter known from
-asr_flir_ptu_driver. You can set this parameter freely, it is limited by
-the minimum of the width/height of the pan/tilt movement area divided by
-2.
+nevertheless two should be reconsidered: *maxSteps* and *margin. *The
+first one describes the maximum amount of steps that will be done before
+a movement is considered a failure. A step means hereby a spin of ROS
+(to be totally fair, it means a publishing from the asr_flir_ptu_driver
+about his current position, what happens each spin). The second one
+describes the margin parameter known from asr_flir_ptu_driver. You can
+set this parameter freely, it is limited by the minimum of the
+width/height of the pan/tilt movement area divided by 2.
 
 Usually no configuring should be necessary.
 
@@ -114,22 +113,22 @@ asr_flir_ptu_controller.
 
 ### Subscribed Topics
 
-\'\'/asr_flir_ptu_driver/ptu_state\'\'
+*/asr_flir_ptu_driver/ptu_state*
 
 All topics below are subscribed by the !ActionServer of
 asr_flir_ptu_controller by default. They use a custom defined message
 which can be found inside the action folder of the package.
 
-\'\'/ptu_controller_actionlib/cancel\'\'
+*/ptu_controller_actionlib/cancel*
 
 -   Type: actionlib_msgs::GoalID
 -   Usage: Default !ActionServer topic to cancel a current goal.
 
-\'\'/ptu_controller_actionlib/goal\'\'
+*/ptu_controller_actionlib/goal*
 
 -   Type: asr_flir_ptu_controller::PTUMovementActionGoal
 -   Usage: !ActionServer topic for sending a new goal. Includes a
-    sensor_msgs::!JointState \'\'target_joint. \'\'Use
+    sensor_msgs::!JointState *target_joint. *Use
     target_joint.position\[0\] to store the pan value the PTU shall move
     to and target_joint.position\[1\] to store the tilt value. Setting
     target_joint.velocity\[0\] or target_joint.velocity\[1\] to a value
@@ -149,29 +148,28 @@ All published topics by the asr_flir_ptu_controller are related to the
 Most of them are based on a custom !ActionServer message that can be
 found inside the action folder of the package.
 
-\'\'/ptu_controller_actionlib/feedback\'\'
+*/ptu_controller_actionlib/feedback*
 
 -   Type: asr_flir_ptu_controller::PTUMovementActionFeedback
 -   Usage: This topic is used by asr_flir_ptu_controller to publish
     constant feedback to progress of the currently active goal. The
-    message contains a sensor_msgs::!JointState called
-    \'\'base_joint\'\' as well as a float called \'\'percentage.
-    \'\'Current pan and tilt values can be obtained by reading
-    base_joint.position\[0\] for the current pan value and
-    base_joint.position\[1\] for the current tilt value. As the name
-    indicates, \'\'percentage\'\' contains the current percentage of
+    message contains a sensor_msgs::!JointState called *base_joint* as
+    well as a float called *percentage. *Current pan and tilt values can
+    be obtained by reading base_joint.position\[0\] for the current pan
+    value and base_joint.position\[1\] for the current tilt value. As
+    the name indicates, *percentage* contains the current percentage of
     completion of the movement represented by a number between 0.0 and
     1.0;
 
-\'\'/ptu_controller_actionlib/result\'\'
+*/ptu_controller_actionlib/result*
 
 -   Type: asr_flir_ptu_controller::PTUMovementActionResult
 -   Usage: The topic on which the !ActionServer publishes the result of
-    a goal. Contains a sensor_msgs::!JointState called
-    \'\'end_joint\'\'. The final values for pan/tilt can be obtained by
-    reading end_joint.position\[0\]/end_joint.position\[1\].
+    a goal. Contains a sensor_msgs::!JointState called *end_joint*. The
+    final values for pan/tilt can be obtained by reading
+    end_joint.position\[0\]/end_joint.position\[1\].
 
-\'\'/ptu_controller_actionlib/status\'\'
+*/ptu_controller_actionlib/status*
 
 -   Type: actionlib_msgs::!GoalStatusArray
 -   Usage: Default !ActionServer status topic.
@@ -184,14 +182,14 @@ found inside the action folder of the package.
 -   Explanation: Namespace under which the !ActionServer will publish
     its topics (goal, feedback,\...)
 
-\'\'/PTUController/commandTopicName\'\'
+*/PTUController/commandTopicName*
 
 -   Type: string
 -   Explanation: Name of the topic where the asr_flir_ptu_driver
     publishes its current state. Only modify if you changed it in
     asr_flir_ptu_driver.
 
-\'\'/PTUController/margin\'\'
+*/PTUController/margin*
 
 -   Type: double
 -   Explanation: The margin value used by asr_flir_ptu_driver
@@ -199,7 +197,7 @@ found inside the action folder of the package.
     out of bounds but within bounds + margin will be set to the bounds.
     Modification is usually not needed.
 
-\'\'/PTUController/maxSteps\'\'
+*/PTUController/maxSteps*
 
 -   Type: int
 -   Explanation: This value references the maximum amount of updates
@@ -209,19 +207,19 @@ found inside the action folder of the package.
     a simple protection against the case when the PTU would never reach
     the desired location.
 
-\'\'/PTUController/serviceAlive\'\'
+*/PTUController/serviceAlive*
 
 -   Type: string
 -   Explanation: Name of the alive service of asr_flir_ptu_driver. If
     you adjusted it there, adjust it here accordingly.
 
-\'\'/PTUController/serviceValidation\'\'
+*/PTUController/serviceValidation*
 
 -   Type: string
 -   Explanation: Name if the validation service of asr_flir_ptu_driver.
     If you adjusted it there, adjust it here accordingly.
 
-\'\'/PTUController/topicName\'\'
+*/PTUController/topicName*
 
 -   Type: string
 -   Explanation: Name of the topic the asr_flir_ptu_driver takes new
@@ -237,7 +235,7 @@ found inside the action folder of the package.
     pan/tilt values received via the goal topic of the !ActionServer.
     Getting negative response here results in a rejection of a goal.
 
-\'\'/asr_flir_ptu_driver/alive_service\'\'
+*/asr_flir_ptu_driver/alive_service*
 
 -   Type: std_srvs::Empty
 -   Usage: The asr_flir_ptu_controller uses this service to check if the

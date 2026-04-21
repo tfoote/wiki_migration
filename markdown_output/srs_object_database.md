@@ -19,18 +19,18 @@ how to install and configure the database are described in
 ##### Database Creation
 
 After the previous step is completed an empty database must be created
-using a script found inside the folder \'\'db_scripts\'\' of the package
-\'\'srs_object_database\'\'. The first time you need to create an empty
+using a script found inside the folder *db_scripts* of the package
+*srs_object_database*. The first time you need to create an empty
 database with the internal structure and data. To do this simply enter
-the \'\'db_scripts\'\' folder and run: ```
+the *db_scripts* folder and run: ```
 . createDatabase.sh databaseName
 ```
 
 NOTE: database name must not include capital letters.
 
-This will create an empty database named \'\'databaseName\'\'. You can
-usethis script also to create additional database in case you want to do
-some test. Also if you want to create an empty database you can use the
+This will create an empty database named *databaseName*. You can usethis
+script also to create additional database in case you want to do some
+test. Also if you want to create an empty database you can use the
 following script:
 
 ```
@@ -75,17 +75,17 @@ will be lost!
 
 After the database creation is required to create the fileRepository
 which can be retrieved in the git repository
-\'\'[ git file share repository](https://github.com/ipa320/srs_data )\'\'.
-This share contains a root folder named \'\'ros_data_files\'\' Upload
-the laters version of the repository that will be syncronized with the
-latest data created by the script in the folder \'\'db_scripts\'\'.
+*[ git file share repository](https://github.com/ipa320/srs_data )*.
+This share contains a root folder named *ros_data_files* Upload the
+laters version of the repository that will be syncronized with the
+latest data created by the script in the folder *db_scripts*.
 
 #### Configuration of SRS object services
 
 Environment configuration is passed to services through the launch file
-which run \'\'srs_object_database\'\' services. The file called
-\'\'srs_db.launch\'\' is stored in the folder \'\'launch\'\' of the
-\'\'srs_object_database\'\'.
+which run *srs_object_database* services. The file called
+*srs_db.launch* is stored in the folder *launch* of the
+*srs_object_database*.
 
 ```
 <launch>
@@ -120,7 +120,7 @@ installation use \'localhost\'. ```
 ```
 
 dbPort set the port on which the database server is listening. Default
-for postgres is \'\'5432\'\' ```
+for postgres is *5432* ```
 <param name="dbPort" value="5432" type="str"/>
 ```
 
@@ -130,7 +130,7 @@ databaseName must be set to the name of database created before.
 ```
 
 username must be set to the user which own read and write right on the
-\'\'srs_database\'\'. ```
+*srs_database*. ```
 <param name="userName" value="user" type="str" />
 ```
 
@@ -140,13 +140,13 @@ point. ```
 ```0
 
 repoPath is used to set the root folder where the file repository is
-stored. Note that at the end \'\'/\'\' is added otherwise services will
-fail to return object data. ```
+stored. Note that at the end **/ is added otherwise services will fail
+to return object data. ```
 . createemptyDb.sh databaseName
-```1
+```1**
 
 Once this parameters are correctly configured the services provided by
-\'\'srs_object_database\'\' are ready to be run.
+*srs_object_database* are ready to be run.
 
 ```
 . createemptyDb.sh databaseName
@@ -163,10 +163,10 @@ the launch file. ```
 
 A simple client has been created to allow inserting and updating
 information on database. This service make use of service provided by
-\'\'srs_object_database\'\' and should be used only for the purpose of
-testing data. It is executed with \'\'rosrun\'\'. Is mandatory to
-execute the \'\'srs_object_database\'\' launch file to start all
-services before running the client.
+*srs_object_database* and should be used only for the purpose of testing
+data. It is executed with *rosrun*. Is mandatory to execute the
+*srs_object_database* launch file to start all services before running
+the client.
 
 ```
 . createemptyDb.sh databaseName
@@ -185,11 +185,11 @@ parameters.
 #### how to search data with clientTest
 
 clientTest can be used to retrieve data. To achieve this provide
-parameters as specified in this section and use \'\'r\'\' to specify
-that you want to retrieve data. The client calls the
-\'\'srs_object_database/GetObjecId\'\' service and by command line is
-possible to search in database for object id using the following
-combination of input:
+parameters as specified in this section and use *r* to specify that you
+want to retrieve data. The client calls the
+*srs_object_database/GetObjecId* service and by command line is possible
+to search in database for object id using the following combination of
+input:
 
 Search all objects:
 
@@ -253,8 +253,8 @@ appropriate way to be sent to InsertObject service.
 
 The input file must be stored inside the Input folder available in the
 git repository
-\'\'[ git file share repository](https://github.com/ipa320/srs_data )\'\'
-with the data files. The input file is
+*[ git file share repository](https://github.com/ipa320/srs_data )* with
+the data files. The input file is
 
 ```
 . createemptyDb.sh databaseName srs_user
@@ -266,8 +266,8 @@ the filename, with extenstion, of the file containing the data to be
 inserted. This file must be placed in the Input folder inside the file
 repository. Once the data will be inserted, a file will be created
 inside the appropiate folder of the file repository. One example is
-\'\'testInputInsert.txt\'\' which allow to insert a new object simply
-calling the clientTest:
+*testInputInsert.txt* which allow to insert a new object simply calling
+the clientTest:
 
 ```
 . createemptyDb.sh databaseName srs_user
@@ -314,9 +314,9 @@ services that other components should invoke.
 
 #### Inserting/Updating Objects
 
-To insert and update object data the service \'\'\"InsertObject\"\'\'
-should be used. Note that you should provide a type of mesh (usually
-iv.txt) and an Image type such as: icon,top-view,front-view.
+To insert and update object data the service *\"InsertObject\"* should
+be used. Note that you should provide a type of mesh (usually iv.txt)
+and an Image type such as: icon,top-view,front-view.
 
 ```
 . createemptyDb.sh databaseName srs_user

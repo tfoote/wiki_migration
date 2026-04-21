@@ -37,9 +37,9 @@ roslaunch ground_truth calibrate.launch
 ```
 
 3\. Follow the instructions on the bottom of the pointcloud visualizer
-screen. \'\'Remember that you have to click on the image and not the
-pointcloud!\'\'. A small sphere should appear in the point cloud
-visualizer window to indicate the point you clicked.
+screen. *Remember that you have to click on the image and not the
+pointcloud!*. A small sphere should appear in the point cloud visualizer
+window to indicate the point you clicked.
 
 4\. After you have selected all the ground plane points and the
 landmarks, the point cloud visualization should change so that the
@@ -126,8 +126,8 @@ roslaunch ground_truth calibrate.launch
 
 #### Current Status
 
-\'\'Sep/17/2011 NOTE(piyushk): The detect binary currently implements
+*Sep/17/2011 NOTE(piyushk): The detect binary currently implements
 slightly different version of the heuristics for robot detection in
 comparison to those reported in the paper. This version is what we used
 for estimating parameters for our localization algorithm. I will try and
-revert back to the original algorithm soon\'\'
+revert back to the original algorithm soon*

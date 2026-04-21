@@ -49,7 +49,7 @@ and a \`params\` which is a dictionary of additional variables. Consult
 the documentation for the particular filter plugin to see what variables
 may be set in the params field.
 
-\'\'\'Note\'\'\' that the \`type\` should be specified as
+**Note** that the \`type\` should be specified as
 \`pkg_name/FilterClass\` as the
 [matching behavior of the filters implementation before lunar](https://github.com/ros/filters/issues/14)
 is
@@ -100,8 +100,8 @@ available before running the filter chain.
 
 #### ROS Parameters
 
-\`scan_filter_chain\` (list) \'\'\'\[Required\]\'\'\' The list of laser
-filters to load.
+\`scan_filter_chain\` (list) **\[Required\]** The list of laser filters
+to load.
 
 \`tf_message_filter_target_frame\` (string) A target_frame for which a
 transform must exist at the current time before the filter_chain will be
@@ -163,14 +163,14 @@ the resultant cloud.
 
 #### ROS Parameters
 
-\`scan_filter_chain\` (list) \'\'\'\[Required\]\'\'\' The list of laser
-filters to load. \`cloud_filter_chain\` (list) \'\'\'\[Required\]\'\'\'
-The list of cloud filters to load. \`target_frame\` (string)
-\'\'\'\[Required\]\'\'\' The frame to transform the point_cloud into.
-\`high_fidelity\` (bool, default: false) Whether to perform a high
-fidelity transform. This approach assumes that the laser scanner is
-moving while capturing laser scans. High fidelity transform works only
-correctly, if the target frame is set to a fixed frame.
+\`scan_filter_chain\` (list) **\[Required\]** The list of laser filters
+to load. \`cloud_filter_chain\` (list) **\[Required\]** The list of
+cloud filters to load. \`target_frame\` (string) **\[Required\]** The
+frame to transform the point_cloud into. \`high_fidelity\` (bool,
+default: false) Whether to perform a high fidelity transform. This
+approach assumes that the laser scanner is moving while capturing laser
+scans. High fidelity transform works only correctly, if the target frame
+is set to a fixed frame.
 
 #### Subscribed Topics
 
@@ -242,8 +242,8 @@ description, describing an appropriate chain of
 description, describing an appropriate chain of
 \`MultiChannelMedianFilterFloat\` type filters.
 
-\'\'\'Make sure to use both parameters ( \'\'range_filter_chain\'\' and
-\'\'intensity_filter_chain\'\' ) \'\'\'
+**Make sure to use both parameters ( *range_filter_chain* and
+*intensity_filter_chain* ) **
 
 #### Example Configuration
 

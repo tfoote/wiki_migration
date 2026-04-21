@@ -10,13 +10,13 @@ describes the evolution of these interfaces.: the default \`min_range\`
 value is now 0.9 meters.: a new pair of parameters \`view_direction\`
 and \`view_width\` may be used to reduce the output point cloud to a
 subset of angular directions. By default, every angle is included in the
-point cloud. Setting \`view_width\` to \'\'pi/2\'\' radians will limit
-the output to 90 degrees around the forward direction of the device
-(from -45 degrees to +45). Also setting \`view_direction\` to \'\'pi\'\'
-would return output only from the device\'s rear facing, instead.
-Similarly, setting \`view_direction\` to \'\'-pi/2\'\' would limit
-output to 90 degrees around the right facing in the XY plane of the
-device frame of reference.
+point cloud. Setting \`view_width\` to *pi/2* radians will limit the
+output to 90 degrees around the forward direction of the device (from
+-45 degrees to +45). Also setting \`view_direction\` to *pi* would
+return output only from the device\'s rear facing, instead. Similarly,
+setting \`view_direction\` to *-pi/2* would limit output to 90 degrees
+around the right facing in the XY plane of the device frame of
+reference.
 
 ## ROS Nodes and Nodelets
 
@@ -65,17 +65,16 @@ param {
 #### Examples
 
 Continuously convert raw Velodyne packets into
-\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages. \'\'Running as a
-standalone nodelet prevents zero-copy message sharing.\'\'
+\<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages. *Running as a
+standalone nodelet prevents zero-copy message sharing.*
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 ```
 
 This launch file runs the cloud nodelet in the same process with the
-device driver. \'\'That enables zero-copy message sharing.\'\' The full
-path name of the calibration file \'\'must\'\' be provided. This example
-uses one of the package test files for calibration.
-```
+device driver. *That enables zero-copy message sharing.* The full path
+name of the calibration file *must* be provided. This example uses one
+of the package test files for calibration. ```
 <launch>
   <!-- start nodelet manager and driver nodelets -->
   <include file="$(find velodyne_driver)/launch/nodelet_manager.launch" />
@@ -154,15 +153,15 @@ param {
 
 Transform raw Velodyne packets into
 \<\<MsgLink(sensor_msgs/PointCloud2)\>\> messages into the \`/odom\`
-frame. \'\'Running as a standalone nodelet prevents zero-copy message
-sharing.\'\' ```
+frame. *Running as a standalone nodelet prevents zero-copy message
+sharing.* ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/TransformNodelet
 ```
 
 This launch file runs the transform nodelet in the same process with the
-device driver. \'\'That enables zero-copy message sharing.\'\' The full
-path name of the calibration file \'\'must\'\' be provided. This example
-uses one of the package test files. ```
+device driver. *That enables zero-copy message sharing.* The full path
+name of the calibration file *must* be provided. This example uses one
+of the package test files. ```
 <launch>
   <!-- start nodelet manager and driver nodelets -->
   <include file="$(find velodyne_driver)/launch/nodelet_manager.launch" />

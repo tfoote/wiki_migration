@@ -38,7 +38,7 @@ using ecl::Fixed;
 using ecl::Sci;
 ```
 
-If outside of ros, you will also need to link to \'\'ecl_formatters\'\'.
+If outside of ros, you will also need to link to *ecl_formatters*.
 
 ## Tutorials
 

@@ -89,11 +89,11 @@ It defines a few outputs for the device :
 
 ### Example config files
 
--   \'\'ellipse_A_default.yaml\'\', default config file for an Ellipse-A
--   \'\'ellipse_E_default.yaml\'\', default config file for an Ellipse-E
-    with an external antenna and external Gnss
--   \'\'ellipse_N_default.yaml\'\', default config file for an Ellipse-N
-    with an external antenna and internal Gnss
+-   *ellipse_A_default.yaml*, default config file for an Ellipse-A
+-   *ellipse_E_default.yaml*, default config file for an Ellipse-E with
+    an external antenna and external Gnss
+-   *ellipse_N_default.yaml*, default config file for an Ellipse-N with
+    an external antenna and internal Gnss
 
 ## Messages publishing
 
@@ -102,37 +102,37 @@ It defines a few outputs for the device :
 The sbg_driver defines some custom ROS messages, corresponding to the
 SBG message protocol.
 
--   \'\'\'/sbg/air_data\'\'\'
+-   **/sbg/air_data**
     [SbgAirData](http://docs.ros.org/api/sbg_driver/html/msg/SbgAirData.html)
--   \'\'\'/sbg/ekf_euler\'\'\'
+-   **/sbg/ekf_euler**
     [SbgEkfEuler](http://docs.ros.org/api/sbg_driver/html/msg/SbgEkfEuler.html)
--   \'\'\'/sbg/ekf_nav\'\'\'
+-   **/sbg/ekf_nav**
     [SbgEkfNav](http://docs.ros.org/api/sbg_driver/html/msg/SbgEkfNav.html)
--   \'\'\'/sbg/ekf_quat\'\'\'
+-   **/sbg/ekf_quat**
     [SbgEkfQuat](http://docs.ros.org/api/sbg_driver/html/msg/SbgEkfQuat.html)
--   \'\'\'/sbg/ekf_event{A,B,C,D,E}\'\'\'
+-   **/sbg/ekf_event{A,B,C,D,E}**
     [SbgEvent](http://docs.ros.org/api/sbg_driver/html/msg/SbgEvent.html)
--   \'\'\'/sbg/gps_hdt\'\'\'
+-   **/sbg/gps_hdt**
     [SbgGpsHdt](http://docs.ros.org/api/sbg_driver/html/msg/SbgGpsHdt.html)
--   \'\'\'/sbg/gps_pos\'\'\'
+-   **/sbg/gps_pos**
     [SbgGpsPos](http://docs.ros.org/api/sbg_driver/html/msg/SbgGpsPos.html)
--   \'\'\'/sbg/gps_raw\'\'\'
+-   **/sbg/gps_raw**
     [SbgGpsRaw](http://docs.ros.org/api/sbg_driver/html/msg/SbgGpsRaw.html)
--   \'\'\'/sbg/gps_vel\'\'\'
+-   **/sbg/gps_vel**
     [SbgGpsVel](http://docs.ros.org/api/sbg_driver/html/msg/SbgGpsVel.html)
--   \'\'\'/sbg/imu_data\'\'\'
+-   **/sbg/imu_data**
     [SbgImuData](http://docs.ros.org/api/sbg_driver/html/msg/SbgImuData.html)
--   \'\'\'/sbg/imu_short\'\'\'
+-   **/sbg/imu_short**
     [SbgImuShort](http://docs.ros.org/api/sbg_driver/html/msg/SbgImuShort.html)
--   \'\'\'/sbg/mag\'\'\'
+-   **/sbg/mag**
     [SbgMag](http://docs.ros.org/api/sbg_driver/html/msg/SbgMag.html)
--   \'\'\'/sbg/mag_calib\'\'\'
+-   **/sbg/mag_calib**
     [SbgMagCalib](http://docs.ros.org/api/sbg_driver/html/msg/SbgMagCalib.html)
--   \'\'\'/sbg/odo_vel\'\'\'
+-   **/sbg/odo_vel**
     [SbgOdoVel](http://docs.ros.org/api/sbg_driver/html/msg/SbgOdoVel.html)
--   \'\'\'/sbg/ship_motion\'\'\'
+-   **/sbg/ship_motion**
     [SbgShipMotion](http://docs.ros.org/api/sbg_driver/html/msg/SbgShipMotion.html)
--   \'\'\'/sbg/utc_time\'\'\'
+-   **/sbg/utc_time**
     [SbgUtcTime](http://docs.ros.org/api/sbg_driver/html/msg/SbgUtcTime.html)
 
 ### ROS standard messages
@@ -140,32 +140,27 @@ SBG message protocol.
 In order to define ROS standard topics, it requires sometimes several
 SBG messages to be merged. You have to active the needed SBG outputs.
 
--   \'\'\'/imu/data\'\'\', IMU dara, requires \'\'\'/sbg/imu_data\'\'\'
-    and \'\'\'/sbg/ekf_quat\'\'\'
--   \'\'\'/imu/temp\'\'\', IMU temperature, requires
-    \'\'\'/sbg/imu_data\'\'\'
--   \'\'\'/imu/velocity\'\'\', IMU velocity data, requires
-    \'\'\'/sbg/imu_data\'\'\'
--   \'\'\'/imu/mag\'\'\', IMU magnetic field, requires
-    \'\'\'/sbg/mag\'\'\'
--   \'\'\'/imu/pres\'\'\', IMU pressure data, requires
-    \'\'\'/sbg/air_data\'\'\'
--   \'\'\'/imu/pos_ecef\'\'\', Earth-Centered Earth_Fixed position,
-    requires \'\'\'/sbg/ekf_nav\'\'\'
--   \'\'\'/imu/utc_ref\'\'\', UTC time reference, requires
-    \'\'\'/sbg/utc_time\'\'\'
--   \'\'\'/imu/nav_sat_fix\'\'\', Navigation satellite, requires
-    \'\'\'/sbg/gps_pos\'\'\'
+-   **/imu/data**, IMU dara, requires **/sbg/imu_data** and
+    **/sbg/ekf_quat**
+-   **/imu/temp**, IMU temperature, requires **/sbg/imu_data**
+-   **/imu/velocity**, IMU velocity data, requires **/sbg/imu_data**
+-   **/imu/mag**, IMU magnetic field, requires **/sbg/mag**
+-   **/imu/pres**, IMU pressure data, requires **/sbg/air_data**
+-   **/imu/pos_ecef**, Earth-Centered Earth_Fixed position, requires
+    **/sbg/ekf_nav**
+-   **/imu/utc_ref**, UTC time reference, requires **/sbg/utc_time**
+-   **/imu/nav_sat_fix**, Navigation satellite, requires
+    **/sbg/gps_pos**
 
 ## Services
 
 The sbg_device_mag node handles the magnetic calibration for suitable
 devices. It uses services to control the calibration process.
 
--   \'\'\'/sbg/mag_calibration\'\'\'
+-   **/sbg/mag_calibration**
     [Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html),
     service to start/stop the magnetic calibration
--   \'\'\'/sbg/mag_calibration_save\'\'\',
+-   **/sbg/mag_calibration_save**,
     [Trigger](http://docs.ros.org/api/std_srvs/html/srv/Trigger.html),
     service to save the magnetic calibration.
 

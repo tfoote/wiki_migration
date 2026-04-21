@@ -3,16 +3,15 @@
 The main components of using TouchOSC with ROS are:
 
 -   The TouchOSC app for iPad or iPhones
--   A TouchOSC layout, which is composed of \'\'tabpages\'\'
--   The \`touchosc_bridge\` ROS node, which is composed of \'\'tabpage
-    handlers\'\'
+-   A TouchOSC layout, which is composed of *tabpages*
+-   The \`touchosc_bridge\` ROS node, which is composed of *tabpage
+    handlers*
 
 ### TouchOSC
 
-From hexler.net: \'\'\'TouchOSC is a modular OSC and MIDI control
-surface for iPhone / iPod Touch / iPad.\'\'\' It supports sending and
-receiving Open Sound Control messages over a Wi-Fi network using the UDP
-protocol.
+From hexler.net: **TouchOSC is a modular OSC and MIDI control surface
+for iPhone / iPod Touch / iPad.** It supports sending and receiving Open
+Sound Control messages over a Wi-Fi network using the UDP protocol.
 
 TouchOSC is published and created by hexler (<http://hexler.net>), and
 is available on the \[Apple App Store for

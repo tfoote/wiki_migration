@@ -1,6 +1,6 @@
 # Dynamic Robot Butlering
 
-\'\'\'Authors: Tobias Kunz and Sachin Chitta\'\'\'
+**Authors: Tobias Kunz and Sachin Chitta**
 
 -   The dynamic robot butlering project intends to allow a robot to move
     a tray really fast while carrying an object on it, similar to what a
@@ -25,7 +25,7 @@
 -   Use the instructions
     [here](http://kforge.ros.org/projects/tray_transfer/services/play_trajectory/)
     to get the package and make sure its in your ROS_PACKAGE_PATH.
-    Compile the package using \'\'rosmake play_trajectory\'\'.
+    Compile the package using *rosmake play_trajectory*.
 
 ```{=html}
 <!-- -->

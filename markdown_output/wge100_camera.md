@@ -88,16 +88,16 @@ URL can indicate that whatever camera is found should be used.
 
 There are three types of camera URLs:
 
--   \'\'\'name\'\'\' URLs indicate the name of the camera to be found.
-    You can set the name of a camera using the [set_name](#SetName)
-    utility. E.g.: `name://wide_stereo_l`
--   \'\'\'serial\'\'\' URLs indicate the serial number of the camera to
-    be found. E.g.: `serial://2701025`
--   \'\'\'any\'\'\' URLs will match any camera. E.g.: `any://`
+-   **name** URLs indicate the name of the camera to be found. You can
+    set the name of a camera using the [set_name](#SetName) utility.
+    E.g.: `name://wide_stereo_l`
+-   **serial** URLs indicate the serial number of the camera to be
+    found. E.g.: `serial://2701025`
+-   **any** URLs will match any camera. E.g.: `any://`
 
 If a URL matches more than one camera, none of them will be selected,
 and an error will be reported. This situation cannot happen with a
-\'\'\'serial\'\'\' URL as camera serial numbers are unique.
+**serial** URL as camera serial numbers are unique.
 
 ### Specifying an IP address
 
@@ -370,8 +370,8 @@ camera.
 
 ### Camera Discovery: discover
 
-The \'\'\'discover\'\'\' tool uses a broadcast packet to find cameras on
-the network. It can be run on a single network interface:
+The **discover** tool uses a broadcast packet to find cameras on the
+network. It can be run on a single network interface:
 
 ```
 $ rosrun wge100_camera discover eth1
@@ -382,23 +382,23 @@ Found camera serial://13 name://test MAC: 00:24:cd:00:00:83 iface: eth2:avahi cu
 $ rosrun wge100_camera discover
 Found camera serial://13 name://test MAC: 00:24:cd:00:00:83 iface: eth2:avahi current IP: 169.254.8.124, PCB rev: C HDL rev: 400 FW rev: 118
 ``` The IP address that is reported by the
-\'\'\'discover\'\'\' tool is the currently configured address for the
-camera. This may be different from the IP address stored in the
-camera\'s flash, and to which the camera defaults when it is reset. This
-IP may or may not be valid for the interface on which the camera is
-located, and it is quite possible that you will not be able to
-communicate with the camera at this particular IP address.
+**discover** tool is the currently configured address for the camera.
+This may be different from the IP address stored in the camera\'s flash,
+and to which the camera defaults when it is reset. This IP may or may
+not be valid for the interface on which the camera is located, and it is
+quite possible that you will not be able to communicate with the camera
+at this particular IP address.
 
 Sometimes a camera can be seen from multiple interfaces. The
-\'\'\'discover\'\'\' tool only reports the first interface on which a
-response is seen. The camera can nevertheless be configured to run from
-an interface other than the one on which it was reported.
+**discover** tool only reports the first interface on which a response
+is seen. The camera can nevertheless be configured to run from an
+interface other than the one on which it was reported.
 
 ### Camera Setup: set_name
 
 The camera name and IP address that are stored in the camera\'s flash
-can be accessed using the \'\'\'set_name\'\'\' tool. With a single
-camera URL argument, set_name reports the current settings.
+can be accessed using the **set_name** tool. With a single camera URL
+argument, set_name reports the current settings.
 
 ```
 $ rosrun wge100_camera set_name serial://15@169.254.8.200
@@ -423,8 +423,8 @@ Previous camera IP: 169.254.8.200
 ### Camera Intrinsics: set_calibration
 
 The camera intrinsics that are stored in the camera\'s flash can be
-accessed using the \'\'\'set_calibration\'\'\' tool. With a single
-camera URL argument, set_name reports the current settings.
+accessed using the **set_calibration** tool. With a single camera URL
+argument, set_name reports the current settings.
 
 ```
 $ rosrun wge100_camera set_calibration name://wide_stereo_l
@@ -446,17 +446,16 @@ service call to flash the intrinsics back onto the camera.
 
 ### Resetting a Camera: reset_cam
 
-The camera can be reset using the \'\'\'reset_cam\'\'\' command, which
-takes a single camera_url argument.
+The camera can be reset using the **reset_cam** command, which takes a
+single camera_url argument.
 
 ```
 $ rosrun wge100_camera reset_cam any://
-``` Note: The \'\'\'reconfigure_cam\'\'\' tool
-currently has the same effect as \'\'\'reset_cam\'\'\'. In future
-firmware versions \'\'\'reconfigure_cam\'\'\' will always cause the
-camera FPGA to reconfigure itself, whereas \'\'\'reset_cam\'\'\' may do
-a softer reset that resets all components without reconfiguring the
-FPGA.
+``` Note: The **reconfigure_cam** tool currently
+has the same effect as **reset_cam**. In future firmware versions
+**reconfigure_cam** will always cause the camera FPGA to reconfigure
+itself, whereas **reset_cam** may do a softer reset that resets all
+components without reconfiguring the FPGA.
 
 ### Advanced Command-Line Tools
 

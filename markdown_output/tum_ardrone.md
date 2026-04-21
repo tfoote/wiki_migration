@@ -64,11 +64,11 @@ with it.
 
 1\. Install the
 [ardrone_autonomy](http://github.com/AutonomyLab/ardrone_autonomy#installation)
-package: \'\'At the moment there are some minor changes to this package
+package: *At the moment there are some minor changes to this package
 required, the easiest way is to check it out from
 [this repository](http://github.com/tum-vision/ardrone_autonomy), which
 contains a slightly older, but well-tested and already modified
-version.\'\' To do this, run: ```
+version.* To do this, run: ```
 # cd into ros root dir
 roscd
 
@@ -98,9 +98,9 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/tum_ardrone
 
 # build package (may take up to 10 minutes)
 rosmake tum_ardrone
-``` \'\'Make
-shure, you have the correct branch of tum_ardrone for your ROS version
-(fuerte / hydro/groovy)\'\'
+``` *Make shure,
+you have the correct branch of tum_ardrone for your ROS version (fuerte
+/ hydro/groovy)*
 
 ### Run
 
@@ -145,18 +145,17 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
     ideally at a distance of 2m to 10m.
 -   read
     [Tips for good PTAM and Scale Estimation Performance](http://ros.org/wiki/tum_ardrone/drone_stateestimation#Tips_for_good_PTAM_and_Scale_Estimation_Performance)
--   load contents of file \'\'initDemo.txt\'\' (left, below the big text
-    field in the GUI)
--   click \'\'Clear and Send\'\' (best to click \'\'Reset\'\' first).
+-   load contents of file *initDemo.txt* (left, below the big text field
+    in the GUI)
+-   click *Clear and Send* (best to click *Reset* first).
 
 # \> drone will takeoff & initialize PTAM, then fly a small figure (1m up, 1m down, 1x1m horizontal square).
 
--   you can \'\'interrupt\'\' the figure anytime by interactively
-    setting a relative target: click on video (relative to current
-    position); see
+-   you can *interrupt* the figure anytime by interactively setting a
+    relative target: click on video (relative to current position); see
     [here](http://ros.org/wiki/tum_ardrone/drone_stateestimation#Video_Window).
-    \'\'\'First fly up at least 1m to facilitate a good scale estimate,
-    do not start e.g. by flying horizontally over uneven terrain.\'\'\'
+    -   First fly up at least 1m to facilitate a good scale estimate, do
+        not start e.g. by flying horizontally over uneven terrain.\*\*
 -   always have a finger on ESC or on the joystick for
     emergency-keyboard control.
 
@@ -211,9 +210,9 @@ assuming a plugged-in PS3 six-axis controller, with set rights.
 
 ## Notes
 
--   the channel \'\'/tum_ardrone/com\'\' is used for communication
-    between the nodes. to see what\'s going on internally, it is
-    generally a good idea to echo this channel.
+-   the channel */tum_ardrone/com* is used for communication between the
+    nodes. to see what\'s going on internally, it is generally a good
+    idea to echo this channel.
 
 ## Known Bugs & Issues
 

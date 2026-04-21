@@ -1,6 +1,6 @@
 ## Overview
 
-\'\'\'rosconsole_bridge\'\'\' is a package used in conjunction with
+**rosconsole_bridge** is a package used in conjunction with
 [console_bridge](console_bridge) and [rosconsole](rosconsole) for
 connecting [console_bridge](console_bridge)-based logging to
 [rosconsole](rosconsole)-based logging.

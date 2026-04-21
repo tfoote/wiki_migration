@@ -1,18 +1,17 @@
 ## Description
 
 The sections below describe the API of this package which allows
-ICP-based SLAM in 2D \'\'(x,y,phi)\'\'.
+ICP-based SLAM in 2D *(x,y,phi)*.
 
-The SLAM algorithm is a simple \'\'\'incremental map building\'\'\'
-using ICP to align 2D laser scans to the map, which can be either a
-\'\'\'point map\'\'\' or an \'\'\'occupancy grid map\'\'\'. \[For now,
-only point maps\]
+The SLAM algorithm is a simple **incremental map building** using ICP to
+align 2D laser scans to the map, which can be either a **point map** or
+an **occupancy grid map**. \[For now, only point maps\]
 
-Using this technique allows building \'\'\'small to mid-sized
-maps\'\'\', as long as errors do not grow excessively before closing any
-long loop. Building larger maps requires more advanced SLAM techniques.
-However, this simple icp-slam algorithm is an efficient and well-tested
-method which suffices for many practical situations.
+Using this technique allows building **small to mid-sized maps**, as
+long as errors do not grow excessively before closing any long loop.
+Building larger maps requires more advanced SLAM techniques. However,
+this simple icp-slam algorithm is an efficient and well-tested method
+which suffices for many practical situations.
 
 ## Further documentation
 

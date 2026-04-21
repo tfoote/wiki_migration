@@ -12,16 +12,16 @@ and around both linux and ros systems.
 An example of some of the functions included (this will quickly get
 outdated):
 
--   \'\'\'Network\'\'\'
+-   **Network**
 -   Wrapper around the \`ping\` command to monitor connectivity of
     remote machines.
--   \'\'\'Ros\'\'\'
+-   **Ros**
 -   Catkin package crawler, generates a complete index of all catkin
     packages.
 -   Rocon icon/msg converters
 -   Find [resource](ROS/Concepts#Names.Package_Resource_Names) helpers
 -   Retrieve the ros version in runtime.
--   \'\'\'System\'\'\'
+-   **System**
 -   Pythonic \`which\` command.
 -   Pid manipulators.
 -   A subprocess style \`Popen\` that automagically manages groups and

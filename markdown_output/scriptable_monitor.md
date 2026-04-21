@@ -4,10 +4,10 @@ some useful details about each script.
 
 # Example script
 
-Suppose we have a node that publishes current CPU usage to the
-\'\'\'/cpu\'\'\' topic. Each message contains an array named
-\'\'\'cores\'\'\' with usage information for each core. We also have a
-topic with configuration information: \'\'\'/config\'\'\'.
+Suppose we have a node that publishes current CPU usage to the **/cpu**
+topic. Each message contains an array named **cores** with usage
+information for each core. We also have a topic with configuration
+information: **/config**.
 
 Now we will create a simple script which will warn about high cpu usage.
 

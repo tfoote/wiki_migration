@@ -20,7 +20,7 @@ the /batteries_monitor topic.
 
 Package configuration files are:
 
-○ \'\'\'\\launch\\batteries_monitor_launch.launch\'\'\' - This launch
-file runs the batteries_monitor node. Users can specify the batteries
-minimum voltage limits. This file can be launched from the main launch
-file (komodo_launch.launch).
+○ **\\launch\\batteries_monitor_launch.launch** - This launch file runs
+the batteries_monitor node. Users can specify the batteries minimum
+voltage limits. This file can be launched from the main launch file
+(komodo_launch.launch).

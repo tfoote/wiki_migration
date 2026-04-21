@@ -1,27 +1,25 @@
-The \'\'explorer package\'\' utilizes frontier based exploration to
-discover environments autonomously operating a distributed multi-robot
-system. Beside frontier detection, coordinated and uncoordinated
-exploration strategies are available to select goal points. Coordinated
-exploration enhances robot distribution and reduces redundancy in
-exploration which result in improvement of efficiency in terms of
-exploration time.
+The *explorer package* utilizes frontier based exploration to discover
+environments autonomously operating a distributed multi-robot system.
+Beside frontier detection, coordinated and uncoordinated exploration
+strategies are available to select goal points. Coordinated exploration
+enhances robot distribution and reduces redundancy in exploration which
+result in improvement of efficiency in terms of exploration time.
 
 ## Overview
 
-The \'\'explorer package\'\' comprises multiple functionalities to
-perform frontier based exploration. Frontier detection is utilized on
-local and global costmaps to further select navigation goals in the
-environment to proceed with exploration. The assignment of robots to
-goals is accomplished according to coordinated and uncoordinated
-exploration strategies being applied for the distributed multi-robot
-system.
+The *explorer package* comprises multiple functionalities to perform
+frontier based exploration. Frontier detection is utilized on local and
+global costmaps to further select navigation goals in the environment to
+proceed with exploration. The assignment of robots to goals is
+accomplished according to coordinated and uncoordinated exploration
+strategies being applied for the distributed multi-robot system.
 
 Auctioning thereby ensures negotiation among available goals to
 coordinate efficiently, distributing robots among the environment by
 minimizing the overall travel path. Additionally to frontier detection
-and selection, the \'\'explorer package\'\' is concerned with navigation
-to goal points by incorporating a simple action client utilizing
-\'\'move_base\'\'.
+and selection, the *explorer package* is concerned with navigation to
+goal points by incorporating a simple action client utilizing
+*move_base*.
 
 ## Exploration
 

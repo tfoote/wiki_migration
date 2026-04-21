@@ -1,6 +1,6 @@
 # Vizanti
 
-\'\'\'Web Visualizer & Mission Planner for ROS\'\'\'
+**Web Visualizer & Mission Planner for ROS**
 
 Vizanti is a web-based visualization and control tool developed for more
 convenient operation of outdoor robots running the Robot Operating

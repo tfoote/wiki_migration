@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
 
-\'\'\'Please note: This package has been superseeded by
-[nerian_stereo](nerian_stereo)\'\'\'
+**Please note: This package has been superseeded by
+[nerian_stereo](nerian_stereo)**
 
 ------------------------------------------------------------------------
 

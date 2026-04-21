@@ -8,11 +8,10 @@ needs):
 
 -   \`/camera_rect/image_rect\`: a \<\<MsgLink(sensor_msgs/Image)\>\>
     topic which contains the image (e.g. a frame of a video stream
-    coming from a camera). \'\'The image is assumed to be undistorted,
-    i.e. produced by a pinhole camera\'\'. Laptop webcams typically
-    already provide such an image while other cameras may require
-    undistortion by an intermediate node such as
-    [image_proc](image_proc);
+    coming from a camera). *The image is assumed to be undistorted, i.e.
+    produced by a pinhole camera*. Laptop webcams typically already
+    provide such an image while other cameras may require undistortion
+    by an intermediate node such as [image_proc](image_proc);
 -   \`/camera_rect/camera_info\`: a
     \<\<MsgLink(sensor_msgs/CameraInfo)\>\> topic which contains the
     camera calibration matrix in \`/camera/camera_info/K\`. One can
@@ -66,8 +65,8 @@ cite:
     Pasadena, CA 91109, USA, December 2017.
 -   J. Wang and E. Olson,
     \"[AprilTag 2: Efficient and robust fiducial detection](http://ieeexplore.ieee.org/document/7759617/),\"
-    in \'\'Proceedings of the IEEE/RSJ International Conference on
-    Intelligent Robots and Systems (IROS)\'\', October 2016.
+    in *Proceedings of the IEEE/RSJ International Conference on
+    Intelligent Robots and Systems (IROS)*, October 2016.
 
 ```
 @mastersthesis{malyuta:2017mt,

@@ -1,11 +1,10 @@
 ## Installation
 
-\'\'\'Ubuntu\'\'\': We are only supporting the phidgets_ros package on
-Ubuntu. This package should just work with
-[phidgets_py_api](phidgets_py_api) and
-[foote-ros-pkg/phidgets/phidgetspp_c_api](phidgetspp_c_api) nodes.
+**Ubuntu**: We are only supporting the phidgets_ros package on Ubuntu.
+This package should just work with [phidgets_py_api](phidgets_py_api)
+and [foote-ros-pkg/phidgets/phidgetspp_c_api](phidgetspp_c_api) nodes.
 
-\'\'\'MacOSX\'\'\': You must do the following:
+**MacOSX**: You must do the following:
 
 1\. Download and install the Mac version of the Phidgets, Inc. driver
 library:

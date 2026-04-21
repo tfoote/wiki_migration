@@ -14,7 +14,7 @@ using ecl::is_unsigned;
 using ecl::is_byte;
 ```
 
-If outside ros, you will also need to link to \'\'ecl_type_traits\'\'.
+If outside ros, you will also need to link to *ecl_type_traits*.
 
 ## Tutorials
 

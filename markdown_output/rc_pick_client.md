@@ -27,8 +27,8 @@ For detail description of the modules check the following link:
 -   \`host\`: The IP address or hostname of the rc_visard that should be
     calibrated.
 
-\'\'\'Since version 2.7, the device ID can be used instead of the
-sensor\'s IP address:\'\'\'
+**Since version 2.7, the device ID can be used instead of the sensor\'s
+IP address:**
 
 -   \`device\`: The ID of the device, i.e. Roboception rc_visard sensor.
     This can be either:

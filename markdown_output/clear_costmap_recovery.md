@@ -12,8 +12,8 @@ given radius away from the robot. It adheres to the
 
 The \`clear_costmap_recovery::ClearCostmapRecovery\` object exposes its
 functionality as a [ C++ ROS Wrapper](navigation/ROS_Wrappers ). It
-operates within a ROS namespace (assumed to be \'\'\'name\'\'\' from
-here on) specified on initialization. It adheres to the
+operates within a ROS namespace (assumed to be **name** from here on)
+specified on initialization. It adheres to the
 \`nav_core::RecoveryBehavior\` interface found in the
 [nav_core](nav_core) package.
 

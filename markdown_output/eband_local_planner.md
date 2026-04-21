@@ -64,7 +64,7 @@ under which it was launched, typically \`EBandPlannerROS\`, e.g.:
   </node>
 ```
 
-\'\'\'Common Parameters \'\'\'
+**Common Parameters **
 
 ```clearsilver
 param {
@@ -88,7 +88,7 @@ param {
 }
 ```
 
-\'\'\'Visualization Parameters \'\'\'
+**Visualization Parameters **
 
 ```clearsilver
 param {
@@ -100,7 +100,7 @@ param {
 }
 ```
 
-\'\'\'Elastic Band Parameters \'\'\'
+**Elastic Band Parameters **
 
 ```clearsilver
 param {
@@ -148,7 +148,7 @@ param {
 }
 ```
 
-\'\'\'Trajectory Controller Parameters \'\'\'
+**Trajectory Controller Parameters **
 
 ```clearsilver
 param {

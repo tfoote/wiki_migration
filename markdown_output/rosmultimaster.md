@@ -89,7 +89,7 @@ implement without any major changes to the rosmultimaster backend.
 ### No control over order of initialization
 
 All of your Subscribers, Publishers, Services, and !ServiceProxies are
-initialized \'\'in that order\'\' as soon as you call adaptor.start(),
+initialized *in that order* as soon as you call adaptor.start(),
 regardless of the order in which you created them. If this order of
 initialization really matters for your application, you can get around
 this problem by using several adaptors connected to the same ip and port
@@ -112,7 +112,7 @@ implementation of rosmultimaster.
 
 ### No wait_for_service
 
-\'\'\'Issue:\'\'\'When using !ServiceProxy\'s in rosmultimaster, it is
+**Issue:**When using !ServiceProxy\'s in rosmultimaster, it is
 unnecessary (and currently impossible) to make any kind of
 \"wait_for_service\" call. Simply calling
 adaptor.!ServiceProxy(\'topic\', !ServiceClass) will automatically cause
@@ -120,7 +120,7 @@ a call to rospy.wait_for_service(\'topic\') to be made internally when
 adaptor.start() is called. This is not ideal, since the goal of Adaptor
 is to mimic the rospy API as much as possible.
 
-\'\'\'Rationale:\'\'\' Why this break with the rospy API is necessary:
+**Rationale:** Why this break with the rospy API is necessary:
 
 -   I assume that rospy.wait_for_service blocks until the service
     becomes available. Since no ROS stuff is initialized until

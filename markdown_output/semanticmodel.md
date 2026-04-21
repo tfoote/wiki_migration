@@ -92,10 +92,10 @@ detailed here.
 ```{=html}
 <!-- -->
 ```
--   \`plane_distance\` defines how far \'\'above\'\' the plane points
-    must be to be object candidates; this keeps points that are actually
-    part of the table from being accidentally treated as candidate
-    object points.
+-   \`plane_distance\` defines how far *above* the plane points must be
+    to be object candidates; this keeps points that are actually part of
+    the table from being accidentally treated as candidate object
+    points.
 
 ```{=html}
 <!-- -->

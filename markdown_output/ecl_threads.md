@@ -51,7 +51,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 ```
 
-If outside ros, you will also need to link to \'\'ecl_threads\'\'.
+If outside ros, you will also need to link to *ecl_threads*.
 
 ## Tutorials
 

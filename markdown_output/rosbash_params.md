@@ -124,8 +124,7 @@ rosbash_unused_argv =
 
 ### rosbash_param
 
-\'\'\'Be sure to call \`rosbash_init_node\` before calling this
-function!\'\'\'
+**Be sure to call \`rosbash_init_node\` before calling this function!**
 
 #### Arguments
 

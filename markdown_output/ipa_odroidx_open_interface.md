@@ -60,26 +60,25 @@ extended to poll the voltage reading from the battery.
 ### Interaction with \"turtlebot_node\"
 
 Since the motor controller board is required to interact with the
-\'\'\'turtlebot_node\'\'\' package
-(<https://bitbucket.org/ipa-josh/turtlebot>, branch: ipa_create) it is
-expected of it to implement certain protocol commands to ensure
-compatibility. The turtlebot_node first sets the the motor controller
-board to its required state (Off, Passive, Safe and Full) and expects
-the motor controller to save the state as specified as it uses it as a
-check that the board is communicating properly. Since currently there is
-no difference in any of the modes implemented on the motor controller
-board, only a variable is being used to store the state as requested by
-turtlebot_node. But for future work or if is required, the code for the
-motor controller board can be extended to implement this and also out in
-conditions for checking the current state of the board before any action
-is taken.
+**turtlebot_node** package (<https://bitbucket.org/ipa-josh/turtlebot>,
+branch: ipa_create) it is expected of it to implement certain protocol
+commands to ensure compatibility. The turtlebot_node first sets the the
+motor controller board to its required state (Off, Passive, Safe and
+Full) and expects the motor controller to save the state as specified as
+it uses it as a check that the board is communicating properly. Since
+currently there is no difference in any of the modes implemented on the
+motor controller board, only a variable is being used to store the state
+as requested by turtlebot_node. But for future work or if is required,
+the code for the motor controller board can be extended to implement
+this and also out in conditions for checking the current state of the
+board before any action is taken.
 
 After initialization, depending on which turtlebot driver is being used,
 turtlebot_node repeatedly starts to send a \"QUERY\" command to the
 controller board. In case of this package, it is preferred that the
-\'\'\'ipa_create\'\'\' robot type be used since it introduces a custom
-query field \"100\" which responds with the all the information from
-QUERY command field \"6\" and also the encoder values from the motors
+**ipa_create** robot type be used since it introduces a custom query
+field \"100\" which responds with the all the information from QUERY
+command field \"6\" and also the encoder values from the motors
 attached. In case, the turtlebot_node senses a change in the
 \"/cmd_vel\" topic with respect to the velocity, it is required to
 generate a \"DRIVE DIRECT\" command for the controller board. The

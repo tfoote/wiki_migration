@@ -116,6 +116,6 @@ autonomous operation has been suspended using the green triangle button
 (7). Otherwise, only the \"START\" (5), red \"O\" (6), and green
 triangle (7) buttons are active.
 
-/!\\ \'\'Be very careful resuming autonomous operation after being
+/!\\ *Be very careful resuming autonomous operation after being
 suspended. The navigator does not yet fully support that and may attempt
-dangerous maneuvers.\'\'
+dangerous maneuvers.*

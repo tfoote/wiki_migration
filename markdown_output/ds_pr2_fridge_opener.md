@@ -1,7 +1,7 @@
 The package provides an action server for opening and closing the fridge
 with the PR2 robot as well as an action server for moving the base. In
-the drink serving demo the closing of the fridge action was\'\'\'
-not\'\'\' used. ![](attachment:openning_fridge.jpg)
+the drink serving demo the closing of the fridge action was** not**
+used. ![](attachment:openning_fridge.jpg)
 
 # Usage:
 

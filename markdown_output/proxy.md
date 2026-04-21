@@ -1,5 +1,4 @@
-\'\'\'proxy\'\'\' is a multi-topic, on-demand repeater for message
-streams.
+**proxy** is a multi-topic, on-demand repeater for message streams.
 
 ## Usage
 

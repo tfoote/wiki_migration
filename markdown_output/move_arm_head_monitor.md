@@ -127,8 +127,8 @@ contains this code.
 
 Below is an example of how the above launch file can be used to launch
 the \`move_arm\` node properly. Note the remaps for
-\'\'\'head_monitor_action\'\'\' and \'\'\'head_look_action\'\'\' and the
-various params with with the prefix \'\'\'head_monitor\_\'\'\'
+**head_monitor_action** and **head_look_action** and the various params
+with with the prefix **head_monitor\_**
 
 ```
 <launch>

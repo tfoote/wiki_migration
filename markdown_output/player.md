@@ -15,6 +15,5 @@ Two paths to minimizing the cost of building Player:
 
 -   Extract the driver code that we\'re using and put it in the ROS
     packages where needed. That is, don\'t build Player at all.
--   Only build those parts of Player that we actually use.
-    \'\'\'Done\'\'\': the build is now approx 25 seconds, including the
-    initial download.
+-   Only build those parts of Player that we actually use. **Done**: the
+    build is now approx 25 seconds, including the initial download.

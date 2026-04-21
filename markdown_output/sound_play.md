@@ -217,9 +217,9 @@ Playing "/usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav".
 
 ### Message Format
 
-\'\'\'Programmers should use the C++/Python bindings to send messages to
-\`robotsound\`, rather than creating messages themselves.\'\'\' If you
-need the information in this section for something other than satisfying
+**Programmers should use the C++/Python bindings to send messages to
+\`robotsound\`, rather than creating messages themselves.** If you need
+the information in this section for something other than satisfying
 curiosity, you are probably doing something wrong.
 
 Sound commands are issued to \`soundplay_node.py\` via a
@@ -229,14 +229,14 @@ things: a sound, and what to do with that sound.
 The sound is defined by the \`sound\` (int) and \`arg\` (string) fields
 of the message, and can be one of four types:
 
--   \'\'a built-in sound\'\', identified by its identifier in \`sound\`
--   \'\'a file\'\', identified by \`PLAY_FILE\` in \`sound\` and the
-    file name (absolute path on the computer running
-    \`soundplay_node.py\`) in \`arg\`
--   \'\'some text to be synthesized into speech\'\', identified by
-    \`SAY\` in \`sound\` and the text in \`arg\`
--   \'\'the wildcard sound\'\', that can only be used when stopping
-    sound, identified by \`ALL\` in \`sound\`
+-   *a built-in sound*, identified by its identifier in \`sound\`
+-   *a file*, identified by \`PLAY_FILE\` in \`sound\` and the file name
+    (absolute path on the computer running \`soundplay_node.py\`) in
+    \`arg\`
+-   *some text to be synthesized into speech*, identified by \`SAY\` in
+    \`sound\` and the text in \`arg\`
+-   *the wildcard sound*, that can only be used when stopping sound,
+    identified by \`ALL\` in \`sound\`
 
 The action that can be carried out on a sound can be:
 

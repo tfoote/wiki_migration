@@ -10,30 +10,29 @@ gui (if so desired).\
 \
 The centrals components of the face_contour_detector are:
 
--   \'\'\'face_areas.py:\'\'\' Provides a service, which takes an image
-    of a mask. The mask marks where the face is in the image. It then
-    tries to find the areas which contain the nose, the eyes and the
-    mouth. The coordinates of these areas will then be replied.
--   \'\'\'autoselect_service:\'\'\' Provides a service which takes an
-    image of a face and a mask image. First it blurs and deletes the
-    area, not marked mask. It then tries to find good parameters for the
-    gaussian blur and a canny filter, so that a good contour image will
-    result. These parameters will be chosen by trying different
-    parameter combinations and returning the best ones (look at \"How
-    does it work\" section for more informations). It also asks the
-    \'\'\'auto_selector.py\'\'\' for parameter proposals and finally
-    sends all parameter proposals to the \'\'\'gui_service.py\'\'\'.
--   \'\'\'auto_selector.py:\'\'\' The user can rate edge images - all
-    these information are stored in a sqlite database. auto_selector.py
+-   **face_areas.py:** Provides a service, which takes an image of a
+    mask. The mask marks where the face is in the image. It then tries
+    to find the areas which contain the nose, the eyes and the mouth.
+    The coordinates of these areas will then be replied.
+-   **autoselect_service:** Provides a service which takes an image of a
+    face and a mask image. First it blurs and deletes the area, not
+    marked mask. It then tries to find good parameters for the gaussian
+    blur and a canny filter, so that a good contour image will result.
+    These parameters will be chosen by trying different parameter
+    combinations and returning the best ones (look at \"How does it
+    work\" section for more informations). It also asks the
+    **auto_selector.py** for parameter proposals and finally sends all
+    parameter proposals to the **gui_service.py**.
+-   **auto_selector.py:** The user can rate edge images - all these
+    information are stored in a sqlite database. auto_selector.py
     tries(!) to use the information to find parameters for new images.
--   \'\'\'gui_service.py:\'\'\' Displays a gui which allows you to
-    choose one of the received proposals and then modify the parameters
-    and areas. It also allows you to rate your result (which will
-    imporve the results provided by \'\'\'auto_selector.py\'\'\')
--   \'\'\'filter_services:\'\'\' Provides a service which allows to
-    apply filters to image areas. It also calculate a number of
-    properties (number of graphs, graphmass \...) that describe the
-    result.
+-   **gui_service.py:** Displays a gui which allows you to choose one of
+    the received proposals and then modify the parameters and areas. It
+    also allows you to rate your result (which will imporve the results
+    provided by **auto_selector.py**)
+-   **filter_services:** Provides a service which allows to apply
+    filters to image areas. It also calculate a number of properties
+    (number of graphs, graphmass \...) that describe the result.
 
 ## Tutorial
 

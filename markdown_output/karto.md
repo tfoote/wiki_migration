@@ -1,7 +1,7 @@
-\'\'\'NOTE: From [ROS Hydro](hydro) functionality of this package is
-migrated into [slam_karto](slam_karto)\'\'\'.
+**NOTE: From [ROS Hydro](hydro) functionality of this package is
+migrated into [slam_karto](slam_karto)**.
 
-\'\'\' Warning, this documentation is not stable \'\'\'
+** Warning, this documentation is not stable **
 
 ## Hardware Requirements
 
@@ -43,7 +43,7 @@ Linking CXX executable ../bin/OpenKarto_Tutorial2
 ```
 
 In the bin directory, you should have both tutorials built and in the
-lib directory you should have \'\'libOpenKarto_32.so\'\'
+lib directory you should have *libOpenKarto_32.so*
 
 ## Tutorials
 

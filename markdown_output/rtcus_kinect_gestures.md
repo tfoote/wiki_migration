@@ -29,7 +29,7 @@ Basically the first command set up the environment: rviz, kinect and
 opennitrack (skeleton traking) to start the recording, the second
 command records the skeleton state during the time (20 secs).
 
-\'\'\'RECOMENDED\'\'\'
+**RECOMENDED**
 
 You should store the bag file into the
 rtcus_kinect_gestures/data/bags/\<gesture_name_folder\>/\<bag_gesture_file.bag\>
@@ -48,7 +48,7 @@ $ wget ftp://anon:anon@conde.eii.us.es/gestures_bags.tar.gz
  $ zcat gestures_bags.tar.gz | tar xvf - -C `rospack find rtcus_kinect_gestures`/data/bags
 ``` Please warn us if this link is broken.
 
-\'\'\'OPTIONAL\'\'\'
+**OPTIONAL**
 
 After having your raw kinect gesture bag file check if it has been
 created properly. For this propose you can use a launch file designed in
@@ -121,7 +121,7 @@ $ rosrun rtcus_kinect_gestures batch_models_from_gesture_database.py --gesture w
  $ rosrun rtcus_kinect_gestures batch_models_from_gesture_database.py --gesture come_here_for_training --negative-gestures wave_for_training
 ```
 
-\'\'\'ALTERNATIVE\'\'\' Download built models: ```
+**ALTERNATIVE** Download built models: ```
 $ wget http://rtc-us-ros-pkg.svn.sourceforge.net/viewvc/rtc-us-ros-pkg/datasets/gesture_recognition_datasets.zip?revision=261 -O gestures_bags.zip
  $ unzip gestures_bags.zip
 ```

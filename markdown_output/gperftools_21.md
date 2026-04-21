@@ -32,14 +32,14 @@ find_package(catkin REQUIRED COMPONENTS
 
 You can choose to use tcmalloc, the gperftools profiler, or both.
 
-\'\'\'tcmalloc:\'\'\' ```
+**tcmalloc:** ```
 target_link_libraries(your_target ${GPERFTOOLS_TCMALLOC})
 ```
 
-\'\'\'profiler:\'\'\' ```
+**profiler:** ```
 target_link_libraries(your_target ${GPERFTOOLS_PROFILER})
 ```
 
-\'\'\'both:\'\'\' ```
+**both:** ```
 target_link_libraries(your_target ${GPERFTOOLS_TCMALLOC_AND_PROFILER})
 ```

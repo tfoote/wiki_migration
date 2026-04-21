@@ -3,13 +3,11 @@ doxygen.
 
 ## Links
 
--   \'\'Hudson Node Url:\'\'
-    <http://build.willowgarage.com/computer/win7-64/>
--   \'\'Hudson Project Url:\'\'
-    <http://build.willowgarage.com/job/roswin/>
--   \'\'Hudson Manual Trigger Url:\'\'
+-   *Hudson Node Url:* <http://build.willowgarage.com/computer/win7-64/>
+-   *Hudson Project Url:* <http://build.willowgarage.com/job/roswin/>
+-   *Hudson Manual Trigger Url:*
     <http://build.willowgarage.com/job/roswin/build?token=yujin>
--   \'\'Java for Windows Url:\'\'
+-   *Java for Windows Url:*
     <http://java.com/en/download/help/windows_manual_download.xml>
 
 ## Machine Setup
@@ -17,9 +15,9 @@ doxygen.
 -   Install [java](http://www.java.com/en/download/index.jsp)
 -   Create a user \`rosbuild\`.
 
-This is an \'\'ugly\'\', but necessary constraint of the script on the
-hudson server. It also needs a specific directory in which to operate
-(i.e. look for the script that needs to be run).
+This is an *ugly*, but necessary constraint of the script on the hudson
+server. It also needs a specific directory in which to operate (i.e.
+look for the script that needs to be run).
 
 -   Create the working directory and download a few scripts.
 

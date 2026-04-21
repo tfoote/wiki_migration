@@ -37,13 +37,13 @@ roslaunch cob3_3_arm_navigation cob3_3_arm_navigation.launch
 start all nodes necessary to perform collision-free path planning
 (considering self-collision, known obstacles as well as sensor data).
 
-\'\'\'OR\'\'\'
+**OR**
 
 Call ```
 roslaunch cob3_3_arm_navigation cob3_3_arm_navigation_static.launch
 ``` to start all nodes necessary to perform
 collision-free path planning (considering self-collision and known
-obstacles but \'\'\'NO\'\'\' sensor data).
+obstacles but **NO** sensor data).
 
 ### Perform collision-free movements
 

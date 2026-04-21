@@ -97,8 +97,8 @@ Every time a controller cycle is started, the
 can be accessed by all controllers through the
 \`pr2_mechanism_model::RobotState\`. When a controller e.g. needs to
 compute the duration between two consecutive update loops, it should
-\'\'\'use the controller time, not the system time\'\'\'. In contrast to
-the system time, the controller time is not affected by the time other
+**use the controller time, not the system time**. In contrast to the
+system time, the controller time is not affected by the time other
 controllers consume in their update loop. Moreover, the controller time
 is the best measure of when the communication with the hardware actually
 occurs. To get access to the controller time, use:

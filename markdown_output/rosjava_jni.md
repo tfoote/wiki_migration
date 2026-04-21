@@ -4,8 +4,8 @@ For a pure Java implementation, please see [rosjava_core](rosjava_core).
 
 ## Package Details
 
-\'\'\'Rosjava has been moved to a different repository and got released.
-Get the current version with the following command:\'\'\'
+**Rosjava has been moved to a different repository and got released. Get
+the current version with the following command:**
 
 ```
 git clone https://github.com/gheorghelisca/rosjava_jni.git client_rosjava_jni
@@ -32,17 +32,17 @@ and
 
 Right now, the rosjava code is broken up into three packages.
 
--   \'\'\'ros\'\'\', which contains all of the interfaces that should be
-    used by clients of the library.
--   \'\'\'ros.communication\'\'\', which has the abstract
-    [Message](Messages) and [Services](Services) classes, as well as
-    Time and Duration [message field types](msg).
--   \'\'\'ros.roscpp\'\'\', which contains specific implementations of
-    the \`ros\` interfaces that call into roscpp via JNI, and should
-    eventually be replaced by a pure Java implementation. \'\'Users of
-    the client library should never refer to anything in this package;
-    they should only use the public API in the \`ros\` and
-    \`ros.communication\` packages\'\'.
+-   **ros**, which contains all of the interfaces that should be used by
+    clients of the library.
+-   **ros.communication**, which has the abstract [Message](Messages)
+    and [Services](Services) classes, as well as Time and Duration
+    [message field types](msg).
+-   **ros.roscpp**, which contains specific implementations of the
+    \`ros\` interfaces that call into roscpp via JNI, and should
+    eventually be replaced by a pure Java implementation. *Users of the
+    client library should never refer to anything in this package; they
+    should only use the public API in the \`ros\` and
+    \`ros.communication\` packages*.
 
 ### Messages and Services
 
@@ -62,30 +62,30 @@ types named \"Request\" and \"Response\".
 
 ROS Message data types are mapped to Java data types as follows:
 
-  -- -------------------------- -- -------------------------------------- --
-     \'\'\'Message type\'\'\'      \'\'\'Java type\'\'\'                  
-     string                        java.lang.String                       
-     time                          ros.communication.Time                 
-     duration                      ros.communication.Duration             
-     byte, char, int8              byte                                   
-     uint8, int16                  short                                  
-     uint16, int32                 int                                    
-     uint32, int64, uint64         long                                   
-     float32                       float                                  
-     float64                       double                                 
-     bool                          boolean                                
-     type\[\]                      type\[\] for primitive types           
-     type\[\]                      !ArrayList\<type\> for complex types   
-     type\[5\]                     type\[5\]                              
-  -- -------------------------- -- -------------------------------------- --
+  -- ----------------------- -- -------------------------------------- --
+     **Message type**           **Java type**                          
+     string                     java.lang.String                       
+     time                       ros.communication.Time                 
+     duration                   ros.communication.Duration             
+     byte, char, int8           byte                                   
+     uint8, int16               short                                  
+     uint16, int32              int                                    
+     uint32, int64, uint64      long                                   
+     float32                    float                                  
+     float64                    double                                 
+     bool                       boolean                                
+     type\[\]                   type\[\] for primitive types           
+     type\[\]                   !ArrayList\<type\> for complex types   
+     type\[5\]                  type\[5\]                              
+  -- ----------------------- -- -------------------------------------- --
 
-In particular, because Java lacks unsigned types, \'\'\'note that
-unsigned message types are currently mapped to Java\'s next bigger
-signed types\'\'\'. Since there is no next bigger type for \`long\`,
-\`uing64\` and \`int64\` are both mapped to \`long\`. Fixed size arrays
-are mapped to Java arrays. Variable size arrays over primitive types are
-also mapped to Java arrays to ensure that processing can be done
-efficiently. All other arrays are mapped to \`ArrayList\`s.
+In particular, because Java lacks unsigned types, **note that unsigned
+message types are currently mapped to Java\'s next bigger signed
+types**. Since there is no next bigger type for \`long\`, \`uing64\` and
+\`int64\` are both mapped to \`long\`. Fixed size arrays are mapped to
+Java arrays. Variable size arrays over primitive types are also mapped
+to Java arrays to ensure that processing can be done efficiently. All
+other arrays are mapped to \`ArrayList\`s.
 
 Message constants are mapped to final static members of a message class.
 

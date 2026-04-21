@@ -2,25 +2,23 @@ Github: \*<https://github.com/Terabee/teraranger>
 
 ## Supported Hardware
 
-This package works with TeraRanger \'\'\'Evo Mini\'\'\', TeraRanger
-\'\'\'Evo 60m\'\'\', TeraRanger \'\'\'Evo 600Hz\'\'\', TeraRanger
-\'\'\'Evo 3m\'\'\' , TeraRanger \'\'\'Evo Thermal 33/90\'\'\',
-TeraRanger \'\'\'Evo 64px\'\'\', TeraRanger \'\'\'One\'\'\' and
-TeraRanger \'\'\'Duo\'\'\'. You can find more information below.
+This package works with TeraRanger **Evo Mini**, TeraRanger **Evo 60m**,
+TeraRanger **Evo 600Hz**, TeraRanger **Evo 3m** , TeraRanger **Evo
+Thermal 33/90**, TeraRanger **Evo 64px**, TeraRanger **One** and
+TeraRanger **Duo**. You can find more information below.
 
-TeraRanger \'\'\'Evo 60m\'\'\' is the long range Time-of-Flight distance
-sensor of the TeraRanger product family. It provides calibrated distance
+TeraRanger **Evo 60m** is the long range Time-of-Flight distance sensor
+of the TeraRanger product family. It provides calibrated distance
 readings in millimetres and has a range up to 60m, whilst remaining
 lightweight and small! Instead of laser, TeraRanger Evo uses LED
 technology. React faster and detect obstacles with greater assurance,
-TeraRanger \'\'\'Evo 600Hz\'\'\' is perfect for high-speed collision
-avoidance and object detection solution! With its 10cm to 3m range,
-100Hz fixed update rate and greater accuracy(+/-2cm), the TeraRanger
-\'\'\'Evo 3m\'\'\', is optimized for close-range distance measurement.
+TeraRanger **Evo 600Hz** is perfect for high-speed collision avoidance
+and object detection solution! With its 10cm to 3m range, 100Hz fixed
+update rate and greater accuracy(+/-2cm), the TeraRanger **Evo 3m**, is
+optimized for close-range distance measurement.
 ![](attachment:TeraRanger_Evo.jpg)
 
-For more information about TeraRanger \'\'\'Evo 60m/Evo 600Hz/Evo
-3m\'\'\':
+For more information about TeraRanger **Evo 60m/Evo 600Hz/Evo 3m**:
 
 -   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-evo-60m//>
 
@@ -38,19 +36,19 @@ For more information about TeraRanger \'\'\'Evo 60m/Evo 600Hz/Evo
 <!-- -->
 ```
 -   <https://www.terabee.com/sensors-modules/lidar-tof-range-finders//>
-    \-\-\-\-- TeraRanger \'\'\'Evo Mini\'\'\'
+    \-\-\-\-- TeraRanger **Evo Mini**
     ![](attachment:TeraRanger_EvoMini.jpg)
 
-For more information about TeraRanger \'\'\'Evo Mini\'\'\':
+For more information about TeraRanger **Evo Mini**:
 
 -   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-evo-mini/>
     \-\-\-\--
 
-TeraRanger \'\'\'Evo Thermal 33/90\'\'\' Monitor heat variations, detect
+TeraRanger **Evo Thermal 33/90** Monitor heat variations, detect
 movement and capture the unseen! In a compact and affordable design,
 ideal for OEM integration in Smart City, Smart building, Robotics and
-Industrial applications. For more information about TeraRanger \'\'\'Evo
-Thermal 33/90\'\'\': ![](attachment:TeraRanger_Evo_Thermal_33_90.jpg)
+Industrial applications. For more information about TeraRanger **Evo
+Thermal 33/90**: ![](attachment:TeraRanger_Evo_Thermal_33_90.jpg)
 
 -   <https://www.terabee.com/shop/thermal-cameras/teraranger-evo-thermal-90/>
 
@@ -64,9 +62,9 @@ Thermal 33/90\'\'\': ![](attachment:TeraRanger_Evo_Thermal_33_90.jpg)
 ```
 -   <https://www.terabee.com/sensors-modules/thermal-cameras/> \-\-\-\--
 
-TeraRanger \'\'\'Evo 64px\'\'\' is a lightweight, high-performance
-multi-pixel sensor based on infrared Time-of-Flight (ToF) technology.
-For more information about TeraRanger \'\'\'Evo 64px\'\'\':
+TeraRanger **Evo 64px** is a lightweight, high-performance multi-pixel
+sensor based on infrared Time-of-Flight (ToF) technology. For more
+information about TeraRanger **Evo 64px**:
 ![](attachment:TeraRanger_Evo_64px.jpg)
 
 -   <https://www.terabee.com/shop/3d-tof-cameras/teraranger-evo-64px/>
@@ -76,11 +74,11 @@ For more information about TeraRanger \'\'\'Evo 64px\'\'\':
 ```
 -   <https://www.terabee.com/sensors-modules/3d-tof-cameras/> \-\-\-\--
 
-TeraRanger \'\'\'One\'\'\' is a lightweight, high-performance distance
+TeraRanger **One** is a lightweight, high-performance distance
 measurement sensor based on infrared Time-of-Flight (ToF) technology.
 ![](attachment:Teraranger_one.jpg)
 
-For more information about TeraRanger \'\'\'One\'\'\':
+For more information about TeraRanger **One**:
 
 -   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-one/>
 
@@ -95,7 +93,7 @@ For more information about TeraRanger \'\'\'One\'\'\':
 
 ![](attachment:Teraranger_duo.jpg)
 
-For more information about TeraRanger \'\'\'Duo\'\'\':
+For more information about TeraRanger **Duo**:
 
 -   <https://www.terabee.com/shop/lidar-tof-range-finders/teraranger-duo/>
 

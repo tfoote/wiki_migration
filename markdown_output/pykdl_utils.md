@@ -42,8 +42,7 @@ print 'J:', J
 
 For running all of the unit tests, you can either pass a URDF xml file
 to use or leave it blank and have the URDF pulled from the parameter
-\'\'/robot_description\'\' on the parameter server.
-```
+*/robot_description* on the parameter server. ```
 rosrun pykdl_utils kdl_parser.py [robot.xml]
 rosrun pykdl_utils kdl_kinematics.py [robot.xml]
 rosrun pykdl_utils joint_kinematics.py [robot.xml]

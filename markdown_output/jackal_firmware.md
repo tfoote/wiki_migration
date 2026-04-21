@@ -1,6 +1,5 @@
-The \'\'\'jackal_firmware\'\'\' package distributes
-[Jackal](Robots/Jackal)\'s proprietary firmware binary from Clearpath
-Robotics.
+The **jackal_firmware** package distributes [Jackal](Robots/Jackal)\'s
+proprietary firmware binary from Clearpath Robotics.
 
 See [ClearpathRobotics/Packages](ClearpathRobotics/Packages) for
 details, and

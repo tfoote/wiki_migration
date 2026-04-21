@@ -16,22 +16,19 @@ products used at Willow Garage.
 
 ### Invent vocabulary
 
--   \'\'\'Product/Part\'\'\' - Type of component. Ex: Hokuyo laser
-    scanner
--   \'\'\'Item\'\'\' - Serialized component. Ex: Prosilica camera
-    #109104
--   \'\'\'Reference\'\'\' - Unique identifier that can be attached to an
+-   **Product/Part** - Type of component. Ex: Hokuyo laser scanner
+-   **Item** - Serialized component. Ex: Prosilica camera #109104
+-   **Reference** - Unique identifier that can be attached to an
     individual part. This is usually a manufacturer\'s serial number or
     MAC address.
--   \'\'\'Sub-items/Children\'\'\' - Any items that are assembled into
-    the current item.
--   \'\'\'Location/Parent\'\'\' - Location a part can be stored or moved
-    to.
--   \'\'\'Key-Value\'\'\' - Items can have arbitrary keys, stored with
+-   **Sub-items/Children** - Any items that are assembled into the
+    current item.
+-   **Location/Parent** - Location a part can be stored or moved to.
+-   **Key-Value** - Items can have arbitrary keys, stored with
     designated values. All qualification tests set the \"Test Status\"
     key to \"PASS\".
--   \'\'\'Attachment\'\'\' - Attachment files of any binary type can be
-    linked to an item or part.
+-   **Attachment** - Attachment files of any binary type can be linked
+    to an item or part.
 
 #### Serial Numbers
 

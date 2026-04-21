@@ -12,8 +12,8 @@ marker.
 The package follows the methods proposed by:
 
 \[1\] M. Velas, M. Spanel, Z. Materna, A. Herout. Calibration of RGB
-Camera with Velodyne LiDAR. In \'\'WSCG 2014 Communication papers
-proceedings\'\'.
+Camera with Velodyne LiDAR. In *WSCG 2014 Communication papers
+proceedings*.
 
 Here you can see the example of usage of the computed calibration
 parameters for the point cloud coloring by the fusion of camera image
@@ -75,22 +75,22 @@ roslaunch but_calibration_camera_velodyne coloring.launch
 Configuration of the nodes can be done using \*.yaml files stored in the
 `conf/` direcotry. These parameters in following files can be set:
 
-\'\'\'`conf/calibration.yaml`\'\'\' file contans parameters:
+**`conf/calibration.yaml`** file contans parameters:
 
--   \'\'\'`camera_frame_topic`\'\'\' : name of the topic, where camera
-    RGB image is published
--   \'\'\'`camera_info_topic`\'\'\' : topic of `CameraInfo` type
--   \'\'\'`velodyne_topic`\'\'\' : topic, where the Velodyne pointcloud
+-   **`camera_frame_topic`** : name of the topic, where camera RGB image
     is published
--   \'\'\'`marker`\'\'\' : physical size of the 3D marker
--   \'\'\'`circles_distance`\'\'\' : distance between the circles
-    centres (see \[1\])
--   \'\'\'`circles_radius`\'\'\' : radius of the circles in marker (also
-    see \[1\])
+-   **`camera_info_topic`** : topic of `CameraInfo` type
+-   **`velodyne_topic`** : topic, where the Velodyne pointcloud is
+    published
+-   **`marker`** : physical size of the 3D marker
+-   **`circles_distance`** : distance between the circles centres (see
+    \[1\])
+-   **`circles_radius`** : radius of the circles in marker (also see
+    \[1\])
 
-in \'\'\'`conf/coloring.yaml`\'\'\' file you can specify:
+in **`conf/coloring.yaml`** file you can specify:
 
--   \'\'\'`6DoF`\'\'\' : vector of the calibration parameters computed
-    by the calibration process
--   \'\'\'`velodyne_color_topic`\'\'\' : name of the topic, where the
-    colored pointcloud will be published
+-   **`6DoF`** : vector of the calibration parameters computed by the
+    calibration process
+-   **`velodyne_color_topic`** : name of the topic, where the colored
+    pointcloud will be published

@@ -26,7 +26,7 @@ sudo pip install -U rosdep
 
 ### Initializing rosdep
 
-Needs to be called only \'\'once\'\' after installation:
+Needs to be called only *once* after installation:
 ```
 sudo rosdep init
 ```

@@ -66,8 +66,8 @@ library for communicating with motor controller boards. However, the
 package does provide the [motorconf](#motorconf) command-line tool for
 configuring these boards. In practice, this tool is used during robot
 assembly, and should not be needed after initial bring-up of the robot.
-\'\'\'NOTE: improper use of this tool could lead to hardware damage,
-\`motorconf\` usage is limited to system administrators only.\'\'\'
+**NOTE: improper use of this tool could lead to hardware damage,
+\`motorconf\` usage is limited to system administrators only.**
 
 ### motorconf
 
@@ -139,9 +139,9 @@ The file consists of a single \<configuration\> section. The
 \<actuators\>.
 
 The \<motors\> subsection contains a series of \<motor\> definitions.
-Each motor requires a \'\'name\'\' attribute. The \<motor\> also
-requires child elements \<params\> and \<encoder\>. The \<params\>
-element contains the following attributes:
+Each motor requires a *name* attribute. The \<motor\> also requires
+child elements \<params\> and \<encoder\>. The \<params\> element
+contains the following attributes:
 
 -   Make
 -   Model
@@ -174,7 +174,7 @@ definitions. An \<actuator\> has the following attributes:
 -   Name
 -   Motor
 -   Board For example, the following \<actuator\> definition states that
-    the \'\'l_elbow_flex_motor\'\' should be configured with the motor
+    the *l_elbow_flex_motor* should be configured with the motor
     parameters specified in the previous example:
     ```
 <actuator name="l_elbow_flex_motor" motor="148877" board="wg005"/>

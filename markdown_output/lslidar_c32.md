@@ -1,7 +1,7 @@
 ## Overview
 
-This \'\'lslidar_c32\'\' package is a linux ROS driver for lslidar c32
-from Shenzhen Leishen Intelligence System Co, Ltd.
+This *lslidar_c32* package is a linux ROS driver for lslidar c32 from
+Shenzhen Leishen Intelligence System Co, Ltd.
 
 lslidar-c32 is a 16 channels hybird solid state lidar based on TOF
 working principle. The maximum detection range is up to 200m (different

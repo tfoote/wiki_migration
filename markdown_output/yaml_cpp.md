@@ -22,8 +22,8 @@ target_link_libraries(${PROJECT_NAME} yaml-cpp)
 
 ### Package/stack dependencies
 
-\'\'If you have previously used yaml_cpp with ROS, make sure you remove
-\`\<depend package=\"yaml_cpp\" /\>\` from your manifest.\'\'
+*If you have previously used yaml_cpp with ROS, make sure you remove
+\`\<depend package=\"yaml_cpp\" /\>\` from your manifest.*
 
 The \`yaml-cpp\` [rosdep](rosdep) is defined in the ROS
 [common_rosdeps](common_rosdeps) stack/package. In order to get this

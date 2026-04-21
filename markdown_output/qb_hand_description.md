@@ -1,5 +1,5 @@
-This package contains the description resources for the \'\'qb SoftHand
-Research\'\' and \'\'qb SoftHand2 Research\'\' devices. It includes the
+This package contains the description resources for the *qb SoftHand
+Research* and *qb SoftHand2 Research* devices. It includes the
 [urdf](urdf)/[xacro](xacro) model of the hands with their simplified
 meshes and their configuration setup.
 

@@ -8,10 +8,9 @@ AutoRoch is a gui application for [Roch](Robots/Roch).
 This program collects a series of function modules of Roch, such as
 driver, follower, auto explore for SLAM, navigation, remote teleop etc.
 
-\'\'\'\'\'Download website\'\'\'\'\':
-<https://github.com/SawYer-Robotics/AutoRoch>. (\'\'\'notice\'\'\': For
-now we just release \'\'\'\'\'test version(0.0.4)\'\'\'\'\' with
-\'\'\'\'\'amd64\'\'\'\'\' platform.)
+***Download website***: <https://github.com/SawYer-Robotics/AutoRoch>.
+(**notice**: For now we just release ***test version(0.0.4)*** with
+***amd64*** platform.)
 
   -- --------------------- -- -- -- ------------------------- --
      [English](autoroch)            [简体中文](cn/autoroch)   
@@ -25,11 +24,11 @@ encourage such behavior).
 Some of the screenshots shown below are the interfaces for the current
 test version：
 
--   \'\'\'\'\'Stand-alone version\'\'\'\'\'： Simple operation control
-    Roch, avoid complex commands lead to time waste, applicable teaching
-    and research.
--   \'\'\'\'\'Remote-control version\'\'\'\'\': Remote control Roch
-    computer, no command operation.
+-   ***Stand-alone version***： Simple operation control Roch, avoid
+    complex commands lead to time waste, applicable teaching and
+    research.
+-   ***Remote-control version***: Remote control Roch computer, no
+    command operation.
 
 When you finish installation, here has a quick start icon named
 \"AutoRoch\", just double click for bringup:

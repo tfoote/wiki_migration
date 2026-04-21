@@ -51,12 +51,12 @@ To test your installation, source the newly created workspace and run:
 Creates a \`dash\` server on the port 8080; navigate to
 <http://localhost:8080> in order to view it.
 
--   \'\'\'Action Clients\'\'\'
+-   **Action Clients**
 -   \`/turtle_shape\`
     ([turtle_actionlib/Shape](http://docs.ros.org/melodic/api/turtle_actionlib/html/action/Shape.html))
     The expected action server for tracing a polygon with the desired
     shape and number of edges with the simulated turtlebot.
--   \'\'\'Subscribed Topics\'\'\'
+-   **Subscribed Topics**
 -   \`/turtle1/pose\`
     ([turtlesim/Pose](http://docs.ros.org/melodic/api/turtlesim/html/msg/Pose.html))
     The pose of the turtle being controlled as reported by the turtlesim

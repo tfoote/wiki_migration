@@ -1,6 +1,6 @@
 ## Usage
 
-\'\'\'\[Step 1\]\'\'\'
+**\[Step 1\]**
 
 Launch recorder nodes with your favourite nodes. Use respawn options to
 record multiple times.
@@ -41,7 +41,7 @@ topics:
 - ...
 ```
 
-\'\'\'\[Step 2\]\'\'\'
+**\[Step 2\]**
 
 Start rosbag-record at your own timing
 
@@ -74,7 +74,7 @@ if (start_button_pressed) {
 }
 ```
 
-\'\'\'\[Step 3\]\'\'\'
+**\[Step 3\]**
 
 Stop rosbag-record (similar to the previous step)
 

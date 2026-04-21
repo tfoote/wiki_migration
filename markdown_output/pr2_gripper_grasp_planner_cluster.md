@@ -8,7 +8,7 @@ visualization\--grasps of the underlying points along the axes of the
 displayed box). It also finds overhead grasps of high points with the
 gripper oriented toward the center, which is useful for objects such as
 bowls. Details on this module can be found in the following paper:
-[\'\'\'Contact-Reactive Grasping of Objects with Partial Shape Information\'\'\'](http://www.willowgarage.com/sites/default/files/contactreactive.pdf).
+[\*\*Contact-Reactive Grasping of Objects with Partial Shape Information\*\*](http://www.willowgarage.com/sites/default/files/contactreactive.pdf).
 
 The planner can be used for other types of robot hands as well, if a
 box-model is created for the hand in a fixed, pre-grasp pose (both

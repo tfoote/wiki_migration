@@ -8,7 +8,7 @@ The UTM-30LX laser can report corrupt data and even crash if settings
 with an excessive data rate are requested. The following settings are
 known to work:
 
-\'\'\'Intensity mode off\'\'\':
+**Intensity mode off**:
 
 -   \`cluster\`: 1
 -   \`skip\`: 1
@@ -16,7 +16,7 @@ known to work:
 -   \`min_ang\`: -2.2689
 -   \`max_ang\`: 2.2689
 
-\'\'\'Intensity mode on\'\'\':
+**Intensity mode on**:
 
 -   \`cluster\`: 1
 -   \`skip\`: 1
@@ -31,12 +31,12 @@ selected, the hokuyo_node will limit the angular range to values that
 are known to work. The angular range limit depends on the firmware
 version, and is proportional to the \`cluster\` parameter.
 
-  -- -------------------------------------------------------------------- -- --------------------------------------------------- -- --------------------------------- --
-     \<tablestyle=\"text-align: center;\"\>\'\'\'Firmware version\'\'\'      \'\'\'Maximum angular range / cluster (deg)\'\'\'      \'\'\'hokuyo_node version\'\'\'   
-     1.16.01(16/Nov./2009)                                                   190                                                    \> 1.1.1                          
-     1.16.02(19/Jan./2010)                                                   95                                                     \> 1.0.3                          
-     Other                                                                   95                                                     \> 1.0.3                          
-  -- -------------------------------------------------------------------- -- --------------------------------------------------- -- --------------------------------- --
+  -- ------------------------------------------------------------ -- ------------------------------------------- -- ------------------------- --
+     \<tablestyle=\"text-align: center;\"\>**Firmware version**      **Maximum angular range / cluster (deg)**      **hokuyo_node version**   
+     1.16.01(16/Nov./2009)                                           190                                            \> 1.1.1                  
+     1.16.02(19/Jan./2010)                                           95                                             \> 1.0.3                  
+     Other                                                           95                                             \> 1.0.3                  
+  -- ------------------------------------------------------------ -- ------------------------------------------- -- ------------------------- --
 
 ## ROS API
 

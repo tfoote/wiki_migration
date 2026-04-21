@@ -41,14 +41,14 @@ Treebank II and can be found
 Dependencies (a list located under \`msg.dependencies\`) have the
 following 3 elements:
 
--   \'\'\'relation\'\'\': Relation between the governor and dependent. A
+-   **relation**: Relation between the governor and dependent. A
     complete set of relations can be found in the
     [Stanford Dependencies Manual](http://nlp.stanford.edu/software/dependencies_manual.pdf).
--   \'\'\'governor_index\'\'\': The index of the governor in
-    \`msg.words\`. In other words, the governor is
+-   **governor_index**: The index of the governor in \`msg.words\`. In
+    other words, the governor is
     \`msg.words\[dependency.governor_index\]\`.
--   \'\'\'dependent_index\'\'\': The index of the dependent in
-    \`msg.words\`. In other words, the dependent is
+-   **dependent_index**: The index of the dependent in \`msg.words\`. In
+    other words, the dependent is
     \`msg.words\[dependency.dependent_index\]\`.
 
 For instance, the sentence \"Give Bill the ball.\" has, among others,

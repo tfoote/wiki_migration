@@ -36,9 +36,8 @@ vendor and product ID\'s:
 
 ```
 lsusb -v
-``` However, use of \'\'udev\'\' rules is
-recommended. In `/etc/udev/rules.d/99-uvc.rules`, to give every user
-camera access:
+``` However, use of *udev* rules is recommended. In
+`/etc/udev/rules.d/99-uvc.rules`, to give every user camera access:
 
 ```
 # UVC cameras
@@ -61,8 +60,8 @@ SUBSYSTEMS=="usb", ATTRS{idVendor}=="046d", MODE="0666"
 ``` These settings will be applied the next time
 the camera is connected.
 
-\'\'\'REMINDER: For Ubuntu 12.04 and above the udev rules syntax
-changed! Replace SYSFS{\...} with ATTRS{\...}\'\'\'
+**REMINDER: For Ubuntu 12.04 and above the udev rules syntax changed!
+Replace SYSFS{\...} with ATTRS{\...}**
 
 Or, run the following before starting the camera. It gets access to the
 USB device:

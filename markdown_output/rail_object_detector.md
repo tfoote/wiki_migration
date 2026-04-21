@@ -76,18 +76,18 @@ network.
 Type:
 [rail_object_detector/SceneQuery](http://docs.ros.org/indigo/api/rail_object_detection_msgs/html/srv/SceneQuery.html)
 
-\'\'\'Scene Query service\'\'\': recognize objects in the latest image
-from the camera stream `image_sub_topic_name`. Takes no input, and
-outputs a list of detected, labeled objects and a corresponding image.
-Only advertised if `use_scene_service` is true.
+**Scene Query service**: recognize objects in the latest image from the
+camera stream `image_sub_topic_name`. Takes no input, and outputs a list
+of detected, labeled objects and a corresponding image. Only advertised
+if `use_scene_service` is true.
 
 #### darknet_node/objects_in_image
 
 Type:
 [rail_object_detector/ImageQuery](http://docs.ros.org/indigo/api/rail_object_detection_msgs/html/srv/ImageQuery.html)
 
-\'\'\'Image Query service\'\'\': recognize objects in an image passed to
-the service. Takes an image as input, and outputs a list of detected,
+**Image Query service**: recognize objects in an image passed to the
+service. Takes an image as input, and outputs a list of detected,
 labeled objects and a corresponding image. Only advertised if
 `use_image_service` is true.
 

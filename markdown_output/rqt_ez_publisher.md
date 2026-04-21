@@ -35,8 +35,8 @@ Input topic name -\> You got GUI
 ![](attachment:joint_states_with_caption.png)
 
 You can input topic name and attributes string, like rqt_plot instead of
-topic name. For example, \'\'\'\'\'/cmd_vel/linear/x\'\'\'\'\' or
-\'\'\'\'\'/joint_states/position\[1\]\'\'\'\'\'
+topic name. For example, ***/cmd_vel/linear/x*** or
+***/joint_states/position\[1\]***
 
 ## Examples
 

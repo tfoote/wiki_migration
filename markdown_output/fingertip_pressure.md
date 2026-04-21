@@ -15,8 +15,8 @@ there may be usability issues with the nodes.
 Overview of how the nodes interact with the robot sensor stream:
 [ {{attachment:overview.gif}}](attachment:overview.gif )
 
-\'\'\'Note\'\'\': All nodes assume that \`\<gripper_motor_name\>\` is
-either \`r_gripper_motor\` or \`l_gripper_motor\`.
+**Note**: All nodes assume that \`\<gripper_motor_name\>\` is either
+\`r_gripper_motor\` or \`l_gripper_motor\`.
 
 ```clearsilver
 node.0 {

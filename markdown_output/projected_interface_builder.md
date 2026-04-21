@@ -42,9 +42,9 @@ the last vertex and the cursor displays the length of the edge.
 
 ### Modifier Keys
 
--   \'\'\'Shift\'\'\': snap to grid
--   \'\'\'Ctrl+Shift\'\'\': axis-align
--   \'\'\'Esc\'\'\': Cancels polygon drawing
+-   **Shift**: snap to grid
+-   **Ctrl+Shift**: axis-align
+-   **Esc**: Cancels polygon drawing
 
 ## Nodes
 

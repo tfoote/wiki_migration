@@ -197,23 +197,23 @@ $ sudo easy_install Trac==1.0
 
 Now you should be able to view your trac environment in the browser.
 Browse the following location <http://localhost/webportal>. You should
-see trac\'s default landing page with the following header \'\'\'Welcome
-to Trac 1.0\'\'\'.
+see trac\'s default landing page with the following header **Welcome to
+Trac 1.0**.
 
 In a next step we configure an access authentication. The robotcontrol
 server only works with the basic access authentication at the moment.
 First we need an httpasswd file. To do that run the following command
-which creates an password file called \'\'\'htpasswd\'\'\' under the
-directory \'\'/usr/local/trac/webportal\'\' with an initial user
-\'\'admin\'\'. ```
+which creates an password file called **htpasswd** under the directory
+*/usr/local/trac/webportal* with an initial user *admin*.
+```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
 $ cd Trac-1.0
 $ sudo easy_install Trac==1.0
-```3 Next open your configuration
-file \'\'/etc/apache2/sites-available/webportal\'\' and paste the
-following lines at the top of the file: ```
+```3 Next open your configuration file
+*/etc/apache2/sites-available/webportal* and paste the following lines
+at the top of the file: ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
@@ -236,18 +236,18 @@ credentials. If your browser does not require you to login, you can take
 a look at our final apache configuration
 [#final_apache_configuration](#final_apache_configuration) and compare
 it to yours. Make sure you restarted the server correctly and it didn\'t
-producte any errors. In the browser\'s login box use \'\'admin\'\' as
-the username and enter your previously chosen password in the password
+producte any errors. In the browser\'s login box use *admin* as the
+username and enter your previously chosen password in the password
 field. Apache will verify your username/password combination and you
 should be able to see the default trac screen again. You can spot a
 small difference though: Above the navigation bar you should be able to
-see a label called \'\'logged in as admin\'\'.
+see a label called *logged in as admin*.
 
 Now we are almost done configuring apache. We need to add a small
 snippet at the top of our site configuration that is required to run the
 webportal background daemon. But first we have to enable two more apache
-modules called \'\'mod_proxy\'\' and \'\'mod_proxy_http\'\'. We can do
-that via the following commands: ```
+modules called *mod_proxy* and *mod_proxy_http*. We can do that via the
+following commands: ```
 $ mkdir ~/trac && cd ~/trac
 $ wget http://download.edgewall.org/trac/Trac-1.0.tar.gz
 $ tar -xzvf Trac-1.0.tar.gz
@@ -307,28 +307,27 @@ $ python
 
 When you browse to your trac environment under
 <http://localhost/webportal> you can notice a new item called
-\'\'Robotcontrol\'\' in the navigation menu right next to the items
-\'\'View Tickets\'\' and \'\'Search\'\'. When you click on it, you will
-get the error message \'\'\'\'\'Exception: No Background Server
-running\'\'\'\'\'. That\'s fine.
+*Robotcontrol* in the navigation menu right next to the items *View
+Tickets* and *Search*. When you click on it, you will get the error
+message ***Exception: No Background Server running***. That\'s fine.
 
 ## Starting the webportal daemon
 
 The next and final point is to start the webportal daemon that is
 responsible for establishing ssh connections and responding to ajax
 requests in the background. All we have to do is go to the directory
-\'\'/trac/cob_web/cob_webportal/common/src/robotcontrold/\'\'. Running
-the command ` ./robotcontrold ` yields a list of all available
-parameters being:
+*/trac/cob_web/cob_webportal/common/src/robotcontrold*/. Running the
+command ` ./robotcontrold ` yields a list of all available parameters
+being:
 
   -- ------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------------------------------------------------------------------- --
-     \'\'\'Parameter name\'\'\'                                                                                             \'\'\'Explanation\'\'\'                                                                                   
-     \<-2\>\'\'\'\'\'Required Parameters\'\'\'\'\'                                                                                                                                                                                    
+     **Parameter name**                                                                                                     **Explanation**                                                                                           
+     \<-2\>***Required Parameters***                                                                                                                                                                                                  
      \--timeout=                                                                                                            Set a timeout ( in seconds ) after which all running components for the active user are shut down.        
      \--trac=                                                                                                               Path to your trac environment. In our example: /usr/local/trac/webportal                                  
      \--log=                                                                                                                Path to your log file, e.g log.txt                                                                        
      \--webPort=                                                                                                            Port that you configured in your proxy configuration. In our example 81, see [#proxy_conf](#proxy_conf)   
-     \<-2\>\'\'\'\'\'Optional Parameters\'\'\'\'\'                                                                                                                                                                                    
+     \<-2\>***Optional Parameters***                                                                                                                                                                                                  
      \--console                                                                                                             Print log messages on stdout                                                                              
      \--logLevel=                                                                                                           Choose one of following log levels: DEBUG, INFO, WARN, ERROR                                              
      \<-2\>You configure the daemon to use either MySQL or sqlite. For MySQL the following parameters are interesting:                                                                                                                
@@ -355,26 +354,25 @@ $ python
 >>> trac.__version__
 '1.0'
 ```2 You can detach from the screen using the
-keyboard shortcut \'\'\<Ctrl-a\>d\'\'. To reconnect to the screen run
-the command ```
+keyboard shortcut *\<Ctrl-a\>d*. To reconnect to the screen run the
+command ```
 $ python
 >>> import trac
 >>> trac.__version__
 '1.0'
-```3 To learn more about screens see
-\'\'man screen\'\'.
+```3 To learn more about screens see *man
+screen*.
 
 Once you have started the server and it\'s fully initialized (indicated
 by the log message DEBUG - Serve forever in case you set your
 debug-level to DEBUG and print messages to stdout like in the example
 above) you can browse to <http://localhost/webportal> (don\'t forget to
 login) click on Robotcontrol and you should be see the default webportal
-interface. The default user \'\'admin\'\' is granted all available
-rights. If you want to access the page using a different user, make sure
-to set it\'s permissions first. You can do that via the \'\'User
-Manager\'\'.
+interface. The default user *admin* is granted all available rights. If
+you want to access the page using a different user, make sure to set
+it\'s permissions first. You can do that via the *User Manager*.
 
 As a first step you need to reserve the server instance using the server
-\'\'\'reservation link\'\'\'. After that you need to setup a host system
-by navigating to \'\'\'host admin\'\'\'. Make sure to \'\'\'install
-screen\'\'\' on every client since it is required by webportal.
+**reservation link**. After that you need to setup a host system by
+navigating to **host admin**. Make sure to **install screen** on every
+client since it is required by webportal.

@@ -125,7 +125,7 @@ max_pan: 0.6 \# Maximum pan angle (+- rad)
 max_tilt: 0.5 \# Maximum tilt angle (+- rad)
 
 The above numbers are suitable for a logitech usb joystick. Use
-\'\'joy_for: 4\'\' and \'\'joy_rot: 3\'\' for Xbox 360 Controller.
+*joy_for: 4* and *joy_rot: 3* for Xbox 360 Controller.
 
 Launching the base_station.launch file can be done manually:
 ```

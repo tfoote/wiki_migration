@@ -5,7 +5,7 @@ approach actions, and compliant close and grasp adjustment services for
 the PR2 gripper. All of the above use the pressure sensors on the
 fingertips to improve object grasping. Details on this module can be
 found in the following paper:
-[\'\'\'Contact-Reactive Grasping of Objects with Partial Shape Information\'\'\'](http://www.willowgarage.com/sites/default/files/contactreactive.pdf).
+[\*\*Contact-Reactive Grasping of Objects with Partial Shape Information\*\*](http://www.willowgarage.com/sites/default/files/contactreactive.pdf).
 
 In order to use these actions and services, you probably want to launch
 either

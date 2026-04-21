@@ -1,7 +1,6 @@
 [Included page Industrial/Software_Status/Developmental not found](Included page Industrial/Software_Status/Developmental not found)
 
-/!\\ \'\'\'For ROS [Hydro](hydro) and onward, use
-[rtshell](rtshell)\'\'\'.
+/!\\ **For ROS [Hydro](hydro) and onward, use [rtshell](rtshell)**.
 
 ## Install
 

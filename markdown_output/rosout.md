@@ -15,7 +15,7 @@ be thought as comprising several components:
 -   GUI tools, like [rqt_console](rqt_console), for viewing the console
     log messages.
 
-The \`rosout\` \'\'package\'\' only provides the \`rosout\` node.
+The \`rosout\` *package* only provides the \`rosout\` node.
 
 ## Client APIs
 

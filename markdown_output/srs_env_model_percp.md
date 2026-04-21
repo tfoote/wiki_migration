@@ -7,17 +7,17 @@ modelling from RGB-D sensor data, e.g. Kinect device.
 
 The package consists of three major components:
 
--   \'\'\'[BB Estimator](bb_estimator)\'\'\' - ROS service performing
-    rough bounding box estimation of an object inside a specified 2D
-    region of interest using the Kinect depth data.
--   \'\'\'Depth map segmentation\'\'\' - ROS service providing Kinect
-    depth map segmentation (or other, image based depth map) using
-    several approaches, such as maximum normal/depth difference, plane
+-   **[BB Estimator](bb_estimator)** - ROS service performing rough
+    bounding box estimation of an object inside a specified 2D region of
+    interest using the Kinect depth data.
+-   **Depth map segmentation** - ROS service providing Kinect depth map
+    segmentation (or other, image based depth map) using several
+    approaches, such as maximum normal/depth difference, plane
     prediction etc.
--   \'\'\'Plane Fitting\'\'\' - ROS service providing plane fitting in
-    point cloud data based on 3D Hough Transform. Node is able to
-    iterate through several frames while adding data into current point
-    cloud and refining detected planes.
+-   **Plane Fitting** - ROS service providing plane fitting in point
+    cloud data based on 3D Hough Transform. Node is able to iterate
+    through several frames while adding data into current point cloud
+    and refining detected planes.
 
 ### Depth map segmentation
 
@@ -86,23 +86,23 @@ rectangle (in 3D) for visualisation purposes.
 
 ### Nodes
 
-  -- ----------------------- -- -------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \'\'\'Node Name\'\'\'      \'\'\'Published Topics\'\'\'                                            \'\'\'Description\'\'\'                                                                                                                                                                                                                           
-     but_segmenter              /but_env_model/seg_region_image;/but_env_model/seg_deviation_image      Node implementing depth image segmenter. Publishes region image (image with region index information) and sometimes deviation image (image with computed std. deviations of detected planes). Please see below when these topics are published.   
-     but_plane_detector         /but_env_model/plane_array                                              Node implements described plane detector. It publishes a plane array message, which is represented by the list of found planes.                                                                                                                   
-  -- ----------------------- -- -------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- -------------------- -- -------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     **Node Name**           **Published Topics**                                                    **Description**                                                                                                                                                                                                                                   
+     but_segmenter           /but_env_model/seg_region_image;/but_env_model/seg_deviation_image      Node implementing depth image segmenter. Publishes region image (image with region index information) and sometimes deviation image (image with computed std. deviations of detected planes). Please see below when these topics are published.   
+     but_plane_detector      /but_env_model/plane_array                                              Node implements described plane detector. It publishes a plane array message, which is represented by the list of found planes.                                                                                                                   
+  -- -------------------- -- -------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ### Services
 
-  -- ----------------------------- -- ------------------- -- -------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \'\'\'Service Name\'\'\'         \'\'\'Input\'\'\'      \'\'\'Output\'\'\'            \'\'\'Description\'\'\'                                                                                                                                                                                                       
-     /but_env_model/clear_planes      \-                     Message about the result      Called service clears the accumulator of planes and Hough Space, which is constructed iteratively from all arriving point clouds. After calling this service the node is reset and continues detecting planes from scratch.   
-  -- ----------------------------- -- ------------------- -- -------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ----------------------------- -- ----------- -- -------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     **Service Name**                 **Input**      **Output**                    **Description**                                                                                                                                                                                                               
+     /but_env_model/clear_planes      \-             Message about the result      Called service clears the accumulator of planes and Hough Space, which is constructed iteratively from all arriving point clouds. After calling this service the node is reset and continues detecting planes from scratch.   
+  -- ----------------------------- -- ----------- -- -------------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ### Published topics
 
   -- ------------------------------------ -- ----------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     \'\'\'Topic Name\'\'\'                  \'\'\'Message\'\'\'              \'\'\'Description\'\'\'                                                                                                                                                                                
+     **Topic Name**                          **Message**                      **Description**                                                                                                                                                                                        
      /but_env_model/seg_region_image         sensor_msgs::Image               A 16bit unsigned short image of segmented indices. Indices start with index 1, if index is less than 1, it signifies a border or not segmented region. It is published by every segmentation method.   
      /but_env_model/seg_deviation_image      sensor_msgs::Image               A region image with computed depth std. deviations from plane approximated through every region. It is NOT published by Depth segmentation method (Normals are not computed due to speed reasons).     
      /but_env_model/plane_array              srs_env_model::InsertPlanes      Plane array of srs_env_model_msgs::PlaneDes with each plane information. Each plane has INSERT/MODIFY/DELETE flag, which specifies action.                                                             
@@ -127,26 +127,22 @@ set up yet.
 
 List of but_segmenter\'s optional parameters:
 
--   \'\'\'-type \[TYPE\]\'\'\'
--   Parameter type specifies type of segmenting method
--   \'\'\'depth\'\'\' - Segmenter uses only depth information
--   \'\'\'normal\'\'\' - Segmenter uses only normal information
-    (delegates also std deviation image)
--   \'\'\'combined\'\'\' - Segmenter uses combined depth and normal
-    information (delegates also std deviation image)
--   \'\'\'predictor\'\'\' - Segmenter uses predictor plane algorithm
--   \'\'\'tile\'\'\' - Segmenter uses tiling plane segmentation
-    (delegates also std deviation image)
+-   **-type \[TYPE\]**
+-   Parameter type specifies type of segmenting method **\*depth** -
+    Segmenter uses only depth information **\*normal** - Segmenter uses
+    only normal information (delegates also std deviation image)
+    **\*combined** - Segmenter uses combined depth and normal
+    information (delegates also std deviation image) **\*predictor** -
+    Segmenter uses predictor plane algorithm **\*tile** - Segmenter uses
+    tiling plane segmentation (delegates also std deviation image)
 
 ```{=html}
 <!-- -->
 ```
 -   Default is combined method.
 
-```{=html}
-<!-- -->
-```
--   \'\'\'-maxdepth \[NUM\]\'\'\'
+**\*-maxdepth \[NUM\]**
+
 -   Number how deep point should be considered for computation (in
     milimeters)\"
 -   Default is 3000
@@ -155,17 +151,14 @@ List of but_segmenter\'s optional parameters:
 
 List of but_plane+detector\'s optional parameters:
 
--   \'\'\'-input \[VAL\]\'\'\'
--   \'\'\'pcl\'\'\' - Plane detector will suppose pcl point cloud as an
-    input
--   \'\'\'kinect\'\'\' - Plane detector will suppose Kinect depth map as
-    an input
+**\*-input \[VAL\]** **\*pcl** - Plane detector will suppose pcl point
+cloud as an input **\*kinect** - Plane detector will suppose Kinect
+depth map as an input
+
 -   Necessary parameter, please specify the input
 
-```{=html}
-<!-- -->
-```
--   \'\'\'-target \[FRAME_ID\]\'\'\'
+**\*-target \[FRAME_ID\]**
+
 -   Target frame id of sent planes.
 -   Attention, the tf path from point cloud frame id into target id must
     exist!

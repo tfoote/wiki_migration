@@ -47,13 +47,13 @@ should not be used to guarantee a singleton instance of roscore.
 
 ## Stability/Roadmap
 
-The launch file syntax itself is \'\'\'stable\'\'\', and every effort
-will be made to provide backwards compatibility with new features.
+The launch file syntax itself is **stable**, and every effort will be
+made to provide backwards compatibility with new features.
 
-The code API of \`roslaunch\` is \'\'\'very unstable\'\'\' and should
-not be used directly. In order to support the new features that are
-being planned, it may be necessary to make major, incompatible changes
-to the programmatic API.
+The code API of \`roslaunch\` is **very unstable** and should not be
+used directly. In order to support the new features that are being
+planned, it may be necessary to make major, incompatible changes to the
+programmatic API.
 
 There are many new features being planned for \`roslaunch\`. These
 include new features within the launch file syntax, GUI tools for
@@ -112,8 +112,8 @@ better explicitly add a dependency in your \`package.xml\` as following:
 The macro accepts either a single directory or file argument. Basically,
 it adds additional test targets into catkin generated Makefile.
 
-\'\'\'Note:\'\'\' these \*.launch file tests can also be initiated using
-console tool called
+**Note:** these \*.launch file tests can also be initiated using console
+tool called
 [roslaunch-check](roslaunch/Commandline Tools#roslaunch-check) OR
 [roslaunch-deps](roslaunch/Commandline Tools#roslaunch-deps).
 

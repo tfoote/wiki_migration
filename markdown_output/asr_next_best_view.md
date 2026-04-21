@@ -37,30 +37,30 @@ with the best rating is chosen as !NextBestView for that iteration step.
 
 The next_best_view node uses a set of modules:
 
--   \'\'\'!SpaceSampler\'\'\': Generates positions to generate views.
-    The algorithm is given a contractor which specifies the granularity.
-    A high contractor value results in huge gaps between views and
-    almost the whole world is covered with samples. A low contracor
-    value generates high dense samples near a given position.
--   \'\'\'!UnitSphereSample\'\'\'r: Generates orientations to generate
-    views. The algorithm is given a number of orientations which
-    specifies the granularity.
--   \'\'\'!RatingModule\'\'\': Used to rate generated views.
--   \'\'\'!CameraModelFilter\'\'\': Used to find hypotheses inside a
-    camera frustum.
--   \'\'\'!HypothesisUpdater\'\'\': Does the update (removes normals
-    inside a given frustum).
+-   **!SpaceSampler**: Generates positions to generate views. The
+    algorithm is given a contractor which specifies the granularity. A
+    high contractor value results in huge gaps between views and almost
+    the whole world is covered with samples. A low contracor value
+    generates high dense samples near a given position.
+-   **!UnitSphereSample**r: Generates orientations to generate views.
+    The algorithm is given a number of orientations which specifies the
+    granularity.
+-   **!RatingModule**: Used to rate generated views.
+-   **!CameraModelFilter**: Used to find hypotheses inside a camera
+    frustum.
+-   **!HypothesisUpdater**: Does the update (removes normals inside a
+    given frustum).
 
 Each module has at least one implementation, which can be chosen through
 parameter configuration.
 
 Implementations:
 
--   \'\'\'!HypothesisUpdater\'\'\'
+-   **!HypothesisUpdater**
 -   !PerspectiveHypothesisUpdater: Uses the rating to remove only
     normals showing towards the camera.
 -   !DefaultHypothesisUpdater: Removes all normals in the frustum.
--   \'\'\'!CameraModelFilter\'\'\'
+-   **!CameraModelFilter**
 -   !StereoCameraModelFilter: Based on two !SingleCameraModelFilter.
 -   !SingleCameraModelFilter: Filters objects in the frustum using
     pcl::!FrustumCulling.
@@ -70,7 +70,7 @@ Implementations:
 -   Raytracing3DBasedSingleCameraModelFilter: Based on !
 -   !SingleCameraModelFilter. Filters object hypotheses which are
     occluded by the environment.
--   \'\'\'!SpaceSampler\'\'\'
+-   **!SpaceSampler**
 -   !MapBasedHexagonSpaceSampler: Default, sampling can be seen in the
     image below.
 -   !MapBasedRandomSpaceSampler: Samples a fixed number of positions
@@ -132,21 +132,20 @@ service call with the camera pose.
 
 ## Start system
 
-Just run \'\'\'roslaunch asr_next_best_view
-next_best_view_core_sim.launch\'\'\' to get the next_best_view node
-running for the simulation or \'\'\'roslaunch asr_next_best_view
-next_best_view_core_real.launch \'\'\'to get it running in a real
-environment.
+Just run **roslaunch asr_next_best_view next_best_view_core_sim.launch**
+to get the next_best_view node running for the simulation or **roslaunch
+asr_next_best_view next_best_view_core_real.launch **to get it running
+in a real environment.
 
 # ROS Nodes
 
 ## Subscribed Topics
 
--   \'\'\'map\'\'\'
+-   **map**
 -   message type: nav_msgs/OccupancyGrid
 -   published by package: map_server
 -   description: 2D map of the world
--   \'\'\'move_base/global_costmap/costmap\'\'\'
+-   **move_base/global_costmap/costmap**
 -   message type: nav_msgs/OccupancyGrid
 -   published by package: asr_mild_navigation
 -   description: 2D map with consideration of obstacles and the size of
@@ -158,31 +157,31 @@ environment.
 The topics that the next_best_view node publishes are only meant for the
 visualization. Those topics are:
 
--   \'\'\'/nbv/frustum_marker_array\'\'\'
+-   **/nbv/frustum_marker_array**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes the frustum visualization
--   \'\'\'/nbv/object_normals\'\'\'
+-   **/nbv/object_normals**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes the object normals
--   \'\'\'/nbv/object_meshes\'\'\'
+-   **/nbv/object_meshes**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes all hypotheses with textures
--   \'\'\'/nbv/frustum_object_meshes\'\'\'
+-   **/nbv/frustum_object_meshes**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes all hypotheses in the frustum
--   \'\'\'/nbv/iteration_visualization\'\'\'
+-   **/nbv/iteration_visualization**
 -   message type: visualization_msgs::!MarkerArray
 -   description: publishes the visual data of each iteration step when
     the !NextBestView is calculated
--   \'\'\'/nbv/crop_box\'\'\'
+-   **/nbv/crop_box**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes all visual boxes which are used to crop
     hypotheses
--   \'\'\'/nbv/voxelGridVisualization\'\'\'
+-   **/nbv/voxelGridVisualization**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes voxels, which are used to consider visual
     obstacles
--   \'\'\'/nbv/raytracingVisualization\'\'\'
+-   **/nbv/raytracingVisualization**
 -   message type: visualization_msgs/MarkerArray
 -   description: publishes rays, which are used to determine visual
     collision between camera origin and hypotheses
@@ -190,19 +189,19 @@ visualization. Those topics are:
 ## Parameters
 
 -   !NextBestView calculation
--   \'\'\'maxIterationSteps\'\'\': the maximal amount of iteration steps
-    that should be used for the calculation of the!NextBestView
--   \'\'\'epsilon\'\'\': if the rating difference between two iteration
-    steps is lower than epsilon, the !NextBestView iteration process
-    finishes. Lower values result in more precisely calculated
-    !NextBewstViews but require more calculation time.
--   \'\'\'nRatingThreads\'\'\': number of rating threads used to rate
-    views. -1 gets an optimal a number of threads
--   \'\'\'useMinUtility\'\'\': if true, views are filtered by a minimum
-    required utility. All generated views that are below are removed
--   \'\'\'enableCropBoxFiltering\'\'\': whether crop box filtering
-    should be used, so that all points of the point_cloud which are at
-    the outside will be removed. The cropboxes will be read from the
+-   **maxIterationSteps**: the maximal amount of iteration steps that
+    should be used for the calculation of the!NextBestView
+-   **epsilon**: if the rating difference between two iteration steps is
+    lower than epsilon, the !NextBestView iteration process finishes.
+    Lower values result in more precisely calculated !NextBewstViews but
+    require more calculation time.
+-   **nRatingThreads**: number of rating threads used to rate views. -1
+    gets an optimal a number of threads
+-   **useMinUtility**: if true, views are filtered by a minimum required
+    utility. All generated views that are below are removed
+-   **enableCropBoxFiltering**: whether crop box filtering should be
+    used, so that all points of the point_cloud which are at the outside
+    will be removed. The cropboxes will be read from the
     rsc/CropBoxList\*.xml file (the path is configured in the launch
     file). The XML file will be created with the
     !RegionsToCropBoxAndNormals.py script, which converts the
@@ -212,98 +211,92 @@ visualization. Those topics are:
     be ignored. If no normals are defined, the original normals of the
     objects will be used.
 -   Rating
--   \'\'\'ratingModuleId\'\'\': which rating module should be used
+-   **ratingModuleId**: which rating module should be used
 -   1 =\> !DefaultRatingModule
--   \'\'\'useTargetRobotState\'\'\': whether it should be checked if the
+-   **useTargetRobotState**: whether it should be checked if the
     calculated target robot state is reachable
 -   Weights of the components of the rating for a viewport:
--   \'\'\'mOmegaUtility\'\'\': weight of the utility
--   \'\'\'mOmegaPan\'\'\': weight of the movement costs of the pan-axis
-    for the PTU
--   \'\'\'mOmegaTilt\'\'\': weight of the movement costs of the
-    tilt-axis for the PTU
--   \'\'\'mOmegaRot\'\'\': weight of the rotation costs of the robot
-    base
--   \'\'\'mOmegaBase\'\'\': weight of the translational movement costs
-    of the robot base
--   \'\'\'mOmegaRecognizer\'\'\': weight of the recognition costs
--   \'\'\'speedFactorRecognizer\'\'\': time costs for object detection
-    in sec/object
--   \'\'\'mRatingNormalAngleThreshold\'\'\': same as
+-   **mOmegaUtility**: weight of the utility
+-   **mOmegaPan**: weight of the movement costs of the pan-axis for the
+    PTU
+-   **mOmegaTilt**: weight of the movement costs of the tilt-axis for
+    the PTU
+-   **mOmegaRot**: weight of the rotation costs of the robot base
+-   **mOmegaBase**: weight of the translational movement costs of the
+    robot base
+-   **mOmegaRecognizer**: weight of the recognition costs
+-   **speedFactorRecognizer**: time costs for object detection in
+    sec/object
+-   **mRatingNormalAngleThreshold**: same as
     mHypothesisUpdaterAngleThreshold, but this one is only for rating
--   \'\'\'useOrientationUtility\'\'\': whether the orientation utility
-    shall be used for the computation of the utility (only for testing
-    purposes; should normally remain true)
--   \'\'\'useProximityUtility\'\'\': whether the proximity utility shall
-    be used for the computation of the utility (only for testing
-    purposes; should normally remain true)
--   \'\'\'useSideUtility\'\'\': whether the side utility shall be used
+-   **useOrientationUtility**: whether the orientation utility shall be
+    used for the computation of the utility (only for testing purposes;
+    should normally remain true)
+-   **useProximityUtility**: whether the proximity utility shall be used
     for the computation of the utility (only for testing purposes;
     should normally remain true)
--   \'\'\'enableIntermediateObjectWeighting\'\'\': whether intermediate
-    object weighting should be used for calculating the !
+-   **useSideUtility**: whether the side utility shall be used for the
+    computation of the utility (only for testing purposes; should
+    normally remain true)
+-   **enableIntermediateObjectWeighting**: whether intermediate object
+    weighting should be used for calculating the !
 -   NextBestView. The weights will be generated in the
     [intermediate_object_generator](http://wiki.ros.org/asr_intermediate_object_generator).
     The weights will be read from the
     [world_model](http://wiki.ros.org/asr_world_model)where the
     next_best_view node gets them.
 -   Camera model filter
--   \'\'\'cameraFilterId\'\'\': which camera filter should be used:
+-   **cameraFilterId**: which camera filter should be used:
 -   1 =\> Raytracing3DBasedStereoCameraModelFilter
 -   2 =\> !StereoCameraModelFilter
 -   3 =\> Raytracing3DBasedSingleCameraModelFilter
 -   4 =\> !SingleCameraModelFilter
--   \'\'\'fovx\'\'\': horizontal field of view in degree
--   \'\'\'fovy\'\'\': vertical field of view in degree
--   \'\'\'ncp\'\'\': distance of near clipping plane in meters
--   \'\'\'fcp\'\'\': distance of far clipping plane in meters
+-   **fovx**: horizontal field of view in degree
+-   **fovy**: vertical field of view in degree
+-   **ncp**: distance of near clipping plane in meters
+-   **fcp**: distance of far clipping plane in meters
 -   If raytracing is used:
--   \'\'\'voxelSize\'\'\': the length of an edge of a voxel
--   \'\'\'worldHeight\'\'\': the height of the world in meters
--   \'\'\'worldFilePath\'\'\': the path to the XML file describing the
+-   **voxelSize**: the length of an edge of a voxel
+-   **worldHeight**: the height of the world in meters
+-   **worldFilePath**: the path to the XML file describing the
     environment
--   \'\'\'visualizeRaytracing\'\'\': whether the raytracing shall be
-    visualized
+-   **visualizeRaytracing**: whether the raytracing shall be visualized
 -   Hypothesis updater
--   \'\'\'hypothesisUpdaterId\'\'\': which hypothesis updater should be
-    used:
+-   **hypothesisUpdaterId**: which hypothesis updater should be used:
 -   1 =\> !PerspectiveHypothesisUpdater
 -   2 =\> !DefaultHypothesisUpdater
--   \'\'\'mHypothesisUpdaterAngleThreshold\'\'\': maximum angle
-    threshold, used by the HypothesisUpdater to remove normals within
-    that angle. The angle used for comparison is the angle between the
-    camera orientation and the object normal.
+-   **mHypothesisUpdaterAngleThreshold**: maximum angle threshold, used
+    by the HypothesisUpdater to remove normals within that angle. The
+    angle used for comparison is the angle between the camera
+    orientation and the object normal.
 -   Space sampler
--   \'\'\'spaceSamplerId\'\'\': which sampler should be used:
+-   **spaceSamplerId**: which sampler should be used:
 -   1 =\> !MapBasedHexagonSpaceSampler
 -   2 =\> !MapBasedRandomSpaceSampler
--   \'\'\'radius\'\'\': the radius of the hexagons if using the
+-   **radius**: the radius of the hexagons if using the
     !MapBasedHexagonSpaceSampler
--   \'\'\'sampleSizeMapBasedRandomSpaceSampler\'\'\': the number of
-    samples that should be generated if using the
-    !MapBasedRandomSpaceSampler
+-   **sampleSizeMapBasedRandomSpaceSampler**: the number of samples that
+    should be generated if using the !MapBasedRandomSpaceSampler
 -   Unit sphere sampler
--   \'\'\'sphereSamplerId\'\'\':
+-   **sphereSamplerId**:
 -   1 =\> !SpiralApproxUnitSphereSampler
--   \'\'\'sampleSizeUnitSphereSampler\'\'\': the amount of sampled
-    points on the unit sphere
+-   **sampleSizeUnitSphereSampler**: the amount of sampled points on the
+    unit sphere
 -   Map
--   \'\'\'colThresh\'\'\': the collision threshold for the check whether
-    a position is reachable
+-   **colThresh**: the collision threshold for the check whether a
+    position is reachable
 -   Output
--   \'\'\'debugLevels\'\'\': a list of the debug levels that should be
-    printed\
+-   **debugLevels**: a list of the debug levels that should be printed\
     possible values: ALL, NONE, PARAMETERS, SERVICE_CALLS,
     VISUALIZATION, CALCULATION, RATING, ROBOT_MODEL, MAP, WORLD,
     VOXEL_GRID, FILTER, IK_RATING, SPACE_SAMPLER, HYPOTHESIS_UPDATER
 -   Visualization:
--   \'\'\'show_point_cloud\'\'\': whether the point cloud should be
+-   **show_point_cloud**: whether the point cloud should be visualized
+-   **show_frustum_point_cloud**: whether the point cloud in the frustum
+    should be visualized separately
+-   **show_frustum_marker_array**: whether the frustum should be
     visualized
--   \'\'\'show_frustum_point_cloud\'\'\': whether the point cloud in the
-    frustum should be visualized separately
--   \'\'\'show_frustum_marker_array\'\'\': whether the frustum should be
-    visualized
--   \'\'\'show_normals\'\'\': whether object normals should be shown
+-   **show_normals**: whether object normals should be shown
 
 Note that components from the asr_robot_model_services and costmap_2d
 packages are used and they also need parameters. So, the launch files of
@@ -320,14 +313,14 @@ the costmap_2d package under param/costmap_params.yaml.
 
 ## Provided Services
 
--   \'\'\'!GetAttributedPointCloud\'\'\' (/nbv/get_point_cloud) :
+-   **!GetAttributedPointCloud** (/nbv/get_point_cloud) :
 -   returns all hypotheses that have at least minNumberNormals remaining
     normals
 -   input:
 -   minNumberNormals: minimum number of normals that an object needs
 -   output:
 -   point_cloud: the point cloud with all the hypotheses
--   \'\'\'!GetNextBestView\'\'\' (/nbv/next_best_view) :
+-   **!GetNextBestView** (/nbv/next_best_view) :
 -   input:
 -   current_pose: current robot pose
 -   output:\
@@ -347,10 +340,10 @@ the costmap_2d package under param/costmap_params.yaml.
 -   ptu_movement_inverse_costs: costs of ptu movement
 -   recognition_inverse_costs: costs to recognize objects in
     object_type_name_list
--   \'\'\'!ResetCalculator\'\'\' (/nbv/reset_nbv_calculator) :
+-   **!ResetCalculator** (/nbv/reset_nbv_calculator) :
 -   output:
 -   succeeded: whether the calculator was reseted
--   \'\'\'!SetAttributedPointCloud\'\'\' (/nbv/set_point_cloud) :
+-   **!SetAttributedPointCloud** (/nbv/set_point_cloud) :
 -   input:
 -   point_cloud: point cloud to use for the !NextBestView estimation
 -   viewports_to_filter: previously found/navigated !NextBestViews
@@ -359,7 +352,7 @@ the costmap_2d package under param/costmap_params.yaml.
 -   normals_per_object: a list of remaining normals per object.
     !SetPointCloud updates all views that have been seen by the robot
     before. This process will remove normals
--   \'\'\'!UpdatePointCloud\'\'\' (/nbv/update_point_cloud) :
+-   **!UpdatePointCloud** (/nbv/update_point_cloud) :
 -   input:
 -   pose_for_update: the current camera pose
 -   object_type_name_list: object type list that the object detection
@@ -367,10 +360,10 @@ the costmap_2d package under param/costmap_params.yaml.
 -   output:
 -   deactivated_object_normals: number of normals that were removed by
     pose_for_update
--   \'\'\'!SetInitRobotState\'\'\' (/nbv/set_init_robot_state) :
+-   **!SetInitRobotState** (/nbv/set_init_robot_state) :
 -   input:
 -   robotState: initial robot state, rotation angle in radian
--   \'\'\'!RemoveObjects\'\'\' (/nbv/remove_objects) :
+-   **!RemoveObjects** (/nbv/remove_objects) :
 -   removes all hypotheses of a given object that is specified by a type
     and an identifier
 -   input:
@@ -379,7 +372,7 @@ the costmap_2d package under param/costmap_params.yaml.
 -   output:
 -   is_valid: whether the point cloud is valid after this call. False if
     the point cloud is empty
--   \'\'\'!RateViewports\'\'\' (/nbv/rate_viewports) :
+-   **!RateViewports** (/nbv/rate_viewports) :
 -   rates viewports using a current robot pose, a list of viewports to
     be rated and an optional list of object types that shall be used for
     object detection
@@ -393,17 +386,17 @@ the costmap_2d package under param/costmap_params.yaml.
 -   sortedRatedViewports: a list containing all valid viewports that are
     sorted by their rating, oldIdx is the position in the given list of
     viewports to undo the sorting
--   \'\'\'!TriggerFrustumVisualization\'\'\'
+-   **!TriggerFrustumVisualization**
     (/nbv/trigger_frustum_visualization) :
 -   displays the frustum in a blue color
 -   input:
 -   current_pose: camera pose to be displayed in rviz
--   \'\'\'!TriggerOldFrustumVisualization\'\'\'
+-   **!TriggerOldFrustumVisualization**
     (/nbv/trigger_old_frustum_visualization) :
 -   displays the old frustum in a purple color
 -   input:
 -   current_pose: camera pose to be displayed in rviz
--   \'\'\'!TriggerFrustumsAndPointCloudVisualization\'\'\'
+-   **!TriggerFrustumsAndPointCloudVisualization**
     (/nbv/trigger_frustums_and_point_cloud_visualization) :
 -   displays a frustum and object hypotheses inside are marked.
 -   input:
@@ -421,7 +414,7 @@ When using this package, please cite the following publication. Thank
 you!
 
 -   P. Meißner, R. Schleicher, R. Hutmacher, S. R. Schmidt-Rohr and R.
-    Dillmann. \'\'Scene Recognition for Mobile Robots by Relational
-    Object Search using Next-Best-View Estimates from Hierarchical
-    Implicit Shape Models\'\'. In International Conference on
-    Intelligent Robots and Systems, 2016.
+    Dillmann. *Scene Recognition for Mobile Robots by Relational Object
+    Search using Next-Best-View Estimates from Hierarchical Implicit
+    Shape Models*. In International Conference on Intelligent Robots and
+    Systems, 2016.

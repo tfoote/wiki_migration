@@ -50,7 +50,7 @@ or
 Update your \`/etc/apt/sources.list\` file and/or
 \`/etc/apt/sources.list.d/\*.list\` to uncomment (or add) the
 \`deb-src\` entries for all of the entries for the \`main\`
-repositories. Below is an \'\'\'example\'\'\' for ubuntu 16.04 (Xenial).
+repositories. Below is an **example** for ubuntu 16.04 (Xenial).
 
 ```
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted
@@ -102,7 +102,7 @@ sudo modprobe uvcvideo
 modprobe: ERROR: could not insert 'uvcvideo': Required key not available
 ```
 
-\'\'\'Solution: \'\'\'
+**Solution: **
 
 -   DKMS does not work with Secure Boot. You need to
     [disable it](https://wiki.ubuntu.com/UEFI/SecureBoot/DKMS).
@@ -116,7 +116,7 @@ deb-src http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted un
 deb-src http://security.ubuntu.com/ubuntu xenial-security main restricted
 ```0
 
-\'\'\'Solution: \'\'\'
+**Solution: **
 
 -   Remove the failed DKMS installation ```
 deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main restricted

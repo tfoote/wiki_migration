@@ -27,9 +27,9 @@ TOF P510.
 
 # First step: Get Ros
 
-The \'\'\'\'bta_ros\'\'\'\' works with ROS versions hydro, indigo and
-jade. You can use catkin workspaces or the older rosbuild to configure,
-compile the driver.
+The **\'bta_ros**\' works with ROS versions hydro, indigo and jade. You
+can use catkin workspaces or the older rosbuild to configure, compile
+the driver.
 
 The following ROS tutorial links describe how to get ros\_\$ROS_DISTRO
 and a catkin workspace.

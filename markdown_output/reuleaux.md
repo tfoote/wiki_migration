@@ -355,9 +355,9 @@ map. Only the spheres will be visualized.
 
 . ![\|width=\"307\",height=\"246\"](attachment:capability.jpg)
 
-\'\'\'Sometimes the changes in the visualization of the maps do not
+**Sometimes the changes in the visualization of the maps do not
 instantly take action. Pressing the reset button will bring back
-changes.\'\'\'
+changes.**
 
 ## Base Placement Plugin
 

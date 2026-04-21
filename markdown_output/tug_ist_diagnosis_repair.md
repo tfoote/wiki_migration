@@ -3,9 +3,8 @@
 The repair engine takes current observations and diagnoses as input. If
 the repair engine receives a diagnosis message, it converts the
 diagnosis into to a planning problem and solves it with the help of
-\'\'Planning Domain Definition Language (PDDL)\'\' based planner.
-Currently diagnosis repair engine finds action plan for the first
-diagnosis.
+*Planning Domain Definition Language (PDDL)* based planner. Currently
+diagnosis repair engine finds action plan for the first diagnosis.
 
 ## Nodes
 

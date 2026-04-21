@@ -8,11 +8,11 @@ This package contains a number of [XML specifications](urdf/XML) for
 robot models, sensors, scenes, etc. Each XML specification has a
 corresponding parser in one or more languages.
 
-  -- ---------------------------- -- ----------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
-     \<rowbgcolor=\"#FFFFE0\"\>      \'\'\'XML Description\'\'\'      \'\'\'C++\'\'\'                                                                                                                             \'\'\'Python\'\'\'                               \'\'\'XML Schema\'\'\'                                                          
-     Model                           [model](urdf/XML/model)          [Parser API](http://www.ros.org/doc/api/urdf/html/) [Model API](https://github.com/ros/urdfdom_headers/tree/master/include/urdf_model)      [Model API](http://wiki.ros.org/urdfdom_py)      [urdf.xsd](https://raw.githubusercontent.com/ros/urdfdom/master/xsd/urdf.xsd)   
-     Sensor                          [sensor](urdf/XML/sensor)                                                                                                                                                                                                                                                                                     
-  -- ---------------------------- -- ----------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
+  -- ---------------------------- -- --------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
+     \<rowbgcolor=\"#FFFFE0\"\>      **XML Description**            **C++**                                                                                                                                     **Python**                                       **XML Schema**                                                                  
+     Model                           [model](urdf/XML/model)        [Parser API](http://www.ros.org/doc/api/urdf/html/) [Model API](https://github.com/ros/urdfdom_headers/tree/master/include/urdf_model)      [Model API](http://wiki.ros.org/urdfdom_py)      [urdf.xsd](https://raw.githubusercontent.com/ros/urdfdom/master/xsd/urdf.xsd)   
+     Sensor                          [sensor](urdf/XML/sensor)                                                                                                                                                                                                                                                                                   
+  -- ---------------------------- -- --------------------------- -- ---------------------------------------------------------------------------------------------------------------------------------------- -- --------------------------------------------- -- ------------------------------------------------------------------------------- --
 
 ## Components == A number of different packages and components make up urdf. The following diagram attempts to explain the relationship between these components:
 
@@ -48,8 +48,8 @@ corresponding parser in one or more languages.
 
 ## Getting Started
 
-There is large set of \'\'\'tutorials\'\'\' on how to build up your own
-robot models using the URDF specification. Check out the
+There is large set of **tutorials** on how to build up your own robot
+models using the URDF specification. Check out the
 [urdf/Tutorials](urdf/Tutorials) page.
 
 We also developed a macro language called [xacro](xacro) to make it

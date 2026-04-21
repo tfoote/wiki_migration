@@ -12,8 +12,8 @@ checkerboard pose as tf, marker msg, or pose.
 
 -   First of all you need a camera publisher with calibration
     information (see MonocularCalibration to calibrate your camera) and
-    lets assume you ar publishing your camera under
-    \'\'/camera/image_raw\'\' and \'\'/camera/camera_info\'\'
+    lets assume you ar publishing your camera under */camera/image_raw*
+    and */camera/camera_info*
 -   Secound you can start the checkerboard detection\
     ```
 rosrun tuw_checkerboard tuw_checkerboard_node image:=/camera/image_raw camera_info:=/camera/camera_info

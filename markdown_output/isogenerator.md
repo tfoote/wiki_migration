@@ -105,12 +105,11 @@ process is finished 1. Close the Startup Disk Creator 1. Eject the USB
 Disk by right clicking it on the desktop and choosing Eject 1. Remove
 the USB Disk from the computer
 
-\'\'\'If you are asked for your root password:\'\'\' sometimes Ubuntu
-will ask for your root password instead of doing a \"sudo\" when you
-launch Startup Disk Creator from the GUI. If you have this problem,
-close the Startup Disk Creator and start a terminal (Applications -\>
-Accessories -\> Terminal). Type the following in the terminal and go
-back to step 5:
+**If you are asked for your root password:** sometimes Ubuntu will ask
+for your root password instead of doing a \"sudo\" when you launch
+Startup Disk Creator from the GUI. If you have this problem, close the
+Startup Disk Creator and start a terminal (Applications -\> Accessories
+-\> Terminal). Type the following in the terminal and go back to step 5:
 
 ```
 sudo usb-creator-gtk

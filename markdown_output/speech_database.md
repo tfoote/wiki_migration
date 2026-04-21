@@ -34,7 +34,7 @@ param {
 
 Use roslaunch files to load this files.
 
--   \'\'\'speech.launch\'\'\' - Launches soundplay_node.py of the
+-   **speech.launch** - Launches soundplay_node.py of the
     [sound_play](sound_play) package and the speech_database node with
     the parameters mentioned above.
 

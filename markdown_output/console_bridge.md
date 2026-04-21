@@ -1,18 +1,18 @@
-\'\'\'Package:\'\'\' console_bridge
+**Package:** console_bridge
 
-\'\'\'Maintainers:\'\'\' Mirza Shah (mshah@willowgarage.com), Ioan Sucan
+**Maintainers:** Mirza Shah (mshah@willowgarage.com), Ioan Sucan
 (isucan@willowgarage.com)
 
-\'\'\'Author:\'\'\' Ioan Sucan (isucan@willowgarage.com)
+**Author:** Ioan Sucan (isucan@willowgarage.com)
 
-\'\'\'Code Repository:\'\'\' <https://github.com/ros/console_bridge>
+**Code Repository:** <https://github.com/ros/console_bridge>
 
 ## Overview
 
-\'\'\'console_bridge\'\'\' is a ROS-independent, pure CMake (i.e.
-non-catkin and non-rosbuild package) that provides logging calls that
-mirror those found in [rosconsole](rosconsole), but for applications
-that are not necessarily using ROS.
+**console_bridge** is a ROS-independent, pure CMake (i.e. non-catkin and
+non-rosbuild package) that provides logging calls that mirror those
+found in [rosconsole](rosconsole), but for applications that are not
+necessarily using ROS.
 
 Normally in ROS C++ code, developers can log data via
 [rosconsole](rosconsole) using the macros ROS_DEBUG, ROS_INFO, ROS_WARN,
@@ -42,9 +42,9 @@ When these functions are used, the output is directed to stdout rather
 than to both stdout and /rosout. However, here is the most interesting
 feature:
 
-\'\'\'If you want your console_bridge application to hook into /rosout,
-all you have to do is switch the depedency of your package from
-console_bridge to [rosconsole_bridge](rosconsole_bridge)!\'\'\'
+**If you want your console_bridge application to hook into /rosout, all
+you have to do is switch the depedency of your package from
+console_bridge to [rosconsole_bridge](rosconsole_bridge)!**
 
 Once you use [rosconsole_bridge](rosconsole_bridge), the implementations
 of `logDebug, logInform, logWarn, and logError` will simply become

@@ -6,8 +6,8 @@ encoders. For further technical specifications please visit the
 
 ## Driver Installation
 
-\'\'This installation is generally untested, but works on my machine
-with 64-bit Ubuntu 10.04 machine and Diamondback.\'\'
+*This installation is generally untested, but works on my machine with
+64-bit Ubuntu 10.04 machine and Diamondback.*
 
 First, check out the sensoray626 package from the repository.
 
@@ -30,15 +30,14 @@ roscd sensoray626
 sudo ./setup626.py
 ```
 
-One important thing to note is that this script disables \'\'comedi\'\'.
-The [comedi driver](http://www.comedi.org/doc/x1781.html#AEN4530) does
-not support analog i/o functionality and conflicts with the
-manufacturer\'s driver.
+One important thing to note is that this script disables *comedi*. The
+[comedi driver](http://www.comedi.org/doc/x1781.html#AEN4530) does not
+support analog i/o functionality and conflicts with the manufacturer\'s
+driver.
 
 Now we can make the package, which should build the core&mod library as
-\'\'lib/libsensoray626.so\'\' and a demo program as
-\'\'bin/demo_cpp\'\'. Run the demo program to verify successful
-installation of the driver.
+*lib/libsensoray626.so* and a demo program as *bin/demo_cpp*. Run the
+demo program to verify successful installation of the driver.
 
 ```
 make
@@ -47,8 +46,8 @@ rosrun sensoray626 demo_cpp
 
 ## Using Sensoray 626 in your node.
 
-Add the following line to \'\'CMakeLists.txt\'\' in your package to link
-to the library in the sensoray626 package. ```
+Add the following line to *CMakeLists.txt* in your package to link to
+the library in the sensoray626 package. ```
 target_link_libraries(YOUR_EXECUTABLE_NAME_HERE sensoray626)
 ```
 

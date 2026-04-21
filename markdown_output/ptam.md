@@ -32,8 +32,8 @@ before using this code. Also, be aware of the
 [license](http://www.robots.ox.ac.uk/~gk/PTAM/download.html) that comes
 with it.
 
-\'\'\'Note:\'\'\' This package is under active development. It is meant
-for research use only
+**Note:** This package is under active development. It is meant for
+research use only
 ([license](http://www.robots.ox.ac.uk/~gk/PTAM/download.html)) and at
 your own responsibility.
 
@@ -217,19 +217,18 @@ resources: set the fix parameter gui=False. For further speed-up and
 performance boost of PTAM onboard the robot you may consider the
 following settings:
 
--   !InitLevel: 1 \'\'for robust and fast initialization on self-similar
-    structures\'\'
--   !MaxStereoInitLoops: 4 \'\'for fast map initialization, prevents
-    hanging on degenerated sets\'\'
--   !MaxPatchesPerFrame: 300 \'\'maximal number of features per
-    frame\'\'
--   MaxKF: 15 \'\'maximal number of KFs to be retained in the map, do
-    not go lower than 5 to maintain good drift performance\'\'
--   UseKFPixelDist: True \'\'generates new KF based on pixel disparity.
-    This is usually more robust than the built in KF request in PTAM\'\'
--   !NoLevelZeroMapPoints: True \'\'only use map features in down
-    sampled image pyramids. This greatly improves robustness in
-    self-similar structures\'\'
+-   !InitLevel: 1 *for robust and fast initialization on self-similar
+    structures*
+-   !MaxStereoInitLoops: 4 *for fast map initialization, prevents
+    hanging on degenerated sets*
+-   !MaxPatchesPerFrame: 300 *maximal number of features per frame*
+-   MaxKF: 15 *maximal number of KFs to be retained in the map, do not
+    go lower than 5 to maintain good drift performance*
+-   UseKFPixelDist: True *generates new KF based on pixel disparity.
+    This is usually more robust than the built in KF request in PTAM*
+-   !NoLevelZeroMapPoints: True *only use map features in down sampled
+    image pyramids. This greatly improves robustness in self-similar
+    structures*
 
 ### Map Export and Map Display in RViz
 

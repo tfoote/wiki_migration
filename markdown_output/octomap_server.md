@@ -25,11 +25,11 @@ BibTeX: ```
 
 ### dynamic_reconfigure API
 
-\'\'\'octomap_server\'\'\' and \'\'\'octomap_server_multilayer\'\'\'
-offer a dynamic_reconfigure interface to change the displayed map
-resolution on the fly (since version 0.3.8). Note that this will not
-change the resolution of the underlying OctoMap, but only of the
-published marker / collision topics (e.g. for visualization).
+**octomap_server** and **octomap_server_multilayer** offer a
+dynamic_reconfigure interface to change the displayed map resolution on
+the fly (since version 0.3.8). Note that this will not change the
+resolution of the underlying OctoMap, but only of the published marker /
+collision topics (e.g. for visualization).
 
 ```clearsilver
 node.0 {

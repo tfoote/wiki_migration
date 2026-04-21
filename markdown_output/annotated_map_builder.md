@@ -27,7 +27,7 @@ rosrun pr2_experimental_controllers tuckarm.py r
 third console on the robot: 1. ```
 roscd annotated_map_builder
 ``` 1. Ensure that
-the bags directory has a subdirectory called \'\'annotated_maps\'\' 1.
+the bags directory has a subdirectory called *annotated_maps* 1.
 ```
 roslaunch record_1.launch
 ``` 1. At this point the robot will start moving
@@ -39,12 +39,12 @@ rosrun rviz rviz
 <http://pr.willowgarage.com/wiki/rviz/UsingTheVisualizer> to initialize
 the robot pose
 
-\'\'\'NOTE:\'\'\' You may need to run the following in the
-annotated_map_builder directory ```
+**NOTE:** You may need to run the following in the annotated_map_builder
+directory ```
 chmod a+x src/annotated_map_builder/wait_for_multiple_head_configs.py
 chmod a+x src/annotated_map_builder/move_head_action.py
 ```
 
 Also, to change the head positions that are used as the robot wanders
-around change the \'\'\'head_configs\'\'\' parameter in the file
-\"\'\'test/move_head.launch\'\'\".
+around change the **head_configs** parameter in the file
+\"*test/move_head.launch*\".

@@ -12,8 +12,8 @@ cd ..
 catkin_make
 ```
 
-Building it with \'\'catkin_make\'\' will allow using \'\'roslaunch\'\'
-and \'\'find\'\' later.
+Building it with *catkin_make* will allow using *roslaunch* and *find*
+later.
 
 # Usage
 

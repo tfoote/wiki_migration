@@ -3,24 +3,23 @@
 Package contains node for teleoperating Care-O-Bot or any other
 holonomic robot by [Space Navigator](spacenav) 3D mouse.
 
-Control input from SN is recomputed to make robot teleoperation in
-\'\'user perspective\'\'. This helps to lower mental load of an operator
-and leads to very intuitive way of interaction. To enable this
-functionality position of RVIZ camera must be published as TF
-transformation for instance, by plugin from
-[srs_env_model_ui](srs_env_model_ui).
+Control input from SN is recomputed to make robot teleoperation in *user
+perspective*. This helps to lower mental load of an operator and leads
+to very intuitive way of interaction. To enable this functionality
+position of RVIZ camera must be published as TF transformation for
+instance, by plugin from [srs_env_model_ui](srs_env_model_ui).
 
 Node can publish to two Twist topics. Normally it publish to first one
-(\'\'safe\'\' topic in case of Care-O-Bot) and when the left button is
-pressed on SN, it publishes to second topic (\'\'unsafe\'\' in case of
-Care-O-Bot). When right button is pressed once, robot control is
-switched to the \'\'robot perspective\'\'. Next press will switch
-control back to default mode.
+(*safe* topic in case of Care-O-Bot) and when the left button is pressed
+on SN, it publishes to second topic (*unsafe* in case of Care-O-Bot).
+When right button is pressed once, robot control is switched to the
+*robot perspective*. Next press will switch control back to default
+mode.
 
-Teleop node also offers \'\'axis preference\'\' which can be useful for
-some robot bases. This means if user tries to command robot to move in
-\'\'x\'\' axis direction for instance, then in some cases (depending on
-the parameters) small movements in other axes can be ignored.
+Teleop node also offers *axis preference* which can be useful for some
+robot bases. This means if user tries to command robot to move in *x*
+axis direction for instance, then in some cases (depending on the
+parameters) small movements in other axes can be ignored.
 
 ## ROS API
 

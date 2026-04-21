@@ -1,6 +1,6 @@
 ## State Format Description
 
-Proposer: \'\'\'John Hsu\'\'\'
+Proposer: **John Hsu**
 
 This format is intended to keep state information of a robot as
 described by the [URDF](urdf) file.

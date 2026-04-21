@@ -5,8 +5,8 @@ at the University of New South Wales, Australia.
 
 ## History
 
-The \'\'\'crosbot\'\'\' packages were originally part of the
-\'\'\'CASRobot\'\'\' software suite developed within the
+The **crosbot** packages were originally part of the **CASRobot**
+software suite developed within the
 [ARC Centre of Excellence for Autonomous Systems (CAS)](http://www.cas.edu.au)
 in the School of Computer Science and Engineering (CSE) for research and
 teaching purposes.

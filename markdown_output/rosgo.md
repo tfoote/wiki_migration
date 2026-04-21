@@ -1,7 +1,7 @@
 # Package Summary
 
-\'\'\'rosgo\'\'\' is pure [Go](http://golang.org) implementation of ROS
-client library.
+**rosgo** is pure [Go](http://golang.org) implementation of ROS client
+library.
 
 -   Author: akio \<akio19937 AT gmail DOT com\>
 -   License: Apache 2.0
@@ -9,7 +9,7 @@ client library.
 
 # Status
 
-\'\'\'rosgo\'\'\' is under development to implement all features of
+**rosgo** is under development to implement all features of
 [ROS Client Library Requiements](http://wiki.ros.org/Implementing%20Client%20Libraries).
 
 At present, following basic functions are provided.
@@ -35,5 +35,5 @@ go install test_listener test_talker test_param
 ``` Example executables are placed in \`bin\`
 directory.
 
-\'\'In future release, the build system will be integrated with
-[catkin](catkin).\'\'
+*In future release, the build system will be integrated with
+[catkin](catkin).*

@@ -18,7 +18,7 @@ and needed graphs are prepared. \`R\` is also used to store statistics
 and dump them into CSV and RData formats for easy post-processing. Then,
 links to prepared figures and log statistics are passed via JPL to
 \`Java\` where they are prepared and injected into selected LaTeX
-templates with use of \'\'Nixo Soft\'\'
+templates with use of *Nixo Soft*
 [JLR library](http://www.nixo-soft.de/tutorials/jlr/JLRTutorial.html).
 Finally, the same library is used to generate a PDF based on prepared
 tex files. For details please refer to below figure.
@@ -28,12 +28,12 @@ tex files. For details please refer to below figure.
 # Report card generation paradigm
 
 To make the package the most universal the report card generation is
-based on two key concepts \'\'\'report card layout templates\'\'\' and
-\'\'\'section templates\'\'\'. This approach allows the user to choose
-the design of the report card and decide which sections should be placed
-within. Moreover, this design facilitates creating personalised section
-and including them in the report card without complex code alterations
-and rebuilding the whole package - see below.
+based on two key concepts **report card layout templates** and **section
+templates**. This approach allows the user to choose the design of the
+report card and decide which sections should be placed within. Moreover,
+this design facilitates creating personalised section and including them
+in the report card without complex code alterations and rebuilding the
+whole package - see below.
 
 ## layout
 
@@ -54,7 +54,7 @@ section:
 -   \$argument# - argument in which all LaTeX critical characters will
     be escaped - for use in normal text;
 -   \$rawArgument# - argument which is not escaped - for use in
-    \'\'verbatim\'\' environments and to pass file paths;
+    *verbatim* environments and to pass file paths;
 -   \$seqArguments# - sequences of arguments which are escaped;
 -   \$rawSeqArguments# - sequences of arguments which are not escaped;
 
@@ -96,14 +96,13 @@ generate_section_name(RcHomeOs, SectionPath) :-
 Where \`RcHomeOs\` is path to the temporary directory of current report
 card; \`Section\` is the section name (it MUST contain the exact name
 you gave to your section file without \`.tex\` extension), \`Strings\`
-and \`RawStrings\` are as described above and of type \'\'array of
-strings\'\' and finally, \`SeqStrings\` and \`RawSeqStrings\` are as
-described above and of type \'\'array of array of strings\'\'. If you
-have no data of specific type to be passed to the section creator you
-should generate empty array for the first two types e.g.
-\`jpl_new(\'\[Ljava.lang.String;\', 0, Strings)\` and empty array of
-arrays for latter two types e.g. \`jpl_new(\'\[\[Ljava.lang.String;\',
-0, SeqStrings)\`.
+and \`RawStrings\` are as described above and of type *array of strings*
+and finally, \`SeqStrings\` and \`RawSeqStrings\` are as described above
+and of type *array of array of strings*. If you have no data of specific
+type to be passed to the section creator you should generate empty array
+for the first two types e.g. \`jpl_new(\'\[Ljava.lang.String;\', 0,
+Strings)\` and empty array of arrays for latter two types e.g.
+\`jpl_new(\'\[\[Ljava.lang.String;\', 0, SeqStrings)\`.
 
 ------------------------------------------------------------------------
 
@@ -228,8 +227,8 @@ For details please refer to this
 # Contributions
 
 Any section contributions are welcomed, please make a pull request with
-you custom \'\'\'report card generators\'\'\' predicates,
-\'\'\'report_card_type\'\'\' declarations, \'\'\'section.tex\'\'\' and
-all additional predicates extending \`report_card.pl\`. Please document
-all your code and wrap it between \'\'%%%%section_name - author -
-\<%%%%\'\' and \'\'%%%%section_name - author - \>%%%%\'\'.
+you custom **report card generators** predicates, **report_card_type**
+declarations, **section.tex** and all additional predicates extending
+\`report_card.pl\`. Please document all your code and wrap it between
+*%%%%section_name - author - \<%%%%* and *%%%%section_name - author -
+\>%%%%*.

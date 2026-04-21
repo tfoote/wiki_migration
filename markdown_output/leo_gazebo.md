@@ -10,8 +10,8 @@ To run Gazebo in an empty worlds and spawn the robot in it, simply type:
 ```
 roslaunch leo_gazebo leo_gazebo.launch
 ``` Alternatively, you can use check out the
-example \'\'\'marsyard\'\'\' world which features a more challenging
-terrain: ```
+example **marsyard** world which features a more challenging terrain:
+```
 roslaunch leo_gazebo leo_marsyard.launch
 ```
 
@@ -49,9 +49,9 @@ Now, to use the newly spawned Leo in ROS, you just have to run the nodes
 in the \`leo1\` namespace and use the prefixed tf frames, for example:
 ```
 ROS_NAMESPACE=leo1 rosrun leo_teleop key_teleop
-``` To use RViz, change the \'\'\'Fixed Frame\'\'\'
-to \`leo1/base_footprint\` and set the \'\'\'TF Prefix\'\'\' parameter
-in the [RobotModel](rviz/DisplayTypes/RobotModel) display to \`leo1\`.
+``` To use RViz, change the **Fixed Frame** to
+\`leo1/base_footprint\` and set the **TF Prefix** parameter in the
+[RobotModel](rviz/DisplayTypes/RobotModel) display to \`leo1\`.
 
 ## Nodes
 

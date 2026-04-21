@@ -11,11 +11,11 @@ The compiled firmware can be used in the bootloader plugin of the
 
 ## Development Use
 
-\'\'\'\'NB: For internal use at Shadow only\'\'\'\'
+**\'NB: For internal use at Shadow only**\'
 
-If you set the \'\'\'INTERNAL_FIRMWARE\'\'\' environment variable to 1,
-then we\'ll download the latest version of the protocol and also the
-latest compiled firmware from our internal svn (this is only possible if
+If you set the **INTERNAL_FIRMWARE** environment variable to 1, then
+we\'ll download the latest version of the protocol and also the latest
+compiled firmware from our internal svn (this is only possible if
 you\'re working for Shadow).
 
 If you\'re ready to make a relased firmware, just run make release in

@@ -52,7 +52,7 @@ hci0:	Type: USB
 	UP RUNNING PSCAN 
 	RX bytes:367492 acl:10576 sco:0 events:9367 errors:0
 	TX bytes:124782 acl:6401 sco:0 commands:1120 errors:0
-``` If \'\'\'UP\'\'\' is not present then run:
+``` If **UP** is not present then run:
 ```
 sudo hciconfig hci0 up
 ```
@@ -67,9 +67,8 @@ Scanning ...
 	00:80:98:EB:96:BA	WINXPHOME-DK
 ```
 
-The \'\'\'Ezurio blu2i E62B30\'\'\' is the pipette. You will want to
-remember the bluetooth device address \'\'\'00:80:98:EB:96:BA\'\'\' for
-later.
+The **Ezurio blu2i E62B30** is the pipette. You will want to remember
+the bluetooth device address **00:80:98:EB:96:BA** for later.
 
 ## Starting pipette_node
 

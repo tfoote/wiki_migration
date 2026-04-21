@@ -14,31 +14,31 @@ it\'s possible to support other representations. The spline interpolator
 uses the following interpolation strategies depending on the waypoint
 specification:
 
--   \'\'\'Linear\'\'\': Only position is specified. Guarantees
-    continuity at the position level. Discouraged because it yields
-    trajectories with discontinuous velocities at the waypoints.
+-   **Linear**: Only position is specified. Guarantees continuity at the
+    position level. Discouraged because it yields trajectories with
+    discontinuous velocities at the waypoints.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Cubic\'\'\': Position and velocity are specified. Guarantees
+-   **Cubic**: Position and velocity are specified. Guarantees
     continuity at the velocity level.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'Quintic\'\'\': Position, velocity and acceleration are
-    specified: Guarantees continuity at the acceleration level.
+-   **Quintic**: Position, velocity and acceleration are specified:
+    Guarantees continuity at the acceleration level.
 
 ### Hardware interface type
 
 The controller is templated to work with multiple hardware interface
-types. Currently joints with \'\'\'position\'\'\', \'\'\'velocity\'\'\'
-and \'\'\'effort\'\'\' interfaces are supported. For position-controlled
-joints, desired positions are simply forwarded to the joints; while for
-velocity (effort) joints, the position+velocity trajectory following
-error is mapped to velocity (effort) commands through a PID loop.
-Example controller configurations can be found
+types. Currently joints with **position**, **velocity** and **effort**
+interfaces are supported. For position-controlled joints, desired
+positions are simply forwarded to the joints; while for velocity
+(effort) joints, the position+velocity trajectory following error is
+mapped to velocity (effort) commands through a PID loop. Example
+controller configurations can be found
 [here](#Controller_configuration_examples).
 
 Similarly to the trajectory representation case above, it\'s possible to
@@ -48,59 +48,56 @@ commands).
 
 ### Other features
 
--   \'\'\'Realtime-safe\'\'\' implementation.
--   Proper handling of \'\'\'wrapping\'\'\' (continuous) joints.
--   \'\'\'Robust to system clock changes:\'\'\' Discontinuous system
-    clock changes do not cause discontinuities in the execution of
-    already queued trajectory segments.
+-   **Realtime-safe** implementation.
+-   Proper handling of **wrapping** (continuous) joints.
+-   **Robust to system clock changes:** Discontinuous system clock
+    changes do not cause discontinuities in the execution of already
+    queued trajectory segments.
 
 ## Sending trajectories
 
 ### Available interfaces
 
 There are two mechanisms for sending trajectories to the controller: by
-means of the \'\'\'action interface\'\'\' or the \'\'\'topic
-interface\'\'\'. Both use the
-\<\<MsgLink(trajectory_msgs/JointTrajectory)\>\> message to specify
-trajectories, and require specifying values for \'\'all\'\' the
-controller joints (as opposed to only a subset) if
-allow_partial_joints_goal is not set to True.
+means of the **action interface** or the **topic interface**. Both use
+the \<\<MsgLink(trajectory_msgs/JointTrajectory)\>\> message to specify
+trajectories, and require specifying values for *all* the controller
+joints (as opposed to only a subset) if allow_partial_joints_goal is not
+set to True.
 
-The primary way to send trajectories is through the \'\'\'action
-interface\'\'\', and should be favored when execution monitoring is
-desired. Action goals allow to specify not only the trajectory to
-execute, but also (optionally) path and goal tolerances. When no
-tolerances are specified, the defaults given in the parameter server are
-used (see [ROS API](#ROS_API) below). If tolerances are violated during
-trajectory execution, the action goal is aborted and the client is
-notified.
+The primary way to send trajectories is through the **action
+interface**, and should be favored when execution monitoring is desired.
+Action goals allow to specify not only the trajectory to execute, but
+also (optionally) path and goal tolerances. When no tolerances are
+specified, the defaults given in the parameter server are used (see
+[ROS API](#ROS_API) below). If tolerances are violated during trajectory
+execution, the action goal is aborted and the client is notified.
 
-\'\'\'Important note\'\'\' Even when a goal has been aborted, the
-controller will still attempt to execute the trajectory as best as
-possible.
+**Important note** Even when a goal has been aborted, the controller
+will still attempt to execute the trajectory as best as possible.
 
-The \'\'\'topic interface\'\'\' is a fire-and-forget alternative. Use
-this interface if you don\'t care about execution monitoring. The
-controller\'s path and goal tolerance specification is \'\'not\'\' used
-in this case, as there is no mechanism to notify the sender about
-tolerance violations. Note that although some degree of monitoring is
-available through the \`query_state\` service and \`state\` topic (see
+The **topic interface** is a fire-and-forget alternative. Use this
+interface if you don\'t care about execution monitoring. The
+controller\'s path and goal tolerance specification is *not* used in
+this case, as there is no mechanism to notify the sender about tolerance
+violations. Note that although some degree of monitoring is available
+through the \`query_state\` service and \`state\` topic (see
 [ROS API](#ROS_API) below), it is much more cumbersome to realize than
 with the action interface.
 
 ### Preemption policy
 
 Only one action goal can be active at any moment, or none if the topic
-interface is used. Path and goal tolerances are checked \'\'only\'\' for
-the trajectory segments of the active goal.
+interface is used. Path and goal tolerances are checked *only* for the
+trajectory segments of the active goal.
 
 When an active action goal is preempted by another command coming from
 either the action or the topic interface, the goal is canceled and the
 client is notified.
 
-Sending an \'\'\'empty trajectory\'\'\' message from the \'\'\'topic
-interface\'\'\' (not the action interface) will stop the execution of
-all queued trajectories and enter position hold mode. The
+Sending an **empty trajectory** message from the **topic interface**
+(not the action interface) will stop the execution of all queued
+trajectories and enter position hold mode. The
 \`stop_trajectory_duration\` parameter controls the duration of the stop
 motion.
 
@@ -108,13 +105,12 @@ motion.
 
 Joint trajectory messages allow to specify the time at which a new
 trajectory should start executing by means of the header timestamp,
-where zero time (the default) means \'\'\"start now\"\'\'.
+where zero time (the default) means *\"start now\"*.
 
-The arrival of a new trajectory command does \'\'not necessarily\'\'
-mean that the controller will completely discard the currently running
-trajectory and substitute it with the new one. Rather, the controller
-will take the useful parts of both and combine them appropriately.
-Please refer to the
+The arrival of a new trajectory command does *not necessarily* mean that
+the controller will completely discard the currently running trajectory
+and substitute it with the new one. Rather, the controller will take the
+useful parts of both and combine them appropriately. Please refer to the
 [ understanding trajectory replacement](/UnderstandingTrajectoryReplacement)
 page for a detailed description of this behavior.
 

@@ -1,10 +1,10 @@
 ## What are Lexical Units?
 
-In \`RoboFrameNet\`, a \'\'\'lexical unit\'\'\' provides a mapping from
-parsed natural language to semantic frames. Lexical units contain a
-verb, which is said to \'\'evoke\'\' a semantic frame, as well as the
-verb\'s dependencies, for instance the verb\'s direct object, indirect
-object, etc.
+In \`RoboFrameNet\`, a **lexical unit** provides a mapping from parsed
+natural language to semantic frames. Lexical units contain a verb, which
+is said to *evoke* a semantic frame, as well as the verb\'s
+dependencies, for instance the verb\'s direct object, indirect object,
+etc.
 
 ## Creating and Adding New Lexical Units
 
@@ -64,30 +64,29 @@ verb: [moo, speak]
 
 Each lexical unit must specify the following values:
 
--   \'\'\'frame_name\'\'\': The name of the semantic frame to which this
-    lexical unit binds.
--   \'\'\'verb\'\'\': One or more verbs that evoke the semantic frame.
+-   **frame_name**: The name of the semantic frame to which this lexical
+    unit binds.
+-   **verb**: One or more verbs that evoke the semantic frame.
 
 #### Optional Values
 
 Each lexical unit may specify the following values:
 
--   \'\'\'description\'\'\': A description of the lexical unit, what it
-    does, what it\'s supposed to bind, etc.
--   \'\'\'frame_element_grammatical_relations\'\'\': A set of relations
-    that map from dependencies (direct object, indirect object, etc.) to
-    the elements of the semantic frame.
+-   **description**: A description of the lexical unit, what it does,
+    what it\'s supposed to bind, etc.
+-   **frame_element_grammatical_relations**: A set of relations that map
+    from dependencies (direct object, indirect object, etc.) to the
+    elements of the semantic frame.
 
 \`frame_element_grammatical_relations\` is a list. Each entry in this
 list must have the following values:
 
--   \'\'\'name\'\'\': The name of the frame element in the semantic
-    frame.
--   \'\'\'relation\'\'\': The dependency with respect to the verb.
-    Dependencies may be multiple levels out. (For instance, saw we want
-    the adjective describing the direct object of the verb \-- that is,
-    \"red\" in \"Pick up the red ball.\") In this case, each relation is
-    separated by a \`/\`. (In our example, we would type amod/dobj.)
+-   **name**: The name of the frame element in the semantic frame.
+-   **relation**: The dependency with respect to the verb. Dependencies
+    may be multiple levels out. (For instance, saw we want the adjective
+    describing the direct object of the verb \-- that is, \"red\" in
+    \"Pick up the red ball.\") In this case, each relation is separated
+    by a \`/\`. (In our example, we would type amod/dobj.)
 
 #### Determining relations
 

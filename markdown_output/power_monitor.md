@@ -11,16 +11,15 @@ The estimation method that \`power_monitor\` uses is reconfigurable via
 [dynamic_reconfigure](dynamic_reconfigure). Two methods are currently
 available:
 
--   \'\'\'\'\'Fuel Gauge\'\'\'\'\': simply publishes the state of charge
-    and remaining time that the battery servers report.
+-   ***Fuel Gauge***: simply publishes the state of charge and remaining
+    time that the battery servers report.
 
 ```{=html}
 <!-- -->
 ```
--   \'\'\'\'\'Advanced\'\'\'\'\': records a history of battery state
-    over the lifetime of the robot (in a CSV file in
-    \`/var/ros/power_monitor/power.log\`) and uses this data to improve
-    the indicators.
+-   ***Advanced***: records a history of battery state over the lifetime
+    of the robot (in a CSV file in \`/var/ros/power_monitor/power.log\`)
+    and uses this data to improve the indicators.
 
 #### Subscribed topics
 

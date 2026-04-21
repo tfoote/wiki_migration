@@ -11,7 +11,7 @@ Blender installation directory
 
 Once that is set, rosrun the script:
 
-\'\'rosrun blender_gazebo install\'\'
+*rosrun blender_gazebo install*
 
 After the script installs the add-on, you will need to enable it inside
 blender. Edit \> Preferences \> Add-ons, find the add-on and check it

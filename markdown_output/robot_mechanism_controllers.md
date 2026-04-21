@@ -8,8 +8,7 @@ mechanisms on the PR2 and may be useful on other robots.
     for moving a set of joints along a joint space trajectory.
 -   [Joint Spline Trajectory Controller](robot_mechanism_controllers/JointSplineTrajectoryController)
     for moving a set of joints along a joint space trajectory
-    \'\'(deprecated, use the Joint Trajectory Action Controller
-    instead)\'\'.
+    *(deprecated, use the Joint Trajectory Action Controller instead)*.
 -   [Joint Effort Controller](robot_mechanism_controllers/JointEffortController)
     for commanding an effort (force or torque) to a single joint.
 -   [Joint Velocity Controller](robot_mechanism_controllers/JointVelocityController)

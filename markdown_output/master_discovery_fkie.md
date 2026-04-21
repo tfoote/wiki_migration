@@ -29,8 +29,8 @@ run:
 
 ```
 rosrun master_discovery_fkie zeroconf
-``` \'\'In this case you have to install
-\`python-avahi\` and \`avahi-daemon\`!\'\'
+``` *In this case you have to install
+\`python-avahi\` and \`avahi-daemon\`!*
 
 ### Interface
 
@@ -42,20 +42,20 @@ rosrun master_discovery_fkie zeroconf
 
 . Retrieve the contact information of the ROS master and remote
 discovery node.\
-\'\'Parameters\'\' . \`empty\` \'\'Returns\'\' . \`\[str, str, str, str,
-str\]\` . (timestamp of the ROS master state, ROS master URI, master
-name, name of this service, URI of this RPC server)
+*Parameters* . \`empty\` *Returns* . \`\[str, str, str, str, str\]\` .
+(timestamp of the ROS master state, ROS master URI, master name, name of
+this service, URI of this RPC server)
 
 \`masterInfo()\`
 
-. Retrieve list representation of \'\'complete\'\' ROS system state
-(i.e. publishers, subscribers, services and their types, URI\'s).\
-\'\'Parameters\'\' . \`empty\` \'\'Returns\'\' . \`(float, float, str,
-str,\` . \`\[ \[str,\[str\] \] \],\` \`\[ \[str,\[str\] \] \],\` \`\[
-\[str,\[str\] \] \],\` \`\[ \[str,str\] \],\` \`\[
-\[str,str,str,int,str\] \],\` \`\[ \[str,str,str,str,str\] \])\` .
-(stamp, stamp of local changes, masteruri, name, publishers,
-subscribers, services, topicTypes, nodes, serviceProvider)\
+. Retrieve list representation of *complete* ROS system state (i.e.
+publishers, subscribers, services and their types, URI\'s).\
+*Parameters* . \`empty\` *Returns* . \`(float, float, str, str,\` . \`\[
+\[str,\[str\] \] \],\` \`\[ \[str,\[str\] \] \],\` \`\[ \[str,\[str\] \]
+\],\` \`\[ \[str,str\] \],\` \`\[ \[str,str,str,int,str\] \],\` \`\[
+\[str,str,str,str,str\] \])\` . (stamp, stamp of local changes,
+masteruri, name, publishers, subscribers, services, topicTypes, nodes,
+serviceProvider)\
 System state is in list representation: ```
 [stamp, stamp of local changes, masteruri, name, publishers, subscribers, services, topicTypes, nodes, serviceProvider]
 ```

@@ -11,18 +11,18 @@ nodes and (sub-)systems in terms of their parameter values.
 
 The
 [system modes package](https://github.com/microROS/system_modes/tree/master/system_modes)
-consists of a library that parses a \'\'system modes and hierarchy
-model\'\' file (SHM file, yaml format). The modes specified in the SMH
-file extend the
+consists of a library that parses a *system modes and hierarchy model*
+file (SHM file, yaml format). The modes specified in the SMH file extend
+the
 [default ROS 2 lifecycle](http://design.ros2.org/articles/node_lifecycle.html):
 
 ![\|width=760](attachment:lifecycle-extended.png)
 
 The library is able to infer the modes of a system based in the known
-states and modes of its nodes, which we call \'\'mode inference\'\'.
-Relying on this library are a mode manager node that is able to manage
-lifecycle states and modes of all nodes as well as a command-line mode
-monitor for introspection.
+states and modes of its nodes, which we call *mode inference*. Relying
+on this library are a mode manager node that is able to manage lifecycle
+states and modes of all nodes as well as a command-line mode monitor for
+introspection.
 
 For more information on the model, the library, the mode manager and the
 mode monitor, see
@@ -32,10 +32,10 @@ mode monitor, see
 
 The
 [system modes examples package](https://github.com/microROS/system_modes/tree/master/system_modes_examples)
-contains a small example \'\'actuation\'\' sub-system containing two
-example nodes, a \'\'drive_base\'\' node and a \'\'manipulator\'\' node.
-The example system allow state and mode changes of the system as well as
-the nodes and allows introspection of modes with the mode monitor:
+contains a small example *actuation* sub-system containing two example
+nodes, a *drive_base* node and a *manipulator* node. The example system
+allow state and mode changes of the system as well as the nodes and
+allows introspection of modes with the mode monitor:
 
 ![\|width=760](attachment:screenshot-monitor-performance.png)
 

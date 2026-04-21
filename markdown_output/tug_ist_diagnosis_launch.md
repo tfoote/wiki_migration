@@ -7,15 +7,15 @@ based diagnosis system.
 
 ### aria.launch
 
-It launches a node \'\'aria.py\'\' which is just a test node for testing
-purpose. This node publishes string data on a topic
-\'\'/aria_node_topic\'\' with 10Hz frequency.
+It launches a node *aria.py* which is just a test node for testing
+purpose. This node publishes string data on a topic */aria_node_topic*
+with 10Hz frequency.
 
 ### laser.launch
 
-It launches a node \'\'laser.py\'\' which is just a test node for
-testing purpose. This node publishes string data on a topic
-\'\'/laser_node_topic\'\' with 10Hz frequency.
+It launches a node *laser.py* which is just a test node for testing
+purpose. This node publishes string data on a topic */laser_node_topic*
+with 10Hz frequency.
 
 ### observers.launch
 
@@ -43,7 +43,7 @@ the diagnosis repair.
 ### diagnosis_repair.launch
 
 Like diagnosis_engine.launch it also first launches a Java based
-Planner. The planner also needs \'\'domain.pddl\'\' file as parameter.
+Planner. The planner also needs *domain.pddl* file as parameter.
 Afterwards it launches diagnosis repair engine which uses the planner to
 get action plan and then invokes the action server to fulfill the action
 plan.

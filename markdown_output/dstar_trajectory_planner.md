@@ -16,19 +16,19 @@ implementing global trajectory planning with
 with external optimizers. It strives to simplify the development of
 robotic systems operating in dense industrial environments.
 
--   \'\'\'Package\'\'\' URL:
+-   **Package** URL:
     <https://github.com/ElettraSciComp/DStar-Trajectory-Planner>
 
 ### Package Contents
 
 The package contains two plugins:
 
--   \'\'\'D-star trajectory planner\'\'\' that maintains generation of
-    the global trajectory on the provided costmap, and dynamic
-    replanning by request coming from move_base.
--   \'\'\'Virtual Walls module\'\'\' processing JSON objects to generate
-    the non-passable and explicitly passable zones as OpenCV polygons
-    added over the existing map.
+-   **D-star trajectory planner** that maintains generation of the
+    global trajectory on the provided costmap, and dynamic replanning by
+    request coming from move_base.
+-   **Virtual Walls module** processing JSON objects to generate the
+    non-passable and explicitly passable zones as OpenCV polygons added
+    over the existing map.
 
 ## Configuration
 

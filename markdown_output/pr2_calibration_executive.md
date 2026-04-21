@@ -51,7 +51,7 @@ stable interval via the internal caches 6. Bundle the data together as a
 
 ### Defining Sensors/Hardware
 
-\'\'\'Using Actions For Reconfiguration\'\'\'\
+**Using Actions For Reconfiguration**\
 There are many preprocessing nodes that need to be reconfigured for each
 sample. One way of doing this is with
 [dynamic_reconfigure](dynamic_reconfigure). However, the preprocessing

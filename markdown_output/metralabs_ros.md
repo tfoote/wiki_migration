@@ -1,9 +1,9 @@
 ## Documentation
 
 This package contains a driver that integrates !MetraLabs Scitos G5
-robots into ROS using !MetraLabs\' former \'\'MLRobotic\'\' libraries.
+robots into ROS using !MetraLabs\' former *MLRobotic* libraries.
 
-If your Scitos is newer and \'\'only\'\' runs \"MIRA\" try
+If your Scitos is newer and *only* runs \"MIRA\" try
 [scitos_drivers](https://github.com/cburbridge/scitos_drivers) or
 [cognidrive_ros](https://github.com/benadler/cognidrive_ros)
 

@@ -20,10 +20,9 @@ while the second needs to have joint velocity controllers loaded.
 The configuration of the root and tip links of each arm are in the yaml
 files located in the config/ directory.
 
--   \'\'\'Authors:\'\'\' Francisco Viña and Alexis Maldonado
--   \'\'\'License:\'\'\' BSD
--   \'\'\'Repository:\'\'\'
-    <https://github.com/fevb/pr2_wrench_estimation.git>
+-   **Authors:** Francisco Viña and Alexis Maldonado
+-   **License:** BSD
+-   **Repository:** <https://github.com/fevb/pr2_wrench_estimation.git>
 
 ## ROS API
 

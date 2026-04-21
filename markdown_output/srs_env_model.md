@@ -131,18 +131,18 @@ differential frames published by
 
 ### Nodes
 
-  -- ------------------------- -- ------------------------------ -- ----------------------------------------------------------------- --
-     \'\'\'Node Name\'\'\'        \'\'\'Published Topics\'\'\'      \'\'\'Description\'\'\'                                           
-     but_server_node                                                Main server node.                                                 
-     compressed_pc_publisher      /input                            Differrential frames completion and complete octomap publishing   
-  -- ------------------------- -- ------------------------------ -- ----------------------------------------------------------------- --
+  -- ------------------------- -- ---------------------- -- ----------------------------------------------------------------- --
+     **Node Name**                **Published Topics**      **Description**                                                   
+     but_server_node                                        Main server node.                                                 
+     compressed_pc_publisher      /input                    Differrential frames completion and complete octomap publishing   
+  -- ------------------------- -- ---------------------- -- ----------------------------------------------------------------- --
 
 ### Services
 
 All services are published in the /but_env_model/ namespace.
 
   -- ----------------------------------- -- ---------------------------------------------------------------------- -- --------------------------------------------------------------- -- --------------------------------------------------------------------------------------------------------- --
-     \'\'\'Service Name\'\'\'               \'\'\'Input\'\'\'                                                         \'\'\'Output\'\'\'                                                 \'\'\'Description\'\'\'                                                                                   
+     **Service Name**                       **Input**                                                                 **Output**                                                         **Description**                                                                                           
      server_reset                                                                                                                                                                        Reset server                                                                                              
      server_pause                                                                                                                                                                        Pause server                                                                                              
      server_use_input_color                 bool                                                                                                                                         Set true (default) if input color information should be stored and used.                                  
@@ -170,22 +170,22 @@ The first one is common for all saved objects. Services in the other one
 have variants for all supported objects. All services are published in
 the /but_env_model/ namespace.
 
-  -- -------------------------- -- ------------------- -- ----------------------- -- ------------------------------------------------------------- --
-     \'\'\'Service Name\'\'\'      \'\'\'Input\'\'\'      \'\'\'Output\'\'\'         \'\'\'Description\'\'\'                                       
-     get_objects_in_box                                   uint32\[\] object_ids      Returns ids of objects inside a box.                          
-     get_objects_in_halfspace                             uint32\[\] object_ids      Returns ids of objects inside a halfspace defined by plane.   
-     get_objects_in_sphere                                uint32\[\] object_ids      Returns ids of objects inside a sphere.                       
-     remove_object                 uint32 object_id                                  Removes object from object tree.                              
-     show_object                   uint32 object_id                                  Shows object using a srs_interaction_primitives server.       
-     show_objtree                                                                    Show octree structure using a Marker.                         
-  -- -------------------------- -- ------------------- -- ----------------------- -- ------------------------------------------------------------- --
+  -- -------------------------- -- ------------------ -- ----------------------- -- ------------------------------------------------------------- --
+     **Service Name**              **Input**             **Output**                 **Description**                                               
+     get_objects_in_box                                  uint32\[\] object_ids      Returns ids of objects inside a box.                          
+     get_objects_in_halfspace                            uint32\[\] object_ids      Returns ids of objects inside a halfspace defined by plane.   
+     get_objects_in_sphere                               uint32\[\] object_ids      Returns ids of objects inside a sphere.                       
+     remove_object                 uint32 object_id                                 Removes object from object tree.                              
+     show_object                   uint32 object_id                                 Shows object using a srs_interaction_primitives server.       
+     show_objtree                                                                   Show octree structure using a Marker.                         
+  -- -------------------------- -- ------------------ -- ----------------------- -- ------------------------------------------------------------- --
 
 The following services are available for these object types: plane,
 aligned_box and bounding_box. All services are published in the
 /but_env_model/ namespace.
 
   -- ------------------------------------ -- -------------------- -- -------------------- -- --------------------------------------------------------------------------------------------------- --
-     \'\'\'Service Name\'\'\'                \'\'\'Input\'\'\'       \'\'\'Output\'\'\'      \'\'\'Description\'\'\'                                                                             
+     **Service Name**                        **Input**               **Output**              **Description**                                                                                     
      get\_{object_type}                      uint32 object_id        object_description      Gets object from object tree.                                                                       
      get_similar\_{object_type}              object_description      uint32 object_id        Checks object tree for object similar to object in input parameter. Returns -1 if no such exists.   
      insert\_{object_type}                   object_description      uint32 object_id        Inserts object into object tree. Replaces object with same id if exists.                            
@@ -194,10 +194,10 @@ aligned_box and bounding_box. All services are published in the
 
 ### Messages
 
-  -- ------------------------------ -- --------------------- -- ------------------------------------------------------------- --
-     \'\'\'Msg Name\'\'\'              \'\'\'Content\'\'\'      \'\'\'Description\'\'\'                                       
-     srs_env_model/OctomapUpdates                               Partial frame message used in compressed pointcloud plugin.   
-  -- ------------------------------ -- --------------------- -- ------------------------------------------------------------- --
+  -- ------------------------------ -- ------------- -- ------------------------------------------------------------- --
+     **Msg Name**                      **Content**      **Description**                                               
+     srs_env_model/OctomapUpdates                       Partial frame message used in compressed pointcloud plugin.   
+  -- ------------------------------ -- ------------- -- ------------------------------------------------------------- --
 
 ### Published topics
 
@@ -205,7 +205,7 @@ List of all published topics. All topics are published in the
 /but_env_model/ namespace.
 
   -- ---------------------------- -- ------------------------------------- -- ------------------------------------------------------------------------------- --
-     \'\'\'Topic Name\'\'\'          \'\'\'Message\'\'\'                      \'\'\'Description\'\'\'                                                         
+     **Topic Name**                  **Message**                              **Description**                                                                 
      visualization_marker            visualization_msgs/Marker                Visualization markers                                                           
      collision_object                arm_navigation_msgs/CollisionObject      Octomap data - occupied nodes - as a collision objects                          
      pointcloud_centers              sensor_msgs/PointCloud2                  Octomap data - occupied nodes - as a point cloud                                
@@ -232,97 +232,97 @@ parameters see: <http://octomap.sourceforge.net>
 
 Octomap and sensor parameters:
 
-  -- ---------------------------------- -- --------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'          \'\'\' Description \'\'\'                        \'\'\'Default value\'\'\'   
-     \'\'resolution\'\'                    Octomap resolution                               0.1                         
-     \'\'sensor_model/hit\'\'              Probability value set to the occupied node.      0.7                         
-     \'\'sensor_model/miss\'\'             Probability value set to the free node           0.4                         
-     \'\'sensor_model/min\'\'              Clamping minimum threshold                       0.12                        
-     \'\'sensor_model/max\'\'              Clamping maximum threshold                       0.97                        
-     \'\'max_range\'\'                     Maximal sensor scope                             -1.0 - no range check       
-     \'\'octomap_publishing_topic\'\'      Binary octomap publishing topic name             butsrv_binary_octomap       
-  -- ---------------------------------- -- --------------------------------------------- -- --------------------------- --
+  -- ---------------------------- -- --------------------------------------------- -- ----------------------- --
+     ** Parameter name **            ** Description **                                **Default value**       
+     *resolution*                    Octomap resolution                               0.1                     
+     *sensor_model/hit*              Probability value set to the occupied node.      0.7                     
+     *sensor_model/miss*             Probability value set to the free node           0.4                     
+     *sensor_model/min*              Clamping minimum threshold                       0.12                    
+     *sensor_model/max*              Clamping maximum threshold                       0.97                    
+     *max_range*                     Maximal sensor scope                             -1.0 - no range check   
+     *octomap_publishing_topic*      Binary octomap publishing topic name             butsrv_binary_octomap   
+  -- ---------------------------- -- --------------------------------------------- -- ----------------------- --
 
 Outdated node filtering parameters:
 
-  -- ------------------------------------ -- ----------------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'            \'\'\' Description \'\'\'                                \'\'\'Default value\'\'\'   
-     \'\'camera_info_topic\'\'               Camera info topic name                                   /cam3d/camera_info          
-     \'\'visualize_markers\'\'               Should markers displayng camera cone be visualized?      true                        
-     \'\'markers_topic\'\'                   Markers topic name                                       visualization_marker        
-     \'\'camera_stereo_offset_left\'\'       Stereo camera left eye offset                            128                         
-     \'\'camera_stereo_offset_right\'\'      Stereo camera right eye offset                           0                           
-  -- ------------------------------------ -- ----------------------------------------------------- -- --------------------------- --
+  -- ------------------------------ -- ----------------------------------------------------- -- ---------------------- --
+     ** Parameter name **              ** Description **                                        **Default value**      
+     *camera_info_topic*               Camera info topic name                                   /cam3d/camera_info     
+     *visualize_markers*               Should markers displayng camera cone be visualized?      true                   
+     *markers_topic*                   Markers topic name                                       visualization_marker   
+     *camera_stereo_offset_left*       Stereo camera left eye offset                            128                    
+     *camera_stereo_offset_right*      Stereo camera right eye offset                           0                      
+  -- ------------------------------ -- ----------------------------------------------------- -- ---------------------- --
 
 Ground plane filtering parameters:
 
-  -- -------------------------------------- -- ------------------------------------------------------------------------------------ -- --------------------------- --
-     \'\'\' Parameter name \'\'\'              \'\'\' Description \'\'\'                                                               \'\'\'Default value\'\'\'   
-     \'\'filter_ground\'\'                     Should ground plane be filtered?                                                        false                       
-     \'\'ground_filter/distance\'\'            Distance of points from plane for RANSAC                                                0.04                        
-     \'\'ground_filter/angle\'\'               Angular derivation of ground plane                                                      0.15                        
-     \'\'ground_filter/plane_distance\'\'      Distance of found plane from z=0 to be detected as ground (e.g. to exclude tables)      0.07                        
-  -- -------------------------------------- -- ------------------------------------------------------------------------------------ -- --------------------------- --
+  -- -------------------------------- -- ------------------------------------------------------------------------------------ -- ------------------- --
+     ** Parameter name **                ** Description **                                                                       **Default value**   
+     *filter_ground*                     Should ground plane be filtered?                                                        false               
+     *ground_filter/distance*            Distance of points from plane for RANSAC                                                0.04                
+     *ground_filter/angle*               Angular derivation of ground plane                                                      0.15                
+     *ground_filter/plane_distance*      Distance of found plane from z=0 to be detected as ground (e.g. to exclude tables)      0.07                
+  -- -------------------------------- -- ------------------------------------------------------------------------------------ -- ------------------- --
 
 ### Collision map plugin
 
-  -- ------------------------------------ -- ----------------------------------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'            \'\'\' Description \'\'\'                                                  \'\'\'Default value\'\'\'   
-     \'\'collision_map_octree_depth\'\'      Used octree depth for map generation.                                      0 - whole tree              
-     \'\'collision_map_radius\'\'            Collision map maximal radius in meters                                     2.0                         
-     \'\'collision_map_publisher\'\'         Collision map publishing topic name                                        butsrv_collision_map        
-     \'\'collisionmap_frame_id\'\'           FID to which will be points transformed when publishing collision map      /base_footprint             
-  -- ------------------------------------ -- ----------------------------------------------------------------------- -- --------------------------- --
+  -- ------------------------------ -- ----------------------------------------------------------------------- -- ---------------------- --
+     ** Parameter name **              ** Description **                                                          **Default value**      
+     *collision_map_octree_depth*      Used octree depth for map generation.                                      0 - whole tree         
+     *collision_map_radius*            Collision map maximal radius in meters                                     2.0                    
+     *collision_map_publisher*         Collision map publishing topic name                                        butsrv_collision_map   
+     *collisionmap_frame_id*           FID to which will be points transformed when publishing collision map      /base_footprint        
+  -- ------------------------------ -- ----------------------------------------------------------------------- -- ---------------------- --
 
 ### Collision grid plugin
 
-  -- ------------------------------------- -- ---------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'             \'\'\' Description \'\'\'                   \'\'\'Default value\'\'\'   
-     \'\'collision_grid_octree_depth\'\'      Used octree depth for grid generation.      0 - whole tree              
-     \'\'grid_min_x_size\'\'                  Collision grid minimal x                    0.0                         
-     \'\'grid_min_y_size\'\'                  Collision grid minimal y                    0.0                         
-     \'\'collision_grid_publisher\'\'         Collision grid publishing topic name        butsrv_collision_map        
-  -- ------------------------------------- -- ---------------------------------------- -- --------------------------- --
+  -- ------------------------------- -- ---------------------------------------- -- ---------------------- --
+     ** Parameter name **               ** Description **                           **Default value**      
+     *collision_grid_octree_depth*      Used octree depth for grid generation.      0 - whole tree         
+     *grid_min_x_size*                  Collision grid minimal x                    0.0                    
+     *grid_min_y_size*                  Collision grid minimal y                    0.0                    
+     *collision_grid_publisher*         Collision grid publishing topic name        butsrv_collision_map   
+  -- ------------------------------- -- ---------------------------------------- -- ---------------------- --
 
 ### Collision objects plugin
 
-  -- --------------------------------------- -- ------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'               \'\'\' Description \'\'\'                      \'\'\'Default value\'\'\'   
-     \'\'collision_object_publisher\'\'         Collision object publishing topic name         butsrv_collision_object     
-     \'\'collision_object_frame_id\'\'          Output frame id                                /map                        
-     \'\'collision_object_octree_depth\'\'      Used octree depth for objects generation.      0 - whole tree              
-  -- --------------------------------------- -- ------------------------------------------- -- --------------------------- --
+  -- --------------------------------- -- ------------------------------------------- -- ------------------------- --
+     ** Parameter name **                 ** Description **                              **Default value**         
+     *collision_object_publisher*         Collision object publishing topic name         butsrv_collision_object   
+     *collision_object_frame_id*          Output frame id                                /map                      
+     *collision_object_octree_depth*      Used octree depth for objects generation.      0 - whole tree            
+  -- --------------------------------- -- ------------------------------------------- -- ------------------------- --
 
 ### 2D map plugin
 
-  -- --------------------------------------- -- ------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'               \'\'\' Description \'\'\'                      \'\'\'Default value\'\'\'   
-     \'\'collision_object_publisher\'\'         Collision map publishing topic name            butsrv_map2d_object         
-     \'\'collision_object_frame_id\'\'          Output map frame id                            /map                        
-     \'\'min_x_size\'\'                         Minimal map size - used for padding            0.0                         
-     \'\'min_y_size\'\'                         Minimal map size - used for padding            0.0                         
-     \'\'collision_object_octree_depth\'\'      Used octree depth for objects generation.      0 - whole tree              
-  -- --------------------------------------- -- ------------------------------------------- -- --------------------------- --
+  -- --------------------------------- -- ------------------------------------------- -- --------------------- --
+     ** Parameter name **                 ** Description **                              **Default value**     
+     *collision_object_publisher*         Collision map publishing topic name            butsrv_map2d_object   
+     *collision_object_frame_id*          Output map frame id                            /map                  
+     *min_x_size*                         Minimal map size - used for padding            0.0                   
+     *min_y_size*                         Minimal map size - used for padding            0.0                   
+     *collision_object_octree_depth*      Used octree depth for objects generation.      0 - whole tree        
+  -- --------------------------------- -- ------------------------------------------- -- --------------------- --
 
 ### Marker array plugin
 
-  -- ----------------------------------- -- ------------------------------------------- -- --------------------------- --
-     \'\'\' Parameter name \'\'\'           \'\'\' Description \'\'\'                      \'\'\'Default value\'\'\'   
-     \'\'marker_array_publisher\'\'         Marker array publishing topic name             butsrv_markerarray_object   
-     \'\'marker_array_frame_id\'\'          Marker array output frame id                   /map                        
-     \'\'marker_array_octree_depth\'\'      Used octree depth for objects generation.      0 - whole tree              
-  -- ----------------------------------- -- ------------------------------------------- -- --------------------------- --
+  -- ----------------------------- -- ------------------------------------------- -- --------------------------- --
+     ** Parameter name **             ** Description **                              **Default value**           
+     *marker_array_publisher*         Marker array publishing topic name             butsrv_markerarray_object   
+     *marker_array_frame_id*          Marker array output frame id                   /map                        
+     *marker_array_octree_depth*      Used octree depth for objects generation.      0 - whole tree              
+  -- ----------------------------- -- ------------------------------------------- -- --------------------------- --
 
 ### Point cloud plugin
 
-  -- -------------------------------------- -- ------------------------------------------- -- --------------------------------------- --
-     \'\'\' Parameter name \'\'\'              \'\'\' Description \'\'\'                      \'\'\'Default value\'\'\'               
-     \'\'pointcloud_centers_publisher\'\'      Pointcloud publishing topic name               butsrv_pointcloud_centers               
-     \'\'pointcloud_subscriber\'\'             Input pointcloud subscriber topic name         /cam3d/depth/points                     
-     \'\'pointcloud_min_z\'\'                  Point cloud minimal z value                    -std::numeric_limits\<double\>::max()   
-     \'\'pointcloud_max_z\'\'                  Point cloud maximal z value                    std::numeric_limits\<double\>::max()    
-     \'\'pointcloud_octree_depth\'\'           Used octree depth for objects generation.      0 - whole tree                          
-  -- -------------------------------------- -- ------------------------------------------- -- --------------------------------------- --
+  -- -------------------------------- -- ------------------------------------------- -- --------------------------------------- --
+     ** Parameter name **                ** Description **                              **Default value**                       
+     *pointcloud_centers_publisher*      Pointcloud publishing topic name               butsrv_pointcloud_centers               
+     *pointcloud_subscriber*             Input pointcloud subscriber topic name         /cam3d/depth/points                     
+     *pointcloud_min_z*                  Point cloud minimal z value                    -std::numeric_limits\<double\>::max()   
+     *pointcloud_max_z*                  Point cloud maximal z value                    std::numeric_limits\<double\>::max()    
+     *pointcloud_octree_depth*           Used octree depth for objects generation.      0 - whole tree                          
+  -- -------------------------------- -- ------------------------------------------- -- --------------------------------------- --
 
 ### Dynamic Environment Model
 

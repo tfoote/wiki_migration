@@ -21,14 +21,14 @@ devices [cob_generic_can](cob_generic_can) pakcage is used.
 To use this package you should have
 [ROS up and running](ROS/Tutorials/InstallingandConfiguringROSEnvironment).
 To install the package clone the
-[git repository](https://github.com/iirob/ati_force_torque) into
-\'\'src\'\' folder of your workspace.
+[git repository](https://github.com/iirob/ati_force_torque) into *src*
+folder of your workspace.
 
-\'\'\'Note\'\'\': Current version of the package depends on
+**Note**: Current version of the package depends on
 [iirob_filters](https://github.com/iirob/iirob_filters) package for
 filtering capabilities. To install this package clone the
-[git repository](https://github.com/iirob/iirob_filters) into
-\'\'src\'\' folder of your workspace
+[git repository](https://github.com/iirob/iirob_filters) into *src*
+folder of your workspace
 
 ## Starting the nodes
 

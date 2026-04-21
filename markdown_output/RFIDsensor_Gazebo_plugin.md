@@ -20,16 +20,16 @@ Interface for using ROS with the Gazebo simulator.
 
 # RFID System Gazebo Plugin
 
-\'\'\'RFID System Gazebo Plugin\'\'\' A design of a ROS Gazebo RFID
-system plugin that enables the simulation of the RFID readers-antennas
-mounted on robots reading RFID tags in the environment. The plugin is
-based on a model based on probability of detection which simulates the
-behavior of the complete RFID system, comprised of readers, antennas,
-and tags, in the Gazebo simulation platform. It consists of a set of ROS
-packages that provide the necessary interfaces to simulate the
-functionality of an RFID antenna and an RFID tag in the Gazebo 3D rigid
-body simulator for robots. It integrates with ROS using ROS messages,
-services, and transforms.
+**RFID System Gazebo Plugin** A design of a ROS Gazebo RFID system
+plugin that enables the simulation of the RFID readers-antennas mounted
+on robots reading RFID tags in the environment. The plugin is based on a
+model based on probability of detection which simulates the behavior of
+the complete RFID system, comprised of readers, antennas, and tags, in
+the Gazebo simulation platform. It consists of a set of ROS packages
+that provide the necessary interfaces to simulate the functionality of
+an RFID antenna and an RFID tag in the Gazebo 3D rigid body simulator
+for robots. It integrates with ROS using ROS messages, services, and
+transforms.
 
 These plugins are designed to be able to adapt and be used with any
 robot simulated in the gazebo by including the models and plugins
@@ -52,10 +52,10 @@ power to the RFID tags to activate them. Second, they receive data back
 from the activated tags. A single antenna can activate and receive data
 from multiple tags simultaneously.
 
-Similarly, in simulation, the antenna/reader \'\'\'diptera_antenna\'\'\'
-plugin will be able to detect tags using a probability model considering
-in a simplified manner the effect of the environment on the detection of
-the tag. The telecommunication parameters that govern the probability of
+Similarly, in simulation, the antenna/reader **diptera_antenna** plugin
+will be able to detect tags using a probability model considering in a
+simplified manner the effect of the environment on the detection of the
+tag. The telecommunication parameters that govern the probability of
 detection are:
 
 ### Params
@@ -101,8 +101,8 @@ detection are:
 ### TF
 
 In order for the plugin to work the antenna frame and relative pose in
-ROS must be set correctly in the \'\'\'gazebo_to_ros_tf\'\'\' package
-launch file. ```highlight
+ROS must be set correctly in the **gazebo_to_ros_tf** package launch
+file. ```highlight
 <launch>
 
  	<node pkg="gazebo_to_ros_tf"
@@ -169,9 +169,9 @@ RFID tags that are usually attached to a product/box called a
 \"fixture\" This plugin/package is compiled using catkin_make or catkin
 build. In real life, RFID Tags are small objects that contain a small
 antenna. Similarly, in simulation, the plugin does two major tasks.
-First, it reads a file called \'\'\'map.txt\'\'\' which exists in the
-plugin folder that contains in each line information of the fixtures
-(boxes that contain tags) in this order:
+First, it reads a file called **map.txt** which exists in the plugin
+folder that contains in each line information of the fixtures (boxes
+that contain tags) in this order:
 
 1.  fix_name id x y z, which are the fixture name, id, and coordinates
     according to the world map. Secondly, it will spawn a pre-set number
@@ -205,17 +205,16 @@ below image shows the transform tree of 3 tags:
 
 ### First Step
 
-Setting up your ROS source folder: Clone the packages
-\'\'\'gazebo_to_ros_tf gazebo\'\'\' & \'\'\'RFID_antenna_plugin\'\'\' &
-\'\'\'RFID_tag_plugin\'\'\' to your source folder
-\'\'\'catkin_ws/src\'\'\' ```highlight
+Setting up your ROS source folder: Clone the packages **gazebo_to_ros_tf
+gazebo** & **RFID_antenna_plugin** & **RFID_tag_plugin** to your source
+folder **catkin_ws/src** ```highlight
 git clone https://github.com/Abdu-lybot/RFID_Sensor_Plugin_gazebo.git
 ```
 
 ### Second Step
 
 Compile your workspace: From the location of your workspace folder
-\'\'\'catkin_ws\'\'\' ```highlight
+**catkin_ws** ```highlight
 catkin_make
 ```
 
@@ -228,9 +227,9 @@ export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH}:/home/<USER>/catkin_ws/src/RFID_
 
 ### Fourth Step
 
-add the \'\'\'RFID_antenna\'\'\' & \'\'\'RFID_tag\'\'\' plugins to your
-robot model Xacro/SDF file or any other: For adding the plugins: Adding
-the Plugin to your model: ```highlight
+add the **RFID_antenna** & **RFID_tag** plugins to your robot model
+Xacro/SDF file or any other: For adding the plugins: Adding the Plugin
+to your model: ```highlight
 !--for the RFID_tags plugin:-->
   <gazebo reference="base_link">
      <sensor type="rfid" name="rfid_tags">
@@ -243,8 +242,8 @@ the Plugin to your model: ```highlight
        </plugin>
      </sensor>
   </gazebo>
-``` For the RFID_antenna
-plugin: Adding the Plugin and the Graphical Antenna Model to Gazebo:
+``` For the RFID_antenna plugin:
+Adding the Plugin and the Graphical Antenna Model to Gazebo:
 ```wiki
 '''NOTE:''' These parameters could be changed in the SDF/Xacro file while adding the plugin.
 ```0

@@ -26,26 +26,26 @@ $ git clone https://github.com/AaronPB/ros_mppt.git
 Depending on the interested values from the serial communication
 interface, it is possible to define more values into the package.
 
-\'\'\'MPPT Values:\'\'\'
+**MPPT Values:**
 
-  -- ------------------- -- ------------------- -- --------------------------------------- -- ------------------------------ --
-     \'\'\'Label\'\'\'      \'\'\'Units\'\'\'      \'\'\'Description\'\'\'                    \'\'\'Type of variable\'\'\'   
-     V                      mV                     Main (battery) voltage                     Float                          
-     I                      mA                     Battery current                            Float                          
-     VPV                    mV                     Panel voltage                              Float                          
-     PPV                    W                      Panel power                                Float                          
-     PID                                           Product ID                                 String                         
-     SER#                                          Serial Number                              String                         
-     HSDS                                          Day sequence number (0 \... 364)           Int                            
-     MPPT                                          Tracker operation mode                     Int                            
-     ERR                                           Error code                                 Int                            
-     CS                                            State of operation                         Int                            
-     H19                    0.01 kW/h              Yield Total (user resettable counter)      Float                          
-     H20                    0.01 kW/h              Yield today                                Float                          
-     H21                    W                      Maximum power today                        Float                          
-     H22                    0.01 kW/h              Yield yesterday                            Float                          
-     H23                    W                      Maximum power yesterday                    Float                          
-  -- ------------------- -- ------------------- -- --------------------------------------- -- ------------------------------ --
+  -- ----------- -- ----------- -- --------------------------------------- -- ---------------------- --
+     **Label**      **Units**      **Description**                            **Type of variable**   
+     V              mV             Main (battery) voltage                     Float                  
+     I              mA             Battery current                            Float                  
+     VPV            mV             Panel voltage                              Float                  
+     PPV            W              Panel power                                Float                  
+     PID                           Product ID                                 String                 
+     SER#                          Serial Number                              String                 
+     HSDS                          Day sequence number (0 \... 364)           Int                    
+     MPPT                          Tracker operation mode                     Int                    
+     ERR                           Error code                                 Int                    
+     CS                            State of operation                         Int                    
+     H19            0.01 kW/h      Yield Total (user resettable counter)      Float                  
+     H20            0.01 kW/h      Yield today                                Float                  
+     H21            W              Maximum power today                        Float                  
+     H22            0.01 kW/h      Yield yesterday                            Float                  
+     H23            W              Maximum power yesterday                    Float                  
+  -- ----------- -- ----------- -- --------------------------------------- -- ---------------------- --
 
 ### Add the interested values into vemppt_ros
 

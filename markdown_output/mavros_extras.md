@@ -119,9 +119,8 @@ optional arguments:
 
 ### mavftpfuse
 
-\'\'\'PX4\'\'\' only. Require
-[fusepy](https://github.com/terencehonles/fusepy) package, use \`sudo
-pip install fusepy\`.
+**PX4** only. Require [fusepy](https://github.com/terencehonles/fusepy)
+package, use \`sudo pip install fusepy\`.
 
 ```
 usage: mavftpfuse [-h] [-n MAVROS_NS] [-v] [-d] path

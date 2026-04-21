@@ -12,7 +12,7 @@ Home-Automation system.
     provides a basic Web GUI and Iphone/Android app for setting and
     dynamically viewing values. [openhab](http://www.openhab)
 
-\'\'\'Connect your robot to the wider world\'\'\'
+**Connect your robot to the wider world**
 
 -   A motion detector in openHAB triggers and ROS dispatches the robot
     to the location.
@@ -37,7 +37,7 @@ any Home Automation device. ROS can publish to the iot_set topic (or
 iot_command) and the device in openHAB will be set to the new value (or
 act on the specified command).
 
-\'\'\'Different access to REST APIs of openHAB 2 and openHAB 3\'\'\'
+**Different access to REST APIs of openHAB 2 and openHAB 3**
 
 There is a different access to the REST APIs of
 [openHAB 2](https://v2.openhab/docs/configuration/restdocs.html) and
@@ -81,7 +81,7 @@ sub-group of the (ROS) group. Note, this is only needed for status
 updates to go from openHAB to ROS - you can send commands from ROS to
 any openHAB item regardless of what group it is in.
 
-. \'\'add ROS_Status to openHAB\'s item file\'\'
+. *add ROS_Status to openHAB\'s item file*
 
 Sample Open_HAB item definition:
 
@@ -140,20 +140,19 @@ Text item=ROS_Status label="ROS [%s]"
 
 ### Send a Command to an openHAB item
 
-. \'\'\'ROS topic subscribed by iot_bridge:\'\'\' . \'\'iot_command\'\'
+. **ROS topic subscribed by iot_bridge:** . *iot_command*
 (diagnostic_msgs/KeyValue)
 
-When iot_bridge receives a name/value pair from the ROS
-\'\'iot_command\'\' topic, it publishes those to openHAB and openHAB
-sends that command to the device specified. The value must be valid for
-that device. See
+When iot_bridge receives a name/value pair from the ROS *iot_command*
+topic, it publishes those to openHAB and openHAB sends that command to
+the device specified. The value must be valid for that device. See
 [openHAB/items](https://github.com/openHAB/openHAB/wiki/Explanation-of-items)
 for a summary of valid values.
 
 For Example:
 
 A ROS program wants to turn on a ceiling light. It publishes the
-following to the \'\'iot_command\'\' topic:
+following to the *iot_command* topic:
 
 -   message type: diagnostic_msgs/KeyValue
 -   key: Light_GF_Corridor_Ceiling - key must match openHAB\'s .items
@@ -165,18 +164,17 @@ code in iot_test.
 
 ### Set Status for an openHAB Item
 
-. \'\'\'ROS topic subscribed by iot_bridge:\'\'\' . \'\'iot_set\'\'
+. **ROS topic subscribed by iot_bridge:** . *iot_set*
 (diagnostic_msgs/KeyValue)
 
-When the iot_bridge receives a name/value pair from the ROS
-\'\'iot_set\'\' topic, it publishes those to openHAB and openHAB updates
-the status for the item specified (e.g. indicate that a switch is now
-ON).
+When the iot_bridge receives a name/value pair from the ROS *iot_set*
+topic, it publishes those to openHAB and openHAB updates the status for
+the item specified (e.g. indicate that a switch is now ON).
 
 For Example:
 
 A ROS program running Facial Detection detects that Sarah is present. It
-publishes the following to the \'\'iot_set\'\' topic:
+publishes the following to the *iot_set* topic:
 
 -   message type: diagnostic_msgs/KeyValue
 -   key: \"facedetection\" - key must match openHAB\'s .items file
@@ -187,36 +185,35 @@ Sarah has been detected. See sample code in iot_test.
 
 ### Receive item updates from openHAB
 
-. \'\'\'ROS topic published by iot_bridge:\'\'\' . \'\'iot_updates\'\'
+. **ROS topic published by iot_bridge:** . *iot_updates*
 (diagnostic_msgs/KeyValue)
 
 The IoT bridge receives updates from openHAB and publishes those as
-name/value pairs to the \'\'iot_updates\'\' ROS topic.
+name/value pairs to the *iot_updates* ROS topic.
 
 To see updates from the command line, type:
 
 rostopic echo iot_updates
 
 For example: A motion detector is triggered in openHAB. The openHAB
-bridge will publish the following to the \'\'iot_updates\'\' topic in
-ROS
+bridge will publish the following to the *iot_updates* topic in ROS
 
 -   message type: diagnostic_msgs/KeyValue
 -   key: \"office_motion\" - key matches openHAB\'s .items file
--   value: \"1\" (string) . \'\'\'NOTE - device states are ONLY
-    published to ROS when they change (or when iot_bridge is started).
-    If you need the current state for ALL items in the ROS group, use
-    the Request Refresh interface.\'\'\'
+-   value: \"1\" (string) . **NOTE - device states are ONLY published to
+    ROS when they change (or when iot_bridge is started). If you need
+    the current state for ALL items in the ROS group, use the Request
+    Refresh interface.**
 
 ### Request Refresh of all Item states
 
-\'\'\'ROS topic subscribed by iot_bridge:\'\'\'
+**ROS topic subscribed by iot_bridge:**
 
-. \'\'iot_command\'\' (diagnostic_msgs/KeyValue)
+. *iot_command* (diagnostic_msgs/KeyValue)
 
 For Example:
 
-A ROS program publishes the following to the \'\'iot_command\'\' topic:
+A ROS program publishes the following to the *iot_command* topic:
 
 -   message type: diagnostic_msgs/KeyValue
 -   key: \"ROS_COMMAND\" - key must be added to openHAB\'s .items file

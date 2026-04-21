@@ -34,15 +34,15 @@ Contains models of the Rover Robotics products
 
 <http://wiki.ros.org/rover-driver>
 
-\-\-\-- /!\\ \'\'\'Edit conflict - other version:\'\'\' \-\-\--
+\-\-\-- /!\\ **Edit conflict - other version:** \-\-\--
 <http://wiki.ros.org/rover-driver>
 
-\-\-\-- /!\\ \'\'\'Edit conflict - your version:\'\'\' \-\-\--
+\-\-\-- /!\\ **Edit conflict - your version:** \-\-\--
 
-\-\-\-- /!\\ \'\'\'End of edit conflict\'\'\' \-\-\-- Contains drivers
-that abstracts away the physical communication (mostly UART) that is
-used to communicate with Rover products and presents the user with the
-familiar ROS 2 topics such as /cmd_vel
+\-\-\-- /!\\ **End of edit conflict** \-\-\-- Contains drivers that
+abstracts away the physical communication (mostly UART) that is used to
+communicate with Rover products and presents the user with the familiar
+ROS 2 topics such as /cmd_vel
 
 ### rover_msgs
 

@@ -1,4 +1,4 @@
-\'\'\'Modern wiki: <https://github.com/ros/xacro/wiki>\'\'\'
+**Modern wiki: <https://github.com/ros/xacro/wiki>**
 
 ------------------------------------------------------------------------
 
@@ -250,10 +250,10 @@ You can include other xacro files using the \`xacro:include\` tag:
 <pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
 ```8 The file \"other_file.xacro\", will be
 included and expanded by xacro.: Relative filenames are interpreted
-relative to the currently processed file. \'\'\'Note\'\'\': When
-including files within a macro, not the macro-defining but the
-macro-calling file is the one that processes the include! \$(cwd)
-explicitly allows to access files in the current working directory.
+relative to the currently processed file. **Note**: When including files
+within a macro, not the macro-defining but the macro-calling file is the
+one that processes the include! \$(cwd) explicitly allows to access
+files in the current working directory.
 
 To avoid name clashes between properties and macros of various included
 files, you can specify a namespace for the included file - providing the
@@ -359,16 +359,16 @@ function. This results in files with a \`.urdf\` extension.
 
 Classicly, xacro first loads all includes, then processes all property
 and macro definitions and finally instantiates macros and evaluates
-expressions. Thus, \'\'\'later property or macro definitions will
-override previous ones\'\'\'. Additionally, the conditional tags, \<if\>
-and \<unless\>, have no effect on macro or property definitions nor the
+expressions. Thus, **later property or macro definitions will override
+previous ones**. Additionally, the conditional tags, \<if\> and
+\<unless\>, have no effect on macro or property definitions nor the
 inclusion of additional files.:
 
 Since ROS Jade, xacro provides the command-line option \`\--inorder\`,
 that allows to process the whole document in read order. Hence the
-latest definition of a property or macro \'\'\'seen so far\'\'\', will
-be used. This is a much more intuitive evaluation process that allows
-for some nice new features as well:
+latest definition of a property or macro **seen so far**, will be used.
+This is a much more intuitive evaluation process that allows for some
+nice new features as well:
 
 -   Inclusion of files can be postponed or completely suppressed if the
     \<include\> tag is placed within a macro or within conditional tags

@@ -11,12 +11,11 @@ keeping low scanning effort.
 
 The package consists of three sub-packages:
 
-1\) \'\'\'co_scan\'\'\' for the core algorithm
+1\) **co_scan** for the core algorithm
 
-2\) \'\'\'srbot_description\'\'\' for robot(RGBD sensor) params
+2\) **srbot_description** for robot(RGBD sensor) params
 
-3\) \'\'\'virtual_scan\'\'\' for the simulator of virtual scanning using
-Gazebo.
+3\) **virtual_scan** for the simulator of virtual scanning using Gazebo.
 
 ## Contributors and Publication
 

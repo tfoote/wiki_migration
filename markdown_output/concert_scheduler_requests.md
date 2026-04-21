@@ -4,4 +4,4 @@
 
 This package was renamed from
 [rocon_scheduler_requests](rocon_scheduler_requests). The older version
-is now \'\'deprecated\'\'.
+is now *deprecated*.

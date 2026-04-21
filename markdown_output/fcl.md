@@ -1,5 +1,5 @@
-\'\'\'Starting with ROS Groovy, this is no longer a ROS package, but a
-standalone library.\'\'\' Please see
+**Starting with ROS Groovy, this is no longer a ROS package, but a
+standalone library.** Please see
 <https://github.com/flexible-collision-library>
 
 ## Contributors

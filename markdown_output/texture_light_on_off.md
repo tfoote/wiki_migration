@@ -27,8 +27,8 @@ node.0{
 }
 ```
 
-\'\'\'There is a launch file \"t_on_off.launch\"\'\'\' to start the
-process. And the parameters in the launch file are explained below:
+**There is a launch file \"t_on_off.launch\"** to start the process. And
+the parameters in the launch file are explained below:
 
 -   image_sequence \-- How many frames that the node will wait for the
     status of the camera to be stable (when the texture light is either

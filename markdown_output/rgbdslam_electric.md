@@ -30,7 +30,7 @@ The detailed preconditions are:
 -   Optional: OpenGL Hardware Support, required for visualization and
     SIFTGPU
 
-Installation \'\'\'should\'\'\' work with (but hasn\'t been tested)
+Installation **should** work with (but hasn\'t been tested)
 
 -   Ubuntu 11.04 and 10.10
 -   ROS diamondback (except ORB features)
@@ -44,9 +44,9 @@ echo 'export ROS_PACKAGE_PATH=~/ros:$ROS_PACKAGE_PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-\'\'\'The remainder of this description assumes you chose /ros/ as your
-personal package path.\'\'\' Otherwise you need to adapt the paths
-below, where /ros is contained to fit your directory strucure.
+**The remainder of this description assumes you chose /ros/ as your
+personal package path.** Otherwise you need to adapt the paths below,
+where /ros is contained to fit your directory strucure.
 
 ### RGBDSLAM (+ Requirements)
 
@@ -134,8 +134,8 @@ Here are some known issues:
 version of RGBDSLAM from your \$ROS_PACKAGE_PATH 1. RGBDSLAM needs
 electric or diamondback. Make sure that neither your \$PATH nor
 \$ROS_PACKAGE_PATH contains \"boxturtle\", \"cturtle\" or
-\"unstable\". 1. If you want to use rgbdslam with \'\'\'fuerte\'\'\'
-have a look at
+\"unstable\". 1. If you want to use rgbdslam with **fuerte** have a look
+at
 [answers.ros.org](http://answers.ros.org/questions/scope:all/sort:activity-desc/tags:rgbdslam/page:1/),
 where some people describe how they successfully made it run on
 fuerte. 1. If you are located in Germany and get errors loading the
@@ -154,9 +154,9 @@ libgsl \"sudo apt-get install gsl-bin libgsl0-dev\"
 ## Publications
 
 Nikolas Engelhard and Felix Endres and Jürgen Hess and Jürgen Sturm and
-Wolfram Burgard, \'\'\'\"Real-time 3D visual SLAM with a hand-held RGB-D
-camera\"\'\'\', Proc. of the \'\'RGB-D Workshop on 3D Perception in
-Robotics at the European Robotics Forum\'\', Vasteras, Sweden, 2011.
+Wolfram Burgard, **\"Real-time 3D visual SLAM with a hand-held RGB-D
+camera\"**, Proc. of the *RGB-D Workshop on 3D Perception in Robotics at
+the European Robotics Forum*, Vasteras, Sweden, 2011.
 [pdf](http://vision.in.tum.de/_media/spezial/bib/engelhard11euron.pdf)
 
 ```
@@ -171,9 +171,9 @@ Robotics at the European Robotics Forum\'\', Vasteras, Sweden, 2011.
 ```
 
 Felix Endres and Jürgen Hess and Nikolas Engelhard and Jürgen Sturm and
-Daniel Cremers and Wolfram Burgard, \'\'\'\"An Evaluation of the RGB-D
-SLAM System\"\'\'\', In the Proc. of the International Conference on
-Robotics and Automation (ICRA) 2012.
+Daniel Cremers and Wolfram Burgard, **\"An Evaluation of the RGB-D SLAM
+System\"**, In the Proc. of the International Conference on Robotics and
+Automation (ICRA) 2012.
 [pdf](http://vision.in.tum.de/_media/spezial/bib/endres12icra.pdf)
 
 ```

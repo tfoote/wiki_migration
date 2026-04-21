@@ -9,7 +9,7 @@ folder.
 
 Full documentation for the ROS node and XDA library is available at:
 
-\'\'\[MTSDK folder\]/doc/xsensdeviceapi/doc/html/index.html \'\'
+*\[MTSDK folder\]/doc/xsensdeviceapi/doc/html/index.html *
 
 ## Supported devices
 
@@ -24,8 +24,8 @@ compatible with the latest generation MTi\'s.
 ## Workflow
 
 The MTi node only receives data from an MTi device and publishes it to
-ROS, it is \'\'\'not\'\'\' capable of configuring a device. Topics will
-be filled with zero-values if the MTi is not configured to output that
+ROS, it is **not** capable of configuring a device. Topics will be
+filled with zero-values if the MTi is not configured to output that
 specific data type. To configure (the output data of) an MTi you can
 either use MT Manager, Xsens Device API (XDA), Low Level Communication
 Protocol or by extending the MTi node.
@@ -87,8 +87,7 @@ $ roslaunch xsens_mti_driver xsens_mti_node.launch
 ## Configuring the Xsens MTi node
 
 To change the configuration of the Xsens MTi node you can edit the
-\'\'xsens_mti_node.yaml\'\' file. The following parameters can be
-configured:
+*xsens_mti_node.yaml* file. The following parameters can be configured:
 
 -   Device settings for finding a defined MTi device
 -   Log file recording option
@@ -99,54 +98,51 @@ configured:
 
 ## Published topics
 
-\'\'\'Important:\'\'\' Published topics will be filled with zeros if the
-MTi is not configured to output the corresponding data messages. Refer
-to the \'\'\'Workflow\'\'\' section of this page for more details.
+**Important:** Published topics will be filled with zeros if the MTi is
+not configured to output the corresponding data messages. Refer to the
+**Workflow** section of this page for more details.
 
--   \'\'\'\'\'imu/data\'\'\'\'\' (sensor_msgs/Imu)\
+-   ***imu/data*** (sensor_msgs/Imu)\
     quaternion, angular velocity and linear acceleration
--   \'\'\'\'\'imu/acceleration\'\' \'\'\'(geometry_msgs/Vector3Stamped)\
+-   ***imu/acceleration* **(geometry_msgs/Vector3Stamped)\
     calibrated linear acceleration
--   \'\'\'\'\'imu/angular_velocity\'\'
-    \'\'\'(geometry_msgs/Vector3Stamped)\
+-   ***imu/angular_velocity* **(geometry_msgs/Vector3Stamped)\
     calibrated angular velocity
--   \'\'\'\'\'imu/mag\'\' \'\'\'(geometry_msgs/Vector3Stamped)\
+-   ***imu/mag* **(geometry_msgs/Vector3Stamped)\
     calibrated magnetic field
--   \'\'\'\'\'imu/dq\'\'\'\'\' (geometry_msgs/QuaternionStamped)\
+-   ***imu/dq*** (geometry_msgs/QuaternionStamped)\
     integrated angular velocity from sensor (in quaternion
     representation)
--   \'\'\'\'\'imu/dv\'\' \'\'\'(geometry_msgs/Vector3Stamped)\
+-   ***imu/dv* **(geometry_msgs/Vector3Stamped)\
     integrated linear acceleration from sensor
--   \'\'\'\'\'imu/time_ref \'\'\'\'\'(sensor_msgs/TimeReference)\
+-   ***imu/time_ref ***(sensor_msgs/TimeReference)\
     timestamp from device
--   \'\'\'\'\'filter/quaternion\'\'\'\'\'
-    (geometry_msgs/QuaternionStamped)\
+-   ***filter/quaternion*** (geometry_msgs/QuaternionStamped)\
     quaternion from filter
--   \'\'\'\'\'filter/free_acceleration\'\'\'\'\'
-    (geometry_msgs/Vector3Stamped)\
+-   ***filter/free_acceleration*** (geometry_msgs/Vector3Stamped)\
     linear acceleration from filter
--   \'\'\'\'\'filter/twist\'\'\' \'\'(geometry_msgs/TwistStamped)\
+-   ***filter/twist** *(geometry_msgs/TwistStamped)\
     velocity and angular velocity
--   \'\'\'\'\'filter/positionlla\'\'\'\'\'
-    (geometry_msgs/Vector3Stamped) (MTSS2019.3.2 and later)\
+-   ***filter/positionlla*** (geometry_msgs/Vector3Stamped)
+    (MTSS2019.3.2 and later)\
     filtered position output in latitude (x), longitude (y) and
     altitude (z) as Vector3
--   \'\'\'\'\'filter/velocity\'\'\'\'\' (MTSS2019.3.2 and later)\
+-   ***filter/velocity*** (MTSS2019.3.2 and later)\
     filtered velocity output as Vector3
--   \'\'\'\'\'temperature\'\'\'\'\' (sensor_msgs/Temperature)\
+-   ***temperature*** (sensor_msgs/Temperature)\
     temperature from device
--   \'\'\'\'\'pressure\'\'\'\'\' (sensor_msgs/FluidPressure)\
+-   ***pressure*** (sensor_msgs/FluidPressure)\
     barometric pressure from device
--   \'\'\'\'\'gnss\'\'\' \'\'(sensor_msgs/NavSatFix)\
+-   ***gnss** *(sensor_msgs/NavSatFix)\
     raw 4 Hz latitude, longitude, altitude and status data from GNSS
     receiver
--   \'\'\'\'\'tf\'\'\' \'\'(geometry_msgs/TransformStamped)\
+-   ***tf** *(geometry_msgs/TransformStamped)\
     transformed orientation
 
 ## Troubleshooting
 
-\'\'\'The published topics do not reach the expected data output rate
-(e.g. 400 Hz). \'\'\'\
+**The published topics do not reach the expected data output rate (e.g.
+400 Hz). **\
 We have noticed that the ROS node can cause a high CPU load, leading to
 lower data output rates. This issue has been fixed in ROS nodes
 available in MTSS2019.3.2 and later. We recommend migrating to the
@@ -166,16 +162,15 @@ $ rostopic hz imu/data
 -   Note that the low_latency mode is lost after rebooting, so you will
     probably need to create a udev rule for this.
 
-\'\'\'The MTi-1 (Motion Tracker Development Board) is not
-recognized.\'\'\'\
+**The MTi-1 (Motion Tracker Development Board) is not recognized.**\
 Support for the Development Board is present in recent kernels. (Since
 June 12, 2015). If your kernel does not support the Board, you can add
 this manually:
 
 ```
 $ sudo /sbin/modprobe ftdi_sio $ echo 2639 0300 | sudo tee /sys/bus/usb-serial/drivers/ftdi_sio/new_id
-``` \'\'\'The device is recognized, but I cannot
-ever access the device.\'\'\'\
+``` **The device is recognized, but I cannot ever
+access the device.**\
 Make sure you are in the correct group (often dialout or uucp) in order
 to access the device. You can test this with:
 
@@ -210,12 +205,11 @@ $ catkin_make
 ```1 . Change \$GROUP into your desired group (e.g.
 adm, plugdev, or usb). .
 
-\'\'\'The device is inaccessible for a while after plugging it
-in.\'\'\'\
+**The device is inaccessible for a while after plugging it in.**\
 When having problems with the device being busy the first 20 seconds
 after plugin, purge the modemmanager application.
 
-\'\'\'RViz doesn\'t show an MTi model.\'\'\'\
+**RViz doesn\'t show an MTi model.**\
 It is a known issue with urdfdom in ROS Melodic. A workaround is to
 unset/modify the LC_NUMERIC environment variable:
 
@@ -223,8 +217,8 @@ unset/modify the LC_NUMERIC environment variable:
 $ catkin_make
 ```2
 
-\'\'\'Error \"Skipping incompatible xxx when searching for xxx\" after
-catkin_make.\'\'\'\
+**Error \"Skipping incompatible xxx when searching for xxx\" after
+catkin_make.**\
 Try inserting the following at the end of your CMakeLists.txt:
 ```
 $ catkin_make

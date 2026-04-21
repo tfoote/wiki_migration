@@ -4,7 +4,7 @@ This package calculates graspable regions at unknown (or known) objects.
 
 HAF_GRASPING calculates grasp points for unknown and known objects
 represented by object point cloud data. For scientific foundation see:
-[\'\'\'D. Fischinger, A. Weiss, M. Vincze: \"Learning Grasps with Topographic Features\", The International Journal of Robotics Research. (2015)\'\'\'](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features)
+[\*\*D. Fischinger, A. Weiss, M. Vincze: \"Learning Grasps with Topographic Features\", The International Journal of Robotics Research. (2015)\*\*](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features)
 
 \<\<Youtube(3V29-xR-aFM&rel=0)\>\>
 
@@ -65,35 +65,35 @@ topic: /haf_grasping/depth_registered/single_cloud/points_in_lcs:
 RVIZ will now visualize the point cloud with its corresponding frame
 (blue indicates the z-axis).
 
-\'\'\'Bigger grey rectangle:\'\'\' indicates the area where heights can
-be used for grasp calculation
+**Bigger grey rectangle:** indicates the area where heights can be used
+for grasp calculation
 
-\'\'\'Inner grey rectangle:\'\'\' defines the area which is searched for
+**Inner grey rectangle:** defines the area which is searched for
 potential grasps (grasp centers).
 
-\'\'\'Long red line:\'\'\' indicates the closing direction (for a two
-finger gripper)
+**Long red line:** indicates the closing direction (for a two finger
+gripper)
 
-\'\'\'Red/green spots:\'\'\' indicate the positions where grasps are
-really tested for the current gripper roll (ignoring points where no
+**Red/green spots:** indicate the positions where grasps are really
+tested for the current gripper roll (ignoring points where no
 calculation is needed, e.g. no data there)
 
-\'\'\'Green bars:\'\'\' indicate identified potential grasps available.
-The height of the bars indicates the grasp evaluation score (the higher
-the better)
+**Green bars:** indicate identified potential grasps available. The
+height of the bars indicates the grasp evaluation score (the higher the
+better)
 
-\'\'\'Black arrow:\'\'\' indicates the best grasp position found and the
+**Black arrow:** indicates the best grasp position found and the
 approaching direction (for a parallel two finger gripper)
 
-\'\'Visualization of the grasp calculation process in rviz:\'\'
+*Visualization of the grasp calculation process in rviz:*
 
 ![\|height=\"212\",width=\"379\"](attachment:haf_in_rviz1.png)
 ![haf_in_rviz1.png\|height=\"207\",width=\"372\"](attachment:haf_in_rviz2.png)
 
-\'\'Red line indicates currently tested gripper opening direction, red
+*Red line indicates currently tested gripper opening direction, red
 points indicate positions where no grasp was found, green bars indicate
 positions where grasps were found - the higher the bar, the better the
-quality.\'\'
+quality.*
 
 ![haf_in_rviz1.png\|height=\"312\",width=\"554\"](attachment:haf_in_rviz3.png)
 
@@ -210,30 +210,29 @@ following format:
 
 ```
 cd location_of_workspace/src
-```6 \'\'\'val\'\'\': scaled evaluation of the
-grasp: 99 is the top value, -20 is the worst possible value, meaning
-that no grasp was found at all (normally indicating a data or software
-issue, e.g. an issue with the tf system or no \'\'\'make\'\'\' executed
-in the libsvm folder)
+```6 **val**: scaled evaluation of the grasp: 99 is
+the top value, -20 is the worst possible value, meaning that no grasp
+was found at all (normally indicating a data or software issue, e.g. an
+issue with the tf system or no **make** executed in the libsvm folder)
 
-\'\'\'gp1(x,y,z)\'\'\': x-,y-,z-coordinates of the first grasp point
+**gp1(x,y,z)**: x-,y-,z-coordinates of the first grasp point
 
-\'\'\'gp2(x,y,z)\'\'\': x-,y-,z-coordinates of the second grasp point
+**gp2(x,y,z)**: x-,y-,z-coordinates of the second grasp point
 
-\'\'\'av(x,y,z)\'\'\' : x-,y-,z-coordinates of the approach vector
+**av(x,y,z)** : x-,y-,z-coordinates of the approach vector
 
-\'\'\'gcp(x,y,z)\'\'\': x-,y-,z-coordinates of the grasp center point,
-i.e. the middle point between gp1 and gp2
+**gcp(x,y,z)**: x-,y-,z-coordinates of the grasp center point, i.e. the
+middle point between gp1 and gp2
 
-\'\'\'roll\'\'\': gripper orientation in degrees
+**roll**: gripper orientation in degrees
 
 The returned grasps indicate (in a redundant way) how a gripper with two
 opposite fingers should approach an object: the gripper-specific
 approach vector that goes through the tool center point should approach
 the object along the object specific (returned) approach vector
-(\'\'\'av\'\'\'), which goes to the grasp center point (\'\'\'gcp\'\'\')
-whereby the roll is defined by \'\'\'roll\'\'\' respectively by the
-heuristically estimated grasp points (\'\'\'gp1\'\'\',\'\'\'gp2\'\'\').
+(**av**), which goes to the grasp center point (**gcp**) whereby the
+roll is defined by **roll** respectively by the heuristically estimated
+grasp points (**gp1**,**gp2**).
 
 ## GRASP REALIZATION WITH SIMULATION
 
@@ -267,11 +266,11 @@ inverse kinematics solutions for such trajectories.
 
 An OpenRAVE implementation for the PR2 can be found here:
 <http://pr.cs.cornell.edu/grasping/rect_data/data.php>
-([\'\'\'code\'\'\'](http://pr.cs.cornell.edu/grasping/code/grasp_demo_unknownobjects.zip),
-[\'\'\'Readme\'\'\'](http://pr.cs.cornell.edu/grasping/code/DescriptionPR2GraspingDemo.txt)).
+([\*\*code\*\*](http://pr.cs.cornell.edu/grasping/code/grasp_demo_unknownobjects.zip),
+[\*\*Readme\*\*](http://pr.cs.cornell.edu/grasping/code/DescriptionPR2GraspingDemo.txt)).
 OpenRAVE implementations for an 7-DOF Schunk/AMTEC arm, a Kuka LWR and
-the service robot [\'\'\'Hobbit\'\'\'](http://hobbit.acin.tuwien.ac.at/)
-can be provided on request.
+the service robot [\*\*Hobbit\*\*](http://hobbit.acin.tuwien.ac.at/) can
+be provided on request.
 
 ## LIBSVM
 
@@ -287,7 +286,7 @@ machines. ACM Transactions on Intelligent Systems and Technology,
 ## CITATION
 
 If you like this package and use it in your own work, please cite our
-[\'\'\'IJRR paper\'\'\'](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features):
+[\*\*IJRR paper\*\*](https://www.researchgate.net/publication/277926854_Learning_grasps_with_topographic_features):
 
 ```
 cd location_of_workspace/src

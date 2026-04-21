@@ -16,8 +16,7 @@ This package is EOL, and has been replaced by [[web_video_server]].
 
 ## Running the Node
 
-In a \'\'\'new terminal\'\'\', run the mjpeg_server:
-```
+In a **new terminal**, run the mjpeg_server: ```
 rosrun mjpeg_server mjpeg_server
 ```
 

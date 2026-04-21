@@ -141,41 +141,40 @@ $ rostopic bw /topic_name
 
 There are three ways to specify the message fields:
 
--   Command-line arguments. Defaults to \'\'latch mode\'\'. Example
-    usage: ```
+-   Command-line arguments. Defaults to *latch mode*. Example usage:
+    ```
 $ rostopic delay /topic_name
 ```0
--   Piped input. Defaults to \'\'rate mode\'\' (10hz). Example usage:
+-   Piped input. Defaults to *rate mode* (10hz). Example usage:
     ```
 $ rostopic delay /topic_name
 ```1
--   YAML data file. Defaults to \'\'rate mode\'\' (10hz). Example usage:
+-   YAML data file. Defaults to *rate mode* (10hz). Example usage:
     ```
 $ rostopic delay /topic_name
 ```2
 
 There are three modes that rostopic can publish in:
 
-. \'\'Latching mode\'\' . \`rostopic\` will publish a message to
-\`/topic_name\` and keep it \'\'latched\'\' \-- any new subscribers that
-come online after you start \`rostopic\` will hear this message. You can
-stop this at any time by pressing \`ctrl-C\`. \'\'Once mode\'\' . If you
-don\'t want to have to stop rostopic with \`ctrl-C\`, you can publish in
-\'\'once mode\'\'. \`rostopic\` will keep the message latched for 3
-seconds, then quit. \'\'Rate mode\'\'. . In rate mode, \`rostopic\` will
-publish your message at a specific rate. For example, \`-r 10\` will
-publish at 10hz. For file and piped input, this defaults to 10hz.
+. *Latching mode* . \`rostopic\` will publish a message to
+\`/topic_name\` and keep it *latched* \-- any new subscribers that come
+online after you start \`rostopic\` will hear this message. You can stop
+this at any time by pressing \`ctrl-C\`. *Once mode* . If you don\'t
+want to have to stop rostopic with \`ctrl-C\`, you can publish in *once
+mode*. \`rostopic\` will keep the message latched for 3 seconds, then
+quit. *Rate mode*. . In rate mode, \`rostopic\` will publish your
+message at a specific rate. For example, \`-r 10\` will publish at 10hz.
+For file and piped input, this defaults to 10hz.
 
 Options:
 
-. \`-l, \--latch\` . Enable latch mode. Latching mode is the
-\'\'default\'\' when using command-line arguments. \`-r RATE\` . Enable
-\'\'rate mode\'\'. Rate mode is the \'\'default\'\' (10hz) when using
-piped or file input. \`-1\`, \`\--once\` . Enable \'\'once mode\'\'.
-\`-f FILE\` . Read message fields from YAML file. YAML syntax is
-equivalent to output of \`rostopic echo\`. Messages are separated using
-YAML document separator \`\-\--\`. To use only the first message in a
-file, use the \`\--latch\` option.
+. \`-l, \--latch\` . Enable latch mode. Latching mode is the *default*
+when using command-line arguments. \`-r RATE\` . Enable *rate mode*.
+Rate mode is the *default* (10hz) when using piped or file input.
+\`-1\`, \`\--once\` . Enable *once mode*. \`-f FILE\` . Read message
+fields from YAML file. YAML syntax is equivalent to output of \`rostopic
+echo\`. Messages are separated using YAML document separator \`\-\--\`.
+To use only the first message in a file, use the \`\--latch\` option.
 
 Data types are be interpreted using YAML-syntax, e.g. 1 is an integer,
 1.0 is a float, and foo is a string.
@@ -189,10 +188,10 @@ or on Windows, replace single quotes with double quotes
 $ rostopic delay /topic_name
 ```4
 
-Publish a geometry_msgs/Twist message with a rate of 10Hz. \'\'\'For
-more a description of the YAML format and some tips for using it on the
+Publish a geometry_msgs/Twist message with a rate of 10Hz. **For more a
+description of the YAML format and some tips for using it on the
 command-line with ROS, please see
-[YAML command line](ROS/YAMLCommandLine).\'\'\'
+[YAML command line](ROS/YAMLCommandLine).**
 
 ### rostopic type
 

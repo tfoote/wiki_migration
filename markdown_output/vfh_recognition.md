@@ -118,7 +118,7 @@ trained).
 The training steps will generate several directories under \$ROOT_DIR
 (centroids, transforms, views\...)
 
-\'\'\'Important\'\'\':
+**Important**:
 
 -   Once you start running the Python script, you will see a window with
     red background that will display one of the models from different

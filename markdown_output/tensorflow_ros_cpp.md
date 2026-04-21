@@ -12,10 +12,10 @@ find_package(catkin REQUIRED COMPONENTS
 
 ```wiki
 Starting with ROS Kinetic, the supported Ubuntu versions started to use C++11 ABI for building system packages. This makes problems when using the pip-installed Tensorflow (as described further). See section ''C++ ABI difference problems'' for hints on how to overcome this limitation.
-``` \'\'Note: If you only intend to use Tensorflow
+``` *Note: If you only intend to use Tensorflow
 from Python nodes, you don\'t need this package. Just add
 `<run_depend>python-tensorflow-pip</run_depend>` to your package.xml and
-that\'s it.\'\'
+that\'s it.*
 
 ## Multiple Tensorflow installation options
 
@@ -23,16 +23,16 @@ This package allows its users to \"provide\" Tensorflow in several ways,
 and the developer doesn\'t have to care about which option the user
 chooses:
 
--   \'\'\'As a pip (Python) package:\'\'\' The easiest way on Ubuntu
-    14.04 / ROS Indigo. Just pip install tensorflow and that\'s it. GPU
-    version supported! Can be used on newer Ubuntu versions, but with
-    important limitations (see below).
--   \'\'\'Using
+-   **As a pip (Python) package:** The easiest way on Ubuntu 14.04 / ROS
+    Indigo. Just pip install tensorflow and that\'s it. GPU version
+    supported! Can be used on newer Ubuntu versions, but with important
+    limitations (see below).
+-   **Using
     [tensorflow_catkin](https://github.com/Skydes/tensorflow_catkin)
-    package:\'\'\' Easily compile Tensorflow for your platform. A
-    convenient way on newer systems. Supports GPU version.
--   \'\'\'Using a custom build of Tensorflow built by bazel:\'\'\' The
-    least comfortable, yet most powerful way.
+    package:** Easily compile Tensorflow for your platform. A convenient
+    way on newer systems. Supports GPU version.
+-   **Using a custom build of Tensorflow built by bazel:** The least
+    comfortable, yet most powerful way.
     [Compile Tensorflow yourself using bazel](https://www.tensorflow.org/install/install_sources)
     and tell this package where to find it.
 

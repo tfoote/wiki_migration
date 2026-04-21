@@ -10,10 +10,10 @@ package contains the following files:
 -   a joint unnormalization filter that uses information about the
     current positions of the joints to unwrap continuous joints that are
     wrapped on the unit circle.
--   a \'\'short cutter\'\' that takes joint paths output by planning
+-   a *short cutter* that takes joint paths output by planning
     algorithms, connects random points in the path together using cubic
-    splines and \'\'short cuts\'\' the path if the cubic spline
-    trajectories are collision free.
+    splines and *short cuts* the path if the cubic spline trajectories
+    are collision free.
 -   launch/\*.launch - These files configure the filters for the right
     and left arms and also for both arms of the PR2 robot.
 

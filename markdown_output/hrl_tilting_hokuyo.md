@@ -7,13 +7,13 @@ constructing the rig can be found here:
 
 ## Getting a Point Cloud
 
-\'\'\'Before using this code to obtain point clouds, you need to:\'\'\'
+**Before using this code to obtain point clouds, you need to:**
 
 1\. have made a rig consisting of a Hokuyo mounted on a Robotis
 servo. 1. be able use [robotis](robotis) to operate a Robotis servo. 1.
 be able to use [hrl_hokuyo](hrl_hokuyo) to get scans from a Hokuyo.
 
-\'\'\'Once you have the rig set up:\'\'\'
+**Once you have the rig set up:**
 
 1\. \`roscd hrl_hokuyo; roslaunch acm0_utm.launch\`
 
@@ -39,19 +39,18 @@ display_3d_mayavi.py -h\`)
 
 Brief description of the different files in this package:
 
-1\. \'\'\'tilt_hokuyo_servo.py\'\'\' - defines the class to obtain point
-clouds.
+1\. **tilt_hokuyo_servo.py** - defines the class to obtain point clouds.
 
-1\. \'\'\'display_3d_mayavi.py\'\'\' - Uses
+1\. **display_3d_mayavi.py** - Uses
 [mayavi2](http://code.enthought.com/projects/mayavi/#Mayavi2) to display
 point clouds.
 
-1\. \'\'\'processing_3d.py\'\'\' - some functions for working with point
-clouds. Includes segmenting doors, door handles, horizontal surfaces
-(tabletops, countertops etc.), objects on a horizontal surface etc.
+1\. **processing_3d.py** - some functions for working with point clouds.
+Includes segmenting doors, door handles, horizontal surfaces (tabletops,
+countertops etc.), objects on a horizontal surface etc.
 
-1\. \'\'\'occupancy_grid_3d.py\'\'\' - 3D occupancy grid implementation
-in python.
+1\. **occupancy_grid_3d.py** - 3D occupancy grid implementation in
+python.
 
 ## Troubleshooting
 
@@ -67,5 +66,4 @@ the point cloud:
 1\. Ensure that l1 and l2 that you are specifying when you run
 \`tilt_hokuyo_servo.py\` are correct.
 
-1\. \'\'\'Note:\'\'\' l2 can be negative depending on how the UTM is
-mounted.
+1\. **Note:** l2 can be negative depending on how the UTM is mounted.

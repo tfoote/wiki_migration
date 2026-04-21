@@ -60,7 +60,7 @@ Now there are different launch files which start all components. They
 are divided into simulation launch files and real navigation launch
 files:
 
-\'\'\'Simulation:\'\'\'
+**Simulation:**
 
 -   Starts the ROS_Navigation with the overlays and the
     asr_ftc_local_planner.
@@ -68,7 +68,7 @@ files:
     simulate driving around with the robot.
 -   Loads maps of the environment.
 
-\'\'\'Real:\'\'\'
+**Real:**
 
 -   Starts the ROS_Navigation with the overlays and the
     asr_ftc_local_planner.
@@ -78,7 +78,7 @@ files:
 
 ### Launchfiles
 
-\'\'\'Simulation: \'\'\'
+**Simulation: **
 
 To start the simulation run some of the simulation launch files
 depending on your scenario: \"simulation.launch\" is the main launch
@@ -94,7 +94,7 @@ roslaunch asr_mild_navigation simulation_manual_rearranged.launch
 manual_rearranged map. There are also launch files for three other
 rooms. How they look you can see on the maps in the folder \"rsc/maps\".
 
-\'\'\'Real:\'\'\'
+**Real:**
 
 For the real navigation you only need to start:
 
@@ -109,7 +109,7 @@ environment:
 (launch/amcl_diff.launch\") to start [amcl](http://wiki.ros.org/amcl),
 this is automaticly started if you launch \"launch/navigation.launch\".
 
-\'\'\'Gazebo:\'\'\'
+**Gazebo:**
 
 To start gazebo with the manual_rearranged map/room.
 

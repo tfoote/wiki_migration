@@ -52,7 +52,7 @@ the definition of \`BarFilter\`.
 You can register multiple callbacks with the \`registerCallbacks()\`
 method. They will get called in the order they are registered.
 
-\'\'\'C++\'\'\'
+**C++**
 
 . In C++ \`registerCallback()\` returns a
 [message_filters::Connection](http://www.ros.org/doc/api/message_filters/html/c++/classmessage__filters_1_1Connection.html)
@@ -73,14 +73,14 @@ as its input.
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
 . No input connections
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\` \'\'\'Python\'\'\': \`callback(msg)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
+**Python**: \`callback(msg)\`
 
 ### Example (C++)
 
@@ -113,23 +113,22 @@ implementation can synchronize up to 9 channels.
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
-. \'\'\'C++\'\'\': Up to 9 separate filters, each of which is of the
-form \`void callback(const boost::shared_ptr\<M const\>&)\`. The number
-of filters supported is determined by the number of template arguments
-the class was created with. \'\'\'Python\'\'\': N separate filters, each
-of which has signature \`callback(msg)\`.
+. **C++**: Up to 9 separate filters, each of which is of the form \`void
+callback(const boost::shared_ptr\<M const\>&)\`. The number of filters
+supported is determined by the number of template arguments the class
+was created with. **Python**: N separate filters, each of which has
+signature \`callback(msg)\`.
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': For message types \`M0\`..\`M8\`, \`void
-callback(const boost::shared_ptr\<M0 const\>&, \..., const
-boost::shared_ptr\<M8 const\>&)\`. The number of parameters is
-determined by the number of template arguments the class was created
-with. \'\'\'Python\'\'\': \`callback(msg0.. msgN)\`. The number of
-parameters is determined by the number of template arguments the class
-was created with.
+. **C++**: For message types \`M0\`..\`M8\`, \`void callback(const
+boost::shared_ptr\<M0 const\>&, \..., const boost::shared_ptr\<M8
+const\>&)\`. The number of parameters is determined by the number of
+template arguments the class was created with. **Python**:
+\`callback(msg0.. msgN)\`. The number of parameters is determined by the
+number of template arguments the class was created with.
 
 ### Example (C++)
 
@@ -194,7 +193,7 @@ rospy.spin()
 See also:
 [C++ message_filters::TimeSequencer API docs](http://www.ros.org/doc/api/message_filters/html/c++/classmessage__filters_1_1TimeSequencer.html)
 
-\'\'\'Python: the \`TimeSequencer\` filter is not yet implemented.\'\'\'
+**Python: the \`TimeSequencer\` filter is not yet implemented.**
 
 The \`TimeSequencer\` filter guarantees that messages will be called in
 temporal order according to their header\'s timestamp. The
@@ -208,15 +207,13 @@ which has already had its callback invoked, it is thrown away.
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
 
 ### Example (C++)
 
@@ -253,15 +250,15 @@ to its output connections.
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\` \'\'\'Python\'\'\': \`callback(msg)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
+**Python**: \`callback(msg)\`
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\` \'\'\'Python\'\'\': \`callback(msg)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
+**Python**: \`callback(msg)\`
 
 In C++:
 
@@ -297,27 +294,26 @@ The \`Synchronizer\` filter is templated on a policy that determines how
 to synchronize the channels. There are currently two policies:
 \`ExactTime\` and \`ApproximateTime\`.
 
-\'\'\'C++ Header:\'\'\' \`message_filters/synchronizer.h\`
+**C++ Header:** \`message_filters/synchronizer.h\`
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
-. \'\'\'C++\'\'\': Up to 9 separate filters, each of which is of the
-form \`void callback(const boost::shared_ptr\<M const\>&)\`. The number
-of filters supported is determined by the number of template arguments
-the class was created with. \'\'\'Python\'\'\': N separate filters, each
-of which has signature \`callback(msg)\`.
+. **C++**: Up to 9 separate filters, each of which is of the form \`void
+callback(const boost::shared_ptr\<M const\>&)\`. The number of filters
+supported is determined by the number of template arguments the class
+was created with. **Python**: N separate filters, each of which has
+signature \`callback(msg)\`.
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': For message types \`M0\`..\`M8\`, \`void
-callback(const boost::shared_ptr\<M0 const\>&, \..., const
-boost::shared_ptr\<M8 const\>&)\`. The number of parameters is
-determined by the number of template arguments the class was created
-with. \'\'\'Python\'\'\': \`callback(msg0.. msgN)\`. The number of
-parameters is determined by the number of template arguments the class
-was created with.
+. **C++**: For message types \`M0\`..\`M8\`, \`void callback(const
+boost::shared_ptr\<M0 const\>&, \..., const boost::shared_ptr\<M8
+const\>&)\`. The number of parameters is determined by the number of
+template arguments the class was created with. **Python**:
+\`callback(msg0.. msgN)\`. The number of parameters is determined by the
+number of template arguments the class was created with.
 
 ### ExactTime Policy
 
@@ -327,9 +323,9 @@ callback is only called if a message has been received on all specified
 channels with the same exact timestamp. The timestamp is read from the
 \`header\` field of all messages (which is required for this policy).
 
-\'\'\'C++ Header:\'\'\' \`message_filters/sync_policies/exact_time.h\`
+**C++ Header:** \`message_filters/sync_policies/exact_time.h\`
 
-\'\'\'Example (C++)\'\'\'
+**Example (C++)**
 
 ```cplusplus
 FooFilter foo;
@@ -347,10 +343,10 @@ messages based on their timestamp.
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```6 \'\'\'C++ Header:\'\'\'
+```6 **C++ Header:**
 \`message_filters/sync_policies/approximate_time.h\`
 
-\'\'\'Example (C++)\'\'\'
+**Example (C++)**
 
 ```cplusplus
 FooFilter foo;
@@ -377,32 +373,30 @@ filters to apply at runtime rather than compile-time.
 
 ### Connections
 
-\'\'Input\'\'
+*Input*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
 
-\'\'Output\'\'
+*Output*
 
-. \'\'\'C++\'\'\': \`void callback(const boost::shared_ptr\<M
-const\>&)\`
+. **C++**: \`void callback(const boost::shared_ptr\<M const\>&)\`
 
 ### Examples (C++)
 
-\'\'\'Simple Example\'\'\'
+**Simple Example**
 
 ```cplusplus
 FooFilter foo;
 BarFilter bar;
 bar.connectInput(foo);
-```9 \'\'\'Bare Pointers\'\'\'
+```9 **Bare Pointers**
 
-It is possible to pass bare pointers in. These will \'\'\'not\'\'\' be
+It is possible to pass bare pointers in. These will **not** be
 automatically deleted when Chain is destructed.
 
 ```python
 bar(foo)
-```0 \'\'\'Retrieving a Filter\'\'\'
+```0 **Retrieving a Filter**
 
 ```python
 bar(foo)

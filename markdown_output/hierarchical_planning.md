@@ -11,8 +11,8 @@ of the form: get bottle a to (a partiular region/point on) table b.
 
 The current functionality is fairly brittle and limited, but could
 relatively easily be extended, by adding to the world representation (in
-\'\'src_clj/ros/planning/world.clj\'\') and extending/replacing the
-action hierarchy (in \'\'src_clj/ros/planning/actions.clj\'\').
+*src_clj/ros/planning/world.clj*) and extending/replacing the action
+hierarchy (in *src_clj/ros/planning/actions.clj*).
 
 These instructions will briefly show a simple use of the task planning
 code; many more details are provided in comments and function docstrings
@@ -27,16 +27,16 @@ hierarchical_planning\".
 Then, to bring up the ROS nodes required for planning/execution:
 
 -   First, bring up the robot/simulator and nav stack
--   For a robot, bring up \'\'prx.launch\'\' and
-    2dnav_pr2/\'\'move_base/2dnav_pr2.launch\'\'
--   For the simulator, use \'\'launch/sim1.launch\'\' or
-    \'\'launch/sim2.launch\'\', or modify these as desired.
--   Second, roslaunch \'\'launch/both_arms.launch\'\' or
-    \'\'launch/right_arm.launch\'\', depending on the arm configuration
-    of your (possibly simulated) robot.
+-   For a robot, bring up *prx.launch* and
+    2dnav_pr2*/move_base/2dnav_pr2.launch*
+-   For the simulator, use *launch/sim1.launch* or *launch/sim2.launch*,
+    or modify these as desired.
+-   Second, roslaunch *launch/both_arms.launch* or
+    *launch/right_arm.launch*, depending on the arm configuration of
+    your (possibly simulated) robot.
 
-Finally, run \'\'bin/clj\'\' to bring up a REPL with all of the
-necessary code on the classpath, and type
+Finally, run *bin/clj* to bring up a REPL with all of the necessary code
+on the classpath, and type
 
 ```clojure
 (use '[ros.planning actions world sahtn])
@@ -50,9 +50,9 @@ also load teleoperation code.
 ## Planning and Executing
 
 First, you will need to set up the planning environment and goals. For
-details on how to do this, see \'\'src_clj/ros/planning/world.clj\'\'.
-Or, to use a preset demo environment for Willow Garage green room, you
-can use (get-demo-env nh).
+details on how to do this, see *src_clj/ros/planning/world.clj*. Or, to
+use a preset demo environment for Willow Garage green room, you can use
+(get-demo-env nh).
 
 Then, to construct a (hopefully) good plan that solves this problem, use
 \"sahtn\".

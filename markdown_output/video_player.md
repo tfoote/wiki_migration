@@ -59,7 +59,7 @@ A simple node to test the video_player.
 Use roslaunch files to load the video_player_node and the parameter
 mode.
 
--   \'\'\'video_player.launch\'\'\' - Launches the video_player_node.
+-   **video_player.launch** - Launches the video_player_node.
 
 ## Test Video Player
 

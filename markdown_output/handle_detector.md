@@ -45,16 +45,15 @@ localization: \$ roslaunch handle_detector
 localization_pcd_file.launch. 1. Use RViz to visualize the results (see
 below): \$ rosrun rviz rviz.
 
-For the given point cloud file
-(\'\'handle_detector/data/table5.pcd\'\'), the output in rviz should
-look like this:
+For the given point cloud file (*handle_detector/data/table5.pcd*), the
+output in rviz should look like this:
 
 ![Output for PCD file\|width=\"340\"](attachment:handles_pcd.png)
 
 ### Using a Depth Sensor
 
-\'\'\'Note:\'\'\' This requires an openni-compatible device, and has
-only been tested with an Asus Xtion Pro.
+**Note:** This requires an openni-compatible device, and has only been
+tested with an Asus Xtion Pro.
 
 1\. Set-up one or more objects in front of the RGB-D camera, and have
 the RGB-D camera running. 1. Start roscore: \$ roscore. 1. Start
@@ -99,11 +98,11 @@ Show all handles: add a MarkerArray and set the topic to
 
 ## Published ROS Topics
 
--   \'\'\'/localization/cylinder_list:\'\'\' contains a list of
-    cylinders (affordances) with pose, radius, extent, major axis, and
-    normal axis.
--   \'\'\'/localization/handle_list:\'\'\' contains a list of handles
-    where each handle consists of a list of cylinders (affordances).
+-   **/localization/cylinder_list:** contains a list of cylinders
+    (affordances) with pose, radius, extent, major axis, and normal
+    axis.
+-   **/localization/handle_list:** contains a list of handles where each
+    handle consists of a list of cylinders (affordances).
 
 ## ROS Launch Parameters
 
@@ -152,7 +151,7 @@ visualized (uses pcl_viewer)
 If you like this package and use it in your own work, please cite our
 [ISER2014 paper](http://www.ccs.neu.edu/home/atp/publications/affordances_iser2014_final.pdf):
 
-Andreas ten Pas and Robert Platt. \'\'\'Localizing Handle-Like Grasp
-Affordances in 3-D Points Clouds Using Taubin Quadric Fitting.\'\'\'
+Andreas ten Pas and Robert Platt. **Localizing Handle-Like Grasp
+Affordances in 3-D Points Clouds Using Taubin Quadric Fitting.**
 International Symposium on Experimental Robotics (ISER), Morocco, June
 2014.

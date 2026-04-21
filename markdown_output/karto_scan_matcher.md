@@ -1,5 +1,5 @@
-\'\'\'NOTE: From [ROS Hydro](hydro) functionality of this package is
-migrated into [slam_karto](slam_karto)\'\'\'.
+**NOTE: From [ROS Hydro](hydro) functionality of this package is
+migrated into [slam_karto](slam_karto)**.
 
 ## Overview
 

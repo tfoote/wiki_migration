@@ -4,14 +4,14 @@
 
 ### map_assembler
 
-\'\'\'Note\'\'\': It is recommend to use directly \`cloud_map\` or
-\`proj_map\` published topics from [rtabmap](rtabmap_slam#rtabmap) node
-instead of using this node.
+**Note**: It is recommend to use directly \`cloud_map\` or \`proj_map\`
+published topics from [rtabmap](rtabmap_slam#rtabmap) node instead of
+using this node.
 
 This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 \`\"mapData\"\` and assembles the 3D map incrementally, then publishes
 the same maps than [rtabmap](rtabmap_slam#rtabmap). See all
-\'\'\'\'\'Mapping\'\'\'\'\' related topics and parameters of
+***Mapping*** related topics and parameters of
 [rtabmap](rtabmap_slam#rtabmap) node. You can also use all \`Grid\`
 parameters from rtabmap:
 
@@ -51,9 +51,9 @@ param {
 
 ### map_optimizer
 
-This node is for \'\'\'advanced usage only\'\'\' as it is preferred to
-use graph optimization already inside [rtabmap](rtabmap_slam#rtabmap)
-node (which is the default). See related parameters in
+This node is for **advanced usage only** as it is preferred to use graph
+optimization already inside [rtabmap](rtabmap_slam#rtabmap) node (which
+is the default). See related parameters in
 [rtabmap](rtabmap_slam#rtabmap): ```
 $rosrun rtabmap_slam rtabmap --params | grep Optimize
 ```
@@ -68,9 +68,9 @@ This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
     of [rtabmap](rtabmap_slam#rtabmap). You can then connect output
     \`mapData_optimized\` to [map_assembler](rtabmap_util#map_assembler)
     to get the optimized grid, proj and cloud maps assembled again.
-    \'\'\'Note that processing time for map optimization using this node
-    is not bounded\'\'\' (which is the case in
-    [rtabmap](rtabmap_slam#rtabmap) node).
+    **Note that processing time for map optimization using this node is
+    not bounded** (which is the case in [rtabmap](rtabmap_slam#rtabmap)
+    node).
 
 ```{=html}
 <!-- -->
@@ -483,8 +483,8 @@ even, the ground is segmented by normal filtering: all points with
 normal in the +z direction (+- fixed angle) are labelled as ground, all
 the others are labelled as obstacles. The images below show an example.
 
-\'\'\'Warning\'\'\': this node will use a lot of CPU ressources if the
-raw point clouds are fed to it directly. A
+**Warning**: this node will use a lot of CPU ressources if the raw point
+clouds are fed to it directly. A
 [pcl::VoxelGrid](http://wiki.ros.org/pcl_ros/Tutorials/VoxelGrid%20filtering)
 can be used to downsample the raw point cloud (e.g. like 5 cm voxel) or
 [rtabmap_util/point_cloud_xyz](rtabmap_util#rtabmap_util.2Fpoint_cloud_xyz)

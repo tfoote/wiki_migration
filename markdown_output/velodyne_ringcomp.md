@@ -1,15 +1,15 @@
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     \<#FFFF00\> \'\'\'This package uses \'\'deprecated\'\' interfaces, but can be upgraded, if needed. ([velodyne_height_map](velodyne_height_map) is an alternative)   
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     \<#FFFF00\> *\'This package uses *deprecated\'\' interfaces, but can be upgraded, if needed. ([velodyne_height_map](velodyne_height_map) is an alternative)   
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Nodes
 
 ### Ring Compression
 
 The \`ringcomp\` node reads \<\<MsgLink(velodyne_common/RawScan)\>\>
-data from the \'\'\'velodyne/rawscan\'\'\' topic, identifies obstacles,
-and publishes them as \<\<MsgLink(sensor_msgs/PointCloud)\>\> in the
-\'\'\'velodyne/obstacles\'\'\' topic.
+data from the **velodyne/rawscan** topic, identifies obstacles, and
+publishes them as \<\<MsgLink(sensor_msgs/PointCloud)\>\> in the
+**velodyne/obstacles** topic.
 
 #### Usage
 
@@ -48,7 +48,7 @@ param {
 
 #### Examples
 
-Start the ring compression nodelet. \'\'Running as a standalone nodelet
-prevents zero-copy message sharing.\'\' ```
+Start the ring compression nodelet. *Running as a standalone nodelet
+prevents zero-copy message sharing.* ```
 $ rosrun nodelet nodelet standalone velodyne_ringcomp/RingCompNodelet
 ```

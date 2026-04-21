@@ -35,10 +35,10 @@ We also have a
 [Slack workspace](https://github.com/cruise-automation/webviz/issues/461).
 Join us to chat more about Webviz!
 
-\'\'\'See also\'\'\':
-[Foxglove Studio](http://wiki.ros.org/FoxgloveStudio/), another open
-source app for visualizing and debugging your robotics data, started as
-a fork of Webviz. The team is focusing on developing features for
-generalized robotics use cases (e.g. support for ROS 2, custom
-extensions, etc.). Learn more on [their website](https://foxglove.dev)
-and [ROS Wiki page](http://wiki.ros.org/FoxgloveStudio/).
+**See also**: [Foxglove Studio](http://wiki.ros.org/FoxgloveStudio/),
+another open source app for visualizing and debugging your robotics
+data, started as a fork of Webviz. The team is focusing on developing
+features for generalized robotics use cases (e.g. support for ROS 2,
+custom extensions, etc.). Learn more on
+[their website](https://foxglove.dev) and
+[ROS Wiki page](http://wiki.ros.org/FoxgloveStudio/).

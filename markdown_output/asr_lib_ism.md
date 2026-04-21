@@ -17,43 +17,42 @@ generate the used data.
 
 ### Main components
 
-\'\'\'Recorder:\'\'\' Provides an interface to store sets of objects to
-a sqlite database. Each set of objects represents a configuration of
-objects for a certain scene.
+**Recorder:** Provides an interface to store sets of objects to a sqlite
+database. Each set of objects represents a configuration of objects for
+a certain scene.
 
-\'\'\'Trainer / !CombinatorialTrainer: \'\'\'The Trainer and the
+**Trainer / !CombinatorialTrainer: **The Trainer and the
 !CombinatorialTrainer are interchangeable, both create a scene model
 represented by an ISM from the object poses stored in the recorded
 database and write it into a sqlite database. The ISM created by the
 !CombinatorialTrainer should have a shorter computing time when it comes
 to recognizing a scene compared to the one created by the Trainer.
 
-\'\'\'Recognizer: \'\'\'Given a set of objects, the Recognizer
-calculates the most likely scenes that those objects are part of. These
-calculations use the scene models created by the
-Trainer/CombinatorialTrainer.
+**Recognizer: **Given a set of objects, the Recognizer calculates the
+most likely scenes that those objects are part of. These calculations
+use the scene models created by the Trainer/CombinatorialTrainer.
 
 ### Tools
 
-\'\'\'!DataCleaner: \'\'\'Delete the recordings or the models or both
-from the database.
+**!DataCleaner: **Delete the recordings or the models or both from the
+database.
 
-\'\'\'!DataMerger: \'\'\'Merge multiple databases into one.
+**!DataMerger: **Merge multiple databases into one.
 
-\'\'\'!MarkerRotator:\'\'\' Rotate the pose of objects which are
-determined by a marker e.g.
+**!MarkerRotator:** Rotate the pose of objects which are determined by a
+marker e.g.
 [asr_aruco_marker_recognition](asr_aruco_marker_recognition).
 
-\'\'\'!PoseInterpolator:\'\'\' Generates additional recording data
-between objects by interpolating the pose of two objects between
-consecutive recorded object sets.
+**!PoseInterpolator:** Generates additional recording data between
+objects by interpolating the pose of two objects between consecutive
+recorded object sets.
 
-\'\'\'!RecordedObjectsTransformer:\'\'\' Transform the absolute pose of
-an entire scene relative to a world coordinate frame.
+**!RecordedObjectsTransformer:** Transform the absolute pose of an
+entire scene relative to a world coordinate frame.
 
-\'\'\'!RotationInvariantObjectsRotator:\'\'\' Rotate Objects in the
-database which are rotation invariant to the y-Axis around this y-Axis
-to a given direction. As result these objects get distinct object poses.
+**!RotationInvariantObjectsRotator:** Rotate Objects in the database
+which are rotation invariant to the y-Axis around this y-Axis to a given
+direction. As result these objects get distinct object poses.
 
 ## Data Models
 
@@ -66,77 +65,75 @@ models.
 
 #### Tables for Recordings
 
-\'\'\' recorded_patterns(\_\_id\_\_, name) \'\'\'- Stores the
-representing name for a pattern.
+** recorded_patterns(\_\_id\_\_, name) **- Stores the representing name
+for a pattern.
 
--   \'\'name:\'\' The name of the pattern (scene).
+-   *name:* The name of the pattern (scene).
 
-\'\'\'recorded_sets(\_\_id\_\_, patternId)\'\'\' - Stores a recorded
-object set at a point in time for a certain pattern.
+**recorded_sets(\_\_id\_\_, patternId)** - Stores a recorded object set
+at a point in time for a certain pattern.
 
-\'\'\'recorded_poses(\_\_id\_\_, objectId, setId\'\'\' \'\'\', px, py,
-pz, qw, qx, qy, qz)\'\'\' - Stores the object estimation pose obtained
-from a object recognizer during the recording process.
+**recorded_poses(\_\_id\_\_, objectId, setId** **, px, py, pz, qw, qx,
+qy, qz)** - Stores the object estimation pose obtained from a object
+recognizer during the recording process.
 
 -   objectId: reference to object in recorded_objects
 -   setId: reference to set in recorded_sets
--   \'\'px,py,pz:\'\' The absolute position of the object with respect
-    to a coordinate system (baseFrame).
--   \'\'qw,qx,qy,qz:\'\' The orientation of the object stored as
-    quaternion with respect to a coordinate system (baseFrame).
+-   *px,py,pz:* The absolute position of the object with respect to a
+    coordinate system (baseFrame).
+-   *qw,qx,qy,qz:* The orientation of the object stored as quaternion
+    with respect to a coordinate system (baseFrame).
 
-\'\'\'recorded_objects(\_\_id\_\_, type, observedId,\'\'\' \'\'\'setId,
-resourcePath)\'\'\' - Stores the object estimation meta-data obtained
-from an object recognizer during the recording process.
+**recorded_objects(\_\_id\_\_, type, observedId,** **setId,
+resourcePath)** - Stores the object estimation meta-data obtained from
+an object recognizer during the recording process.
 
--   \'\'type & observedId:\'\' Stores the type of an object e.g. a cup
-    and an id to differentiate objects with the same type belonging to
-    the same pattern e.g. by using the color of an object as id (see
-    Notes below).
--   \'\'resourcePath:\'\' The location of the mesh-file used for
+-   *type & observedId:* Stores the type of an object e.g. a cup and an
+    id to differentiate objects with the same type belonging to the same
+    pattern e.g. by using the color of an object as id (see Notes
+    below).
+-   *resourcePath:* The location of the mesh-file used for
     visualization.
 
 #### Tables for Models
 
-\'\'\'model_patterns (\_\_id\_\_, name, expectedMaxWeight)\'\'\' -
-Stores trained patterns.
+**model_patterns (\_\_id\_\_, name, expectedMaxWeight)** - Stores
+trained patterns.
 
--   \'\'name:\'\' name of the pattern (scene).
--   \'\'expectedMaxWeight:\'\' the mean value of the accumulated weights
-    from all objects inside a certain pattern.
+-   *name:* name of the pattern (scene).
+-   *expectedMaxWeight:* the mean value of the accumulated weights from
+    all objects inside a certain pattern.
 
-\'\'\'model_objects(\_\_id\_\_, type) \'\'\'- Store all objects which
-appeared while training the model.
+**model_objects(\_\_id\_\_, type) **- Store all objects which appeared
+while training the model.
 
--   \'\'type:\'\' Stores the type of an object e.g. a cup.
+-   *type:* Stores the type of an object e.g. a cup.
 
-\'\'\'model_votes(\_\_id\_\_, objectId, patternId, observedId, radius,
-qw, qx, qy, qz, qw2, qx2, qy2, qz2,qpw, qpx, qpy, qpz,
-qpw2,qpx2,qpy2,qpz2, trackIndex, weght)\'\'\' - Stores the votes
-generated by the trainer.
+**model_votes(\_\_id\_\_, objectId, patternId, observedId, radius, qw,
+qx, qy, qz, qw2, qx2, qy2, qz2,qpw, qpx, qpy, qpz, qpw2,qpx2,qpy2,qpz2,
+trackIndex, weght)** - Stores the votes generated by the trainer.
 
--   \'\'observedId:\'\' Used to differentiate among multiple objects of
-    the same type. E.g. by using the color of an object as id (see Notes
+-   *observedId:* Used to differentiate among multiple objects of the
+    same type. E.g. by using the color of an object as id (see Notes
     below).
--   \'\'radius: \'\'The radius of the direction vector of the vote or in
-    other words the length of the vote
--   \'\'qw, qx, qy, qz:\'\' The values of the quaternion which rotates
-    the orientation of the object so that it points towards the
-    potential reference, aka objectToRefQuat
--   \'\'qw2, qx2, qy2, qz2:\'\' The values of the quaternion which
-    rotates the orientation of the object so that it has the same
-    orientation as the potential reference, aka objectToRefPoseQuat
--   \'\'qpw, qpx, qpy, qpz:\'\' The values of the quaternion which
-    rotates the orientation of the reference so that it points towards
-    the potential position of the object which voted, aka
-    refToObjectQuat
--   \'\'qpw2, qpx2, qpy2, qpz2:\'\' The values of the quaternion which
-    rotates the orientation of the reference so that it has the same
-    orientation as the potential object which voted, aka refToObject
--   \'\'trackIndex:\'\' Corresponds to setId in recorded_objects and
+-   *radius: *The radius of the direction vector of the vote or in other
+    words the length of the vote
+-   *qw, qx, qy, qz:* The values of the quaternion which rotates the
+    orientation of the object so that it points towards the potential
+    reference, aka objectToRefQuat
+-   *qw2, qx2, qy2, qz2:* The values of the quaternion which rotates the
+    orientation of the object so that it has the same orientation as the
+    potential reference, aka objectToRefPoseQuat
+-   *qpw, qpx, qpy, qpz:* The values of the quaternion which rotates the
+    orientation of the reference so that it points towards the potential
+    position of the object which voted, aka refToObjectQuat
+-   *qpw2, qpx2, qpy2, qpz2:* The values of the quaternion which rotates
+    the orientation of the reference so that it has the same orientation
+    as the potential object which voted, aka refToObject
+-   *trackIndex:* Corresponds to setId in recorded_objects and
     represents a point in the trajectory of the voting object.
--   \'\'weight:\'\' Represents the significance of the object for the
-    scene the vote votes for.
+-   *weight:* Represents the significance of the object for the scene
+    the vote votes for.
 
 ### XML
 
@@ -161,11 +158,11 @@ the [asr_fake_object_recognition](asr_fake_object_recognition) package.
 
 ### Notes
 
--   \'\'\'Saving the color as observedId will only be used for
-    single-colored objects.\'\'\' In this case the id contains 12
-    numbers, each pair of 3 numbers represent an value between 0.00 and
-    1.00, and those 4 values in turn represent the values of the rgba
-    color model, used in the ROS message std_msgs/ColorRGBA.
+-   **Saving the color as observedId will only be used for
+    single-colored objects.** In this case the id contains 12 numbers,
+    each pair of 3 numbers represent an value between 0.00 and 1.00, and
+    those 4 values in turn represent the values of the rgba color model,
+    used in the ROS message std_msgs/ColorRGBA.
 
 ## Usage
 
@@ -186,34 +183,29 @@ instead of the terminal version is recommended.
 This directory contains the actual source/functionality provided by the
 library.
 
--   \'\'\'combinatorial_optimization/:\'\'\' Contains the combinatorial
+-   **combinatorial_optimization/:** Contains the combinatorial
     optimization functionality (templates and algorithms), which can be
     used on arbitrary types, as long as they implement a cost- and
     neighborhood-function.
--   \'\'\'combinatorial_trainer/:\'\'\' Contains the actual classes to
-    train hierarchical Implicit Shape Models using combinatorial
-    optimization.
--   \'\'\'common_type/:\'\'\' Contains common data types used throughout
-    the whole system.
--   \'\'\'heuristic_trainer/:\'\'\' Contains classes to train a
-    hierarchical Implicit Shape Model using different types of
-    heuristics.
--   \'\'\'rating/:\'\'\' Contains classes to rate a recognition result.
--   \'\'\'recognizer/:\'\'\' Contains the scene recognition
-    functionality.
--   \'\'\'recorder/:\'\'\' Contains the recorder class.
--   \'\'\'soci/:\'\'\' Contains SOCI a database access library for C++,
-    this library is used for all sqlite Database manipulations. For
-    further information visit the sourceforge project
+-   **combinatorial_trainer/:** Contains the actual classes to train
+    hierarchical Implicit Shape Models using combinatorial optimization.
+-   **common_type/:** Contains common data types used throughout the
+    whole system.
+-   **heuristic_trainer/:** Contains classes to train a hierarchical
+    Implicit Shape Model using different types of heuristics.
+-   **rating/:** Contains classes to rate a recognition result.
+-   **recognizer/:** Contains the scene recognition functionality.
+-   **recorder/:** Contains the recorder class.
+-   **soci/:** Contains SOCI a database access library for C++, this
+    library is used for all sqlite Database manipulations. For further
+    information visit the sourceforge project
     [site](http://soci.sourceforge.net/) of SOCI.
--   \'\'\'tools/:\'\'\' Contains the actual code of the tools provided
-    by ros nodes ([asr_ism](asr_ism)) or terminal
-    (asr_lib_ism/libism/src).
--   \'\'\'utility/:\'\'\' Contains different types of classes which
-    provide helper functions, e.g. a class to handle queries to the
-    database.
--   \'\'\'typedef.hpp:\'\'\' contains forward declarations of some
-    classes and general used typedefs.
+-   **tools/:** Contains the actual code of the tools provided by ros
+    nodes ([asr_ism](asr_ism)) or terminal (asr_lib_ism/libism/src).
+-   **utility/:** Contains different types of classes which provide
+    helper functions, e.g. a class to handle queries to the database.
+-   **typedef.hpp:** contains forward declarations of some classes and
+    general used typedefs.
 
 ### Main Interfaces
 
@@ -221,73 +213,73 @@ library.
 
 General usage:
 
-\'\'\'1.\'\'\' Include \'\'ISM/recorder/Recorder.hpp\'\'
+**1.** Include *ISM/recorder/Recorder.hpp*
 
-\'\'\'2.\'\'\' Create a new Recorder instance:
+**2.** Create a new Recorder instance:
 
 ```
 Recorder(const std::string& dbfilename)
 ```
 
--   \'\'dbfilename:\'\'The path to the database, the recordings should
-    be written to.
+-   *dbfilename:*The path to the database, the recordings should be
+    written to.
 
-\'\'\'3.\'\'\' Insert objects of a recorded object configuration into
-the database:
+**3.** Insert objects of a recorded object configuration into the
+database:
 
 ```
 void insert(const ObjectSetPtr& set, const std::string& patternName)
 ```
 
--   \'\'set:\'\' The objects which should be inserted.
--   \'\'patternName:\'\' The name of the pattern the objects belong to.
+-   *set:* The objects which should be inserted.
+-   *patternName:* The name of the pattern the objects belong to.
 
 #### Trainer
 
 General usage:
 
-\'\'\'1.\'\'\' Include \'\'ISM/heuristic_trainer/Trainer.hpp\'\'
+**1.** Include *ISM/heuristic_trainer/Trainer.hpp*
 
-\'\'\'2.\'\'\' Create a new Trainer instance:
+**2.** Create a new Trainer instance:
 
 ```
 Trainer(std::string dbfilename, bool dropOldModelTables)
 ```
 
--   \'\'dbfilename:\'\' Path to the database containing recorded data
-    for which an ism should be trained.
--   \'\'dropOldModelTables:\'\' Whether already existing model data
-    should be dropped or kept in the database.
+-   *dbfilename:* Path to the database containing recorded data for
+    which an ism should be trained.
+-   *dropOldModelTables:* Whether already existing model data should be
+    dropped or kept in the database.
 
-\'\'\'3.1.\'\'\'Train ism for all patterns inside the database:
+**3.1.**Train ism for all patterns inside the database:
 
 ```
 void trainPattern()
-``` \'\'\'3.2. \'\'\'Train ism only for the given
-pattern (patternName):
+``` **3.2. **Train ism only for the given pattern
+(patternName):
 
 ```
 void trainPattern(const std::string& patternName)
-``` \'\'\'! \'\'\'Before using the trainPattern
-method, the training parameters should be set. An example how to set
-those parameters can be found at asr_ism/src/trainer.cpp
+``` **! **Before using the trainPattern method, the
+training parameters should be set. An example how to set those
+parameters can be found at asr_ism/src/trainer.cpp
 
 #### CombinatorialTrainer
 
 General usage:
 
-\'\'\'1.\'\'\' Include
-\'\'ISM/\'\'\'\'combinatorial\'\'\'\'\_trainer/\'\'\'\'CombinatorialTrainer\'\'\'\'.hpp\'\'
+**1.** Include
+*ISM/**\'combinatorial**\'\_trainer/**\'CombinatorialTrainer**\'.hpp*
 
-\'\'\'2.\'\'\' Create a new !CombinatorialTrainer instance:
+**2.** Create a new !CombinatorialTrainer instance:
 
 ```
 CombinatorialTrainer(CombinatorialTrainerParameters params)
 ```
 
--   \'\'params:\'\' Parameters to configure training process.
+-   *params:* Parameters to configure training process.
 
-\'\'\'3. \'\'\'Train ism for all patterns inside the database:
+**3. **Train ism for all patterns inside the database:
 
 ```
 std::map<std::string, std::pair<double, TreePtr> > learn()
@@ -297,42 +289,40 @@ std::map<std::string, std::pair<double, TreePtr> > learn()
 
 General usage:
 
-\'\'\'1.\'\'\' Include \'\'ISM/recognizer/Recognizer.hpp\'\'
+**1.** Include *ISM/recognizer/Recognizer.hpp*
 
-\'\'\'2.\'\'\' Create a new \'\'Recognizer\'\' instance:
+**2.** Create a new *Recognizer* instance:
 
 ```
 Recognizer(const std::string& dbfilename, double bin_size, double maxProjectionAngleDeviation, int raterType = 0)
 ```
 
--   \'\'dbfilename:\'\' Path to the database containing trained ism.
--   \'\'bin_size:\'\' Side length of a voxel (bins) of a voxel grid in
-    which hough voting is performed and Maximal accepted distance
-    between scene reference hypotheses of different objects in a bin.
--   \'\'maxProjectionAngleDeviation:\'\' Maximal accepted difference in
+-   *dbfilename:* Path to the database containing trained ism.
+-   *bin_size:* Side length of a voxel (bins) of a voxel grid in which
+    hough voting is performed and Maximal accepted distance between
+    scene reference hypotheses of different objects in a bin.
+-   *maxProjectionAngleDeviation:* Maximal accepted difference in
     orientations of scene reference hypotheses of different objects in a
     bin.
--   \'\'raterType:\'\' Function that is used to rate recognition
-    results.
+-   *raterType:* Function that is used to rate recognition results.
 
-\'\'\'3. \'\'\'Recognize most likely pattern for a given object
-configuration:
+**3. **Recognize most likely pattern for a given object configuration:
 
 ```
 const std::vector<RecognitionResultPtr> recognizePattern(const ObjectSetPtr& _objectSet_, const double filterThreshold = 0.0, const int resultsPerPattern = -1, const std::string targetPatternName == "")
 ```
 
--   \'\'objectSet: \'\'The object configuration in which a pattern
-    should be recognized.
--   \'\'filterThreshold:\'\' Minimum confidence that a recognition
-    result must dispose of to be returned.
--   \'\'resultsPerPattern:\'\' Maximum number of recognition results for
-    each pattern in the database.
--   \'\'patternName:\'\' Name of the pattern which should be recognized.
-    If empty, all patterns are recognized. This parameter has no
-    influence on the voting and will only check the top-level ism and
-    will filter the resulting recognitionResult.
--   \'\'\'returns: \'\'\'The recognition results ordered by recognition
+-   *objectSet: *The object configuration in which a pattern should be
+    recognized.
+-   *filterThreshold:* Minimum confidence that a recognition result must
+    dispose of to be returned.
+-   *resultsPerPattern:* Maximum number of recognition results for each
+    pattern in the database.
+-   *patternName:* Name of the pattern which should be recognized. If
+    empty, all patterns are recognized. This parameter has no influence
+    on the voting and will only check the top-level ism and will filter
+    the resulting recognitionResult.
+-   **returns: **The recognition results ordered by recognition
     confidence in descending order.
 
 ## ROS Nodes

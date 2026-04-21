@@ -1,23 +1,22 @@
 This is the only package among the ones in [qb_device](qb_device) which
-can be used as a stand-alone ROS node, called \'\'Communication
-Handler\'\'. It wraps the \'\'qbrobotics®\'\' API, manages the shared
-resources and provides a multi-node from/to multi-device communication
-interface.
+can be used as a stand-alone ROS node, called *Communication Handler*.
+It wraps the *qbrobotics®* API, manages the shared resources and
+provides a multi-node from/to multi-device communication interface.
 
 ## Communication Handler
 
-The \'\'Communication Handler\'\' node manages the serial communication
-from the ROS ecosystem to the physical \'\'qbrobotics\'\' devices
-connected to it through any serial ports, and vice versa. The need of
-such a mediator is demanded to the possibility to connect several
-devices together (i.e. in a chain) and access them through a single
-serial port. Each ROS node representing a device has to request services
-to the owner of the shared resources, i.e. the Communication Handler.
+The *Communication Handler* node manages the serial communication from
+the ROS ecosystem to the physical *qbrobotics* devices connected to it
+through any serial ports, and vice versa. The need of such a mediator is
+demanded to the possibility to connect several devices together (i.e. in
+a chain) and access them through a single serial port. Each ROS node
+representing a device has to request services to the owner of the shared
+resources, i.e. the Communication Handler.
 
 ### Command-line tools
 
 To start an instance of the Communication Handler node, execute the
-following command from a terminal (it \'\'\'does not require\'\'\' any
+following command from a terminal (it **does not require** any
 configuration parameters): ```
 roslaunch qb_device_driver communication_handler.launch
 ```

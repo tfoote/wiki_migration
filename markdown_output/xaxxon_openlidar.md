@@ -1,8 +1,8 @@
 ## Overview
 
-\'\'\'Xaxxon OpenLIDAR \'\'\'is an open hardware rotational laser
-scanner, using the Garmin LIDAR-!LiteV3 sensor. Full specs and complete
-documentation can be found at
+**Xaxxon OpenLIDAR **is an open hardware rotational laser scanner, using
+the Garmin LIDAR-!LiteV3 sensor. Full specs and complete documentation
+can be found at
 [xaxxon.com/xaxxon/openlidar](http://www.xaxxon.com/xaxxon/openlidar)
 
 ![](http://www.xaxxon.com/images/xaxxon/openlidar/xaxxon_openlidar_sensor.jpg)

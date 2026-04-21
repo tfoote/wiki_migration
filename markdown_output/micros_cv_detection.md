@@ -34,8 +34,8 @@ catkin_make
 
 Open a new consol and run a video node
 
-\'\'\'Note:\'\'\'run this video node under /catkin_ws directory Run
-detection node also in /catkin_ws directory ```
+**Note:**run this video node under /catkin_ws directory Run detection
+node also in /catkin_ws directory ```
 source devel/setup.bash
 roslaunch cv_detection cv_detection.launch
 ```
@@ -56,7 +56,7 @@ roslaunch cv_detection cv_detection.launch
 ```
 -   The green point is the UAV detection result
 
-\'\'\'Note:\'\'\'the package is inspired by and adapted from
+**Note:**the package is inspired by and adapted from
 [\[1](http://ieeexplore.ieee.org/document/7288942/)\]. The details about
 the Chan-Vese model can be found in
 [\[2](https://webdocs.cs.ualberta.ca/~nray1/CMPUT615/LevelSet/ChanVese2001.pdf/)\].

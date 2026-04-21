@@ -3,7 +3,7 @@
 ### Hard realtime control loop
 
 The \`pr2_controller_manager\` provides a
-\'\'\'[hard realtime](http://www.oit.uci.edu/dcslib/digital_unix/digital-v40d/APS33DTE/TITLE.HTM)\'\'\'
+**[hard realtime](http://www.oit.uci.edu/dcslib/digital_unix/digital-v40d/APS33DTE/TITLE.HTM)**
 loop to control the robot mechanism. The robot mechanism is represented
 by a set of effort controlled joints (see
 [pr2_mechanism_model](pr2_mechanism_model) for details). For the PR2
@@ -98,8 +98,8 @@ To automatically stop a set of controllers, and restart them later, you
 can use the \`unspawner\` tool: ```
 $ rosrun pr2_controller_manager unspawner name1 name2 name3
 ``` The listed
-controllers will be \'\'stopped\'\', but not unloaded. Once spawner is
-shut down, the controllers will be restarted.
+controllers will be *stopped*, but not unloaded. Once spawner is shut
+down, the controllers will be restarted.
 
 ## Creating launch files
 

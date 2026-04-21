@@ -9,9 +9,9 @@ debugging:
 -   rosmon has a clean, modern console UI. With one glance at the status
     bar, you can see that all of your nodes are still running as they
     should. Console output from the nodes is intercepted and augmented
-    with the node name - allowing you to immediately see \'\'which\'\'
-    node is printing that message. This also works for plain output
-    without rosconsole macros.
+    with the node name - allowing you to immediately see *which* node is
+    printing that message. This also works for plain output without
+    rosconsole macros.
 -   rosmon has a ROS interface itself. Query node status or start/stop
     nodes using service calls. This allows you to use ROS network
     transparency for remote monitoring.
@@ -19,9 +19,8 @@ debugging:
     gdb to a running node. If a node crashes without gdb attached, you
     can run gdb against an automatically collected coredump, providing
     post-mortem analysis.
--   rosmon is \'\'fast\'\'. Thanks to lazy evaluation of parameters,
-    costly calls to [xacro](xacro) and friends are reduced as much as
-    possible.
+-   rosmon is *fast*. Thanks to lazy evaluation of parameters, costly
+    calls to [xacro](xacro) and friends are reduced as much as possible.
 
 ## Differences to roslaunch
 

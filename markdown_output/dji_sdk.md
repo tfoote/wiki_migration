@@ -516,7 +516,7 @@ EOM
 All the above flight control topics take setpoint values of the X, Y, Z,
 and Yaw channels in axes\[0\]-axes\[3\]. In addition, the
 /dji_sdk/flight_control_setpoint_generic topic requires a control
-\'\'\'flag\'\'\' as axes\[4\] of the input. The control flag is an UInt8
+**flag** as axes\[4\] of the input. The control flag is an UInt8
 variable that dictates how the inputs are interpreted by the flight
 controller. It is the bitwise OR of 5 separate flags defined as enums in
 dji_sdk.h, including Horizontal, Vertical, Yaw, Coordinate Frame, and

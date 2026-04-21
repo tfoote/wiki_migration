@@ -77,4 +77,4 @@ rosrun rc_tagdetect_client rc_qr_node _device:=:<serial_number>
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

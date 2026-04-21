@@ -1,10 +1,8 @@
-\<\<Include(Industrial/Software_Status/Developmental)\>\>
+[Included page Industrial/Software_Status/Developmental not found](Included page Industrial/Software_Status/Developmental not found)
 
 ## Software component
 
-\<\<Include(rtmros_nextage/Tutorials/Install NEXTAGE OPEN software on
-your
-machine,,from=\"##begin_swcomponent_hironx_nxo\",to=\"##end_swcomponent_hironx_nxo\")\>\>
+[Included page rtmros_nextage/Tutorials/Install NEXTAGE OPEN software on your machine,,from=\"##begin_swcomponent_hironx_nxo\",to=\"##end_swcomponent_hironx_nxo\" not found](Included page rtmros_nextage/Tutorials/Install NEXTAGE OPEN software on your machine,,from="##begin_swcomponent_hironx_nxo",to="##end_swcomponent_hironx_nxo" not found)
 
 ### Note for Coordinate Frames for Hironx
 

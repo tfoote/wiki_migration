@@ -9,4 +9,4 @@ roscd rospy_tutorials
 and viewing what is there. Many of these tutorials are also discussed in
 the Wiki tutorials listed below.
 
-\<\<Include(/Tutorials)\>\>
+[Included page /Tutorials not found](Included page /Tutorials not found)

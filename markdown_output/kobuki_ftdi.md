@@ -1,7 +1,6 @@
 ## Kobuki Udev Rules
 
-\<\<Include(kobuki_ftdi/Tutorials/Udev Rules, ,from=\"## START\",
-to=\"## END\")\>\>
+[Included page kobuki_ftdi/Tutorials/Udev Rules, ,from=\"## START\", to=\"## END\" not found](Included page kobuki_ftdi/Tutorials/Udev Rules, ,from="## START", to="## END" not found)
 
 ## Flashing Ftdi Chips
 

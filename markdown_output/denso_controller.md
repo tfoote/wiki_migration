@@ -1,4 +1,4 @@
-\<\<Include(Industrial/Software_Status/Experimental)\>\>
+[Included page Industrial/Software_Status/Experimental not found](Included page Industrial/Software_Status/Experimental not found)
 
 ## Running robots using denso_controller
 

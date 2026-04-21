@@ -1,4 +1,4 @@
-\<\<Include(Industrial/Software_Status/Developmental)\>\>
+[Included page Industrial/Software_Status/Developmental not found](Included page Industrial/Software_Status/Developmental not found)
 
 ![\|width=75%](attachment:Screenshot_from_2013-11-06 10_51_06.png)
 

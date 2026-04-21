@@ -10,4 +10,4 @@ roscd roscpp_tutorials
 
 There are also several Wiki-based tutorials, listed below.
 
-\<\<Include(roscpp_tutorials/Tutorials)\>\>
+[Included page roscpp_tutorials/Tutorials not found](Included page roscpp_tutorials/Tutorials not found)

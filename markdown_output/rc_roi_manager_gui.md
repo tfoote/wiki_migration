@@ -52,4 +52,4 @@ $ roslaunch rc_roi_manager_gui interactive_roi_selection.launch device:=:<serial
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

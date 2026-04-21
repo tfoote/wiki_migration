@@ -136,4 +136,4 @@ rosrun rc_hand_eye_calibration_client rc_hand_eye_calibration_client_node _devic
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

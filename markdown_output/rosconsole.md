@@ -30,7 +30,7 @@ rosconsole also provides an assertion/breakpoint library.
 
 ## Code API
 
-\<\<Include(rosconsole/CodeAPI)\>\>
+[Included page rosconsole/CodeAPI not found](Included page rosconsole/CodeAPI not found)
 
 ### Assertions
 

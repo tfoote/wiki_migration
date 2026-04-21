@@ -187,5 +187,5 @@ within a local area.
 
 ```wiki
 <<Version(ROS hydro)>>
-<<Include(costmap_2d/layered)>>
+[[Included page costmap_2d/layered not found]]
 ```

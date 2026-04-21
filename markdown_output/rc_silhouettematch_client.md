@@ -80,4 +80,4 @@ rosrun rc_silhouettematch_client rc_silhouettematch_client _device:=:<serial_num
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

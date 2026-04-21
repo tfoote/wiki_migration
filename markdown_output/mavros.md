@@ -375,4 +375,4 @@ Note: this list for [0.18.0](mavros/Plugins) version. Older versions:
 [0.12.0 --- 0.15.0](mavros/Plugins_0.12-0.15),
 [0.16.0 --- 0.17.0](mavros/Plugins_0.16-0.17).
 
-\<\<Include(mavros/Plugins)\>\>
+[Included page mavros/Plugins not found](Included page mavros/Plugins not found)

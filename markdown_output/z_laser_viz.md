@@ -18,4 +18,4 @@ projector reference system. Read more info in
 
 ## Acknowledgement
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

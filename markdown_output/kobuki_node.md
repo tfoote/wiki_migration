@@ -1,3 +1,3 @@
 ```wiki
-<<Include(kobuki_node/hydro)>>
+[[Included page kobuki_node/hydro not found]]
 ```

@@ -1,3 +1,3 @@
 ```wiki
-<<Include(openni_launch/hydro)>>
+[[Included page openni_launch/hydro not found]]
 ```

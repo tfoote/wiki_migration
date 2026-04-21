@@ -33,7 +33,7 @@ pub {
 }}}}
 
 ```wiki
-<<Include(compressed_image_transport/diamondback_params)>>
+[[Included page compressed_image_transport/diamondback_params not found]]
 ```
 
 ```clearsilver

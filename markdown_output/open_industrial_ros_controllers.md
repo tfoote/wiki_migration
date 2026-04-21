@@ -1,4 +1,4 @@
-\<\<Include(Industrial/Software_Status/Experimental)\>\>
+[Included page Industrial/Software_Status/Experimental not found](Included page Industrial/Software_Status/Experimental not found)
 
 /!\\ The development of this package is done and you\'re \'\'\'NOT\'\'\'
 encouraged to create new packages that depend on this. New users should

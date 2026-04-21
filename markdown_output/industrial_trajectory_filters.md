@@ -38,7 +38,7 @@ node.1 {
 For more detailed examples see the
 [tutorials](industrial_trajectory_filters/Tutorials) page.
 
-\<\<Include(industrial/contact_us_tech_support)\>\>
+[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
 

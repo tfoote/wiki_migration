@@ -29,4 +29,4 @@ We created set of tutorials that will walk you through using
 tutorial. For a complete list, check out the
 [Tutorials](http://wiki.ros.org/siemens_cp1616/Tutorials) page.
 
-\<\<Include(industrial/contact_us_tech_support)\>\>
+[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)

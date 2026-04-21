@@ -113,4 +113,4 @@ rosrun rc_pick_client rc_boxpick_client_node _device:=:<serial_number>
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

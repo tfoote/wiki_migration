@@ -14,7 +14,7 @@ meta-package.
 See the [Tutorials](motoman/Tutorials) page for an overview of the
 available tutorials.
 
-\<\<Include(industrial/contact_us_tech_support)\>\>
+[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Report a Bug
 

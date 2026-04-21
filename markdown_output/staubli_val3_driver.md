@@ -8,7 +8,7 @@
 
 ## Status
 
-\<\<Include(Industrial/Software_Status/Developmental)\>\>
+[Included page Industrial/Software_Status/Developmental not found](Included page Industrial/Software_Status/Developmental not found)
 
 ## Overview
 

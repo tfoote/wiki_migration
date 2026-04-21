@@ -58,7 +58,7 @@ about it (yes we can easily forget to update the wiki), check it out
 [denso_launch](denso_launch) package wiki page shows how to run robots
 virtually.
 
-\<\<Include(denso_launch,,from=\"##begin_howto_roslaunch_vs060\",to=\"##end_howto_roslaunch_vs060\")\>\>
+[Included page denso_launch,,from=\"##begin_howto_roslaunch_vs060\",to=\"##end_howto_roslaunch_vs060\" not found](Included page denso_launch,,from="##begin_howto_roslaunch_vs060",to="##end_howto_roslaunch_vs060" not found)
 
 ## Software Design, Writing Programs
 

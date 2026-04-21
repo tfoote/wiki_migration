@@ -31,4 +31,4 @@ The simulation model works with Gazebo 2.X.
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

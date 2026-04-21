@@ -56,7 +56,7 @@ available from
 [ros-industrial/packet-simplemessage](https://github.com/ros-industrial/packet-simplemessage)
 at !GitHub. See the readme for information on how to install it.
 
-\<\<Include(industrial/contact_us_tech_support)\>\>
+[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
 

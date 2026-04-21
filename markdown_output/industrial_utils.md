@@ -18,7 +18,7 @@ The parameter utilities include wrapper functions for importing
 parameter lists (not well supported in ROS). It also includes wrapper
 functions for importing standard parameters in ROS-Industrial
 
-\<\<Include(industrial/contact_us_tech_support)\>\>
+[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
 
 ## Reporting bugs
 

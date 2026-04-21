@@ -393,4 +393,4 @@ the Imu messages will be `my_visard_imu`.
 
 ## Acknowledgements
 
-\<\<Include(rosin/acknowledgement)\>\>
+[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)

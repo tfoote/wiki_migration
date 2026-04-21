@@ -11,7 +11,7 @@ This package is EOL, and has been replaced by [[web_video_server]].
 ## Installation
 
 ```wiki
-<<Include(mjpeg_server/groovy)>>
+[[Included page mjpeg_server/groovy not found]]
 ```
 
 ## Running the Node

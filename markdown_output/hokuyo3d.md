@@ -1,4 +1,4 @@
-\<\<Include(Industrial/Software_Status/Experimental)\>\>
+[Included page Industrial/Software_Status/Experimental not found](Included page Industrial/Software_Status/Experimental not found)
 
 ![PointCloud published by hokuyo3d node\|width=100%](attachment:hokuyo3d_pointcloud.png)
 

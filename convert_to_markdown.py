@@ -103,6 +103,7 @@ def preprocess(content):
         "FullSearch",
         "FullSearchWithDescriptionsCS",
         "Markdown",
+        "CodeRef",
         "MiniPage",
         "urdf_file",
         "NewPage",

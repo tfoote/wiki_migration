@@ -127,7 +127,7 @@ def preprocess(content):
 
     # 6. Convert <<Youtube(video_id)>> to [[https://www.youtube.com/watch?v=video_id|Youtube]]
     content = re.sub(
-        r"<<Youtube\(([a-zA-Z0-9_-]+)\)>>",
+        r"<<Youtube\((.*?)\)>>",
         r"[[https://www.youtube.com/watch?v=\1|Youtube]]",
         content,
     )
@@ -154,6 +154,10 @@ def postprocess(content, code_blocks):
     # Remove unnecessary backslashes before quotes in text
     content = content.replace(r"\'", "'")
     content = content.replace(r'\"', '"')
+    content = content.replace(r"\_", "_")
+    content = content.replace(r"\`", "`")
+    content = content.replace(r"\<", "<")
+    content = content.replace(r"\>", ">")
 
     # Restore code blocks from placeholders
     for i, block in enumerate(code_blocks):

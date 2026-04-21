@@ -132,6 +132,16 @@ def preprocess(content):
         content,
     )
 
+    # Handle MoinMoin 5-quote combined tags
+    content = re.sub(r"'''''(.*?)'''(.*?)''", r"//**\1**\2//", content)
+    content = re.sub(r"'''''(.*?)''(.*?)'''", r"**//\1//\2**", content)
+
+    # Convert MoinMoin bold ''' to Creole **
+    content = re.sub(r"'''(.*?)'''", r"**\1**", content)
+
+    # Convert MoinMoin italic '' to Creole //
+    content = re.sub(r"''(.*?)''", r"//\1//", content)
+
     return content, code_blocks
 
 

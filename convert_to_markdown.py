@@ -104,6 +104,7 @@ def preprocess(content):
         "FullSearchWithDescriptionsCS",
         "Markdown",
         "CodeRef",
+        "MsgSrvDoc",
         "MiniPage",
         "urdf_file",
         "NewPage",

@@ -136,6 +136,19 @@ def preprocess(content):
         content,
     )
 
+    # Convert <<MsgLink(package/Message)>> or <<SrvLink(package/Service)>> to Creole link
+    def link_repl(match):
+        macro_type = match.group(1)
+        args = match.group(2)
+        parts = args.split("/")
+        if len(parts) == 2:
+            pkg, name = parts
+            type_str = "msg" if macro_type == "MsgLink" else "srv"
+            return f"[[https://docs.ros.org/en/rolling/p/{pkg}/{type_str}/{name}.html|{pkg}/{type_str}/{name}]]"
+        return match.group(0)
+
+    content = re.sub(r"<<(MsgLink|SrvLink)\(([^)]+)\)>>", link_repl, content)
+
     # Handle MoinMoin 4-quote bold monospace
     content = re.sub(r"''''(.*?)''''", r"**{{{\1}}}**", content)
 

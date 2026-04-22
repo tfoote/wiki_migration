@@ -55,5 +55,23 @@ class TestAdvancedConversion(unittest.TestCase):
         self.assertEqual(processed, "Some text \n\n```\nCode content\n```\n\n more text")
 
 
+    def test_msglink_conversion(self):
+        content = "Some text <<MsgLink(sensor_msgs/JointState)>> more text"
+        preprocessed, code_blocks = preprocess(content)
+        self.assertEqual(
+            preprocessed,
+            "Some text [[https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html|sensor_msgs/msg/JointState]] more text",
+        )
+
+
+    def test_srvlink_conversion(self):
+        content = "Some text <<SrvLink(std_srvs/Empty)>> more text"
+        preprocessed, code_blocks = preprocess(content)
+        self.assertEqual(
+            preprocessed,
+            "Some text [[https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html|std_srvs/srv/Empty]] more text",
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

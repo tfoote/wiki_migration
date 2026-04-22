@@ -3,10 +3,10 @@
 ## Details
 
 The [laser_scan_splitter](laser_scan_splitter) takes in a
-<<MsgLink(sensor_msgs/LaserScan)>> message and splits it into a
-number of other `LaserScan` messages. Each of the resulting laser
-scans can be assigned an arbitrary coordinate frame, and is published on
-a separate topic.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+message and splits it into a number of other `LaserScan` messages.
+Each of the resulting laser scans can be assigned an arbitrary
+coordinate frame, and is published on a separate topic.
 
 ## Example
 

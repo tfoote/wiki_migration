@@ -39,7 +39,7 @@ param {
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-<<MsgLink(pr2_controllers_msgs/SingleJointPositionGoal)>>.
+[pr2_controllers_msgs/msg/SingleJointPositionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionGoal.html).
 
 
 

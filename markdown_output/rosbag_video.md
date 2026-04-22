@@ -9,14 +9,16 @@ afterwards.
 ## Approach
 
 sensor_msgs/CameraInfo A [bag](Bags) file including
-<<MsgLink(sensor_msgs/CameraInfo)>>, color and depth images, both of
-type <<MsgLink(sensor_msgs/Image)>>,
-<<MsgLink(wire_msgs/WorldEvidence)>> and
-<<MsgLink(tf/tfMessage)>> will be split into a number of video
-streams and a bag file. One video stream for each of the topics from
-some image type and a bag file for the remaining topics. In addition the
-package is able to merge the resulting bag file and videos back into one
-large bag file again.
+[sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html),
+color and depth images, both of type
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html),
+[wire_msgs/msg/WorldEvidence](https://docs.ros.org/en/rolling/p/wire_msgs/msg/WorldEvidence.html)
+and
+[tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)
+will be split into a number of video streams and a bag file. One video
+stream for each of the topics from some image type and a bag file for
+the remaining topics. In addition the package is able to merge the
+resulting bag file and videos back into one large bag file again.
 
 Adapting the package to work for your own bag file with different topics
 can be done by simply adding or removing topics from the code.

@@ -13,12 +13,13 @@ certain times of day due to traffic etc.
 
 ### Services
 
-`agent_env` (<<SrvLink(value_learner/agent_env)>>) This service
-expects a variable length array of type Float64 called state, a Float64
-called reward, and responds with the value as a Float64. This service
-also takes in a bool called isStateTerminal which is used in episodic
-tasks to flag the terminal state of an episode when set to true.
-Otherwise leave false.
+`agent_env`
+([value_learner/srv/agent_env](https://docs.ros.org/en/rolling/p/value_learner/srv/agent_env.html))
+This service expects a variable length array of type Float64 called
+state, a Float64 called reward, and responds with the value as a
+Float64. This service also takes in a bool called isStateTerminal which
+is used in episodic tasks to flag the terminal state of an episode when
+set to true. Otherwise leave false.
 
 ### Parameters
 

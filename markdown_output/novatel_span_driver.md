@@ -26,10 +26,11 @@ velocity and attitude---even through short periods of time when
 satellite signals are blocked or unavailable.
 
 This driver publishes GNSS data as a
-<<MsgLink(sensor_msgs/NavSatFix)>>, and inertial navigation system
-(INS) data as <<MsgLink(nav_msgs/Odometry)>>. You can plot this
-using [rviz](rviz), as well as monitoring your overall system using
-[diagnostics](diagnostics):
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html),
+and inertial navigation system (INS) data as
+[nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html).
+You can plot this using [rviz](rviz), as well as monitoring your overall
+system using [diagnostics](diagnostics):
 
 ![\|height="180"](attachment:rviz-novatel.png)
 ![\|height="180"](attachment:span-robot-monitor.png)
@@ -157,8 +158,9 @@ process:
     [NovatelPublisher](http://docs.ros.org/api/novatel_span_driver/html/classnovatel__span__driver_1_1publisher_1_1NovatelPublisher.html)
     class, which subscribes to those !NovAtel-specific messages, and
     republishes them as standard ROS messages like
-    <<MsgLink(sensor_msgs/NavSatFix)>> and
-    <<MsgLink(nav_msgs/Odometry)>>.
+    [sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+    and
+    [nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html).
 -   A
     [NovatelDiagnostics](http://docs.ros.org/api/novatel_span_driver/html/classnovatel__span__driver_1_1diagnostics_1_1NovatelDiagnostics.html)
     class, which specifically handles publishing a

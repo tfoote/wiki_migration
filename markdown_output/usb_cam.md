@@ -41,24 +41,25 @@ supported to publish actual frame parameters.
 
 ### Published message types
 
--   <<MsgLink(sensor_msgs/CameraInfo)>> for publishing camera
-    calibration matrices
--   <<MsgLink(sensor_msgs/Image)>> for uncompressed
-    OpenCV-compatible images
--   <<MsgLink(sensor_msgs/CompressedImage)>> for binary packets
-    containing PNG/JPEG-compressed images published under the
-    `compressed` topic suffix. **NOTE**: also on-the-fly encoding of
-    the images into 16-bit depth matrices is supported. The
+-   [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+    for publishing camera calibration matrices
+-   [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+    for uncompressed OpenCV-compatible images
+-   [sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
+    for binary packets containing PNG/JPEG-compressed images published
+    under the `compressed` topic suffix. **NOTE**: also on-the-fly
+    encoding of the images into 16-bit depth matrices is supported. The
     PNG-compressed frames are published under `compressedDepth` topic
     suffix.
--   <<MsgLink(theora_image_transport/Packet)>> for binary packages
-    containing Theora/H.263 YUV420-encoded stacks of images published
-    under `theora` topic suffix
--   <<MsgLink(dynamic_reconfigure/Config)>> for publishing actual
-    frame parameters under `parameter_updates` topic suffix
--   <<MsgLink(dynamic_reconfigure/ConfigDescription)>> for
-    publishing [dynamic_reconfigure](dynamic_reconfigure) description
-    messages under `parameter_descriptions` topic suffix
+-   [theora_image_transport/msg/Packet](https://docs.ros.org/en/rolling/p/theora_image_transport/msg/Packet.html)
+    for binary packages containing Theora/H.263 YUV420-encoded stacks of
+    images published under `theora` topic suffix
+-   [dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)
+    for publishing actual frame parameters under `parameter_updates`
+    topic suffix
+-   [dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)
+    for publishing [dynamic_reconfigure](dynamic_reconfigure)
+    description messages under `parameter_descriptions` topic suffix
 
 ### Topic names abbreviation policy
 

@@ -2,8 +2,9 @@ This package provides a ROS node for estimating the cart position.
 
 ## Advertised topics
 
-`cart_footprint` (<<MsgLink(geometry_msgs/PolygonStamped)>>) A
-polygon representing the estimated current bounding box for the cart
+`cart_footprint`
+([geometry_msgs/msg/PolygonStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PolygonStamped.html))
+A polygon representing the estimated current bounding box for the cart
 
 ## Transforms provided
 

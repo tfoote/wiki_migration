@@ -32,17 +32,18 @@ following include to your ROS node source code:
 This header allows you to publish and subscribe
 [pcl::PointCloud<T>](http://www.ros.org/doc/api/pcl/html/classpcl_1_1PointCloud.html)
 objects as ROS messages. These appear to ROS as
-<<MsgLink(sensor_msgs/PointCloud2)>> messages, offering seamless
-interoperability with non-PCL-using ROS nodes. For example, you may
-publish a `pcl::PointCloud<T>` in one of your nodes and visualize it
-in [rviz](rviz) using a
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages, offering seamless interoperability with non-PCL-using ROS
+nodes. For example, you may publish a `pcl::PointCloud<T>` in one of
+your nodes and visualize it in [rviz](rviz) using a
 [Point Cloud2 display](rviz/DisplayTypes/PointCloud). It works by
 hooking into the
 [roscpp serialization](roscpp/Overview/MessagesSerializationAndAdaptingTypes)
 infrastructure.
 
-The old format <<MsgLink(sensor_msgs/PointCloud)>> is not supported
-in PCL.
+The old format
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+is not supported in PCL.
 
 ### Publishing point clouds
 

@@ -129,7 +129,8 @@ and output.
 
 The DARRTAction provides an
 [ action server](actionlib#Implementing_an_ActionServer ) that takes in
-goals of the type <<MsgLink(darrt_msgs/DARRTGoal)>>.
+goals of the type
+[darrt_msgs/msg/DARRTGoal](https://docs.ros.org/en/rolling/p/darrt_msgs/msg/DARRTGoal.html).
 
 
 
@@ -389,11 +390,11 @@ the joints, not just the ones that move. For example if
 primitive_type\[3\] = ARM_TRANSIT this means that
 primitive_trajectories\[3\] is a collision-free path for the arm.
 primitive_trajectories\[3\] is an
-<<MsgLink(arm_navigation_msgs/RobotTrajectory)>> and each point
-contains a joint value for every joint on the robot regardless of
-whether that joint moves or even whether DARRT planned for the joint.
-However, it is guaranteed that throughout primitive_trajectories\[3\]
-only the arm joints actually do change.
+[arm_navigation_msgs/msg/RobotTrajectory](https://docs.ros.org/en/rolling/p/arm_navigation_msgs/msg/RobotTrajectory.html)
+and each point contains a joint value for every joint on the robot
+regardless of whether that joint moves or even whether DARRT planned for
+the joint. However, it is guaranteed that throughout
+primitive_trajectories\[3\] only the arm joints actually do change.
 
 For examples of interpreting and executing DARRT plans, see
 [the tutorials](darrt/Tutorials).

@@ -1,16 +1,14 @@
-<<MsgSrvDoc(articulation_msgs)>>
-
 ## Model fitting/selection/evaluation using ROS message streams
 
 Given a trajectory in form of a ROS
-<<MsgLink(articulation_msgs/TrackMsg)>> message, the
-`model_learner_msg` node of the
+[articulation_msgs/msg/TrackMsg](https://docs.ros.org/en/rolling/p/articulation_msgs/msg/TrackMsg.html)
+message, the `model_learner_msg` node of the
 [articulation_models](articulation_models) package fits all available
 template models, selects the one with the smallest BIC (Bayesian
 Information Criterion), and publishes a ROS
-<<MsgLink(articulation_msgs/ModelMsg)>> message. Note that this node
-can then be used in real-time, as it skips trajectory messages if
-necessary.
+[articulation_msgs/msg/ModelMsg](https://docs.ros.org/en/rolling/p/articulation_msgs/msg/ModelMsg.html)
+message. Note that this node can then be used in real-time, as it skips
+trajectory messages if necessary.
 
 ## Model fitting/selection/evaluation using ROS service calls
 
@@ -21,8 +19,10 @@ in the [articulation_models](articulation_models) package.
 
 ## Visualization of trajectories and models
 
-Trajectories <<MsgLink(articulation_msgs/TrackMsg)>> and models
-<<MsgLink(articulation_msgs/TrackMsg)>> can be visualized in RVIZ
-easily by using the Track and Model Display. See
-[articulation_rviz_plugin](articulation_rviz_plugin) for how to set up
-RVIZ to properly display them.
+Trajectories
+[articulation_msgs/msg/TrackMsg](https://docs.ros.org/en/rolling/p/articulation_msgs/msg/TrackMsg.html)
+and models
+[articulation_msgs/msg/TrackMsg](https://docs.ros.org/en/rolling/p/articulation_msgs/msg/TrackMsg.html)
+can be visualized in RVIZ easily by using the Track and Model Display.
+See [articulation_rviz_plugin](articulation_rviz_plugin) for how to set
+up RVIZ to properly display them.

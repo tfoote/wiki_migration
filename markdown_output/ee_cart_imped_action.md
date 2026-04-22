@@ -84,9 +84,9 @@ r_arm_cart_imped_action_node:
 The EECartImpedAction provides an
 [ action server](actionlib#Implementing_an_ActionServer ) that takes in
 goals of the type
-<<MsgLink(ee_cart_imped_msgs/EECartImpedActionGoal)>> and publishes
-feedback of the type
-<<MsgLink(ee_cart_imped_msgs/EECartImpedActionFeedback)>>.
+[ee_cart_imped_msgs/msg/EECartImpedActionGoal](https://docs.ros.org/en/rolling/p/ee_cart_imped_msgs/msg/EECartImpedActionGoal.html)
+and publishes feedback of the type
+[ee_cart_imped_msgs/msg/EECartImpedActionFeedback](https://docs.ros.org/en/rolling/p/ee_cart_imped_msgs/msg/EECartImpedActionFeedback.html).
 
 
 

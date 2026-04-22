@@ -9,8 +9,9 @@ devices, we are compiling a list of
 
 This package is compatible with the [geographic_info](geographic_info)
 project as well as any other nodes that support
-<<MsgLink(sensor_msgs/NavSatFix)>> and/or
-<<MsgLink(sensor_msgs/TimeReference)>>.
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+and/or
+[sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html).
 
 No C++ or Python API is provided, only a ROS API.
 

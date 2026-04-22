@@ -5,7 +5,8 @@ such as using image compression or streaming video codecs.
 `image_transport` provides classes and nodes for transporting images
 in arbitrary over-the-wire representations, while abstracting this
 complexity so that the developer only sees
-<<MsgLink(sensor_msgs/Image)>> messages.
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+messages.
 
 Specialized transports are provided by plugins. `image_transport`
 itself provides only `"raw"` transport so as not to impose
@@ -89,7 +90,9 @@ and would like to see it added to this list, please email our
 
 -   ros-pkg
 -   [image_transport](image_transport) (`"raw"`) - The default
-    transport, sending <<MsgLink(sensor_msgs/Image)>> through ROS.
+    transport, sending
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+    through ROS.
 -   [compressed_image_transport](compressed_image_transport)
     (`"compressed"`) - JPEG or PNG image compression.
 -   [theora_image_transport](theora_image_transport) (`"theora"`) -
@@ -126,13 +129,14 @@ outlined below. Note, however, that all code interfaces take only a
 "base topic" name; typically you should not directly reference the
 transport-specific topic used by a particular plugin.
 
-The raw <<MsgLink(sensor_msgs/Image)>> is published on the base
-topic, just as with using a normal [roscpp](roscpp) `ros::Publisher`.
-If additional plugins are available, they advertise subtopics of the
-base topic, conventionally of the form `<base topic>/<transport
-name>`. For example, using plugins for `"compressed"` and
-`"theora"` transports, with a base topic of `/stereo/left/image`,
-the topics would be:
+The raw
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+is published on the base topic, just as with using a normal
+[roscpp](roscpp) `ros::Publisher`. If additional plugins are
+available, they advertise subtopics of the base topic, conventionally of
+the form `<base topic>/<transport name>`. For example, using
+plugins for `"compressed"` and `"theora"` transports, with a
+base topic of `/stereo/left/image`, the topics would be:
 
 
 
@@ -335,7 +339,8 @@ $ rosrun image_transport republish [in_transport] in:=<in_base_topic> [out_trans
     bandwidth and computation, as each node processes the compressed
     video into still images independently. Instead we can start a
     republish node on the offboard computer, streaming the video only to
-    that node for processing into <<MsgLink(sensor_msgs/Image)>>
+    that node for processing into
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
     messages republished to the other nodes: 
 
 ```
@@ -345,14 +350,16 @@ $ rosrun image_transport republish theora in:=camera/image raw out:=camera/image
 
 -   The above command is also useful simply to pipe a compressed image
     topic into a node that can only listen to
-    <<MsgLink(sensor_msgs/Image)>> (because it uses
-    `ros::Subscriber` or is written in a language other than C++).
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+    (because it uses `ros::Subscriber` or is written in a language
+    other than C++).
 -   If a node publishes images only as
-    <<MsgLink(sensor_msgs/Image)>>, we can republish it using the
-    full range of transports. Note however that the base topic must be
-    different from the original topic, and this approach entails a
-    slight overhead over using `image_transport::Publisher` in the
-    original node. 
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html),
+    we can republish it using the full range of transports. Note however
+    that the base topic must be different from the original topic, and
+    this approach entails a slight overhead over using
+    `image_transport::Publisher` in the original node.
+    
 
 ```cplusplus
 // Use the image_transport classes instead.

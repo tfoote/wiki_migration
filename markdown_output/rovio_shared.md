@@ -5,8 +5,6 @@ communicate with the Rovio. This package and library are intended to be
 used with the packages provided in the [rovio](rovio) stack; however, it
 is possible to compile and use the library in your own packages as well.
 
-<<MsgSrvDoc(rovio_shared)>>
-
 ## Installation
 
 To install the `rovio` stack, you can choose to either install from

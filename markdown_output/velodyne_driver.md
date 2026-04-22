@@ -8,7 +8,8 @@ The driver publishes device-dependent
 [velodyne_msgs/VelodyneScan](http://docs.ros.org/indigo/api/velodyne_msgs/html/msg/VelodyneScan.html)
 data. The [velodyne_pointcloud](velodyne_pointcloud) package provides
 nodes and nodelets to convert those data into more-convenient
-<<MsgLink(sensor_msgs/PointCloud2)>> messages.
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages.
 
 The
 [API review](http://ros.org/wiki/velodyne/Reviews/2012-02-02_API_Review)

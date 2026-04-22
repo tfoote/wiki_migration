@@ -2,23 +2,28 @@
 
 The `lj_laser_heading` package implements a localizing jockey that
 computes place dissimilarities based on a
-<<MsgLink(sensor_msgs/LaserScan)>> and absolute heading. The
-behavior and properties are similar to those of the [lj_laser](lj_laser)
-jockey. The heading is given either as
-<<MsgLink(geometry_msgs/Pose)>> or
-<<MsgLink(nav_msgs/Odometry)>>.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+and absolute heading. The behavior and properties are similar to those
+of the [lj_laser](lj_laser) jockey. The heading is given either as
+[geometry_msgs/msg/Pose](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose.html)
+or
+[nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html).
 
 The role of this jockey is to get the dissimilarity of the
-<<MsgLink(sensor_msgs/LaserScan)>> descriptor of all vertices with
-the current place profile (represented by a
-<<MsgLink(sensor_msgs/LaserScan)>>). The action is done when the
-dissimilarities are computed. Implemented actions:
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+descriptor of all vertices with the current place profile (represented
+by a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)).
+The action is done when the dissimilarities are computed. Implemented
+actions:
 
 -   `GET_VERTEX_DESCRIPTOR`: return the ids of the
-    <<MsgLink(sensor_msgs/LaserScan)>> descriptor and the computed
-    <<MsgLink(lama_msgs/Crossing)>> descriptor
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+    descriptor and the computed
+    [lama_msgs/msg/Crossing](https://docs.ros.org/en/rolling/p/lama_msgs/msg/Crossing.html)
+    descriptor
 -   `GET_SIMILARITY`: return the dissimilarity based on
-    <<MsgLink(sensor_msgs/LaserScan)>>
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 
 ## Usage
 
@@ -26,11 +31,11 @@ dissimilarities are computed. Implemented actions:
 
 #### Interaction with the map (created by this jockey)
 
-  -- --------------------------- -- ------------------------------------- -- ------------------------------ --
-     \[Getter\]\[/\]\[Setter\]      message type                             interface default name         
-     Getter/Setter                  !VectorLaserScan                         jockey_name + "_laser"      
-     Setter                         <<MsgLink(lama_msgs/Crossing)>>      jockey_name + "_crossing"   
-  -- --------------------------- -- ------------------------------------- -- ------------------------------ --
+  -- --------------------------- -- ----------------------------------------------------------------------------------------- -- ------------------------------ --
+     \[Getter\]\[/\]\[Setter\]      message type                                                                                 interface default name         
+     Getter/Setter                  !VectorLaserScan                                                                             jockey_name + "_laser"      
+     Setter                         [lama_msgs/msg/Crossing](https://docs.ros.org/en/rolling/p/lama_msgs/msg/Crossing.html)      jockey_name + "_crossing"   
+  -- --------------------------- -- ----------------------------------------------------------------------------------------- -- ------------------------------ --
 
 
 

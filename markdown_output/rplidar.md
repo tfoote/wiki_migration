@@ -22,7 +22,8 @@ scanning frequency from 2hz to 10hz freely by control the speed of the
 scanning motor. RPLIDAR will self-adapt the current scanning speed.
 
 The driver publishes device-dependent
-<<MsgLink(sensor_msgs/LaserScan)>> data.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+data.
 
 SLAM based on RPLIDAR and ROS Hector Mapping:
 

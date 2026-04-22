@@ -51,8 +51,9 @@ in a camera driver node:
 
 #### Services
 
--   `set_camera_info` (<<SrvLink(sensor_msgs/SetCameraInfo)>>) for
-    calibration information
+-   `set_camera_info`
+    ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html))
+    for calibration information
 
 #### Parameters
 

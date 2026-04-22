@@ -1,6 +1,7 @@
 ## Introduction
 
-Given a bagfile of <<MsgLink(calibration_msgs/RobotMeasurement)>>
+Given a bagfile of
+[calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)
 collected using the
 [pr2_calibration_executive](pr2_calibration_executive) package (or
 similar), pr2_calibration_estimation uses this data along with several
@@ -41,8 +42,8 @@ server and then launches the estimator (multistep_cov_estimator.py).
 
 -   `\[bagfile\]` - Path to the bag that contains calibration samples.
     These messages must be of type
-    <<MsgLink(calibration_msgs/RobotMeasurement)>> under the topic
-    &ldquo;/robot_measurement&rdquo;
+    [calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)
+    under the topic &ldquo;/robot_measurement&rdquo;
 -   `\[target_dir\]` - Directory at which to store intermediate data
     files after each calibration step
 
@@ -74,9 +75,9 @@ The estimator looks for it's configuration in the
 
 The estimator relies on calibration samples in the specified bagfile in
 order to run the calibration. These messages must be of type
-<<MsgLink(calibration_msgs/RobotMeasurement)>> under the topic
-`/robot_measurement`. Below is a description of all of the fields, and
-what they mean:
+[calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)
+under the topic `/robot_measurement`. Below is a description of all of
+the fields, and what they mean:
 
 -   `sample_id` - This simply a string identifier to help the user
     understand where this calibration sample came from. It doesn't even
@@ -360,8 +361,8 @@ camera_chains:
     assuming a &ldquo;Z Forward, X Right, Y Down&rdquo; camera
 
 This sensor will only be used with a sample
-(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
-requirements:
+([calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html))
+with the following requirements:
 
 -   The message must have a !CameraMeasurement that matches the
     sensor's `camera_id`
@@ -391,8 +392,8 @@ chains:
     attached the the kinematic chain after after_chain transforms.
 
 This sensor will only be used with a sample
-(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
-requirements:
+([calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html))
+with the following requirements:
 
 -   The message must have a !ChainMeasurement that matches sensor's
     `chain_id`
@@ -417,8 +418,8 @@ tilting_lasers:
 
 
 This sensor will only be used with a sample
-(<<MsgLink(calibration_msgs/RobotMeasurement)>>) with the following
-requirements:
+([calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html))
+with the following requirements:
 
 -   The message must have a !LaserMeasurement that matches sensor's
     `laser_id`
@@ -445,14 +446,14 @@ what this Jacobian looks like:
 ### Rows
 
 There is one blockrow for each
-<<MsgLink(calibration_msgs/RobotMeasurement)>> on the
-`robot_measurement` topic. Each of the messages is called a sample.
-For each sample, there are multiple sensor measurements inside, where
-each sensor is its own sub-blockrow. Each sensor has multiple rows,
-where the number of rows is determined based on the number of feature
-points detected, and the type of measurement. For instance, a tilting
-laser has 3 rows per feature point (cartesian x,y,z) and a camera has 2
-rows per feature point (image u,v).
+[calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)
+on the `robot_measurement` topic. Each of the messages is called a
+sample. For each sample, there are multiple sensor measurements inside,
+where each sensor is its own sub-blockrow. Each sensor has multiple
+rows, where the number of rows is determined based on the number of
+feature points detected, and the type of measurement. For instance, a
+tilting laser has 3 rows per feature point (cartesian x,y,z) and a
+camera has 2 rows per feature point (image u,v).
 
 ### Columns
 

@@ -1,5 +1,3 @@
-<<MsgSrvDoc(novatel_msgs)>>
-
 ## Notes
 
 These messages are the low-level binary interface between a !NovAtel

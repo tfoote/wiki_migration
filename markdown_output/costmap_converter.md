@@ -255,8 +255,9 @@ param{
 
 The costmap_converter interface is intended to be directly included in
 the source code. However, sometimes it could be useful to convert an
-incoming <<MsgLink(nav_msgs/OccupancyGrid)>> Message (e.g. as
-published by [navigation](navigation)).
+incoming
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+Message (e.g. as published by [navigation](navigation)).
 
 For that purpose the internal `standalone_converter` node
 (*costmap_converter_node.cpp*) might be employed. Currently, parameters

@@ -15,18 +15,21 @@ can be found at
 
 . Python driver for OpenLIDAR. Searches USB ports for connected sensor,
 automatically starts the motor and range broadcast, converting the data
-stream into a <<MsgLink(sensor_msgs/LaserScan)>> message. Each
-message contains data from a single full revolution.
+stream into a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+message. Each message contains data from a single full revolution.
 
 #### Published Topic
 
-. `/scan` (<<MsgLink(sensor_msgs/LaserScan)>>) . using TF frame ID
-"laser_frame"
+. `/scan`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+. using TF frame ID "laser_frame"
 
 #### Subscribed Topic
 
-. `/odom` (<<MsgLink(nav_msgs/Odometry)>>) . OPTIONAL - used by
-`dropscan_turnrate` parameter
+. `/odom`
+([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
+. OPTIONAL - used by `dropscan_turnrate` parameter
 
 #### Parameters
 

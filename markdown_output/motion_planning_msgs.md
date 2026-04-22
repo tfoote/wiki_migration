@@ -3,8 +3,6 @@
 Note: In electric, this package has been replaced by
 [arm_navigation_msgs](arm_navigation_msgs)
 
-<<MsgSrvDoc(motion_planning_msgs)>>
-
 ## ROS API
 
 ### API Stability

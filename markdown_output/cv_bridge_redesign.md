@@ -76,8 +76,9 @@ to copy the header to the new `Image` is a common mistake.
 Note: the current implementation does not exactly match the API proposed
 here, but it's essentially the same.
 
-First we declare an analogue of <<MsgLink(sensor_msgs/Image)>> that
-uses a `cv::Mat` for data storage. 
+First we declare an analogue of
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+that uses a `cv::Mat` for data storage. 
 
 ```cplusplus
 // File cv_bridge/cv_bridge.h
@@ -108,8 +109,9 @@ typedef boost::shared_ptr<CvImage const> CvImageConstPtr;
 
 ### ROS message to OpenCV
 
-We will convert <<MsgLink(sensor_msgs/Image)>> messages into
-`CvImage`, which addresses issues 5 and 6.
+We will convert
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+messages into `CvImage`, which addresses issues 5 and 6.
 
 There are two basic use cases when converting a `const
 sensor_msgs::Image`: 1. We want to modify the data in-place. We have to
@@ -273,17 +275,18 @@ maybe that would be a nice convenience?
 
 By hooking into the [roscpp](roscpp) serialization API, it's possible
 to make `CvImage` a real ROS message, wire-compatible with
-<<MsgLink(sensor_msgs/Image)>>. This is already implemented in the
-`cv_bridge_redesign` package, and it's quite nice; you can use
-callbacks of the form 
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html).
+This is already implemented in the `cv_bridge_redesign` package, and
+it's quite nice; you can use callbacks of the form
+
 
 ```cpluscplus
 void imageCb(const cv_bridge::CvImageConstPtr& image_msg);
 ```
 
- and publish `CvImage`
-directly. No `toCvCopy`/`toCvShared`/`toRos` required! And when
-publishing, we avoid the copy from converting to `sensor_msgs::Image`.
+ and publish `CvImage` directly. No
+`toCvCopy`/`toCvShared`/`toRos` required! And when publishing, we
+avoid the copy from converting to `sensor_msgs::Image`.
 
 The big issue is how to make this play nice with
 [image_transport](image_transport). `image_transport` *could* be

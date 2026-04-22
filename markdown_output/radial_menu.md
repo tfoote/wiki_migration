@@ -165,7 +165,8 @@ the backend and rviz packages
 
 ## Pkg: radial_menu_msgs
 
-Defines <<MsgLink(radial_menu_msgs/State)>>
+Defines
+[radial_menu_msgs/msg/State](https://docs.ros.org/en/rolling/p/radial_menu_msgs/msg/State.html)
 
 ## Pkg: radial_menu_examples
 

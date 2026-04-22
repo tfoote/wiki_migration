@@ -181,8 +181,6 @@ make install
 
 0
 
-<<MsgSrvDoc(zeroconf)>>
-
 ## Known Bugs
 
 -   Service types probably need some sort of official approval

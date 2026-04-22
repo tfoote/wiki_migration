@@ -7,8 +7,9 @@ will probably be moved into [ros-pkg](ros-pkg) once they've matured.
 ## Messages
 
 gps_common defines two common messages for GPS drivers to output:
-<<MsgLink(gps_common/GPSFix)>> and
-<<MsgLink(gps_common/GPSStatus)>>.
+[gps_common/msg/GPSFix](https://docs.ros.org/en/rolling/p/gps_common/msg/GPSFix.html)
+and
+[gps_common/msg/GPSStatus](https://docs.ros.org/en/rolling/p/gps_common/msg/GPSStatus.html).
 
 In most cases, these messages should be published simultaneously, with
 identical timestamps.

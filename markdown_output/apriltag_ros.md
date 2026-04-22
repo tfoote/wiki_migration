@@ -6,17 +6,19 @@ The package works as shown in the above figure. The following default
 input topics are subscribed to (which can be remapped based on your
 needs):
 
--   `/camera_rect/image_rect`: a <<MsgLink(sensor_msgs/Image)>>
+-   `/camera_rect/image_rect`: a
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
     topic which contains the image (e.g. a frame of a video stream
     coming from a camera). *The image is assumed to be undistorted, i.e.
     produced by a pinhole camera*. Laptop webcams typically already
     provide such an image while other cameras may require undistortion
     by an intermediate node such as [image_proc](image_proc);
 -   `/camera_rect/camera_info`: a
-    <<MsgLink(sensor_msgs/CameraInfo)>> topic which contains the
-    camera calibration matrix in `/camera/camera_info/K`. One can
-    obtain a specific camera's `K` via camera intrinsics calibration
-    using e.g. [camera_calibration](camera_calibration) or
+    [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+    topic which contains the camera calibration matrix in
+    `/camera/camera_info/K`. One can obtain a specific camera's `K`
+    via camera intrinsics calibration using e.g.
+    [camera_calibration](camera_calibration) or
     [Kalibr](https://github.com/ethz-asl/kalibr) (the former seemed to
     work better for laptop webcam calibration).
 
@@ -32,9 +34,9 @@ output:
     `config/settings.yaml`;
 -   `/tag_detections`: the same information as provided by the `/tf`
     topic but as a custom message carrying the tag ID(s), size(s) and
-    <<MsgLink(geometry_msgs/PoseWithCovarianceStamped)>> pose
-    information (where plural applies for tag bundles). This is always
-    published;
+    [geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)
+    pose information (where plural applies for tag bundles). This is
+    always published;
 -   `/tag_detections_image`: the same image as input by
     `/camera/image_rect` but with the detected tags highlighted.
     Published only if `publish_tag_detections_image==true` in

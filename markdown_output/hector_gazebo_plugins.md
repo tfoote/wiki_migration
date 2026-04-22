@@ -16,25 +16,27 @@ accelerations.
 
 #### Published Topics
 
--   `imu` (<<MsgLink(sensor_msgs/Imu)>>):
+-   `imu`
+    ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
 
 . The simulated IMU measurements (in body coordinates) and estimated
 orientation relative to the world frame.
 
 #### Advertised Services
 
--   `imu/calibrate` (<<SrvLink(std_srvs/Empty)>>):
+-   `imu/calibrate`
+    ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
 
 . Resets the offset and drift error of the gyroscopes.
 
 -   `imu/set_accel_bias`
-    (<<SrvLink(hector_gazebo_plugins/SetBias)>>):
+    ([hector_gazebo_plugins/srv/SetBias](https://docs.ros.org/en/rolling/p/hector_gazebo_plugins/srv/SetBias.html)):
 
 . Sets the current offset error of the accelerometers and resets random
 drift.
 
 -   `imu/set_gyro_bias`
-    (<<SrvLink(hector_gazebo_plugins/SetBias)>>):
+    ([hector_gazebo_plugins/srv/SetBias](https://docs.ros.org/en/rolling/p/hector_gazebo_plugins/srv/SetBias.html)):
 
 . Sets the current offset error of the gyroscopes and resets the random
 drift.
@@ -99,11 +101,11 @@ drift.
 
 `GazeboRosGps` simulates a GNSS (Global Navigation Satellite System)
 receiver which is attached to a robot. It publishs
-<<MsgLink(sensor_msgs/NavSatFix)>> messages with the robot's
-position and altitude in WGS84 coordinates. The reference point that
-corresponds to the origin of the gazebo frame can be configured using
-the XML parameters. The conversion between gazebo coordinates and WGS84
-is done using a simple
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+messages with the robot's position and altitude in WGS84 coordinates.
+The reference point that corresponds to the origin of the gazebo frame
+can be configured using the XML parameters. The conversion between
+gazebo coordinates and WGS84 is done using a simple
 [equirectangular projection](http://en.wikipedia.org/wiki/Equirectangular_projection),
 which is accurate enough if you do not go far away from the configured
 reference point and if you do not want to use the plugin for polar
@@ -111,12 +113,14 @@ regions.
 
 #### Published Topics
 
--   `fix` (<<MsgLink(sensor_msgs/NavSatFix)>>):
+-   `fix`
+    ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
 
 . The simulated GNSS position in WGS84 coordinates (latitude, longitude
 and altitude).
 
--   `fix_velocity` (<<MsgLink(geometry_msgs/Vector3Stamped)>>):
+-   `fix_velocity`
+    ([geometry_msgs/msg/Vector3Stamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3Stamped.html)):
 
 . The GNSS velocity vector in NWU (north, west, up) coordinates.
 
@@ -149,9 +153,11 @@ and altitude).
 <!-- -->
 ```
 -   `status` (int8): status flag in the fix message (defaults to
-    `STATUS_FIX`, see <<MsgLink(sensor_msgs/NavSatStatus)>>)
+    `STATUS_FIX`, see
+    [sensor_msgs/msg/NavSatStatus](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatStatus.html))
 -   `service` (uint16): service flag in the fix message (defaults to
-    `SERVICE_GPS`, see <<MsgLink(sensor_msgs/NavSatStatus)>>)
+    `SERVICE_GPS`, see
+    [sensor_msgs/msg/NavSatStatus](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatStatus.html))
 
 ```{=html}
 <!-- -->
@@ -193,7 +199,8 @@ magnitude information (normalized vector). Check
 
 #### Published Topics
 
--   `magnetic` (<<MsgLink(geometry_msgs/Vector3Stamped)>>):
+-   `magnetic`
+    ([geometry_msgs/msg/Vector3Stamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3Stamped.html)):
 
 . The magnetic field vector given in body coordinates.
 
@@ -246,7 +253,8 @@ sonar sensor to your model.
 
 #### Published Topics
 
--   `sonar` (<<MsgLink(sensor_msgs/Range)>>):
+-   `sonar`
+    ([sensor_msgs/msg/Range](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Range.html)):
 
 . A Range message containing the minimum distance of all rays. The
 field_of_view, min_range and max_range values reflect the parameters of

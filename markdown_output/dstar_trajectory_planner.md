@@ -59,7 +59,7 @@ DStarGlobalPlanner:
 
 \
 Here `cells` should be considered as elements of
-<<MsgLink(nav_msgs/OccupancyGrid)>>.
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html).
 
 ## Development and Roadmap
 

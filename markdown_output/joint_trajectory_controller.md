@@ -60,10 +60,11 @@ commands).
 
 There are two mechanisms for sending trajectories to the controller: by
 means of the **action interface** or the **topic interface**. Both use
-the <<MsgLink(trajectory_msgs/JointTrajectory)>> message to specify
-trajectories, and require specifying values for *all* the controller
-joints (as opposed to only a subset) if allow_partial_joints_goal is not
-set to True.
+the
+[trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)
+message to specify trajectories, and require specifying values for *all*
+the controller joints (as opposed to only a subset) if
+allow_partial_joints_goal is not set to True.
 
 The primary way to send trajectories is through the **action
 interface**, and should be favored when execution monitoring is desired.

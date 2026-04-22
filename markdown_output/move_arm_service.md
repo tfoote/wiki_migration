@@ -13,9 +13,10 @@ The move_arm_service package provides service wrappers around the
 [ interpolated_ik_motion_planner service](interpolated_ik_motion_planner ).
 These services allow the user to calculate and move the PR2 arm along
 collision-free trajectories by only specifying
-<<MsgLink(geometry_msgs/PoseStamped)>>s rather than the full
-<<MsgLink(motion_planning_msgs/MotionPlanRequest)>> message required
-by the original action and service.
+[geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)s
+rather than the full
+[motion_planning_msgs/msg/MotionPlanRequest](https://docs.ros.org/en/rolling/p/motion_planning_msgs/msg/MotionPlanRequest.html)
+message required by the original action and service.
 
 ## ROS API
 

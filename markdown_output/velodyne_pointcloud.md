@@ -69,9 +69,9 @@ param {
 #### Examples
 
 Continuously convert raw Velodyne packets into
-<<MsgLink(sensor_msgs/PointCloud2)>> messages. *Running as a
-standalone nodelet prevents zero-copy message sharing.*
-
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages. *Running as a standalone nodelet prevents zero-copy message
+sharing.* 
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
@@ -114,8 +114,8 @@ node.0 {
 #### Examples
 
 Continuously convert raw Velodyne packets into
-<<MsgLink(sensor_msgs/PointCloud2)>> messages.
-
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages. 
 
 ```
 $ rosrun velodyne_pointcloud cloud_node _calibration:=calibration.yaml
@@ -176,9 +176,9 @@ param {
 #### Examples
 
 Transform raw Velodyne packets into
-<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
-frame. *Running as a standalone nodelet prevents zero-copy message
-sharing.* 
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages into the `/odom` frame. *Running as a standalone nodelet
+prevents zero-copy message sharing.* 
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/TransformNodelet
@@ -220,8 +220,8 @@ node.0 {
 #### Examples
 
 Transform raw Velodyne packets into
-<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/odom`
-frame. 
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages into the `/odom` frame. 
 
 ```
 $ rosrun velodyne_pointcloud transform_node _calibration:=calibration.yaml
@@ -230,8 +230,8 @@ $ rosrun velodyne_pointcloud transform_node _calibration:=calibration.yaml
 
 
 Transform raw Velodyne packets into
-<<MsgLink(sensor_msgs/PointCloud2)>> messages into the `/map`
-frame. 
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages into the `/map` frame. 
 
 ```
 $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet

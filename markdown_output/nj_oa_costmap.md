@@ -1,9 +1,10 @@
 The `nj_oa_costmap` package implements a navigating jockey for the
 Large Maps Framework ([LaMa](Large Maps Framework)) that drives the
 robot while avoiding obstacles. It is based on a local map
-(<<MsgLink(nav_msgs/OccupancyGrid)>>). The local map has a fixed
-position relative to the robot but its orientation is constant in the
-world reference frame. It is a reactive, memory-less jockey.
+([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)).
+The local map has a fixed position relative to the robot but its
+orientation is constant in the world reference frame. It is a reactive,
+memory-less jockey.
 
 Implemented action:
 
@@ -15,9 +16,11 @@ Implemented action:
 -   CONTINUE: same as TRAVERSE
 
 Moreover, the package provides the class `TwistHandler` that computes
-an appropriate <<MsgLink(geometry_msgs/Twist)>> from a
-<<MsgLink(nav_msgs/OccupancyGrid)>> in order to go as forward as
-possible while avoiding obstacles.
+an appropriate
+[geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)
+from a
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+in order to go as forward as possible while avoiding obstacles.
 
 ## Usage
 

@@ -14,7 +14,8 @@ published by and sent to \[asctec_autopilot\]\] are defined by the
 [ AscTec Autopilot SDK](http://robotics.ccny.cuny.edu/wiki/AscTec/Docs ).
 They are not in SI units, and are specific to the vehicle hardware.
 Translating them into conventional ROS messages (such as
-<<MsgLink(sensor_msgs/IMU)>>, <<MsgLink(geometry_msgs/Pose)>>
+[sensor_msgs/msg/IMU](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/IMU.html),
+[geometry_msgs/msg/Pose](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose.html)
 etc) enables the development of generic micro-air vehicle tools that can
 be shared among various hardware platforms.
 

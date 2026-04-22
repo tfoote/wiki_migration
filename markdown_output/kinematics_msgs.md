@@ -1,5 +1,3 @@
-<<MsgSrvDoc(kinematics_msgs)>>
-
 ## Examples
 
 See the [ pr2_kinematics](pr2_kinematics) stack for examples of how to

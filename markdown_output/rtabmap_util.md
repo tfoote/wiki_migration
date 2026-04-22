@@ -93,8 +93,8 @@ This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 ```
 -   You could also use your own graph optimization approach instead of
     this node by modifying `poses` values of the
-    <<MsgLink(rtabmap_msgs/MapData)>> msg. However, implementing
-    your graph optimization approach inside
+    [rtabmap_msgs/msg/MapData](https://docs.ros.org/en/rolling/p/rtabmap_msgs/msg/MapData.html)
+    msg. However, implementing your graph optimization approach inside
     [rtabmap](rtabmap_slam#rtabmap) is preferred (inherit
     [Optimizer](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/include/rtabmap/core/Graph.h#L44-L109)
     class and add it

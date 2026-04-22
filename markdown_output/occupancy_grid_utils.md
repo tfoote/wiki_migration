@@ -1,7 +1,8 @@
 ## Documentation
 
 This unary stack contains libraries for various operations on the
-<<MsgLink(nav_msgs/OccupancyGrid)>> type, specifically:
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+type, specifically:
 
 -   Coordinate conversions between points, grid cell coordinates, and
     raw indices.

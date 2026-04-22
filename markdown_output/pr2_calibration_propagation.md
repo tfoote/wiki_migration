@@ -23,7 +23,8 @@ with the results of
     calibration
 -   `\[cal_measurements.bag\]` - Bagfile that contains the original
     URDF. The URDF must be availabe on the topic `/robot_description`
-    as a <<MsgLink(std_msgs/String)>>
+    as a
+    [std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html)
 -   `\[cal_output.xml\]` - File to which to write the updated URDF
 
 ### propagate_baseline.py

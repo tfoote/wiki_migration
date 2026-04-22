@@ -8,9 +8,9 @@ Open Street Maps GTK Widget.
 ## Details
 
 Map Viewer for GPS position data provided by
-<<MsgLink(gps_common/GPSFix)>> messages provided by
-[gpsd_client](gpsd_client). Due to GPS library and API synchronization
-issues this package requires Ubunut 10.04 or newer.
+[gps_common/msg/GPSFix](https://docs.ros.org/en/rolling/p/gps_common/msg/GPSFix.html)
+messages provided by [gpsd_client](gpsd_client). Due to GPS library and
+API synchronization issues this package requires Ubunut 10.04 or newer.
 
 gpsd Version 2.92
 

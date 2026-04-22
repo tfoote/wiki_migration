@@ -25,5 +25,3 @@ achieve. The `base_position` given as feedback is the current position
 of the base in the world as reported by [tf](tf). For the
 [move_base](move_base) node, the `target_pose` is projected into the
 XY plane with the Z axis pointing up when attempting to achieve a goal.
-
-<<MsgSrvDoc(move_base_msgs)>>

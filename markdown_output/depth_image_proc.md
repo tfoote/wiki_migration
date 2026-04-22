@@ -18,8 +18,9 @@ A variety of camera technologies can produce depth images:
 See [REP 118](http://www.ros.org/reps/rep-0118.html) for details on
 depth image representation. The REP recommends that, wherever possible,
 producers and consumers of depth data use depth images (of type
-<<MsgLink(sensor_msgs/Image)>>) instead of
-<<MsgLink(sensor_msgs/DisparityImage)>>.
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html))
+instead of
+[sensor_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/DisparityImage.html).
 
 All nodelets (besides `convert_metric`) in this package support both
 standard floating point depth images and OpenNI-specific `uint16`

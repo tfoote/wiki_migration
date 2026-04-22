@@ -1,7 +1,9 @@
 ## Details
 
 The [laser_scan_sparsifier](laser_scan_sparsifier) package is used to
-downsample <<MsgLink(sensor_msgs/LaserScan)>> messages.
+downsample
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages.
 
 ## Nodes & Nodelets
 

@@ -3,7 +3,8 @@
 Motion capture is an excellent tool for examining and analyzing human
 and robot movement. It tracks the locations of specific points through
 time. To represent such data, we present the
-<<MsgLink(mocap_point_cloud/MotionCapture)>> message.
+[mocap_point_cloud/msg/MotionCapture](https://docs.ros.org/en/rolling/p/mocap_point_cloud/msg/MotionCapture.html)
+message.
 
 ### Message Details
 
@@ -23,7 +24,8 @@ Missing data is demarcated with the point (0,0,0).
 Reading motion capture data from their original compressed formats (i.e.
 [c3d](c3d)) can often be a slow process. Instead, we have started
 storing the data as [rosbag](rosbag) files, containing
-<<MsgLink(mocap_point_cloud/MotionCapture)>> messages.
+[mocap_point_cloud/msg/MotionCapture](https://docs.ros.org/en/rolling/p/mocap_point_cloud/msg/MotionCapture.html)
+messages.
 
 ## Library
 
@@ -76,8 +78,9 @@ data.
 ### C3d Converter
 
 This node uses the [c3d](c3d) package to convert c3d motion capture
-files to <<MsgLink(mocap_point_cloud/MotionCapture)>> messages,
-stored in bag files.
+files to
+[mocap_point_cloud/msg/MotionCapture](https://docs.ros.org/en/rolling/p/mocap_point_cloud/msg/MotionCapture.html)
+messages, stored in bag files.
 
 
 

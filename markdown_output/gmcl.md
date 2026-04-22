@@ -92,8 +92,9 @@ be fixed in place with respect to the robot base because `gmcl` looks
 up the transform between the laser's frame (`laser_frame_id`) and the
 base frame (`base_frame_id`), and latches it forever. So `gmcl`
 "cannot" handle a laser that moves with respect to the base. All lasers
-should publish their scans as (<<MsgLink( sensor_msgs/LaserScan
-Message)>>) massege.
+should publish their scans as
+([ sensor_msgs/msg/LaserScan Message](https://docs.ros.org/en/rolling/p/ sensor_msgs/msg/LaserScan Message.html))
+massege.
 
 ## Examples
 

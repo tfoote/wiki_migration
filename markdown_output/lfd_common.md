@@ -3,8 +3,6 @@
 The `lfd_common` common package contains a set of common messages and
 services used in Learning from Demonstration algoritms.
 
-<<MsgSrvDoc(lfd_common)>>
-
 ## Installation
 
 To install the `lfd` stack, you can choose to either install from

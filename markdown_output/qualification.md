@@ -55,11 +55,13 @@ The Qualification Manager advertises services to communicate with
 different subprocesses.
 
 -   `prestartup_done`
-    (<<SrvLink(pr2_self_test_msgs/ScriptDone)>>) - When pre-startup
-    scripts terminate.
--   `test_result` (<<SrvLink(pr2_self_test_msgs/TestResult)>>) -
+    ([pr2_self_test_msgs/srv/ScriptDone](https://docs.ros.org/en/rolling/p/pr2_self_test_msgs/srv/ScriptDone.html)) -
+    When pre-startup scripts terminate.
+-   `test_result`
+    ([pr2_self_test_msgs/srv/TestResult](https://docs.ros.org/en/rolling/p/pr2_self_test_msgs/srv/TestResult.html)) -
     For subtests that complete.
--   `shutdown_done` (<<SrvLink(pr2_self_test_msgs/ScriptDone)>>) -
+-   `shutdown_done`
+    ([pr2_self_test_msgs/srv/ScriptDone](https://docs.ros.org/en/rolling/p/pr2_self_test_msgs/srv/ScriptDone.html)) -
     When shutdown scripts terminate.
 
 These services are only advertised when it there is a corresponding
@@ -193,13 +195,14 @@ scripts, subtests and shutdown tests. Most tests include:
 -   Startup script to launch pr2_etherCAT
 -   "Checkout" test to make sure all component plugged in
 -   Hysteresis tests for each joint Each subtest calls a
-    <<SrvLink(pr2_self_test_msgs/TestResult)>> service call, which
-    gives the text of the result, a pass/fail indicator, and any plots
-    from the tests. Subtests can pass automatically, which starts the
-    next test automatically, or can request a human pass/fail input. The
-    different subtests give the mechanical state of each component, and
-    careful analysis of the data can show wear and failure modes. The
-    system stores data automatically into the inventory system.
+    [pr2_self_test_msgs/srv/TestResult](https://docs.ros.org/en/rolling/p/pr2_self_test_msgs/srv/TestResult.html)
+    service call, which gives the text of the result, a pass/fail
+    indicator, and any plots from the tests. Subtests can pass
+    automatically, which starts the next test automatically, or can
+    request a human pass/fail input. The different subtests give the
+    mechanical state of each component, and careful analysis of the data
+    can show wear and failure modes. The system stores data
+    automatically into the inventory system.
 
 ### Component Configuration
 

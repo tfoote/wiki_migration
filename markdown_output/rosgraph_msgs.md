@@ -11,14 +11,16 @@ package. They were migrated to this package as part of
 
 ## Messages
 
-<<MsgLink(rosgraph_msgs/Log)>> is the underlying message data
-structure for logging to [rosout](rosout). If you use the client API
-methods in [rospy](rospy) and [roscpp](roscpp), you will be protected
-against any future revisions to this message.
+[rosgraph_msgs/msg/Log](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/Log.html)
+is the underlying message data structure for logging to
+[rosout](rosout). If you use the client API methods in [rospy](rospy)
+and [roscpp](roscpp), you will be protected against any future revisions
+to this message.
 
-<<MsgLink(rosgraph_msgs/Clock)>> is used for simulated
-[clock](Clock) in ROS. Only nodes that provide simulated time sources
-are expected to use this message.
-<<MsgLink(rosgraph_msgs/TopicStatistics)>> is used by
-[roscpp](roscpp) and [rospy](rospy) for publishing statistics on topic
-connections on /statistics. See [Topics](Topics) for more information.
+[rosgraph_msgs/msg/Clock](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/Clock.html)
+is used for simulated [clock](Clock) in ROS. Only nodes that provide
+simulated time sources are expected to use this message.
+[rosgraph_msgs/msg/TopicStatistics](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/TopicStatistics.html)
+is used by [roscpp](roscpp) and [rospy](rospy) for publishing statistics
+on topic connections on /statistics. See [Topics](Topics) for more
+information.

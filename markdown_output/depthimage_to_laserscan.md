@@ -8,22 +8,26 @@ Here is the scene in which the following screenshots were captured.
 
 ### DepthImage
 
-Note the <<MsgLink(sensor_msgs/LaserScan)>> overlayed in color on
-the <<MsgLink(sensor_msgs/Image)>>. Red is close to camera, purple
-is far from camera.
+Note the
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+overlayed in color on the
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html).
+Red is close to camera, purple is far from camera.
 
 ![](attachment:depthimage.png)
 
 ### LaserScan
 
-<<MsgLink(sensor_msgs/LaserScan)>> projected on top of the
-<<MsgLink(sensor_msgs/PointCloud2)>>.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+projected on top of the
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
 
 ![](attachment:pointcloud.png)
 
 ### Top Down LaserScan
 
-Top down view of the <<MsgLink(sensor_msgs/LaserScan)>>.
+Top down view of the
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
 
 ![](attachment:overhead_scan.png)
 

@@ -7,7 +7,7 @@ Microsoft Kinect.
 
 -   [laserscan_kinect](laserscan_kinect) - Converts a depth image coded
     with uint16 to laser scan 2D
-    (<<MsgLink(sensor_msgs/LaserScan)>>).
+    ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)).
 -   [cliff_detector](cliff_detector) - Detects negative objects like a
     cliff or downstairs.
 -   [depth_sensor_pose](depth_sensor_pose) - Detects ground plane in

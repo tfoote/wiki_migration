@@ -5,8 +5,6 @@ functionality given a point cloud. It also allows for segmentation
 within a robot's coordinate frame, so that objects stored on a robot's
 platform can be segmented.
 
-<<MsgSrvDoc(rail_segmentation)>>
-
 ## Object Segmentation APIs
 
 This package exposes three APIs to perform object segmentation, with

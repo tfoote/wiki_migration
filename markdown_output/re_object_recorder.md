@@ -106,5 +106,6 @@ that.
 
 ## Subscribed Topics
 
-. `/resulting_pcl` (<<MsgLink(sensor_msgs/PointCloud2)>>) . The
-object's pointcloud (from [ar_bounding_box](ar_bounding_box)).
+. `/resulting_pcl`
+([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html))
+. The object's pointcloud (from [ar_bounding_box](ar_bounding_box)).

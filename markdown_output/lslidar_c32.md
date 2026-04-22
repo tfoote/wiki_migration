@@ -21,14 +21,14 @@ with ROS kinetic.
 
 Package contains self-defined ROS message type used for lslidar-c32
 
--   <<MsgLink(lslidar_c32_msgs/LslidarC32Packet)>> Original UDP
-    packet block data
--   <<MsgLink(lslidar_c32_msgs/LslidarC32Point)>> Resolved point
-    infomation
--   <<MsgLink(lslidar_c32_msgs/LslidarC32Scan)>> Point information
-    for specific channel
--   <<MsgLink(lslidar_c32_msgs/LslidarC32Sweep)>> Whole point cloud
-    data of 16 channels
+-   [lslidar_c32_msgs/msg/LslidarC32Packet](https://docs.ros.org/en/rolling/p/lslidar_c32_msgs/msg/LslidarC32Packet.html)
+    Original UDP packet block data
+-   [lslidar_c32_msgs/msg/LslidarC32Point](https://docs.ros.org/en/rolling/p/lslidar_c32_msgs/msg/LslidarC32Point.html)
+    Resolved point infomation
+-   [lslidar_c32_msgs/msg/LslidarC32Scan](https://docs.ros.org/en/rolling/p/lslidar_c32_msgs/msg/LslidarC32Scan.html)
+    Point information for specific channel
+-   [lslidar_c32_msgs/msg/LslidarC32Sweep](https://docs.ros.org/en/rolling/p/lslidar_c32_msgs/msg/LslidarC32Sweep.html)
+    Whole point cloud data of 16 channels
 
 ### lslidar_c32_driver
 

@@ -180,8 +180,11 @@ refer to
 ### More ROS message types
 
 The default supported ROS message types are only
-<<MsgLink(sensor_msgs/Imu)>>, <<MsgLink(geometry_msgs/Twist)>>
-and <<MsgLink(std_msgs/String)>>. If you need more types:
+[sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html),
+[geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)
+and
+[std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html).
+If you need more types:
 
 1\. Modify the macros about MSG_TYPEx and MSG_CLASSx in
 [include/ros_sub_pub.hpp](https://github.com/shupx/swarm_ros_bridge/blob/master/include/ros_sub_pub.hpp),

@@ -10,7 +10,7 @@ entites:
 -   `RosImport` allows communication from dynamic-graph to ROS,
 -   `RosExport` allows communication from ROS to dynamic-graph,
 -   `RosJointState` publishes the current command as a
-    <<MsgLink(sensor_msgs/JointState)>>.
+    [sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html).
 
 These three entities can be easily instantiated together using the
 Python `Ros` class.
@@ -51,15 +51,15 @@ The published topics after executing this sample are:
 
 `dynamic_graph_bridge` supports the following conversion:
 
-  -- ---------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
-     **ROS message type**                              **dynamic-graph signal type**      **Type name** (normal/stamped)                 
-     <<MsgLink(std_msgs/Float64)>>                 `double`                         double / n/a                                   
-     <<MsgLink(dynamic_graph_bridge/Matrix)>>      `ml::Matrix`                     matrix / n/a                                   
-     <<MsgLink(dynamic_graph_bridge/Vector)>>      `ml::Vector`                     vector / n/a                                   
-     <<MsgLink(geometry_msgs/Vector3)>>            `ml::Vector`                     vector3 / vector3stamped                       
-     <<MsgLink(geometry_msgs/Transform)>>          `sot::MatrixHomogeneous`         matrixHomogeneous / matrixHomogeneousStamped   
-     <<MsgLink(geometry_msgs/Twist)>>              `ml::Vector`                     twist / twistStamped                           
-  -- ---------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
+  -- ----------------------------------------------------------------------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
+     **ROS message type**                                                                                           **dynamic-graph signal type**      **Type name** (normal/stamped)                 
+     [std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)                            `double`                         double / n/a                                   
+     [dynamic_graph_bridge/msg/Matrix](https://docs.ros.org/en/rolling/p/dynamic_graph_bridge/msg/Matrix.html)      `ml::Matrix`                     matrix / n/a                                   
+     [dynamic_graph_bridge/msg/Vector](https://docs.ros.org/en/rolling/p/dynamic_graph_bridge/msg/Vector.html)      `ml::Vector`                     vector / n/a                                   
+     [geometry_msgs/msg/Vector3](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3.html)                  `ml::Vector`                     vector3 / vector3stamped                       
+     [geometry_msgs/msg/Transform](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Transform.html)              `sot::MatrixHomogeneous`         matrixHomogeneous / matrixHomogeneousStamped   
+     [geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)                      `ml::Vector`                     twist / twistStamped                           
+  -- ----------------------------------------------------------------------------------------------------------- -- ------------------------------- -- ---------------------------------------------- --
 
 The last column matches the type name which must be passed as the first
 argument of the `add` command.
@@ -148,7 +148,8 @@ need to be able to send remote Python commands to initialize the graph.
 
 The class `Interpreter` embeds a Python interpreter which receives its
 command from a dedicated ROS service called `run_command`. The
-associated service type <<SrvLink(dynamic_graph_bridge/RunCommand)>>
+associated service type
+[dynamic_graph_bridge/srv/RunCommand](https://docs.ros.org/en/rolling/p/dynamic_graph_bridge/srv/RunCommand.html)
 is defined in this package.
 
 To use this feature, start dynamic-graph in your controller manager
@@ -189,13 +190,15 @@ rosrun dynamic_graph_bridge tf_publisher _frame:=/a _child_frame:=/b _topic:=/my
 
 
 This script will listen for the topic `mytopic` (which type must be
-<<MsgLink(geometry_msgs/TransformStamped)>>) and publish in [tf](tf)
-a transformation from frame `a` to frame `b`.
+[geometry_msgs/msg/TransformStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TransformStamped.html))
+and publish in [tf](tf) a transformation from frame `a` to frame
+`b`.
 
 On the opposite, the robot body transformations should be handled by
 [robot_state_publisher](robot_state_publisher) which computes them from
 the robot [urdf](urdf) description and the
-<<MsgLink(sensor_msgs/JointState)>> message.
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+message.
 
 ### ROS API
 

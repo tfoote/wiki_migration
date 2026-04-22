@@ -19,5 +19,6 @@ through a separate (physical) configuration port with a vendor-provided
 tool and cannot be changed at runtime.
 
 Otherwise, rod4_node should behave like any other ROS laser rangefinder
-driver, i.e., publish a <<MsgLink(sensor_msgs/LaserScan)>> on the
-"scan" topic whenever a new scan comes in.
+driver, i.e., publish a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+on the "scan" topic whenever a new scan comes in.

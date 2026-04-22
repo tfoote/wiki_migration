@@ -43,8 +43,8 @@ param {
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-<<MsgLink(pr2_controllers_msgs/PointHeadGoal)>>. It reports success
-when the head is pointed at the target.
+[pr2_controllers_msgs/msg/PointHeadGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/PointHeadGoal.html).
+It reports success when the head is pointed at the target.
 
 
 

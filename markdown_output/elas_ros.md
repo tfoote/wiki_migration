@@ -117,8 +117,9 @@ node.1 {
 This code should be used in conjunction with visual odometry to
 concatenate point clouds. Testing so far has used the
 [ROS wrapper for libviso](viso2), but any visual odometry node that
-publishes a <<MsgLink(sensor_msgs/PoseStamped)>> message is
-suitable.
+publishes a
+[sensor_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PoseStamped.html)
+message is suitable.
 
 Usage steps:
 

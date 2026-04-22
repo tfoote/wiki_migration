@@ -12,7 +12,7 @@ The `runtime_monitor` package allows robot operators to view raw
 diagnostics data for a robot. Using the [diagnostics](diagnostics)
 toolchain, the Runtime Monitor will display the raw data on the
 `/diagnostics` topic, of type
-<<MsgLink(diagnostic_msgs/DiagnosticArray)>>.
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html).
 
 For robots with a [diagnostic_aggregator](diagnostic_aggregator), users
 should use the [robot_monitor](robot_monitor) for viewing diagnostics.
@@ -46,8 +46,8 @@ For the complete tutorial, see
 ### Rxbag Plugin
 
 The `runtime_monitor` can view messages of type
-<<MsgLink(diagnostic_msgs/DiagnosticArray)>> as an [rxbag](rxbag)
-plugin. This features is experimental.
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+as an [rxbag](rxbag) plugin. This features is experimental.
 
 ## Embedding a Monitor Panel in WX Application
 

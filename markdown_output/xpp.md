@@ -118,10 +118,11 @@ here:[urdf_visualizer_hyq1.cc](https://github.com/leggedrobotics/xpp/blob/master
     [UrdfVisualizer()](http://docs.ros.org/melodic/api/xpp_vis/html/classxpp_1_1UrdfVisualizer.html#a6bbd996415f4078330f2119ac81b7415)
     and run as ros node.
 -   Send out the state of the robot using
-    <<MsgLink(xpp_msgs/RobotStateJoint)>>.
--   (optional) Send out <<MsgLink(xpp_msgs/RobotStateCartesian)>>
+    [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
+-   (optional) Send out
+    [xpp_msgs/msg/RobotStateCartesian](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateCartesian.html)
     and supply inverse kinematics function to transform to
-    <<MsgLink(xpp_msgs/RobotStateJoint)>>.
+    [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
 -   Add the ROS parameter robot name (defined in step 1) of your urdf to
     [rviz](rviz):
 

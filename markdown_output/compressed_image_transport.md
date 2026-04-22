@@ -62,9 +62,10 @@ sub {
 Some cameras (particularly webcams) output their image data already in
 JPEG format. When writing a driver for such a camera, a quick and dirty
 approach is to simply copy the JPEG data into a
-<<MsgLink(sensor_msgs/CompressedImage)>> message and publish it on a
-topic of the form `image_raw/compressed`. Then any ROS node using
-[image_transport](image_transport) can subscribe to `image_raw` with
-transport `compressed`, just as if `image_transport` were used on
-the publisher side. Of course, the other transport topics (including
-`image_raw` itself) will not be available.
+[sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
+message and publish it on a topic of the form `image_raw/compressed`.
+Then any ROS node using [image_transport](image_transport) can subscribe
+to `image_raw` with transport `compressed`, just as if
+`image_transport` were used on the publisher side. Of course, the
+other transport topics (including `image_raw` itself) will not be
+available.

@@ -14,72 +14,79 @@ Many of these messages are primarily associated with specific
 
 ### Global
 
--   <<MsgLink(art_msgs/ArtHertz)>> control cycle rates for various
-    ART vehicle nodes
--   <<MsgLink(art_msgs/ArtVehicle)>> ART vehicle dimensions
--   <<MsgLink(art_msgs/Conversions)>> unit conversion constants
--   <<MsgLink(art_msgs/Epsilon)>> constants representing trivial
-    differences
+-   [art_msgs/msg/ArtHertz](https://docs.ros.org/en/rolling/p/art_msgs/msg/ArtHertz.html)
+    control cycle rates for various ART vehicle nodes
+-   [art_msgs/msg/ArtVehicle](https://docs.ros.org/en/rolling/p/art_msgs/msg/ArtVehicle.html)
+    ART vehicle dimensions
+-   [art_msgs/msg/Conversions](https://docs.ros.org/en/rolling/p/art_msgs/msg/Conversions.html)
+    unit conversion constants
+-   [art_msgs/msg/Epsilon](https://docs.ros.org/en/rolling/p/art_msgs/msg/Epsilon.html)
+    constants representing trivial differences
 
 ### Global Positioning System
 
--   <<MsgLink(art_msgs/GpsInfo)>> GPS information (to be replaced by
-    <<MsgLink(sensor_msgs/NavSatFix)>> for Diamondback release)
+-   [art_msgs/msg/GpsInfo](https://docs.ros.org/en/rolling/p/art_msgs/msg/GpsInfo.html)
+    GPS information (to be replaced by
+    [sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+    for Diamondback release)
 
 ### Navigation
 
 [art_nav](art_nav)
 
--   <<MsgLink(art_msgs/Behavior)>>
--   <<MsgLink(art_msgs/EstopState)>>
--   <<MsgLink(art_msgs/NavigatorCommand)>>
--   <<MsgLink(art_msgs/NavigatorState)>>
--   <<MsgLink(art_msgs/Order)>>
--   <<MsgLink(art_msgs/RoadState)>>
--   <<MsgLink(art_msgs/WayPoint)>>
+-   [art_msgs/msg/Behavior](https://docs.ros.org/en/rolling/p/art_msgs/msg/Behavior.html)
+-   [art_msgs/msg/EstopState](https://docs.ros.org/en/rolling/p/art_msgs/msg/EstopState.html)
+-   [art_msgs/msg/NavigatorCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/NavigatorCommand.html)
+-   [art_msgs/msg/NavigatorState](https://docs.ros.org/en/rolling/p/art_msgs/msg/NavigatorState.html)
+-   [art_msgs/msg/Order](https://docs.ros.org/en/rolling/p/art_msgs/msg/Order.html)
+-   [art_msgs/msg/RoadState](https://docs.ros.org/en/rolling/p/art_msgs/msg/RoadState.html)
+-   [art_msgs/msg/WayPoint](https://docs.ros.org/en/rolling/p/art_msgs/msg/WayPoint.html)
 
 ### Observers
 
 [art_observers](art_observers)
 
--   <<MsgLink(art_msgs/Observation)>>
--   <<MsgLink(art_msgs/ObservationArray)>>
+-   [art_msgs/msg/Observation](https://docs.ros.org/en/rolling/p/art_msgs/msg/Observation.html)
+-   [art_msgs/msg/ObservationArray](https://docs.ros.org/en/rolling/p/art_msgs/msg/ObservationArray.html)
 
 ### Road map
 
 [art_map](art_map)
 
--   <<MsgLink(art_msgs/ArtLanes)>>
--   <<MsgLink(art_msgs/ArtQuadrilateral)>>
--   <<MsgLink(art_msgs/LaneMarking)>>
--   <<MsgLink(art_msgs/MapID)>>
+-   [art_msgs/msg/ArtLanes](https://docs.ros.org/en/rolling/p/art_msgs/msg/ArtLanes.html)
+-   [art_msgs/msg/ArtQuadrilateral](https://docs.ros.org/en/rolling/p/art_msgs/msg/ArtQuadrilateral.html)
+-   [art_msgs/msg/LaneMarking](https://docs.ros.org/en/rolling/p/art_msgs/msg/LaneMarking.html)
+-   [art_msgs/msg/MapID](https://docs.ros.org/en/rolling/p/art_msgs/msg/MapID.html)
 
 ### Servo control
 
 [art_pilot](art_pilot)
 
--   <<MsgLink(art_msgs/CarCommand)>> (*deprecated*, use
-    <<MsgLink(art_msgs/CarDriveStamped)>>)
--   <<MsgLink(art_msgs/CarControl)>> (*deprecated*, use
-    <<MsgLink(art_msgs/CarDrive)>>)
--   <<MsgLink(art_msgs/CarDrive)>>
--   <<MsgLink(art_msgs/CarDriveStamped)>>
--   <<MsgLink(art_msgs/LearningCommand)>> (*deprecated*, use
-    <<MsgLink(art_msgs/CarDrive)>>)
--   <<MsgLink(art_msgs/PilotState)>>
+-   [art_msgs/msg/CarCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarCommand.html)
+    (*deprecated*, use
+    [art_msgs/msg/CarDriveStamped](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarDriveStamped.html))
+-   [art_msgs/msg/CarControl](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarControl.html)
+    (*deprecated*, use
+    [art_msgs/msg/CarDrive](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarDrive.html))
+-   [art_msgs/msg/CarDrive](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarDrive.html)
+-   [art_msgs/msg/CarDriveStamped](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarDriveStamped.html)
+-   [art_msgs/msg/LearningCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/LearningCommand.html)
+    (*deprecated*, use
+    [art_msgs/msg/CarDrive](https://docs.ros.org/en/rolling/p/art_msgs/msg/CarDrive.html))
+-   [art_msgs/msg/PilotState](https://docs.ros.org/en/rolling/p/art_msgs/msg/PilotState.html)
 
 ### Servo devices
 
 [art_servo](art_servo)
 
--   <<MsgLink(art_msgs/BrakeCommand)>>
--   <<MsgLink(art_msgs/BrakeState)>>
--   <<MsgLink(art_msgs/DriverState)>>
--   <<MsgLink(art_msgs/IOadrCommand)>>
--   <<MsgLink(art_msgs/IOadrState)>>
--   <<MsgLink(art_msgs/Shifter)>>
--   <<MsgLink(art_msgs/SteeringCommand)>>
--   <<MsgLink(art_msgs/SteeringDiag)>>
--   <<MsgLink(art_msgs/SteeringState)>>
--   <<MsgLink(art_msgs/ThrottleCommand)>>
--   <<MsgLink(art_msgs/ThrottleState)>>
+-   [art_msgs/msg/BrakeCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/BrakeCommand.html)
+-   [art_msgs/msg/BrakeState](https://docs.ros.org/en/rolling/p/art_msgs/msg/BrakeState.html)
+-   [art_msgs/msg/DriverState](https://docs.ros.org/en/rolling/p/art_msgs/msg/DriverState.html)
+-   [art_msgs/msg/IOadrCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/IOadrCommand.html)
+-   [art_msgs/msg/IOadrState](https://docs.ros.org/en/rolling/p/art_msgs/msg/IOadrState.html)
+-   [art_msgs/msg/Shifter](https://docs.ros.org/en/rolling/p/art_msgs/msg/Shifter.html)
+-   [art_msgs/msg/SteeringCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/SteeringCommand.html)
+-   [art_msgs/msg/SteeringDiag](https://docs.ros.org/en/rolling/p/art_msgs/msg/SteeringDiag.html)
+-   [art_msgs/msg/SteeringState](https://docs.ros.org/en/rolling/p/art_msgs/msg/SteeringState.html)
+-   [art_msgs/msg/ThrottleCommand](https://docs.ros.org/en/rolling/p/art_msgs/msg/ThrottleCommand.html)
+-   [art_msgs/msg/ThrottleState](https://docs.ros.org/en/rolling/p/art_msgs/msg/ThrottleState.html)

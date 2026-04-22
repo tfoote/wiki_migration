@@ -66,7 +66,7 @@ and stderr.
 
 `rosshellX` is by default subscribed to /rosshellX/stdin and publishes
 at topic /rosshellX/stdout and /rosshellX/stderr, all of type
-<<MsgLink(std_msgs/String)>>.
+[std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html).
 
 #### Some basic calculations
 

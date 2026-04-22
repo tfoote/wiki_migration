@@ -5,5 +5,3 @@ for additional information. The messages in this package are largely
 used for communication between these packages, as indicated by the red
 arrows in the diagram below.
 ![alt text\|width=780](attachment:wiki_control_flow_diagram_msgs.png)
-
-<<MsgSrvDoc(pr2_gripper_sensor_msgs)>>

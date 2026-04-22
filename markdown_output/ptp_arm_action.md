@@ -3,9 +3,9 @@
 ### Action Interface
 
 The `ptp_arm_action` node takes a
-<<MsgLink(geometry_msgs/PoseStamped)>> from the
-`LinearMovementAction` and instructs to robot to move its gripper to
-that new location. 
+[geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)
+from the `LinearMovementAction` and instructs to robot to move its
+gripper to that new location. 
 
 ```clearsilver
 sub {

@@ -17,27 +17,31 @@ derived nodes will also implement this API. Further, all nodes in the
 
 #### Subscribed Topics
 
-`command` (<<MsgLink(sensor_msgs/JointState)>>) A message
-containing the desired position of one or more joints controlled by this
-driver. Any joints contained in the command message that are not part of
-this driver will be ignored.
+`command`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+A message containing the desired position of one or more joints
+controlled by this driver. Any joints contained in the command message
+that are not part of this driver will be ignored.
 
 #### Published Topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>) The current
-state of each joint controlled by this driver. The
-<<MsgLink(sensor_msgs/JointState)>> message specifies position,
-velocity, and effort/torque information. If the specific hardware
-controlled by this driver does not provide velocity or effort
-information, then these arrays will be left empty.
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+The current state of each joint controlled by this driver. The
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+message specifies position, velocity, and effort/torque information. If
+the specific hardware controlled by this driver does not provide
+velocity or effort information, then these arrays will be left empty.
 
 #### Services
 
-`stop` (<<SrvLink(std_srvs/Empty)>>) Instruct the driver to stop
-all actuators immediately.
+`stop`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct the driver to stop all actuators immediately.
 
-`home` (<<SrvLink(std_srvs/Empty)>>) Instruct each actuator to
-return to its home position.
+`home`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct each actuator to return to its home position.
 
 #### Parameters
 

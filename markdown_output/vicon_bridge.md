@@ -28,8 +28,8 @@ unfortunately at the cost of some additional delay.
 
 All available subjects and segments are recognized automatically and are
 published as tf transform and
-<<MsgLink(geometry_msgs/TransformStamped)>> as
-`vicon/<subject_name>/<segment_name>`.
+[geometry_msgs/msg/TransformStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TransformStamped.html)
+as `vicon/<subject_name>/<segment_name>`.
 
 ## Segment Origin Calibration
 

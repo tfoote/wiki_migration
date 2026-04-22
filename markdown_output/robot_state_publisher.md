@@ -22,7 +22,8 @@ by 0.5s.
 
 #### Subscribed topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>)
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
 
 . joint position information
 

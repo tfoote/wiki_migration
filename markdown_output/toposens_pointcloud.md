@@ -1,8 +1,9 @@
 ## Overview
 
 This package enables conversion of messages of type
-<<MsgLink(toposens_msgs/TsScan)>> into messages of type
-<<MsgLink(sensor_msgs/PointCloud2)>>.
+[toposens_msgs/msg/TsScan](https://docs.ros.org/en/rolling/p/toposens_msgs/msg/TsScan.html)
+into messages of type
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
 
 ### Surface Normals
 

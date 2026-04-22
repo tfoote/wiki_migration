@@ -9,8 +9,9 @@ related to teer.
 
 A simple turtle moving in a square. This example employs two tasks
 `turtle1_go` and `turtle1_task`. The first publishes
-<<MsgLink(turtlesim/Velocity)>> commands every half second, while
-the second task takes care of following the square path.
+[turtlesim/msg/Velocity](https://docs.ros.org/en/rolling/p/turtlesim/msg/Velocity.html)
+commands every half second, while the second task takes care of
+following the square path.
 
 ### turtle_dating.py
 

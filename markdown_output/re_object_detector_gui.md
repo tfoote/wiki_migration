@@ -16,17 +16,21 @@ service.
 
 ## Subscribed Topics
 
-`/camera/rgb/image_color` (<<MsgLink(sensor_msgs/Image)>>) Color
-image from the Kinect camera
+`/camera/rgb/image_color`
+([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html))
+Color image from the Kinect camera
 
 `/re_kinect/detection_results`
-(<<MsgLink(re_kinect_object_detector/DetectionResult)>>) Detection
-results from the re_kinect object detection node
+([re_kinect_object_detector/msg/DetectionResult](https://docs.ros.org/en/rolling/p/re_kinect_object_detector/msg/DetectionResult.html))
+Detection results from the re_kinect object detection node
 
 ## Published Topics
 
-`/re_vslam/new_model` (<<MsgLink(std_msgs/String)>>) Path to new
-models for re_vision added or downloaded by the user
+`/re_vslam/new_model`
+([std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html))
+Path to new models for re_vision added or downloaded by the user
 
-`/re_kinect/model_path` (<<MsgLink(std_msgs/String)>>) Path to new
-models for the re_kinect node added or downloaded by the user
+`/re_kinect/model_path`
+([std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html))
+Path to new models for the re_kinect node added or downloaded by the
+user

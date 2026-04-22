@@ -1,10 +1,11 @@
 ## Overview
 
 The package laserscan_kinect converts depth image to laser scan
-(<<MsgLink(sensor_msgs/LaserScan)>>). It allows to use RGB-D sensor
-(for example Microsoft Kinect) for navigation purposes. Package
-laserscan_kinect finds the smallest value of distance in each column of
-the depth image and converts it to polar coordinates.
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)).
+It allows to use RGB-D sensor (for example Microsoft Kinect) for
+navigation purposes. Package laserscan_kinect finds the smallest value
+of distance in each column of the depth image and converts it to polar
+coordinates.
 
 Moreover, the package provides features like a ground removing from the
 scan and a sensor tilt compensation in distance values, but it is

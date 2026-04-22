@@ -42,11 +42,9 @@ rosrun ar_recog ar_recog image:=/gscam/image
 
 ## Messages and Services
 
-<<MsgSrvDoc(ar_recog False)>>
-
 `ar_recog` publishes two messages tags contains the
-<<MsgLink(ar_recog/Tags)>> message, the information about the found
-tags
+[ar_recog/msg/Tags](https://docs.ros.org/en/rolling/p/ar_recog/msg/Tags.html)
+message, the information about the found tags
 
 ar/image contains the image with the tags outlined in the image
 
@@ -57,7 +55,8 @@ slow and camera calibration brittle, so the package also provides
 distance mapping with uncalibrated images. To use this feature, it must
 know your camera's horizontal angle of view. This can be provided as a
 ROS parameter (`aov`), or determined using the
-<<SrvLink(ar_recog/CalibrateDistance)>> service.
+[ar_recog/srv/CalibrateDistance](https://docs.ros.org/en/rolling/p/ar_recog/srv/CalibrateDistance.html)
+service.
 
 ## Calibrating Distance
 
@@ -70,9 +69,10 @@ ROS parameter (`aov`), or determined using the
     close as possible to the center of the image, and the xRot, yRot and
     zRot are as close as possible to zero. This will minimize
     distortion.
--   Call the <<SrvLink(ar_recog/CalibrateDistance)>> service, where
-    `dist` is the distance between the AR tag and the camera in
-    millimeters:
+-   Call the
+    [ar_recog/srv/CalibrateDistance](https://docs.ros.org/en/rolling/p/ar_recog/srv/CalibrateDistance.html)
+    service, where `dist` is the distance between the AR tag and the
+    camera in millimeters:
 
 
 

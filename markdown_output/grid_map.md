@@ -34,8 +34,6 @@ More documentation on the grid map library is given
 
 ![](attachment:grid_map_rviz_plugin_example.png)
 
-<<MsgSrvDoc(grid_map_msgs)>>
-
 ## Reporting bugs
 
 <https://github.com/anybotics/grid_map/issues>

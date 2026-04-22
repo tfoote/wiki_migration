@@ -50,9 +50,10 @@ class that can be used to sequence a set of tests to be run in order to
 test a device. It advertises a self_test service. When the service is
 called, the `self_test::TestRunner` calls the tests that have been
 defined in order, and combines the results into a
-<<MsgLink(diagnostic_msgs/DiagnosticStatus)>> array (see the service
-definition <<SrvLink(diagnostic_msgs/SelfTest)>>). A detailed
-example can be found in
+[diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)
+array (see the service definition
+[diagnostic_msgs/srv/SelfTest](https://docs.ros.org/en/rolling/p/diagnostic_msgs/srv/SelfTest.html)).
+A detailed example can be found in
 [self_test/src/selftest_example.cpp](https://github.com/ros/diagnostics/blob/hydro-devel/self_test/src/selftest_example.cpp).
 
 ## Nodes

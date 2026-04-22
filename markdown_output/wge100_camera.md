@@ -66,10 +66,11 @@ to the end of the exposure. The timestamps can be produced in one of two
 ways:
 
 -   If the camera is externally triggered, the driver expects timestamps
-    to be provided on a <<MsgLink(roslib/Header)>> topic. The topic
-    the camera subscribes to is defined by the trig_timestamp_topic
-    parameter. The driver then attempts to match timestamps with image
-    arrival times.
+    to be provided on a
+    [roslib/msg/Header](https://docs.ros.org/en/rolling/p/roslib/msg/Header.html)
+    topic. The topic the camera subscribes to is defined by the
+    trig_timestamp_topic parameter. The driver then attempts to match
+    timestamps with image arrival times.
 -   If the camera is internally triggered, the driver uses the arrival
     time of the first packet in the message, offset by
     `first_packet_offset` as an estimate of the end of the exposure.

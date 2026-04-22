@@ -75,6 +75,10 @@ node.0 {
 
 #### To Do List
 
--   Read input in <<MsgLink(sensor_msgs/PointCloud2)>> format.
--   Publish output in <<MsgLink(sensor_msgs/PointCloud2)>> format.
+-   Read input in
+    [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+    format.
+-   Publish output in
+    [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+    format.
 -   Make better topic names.

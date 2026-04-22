@@ -31,12 +31,12 @@ summary of the most important commands and their parameters.
 Each of the above function (except `wait_for_input`, which returns the
 keyboard input) returns a handle which offers the following commands.
 
-  -- ----------------- -- ---------------------- -- ------------------------------------------------------------------------------------------ --
-     **command**          **example**               **explanation**                                                                            
-     `wait()`             `handle.wait()`           waits forever until the command is finished                                                
-     `wait(timeout)`      `handle.wait(2.0)`        waits until the command is finished, but max. for `timeout` seconds                        
-     `get_state()`        `handle.get_state()`      gets the state of the current execution (see <<MsgLink(actionlib_msgs/GoalStatus)>>)   
-  -- ----------------- -- ---------------------- -- ------------------------------------------------------------------------------------------ --
+  -- ----------------- -- ---------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------- --
+     **command**          **example**               **explanation**                                                                                                                                       
+     `wait()`             `handle.wait()`           waits forever until the command is finished                                                                                                           
+     `wait(timeout)`      `handle.wait(2.0)`        waits until the command is finished, but max. for `timeout` seconds                                                                                   
+     `get_state()`        `handle.get_state()`      gets the state of the current execution (see [actionlib_msgs/msg/GoalStatus](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalStatus.html))   
+  -- ----------------- -- ---------------------- -- ----------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ## Terminal API
 

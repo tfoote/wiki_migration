@@ -120,20 +120,30 @@ The module published the following message types (once the incoming data
 is available from the sensor, all the topic names and publisher
 availability are configurable):
 
--   <<MsgLink(sensor_msgs/Imu)>> for accelerometer/gyroscope data
--   <<MsgLink(sensor_msgs/Temperature)>> for thermal observation
--   <<MsgLink(sensor_msgs/MagneticField)>> for magnetometer data
--   <<MsgLink(sensor_msgs/FluidPressure)>> for barometer output
--   <<MsgLink(std_msgs/Float64)>> for altimeter output
--   <<MsgLink(geometry_msgs/Quaternion)>> for orientation output
--   <<MsgLink(sensor_msgs/NavSatFix)>> for GPS position output
--   <<MsgLink(geometry_msgs/Twist)>> for GPS ground speed output
--   <<MsgLink(geometry_msgs/Vector3)>> for GPS accuracy (diagonal
-    covariance) output
--   <<MsgLink(std_msgs/UInt32)>> for GPS active satellite IDs
-    counter messages
--   <<MsgLink(std_msgs/Float32)>> for GPS altitude output
--   <<MsgLink(rosgraph_msgs/Clock)>> for realtime clock output
+-   [sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)
+    for accelerometer/gyroscope data
+-   [sensor_msgs/msg/Temperature](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Temperature.html)
+    for thermal observation
+-   [sensor_msgs/msg/MagneticField](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/MagneticField.html)
+    for magnetometer data
+-   [sensor_msgs/msg/FluidPressure](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/FluidPressure.html)
+    for barometer output
+-   [std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)
+    for altimeter output
+-   [geometry_msgs/msg/Quaternion](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Quaternion.html)
+    for orientation output
+-   [sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+    for GPS position output
+-   [geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)
+    for GPS ground speed output
+-   [geometry_msgs/msg/Vector3](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3.html)
+    for GPS accuracy (diagonal covariance) output
+-   [std_msgs/msg/UInt32](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt32.html)
+    for GPS active satellite IDs counter messages
+-   [std_msgs/msg/Float32](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float32.html)
+    for GPS altitude output
+-   [rosgraph_msgs/msg/Clock](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/Clock.html)
+    for realtime clock output
 
 ## Nodes
 

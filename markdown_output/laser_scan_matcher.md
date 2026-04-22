@@ -4,9 +4,11 @@
 
 The [laser_scan_matcher](laser_scan_matcher) package is an incremental
 laser scan registration tool. The package allows to scan match between
-consecutive <<MsgLink(sensor_msgs/LaserScan)>> messages, and publish
-the estimated position of the laser as a
-<<MsgLink(geometry_msgs/Pose2D)>> or a [tf](tf) transform.
+consecutive
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages, and publish the estimated position of the laser as a
+[geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)
+or a [tf](tf) transform.
 
 The package can be used without any odometry estimation provided by
 other sensors. Thus, it can serve as a stand-alone odometry estimator.
@@ -18,10 +20,12 @@ improve the registration speed and accuracy.
 ### Supported message types
 
 The [laser_scan_matcher](laser_scan_matcher) can operate using
-<<MsgLink(sensor_msgs/LaserScan)>> messages or
-<<MsgLink(sensor_msgs/PointCloud2)>> messages. When using
-<<MsgLink(sensor_msgs/PointCloud2)>>, make sure they have no `nan`
-values.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages or
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages. When using
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html),
+make sure they have no `nan` values.
 
 ### Scan prediction
 
@@ -35,11 +39,12 @@ model). Below is a list of inputs that
 
 1\. **IMU** :An estimation for the change of the orientation angle
 (`delta-theta`) of the robot in the form of a
-<<MsgLink(sensor_msgs/IMU)>> message. We are assuming that the
-`yaw` component of the IMU message corresponds to the orientation of
-the robot. Thus, we don't really need a full 6DoF IMU sensor - a cheap
-1-axis gyro will work as well, as long as its output is packed as an IMU
-message. The required topic is `imu/data`.
+[sensor_msgs/msg/IMU](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/IMU.html)
+message. We are assuming that the `yaw` component of the IMU message
+corresponds to the orientation of the robot. Thus, we don't really need
+a full 6DoF IMU sensor - a cheap 1-axis gyro will work as well, as long
+as its output is packed as an IMU message. The required topic is
+`imu/data`.
 
 2\. **Wheel odometry**: An estimation for the change of x-, y-, and
 orientation angle of the robot from an odometric sensor such as wheel
@@ -240,8 +245,11 @@ no_header=True
 
 #### Pointcloud input
 
-Parameters when using <<MsgLink(sensor_msgs/PointCloud2)>> instead
-of <<MsgLink(sensor_msgs/LaserScan)>> messages.
+Parameters when using
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+instead of
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages.
 
 
 

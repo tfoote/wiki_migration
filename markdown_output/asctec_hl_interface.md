@@ -95,23 +95,26 @@ parameter:
 Set `/position_control` to "off". This mode just forwards roll,
 pitch, yaw (angular velocity) and thrust commands to the LLP. This is
 similar to directly send commands to the LLP's serial interface. Set
-the values in <<MsgLink(asctec_hl_comm/mav_ctrl)>> in rad for roll
-and pitch, in rad/s for yaw and 0.0 \... 1.0 for thrust and set
-<<MsgLink(asctec_hl_comm/mav_ctrl)>>/type to "acceleration". For
-the scaling to work correctly, you need to set `/k_stick` and
-`/k_stick_yaw` to the values you can read out from the LLP with the
-!AscTec control software (default 25, 120). Messages have to arrive at
-least at 10 Hz, otherwise nothing will be forwarded to the LLP.
-**Note:** yaw rates are limited to +- 85% so that the motors cannot be
-switched on/off accidentally in case of bad commands (motors idle, full
-yaw).
+the values in
+[asctec_hl_comm/msg/mav_ctrl](https://docs.ros.org/en/rolling/p/asctec_hl_comm/msg/mav_ctrl.html)
+in rad for roll and pitch, in rad/s for yaw and 0.0 \... 1.0 for thrust
+and set
+[asctec_hl_comm/msg/mav_ctrl](https://docs.ros.org/en/rolling/p/asctec_hl_comm/msg/mav_ctrl.html)/type
+to "acceleration". For the scaling to work correctly, you need to set
+`/k_stick` and `/k_stick_yaw` to the values you can read out from
+the LLP with the !AscTec control software (default 25, 120). Messages
+have to arrive at least at 10 Hz, otherwise nothing will be forwarded to
+the LLP. **Note:** yaw rates are limited to +- 85% so that the motors
+cannot be switched on/off accidentally in case of bad commands (motors
+idle, full yaw).
 
 ### GPS Based Velocity Control
 
 Set `/position_control` to "GPS" and set
-<<MsgLink(asctec_hl_comm/mav_ctrl)>>/type to "velocity" in your
-messages. Commands are also forwarded to the LLP, but the GPS bit is set
-additionally. The values in <<MsgLink(asctec_hl_comm/mav_ctrl)>>
+[asctec_hl_comm/msg/mav_ctrl](https://docs.ros.org/en/rolling/p/asctec_hl_comm/msg/mav_ctrl.html)/type
+to "velocity" in your messages. Commands are also forwarded to the
+LLP, but the GPS bit is set additionally. The values in
+[asctec_hl_comm/msg/mav_ctrl](https://docs.ros.org/en/rolling/p/asctec_hl_comm/msg/mav_ctrl.html)
 correnspond to velocities in boady coordinates in m/s and rad/s
 respectively. For the scaling to work correctly, you need to set
 `/max_velocity_\*` according to the maximum "stick-GPS" velocites

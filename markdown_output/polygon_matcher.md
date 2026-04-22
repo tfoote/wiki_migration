@@ -11,8 +11,6 @@ visited places (map vertices).
 
 ## ROS API
 
-<<MsgSrvDoc(polygon_matcher)>>
-
 ### Services
 
 

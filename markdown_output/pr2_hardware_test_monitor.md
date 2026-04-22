@@ -13,10 +13,11 @@ listener configurations, the monitor can check almost any PR2 system or
 sub-system.
 
 The monitor node publishes
-<<MsgLink(pr2_self_test_msgs/TestStatus)>> on the `test_status`
-topic with data it collects from listeners. It also publishes
-<<MsgLink(diagnostic_msgs/DiagnosticArray)>> on `diagnostics` that
-it collects from the listeners.
+[pr2_self_test_msgs/msg/TestStatus](https://docs.ros.org/en/rolling/p/pr2_self_test_msgs/msg/TestStatus.html)
+on the `test_status` topic with data it collects from listeners. It
+also publishes
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+on `diagnostics` that it collects from the listeners.
 
 ## Configuring a Monitor
 
@@ -63,7 +64,7 @@ diags ([ diagnostic_msgs/DiagnosticStatus ]) : Diagnostics to publish
 
 The monitor collects the status level and message and publishes it to
 the output topic `test_status` as a
-<<MsgLink(pr2_self_test_msg/TestStatus)>>.
+[pr2_self_test_msg/msg/TestStatus](https://docs.ros.org/en/rolling/p/pr2_self_test_msg/msg/TestStatus.html).
 
 ### Output Level + Message
 
@@ -78,7 +79,8 @@ until it is reset. This latching happens after a grace period ends.
 ### Halt/Reset
 
 The monitor advertises the services `halt_test` and `reset_test`
-(both of type <<SrvLink(std_srvs/Empty)>>).
+(both of type
+[std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)).
 
 When halted, the monitor calls the `halt` method on all listeners and
 likewise on `reset`. Listeners must start or stop hardware, for
@@ -91,9 +93,9 @@ not latched.
 ### Exceptions and Error Conditions
 
 The monitor node listens to a `/heartbeat` topic of type
-<<MsgLink(std_msgs/Empty)>>. If the there is not traffic on this
-topic for 300 seconds, the monitor node will halt all listeners and
-report an error.
+[std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html).
+If the there is not traffic on this topic for 300 seconds, the monitor
+node will halt all listeners and report an error.
 
 If any listener fails to load, the monitor will report an error with a
 message of "Listener Startup Error". This can happen if either the
@@ -208,8 +210,8 @@ A regression test in this package checks for this behavior.
 ### Diagnostics Aggregated Listener
 
 Listens to the `/diagnostics_agg`
-(<<MsgLink(diagnostic_msgs/DiagnosticArray)>>) to check for any
-problems in the diagnostics.
+([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html))
+to check for any problems in the diagnostics.
 
 Parameters:
 
@@ -234,8 +236,9 @@ Listens to dropped packets and/or links from an `ecstats` node in the
 
 ### DriveListener
 
-Listens to `base_driving` (<<MsgLink(std_msgs/Bool)>> topic and
-reports if PR2 is driving during burn in test.
+Listens to `base_driving`
+([std_msgs/msg/Bool](https://docs.ros.org/en/rolling/p/std_msgs/msg/Bool.html)
+topic and reports if PR2 is driving during burn in test.
 
 -   Halt - Calls `pr2_base/halt_drive` service to stop driving.
 -   Reset - Calls `pr2_base/reset_drive` service to start driving.

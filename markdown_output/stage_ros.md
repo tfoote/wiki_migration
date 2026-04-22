@@ -44,8 +44,9 @@ position models exist, these topics are pushed down into their own
 namespaces, by prefixing the topics with `robot_<i>/` , e.g.,
 `robot_0/cmd_vel` etc.
 
-`cmd_vel` <<MsgLink(geometry_msgs/Twist)>> velocity commands to
-drive the position model of the robot
+`cmd_vel`
+[geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)
+velocity commands to drive the position model of the robot
 
 #### Published topics
 
@@ -55,13 +56,19 @@ position models exist, these topics are pushed down into their own
 namespaces, by prefixing the topics with `robot_<i>/` , e.g.,
 `robot_0/cmd_vel` etc.
 
-`odom` (<<MsgLink(nav_msgs/Odometry)>>) odometry data from the
-position model. `base_scan` (<<MsgLink(sensor_msgs/LaserScan)>>)
+`odom`
+([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
+odometry data from the position model. `base_scan`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
 scans from the laser model `base_pose_ground_truth`
-(<<MsgLink(nav_msgs/Odometry)>>) ground truth pose `image`
-(<<MsgLink(sensor_msgs/Image)>>) visual camera image `depth`
-(<<MsgLink(sensor_msgs/Image)>>) depth camera image `camera_info`
-(<<MsgLink(sensor_msgs/CameraInfo)>>) camera calibration info
+([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
+ground truth pose `image`
+([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html))
+visual camera image `depth`
+([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html))
+depth camera image `camera_info`
+([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html))
+camera calibration info
 
 ##### odom vs. base_pose_ground_truth
 

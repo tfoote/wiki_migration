@@ -2,8 +2,9 @@
 
 This package provides nodes which enable bidirectional communication
 between socket (server) or serial devices and the
-<<MsgLink(nmea_msgs/Sentence)>> message type. This may be useful for
-a number of scenarios, including if you:
+[nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)
+message type. This may be useful for a number of scenarios, including if
+you:
 
 -   want your device's raw NMEA sentences to be available to other
     nodes, or to be bagged

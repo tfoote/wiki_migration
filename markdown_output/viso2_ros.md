@@ -44,7 +44,7 @@ does not set frame ids, you can use the fallback parameter
 *optical* frame, which means `x` is pointing right, `y` downwards
 and `z` from the camera into the scene. The origin is where the
 camera's principle axis hits the image plane (as given in
-<<MsgLink(sensor_msgs/CameraInfo)>>).
+[sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)).
 
 To learn how to publish the required tf `base_link` &rarr; `camera`,
 please refer to the [tf tutorials](tf/Tutorials). If the required tf is

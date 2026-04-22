@@ -16,5 +16,3 @@ srv {
 ```
 
 
-
-<<MsgSrvDoc(rovio_common)>>

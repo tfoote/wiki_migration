@@ -49,13 +49,16 @@ roslaunch rplidar_python rplidar_demo.launch
 ## Node
 
 . driver for RPlidar. Automatically starts sensor and convert data
-stream into <<MsgLink(sensor_msgs/LaserScan)>> type. sensor publish
-topic every frame, one frame contain 360 laser data.
+stream into
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+type. sensor publish topic every frame, one frame contain 360 laser
+data.
 
 ### Published Topic
 
-. /scan(<<MsgLink(sensor_msgs/LaserScan)>>) . output Laser scans to
-create the map from
+.
+/scan([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+. output Laser scans to create the map from
 
 ### Parameters
 

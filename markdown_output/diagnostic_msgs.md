@@ -1,5 +1,3 @@
-<<MsgSrvDoc(diagnostic_msgs)>>
-
 ## Sending Diagnostics
 
 The [diagnostic_updater](diagnostic_updater) package in the

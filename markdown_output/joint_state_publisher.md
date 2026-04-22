@@ -2,11 +2,12 @@
 
 ## Overview
 
-This package publishes <<MsgLink(sensor_msgs/JointState)>> messages
-for a robot. The package reads the `robot_description` parameter from
-the [parameter server](Parameter Server), finds all of the non-fixed
-joints and publishes a !JointState message with all those joints
-defined.
+This package publishes
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+messages for a robot. The package reads the `robot_description`
+parameter from the [parameter server](Parameter Server), finds all of
+the non-fixed joints and publishes a !JointState message with all those
+joints defined.
 
 This package can be used in conjunction with the
 [robot_state_publisher](robot_state_publisher) node to also publish

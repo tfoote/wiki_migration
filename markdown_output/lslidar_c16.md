@@ -21,14 +21,14 @@ with ROS kinetic.
 
 Package contains self-defined ROS message type used for lslidar-c16
 
--   <<MsgLink(lslidar_c16_msgs/LslidarC16Packet)>> Original UDP
-    packet block data
--   <<MsgLink(lslidar_c16_msgs/LslidarC16Point)>> Resolved point
-    infomation
--   <<MsgLink(lslidar_c16_msgs/LslidarC16Scan)>> Point information
-    for specific channel
--   <<MsgLink(lslidar_c16_msgs/LslidarC16Sweep)>> Whole point cloud
-    data of 16 channels
+-   [lslidar_c16_msgs/msg/LslidarC16Packet](https://docs.ros.org/en/rolling/p/lslidar_c16_msgs/msg/LslidarC16Packet.html)
+    Original UDP packet block data
+-   [lslidar_c16_msgs/msg/LslidarC16Point](https://docs.ros.org/en/rolling/p/lslidar_c16_msgs/msg/LslidarC16Point.html)
+    Resolved point infomation
+-   [lslidar_c16_msgs/msg/LslidarC16Scan](https://docs.ros.org/en/rolling/p/lslidar_c16_msgs/msg/LslidarC16Scan.html)
+    Point information for specific channel
+-   [lslidar_c16_msgs/msg/LslidarC16Sweep](https://docs.ros.org/en/rolling/p/lslidar_c16_msgs/msg/LslidarC16Sweep.html)
+    Whole point cloud data of 16 channels
 
 ### lslidar_c16_driver
 

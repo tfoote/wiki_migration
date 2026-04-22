@@ -1,5 +1,3 @@
-<<MsgSrvDoc(std_srvs)>>
-
 ## Overview
 
 `std_srvs` contains two service types called `Empty` and

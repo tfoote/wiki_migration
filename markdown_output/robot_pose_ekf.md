@@ -178,9 +178,10 @@ below).
     odometry, imu and vo) that we use on the PR2 robot. We plan to make
     this package more generic: future versions will be able to listen to
     'n' sensor sources, all publishing a
-    (<<MsgLink(nav_msgs/Odometry)>>) message. Each source will set
-    the covariance of the 3D pose in the Odometry message to specify
-    which part of the 3D pose it actually measured.
+    ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
+    message. Each source will set the covariance of the 3D pose in the
+    Odometry message to specify which part of the 3D pose it actually
+    measured.
 -   We would like to add velocity to the state of the extended Kalman
     filter.
 

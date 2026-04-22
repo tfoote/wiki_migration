@@ -7,38 +7,42 @@ arms on the PR2.
 
 ### Subscribed topics
 
-`cart_pushing/ready_pose_achieved` (<<MsgLink(roslib/Header)>>)
+`cart_pushing/ready_pose_achieved`
+([roslib/msg/Header](https://docs.ros.org/en/rolling/p/roslib/msg/Header.html))
 Once the base achieves a ready pose, in which the robot's arms are in
 the position corresponding to the cart being at its initial position,
 with grippers open, a message will be sent on this topic (at a fixed
 rate).
 
-`command_twist` (<<MsgLink(geometry_msgs/TwistStamped)>>) The
-desired twist for the reference point on the cart, relative to the
+`command_twist`
+([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html))
+The desired twist for the reference point on the cart, relative to the
 `base_footprint` frame
 
 ### Published topics
 
 `/r_cart/command_pose`, `/l_cart/command_pose`
-(<<MsgLink(geometry_msgs/PoseStamped)>>) Desired poses for the left
-and right gripper tool frames are sent on these topics
-`/r_cart/command_posture`, `/l_cart/command_posture`
-(<<MsgLink(std_msg/Float64MultiArray)>>) Since there is a degree of
-freedom remaining in the arm after specifying the gripper pose, we send
-a desired posture on this topic `invalid_pose`
-(<<MsgLink(std_msgs/Empty)>>) This is a debugging topic, on which a
-message is sent on this topic whenever a pose is requested that is
-outside the workspace bounds for the cart
+([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html))
+Desired poses for the left and right gripper tool frames are sent on
+these topics `/r_cart/command_posture`, `/l_cart/command_posture`
+([std_msg/msg/Float64MultiArray](https://docs.ros.org/en/rolling/p/std_msg/msg/Float64MultiArray.html))
+Since there is a degree of freedom remaining in the arm after specifying
+the gripper pose, we send a desired posture on this topic
+`invalid_pose`
+([std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html))
+This is a debugging topic, on which a message is sent on this topic
+whenever a pose is requested that is outside the workspace bounds for
+the cart
 
 ### Expected services
 
 `manipulation_transforms_server/LoadInitialTransforms`
-(<<SrvLink(manipulation_transforms/LoadInitialTransforms)>>) Used to
-tell the manipulation transforms server that the current pose is the one
-at which the cart is at its initial position
+([manipulation_transforms/srv/LoadInitialTransforms](https://docs.ros.org/en/rolling/p/manipulation_transforms/srv/LoadInitialTransforms.html))
+Used to tell the manipulation transforms server that the current pose is
+the one at which the cart is at its initial position
 `manipulation_transforms_server/MapObjectPoseToEffectors`
-(<<SrvLink(manipulation_transforms/MapObjectPoseToEffectors)>>) Used
-to get the effector poses corresponding to a desired cart pose
+([manipulation_transforms/srv/MapObjectPoseToEffectors](https://docs.ros.org/en/rolling/p/manipulation_transforms/srv/MapObjectPoseToEffectors.html))
+Used to get the effector poses corresponding to a desired cart pose
 
 ### TF frames used
 

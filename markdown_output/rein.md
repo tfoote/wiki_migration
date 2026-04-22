@@ -78,9 +78,9 @@ The `rein::Detector` represents the base class for detectors. A
 detector takes as input an image and/or point cloud and/or some regions
 of interest and detects the objects present in the image/point cloud.
 The output of a detector is a list of detections
-(<<MsgLink(rein/Detection)>>).The `rein::Detector` has the
-following pure virtual methods which have to be implemented by a
-subclass.
+([rein/msg/Detection](https://docs.ros.org/en/rolling/p/rein/msg/Detection.html)).The
+`rein::Detector` has the following pure virtual methods which have to
+be implemented by a subclass.
 
 
 

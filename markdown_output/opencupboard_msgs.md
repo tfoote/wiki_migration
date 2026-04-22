@@ -1,1 +1,1 @@
-<<MsgSrvDoc(opencupboard_msgs)>>
+

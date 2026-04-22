@@ -4,8 +4,9 @@
 
 This package adapts the Leuze rotoScan series of laser range finders.
 Therefore it behaves like any other ROS laser range finder driver and
-publishes a <<MsgLink(sensor_msgs/LaserScan)>> on the "**scan**"
-topic whenever a new scan comes in.
+publishes a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+on the "**scan**" topic whenever a new scan comes in.
 
 Configuration of the laser range finder is not supported and requires a
 vendor-provided tool.

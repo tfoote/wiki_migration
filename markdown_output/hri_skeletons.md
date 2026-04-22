@@ -5,7 +5,8 @@
 `hri_skeletons` detects and tracks human bodies in both 2D (2D keypoints
 of the body, in the image space) and 3D (generating on the fly URDF
 models for each detected humans, alongside their
-<<MsgLink(sensor_msgs/JointState)>> and [TF](tf) trees).
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+and [TF](tf) trees).
 
 The detection relies on the open-source
 [Intel OpenVINO toolkit](https://docs.openvinotoolkit.org/), requires
@@ -58,7 +59,8 @@ which should display something like that (debug mode = true):
 
 ### Subscribed topics
 
-`image` (<<MsgLink(sensor_msgs/Image)>>)
+`image`
+([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html))
 
 . input RGB stream
 
@@ -69,12 +71,12 @@ topic namespace `humans/bodies/<id>` is created. Within that
 namespace, the following topics are published:
 
 `humans/bodies/<id>/joint_states`
-(<<MsgLink(sensor_msgs/JointState)>>)
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
 
 . the human body joint state
 
 `humans/bodies/<id>/skeleton2d`
-(<<MsgLink(hri_msgs/Skeleton2D)>>)
+([hri_msgs/msg/Skeleton2D](https://docs.ros.org/en/rolling/p/hri_msgs/msg/Skeleton2D.html))
 
 . the 2D coordinates of the skeleton's bones, with respect to the
 source image.

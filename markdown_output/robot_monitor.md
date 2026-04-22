@@ -27,8 +27,8 @@ rosrun robot_monitor robot_monitor
 ### Rxbag Plugin
 
 The `robot_monitor` can view messages of type
-<<MsgLink(diagnostic_msgs/DiagnosticArray)>> when used as an
-[rxbag](rxbag) plugin. This feature is experimental.
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+when used as an [rxbag](rxbag) plugin. This feature is experimental.
 
 You'll have to toggle the "Pause" button to start moving along with
 normal time again.

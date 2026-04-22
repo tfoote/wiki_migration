@@ -10,8 +10,6 @@ documented specifications.
 All messages are explained in Appendix C of the
 [ AscTec Pelican Manual]( http://robotics.ccny.cuny.edu/wiki/AscTec/Docs ).
 
-<<MsgSrvDoc(asctec_msgs)>>
-
 ## Bug Reports & Feature Requests
 
 We appreciate the time and effort spent submitting bug reports.

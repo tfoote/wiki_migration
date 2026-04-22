@@ -17,7 +17,8 @@ calibration node will exit.
 
 At this point the interface node is ready to display the cursor, object
 circles, and any polygons sent to it using the
-<<SrvLink(projector_interface/DrawPolygon)>> service.
+[projector_interface/srv/DrawPolygon](https://docs.ros.org/en/rolling/p/projector_interface/srv/DrawPolygon.html)
+service.
 
 ## Nodes
 

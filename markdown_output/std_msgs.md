@@ -18,8 +18,6 @@ message types (see
 [discussion in this thread](https://github.com/ros/std_msgs/issues/8)
 for more detail).
 
-<<MsgSrvDoc(std_msgs)>>
-
 ## Roadmap
 
 There are currently no plans to add new data types to the `std_msgs`

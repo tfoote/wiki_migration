@@ -6,14 +6,15 @@ request images from a polling camera driver node (e.g.
 
 -   The camera driver advertises a service call
     `<camera>/request_image` of type
-    <<SrvLink(polled_camera/GetPolledImage)>>.
+    [polled_camera/srv/GetPolledImage](https://docs.ros.org/en/rolling/p/polled_camera/srv/GetPolledImage.html).
 -   The client calls the service, specifying an output namespace.
 -   On receiving a request, the driver captures an image and returns its
     time stamp in the service response.
 -   The driver publishes (latching) the
-    <<MsgLink(sensor_msgs/Image)>> and
-    <<MsgLink(sensor_msgs/CameraInfo)>> to
-    `<response_namespace>/image_raw` and
+    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+    and
+    [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+    to `<response_namespace>/image_raw` and
     `<response_namespace>/camera_info`.
 -   Clients subscribe to the response topics just like any other camera
     image stream.

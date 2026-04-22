@@ -6,8 +6,8 @@ This package allows you to control any robot that accepts
 geometry_msgs::Twist messages (usually, in a cmd_vel topic). It can use
 either (or both) keyboard and joystick as input. Besides controlling the
 robot, the input sources generate events
-(<<MsgLink(universal_teleop/Event)>>) which are user-defined
-text-based commands.
+([universal_teleop/msg/Event](https://docs.ros.org/en/rolling/p/universal_teleop/msg/Event.html))
+which are user-defined text-based commands.
 
 While this node allows you to tele-operate a robot, it is intended to be
 used together with other nodes that autonomously control the robot. The

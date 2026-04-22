@@ -8,7 +8,8 @@ If there is an official source, please edit this page to include it.
 
 ## Supported Hardware
 
-Any joystick with a driver that publishes a <<MsgLink(joy/Joy)>>
+Any joystick with a driver that publishes a
+[joy/msg/Joy](https://docs.ros.org/en/rolling/p/joy/msg/Joy.html)
 message can be used with the `joystick_remapper`.
 
 The joystick remapper is simply a node that listens to Joy messages and

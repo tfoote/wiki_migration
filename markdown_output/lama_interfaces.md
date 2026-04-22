@@ -34,16 +34,18 @@ described in further sections.
 
 ### LaMa Map Agent
 
-This service of type <<SrvLink(lama_interfaces/ActOnMap)>> is used
-for all actions over vertices and edges in the map.
+This service of type
+[lama_interfaces/srv/ActOnMap](https://docs.ros.org/en/rolling/p/lama_interfaces/srv/ActOnMap.html)
+is used for all actions over vertices and edges in the map.
 
 ### Interface Factory
 
-This service of type <<SrvLink(lama_interfaces/AddInterface)>> is
-used to generate two services for each descriptor type, one to write the
-descriptor into the database and one to retrieve it. Descriptor storage
-occurs either in binary or clear-text mode (specified through the
-`interface_type` service attribute. The name of these two services
+This service of type
+[lama_interfaces/srv/AddInterface](https://docs.ros.org/en/rolling/p/lama_interfaces/srv/AddInterface.html)
+is used to generate two services for each descriptor type, one to write
+the descriptor into the database and one to retrieve it. Descriptor
+storage occurs either in binary or clear-text mode (specified through
+the `interface_type` service attribute. The name of these two services
 will be the name of the interface (`interface_name` attribute) to
 which "`_getter`" or "`_setter`" are added.
 

@@ -6,14 +6,22 @@ devices in ROS.
 The app currently supports publishing of:
 
 1\. Camera Images as\
-Compressed Image: <<MsgLink(sensor_msgs/CompressedImage)>>\
-Without Compression: <<MsgLink(sensor_msgs/Image)>> 1. Fluid
-Pressure data as <<MsgLink(sensor_msgs/FluidPressure)>> 1.
-Illuminance data as <<MsgLink(sensor_msgs/Illuminance)>> 1.
-Accelerometer/Gyroscope data as <<MsgLink(sensor_msgs/Imu)>> 1.
-Magnetic Field data as <<MsgLink(sensor_msgs/MagneticField)>> 1. GPS
-fixes as <<MsgLink(sensor_msgs/NavSatFix)>> 1. Temperature data as
-<<MsgLink(sensor_msgs/Temperature)>>
+Compressed Image:
+[sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)\
+Without Compression:
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html) 1.
+Fluid Pressure data as
+[sensor_msgs/msg/FluidPressure](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/FluidPressure.html) 1.
+Illuminance data as
+[sensor_msgs/msg/Illuminance](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Illuminance.html) 1.
+Accelerometer/Gyroscope data as
+[sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html) 1.
+Magnetic Field data as
+[sensor_msgs/msg/MagneticField](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/MagneticField.html) 1.
+GPS fixes as
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html) 1.
+Temperature data as
+[sensor_msgs/msg/Temperature](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Temperature.html)
 
 Some needed improvements:
 

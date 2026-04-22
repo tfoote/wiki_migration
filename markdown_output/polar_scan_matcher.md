@@ -11,17 +11,20 @@ Monash University\
 <http://www.irrc.monash.edu.au/adiosi/downloads.html>\
 
 The package allows to scan match between consecutive
-<<MsgLink(sensor_msgs/LaserScan)>> messages, and publish the
-estimated position of the laser as a
-<<MsgLink(geometry_msgs/Pose2D)>> or a [tf](tf) transform.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages, and publish the estimated position of the laser as a
+[geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)
+or a [tf](tf) transform.
 
 The package is intended to be used without any odometry estimation
 provided by other sensors. Thus, it can serve as a stand-alone odometry
 estimator.
 
 An estimation for theta can optionally be provided to improve accuracy,
-in the form of a <<MsgLink(sensor_msgs/Imu)>>. This message would
-typically be published by an IMU or other angular rate sensor.
+in the form of a
+[sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html).
+This message would typically be published by an IMU or other angular
+rate sensor.
 
 Alternatively, an estimation for x, y, and theta can optionally be
 provided to improve accuracy, in the form of a [tf](tf) transform. This

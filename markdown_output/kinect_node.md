@@ -17,11 +17,13 @@ driver. The library is patched using Stéphane Magnenat's memory trash
 patch.
 
 This package currently outputs a
-<<MsgLink(sensor_msgs/PointCloud)>>, a RGB
-<<MsgLink(sensor_msgs/Image)>> and it's associated
-<<MsgLink(sensor_msgs/CameraInfo)>>. The PointCloud, Image, and
-CameraInfo are published with the same timestamp (the node will hold
-data until all 3 have become available).
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html),
+a RGB
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+and it's associated
+[sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html).
+The PointCloud, Image, and CameraInfo are published with the same
+timestamp (the node will hold data until all 3 have become available).
 
 For calibration information based on this package, please see
 [/Calibration](/Calibration).

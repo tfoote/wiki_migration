@@ -13,8 +13,6 @@ details.
 Messages from the [nxt_msgs](nxt_msgs) package are also used by
 [nxt_lejos_lcp_proxy](nxt_lejos_lcp_proxy).
 
-<<MsgSrvDoc(nxt_lejos_msgs False)>>
-
 ## Message Details
 
 ### Battery

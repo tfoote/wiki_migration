@@ -6,8 +6,6 @@ clouds. This is useful in cases where an accurate estimate of the
 model's 6-DoF pose in the point cloud is needed (e.g.
 grasping/manipulation).
 
-<<MsgSrvDoc(rail_mesh_icp)>>
-
 ## Nodes
 
 

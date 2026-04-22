@@ -7,9 +7,12 @@ IMU sensor. The driver publishes the following data:
 ![](attachment:imu.png)
 
 -   linear acceleration and angular velocities as
-    <<MsgLink(sensor_msgs/Imu)>>
--   magnetic field as <<MsgLink(sensor_msgs/MagneticField)>> or as
-    <<MsgLink(geometry_msgs/Vector3Stamped)>> (deprecated)
+    [sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)
+-   magnetic field as
+    [sensor_msgs/msg/MagneticField](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/MagneticField.html)
+    or as
+    [geometry_msgs/msg/Vector3Stamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3Stamped.html)
+    (deprecated)
 
 You can use this driver in conjunction with
 [imu_filter_madgwick](imu_filter_madgwick) or a similar IMU filter to

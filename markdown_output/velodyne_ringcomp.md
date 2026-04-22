@@ -6,10 +6,12 @@
 
 ### Ring Compression
 
-The `ringcomp` node reads <<MsgLink(velodyne_common/RawScan)>>
+The `ringcomp` node reads
+[velodyne_common/msg/RawScan](https://docs.ros.org/en/rolling/p/velodyne_common/msg/RawScan.html)
 data from the **velodyne/rawscan** topic, identifies obstacles, and
-publishes them as <<MsgLink(sensor_msgs/PointCloud)>> in the
-**velodyne/obstacles** topic.
+publishes them as
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+in the **velodyne/obstacles** topic.
 
 #### Usage
 

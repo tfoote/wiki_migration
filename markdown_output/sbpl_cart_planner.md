@@ -15,20 +15,21 @@ the planner plans only from and to states where the cart angle is zero.
 ### Advertised topics
 
 `sbpl_robot_cart_plan`
-(<<MsgLink(cart_pushing_msgs/RobotCartPath)>>) Whenever planning is
-done, a corresponding plan for the base and cart is published on this
-topic.
+([cart_pushing_msgs/msg/RobotCartPath](https://docs.ros.org/en/rolling/p/cart_pushing_msgs/msg/RobotCartPath.html))
+Whenever planning is done, a corresponding plan for the base and cart is
+published on this topic.
 
-`sbpl_plan_array` (<<MsgLink(visualization_msgs/MarkerArray)>>)
+`sbpl_plan_array`
+([visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html))
 This is used to visualize the plan as a series of arrows with green
 arrows representing the path of the robot and red arrows representing
 the path of the cart.
 
 `sbpl_plan_footprint`
-(<<MsgLink(visualization_msgs/MarkerArray)>>) This is used to
-visualize the plan as a series of robot and cart polygons. The
-visualizer_skip_poses parameter below affects the density of waypoints
-displayed.
+([visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html))
+This is used to visualize the plan as a series of robot and cart
+polygons. The visualizer_skip_poses parameter below affects the density
+of waypoints displayed.
 
 ### Main ROS parameters
 

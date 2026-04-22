@@ -3,5 +3,3 @@
 { }}}} { }}}}
 
 ## Documentation
-
-<<MsgSrvDoc(turtlebot_msgs)>>

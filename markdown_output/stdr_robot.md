@@ -5,8 +5,9 @@ sensors and its simulated motion controller. Till now the following
 sensors are implemented:
 
 -   Laser Range Scanner (LIDAR), provides a
-    <<MsgLink(sensor_msgs/LaserScan)>>.
--   Sonar, provides a <<MsgLink(sensor_msgs/Range)>>.
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
+-   Sonar, provides a
+    [sensor_msgs/msg/Range](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Range.html).
 
 Available motion controllers:
 
@@ -52,15 +53,18 @@ All topic names are prefixed with robot name. Example
 
 ### Subscribed Topics
 
-`cmd_vel` (<<MsgLink(geometry_msgs/Twist)>>) Robot listens for
-velocity commands
+`cmd_vel`
+([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html))
+Robot listens for velocity commands
 
 ### Published Topics
 
-`<laser_sensor_frame_id>` (<<MsgLink(sensor_msgs/LaserScan)>>)
+`<laser_sensor_frame_id>`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
 Publishes laser scan. Example: `robot0/laser_back`
 
-`<sonar_sensor_frame_id>` (<<MsgLink(sensor_msgs/Range)>>)
+`<sonar_sensor_frame_id>`
+([sensor_msgs/msg/Range](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Range.html))
 Publishes sonar measurements. Example: `robot0/sonar_2`
 
 ## Services
@@ -68,11 +72,13 @@ Publishes sonar measurements. Example: `robot0/sonar_2`
 All services are prefixed with the name `robot_manager`. This is the
 name of the nodelet manager and should **not** change.
 
-`load_nodelet` (<<SrvLink(nodelet/NodeletLoad)>>) Called to load a
-new robot.
+`load_nodelet`
+([nodelet/srv/NodeletLoad](https://docs.ros.org/en/rolling/p/nodelet/srv/NodeletLoad.html))
+Called to load a new robot.
 
-`unload_nodelet` (<<SrvLink(nodelet/NodeletUnload)>>) Called to
-unload/delete a robot.
+`unload_nodelet`
+([nodelet/srv/NodeletUnload](https://docs.ros.org/en/rolling/p/nodelet/srv/NodeletUnload.html))
+Called to unload/delete a robot.
 
 ## Command-Line Tools
 

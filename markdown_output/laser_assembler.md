@@ -15,11 +15,14 @@ point cloud.
 Users interface with the laser_assembler package via two ROS nodes:
 
 -   `laser_scan_assembler`: Assembles a stream of
-    <<MsgLink(sensor_msgs/LaserScan)>> messages into point clouds
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+    messages into point clouds
 -   `point_cloud_assembler`: Sometimes due to some pre-processing,
     laser scans have already been converted into cartesian coordinates
-    as <<MsgLink(sensor_msgs/PointCloud)>> messages. This node
-    assembles a stream of these <<MsgLink(sensor_msgs/PointCloud)>>
+    as
+    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+    messages. This node assembles a stream of these
+    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
     messages into larger point clouds
 
 ## Roadmap / Stability
@@ -34,13 +37,13 @@ The general data flow can be descibed as follows:
 ![](attachment:laser_scan_assembler.png)
 
 The `laser_scan_assembler` subscribes to
-<<MsgLink(sensor_msgs/LaserScan)>> messages on the `scan` topic.
-These scans are processed by the Projector and Transformer, which
-project the scan into Cartesian space and then transform it into the
-`fixed_frame`. This results in a
-<<MsgLink(sensor_msgs/PointCloud)>> that can be added to the rolling
-buffer. Clouds in the rolling buffer are then assembled on service
-calls.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages on the `scan` topic. These scans are processed by the
+Projector and Transformer, which project the scan into Cartesian space
+and then transform it into the `fixed_frame`. This results in a
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+that can be added to the rolling buffer. Clouds in the rolling buffer
+are then assembled on service calls.
 
 Note that the Transformer automatically receives [tf](tf) data without
 any user intervention.
@@ -133,8 +136,9 @@ node.1{
 **laser_scan_assembler:**
 
 Launch an assembler operating on `tilt_scan`
-<<MsgLink(sensor_msgs/LaserScan)>> messages in the base_link frame,
-with a buffer of 400 scans.<<MsgLink(sensor_msgs/LaserScan)>>
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages in the base_link frame, with a buffer of 400
+scans.[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 
 
 
@@ -154,8 +158,8 @@ with a buffer of 400 scans.<<MsgLink(sensor_msgs/LaserScan)>>
 **point_cloud_assembler:**
 
 Launch an assembler operating on `my_cloud_in`
-<<MsgLink(sensor_msgs/PointCloud)>> messages in the `base_link`
-frame, with a buffer of 400 scans.
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+messages in the `base_link` frame, with a buffer of 400 scans.
 
 
 

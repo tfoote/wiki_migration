@@ -1,9 +1,10 @@
 ## Overview
 
 This package contains 2 nodes that communicate with the input devices
-and publishes <<MsgLink(geometry_msgs/Twist)>> to an arbitrary
-number of output topics, which allows control over a multiple number of
-robots.
+and publishes
+[geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)
+to an arbitrary number of output topics, which allows control over a
+multiple number of robots.
 
 ## ROS API
 

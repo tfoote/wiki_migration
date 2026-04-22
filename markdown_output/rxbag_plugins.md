@@ -14,8 +14,10 @@ The following plugins are currently provided for `rxbag`:
 ### Image
 
 The image view displays raw image data for
-<<MsgLink(sensor_msgs/Image)>> and
-<<MsgLink(sensor_msgs/CompressedImage)>> messages:
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+and
+[sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
+messages:
 
 ![](attachment:rxbag_prosilica.png)
 

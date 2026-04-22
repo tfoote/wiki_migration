@@ -24,12 +24,13 @@ The documented C++ API is widely used and should be considered stable.
 The
 [diagnostic_updater::DiagnosticStatusWrapper](http://www.ros.org/doc/api/diagnostic_updater/html/classdiagnostic__updater_1_1DiagnosticStatusWrapper.html)
 class eases the pain of filling out a
-<<MsgLink(diagnostic_msgs/DiagnosticStatus)>> message. It handles
-setting the summary, possibly with `printf`-type formatting of the
-message field, and setting of key-value pairs with type-conversion and
-formatting of the values. It also has facilities for merging multiple
-<<MsgLink(diagnostic_msgs/DiagnosticStatus)>> messages without
-losing information in the status message.
+[diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)
+message. It handles setting the summary, possibly with `printf`-type
+formatting of the message field, and setting of key-value pairs with
+type-conversion and formatting of the values. It also has facilities for
+merging multiple
+[diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)
+messages without losing information in the status message.
 
 ### diagnostic_updater::Updater
 

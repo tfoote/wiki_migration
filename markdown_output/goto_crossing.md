@@ -1,11 +1,14 @@
 The goto_crossing provides a Go-To-Goal behavior to reach the center of
-a crossing (<<SrvLink(lama_msgs/Crossing)>> message) for the Large
-Maps Framework ([LaMa](Large Maps Framework)).
+a crossing
+([lama_msgs/srv/Crossing](https://docs.ros.org/en/rolling/p/lama_msgs/srv/Crossing.html)
+message) for the Large Maps Framework ([LaMa](Large Maps Framework)).
 
 ## Overview
 
 The goto_crossing provides a Go-To-Goal behavior to reach the center of
-a crossing (<<SrvLink(lama_msgs/Crossing)>> message).
+a crossing
+([lama_msgs/srv/Crossing](https://docs.ros.org/en/rolling/p/lama_msgs/srv/Crossing.html)
+message).
 
 Can be used as a ROS node or as a class instance, as documented below.
 

@@ -1,34 +1,42 @@
-<<MsgSrvDoc(multimaster_msgs_fkie)>>
-
 ## Master Discovering
 
-The <<MsgLink(multimaster_msgs_fkie/ROSMaster)>> describes a
-discovered ROS Master by `name` and `uri`. It offers also additional
-information about corresponding
+The
+[multimaster_msgs_fkie/msg/ROSMaster](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/ROSMaster.html)
+describes a discovered ROS Master by `name` and `uri`. It offers
+also additional information about corresponding
 [master_discovery](http://ros.org/wiki/master_discovery_fkie) node and
 timestamps of last detected changes of the ROS Master. The
-<<SrvLink(multimaster_msgs_fkie/DiscoverMasters)>> service returns
-the list with current discovered ROS Masters. The changes of each ROS
-Master are annonced by
-<<MsgLink(multimaster_msgs_fkie/MasterState)>>.
+[multimaster_msgs_fkie/srv/DiscoverMasters](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/srv/DiscoverMasters.html)
+service returns the list with current discovered ROS Masters. The
+changes of each ROS Master are annonced by
+[multimaster_msgs_fkie/msg/MasterState](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/MasterState.html).
 
-The <<MsgLink(multimaster_msgs_fkie/LinkState)>> and
-<<MsgLink(multimaster_msgs_fkie/LinkStatesStamped)>> messages offers
-additional information about the link quality to discovered ROS Master
-machines.
+The
+[multimaster_msgs_fkie/msg/LinkState](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/LinkState.html)
+and
+[multimaster_msgs_fkie/msg/LinkStatesStamped](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/LinkStatesStamped.html)
+messages offers additional information about the link quality to
+discovered ROS Master machines.
 
 ## Synchronization
 
-The <<SrvLink(multimaster_msgs_fkie/GetSyncInfo)>> service uses
-<<MsgLink(multimaster_msgs_fkie/SyncMasterInfo)>> respectively
-<<MsgLink(multimaster_msgs_fkie/SyncTopicInfo)>> messages to return
-the all currently synchronized `topics` and `services`.
+The
+[multimaster_msgs_fkie/srv/GetSyncInfo](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/srv/GetSyncInfo.html)
+service uses
+[multimaster_msgs_fkie/msg/SyncMasterInfo](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/SyncMasterInfo.html)
+respectively
+[multimaster_msgs_fkie/msg/SyncTopicInfo](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/msg/SyncTopicInfo.html)
+messages to return the all currently synchronized `topics` and
+`services`.
 
 ## Default Configuration
 
-The services <<SrvLink(multimaster_msgs_fkie/ListNodes)>> and
-<<SrvLink(multimaster_msgs_fkie/ListDescription)>> returns the nodes
-and their description. The <<SrvLink(multimaster_msgs_fkie/Task)>>
+The services
+[multimaster_msgs_fkie/srv/ListNodes](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/srv/ListNodes.html)
+and
+[multimaster_msgs_fkie/srv/ListDescription](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/srv/ListDescription.html)
+returns the nodes and their description. The
+[multimaster_msgs_fkie/srv/Task](https://docs.ros.org/en/rolling/p/multimaster_msgs_fkie/srv/Task.html)
 service can then be used to launch one of these nodes. See
 [default_cfg](http://ros.org/wiki/default_cfg_fkie) for additional
 information.

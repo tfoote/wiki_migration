@@ -17,7 +17,8 @@ computation and makes the following assuption:
     (X forward, Y to the left and Z up),
 -   two force sensors localized in the feet/ankles and synchronized data
     from them are available as
-    <<MsgLink(geometry_msgs/WrenchStamped)>> messages.
+    [geometry_msgs/msg/WrenchStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/WrenchStamped.html)
+    messages.
 -   the robot is biped.
 
 

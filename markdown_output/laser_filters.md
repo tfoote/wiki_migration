@@ -2,14 +2,15 @@
 
 The primary content of the `laser_filters` package is a number of
 general purpose filters for processing
-<<MsgLink(sensor_msgs/LaserScan)>> messages. These filters are
-exported as plugins designed to work with with the
-[filters package](filters). At the moment all of these filters run
-directly on <<MsgLink(sensor_msgs/LaserScan)>>, but filters may be
-added in the future which process
-<<MsgLink(sensor_msgs/PointCloud)>> instead. Please review the
-[filters documentation](filters) for an overview of how filters and
-filter chains are intended to work.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages. These filters are exported as plugins designed to work with
+with the [filters package](filters). At the moment all of these filters
+run directly on
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html),
+but filters may be added in the future which process
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+instead. Please review the [filters documentation](filters) for an
+overview of how filters and filter chains are intended to work.
 
 This package provides two nodes that can run multiple filters
 internally. Using these nodes to run your filters is considered best
@@ -17,20 +18,24 @@ practice, since it allows multiple nodes to consume the output while
 only performing the filtering computation once. The nodes are minimal
 wrappers around filter chains of the given type. The
 [scan_to_scan_filter_chain](#scan_to_scan_filter_chain) applies a series
-of filters to a <<MsgLink(sensor_msgs/LaserScan)>>. The
-[scan_to_cloud_filter_chain](#scan_to_cloud_filter_chain) first applies
-a series of filters to a <<MsgLink(sensor_msgs/LaserScan)>>,
-transforms it into a <<MsgLink(sensor_msgs/PointCloud)>>, and then
-applies a series of filters to the
-<<MsgLink(sensor_msgs/PointCloud)>>.
+of filters to a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
+The [scan_to_cloud_filter_chain](#scan_to_cloud_filter_chain) first
+applies a series of filters to a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html),
+transforms it into a
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html),
+and then applies a series of filters to the
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html).
 
 ## Using Laser Filters
 
 Each [ laser filter](#plugins ) is a separate plugin exported by the
 laser_filters package. This allows them to be specified in a
 configuration file which can be loaded into an arbitrary filter_chain
-templated on a <<MsgLink(sensor_msgs/LaserScan)>>. You can
-instantiate a laser filter into a filter_chain in C++
+templated on a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
+You can instantiate a laser filter into a filter_chain in C++
 ([example](laser_filters/Tutorials/Laser filtering in C++)), or you can
 use the [ scan_to_scan_filter_chain](#scan_to_scan_filter_chain ) and
 [ scan_to_cloud_filter_chain](#scan_to_cloud_filter_chain ) nodes which
@@ -123,13 +128,15 @@ simply be executed immediately upon the arrival of each new scan.
 
 #### Subscribed Topics
 
-`scan` (<<MsgLink(sensor_msgs/LaserScan)>>) The incoming laser
-scan to filter
+`scan`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+The incoming laser scan to filter
 
 #### Published Topics
 
-`scan_filtered` (<<MsgLink(sensor_msgs/LaserScan)>>) The outgoing
-filtered laser scan
+`scan_filtered`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+The outgoing filtered laser scan
 
 #### Example Launch File
 
@@ -194,13 +201,15 @@ is set to a fixed frame.
 
 #### Subscribed Topics
 
-`scan` (<<MsgLink(sensor_msgs/LaserScan)>>) The incoming laser
-scan to filter.
+`scan`
+([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+The incoming laser scan to filter.
 
 #### Published Topics
 
-`cloud_filtered` (<<MsgLink(sensor_msgs/PointCloud)>>) The
-outgoing filtered point cloud.
+`cloud_filtered`
+([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html))
+The outgoing filtered point cloud.
 
 #### Example Launch File
 
@@ -358,10 +367,11 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 ### LaserScanIntensityFilter
 
 This filter removes all measurements from the
-<<MsgLink(sensor_msgs/LaserScan)>> which have an intensity greater
-than `upper_threshold` or less than `lower_threshold`. These points
-are "removed" by setting the corresponding range value to
-`range_max` + 1, which is assumed to be an error case.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+which have an intensity greater than `upper_threshold` or less than
+`lower_threshold`. These points are "removed" by setting the
+corresponding range value to `range_max` + 1, which is assumed to be
+an error case.
 
 #### Parameters
 
@@ -383,11 +393,11 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 ### LaserScanRangeFilter
 
 This filter removes all measurements from the
-<<MsgLink(sensor_msgs/LaserScan)>> which are greater than
-`upper_threshold` or less than `lower_threshold`. These points are
-"removed" by setting the corresponding range value to `NaN`, which
-is assumed to be an error case or
-`lower_replacement_value`/`upper_replacement_value`. If
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+which are greater than `upper_threshold` or less than
+`lower_threshold`. These points are "removed" by setting the
+corresponding range value to `NaN`, which is assumed to be an error
+case or `lower_replacement_value`/`upper_replacement_value`. If
 `use_message_range_limits` is true, the range within the laserscan
 message is used.
 
@@ -414,7 +424,8 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 
 ### LaserScanAngularBoundsFilter
 
-This filter removes points in a <<MsgLink(sensor_msgs/LaserScan)>>
+This filter removes points in a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 outside of certain angular bounds by changing the minimum and maximum
 angle.
 
@@ -435,7 +446,8 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 
 ### LaserScanAngularBoundsFilterInPlace
 
-This filter removes points in a <<MsgLink(sensor_msgs/LaserScan)>>
+This filter removes points in a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 inside of certain angular bounds. These points are "removed" by
 setting the corresponding range value to `range_max` + 1, which is
 assumed to be an error case.
@@ -457,7 +469,8 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 
 ### LaserScanBoxFilter
 
-This filter removes points in a <<MsgLink(sensor_msgs/LaserScan)>>
+This filter removes points in a
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 inside of a cartesian box. These points are "removed" by setting the
 corresponding range value to NaN which is assumed to be an error case.
 
@@ -482,8 +495,8 @@ $ rosparam load my_laser_config.yaml scan_to_scan_filter_chain
 ### LaserScanSpeckleFilter
 
 This filter removes outliers in a
-<<MsgLink(sensor_msgs/LaserScan)>>. There are two filter methods
-that are available for this filter.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
+There are two filter methods that are available for this filter.
 
 These points are "removed" by setting the corresponding range value to
 NaN.

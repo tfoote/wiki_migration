@@ -8,8 +8,9 @@ be thought as comprising several components:
 -   The [/rosout](#rosout_topic) topic
 -   The [/rosout_agg](#rosout_agg) topic for subscribing to an
     aggregated feed
--   <<MsgLink(rosgraph_msgs/Log)>> message type, which defines
-    standard fields as well as [verbosity levels](Verbosity Levels).
+-   [rosgraph_msgs/msg/Log](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/Log.html)
+    message type, which defines standard fields as well as
+    [verbosity levels](Verbosity Levels).
 -   [client APIs](#client_apis) to facilitate easy use of the rosout
     reporting mechanism
 -   GUI tools, like [rqt_console](rqt_console), for viewing the console

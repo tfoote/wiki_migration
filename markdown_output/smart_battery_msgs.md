@@ -7,5 +7,3 @@ Note that this is replaced by [[sensor_msgs]]/[[http://docs.ros.org/api/sensor_m
 ```
 
 
-
-<<MsgSrvDoc(smart_battery_msgs)>>

@@ -5,8 +5,6 @@ launch files for allowing carl to autonomously move its base. This also
 includes support of layered costmaps, which allow obstacles to be
 represented in a costmap that otherwise would not be detected by CARL.
 
-<<MsgSrvDoc(carl_navigation)>>
-
 ## Nodes
 
 

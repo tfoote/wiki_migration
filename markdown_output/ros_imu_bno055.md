@@ -35,9 +35,12 @@ and configuration
 The driver publishes the following data:
 
 -   linear acceleration, angular velocities and quaternion orientation
-    as <<MsgLink(sensor_msgs/Imu)>>
--   magnetic field as <<MsgLink(sensor_msgs/MagneticField)>>
--   temperature as <<MsgLink(sensor_msgs/Temperature)>>
+    as
+    [sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)
+-   magnetic field as
+    [sensor_msgs/msg/MagneticField](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/MagneticField.html)
+-   temperature as
+    [sensor_msgs/msg/Temperature](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Temperature.html)
 
 ## Requisites
 

@@ -1,5 +1,3 @@
-<<MsgSrvDoc(simple_arm_server)>>
-
 ## Node API
 
 The `simple_arm_server` package contains a single node,

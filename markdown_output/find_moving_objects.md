@@ -1,10 +1,11 @@
 ## Overview
 
 This package provides two main nodes; one for finding moving objects in
-a stream of <<MsgLink(sensor_msgs/LaserScan)>> messages, and one for
-finding moving objects in a stream of
-<<MsgLink(sensor_msgs/PointCloud2)>> messages. Two corresponding
-nodelets are also provided.
+a stream of
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages, and one for finding moving objects in a stream of
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages. Two corresponding nodelets are also provided.
 
 There are also two nodes and two nodelets for handling two special
 message types:
@@ -12,9 +13,11 @@ message types:
 and
 [find_moving_objects/PointCloud2Array](http://docs.ros.org/kinetic/api/find_moving_objects/html/msg/PointCloud2Array.html).
 These message types contain a header and, respectively, an array of
-<<MsgLink(sensor_msgs/LaserScan)>> and
-<<MsgLink(sensor_msgs/PointCloud2)>>. The intended use for these
-message types is for multi-diode Lidars and similar sensors.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+and
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
+The intended use for these message types is for multi-diode Lidars and
+similar sensors.
 
 
 
@@ -67,24 +70,31 @@ so that the properties of the found objects can be presented using
 [RViz](http://wiki.ros.org/rviz). Each node/nodelet can publish a subset
 of the following message types.
 
--   Arrows (using <<MsgLink(visualization_msgs/MarkerArray)>> and
-    <<MsgLink(visualization_msgs/Marker)>>) can be used to display
-    each object's position (base of the arrow), velocity (length and
-    direction of the arrow) and confidence value (grayness of the arrow;
-    by default, 0.0 is black and 1.0 is white).
--   Green lines (using <<MsgLink(visualization_msgs/MarkerArray)>>
-    and <<MsgLink(visualization_msgs/Marker)>>) can be used to
-    display each object's estimated width.
--   Blue lines (using <<MsgLink(visualization_msgs/MarkerArray)>>
-    and <<MsgLink(visualization_msgs/Marker)>>) can be used to
-    display how each object has moved from the oldest range scan stored
-    in the bank to the newest.
+-   Arrows (using
+    [visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)
+    and
+    [visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html))
+    can be used to display each object's position (base of the arrow),
+    velocity (length and direction of the arrow) and confidence value
+    (grayness of the arrow; by default, 0.0 is black and 1.0 is white).
+-   Green lines (using
+    [visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)
+    and
+    [visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html))
+    can be used to display each object's estimated width.
+-   Blue lines (using
+    [visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)
+    and
+    [visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html))
+    can be used to display how each object has moved from the oldest
+    range scan stored in the bank to the newest.
 -   The point of each object which is closest to the sensor can be
     visualized by a point (using
-    <<MsgLink(sensor_msgs/LaserScan)>>).
--   Points (using <<MsgLink(sensor_msgs/LaserScan)>>) can be used to
-    display the newest stored range scan, adapted using EMA (Exponential
-    Moving Average), in the bank.
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)).
+-   Points (using
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+    can be used to display the newest stored range scan, adapted using
+    EMA (Exponential Moving Average), in the bank.
 
 Please refer to the "Parameters" section for each node [below](#nodes)
 for more details.
@@ -99,10 +109,11 @@ paper.
 
 ## Example
 
-The nodelet for interpreting <<MsgLink(sensor_msgs/PointCloud2)>>
+The nodelet for interpreting
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
 data streams and the node for interpreting
-<<MsgLink(sensor_msgs/LaserScan)>> data streams are used in the
-provided
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+data streams are used in the provided
 [launch file](https://github.com/andreasgustavsson/find_moving_objects/blob/kinetic-devel/launch/intel_realsense_d435_and_slamtec_rplidar_a2_w_enhancer.launch).
 This launch file can be used to run the interpreters on live or recorded
 sensor data (an example
@@ -112,9 +123,11 @@ supported by the launch file are the following (however, note that other
 ROS packages and software libraries are needed to run these live).
 
 -   Intel Realsense D435 depth camera (for
-    <<MsgLink(sensor_msgs/PointCloud2)>> data at about 15-30Hz)
--   Slamtec rplidar A2 (for <<MsgLink(sensor_msgs/LaserScan)>> data
-    at about 12Hz)
+    [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+    data at about 15-30Hz)
+-   Slamtec rplidar A2 (for
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+    data at about 12Hz)
 
 For the nodelets, there is a launch argument `manager` which is used
 to specify which manager the nodelet should connect to. For more
@@ -139,9 +152,9 @@ Please refer to the message type sources for their documentation.
 ## Nodes and Nodelets
 
 The node and nodelet used for finding objects in
-<<MsgLink(sensor_msgs/LaserScan)>> message streams have the same
-parameters and publish/subscribe to the same topics. The same is true
-for the other node and nodelet pairs.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+message streams have the same parameters and publish/subscribe to the
+same topics. The same is true for the other node and nodelet pairs.
 
 
 

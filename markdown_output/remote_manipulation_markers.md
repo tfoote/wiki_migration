@@ -37,8 +37,6 @@ Videos of the approaches in action can be found
 
 ## Messages and Services
 
-<<MsgSrvDoc(remote_manipulation_markers)>>
-
 ## Nodes
 
 

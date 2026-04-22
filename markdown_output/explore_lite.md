@@ -10,8 +10,9 @@ could be found. Movement commands will be send to
 Unlike similar packages, `explore_lite` does not create its own costmap,
 which makes it easier to configure and more efficient (lighter on
 resources). Node simply subscribes to
-<<MsgLink(nav_msgs/OccupancyGrid)>> messages. Commands for robot
-movement are send to [move_base](move_base) node.
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+messages. Commands for robot movement are send to [move_base](move_base)
+node.
 
 Node can do frontier filtering and can operate even on non-inflated
 maps. Goal blacklisting allows to deal with places inaccessible for
@@ -26,11 +27,14 @@ run properly configured [move_base](move_base) node.
 
 ![\|width="755px"](attachment:architecture.svg)
 
-`explore_lite` subscribes to a <<MsgLink(nav_msgs/OccupancyGrid)>>
-and <<MsgLink(map_msgs/OccupancyGridUpdate)>> messages to construct
-a map where it looks for frontiers. You can either use costmap published
-by [move_base](move_base) (ie. `<move_base>/global_costmap/costmap`)
-or you can use map constructed by mapping algorithm (SLAM).
+`explore_lite` subscribes to a
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+and
+[map_msgs/msg/OccupancyGridUpdate](https://docs.ros.org/en/rolling/p/map_msgs/msg/OccupancyGridUpdate.html)
+messages to construct a map where it looks for frontiers. You can either
+use costmap published by [move_base](move_base) (ie.
+`<move_base>/global_costmap/costmap`) or you can use map constructed
+by mapping algorithm (SLAM).
 
 Depending on your environment you may achieve better results with either
 SLAM map or costmap published by `move_base`. Advantage of

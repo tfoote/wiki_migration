@@ -1,6 +1,7 @@
 ## The Leg Detector
 
-This leg detector package takes <<MsgLink(sensor_msgs/LaserScan)>>s
+This leg detector package takes
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)s
 as input and uses a machine-learning-trained classifier to detect groups
 of laser readings as possible legs. Sadly, the training dataset has been
 lost to Willow Garage history (it wasn't even available before they
@@ -8,12 +9,13 @@ closed). The code is in the repository for retraining, but is
 unsupported at this time.
 
 This node will publish
-<<MsgLink(people_msgs/PositionMeasurementArray)>>s for the
-individual legs, and it can also attempt to pair the legs together and
-publish their average as an estimate of where the center of one person
-is as a <<MsgLink(people_msgs/PositionMeasurement)>>. The node will
-also optionally publish visualization Marker messages to indicate where
-detections happened.
+[people_msgs/msg/PositionMeasurementArray](https://docs.ros.org/en/rolling/p/people_msgs/msg/PositionMeasurementArray.html)s
+for the individual legs, and it can also attempt to pair the legs
+together and publish their average as an estimate of where the center of
+one person is as a
+[people_msgs/msg/PositionMeasurement](https://docs.ros.org/en/rolling/p/people_msgs/msg/PositionMeasurement.html).
+The node will also optionally publish visualization Marker messages to
+indicate where detections happened.
 
 ### Possible Usages
 

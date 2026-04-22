@@ -1,5 +1,3 @@
-<<MsgSrvDoc(carl_dynamixel)>>
-
 ## About
 
 The `carl_dynamixel` package is a package which launches the correct

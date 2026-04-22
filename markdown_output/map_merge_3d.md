@@ -24,8 +24,8 @@ transformations back to robots your communication must take care of it.
 
 `map_merge_3d` finds robot maps automatically and new robots can be
 added to the system at any time. 3D maps are expected as
-<<MsgLink(sensor_msgs/PointCloud2)>>, other map messages are not
-supported.
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html),
+other map messages are not supported.
 
 ![\|width="755px"](attachment:architecture.svg)
 

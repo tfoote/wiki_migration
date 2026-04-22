@@ -6,8 +6,6 @@ node that acts as a wrapper for relevant MoveIt! functionality that CARL
 uses, and a node that provides simple execution of common actions such
 as arm readying, retracting, and lifting.
 
-<<MsgSrvDoc(carl_moveit)>>
-
 ## Nodes
 
 

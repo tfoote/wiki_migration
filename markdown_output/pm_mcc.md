@@ -16,8 +16,6 @@ Technology, 2004.
 
 ## ROS API
 
-<<MsgSrvDoc(pm_mcc)>>
-
 ### Services
 
 

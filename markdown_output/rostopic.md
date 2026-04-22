@@ -87,53 +87,54 @@ $ rostopic echo --filter "m.data=='foo'"  /topic_name
  The Python
 expression can use any Python builtins plus the variable `m` (the
 message). For example, to filter based on the `frame_id` of the first
-transform in a <<MsgLink(tf/tfMessage)>>: 
+transform in a
+[tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html):
+
 
 ```
 $ rostopic echo --filter "m.transforms[0].child_frame_id == 'my_frame'" /tf
 ```
 
-
-`-c` . Clear the screen after each message is published. Cannot be
-used with `-p`. 
+ `-c` . Clear the screen after each message is
+published. Cannot be used with `-p`. 
 
 ```
 $ rostopic echo -c /topic_name
 ```
 
- `-b` . Display messages in
-a [bag](Bags) file: 
+ `-b` .
+Display messages in a [bag](Bags) file: 
 
 ```
 $ rostopic echo -b log_file.bag /topic_name
 ```
 
- `-p` . Display messages
-in a matlab/octave-friendly plotting format. Cannot be used with `-c`.
-
+ `-p`
+. Display messages in a matlab/octave-friendly plotting format. Cannot
+be used with `-c`. 
 
 ```
 $ rostopic echo -p /topic_name
 ```
 
- `-w NUM_WIDTH` . Print all numeric values
-with a fixed width. `\--nostr`, `\--noarr` . Exclude string and
-array fields from the plotting output. 
+ `-w NUM_WIDTH` . Print
+all numeric values with a fixed width. `\--nostr`, `\--noarr` .
+Exclude string and array fields from the plotting output.
+
 
 ```
 $ rostopic bw /topic_name
 ```
 
-0 `-n
-COUNT` . Echo COUNT messages and exit. 
+0 `-n COUNT` . Echo COUNT messages and exit.
+
 
 ```
 $ rostopic bw /topic_name
 ```
 
-1 `echo
-<topic-name/field>` . Display specific fields in a message.
-
+1 `echo <topic-name/field>` . Display
+specific fields in a message. 
 
 ```
 $ rostopic bw /topic_name

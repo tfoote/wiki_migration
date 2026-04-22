@@ -5,5 +5,5 @@ ultrasonic sensors.
 
 ## ROS Message Types
 
--   <<MsgLink(toposens_msgs/TsPoint)>>
--   <<MsgLink(toposens_msgs/TsScan)>>
+-   [toposens_msgs/msg/TsPoint](https://docs.ros.org/en/rolling/p/toposens_msgs/msg/TsPoint.html)
+-   [toposens_msgs/msg/TsScan](https://docs.ros.org/en/rolling/p/toposens_msgs/msg/TsScan.html)

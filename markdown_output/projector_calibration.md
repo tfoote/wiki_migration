@@ -35,12 +35,13 @@ node.0 {
 
 Given a homography, `H` (provided by
 [projector_calibration/grid](projector_calibration#grid)), and camera
-calibration `K` (from a <<MsgLink(sensor_msgs/CameraInfo)>>), a 3D
-point, `p` in the world can be projected onto as follows: 1. Transform
-`p` into the same frame as the camera used to find `H` (call the new
-point `p`,,img,,). 1. Project `p`,,img,, onto the image plane (call
-the new point `p`,,proj,,). 1. Transform `p`,,2d,, to projector
-pixels using `H`
+calibration `K` (from a
+[sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)),
+a 3D point, `p` in the world can be projected onto as follows: 1.
+Transform `p` into the same frame as the camera used to find `H`
+(call the new point `p`,,img,,). 1. Project `p`,,img,, onto the
+image plane (call the new point `p`,,proj,,). 1. Transform `p`,,2d,,
+to projector pixels using `H`
 
 In python this looks something like 
 

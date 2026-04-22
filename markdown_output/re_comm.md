@@ -4,55 +4,70 @@ The [re_comm](re_comm) package provides ROS services to submit, update,
 request, delete and search for database entries and to forward semantic
 queries to !RoboEarth's [Sesame](http://www.openrdf.org/) repository:
 
--   re_comm/get_action_recipe (<<SrvLink(re_comm/GetActionRecipe)>>)
--   re_comm/get_binary_file (<<SrvLink(re_comm/GetBinaryFile)>>)
--   re_comm/get_environment (<<SrvLink(re_comm/GetEnvironment)>>)
--   re_comm/get_object (<<SrvLink(re_comm/GetObject)>>)
+-   re_comm/get_action_recipe
+    ([re_comm/srv/GetActionRecipe](https://docs.ros.org/en/rolling/p/re_comm/srv/GetActionRecipe.html))
+-   re_comm/get_binary_file
+    ([re_comm/srv/GetBinaryFile](https://docs.ros.org/en/rolling/p/re_comm/srv/GetBinaryFile.html))
+-   re_comm/get_environment
+    ([re_comm/srv/GetEnvironment](https://docs.ros.org/en/rolling/p/re_comm/srv/GetEnvironment.html))
+-   re_comm/get_object
+    ([re_comm/srv/GetObject](https://docs.ros.org/en/rolling/p/re_comm/srv/GetObject.html))
 
 ```{=html}
 <!-- -->
 ```
--   re_comm/set_action_recipe (<<SrvLink(re_comm/SetActionRecipe)>>)
--   re_comm/set_binary_file (<<SrvLink(re_comm/SetBinaryFile)>>)
--   re_comm/set_environment (<<SrvLink(re_comm/SetEnvironment)>>)
--   re_comm/set_object (<<SrvLink(re_comm/SetObject)>>)
+-   re_comm/set_action_recipe
+    ([re_comm/srv/SetActionRecipe](https://docs.ros.org/en/rolling/p/re_comm/srv/SetActionRecipe.html))
+-   re_comm/set_binary_file
+    ([re_comm/srv/SetBinaryFile](https://docs.ros.org/en/rolling/p/re_comm/srv/SetBinaryFile.html))
+-   re_comm/set_environment
+    ([re_comm/srv/SetEnvironment](https://docs.ros.org/en/rolling/p/re_comm/srv/SetEnvironment.html))
+-   re_comm/set_object
+    ([re_comm/srv/SetObject](https://docs.ros.org/en/rolling/p/re_comm/srv/SetObject.html))
 
 ```{=html}
 <!-- -->
 ```
 -   re_comm/update_action_recipe
-    (<<SrvLink(re_comm/UpdateActionRecipe)>>)
+    ([re_comm/srv/UpdateActionRecipe](https://docs.ros.org/en/rolling/p/re_comm/srv/UpdateActionRecipe.html))
 -   re_comm/update_binary_file
-    (<<SrvLink(re_comm/UpdateBinaryFile)>>)
+    ([re_comm/srv/UpdateBinaryFile](https://docs.ros.org/en/rolling/p/re_comm/srv/UpdateBinaryFile.html))
 -   re_comm/update_environment
-    (<<SrvLink(re_comm/UpdateEnvironment)>>)
--   re_comm/update_objectowl (<<SrvLink(re_comm/UpdateObjectOWL)>>)
+    ([re_comm/srv/UpdateEnvironment](https://docs.ros.org/en/rolling/p/re_comm/srv/UpdateEnvironment.html))
+-   re_comm/update_objectowl
+    ([re_comm/srv/UpdateObjectOWL](https://docs.ros.org/en/rolling/p/re_comm/srv/UpdateObjectOWL.html))
 
 ```{=html}
 <!-- -->
 ```
--   re_comm/del_action_recipe (<<SrvLink(re_comm/DelActionRecipe)>>)
--   re_comm/del_binary_file (<<SrvLink(re_comm/DelBinaryFile)>>)
--   re_comm/del_environment (<<SrvLink(re_comm/DelEnvironment)>>)
--   re_comm/del_object (<<SrvLink(re_comm/DelObject)>>)
+-   re_comm/del_action_recipe
+    ([re_comm/srv/DelActionRecipe](https://docs.ros.org/en/rolling/p/re_comm/srv/DelActionRecipe.html))
+-   re_comm/del_binary_file
+    ([re_comm/srv/DelBinaryFile](https://docs.ros.org/en/rolling/p/re_comm/srv/DelBinaryFile.html))
+-   re_comm/del_environment
+    ([re_comm/srv/DelEnvironment](https://docs.ros.org/en/rolling/p/re_comm/srv/DelEnvironment.html))
+-   re_comm/del_object
+    ([re_comm/srv/DelObject](https://docs.ros.org/en/rolling/p/re_comm/srv/DelObject.html))
 
 ```{=html}
 <!-- -->
 ```
 -   re_comm/search_action_recipes
-    (<<SrvLink(re_comm/SearchActionRecipes)>>)
+    ([re_comm/srv/SearchActionRecipes](https://docs.ros.org/en/rolling/p/re_comm/srv/SearchActionRecipes.html))
 -   re_comm/search_environments
-    (<<SrvLink(re_comm/SearchEnvironments)>>)
--   re_comm/search_objects (<<SrvLink(re_comm/SearchObjects)>>)
+    ([re_comm/srv/SearchEnvironments](https://docs.ros.org/en/rolling/p/re_comm/srv/SearchEnvironments.html))
+-   re_comm/search_objects
+    ([re_comm/srv/SearchObjects](https://docs.ros.org/en/rolling/p/re_comm/srv/SearchObjects.html))
 
 ```{=html}
 <!-- -->
 ```
 -   re_comm/query_action_recipes
-    (<<SrvLink(re_comm/QueryActionRecipes)>>)
+    ([re_comm/srv/QueryActionRecipes](https://docs.ros.org/en/rolling/p/re_comm/srv/QueryActionRecipes.html))
 -   re_comm/query_environments
-    (<<SrvLink(re_comm/QueryEnvironments)>>)
--   re_comm/query_objects (<<SrvLink(re_comm/QueryObjects)>>)
+    ([re_comm/srv/QueryEnvironments](https://docs.ros.org/en/rolling/p/re_comm/srv/QueryEnvironments.html))
+-   re_comm/query_objects
+    ([re_comm/srv/QueryObjects](https://docs.ros.org/en/rolling/p/re_comm/srv/QueryObjects.html))
 
 If data in the !RoboEarth database is to be changed, the corresponding
 ROS service expects an API key as an argument. Services that provide

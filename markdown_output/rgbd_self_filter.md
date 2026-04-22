@@ -22,14 +22,20 @@ Code is here: <https://kforge.ros.org/rgbdselffilter/rgbd_self_filter>
 To run the `rgbd_self_filter` with your robot, you will need:
 
 -   A URDF file of your robot with STL meshes for all joints
--   A <<MsgLink(sensor_msgs/CameraInfo)>> topic that describes the
-    RGBD camera.
--   Incoming <<MsgLink(sensor_msgs/PointCloud)>> or
-    <<MsgLink(sensor_msgs/PointCloud2)>> messages.
--   Incoming <<MsgLink(sensor_msgs/PointCloud2)>> messages must have
-    the `width` and `height` fields set properly.
--   Incoming <<MsgLink(sensor_msgs/PointCloud)>> messages must have
-    the "u" and "v" channels filled out.
+-   A
+    [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+    topic that describes the RGBD camera.
+-   Incoming
+    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+    or
+    [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+    messages.
+-   Incoming
+    [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+    messages must have the `width` and `height` fields set properly.
+-   Incoming
+    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+    messages must have the "u" and "v" channels filled out.
 -   Camera info and point cloud messages do not need to by sync'd.
 -   For stereo cameras, the camera info should come from the left, or
     primary, camera.

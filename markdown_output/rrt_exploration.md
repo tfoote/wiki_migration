@@ -92,7 +92,7 @@ A mobile robot that can be used with the
 [navigation stack](http://wiki.ros.org/navigation) (publishes /odom and
 /tf. Receives velocity commands ..). The robot must also be equipped
 with a laser scanner or any sensor that publishes laser scan message
-(<<MsgLink(sensor_msgs/LaserScan Message)>>).
+([sensor_msgs/msg/LaserScan Message](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan Message.html)).
 
 ## Installation
 

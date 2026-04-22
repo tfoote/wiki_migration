@@ -11,7 +11,8 @@ This package uses ViSP's camera model described in
 and camera calibration capabilities described in
 [ViSP computer vision algorithms manual](https://visp.inria.fr/manuals/visp-tutorial-computer-vision.pdf).
 The output camera parameters are given in the
-<<MsgLink(sensor_msgs/CameraInfo)>> format.
+[sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+format.
 
 ## Supported hardware
 

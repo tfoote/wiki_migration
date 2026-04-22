@@ -39,5 +39,5 @@ node.0 {
 
 `xv11_laser_driver` is a C++ library for reading the data from the
 XV11's laser and packing that data into a
-<<MsgLink(sensor_msgs/LaserScan)>>. As a standalone library, it has
-no ROS API.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
+As a standalone library, it has no ROS API.

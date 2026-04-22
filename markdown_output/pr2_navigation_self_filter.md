@@ -2,12 +2,13 @@
 
 The pr2_navigation_self_filter package provides a node that filters hits
 on the robot's body out of
-<<MsgLink(geometry_msgs/PointCloud.msg)>> messages and republishes
-them.
+[geometry_msgs/msg/PointCloud.msg](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PointCloud.msg.html)
+messages and republishes them.
 
 ## API Stability
 
-Due to the fact that <<MsgLink(geometry_msgs/PointCloud.msg)>>
+Due to the fact that
+[geometry_msgs/msg/PointCloud.msg](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PointCloud.msg.html)
 messages will soon be deprecated, the pr2_navigation_self_filter has no
 stable API. A new version of the node will be written and supported long
 term with the new !PointCloud structure, but until the

@@ -1,7 +1,8 @@
 ## Overview
 
 The `diagnostic_aggregator` contains a ROS node, `aggregator_node`,
-that listens to <<MsgLink(diagnostic_msgs/DiagnosticArray)>>
+that listens to
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
 messages on the `/diagnostics` topic, processes and categorizes the
 data, and republishes on `/diagnostics_agg`. The `aggregator_node`
 loads "Analyzer" plugins to perform the diagnostics processing and
@@ -115,10 +116,10 @@ class. All derived classes must implement these methods:
 -   `getName()` - Get nice name, like "Motors" or "Sensors"
 
 Analyzers can choose the error state for any
-<<MsgLink(diagnostic_msgs/DiagnosticStatus)>> message they analyze
-and report. Generally, the "parent" of an analyzer has an error state
-of the maximum of its children, but some analyzers may have more
-advanced methods.
+[diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)
+message they analyze and report. Generally, the "parent" of an
+analyzer has an error state of the maximum of its children, but some
+analyzers may have more advanced methods.
 
 The analyzers are responsible for correctly setting the names of each
 item they analyze. The `aggregator_node` does not do any checking or

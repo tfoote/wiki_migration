@@ -95,10 +95,10 @@ $ rosrun stdr_server stdr_server_node <map_file.yaml>
 
 The `map_loader_node` node uses [map_server](map_server)'s
 `image_loader` library to load an map image from a file, fill a
-<<MsgLink(nav_msgs/OccupancyGrid)>> message, call
-`load_static_map_external` service and load it to the simulator. The
-loading functionality is also provided in `map_loader` library and can
-be used by other packages.
+[nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
+message, call `load_static_map_external` service and load it to the
+simulator. The loading functionality is also provided in `map_loader`
+library and can be used by other packages.
 
 #### Command-Line Usage
 

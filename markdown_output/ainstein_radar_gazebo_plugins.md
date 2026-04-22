@@ -6,7 +6,8 @@ based on the existing laser
 [RayPlugin](https://osrf-distributions.s3.amazonaws.com/gazebo/api/dev/classgazebo_1_1RayPlugin.html)
 with additional processing to convert laser range detections to radar
 targets and publish them as
-<<MsgLink(ainstein_radar_msgs/RadarTargetArray)>> messages.
+[ainstein_radar_msgs/msg/RadarTargetArray](https://docs.ros.org/en/rolling/p/ainstein_radar_msgs/msg/RadarTargetArray.html)
+messages.
 
 While the `libgazebo_radar_sensor_plugin.so` shared library (plugin) is
 intended to be generic enough to simulate any Ainstein radar, it

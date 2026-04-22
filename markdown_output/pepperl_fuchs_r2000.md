@@ -46,14 +46,16 @@ mentioned below.
 
 ### Published Topics
 
--   `scan` (<<MsgLink(sensor_msgs/LaserScan)>>) A standard ROS
-    Laserscan message containing the measured data. The message rate per
-    second depends on the `scan_frequency` parameter.
+-   `scan`
+    ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+    A standard ROS Laserscan message containing the measured data. The
+    message rate per second depends on the `scan_frequency` parameter.
 
 ### Parameters
 
 -   `frame_id` The frame-ID in the Header of the published
-    <<MsgLink(sensor_msgs/LaserScan)>> messages
+    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+    messages
 -   `scanner_ip` IP or hostname of the laserscanner
 -   `scan_frequency` The scan frequency (rotation speed of scanner
     head) in Hz in the range \[10;50\]

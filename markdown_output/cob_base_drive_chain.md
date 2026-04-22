@@ -83,7 +83,8 @@ In order to record and extract data using cob_base_drive_chain node in
 the ROS environment, the only thing you have to do is calling two
 services offered by base_drive_chain_node:
 
--   !ElmoRecorderConfig <<SrvLink(cob_srvs/ElmoRecorderConfig)>>
+-   !ElmoRecorderConfig
+    [cob_srvs/srv/ElmoRecorderConfig](https://docs.ros.org/en/rolling/p/cob_srvs/srv/ElmoRecorderConfig.html)
     __\
     Arguments:__ int64 recordinggap: With that setting, you can
     specify the time gap between two data points. The entered number is
@@ -91,7 +92,8 @@ services offered by base_drive_chain_node:
     total, so the total recording time is RG \* 4 \* 90\*1024 µsec.
     Configuring the Recorder this way, the recording process starts
     immediately.
--   !ElmoRecorderReadout <<SrvLink(cob_srvs/ElmoRecorderReadout)>>
+-   !ElmoRecorderReadout
+    [cob_srvs/srv/ElmoRecorderReadout](https://docs.ros.org/en/rolling/p/cob_srvs/srv/ElmoRecorderReadout.html)
     __\
     Arguments:__ int64 subindex: Specify the recorded value you want
     to download and save. Predefined records are 1: Main Speed, 2: Main

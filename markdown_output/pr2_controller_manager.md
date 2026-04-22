@@ -26,9 +26,10 @@ the [safety limits](pr2_controller_manager/safety_limits) page.
 ### Joint State Publishing
 
 The controller manager publishes the state of all joints over ROS, as
-<<MsgLink(sensor_msgs/JointState)>> messages. These messages appear
-on the `joint_state` topic, at 100 Hz. You can change this publishing
-frequency by setting the `joint_state_publish_rate` parameter.
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+messages. These messages appear on the `joint_state` topic, at 100 Hz.
+You can change this publishing frequency by setting the
+`joint_state_publish_rate` parameter.
 
 ### Tools for running controllers
 

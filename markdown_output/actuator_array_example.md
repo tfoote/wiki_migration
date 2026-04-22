@@ -25,22 +25,26 @@ Array Driver system.
 
 #### Subscribed Topics
 
-`command` (<<MsgLink(sensor_msgs/JointState)>>) A message
-containing the desired position of one or more joints controlled by this
-driver.
+`command`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+A message containing the desired position of one or more joints
+controlled by this driver.
 
 #### Published Topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>) The current
-state of each joint controlled by this driver.
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+The current state of each joint controlled by this driver.
 
 #### Services
 
-`stop` (<<SrvLink(std_srvs/Empty)>>) Instruct the driver to stop
-all actuators immediately.
+`stop`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct the driver to stop all actuators immediately.
 
-`home` (<<SrvLink(std_srvs/Empty)>>) Instruct each actuator to
-return to its home position.
+`home`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct each actuator to return to its home position.
 
 #### Parameters
 
@@ -74,22 +78,26 @@ robot description file itself.
 
 #### Subscribed Topics
 
-`command` (<<MsgLink(sensor_msgs/JointState)>>) A message
-containing the desired position of one or more joints controlled by this
-driver.
+`command`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+A message containing the desired position of one or more joints
+controlled by this driver.
 
 #### Published Topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>) The current
-state of each joint controlled by this driver.
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+The current state of each joint controlled by this driver.
 
 #### Services
 
-`stop` (<<SrvLink(std_srvs/Empty)>>) Instruct the driver to stop
-all actuators immediately.
+`stop`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct the driver to stop all actuators immediately.
 
-`home` (<<SrvLink(std_srvs/Empty)>>) Instruct each actuator to
-return to its home position.
+`home`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct each actuator to return to its home position.
 
 #### Parameters
 
@@ -130,22 +138,26 @@ specific hardware to test the basic Actuator Array Driver system.
 
 #### Subscribed Topics
 
-`command` (<<MsgLink(sensor_msgs/JointState)>>) A message
-containing the desired position of one or more joints controlled by this
-driver.
+`command`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+A message containing the desired position of one or more joints
+controlled by this driver.
 
 #### Published Topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>) The current
-state of each joint controlled by this driver.
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+The current state of each joint controlled by this driver.
 
 #### Services
 
-`stop` (<<SrvLink(std_srvs/Empty)>>) Instruct the driver to stop
-all actuators immediately.
+`stop`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct the driver to stop all actuators immediately.
 
-`home` (<<SrvLink(std_srvs/Empty)>>) Instruct each actuator to
-return to its home position.
+`home`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct each actuator to return to its home position.
 
 #### Parameters
 

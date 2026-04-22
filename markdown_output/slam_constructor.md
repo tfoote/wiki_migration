@@ -200,15 +200,18 @@ GMapping has the following additional parameters (note that
 
 ## Subscribed topics
 
--   `/tf` (<<MsgLink(tf/tfMessage)>>) -- should provide
-    [required transforms](#Required_tf_transforms).
--   `/base_scan` (<<MsgLink(sensor_msgs/LaserScan)>>) -- laser
-    scans that should be used to create a map
+-   `/tf`
+    ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html))
+    -- should provide [required transforms](#Required_tf_transforms).
+-   `/base_scan`
+    ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html))
+    -- laser scans that should be used to create a map
 
 ## Published topics
 
--   map (<<MsgLink(nav_msgs/OccupancyGrid)>>) -- the map data are
-    periodically published to this topic
+-   map
+    ([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html))
+    -- the map data are periodically published to this topic
 
 ## Required tf transforms
 

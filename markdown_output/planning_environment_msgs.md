@@ -1,5 +1,3 @@
-<<MsgSrvDoc(planning_environment_msgs)>>
-
 ## ROS API
 
 ### API Stability

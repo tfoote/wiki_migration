@@ -13,8 +13,10 @@ The following plugins are currently provided for `rqt_bag`:
 ### Image
 
 The image view displays raw image data for
-<<MsgLink(sensor_msgs/Image)>> and
-<<MsgLink(sensor_msgs/CompressedImage)>> messages:
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+and
+[sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
+messages:
 
 ![rqt_bag image view\|width="300"](attachment:image_grab.png)
 

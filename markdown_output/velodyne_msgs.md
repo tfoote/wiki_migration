@@ -7,5 +7,3 @@ components and their users.
 It also provides bag migration scripts for translating old captured data
 to the latest format using the [rosbag fix](rosbag/Commandline#fix)
 command.
-
-<<MsgSrvDoc(velodyne_msgs)>>

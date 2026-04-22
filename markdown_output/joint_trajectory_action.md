@@ -87,7 +87,7 @@ joint_trajectory_action_node:
 
 The joint trajectory action provides an action server (see
 [actionlib](actionlib)) that takes in goals of the type
-<<MsgLink(pr2_controllers_msgs/JointTrajectoryGoal)>>.
+[pr2_controllers_msgs/msg/JointTrajectoryGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryGoal.html).
 
 
 

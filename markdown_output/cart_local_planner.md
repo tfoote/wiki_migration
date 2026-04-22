@@ -6,17 +6,17 @@ also provides an additional interface for controlling the cart.
 ## Advertised topics
 
 `articulate_cart_server`/command_twist
-(<<MsgLink(geometry_msgs/TwistStamped)>>) Commanded twist for the
-cart reference point
+([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html))
+Commanded twist for the cart reference point
 
 ## Subscribed topics
 
 `/move_base_node/SBPLCartPlanner/sbcl_robot_cart_plan`
-(<<MsgLink(cart_pushing_msgs/RobotCartPath)>>) The planner is
-expected to publish the full plan (with both base and cart poses) on
-this topic. When the plugin receives a global plan from move_base, it is
-compared with the recent plans on this topic to find the corresponding
-one, and the arm positions are looked up from there.
+([cart_pushing_msgs/msg/RobotCartPath](https://docs.ros.org/en/rolling/p/cart_pushing_msgs/msg/RobotCartPath.html))
+The planner is expected to publish the full plan (with both base and
+cart poses) on this topic. When the plugin receives a global plan from
+move_base, it is compared with the recent plans on this topic to find
+the corresponding one, and the arm positions are looked up from there.
 
 ## TF frames needed
 

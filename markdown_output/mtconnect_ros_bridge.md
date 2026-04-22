@@ -141,8 +141,9 @@ CncRequestTopic:
 
 
 Regarding the MTConnect to ROS conversion, note that the ROS !CncRequest
-message type <<MsgLink(mtconnect_msgs/CncRequest)>> consists of an
-array of strings, or from a terminal:
+message type
+[mtconnect_msgs/msg/CncRequest](https://docs.ros.org/en/rolling/p/mtconnect_msgs/msg/CncRequest.html)
+consists of an array of strings, or from a terminal:
 
 
 

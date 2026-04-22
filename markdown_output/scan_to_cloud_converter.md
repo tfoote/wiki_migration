@@ -1,8 +1,10 @@
 ## Details
 
 The [scan_to_cloud_converter](scan_to_cloud_converter) converts
-<<MsgLink(sensor_msgs/LaserScan)>> to
-<<MsgLink(sensor_msgs/PointCloud2)>> messages.
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+to
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages.
 
 The ouput cloud message has the `is_dense` attribute set to `false`.
 Ranges in the scan message which are outside `(min_range, max range)`

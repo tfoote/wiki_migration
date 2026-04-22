@@ -45,8 +45,9 @@ in the figure above), and publish it as a [tf](tf) transform.
 
 Note that projecting the scan from an arbitrary roll and pitch results
 in points that are no longer equal angles apart. Thus, we pubish the
-projected scan as a <<MsgLink(pcl/PointCloudXYZ)>>. The point cloud
-is published in the base_ortho frame of reference.
+projected scan as a
+[pcl/msg/PointCloudXYZ](https://docs.ros.org/en/rolling/p/pcl/msg/PointCloudXYZ.html).
+The point cloud is published in the base_ortho frame of reference.
 
 ## Example
 

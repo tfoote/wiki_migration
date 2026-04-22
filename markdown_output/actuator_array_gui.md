@@ -13,10 +13,12 @@ The GUI provides the user with two sets of information for each joint:
 (1) the command and (2) the current state of each joint. The user may
 adjust the command position slider and change the values of the velocity
 and effort fields. Clicking on the `Send` button causes the GUI to
-publish a single <<MsgLink(sensor_msgs/JointState)>> message on the
-`command` topic. Toggling the `Auto Send` button causes the GUI to
-continuously send command messages at a rate of 10Hz. The `Home` and
-`Stop` buttons produce the corresponding service calls.
+publish a single
+[sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+message on the `command` topic. Toggling the `Auto Send` button
+causes the GUI to continuously send command messages at a rate of 10Hz.
+The `Home` and `Stop` buttons produce the corresponding service
+calls.
 
 ![](attachment:actuator_array_gui.png)
 
@@ -26,21 +28,25 @@ continuously send command messages at a rate of 10Hz. The `Home` and
 
 #### Subscribed Topics
 
-`joint_states` (<<MsgLink(sensor_msgs/JointState)>>) The current
-state of each joint
+`joint_states`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+The current state of each joint
 
 #### Published Topics
 
-`command` (<<MsgLink(sensor_msgs/JointState)>>) A message
-containing the desired position/velocity/effort of all joints
+`command`
+([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html))
+A message containing the desired position/velocity/effort of all joints
 
 #### Called Services
 
-`stop` (<<SrvLink(std_srvs/Empty)>>) Instruct the driver to stop
-all actuators immediately.
+`stop`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct the driver to stop all actuators immediately.
 
-`home` (<<SrvLink(std_srvs/Empty)>>) Instruct each actuator to
-return to its home position.
+`home`
+([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html))
+Instruct each actuator to return to its home position.
 
 #### Parameters
 

@@ -2,8 +2,9 @@
 
 The PR2 calibration executive's sole goal is to aid in collecting
 bagfiles that hold calibration samples
-(<<MsgLink(calibration_msgs/RobotMeasurement)>>), which can then be
-used in [pr2_calibration_estimation](pr2_calibration_estimation).
+([calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)),
+which can then be used in
+[pr2_calibration_estimation](pr2_calibration_estimation).
 
 This page is definitely not a full explanation of how to use this
 package, but rather a tool to help get started in exploring this
@@ -28,7 +29,8 @@ preprocessing pipelines for this sample 3. Command the robot to move to
 the specified joint positions for this sample 4. Wait for the camera
 data and joint state data to stabilize 5. Grab sensor data from the
 stable interval via the internal caches 6. Bundle the data together as a
-<<MsgLink(calibration_msgs/RobotMeasurement)>> and then publish.
+[calibration_msgs/msg/RobotMeasurement](https://docs.ros.org/en/rolling/p/calibration_msgs/msg/RobotMeasurement.html)
+and then publish.
 
 ### Running the Executive
 
@@ -198,8 +200,8 @@ requested interval.
 #### Controllers
 
 Each controller definition corresponds to a controller accepts
-<<MsgLink(trajectory_msgs/JointTrajectory)>> messages. For the PR2,
-we rely on the
+[trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)
+messages. For the PR2, we rely on the
 [ JointSplineTrajectoryController](robot_mechanism_controllers/JointSplineTrajectoryController ):
 One for the head and one for each arm. The controller defintions are
 defined in

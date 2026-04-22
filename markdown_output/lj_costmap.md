@@ -6,9 +6,9 @@ dissimilarities based on a local cost map, such as those obtained from
 the [local_map](local_map) package.
 
 The role of this jockey is to get the dissimilarity of the
-<<MsgLink(lama_msgs/PlaceProfile)>> descriptors of all vertices with
-the current place profile. The action is done when the dissimilarities
-are computed. Implemented actions:
+[lama_msgs/msg/PlaceProfile](https://docs.ros.org/en/rolling/p/lama_msgs/msg/PlaceProfile.html)
+descriptors of all vertices with the current place profile. The action
+is done when the dissimilarities are computed. Implemented actions:
 
 -   `GET_VERTEX_DESCRIPTOR`: return the PlaceProfile and the computed
     Crossing
@@ -20,11 +20,11 @@ are computed. Implemented actions:
 
 #### Interaction with the map (created by this jockey)
 
-  -- --------------------------- -- ----------------------------------------- -- ----------------------------------- --
-     \[Getter\]\[/\]\[Setter\]      message type                                 interface default name              
-     Getter/Setter                  <<MsgLink(lama_msgs/PlaceProfile)>>      jockey_name + "_place_profile"   
-     Setter                         <<MsgLink(lama_msgs/Crossing)>>          jockey_name + "_crossing"        
-  -- --------------------------- -- ----------------------------------------- -- ----------------------------------- --
+  -- --------------------------- -- ------------------------------------------------------------------------------------------------- -- ----------------------------------- --
+     \[Getter\]\[/\]\[Setter\]      message type                                                                                         interface default name              
+     Getter/Setter                  [lama_msgs/msg/PlaceProfile](https://docs.ros.org/en/rolling/p/lama_msgs/msg/PlaceProfile.html)      jockey_name + "_place_profile"   
+     Setter                         [lama_msgs/msg/Crossing](https://docs.ros.org/en/rolling/p/lama_msgs/msg/Crossing.html)              jockey_name + "_crossing"        
+  -- --------------------------- -- ------------------------------------------------------------------------------------------------- -- ----------------------------------- --
 
 
 

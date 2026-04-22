@@ -7,5 +7,3 @@ provide one-size-fit-all messages, integrate your specification in a new
 coherent custom message, and feel free to propose your changes with a
 Pull Request in our repository if you think that it could be helpful for
 someone else.
-
-<<MsgSrvDoc(qb_device_msgs)>>

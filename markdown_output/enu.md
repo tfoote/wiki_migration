@@ -1,7 +1,8 @@
 Node wrappers for cartesian-!LatLong conversion functions in
 [libswiftnav](https://github.com/swift-nav/libswiftnav). Serves as the
-glue between <<MsgLink(sensor_msgs/NavSatFix)>>-producing sensor
-nodes and [robot_pose_ekf](robot_pose_ekf).
+glue between
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)-producing
+sensor nodes and [robot_pose_ekf](robot_pose_ekf).
 
 ## Nodes
 

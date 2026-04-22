@@ -5,8 +5,10 @@ users can record and playback [bag](Bags) files containing ROS messages.
 For diagnostics bag files, we use tools in the `diagnostic_analysis`
 package to convert these bag files into CSV files. The `export_csv.py`
 tool converts these bag files into CSV files, with a separate CSV file
-for each <<MsgLink(diagnostics_msgs/DiagnosticStatus)>> name. These
-CSV files can be analyzed with off-the-shelf spreadsheet software.
+for each
+[diagnostics_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostics_msgs/msg/DiagnosticStatus.html)
+name. These CSV files can be analyzed with off-the-shelf spreadsheet
+software.
 
 Larger bag files can be too large for common spreadsheet software (which
 support at most 65,536 rows). For large files, `sparse_csv.py` can
@@ -25,9 +27,10 @@ Discarding message on topic: /turtle1/color_sensor
 ```
 
  The PR2 diagnostics
-toolchain uses <<MsgLink(diagnostic_msgs/DiagnosticArray)>> messages
-on the "/diagnostics" topic, which is what this package is designed
-for. Only [bag files](Bags) of this type will work with the
+toolchain uses
+[diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+messages on the "/diagnostics" topic, which is what this package is
+designed for. Only [bag files](Bags) of this type will work with the
 [diagnostic_analysis](diagnostic_analysis) package. To play other bag
 files, use [rostopic](rostopic).
 

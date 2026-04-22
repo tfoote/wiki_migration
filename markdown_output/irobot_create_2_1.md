@@ -73,8 +73,6 @@ driver based programs.
 
 ### Messages and Services
 
-<<MsgSrvDoc(irobot_create_2_1 False)>>
-
 The ROS driver provides the following services:
 
 -   Brake: takes in a single boolean. When the boolean is true (e.g. 1),

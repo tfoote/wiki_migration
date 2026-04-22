@@ -110,8 +110,9 @@ Playing sound 2".
 
 
 To get an up-to-date list of the built-in sounds, consult the definition
-of the <<MsgLink(sound_play/SoundRequest)>> message. The relevant
-information is below the "`Sounds`" comment.
+of the
+[sound_play/msg/SoundRequest](https://docs.ros.org/en/rolling/p/sound_play/msg/SoundRequest.html)
+message. The relevant information is below the "`Sounds`" comment.
 
 
 
@@ -267,8 +268,9 @@ the information in this section for something other than satisfying
 curiosity, you are probably doing something wrong.
 
 Sound commands are issued to `soundplay_node.py` via a
-<<MsgLink(sound_play/SoundRequest)>> message. Commands define two
-things: a sound, and what to do with that sound.
+[sound_play/msg/SoundRequest](https://docs.ros.org/en/rolling/p/sound_play/msg/SoundRequest.html)
+message. Commands define two things: a sound, and what to do with that
+sound.
 
 The sound is defined by the `sound` (int) and `arg` (string) fields
 of the message, and can be one of four types:

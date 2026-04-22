@@ -19,8 +19,11 @@ header file:
 -   [<geodesy/wgs84.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/wgs84_8h.html)
 
 This is the base type for communicating geodetic information between ROS
-nodes, using <<MsgLink(geographic_msgs/GeoPoint)>> and
-<<MsgLink(geographic_msgs/GeoPose)>> messages.
+nodes, using
+[geographic_msgs/msg/GeoPoint](https://docs.ros.org/en/rolling/p/geographic_msgs/msg/GeoPoint.html)
+and
+[geographic_msgs/msg/GeoPose](https://docs.ros.org/en/rolling/p/geographic_msgs/msg/GeoPose.html)
+messages.
 
 ### UTM
 

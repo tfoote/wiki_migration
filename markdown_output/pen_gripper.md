@@ -41,7 +41,8 @@ into an end position at the right side of the robot.
 You can use the pen_gripper with the complete portrait_robot stack as
 shown in the tutorial [portrait_bot/Tutorials](portrait_bot/Tutorials)
 to let the pr2 draw a portrait or you can use it with an
-<<SrvLink(portrait_roboter_msgs/alubsc_node_instr)>> message
+[portrait_roboter_msgs/srv/alubsc_node_instr](https://docs.ros.org/en/rolling/p/portrait_roboter_msgs/srv/alubsc_node_instr.html)
+message
 
 start the service node and the [ee_cart_imped](ee_cart_imped) controller
 

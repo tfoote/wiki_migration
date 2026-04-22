@@ -98,10 +98,12 @@ specific settings in the EDS/DCF.
 
 Each node (or in the defaults) can be passed a publish parameter with a
 list of object names. The topic types correspond to the object types,
-e.g. UNSIGNED16 to <<MsgLink(std_msgs/UInt16)>>. It is meant for
-debugging or for simple CANopen interfaces, since it blocks the control
-loop. Each entry can have an exclamation mark appended that forces the
-driver to reread the object form the node in each step.
+e.g. UNSIGNED16 to
+[std_msgs/msg/UInt16](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt16.html).
+It is meant for debugging or for simple CANopen interfaces, since it
+blocks the control loop. Each entry can have an exclamation mark
+appended that forces the driver to reread the object form the node in
+each step.
 
 For example: 
 
@@ -121,12 +123,15 @@ nodes:
  will publish on three topics with
 the sync/update_rate:
 
--   node1_1003sub0 (<<MsgLink(std_msgs/UInt8)>>): number of errors
-    for node1 (not cached)
--   node2_1001 (<<MsgLink(std_msgs/UInt8)>>): error register of
-    node2 (cached)
--   node3_1001 (<<MsgLink(std_msgs/UInt8)>>): error register of
-    node3 (cached)
+-   node1_1003sub0
+    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+    number of errors for node1 (not cached)
+-   node2_1001
+    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+    error register of node2 (cached)
+-   node3_1001
+    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+    error register of node3 (cached)
 
 The [diagnostic_updater](diagnostic_updater) can be passed the
 diagnostic_period parameter in fractional seconds.

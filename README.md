@@ -56,7 +56,7 @@ pages/
 | `find_macros.py` | Utility script that scans `current_pages.yaml` source files and reports MoinMoin `<<Macro>>` prevalence. |
 | `convert_to_markdown.py` | Preprocesses MoinMoin syntax, runs `pandoc`, postprocesses output, writes `markdown_output/<pkg>.md`, and updates `current_pages.yaml`. |
 | `correlate_packages.py` | Matches packages in a YAML file against the ROS Noetic `rosdistro` index and queries GitHub for `package.xml`, `README.md`, and archive status. |
-| `count_results.py` | Summarizes correlation statistics from `current_pages.yaml` and splits actionable packages into `export_pages.yaml` and `extend_pages.yaml`. |
+| `count_results.py` | Read-only analysis script that summarizes correlation and review statistics across `current_pages.yaml`, `export_pages.yaml`, and `extend_pages.yaml`. |
 | `review_packages.py` | Interactive CLI tool for reviewing, editing, and tagging converted Markdown files for export. |
 | `current_pages.yaml` | Master dataset mapping all discovered package pages to their source revision, converted Markdown path, and upstream repository metadata. |
 | `export_pages.yaml` | Active (matched, non-archived) packages that **do not** yet have a `README.md` in their upstream repository. |
@@ -133,17 +133,19 @@ For each package, `correlate_packages.py` records:
 - `repository_archived`: Whether the GitHub repository is archived.
 - `unmatched`: Set to `true` if the package is not present in the ROS Noetic `rosdistro` index.
 
-### 4. Classify Results
+### 4. Count and Summarize Results
 
-Generate summary counts and split active packages into `export_pages.yaml` and `extend_pages.yaml`:
+Run the read-only summary script to inspect correlation counts and review progress across the exported (`export_pages.yaml`) and extended (`extend_pages.yaml`) groupings:
 
 ```bash
 python3 count_results.py
 ```
 
-This filters out `unmatched` and `repository_archived` entries and writes:
-- `export_pages.yaml`: Matched, non-archived packages with `readme_exists: false`.
-- `extend_pages.yaml`: Matched, non-archived packages with `readme_exists: true`.
+By default, `count_results.py` auto-detects any review keys recorded by `review_packages.py` and reports `Ready`, `Ignored`, `Unreviewed`, and `Edited` counts for each grouping. You can also filter by a specific review key:
+
+```bash
+python3 count_results.py --review-key <your_review_key>
+```
 
 ### 5. Review and Edit Converted Pages
 
@@ -172,6 +174,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_convert_include.py` — Tests `<<Include(...)>>` resolution, missing page fallbacks, nested includes, and recursion depth limits.
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
+- `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.
 
 Run the full test suite with:
 

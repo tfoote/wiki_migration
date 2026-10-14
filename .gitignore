@@ -1,3 +1,4 @@
 pages
 pages/**
 markdown_output/micros_hopfield.md
+__pycache__

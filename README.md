@@ -32,6 +32,21 @@ Install the required Python libraries (`PyYAML` and `rosdistro`):
 pip install pyyaml rosdistro
 ```
 
+### GitHub Authentication (`GITHUB_TOKEN`)
+
+Two scripts interact with the GitHub REST API and read the `GITHUB_TOKEN` environment variable:
+
+1. **`correlate_packages.py` (Read-Only)**:
+   - Queries public repository metadata, file trees, `package.xml`, and `README.md` files.
+   - **Required scope**: None (any valid Personal Access Token with read access to public repositories increases the GitHub API rate limit from 60 to 5,000 requests/hour).
+2. **`submit_prs.py` (Fork, Commit, and Pull Request Creation)**:
+   - Forks upstream repositories into the `tfoote-ros-wiki-migration-forks` organization, creates branches, commits `README.md` changes to the fork, and opens pull requests on upstream repositories.
+   - **Recommended Token Type**: **Personal Access Token (Classic)** (`ghp_...`). *(Fine-grained tokens are restricted to a single resource owner and cannot both write to an organization fork and open pull requests on arbitrary external repositories.)*
+   - **Required Scopes (Classic PAT)**:
+     - **`public_repo`** *(or full `repo`)* — Required to fork public repositories, create/update branch refs, commit `README.md` updates via the Contents API, and open pull requests against upstream public repositories.
+     - **`read:org`** — Recommended so GitHub can verify your membership and permissions when creating forks inside the `tfoote-ros-wiki-migration-forks` organization.
+   - **Organization Membership**: Your GitHub user account must be a member or owner of `tfoote-ros-wiki-migration-forks` (or the organization passed via `--fork-org`) with permission to create/fork repositories.
+
 ### Wiki Dump Data (`pages/`)
 
 The initial discovery and conversion scripts expect a local MoinMoin wiki pages directory at `./pages/` (ignored by Git). Each page directory follows the standard MoinMoin on-disk layout:
@@ -58,9 +73,11 @@ pages/
 | `correlate_packages.py` | Matches packages in a YAML file against the ROS Noetic `rosdistro` index and queries GitHub for `package.xml`, `README.md`, and archive status. |
 | `count_results.py` | Read-only analysis script that summarizes correlation and review statistics across `current_pages.yaml`, `export_pages.yaml`, and `extend_pages.yaml`. |
 | `review_packages.py` | Interactive CLI tool for reviewing, editing, and tagging converted Markdown files for export. |
+| `submit_prs.py` | Iterates through `export_pages.yaml` and `extend_pages.yaml` for `ready` packages, previews planned changes, forks into `tfoote-ros-wiki-migration-forks`, commits `README.md`, opens a PR, and moves entries to `submitted_pages.yaml`. |
 | `current_pages.yaml` | Master dataset mapping all discovered package pages to their source revision, converted Markdown path, and upstream repository metadata. |
 | `export_pages.yaml` | Active (matched, non-archived) packages that **do not** yet have a `README.md` in their upstream repository. |
 | `extend_pages.yaml` | Active (matched, non-archived) packages that **already** have a `README.md` in their upstream repository. |
+| `submitted_pages.yaml` | Tracks packages whose migration pull requests have been submitted via `submit_prs.py`. |
 | `test_current_pages.yaml` | Small 3-package fixture (`amcl`, `roscpp`, `tf2`) for testing `correlate_packages.py`. |
 | `markdown_output/` | Directory containing the converted `<package>.md` files. |
 | `test_*.py` | Unit and integration test suites for conversion and review scripts. |
@@ -164,6 +181,25 @@ python3 review_packages.py export_pages.yaml --review-key <your_review_key>
   - `[E]dit` — Opens the Markdown file in `$EDITOR` (defaults to `nano`) and sets `edited: true` upon saving.
   - `[Q]uit` — Saves all updates back to the YAML file and exits.
 
+### 6. Submit Pull Requests
+
+Once packages are marked `ready` under a review key, run `submit_prs.py` to preview and submit upstream pull requests (requires a Classic PAT with `public_repo` and `read:org` scopes; see [GitHub Authentication](#github-authentication-github_token)):
+
+```bash
+export GITHUB_TOKEN="ghp_your_personal_access_token"
+python3 submit_prs.py --review-key <your_review_key>
+```
+
+For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_review_key>: ready`:
+1. Displays a preview of the fork target, branch name, target `README.md` path, commit message, PR details, and Markdown content, then prompts `[Y]es / [S]kip / [Q]uit`.
+2. Upon confirmation (`Y`):
+   - Creates (or syncs) a fork of the repository in the `tfoote-ros-wiki-migration-forks` organization (parameterized via `FORK_ORG` / `--fork-org`).
+   - Creates a new branch `ros-wiki-migration-<package>` off the declared branch in the YAML file.
+   - Creates `README.md` in the package subdirectory if it does not exist, or appends the converted Markdown content to the existing `README.md`.
+   - Commits the change with a message explaining the ROS Wiki origin.
+   - Opens a pull request against the upstream repository's declared branch explaining the migration goal and noting that maintainers may merge, edit, or close it as *won't fix*.
+   - Removes the package entry from `export_pages.yaml` or `extend_pages.yaml` and records it in `submitted_pages.yaml` alongside the created PR URL.
+
 ---
 
 ## Development & Testing
@@ -175,6 +211,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
 - `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.
+- `test_submit_prs.py` — Tests for `submit_prs.py` preview/confirmation flow, creating vs. appending `README.md`, PR creation, and moving submitted entries to `submitted_pages.yaml`.
 
 Run the full test suite with:
 

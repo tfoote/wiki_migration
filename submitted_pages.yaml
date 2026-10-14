@@ -1,0 +1,18 @@
+actionlib_tutorials:
+  action: create
+  branch: noetic-devel
+  commit_sha: 1921fed905fb16de93edbca4cdd0a0afed0cae0f
+  edited: true
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/common_tutorials.git
+  markdown_file: markdown_output/actionlib_tutorials.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/common_tutorials/pull/32
+  readme_exists: false
+  repository: https://github.com/ros/common_tutorials.git
+  repository_archived: false
+  source_file: pages/actionlib_tutorials/revisions/00000036
+  source_queue: export_pages.yaml
+  subdirectory: actionlib_tutorials
+  submitted_branch: ros-wiki-migration-actionlib_tutorials
+  tully1: ready
+  tully2: ready

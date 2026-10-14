@@ -1,7 +1,3 @@
-  -- -------------------------------- -- -- -- ------------------------------------ -- -- -- ---------------------------------- --
-     [English](actionlib_tutorials)            [简体中文](cn/actionlib_tutorials)            [日本語](ja/actionlib_tutorials)   
-  -- -------------------------------- -- -- -- ------------------------------------ -- -- -- ---------------------------------- --
-
 ## Viewing the Code
 
 actionlib_tutorials is a series of tutorials for using the

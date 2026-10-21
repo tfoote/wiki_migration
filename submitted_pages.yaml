@@ -16,3 +16,36 @@ actionlib_tutorials:
   submitted_branch: ros-wiki-migration-actionlib_tutorials
   tully1: ready
   tully2: ready
+allocators:
+  action: create
+  branch: noetic-devel
+  commit_sha: cc45d69180d54089c6975d1e1194cac0934c1b32
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ros_realtime.git
+  markdown_file: markdown_output/allocators.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/ros_realtime/pull/17
+  readme_exists: false
+  repository: https://github.com/ros/ros_realtime.git
+  repository_archived: false
+  source_file: pages/allocators/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: allocators
+  submitted_branch: ros-wiki-migration-allocators
+  tully1: ready
+  tully2: ready
+angles:
+  action: create
+  branch: noetic-devel
+  commit_sha: a5154e6bb6a09ab66d5143fdb401313b259fdc4a
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/angles.git
+  markdown_file: markdown_output/angles.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/angles/pull/50
+  readme_exists: false
+  repository: https://github.com/ros/angles.git
+  repository_archived: false
+  source_file: pages/angles/revisions/00000019
+  source_queue: export_pages.yaml
+  subdirectory: angles
+  submitted_branch: ros-wiki-migration-angles
+  tully2: ready

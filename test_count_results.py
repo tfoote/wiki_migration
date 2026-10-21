@@ -15,6 +15,7 @@ class TestCountResults(unittest.TestCase):
         self.current_file = os.path.join(self.temp_dir.name, "current.yaml")
         self.export_file = os.path.join(self.temp_dir.name, "export.yaml")
         self.extend_file = os.path.join(self.temp_dir.name, "extend.yaml")
+        self.submitted_file = os.path.join(self.temp_dir.name, "submitted.yaml")
 
         self.current_data = {
             "pkg_unmatched": {
@@ -72,12 +73,14 @@ class TestCountResults(unittest.TestCase):
                 current_file=self.current_file,
                 export_file=self.export_file,
                 extend_file=self.extend_file,
+                submitted_file=self.submitted_file,
             )
 
         self.assertEqual(res["total"], 7)
         self.assertEqual(res["matched"], 6)
         self.assertEqual(res["unmatched"], 1)
         self.assertEqual(res["archived"], 1)
+        self.assertEqual(res["submitted"], 0)
         self.assertEqual(res["exported"]["total"], 3)
         self.assertEqual(res["exported"]["edited"], 0)
         self.assertEqual(res["exported"]["reviews"], {})
@@ -85,11 +88,12 @@ class TestCountResults(unittest.TestCase):
         self.assertEqual(res["extended"]["edited"], 0)
         self.assertEqual(res["extended"]["reviews"], {})
 
-        # Verify read-only behavior: export.yaml and extend.yaml were not created
+        # Verify read-only behavior: export.yaml, extend.yaml, submitted.yaml were not created
         self.assertFalse(os.path.exists(self.export_file))
         self.assertFalse(os.path.exists(self.extend_file))
+        self.assertFalse(os.path.exists(self.submitted_file))
 
-    def test_count_results_with_reviews_in_export_and_extend_files(self):
+    def test_count_results_with_reviews_and_submitted_files(self):
         export_reviews = {
             "pkg_export_1": {
                 "repository": "https://github.com/example/exp1.git",
@@ -105,6 +109,21 @@ class TestCountResults(unittest.TestCase):
                 "pass1": "ignored",
             },
         }
+        # pkg_export_3 was submitted and moved to submitted.yaml
+        submitted_reviews = {
+            "pkg_export_3": {
+                "action": "create",
+                "commit_sha": "abc1234",
+                "fork_repository": "https://github.com/fork/exp3.git",
+                "pr_url": "https://github.com/example/exp3/pull/1",
+                "readme_exists": False,
+                "repository": "https://github.com/example/exp3.git",
+                "repository_archived": False,
+                "source_queue": "export_pages.yaml",
+                "submitted_branch": "ros-wiki-migration-pkg_export_3",
+                "pass1": "ready",
+            }
+        }
         extend_reviews = {
             "pkg_extend_1": {
                 "repository": "https://github.com/example/ext1.git",
@@ -118,6 +137,8 @@ class TestCountResults(unittest.TestCase):
             yaml.dump(export_reviews, f)
         with open(self.extend_file, "w") as f:
             yaml.dump(extend_reviews, f)
+        with open(self.submitted_file, "w") as f:
+            yaml.dump(submitted_reviews, f)
 
         export_mtime = os.path.getmtime(self.export_file)
 
@@ -127,19 +148,34 @@ class TestCountResults(unittest.TestCase):
                 current_file=self.current_file,
                 export_file=self.export_file,
                 extend_file=self.extend_file,
+                submitted_file=self.submitted_file,
             )
 
         output = buf.getvalue()
+        self.assertIn("Submitted: 1", output)
         self.assertIn("Review [pass1]:", output)
+        self.assertEqual(res["submitted"], 1)
+        self.assertEqual(res["exported"]["total"], 2)
         self.assertEqual(res["exported"]["edited"], 1)
         self.assertEqual(
             res["exported"]["reviews"]["pass1"],
-            {"ready": 1, "ignored": 1, "other": {}, "unreviewed": 1},
+            {
+                "ready": 1,
+                "ignored": 1,
+                "other": {},
+                "unreviewed": 0,
+            },
         )
+        self.assertEqual(res["extended"]["total"], 2)
         self.assertEqual(res["extended"]["edited"], 0)
         self.assertEqual(
             res["extended"]["reviews"]["pass1"],
-            {"ready": 1, "ignored": 0, "other": {}, "unreviewed": 1},
+            {
+                "ready": 1,
+                "ignored": 0,
+                "other": {},
+                "unreviewed": 1,
+            },
         )
 
         # Ensure export_file was not modified
@@ -154,7 +190,12 @@ class TestCountResults(unittest.TestCase):
         self.assertEqual(list(summary["reviews"].keys()), ["pass2"])
         self.assertEqual(
             summary["reviews"]["pass2"],
-            {"ready": 0, "ignored": 1, "other": {}, "unreviewed": 1},
+            {
+                "ready": 0,
+                "ignored": 1,
+                "other": {},
+                "unreviewed": 1,
+            },
         )
 
 

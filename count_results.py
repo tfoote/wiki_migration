@@ -4,15 +4,21 @@ import os
 import yaml
 
 STANDARD_KEYS = {
+    "action",
     "branch",
+    "commit_sha",
     "edited",
+    "fork_repository",
     "markdown_file",
     "package_xml_match",
+    "pr_url",
     "readme_exists",
     "repository",
     "repository_archived",
     "source_file",
+    "source_queue",
     "subdirectory",
+    "submitted_branch",
     "unmatched",
 }
 
@@ -78,6 +84,7 @@ def count_results(
     current_file="current_pages.yaml",
     export_file="export_pages.yaml",
     extend_file="extend_pages.yaml",
+    submitted_file="submitted_pages.yaml",
     review_key=None,
 ):
     with open(current_file, "r") as f:
@@ -128,6 +135,16 @@ def count_results(
             elif isinstance(v, dict):
                 extend_data[k] = dict(v)
 
+    # Count submitted packages separately and exclude them from pending export/extend queues
+    submitted_count = 0
+    if submitted_file and os.path.exists(submitted_file):
+        with open(submitted_file, "r") as f:
+            disk_submitted = yaml.safe_load(f) or {}
+        submitted_count = len(disk_submitted)
+        for k in disk_submitted:
+            export_data.pop(k, None)
+            extend_data.pop(k, None)
+
     export_summary = summarize_group_reviews(export_data, review_key=review_key)
     extend_summary = summarize_group_reviews(extend_data, review_key=review_key)
 
@@ -135,6 +152,7 @@ def count_results(
     print(f"Matched: {matched}")
     print(f"Unmatched: {unmatched}")
     print(f"Archived (among matched): {archived_count}")
+    print(f"Submitted: {submitted_count}")
     print_group_summary("Exported (no README)", export_summary)
     print_group_summary("Extended (has README)", extend_summary)
 
@@ -143,6 +161,7 @@ def count_results(
         "matched": matched,
         "unmatched": unmatched,
         "archived": archived_count,
+        "submitted": submitted_count,
         "exported": export_summary,
         "extended": extend_summary,
     }
@@ -150,7 +169,7 @@ def count_results(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Count and summarize package correlation and review status."
+        description="Count and summarize package correlation, review, and submission status."
     )
     parser.add_argument(
         "--review-key",
@@ -172,12 +191,18 @@ def main():
         default="extend_pages.yaml",
         help="Path to extend_pages.yaml (default: extend_pages.yaml)",
     )
+    parser.add_argument(
+        "--submitted-file",
+        default="submitted_pages.yaml",
+        help="Path to submitted_pages.yaml (default: submitted_pages.yaml)",
+    )
     args = parser.parse_args()
 
     count_results(
         current_file=args.current_file,
         export_file=args.export_file,
         extend_file=args.extend_file,
+        submitted_file=args.submitted_file,
         review_key=args.review_key,
     )
 

@@ -87,15 +87,36 @@ def build_pr_title(package):
     return f"Migrate {package} documentation from wiki.ros.org"
 
 
-def build_pr_body(package, source_file, target_path, action):
+def build_pr_body(
+    package,
+    source_file,
+    target_path,
+    action,
+    original_pr_url=None,
+    declared_branch=None,
+    default_branch=None,
+):
     wiki_url = f"https://wiki.ros.org/{package}"
     action_desc = (
         f"creates `{target_path}`"
         if action == "create"
         else f"appends the converted wiki documentation to `{target_path}`"
     )
+    caveat_header = ""
+    if original_pr_url:
+        caveat_header = (
+            f"> [!WARNING]\n"
+            f"> **CAVEAT: Duplicate PR targeting the default branch (`{default_branch}`)**\n"
+            f">\n"
+            f"> This pull request is a duplicate of {original_pr_url} "
+            f"(which targets `{declared_branch}`), opened against the default branch "
+            f"(`{default_branch}`) for better visibility. **The migrated content comes "
+            f"from the ROS 1 Wiki and is not confirmed to be up to date for `{default_branch}`.**\n\n"
+        )
+
     return (
-        f"### Origin of this Pull Request\n\n"
+        caveat_header
+        + f"### Origin of this Pull Request\n\n"
         f"This pull request {action_desc} using content migrated from the "
         f"ROS Wiki page [{package}]({wiki_url})"
         + (f" (`{source_file}`)" if source_file else "")
@@ -113,28 +134,15 @@ def build_pr_body(package, source_file, target_path, action):
     )
 
 
-def ensure_fork(owner, repo, fork_org, declared_branch, token):
-    """Create a fork in fork_org and wait until the declared branch ref is available."""
-    fork_url = f"https://api.github.com/repos/{owner}/{repo}/forks"
-    print(f"  Ensuring fork of {owner}/{repo} in organization {fork_org}...", flush=True)
-    fork_info = github_api_request(
-        fork_url,
-        method="POST",
-        data={"organization": fork_org, "default_branch_only": False},
-        token=token,
-    )
-    fork_owner = fork_info.get("owner", {}).get("login", fork_org)
-    fork_repo = fork_info.get("name", repo)
-
-    # Get upstream branch SHA
-    encoded_branch = urllib.parse.quote(declared_branch, safe="")
+def sync_and_get_branch_sha(owner, repo, fork_owner, fork_repo, branch, token):
+    """Get upstream branch SHA, wait for fork branch ref, and sync fork branch with upstream."""
+    encoded_branch = urllib.parse.quote(branch, safe="")
     upstream_ref_url = (
         f"https://api.github.com/repos/{owner}/{repo}/git/ref/heads/{encoded_branch}"
     )
     upstream_ref = github_api_request(upstream_ref_url, method="GET", token=token)
     base_sha = upstream_ref["object"]["sha"]
 
-    # Wait for fork repository git database to be ready
     fork_ref_url = (
         f"https://api.github.com/repos/{fork_owner}/{fork_repo}/git/ref/heads/{encoded_branch}"
     )
@@ -149,7 +157,6 @@ def ensure_fork(owner, repo, fork_org, declared_branch, token):
             else:
                 raise
 
-    # Try syncing fork branch with upstream in case fork already existed
     merge_upstream_url = (
         f"https://api.github.com/repos/{fork_owner}/{fork_repo}/merge-upstream"
     )
@@ -157,14 +164,44 @@ def ensure_fork(owner, repo, fork_org, declared_branch, token):
         github_api_request(
             merge_upstream_url,
             method="POST",
-            data={"branch": declared_branch},
+            data={"branch": branch},
             token=token,
             accept_statuses=(200, 201, 202, 409),
         )
     except urllib.error.HTTPError:
         pass
 
-    return fork_owner, fork_repo, base_sha
+    return base_sha
+
+
+def ensure_fork(owner, repo, fork_org, declared_branch, token):
+    """Create a fork in fork_org and return (fork_owner, fork_repo, base_sha, default_branch)."""
+    fork_url = f"https://api.github.com/repos/{owner}/{repo}/forks"
+    print(f"  Ensuring fork of {owner}/{repo} in organization {fork_org}...", flush=True)
+    fork_info = github_api_request(
+        fork_url,
+        method="POST",
+        data={"organization": fork_org, "default_branch_only": False},
+        token=token,
+    )
+    fork_owner = fork_info.get("owner", {}).get("login", fork_org)
+    fork_repo = fork_info.get("name", repo)
+
+    default_branch = (
+        fork_info.get("parent", {}).get("default_branch")
+        or fork_info.get("source", {}).get("default_branch")
+        or fork_info.get("default_branch")
+    )
+    if not default_branch:
+        repo_url = f"https://api.github.com/repos/{owner}/{repo}"
+        repo_info = github_api_request(repo_url, method="GET", token=token)
+        default_branch = repo_info.get("default_branch")
+
+    base_sha = sync_and_get_branch_sha(
+        owner, repo, fork_owner, fork_repo, declared_branch, token
+    )
+
+    return fork_owner, fork_repo, base_sha, default_branch
 
 
 def create_or_reset_branch(fork_owner, fork_repo, new_branch, base_sha, token):
@@ -262,25 +299,35 @@ def create_pull_request(
     upstream_repo,
     fork_owner,
     new_branch,
-    declared_branch,
+    base_branch,
     package,
     source_file,
     target_path,
     action,
     token,
+    original_pr_url=None,
+    declared_branch=None,
 ):
-    """Create a pull request from fork_owner:new_branch to upstream_owner/upstream_repo:declared_branch."""
+    """Create a pull request from fork_owner:new_branch to upstream_owner/upstream_repo:base_branch."""
     pulls_url = f"https://api.github.com/repos/{upstream_owner}/{upstream_repo}/pulls"
     title = build_pr_title(package)
-    body = build_pr_body(package, source_file, target_path, action)
+    body = build_pr_body(
+        package,
+        source_file,
+        target_path,
+        action,
+        original_pr_url=original_pr_url,
+        declared_branch=declared_branch,
+        default_branch=base_branch if original_pr_url else None,
+    )
     payload = {
         "title": title,
         "head": f"{fork_owner}:{new_branch}",
-        "base": declared_branch,
+        "base": base_branch,
         "body": body,
     }
     print(
-        f"  Creating PR against {upstream_owner}/{upstream_repo}:{declared_branch}...",
+        f"  Creating PR against {upstream_owner}/{upstream_repo}:{base_branch}...",
         flush=True,
     )
     pr_resp = github_api_request(pulls_url, method="POST", data=payload, token=token)
@@ -305,7 +352,7 @@ def execute_submission(package, info, fork_org, token):
     target_path = get_readme_path(subdirectory)
     new_branch = f"ros-wiki-migration-{package}"
 
-    fork_owner, fork_repo, base_sha = ensure_fork(
+    fork_owner, fork_repo, base_sha, default_branch = ensure_fork(
         upstream_owner, upstream_repo, fork_org, declared_branch, token
     )
     create_or_reset_branch(fork_owner, fork_repo, new_branch, base_sha, token)
@@ -332,13 +379,63 @@ def execute_submission(package, info, fork_org, token):
         token,
     )
 
-    return {
+    result = {
         "pr_url": pr_url,
         "fork_repository": f"https://github.com/{fork_owner}/{fork_repo}.git",
         "submitted_branch": new_branch,
         "commit_sha": commit_sha,
         "action": action,
     }
+
+    if default_branch and default_branch != declared_branch:
+        print(
+            f"  Target branch '{declared_branch}' differs from default branch '{default_branch}'. "
+            f"Opening a second PR targeting '{default_branch}'...",
+            flush=True,
+        )
+        default_base_sha = sync_and_get_branch_sha(
+            upstream_owner,
+            upstream_repo,
+            fork_owner,
+            fork_repo,
+            default_branch,
+            token,
+        )
+        default_new_branch = f"ros-wiki-migration-{package}-{default_branch}"
+        create_or_reset_branch(
+            fork_owner, fork_repo, default_new_branch, default_base_sha, token
+        )
+        default_action, default_commit_sha = create_or_update_readme(
+            fork_owner,
+            fork_repo,
+            target_path,
+            default_new_branch,
+            markdown_content,
+            source_file,
+            package,
+            token,
+        )
+        default_pr_url = create_pull_request(
+            upstream_owner,
+            upstream_repo,
+            fork_owner,
+            default_new_branch,
+            default_branch,
+            package,
+            source_file,
+            target_path,
+            default_action,
+            token,
+            original_pr_url=pr_url,
+            declared_branch=declared_branch,
+        )
+        result["default_branch"] = default_branch
+        result["default_branch_pr_url"] = default_pr_url
+        result["default_submitted_branch"] = default_new_branch
+        result["default_commit_sha"] = default_commit_sha
+        result["default_action"] = default_action
+
+    return result
 
 
 def print_preview(package, info, source_yaml, fork_org):
@@ -383,6 +480,10 @@ def print_preview(package, info, source_yaml, fork_org):
     )
     print(f"5. Pull Request:    {fork_org}:{new_branch} -> {upstream_owner}/{upstream_repo}:{declared_branch}", flush=True)
     print(f"   PR Title:        {build_pr_title(package)}", flush=True)
+    print(
+        f"   Note:            If '{declared_branch}' is not the default branch, a second PR with a caveat will also be opened against the default branch.",
+        flush=True,
+    )
     print("-" * 60, flush=True)
 
     if md_file and os.path.exists(md_file):
@@ -464,6 +565,11 @@ def process_yaml_file(
                     break
 
                 print(f"  Successfully created PR: {result_meta['pr_url']}", flush=True)
+                if "default_branch_pr_url" in result_meta:
+                    print(
+                        f"  Successfully created default-branch PR: {result_meta['default_branch_pr_url']}",
+                        flush=True,
+                    )
 
                 # Load existing submitted_pages.yaml
                 submitted_data = {}

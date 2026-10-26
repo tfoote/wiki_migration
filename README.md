@@ -198,7 +198,8 @@ For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_revi
    - Creates `README.md` in the package subdirectory if it does not exist, or appends the converted Markdown content to the existing `README.md`.
    - Commits the change with a message explaining the ROS Wiki origin.
    - Opens a pull request against the upstream repository's declared branch explaining the migration goal and noting that maintainers may merge, edit, or close it as *won't fix*.
-   - Removes the package entry from `export_pages.yaml` or `extend_pages.yaml` and records it in `submitted_pages.yaml` alongside the created PR URL.
+   - If the declared branch differs from the repository's default branch, creates a second branch off the default branch (`ros-wiki-migration-<package>-<default_branch>`), applies the `README.md` change, and opens a second pull request against the default branch with a warning caveat at the top linking to the original PR and noting that the content is not confirmed up to date.
+   - Removes the package entry from `export_pages.yaml` or `extend_pages.yaml` and records it in `submitted_pages.yaml` alongside the created PR URL(s).
 
 ---
 

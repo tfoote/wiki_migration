@@ -76,14 +76,18 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
     def tearDown(self):
         self.temp_dir.cleanup()
 
-    def test_create_new_readme_and_move_to_submitted(self):
+    def test_create_new_readme_same_default_branch(self):
         api_calls = []
 
         def fake_github_api(url, method="GET", data=None, token=None, accept_statuses=(200, 201, 202)):
             api_calls.append((method, url, data))
             if method == "POST" and url.endswith("/repos/ros-industrial/abb/forks"):
                 self.assertEqual(data["organization"], submit_prs.FORK_ORG)
-                return {"owner": {"login": submit_prs.FORK_ORG}, "name": "abb"}
+                return {
+                    "owner": {"login": submit_prs.FORK_ORG},
+                    "name": "abb",
+                    "default_branch": "noetic-devel",
+                }
             if method == "GET" and url.endswith("/git/ref/heads/noetic-devel"):
                 return {"object": {"sha": "1234567890abcdef"}}
             if method == "POST" and url.endswith("/merge-upstream"):
@@ -132,7 +136,7 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
         self.assertNotIn("pkg_export", remaining_export)
         self.assertIn("pkg_ignored", remaining_export)
 
-        # Verify pkg_export was added to submitted_pages.yaml
+        # Verify pkg_export was added to submitted_pages.yaml without a second PR
         with open(self.submitted_file, "r", encoding="utf-8") as f:
             submitted = yaml.safe_load(f)
         self.assertIn("pkg_export", submitted)
@@ -140,7 +144,80 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
             submitted["pkg_export"]["pr_url"],
             "https://github.com/ros-industrial/abb/pull/42",
         )
+        self.assertNotIn("default_branch_pr_url", submitted["pkg_export"])
         self.assertEqual(submitted["pkg_export"]["action"], "create")
+
+    def test_second_pr_opened_when_target_differs_from_default_branch(self):
+        pr_payloads = []
+
+        def fake_github_api(url, method="GET", data=None, token=None, accept_statuses=(200, 201, 202)):
+            if method == "POST" and url.endswith("/repos/ros-industrial/abb/forks"):
+                return {
+                    "owner": {"login": submit_prs.FORK_ORG},
+                    "name": "abb",
+                    "parent": {"default_branch": "rolling"},
+                }
+            if method == "GET" and url.endswith("/git/ref/heads/noetic-devel"):
+                return {"object": {"sha": "1111111111111111"}}
+            if method == "GET" and url.endswith("/git/ref/heads/rolling"):
+                return {"object": {"sha": "2222222222222222"}}
+            if method == "POST" and url.endswith("/merge-upstream"):
+                return {}
+            if method == "POST" and url.endswith("/git/refs"):
+                return {"ref": data["ref"]}
+            if method == "GET" and "/contents/pkg_export/README.md" in url:
+                raise urllib.error.HTTPError(url, 404, "Not Found", {}, None)
+            if method == "PUT" and url.endswith("/contents/pkg_export/README.md"):
+                return {"commit": {"sha": f"commit_{data['branch']}"}}
+            if method == "POST" and url.endswith("/repos/ros-industrial/abb/pulls"):
+                pr_payloads.append(data)
+                if data["base"] == "noetic-devel":
+                    return {"html_url": "https://github.com/ros-industrial/abb/pull/42"}
+                elif data["base"] == "rolling":
+                    return {"html_url": "https://github.com/ros-industrial/abb/pull/43"}
+            raise AssertionError(f"Unexpected API call: {method} {url}")
+
+        buf = io.StringIO()
+        with patch("submit_prs.github_api_request", side_effect=fake_github_api), patch(
+            "sys.stdin", io.StringIO("Y\n")
+        ), redirect_stdout(buf):
+            submit_prs.process_yaml_file(
+                yaml_file=self.export_file,
+                submitted_file=self.submitted_file,
+                review_key="my_review",
+                token="fake-token",
+            )
+
+        self.assertEqual(len(pr_payloads), 2)
+        first_pr, second_pr = pr_payloads[0], pr_payloads[1]
+        self.assertEqual(first_pr["base"], "noetic-devel")
+        self.assertEqual(
+            first_pr["head"], f"{submit_prs.FORK_ORG}:ros-wiki-migration-pkg_export"
+        )
+        self.assertNotIn("CAVEAT:", first_pr["body"])
+
+        self.assertEqual(second_pr["base"], "rolling")
+        self.assertEqual(
+            second_pr["head"],
+            f"{submit_prs.FORK_ORG}:ros-wiki-migration-pkg_export-rolling",
+        )
+        self.assertTrue(second_pr["body"].startswith("> [!WARNING]"))
+        self.assertIn("duplicate of https://github.com/ros-industrial/abb/pull/42", second_pr["body"])
+        self.assertIn("targeting the default branch (`rolling`)", second_pr["body"])
+        self.assertIn("for better visibility", second_pr["body"])
+        self.assertIn("not confirmed to be up to date", second_pr["body"])
+
+        with open(self.submitted_file, "r", encoding="utf-8") as f:
+            submitted = yaml.safe_load(f)
+        self.assertEqual(
+            submitted["pkg_export"]["pr_url"],
+            "https://github.com/ros-industrial/abb/pull/42",
+        )
+        self.assertEqual(
+            submitted["pkg_export"]["default_branch_pr_url"],
+            "https://github.com/ros-industrial/abb/pull/43",
+        )
+        self.assertEqual(submitted["pkg_export"]["default_branch"], "rolling")
 
     def test_append_existing_readme_in_extend_pages(self):
         existing_readme = "# Existing Title\n\nExisting intro.\n"
@@ -148,7 +225,11 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
 
         def fake_github_api(url, method="GET", data=None, token=None, accept_statuses=(200, 201, 202)):
             if method == "POST" and url.endswith("/repos/example/single_pkg_repo/forks"):
-                return {"owner": {"login": submit_prs.FORK_ORG}, "name": "single_pkg_repo"}
+                return {
+                    "owner": {"login": submit_prs.FORK_ORG},
+                    "name": "single_pkg_repo",
+                    "default_branch": "master",
+                }
             if method == "GET" and url.endswith("/git/ref/heads/master"):
                 return {"object": {"sha": "abcdef1234567890"}}
             if method == "POST" and url.endswith("/merge-upstream"):

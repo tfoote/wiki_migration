@@ -10,12 +10,11 @@ instead of any of the other planners.
 
 ## ROS API
 
--   ROS API is UNREVIEWED and UNSTABLE
--   C++ API is UNREVIEWED and UNSTABLE
--   This planner has currently been configured and tested only for the
-    PR2 right arm. Testing and release for other robots is on the
-    roadmap.
--   This planner cannot deal with path constraints
+- ROS API is UNREVIEWED and UNSTABLE
+- C++ API is UNREVIEWED and UNSTABLE
+- This planner has currently been configured and tested only for the PR2
+  right arm. Testing and release for other robots is on the roadmap.
+- This planner cannot deal with path constraints
 
 ## Tutorials
 

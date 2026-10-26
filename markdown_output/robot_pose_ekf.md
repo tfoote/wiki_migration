@@ -6,13 +6,12 @@ A default launch file for the EKF node can be found in the
 robot_pose_ekf package directory. The launch file contains a number of
 configurable parameters:
 
--   freq: the update and publishing frequency of the filter. Note that a
-    higher frequency will give you more robot poses over time, but it
-    will not increase the accuracy of each estimated robot pose.
--   sensor_timeout: when a sensor stops sending information to the
-    filter, how long should the filter wait before moving on without
-    that sensor.
--   odom_used, imu_used, vo_used: enable or disable inputs.
+- freq: the update and publishing frequency of the filter. Note that a
+  higher frequency will give you more robot poses over time, but it will
+  not increase the accuracy of each estimated robot pose.
+- sensor_timeout: when a sensor stops sending information to the filter,
+  how long should the filter wait before moving on without that sensor.
+- odom_used, imu_used, vo_used: enable or disable inputs.
 
 The configuration can be modified in the launch file, which looks
 something like this:
@@ -39,7 +38,7 @@ something like this:
 
 ### Running
 
--   **Build** the package 
+- **Build** the package 
 
 ```
 $ rosdep install robot_pose_ekf
@@ -49,10 +48,9 @@ $ rosdep install robot_pose_ekf
 
 
 
-```{=html}
 <!-- -->
-```
--   **Run** the robot pose ekf 
+
+- **Run** the robot pose ekf 
 
 ```
 $ roslaunch robot_pose_ekf.launch
@@ -174,15 +172,15 @@ below).
 
 ### Roadmap
 
--   The filter is currently designed for the three sensor signals (wheel
-    odometry, imu and vo) that we use on the PR2 robot. We plan to make
-    this package more generic: future versions will be able to listen to
-    'n' sensor sources, all publishing a
-    ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
-    message. Each source will set the covariance of the 3D pose in the
-    Odometry message to specify which part of the 3D pose it actually
-    measured.
--   We would like to add velocity to the state of the extended Kalman
-    filter.
+- The filter is currently designed for the three sensor signals (wheel
+  odometry, imu and vo) that we use on the PR2 robot. We plan to make
+  this package more generic: future versions will be able to listen to
+  'n' sensor sources, all publishing a
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html))
+  message. Each source will set the covariance of the 3D pose in the
+  Odometry message to specify which part of the 3D pose it actually
+  measured.
+- We would like to add velocity to the state of the extended Kalman
+  filter.
 
 ## Tutorials

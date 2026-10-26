@@ -22,18 +22,16 @@ case of conflicting objectives.
 
 The approach called "Timed-Elastic-Band" is presented in:
 
--   C. Rösmann, W. Feiten, T. Wösch, F. Hoffmann and T. Bertram:
-    Trajectory modification considering dynamic constraints of
-    autonomous robots. Proc. 7th German Conference on Robotics, Germany,
-    Munich, 2012, pp 74--79.
+- C. Rösmann, W. Feiten, T. Wösch, F. Hoffmann and T. Bertram:
+  Trajectory modification considering dynamic constraints of autonomous
+  robots. Proc. 7th German Conference on Robotics, Germany, Munich,
+  2012, pp 74--79.
 
-```{=html}
 <!-- -->
-```
--   C. Rösmann, W. Feiten, T. Wösch, F. Hoffmann and T. Bertram:
-    Efficient trajectory optimization using a sparse model. Proc. IEEE
-    European Conference on Mobile Robots, Spain, Barcelona, 2013, pp.
-    138--143.
+
+- C. Rösmann, W. Feiten, T. Wösch, F. Hoffmann and T. Bertram: Efficient
+  trajectory optimization using a sparse model. Proc. IEEE European
+  Conference on Mobile Robots, Spain, Barcelona, 2013, pp. 138--143.
 
 Since local planners such as the Timed-Elastic-Band get often stuck in a
 locally optimal trajectory as they are unable to transit across
@@ -44,19 +42,19 @@ trajectory among the candidate set. Distinctive topologies are obtained
 by utilizing the concept of homology / homotopy classes. The following
 papers are describing the approach
 
--   C. Rösmann, F. Hoffmann and T. Bertram: Integrated online trajectory
-    planning and optimization in distinctive topologies, Robotics and
-    Autonomous Systems, Vol. 88, 2017, pp. 142--153.
--   C. Rösmann, F. Hoffmann and T. Bertram: Planning of Multiple Robot
-    Trajectories in Distinctive Topologies, Proc. IEEE European
-    Conference on Mobile Robots, UK, Lincoln, Sept. 2015
+- C. Rösmann, F. Hoffmann and T. Bertram: Integrated online trajectory
+  planning and optimization in distinctive topologies, Robotics and
+  Autonomous Systems, Vol. 88, 2017, pp. 142--153.
+- C. Rösmann, F. Hoffmann and T. Bertram: Planning of Multiple Robot
+  Trajectories in Distinctive Topologies, Proc. IEEE European Conference
+  on Mobile Robots, UK, Lincoln, Sept. 2015
 
 The extension to car-like robots is described in
 
--   C. Rösmann, F. Hoffmann and T. Bertram: Kinodynamic Trajectory
-    Optimization and Control for Car-Like Robots, IEEE/RSJ International
-    Conference on Intelligent Robots and Systems (IROS), Vancouver, BC,
-    Canada, Sept. 2017.
+- C. Rösmann, F. Hoffmann and T. Bertram: Kinodynamic Trajectory
+  Optimization and Control for Car-Like Robots, IEEE/RSJ International
+  Conference on Intelligent Robots and Systems (IROS), Vancouver, BC,
+  Canada, Sept. 2017.
 
 Get started by completing the tutorials in the
 [Tutorials](teb_local_planner/Tutorials) section.
@@ -234,7 +232,7 @@ param{
 The following parameters are relevant for the footprint model used for
 optimization (see
 [Tutorial Obstacle Avoidance and Robot Footprint Model](teb_local_planner/Tutorials/Obstacle Avoidance and Robot Footprint Model)).
-** New in version 0.3**
+**New in version 0.3**
 
 
 
@@ -533,9 +531,9 @@ sub {
 Some features and improvements that are currently planned for the
 future. Contributions are welcome!
 
--   Add and improve safety functions in case of unavoidable obstacles
-    (e.g. for obstacles that are located really close to the goal).
--   Implementation of suitable escape behaviors.
--   Improvements/Solutions for cases in which the planner oscillates
-    between multiple locally optimal solutions (not on a topologic
-    basis, but due to occuring noise etc.).
+- Add and improve safety functions in case of unavoidable obstacles
+  (e.g. for obstacles that are located really close to the goal).
+- Implementation of suitable escape behaviors.
+- Improvements/Solutions for cases in which the planner oscillates
+  between multiple locally optimal solutions (not on a topologic basis,
+  but due to occuring noise etc.).

@@ -3,7 +3,7 @@ development!\*\*******
 
 ## Installing
 
--   From the repositories: 
+- From the repositories: 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-mvsim
@@ -11,10 +11,9 @@ sudo apt-get install ros-$ROS_DISTRO-mvsim
 
 
 
-```{=html}
 <!-- -->
-```
--   From sources: Clone into your catkin workspace and build as usual.
+
+- From sources: Clone into your catkin workspace and build as usual.
 
 ## Nodes
 
@@ -78,7 +77,7 @@ model
 
 #### tf transforms provided
 
-`base_link` &rarr; `base_<LASER_SENSOR_NAME>` transform from
-robot base to attached laser(s) `base_footprint` &rarr; `base_link`
-identity transform `odom` &rarr; `base_footprint` transform from
+`base_link` \&rarr; `base_<LASER_SENSOR_NAME>` transform from
+robot base to attached laser(s) `base_footprint` \&rarr; `base_link`
+identity transform `odom` \&rarr; `base_footprint` transform from
 odometric origin to base

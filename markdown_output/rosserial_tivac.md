@@ -8,8 +8,8 @@ boards from [TI's Launchpad ecosystem](http://www.ti.com/launchpad) to
 ROS. All boards can use both debug USB and device USB to communicate
 with rosserial.
 
--   EK-TM4C123GXL
--   EK-TM4C1294XL
+- EK-TM4C123GXL
+- EK-TM4C1294XL
 
 Due to changes in USB library of !TivaWare. **Compatible with
 SW-TM4C-2.1.3.156 onwards**
@@ -42,9 +42,9 @@ The !SystemTick interrupt service must be available for
 
 `rosserial_tivac` will communicate either through UART0 or USB0:
 
--   **UART0** which is connected directly to the ICDI device of the
-    board, available as USB serial converter on the debug USB port.
--   **USB0** which behaves as CDC USB device over the device USB port.
+- **UART0** which is connected directly to the ICDI device of the board,
+  available as USB serial converter on the debug USB port.
+- **USB0** which behaves as CDC USB device over the device USB port.
 
 If you use rosserial over UART0, you are free to use USB0. Or if you use
 rosserial over USB0, you have available UART0.
@@ -62,34 +62,34 @@ build files.
 
 This function requires two environment variables:
 
--   `TIVA_WARE_PATH` - TI !TivaWare SDK path
--   `TIVA_FLASH_EXECUTABLE` - lm4flash tool executable
+- `TIVA_WARE_PATH` - TI !TivaWare SDK path
+- `TIVA_FLASH_EXECUTABLE` - lm4flash tool executable
 
 And takes the arguments:
 
--   USB - Optional argument, if you wish to have rosserial over USB CDC
-    device.
--   DEVICE_SILICON - Optional argument. e.g.
-    ```TARGET_IS_TM4C123_RB1``` Defines the specific chip's
-    silicon revision.
--   DEVICE_SERIAL - Optional argument. Creates flash target for specific
-    device.
--   BOARD - Required. Takes one argument, tm4c123gxl or tm4c1294xl.
--   STARTUP - Optional argument. Takes the name of custom startup file.
--   SRCS - Required. List of source files to compile.
--   INCS - Optional. List of include directories.
--   LIBS - Optional. List of libraries to be linked.
+- USB - Optional argument, if you wish to have rosserial over USB CDC
+  device.
+- DEVICE_SILICON - Optional argument. e.g.
+  ```TARGET_IS_TM4C123_RB1``` Defines the specific chip's silicon
+  revision.
+- DEVICE_SERIAL - Optional argument. Creates flash target for specific
+  device.
+- BOARD - Required. Takes one argument, tm4c123gxl or tm4c1294xl.
+- STARTUP - Optional argument. Takes the name of custom startup file.
+- SRCS - Required. List of source files to compile.
+- INCS - Optional. List of include directories.
+- LIBS - Optional. List of libraries to be linked.
 
 And creates custom targets for project:
 
--   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}.axf - Build binary
-    file
--   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_flash - Flashes
-    board with binary file
--   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_size - Prints out
-    the size of sections and totals of binary file
--   <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_dump - Prints
-    table of symbols and such
+- <parent_catkin_project>_\${CMAKE_PROJECT_NAME}.axf - Build binary
+  file
+- <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_flash - Flashes
+  board with binary file
+- <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_size - Prints out
+  the size of sections and totals of binary file
+- <parent_catkin_project>_\${CMAKE_PROJECT_NAME}_dump - Prints table
+  of symbols and such
 
 Example: 
 

@@ -7,14 +7,13 @@ The package provides a base `Phidget` class, from which all other
 Phidgets inherit. Currently, we have implemented classes for the
 following devices:
 
--   IMU sensor
-    ([ PhidgetsSpatial 3/3/3](http://www.phidgets.com/products.php?product_id=1056_0 ))
+- IMU sensor
+  ([ PhidgetsSpatial 3/3/3](http://www.phidgets.com/products.php?product_id=1056_0 ))
 
-```{=html}
 <!-- -->
-```
--   IR sensor
-    ([ PhidgetIR ](http://www.phidgets.com/products.php?product_id=1055_0 ))
+
+- IR sensor
+  ([ PhidgetIR ](http://www.phidgets.com/products.php?product_id=1055_0 ))
 
 Creating a class is fairly easy - feel free to request devices to be
 added to the stack. If you write a class for any device using the
@@ -61,10 +60,10 @@ different handle types.
 
 The constructor needs to perform 4 operations:
 
--   create the device-specific handle,
--   pass the handle to the base class for intialization
--   ask the base class to register common Phidget callbacks
--   register IMU-specific callbacks
+- create the device-specific handle,
+- pass the handle to the base class for intialization
+- ask the base class to register common Phidget callbacks
+- register IMU-specific callbacks
 
 
 

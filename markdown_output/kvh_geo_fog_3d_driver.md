@@ -38,26 +38,26 @@ universally do not conform with ROS REPs (103, 105, or 145).
 
 KVH reports latitude and longitude in radians.
 
--   `<node_name>/kvh_system_state`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DSystemState)
--   `<node_name>/kvh_satellites`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
--   `<node_name>/kvh_detailed_satellites`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DDetailSatellites)
--   `<node_name>/kvh_local_magnetics`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DLocalMagneticField)
--   `<node_name>/kvh_utm_position`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DUTMPosition)
--   `<node_name>/kvh_ecef_pos`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DECEFPos)
--   `<node_name>/kvh_north_seeking_status`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DNorthSeekingInitStatus)
--   `<node_name>/kvh_odometer_state`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
--   `<node_name>/kvh_raw_sensors`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawSensors)
--   `<node_name>/kvh_raw_gnss`
-    (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawGNSS)
+- `<node_name>/kvh_system_state`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DSystemState)
+- `<node_name>/kvh_satellites`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
+- `<node_name>/kvh_detailed_satellites`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DDetailSatellites)
+- `<node_name>/kvh_local_magnetics`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DLocalMagneticField)
+- `<node_name>/kvh_utm_position`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DUTMPosition)
+- `<node_name>/kvh_ecef_pos`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DECEFPos)
+- `<node_name>/kvh_north_seeking_status`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DNorthSeekingInitStatus)
+- `<node_name>/kvh_odometer_state`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DSatellites)
+- `<node_name>/kvh_raw_sensors`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawSensors)
+- `<node_name>/kvh_raw_gnss`
+  (kvh_geo_fog_3d_msgs/KvhGeoFog3DRawGNSS)
 
 #### Conventional ROS messages
 
@@ -74,28 +74,28 @@ latitude/longitude is measured in degrees (see message definition). This
 is different than the KVH messages, which report latitude/longitude in
 radians.
 
--   `<node_name>/imu/data_raw_frd` (sensor_msgs/Imu)
--   `<node_name>/imu/data_raw_flu` (sensor_msgs/Imu) **REP-105,
-    REP-145 compliant**
--   `<node_name>/imu/data_ned` (sensor_msgs/Imu)
--   `<node_name>/imu/data_enu` (sensor_msgs/Imu) **REP-105, REP-145
-    compliant**
--   `<node_name>/imu/rpy_ned` (geometry_msgs/Vector3Stamped)
--   `<node_name>/imu/rpy_ned_deg` (geometry_msgs/Vector3Stamped)
--   `<node_name>/imu/rpy_enu` (geometry_msgs/Vector3Stamped)
--   `<node_name>/imu/rpy_enu_deg` (geometry_msgs/Vector3Stamped)
--   `<node_name>/gps/fix` (sensor_msgs/NavSatFix) **Filtered GNSS
-    location, in degrees**
--   `<node_name>/gps/raw_fix` (sensor_msgs/NavSatFix) **Raw GNSS
-    location, in degrees**
--   `<node_name>/gps/mag` (sensor_msgs/MagneticField)
--   `<node_name>/gps/utm_ned` (nav_msgs/Odometry)
--   `<node_name>/gps/utm_enu` (nav_msgs/Odometry) **REP-105
-    compliant**
--   `<node_name>/odom/wheel_encoder` (nav_msgs/Odometry)
--   `<node_name>imu/raw_sensor_frd` (nav_msgs/Odometry)
--   `<node_name>/odom/raw_sensor_flu` (nav_msgs/Odometry) **REP-105
-    compliant**
+- `<node_name>/imu/data_raw_frd` (sensor_msgs/Imu)
+- `<node_name>/imu/data_raw_flu` (sensor_msgs/Imu) **REP-105,
+  REP-145 compliant**
+- `<node_name>/imu/data_ned` (sensor_msgs/Imu)
+- `<node_name>/imu/data_enu` (sensor_msgs/Imu) **REP-105, REP-145
+  compliant**
+- `<node_name>/imu/rpy_ned` (geometry_msgs/Vector3Stamped)
+- `<node_name>/imu/rpy_ned_deg` (geometry_msgs/Vector3Stamped)
+- `<node_name>/imu/rpy_enu` (geometry_msgs/Vector3Stamped)
+- `<node_name>/imu/rpy_enu_deg` (geometry_msgs/Vector3Stamped)
+- `<node_name>/gps/fix` (sensor_msgs/NavSatFix) **Filtered GNSS
+  location, in degrees**
+- `<node_name>/gps/raw_fix` (sensor_msgs/NavSatFix) **Raw GNSS
+  location, in degrees**
+- `<node_name>/gps/mag` (sensor_msgs/MagneticField)
+- `<node_name>/gps/utm_ned` (nav_msgs/Odometry)
+- `<node_name>/gps/utm_enu` (nav_msgs/Odometry) **REP-105
+  compliant**
+- `<node_name>/odom/wheel_encoder` (nav_msgs/Odometry)
+- `<node_name>imu/raw_sensor_frd` (nav_msgs/Odometry)
+- `<node_name>/odom/raw_sensor_flu` (nav_msgs/Odometry) **REP-105
+  compliant**
 
 ### Parameters
 
@@ -111,16 +111,16 @@ its current wheel odometer pulse distance value. Thus, it must be
 hand-coded in as a parameter. In the future, hopefully KVH exposes this
 value over the API.
 
--   `<node_name>/port` (string, default: /dev/ttyUSB0)
--   `<node_name>/baud` (int, default: 115200)
--   `<node_name>/debug` (bool, default: false)
--   `<node_name>/filterVehicleType` (string, default: 2 (car, see
-    spatial_packets.h))
--   `<node_name>/atmosphericAltitudeEnabled` (bool, default: true)
--   `<node_name>/velocityHeadingEnabled` (bool, default: false)
--   `<node_name>/reversingDetectionEnabled` (bool, default: true)
--   `<node_name>/motionAnalysisEnabled` (bool, default: true)
--   `<node_name>/odomPulseToMeters` (double, default: 0.000604)
+- `<node_name>/port` (string, default: /dev/ttyUSB0)
+- `<node_name>/baud` (int, default: 115200)
+- `<node_name>/debug` (bool, default: false)
+- `<node_name>/filterVehicleType` (string, default: 2 (car, see
+  spatial_packets.h))
+- `<node_name>/atmosphericAltitudeEnabled` (bool, default: true)
+- `<node_name>/velocityHeadingEnabled` (bool, default: false)
+- `<node_name>/reversingDetectionEnabled` (bool, default: true)
+- `<node_name>/motionAnalysisEnabled` (bool, default: true)
+- `<node_name>/odomPulseToMeters` (double, default: 0.000604)
 
 ## determine_baud_node
 
@@ -130,7 +130,7 @@ manual.
 
 ### Parameters
 
--   `<node_name>/port` (string, default: /dev/ttyUSB0)
+- `<node_name>/port` (string, default: /dev/ttyUSB0)
 
 # Setup
 
@@ -236,10 +236,10 @@ Link: <https://www.ros.org/reps/rep-0105.html>
 
 Summary:
 
--   Data will be published by default in sensor conventions (FRD/NED)
-    with the suffixes _frd and _ned
--   Data will also be published with FLU/ENU topics, with the suffixes
-    _flu and _enu
+- Data will be published by default in sensor conventions (FRD/NED) with
+  the suffixes _frd and _ned
+- Data will also be published with FLU/ENU topics, with the suffixes
+  _flu and _enu
 
 This sensor, like many navigation sensors, uses the somewhat standard
 Front-Right-Down and North-East-Down (FRD/NED) coordinate frame
@@ -257,18 +257,18 @@ Link: <http://www.ros.org/reps/rep-0145.html>
 
 Summary:
 
--   The driver will not perform additional off-sensor processing, other
-    than coordinate frame transforms.
--   The raw data will be published in two frames: imu_link_frd and
-    imu_link_flu.
--   imu/data_raw_frd and imu/data_raw_flu will be data without
-    orientation data, i.e. pure measurement data
--   imu/data_ned and imu/data_enu will be data with orientation data.
--   Orientation data is north-oriented.
--   In the orientation messages, the twist component (i.e. accelerations
-    and velocities) are given with respect to the child_frame_id and the
-    pose component (i.e. position and orientation) are given with
-    respect to the frame_id.
+- The driver will not perform additional off-sensor processing, other
+  than coordinate frame transforms.
+- The raw data will be published in two frames: imu_link_frd and
+  imu_link_flu.
+- imu/data_raw_frd and imu/data_raw_flu will be data without orientation
+  data, i.e. pure measurement data
+- imu/data_ned and imu/data_enu will be data with orientation data.
+- Orientation data is north-oriented.
+- In the orientation messages, the twist component (i.e. accelerations
+  and velocities) are given with respect to the child_frame_id and the
+  pose component (i.e. position and orientation) are given with respect
+  to the frame_id.
 
 This sensor fuses orientation data into its inertial solution, using
 GPS-baseline heading calculations, gyro-compassing, and
@@ -284,10 +284,10 @@ they'd like to consume.
 For frame_id strings, we will deviate from REP 103 and use the
 following:
 
--   imu_link_frd and imu_link_flu - These frames will be used for raw
-    data.
--   utm_ned and utm_enu - These frames are necessary because the
-    orientation data is north-oriented.
+- imu_link_frd and imu_link_flu - These frames will be used for raw
+  data.
+- utm_ned and utm_enu - These frames are necessary because the
+  orientation data is north-oriented.
 
 ## Bearing Convention
 
@@ -336,16 +336,16 @@ structure of the ROS side.
 
 . typedef std::pair<packet_id_e, int> freqPair; kvh::KvhPacketRequest
 packetRequest{ . freqPair(packet_id_utm_position, 50),
-freqPair(packet_id_system_state, 50), . .. * Any additional packets }; *
+freqPair(packet_id_system_state, 50), . .. *Any additional packets };*
 Set connected port std::string kvhPort("/dev/ttyUSB0");
 kvhDriver.Init(kvhPort, packetRequest); system_state_packet_t sysPacket;
-while(1) { . kvhDriver.Once(); * Check for new published packets if
+while(1) { . kvhDriver.Once(); *Check for new published packets if
 (kvhDriver.PacketIsUpdated(packet_id_system_state)) { .
 kvhDriver.GetPacket(packet_id_system_state, sysPacket);*
 
-. .. * Use System State Packet }
+. .. *Use System State Packet }
 kvhDriver.SetPacketUpdated(packet_id_system_state, false);
-usleep(10000); * Usually will want to sleep for some amount of time }
+usleep(10000);* Usually will want to sleep for some amount of time }
 
 Developer Note: Notice that at the end we must run
 kvhDriver.SetPacketUpdated(packet_id, bool)`. The driver has been

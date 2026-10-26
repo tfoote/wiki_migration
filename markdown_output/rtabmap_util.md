@@ -1,4 +1,10 @@
-[Included page rtabmap_ros/menu not found](Included page rtabmap_ros/menu not found)
+
+
+```wiki
+'''''[[rtabmap_ros]]:''' [[rtabmap]] | [[rtabmap_conversions]] | [[rtabmap_costmap_plugins]] | [[rtabmap_demos]] | [[rtabmap_examples]] | [[rtabmap_launch]] | [[rtabmap_legacy]] | [[rtabmap_msgs]] | [[rtabmap_odom]] | [[rtabmap_python]] | [[rtabmap_rviz_plugins]] | [[rtabmap_slam]] | [[rtabmap_sync]] | [[rtabmap_util]] | [[rtabmap_viz]]''
+```
+
+
 
 ## Nodes
 
@@ -78,44 +84,39 @@ This node subscribes to [rtabmap](rtabmap_slam#rtabmap) output topic
 `"mapData"` and optimize the graph, then republishes the optimized
 `"mapData"`.
 
--   This node can be used to optimize the graph outside
-    [rtabmap](rtabmap_slam#rtabmap) node. The benefice to do that is
-    that we can keep optimized the global map instead of the local map
-    of [rtabmap](rtabmap_slam#rtabmap). You can then connect output
-    `mapData_optimized` to [map_assembler](rtabmap_util#map_assembler)
-    to get the optimized grid, proj and cloud maps assembled again.
-    **Note that processing time for map optimization using this node is
-    not bounded** (which is the case in [rtabmap](rtabmap_slam#rtabmap)
-    node).
+- This node can be used to optimize the graph outside
+  [rtabmap](rtabmap_slam#rtabmap) node. The benefice to do that is that
+  we can keep optimized the global map instead of the local map of
+  [rtabmap](rtabmap_slam#rtabmap). You can then connect output
+  `mapData_optimized` to [map_assembler](rtabmap_util#map_assembler)
+  to get the optimized grid, proj and cloud maps assembled again. **Note
+  that processing time for map optimization using this node is not
+  bounded** (which is the case in [rtabmap](rtabmap_slam#rtabmap) node).
 
-```{=html}
 <!-- -->
-```
--   You could also use your own graph optimization approach instead of
-    this node by modifying `poses` values of the
-    [rtabmap_msgs/msg/MapData](https://docs.ros.org/en/rolling/p/rtabmap_msgs/msg/MapData.html)
-    msg. However, implementing your graph optimization approach inside
-    [rtabmap](rtabmap_slam#rtabmap) is preferred (inherit
-    [Optimizer](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/include/rtabmap/core/Graph.h#L44-L109)
-    class and add it
-    [here](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/src/Graph.cpp#L124-L137)
-    with a new number, then you could select it after using the
-    parameter `RGBD/OptimizeStrategy`).
 
-```{=html}
-<!-- -->
-```
--   When using graph optimization outside
-    [rtabmap](rtabmap_slam#rtabmap) node, you should set parameters
-    `RGBD/OptimizeIterations` to `0`, `RGBD/OptimizeMaxError` to
-    `0` and `publish_tf` to `false` for
-    [rtabmap](rtabmap_slam#rtabmap) node.
+- You could also use your own graph optimization approach instead of
+  this node by modifying `poses` values of the
+  [rtabmap_msgs/msg/MapData](https://docs.ros.org/en/rolling/p/rtabmap_msgs/msg/MapData.html)
+  msg. However, implementing your graph optimization approach inside
+  [rtabmap](rtabmap_slam#rtabmap) is preferred (inherit
+  [Optimizer](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/include/rtabmap/core/Graph.h#L44-L109)
+  class and add it
+  [here](https://github.com/introlab/rtabmap/blob/463a5d973c3bab96382356dd763a98caf9beec34/corelib/src/Graph.cpp#L124-L137)
+  with a new number, then you could select it after using the parameter
+  `RGBD/OptimizeStrategy`).
 
-```{=html}
 <!-- -->
-```
--   This node should not be used if [rtabmap](rtabmap_slam#rtabmap) node
-    is in localization mode.
+
+- When using graph optimization outside [rtabmap](rtabmap_slam#rtabmap)
+  node, you should set parameters `RGBD/OptimizeIterations` to `0`,
+  `RGBD/OptimizeMaxError` to `0` and `publish_tf` to `false` for
+  [rtabmap](rtabmap_slam#rtabmap) node.
+
+<!-- -->
+
+- This node should not be used if [rtabmap](rtabmap_slam#rtabmap) node
+  is in localization mode.
 
 
 
@@ -432,73 +433,8 @@ node {
 
 
 
-```clearsilver
-node {
-  name = rtabmap_util/pointcloud_to_depthimage
-  desc = Reproject a point cloud into a camera frame to create a depth image. When `fixed_frame_id` is set (e.g., "odom"), movement is taken into account by transforming the point cloud accordingly to camera timestamp. An example of usage of this nodelet can be found in the [[http://wiki.ros.org/rtabmap_ros/Tutorials/Tango%20ROS%20Streamer|Tango ROS Streamer]] tutorial.
-  sub {
-    0.name = camera_info
-    0.type = stereo_msgs/CameraInfo
-    0.desc = Camera info in which we want to reproject the points.
-    1.name = cloud
-    1.type = sensor_msgs/PointCloud2
-    1.desc = The cloud to reproject in the camera.
-  }
-  pub {
-    0.name = image
-    0.type = sensor_msgs/Image
-    0.desc = Depth image stream in m. Format TYPE_32FC1.
-    1.name = image_raw
-    1.type = sensor_msgs/Image
-    1.desc = Depth image stream in mm. Format TYPE_16UC1.
-  }
-  param {
-    0.name = ~queue_size
-    0.type = int
-    0.desc = Size of message queue for each synchronized topic.
-    0.default = 10
-    1.name = ~fixed_frame_id
-    1.type = string
-    1.desc = This frame should be set when using approximate time synchronization (`approx` is `true`). If the robot is moving, it could be "odom". If not moving, it could be "base_link". 
-    1.default = ""
-    2.name = ~approx
-    2.type = bool
-    2.desc = Approximate time synchronization.
-    2.default = `"true"`
-    3.name = ~wait_for_transform
-    3.type = double
-    3.desc = Wait duration for transform when a [[tf]] transform is not still available.
-    3.default = 0.1
-    4.name = ~decimation
-    4.type = int
-    4.desc = Scale down image size of the camera info received (creating smaller depth image).
-    4.default = 1
-    5.name = ~fill_holes_size
-    5.type = int
-    5.desc = Fill holes of empty pixels up to this size. Values are interpolated from neighbor depth values. 0 means disabled.
-    5.default = 0
-    6.name = ~fill_holes_error
-    6.type = double
-    6.desc = Maximum depth error (m) to interpolate.
-    6.default = 0.1
-    7.name = ~fill_iterations
-    7.type = int
-    7.desc = Number of iterations to fill holes.
-    7.default = 1
-  }
-}
 ```
-
-
-
-
-
-```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
 0
@@ -506,11 +442,7 @@ node {
 
 
 ```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
 1
@@ -518,14 +450,18 @@ node {
 
 
 ```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
 2
+
+
+
+```
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
+```
+
+3
 
 ### rtabmap_util/obstacles_detection
 
@@ -552,14 +488,10 @@ filtered point cloud would be fed to `obstacles_detection`.
 
 
 ```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
-3
+4
 
 ### rtabmap_util/lidar_deskewing
 
@@ -581,11 +513,7 @@ motion.
 
 
 ```
-<launch>
-<node name="map_assembler" pkg="rtabmap_util" type="map_assembler">
-   <param name="Grid/CellSize" type="double" value="0.1"/>
-</node>
-</launch>
+$ rosrun rtabmap_slam rtabmap --params | grep Grid/
 ```
 
-4
+5

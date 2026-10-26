@@ -22,19 +22,19 @@ newer for e-Series controllers.
 
 Currently, this library contains the following components:
 
--   **Basic primary interface**: The primary interface isn't fully
-    implemented at the current state and provides only basic
-    functionality. See A word on the primary / secondary interface for
-    further information about the primary interface.
--   **RTDE interface**: The RTDE interface is fully supported by this
-    library. See RTDEClient for further information on how to use this
-    library as an RTDE client.
--   **Dashboard interface**: The Dashboard server can be accessed
-    directly from C++ through helper functions using this library.
--   **Custom motion streaming**: This library was initially developed as
-    part of the Universal Robots ROS driver. Therefore, it also contains
-    a mechanism to do data streaming through a custom socket, e.g. to
-    perform motion command streaming.
+- **Basic primary interface**: The primary interface isn't fully
+  implemented at the current state and provides only basic
+  functionality. See A word on the primary / secondary interface for
+  further information about the primary interface.
+- **RTDE interface**: The RTDE interface is fully supported by this
+  library. See RTDEClient for further information on how to use this
+  library as an RTDE client.
+- **Dashboard interface**: The Dashboard server can be accessed directly
+  from C++ through helper functions using this library.
+- **Custom motion streaming**: This library was initially developed as
+  part of the Universal Robots ROS driver. Therefore, it also contains a
+  mechanism to do data streaming through a custom socket, e.g. to
+  perform motion command streaming.
 
 ## Additional information
 

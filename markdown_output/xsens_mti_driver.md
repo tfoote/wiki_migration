@@ -9,17 +9,17 @@ folder.
 
 Full documentation for the ROS node and XDA library is available at:
 
-*\[MTSDK folder\]/doc/xsensdeviceapi/doc/html/index.html *
+*\[MTSDK folder\]/doc/xsensdeviceapi/doc/html/index.html*
 
 ## Supported devices
 
 This ROS driver is actively supported and maintained in order to be
 compatible with the latest generation MTi's.
 
--   MTi 1-series
--   MTi 10-series
--   MTi 100-series
--   MTi 600-series
+- MTi 1-series
+- MTi 10-series
+- MTi 100-series
+- MTi 600-series
 
 ## Workflow
 
@@ -40,22 +40,22 @@ folder of the MT Software Suite.
 
 ## Requirements
 
--   MT SDK from Xsens MT Software Suite 2019.0.1 or later
--   ROS Kinetic or Melodic (compatible with Noetic, but not officially
-    supported)
--   C/C++ Compiler: GCC 5.4.0 or MSVC 14.0
--   C++11
+- MT SDK from Xsens MT Software Suite 2019.0.1 or later
+- ROS Kinetic or Melodic (compatible with Noetic, but not officially
+  supported)
+- C/C++ Compiler: GCC 5.4.0 or MSVC 14.0
+- C++11
 
 ## Running the Xsens MTi node
 
--   Configure your MTi device to output desired data (e.g. orientation
-    output) using MT Manager or the MT SDK example codes.
--   Copy xsens_mti_driver folder from your MT SDK directory into your
-    catkin workspace 'src' folder. Make sure the permissions are set
-    to o+rw on your files and directories. For details on creating a
-    catkin workspace environment refer to
-    [Creating a workspace for catkin](catkin/Tutorials/create_a_workspace).
--   Build xspublic from your catkin workspace:
+- Configure your MTi device to output desired data (e.g. orientation
+  output) using MT Manager or the MT SDK example codes.
+- Copy xsens_mti_driver folder from your MT SDK directory into your
+  catkin workspace 'src' folder. Make sure the permissions are set to
+  o+rw on your files and directories. For details on creating a catkin
+  workspace environment refer to
+  [Creating a workspace for catkin](catkin/Tutorials/create_a_workspace).
+- Build xspublic from your catkin workspace:
 
 
 
@@ -65,7 +65,7 @@ $ pushd src/xsens_ros_mti_driver/lib/xspublic && make && popd
 
 
 
--   Build Xsens MTi driver package:
+- Build Xsens MTi driver package:
 
 
 
@@ -75,7 +75,7 @@ $ catkin_make
 
 
 
--   Source workspace:
+- Source workspace:
 
 
 
@@ -85,8 +85,8 @@ $ source devel/setup.bash
 
 
 
--   Launch the Xsens MTi driver. Display example (orientation data
-    should be enabled):
+- Launch the Xsens MTi driver. Display example (orientation data should
+  be enabled):
 
 
 
@@ -109,12 +109,12 @@ $ roslaunch xsens_mti_driver xsens_mti_node.launch
 To change the configuration of the Xsens MTi node you can edit the
 *xsens_mti_node.yaml* file. The following parameters can be configured:
 
--   Device settings for finding a defined MTi device
--   Log file recording option
--   Publishers queue size
--   Message publishers
--   Standard deviation values to be added to published topics (optional,
-    default 0)
+- Device settings for finding a defined MTi device
+- Log file recording option
+- Publishers queue size
+- Message publishers
+- Standard deviation values to be added to published topics (optional,
+  default 0)
 
 ## Published topics
 
@@ -122,47 +122,46 @@ To change the configuration of the Xsens MTi node you can edit the
 not configured to output the corresponding data messages. Refer to the
 **Workflow** section of this page for more details.
 
--   **`'imu/data`**' (sensor_msgs/Imu)\
-    quaternion, angular velocity and linear acceleration
--   ***imu/acceleration* **(geometry_msgs/Vector3Stamped)\
-    calibrated linear acceleration
--   ***imu/angular_velocity* **(geometry_msgs/Vector3Stamped)\
-    calibrated angular velocity
--   ***imu/mag* **(geometry_msgs/Vector3Stamped)\
-    calibrated magnetic field
--   **`'imu/dq`**' (geometry_msgs/QuaternionStamped)\
-    integrated angular velocity from sensor (in quaternion
-    representation)
--   ***imu/dv* **(geometry_msgs/Vector3Stamped)\
-    integrated linear acceleration from sensor
--   **`'imu/time_ref `**'(sensor_msgs/TimeReference)\
-    timestamp from device
--   **`'filter/quaternion`**' (geometry_msgs/QuaternionStamped)\
-    quaternion from filter
--   **`'filter/free_acceleration`**' (geometry_msgs/Vector3Stamped)\
-    linear acceleration from filter
--   ***filter/twist** *(geometry_msgs/TwistStamped)\
-    velocity and angular velocity
--   **`'filter/positionlla`**' (geometry_msgs/Vector3Stamped)
-    (MTSS2019.3.2 and later)\
-    filtered position output in latitude (x), longitude (y) and
-    altitude (z) as Vector3
--   **`'filter/velocity`**' (MTSS2019.3.2 and later)\
-    filtered velocity output as Vector3
--   **`'temperature`**' (sensor_msgs/Temperature)\
-    temperature from device
--   **`'pressure`**' (sensor_msgs/FluidPressure)\
-    barometric pressure from device
--   ***gnss** *(sensor_msgs/NavSatFix)\
-    raw 4 Hz latitude, longitude, altitude and status data from GNSS
-    receiver
--   ***tf** *(geometry_msgs/TransformStamped)\
-    transformed orientation
+- **`'imu/data`**' (sensor_msgs/Imu)\
+  quaternion, angular velocity and linear acceleration
+- ***imu/acceleration*** (geometry_msgs/Vector3Stamped)\
+  calibrated linear acceleration
+- ***imu/angular_velocity*** (geometry_msgs/Vector3Stamped)\
+  calibrated angular velocity
+- ***imu/mag*** (geometry_msgs/Vector3Stamped)\
+  calibrated magnetic field
+- **`'imu/dq`**' (geometry_msgs/QuaternionStamped)\
+  integrated angular velocity from sensor (in quaternion representation)
+- ***imu/dv*** (geometry_msgs/Vector3Stamped)\
+  integrated linear acceleration from sensor
+- **`'imu/time_ref `**'(sensor_msgs/TimeReference)\
+  timestamp from device
+- **`'filter/quaternion`**' (geometry_msgs/QuaternionStamped)\
+  quaternion from filter
+- **`'filter/free_acceleration`**' (geometry_msgs/Vector3Stamped)\
+  linear acceleration from filter
+- ***filter/twist*** (geometry_msgs/TwistStamped)\
+  velocity and angular velocity
+- **`'filter/positionlla`**' (geometry_msgs/Vector3Stamped)
+  (MTSS2019.3.2 and later)\
+  filtered position output in latitude (x), longitude (y) and
+  altitude (z) as Vector3
+- **`'filter/velocity`**' (MTSS2019.3.2 and later)\
+  filtered velocity output as Vector3
+- **`'temperature`**' (sensor_msgs/Temperature)\
+  temperature from device
+- **`'pressure`**' (sensor_msgs/FluidPressure)\
+  barometric pressure from device
+- ***gnss*** (sensor_msgs/NavSatFix)\
+  raw 4 Hz latitude, longitude, altitude and status data from GNSS
+  receiver
+- ***tf*** (geometry_msgs/TransformStamped)\
+  transformed orientation
 
 ## Troubleshooting
 
 **The published topics do not reach the expected data output rate (e.g.
-400 Hz). **\
+400 Hz).** \
 We have noticed that the ROS node can cause a high CPU load, leading to
 lower data output rates. This issue has been fixed in ROS nodes
 available in MTSS2019.3.2 and later. We recommend migrating to the
@@ -171,24 +170,24 @@ latest version.
 If you have connected the MTi via a USB interface, we recommend enabling
 the low latency mode using setserial:
 
--   Install setserial if not already installed
--   Enable low latency mode: 
+- Install setserial if not already installed
+- Enable low latency mode: 
 
 ```
 $ setserial [/path/to/xsens/port] low_latency
 ```
 
 
--   Check the output rate of the published topics, e.g:
-    
+- Check the output rate of the published topics, e.g:
+  
 
 ```
 $ rostopic hz imu/data
 ```
 
 
--   Note that the low_latency mode is lost after rebooting, so you will
-    probably need to create a udev rule for this.
+- Note that the low_latency mode is lost after rebooting, so you will
+  probably need to create a udev rule for this.
 
 **The MTi-1 (Motion Tracker Development Board) is not recognized.**\
 Support for the Development Board is present in recent kernels. (Since

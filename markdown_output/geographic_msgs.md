@@ -18,9 +18,9 @@ the map source.
 
 For example, the Open Street Map URL scheme is:
 
--   `http:*openstreetmap.org/node/999999` \*
-    `http:*openstreetmap.org/way/999999`
--   `http:*openstreetmap.org/relation/999999`*
+- `http:*openstreetmap.org/node/999999` \*
+  `http:*openstreetmap.org/way/999999`
+- `http:*openstreetmap.org/relation/999999`*
 
 Here, `999999` is the decimal representation of the integer OSM node,
 way, or relation ID without leading zeros.

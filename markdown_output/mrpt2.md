@@ -4,7 +4,7 @@ distributions.
 
 See also:
 
--   [mrpt_navigation](mrpt_navigation)
--   [mrpt_slam](mrpt_slam)
--   [mrpt_sensors](mrpt_sensors)
--   [mrpt1](mrpt1)
+- [mrpt_navigation](mrpt_navigation)
+- [mrpt_slam](mrpt_slam)
+- [mrpt_sensors](mrpt_sensors)
+- [mrpt1](mrpt1)

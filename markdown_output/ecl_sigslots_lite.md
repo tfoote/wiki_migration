@@ -3,13 +3,12 @@
 This is a light version of [ecl_sigslots](ecl_sigslots) and provides a
 very ruthlessly simple signals and slots mechanisms useful for
 
--   very\* embedded development. Differences from
-    [ecl_sigslots](ecl_sigslots):
+- very\* embedded development. Differences from
+  [ecl_sigslots](ecl_sigslots):
 
-```{=html}
 <!-- -->
-```
--   Not thread safe\...
+
+- Not thread safe\...
 
 This is a bit of a vague statement on its own. In essence, its usually
 important to make sure your signals and slots finish processing any
@@ -20,19 +19,19 @@ monolothic program with a single thread, this probably doesn't matter,
 but if not, then you must take care to ensure signals and slots close
 appropriately.
 
--   No disconnects\...
+- No disconnects\...
 
 Adding disconnect capability adds alot of complexity to the sigslots
 implementation. Lite sigslots assume that signals and slots connections,
 once fixed, stay until the signal goes out of scope.
 
--   No dynamic storage (no heap storage with malloc/new)\...
+- No dynamic storage (no heap storage with malloc/new)\...
 
 This is often verboten with various embedded compilers and introduces
 alot of system overhead. Lite sigslots allocates memory up front and
 will not permit overuse thereafter.
 
--   Self contained\...
+- Self contained\...
 
 While utilising things like standard error flag constructors (from
 [ecl_errors](ecl_errors)) might be convenient, this package is and
@@ -62,4 +61,4 @@ using ecl::lite::member_slots_capacity;
 
 ## Examples
 
--   `src/examples/sigslots.cpp`
+- `src/examples/sigslots.cpp`

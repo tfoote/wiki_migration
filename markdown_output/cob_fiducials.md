@@ -4,11 +4,11 @@ This Package implements fiducial markers for camera pose estimation or
 object detection. Right now we implemented the PiTag marker, a variation
 of it the Fast PiTag and the Aruco marker.
 
--   Maintainer status: maintained
--   Maintainer: Jan Fischer <Jan.Fischer@ipa.fraunhofer.de>
--   Author: Matthias Nösner
--   source: git
-    <https://github.com/ipa320/cob_object_perception/tree/groovy_dev/cob_fiducials>
+- Maintainer status: maintained
+- Maintainer: Jan Fischer <Jan.Fischer@ipa.fraunhofer.de>
+- Author: Matthias Nösner
+- source: git
+  <https://github.com/ipa320/cob_object_perception/tree/groovy_dev/cob_fiducials>
 
 ## Download
 

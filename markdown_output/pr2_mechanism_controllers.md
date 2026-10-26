@@ -1,9 +1,9 @@
 ## Controllers
 
--   [LaserTrajController](/LaserScannerTrajController)
--   [Pr2BaseController](/Pr2BaseController)
--   [Pr2Odometry](/Pr2Odometry)
--   [Pr2GripperController](/Pr2GripperController)
+- [LaserTrajController](/LaserScannerTrajController)
+- [Pr2BaseController](/Pr2BaseController)
+- [Pr2Odometry](/Pr2Odometry)
+- [Pr2GripperController](/Pr2GripperController)
 
 ## Stability
 

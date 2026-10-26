@@ -12,10 +12,10 @@ high level mission control) to start actions like goal navigation or
 exploration, monitor the progress and eventually cancel an action in
 progress. The following four actions are available:
 
--   MoveToPosition2D
--   !StartMapping
--   !StartExploration
--   Localize
+- MoveToPosition2D
+- !StartMapping
+- !StartExploration
+- Localize
 
 ## Example
 

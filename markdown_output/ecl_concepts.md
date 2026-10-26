@@ -50,7 +50,7 @@ using ecl::InputOutputByteDeviceConcept;
 
 ## Usage
 
--   [Implementing Concepts](ecl_concepts/Tutorials/Implementing Concepts)
+- [Implementing Concepts](ecl_concepts/Tutorials/Implementing Concepts)
 
 ## Concepts
 
@@ -58,12 +58,12 @@ Existing concepts in the ecl include:
 
 \@section conceptsList Existing Concepts
 
--   `BluePrints` - checks for blueprint functionality as defined in
-    ecl_utilities.
--   `Containers` - also bytecontainer, simple checks for basic
-    prerequisite container methods.
--   `NullaryFunctions` - function objects which require no arguments
-    in execution.
--   `Streams` - any class with basic char streaming capabilities.
--   `Devices` - device functionalities compatible to those in
-    ecl_devices.
+- `BluePrints` - checks for blueprint functionality as defined in
+  ecl_utilities.
+- `Containers` - also bytecontainer, simple checks for basic
+  prerequisite container methods.
+- `NullaryFunctions` - function objects which require no arguments in
+  execution.
+- `Streams` - any class with basic char streaming capabilities.
+- `Devices` - device functionalities compatible to those in
+  ecl_devices.

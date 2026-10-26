@@ -13,45 +13,45 @@ detailed description of the pr2_camera_synchronizer parameters.
 The following hardware components are involved in producing vision data
 on the PR2:
 
--   A color [wge100](wge100_camera) camera on each forearm.
--   A wide field-of-view color [wge100](wge100_camera) stereo camera
-    pair on the head.
--   A narrow field-of-view black and white [wge100](wge100_camera)
-    stereo camera on the head.
--   A high resolution GC2450C [Prosilica](prosilica_camera) camera on
-    the head.
--   A texture projector on the head to project a texture on objects that
-    are being viewed by the stereo cameras.
--   Digital outputs on the PR2 motor controller boards that are used to
-    synchronously trigger cameras.
+- A color [wge100](wge100_camera) camera on each forearm.
+- A wide field-of-view color [wge100](wge100_camera) stereo camera pair
+  on the head.
+- A narrow field-of-view black and white [wge100](wge100_camera) stereo
+  camera on the head.
+- A high resolution GC2450C [Prosilica](prosilica_camera) camera on the
+  head.
+- A texture projector on the head to project a texture on objects that
+  are being viewed by the stereo cameras.
+- Digital outputs on the PR2 motor controller boards that are used to
+  synchronously trigger cameras.
 
 ### Synchronization Constraints
 
 Synchronization between these pieces of hardware is needed because of
 system constraints:
 
--   The stereo camera pairs are made up of two independent monocular
-    WGE100 cameras. In order to get synchronized triggering of these
-    cameras, they must be triggered from a common source.
--   A single trigger signal is fed to both stereo camera pairs. The
-    triggering protocol allows the stereo cameras to have different
-    exposure phases, but their frame rate must match.
--   Cameras must be triggered synchronously with the texture projector.
-    To get a textured image the exposure must coincide with projection.
-    To get an untextured image the exposure must not intersect with
-    projection.
--   The texture projector must be fired at at least 40Hz to avoid very
-    unpleasant flickering.
--   The texture projector's pulse length is limited in hardware to
-    avoid damaging the projector LED. The maximum pulse length is 2
-    milliseconds, but this value may be reduced if pulses are too close
-    together.
--   The Prosilica camera does not have a trigger line, and is usually
-    used with long exposure times. Hence, to get untextured images from
-    the Prosilica camera, the normal texture projector firing must be
-    inhibited during Prosilica camera exposures. An exposure line from
-    the Prosilica camera is connected to an inhibit input on the texture
-    projector controller board to allow this inhibition to occur.
+- The stereo camera pairs are made up of two independent monocular
+  WGE100 cameras. In order to get synchronized triggering of these
+  cameras, they must be triggered from a common source.
+- A single trigger signal is fed to both stereo camera pairs. The
+  triggering protocol allows the stereo cameras to have different
+  exposure phases, but their frame rate must match.
+- Cameras must be triggered synchronously with the texture projector. To
+  get a textured image the exposure must coincide with projection. To
+  get an untextured image the exposure must not intersect with
+  projection.
+- The texture projector must be fired at at least 40Hz to avoid very
+  unpleasant flickering.
+- The texture projector's pulse length is limited in hardware to avoid
+  damaging the projector LED. The maximum pulse length is 2
+  milliseconds, but this value may be reduced if pulses are too close
+  together.
+- The Prosilica camera does not have a trigger line, and is usually used
+  with long exposure times. Hence, to get untextured images from the
+  Prosilica camera, the normal texture projector firing must be
+  inhibited during Prosilica camera exposures. An exposure line from the
+  Prosilica camera is connected to an inhibit input on the texture
+  projector controller board to allow this inhibition to occur.
 
 [![Overview of the Camera Systems\|width="750"](attachment:CameraOverview.png)](attachment:CameraOverview.png)
 
@@ -60,23 +60,23 @@ system constraints:
 The variety of hardware components involved implies that a variety of
 software components are involved in producing camera images:
 
--   A [wge100_camera_node](wge100_camera) per WGE100 camera.
--   A [wge100_multi_configurator](wge100_camera) for each stereo pair,
-    which replicates its parameters to each camera's driver.
--   A [prosilica_node](prosilica_camera) for the Prosilica camera.
--   [pr2_controller_manager](pr2_controller_manager) with suitable
-    controllers running:
--   One [MultiTriggerController](ethercat_trigger_controllers) per
-    WGE100 camera trigger line. I.e., one for each forearm camera, and
-    one for both of the stereo cameras.
--   Two [MultiTriggerController](ethercat_trigger_controllers) for the
-    projector, one to trigger the projector and one to determine whether
-    to activate inhibition by the prosilica camera.
--   One [ProjectorController](ethercat_trigger_controllers) to enable
-    the projector.
--   A pr2_camera_syncronizer node in charge of setting the triggers and
-    camera drivers into triggering states that are consistent with the
-    user's desires.
+- A [wge100_camera_node](wge100_camera) per WGE100 camera.
+- A [wge100_multi_configurator](wge100_camera) for each stereo pair,
+  which replicates its parameters to each camera's driver.
+- A [prosilica_node](prosilica_camera) for the Prosilica camera.
+- [pr2_controller_manager](pr2_controller_manager) with suitable
+  controllers running:
+- One [MultiTriggerController](ethercat_trigger_controllers) per WGE100
+  camera trigger line. I.e., one for each forearm camera, and one for
+  both of the stereo cameras.
+- Two [MultiTriggerController](ethercat_trigger_controllers) for the
+  projector, one to trigger the projector and one to determine whether
+  to activate inhibition by the prosilica camera.
+- One [ProjectorController](ethercat_trigger_controllers) to enable the
+  projector.
+- A pr2_camera_syncronizer node in charge of setting the triggers and
+  camera drivers into triggering states that are consistent with the
+  user's desires.
 
 ## Working With the WGE100 Cameras on the PR2
 
@@ -165,19 +165,17 @@ $ rosrun dynamic_reconfigure reconfigure_gui /forearm_camera_l
 
 Many image level parameters can be safely set:
 
--   **Shared Image Levels**: `brightness`, `black_level`.
+- **Shared Image Levels**: `brightness`, `black_level`.
 
-```{=html}
 <!-- -->
-```
--   **Untextured Image Levels**: `auto_exposure`, `exposure`,
-    `auto_gain`, `gain`, `companding`
 
-```{=html}
+- **Untextured Image Levels**: `auto_exposure`, `exposure`,
+  `auto_gain`, `gain`, `companding`
+
 <!-- -->
-```
--   **Textured Image Levels**: `auto_gain_alternate`,
-    `gain_alternate`, `companding`
+
+- **Textured Image Levels**: `auto_gain_alternate`,
+  `gain_alternate`, `companding`
 
 Please refer to the [wge100_camera](wge100_camera#Wge100CameraNode)
 documentation for details on what these parameters mean.
@@ -283,21 +281,20 @@ high-level decision, and users can adjust `_trig_mode` at will.
 The synchronizer can be in one of three modes, depending on which
 strategy it should use:
 
--   **!ProjectorOff**: The projector is never pulsing. Triggering modes
-    that require the projector will be refused by the synchronizer. The
-    stereo cameras, and each forearm camera can independently select
-    their frame rates. Exposure times are limited only by the frame
-    rate.
--   **!ProjectorOn**: The projector is always pulsing. Cameras trigger
-    at divisors of half the projector triggering rate (even divisors for
-    cameras that are alternating between textured and non-textured
-    frames). Exposure times for non-textured images are limited by the
-    time between two projector pulses.
--   **!ProjectorAuto**: Everything is configured as if the projector was
-    pulsing, except that the projector is only actually turned on if one
-    of the cameras needs it. This way a change in configuration for one
-    of the cameras that causes the projector to be activated or
-    disactivated do not change the timing of the other cameras.
+- **!ProjectorOff**: The projector is never pulsing. Triggering modes
+  that require the projector will be refused by the synchronizer. The
+  stereo cameras, and each forearm camera can independently select their
+  frame rates. Exposure times are limited only by the frame rate.
+- **!ProjectorOn**: The projector is always pulsing. Cameras trigger at
+  divisors of half the projector triggering rate (even divisors for
+  cameras that are alternating between textured and non-textured
+  frames). Exposure times for non-textured images are limited by the
+  time between two projector pulses.
+- **!ProjectorAuto**: Everything is configured as if the projector was
+  pulsing, except that the projector is only actually turned on if one
+  of the cameras needs it. This way a change in configuration for one of
+  the cameras that causes the projector to be activated or disactivated
+  do not change the timing of the other cameras.
 
 The recommended operating mode is **!ProjectorAuto**. **!ProjectorOff**
 can be used if longer exposures are needed or if the projector is deemed
@@ -310,37 +307,37 @@ A variety of triggering modes are available for the WGE100 cameras.
 Because different cameras have different constraints, all triggering
 modes are not available for all cameras.
 
--   Projector agnostic modes: Cameras in these modes are not synchronous
-    with the projector, which may lead to flashing of the texture.
--   **!InternalTrigger**: The camera generates its own triggering. This
-    mode is applicable only for the forearm cameras, as the two cameras
-    in a stereo pair need to be triggered simultaneously from a common
-    source.
--   **!IgnoreProjector**: The camera is triggered by a motor controller
-    board, but no attempt is made to synchronize the camera's
-    triggering with the projector triggering, so the camera's frame
-    rate is independent of the projector rate. This mode is available on
-    all PR2 WGE100 cameras.
--   Projector aware modes: These modes are not available when the
-    projector is in the **!ProjectorOff** mode. They will automatically
-    be switched to **!IgnoreProjector** in that case.
--   **!WithProjector**: The camera is triggered in phase with the
-    projector, resulting in a textured image. The exposure time is set
-    to coincide with the duration of the projector pulse. This mode is
-    available on all PR2 WGE100 cameras. On the narrow stereo camera,
-    images produced in this mode are published to the
-    `narrow_stereo_textured` namespace (this does not apply for other
-    cameras).
--   **!WithoutProjector**: The camera is triggered out of phase with the
-    projector, resulting in an untextured image. The maximum exposure
-    time is set to the interval between the projector pulses. This mode
-    is available on all PR2 WGE100 cameras.
--   **!AlternatingProjector**: Textured and untextured frames are
-    alternated. The exposure times are set as in the non-alternating
-    modes. This mode is only available on the narrow stereo camera as it
-    requires special support from the imager chip. Textured images are
-    published to the `narrow_stereo_textured` namespace, and
-    untextured images are published to the `narrow_stereo` namespace.
+- Projector agnostic modes: Cameras in these modes are not synchronous
+  with the projector, which may lead to flashing of the texture.
+- **!InternalTrigger**: The camera generates its own triggering. This
+  mode is applicable only for the forearm cameras, as the two cameras in
+  a stereo pair need to be triggered simultaneously from a common
+  source.
+- **!IgnoreProjector**: The camera is triggered by a motor controller
+  board, but no attempt is made to synchronize the camera's triggering
+  with the projector triggering, so the camera's frame rate is
+  independent of the projector rate. This mode is available on all PR2
+  WGE100 cameras.
+- Projector aware modes: These modes are not available when the
+  projector is in the **!ProjectorOff** mode. They will automatically be
+  switched to **!IgnoreProjector** in that case.
+- **!WithProjector**: The camera is triggered in phase with the
+  projector, resulting in a textured image. The exposure time is set to
+  coincide with the duration of the projector pulse. This mode is
+  available on all PR2 WGE100 cameras. On the narrow stereo camera,
+  images produced in this mode are published to the
+  `narrow_stereo_textured` namespace (this does not apply for other
+  cameras).
+- **!WithoutProjector**: The camera is triggered out of phase with the
+  projector, resulting in an untextured image. The maximum exposure time
+  is set to the interval between the projector pulses. This mode is
+  available on all PR2 WGE100 cameras.
+- **!AlternatingProjector**: Textured and untextured frames are
+  alternated. The exposure times are set as in the non-alternating
+  modes. This mode is only available on the narrow stereo camera as it
+  requires special support from the imager chip. Textured images are
+  published to the `narrow_stereo_textured` namespace, and untextured
+  images are published to the `narrow_stereo` namespace.
 
 ### Camera Frame Rates
 
@@ -361,37 +358,37 @@ The pr2_camera_synchronizer operates with a standard waveform that
 repeats after four pulses. The pulses in one period are numbered 1 to 4.
 The waveform is entirely determined by three parameters:
 
--   **projector_rate**: The average number of times the projector pulses
-    per second. This is an average because the spacing between pulses
-    varies within the four pulse pattern.
--   **projector_pulse_length**: The time that the projector is on for
-    one projector pulse. The projector driver protection circuitry may
-    in some cases limit the pulse length to be lower than this value.
--   **projector_pulse_shift**: Introduces asymmetry in the pulses. It
-    varies from 0 to 1 with increasing asymmetry.
+- **projector_rate**: The average number of times the projector pulses
+  per second. This is an average because the spacing between pulses
+  varies within the four pulse pattern.
+- **projector_pulse_length**: The time that the projector is on for one
+  projector pulse. The projector driver protection circuitry may in some
+  cases limit the pulse length to be lower than this value.
+- **projector_pulse_shift**: Introduces asymmetry in the pulses. It
+  varies from 0 to 1 with increasing asymmetry.
 
 ![](attachment:Waveform.png)
 
 The timing of the pulses is as follows, where 'T=1/projector_rate' is
 the average pulse period:
 
--   Pulses 1 and 3 are spaced by about one pulse-length more than
-    '2T'. Cameras that are in the **!AlternatingProjector** mode
-    expose during pulse 1, and just before pulse 3.
--   Pulses 2 and 4 are spaced by exactly '2T'. Cameras in the
-    **!WithProjector** mode expose during pulses 2 and 4.
--   The spacing between pulses 1 and 2 varies from 'T' to just under
-    one pulse length less than '2T', depending on the value of
-    **projector_pulse_shift**. Cameras that are in the
-    **!WithoutProjector** mode have their exposure end just before
-    pulses 2 and 4. The start of the exposure depends on the exposure
-    time, which is bounded by the time interval between pulses 3 and 4.
-    Adjusting the **projector_pulse_shift** parameter allows the
-    exposure time of **!WithoutProjector** cameras to be increased.
-    However, the shift comes at the cost of more unpleasant flickering
-    of the projected texture and potential reduction in length of pulses
-    1 and 3, if the projector board determines that the inter-pulse
-    spacing has been too short.
+- Pulses 1 and 3 are spaced by about one pulse-length more than '2T'.
+  Cameras that are in the **!AlternatingProjector** mode expose during
+  pulse 1, and just before pulse 3.
+- Pulses 2 and 4 are spaced by exactly '2T'. Cameras in the
+  **!WithProjector** mode expose during pulses 2 and 4.
+- The spacing between pulses 1 and 2 varies from 'T' to just under one
+  pulse length less than '2T', depending on the value of
+  **projector_pulse_shift**. Cameras that are in the
+  **!WithoutProjector** mode have their exposure end just before pulses
+  2 and 4. The start of the exposure depends on the exposure time, which
+  is bounded by the time interval between pulses 3 and 4. Adjusting the
+  **projector_pulse_shift** parameter allows the exposure time of
+  **!WithoutProjector** cameras to be increased. However, the shift
+  comes at the cost of more unpleasant flickering of the projected
+  texture and potential reduction in length of pulses 1 and 3, if the
+  projector board determines that the inter-pulse spacing has been too
+  short.
 
 ### Interaction with the Prosilica Camera
 
@@ -410,17 +407,16 @@ all.
 The current implementation has certain timing limitations that may be
 removed in future versions.
 
--   Camera and projector periods must be multiples of the 1ms Ethercat
-    interval. In particular rates that are a multiple of 120 Hz cannot
-    currently be achieved exactly, which could lead to flickering when
-    fluorescent lighting is used on 60 Hz AC power.
+- Camera and projector periods must be multiples of the 1ms Ethercat
+  interval. In particular rates that are a multiple of 120 Hz cannot
+  currently be achieved exactly, which could lead to flickering when
+  fluorescent lighting is used on 60 Hz AC power.
 
-```{=html}
 <!-- -->
-```
--   Resolution of triggering and projecting is limited to 1ms Ethercat
-    intervals. 1ms guard times have been incorporated into all the
-    triggering signals and exposure limits.
+
+- Resolution of triggering and projecting is limited to 1ms Ethercat
+  intervals. 1ms guard times have been incorporated into all the
+  triggering signals and exposure limits.
 
 ### Multiple PR2 Robots
 

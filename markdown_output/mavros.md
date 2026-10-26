@@ -159,10 +159,10 @@ APM and PX4 stacks checkout the
 
 Hardware notes:
 
--   APM2.5/2.6 always APM stack
--   Pixhawk from manufacturer usually comes with APM stack
--   Pixhawk may be flashed by PX4 firmware using QGC or by upload make
-    target.
+- APM2.5/2.6 always APM stack
+- Pixhawk from manufacturer usually comes with APM stack
+- Pixhawk may be flashed by PX4 firmware using QGC or by upload make
+  target.
 
 If you unsure what firmware your FCU runs start apm.launch and see
 [diagnostics](diagnostics). Starting from 0.11 mavros knows string
@@ -176,33 +176,31 @@ GCS.
 
 Supported schemas:
 
--   Serial: `/path/to/serial/device\[:baudrate\]`
--   Serial:
-    `serial:*/path/to/serial/device\[:baudrate\]\[/?ids=sysid,compid\]`
-    \* Serial with hardware flow control:
-    `serial-hwfc:*/path/to/serial/device\[:baudrate\]\[?ids=sysid,compid\]`
--   UDP:
-    `udp:*\[bind_host\]\[:port\]@\[remote_host\]\[:port\]\[/?ids=sysid,compid\]`
-    \* UDP Broadcast:
-    `udp-b:*\[bind_host\]\[:port\]@\[:port\]\[/?ids=sysid,compid\]`
--   TCP client: `tcp:*\[server_host\]\[:port\]\[/?ids=sysid,compid\]`
-    \* TCP server:
-    `tcp-l:*\[bind_host\]\[:port\]\[/?ids=sysid,compid\]`
+- Serial: `/path/to/serial/device\[:baudrate\]`
+- Serial:
+  `serial:*/path/to/serial/device\[:baudrate\]\[/?ids=sysid,compid\]`
+  \* Serial with hardware flow control:
+  `serial-hwfc:*/path/to/serial/device\[:baudrate\]\[?ids=sysid,compid\]`
+- UDP:
+  `udp:*\[bind_host\]\[:port\]@\[remote_host\]\[:port\]\[/?ids=sysid,compid\]`
+  \* UDP Broadcast:
+  `udp-b:*\[bind_host\]\[:port\]@\[:port\]\[/?ids=sysid,compid\]`
+- TCP client: `tcp:*\[server_host\]\[:port\]\[/?ids=sysid,compid\]` \*
+  TCP server: `tcp-l:*\[bind_host\]\[:port\]\[/?ids=sysid,compid\]`
 
 Notes:
 
--   ids from URL overrides ids given by parameters `system_id` and
-    `component_id`.
--   `baudrate` default value is 57600
--   `bind_host` default value is "0.0.0.0" (IPv4 ANY)
--   `remote_host` by default unknown. mavros will awaiting data at
-    bind_host:port
--   `server_host` default value is "localhost"
--   `port` default values: 14555 for UDP bind, 14550 for UDP remote,
-    5760 for TCP
--   UDP broadcast used on discovery stage, later it switch to GCS
-    address
--   Currently supports only IPv4.
+- ids from URL overrides ids given by parameters `system_id` and
+  `component_id`.
+- `baudrate` default value is 57600
+- `bind_host` default value is "0.0.0.0" (IPv4 ANY)
+- `remote_host` by default unknown. mavros will awaiting data at
+  bind_host:port
+- `server_host` default value is "localhost"
+- `port` default values: 14555 for UDP bind, 14550 for UDP remote,
+  5760 for TCP
+- UDP broadcast used on discovery stage, later it switch to GCS address
+- Currently supports only IPv4.
 
 ## Utility commands
 
@@ -415,4 +413,56 @@ Note: this list for [0.18.0](mavros/Plugins) version. Older versions:
 [0.12.0 --- 0.15.0](mavros/Plugins_0.12-0.15),
 [0.16.0 --- 0.17.0](mavros/Plugins_0.16-0.17).
 
-[Included page mavros/Plugins not found](Included page mavros/Plugins not found)
+
+
+```
+roslaunch mavros px4.launch
+```
+
+0
+
+### Notes
+
+Plugins: [`vision_position`](mavros_extras#vision_pose_estimate) and
+[`vision_speed`](mavros_extras#vision_speed_estimate) moved to
+[mavros_extras](mavros_extras). Experimental MAVLink 2.0 support
+(without packet signing).
+
+#### Avoiding Pitfalls Related to Ellipsoid Height and Height Above Mean Sea Level
+
+When controlling the FCU using
+[global setpoints](https://wiki.ros.org/mavros#mavros.2FPlugins.setpoint_position),
+you specify the altitude as meters above mean sea level (AMSL). But when
+sensing the
+[global position](https://wiki.ros.org/mavros#mavros.2FPlugins.global_position),
+the altitude reported by `global_position/global` is specified as
+meters above the WGS-84 ellipsoid. This can lead to differences in
+altitude that are dozens of meters apart.
+
+MAVROS uses [GeographicLib](https://geographiclib.sourceforge.io/) to
+convert AMSL to ellipsoid height. When you install MAVROS using a
+package manager, this library gets installed as a dependency in Ubuntu.
+
+To convert between AMSL and ellipsoid height, you add or subtract the
+*geoid separation* to the altitude. To go from AMSL to ellipsoid height,
+you add the value. And to go from ellipsoid height to AMSL you subtract
+the value. Consider these examples.
+
+- [This is how mavros converts AMSL to ellipsoid height in C++](https://github.com/mavlink/mavros/blob/8b9a32ac323e79cef826ee5f39aeb07a1162d240/mavros/src/plugins/global_position.cpp#L232)
+- Here is an example using python:
+
+
+
+```
+roslaunch mavros px4.launch
+```
+
+1
+
+In general, the ellipsoid height is better for calculations and AMSL is
+better for user interfaces. If you're calculating the distance between
+LLA positions, you most likely want to specify both altitudes in terms
+of height above the ellipsoid. Both representations have their uses.
+
+For background information regarding ellipsoid height and AMSL, see this
+video: [Youtube](https://www.youtube.com/watch?v=dX6a6kCk3Po)

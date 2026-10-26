@@ -22,5 +22,5 @@ using ecl::cube_root; // only for real numbers/solutions
 
 ## Tutorial
 
--   [Simple Math](ecl_math/Tutorials/Simple Math) - simple math
-    constants and functions.
+- [Simple Math](ecl_math/Tutorials/Simple Math) - simple math constants
+  and functions.

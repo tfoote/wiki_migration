@@ -9,16 +9,15 @@ images, and other products suitable for processing and visualization.
 driver specific launch package such as [openni_launch](openni_launch) or
 [freenect_launch](freenect_launch). There are 2 important launch files:
 
--   `processing.launch.xml` - Top-level launch file not designed for
-    direct execution, but should be included from driver-specific launch
-    files. This file launches a constellation of nodelets to process
-    data from a RGB-D driver such as [openni_camera](openni_camera) or
-    [freenect_camera](freenect_camera). This file also accepts a number
-    of arguments designed to streamline the constellation of nodelets.
--   `kinect_frames.launch` - Launch the tf tree for a Kinect. This
-    file can also be launched internally from
-    [openni_launch](openni_launch) or
-    [freenect_launch](freenect_launch).
+- `processing.launch.xml` - Top-level launch file not designed for
+  direct execution, but should be included from driver-specific launch
+  files. This file launches a constellation of nodelets to process data
+  from a RGB-D driver such as [openni_camera](openni_camera) or
+  [freenect_camera](freenect_camera). This file also accepts a number of
+  arguments designed to streamline the constellation of nodelets.
+- `kinect_frames.launch` - Launch the tf tree for a Kinect. This file
+  can also be launched internally from [openni_launch](openni_launch) or
+  [freenect_launch](freenect_launch).
 
 ## Launch Files
 

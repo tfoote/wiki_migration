@@ -57,6 +57,5 @@ setups.
 
 ## Additional Support for ROSaic Users
 
--   Go to
-    [Septentrio Support page](https://www.septentrio.com/en/support) for
-    further documentation of Septentrio GNSS receivers.
+- Go to [Septentrio Support page](https://www.septentrio.com/en/support)
+  for further documentation of Septentrio GNSS receivers.

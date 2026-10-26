@@ -1,1 +1,342 @@
-[Included page /fuerte not found](Included page /fuerte not found)
+## Overview
+
+This package contains the
+[image_proc node](image_proc#image_proc.2BAC8-cturtle.image_proc), which
+is meant to sit between the camera driver and vision processing nodes.
+`image_proc` removes camera distortion from the raw image stream, and
+if necessary will convert Bayer or YUV422 format image data to color.
+
+  -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------ --
+                                                                      <tablestyle="width: 99%">**Monocular processing example**                                                                  
+     ![Raw image\|width=320 height=240](attachment:left_raw.png)      ![Rectified image\|width=320 height=240](attachment:left_rect_color.png)                                                       
+     **image_raw**: Original camera image, Bayered and distorted      **image_rect_color**: Rectified image, de-Bayered and undistorted (amount of black border may vary depending on calibration)   
+  -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------ --
+
+
+
+```wiki
+<<Version(ROS Electric)>> `image_proc` also contains the [[image_proc#image_proc.2BAC8-electric.image_proc.2BAC8-crop_decimate|crop_decimate]] nodelet, which applies decimation and ROI to a raw image in software.
+```
+
+
+
+## Mini Tutorial
+
+Make sure your camera driver is running. You can check
+`rostopic list | grep image_raw` to see the available raw image topics
+from compatible drivers.
+
+Normally the raw image from the camera driver is not what you want for
+visual processing, but rather an undistorted and (if necessary)
+debayered image. This is the job of `image_proc`. If you are running
+on a robot, it's probably best to run `image_proc` there. For
+example, if the driver is publishing topics `/my_camera/image_raw` and
+`/my_camera/camera_info` you would do:
+
+
+
+```
+$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```
+
+
+
+Notice that we push our `image_proc` instance down into the
+`/my_camera` namespace, in which it subscribes to the `image_raw`
+and `camera_info` topics. All output topics are likewise published
+within the `/my_camera` namespace.
+
+In a separate terminal (on your home machine, if you are running on a
+robot): 
+
+```
+$ rosrun image_view image_view image:=my_camera/image_rect_color
+```
+
+
+
+This will display an undistorted color image from "my_camera".
+
+## Nodes
+
+### image_proc
+
+![Monocular image node](attachment:image_proc.png)
+
+De-mosaics and undistorts the raw camera image stream.
+
+All processing is on demand. Color processing is performed only if there
+is a subscriber to a color topic. Rectification is performed only if
+there is a subscriber to a rectified topic. While there are no
+subscribers to output topics, `image_proc` unsubscribes from the
+`image_raw` and `camera_info` topics.
+
+[image_transport](image_transport) is used for all publications and
+subscriptions. 
+
+```clearsilver
+sub {
+  0.name = image_raw
+  0.type = sensor_msgs/Image
+  0.desc = Raw image stream from the camera driver.
+  1.name = camera_info
+  1.type = sensor_msgs/CameraInfo
+  1.desc = Camera metadata.
+}
+pub {
+  0.name = image_mono
+  0.type = sensor_msgs/Image
+  0.desc = Monochrome unrectified image.
+  1.name = image_rect
+  1.type = sensor_msgs/Image
+  1.desc = Monochrome rectified image.
+  2.name = image_color
+  2.type = sensor_msgs/Image
+  2.desc = Color unrectified image.
+  3.name = image_rect_color
+  3.type = sensor_msgs/Image
+  3.desc = Color rectified image.
+}
+```
+
+
+
+
+
+```clearsilver
+param {
+  0.name = ~queue_size
+  0.type = int
+  0.desc = Size of message queue for synchronizing image and camera_info topics. You may need to raise this if images take significantly longer to travel over the network than camera info.
+  0.default = 5
+}
+```
+
+
+
+## Nodelets
+
+New in Diamondback, this package contains [nodelets](nodelet) for the
+tasks of debayering and rectification. This allows `image_proc`
+functions to be easily combined with other nodelets, for example camera
+drivers or higher-level vision processing. In fact, the `image_proc`
+node simply loads one `debayer` nodelet and two `rectify` nodelets.
+
+
+
+```clearsilver
+node.0 {
+  name = image_proc/debayer
+  desc = Takes a raw camera stream and publishes monochrome and color versions of it. If the raw images are Bayer pattern, it debayers using bilinear interpolation.
+  sub {
+    0.name = image_raw
+    0.type = sensor_msgs/Image
+    0.desc = Raw image stream from the camera driver.
+  }
+  pub {
+    0.name = image_mono
+    0.type = sensor_msgs/Image
+    0.desc = Monochrome image.
+    1.name = image_color
+    1.type = sensor_msgs/Image
+    1.desc = Color unrectified image.
+  }
+}
+```
+
+
+
+
+
+```
+{#!wiki version electric_and_newer
+{{{
+#!clearsilver CS/NodeAPI
+# Autogenerated param section. Do not hand edit.
+param {
+  group.0 {
+    name=Dynamically Reconfigurable Parameters
+    desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
+    0.name= ~debayer
+    0.default= 0
+    0.type= int
+    0.desc << EOF
+Debayering algorithm. Possible values are:
+   * `Bilinear` (0): Fast algorithm using bilinear interpolation
+   * `EdgeAware` (1): Edge-aware algorithm
+   * `EdgeAwareWeighted` (2): Weighted edge-aware algorithm
+   * `VNG` (3): Slow but high quality Variable Number of Gradients algorithm
+EOF
+  }
+}
+# End of autogenerated section. You may edit below.
+```
+
+ }}}}
+
+
+
+```clearsilver
+node.1 {
+  name = image_proc/rectify
+  desc = Takes an unrectified image stream and its associated calibration parameters, and produces rectified images.
+  sub {
+    0.name = image_mono
+    0.type = sensor_msgs/Image
+    0.desc = Unrectified image stream.
+    1.name = camera_info
+    1.type = sensor_msgs/CameraInfo
+    1.desc = Camera metadata.
+  }
+  pub {
+    0.name = image_rect
+    0.type = sensor_msgs/Image
+    0.desc = Rectified image.
+  }
+  param {
+    0.name = ~queue_size
+    0.type = int
+    0.desc = Size of message queue for synchronizing image and camera_info topics. You may need to raise this if images take significantly longer to travel over the network than camera info.
+    0.default = 5
+  }
+}
+```
+
+
+
+
+
+```
+{#!wiki version electric_and_newer
+{{{
+#!clearsilver CS/NodeAPI
+# Autogenerated param section. Do not hand edit.
+param {
+  no_header=True
+  group.0 {
+    name=Dynamically Reconfigurable Parameters
+    desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
+    0.name= ~interpolation
+    0.default= 1
+    0.type= int
+    0.desc << EOF
+Interpolation algorithm between source image pixels. Possible values are:
+    * `NN` (0): Nearest neighbor
+    * `Linear` (1): Linear
+    * `Cubic` (2): Cubic
+    * `Lanczos4` (4): Lanczos4
+EOF
+  }
+# End of autogenerated section. You may edit below.
+}
+```
+
+ }}}}
+
+
+
+```
+{#!wiki version electric_and_newer
+{{{
+#!clearsilver CS/NodeAPI
+node.2 {
+  name = image_proc/crop_decimate
+  desc = Applies decimation (software binning) and ROI to a raw camera image post-capture. Remap `camera` and `camera_out` to the desired input/output camera namespaces.
+  sub {
+    0.name = camera/image_raw
+    0.type = sensor_msgs/Image
+    0.desc = Raw image stream from the camera driver.
+    1.name = camera/camera_info
+    1.type = sensor_msgs/CameraInfo
+    1.desc = Camera metadata.
+  }
+  pub {
+    0.name = camera_out/image_raw
+    0.type = sensor_msgs/Image
+    0.desc = Cropped and decimated "raw" image.
+    1.name = camera_out/camera_info
+    1.type = sensor_msgs/CameraInfo
+    1.desc = Camera metadata, with binning and ROI fields adjusted to match output raw image.
+  }
+  param {
+    group.0 {
+      0.name = ~queue_size
+      0.type = int
+      0.desc = Size of message queue for synchronizing image and camera_info topics. You may need to raise this if images take significantly longer to travel over the network than camera info.
+      0.default = 5
+    }
+# Autogenerated param section. Do not hand edit.
+    group.1 {
+      name=Dynamically Reconfigurable Parameters
+      desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
+      0.name= ~decimation_x
+      0.default= 1
+      0.type= int
+      0.desc=Number of pixels to decimate to one horizontally. Range: 1 to 16
+      1.name= ~decimation_y
+      1.default= 1
+      1.type= int
+      1.desc=Number of pixels to decimate to one vertically. Range: 1 to 16
+      2.name= ~x_offset
+      2.default= 0
+      2.type= int
+      2.desc=X offset of the region of interest. Range: 0 to 2447
+      3.name= ~y_offset
+      3.default= 0
+      3.type= int
+      3.desc=Y offset of the region of interest. Range: 0 to 2049
+      4.name= ~width
+      4.default= 0
+      4.type= int
+      4.desc=Width of the region of interest. Range: 0 to 2448
+      5.name= ~height
+      5.default= 0
+      5.type= int
+      5.desc=Height of the region of interest. Range: 0 to 2050
+    }
+# End of autogenerated section. You may edit below.
+  }
+}
+```
+
+ }}}}
+
+
+
+```
+$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```
+
+0 }}}}
+
+
+
+```
+$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```
+
+1 }}}}
+
+## Launch files
+
+
+
+```
+$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```
+
+2
+
+#### Arguments
+
+
+
+```
+$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```
+
+3
+
+#### Subscribed and Published Topics
+
+Identical to the `image_proc` node.

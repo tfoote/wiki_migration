@@ -11,14 +11,14 @@ to
 or
 [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
 
--   `projectLaser()` is simple and fast. It does not change the frame
-    of your data.
--   `transformLaserScanToPointCloud()` is slower but more precise. It
-    makes uses of [tf](tf) and the
-    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
-    time increment to transform each individual ray appropriately. This
-    is the recommended means of transformation for tilting laser
-    scanners or moving robots.
+- `projectLaser()` is simple and fast. It does not change the frame of
+  your data.
+- `transformLaserScanToPointCloud()` is slower but more precise. It
+  makes uses of [tf](tf) and the
+  [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+  time increment to transform each individual ray appropriately. This is
+  the recommended means of transformation for tilting laser scanners or
+  moving robots.
 
 Both of these functions have a final optional argument that augments the
 [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)

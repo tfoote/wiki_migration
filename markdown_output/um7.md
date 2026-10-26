@@ -115,7 +115,7 @@ specified in radians.
 
 . temperature of sensor device in degrees centigrade.
 
-**Note: ** To clarify data polarities, I will describe them in terms of
+**Note:** To clarify data polarities, I will describe them in terms of
 aircraft motion. NU/ND is aircraft nose up (as in climbing or nose down
 as in descent. RWD/LWD is right wing down as in an aircraft turning to
 the right in flight; left wing down to turn to the left. NR/NL is nose
@@ -147,41 +147,39 @@ again the next time you restart um7_driver unless you specifically set
 them back to the default. . . . **port(string, default: /dev/ttyUSB0)**
 . Serial device to connect to. .
 
--   **baud (int, default: 115200)** . baud rate that sensor is set to.
-    Currently, default configuration above sets the sensor to 115200. .
-    -   frame_id(string, default: imu_link)** . frame_id placed in the
-        header of the data, mag, and rpy messages . **mag_updates(bool,
-        default: true)** . include magnetometer data in the pose
-        estimate. This causes the yaw parameter to track to magnetic
-        heading but with a long filter time constant. Otherwise, the yaw
-        value will tend to drift slowly but continuously. **
-        quat_mode(bool, default: true)** . This sets the EKF in
-        quaternion mode where it generates the quaternion data necessary
-        for the orientation data in the imu/data message. If not true,
-        the orientation data will read 0,0,0,1 (all 0 degree attitudes)
-        ** zero_gyros(bool, default: true)** . If true, the um7_driver
-        will send a zero_gyros command to the sensor at driver startup.
-        This command causes the sensor to average gyro readings over
-        about 1 second to determine the null value of the gyros. The
-        vehicle must be stationary during this command. **
-        covariance(string, default: "0 0 0 0 0 0 0 0 0")** . The UM7
-        sensor does not provide covariance data so the default imu/data
-        values are set to all zero indicating unknown data. However,
-        some ROS applications may require covariance data for the
-        orientation data. This parameter allows you to specify a string
-        of fixed floating point values (separated by spaces) suitable
-        for your needs.**
+- **baud (int, default: 115200)** . baud rate that sensor is set to.
+  Currently, default configuration above sets the sensor to 115200. .
+  - frame_id(string, default: imu_link) **. frame_id placed in the
+    header of the data, mag, and rpy messages .** mag_updates(bool,
+    default: true) **. include magnetometer data in the pose estimate.
+    This causes the yaw parameter to track to magnetic heading but with
+    a long filter time constant. Otherwise, the yaw value will tend to
+    drift slowly but continuously.** quat_mode(bool, default: true) **.
+    This sets the EKF in quaternion mode where it generates the
+    quaternion data necessary for the orientation data in the imu/data
+    message. If not true, the orientation data will read 0,0,0,1 (all 0
+    degree attitudes)** zero_gyros(bool, default: true) **. If true, the
+    um7_driver will send a zero_gyros command to the sensor at driver
+    startup. This command causes the sensor to average gyro readings
+    over about 1 second to determine the null value of the gyros. The
+    vehicle must be stationary during this command.** covariance(string,
+    default: "0 0 0 0 0 0 0 0 0") **. The UM7 sensor does not provide
+    covariance data so the default imu/data values are set to all zero
+    indicating unknown data. However, some ROS applications may require
+    covariance data for the orientation data. This parameter allows you
+    to specify a string of fixed floating point values (separated by
+    spaces) suitable for your needs.**
 
 ### Commands:
 
 . The um7_driver provides three commands which can be sent to the
 sensor. These commands are sent with the Reset service. The command
 message is: . Reset.srv . bool zero_gyros . bool reset_ekf . bool
-set_mag_ref . **zero_gyros ** . if true, causes the sensor to
-recalculate the angular gyro nulls. The robot must be stationary when
-this command is issued and remain so for at least a second. **reset_ekf
-** . if true, causes the Extended Kalman Filter to restart.
-**set_mag_ref ** . if true, causes the EKF (if the mag_updates parameter
-is set) to change its magnetic heading reference from zero degrees to
-whatever the current value of magnetic heading happens to be. This
-change will ramp in over a 5 or 10 second (roughly) time constant.
+set_mag_ref . **zero_gyros** . if true, causes the sensor to recalculate
+the angular gyro nulls. The robot must be stationary when this command
+is issued and remain so for at least a second. **reset_ekf** . if true,
+causes the Extended Kalman Filter to restart. **set_mag_ref** . if true,
+causes the EKF (if the mag_updates parameter is set) to change its
+magnetic heading reference from zero degrees to whatever the current
+value of magnetic heading happens to be. This change will ramp in over a
+5 or 10 second (roughly) time constant.

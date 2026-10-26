@@ -28,19 +28,18 @@ For detail description of the modules check the following link:
 
 ### Parameters
 
--   `host`: The IP address or hostname of the rc_visard that should be
-    calibrated.
+- `host`: The IP address or hostname of the rc_visard that should be
+  calibrated.
 
 **Since version 2.7, the device ID can be used instead of the sensor's
 IP address:**
 
--   `device`: The ID of the device, i.e. Roboception rc_visard sensor.
-    This can be either:
+- `device`: The ID of the device, i.e. Roboception rc_visard sensor.
+  This can be either:
 
-```{=html}
 <!-- -->
-```
--   serial number, e.g. `02912345`. 
+
+- serial number, e.g. `02912345`. 
 
 ```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://github.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
@@ -48,12 +47,11 @@ Preceed with a colon (`:02912345`) when passing this on the commandline or setti
 
 
 
-```{=html}
 <!-- -->
-```
--   user defined name must be unique among all reachable sensors. If no
-    device or host is given, this parameter works if just one rc_visard
-    is connected.
+
+- user defined name must be unique among all reachable sensors. If no
+  device or host is given, this parameter works if just one rc_visard is
+  connected.
 
 ### Dynamic reconfigure parameters
 
@@ -61,37 +59,37 @@ The following parameters are available for the
 [ItemPick](https://roboception.com/product/itempick/) and
 [BoxPick](https://roboception.com/product/boxpick/) modules:
 
--   `max_grasps`: Maximum number of provided grasps.
--   `cluster_max_curvature`: Maximum curvature allowed within one
-    cluster. The smaller this value, the more clusters will be split
-    apart.
--   `clustering_max_surface_rmse`: Maximum root-mean-square error
-    (RMSE) in meters of points belonging to a surface.
--   `clustering_discontinuity_factor`: Factor used to discriminate
-    depth discontinuities within a patch. The smaller this value, the
-    more clusters will be split apart.
+- `max_grasps`: Maximum number of provided grasps.
+- `cluster_max_curvature`: Maximum curvature allowed within one
+  cluster. The smaller this value, the more clusters will be split
+  apart.
+- `clustering_max_surface_rmse`: Maximum root-mean-square error (RMSE)
+  in meters of points belonging to a surface.
+- `clustering_discontinuity_factor`: Factor used to discriminate depth
+  discontinuities within a patch. The smaller this value, the more
+  clusters will be split apart.
 
 For the [ItemPick](https://roboception.com/product/itempick/) module,
 two additional parameters are available:
 
--   `cluster_max_dimension`: Indicates how much the estimated load
-    carrier dimensions are allowed to differ from the load carrier model
-    dimensions in meters.
--   `clustering_patch_size`: Size in pixels of the square patches the
-    depth map is subdivided into during the first clustering step.
+- `cluster_max_dimension`: Indicates how much the estimated load
+  carrier dimensions are allowed to differ from the load carrier model
+  dimensions in meters.
+- `clustering_patch_size`: Size in pixels of the square patches the
+  depth map is subdivided into during the first clustering step.
 
 ### Services
 
 The following services are offered by the nodes:
 
--   `compute_grasps`: Triggers the computation of grasping poses for a
-    suction device. All images used by the node are guaranteed to be
-    newer than the service trigger time.
+- `compute_grasps`: Triggers the computation of grasping poses for a
+  suction device. All images used by the node are guaranteed to be newer
+  than the service trigger time.
 
 The [BoxPick](https://roboception.com/product/boxpick/) node offers an
 additional service:
 
--   `detect_items`: Triggers the detection of rectangles.
+- `detect_items`: Triggers the detection of rectangles.
 
 ## Launch
 
@@ -135,4 +133,14 @@ rosrun rc_pick_client rc_boxpick_client_node _device:=:<serial_number>
 
 ## Acknowledgements
 
-[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)
+![ROSIN Logo\|height=60](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_ack_logo_wide.png)
+
+Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software
+Components.\
+More information: [rosin-project.eu](http://rosin-project.eu/)\
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --
+     ![EU Flag\|height=45](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_eu_flag.jpg)      <99%> This project has received funding from the European Union's Horizon 2020\   
+                                                                                                                        research and innovation programme under grant agreement No. 732287.                 
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --

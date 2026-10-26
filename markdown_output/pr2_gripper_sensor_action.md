@@ -18,27 +18,27 @@ higher level, and allows the user to send target goals to the real-time
 controller. Currently this package provides several capabilities in the
 form of action servers including:
 
--   **Position Control** for changing the gripper aperture to a certain
-    size.
--   **Force Control** for grasping things with a specified force value
-    within the gripper.
--   **Contact Finding** for closing the gripper until contact has been
-    made with a user-defined combination of finger contacts, and then
-    stopping abruptly.
--   **Slip Control** for holding an object with force control and
-    observing the tactile sensors for any sign of object slippage. The
-    controller automatically increases the grip force upon any sign of
-    slip.
--   **Event Detection** for detecting a variety of events that may
-    happen at the gripper including: Impacts with the hand/arm, contact
-    with the sides of the fingers, slip across the gripper fingerpads.
--   **Grabbing** a higher-level behavior that is provided as a
-    convenience for the user. Grab strings together several of the
-    actions above to achieve a useful goal of delicately grasping an
-    unknown object with hardness sensing and slip control.
--   **Releasing** a higher-level behavior that strings together several
-    lower level actions to detect contact between the object and
-    environment and quickly open the gripper.
+- **Position Control** for changing the gripper aperture to a certain
+  size.
+- **Force Control** for grasping things with a specified force value
+  within the gripper.
+- **Contact Finding** for closing the gripper until contact has been
+  made with a user-defined combination of finger contacts, and then
+  stopping abruptly.
+- **Slip Control** for holding an object with force control and
+  observing the tactile sensors for any sign of object slippage. The
+  controller automatically increases the grip force upon any sign of
+  slip.
+- **Event Detection** for detecting a variety of events that may happen
+  at the gripper including: Impacts with the hand/arm, contact with the
+  sides of the fingers, slip across the gripper fingerpads.
+- **Grabbing** a higher-level behavior that is provided as a convenience
+  for the user. Grab strings together several of the actions above to
+  achieve a useful goal of delicately grasping an unknown object with
+  hardness sensing and slip control.
+- **Releasing** a higher-level behavior that strings together several
+  lower level actions to detect contact between the object and
+  environment and quickly open the gripper.
 
 Additional details on how all of these methods are actually implemented
 can be found in the recently submitted Transactions on Robotics paper
@@ -63,25 +63,25 @@ generated during this interaction, you should refer to the simpler
 If you want to do any of the following things this is probably a good
 package for you to use:
 
--   Interact with anything in the environment that the gripper is
-    capable of damaging when it applies maximum joint effort.
--   Close the gripper aperture until either finger makes contact with
-    the environment , and quickly stop the gripper motion.
--   Detect when anything in the environment impacts the hand/arm of the
-    robot.
--   Detect when anything in the environment impacts the fingers of the
-    robot.
--   Detect when something is slipping or vibrating against the robot's
-    fingers.
--   Hold objects with (hopefully) the minimum amount of force necessary
-    to manipulate them without having them slip out of the fingers.
--   Do force control with something held between the gripper fingers.
--   Conserve power by applying the minimum joint effort required to hold
-    an object.
--   Protect your gripper from damage and overuse by not applying undue
-    force and stress to the fingers and drive mechanism.
--   Do position control of the gripper while still having access to any
-    of the other functionality discussed in this list.
+- Interact with anything in the environment that the gripper is capable
+  of damaging when it applies maximum joint effort.
+- Close the gripper aperture until either finger makes contact with the
+  environment , and quickly stop the gripper motion.
+- Detect when anything in the environment impacts the hand/arm of the
+  robot.
+- Detect when anything in the environment impacts the fingers of the
+  robot.
+- Detect when something is slipping or vibrating against the robot's
+  fingers.
+- Hold objects with (hopefully) the minimum amount of force necessary to
+  manipulate them without having them slip out of the fingers.
+- Do force control with something held between the gripper fingers.
+- Conserve power by applying the minimum joint effort required to hold
+  an object.
+- Protect your gripper from damage and overuse by not applying undue
+  force and stress to the fingers and drive mechanism.
+- Do position control of the gripper while still having access to any of
+  the other functionality discussed in this list.
 
 ## ROS API
 
@@ -98,8 +98,8 @@ subsections, as well as a high-level description of what the node does.
 
 ### API Stability
 
--   The ROS API is REVIEWED and UNSTABLE
--   The C++ API is UNREVIEWED and UNSTABLE
+- The ROS API is REVIEWED and UNSTABLE
+- The C++ API is UNREVIEWED and UNSTABLE
 
 ### ROS Parameters
 
@@ -222,253 +222,247 @@ examples on using the action nodes defined below.
 
 ##### grab
 
--   **Description:** When called the `grab` action will open the
-    gripper to the value of the param `position_open`, then close at
-    param `close_speed` until finding 2-fingered contact with an
-    object. It will then attempt to estimate how hard to hold the
-    object, apply this force, and move into the `slip_servo` control
-    mode. The `grab` action actually strings together the various
-    actions of `gripper_action`, `find_contact`, `force_servo`,
-    and `slip_servo` (in that order) to delicately grab an object and
-    firmly hold onto it during manipulation. In addition to stringing
-    these actions together it uses the feedback between the
-    `find_contact` and `force_servo` actions to estimate object
-    hardness, and attempts to grasp the object with a reasonable force
-    to lift and manipulate it. This action returns successfully when the
-    gripper has entered the slip servo mode. A diagram of these events
-    can be seen below.
+- **Description:** When called the `grab` action will open the gripper
+  to the value of the param `position_open`, then close at param
+  `close_speed` until finding 2-fingered contact with an object. It
+  will then attempt to estimate how hard to hold the object, apply this
+  force, and move into the `slip_servo` control mode. The `grab`
+  action actually strings together the various actions of
+  `gripper_action`, `find_contact`, `force_servo`, and
+  `slip_servo` (in that order) to delicately grab an object and firmly
+  hold onto it during manipulation. In addition to stringing these
+  actions together it uses the feedback between the `find_contact` and
+  `force_servo` actions to estimate object hardness, and attempts to
+  grasp the object with a reasonable force to lift and manipulate it.
+  This action returns successfully when the gripper has entered the slip
+  servo mode. A diagram of these events can be seen below.
 
 ![alt text\|width=780](attachment:grab_diagram.png)
 
--   **Topic Name:**`/r_gripper_sensor_controller/grab`
--   action definition:
--   goal:
-    [PR2GripperGrabCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabCommand.html)
--   result:
-    [PR2GripperGrabData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabData.html)
--   feedback:
-    [PR2GripperGrabData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabData.html)
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   Please see the associated sub-actions to understand the various
-    [parameters](#ROS Parameters) that modify the behavior of this
-    action. The parameter `position_open` is the only parameter not
-    listed as part of the sub-actions below.
+- **Topic Name:**`/r_gripper_sensor_controller/grab`
+- action definition:
+- goal:
+  [PR2GripperGrabCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabCommand.html)
+- result:
+  [PR2GripperGrabData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabData.html)
+- feedback:
+  [PR2GripperGrabData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperGrabData.html)
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- Please see the associated sub-actions to understand the various
+  [parameters](#ROS Parameters) that modify the behavior of this action.
+  The parameter `position_open` is the only parameter not listed as
+  part of the sub-actions below.
 
 ##### release
 
--   **Description:** When called `release` will not change the control
-    mode of the gripper, but rather it waits for a result from the
-    `event_detector` action. This event can be controlled by the user
-    as part of the input Command, defined below. Immediately after this
-    event occurs `release` transitions the gripper to the
-    `position_open` param value using the `gripper_action` position
-    control action.
--   **Topic Name:**`/r_gripper_sensor_controller/release`
--   action definition:
--   goal:
-    [PR2GripperReleaseCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseCommand.html)
--   result:
-    [PR2GripperReleaseData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseData.html)
--   feedback:
-    [PR2GripperReleaseData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseData.html)
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   Please see the associated sub-actions to understand the various
-    [parameters](#ROS Parameters) that modify the behavior of this
-    action. The parameter `position_open` is the only parameter not
-    listed as part of the sub-actions below.
+- **Description:** When called `release` will not change the control
+  mode of the gripper, but rather it waits for a result from the
+  `event_detector` action. This event can be controlled by the user as
+  part of the input Command, defined below. Immediately after this event
+  occurs `release` transitions the gripper to the `position_open`
+  param value using the `gripper_action` position control action.
+- **Topic Name:**`/r_gripper_sensor_controller/release`
+- action definition:
+- goal:
+  [PR2GripperReleaseCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseCommand.html)
+- result:
+  [PR2GripperReleaseData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseData.html)
+- feedback:
+  [PR2GripperReleaseData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperReleaseData.html)
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- Please see the associated sub-actions to understand the various
+  [parameters](#ROS Parameters) that modify the behavior of this action.
+  The parameter `position_open` is the only parameter not listed as
+  part of the sub-actions below.
 
 #### Advanced
 
 ##### gripper_action
 
--   **Description:** action node to provide position-control of the
-    gripper aperture based on gripper virtual parallel joint position
-    feedback. This action returns successfully when the desired position
-    has been achieved within ``.
--   **Topic Name:**`/r_gripper_sensor_controller/gripper_action`
--   action definition:
--   goal:
-    [Pr2GripperCommandGoal.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandGoal.html)
--   result:
-    [Pr2GripperCommandResult.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandResult.html)
--   feedback:
-    [Pr2GripperCommandResult.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandResult.html)
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   /!\\ : values input for the goal message parameter `max_effort`
-    will replace the param server value of `max_joint_effort` and be
-    used for all subsequent action calls (for all actions in this
-    library).
--   The following [parameters](#ROS Parameters) alter the performance of
-    this action, and can be reloaded using the
-    [reload_parameters service](#ROS Services):
--   `max_joint_effort`
--   `position_servo_position_tolerance`
+- **Description:** action node to provide position-control of the
+  gripper aperture based on gripper virtual parallel joint position
+  feedback. This action returns successfully when the desired position
+  has been achieved within ``.
+- **Topic Name:**`/r_gripper_sensor_controller/gripper_action`
+- action definition:
+- goal:
+  [Pr2GripperCommandGoal.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandGoal.html)
+- result:
+  [Pr2GripperCommandResult.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandResult.html)
+- feedback:
+  [Pr2GripperCommandResult.msg](http://www.ros.org/doc/api/pr2_controllers_msgs/html/msg/Pr2GripperCommandResult.html)
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- /!\\ : values input for the goal message parameter `max_effort` will
+  replace the param server value of `max_joint_effort` and be used for
+  all subsequent action calls (for all actions in this library).
+- The following [parameters](#ROS Parameters) alter the performance of
+  this action, and can be reloaded using the
+  [reload_parameters service](#ROS Services):
+- `max_joint_effort`
+- `position_servo_position_tolerance`
 
 ##### force_servo
 
--   **Description:** action node to provide force-control of the gripper
-    joint based on the contact force reported by the tactile sensors of
-    the PR2 finger. The implementation of this force servoing algorithm
-    assumes that the gripper is making contact with both fingers, and
-    cannot be used for single finger contact. The force servoing
-    algorithm will attempt to move the gripper joint to maintain the
-    desired force level **on the gripper finger currently experiencing
-    the minimum amount of force**. The force sensing relies on
-    information coming from the pressure-sensitive arrays on the PR2
-    gripper, specifically the flat fingerpad area. Objects that contact
-    other locations on the gripper (such as the palm) will not be
-    detected. This action returns successfully when the fingerpad force
-    is within `force_servo_force_tolerance` of the desired force, and
-    the velocity of the gripper is within
-    `force_servo_velocity_tolerance` of zero.
--   **Topic Name:**`/r_gripper_sensor_controller/force_servo`
--   action definition:
--   goal:
-    [PR2GripperForceServoCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoCommand.html)
--   result:
-    [PR2GripperForceServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoData.html)
--   feedback:
-    [PR2GripperForceServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoData.html)
--   The speed of motion during force servo is not controlled, so if it
-    is known beforehand that gripper is moving through open space with
-    no contact it may be desirable (although not necessary) to use an
-    alternative action, such as `find_contact`.
--   Any force below the minimum param `force_lightest` will be
-    automatically increased to equal `force_lightest`. You cannot
-    command negative (opening forces) as the `fingertip_force` input.
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   The following [parameters](#ROS Parameters) alter the performance of
-    this action, and can be reloaded using the
-    [reload_parameters service](#ROS Services):
--   `max_joint_effort`
--   `fingertip_force_limit`
--   `deformation_limit`
--   `force_lightest`
--   `force_servo_force_tolerance`
--   `force_servo_velocity_tolerance`
+- **Description:** action node to provide force-control of the gripper
+  joint based on the contact force reported by the tactile sensors of
+  the PR2 finger. The implementation of this force servoing algorithm
+  assumes that the gripper is making contact with both fingers, and
+  cannot be used for single finger contact. The force servoing algorithm
+  will attempt to move the gripper joint to maintain the desired force
+  level **on the gripper finger currently experiencing the minimum
+  amount of force**. The force sensing relies on information coming from
+  the pressure-sensitive arrays on the PR2 gripper, specifically the
+  flat fingerpad area. Objects that contact other locations on the
+  gripper (such as the palm) will not be detected. This action returns
+  successfully when the fingerpad force is within
+  `force_servo_force_tolerance` of the desired force, and the velocity
+  of the gripper is within `force_servo_velocity_tolerance` of zero.
+- **Topic Name:**`/r_gripper_sensor_controller/force_servo`
+- action definition:
+- goal:
+  [PR2GripperForceServoCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoCommand.html)
+- result:
+  [PR2GripperForceServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoData.html)
+- feedback:
+  [PR2GripperForceServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperForceServoData.html)
+- The speed of motion during force servo is not controlled, so if it is
+  known beforehand that gripper is moving through open space with no
+  contact it may be desirable (although not necessary) to use an
+  alternative action, such as `find_contact`.
+- Any force below the minimum param `force_lightest` will be
+  automatically increased to equal `force_lightest`. You cannot
+  command negative (opening forces) as the `fingertip_force` input.
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- The following [parameters](#ROS Parameters) alter the performance of
+  this action, and can be reloaded using the
+  [reload_parameters service](#ROS Services):
+- `max_joint_effort`
+- `fingertip_force_limit`
+- `deformation_limit`
+- `force_lightest`
+- `force_servo_force_tolerance`
+- `force_servo_velocity_tolerance`
 
 ##### find_contact
 
--   **Description:** action node to close the gripper at the param
-    server velocity value `close_speed` and stop immediately once the
-    user-specified finger contact conditions have been met (using
-    sensing from the PR2 finger tactile sensors). The user is free to
-    specify either the left/right finger, or both contacts. The contact
-    sensing relies on information coming from the pressure-sensitive
-    arrays on the PR2 gripper, specifically the flat fingerpad area.
-    Objects that contact other locations on the gripper (such as the
-    palm) will not be detected. This action returns successfully when
-    the conditions defined by the message variable
-    `contact_conditions` have been met.
--   **Topic Name:**`/r_gripper_sensor_controller/find_contact`
--   action definition:
--   goal:
-    [PR2GripperFindContactCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactCommand.html)
--   result:
-    [PR2GripperFindContactData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactData.html)
--   feedback:
-    [PR2GripperFindContactData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactData.html)
--   The parameter `zero_fingertip_sensors` should be used to
-    periodically recalibrate the fingertip pressure array readings to
-    achieve the best possible performance results. It is advisable that
-    any time `find_contact` is called and it is known that the gripper
-    fingers are not contacting the environment this flag be set to
-    `true` to recalibrate the fingertip sensors. This flag should
-    **never** be set to true when the gripper is in contact with the
-    environment.
--   Contact is considered to have occured when the force on the
-    fingerpad meets or exceeds the param value `force_lightest`, or
-    the high frequency force content exceeds `hp_force_trigger`.
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   The following [parameters](#ROS Parameters) alter the performance of
-    this action, and can be reloaded using the
-    [reload_parameters service](#ROS Services):
--   `close_speed`
--   `max_joint_effort`
--   `hp_force_trigger`
+- **Description:** action node to close the gripper at the param server
+  velocity value `close_speed` and stop immediately once the
+  user-specified finger contact conditions have been met (using sensing
+  from the PR2 finger tactile sensors). The user is free to specify
+  either the left/right finger, or both contacts. The contact sensing
+  relies on information coming from the pressure-sensitive arrays on the
+  PR2 gripper, specifically the flat fingerpad area. Objects that
+  contact other locations on the gripper (such as the palm) will not be
+  detected. This action returns successfully when the conditions defined
+  by the message variable `contact_conditions` have been met.
+- **Topic Name:**`/r_gripper_sensor_controller/find_contact`
+- action definition:
+- goal:
+  [PR2GripperFindContactCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactCommand.html)
+- result:
+  [PR2GripperFindContactData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactData.html)
+- feedback:
+  [PR2GripperFindContactData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperFindContactData.html)
+- The parameter `zero_fingertip_sensors` should be used to
+  periodically recalibrate the fingertip pressure array readings to
+  achieve the best possible performance results. It is advisable that
+  any time `find_contact` is called and it is known that the gripper
+  fingers are not contacting the environment this flag be set to
+  `true` to recalibrate the fingertip sensors. This flag should
+  **never** be set to true when the gripper is in contact with the
+  environment.
+- Contact is considered to have occured when the force on the fingerpad
+  meets or exceeds the param value `force_lightest`, or the high
+  frequency force content exceeds `hp_force_trigger`.
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- The following [parameters](#ROS Parameters) alter the performance of
+  this action, and can be reloaded using the
+  [reload_parameters service](#ROS Services):
+- `close_speed`
+- `max_joint_effort`
+- `hp_force_trigger`
 
 ##### slip_servo
 
--   **Description:** action node to use a force servoing algorithm
-    similar to `force_servo`, but also monitor the finger-mounted
-    pressure sensors for signs of disturbance. When a disturbance, such
-    as vibrating contact or slip is detect, the slip servo algorithm
-    increases the force applied at the gripper as a percentage of the
-    already-applied grip force. `slip_servo` relies on information
-    coming from the pressure-sensitive arrays on the PR2 gripper,
-    specifically the flat fingerpad area. Objects that contact other
-    locations on the gripper (such as the palm) will not be detected.
-    This action never returns successfully, but rather it is used to put
-    the real-time controller into the slip servo mode.
--   **Topic Name:**`/r_gripper_sensor_controller/slip_servo`
--   action definition:
--   goal:
-    [PR2GripperSlipServoCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoCommand.html)
--   result:
-    [PR2GripperSlipServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoData.html)
--   feedback:
-    [PR2GripperSlipServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoData.html)
--   Slip is considered to have occurred when the high frequency
-    fingerpad force content exceeds a value define by the product of the
-    param `slip_servo_gain` and the current fingerpad force (see TRO
-    paper for additional detail).
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
--   The following [parameters](#ROS Parameters) alter the performance of
-    this action, and can be reloaded using the
-    [reload_parameters service](#ROS Services):
--   `max_joint_effort`
--   `fingertip_force_limit`
--   `deformation_limit`
--   `force_lightest`
--   `slip_servo_force_tolerance`
--   `slip_servo_start_force`
+- **Description:** action node to use a force servoing algorithm similar
+  to `force_servo`, but also monitor the finger-mounted pressure
+  sensors for signs of disturbance. When a disturbance, such as
+  vibrating contact or slip is detect, the slip servo algorithm
+  increases the force applied at the gripper as a percentage of the
+  already-applied grip force. `slip_servo` relies on information
+  coming from the pressure-sensitive arrays on the PR2 gripper,
+  specifically the flat fingerpad area. Objects that contact other
+  locations on the gripper (such as the palm) will not be detected. This
+  action never returns successfully, but rather it is used to put the
+  real-time controller into the slip servo mode.
+- **Topic Name:**`/r_gripper_sensor_controller/slip_servo`
+- action definition:
+- goal:
+  [PR2GripperSlipServoCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoCommand.html)
+- result:
+  [PR2GripperSlipServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoData.html)
+- feedback:
+  [PR2GripperSlipServoData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperSlipServoData.html)
+- Slip is considered to have occurred when the high frequency fingerpad
+  force content exceeds a value define by the product of the param
+  `slip_servo_gain` and the current fingerpad force (see TRO paper for
+  additional detail).
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
+- The following [parameters](#ROS Parameters) alter the performance of
+  this action, and can be reloaded using the
+  [reload_parameters service](#ROS Services):
+- `max_joint_effort`
+- `fingertip_force_limit`
+- `deformation_limit`
+- `force_lightest`
+- `slip_servo_force_tolerance`
+- `slip_servo_start_force`
 
 ##### event_detector
 
--   **Description:** action node that can be used to monitor sensor
-    signals of the PR2 palm-mounted accelerometer, fingertip pressure
-    sensor fingerpad, and fingertip pressure sensor periphery cells. The
-    user can specify a variety of different conditions which will
-    trigger the action to return a result. Particularly, the user can
-    specify how much acceleration they are looking for (good for
-    detecting contacts between the arm or objects held in the gripper
-    and the world), or how much slip to trigger on. The user can also
-    specify whether they want to trigger upon impacts with the sides of
-    the fingers. This action is particularly useful when placing objects
-    down and finding the contact event, or detecting contacts with the
-    hand/arm during motion. This action returns successfully when
-    conditions defined in the message vaiable `trigger_conditions`
-    have been met.
--   **Topic Name:**`/r_gripper_sensor_controller/event_detector`
--   action definition:
--   goal:
-    [PR2GripperEventDetectorCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorCommand.html)
--   result:
-    [PR2GripperEventDetectorData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorData.html)
--   feedback:
-    [PR2GripperEventDetectorData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorData.html)
--   A call to `gripper_action`, `force_servo`, `find_contact`,
-    `slip_servo`, or `grab` will result in the current action goal
-    being cancelled. Cancelling of this action for any other reason will
-    stop sending commands to the gripper motor.
+- **Description:** action node that can be used to monitor sensor
+  signals of the PR2 palm-mounted accelerometer, fingertip pressure
+  sensor fingerpad, and fingertip pressure sensor periphery cells. The
+  user can specify a variety of different conditions which will trigger
+  the action to return a result. Particularly, the user can specify how
+  much acceleration they are looking for (good for detecting contacts
+  between the arm or objects held in the gripper and the world), or how
+  much slip to trigger on. The user can also specify whether they want
+  to trigger upon impacts with the sides of the fingers. This action is
+  particularly useful when placing objects down and finding the contact
+  event, or detecting contacts with the hand/arm during motion. This
+  action returns successfully when conditions defined in the message
+  vaiable `trigger_conditions` have been met.
+- **Topic Name:**`/r_gripper_sensor_controller/event_detector`
+- action definition:
+- goal:
+  [PR2GripperEventDetectorCommand.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorCommand.html)
+- result:
+  [PR2GripperEventDetectorData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorData.html)
+- feedback:
+  [PR2GripperEventDetectorData.msg](http://www.ros.org/doc/api/pr2_gripper_sensor_msgs/html/msg/PR2GripperEventDetectorData.html)
+- A call to `gripper_action`, `force_servo`, `find_contact`,
+  `slip_servo`, or `grab` will result in the current action goal
+  being cancelled. Cancelling of this action for any other reason will
+  stop sending commands to the gripper motor.
 
 ### ROS Services
 
@@ -481,36 +475,36 @@ standard Empty Request and Response message types.
 
 ##### zero_fingertip_sensors
 
--   **Description:** a service that is used to optionally re-calibrate
-    the fingertip sensors. The fingertip sensor no-load reading is
-    naturally a non-zero value, and it tends to drift over time (as more
-    contacts occur). This calibration is done once when loading the
-    controllers, and any time the `find_contact` action is called with
-    the `zero_fingertip_sensors` flag as `true`. Users may use this
-    service to re-calibrate the sensors themselves, which is especially
-    useful if you do not intend to call `find_contact` often. This
-    service should only be called when the fingerpads are not in contact
-    with the environment.
--   **Service
-    Name:**`/r_gripper_sensor_controller/zero_fingertip_sensors`
+- **Description:** a service that is used to optionally re-calibrate the
+  fingertip sensors. The fingertip sensor no-load reading is naturally a
+  non-zero value, and it tends to drift over time (as more contacts
+  occur). This calibration is done once when loading the controllers,
+  and any time the `find_contact` action is called with the
+  `zero_fingertip_sensors` flag as `true`. Users may use this
+  service to re-calibrate the sensors themselves, which is especially
+  useful if you do not intend to call `find_contact` often. This
+  service should only be called when the fingerpads are not in contact
+  with the environment.
+- **Service
+  Name:**`/r_gripper_sensor_controller/zero_fingertip_sensors`
 
 ##### reload_params
 
--   **Description:** a service that causes the controller to fetch
-    [parameters](#ROS Parameters) from the param-server and load them
-    into the controller. This service should be called anytime the user
-    wants to edit the param-server values and push them to the
-    controller. It can be used at any time during execution.
--   **Service Name:**`/r_gripper_sensor_controller/reload_params`
+- **Description:** a service that causes the controller to fetch
+  [parameters](#ROS Parameters) from the param-server and load them into
+  the controller. This service should be called anytime the user wants
+  to edit the param-server values and push them to the controller. It
+  can be used at any time during execution.
+- **Service Name:**`/r_gripper_sensor_controller/reload_params`
 
 ##### stop_motor_output
 
--   **Description:** a service that can be called at any time to force
-    the real-time controller into a state that commands no force output
-    to the gripper joint. This service can be used as an emergency
-    shutoff. After calling this service any further action calls to
-    control the gripper will take the gripper out of this shutoff mode.
--   **Service Name:**`/r_gripper_sensor_controller/stop_motor_output`
+- **Description:** a service that can be called at any time to force the
+  real-time controller into a state that commands no force output to the
+  gripper joint. This service can be used as an emergency shutoff. After
+  calling this service any further action calls to control the gripper
+  will take the gripper out of this shutoff mode.
+- **Service Name:**`/r_gripper_sensor_controller/stop_motor_output`
 
 ## Hardware Dependecies
 

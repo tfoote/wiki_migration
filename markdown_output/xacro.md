@@ -490,21 +490,19 @@ latest definition of a property or macro **seen so far**, will be used.
 This is a much more intuitive evaluation process that allows for some
 nice new features as well:
 
--   Inclusion of files can be postponed or completely suppressed if the
-    <include> tag is placed within a macro or within conditional tags
-    respectively.
+- Inclusion of files can be postponed or completely suppressed if the
+  <include> tag is placed within a macro or within conditional tags
+  respectively.
 
-```{=html}
 <!-- -->
-```
--   Include filenames can be specified via properties or macro
-    parameters.
--   By changing properties at the global scope, the instantiation of a
-    macro can yield different results if these properties are used in
-    the macro.
--   Property definitions can be conditional.
--   Macros can define properties within a local scope without affecting
-    outside stuff.
+
+- Include filenames can be specified via properties or macro parameters.
+- By changing properties at the global scope, the instantiation of a
+  macro can yield different results if these properties are used in the
+  macro.
+- Property definitions can be conditional.
+- Macros can define properties within a local scope without affecting
+  outside stuff.
 
 Because \--inorder processing is much more powerful, in future versions
 beyond Jade, the new processing style will become default and you should

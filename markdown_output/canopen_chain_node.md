@@ -123,15 +123,15 @@ nodes:
  will publish on three topics with
 the sync/update_rate:
 
--   node1_1003sub0
-    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
-    number of errors for node1 (not cached)
--   node2_1001
-    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
-    error register of node2 (cached)
--   node3_1001
-    ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
-    error register of node3 (cached)
+- node1_1003sub0
+  ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+  number of errors for node1 (not cached)
+- node2_1001
+  ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+  error register of node2 (cached)
+- node3_1001
+  ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
+  error register of node3 (cached)
 
 The [diagnostic_updater](diagnostic_updater) can be passed the
 diagnostic_period parameter in fractional seconds.

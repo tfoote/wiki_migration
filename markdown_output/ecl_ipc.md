@@ -24,7 +24,7 @@ When we have a need, it will be reintroduced.
 
 ## Tutorials
 
--   [Semaphores](ecl_ipc/Tutorials/Semaphores) - inter-process locks for
-    use with shared memory.
--   [Shared Memory](ecl_ipc/Tutorials/Shared Memory) - fast, typesafe,
-    interprocess communication.
+- [Semaphores](ecl_ipc/Tutorials/Semaphores) - inter-process locks for
+  use with shared memory.
+- [Shared Memory](ecl_ipc/Tutorials/Shared Memory) - fast, typesafe,
+  interprocess communication.

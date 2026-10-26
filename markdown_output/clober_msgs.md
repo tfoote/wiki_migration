@@ -6,7 +6,7 @@
 
 ## Clobot e-Manual
 
--   [Clobot e-Manual for Clober](https://app.gitbook.com/@clobot-git/s/clober-manual/)
+- [Clobot e-Manual for Clober](https://app.gitbook.com/@clobot-git/s/clober-manual/)
 
 ## ROS Message Types
 

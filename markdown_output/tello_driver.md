@@ -28,7 +28,7 @@ updating the [TelloPy](https://github.com/hanyazou/TelloPy) library.
 
 Binary release from the ROS repository:
 
--   Kinetic 
+- Kinetic 
 
 ```
 $ sudo apt install ros-kinetic-tello-driver
@@ -74,9 +74,9 @@ $ source devel/setup.bash
 
 ### Launch
 
--   Turn on Tello drone
--   Connect to drone's WiFi access point (`TELLO_XXXXXX`)
-    
+- Turn on Tello drone
+- Connect to drone's WiFi access point (`TELLO_XXXXXX`)
+  
 
 ```
 $ roslaunch tello_driver tello_node.launch
@@ -93,54 +93,54 @@ Main node running as interface for the
 
 #### Subscribed topics
 
--   `/tello/cmd_vel`
-    [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
--   `/tello/emergency`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/fast_mode`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/flattrim`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/flip`
-    [std_msgs/Uint8](http://docs.ros.org/api/std_msgs/html/msg/UInt8.html)
--   `/tello/land`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/palm_land`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/takeoff`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/throw_takeoff`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/cmd_vel`
+  [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
+- `/tello/emergency`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/fast_mode`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/flattrim`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/flip`
+  [std_msgs/Uint8](http://docs.ros.org/api/std_msgs/html/msg/UInt8.html)
+- `/tello/land`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/palm_land`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/takeoff`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/throw_takeoff`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 
 #### Published topics
 
--   `/tello/camera/camera_info`
-    [sensor_msgs/CameraInfo](http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html)
--   `/tello/image_raw`
-    [sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
--   `/tello/imag/raw/h264`
-    [h264_image_transport/H264Packet](https://github.com/tilk/h264_image_transport/blob/master/msg/H264Packet.msg)
--   `/tello/odom`
-    [nav_msgs/Odometry](http://docs.ros.org/api/nav_msgs/html/msg/Odometry.html)
--   `/tello/imu`
-    [sensor_msgs/Imu](http://docs.ros.org/api/sensor_msgs/html/msg/Imu.html)
--   `/tello/status`
-    [tello_driver/TelloStatus](https://github.com/appie-17/tello_driver/blob/development/msg/TelloStatus.msg)
+- `/tello/camera/camera_info`
+  [sensor_msgs/CameraInfo](http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html)
+- `/tello/image_raw`
+  [sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
+- `/tello/imag/raw/h264`
+  [h264_image_transport/H264Packet](https://github.com/tilk/h264_image_transport/blob/master/msg/H264Packet.msg)
+- `/tello/odom`
+  [nav_msgs/Odometry](http://docs.ros.org/api/nav_msgs/html/msg/Odometry.html)
+- `/tello/imu`
+  [sensor_msgs/Imu](http://docs.ros.org/api/sensor_msgs/html/msg/Imu.html)
+- `/tello/status`
+  [tello_driver/TelloStatus](https://github.com/appie-17/tello_driver/blob/development/msg/TelloStatus.msg)
 
 #### Parameters
 
--   `~/tello_driver_node/connect_timeout_sec`
--   `~/tello_driver_node/fixed_video_rate`
--   `~/tello_driver_node/local_cmd_client_port`
--   `~/tello_driver_node/local_vid_server_port`
--   `~/tello_driver_node/stream_h264_video`
--   `~/tello_driver_node/tello_cmd_server_port`
--   `~/tello_driver_node/tello_ip`
--   `~/tello_driver_node/vel_cmd_scale`
--   `~/tello_driver_node/video_req_sps_hz`
--   `~/tello_driver_node/altitude_limit`
--   `~/tello_driver_node/attitude_limit`
--   `~/tello_driver_node/low_bat_threshold`
+- `~/tello_driver_node/connect_timeout_sec`
+- `~/tello_driver_node/fixed_video_rate`
+- `~/tello_driver_node/local_cmd_client_port`
+- `~/tello_driver_node/local_vid_server_port`
+- `~/tello_driver_node/stream_h264_video`
+- `~/tello_driver_node/tello_cmd_server_port`
+- `~/tello_driver_node/tello_ip`
+- `~/tello_driver_node/vel_cmd_scale`
+- `~/tello_driver_node/video_req_sps_hz`
+- `~/tello_driver_node/altitude_limit`
+- `~/tello_driver_node/attitude_limit`
+- `~/tello_driver_node/low_bat_threshold`
 
 ### gamepad_teleop_node
 
@@ -149,31 +149,31 @@ Converting gamepad input controls from `joy_node` to commands for
 
 #### Subscribed topics
 
--   `/joy`
-    [sensor_msgs/Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html)
--   `/tello/agent_cmd_vel_in`
-    [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
+- `/joy`
+  [sensor_msgs/Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html)
+- `/tello/agent_cmd_vel_in`
+  [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 
 #### Published topics
 
--   `/tello/cmd_vel`
-    [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
--   `/tello/emergency`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/fast_mode`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/flattrim`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/flip`
-    [std_msgs/Uint8](http://docs.ros.org/api/std_msgs/html/msg/UInt8.html)
--   `/tello/land`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/palm_land`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/takeoff`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
--   `/tello/throw_takeoff`
-    [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/cmd_vel`
+  [geometry_msgs/Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
+- `/tello/emergency`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/fast_mode`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/flattrim`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/flip`
+  [std_msgs/Uint8](http://docs.ros.org/api/std_msgs/html/msg/UInt8.html)
+- `/tello/land`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/palm_land`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/takeoff`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
+- `/tello/throw_takeoff`
+  [std_msgs/Empty](http://docs.ros.org/api/std_msgs/html/msg/Empty.html)
 
 #### Services
 
@@ -192,8 +192,8 @@ None
 
 #### Published topics
 
--   `/joy`
-    [sensor_msgs/Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html)
+- `/joy`
+  [sensor_msgs/Joy](http://docs.ros.org/api/sensor_msgs/html/msg/Joy.html)
 
 #### Services
 
@@ -201,20 +201,20 @@ None
 
 #### Parameters
 
--   `~/joy_node/deadzone`
--   `~/joy_node/dev`
+- `~/joy_node/deadzone`
+- `~/joy_node/dev`
 
 ## Troubleshooting
 
--   **No more video output after reconnect** . Relaunch the
-    `tello_driver_node` to continue the video stream after WiFi
-    reconnection. Only an issue when using PyAV to decode h264 video
-    instead of ROS
-    [codec_image_transport](https://github.com/yoshito-n-students/codec_image_transport).
+- **No more video output after reconnect** . Relaunch the
+  `tello_driver_node` to continue the video stream after WiFi
+  reconnection. Only an issue when using PyAV to decode h264 video
+  instead of ROS
+  [codec_image_transport](https://github.com/yoshito-n-students/codec_image_transport).
 
 ## Notes
 
--   **Stream raw video**
+- **Stream raw video**
 
 . Depends on [PyAV](https://github.com/mikeboers/PyAV) package: .
 

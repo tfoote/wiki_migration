@@ -21,5 +21,5 @@ If outside of ros, you will also need to link to *ecl_statistics*.
 Currently we've only implemented simple, fast algorithms for 2x2, 3x3
 covariance matrices.
 
--   [Covariance Ellipsoids](ecl_statistics/Tutorials/Covariance Ellipsoids) -
-    covariances ellipsoids, typically used in slam.
+- [Covariance Ellipsoids](ecl_statistics/Tutorials/Covariance Ellipsoids) -
+  covariances ellipsoids, typically used in slam.

@@ -61,10 +61,10 @@ class
 ([endeffectors.h](http://docs.ros.org/api/xpp_states/html/endeffectors_8h_source.html))
 that parameterizes each endeffector. This can be done in two ways:
 
--   using Cartesian xyz values for position velocity and acceleration
-    for each endeffector.
--   using joint position, velocity and acceleration of every joint of
-    the limb.
+- using Cartesian xyz values for position velocity and acceleration for
+  each endeffector.
+- using joint position, velocity and acceleration of every joint of the
+  limb.
 
 ## Feedback
 

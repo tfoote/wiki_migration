@@ -1,4 +1,6 @@
-[Included page Industrial/Software_Status/Experimental not found](Included page Industrial/Software_Status/Experimental not found)
+  -- ------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     ![Experimental\|](attachment:1Column.png)      **EXPERIMENTAL**: This status indicates that this software is experimental code at best. There are known issues and missing functionality. The APIs are completely unstable and likely to change. Use in production systems is not recommended. All code starts at this level. For more information see the ROS-Industrial software status [page](Industrial/Software_Status).   
+  -- ------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 ![PointCloud published by hokuyo3d node\|width=100%](attachment:hokuyo3d_pointcloud.png)
 

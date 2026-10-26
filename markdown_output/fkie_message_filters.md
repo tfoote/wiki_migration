@@ -120,29 +120,28 @@ limitation of the library.
 See the [API documentation](https://fkie.github.io/message_filters) for
 more details.
 
--   `Buffer`: Store and forward data
--   `CameraPublisher`: Publish consumed data to a ROS camera topic
--   `CameraSubscriber`: Subscribe to a ROS camera topic as data
-    provider
--   `Combiner`: Combine multiple sinks into a single source with one
-    of the following policies:
--   `Fifo`: First-In-First-Out
--   `ExactTime`: Exactly matching time stamp
--   [ApproximateTime](fkie_message_filters/ApproximateTime):
-    Approximately matching time stamp
--   `Divider`: Split source with multiple inputs into independent
-    output sinks
--   `ImagePublisher`: Publish consumed data to a ROS image topic
--   `ImageSubscriber`: Subscribe to a ROS image topic as data provider
--   `Publisher`: Publish consumed data on a ROS topic
--   `Selector`: Choose an arbitrary set of inputs to be forwarded
--   `Sequencer`: Enforce correct temporal order
--   `SimpleUserFilter`: Simplified filter with user-defined callback
-    function
--   `Subscriber`: Subscribe to a ROS topic as data provider
--   `TfFilter`: Wait for TF transformations for incoming messages
--   `UserFilter`: Generic filter with user-defined callback function
--   `UserSource`: Manually operated data source
+- `Buffer`: Store and forward data
+- `CameraPublisher`: Publish consumed data to a ROS camera topic
+- `CameraSubscriber`: Subscribe to a ROS camera topic as data provider
+- `Combiner`: Combine multiple sinks into a single source with one of
+  the following policies:
+- `Fifo`: First-In-First-Out
+- `ExactTime`: Exactly matching time stamp
+- [ApproximateTime](fkie_message_filters/ApproximateTime): Approximately
+  matching time stamp
+- `Divider`: Split source with multiple inputs into independent output
+  sinks
+- `ImagePublisher`: Publish consumed data to a ROS image topic
+- `ImageSubscriber`: Subscribe to a ROS image topic as data provider
+- `Publisher`: Publish consumed data on a ROS topic
+- `Selector`: Choose an arbitrary set of inputs to be forwarded
+- `Sequencer`: Enforce correct temporal order
+- `SimpleUserFilter`: Simplified filter with user-defined callback
+  function
+- `Subscriber`: Subscribe to a ROS topic as data provider
+- `TfFilter`: Wait for TF transformations for incoming messages
+- `UserFilter`: Generic filter with user-defined callback function
+- `UserSource`: Manually operated data source
 
 ## Implementation Details
 

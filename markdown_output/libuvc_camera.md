@@ -16,10 +16,10 @@ zoom.
 
 Current features include:
 
--   Dynamic reconfiguration and monitoring of the camera's control
-    settings
--   Camera calibration ([camera_info_manager](camera_info_manager))
--   Image pipeline integration ([image_transport](image_transport))
+- Dynamic reconfiguration and monitoring of the camera's control
+  settings
+- Camera calibration ([camera_info_manager](camera_info_manager))
+- Image pipeline integration ([image_transport](image_transport))
 
 ## Usage
 

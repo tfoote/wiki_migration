@@ -83,8 +83,8 @@ directory called `"sketchbook"` and version 1.5 creates a directory
 called `"Arduino"`. This is where the Arduino IDE expects to find
 source code for the firmware you're going to install on the Razor.
 
--   Copy the Razor firmware from the *razor_imu_9dof/src* directory to
-    your arduino source directory. 
+- Copy the Razor firmware from the *razor_imu_9dof/src* directory to
+  your arduino source directory. 
 
 ```
 roscd razor_imu_9dof
@@ -92,60 +92,59 @@ cp -r src/Razor_AHRS ~/Arduino
 ```
 
  Replace
-    */Arduino* with */sketchbook* if needed.
+  */Arduino* with */sketchbook* if needed.
 
-```{=html}
 <!-- -->
-```
--   Plug the Razor USB cable into your ROS workstation
--   Restart the Arduino IDE
--   Open the *Razor_AHRS* sketch in Arduino. Select the `Razor_AHRS`
-    tab.
--   In Arduino:
--   Look at the top of the *Razor_AHRS.ino* file, it contains useful
-    information about the firmware.
--   There is a section labeled `"USER SETUP AREA"` where you can set
-    some firmware defaults, including the board type.
--   **Caution: choose the correct Razor hardware revision when compiling
-    and uploading the firmware to the board. The setting is located in
-    Razor_AHRS.ino under `"HARDWARE OPTIONS"`!**
--   For SPX-15846 and DEV-16832 (OpenLog Artemis), you will need to
-    follow the same instructions as for the OLA_IMU_Basics.ino sample
-    from <https://github.com/sparkfun/OpenLog_Artemis> (i.e. get the
-    drivers from
-    <https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers>,
-    install SparkFun Apollo3 boards in Arduino IDE as in
-    <https://learn.sparkfun.com/tutorials/installing-board-definitions-in-the-arduino-ide>
-    (add
-    <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json>
-    to File → Preferences → Additional Board Manager URLs) and ensure
-    you select SparkFun Apollo3 → SparkFun RedBoard Artemis ATP as the
-    board and install SparkFun ICM 20948 IMU Arduino library as in
-    <https://learn.sparkfun.com/tutorials/installing-an-arduino-library>).
-    For SEN-14001 (9DoF Razor IMU M0), you will need to follow the same
-    instructions as for the default firmware on
-    <https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide>
-    and use an updated version of SparkFun_MPU-9250-DMP_Arduino_Library
-    from
-    <https://github.com/lebarsfa/SparkFun_MPU-9250-DMP_Arduino_Library>
-    (an updated version of the default firmware is also available on
-    <https://github.com/lebarsfa/9DOF_Razor_IMU>). For older board
-    versions, go to `"Tools"` &rarr; `"Board"` and select
-    `"Arduino Pro or Pro Mini (3.3v, 8mhz) w/ATmega328"`. Note: in
-    Aduino 1.5+, the board menu doesn't allow selecting the
-    voltage/frequency; go to the Processor menu after selecting
-    "Arduino Pro or Pro Mini" and select "ATMega 328 (3.3V, 8Mhz)"
--   Go to `"Tools"` &rarr; `"Serial Port"` and select the port
-    used with the Razor.
--   Go to `"File"` and hit `"Upload to I/O Board"`. After a
-    short while at the bottom of the \*Arduino\* code window it should
-    say `"Done uploading"`.
+
+- Plug the Razor USB cable into your ROS workstation
+- Restart the Arduino IDE
+- Open the *Razor_AHRS* sketch in Arduino. Select the `Razor_AHRS`
+  tab.
+- In Arduino:
+- Look at the top of the *Razor_AHRS.ino* file, it contains useful
+  information about the firmware.
+- There is a section labeled `"USER SETUP AREA"` where you can set
+  some firmware defaults, including the board type.
+- **Caution: choose the correct Razor hardware revision when compiling
+  and uploading the firmware to the board. The setting is located in
+  Razor_AHRS.ino under `"HARDWARE OPTIONS"`!**
+- For SPX-15846 and DEV-16832 (OpenLog Artemis), you will need to follow
+  the same instructions as for the OLA_IMU_Basics.ino sample from
+  <https://github.com/sparkfun/OpenLog_Artemis> (i.e. get the drivers
+  from
+  <https://learn.sparkfun.com/tutorials/how-to-install-ch340-drivers>,
+  install SparkFun Apollo3 boards in Arduino IDE as in
+  <https://learn.sparkfun.com/tutorials/installing-board-definitions-in-the-arduino-ide>
+  (add
+  <https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json>
+  to File → Preferences → Additional Board Manager URLs) and ensure you
+  select SparkFun Apollo3 → SparkFun RedBoard Artemis ATP as the board
+  and install SparkFun ICM 20948 IMU Arduino library as in
+  <https://learn.sparkfun.com/tutorials/installing-an-arduino-library>).
+  For SEN-14001 (9DoF Razor IMU M0), you will need to follow the same
+  instructions as for the default firmware on
+  <https://learn.sparkfun.com/tutorials/9dof-razor-imu-m0-hookup-guide>
+  and use an updated version of SparkFun_MPU-9250-DMP_Arduino_Library
+  from
+  <https://github.com/lebarsfa/SparkFun_MPU-9250-DMP_Arduino_Library>
+  (an updated version of the default firmware is also available on
+  <https://github.com/lebarsfa/9DOF_Razor_IMU>). For older board
+  versions, go to `"Tools"` \&rarr; `"Board"` and select
+  `"Arduino Pro or Pro Mini (3.3v, 8mhz) w/ATmega328"`. Note: in
+  Aduino 1.5+, the board menu doesn't allow selecting the
+  voltage/frequency; go to the Processor menu after selecting "Arduino
+  Pro or Pro Mini" and select "ATMega 328 (3.3V, 8Mhz)"
+- Go to `"Tools"` \&rarr; `"Serial Port"` and select the port
+  used with the Razor.
+- Go to `"File"` and hit `"Upload to I/O Board"`. After a short
+  while at the bottom of the \*Arduino\* code window it should say
+  `"Done uploading"`.
 
 ### Create Configuration File
 
 Create a custom configuration file *my_razor.yaml*:
 
--   Copy the template file *razor.yaml*: 
+- Copy the template file *razor.yaml*: 
 
 ```
 roscd razor_imu_9dof/config
@@ -153,8 +152,8 @@ cp razor.yaml my_razor.yaml
 ```
 
 
--   Edit *my_razor.yaml* as needed. See further for more information on
-    setting the calibration values.
+- Edit *my_razor.yaml* as needed. See further for more information on
+  setting the calibration values.
 
 ## Coordinate Frames
 
@@ -165,24 +164,24 @@ the Razor AHRS and ROS topic output in the testing section below.
 
 The Razor_AHRS firmware uses:
 
--   X axis pointing forward (towards the short edge with the connector
-    holes for SEN-10736 and older board versions, see
-    <https://github.com/lebarsfa/razor-9dof-ahrs/issues/2> for more
-    information)
--   Y axis pointing to the right
--   Z axis pointing down Ignore the labelling on the board and use this
-    coordinate frame when mounting the Razor.
+- X axis pointing forward (towards the short edge with the connector
+  holes for SEN-10736 and older board versions, see
+  <https://github.com/lebarsfa/razor-9dof-ahrs/issues/2> for more
+  information)
+- Y axis pointing to the right
+- Z axis pointing down Ignore the labelling on the board and use this
+  coordinate frame when mounting the Razor.
 
 This produces a right-handed coordinate system. However, this is
 different from ROS' right-handed coordinate frame defined in
 [REP-103](http://www.ros.org/reps/rep-0103.html), which uses:
 
--   X axis pointing forward (towards the short edge with the connector
-    holes for SEN-10736 and older board versions, see
-    <https://github.com/lebarsfa/razor-9dof-ahrs/issues/2> for more
-    information)
--   Y axis pointing to the left
--   Z axis pointing up
+- X axis pointing forward (towards the short edge with the connector
+  holes for SEN-10736 and older board versions, see
+  <https://github.com/lebarsfa/razor-9dof-ahrs/issues/2> for more
+  information)
+- Y axis pointing to the left
+- Z axis pointing up
 
 The ROS coordinate frame is rotated 180 degrees around the X axis
 relative to the Razor_AHRS coordinate frame. The razor_imu_9dof node
@@ -196,7 +195,7 @@ hard!
 ### Serial Monitor
 
 To test by staring at numbers, bring up the *Serial Monitor* of Arduino
-under `"Tools"` &rarr; `"Serial Monitor"`. Set it to 57600 baud
+under `"Tools"` \&rarr; `"Serial Monitor"`. Set it to 57600 baud
 and send the string "#o1" to the AHRS. You should get output that
 looks like this:
 
@@ -239,18 +238,18 @@ Depending on how good or bad your sensors are, precision and
 responsiveness of the *Razor* AHRS can be improved a lot by calibrating
 the sensors. If not calibrated you may get effects like
 
--   drifts in *yaw* when you apply *roll* to the board.
--   pointing *up* does not really result in an *up* attitude.
+- drifts in *yaw* when you apply *roll* to the board.
+- pointing *up* does not really result in an *up* attitude.
 
 Based on the calibration measurements you compile into the firmware the
 firmware tries to compensate all three sensors for:
 
--   wrongly scaled sensor axes: e.g. if the accelerometer x-axis
-    measures 200 units, whereas the accelerometer y-axis measures 230
-    units with the same force applied. All three axes per sensor should
-    be consistent.
--   zero offsets: e.g. if any of the gyroscope axes reports something
-    different than zero when the board is not moving.
+- wrongly scaled sensor axes: e.g. if the accelerometer x-axis measures
+  200 units, whereas the accelerometer y-axis measures 230 units with
+  the same force applied. All three axes per sensor should be
+  consistent.
+- zero offsets: e.g. if any of the gyroscope axes reports something
+  different than zero when the board is not moving.
 
 Right now these compensations are not adaptive over time. They stay the
 same and they're only as good as the calibration measurements you
@@ -285,22 +284,21 @@ compensation for these kinds of errors in the near future.
 Power up the Razor a few minutes before calibration, so the sensors can
 warm up. Calibrating the sensors can be a little tricky:
 
--   Open `\$(find razor_imu_9dof)/src/Razor_AHRS/Razor_AHRS.ino` using
-    *Arduino* and find the section `"USER SETUP AREA"` / `"SENSOR
-    CALIBRATION"`. This is where you put the calibration values later.
--   Connect the Razor to your computer, set the correct serial port in
-    *Arduino* and open the Serial Monitor.
--   If you didn't change the firmware defaults, you should see lots of
-    output like this: 
+- Open `\$(find razor_imu_9dof)/src/Razor_AHRS/Razor_AHRS.ino` using
+  *Arduino* and find the section `"USER SETUP AREA"` / `"SENSOR
+  CALIBRATION"`. This is where you put the calibration values later.
+- Connect the Razor to your computer, set the correct serial port in
+  *Arduino* and open the Serial Monitor.
+- If you didn't change the firmware defaults, you should see lots of
+  output like this: 
 
 ```
 #YPR=-155.73,-76.48,-129.51
 ```
 
 
--   Set the firmware *output mode* to *calibration* by sending the
-    string `#oc`. You should now see output like this:
-    
+- Set the firmware *output mode* to *calibration* by sending the string
+  `#oc`. You should now see output like this: 
 
 ```
 accel x,y,z (min/max) = -5.00/-1.00  25.00/29.00  225.00/232.00
@@ -310,53 +308,51 @@ accel x,y,z (min/max) = -5.00/-1.00  25.00/29.00  225.00/232.00
 
 #### Calibrating the Accelerometer
 
--   We'll try to find the minimum and maximum output values for the
-    earth gravitation on each axis. **When you move the board, move it
-    real slowly, so the acceleration you apply to it is as small as
-    possible.** We only want pure gravity!
--   Take the board and point straight down with the x-axis (remember:
-    x-axis = towards the short edge with the connector holes). While you
-    do that, you can see the x-maximum (the second value) getting
-    bigger.
--   Hold the board very still and reset the measurement by sending
-    `#oc` again.
--   Now carefully tilt the board a little in every direction until the
-    value does not get bigger any more and write down the x-maximum
-    value.
--   Do the same thing for the opposite side (x-axis pointing up) to get
-    the x-minimum: bring into position, send `#oc` to reset
-    measurement, find x-minimum value and write it down.
--   Do the same thing for the z-axis (down and up) and the y-axis (right
-    and left).
--   If you think you messed up the measurement by shaking or moving the
-    board too fast, you can always reset by sending `#oc`.
--   You should now have all the min/max values. Put them into
-    `Razor_AHRS.ino`.
--   **CAUTION:** You have to be really careful when doing this! Even
-    slightly tapping the board with the finger messes up the measurement
-    (try it!) and leads to wrong calibration. Use `#oc` very often and
-    double check your min/max values)
+- We'll try to find the minimum and maximum output values for the earth
+  gravitation on each axis. **When you move the board, move it real
+  slowly, so the acceleration you apply to it is as small as possible.**
+  We only want pure gravity!
+- Take the board and point straight down with the x-axis (remember:
+  x-axis = towards the short edge with the connector holes). While you
+  do that, you can see the x-maximum (the second value) getting bigger.
+- Hold the board very still and reset the measurement by sending `#oc`
+  again.
+- Now carefully tilt the board a little in every direction until the
+  value does not get bigger any more and write down the x-maximum value.
+- Do the same thing for the opposite side (x-axis pointing up) to get
+  the x-minimum: bring into position, send `#oc` to reset measurement,
+  find x-minimum value and write it down.
+- Do the same thing for the z-axis (down and up) and the y-axis (right
+  and left).
+- If you think you messed up the measurement by shaking or moving the
+  board too fast, you can always reset by sending `#oc`.
+- You should now have all the min/max values. Put them into
+  `Razor_AHRS.ino`.
+- **CAUTION:** You have to be really careful when doing this! Even
+  slightly tapping the board with the finger messes up the measurement
+  (try it!) and leads to wrong calibration. Use `#oc` very often and
+  double check your min/max values)
 
 #### Calibrating the gyroscope
 
--   Lay the *Razor AHRS* still on the table.
--   We're still in *calibration mode* for the accelerometer. Send
-    `#on` **twice**, which will move calibration past the magnetometer
-    to the gyroscope.
--   **Wait for 10 seconds, and do not move the *Razor AHRS*.** It will
-    collect and average the noise of the gyroscope on all three axes.
--   You should now have output that looks like this:
-    
+- Lay the *Razor AHRS* still on the table.
+- We're still in *calibration mode* for the accelerometer. Send `#on`
+  **twice**, which will move calibration past the magnetometer to the
+  gyroscope.
+- **Wait for 10 seconds, and do not move the *Razor AHRS*.** It will
+  collect and average the noise of the gyroscope on all three axes.
+- You should now have output that looks like this:
+  
 
 ```
 gyro x,y,z (current/average) = -29.00/-27.98  102.00/100.51  -5.00/-5.85
 ```
 
 
--   If you think you messed up the measurement by shaking or moving the
-    board, you can reset by sending `#oc`.
--   Take the second values of each pair and put them into
-    `Razor_AHRS.ino`.
+- If you think you messed up the measurement by shaking or moving the
+  board, you can reset by sending `#oc`.
+- Take the second values of each pair and put them into
+  `Razor_AHRS.ino`.
 
 #### Calibrating the magnetometer
 
@@ -364,46 +360,44 @@ This procedure compensates for *hard* and *soft iron* errors. Still, in
 both cases the source of distortion has to be fixed in the sensor
 coordinate system, i.e. moving and rotating with the sensor.
 
--   To start calibrating, put the sensor in the magnetic environment
-    where it will be used later - e.g. in the exact spot on your robot.
-    Robots have strong magnets in their motors, and magnetometers are
-    frequently mounted above the robot to create a physical separation.
--   Use one of the procedures in the 'Testing the AHRS' section to
-    display *Razor AHRS* output
--   Test whether the sensor is affected by proximity to the robot. Move
-    the *Razor AHRS* closer and further away from the robot while
-    holding its attitude constant, and make sure readings at your
-    desired mounting location aren't affected by proximity to the
-    robot.
--   Test whether the sensor is affected when the motors run. Run the
-    robot motors forward and backward (with the robot up on a stand!).
-    If the output changes, you need to move the *Razor AHRS* further
-    away from the robot.
--   Download and install [Processing](http://processing.org). We will
-    use it to compile and run the test program. Any *Processing*
-    versions 2.x should work fine, tested with version 2.0.3.
--   Quit all applications that read from the sensor (e.g. *Serial
-    Monitor*, *3D Visualization GUI*, ...) and run the *Processing*
-    magnetometer calibration sketch located in `\$(find
-    razor_imu_9dof)/magnetometer_calibration/Processing/Magnetometer_calibration`.
-    **Note:** you have to install the
-    [EJML library](https://code.google.com/p/efficient-java-matrix-library/)
-    first, or else the sketch won't run. How to do that? Have a look at
-    the *NOTE* at the top of `Magnetometer_calibration.pde`.
--   Try to rotate the sensor in a way so that you cover all orientations
-    so you produce dots that more or less evenly cover the sphere.
+- To start calibrating, put the sensor in the magnetic environment where
+  it will be used later - e.g. in the exact spot on your robot. Robots
+  have strong magnets in their motors, and magnetometers are frequently
+  mounted above the robot to create a physical separation.
+- Use one of the procedures in the 'Testing the AHRS' section to
+  display *Razor AHRS* output
+- Test whether the sensor is affected by proximity to the robot. Move
+  the *Razor AHRS* closer and further away from the robot while holding
+  its attitude constant, and make sure readings at your desired mounting
+  location aren't affected by proximity to the robot.
+- Test whether the sensor is affected when the motors run. Run the robot
+  motors forward and backward (with the robot up on a stand!). If the
+  output changes, you need to move the *Razor AHRS* further away from
+  the robot.
+- Download and install [Processing](http://processing.org). We will use
+  it to compile and run the test program. Any *Processing* versions 2.x
+  should work fine, tested with version 2.0.3.
+- Quit all applications that read from the sensor (e.g. *Serial
+  Monitor*, *3D Visualization GUI*, ...) and run the *Processing*
+  magnetometer calibration sketch located in `\$(find
+  razor_imu_9dof)/magnetometer_calibration/Processing/Magnetometer_calibration`.
+  **Note:** you have to install the
+  [EJML library](https://code.google.com/p/efficient-java-matrix-library/)
+  first, or else the sketch won't run. How to do that? Have a look at
+  the *NOTE* at the top of `Magnetometer_calibration.pde`.
+- Try to rotate the sensor in a way so that you cover all orientations
+  so you produce dots that more or less evenly cover the sphere.
 
-```{=html}
 <!-- -->
-```
--   In a mostly undistorted environment this could look something like
-    this:
+
+- In a mostly undistorted environment this could look something like
+  this:
 
 ![](attachment:Hard_and_Soft_Iron_Calibration_1a.png)
 
--   Hit `SPACE` and watch the *Processing* console - you'll find some
-    lines of code that you have to put into the firmware under `"USER
-    SETUP AREA"` / `"SENSOR CALIBRATION"` and then you're done.
+- Hit `SPACE` and watch the *Processing* console - you'll find some
+  lines of code that you have to put into the firmware under `"USER
+  SETUP AREA"` / `"SENSOR CALIBRATION"` and then you're done.
 
 #### Matlab analysis of magnetometer calibration (optional)
 
@@ -422,36 +416,36 @@ Ellipsoid fit and corrected values:
 
 #### Another calibration example: Soft iron gives a sphere scaled and distorted into an ellipsoid.
 
--   Sampled raw magnetometer values:
+- Sampled raw magnetometer values:
 
 ![](attachment:Hard_and_Soft_Iron_Calibration_2a.png)
 
--   Ellipsoid fit and corrected values:
+- Ellipsoid fit and corrected values:
 
 ![](attachment:Hard_and_Soft_Iron_Calibration_2b.png)![](attachment:Hard_and_Soft_Iron_Calibration_2c.png)
 
 #### Another calibration example: Hard iron gives an offset sphere.
 
--   Sampled raw magnetometer values:
+- Sampled raw magnetometer values:
 
 ![](attachment:Hard_and_Soft_Iron_Calibration_3a.png)
 
--   Ellipsoid fit and corrected values:
+- Ellipsoid fit and corrected values:
 
 ![](attachment:Hard_and_Soft_Iron_Calibration_3b.png)![](attachment:Hard_and_Soft_Iron_Calibration_3c.png)
 
 ## Hints and Known Bugs
 
--   You should avoid magnetic field distortions (e.g. from metal objects
-    and electronic devices nearby).
--   In few cases Razor AHRS can become confused (magnetic field
-    distortions?) and starts acting weird. It seems like the
-    magnetometer becomes "locked", resulting in the heading always
-    drifting/converging back to the same angle. Resetting the
-    microcontroller which runs the Razor AHRS firmware does not help in
-    this case (so it's not a firmware bug!), but turning power off and
-    on again should do the trick. I think this must be a bug inside the
-    magnetometer.
+- You should avoid magnetic field distortions (e.g. from metal objects
+  and electronic devices nearby).
+- In few cases Razor AHRS can become confused (magnetic field
+  distortions?) and starts acting weird. It seems like the magnetometer
+  becomes "locked", resulting in the heading always
+  drifting/converging back to the same angle. Resetting the
+  microcontroller which runs the Razor AHRS firmware does not help in
+  this case (so it's not a firmware bug!), but turning power off and on
+  again should do the trick. I think this must be a bug inside the
+  magnetometer.
 
 ## Acknowledgement
 

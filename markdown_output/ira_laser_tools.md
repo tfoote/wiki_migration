@@ -1,5 +1,5 @@
--   laserscan_multi_merger
--   laserscan_virtualizer
+- laserscan_multi_merger
+- laserscan_virtualizer
 
 Both use part of the pointcloud_to_laserscan code available in ROS.
 

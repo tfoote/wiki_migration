@@ -7,33 +7,33 @@ Currently only the following Willow Garage hardware is supported:
 These are the main motor controller boards used in the PR2. Each board
 has the following features:
 
--   1 quadrature incremental encoder input
--   1 limit-switch input (with on-board latching of encoder position at
-    time of rising and falling edges)
--   1 digital output, used as to synchronize camera exposures with the
-    realtime loop
--   Closed-loop current control for 1 brushed DC motor up to 3A
+- 1 quadrature incremental encoder input
+- 1 limit-switch input (with on-board latching of encoder position at
+  time of rising and falling edges)
+- 1 digital output, used as to synchronize camera exposures with the
+  realtime loop
+- Closed-loop current control for 1 brushed DC motor up to 3A
 
 ### WG006
 
 This motor controller board is used in the gripper on the PR2. Each
 board has the following features:
 
--   Same as the WG005, but with a current limit of 0.5A
--   Additional LED to be used for finding position of hand in camera
-    images
--   3-axis accelerometer with 3khz update
--   Support for 2 SPI ports (compatible with 22-element tactile sensors
-    for fingertips)
+- Same as the WG005, but with a current limit of 0.5A
+- Additional LED to be used for finding position of hand in camera
+  images
+- 3-axis accelerometer with 3khz update
+- Support for 2 SPI ports (compatible with 22-element tactile sensors
+  for fingertips)
 
 ### WG014
 
--   6-port EtherCAT hub
+- 6-port EtherCAT hub
 
 ### WG021
 
--   Support for driving LED projector at 30hz, synchronized with motion
-    control and camera exposures
+- Support for driving LED projector at 30hz, synchronized with motion
+  control and camera exposures
 
 ## ROS API
 
@@ -163,15 +163,15 @@ Each motor requires a *name* attribute. The <motor> also requires
 child elements <params> and <encoder>. The <params> element
 contains the following attributes:
 
--   Make
--   Model
--   Maximum current
--   Speed constant
--   Resistance
--   Motor Torque Constant The <encoder> element contains the following
-    attributes:
--   Pulses per Revolution
--   Reduction
+- Make
+- Model
+- Maximum current
+- Speed constant
+- Resistance
+- Motor Torque Constant The <encoder> element contains the following
+  attributes:
+- Pulses per Revolution
+- Reduction
 
 For example, this element specifies the Maxon RE40 motor used in PR2's
 elbow, shoulder and spine: 
@@ -195,12 +195,11 @@ elbow, shoulder and spine:
 The <actuators> subsection contains a series of <actuator>
 definitions. An <actuator> has the following attributes:
 
--   Name
--   Motor
--   Board For example, the following <actuator> definition states that
-    the *l_elbow_flex_motor* should be configured with the motor
-    parameters specified in the previous example:
-    
+- Name
+- Motor
+- Board For example, the following <actuator> definition states that
+  the *l_elbow_flex_motor* should be configured with the motor
+  parameters specified in the previous example: 
 
 ```
 <actuator name="l_elbow_flex_motor" motor="148877" board="wg005"/>

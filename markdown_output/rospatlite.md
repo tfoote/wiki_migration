@@ -4,7 +4,7 @@
 
 `roslaunch rospatlite patlite.launch IP:=<patlite ip>`
 
--   `patlite ip`: network address or hostname of your patlite device
+- `patlite ip`: network address or hostname of your patlite device
 
 ## Examples
 

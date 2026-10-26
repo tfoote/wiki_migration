@@ -40,18 +40,18 @@ If outside ros, you will also need to link against *ecl_devices*.
 
 ## Tutorials
 
--   [Introduction to Ecl Devices](ecl_devices/Tutorials/Introduction to Ecl Devices)
+- [Introduction to Ecl Devices](ecl_devices/Tutorials/Introduction to Ecl Devices)
 
 ## Examples
 
--   `src/examples/serial_timeout.cpp` : shows off the low latency
-    timeout code \[posix only\].
+- `src/examples/serial_timeout.cpp` : shows off the low latency
+  timeout code \[posix only\].
 
 These are in [ecl_core_apps](ecl_core_apps).
 
--   `src/benchmarks/files.cpp`
--   `src/demos/socket_client.cpp`
--   `src/demos/socket_server.cpp`
--   `src/utils/hex.cpp` : simple utility for reading/writing hex
-    across the serial cable.
--   `src/utils/serial.cpp` : simple serial testing utility.
+- `src/benchmarks/files.cpp`
+- `src/demos/socket_client.cpp`
+- `src/demos/socket_server.cpp`
+- `src/utils/hex.cpp` : simple utility for reading/writing hex across
+  the serial cable.
+- `src/utils/serial.cpp` : simple serial testing utility.

@@ -88,15 +88,15 @@ If you have implemented a new transport option in a public repository
 and would like to see it added to this list, please email our
 [mailing list](Mailing Lists).
 
--   ros-pkg
--   [image_transport](image_transport) (`"raw"`) - The default
-    transport, sending
-    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
-    through ROS.
--   [compressed_image_transport](compressed_image_transport)
-    (`"compressed"`) - JPEG or PNG image compression.
--   [theora_image_transport](theora_image_transport) (`"theora"`) -
-    Streaming video using the Theora codec.
+- ros-pkg
+- [image_transport](image_transport) (`"raw"`) - The default
+  transport, sending
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  through ROS.
+- [compressed_image_transport](compressed_image_transport)
+  (`"compressed"`) - JPEG or PNG image compression.
+- [theora_image_transport](theora_image_transport) (`"theora"`) -
+  Streaming video using the Theora codec.
 
 ## Library ROS API
 
@@ -333,33 +333,33 @@ $ rosrun image_transport republish [in_transport] in:=<in_base_topic> [out_trans
 
 #### Examples
 
--   Suppose we are publishing images from a robot using the streaming
-    video transport `"theora"`. On an offboard computer we have
-    several nodes listening to the image topic. This setup wastes
-    bandwidth and computation, as each node processes the compressed
-    video into still images independently. Instead we can start a
-    republish node on the offboard computer, streaming the video only to
-    that node for processing into
-    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
-    messages republished to the other nodes: 
+- Suppose we are publishing images from a robot using the streaming
+  video transport `"theora"`. On an offboard computer we have
+  several nodes listening to the image topic. This setup wastes
+  bandwidth and computation, as each node processes the compressed video
+  into still images independently. Instead we can start a republish node
+  on the offboard computer, streaming the video only to that node for
+  processing into
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  messages republished to the other nodes: 
 
 ```
 $ rosrun image_transport republish theora in:=camera/image raw out:=camera/image_decompressed
 ```
 
 
--   The above command is also useful simply to pipe a compressed image
-    topic into a node that can only listen to
-    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
-    (because it uses `ros::Subscriber` or is written in a language
-    other than C++).
--   If a node publishes images only as
-    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html),
-    we can republish it using the full range of transports. Note however
-    that the base topic must be different from the original topic, and
-    this approach entails a slight overhead over using
-    `image_transport::Publisher` in the original node.
-    
+- The above command is also useful simply to pipe a compressed image
+  topic into a node that can only listen to
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  (because it uses `ros::Subscriber` or is written in a language other
+  than C++).
+- If a node publishes images only as
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html),
+  we can republish it using the full range of transports. Note however
+  that the base topic must be different from the original topic, and
+  this approach entails a slight overhead over using
+  `image_transport::Publisher` in the original node.
+  
 
 ```cplusplus
 // Use the image_transport classes instead.

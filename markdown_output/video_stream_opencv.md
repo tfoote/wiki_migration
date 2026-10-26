@@ -48,49 +48,43 @@ Example usages in launch folder (only the argument
 
 You can use any input that OpenCV on your system accepts, e.g.:
 
--   Video devices that appear in linux as `/dev/videoX`, e.g.: USB
-    webcams appearing as `/dev/video0`
+- Video devices that appear in linux as `/dev/videoX`, e.g.: USB
+  webcams appearing as `/dev/video0`
 
-```{=html}
 <!-- -->
-```
--   Video streamings, e.g.:
-    `rtsp:*wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov`*
 
-```{=html}
-<!-- -->
-```
--   Video files, anything you can play, e.g.: `myvideo.avi`
+- Video streamings, e.g.:
+  `rtsp:*wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov`*
 
-```{=html}
 <!-- -->
-```
--   Etc.
+
+- Video files, anything you can play, e.g.: `myvideo.avi`
+
+<!-- -->
+
+- Etc.
 
 ## Parameters
 
 Note these important ones on the behaviour of the node:
 
--   `set_camera_fps`: Will set the OpenCV parameter
-    `CV_CAP_PROP_FPS` to that amount of fps, if the camera allows it.
-    Does nothing on video streams or video files.
+- `set_camera_fps`: Will set the OpenCV parameter `CV_CAP_PROP_FPS`
+  to that amount of fps, if the camera allows it. Does nothing on video
+  streams or video files.
 
-```{=html}
 <!-- -->
-```
--   `buffer_queue_size`: Will set the size of the buffer of images
-    read from the capturing device. We read as fast as possible (in
-    another thread) from the device and store in the buffer the images.
-    The main thread consumes from the buffer. If you want the shortest
-    delay/lag set it to 1. If you don't want to lose images set it
-    higher.
 
-```{=html}
+- `buffer_queue_size`: Will set the size of the buffer of images read
+  from the capturing device. We read as fast as possible (in another
+  thread) from the device and store in the buffer the images. The main
+  thread consumes from the buffer. If you want the shortest delay/lag
+  set it to 1. If you don't want to lose images set it higher.
+
 <!-- -->
-```
--   `fps`: The effective rate at which you want the image topic to
-    publish, if lower than the effective fps of the camera it will
-    throttle the publication dropping frames when needed.
+
+- `fps`: The effective rate at which you want the image topic to
+  publish, if lower than the effective fps of the camera it will
+  throttle the publication dropping frames when needed.
 
 So if you want the very latest image published from a camera, set
 `buffer_queue_size` to 1, `set_camera_fps` to the max the camera
@@ -104,52 +98,44 @@ FPS it has.
 The rest of the parameters explained, even though they are pretty self
 explanatory:
 
--   `video_stream_provider`: A number for the /dev/videoX device,
-    e.g.: 0 for /dev/video0. A string for a path for a video file, e.g.:
-    /home/user/Videos/myvideo.avi or a url of a video stream e.g.:
-    <rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov>
-    and <http://10.68.0.6/mjpg/video.mjpg>.
+- `video_stream_provider`: A number for the /dev/videoX device, e.g.:
+  0 for /dev/video0. A string for a path for a video file, e.g.:
+  /home/user/Videos/myvideo.avi or a url of a video stream e.g.:
+  <rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov> and
+  <http://10.68.0.6/mjpg/video.mjpg>.
 
-```{=html}
 <!-- -->
-```
--   `camera_name`: node name and ros graph name. All topics will hang
-    from this e.g.: /camera_name/.
 
-```{=html}
-<!-- -->
-```
--   `frame_id`: frame_id to be published in the Header of the
-    messages.
+- `camera_name`: node name and ros graph name. All topics will hang
+  from this e.g.: /camera_name/.
 
-```{=html}
 <!-- -->
-```
--   `camera_info_url`: camera info loading, take care as it needs the
-    "<file:///>" at the start , e.g.: "<file:///$(find>
-    your_camera_package)/config/your_camera.yaml".
 
-```{=html}
-<!-- -->
-```
--   `flip_horizontal`: flip horizontally the image (mirror it).
+- `frame_id`: frame_id to be published in the Header of the messages.
 
-```{=html}
 <!-- -->
-```
--   `flip_vertical`: flip vertically the image (upside down).
 
-```{=html}
-<!-- -->
-```
--   `loop_videofile`: flag of loop playback. If `loop_videofile` is
-    `true`, loop playback is enabled.
+- `camera_info_url`: camera info loading, take care as it needs the
+  "<file:///>" at the start , e.g.: "<file:///$(find>
+  your_camera_package)/config/your_camera.yaml".
 
-```{=html}
 <!-- -->
-```
--   `width` and `height`: force a width and height to the capturing
-    device (if it allows), 0 means no forcing.
+
+- `flip_horizontal`: flip horizontally the image (mirror it).
+
+<!-- -->
+
+- `flip_vertical`: flip vertically the image (upside down).
+
+<!-- -->
+
+- `loop_videofile`: flag of loop playback. If `loop_videofile` is
+  `true`, loop playback is enabled.
+
+<!-- -->
+
+- `width` and `height`: force a width and height to the capturing
+  device (if it allows), 0 means no forcing.
 
 ## Quick input test
 

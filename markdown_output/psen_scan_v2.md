@@ -14,19 +14,19 @@ laserscan-post-processing nodes such as
 
 **Common features:**
 
--   compliant and approved in accordance with (EN/IEC 61496-1: Type 3,
-    EN ISO 13849-1: PL d, IEC 61508: SIL 2)
--   opening angle: 275°
--   operating range: 3.0 or 5.5 m safety zone
--   40 m warning zone, reaction time: 62 ms
--   Protection type: IP65
--   Dimensions (H x W x D) in mm: 152 x 102 x 112.5
+- compliant and approved in accordance with (EN/IEC 61496-1: Type 3, EN
+  ISO 13849-1: PL d, IEC 61508: SIL 2)
+- opening angle: 275°
+- operating range: 3.0 or 5.5 m safety zone
+- 40 m warning zone, reaction time: 62 ms
+- Protection type: IP65
+- Dimensions (H x W x D) in mm: 152 x 102 x 112.5
 
 **Light versions Additional features**:
 
--   Muting
--   EDM
--   Override
+- Muting
+- EDM
+- Override
 
 ## Supported Devices
 
@@ -102,13 +102,13 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 **/<name>/scan**
 ([sensor_msgs/LaserScan](http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/LaserScan.html))
 
--   If *fragmented_scans* is set to false (default) the driver will
-    publish complete scan rounds from the PSENscan safety laser scanner
-    as a single message.
--   If *fragmented_scans* is enabled the driver will send the
-    measurement data as soon as they arrive, instead of waiting for the
-    scan round to be completed. This way the scan data is received
-    sooner but is split into several sensor messages.
+- If *fragmented_scans* is set to false (default) the driver will
+  publish complete scan rounds from the PSENscan safety laser scanner as
+  a single message.
+- If *fragmented_scans* is enabled the driver will send the measurement
+  data as soon as they arrive, instead of waiting for the scan round to
+  be completed. This way the scan data is received sooner but is split
+  into several sensor messages.
 
 
 
@@ -140,8 +140,8 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 **/<name>/active_zoneset**
 ([std_msgs/UInt8](http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt8.html))
 
--   This topic contains the id of the currently active zoneset of the
-    PSENscan safety laser scanner.
+- This topic contains the id of the currently active zoneset of the
+  PSENscan safety laser scanner.
 
 
 
@@ -154,8 +154,8 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 **/<name>/active_zoneset_markers**
 ([visualization_msgs/MarkerArray](http://docs.ros.org/en/noetic/api/visualization_msgs/html/msg/MarkerArray.html))
 
--   The markers published represent the currently active zoneset as
-    triangle lists. They can be viewed e.g. in rviz.
+- The markers published represent the currently active zoneset as
+  triangle lists. They can be viewed e.g. in rviz.
 
 
 
@@ -176,9 +176,9 @@ the [tutorials](http://wiki.ros.org/psen_scan_v2/Tutorials/).
 **/<name>/io_states**
 ([psen_scan_v2/IOState](http://docs.ros.org/en/noetic/api/psen_scan_v2/html/msg/IOState.html))
 
--   The state published represents the current input and output state of
-    the scanner IOs. A list of all available IOs can be found
-    [here](#Transferred_IOs)
+- The state published represents the current input and output state of
+  the scanner IOs. A list of all available IOs can be found
+  [here](#Transferred_IOs)
 
 
 
@@ -234,19 +234,19 @@ the time for the scan data to be published. This should suffice for
 localization and slam algorithms. If you application benefits from
 getting the scan data any sooner there are two possibilities:
 
--   Use fragmented scans. This will publish the individual frames
-    received by the PSENscan safety laser scanner immediately instead of
-    waiting for a scan round to be completed and combined to a single
-    laser scan message.
--   Use the tcp_nodelay flag in your ROS subscriber. This will disable
-    the nagle's algorithm, which is a TCP optimization. This algorithm
-    can produce a jitter of about 20ms in the ros topic.
--   The cpp API of ROS does not support disabling this on the publisher
-    side. If you don't have control over the subscriber e.g. due to
-    using a third party package you can create a python node which acts
-    as a repeater for the scan topic. rospy subscriber and publisher
-    both allow setting this flag and thus can disable it for this driver
-    and the third party package.
+- Use fragmented scans. This will publish the individual frames received
+  by the PSENscan safety laser scanner immediately instead of waiting
+  for a scan round to be completed and combined to a single laser scan
+  message.
+- Use the tcp_nodelay flag in your ROS subscriber. This will disable the
+  nagle's algorithm, which is a TCP optimization. This algorithm can
+  produce a jitter of about 20ms in the ros topic.
+- The cpp API of ROS does not support disabling this on the publisher
+  side. If you don't have control over the subscriber e.g. due to using
+  a third party package you can create a python node which acts as a
+  repeater for the scan topic. rospy subscriber and publisher both allow
+  setting this flag and thus can disable it for this driver and the
+  third party package.
 
 ### Transferred IOs
 
@@ -261,17 +261,17 @@ The
 [input pin state](http://docs.ros.org/en/noetic/api/psen_scan_v2/html/msg/InputPinState.html)
 contains information about
 
--   muting
--   override
--   zone set switching inputs
+- muting
+- override
+- zone set switching inputs
 
 The
 [output pin state](http://docs.ros.org/en/noetic/api/psen_scan_v2/html/msg/OutputPinState.html)
 consists of
 
--   OSSD safety states
--   warning output
--   reference points violation
+- OSSD safety states
+- warning output
+- reference points violation
 
 Please see the message descriptions for full lists of bits.
 

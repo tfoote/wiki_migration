@@ -66,14 +66,12 @@ package:
 
 ## Relevant Links
 
--   [MRPT graphslam-engine application](http://www.mrpt.org/list-of-mrpt-apps/application-graphslamengine/)
+- [MRPT graphslam-engine application](http://www.mrpt.org/list-of-mrpt-apps/application-graphslamengine/)
 
-```{=html}
 <!-- -->
-```
--   [MRPT graphslam-lib](http://reference.mrpt.org/devel/group__mrpt__graphslam__grp.html)
 
-```{=html}
+- [MRPT graphslam-lib](http://reference.mrpt.org/devel/group__mrpt__graphslam__grp.html)
+
 <!-- -->
-```
--   [Multi-robot graphSLAM diploma thesis PDF](http://controlsystemslab.gr/code/bergercookie/mr-slam-thesis-text/src/master/report.pdf)
+
+- [Multi-robot graphSLAM diploma thesis PDF](http://controlsystemslab.gr/code/bergercookie/mr-slam-thesis-text/src/master/report.pdf)

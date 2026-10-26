@@ -39,8 +39,8 @@ using ecl::UnlabeledMultiArg; // there are more - see tclap docs
 
 ## Tutorials
 
--   [Command Line Parsing with TCLAP](ecl_command_line/Tutorials/Command Line Parsing with TCLAP)
+- [Command Line Parsing with TCLAP](ecl_command_line/Tutorials/Command Line Parsing with TCLAP)
 
 ## Examples
 
--   `src/examples/command_line.cpp`.
+- `src/examples/command_line.cpp`.

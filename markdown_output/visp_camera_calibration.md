@@ -25,8 +25,8 @@ the standard ROS camera interface. See the
 [visp_camera_calibration](visp_camera_calibration) is part of
 [vision_visp](vision_visp) stack.
 
--   To install [visp_camera_calibration](visp_camera_calibration)
-    package run 
+- To install [visp_camera_calibration](visp_camera_calibration) package
+  run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-visp-camera_calibration
@@ -34,10 +34,9 @@ sudo apt-get install ros-$ROS_DISTRO-visp-camera_calibration
 
 
 
-```{=html}
 <!-- -->
-```
--   Or to install the complete stack run 
+
+- Or to install the complete stack run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
@@ -49,12 +48,12 @@ sudo apt-get install ros-$ROS_DISTRO-vision-visp
 
 There are two tutorials:
 
--   A tutorial out-of-the-box demonstration tutorial using the
-    experimental camera shipped with this package can be found
-    [here](visp_camera_calibration/Tutorials/CalibrationExperimentalCamera).
--   A tutorial that shows how to calibrate using an external camera can
-    be found
-    [here](visp_camera_calibration/Tutorials/CalibrationExternalCamera).
+- A tutorial out-of-the-box demonstration tutorial using the
+  experimental camera shipped with this package can be found
+  [here](visp_camera_calibration/Tutorials/CalibrationExperimentalCamera).
+- A tutorial that shows how to calibrate using an external camera can be
+  found
+  [here](visp_camera_calibration/Tutorials/CalibrationExternalCamera).
 
 ## Usage
 
@@ -67,13 +66,13 @@ The user has to select seed points to start calibration from. This
 requires an image processing initialisation interface module. This
 module needs to load several parameters:
 
--   3D coordinates of at least four points the user is supposed to
-    select to initialise the image processing
--   3D coordinates of all points of the calibration pattern
--   tracking parameters used in image processing
--   behaviour of the interface. Set pause_at_each_frame to True if
-    you're using the experimental camera shipped with this package. For
-    any other ROS camera, set it to False. 
+- 3D coordinates of at least four points the user is supposed to select
+  to initialise the image processing
+- 3D coordinates of all points of the calibration pattern
+- tracking parameters used in image processing
+- behaviour of the interface. Set pause_at_each_frame to True if you're
+  using the experimental camera shipped with this package. For any other
+  ROS camera, set it to False. 
 
 ```xml
 <node pkg="visp_camera_calibration" name="visp_camera_calibration_image_processing" type="visp_camera_calibration_image_processing">

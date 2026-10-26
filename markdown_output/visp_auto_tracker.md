@@ -8,8 +8,8 @@ pattern 3d model and a configuration file.
 The algorithm allows first to detect automatically the barcode using one
 of the following detectors:
 
--   QR-code detection
--   flashcode detection
+- QR-code detection
+- flashcode detection
 
 Then from the location of the 4 barcode corners it computes an initial
 pose using a PnP algorithm. This pose allows to initialize the model
@@ -33,8 +33,8 @@ object position thanks to QRcode detection.
 
 ## Reference
 
--   [A.I. Comport, E. Marchand, M. Pressigout, F. Chaumette. Real-time markerless tracking for augmented reality: the virtual visual servoing framework. IEEE Trans. on Visualization and Computer Graphics, 12(4):615-628, July 2006](http://www.irisa.fr/lagadic/publi/publi/Comport06b-eng.html)
--   [E. Marchand, H. Uchiyama, F. Spindler. Pose estimation for augmented reality: a hands-on survey. IEEE Trans. on Visualization and Computer Graphics, 2016](http://www.irisa.fr/lagadic/publi/publi/Marchand16a-eng.html)
+- [A.I. Comport, E. Marchand, M. Pressigout, F. Chaumette. Real-time markerless tracking for augmented reality: the virtual visual servoing framework. IEEE Trans. on Visualization and Computer Graphics, 12(4):615-628, July 2006](http://www.irisa.fr/lagadic/publi/publi/Comport06b-eng.html)
+- [E. Marchand, H. Uchiyama, F. Spindler. Pose estimation for augmented reality: a hands-on survey. IEEE Trans. on Visualization and Computer Graphics, 2016](http://www.irisa.fr/lagadic/publi/publi/Marchand16a-eng.html)
 
 ## Calibration Requirements
 
@@ -64,8 +64,8 @@ This is an example of a valid flash-code pattern that can be downloaded
 [visp_auto_tracker](visp_auto_tracker) is part of
 [vision_visp](vision_visp) stack.
 
--   To install [visp_auto_tracker](visp_auto_tracker) package run
-    
+- To install [visp_auto_tracker](visp_auto_tracker) package run
+  
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-visp-auto-tracker
@@ -73,10 +73,9 @@ sudo apt-get install ros-$ROS_DISTRO-visp-auto-tracker
 
 
 
-```{=html}
 <!-- -->
-```
--   Or to install the complete stack run 
+
+- Or to install the complete stack run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
@@ -198,8 +197,8 @@ outer-coordinates= 0.000
 
 The following detectors are supported
 
--   `detector-type= zbar`: uses libzbar to detect QRcodes
--   `detector-type= dmtx`: uses libdmtx to detect flashcodes
+- `detector-type= zbar`: uses libzbar to detect QRcodes
+- `detector-type= dmtx`: uses libdmtx to detect flashcodes
 
 #### flashcode-coordinates
 
@@ -226,35 +225,30 @@ The tracker is a state machine whose states vary during the tracking
 process. The process includes tracking, loss and recovery. These are the
 states used:
 
--   Waiting For Input (id: 0) : Not detecting any pattern, just
-    recieving images
+- Waiting For Input (id: 0) : Not detecting any pattern, just recieving
+  images
 
-```{=html}
 <!-- -->
-```
--   Detect Flashcode (id: 1) : Pattern detected.
 
-```{=html}
-<!-- -->
-```
--   Detect Model (id: 2) : Model successfully initialized (from wrl &
-    xml files).
+- Detect Flashcode (id: 1) : Pattern detected.
 
-```{=html}
 <!-- -->
-```
--   Track Model (id: 3) : Tracking model.
 
-```{=html}
-<!-- -->
-```
--   Re Detect Flashcode (id: 4) : Detecting pattern in a small region
-    around where the pattern was last seen.
+- Detect Model (id: 2) : Model successfully initialized (from wrl & xml
+  files).
 
-```{=html}
 <!-- -->
-```
--   Detect Flash code (id: 5) : Detecting pattern in a the whole frame.
+
+- Track Model (id: 3) : Tracking model.
+
+<!-- -->
+
+- Re Detect Flashcode (id: 4) : Detecting pattern in a small region
+  around where the pattern was last seen.
+
+<!-- -->
+
+- Detect Flash code (id: 5) : Detecting pattern in a the whole frame.
 
 ## Viewer
 

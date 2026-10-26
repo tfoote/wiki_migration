@@ -1,8 +1,8 @@
 ## Features
 
--   `Mutex` - multi-thread variable protection.
--   `Thread` - raii style one-shot thread class.
--   `Threadable` - an inheritable thread interface.
+- `Mutex` - multi-thread variable protection.
+- `Thread` - raii style one-shot thread class.
+- `Threadable` - an inheritable thread interface.
 
 There are also a few methods for setting thread/process priorities.
 
@@ -63,11 +63,11 @@ If outside ros, you will also need to link to *ecl_threads*.
 
 ## Tutorials
 
--   [Thread](ecl_threads/Tutorials/Thread) : threading functionality via
-    composition.
--   [Threadable](ecl_threads/Tutorials/Threadable) : threading
-    functionality via inheritance.
--   [Thread Locks](ecl_threads/Tutorials/Thread Locks) : locking threads
-    to protect shared data.
--   [Priorities](ecl_threads/Tutorials/Priorities) : setting thread or
-    process scheduling priorities.
+- [Thread](ecl_threads/Tutorials/Thread) : threading functionality via
+  composition.
+- [Threadable](ecl_threads/Tutorials/Threadable) : threading
+  functionality via inheritance.
+- [Thread Locks](ecl_threads/Tutorials/Thread Locks) : locking threads
+  to protect shared data.
+- [Priorities](ecl_threads/Tutorials/Priorities) : setting thread or
+  process scheduling priorities.

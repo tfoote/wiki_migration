@@ -1,5 +1,4 @@
--   ROS2 repository:
-    <https://github.com/nerian-vision/nerian_stereo_ros2>
+- ROS2 repository: <https://github.com/nerian-vision/nerian_stereo_ros2>
 
 ## Introduction
 
@@ -240,9 +239,9 @@ rosrun rqt_reconfigure rqt_reconfigure
 
 ## Further Information
 
--   [Scarlet product page](https://nerian.com/products/scarlet-3d-depth-camera/)
--   [SceneScan product page](https://nerian.com/products/scenescan-stereo-vision/)
--   [Github project page](https://github.com/nerian-vision/nerian_stereo)
--   [API documentation](https://nerian.com/support/documentation/api-doc/html/index.html)
+- [Scarlet product page](https://nerian.com/products/scarlet-3d-depth-camera/)
+- [SceneScan product page](https://nerian.com/products/scenescan-stereo-vision/)
+- [Github project page](https://github.com/nerian-vision/nerian_stereo)
+- [API documentation](https://nerian.com/support/documentation/api-doc/html/index.html)
 
 ![\|display="none ! important",hidden=""](http://c.statcounter.com/10599048/0/906ae443/1/)

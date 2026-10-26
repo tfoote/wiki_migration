@@ -24,50 +24,47 @@ parameters prints a help text on the standard output.
 NOTE: If any tool returns the error 'No transport layers found in path
 \...', then read the section 'Transport Layer' below.
 
--   gc_info . Lists all available systems (i.e. transport layers),
-    interfaces and devices with some information. If a device ID is
-    given on the command line, then the complete GenICam nodemap with
-    all parameters and their current values are listed.
+- gc_info . Lists all available systems (i.e. transport layers),
+  interfaces and devices with some information. If a device ID is given
+  on the command line, then the complete GenICam nodemap with all
+  parameters and their current values are listed.
 
-```{=html}
 <!-- -->
-```
--   gc_config . Can be used to list network specific information of
-    GenICam compatible GigE Vision 2 cameras. The network settings as
-    well as all other parameters provided via GenICam can be changed.
 
-```{=html}
+- gc_config . Can be used to list network specific information of
+  GenICam compatible GigE Vision 2 cameras. The network settings as well
+  as all other parameters provided via GenICam can be changed.
+
 <!-- -->
-```
--   gc_stream . This tool shows how to configure and stream images from
-    a camera. GenICam features can be configured directly from the
-    command line. Images will be stored in PGM or PPM format, depending
-    on the image format. Streams of the Roboception rc_visard can be
-    enabled or disabled directly on the command line by setting the
-    appropriate GenICam parameters. The following command enables
-    intensity images, disables disparity images and stores 10 images:
-    
+
+- gc_stream . This tool shows how to configure and stream images from a
+  camera. GenICam features can be configured directly from the command
+  line. Images will be stored in PGM or PPM format, depending on the
+  image format. Streams of the Roboception rc_visard can be enabled or
+  disabled directly on the command line by setting the appropriate
+  GenICam parameters. The following command enables intensity images,
+  disables disparity images and stores 10 images:
+  
 
 ```
 gc_stream <ID> ComponentSelector=Intensity ComponentEnable=1 ComponentSelector=Disparity ComponentEnable=0 n=10
 ```
 
- NOTE: Many image viewers can display PGM
-    and PPM format. The sv tool of cvkit
-    (<https://github.com/roboception/cvkit>) can also be used.
+ NOTE: Many image viewers can display PGM and
+  PPM format. The sv tool of cvkit
+  (<https://github.com/roboception/cvkit>) can also be used.
 
-```{=html}
 <!-- -->
-```
--   gc_pointcloud . This tool streams the left image, disparity,
-    confidence and error from a Roboception rc_visard sensor. It takes
-    the first set of time synchronous images, computes a colored point
-    cloud and stores it in PLY ASCII format. This tool demonstrates how
-    to synchronize different images according to their timestamps. NOTE:
-    PLY is a standard format for scanned 3D data that can be read by
-    many programs. The plyv tool of cvkit
-    (<https://github.com/roboception/cvkit>) can also be used for
-    visualization.
+
+- gc_pointcloud . This tool streams the left image, disparity,
+  confidence and error from a Roboception rc_visard sensor. It takes the
+  first set of time synchronous images, computes a colored point cloud
+  and stores it in PLY ASCII format. This tool demonstrates how to
+  synchronize different images according to their timestamps. NOTE: PLY
+  is a standard format for scanned 3D data that can be read by many
+  programs. The plyv tool of cvkit
+  (<https://github.com/roboception/cvkit>) can also be used for
+  visualization.
 
 ## Device ID
 

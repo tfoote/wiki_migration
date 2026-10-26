@@ -25,6 +25,6 @@ Outside ros, you will also need to link to `ecl_io`.
 
 ## Examples
 
--   `src/examples/poll.cpp`
--   `src/examples/sockets.cpp`
--   `src/examples/socketpair.cpp`
+- `src/examples/poll.cpp`
+- `src/examples/sockets.cpp`
+- `src/examples/socketpair.cpp`

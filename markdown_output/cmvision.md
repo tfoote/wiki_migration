@@ -19,10 +19,10 @@ used in a colors file.
 
 Blob parameters are specified to `cmvision` using two components:
 
--   Blob colors in `RGB` color space, specified as follows: (r, g, b)
-    merge expected_num name
--   Blob threshold parameters in `YUV` color space, specified as
-    follows: (min_y:max_y, min_u:max_u, min_v:max_v)
+- Blob colors in `RGB` color space, specified as follows: (r, g, b)
+  merge expected_num name
+- Blob threshold parameters in `YUV` color space, specified as
+  follows: (min_y:max_y, min_u:max_u, min_v:max_v)
 
 Example `colors.txt` for detecting a *Research Robot Red* RWI B21r
 

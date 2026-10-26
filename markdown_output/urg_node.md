@@ -20,19 +20,19 @@ known to work:
 
 **Intensity mode off**:
 
--   `cluster`: 1
--   `skip`: 1
--   `intensity`: false
--   `min_ang`: -2.2689
--   `max_ang`: 2.2689
+- `cluster`: 1
+- `skip`: 1
+- `intensity`: false
+- `min_ang`: -2.2689
+- `max_ang`: 2.2689
 
 **Intensity mode on**:
 
--   `cluster`: 1
--   `skip`: 1
--   `intensity`: true
--   `min_ang`: -1.047
--   `max_ang`: 1.047
+- `cluster`: 1
+- `skip`: 1
+- `intensity`: true
+- `min_ang`: -1.047
+- `max_ang`: 1.047
 
 ### Allow Unsafe Settings Option
 

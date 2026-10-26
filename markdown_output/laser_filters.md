@@ -284,7 +284,7 @@ description, describing an appropriate chain of
 `MultiChannelMedianFilterFloat` type filters.
 
 **Make sure to use both parameters ( *range_filter_chain* and
-*intensity_filter_chain* ) **
+*intensity_filter_chain* )**
 
 #### Example Configuration
 
@@ -505,12 +505,12 @@ NaN.
 
 `filter_type` (`int`) Filtering method selection
 
--   0: Range based filtering (distance between consecutive points)
--   1: Euclidean filtering based on radius outlier search `max_range`
-    (`double`) Only ranges smaller than this range are taken into
-    account `max_range_difference` (`double`) Distance: max distance
-    between consecutive points - RadiusOutlier: max distance between
-    points `filter_window` (`double`) Minimum number of neighbors
+- 0: Range based filtering (distance between consecutive points)
+- 1: Euclidean filtering based on radius outlier search `max_range`
+  (`double`) Only ranges smaller than this range are taken into
+  account `max_range_difference` (`double`) Distance: max distance
+  between consecutive points - RadiusOutlier: max distance between
+  points `filter_window` (`double`) Minimum number of neighbors
 
 #### Example configuration
 

@@ -12,12 +12,12 @@ series.
 
 The INS should be configured through its web interface to output:
 
--   Protocol: IXBLUE STD BIN (any version between 2 and 5)
--   Rate: desired frequency
--   Physical Link: Ethernet
--   Transport Layer: UDP
--   IP: IP of the ROS computer
--   Port: 8200
+- Protocol: IXBLUE STD BIN (any version between 2 and 5)
+- Rate: desired frequency
+- Physical Link: Ethernet
+- Transport Layer: UDP
+- IP: IP of the ROS computer
+- Port: 8200
 
 ![](attachment:network_config_page.png)
 

@@ -100,10 +100,10 @@ message. This can be plotted by `/your_robot/pose/position/x`.
 Possiblly you can figure out this plot name by following steps like
 this:
 
--   [geometry_msgs/Pose](http://docs.ros.org/api/geometry_msgs/html/msg/Pose.html)
-    contains a member `position`. Look into its definition by clicking
-    the link at `geometry_msgs/Point` in the api page.
--   You see `x` as a member of `geometry_msgs/Point`.
+- [geometry_msgs/Pose](http://docs.ros.org/api/geometry_msgs/html/msg/Pose.html)
+  contains a member `position`. Look into its definition by clicking
+  the link at `geometry_msgs/Point` in the api page.
+- You see `x` as a member of `geometry_msgs/Point`.
 
 ### To choose plotting backend type
 
@@ -135,15 +135,15 @@ See
 
 Check the following:
 
--   Your topic is an array (eg.
-    [sensor_msgs/JointState/position](http://www.ros.org/doc/api/sensor_msgs/html/msg/JointState.html))
--   specify an array index
-    ([see this thread](http://answers.ros.org/question/60194/oddity-in-rxplot/?answer=60203#post-id-60203))
--   You didn't give the full path of your topic
--   Topic is not being published
--   Use [rqt_topic](rqt_topic) to see the `topic`s being published.
--   You are plotting data from a bag file?
--   [Use simulation time.](http://wiki.ros.org/Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
+- Your topic is an array (eg.
+  [sensor_msgs/JointState/position](http://www.ros.org/doc/api/sensor_msgs/html/msg/JointState.html))
+- specify an array index
+  ([see this thread](http://answers.ros.org/question/60194/oddity-in-rxplot/?answer=60203#post-id-60203))
+- You didn't give the full path of your topic
+- Topic is not being published
+- Use [rqt_topic](rqt_topic) to see the `topic`s being published.
+- You are plotting data from a bag file?
+- [Use simulation time.](http://wiki.ros.org/Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
 
 ## Limitation
 

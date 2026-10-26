@@ -35,12 +35,12 @@ $ rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyUSB0 _baud:=38400
 
 ## Roadmap
 
--   Add support for additional NMEA sentences beyond GSA, RMC and GGA.
-    Specific requests for support of individual sentences should be
-    filed as enhancement tickets.
--   Add sentence synchronization. Currently, there is little or no
-    buffering, which prevents the driver from using multiple types of
-    sentences to generate one cycle of topic outputs.
+- Add support for additional NMEA sentences beyond GSA, RMC and GGA.
+  Specific requests for support of individual sentences should be filed
+  as enhancement tickets.
+- Add sentence synchronization. Currently, there is little or no
+  buffering, which prevents the driver from using multiple types of
+  sentences to generate one cycle of topic outputs.
 
 ## Nodes
 

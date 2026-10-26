@@ -17,9 +17,9 @@ using ecl::Unsigned;    // type converters
 
 ## Tutorials
 
--   [Boolean Logic](ecl_mpl/Tutorials/Boolean Logic) : using compile
-    time boolean types for metaprogramming.
--   [Enable If](ecl_mpl/Tutorials/Enable If) : an if operator for
-    template type arguments.
--   [Converters](ecl_mpl/Tutorials/Converters) : compile time type
-    converters.
+- [Boolean Logic](ecl_mpl/Tutorials/Boolean Logic) : using compile time
+  boolean types for metaprogramming.
+- [Enable If](ecl_mpl/Tutorials/Enable If) : an if operator for template
+  type arguments.
+- [Converters](ecl_mpl/Tutorials/Converters) : compile time type
+  converters.

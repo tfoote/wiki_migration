@@ -6,7 +6,7 @@ uses the MongoDB database for storage.
 
 ## Documentation
 
--   [Tutorials](warehouse_ros/Tutorials)
+- [Tutorials](warehouse_ros/Tutorials)
 
 ## Report a Bug
 

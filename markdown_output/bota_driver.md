@@ -26,9 +26,9 @@ have the following dependencies:
 
 #### Dependencies
 
--   [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for
-    robotics - obviously),
--   [soem](https://github.com/mgruhler/soem)
+- [Robot Operating System (ROS)](http://wiki.ros.org) (middleware for
+  robotics - obviously),
+- [soem](https://github.com/mgruhler/soem)
 
 **Note:** The [soem](http://wiki.ros.org/soem) dependency is released in
 ROS, so it's a binary dependency for a source installation.
@@ -188,84 +188,84 @@ param {
 
 The following parameters can be set in the `setup.yaml`:
 
--   `name`: The name of the rokubimini devices. Needed to handle
-    multiple devices on the master side. **Note:** The `<name>` in
-    the published topics is taken from this configuration parameter.
--   `configuration_file`: The relative path to the configuration file
-    of the sensor
--   `product_code`: The product code of each device.
--   For the ethercat devices:
--   `ethercat_bus`: The ethercat bus containing the sensor. Is the
-    ethernet adapter name on which the sensor is connected, as indicated
-    in the `ifconfig` command output.
--   `ethercat_address`: The address of the slave. Ethercat addresses
-    are distributed to each slave incrementally. The slave closest to
-    the master has address 1, the second one 2 etc.
--   For the serial devices:
--   `port`: The serial port to connect to communicate with the serial
-    sensor.
--   `baud_rate`: The baud rate used for serial communication.
+- `name`: The name of the rokubimini devices. Needed to handle
+  multiple devices on the master side. **Note:** The `<name>` in the
+  published topics is taken from this configuration parameter.
+- `configuration_file`: The relative path to the configuration file of
+  the sensor
+- `product_code`: The product code of each device.
+- For the ethercat devices:
+- `ethercat_bus`: The ethercat bus containing the sensor. Is the
+  ethernet adapter name on which the sensor is connected, as indicated
+  in the `ifconfig` command output.
+- `ethercat_address`: The address of the slave. Ethercat addresses are
+  distributed to each slave incrementally. The slave closest to the
+  master has address 1, the second one 2 etc.
+- For the serial devices:
+- `port`: The serial port to connect to communicate with the serial
+  sensor.
+- `baud_rate`: The baud rate used for serial communication.
 
 The following parameters can be set in `rokubimini_sensor.yaml` in the
 `bota_device_driver` package:
 
--   `set_reading_to_nan_on_disconnect`: (`true`\|`false`) Sets the
-    reading to nan when the sensor disconnects
--   `imu_acceleration_range`:
--   0 = ±2g,
--   1 = ±4g,
--   2 = ±8g,
--   3 = ±16g
--   `imu_angular_rate_range`:
--   0 = ±250°/s,
--   1 = ±500°/s,
--   2 = ±1000°/s,
--   3 = ±2000°/s
--   `imu_acceleration_filter`: (cut-off Freq)
--   1 = 460Hz,
--   2 = 184Hz,
--   3 = 92Hz,
--   4 = 41Hz,
--   5 = 21Hz,
--   6 = 10Hz,
--   7 = 5Hz
--   `imu_angular_rate_filter`: (cut-off Freq)
--   3 = 184Hz,
--   4 = 92Hz,
--   5 = 41Hz,
--   6 = 21Hz,
--   7 = 10Hz,
--   8 = 5Hz
--   `sinc_filter_size`: (cut-off Freq high/low@sampling Freq)
--   51 = 1674/252Hz@1000Hz,
--   64 = 1255/189Hz@800Hz,
--   128 = 628/94.5hz@400Hz,
--   205 = 393/59.5Hz@250Hz,
--   256 = 314/47.5Hz@200Hz,
--   512 = 157/23.5@100Hz
--   `fir_disable`:
--   false = low cut-off frequency,
--   true = high cut-off frequency from the above result
--   e.g. for sinc filter_size: 48 and fir_disable: 1 you get cut-off
-    freq 1674Hz@1000Hz sample rate
--   `chop_enable`: should be always false
--   `fast_enable`: (only applies if fir_disable is false) True = will
-    result in low cut-off frequency but would be still able to catch
-    step impulses of high cut-off frequency
--   `calibration_matrix_active`: Use the calibration matrix to compute
-    sensor output
--   `temperature_compensation_active`: Compensate drift due to
-    temperature !not supported yet!
--   `imu_active`: Chooses which IMU type is active:
--   0 = no imu active,
--   1 = internal IMU active,
--   2 = external IMU active (if available),
--   3 = both IMUs active
--   `coordinate_system_active`: Set a user-defined coordinate system
--   `inertia_compensation_active`: Enables compensation due to inertia
-    effect
--   `orientation_estimation_active`: Enables orientation estimation
-    and outputs a quaternion
+- `set_reading_to_nan_on_disconnect`: (`true`\|`false`) Sets the
+  reading to nan when the sensor disconnects
+- `imu_acceleration_range`:
+- 0 = ±2g,
+- 1 = ±4g,
+- 2 = ±8g,
+- 3 = ±16g
+- `imu_angular_rate_range`:
+- 0 = ±250°/s,
+- 1 = ±500°/s,
+- 2 = ±1000°/s,
+- 3 = ±2000°/s
+- `imu_acceleration_filter`: (cut-off Freq)
+- 1 = 460Hz,
+- 2 = 184Hz,
+- 3 = 92Hz,
+- 4 = 41Hz,
+- 5 = 21Hz,
+- 6 = 10Hz,
+- 7 = 5Hz
+- `imu_angular_rate_filter`: (cut-off Freq)
+- 3 = 184Hz,
+- 4 = 92Hz,
+- 5 = 41Hz,
+- 6 = 21Hz,
+- 7 = 10Hz,
+- 8 = 5Hz
+- `sinc_filter_size`: (cut-off Freq high/low@sampling Freq)
+- 51 = 1674/252Hz@1000Hz,
+- 64 = 1255/189Hz@800Hz,
+- 128 = 628/94.5hz@400Hz,
+- 205 = 393/59.5Hz@250Hz,
+- 256 = 314/47.5Hz@200Hz,
+- 512 = 157/23.5@100Hz
+- `fir_disable`:
+- false = low cut-off frequency,
+- true = high cut-off frequency from the above result
+- e.g. for sinc filter_size: 48 and fir_disable: 1 you get cut-off freq
+  1674Hz@1000Hz sample rate
+- `chop_enable`: should be always false
+- `fast_enable`: (only applies if fir_disable is false) True = will
+  result in low cut-off frequency but would be still able to catch step
+  impulses of high cut-off frequency
+- `calibration_matrix_active`: Use the calibration matrix to compute
+  sensor output
+- `temperature_compensation_active`: Compensate drift due to
+  temperature !not supported yet!
+- `imu_active`: Chooses which IMU type is active:
+- 0 = no imu active,
+- 1 = internal IMU active,
+- 2 = external IMU active (if available),
+- 3 = both IMUs active
+- `coordinate_system_active`: Set a user-defined coordinate system
+- `inertia_compensation_active`: Enables compensation due to inertia
+  effect
+- `orientation_estimation_active`: Enables orientation estimation and
+  outputs a quaternion
 
 ### Configuration File Examples
 

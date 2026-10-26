@@ -54,5 +54,5 @@ rosrun pr2_tuckarm tuck_arms.py --right untuck
 If this runs properly, you will see the PR2 tuck each of its arms in
 turn and see something like the following feedback in the terminal:
 
--   Waiting for controller manager to start
--   Tucking both left and right arm
+- Waiting for controller manager to start
+- Tucking both left and right arm

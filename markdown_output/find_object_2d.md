@@ -41,12 +41,12 @@ tutorials.
 
 ## Description
 
--   Subscribe to an image topic **/image**
-    ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
-    )
--   **Publish detected objects** (with **position**, **rotation**,
-    **scale** and **shear**) as topic "objects":
-    
+- Subscribe to an image topic **/image**
+  ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
+  )
+- **Publish detected objects** (with **position**, **rotation**,
+  **scale** and **shear**) as topic "objects":
+  
 
 ```
 $ rosrun find_object_2d print_objects_detected
@@ -61,15 +61,15 @@ $ rosrun find_object_2d print_objects_detected
 ```
 
 
--   Note that parameter **Homography/homographyComputed** must be true
-    (default true) in order to publish the topic.
--   Parameter **General/mirrorView** would be false in order to
-    visualize correctly the homography values returned.
--   Take a look at the sample launch file
-    [find_object_2d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_2d.launch)
-    to know how to start the node without the GUI and with pre-loaded
-    objects (from previously saved objects using the gui File->"save
-    objects").
+- Note that parameter **Homography/homographyComputed** must be true
+  (default true) in order to publish the topic.
+- Parameter **General/mirrorView** would be false in order to visualize
+  correctly the homography values returned.
+- Take a look at the sample launch file
+  [find_object_2d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_2d.launch)
+  to know how to start the node without the GUI and with pre-loaded
+  objects (from previously saved objects using the gui File->"save
+  objects").
 
 ## 3D position of the objects
 
@@ -98,29 +98,29 @@ $ roslaunch find_object_2d find_object_3d_kinect2.launch
 
 
 
--   Take a look at the sample launch file
-    [find_object_3d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_3d.launch)
-    to know how to start 3D mode. Kinect-like sensors required! ROS
-    parameter **subscribe_depth** must be also set to **true**.
-    Subscriptions:
--   /rgb/image_rect_color
-    ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
-    )
--   /depth_registered/image_raw
-    ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
-    )
--   /depth_registered/camera_info
-    ([sensor_msgs/CameraInfo](http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html)
-    )
--   Position of the objects are published over TF (center of the object
-    with rotation). You can set ROS parameter **object_prefix** to
-    change the prefix used on TF (default is "object" which gives
-    "/object_1" and "/object_2" for objects 1 and 2 respectively).
--   If you are on a robot, you may want to have the pose of the objects
-    in the **/map** frame. Take a look at this
-    [example](https://github.com/introlab/find-object/blob/master/src/ros1/tf_example_node.cpp).
--   Example on a robot:
-    [Youtube](https://www.youtube.com/watch?v=o1GSQanY-Do)
+- Take a look at the sample launch file
+  [find_object_3d.launch](https://github.com/introlab/find-object/blob/master/launch/ros1/find_object_3d.launch)
+  to know how to start 3D mode. Kinect-like sensors required! ROS
+  parameter **subscribe_depth** must be also set to **true**.
+  Subscriptions:
+- /rgb/image_rect_color
+  ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
+  )
+- /depth_registered/image_raw
+  ([sensor_msgs/Image](http://docs.ros.org/api/sensor_msgs/html/msg/Image.html)
+  )
+- /depth_registered/camera_info
+  ([sensor_msgs/CameraInfo](http://docs.ros.org/api/sensor_msgs/html/msg/CameraInfo.html)
+  )
+- Position of the objects are published over TF (center of the object
+  with rotation). You can set ROS parameter **object_prefix** to change
+  the prefix used on TF (default is "object" which gives "/object_1"
+  and "/object_2" for objects 1 and 2 respectively).
+- If you are on a robot, you may want to have the pose of the objects in
+  the **/map** frame. Take a look at this
+  [example](https://github.com/introlab/find-object/blob/master/src/ros1/tf_example_node.cpp).
+- Example on a robot:
+  [Youtube](https://www.youtube.com/watch?v=o1GSQanY-Do)
 
 ## Nodes
 

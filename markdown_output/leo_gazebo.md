@@ -48,10 +48,10 @@ rosrun leo_teleop key_teleop
 Running the simulation with multiple robots in one environment is a
 little bit trickier, as we have to guarantee that:
 
--   each robot model in Gazebo has a different name,
--   the robots use different ROS topic and services names,
--   the robots use different [tf](tf) frame names. For this purpose, you
-    can use the `model_name` and `robot_ns` launch file arguments.
+- each robot model in Gazebo has a different name,
+- the robots use different ROS topic and services names,
+- the robots use different [tf](tf) frame names. For this purpose, you
+  can use the `model_name` and `robot_ns` launch file arguments.
 
 For example, to spawn a second robot when Gazebo is running, type:
 

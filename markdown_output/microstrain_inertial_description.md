@@ -32,40 +32,40 @@ it's center directly on top of `base_link`.
 The following files can be included in other `.urdf.xacro` files to
 accomodate certain sensors.
 
--   [gq7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gq7.urdf.xacro)
-    can be used to represent a
-    [3DM-GQ7](https://www.microstrain.com/inertial-sensors/3dm-gq7)
--   [rtk.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gq7.urdf.xacro)
-    can be used to represent a
-    [3DM-RTK](https://www.microstrain.com/inertial-sensors/3dm-rtk)
--   [gv7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gv7.urdf.xacro)
-    can be used to represent the following sensors:
--   [3DM-GV7-AR](https://www.microstrain.com/inertial-sensors/3DM-GV7-AR)
--   [3DM-GV7-AHRS](https://www.microstrain.com/inertial-sensors/3DM-GV7-AHRS)
--   [3DM-GV7-INS](https://www.microstrain.com/inertial-sensors/3DM-GV7-INS)
--   [cv7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/cv7.urdf.xacro)
-    can be used to represent the following sensors:
--   [3DM-CV7-AR](https://www.microstrain.com/inertial-sensors/3dmcv7-ar)
--   [3DM-CV7-AHRS](https://www.microstrain.com/inertial-sensors/3dm-cv7-ahrs)
--   [3DM-CV7-INS](https://www.microstrain.com/inertial-sensors/3DM-CV7-INS)
--   [cv5.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/cv5.urdf.xacro)
-    can be used to represent the following sensors:
--   [3DM-CV5-10](https://www.microstrain.com/inertial-sensors/3dm-cv5-10)
--   [3DM-CV5-15](https://www.microstrain.com/inertial-sensors/3dm-cv5-15)
--   [3DM-CV5-25](https://www.microstrain.com/inertial-sensors/3dm-cv5-25)
--   [3DM-CX5-10](https://www.microstrain.com/inertial-sensors/3dm-cx5-10)
--   [3DM-CX5-15](https://www.microstrain.com/inertial-sensors/3dm-cx5-15)
--   [3DM-CX5-25](https://www.microstrain.com/inertial-sensors/3dm-cx5-25)
--   [3DM-CX5-45](https://www.microstrain.com/inertial-sensors/3dm-cx5-45)
--   [gx5_15.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_15.urdf.xacro)
-    can be used to represent a
-    [3DM-GX5-15](https://www.microstrain.com/inertial-sensors/3dm-gx5-15)
--   [gx5_25.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_25.urdf.xacro)
-    can be used to represent a
-    [3DM-GX5-25](https://www.microstrain.com/inertial-sensors/3dm-gx5-25)
--   [gx5_25.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_45.urdf.xacro)
-    can be used to represent a
-    [3DM-GX5-25](https://www.microstrain.com/inertial-sensors/3dm-gx5-25)
+- [gq7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gq7.urdf.xacro)
+  can be used to represent a
+  [3DM-GQ7](https://www.microstrain.com/inertial-sensors/3dm-gq7)
+- [rtk.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gq7.urdf.xacro)
+  can be used to represent a
+  [3DM-RTK](https://www.microstrain.com/inertial-sensors/3dm-rtk)
+- [gv7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gv7.urdf.xacro)
+  can be used to represent the following sensors:
+- [3DM-GV7-AR](https://www.microstrain.com/inertial-sensors/3DM-GV7-AR)
+- [3DM-GV7-AHRS](https://www.microstrain.com/inertial-sensors/3DM-GV7-AHRS)
+- [3DM-GV7-INS](https://www.microstrain.com/inertial-sensors/3DM-GV7-INS)
+- [cv7.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/cv7.urdf.xacro)
+  can be used to represent the following sensors:
+- [3DM-CV7-AR](https://www.microstrain.com/inertial-sensors/3dmcv7-ar)
+- [3DM-CV7-AHRS](https://www.microstrain.com/inertial-sensors/3dm-cv7-ahrs)
+- [3DM-CV7-INS](https://www.microstrain.com/inertial-sensors/3DM-CV7-INS)
+- [cv5.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/cv5.urdf.xacro)
+  can be used to represent the following sensors:
+- [3DM-CV5-10](https://www.microstrain.com/inertial-sensors/3dm-cv5-10)
+- [3DM-CV5-15](https://www.microstrain.com/inertial-sensors/3dm-cv5-15)
+- [3DM-CV5-25](https://www.microstrain.com/inertial-sensors/3dm-cv5-25)
+- [3DM-CX5-10](https://www.microstrain.com/inertial-sensors/3dm-cx5-10)
+- [3DM-CX5-15](https://www.microstrain.com/inertial-sensors/3dm-cx5-15)
+- [3DM-CX5-25](https://www.microstrain.com/inertial-sensors/3dm-cx5-25)
+- [3DM-CX5-45](https://www.microstrain.com/inertial-sensors/3dm-cx5-45)
+- [gx5_15.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_15.urdf.xacro)
+  can be used to represent a
+  [3DM-GX5-15](https://www.microstrain.com/inertial-sensors/3dm-gx5-15)
+- [gx5_25.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_25.urdf.xacro)
+  can be used to represent a
+  [3DM-GX5-25](https://www.microstrain.com/inertial-sensors/3dm-gx5-25)
+- [gx5_25.urdf.xacro](https://github.com/LORD-MicroStrain/microstrain_inertial/blob/ros/microstrain_inertial_description/urdf/gx5_45.urdf.xacro)
+  can be used to represent a
+  [3DM-GX5-25](https://www.microstrain.com/inertial-sensors/3dm-gx5-25)
 
 ## Sensor Origin
 

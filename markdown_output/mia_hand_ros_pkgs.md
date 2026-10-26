@@ -37,53 +37,53 @@ hand and launch files.
 
 Our code is split into different packages:
 
--   [mia_hand_msgs\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_msgs/):
-    This package contains custom messages/services/actions for the Mia
-    hand.
--   [mia_hand_description\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/):
-    This package provides the URDF models of the Mia hand. For further
-    details please see the
-    [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/README.md)
-    file and the doxygen documentation
-    ([doc ](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/doc/)
-    ) stored in the package.
--   [mia_hand_driver\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/):
-    This package contains the cpp driver library to communicate and
-    control the real Mia hand. For further details please see the
-    [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/README.md)
-    file and the doxygen documentation
-    ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/doc/)
-    ) stored in the package.
--   [mia_hand_ros_control\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/):
-    This package contains the hardware interface class that allows ROS
-    controllers to send command to and receive joint states data from
-    the Mia hand. This package contains also a list of pre-set ROS
-    controllers that can be used to control the Mia hand in position or
-    velocity. For further details please see the
-    [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/README.md)
-    file and the doxygen documentation
-    ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/doc/)
-    ) stored in the package.
--   [mia_hand_gazebo\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/):
-    This package contains the hardware Sim interface class that allows
-    to use the Mia hand within a Gazebo simulated environment. This
-    package contains also a list of pre-set ROS controllers that can be
-    used to control the simulated Mia hand in position or velocity. For
-    further details please see the
-    [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/README.md)
-    file and the doxygen documentation
-    ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/doc/)
-    ) stored in the package.
--   [mia_hand_moveit_config\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_moveit_config/):
-    This package contains all the configuration files needed to make Mia
-    hand work with MoveIt. However, if needed custom configuration files
-    can be generated following the
-    [MoveIt Setup Assistant tutorial](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html).
--   [mia_hand_bringup\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_bringup/):
-    This package contains all the launch files to start the nodes of the
-    Mia hand. For further details please see the
-    [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_bringup/README.md)
-    file stored in the package.
+- [mia_hand_msgs\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_msgs/):
+  This package contains custom messages/services/actions for the Mia
+  hand.
+- [mia_hand_description\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/):
+  This package provides the URDF models of the Mia hand. For further
+  details please see the
+  [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/README.md)
+  file and the doxygen documentation
+  ([doc ](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_description/doc/)
+  ) stored in the package.
+- [mia_hand_driver\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/):
+  This package contains the cpp driver library to communicate and
+  control the real Mia hand. For further details please see the
+  [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/README.md)
+  file and the doxygen documentation
+  ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_driver/doc/)
+  ) stored in the package.
+- [mia_hand_ros_control\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/):
+  This package contains the hardware interface class that allows ROS
+  controllers to send command to and receive joint states data from the
+  Mia hand. This package contains also a list of pre-set ROS controllers
+  that can be used to control the Mia hand in position or velocity. For
+  further details please see the
+  [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/README.md)
+  file and the doxygen documentation
+  ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_ros_control/doc/)
+  ) stored in the package.
+- [mia_hand_gazebo\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/):
+  This package contains the hardware Sim interface class that allows to
+  use the Mia hand within a Gazebo simulated environment. This package
+  contains also a list of pre-set ROS controllers that can be used to
+  control the simulated Mia hand in position or velocity. For further
+  details please see the
+  [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/README.md)
+  file and the doxygen documentation
+  ([doc](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_gazebo/doc/)
+  ) stored in the package.
+- [mia_hand_moveit_config\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_moveit_config/):
+  This package contains all the configuration files needed to make Mia
+  hand work with MoveIt. However, if needed custom configuration files
+  can be generated following the
+  [MoveIt Setup Assistant tutorial](http://docs.ros.org/kinetic/api/moveit_tutorials/html/doc/setup_assistant/setup_assistant_tutorial.html).
+- [mia_hand_bringup\|target="_blank"](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_bringup/):
+  This package contains all the launch files to start the nodes of the
+  Mia hand. For further details please see the
+  [README.md](https://bitbucket.org/prensilia-ros/mia_hand_ros_pkgs/src/master/mia_hand_bringup/README.md)
+  file stored in the package.
 
 ### Report a Bug
 

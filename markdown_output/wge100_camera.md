@@ -16,36 +16,32 @@ Most PR2 users will not need the information on this page as the cameras
 are brought up at the same time as the robot. Instead they can refer to
 the following sources:
 
--   For simplified instructions on setting up camera frame rate, or
-    synchronization with the PR2's texture projector refer to the
-    [pr2_camera_synchronizer](pr2_camera_synchronizer#UsingOnThePr2)
-    documentation.
+- For simplified instructions on setting up camera frame rate, or
+  synchronization with the PR2's texture projector refer to the
+  [pr2_camera_synchronizer](pr2_camera_synchronizer#UsingOnThePr2)
+  documentation.
 
-```{=html}
 <!-- -->
-```
--   For calibrating the cameras or doing vision processing, you will
-    also want to look at the [image pipeline stack](image_pipeline).
 
-```{=html}
-<!-- -->
-```
--   Other packages are available to use and process data coming from
-    [monocular](image_proc) or [stereo](stereo_image_proc) cameras.
+- For calibrating the cameras or doing vision processing, you will also
+  want to look at the [image pipeline stack](image_pipeline).
 
-```{=html}
 <!-- -->
-```
--   Tutorials are available showing how to dynamically reconfigure a
-    node's parameters using
-    [a GUI](hokuyo_node/Tutorials/UsingReconfigureGUIToChangeHokuyoLaserParameters),
-    [from the command-line, a launch file or C++ code](hokuyo_node/Tutorials/UsingDynparamToChangeHokuyoLaserParameters).
 
-```{=html}
+- Other packages are available to use and process data coming from
+  [monocular](image_proc) or [stereo](stereo_image_proc) cameras.
+
 <!-- -->
-```
--   For a reference of the WGE100 parameters you can skip directly to
-    the [ROS API](#ROS_API) to learn about various parameters.
+
+- Tutorials are available showing how to dynamically reconfigure a
+  node's parameters using
+  [a GUI](hokuyo_node/Tutorials/UsingReconfigureGUIToChangeHokuyoLaserParameters),
+  [from the command-line, a launch file or C++ code](hokuyo_node/Tutorials/UsingDynparamToChangeHokuyoLaserParameters).
+
+<!-- -->
+
+- For a reference of the WGE100 parameters you can skip directly to the
+  [ROS API](#ROS_API) to learn about various parameters.
 
 ### Concurrent Access
 
@@ -65,17 +61,17 @@ The timestamps returned by the `wge100_camera_node` are with respect
 to the end of the exposure. The timestamps can be produced in one of two
 ways:
 
--   If the camera is externally triggered, the driver expects timestamps
-    to be provided on a
-    [roslib/msg/Header](https://docs.ros.org/en/rolling/p/roslib/msg/Header.html)
-    topic. The topic the camera subscribes to is defined by the
-    trig_timestamp_topic parameter. The driver then attempts to match
-    timestamps with image arrival times.
--   If the camera is internally triggered, the driver uses the arrival
-    time of the first packet in the message, offset by
-    `first_packet_offset` as an estimate of the end of the exposure.
-    These estimates are then filtered based on the known frame rate to
-    get a more accurate estimate with less jitter.
+- If the camera is externally triggered, the driver expects timestamps
+  to be provided on a
+  [roslib/msg/Header](https://docs.ros.org/en/rolling/p/roslib/msg/Header.html)
+  topic. The topic the camera subscribes to is defined by the
+  trig_timestamp_topic parameter. The driver then attempts to match
+  timestamps with image arrival times.
+- If the camera is internally triggered, the driver uses the arrival
+  time of the first packet in the message, offset by
+  `first_packet_offset` as an estimate of the end of the exposure.
+  These estimates are then filtered based on the known frame rate to get
+  a more accurate estimate with less jitter.
 
 ## Camera URLs
 
@@ -89,12 +85,12 @@ URL can indicate that whatever camera is found should be used.
 
 There are three types of camera URLs:
 
--   **name** URLs indicate the name of the camera to be found. You can
-    set the name of a camera using the [set_name](#SetName) utility.
-    E.g.: `name://wide_stereo_l`
--   **serial** URLs indicate the serial number of the camera to be
-    found. E.g.: `serial://2701025`
--   **any** URLs will match any camera. E.g.: `any://`
+- **name** URLs indicate the name of the camera to be found. You can set
+  the name of a camera using the [set_name](#SetName) utility. E.g.:
+  `name://wide_stereo_l`
+- **serial** URLs indicate the serial number of the camera to be found.
+  E.g.: `serial://2701025`
+- **any** URLs will match any camera. E.g.: `any://`
 
 If a URL matches more than one camera, none of them will be selected,
 and an error will be reported. This situation cannot happen with a

@@ -18,16 +18,16 @@ using ecl::PushAndPop;
 
 ## Tutorials
 
--   [Arrays](ecl_containers/Tutorials/Arrays) - fixed and dynamic
-    arrays, comma initialisation and blueprints.
--   [Stencils](ecl_containers/Tutorials/Stencils) - windows onto ecl
-    arrays.
--   [Buffer Overflow Detection](ecl_containers/Tutorials/Buffer Overflow Detection) -
-    detecting array under and over runs.
--   [Fifo](ecl_containers/Tutorials/Fifo) - A simple first in, first out
-    class.
--   [Utilities](ecl_containers/Tutorials/Utilities) - container
-    formatters and converters.
+- [Arrays](ecl_containers/Tutorials/Arrays) - fixed and dynamic arrays,
+  comma initialisation and blueprints.
+- [Stencils](ecl_containers/Tutorials/Stencils) - windows onto ecl
+  arrays.
+- [Buffer Overflow Detection](ecl_containers/Tutorials/Buffer Overflow Detection) -
+  detecting array under and over runs.
+- [Fifo](ecl_containers/Tutorials/Fifo) - A simple first in, first out
+  class.
+- [Utilities](ecl_containers/Tutorials/Utilities) - container formatters
+  and converters.
 
 ## Examples
 

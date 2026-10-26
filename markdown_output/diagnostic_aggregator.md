@@ -23,7 +23,7 @@ these messages in a hierarchical format. To determine the hierarchy, the
 diagnostic aggregator prepends diagnostic status names with a path,
 joined with "/". For example:
 
-`prosilica: Frequency Status` &rarr; `My
+`prosilica: Frequency Status` \&rarr; `My
 Robot/Sensors/Prosilica/prosilica: Frequency Status`
 
 ### Example
@@ -106,14 +106,14 @@ The base analyzer class is the pure virtual
 [diagnostic_aggregator::Analyzer](CodeAPI:diagnostic_aggregator/html/classdiagnostic__aggregator_1_1Analyzer.html)
 class. All derived classes must implement these methods:
 
--   `init()` - Loads parameters
--   `match()` - Returns true/false if interested in viewing a status
-    message
--   `analyze()` - Analyze a new message
--   `report()` - Report results or state
--   `getPath()` - Get complete path (anything prepended onto status
-    names)
--   `getName()` - Get nice name, like "Motors" or "Sensors"
+- `init()` - Loads parameters
+- `match()` - Returns true/false if interested in viewing a status
+  message
+- `analyze()` - Analyze a new message
+- `report()` - Report results or state
+- `getPath()` - Get complete path (anything prepended onto status
+  names)
+- `getName()` - Get nice name, like "Motors" or "Sensors"
 
 Analyzers can choose the error state for any
 [diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)
@@ -244,7 +244,7 @@ The above example can analyze the instruments on a PR2. The
 `AnalyzerGroup` uses the parameter `path` to prepend to all output
 names. In the above example,
 
-`tilt_hokuyo_node: Frequency Status` &rarr; `Sensors/Tilt
+`tilt_hokuyo_node: Frequency Status` \&rarr; `Sensors/Tilt
 Hokuyo/tilt_hokuyo_node: Frequency Status`.
 
 All sub-analyzers should go under the `analyzers` namespace of the

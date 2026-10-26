@@ -44,12 +44,12 @@ following URLs:
 
 ### Available URLs
 
--   Overview of available ROS topics: `http:*localhost:8080/` \*
-    Webpage showing a video stream:
-    `http:*localhost:8080/stream_viewer?topic={ROS_TOPIC}`
--   Video stream URL: `http:*localhost:8080/stream?topic={ROS_TOPIC}`
-    \* Snapshot of next image:
-    `http:*localhost:8080/snapshot?topic={ROS_TOPIC}`
+- Overview of available ROS topics: `http:*localhost:8080/` \* Webpage
+  showing a video stream:
+  `http:*localhost:8080/stream_viewer?topic={ROS_TOPIC}`
+- Video stream URL: `http:*localhost:8080/stream?topic={ROS_TOPIC}` \*
+  Snapshot of next image:
+  `http:*localhost:8080/snapshot?topic={ROS_TOPIC}`
 
 Several parameters can be configure via the video stream URL - Example:
 <http://localhost:8888/stream?topic=depthcloud_encoded&bitrate=250000&type=vp8>
@@ -246,4 +246,4 @@ Please send bug reports to the
 [GitHub Issue Tracker](https://github.com/RobotWebTools/web_video_server/issues).
 Feel free to contact us at any point with questions and comments.
 
--   robot-web-tools@googlegroups.com
+- robot-web-tools@googlegroups.com

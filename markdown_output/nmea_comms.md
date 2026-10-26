@@ -6,11 +6,11 @@ between socket (server) or serial devices and the
 message type. This may be useful for a number of scenarios, including if
 you:
 
--   want your device's raw NMEA sentences to be available to other
-    nodes, or to be bagged
--   have a network-connected navsat device
--   are particularly sensitive to the CPU usage incurred by
-    [PySerial](http://pyserial.sourceforge.net/)
+- want your device's raw NMEA sentences to be available to other nodes,
+  or to be bagged
+- have a network-connected navsat device
+- are particularly sensitive to the CPU usage incurred by
+  [PySerial](http://pyserial.sourceforge.net/)
 
 Finally, the combination of a `serial_node` connected directly to a
 `socket_node` can create a tee, where a device's serial data is

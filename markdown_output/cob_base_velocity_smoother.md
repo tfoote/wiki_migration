@@ -5,8 +5,8 @@ the same type for "smoothed" velocity to avoid jerky behavior.
 
 The two nodes available are:
 
--   `cob_base_velocity_smoother`
--   `velocity_smoother`
+- `cob_base_velocity_smoother`
+- `velocity_smoother`
 
 ## Hardware Requirements
 

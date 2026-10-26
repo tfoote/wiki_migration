@@ -9,31 +9,31 @@ tuning the control loop. Several examples are provided.
 
 This wiki page uses several terms from control system theory:
 
--   Setpoint: the desired value of a controlled process, e.g. arm
-    position, motor speed, etc.
--   Plant state: the actual value of the controlled process. Plant is
-    the name for the process and its state is the property being
-    controlled, e.g. arm position, motor speed, etc.
--   Control effort: the amount of force applied by the controller to the
-    controlled process to try to make the plant state equal the
-    setpoint. Control effort may be varied by changing e.g. voltage,
-    duty-cycle, etc.
+- Setpoint: the desired value of a controlled process, e.g. arm
+  position, motor speed, etc.
+- Plant state: the actual value of the controlled process. Plant is the
+  name for the process and its state is the property being controlled,
+  e.g. arm position, motor speed, etc.
+- Control effort: the amount of force applied by the controller to the
+  controlled process to try to make the plant state equal the setpoint.
+  Control effort may be varied by changing e.g. voltage, duty-cycle,
+  etc.
 
 ### Features
 
--   Easy to interface to: uses std_msgs/Float64 for setpoint, plant
-    state, and control effort
--   Dynamic reconfiguration of Kp, Ki and Kd eases on-the-fly tuning
--   Low-pass filter in the error derivative with a parameterized cut-off
-    frequency provides smoother derivative term.
--   ROS node-private parameters configure all controller parameters
--   Support for multiple controllers
--   Support for faster-than-wallclock simulation
--   Auto/Manual modes
--   Simulations of 1st & 2nd order plants allow evaluation of controller
-    features
--   A Ziegler-Nichols autotuner
--   Support for discontinuous angle measurements
+- Easy to interface to: uses std_msgs/Float64 for setpoint, plant state,
+  and control effort
+- Dynamic reconfiguration of Kp, Ki and Kd eases on-the-fly tuning
+- Low-pass filter in the error derivative with a parameterized cut-off
+  frequency provides smoother derivative term.
+- ROS node-private parameters configure all controller parameters
+- Support for multiple controllers
+- Support for faster-than-wallclock simulation
+- Auto/Manual modes
+- Simulations of 1st & 2nd order plants allow evaluation of controller
+  features
+- A Ziegler-Nichols autotuner
+- Support for discontinuous angle measurements
 
 ## Installing the package
 
@@ -89,17 +89,16 @@ see the desired degree of detail in the plot.
 
 ![](attachment:servo_plot.png)
 
--   /setpoint/data is a plot of the std_msgs/Float64 messages which tell
-    the PID controller the desired value the servo should be controlled
-    to. A node in this example is changing the setpoint between 1.0 and
-    -1.0 every 5 seconds.
--   /state/data is a plot of the std_msgs/Float64 messages which are
-    input to the PID controller from the controlled system; in this case
-    a simulation of a servo.
--   /control_effort/data is a plot of the std_msgs/Float64 messages
-    which are output from the PID controller and which apply correcting
-    force to the controlled system; in this case, voltage to the
-    simulated servo.
+- /setpoint/data is a plot of the std_msgs/Float64 messages which tell
+  the PID controller the desired value the servo should be controlled
+  to. A node in this example is changing the setpoint between 1.0 and
+  -1.0 every 5 seconds.
+- /state/data is a plot of the std_msgs/Float64 messages which are input
+  to the PID controller from the controlled system; in this case a
+  simulation of a servo.
+- /control_effort/data is a plot of the std_msgs/Float64 messages which
+  are output from the PID controller and which apply correcting force to
+  the controlled system; in this case, voltage to the simulated servo.
 
 /setpoint, /state, and /control effort are the default topic names that
 the PID controller subscribes to, and publishes on. They can be changed
@@ -171,12 +170,11 @@ $ rosrun pid autotune
 If you want to customize the autotuner for your application, these are
 the values in autotune.cpp that need changing:
 
--   nameSpc = "/left_wheel_pid/" (may be blank if you are only running
-    1 PID controller)
--   numLoops (adjust how long the autotuner observes the plant for each
-    Kp it tries)
--   Kp_min, Kp_max, Kp_step (define the range of Kp values to be
-    searched)
+- nameSpc = "/left_wheel_pid/" (may be blank if you are only running 1
+  PID controller)
+- numLoops (adjust how long the autotuner observes the plant for each Kp
+  it tries)
+- Kp_min, Kp_max, Kp_step (define the range of Kp values to be searched)
 
 ## Controller Node
 
@@ -192,77 +190,76 @@ and can be changed in the standard way with ROS techniques like
 remapping and namespaces, or in a pid-package-specific way using
 controller parameters.
 
--   setpoint: The controller subscribes to this topic and reads
-    std_msgs/Float64 messages. The message data element must contain the
-    desired value of the state measurement of the controlled process.
--   state: The controller subscribes to this topic and reads
-    std_msgs/Float64 messages. The message data element must contain the
-    current value of the controlled plant property. The controller
-    publishes std_msgs/Float64 messages on the control_effort topic each
-    time it receives a message on the state topic. Thus the rate at
-    which the plant publishes state governs the control-loop rate - the
-    plant should publish state at the desired loop rate.
--   control_effort: The control_effort message data element contains the
-    control effort to be applied to the process to drive state/data to
-    equal setpoint/data.
--   pid_enable: controller subscribes to this topic and reads
-    std_msgs/Bool messages. The data element disables controller if
-    false: controller stops publishing control_effort and holds the
-    error integral at 0. A true value re-enables the controller. The
-    name of this topic can be changed in the launch file if you have
-    multiple PID controllers.
--   pid_debug: publishes an array that can be useful for debugging or
-    tuning. The array contains five numbers: plant state, control
-    effort, Proportional contribution, Integral contribution, Derivative
-    contribution
+- setpoint: The controller subscribes to this topic and reads
+  std_msgs/Float64 messages. The message data element must contain the
+  desired value of the state measurement of the controlled process.
+- state: The controller subscribes to this topic and reads
+  std_msgs/Float64 messages. The message data element must contain the
+  current value of the controlled plant property. The controller
+  publishes std_msgs/Float64 messages on the control_effort topic each
+  time it receives a message on the state topic. Thus the rate at which
+  the plant publishes state governs the control-loop rate - the plant
+  should publish state at the desired loop rate.
+- control_effort: The control_effort message data element contains the
+  control effort to be applied to the process to drive state/data to
+  equal setpoint/data.
+- pid_enable: controller subscribes to this topic and reads
+  std_msgs/Bool messages. The data element disables controller if false:
+  controller stops publishing control_effort and holds the error
+  integral at 0. A true value re-enables the controller. The name of
+  this topic can be changed in the launch file if you have multiple PID
+  controllers.
+- pid_debug: publishes an array that can be useful for debugging or
+  tuning. The array contains five numbers: plant state, control effort,
+  Proportional contribution, Integral contribution, Derivative
+  contribution
 
 ### Parameters
 
 The following node-private parameters are read at node startup:
 
--   Kp, Ki, Kd: The values to be used for proportional, integral, and
-    derivative gains. These values are used by the node unless
-    overridden by dynamic reconfiguration. **Kp, Ki and Kd should all
-    have the same sign!** Use all positive values for direct-acting
-    loops (where an increase in control effort produces an increase in
-    state). Use all negative values for reverse-acting loops (where an
-    increase in control effort produces a decrease in state). Defaults
-    are 1.0, 0, and 0 for Kp, Ki and Kd.
--   upper_limit, lower_limit: the maximum and minimum limits for
-    control_effort. Defaults are 1000, -1000.
--   windup_limit: The maximum limit for error integral. Default is 1000.
--   cutoff_frequency: The cutoff frequency of the low-pass filter on the
-    derivative term (in Hz). Default is 1/4 of the sampling rate.
--   topic_from_controller: The topic name that control_effort will be
-    published to. The plant must subscribe to this topic. Default is
-    "control_effort".
--   topic_from_plant: The topic name that controller subscribes to for
-    updates from the plant. Default is "state"
--   setpoint_topic: The topic name that controller subscribes to for
-    updates to the desired value of plant state. Default is
-    "setpoint".
--   node_name: The name given to the node being launched. Default if not
-    otherwise specified is "pid_node".
--   max_loop_frequency, min_loop_frequency: The maximum and minimum
-    expected frequency at which the plant issues state messages and the
-    control loop runs and generates control_effort. The frequency is
-    controlled by the rate at which the plant publishes state. This can
-    be useful to detect that a node or sensor has failed. Defaults are
-    arbitrary: minimum 1 Hz, maximum 1000 Hz.
--   pid_enable_topic: The name of the topic where a Boolean is published
-    to turn on/off the PID controller. This is modifiable in case there
-    are multiple PID controllers. The default is "pid_enable".
--   angle_error: Set this boolean to "true" if the state is a
-    potentially discontinuous angular error measurement. It will
-    maintain the angular error between -pi:pi, or -180:180. The default
-    is "false."
--   angle_wrap: Related to angle_error. Helps to maintain an angular
-    error (in radians) between -pi:pi. Could be set to 2.0\*180.0 for
-    degree measurements. The defualt is "2.0\*3.14159."
--   setpoint_timeout: Setpoint timeout parameter to determine how long
-    to keep publishing control_effort messages after last setpoint
-    message. -1 indicates publish indefinitely, and positive number sets
-    the timeout in seconds
+- Kp, Ki, Kd: The values to be used for proportional, integral, and
+  derivative gains. These values are used by the node unless overridden
+  by dynamic reconfiguration. **Kp, Ki and Kd should all have the same
+  sign!** Use all positive values for direct-acting loops (where an
+  increase in control effort produces an increase in state). Use all
+  negative values for reverse-acting loops (where an increase in control
+  effort produces a decrease in state). Defaults are 1.0, 0, and 0 for
+  Kp, Ki and Kd.
+- upper_limit, lower_limit: the maximum and minimum limits for
+  control_effort. Defaults are 1000, -1000.
+- windup_limit: The maximum limit for error integral. Default is 1000.
+- cutoff_frequency: The cutoff frequency of the low-pass filter on the
+  derivative term (in Hz). Default is 1/4 of the sampling rate.
+- topic_from_controller: The topic name that control_effort will be
+  published to. The plant must subscribe to this topic. Default is
+  "control_effort".
+- topic_from_plant: The topic name that controller subscribes to for
+  updates from the plant. Default is "state"
+- setpoint_topic: The topic name that controller subscribes to for
+  updates to the desired value of plant state. Default is "setpoint".
+- node_name: The name given to the node being launched. Default if not
+  otherwise specified is "pid_node".
+- max_loop_frequency, min_loop_frequency: The maximum and minimum
+  expected frequency at which the plant issues state messages and the
+  control loop runs and generates control_effort. The frequency is
+  controlled by the rate at which the plant publishes state. This can be
+  useful to detect that a node or sensor has failed. Defaults are
+  arbitrary: minimum 1 Hz, maximum 1000 Hz.
+- pid_enable_topic: The name of the topic where a Boolean is published
+  to turn on/off the PID controller. This is modifiable in case there
+  are multiple PID controllers. The default is "pid_enable".
+- angle_error: Set this boolean to "true" if the state is a
+  potentially discontinuous angular error measurement. It will maintain
+  the angular error between -pi:pi, or -180:180. The default is
+  "false."
+- angle_wrap: Related to angle_error. Helps to maintain an angular error
+  (in radians) between -pi:pi. Could be set to 2.0\*180.0 for degree
+  measurements. The defualt is "2.0\*3.14159."
+- setpoint_timeout: Setpoint timeout parameter to determine how long to
+  keep publishing control_effort messages after last setpoint message.
+  -1 indicates publish indefinitely, and positive number sets the
+  timeout in seconds
 
 ## How to use Controller Features
 
@@ -314,12 +311,12 @@ needed.
 Any real robot is likely to have multiple PID loops, and likely
 instantiates multiple controller nodes. The problems to deal with are:
 
--   Each controller needs to subscribe to the plant state topic from its
-    assigned plant
--   Each controller needs to publish on a different control_effort topic
-    so as to control their assigned plant.
--   The multiple controllers may subscribe to different, or to the same
-    setpoint topic
+- Each controller needs to subscribe to the plant state topic from its
+  assigned plant
+- Each controller needs to publish on a different control_effort topic
+  so as to control their assigned plant.
+- The multiple controllers may subscribe to different, or to the same
+  setpoint topic
 
 ROS provides two ways of supporting this need to connect controller
 nodes to different topic names, and the pid controller node provides a
@@ -486,17 +483,17 @@ slower than wallclock.
 The pid package contains several other nodes which support the demo
 launch files:
 
--   setpoint_node. Publishes a value on setpoint that alternates between
-    +1 and -1 every 5 seconds
--   plant_node. Subscribes to control_effort and publishes on state.
-    Simulates a first or second-order plant (selectable). Parameters:
--   plant_order: 1 or 2 selects first or second order plant. Default: 1
--   reverse_acting: true to cause an increase in control effort to
-    produce a decrease in state. Default: false
--   sim_time node. Publishes 10ms increments of time on the /clock
-    topic. Parameter:
--   sim_speedup: Divider for the wallclock time delay between emitting
-    10ms time increments. Default: 1
+- setpoint_node. Publishes a value on setpoint that alternates between
+  +1 and -1 every 5 seconds
+- plant_node. Subscribes to control_effort and publishes on state.
+  Simulates a first or second-order plant (selectable). Parameters:
+- plant_order: 1 or 2 selects first or second order plant. Default: 1
+- reverse_acting: true to cause an increase in control effort to produce
+  a decrease in state. Default: false
+- sim_time node. Publishes 10ms increments of time on the /clock topic.
+  Parameter:
+- sim_speedup: Divider for the wallclock time delay between emitting
+  10ms time increments. Default: 1
 
 ## Filtering
 

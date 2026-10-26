@@ -20,7 +20,7 @@ enhancement request ticket on Issue/Bug tracker listed above.
 
 Other than those opened tickets, here are something worth noted:
 
--   /!\\ Note that the refresh rate feature only works for monitoring
-    nodes & parameters \-- it doesn't work for topic monitoring, which
-    is done in external component ([rqt_topic](rqt_topic)) so that
-    `rqt_moveit` doesn't have control for it.
+- /!\\ Note that the refresh rate feature only works for monitoring
+  nodes & parameters \-- it doesn't work for topic monitoring, which is
+  done in external component ([rqt_topic](rqt_topic)) so that
+  `rqt_moveit` doesn't have control for it.

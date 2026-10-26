@@ -14,21 +14,19 @@ it's possible to support other representations. The spline interpolator
 uses the following interpolation strategies depending on the waypoint
 specification:
 
--   **Linear**: Only position is specified. Guarantees continuity at the
-    position level. Discouraged because it yields trajectories with
-    discontinuous velocities at the waypoints.
+- **Linear**: Only position is specified. Guarantees continuity at the
+  position level. Discouraged because it yields trajectories with
+  discontinuous velocities at the waypoints.
 
-```{=html}
 <!-- -->
-```
--   **Cubic**: Position and velocity are specified. Guarantees
-    continuity at the velocity level.
 
-```{=html}
+- **Cubic**: Position and velocity are specified. Guarantees continuity
+  at the velocity level.
+
 <!-- -->
-```
--   **Quintic**: Position, velocity and acceleration are specified:
-    Guarantees continuity at the acceleration level.
+
+- **Quintic**: Position, velocity and acceleration are specified:
+  Guarantees continuity at the acceleration level.
 
 ### Hardware interface type
 
@@ -48,11 +46,11 @@ commands).
 
 ### Other features
 
--   **Realtime-safe** implementation.
--   Proper handling of **wrapping** (continuous) joints.
--   **Robust to system clock changes:** Discontinuous system clock
-    changes do not cause discontinuities in the execution of already
-    queued trajectory segments.
+- **Realtime-safe** implementation.
+- Proper handling of **wrapping** (continuous) joints.
+- **Robust to system clock changes:** Discontinuous system clock changes
+  do not cause discontinuities in the execution of already queued
+  trajectory segments.
 
 ## Sending trajectories
 

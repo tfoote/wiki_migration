@@ -4,23 +4,21 @@
 
 ## Who Should Use this Package?
 
--   If you are running on the PR2/Texas robot this driver should be
-    running by default when you bring up the robot. You do not need to
-    launch it yourself.
+- If you are running on the PR2/Texas robot this driver should be
+  running by default when you bring up the robot. You do not need to
+  launch it yourself.
 
-```{=html}
 <!-- -->
-```
--   If you want to use 3DM-GX2 compatible IMU with ROS, use the
-    [imu_node](#RosAPI).
 
-```{=html}
+- If you want to use 3DM-GX2 compatible IMU with ROS, use the
+  [imu_node](#RosAPI).
+
 <!-- -->
-```
--   For advanced users who want lower-level access to a 3DB-GX2
-    compatible IMU, the unsupported
-    [C++ API](http://www.ros.org/doc/api/microstrain_3dmgx2_imu/html/classmicrostrain__3dmgx2__imu_1_1IMU.html)
-    may be used.
+
+- For advanced users who want lower-level access to a 3DB-GX2 compatible
+  IMU, the unsupported
+  [C++ API](http://www.ros.org/doc/api/microstrain_3dmgx2_imu/html/classmicrostrain__3dmgx2__imu_1_1IMU.html)
+  may be used.
 
 ## Supported Hardware
 

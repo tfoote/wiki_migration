@@ -11,9 +11,9 @@ your depth image before converting it to a point cloud.
 
 A variety of camera technologies can produce depth images:
 
--   The [Kinect](openni_kinect) and related devices
--   Traditional stereo cameras
--   Time-of-flight cameras
+- The [Kinect](openni_kinect) and related devices
+- Traditional stereo cameras
+- Time-of-flight cameras
 
 See [REP 118](http://www.ros.org/reps/rep-0118.html) for details on
 depth image representation. The REP recommends that, wherever possible,

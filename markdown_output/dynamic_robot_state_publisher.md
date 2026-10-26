@@ -35,9 +35,9 @@ of your codebase.
 
 ## Alternatives
 
--   <https://github.com/ros/robot_state_publisher/pull/31> (Adds a
-    `TriggerService`) which you can call to reload the model from
-    param server.
--   [mutable_robot_state_publisher](https://github.com/RethinkRobotics/mutable_robot_state_publisher.git):
-    A more complex thing that allows you to send URDF fragments to the
-    state publisher.
+- <https://github.com/ros/robot_state_publisher/pull/31> (Adds a
+  `TriggerService`) which you can call to reload the model from param
+  server.
+- [mutable_robot_state_publisher](https://github.com/RethinkRobotics/mutable_robot_state_publisher.git):
+  A more complex thing that allows you to send URDF fragments to the
+  state publisher.

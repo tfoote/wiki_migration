@@ -101,39 +101,37 @@ Enjoy.
 1\. Check Scanner IP in the launch file. 1. Check Ethernet connection to
 scanner with netcat e.g. `nc -z -v -w5 \$SCANNERIPADDRESS 2112`.
 
--   For further details about setting up the correct ip settings see
-    [IP configuration](https://github.com/SICKAG/sick_scan/blob/master/doc/ipconfig/ipconfig.md) 1.
-    View node startup output wether the IP connection could be
-    established 1. Check the scanner status using the LEDs on the
-    device. The LED codes are described in the above mentioned operation
-    manuals. 1. Further testing and troubleshooting informations can
-    found in the file test/readme_testplan.txt 1. If you stop the
-    scanner in your debugging IDE or by other hard interruption (like
-    Ctrl-C), you must wait until 60 sec. before the scanner is up and
-    running again. During this time the MRS6124 reconnects twice. . If
-    you do not wait this waiting time you could see one of the following
-    messages:
--   TCP connection error
--   Error-Message 0x0d 1. Amplitude values in rviz: If you see only one
-    color in rviz try the following:
--   Set the min/max-Range of intensity display in the range \[0\...200\]
-    and switch on the intensity flag in the lauch file 1. In case of
-    network problems check your own ip address and the ip address of
-    your laser scanner (by using SOPAS ET).
--   List of own IP-addresses: ifconfig\|grep "inet addr"
--   Try to ping scanner ip address (used in launch file) 1. If the
-    driver stops during init phase please stop the driver with ctrl-c
-    and restart (could be caused due to protocol ASCII/Binary
-    cola-dialect).
+- For further details about setting up the correct ip settings see
+  [IP configuration](https://github.com/SICKAG/sick_scan/blob/master/doc/ipconfig/ipconfig.md) 1.
+  View node startup output wether the IP connection could be
+  established 1. Check the scanner status using the LEDs on the device.
+  The LED codes are described in the above mentioned operation
+  manuals. 1. Further testing and troubleshooting informations can found
+  in the file test/readme_testplan.txt 1. If you stop the scanner in
+  your debugging IDE or by other hard interruption (like Ctrl-C), you
+  must wait until 60 sec. before the scanner is up and running again.
+  During this time the MRS6124 reconnects twice. . If you do not wait
+  this waiting time you could see one of the following messages:
+- TCP connection error
+- Error-Message 0x0d 1. Amplitude values in rviz: If you see only one
+  color in rviz try the following:
+- Set the min/max-Range of intensity display in the range \[0\...200\]
+  and switch on the intensity flag in the lauch file 1. In case of
+  network problems check your own ip address and the ip address of your
+  laser scanner (by using SOPAS ET).
+- List of own IP-addresses: ifconfig\|grep "inet addr"
+- Try to ping scanner ip address (used in launch file) 1. If the driver
+  stops during init phase please stop the driver with ctrl-c and restart
+  (could be caused due to protocol ASCII/Binary cola-dialect).
 
 ## Support
 
--   In case of technical support please open a new issue. Under
-    <https://github.com/SICKAG/sick_scan/issues>. For optimal support,
-    add the following information to your request: 1. Scanner model
-    name, 1. Ros node startup log, 1. Sopas file of your scanner
-    configuration. The instructions at
-    <http://sickusablog.com/create-and-download-a-sopas-file/> show how
-    to create the Sopas file.
--   In case of application support please use
-    <https://supportportal.sick.com>.
+- In case of technical support please open a new issue. Under
+  <https://github.com/SICKAG/sick_scan/issues>. For optimal support, add
+  the following information to your request: 1. Scanner model name, 1.
+  Ros node startup log, 1. Sopas file of your scanner configuration. The
+  instructions at
+  <http://sickusablog.com/create-and-download-a-sopas-file/> show how to
+  create the Sopas file.
+- In case of application support please use
+  <https://supportportal.sick.com>.

@@ -2,10 +2,10 @@
 
 This package provides two nodes:
 
--   `mrpt_rawlog/rawlog_record_node`: Grabs
-    [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) from ROS topics.
--   `mrpt_rawlog/rawlog_play_node`: Like `rosbag play` but takes
-    [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) as input.
+- `mrpt_rawlog/rawlog_record_node`: Grabs
+  [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) from ROS topics.
+- `mrpt_rawlog/rawlog_play_node`: Like `rosbag play` but takes
+  [MRPT rawlogs](http://www.mrpt.org/Rawlog_Format) as input.
 
 Provided examples:
 
@@ -36,32 +36,29 @@ online.
 Apart from these nodes, the following non-ROS software exists for
 handling rawlogs:
 
--   [RawLogViewer](http://www.mrpt.org/list-of-mrpt-apps/rawlogviewer/):
-    A powerful GUI, useful to quickly visualize the contents of any
-    dataset, modify it, export and import to other formats, etc\... See
-    [this video](http://www.youtube.com/watch?v=RZhMZWRplO0) on how a
-    RGBD (Kinect) dataset is quickly browsed in this GUI.
+- [RawLogViewer](http://www.mrpt.org/list-of-mrpt-apps/rawlogviewer/): A
+  powerful GUI, useful to quickly visualize the contents of any dataset,
+  modify it, export and import to other formats, etc\... See
+  [this video](http://www.youtube.com/watch?v=RZhMZWRplO0) on how a RGBD
+  (Kinect) dataset is quickly browsed in this GUI.
 
-```{=html}
 <!-- -->
-```
--   [rawlog-grabber](http://www.mrpt.org/list-of-mrpt-apps/application-rawlog-grabber/):
-    A command-line standalone program to grab observations from a number
-    of sensors and put all together into a single timestamp-ordered
-    dataset file. Works on GNU/Linux and Windows.
 
-```{=html}
-<!-- -->
-```
--   [rawlog-edit](http://www.mrpt.org/list-of-mrpt-apps/application-rawlog-edit/):
-    A command-line equivalent of RawlogViewer for manipulating,
-    filtering, etc. datasets.
+- [rawlog-grabber](http://www.mrpt.org/list-of-mrpt-apps/application-rawlog-grabber/):
+  A command-line standalone program to grab observations from a number
+  of sensors and put all together into a single timestamp-ordered
+  dataset file. Works on GNU/Linux and Windows.
 
-```{=html}
 <!-- -->
-```
--   [carmen2rawlog](http://www.mrpt.org/list-of-mrpt-apps/applicationcarmen2rawlog/):
-    A command-line tool to import CARMEN logs as Rawlog datasets.
+
+- [rawlog-edit](http://www.mrpt.org/list-of-mrpt-apps/application-rawlog-edit/):
+  A command-line equivalent of RawlogViewer for manipulating, filtering,
+  etc. datasets.
+
+<!-- -->
+
+- [carmen2rawlog](http://www.mrpt.org/list-of-mrpt-apps/applicationcarmen2rawlog/):
+  A command-line tool to import CARMEN logs as Rawlog datasets.
 
 ## Nodes
 

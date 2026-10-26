@@ -6,19 +6,18 @@ requires SLAM-based global navigation.
 
 ## Applications
 
--   **`launch/2dnav_ros_tr.launch`**: Starts global navigation with
-    the trajectory rollout local planner and SLAM.
--   **`launch/2dnav_ros_dwa.launch`**: Starts global navigation with
-    the DWA local planner and SLAM.
--   **`launch/2dnav_linear.launch`**: Starts global navigation with
-    the simple linear navigation [cob_linear_nav](cob_linear_nav) and
-    SLAM.
+- **`launch/2dnav_ros_tr.launch`**: Starts global navigation with the
+  trajectory rollout local planner and SLAM.
+- **`launch/2dnav_ros_dwa.launch`**: Starts global navigation with the
+  DWA local planner and SLAM.
+- **`launch/2dnav_linear.launch`**: Starts global navigation with the
+  simple linear navigation [cob_linear_nav](cob_linear_nav) and SLAM.
 
 Furthermore it holds a launch file for the internal SLAM algorithm of
 Fraunhofer IPA.
 
--   **`launch/2dnav_ipa.launch`**: Starts global navigation with the
-    IPA navigation and SLAM algorithm.
+- **`launch/2dnav_ipa.launch`**: Starts global navigation with the IPA
+  navigation and SLAM algorithm.
 
 ## NOTE
 

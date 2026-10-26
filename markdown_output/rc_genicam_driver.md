@@ -12,7 +12,7 @@ Details on rc_genicam_driver are in the README:
 
 ## Launching
 
--   Using command line parameters:
+- Using command line parameters:
 
 
 

@@ -32,34 +32,34 @@ supported to publish actual frame parameters.
 
 ### Supported device access models
 
--   *Memory Mapping* - for the device with direct monopolistic USB port
-    access model implemented via `libusb`
--   *User Pointer Exchange* - for the devices supporting userspace
-    memory pointer requests
--   *Virtual Block Device* - for the devices supporting block I/O model
-    via virtual userspace filesystem kernel driver
+- *Memory Mapping* - for the device with direct monopolistic USB port
+  access model implemented via `libusb`
+- *User Pointer Exchange* - for the devices supporting userspace memory
+  pointer requests
+- *Virtual Block Device* - for the devices supporting block I/O model
+  via virtual userspace filesystem kernel driver
 
 ### Published message types
 
--   [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
-    for publishing camera calibration matrices
--   [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
-    for uncompressed OpenCV-compatible images
--   [sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
-    for binary packets containing PNG/JPEG-compressed images published
-    under the `compressed` topic suffix. **NOTE**: also on-the-fly
-    encoding of the images into 16-bit depth matrices is supported. The
-    PNG-compressed frames are published under `compressedDepth` topic
-    suffix.
--   [theora_image_transport/msg/Packet](https://docs.ros.org/en/rolling/p/theora_image_transport/msg/Packet.html)
-    for binary packages containing Theora/H.263 YUV420-encoded stacks of
-    images published under `theora` topic suffix
--   [dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)
-    for publishing actual frame parameters under `parameter_updates`
-    topic suffix
--   [dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)
-    for publishing [dynamic_reconfigure](dynamic_reconfigure)
-    description messages under `parameter_descriptions` topic suffix
+- [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+  for publishing camera calibration matrices
+- [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  for uncompressed OpenCV-compatible images
+- [sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
+  for binary packets containing PNG/JPEG-compressed images published
+  under the `compressed` topic suffix. **NOTE**: also on-the-fly
+  encoding of the images into 16-bit depth matrices is supported. The
+  PNG-compressed frames are published under `compressedDepth` topic
+  suffix.
+- [theora_image_transport/msg/Packet](https://docs.ros.org/en/rolling/p/theora_image_transport/msg/Packet.html)
+  for binary packages containing Theora/H.263 YUV420-encoded stacks of
+  images published under `theora` topic suffix
+- [dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)
+  for publishing actual frame parameters under `parameter_updates`
+  topic suffix
+- [dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)
+  for publishing [dynamic_reconfigure](dynamic_reconfigure) description
+  messages under `parameter_descriptions` topic suffix
 
 ### Topic names abbreviation policy
 
@@ -256,33 +256,33 @@ param {
 
 ### I/O modes reference ===The node supports the following I/O mode names for the given device:
 
--   `read` - for devices supporting virtual filesystem or block I/O
--   `mmap` - for devices supporting direct `libusb` memory mapping
--   `userptr` - for DMA devices supporting userspace pointer exchange
+- `read` - for devices supporting virtual filesystem or block I/O
+- `mmap` - for devices supporting direct `libusb` memory mapping
+- `userptr` - for DMA devices supporting userspace pointer exchange
 
 ### Pixel formats/encodings reference ===Selection of the pixel format name automatically selects the decoder library and pixel representation for FFMPEG/`libavcodec` processing. The node supports the following pixel format names and decoders (all names are case-sensitive):
 
--   `yuyv` - YUV420
--   `yuv` - synonym for `yuyv`
--   `uyvy` - UVY240, MESECAM
--   `yuvmono10` - Monochrome 10-bit pseudo-YUV
--   `rgb24` - Linear 8-bit RGB matrix
--   `bgr24` - OpenCV-compatible 8-bit BGR
--   `grey` - Grayscale 8-bit linear monochrome matrix
--   `yu12` - YU-reversed YUV420
--   `mjpeg` - FFMPEG-decoded MotionJPEG. Requires compatible hardware
--   `h264` - FFMPEG-decoded H.264. Requires compatible hardware. May
-    also require setting `color_format` parameter to `yuv420p`
+- `yuyv` - YUV420
+- `yuv` - synonym for `yuyv`
+- `uyvy` - UVY240, MESECAM
+- `yuvmono10` - Monochrome 10-bit pseudo-YUV
+- `rgb24` - Linear 8-bit RGB matrix
+- `bgr24` - OpenCV-compatible 8-bit BGR
+- `grey` - Grayscale 8-bit linear monochrome matrix
+- `yu12` - YU-reversed YUV420
+- `mjpeg` - FFMPEG-decoded MotionJPEG. Requires compatible hardware
+- `h264` - FFMPEG-decoded H.264. Requires compatible hardware. May
+  also require setting `color_format` parameter to `yuv420p`
 
 **NOTE**: In its current state, the node does not support
 hardware-accelerated decoding!
 
 ### Color representation formats reference ===The node supports the following color representation mode names (case-sensitive):
 
--   `yuv422p` - YUV422 - default, compatible with most MJPEG hardware
-    encoders
--   `yuv420p` - YUV420 - may be required by H.264 and H.265 hardware
-    encoders
+- `yuv422p` - YUV422 - default, compatible with most MJPEG hardware
+  encoders
+- `yuv420p` - YUV420 - may be required by H.264 and H.265 hardware
+  encoders
 
 ### Intrinsic control configuration ===The node queries V4L kernel driver for available intrinsic control names and data types they require, in the same way, that one can query from terminal with the following command:
 
@@ -295,24 +295,24 @@ v4l2-ctl --device=/dev/video<ID> -L
  The node supports the following types of
 intrinsic controls provided by `libv4l2`:
 
--   Booleans (`true/false`)
--   Integers (32-bit)
--   Integers (64-bit)
--   Menus (integer-indexed sets of operating modes)
--   Integer/Menu multiparams (menus with manual adjustment possibility)
-    The data type for the given parameter is determined automatically.
+- Booleans (`true/false`)
+- Integers (32-bit)
+- Integers (64-bit)
+- Menus (integer-indexed sets of operating modes)
+- Integer/Menu multiparams (menus with manual adjustment possibility)
+  The data type for the given parameter is determined automatically.
 
 The queried names become ROS parameters and are placed under
 `intrinsic_controls` multilist of the configuration file. Its main
 namespace contains:
 
--   Unique names of the generated ROS parameters. **NOTE**: if the
-    parameter name reported from V4L kernel driver **exists but not
-    mentioned here**, it will be processed and set up with *default
-    value*, also provided by the driver.
--   `ignore` - the string list containing control names that should be
-    **ignored**. If the existing intrinsic control is mentioned here,
-    its value will be **left intact**.
+- Unique names of the generated ROS parameters. **NOTE**: if the
+  parameter name reported from V4L kernel driver **exists but not
+  mentioned here**, it will be processed and set up with *default
+  value*, also provided by the driver.
+- `ignore` - the string list containing control names that should be
+  **ignored**. If the existing intrinsic control is mentioned here, its
+  value will be **left intact**.
 
 #### Example configuration
 
@@ -377,11 +377,11 @@ intrinsic_controls:
 controls that are mentioned in the **root namespace** of the
 `intrinsic_controls` multilist, so they will be processed and set up:
 
--   `focus_auto` (boolean)
--   `exposure_auto_priority` (boolean)
--   `exposure_auto` (menu)
--   `white_balance_temperature_auto` (boolean)
--   `power_line_frequency` (menu)
+- `focus_auto` (boolean)
+- `exposure_auto_priority` (boolean)
+- `exposure_auto` (menu)
+- `white_balance_temperature_auto` (boolean)
+- `power_line_frequency` (menu)
 
 All the other intrinsic control names reported by `v4l2-ctl` are
 enumerated in the `ignore` string list, so their values will be left

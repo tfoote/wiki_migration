@@ -16,7 +16,7 @@ header file:
 
 ### WGS 84
 
--   [<geodesy/wgs84.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/wgs84_8h.html)
+- [<geodesy/wgs84.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/wgs84_8h.html)
 
 This is the base type for communicating geodetic information between ROS
 nodes, using
@@ -27,7 +27,7 @@ messages.
 
 ### UTM
 
--   [<geodesy/utm.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/utm_8h.html)
+- [<geodesy/utm.h>](http://docs.ros.org/hydro/api/geodesy/html/c++/utm_8h.html)
 
 This is a slight generalization of the Universal Transverse Mercator
 projection. It includes grid information from the Military Grid
@@ -47,21 +47,19 @@ namespace.
 
 ## Links
 
--   Geodesy
--   <http://en.wikipedia.org/wiki/Geographic_Information_System>
--   <http://en.wikipedia.org/wiki/Geodesy>
--   <http://en.wikipedia.org/wiki/World_Geodetic_System>
+- Geodesy
+- <http://en.wikipedia.org/wiki/Geographic_Information_System>
+- <http://en.wikipedia.org/wiki/Geodesy>
+- <http://en.wikipedia.org/wiki/World_Geodetic_System>
 
-```{=html}
 <!-- -->
-```
--   UTM
--   <http://en.wikipedia.org/wiki/Universal_Transverse_Mercator>
--   <http://en.wikipedia.org/wiki/Military_grid_reference_system>
--   [UTM tutorial](http://www.uwgb.edu/dutchs/fieldmethods/utmsystem.htm)
 
-```{=html}
+- UTM
+- <http://en.wikipedia.org/wiki/Universal_Transverse_Mercator>
+- <http://en.wikipedia.org/wiki/Military_grid_reference_system>
+- [UTM tutorial](http://www.uwgb.edu/dutchs/fieldmethods/utmsystem.htm)
+
 <!-- -->
-```
--   External software
--   [PROJ.4 Cartographic Projections Library](http://trac.osgeo.org/proj/wiki)
+
+- External software
+- [PROJ.4 Cartographic Projections Library](http://trac.osgeo.org/proj/wiki)

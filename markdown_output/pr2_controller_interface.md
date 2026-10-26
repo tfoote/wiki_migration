@@ -4,9 +4,9 @@ To implement a real time controller, your controller needs to inherit
 from the `pr2_controller_interface::Controller` base class. The base
 class contains
 
--   four methods you need to implement: init, starting, update and
-    stopping, and
--   one method you can call: getController.
+- four methods you need to implement: init, starting, update and
+  stopping, and
+- one method you can call: getController.
 
 The base class looks like this:
 
@@ -46,14 +46,14 @@ that initializing a controller is independent of starting it: the
 initialization can be done any amount of time before starting the
 controller. The `init` method takes two arguments:
 
--   **robot**: this is a `pr2_mechanism_model::RobotState` that
-    describes the robot model (see
-    [pr2_mechanism_model](pr2_mechanism_model)). The model provides
-    access to the robot joints (actuators, encoders, etc.), and contains
-    a kinematic/dynamic description of the robot mechanism.
--   **n**: this `ros::NodeHandle` is the "namespace" of the
-    controller. In the namespace of this node handle, the controller can
-    read configuration from the parameter server, advertise topics, etc.
+- **robot**: this is a `pr2_mechanism_model::RobotState` that
+  describes the robot model (see
+  [pr2_mechanism_model](pr2_mechanism_model)). The model provides access
+  to the robot joints (actuators, encoders, etc.), and contains a
+  kinematic/dynamic description of the robot mechanism.
+- **n**: this `ros::NodeHandle` is the "namespace" of the
+  controller. In the namespace of this node handle, the controller can
+  read configuration from the parameter server, advertise topics, etc.
 
 The `init` method returns if the initialization was successful or not.
 If the initialization fails, the controller will get unloaded by
@@ -106,12 +106,12 @@ communication.
 
 The `getController` method takes three arguments:
 
--   **name**: a string with the name of the controller you would like to
-    get a pointer to.
--   **sched**: An int (ENUM) this specifies if the requested controller
-    should be executed before or after your controller. Possible values
-    are `pr2_controller_interface:BEFORE_ME` and
-    `pr2_controller_interface::AFTER_ME`.
--   **c** This is a pointer to the controller you requested, with the
-    type matching the type of the requested controller. The type is also
-    the template argument for the `getController` method.
+- **name**: a string with the name of the controller you would like to
+  get a pointer to.
+- **sched**: An int (ENUM) this specifies if the requested controller
+  should be executed before or after your controller. Possible values
+  are `pr2_controller_interface:BEFORE_ME` and
+  `pr2_controller_interface::AFTER_ME`.
+- **c** This is a pointer to the controller you requested, with the type
+  matching the type of the requested controller. The type is also the
+  template argument for the `getController` method.

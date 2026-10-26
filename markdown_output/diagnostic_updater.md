@@ -4,10 +4,10 @@ diagnostic_updater provides a variety of C++ utilities to assist in
 integrating diagnostics with your software. Common updater tasks
 include:
 
--   publishing the status of a sensor data topic on a device driver
--   reporting that a hardware device is closed
--   reporting an error when a value is out of bounds, e.g. temperature
-    It also provides a Python API very similar to the C++ API
+- publishing the status of a sensor data topic on a device driver
+- reporting that a hardware device is closed
+- reporting an error when a value is out of bounds, e.g. temperature It
+  also provides a Python API very similar to the C++ API
 
 ### Examples and Tutorials
 

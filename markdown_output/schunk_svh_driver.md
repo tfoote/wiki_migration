@@ -60,9 +60,9 @@ udev service.
 You will need to checkout the following packages into your workspace's
 src directory:
 
--   <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_core>
--   <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_comm>
--   <https://github.com/fzi-forschungszentrum-informatik/schunk_svh_driver>
+- <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_core>
+- <https://github.com/fzi-forschungszentrum-informatik/fzi_icl_comm>
+- <https://github.com/fzi-forschungszentrum-informatik/schunk_svh_driver>
 
 then just call 
 
@@ -547,10 +547,10 @@ again using the connect button of the plugin or the connect topic. The
 problem most likely stems from a bad connection (to long cables, bad
 connectors) or in rare cases from to little processing power on the
 executing hardware (which is not able to keep up with the data rate of
-the connection) *During reset of the fingers it states ** Driving
-channel 5 to hard stop. Detection thresholds: Current MIN: -500.000000mA
-MAX: 500.000000mA** or similar and nothing is happening* During reset
-the fingers need to reach a certain percentage of the maximum allowed
+the connection) *During reset of the fingers it states **Driving channel
+5 to hard stop. Detection thresholds: Current MIN: -500.000000mA MAX:
+500.000000mA** or similar and nothing is happening* During reset the
+fingers need to reach a certain percentage of the maximum allowed
 current to detect a hard stop. The amount is configured in the homing
 settings by the "reset current factor" which you can find in the
 \*.yaml files in the *etc* folder. If for example the finger is supposed
@@ -650,9 +650,9 @@ description ![](attachment:svh_kinematic_dependencies.jpg)
 
 ### Additional Documents
 
--   low level protocol information used to communicate with the SVH
-    <attachment:svh_protocol_specification.pdf>
--   Hardware specifications (i.e. max motor
-    currents)<attachment:svh_hardware_information.pdf>
--   Controller specifications (low level information)
-    <attachment:svh_controller_description.pdf>
+- low level protocol information used to communicate with the SVH
+  <attachment:svh_protocol_specification.pdf>
+- Hardware specifications (i.e. max motor
+  currents)<attachment:svh_hardware_information.pdf>
+- Controller specifications (low level information)
+  <attachment:svh_controller_description.pdf>

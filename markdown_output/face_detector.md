@@ -136,8 +136,8 @@ for example):
 `\*_topic` makes the body of the topic to subscribe. In the example
 above, you're looking for:
 
--   /camera/rgb/image_rect_color
--   /camera/depth_ns/image_rect_raw
+- /camera/rgb/image_rect_color
+- /camera/depth_ns/image_rect_raw
 
 See
 [this answer](http://answers.ros.org/question/210751/face_detector-not-detecting-with-rgbd-camera/?answer=210752#post-id-210752)

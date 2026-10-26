@@ -25,9 +25,9 @@ rosrun collada_urdf urdf_to_collada pr2.urdf pr2.dae
 
 ### Limitations
 
--   Only binary STL mesh geometries are supported
--   Mesh scale is not exported
--   Materials are not exported
+- Only binary STL mesh geometries are supported
+- Mesh scale is not exported
+- Materials are not exported
 
 ## collada to urdf command-line tool
 

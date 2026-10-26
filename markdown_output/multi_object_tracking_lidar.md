@@ -10,13 +10,13 @@ C++.
 
 ## Features:
 
--   K-D tree based point cloud processing for object feature detection
-    from point clouds
--   Unsupervised k-means clustering based on detected features and
-    refinement using RANSAC
--   Stable tracking (object ID & data association) with an ensemble of
-    Kalman Filters
--   Robust compared to k-means clustering with mean-flow tracking
+- K-D tree based point cloud processing for object feature detection
+  from point clouds
+- Unsupervised k-means clustering based on detected features and
+  refinement using RANSAC
+- Stable tracking (object ID & data association) with an ensemble of
+  Kalman Filters
+- Robust compared to k-means clustering with mean-flow tracking
 
 ## Usage:
 

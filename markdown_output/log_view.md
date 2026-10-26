@@ -26,10 +26,10 @@ uses ncurses instead of Qt for the interface.
 
 Log messages can be filtered based on:
 
--   log level
--   node
--   whitelist text filter
--   exclude text filter
+- log level
+- node
+- whitelist text filter
+- exclude text filter
 
 log_viewer also supports text searches and jumping from match to match.
 

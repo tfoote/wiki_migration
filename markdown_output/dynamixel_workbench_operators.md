@@ -2,7 +2,7 @@
 
 ## ROBOTIS e-Manual
 
--   [ROBOTIS e-Manual for Dynamixel-Workbench](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/)
+- [ROBOTIS e-Manual for Dynamixel-Workbench](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/)
 
 ## ROS API
 
@@ -42,6 +42,5 @@ srv{
 
 ## Tutorials
 
--   [dynamixel workbench operator tutorials](dynamixel_workbench_controllers/Tutorials) -
-    This tutorial describes how to run controllers with tutorial
-    packages.
+- [dynamixel workbench operator tutorials](dynamixel_workbench_controllers/Tutorials) -
+  This tutorial describes how to run controllers with tutorial packages.

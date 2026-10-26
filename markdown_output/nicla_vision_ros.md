@@ -14,19 +14,19 @@ stream it in the corresponding ROS topics
 
 Here a list of the available sensors with their respective ROS topics:
 
--   **2MP color camera** streams on
--   `/nicla/camera/camera_info`
--   `/nicla/camera/image_raw`
--   `/nicla/camera/image_raw/compressed`
--   **Time-of-Flight (distance) sensor** streams on:
--   `/nicla/tof`
--   **Microphone** streams on:
--   `/nicla/audio`
--   `/nicla/audio_info`
--   `/nicla/audio_stamped`
--   `/nicla/audio_recognized`
--   **Imu** streams on:
--   `/nicla/imu`
+- **2MP color camera** streams on
+- `/nicla/camera/camera_info`
+- `/nicla/camera/image_raw`
+- `/nicla/camera/image_raw/compressed`
+- **Time-of-Flight (distance) sensor** streams on:
+- `/nicla/tof`
+- **Microphone** streams on:
+- `/nicla/audio`
+- `/nicla/audio_info`
+- `/nicla/audio_stamped`
+- `/nicla/audio_recognized`
+- **Imu** streams on:
+- `/nicla/imu`
 
 The user can easily configure this package, by launch parameters, to
 receive sensors data via either UDP or TCP socket connections,
@@ -37,9 +37,9 @@ by the board, and subsequently publishing it through ROS topics.
 
 ## Package List
 
--   [Nicla Vision Drivers repository](https://github.com/ADVRHumanoids/nicla_vision_drivers.git)
--   [Nicla Vision ROS repository](https://github.com/ADVRHumanoids/nicla_vision_ros.git)
--   [Nicla Vision ROS2 repository](https://github.com/ADVRHumanoids/nicla_vision_ros2.git)
+- [Nicla Vision Drivers repository](https://github.com/ADVRHumanoids/nicla_vision_drivers.git)
+- [Nicla Vision ROS repository](https://github.com/ADVRHumanoids/nicla_vision_ros.git)
+- [Nicla Vision ROS2 repository](https://github.com/ADVRHumanoids/nicla_vision_ros2.git)
 
 ## License
 

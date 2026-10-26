@@ -4,8 +4,8 @@
 
 This driver is regularly tested with the following devices:
 
--   [Bumblebee2](http://ww2.ptgrey.com/stereo-vision/bumblebee-2)
--   [Chameleon](http://ww2.ptgrey.com/USB2/chameleon)
+- [Bumblebee2](http://ww2.ptgrey.com/stereo-vision/bumblebee-2)
+- [Chameleon](http://ww2.ptgrey.com/USB2/chameleon)
 
 It has also been successfully used with Blackfly, Flea3, and others.
 

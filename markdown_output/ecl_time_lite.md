@@ -95,4 +95,4 @@ mostly for internal purposes, but may be useful to the user.
 
 ## Examples
 
--   `src/examples/time_functions`
+- `src/examples/time_functions`

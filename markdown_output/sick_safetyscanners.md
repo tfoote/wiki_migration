@@ -15,12 +15,11 @@ be installed from binaries or from source.
 
 ## Prerequisites
 
--   Linux
--   Working ROS-Distro
--   Correctly setup SICK Safety Scanner
--   Connected SICK Safety Scanner and a correctly setup ethernet
-    network. Both the host and the sensor have to be in the same
-    network.
+- Linux
+- Working ROS-Distro
+- Correctly setup SICK Safety Scanner
+- Connected SICK Safety Scanner and a correctly setup ethernet network.
+  Both the host and the sensor have to be in the same network.
 
 ## Installation
 
@@ -86,11 +85,11 @@ rosrun rviz rviz
 
 ## Troubleshooting
 
--   Check if the sensor has power and is connected to the host.
--   Check if both sensor and host are in the same subnet e.g.
-    192.168.1.XXX
--   Check if the launch file is called with the correct parameters for
-    IP-addresses and ports.
+- Check if the sensor has power and is connected to the host.
+- Check if both sensor and host are in the same subnet e.g.
+  192.168.1.XXX
+- Check if the launch file is called with the correct parameters for
+  IP-addresses and ports.
 
 ## Support
 

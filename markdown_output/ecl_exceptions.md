@@ -31,11 +31,11 @@ which need to be fast. The stack winding *will* slow your program down.
 
 ### Provides
 
--   Standard exceptions
--   Data throwing exceptions
--   Debug only exceptions
--   Assert style exceptions
--   Exception rethrowing
+- Standard exceptions
+- Data throwing exceptions
+- Debug only exceptions
+- Assert style exceptions
+- Exception rethrowing
 
 ## Compiling & Linking
 
@@ -62,21 +62,20 @@ If outside ros, you will also need to link to *ecl_exceptions*.
 
 ## Tutorials
 
--   [Ecl Exception Handling](ecl_exceptions/Tutorials/Ecl Exception Handling)
+- [Ecl Exception Handling](ecl_exceptions/Tutorials/Ecl Exception Handling)
 
 ## Examples
 
--   `src/examples/exceptions.cpp` : coverage style test for
-    exceptions.
--   `src/examples/exception_tracer.cpp` : getting a backtrace via
-    exceptions, posix style.
+- `src/examples/exceptions.cpp` : coverage style test for exceptions.
+- `src/examples/exception_tracer.cpp` : getting a backtrace via
+  exceptions, posix style.
 
 ## Benchmarks
 
 These are in [ecl_core_apps](ecl_core_apps).
 
--   `/src/benchmarks/exceptions.cpp` : benchmarks the latencies for
-    exception handling.
+- `/src/benchmarks/exceptions.cpp` : benchmarks the latencies for
+  exception handling.
 
 ## Errata
 

@@ -58,7 +58,7 @@ Profiled Torque, HM: Homing, IP: Interpolated Position, CSP: Cyclic
 Synchronous Position, CSV: Cyclic Synchronous Velocity, CST: Cyclic
 Synchronous Torque*
 
-* (./) : works, (X) : does not work, - : unsupported, ? : unknown/not
+*(./) : works, (X) : does not work, - : unsupported, ? : unknown/not
 tested*
 
 ### SCHUNK

@@ -6,21 +6,21 @@ rosmon is a drop-in replacement for the venerable [roslaunch](roslaunch)
 tool. It offers some interesting features both for monitoring and
 debugging:
 
--   rosmon has a clean, modern console UI. With one glance at the status
-    bar, you can see that all of your nodes are still running as they
-    should. Console output from the nodes is intercepted and augmented
-    with the node name - allowing you to immediately see *which* node is
-    printing that message. This also works for plain output without
-    rosconsole macros.
--   rosmon has a ROS interface itself. Query node status or start/stop
-    nodes using service calls. This allows you to use ROS network
-    transparency for remote monitoring.
--   rosmon is developer friendly. With two keystrokes, you can attach
-    gdb to a running node. If a node crashes without gdb attached, you
-    can run gdb against an automatically collected coredump, providing
-    post-mortem analysis.
--   rosmon is *fast*. Thanks to lazy evaluation of parameters, costly
-    calls to [xacro](xacro) and friends are reduced as much as possible.
+- rosmon has a clean, modern console UI. With one glance at the status
+  bar, you can see that all of your nodes are still running as they
+  should. Console output from the nodes is intercepted and augmented
+  with the node name - allowing you to immediately see *which* node is
+  printing that message. This also works for plain output without
+  rosconsole macros.
+- rosmon has a ROS interface itself. Query node status or start/stop
+  nodes using service calls. This allows you to use ROS network
+  transparency for remote monitoring.
+- rosmon is developer friendly. With two keystrokes, you can attach gdb
+  to a running node. If a node crashes without gdb attached, you can run
+  gdb against an automatically collected coredump, providing post-mortem
+  analysis.
+- rosmon is *fast*. Thanks to lazy evaluation of parameters, costly
+  calls to [xacro](xacro) and friends are reduced as much as possible.
 
 ## Differences to roslaunch
 
@@ -28,12 +28,12 @@ The [roslaunch/XML](roslaunch/XML) specification is complex and a bit
 vague, so you can expect some differences. Bug reports are welcome!
 Known differences include:
 
--   rosmon will not launch [roscore](roscore) automatically. We believe
-    that it is important to make a conscious decision how and where to
-    run the roscore. Often, restarting roslaunch unknowingly restarts
-    the contained roscore, leading to hard-to-debug problems with other
-    connected nodes.
--   The `<machine>` tag is not supported.
+- rosmon will not launch [roscore](roscore) automatically. We believe
+  that it is important to make a conscious decision how and where to run
+  the roscore. Often, restarting roslaunch unknowingly restarts the
+  contained roscore, leading to hard-to-debug problems with other
+  connected nodes.
+- The `<machine>` tag is not supported.
 
 For additional information and rosmon extensions not supported by
 roslaunch see [rosmon/XML](rosmon/XML).
@@ -123,9 +123,9 @@ rosmon features a basic console interface. Each node is assigned a
 dedicated key, which can be used to open the action menu for that node.
 Available actions are:
 
--   Starting/stopping the node (keys 's' and 'k')
--   Starting a debugger, either attached to the running process or
-    post-mortem against a collected coredump (key 'd')
+- Starting/stopping the node (keys 's' and 'k')
+- Starting a debugger, either attached to the running process or
+  post-mortem against a collected coredump (key 'd')
 
 ## GUI interface
 

@@ -52,12 +52,12 @@ It is ok if there are many topics. ![](attachment:mix.png)
 
 ## Preconditions
 
--   The topic you want to publish should be already subscribed by other
-    nodes. 1. launch other nodes 1. start rqt_ez_publisher 1. select
-    topics from combobox
--   header/stamp is updated by rospy.Time.now()
--   geometry_msgs/Quaternion is converted to RPY angles
--   string is updated when input Enter key
+- The topic you want to publish should be already subscribed by other
+  nodes. 1. launch other nodes 1. start rqt_ez_publisher 1. select
+  topics from combobox
+- header/stamp is updated by rospy.Time.now()
+- geometry_msgs/Quaternion is converted to RPY angles
+- string is updated when input Enter key
 
 ## Feedbacks
 
@@ -92,6 +92,5 @@ A. Click "config (gear) icon" -> set repeat interval \[ms\]
 
 ### Q. Can I save/load the settings
 
--   save: Click "config (gear) icon" -> click "save to file" button
--   load: rosrun rqt_ez_publisher rqt_ez_publisher \--slider-file
-    /a.yaml
+- save: Click "config (gear) icon" -> click "save to file" button
+- load: rosrun rqt_ez_publisher rqt_ez_publisher \--slider-file /a.yaml

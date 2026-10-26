@@ -3,15 +3,15 @@
 This package contains dynamic plugins for [ Gazebo](gazebo) and
 [ROS](ROS) integration with simulated hardware.
 
--   Plugin-Supported Hardware:
--   [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](pr2_controller_manager):
-    provided by `GazeboRosControllerManager`.
--   [ Prosilica Camera](prosilica_camera): provided by
-    `GazeboRosProsilica`.
--   [Battery Power Monitor](power_monitor): provided by
-    `GazeboRosPowerMonitor`.
--   Unsupported Features:
--   [ Power Board Driver](pr2_power_drivers)
+- Plugin-Supported Hardware:
+- [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](pr2_controller_manager):
+  provided by `GazeboRosControllerManager`.
+- [ Prosilica Camera](prosilica_camera): provided by
+  `GazeboRosProsilica`.
+- [Battery Power Monitor](power_monitor): provided by
+  `GazeboRosPowerMonitor`.
+- Unsupported Features:
+- [ Power Board Driver](pr2_power_drivers)
 
 Please see [gazebo_plugins](gazebo_plugins) for additional supported
 hardware components in simulation.

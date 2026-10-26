@@ -12,8 +12,8 @@ in the [ pr2_kinematics tutorials](pr2_kinematics/Tutorials).
 
 ### API Stability
 
--   ROS API is REVIEWED but UNSTABLE
--   C++ API is UNREVIEWED and UNSTABLE
+- ROS API is REVIEWED but UNSTABLE
+- C++ API is UNREVIEWED and UNSTABLE
 
 ### Services Offered
 

@@ -6,11 +6,11 @@
 `rqt_bag` is an application for recording and managing bag files.
 Primary features:
 
--   show bag message contents
--   display image messages (optionally as thumbnails on a timeline)
--   plot configurable time-series of message values
--   publish/record messages on selected topics to/from ROS
--   export messages in a time range to a new bag
+- show bag message contents
+- display image messages (optionally as thumbnails on a timeline)
+- plot configurable time-series of message values
+- publish/record messages on selected topics to/from ROS
+- export messages in a time range to a new bag
 
 `rqt_bag` can be extended via a plugin mechanism. Core plugins are
 contained in the [rqt_bag_plugins](rqt_bag_plugins) package available in
@@ -89,18 +89,18 @@ playhead and zooming the display:
 
 From left to right, the buttons on the toolbars allow you to:
 
--   record mode
--   load file
--   save currently selected region to a bag file
--   move playhead to start of timeline
--   rewind or slow playback
--   play/pause
--   fastforward or slow rewind
--   move playhead to end of timeline
--   zoom in
--   zoom out
--   reset zoom level to full bag
--   toggle thumbnail display
+- record mode
+- load file
+- save currently selected region to a bag file
+- move playhead to start of timeline
+- rewind or slow playback
+- play/pause
+- fastforward or slow rewind
+- move playhead to end of timeline
+- zoom in
+- zoom out
+- reset zoom level to full bag
+- toggle thumbnail display
 
 ### Status Bar
 
@@ -108,11 +108,11 @@ At the bottom of the window is a status bar:
 
 From left to right, these indicators display:
 
--   progress for background tasks
--   timestamp of playhead
--   time in human readable form
--   elapsed time in seconds from start of timeline
--   current playback speed
+- progress for background tasks
+- timestamp of playhead
+- time in human readable form
+- elapsed time in seconds from start of timeline
+- current playback speed
 
 ### Message Views
 

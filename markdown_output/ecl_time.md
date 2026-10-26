@@ -34,14 +34,14 @@ If outside ros, you will also need to link to *ecl_time*.
 
 ## Tutorials
 
--   [Timestamps and Durations](ecl_time/Tutorials/Timestamps and Durations)
-    : timestamping and performing arithmetic on timestamps/durations.
--   [Sleep](ecl_time/Tutorials/Sleep) : classes that put the thread to
-    sleep for fixed or periodic intervals.
--   [Stopwatch](ecl_time/Tutorials/Stopwatch) : devices to record the
-    passing of time.
--   [Benchmarking](ecl_time/Tutorials/Benchmarking) : tools to assist
-    benchmarking programs.
+- [Timestamps and Durations](ecl_time/Tutorials/Timestamps and Durations)
+  : timestamping and performing arithmetic on timestamps/durations.
+- [Sleep](ecl_time/Tutorials/Sleep) : classes that put the thread to
+  sleep for fixed or periodic intervals.
+- [Stopwatch](ecl_time/Tutorials/Stopwatch) : devices to record the
+  passing of time.
+- [Benchmarking](ecl_time/Tutorials/Benchmarking) : tools to assist
+  benchmarking programs.
 
 ## Cross Platform Support
 

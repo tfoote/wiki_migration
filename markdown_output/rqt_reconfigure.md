@@ -31,12 +31,12 @@ rosrun rqt_gui rqt_gui
 
 ### Limitation
 
--   [Incompatible with nodes running on ROS that's older than `Groovy`](https://github.com/ros-visualization/rqt_common_plugins/issues/40)
-    (won't fix)
--   Parameters are only picked up when this tool boots. Workaroud:
-    Refresh plugin (by blue "whirling arrow"(?)) button on each
-    plugin's toolbar
-    ([ticket](https://github.com/ros-visualization/rqt_common_plugins/issues/154))
+- [Incompatible with nodes running on ROS that's older than `Groovy`](https://github.com/ros-visualization/rqt_common_plugins/issues/40)
+  (won't fix)
+- Parameters are only picked up when this tool boots. Workaroud: Refresh
+  plugin (by blue "whirling arrow"(?)) button on each plugin's
+  toolbar
+  ([ticket](https://github.com/ros-visualization/rqt_common_plugins/issues/154))
 
 ## Troubleshoot
 

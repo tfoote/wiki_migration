@@ -6,11 +6,10 @@ implementation.
 
 The interface is divided into three parts:
 
--   *!StateInterface*: Listener interface for the state of the driver
--   *!CommInterface*: Listener interface for receiving messages and send
-    functionality
--   *!DriverInterface*: inherits from both and adds management
-    interfaces
+- *!StateInterface*: Listener interface for the state of the driver
+- *!CommInterface*: Listener interface for receiving messages and send
+  functionality
+- *!DriverInterface*: inherits from both and adds management interfaces
 
 The listeners are based on
 \--([FastDelegate](https://github.com/dreamcat4/FastDelegate))\--
@@ -142,6 +141,6 @@ sudo apt-get install can-utils
 
 
 
--   candump
--   cansend
--   canbusload
+- candump
+- cansend
+- canbusload

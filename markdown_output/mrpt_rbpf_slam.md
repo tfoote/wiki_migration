@@ -9,21 +9,21 @@ This package supports the following Particle Filter SLAM algorithms
 (more details at
 <http://www.mrpt.org/tutorials/slam-algorithms/rbpf-slam_algorithms/>):
 
--   Sequential Importance Resampling -- SIR with the "standard" proposal
-    distribution (enum value: pfStandardProposal)
--   Auxiliary Particle Filter -- APF with the "standard" proposal
-    distribution (enum value: pfAuxiliaryPFStandard)
--   Optimal proposal distribution (enum value: pfOptimalProposal)
--   Approximate Optimal Sampling -- A rejection sampling-based
-    approximation to the optimal proposal when a closed-form expression
-    is not available (enum value: pfAuxiliaryPFOptimal)
+- Sequential Importance Resampling -- SIR with the "standard" proposal
+  distribution (enum value: pfStandardProposal)
+- Auxiliary Particle Filter -- APF with the "standard" proposal
+  distribution (enum value: pfAuxiliaryPFStandard)
+- Optimal proposal distribution (enum value: pfOptimalProposal)
+- Approximate Optimal Sampling -- A rejection sampling-based
+  approximation to the optimal proposal when a closed-form expression is
+  not available (enum value: pfAuxiliaryPFOptimal)
 
 These algorithms allow building **grid map or range-only map**.
 
 ## Further documentation
 
-The ROS node `mrpt_rbpf_slam` is a wrapper for the C++ class**
-**[mrpt::slam::CMetricMapBuilderRBPF](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_metric_map_builder_r_b_p_f.html),
+The ROS node `mrpt_rbpf_slam` is a wrapper for the C++ class
+****[mrpt::slam::CMetricMapBuilderRBPF](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_metric_map_builder_r_b_p_f.html),
 part of MRPT. Check out the documentation of this class for further
 details.
 

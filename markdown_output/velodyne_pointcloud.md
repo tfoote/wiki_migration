@@ -339,15 +339,14 @@ $ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
 
 C++ interfaces exported by this package:
 
--   #include
-    [<velodyne_pointcloud/point_types.h>](http://ros.org/doc/api/velodyne_pointcloud/html/point__types_8h.html)
-    defines a custom `velodyne_pointcloud::PointXYZIR` point, similar
-    to `pcl::PointXYZI` (XYZ with intensity) plus an added field
-    containing the laser ring number.
+- #include
+  [<velodyne_pointcloud/point_types.h>](http://ros.org/doc/api/velodyne_pointcloud/html/point__types_8h.html)
+  defines a custom `velodyne_pointcloud::PointXYZIR` point, similar to
+  `pcl::PointXYZI` (XYZ with intensity) plus an added field containing
+  the laser ring number.
 
-```{=html}
 <!-- -->
-```
--   #include
-    [<velodyne_pointcloud/rawdata.h>](http://ros.org/doc/api/velodyne_pointcloud/html/rawdata_8h.html)
-    provides interfaces for interpreting raw packets from the device.
+
+- #include
+  [<velodyne_pointcloud/rawdata.h>](http://ros.org/doc/api/velodyne_pointcloud/html/rawdata_8h.html)
+  provides interfaces for interpreting raw packets from the device.

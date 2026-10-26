@@ -10,7 +10,7 @@ Please see usage and docs here:
 
 ## Used by
 
--   [Robots/Care-O-bot](Robots/Care-O-bot)
--   [Robots/Grizzly](Robots/Grizzly)
--   [Robots/Husky](Robots/Husky)
--   [Robots/Jackal](Robots/Jackal)
+- [Robots/Care-O-bot](Robots/Care-O-bot)
+- [Robots/Grizzly](Robots/Grizzly)
+- [Robots/Husky](Robots/Husky)
+- [Robots/Jackal](Robots/Jackal)

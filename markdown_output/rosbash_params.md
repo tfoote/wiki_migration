@@ -15,27 +15,27 @@ script from a launch file like
 
 ## Advantages
 
--   Adds named parameters for Bash scripts.
--   `_param:=value`
--   Position of the parameters doesn't matter (though you can still
-    easily pass positional arguments).
--   `_param:=value positional_arg1 positional_arg2 _andrew:=martin`
--   `positional_arg1` and `positional_arg2` are accessible to the
-    script as positional args as if there were no `:=` param mappings.
--   Super-easy parameter parsing.
--   `rosbash_param var &quot;param&quot; &quot;default&quot;`.
--   Unified representation of bool values:
--   `true`, `True`, `yes`, `on` and `1` all translated to a
-    single value `True`
--   `false`, `false`, `no`, `off` and `0` are all translated
-    to a single value `False`
--   Notice: talking about exit-codes, `0` usually means success, and
-    non-`0` means failure. The unified bool representation works with
-    the opposite meanings. So pay attention when setting bool parameters
-    from exit-codes.
--   Can also be used standalone outside ROS pacakges.
--   You need just `rospy` ROS package. You don't need a ROS master
-    (`roscore`) running if you don't need to access ROS param server.
+- Adds named parameters for Bash scripts.
+- `_param:=value`
+- Position of the parameters doesn't matter (though you can still
+  easily pass positional arguments).
+- `_param:=value positional_arg1 positional_arg2 _andrew:=martin`
+- `positional_arg1` and `positional_arg2` are accessible to the
+  script as positional args as if there were no `:=` param mappings.
+- Super-easy parameter parsing.
+- `rosbash_param var \&quot;param\&quot; \&quot;default\&quot;`.
+- Unified representation of bool values:
+- `true`, `True`, `yes`, `on` and `1` all translated to a
+  single value `True`
+- `false`, `false`, `no`, `off` and `0` are all translated to
+  a single value `False`
+- Notice: talking about exit-codes, `0` usually means success, and
+  non-`0` means failure. The unified bool representation works with
+  the opposite meanings. So pay attention when setting bool parameters
+  from exit-codes.
+- Can also be used standalone outside ROS pacakges.
+- You need just `rospy` ROS package. You don't need a ROS master
+  (`roscore`) running if you don't need to access ROS param server.
 
 ## Usage
 
@@ -129,22 +129,22 @@ rosbash_unused_argv =
 
 #### Arguments
 
--   `rosbash_node_name` Name of the "node". If `__name:=name`
-    param mapping is present, it overrides this value. The node name
-    specifies prefix of the parameters on the param server.
--   all other arguments are to be parsed as parameters (call with
-    `"\$@"` to pass all script args)
+- `rosbash_node_name` Name of the "node". If `__name:=name`
+  param mapping is present, it overrides this value. The node name
+  specifies prefix of the parameters on the param server.
+- all other arguments are to be parsed as parameters (call with
+  `"\$@"` to pass all script args)
 
 #### Global variables set by this function
 
--   `rosbash_unused_params`: associative array of parsable params on
-    CLI that were not used by any call to `rosbash_param`. Keys are
-    parameter names, values are their values.
--   `rosbash_unused_argv`: all arguments to this function from which
-    no parameter was parsed (as Bash array; use
-    `arg_string="\${rosbash_unused_argv\[@\]}"` to convert to
-    space-delimited string).
--   `_rosbash_params`: do not use, is private
+- `rosbash_unused_params`: associative array of parsable params on CLI
+  that were not used by any call to `rosbash_param`. Keys are
+  parameter names, values are their values.
+- `rosbash_unused_argv`: all arguments to this function from which no
+  parameter was parsed (as Bash array; use
+  `arg_string="\${rosbash_unused_argv\[@\]}"` to convert to
+  space-delimited string).
+- `_rosbash_params`: do not use, is private
 
 ### rosbash_param
 
@@ -152,30 +152,30 @@ rosbash_unused_argv =
 
 #### Arguments
 
--   `result_var` The variable to store the result in (pass without
-    dollar sign).
--   `param` Name of the parameter to read.
--   `default` \[optional\] The value to use when the parameter is not
-    set. If no default is set, a missing parameter results in calling
-    `exit 1` or `return 1` (depending on the value of
-    `ROS_BASH_PARAM_EXIT`). To correctly convert `0` and `1` to
-    `False` and `True`, you have to specify a default value `True`
-    or `False` to bool params. If you don't, `0` and `1` will not
-    be converted to their logical values.
+- `result_var` The variable to store the result in (pass without
+  dollar sign).
+- `param` Name of the parameter to read.
+- `default` \[optional\] The value to use when the parameter is not
+  set. If no default is set, a missing parameter results in calling
+  `exit 1` or `return 1` (depending on the value of
+  `ROS_BASH_PARAM_EXIT`). To correctly convert `0` and `1` to
+  `False` and `True`, you have to specify a default value `True`
+  or `False` to bool params. If you don't, `0` and `1` will not
+  be converted to their logical values.
 
 #### Environment variables
 
--   `ROS_BASH_USE_PARAM_SERVER` (default true): Whether to look for
-    parameter values to the ROS param server. Also automatically store
-    the parsed param values to the parameter server. Set to `"0"` to
-    disable.
--   `ROS_BASH_USE_PARAM_VERBOSE` (default false): Set to any nonempty
-    string but `"0"` to enable verbose logging.
--   `ROS_BASH_PARAM_EXIT` (default true): If set to `"0"`, do not
-    call `exit 1` when parameter is not found, instead call `return
-    1`, so that the calling code controls what should happen when the
-    parameter is not found.
--   e.g. 
+- `ROS_BASH_USE_PARAM_SERVER` (default true): Whether to look for
+  parameter values to the ROS param server. Also automatically store the
+  parsed param values to the parameter server. Set to `"0"` to
+  disable.
+- `ROS_BASH_USE_PARAM_VERBOSE` (default false): Set to any nonempty
+  string but `"0"` to enable verbose logging.
+- `ROS_BASH_PARAM_EXIT` (default true): If set to `"0"`, do not
+  call `exit 1` when parameter is not found, instead call `return
+  1`, so that the calling code controls what should happen when the
+  parameter is not found.
+- e.g. 
 
 ```
 ROS_BASH_PARAM_EXIT=0 rosbash_param var "mandatory" || echo "Please, fill the mandatory param"

@@ -38,10 +38,53 @@ pub {
 
 
 ```wiki
-[[Included page compressed_image_transport/diamondback_params not found]]
+
+{
 ```
 
+}
 
+
+
+```
+{#!wiki version noetic_and_newer
+{{{
+#!clearsilver CS/NodeAPI
+param {
+group.0 {
+  name=Reconfigurable parameters
+  desc=Starting in Diamondback, all publisher parameters are dynamically reconfigurable per-topic. See [[dynamic_reconfigure]] for details on dynamically reconfigurable parameters.
+  0.name = <base_topic>/compressed/format
+  0.type = string
+  0.default = jpeg
+  0.desc = Compression format to use, "jpeg" or "png".
+  1.name = <base_topic>/compressed/jpeg_quality
+  1.type = int
+  1.default = 80
+  1.desc = JPEG quality percentile, in the range [1, 100]. Lower values trade image quality for space savings.  
+  2.name = <base_topic>/compressed/jpeg_progressive
+  2.type = bool
+  2.default = False
+  2.desc = Enable compression to progressive JPEG. <<Version(Noetic)>>
+  3.name = <base_topic>/compressed/jpeg_optimize
+  3.type = bool
+  3.default = False
+  3.desc = Enable JPEG compress optimization. <<Version(Noetic)>>
+  4.name = <base_topic>/compressed/jpeg_restart_interval
+  4.type = int
+  4.default = 0
+  4.desc = JPEG restart interval in the range of [0, 65535]. <<Version(Noetic)>>
+  5.name = <base_topic>/compressed/png_level
+  5.type = int
+  5.default = 9
+  5.desc = PNG compression level, in the range [1, 9]. Higher values trade computation time for space savings.
+}
+}
+```
+
+ }}}}
+
+}}}
 
 
 

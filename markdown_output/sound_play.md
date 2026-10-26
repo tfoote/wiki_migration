@@ -15,33 +15,29 @@ and ALSA/OSS to default to the sound device you want to use.
 
 ## API Stability
 
--   The C++ and Python APIs are stable.
+- The C++ and Python APIs are stable.
 
-```{=html}
 <!-- -->
-```
--   The ROS API and in particular the message format should not be
-    relied on and may change at any time to support extended
-    functionality.
+
+- The ROS API and in particular the message format should not be relied
+  on and may change at any time to support extended functionality.
 
 ### Known Limitations
 
 Please let us know if these limitations actually bother you.
 
--   Two nodes independently using the same sound may have strange
-    interactions. For example one node may stop a sound that was started
-    by the other one.
+- Two nodes independently using the same sound may have strange
+  interactions. For example one node may stop a sound that was started
+  by the other one.
 
-```{=html}
 <!-- -->
-```
--   There is no way to tell when a sound stops playing.
 
-```{=html}
+- There is no way to tell when a sound stops playing.
+
 <!-- -->
-```
--   When a sound is played multiple times, at most two copies of that
-    sound will accumulate in the queue at once.
+
+- When a sound is played multiple times, at most two copies of that
+  sound will accumulate in the queue at once.
 
 ## C++/Python API
 
@@ -275,21 +271,21 @@ sound.
 The sound is defined by the `sound` (int) and `arg` (string) fields
 of the message, and can be one of four types:
 
--   *a built-in sound*, identified by its identifier in `sound`
--   *a file*, identified by `PLAY_FILE` in `sound` and the file name
-    (absolute path on the computer running `soundplay_node.py`) in
-    `arg`
--   *some text to be synthesized into speech*, identified by `SAY` in
-    `sound` and the text in `arg`
--   *the wildcard sound*, that can only be used when stopping sound,
-    identified by `ALL` in `sound`
+- *a built-in sound*, identified by its identifier in `sound`
+- *a file*, identified by `PLAY_FILE` in `sound` and the file name
+  (absolute path on the computer running `soundplay_node.py`) in
+  `arg`
+- *some text to be synthesized into speech*, identified by `SAY` in
+  `sound` and the text in `arg`
+- *the wildcard sound*, that can only be used when stopping sound,
+  identified by `ALL` in `sound`
 
 The action that can be carried out on a sound can be:
 
--   stop playing the sound
--   play the sound once (if it is already playing, it will be played
-    again after the current playback ends)
--   play the sound continuously
+- stop playing the sound
+- play the sound once (if it is already playing, it will be played again
+  after the current playback ends)
+- play the sound continuously
 
 Each message on the `robotsound` topic will cause a sound to
 transition between the playing continuously, playing once (or twice) and

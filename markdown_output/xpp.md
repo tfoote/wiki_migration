@@ -100,9 +100,9 @@ To visualize your own URDF is very easy to setup. A minimal example to
 follow can be seen
 here:[urdf_visualizer_hyq1.cc](https://github.com/leggedrobotics/xpp/blob/master/robots/xpp_hyq/src/exe/urdf_visualizer_hyq1.cc).
 
--   Upload your [urdf](urdf) to the ROS parameter server
-    [(example)](https://github.com/leggedrobotics/xpp/blob/master/robots/xpp_hyq/launch/monoped.launch).
-    
+- Upload your [urdf](urdf) to the ROS parameter server
+  [(example)](https://github.com/leggedrobotics/xpp/blob/master/robots/xpp_hyq/launch/monoped.launch).
+  
 
 ```xml
  <param name="name_of_your_urdf_model_given" 
@@ -111,20 +111,19 @@ here:[urdf_visualizer_hyq1.cc](https://github.com/leggedrobotics/xpp/blob/master
 
 
 
-```{=html}
 <!-- -->
-```
--   Instantiate your custom
-    [UrdfVisualizer()](http://docs.ros.org/melodic/api/xpp_vis/html/classxpp_1_1UrdfVisualizer.html#a6bbd996415f4078330f2119ac81b7415)
-    and run as ros node.
--   Send out the state of the robot using
-    [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
--   (optional) Send out
-    [xpp_msgs/msg/RobotStateCartesian](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateCartesian.html)
-    and supply inverse kinematics function to transform to
-    [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
--   Add the ROS parameter robot name (defined in step 1) of your urdf to
-    [rviz](rviz):
+
+- Instantiate your custom
+  [UrdfVisualizer()](http://docs.ros.org/melodic/api/xpp_vis/html/classxpp_1_1UrdfVisualizer.html#a6bbd996415f4078330f2119ac81b7415)
+  and run as ros node.
+- Send out the state of the robot using
+  [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
+- (optional) Send out
+  [xpp_msgs/msg/RobotStateCartesian](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateCartesian.html)
+  and supply inverse kinematics function to transform to
+  [xpp_msgs/msg/RobotStateJoint](https://docs.ros.org/en/rolling/p/xpp_msgs/msg/RobotStateJoint.html).
+- Add the ROS parameter robot name (defined in step 1) of your urdf to
+  [rviz](rviz):
 
 ![\|width="40%"](attachment:rviz_add_robot2.png)
 
@@ -140,22 +139,21 @@ design for your robot could look similar to this: [xpp_hyq](xpp_hyq).
 
 The core packages that this ROS stack offers are:
 
--   **[xpp_states](xpp_states):** Classes to define robot states in
-    cartesian and joint space.
--   **[xpp_msgs](xpp_msgs):** ROS message representation of the above
-    states.
--   **[xpp_vis](xpp_vis):** Visualization of states and robots through
-    [rviz](rviz).
+- **[xpp_states](xpp_states):** Classes to define robot states in
+  cartesian and joint space.
+- **[xpp_msgs](xpp_msgs):** ROS message representation of the above
+  states.
+- **[xpp_vis](xpp_vis):** Visualization of states and robots through
+  [rviz](rviz).
 
 Some optional packages include:
 
--   **[xpp_examples](xpp_examples):** Some examples of how to generate
-    and visualize motion plans in [rviz](rviz).
--   **[xpp_hyq](xpp_hyq):** [urdf](urdf) file and inverse kinematics
-    functions to display the HyQ robot with 1,2 or 4 legs in
-    [rviz](rviz).
--   **[xpp_quadrotor](xpp_quadrotor):** [urdf](urdf) file of a quadrotor
-    used in one of the [xpp_examples](xpp_examples).
+- **[xpp_examples](xpp_examples):** Some examples of how to generate and
+  visualize motion plans in [rviz](rviz).
+- **[xpp_hyq](xpp_hyq):** [urdf](urdf) file and inverse kinematics
+  functions to display the HyQ robot with 1,2 or 4 legs in [rviz](rviz).
+- **[xpp_quadrotor](xpp_quadrotor):** [urdf](urdf) file of a quadrotor
+  used in one of the [xpp_examples](xpp_examples).
 
 ## Publications
 

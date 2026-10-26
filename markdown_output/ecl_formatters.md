@@ -46,16 +46,16 @@ If outside of ros, you will also need to link to *ecl_formatters*.
 
 ## Tutorials
 
--   [Using Ecl Formatters](ecl_formatters/Tutorials/Using Ecl Formatters)
--   [Writing a Custom Formatter](ecl_formatters/Tutorials/Writing a Custom Formatter)
+- [Using Ecl Formatters](ecl_formatters/Tutorials/Using Ecl Formatters)
+- [Writing a Custom Formatter](ecl_formatters/Tutorials/Writing a Custom Formatter)
 
 ## Available Formatters
 
 Each standard formatter is a template specialisation of the form
 `Format<inputType>` where the available input types are:
 
--   integral types (char, short, int, long, long long and unsigned
-    equivalents)
--   float types (float, double)
--   string
--   arrays and stencils in [ecl_containers](ecl_containers)
+- integral types (char, short, int, long, long long and unsigned
+  equivalents)
+- float types (float, double)
+- string
+- arrays and stencils in [ecl_containers](ecl_containers)

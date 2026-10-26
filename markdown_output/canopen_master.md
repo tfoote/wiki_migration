@@ -9,15 +9,15 @@ their data objects via high-level interfaces.
 This implementation provides support for many CANopen interfaces and
 services:
 
--   High-level object dictionary for all simple types, except booleans
-    (1bit)
--   EDS/DCF parser
--   Automatic configuration based on communication objects
--   Full SDO client implementation
--   PDO subscriber/publisher for different transmission types
--   EMCY handling with diagnostics interfaces
--   NMT with heartbeat (client), without node-guarding
--   Plug-in system for bus synchronization and the SYNC objects
+- High-level object dictionary for all simple types, except booleans
+  (1bit)
+- EDS/DCF parser
+- Automatic configuration based on communication objects
+- Full SDO client implementation
+- PDO subscriber/publisher for different transmission types
+- EMCY handling with diagnostics interfaces
+- NMT with heartbeat (client), without node-guarding
+- Plug-in system for bus synchronization and the SYNC objects
 
 ## CANopen basics
 
@@ -37,9 +37,9 @@ arrays.
 The object dictionary contains all objects (data + types) and is
 structured based on the index, notable ranges are:
 
--   1000-1FFF: Communication objects
--   2000-5FFF: Manufacturer-specific objects
--   6000-6FFF: Profile-specific objects (for first logical device)
+- 1000-1FFF: Communication objects
+- 2000-5FFF: Manufacturer-specific objects
+- 6000-6FFF: Profile-specific objects (for first logical device)
 
 ### Network management (NMT)
 
@@ -98,19 +98,19 @@ however.
 
 For now 2 different implementations exist with allocator plug-ins:
 
--   `canopen::SimpleMaster::Allocator`: wait-based implementation,
-    only for one process, uses half the time for reading form the bus
-    and half the time for updating an writing, **this is the default**
--   `canopen::ExternalMaster::Allocator`: Synchronize to external SYNC
-    message, uses half the time for reading form the bus and half the
-    time for updating an writing, might be used in conjunction with
-    canopen_sync_node
+- `canopen::SimpleMaster::Allocator`: wait-based implementation, only
+  for one process, uses half the time for reading form the bus and half
+  the time for updating an writing, **this is the default**
+- `canopen::ExternalMaster::Allocator`: Synchronize to external SYNC
+  message, uses half the time for reading form the bus and half the time
+  for updating an writing, might be used in conjunction with
+  canopen_sync_node
 
 3 additional IPC-based implementations exist, but got deprecated:
 
--   `canopen::SharedMaster::Allocator`: IPC-based master, uses shared
-    memory
--   `canopen::UnrestrictedMaster::Allocator`: like the shared master,
-    but the shared memory is not restricted to a certain user
--   `canopen::LocalMaster::Allocator`: IPC-based implementation, only
-    for one process, without shared memory
+- `canopen::SharedMaster::Allocator`: IPC-based master, uses shared
+  memory
+- `canopen::UnrestrictedMaster::Allocator`: like the shared master,
+  but the shared memory is not restricted to a certain user
+- `canopen::LocalMaster::Allocator`: IPC-based implementation, only
+  for one process, without shared memory

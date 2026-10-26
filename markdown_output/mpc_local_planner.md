@@ -9,10 +9,10 @@ from one of the various interface classes.
 
 The following paper describes the approach:
 
--   C. Rösmann, A. Makarow, and T. Bertram: Online Motion Planning based
-    on Nonlinear Model Predictive Control with Non-Euclidean Rotation
-    Groups, \[\[<https://arxiv.org/abs/2006.03534%7CarXiv:2006.03534>
-    '\[cs.RO\]'\]\], June 2020.
+- C. Rösmann, A. Makarow, and T. Bertram: Online Motion Planning based
+  on Nonlinear Model Predictive Control with Non-Euclidean Rotation
+  Groups, \[\[<https://arxiv.org/abs/2006.03534%7CarXiv:2006.03534>
+  '\[cs.RO\]'\]\], June 2020.
 
 ## Get Started
 

@@ -8,68 +8,61 @@ made by Inven Sense Corp.
 
 ## Feature
 
--   Can receive sensor values from the module with micro USB
--   Open source Software and Hardware
+- Can receive sensor values from the module with micro USB
+- Open source Software and Hardware
 
 ## GitHub repositories
 
--   Hardware
--   <https://github.com/rt-net/RT-USB-9AXIS-00>
--   Firmware and Hardware information of USB Output 9-axis IMU sensor
-    module
+- Hardware
+- <https://github.com/rt-net/RT-USB-9AXIS-00>
+- Firmware and Hardware information of USB Output 9-axis IMU sensor
+  module
 
-```{=html}
 <!-- -->
-```
--   ROS package
--   <https://github.com/rt-net/rt_usb_9axisimu_driver>
--   ROS package converts the sensor values to ROS topics
+
+- ROS package
+- <https://github.com/rt-net/rt_usb_9axisimu_driver>
+- ROS package converts the sensor values to ROS topics
 
 ## Published topics
 
--   **imu/data_raw (sensor_msgs/Imu)**
--   raw data of linear acceleration and angular velocity
+- **imu/data_raw (sensor_msgs/Imu)**
+- raw data of linear acceleration and angular velocity
 
-```{=html}
 <!-- -->
-```
--   **imu/mag (sensor_msgs/MagneticField)**
--   raw data of magnetic flux density
 
-```{=html}
+- **imu/mag (sensor_msgs/MagneticField)**
+- raw data of magnetic flux density
+
 <!-- -->
-```
--   **imu/temperature (sensor_msgs/Float64)**
--   data of the sensor IC temperature
+
+- **imu/temperature (sensor_msgs/Float64)**
+- data of the sensor IC temperature
 
 ## Parameters
 
--   **port (string, default: /dev/ttyACM0)**
--   USB port name connected the sensor module
+- **port (string, default: /dev/ttyACM0)**
+- USB port name connected the sensor module
 
-```{=html}
 <!-- -->
-```
--   **frame_id (string, default: imu_link)**
--   link name of the sensor module defined in URDF
 
-```{=html}
-<!-- -->
-```
--   **linear_acceleration_stddev (double, default: 0.023145)**
--   standard deviation of linear acceleration (m/s\^2)
+- **frame_id (string, default: imu_link)**
+- link name of the sensor module defined in URDF
 
-```{=html}
 <!-- -->
-```
--   **angular_velocity_stddev (double, default: 0.0010621)**
--   standard deviation of angular velocity (rad/s)
 
-```{=html}
+- **linear_acceleration_stddev (double, default: 0.023145)**
+- standard deviation of linear acceleration (m/s\^2)
+
 <!-- -->
-```
--   **magnetic_field_stddev (double, default: 0.00000080786)**
--   standard deviation of magnetic flux density (T)
+
+- **angular_velocity_stddev (double, default: 0.0010621)**
+- standard deviation of angular velocity (rad/s)
+
+<!-- -->
+
+- **magnetic_field_stddev (double, default: 0.00000080786)**
+- standard deviation of magnetic flux density (T)
 
 ## Examples
 
@@ -86,5 +79,5 @@ rqt_plot shows 3-axis magnetic flux densities
 
 ## Related pages
 
--   More information about USB Output 9-axis IMU sensor module
--   <https://www.rt-net.jp/products/9axisimu2?lang=en>
+- More information about USB Output 9-axis IMU sensor module
+- <https://www.rt-net.jp/products/9axisimu2?lang=en>

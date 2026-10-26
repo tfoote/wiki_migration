@@ -24,13 +24,12 @@ For detail description check the following link:
 
 ### Parameters
 
--   `device`: The ID of the device, i.e. Roboception rc_visard sensor.
-    This can be either:
+- `device`: The ID of the device, i.e. Roboception rc_visard sensor.
+  This can be either:
 
-```{=html}
 <!-- -->
-```
--   serial number, e.g. `02912345`. 
+
+- serial number, e.g. `02912345`. 
 
 ```wiki
 Preceed with a colon (`:02912345`) when passing this on the commandline or setting it via rosparam (see https://github.com/ros/ros_comm/issues/1339). This is not neccessary when specifying it as a string in a launch file.
@@ -38,41 +37,39 @@ Preceed with a colon (`:02912345`) when passing this on the commandline or setti
 
 
 
-```{=html}
 <!-- -->
-```
--   user defined name must be unique among all reachable sensors. If no
-    device or host is given, this parameter works if just one rc_visard
-    is connected.
 
-```{=html}
+- user defined name must be unique among all reachable sensors. If no
+  device or host is given, this parameter works if just one rc_visard is
+  connected.
+
 <!-- -->
-```
--   `host`: If `device` is not used. The IP address or hostname of
-    the rc_visard.
+
+- `host`: If `device` is not used. The IP address or hostname of the
+  rc_visard.
 
 ### Dynamic reconfigure parameters
 
--   `max_number_of_detected_objects`: Maximum number of detected
-    objects.
--   `edge_sensitivity`: Sensitivity of the edge detector.
--   `match_max_distance`: Maximum allowed distance in pixels between
-    the template and the detected edges in the image.
--   `match_percentile`: Percentage of template pixels that must be
-    within the maximum distance to successfully match the template.
--   `quality`: Detection quality (H(igh), M(edium), or L(ow)).
--   `publish_vis`: Whether TF and markers should be published.
+- `max_number_of_detected_objects`: Maximum number of detected
+  objects.
+- `edge_sensitivity`: Sensitivity of the edge detector.
+- `match_max_distance`: Maximum allowed distance in pixels between the
+  template and the detected edges in the image.
+- `match_percentile`: Percentage of template pixels that must be
+  within the maximum distance to successfully match the template.
+- `quality`: Detection quality (H(igh), M(edium), or L(ow)).
+- `publish_vis`: Whether TF and markers should be published.
 
 ### Services
 
 The following services are offered by the node:
 
--   `detect_object`: Triggers detection of an object.
--   `calibrate_base_plane`: Triggers base-plane calibration.
--   `get_base_plane_calibration`: Returns the configured base-plane
-    calibration.
--   `delete_base_plane_calibration`: Deletes the configured base-plane
-    calibration.
+- `detect_object`: Triggers detection of an object.
+- `calibrate_base_plane`: Triggers base-plane calibration.
+- `get_base_plane_calibration`: Returns the configured base-plane
+  calibration.
+- `delete_base_plane_calibration`: Deletes the configured base-plane
+  calibration.
 
 ## Launch
 
@@ -90,4 +87,14 @@ rosrun rc_silhouettematch_client rc_silhouettematch_client _device:=:<serial_num
 
 ## Acknowledgements
 
-[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)
+![ROSIN Logo\|height=60](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_ack_logo_wide.png)
+
+Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software
+Components.\
+More information: [rosin-project.eu](http://rosin-project.eu/)\
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --
+     ![EU Flag\|height=45](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_eu_flag.jpg)      <99%> This project has received funding from the European Union's Horizon 2020\   
+                                                                                                                        research and innovation programme under grant agreement No. 732287.                 
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --

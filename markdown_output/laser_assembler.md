@@ -14,16 +14,15 @@ point cloud.
 
 Users interface with the laser_assembler package via two ROS nodes:
 
--   `laser_scan_assembler`: Assembles a stream of
-    [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
-    messages into point clouds
--   `point_cloud_assembler`: Sometimes due to some pre-processing,
-    laser scans have already been converted into cartesian coordinates
-    as
-    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
-    messages. This node assembles a stream of these
-    [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
-    messages into larger point clouds
+- `laser_scan_assembler`: Assembles a stream of
+  [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+  messages into point clouds
+- `point_cloud_assembler`: Sometimes due to some pre-processing, laser
+  scans have already been converted into cartesian coordinates as
+  [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+  messages. This node assembles a stream of these
+  [sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+  messages into larger point clouds
 
 ## Roadmap / Stability
 

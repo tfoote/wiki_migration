@@ -56,12 +56,12 @@ $ rosrun pr2_controller_manager pr2_controller_manager <command> <controller_nam
 
  The following commands are available:
 
--   `load`: load a controller (construct and initialize)
--   `unload`: unload a controller (destruct)
--   `start`: start a controller
--   `stop`: stop a controller
--   `spawn`: load and start a controller
--   `kill`: stop and unload a controller
+- `load`: load a controller (construct and initialize)
+- `unload`: unload a controller (destruct)
+- `start`: start a controller
+- `stop`: stop a controller
+- `spawn`: load and start a controller
+- `kill`: stop and unload a controller
 
 To get the state of the controllers, use:
 
@@ -73,21 +73,21 @@ $ rosrun pr2_controller_manager pr2_controller_manager <command>
 
  The following commands are available:
 
--   `list`: list all the controllers in the order they are executed,
-    and give the state of each controller
--   `list-types`: list all the controller types the controller manager
-    knows about. If your controller is not in this list, you won't be
-    able to spawn it.
--   `list-joints`: lists all the joint and actuator names that are
-    used by the controller manager.
--   `reload-libraries`: Reloads all the controller libraries that are
-    available as plugins. This is convenient when you are developing a
-    controller and you want to test your new controller code, without
-    restarting the robot every time. This does not restart controllers
-    which were running before.
--   `reload-libraries \--restore`: Reloads all the controller
-    libraries that are available as plugins and restores all controllers
-    to their original state.
+- `list`: list all the controllers in the order they are executed, and
+  give the state of each controller
+- `list-types`: list all the controller types the controller manager
+  knows about. If your controller is not in this list, you won't be
+  able to spawn it.
+- `list-joints`: lists all the joint and actuator names that are used
+  by the controller manager.
+- `reload-libraries`: Reloads all the controller libraries that are
+  available as plugins. This is convenient when you are developing a
+  controller and you want to test your new controller code, without
+  restarting the robot every time. This does not restart controllers
+  which were running before.
+- `reload-libraries \--restore`: Reloads all the controller libraries
+  that are available as plugins and restores all controllers to their
+  original state.
 
 ### spawner
 

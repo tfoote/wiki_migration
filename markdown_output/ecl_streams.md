@@ -3,10 +3,10 @@
 Streams provide a standardised c++ interface for connecting to ecl
 input-output devices.
 
--   *speed* : control cannot afford serious slowdowns for convenience.
--   *extensible* : must be able to create new devices easily.
--   *streams* : all devices should connect in a standardised way to
-    streams.
+- *speed* : control cannot afford serious slowdowns for convenience.
+- *extensible* : must be able to create new devices easily.
+- *streams* : all devices should connect in a standardised way to
+  streams.
 
 ## Other Streaming Libraries
 
@@ -51,9 +51,9 @@ If outside ros, you will also need to link to *ecl_streams*.
 
 ## Tutorials
 
--   [Input and Output Streams](ecl_streams/Tutorials/Input and Output Streams)
-    : general usage notes for ecl io streams.
--   [Logging Streams](ecl_streams/Tutorials/Logging Streams) : low
-    overhead logging streams.
--   [Manipulators](ecl_streams/Tutorials/Manipulators) : utilities for
-    ecl streams.
+- [Input and Output Streams](ecl_streams/Tutorials/Input and Output Streams)
+  : general usage notes for ecl io streams.
+- [Logging Streams](ecl_streams/Tutorials/Logging Streams) : low
+  overhead logging streams.
+- [Manipulators](ecl_streams/Tutorials/Manipulators) : utilities for ecl
+  streams.

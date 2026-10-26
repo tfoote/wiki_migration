@@ -22,21 +22,21 @@ specified camera.
 Camera settings are supported via ROS parameters and
 dynamic_reconfigure, including the following:
 
--   `ExposureAuto` (string: "`Off`", "`Once`",
-    "`Continuous`")
--   `GainAuto` (string: "`Off`", "`Once`", "`Continuous`")
--   `ExposureTimeAbs` (float)
--   `Gain` (float)
--   `AcquisitionMode` (string: "`Continuous`",
-    "`SingleFrame`", "`MultiFrame`")
--   `AcquisitionFrameRate` (float)
--   `TriggerMode` (string: "`Off`", "`On`")
--   `TriggerSource` (string: "`Software`", "`Line1`",
-    "`Line2`")
--   `softwaretriggerrate` (float)
--   `frame_id` (string)
--   `FocusPos` (integer)
--   `mtu` (integer)
+- `ExposureAuto` (string: "`Off`", "`Once`",
+  "`Continuous`")
+- `GainAuto` (string: "`Off`", "`Once`", "`Continuous`")
+- `ExposureTimeAbs` (float)
+- `Gain` (float)
+- `AcquisitionMode` (string: "`Continuous`", "`SingleFrame`",
+  "`MultiFrame`")
+- `AcquisitionFrameRate` (float)
+- `TriggerMode` (string: "`Off`", "`On`")
+- `TriggerSource` (string: "`Software`", "`Line1`",
+  "`Line2`")
+- `softwaretriggerrate` (float)
+- `frame_id` (string)
+- `FocusPos` (integer)
+- `mtu` (integer)
 
 In addition to the above features, this driver supports (almost) every
 feature of every camera, you just have to know how the feature is

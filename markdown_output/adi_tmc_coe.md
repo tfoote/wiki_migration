@@ -15,20 +15,20 @@ supporting potential space and performance efficiency improvements." -
 Official ROS Driver for Trinamic Motor Controllers (TMC) that uses
 CANopen-over-etherCAT (CoE) protocol.
 
--   Maintainer: ROS@analog.com
--   Source: git
-    [\|target="_blank"](https://github.com/analogdevicesinc/adi_tmc_coe)
-    (branch: noetic)
+- Maintainer: ROS@analog.com
+- Source: git
+  [\|target="_blank"](https://github.com/analogdevicesinc/adi_tmc_coe)
+  (branch: noetic)
 
 ## Hardware Requirements
 
--   Supported Boards:
--   All market-ready TMCs with YAMLs in the repository are expected to
-    work and can be tried and tested by the users.
--   Officially supported (i.e. tested) TMC boards are listed
-    [here\|target="_blank"](https://github.com/analogdevicesinc/adi_tmc_coe/tree/noetic#background)
--   Purchase Trinamic Motor Controller Evaluation Boards and Motors
-    [here](https://www.analog.com/)
+- Supported Boards:
+- All market-ready TMCs with YAMLs in the repository are expected to
+  work and can be tried and tested by the users.
+- Officially supported (i.e. tested) TMC boards are listed
+  [here\|target="_blank"](https://github.com/analogdevicesinc/adi_tmc_coe/tree/noetic#background)
+- Purchase Trinamic Motor Controller Evaluation Boards and Motors
+  [here](https://www.analog.com/)
 
 ## Documentation
 
@@ -37,20 +37,20 @@ Documentation is hosted at
 
 It will contain the following:
 
--   Hardware Setup
--   Software Architecture and Dependencies
--   Clone, Build, Pre-Launch, and Launch Instructions
--   ROS API (Nodes, Topics, Services)
--   Tutorial: Quick Tests
+- Hardware Setup
+- Software Architecture and Dependencies
+- Clone, Build, Pre-Launch, and Launch Instructions
+- ROS API (Nodes, Topics, Services)
+- Tutorial: Quick Tests
 
 ## References
 
--   For more information, visit
-    [analog.com\|target="_blank"](https://www.analog.com/en/index.html)
--   ROS Development Platforms \| Design Center \| Analog Devices
-    [link\|target="_blank"](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/robot-operating-system.html)
--   Industrial Robotics \| Analog Devices
-    [link\|target="_blank"](https://www.analog.com/en/applications/markets/industrial-automation-technology-pavilion-home/industrial-robotics.html)
+- For more information, visit
+  [analog.com\|target="_blank"](https://www.analog.com/en/index.html)
+- ROS Development Platforms \| Design Center \| Analog Devices
+  [link\|target="_blank"](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-development-platforms/robot-operating-system.html)
+- Industrial Robotics \| Analog Devices
+  [link\|target="_blank"](https://www.analog.com/en/applications/markets/industrial-automation-technology-pavilion-home/industrial-robotics.html)
 
 ------------------------------------------------------------------------
 

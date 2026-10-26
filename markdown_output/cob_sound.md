@@ -55,33 +55,33 @@ rosparam set /sound/mode cepstral
 Download and install voice. Adopted from
 [this tutorial](http://fonality.com/trixbox/forums/trixbox-forums/open-discussion/mini-howto-install-cepstral-asterisk-weather-station-zip-nerdv).
 
--   Download a voice file from
-    <http://www.cepstral.com/downloads/personal.php> e.g. Linux 32bit or
-    64bit, US English, David: 
+- Download a voice file from
+  <http://www.cepstral.com/downloads/personal.php> e.g. Linux 32bit or
+  64bit, US English, David: 
 
 ```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_David_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_David_x86-64-linux_6.2.3.873.tar.gz
 ```
 
- e.g. Linux 32bit
-    or 64bit, US English, Diane: 
+ e.g. Linux 32bit or
+  64bit, US English, Diane: 
 
 ```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Diane_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Diane_x86-64-linux_6.2.3.873.gz
 ```
 
- e.g. Linux
-    32bit or 64bit, German, Matthias: 
+ e.g. Linux 32bit or
+  64bit, German, Matthias: 
 
 ```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Matthias_i386-linux_6.2.3.873.tar.gz
 wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Matthias_x86-64-linux_6.2.3.873.tar.gz
 ```
 
- e.g.
-    Linux 32bit or 64bit, German, Katrin: 
+ e.g. Linux 32bit or
+  64bit, German, Katrin: 
 
 ```
 wget http://www.cepstral.com/downloads/installers/linux32/Cepstral_Katrin_i386-linux_6.2.3.873.tar.gz
@@ -90,10 +90,9 @@ wget http://www.cepstral.com/downloads/installers/linux64/Cepstral_Katrin_x86-64
 
 
 
-```{=html}
 <!-- -->
-```
--   unpack and install 
+
+- unpack and install 
 
 ```
 tar xzvf Cepstral_David_x86-64-linux_6.2.3.873.tar.gz
@@ -106,10 +105,9 @@ sudo ldconfig
 
 
 
-```{=html}
 <!-- -->
-```
--   apply fix for Ubuntu > 12.04 
+
+- apply fix for Ubuntu > 12.04 
 
 ```
 roscd cob_sound
@@ -134,9 +132,9 @@ rosservice call /sound/say "Hello, my name is Care-O-bot."
 
 1
 
--   Register voice with license (you need to buy a license from
-    <http://www.cepstral.com>, for IPA robots ask UHR or FMW for license
-    key) 
+- Register voice with license (you need to buy a license from
+  <http://www.cepstral.com>, for IPA robots ask UHR or FMW for license
+  key) 
 
 ```
 rosservice call /sound/say "Hello, my name is Care-O-bot."

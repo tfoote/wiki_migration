@@ -10,12 +10,12 @@ and C++ interfaces.
 [PCL filters](http://www.ros.org/wiki/pcl_ros/Filters) packaged as ROS
 nodelets. These links provide details for using those interfaces:
 
--   [Extract_Indices](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#Extract_Indices)
--   [PassThrough](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#PassThrough)
--   [ProjectInliers](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#ProjectInliers)
--   [RadiusOutlierRemoval](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#RadiusOutlierRemoval)
--   [StatisticalOutlierRemoval](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#StatisticalOutlierRemoval)
--   [VoxelGrid](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#VoxelGrid)
+- [Extract_Indices](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#Extract_Indices)
+- [PassThrough](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#PassThrough)
+- [ProjectInliers](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#ProjectInliers)
+- [RadiusOutlierRemoval](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#RadiusOutlierRemoval)
+- [StatisticalOutlierRemoval](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#StatisticalOutlierRemoval)
+- [VoxelGrid](http://www.ros.org/wiki/pcl_ros/Tutorials/filters#VoxelGrid)
 
 ## ROS C++ interface
 
@@ -142,10 +142,10 @@ $ rosrun pcl_ros bag_to_pcd <input_file.bag> <topic> <output_directory>
 
 Where:
 
--   <input_file.bag> is the bag file name to read.
--   <topic> is the topic in the bag file containing messages to save.
--   <output_directory> is the directory on disk in which to create PCD
-    files from the point cloud messages.
+- <input_file.bag> is the bag file name to read.
+- <topic> is the topic in the bag file containing messages to save.
+- <output_directory> is the directory on disk in which to create PCD
+  files from the point cloud messages.
 
 #### Example
 
@@ -326,10 +326,10 @@ int main(int argc, char** argv)
 
 Where:
 
--   <file.pcd> is the (required) file name to read.
--   <interval> is the (optional) number of seconds to sleep between
-    messages. If <interval> is zero or not specified the message is
-    published once.
+- <file.pcd> is the (required) file name to read.
+- <interval> is the (optional) number of seconds to sleep between
+  messages. If <interval> is zero or not specified the message is
+  published once.
 
 #### Examples
 

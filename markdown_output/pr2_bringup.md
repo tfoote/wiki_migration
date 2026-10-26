@@ -36,7 +36,7 @@ This manual will take you step by step through starting the PR2 robot,
 <attachment:pr2_robot/pr2_bringup.pdf>. Note: If you have a PR2 that is
 running both ROS Groovy and ROS Hydro, this is then the start sequence:
 
-** For Groovy: **
+**For Groovy:**
 
 
 
@@ -57,7 +57,7 @@ export ROS_ENV_LOADER=/etc/ros/env.sh
 roslaunch /etc/ros/robot.launch
 ```
 
- **For Hydro: **
+ **For Hydro:**
 
 
 

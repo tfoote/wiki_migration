@@ -2,7 +2,7 @@
 
 ## ROBOTIS e-Manual
 
--   [ROBOTIS e-Manual for Dynamixel-Workbench](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/)
+- [ROBOTIS e-Manual for Dynamixel-Workbench](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/)
 
 toolbox is c++ library to control Dynamixel. This library has two main
 capability. First, it has information about all series of Dynamixel such

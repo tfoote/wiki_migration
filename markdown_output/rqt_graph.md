@@ -32,10 +32,10 @@ This is an example of rqt_graph with statistics measurement enabled:
 
 Legend:
 
--   "5.0 Hz" indicates the observed publish frequency.
--   * "110.0ms" indicates the average age of the message (might be
-    very large when replaying bag files without simtime).*
--   line color: red marks a high average age, green a young age. The
-    limits are normed to the ages observed in the ROS graph.
--   line thickness: A thick line means the connection has a large
-    throughput in Bytes/s (e.g. an unfiltered PointCloud).
+- "5.0 Hz" indicates the observed publish frequency.
+-  *"110.0ms" indicates the average age of the message (might be very
+  large when replaying bag files without simtime).*
+- line color: red marks a high average age, green a young age. The
+  limits are normed to the ages observed in the ROS graph.
+- line thickness: A thick line means the connection has a large
+  throughput in Bytes/s (e.g. an unfiltered PointCloud).

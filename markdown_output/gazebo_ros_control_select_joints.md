@@ -1,6 +1,6 @@
--   Source: git
-    <https://github.com/tu-darmstadt-ros-pkg/gazebo_ros_control_select_joints>
-    (branch: master)
+- Source: git
+  <https://github.com/tu-darmstadt-ros-pkg/gazebo_ros_control_select_joints>
+  (branch: master)
 
 ## Overview
 

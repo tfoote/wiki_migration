@@ -30,12 +30,12 @@ be [kth-ros-pkg/yumi](https://github.com/kth-ros-pkg/yumi).
 
 This package currently supports the following:
 
--   IRC5 controllers with !RobotWare 5.13 and up
--   Single mechanical units (ie: a basic 6 axis robot)
--   Up to 4 integrated external *linear* axes (in a single mechanical
-    unit)
--   Joint state reporting for all axes (in a single mechanical unit)
--   Trajectory downloading for all axes (in a single mechanical unit)
+- IRC5 controllers with !RobotWare 5.13 and up
+- Single mechanical units (ie: a basic 6 axis robot)
+- Up to 4 integrated external *linear* axes (in a single mechanical
+  unit)
+- Joint state reporting for all axes (in a single mechanical unit)
+- Trajectory downloading for all axes (in a single mechanical unit)
 
 The driver is largely manipulator agnostic, meaning that it will work
 with just about any ABB robot an IRC5 controller is compatible with.
@@ -56,9 +56,9 @@ and multiple parallel tasks. The code was originally tested on an IRC5
 controller, with an IRB-2400 robot, but other combinations should also
 work. The following controller options are required:
 
--   `623-1`: *Multitasking*
--   `672-1`: *Socket Messaging* (in recent !RobotWare versions, this
-    option is included with `616-1`: *PC Interface*)
+- `623-1`: *Multitasking*
+- `672-1`: *Socket Messaging* (in recent !RobotWare versions, this
+  option is included with `616-1`: *PC Interface*)
 
 !RobotWare OS version 5.13 or later is required due to the use of
 certain socket options. Earlier versions may work, but will require
@@ -163,4 +163,9 @@ node.1 {
 
 
 
-[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
+## Contact us/Technical support
+
+For questions about this package or ROS-Industrial in general, please
+contact the developers by posting a message in the
+[ROS-Industrial category](https://discourse.ros.org/c/ros-industrial) on
+ROS Discourse.

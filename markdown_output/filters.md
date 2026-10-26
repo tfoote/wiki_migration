@@ -28,10 +28,10 @@ parameter namespace to read from of the Parameter Server.
 
 #### Currently Implemented Filters
 
--   [MeanFilter](/MeanFilter)
--   [MedianFilter](/MedianFilter)
--   [IncrementFilter](/IncrementFilter)
--   [TransferFunctionFilter](/TransferFunctionFilter)
+- [MeanFilter](/MeanFilter)
+- [MedianFilter](/MedianFilter)
+- [IncrementFilter](/IncrementFilter)
+- [TransferFunctionFilter](/TransferFunctionFilter)
 
 #### Filter ROS Parameters
 

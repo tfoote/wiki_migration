@@ -14,4 +14,14 @@ roscd roscpp_tutorials
 
 There are also several Wiki-based tutorials, listed below.
 
-[Included page roscpp_tutorials/Tutorials not found](Included page roscpp_tutorials/Tutorials not found)
+## Beginner Tutorials
+
+<<TutorialChain(/WritingPublisherSubscriber)>>
+
+## Intermediate Tutorials
+
+<<TutorialChain(/Timers)>>
+
+- [ Dynamic Reconfigure](/Publisher and Subscriber with Parameters and Dynamic Reconfigure)
+
+## Create a new tutorial

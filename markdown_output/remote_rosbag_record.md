@@ -53,8 +53,8 @@ topics:
 
 Start rosbag-record at your own timing
 
--   method 1: use remote_rosbag_record/trigger node
-    
+- method 1: use remote_rosbag_record/trigger node
+  
 
 ```
 rosrun remote_rosbag_record trigger _regex:="/.*/start"
@@ -62,11 +62,10 @@ rosrun remote_rosbag_record trigger _regex:="/.*/start"
 
 
 
-```{=html}
 <!-- -->
-```
--   method 2: use remote_rosbag_record/joy_listener node
-    
+
+- method 2: use remote_rosbag_record/joy_listener node
+  
 
 ```
 rosrun remote_rosbag_record joy_listener _start_regex:="/.*/start" _start_button:=10 ...
@@ -74,11 +73,10 @@ rosrun remote_rosbag_record joy_listener _start_regex:="/.*/start" _start_button
 
 
 
-```{=html}
 <!-- -->
-```
--   method 3: call trigger services from your teleoperation node
-    
+
+- method 3: call trigger services from your teleoperation node
+  
 
 ```cpp
 #include<remote_rosbag_record/call.hpp>

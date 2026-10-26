@@ -31,4 +31,14 @@ The simulation model works with Gazebo 2.X.
 
 ## Acknowledgements
 
-[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)
+![ROSIN Logo\|height=60](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_ack_logo_wide.png)
+
+Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software
+Components.\
+More information: [rosin-project.eu](http://rosin-project.eu/)\
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --
+     ![EU Flag\|height=45](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_eu_flag.jpg)      <99%> This project has received funding from the European Union's Horizon 2020\   
+                                                                                                                        research and innovation programme under grant agreement No. 732287.                 
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --

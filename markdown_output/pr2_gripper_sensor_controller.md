@@ -34,16 +34,15 @@ users.
 The [pr2_gripper_sensor_controller](pr2_gripper_sensor_controller)
 **requires** two important PR2 sensors to be available:
 
--   A
-    [palm-mounted accelerometer](ethercat_hardware/Tutorials/GripperAccelerometer),
-    which should exist on all modern PR2 robots.
+- A
+  [palm-mounted accelerometer](ethercat_hardware/Tutorials/GripperAccelerometer),
+  which should exist on all modern PR2 robots.
 
-```{=html}
 <!-- -->
-```
--   [Pressure-sensitive fingertips](pr2_hardware_interface), which are
-    an optional hardware add-on for all modern PR2 that require a brief
-    installation procedure \[installation link?\].
+
+- [Pressure-sensitive fingertips](pr2_hardware_interface), which are an
+  optional hardware add-on for all modern PR2 that require a brief
+  installation procedure \[installation link?\].
 
 A simple test to check if these sensors exist is to run the command
 `rostopic list` and check to make sure the `/accelerometer` and

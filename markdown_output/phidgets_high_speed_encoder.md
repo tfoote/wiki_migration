@@ -17,23 +17,22 @@ rosrun phidgets_high_speed_encoder phidgets_high_speed_encoder _joint0_name:=whe
 
 Published topics:
 
--   `joint_states`: `JointState` msg with position and instantaneous
-    speed of each axis.
--   `joint_states_ch{0,1,2,3}_decim_speed`: `EncoderDecimatedSpeed`
-    msg with decimated (smoothed) speed for each channel.
+- `joint_states`: `JointState` msg with position and instantaneous
+  speed of each axis.
+- `joint_states_ch{0,1,2,3}_decim_speed`: `EncoderDecimatedSpeed`
+  msg with decimated (smoothed) speed for each channel.
 
 Parameters:
 
--   `serial_number`: Board serial number to open.
--   `joint{0,1,2,3}_name`: Name of each axis; to be published inside
-    the `name` field of each `JointState` msg.
--   `joint{0,1,2,3}_tick2rad`: Conversion factor from encoder
-    "ticks" (counts) to radians.
--   `frame_id`: The frame that all messages are published in.
--   `PUBLISH_RATE`: Rate (in Hz) to publish status updates.
-    (Default=20)
--   `SPEED_FILTER_SAMPLES_LEN`: (Default=10) Number of samples for the
-    sliding window average filter of speeds.
--   `SPEED_FILTER_IDLE_ITER_LOOPS_BEFORE_RESET`: (Default=1) Number of
-    "ITERATE" loops without any new encoder tick before resetting the
-    filtered average velocities.
+- `serial_number`: Board serial number to open.
+- `joint{0,1,2,3}_name`: Name of each axis; to be published inside
+  the `name` field of each `JointState` msg.
+- `joint{0,1,2,3}_tick2rad`: Conversion factor from encoder "ticks"
+  (counts) to radians.
+- `frame_id`: The frame that all messages are published in.
+- `PUBLISH_RATE`: Rate (in Hz) to publish status updates. (Default=20)
+- `SPEED_FILTER_SAMPLES_LEN`: (Default=10) Number of samples for the
+  sliding window average filter of speeds.
+- `SPEED_FILTER_IDLE_ITER_LOOPS_BEFORE_RESET`: (Default=1) Number of
+  "ITERATE" loops without any new encoder tick before resetting the
+  filtered average velocities.

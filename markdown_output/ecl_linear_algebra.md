@@ -46,7 +46,7 @@ clear we're using our extended interface (via the eigen plugins).
 
 ## Tutorials
 
--   [Using Eigen](ecl_linear_algebra/Tutorials/Using Eigen) - there are
-    quite a few tricks you should be aware of when using eigen\...
--   [Eigen Extensions](ecl_linear_algebra/Tutorials/Eigen Extensions) -
-    some extensions built in and around eigen by the ecl.
+- [Using Eigen](ecl_linear_algebra/Tutorials/Using Eigen) - there are
+  quite a few tricks you should be aware of when using eigen\...
+- [Eigen Extensions](ecl_linear_algebra/Tutorials/Eigen Extensions) -
+  some extensions built in and around eigen by the ecl.

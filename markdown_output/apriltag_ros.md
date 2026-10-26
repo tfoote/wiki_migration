@@ -6,21 +6,21 @@ The package works as shown in the above figure. The following default
 input topics are subscribed to (which can be remapped based on your
 needs):
 
--   `/camera_rect/image_rect`: a
-    [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
-    topic which contains the image (e.g. a frame of a video stream
-    coming from a camera). *The image is assumed to be undistorted, i.e.
-    produced by a pinhole camera*. Laptop webcams typically already
-    provide such an image while other cameras may require undistortion
-    by an intermediate node such as [image_proc](image_proc);
--   `/camera_rect/camera_info`: a
-    [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
-    topic which contains the camera calibration matrix in
-    `/camera/camera_info/K`. One can obtain a specific camera's `K`
-    via camera intrinsics calibration using e.g.
-    [camera_calibration](camera_calibration) or
-    [Kalibr](https://github.com/ethz-asl/kalibr) (the former seemed to
-    work better for laptop webcam calibration).
+- `/camera_rect/image_rect`: a
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  topic which contains the image (e.g. a frame of a video stream coming
+  from a camera). *The image is assumed to be undistorted, i.e. produced
+  by a pinhole camera*. Laptop webcams typically already provide such an
+  image while other cameras may require undistortion by an intermediate
+  node such as [image_proc](image_proc);
+- `/camera_rect/camera_info`: a
+  [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+  topic which contains the camera calibration matrix in
+  `/camera/camera_info/K`. One can obtain a specific camera's `K`
+  via camera intrinsics calibration using e.g.
+  [camera_calibration](camera_calibration) or
+  [Kalibr](https://github.com/ethz-asl/kalibr) (the former seemed to
+  work better for laptop webcam calibration).
 
 The behavior of the ROS wrapper is fully defined by the two
 configuration files `config/tags.yaml` (which defines the tags and tag
@@ -28,19 +28,19 @@ bundles to look for) and `config/settings.yaml` (which configures the
 core !AprilTag 2 algorithm itself). Then, the following topics are
 output:
 
--   `/tf`: relative pose between the camera frame and each detected
-    tag's or tag bundle's frame (specified in `tags.yaml`) using
-    [tf](tf). Published only if `publish_tf: true` in
-    `config/settings.yaml`;
--   `/tag_detections`: the same information as provided by the `/tf`
-    topic but as a custom message carrying the tag ID(s), size(s) and
-    [geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)
-    pose information (where plural applies for tag bundles). This is
-    always published;
--   `/tag_detections_image`: the same image as input by
-    `/camera/image_rect` but with the detected tags highlighted.
-    Published only if `publish_tag_detections_image==true` in
-    `launch/continuous_detection.launch`.
+- `/tf`: relative pose between the camera frame and each detected
+  tag's or tag bundle's frame (specified in `tags.yaml`) using
+  [tf](tf). Published only if `publish_tf: true` in
+  `config/settings.yaml`;
+- `/tag_detections`: the same information as provided by the `/tf`
+  topic but as a custom message carrying the tag ID(s), size(s) and
+  [geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)
+  pose information (where plural applies for tag bundles). This is
+  always published;
+- `/tag_detections_image`: the same image as input by
+  `/camera/image_rect` but with the detected tags highlighted.
+  Published only if `publish_tag_detections_image==true` in
+  `launch/continuous_detection.launch`.
 
 ## Tutorials
 
@@ -61,14 +61,14 @@ wholly the work of the
 at The University of Michigan. If you use this package, please kindly
 cite:
 
--   D. Malyuta,
-    "[Navigation, Control and Mission Logic for Quadrotor Full-cycle Autonomy](https://www.research-collection.ethz.ch/handle/20.500.11850/248154),"
-    Master thesis, Jet Propulsion Laboratory, 4800 Oak Grove Drive,
-    Pasadena, CA 91109, USA, December 2017.
--   J. Wang and E. Olson,
-    "[AprilTag 2: Efficient and robust fiducial detection](http://ieeexplore.ieee.org/document/7759617/),"
-    in *Proceedings of the IEEE/RSJ International Conference on
-    Intelligent Robots and Systems (IROS)*, October 2016.
+- D. Malyuta,
+  "[Navigation, Control and Mission Logic for Quadrotor Full-cycle Autonomy](https://www.research-collection.ethz.ch/handle/20.500.11850/248154),"
+  Master thesis, Jet Propulsion Laboratory, 4800 Oak Grove Drive,
+  Pasadena, CA 91109, USA, December 2017.
+- J. Wang and E. Olson,
+  "[AprilTag 2: Efficient and robust fiducial detection](http://ieeexplore.ieee.org/document/7759617/),"
+  in *Proceedings of the IEEE/RSJ International Conference on
+  Intelligent Robots and Systems (IROS)*, October 2016.
 
 
 

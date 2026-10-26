@@ -100,14 +100,14 @@ to install sphinx or epydoc for certain Python packages.
 
 rosdoc supports a YAML-based configuration file that lets you:
 
--   use Epydoc or Sphinx instead of Doxygen
--   configure multiple documentation builds per package
--   do advanced configuration of documentation builds
+- use Epydoc or Sphinx instead of Doxygen
+- configure multiple documentation builds per package
+- do advanced configuration of documentation builds
 
 For more details, please see one of these pages:
 
--   [Epydoc](Epydoc)
--   [Sphinx](Sphinx)
+- [Epydoc](Epydoc)
+- [Sphinx](Sphinx)
 
 #### Enabling via package.xml
 
@@ -132,15 +132,15 @@ behavior is old:
 The YAML configuration file should contain a list of dictionaries, where
 each dictionary has the following standard keys:
 
--   **builder**: name of documentation builder (`doxygen`, `epydoc`,
-    or `sphinx`)
--   **output_dir**: (optional) name of sub-directory to write
-    documentation to. If you have multiple builders, you must specify
-    this property to avoid builders writing to the same directory.
--   **name**: (optional) name of documentation set (e.g. "Python API")
--   **required**: (optional) if set to True, the build will fail if any
-    documentation builder fails. The default behavior is to ignore
-    builder errors.
+- **builder**: name of documentation builder (`doxygen`, `epydoc`,
+  or `sphinx`)
+- **output_dir**: (optional) name of sub-directory to write
+  documentation to. If you have multiple builders, you must specify this
+  property to avoid builders writing to the same directory.
+- **name**: (optional) name of documentation set (e.g. "Python API")
+- **required**: (optional) if set to True, the build will fail if any
+  documentation builder fails. The default behavior is to ignore builder
+  errors.
 
 Each builder may specify additional configuration keys.
 
@@ -166,43 +166,43 @@ The "doxygen" builder will enable running [Doxygen](Doxygen) on a
 package. As Doxygen is the default builder for any package, it is only
 necessary to configure this option if:
 
--   you wish to run multiple builders in a package
--   you wish to enable additional Doxygen configuration options, which
-    are described below
+- you wish to run multiple builders in a package
+- you wish to enable additional Doxygen configuration options, which are
+  described below
 
 The "doxygen" builder may specify the following additional keys:
 
--   **file_patterns**: (optional) override the Doxygen `FILE_PATTERNS`
-    property
--   **excludes**: (optional) override the Doxygen `EXCLUDE` property
--   **homepage**: (optional) link to project home page
--   **exclude_patterns**: **ROS C-Turtle** (optional) override Doxygen
-    `EXCLUDE_PATTERNS` property.
--   **javadoc_autobrief**: (optional) override Doxygen
-    `JAVADOC_AUTOBRIEF` property. Default `NO`.
--   **multiline_cpp_is_brief**: (optional) override Doxygen property
-    `MULTILINE_CPP_IS_BRIEF`. Default `NO`.
--   **tab_size**: (optional) override Doxygen property `TAB_SIZE`.
-    Default `8`.
--   **aliases**: (optional) override Doxygen property `ALIASES`.
-    Default ""
--   **example_patterns**: (optional) override Doxygen property
-    `EXAMPLE_PATTERNS`. Default ""
--   **image_path**: (optional) override Doxygen property `IMAGE_PATH`.
--   **exclude_symbols**: (optional) override Doxygen property
-    `EXCLUDE_SYMBOLS`. Default ""
--   **predefined**: (optional) override Doxygen property `PREDEFINED`.
-    Default ""
--   **use_mdfile_as_mainpage**: (optional) override Doxygen property
-    USE_MDFILE_AS_MAINPAGE. Default ""
--   **generate_treeview**: (optional) override Doxygen property
-    GENERATE_TREEVIEW to specify whether a treeview side panel should be
-    generated. Default "NO"
--   **input_filter**: (optional) override Doxygen property INPUT_FILTER
-    to specify a script to transform the source files with before being
-    passed to Doxygen. Default ""
--   **include_path**: (optional) override Doxygen property INCLUDE_PATH.
-    Default ""
+- **file_patterns**: (optional) override the Doxygen `FILE_PATTERNS`
+  property
+- **excludes**: (optional) override the Doxygen `EXCLUDE` property
+- **homepage**: (optional) link to project home page
+- **exclude_patterns**: **ROS C-Turtle** (optional) override Doxygen
+  `EXCLUDE_PATTERNS` property.
+- **javadoc_autobrief**: (optional) override Doxygen
+  `JAVADOC_AUTOBRIEF` property. Default `NO`.
+- **multiline_cpp_is_brief**: (optional) override Doxygen property
+  `MULTILINE_CPP_IS_BRIEF`. Default `NO`.
+- **tab_size**: (optional) override Doxygen property `TAB_SIZE`.
+  Default `8`.
+- **aliases**: (optional) override Doxygen property `ALIASES`. Default
+  ""
+- **example_patterns**: (optional) override Doxygen property
+  `EXAMPLE_PATTERNS`. Default ""
+- **image_path**: (optional) override Doxygen property `IMAGE_PATH`.
+- **exclude_symbols**: (optional) override Doxygen property
+  `EXCLUDE_SYMBOLS`. Default ""
+- **predefined**: (optional) override Doxygen property `PREDEFINED`.
+  Default ""
+- **use_mdfile_as_mainpage**: (optional) override Doxygen property
+  USE_MDFILE_AS_MAINPAGE. Default ""
+- **generate_treeview**: (optional) override Doxygen property
+  GENERATE_TREEVIEW to specify whether a treeview side panel should be
+  generated. Default "NO"
+- **input_filter**: (optional) override Doxygen property INPUT_FILTER to
+  specify a script to transform the source files with before being
+  passed to Doxygen. Default ""
+- **include_path**: (optional) override Doxygen property INCLUDE_PATH.
+  Default ""
 
 Simple example:
 
@@ -241,9 +241,9 @@ enabled in a custom epydoc config file.
 
 The "epydoc" builder may specify the following additional keys:
 
--   **exclude**: (optional) override the Epydoc `\--exclude` option
--   **config**: (optional) override the Epydoc `\--config` option,
-    which passes in a separate Epydoc configuration file.
+- **exclude**: (optional) override the Epydoc `\--exclude` option
+- **config**: (optional) override the Epydoc `\--config` option, which
+  passes in a separate Epydoc configuration file.
 
 Simple example:
 
@@ -265,10 +265,9 @@ package.
 
 The "sphinx" builder may specify the following additional keys:
 
--   **sphinx_root_dir**: (optional) root directory of Sphinx documents,
-    i.e. the location of `index.rst` and `conf.py`. If not
-    specified, it will look for an `index.rst` file in the root of the
-    ROS package.
+- **sphinx_root_dir**: (optional) root directory of Sphinx documents,
+  i.e. the location of `index.rst` and `conf.py`. If not specified,
+  it will look for an `index.rst` file in the root of the ROS package.
 
 Simple example:
 
@@ -291,8 +290,8 @@ with the link to the specified URL.
 
 The "external" builder takes in the following additional keys:
 
--   **external_url**: URL of external documentation
--   **external_label**: (optional) link text
+- **external_url**: URL of external documentation
+- **external_label**: (optional) link text
 
 ### (Option) Using Doxygen Tag Files
 
@@ -322,11 +321,11 @@ rosdoc_lite -o doc -g doc/tags/my_package.tag /path/to/my/package
 with the `-t` option. This yaml file should contain a list of
 dictionaries, where each dictionary has the following standard keys:
 
--   **docs_url**: The URL that corresponds to the entry point of the
-    documentation associated with the tag file.
--   **location**: The location of the tag file to pass to Doxygen. This
-    can be on the local file system (use <file://>) or a URL (use
-    <http://>).
+- **docs_url**: The URL that corresponds to the entry point of the
+  documentation associated with the tag file.
+- **location**: The location of the tag file to pass to Doxygen. This
+  can be on the local file system (use <file://>) or a URL (use
+  <http://>).
 
 An example tags (example_tags.yaml) file is shown below:
 
@@ -409,7 +408,7 @@ verify what your documentation looks like before checking it in.
 rosdoc_lite is used automatically generate documentation on the ros.org
 web server. Frequent updates are made to:
 
--   <http://docs.ros.org/api/>
+- <http://docs.ros.org/api/>
 
 It is also used to generate the data for the `PackageHeader`,
 `StackHeader` and `MsgSrvDoc` wiki macros that you see on many of

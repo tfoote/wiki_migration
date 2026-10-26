@@ -13,8 +13,8 @@ part.
 To do so, two sets of transformations are fed to the `calibrator`
 node.
 
--   a list of camera-to-object transformations
--   a list of world to hand transformations
+- a list of camera-to-object transformations
+- a list of world to hand transformations
 
 Once the node has enough transformations, it can estimate the
 camera-to-hand transformation which is the goal of the calibration.
@@ -30,8 +30,8 @@ package abilities.
 [visp_hand2eye_calibration](visp_hand2eye_calibration) is part of
 [vision_visp](vision_visp) stack.
 
--   To install [visp_hand2eye_calibration](visp_hand2eye_calibration)
-    package run 
+- To install [visp_hand2eye_calibration](visp_hand2eye_calibration)
+  package run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-visp-hand2eye-calibration
@@ -39,10 +39,9 @@ sudo apt-get install ros-$ROS_DISTRO-visp-hand2eye-calibration
 
 
 
-```{=html}
 <!-- -->
-```
--   Or to install the complete stack run 
+
+- Or to install the complete stack run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp

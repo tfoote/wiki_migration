@@ -7,8 +7,8 @@ range-bearing observations.
 ## Further documentation
 
 The ROS node mrpt_ekf_slam_3d is a wrapper for the C++ class
-[mrpt::slam::CRangeBearingKFSLAM](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_range_bearing_k_f_s_l_a_m.html)**
-**, part of MRPT. Thus, check out the documentation of that class for
+[mrpt::slam::CRangeBearingKFSLAM](http://reference.mrpt.org/devel/classmrpt_1_1slam_1_1_c_range_bearing_k_f_s_l_a_m.html)
+****, part of MRPT. Thus, check out the documentation of that class for
 further details.
 
 For the convention on coordinate frames see

@@ -26,19 +26,19 @@ Sample image using `Gnome`:
 
 Users can:
 
--   See all `.launch` files on the local file system, and select one
-    in the pulldown menu.
--   See all nodes defined in a `.launch` file. In the image above,
-    elements of each row are (from left):
+- See all `.launch` files on the local file system, and select one in
+  the pulldown menu.
+- See all nodes defined in a `.launch` file. In the image above,
+  elements of each row are (from left):
 
   -- --------------------------- -- --------------------- -- ------------------- -- --------------------- -- ---------- -- ------------------- -- --------------------- --
      name of instantiated node      number of times run      start&stop button      restart-able button      pkg name      .launch file name      `ARG` input field   
   -- --------------------------- -- --------------------- -- ------------------- -- --------------------- -- ---------- -- ------------------- -- --------------------- --
 
--   Run and stop nodes individually
--   Change `ARG` element value in `.launch` file before the node
-    gets started
--   Start and stop all nodes at once
+- Run and stop nodes individually
+- Change `ARG` element value in `.launch` file before the node gets
+  started
+- Start and stop all nodes at once
 
 ### What rqt_launch does NOT do
 
@@ -46,13 +46,13 @@ This list is just a clarification/disclaimer. Enhancement request is
 welcomed at Bugtracker (link is available at `Package Summary` of this
 page).
 
--   Edit `.launch` file
--   Show hierarchy of included `.launch` files \-- nodes that are
-    defined in included files are shown on the same level without being
-    noted so.
--   Error or any print output in each node's process is not caught.
--   a workaround is to use [rqt_console](rqt_console) along with
-    `rqt_launch`
+- Edit `.launch` file
+- Show hierarchy of included `.launch` files \-- nodes that are
+  defined in included files are shown on the same level without being
+  noted so.
+- Error or any print output in each node's process is not caught.
+- a workaround is to use [rqt_console](rqt_console) along with
+  `rqt_launch`
 
 ### Difference between roslaunch
 
@@ -65,8 +65,8 @@ time they take).
 
 ### Design discussion
 
--   [Discussion about requirements](https://github.com/ros-visualization/rqt/issues/57)
+- [Discussion about requirements](https://github.com/ros-visualization/rqt/issues/57)
 
 ## Links
 
--   [SIG roslaunch](sig/roslaunch) - not necessarilly tied though.
+- [SIG roslaunch](sig/roslaunch) - not necessarilly tied though.

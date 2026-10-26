@@ -9,22 +9,22 @@ messages and services.
 
 Some of the key features of Webots include:
 
--   Cross-platform \[windows, linux, mac\].
--   Stable physics engine.
--   Reproducibility.
--   Efficient rendering engine using
-    [Physically Based Rendering](https://en.wikipedia.org/wiki/Physically_based_rendering)
-    for realistic images.
--   Simple and intuitive user interface.
--   Wide range of simulated
-    [sensors](https://www.cyberbotics.com/doc/guide/sensors) and
-    [actuators](https://www.cyberbotics.com/doc/guide/actuators)
-    available and ready to work.
--   Wide range of
-    [robot models](https://www.cyberbotics.com/doc/guide/robots)
-    available and ready to work.
--   Wide range of documented
-    [samples](https://www.cyberbotics.com/doc/guide/sample-webots-applications).
+- Cross-platform \[windows, linux, mac\].
+- Stable physics engine.
+- Reproducibility.
+- Efficient rendering engine using
+  [Physically Based Rendering](https://en.wikipedia.org/wiki/Physically_based_rendering)
+  for realistic images.
+- Simple and intuitive user interface.
+- Wide range of simulated
+  [sensors](https://www.cyberbotics.com/doc/guide/sensors) and
+  [actuators](https://www.cyberbotics.com/doc/guide/actuators) available
+  and ready to work.
+- Wide range of
+  [robot models](https://www.cyberbotics.com/doc/guide/robots) available
+  and ready to work.
+- Wide range of documented
+  [samples](https://www.cyberbotics.com/doc/guide/sample-webots-applications).
 
 [Youtube](https://www.youtube.com/watch?v=uphkNrJgqCY)
 
@@ -101,7 +101,17 @@ the developers on [Discord](https://discord.gg/fyPuMM4).
 
 ## Acknowledgement
 
-[Included page rosin/acknowledgement not found](Included page rosin/acknowledgement not found)
+![ROSIN Logo\|height=60](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_ack_logo_wide.png)
+
+Supported by ROSIN - ROS-Industrial Quality-Assured Robot Software
+Components.\
+More information: [rosin-project.eu](http://rosin-project.eu/)\
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --
+     ![EU Flag\|height=45](https://raw.githubusercontent.com/rosin-project/press_kit/master/img/rosin_eu_flag.jpg)      <99%> This project has received funding from the European Union's Horizon 2020\   
+                                                                                                                        research and innovation programme under grant agreement No. 732287.                 
+
+  -- --------------------------------------------------------------------------------------------------------------- -- ----------------------------------------------------------------------------------- --
 
 \
 \

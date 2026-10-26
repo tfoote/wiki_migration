@@ -11,12 +11,11 @@ useful, and it still has some level of support.
 The location of XML map data in Open Street Map format is specified by
 URL. The current implementation only supports these URL types:
 
--   `file:*/full/path/to/local/map.xml`*
+- `file:*/full/path/to/local/map.xml`*
 
-```{=html}
 <!-- -->
-```
--   `package:*ros_package/data/map.osm`*
+
+- `package:*ros_package/data/map.osm`*
 
 ## ROS Interface
 

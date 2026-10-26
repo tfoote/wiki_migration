@@ -1,9 +1,9 @@
 ## Associated Hardware
 
--   Ocean Server: <http://www.ocean-server.com/overview.html>
--   IBPS specific documentation
-    [IBPS Protocol](http://pr.willowgarage.com/wiki/IBPSBatteryInterface/IBPS_Protocol)
--   The Smart Battery Standard <attachment:sbdat110.pdf>
+- Ocean Server: <http://www.ocean-server.com/overview.html>
+- IBPS specific documentation
+  [IBPS Protocol](http://pr.willowgarage.com/wiki/IBPSBatteryInterface/IBPS_Protocol)
+- The Smart Battery Standard <attachment:sbdat110.pdf>
 
 ## Nodes
 

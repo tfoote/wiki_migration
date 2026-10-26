@@ -43,10 +43,9 @@ If outside ros, you will also need to link to `ecl_errors`.
 
 ## Usage
 
--   [Debug Modes](ecl_errors/Tutorials/Debug Modes in the Ecl) -
-    toggling debug/release mode functionality.
--   [Error Handling](ecl_errors/Tutorials/Error Handling in the Ecl) -
-    simple macros and error flags for error handling at the lowest
-    level.
--   [Assertions](ecl_errors/Tutorials/Assertions in the Ecl) - run-time
-    and cmopile-time asserts and aborts.
+- [Debug Modes](ecl_errors/Tutorials/Debug Modes in the Ecl) - toggling
+  debug/release mode functionality.
+- [Error Handling](ecl_errors/Tutorials/Error Handling in the Ecl) -
+  simple macros and error flags for error handling at the lowest level.
+- [Assertions](ecl_errors/Tutorials/Assertions in the Ecl) - run-time
+  and cmopile-time asserts and aborts.

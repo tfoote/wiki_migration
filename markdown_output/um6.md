@@ -20,9 +20,9 @@ As an avionics device, the UM6's serial protocol reports values in NED.
 The driver contained in this package converts vectors and quaternions to
 the ROS convention (ENU) before publishing, which is:
 
--   x forward
--   y left
--   z up
+- x forward
+- y left
+- z up
 
 Please see
 [REP-0103](http://www.ros.org/reps/rep-0103.html#axis-orientation) for

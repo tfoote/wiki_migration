@@ -24,7 +24,7 @@ Each joint has predefined limits:
 ### Tray
 
   -- ---------------- -- --------------------------- -- ------------------------------------------- --
-     **Version **        **description**                **used in robot**                           
+     **Version**         **description**                **used in robot**                           
      tray                Tray with 1 PRL                cob3-1, cob3-2, cob3-3, cob3-4 and cob3-7   
      tray_powerball      Tray with 1 PRL and 1 ERB      cob3-5 and cob3-6                           
   -- ---------------- -- --------------------------- -- ------------------------------------------- --
@@ -67,12 +67,11 @@ together.
 We used Solidworks to generate stl files. Please pay attention to the
 following issues while generating new stl file:
 
--   define a new reference coordinate system in SolidWorks and export
-    the stl file using this reference coordinate system.
--   the mesh size (amount of triangles) is limited to ?32000?
--   the stl file should not begin with "solid", therefore substitute
-    the string "solid" e.g. with "robot" using
-    
+- define a new reference coordinate system in SolidWorks and export the
+  stl file using this reference coordinate system.
+- the mesh size (amount of triangles) is limited to ?32000?
+- the stl file should not begin with "solid", therefore substitute the
+  string "solid" e.g. with "robot" using 
 
 ```
 sed -i '0,/RE/s/solid/robot/' */*.stl

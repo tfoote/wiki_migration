@@ -5,11 +5,11 @@ This package contains an USB camera driver which is almost compatible to
 [ros_control](http://wiki.ros.org/ros_control). Major enhancements over
 usb_cam are;
 
--   impremented as a nodelet
--   supports h264 pixel format (1/10 network usage compared with mjpeg)
--   publishes raw packets from the camera (1/10 cpu usage and less
-    latency compared with decoding mjpeg packets in the node)
--   accepts 3rd party controllers
+- impremented as a nodelet
+- supports h264 pixel format (1/10 network usage compared with mjpeg)
+- publishes raw packets from the camera (1/10 cpu usage and less latency
+  compared with decoding mjpeg packets in the node)
+- accepts 3rd party controllers
 
 [Slides from ROS Japan UG #28 (in Japanese)](https://drive.google.com/file/d/15ueFzd4BfJbSNH38vfEatP0qbntPlJCy/view)
 
@@ -247,5 +247,5 @@ See the
 
 [codec_image_transport](https://github.com/yoshito-n-students/codec_image_transport)
 
--   for subscriber-side decoding of h264 packets published by the
-    CompressedPacketController
+- for subscriber-side decoding of h264 packets published by the
+  CompressedPacketController

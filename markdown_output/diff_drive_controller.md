@@ -17,10 +17,10 @@ The controller works with wheel joints through a **velocity** interface.
 
 ### Other features
 
--   **Realtime-safe** implementation.
--   Odometry publishing
--   Task-space velocity, acceleration and jerk limits
--   Automatic stop after command time-out
+- **Realtime-safe** implementation.
+- Odometry publishing
+- Task-space velocity, acceleration and jerk limits
+- Automatic stop after command time-out
 
 ### Mathematical Background
 
@@ -30,29 +30,28 @@ The illustration on the right shows a sketch of a
 [differential drive wheeled robot](https://en.wikipedia.org/wiki/Differential_wheeled_robot).
 In this sketch, the following notation applies.
 
--   ![](https://latex.codecogs.com/svg.image?V) - linear velocity
-    (Velocity Command, see chapter 1.1)
--   ![](https://latex.codecogs.com/svg.image?\omega) - angular velocity
-    by which the robot rotates (Velocity Command, see chapter 1.1)
--   ![](https://latex.codecogs.com/svg.image?X) and
-    ![](https://latex.codecogs.com/svg.image?Y) - global coordinate
-    system
--   {{<https://latex.codecogs.com/svg.image?X_%7BB%7D> }} and
-    {{<https://latex.codecogs.com/svg.image?Y_%7BB%7D> }} - locale body
-    coordinate system
--   ![](https://latex.codecogs.com/svg.image?\varphi ) - angle of robot
-    with respect to global coordinate system
--   ![](https://latex.codecogs.com/svg.image?r) - radius of the wheels
--   ![](https://latex.codecogs.com/svg.image?b) - width of the vehicle
--   ![](https://latex.codecogs.com/svg.image?ICR)⁣ - instantaneous center
-    of rotation
--   {{<https://latex.codecogs.com/svg.image?v_%7BL%7D> }},
-    {{<https://latex.codecogs.com/svg.image?v_%7BR%7D> }} - ground
-    contact speed of left and right wheel
--   {{[https://latex.codecogs.com/svg.image?\\omega_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
-    }},
-    {{[https://latex.codecogs.com/svg.image?\\omega_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
-    }} - angular velocity of left and right wheel
+- ![](https://latex.codecogs.com/svg.image?V) - linear velocity
+  (Velocity Command, see chapter 1.1)
+- ![](https://latex.codecogs.com/svg.image?\omega) - angular velocity by
+  which the robot rotates (Velocity Command, see chapter 1.1)
+- ![](https://latex.codecogs.com/svg.image?X) and
+  ![](https://latex.codecogs.com/svg.image?Y) - global coordinate system
+- {{<https://latex.codecogs.com/svg.image?X_%7BB%7D> }} and
+  {{<https://latex.codecogs.com/svg.image?Y_%7BB%7D> }} - locale body
+  coordinate system
+- ![](https://latex.codecogs.com/svg.image?\varphi ) - angle of robot
+  with respect to global coordinate system
+- ![](https://latex.codecogs.com/svg.image?r) - radius of the wheels
+- ![](https://latex.codecogs.com/svg.image?b) - width of the vehicle
+- ![](https://latex.codecogs.com/svg.image?ICR)⁣ - instantaneous center
+  of rotation
+- {{<https://latex.codecogs.com/svg.image?v_%7BL%7D> }},
+  {{<https://latex.codecogs.com/svg.image?v_%7BR%7D> }} - ground contact
+  speed of left and right wheel
+- {{[https://latex.codecogs.com/svg.image?\\omega_{L}](https://latex.codecogs.com/svg.image?\omega_%7BL%7D)
+  }},
+  {{[https://latex.codecogs.com/svg.image?\\omega_{R}](https://latex.codecogs.com/svg.image?\omega_%7BR%7D)
+  }} - angular velocity of left and right wheel
 
 Using the kinematic model (see
 [here](https://en.wikipedia.org/wiki/Differential_wheeled_robot#Kinematics_of_Differential_Drive_Robots)),

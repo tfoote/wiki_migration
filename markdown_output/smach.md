@@ -16,35 +16,30 @@ explicitly. This basically takes the hacking out of hacking together
 different modules to make systems like mobile robotic manipulators do
 interesting things.
 
--   Fast prototyping: The straightforward Python-based SMACH syntax
-    makes it easy to quickly prototype a state machine and start running
-    it.
+- Fast prototyping: The straightforward Python-based SMACH syntax makes
+  it easy to quickly prototype a state machine and start running it.
 
-```{=html}
 <!-- -->
-```
--   Complex state machines: SMACH allows you to design, maintain and
-    debug large, complex hierarchical state machines. You can find an
-    example of a complex hierarchical state machine
-    [here](pr2_plugs_executive).
 
-```{=html}
+- Complex state machines: SMACH allows you to design, maintain and debug
+  large, complex hierarchical state machines. You can find an example of
+  a complex hierarchical state machine [here](pr2_plugs_executive).
+
 <!-- -->
-```
--   Introspection: SMACH gives you full introspection in your state
-    machines, state transitions, data flow, etc. See the
-    [smach_viewer](smach_viewer) for more details.
+
+- Introspection: SMACH gives you full introspection in your state
+  machines, state transitions, data flow, etc. See the
+  [smach_viewer](smach_viewer) for more details.
 
 **When should I NOT use SMACH?**
 
--   Unstructured tasks: SMACH will fall short as the scheduling of your
-    task becomes less structured.
--   Low-level systems: SMACH is not meant to be used as a state machine
-    for *low-level* systems that require high efficiency, SMACH is a
-    *task-level* architecture.
--   Smash: Do not use SMACH when you want to smash something, for that
-    use
-    [ smash](https://en.wikipedia.org/wiki/Hulk_and_the_Agents_of_S.M.A.S.H.).
+- Unstructured tasks: SMACH will fall short as the scheduling of your
+  task becomes less structured.
+- Low-level systems: SMACH is not meant to be used as a state machine
+  for *low-level* systems that require high efficiency, SMACH is a
+  *task-level* architecture.
+- Smash: Do not use SMACH when you want to smash something, for that use
+  [ smash](https://en.wikipedia.org/wiki/Hulk_and_the_Agents_of_S.M.A.S.H.).
 
 **Is SMACH only a finite state machine library?**
 

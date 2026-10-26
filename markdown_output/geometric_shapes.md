@@ -9,4 +9,4 @@ containment, ray intersection and constraint region representation.
 
 ## API Stability
 
--   C++ API is UNREVIEWED and UNSTABLE
+- C++ API is UNREVIEWED and UNSTABLE

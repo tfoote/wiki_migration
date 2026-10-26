@@ -21,17 +21,17 @@ value is determined by the conversion functions.
 In addition handles for the following command interfaces are available
 if the given modes are supported by the device:
 
--   `hardware_interface::PositionJointInterface`:
--   Profiled Position
--   Interpolated Position
--   Cyclic Synchronous Position
--   `hardware_interface::VelocityJointInterface`:
--   Velocity
--   Profiled Velocity
--   Cyclic Synchronous Velocity
--   `hardware_interface::EffortJointInterface`:
--   Profiled Torque
--   Cyclic Synchronous Torque
+- `hardware_interface::PositionJointInterface`:
+- Profiled Position
+- Interpolated Position
+- Cyclic Synchronous Position
+- `hardware_interface::VelocityJointInterface`:
+- Velocity
+- Profiled Velocity
+- Cyclic Synchronous Velocity
+- `hardware_interface::EffortJointInterface`:
+- Profiled Torque
+- Cyclic Synchronous Torque
 
 #### joint limits
 
@@ -65,14 +65,14 @@ and
 [ operators](http://muparser.beltoforion.de/mup_features.html#idDef3 ),
 the following functions are available:
 
--   rad2deg(radians): convert from radians to degrees
--   deg2rad(degrees): convert from degrees to radians
--   norm(value, min, max): normalize value to the range \[min, max)
--   smooth(value, old_value, alpha):
-    [ exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing ),
-    returns alpha\*val + (1.0-alpha)\*old_val
--   avg(val1,val2,\...): average functions that stops on the first NaN
-    value
+- rad2deg(radians): convert from radians to degrees
+- deg2rad(degrees): convert from degrees to radians
+- norm(value, min, max): normalize value to the range \[min, max)
+- smooth(value, old_value, alpha):
+  [ exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing ),
+  returns alpha\*val + (1.0-alpha)\*old_val
+- avg(val1,val2,\...): average functions that stops on the first NaN
+  value
 
 Further two constants are defined for convenience: `pi` and `nan`.
 

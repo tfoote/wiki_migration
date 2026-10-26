@@ -17,12 +17,12 @@ monitor the tracking result.
 
 ### Use cases
 
--   [Optical Localization for Robot Arms, Initial Experiments (Edinburgh Hacklab)](http://edinburghhacklab.com/2012/04/optical-localization-for-robot-arms-initial-experiments/)
--   [Augmented reality, object grasping by Romeo humanoid robot, satellite tracking moving on a geosynchronous orbit, \...](https://visp.inria.fr/mbt/)
+- [Optical Localization for Robot Arms, Initial Experiments (Edinburgh Hacklab)](http://edinburghhacklab.com/2012/04/optical-localization-for-robot-arms-initial-experiments/)
+- [Augmented reality, object grasping by Romeo humanoid robot, satellite tracking moving on a geosynchronous orbit, \...](https://visp.inria.fr/mbt/)
 
 ## Reference
 
--   [A.I. Comport, E. Marchand, M. Pressigout, F. Chaumette. Real-time markerless tracking for augmented reality: the virtual visual servoing framework. IEEE Trans. on Visualization and Computer Graphics, 12(4):615-628, July 2006](http://www.irisa.fr/lagadic/publi/publi/Comport06b-eng.html)
+- [A.I. Comport, E. Marchand, M. Pressigout, F. Chaumette. Real-time markerless tracking for augmented reality: the virtual visual servoing framework. IEEE Trans. on Visualization and Computer Graphics, 12(4):615-628, July 2006](http://www.irisa.fr/lagadic/publi/publi/Comport06b-eng.html)
 
 ## Roadmap
 
@@ -31,17 +31,17 @@ happen in the future but impact should be limited.
 
 These features would be valuable contribution to this package:
 
--   Rely on !AssImp to support COLLADA models (instead of ViSP based
-    VRML loader).
--   Use RViz markers and API to support display directly in RViz.
+- Rely on !AssImp to support COLLADA models (instead of ViSP based VRML
+  loader).
+- Use RViz markers and API to support display directly in RViz.
 
 ## Installation
 
 [visp_tracker](visp_tracker) is part of [vision_visp](vision_visp)
 stack.
 
--   To install [visp_tracker](visp_tracker) package run
-    
+- To install [visp_tracker](visp_tracker) package run
+  
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-visp-tracker
@@ -49,10 +49,9 @@ sudo apt-get install ros-$ROS_DISTRO-visp-tracker
 
 
 
-```{=html}
 <!-- -->
-```
--   Or to install the complete stack run 
+
+- Or to install the complete stack run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
@@ -268,9 +267,9 @@ client and viewer.
 
 They are respectively named:
 
--   `visp_tracker/Tracker`
--   `visp_tracker/TrackerClient`
--   `visp_tracker/TrackerViewer`
+- `visp_tracker/Tracker`
+- `visp_tracker/TrackerClient`
+- `visp_tracker/TrackerViewer`
 
 \...and provide the same API than the equivalent nodes.
 

@@ -37,10 +37,10 @@ in the previous section.
 
 ### Other features
 
--   **Realtime-safe** implementation.
--   Odometry publishing
--   Task-space velocity, acceleration and jerk limits
--   Automatic stop after command time-out
+- **Realtime-safe** implementation.
+- Odometry publishing
+- Task-space velocity, acceleration and jerk limits
+- Automatic stop after command time-out
 
 ## Robots
 

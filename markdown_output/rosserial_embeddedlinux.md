@@ -33,16 +33,15 @@ of ROS.
 The [rosserial_embeddedlinux](rosserial_embeddedlinux) package supports
 the following major connection types and capabilities:
 
--   TCP/IP or serial connection between ROS system and embedded linux
-    system supports wifi, wired ethernet, USB-serial dongle, wired
-    serial, etc.
--   TCP/IP connection supports reconnect after disconnect (e.g. in case
-    robot wanders out of range of wifi, or program on robot is
-    restarted).
--   TCP/IP connection supports multiple connections from processes on
-    embedded linux systems. This supports both multiple processes on one
-    robot (e.g. a vision process and a robot motion process), and
-    multiple robots (or both).
+- TCP/IP or serial connection between ROS system and embedded linux
+  system supports wifi, wired ethernet, USB-serial dongle, wired serial,
+  etc.
+- TCP/IP connection supports reconnect after disconnect (e.g. in case
+  robot wanders out of range of wifi, or program on robot is restarted).
+- TCP/IP connection supports multiple connections from processes on
+  embedded linux systems. This supports both multiple processes on one
+  robot (e.g. a vision process and a robot motion process), and multiple
+  robots (or both).
 
 ## Purpose of Package
 

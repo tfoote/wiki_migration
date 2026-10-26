@@ -51,9 +51,9 @@ in a camera driver node:
 
 #### Services
 
--   `set_camera_info`
-    ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html))
-    for calibration information
+- `set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html))
+  for calibration information
 
 #### Parameters
 
@@ -80,4 +80,4 @@ Search for `cinfo_` in the source code to see where the
 !CameraInfoManager class is used. In particular, note the handling of
 Header time stamps and transform frame IDs.
 
--   [camera1394](https://github.com/ros-drivers/camera1394/blob/master/src/nodes/driver1394.cpp#L80)
+- [camera1394](https://github.com/ros-drivers/camera1394/blob/master/src/nodes/driver1394.cpp#L80)

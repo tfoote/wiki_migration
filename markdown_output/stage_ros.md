@@ -23,9 +23,9 @@ rosrun stage_ros stageros [-g runs headless] <world> [standard ROS args]
 
  Parameters:
 
--   world : The Stage .world file to load.
--   -g : If set, this option will run stage as "headless," no GUI will
-    be displayed.
+- world : The Stage .world file to load.
+- -g : If set, this option will run stage as "headless," no GUI will
+  be displayed.
 
 #### World syntax
 
@@ -91,11 +91,11 @@ use canonical (32FC1) or OpenNI (16UC1) representation
 
 #### tf transforms provided
 
-`base_link` &rarr; `base_laser` transform from robot base to
-attached laser `base_footprint` &rarr; `base_link` identity
-transform `odom` &rarr; `base_footprint` transform from odometric
-origin to base `base_link` &rarr; `camera` transform from robot base
-to attached camera
+`base_link` \&rarr; `base_laser` transform from robot base to
+attached laser `base_footprint` \&rarr; `base_link` identity
+transform `odom` \&rarr; `base_footprint` transform from odometric
+origin to base `base_link` \&rarr; `camera` transform from robot
+base to attached camera
 
 ## Using Stage controllers
 

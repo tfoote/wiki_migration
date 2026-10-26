@@ -7,7 +7,7 @@ send back to you as rostopic message
 
 send ICMP ECHO_REQUEST to <host>
 
--   `host`: network address or hostname to ping
+- `host`: network address or hostname to ping
 
 ## Examples
 

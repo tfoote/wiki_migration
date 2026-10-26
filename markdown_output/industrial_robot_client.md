@@ -111,7 +111,7 @@ int main(int argc, char** argv)
 Further examples of creating robot-specific interfaces may be found in
 the following code samples:
 
--   [ABB driver client](https://github.com/ros-industrial/abb/blob/kinetic-devel/abb_driver/src/abb_joint_downloader_node.cpp)
+- [ABB driver client](https://github.com/ros-industrial/abb/blob/kinetic-devel/abb_driver/src/abb_joint_downloader_node.cpp)
 
 ## Nodes
 
@@ -251,6 +251,11 @@ node.2 {
 
 
 
-[Included page industrial/contact_us_tech_support not found](Included page industrial/contact_us_tech_support not found)
+## Contact us/Technical support
+
+For questions about this package or ROS-Industrial in general, please
+contact the developers by posting a message in the
+[ROS-Industrial category](https://discourse.ros.org/c/ros-industrial) on
+ROS Discourse.
 
 ## Reporting bugs

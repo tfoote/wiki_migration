@@ -54,10 +54,10 @@ There is no organized design documentation, but there are a few
 documents used during the design process that might be useful for anyone
 wanting to understand the existing work:
 
--   <https://docs.google.com/presentation/d/1sq28YcKFI8pE8WpvZUnk_jFHzbe72pgsNdwypuND7q8/edit?usp=sharing>
--   <https://docs.google.com/document/d/18kAOYxSmVE1ZEQ5P1nbrJalR8vSynuqu9QFaFzxxeqY/edit?usp=sharing>
--   <https://docs.google.com/document/d/1GVQ1wbrYymwp_8alyqZKRZjw0cTJ6PZAO-q1aYJBVVQ/edit?usp=sharing>
+- <https://docs.google.com/presentation/d/1sq28YcKFI8pE8WpvZUnk_jFHzbe72pgsNdwypuND7q8/edit?usp=sharing>
+- <https://docs.google.com/document/d/18kAOYxSmVE1ZEQ5P1nbrJalR8vSynuqu9QFaFzxxeqY/edit?usp=sharing>
+- <https://docs.google.com/document/d/1GVQ1wbrYymwp_8alyqZKRZjw0cTJ6PZAO-q1aYJBVVQ/edit?usp=sharing>
 
 There was also an article in IEEE Spectrum (ROS Topics):
 
--   <http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6990859>
+- <http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6990859>

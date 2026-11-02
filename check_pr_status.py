@@ -15,6 +15,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 from collections import Counter
 
@@ -56,6 +57,10 @@ def fetch_pr_status(url, token=None):
     owner, repo, number = parse_pr_url(url)
     api = f"https://api.github.com/repos/{owner}/{repo}/pulls/{number}"
     pr = github_api_request(api, token=token)
+    if pr.get("state") == "open" and pr.get("mergeable") is None and MERGEABLE_RETRY_DELAY:
+        # GitHub computes mergeability lazily; ask again once it's had a moment.
+        time.sleep(MERGEABLE_RETRY_DELAY)
+        pr = github_api_request(api, token=token)
     try:
         reviews = github_api_request(f"{api}/reviews?per_page=100", token=token)
     except urllib.error.HTTPError:
@@ -68,12 +73,15 @@ def fetch_pr_status(url, token=None):
         state = "DRAFT"
     else:
         state = "OPEN"
-    return {
+    row = {
         "url": url,
         "repo": f"{owner}/{repo}",
         "number": number,
         "state": state,
         "review": latest_review_state(reviews if isinstance(reviews, list) else []),
+        "requested_reviewers": [u.get("login", "") for u in pr.get("requested_reviewers") or []]
+        + [t.get("slug", "") for t in pr.get("requested_teams") or []],
+        "mergeable_state": pr.get("mergeable_state") or "unknown",
         "comments": int(pr.get("comments", 0)) + int(pr.get("review_comments", 0)),
         "additions": int(pr.get("additions", 0) or 0),
         "deletions": int(pr.get("deletions", 0) or 0),
@@ -84,6 +92,51 @@ def fetch_pr_status(url, token=None):
         "closed_at": pr.get("merged_at") or pr.get("closed_at") or "",
         "merged_by": (pr.get("merged_by") or {}).get("login", ""),
     }
+    row["next"] = next_step(row)
+    return row
+
+
+# Seconds to wait before re-fetching a PR whose mergeability isn't computed yet.
+MERGEABLE_RETRY_DELAY = 2
+
+# Next step for an open PR, in the order shown in the summary.
+NEXT_STEPS = [
+    ("READY", "Ready to merge", "approved and mergeable"),
+    ("REVIEW", "Needs review", "no approving review yet"),
+    ("CHANGES", "Changes requested", "a reviewer requested changes"),
+    ("CONFLICT", "Merge conflicts", "branch conflicts with the base branch"),
+    ("BEHIND", "Behind base", "approved, but must be updated with the base branch"),
+    ("BLOCKED", "Blocked", "approved, but blocked by required checks or reviews"),
+    ("DRAFT", "Draft", "marked as draft"),
+]
+
+
+def next_step(row):
+    """Classify what an open PR is waiting on ('' for merged/closed PRs).
+
+    Uses the review verdict plus GitHub's mergeable_state: clean (mergeable),
+    unstable (mergeable, non-required checks failing), has_hooks, dirty
+    (conflicts), behind (needs update), blocked (required checks/reviews
+    missing), unknown (not computed).
+    """
+    if row["state"] in ("MERGED", "CLOSED", "ERROR"):
+        return ""
+    if row["state"] == "DRAFT":
+        return "DRAFT"
+    if row["review"] == "CHANGES_REQUESTED":
+        return "CHANGES"
+    merge = row.get("mergeable_state", "unknown")
+    if merge == "dirty":
+        return "CONFLICT"
+    if row["review"] != "APPROVED":
+        return "REVIEW"
+    if merge == "behind":
+        return "BEHIND"
+    if merge == "blocked":
+        return "BLOCKED"
+    # clean / unstable / has_hooks are mergeable; "unknown" after an approval
+    # is treated as ready (GitHub hadn't computed it yet).
+    return "READY"
 
 
 def days_since(timestamp, now=None):
@@ -114,12 +167,13 @@ def collect(submitted, token=None):
 
 def print_listing(rows, out=None):
     out = out or sys.stdout
-    headers = ["Package", "PR", "Base", "State", "Review", "Cmts", "Lines", "Files", "Age", "Idle"]
+    headers = ["Package", "PR", "Base", "State", "Review", "Next", "Cmts", "Lines", "Files",
+               "Age", "Idle"]
     table = []
     for r in rows:
         if r["state"] == "ERROR":
             table.append([r["package"], r["url"], "", "ERROR", r.get("error", "")[:40],
-                          "", "", "", "", ""])
+                          "", "", "", "", "", ""])
             continue
         age = days_since(r["created_at"])
         idle = days_since(r["closed_at"] or r["updated_at"])
@@ -129,6 +183,7 @@ def print_listing(rows, out=None):
             r["base"],
             r["state"],
             r["review"].replace("_", " ").lower() or "-",
+            r.get("next") or "-",
             str(r["comments"]),
             f"+{r['additions']}/-{r['deletions']}",
             str(r["changed_files"]),
@@ -143,7 +198,9 @@ def print_listing(rows, out=None):
     for row in table:
         print(fmt.format(*row), file=out)
     print("\nAge = days since opened; Idle = days since last update (or since merge/close);\n"
-          "Lines = lines added/removed; Files = files changed.", file=out)
+          "Lines = lines added/removed; Files = files changed;\n"
+          "Next = " + ", ".join(f"{key} ({desc})" for key, _, desc in NEXT_STEPS) + ".",
+          file=out)
 
 
 def print_summary(rows, submitted, out=None):
@@ -185,22 +242,28 @@ def print_summary(rows, submitted, out=None):
     print(f"Packages with all PRs closed (won't fix): {len(closed_pkgs)}"
           + (f": {', '.join(closed_pkgs)}" if closed_pkgs else ""), file=out)
 
-    attention = [r for r in ok if r["state"] in ("OPEN", "DRAFT")
-                 and r["review"] == "CHANGES_REQUESTED"]
-    discussed = [r for r in ok if r["state"] in ("OPEN", "DRAFT") and r["comments"]
-                 and r["review"] != "CHANGES_REQUESTED"]
-    if attention:
-        print("Changes requested (open):", file=out)
-        for r in attention:
-            print(f"  {r['package']}: {r['url']}", file=out)
-    if discussed:
-        print("Open with comments:", file=out)
-        for r in discussed:
-            print(f"  {r['package']}: {r['url']} ({r['comments']} comments)", file=out)
     open_rows = [r for r in ok if r["state"] in ("OPEN", "DRAFT")]
     if open_rows:
+        print("Next steps for open PRs:", file=out)
+        steps = Counter(r.get("next") for r in open_rows)
+        for key, label, _ in NEXT_STEPS:
+            print(f"  {label + ':':<20}{steps.get(key, 0)}", file=out)
+        for key, label, desc in NEXT_STEPS:
+            group = [r for r in open_rows if r.get("next") == key]
+            if not group:
+                continue
+            print(f"\n{label} ({desc}):", file=out)
+            for r in sorted(group, key=lambda r: -(days_since(r["created_at"]) or 0)):
+                extras = [f"{days_since(r['created_at'])}d old"]
+                if r["comments"]:
+                    extras.append(f"{r['comments']} comments")
+                if key == "REVIEW" and r.get("requested_reviewers"):
+                    extras.append("requested: " + ", ".join(r["requested_reviewers"]))
+                if r.get("mergeable_state") == "unstable":
+                    extras.append("some checks failing")
+                print(f"  {r['package']}: {r['url']} ({'; '.join(extras)})", file=out)
         oldest = max(open_rows, key=lambda r: days_since(r["created_at"]) or 0)
-        print(f"Oldest open PR: {oldest['package']} "
+        print(f"\nOldest open PR: {oldest['package']} "
               f"({days_since(oldest['created_at'])}d) {oldest['url']}", file=out)
     errors = [r for r in rows if r["state"] == "ERROR"]
     if errors:

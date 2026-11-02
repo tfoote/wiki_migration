@@ -12,9 +12,9 @@ messages.
 Each UUID is stored as an array of unsigned bytes. UUID generation is up
 to the programmer, but the intent is for matching features within a
 domain such as Open Street Map to yield the same UUID. The
-[unique_id](unique_id) package provides C++ and Python interfaces for
-generating them: use the `fromURL()` method on a URL constructed from
-the map source.
+[unique_id](https://index.ros.org/p/unique_id) package provides C++ and
+Python interfaces for generating them: use the `fromURL()` method on a
+URL constructed from the map source.
 
 For example, the Open Street Map URL scheme is:
 

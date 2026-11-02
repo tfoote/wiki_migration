@@ -1,6 +1,7 @@
 This package is barely usable alone since it provides only templates to
 create more structured launch files in the derived packages (cf.
-[qb_hand](qb_hand) and [qb_move](qb_move)).
+[qb_hand](https://index.ros.org/p/qb_hand) and
+[qb_move](https://index.ros.org/p/qb_move)).
 
 ## Launch files
 
@@ -16,21 +17,27 @@ Please, use these "macros" whenever is possible to improve '''robustness''', '''
 ### component_bringup
 
 This launch file calls the other templates
-[load_description_template](qb_device_description#load_description_template),
-[controllers_bringup](#controllers_bringup) and
-[control_bringup](#control_bringup) to bringup a control node for a
-single device without starting
-[joint_state_publisher](joint_state_publisher),
-[robot_state_publisher](robot_state_publisher) and [rviz](rviz).
+[load_description_template](https://index.ros.org/p/qb_device_description),
+[controllers_bringup](#controllers_bringup)
+and [control_bringup](#control_bringup) to
+bringup a control node for a single device without starting
+[joint_state_publisher](https://index.ros.org/p/joint_state_publisher),
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher)
+and [rviz](https://index.ros.org/p/rviz).
 
 #### Parameters
 
-Since the only difference w.r.t. the [full_bringup](#full_bringup)
-launch file is the includes of the
-[load_description_template](qb_device_description#load_description_template)
-rather than the [description_bringup](#description_bringup), the
-parameters are exactly the same as the other a part from `use_rviz`
-which is not used. 
+Since the only difference w.r.t. the
+[full_bringup](#full_bringup) launch file
+is the includes of the
+[load_description_template](https://index.ros.org/p/qb_device_description)
+rather than the
+[description_bringup](#description_bringup),
+the parameters are exactly the same as the other a part from
+`use_rviz` which is not used.
+
+<a id="control_bringup"></a>
+
 
 ```clearsilver
 name = control_bringup
@@ -67,7 +74,10 @@ param {
 }
 ```
 
- 
+
+
+<a id="controllers_bringup"></a>
+
 
 ```clearsilver
 name = controllers_bringup
@@ -90,6 +100,8 @@ param {
 ```
 
 
+
+<a id="description_bringup"></a>
 
 
 ```clearsilver
@@ -126,13 +138,13 @@ param {
 
 This launch file calls the other templates
 [description_bringup](#description_bringup),
-[controllers_bringup](#controllers_bringup) and
-[control_bringup](#control_bringup) to bringup a complete control node
-for a single device.
+[controllers_bringup](#controllers_bringup)
+and [control_bringup](#control_bringup) to
+bringup a complete control node for a single device.
 
 #### Parameters
 
 It provides basically the same configuration parameters as the other
 launch files a part from `frequency` and `source_list` of the
-[description_bringup](#description_bringup) which are not exported
-outside.
+[description_bringup](#description_bringup)
+which are not exported outside.

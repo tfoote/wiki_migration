@@ -41,7 +41,7 @@ In this way, the map is built up as more fiducial pairs are observed.
 multiple observations are combined with weighting, to produce an
 estimate of the 6DOF pose of each fiducial marker.
 
-![\|width="300px"](attachment:two_fiducials.png)
+![width="300px"](doc/two_fiducials.png)
 
 ## Getting Started
 
@@ -76,12 +76,13 @@ camera on the robot, so the map can be built. Placing them on the
 ceiling reduces problems with occlusion, but is not required, since a
 full 6DOF pose is estimated.
 
-Two nodes should be run, [aruco_detect](aruco_detect), which handles the
-detection of the fiducials, and [fiducial_slam](fiducial_slam), which
-combines the fiducial pose estimates and builds the map and makes an
-estimate of the robot's position. The map is in the form of a text file
-specifying the 6DOF pose of each of the markers, and is automatically
-saved.
+Two nodes should be run,
+[aruco_detect](https://index.ros.org/p/aruco_detect), which handles the
+detection of the fiducials, and
+[fiducial_slam](https://index.ros.org/p/fiducial_slam), which combines
+the fiducial pose estimates and builds the map and makes an estimate of
+the robot's position. The map is in the form of a text file specifying
+the 6DOF pose of each of the markers, and is automatically saved.
 
 There are launch files for both of these nodes:
 
@@ -94,8 +95,8 @@ roslaunch fiducial_slam fiducial_slam.launch
 
 
 
-A launch file is also provided to visualize the map in [rviz](rviz).
-
+A launch file is also provided to visualize the map in
+[rviz](https://index.ros.org/p/rviz). 
 
 ```
 roslaunch fiducial_slam fiducial_rviz.launch
@@ -138,4 +139,4 @@ rosservice call /fiducial_slam/clear_map
 After this command is issued, the map can be auto-initialized, as
 described above.
 
-![\|width="750px"](attachment:fiducial_rviz.png)
+![width="750px"](doc/fiducial_rviz.png)

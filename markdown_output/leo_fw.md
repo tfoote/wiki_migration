@@ -31,18 +31,19 @@ rosrun leo_fw flash firmware.bin
  The script will guide you through the flashing
 process.
 
-The firmware uses [rosserial](rosserial) protocol to communicate with
-ROS nodes. This requires a running host-side rosserial implementation
-which should be already started by [leo_bringup](leo_bringup), but it
-can also be started manually: 
+The firmware uses [rosserial](https://index.ros.org/p/rosserial)
+protocol to communicate with ROS nodes. This requires a running
+host-side rosserial implementation which should be already started by
+[leo_bringup](https://index.ros.org/p/leo_bringup), but it can also be
+started manually: 
 
 ```
 rosrun rosserial_python serial_node.py _port:=/dev/serial0 _baud:=250000
 ```
 
- Once the
-`serial_node` connects to the firmware, the firmware's ROS API should
-be available on the system.
+ Once the `serial_node`
+connects to the firmware, the firmware's ROS API should be available on
+the system.
 
 
 
@@ -435,5 +436,3 @@ param {
   }
 }
 ```
-
-

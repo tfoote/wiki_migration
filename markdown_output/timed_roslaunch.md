@@ -96,5 +96,3 @@ Or
     name="timed_roslaunch" output="screen" />
 </launch>
 ```
-
-

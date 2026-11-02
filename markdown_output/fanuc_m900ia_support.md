@@ -13,11 +13,11 @@
 ## Overview
 
 This package is part of the [ROS-Industrial](Industrial) program. See
-[fanuc](fanuc) for more information.
+[fanuc](https://index.ros.org/p/fanuc) for more information.
 
 ## Installation
 
-See the main [fanuc](fanuc) page.
+See the main [fanuc](https://index.ros.org/p/fanuc) page.
 
 ## Usage
 

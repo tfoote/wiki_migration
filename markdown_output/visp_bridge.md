@@ -1,8 +1,9 @@
 # Description
 
-[visp_bridge](visp_bridge) is a small interface between ViSP library and
-ROS. For instance it converts between the different data types used by
-each library. To date, the supported functionnality sums up to:
+visp_bridge is a small interface between
+ViSP library and ROS. For instance it converts between the different
+data types used by each library. To date, the supported functionnality
+sums up to:
 
 - ViSP
   [vpImage](http://visp-doc.inria.fr/doxygen/visp-daily/classvpImage.html)
@@ -30,9 +31,10 @@ For usage, see the
 
 # Installation
 
-[visp_bridge](visp_bridge) is part of [vision_visp](vision_visp) stack.
+visp_bridge is part of
+[vision_visp](https://index.ros.org/p/vision_visp) stack.
 
-- To install [visp_bridge](visp_bridge) package run
+- To install visp_bridge package run
   
 
 ```
@@ -48,5 +50,3 @@ sudo apt-get install ros-$ROS_DISTRO-visp-bridge
 ```
 sudo apt-get install ros-$ROS_DISTRO-vision-visp
 ```
-
-

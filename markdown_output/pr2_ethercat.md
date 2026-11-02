@@ -53,8 +53,8 @@ Usage: ./pr2_ethercat [options]
 #### Example
 
 `pr2_ethercat` is usually executed from a launch file, such as
-[pr2_bringup](pr2_bringup)/pr2.launch. Common configuration:
-
+[pr2_bringup](https://index.ros.org/p/pr2_bringup)/pr2.launch. Common
+configuration: 
 
 ```
 <node name="realtime_loop" machine="c1" launch-prefix="pr2-grant" pkg="pr2_ethercat" type="pr2_ethercat" args="-i ecat0 -x robot_description"/>
@@ -78,5 +78,3 @@ Usage: ./pr2_ethercat [options]
 ```
 $ rosrun pr2_ethercat reset_motors.py
 ```
-
-

@@ -1,2 +1,2 @@
-See [rviz/Tutorials](rviz/Tutorials) for the tutorials based on this
-package.
+See [Tutorials](https://index.ros.org/p/rviz) for the tutorials based on
+this package.

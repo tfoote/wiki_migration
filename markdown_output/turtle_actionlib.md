@@ -48,4 +48,4 @@ $ rosrun turtle_actionlib shape_client
 
 You will see:
 
-![](attachment:turtle_shape.png)
+![attachment:turtle_shape.png](doc/turtle_shape.png)

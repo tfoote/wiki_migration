@@ -1,13 +1,14 @@
-![](attachment:gripper_action_topics.png)
+![attachment:gripper_action_topics.png](doc/gripper_action_topics.png)
 
 Users interested in grasping more delicate objects may want to checkout
-the alternative [pr2_gripper_sensor_action](pr2_gripper_sensor_action)
+the alternative
+[pr2_gripper_sensor_action](https://index.ros.org/p/pr2_gripper_sensor_action)
 package.
 
 ## Usage
 
 You can see an example of using the pr2 gripper action on the PR2 in the
-[Moving the Gripper tutorial](pr2/Tutorials/Moving the gripper).
+[Moving the Gripper tutorial](https://index.ros.org/p/pr2).
 
 ## ROS API
 
@@ -15,11 +16,10 @@ The ROS API consists of three parts: private parameters, an action
 server that achieves gripper goals, and an interface to the gripper
 controller.
 
-The [Moving the Gripper tutorial](pr2/Tutorials/Moving the gripper)
-provides more context on how the
-[action and controller are launched](pr2/Tutorials/Moving the gripper#The_gripper_action_and_trajectory_controller)
-and how
-[action goals are interpreted](pr2/Tutorials/Moving the gripper#The_action_goal).
+The [Moving the Gripper tutorial](https://index.ros.org/p/pr2) provides
+more context on how the
+[action and controller are launched](https://index.ros.org/p/pr2) and
+how [action goals are interpreted](https://index.ros.org/p/pr2).
 
 ### Parameters
 
@@ -85,5 +85,3 @@ pub {
   0.desc=Sends grip commands to the controller.
 }
 ```
-
-

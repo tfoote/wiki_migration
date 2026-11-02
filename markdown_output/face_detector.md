@@ -17,8 +17,7 @@ has an unrealistic real-world size, and will be considered a false
 positive. Only the green detections are returned as true face
 detections.
 
-![Raw images\|width=360 height=270](attachment:face2.png)
-![Raw images\|width=360 height=270](attachment:face1.png)
+![Raw images](doc/face2.png) ![Raw images](doc/face1.png)
 
 ## Node
 
@@ -164,14 +163,16 @@ for the name of the topics you need to correct.
 
 No doubt `face_detector` works on the robots on simulator. Examples
 below show how you can run this package using stereo camera on
-[PR2](pr2) and [Turtlebot](turtlebot). Additionally, using some other
-useful packages, you can visualize face detection result on
-[RViz](rviz).
+[PR2](https://index.ros.org/p/pr2) and
+[Turtlebot](https://index.ros.org/p/turtlebot). Additionally, using some
+other useful packages, you can visualize face detection result on
+[RViz](https://index.ros.org/p/rviz).
 
-1\. Install some useful packages ([jsk_pr2_startup](jsk_pr2_startup)
-that depends on [jsk_rviz_plugins](jsk_rviz_plugins), which provides a
-feature to show the result of `face_detector` on `RViz`) :
-
+1\. Install some useful packages
+([jsk_pr2_startup](https://index.ros.org/p/jsk_pr2_startup) that depends
+on [jsk_rviz_plugins](https://index.ros.org/p/jsk_rviz_plugins), which
+provides a feature to show the result of `face_detector` on `RViz`)
+: 
 
 ```
 apt-get install jsk_pr2_startup
@@ -199,7 +200,8 @@ roslaunch turtlebot_miscsample_cpp facedetector_rgb.launch (*b)
 
 
 
-3\. Then run RViz using [jsk_pr2_startup](jsk_pr2_startup) package:
+3\. Then run RViz using
+[jsk_pr2_startup](https://index.ros.org/p/jsk_pr2_startup) package:
 
 
 ```
@@ -230,4 +232,4 @@ PR2:
 
 Turtlebot:
 
-![Tutelebot\|width="85%"](attachment:facedetect_turtlebot_gazebo_jsk-rviz_axis.png)
+![Tutelebot](doc/facedetect_turtlebot_gazebo_jsk-rviz_axis.png)

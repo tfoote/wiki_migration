@@ -21,7 +21,8 @@ possible to reconstruct the 3D location of every observed scene points.
 
 **Please note: since version 3.0.0 this node is no longer compatible to
 SP1 -- the predecessor of SceneScan. Please use an older version with
-SP1 or the now discontinued [nerian_sp1](nerian_sp1) node**
+SP1 or the now discontinued
+[nerian_sp1](https://index.ros.org/p/nerian_sp1) node**
 
 ------------------------------------------------------------------------
 
@@ -186,9 +187,10 @@ param {
 ### Testing
 
 The topics published by the nerian_stereo node can be viewed with
-[rviz](rviz). The disparity map can also be visualized with the
-[image_view](image_view) node in ROS1 or showimage from ROS2. To do so,
-use can use one of the following commands:
+[rviz](https://index.ros.org/p/rviz). The disparity map can also be
+visualized with the [image_view](https://index.ros.org/p/image_view)
+node in ROS1 or showimage from ROS2. To do so, use can use one of the
+following commands:
 
 
 

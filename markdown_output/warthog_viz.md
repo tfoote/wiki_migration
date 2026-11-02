@@ -1,12 +1,13 @@
 ## Overview
 
-This package provides launchers and [rviz](rviz) configurations to
-assist with visualizing real or simulated [Warthog](Robots/Warthog) from
-a desktop environment. For help getting your desktop environment set up
-to use with Warthog, see the [Warthog homepage](Robots/Warthog).
+This package provides launchers and [rviz](https://index.ros.org/p/rviz)
+configurations to assist with visualizing real or simulated
+[Warthog](Robots/Warthog) from a desktop environment. For help getting
+your desktop environment set up to use with Warthog, see the
+[Warthog homepage](Robots/Warthog).
 
 For more information on simulating Warthog, see
-[warthog_simulator](warthog_simulator).
+[warthog_simulator](https://index.ros.org/p/warthog_simulator).
 
 ## Usage
 

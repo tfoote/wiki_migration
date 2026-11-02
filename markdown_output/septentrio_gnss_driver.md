@@ -1,4 +1,4 @@
-![\|width=400](attachment:ROSaic_noborder.png)
+![width=400](doc/ROSaic_noborder.png)
 
 ## Overview
 

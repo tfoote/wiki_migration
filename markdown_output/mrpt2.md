@@ -4,7 +4,7 @@ distributions.
 
 See also:
 
-- [mrpt_navigation](mrpt_navigation)
-- [mrpt_slam](mrpt_slam)
-- [mrpt_sensors](mrpt_sensors)
-- [mrpt1](mrpt1)
+- [mrpt_navigation](https://index.ros.org/p/mrpt_navigation)
+- [mrpt_slam](https://index.ros.org/p/mrpt_slam)
+- [mrpt_sensors](https://index.ros.org/p/mrpt_sensors)
+- [mrpt1](https://index.ros.org/p/mrpt1)

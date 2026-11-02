@@ -87,7 +87,7 @@ An rqt_plot window opens displaying controller inputs and outputs. Click
 the pan/zoom button and right-click and drag left to zoom out until you
 see the desired degree of detail in the plot.
 
-![](attachment:servo_plot.png)
+![attachment:servo_plot.png](doc/servo_plot.png)
 
 - /setpoint/data is a plot of the std_msgs/Float64 messages which tell
   the PID controller the desired value the servo should be controlled
@@ -107,7 +107,7 @@ techniques like remapping, or alternatively with parameters.
 
 Run "rqt_graph". A window showing the nodes in this simulation opens.
 
-![alt text\|width=700](attachment:pid_graph.png)
+![alt text](doc/pid_graph.png)
 
 The setpoint_node publishes its time-varying setpoint to the PID
 controller running in the /left_wheel_pid node, which applies
@@ -120,7 +120,7 @@ bases its control_effort on.
 
 Servo_sim.launch also opens an rqt_reconfigure window:
 
-![](attachment:servo_reconfigure.png)
+![attachment:servo_reconfigure.png](doc/servo_reconfigure.png)
 
 Click on the "left_wheel_pid" entry to display the controls that let
 you dynamically reconfigure the Kp, Ki and Kd parameters: the PID
@@ -346,7 +346,7 @@ to drive the robot forward.
 
 The figure below shows the node graph.
 
-![alt text\|width=700](attachment:diff_drv_graph.png)
+![alt text](doc/diff_drv_graph.png)
 
 Each controller and its associated plant simulation has been pushed down
 into a separate namespace, identified as "left_wheel" and
@@ -411,7 +411,7 @@ A plot of the resulting two-controller simulation is shown below. Note:
 the Kp, Ki, and Kd parameters are intentionally a little different for
 each simulated wheel to distinguish the plots.
 
-![alt text\|width=700](attachment:diff_drv_plot.png)
+![alt text](doc/diff_drv_plot.png)
 
 ### Reverse acting support
 
@@ -504,7 +504,7 @@ default cutoff frequency (1/4 of the sampling rate) should be fine for
 most applications. If you prefer not to filter the signal anyway, just
 set a very high cutoff frequency (like 10,000).
 
-![alt text\|width=700](attachment:filtering.png)
+![alt text](doc/filtering.png)
 
 ## Known Issues
 

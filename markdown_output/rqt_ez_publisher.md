@@ -22,7 +22,7 @@ $ rosrun rqt_ez_publisher rqt_ez_publisher
 
 
 
-2\. run as plugin of [rqt](rqt)
+2\. run as plugin of [rqt](https://index.ros.org/p/rqt)
 
 
 
@@ -38,9 +38,9 @@ Input topic name -> You got GUI
 
 ## How to Use
 
-![](attachment:cmd_vel_with_caption.png)
+![attachment:cmd_vel_with_caption.png](doc/cmd_vel_with_caption.png)
 
-![](attachment:joint_states_with_caption.png)
+![attachment:joint_states_with_caption.png](doc/joint_states_with_caption.png)
 
 You can input topic name and attributes string, like rqt_plot instead of
 topic name. For example, **`'/cmd_vel/linear/x`**' or
@@ -48,7 +48,7 @@ topic name. For example, **`'/cmd_vel/linear/x`**' or
 
 ## Examples
 
-It is ok if there are many topics. ![](attachment:mix.png)
+It is ok if there are many topics. ![attachment:mix.png](doc/mix.png)
 
 ## Preconditions
 

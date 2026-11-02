@@ -123,5 +123,3 @@ node.0 {
     0.name = Same as image_publisher node
   }
 ```
-
-

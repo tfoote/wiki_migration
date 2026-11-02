@@ -69,5 +69,3 @@ It will contain the following:
 ```wiki
  For '''ROS2''' package, visit: [[https://github.com/analogdevicesinc/tmcl_ros2||target="_blank"]]
 ```
-
-

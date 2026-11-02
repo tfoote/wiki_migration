@@ -7,9 +7,9 @@ joint trajectory action can also enforce constraints on the trajectory,
 and abort trajectory execution when the constraints are violated.
 
 See:
-[robot_mechanism_controllers/JointSplineTrajectoryController](robot_mechanism_controllers/JointSplineTrajectoryController)
+[JointSplineTrajectoryController](https://index.ros.org/p/robot_mechanism_controllers)
 
-![](attachment:joint_trajectory_action_topics.png)
+![attachment:joint_trajectory_action_topics.png](doc/joint_trajectory_action_topics.png)
 
 ## ROS API
 
@@ -86,7 +86,8 @@ joint_trajectory_action_node:
 ### Action interface
 
 The joint trajectory action provides an action server (see
-[actionlib](actionlib)) that takes in goals of the type
+[actionlib](https://index.ros.org/p/actionlib)) that takes in goals of
+the type
 [pr2_controllers_msgs/msg/JointTrajectoryGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryGoal.html).
 
 
@@ -137,5 +138,11 @@ pub {
 ## Usage
 
 You can find an example of using the joint trajectory action in
-[this tutorial](pr2_controllers/Tutorials/Moving the arm using the Joint Trajectory Action)
+[this tutorial](https://index.ros.org/p/pr2_controllers) for moving the
+arm on the PR2.
+
+## Tutorials
+
+In addition to the tutorials below, you can find an example of using the
+joint trajectory action in [this tutorial](https://index.ros.org/p/pr2)
 for moving the arm on the PR2.

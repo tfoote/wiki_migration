@@ -13,8 +13,8 @@ up. This launch file is normally not used directly, but rather included
 in another launch file, as in `pr2_empty_world.launch`.
 
 This file is meant to mirror the behavior
-[pr2_bringup](pr2_bringup)`/pr2.launch`, which is used to bringup a
-physical PR2, including default controllers.
+[pr2_bringup](https://index.ros.org/p/pr2_bringup)`/pr2.launch`, which
+is used to bringup a physical PR2, including default controllers.
 
 ### pr2_no_arms.launch
 
@@ -37,6 +37,12 @@ themselves should be modified only be advanced users.
 ## Scripts
 
 The programs in `pr2_gazebo/scripts` are for developer testing only.
+
+## Troubleshooting
+
+Please see the
+[simulator_gazebo troubleshooting](simulator_gazebo/Troubleshooting)
+guide for tips on how to debug issues with `pr2_gazebo`.
 
 ## Troubleshooting
 

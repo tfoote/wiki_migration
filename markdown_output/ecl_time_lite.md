@@ -52,9 +52,9 @@ benchmarking tests.
 
 ### Error Handling
 
-Use with the TimeError (an extension of [ecl_errors](ecl_errors)'s
-Error handler) that provides time function specific verbose error
-messages.
+Use with the TimeError (an extension of
+[ecl_errors](https://index.ros.org/p/ecl_errors)'s Error handler) that
+provides time function specific verbose error messages.
 
 
 

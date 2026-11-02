@@ -1,4 +1,4 @@
-![dependency graph example\| width=800](attachment:snap_rqt_dep.png)
+![dependency graph example](doc/snap_rqt_dep.png)
 
 ## Usage
 

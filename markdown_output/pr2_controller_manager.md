@@ -6,22 +6,24 @@ The `pr2_controller_manager` provides a
 **[hard realtime](http://www.oit.uci.edu/dcslib/digital_unix/digital-v40d/APS33DTE/TITLE.HTM)**
 loop to control the robot mechanism. The robot mechanism is represented
 by a set of effort controlled joints (see
-[pr2_mechanism_model](pr2_mechanism_model) for details). For the PR2
-robot, we run the control loop at 1000 Hz. The controller manager
-provides the infrastructure to load your own realtime controller into
-its control loop. Every controller that is loaded into the controller
-manager will get triggered once every mili-second. To find out how to
-write your own hard realtime controller, take a look at
-[this tutorial](pr2_mechanism/Tutorials/Writing a realtime joint controller).
+[pr2_mechanism_model](https://index.ros.org/p/pr2_mechanism_model) for
+details). For the PR2 robot, we run the control loop at 1000 Hz. The
+controller manager provides the infrastructure to load your own realtime
+controller into its control loop. Every controller that is loaded into
+the controller manager will get triggered once every mili-second. To
+find out how to write your own hard realtime controller, take a look at
+[this tutorial](https://index.ros.org/p/pr2_mechanism).
 
 ### Safety limits
 
 The controller manager ensures that none of the loaded controllers can
 command a joint past its
-[safety limits](pr2_controller_manager/safety_limits). If necessary, the
-controller manager reduces the commanded joint effort, or even applies
-an effort in the opposite direction. For more details, take a look at
-the [safety limits](pr2_controller_manager/safety_limits) page.
+[safety limits](#safety_limits). If
+necessary, the controller manager reduces the commanded joint effort, or
+even applies an effort in the opposite direction. For more details, take
+a look at the
+[safety limits](#safety_limits)
+page.
 
 ### Joint State Publishing
 
@@ -33,7 +35,7 @@ You can change this publishing frequency by setting the
 
 ### Tools for running controllers
 
-![\|width="400px"](attachment:controller state.png)
+![width="400px"](doc/controller_state.png)
 
 The controller manager provides the infrastructure to interact with
 controllers. Depending on if you're running controllers form a launch
@@ -206,4 +208,142 @@ node.0 {
 }
 ```
 
+## safety_limits
 
+### Joint Safety Limits Explained
+
+The effort limit is an attribute of the limit tag. In this case, a
+controller cannot command an effort of more than 30 N (N-m for revolute)
+nor less than -30 N (N-m for revolute) on the joint. If the controller
+tries to command an effort beyond the effort limit, the magnitude of the
+effort is truncated.
+
+The velocity limit specifies the bounds on the magnitude of the joint
+velocity (m/s for prismatic, rad/s for revolute). The velocity limit is
+enforced by bounding the commanded effort such that no effort can be
+applied to push the joint beyond the velocity limit, and a damping
+effort is applied if the joint is moving at a velocity beyond the limit.
+The k_velocity term determines the scale of the effort bound.
+
+For a velocity v, a velocity limit of v\^+\^ and a k_velocity of k,,v,,
+the upper bound on effort is -k,,v,, \* (v - v\^+\^)
+![attachment:k_velocity.png](doc/k_velocity.png)
+
+The safety_length_min and safety_length_max determine the locations of
+the software joint limits (the "soft" limits). The upper soft limit is
+the upper hardware limit minus the safety_length_max and the lower soft
+limit is the lower hardware limit plus safety_length_min. When the joint
+is near the soft limits, the possible velocities are bounded to keep the
+position from crossing the soft limits. The k_position term determines
+the scale of the bound on velocity.
+
+For position x, soft upper limit x\^+\^ and a k_position of k,,x,, the
+upper bound on velocity is -k,,x,,\*(x - x\^+\^), see figures below:
+![attachment:k_position.png](doc/k_position.png)
+
+These bounds on velocity are taken into account when determining the
+bounds on effort.
+
+## Troubleshooting
+
+Many things can cause problems when interacting with controllers. Always
+**check the PR2 dashboard** first, every failure should print one or
+more error messages that give very useful information about the problem.
+
+### Understanding error messages
+
+- **A controller named xxx was already loaded inside the controller
+  manager** You are trying to load a controller with a name that matches
+  one of the controllers already loaded inside the controller manager.
+  This is not allowed since every controller needs to have a unique
+  name. To get a list of all controllers that are loaded, type:
+  
+
+```
+$ rosrun pr2_controller_manager pr2_controller_manager list
+```
+
+
+
+<!-- -->
+
+- **Could not load controller xxx because the type was not specified.
+  Did you load the controller configuration on the parameter server?**
+  In order to spawn a controller, you need to load the controller
+  configuration on the parameter server first. One of these parameters
+  is the controller type. This parameter should be specified as
+  parameter 'xxx/type'. However, you did not specify this parameter on
+  the parameter server. For information on how to load this parameter on
+  the parameter server, take a look at the instructions for spawning a
+  controller.
+
+<!-- -->
+
+- **Could not spawn controller xxx because controller type yyy does not
+  exist** or **Could not load class yyy** The controller manager does
+  not know about a controller type named 'yyy'. To list the controller
+  types known to the controller manager, type: 
+
+```
+$ rosrun pr2_controller_manager pr2_controller_manager list-types
+```
+
+
+
+<!-- -->
+
+- **Initializing controller xxx failed** The controller manager tried to
+  initialize the controller, but the controller itself returned an
+  error. Check the controller specific documentation to find out how to
+  solve this problem.
+
+<!-- -->
+
+- **Scheduling controller xxx failed** When two controllers directly
+  communicate with each other, one controller will depend on the other
+  to function. This type of dependencies specify the order in which
+  controllers are executed. However, when e.g. a circular dependency
+  exists between controllers, the scheduling of the execution order will
+  fail. To fix this problem, read the controller specific documentation
+  to find out which controllers depend on which controllers.
+
+<!-- -->
+
+- **Cannot unload controller xxx because controller yyy still depends on
+  it** When two controllers directly communicate with each other, one
+  controller will depend on the other to function. This type of
+  dependencies specify the order in which controllers are executed. When
+  controller yyy depends on controller xxx, it is not possible to unload
+  controller xxx. First unload controller yyy, and then unload
+  controller xxx.
+
+<!-- -->
+
+- **Could not unload/start/stop controller with name xxx because no
+  controller with this name exists** You tried to unload/start/stop a
+  controller that is not loaded inside the controller manager. To get a
+  list of all controllers that are loaded, type:
+  
+
+```
+$ rosrun pr2_controller_manager pr2_controller_manager list
+```
+
+
+
+<!-- -->
+
+- **Could not unload controller with name xxx because it is still
+  running** A controller can only be unloaded when it is in a stopped
+  state. To unload a running controller, first stop it.
+
+### NaN Values in Joint States
+
+If `pr2_controller_manager` ever calculates a NaN or Inf value for a
+joint state\--position, velocity, effort, etc\--then
+pr2_controller_manager will be unable to control the mechanism. A
+restart of pr2_controller_manager is the only way to revert this
+condition.
+
+This condition usually means there is a serious hardware or software
+problem, and should be reported immediately.

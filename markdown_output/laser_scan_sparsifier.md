@@ -1,7 +1,7 @@
 ## Details
 
-The [laser_scan_sparsifier](laser_scan_sparsifier) package is used to
-downsample
+The laser_scan_sparsifier package
+is used to downsample
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 messages.
 

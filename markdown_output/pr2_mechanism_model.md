@@ -11,7 +11,7 @@ kinematic chain and interfaces with the `RobotState`.
 The following diagram shows how the mechanism model is set up on the
 robot and in simulation.
 
-![](attachment:mechanism_model.png)
+![attachment:mechanism_model.png](doc/mechanism_model.png)
 
 ## Components
 
@@ -19,17 +19,18 @@ robot and in simulation.
 
 `pr2_mechanism_model::RobotState` is the main class in this package.
 When a controller gets initialized, the
-[controller manager](pr2_controller_manager) passes the controller a
-pointer to the `RobotState` (see the
-[controller interface](pr2_controller_interface)). The robot state
-describes both the kinematic/dynamic model of the robot and the current
-state of the robot. The state of the robot is defined by the
-position/velocity/effort of the joints in the robot. The model of the
-robot is a [urdf](urdf) object, as defined in the [urdf package](urdf).
-Additionally, the `RobotState` provides access to the 'controller
-time', the time at which a controller cycle is started. To see an
-example on how to use the `RobotState`, check out the
-[controllers tutorials](pr2_mechanism/Tutorials).
+[controller manager](https://index.ros.org/p/pr2_controller_manager)
+passes the controller a pointer to the `RobotState` (see the
+[controller interface](https://index.ros.org/p/pr2_controller_interface)).
+The robot state describes both the kinematic/dynamic model of the robot
+and the current state of the robot. The state of the robot is defined by
+the position/velocity/effort of the joints in the robot. The model of
+the robot is a [urdf](https://index.ros.org/p/urdf) object, as defined
+in the [urdf package](https://index.ros.org/p/urdf). Additionally, the
+`RobotState` provides access to the 'controller time', the time at
+which a controller cycle is started. To see an example on how to use the
+`RobotState`, check out the
+[controllers tutorials](https://index.ros.org/p/pr2_mechanism).
 
 #### pr2_mechanism_model::JointState
 
@@ -59,8 +60,9 @@ set the commanded effort on `JointState`, use:
 js->commanded_effort_ = my_command;
 ```
 
- The [tutorials](pr2_mechanism/Tutorials) give
-more examples on how to use the `JointState`.
+ The
+[tutorials](https://index.ros.org/p/pr2_mechanism) give more examples on
+how to use the `JointState`.
 
 The `JointState` also gives access to the joint model, which contains
 things like the joint type, axis, reference position, etc. To e.g. get
@@ -71,8 +73,9 @@ if (js->joint_->type == urdf::Joint::Continuous)
 ROS_INFO("This is a continuous joint");
 ```
 
- The [urdf](urdf) API
-documentation provides all details.
+ The
+[urdf](https://index.ros.org/p/urdf) API documentation provides all
+details.
 
 For reference documentation, check out the
 [code api](http://www.ros.org/doc/api/pr2_mechanism_model/html/classpr2__mechanism__model_1_1RobotState.html).
@@ -89,7 +92,7 @@ js->joint_->safety
 
  contains
 various parameters used to configure joint safety controller
-[position and velocity limits](pr2_controller_manager/safety_limits).
+[position and velocity limits](https://index.ros.org/p/pr2_controller_manager).
 Please see the
 [code api](http://www.ros.org/doc/api/urdf/html/classurdf_1_1JointSafety.html)
 for more details.
@@ -112,14 +115,14 @@ the
 for more details.
 
 For details on the transmission description format, check out the
-[transmission elements](urdf/XML/Transmission) page.
+[transmission elements](https://index.ros.org/p/urdf) page.
 
 #### Controller time
 
 Every time a controller cycle is started, the
-[controller manager](pr2_controller_manager) records the time. This time
-can be accessed by all controllers through the
-`pr2_mechanism_model::RobotState`. When a controller e.g. needs to
+[controller manager](https://index.ros.org/p/pr2_controller_manager)
+records the time. This time can be accessed by all controllers through
+the `pr2_mechanism_model::RobotState`. When a controller e.g. needs to
 compute the duration between two consecutive update loops, it should
 **use the controller time, not the system time**. In contrast to the
 system time, the controller time is not affected by the time other
@@ -136,10 +139,11 @@ ros::Time time = robot_state_->getTime();
 
 #### Robot model
 
-The `pr2_mechanism_model::RobotState` contains a [urdf](urdf) robot
-description object. There is lots of [documentation](urdf) on the urdf
-model, and there are even a number of [tutorials](urdf/Tutorials) you
-could look at. To get access to the urdf model use:
+The `pr2_mechanism_model::RobotState` contains a
+[urdf](https://index.ros.org/p/urdf) robot description object. There is
+lots of [documentation](https://index.ros.org/p/urdf) on the urdf model,
+and there are even a number of [tutorials](https://index.ros.org/p/urdf)
+you could look at. To get access to the urdf model use:
 
 
 ```
@@ -183,10 +187,11 @@ chain.setEfforts(jnt_eff);
 `KDL::Chain`: 
 
 ```
-double position = js->position_;
+KDL::Chain kdl_chain;
+chain.toKDK(kdl_chain);
 ```
 
-0 See the
+ See the
 [code API](http://www.ros.org/doc/api/pr2_mechanism_model/html/classpr2__mechanism__model_1_1Chain.html)
 for more details.
 
@@ -195,7 +200,7 @@ for more details.
 The `pr2_mechanism_model` is used when writing a realtime controller.
 For example code on how to use the `pr2_mechanism_model::RobotState`
 and the `pr2_mechanism_model::JointState` classes, check out
-[this tutorial on writing a realtime joint controller](pr2_mechanism/Tutorials/Writing a realtime joint controller).
+[this tutorial on writing a realtime joint controller](https://index.ros.org/p/pr2_mechanism).
 To see an example on how to use the `pr2_mechanism_model::Chain`
 object for Cartesian control, check out
-[this tutorial on writing a realtime Cartesian controller](pr2_mechanism/Tutorials/Writing a realtime Cartesian controller).
+[this tutorial on writing a realtime Cartesian controller](https://index.ros.org/p/pr2_mechanism).

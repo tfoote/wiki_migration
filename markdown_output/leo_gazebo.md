@@ -24,8 +24,8 @@ roslaunch leo_gazebo leo_marsyard.launch
 
 
 Once you have the simulation running, you can use packages from the
-[leo_desktop](leo_desktop) bundle to control the simulated robot (the
-same way you can control the real one).
+[leo_desktop](https://index.ros.org/p/leo_desktop) bundle to control the
+simulated robot (the same way you can control the real one).
 
 For example, start: 
 
@@ -50,8 +50,9 @@ little bit trickier, as we have to guarantee that:
 
 - each robot model in Gazebo has a different name,
 - the robots use different ROS topic and services names,
-- the robots use different [tf](tf) frame names. For this purpose, you
-  can use the `model_name` and `robot_ns` launch file arguments.
+- the robots use different [tf](https://index.ros.org/p/tf) frame names.
+  For this purpose, you can use the `model_name` and `robot_ns`
+  launch file arguments.
 
 For example, to spawn a second robot when Gazebo is running, type:
 
@@ -75,7 +76,7 @@ ROS_NAMESPACE=leo1 rosrun leo_teleop key_teleop
 
  To use RViz, change the **Fixed Frame** to
 `leo1/base_footprint` and set the **TF Prefix** parameter in the
-[RobotModel](rviz/DisplayTypes/RobotModel) display to `leo1`.
+[RobotModel](https://index.ros.org/p/rviz) display to `leo1`.
 
 ## Nodes
 
@@ -100,7 +101,7 @@ pub {
 
 ## Launch files
 
-![](attachment:launch-files.png)
+![attachment:launch-files.png](doc/launch-files.png)
 
 spawn_model.launch:: Spawns the robot model (URDF) into the simulation
 environment. spawn_controllers.launch:: Spawns ROS controllers for the
@@ -130,5 +131,3 @@ Example usage:
   </plugin>
 </gazebo>
 ```
-
-

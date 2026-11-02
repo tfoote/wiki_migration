@@ -1,5 +1,5 @@
 You can use TTS speach output by using the
-[cob_script_server](cob_script_server).
+[cob_script_server](https://index.ros.org/p/cob_script_server).
 
 ## Starting Sound
 
@@ -120,57 +120,55 @@ if that fix doesn't help, try to install alsa-oss
 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+sudo apt-get install alsa-oss
 ```
 
-0 and modify /usr/local/bin/swift_fix to contain
+ and modify /usr/local/bin/swift_fix to contain
 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+if test -x /usr/bin/padsp ; then  exec aoss /opt/swift/bin/swift "$@" ; else  exec /opt/swift/bin/swift "$@" ; fi
 ```
 
-1
+
 
 - Register voice with license (you need to buy a license from
   <http://www.cepstral.com>, for IPA robots ask UHR or FMW for license
   key) 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+sudo swift --reg-voice
 ```
 
-2
+
 
 ## Setting the sound volume
 
 Either use alsamixer: 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+alsamixer
 ```
 
-3
+
 
 or use alsactl: For setting the sound to xx% use
 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+amixer -c 1 set Speaker xx%
 ```
 
-4 or 
+ or 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+amixer -c 1 set PCM xx%
 ```
 
-5 5% is a
+ 5% is a
 reasonable volume. To store the settings permanently, type
 
 
 ```
-rosservice call /sound/say "Hello, my name is Care-O-bot."
+sudo alsactl store
 ```
-
-6

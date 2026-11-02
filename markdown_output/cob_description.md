@@ -58,9 +58,10 @@ Each joint has predefined limits:
      head_v3                 Head with 2 AVT Prosilica GigE and Kinect              cob3-3, cob3-4 and cob3-6   
   -- -------------------- -- --------------------------------------------------- -- --------------------------- --
 
-In the package [cob_hardware_config](cob_hardware_config) you can find
-for each robot the urdf file that load the component descriptions
-together.
+In the package
+[cob_hardware_config](https://index.ros.org/p/cob_hardware_config) you
+can find for each robot the urdf file that load the component
+descriptions together.
 
 ## Generate stl file
 
@@ -76,5 +77,3 @@ following issues while generating new stl file:
 ```
 sed -i '0,/RE/s/solid/robot/' */*.stl
 ```
-
-

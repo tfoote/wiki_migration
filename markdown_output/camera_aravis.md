@@ -125,5 +125,3 @@ $ rosrun camera_aravis cam_aravis
 ```
 $ ROS_NAMESPACE=cam1 rosrun camera_aravis cam_aravis
 ```
-
-

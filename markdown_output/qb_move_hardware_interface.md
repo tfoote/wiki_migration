@@ -31,5 +31,3 @@ param {
 ```wiki
 Be aware that it can be dangerous to change `encoder_resolutions` and `preset_ticks_limit` arbitrarily. These values '''must match''' their relative configurations set in the device.
 ```
-
-

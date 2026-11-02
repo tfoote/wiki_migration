@@ -162,6 +162,6 @@ converted (see <http://en.wikipedia.org/wiki/IEEE_754-1985>).
 
 ### Flowchart of read-out process
 
-![](attachment:SDO_Readout_FLow_small.png)
+![attachment:SDO_Readout_FLow_small.png](doc/SDO_Readout_FLow_small.png)
 
-[(show graph)](attachment:SDO_Readout_Elmo_Recorder.png)
+[(show graph)](doc/SDO_Readout_Elmo_Recorder.png)

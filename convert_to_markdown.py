@@ -434,11 +434,15 @@ def rewrite_links(content, current_page, attachments, doc=None):
         else:
             new = rewrite_link_target(target, current_page, doc)
         if new is None:
-            return match.group(0)
+            # Keep the link, but drop the padding MoinMoin allowed around
+            # "|" ([[ target | label ]]), which breaks the Markdown link.
+            if label is not None and label.strip():
+                return f"[[{target}|{label.strip()}]]"
+            return f"[[{target}]]"
         if not label or not label.strip():
             base, _, anchor = target.partition("#")
             label = base.split("attachment:")[-1].rsplit("/", 1)[-1] or anchor
-        return f"[[{new}|{label}]]"
+        return f"[[{new}|{label.strip()}]]"
 
     content = re.sub(r"\{\{(?!\{)([^|}\n]+)(\|[^}\n]*)?\}\}", image_repl, content)
     content = re.sub(r"\[\[([^|\]\n]+)(\|(?:[^\]\n]|\](?!\]))*)?\]\]", link_repl, content)
@@ -623,6 +627,248 @@ def expand_listing_macros(content, current_page, max_items=20):
     return content
 
 
+def parse_hdf(text):
+    """Parse ClearSilver HDF ("a.b = v", "a { ... }", "a << EOM ... EOM").
+
+    Returns nested dicts (insertion-ordered, like ClearSilver's `each`).
+    """
+    root = {}
+
+    def set_path(base, dotted, value):
+        node = base
+        parts = dotted.split(".")
+        for part in parts[:-1]:
+            child = node.get(part)
+            if not isinstance(child, dict):
+                child = {} if child is None else {"": child}
+                node[part] = child
+            node = child
+        last = parts[-1]
+        if isinstance(node.get(last), dict):
+            node[last][""] = value
+        else:
+            node[last] = value
+
+    def get_path(base, dotted):
+        node = base
+        for part in dotted.split("."):
+            child = node.get(part)
+            if not isinstance(child, dict):
+                child = {} if child is None else {"": child}
+                node[part] = child
+            node = child
+        return node
+
+    stack = [root]
+    lines = text.replace("\r\n", "\n").split("\n")
+    i = 0
+    while i < len(lines):
+        s = lines[i].strip()
+        i += 1
+        if not s or s.startswith("#"):
+            continue
+        m = re.match(r"^([\w.\-]+)\s*\{\s*$", s)
+        if m:
+            stack.append(get_path(stack[-1], m.group(1)))
+            continue
+        if s == "}":
+            if len(stack) > 1:
+                stack.pop()
+            continue
+        m = re.match(r"^([\w.\-]+)\s*<<\s*(\w+)\s*$", s)
+        if m:
+            delim, body = m.group(2), []
+            while i < len(lines) and lines[i].strip() != delim:
+                body.append(lines[i])
+                i += 1
+            i += 1
+            set_path(stack[-1], m.group(1), "\n".join(body).strip())
+            continue
+        m = re.match(r"^([\w.\-]+)\s*=\s?(.*)$", s)
+        if m:
+            set_path(stack[-1], m.group(1), m.group(2).strip())
+    return root
+
+
+def _hdf_value(node, key):
+    v = node.get(key, "") if isinstance(node, dict) else ""
+    if isinstance(v, dict):
+        v = v.get("", "")
+    return v.strip()
+
+
+def _hdf_children(node):
+    """(name, child) pairs of dict children, skipping scalar fields."""
+    return [(k, v) for k, v in node.items() if isinstance(v, dict) and k]
+
+
+_NODEAPI_LISTS = [
+    ("goal", "Action Goal", "topic"), ("result", "Action Result", "topic"),
+    ("feedback", "Action Feedback", "topic"), ("act_called", "Actions Called", "action"),
+    ("sub", "Subscribed Topics", "topic"), ("pub", "Published Topics", "topic"),
+    ("srv", "Services", "service"), ("srv_called", "Services Called", "service"),
+    ("param", "Parameters", "param"), ("param_set", "Parameters Set", "param"),
+    ("req_tf", "Required tf Transforms", "tf"), ("prov_tf", "Provided tf Transforms", "tf"),
+]
+
+
+def _oneline(text):
+    return re.sub(r"\s*\n\s*", " ", text).strip()
+
+
+def _code(value):
+    """Wrap a value as inline code unless it already contains wiki markup."""
+    if not value or re.search(r"\[\[|'''|''|\{\{\{|<<|`", value):
+        return value
+    return f"{{{{{{{value}}}}}}}"
+
+
+def _render_nodeapi_entry(elem, kind):
+    name = _hdf_value(elem, "name")
+    desc = _oneline(_hdf_value(elem, "desc"))
+    typ = _hdf_value(elem, "type")
+    if kind == "tf":
+        head = f"{_code(_hdf_value(elem, 'from'))} → {_code(_hdf_value(elem, 'to'))}"
+    else:
+        head = _code(name)
+        if kind == "param":
+            default = _hdf_value(elem, "default") or _hdf_value(elem, "defaut")
+            info = _code(typ)
+            if default:
+                info = f"{info}, default: {_code(default)}" if info else f"default: {_code(default)}"
+            if info:
+                head = f"{head} ({info})" if head else f"({info})"
+        elif typ:
+            if kind in ("topic", "service") and re.match(r"^[\w]+/[\w]+$", typ):
+                macro = "MsgLink" if kind == "topic" else "SrvLink"
+                typ_text = f"<<{macro}({typ})>>"
+            elif kind == "action":
+                typ_text = f"[[{typ}]]"
+            else:
+                typ_text = _code(typ)
+            head = f"{head} ({typ_text})" if head else f"({typ_text})"
+    return f" * {head}" + (f": {desc}" if desc else "")
+
+
+def render_nodeapi(hdf_text, base_level=3):
+    """Render a CS/NodeAPI (or CS/ActionAPI) block as MoinMoin markup.
+
+    Mirrors the wiki template: one heading per node, then a sub-heading per
+    list (Subscribed Topics, Parameters, ...), optional named groups, and one
+    bullet per entry.
+    """
+    data = parse_hdf(hdf_text)
+    node_root = data.get("node") if isinstance(data.get("node"), dict) else {}
+    numbered = [(k, v) for k, v in node_root.items()
+                if re.match(r"^\d+$", k) and isinstance(v, dict)]
+    if numbered:
+        nodes = [v for _, v in numbered]
+    else:
+        # Top-level name/desc/pub/... (or node.name/node.pub/...) describe one node.
+        merged = {k: v for k, v in data.items() if k != "node"}
+        merged.update({k: v for k, v in node_root.items() if not re.match(r"^\d+$", k)})
+        nodes = [merged]
+
+    h = lambda level, text: f"{'=' * level} {text} {'=' * level}"
+    out = []
+    for node in nodes:
+        name, desc = _hdf_value(node, "name"), _hdf_value(node, "desc")
+        if name:
+            out += [h(base_level, name), ""]
+            if desc:
+                out += [desc, ""]
+        for key, title, kind in _NODEAPI_LISTS:
+            lst = node.get(key)
+            if not isinstance(lst, dict):
+                continue
+            # Ungrouped entries go into group 0, as the template does.
+            groups = {}
+            src_groups = lst.get("group") if isinstance(lst.get("group"), dict) else {}
+            for gk, g in _hdf_children(src_groups):
+                groups[gk] = dict(g)
+            ungrouped = {k: v for k, v in _hdf_children(lst) if k != "group"}
+            if ungrouped:
+                groups["0"] = {**groups.get("0", {}), **ungrouped}
+            if not groups:
+                continue
+            if not _hdf_value(lst, "no_header"):
+                out += [h(base_level + 1, title), ""]
+            for g in groups.values():
+                gname, gdesc = _hdf_value(g, "name"), _hdf_value(g, "desc")
+                if gname:
+                    out += [h(base_level + 2, gname), ""]
+                    if gdesc:
+                        out += [gdesc, ""]
+                entries = [_render_nodeapi_entry(e, kind) for _, e in _hdf_children(g)]
+                out += entries + [""]
+    return "\n".join(out).strip("\n")
+
+
+_CS_BLOCK = re.compile(
+    r"\{\{\{[ \t]*\n?[ \t]*#!clearsilver[ \t]+CS/(NodeAPI|ActionAPI)[^\n]*\n(.*?)\n[ \t]*\}\}\}",
+    re.DOTALL,
+)
+
+
+def expand_clearsilver_blocks(content):
+    """Replace {{{#!clearsilver CS/NodeAPI ...}}} blocks with MoinMoin markup."""
+    def repl(match):
+        level = 2 if match.group(1) == "ActionAPI" else 3
+        rendered = render_nodeapi(match.group(2), base_level=level)
+        return "\n" + rendered + "\n" if rendered else ""
+    return _CS_BLOCK.sub(repl, content)
+
+
+_TUTORIAL_LEVELS = {"BeginnerCategory": "BEGINNER",
+                    "IntermediateCategory": "INTERMEDIATE",
+                    "AdvancedCategory": "ADVANCED"}
+
+
+def render_tutorial_header(content):
+    """Render TutorialCSHeaderTemplate from the page's '## key = value' lines."""
+    fields = {}
+    for m in re.finditer(r"^##\s*([\w.]+)\s*=[ \t]*(.*?)\s*$", content, re.M):
+        fields.setdefault(m.group(1), m.group(2).strip())
+
+    def numbered(prefix, suffix=""):
+        items = []
+        for k, v in fields.items():
+            m = re.match(rf"^{re.escape(prefix)}\.(\d+){re.escape(suffix)}$", k)
+            if m and v:
+                items.append((int(m.group(1)), v))
+        return [v for _, v in sorted(items)]
+
+    lines = []
+    notes, note = numbered("note"), fields.get("note", "")
+    if notes:
+        prefix = f"{note.rstrip('.')}. " if note else ""
+        lines.append(f" * '''Note:''' {prefix}This tutorial assumes that you have "
+                     f"completed the previous tutorials: {', '.join(notes)}.")
+    elif note:
+        lines.append(f" * '''Note:''' {note.rstrip('.')}.")
+    if fields.get("description"):
+        lines.append(f" * '''Description:''' {fields['description']}")
+    if fields.get("keywords"):
+        lines.append(f" * '''Keywords:''' {fields['keywords']}")
+    level = _TUTORIAL_LEVELS.get(fields.get("level", ""), "")
+    if level:
+        lines.append(f" * '''Tutorial Level:''' {level}")
+    nexts = numbered("next", ".link")
+    if nexts:
+        text = fields.get("next", "")
+        lines.append(" * '''Next Tutorial:''' " + (f"{text} " if text else "") + " ".join(nexts))
+    return "\n".join(lines)
+
+
+def expand_tutorial_header(content):
+    """Replace <<IncludeCSTemplate(TutorialCSHeaderTemplate)>> with a summary."""
+    if "TutorialCSHeaderTemplate" not in content:
+        return content
+    header = render_tutorial_header(content)
+    return re.sub(r"<<IncludeCSTemplate\(\s*TutorialCSHeaderTemplate\s*\)>>",
+                  lambda m: "\n" + header + "\n" if header else "", content)
+
+
 def preprocess(content, current_page=None, attachments=None, doc=None):
     """Preprocess MoinMoin markup into Creole for pandoc.
 
@@ -693,6 +939,12 @@ def preprocess(content, current_page=None, attachments=None, doc=None):
 
     # Convert CRLF to LF
     content = content.replace("\r\n", "\n")
+
+    # Render ClearSilver content: the tutorial header (built from the page's
+    # '## key = value' comment lines, so before comments are stripped) and
+    # CS/NodeAPI / CS/ActionAPI blocks (before code blocks are extracted).
+    content = expand_tutorial_header(content)
+    content = expand_clearsilver_blocks(content)
 
     # Append }}} if unclosed multiline code block at end of file
     if content.count("{{{") > content.count("}}}"):

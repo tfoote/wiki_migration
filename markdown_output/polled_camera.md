@@ -2,7 +2,8 @@
 
 `polled_camera` defines the ROS interface that client nodes use to
 request images from a polling camera driver node (e.g.
-[prosilica_camera](prosilica_camera)). The protocol is:
+[prosilica_camera](https://index.ros.org/p/prosilica_camera)). The
+protocol is:
 
 - The camera driver advertises a service call
   `<camera>/request_image` of type
@@ -30,11 +31,14 @@ returning them from the service call:
 
 - Consistency. Client-side processing is always performed in an image
   callback, regardless of what type of camera is used.
-- Visibility. Topics can be monitored in [image_view](image_view) or
-  [rviz](rviz).
-- Reproducibility. Topics can be [bagged](rosbag) and played back later.
-- Compression: Can take advantage of [image_transport](image_transport)
-  to compressed images, if desired.
+- Visibility. Topics can be monitored in
+  [image_view](https://index.ros.org/p/image_view) or
+  [rviz](https://index.ros.org/p/rviz).
+- Reproducibility. Topics can be
+  [bagged](https://index.ros.org/p/rosbag) and played back later.
+- Compression: Can take advantage of
+  [image_transport](https://index.ros.org/p/image_transport) to
+  compressed images, if desired.
 
 ## Nodes
 
@@ -67,5 +71,3 @@ srv_called {
   0.desc = The camera driver's polled image service. `camera` should be remapped by the user to the camera namespace.
 }
 ```
-
-

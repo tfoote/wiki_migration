@@ -23,9 +23,9 @@ point **a**: the resulting point is **a** "as seen from" **p**.
 
 Is better to illustrate these operations graphically:
 
-  -- ------------------------------------------------------------ --
-     <:99%> ![](attachment:mrpt_geometry_poses_explained.png)   
-  -- ------------------------------------------------------------ --
+  -- ------------------------------------------------------------------------------------------------- --
+     <:99%> ![attachment:mrpt_geometry_poses_explained.png](doc/mrpt_geometry_poses_explained.png)   
+  -- ------------------------------------------------------------------------------------------------- --
 
 ## Examples of usage
 

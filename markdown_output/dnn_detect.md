@@ -82,7 +82,8 @@ sudo apt install ros-kinetic-dnn-detect
 The sample launch file uses
 [chuanqi305's MobileNet-SSD](https://github.com/chuanqi305/MobileNet-SSD)
 
-A camera node, such as [usb_cam](usb_cam) needs to be running
+A camera node, such as [usb_cam](https://index.ros.org/p/usb_cam) needs
+to be running
 
 For example: 
 
@@ -105,5 +106,3 @@ results viewed with: {{ rqt_image_view /dnn_images or:
 ```
 rostopic echo /dnn_objects
 ```
-
-

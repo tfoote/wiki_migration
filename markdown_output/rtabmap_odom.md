@@ -10,12 +10,13 @@
 
 ### Visual and Lidar Odometry
 
-Common odometry stuff for [rgbd_odometry](rtabmap_odom#rgbd_odometry),
-[stereo_odometry](rtabmap_odom#stereo_odometry) and
-[icp_odometry](rtabmap_odom#icp_odometry) nodes. These nodes wrap the
-various odometry approaches of RTAB-Map. When a transformation cannot be
-computed, a null transformation is sent to notify the receiver that
-odometry is not updated or lost.
+Common odometry stuff for
+[rgbd_odometry](#rgbd_odometry),
+[stereo_odometry](#stereo_odometry) and
+[icp_odometry](#icp_odometry) nodes. These nodes
+wrap the various odometry approaches of RTAB-Map. When a transformation
+cannot be computed, a null transformation is sent to notify the receiver
+that odometry is not updated or lost.
 
 - There are two set of parameters: ROS and RTAB-Map's parameters. The
   ROS parameters are for connection stuff to interface the RTAB-Map
@@ -206,8 +207,9 @@ RGB images with their depth information from the depth images. Using the
 feature correspondences between the images, a RANSAC approach computes
 the transformation between the consecutive images.
 
-See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. 
+See also
+[Visual Odometry](#visual-and-lidar-odometry)
+for common odometry stuff used by this node. 
 
 ```clearsilver
 sub {
@@ -264,8 +266,9 @@ features on the right images. Using the feature correspondences, a
 RANSAC approach computes the transformation between the consecutive left
 images.
 
-See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. 
+See also
+[Visual Odometry](#visual-and-lidar-odometry)
+for common odometry stuff used by this node. 
 
 ```clearsilver
 sub {
@@ -322,8 +325,9 @@ This node wraps the icp odometry approach of RTAB-Map. Using laser scan
 or a point cloud, odometry is computed by Iterative Closest Point (ICP)
 registration.
 
-See also [Visual Odometry](rtabmap_odom#Visual_and_Lidar_Odometry) for
-common odometry stuff used by this node. 
+See also
+[Visual Odometry](#visual-and-lidar-odometry)
+for common odometry stuff used by this node. 
 
 ```clearsilver
 sub {
@@ -380,5 +384,3 @@ param {
    }
 }
 ```
-
-

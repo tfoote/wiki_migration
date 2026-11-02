@@ -1,8 +1,9 @@
 ## Overview
 
 This package contains the implementation of the CiA 402 DSP protocol. It
-just communicates via objects ([canopen_master](canopen_master), no
-direct CAN communication is needed.
+just communicates via objects
+([canopen_master](https://index.ros.org/p/canopen_master), no direct CAN
+communication is needed.
 
 It runs the 402 state machine and per-mode state machines, if needed. It
 does not handle the read of actual positions, velocities, etc..

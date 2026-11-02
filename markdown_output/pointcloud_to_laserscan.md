@@ -1,9 +1,10 @@
 If you're trying to create a virtual laserscan from your RGBD device,
 and your sensor is forward-facing, you'll find
-[depthimage_to_laserscan](depthimage_to_laserscan) will be much more
-straightforward and efficient since it operates on image data instead of
-bulky pointclouds. However, if your sensor is angled, or you have some
-other esoteric use case, you may find this node to be very helpful!
+[depthimage_to_laserscan](https://index.ros.org/p/depthimage_to_laserscan)
+will be much more straightforward and efficient since it operates on
+image data instead of bulky pointclouds. However, if your sensor is
+angled, or you have some other esoteric use case, you may find this node
+to be very helpful!
 
 Please check the for common problems, or open an
 [issue](https://github.com/ros-perception/pointcloud_to_laserscan/issues)

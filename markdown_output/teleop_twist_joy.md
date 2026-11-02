@@ -6,8 +6,8 @@ of such platforms include [TurtleBot](Robots/TurtleBot),
 [Husky](Robots/Husky), and [Kingfisher](Robots/Kingfisher).
 
 This node provides no rate limiting or autorepeat functionality. It is
-expected that you take advantage of the features built into [joy](joy)
-for this.
+expected that you take advantage of the features built into
+[joy](https://index.ros.org/p/joy) for this.
 
 ## ROS API
 

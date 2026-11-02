@@ -12,7 +12,8 @@ from the CB3- or e-Series.
 This package does not support CB2 controllers.
 
 For robots with Polyscope `v1.8.x` or older, please see whether
-[ur_modern_driver](ur_modern_driver) is sufficient.
+[ur_modern_driver](https://index.ros.org/p/ur_modern_driver) is
+sufficient.
 
 ### Polyscope v3.x, v5.x and 10.x
 

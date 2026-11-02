@@ -1,9 +1,9 @@
-The [lockfree](lockfree) package contains
+The lockfree package contains
 [lock-free data structures](http://en.wikipedia.org/wiki/Non-blocking_synchronization)
 generally meant to be used in realtime or high-performance multithreaded
 systems.
 
-Currently [lockfree](lockfree) contains 2 data structures,
+Currently lockfree contains 2 data structures,
 [FreeList](http://www.ros.org/doc/api/lockfree/html/classlockfree_1_1FreeList.html)
 and
 [ObjectPool](http://www.ros.org/doc/api/lockfree/html/classlockfree_1_1ObjectPool.html).
@@ -76,5 +76,3 @@ if (inst2)
   pool.freeBare(inst2);
 }
 ```
-
-

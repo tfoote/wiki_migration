@@ -8,4 +8,4 @@ affect the visualization, yet.
 
 Here is an example publishing Pose messages which rotate the cube:
 
-![alt Screen shot of rqt Pose View plugin\|width="700"](attachment:rqt_pose_view.png)
+![alt Screen shot of rqt Pose View plugin](doc/rqt_pose_view.png)

@@ -1,14 +1,14 @@
-![](attachment:laser_scan_matcher.png)
+![attachment:laser_scan_matcher.png](doc/laser_scan_matcher.png)
 
 ## Details
 
-The [laser_scan_matcher](laser_scan_matcher) package is an incremental
-laser scan registration tool. The package allows to scan match between
-consecutive
+The laser_scan_matcher package is an
+incremental laser scan registration tool. The package allows to scan
+match between consecutive
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 messages, and publish the estimated position of the laser as a
 [geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)
-or a [tf](tf) transform.
+or a [tf](https://index.ros.org/p/tf) transform.
 
 The package can be used without any odometry estimation provided by
 other sensors. Thus, it can serve as a stand-alone odometry estimator.
@@ -19,7 +19,8 @@ improve the registration speed and accuracy.
 
 ### Supported message types
 
-The [laser_scan_matcher](laser_scan_matcher) can operate using
+The laser_scan_matcher can operate
+using
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 messages or
 [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
@@ -29,13 +30,13 @@ make sure they have no `nan` values.
 
 ### Scan prediction
 
-While the [laser_scan_matcher](laser_scan_matcher) can operate by just
-using scan data, we can speed up the scan registration process by
-providing a guess for the current position of the sensor every time a
-new scan message arrives. When no guess is available, a reasonable (and
-widely-used) assumption is that the sensor didn't move (zero-velocity
-model). Below is a list of inputs that
-[laser_scan_matcher](laser_scan_matcher) accepts:
+While the laser_scan_matcher can
+operate by just using scan data, we can speed up the scan registration
+process by providing a guess for the current position of the sensor
+every time a new scan message arrives. When no guess is available, a
+reasonable (and widely-used) assumption is that the sensor didn't move
+(zero-velocity model). Below is a list of inputs that
+laser_scan_matcher accepts:
 
 1\. **IMU** :An estimation for the change of the orientation angle
 (`delta-theta`) of the robot in the form of a
@@ -104,10 +105,11 @@ the user can simply set either of the two thresholds to zero.
 
 ## Example
 
-You can run the [laser_scan_matcher](laser_scan_matcher) on a
-pre-recorded bag file that comes with the package. First, make sure you
-have the [scan_tools](scan_tools) stack downloaded and installed by
-following the [instruction instructions](scan_tools#Installing).
+You can run the laser_scan_matcher on
+a pre-recorded bag file that comes with the package. First, make sure
+you have the [scan_tools](https://index.ros.org/p/scan_tools) stack
+downloaded and installed by following the
+[instruction instructions](https://index.ros.org/p/scan_tools).
 
 
 

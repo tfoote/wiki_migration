@@ -22,9 +22,9 @@ MRPT particle filtering allows for localization with:
   together and their **probabilistic information automatically fused**
   together.
 
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
-     <tablewidth="818px" tableheight="419px"> ![](attachment:pioneer.jpg) *This Figure shows the mprt pf-localization working together with ROS. RViz can be used to visualize the data and to set an initial pose.*    
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
+  -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     <tablewidth="818px" tableheight="419px"> ![attachment:pioneer.jpg](doc/pioneer.jpg) *This Figure shows the mprt pf-localization working together with ROS. RViz can be used to visualize the data and to set an initial pose.*    
+  -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
 [Youtube](https://www.youtube.com/watch?v=b5glQhT2Zac)
 
@@ -181,5 +181,3 @@ prov_tf {
     0.desc = transform from global map to odometry origin
 }
 ```
-
-

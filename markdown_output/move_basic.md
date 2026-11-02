@@ -8,10 +8,11 @@ navigation node.
 The `move_basic` node performs basic navigation tasks. Path planning
 consists of rotating in place to face the goal and then driving straight
 towards it. It is designed to provide the same software interfaces as
-[move_base](move_base), that is, it implements a `QueuedActionServer`
-(similar to `SimpleActionServer`, see
-[ actionlib documentation](actionlib )), that queues up to two goals
-containing `geometry_msgs/PoseStamped` messages.
+[move_base](https://index.ros.org/p/move_base), that is, it implements a
+`QueuedActionServer` (similar to `SimpleActionServer`, see
+[ actionlib documentation](https://index.ros.org/p/actionlib)), that
+queues up to two goals containing `geometry_msgs/PoseStamped`
+messages.
 
 It is assumed that we are dealing with imperfect localization data:
 `map`->`base_link` is accurate but may be delayed and is at a slow
@@ -32,20 +33,21 @@ attempt to avoid a collision.
 #### Visualization
 
 Some of the data produced by `move_basic` can be visualized with
-[ rviz](rviz ). In the screen shot below, the portion of the laser scan
-data (in white) which is currently in the path of the robot is depicted
-as a red line. The light purple line shows the path planned by the
-robot. A navigation goal can be sent to `move_basic` by `rviz` by
-pressing the `2D nav goal` button and clicking on the map.
+[ rviz](https://index.ros.org/p/rviz). In the screen shot below, the
+portion of the laser scan data (in white) which is currently in the path
+of the robot is depicted as a red line. The light purple line shows the
+path planned by the robot. A navigation goal can be sent to
+`move_basic` by `rviz` by pressing the `2D nav goal` button and
+clicking on the map.
 
-![\|width="350px"](attachment:move_basic.png)
+![width="350px"](doc/move_basic.png)
 
 During rotation, the footprint of the robot is shown as a blue
 rectangle. The red box, if shown shows the rotation that can be
 performed without collision. If no obstacles are detected that obstruct
 a rotation, the red box is not shown.
 
-![\|width="150px"](attachment:rotation.png)
+![width="150px"](doc/rotation.png)
 
 
 
@@ -212,7 +214,8 @@ sudo apt install ros-kinetic-move-basic
 
 #### Example
 
-To move forward one meter using [ rostopic ]( rostopic ) (note that
+To move forward one meter using
+[ rostopic ](https://index.ros.org/p/rostopic) (note that
 [ bash ]( https://www.gnu.org/software/bash/ ) completion will provide
 an empty message that can be filled out):
 

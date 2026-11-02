@@ -1,4 +1,4 @@
-![\|align=right,width=240](attachment:um6.jpg)
+![align=right,width=240](doc/um6.jpg)
 
 ## Overview
 
@@ -38,7 +38,8 @@ to the ground.
 At [ClearpathRobotics](ClearpathRobotics), we use a configuration which
 subscribes to the magnetometer as a raw data feed, and fuses it into the
 orientation as a process external to the device. This functionality is
-provided via the [imu_compass](imu_compass) package.
+provided via the [imu_compass](https://index.ros.org/p/imu_compass)
+package.
 
 ## Installation
 
@@ -127,5 +128,3 @@ node.0 {
  }
 }
 ```
-
-

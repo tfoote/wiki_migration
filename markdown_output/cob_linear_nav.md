@@ -1,10 +1,10 @@
-The [cob_linear_nav](cob_linear_nav) package provides a configurable
-node for simple navigation. It drives the robot on a linear path from
-its current position to its goal position **without any obstacle
-avoidance**. This should be carried out in another package. If the robot
-doesn't move anymore (e.g. due to an obstacle that stays on the robot
-path), the robot stops trying to reach the goal after a certain period
-of time (to be specified over a parameter).
+The cob_linear_nav package provides a
+configurable node for simple navigation. It drives the robot on a linear
+path from its current position to its goal position **without any
+obstacle avoidance**. This should be carried out in another package. If
+the robot doesn't move anymore (e.g. due to an obstacle that stays on
+the robot path), the robot stops trying to reach the goal after a
+certain period of time (to be specified over a parameter).
 
 ## ROS API
 
@@ -135,12 +135,13 @@ prov_tf{
 
 ## Usage/Examples
 
-For the usage of [cob_linear_nav](cob_linear_nav), have a look at
-[cob_navigation_global](cob_navigation_global) and the
-`2dnav_linear.launch` and `2dnav_linear.xml` files therein.
+For the usage of cob_linear_nav, have a
+look at
+[cob_navigation_global](https://index.ros.org/p/cob_navigation_global)
+and the `2dnav_linear.launch` and `2dnav_linear.xml` files therein.
 
 A sample parameter file (currently in
-[cob_navigation_config](cob_navigation_config)`/common/linear/ctrl_params.yaml`)
+[cob_navigation_config](https://index.ros.org/p/cob_navigation_config)`/common/linear/ctrl_params.yaml`)
 can look like this: 
 
 ```
@@ -168,5 +169,3 @@ robot_frame: /base_link #/base_link
 slow_down_distance: 0.5 #0.5[m] distance from robot_center to goal at which robot starts slowing down
 goal_abortion_time: 5.0 #5.0[s] time until robot aborts goal due to obstacle
 ```
-
-

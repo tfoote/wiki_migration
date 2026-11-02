@@ -6,8 +6,8 @@ C++ and Python. It is intended to support data persistence and
 inspection, including in running systems (i.e. introspection). The main
 functions are the storage and retrieval of single message (this is the
 *message store*); the rosbag-like logging of topics to the db (via
-[mongodb_log](mongodb_log)) and their playback (mongodb_play); and the
-storage and recreation of parameters.
+[mongodb_log](https://index.ros.org/p/mongodb_log)) and their playback
+(mongodb_play); and the storage and recreation of parameters.
 
 ## Launching
 
@@ -57,18 +57,19 @@ create the database path (e.g. `mkdir -p /opt/strands/mongodb_store`).
 
 ## Logging of Topics: mongodb_log
 
-To create "[rosbag](rosbag) record"-like logging of topics to the
-`mongodb_store` use [mongodb_log](mongodb_log). This has been updated
-to store logged data in a format that can be easily recreated into ROS
-messages for replay.
+To create "[rosbag](https://index.ros.org/p/rosbag) record"-like
+logging of topics to the `mongodb_store` use
+[mongodb_log](https://index.ros.org/p/mongodb_log). This has been
+updated to store logged data in a format that can be easily recreated
+into ROS messages for replay.
 
 ## Replay of Topics: mongodb_play
 
 The `mongodb_play` node reads logged messages from the store and
 replays them on their original topics. This provides a similar function
-to "[rosbag](rosbag) play". Currently this node always creates its own
-[sim clock](Clock) in order to play back the messages at the time they
-were originally recorded.
+to "[rosbag](https://index.ros.org/p/rosbag) play". Currently this
+node always creates its own [sim clock](Clock) in order to play back the
+messages at the time they were originally recorded.
 
 To run the playback node, use the following options:
 
@@ -199,11 +200,10 @@ representation of a dictionary with path and value keys.
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+rosservice call /config_manager/save_param name_of_the_parameter_to_be_saved
 ```
 
-0 Note: This will save the current value of the
+ Note: This will save the current value of the
 parameter into the locals database
 
 3\. Using the database server directly
@@ -218,33 +218,188 @@ With the mongodb server running, run the message store:
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+rosrun mongodb_store message_store_node.py
 ```
 
-1
+
 
 ### Python Message Store Client
 
 
 
-```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import rospy
+import mongodb_store_msgs.srv as dc_srv
+import mongodb_store.util as dc_util
+from mongodb_store.message_store import MessageStoreProxy
+from geometry_msgs.msg import Pose, Point, Quaternion
+import StringIO
+
+
+if __name__ == '__main__':
+    rospy.init_node("example_message_store_client")
+
+
+    msg_store = MessageStoreProxy()
+
+    p = Pose(Point(0, 1, 2), Quaternion(3, 4,  5, 6))
+
+    try:
+
+
+        # insert a pose object with a name, store the id from db
+        p_id = msg_store.insert_named("my favourite pose", p)
+
+        # you don't need a name (note that this p_id is different than one above)
+        p_id = msg_store.insert(p)
+
+        p_id = msg_store.insert(['test1', 'test2'])
+
+        # get it back with a name
+        print msg_store.query_named("my favourite pose", Pose._type)
+
+        p.position.x = 666
+
+        # update it with a name
+        msg_store.update_named("my favourite pose", p)
+
+        p.position.y = 2020
+
+        # update the other inserted one using the id
+        msg_store.update_id(p_id, p)
+
+        stored_p, meta = msg_store.query_id(p_id, Pose._type)
+
+        assert stored_p.position.x == 666
+        assert stored_p.position.y == 2020
+        print "stored object ok"
+        print "stored object inserted at %s (UTC rostime) by %s" % (meta['inserted_at'], meta['inserted_by'])
+        print "stored object last updated at %s (UTC rostime) by %s" % (meta['last_updated_at'], meta['last_updated_by'])
+
+        # some other things you can do...
+
+        # get it back with a name
+        print msg_store.query_named("my favourite pose", Pose._type)
+
+
+        # try to get it back with an incorrect name, so get None instead
+        print msg_store.query_named("my favourite position", Pose._type)
+
+        # get all poses
+        print msg_store.query(Pose._type)
+        # get all non-existant typed objects, so get an empty list back
+        print msg_store.query( "not my type")
+
+        # get all poses where the y position is 1
+        print msg_store.query(Pose._type, {"position.y": 1})
+
+        # get all poses where the y position greater than 0
+        print msg_store.query(Pose._type, {"position.y": {"$gt": 0}})
+
+
+    except rospy.ServiceException, e:
+        print "Service call failed: %s"%e
 ```
 
-2
+
 
 ### C++ Message Store Client
 
 
 
-```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+```cplusplus
+#include "mongodb_store/message_store.h"
+#include "geometry_msgs/Pose.h"
+#include <boost/foreach.hpp>
+
+#include <sstream>
+#include <cassert>
+
+using namespace geometry_msgs;
+using namespace mongodb_store;
+using namespace std;
+/**
+ * This tutorial demonstrates simple sending of messages over the ROS system.
+ */
+int main(int argc, char **argv)
+{
+        ros::init(argc, argv, "example_mongodb_store_cpp_client");
+        ros::NodeHandle nh;
+
+        //Create object which does the work for us.
+        MessageStoreProxy messageStore(nh);
+
+        //This is the message we want to store
+        Pose p;
+        string name("my pose");
+        //Insert something with a name, storing id too
+        string id(messageStore.insertNamed(name, p));
+        cout<<"Pose \""<<name<<"\" inserted with id "<<id<<endl;
+
+        p.position.z = 666;
+        messageStore.updateID(id, p);
+
+        // now test it worked
+        assert(messageStore.queryID<Pose>(id).first->position.z == 666);
+
+        vector< boost::shared_ptr<Pose> > results;
+
+        //Get it back, by default get one
+        if(messageStore.queryNamed<Pose>(name, results)) {
+
+                BOOST_FOREACH( boost::shared_ptr<Pose> p,  results)
+                {
+                        ROS_INFO_STREAM("Got by name: " << *p);
+                }
+        }
+
+        results.clear();
+        if(messageStore.queryID<Pose>(id, results)) {
+
+                BOOST_FOREACH( boost::shared_ptr<Pose> p,  results)
+                {
+                        ROS_INFO_STREAM("Got by ID: " << *p);
+                }
+        }
+
+        p.position.x = 999;
+        messageStore.updateNamed(name, p);
+
+        results.clear();
+        // try to get it back with an incorrect name, so get None instead
+        messageStore.queryNamed<Pose>("my favourite position", results);
+        BOOST_FOREACH( boost::shared_ptr<Pose> p,  results)
+        {
+                ROS_INFO_STREAM("Got: " << *p);
+        }
+
+        results.clear();
+        // get all poses, should show updated named position
+        messageStore.query<Pose>(results);
+        BOOST_FOREACH( boost::shared_ptr<Pose> p,  results)
+        {
+                ROS_INFO_STREAM("Got: " << *p);
+        }
+
+        messageStore.deleteID(id);
+
+        results.clear();
+        if(messageStore.queryID<Pose>(id, results)) {
+
+                BOOST_FOREACH( boost::shared_ptr<Pose> p,  results)
+                {
+                        ROS_INFO_STREAM("Got by ID: " << *p);
+                }
+
+        }
+        return 0;
+}
 ```
 
-3
+
 
 ## Replicating Stored Messages: replicator_node.py
 
@@ -257,11 +412,10 @@ be made can be set via the `mongodb_store_extras` ros parameter:
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+mongodb_store_extras: [["localhost", 62344], ["localhost", 62333]]
 ```
 
-4 Inserts and updates are performed across the
+ Inserts and updates are performed across the
 main and replicant stores.
 
 If `mongodb_store_extras` is set (regardless of
@@ -273,11 +427,11 @@ You can launch additional datacentres as follows, e.g.
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+rosrun mongodb_store mongodb_server.py _master:=false _database_path:=/opt/strands/strands_mongodb_62344 _host:=localhost _port:=62344
+rosrun mongodb_store mongodb_server.py _master:=false _database_path:=/opt/strands/strands_mongodb_62333 _host:=localhost _port:=62333
 ```
 
-5 You can test if this works by adding some
+ You can test if this works by adding some
 things to the message store, deleting them from the master using
 [RoboMongo](http://robomongo.org) (not the message store as the deletes
 are replicated), then running queries.
@@ -289,11 +443,10 @@ The `MoveEntries` action and the corresponding action server:
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+rosrun mongodb_store replicator_node.py
 ```
 
-6 (which is included in `datacentre.launch`)
+ (which is included in `datacentre.launch`)
 
 allows you to bulk copy or move entries from message store collections
 to the mongod instances defined under `mongodb_store_extras`. The
@@ -308,11 +461,10 @@ earlier.
 
 
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
+rosrun mongodb_store replicator_client.py message_store robblog scheduling_problems
 ```
 
-7 **\*NOTE THAT this all makes `update`
+ **\*NOTE THAT this all makes `update`
 operations a bit uncertain, so please do not use this type of
 replication on collections you plan to use update on.**\*
 
@@ -320,9 +472,89 @@ replication on collections you plan to use update on.**\*
 
 
 
+```clearsilver
+node.0 {
+name = mongodb_server.py
+desc = Starts the mongod server and provides utility services.
+param {
+0.name = ~test_mode
+0.type = bool
+0.desc = Starts the datacentre with a random port and database path on localhost. Used for testing.
+0.default = false
+1.name = ~database_path
+1.type = string
+1.desc = Directory path for the mongo database. This path must exist.
+1.default = /opt/ros/mongodb_store
+2.name = ~master
+2.type = bool
+2.desc = Whether this the master mongodb store or a replication store. This is a feature only used with replication and can be ignored if you only use a single store.
+2.default = true
+3.name = mongodb_host
+3.type = string
+3.desc = Host to run the mongod server as
+3.default = localhost
+4.name = mongodb_port
+4.type = int
+4.desc = Port to run the mongod server on
+4.default = 27017
+}
+param_set {
+0.name = mongodb_host
+0.type = string
+0.desc = Host to run the mongod server as
+0.default = localhost
+1.name = mongodb_port
+1.type = int
+1.desc = Port to run the mongod server on
+1.default = 27017
+}
+}
+node.1 {
+name = config_manager.py
+desc = Publishes persistent parameters via rosparam
+param {
+0.name = ~defaults_path
+0.type = string
+0.desc = Path from which to load default configuration
+1.name = mongodb_host
+1.type = string
+1.desc = Host to find the mongod server on
+1.default = localhost
+2.name = mongodb_port
+2.type = int
+2.desc = Port to find the mongod server on
+2.default = 27017
+}
+}
+node.2 {
+name = message_store_node.py
+desc = Provides services to store and retrieve ROS messages in the mongodb store.
+param {
+1.name = mongodb_host
+1.type = string
+1.desc = Host of the master server to store messages in.
+2.name = mongodb_port
+2.type = int
+2.desc = Port of the master server to store messages in.
+0.name = mongodb_store_extras
+0.type = list
+0.desc = List of hosts, port pairs to replicate to.
+0.default = []
+}
+}
+node.3 {
+name = replicator_node.py
+desc = Uses `mongodump` to replicate mongodb store content across multiple hosts.
+param {
+0.name = mongodb_store_extras
+0.type = list
+0.desc = List of hosts, port pairs to replicate to.
+1.name = mongodb_host
+1.type = string
+1.desc = Host of the master server to replicate from.
+2.name = mongodb_port
+2.type = int
+2.desc = Port to the master server to replicate from.
+}
+}
 ```
-rosparam set mongodb_port 62345
-rosparam set mongodb_host bob
-```
-
-8

@@ -1,8 +1,8 @@
 ## Overview
 
-The [rosserial_python](rosserial_python) package contains a Python
-implementation of the host-side rosserial connection. It automatically
-handles setup, publishing, and subscribing for a connected
+The rosserial_python package contains a
+Python implementation of the host-side rosserial connection. It
+automatically handles setup, publishing, and subscribing for a connected
 rosserial-enabled device.
 
 Note that you need to install pyserial for this to work (try pip install
@@ -55,5 +55,3 @@ You can also specify these parameters as part of your launch file:
   </node>
 </launch>
 ```
-
-

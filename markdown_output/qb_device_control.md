@@ -1,9 +1,11 @@
 This package is barely usable alone since it provides only the common
 features to be exploited and expanded in the derived packages (cf.
-[qb_hand](qb_hand) and [qb_move](qb_move)).
+[qb_hand](https://index.ros.org/p/qb_hand) and
+[qb_move](https://index.ros.org/p/qb_move)).
 
 ## Launch files
 
+<a id="controllers_bringup"></a>
 
 
 ```clearsilver
@@ -59,4 +61,132 @@ srv_called {
 }
 ```
 
+## Tutorials
 
+- [Basics](#basics): Basic
+  knowledge of the qbrobotics control Nodes
+- [Details](#details):
+  Details on the qbrobotics control Nodes
+- [Communication Handler](#communication-handler):
+  Details on the Communication Handler Node
+- [Control](#control):
+  Details on the control Node
+
+## Basics
+
+As shown in the following picture there are two distinct configurations
+to control several *qbrobotics®* devices connected to the system:
+
+- The first (and recommended) groups all the Hardware Interfaces
+  together (thanks to the
+  [combined_robot_hw](https://index.ros.org/p/combined_robot_hw)) and
+  exploits them as a unique robot system. We have called it
+  *"synchronous"* just to point out that every sequence of reads and
+  writes is always done in the same predefined order.
+- The second mode threats every device as an independent Hardware
+  Interface with its dedicated ROS Node which executes the control loop
+  independently w.r.t. the rest of the system, i.e.
+  *"asynchronously"*.
+
+Mixed configurations can be also achieved through a proper setup. In
+such a case we can think of synchronous sub-systems which execute
+asynchronously w.r.t. each other.
+
+*Note that in a single-device system the synchronous mode is a
+nonsense.*
+
+![overview_setup\|width=755](https://bitbucket.org/qbrobotics/qbhand-ros/raw/ddbccc369d6846549e9b03c9dce0c2dc6c1115e1/qb_hand_media/overview_setup.svg)
+
+*Note that in the previous picture are shown qbmoves, but the same
+concept applies to any other qbrobotics device.*
+
+In both cases there is always one central Node which manages the shared
+resources for the serial communication (e.g. one or many USB ports) and
+which provides several ROS services to whom wants to interact with the
+connected devices. This Node is called *Communication Handler* and it is
+usually started in a separate terminal.
+
+
+
+```wiki
+Please remember that in a multi-device configuration, each ''qbrobotics®'' device connected to your system '''must have a unique ID'''.
+```
+
+## Details
+
+To understand what is hiding under the hood, have a look at the C++
+classes overview which sums up all the main concepts of our ROS
+packages:
+
+![overview_classes\|width=755](https://bitbucket.org/qbrobotics/qbhand-ros/raw/ddbccc369d6846549e9b03c9dce0c2dc6c1115e1/qb_hand_media/overview_classes.svg)
+
+## Communication Handler
+
+The Communication Handler Node has no parameters to be set, therefore it
+is always launched like this: 
+
+```
+roslaunch qb_device_driver communication_handler.launch
+```
+
+
+
+On start, it scans the serial communication resources connected to you
+system and shows a list of the devices it has found. By default it never
+scans again for new devices, apart from asking it explicitly during the
+initialization of a control Node.
+
+This is a simple example when starting the Communication Handler with
+two *qbrobotics®* devices connected on two distinct USB ports:
+
+
+```
+[ INFO] [1524044523.511369300]: [CommunicationHandler] handles [/dev/ttyUSB1].
+[ INFO] [1524044524.426984697]: [CommunicationHandler] handles [/dev/ttyUSB0].
+[ INFO] [1524044525.218613760]: [CommunicationHandler] has found [2] devices connected:
+[ INFO] [1524044525.218696997]:                        - device [1] connected through [/dev/ttyUSB0]
+[ INFO] [1524044525.218736612]:                        - device [2] connected through [/dev/ttyUSB1]
+```
+
+
+
+When the Communication Handler is on, it provides all the Services
+required to interact with the connected devices: e.g. *get info or
+measurements, activate or deactivate motors, set commands*, and even
+more\... A detailed description of the services can be found in the
+[qb_device_driver](https://index.ros.org/p/qb_device_driver) package
+wiki.
+
+## Control
+
+As shown in
+[Details](#details) the
+control Node exploits the
+[ros_control](https://index.ros.org/p/ros_control) Controller Manager
+which loads and runs the device controllers. Each controller provides an
+Action Server that, together with the Hardware Interface structure,
+allows the user to send commands to the relative device and get its
+measurements.
+
+From an API point of view, it is implemented an Action Client which
+matches the relative trajectory controller and provides a method to send
+Goals, i.e. command references, directly to the given device.
+Additionally the Action Client is subscribed to a Topic
+(`\*_controller/command`) that can be used to send reference commands
+from outside the code, e.g. asynchronously from the command line, or
+from a higher level control Node, e.g. as a result of a planning
+algorithm.
+
+
+
+```wiki
+It is recommended not to mix these two control modes: choose either to control the device directly from the code by extending our API or through this command Topic.
+```
+
+
+
+Regardless the control mode chosen for the given application, and apart
+form a customization of the API, the following launch file templates can
+be used respectively to control several devices or a single one:
+
+![overview_launch\|width=755](https://bitbucket.org/qbrobotics/qbhand-ros/raw/ddbccc369d6846549e9b03c9dce0c2dc6c1115e1/qb_hand_media/overview_launch.svg)

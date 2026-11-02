@@ -1,13 +1,13 @@
 `depth_image_proc` has found a new home in
-[image_pipeline](image_pipeline). In Electric it resided in
-[openni_kinect](openni_kinect).
+[image_pipeline](https://index.ros.org/p/image_pipeline). In Electric it
+resided in [openni_kinect](openni_kinect).
 
 ## Overview
 
 `depth_image_proc` provides basic processing for depth images, much as
-[image_proc](image_proc) does for traditional 2D images. The two
-packages are complementary; for example, you can (and should!) rectify
-your depth image before converting it to a point cloud.
+[image_proc](https://index.ros.org/p/image_proc) does for traditional 2D
+images. The two packages are complementary; for example, you can (and
+should!) rectify your depth image before converting it to a point cloud.
 
 A variety of camera technologies can produce depth images:
 
@@ -29,7 +29,7 @@ you can save a few CPU cycles by using the `uint16` raw topics instead
 of the `float` topics.
 
 For an example of `depth_image_proc` in practice, examine the contents
-of [openni_launch](openni_launch).
+of [openni_launch](https://index.ros.org/p/openni_launch).
 
 ## Nodelets
 
@@ -58,11 +58,11 @@ node.1 {
 
 
 
-  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
-     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                    
-     ![Depth\|width=100%](attachment:depth.png)                                            ![Disparity\|width=100%](attachment:disparity.png)            
-     Depth image                                                                           Disparity image (colorized by [disparity_view](image_view))   
-  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------- --
+     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                                            
+     ![Depth](doc/depth.png)                                                               ![Disparity](doc/disparity.png)                                                       
+     Depth image                                                                           Disparity image (colorized by [disparity_view](https://index.ros.org/p/image_view))   
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------- --
 
 
 
@@ -113,11 +113,11 @@ node.2 {
 
 
 
-  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
-     <tablestyle="width: 99%; text-align: center" style="width: 46%"> **Input**      **Output**                                            
-     ![Depth\|width=100%](attachment:depth.png)                                            ![Point cloud\|width=100%](attachment:rviz_xyz.png)   
-     Depth image                                                                           Point cloud, colorized by distance along Z-axis       
-  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------- --
+     <tablestyle="width: 99%; text-align: center" style="width: 46%"> **Input**      **Output**                                        
+     ![Depth](doc/depth.png)                                                               ![Point cloud](doc/rviz_xyz.png)                  
+     Depth image                                                                           Point cloud, colorized by distance along Z-axis   
+  -- ---------------------------------------------------------------------------------- -- ------------------------------------------------- --
 
 
 
@@ -156,13 +156,13 @@ node.3 {
 
 
 
-  -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
-     <tablestyle="width: 99%; text-align: center" style="width: 40%"> **Input**      **Output**                                                                       
-     ![Depth\|width=100%](attachment:depth_reg.png)                                        <                  3> ![Point cloud\|width=100%](attachment:rviz_xyzrgb.png)   
-     Registered depth image                                                                                                                                                 
-     ![RGB\|width=100%](attachment:rgb.jpg)                                                                                                                                 
-     RGB image                                                                             Color point cloud                                                                
-  -- ---------------------------------------------------------------------------------- -- ------------------- ------------------------------------------------------------ --
+  -- ---------------------------------------------------------------------------------- -- ------------------- ----------------------------------------- --
+     <tablestyle="width: 99%; text-align: center" style="width: 40%"> **Input**      **Output**                                                    
+     ![Depth](doc/depth_reg.png)                                                           <                  3> ![Point cloud](doc/rviz_xyzrgb.png)   
+     Registered depth image                                                                                                                              
+     ![RGB](doc/rgb.jpg)                                                                                                                                 
+     RGB image                                                                             Color point cloud                                             
+  -- ---------------------------------------------------------------------------------- -- ------------------- ----------------------------------------- --
 
 
 
@@ -204,11 +204,11 @@ node.4 {
 
 
 
-  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
-     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                  
-     ![Depth\|width=100%](attachment:depth.png)                                            ![Registered depth\|width=100%](attachment:depth_reg.png)   
-     Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera      
-  -- ---------------------------------------------------------------------------------- -- ----------------------------------------------------------- --
+  -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------- --
+     <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                               
+     ![Depth](doc/depth.png)                                                               ![Registered depth](doc/depth_reg.png)                   
+     Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera   
+  -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------- --
 
 
 
@@ -270,5 +270,3 @@ like as:
   </node>
 </launch>
 ```
-
-

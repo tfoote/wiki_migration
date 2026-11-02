@@ -13,8 +13,8 @@
 A node for image acquisition from an USB camera (OpenCV is used). A
 special option for this node is that it can be configured to read images
 from a directory or a video file. Parameters can be changed with the
-[dynamic_reconfigure](dynamic_reconfigure) GUI from ROS. For dynamic
-parameters, see
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure) GUI
+from ROS. For dynamic parameters, see
 [Camera.cfg](https://github.com/introlab/rtabmap_ros/blob/master/rtabmap_legacy/cfg/Camera.cfg)
 
 
@@ -195,5 +195,3 @@ node {
   }
 }
 ```
-
-

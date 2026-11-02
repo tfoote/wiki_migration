@@ -5,10 +5,11 @@ functionalities.
 
 The most important file is the **leo_bringup.launch** which is run by
 [LeoOS](LeoOS) at the startup process and includes core software
-components used by Leo, such as: host-side [rosserial](rosserial) and
-[rosbridge](rosbridge_suite) nodes,
-[robot_state_publisher](robot_state_publisher), camera driver and some
-more.
+components used by Leo, such as: host-side
+[rosserial](https://index.ros.org/p/rosserial) and
+[rosbridge](https://index.ros.org/p/rosbridge_suite) nodes,
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher),
+camera driver and some more.
 
 ## Usage
 
@@ -42,5 +43,3 @@ pub {
   0.desc= The namespace of the robot.
 }
 ```
-
-

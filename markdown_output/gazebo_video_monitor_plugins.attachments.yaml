@@ -1,0 +1,8 @@
+doc/camera-contains-plugin.jpg: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Utility(20)Plugins/attachments/camera-contains-plugin.jpg
+doc/camera-visualization.jpg: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Configuring(20)a(20)gvm(20)multicamera(20)sensor/attachments/camera-visualization.jpg
+doc/gazebo_video_monitor_plugins.png: pages/gazebo_video_monitor_plugins/attachments/gazebo_video_monitor_plugins.png
+doc/gvm-design.png: pages/gazebo_video_monitor_plugins(2f)Tutorials/attachments/gvm-design.png
+doc/multi-camera-monitor-plugin.gif: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Gazebo(20)Multi(20)Camera(20)Monitor(20)Plugin/attachments/multi-camera-monitor-plugin.gif
+doc/multi-video-monitor-plugin.gif: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Gazebo(20)Multi(20)Video(20)Monitor(20)Plugin/attachments/multi-video-monitor-plugin.gif
+doc/multi-view-monitor-plugin.gif: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Gazebo(20)Multi(20)View(20)Monitor(20)Plugin/attachments/multi-view-monitor-plugin.gif
+doc/video-monitor-plugin.png: pages/gazebo_video_monitor_plugins(2f)Tutorials(2f)Gazebo(20)Video(20)Monitor(20)Plugin/attachments/video-monitor-plugin.png

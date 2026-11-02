@@ -1,12 +1,13 @@
 ## Overview
 
-The [rosserial_server](rosserial_server) package contains a C++
-implementation of the host-side rosserial connection. It automatically
-handles setup, publishing, and subscribing for a connected
+The rosserial_server package contains a
+C++ implementation of the host-side rosserial connection. It
+automatically handles setup, publishing, and subscribing for a connected
 rosserial-enabled device. It uses a python node in the rosserial_python
 package as an aid for handling subcriptions.
 
-These nodes use the [topic_tools](topic_tools)!/ShapeShifter meta
+These nodes use the
+[topic_tools](https://index.ros.org/p/topic_tools)!/ShapeShifter meta
 message in order to republish messages from clients without having to
 know about them at compile time. The only caveat to this approach is
 that the servers do not have the full textual definition of messages (as
@@ -125,11 +126,11 @@ acceptable.
 
 ## Limitations
 
-At this time, [rosserial_server](rosserial_server) is experimental. It
-is missing key features of the
-[rosserial_python](rosserial_python)-provided node, including
-parameters, logging, and services. If you require these features, please
-stick to the standard Python server for now.
+At this time, rosserial_server is
+experimental. It is missing key features of the
+[rosserial_python](https://index.ros.org/p/rosserial_python)-provided
+node, including parameters, logging, and services. If you require these
+features, please stick to the standard Python server for now.
 
 Or be prepared to implement them yourself, which we'd really
 appreciate!

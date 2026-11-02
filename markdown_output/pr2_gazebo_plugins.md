@@ -4,17 +4,17 @@ This package contains dynamic plugins for [ Gazebo](gazebo) and
 [ROS](ROS) integration with simulated hardware.
 
 - Plugin-Supported Hardware:
-- [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](pr2_controller_manager):
+- [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](https://index.ros.org/p/pr2_controller_manager):
   provided by `GazeboRosControllerManager`.
-- [ Prosilica Camera](prosilica_camera): provided by
-  `GazeboRosProsilica`.
-- [Battery Power Monitor](power_monitor): provided by
-  `GazeboRosPowerMonitor`.
+- [ Prosilica Camera](https://index.ros.org/p/prosilica_camera):
+  provided by `GazeboRosProsilica`.
+- [Battery Power Monitor](https://index.ros.org/p/power_monitor):
+  provided by `GazeboRosPowerMonitor`.
 - Unsupported Features:
-- [ Power Board Driver](pr2_power_drivers)
+- [ Power Board Driver](https://index.ros.org/p/pr2_power_drivers)
 
-Please see [gazebo_plugins](gazebo_plugins) for additional supported
-hardware components in simulation.
+Please see [gazebo_plugins](https://index.ros.org/p/gazebo_plugins) for
+additional supported hardware components in simulation.
 
 ## Gazebo XML Plugin Configuration
 
@@ -46,7 +46,8 @@ parameter where robot description is stored. `<robotNamespace>`
 
 `GazeboRosProsilica` plugin provides ROS topic and service interfaces
 similar to those provided by the
-[ Prosilica Camera hardware](prosilica_camera) on PR2.
+[ Prosilica Camera hardware](https://index.ros.org/p/prosilica_camera)
+on PR2.
 
 #### Parameters
 
@@ -107,8 +108,9 @@ right stereo camera
 ### gazebo_ros_power_node
 
 `GazeboRosPowerNode` plugin provides ROS topics and services similar
-to those provided by [PR2 power monitor node](power_monitor) on physical
-PR2.
+to those provided by
+[PR2 power monitor node](https://index.ros.org/p/power_monitor) on
+physical PR2.
 
 #### Parameters
 
@@ -191,19 +193,228 @@ srv {
 
 `GazeboRosControllerManager` plugin provides similar ROS interface as
 [pr2_etherCAT](pr2_etherCAT) on the physical PR2 robot. This plugin is
-written in a way that [PR2 controller manager](pr2_controller_manager)
+written in a way that
+[PR2 controller manager](https://index.ros.org/p/pr2_controller_manager)
 works transparently with either this simulated plugin or the
 [pr2_etherCAT](pr2_etherCAT) hardware. For more information on using
-[generic controllers](robot_mechanism_controllers) or
+[generic controllers](https://index.ros.org/p/robot_mechanism_controllers)
+or
 [PR2 specific controllers](http://ros.org/wiki/pr2_mechanism_controllers)
 with this plugin, please see
-[pr2_controller_manager](pr2_controller_manager).
+[pr2_controller_manager](https://index.ros.org/p/pr2_controller_manager).
 
 ## Tutorials
+
+- [Adding a GazeboRosForce gazebo ros plugin to a simulated object](#adding-a-gazeborosforce-gazebo-ros-plugin-to-a-simulated-object):
+  \## the next tutorial description (optional)
+- [Attaching a ROS Ground Truth Pose Broadcaster to Objects in Simulation](#attaching-a-ros-ground-truth-pose-broadcaster-to-objects-in-simulation):
+  Attaching a ROS ground truth pose broadcaster to objects in simulation
 
 ## Roadmap
 
 This stack will be updated with new features as the PR2 hardware itself
 is updated. Future versions will also incorporate
-[dynamic_reconfigure](dynamic_reconfigure) options to match ORS driver
-functionality.
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+options to match ORS driver functionality.
+
+## Adding a GazeboRosForce gazebo ros plugin to a simulated object
+
+### GazeboRosForce Example
+
+#### Create a Simple Box URDF using the GazeboRosForce plugin
+
+Create an URDF for an object and save it as object.urdf:
+
+
+```
+<?xml version="1.0" ?>
+<robot name="single_joint">
+  <gazebo reference="base">
+    <material>Gazebo/GrassFloor</material>
+  </gazebo>
+  <link name="world"/>
+  <joint name="link_joint" type="continuous">
+    <axis xyz="0 0 1"/>
+    <parent link="world"/>
+    <origin rpy="0 0 0" xyz="0 0 1"/>
+    <child link="link"/>
+    <limit effort="100" velocity="100" k_velocity="0" />
+    <joint_properties damping="0.1" friction="1.0" />
+  </joint>
+  <link name="link">
+    <inertial>
+      <mass value="10"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="0.1" iyz="0.0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 1" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.2 1.0 0.2"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 1" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.2 1.0 0.2"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link">
+    <material>Gazebo/GrassFloor</material>
+    <turnGravityOff>true</turnGravityOff>
+  </gazebo>
+  
+   <gazebo>
+    <controller:gazebo_ros_force name="gazebo_ros_force" plugin="libgazebo_ros_force.so">
+      <alwaysOn>true</alwaysOn>
+      <update>100</update>
+      <updateRate>100.0</updateRate>
+      <bodyName>link</bodyName>
+      <topicName>force</topicName>
+    </controller:gazebo_ros_force>
+  </gazebo>
+</robot>
+```
+
+
+
+#### Spawn Model in Simulation
+
+Start an empty world simulation 
+
+```
+rosmake gazebo_worlds
+roslaunch gazebo_worlds empty_world.launch
+```
+
+ To spawn above
+URDF 
+
+```
+rosrun gazebo spawn_model -file object.urdf -urdf -z 1 -model my_object
+```
+
+ You will see the /force topic listed with
+
+
+```
+rostopic list
+```
+
+ You can applaiy a torque
+
+
+```
+rostopic pub /force geometry_msgs/Wrench  '{force:  {x: 0.0, y: 0.0, z: 0.0}, torque: {x: 0.0,y: 0.0,z: 0.6}}'
+```
+
+ You should see the box rotating
+
+## Attaching a ROS Ground Truth Pose Broadcaster to Objects in Simulation
+
+```wiki
+Users are highly discouraged from using the documentation and tutorials for Gazebo on this page. Gazebo is now a stand alone project at [[http://gazebosim.org|gazebosim.org]]. See documentation there, thanks!
+```
+
+
+
+### Attaching a Ground Truth Plugin
+
+1\. Update the URDF from
+[this tutorial](simulator_gazebo/Tutorials/SpawningObjectInSimulation)
+by adding a Gazebo extension for **ros_p3d** plugin:
+
+
+```text
+<?xml version="1.0"?>
+<robot xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller" name="simple_box">
+  <gazebo>
+    <controller:ros_p3d name="my_box_controller" plugin="libros_p3d.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>my_box</bodyName>
+      <topicName>my_box_pose_ground_truth</topicName>
+      <gaussianNoise>0.0</gaussianNoise>
+      <frameName>my_box</frameName>
+      <interface:position name="my_box_p3d_position_iface" />
+    </controller:ros_p3d>
+  </gazebo>
+
+  <joint name="my_box_joint" type="revolute" >
+    <!-- axis is in the parent link frame coordintates -->
+    <axis xyz="0 1 0" />
+    <parent link="world" />
+    <child link="my_box" />
+    <!-- initial pose of my_box joint/link in the parent frame coordiantes -->
+    <origin xyz="0 0 2" rpy="0 0 0" />
+  </joint>
+  <link name="my_box">
+    <inertial>
+      <mass value="1.0" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <origin xyz="1 0 0" /> 
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="100.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <!-- visual origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="1 0 0" rpy="0 0 0" />
+      <geometry name="my_box_visual_geom">
+        <box size="0.05 0.05 0.10" />
+      </geometry>
+    </visual>
+    <collision>
+      <!-- collision origin is defined w.r.t. link local coordinate system -->
+      <origin xyz="1 0 0" rpy="0 0 0 " />
+      <geometry name="my_box_collision_geom">
+        <box size="0.05 0.05 0.10" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="my_box">
+    <material>Gazebo/Blue</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
+</robot>
+```
+
+
+
+The additional Gazebo extension block below: instantiates a `ros_p3d`
+plugin that broadcasts a `geometry_msgs/Pose` message over ROS topic
+**my_box_pose_ground_truth**. To see pose information, run
+
+
+```
+rostopic echo my_box_pose_ground_truth
+```
+
+ after simulation has started.
+
+## Tutorials
+
+*Also see
+[ pr2_simulator tutorials](https://index.ros.org/p/pr2_simulator).*
+
+- [Adding a GazeboRosForce gazebo ros plugin to a simulated object](#adding-a-gazeborosforce-gazebo-ros-plugin-to-a-simulated-object):
+  \## the next tutorial description (optional)
+- [Attaching a ROS Ground Truth Pose Broadcaster to Objects in Simulation](#attaching-a-ros-ground-truth-pose-broadcaster-to-objects-in-simulation):
+  Attaching a ROS ground truth pose broadcaster to objects in simulation
+
+## Troubleshooting
+
+### Errors when using package
+
+#### Error: ERROR NAME
+
+**Example:** 
+
+```
+the error output the user will see on the console
+```
+
+
+
+**Solution:**
+
+- Is something not connected? No device is connected.

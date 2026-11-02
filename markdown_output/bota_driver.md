@@ -389,11 +389,10 @@ group. This can be done with:
 
 
 ```
-$ cd catkin_workspace/src
-$ git clone https://gitlab.com/botasys/bota_driver.git
+$ sudo usermod -a -G dialout username
 ```
 
-0 Please log off and log in again for the
+ Please log off and log in again for the
 changes to take effect!
 
 ### Custom parameters
@@ -401,21 +400,19 @@ changes to take effect!
 1\. Example with custom `time_step`: 
 
 ```
-$ cd catkin_workspace/src
-$ git clone https://gitlab.com/botasys/bota_driver.git
+$ roslaunch bota_device_driver rokubimini.launch time_step:=0.1
 ```
 
-1
+
 
 2\. Example with custom `rokubimini_setup_file`:
 
 
 ```
-$ cd catkin_workspace/src
-$ git clone https://gitlab.com/botasys/bota_driver.git
+$ roslaunch bota_device_driver rokubimini.launch rokubimini_setup_file:=$(pwd)/myawesomesetup.yaml
 ```
 
-2
+
 
 ## Unit Tests
 

@@ -217,19 +217,19 @@ pub{
 The SVH has 9 degrees of freedom which are addressed as channels. Topics
 that accept channels will use the following mapping:
 
-  -- ------------------------ -- ------------ -- ---- ------------------------------------------------- --
-     **Channel Name**            **Number**                                                             
-     ALL                         -1              <   10> ![](attachment:svh_finger_description.png)   
-     THUMB_FLEXION               0                                                                      
-     THUMB_OPPOSITION            1                                                                      
-     INDEX_FINGER_DISTAL         2                                                                      
-     INDEX_FINGER_PROXIMAL       3                                                                      
-     MIDDLE_FINGER_DISTAL        4                                                                      
-     MIDDLE_FINGER_PROXIMAL      5                                                                      
-     RING_FINGER                 6                                                                      
-     PINKY                       7                                                                      
-     FINGER_SPREAD               8                                                                      
-  -- ------------------------ -- ------------ -- ---- ------------------------------------------------- --
+  -- ------------------------ -- ------------ -- ---- ------------------------------------------------------------------------------- --
+     **Channel Name**            **Number**                                                                                           
+     ALL                         -1              <   10> ![attachment:svh_finger_description.png](doc/svh_finger_description.png)   
+     THUMB_FLEXION               0                                                                                                    
+     THUMB_OPPOSITION            1                                                                                                    
+     INDEX_FINGER_DISTAL         2                                                                                                    
+     INDEX_FINGER_PROXIMAL       3                                                                                                    
+     MIDDLE_FINGER_DISTAL        4                                                                                                    
+     MIDDLE_FINGER_PROXIMAL      5                                                                                                    
+     RING_FINGER                 6                                                                                                    
+     PINKY                       7                                                                                                    
+     FINGER_SPREAD               8                                                                                                    
+  -- ------------------------ -- ------------ -- ---- ------------------------------------------------------------------------------- --
 
 ### Parameter sets
 
@@ -364,11 +364,13 @@ files and so on you can use the very simple include file:
 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+<include file="$(find schunk_svh_driver)/launch/svh_node.launch">
+            <arg name="serial_device" value="$(arg serial_device)"/>
+            <arg name="autostart" value="$(arg autostart)" />
+</include>
 ```
 
-0 again, fill out the arguments you need, the
+ again, fill out the arguments you need, the
 rest will default to predefined values. If you use the svh_node.launch
 file you will have to provide an "output joint state publisher" for
 the joint states in order to generate the joint states required for the
@@ -395,11 +397,10 @@ true an rqt gui will be opened when launching the node:
 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+roslaunch schunk_svh_driver svh_controller.launch standalone:=true gui:=true
 ```
 
-1
+
 
 The `rqt` gui opens always to its default configuration (which is
 usually the last one). The SVH comes with the plugin `SVH_Reset` which
@@ -409,7 +410,7 @@ visualize the robot model of the SVH. A configuration file for rviz is
 provided with the package at "urdf/svh.rviz". Your configuration
 should look something like this to access all GUI functionalities:
 
-![](attachment:svh_rqt_gui.jpg)
+![attachment:svh_rqt_gui.jpg](doc/svh_rqt_gui.jpg)
 
 ### Simulation
 
@@ -417,22 +418,20 @@ If you do not want to use the actual hand you can simply start a
 simulation of the hand by using: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+roslaunch schunk_svh_driver svh_controller.launch simulation:=true gui:=true
 ```
 
-2 as with the
+ as with the
 real hardware you can choose to use the simulation (which is not really
 a simulation but just a visualisation) with convenient sliders or with
 the command line/ your own packages by using the `standalone`
 argument: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+roslaunch schunk_svh_driver svh_controller.launch simulation:=true standalone:=true gui:=true
 ```
 
-3
+
 
 **Note**: The SVH uses relative encoders that need a hard stop to reset.
 Especially the finger spread however also contains springs that will
@@ -446,29 +445,26 @@ test node `svh_sin_test` is provided. Make sure the hand can move
 freely and run the test with: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+roslaunch schunk_svh_driver svh_sin_test.launch
 ```
 
-4 after all
+ after all
 fingers are reset all fingers except the thumb will perform a sinus like
 motion. You can stop/start the motion execution by sending:
 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+rostopic pub -1 /svh_sin_test/toggle_run std_msgs/Empty "{}"
 ```
 
-5 During execution the driver will output
+ During execution the driver will output
 warnings like this: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+<2014-09-29 14:40:56.004> DriverSVH(Warning) SVHFingerManager::setAllTargetPositions: Could not set target position vector: At least one channel is out of bounds!
 ```
 
-6 this is perfectly normal
+ this is perfectly normal
 as the sin test tries to drive the fingers to positions outside of the
 soft stops.
 
@@ -525,19 +521,19 @@ autostart immediately. Check the output of the driver. After a
 successful connect it should read: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+<2014-09-30 11:24:20.086> DriverSVH(Info) SVHFingerManager::connect: Successfully established connection to SCHUNK five finger hand.
+<2014-09-30 11:24:20.086> DriverSVH(Info) SVHFingerManager::connect: Send packages = 28, received packages = 28
 ```
 
-7 If the
+ If the
 driver states: 
 
 ```
-catkin_make_isolated
-   source devel_isolated/setup.bash
+<2014-09-30 13:23:54.741> DriverSVH(Error) SVHSerialInterface::connect: Could not open serial device: /dev/ttyUSB0
+[ INFO] [1412076234.741596785]: SVH Driver Ready, you will need to connect and reset the fingers before you can use the hand.
 ```
 
-8 the serial device could not ne
+ the serial device could not ne
 opened. Check that you have installed the udev rules and that the device
 shows up as /dev/ttyUSBx when you connect it *After an autostart of the
 software it says **Send packages = 28, received packages = 20** or
@@ -628,31 +624,34 @@ The following illustration shows where the individual joints are located
 within the kinematic model of the hand and how the connected finger
 segments are scaled in respect to these joints. The mimic joints will
 always have the joint angle of the joint they mimic times the scaling
-factor that is stated for each joint ![](attachment:svh_joint_names.png)
-The links in the URDF contain many helper and dummy links that are
-needed to create the quite complex kinematic chain why the following
-illustration of the links is only partially accurate. Especially the
-links names "e" are mostly virtual and really in one place. Also the
-base link is actually further in the back than drawn in the picture. Due
-to the limitations of 2D we could not accurately illustrate this:
-![](attachment:svh_link_names.png) For proper illustration of the robot
-model simplified collada files where created out of the original CAD
-data of the SVH. The following picture shows which part corresponds to a
-file name: ![](attachment:svh_dae_filenames.png)
+factor that is stated for each joint
+![attachment:svh_joint_names.png](doc/svh_joint_names.png) The links in
+the URDF contain many helper and dummy links that are needed to create
+the quite complex kinematic chain why the following illustration of the
+links is only partially accurate. Especially the links names "e" are
+mostly virtual and really in one place. Also the base link is actually
+further in the back than drawn in the picture. Due to the limitations of
+2D we could not accurately illustrate this:
+![attachment:svh_link_names.png](doc/svh_link_names.png) For proper
+illustration of the robot model simplified collada files where created
+out of the original CAD data of the SVH. The following picture shows
+which part corresponds to a file name:
+![attachment:svh_dae_filenames.png](doc/svh_dae_filenames.png)
 
 ### Kinematic dependencies and ranges
 
 The following indicates the maximum angles (from wich the scaling for
-the svh driver was calculated): ![](attachment:svh_kinematic_ranges.jpg)
-The joint names correspond to the ones seen in this kinematic
-description ![](attachment:svh_kinematic_dependencies.jpg)
-![](attachment:svh_overall_measurements.jpg)
+the svh driver was calculated):
+![attachment:svh_kinematic_ranges.jpg](doc/svh_kinematic_ranges.jpg) The
+joint names correspond to the ones seen in this kinematic description
+![attachment:svh_kinematic_dependencies.jpg](doc/svh_kinematic_dependencies.jpg)
+![attachment:svh_overall_measurements.jpg](doc/svh_overall_measurements.jpg)
 
 ### Additional Documents
 
 - low level protocol information used to communicate with the SVH
-  <attachment:svh_protocol_specification.pdf>
+  [svh_protocol_specification.pdf](doc/svh_protocol_specification.pdf)
 - Hardware specifications (i.e. max motor
-  currents)<attachment:svh_hardware_information.pdf>
+  currents)[svh_hardware_information.pdf](doc/svh_hardware_information.pdf)
 - Controller specifications (low level information)
-  <attachment:svh_controller_description.pdf>
+  [svh_controller_description.pdf](doc/svh_controller_description.pdf)

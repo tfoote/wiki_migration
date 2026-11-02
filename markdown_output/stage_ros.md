@@ -104,4 +104,4 @@ control simulated robots from inside the simulator, instead of being on
 the other end of a ROS connection. There are some situations in which it
 can be advantageous to use Stage controllers. For a discussion of when
 and how to use Stage controllers, see
-[this tutorial](stage/Tutorials/IntroductiontoStageControllers).
+[this tutorial](https://index.ros.org/p/stage).

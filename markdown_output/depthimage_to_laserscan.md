@@ -4,7 +4,7 @@
 
 Here is the scene in which the following screenshots were captured.
 
-![](attachment:scene.jpg)
+![attachment:scene.jpg](doc/scene.jpg)
 
 ### DepthImage
 
@@ -14,7 +14,7 @@ overlayed in color on the
 [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html).
 Red is close to camera, purple is far from camera.
 
-![](attachment:depthimage.png)
+![attachment:depthimage.png](doc/depthimage.png)
 
 ### LaserScan
 
@@ -22,14 +22,14 @@ Red is close to camera, purple is far from camera.
 projected on top of the
 [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
 
-![](attachment:pointcloud.png)
+![attachment:pointcloud.png](doc/pointcloud.png)
 
 ### Top Down LaserScan
 
 Top down view of the
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html).
 
-![](attachment:overhead_scan.png)
+![attachment:overhead_scan.png](doc/overhead_scan.png)
 
 ## Node
 

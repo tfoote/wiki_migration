@@ -1,0 +1,6 @@
+doc/reconfigure_gui1.png: pages/rqt_reconfigure/attachments/reconfigure_gui1.png
+doc/reconfigure_gui2.png: pages/rqt_reconfigure/attachments/reconfigure_gui2.png
+doc/reconfigure_gui3.png: pages/rqt_reconfigure/attachments/reconfigure_gui3.png
+doc/seq-1_msg_arrval.png: pages/rqt_reconfigure/attachments/seq-1_msg_arrval.png
+doc/seq-2_Filtering_with_timer.png: pages/rqt_reconfigure/attachments/seq-2_Filtering_with_timer.png
+doc/seq-5_Connect_nodes_multithread.png: pages/rqt_reconfigure/attachments/seq-5_Connect_nodes_multithread.png

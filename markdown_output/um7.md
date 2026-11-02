@@ -48,7 +48,7 @@ device, the UM6, can be found at:
 www.chrobotics.com/docs/AN-1003-GettingStartedUM6.pdf and will work with
 minor adaptations.
 
-![\|align="center",width="611"](attachment:orientB.jpg)
+![align="center",width="611"](doc/orientB.jpg)
 
 testing
 

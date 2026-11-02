@@ -20,5 +20,3 @@ node.0{
 name=mqtt_bridge_node
 desc= The `mqtt_bridge_node` provides a functionality to bridge between ROS and MQTT in bidirectional.
 ```
-
-

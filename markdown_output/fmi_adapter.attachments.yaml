@@ -1,0 +1,3 @@
+doc/damped_pendulum_with_transport_delay_in_rqt_plot.png: pages/fmi_adapter/attachments/damped_pendulum_with_transport_delay_in_rqt_plot.png
+doc/high-level_architecture_with_application_node.png: pages/fmi_adapter/attachments/high-level_architecture_with_application_node.png
+doc/high-level_architecture_with_fmi_adapter_node.png: pages/fmi_adapter/attachments/high-level_architecture_with_fmi_adapter_node.png

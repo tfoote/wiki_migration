@@ -12,9 +12,10 @@
 
 This node starts the visualization interface of RTAB-Map. It is a
 wrapper of the RTAB-Map GUI library. It has the same purpose as
-[rviz](rviz) but with specific options for RTAB-Map.
+[rviz](https://index.ros.org/p/rviz) but with specific options for
+RTAB-Map.
 
-![RGB-D Mapping\|width="800"](attachment:rgbd_mapping.png)
+![RGB-D Mapping](doc/rgbd_mapping.png)
 
 #### Arguments
 
@@ -190,5 +191,3 @@ req_tf {
    }
 }
 ```
-
-

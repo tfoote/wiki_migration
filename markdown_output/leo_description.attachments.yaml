@@ -1,0 +1,4 @@
+doc/leo_model_base_link.png: pages/leo_description/attachments/leo_model_base_link.png
+doc/leo_model_rviz.png: pages/leo_description/attachments/leo_model_rviz.png
+doc/leo_urdf.pdf: pages/leo_description/attachments/leo_urdf.pdf
+doc/leo_urdf.png: pages/leo_description/attachments/leo_urdf.png

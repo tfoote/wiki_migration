@@ -1,4 +1,4 @@
 ## MAVCONN library
 
-It is [mavlink](mavlink) connection and communication library used in
-[MAVROS](mavros).
+It is [mavlink](https://index.ros.org/p/mavlink) connection and
+communication library used in [MAVROS](https://index.ros.org/p/mavros).

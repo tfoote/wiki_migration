@@ -43,7 +43,7 @@ When autodetection fails (you have a very embedded board, or your
 toolchain has been patched together in a very non-standard way) there is
 provision to manually supply details via the `ECL_IS_CUSTOM` macro.
 Refer to the
-[custom platform detection tutorial](ecl_config/Tutorials/Custom Platform Detection).
+[custom platform detection tutorial](#custom-platform-detection).
 
 Note that other packages also do some platform detection to varying
 degrees, e.g ecl_time_lite. The macros defined here are the most general
@@ -132,4 +132,30 @@ if ( ecl::is_char_signed() {
 }
 ```
 
+## Custom Platform Detection
 
+### Manual Configuration
+
+If ecl can't successfully autodetect your platform implementation, then
+a a header can be hand customised to tailor for your own schwanky
+embedded board. To do this simply define the `ECL_IS_CUSTOM macro` as
+pointing to a header somewhere on your system before you call any ecl
+headers in your code. For example:
+
+
+
+```cplusplus
+#define ECL_IS_CUSTOM <ecl_dsp2812.hpp>
+```
+
+
+
+This will abort usage of the cmake generated header and use your own
+hand crafted header in its place. The custom header should roughly have
+the same macros defined as those listed in `ecl/config/ecl.hpp`.
+
+## Tutorials
+
+- [Custom Platform Detection](#custom-platform-detection):
+  Manually setting ecl_config parameters for a custom board
+  configuration.

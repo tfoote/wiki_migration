@@ -1,8 +1,8 @@
 ## Overview
 
 This library is a replacement for the ROS
-[message_filters](message_filters) package. It is written in modern C++
-and more type-safe than the original version.
+[message_filters](https://index.ros.org/p/message_filters) package. It
+is written in modern C++ and more type-safe than the original version.
 
 The data flow is modeled with a pipeline metaphor, where data always
 flows from a source to a sink. A filter is both source and sink for
@@ -127,8 +127,8 @@ more details.
   the following policies:
 - `Fifo`: First-In-First-Out
 - `ExactTime`: Exactly matching time stamp
-- [ApproximateTime](fkie_message_filters/ApproximateTime): Approximately
-  matching time stamp
+- [ApproximateTime](#approximatetime):
+  Approximately matching time stamp
 - `Divider`: Split source with multiple inputs into independent output
   sinks
 - `ImagePublisher`: Publish consumed data to a ROS image topic
@@ -158,3 +158,78 @@ the pipeline and abort with a `std::logic_error` exception.
 Certain filters, such as the `Buffer` or the `TfFilter`, can
 interoperate with ROS callback queues for convenient workload
 scheduling.
+
+## ApproximateTime
+
+### ApproximateTime policy
+
+#### Overview
+
+This is a policy used by `fkie_message_filters::Combiner` to match
+messages coming on a set of topics, even if their time stamps do not
+match perfectly. It uses a modified version of the
+[ApproximateTime](https://index.ros.org/p/message_filters) algorithm.
+Like its predecessor, the algorithm is not merely applying an epsilon to
+account for time differences, but tries to find the best possible match.
+Each set of grouped messages which are output by the policy, satisfies
+the following criteria:
+
+- **Each message is used only once.** Two sets will never share the same
+  message, but some messages can be dropped.
+- **Messages are used in order.** Unlike the original algorithm, we do
+  not guarantee that sets as a whole do not overlap, but we guarantee
+  that for each topic, messages will be used in time stamp order. We
+  found that revising this criterion improves match quality for
+  high-frequency topics, such as stereo vision systems with depth
+  images, in the presence of transient jitter.
+- **Sets are contiguous.** This means that you cannot form a valid set
+  from the dropped messages.
+- **Sets have minimal timespan.** This means that the time stamp
+  difference among messages in a set cannot be smaller without violating
+  the previous property.
+- **The output only depends on the time stamps,** not on the arrival
+  time of messages. The messages have to arrive in order on each topic,
+  but not necessarily across topics, as long as the queue size is large
+  enough to accommodate for the differences.
+
+Optional parameters:
+
+- **Set timespan**: the time difference of two messages in the same set
+  will never exceed this value. By default, the policy does not
+  constrain the timespan. If you set this value, the policy will avoid
+  "wasting" messages in sets which are ultimately rejected anyway.
+  Oftentimes, this will give you more valid sets in total.
+- **Message distance**: if messages of a particular topic cannot be
+  closer together than a known interval, providing this lower bound will
+  not change the output but will allow the algorithm to conclude earlier
+  that a given set is optimal, thereby reducing output lag. The default
+  lower bound is zero. An incorrect lower bound will result in
+  suboptimal sets being selected. A typical bound is, say, half the
+  frame rate of a camera.
+
+#### Algorithm
+
+The algorithm works as follows:
+
+- Wait until each input queue has at least one message available.
+- Pick the latest message among the heads of all queues, which is going
+  to be the *pivot*. The pivot belongs to every set that is contiguous
+  to the previous set, so it must belong to the newly formed set.
+- For all other input queues except the pivot, advance to the next
+  message until the time difference to the pivot message is minimal.
+  Proving optimality depends on the minimum message distance and the
+  fact that on every topic, messages will arrive in time stamp order. If
+  any queue is exhausted and, at least theoretically, the next message
+  could still be closer to the pivot, wait for the next message to
+  arrive.
+- Once all input queues have reached their optimum, send the resulting
+  set. If the set violates the user-specified timespan constraint, drop
+  the pivot element instead, and restart from scratch with the remaining
+  messages.
+- If messages arrive out of order (i.e. a message on a topic has a time
+  stamp that is earlier than the previously received one), all queues
+  are flushed and the policy restarts from scratch.
+- If messages need to be dropped because the maximum queue size or the
+  message age limit is exceeded, the pivot element is chosen again from
+  the new queue heads. By default, the policy will buffer arbitrary many
+  messages for at most one second.

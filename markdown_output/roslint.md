@@ -160,7 +160,6 @@ You can also disable cpplint for a particular line only:
 
 
 ```
-find_package(catkin REQUIRED COMPONENTS roslint ...)
+// There's just no other way; I don't control the location of this header.
+#include "my_silly_header.h"  // NOLINT(build/include)
 ```
-
-0

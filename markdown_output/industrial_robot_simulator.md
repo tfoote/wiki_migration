@@ -6,9 +6,10 @@ simulator only supports the minimum
 [requirements](Industrial/Industrial_Robot_Driver_Spec#Essential_Capabilities).
 The purpose of this node is to provide a simulated robot controller for
 development. This simulator publishes standard topics that can be fed
-into [Rviz](rviz) to create a realistic visualization of an actual robot
-cell. Note that the simulation is at the ROS API level, the node does
-not accept Simple Message TCP/UDP connections.
+into [Rviz](https://index.ros.org/p/rviz) to create a realistic
+visualization of an actual robot cell. Note that the simulation is at
+the ROS API level, the node does not accept Simple Message TCP/UDP
+connections.
 
 ## Usage
 

@@ -1,10 +1,10 @@
 Note: before moving the robot base, you may want to
-[tuck the arms out of the way](pr2_tuckarm).
+[tuck the arms out of the way](https://index.ros.org/p/pr2_tuckarm).
 
 ## Bring up the robot
 
 As with all applications, you must first
-[bring up your robot](pr2_apps#bringup).
+[bring up your robot](https://index.ros.org/p/pr2_apps).
 
 ## Joystick teleoperation
 
@@ -16,14 +16,14 @@ Before use, the PS3 controller must be "paired" with the robot. If
 your controller is not already paired, you can pair it by pressing the
 center button, shown in the image. If you need to pair a new PS3
 controller to the PR2 (i.e. not the controller that came with it), see
-[the tutorials](pr2_teleop/Tutorials).
+[the tutorials](#tutorials).
 
 There is currently no feedback from the controller or the robot during
 or after pairing. The best way to tell if they have been paired
 correctly is to try issuing commands to the robot via the joystick as
 described below.
 
-[ {{attachment:pairing.png}}](attachment:pairing.png )
+[ {{doc/pairing.png\|attachment:pairing.png}}](doc/pairing.png)
 
 ### Launching
 
@@ -40,8 +40,8 @@ PS3 controller.
 
 ### Controlling
 
-![](attachment:ps3joy_buttons.png)
-![ps3 joystick diagram\|width=700](attachment:ps3diagram.png)
+![attachment:ps3joy_buttons.png](doc/ps3joy_buttons.png)
+![ps3 joystick diagram](doc/ps3diagram.png)
 
 #### Moving the Base
 
@@ -104,9 +104,134 @@ roslaunch pr2_teleop teleop_keyboard.launch
 
  Now you should be able
 to control the robot base with keyboard commands in the shell where you
-ran the above [roslaunch](roslaunch) command.
+ran the above [roslaunch](https://index.ros.org/p/roslaunch) command.
 
 ### Control
 
 The keys that you can use, and what they do, are displayed to the
 screen.
+
+## Tutorials
+
+- [Pairing the PR2 with a New PS3 Joystick](#pairing-the-pr2-with-a-new-ps3-joystick):
+  Instructions for pairing the PR2 to a new PS3 joystick.
+
+## Pairing the PR2 with a New PS3 Joystick
+
+### Find the PR2's Bluetooth MAC Address
+
+The first step is to find the PR2's bluetooth MAC address. The key step
+here is that it is **c2** that has bluetooth:
+
+
+
+```
+ssh c2
+hciconfig
+```
+
+
+
+You should see output something like:
+
+
+
+```
+$  hciconfig
+hci0:	Type: USB
+	BD Address: 00:1B:DC:00:06:F8 ACL MTU: 310:10 SCO MTU: 64:8
+	UP RUNNING PSCAN 
+	RX bytes:647476598 acl:11163343 sco:0 events:560 errors:0
+	TX bytes:5862 acl:262 sco:0 commands:137 errors:0
+```
+
+
+
+The MAC address is listed after BD Address. In this example it is
+00:1B:DC:00:06:F8.
+
+If this doesn't work, you can try:
+
+
+
+```
+sudo hciconfig hci0 up
+hciconfig
+```
+
+
+
+If that still does not work, doublecheck that you are running on c2 not
+c1.
+
+### Set the Joystick's Bluetooth Master
+
+Using the microUSB cable, plug the joystick into any computer running
+ROS for which you have sudo. Set the joystick's Bluetooth master to the
+PR2's MAC address using:
+
+
+
+```
+roscd ps3joy
+sudo ./bin/sixpair <MAC Address>
+```
+
+
+
+You should see output like:
+
+
+
+```
+Current Bluetooth master: 00:02:76:2a:20:71
+Setting master bd_addr to 00:1b:dc:00:06:f8
+```
+
+
+
+### Pair the Joystick and PR2
+
+Unplug the joystick from the computer. The PR2 automatically runs
+ps3joy.py so you should not have to start that. Instead simply start the
+robot: 
+
+```
+robot start
+```
+
+ And then launch pr2_teleop
+
+
+```
+roslaunch pr2_teleop telop_joystick.launch
+```
+
+ Press the center button of the joystick to pair
+it with the PR2. You should now be able to control the PR2 using the new
+joystick.
+
+### More Information
+
+For more information, see the [ps3joy](https://index.ros.org/p/ps3joy)
+package. Pairing a new PS3 joystick with the PR2 is similar to
+[pairing the joystick to a computer with one USB](https://index.ros.org/p/ps3joy).
+
+When following any tutorials about bluetooth on the PR2, remember:
+
+1\. Bluetooth is on c2 not c1 2. The PR2 starts ps3joy.py when it boots.
+If you try the command 
+
+```
+rosrun ps3joy ps3joy.py
+```
+
+ you will see an error
+about the process already running. There was apparently a problem with
+Karmic that would also give this error, but make sure you have killed
+any previous ps3joy process before trying those fixes:
+
+
+```
+ps -A|grep ps3joy
+```

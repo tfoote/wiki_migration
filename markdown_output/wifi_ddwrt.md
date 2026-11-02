@@ -43,9 +43,10 @@ information about all the Access Points that the router can see.
 
 ### monitor
 
-The monitor node publishes a visualization marker to [rviz](rviz) that
-displays between 1-5 bars over the robot's head according to the signal
-strength of the Access Point the robot is currently connected to.
+The monitor node publishes a visualization marker to
+[rviz](https://index.ros.org/p/rviz) that displays between 1-5 bars over
+the robot's head according to the signal strength of the Access Point
+the robot is currently connected to.
 
 
 

@@ -1,10 +1,11 @@
 ## Usage
 
 To access these plugins, launch the `rqt_bag` GUI tool (see
-[rqt_bag](rqt_bag) for details), right-click on the timeline of the
-desired topic select a view type from the context menu.
+[rqt_bag](https://index.ros.org/p/rqt_bag) for details), right-click on
+the timeline of the desired topic select a view type from the context
+menu.
 
-![rqt_bag message views\|width="750"](attachment:rqt_bag_views.png)
+![rqt_bag message views](doc/rqt_bag_views.png)
 
 ## Plugins
 
@@ -18,7 +19,7 @@ and
 [sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)
 messages:
 
-![rqt_bag image view\|width="300"](attachment:image_grab.png)
+![rqt_bag image view](doc/image_grab.png)
 
 Re-sizing the window scales the image.
 
@@ -28,7 +29,7 @@ The plot view displays a time series plot of numeric fields in a ROS
 message. The view inherits from the `rqt_plot` code base, so all
 plotting options are the same as with `rqt_plot`.
 
-![rqt_bag plot view\|width="700"](attachment:plot_grab.png)
+![rqt_bag plot view](doc/plot_grab.png)
 
 To plot a message field, select the field from the list in the right
 window (Note: currently only fields from the same message topic can be

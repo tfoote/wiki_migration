@@ -1,7 +1,8 @@
 ## Overview
 
 This experimental package was an early rapid-prototyping test bed for
-the [geographic_info](geographic_info) API for Open Street Map.
+the [geographic_info](https://index.ros.org/p/geographic_info) API for
+Open Street Map.
 
 It is no longer in active development, but some people have found it
 useful, and it still has some level of support.
@@ -98,11 +99,12 @@ to zoom out.
 
 ## Map Visualization
 
-The goal is to translate OSM data for a region into [rviz](rviz)
-markers. Currently, the [viz_osm](#viz_osm) node only publishes
+The goal is to translate OSM data for a region into
+[rviz](https://index.ros.org/p/rviz) markers. Currently, the
+viz_osm node only publishes
 "interesting" information, like roads and buildings. For a full
 implementation, that will need to be selectable.
 
-![](attachment:prc-osm-small.png)
+![attachment:prc-osm-small.png](doc/prc-osm-small.png)
 
-![](attachment:prc-rviz-small.png)
+![attachment:prc-rviz-small.png](doc/prc-rviz-small.png)

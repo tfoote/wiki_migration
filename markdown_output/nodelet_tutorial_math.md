@@ -1,1 +1,1 @@
-See [nodelet/Tutorials](nodelet/Tutorials) for usage.
+See [Tutorials](https://index.ros.org/p/nodelet) for usage.

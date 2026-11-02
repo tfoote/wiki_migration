@@ -28,9 +28,8 @@ option to "True" if it's not set already. 1. Set "Type" to
 running Tracking Tools has multiple network interfaces, the "Local
 Interface" may be set as "Preferred". The "Multicast Interface"
 should be set to the address of the machine running the mocap_optitrack
-node.
-![\|Basic Streaming Properties](attachment:streaming_properties_1.png)
-![\|Streaming IP Configuration](attachment:streaming_properties_2.png)
+node. ![Basic Streaming Properties](doc/streaming_properties_1.png)
+![Streaming IP Configuration](doc/streaming_properties_2.png)
 
 ## Configuring mocap_optitrack
 
@@ -61,7 +60,7 @@ for how to do this.
 
 Next, note the Trackable ID for each trackable in Tracking Tools.
 
-![Trackable ID](attachment:trackables.png)
+![Trackable ID](doc/trackables.png)
 
 The published topics for each trackable can now be configured in
 mocap_optitrack. Each trackable that should be published in ROS can be

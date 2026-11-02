@@ -222,5 +222,3 @@ Check with `net_perf_check.sh` and increase the values if needed:
 sudo sysctl -w net.core.netdev_max_backlog=2000
 sudo sysctl -w net.core.netdev_budget=600
 ```
-
-

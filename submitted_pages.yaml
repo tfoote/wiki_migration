@@ -49,3 +49,24 @@ angles:
   subdirectory: angles
   submitted_branch: ros-wiki-migration-angles
   tully2: ready
+apriltag_ros:
+  action: create
+  attachments:
+  - apriltag_ros/doc/bundle_sample.png
+  - apriltag_ros/doc/calibration_sample.png
+  - apriltag_ros/doc/io_diagram.png
+  attachments_commit_sha: b9fd29d7f3270fe4fe1036ee066ee01b897d7c89
+  branch: master
+  commit_sha: 43c1092b039c0321a9ec0e6c5843223d2db2ac80
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/apriltag_ros.git
+  markdown_file: markdown_output/apriltag_ros.md
+  package_xml_match: true
+  pr_url: https://github.com/AprilRobotics/apriltag_ros/pull/164
+  readme_exists: false
+  repository: https://github.com/AprilRobotics/apriltag_ros.git
+  repository_archived: false
+  source_file: pages/apriltag_ros/revisions/00000025
+  source_queue: export_pages.yaml
+  subdirectory: apriltag_ros
+  submitted_branch: ros-wiki-migration-apriltag_ros
+  tully2: ready

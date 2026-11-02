@@ -33,7 +33,7 @@ variables of the FMU, respectively. Then, it runs the FMU's solver with
 a user-definable update period according to the ROS clock. This approach
 is illustrated in the following diagram.
 
-![\|width=760](attachment:high-level_architecture_with_fmi_adapter_node.png)
+![width=760](doc/high-level_architecture_with_fmi_adapter_node.png)
 
 The fmi_adapter_node also searches for counterparts for each FMU
 parameter and variable in the
@@ -61,7 +61,7 @@ functions are provided by the class FMIAdapter. Instances of this class
 may be integrated in application-specific ROS nodes or libraries as
 illustrated in the following architecture diagram.
 
-![\|width=760](attachment:high-level_architecture_with_application_node.png)
+![width=760](doc/high-level_architecture_with_application_node.png)
 
 For parsing the XML description of an FMU and for running the FMU's
 solver, fmi_adapter uses the C library
@@ -77,7 +77,7 @@ package provides two FMUs and launch files to illustrate the use of the
 fmi_adapter node. Step-by-step instructions for creating your own FMU
 are also given.
 
-![\|width=760](attachment:damped_pendulum_with_transport_delay_in_rqt_plot.png)
+![width=760](doc/damped_pendulum_with_transport_delay_in_rqt_plot.png)
 
 Please see
 <https://github.com/boschresearch/fmi_adapter/blob/master/fmi_adapter_examples>
@@ -177,5 +177,3 @@ internal timepoint 0.0.
 adapter.exitInitializationMode(ros::Time::now());
 ros::spin();
 ```
-
-

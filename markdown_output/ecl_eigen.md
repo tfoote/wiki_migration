@@ -4,4 +4,5 @@ while eigen was fairly volatile and transitioning from Eigen 2 to Eigen
 dependency.
 
 Currently either the internal or system implementation can be used - see
-[ecl_linear_algebra](ecl_linear_algebra) for more information.
+[ecl_linear_algebra](https://index.ros.org/p/ecl_linear_algebra) for
+more information.

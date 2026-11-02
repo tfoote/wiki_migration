@@ -1,14 +1,14 @@
 See
-[robot_mechanism_controllers/JointSplineTrajectoryController](robot_mechanism_controllers/JointSplineTrajectoryController)
+[JointSplineTrajectoryController](https://index.ros.org/p/robot_mechanism_controllers)
 for information on the controller that the head action communicates
 with.
 
-![](attachment:head_action_topics.png)
+![attachment:head_action_topics.png](doc/head_action_topics.png)
 
 ## Usage
 
 An example of using the head action on the PR2 can be found in the
-[Moving the Head tutorial](pr2_controllers/Tutorials/Moving the Head).
+[Moving the Head tutorial](https://index.ros.org/p/pr2_controllers).
 
 ## ROS API
 
@@ -42,7 +42,8 @@ param {
 ### Action interface
 
 The joint trajectory action provides an action server (see
-[actionlib](actionlib)) that takes in goals of the type
+[actionlib](https://index.ros.org/p/actionlib)) that takes in goals of
+the type
 [pr2_controllers_msgs/msg/PointHeadGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/PointHeadGoal.html).
 It reports success when the head is pointed at the target.
 
@@ -88,5 +89,3 @@ pub {
   0.desc=Sends joint trajectories to the controller.
 }
 ```
-
-

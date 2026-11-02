@@ -2,12 +2,13 @@
 
 This package uses a joystick or keyboard for teleoperation of
 Care-O-bot. To use this package you need either a real Care-O-bot or a
-simulated one (see [cob_gazebo](cob_gazebo)).
+simulated one (see [cob_gazebo](https://index.ros.org/p/cob_gazebo)).
 
 ## ROS API
 
-The [cob_teleop](cob_teleop) package provides both, a configurable node
-for teleoperation by joystick or by keyboard. 
+The cob_teleop package provides both, a
+configurable node for teleoperation by joystick or by keyboard.
+
 
 ```clearsilver
  name = cob_teleop
@@ -209,7 +210,7 @@ roslaunch cob_teleop teleop_keyboard.launch
 To be able to use the joystick the `deadman_button` has to be pressed
 all the time, as soon as the button is released a stop will be send to
 all hardware components. Have a look at the following image to see which
-buttons command which components. ![\|width=100%](attachment:teleop.png)
+buttons command which components. ![width=100%](doc/teleop.png)
 
 For **moving the base**: Hold the `deadman` button and use the base
 `rotation` and `translation` axis to move the base.
@@ -266,5 +267,3 @@ max_ay: 0.5
 max_vth: 0.3
 max_ath: 0.7
 ```
-
-

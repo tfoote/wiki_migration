@@ -1,14 +1,15 @@
-![](attachment:laser_ortho_projector.png)
+![attachment:laser_ortho_projector.png](doc/laser_ortho_projector.png)
 
 ## Usage
 
 The package is intended as an intermediary step to transform laser data,
 before passing it to another node that performs scan-matching (for
-example, [laser_scan_matcher](laser_scan_matcher) or
-[slam_gmapping](slam_gmapping)). It works under the assumption that the
-environment is rectilinear in the z-dimension, meaning that obstacles
-look the same, regardless of the height where they are observed. This
-assumption typically holds for indoor spaces.
+example,
+[laser_scan_matcher](https://index.ros.org/p/laser_scan_matcher) or
+[slam_gmapping](https://index.ros.org/p/slam_gmapping)). It works under
+the assumption that the environment is rectilinear in the z-dimension,
+meaning that obstacles look the same, regardless of the height where
+they are observed. This assumption typically holds for indoor spaces.
 
 The orthogonal projector can be used for vehicles with varying roll-,
 pitch-, and z-pose that travel in indoor environments.
@@ -41,7 +42,8 @@ of the points, to obtain the set of points in the horizontal plane.
 
 We also calculate a transformation between the world frame and a
 orthogonally-projected base frame of the robot (labeled `/base_ortho`
-in the figure above), and publish it as a [tf](tf) transform.
+in the figure above), and publish it as a
+[tf](https://index.ros.org/p/tf) transform.
 
 Note that projecting the scan from an arbitrary roll and pitch results
 in points that are no longer equal angles apart. Thus, we pubish the
@@ -51,10 +53,12 @@ The point cloud is published in the base_ortho frame of reference.
 
 ## Example
 
-You can run the [laser_ortho_projector](laser_ortho_projector) on a
+You can run the
+laser_ortho_projector on a
 pre-recorded bag file that comes with the package. First, make sure you
-have the [scan_tools](scan_tools) stack downloaded and installed by
-following the instructions [here](scan_tools#Installing).
+have the [scan_tools](https://index.ros.org/p/scan_tools) stack
+downloaded and installed by following the instructions
+[here](https://index.ros.org/p/scan_tools).
 
 Next, make sure you have the necessary tools installed:
 
@@ -77,7 +81,8 @@ roslaunch laser_ortho_projector demo.launch
 
 
 You should see the input laser scan and the orthogonally projected scan
-displayed in [rviz](rviz), similar to the video below:
+displayed in [rviz](https://index.ros.org/p/rviz), similar to the video
+below:
 
 [Youtube](https://www.youtube.com/watch?v=jHsdwQbqc8Y)
 

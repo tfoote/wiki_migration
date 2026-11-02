@@ -1,17 +1,17 @@
 ## Overview
 
-This package provides a [URDF](urdf) model of [Jackal](Robots/Jackal).
-For an example launchfile to use in visualizing this model, see
-[jackal_viz](jackal_viz).
+This package provides a [URDF](https://index.ros.org/p/urdf) model of
+[Jackal](Robots/Jackal). For an example launchfile to use in visualizing
+this model, see [jackal_viz](https://index.ros.org/p/jackal_viz).
 
-![](attachment:jackal-urdf.png)
+![attachment:jackal-urdf.png](doc/jackal-urdf.png)
 
 ## Accessories
 
 Jackal has a suite of optional payloads called accessories. These
 payloads can be enabled and placed on Jackal using environment variables
-specified at the time the [xacro](xacro) is rendered to URDF. Available
-accessory vars are:
+specified at the time the [xacro](https://index.ros.org/p/xacro) is
+rendered to URDF. Available accessory vars are:
 
   -- ---------------------------- -- ------------------ -- ----------------------------------------------------------------------------------- --
      **Variable**                    **Default**           **Description**                                                                     
@@ -55,5 +55,5 @@ especially as a convenience for simulation launch.
      `front_flea3`           Includes front-facing Pointgrey Flea3.        
   -- ---------------------- -- --------------------------------------------- --
 
-Please see [jackal_simulator](jackal_simulator) for more information on
-simulating Jackal.
+Please see [jackal_simulator](https://index.ros.org/p/jackal_simulator)
+for more information on simulating Jackal.

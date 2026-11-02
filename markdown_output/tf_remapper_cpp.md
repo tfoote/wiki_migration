@@ -10,7 +10,7 @@ with the following advantages:
   messages/sec with ease
 - the official node fully utilizes 2 i7 CPU cores if you have 10
   subscribers and publish 2000 TF messages per second
-  ([ros/geometry#175](//github.com/ros/geometry/issues/175))
+  ([ros/geometry#175](https://index.ros.org/p/tf_remapper_cpp))
 - this package needs about 0.4 CPU cores for the same
 - Can also remap **`/tf_static`**
 - the official package can not do that correctly
@@ -28,13 +28,14 @@ with the following advantages:
   `/ugv2/map` and so on, and also wants to publish a `/global_map`
   frame available to all robots.
 - Backwards **compatible with
-  [tf/tf_remap](//github.com/ros/geometry/blob/melodic-devel/tf/scripts/tf_remap)**
+  [tf/tf_remap](https://index.ros.org/p/tf_remapper_cpp)**
 - to use this remapper, just change package name from `tf` to
   `tf_remapper_cpp` in your launch files
 - all the new functionality should not endanger the basic usage, since
   the package is accompanied by an exhaustive test suite
 - [API Documentation](http://docs.ros.org/melodic/api/tf_remapper_cpp/html/index.html)
-  and [usage examples](#Example_usage_in_launch_files)
+  and
+  [usage examples](#example-usage-in-launch-files)
 - the remapping logic is available in dynamic library
   `libtf_remapper_cpp.so`, class
   [TfRemapper](https://tradr-project.github.io/tf_remapper_cpp/classtf__remapper__cpp_1_1TfRemapper.html)
@@ -55,7 +56,7 @@ The node that performs the TF remapping.
   presents one remapping rule. Each dict contains keys `old` and
   `new`. If either of these keys is missing or its value is empty
   string, it means the TF frame should be deleted.
-- Until [ros/ros_comm#1498](//github.com/ros/ros_comm/issues/1498) is
+- Until [ros/ros_comm#1498](https://index.ros.org/p/tf_remapper_cpp) is
   fixed, you can not pass this parameter from `rosrun` commandline -
   either set it in a launch file, or use `rosparam set
   /tf_remapper/mappings '\[{"old": "b", "new": "d"}\]'`
@@ -181,5 +182,3 @@ The node that performs the TF remapping.
     <node name="broadcaster_df" pkg="tf" type="static_transform_publisher" args="1 2 3 4 5 6 d f 10"/>
 </launch>
 ```
-
-

@@ -1,11 +1,12 @@
 ## Overview
 
-This package provides a [URDF](urdf) model of
-[Leo Rover](Robots/Leo Rover) in [xacro](xacro) format.
-![](attachment:leo_model_rviz.png)
+This package provides a [URDF](https://index.ros.org/p/urdf) model of
+[Leo Rover](Robots/Leo Rover) in [xacro](https://index.ros.org/p/xacro)
+format. ![attachment:leo_model_rviz.png](doc/leo_model_rviz.png)
 
 Here's a graphical representation of the description (click to see the
-PDF version): [![](attachment:leo_urdf.png)](attachment:leo_urdf.pdf)
+PDF version):
+[![attachment:leo_urdf.png](doc/leo_urdf.png)](doc/leo_urdf.pdf)
 
 ## Coordinate frames
 
@@ -13,7 +14,7 @@ base_link:: Rigidly attached to the robot base. Provides an obvious
 point of reference for other links in the model. Located on the upper
 plane of the robot, in the central mounting hole, with the X axis facing
 forward like in the picture below:
-![](attachment:leo_model_base_link.png)
+![attachment:leo_model_base_link.png](doc/leo_model_base_link.png)
 
 Because it lies so close to the rocker axis, it is assumed to be the
 center of rotation in differential driving. base_footprint:: The root
@@ -32,4 +33,4 @@ The package does not provide any functionality on its own. Rather, it is
 used by a variety of other components.
 
 For example, if you want to visualize the model in RViz, see the
-[leo_viz](leo_viz) package.
+[leo_viz](https://index.ros.org/p/leo_viz) package.

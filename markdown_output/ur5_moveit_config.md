@@ -27,7 +27,7 @@ $ roslaunch ur5_moveit_config demo.launch
 
 This is not a real simulation, just a demonstration of the planning
 capability and the !MoveIt! and RViz integration. For true simulation of
-a UR5, see the [ur_gazebo](ur_gazebo) package.
+a UR5, see the [ur_gazebo](https://index.ros.org/p/ur_gazebo) package.
 
 ## Additional information
 

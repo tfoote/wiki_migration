@@ -21,8 +21,8 @@ part of MRPT. Thus, check out the documentation of that class for
 further details.
 
 This node has been designed to provide an interface similar to that of
-[slam_gmapping](slam_gmapping) for the convenience of users which
-already knew that package.
+[slam_gmapping](https://index.ros.org/p/slam_gmapping) for the
+convenience of users which already knew that package.
 
 For the convention on coordinate frames see
 [ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
@@ -33,8 +33,10 @@ Using `mrpt_icp_slam_2d` requires a horizontally-mounted, fixed, laser
 range-finder. Odometry is optional.
 
 The `mrpt_icp_slam_2d` node will attempt to transform each incoming
-scan into the `odom` (odometry) [tf](tf) frame. See the
-"[Required tf transforms](#tf)" for more on required transforms.
+scan into the `odom` (odometry) [tf](https://index.ros.org/p/tf)
+frame. See the
+"Required tf transforms" for more
+on required transforms.
 
 ## Usage
 
@@ -163,5 +165,3 @@ roslaunch mrpt_icp_slam_2d icp_slam_rawlog.launch
   }
  }
 ```
-
-

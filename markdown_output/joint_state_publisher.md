@@ -10,8 +10,8 @@ the non-fixed joints and publishes a !JointState message with all those
 joints defined.
 
 This package can be used in conjunction with the
-[robot_state_publisher](robot_state_publisher) node to also publish
-transforms for all joint states.
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher)
+node to also publish transforms for all joint states.
 
 ## Usage / data input
 
@@ -127,7 +127,7 @@ param {
 The following YAML snippets show examples of how to set the
 `dependent_joints` and the `zeros` parameters using YAML syntax.
 These can be loaded to the parameter server using the
-[<rosparam> tag](roslaunch/XML/rosparam) in a launch file.
+[<rosparam> tag](https://index.ros.org/p/roslaunch) in a launch file.
 
 
 
@@ -145,5 +145,3 @@ zeros:
   joint_A: 1.57
   joint_B: 0.785
 ```
-
-

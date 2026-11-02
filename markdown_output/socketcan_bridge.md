@@ -2,11 +2,12 @@
 
 The packages provides functionality to expose CAN frames from
 [SocketCAN](http://en.wikipedia.org/wiki/SocketCAN) to a ROS Topic.
-Internally it uses the [socketcan_interface](socketcan_interface) from
-the [ros_canopen](ros_canopen) package, as such it is capable of dealing
-with both normal and extended CAN frames. For more information and
-hardware related information see
-[socketcan_interface](socketcan_interface).
+Internally it uses the
+[socketcan_interface](https://index.ros.org/p/socketcan_interface) from
+the [ros_canopen](https://index.ros.org/p/ros_canopen) package, as such
+it is capable of dealing with both normal and extended CAN frames. For
+more information and hardware related information see
+[socketcan_interface](https://index.ros.org/p/socketcan_interface).
 
 ## Nodes
 

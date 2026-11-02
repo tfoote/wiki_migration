@@ -2,12 +2,15 @@
 
 This package provides basic device handling for Velodyne 3D LIDARs. For
 a list of all supported models refer to the
-[Supported Devices](#Supported Devices) section.
+[Supported Devices](#supported-devices)
+section.
 
 The driver publishes device-dependent
 [velodyne_msgs/VelodyneScan](http://docs.ros.org/indigo/api/velodyne_msgs/html/msg/VelodyneScan.html)
-data. The [velodyne_pointcloud](velodyne_pointcloud) package provides
-nodes and nodelets to convert those data into more-convenient
+data. The
+[velodyne_pointcloud](https://index.ros.org/p/velodyne_pointcloud)
+package provides nodes and nodelets to convert those data into
+more-convenient
 [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
 messages.
 
@@ -37,7 +40,7 @@ packet rates for them.\
 - **velodyne_node**\
   ROS node that captures Velodyne 3D LIDAR data and publishes it in raw
   form. This uses the same device driver class as
-  [velodyne_driver/DriverNodelet](#DriverNodelet).
+  velodyne_driver/DriverNodelet.
 - **Publishes**
 - *velodyne_packets*\
   type = velodyne_msgs/VelodyneScan\
@@ -128,6 +131,8 @@ node.0 {
 
 ## Utility Commands
 
+<a id="vdump"></a>
+
 ### vdump
 
 The `vdump` command dumps raw data from the Velodyne LIDAR in PCAP
@@ -197,5 +202,3 @@ path name, as required for `roslaunch`.
 ```
 $ roslaunch velodyne_driver nodelet_manager.launch pcap:=$(pwd)/tcpdump.pcap
 ```
-
-

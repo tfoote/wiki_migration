@@ -80,8 +80,7 @@ plot, you need to restart the program and give the new topic names.
 #### From GUI
 
 Type in the "Topic" input field the full path of the topic name, and
-press "+" button.
-![\|width="100%"](attachment:ROS/Tutorials/UnderstandingTopics/rqt_plot.png)
+press "+" button. ![width="100%"](doc/rqt_plot.png)
 
 "Topic" field auto-completes the topic name (although it's not fully
 working as noticed).
@@ -141,7 +140,8 @@ Check the following:
   ([see this thread](http://answers.ros.org/question/60194/oddity-in-rxplot/?answer=60203#post-id-60203))
 - You didn't give the full path of your topic
 - Topic is not being published
-- Use [rqt_topic](rqt_topic) to see the `topic`s being published.
+- Use [rqt_topic](https://index.ros.org/p/rqt_topic) to see the
+  `topic`s being published.
 - You are plotting data from a bag file?
 - [Use simulation time.](http://wiki.ros.org/Clock#Using_Simulation_Time_from_the_.2BAC8-clock_Topic)
 

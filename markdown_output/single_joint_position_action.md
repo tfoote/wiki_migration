@@ -1,14 +1,14 @@
 See also
-[robot_mechanism_controllers/JointSplineTrajectoryController](robot_mechanism_controllers/JointSplineTrajectoryController),
+[JointSplineTrajectoryController](https://index.ros.org/p/robot_mechanism_controllers),
 which is used by this action.
 
-![](attachment:sjposition_action_topics.png)
+![attachment:sjposition_action_topics.png](doc/sjposition_action_topics.png)
 
 ## Usage
 
 You can find an example of using the single joint position action on the
 PR2 in the
-[Moving the Torso tutorial](pr2_controllers/Tutorials/Moving the torso).
+[Moving the Torso tutorial](https://index.ros.org/p/pr2_controllers).
 
 ## ROS API
 
@@ -38,7 +38,8 @@ param {
 ### Action interface
 
 The joint trajectory action provides an action server (see
-[actionlib](actionlib)) that takes in goals of the type
+[actionlib](https://index.ros.org/p/actionlib)) that takes in goals of
+the type
 [pr2_controllers_msgs/msg/SingleJointPositionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionGoal.html).
 
 
@@ -83,5 +84,3 @@ pub {
   0.desc=Sends joint trajectories to the controller.
 }
 ```
-
-

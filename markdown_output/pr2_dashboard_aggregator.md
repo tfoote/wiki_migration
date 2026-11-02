@@ -26,5 +26,3 @@ node.0 {
     3.desc= Whether the motors are halted
   }
 ```
-
-

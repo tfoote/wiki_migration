@@ -1,4 +1,4 @@
-![\|align="right",width="280"](attachment:ptgreycams.png)
+![align="right",width="280"](doc/ptgreycams.png)
 
 ## Devices
 

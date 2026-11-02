@@ -2,8 +2,8 @@
 
 This experimental package is in an early rapid-prototyping phase. The
 initial goal is to demonstrate the feasibility of the
-[geographic_info](geographic_info) API for working with Open Street Map
-information.
+[geographic_info](https://index.ros.org/p/geographic_info) API for
+working with Open Street Map information.
 
 These interfaces are still changing rapidly, nothing is stable yet.
 
@@ -74,5 +74,3 @@ node.0 {
 }
 }
 ```
-
-

@@ -1,1 +1,1 @@
-See [audio_common/Tutorials](audio_common/Tutorials) for usage.
+See [Tutorials](https://index.ros.org/p/audio_common) for usage.

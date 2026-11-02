@@ -1,7 +1,8 @@
 ## Purpose
 
-To supplement the messages provided in [sensor_msgs](sensor_msgs) with a
-set of radar-specific messages.
+To supplement the messages provided in
+[sensor_msgs](https://index.ros.org/p/sensor_msgs) with a set of
+radar-specific messages.
 
 ## Types of Messages
 

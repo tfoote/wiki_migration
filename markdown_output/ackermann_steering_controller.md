@@ -24,12 +24,14 @@ basic configuration for the ackermann steering driving mechanism.
 
 ### Converting controller's interfaces to actual controller's interfaces
 
-If you want [rviz](rviz) to show states of robot's actual joint
-interfaces' [tf](tf) through
-[joint_state_controller](joint_state_controller) and
-[robot_state_publisher](robot_state_publisher), you need to convert the
-two interfaces of `ackermann_steering_controller` to your robot's
-specific ones via
+If you want [rviz](https://index.ros.org/p/rviz) to show states of
+robot's actual joint interfaces' [tf](https://index.ros.org/p/tf)
+through
+[joint_state_controller](https://index.ros.org/p/joint_state_controller)
+and
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher),
+you need to convert the two interfaces of
+`ackermann_steering_controller` to your robot's specific ones via
 [RobotHW](https://github.com/ros-controls/ros_control/wiki/hardware_interface)
 or RobotHWSim (generally used for [GAZEBO](http://gazebosim.org/)). This
 is because the controller only update it's basic interfaces mentioned
@@ -292,37 +294,77 @@ param{
 
 
 
-```clearsilver
-pub {
-  0.name= odom
-  0.type= nav_msgs/Odometry
-  0.desc= Odometry computed from the hardware feedback.
-
-  1.name= /tf
-  1.type= tf/tfMessage
-  1.desc= Transform from odom to base_footprint
-}
+```yaml
+mobile_base_controller:
+  type: "ackermann_steering_controller/AckermannSteeringController"
+  rear_wheel: 'rear_wheel_joint'
+  front_steer: 'front_steer_joint'
+  pose_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+  twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 ```
 
-0
+
 
 #### Complete description
 
 
 
-```clearsilver
-pub {
-  0.name= odom
-  0.type= nav_msgs/Odometry
-  0.desc= Odometry computed from the hardware feedback.
+```yaml
+mobile_base_controller:
+  type        : "ackermann_steering_controller/AckermannSteeringController"
+  rear_wheel: 'rear_wheel_joint'
+  front_steer: 'front_steer_joint'
+  publish_rate: 50.0               # default: 50
+  pose_covariance_diagonal : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+  twist_covariance_diagonal: [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
 
-  1.name= /tf
-  1.type= tf/tfMessage
-  1.desc= Transform from odom to base_footprint
-}
+  # Wheel separation between the rear and the front, and diameter of the rear. 
+  # These are both optional.
+  # ackermann_steering_controller will attempt to read either one or both from the
+  # URDF if not specified as a parameter.
+  wheel_separation_h : 1.0
+  wheel_radius : 0.3
+
+  # Wheel separation and radius multipliers for odometry calibration.
+  wheel_separation_h_multiplier: 1.0 # default: 1.0
+  wheel_radius_multiplier    : 1.0 # default: 1.0
+
+  # Steer position angle multipliers for fine tuning.
+  steer_pos_multiplier       : 1.0
+
+  # Velocity commands timeout [s], default 0.5
+  cmd_vel_timeout: 0.25
+
+  # Base frame_id
+  base_frame_id: base_footprint #default: base_link
+
+  # Odom frame_id
+  odom_frame_id: odom
+
+  # Velocity and acceleration limits
+  # Whenever a min_* is unspecified, default to -max_*
+  linear:
+    x:
+      has_velocity_limits    : true
+      max_velocity           : 1.0  # m/s
+      min_velocity           : -0.5 # m/s
+      has_acceleration_limits: true
+      max_acceleration       : 0.8  # m/s^2
+      min_acceleration       : -0.4 # m/s^2
+      has_jerk_limits        : true
+      max_jerk               : 5.0 # m/s^3
+
+  angular:
+    z:
+      has_velocity_limits    : true
+      max_velocity           : 1.7  # rad/s
+      has_acceleration_limits: true
+      max_acceleration       : 1.5  # rad/s^2
+      has_jerk_limits        : true
+      max_jerk               : 2.5 # rad/s^3
 ```
 
-1
+
 
 ### RobotHW
 
@@ -340,8 +382,9 @@ example of application on
 
 ### Recovery Behavior
 
-We also provide a recovery behavior plugin of [move_base](move_base)
-specifically desigined for ackermann steering mechanism base robots in
+We also provide a recovery behavior plugin of
+[move_base](https://index.ros.org/p/move_base) specifically desigined
+for ackermann steering mechanism base robots in
 [stepback_and_steerturn_recovery](stepback_and_steerturn_recovery). Feel
 free to see [Robots/CIR-KIT-Unit03](Robots/CIR-KIT-Unit03) to learn how
 to use it.

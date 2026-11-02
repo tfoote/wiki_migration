@@ -10,14 +10,15 @@ footprints.
 ## Hardware Requirements
 
 To use this package you need either need a real or a simulated
-Care-O-Bot (see [cob_bringup](cob_bringup) and
-[cob_bringup_sim](cob_bringup_sim) respectively).
+Care-O-Bot (see [cob_bringup](https://index.ros.org/p/cob_bringup) and
+[cob_bringup_sim](https://index.ros.org/p/cob_bringup_sim)
+respectively).
 
 ## ROS API
 
-The [cob_footprint_observer](cob_footprint_observer) package provides a
-configurable node for checking and adjusting the footprint based on the
-current setup. 
+The cob_footprint_observer
+package provides a configurable node for checking and adjusting the
+footprint based on the current setup. 
 
 ```clearsilver
  name = cob_footprint_observer
@@ -108,5 +109,3 @@ robot_base_frame: /base_link
 # frames to check for footprint adjustment
 frames_to_check: /sdh_tip_link /arm_6_link /arm_4_link
 ```
-
-

@@ -1,12 +1,12 @@
 ## Details
 
-The [imu_filter_madgwick](imu_filter_madgwick) package is used to filter
-and fuse raw data from IMU devices. It fuses angular velocities,
-accelerations, and (optionally) magnetic readings from a generic IMU
-device into an orientation quaternion, and publishes the fused data on
-the `imu/data` topic. The package has been tested using the raw data
-output of a Phidgets IMU (Spatial 3/3/3) device. The package is a
-wrapper of Sebastian Madgwick's IMU filter \[1\].
+The imu_filter_madgwick package is
+used to filter and fuse raw data from IMU devices. It fuses angular
+velocities, accelerations, and (optionally) magnetic readings from a
+generic IMU device into an orientation quaternion, and publishes the
+fused data on the `imu/data` topic. The package has been tested using
+the raw data output of a Phidgets IMU (Spatial 3/3/3) device. The
+package is a wrapper of Sebastian Madgwick's IMU filter \[1\].
 
 ## Supported devices
 

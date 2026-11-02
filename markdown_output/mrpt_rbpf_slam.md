@@ -28,8 +28,8 @@ part of MRPT. Check out the documentation of this class for further
 details.
 
 This node has been designed to provide an interface similar to that of
-[slam_gmapping](slam_gmapping) for the convenience of users who already
-know this package.
+[slam_gmapping](https://index.ros.org/p/slam_gmapping) for the
+convenience of users who already know this package.
 
 The coordinate frames are implemented according to the convention
 [ROS REP 105: "Coordinate Frames for Mobile Platforms"](http://ros.org/reps/rep-0105.html).
@@ -237,5 +237,3 @@ with the robot:
 
 
 ------------------------------------------------------------------------
-
-CategoryTemplate

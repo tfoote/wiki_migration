@@ -1,7 +1,8 @@
-This is the only package among the ones in [qb_device](qb_device) which
-can be used as a stand-alone ROS node, called *Communication Handler*.
-It wraps the *qbrobotics®* API, manages the shared resources and
-provides a multi-node from/to multi-device communication interface.
+This is the only package among the ones in
+[qb_device](https://index.ros.org/p/qb_device) which can be used as a
+stand-alone ROS node, called *Communication Handler*. It wraps the
+*qbrobotics®* API, manages the shared resources and provides a
+multi-node from/to multi-device communication interface.
 
 ## Communication Handler
 
@@ -57,5 +58,3 @@ srv {
   7.desc = Currently this service is only for qb SoftClaw Research. Set the desired control mode. The accepted request field should be ''deflection'' or ''position'' '''COMING SOON FOR ALL qbrobotics DEVICES'''
 }
 ```
-
-

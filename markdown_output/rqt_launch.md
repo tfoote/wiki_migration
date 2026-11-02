@@ -11,16 +11,13 @@ appreciated.
 
  And choose `Launch` from `Plugins` menu.
 
-See
-[rqt/UserGuide#Running_rqt_plugins](rqt/UserGuide#Running_rqt_plugins)
-for more options.
+See [UserGuide](https://index.ros.org/p/rqt) for more options.
 
 ## Feature
 
 Sample image using `KDE`:
-![ launch top window \| width=800](attachment:launch_topwidget_kde.png )
-Sample image using `Gnome`:
-![ launch top window \| width=800](attachment:snap_rqt_launch_3.png )
+![launch top window](doc/launch_topwidget_kde.png) Sample image using
+`Gnome`: ![launch top window](doc/snap_rqt_launch_3.png)
 
 ### Feature implemented
 
@@ -51,17 +48,18 @@ page).
   defined in included files are shown on the same level without being
   noted so.
 - Error or any print output in each node's process is not caught.
-- a workaround is to use [rqt_console](rqt_console) along with
+- a workaround is to use
+  [rqt_console](https://index.ros.org/p/rqt_console) along with
   `rqt_launch`
 
 ### Difference between roslaunch
 
-[As noted here](roslaunch/Architecture#Local_processes),
-[roslaunch](roslaunch) doesn't guarantee that the nodes start running
-in any order. In `rqt_launch`, however, nodes get started in the order
-in the `.launch` file (still doesn't mean that each process finished
-initialization procedure in the started order - it depends on how much
-time they take).
+[As noted here](https://index.ros.org/p/roslaunch),
+[roslaunch](https://index.ros.org/p/roslaunch) doesn't guarantee that
+the nodes start running in any order. In `rqt_launch`, however, nodes
+get started in the order in the `.launch` file (still doesn't mean
+that each process finished initialization procedure in the started
+order - it depends on how much time they take).
 
 ### Design discussion
 

@@ -4,10 +4,10 @@ To use this package you need a Care-O-bot light modul connected via USB.
 
 ## ROS API
 
-The [cob_light](cob_light) package provides a node that connects to the
-light hardware board and offers a message interface over
+The cob_light package provides a node that
+connects to the light hardware board and offers a message interface over
 [topics](Topics). The current state of the light is published as a
-[visualization marker](rviz/DisplayTypes/Marker).
+[visualization marker](https://index.ros.org/p/rviz).
 
 
 ```clearsilver
@@ -79,5 +79,3 @@ to different colors.
 ```
 rosrun cob_light test.py
 ```
-
-

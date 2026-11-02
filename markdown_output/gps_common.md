@@ -51,5 +51,5 @@ node.0 {
 
 ## Tutorial
 
-See [gpsd_client](gpsd_client) for an example of a sender node that uses
-this package's messages.
+See [gpsd_client](https://index.ros.org/p/gpsd_client) for an example of
+a sender node that uses this package's messages.

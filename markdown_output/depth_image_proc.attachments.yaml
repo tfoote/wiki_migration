@@ -1,0 +1,6 @@
+doc/depth.png: pages/depth_image_proc/attachments/depth.png
+doc/depth_reg.png: pages/depth_image_proc/attachments/depth_reg.png
+doc/disparity.png: pages/depth_image_proc/attachments/disparity.png
+doc/rgb.jpg: pages/depth_image_proc/attachments/rgb.jpg
+doc/rviz_xyz.png: pages/depth_image_proc/attachments/rviz_xyz.png
+doc/rviz_xyzrgb.png: pages/depth_image_proc/attachments/rviz_xyzrgb.png

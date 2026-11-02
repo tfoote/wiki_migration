@@ -1,0 +1,7 @@
+doc/CostmapToLinesDBSMCCH_1.png: pages/costmap_converter/attachments/CostmapToLinesDBSMCCH_1.png
+doc/CostmapToLinesDBSRANSAC_2.png: pages/costmap_converter/attachments/CostmapToLinesDBSRANSAC_2.png
+doc/CostmapToLinesDBSRANSAC_4.png: pages/costmap_converter/attachments/CostmapToLinesDBSRANSAC_4.png
+doc/CostmapToPolygonsDBSMCCH_2.png: pages/costmap_converter/attachments/CostmapToPolygonsDBSMCCH_2.png
+doc/costmap_converter_concave_hull.png: pages/costmap_converter/attachments/costmap_converter_concave_hull.png
+doc/costmap_converter_convex_hull.png: pages/costmap_converter/attachments/costmap_converter_convex_hull.png
+doc/costmap_converter_convex_hull_lines.png: pages/costmap_converter/attachments/costmap_converter_convex_hull_lines.png

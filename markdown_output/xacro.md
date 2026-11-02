@@ -4,9 +4,9 @@
 
 This package is most useful when working with large XML documents such
 as robot descriptions. It is heavily used in packages such as the
-[urdf](urdf). See for example,
-[this tutorial](urdf/Tutorials/Using Xacro to Clean Up a URDF File) for
-how xacro is used to simplify urdf files. See
+[urdf](https://index.ros.org/p/urdf). See for example,
+[this tutorial](https://index.ros.org/p/urdf) for how xacro is used to
+simplify urdf files. See
 [here](https://github.com/ubi-agni/human_hand/blob/master/model/human_hand.urdf.xacro),
 for an example showing the use of the advanced features (python
 evaluation, yaml integration) introduced in Jade.
@@ -15,8 +15,9 @@ evaluation, yaml integration) introduced in Jade.
 
 Many of the features highlighted as "New in Jade" below are also
 accessible from Indigo. To use them, the `\--inorder` flag is
-required. This flag is discussed [below](#Processing_Order), and for
-some background information see this
+required. This flag is discussed
+[below](#processing-order), and for some background
+information see this
 [pull request](https://github.com/ros/xacro/issues/110#issuecomment-144589000).
 Put simply, this flag is used to trigger Jade-enabled xacro processing
 on Indigo.
@@ -60,7 +61,7 @@ Properties are named values that can be inserted anywhere into the XML
 document. Property blocks are named snippets of XML that can be inserted
 anywhere that XML is allowed. Both use the property tag to define
 values.: Properties are local if defined inside of a `xacro:macro`.
-See [Local properties](#Local_properties).
+See Local properties.
 
 The following example shows how to declare and use a property:
 
@@ -175,8 +176,8 @@ dollared-parentheses (`\$()`).
 
  Xacro currently supports most of the rospack
 commands that roslaunch supports using
-[substitution args](roslaunch/XML#substitution_args) (with the exception
-of `eval`, see
+[substitution args](https://index.ros.org/p/roslaunch) (with the
+exception of `eval`, see
 [here](https://github.com/ros/xacro/issues/225#issuecomment-543311376)).
 Arguments need to be specified on the command line using the
 `myvar:=true` syntax.: Since ROS Indigo, it is also possible to define
@@ -193,13 +194,10 @@ defaults like so:
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<param name="robot_description" command="xacro $(arg model) myvar:=true" />
 ```
 
-0 In xacro files, `args` is a _global_
+ In xacro files, `args` is a _global_
 dictionary accessible from within any included file or macro.
 
 ## Macros
@@ -212,13 +210,34 @@ macro-local properties.
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:macro name="pr2_caster" params="suffix *origin **content **anothercontent">
+  <joint name="caster_${suffix}_joint">
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="caster_${suffix}">
+    <xacro:insert_block name="origin" />
+    <xacro:insert_block name="content" />
+    <xacro:insert_block name="anothercontent" />
+  </link>
+</xacro:macro>
+
+<xacro:pr2_caster suffix="front_left">
+  <pose xyz="0 1 0" rpy="0 0 0" />
+  <container>
+    <color name="yellow"/>
+    <mass>0.1</mass>
+  </container>
+  <another>
+    <inertial>
+      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+  </another>
+</xacro:pr2_caster>
 ```
 
-1 The example declares a macro "pr2_caster",
+ The example declares a macro "pr2_caster",
 which takes two parameters: suffix and origin. Note that "origin" is
 starred. This indicates that origin is a block parameter instead of a
 simple text parameter. Look ahead to the use of pr2_caster. The suffix
@@ -233,49 +252,72 @@ example expands to the following:
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<joint name="caster_front_left_joint">
+  <axis xyz="0 0 1" />
+</joint>
+<link name="caster_front_left">
+  <pose xyz="0 1 0" rpy="0 0 0" />
+  <color name="yellow" />
+  <mass>0.1</mass>
+  <inertial>
+    <origin xyz="0 0 0.5" rpy="0 0 0"/>
+    <mass value="1"/>
+    <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+  </inertial>
+</link>
 ```
 
-2 Multiple block parameters will be processed in
+ Multiple block parameters will be processed in
 the specified order:
 
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:macro name="reorder" params="*first *second">
+  <xacro:insert_block name="second"/>
+  <xacro:insert_block name="first"/>
+</xacro:macro>
+<reorder>
+  <first/>
+  <second/>
+</reorder>
 ```
 
-3 Macros may contain other macros. The outer
+ Macros may contain other macros. The outer
 macro will be expanded first, and then the inner macro will be expanded.
 For example:
 
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<a>
+  <xacro:macro name="foo" params="x">
+    <in_foo the_x="${x}" />
+  </xacro:macro>
+
+  <xacro:macro name="bar" params="y">
+    <in_bar>
+      <xacro:foo x="${y}" />
+    </in_bar>
+  </xacro:macro>
+
+  <xacro:bar y="12" />
+</a>
 ```
 
-4 becomes:
+ becomes:
 
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<a>
+  <in_bar>
+    <in_foo the_x="12.0"/>
+  </in_bar>
+</a>
 ```
 
-5Comments in front of macros will be removed
+Comments in front of macros will be removed
 during processing. They are considered to be related to the macro (e.g.
 explaining the macro). If you want to keep a comment in the final
 document, separate it with an empty line from the macro.
@@ -285,13 +327,10 @@ document, separate it with an empty line from the macro.
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:macro name="foo" params="x:=${x} y:=${2*y} z:=0"/>
 ```
 
-6 If the defaults contain evaluation
+ If the defaults contain evaluation
 expressions, they will be evaluated at instantiation time.Often, you
 need to pass external variables into local macro params (as above for
 x). To ease this task, you can employ the \^ syntax:
@@ -299,13 +338,10 @@ x). To ease this task, you can employ the \^ syntax:
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:macro name="foo" params="p1 p2:=expr_a p3:=^ p4:=^|expr_b">
 ```
 
-7 The caret \^ indicates to use the outer-scope
+ The caret \^ indicates to use the outer-scope
 property (with same name). The pipe \| indicates to use the given
 fallback if the property is not defined in outer scope.
 
@@ -318,13 +354,12 @@ You can include other xacro files using the `xacro:include` tag:
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:include filename="$(find package)/other_file.xacro" />
+<xacro:include filename="other_file.xacro" />
+<xacro:include filename="$(cwd)/other_file.xacro" />
 ```
 
-8 The file "other_file.xacro", will be
+ The file "other_file.xacro", will be
 included and expanded by xacro.: Relative filenames are interpreted
 relative to the currently processed file. **Note**: When including files
 within a macro, not the macro-defining but the macro-calling file is the
@@ -338,50 +373,41 @@ attribute ns:
 
 
 ```
-<pr2_upperarm suffix="left" reflect="1" parent="torso" />
-<pr2_forearm suffix="left" reflect="1" parent="elbow_flex_left" />
-<pr2_upperarm suffix="right" reflect="-1" parent="torso" />
-<pr2_forearm suffix="right" reflect="-1" parent="elbow_flex_right" />
+<xacro:include filename="other_file.xacro" ns="namespace"/>
 ```
 
-9 Access to namespaced macros and properties is
+ Access to namespaced macros and properties is
 achieved by prepending the namespace, separated by a dot:
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+${namespace.property}
 ```
 
-0
+
 
 ## YAML support == Properties can be dictionaries or lists too - manually declared with python syntax, like so:
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+<xacro:property name="props" value="${dict(a=1, b=2, c=3)}"/>
+<xacro:property name="props_alt" value="${dict([('1a',1), ('2b',2), ('3c',3)])}"/>
+<xacro:property name="numbers" value="${[1,2,3,4]}"/>
 ```
 
-1 or loaded from [YAML](YAML%20Overview) files
+ or loaded from [YAML](YAML%20Overview) files
 like so:
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+<xacro:property name="yaml_file" value="$(find package)/config/props.yaml" />
+<xacro:property name="props" value="${load_yaml(yaml_file)}"/>
 ```
 
-2 Note, the evaluation brackets \${}
+ Note, the evaluation brackets \${}
 distinguishing evaluation from plain text definition. Calibration data
 is an ideal candidate to be loaded from YAML.
 
@@ -390,24 +416,19 @@ if `props.yaml` is loaded into the `props` xacro property (as above) and
 contains 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+val1: 10
+val2: 20
 ```
 
-3 you can access `val1` using
+ you can access `val1` using
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+<xacro:property name="val1" value="${props['val1']}" />
 ```
 
-4
+
 
 ## Building from CMakeLists.txt
 
@@ -417,25 +438,40 @@ call:
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
+# Generate .world files from .world.xacro files
+find_package(xacro REQUIRED)
+# You can also add xacro to the list of catkin packages:
+#   find_package(catkin REQUIRED COMPONENTS ... xacro)
 
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+# Xacro files
+file(GLOB xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/worlds/*.world.xacro)
+
+foreach(it ${xacro_files})
+  # remove .xacro extension
+  string(REGEX MATCH "(.*)[.]xacro$" unused ${it})
+  set(output_filename ${CMAKE_MATCH_1})
+
+  # create a rule to generate ${output_filename} from {it}
+  xacro_add_xacro_file(${it} ${output_filename})
+
+  list(APPEND world_files ${output_filename})
+endforeach(it)
+
+# add an abstract target to actually trigger the builds
+add_custom_target(media_files ALL DEPENDS ${world_files})
 ```
 
-5: While this cmake code provides full control
+: While this cmake code provides full control
 over the target name and build order, there is a conveniency macro too:
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+file(GLOB xacro_files worlds/*.world.xacro)
+xacro_add_files(${xacro_files} TARGET media_files)
 ```
 
-6 If you want the generated files to have a
+ If you want the generated files to have a
 `.urdf` extension it is possible to provide input files terminating
 with `.urdf.xacro`, the `.xacro` suffix will be removed by the CMake
 function. This results in files with a `.urdf` extension.
@@ -445,35 +481,32 @@ function. This results in files with a `.urdf` extension.
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+<xacro:element xacro:name="${element_name}" [other attributes]>
+ [content]
+</xacro:element>
+<xacro:attribute name="${attribute_name}" value="${attribute_value}"/>
 ```
 
-7 Usage example for `<xacro:attribute>`:
-
-
-
-```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
-```
-
-8 gives:
+ Usage example for `<xacro:attribute>`:
 
 
 
 ```
-<xacro:property name="the_radius" value="2.1" />
-<xacro:property name="the_length" value="4.5" />
-
-<geometry type="cylinder" radius="${the_radius}" length="${the_length}" />
+<xacro:property name="foo" value="my_attribute_name"/>
+<tag>
+    <xacro:attribute name="${foo}" value="my_attribute_value"/>
+</tag>
 ```
 
-9
+ gives:
+
+
+
+```
+<tag my_attribute_name="my_attribute_value" />
+```
+
+
 
 ## Processing Order
 
@@ -512,16 +545,12 @@ styles should give identical results. You can easily check this like so:
 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
-
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+rosrun xacro xacro file.xacro > /tmp/old.xml
+rosrun xacro xacro --inorder file.xacro > /tmp/new.xml
+diff /tmp/old.xml /tmp/new.xml
 ```
 
-0 If there are any differences shown, you should
+ If there are any differences shown, you should
 check and adapt your xacro file. A common reason will be the late
 loading of calibration data (as properties). In this case, simply move
 them up front, i.e. before usage. To facilitate search for wrongly
@@ -532,16 +561,12 @@ be listed on stderr:
 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
-
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+Document is incompatible to --inorder processing.
+The following properties were redefined after usage:
+foo redefined in issues.xacro
 ```
 
-1 Using the command-line option `-vv` or
+ Using the command-line option `-vv` or
 `-vvv` one can increase verbosity level to log all defintions of
 properties.
 
@@ -552,16 +577,31 @@ generate multiple similar XML snippets for a list of `items`:
 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
+<robot name="loop example" xmlns:xacro="http://www.ros.org/wiki/xacro">
+	<xacro:macro name="loop" params="items:=^">
+		<xacro:if value="${items}">
+			<!-- pop first item from list -->
+			<xacro:property name="item" value="${items.pop(0)}"/>
 
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+			<item>${item}</item>
+
+			<!-- recursively call myself -->
+			<xacro:loop/>
+		</xacro:if>
+	</xacro:macro>
+
+	<!-- define the list of items to iterate -->
+	<xacro:property name="items" value="${[1,2,3,4,5]}" />
+
+	<xacro:loop items="${list(items)}"/>
+	Passing a list copy, the original list is untouched: ${items}
+
+	<xacro:loop items="${items}" />
+	Passing the list directly, it is emptied: ${items}
+</robot>
 ```
 
-2
+
 
 ## Deprecated Syntax ==:
 
@@ -574,16 +614,10 @@ script will update your files for you:
 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
-
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+find . -iname "*.xacro" | xargs sed -i 's#<\([/]\?\)\(if\|unless\|include\|arg\|property\|macro\|insert_block\)#<\1xacro:\2#g'
 ```
 
-3 To suppress the legacy interpretation of
+ To suppress the legacy interpretation of
 sloppy xacro tags and allow their usage in the target XML, you can use
 the command line option `\--xacro-ns`.
 
@@ -595,25 +629,17 @@ generates urdf from xacro and checks for errors in syntax:
 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
-
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+cd <path_to_xacro_file>
+check_urdf <(xacro model.xacro)
 ```
 
-4 Or: 
+ Or: 
 
 ```
-<xacro:property name="front_left_origin">
-  <origin xyz="0.3 0 0" rpy="0 0 0" />
-</xacro:property>
-
-<pr2_wheel name="front_left_wheel">
-  <xacro:insert_block name="front_left_origin" />
-</pr2_wheel>
+xacro model.urdf.xacro > tmp.urdf && check_urdf tmp.urdf && rm tmp.urdf
 ```
 
-5
+## Tutorials
+
+See xacro for overview or check out
+[Using Xacro to Clean Up a URDF File](https://index.ros.org/p/urdf)

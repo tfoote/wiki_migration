@@ -1,0 +1,3 @@
+doc/face1.png: pages/face_detector/attachments/face1.png
+doc/face2.png: pages/face_detector/attachments/face2.png
+doc/facedetect_turtlebot_gazebo_jsk-rviz_axis.png: pages/face_detector/attachments/facedetect_turtlebot_gazebo_jsk-rviz_axis.png

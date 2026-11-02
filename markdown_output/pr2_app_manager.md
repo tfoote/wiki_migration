@@ -121,5 +121,3 @@ Some robots have secured networks. They need an extra line:
 ```
 WIFIPW: <then the wifi password>
 ```
-
-

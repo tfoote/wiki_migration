@@ -41,5 +41,3 @@ host's network interface to be used to receive the data is specified as
 ```sh
 ./tools/rcdynamics_stream -v 10.0.2.99 -s pose_rt -i eth0 -a -t10 -o poses.csv
 ```
-
-

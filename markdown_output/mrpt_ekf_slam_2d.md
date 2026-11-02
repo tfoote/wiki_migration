@@ -139,5 +139,3 @@ roslaunch mrpt_ekf_slam_2d ekf_slam_2d_rawlog.launch
   }
  }
 ```
-
-

@@ -54,7 +54,7 @@ folder of the MT Software Suite.
   catkin workspace 'src' folder. Make sure the permissions are set to
   o+rw on your files and directories. For details on creating a catkin
   workspace environment refer to
-  [Creating a workspace for catkin](catkin/Tutorials/create_a_workspace).
+  [Creating a workspace for catkin](https://index.ros.org/p/catkin).
 - Build xspublic from your catkin workspace:
 
 
@@ -237,19 +237,19 @@ group:
 
 
 ```
-$ catkin_make
+$ newgrp dialout
 ```
 
-0 2) Use udev rules. Alternatively, put the
+ 2) Use udev rules. Alternatively, put the
 following rule into /etc/udev/rules.d/99-custom.rules:
 
 
 
 ```
-$ catkin_make
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2639", ACTION=="add", GROUP="$GROUP", MODE="0660"
 ```
 
-1 . Change \$GROUP into your desired group (e.g.
+ . Change \$GROUP into your desired group (e.g.
 adm, plugdev, or usb). .
 
 **The device is inaccessible for a while after plugging it in.**\
@@ -263,10 +263,10 @@ unset/modify the LC_NUMERIC environment variable:
 
 
 ```
-$ catkin_make
+LC_NUMERIC="en_US.UTF-8"
 ```
 
-2
+
 
 **Error "Skipping incompatible xxx when searching for xxx" after
 catkin_make.**\
@@ -274,10 +274,13 @@ Try inserting the following at the end of your CMakeLists.txt:
 
 
 ```
-$ catkin_make
+add_custom_COMMAND(TARGET xsens_mti_node
+PRE_BUILD COMMAND $(MAKE) --always-make -j 1 -C
+${CMAKE_CURRENT_SOURCE_DIR}/lib/xspublic
+)
 ```
 
-3
+
 
 ## Bug Reports & Feature Requests
 

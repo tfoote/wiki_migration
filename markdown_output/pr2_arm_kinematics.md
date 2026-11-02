@@ -6,7 +6,8 @@ through ROS. The node provides multiple interfaces (listed in the ROS
 API below) and can be used to compute the closest IK solution to an
 initial guess. More information on using this package can be found in
 the API documentation. Example code for using this package can be found
-in the [ pr2_kinematics tutorials](pr2_kinematics/Tutorials).
+in the
+[ pr2_kinematics tutorials](https://index.ros.org/p/pr2_kinematics).
 
 ## ROS API
 
@@ -75,4 +76,4 @@ param {
 ## Tutorials
 
 Tutorials for this package can be found in the
-[pr2_kinematics stack tutorials](pr2_kinematics/Tutorials).
+[pr2_kinematics stack tutorials](https://index.ros.org/p/pr2_kinematics).

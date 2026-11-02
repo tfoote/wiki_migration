@@ -3,13 +3,13 @@
 ### power_monitor
 
 `power_monitor` takes data from
-[ocean_battery_driver](ocean_battery_driver) and
-[pr2_power_board](pr2_power_board) and republishes it in a more
-user-friendly message format.
+[ocean_battery_driver](https://index.ros.org/p/ocean_battery_driver) and
+[pr2_power_board](https://index.ros.org/p/pr2_power_board) and
+republishes it in a more user-friendly message format.
 
 The estimation method that `power_monitor` uses is reconfigurable via
-[dynamic_reconfigure](dynamic_reconfigure). Two methods are currently
-available:
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure). Two
+methods are currently available:
 
 - **`'Fuel Gauge`**': simply publishes the state of charge and
   remaining time that the battery servers report.
@@ -80,4 +80,20 @@ param {
 }
 ```
 
+## Troubleshooting
 
+### Errors when using package
+
+#### Error: ERROR NAME
+
+**Example:** 
+
+```
+the error output the user will see on the console
+```
+
+
+
+**Solution:**
+
+- Is something not connected? No device is connected.

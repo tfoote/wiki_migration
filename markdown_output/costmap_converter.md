@@ -1,23 +1,25 @@
 ## Overview
 
-This package defines an [pluginlib](pluginlib) interface and provides
-some plugins for converting occupied cells of [costmap_2d](costmap_2d)
-to geometric primitives. This primitives (points, lines, polygons)
-represent obstacles in the map. It is intendend for nodes that
-incorporate obstacles (e.g. in navigation) and do not rely on cost
-cells, but consider obstacles defined by shapes in the plane (e.g.
-polygons). The costmap is still favorable in conjunction with
-[navigation](navigation) since it fuses multiple range sensors with a
-global static map and some filtering might be applied. A naive approach
-to further incorporate the costmap is to take each occupied cell as
-point-obstacle. However, by integrating the costmap_converter interface
-the costmap is converted continuously during runtime and if desired the
-conversion is invoked in a separate thread.
+This package defines an [pluginlib](https://index.ros.org/p/pluginlib)
+interface and provides some plugins for converting occupied cells of
+[costmap_2d](https://index.ros.org/p/costmap_2d) to geometric
+primitives. This primitives (points, lines, polygons) represent
+obstacles in the map. It is intendend for nodes that incorporate
+obstacles (e.g. in navigation) and do not rely on cost cells, but
+consider obstacles defined by shapes in the plane (e.g. polygons). The
+costmap is still favorable in conjunction with
+[navigation](https://index.ros.org/p/navigation) since it fuses multiple
+range sensors with a global static map and some filtering might be
+applied. A naive approach to further incorporate the costmap is to take
+each occupied cell as point-obstacle. However, by integrating the
+costmap_converter interface the costmap is converted continuously during
+runtime and if desired the conversion is invoked in a separate thread.
 
 The tutorial section is going to be added in the future. Before then,
 refer to the example implementation in
-[teb_local_planner](teb_local_planner) package or to the implementation
-of the [standalone node](costmap_converter#Standalone_Node).
+[teb_local_planner](https://index.ros.org/p/teb_local_planner) package
+or to the implementation of the
+[standalone node](#standalone-node).
 
 Contributions of new plugins, or extensions/improvements of current
 plugins are welcome!
@@ -44,8 +46,8 @@ Examples are depicted in the following figures. Only yellow cells are
 occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map.
 
-![Conversion to convex polygons\|width="350"](attachment:costmap_converter_convex_hull.png)
-![Conversion to convex polygons\|width="325"](attachment:CostmapToPolygonsDBSMCCH_2.png)
+![Conversion to convex polygons](doc/costmap_converter_convex_hull.png)
+![Conversion to convex polygons](doc/CostmapToPolygonsDBSMCCH_2.png)
 
 #### Parameters
 
@@ -88,7 +90,7 @@ Examples are depicted in the following figures. Only yellow cells are
 occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map.
 
-![Conversion to concave polygons\|width="350"](attachment:costmap_converter_concave_hull.png)
+![Conversion to concave polygons](doc/costmap_converter_concave_hull.png)
 
 #### Parameters
 
@@ -136,8 +138,8 @@ occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map. Converted points
 and polygons are colored in red while lines are colored in green.
 
-![Conversion to lines\|width="350"](attachment:costmap_converter_convex_hull_lines.png)
-![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSMCCH_1.png)
+![Conversion to lines](doc/costmap_converter_convex_hull_lines.png)
+![Conversion to lines](doc/CostmapToLinesDBSMCCH_1.png)
 
 #### Parameters
 
@@ -195,8 +197,8 @@ occupied cost cells (without inflation)! Additionally, just the local
 map has been converted and not the complete static map. Converted points
 and polygons are colored in red while lines are colored in green.
 
-![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSRANSAC_2.png)
-![Conversion to lines\|width="350"](attachment:CostmapToLinesDBSRANSAC_4.png)
+![Conversion to lines](doc/CostmapToLinesDBSRANSAC_2.png)
+![Conversion to lines](doc/CostmapToLinesDBSRANSAC_4.png)
 
 #### Parameters
 
@@ -257,7 +259,8 @@ The costmap_converter interface is intended to be directly included in
 the source code. However, sometimes it could be useful to convert an
 incoming
 [nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
-Message (e.g. as published by [navigation](navigation)).
+Message (e.g. as published by
+[navigation](https://index.ros.org/p/navigation)).
 
 For that purpose the internal `standalone_converter` node
 (*costmap_converter_node.cpp*) might be employed. Currently, parameters

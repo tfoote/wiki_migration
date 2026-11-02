@@ -22,14 +22,25 @@ configurations in the
 The `cfg` directory contains several example *yaml* configurations.
 
 It is **highly recommended** to be familiar with the
-[navigation](navigation) stack and all its components (global planner,
-local planner, costmap_2d, \...).
+[navigation](https://index.ros.org/p/navigation) stack and all its
+components (global planner, local planner, costmap_2d, \...).
 
 It might also be helpful to be familiar with the
-[teb_local_planner](teb_local_planner) as the planners are very similar
-from the API and parameter point of view (the teb_local_planner wiki
-page already provides several tutorials which do not exist for this
-planner yet).
+[teb_local_planner](https://index.ros.org/p/teb_local_planner) as the
+planners are very similar from the API and parameter point of view (the
+teb_local_planner wiki page already provides several tutorials which do
+not exist for this planner yet).
 
 Please also have a look at the repository's
 [wiki page](https://github.com/rst-tu-dortmund/mpc_local_planner/wiki).
+
+## Tutorials
+
+- [teb_local_planner vs mpc_local_planner](#teb_local_planner-vs-mpc_local_planner):
+  This page describes the main differences between teb_local_planner and
+  mpc_local_planner
+
+## teb_local_planner vs mpc_local_planner
+
+Refer to
+[this repository wiki page](https://github.com/rst-tu-dortmund/mpc_local_planner/wiki/MPCvsTEB).

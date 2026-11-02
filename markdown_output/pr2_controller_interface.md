@@ -36,7 +36,7 @@ namespace pr2_controller_interface
 The image below gives the flowchart that shows in what order these four
 methods are called (more details in the text below).
 
-![\|width=550](attachment:controllers.png)
+![width=550](doc/controllers.png)
 
 ### Initializing the controller
 
@@ -48,42 +48,44 @@ controller. The `init` method takes two arguments:
 
 - **robot**: this is a `pr2_mechanism_model::RobotState` that
   describes the robot model (see
-  [pr2_mechanism_model](pr2_mechanism_model)). The model provides access
-  to the robot joints (actuators, encoders, etc.), and contains a
-  kinematic/dynamic description of the robot mechanism.
+  [pr2_mechanism_model](https://index.ros.org/p/pr2_mechanism_model)).
+  The model provides access to the robot joints (actuators, encoders,
+  etc.), and contains a kinematic/dynamic description of the robot
+  mechanism.
 - **n**: this `ros::NodeHandle` is the "namespace" of the
   controller. In the namespace of this node handle, the controller can
   read configuration from the parameter server, advertise topics, etc.
 
 The `init` method returns if the initialization was successful or not.
 If the initialization fails, the controller will get unloaded by
-[pr2_controller_manager](pr2_controller_manager). Make sure to always
-use `ROS_ERROR("explanation");` to inform the user why your
-controller failed to initialize. A controller can only be initialized
-once. If you want to re-initialize a controller, you first need to
-unload it, and then load it again.
+[pr2_controller_manager](https://index.ros.org/p/pr2_controller_manager).
+Make sure to always use `ROS_ERROR("explanation");` to inform the
+user why your controller failed to initialize. A controller can only be
+initialized once. If you want to re-initialize a controller, you first
+need to unload it, and then load it again.
 
 ### Starting the controller
 
 The `starting` method is executed in **hard realtime**. The starting
 method is called once every time a controller is started, by the
-[controller manager](pr2_controller_manager). Starting is executed in
-the same cycle as the first update call, right before this update call.
+[controller manager](https://index.ros.org/p/pr2_controller_manager).
+Starting is executed in the same cycle as the first update call, right
+before this update call.
 
 The `starting` method initializes the controller right before the
 first time update is called. The
-[controller manager](pr2_controller_manager) is allowed to re-start a
-controller at a later time, without having to unload/load the
-controller.
+[controller manager](https://index.ros.org/p/pr2_controller_manager) is
+allowed to re-start a controller at a later time, without having to
+unload/load the controller.
 
 ### Updating the controller
 
 The `update` method is executed in **hard realtime**. The `update`
 method of every controller is called periodically by
-[pr2_controller_manager](pr2_controller_manager) at a frequency of 1000
-Hz. This means that the execution time of all controllers combined
-cannot take more than 1 mili-second. In the update loop, the real
-control work is done.
+[pr2_controller_manager](https://index.ros.org/p/pr2_controller_manager)
+at a frequency of 1000 Hz. This means that the execution time of all
+controllers combined cannot take more than 1 mili-second. In the update
+loop, the real control work is done.
 
 ### Stopping the controller
 
@@ -115,3 +117,17 @@ The `getController` method takes three arguments:
 - **c** This is a pointer to the controller you requested, with the type
   matching the type of the requested controller. The type is also the
   template argument for the `getController` method.
+
+## Troubleshooting
+
+### Reporting Errors
+
+If you encounter a problem that isn't addressed on this page, please
+[file a ticket](https://code.ros.org/trac/ros-pkg/newticket?component=pr2_mechanism&keywords=pr2_controller_interface&owner=meeussen)
+
+The current list of open issues is available on
+[trac](https://code.ros.org/trac/ros-pkg/query?status=assigned&status=new&status=reopened&group=milestone&order=priority&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&keywords=~pr2_controller_interface)
+
+### Common Problems When Using Package
+
+(There are currently no recorded commonly occurring errors)

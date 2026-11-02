@@ -1,8 +1,8 @@
-![](attachment:laser_scan_splitter.png)
+![attachment:laser_scan_splitter.png](doc/laser_scan_splitter.png)
 
 ## Details
 
-The [laser_scan_splitter](laser_scan_splitter) takes in a
+The laser_scan_splitter takes in a
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 message and splits it into a number of other `LaserScan` messages.
 Each of the resulting laser scans can be assigned an arbitrary
@@ -10,10 +10,11 @@ coordinate frame, and is published on a separate topic.
 
 ## Example
 
-You can run the [laser_scan_splitter](laser_scan_splitter) on a
-pre-recorded bag file that comes with the package. First, make sure you
-have the [scan_tools](scan_tools) stack downloaded and installed by
-following the instructions [here](scan_tools#Installing).
+You can run the laser_scan_splitter
+on a pre-recorded bag file that comes with the package. First, make sure
+you have the [scan_tools](https://index.ros.org/p/scan_tools) stack
+downloaded and installed by following the instructions
+[here](https://index.ros.org/p/scan_tools).
 
 Next, make sure you have the necessary tools installed:
 
@@ -36,8 +37,8 @@ roslaunch laser_scan_splitter demo.launch
 
 
 You should see a result similar to the video below. The 3 laser scan
-messages displayed in [rviz](rviz) are obtained by splitting the
-original scan.
+messages displayed in [rviz](https://index.ros.org/p/rviz) are obtained
+by splitting the original scan.
 
 [Youtube](https://www.youtube.com/watch?v=GTdiPjNym8k)
 

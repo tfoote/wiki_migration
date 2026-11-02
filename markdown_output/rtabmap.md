@@ -23,9 +23,10 @@ mapping (2D LiDAR) and 6DoF mapping (3D LiDAR).
 
 [Youtube](https://www.youtube.com/watch?v=o1GSQanY-Do)
 
-Visit [rtabmap_ros](rtabmap_ros) to know how to use RTAB-Map under ROS.
-The [rtabmap](rtabmap) package is only for convenient release of the
-RTAB-Map libraries and standalone application. Visit
+Visit [rtabmap_ros](https://index.ros.org/p/rtabmap_ros) to know how to
+use RTAB-Map under ROS. The rtabmap package is
+only for convenient release of the RTAB-Map libraries and standalone
+application. Visit
 [RTAB-Map's wiki](https://github.com/introlab/rtabmap/wiki) to know how
 to use the standalone application and
 [tools](https://github.com/introlab/rtabmap/wiki/Tools) that come with
@@ -39,5 +40,6 @@ $ rtabmap
 
 ## Citing
 
-If you use [rtabmap](rtabmap) in academic context, please cite the
-appropriate publication from <http://introlab.github.io/rtabmap>
+If you use rtabmap in academic context, please
+cite the appropriate publication from
+<http://introlab.github.io/rtabmap>

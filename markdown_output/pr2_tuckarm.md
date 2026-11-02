@@ -1,7 +1,7 @@
 ## Bring up the robot
 
 As with all applications, you must first
-[bring up your robot](pr2_apps#bringup).
+[bring up your robot](https://index.ros.org/p/pr2_apps).
 
 ## Launching
 

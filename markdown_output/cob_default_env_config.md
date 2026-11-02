@@ -10,14 +10,16 @@ usage on the [main Care-O-bot site](care-o-bot).
 ### Map information
 
 For each environment there's a map.pgm and a map.yaml file which are
-used inside the navigation packages [cob_navigation](cob_navigation) by
-the [map_server](map_server).
+used inside the navigation packages
+[cob_navigation](https://index.ros.org/p/cob_navigation) by the
+[map_server](https://index.ros.org/p/map_server).
 
 ### Predefined navigation goals
 
 Inside this package there is a launch file which loads the predefined
 navigation goals to the parameter server to the /script_server/base
-namespace used by [cob_script_server](cob_script_server).
+namespace used by
+[cob_script_server](https://index.ros.org/p/cob_script_server).
 
 ### Configuring predefined navigation goals
 
@@ -40,9 +42,9 @@ y-position as well as the theta orientation around the z-axis in the
 ## Command_gui parameters
 
 You can configure the buttons displayed by the
-[cob_command_gui](cob_command_gui) using the `command_gui_buttons.yaml`
-file which is defined for each environemt. The typical format of this
-file is: 
+[cob_command_gui](https://index.ros.org/p/cob_command_gui) using the
+`command_gui_buttons.yaml` file which is defined for each environemt.
+The typical format of this file is: 
 
 ```
 group:
@@ -85,4 +87,4 @@ milk:                          #model_name
 
 ### Spawning or removing objects
 
-see [cob_bringup_sim](cob_bringup_sim)
+see [cob_bringup_sim](https://index.ros.org/p/cob_bringup_sim)

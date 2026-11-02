@@ -8,11 +8,11 @@ using differential drive.
 ### GazeboRosImu
 
 `GazeboRosImu` is a replacement for the `GazeboRosImu` plugin in
-package [gazebo_plugins](gazebo_plugins). It simulates an Inertial
-Measurement Unit (IMU) affected by Gaussian noise and low-frequency
-random drift. The orientation returned mimics a simple Attitude and
-Heading Reference System (AHRS) using the (erroneous) rates and
-accelerations.
+package [gazebo_plugins](https://index.ros.org/p/gazebo_plugins). It
+simulates an Inertial Measurement Unit (IMU) affected by Gaussian noise
+and low-frequency random drift. The orientation returned mimics a simple
+Attitude and Heading Reference System (AHRS) using the (erroneous) rates
+and accelerations.
 
 #### Published Topics
 
@@ -51,7 +51,8 @@ drift.
 - `topicName` (string): name of the sensor output topic and prefix of
   service names (defaults to `imu`)
 - `serviceName` (string): name of the calibrate service (for
-  compatibility with [gazebo_plugins](gazebo_plugins), defaults to
+  compatibility with
+  [gazebo_plugins](https://index.ros.org/p/gazebo_plugins), defaults to
   `\[topicName\]/calibrate`)
 
 <!-- -->
@@ -87,10 +88,12 @@ drift.
 - `rpyOffsets` (Vector3): if non-zero, used to calculate
   `accelOffset` and `yawOffset` so that resulting roll, pitch and
   yaw errors correspond to this values when the platform is leveled (for
-  compatibility with [gazebo_plugins](gazebo_plugins))
+  compatibility with
+  [gazebo_plugins](https://index.ros.org/p/gazebo_plugins))
 - `gaussianNoise` (double): if non-zero, this value is used as
   standard deviation of Gaussian noise for acceleration and angular rate
-  measurements (for compatibility with [gazebo_plugins](gazebo_plugins))
+  measurements (for compatibility with
+  [gazebo_plugins](https://index.ros.org/p/gazebo_plugins))
 
 ### GazeboRosGps
 
@@ -234,8 +237,8 @@ is attached to.
 The <controller:hector_gazebo_ros_sonar> tag is only valid within a
 surrounding `<sensor:ray>` tag. You should use the macro defined in
 `sonar_sensor.urdf.xacro` in package
-[hector_sensors_description](hector_sensors_description) to include a
-sonar sensor to your model.
+[hector_sensors_description](https://index.ros.org/p/hector_sensors_description)
+to include a sonar sensor to your model.
 
 #### Published Topics
 
@@ -280,4 +283,4 @@ default drift frequency is 0.00027 Hz (one hour period).
 ## See also
 
 You can find some more plugins useful for aerial vehicles in package
-[hector_quadrotor_gazebo_plugins](hector_quadrotor_gazebo_plugins).
+[hector_quadrotor_gazebo_plugins](https://index.ros.org/p/hector_quadrotor_gazebo_plugins).

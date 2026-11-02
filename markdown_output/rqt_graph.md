@@ -1,14 +1,15 @@
 ## Overview
 
-![ launch top window \| width=800](attachment:snap_rqt_graph_moveit_demo.png )
+![launch top window](doc/snap_rqt_graph_moveit_demo.png)
 
 `rqt_graph` is the successor of [rxgraph](rxgraph).
 
 ## Topic statistics
 
-[roscpp](roscpp) and [rospy](rospy) can measure certain statistics for
-every topic connection (see [Topics](Topics) for more details. This has
-to be enabled beforehand through:
+[roscpp](https://index.ros.org/p/roscpp) and
+[rospy](https://index.ros.org/p/rospy) can measure certain statistics
+for every topic connection (see [Topics](Topics) for more details. This
+has to be enabled beforehand through:
 
 
 
@@ -28,7 +29,7 @@ annotations. You have to hit the `Refresh` button to update them.
 
 This is an example of rqt_graph with statistics measurement enabled:
 
-![ ROS graph with statistics annotations \| width=800 ](attachment:topic_statistics_cropped.png )
+![ROS graph with statistics annotations](doc/topic_statistics_cropped.png)
 
 Legend:
 

@@ -6,7 +6,7 @@ When there are more than a single source to move a robot with a
 [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 message, it is important to multiplex all those input sources into a
 single one that goes to the controller (e.g.
-[diff_drive_controller](diff_drive_controller)).
+[diff_drive_controller](https://index.ros.org/p/diff_drive_controller)).
 
 This package provides a node that subscribes to a list of topics
 publishing
@@ -27,7 +27,7 @@ single one. For selecting the topic they are prioritized based on their
 priority, the messages timeout and M input lock topics that can inhibit
 one input twist topic. This is illustrated in the diagram below.
 
-![twist_mux_diagram](attachment:twist_mux_diagram.png)
+![twist_mux_diagram](doc/twist_mux_diagram.png)
 
 ## Configuration
 
@@ -68,8 +68,9 @@ fields that specify each input twist topics:
   more priority it has over the others.
 
 Example configuration to multiplex the autonomous navigation from
-[move_base](move_base), a joystick from [joy_teleop](joy_teleop), a
-keyboard from [key_teleop](key_teleop) and a tablet:
+[move_base](https://index.ros.org/p/move_base), a joystick from
+[joy_teleop](https://index.ros.org/p/joy_teleop), a keyboard from
+[key_teleop](https://index.ros.org/p/key_teleop) and a tablet:
 
 
 ```yaml
@@ -165,7 +166,7 @@ overhead for different numbers of input twist and lock topics.
 
 The next plot shows one input twist topic vs. the output one. The delay
 is usually 0, and always `< 1ms`.
-![twist_mux_plot_01\|width="750"](attachment:twist_mux_plot_01.png)
+![twist_mux_plot_01](doc/twist_mux_plot_01.png)
 
 WIP Plot with: delay vs. N + M
 
@@ -176,6 +177,31 @@ Gazebo simulator.
 ## Joystick relay
 
 In order to make it easier to use a joystick input from
-[joy_teleop](joy_teleop) with [twist_mux](twist_mux), the package comes
-with a joystick relay. See
-[twist_mux/joystick_relay](twist_mux/joystick_relay).
+[joy_teleop](https://index.ros.org/p/joy_teleop) with
+twist_mux, the package comes with a joystick
+relay. See [joystick_relay](#joystick_relay).
+
+## joystick_relay
+
+In order to make it easier to use a joystick input from
+[joy_teleop](https://index.ros.org/p/joy_teleop) with
+twist_mux the package comes with a joystick
+relay.
+
+WIP
+
+#### Subscribers
+
+WIP
+
+#### Publishers
+
+WIP
+
+#### Actions
+
+WIP
+
+#### Parameters
+
+WIP

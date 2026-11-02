@@ -1,24 +1,29 @@
 This package is barely usable alone since it provides only templates to
 create more structured launch files in the derived packages (cf.
-[qb_device_bringup](qb_device_bringup)).
+[qb_device_bringup](https://index.ros.org/p/qb_device_bringup)).
 
 ## Launch files
 
 The two launch file templates come in help when loading the description
 package of a device. It could seem unlikely to split the two files (and
 actually they are often called sequentially), but it guarantees in a
-[multi-device system](qb_chain) to be able to load every single robot
-description in each device namespace (which is required to setup their
-control nodes) and to load the whole robot model complete with
-[joint_state_publisher](joint_state_publisher),
-[robot_state_publisher](robot_state_publisher) and [rviz](rviz) only
-once. 
+[multi-device system](https://index.ros.org/p/qb_chain) to be able to
+load every single robot description in each device namespace (which is
+required to setup their control nodes) and to load the whole robot model
+complete with
+[joint_state_publisher](https://index.ros.org/p/joint_state_publisher),
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher)
+and [rviz](https://index.ros.org/p/rviz) only once.
+
 
 ```wiki
 Please, use these "macros" whenever is possible to improve '''robustness''', '''readability''' and '''maintenance''' of derived packages.
 ```
 
- 
+
+
+<a id="load_description_template"></a>
+
 
 ```clearsilver
 name = load_description_template
@@ -37,6 +42,8 @@ param {
 ```
 
 
+
+<a id="state_publisher_template"></a>
 
 
 ```clearsilver
@@ -67,5 +74,3 @@ param {
   5.default = true
 }
 ```
-
-

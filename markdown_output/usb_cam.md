@@ -25,10 +25,11 @@ also queries the kernel about the intrinsic parameters of the camera and
 provides a flexible configuration model via the standard ROS
 configuration model. The camera is polled over the intervals of the
 desired framerate, then the images are decoded and published according
-to [image_transport](image_transport) package specifications in
-sink-on-demand operating mode. Also, the
-[dynamic_reconfigure](dynamic_reconfigure) specifications are partially
-supported to publish actual frame parameters.
+to [image_transport](https://index.ros.org/p/image_transport) package
+specifications in sink-on-demand operating mode. Also, the
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+specifications are partially supported to publish actual frame
+parameters.
 
 ### Supported device access models
 
@@ -58,16 +59,18 @@ supported to publish actual frame parameters.
   for publishing actual frame parameters under `parameter_updates`
   topic suffix
 - [dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)
-  for publishing [dynamic_reconfigure](dynamic_reconfigure) description
-  messages under `parameter_descriptions` topic suffix
+  for publishing
+  [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+  description messages under `parameter_descriptions` topic suffix
 
 ### Topic names abbreviation policy
 
 The node formulates topic namespaces and affixes using the following
 policy: 1. **Node name** taken from ROS launch server 2. **Transport
 suffix** configured with `camera_transport_suffix` parameter 3.
-**[image_transport](image_transport) mode suffix** 4. **Description
-suffix** provided from [dynamic_reconfigure](dynamic_reconfigure) API
+**[image_transport](https://index.ros.org/p/image_transport) mode
+suffix** 4. **Description suffix** provided from
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure) API
 For example, if the node runs under the name `usb_cam` and
 `camera_transport_suffix` is set to `image_raw` (default invocation
 case), the node will publish the following list of topics:
@@ -254,13 +257,22 @@ param {
 
 
 
-### I/O modes reference ===The node supports the following I/O mode names for the given device:
+### I/O modes reference
+
+<a id="io_modes"></a>The node supports the
+following I/O mode names for the given device:
 
 - `read` - for devices supporting virtual filesystem or block I/O
 - `mmap` - for devices supporting direct `libusb` memory mapping
 - `userptr` - for DMA devices supporting userspace pointer exchange
 
-### Pixel formats/encodings reference ===Selection of the pixel format name automatically selects the decoder library and pixel representation for FFMPEG/`libavcodec` processing. The node supports the following pixel format names and decoders (all names are case-sensitive):
+### Pixel formats/encodings reference
+
+<a id="pixel_formats"></a>Selection of the
+pixel format name automatically selects the decoder library and pixel
+representation for FFMPEG/`libavcodec` processing. The node supports
+the following pixel format names and decoders (all names are
+case-sensitive):
 
 - `yuyv` - YUV420
 - `yuv` - synonym for `yuyv`
@@ -277,23 +289,29 @@ param {
 **NOTE**: In its current state, the node does not support
 hardware-accelerated decoding!
 
-### Color representation formats reference ===The node supports the following color representation mode names (case-sensitive):
+### Color representation formats reference
+
+<a id="color_formats"></a>The node supports
+the following color representation mode names (case-sensitive):
 
 - `yuv422p` - YUV422 - default, compatible with most MJPEG hardware
   encoders
 - `yuv420p` - YUV420 - may be required by H.264 and H.265 hardware
   encoders
 
-### Intrinsic control configuration ===The node queries V4L kernel driver for available intrinsic control names and data types they require, in the same way, that one can query from terminal with the following command:
+### Intrinsic control configuration
 
-
+<a id="intrinsics"></a>The node queries V4L
+kernel driver for available intrinsic control names and data types they
+require, in the same way, that one can query from terminal with the
+following command: 
 
 ```
 v4l2-ctl --device=/dev/video<ID> -L
 ```
 
- The node supports the following types of
-intrinsic controls provided by `libv4l2`:
+ The node supports the
+following types of intrinsic controls provided by `libv4l2`:
 
 - Booleans (`true/false`)
 - Integers (32-bit)
@@ -386,3 +404,134 @@ controls that are mentioned in the **root namespace** of the
 All the other intrinsic control names reported by `v4l2-ctl` are
 enumerated in the `ignore` string list, so their values will be left
 intact.
+
+## Troubleshooting
+
+### FFMPEG: MJPEG output buffer size mismatch
+
+If you see repeated groups of messages like this:
+
+
+```
+FFMPEG: MJPEG output buffer size mismatch: 460800 (614400 expected)
+2D processing operation fault
+[ERROR] [1680887653.104109599]: Video4linux: frame grabber failed
+```
+
+ it means that the color representation obtained
+from the MJPEG decoder does not match the representation configured in
+the configuration file. Try to change `color_format` parameter to
+another value. Then try to check if the configured frame size
+(`image_width` and `image_height` parameters) is actually supported
+by your camera querying `/<node_name>/supported_formats` service.
+
+### Determining correct pixel_format value for the device
+
+If the output of the node is images of the correct size but the pixel
+format is literally mismatching the spec, like this:
+![](https://user-images.githubusercontent.com/34397296/47157450-ee46df80-d31b-11e8-9009-18da5510ecac.png)
+
+try to use the following command: 
+
+```
+v4l2-ctl --list-formats-ext --device=/dev/video0 | grep -e '^[[:space:]]*\[[0-9]*\]'
+```
+
+ to have the
+list of available pixel formats and encodings, then select the proper
+format according to
+[Pixel formats/encodings reference](#pixel-formatsencodings-reference).
+The example output of this command for *Logitech HD Pro Webcam C920*
+look like: 
+
+```
+[0]: 'YUYV' (YUYV 4:2:2)
+	[1]: 'H264' (H.264, compressed)
+	[2]: 'MJPG' (Motion-JPEG, compressed)
+```
+
+
+
+### Distinguish between several identical USB devices
+
+This case usually happens when several sensors (not always they are
+identical themselves) are connected to the same machine via identical
+USB-to-serial adaptors. Linux kernel does not have an ID persistence
+policy when the USB devices are enumerated during the boot, so the
+referral paths like `/dev/ttyUSB0`, and `/dev/ttyUSB1` may easily
+change on the next boot when the identical device is connected to the
+same machine on the different USB port, despite the physical ports
+themselves are never changed.
+
+To distinguish between such devices there are several ways to do. The
+most convenient way is to find a detailed description of the USB
+connection the device has through `udevadm`: 
+
+```
+lsusb
+udevadm info -a -n /dev/<DEVICE> | grep -e '{serial}'
+```
+
+
+The output will include a list of vendor IDs, product IDs and the serial
+numbers assigned to the device. Repeating this for all the devices
+connected to the machine, the different serial numbers would be
+revealed. Then the `udev` rules list could be created as something
+like this: 
+
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="<VendorID>", ATTRS{idProduct}=="<ProductID>", ATTRS{serial}=="<SerialNumber>", SYMLINK+="device_name"
+```
+
+ This will create the dedicated
+virtual file with the name `/dev/device_name` persistent for the
+device with the mentioned `SerialNumber`. However, some cheap devices
+(especially, USB-RS232 adaptors) do not have identical serial numbers,
+so this approach is not always usable.
+
+------------------------------------------------------------------------
+
+The second approach is to examine the USB bus ID assigned to the device:
+
+
+```
+lsusb -tvv
+```
+
+ This will show the tree of USB bus connections
+with paths assigned in `/dev/bus` and `/sys/bus` namespaces. Then it
+is possible to access the device directly by the listed path.
+
+------------------------------------------------------------------------
+
+The third approach is to examine the driver subsystem name to
+distinguish the devices by a unique name. To do that, examine the
+`/dev` directory for subdirectories created by the driver, like, for
+example, `serial/` for TTY devices, or `v4l/` for web cameras. Then
+enter the subdirectory to access the device by its persistent ID, like
+this: 
+
+```
+/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_919E375F-video-index0
+```
+
+
+
+
+
+```wiki
+The approaches described here are '''not portable!'''
+
+All the described approaches described here to distinguish between several identical USB devices are not portable. Usage of them makes the setup always machine-specific. Please thoroughly revise your setup and enumerate your devices correctly to avoid changing IDs and indices!
+```
+
+
+
+### Video4linux: frame mapping timeout (11)
+
+This error is emitted when the camera does not respond on the USB port
+for 5 seconds or more being polled by the node. It may happen with some
+old camera chipsets incompatible with the given USB hub controller. In
+this case, it is needed to use a different controller or to check the
+motherboard for possible USB bridge malfunction. In the simplest case
+even reconnecting the camera to a different USB port may work.

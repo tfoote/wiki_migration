@@ -22,4 +22,4 @@ $ rosdep install rqt_pr2_dashboard
 
 
 
-(see [here](rqt/UserGuide/Install) for more installation details)
+(see [here](https://index.ros.org/p/rqt) for more installation details)

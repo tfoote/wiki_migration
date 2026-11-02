@@ -1,6 +1,7 @@
 This package is barely usable alone since it provides only the common
 features to be exploited and expanded in the derived packages (cf.
-[qb_hand](qb_hand) and [qb_move](qb_move)).
+[qb_hand](https://index.ros.org/p/qb_hand) and
+[qb_move](https://index.ros.org/p/qb_move)).
 
 
 
@@ -53,5 +54,3 @@ param {
   5.default = transmission
 }
 ```
-
-

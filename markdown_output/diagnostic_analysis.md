@@ -31,8 +31,8 @@ toolchain uses
 [diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
 messages on the "/diagnostics" topic, which is what this package is
 designed for. Only [bag files](Bags) of this type will work with the
-[diagnostic_analysis](diagnostic_analysis) package. To play other bag
-files, use [rostopic](rostopic).
+diagnostic_analysis package. To play
+other bag files, use [rostopic](https://index.ros.org/p/rostopic).
 
 ## Command-line Tools
 
@@ -84,3 +84,29 @@ to specified row length by skipping every nth line as necessary.
 skipping every `SKIP` lines.
 
 ## Tutorials
+
+- [Analyzing Diagnostic Logs Off-Line](https://index.ros.org/p/diagnostics):
+  This tutorial uses the
+  diagnostic_analysis package to
+  analyze a robot log file. These files are generated automatically by
+  the robots when they're running and contain the entire diagnostics
+  history of the robot. You can convert these log files into CSV files
+  (comma separated value) that can be opened with any spreadsheet
+  editor. This only works with
+  [diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+  messages on the `/diagnostics` topic, used in the PR2 diagnostic
+  toolchain.
+
+## Tutorials
+
+- [Analyzing Diagnostic Logs Off-Line](https://index.ros.org/p/diagnostics):
+  This tutorial uses the
+  diagnostic_analysis package to
+  analyze a robot log file. These files are generated automatically by
+  the robots when they're running and contain the entire diagnostics
+  history of the robot. You can convert these log files into CSV files
+  (comma separated value) that can be opened with any spreadsheet
+  editor. This only works with
+  [diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)
+  messages on the `/diagnostics` topic, used in the PR2 diagnostic
+  toolchain.

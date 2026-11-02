@@ -6,8 +6,8 @@ documentation.
 helps you to convert between various ROS / PCL and !OctoMap data types.
 
 Messages, services and conversions of them (without ROS-dependencies)
-are available in [octomap_msgs](octomap_msgs). Since fuerte, this
-package is a unary stack and released separately.
+are available in [octomap_msgs](https://index.ros.org/p/octomap_msgs).
+Since fuerte, this package is a unary stack and released separately.
 
 ## Bugs/Feature Requests
 

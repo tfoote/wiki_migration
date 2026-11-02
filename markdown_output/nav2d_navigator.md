@@ -7,10 +7,10 @@ the RobotNavigator class, which is exported by this package and can be
 used from within other nodes as well.
 
 Interaction with the Navigator is implemented using the
-[actionlib](actionlib) interface. This allows other nodes (e.g. some
-high level mission control) to start actions like goal navigation or
-exploration, monitor the progress and eventually cancel an action in
-progress. The following four actions are available:
+[actionlib](https://index.ros.org/p/actionlib) interface. This allows
+other nodes (e.g. some high level mission control) to start actions like
+goal navigation or exploration, monitor the progress and eventually
+cancel an action in progress. The following four actions are available:
 
 - MoveToPosition2D
 - !StartMapping
@@ -19,7 +19,7 @@ progress. The following four actions are available:
 
 ## Example
 
-See the [Navigator Tutorial](nav2d/Tutorials/RobotNavigator) for an
+See the [Navigator Tutorial](https://index.ros.org/p/nav2d) for an
 example how to setup the Navigator in Stage with a given map of the
 environment.
 
@@ -153,5 +153,3 @@ node{
   }
 }
 ```
-
-

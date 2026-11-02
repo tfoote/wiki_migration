@@ -132,6 +132,11 @@ python3 convert_to_markdown.py --only bond tf2    # convert specific packages
 - **Standard subpages are always considered:** MoinMoin's `<<PackageHeader>>` linked `pkg/Tutorials`, `pkg/Troubleshooting` and `pkg/FAQ` automatically. These are appended even when the page doesn't link them, but only if they have real content (a tutorial listing that finds tutorials, or more than headings, macros and the "No troubleshooting tips have been added…" boilerplate).
 - **Never appended:** `Reviews` (API/doc reviews), `ChangeList`/`ChangeLog`, and old-distro pages (`cturtle` … `melodic`). Links to them go to the package's index.ros.org page. Translated pages (`ja/pkg`, `cn/pkg`, …) are not exported.
 
+**ClearSilver content:**
+- **Tutorial header:** `<<IncludeCSTemplate(TutorialCSHeaderTemplate)>>` is rendered from the tutorial's `## note.N = …`, `## description = …`, `## keywords = …`, `## level = …` and `## next.N.link = …` comment lines as a short list: **Note** (prerequisite tutorials), **Description**, **Keywords**, **Tutorial Level**, **Next Tutorial**. The title is already the section heading. The obsolete answers.ros.org box is dropped.
+- **ROS API blocks:** `{{{#!clearsilver CS/NodeAPI}}}` (and `CS/ActionAPI`) blocks are parsed as ClearSilver HDF (including `node.N { … }`, dotted keys and `desc << EOM` blocks) and rendered the way the wiki template did. Each node gets a heading, each list gets a sub-heading in the template's order (Action Goal/Result/Feedback, Actions Called, Subscribed/Published Topics, Services, Services Called, Parameters, Parameters Set, Required/Provided tf Transforms), named groups get their own heading, and each entry is a bullet: `` `name` (type link): description ``, parameters as `` `name` (`type`, default: `value`) ``, and tf as `` `from` → `to` ``. Message and service types link to docs.ros.org via `MsgLink`/`SrvLink`. `no_header` is honoured.
+- Padding inside links (`[[ target | label ]]`) is removed so the Markdown link works.
+
 **Embedded code (`GetTaggedCode`):**
 - `<<GetTaggedCode(url, lang, TAG, options)>>` is replaced with the code between `%Tag(TAG)%` and `%EndTag(TAG)%` in the cached source file (`FULLTEXT` = whole file), as a fenced code block. Lines holding tag markers are removed. `unindent` dedents the snippet, and `show_uri` adds a `Source:` link to the file on github.com. `cplusplus` maps to `cpp` and `launch` to `xml`. Line numbers (`global_lines`) aren't reproduced.
 - A mismatched `%EndTag(...)%` or a repeated `%Tag(TAG)%` closes a snippet (some upstream files have such typos).
@@ -240,6 +245,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_convert_include.py` — Tests `<<Include(...)>>` resolution, missing page fallbacks, nested includes, and recursion depth limits.
 - `test_convert_main.py` — Tests which pages `convert_to_markdown.py` regenerates (queue-only, skips submitted/edited/dirty files, `--dry-run`, `--only`, `--force-edited`).
 - `test_links_attachments.py` — Tests index.ros.org link rewriting, attachment → `doc/` rewriting and manifests, the attachment commit in `submit_prs.py`, same-page anchor resolution, subpage appending (including tutorial listing expansion and the subpage limit).
+- `test_convert_clearsilver.py` — Tests the HDF parser, CS/NodeAPI rendering (single/multiple nodes, groups, tf, `no_header`, multi-line descriptions) and the tutorial header.
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
 - `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.

@@ -39,5 +39,3 @@ pub {
   0.desc = Positions and velocities of people
 }
 ```
-
-

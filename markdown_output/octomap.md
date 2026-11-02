@@ -28,11 +28,13 @@ BibTeX:
 Doxygen documentation based on the latest !OctoMap release is available
 [online](https://octomap.github.io/octomap/doc/).
 
-If you want to use !OctoMap in ROS, [octomap_ros](octomap_ros) and
-[octomap_msgs](octomap_msgs) provide messages, wrappers and conversion
-methods. [octomap_server](octomap_server) provides map building and
-serving capabilities. A visualization tool is available at
-[octovis](octovis).
+If you want to use !OctoMap in ROS,
+[octomap_ros](https://index.ros.org/p/octomap_ros) and
+[octomap_msgs](https://index.ros.org/p/octomap_msgs) provide messages,
+wrappers and conversion methods.
+[octomap_server](https://index.ros.org/p/octomap_server) provides map
+building and serving capabilities. A visualization tool is available at
+[octovis](https://index.ros.org/p/octovis).
 
 
 
@@ -91,3 +93,13 @@ Report bugs or request features
 [on GitHub](https://github.com/OctoMap/octomap/issues). For questions
 and discussions, use the mailing list at
 <http://groups.google.com/group/octomap>
+
+## Tutorials
+
+- [Creating an OctoMap from existing 3D (mesh) data](#creating-an-octomap-from-existing-3d-mesh-data):
+  \## the next tutorial description (optional)
+
+## Creating an OctoMap from existing 3D (mesh) data
+
+This tutorial has moved:
+<https://github.com/OctoMap/octomap/wiki/Importing-Data-into-OctoMap>

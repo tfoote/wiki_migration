@@ -24,8 +24,10 @@ Linux kerner 2.6.25 or newer.
 ## Plug-in system
 
 The SocketCAN driver is exposed as "can::SocketCANInterface" with base
-class can::!DriverInterface via [class_loader](class_loader). In
-addition the plugin library is announced to [pluginlib](pluginlib).
+class can::!DriverInterface via
+[class_loader](https://index.ros.org/p/class_loader). In addition the
+plugin library is announced to
+[pluginlib](https://index.ros.org/p/pluginlib).
 
 ## Tested Drivers and Devices
 

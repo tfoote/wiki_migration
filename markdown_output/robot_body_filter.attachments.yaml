@@ -1,0 +1,5 @@
+doc/filter.gif: pages/robot_body_filter/attachments/filter.gif
+doc/filter_bounds.gif: pages/robot_body_filter/attachments/filter_bounds.gif
+doc/filter_cut.gif: pages/robot_body_filter/attachments/filter_cut.gif
+doc/filter_models.gif: pages/robot_body_filter/attachments/filter_models.gif
+doc/filter_split.gif: pages/robot_body_filter/attachments/filter_split.gif

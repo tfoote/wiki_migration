@@ -19,5 +19,3 @@ node.0 {
     1.type = std_srvs/Empty
     1.desc = Resets the motors
 ```
-
-

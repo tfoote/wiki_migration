@@ -50,7 +50,7 @@ using ecl::InputOutputByteDeviceConcept;
 
 ## Usage
 
-- [Implementing Concepts](ecl_concepts/Tutorials/Implementing Concepts)
+- [Implementing Concepts](#implementing-concepts)
 
 ## Concepts
 
@@ -67,3 +67,74 @@ Existing concepts in the ecl include:
 - `Streams` - any class with basic char streaming capabilities.
 - `Devices` - device functionalities compatible to those in
   ecl_devices.
+
+## Implementing Concepts
+
+### Overview
+
+Usage is fairly simple. There are two steps:
+
+- *Concept Test* : must be hand crafted to check all the characteristic
+  behaviours of a concept.
+- *Concept Check* : whenever required, call the concept check which runs
+  the concept test to verify compliance.
+
+### Concept Test
+
+If you are using an existing concept (see below), skip through to the
+concept check. Otherwise:
+
+- Decide on a name for the concept.
+- Create a templatised class of that name with a single arbitrary
+  template argument (the class to be tested).
+- Hand craft the testing function within that class using
+  `compile_time_concept_test`().
+
+The example here is the same as that used in `src/tests/concepts.cpp`:
+
+
+
+```cplusplus
+template <typename T>
+class MyConcept {
+    public:
+        compile_time_concept_test(MyConcept) {
+            T t;
+            t.apply();  // This is the characteristic function required by this concept.
+        }
+};
+```
+
+
+
+Hand-crafting the concept testing function will often require a little
+care to ensure the concept is appropriately covered.
+
+### Concept Check
+
+Once you have a test in place, you only need to insert
+`compile_time_concept_check()` calls wherever you need them. Keep in
+mind, the sole purpose of these is to provide convenient error logs when
+something goes wrong.
+
+
+
+```cplusplus
+class A { // This class has the MyConcept functionality.
+    public:
+        // The following function characterises the MyConcept concept.
+        // Comment this line and any MyConcept concept assertion
+        // check will fail in compile time.
+        void apply() {};
+};
+
+int main() {
+    compile_time_concept_check(MyConcept<A>); // Checks A for compliance to the MyConcept concept.
+    return 0;
+}
+```
+
+## Tutorials
+
+- [Implementing Concepts](#implementing-concepts):
+  Writing and using concept check tests.

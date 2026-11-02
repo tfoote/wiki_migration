@@ -51,7 +51,7 @@ Documentation of the language bindings are in
 The following utilities can be used to play sound when
 `soundplay_node.py` is running. For help on getting
 `soundplay_node.py` running refer to the
-[tutorial](sound_play/Tutorials/ConfiguringAndUsingSpeakers).
+[tutorial](#how-to-configure-and-use-speakers-with-sound_play).
 
 ### Playing a .WAV or .OGG file
 
@@ -250,11 +250,12 @@ The following launch file, which starts `soundplay_node.py`, can be
 found in `soundplay_node.launch`: 
 
 ```
-$rosrun sound_play play.py /usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav
-Playing "/usr/share/xemacs21/xemacs-packages/etc/sounds/im_so_happy.wav".
+<launch>
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py"/>
+</launch>
 ```
 
-0
+
 
 ### Message Format
 
@@ -296,3 +297,483 @@ verbal debugging messages could be used by telling a sound to play once.
 In this case there is no need to stop playing the sound.
 
 The special wildcard sound can be used to stop playback on all sounds.
+
+## How to Configure and Use Speakers with sound_play
+
+### Compiling
+
+
+
+```
+$ rosdep install sound_play
+$ rosmake sound_play
+```
+
+
+
+### Powered On and Plugged In
+
+Make sure that your USB speakers are connected to your desktop and
+powered on.
+
+You can check that the speaker/sound card is recognized by the unix
+kernel by using:
+
+
+
+```
+$ cat /proc/asound/cards
+```
+
+ You will see something similar to:
+
+. 
+
+```
+0 [Intel          ]: HDA-Intel - HDA Intel
+                      HDA Intel at 0xfdff8000 irq 16
+ 1 [Speaker        ]: USB-Audio - Logitech USB Speaker
+                      Logitech Logitech USB Speaker at usb-0000:00:1d.7-6.1.3, full speed
+```
+
+
+
+### Configuring the Sound Driver to Use Your Speaker
+
+To designate which sound card the driver uses, run:
+
+
+
+```
+$ asoundconf set-default-card [device #]
+```
+
+ *(i.e. In the above example, `asoundconf
+set-default-card 0` would configure the driver to use the Intel card
+.)*
+
+This will create .asoundrc.asoundconf in your home directory. To make
+the driver use these settings, add the following line to /.asoundrc by
+using the command:
+
+
+
+```
+$ echo 'include ".asoundrc.asoundconf"' >> ~/.asoundrc
+```
+
+ (Optional) To set this default to all users,
+copy this to the system-wide driver configuration file:
+
+
+
+```
+$ sudo cp ~/.asoundrc.asoundconf /etc/asound.conf
+```
+
+
+
+### Starting a roscore
+
+For sound_play to work properly, a ros core must be running. In a **new
+terminal**:
+
+
+
+```
+$ roscore
+```
+
+
+
+### Starting the sound_play node
+
+In another **new terminal**, start the sound_play node. This node will
+play sounds when it receives sound messages:
+
+
+
+```
+$ rosrun sound_play soundplay_node.py
+```
+
+ You will see:
+
+. 
+
+```
+sound_play node is ready to play sound
+```
+
+
+
+### Playing Sound
+
+In a **new terminal**, test that your speaker is configured properly and
+playing sound. Try saying "hello world":
+
+
+
+```
+$ rosrun sound_play say.py "hello world"
+```
+
+ You will see:
+
+. 
+
+```
+Saying: hello world
+```
+
+
+
+And you should hear "Hello world"
+
+### Troubleshooting
+
+If you encounter problems in this Tutorial, have a look at the
+[Troubleshooting page](#troubleshooting-1), it
+may have a solution for you.
+
+------------------------------------------------------------------------
+
+## Tutorials
+
+- [How to Configure and Use Speakers with sound_play](#how-to-configure-and-use-speakers-with-sound_play):
+  This tutorial is an introduction to setting up and using USB speakers
+  connected to a desktop computer. After reading it, you should be able
+  to bring up the speakers, configure the speakers, and play sounds.
+- [How to Create a Sound Interface](#how-to-create-a-sound-interface):
+  This tutorial covers how to create an interface for using
+  `sound_play`. The interface uses a node acting as a 'funnel' as a
+  convenient way to route sound commands through `sound_play`. 1.
+  [Install New Festival Voices](http://ubuntuforums.org/showthread.php?t=751169).
+
+Create a new tutorial:
+
+## Troubleshooting
+
+1.  format wiki
+2.  language en
+
+### Errors when using package
+
+#### Error: The driver can't connect to the sound card
+
+
+
+```
+Exception in sound startup. Is the speaker connected? Have you configured ALSA? Can aplay play sound? Have a look at http://pr.willowgarage.com/wiki/sound_play/Troubleshooting Will retry in 5 seconds. Error message: No available audio device
+```
+
+
+
+**Solution**
+
+- Is the sound device connected (if you are trying to use USB speakers,
+  for example). Run "lsusb" to check the speaker.
+
+<!-- -->
+
+- Is the sound device turned off in alsamixer? Use alsamixer to turn on
+  all channels. Pressing 'm' mutes and unmutes a channel.
+
+<!-- -->
+
+- Is the sound card configured correctly? (See **Have you told ALSA
+  which device to use?** below.)
+
+<!-- -->
+
+- Is the speaker disabled? The Logitech USB speaker can get in a mode
+  where a red light shows on the speaker. In this mode the speaker is
+  disabled, and ALSA may remember the fact that the speaker was disabled
+  despite unplug/plug sequences. To fix this, use **alsamixer**, select
+  the PCM control. Press **m** to enable/disable the speaker (the LED
+  should turn red/blue). When the LED is blue, quit alsamixer and run:
+  
+
+```
+sudo /etc/init.d/alsa-util restart
+```
+
+ The speaker should now default to the enabled
+  state.
+
+#### There is a red light on the speaker
+
+See **Error: The driver can't connect to the sound card**.
+
+#### Error: There are no error messages and no sound
+
+**Solution**
+
+- Is the volume set to zero or muted? Use alsamixer to check.
+
+#### Error: Sound coming out of wrong device
+
+Sound plays from the wrong audio device.
+
+**Solution:**
+
+- Have you told ALSA which device to use? To see which cards are
+  installed: 
+
+```
+cat /proc/asound/cards
+```
+
+ To use card 1 by default:
+  
+
+```
+asoundconf set-default-card 1
+sudo cp ~/.asoundrc.asoundconf /etc/asound.conf
+```
+
+
+
+#### Error: There is no sound if the speaker is disconnected and reconnected
+
+If the speaker is disconnected and then reconnected, soundplay_node.py
+will not play any sound, and will not report any error messages.
+
+**Solution:** Due to limitations of pygame, soundplay_node.py cannot
+detect that the speaker was disconnected unless it is left idle for
+about ten to twenty seconds. If you disconnect and reconnect the
+speaker, you will have to either restart soundplay_node.py, or have it
+not play any sound for at least ten to twenty seconds.
+
+#### Error: Speech synthesis does not work, but playing sounds works
+
+Festival is not installed 
+
+```
+Saying "Hello world".
+sh: text2wave: not found
+```
+
+
+
+Festival has no voices installed 
+
+```
+Saying "Hello world".
+
+WARNING
+No default voice found in ("/usr/share/festival/voices/")
+either no voices unpacked or voice-path is wrong
+Scheme interpreter will work, but there is no voice to speak with.
+WARNING
+
+-=-=-=-=-=- EST Error -=-=-=-=-=-
+{FND} Feature Token_Method not defined
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+```
+
+
+
+**Solution:**
+
+- Install the festival and festvox-kallpc16k packages
+  
+
+```
+rosdep install sound_play
+```
+
+
+
+#### Error : Sound voulme is small
+
+**Solution:**
+
+- Use mixer program to change volumes 
+
+```
+alsamixer
+```
+
+
+
+### Other sources of help
+
+If these troubleshooting tips are not sufficient, you may be able to
+find an answer on the [ALSA web page](http://www.alsa-project.org/) or
+the [unofficial ALSA wiki](http://alsa.opensrc.org/). And please update
+the wiki or let us know when you find the solution.
+
+## How to Create a Sound Interface
+
+### Background
+
+#### Prerequisites
+
+This tutorial assumes that your linux sound drivers and speaker system
+are already working and that `sound_play` is working from the
+terminal, all of which can be tested in the
+[Configuring and Using Speakers](#how-to-configure-and-use-speakers-with-sound_play)
+tutorial. The node created in this tutorial uses the `sound_play`
+convenience wrapper package to play sound. See the
+sound_play documentation for details.
+
+#### Examples and References
+
+[Configuring and Using Speakers](#how-to-configure-and-use-speakers-with-sound_play),
+sound_play Package Summary,
+[sound_play/SoundRequest.msg](http://www.ros.org/doc/api/sound_play/html/msg/SoundRequest.html)
+
+#### Dependencies
+
+The structure built in this tutorial will depend on `sound_play` and
+will require sound assets for testing.
+
+### One Method for Structuring the Interface
+
+This structure routes all sound instructions, given in the form of
+`yak` commands, through a single node, here called `yak_node`.
+`yak_node` is then the sole node responsible for dealing with
+`SoundClient()` and `sound_play`, and acts as a 'funnel', allowing
+multiple requesters to play sounds.
+
+`SoundClient()` requires full path names, and can also become
+overloaded and produce a segmentation fault. This partitioning of the
+structure allows both of these issues to be handled in a single node.
+
+A suitable speaker command should communicate a file name,
+text-to-speech string, or built-in sound, and a command for type of
+input. Here, speaker commands have a string for a file name or for
+text-to-speech, and a command for playing the `.wav` file or for using
+text-to-speech. More command types could be added for playing `.ogg`
+or built-in files if needed.
+
+### Code and Explanation
+
+**Note:** It is convenient to save all sound assets in the same
+directory, as `SoundClient()` requires full path names to play sound
+assets. `SoundClient()` also prefers all sound assets to be `.wav`
+or `.ogg` files.
+
+All sound instructions in the form of `yak` commands are published to
+the `yak` topic, to which `yak_node` subscribes.
+
+
+
+```python
+#!/usr/bin/env python
+import roslib; roslib.load_manifest('sound_yak')
+import rospy, os, sys
+from sound_play.msg import SoundRequest
+from sound_play.libsoundplay import SoundClient
+from sound_yak.msg import yak_cmd
+
+# directory with sound assets - change as needed
+soundAssets = '/home/shiloh/devel/audio_assets/'
+# duration of yak throttle
+throttle = 3 # seconds
+
+def sound_translator(data):
+    print data
+    global allow_yak
+    if rospy.Time.now() <= allow_yak: # Throttles yak to avoid
+        print("Sound throttled")      # SoundClient segfault
+        return
+    # when to reallow yak
+    allow_yak = rospy.Time.now() + rospy.Duration.from_sec(throttle)
+    if data.cmd == "wav":
+        soundhandle.playWave(soundAssets + data.param)
+    if data.cmd == "say":
+        soundhandle.say(data.param)
+
+def yak_init():
+    rospy.init_node('yak_node', anonymous = True)
+    global allow_yak
+    allow_yak = rospy.Time.now()
+    rospy.Subscriber('yak', yak_cmd, sound_translator)
+    rospy.spin()
+
+if __name__ == '__main__':
+    soundhandle = SoundClient()
+    rospy.sleep(1)
+    
+    yak_init()
+```
+
+
+
+`SoundClient()` may produce a segmentation fault if too many sound
+commands are given in a short period of time, so sound commands are
+throttled in lines 14-20. Sounds can only be played when the current
+time is later than time `allow_yak`, and every time a sound is played,
+`allow_yak` is updated to the current time plus a throttle time, here
+3 seconds, defined in line 11.
+
+Lines 21-24 process `yak` commands. `SoundClient()`'s `playWave`
+requires full path names for sound assets. A convenient solution allows
+the parameter to be the file name only and concatenates the path name to
+the folder containing sound assets, as in line 22.
+
+### Publishing yak commands
+
+Like any other ROS topic, `yak` commands are imported, set, and
+published. `yak_cmd` is imported as usual near the beginning of the
+file. `yak.cmd` and `yak.param` are both set before
+`pub.publish(yak)` in the callback method, then `global yak =
+yak_cmd()` and `global pub = rospy.Publisher('yak', yak_cmd)` are
+set in the initialization method.
+
+The callback should contain: 
+
+```python
+yak.cmd = 'wav'
+yak.param = 'hello.wav'
+pub.publish(yak)
+```
+
+ The initializer
+should contain: 
+
+```python
+global yak
+yak = yak_cmd()
+global pub
+pub = rospy.Publisher('yak', yak_cmd)
+```
+
+
+
+### Running the interface
+
+After a `roscore` is running, `rosrun sound_play soundplay_node.py`,
+and `rosrun sound_yak yak_node.py` (or whichever package you put it
+in) in a new tab. Also run your nodes that send `yak` commands. Here
+is a checklist for running `yak_node`: 1. Ensure that a `roscore` is
+running. 
+
+```
+$ roscore
+```
+
+ 1. `rosrun sound_play
+soundplay_node.py` in a new tab. 
+
+```
+$ rosrun sound_play soundplay_node.py
+```
+
+ 1. `rosrun
+sound_yak yak_node.py` (or whichever package you put it in) in a new
+tab. 
+
+```
+$ rosrun sound_yak yak_node.py
+```
+
+ 1. Run your nodes that send `yak`
+commands. 
+
+```
+$ rosrun my_pack my_node.py
+```

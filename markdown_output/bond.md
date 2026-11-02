@@ -2,8 +2,8 @@
 
 Bond is implemented in the following languages:
 
-- C++ in [bondcpp](bondcpp)
-- Python in [bondpy](bondpy)
+- C++ in [bondcpp](https://index.ros.org/p/bondcpp)
+- Python in [bondpy](https://index.ros.org/p/bondpy)
 
 ## Motivation
 

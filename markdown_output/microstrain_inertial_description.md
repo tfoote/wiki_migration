@@ -5,7 +5,9 @@ of `.urdf.xacro` files that can be included in a user's robot
 description to easily integrate MicroStrain sensors on their platform
 and in the tf tree.
 
-![All sensors in rviz\|width=600,height=300](attachment:all_sensors.png)
+![All sensors in rviz](doc/all_sensors.png)
+
+<a id="Usage"></a>
 
 ## Usage
 
@@ -79,9 +81,10 @@ offset from the center of the sensor to the sensor origin called
 can be important if precision of measurements is important.
 
 For example, if one were to place a GQ7 on a robot like the example in
-[Usage](#Usage), they would see the following frames available in rviz.
+[Usage](#Usage), they would
+see the following frames available in rviz.
 
-![GQ7 with sensor origin\|width=500,height=300](attachment:gq7_example.png)
+![GQ7 with sensor origin](doc/gq7_example.png)
 
 The purpose of this is to make it easy to place the sensor by allowing
 users to place the center of the sensor wherever they want without

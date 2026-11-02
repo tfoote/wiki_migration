@@ -1,7 +1,5 @@
 ## Kobuki Udev Rules
 
-<<IncludeCSTemplate(TutorialCSHeaderTemplate)>>
-
 Connection to the kobuki base is via usb enabled by an ftdi usb-serial
 converter which is always pre-flashed at the factory with the serial id
 `kobuki`. For convenience, to enable the device to appear on
@@ -39,3 +37,8 @@ problems and leave you with lovely bricks!
 
 You can also find more detailed information on how to flash the chip (as
 is usually done at Yujin's factory) in the doxygen api.
+
+## Tutorials
+
+- Udev Rules:
+  Setting up udev rules to find kobuki at /dev/kobuki.

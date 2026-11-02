@@ -99,8 +99,8 @@ My Robot
 The `aggregator_node` will load analyzers to store and process the
 diagnostic data. Each analyzer inherits from the base class
 `diagnostic_aggregator::Analyzer`. Analyzers must be in packages that
-depend directly on [pluginlib](pluginlib) and
-[diagnostic_aggregator](diagnostic_aggregator).
+depend directly on [pluginlib](https://index.ros.org/p/pluginlib) and
+diagnostic_aggregator.
 
 The base analyzer class is the pure virtual
 [diagnostic_aggregator::Analyzer](CodeAPI:diagnostic_aggregator/html/classdiagnostic__aggregator_1_1Analyzer.html)
@@ -129,13 +129,13 @@ enforcement of the diagnostic status name hierarchy.
 
 Users can create Analyzers to load as plugins for different robots. See
 the tutorial
-[Creating a Diagnostic Analyzer](diagnostics/Tutorials/Creating a Diagnostic Analyzer)
+[Creating a Diagnostic Analyzer](https://index.ros.org/p/diagnostics)
 for details.
 
 ## Configuring an Aggregator
 
 For a full tutorial, see the tutorial
-[Configuring a Robot's Diagnostic Aggregator](diagnostics/Tutorials/Configuring Diagnostic Aggregators).
+[Configuring a Robot's Diagnostic Aggregator](https://index.ros.org/p/diagnostics).
 
 To set up the diagnostic analyzer on a robot, the aggregator is given
 parameters that will configure the analyzers. These parameters, below,
@@ -204,7 +204,7 @@ Hokuyo node or EtherCAT devices. It can be configured to analyze almost
 any set of diagnostics data.
 
 For a full tutorial on the `GenericAnalyzer`, see
-[Using the GenericAnalyzer](diagnostics/Tutorials/Using the GenericAnalyzer)
+[Using the GenericAnalyzer](https://index.ros.org/p/diagnostics)
 
 ### AnalyzerGroup
 
@@ -335,3 +335,116 @@ contain the configuration file for the `aggregator_node`.
 
 The "diagnostic_aggregator/demo" directory has an example of an
 `aggregator_node` used for testing and demonstrations.
+
+## Tutorials
+
+- [Adding Analyzers at Runtime](https://index.ros.org/p/diagnostics):
+  Use launch files or bonds and a service to add a new set of analyzers
+  to the aggregator.
+- [Configuring a Robot's Diagnostic Aggregator](https://index.ros.org/p/diagnostics):
+  This tutorial will help you set up and configure a diagnostic
+  aggregator, using the PR2 as an example. The Aggregator can be
+  configured for a robot or type of robot to perform basic analysis on
+  the diagnostics.
+- [Creating a Diagnostic Analyzer](https://index.ros.org/p/diagnostics):
+  An example of how to write your own diagnostic analyzer plug-in for
+  the diagnostic_aggregator.
+- [Using the GenericAnalyzer](https://index.ros.org/p/diagnostics): Uses
+  the `GenericAnalyzer` to analyze diagnostics from EtherCAT devices,
+  hardware drivers and robot computers. Shows the complete feature set
+  of the `GenericAnalyzer`.
+
+## Troubleshooting
+
+### Errors from diagnostic_aggregator
+
+#### Error: Analyzer fails to load
+
+The `aggregator_node` loads diagnostic analyzers to collect and
+analyze diagnostics. These are loaded as plugins. If they fail to load,
+you may see:
+
+- An error in the `robot_monitor`, describing the initialization
+  failure.
+- An error in the ROS console, saying "Analyzer failed to load", or
+  "Analyzer failed to initialize"
+
+Analyzers are loaded at startup by the `aggregator_node`. Check your
+robot's launch file for a node in package `diagnostic_aggregator`,
+type `aggregator_node'. 
+
+```
+<node pkg="diagnostic_aggregator" type="aggregator_node"
+      name="diagnostic_aggregator" >
+  <rosparam command="load" 
+            file="$(find some_pkg)/my_analyzers.yaml" />
+</node>
+```
+
+ The first thing to do
+is check the "some_pkg/my_analyzers.yaml" file and make sure it loads.
+Make a new launch file "analyzer_load_test.launch"
+
+
+```
+<launch>
+  <test pkg="diagnostic_aggregator" type="analyzer_loader"
+        name="analyzer_load_test" >
+    <rosparam command="load" test-name="load_test"
+              file="$(find some_pkg)/my_analyzers.yaml" />
+  </node>
+</launch>
+```
+
+ Use [rostest](https://index.ros.org/p/rostest)
+to launch it. 
+
+```
+rostest analyzer_load_test.launch
+```
+
+ If that passes, you should be OK,
+and you may have discovered a bug in the `aggregator_node`.
+
+If that doens't pass, use [rospack](https://index.ros.org/p/rospack) to
+find all diagnostic analyzer plugins. 
+
+```
+$ rospack plugins --attrib=plugin diagnostic_aggregator
+```
+
+ Compare
+the list from rospack with the YAML configuration file of the
+aggregator. The YAML file should look like this:
+
+
+```
+analyzers:
+  motors:
+    type: GenericAnalyzer
+    path: Motors
+    startswith: EtherCAT
+  power:
+    type: GenericAnalyzer
+    path: Power System
+    contains: Battery
+```
+
+ Each parameter `type` gives a different class
+of analyzer to load. Make sure every value for `type` is a valid
+plugin. 
+
+```
+$ rospack plugins --attrib=plugin diagnostic_aggregator | grep GenericAnalyzer
+```
+
+
+
+Make sure that all the plugins are built. Check the packages and
+dependencies and use [rosmake](https://index.ros.org/p/rosmake) to
+rebuild if necessary.
+
+Check the dependencies of the plugin packages. Each package containing
+plugins should depend directly on
+[pluginlib](https://index.ros.org/p/pluginlib) and
+diagnostic_aggregator.

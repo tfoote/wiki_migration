@@ -6,8 +6,8 @@
 This package provides two ways to describe an articulated robot state,
 one in cartesian (=task) space, the other in joint (=configuration)
 space. Each of these states has a corresponding ROS message
-[xpp_msgs](xpp_msgs), where conversion function are provided in
-`convert.h`.
+[xpp_msgs](https://index.ros.org/p/xpp_msgs), where conversion function
+are provided in `convert.h`.
 
 ### Cartesian Representation
 

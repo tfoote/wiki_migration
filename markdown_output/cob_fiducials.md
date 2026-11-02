@@ -141,10 +141,10 @@ are located in
 
 
 ```
-git clone https://github.com/ipa320/cob_perception_common.git
+cob_fiducials/common/files/fiducials
 ```
 
-0 .They should be printed on white paper to
+ .They should be printed on white paper to
 guarantee a high contrast.
 
 ### Parameter Files
@@ -154,18 +154,43 @@ Exemplary parameterfile for PiTag
 
 
 ```
-git clone https://github.com/ipa320/cob_perception_common.git
+<FiducialDetector>
+
+<FPITAG value="1"/> //optional parameter [0 = PiTag, 1 = FPiTag]
+<PI>
+
+<ID value="0" />
+<LineWidthHeight value="0.1" />
+
+<CrossRatioLine0 AB="0.40" AC="0.60" />
+<CrossRatioLine1 AB="0.20" AC="0.80" />
+
+<Offset x="-0.125" y="0.175" />
+
+<SharpnessArea x="-0.01" y="-0.01" width="0.12" height="0.12"/>
+
+</PI>
+</FiducialDetector>
 ```
 
-1 Exemplary parameterfile for Aruco
+ Exemplary parameterfile for Aruco
 
 
 
 ```
-git clone https://github.com/ipa320/cob_perception_common.git
+<FiducialDetector>
+<Aruco>
+
+<ID value="341" />
+<LineWidthHeight value="0.1"/>
+
+<Offset x="0" y="0" />
+
+</Aruco>
+</FiducialDetector>
 ```
 
-2 Notice: PiTag's are distinguished from each
+ Notice: PiTag's are distinguished from each
 other through the cross ratio. Aruco's only by ID. Miultiple
 discriminable Tag's can be defined in each parameterfile.
 
@@ -181,7 +206,7 @@ There is a PiTag generator in
 <https://github.com/raultron/PiTag-generator>. The Picture below
 displays 5 different encoded markers.
 
-![Exemplary PiTag detection\|width="500"](attachment:5marker_wiki.png)
+![Exemplary PiTag detection](doc/5marker_wiki.png)
 
 #### Creation of PiTag
 
@@ -191,7 +216,7 @@ The lines with the highest cross ratio are attached to the top left
 corner. The lines with the lowest cross ratios are attached to the
 bottom right corner.
 
-![Creating a PiTag Marker\|width="400"](attachment:pifiducial.png)
+![Creating a PiTag Marker](doc/pifiducial.png)
 
 ### Fast PiTag
 
@@ -202,7 +227,7 @@ determined to apply the PiTag detection algorithm. Especially in highly
 structured areas or when using high resolution cameras it enables a fast
 marker detection and a lower false positive rate.
 
-![Creating a PiTag Marker\|width="300"](attachment:FPiTag.png)
+![Creating a PiTag Marker](doc/FPiTag.png)
 
 ### Aruco
 
@@ -210,7 +235,7 @@ Aruco was made for educational purpose, the belongig webpage can be
 found here [Aruco](http://www.uco.es/investiga/grupos/ava/node/26). A
 Marker with the coding 341 is displayed below.
 
-![Exemplary Aruco Marker\|width="200"](attachment:arucomarker10.png)
+![Exemplary Aruco Marker](doc/arucomarker10.png)
 
 #### Creation of Aruco
 

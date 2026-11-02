@@ -1,17 +1,19 @@
 ## Overview
 
-This package provides a [URDF](urdf) model of [Warthog](Robots/Warthog).
-For an example launchfile to use in visualizing this model, see
-[warthog_viz](warthog_viz).
+This package provides a [URDF](https://index.ros.org/p/urdf) model of
+[Warthog](Robots/Warthog). For an example launchfile to use in
+visualizing this model, see
+[warthog_viz](https://index.ros.org/p/warthog_viz).
 
-![](attachment:warthog-urdf.png)
+![attachment:warthog-urdf.png](doc/warthog-urdf.png)
 
 ## Environment Variables
 
 Warthog has a suite of optional payloads called accessories. These
 payloads can be enabled and placed on Warthog using environment
-variables specified at the time the [xacro](xacro) is rendered to URDF.
-Available accessory vars are:
+variables specified at the time the
+[xacro](https://index.ros.org/p/xacro) is rendered to URDF. Available
+accessory vars are:
 
   -- ---------------------------------- -- ---------------------- -- ------------------------------------------------------------------------------------------------------- --
      **Variable**                          **Default**               **Description**                                                                                         
@@ -39,5 +41,6 @@ especially as a convenience for simulation launch.
      `bulkhead`       Includes bulkhead, but not the arm mount.   
   -- --------------- -- ------------------------------------------- --
 
-Please see [warthog_simulator](warthog_simulator) for more information
-on simulating Warthog.
+Please see
+[warthog_simulator](https://index.ros.org/p/warthog_simulator) for more
+information on simulating Warthog.

@@ -6,7 +6,7 @@ protocol like the
 [Phins Compact](https://www.ixblue.com/products/phins-compact-series)
 series.
 
-![](attachment:atlans.png)
+![attachment:atlans.png](doc/atlans.png)
 
 ## INS Configuration
 
@@ -19,7 +19,7 @@ The INS should be configured through its web interface to output:
 - IP: IP of the ROS computer
 - Port: 8200
 
-![](attachment:network_config_page.png)
+![attachment:network_config_page.png](doc/network_config_page.png)
 
 ## Nodes
 
@@ -67,5 +67,3 @@ param {
   3.default = unix
 }
 ```
-
-

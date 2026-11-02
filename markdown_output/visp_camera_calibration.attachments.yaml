@@ -1,0 +1,9 @@
+doc/calib-live-firewire.launch: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExternalCamera/attachments/calib-live-firewire.launch
+doc/calib.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExperimentalCamera/attachments/calib.png
+doc/calib_click_points_solo.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExternalCamera/attachments/calib_click_points_solo.png
+doc/calib_detected_projected_solo.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExternalCamera/attachments/calib_detected_projected_solo.png
+doc/calib_detection.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExperimentalCamera/attachments/calib_detection.png
+doc/calib_start_select.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExperimentalCamera/attachments/calib_start_select.png
+doc/calib_windows.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExperimentalCamera/attachments/calib_windows.png
+doc/grid2d.pdf: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExternalCamera/attachments/grid2d.pdf
+doc/waiting_to_stop.png: pages/visp_camera_calibration(2f)Tutorials(2f)CalibrationExternalCamera/attachments/waiting_to_stop.png

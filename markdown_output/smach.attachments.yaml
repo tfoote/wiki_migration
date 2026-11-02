@@ -1,0 +1,21 @@
+doc/actionstate.png: pages/smach(2f)Tutorials(2f)Simple(20)Action(20)State/attachments/actionstate.png
+doc/concurrence2.png: pages/smach(2f)Tutorials(2f)Concurrent(20)States/attachments/concurrence2.png
+doc/containers.png: pages/smach(2f)Tutorials(2f)Getting(20)Started/attachments/containers.png
+doc/simple.png: pages/smach(2f)Tutorials(2f)Getting(20)Started/attachments/simple.png
+doc/sm_expanded.png: pages/smach(2f)Tutorials(2f)Create(20)a(20)hierarchical(20)state(20)machine/attachments/sm_expanded.png
+doc/smach.png: pages/pr2_plugs_executive/attachments/smach.png
+doc/smach_Tutorials_User Data Passing_state_machine2.png: pages/smach(2f)Tutorials(2f)User(20)Data(20)Passing/attachments/state_machine2.png
+doc/smach_tutorial.png: pages/smach(2f)Tutorials(2f)Iterator(20)container/attachments/smach_tutorial.png
+doc/smach_viewer.png: pages/smach(2f)Tutorials(2f)Smach(20)Viewer/attachments/smach_viewer.png
+doc/state_machine2.png: pages/smach(2f)Tutorials(2f)Simple(20)State(20)Machine/attachments/state_machine2.png
+doc/state_machine_nested2.png: pages/smach(2f)Tutorials(2f)Nesting(20)State(20)Machines/attachments/state_machine_nested2.png
+doc/uc02_ts.png: pages/smach(2f)UseCase/attachments/uc02_ts.png
+doc/uc03.png: pages/smach(2f)UseCase/attachments/uc03.png
+doc/uc04.png: pages/smach(2f)UseCase/attachments/uc04.png
+doc/uc04_ts.png: pages/smach(2f)UseCase/attachments/uc04_ts.png
+doc/uc05.png: pages/smach(2f)UseCase/attachments/uc05.png
+doc/uc05_ts.png: pages/smach(2f)UseCase/attachments/uc05_ts.png
+doc/uc06.png: pages/smach(2f)UseCase/attachments/uc06.png
+doc/uc07.png: pages/smach(2f)UseCase/attachments/uc07.png
+doc/user_data.png: pages/smach(2f)Tutorials(2f)User(20)Data/attachments/user_data.png
+doc/user_data_single.png: pages/smach(2f)Tutorials(2f)User(20)Data/attachments/user_data_single.png

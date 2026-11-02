@@ -268,5 +268,18 @@ param{
 
 ## Tutorials
 
-- [dynamixel workbench controllers tutorials](dynamixel_workbench_controllers/Tutorials) -
+- [dynamixel workbench controllers tutorials](#tutorials-1) -
   This tutorial describes how to run controllers with tutorial packages.
+
+## Tutorials
+
+1\.
+[Position Controller Tutorial](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/#position-controller)
+
+2.[Velocity Controller Tutorial](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/#velocity-controller)
+
+3\.
+[Torque Controller Tutorial](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/#torque-controller)
+
+4\.
+[Multi port Tutorial](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/#multi-port-controller)

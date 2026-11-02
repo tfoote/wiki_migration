@@ -31,7 +31,7 @@ Features:
 More documentation on the grid map library is given
 [here](https://github.com/anybotics/grid_map).
 
-![](attachment:grid_map_rviz_plugin_example.png)
+![attachment:grid_map_rviz_plugin_example.png](doc/grid_map_rviz_plugin_example.png)
 
 ## Reporting bugs
 

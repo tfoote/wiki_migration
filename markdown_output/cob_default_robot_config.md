@@ -117,5 +117,3 @@ group3:
     [up,move,up],
     [down,move,down]]
 ```
-
-

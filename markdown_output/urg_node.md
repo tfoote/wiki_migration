@@ -1,4 +1,4 @@
-![](attachment:hokuyo.jpg)
+![attachment:hokuyo.jpg](doc/hokuyo.jpg)
 
 Image credit:
 [RobotShop](http://www.robotshop.com/ProductInfo.aspx?pc=RB-Hok-16)
@@ -37,12 +37,14 @@ known to work:
 ### Allow Unsafe Settings Option
 
 Allow Unsafe Settings Option is not available, please consider using the
-legacy [hokuyo_node](hokuyo_node) for UTM-30LX with certain
-configurations. (Or provide a
+legacy [hokuyo_node](https://index.ros.org/p/hokuyo_node) for UTM-30LX
+with certain configurations. (Or provide a
 [pull request to urg_node](https://github.com/ros-drivers/urg_node/issues/3)
 to add support for unsafe_settings.)
 
 ## ROS API
+
+<a id="NodeApi"></a>
 
 
 
@@ -186,5 +188,3 @@ lrwxrwxrwx 1 root root 28 2010-01-12 15:53 /etc/ros/sensors/base_hokuyo -> /dev/
 $ ls -l /dev/sensors/hokuyo_H0902620
 lrwxrwxrwx 1 root root 10 2010-04-12 12:34 /dev/sensors/hokuyo_H0902620 -> ../ttyACM1
 ```
-
-

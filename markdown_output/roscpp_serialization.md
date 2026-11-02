@@ -1,7 +1,8 @@
 ## Overview
 
 Please see
-[roscpp: Messages serialization and adapting types](roscpp/Overview/MessagesSerializationAndAdaptingTypes).
+[roscpp: Messages serialization and adapting types](https://index.ros.org/p/roscpp).
 
 roscpp_serialization provides the `ros::serialization` API used in
-[roscpp](roscpp) and should not be used directly.
+[roscpp](https://index.ros.org/p/roscpp) and should not be used
+directly.

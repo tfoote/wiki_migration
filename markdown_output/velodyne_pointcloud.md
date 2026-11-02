@@ -2,7 +2,7 @@
 
 This package provides point cloud conversions for Velodyne 3D LIDARs.
 For a list of all supported models refer to the
-[ Supported Devices](velodyne_driver#Supported_Devices ) section.
+[ Supported Devices](https://index.ros.org/p/velodyne_driver) section.
 
 The
 [API review](http://ros.org/wiki/velodyne/Reviews/2012-02-02_API_Review)
@@ -234,10 +234,10 @@ Transform raw Velodyne packets into
 messages into the `/map` frame. 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ rosrun velodyne_pointcloud transform_node _frame_id:=/map
 ```
 
-0
+
 
 ## Launch File Examples
 
@@ -248,18 +248,18 @@ have zero-copy access to the raw data messages the driver publishes.
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_driver nodelet_manager.launch
 ```
 
-1
+
 
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_pointcloud cloud_nodelet.launch calibration:=~/mydata.yaml
 ```
 
-2
+
 
 Start a driver nodelet with input from `tcpdump.pcap`, in the current
 directory. The `pwd` provides a full path name, as required for
@@ -269,18 +269,18 @@ publish the data points transformed into the /odom frame of reference.
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_driver nodelet_manager.launch pcap:=$(pwd)/tcpdump.pcap
 ```
 
-3
+
 
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_pointcloud transform_nodelet.launch calibration:=~/mydata.yaml
 ```
 
-4
+
 
 Start a `velodyne_nodelet_manager` process for a Velodyne HDL-32E.
 This script runs both the driver and the point cloud conversion,
@@ -289,10 +289,10 @@ providing the standard HDL-32E calibration.
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_pointcloud 32e_points.launch
 ```
 
-5
+
 
 Start another `velodyne_nodelet_manager` for the Velodyne HDL-32E, but
 provide a PCAP dump file as input.
@@ -300,10 +300,10 @@ provide a PCAP dump file as input.
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ roslaunch velodyne_pointcloud 32e_points.launch pcap:=$(pwd)/tcpdump.pcap
 ```
 
-6
+
 
 ## Utility Commands
 
@@ -320,20 +320,20 @@ calibration data to `db.yaml`.
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ rosrun velodyne_pointcloud gen_calibration.py db.xml
 ```
 
-7
+
 
 Save generated 32E calibration data in `my_calibration.yaml`.
 
 
 
 ```
-$ rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
+$ rosrun velodyne_pointcloud gen_calibration.py 32db.xml my_calibration.yaml
 ```
 
-8
+
 
 ## C++ API
 

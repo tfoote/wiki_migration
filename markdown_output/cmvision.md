@@ -2,7 +2,7 @@
 
 ### Selecting Blob Colors
 
-![](attachment:lewis_cmvision.png)
+![attachment:lewis_cmvision.png](doc/lewis_cmvision.png)
 
 
 
@@ -108,5 +108,3 @@ node.1 {
   }
 }
 ```
-
-

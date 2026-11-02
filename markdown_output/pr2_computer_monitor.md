@@ -203,15 +203,11 @@ roslaunch pr2_computer_monitor ntp_monitor.launch
 NTP protocol. 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+ntpdate -q <server>
+ntpdate -q <hostname>
 ```
 
-0 Give the offset from the NTP
+ Give the offset from the NTP
 server, and the computer's self offset.
 
 #### Computer Clocks and Self-Offset
@@ -225,31 +221,31 @@ system time match.
 
 
 
+```clearsilver
+node.0 {
+  name=nvidia_temp.py
+  desc=This node monitors an NVIDIA GPU for temperature and usage statistics.
+  pub{
+    0.name= /diagnostics
+    0.type= diagnostic_msgs/DiagnosticArray
+    0.desc= Diagnostics about the status of NTP.
+    1.name = gpu_status
+    1.type = pr2_msgs/GPUStatus
+    1.desc = Machine readable status of the GPU
+  }
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
 
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
-```
 
-1
 
 #### Usage
 
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+Usage: nvidia_temp.py
 ```
 
-2 (No command-line arguments).
+ (No command-line arguments).
 
 #### Implementation Details
 
@@ -257,29 +253,32 @@ The `nvidia_temp.py` script uses the command:
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+sudo nvidia-smi -a
 ```
 
-3 to check the status of the GPU. This command
+ to check the status of the GPU. This command
 must work without a password. Configure your sudoers file accordingly.
 
 
 
+```clearsilver
+node.0 {
+  name=network_detector
+  desc=The network detector, `network_detector`, monitors a given network interface (such as "eth0") and publishes whether it is up and running (connected) or not.  The purpose is to detect '''wired''' network connections, so the robot can avoid driving and yanking out its network cable.  Finding which network interface (if any) really represents a wired connection must be done by the person who configures the robot.  On the PR2, this is "wan0" on computer C1.
+  pub{
+    0.name= /network/connected
+    0.type= std_msgs/Bool
+    0.desc= True if the interface exists and is connected, false otherwise.
+  }
+  param{
+    0.name=~interface_name
+    0.type=string
+    0.default=none
+    0.desc=Name of the network interface to monitor, for example "eth0" or "wan0".
+  }
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
 
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
-```
 
-4
 
 #### Usage
 
@@ -288,15 +287,12 @@ Here is a typical launch file entry for running it:
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+<node pkg="pr2_computer_monitor" type="network_detector" name="network_detector" output="screen">
+    <param name="interface_name" value="wan0"/>
+  </node>
 ```
 
-5
+
 
 ## Installation and setup
 
@@ -305,15 +301,10 @@ almost any linux system. Use [rosdep](rosdep) to install required
 packages from the operating system: 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+$ rosdep install pr2_computer_monitor
 ```
 
-6
+
 
 ### Verifying hddtemp Daemon
 
@@ -326,43 +317,28 @@ First, verify that the `hddtemp` daemon is running.
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+$ netcat localhost 7634
 ```
 
-7 This opens a socket to the daemon, which by
+ This opens a socket to the daemon, which by
 default runs on port 7634. You should see something like:
 
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+|/dev/sda|Hitachi HDT725032VLA360|41|C|
 ```
 
-8 If `hddtemp` isn't up and running, start it
+ If `hddtemp` isn't up and running, start it
 by typing:
 
 
 
 ```
-Usage: cpu_monitor.py [--diag-hostname=cX]
-
-Options:
-  -h, --help            show this help message and exit
-  --diag-hostname=DIAG_HOSTNAME
-                        Computer name in diagnostics output (ex: 'c1')
+sudo hddtemp -d /dev/sda
 ```
 
-9 This will start it in daemon mode. Replace
+ This will start it in daemon mode. Replace
 "/dev/sda" above with the name of your hard drive if it's different.
 
 ### Configuring ipmitool
@@ -372,36 +348,39 @@ not to use ipmitool to monitor CPU temperature and fan speed, disable it
 with `check_ipmi_tool` parameter to False. 
 
 ```
-roslaunch pr2_computer_monitor cpu_monitor.launch
+sudo ipmitool sdr
 ```
 
-0
+
 If this command returns with an error (below), then you will need to
 disable the ipmitool checks using the `check_ipmi_tool` parameter.
 
 
 ```
-roslaunch pr2_computer_monitor cpu_monitor.launch
+$ sudo ipmitool sdr
+Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
+Get Device ID command failed
+Unable to open SDR for reading
 ```
 
-1
+
 
 The `ipmitool` command needs to work properly without a password. If
 the above command asks for a "sudo" password, you'll need to edit the
 sudoers file: 
 
 ```
-roslaunch pr2_computer_monitor cpu_monitor.launch
+sudo visudo
 ```
 
-2 Add the following line to use
+ Add the following line to use
 `ipmitool` without typing your password: 
 
 ```
-roslaunch pr2_computer_monitor cpu_monitor.launch
+sudo ipmitool sdr ALL NOPASSWD
 ```
 
-3
+
 
 ### Other Configuration
 
@@ -414,3 +393,72 @@ This is appropriate for the PR2, but if your computer is different,
 disable the `enforce_clock_speed` parameter.
 
 ------------------------------------------------------------------------
+
+## Troubleshooting
+
+### Errors when using pr2_computer_monitor
+
+#### Error: CPU Temperature Error/Bad Reading
+
+**Errors from CPU Temperature:** The diagnostics show an error under the
+"CPU Temperature" heading, and it says it has a bad reading. This is
+probably because the commands that `cpu_monitor.py` use to check the
+computer aren't working.
+
+**Solution:**
+
+- Check the pr2_computer_monitor
+  page for the implementation details. You should be able to run all the
+  commands without an error.
+
+#### NTP Offset Error
+
+If you see an error under "NTP offset from <hostname> to
+<server>", check if the "<server>" is available using `ntpdate
+-q`. 
+
+```
+ntpdate -q my_server.my_server.com
+```
+
+ If this command returns an error,
+`ntp_monitor.py` will fail to update. Correct the server name and try
+again.
+
+`ntp_monitor.py` also checks the offset for a computer against itself.
+Check that this command works: 
+
+```
+ntpdate -q MY_HOSTNAME
+```
+
+
+
+Restarting "chrony" may work: 
+
+```
+sudo service chrony restart
+```
+
+
+
+#### CPU monitor reports "CPU Fan Off"
+
+In the diagnostics data, you will see the fan speeds listed for each
+CPU, and the "MB Fan RPM" data. If any of these fans is off, then the
+PR2 computers will overheat and loose performance. This is a serious
+problem with the PR2.
+
+#### CPU monitor reports "Restarting temperature check thread"
+
+The CPU monitor checks core temperatures using `ipmitool`. On
+occasion, these calls to `ipmitool` can fail, and hang the thread that
+checks temperatures. The CPU monitor will restart the temperature
+checking thread and publish a warning to the console:
+
+
+```
+Restarting temperature check thread in cpu_monitor. This should not happen
+```
+
+ This problem is explained in.

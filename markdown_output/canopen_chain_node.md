@@ -1,10 +1,11 @@
 ## Overview
 
 This packages contains the ROS interface for
-[socketcan_interface](socketcan_interface) and
-[canopen_master](canopen_master). It can be used as a stand-alone ROS
-node, but as well as a base class for profile specific ROS interfaces,
-e.g. [canopen_motor_node](canopen_motor_node).
+[socketcan_interface](https://index.ros.org/p/socketcan_interface) and
+[canopen_master](https://index.ros.org/p/canopen_master). It can be used
+as a stand-alone ROS node, but as well as a base class for profile
+specific ROS interfaces, e.g.
+[canopen_motor_node](https://index.ros.org/p/canopen_motor_node).
 
 It manages a CANopen bus with one or more nodes, which are configures
 with CANopen EDS/DCF files. The ROS node runs a control loop with
@@ -21,8 +22,9 @@ loaded into the nodes private namespace
 ### CANopen Bus layer
 
 The bus settings consists of a CAN interface
-([socketcan_interface](socketcan_interface)) and the shared bus settings
-for [canopen_master](canopen_master).
+([socketcan_interface](https://index.ros.org/p/socketcan_interface)) and
+the shared bus settings for
+[canopen_master](https://index.ros.org/p/canopen_master).
 
 
 
@@ -133,8 +135,8 @@ the sync/update_rate:
   ([std_msgs/msg/UInt8](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt8.html)):
   error register of node3 (cached)
 
-The [diagnostic_updater](diagnostic_updater) can be passed the
-diagnostic_period parameter in fractional seconds.
+The [diagnostic_updater](https://index.ros.org/p/diagnostic_updater) can
+be passed the diagnostic_period parameter in fractional seconds.
 
 ## ROS API
 

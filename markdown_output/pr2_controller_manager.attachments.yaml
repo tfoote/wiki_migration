@@ -1,0 +1,3 @@
+doc/controller_state.png: pages/pr2_controller_manager/attachments/controller state.png
+doc/k_position.png: pages/pr2_controller_manager(2f)safety_limits/attachments/k_position.png
+doc/k_velocity.png: pages/pr2_controller_manager(2f)safety_limits/attachments/k_velocity.png

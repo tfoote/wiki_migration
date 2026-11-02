@@ -1,0 +1,12 @@
+doc/KinectProsilicaLabeled.jpg: pages/openni_launch(2f)Tutorials(2f)ExtrinsicCalibrationExternal/attachments/KinectProsilicaLabeled.jpg
+doc/ReconfigureGui.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/ReconfigureGui.png
+doc/RvizColor.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/RvizColor.png
+doc/RvizExternalRegistered.png: pages/openni_launch(2f)Tutorials(2f)ExtrinsicCalibrationExternal/attachments/RvizExternalRegistered.png
+doc/RvizRegistered.png: pages/openni_launch(2f)Tutorials(2f)ExtrinsicCalibration/attachments/RvizRegistered.png
+doc/RvizWithDisplaysPanel.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/RvizWithDisplaysPanel.png
+doc/depth.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/depth.png
+doc/disparity.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/disparity.png
+doc/disparity_reg.png: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/disparity_reg.png
+doc/ir.jpg: pages/openni_launch(2f)Tutorials(2f)IntrinsicCalibration/attachments/ir.jpg
+doc/ir_covered.jpg: pages/openni_launch(2f)Tutorials(2f)IntrinsicCalibration/attachments/ir_covered.jpg
+doc/rgb.jpg: pages/openni_launch(2f)Tutorials(2f)QuickStart/attachments/rgb.jpg

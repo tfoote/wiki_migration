@@ -1,7 +1,7 @@
 {
 
 To modify your robot's URDF, see the
-[Customize Husky Configuration](husky_bringup/Tutorials/Customize Husky Configuration)
+[Customize Husky Configuration](https://index.ros.org/p/husky_bringup)
 tutorial. }}}}
 
 {

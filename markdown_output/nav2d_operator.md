@@ -1,6 +1,6 @@
 ## Example
 
-See the [Operator Tutorial](nav2d/Tutorials/RobotOperator) for an
+See the [Operator Tutorial](https://index.ros.org/p/nav2d) for an
 example how to setup the Operator in Stage and use a Joystick to
 simulate commands from a higher level node.
 
@@ -72,5 +72,3 @@ node.0 {
     7.type=bool
     7.desc=Whether to publish the `desired` and `route` topics.
 ```
-
-

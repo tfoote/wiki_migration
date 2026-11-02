@@ -1,9 +1,9 @@
 ## ROS integration
 
-For example, if you want to call an [actionlib](actionlib) action from
-SMACH, you can of course write a
-[generic state](smach/Tutorials/Generic State), which would look
-something like this: 
+For example, if you want to call an
+[actionlib](https://index.ros.org/p/actionlib) action from SMACH, you
+can of course write a [generic state](https://index.ros.org/p/smach),
+which would look something like this: 
 
 ```python
   class ManualActionState(smach.State):
@@ -33,9 +33,9 @@ with sm:
                            rransitions={'succeeded':'APPROACH_PLUG'})
 ```
 
- But you can call that same
-action with much less coding, using the !SimpleActionState:
-
+ But you
+can call that same action with much less coding, using the
+!SimpleActionState: 
 
 ```python
 sm = StateMachine(['succeeded','aborted','preempted'])
@@ -50,4 +50,4 @@ with sm:
 
 SMACH ROS offers the same type of support for ROS services and ROS
 topics. For more details take a look at the
-[tutorials](smach/Tutorials).
+[tutorials](https://index.ros.org/p/smach).

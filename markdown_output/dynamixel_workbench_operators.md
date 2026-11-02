@@ -42,5 +42,5 @@ srv{
 
 ## Tutorials
 
-- [dynamixel workbench operator tutorials](dynamixel_workbench_controllers/Tutorials) -
+- [dynamixel workbench operator tutorials](https://index.ros.org/p/dynamixel_workbench_controllers) -
   This tutorial describes how to run controllers with tutorial packages.

@@ -1,4 +1,4 @@
-![rviz plugin](attachment:rviz_plugin.png)
+![rviz plugin](doc/rviz_plugin.png)
 
 This package shall facilitate the definition of static transforms via an
 appropriate GUI. Both, a standalone GUI and a rviz plugin are provided

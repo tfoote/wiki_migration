@@ -21,7 +21,7 @@ gazebo_ros_thermal_camera plugin then colors only the portions of the
 MONO8 thermal image as white (for white hot) that have exactly this
 maximum red color. The rest of the visual image is written to the
 thermal image with much reduced intensity. The result looks like this:
-![\|width=720](attachment:Thermal_Cam_example.png)
+![width=720](doc/Thermal_Cam_example.png)
 
 Using this approach, methods for detection of objects by their heat
 signature can be tested in simulation. However, this might not be
@@ -56,5 +56,3 @@ same parameters and signature for use in a URDF model:
       </sensor:camera>
     </gazebo>
 ```
-
-

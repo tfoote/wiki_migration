@@ -49,5 +49,3 @@ node.0 {
     1.desc= duration between sending ping, 10.0 means 0.1 [hz]
 }
 ```
-
-

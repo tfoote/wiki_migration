@@ -1,14 +1,15 @@
 ## Overview
 
 This package contains the
-[image_proc node](image_proc#image_proc.2BAC8-cturtle.image_proc), which
-is meant to sit between the camera driver and vision processing nodes.
-`image_proc` removes camera distortion from the raw image stream, and
-if necessary will convert Bayer or YUV422 format image data to color.
+[image_proc node](#image_proc),
+which is meant to sit between the camera driver and vision processing
+nodes. `image_proc` removes camera distortion from the raw image
+stream, and if necessary will convert Bayer or YUV422 format image data
+to color.
 
   -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------ --
                                                                       <tablestyle="width: 99%">**Monocular processing example**                                                                  
-     ![Raw image\|width=320 height=240](attachment:left_raw.png)      ![Rectified image\|width=320 height=240](attachment:left_rect_color.png)                                                       
+     ![Raw image](doc/left_raw.png)                                   ![Rectified image](doc/left_rect_color.png)                                                                                    
      **image_raw**: Original camera image, Bayered and distorted      **image_rect_color**: Rectified image, de-Bayered and undistorted (amount of black border may vary depending on calibration)   
   -- ------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------ --
 
@@ -61,7 +62,7 @@ This will display an undistorted color image from "my_camera".
 
 ### image_proc
 
-![Monocular image node](attachment:image_proc.png)
+![Monocular image node](doc/image_proc.png)
 
 De-mosaics and undistorts the raw camera image stream.
 
@@ -71,8 +72,8 @@ there is a subscriber to a rectified topic. While there are no
 subscribers to output topics, `image_proc` unsubscribes from the
 `image_raw` and `camera_info` topics.
 
-[image_transport](image_transport) is used for all publications and
-subscriptions. 
+[image_transport](https://index.ros.org/p/image_transport) is used for
+all publications and subscriptions. 
 
 ```clearsilver
 sub {
@@ -116,11 +117,12 @@ param {
 
 ## Nodelets
 
-New in Diamondback, this package contains [nodelets](nodelet) for the
-tasks of debayering and rectification. This allows `image_proc`
-functions to be easily combined with other nodelets, for example camera
-drivers or higher-level vision processing. In fact, the `image_proc`
-node simply loads one `debayer` nodelet and two `rectify` nodelets.
+New in Diamondback, this package contains
+[nodelets](https://index.ros.org/p/nodelet) for the tasks of debayering
+and rectification. This allows `image_proc` functions to be easily
+combined with other nodelets, for example camera drivers or higher-level
+vision processing. In fact, the `image_proc` node simply loads one
+`debayer` nodelet and two `rectify` nodelets.
 
 
 
@@ -304,38 +306,89 @@ node.2 {
 
 
 ```
-$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+{#!wiki version fuerte_and_newer
+{{{
+#!clearsilver CS/NodeAPI
+param {
+  no_header=True
+  6.name= ~interpolation
+  6.default= 0
+  6.type= int
+  6.desc << EOF
+Sampling algorithm. Possible values are:
+    * `NN` (0): Nearest-neighbor sampling
+    * `Linear` (1): Bilinear interpolation
+    * `Cubic` (2): Bicubic interpolation over 4x4 neighborhood
+    * `Area` (3): Resampling using pixel area relation
+    * `Lanczos4` (4): Lanczos interpolation over 8x8 neighborhood
+EOF
+}
 ```
 
-0 }}}}
+ }}}}
 
 
 
 ```
-$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+{#!wiki version indigo_and_newer
+<<Version(ROS Indigo)>>
+{{{
+#!clearsilver CS/NodeAPI
+node.0 {
+  name = image_proc/resize
+  desc = Takes image and/or camera info and resize them.
+  sub {
+    0.name = image
+    0.type = sensor_msgs/Image
+    0.desc = Arbitrary image.
+    1.name = camera_info
+    1.type = sensor_msgs/CameraInfo
+    1.desc = Camera parameters.
+  }
+  pub {
+    0.name = ~image
+    0.type = sensor_msgs/Image
+    0.desc = Resized image.
+    1.name = ~camera_info
+    1.type = sensor_msgs/CameraInfo
+    1.desc = Resized camera info.
+  }
+}
 ```
 
-1 }}}}
+ }}}}
 
 ## Launch files
 
 
 
-```
-$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```clearsilver
+name = image_proc.launch
+desc << EOM
+Loads `debayer` and `rectify` nodelets for one camera into a user-provided nodelet manager. The in-process equivalent of running the `image_proc` node. Launch (or include in a higher-level launch file) in the camera namespace, just as you would run `image_proc`.
+EOM
+}
 ```
 
-2
+
 
 #### Arguments
 
 
 
-```
-$ ROS_NAMESPACE=my_camera rosrun image_proc image_proc
+```clearsilver
+param {
+  no_header=True
+  0.name = manager
+  0.type = string
+  0.desc = The name of the target nodelet manager. It will need to be globally qualified (e.g. `/my_manager`), unless the manager is already in the camera namespace.
+  1.name = respawn
+  1.type = bool
+  1.default = false
+  1.desc = If true, enables bond topics and respawns any nodelet loaders that die. If the manager also respawns, the system is robust to any node dying. However, the proliferation of bond topics can overwhelm introspection tools like [[rxgraph]].
 ```
 
-3
+
 
 #### Subscribed and Published Topics
 

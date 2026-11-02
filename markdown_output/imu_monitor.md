@@ -23,5 +23,3 @@ node.0 {
     1.desc= The PR2 base odometry
   }
 ```
-
-

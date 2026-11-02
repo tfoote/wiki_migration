@@ -1,0 +1,4 @@
+doc/depthimage.png: pages/depthimage_to_laserscan/attachments/depthimage.png
+doc/overhead_scan.png: pages/depthimage_to_laserscan/attachments/overhead_scan.png
+doc/pointcloud.png: pages/depthimage_to_laserscan/attachments/pointcloud.png
+doc/scene.jpg: pages/depthimage_to_laserscan/attachments/scene.jpg

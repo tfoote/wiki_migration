@@ -1,11 +1,11 @@
 ## Overview
 
-visp_hand2eye_calibration is a ROS package that computes extrinsic
-camera parameters : the constant transformation from the hand to the
-camera coordinates.
+<a id="Overview"></a> visp_hand2eye_calibration
+is a ROS package that computes extrinsic camera parameters : the
+constant transformation from the hand to the camera coordinates.
 
 Let's consider a camera attached to a robotic hand, as shown in the
-following diagram: ![](attachment:calibrations.png)
+following diagram: ![attachment:calibrations.png](doc/calibrations.png)
 
 The interest of this package is to perform the hand to eye calibration
 part.
@@ -27,10 +27,11 @@ package abilities.
 
 ## Installation
 
-[visp_hand2eye_calibration](visp_hand2eye_calibration) is part of
-[vision_visp](vision_visp) stack.
+visp_hand2eye_calibration is
+part of [vision_visp](https://index.ros.org/p/vision_visp) stack.
 
-- To install [visp_hand2eye_calibration](visp_hand2eye_calibration)
+- To install
+  visp_hand2eye_calibration
   package run 
 
 ```
@@ -61,10 +62,10 @@ rosrun visp_hand2eye_calibration visp_hand2eye_calibration_calibrator
 
 ## Example
 
-An example client is shipped with this package. It feeds different
-transformations (camera->object and world->hand) to the calibrator
-which computes the relative transformation between the the camera and
-the hand.
+<a id="Example"></a> An example client is shipped
+with this package. It feeds different transformations (camera->object
+and world->hand) to the calibrator which computes the relative
+transformation between the the camera and the hand.
 
 To try this example, run roscore first. 
 
@@ -143,7 +144,7 @@ rotation:
 
 ## Nodes
 
-
+<a id="NodeApi"></a> 
 
 ```clearsilver
 node.0 {
@@ -173,5 +174,3 @@ srv_called{
 }
 }
 ```
-
-

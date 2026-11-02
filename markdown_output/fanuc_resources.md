@@ -16,4 +16,4 @@ This package is part of the [ROS-Industrial](Industrial) program.
 
 ## Installation
 
-See the main [fanuc](fanuc) page.
+See the main [fanuc](https://index.ros.org/p/fanuc) page.

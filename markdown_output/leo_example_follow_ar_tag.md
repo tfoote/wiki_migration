@@ -30,7 +30,7 @@ node with your configuration by changing the parameters (described in
 
 ## ROS API
 
-
+<a id="rosapi"></a> 
 
 ```clearsilver
 name= follow_ar_tag
@@ -110,5 +110,3 @@ param {
   }
 }
 ```
-
-

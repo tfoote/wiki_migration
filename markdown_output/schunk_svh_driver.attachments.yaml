@@ -1,0 +1,11 @@
+doc/svh_controller_description.pdf: pages/schunk_svh_driver/attachments/svh_controller_description.pdf
+doc/svh_dae_filenames.png: pages/schunk_svh_driver/attachments/svh_dae_filenames.png
+doc/svh_finger_description.png: pages/schunk_svh_driver/attachments/svh_finger_description.png
+doc/svh_hardware_information.pdf: pages/schunk_svh_driver/attachments/svh_hardware_information.pdf
+doc/svh_joint_names.png: pages/schunk_svh_driver/attachments/svh_joint_names.png
+doc/svh_kinematic_dependencies.jpg: pages/schunk_svh_driver/attachments/svh_kinematic_dependencies.jpg
+doc/svh_kinematic_ranges.jpg: pages/schunk_svh_driver/attachments/svh_kinematic_ranges.jpg
+doc/svh_link_names.png: pages/schunk_svh_driver/attachments/svh_link_names.png
+doc/svh_overall_measurements.jpg: pages/schunk_svh_driver/attachments/svh_overall_measurements.jpg
+doc/svh_protocol_specification.pdf: pages/schunk_svh_driver/attachments/svh_protocol_specification.pdf
+doc/svh_rqt_gui.jpg: pages/schunk_svh_driver/attachments/svh_rqt_gui.jpg

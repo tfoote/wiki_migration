@@ -1,9 +1,9 @@
-![](attachment:polar_scan_matching.png)
+![attachment:polar_scan_matching.png](doc/polar_scan_matching.png)
 
 ## Details
 
-The [polar_scan_matcher](polar_scan_matcher) package is a wrapper around
-Polar Scan Matcher \[1\], courtesy of:
+The polar_scan_matcher package is a
+wrapper around Polar Scan Matcher \[1\], courtesy of:
 
 Albert Diosi and Lindsay Kleeman\
 Intelligent Robotics Research Centre (IRRC)\
@@ -14,7 +14,7 @@ The package allows to scan match between consecutive
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 messages, and publish the estimated position of the laser as a
 [geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)
-or a [tf](tf) transform.
+or a [tf](https://index.ros.org/p/tf) transform.
 
 The package is intended to be used without any odometry estimation
 provided by other sensors. Thus, it can serve as a stand-alone odometry
@@ -27,16 +27,18 @@ This message would typically be published by an IMU or other angular
 rate sensor.
 
 Alternatively, an estimation for x, y, and theta can optionally be
-provided to improve accuracy, in the form of a [tf](tf) transform. This
-transform would typically be published by an odometry system. This has
-not yet been tested.
+provided to improve accuracy, in the form of a
+[tf](https://index.ros.org/p/tf) transform. This transform would
+typically be published by an odometry system. This has not yet been
+tested.
 
 ## Example
 
-You can run the [polar_scan_matcher](polar_scan_matcher) on a
-pre-recorded bag file that comes with the package. First, make sure you
-have the [scan_tools](scan_tools) stack downloaded and installed by
-following the instructions [here](scan_tools#Installing).
+You can run the polar_scan_matcher on
+a pre-recorded bag file that comes with the package. First, make sure
+you have the [scan_tools](https://index.ros.org/p/scan_tools) stack
+downloaded and installed by following the instructions
+[here](https://index.ros.org/p/scan_tools).
 
 Next, make sure you have the necessary tools installed:
 

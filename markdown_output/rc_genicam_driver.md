@@ -5,7 +5,8 @@ sensor systems.
 See <https://doc.rc-visard.com> and <https://doc.rc-cube.com> for
 detailed documentation.
 
-This driver replaces the [rc_visard_driver](rc_visard_driver).
+This driver replaces the
+[rc_visard_driver](https://index.ros.org/p/rc_visard_driver).
 
 Details on rc_genicam_driver are in the README:
 <https://github.com/roboception/rc_genicam_driver_ros>
@@ -19,5 +20,3 @@ Details on rc_genicam_driver are in the README:
 ```bash
 rosrun rc_genicam_driver rc_genicam_driver _device:=:02912345
 ```
-
-

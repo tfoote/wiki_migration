@@ -1,0 +1,8 @@
+doc/pcl_ros_Tutorials_SACSegmentationFromNormals planar segmentation_pic1.png: pages/pcl_ros(2f)Tutorials(2f)SACSegmentationFromNormals(20)planar(20)segmentation/attachments/pic1.png
+doc/pcl_ros_Tutorials_SACSegmentationFromNormals planar segmentation_pic2.png: pages/pcl_ros(2f)Tutorials(2f)SACSegmentationFromNormals(20)planar(20)segmentation/attachments/pic2.png
+doc/pcl_ros_Tutorials_VoxelGrid filtering_pic1.png: pages/pcl_ros(2f)Tutorials(2f)VoxelGrid(20)filtering/attachments/pic1.png
+doc/pcl_ros_Tutorials_VoxelGrid filtering_pic2.png: pages/pcl_ros(2f)Tutorials(2f)VoxelGrid(20)filtering/attachments/pic2.png
+doc/pic1.png: pages/pcl_ros(2f)Tutorials(2f)PassThrough(20)filtering/attachments/pic1.png
+doc/pic2.png: pages/pcl_ros(2f)Tutorials(2f)PassThrough(20)filtering/attachments/pic2.png
+doc/rviz.jpg: pages/pcl_ros(2f)Tutorials/attachments/rviz.jpg
+doc/table_scene_mug_textured.vcg: pages/pcl_ros(2f)Tutorials/attachments/table_scene_mug_textured.vcg

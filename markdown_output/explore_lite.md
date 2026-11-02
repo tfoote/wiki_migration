@@ -3,16 +3,16 @@
 This package provides greedy frontier-based exploration. When node is
 running, robot will greedily explore its environment until no frontiers
 could be found. Movement commands will be send to
-[move_base](move_base).
+[move_base](https://index.ros.org/p/move_base).
 
-![\|width="755px"](attachment:screenshot.png)
+![width="755px"](doc/screenshot.png)
 
 Unlike similar packages, `explore_lite` does not create its own costmap,
 which makes it easier to configure and more efficient (lighter on
 resources). Node simply subscribes to
 [nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
-messages. Commands for robot movement are send to [move_base](move_base)
-node.
+messages. Commands for robot movement are send to
+[move_base](https://index.ros.org/p/move_base) node.
 
 Node can do frontier filtering and can operate even on non-inflated
 maps. Goal blacklisting allows to deal with places inaccessible for
@@ -22,19 +22,20 @@ robot.
 
 ## Architecture
 
-`explore_lite` uses [move_base](move_base) for navigation. You need to
-run properly configured [move_base](move_base) node.
+`explore_lite` uses [move_base](https://index.ros.org/p/move_base) for
+navigation. You need to run properly configured
+[move_base](https://index.ros.org/p/move_base) node.
 
-![\|width="755px"](attachment:architecture.svg)
+![width="755px"](doc/architecture.svg)
 
 `explore_lite` subscribes to a
 [nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)
 and
 [map_msgs/msg/OccupancyGridUpdate](https://docs.ros.org/en/rolling/p/map_msgs/msg/OccupancyGridUpdate.html)
 messages to construct a map where it looks for frontiers. You can either
-use costmap published by [move_base](move_base) (ie.
-`<move_base>/global_costmap/costmap`) or you can use map constructed
-by mapping algorithm (SLAM).
+use costmap published by [move_base](https://index.ros.org/p/move_base)
+(ie. `<move_base>/global_costmap/costmap`) or you can use map
+constructed by mapping algorithm (SLAM).
 
 Depending on your environment you may achieve better results with either
 SLAM map or costmap published by `move_base`. Advantage of
@@ -48,28 +49,32 @@ launch files.
 ## Setup
 
 Before starting experimenting with `explore_lite` you need to have
-working [move_base](move_base) for navigation. You should be able to
-navigate with [move_base](move_base) manually through [rviz](rviz).
-Please refer to [navigation#Tutorials](navigation#Tutorials) for setting
-up [move_base](move_base) and the rest of the navigation stack with your
-robot.
+working [move_base](https://index.ros.org/p/move_base) for navigation.
+You should be able to navigate with
+[move_base](https://index.ros.org/p/move_base) manually through
+[rviz](https://index.ros.org/p/rviz). Please refer to
+[navigation](https://index.ros.org/p/navigation) for setting up
+[move_base](https://index.ros.org/p/move_base) and the rest of the
+navigation stack with your robot.
 
-You should be also able to to navigate with [move_base](move_base)
-though unknown space in the map. If you set the goal to unknown place in
-the map, planning and navigating should work. With most planners this
-should work by default, refer to [navfn#Parameters](navfn#Parameters) if
-you need to setup this for [navfn](navfn) planner (but should be enabled
-by default). Navigation through unknown space is required for
+You should be also able to to navigate with
+[move_base](https://index.ros.org/p/move_base) though unknown space in
+the map. If you set the goal to unknown place in the map, planning and
+navigating should work. With most planners this should work by default,
+refer to [navfn](https://index.ros.org/p/navfn) if you need to setup
+this for [navfn](https://index.ros.org/p/navfn) planner (but should be
+enabled by default). Navigation through unknown space is required for
 `explore_lite`.
 
-If you want to use costmap provided by [move_base](move_base) you need
-to enable unknown space tracking by setting `track_unknown_space:
-true`.
+If you want to use costmap provided by
+[move_base](https://index.ros.org/p/move_base) you need to enable
+unknown space tracking by setting `track_unknown_space: true`.
 
-If you have [move_base](move_base) configured correctly, you can start
-experimenting with `explore_lite`. Provided `explore.launch` should
-work out-of-the box in most cases, but as always you might need to
-adjust topic names and frame names according to your setup.
+If you have [move_base](https://index.ros.org/p/move_base) configured
+correctly, you can start experimenting with `explore_lite`. Provided
+`explore.launch` should work out-of-the box in most cases, but as
+always you might need to adjust topic names and frame names according to
+your setup.
 
 ## ROS API
 
@@ -191,4 +196,5 @@ This package was developed as part of my bachelor thesis at
 This project was initially based on [explore](explore) package by
 Charles !DuHadway. Most of the node has been rewritten since then. The
 current frontier search algorithm is based on
-[frontier_exploration](frontier_exploration) by Paul Bovbel.
+[frontier_exploration](https://index.ros.org/p/frontier_exploration) by
+Paul Bovbel.

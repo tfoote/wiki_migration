@@ -25,5 +25,3 @@ twist_controller:
    - joint5
    - joint6
 ```
-
-

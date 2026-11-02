@@ -15,15 +15,15 @@ Features:
 
 ## Example Pictures
 
-![](attachment:multiplot_1_legend.png)
+![attachment:multiplot_1_legend.png](doc/multiplot_1_legend.png)
 
 ### Configure Plot
 
-![](attachment:multiplot_configure_plot.png)
+![attachment:multiplot_configure_plot.png](doc/multiplot_configure_plot.png)
 
 ### Edit Curve
 
-![](attachment:multiplot_edit_curve.png)
+![attachment:multiplot_edit_curve.png](doc/multiplot_edit_curve.png)
 
 ## Reporting bugs
 

@@ -130,15 +130,6 @@ ackermann_msgs:
   subdirectory: ''
   tully1: ready
   tully2: ignored
-apriltag_ros:
-  branch: master
-  markdown_file: markdown_output/apriltag_ros.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/AprilRobotics/apriltag_ros.git
-  repository_archived: false
-  source_file: pages/apriltag_ros/revisions/00000025
-  subdirectory: apriltag_ros
 aruco:
   branch: noetic-devel
   markdown_file: markdown_output/aruco.md

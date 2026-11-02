@@ -2,7 +2,7 @@
 
 Get started at the [README](https://github.com/stonier/py_trees_ros).
 
-![\|width=400](attachment:tree.png)
+![width=400](doc/tree.png)
 
 ### Other References
 

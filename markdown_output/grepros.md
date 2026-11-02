@@ -171,10 +171,11 @@ ROS1 Python packages can also be installed separately with:
 
 
 ```
-grepros --max-per-topic 1 --lines-per-message 30 --live
+pip install rospy rosbag roslib roslz4 \
+    --extra-index-url https://rospypi.github.io/simple/
 ```
 
-0
+
 
 ### Using apt
 
@@ -183,10 +184,12 @@ If ROS apt repository has been added to system:
 
 
 ```
-grepros --max-per-topic 1 --lines-per-message 30 --live
+sudo apt install ros-noetic-grepros  # ROS1
+
+sudo apt install ros-foxy-grepros    # ROS2
 ```
 
-1
+
 
 This will add the `grepros` command to the global ROS1 / ROS2
 environment.
@@ -197,11 +200,13 @@ In a ROS1 workspace, under the source directory:
 
 
 
-```
-grepros --max-per-topic 1 --lines-per-message 30 --live
+```bash
+git clone https://github.com/suurjaak/grepros.git
+cd grepros
+catkin build --this
 ```
 
-2
+
 
 This will add the `grepros` command to the local ROS1 workspace path.
 
@@ -211,11 +216,12 @@ In a ROS2 workspace, at the workspace root:
 
 
 
-```
-grepros --max-per-topic 1 --lines-per-message 30 --live
+```bash
+git clone https://github.com/suurjaak/grepros.git src/grepros
+colcon build --packages-select grepros
 ```
 
-3
+
 
 This will add the `grepros` command to the local ROS2 workspace path.
 

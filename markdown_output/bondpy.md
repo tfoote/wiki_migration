@@ -1,7 +1,7 @@
 ## Overview
 
-bondpy is an implementation of [bond](bond) in Python. To use bondpy,
-please see the example below as well as the
+bondpy is an implementation of [bond](https://index.ros.org/p/bond) in
+Python. To use bondpy, please see the example below as well as the
 [API documentation](http://www.ros.org/doc/api/bondpy/html/).
 
 ## Example usage

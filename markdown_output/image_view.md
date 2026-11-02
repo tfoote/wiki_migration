@@ -24,10 +24,11 @@ By default, images will be saved as `frame0000.jpg`,
 `frame0001.jpg`, \....
 
 If you want to view a compressed image stream (usually a good idea over
-wireless!) using the capabilities of [image_transport](image_transport),
-specify the transport type as a command-line argument. For example, if
-[theora_image_transport](theora_image_transport) is built on the
-publisher's side, you can use `theora` transport:
+wireless!) using the capabilities of
+[image_transport](https://index.ros.org/p/image_transport), specify the
+transport type as a command-line argument. For example, if
+[theora_image_transport](https://index.ros.org/p/theora_image_transport)
+is built on the publisher's side, you can use `theora` transport:
 
 
 ```
@@ -206,29 +207,170 @@ param {
 
  
 
-```
-rosrun image_view image_view image:=/camera/image
-```
-
-0
-
-
-
-```
-rosrun image_view image_view image:=/camera/image
-```
-
-1 
-
-```
-rosrun image_view image_view image:=/camera/image
-```
-
-2
-
-
-```
-rosrun image_view image_view image:=/camera/image
+```clearsilver
+name = image_view/disparity
+desc = Nodelet version of disparity_view. Brings up a display window for a <<MsgLink(stereo_msgs/DisparityImage)>> topic, color-mapped for visualization.
+sub {
+  0.name = image
+  0.type = stereo_msgs/DisparityImage
+  0.desc = The disparity image topic. Should be remapped to the name of the real topic.
+}
+param {
+  0.name = ~autosize
+  0.type = bool
+  0.desc = Whether the window should autosize itself to the image or be resizeable by the user.
+  0.default = false
+  1.name = ~window_name
+  1.type = string
+  1.desc = The name of the display window.
+  1.default = name of the image topic
+}
 ```
 
-3 }}}}}}
+
+
+
+
+```
+{{{#!wiki version hydro_and_newer
+== Tools ==
+
+{{{
+#!clearsilver CS/NodeAPI
+name = image_saver
+desc = This tool allows you to save images as jpg/png file from streaming (ROS <<MsgLink(sensor_msgs/Image)>> topic) to a file. From command line, you can run by `rosrun image_view image_saver image:=[your topic]`, or see [[http://answers.ros.org/question/9377/how-to-take-save-a-snapshot-from-my-kinect-to-disk/?answer=235294#post-id-235294|this answer]] to control the timing of capture.
+sub {
+  0.name = image
+  0.type = sensor_msgs/Image
+  0.desc = The image topic. Should be remapped to the name of the real image topic.
+}
+srv {
+  0.name= save
+  0.type= std_srvs/Empty
+  0.desc= Save images, you need to set save_all_images to false
+}
+param {
+  0.name = ~filename_format
+  0.type = string
+  0.desc = File name for saved images, you can use '%04i' for sequence number, and '%s' for default file format, you can use 'jpg' ,'png', 'pgm' as filename suffixes.
+  0.default = `left%04d.%s`
+  1.name = ~encoding
+  1.type = string
+  1.desc = Encoding type of input image topic.
+  1.default = 'bgr8'
+  2.name = ~save_all_image
+  2.type = bool
+  2.desc = If you set false, images are only saved when 'save' service is called
+  2.default = true
+}
+```
+
+ 
+
+```clearsilver
+name = extract_images
+desc = This tool also allows you to save images as jpg/png file from streaming (ROS <<MsgLink(sensor_msgs/Image)>> topic) to a file. `image_saver` node provide very similar functionalities, such as providing service call to trigger the node to save images, save images other than Jpeg format, etc.
+sub {
+  0.name = image
+  0.type = sensor_msgs/Image
+  0.desc = The image topic. Should be remapped to the name of the real image topic.
+}
+param {
+  0.name = ~filename_format
+  0.type = string
+  0.desc = File name for saved images, you must add use '%04i' for sequence number.
+  0.default = `frame%04d.jpg`
+  1.name = ~sec_per_frame
+  1.type = double
+  1.desc = set sec per frame value.
+  1.default = '0.1'
+}
+```
+
+
+
+
+```clearsilver
+name = video_recorder
+desc = This tool allows you to record a video stream (ROS <<MsgLink(sensor_msgs/Image)>> topic) to a file. It relies on [[http://docs.opencv.org/modules/highgui/doc/reading_and_writing_images_and_video.html#videowriter|OpenCV's VideoWriter class]]. With the default options, it encodes the video as MPG, encapsulated in a AVI container at 15 fps, and produces a file called `output.avi` in the current directory.
+sub {
+  0.name = image
+  0.type = sensor_msgs/Image
+  0.desc = The image topic. Should be remapped to the name of the real image topic.
+}
+param {
+  0.name = ~filename
+  0.type = string
+  0.desc = Path and name of the output video.
+  0.default = `output.avi`
+  1.name = ~fps
+  1.type = int
+  1.desc = Framerate of the video.
+  1.default = 15
+  2.name = ~codec
+  2.type = string
+  2.desc = The [[http://www.fourcc.org/codecs.php|FOURCC]] identifier of the codec.
+  2.default = `MJPG`
+  3.name = ~encoding
+  3.type = string
+  3.desc = The image color space of the video.
+  3.default = `bgr8`
+}
+```
+
+ }}}}}}
+
+## Troubleshooting
+
+### Errors when using package
+
+#### Error: Received error message in header\... Dropping connection
+
+**Example:** 
+
+```
+[ERROR] 1260927377.348922000: Received error message in header for connection to [TCPROS connection to [10.0.0.136:39531 on socket 17]]: [Client [/image_view_1260927377013984000] wants topic /image/compressed to have datatype/md5sum [sensor_msgs/Image/060021388200f6f0f447d0fcd9c64743], but our version has [sensor_msgs/CompressedImage/8f7a12909da2c9d3332d540a0977563f]. Dropping connection.]
+```
+
+
+
+Above that error you might see a warning: 
+
+```
+[ WARN] 1260927377.319546000: [image_transport] It looks like you are trying to subscribe directly to a transport-specific image topic '/image/compressed', in which case you will likely get a connection error. Try subscribing to the base topic '/image' instead with parameter ~image_transport set to 'compressed' (on the command line, _image_transport:=compressed). See http://ros.org/wiki/image_transport for details.
+```
+
+
+
+**Solution:**
+
+- Are you subscribing to an image topic? If the data type of the topic
+  you remapping `image` to is not
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html),
+  ROS will detect the mismatch and drop the connection. For example:
+  
+
+```
+$ rostopic type image/compressed
+sensor_msgs/CompressedImage
+# Does not match sensor_msgs/Image
+```
+
+
+- Are you subscribing to a transport-specific subtopic? For example,
+  `image_view image:=camera/image/theora`? This is a corollary of the
+  previous case; the data type of a transport-specific topic like
+  `camera/image/theora` is not
+  [sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+  but rather some packet message type. If you want to view the base
+  topic `camera/image` using theora streaming video, give the
+  transport name as a separate argument: 
+
+```
+$ rosrun image_view image_view image:=camera/image theora
+```
+
+ That
+  tells `image_view` to load the theora plugin to
+  [image_transport](https://index.ros.org/p/image_transport) and
+  subscribe to the appropriate subtopic.

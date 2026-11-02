@@ -4,7 +4,8 @@ To use this package you need a schunk dexterous hand
 [www.schunk-modular-robotics.com](http://www.schunk-modular-robotics.com)
 with **firmware version 0.0.2.18**. Other firmware versions may work,
 but are not officially supported. Alternatively you can use a simulated
-version without any hardware, see [cob_gazebo](cob_gazebo).
+version without any hardware, see
+[cob_gazebo](https://index.ros.org/p/cob_gazebo).
 
 ## Software Requirements
 
@@ -15,8 +16,9 @@ on other platforms, please
 
 ## ROS API
 
-The [schunk_sdh](schunk_sdh) package provides a configurable node for
-operating a schunk dexterous hand. 
+The schunk_sdh package provides a
+configurable node for operating a schunk dexterous hand.
+
 
 ```clearsilver
  name = sdh_only
@@ -101,8 +103,7 @@ prov_tf{
 }
 ```
 
-
-
+ 
 
 ```clearsilver
  name = dsa_only
@@ -174,5 +175,3 @@ polling: false
 use_rle: true
 frequency: 30
 ```
-
-

@@ -1,7 +1,8 @@
 ## Demo
 
-After installing [mrpt_navigation](mrpt_navigation) and [mvsim](mvsim),
-run: 
+After installing
+[mrpt_navigation](https://index.ros.org/p/mrpt_navigation) and
+[mvsim](https://index.ros.org/p/mvsim), run: 
 
 ```
 roslaunch mrpt_reactivenav2d reactive_nav_demo_with_mvsim.launch

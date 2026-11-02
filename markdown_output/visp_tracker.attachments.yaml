@@ -1,0 +1,5 @@
+doc/visp-box-tracking.png: pages/visp_tracker/attachments/visp-box-tracking.png
+doc/visp-tracker-reconfigure-gui.png: pages/visp_tracker(2f)Tutorials(2f)Fine(20)tuning(20)of(20)the(20)tracking(20)parameters/attachments/visp-tracker-reconfigure-gui.png
+doc/visp-tracking-init.png: pages/visp_tracker(2f)Tutorials(2f)Getting(20)started/attachments/visp-tracking-init.png
+doc/visp-tracking-start.png: pages/visp_tracker(2f)Tutorials(2f)Getting(20)started/attachments/visp-tracking-start.png
+doc/visp_tracker_Tutorials_Getting started_visp-box-tracking.png: pages/visp_tracker(2f)Tutorials(2f)Getting(20)started/attachments/visp-box-tracking.png

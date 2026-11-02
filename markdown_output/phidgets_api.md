@@ -1,7 +1,7 @@
 ## Overview
 
-The [phidgets_api](phidgets_api) package contains a C++ API built on top
-of the [phidgets_c_api](phidgets_c_api) package.
+The phidgets_api package contains a C++ API
+built on top of the [phidgets_c_api](phidgets_c_api) package.
 
 The package provides a base `Phidget` class, from which all other
 Phidgets inherit. Currently, we have implemented classes for the

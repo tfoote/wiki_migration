@@ -1,4 +1,4 @@
-![\|align=right,width=240](attachment:os32c.jpg)
+![align=right,width=240](doc/os32c.jpg)
 
 ## Overview
 
@@ -76,5 +76,3 @@ node.0 {
  }
 }
 ```
-
-

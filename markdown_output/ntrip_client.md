@@ -66,5 +66,3 @@ instructions in the "Build Instructions" section of the README.
 ```
 git clone https://github.com/LORD-MicroStrain/ntrip_client
 ```
-
-

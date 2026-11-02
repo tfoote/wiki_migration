@@ -88,7 +88,7 @@ covariance. The sources operate at different rates and with different
 latencies. A source can appear and disappear over time, and the node
 will automatically detect and use the available sensors.To add your own
 sensor inputs, check out
-[the Adding a GPS sensor tutorial](robot_pose_ekf/Tutorials/AddingGpsSensor)
+[the Adding a GPS sensor tutorial](#adding-a-gps-sensor-to-the-robot-pose-ekf-filter)
 
 
 
@@ -150,7 +150,7 @@ interpolation of the imu pose between t_0 and t_2. The robot pose filter
 is updated with the relative poses of the odom and imu, between t_0 and
 t_1.
 
-![](attachment:robot_pose_ekf.png)
+![attachment:robot_pose_ekf.png](doc/robot_pose_ekf.png)
 
 The above figure shows experimental results when the PR2 robot started
 from a given initial position (green dot), driven around, and returned
@@ -184,3 +184,246 @@ below).
   filter.
 
 ## Tutorials
+
+## Adding a GPS sensor to the Robot Pose EKF Filter
+
+### Available topics
+
+The Robot Pose EKF node listens for ROS messages on the following topic
+names:
+
+- */odom* for the nav_msgs::Odometry message as a 2D pose
+- */imu_data* for the sensor_msgs::Imu message as a 3D orientation
+- */vo* for the nav_msgs::Odometry message as a 3D pose
+
+To use the Robot Pose EKF node with your own sensor, you need to publish
+sensor measurements on one of these three topics. The sensor needs to
+publish the position and orientation of the **base_footprint** frame of
+the robot, in a world-fixed frame. Any world-fixed frame is fine, and
+each sensor can use a different world-fixed frame. Note that each topic
+can only take the input of **one single** sensor. In future versions, we
+plan the ability to attach *n* sensor signals to the robot pose ekf (see
+the Roadmap section). Currently, the most generic input message is the
+Odometry, sent on the /vo topic. It contains a 3D pose and 3D twist,
+each with a covariance. So this would be the best topic to use when
+adding your own sensor.
+
+### Building a GPS sensor message
+
+A GPS sensor measures the robot 3d position, but not its orientation.
+The Odometry message sent by the GPS sensor could look something like
+this:
+
+. 
+
+```
+msg.header.stamp = gps_time                   // time of gps measurement
+ msg.header.frame_id = base_footprint          // the tracked robot frame
+ msg.pose.pose.position.x = gps_x              // x measurement GPS.
+ msg.pose.pose.position.y = gps_y              // y measurement GPS.
+ msg.pose.pose.position.z = gps_z              // z measurement GPS.
+ msg.pose.pose.orientation.x = 1               // identity quaternion
+ msg.pose.pose.orientation.y = 0               // identity quaternion
+ msg.pose.pose.orientation.z = 0               // identity quaternion
+ msg.pose.pose.orientation.w = 0               // identity quaternion
+ msg.pose.covariance = {cox_x, 0, 0, 0, 0, 0,  // covariance on gps_x
+                        0, cov_y, 0, 0, 0, 0,  // covariance on gps_y
+                        0, 0, cov_z, 0, 0, 0,  // covariance on gps_z
+                        0, 0, 0, 99999, 0, 0,  // large covariance on rot x
+                        0, 0, 0, 0, 99999, 0,  // large covariance on rot y
+                        0, 0, 0, 0, 0, 99999}  // large covariance on rot z
+```
+
+
+
+#### Using a GPS driver that publishes NavSatFix
+
+The `utm_odometry_node` in the
+[gps_common](https://index.ros.org/p/gps_common) package may be used to
+convert GPS measurements from
+[sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+to
+[sensor_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Odometry.html).
+
+. 
+
+```
+<node name="gps_conv" pkg="gps_common" type="utm_odometry_node">
+  <remap from="odom" to="vo"/>
+  <remap from="fix" to="/gps/fix" />
+  <param name="rot_covariance" value="99999" />
+  <param name="frame_id" value="base_footprint" />
+</node>
+```
+
+
+
+### Remapping the topic name
+
+The GPS sensor sends its measurements on the topic name *gps_meas*, but
+the Robot Pose EKF node expects messages of type Odometry on the topic
+name *odom*. To connect the GPS sensor with the filter node, we need to
+remap the topic name the node listens on. Therefore, add the following
+line to the launch file of the node, within the <node> \... </node>
+scope:
+
+. 
+
+```
+<remap from="vo" to="gps_meas" />
+```
+
+
+
+The output of the filter (the estimated 3D robot pose) is broadcast on
+the /robot_pose_ekf/odom_combined topic. The node also broadcasts the
+transform from 'odom_combined' to 'base_link' to the transform (tf)
+topic */tf_message*.
+
+------------------------------------------------------------------------
+
+## Tutorials
+
+- [Adding a GPS sensor to the Robot Pose EKF Filter](#adding-a-gps-sensor-to-the-robot-pose-ekf-filter):
+  This tutorial describes how to add GPS sensor input to the Robot Pose
+  EKF Filter.
+
+## Troubleshooting
+
+### Understanding log messages
+
+#### Errors when using package
+
+- *Timestamps of odometry and imu are x seconds apart* This error occurs
+  when the timestamps of the sensor messages that are received differ
+  more than 1 second. This is probably an indication of timing issues in
+  your system, e.g. the clocks of two hosts connected to the same ros
+  core are not synchronized.
+
+<!-- -->
+
+- *Covariance specified for measurement on topic xxx is zero* Each
+  measurement that is processed by the robot pose ekf needs to have a
+  covariance associated with it. The diagonal elements of the covariance
+  matrix cannot be zero. This error is shown when one of the diagonal
+  elements is zero. Messages with an invalid covariance will not be used
+  to update the filter.
+
+<!-- -->
+
+- *Filter time older than xxx message buffer* This error occurs when two
+  sensor inputs have timestamps that are not synchronized. All sensor
+  inputs are stored in a message buffer; this buffer keeps data for 10
+  seconds. When the timestamps of two sensor inputs are more than 10
+  seconds apart, data will get lost from the message buffer, and you'll
+  get this error.
+
+#### Warnings when using package
+
+- *Robot pose ekf diagnostics discovered a potential problem* This
+  warning occurs when the internal diagnostics find that something is
+  wrong. At this time, the diagnostics system only checks for the
+  consistency between the odom and imu sensors. When these two sources
+  provide *very different* information about the robot pose, this is a
+  good indication that something might be wrong with some of the sensor
+  measurements/timestamps.
+
+#### Info when using package
+
+- *xxx sensor activated* This message indicates that a sensor source was
+  detected and activated. After receiving this message the filter can
+  use measurements from this sensor.
+
+<!-- -->
+
+- *Waiting to activate xxx, because xxx measurements are still x sec in
+  the future* When a sensor signal first arrives, its timestamp is
+  potentially newer than the latest filter update time. This message
+  indicates that sensor will remain inactive, until the filter catches
+  up.
+
+<!-- -->
+
+- *xxx sensor not active any more* When a sensor source is not sending
+  any measurement for a user-specified timeout (default 1 sec), that
+  sensor source is deactivated.
+
+<!-- -->
+
+- *Fiter initialized* This message indicates that either the odom sensor
+  or the vo sensor has been detected and activated, and the filter has
+  been initialized. After this message is shown, the filter will get
+  updated at the user-specified frequency.
+
+### The robot pose ekf does not work
+
+The robot pose ekf provides a service call to give information on its
+internal state. Simply run: 
+
+```
+$ rosrun robot_pose_ekf wtf.py
+```
+
+ The output will
+give you good clues about possible problems.
+
+#### Is the robot pose ekf still running?
+
+To check if the robot pose ekf is running, you should find out on what
+the name of the node is. The node name depends on the name you specified
+in the launch file: 
+
+```
+...
+  <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="my_name">
+  ...
+```
+
+ Look for the
+*name="\..."* field. In this example, the node name is 'my_name'. To
+verify if the node is running, type: 
+
+```
+$ rosnode ping my_name
+```
+
+
+
+#### Is the robot pose ekf sending output?
+
+First you should find out on what topic name the robot pose ekf is
+supposed to publish data. The topic name depends on the name you
+specified in the launch file: 
+
+```
+...
+  <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="my_name">
+  ...
+```
+
+ Look for the
+*name="\..."* field. In this example, the output topic name is set to
+'my_name/odom_combined'. To verify if any output is published, type:
+
+
+```
+$ rostopic hz my_name/odom_combined
+```
+
+ You should see an average publish rate being
+displayed. If not, the output is not published.
+
+#### Is the robot pose ekf receiving input?
+
+The robot pose ekf listens on three topics: '/odom', '/imu_data' and
+'/vo'. To check if any input is received on these topics, type:
+
+
+```
+$ rostopic hz /odom
+ $ rostopic hz /imu_data
+ $ rostopic hz /vo
+```
+
+ You should see an average publish rate being
+displayed. If not, the input is not published.

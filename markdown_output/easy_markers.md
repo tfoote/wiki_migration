@@ -33,7 +33,7 @@ if __name__=='__main__':
 
 
 
-![screenshot\|width=700](attachment:Screenshot-RViz.png)
+![screenshot](doc/Screenshot-RViz.png)
 
 ## Interactive Usage
 
@@ -60,4 +60,4 @@ if __name__=='__main__':
 
 
 
-![screenshot\|width=700](attachment:Screenshot-RViz-1.png)
+![screenshot](doc/Screenshot-RViz-1.png)

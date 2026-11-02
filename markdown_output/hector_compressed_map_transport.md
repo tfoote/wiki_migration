@@ -7,7 +7,7 @@ subject to change.
 
 ## ROS API
 
-
+<a id="NodeApi"></a> 
 
 ```clearsilver
 node.0 {
@@ -36,5 +36,3 @@ pub{
    }
 }
 ```
-
-

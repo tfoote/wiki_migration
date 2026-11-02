@@ -2,9 +2,9 @@
 
 [Potree](https://github.com/potree/potree) is a free open-source WebGL
 based point cloud renderer for large point clouds. This plugin enables
-[rviz](rviz) to render the Potree point clouds.
+[rviz](https://index.ros.org/p/rviz) to render the Potree point clouds.
 
-![](attachment:rviz_screenshot.png)
+![attachment:rviz_screenshot.png](doc/rviz_screenshot.png)
 
 ## Preprocessing
 

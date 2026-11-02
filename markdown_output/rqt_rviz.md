@@ -7,5 +7,3 @@ Note that the rqt_rviz package has known, long-standing threading issues that af
 
 Relevant issues: [[https://github.com/ros-visualization/rqt/issues/96|rqt/96]], [[https://github.com/ros-visualization/rviz/issues/1042|rviz/1042]]
 ```
-
-

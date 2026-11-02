@@ -11,7 +11,8 @@ robotic arms from the CB3- or e-Series. It is the base of the
 This package does not support CB2 controllers.
 
 For robots with Polyscope `v1.8.x` or older, please see whether
-[ur_modern_driver](ur_modern_driver) is sufficient.
+[ur_modern_driver](https://index.ros.org/p/ur_modern_driver) is
+sufficient.
 
 ### Polyscope v3.x and v5.x
 

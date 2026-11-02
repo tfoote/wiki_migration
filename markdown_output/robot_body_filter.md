@@ -1,8 +1,8 @@
 # robot_body_filter
 
 Filters the robot's body out of point clouds and laser scans. It is
-based on [robot_self_filter](robot_self_filter) but it can do a lot more
-things.
+based on [robot_self_filter](https://index.ros.org/p/robot_self_filter)
+but it can do a lot more things.
 
 ## Changes vs github.com/PR2/robot_self_filter
 
@@ -25,11 +25,11 @@ filter are explained and demonstrated:
 
 ## Filter Operation Preview
 
-![robot_body_filter intro\|width=600](attachment:filter.gif)
-![robot_body_filter models\|width=600](attachment:filter_models.gif)
-![robot_body_filter split\|width=600](attachment:filter_split.gif)
-![robot_body_filter bounds\|width=600](attachment:filter_bounds.gif)
-![robot_body_filter cut\|width=600](attachment:filter_cut.gif)
+![robot_body_filter intro](doc/filter.gif)
+![robot_body_filter models](doc/filter_models.gif)
+![robot_body_filter split](doc/filter_split.gif)
+![robot_body_filter bounds](doc/filter_bounds.gif)
+![robot_body_filter cut](doc/filter_cut.gif)
 
 ## Basic Operation
 

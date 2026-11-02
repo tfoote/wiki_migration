@@ -1,3 +1,3 @@
 ## Documentation
 
-Please see [roscpp Time overview](roscpp/Overview/Time).
+Please see [roscpp Time overview](https://index.ros.org/p/roscpp).

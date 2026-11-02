@@ -1,7 +1,7 @@
 ## Overview
 
-bondcpp is an implementation of [bond](bond) in C++. To use bondcpp,
-please see the example below as well as the
+bondcpp is an implementation of [bond](https://index.ros.org/p/bond) in
+C++. To use bondcpp, please see the example below as well as the
 [API documentation](http://www.ros.org/doc/api/bondcpp/html/).
 
 ## Example usage

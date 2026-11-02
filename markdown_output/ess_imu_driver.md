@@ -1,9 +1,7 @@
 # Epson IMU ROS1 Driver Node
 
-\-\-\-\-\-\-\-\-\-\-\--
-![\|align="right"](attachment:ess_sensors/g552.jpg)
-![\|align="right"](attachment:ess_sensors/g370.jpg)
-![\|align="right"](attachment:ess_sensors/g365.jpg)
+\-\-\-\-\-\-\-\-\-\-\-- ![align="right"](doc/g552.jpg)
+![align="right"](doc/g370.jpg) ![align="right"](doc/g365.jpg)
 
 ## Overview
 

@@ -1,4 +1,4 @@
-![](attachment:ik.png)
+![attachment:ik.png](doc/ik.png)
 
 
 
@@ -73,5 +73,3 @@ Example launch file :
   </node>
 </launch>
 ```
-
-

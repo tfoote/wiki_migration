@@ -144,8 +144,8 @@ each dictionary has the following standard keys:
 
 Each builder may specify additional configuration keys.
 
-Here is an example from the [roslib](roslib) package, which performs
-both C++ and Python API documentation:
+Here is an example from the [roslib](https://index.ros.org/p/roslib)
+package, which performs both C++ and Python API documentation:
 
 
 
@@ -332,41 +332,22 @@ An example tags (example_tags.yaml) file is shown below:
 
 
 ```
-Usage: rosdoc_lite [options] [package_path]
-
-Options:
-  -h, --help            show this help message and exit
-  -q, --quiet           Suppress doxygen errors.
-  -o OUTPUT_DIRECTORY   The directory to write documentation to.
-  -t TAGFILE, --tagfile=TAGFILE
-                        Path to tag configuration file for Doxygen cross
-                        referencing support. Ex: /home/user/tagfiles_list.yaml
-  -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
-                        If specified, will generate a doxygen tagfile in this
-                        location. Ex: /home/user/tags/package.tag
+- docs_url: http://www.ros.org/doc/api/package_name/html
+   location: file:///path/to/package_name/doc/tags/package_name.tag
+ - docs_url: http://www.ros.org/doc/api/package_name2/html
+   location: http://www.ros.org/doc/api/package_name2/tags/package_name2.tag
 ```
 
-0 Running `rosdoc_lite` with this file to get
+ Running `rosdoc_lite` with this file to get
 cross references might look something like this:
 
 
 
 ```
-Usage: rosdoc_lite [options] [package_path]
-
-Options:
-  -h, --help            show this help message and exit
-  -q, --quiet           Suppress doxygen errors.
-  -o OUTPUT_DIRECTORY   The directory to write documentation to.
-  -t TAGFILE, --tagfile=TAGFILE
-                        Path to tag configuration file for Doxygen cross
-                        referencing support. Ex: /home/user/tagfiles_list.yaml
-  -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
-                        If specified, will generate a doxygen tagfile in this
-                        location. Ex: /home/user/tags/package.tag
+rosdoc_lite -o doc -t /path/to/example_tags.yaml
 ```
 
-1
+
 
 ### Linking to External Third Party Documentation
 
@@ -377,21 +358,12 @@ documentation. To do so, you must add a line to your manifest.xml
 
 
 ```
-Usage: rosdoc_lite [options] [package_path]
-
-Options:
-  -h, --help            show this help message and exit
-  -q, --quiet           Suppress doxygen errors.
-  -o OUTPUT_DIRECTORY   The directory to write documentation to.
-  -t TAGFILE, --tagfile=TAGFILE
-                        Path to tag configuration file for Doxygen cross
-                        referencing support. Ex: /home/user/tagfiles_list.yaml
-  -g GENERATE_TAGFILE, --generate_tagfile=GENERATE_TAGFILE
-                        If specified, will generate a doxygen tagfile in this
-                        location. Ex: /home/user/tags/package.tag
+<export>
+  <doxymaker external="http://link.to.external/page.html"/>
+</export>
 ```
 
-2
+
 
 ## Automatically Generated Online Documentation on ros.org
 
@@ -399,7 +371,8 @@ Options:
 have rosinstall files listed in the
 [rosdistro](https://github.com/ros/rosdistro) repository. The resulting
 documentation is uploaded to `ros.org` and is linked in the "Code
-API" links that you see on various package pages, like [rospy](rospy).
+API" links that you see on various package pages, like
+[rospy](https://index.ros.org/p/rospy).
 
 Even if `rosdoc_lite` is automatically generated for your package, we
 recommend regularly running `rosdoc_lite` on your own computer to

@@ -21,7 +21,7 @@ You will need to configure it for streaming of rigid bodies to the
 checkbox. 2. Focus the local Address label and select the NIC Addresss
 combox, choose the boradcast interface. 3. Focus the "SDK Streaming"
 region, then enable the "SDK Enabled" checkbox.
-![](attachment:xingying3.0.png)
+![attachment:xingying3.0.png](doc/xingying3.0.png)
 
 ## Configuring mocap_nokov
 
@@ -71,7 +71,7 @@ nokov_config:
  If any of the topics is left unconfigured,
 nothing will be published for that datatype. E.g. for trackable "2",
 no pose2d or frame_id is configured so no Pose2D or TF messages will be
-published. ![](attachment:rostopic.png)
+published. ![attachment:rostopic.png](doc/rostopic.png)
 
 ### Results
 
@@ -84,7 +84,7 @@ $ roslaunch mocap_nokov mocap.launch & rosrun rviz rviz
 
  select the Global Options and set the Fixed
 Frame to world, and you can add tf and pose to display, like this
-![](attachment:rviz_only.png)
+![attachment:rviz_only.png](doc/rviz_only.png)
 
 ## Further reading
 

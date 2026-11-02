@@ -14,7 +14,7 @@ or
 - `projectLaser()` is simple and fast. It does not change the frame of
   your data.
 - `transformLaserScanToPointCloud()` is slower but more precise. It
-  makes uses of [tf](tf) and the
+  makes uses of [tf](https://index.ros.org/p/tf) and the
   [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
   time increment to transform each individual ray appropriately. This is
   the recommended means of transformation for tilting laser scanners or
@@ -83,9 +83,10 @@ void scanCallback (const sensor_msgs::LaserScan::ConstPtr& scan_in)
 ### High fidelity projection
 
 The `transformLaserScanToPointCloud()` method does a more advanced
-projection, but requires that you have set up a [tf](tf) transform
-listener. (If you are unfamiliar with [tf](tf), it is recommended you go
-through the [tf/Tutorials](tf/Tutorials) first.)
+projection, but requires that you have set up a
+[tf](https://index.ros.org/p/tf) transform listener. (If you are
+unfamiliar with [tf](https://index.ros.org/p/tf), it is recommended you
+go through the [tf/Tutorials](https://index.ros.org/p/tf) first.)
 
 Since we are gathering data across the time of the scan, it is often
 important that the chosen target_frame is actually a fixed frame.
@@ -198,3 +199,17 @@ rospy.spin()
 ### High fidelity projection
 
 Currently there is no Python version of the high fidelity projection
+
+## Troubleshooting
+
+### Reporting Errors
+
+If you encounter a problem that isn't addressed on this page, please
+[file a ticket](https://code.ros.org/trac/ros-pkg/newticket?component=laser_pipeline&keywords=laser_geometry&owner=tfoote)
+
+The current list of open issues is available on
+[trac](https://code.ros.org/trac/ros-pkg/query?status=assigned&status=new&status=reopened&group=milestone&order=priority&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&keywords=~laser_geometry)
+
+### Common Problems When Using Package
+
+(There are currently no recorded commonly occurring errors)

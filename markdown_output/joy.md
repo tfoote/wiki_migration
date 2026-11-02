@@ -64,7 +64,7 @@ node.0 {
 ## Using this Package
 
 For an example of using **joy_node** to control a teleoperation node
-with a joystick, see the [tutorials](joy/Tutorials).
+with a joystick, see the [tutorials](#tutorials).
 
 In some cases, multiple joysticks may control a single robot. For
 example, a user may use the default joystick to drive a robot, but a
@@ -305,3 +305,73 @@ Table of index number of `/joy.axes`:
      <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">4                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">cross key left/right                 
      <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">5                                                                                                                  <style="padding:0.25em 0.5em;border:1px dotted rgb(211, 211, 211);">cross key up/down                    
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------ --
+
+## Tutorials
+
+Tutorials for other devices can be found in
+[Tutorials](https://index.ros.org/p/joystick_drivers).
+
+## Troubleshooting
+
+### Errors when using joy
+
+#### Error: Couldn't open joystick
+
+
+
+```
+user@prX:rosrun joy joy_node
+[ INFO] 1254256422.863852000: Started node [/joy_node], pid [24689], bound on [nsf], xmlrpc port [56918], tcpros port [33023], logging to [/u/watts/ros/rc/log/joy_node_24689.log], using [real] time
+[ERROR] 1254256422.883483000: Couldn't open joystick /dev/input/js0. Will retry every second.
+```
+
+
+
+**Solution:**
+
+- Is the joystick connected? The joystick won't work if it's not
+  plugged in. Connect the joystick and retry.
+
+<!-- -->
+
+- Machine set correctly This can also mean you're running joy_node on
+  the wrong machine. Make sure you're running the node on the right
+  machine. Check to make sure that the port is open.
+  
+
+```
+ls -l /dev/input/js0
+```
+
+ You may have to add permissions:
+  
+
+```
+chmod +rw /dev/input/js0
+```
+
+ If you're sure you're connected, try using
+  jstest to view the joystick. 
+
+```
+sudo jstest /dev/input/js0
+```
+
+
+
+<!-- -->
+
+- PS3 joystick not connected. If you're using a PS3 joystick, you will
+  have to pair it properly, and connect it. See:
+  [Pairing a PS3 joystick](https://index.ros.org/p/ps3joy).
+
+#### Error: Joystick control is inaccurate / moves robot when deadman switch is pressed
+
+(This one assumes you are encountering the error while using
+teleop_joystick.launch) Use ` rostopic echo joy ` to see the joystick
+commands being sent out. When the joysticks are at rest (centered) all
+of the axes should be 0. If they are not, then the joystick itself is
+malfunctioning. Try removing its batteries and putting them back in.
+
+It may also be necessary to re-mate the joystick to the wireless
+receiver in order to re-zero the joystick axes.

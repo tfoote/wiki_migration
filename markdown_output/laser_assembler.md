@@ -33,7 +33,7 @@ making any large changes to `laser_assembler` anytime soon.
 
 The general data flow can be descibed as follows:
 
-![](attachment:laser_scan_assembler.png)
+![attachment:laser_scan_assembler.png](doc/laser_scan_assembler.png)
 
 The `laser_scan_assembler` subscribes to
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
@@ -44,10 +44,10 @@ and then transform it into the `fixed_frame`. This results in a
 that can be added to the rolling buffer. Clouds in the rolling buffer
 are then assembled on service calls.
 
-Note that the Transformer automatically receives [tf](tf) data without
-any user intervention.
+Note that the Transformer automatically receives
+[tf](https://index.ros.org/p/tf) data without any user intervention.
 
-![](attachment:point_cloud_assembler.png)
+![attachment:point_cloud_assembler.png](doc/point_cloud_assembler.png)
 
 The `point_cloud_assembler` looks very similar to the
 `laser_scan_assembler`, except that the projection step is skipped,
@@ -230,8 +230,218 @@ cloud is capped by the size of the assembler's rolling buffer.
 
 ## Tutorials
 
+- [How to assemble laser scan lines into a composite point cloud](#how-to-assemble-laser-scan-lines-into-a-composite-point-cloud):
+  In this tutorial you will learn how to assemble individual laser scan
+  lines into a composite point cloud. One particular use case is to
+  assemble individual scan lines from a laser on a tilting stage into a
+  single point cloud to form a full 3D laser sweep.
+
 ## Deprecated API
 
 As of laser_pipeline 0.4.0. A large part of the laser_assembler's ROS
 API was deprecated. The API reference for the deprecated API is
 available on the [laser_assembler-0.3.0](laser_assembler-0.3.0) page.
+
+## How to assemble laser scan lines into a composite point cloud
+
+In the
+[laser pipeline tutorials](https://index.ros.org/p/laser_pipeline), you
+learned how to work with a single scan line. In many cases, however, it
+would be more useful to have multiple scan lines together as a larger
+point cloud. For example, if the laser is on a tilting unit, it's
+useful to group together all of the scans that came from one
+top-to-bottom tilting cycle. Or it might be useful to accumulate a set
+of scans over a fixed time period. To aggregate scans we look to the
+laser_assembler package containing the
+`laser_scan_assembler` and the `point_cloud_assembler`.
+
+### Example Laser Data
+
+So that you can try all of the nodes described in this tutorial, we've
+provided a source of laser data. ROS can [record](rosrecord) sensor data
+(actually any ROS system data) into a *bag* file. You can download a bag
+file containing laser data
+[here](http://vault.willowgarage.com/wgdata1/vol1/wiki_docs/laser_pipeline/laser.bag).
+
+The bag contains two topics:
+
+- `/tf \[tf/tfMessage\]`
+- `/tilt_scan \[sensor_msgs/LaserScan\]`
+
+You can verify this using `rosbag`: 
+
+```
+rosbag info laser.bag
+```
+
+
+
+The `tilt_scan` topic was recorded from a planar laser mounted on a
+tilting stage. The `/tf` topic contains the robot transforms.
+
+To play back the bag, first run a roscore:
+
+
+
+```
+$ roscore
+```
+
+
+
+We're going to be using bagfile data, so we want to make sure that all
+of our nodes' times are based off of simulation time:
+
+
+```
+$ rosparam set /use_sim_time true
+```
+
+
+
+Then play back the bag: 
+
+```
+$ rosbag play --clock laser.bag
+```
+
+
+
+We need the `\--clock` argument in order to publish simulation time.
+
+Familiarize yourself with the data by viewing it in
+[rviz](https://index.ros.org/p/rviz).
+
+### The Laser Scan Assembler
+
+The `laser_scan_assembler` accumulates laser scans by listening to the
+appropriate topic and accumulating messages in a ring buffer of a
+specific size. When the `assemble_scans` service is called, the
+contents of the current buffer that fall between two times are converted
+into a single cloud and returned.
+
+Here is an example launch file for the `laser_scan_assembler`
+operating on the scan topic `tilt_scan`:
+
+
+
+```
+<launch>
+  <node type="laser_scan_assembler" pkg="laser_assembler" name="my_assembler">
+    <remap from="scan" to="tilt_scan"/>
+    <param name="max_scans" type="int" value="400" />
+    <param name="fixed_frame" type="string" value="base_link" />
+  </node>
+</launch>
+```
+
+ This instantiation of the
+`laser_scan_assembler` keeps a rolling buffer of 400 scans, and
+transforms incoming scans into the base_link frame. The full set of
+parameters is available in the `laser_assembler`'s
+ROS Interface section.
+
+The `fixed_frame` parameter name is not accidental. Each single scan
+is converted into this frame when it arrives, and no additional
+transforms are done to the data when the cloud is published. Therefore,
+you will very likely want to choose a frame that isn't moving for your
+`fixed_frame`. If your robot is stationary, the `base_link` frame
+might be a good choice. If your robot is moving, choose a frame that is
+stationary in the world like a `map` frame.
+
+Try running the `laser_scan_assembler` on the `\\tilt_scan` topic in
+`laser.bag`. It doesn't look like much is happening, right? But
+behind the scenes, the buffer is filling up\...
+
+### The Point Cloud Assembler
+
+If your scan lines are already in point cloud message form, you can use
+the `point_cloud_assembler` instead. The `point_cloud_assembler`
+works very much like the laser_scan_assembler, here's a launch file for
+it:
+
+
+
+```
+<launch>
+  <node type="point_cloud_assembler" pkg="laser_assembler" name="my_assembler">
+    <remap from="cloud" to="my_cloud_in"/>
+    <param name="max_clouds" type="int" value="400" />
+    <param name="fixed_frame" type="string" value="base_link" />
+  </node>
+</launch>
+```
+
+ Try out the `point_cloud_assembler` by first
+converting the `tilt_scan` topic into a point cloud and then
+assembling it. (Forgot how to convert a laser scan into a point cloud?
+Go back to the
+[introduction to working with laser scanner data](https://index.ros.org/p/laser_pipeline).)
+Once again, nothing visible is happening, but the buffer is filling
+up\...
+
+### Using the Assemblers: A Laser Snapshotter
+
+The assemblers will work away dutifully as laser scans (or point clouds)
+come in, but they won't publish anything until you call the
+`assemble_scans` service. The `assemble_scans` service has two
+request fields:
+
+- `time begin`
+- `time end`
+
+All buffer entries between these two times will be grouped into one
+point cloud and returned in the response field:
+
+- `sensor_msgs::PointCloud cloud`
+
+How often you call `assemble_scans` depends on your robot and
+application, here are some suggestions:
+
+- every x seconds,
+- whenever you're ready to process the resulting cloud, or
+- when receiving a signal from your system, such as when a laser tilting
+  stage passes through one sweep.
+
+As an example, the `laser_assembler` package has an example node in
+the `examples` folder called `periodic_snapshotter` which calls the
+`assemble_scans` service every 5 seconds and publishes the resulting
+clouds.
+
+Try running the `periodic_snapshotter` with the
+`laser_scan_assembler` and viewing the resulting point cloud
+(published on the topic `assembled_cloud`) in
+[rviz](https://index.ros.org/p/rviz). Instead of a updating
+line-by-line, the point cloud will change every 5 seconds and display
+all of the accumulated data at once.
+
+### Conclusion
+
+Now you should be able to assemble single scans (or clouds) into full
+point clouds. By combining this with the tools in
+[laser_geometry](https://index.ros.org/p/laser_geometry) and
+[laser_filters](https://index.ros.org/p/laser_filters) that you learned
+about in previous [tutorials](https://index.ros.org/p/laser_pipeline),
+you can convert your raw sensor data into more useful formats.
+
+## Tutorials
+
+- [How to assemble laser scan lines into a composite point cloud](#how-to-assemble-laser-scan-lines-into-a-composite-point-cloud):
+  In this tutorial you will learn how to assemble individual laser scan
+  lines into a composite point cloud. One particular use case is to
+  assemble individual scan lines from a laser on a tilting stage into a
+  single point cloud to form a full 3D laser sweep.
+
+## Troubleshooting
+
+### Reporting Errors
+
+If you encounter a problem that isn't addressed on this page, please
+[file a ticket](https://code.ros.org/trac/ros-pkg/newticket?component=laser_pipeline&keywords=laser_assembler&owner=vpradeep)
+
+The current list of open issues is available on
+[trac](https://code.ros.org/trac/ros-pkg/query?status=assigned&status=new&status=reopened&group=milestone&order=priority&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&keywords=~laser_assembler)
+
+### Common Problems When Using Package
+
+(There are currently no recorded commonly occurring errors)

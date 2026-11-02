@@ -1,14 +1,16 @@
-  -- ------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
-     ![Experimental\|](attachment:1Column.png)      **EXPERIMENTAL**: This status indicates that this software is experimental code at best. There are known issues and missing functionality. The APIs are completely unstable and likely to change. Use in production systems is not recommended. All code starts at this level. For more information see the ROS-Industrial software status [page](Industrial/Software_Status).   
-  -- ------------------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+  -- ---------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
+     ![Experimental](doc/1Column.png)      **EXPERIMENTAL**: This status indicates that this software is experimental code at best. There are known issues and missing functionality. The APIs are completely unstable and likely to change. Use in production systems is not recommended. All code starts at this level. For more information see the ROS-Industrial software status [page](Industrial/Software_Status).   
+  -- ---------------------------------- -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
 
-![PointCloud published by hokuyo3d node\|width=100%](attachment:hokuyo3d_pointcloud.png)
+![PointCloud published by hokuyo3d node](doc/hokuyo3d_pointcloud.png)
 
 ## Supported Hardware
 
 This driver should work with VSSP 1.0/1.1-compliant HOKUYO 3D-LIDARs.
 
 ## ROS API
+
+<a id="NodeApi"></a>
 
 
 
@@ -58,5 +60,3 @@ param {
 }
 }
 ```
-
-

@@ -2,7 +2,7 @@
 
 \[\[<https://zenodo.org/badge/47581608.svg>)\](<https://zenodo.org/badge/latestdoi/47581608%7CDOI>\]\]
 
-[Sample demo of multiple object tracking using LIDAR scans](attachment:multi-object-tracking-lidar-demo.gif)
+[Sample demo of multiple object tracking using LIDAR scans](doc/multi-object-tracking-lidar-demo.gif)
 
 PCL based ROS package to Detect/Cluster \--> Track \--> Classify
 static and dynamic objects in real-time from LIDAR scans implemented in

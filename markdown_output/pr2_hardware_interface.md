@@ -1,13 +1,14 @@
 ## Hardware components
 
 The PR2 hardware interface provides a C++ abstraction layer for the PR2
-hardware that is controlled over the [etherCAT link](ethercat_hardware)
-that runs through the robot. Most users should not have to deal directly
-with this interface. If you are only interested in controlling the robot
-joints, you should directly interact with
-[pr2_mechanism_model](pr2_mechanism_model). Only very advanced users
-that need direct access to the hardware should be using the PR2 hardware
-interface.
+hardware that is controlled over the
+[etherCAT link](https://index.ros.org/p/ethercat_hardware) that runs
+through the robot. Most users should not have to deal directly with this
+interface. If you are only interested in controlling the robot joints,
+you should directly interact with
+[pr2_mechanism_model](https://index.ros.org/p/pr2_mechanism_model). Only
+very advanced users that need direct access to the hardware should be
+using the PR2 hardware interface.
 
 - **[Hardware Interface](http://www.ros.org/doc/api/pr2_hardware_interface/html/classpr2__hardware__interface_1_1HardwareInterface.html):**
   The `HardwareInterface` class provides access to the PR2 hardware
@@ -30,7 +31,7 @@ interface.
 - **[Accelerometers](http://www.ros.org/doc/api/pr2_hardware_interface/html/classpr2__hardware__interface_1_1Accelerometer.html):**
   the PR2 grippers contain 3 axis accelerometers. Instruction on
   communicating with these sensors in real-time can be found
-  [here](ethercat_hardware/Tutorials/GripperAccelerometer).
+  [here](https://index.ros.org/p/ethercat_hardware).
 
 <!-- -->
 

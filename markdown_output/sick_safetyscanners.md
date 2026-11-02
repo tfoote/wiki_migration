@@ -6,7 +6,7 @@ publishes the data as a laser_scan msg.
 Supported are all microScan3, nanoScan3 and outdoorScan3 variants with
 Ethernet connection.
 
-![SICK microScan3\|width="750px"](attachment:SICK-safetyscanners.jpeg)
+![SICK microScan3](doc/SICK-safetyscanners.jpeg)
 
 # Getting started
 

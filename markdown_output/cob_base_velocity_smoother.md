@@ -1,7 +1,8 @@
-The [cob_base_velocity_smoother](cob_base_velocity_smoother) package
-provides two implementations for a velocity smoother that both read
-velocity messages (geometry_msgs::Twist) and then publish messages of
-the same type for "smoothed" velocity to avoid jerky behavior.
+The
+cob_base_velocity_smoother
+package provides two implementations for a velocity smoother that both
+read velocity messages (geometry_msgs::Twist) and then publish messages
+of the same type for "smoothed" velocity to avoid jerky behavior.
 
 The two nodes available are:
 
@@ -11,7 +12,8 @@ The two nodes available are:
 ## Hardware Requirements
 
 To use this package you either need a real or a simulated Care-O-Bot
-(see [cob_bringup](cob_bringup) and [cob_bringup_sim](cob_bringup_sim)
+(see [cob_bringup](https://index.ros.org/p/cob_bringup) and
+[cob_bringup_sim](https://index.ros.org/p/cob_bringup_sim)
 respectively).
 
 ## ROS API
@@ -76,6 +78,6 @@ param{
 ## Usage
 
 All hardware configuration is done in the
-[cob_hardware_config](cob_hardware_config) package. Parameter files for
-both nodes have to be placed in "cob_hardware_config/\$(env
-ROBOT)/config/" for each ROBOT.
+[cob_hardware_config](https://index.ros.org/p/cob_hardware_config)
+package. Parameter files for both nodes have to be placed in
+"cob_hardware_config/\$(env ROBOT)/config/" for each ROBOT.

@@ -13,9 +13,9 @@ If you discover problems installing them on other platforms, please
 
 ## ROS API
 
-The [schunk_powercube_chain](schunk_powercube_chain) package provides a
-configurable node for operating a chain of powercube modules.
-
+The schunk_powercube_chain
+package provides a configurable node for operating a chain of powercube
+modules. 
 
 ```clearsilver
  name = schunk_powercube_chain
@@ -153,5 +153,3 @@ ptp_vel: 0.4 # rad/sec
 ptp_acc: 0.1 # rad/sec^2
 max_error: 0.2 # rad
 ```
-
-

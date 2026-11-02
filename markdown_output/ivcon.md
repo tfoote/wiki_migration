@@ -10,5 +10,3 @@ This is a thirdparty package with
 ```
 rosrun ivcon ivcon `rospack find gazebo_worlds`/meshes/000.580.67.obj 000.580.67.stlb
 ```
-
-

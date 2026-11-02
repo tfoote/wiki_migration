@@ -1,6 +1,7 @@
 ## Details
 
-The [scan_to_cloud_converter](scan_to_cloud_converter) converts
+The scan_to_cloud_converter
+converts
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 to
 [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)

@@ -15,5 +15,5 @@ modprobe.
 
 This driver is largely derived from the older Point Grey/Flycapture SDK,
 and the
-[troubleshooting suggestions](pointgrey_camera_driver#Troubleshooting)
+[troubleshooting suggestions](https://index.ros.org/p/pointgrey_camera_driver)
 on that wiki page may be relevant.

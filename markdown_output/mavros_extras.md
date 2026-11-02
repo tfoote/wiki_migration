@@ -1,7 +1,7 @@
 ## Overview
 
 This package provides additional nodes and plugins not included to
-[mavros](mavros).
+[mavros](https://index.ros.org/p/mavros).
 
 ## Nodes
 
@@ -153,7 +153,7 @@ optional arguments:
 ## Plugins
 
 Extra set of communication plugins loaded by
-[mavros_node](mavros#mavros_node).
+[mavros_node](https://index.ros.org/p/mavros).
 
 
 
@@ -322,5 +322,3 @@ node.3 {
  }
 }
 ```
-
-

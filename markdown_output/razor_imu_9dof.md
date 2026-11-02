@@ -199,7 +199,7 @@ under `"Tools"` \&rarr; `"Serial Monitor"`. Set it to 57600 baud
 and send the string "#o1" to the AHRS. You should get output that
 looks like this:
 
-![](attachment:Serial-Monitor.png)
+![attachment:Serial-Monitor.png](doc/Serial-Monitor.png)
 
 The three numbers represent YPR (Yaw, Pitch, and Roll) in degrees.
 
@@ -215,8 +215,8 @@ roslaunch razor_imu_9dof razor-pub-and-display.launch
  You should
 see a display like this:
 
-![](attachment:3DVisualizationGui.png)
-![](attachment:3DVisualizationGui2.png)
+![attachment:3DVisualizationGui.png](doc/3DVisualizationGui.png)
+![attachment:3DVisualizationGui2.png](doc/3DVisualizationGui2.png)
 
 ### Echo the Imu Messages
 
@@ -393,7 +393,7 @@ coordinate system, i.e. moving and rotating with the sensor.
 - In a mostly undistorted environment this could look something like
   this:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_1a.png)
+![attachment:Hard_and_Soft_Iron_Calibration_1a.png](doc/Hard_and_Soft_Iron_Calibration_1a.png)
 
 - Hit `SPACE` and watch the *Processing* console - you'll find some
   lines of code that you have to put into the firmware under `"USER
@@ -411,28 +411,28 @@ calibration.
 
 Ellipsoid fit and corrected values:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_1b.png)
-![](attachment:Hard_and_Soft_Iron_Calibration_1c.png)
+![attachment:Hard_and_Soft_Iron_Calibration_1b.png](doc/Hard_and_Soft_Iron_Calibration_1b.png)
+![attachment:Hard_and_Soft_Iron_Calibration_1c.png](doc/Hard_and_Soft_Iron_Calibration_1c.png)
 
 #### Another calibration example: Soft iron gives a sphere scaled and distorted into an ellipsoid.
 
 - Sampled raw magnetometer values:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_2a.png)
+![attachment:Hard_and_Soft_Iron_Calibration_2a.png](doc/Hard_and_Soft_Iron_Calibration_2a.png)
 
 - Ellipsoid fit and corrected values:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_2b.png)![](attachment:Hard_and_Soft_Iron_Calibration_2c.png)
+![attachment:Hard_and_Soft_Iron_Calibration_2b.png](doc/Hard_and_Soft_Iron_Calibration_2b.png)![attachment:Hard_and_Soft_Iron_Calibration_2c.png](doc/Hard_and_Soft_Iron_Calibration_2c.png)
 
 #### Another calibration example: Hard iron gives an offset sphere.
 
 - Sampled raw magnetometer values:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_3a.png)
+![attachment:Hard_and_Soft_Iron_Calibration_3a.png](doc/Hard_and_Soft_Iron_Calibration_3a.png)
 
 - Ellipsoid fit and corrected values:
 
-![](attachment:Hard_and_Soft_Iron_Calibration_3b.png)![](attachment:Hard_and_Soft_Iron_Calibration_3c.png)
+![attachment:Hard_and_Soft_Iron_Calibration_3b.png](doc/Hard_and_Soft_Iron_Calibration_3b.png)![attachment:Hard_and_Soft_Iron_Calibration_3c.png](doc/Hard_and_Soft_Iron_Calibration_3c.png)
 
 ## Hints and Known Bugs
 

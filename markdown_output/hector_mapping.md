@@ -30,11 +30,13 @@ available
 To use `hector_mapping`, you need a source of
 [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
 data (for example a Hokuyo UTM-30LX LIDAR or bagfiles). The node uses
-[tf](tf) for transformation of scan data, so the LIDAR does not have to
-be fixed related to the specified base frame. Odometry data is not
-needed.
+[tf](https://index.ros.org/p/tf) for transformation of scan data, so the
+LIDAR does not have to be fixed related to the specified base frame.
+Odometry data is not needed.
 
 ## ROS API
+
+<a id="NodeApi"></a>
 
 
 
@@ -251,5 +253,3 @@ desc = The name of the odom frame.
   }
  }
 ```
-
-

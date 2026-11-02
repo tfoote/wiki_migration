@@ -73,7 +73,7 @@ roslaunch leo_example_object_detection detector.launch config_file:=<path_to_con
 
 ## ROS API
 
-
+<a id="rosapi"></a> 
 
 ```clearsilver
 name= object_detector
@@ -108,5 +108,3 @@ param {
   }
 }
 ```
-
-

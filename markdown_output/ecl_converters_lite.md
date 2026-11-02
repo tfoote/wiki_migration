@@ -22,7 +22,7 @@ using ecl::from_byte_array;
 Take char when using the byte arrays to make sure that the required
 number of chars is available for the conversion. There is no way of
 catching this error except via segfault. For robust converters, see
-[ecl_converters](ecl_converters).
+[ecl_converters](https://index.ros.org/p/ecl_converters).
 
 
 
@@ -33,5 +33,3 @@ unsigned char u_minus_two[4] = { 0xfe, 0xff, 0xff, 0xff };
 ecl::from_byte_array(value,minus_two);  // value=-2
 ecl::from_byte_array(value,u_minus_two); // value=-2
 ```
-
-

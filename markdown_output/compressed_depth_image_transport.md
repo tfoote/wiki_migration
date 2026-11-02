@@ -1,24 +1,24 @@
 ## Overview
 
 `compressed_depth_image_transport` is a plugin package for
-[image_transport](image_transport). It enables any node using
-`image_transport` classes to publish and subscribe to compressed depth
-image/map topics. Compression parameters can be changed on the fly using
-the dynamic_reconfigure package.
+[image_transport](https://index.ros.org/p/image_transport). It enables
+any node using `image_transport` classes to publish and subscribe to
+compressed depth image/map topics. Compression parameters can be changed
+on the fly using the dynamic_reconfigure package.
 
 `compressed_depth_image_transport` works only with floating-point or
 16-bit integer encoded depth images.
 
-**`'Before reading this page, make sure you understand the [[image_transport]] package`**'
+**`'Before reading this page, make sure you understand the [[https://index.ros.org/p/image_transport|image_transport]] package`**'
 
 ## Tutorials
 
-See [image_transport/Tutorials](image_transport/Tutorials) for general
+See [Tutorials](https://index.ros.org/p/image_transport) for general
 instruction on using `image_transport`.
 `compressed_depth_image_transport` works similar to
 `compressed_image_transport` which is featured in the
 `image_transport` tutorial
-[Examining the Simple Image Publisher and Subscriber](image_transport/Tutorials/ExaminingImagePublisherSubscriber).
+[Examining the Simple Image Publisher and Subscriber](https://index.ros.org/p/image_transport).
 
 ## ROS API
 
@@ -108,5 +108,3 @@ sub {
   0.desc = Compressed depth transport subtopic.
 }
 ```
-
-

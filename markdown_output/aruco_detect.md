@@ -155,5 +155,3 @@ param {
   19.default= 0.01
   19.type= double
 ```
-
-

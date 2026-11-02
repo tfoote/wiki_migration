@@ -1,6 +1,6 @@
 ## The Mia Hand
 
-![\|height="740px"](attachment:miahand1.png)
+![height="740px"](doc/miahand1.png)
 
 **Mia** is a robotic anthropomorphic end-effector, suitable in: flexible
 manufacturing plants, social and/or humanoid collaborative robots,
@@ -99,4 +99,4 @@ Research and Innovation within
 mAniPulation of defoRmable materIaLs in manufacturing processes, number:
 870142).
 
-![\|width="300px"](attachment:APRIL.png)
+![width="300px"](doc/APRIL.png)

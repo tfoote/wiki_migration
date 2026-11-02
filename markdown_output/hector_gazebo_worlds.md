@@ -12,4 +12,4 @@ gazebo simulation. The following is a list of available launch files:
   SICK robot day 2014 scenario
 
 Example screenshot of the rolling terrain world:
-![\|width=720](attachment:rolling_hills_example_gazebo.jpg)
+![width=720](doc/rolling_hills_example_gazebo.jpg)

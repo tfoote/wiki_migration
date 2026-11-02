@@ -6,7 +6,7 @@ easy way to publish on a ROS Image topic (including camera info) usb
 cams, ethernet cameras, video streams or video files. It also supports
 flipping of images and fps throttling.
 
-![\|width=600](attachment:screenshot_usage.png)
+![width=600](doc/screenshot_usage.png)
 
 ## Usage
 

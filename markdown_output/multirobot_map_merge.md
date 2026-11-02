@@ -6,7 +6,7 @@ as ROS topics. If your run multiple robots under the same ROS master
 then `multirobot_map_merge` will probably work for you out-of-the-box.
 It is also very easy to setup an simulation experiment.
 
-![\|width="755px"](attachment:screenshot.jpg)
+![width="755px"](doc/screenshot.jpg)
 
 If your run your robots under multiple ROS masters you need to run your
 own way of communication between robots and provide maps from robots on
@@ -23,7 +23,7 @@ between robots.
 `multirobot_map_merge` finds robot maps dynamically and new robots can
 be added to system at any time.
 
-![\|width="755px"](attachment:architecture.svg)
+![width="755px"](doc/architecture.svg)
 
 To make this dynamic behaviour possible there are some constrains placed
 on robots. First all robots must publish map under
@@ -50,7 +50,8 @@ This is preferred mode whenever you are able to determine exact starting
 point for each robot. You need to provide initial position for each
 robot. You need to provide set of
 `<robot_namespace>/map_merge/init_pose` parameters. These positions
-should be in `world_frame`. See [#ROS API](#ROS API).
+should be in `world_frame`. See
+[ROS API](#ros-api).
 
 In this merging these parameters are mandatory. If any of the required
 parameters is missing robot won't be considered for merging (you will

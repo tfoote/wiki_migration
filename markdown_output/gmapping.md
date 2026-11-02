@@ -9,9 +9,10 @@ for details on many of the parameters listed below.
 To use `slam_gmapping`, you need a mobile robot that provides odometry
 data and is equipped with a horizontally-mounted, fixed, laser
 range-finder. The `slam_gmapping` node will attempt to transform each
-incoming scan into the `odom` (odometry) [tf](tf) frame. See the
-"[Required tf transforms](#Required_tf_Transforms)" for more on
-required transforms.
+incoming scan into the `odom` (odometry)
+[tf](https://index.ros.org/p/tf) frame. See the
+"Required tf transforms"
+for more on required transforms.
 
 ## Example
 
@@ -241,4 +242,20 @@ rosrun gmapping slam_gmapping scan:=base_scan
  }
 ```
 
+## Troubleshooting
 
+### Errors when using gmapping
+
+#### Exmaple Error: ERROR NAME
+
+**Example:** 
+
+```
+the error output the user will see on the console
+```
+
+
+
+**Solution:**
+
+- Is something not connected? No device is connected.

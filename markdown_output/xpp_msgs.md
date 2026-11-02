@@ -4,7 +4,7 @@
 ## Message Types
 
 Each of the messages has a corresponding C++ class and conversion
-from/to it defined in [xpp_states](xpp_states).
+from/to it defined in [xpp_states](https://index.ros.org/p/xpp_states).
 
 ## Feedback
 

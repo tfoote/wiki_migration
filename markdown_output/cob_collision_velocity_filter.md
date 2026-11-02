@@ -10,12 +10,14 @@ rectangular footprints at the moment.
 ## Hardware Requirements
 
 To use this package you need either need a real or a simulated
-Care-O-Bot (see [cob_bringup](cob_bringup) and
-[cob_bringup_sim](cob_bringup_sim) respectively).
+Care-O-Bot (see [cob_bringup](https://index.ros.org/p/cob_bringup) and
+[cob_bringup_sim](https://index.ros.org/p/cob_bringup_sim)
+respectively).
 
 ## ROS API
 
-The [cob_collision_velocity_filter](cob_collision_velocity_filter)
+The
+cob_collision_velocity_filter
 package provides a configurable node for collision avoidance using
 teleoperation devices 
 
@@ -132,20 +134,21 @@ roslaunch cob_bringup base_collision_observer.launch
 ```
 
  This launches the required rolling window
-[costmap_2d](costmap_2d) as well as the optional
-[cob_footprint_observer](cob_footprint_observer). If you don't want to
-use the [cob_footprint_observer](cob_footprint_observer) simply comment
-or delete the respective lines in the launch file. For including the
-`collision_velocity_filter` in your overall launch file use
-
+[costmap_2d](https://index.ros.org/p/costmap_2d) as well as the optional
+[cob_footprint_observer](https://index.ros.org/p/cob_footprint_observer).
+If you don't want to use the
+[cob_footprint_observer](https://index.ros.org/p/cob_footprint_observer)
+simply comment or delete the respective lines in the launch file. For
+including the `collision_velocity_filter` in your overall launch file
+use 
 
 ```
 <include file=$(find cob_bringup/tools/base_collision_observer.launch />
 ```
 
  A sample parameter file for the
-[cob_collision_velocity_filter](cob_collision_velocity_filter) can look
-like this: 
+cob_collision_velocity_filter
+can look like this: 
 
 ```
 #where to look for costmap parameters
@@ -167,5 +170,3 @@ obstacle_damping_dist: 1.0 # used as slow-down dist
 stop_threshold: 0.1 #[m]
 use_circumscribed_threshold: 0.2 #[rad/s]
 ```
-
-

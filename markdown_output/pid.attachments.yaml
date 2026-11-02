@@ -1,0 +1,6 @@
+doc/diff_drv_graph.png: pages/pid/attachments/diff_drv_graph.png
+doc/diff_drv_plot.png: pages/pid/attachments/diff_drv_plot.png
+doc/filtering.png: pages/pid/attachments/filtering.png
+doc/pid_graph.png: pages/pid/attachments/pid_graph.png
+doc/servo_plot.png: pages/pid/attachments/servo_plot.png
+doc/servo_reconfigure.png: pages/pid/attachments/servo_reconfigure.png

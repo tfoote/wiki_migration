@@ -13,7 +13,7 @@ there may be usability issues with the nodes.
 ## ROS API
 
 Overview of how the nodes interact with the robot sensor stream:
-[ {{attachment:overview.gif}}](attachment:overview.gif )
+[ {{doc/overview.gif\|attachment:overview.gif}}](doc/overview.gif)
 
 **Note**: All nodes assume that `<gripper_motor_name>` is either
 `r_gripper_motor` or `l_gripper_motor`.
@@ -46,7 +46,7 @@ sub{
 
  Example of `view_fingertip_pressure` GUI:
 
-[ {{attachment:fingertip_sensors_panel.png}}](attachment:fingertip_sensors_panel.png)
+[ {{doc/fingertip_sensors_panel.png\|attachment:fingertip_sensors_panel.png}}](doc/fingertip_sensors_panel.png)
 
 
 ```clearsilver
@@ -118,4 +118,33 @@ $ roscd pr2_gazebo
 $ roslaunch pr2_empty.launch
 ```
 
+## Troubleshooting
 
+### Errors when using fingertip_pressure
+
+#### No Data From Sensors
+
+Use [rostopic](https://index.ros.org/p/rostopic) to check if the sensors
+are properly publishing data.
+
+
+
+```
+rostopic echo pressure/r_gripper_motor
+```
+
+
+
+If the data for pressure contains only "0" or "-1" values, then the
+tip sensors are not properly hooked up. You'll need to check your
+connections.
+
+#### No Data Displayed By Visual Tools
+
+The visual tools in this package always look for messages on the *right*
+gripper motor. If you are looking for data from the left gripper, you
+will have to remap the topics.
+
+You can check if the topic is properly remapped by running
+"[rosnode](https://index.ros.org/p/rosnode) info" on the viewer, or
+"[rostopic](https://index.ros.org/p/rostopic) info" on the topic.

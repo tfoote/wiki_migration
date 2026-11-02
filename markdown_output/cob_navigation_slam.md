@@ -1,8 +1,9 @@
 ## Overview
 
-This package contains launch files for the [move_base](move_base) and
-[gmapping](gmapping) nodes meant to be run in an application that
-requires SLAM-based global navigation.
+This package contains launch files for the
+[move_base](https://index.ros.org/p/move_base) and
+[gmapping](https://index.ros.org/p/gmapping) nodes meant to be run in an
+application that requires SLAM-based global navigation.
 
 ## Applications
 
@@ -11,7 +12,8 @@ requires SLAM-based global navigation.
 - **`launch/2dnav_ros_dwa.launch`**: Starts global navigation with the
   DWA local planner and SLAM.
 - **`launch/2dnav_linear.launch`**: Starts global navigation with the
-  simple linear navigation [cob_linear_nav](cob_linear_nav) and SLAM.
+  simple linear navigation
+  [cob_linear_nav](https://index.ros.org/p/cob_linear_nav) and SLAM.
 
 Furthermore it holds a launch file for the internal SLAM algorithm of
 Fraunhofer IPA.

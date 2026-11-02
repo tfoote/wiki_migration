@@ -9,4 +9,4 @@ It can be used either to:
 
 Find out more here: <https://github.com/facontidavide/PlotJuggler>
 
-![](attachment:PlotJuggler.gif)
+![attachment:PlotJuggler.gif](doc/PlotJuggler.gif)

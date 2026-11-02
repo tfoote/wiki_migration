@@ -1,18 +1,18 @@
 ## Overview
 
 `theora_image_transport` is a plugin package for
-[image_transport](image_transport). It enables any node using
-`image_transport` classes to publish and subscribe to image topics
-compressed over the wire using the Theora video codec.
+[image_transport](https://index.ros.org/p/image_transport). It enables
+any node using `image_transport` classes to publish and subscribe to
+image topics compressed over the wire using the Theora video codec.
 
 `theora_image_transport` only works with 8-bit color or grayscale
 images.
 
-**`'Before reading this page, make sure you understand the [[image_transport]] package`**'
+**`'Before reading this page, make sure you understand the [[https://index.ros.org/p/image_transport|image_transport]] package`**'
 
 ## Tutorials
 
-See [image_transport/Tutorials](image_transport/Tutorials) for general
+See [Tutorials](https://index.ros.org/p/image_transport) for general
 instruction on using `image_transport`.
 
 ## ROS API
@@ -105,5 +105,3 @@ sub {
 ```
 $ rosrun theora_image_transport ogg_saver image:=<base_topic> [output_file.ogv]
 ```
-
-

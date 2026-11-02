@@ -13,10 +13,11 @@ rosrun leo_teleop key_teleop
 ```
 
  This
-will run the [teleop_twist_keyboard](teleop_twist_keyboard) node (with
-some parameters set) which will print the key mapping at the start. For
-best performance, set the keyboard repeat delay on your system below
-300ms.
+will run the
+[teleop_twist_keyboard](https://index.ros.org/p/teleop_twist_keyboard)
+node (with some parameters set) which will print the key mapping at the
+start. For best performance, set the keyboard repeat delay on your
+system below 300ms.
 
 To control the robot with a joystick, use: 
 
@@ -44,4 +45,4 @@ mapping was created for Xbox 360 Controller and it looks as follows:
 
 If you would like to use custom mapping, set the `joy_config_file`
 argument to a path of a YAML file containing parameters for
-[teleop_twist_joy](teleop_twist_joy) node.
+[teleop_twist_joy](https://index.ros.org/p/teleop_twist_joy) node.

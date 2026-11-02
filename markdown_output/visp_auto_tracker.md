@@ -22,8 +22,8 @@ detection and localization stage.
 
 The package is composed of one node called `visp_auto_tracker`. This
 node tries to track the object as fast as possible. The viewer coming
-with [visp_tracker](visp_tracker) package can be used to monitor the
-tracking result.
+with [visp_tracker](https://index.ros.org/p/visp_tracker) package can be
+used to monitor the tracking result.
 
 The next video shows how to track a specific pattern textured with a
 QRcode. ViSP model-based tracker detects when it fails and recover the
@@ -38,9 +38,11 @@ object position thanks to QRcode detection.
 
 ## Calibration Requirements
 
-Currently the [visp_auto_tracker](visp_auto_tracker) package requires
-calibration information from a camera_info topic. To this end
-[visp_camera_calibration](visp_camera_calibration) package can be used.
+Currently the visp_auto_tracker
+package requires calibration information from a camera_info topic. To
+this end
+[visp_camera_calibration](https://index.ros.org/p/visp_camera_calibration)
+package can be used.
 
 ## Features
 
@@ -52,20 +54,20 @@ box.
 This is an example of a valid QR-code pattern that can be downloaded
 [here](https://github.com/lagadic/vision_visp/releases/download/vision_visp-0.5.0/template-qr-code.pdf).
 
-![](attachment:template-qr-code-small.png)
+![attachment:template-qr-code-small.png](doc/template-qr-code-small.png)
 
 This is an example of a valid flash-code pattern that can be downloaded
 [here](https://github.com/lagadic/vision_visp/releases/download/vision_visp-0.5.0/template-flash-code.pdf).
 
-![](attachment:template-flash-code-small.png)
+![attachment:template-flash-code-small.png](doc/template-flash-code-small.png)
 
 ## Installation
 
-[visp_auto_tracker](visp_auto_tracker) is part of
-[vision_visp](vision_visp) stack.
+visp_auto_tracker is part of
+[vision_visp](https://index.ros.org/p/vision_visp) stack.
 
-- To install [visp_auto_tracker](visp_auto_tracker) package run
-  
+- To install visp_auto_tracker package
+  run 
 
 ```
 sudo apt-get install ros-$ROS_DISTRO-visp-auto-tracker
@@ -85,13 +87,14 @@ sudo apt-get install ros-$ROS_DISTRO-vision-visp
 
 ## Examples
 
-You can run [visp_auto_tracker](visp_auto_tracker) on a pre-recorded bag
-file that comes with the package, or on a live video from a camera.
+You can run visp_auto_tracker on a
+pre-recorded bag file that comes with the package, or on a live video
+from a camera.
 
 ### Pre-recorded example
 
-To run [visp_auto_tracker](visp_auto_tracker) on a pre-recorded image
-sequence, just run:
+To run visp_auto_tracker on a
+pre-recorded image sequence, just run:
 
 
 
@@ -122,8 +125,8 @@ roslaunch launch/tracklive_firewire.launch
 
 ## Config file
 
-[visp_auto_tracker](visp_auto_tracker) centralises most of its
-parameters inside a configuration file following the
+visp_auto_tracker centralises most of
+its parameters inside a configuration file following the
 [boost::program_options](http://www.boost.org/doc/libs/1_52_0/doc/html/program_options.html)
 default format.
 
@@ -254,19 +257,20 @@ states used:
 
 When you track a model, you probably want a visual feedback. You can get
 one by connecting rviz to the outputed `/object_position` topic.
-[visp_auto_tracker](visp_auto_tracker) does not have a dedicated viewer.
-It can use the viewer provided with [visp_tracker](visp_tracker)
-package, specifically `visp_tracker/visp_tracker_viewer` node.
+visp_auto_tracker does not have a
+dedicated viewer. It can use the viewer provided with
+[visp_tracker](https://index.ros.org/p/visp_tracker) package,
+specifically `visp_tracker/visp_tracker_viewer` node.
 
 Without connecting another node, you can also open a debug graphical
 output directly from the `visp_auto_tracker` node by setting the
 `debug_display` parameter.
 
 The following figure shows the debug output (left) next to the external
-[visp_tracker](visp_tracker)/viewer (right) in the case of the hybrid
-model-based tracker with QR-code initialisation:
+[visp_tracker](https://index.ros.org/p/visp_tracker)/viewer (right) in
+the case of the hybrid model-based tracker with QR-code initialisation:
 
-![](attachment:tracker_viewer-small.png)
+![attachment:tracker_viewer-small.png](doc/tracker_viewer-small.png)
 
 ## Nodes
 

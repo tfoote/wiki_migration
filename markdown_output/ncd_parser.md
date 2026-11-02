@@ -1,24 +1,25 @@
-![](attachment:ncd_parser.png)
+![attachment:ncd_parser.png](doc/ncd_parser.png)
 
 ## Details
 
-The [ncd_parser](ncd_parser) package reads in .alog data files from the
-New College Dataset and broadcasts the data in ROS. The messages are
-broadcast in real time. Currently, the data extracted includes the
-odometry of the robot and the readings from the left and right SICK
-laser scanners. Additional transforms are provided between the odometric
-frame and the two lasers, as described in the NCD paper.
+The ncd_parser package reads in .alog data
+files from the New College Dataset and broadcasts the data in ROS. The
+messages are broadcast in real time. Currently, the data extracted
+includes the odometry of the robot and the readings from the left and
+right SICK laser scanners. Additional transforms are provided between
+the odometric frame and the two lasers, as described in the NCD paper.
 
-To use the [ncd_parser](ncd_parser), you need to obtain an .alog file
-from the New College Dataset
+To use the ncd_parser, you need to obtain an
+.alog file from the New College Dataset
 [ website](http://www.robots.ox.ac.uk/NewCollegeData/ ).
 
 ## Example
 
-You can run the [ncd_parser](ncd_parser) on a small .alog file included
-in the package for demo purposes. First, make sure you have the
-[scan_tools](scan_tools) stack downloaded and installed by following the
-instructions [here](scan_tools#Installing).
+You can run the ncd_parser on a small .alog
+file included in the package for demo purposes. First, make sure you
+have the [scan_tools](https://index.ros.org/p/scan_tools) stack
+downloaded and installed by following the instructions
+[here](https://index.ros.org/p/scan_tools).
 
 Next, make sure you have the necessary tools installed:
 

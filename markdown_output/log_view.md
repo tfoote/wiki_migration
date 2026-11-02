@@ -2,7 +2,7 @@
 
 log_viewer is an ncurses text UI for viewing rosout logs.
 
-![](attachment:log_viewer.gif)
+![attachment:log_viewer.gif](doc/log_viewer.gif)
 
 ### Motivation
 
@@ -82,4 +82,4 @@ enabling/disabling the log level and node filters. Due to a bug in the
 currently distributed version of ncurses, mousewheel scrolling only
 works in the up direction.
 
-![](attachment:log_viewer2.gif)
+![attachment:log_viewer2.gif](doc/log_viewer2.gif)

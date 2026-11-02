@@ -1,20 +1,22 @@
 ## Overview
 
-![\|width="100%"](attachment:witmotion.jpg)
+![width="100%"](doc/witmotion.jpg)
 
 This package implements a ROS 1 wrapper for
 [Witmotion IMU driver library](https://github.com/ElettraSciComp/witmotion_IMU_QT).
 It reads the data from the family of TTL-compatible inertial pose
 estimation units (IMUs) manufactured by
 [WitMotion Shenzhen Co.,Ltd](https://www.wit-motion.com) publishing the
-information in a ROS-native way using [sensor_msgs](sensor_msgs),
-[geometry_msgs](geometry_msgs) and [std_msgs](std_msgs) message
-definition packages. The port access model is implemented in a
-monopolistic way according to UNIX specifications, so only one instance
-of the module can be executed for the dedicated virtual device. The
-library allows programming of any control over the Witmotion sensors.
-There is native support for baud rates up to 115200 baud, and polling
-frequencies up to 200 Hz. Please refer to the
+information in a ROS-native way using
+[sensor_msgs](https://index.ros.org/p/sensor_msgs),
+[geometry_msgs](https://index.ros.org/p/geometry_msgs) and
+[std_msgs](https://index.ros.org/p/std_msgs) message definition
+packages. The port access model is implemented in a monopolistic way
+according to UNIX specifications, so only one instance of the module can
+be executed for the dedicated virtual device. The library allows
+programming of any control over the Witmotion sensors. There is native
+support for baud rates up to 115200 baud, and polling frequencies up to
+200 Hz. Please refer to the
 [example controller application](https://github.com/ElettraSciComp/witmotion_IMU_QT/blob/main/src/wt31n-control.cpp)
 to learn how to program a sensor that is not supported now.
 
@@ -422,7 +424,8 @@ rosrun witmotion_ros message-enumerator -d ttyUSB0 -b 115200 -p 10
 ## Troubleshooting
 
 Please refer to the dedicated
-[Troubleshooting](witmotion_ros/Troubleshooting) wiki page.
+[Troubleshooting](#troubleshooting-1) wiki
+page.
 
 ## Citation
 
@@ -508,4 +511,129 @@ Please refer to the dedicated
 }
 ```
 
+## Troubleshooting
 
+### Message builder setup
+
+If the node does not publish any IMU information, ensure at first that
+you set up **enabled** parameters properly for all the inertial
+measurements your sensor actually provides! Otherwise, the IMU data pack
+will never be considered complete and the node will not publish on the
+*imu* topic. If, for example, the WT31N sensor does not provide angular
+velocities, set the *enabled* parameter in the
+*imu_publisher/measurements/angular_velocity* config file section to
+**false**.
+
+### Absence of quaternion orientation output
+
+If *imu_publisher/use_native_orientation* parameter is set to **true**
+and the sensor does not provide orientation information in native
+quaternion format, the IMU information will *never* be published, as it
+is demonstrated in
+[this issue](https://github.com/ElettraSciComp/witmotion_IMU_ros/issues/19#issuecomment-1327865456).
+If the native quaternion is required, enable it in the sensor's
+internal settings using the controller application.
+
+### Polling interval crash
+
+If you see a lot of messages like *QSocketNotifier: Invalid socket <N>
+and type 'read', disabling\...*, check the value of the
+**polling_interval** parameter. These messages appear when the polling
+interval is too small (usually less than 20 ms), and it is not enough
+for the kernel port driver to become ready for accumulating data.
+
+### Locked configuration registers
+
+On some Witmotion sensors from the 9xx series, the configuration
+registers are "locked". These sensors require unlocking for every
+reconfiguration session, so the special command should be sent before
+any other configuration packet to let it work. According to the
+[document](https://drive.google.com/file/d/1fVVwEexoAw2FlnFOt6xPmLsHk6bXjJnV/view?usp=sharing)
+shared by Witmotion by request, the binary formulation of the command
+that should be sent to "unlock" the configuration registers is the
+following (5 bytes should be sent via UART channel): 0xFF 0xAA 0x69 0x88
+0xB5
+
+### Non-standard baudrates
+
+The baud rates over 256000 baud are considered non-standard and they are
+not supported officially by the underlying Qt backend. However, the
+official Windows controller application by Witmotion
+[allows to set up the baudrate to values up to 921600 baud](https://github.com/ElettraSciComp/witmotion_IMU_ros/issues/20#issuecomment-1369174406).
+If this was occasionally done, and the node cannot connect to the
+sensor, the user is strongly advised to reduce the baud rate via the
+same Windows controller application to 115200 baud and then try to run
+the node again.
+
+### Distinguish between several identical USB devices
+
+This case usually happens when several sensors (not always they are
+identical themselves) are connected to the same machine via identical
+USB-to-serial adaptors. Linux kernel does not have ID persistence policy
+when the USB devices are enumerated during the boot, so the referral
+paths like `/dev/ttyUSB0`, `/dev/ttyUSB1` may easily change on the
+next boot when the identical device is connected to the same machine on
+the different USB port, despite the physical ports themselves are never
+changed.
+
+To distinguish between such devices there are several ways to do. The
+most convenient way is to find a detailed description of the USB
+connection the device has through `udevadm`: 
+
+```
+lsusb
+udevadm info -a -n /dev/<DEVICE> | grep -e '{serial}'
+```
+
+
+The output will include a list of vendor IDs, product IDs and the serial
+numbers assigned to the device. Repeating this for all the devices
+connected to the machine, the different serial numbers would be
+revealed. Then the `udev` rules list could be created as something
+like this: 
+
+```
+SUBSYSTEM=="tty", ATTRS{idVendor}=="<VendorID>", ATTRS{idProduct}=="<ProductID>", ATTRS{serial}=="<SerialNumber>", SYMLINK+="device_name"
+```
+
+ This will create the dedicated
+virtual file with the name `/dev/device_name` persistent for the
+device with the mentioned `SerialNumber`. However, some cheap devices
+(especially, USB-RS232 adaptors) do not have identical serial numbers,
+so this approach is not always usable.
+
+------------------------------------------------------------------------
+
+The second approach is to examine the USB bus ID assigned to the device:
+
+
+```
+lsusb -tvv
+```
+
+ This will show the tree of USB bus connections
+with paths assigned in `/dev/bus` and `/sys/bus` namespaces. Then it
+is possible to access the device directly by the listed path.
+
+------------------------------------------------------------------------
+
+The third approach is to examine the driver subsystem name to
+distinguish the devices by a unique name. To do that, examine the
+`/dev` directory for subdirectories created by the driver, like, for
+example, `serial/` for TTY devices, or `v4l/` for web cameras. Then
+enter the subdirectory to access the device by its persistent ID, like
+this: 
+
+```
+/dev/v4l/by-id/usb-046d_HD_Pro_Webcam_C920_919E375F-video-index0
+```
+
+
+
+
+
+```wiki
+The approaches described here are '''not portable!'''
+
+All the described approaches described here to distinguish between several identical USB devices are not portable. Usage of them makes the setup always machine-specific. Please thoroughly revise your setup and enumerate your devices correctly to avoid changing IDs and indices!
+```

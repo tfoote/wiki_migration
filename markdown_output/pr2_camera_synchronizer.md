@@ -2,23 +2,28 @@
 
 This section gives an overview of the PR2's camera systems. Some
 readers may want to skip directly to
-[the following section](#UsingOnThePr2) for a more practical discussion
-of how to use the robot's cameras, or to the [ROS API](#ROS_API) for a
+[the following section](#UsingOnThePr2)
+for a more practical discussion of how to use the robot's cameras, or
+to the [ROS API](#ros-api) for a
 detailed description of the pr2_camera_synchronizer parameters.
 
 ### Hardware Components
 
-![The robot's cameras\|align="right"](attachment:PR2Cameras.png)
+![The robot's cameras](doc/PR2Cameras.png)
 
 The following hardware components are involved in producing vision data
 on the PR2:
 
-- A color [wge100](wge100_camera) camera on each forearm.
-- A wide field-of-view color [wge100](wge100_camera) stereo camera pair
-  on the head.
-- A narrow field-of-view black and white [wge100](wge100_camera) stereo
-  camera on the head.
-- A high resolution GC2450C [Prosilica](prosilica_camera) camera on the
+- A color [wge100](https://index.ros.org/p/wge100_camera) camera on each
+  forearm.
+- A wide field-of-view color
+  [wge100](https://index.ros.org/p/wge100_camera) stereo camera pair on
+  the head.
+- A narrow field-of-view black and white
+  [wge100](https://index.ros.org/p/wge100_camera) stereo camera on the
+  head.
+- A high resolution GC2450C
+  [Prosilica](https://index.ros.org/p/prosilica_camera) camera on the
   head.
 - A texture projector on the head to project a texture on objects that
   are being viewed by the stereo cameras.
@@ -53,30 +58,38 @@ system constraints:
   Prosilica camera is connected to an inhibit input on the texture
   projector controller board to allow this inhibition to occur.
 
-[![Overview of the Camera Systems\|width="750"](attachment:CameraOverview.png)](attachment:CameraOverview.png)
+[![Overview of the Camera Systems](doc/CameraOverview.png)](doc/CameraOverview.png)
 
 ### Software Components
 
 The variety of hardware components involved implies that a variety of
 software components are involved in producing camera images:
 
-- A [wge100_camera_node](wge100_camera) per WGE100 camera.
-- A [wge100_multi_configurator](wge100_camera) for each stereo pair,
-  which replicates its parameters to each camera's driver.
-- A [prosilica_node](prosilica_camera) for the Prosilica camera.
-- [pr2_controller_manager](pr2_controller_manager) with suitable
-  controllers running:
-- One [MultiTriggerController](ethercat_trigger_controllers) per WGE100
-  camera trigger line. I.e., one for each forearm camera, and one for
-  both of the stereo cameras.
-- Two [MultiTriggerController](ethercat_trigger_controllers) for the
-  projector, one to trigger the projector and one to determine whether
-  to activate inhibition by the prosilica camera.
-- One [ProjectorController](ethercat_trigger_controllers) to enable the
-  projector.
+- A [wge100_camera_node](https://index.ros.org/p/wge100_camera) per
+  WGE100 camera.
+- A [wge100_multi_configurator](https://index.ros.org/p/wge100_camera)
+  for each stereo pair, which replicates its parameters to each
+  camera's driver.
+- A [prosilica_node](https://index.ros.org/p/prosilica_camera) for the
+  Prosilica camera.
+- [pr2_controller_manager](https://index.ros.org/p/pr2_controller_manager)
+  with suitable controllers running:
+- One
+  [MultiTriggerController](https://index.ros.org/p/ethercat_trigger_controllers)
+  per WGE100 camera trigger line. I.e., one for each forearm camera, and
+  one for both of the stereo cameras.
+- Two
+  [MultiTriggerController](https://index.ros.org/p/ethercat_trigger_controllers)
+  for the projector, one to trigger the projector and one to determine
+  whether to activate inhibition by the prosilica camera.
+- One
+  [ProjectorController](https://index.ros.org/p/ethercat_trigger_controllers)
+  to enable the projector.
 - A pr2_camera_syncronizer node in charge of setting the triggers and
   camera drivers into triggering states that are consistent with the
   user's desires.
+
+<a id="UsingOnThePr2"></a>
 
 ## Working With the WGE100 Cameras on the PR2
 
@@ -93,14 +106,15 @@ state.
 
 This section shows how to use the `reconfigure_gui` to set these
 parameters, they can be set just as easily using any other
-[dynamic_reconfigure](dynamic_reconfigure) mechanism as demonstrated in
-[these tutorials](dynamic_reconfigure/Tutorials).
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+mechanism as demonstrated in
+[these tutorials](https://index.ros.org/p/dynamic_reconfigure).
 
 ### Setting Frame Rates and Projector Modes via the Synchronizer
 
 Frame rates and projector modes should be set using
-[dynamic_reconfigure](dynamic_reconfigure) on the
-pr2_camera_synchronizer_node. For <example:
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure) on
+the pr2_camera_synchronizer_node. For <example:
 
 ```
 $ rosrun dynamic_reconfigure reconfigure_gui /camera_synchronizer_node
@@ -110,14 +124,15 @@ $ rosrun dynamic_reconfigure reconfigure_gui /camera_synchronizer_node
 
 The synchronizer will make a best-effort attempt at using the rates and
 modes you requested, but may have to
-[round to the nearest possible rate or use a different mode](#Synchronization_Strategy).
+[round to the nearest possible rate or use a different mode](#synchronization-strategy).
 In that case, the GUI and parameter will reflect the rates and modes
 that were actually set.
 
 ### Other Camera Settings
 
 Many WGE100 settings not managed by the synchronizer can be set directly
-with the cameras by using [dynamic_reconfigure](dynamic_reconfigure). A
+with the cameras by using
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure). A
 detailed list of which parameters can be set in this way without
 conflicting with the synchronizer can be found
 [below](#SafeParameterLists).
@@ -161,6 +176,8 @@ $ rosrun dynamic_reconfigure reconfigure_gui /forearm_camera_l
 
 
 
+<a id="SafeParameterLists"></a>
+
 #### Setting Image Levels
 
 Many image level parameters can be safely set:
@@ -177,8 +194,9 @@ Many image level parameters can be safely set:
 - **Textured Image Levels**: `auto_gain_alternate`,
   `gain_alternate`, `companding`
 
-Please refer to the [wge100_camera](wge100_camera#Wge100CameraNode)
-documentation for details on what these parameters mean.
+Please refer to the
+[wge100_camera](https://index.ros.org/p/wge100_camera) documentation for
+details on what these parameters mean.
 
 #### Setting Region of Interest
 
@@ -188,8 +206,9 @@ The following parameters can be set: `width`, `height`,
 `horizontal_binning`, `vertical_binning`, `horizontal_offset`,
 `vertical_offset`, `mirror_x`, `mirror_y`, `rotate_180`.
 
-Please refer to the [wge100_camera](wge100_camera#Wge100CameraNode)
-documentation for details on what these parameters mean.
+Please refer to the
+[wge100_camera](https://index.ros.org/p/wge100_camera) documentation for
+details on what these parameters mean.
 
 Note 1: the `camera_info` stored in the camera is only valid for the
 region of interest parameters that were used when it was created. The
@@ -207,10 +226,10 @@ the **wide_stereo**, **forearm_r** and **forearm_l** namespaces, whether
 they are textured or not.
 
 To facilitate using the narrow stereo camera in
-**[AlternatingProjector](#AlternatingProjector)** mode, textured images
-from the narrow stereo camera are always published in the
-**narrow_stereo_textured** namespace, and untextured images are always
-published in the **narrow_stereo** namespace.
+**[AlternatingProjector](#AlternatingProjector)**
+mode, textured images from the narrow stereo camera are always published
+in the **narrow_stereo_textured** namespace, and untextured images are
+always published in the **narrow_stereo** namespace.
 
 ## Resetting the WGE100 Cameras
 
@@ -332,6 +351,7 @@ modes are not available for all cameras.
   projector, resulting in an untextured image. The maximum exposure time
   is set to the interval between the projector pulses. This mode is
   available on all PR2 WGE100 cameras.
+  <a id="AlternatingProjector"></a>
 - **!AlternatingProjector**: Textured and untextured frames are
   alternated. The exposure times are set as in the non-alternating
   modes. This mode is only available on the narrow stereo camera as it
@@ -345,12 +365,14 @@ In many cases, the camera frame rate must be some suitable divisor of
 the ```projector_rate```. When a user sets the frame rate for a
 camera, the synchronizer will round that rate to the nearest suitable
 rate, and report the rounded value back to the user via the
-[dynamic_reconfigure](dynamic_reconfigure) mechanism.
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+mechanism.
 
 The ```projector_rate``` is not affected by the camera settings.
 When it is set, it is simply rounded to the nearest divisor of 1 kHz.
 Again the rounded value is reported back via the
-[dynamic_reconfigure](dynamic_reconfigure) mechanism.
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+mechanism.
 
 ### Projector Waveform
 
@@ -367,7 +389,7 @@ The waveform is entirely determined by three parameters:
 - **projector_pulse_shift**: Introduces asymmetry in the pulses. It
   varies from 0 to 1 with increasing asymmetry.
 
-![](attachment:Waveform.png)
+![attachment:Waveform.png](doc/Waveform.png)
 
 The timing of the pulses is as follows, where 'T=1/projector_rate' is
 the average pulse period:
@@ -507,4 +529,16 @@ desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfig
 # End of autogenerated section. You may edit below.
 ```
 
+## Troubleshooting
 
+### I see textured light on a camera even though it is configured to be without texture.
+
+**Solution:**
+
+- Try setting the projector_tweak parameter to -0.001. This bug should
+  be corrected in an upcoming version.
+
+### Projector Doesn't Turn On
+
+The projector will only turn on if the motors are enabled. Check your
+[pr2_dashboard](pr2_dashboard) for motor status.

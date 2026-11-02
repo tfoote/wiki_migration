@@ -6,7 +6,7 @@ It is built on top of the
 [VIMBA GigE SDK](http://www.alliedvisiontec.com/emea/products/software/vimba-sdk.html),
 the latest SDK from AVT. The prior version of the SDK,
 [PvAPI](http://www.alliedvisiontec.com/emea/products/legacy.html) was
-used for [prosilica_camera](prosilica_camera)
+used for [prosilica_camera](https://index.ros.org/p/prosilica_camera)
 
 The ROS API of this package is in development. The driver node has been
 tested with the
@@ -17,9 +17,11 @@ The node should work with any AVT/Prosilica GigE camera, and we welcome
 reports of use with other cameras.
 
 For basic vision processing of camera images, see the
-[image_pipeline](image_pipeline).
+[image_pipeline](https://index.ros.org/p/image_pipeline).
 
 ## Nodes
+
+<a id="NodeAPI"></a>
 
 
 
@@ -57,5 +59,3 @@ desc=If `~ip_address` is set, the node opens the camera at that IP. If only `~gu
 }
 }
 ```
-
-

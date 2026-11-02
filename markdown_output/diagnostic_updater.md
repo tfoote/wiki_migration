@@ -58,3 +58,8 @@ the empty periods, you have to manually create a task of type
 and use it together with a
 [diagnostic_updater::FrequencyStatus](https://docs.ros.org/en/api/diagnostic_updater/html/classdiagnostic__updater_1_1FrequencyStatus.html)
 task instead of the `DiagnosedPublisher`.
+
+## Tutorials
+
+See
+[diagnostic_updater/src/example.cpp](http://docs.ros.org/api/diagnostic_updater/html/example_8cpp_source.html).

@@ -53,8 +53,8 @@ Preceed with a colon (`:02912345`) when passing this on the commandline or setti
   in meters during tag re-identification.
 - `quality`: Quality of tag detection (H, M or L).
 - `detect_inverted_tags`: Detect tags with black and white exchanged.
-- `publish_visualization`: Whether or not the [tf](tf2) and markers
-  should be published.
+- `publish_visualization`: Whether or not the
+  [tf](https://index.ros.org/p/tf2) and markers should be published.
 
 ### Services
 

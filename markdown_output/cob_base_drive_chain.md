@@ -169,4 +169,4 @@ a file; you also could imagine of keeping it temporarily in a variable
 to give the calling function the opportunity to process the data itself.
 
 How to read out data from the Elmo Recorder is described in
-[cob_canopen_motor](cob_canopen_motor).
+[cob_canopen_motor](https://index.ros.org/p/cob_canopen_motor).

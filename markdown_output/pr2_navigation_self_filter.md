@@ -12,9 +12,10 @@ Due to the fact that
 messages will soon be deprecated, the pr2_navigation_self_filter has no
 stable API. A new version of the node will be written and supported long
 term with the new !PointCloud structure, but until the
-[navigation](navigation) stack moves to support the new !PointCloud's
-this package will remain in [pr2_navigation](pr2_navigation). Overall,
-you can use this package, but its at your own risk.
+[navigation](https://index.ros.org/p/navigation) stack moves to support
+the new !PointCloud's this package will remain in
+[pr2_navigation](https://index.ros.org/p/pr2_navigation). Overall, you
+can use this package, but its at your own risk.
 
 ## New In Indigo:
 

@@ -1,17 +1,19 @@
 ## Overview
 
-This package provides a [URDF](urdf) model of
+This package provides a [URDF](https://index.ros.org/p/urdf) model of
 [Ridgeback](Robots/Ridgeback). For an example launchfile to use in
-visualizing this model, see [ridgeback_viz](ridgeback_viz).
+visualizing this model, see
+[ridgeback_viz](https://index.ros.org/p/ridgeback_viz).
 
-![](attachment:ridgeback-urdf.png)
+![attachment:ridgeback-urdf.png](doc/ridgeback-urdf.png)
 
 ## Accessories
 
 Ridgeback has a suite of optional payloads called accessories. These
 payloads can be enabled and placed on Ridgeback using environment
-variables specified at the time the [xacro](xacro) is rendered to URDF.
-Available accessory vars are:
+variables specified at the time the
+[xacro](https://index.ros.org/p/xacro) is rendered to URDF. Available
+accessory vars are:
 
   -- ---------------------------------- -- -------------------- -- ----------------------------------------------------------------------------- --
      **Variable**                          **Default**             **Description**                                                               

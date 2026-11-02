@@ -1,1 +1,78 @@
 
+
+## Tutorials
+
+- [Basics](#basics): Basic
+  knowledge on multi-device system
+
+## Basics
+
+This repository contains just few examples of how to properly set up
+several *qbrobotics®* devices to work together on ROS related
+applications.
+
+Please, refer first to the following wikis:
+
+- *[qb SoftHand](Robots/qbhand)*
+- *[qbmove](Robots/qbmove)*
+
+### Installation
+
+To install also this packages, simply clone
+`https:*bitbucket.org/qbrobotics/qbchain-ros.git` in your Catkin
+Workspace as you have done for the others. Note that there is no need to
+recompile since this repository contains only example configurations
+based on the other packages.*
+
+Actually the installation is not required. Nonetheless it is recommended
+to follow the proposed approach for your customizations to keep
+everything tidy and structured.
+
+### Usage
+
+Each system configuration has a unique name. And that name is used as
+prefix for all the configuration files:
+
+- `qb_chain_description/rviz/<unique_name>.rviz`: the
+  [rviz](https://index.ros.org/p/rviz) configuration file.
+- `qb_chain_description/urdf/<unique_name>.urdf.xacro`: the
+  [urdf](https://index.ros.org/p/urdf)/[xacro](https://index.ros.org/p/xacro)
+  model describing the physical chained system by connecting together
+  simpler device modules (and possibly other parts).
+- `qb_chain_control/launch/<unique_name>_control.launch`: the
+  launch file to start the control Node for the given chained system. Be
+  aware that this must strictly match the above URDF model of your
+  actual system, e.g. device types, joint names, \...
+- `qb_chain_control/config/<unique_name>_waypoints.yaml
+  \[optional\]`: the waypoints that the chained system must follow if
+  `use_waypoints` is set.
+
+After you have looked at the proposed examples you can launch a given
+configuration by executing: 
+
+```
+roslaunch qb_chain_control <unique_name>_control.launch
+```
+
+
+
+Every launch file has a structure close to the ones explained in details
+in *[qb SoftHand](Robots/qbhand)* and *[qbmove](Robots/qbmove)*
+packages. The only difference is that the argument `robot_hardware`
+(required by the
+[combined_robot_hw](https://index.ros.org/p/combined_robot_hw)) plays a
+crucial role when using several devices together, i.e. its names must
+match the ones of the loaded hardware interfaces to bring up everything
+correctly.
+
+On the other hand, almost all the arguments used in the single-device
+launch files hold even for the chained system. Have a look at the
+following example:
+
+![overview_launch\|width=755](https://bitbucket.org/qbrobotics/qbhand-ros/raw/ddbccc369d6846549e9b03c9dce0c2dc6c1115e1/qb_hand_media/overview_launch.svg)
+
+
+
+```wiki
+Please remember that in a multi-device configuration, each ''qbrobotics®'' device connected to your system '''must have a unique ID'''.
+```

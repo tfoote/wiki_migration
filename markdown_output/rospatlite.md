@@ -84,5 +84,3 @@ param {
   2.desc = timeout[sec] for socket connection.
 }
 ```
-
-

@@ -5,17 +5,19 @@ compatible NMEA sentences. See the
 [GPSD documentation of NMEA sentences](http://www.catb.org/gpsd/NMEA.html)
 for details on the raw format. Of the thousands of NMEA-compatible GPS
 devices, we are compiling a list of
-[devices known to be supported](nmea_navsat_driver/SupportedHardware).
+[devices known to be supported](#supportedhardware).
 
-This package is compatible with the [geographic_info](geographic_info)
-project as well as any other nodes that support
+This package is compatible with the
+[geographic_info](https://index.ros.org/p/geographic_info) project as
+well as any other nodes that support
 [sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
 and/or
 [sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html).
 
 No C++ or Python API is provided, only a ROS API.
 
-This package replaces the [nmea_gps_driver](nmea_gps_driver) package
+This package replaces the
+[nmea_gps_driver](https://index.ros.org/p/nmea_gps_driver) package
 present in Fuerte and Groovy.
 
 ## Sample Usage
@@ -157,3 +159,23 @@ checking to see if the user is part of the "dialout" group. See
 for more information.
 
 ## Report a Bug
+
+## SupportedHardware
+
+### Supported GPS Devices
+
+These GPS devices have been tested with the ROS
+nmea_navsat_driver.
+
+*Please help by adding devices you have tried and the results obtained.
+Only include sentences used by the driver as configured when you
+reported your results. Not all devices output all supported sentences
+properly.*
+
+  -- ------------ -- ----------------------------------------------------------------------------------------------------------------- -- ------ -- -------------------------------- -- ------------------- -- ------------------------------------------------------------------------------------ --
+     make            model                                                                                                                NMEA      available compatible sentences      SBAS/GBAS support      comments                                                                             
+                                                                                                                                                                                                                                                                                                    
+     Venus           [Venus634LPx](http://www.sparkfun.com/products/9133)                                                                 Yes       GGA, GSA, RMC                       SBAS                   works                                                                                
+     Garmin          [GPS 18x](https://buy.garmin.com/en-US/US/oem/sensors-and-boards/gps-18x-oem/prod27594.html)                         Yes       GGA, GSA, RMC                       SBAS                   works                                                                                
+     Septentrio      [mosaic-x5](https://www.septentrio.com/en/products/gnss-receivers/rover-base-receivers/receivers-module/mosaic)      Yes       GGA, GSA, RMC                       SBAS                   works see [this blog](https://msadowski.github.io/rtk-plug-n-play-with-septentrio)   
+  -- ------------ -- ----------------------------------------------------------------------------------------------------------------- -- ------ -- -------------------------------- -- ------------------- -- ------------------------------------------------------------------------------------ --

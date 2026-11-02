@@ -86,6 +86,22 @@ automotive_navigation_msgs:
   subdirectory: automotive_navigation_msgs
   submitted_branch: ros-wiki-migration-automotive_navigation_msgs
   tully2: ready
+automotive_platform_msgs:
+  action: create
+  branch: master
+  commit_sha: 33b5bcea705374a85df107eb52a617749f786df3
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/automotive_autonomy_msgs.git
+  markdown_file: markdown_output/automotive_platform_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/astuff/automotive_autonomy_msgs/pull/34
+  readme_exists: false
+  repository: https://github.com/astuff/automotive_autonomy_msgs.git
+  repository_archived: false
+  source_file: pages/automotive_platform_msgs/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: automotive_platform_msgs
+  submitted_branch: ros-wiki-migration-automotive_platform_msgs
+  tully2: ready
 bond:
   action: create
   branch: noetic-devel
@@ -106,4 +122,47 @@ bond:
   source_queue: export_pages.yaml
   subdirectory: bond
   submitted_branch: ros-wiki-migration-bond
+  tully2: ready
+bondcpp:
+  action: create
+  branch: noetic-devel
+  commit_sha: bfcc6ada89c287bba4ae61ee3da40a37b24cb41b
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/ros/bond_core/pull/121
+  default_commit_sha: 252ed61867ed5cb4f712ac56a63814326baaecc9
+  default_submitted_branch: ros-wiki-migration-bondcpp-ros2
+  edited: true
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/bond_core.git
+  markdown_file: markdown_output/bondcpp.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/bond_core/pull/120
+  readme_exists: false
+  repository: https://github.com/ros/bond_core.git
+  repository_archived: false
+  source_file: pages/bondcpp/revisions/00000016
+  source_queue: export_pages.yaml
+  subdirectory: bondcpp
+  submitted_branch: ros-wiki-migration-bondcpp
+  tully2: ready
+bondpy:
+  action: create
+  branch: noetic-devel
+  commit_sha: 09434a868fc1fb392119db1a181a9e87d97f0c8f
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/ros/bond_core/pull/123
+  default_commit_sha: be6000d2d2c1f89dc881a432080d5ffb0b9d15eb
+  default_submitted_branch: ros-wiki-migration-bondpy-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/bond_core.git
+  markdown_file: markdown_output/bondpy.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/bond_core/pull/122
+  readme_exists: false
+  repository: https://github.com/ros/bond_core.git
+  repository_archived: false
+  source_file: pages/bondpy/revisions/00000016
+  source_queue: export_pages.yaml
+  subdirectory: bondpy
+  submitted_branch: ros-wiki-migration-bondpy
   tully2: ready

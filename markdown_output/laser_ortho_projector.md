@@ -92,81 +92,56 @@ Two drivers are available: `laser_ortho_projector_node` and
 `laser_ortho_projector_nodelet`. Their parameters and topics are
 identical.
 
+### laser_ortho_projector_node / laser_ortho_projector_nodelet
 
+The `laser_ortho_projector_node` takes in
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages and outputs their orthogonal projections in the xy-plane.
 
-```clearsilver
- name = laser_ortho_projector_node / laser_ortho_projector_nodelet
- desc = The `laser_ortho_projector_node` takes in <<MsgLink(sensor_msgs/LaserScan)>> messages and outputs their orthogonal projections in the xy-plane.
- sub {
-   0{
-    name = scan
-    type = sensor_msgs/LaserScan
-    desc = Scans from a laser range-finder
-    }
-   1{
-    name = imu
-    type = sensor_msgs/IMU
-    desc = Optional IMU data for the orientation of the `base_link` frame. If not provided, the orientation of the `base_link` frame needs to be provided as a transform using `tf`.
-    }
-  }
- pub {
-   0{
-    name = ~cloud_ortho
-    type = sensor_msgs/PointCloud
-    desc = The projected laser scan, in Cartesian coordinates, in the `base_ortho` frame (orthogonal projection of the `base_link` frame.
-   }
-  }
-  
- param{
-    0.name = ~fixed_frame
-    0.type = string
-    0.default = `"/world"`
-    0.desc = the name of the fixed frame
+#### Subscribed Topics
 
-    1.name = ~base_frame
-    1.type = string
-    1.default = `"base_link"`
-    1.desc = the name of the vehicle base frame
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Scans from a laser range-finder
+- `imu`
+  ([sensor_msgs/msg/IMU](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/IMU.html)):
+  Optional IMU data for the orientation of the `base_link` frame. If
+  not provided, the orientation of the `base_link` frame needs to be
+  provided as a transform using `tf`.
 
-    2.name = ~ortho_frame
-    2.type = string
-    2.default = `"base_ortho"`
-    2.desc = the name of the orthogonally-projected frame
- 
-    2.name = ~publish_tf
-    2.type = bool
-    2.default = `false`
-    2.desc = whether to publish the tf between the `fixed_frame` and the `base_ortho` frames as a `tf`>>.
+#### Published Topics
 
-    3.name = ~use_imu
-    3.type = bool
-    3.default = `true`
-    3.desc = whether to use IMU data for the orientation of the `base_link` frame. If set to `false`, the orientation of the `base_link` frame needs to be provided as a transform using `tf`.
- }
-  
- req_tf{
-  0{
-    from = base_link
-    to = laser
-    desc = the pose of the laser in in reference to the base frame
-  }
-  1{
-    from = world
-    to = base_link
-    desc = the pose of the bae link in the fixed frame. Not needed if IMU data is provided.
-  }
- }
+- `~cloud_ortho`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  The projected laser scan, in Cartesian coordinates, in the
+  `base_ortho` frame (orthogonal projection of the `base_link`
+  frame.
 
- prov_tf{
-  0{
-    from = world
-    to = base_ortho
-    desc = the pose of the projected base frame in the world frame
-  }
- }
-```
+#### Parameters
 
+- `~fixed_frame` (`string`, default: `"/world"`): the name of the
+  fixed frame
+- `~base_frame` (`string`, default: `"base_link"`): the name of the
+  vehicle base frame
+- `~publish_tf` (`bool`, default: `false`): whether to publish the tf
+  between the `fixed_frame` and the `base_ortho` frames as a
+  `tf`>>.
+- `~use_imu` (`bool`, default: `true`): whether to use IMU data for
+  the orientation of the `base_link` frame. If set to `false`, the
+  orientation of the `base_link` frame needs to be provided as a
+  transform using `tf`.
 
+#### Required tf Transforms
+
+- `base_link` → `laser`: the pose of the laser in in reference to the
+  base frame
+- `world` → `base_link`: the pose of the bae link in the fixed frame.
+  Not needed if IMU data is provided.
+
+#### Provided tf Transforms
+
+- `world` → `base_ortho`: the pose of the projected base frame in the
+  world frame
 
 ## Bug Reports & Feature Requests
 

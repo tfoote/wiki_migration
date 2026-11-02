@@ -21,91 +21,92 @@ detections.
 
 ## Node
 
+### face_detector
 
+The face_detector node can be used in two ways, continuously or as an
+action. Continuous mode: detect faces in the entire image stream. Action
+mode: an action is used to start face detection and the detector
+processes images until it has found at least one face.
 
-```clearsilver
-name = face_detector
-desc = The face_detector node can be used in two ways, continuously or as an action. Continuous mode: detect faces in the entire image stream. Action mode: an action is used to start face detection and the detector processes images until it has found at least one face. 
-sub {
-  0.name = <camera>/left/<image>
-  0.type = sensor_msgs/Image
-  0.desc = The image from the left camera in the stereo pair. Should be de-bayered and rectified. Can be color or grayscale.
-  1.name = <camera>/disparity
-  1.type = stereo_msgs/DisparityImage
-  1.desc = The disparity image.
-  2.name = <camera>/left/camera_info
-  2.type = sensor_msgs/CameraInfo
-  2.desc = The camera parameters from the left camera.
-  3.name = <camera>/right/camera_info
-  3.type = sensor_msgs/CameraInfo
-  3.desc = The camera parameters from the right camera.
-  4.name = <camera>/rgb/<image>
-  4.type = sensor_msgs/Image
-  4.desc = The image from the color camera. Should be de-bayered and rectified. Can be color or grayscale.
-  5.name = <camera>/depth_registered/<image>
-  5.type = sensor_msgs/Image
-  5.desc = The registered depth image. 'image' should be image_rect.
-  6.name = <camera>/rgb/camera_info
-  6.type = sensor_msgs/CameraInfo
-  6.desc = The camera parameters from the color camera.
-  7.name = <camera>/depth_registered/camera_info
-  7.type = sensor_msgs/CameraInfo
-  7.desc = The camera parameters from the depth camera.
-}
-pub {
-  0.name = face_detector/people_tracker_measurements
-  0.type = people_msgs/PositionMeasurement
-  0.desc = The 3D position of the center of the face. Fields are available for reliability and covariance measurements if desired. Axis of `pos` aligns to that of `fixed_frame` argument passed in the launch file.
-  1.name = face_detector/faces_cloud
-  1.type = sensor_msgs/PointCloud
-  1.desc = A point cloud of face centers, intended for visualization.
-}
-param {
-  0.name = ~classifier_name
-  0.type = string
-  0.desc = A readable string for the classifier. Will be published with the result.
-  1.name = ~classifier_filename
-  1.type = string
-  1.desc = Full path to the trained haar cascade. Provided classifiers are in opencv2. We recommend using the haar_frontalface_alt.xml
-  2.name = ~classifier_reliability
-  2.type = double (0-1)
-  2.desc = Some notion of the classifier's reliability for use in a larger system.
-  3.name = ~do_continuous
-  3.type = bool
-  3.desc = true=run continuously, false=wait for action call
-  4.name = ~do_publish_faces_of_unknown_size
-  4.type = bool 
-  4.desc = true = If depth info is not available, just make pos.x and pos.y in the resulting people_msgs/PositionMeasurement messaging the 2D image center of the face. false = Don't publish faces if stereo information isn't available.
-  5.name = ~do_display
-  5.type = bool
-  5.desc = false = don't display anything, true = display detections in an OpenCV window.
-  6.name = ~face_size_min_m
-  6.type = double
-  6.desc = The minimum width of a face, in meters. Defaults to 0.1m.
-  7.name = ~face_size_max_m
-  7.type = double
-  7.desc = The maximum width of a face, in meters. Defaults to 0.5m.
-  8.name = ~max_face_z_m
-  8.type = double
-  8.desc = The maximum distance of a face from the camera, in meters. (In the camera frame, depth is along the z-axis.) Defaults to 8.0m.
-  9.name = ~face_separation_dist_m
-  9.type = double
-  9.desc = Only used for tracking. The maximum distance between two face detections before they are considered different faces. Defaults to 1.0m.
-  10.name = ~use_rgbd
-  10.type = bool
-  10.desc = true = use data from an RGBD camera (Kinect), false = use stereo data
-  11.name = ~approx_sync
-  11.type = bool
-  11.desc = true = use data from unsynchronized cameras (the Kinect or the stereo cameras in Gazebo), false = use data from synchronized cameras
-}
-result {
-  0.name = face_positions
-  0.type = people_msgs/PositionMeasurement
-  0.desc = A list of found faces.
-}
-```
+#### Action Result
 
+- `face_positions`
+  ([people_msgs/msg/PositionMeasurement](https://docs.ros.org/en/rolling/p/people_msgs/msg/PositionMeasurement.html)):
+  A list of found faces.
 
+#### Subscribed Topics
+
+- `<camera>/left/<image>`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image from the left camera in the stereo pair. Should be
+  de-bayered and rectified. Can be color or grayscale.
+- `<camera>/disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  The disparity image.
+- `<camera>/left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The camera parameters from the left camera.
+- `<camera>/right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The camera parameters from the right camera.
+- `<camera>/rgb/<image>`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image from the color camera. Should be de-bayered and rectified.
+  Can be color or grayscale.
+- `<camera>/depth_registered/<image>`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The registered depth image. 'image' should be image_rect.
+- `<camera>/rgb/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The camera parameters from the color camera.
+- `<camera>/depth_registered/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The camera parameters from the depth camera.
+
+#### Published Topics
+
+- `face_detector/people_tracker_measurements`
+  ([people_msgs/msg/PositionMeasurement](https://docs.ros.org/en/rolling/p/people_msgs/msg/PositionMeasurement.html)):
+  The 3D position of the center of the face. Fields are available for
+  reliability and covariance measurements if desired. Axis of `pos`
+  aligns to that of `fixed_frame` argument passed in the launch file.
+- `face_detector/faces_cloud`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  A point cloud of face centers, intended for visualization.
+
+#### Parameters
+
+- `~classifier_name` (`string`): A readable string for the classifier.
+  Will be published with the result.
+- `~classifier_filename` (`string`): Full path to the trained haar
+  cascade. Provided classifiers are in opencv2. We recommend using the
+  haar_frontalface_alt.xml
+- `~classifier_reliability` (`double (0-1)`): Some notion of the
+  classifier's reliability for use in a larger system.
+- `~do_continuous` (`bool`): true=run continuously, false=wait for
+  action call
+- `~do_publish_faces_of_unknown_size` (`bool`): true = If depth info is
+  not available, just make pos.x and pos.y in the resulting
+  people_msgs/PositionMeasurement messaging the 2D image center of the
+  face. false = Don't publish faces if stereo information isn't
+  available.
+- `~do_display` (`bool`): false = don't display anything, true =
+  display detections in an OpenCV window.
+- `~face_size_min_m` (`double`): The minimum width of a face, in meters.
+  Defaults to 0.1m.
+- `~face_size_max_m` (`double`): The maximum width of a face, in meters.
+  Defaults to 0.5m.
+- `~max_face_z_m` (`double`): The maximum distance of a face from the
+  camera, in meters. (In the camera frame, depth is along the z-axis.)
+  Defaults to 8.0m.
+- `~face_separation_dist_m` (`double`): Only used for tracking. The
+  maximum distance between two face detections before they are
+  considered different faces. Defaults to 1.0m.
+- `~use_rgbd` (`bool`): true = use data from an RGBD camera (Kinect),
+  false = use stereo data
+- `~approx_sync` (`bool`): true = use data from unsynchronized cameras
+  (the Kinect or the stereo cameras in Gazebo), false = use data from
+  synchronized cameras
 
 ## Example Usage
 

@@ -2,23 +2,31 @@
 
 ## Nodes
 
+### pr2_ethercat
 
+`pr2_ethercat` is the node that executes the main loop for controlling
+the EtherCAT devices (including all motors) on the PR2. It loads
+[pr2_controller_manager](https://index.ros.org/p/pr2_controller_manager),
+which in turns loads and runs controllers that act directly on the
+robot's motors. The ROS API detailed below is the interface for
+controlling `pr2_ethercat` itself; as a result of loading the
+controllers, the `pr2_ethercat` process offers a broader, and varying
+ROS API. Superuser privileges are required to run `pr2_ethercat`, to
+allow it to set its scheduling priority to run as a real-time process.
 
-```clearsilver
-node.0 {
-  name=pr2_ethercat
-  desc=`pr2_ethercat` is the node that executes the main loop for controlling the EtherCAT devices (including all motors) on the PR2.  It loads [[pr2_controller_manager]], which in turns loads and runs controllers that act directly on the robot's motors.  The ROS API detailed below is the interface for controlling `pr2_ethercat` itself; as a result of loading the controllers, the `pr2_ethercat` process offers a broader, and varying ROS API.  Superuser privileges are required to run `pr2_ethercat`, to allow it to set its scheduling priority to run as a real-time process.  
-  srv{
-    0.name= pr2_ethercat/reset_motors
-    0.type= std_srvs/Empty
-    0.desc= Reset the motors. This is required after a runstop is reset (by turning the red push-button on the back of the robot, or pressing the "Start" button on the wireless runstop), and after the motors have been halted via the `halt_motors` service.  Most often called from [[pr2_dashboard]].
-    1.name= pr2_ethercat/halt_motors
-    1.type= std_srvs/Empty
-    1.desc= Halt the motors.  To reset them, call `reset_motors`.  Most often called from [[pr2_dashboard]].
-  }
-```
+#### Services
 
-
+- `pr2_ethercat/reset_motors`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Reset the motors. This is required after a runstop is reset (by
+  turning the red push-button on the back of the robot, or pressing the
+  "Start" button on the wireless runstop), and after the motors have
+  been halted via the `halt_motors` service. Most often called from
+  [pr2_dashboard](pr2_dashboard).
+- `pr2_ethercat/halt_motors`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Halt the motors. To reset them, call `reset_motors`. Most often
+  called from [pr2_dashboard](pr2_dashboard).
 
 #### Permissions
 

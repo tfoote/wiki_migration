@@ -73,38 +73,37 @@ roslaunch leo_example_object_detection detector.launch config_file:=<path_to_con
 
 ## ROS API
 
-<a id="rosapi"></a> 
+<a id="rosapi"></a>
 
-```clearsilver
-name= object_detector
-sub {
-  group.0 {
-    0.name= camera/image_raw
-    0.type= sensor_msgs/Image
-    0.desc= Camera images used for object detection.
-  }
-}
-pub {
-  0.name= detections/compressed
-  0.type= sensor_msgs/CompressedImage
-  0.desc= An image with labels and boxes drawn around the detected objects (an object is detected only when the model's confidence is above the threshold specified by the parameter).
-}
-param {
-  group.0 {
-    name= Parameters specified in a yaml file. An example values for the parameters are available in the label_colors.yaml file in the config directory.
-    0.name= labels
-    0.type= string list
-    0.desc= The labels for which the color is specified in the ''colors'' parameter. The first label will have the first color, the second label the second color etc.
-    1.name= colors
-    1.type= int list list
-    1.desc= The colors in RGB format - each inner list is a color definition. The first color will be assigned to the first label from the ''labels'' parameter, the second color to the second label etc.
-  }
-  group.1 {
-    name= Parameters controlled by the dynamic_reconfigure package:
-    0.name= confidence
-    0.type= int
-    0.default= 60
-    0.desc= The confidence threshold for the model, for showing the detected objects.
-  }
-}
-```
+### object_detector
+
+#### Subscribed Topics
+
+- `camera/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Camera images used for object detection.
+
+#### Published Topics
+
+- `detections/compressed`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  An image with labels and boxes drawn around the detected objects (an
+  object is detected only when the model's confidence is above the
+  threshold specified by the parameter).
+
+#### Parameters
+
+##### Parameters specified in a yaml file. An example values for the parameters are available in the label_colors.yaml file in the config directory.
+
+- `labels` (`string list`): The labels for which the color is specified
+  in the *colors* parameter. The first label will have the first color,
+  the second label the second color etc.
+- `colors` (`int list list`): The colors in RGB format - each inner list
+  is a color definition. The first color will be assigned to the first
+  label from the *labels* parameter, the second color to the second
+  label etc.
+
+##### Parameters controlled by the dynamic_reconfigure package:
+
+- `confidence` (`int`, default: `60`): The confidence threshold for the
+  model, for showing the detected objects.

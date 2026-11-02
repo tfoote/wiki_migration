@@ -274,61 +274,49 @@ the case of the hybrid model-based tracker with QR-code initialisation:
 
 ## Nodes
 
+### visp_auto_tracker
 
+Subscribes to a camera and publishes pose.
 
-```clearsilver
-name = visp_auto_tracker
-desc = Subscribes to a camera and publishes pose.
-sub {
-  0.name = image_raw
-  0.type = sensor_msgs/Image
-  0.desc = The image topic. Should be remapped to the name of the real image topic.
+#### Subscribed Topics
 
-  1.name = camera_info
-  1.type = sensor_msgs/CameraInfo
-  1.desc = The camera parameters.
-}
+- `image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image topic. Should be remapped to the name of the real image
+  topic.
+- `camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The camera parameters.
 
-param {
-  0.name = model_path
-  0.type = string
-  0.desc = path to where the models are stored.
+#### Published Topics
 
-  1.name= model_name
-  1.type = string
-  1.desc = model name. Name of the cfg, wrl and xml files. If model_path is /path/ and model_name is model then /path/model.wrl, /path/model.xml and /path/model.cfg will be loaded. The content of the cfg file is described in "Config file" section.
+- `object_position`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  3D pose of the model.
+- `object_position_covariance`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  3D pose of the model. The covariance part is unused
+- `status`
+  ([std_msgs/msg/Int8](https://docs.ros.org/en/rolling/p/std_msgs/msg/Int8.html)):
+  Status of the automatic tracker. See tracker states for more
+  information.
+- `moving_edge_sites`
+  ([visp_tracker/msg/MovingEdgeSites](https://docs.ros.org/en/rolling/p/visp_tracker/msg/MovingEdgeSites.html)):
+  Moving edge sites information (stamped). For debugging/monitoring
+  purpose.
+- `klt_points_positions`
+  ([visp_tracker/msg/KltPoints](https://docs.ros.org/en/rolling/p/visp_tracker/msg/KltPoints.html)):
+  Position and id of the keypoints (stamped). For debugging/monitoring
+  purpose.
 
-  2.name= debug_display
-  2.type = boolean
-  2.desc = display debug information about tracking
-}
+#### Parameters
 
-
-pub {
-  0.name = object_position
-  0.type = geometry_msgs/PoseStamped
-  0.desc = 3D pose of the model.
-
-  1.name = object_position_covariance
-  1.type = geometry_msgs/PoseWithCovarianceStamped
-  1.desc = 3D pose of the model. The covariance part is unused
-
-  2.name = status
-  2.type = std_msgs/Int8
-  2.desc = Status of the automatic tracker. See tracker states for more information.
-
-  3.name = moving_edge_sites
-  3.type = visp_tracker/MovingEdgeSites
-  3.desc = Moving edge sites information (stamped). For debugging/monitoring purpose.
-
-  4.name = klt_points_positions
-  4.type = visp_tracker/KltPoints
-  4.desc = Position and id of the keypoints (stamped). For debugging/monitoring purpose.
-
-}
-```
-
-
+- `model_path` (`string`): path to where the models are stored.
+- `model_name` (`string`): model name. Name of the cfg, wrl and xml
+  files. If model_path is /path/ and model_name is model then
+  /path/model.wrl, /path/model.xml and /path/model.cfg will be loaded.
+  The content of the cfg file is described in "Config file" section.
+- `debug_display` (`boolean`): display debug information about tracking
 
 ## Report a bug
 

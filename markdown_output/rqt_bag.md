@@ -157,6 +157,10 @@ package.
 
 ## Create an rqt_bag Plugin
 
+- **Description:** Create a custom visualization for rqt_bag
+- **Keywords:** rqt_bag bag data rqt
+- **Tutorial Level:** INTERMEDIATE
+
 Let's say you have bags of data and you want to be able to visualize
 them. `rqt_bag` gives you the ability to scroll through the recorded
 messages and visualize the raw message values. However, often may want

@@ -470,91 +470,67 @@ replication on collections you plan to use update on.**\*
 
 ## Nodes
 
+### mongodb_server.py
 
+Starts the mongod server and provides utility services.
 
-```clearsilver
-node.0 {
-name = mongodb_server.py
-desc = Starts the mongod server and provides utility services.
-param {
-0.name = ~test_mode
-0.type = bool
-0.desc = Starts the datacentre with a random port and database path on localhost. Used for testing.
-0.default = false
-1.name = ~database_path
-1.type = string
-1.desc = Directory path for the mongo database. This path must exist.
-1.default = /opt/ros/mongodb_store
-2.name = ~master
-2.type = bool
-2.desc = Whether this the master mongodb store or a replication store. This is a feature only used with replication and can be ignored if you only use a single store.
-2.default = true
-3.name = mongodb_host
-3.type = string
-3.desc = Host to run the mongod server as
-3.default = localhost
-4.name = mongodb_port
-4.type = int
-4.desc = Port to run the mongod server on
-4.default = 27017
-}
-param_set {
-0.name = mongodb_host
-0.type = string
-0.desc = Host to run the mongod server as
-0.default = localhost
-1.name = mongodb_port
-1.type = int
-1.desc = Port to run the mongod server on
-1.default = 27017
-}
-}
-node.1 {
-name = config_manager.py
-desc = Publishes persistent parameters via rosparam
-param {
-0.name = ~defaults_path
-0.type = string
-0.desc = Path from which to load default configuration
-1.name = mongodb_host
-1.type = string
-1.desc = Host to find the mongod server on
-1.default = localhost
-2.name = mongodb_port
-2.type = int
-2.desc = Port to find the mongod server on
-2.default = 27017
-}
-}
-node.2 {
-name = message_store_node.py
-desc = Provides services to store and retrieve ROS messages in the mongodb store.
-param {
-1.name = mongodb_host
-1.type = string
-1.desc = Host of the master server to store messages in.
-2.name = mongodb_port
-2.type = int
-2.desc = Port of the master server to store messages in.
-0.name = mongodb_store_extras
-0.type = list
-0.desc = List of hosts, port pairs to replicate to.
-0.default = []
-}
-}
-node.3 {
-name = replicator_node.py
-desc = Uses `mongodump` to replicate mongodb store content across multiple hosts.
-param {
-0.name = mongodb_store_extras
-0.type = list
-0.desc = List of hosts, port pairs to replicate to.
-1.name = mongodb_host
-1.type = string
-1.desc = Host of the master server to replicate from.
-2.name = mongodb_port
-2.type = int
-2.desc = Port to the master server to replicate from.
-}
-}
-```
+#### Parameters
+
+- `~test_mode` (`bool`, default: `false`): Starts the datacentre with a
+  random port and database path on localhost. Used for testing.
+- `~database_path` (`string`, default: `/opt/ros/mongodb_store`):
+  Directory path for the mongo database. This path must exist.
+- `~master` (`bool`, default: `true`): Whether this the master mongodb
+  store or a replication store. This is a feature only used with
+  replication and can be ignored if you only use a single store.
+- `mongodb_host` (`string`, default: `localhost`): Host to run the
+  mongod server as
+- `mongodb_port` (`int`, default: `27017`): Port to run the mongod
+  server on
+
+#### Parameters Set
+
+- `mongodb_host` (`string`, default: `localhost`): Host to run the
+  mongod server as
+- `mongodb_port` (`int`, default: `27017`): Port to run the mongod
+  server on
+
+### config_manager.py
+
+Publishes persistent parameters via rosparam
+
+#### Parameters
+
+- `~defaults_path` (`string`): Path from which to load default
+  configuration
+- `mongodb_host` (`string`, default: `localhost`): Host to find the
+  mongod server on
+- `mongodb_port` (`int`, default: `27017`): Port to find the mongod
+  server on
+
+### message_store_node.py
+
+Provides services to store and retrieve ROS messages in the mongodb
+store.
+
+#### Parameters
+
+- `mongodb_host` (`string`): Host of the master server to store messages
+  in.
+- `mongodb_port` (`int`): Port of the master server to store messages
+  in.
+- `mongodb_store_extras` (`list`, default: `[]`): List of hosts, port
+  pairs to replicate to.
+
+### replicator_node.py
+
+Uses `mongodump` to replicate mongodb store content across multiple
+hosts.
+
+#### Parameters
+
+- `mongodb_store_extras` (`list`): List of hosts, port pairs to
+  replicate to.
+- `mongodb_host` (`string`): Host of the master server to replicate
+  from.
+- `mongodb_port` (`int`): Port to the master server to replicate from.

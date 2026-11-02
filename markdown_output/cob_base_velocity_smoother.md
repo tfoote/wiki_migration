@@ -21,59 +21,45 @@ respectively).
 The following states the ROS API for the `cob_base_velocity_smoother`
 node.
 
+### cob_base_velocity_smoother
 
+The `cob_base_velocity_smoother` node takes in
+[geometry_msgs/Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html)
+messages from the navigation or teleoperation device and publishes
+recalculated
+[geometry_msgs/Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html)
+messages to avoid jerky behavior.
 
-```clearsilver
- name = cob_base_velocity_smoother
- desc = The `cob_base_velocity_smoother` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages from the navigation or teleoperation device and publishes recalculated [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages to avoid jerky behavior.
+#### Subscribed Topics
 
-sub{
- 0.name = input
- 0.type = geometry_msgs/Twist
- 0.desc = movement command published by the navigation or teleoperation device.
-}
+- `input`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  movement command published by the navigation or teleoperation device.
 
-pub{
- 0.name = output
- 0.type = geometry_msgs/Twist
- 0.desc = recalculated movement command
-}
+#### Published Topics
 
-param{
- 0.name = ~circular_buffer_capacity
- 0.type = int
- 0.default = 12 for cob3, 6 for raw3
- 0.desc = Specifies the capacity of the internal circular buffer (number of saved velocity messages).
+- `output`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  recalculated movement command
 
- 1.name = ~maximal_time_delay
- 1.type = double
- 1.default = 4.0 [seconds]
- 1.desc = Specifies the maximal time delay for saved messages (older messages will be deleted).
+#### Parameters
 
- 2.name = ~thresh_max_acc
- 2.type = double
- 2.default = 0.02 [m/s^2]
- 2.desc = Specifies the threshold for the maximal allowed acceleration.
-
- 3.name = ~loop_rate
- 3.type = double
- 3.default = 30.0 [Hz]
- 3.desc = Specifies the ros loop rate of the velocity smoother.
-
- 4.name = ~min_input_rate
- 4.type = double
- 4.default = 9.0 [Hz]
- 4.desc = Specifies the minimal input rate that is expected before filling the buffer with zeros.
-
- 5.name = ~maximal_time_delay_to_stop
- 5.type = double
- 5.default = 0.1 [seconds]
- 5.desc = Specifies the maximal time-delay until stopping the robot when there are no incoming messages.
-
-}
-```
-
-
+- `~circular_buffer_capacity` (`int`, default:
+  `12 for cob3, 6 for raw3`): Specifies the capacity of the internal
+  circular buffer (number of saved velocity messages).
+- `~maximal_time_delay` (`double`, default: `4.0 [seconds]`): Specifies
+  the maximal time delay for saved messages (older messages will be
+  deleted).
+- `~thresh_max_acc` (`double`, default: `0.02 [m/s^2]`): Specifies the
+  threshold for the maximal allowed acceleration.
+- `~loop_rate` (`double`, default: `30.0 [Hz]`): Specifies the ros loop
+  rate of the velocity smoother.
+- `~min_input_rate` (`double`, default: `9.0 [Hz]`): Specifies the
+  minimal input rate that is expected before filling the buffer with
+  zeros.
+- `~maximal_time_delay_to_stop` (`double`, default: `0.1 [seconds]`):
+  Specifies the maximal time-delay until stopping the robot when there
+  are no incoming messages.
 
 ## Usage
 

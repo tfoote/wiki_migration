@@ -7,6 +7,10 @@
 
 ## Running PR2 Counterbalance Check
 
+- **Description:** Shows how to run the counterbalance adjustment test
+  on the PR2.
+- **Tutorial Level:** ADVANCED
+
 ### Overview
 
 Over time, the counterbalance on your PR2 will go out of adjustment. It

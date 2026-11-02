@@ -1,5 +1,10 @@
 ## Kobuki Udev Rules
 
+- **Description:** Setting up udev rules to find kobuki at /dev/kobuki.
+- **Keywords:** kobuki, udev
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:** [Examine Kobuki](https://index.ros.org/p/kobuki)
+
 Connection to the kobuki base is via usb enabled by an ftdi usb-serial
 converter which is always pre-flashed at the factory with the serial id
 `kobuki`. For convenience, to enable the device to appear on

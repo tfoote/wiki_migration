@@ -1,7 +1,7 @@
 ## Provided functionality
 
 See the C++ API documentation for the namespace
-[ pose_cov_ops](http://docs.ros.org/kinetic/api/pose_cov_ops/html/namespacepose__cov__ops.html).
+[pose_cov_ops](http://docs.ros.org/kinetic/api/pose_cov_ops/html/namespacepose__cov__ops.html).
 
 This module provides implementations for the **four main operations**
 between poses (**p**,**p1**,**p2**) and points (**a**), which are the
@@ -62,4 +62,4 @@ Further references on the geometry and the maths behind these functions:
 
 - *A tutorial on SE(3) transformation parameterizations and on-manifold
   optimization*, J.L. Blanco, Technical report, 2010
-  [ PDF](https://ingmec.ual.es/~jlblanco/papers/jlblanco2010geometry3D_techrep.pdf ).
+  [PDF](https://ingmec.ual.es/~jlblanco/papers/jlblanco2010geometry3D_techrep.pdf).

@@ -30,6 +30,10 @@ If outside ros, you will also need to link to *ecl_type_traits*.
 
 ## Numerical Limits
 
+- **Description:** Fixing a few rough edges around c++ numeric limits.
+- **Keywords:** ecl numeric limits
+- **Tutorial Level:** INTERMEDIATE
+
 This extends c++'s numeric_limits class for fundamental types,
 providing in addition, static constants that can be utilised as template
 arguments (as opposed to c macros or c++ functions in numeric_limits).
@@ -70,6 +74,11 @@ Note that it inherits the numeric_limits class, so all the functions
 therein can also be used.
 
 ## The 'Is A' Traits
+
+- **Description:** Temporary fillers for the 'is a xxx' fundamental
+  type traits till C++0x is widespread.
+- **Keywords:** ecl type traits
+- **Tutorial Level:** INTERMEDIATE
 
 These are in the upcoming C++0x standard, so are only a temporary
 feature in the ecl. They are a subset and work just like boosts type

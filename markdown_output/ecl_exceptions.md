@@ -99,6 +99,10 @@ a *configuration_error* float to the top).
 
 ## Ecl Exception Handling
 
+- **Description:** Introduction to the usage of exceptions in the ecl.
+- **Keywords:** ecl exceptions
+- **Tutorial Level:** INTERMEDIATE
+
 ### Exception Types
 
 #### Standard Exceptions

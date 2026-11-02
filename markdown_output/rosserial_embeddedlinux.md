@@ -120,6 +120,14 @@ the system running the rosserial_python proxy on your network.
 
 ## rosserial_embeddedlinux Advanced Techniques
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [rosserial design notes](https://index.ros.org/p/rosserial).
+- **Description:** This tutorial describes several advanced techniques
+  for debugging problems or running or building the package different
+  ways
+- **Tutorial Level:** ADVANCED
+
 ### rosserial_embeddedlinux Design Notes
 
 rosserial_python is designed to be a TCP/IP server, when invoked with
@@ -237,8 +245,16 @@ clean:
 
 ## Hello Ros (example publisher)
 
-We'll start our exploration into rosserial for embedded linux by
-creating a "Hello Ros" program for our embedded linux box.
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Install rosserial_embeddedlinux](#installing-rosserial_embeddedlinux).
+- **Description:** This tutorial shows step by step how to create an
+  example publisher
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Hello Embedded Linux (example subscriber)](#hello-embedded-linux-example-subscriber)
+  We'll start our exploration into rosserial for embedded linux by
+  creating a "Hello Ros" program for our embedded linux box.
 
 ### The Code
 
@@ -345,7 +361,7 @@ or scp and running from a shell, or other procedures. Specific
 instructions for your system may be documented in the Installation,
 Build and Development Overview section of the rosserial_embeddedlinux
 installation
-[ tutorial](#installing-rosserial_embeddedlinux)
+[tutorial](#installing-rosserial_embeddedlinux)
 
 ### Testing the Code
 
@@ -439,6 +455,15 @@ waiting for socket connection
 ```
 
 ## Hello Embedded Linux (example subscriber)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Hello Ros (example publisher)](#hello-ros-example-publisher).
+- **Description:** This tutorial shows how to make an embedded linux
+  application subscribe to a topic published in ROS.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Example service](#example-service)
 
 We'll continue our exploration into rosserial for embedded linux by
 creating a subscriber program for our embedded linux box. It will
@@ -606,6 +631,12 @@ exception condition.
 
 ## Example service
 
+- **Description:** This tutorial shows how to make an embedded linux
+  application offer a service to ROS service clients
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [VEXPro servo position control example](#vexpro-servo-position-control-example)
+
 We'll continue our exploration into rosserial for embedded linux by
 creating a service program for our embeddded linux box.
 
@@ -769,6 +800,15 @@ Service request message: "Hullo mate" received, responding with: hello
 
 ## Installing rosserial_embeddedlinux
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial shows how to set up the ROS
+  environment, and gives some hints to consider when setting up your
+  embedded linux development environment.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Create an Example Publisher](#hello-ros-example-publisher)
+
 ### Installation, Build and Development Overview
 
 The list below is a summary of the steps you'll take to set up the
@@ -791,8 +831,8 @@ provided. If your system is not listed, follow the instructions for the
 Generic Embedded Linux System, and please consider enhancing this
 documentation by writing a step-by-step instruction for your system.
 
-- [ Generic Embedded Linux System](#genericinstall)
-- [ VEXPro Terk IDE](#vexproinstall)
+- [Generic Embedded Linux System](#genericinstall)
+- [VEXPro Terk IDE](#vexproinstall)
 - Please add additional system install instructions here
 
 ### Using the Library in Embedded Linux ROS Nodes
@@ -819,9 +859,15 @@ e.g.
 locate them.
 
 Now build and run the
-[ Hello Ros (example publisher) tutorial](#hello-ros-example-publisher)
+[Hello Ros (example publisher) tutorial](#hello-ros-example-publisher)
 
 ## VEXPro range motor control loop
+
+- **Description:** This tutorial describes how to use interrupts to
+  accurately measure range using an ultrasonic rangefinder, then goes on
+  to apply that in a motor control system with the loop controller
+  running in a ROS node.
+- **Tutorial Level:** INTERMEDIATE
 
 This tutorial takes you step by step from measuring range and
 controlling a motor through an integrated closed-loop control system for
@@ -1447,6 +1493,13 @@ Received subscribed motor speed -50
 
 ## VEXPro servo position control example
 
+- **Description:** This tutorial shows how to use the VEXPro embedded
+  linux system with the libqwerk library that exposes device I/O to
+  applications, in order to control the position of a servo.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [VEXPro range motor control loop](#vexpro-range-motor-control-loop)
+
 The ultimate goal of an embedded linux system is typically to control
 robot actuators and to read sensors or cameras, and to pass robot data
 between the actuators and sensors and the ROS nodes that perform
@@ -1740,13 +1793,13 @@ procedures to copy the file to the target, run and debug it.
 
 Install the development environment for the VEXPro controller - known as
 the Terk IDE - on your windows PC or virtual machine following these
-[ installation instructions](http://code.google.com/p/terk-ide/wiki/InstallationInstructions ).
+[installation instructions](http://code.google.com/p/terk-ide/wiki/InstallationInstructions).
 We will call this system the VEXPro build system. (Ignore the
 instructions for installing on Linux.)
 
 Do the VEXPro Terk IDE example tutorial
-[ here](http://code.google.com/p/terk-ide/wiki/QuickIDEExample ), to
-make sure you can successfully build and run programs on the VEXPro
+[here](http://code.google.com/p/terk-ide/wiki/QuickIDEExample), to make
+sure you can successfully build and run programs on the VEXPro
 controller.
 
 ### Installing Rosserial from Source
@@ -1937,4 +1990,4 @@ libraries elsewhere.
 
 Congratulations! You have now completed the first tutorial -
 VEXProInstall. You are now ready to run and test it by following the
-[ Example Publisher tutorial](http://ros.org/wiki/rosserial_embeddedlinux/Tutorials/Example Publisher )
+[Example Publisher tutorial](http://ros.org/wiki/rosserial_embeddedlinux/Tutorials/Example Publisher)

@@ -22,7 +22,7 @@ Details can also be found in this paper:
 
 
 available
-[ here](http://www.sim.tu-darmstadt.de/publ/download/2011_SSRR_KohlbrecherMeyerStrykKlingauf_Flexible_SLAM_System.pdf )
+[here](http://www.sim.tu-darmstadt.de/publ/download/2011_SSRR_KohlbrecherMeyerStrykKlingauf_Flexible_SLAM_System.pdf)
 .
 
 ## Hardware Requirements
@@ -38,218 +38,137 @@ Odometry data is not needed.
 
 <a id="NodeApi"></a>
 
+### hector_mapping
 
+`hector_mapping` is a node for LIDAR based SLAM with no odometry and
+low computational resources. For simplicity, the ROS API detailed below
+provides information about the commonly used options from a user
+perspective, but not all options that are available for debugging
+purposes.
 
-```clearsilver
-node.0 {
-name=hector_mapping
-desc=`hector_mapping` is a node for LIDAR based SLAM with no odometry and low computational resources. For simplicity, the  ROS API detailed below provides information about the commonly used options from a user perspective, but not all options that are available for debugging purposes.
+#### Subscribed Topics
 
-sub{
-0.name= scan
-0.type= sensor_msgs/LaserScan
-0.desc= The laser scan used by the SLAM system.
-1.name= syscommand
-1.type= std_msgs/String
-1.desc= System command. If the string equals "reset" the map and robot pose are reset to their inital state.
-}
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  The laser scan used by the SLAM system.
+- `syscommand`
+  ([std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html)):
+  System command. If the string equals "reset" the map and robot pose
+  are reset to their inital state.
 
-pub{
-   0{
-    name = map_metadata
-    type = nav_msgs/MapMetaData
-    desc = Get the map data from this topic, which is latched, and updated periodically.
-   }
-   1{
-    name = map
-    type = nav_msgs/OccupancyGrid
-    desc = Get the map data from this topic, which is latched, and updated periodically
-   }
-2{
-name= slam_out_pose
-type= geometry_msgs/PoseStamped
-desc= The estimated robot pose without covariance
-}
-3{
-name= poseupdate
-type= geometry_msgs/PoseWithCovarianceStamped
-desc= The estimated robot pose with an gaussian estimate of uncertainty
-}
+#### Published Topics
 
-}
+- `map_metadata`
+  ([nav_msgs/msg/MapMetaData](https://docs.ros.org/en/rolling/p/nav_msgs/msg/MapMetaData.html)):
+  Get the map data from this topic, which is latched, and updated
+  periodically.
+- `map`
+  ([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)):
+  Get the map data from this topic, which is latched, and updated
+  periodically
+- `slam_out_pose`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  The estimated robot pose without covariance
+- `poseupdate`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  The estimated robot pose with an gaussian estimate of uncertainty
 
- srv {
-   0{
-    name = dynamic_map
-    type = nav_msgs/GetMap
-    desc = Call this service to get the map data.
-    }
-   1{
-    name = reset_map
-    type = std_srvs/Trigger
-    desc = Call this service to reset the map, and hector will start a whole new map from scratch. Notice that this doesn't restart the robot's pose, and it will restart from the last recorded pose.
-    }
-   2{
-    name = pause_mapping
-    type = std_srvs/SetBool
-    desc = Call this service to stop/start processing laser scans. 
-    }
-   3{
-    name = restart_mapping_with_new_pose
-    type = hector_mapping/ResetMapping
-    desc = Call this service to reset the map, the robot's pose, and resume mapping (if paused)
-    }
-  }
+#### Services
 
-param{
+- `dynamic_map`
+  ([nav_msgs/srv/GetMap](https://docs.ros.org/en/rolling/p/nav_msgs/srv/GetMap.html)):
+  Call this service to get the map data.
+- `reset_map`
+  ([std_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_srvs/srv/Trigger.html)):
+  Call this service to reset the map, and hector will start a whole new
+  map from scratch. Notice that this doesn't restart the robot's pose,
+  and it will restart from the last recorded pose.
+- `pause_mapping`
+  ([std_srvs/srv/SetBool](https://docs.ros.org/en/rolling/p/std_srvs/srv/SetBool.html)):
+  Call this service to stop/start processing laser scans.
+- `restart_mapping_with_new_pose`
+  ([hector_mapping/srv/ResetMapping](https://docs.ros.org/en/rolling/p/hector_mapping/srv/ResetMapping.html)):
+  Call this service to reset the map, the robot's pose, and resume
+  mapping (if paused)
 
-0{
-name = ~base_frame
-type = string
-default = base_link
-desc = The name of the base frame of the robot. This is the frame used for localization and for transformation of laser scan data.
-}
-1{
-name = ~map_frame
-type = string
-default = map_link
-desc = The name of the map frame.
-}
-2{
-name = ~odom_frame
-type = string
-default = odom
-desc = The name of the odom frame.
-}
-3{
-  name = ~map_resolution
-  type = double
-  default = 0.025
-  desc = The map resolution [m]. This is the length of a grid cell edge.
-}
-4{
-    name = ~map_size
-    type = int
-    default = 1024
-    desc = The size [number of cells per axis] of the map. The map is square and has (map_size * map_size) grid cells.
-}
-5{
-    name = ~map_start_x
-    type = double
-    default = 0.5
-    desc = Location of the origin [0.0, 1.0] of the /map frame on the x axis relative to the grid map. 0.5 is in the middle.
-}
-6{
-  name = ~map_start_y
-  type = double
-  default = 0.5
-  desc = Location of the origin [0.0, 1.0] of the /map frame on the y axis relative to the grid map. 0.5 is in the middle.
-}
-7{
-  name = ~map_update_distance_thresh
-  type = double
-  default = 0.4
-  desc = Threshold for performing map updates [m]. The platform has to travel this far in meters or experience an angular change as described by the map_update_angle_thresh parameter since the last update before a map update happens.  
-}
-8{
-  name = ~map_update_angle_thresh
-  type = double
-  default = 0.9
-  desc = Threshold for performing map updates [rad]. The platform has to experience an angular change as described by this parameter of travel as far as specified by the map_update_distance_thresh parameter since the last update before a map update happens.
-}
-9{
-    name = ~map_pub_period
-    type = double
-    default = 2.0
-    desc = The map publish period [s].
-}
-10{
-    name = ~map_multi_res_levels
-    type = int
-    default = 3
-    desc = The number of map multi-resolution grid levels.
-}
-11{
-    name = ~update_factor_free
-    type = double
-    default = 0.4
-    desc = The map update modifier for updates of free cells in the range [0.0, 1.0]. A value of 0.5 means no change.
-}
-12{
-    name = ~update_factor_occupied
-    type = double
-    default = 0.9
-    desc = The map update modifier for updates of occupied cells in the range [0.0, 1.0]. A value of 0.5 means no change.
-}
-13{
-    name = ~laser_min_dist
-    type = double
-    default = 0.4
-    desc = The minimum distance [m] for laser scan endpoints to be used by the system. Scan endpoints closer than this value are ignored.
-}
-14{
-    name = ~laser_max_dist
-    type = double
-    default = 30.0
-    desc = The maximum distance [m] for laser scan endpoints to be used by the system. Scan endpoints farther away than this value are ignored.
-}
-15{
-    name = ~laser_z_min_value
-    type = double
-    default = -1.0
-    desc = The minimum height [m] relative to the laser scanner frame for laser scan endpoints to be used by the system. Scan endpoints lower than this value are ignored.
-}
-16{
-    name = ~laser_z_max_value
-    type = double
-    default = 1.0
-    desc = The maximum height [m] relative to the laser scanner frame for laser scan endpoints to be used by the system. Scan endpoints higher than this value are ignored.
-}
-17{
-    name = ~pub_map_odom_transform
-    type = bool
-    default = true
-    desc = Determine if the map->odom transform should be published by the system.
-}
-18{
-    name = ~output_timing
-    type = bool
-    default = false
-    desc = Output timing information for processing of every laser scan via ROS_INFO.
-}
-19{
-    name = ~scan_subscriber_queue_size
-    type = int
-    default = 5
-    desc = The queue size of the scan subscriber. This should be set to high values (for example 50) if logfiles are played back to hector_mapping at faster than realtime speeds.
-}
-20{
-    name = ~pub_map_scanmatch_transform
-    type = bool
-    default = true
-    desc = Determines if the scanmatcher to map transform should be published to tf. The frame name is determined by the 'tf_map_scanmatch_transform_frame_name' parameter.
-}
-21{
-    name = ~tf_map_scanmatch_transform_frame_name
-    type = string
-    default = scanmatcher_frame
-    desc = The frame name when publishing the scanmatcher to map transform as described in the preceding parameter.
-}
-}
+#### Parameters
 
- req_tf{
-  0{
-    from = <the frame attached to incoming scans>
-    to = base_frame
-    desc = usually a fixed value, broadcast periodically by a [[robot_state_publisher]], or a `tf` [[tf#static_transform_publisher|static_transform_publisher]].
-  }
- }
+- `~base_frame` (`string`, default: `base_link`): The name of the base
+  frame of the robot. This is the frame used for localization and for
+  transformation of laser scan data.
+- `~map_frame` (`string`, default: `map_link`): The name of the map
+  frame.
+- `~odom_frame` (`string`, default: `odom`): The name of the odom frame.
+- `~map_resolution` (`double`, default: `0.025`): The map resolution
+  \[m\]. This is the length of a grid cell edge.
+- `~map_size` (`int`, default: `1024`): The size \[number of cells per
+  axis\] of the map. The map is square and has (map_size \* map_size)
+  grid cells.
+- `~map_start_x` (`double`, default: `0.5`): Location of the origin
+  \[0.0, 1.0\] of the /map frame on the x axis relative to the grid map.
+  0.5 is in the middle.
+- `~map_start_y` (`double`, default: `0.5`): Location of the origin
+  \[0.0, 1.0\] of the /map frame on the y axis relative to the grid map.
+  0.5 is in the middle.
+- `~map_update_distance_thresh` (`double`, default: `0.4`): Threshold
+  for performing map updates \[m\]. The platform has to travel this far
+  in meters or experience an angular change as described by the
+  map_update_angle_thresh parameter since the last update before a map
+  update happens.
+- `~map_update_angle_thresh` (`double`, default: `0.9`): Threshold for
+  performing map updates \[rad\]. The platform has to experience an
+  angular change as described by this parameter of travel as far as
+  specified by the map_update_distance_thresh parameter since the last
+  update before a map update happens.
+- `~map_pub_period` (`double`, default: `2.0`): The map publish period
+  \[s\].
+- `~map_multi_res_levels` (`int`, default: `3`): The number of map
+  multi-resolution grid levels.
+- `~update_factor_free` (`double`, default: `0.4`): The map update
+  modifier for updates of free cells in the range \[0.0, 1.0\]. A value
+  of 0.5 means no change.
+- `~update_factor_occupied` (`double`, default: `0.9`): The map update
+  modifier for updates of occupied cells in the range \[0.0, 1.0\]. A
+  value of 0.5 means no change.
+- `~laser_min_dist` (`double`, default: `0.4`): The minimum distance
+  \[m\] for laser scan endpoints to be used by the system. Scan
+  endpoints closer than this value are ignored.
+- `~laser_max_dist` (`double`, default: `30.0`): The maximum distance
+  \[m\] for laser scan endpoints to be used by the system. Scan
+  endpoints farther away than this value are ignored.
+- `~laser_z_min_value` (`double`, default: `-1.0`): The minimum height
+  \[m\] relative to the laser scanner frame for laser scan endpoints to
+  be used by the system. Scan endpoints lower than this value are
+  ignored.
+- `~laser_z_max_value` (`double`, default: `1.0`): The maximum height
+  \[m\] relative to the laser scanner frame for laser scan endpoints to
+  be used by the system. Scan endpoints higher than this value are
+  ignored.
+- `~pub_map_odom_transform` (`bool`, default: `true`): Determine if the
+  map->odom transform should be published by the system.
+- `~output_timing` (`bool`, default: `false`): Output timing information
+  for processing of every laser scan via ROS_INFO.
+- `~scan_subscriber_queue_size` (`int`, default: `5`): The queue size of
+  the scan subscriber. This should be set to high values (for
+  example 50) if logfiles are played back to hector_mapping at faster
+  than realtime speeds.
+- `~pub_map_scanmatch_transform` (`bool`, default: `true`): Determines
+  if the scanmatcher to map transform should be published to tf. The
+  frame name is determined by the
+  'tf_map_scanmatch_transform_frame_name' parameter.
+- `~tf_map_scanmatch_transform_frame_name` (`string`, default:
+  `scanmatcher_frame`): The frame name when publishing the scanmatcher
+  to map transform as described in the preceding parameter.
 
- prov_tf{
-  0{
-    from = map
-    to = odom
-    desc = the current estimate of the robot's pose within the map frame (only provided if parameter "pub_map_odom_transform" is true).
-  }
- }
-```
+#### Required tf Transforms
+
+- `<the frame attached to incoming scans>` → `base_frame`: usually a
+  fixed value, broadcast periodically by a
+  [robot_state_publisher](https://index.ros.org/p/robot_state_publisher),
+  or a `tf` [static_transform_publisher](https://index.ros.org/p/tf).
+
+#### Provided tf Transforms
+
+- `map` → `odom`: the current estimate of the robot's pose within the
+  map frame (only provided if parameter "pub_map_odom_transform" is
+  true).

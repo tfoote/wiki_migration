@@ -23,7 +23,7 @@ or after pairing. The best way to tell if they have been paired
 correctly is to try issuing commands to the robot via the joystick as
 described below.
 
-[ {{doc/pairing.png\|attachment:pairing.png}}](doc/pairing.png)
+[![attachment:pairing.png](doc/pairing.png)](doc/pairing.png)
 
 ### Launching
 
@@ -117,6 +117,11 @@ screen.
   Instructions for pairing the PR2 to a new PS3 joystick.
 
 ## Pairing the PR2 with a New PS3 Joystick
+
+- **Description:** Instructions for pairing the PR2 to a new PS3
+  joystick.
+- **Keywords:** teleop ps3
+- **Tutorial Level:** ADVANCED
 
 ### Find the PR2's Bluetooth MAC Address
 

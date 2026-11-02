@@ -62,50 +62,29 @@ sss.move("head","front")
 All functions from the python API are also available as
 [actionlib](https://index.ros.org/p/actionlib) calls.
 
+### script_server
 
+The script server node takes in
+[cob_script_server/msg/ScriptAction](https://docs.ros.org/en/rolling/p/cob_script_server/msg/ScriptAction.html)
+messages and send this to the robot to be executed.
 
-```clearsilver
- name = script_server
- desc = The script server node takes in <<MsgLink(cob_script_server/ScriptAction)>> messages and send this to the robot to be executed.
+#### Action Goal
 
-goal{
- 0.name=script_server/goal
- 0.type=cob_script_server/ScriptActionGoal
- 0.desc=The goal describes the script action command the robot has to execute
-}
+- `script_server/goal`
+  ([cob_script_server/msg/ScriptActionGoal](https://docs.ros.org/en/rolling/p/cob_script_server/msg/ScriptActionGoal.html)):
+  The goal describes the script action command the robot has to execute
 
-result{
- 2.name=script_server/result
- 2.type=cobscript_server/ScriptActionResult
- 2.desc=Returns an error code
-}
+#### Action Result
 
-feedback{
- 0.name=script_server/feedback
- 0.type=cob_script_server/ScriptActionFeedback
- 0.desc=empty
-}
+- `script_server/result`
+  ([cobscript_server/msg/ScriptActionResult](https://docs.ros.org/en/rolling/p/cobscript_server/msg/ScriptActionResult.html)):
+  Returns an error code
 
-sub{
-}
+#### Action Feedback
 
-pub{
-}
-
-srv{
-}
-
-param{
-}
-
-req_tf{
-}
-
-prov_tf{
-}
-```
-
-
+- `script_server/feedback`
+  ([cob_script_server/msg/ScriptActionFeedback](https://docs.ros.org/en/rolling/p/cob_script_server/msg/ScriptActionFeedback.html)):
+  empty
 
 ## Usage/Examples
 
@@ -201,6 +180,15 @@ Tutorials can be found on the
 
 ## Running a simple grasp script
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Bringing up Care-O-bot](https://index.ros.org/p/cob_bringup).
+- **Description:** This tutorial teaches you how to run a script.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Live visualization of a script](#live-visualization-of-a-script)
+  [Preparing a new script (python)](#preparing-a-new-script-python)
+
 ### Software Requirements
 
 You will need [cob_tutorials](cob_tutorials). Install it following the
@@ -249,6 +237,12 @@ rosrun rviz rviz
 ```
 
 ## Modifying parameter files
+
+- **Description:** This tutorial teaches you how to modify parameter
+  files, e.g. for teaching new positions.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Specify execution behaviour (python)](#specify-execution-behaviour-python)
 
 ### Script Server Parameters
 
@@ -357,6 +351,17 @@ uploading it to the `/script_server`-namespace at the ROS
 [parameter server](Parameter Server).
 
 ## Preparing a new script (python)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Bringing up Care-O-bot](https://index.ros.org/p/cob_bringup),
+  [Running a simple grasp script](#running-a-simple-grasp-script).
+- **Description:** This tutorial shows how to write a simple script for
+  grasping and handing over an object using cob_script_server.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using the move command (python)](#using-the-move-command-python)
+  [Using other commands (python)](#using-other-commands-python)
 
 ### Including cob_script_server
 
@@ -504,6 +509,16 @@ step 4.
 
 ## Specify execution behaviour (python)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Preparing a new script (python)](#preparing-a-new-script-python),
+  [Using the move command (python)](#using-the-move-command-python).
+- **Description:** This tutorial shows how to execute synchronous and
+  asynchronous behaviour.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Using other commands (python)](#using-other-commands-python)
+
 ### Synchronizing motion
 
 Wouldn't it be nice if you could start opening the hand for grasping
@@ -593,6 +608,13 @@ To know what went wrong you can have a look at the error_code from
 otherwise an integer value indicating the reason for the failure.
 
 ## Using other commands (python)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Preparing a new script (python)](#preparing-a-new-script-python).
+- **Description:** This tutorial teaches you how to use other commands
+  beside the `move` command.
+- **Tutorial Level:** BEGINNER
 
 Apart from the `Move` command,
 cob_script_server provides some basic
@@ -804,6 +826,15 @@ cob_script_server!**
 
 ## Using the move command (python)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Preparing a new script (python)](#preparing-a-new-script-python).
+- **Description:** This tutorial teaches you how to use the move
+  function.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Modifying parameter files](#modifying-parameter-files)
+
 ### The Move command
 
 By using the `move` command you can command any motion for components
@@ -910,9 +941,22 @@ roslaunch cob_navigation_global 2dnav_ros_dwa.launch
 
 ## Generate a graph from a script
 
+- **Description:** This tutorial teaches you how to generate a graph
+  from a script and save it as a `*.png` file.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Running a simple grasp script](#running-a-simple-grasp-script)
+
 ### Generating a graph
 
 ## Live visualization of a script
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Running a simple grasp script](#running-a-simple-grasp-script).
+- **Description:** This tutorial teaches you how to visualize a running
+  script.
+- **Tutorial Level:** BEGINNER
 
 ### Start the Script Viewer
 

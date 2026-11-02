@@ -209,61 +209,75 @@ rosrun camera_calibration cameracheck.py --size 8x6 stereo:=/wide_stereo image:=
 
 <a id="NodeApi"></a>
 
+### cameracalibrator.py
 
+`cameracalibrator.py` subscribes to ROS raw image topics, and presents
+a calibration window. It can run in both monocular and stereo modes. The
+calibration window shows the current images from the cameras,
+highlighting the checkerboard. When the user presses the **CALIBRATE**
+button, the node computes the camera calibration parameters. When the
+user clicks **COMMIT**, the node uploads these new calibration
+parameters to the camera driver using a service call.
 
-```clearsilver
-node.0 {
-name=cameracalibrator.py
-desc=`cameracalibrator.py` subscribes to ROS raw image topics, and presents a calibration window.  It can run in both monocular and stereo modes. The calibration window shows the current images from the cameras, highlighting the checkerboard.  When the user presses the '''CALIBRATE''' button, the node computes the camera calibration parameters.  When the user clicks '''COMMIT''', the node uploads these new calibration parameters to the camera driver using a service call.
+#### Subscribed Topics
 
-sub{
-0.name= image
-0.type= sensor_msgs/Image
-0.desc= raw image topic, for monocular cameras
-1.name= left
-1.type= sensor_msgs/Image
-1.desc= raw left image topic, for stereo cameras
-2.name= right
-2.type= sensor_msgs/Image
-2.desc= raw right image topic, for stereo cameras
-}
-srv_called{
-0.name= camera/set_camera_info
-0.type= sensor_msgs/SetCameraInfo
-0.desc= Sets the camera info for a monocular camera
-1.name= left_camera/set_camera_info
-1.type= sensor_msgs/SetCameraInfo
-1.desc= Sets the camera info for the left camera of a stereo pair
-2.name= right_camera/set_camera_info
-2.type= sensor_msgs/SetCameraInfo
-2.desc= Sets the camera info for the right camera of a stereo pair
-}
-}
-node.1 {
-name=cameracheck.py
-desc=`cameracheck.py` subscribes to ROS rectified image topics and their associated camera_info, and prints out an error estimate.  It can run in both monocular and stereo modes. The program expects to see a standard checkerboard target.
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  raw image topic, for monocular cameras
+- `left`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  raw left image topic, for stereo cameras
+- `right`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  raw right image topic, for stereo cameras
 
-sub{
-0.name= monocular/image
-0.type= sensor_msgs/Image
-0.desc= rectified image topic, for monocular cameras
-1.name= monocular/camera_info
-1.type= sensor_msgs/CameraInfo
-1.desc= camera info for the monocular camera
-2.name= stereo/left/image
-2.type= sensor_msgs/Image
-2.desc= rectified left image topic, for stereo cameras
-3.name= stereo/right/image
-3.type= sensor_msgs/Image
-3.desc= rectified right image topic, for stereo cameras
-4.name= stereo/camera_info
-4.type= sensor_msgs/CameraInfo
-4.desc= camera info for the stereo pair
-}
-}
-```
+#### Services Called
+
+- `camera/set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)):
+  Sets the camera info for a monocular camera
+- `left_camera/set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)):
+  Sets the camera info for the left camera of a stereo pair
+- `right_camera/set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)):
+  Sets the camera info for the right camera of a stereo pair
+
+### cameracheck.py
+
+`cameracheck.py` subscribes to ROS rectified image topics and their
+associated camera_info, and prints out an error estimate. It can run in
+both monocular and stereo modes. The program expects to see a standard
+checkerboard target.
+
+#### Subscribed Topics
+
+- `monocular/image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  rectified image topic, for monocular cameras
+- `monocular/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  camera info for the monocular camera
+- `stereo/left/image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  rectified left image topic, for stereo cameras
+- `stereo/right/image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  rectified right image topic, for stereo cameras
+- `stereo/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  camera info for the stereo pair
 
 ## How to Calibrate a Monocular Camera
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial cover using the
+  camera_calibration's
+  `cameracalibrator.py` node to calibrate a monocular camera with a
+  raw image over ROS.
+- **Keywords:** monocular, camera, calibrate
+- **Tutorial Level:** BEGINNER
 
 ### Before Starting
 
@@ -459,6 +473,15 @@ rectification, use the
 [image_proc package](https://index.ros.org/p/image_proc).
 
 ## How to Calibrate a Stereo Camera
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial cover using the
+  camera_calibration's
+  `cameracalibrator.py` node to calibrate a stereo camera with a left
+  and right image over ROS.
+- **Keywords:** stereo, camera, calibration
+- **Tutorial Level:** BEGINNER
 
 ### Before Starting
 

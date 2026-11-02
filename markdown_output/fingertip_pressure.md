@@ -13,89 +13,94 @@ there may be usability issues with the nodes.
 ## ROS API
 
 Overview of how the nodes interact with the robot sensor stream:
-[ {{doc/overview.gif\|attachment:overview.gif}}](doc/overview.gif)
+[![attachment:overview.gif](doc/overview.gif)](doc/overview.gif)
 
 **Note**: All nodes assume that `<gripper_motor_name>` is either
 `r_gripper_motor` or `l_gripper_motor`.
 
+### sensor_info
 
+Publishes sensor geometry, tf frame and unit scaling information.
 
-```clearsilver
-node.0 {
-name=sensor_info
-desc=Publishes sensor geometry, tf frame and unit scaling information.
-pub{
- 0.name= /pressure/<gripper_motor_name>_info
- 0.type= fingertip_pressure/PressureInfo
- 0.desc= For each sensor, the tf frame is specified, and for each pressure sensing element, a scaling factor to Newtons, and rectangular geometry approximation are provided.
-}
-}
-node.1 {
-name=view_fingertip_pressure
-desc=RX visualization panel to show the fingertip pressure information. Allows conversion to N or kPa units and zero-offset removal.
-sub{
- 0.name= board
- 0.type= pr2_msgs/PressureState
- 0.desc= Raw data from the pressure sensor. If board is not remapped, it will be automatically remapped to pressure/r_gripper_motor. (For versions prior to and including 1.0.3, the source was always pressure/r_gripper_motor.)
- 1.name= <board>_info
- 1.type= fingertip_pressure/PressureInfo
- 1.desc= Sensor calibration, geometry and tf frame.
-}
-}
-```
+#### Published Topics
 
- Example of `view_fingertip_pressure` GUI:
+- `/pressure/<gripper_motor_name>_info`
+  ([fingertip_pressure/msg/PressureInfo](https://docs.ros.org/en/rolling/p/fingertip_pressure/msg/PressureInfo.html)):
+  For each sensor, the tf frame is specified, and for each pressure
+  sensing element, a scaling factor to Newtons, and rectangular geometry
+  approximation are provided.
 
-[ {{doc/fingertip_sensors_panel.png\|attachment:fingertip_sensors_panel.png}}](doc/fingertip_sensors_panel.png)
+### view_fingertip_pressure
 
+RX visualization panel to show the fingertip pressure information.
+Allows conversion to N or kPa units and zero-offset removal.
 
-```clearsilver
-node.2 {
-name=sphere_viz
-desc=Provide visualization markers of the fingertip pressure data.
-sub{
- 0.name= /pressure/<gripper_motor_name>
- 0.type= pr2_msgs/PressureState
- 0.desc= Raw data from the pressure sensor
- 1.name= /pressure/<gripper_motor_name>_info
- 1.type= fingertip_pressure/PressureInfo
- 1.desc= Sensor calibration, geometry and tf frame.
-}
-pub{
- 0.name= "/visualization_marker"
- 0.type= visualization_msgs/Marker
- 0.desc= Graphical objects to be displayed.
-}
-}
-node.3 {
-name=rectangle_viz
-desc=Provide visualization markers of the fingertip pressure data.  A more limited form of `sphere_viz` that allows the geometry of the sensor output to be checked.
-sub{
- 0.name= /pressure/<gripper_motor_name>
- 0.type= pr2_msgs/PressureState
- 0.desc= Raw data from the pressure sensor
- 1.name= /pressure/<gripper_motor_name>_info
- 1.type= fingertip_pressure/PressureInfo
- 1.desc= Sensor calibration, geometry and tf frame.
-}
-pub{
- 0.name= "/visualization_marker"
- 0.type= visualization_msgs/Marker
- 0.desc= Graphical objects to be displayed.
-}
-}
-node.4 {
-name=sim_sensor
-desc=Allows the fingertip_pressure package to be tested without actual hardware by providing a raw sensor data feed.
-pub{
- 0.name= /pressure/<gripper_motor_name>
- 0.type= pr2_msgs/PressureState
- 0.desc= Simulated pressure sensor data.
-}
-}
-```
+#### Subscribed Topics
 
+- `board`
+  ([pr2_msgs/msg/PressureState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PressureState.html)):
+  Raw data from the pressure sensor. If board is not remapped, it will
+  be automatically remapped to pressure/r_gripper_motor. (For versions
+  prior to and including 1.0.3, the source was always
+  pressure/r_gripper_motor.)
+- `<board>_info`
+  ([fingertip_pressure/msg/PressureInfo](https://docs.ros.org/en/rolling/p/fingertip_pressure/msg/PressureInfo.html)):
+  Sensor calibration, geometry and tf frame.
 
+Example of `view_fingertip_pressure` GUI:
+
+[![attachment:fingertip_sensors_panel.png](doc/fingertip_sensors_panel.png)](doc/fingertip_sensors_panel.png)
+
+### sphere_viz
+
+Provide visualization markers of the fingertip pressure data.
+
+#### Subscribed Topics
+
+- `/pressure/<gripper_motor_name>`
+  ([pr2_msgs/msg/PressureState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PressureState.html)):
+  Raw data from the pressure sensor
+- `/pressure/<gripper_motor_name>_info`
+  ([fingertip_pressure/msg/PressureInfo](https://docs.ros.org/en/rolling/p/fingertip_pressure/msg/PressureInfo.html)):
+  Sensor calibration, geometry and tf frame.
+
+#### Published Topics
+
+- `"/visualization_marker"`
+  ([visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)):
+  Graphical objects to be displayed.
+
+### rectangle_viz
+
+Provide visualization markers of the fingertip pressure data. A more
+limited form of `sphere_viz` that allows the geometry of the sensor
+output to be checked.
+
+#### Subscribed Topics
+
+- `/pressure/<gripper_motor_name>`
+  ([pr2_msgs/msg/PressureState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PressureState.html)):
+  Raw data from the pressure sensor
+- `/pressure/<gripper_motor_name>_info`
+  ([fingertip_pressure/msg/PressureInfo](https://docs.ros.org/en/rolling/p/fingertip_pressure/msg/PressureInfo.html)):
+  Sensor calibration, geometry and tf frame.
+
+#### Published Topics
+
+- `"/visualization_marker"`
+  ([visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)):
+  Graphical objects to be displayed.
+
+### sim_sensor
+
+Allows the fingertip_pressure package to be tested without actual
+hardware by providing a raw sensor data feed.
+
+#### Published Topics
+
+- `/pressure/<gripper_motor_name>`
+  ([pr2_msgs/msg/PressureState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PressureState.html)):
+  Simulated pressure sensor data.
 
 ### Launch files
 

@@ -19,110 +19,72 @@ respectively).
 The
 cob_collision_velocity_filter
 package provides a configurable node for collision avoidance using
-teleoperation devices 
+teleoperation devices
 
-```clearsilver
- name = cob_collision_velocity_filter
- desc = The `cob_collision_velocity_filter` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] messages from the teleop device as well as [[http://ros.org/doc/api/nav_msgs/html/msg/GridCells.html|nav_msgs/GridCells]] messages specifying the obstacles on the costmap. The safe movement commands are published as a [[Topics|topic]], as well as the extracted relevant obstacles in driving direction. It further periodically tries to call the `/get_footprint` service of [[cob_footprint_observer]] to check for changed footprints and adjusts the used one accordingly.
+### cob_collision_velocity_filter
 
-goal{
-}
+The `cob_collision_velocity_filter` node takes in
+[geometry_msgs/Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html)
+messages from the teleop device as well as
+[nav_msgs/GridCells](http://ros.org/doc/api/nav_msgs/html/msg/GridCells.html)
+messages specifying the obstacles on the costmap. The safe movement
+commands are published as a [topic](Topics), as well as the extracted
+relevant obstacles in driving direction. It further periodically tries
+to call the `/get_footprint` service of
+[cob_footprint_observer](https://index.ros.org/p/cob_footprint_observer)
+to check for changed footprints and adjusts the used one accordingly.
 
-result{
-}
+#### Subscribed Topics
 
-feedback{
-}
+- `teleop_twist`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  unsafe movement command of the teleop device
+- `obstacles`
+  ([nav_msgs/msg/GridCells](https://docs.ros.org/en/rolling/p/nav_msgs/msg/GridCells.html)):
+  obstacles on a rolling-window costmap
 
-sub{
- 0.name = teleop_twist
- 0.type = geometry_msgs/Twist
- 0.desc = unsafe movement command of the teleop device
+#### Published Topics
 
- 1.name = obstacles
- 1.type = nav_msgs/GridCells
- 1.desc = obstacles on a rolling-window costmap
-}
+- `command`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  safe movement command
+- `relevant_obstacles`
+  ([nav_msgs/msg/GridCells](https://docs.ros.org/en/rolling/p/nav_msgs/msg/GridCells.html)):
+  obstacles in driving direction
 
-pub{
- 0.name = command
- 0.type = geometry_msgs/Twist
- 0.desc = safe movement command
+#### Parameters
 
- 1.name = relevant_obstacles
- 1.type = nav_msgs/GridCells
- 1.desc = obstacles in driving direction
-}
-
-srv{
-}
-
-param{
- 0.name = ~costmap_parameter_source
- 0.type = string
- 0.default = "/local_costmap_node/costmap"
- 0.desc = Specifies which node to search for the initial footprint, footprint_padding, etc., e.g. /local_costmap_node/costmap.
-
- 1.name = ~footprint_update_frequency
- 1.type = double
- 1.default = 1.0 [Hz]
- 1.desc = Frequency at which footprint is adjusted using the `/get_footprint` service from `cob_footprint_observer`.
-
- 2.name = ~pot_ctrl_vmax
- 2.type = double
- 2.default = 0.6
- 2.desc = Maximum allowed velocity for safe movements.
-
- 3.name = ~pot_ctrl_vtheta_max
- 3.type = double
- 3.default = 0.8
- 3.desc = Maximum allowed rotational velocity for safe movements.
-
- 4.name = ~pot_ctrl_kv
- 4.type = double
- 4.default = 1.0
- 4.desc = Damping term for potential field like controller for slow down behaviour.
-
- 5.name = ~pot_ctrl_kp
- 5.type = double
- 5.default = 2.0
- 5.desc = Stiffness term for potential field like controller for slow down behaviour.
-
- 6.name = ~pot_ctrl_virt_mass
- 6.type = double
- 6.default = 0.8
- 6.desc = Virtual mass term for potential field like controller for slow down behaviour.
-
- 7.name = ~influence_radius
- 7.type = double
- 7.default = 1.5 [m]
- 7.desc = max distance of obstacles from robot center that are used for computing relevant obstacles.
-
- 8.name = ~obstacle_damping_dist
- 8.type = double
- 8.default = 5.0 [m]
- 8.desc = Distance in driving direction at which potential field like slow down controller starts to work.
-
- 9.name = ~stop_threshold
- 9.type = double
- 9.default = 0.1 [m]
- 9.desc = Distance to `relevant_obstacle` at which robot stops to move completely.
-
- 10.name = ~use_circumscribed_threshold
- 10.type = double
- 10.default = 0.2 [rad/s]
- 10.desc = Minimal rotational velocity at which circumscribed_radius should be used for collision avoidance while translational velocities are present. Has no influence when robot is only moving rotationally because then it is the rotational movement is the only critical one and thus is taken into account nonetheless. 
-
-}
-
-req_tf{
-}
-
-prov_tf{
-}
-```
-
-
+- `~costmap_parameter_source` (`string`, default:
+  `"/local_costmap_node/costmap"`): Specifies which node to search for
+  the initial footprint, footprint_padding, etc., e.g.
+  /local_costmap_node/costmap.
+- `~footprint_update_frequency` (`double`, default: `1.0 [Hz]`):
+  Frequency at which footprint is adjusted using the `/get_footprint`
+  service from `cob_footprint_observer`.
+- `~pot_ctrl_vmax` (`double`, default: `0.6`): Maximum allowed velocity
+  for safe movements.
+- `~pot_ctrl_vtheta_max` (`double`, default: `0.8`): Maximum allowed
+  rotational velocity for safe movements.
+- `~pot_ctrl_kv` (`double`, default: `1.0`): Damping term for potential
+  field like controller for slow down behaviour.
+- `~pot_ctrl_kp` (`double`, default: `2.0`): Stiffness term for
+  potential field like controller for slow down behaviour.
+- `~pot_ctrl_virt_mass` (`double`, default: `0.8`): Virtual mass term
+  for potential field like controller for slow down behaviour.
+- `~influence_radius` (`double`, default: `1.5 [m]`): max distance of
+  obstacles from robot center that are used for computing relevant
+  obstacles.
+- `~obstacle_damping_dist` (`double`, default: `5.0 [m]`): Distance in
+  driving direction at which potential field like slow down controller
+  starts to work.
+- `~stop_threshold` (`double`, default: `0.1 [m]`): Distance to
+  `relevant_obstacle` at which robot stops to move completely.
+- `~use_circumscribed_threshold` (`double`, default: `0.2 [rad/s]`):
+  Minimal rotational velocity at which circumscribed_radius should be
+  used for collision avoidance while translational velocities are
+  present. Has no influence when robot is only moving rotationally
+  because then it is the rotational movement is the only critical one
+  and thus is taken into account nonetheless.
 
 ## Usage/Examples
 

@@ -40,7 +40,7 @@ packet rates for them.\
 - **velodyne_node**\
   ROS node that captures Velodyne 3D LIDAR data and publishes it in raw
   form. This uses the same device driver class as
-  velodyne_driver/DriverNodelet.
+  [velodyne_driver/DriverNodelet](#drivernodelet).
 - **Publishes**
 - *velodyne_packets*\
   type = velodyne_msgs/VelodyneScan\
@@ -118,16 +118,14 @@ the [vdump](#vdump) command.
 $ rosrun velodyne_driver velodyne_node _pcap:=dump.pcap
 ```
 
- 
-
-```clearsilver
-node.0 {
- name = DriverNodelet
- desc = ROS nodelet that captures Velodyne 3D LIDAR data and publishes it in raw form. This uses the same device driver class as [[http://ros.org/wiki/velodyne_driver#velodyne_node|velodyne_node]]. All topics and parameters are identical.
-}
-```
 
 
+### DriverNodelet
+
+ROS nodelet that captures Velodyne 3D LIDAR data and publishes it in raw
+form. This uses the same device driver class as
+[velodyne_node](http://ros.org/wiki/velodyne_driver#velodyne_node). All
+topics and parameters are identical.
 
 ## Utility Commands
 

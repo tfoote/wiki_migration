@@ -74,6 +74,11 @@ for how to set up your Visual Studios environment correctly:
 
 ## Hello World from Windows
 
+- **Description:** How to publish information to a ROS master from
+  windows using rosserial_windows.
+- **Keywords:** rosserial, windows, rosserial_windows
+- **Tutorial Level:** INTERMEDIATE
+
 ### Introduction
 
 Windows machines can do all kinds of thing that are difficult to do in
@@ -307,6 +312,10 @@ rosrun rosserial_server socket_node cmd_vel:=/husky/cmd_vel
 Now run your app again, and watch the Husky spin around!
 
 ## Receiving Messages in rosserial_windows
+
+- **Description:** An example of receiving messages in rosserial_windows
+- **Keywords:** rosserial, windows, rosserial_windows
+- **Tutorial Level:** INTERMEDIATE
 
 ### Introduction
 

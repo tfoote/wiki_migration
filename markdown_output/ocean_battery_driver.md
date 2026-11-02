@@ -21,54 +21,30 @@ update within a timeout.
 
 #### Advertised topics
 
-
-
-```clearsilver
-pub {
-  no_header= True
-  0.name= /diagnostics
-  0.type= diagnostics_msgs/DiagnosticArray
-  0.desc= Diagnostic information
-  1.name= /battery/server2
-  1.type= pr2_msgs/BatteryServer2
-  1.desc= Battery data
-  2.name= /battery/server
-  2.type= pr2_msgs/BatteryServer
-  2.desc= Battery data (DEPRECATED)
-}
-```
-
-
+- `/diagnostics`
+  ([diagnostics_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostics_msgs/msg/DiagnosticArray.html)):
+  Diagnostic information
+- `/battery/server2`
+  ([pr2_msgs/msg/BatteryServer2](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/BatteryServer2.html)):
+  Battery data
+- `/battery/server`
+  ([pr2_msgs/msg/BatteryServer](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/BatteryServer.html)):
+  Battery data (DEPRECATED)
 
 #### Parameters
 
-
-
-```clearsilver
-param {
-  no_header= True
-  0.name= ~number_of_ports
-  0.type= int
-  0.default= if no value specified on command-line, 4
-  0.desc= Number of ports to monitor
-  1.name= ~debug_level
-  1.type= int
-  1.default= if no value specified on command-line, 0
-  1.desc= Debug level
-  2.name= ~port<ID>
-  2.type= string
-  2.default= `"/dev/ttyUSB<ID>"`
-  2.desc= Which device file is associated with the battery on port <ID>
-  3.name= ~lag_timeout
-  3.type= int
-  3.default= `60`
-  3.desc= Maximum time between battery messages before a battery reports a warning. Set to <0 to disable
-  4.name= ~stale_timeout
-  4.type= int
-  4.default= `120`
-  4.desc= Maximum time between battery messages before a battery reports an error. Set to <0 to disable
-}
-```
+- `~number_of_ports` (`int`, default:
+  `if no value specified on command-line, 4`): Number of ports to
+  monitor
+- `~debug_level` (`int`, default:
+  `if no value specified on command-line, 0`): Debug level
+- `~port<ID>` (`string`, default: `"/dev/ttyUSB<ID>"`): Which
+  device file is associated with the battery on port <ID>
+- `~lag_timeout` (`int`, default: `60`): Maximum time between battery
+  messages before a battery reports a warning. Set to <0 to disable
+- `~stale_timeout` (`int`, default: `120`): Maximum time between
+  battery messages before a battery reports an error. Set to <0 to
+  disable
 
 ## Troubleshooting
 

@@ -40,59 +40,51 @@ ROS nodes as detailed below. No code API.
 
 ## Nodes
 
+### serial_node
 
+Connects to a serial port, passing sentences between ROS and the port.
 
-```clearsilver
-node.0 {
- name = serial_node
- desc = Connects to a serial port, passing sentences between ROS and the port.
- sub {
-  0.name = nmea_sentence_out
-  0.type = nmea_msgs/Sentence
-  0.desc = Sentences published here will be written to the serial port if a device is connected.
- }
- pub {
-  0.name = nmea_sentence
-  0.type = nmea_msgs/Sentence
-  0.desc = Sentences received on the serial port.
-  }
- param {
-  1.name = ~frame_id
-  1.default = navsat
-  1.type = string
-  1.desc = The value to use as the header's frame_id on published messages.
-  2.name = ~port
-  2.default = /dev/ttyUSB0
-  2.type = string
-  2.desc = Name of serial port to connect to.
-  3.name = ~baud
-  3.default = 115200
-  3.type = int
-  3.desc = Baud rate to connect at.
-  }
- }
-node.1 {
- name = socket_node
- desc = Open a socket server, to pass NMEA sentences to and from connected clients.
- sub {
-  0.name = nmea_sentence_out
-  0.type = nmea_msgs/Sentence
-  0.desc = Sentences published here will be written to connected socket clients
- }
- pub {
-  0.name = nmea_sentence
-  0.type = nmea_msgs/Sentence
-  0.desc = Sentences received from connected clients will be published here
-  }
- param {
-  1.name = ~frame_id
-  1.default = navsat
-  1.type = string
-  1.desc = The value to use as the header's frame_id on published messages.
-  2.name = ~port
-  2.default = 29500
-  2.type = int
-  2.desc = Port number to open socket server on.
-  }
- }
-```
+#### Subscribed Topics
+
+- `nmea_sentence_out`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  Sentences published here will be written to the serial port if a
+  device is connected.
+
+#### Published Topics
+
+- `nmea_sentence`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  Sentences received on the serial port.
+
+#### Parameters
+
+- `~frame_id` (`string`, default: `navsat`): The value to use as the
+  header's frame_id on published messages.
+- `~port` (`string`, default: `/dev/ttyUSB0`): Name of serial port to
+  connect to.
+- `~baud` (`int`, default: `115200`): Baud rate to connect at.
+
+### socket_node
+
+Open a socket server, to pass NMEA sentences to and from connected
+clients.
+
+#### Subscribed Topics
+
+- `nmea_sentence_out`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  Sentences published here will be written to connected socket clients
+
+#### Published Topics
+
+- `nmea_sentence`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  Sentences received from connected clients will be published here
+
+#### Parameters
+
+- `~frame_id` (`string`, default: `navsat`): The value to use as the
+  header's frame_id on published messages.
+- `~port` (`int`, default: `29500`): Port number to open socket server
+  on.

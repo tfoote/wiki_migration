@@ -17,19 +17,13 @@ is featured in the `image_transport` tutorial
 
 ## ROS API
 
+### Publisher plugin
 
+#### Published Topics
 
-```clearsilver
-name = Publisher plugin
-desc =
-pub {
-  0.name = <base_topic>/compressed
-  0.type = sensor_msgs/CompressedImage
-  0.desc = Compressed transport subtopic.
-}
-```
-
-
+- `<base_topic>/compressed`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  Compressed transport subtopic.
 
 {
 
@@ -48,57 +42,43 @@ pub {
 
 ```
 {#!wiki version noetic_and_newer
-{{{
-#!clearsilver CS/NodeAPI
-param {
-group.0 {
-  name=Reconfigurable parameters
-  desc=Starting in Diamondback, all publisher parameters are dynamically reconfigurable per-topic. See [[dynamic_reconfigure]] for details on dynamically reconfigurable parameters.
-  0.name = <base_topic>/compressed/format
-  0.type = string
-  0.default = jpeg
-  0.desc = Compression format to use, "jpeg" or "png".
-  1.name = <base_topic>/compressed/jpeg_quality
-  1.type = int
-  1.default = 80
-  1.desc = JPEG quality percentile, in the range [1, 100]. Lower values trade image quality for space savings.  
-  2.name = <base_topic>/compressed/jpeg_progressive
-  2.type = bool
-  2.default = False
-  2.desc = Enable compression to progressive JPEG. <<Version(Noetic)>>
-  3.name = <base_topic>/compressed/jpeg_optimize
-  3.type = bool
-  3.default = False
-  3.desc = Enable JPEG compress optimization. <<Version(Noetic)>>
-  4.name = <base_topic>/compressed/jpeg_restart_interval
-  4.type = int
-  4.default = 0
-  4.desc = JPEG restart interval in the range of [0, 65535]. <<Version(Noetic)>>
-  5.name = <base_topic>/compressed/png_level
-  5.type = int
-  5.default = 9
-  5.desc = PNG compression level, in the range [1, 9]. Higher values trade computation time for space savings.
-}
-}
+
+==== Parameters ====
+
+===== Reconfigurable parameters =====
+
+Starting in Diamondback, all publisher parameters are dynamically reconfigurable per-topic. See [[dynamic_reconfigure]] for details on dynamically reconfigurable parameters.
+
+ * {{{<base_topic>/compressed/format
 ```
 
- }}}}
+ (`string`, default: `jpeg`): Compression format
+to use, "jpeg" or "png".
+
+- `<base_topic>/compressed/jpeg_quality` (`int`, default: `80`): JPEG
+  quality percentile, in the range \[1, 100\]. Lower values trade image
+  quality for space savings.
+- `<base_topic>/compressed/jpeg_progressive` (`bool`, default: `False`):
+  Enable compression to progressive JPEG.
+- `<base_topic>/compressed/jpeg_optimize` (`bool`, default: `False`):
+  Enable JPEG compress optimization.
+- `<base_topic>/compressed/jpeg_restart_interval` (`int`, default: `0`):
+  JPEG restart interval in the range of \[0, 65535\].
+- `<base_topic>/compressed/png_level` (`int`, default: `9`): PNG
+  compression level, in the range \[1, 9\]. Higher values trade
+  computation time for space savings.
+
+}}}}
 
 }}}
 
+### Subscriber plugin
 
+#### Subscribed Topics
 
-```clearsilver
-name = Subscriber plugin
-desc =
-sub {
-  0.name = <base_topic>/compressed
-  0.type = sensor_msgs/CompressedImage
-  0.desc = Compressed transport subtopic.
-}
-```
-
-
+- `<base_topic>/compressed`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  Compressed transport subtopic.
 
 ## Publishing compressed images directly
 

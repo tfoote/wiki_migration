@@ -11,7 +11,7 @@ the odometric frame and the two lasers, as described in the NCD paper.
 
 To use the ncd_parser, you need to obtain an
 .alog file from the New College Dataset
-[ website](http://www.robots.ox.ac.uk/NewCollegeData/ ).
+[website](http://www.robots.ox.ac.uk/NewCollegeData/).
 
 ## Example
 
@@ -47,60 +47,37 @@ You should see a result similar to the video below.
 
 ## Nodes
 
+### ncd_parser
 
+The `ncd_parser` node treads in .alog data files from the New College
+Dataset and broadcasts the data in ROS.
 
-```clearsilver
- name = ncd_parser
- desc = The `ncd_parser` node treads in .alog data files from the New College Dataset and broadcasts the data in ROS.
-pub {
-   0{
-    name = scan_left
-    type = sensor_msgs/LaserScan
-    desc = The scan from the left SICK laser range-finder.
-   }
-   1{
-    name = scan_right
-    type = sensor_msgs/LaserScan
-    desc = The scan from the right SICK laser range-finder.
-   }
-  }
+#### Published Topics
 
-param{
-    0.name = start
-    0.type = double
-    0.default = `0.0`
-    0.desc = the start of the broadcast, in seconds. Messages in the .alog file prior to the start time are skipped.
+- `scan_left`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  The scan from the left SICK laser range-finder.
+- `scan_right`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  The scan from the right SICK laser range-finder.
 
-    1.name = end
-    1.type = double
-    1.default = `-1.0`
-    1.desc = the end of the broadcast, in seconds. Messages in the .alog file after to the end time are skipped. If set to `-1`, all messages in the file will be played. 
+#### Parameters
 
-    2.name = rate
-    2.type = double
-    2.default = `1.0`
-    2.desc = the rate of publishing messages. `1.0` sets the rate to real-time.
-  }
+- `start` (`double`, default: `0.0`): the start of the broadcast, in
+  seconds. Messages in the .alog file prior to the start time are
+  skipped.
+- `end` (`double`, default: `-1.0`): the end of the broadcast, in
+  seconds. Messages in the .alog file after to the end time are skipped.
+  If set to `-1`, all messages in the file will be played.
+- `rate` (`double`, default: `1.0`): the rate of publishing messages.
+  `1.0` sets the rate to real-time.
 
- prov_tf{
-  0{
-    from = map
-    to = odom
-    desc = the robot odometry reported in the .alog file
-  }
-  1{
-    from = odom
-    to = laser_left
-    desc = pose of the left SICK laser in the robot frame
-  }
-  2{
-    from = odom
-    to = laser_right
-    desc = pose of the right SICK laser in the robot frame
-  }
-```
+#### Provided tf Transforms
 
-
+- `map` → `odom`: the robot odometry reported in the .alog file
+- `odom` → `laser_left`: pose of the left SICK laser in the robot frame
+- `odom` → `laser_right`: pose of the right SICK laser in the robot
+  frame
 
 ## Acknowledgements
 

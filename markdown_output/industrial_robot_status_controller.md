@@ -14,33 +14,24 @@ See the documentation in the repository:
 
 Controllers provided by this package:
 
+### IndustrialRobotStatusController
 
+Publishes `industrial_msgs/RobotStatus` based on information coming
+from the underlying `hardware_interface`.
 
-```clearsilver
+#### Published Topics
 
-node.0 {
-  name=IndustrialRobotStatusController
-  desc=Publishes `industrial_msgs/RobotStatus` based on information coming from the underlying `hardware_interface`.
+- `robot_status`
+  ([industrial_msgs/msg/RobotStatus](https://docs.ros.org/en/rolling/p/industrial_msgs/msg/RobotStatus.html)):
+  Status of the robot or controller (e-stopped, in motion, motion
+  possible, etc)
 
-  pub {
-    0.name = robot_status
-    0.type = industrial_msgs/RobotStatus
-    0.desc = Status of the robot or controller (e-stopped, in motion, motion possible, etc)
-  }
+#### Parameters
 
-  param {
-    0.name = publish_rate
-    0.type = float
-    0.desc = rate at which `RobotStatus` messages should be published (Hz)
-    0.default = 10.0
-    1.name = handle_name
-    1.type = str
-    1.desc = name of the `IndustrialRobotStatusHandle` resource exposed by the `hardware_interface`
-    1.default = "industrial_robot_status_handle"
-  }
-}
-```
-
-
+- `publish_rate` (`float`, default: `10.0`): rate at which
+  `RobotStatus` messages should be published (Hz)
+- `handle_name` (`str`, default: `"industrial_robot_status_handle"`):
+  name of the `IndustrialRobotStatusHandle` resource exposed by the
+  `hardware_interface`
 
 ## Report a Bug

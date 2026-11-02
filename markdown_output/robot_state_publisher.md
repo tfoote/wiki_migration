@@ -63,6 +63,18 @@ for more details.
 
 ## Using the robot state publisher on your own robot
 
+- **Note:** This tutorial assumes you completed the
+  [create your own urdf file](https://index.ros.org/p/urdf) tutorial.
+- **Description:** This tutorial explains how you can publish the state
+  of your robot to [tf](https://index.ros.org/p/tf), using the robot
+  state publisher.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:** For a detailed tutorial on how to use the
+  robot_state_publisher in combination with a urdf, take a look at
+  [this tutorial](https://index.ros.org/p/urdf)
+
+
+
 ```wiki
 tf is deprecated in favor of [[tf2]]. [[tf2]] provides a superset of the functionality of tf and is actually now the implementation under the hood. If you're just learning now it's strongly recommended to use the [[tf2/Tutorials]] instead.
 ```

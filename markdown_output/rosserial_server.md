@@ -52,40 +52,28 @@ rosrun rosserial_server serial_node _port:=/dev/ttyUSB0
 
 ## Nodes
 
+### serial_node
 
+Interface to a single rosserial client over a serial connection. This
+node attempts to connect and handshake on a 1Hz basis, and automatically
+reconnected upon replug or other failure. Upon connection, it spins up
+subscribers and publishers according to the configuration information
+stored in the device.
 
-```clearsilver
-name=serial_node
-desc=Interface to a single rosserial client over a serial connection. This node attempts to connect and handshake on a 1Hz basis, and automatically reconnected upon replug or other failure. Upon connection, it spins up subscribers and publishers according to the configuration information stored in the device.
-param {
-  0.name = ~port
-  0.type = str
-  0.desc = Name of port to use.
-  0.default = /dev/ttyACM0
-  1.name = ~baud
-  1.type = int
-  1.desc = Baud rate, in bps.
-  1.default = 57600
-  2.name = ~require
-  2.type = obj
-  2.desc = See below
-}
-```
+#### Parameters
 
- 
+- `~port` (`str`, default: `/dev/ttyACM0`): Name of port to use.
+- `~baud` (`int`, default: `57600`): Baud rate, in bps.
+- `~require` (`obj`): See below
 
-```clearsilver
-name=socket_node
-desc=Interface to a multiple rosserial TCP clients.
-param {
-  0.name = ~port
-  0.type = int
-  0.desc = Number of port to create TCP server on.
-  0.default = 11411
-}
-```
+### socket_node
 
+Interface to a multiple rosserial TCP clients.
 
+#### Parameters
+
+- `~port` (`int`, default: `11411`): Number of port to create TCP server
+  on.
 
 ## Require API
 

@@ -42,11 +42,20 @@ There are also several Wiki-based tutorials, listed below.
 
 <!-- -->
 
-- [ Dynamic Reconfigure](#writing-publishersubscriber-with-parameters-dynamic-reconfigure-and-custom-messages)
+- [Dynamic Reconfigure](#writing-publishersubscriber-with-parameters-dynamic-reconfigure-and-custom-messages)
 
 ## Create a new tutorial
 
 ## Writing a Simple Publisher and Subscriber
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [understanding ROS topics](ROS/Tutorials/UnderstandingTopics).
+- **Description:** This tutorial covers how to write a publisher and
+  subscriber node in C++.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Writing a simple service and client](#writing-a-simple-service-and-client)
 
 ### Writing the Publisher Node
 
@@ -874,6 +883,15 @@ roscpp_tutorials package.
 
 ## Writing a Simple Service and Client
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [examining the simple publisher and subscriber](ROS/Tutorials/ExaminingPublisherSubscriber).
+- **Description:** This tutorial covers how to write a service and
+  client node in C++.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using Parameters in roscpp](#using-parameters-in-roscpp)
+
 ### Writing a Service Node
 
 Here we'll create the service ("add_two_ints_server") node which will
@@ -1190,6 +1208,16 @@ sending back response: [4]
 
 ## Using Parameters in roscpp
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Understanding Topics](ROS/Tutorials/UnderstandingTopics),
+  [Understanding ServicesParams](ROS/Tutorials/UnderstandingServicesParams).
+- **Description:** This tutorial will show you the `NodeHandle`
+  parameter API, allowing you to manipulate parameters from the
+  [Parameter Server](Parameter Server).
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Accessing Private Names with NodeHandle](#accessing-private-names-from-a-nodehandle)
+
 ### Retrieving Parameters
 
 There are two methods to retrieve parameters with `NodeHandle`. In the
@@ -1336,6 +1364,14 @@ else
 
 ## Accessing Private Names from a NodeHandle
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial will show you how to access private
+  [Names](Names) with roscpp's `NodeHandle` API.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using Class Methods as Callbacks](#using-class-methods-as-callbacks)
+
 ### Why not just \~name?
 
 The introduction of `NodeHandles` in roscpp created something of a
@@ -1398,6 +1434,17 @@ nh.getParam("name", ... );
 [Using Class Methods as Callbacks](#using-class-methods-as-callbacks)
 
 ## Using Class Methods as Callbacks
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Writing a Simple Publisher and Subscriber](#writing-a-simple-publisher-and-subscriber),
+  [Writing a Simple Service](https://index.ros.org/p/roscpp_tutorials).
+- **Description:** Most of the tutorials use functions in their
+  examples, rather than class methods. This is because using functions
+  is simpler, not because class methods are unsupported. This tutorial
+  will show you how to use class methods for subscription and service
+  callbacks.
+- **Tutorial Level:** BEGINNER
 
 /!\\ if no code snippet is shown where it's supposed to be or anything
 strange in the code shown, please open the link. Code snippet macro
@@ -1506,6 +1553,13 @@ overloads, see the
 [NodeHandle class documentation](http://www.ros.org/doc/api/roscpp/html/classros_1_1NodeHandle.html)
 
 ## Understanding Timers
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  roscpp tutorials.
+- **Description:** This tutorial explains roscpp Timers, which allow you
+  to schedule a callback to happen periodically.
+- **Tutorial Level:** INTERMEDIATE
 
 ### What are Timers?
 
@@ -1674,18 +1728,18 @@ struct TimerEvent
 ### Writing Publisher/Subscriber Nodes with Parameters, Dynamic Reconfigure and Custom Messages
 
 1\.
-[ Writing Publisher/Subscriber with dynamic reconfigure and parameter server (C++)](ROSNodeTutorialC++ )
+[Writing Publisher/Subscriber with dynamic reconfigure and parameter server (C++)](ROSNodeTutorialC++)
 This tutorial covers writing a publisher and a subscriber in C++. The
 use of custom messages and a publisher with a dynamic reconfigure server
 are covered.
 
 1\.
-[ Writing Publisher/Subscriber with dynamic reconfigure and parameter server (Python)](ROSNodeTutorialPython )
+[Writing Publisher/Subscriber with dynamic reconfigure and parameter server (Python)](ROSNodeTutorialPython)
 This tutorial covers writing a publisher and a subscriber in Python. The
 use of custom messages and a publisher with a dynamic reconfigure server
 are covered.
 
 1\.
-[ Combining C++/Python Publisher/Subscriber](ROSNodeTutorialC++Python )
+[Combining C++/Python Publisher/Subscriber](ROSNodeTutorialC++Python)
 This tutorial shows how to mix publishers and subscribers written in C++
 and Python.

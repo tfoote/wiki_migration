@@ -18,6 +18,13 @@ tutorial details how to use both classes.
 
 ## Retrieving Files
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** Demonstrates how to retrieve a file from a URL using
+  the resource_retriever package
+- **Keywords:** urdf, resource_retriever, url, curl
+- **Tutorial Level:** BEGINNER
+
 ### Intro
 
 The resource_retriever package lets

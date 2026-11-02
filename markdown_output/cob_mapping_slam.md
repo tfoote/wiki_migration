@@ -27,6 +27,10 @@ see [Tutorials](#tutorials-1)
 
 ## Creating a map
 
+- **Description:** This tutorials shows how to build a map in a new
+  environment
+- **Tutorial Level:** INTERMEDIATE
+
 ### Prerequisists
 
 - Prepare environment to be "robot capable" (no chairs, \...)

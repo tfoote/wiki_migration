@@ -9,42 +9,32 @@ connects to the light hardware board and offers a message interface over
 [topics](Topics). The current state of the light is published as a
 [visualization marker](https://index.ros.org/p/rviz).
 
+### cob_light.py
 
-```clearsilver
- name = cob_light.py
- desc = The `cob_light.py` node takes in <<MsgLink(std_msgs/ColorRGBA)>> messages and send this directly to the hardware. If no hardware is present, the node runs in a simulated mode only publishing [[rviz/DisplayTypes/Marker|visualization markers]].
+The `cob_light.py` node takes in
+[std_msgs/msg/ColorRGBA](https://docs.ros.org/en/rolling/p/std_msgs/msg/ColorRGBA.html)
+messages and send this directly to the hardware. If no hardware is
+present, the node runs in a simulated mode only publishing
+[visualization markers](https://index.ros.org/p/rviz).
 
-sub{
- 0.name = command
- 0.type = std_msgs/ColorRGBA
- 0.desc = Receives color commands in RGBA format.
-}
+#### Subscribed Topics
 
-pub{
- 0.name = marker
- 0.type = visualization_msgs/Marker
- 0.desc = Publishes the current state of the light.
-}
+- `command`
+  ([std_msgs/msg/ColorRGBA](https://docs.ros.org/en/rolling/p/std_msgs/msg/ColorRGBA.html)):
+  Receives color commands in RGBA format.
 
-param{
- 0.name = ~devicestring
- 0.type = string
- 0.default = Required
- 0.desc = Device identifier for hand, e.g. /dev/ttyUSB3
- 1.name = ~baudrate
- 1.type = int
- 1.default = Required
- 1.desc = Baudrate of serial interface, e.g. 230400
-}
+#### Published Topics
 
-req_tf{
-}
+- `marker`
+  ([visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)):
+  Publishes the current state of the light.
 
-prov_tf{
-}
-```
+#### Parameters
 
-
+- `~devicestring` (`string`, default: `Required`): Device identifier for
+  hand, e.g. /dev/ttyUSB3
+- `~baudrate` (`int`, default: `Required`): Baudrate of serial
+  interface, e.g. 230400
 
 ## Usage/Examples
 

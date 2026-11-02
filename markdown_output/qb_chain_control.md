@@ -7,6 +7,13 @@
 
 ## Basics
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials),
+  [qb SoftHand](Robots/qbhand), [qbmove](Robots/qbmove).
+- **Description:** Basic knowledge on multi-device system
+- **Keywords:** qbrobotics SoftHand qbmove chain
+- **Tutorial Level:** BEGINNER
+
 This repository contains just few examples of how to properly set up
 several *qbrobotics®* devices to work together on ROS related
 applications.

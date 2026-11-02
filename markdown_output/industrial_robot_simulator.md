@@ -29,45 +29,37 @@ roslaunch industrial_robot_simulator robot_interface_simulator.launch
 
 ## Node API
 
+### industrial_robot_simulator
 
+Simulates an industrial robot controller as defined in ROS-Industrial.
 
-```clearsilver
-name = industrial_robot_simulator
-desc = Simulates an industrial robot controller as defined in ROS-Industrial.
-sub {
- 0.name = joint_path_command
- 0.type = trajectory_msgs/JointTrajectory
- 0.desc = Commanded joint trajectories.
-}
-pub {
- 0.name = joint_states
- 0.type = sensor_msgs/JointState
- 0.desc = Joint State for each non-fixed joint in the robot.
- 1.name = feedback_states
- 1.type = control_msgs/FollowJointTrajectoryFeedback
- 1.desc = Feedback information (errors) for each non-fixed joint state.
-}
-param {
- 0.name = controller_joint_names
- 0.type = str[]
- 0.desc = Joint controller names (for more info see [[industrial_robot_client/generic_implementation#Parameters|here]]).
- 0.default = ['joint_1', ..., 'joint_6']
- 1.name = initial_joint_state
- 1.type = double[]
- 1.desc = Initial state of all (revolute) joints. Units: rad.
- 1.default = [0, ..., 0]
- 2.name = motion_update_rate
- 2.type = double
- 2.desc = Internal update rate of the motion interpolator. If 0, node will not interpolate between trajectory points. Units: Hz.
- 2.default = 100.0
- 3.name = pub_rate
- 3.type = double
- 3.desc = Publish rate for state publisher(s). Units: Hz.
- 3.default = 10.0
-}
-```
+#### Subscribed Topics
 
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Commanded joint trajectories.
 
+#### Published Topics
+
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint State for each non-fixed joint in the robot.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectoryFeedback](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryFeedback.html)):
+  Feedback information (errors) for each non-fixed joint state.
+
+#### Parameters
+
+- `controller_joint_names` (`str[]`, default:
+  `['joint_1', ..., 'joint_6']`): Joint controller names (for more info
+  see [here](https://index.ros.org/p/industrial_robot_client)).
+- `initial_joint_state` (`double[]`, default: `[0, ..., 0]`): Initial
+  state of all (revolute) joints. Units: rad.
+- `motion_update_rate` (`double`, default: `100.0`): Internal update
+  rate of the motion interpolator. If 0, node will not interpolate
+  between trajectory points. Units: Hz.
+- `pub_rate` (`double`, default: `10.0`): Publish rate for state
+  publisher(s). Units: Hz.
 
 ## Contact us/Technical support
 

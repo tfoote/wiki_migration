@@ -1,71 +1,52 @@
 ## ROS API
 
+### cob_trajectory_controller
 
+The `cob_trajectory_controller` node takes in
+[trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)
+messages and converts this to velocity commands to the hardware driver.
 
-```clearsilver
- name = cob_trajectory_controller
- desc = The `cob_trajectory_controller` node takes in <<MsgLink(trajectory_msgs/JointTrajectory)>> messages and converts this to velocity commands to the hardware driver.
+#### Action Goal
 
-goal{
- 0.name=joint_trajectory_action/goal
- 0.type=pr2_controllers_msgs/JointTrajectoryActionGoal
- 0.desc=The goal describes the trajectory for the robot to follow.
-}
+- `joint_trajectory_action/goal`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionGoal.html)):
+  The goal describes the trajectory for the robot to follow.
 
-result{
- 2.name=joint_trajectory_action/result
- 2.type=pr2_controllers_msgs/JointTrajectoryActionResult
- 2.desc=empty
-}
+#### Action Result
 
-feedback{
- 0.name=joint_trajectory_action/feedback
- 0.type=pr2_controllers_msgs/JointTrajectoryActionFeedback
- 0.desc=empty
-}
+- `joint_trajectory_action/result`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionResult](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionResult.html)):
+  empty
 
-sub{
-}
+#### Action Feedback
 
-pub{
- 0.name = /joint_states
- 0.type = sensor_msgs/JointState
- 0.desc = Publishes the joint states of all modules.
- 1.name = command_vel
- 1.type = brics_actuator/JointVelocities
- 1.desc = Publishes the velocity commands for the hardware driver.
-}
+- `joint_trajectory_action/feedback`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionFeedback](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionFeedback.html)):
+  empty
 
-srv{
- 0.name = set_joint_velocity
- 0.type = cob_trajectory_controller/SetFloat
- 0.desc = Sets the maximum velocity in joint space.
- 1.name = set_joint_acceleration
- 1.type = cob_trajectory_controller/SetFloat
- 1.desc = Sets the maximum acceleration in joint space.
-}
-ptp_vel: 0.4 # rad/sec
-ptp_acc: 0.1 # rad/sec^2
-max_error: 0.2 # rad
+#### Published Topics
 
-param{
- 0.name = ~ptp_vel
- 0.type = double
- 0.default = Required
- 0.desc = Maximum velocity in joint space.
- 1.name = ~ptp_acc
- 1.type = double
- 1.default = Required
- 1.desc = Maximum acceleration in joint space.
- 2.name = ~max_error
- 2.type = double
- 2.default = Required
- 2.desc = Maximum allowed deviation from trajectory before controller is stopped.
-}
+- `/joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Publishes the joint states of all modules.
+- `command_vel`
+  ([brics_actuator/msg/JointVelocities](https://docs.ros.org/en/rolling/p/brics_actuator/msg/JointVelocities.html)):
+  Publishes the velocity commands for the hardware driver.
 
-req_tf{
-}
+#### Services
 
-prov_tf{
-}
-```
+- `set_joint_velocity`
+  ([cob_trajectory_controller/srv/SetFloat](https://docs.ros.org/en/rolling/p/cob_trajectory_controller/srv/SetFloat.html)):
+  Sets the maximum velocity in joint space.
+- `set_joint_acceleration`
+  ([cob_trajectory_controller/srv/SetFloat](https://docs.ros.org/en/rolling/p/cob_trajectory_controller/srv/SetFloat.html)):
+  Sets the maximum acceleration in joint space.
+
+#### Parameters
+
+- `~ptp_vel` (`double`, default: `Required`): Maximum velocity in joint
+  space.
+- `~ptp_acc` (`double`, default: `Required`): Maximum acceleration in
+  joint space.
+- `~max_error` (`double`, default: `Required`): Maximum allowed
+  deviation from trajectory before controller is stopped.

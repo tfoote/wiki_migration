@@ -54,6 +54,15 @@ clear we're using our extended interface (via the eigen plugins).
 
 ## Using Eigen
 
+- **Description:** There are quite a few tricks you should be aware of
+  when using eigen\...
+- **Keywords:** ecl eigen linear algebra
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Eigen Extensions](#eigen-extensions)
+
+### Using Eigen
+
 #### Documentation
 
 The following are some important links for us back to the eigen
@@ -147,6 +156,13 @@ If you do not include it, you will see the usual compile time alignment
 warning that Eigen loves.
 
 ## Eigen Extensions
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Using Eigen](#using-eigen).
+- **Description:** Some extensions the ecl has made in and around eigen.
+- **Keywords:** ecl eigen
+- **Tutorial Level:** INTERMEDIATE
 
 ### Eigen Plugin
 

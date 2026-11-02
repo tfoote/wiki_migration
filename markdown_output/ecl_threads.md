@@ -74,6 +74,14 @@ If outside ros, you will also need to link to *ecl_threads*.
 
 ## Thread
 
+- **Description:** Threading functionality via composition.
+- **Keywords:** ecl threads
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Threadable](#threadable)
+  [Thread Locks](#thread-locks)
+  [Priorities](#priorities)
+
 The ecl `Thread` class adds threadable functionality via composition
 (i.e. via objects) rather than via inheritance. The default mode is raii
 style, that is, it initialises and automatically starts a thread when
@@ -202,6 +210,15 @@ posix errors should they occur.
 
 ## Threadable
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Thread](#thread).
+- **Description:** Threading functionality via inheritance.
+- **Keywords:** ecl threadable
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Thread Locks](#thread-locks)
+  [Priorities](#priorities)
+
 The threadable class implements a concept for worker threads that want
 to retain state information (possibly for use by other parts of the
 program) in a class. Think of it as a threaded function object rather
@@ -236,6 +253,13 @@ int main() {
 ```
 
 ## Thread Locks
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Thread](#thread),
+  [Threadable](#threadable).
+- **Description:** Locking threads to protect shared data
+- **Keywords:** ecl threads mutex
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overview
 
@@ -281,6 +305,13 @@ try {
 ```
 
 ## Priorities
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Thread](#thread),
+  [Threadable](#threadable).
+- **Description:** Setting thread or process scheduling priorities.
+- **Keywords:** ecl threads priorities
+- **Tutorial Level:** INTERMEDIATE
 
 ### Levels
 

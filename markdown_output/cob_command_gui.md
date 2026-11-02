@@ -14,13 +14,11 @@ configurable node for operating different hardware parts of Care-O-bot.
 The command_gui uses the functionalities of the
 [cob_script_server](https://index.ros.org/p/cob_script_server) package.
 
+### knoeppkes.py
 
-```clearsilver
- name = knoeppkes.py
- desc = The `knoeppkes.py` is configurable by a .yaml file to send [[Topics|topics]] and [[Services|services]]. Inside the command_gui mainly [[actionlib]] calls are used.
-```
-
-
+The `knoeppkes.py` is configurable by a .yaml file to send
+[topics](Topics) and [services](Services). Inside the command_gui mainly
+[actionlib](https://index.ros.org/p/actionlib) calls are used.
 
 ## Usage/Examples
 

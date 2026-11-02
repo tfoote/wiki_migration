@@ -29,6 +29,11 @@ using ecl::Converter;
 
 ## Using Converters
 
+- **Description:** Demonstrates usage of the ecl converters.
+- **Keywords:** ecl converters
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:** [Formatters](https://index.ros.org/p/ecl_core)
+
 Converters provide a fast means of doing type conversions. Though they
 are sometimes useful directly (e.g. the byte array converters for io
 devices), they are more often used as a tool inside

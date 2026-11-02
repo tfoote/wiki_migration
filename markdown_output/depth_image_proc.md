@@ -33,30 +33,27 @@ of [openni_launch](https://index.ros.org/p/openni_launch).
 
 ## Nodelets
 
+### depth_image_proc/convert_metric
 
+Nodelet to convert raw `uint16` depth image in mm to `float` depth
+image in m.
 
-```clearsilver
-node.0 {
-  name = depth_image_proc/convert_metric
-  desc = Nodelet to convert raw `uint16` depth image in mm to `float` depth image in m.
-  sub {
-    0.name = image_raw
-    0.type = sensor_msgs/Image
-    0.desc = `uint16` depth image in mm, the native OpenNI format.
-  }
-  pub {
-    0.name = image
-    0.type = sensor_msgs/Image
-    0.desc = `float` depth image in m, the recommended format for processing in ROS.
-  }
-}
-node.1 {
-  name = depth_image_proc/disparity
-  desc = Nodelet to convert depth image to disparity image.
-}
-```
+#### Subscribed Topics
 
+- `image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  `uint16` depth image in mm, the native OpenNI format.
 
+#### Published Topics
+
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  `float` depth image in m, the recommended format for processing in
+  ROS.
+
+### depth_image_proc/disparity
+
+Nodelet to convert depth image to disparity image.
 
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                                                            
@@ -64,54 +61,36 @@ node.1 {
      Depth image                                                                           Disparity image (colorized by [disparity_view](https://index.ros.org/p/image_view))   
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------- --
 
+#### Subscribed Topics
 
+- `left/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified depth image.
+- `right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration and metadata. Must contain the baseline, which
+  conventionally is encoded in the right camera P matrix.
 
-```clearsilver
-  sub {
-    0.name = left/image_rect
-    0.type = sensor_msgs/Image
-    0.desc = Rectified depth image.
-    1.name = right/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Camera calibration and metadata. Must contain the baseline, which conventionally is encoded in the right camera P matrix.
-  }
-  pub {
-    0.name = left/disparity
-    0.type = stereo_msgs/DisparityImage
-    0.desc = Disparity image (inversely related to depth), for interop with stereo processing nodes. For all other purposes use depth images instead.
-  }
-  param {
-    0.name = min_range
-    0.type = double
-    0.default = 0.0
-    0.desc = Minimum detectable distance.
-    1.name = max_range
-    1.type = double
-    1.default = +Inf
-    1.desc = Maximum detectable distance.
-    2.name = delta_d
-    2.type = double
-    2.default = 0.125
-    2.desc = Smallest allowed disparity increment, which relates to the achievable depth range resolution. Defaults to 1/8 pixel.
-    3.name = queue_size
-    3.type = int
-    3.default = 5
-    3.desc = Size of message queue for synchronizing subscribed topics.
-  }
-```
+#### Published Topics
 
+- `left/disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  Disparity image (inversely related to depth), for interop with stereo
+  processing nodes. For all other purposes use depth images instead.
 
+#### Parameters
 
+- `min_range` (`double`, default: `0.0`): Minimum detectable distance.
+- `max_range` (`double`, default: `+Inf`): Maximum detectable distance.
+- `delta_d` (`double`, default: `0.125`): Smallest allowed disparity
+  increment, which relates to the achievable depth range resolution.
+  Defaults to 1/8 pixel.
+- `queue_size` (`int`, default: `5`): Size of message queue for
+  synchronizing subscribed topics.
 
+### depth_image_proc/point_cloud_xyz
 
-```clearsilver
-node.2 {
-  name = depth_image_proc/point_cloud_xyz
-  desc = Nodelet to convert depth image to XYZ point cloud.
-}
-```
-
-
+Nodelet to convert depth image to XYZ point cloud.
 
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 46%"> **Input**      **Output**                                        
@@ -119,42 +98,31 @@ node.2 {
      Depth image                                                                           Point cloud, colorized by distance along Z-axis   
   -- ---------------------------------------------------------------------------------- -- ------------------------------------------------- --
 
+#### Subscribed Topics
 
+- `camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration and metadata.
+- `image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified depth image.
 
-```clearsilver
-  sub {
-    0.name = camera_info
-    0.type = sensor_msgs/CameraInfo
-    0.desc = Camera calibration and metadata.
-    1.name = image_rect
-    1.type = sensor_msgs/Image
-    1.desc = Rectified depth image.
-  }
-  pub {
-    0.name = points
-    0.type = sensor_msgs/PointCloud2
-    0.desc = XYZ point cloud. If using [[pcl_ros|PCL]], subscribe as `PointCloud<PointXYZ>`.
-  }
-  param {
-    0.name = queue_size
-    0.type = int
-    0.default = 5
-    0.desc = Size of message queue for synchronizing subscribed topics.
-  }
-```
+#### Published Topics
 
+- `points`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  XYZ point cloud. If using [PCL](https://index.ros.org/p/pcl_ros),
+  subscribe as `PointCloud<PointXYZ>`.
 
+#### Parameters
 
+- `queue_size` (`int`, default: `5`): Size of message queue for
+  synchronizing subscribed topics.
 
+### depth_image_proc/point_cloud_xyzrgb
 
-```clearsilver
-node.3 {
-  name = depth_image_proc/point_cloud_xyzrgb
-  desc = Nodelet to combine registered depth image and RGB image into XYZRGB point cloud.
-}
-```
-
-
+Nodelet to combine registered depth image and RGB image into XYZRGB
+point cloud.
 
   -- ---------------------------------------------------------------------------------- -- ------------------- ----------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 40%"> **Input**      **Output**                                                    
@@ -164,45 +132,36 @@ node.3 {
      RGB image                                                                             Color point cloud                                             
   -- ---------------------------------------------------------------------------------- -- ------------------- ----------------------------------------- --
 
+#### Subscribed Topics
 
+- `rgb/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration and metadata.
+- `rgb/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified color image.
+- `depth_registered/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified depth image, registered to the RGB camera.
 
-```clearsilver
-  sub {
-    0.name = rgb/camera_info
-    0.type = sensor_msgs/CameraInfo
-    0.desc = Camera calibration and metadata.
-    1.name = rgb/image_rect_color
-    1.type = sensor_msgs/Image
-    1.desc = Rectified color image.
-    2.name = depth_registered/image_rect
-    2.type = sensor_msgs/Image
-    2.desc = Rectified depth image, registered to the RGB camera.
-  }
-  pub {
-    0.name = depth_registered/points
-    0.type = sensor_msgs/PointCloud2
-    0.desc = XYZRGB point cloud. If using [[pcl_ros|PCL]], subscribe as `PointCloud<PointXYZRGB>`.
-  }
-  param {
-    0.name = queue_size
-    0.type = int
-    0.default = 5
-    0.desc = Size of message queue for synchronizing subscribed topics.
-  }
-```
+#### Published Topics
 
+- `depth_registered/points`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  XYZRGB point cloud. If using [PCL](https://index.ros.org/p/pcl_ros),
+  subscribe as `PointCloud<PointXYZRGB>`.
 
+#### Parameters
 
+- `queue_size` (`int`, default: `5`): Size of message queue for
+  synchronizing subscribed topics.
 
+### depth_image_proc/register
 
-```clearsilver
-node.4 {
-  name = depth_image_proc/register
-  desc = Nodelet to "register" a depth image to another camera frame. Reprojecting the depths requires the calibration parameters of both cameras and, from [[tf]], the extrinsic transform between them.
-}
-```
-
-
+Nodelet to "register" a depth image to another camera frame.
+Reprojecting the depths requires the calibration parameters of both
+cameras and, from [tf](https://index.ros.org/p/tf), the extrinsic
+transform between them.
 
   -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------- --
      <tablestyle="width: 99%; text-align: center" style="width: 50%"> **Input**      **Output**                                               
@@ -210,42 +169,39 @@ node.4 {
      Depth image as captured by depth sensor                                               Depth image registered to frame of separate RGB camera   
   -- ---------------------------------------------------------------------------------- -- -------------------------------------------------------- --
 
+#### Subscribed Topics
 
+- `rgb/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  RGB camera calibration and metadata.
+- `depth/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Depth camera calibration and metadata.
+- `depth/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified depth image.
 
-```clearsilver
-  sub {
-    0.name = rgb/camera_info
-    0.type = sensor_msgs/CameraInfo
-    0.desc = RGB camera calibration and metadata.
-    1.name = depth/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Depth camera calibration and metadata.
-    2.name = depth/image_rect
-    2.type = sensor_msgs/Image
-    2.desc = Rectified depth image.
-  }
-  pub {
-    0.name = depth_registered/camera_info
-    0.type = sensor_msgs/CameraInfo
-    0.desc = Camera calibration and metadata. Same as `rgb/camera_info` but time-synced to `depth_registered/image_rect`.
-    1.name = depth_registered/image_rect
-    1.type = sensor_msgs/Image
-    1.desc = Reprojected depth image in the RGB camera frame.
-  }
-  param {
-    0.name = queue_size
-    0.type = int
-    0.default = 5
-    0.desc = Size of message queue for synchronizing subscribed topics.
-  }
-  req_tf {
-    0.from = /depth_optical_frame
-    0.to = /rgb_optical_frame
-    0.desc = The transform between the depth and RGB camera optical frames as specified in the headers of the subscribed topics (rendered here as `/depth_optical_frame` and `/rgb_optical_frame`).
-  }
-```
+#### Published Topics
 
+- `depth_registered/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration and metadata. Same as `rgb/camera_info` but
+  time-synced to `depth_registered/image_rect`.
+- `depth_registered/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Reprojected depth image in the RGB camera frame.
 
+#### Parameters
+
+- `queue_size` (`int`, default: `5`): Size of message queue for
+  synchronizing subscribed topics.
+
+#### Required tf Transforms
+
+- `/depth_optical_frame` → `/rgb_optical_frame`: The transform between
+  the depth and RGB camera optical frames as specified in the headers of
+  the subscribed topics (rendered here as `/depth_optical_frame` and
+  `/rgb_optical_frame`).
 
 ## Execution
 

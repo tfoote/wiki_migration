@@ -140,60 +140,48 @@ be passed the diagnostic_period parameter in fractional seconds.
 
 ## ROS API
 
+### canopen_chain_node
 
+#### Published Topics
 
-```clearsilver
-name = canopen_chain_node
-pub {
-  0.name = /diagnostics
-  0.type = diagnostic_msgs/DiagnosticStatus
-  0.desc = diagnostic information for the chain and each individual node
-}
-srv {
-  0.name = driver/init
-  0.type = std_svrs/Trigger
-  0.desc = initialize the driver
-  1.name = driver/halt
-  1.type = std_svrs/Trigger
-  1.desc = halt movements
-  2.name = driver/recover
-  2.type = std_svrs/Trigger
-  2.desc = recover from emergency stops etc.
-  3.name = driver/shutdown
-  3.type = std_svrs/Trigger
-  3.desc = shutdown all driver connections
-  4.name = driver/get_object
-  4.type = canopen_chain_node/GetObject
-  4.desc = read CANOpen object. Specify the node using the joint name. If cached=False an SDO is sent to retrieve the current value, otherwise returns the last value received.
-  5.name = driver/set_object
-  5.type = canopen_chain_node/SetObject
-  5.desc = write CANOpen register value.
-}
-param {
-  0.name = ~diagnostic_period
-  0.type = double
-  0.desc = period for diagnostics updater
-  0.default = 1.0
-  1.name = ~bus
-  1.type = struct
-  1.desc = bus settings
-  2.name = ~sync
-  2.type = struct
-  2.desc = SYNC interval settings
-  3.name = ~heartbeat
-  3.type = struct
-  3.desc = heartbeat settings
-  4.name = ~defaults
-  4.type = struct
-  4.desc = default settings for all nodes
-  5.name = ~nodes
-  5.type = struct/list
-  5.desc = settings for the nodes
-}
-```
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)):
+  diagnostic information for the chain and each individual node
 
- Further topics will be published according to
-the publish parameters.
+#### Services
+
+- `driver/init`
+  ([std_svrs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_svrs/srv/Trigger.html)):
+  initialize the driver
+- `driver/halt`
+  ([std_svrs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_svrs/srv/Trigger.html)):
+  halt movements
+- `driver/recover`
+  ([std_svrs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_svrs/srv/Trigger.html)):
+  recover from emergency stops etc.
+- `driver/shutdown`
+  ([std_svrs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_svrs/srv/Trigger.html)):
+  shutdown all driver connections
+- `driver/get_object`
+  ([canopen_chain_node/srv/GetObject](https://docs.ros.org/en/rolling/p/canopen_chain_node/srv/GetObject.html)):
+  read CANOpen object. Specify the node using the joint name. If
+  cached=False an SDO is sent to retrieve the current value, otherwise
+  returns the last value received.
+- `driver/set_object`
+  ([canopen_chain_node/srv/SetObject](https://docs.ros.org/en/rolling/p/canopen_chain_node/srv/SetObject.html)):
+  write CANOpen register value.
+
+#### Parameters
+
+- `~diagnostic_period` (`double`, default: `1.0`): period for
+  diagnostics updater
+- `~bus` (`struct`): bus settings
+- `~sync` (`struct`): SYNC interval settings
+- `~heartbeat` (`struct`): heartbeat settings
+- `~defaults` (`struct`): default settings for all nodes
+- `~nodes` (`struct/list`): settings for the nodes
+
+Further topics will be published according to the publish parameters.
 
 ## C++ API
 

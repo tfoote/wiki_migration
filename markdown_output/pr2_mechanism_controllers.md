@@ -28,47 +28,24 @@ tilting laser on the PR2
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=joint
-  0.type=string
-  0.desc=The joint to control
-  0.default=Required
-  1.name=gains/p
-  1.type=double
-  1.desc=The position gain
-  1.default=Required
-  2.name=gains/d
-  2.type=double
-  2.desc=The position derivative gain
-  2.default=0.0
-  3.name=gains/i
-  3.type=double
-  3.desc=The integral gain around position
-  3.default=0.0
-  4.name=gains/i_clamp
-  4.type=double
-  4.desc=The clamp of the integral gain
-  4.default=0.0
-  5.name=velocity_filter
-  5.type=Filter Chain
-  5.desc=namespace defining a filter chain acting on the measured velocity. Refer to [[filters#Filter_Chain|Filter Chain]] for more details
-  5.default=Required
-  6.name=max_velocity
-  6.type=double
-  6.desc=Maximum allowed velocity/rate for a trajectory that this controller generates (in rad/sec)
-  6.default=Required
-  7.name=max_acceleration
-  7.type=double
-  7.desc=Maximum allowed acceleration for a trajectory that this controller generates (in rad/sec^2)
-  7.default=Required
-
-}
-```
-
-
+- `joint` (`string`, default: `Required`): The joint to control
+- `gains/p` (`double`, default: `Required`): The position gain
+- `gains/d` (`double`, default: `0.0`): The position derivative gain
+- `gains/i` (`double`, default: `0.0`): The integral gain around
+  position
+- `gains/i_clamp` (`double`, default: `0.0`): The clamp of the integral
+  gain
+- `velocity_filter` (`Filter Chain`, default: `Required`): namespace
+  defining a filter chain acting on the measured velocity. Refer to
+  [Filter Chain](https://index.ros.org/p/filters) for more details
+- `max_velocity` (`double`, default: `Required`): Maximum allowed
+  velocity/rate for a trajectory that this controller generates (in
+  rad/sec)
+- `max_acceleration` (`double`, default: `Required`): Maximum allowed
+  acceleration for a trajectory that this controller generates (in
+  rad/sec\^2)
 
 **Example Configuration:** 
 
@@ -93,47 +70,34 @@ laser_tilt_controller:
 
 
 
+###### Published Topics
 
+- `<name>/laser_scanner_signal`
+  ([pr2_msgs/msg/LaserScannerSignal](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/LaserScannerSignal.html)):
+  The index of the last completed trajectory segment. Useful for
+  aggregating laser scans
 
-```clearsilver
-pub{
-  0.name=<name>/laser_scanner_signal
-  0.type=pr2_msgs/LaserScannerSignal
-  0.desc=The index of the last completed trajectory segment. Useful for aggregating laser scans
-}
-```
+###### Subscribed Topics
 
+- `<name>/set_periodic_cmd`
+  ([pr2_msgs/msg/PeriodicCmd](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PeriodicCmd.html)):
+  Sets the periodic trajectory using periodic parameters like period,
+  amplitude, and offset
+- `<name>/set_traj_cmd`
+  ([pr2_msgs/msg/LaserTrajCmd](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/LaserTrajCmd.html)):
+  Sets the periodic trajectory by explicitly setting trajectory
+  waypoints
 
+###### Services
 
-
-
-```clearsilver
-sub{
-  0.name=<name>/set_periodic_cmd
-  0.type=pr2_msgs/PeriodicCmd
-  0.desc=Sets the periodic trajectory using periodic parameters like period, amplitude, and offset
-  1.name=<name>/set_traj_cmd
-  1.type=pr2_msgs/LaserTrajCmd
-  1.desc=Sets the periodic trajectory by explicitly setting trajectory waypoints
-}
-```
-
-
-
-
-
-```clearsilver
-srv{
-  0.name=<name>/set_periodic_cmd
-  0.type=pr2_msgs/SetPeriodicCmd
-  0.desc=Sets the periodic trajectory using periodic parameters (period, amplitude, and offset)
-  1.name=<name>/set_traj_cmd
-  1.type=pr2_msgs/SetLaserTrajCmd
-  1.desc=Sets the periodic trajectory by explicitly setting trajectory waypoints (position & time pairs)
-}
-```
-
-
+- `<name>/set_periodic_cmd`
+  ([pr2_msgs/srv/SetPeriodicCmd](https://docs.ros.org/en/rolling/p/pr2_msgs/srv/SetPeriodicCmd.html)):
+  Sets the periodic trajectory using periodic parameters (period,
+  amplitude, and offset)
+- `<name>/set_traj_cmd`
+  ([pr2_msgs/srv/SetLaserTrajCmd](https://docs.ros.org/en/rolling/p/pr2_msgs/srv/SetLaserTrajCmd.html)):
+  Sets the periodic trajectory by explicitly setting trajectory
+  waypoints (position & time pairs)
 
 #### Usage example
 
@@ -155,59 +119,32 @@ This controller allows you to send velocity commands to the base.
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=max_translational_velocity
-  0.type=double
-  0.desc=Maximum allowed translational velocity
-  0.default=1.0
-  1.name=max_rotational_velocity
-  1.type=double
-  1.desc=Maximum allowed rotational velocity 
-  1.default=2.0
-  2.name=max_translational_acceleration/x
-  2.type=double
-  2.desc=Maximum allowed acceleration in X direction 
-  2.default=2.0
-  3.name=max_translation_acceleration/y
-  3.type=double
-  3.desc=Maximum allowed acceleration in X direction 
-  3.default=2.0
-  5.name=max_rotational_acceleration
-  5.type=double
-  5.desc=Maximum allowed yaw acceleration
-  5.default=2.0
- 
-  12.name=kp_caster_steer
-  12.type=double
-  12.desc=The proportional gain on the caster steer velocity controller, vel_desired = kp_caster_steer * caster_steer_error
-  12.default=80.0
-  14.name=timeout
-  14.type=double
-  14.desc=If time from last command heard > timeout, the controller will stop the robot.
-  14.default=0.3
-  16.name=state_publish_rate
-  16.type=double
-  16.desc=rate of state publishing events
-  16.default=1.0
-  18.name=caster_names
-  18.type=string
-  18.desc=The string names for all the caster link names on the robot separated by a space delimiter
-  18.default=""
-  20.name=wheel_radius_multiplier
-  20.type=double
-  20.desc=A correction multiplier for the radius of the wheels on the robot
-  20.default=1.0
-  21.name=caster_calibration_multiplier
-  21.type=double
-  21.desc=A correction multiplier for the reduction ratio for the caster rotation joint
-  21.default=1.0
-}
-```
-
-
+- `max_translational_velocity` (`double`, default: `1.0`): Maximum
+  allowed translational velocity
+- `max_rotational_velocity` (`double`, default: `2.0`): Maximum allowed
+  rotational velocity
+- `max_translational_acceleration/x` (`double`, default: `2.0`): Maximum
+  allowed acceleration in X direction
+- `max_translation_acceleration/y` (`double`, default: `2.0`): Maximum
+  allowed acceleration in X direction
+- `max_rotational_acceleration` (`double`, default: `2.0`): Maximum
+  allowed yaw acceleration
+- `kp_caster_steer` (`double`, default: `80.0`): The proportional gain
+  on the caster steer velocity controller, vel_desired = kp_caster_steer
+  \* caster_steer_error
+- `timeout` (`double`, default: `0.3`): If time from last command heard
+  > timeout, the controller will stop the robot.
+- `state_publish_rate` (`double`, default: `1.0`): rate of state
+  publishing events
+- `caster_names` (`string`, default: `""`): The string names for all the
+  caster link names on the robot separated by a space delimiter
+- `wheel_radius_multiplier` (`double`, default: `1.0`): A correction
+  multiplier for the radius of the wheels on the robot
+- `caster_calibration_multiplier` (`double`, default: `1.0`): A
+  correction multiplier for the reduction ratio for the caster rotation
+  joint
 
 **Example Configuration:** 
 
@@ -268,28 +205,19 @@ pr2_base_controller:
 
 
 
+###### Published Topics
 
+- `<name>/state`
+  ([pr2_mechanism_controllers/msg/BaseControllerState](https://docs.ros.org/en/rolling/p/pr2_mechanism_controllers/msg/BaseControllerState.html)):
+  The state of the base controller
 
-```clearsilver
-pub{
-  0.name=<name>/state
-  0.type=pr2_mechanism_controllers/BaseControllerState
-  0.desc=The state of the base controller
-}
-```
+###### Subscribed Topics
 
-
-
-
-
-```clearsilver
-sub{
-  1.name=<name>/command
-  1.type=geometry_msgs/Twist
-  1.desc=Input velocity command for the base (the reference point for this command is the origin of the base link which is in the middle of the base)
-
-}
-```
+- `<name>/command`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  Input velocity command for the base (the reference point for this
+  command is the origin of the base link which is in the middle of the
+  base)
 
 ## Pr2Odometry
 
@@ -303,99 +231,51 @@ This component computes odometry for the base.
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=odometer/initial_distance
-  0.type=double
-  0.desc=Initial value for the distance traveled by the robot (in m)
-  0.default=0.0
-  1.name=odometer/initial_angle
-  1.type=double
-  1.desc=Initial value for the total angular distance traveled by the robot (in radians)
-  1.default=0.0
-  2.name=odom/initial_x
-  2.type=double
-  2.desc=Initial X position of the robot in an odometric frame 
-  2.default=0.0
-  3.name=odom/initial_y
-  3.type=double
-  3.desc=Initial Y position of the robot in an odometric frame
-  3.default=0.0
-  4.name=odom/initial_yaw
-  4.type=double
-  4.desc=Initial yaw position of the robot in an odometric frame 
-  4.default=0.0
-  6.name=ils_max_iterations
-  6.type=int
-  6.desc=max number of iterations for iterative least squares
-  6.default=3
-  7.name=odom_frame
-  7.type=string
-  7.desc=The odometric frame id
-  7.default=odom
-  8.name=base_footprint_frame
-  8.type=string
-  8.desc=The id for a frame that is below the base link and coincident with the ground
-  8.default=base_footprint
-
-  9.name=base_link_frame
-  9.type=string
-  9.desc=the id of the base frame on the robot 
-  9.default=base_link
-
-  11.name=x_stddev
-  11.type=double
-  11.desc=the standard deviation for odometry in X direction (higher values for this term implies odometry is doing worse)
-  11.default=0.002
-
-  12.name=y_stddev
-  12.type=double
-  12.desc=the standard deviation for odometry in Y direction (higher values for this term implies odometry is doing worse)
-  12.default=0.002
-  13.name=rotation_stddev
-  13.type=double
-  13.desc=the standard deviation for odometry in yaw (higher values for this term implies odometry is doing worse)
-  13.default=0.017
-  14.name=cov_xy
-  14.type=double
-  14.desc=the off-axis values in the covariance matrix
-  14.default=0.0
-  15.name=cov_xrotation
-  15.type=double
-  15.desc=the off-axis values in the covariance matrix
-  15.default=0.0
-  16.name=cov_yrotation
-  16.type=double
-  16.desc=the off-axis values in the covariance matrix
-  16.default=0.0
-
-  17.name=odom_publish_rate
-  17.type=double
-  17.desc=Odometry publish rate (Hz)
-  17.default=100.0
-  18.name=odometer_publish_rate
-  18.type=double
-  18.desc=Odometer publish rate (Hz)
-  18.default=1.0
-  19.name=state_publish_rate
-  19.type=double
-  19.desc=Odometry state publish rate (Hz)
-  19.default=1.0
-
-  20.name=wheel_radius_multiplier
-  20.type=double
-  20.desc=A correction multiplier for the radius of the wheels on the robot
-  20.default=1.0
-  21.name=caster_calibration_multiplier
-  21.type=double
-  21.desc=A correction multiplier for the reduction ratio for the caster rotation joint
-  21.default=1.0
-}
-```
-
-
+- `odometer/initial_distance` (`double`, default: `0.0`): Initial value
+  for the distance traveled by the robot (in m)
+- `odometer/initial_angle` (`double`, default: `0.0`): Initial value for
+  the total angular distance traveled by the robot (in radians)
+- `odom/initial_x` (`double`, default: `0.0`): Initial X position of the
+  robot in an odometric frame
+- `odom/initial_y` (`double`, default: `0.0`): Initial Y position of the
+  robot in an odometric frame
+- `odom/initial_yaw` (`double`, default: `0.0`): Initial yaw position of
+  the robot in an odometric frame
+- `ils_max_iterations` (`int`, default: `3`): max number of iterations
+  for iterative least squares
+- `odom_frame` (`string`, default: `odom`): The odometric frame id
+- `base_footprint_frame` (`string`, default: `base_footprint`): The id
+  for a frame that is below the base link and coincident with the ground
+- `base_link_frame` (`string`, default: `base_link`): the id of the base
+  frame on the robot
+- `x_stddev` (`double`, default: `0.002`): the standard deviation for
+  odometry in X direction (higher values for this term implies odometry
+  is doing worse)
+- `y_stddev` (`double`, default: `0.002`): the standard deviation for
+  odometry in Y direction (higher values for this term implies odometry
+  is doing worse)
+- `rotation_stddev` (`double`, default: `0.017`): the standard deviation
+  for odometry in yaw (higher values for this term implies odometry is
+  doing worse)
+- `cov_xy` (`double`, default: `0.0`): the off-axis values in the
+  covariance matrix
+- `cov_xrotation` (`double`, default: `0.0`): the off-axis values in the
+  covariance matrix
+- `cov_yrotation` (`double`, default: `0.0`): the off-axis values in the
+  covariance matrix
+- `odom_publish_rate` (`double`, default: `100.0`): Odometry publish
+  rate (Hz)
+- `odometer_publish_rate` (`double`, default: `1.0`): Odometer publish
+  rate (Hz)
+- `state_publish_rate` (`double`, default: `1.0`): Odometry state
+  publish rate (Hz)
+- `wheel_radius_multiplier` (`double`, default: `1.0`): A correction
+  multiplier for the radius of the wheels on the robot
+- `caster_calibration_multiplier` (`double`, default: `1.0`): A
+  correction multiplier for the reduction ratio for the caster rotation
+  joint
 
 **Example Configuration:** 
 
@@ -423,25 +303,27 @@ base_odometry:
 
 
 
+###### Published Topics
 
-
-```clearsilver
-pub{
-  0.name=<name>/odom
-  0.type=nav_msgs/Odometry
-  0.desc=Odometry is published on this topic in addition to being published directly to tf
-  1.name=<name>/odometer
-  1.type=pr2_mechanism_controllers/Odometer
-  1.desc=The odometer published on this topic contains the total translational and rotational distance traveled
-  2.name=/tf
-  2.type=tf/tfMessage
-  2.desc=Two transforms are published to tf, a constant transform from the base_footprint frame to the base_link frame and the transform from the odom frame to the base footprint frame.
-  3.name=<name>/state
-  3.type=pr2_mechanism_controllers/BaseOdometryState
-  3.desc=The odometry state contains information about wheel drive errors (difference in predicted and actual wheel speeds) and longitudinal slip errors (amount by which the wheels are predicted to be slipping sideways)
-
-}
-```
+- `<name>/odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  Odometry is published on this topic in addition to being published
+  directly to tf
+- `<name>/odometer`
+  ([pr2_mechanism_controllers/msg/Odometer](https://docs.ros.org/en/rolling/p/pr2_mechanism_controllers/msg/Odometer.html)):
+  The odometer published on this topic contains the total translational
+  and rotational distance traveled
+- `/tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Two transforms are published to tf, a constant transform from the
+  base_footprint frame to the base_link frame and the transform from the
+  odom frame to the base footprint frame.
+- `<name>/state`
+  ([pr2_mechanism_controllers/msg/BaseOdometryState](https://docs.ros.org/en/rolling/p/pr2_mechanism_controllers/msg/BaseOdometryState.html)):
+  The odometry state contains information about wheel drive errors
+  (difference in predicted and actual wheel speeds) and longitudinal
+  slip errors (amount by which the wheels are predicted to be slipping
+  sideways)
 
 ## Pr2GripperController
 
@@ -454,51 +336,28 @@ the gripper easier to command.
 
 ### ROS API
 
+##### Parameters
 
+- `joint` (`string`, default: `Required`): The joint to control
+- `pid/p` (`double`, default: `Required`): The position gain for the
+  controller
+- `pid/i` (`double`, default: `0.0`): The integral gain on position
+- `pid/i_clamp` (`double`, default: `0.0`): The clamp on the integral
+  gain
+- `pid/d` (`double`, default: `0.0`): The velocity gain of the
+  controller
 
-```clearsilver
-param {
-  0.name=joint
-  0.type=string
-  0.default=Required
-  0.desc=The joint to control
-  1.name=pid/p
-  1.type=double
-  1.default=Required
-  1.desc=The position gain for the controller
-  2.name=pid/i
-  2.type=double
-  2.default=0.0
-  2.desc=The integral gain on position
-  3.name=pid/i_clamp
-  3.type=double
-  3.default=0.0
-  3.desc=The clamp on the integral gain
-  4.name=pid/d
-  4.type=double
-  4.default=0.0
-  4.desc=The velocity gain of the controller
-}
-```
+##### Subscribed Topics
 
+- `command`
+  ([pr2_controllers_msgs/msg/Pr2GripperCommand](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/Pr2GripperCommand.html)):
+  Accepts set point commands
 
+##### Published Topics
 
-
-
-```clearsilver
-pub {
-  0.name=state
-  0.type=pr2_controllers_msgs/JointControllerState
-  0.desc=Reports the current state of the controller.
-}
-sub {
-  0.name=command
-  0.type=pr2_controllers_msgs/Pr2GripperCommand
-  0.desc=Accepts set point commands
-}
-```
-
-
+- `state`
+  ([pr2_controllers_msgs/msg/JointControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointControllerState.html)):
+  Reports the current state of the controller.
 
 ### Example Configuration
 

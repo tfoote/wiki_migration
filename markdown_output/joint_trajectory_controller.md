@@ -111,7 +111,7 @@ The arrival of a new trajectory command does *not necessarily* mean that
 the controller will completely discard the currently running trajectory
 and substitute it with the new one. Rather, the controller will take the
 useful parts of both and combine them appropriately. Please refer to the
-[ understanding trajectory replacement](#understandingtrajectoryreplacement)
+[understanding trajectory replacement](#understandingtrajectoryreplacement)
 page for a detailed description of this behavior.
 
 ## ROS API
@@ -126,83 +126,61 @@ interface in the `follow_joint_trajectory` namespace of the
 controller. See the action definition for more information on what to
 send.
 
+#### Subscribed Topics
 
+- `command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Trajectory to execute using the **topic interface**.
 
-```clearsilver
-pub {
-  0.name=state
-  0.type=control_msgs/JointTrajectoryControllerState
-  0.desc= Current controller state.
-}
-sub {
-  0.name= command
-  0.type= trajectory_msgs/JointTrajectory
-  0.desc= Trajectory to execute using the '''topic interface'''.
-}
-```
+#### Published Topics
 
+- `state`
+  ([control_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/control_msgs/msg/JointTrajectoryControllerState.html)):
+  Current controller state.
 
+#### Services
 
+- `query_state`
+  ([control_msgs/srv/QueryTrajectoryState](https://docs.ros.org/en/rolling/p/control_msgs/srv/QueryTrajectoryState.html)):
+  Query controller state at any future time.
 
+#### Parameters
 
-```clearsilver
-srv{
-  0.name= query_state
-  0.type= control_msgs/QueryTrajectoryState
-  0.desc= Query controller state at any future time.
-}
-```
-
- 
-
-```clearsilver
-param{
-  0.name=joints
-  0.type=string[]
-  0.desc=The list of joints to control.
-  1.name=constraints/goal_time
-  1.type=double
-  1.desc=If the timestamp of the goal trajectory point is t, then following the trajectory succeeds if it reaches the goal within t +/- goal_time, and aborts otherwise.
-  1.default=0.0
-  2.name=constraints/stopped_velocity_tolerance
-  2.type=double
-  2.desc=Velocity to be considered approximately equal to zero.
-  2.default=0.01
-  3.name=constraints/<joint>/goal
-  3.type=double
-  3.desc=Position tolerance for a particular joint to reach the goal.  When the joint is within goal_position +/- goal_tolerance, than the trajectory can succeed.
-  3.default=0.0
-  4.name=constraints/<joint>/trajectory
-  4.type=double
-  4.desc=Position tolerance for a particular joint throughout the trajectory. If the joint position ever falls outside trajectory_position +/- tolerance, then the trajectory aborts.
-  4.default=0.0
-  5.name=gains/<joint>
-  5.type=associative array
-  5.desc=Key value pairs specifying a PID controller. This is required by the effort and velocity interfaces. See examples [[#Controller_configuration_examples|here]].
-  6.name=velocity_ff/<joint>
-  6.type=double
-  6.desc=Gain for a velocity feed-forward term added to the PID controller output. This is optional and is only used by the effort and velocity interfaces. See examples [[#Controller_configuration_examples|here]].
-  6.default=0.0
-  7.name=stop_trajectory_duration
-  7.type=double
-  7.desc=When starting the controller or canceling a trajectory, position hold mode is entered. This parameter specifies the time it takes to bring the current state (position and velocity) to a stop. Its value can be greater or equal than zero.
-  7.default=0.0
-  8.name=state_publish_rate
-  8.type=double
-  8.desc=Frequency (in Hz) at which the controller state is published.
-  8.default=50
-  9.name=action_monitor_rate
-  9.type=double
-  9.desc=Frequency (in Hz) at which the action goal status is monitored. This is an advanced parameter that should not require changing.
-  9.default=20
-  10.name=allow_partial_joints_goal
-  10.type=bool
-  10.desc=Enables sending JointTrajectory messages with a partial set of joints.
-  10.default=False
-}
-```
-
-
+- `joints` (`string[]`): The list of joints to control.
+- `constraints/goal_time` (`double`, default: `0.0`): If the timestamp
+  of the goal trajectory point is t, then following the trajectory
+  succeeds if it reaches the goal within t +/- goal_time, and aborts
+  otherwise.
+- `constraints/stopped_velocity_tolerance` (`double`, default: `0.01`):
+  Velocity to be considered approximately equal to zero.
+- `constraints/<joint>/goal` (`double`, default: `0.0`): Position
+  tolerance for a particular joint to reach the goal. When the joint is
+  within goal_position +/- goal_tolerance, than the trajectory can
+  succeed.
+- `constraints/<joint>/trajectory` (`double`, default: `0.0`): Position
+  tolerance for a particular joint throughout the trajectory. If the
+  joint position ever falls outside trajectory_position +/- tolerance,
+  then the trajectory aborts.
+- `gains/<joint>` (`associative array`): Key value pairs specifying a
+  PID controller. This is required by the effort and velocity
+  interfaces. See examples
+  [here](#controller-configuration-examples).
+- `velocity_ff/<joint>` (`double`, default: `0.0`): Gain for a velocity
+  feed-forward term added to the PID controller output. This is optional
+  and is only used by the effort and velocity interfaces. See examples
+  [here](#controller-configuration-examples).
+- `stop_trajectory_duration` (`double`, default: `0.0`): When starting
+  the controller or canceling a trajectory, position hold mode is
+  entered. This parameter specifies the time it takes to bring the
+  current state (position and velocity) to a stop. Its value can be
+  greater or equal than zero.
+- `state_publish_rate` (`double`, default: `50`): Frequency (in Hz) at
+  which the controller state is published.
+- `action_monitor_rate` (`double`, default: `20`): Frequency (in Hz) at
+  which the action goal status is monitored. This is an advanced
+  parameter that should not require changing.
+- `allow_partial_joints_goal` (`bool`, default: `False`): Enables
+  sending JointTrajectory messages with a partial set of joints.
 
 ### Controller configuration examples
 
@@ -517,7 +495,7 @@ The arrival of a new trajectory command does *not necessarily* mean that
 the controller will completely discard the currently running trajectory
 and substitute it with the new one. Rather, the controller will take the
 useful parts of both and combine them appropriately. Please refer to the
-[ understanding trajectory replacement](https://index.ros.org/p/joint_trajectory_controller)
+[understanding trajectory replacement](https://index.ros.org/p/joint_trajectory_controller)
 page for a detailed description of this behavior.
 
 ### ROS API
@@ -532,83 +510,61 @@ interface in the `follow_joint_trajectory` namespace of the
 controller. See the action definition for more information on what to
 send.
 
+##### Subscribed Topics
 
+- `command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Trajectory to execute using the **topic interface**.
 
-```clearsilver
-pub {
-  0.name=state
-  0.type=control_msgs/JointTrajectoryControllerState
-  0.desc= Current controller state.
-}
-sub {
-  0.name= command
-  0.type= trajectory_msgs/JointTrajectory
-  0.desc= Trajectory to execute using the '''topic interface'''.
-}
-```
+##### Published Topics
 
+- `state`
+  ([control_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/control_msgs/msg/JointTrajectoryControllerState.html)):
+  Current controller state.
 
+##### Services
 
+- `query_state`
+  ([control_msgs/srv/QueryTrajectoryState](https://docs.ros.org/en/rolling/p/control_msgs/srv/QueryTrajectoryState.html)):
+  Query controller state at any future time.
 
+##### Parameters
 
-```clearsilver
-srv{
-  0.name= query_state
-  0.type= control_msgs/QueryTrajectoryState
-  0.desc= Query controller state at any future time.
-}
-```
-
- 
-
-```clearsilver
-param{
-  0.name=joints
-  0.type=string[]
-  0.desc=The list of joints to control.
-  1.name=constraints/goal_time
-  1.type=double
-  1.desc=If the timestamp of the goal trajectory point is t, then following the trajectory succeeds if it reaches the goal within t +/- goal_time, and aborts otherwise.
-  1.default=0.0
-  2.name=constraints/stopped_velocity_tolerance
-  2.type=double
-  2.desc=Velocity to be considered approximately equal to zero.
-  2.default=0.01
-  3.name=constraints/<joint>/goal
-  3.type=double
-  3.desc=Position tolerance for a particular joint to reach the goal.  When the joint is within goal_position +/- goal_tolerance, than the trajectory can succeed.
-  3.default=0.0
-  4.name=constraints/<joint>/trajectory
-  4.type=double
-  4.desc=Position tolerance for a particular joint throughout the trajectory. If the joint position ever falls outside trajectory_position +/- tolerance, then the trajectory aborts.
-  4.default=0.0
-  5.name=gains/<joint>
-  5.type=associative array
-  5.desc=Key value pairs specifying a PID controller. This is required by the effort and velocity interfaces. See examples [[#Controller_configuration_examples|here]].
-  6.name=velocity_ff/<joint>
-  6.type=double
-  6.desc=Gain for a velocity feed-forward term added to the PID controller output. This is optional and is only used by the effort and velocity interfaces. See examples [[#Controller_configuration_examples|here]].
-  6.default=0.0
-  7.name=stop_trajectory_duration
-  7.type=double
-  7.desc=When starting the controller or canceling a trajectory, position hold mode is entered. This parameter specifies the time it takes to bring the current state (position and velocity) to a stop. Its value can be greater or equal than zero.
-  7.default=0.0
-  8.name=state_publish_rate
-  8.type=double
-  8.desc=Frequency (in Hz) at which the controller state is published.
-  8.default=50
-  9.name=action_monitor_rate
-  9.type=double
-  9.desc=Frequency (in Hz) at which the action goal status is monitored. This is an advanced parameter that should not require changing.
-  9.default=20
-  10.name=allow_partial_joints_goal
-  10.type=bool
-  10.desc=Enables sending JointTrajectory messages with a partial set of joints.
-  10.default=False
-}
-```
-
-
+- `joints` (`string[]`): The list of joints to control.
+- `constraints/goal_time` (`double`, default: `0.0`): If the timestamp
+  of the goal trajectory point is t, then following the trajectory
+  succeeds if it reaches the goal within t +/- goal_time, and aborts
+  otherwise.
+- `constraints/stopped_velocity_tolerance` (`double`, default: `0.01`):
+  Velocity to be considered approximately equal to zero.
+- `constraints/<joint>/goal` (`double`, default: `0.0`): Position
+  tolerance for a particular joint to reach the goal. When the joint is
+  within goal_position +/- goal_tolerance, than the trajectory can
+  succeed.
+- `constraints/<joint>/trajectory` (`double`, default: `0.0`): Position
+  tolerance for a particular joint throughout the trajectory. If the
+  joint position ever falls outside trajectory_position +/- tolerance,
+  then the trajectory aborts.
+- `gains/<joint>` (`associative array`): Key value pairs specifying a
+  PID controller. This is required by the effort and velocity
+  interfaces. See examples
+  [here](#controller-configuration-examples-1).
+- `velocity_ff/<joint>` (`double`, default: `0.0`): Gain for a velocity
+  feed-forward term added to the PID controller output. This is optional
+  and is only used by the effort and velocity interfaces. See examples
+  [here](#controller-configuration-examples-1).
+- `stop_trajectory_duration` (`double`, default: `0.0`): When starting
+  the controller or canceling a trajectory, position hold mode is
+  entered. This parameter specifies the time it takes to bring the
+  current state (position and velocity) to a stop. Its value can be
+  greater or equal than zero.
+- `state_publish_rate` (`double`, default: `50`): Frequency (in Hz) at
+  which the controller state is published.
+- `action_monitor_rate` (`double`, default: `20`): Frequency (in Hz) at
+  which the action goal status is monitored. This is an advanced
+  parameter that should not require changing.
+- `allow_partial_joints_goal` (`bool`, default: `False`): Enables
+  sending JointTrajectory messages with a partial set of joints.
 
 #### Controller configuration examples
 

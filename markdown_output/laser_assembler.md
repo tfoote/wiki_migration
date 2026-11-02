@@ -1,7 +1,7 @@
 ## Overview
 
 Laser Rangefinder sensors (such as Hokuyo's
-[ UTM-30LX](http://www.hokuyo-aut.jp/02sensor/07scanner/utm_30lx.html))
+[UTM-30LX](http://www.hokuyo-aut.jp/02sensor/07scanner/utm_30lx.html))
 generally output a stream of scans, where each scan is a set of range
 readings of detected objects (in polar coordinates) in the plane of the
 sensor.
@@ -62,73 +62,83 @@ The main interaction with the assemblers is via ROS services. The
 NOTE: For laser_pipeline releases < 0.5.0, this service is called
 `build_cloud`.
 
+### laser_scan_assembler
 
+Assembles a stream of
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages into point clouds.
 
-```clearsilver
-node.0{
-  name= laser_scan_assembler
-  desc= Assembles a stream of <<MsgLink(sensor_msgs/LaserScan)>> messages into point clouds.
-  sub {
-    0.name= scan
-    0.type=sensor_msgs/LaserScan  
-    0.desc= Topic on which to receive a stream of sensor_msgs/LaserScan messages.
-  }
-  param {
-    0.name= ~fixed_frame
-    0.type= string
-    0.desc= '''[Required]''' Stationary frame into which received scans (or clouds) are transformed.
-    1.name= ~tf_cache_time_secs
-    1.type= double
-    1.desc= The cache time (seconds) to store past transforms.
-    1.default = 10.0
-    2.name= ~max_scans
-    2.type= int
-    2.default = 400
-    2.desc= The number of scans to store in the assembler's rolling buffer.
-    3.name= ~ignore_laser_skew
-    3.default=`true`
-    3.type= bool
-    3.desc= If true, pretend that all hits in a single scan correspond to the same tf transforms. If false, individually transform each hit to the fixed_frame (this is a fairly cpu intensive operation). 
-  }
- srv {
-    0.name = assemble_scans
-    0.type = laser_assembler/AssembleScans
-    0.desc = When an assembler receives an `assemble_scans` request, it searches its rolling buffer for clouds that occur in the requested interval (`begin` to `end`). These clouds are then assembled into a larger cloud, in the frame specified by the `~fixed_frame` parameter, and sent to to the caller in the service response. This is a ''non-blocking'' operation and will return an empty cloud if no scans are received in the requested interval.  The resulting cloud will have channels named `intensities`, `index`, `distances`, and `stamps` as defined by the [[http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html | laser_geometry::LaserProjection]] library.
-    1.name = assemble_scans2
-    1.type = laser_assembler/AssembleScans2
-    1.desc = Same as assemble_scans, except returns a <<MsgLink(sensor_msgs/PointCloud2)>>
-  }
-}
-node.1{
-  name= point_cloud_assembler 
-  desc= Assembles a stream of these <<MsgLink(sensor_msgs/PointCloud)>> messages into larger point clouds.
-  sub {
-    0.name=cloud 
-    0.type= sensor_msgs/PointCloud
-    0.desc= Topic on which to receive a stream of sensor_msgs/PointCloud messages.
-  }
-  param {
-    0.name= ~fixed_frame
-    0.type= string
-    0.desc= '''[Required]''' Stationary frame into which received scans (or clouds) are transformed.
-    1.name= ~tf_cache_time_secs
-    1.type= double
-    1.desc= The cache time (seconds) to store past transforms.
-    1.default = 10.0
-    2.name= ~max_clouds
-    2.type= int
-    2.default = 400
-    2.desc= The number of point clouds to store in the assembler's rolling buffer.
-  }
- srv {
-    0.name = assemble_scans
-    0.type = laser_assembler/AssembleScans
-    0.desc = When an assembler receives an `assemble_scans` request, it searches its rolling buffer for clouds that occur in the requested interval (`begin` to `end`). These clouds are then assembled into a larger cloud, in the frame specified by the `~fixed_frame` parameter, and sent to to the caller in the service response. This is a ''non-blocking'' operation and will return an empty cloud if no scans are received in the requested interval.
-  }  
-}
-```
+#### Subscribed Topics
 
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Topic on which to receive a stream of sensor_msgs/LaserScan messages.
 
+#### Services
+
+- `assemble_scans`
+  ([laser_assembler/srv/AssembleScans](https://docs.ros.org/en/rolling/p/laser_assembler/srv/AssembleScans.html)):
+  When an assembler receives an `assemble_scans` request, it searches
+  its rolling buffer for clouds that occur in the requested interval
+  (`begin` to `end`). These clouds are then assembled into a larger
+  cloud, in the frame specified by the `fixed_frame` parameter, and
+  sent to to the caller in the service response. This is a
+  *non-blocking* operation and will return an empty cloud if no scans
+  are received in the requested interval. The resulting cloud will have
+  channels named `intensities`, `index`, `distances`, and
+  `stamps` as defined by the
+  [laser_geometry::LaserProjection](http://www.ros.org/doc/api/laser_geometry/html/classlaser__geometry_1_1LaserProjection.html)
+  library.
+- `assemble_scans2`
+  ([laser_assembler/srv/AssembleScans2](https://docs.ros.org/en/rolling/p/laser_assembler/srv/AssembleScans2.html)):
+  Same as assemble_scans, except returns a
+  [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+
+#### Parameters
+
+- `~fixed_frame` (`string`): **\[Required\]** Stationary frame into
+  which received scans (or clouds) are transformed.
+- `~tf_cache_time_secs` (`double`, default: `10.0`): The cache time
+  (seconds) to store past transforms.
+- `~max_scans` (`int`, default: `400`): The number of scans to store in
+  the assembler's rolling buffer.
+- `~ignore_laser_skew` (`bool`, default: `true`): If true, pretend
+  that all hits in a single scan correspond to the same tf transforms.
+  If false, individually transform each hit to the fixed_frame (this is
+  a fairly cpu intensive operation).
+
+### point_cloud_assembler
+
+Assembles a stream of these
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)
+messages into larger point clouds.
+
+#### Subscribed Topics
+
+- `cloud`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  Topic on which to receive a stream of sensor_msgs/PointCloud messages.
+
+#### Services
+
+- `assemble_scans`
+  ([laser_assembler/srv/AssembleScans](https://docs.ros.org/en/rolling/p/laser_assembler/srv/AssembleScans.html)):
+  When an assembler receives an `assemble_scans` request, it searches
+  its rolling buffer for clouds that occur in the requested interval
+  (`begin` to `end`). These clouds are then assembled into a larger
+  cloud, in the frame specified by the `fixed_frame` parameter, and
+  sent to to the caller in the service response. This is a
+  *non-blocking* operation and will return an empty cloud if no scans
+  are received in the requested interval.
+
+#### Parameters
+
+- `~fixed_frame` (`string`): **\[Required\]** Stationary frame into
+  which received scans (or clouds) are transformed.
+- `~tf_cache_time_secs` (`double`, default: `10.0`): The cache time
+  (seconds) to store past transforms.
+- `~max_clouds` (`int`, default: `400`): The number of point clouds to
+  store in the assembler's rolling buffer.
 
 ### Example Launch
 
@@ -243,6 +253,19 @@ API was deprecated. The API reference for the deprecated API is
 available on the [laser_assembler-0.3.0](laser_assembler-0.3.0) page.
 
 ## How to assemble laser scan lines into a composite point cloud
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Introduction to working with laser scanner data](https://index.ros.org/p/laser_pipeline)
+  [Laser filtering using nodes](https://index.ros.org/p/laser_filters).
+- **Description:** In this tutorial you will learn how to assemble
+  individual laser scan lines into a composite point cloud. One
+  particular use case is to assemble individual scan lines from a laser
+  on a tilting stage into a single point cloud to form a full 3D laser
+  sweep.
+- **Keywords:** laser, scan, assemble, aggregate, accumulate, point
+  cloud, cloud, laser scanner, hokuyo, sick
+- **Tutorial Level:** INTERMEDIATE
 
 In the
 [laser pipeline tutorials](https://index.ros.org/p/laser_pipeline), you

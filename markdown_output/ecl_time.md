@@ -80,6 +80,11 @@ Not yet implemented.
 
 ## Timestamps and Durations
 
+- **Description:** Timestamping and performing arithmetic on
+  timestamps/durations.
+- **Keywords:** ecl timestamps durations
+- **Tutorial Level:** INTERMEDIATE
+
 ### Timestamps
 
 On a posix system, the timestamp class can be used to capture the
@@ -164,6 +169,13 @@ This might change at some point in the future if we require negativity
 
 ## Sleep
 
+- **Description:** Classes that put the thread to sleep for fixed or
+  periodic intervals.
+- **Keywords:** sleep
+- **Tutorial Level:** INTERMEDIATE
+
+### Sleep
+
 Some simple sleep classes. They can be used directly or preconfigured.
 
 
@@ -223,6 +235,14 @@ this will marginally reduce the snoozer's latency.
 
 ## Stopwatch
 
+- **Description:** Devices to record the passing of time.
+- **Keywords:** ecl stopwatch
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Benchmarking](#benchmarking)
+
+### StopWatch
+
 This is a fairly intuitive class and uses the `TimeStamp` class under
 the hood for recording times.
 
@@ -242,6 +262,11 @@ stopwatch.restart();
 ```
 
 ## Benchmarking
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Stopwatch](#stopwatch).
+- **Description:** Tools to assist benchmarking programs.
+- **Tutorial Level:** INTERMEDIATE
 
 ### CpuWatch
 

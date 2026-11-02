@@ -23,47 +23,33 @@ The INS should be configured through its web interface to output:
 
 ## Nodes
 
+### ixblue_ins_driver
 
+ROS driver for iXblue inertial sensors supporting stdbin protocol
 
-```clearsilver
-name = ixblue_ins_driver
-desc = ROS driver for iXblue inertial sensors supporting stdbin protocol
-pub {
-  0.name = ix/ins
-  0.type = ixblue_ins_msgs/Ins
-  0.desc = Inertial and position data using a custom message
+#### Published Topics
 
-  1.name = standard/imu
-  1.type = sensor_msgs/Imu
-  1.desc = Standard ROS IMU message containing inertial data
+- `ix/ins`
+  ([ixblue_ins_msgs/msg/Ins](https://docs.ros.org/en/rolling/p/ixblue_ins_msgs/msg/Ins.html)):
+  Inertial and position data using a custom message
+- `standard/imu`
+  ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
+  Standard ROS IMU message containing inertial data
+- `standard/navsatfix`
+  ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
+  GNSS Position of the system in Standard ROS message
+- `standard/timereference`
+  ([sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html)):
+  INS time reference
 
-  2.name = standard/navsatfix
-  2.type = sensor_msgs/NavSatFix
-  2.desc = GNSS Position of the system in Standard ROS message
+#### Parameters
 
-  3.name = standard/timereference
-  3.type = sensor_msgs/TimeReference
-  3.desc = INS time reference
-}
-param {
-  0.name = ~udp_port
-  0.type = string
-  0.desc = The UDP port from which the system will receive INS data.
-  0.default = 8200
-
-  1.name = ~ip
-  1.type = string
-  1.desc = The address of the network interface to listen to.
-  1.default = 0.0.0.0
-
-  2.name = ~time_source
-  2.type = string
-  2.desc = Determine the source of the timestamp data. "ins" for ins timestamp. "ros" for ROS timestamp.
-  2.default = ins
-
-  3.name = ~time_origin
-  3.type = string
-  3.desc = Determine the time origin of the timestamp. "sensor_default" for ins base time. "unix" for UNIX base time (since 1st of january 1970).
-  3.default = unix
-}
-```
+- `~udp_port` (`string`, default: `8200`): The UDP port from which the
+  system will receive INS data.
+- `~ip` (`string`, default: `0.0.0.0`): The address of the network
+  interface to listen to.
+- `~time_source` (`string`, default: `ins`): Determine the source of the
+  timestamp data. "ins" for ins timestamp. "ros" for ROS timestamp.
+- `~time_origin` (`string`, default: `unix`): Determine the time origin
+  of the timestamp. "sensor_default" for ins base time. "unix" for
+  UNIX base time (since 1st of january 1970).

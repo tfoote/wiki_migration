@@ -18,6 +18,13 @@ Tree.
 
 ## Start using the KDL parser
 
+- **Note:** This tutorial assumes you have already
+  [created your own URDF file](https://index.ros.org/p/urdf) or that you
+  are working with the existing PR2 URDF file.
+- **Description:** This tutorial teaches you how to create a KDL Tree
+  from a [URDF](https://index.ros.org/p/urdf) file
+- **Tutorial Level:** BEGINNER
+
 ### Building the KDL parser
 
 

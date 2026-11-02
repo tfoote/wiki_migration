@@ -68,6 +68,11 @@ There was also an article in IEEE Spectrum (ROS Topics):
 
 ## Capabilities Demo
 
+- **Description:** Demonstrating the capabilities of the capability
+  server.
+- **Keywords:** capabilities
+- **Tutorial Level:** INTERMEDIATE
+
 You can setup a demo of sorts using one of the test fixtures.
 
 

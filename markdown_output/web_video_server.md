@@ -3,34 +3,19 @@
 This package provides a video stream of a ROS image transport topic that
 can be accessed via HTTP.
 
+#### Parameters
 
-
-```clearsilver
-param {
-  0.name = ~port
-  0.type = integer
-  0.desc = Port number to listen for http requests.
-  0.default = 8080
-
-  1.name = ~address
-  1.type = string
-  1.desc = Address to listen for http requests
-  1.default = 0.0.0.0
-
-  2.name = ~server_threads
-  2.type = integer
-  2.desc = The number of threads used to serve HTTP requests (these are not used for actual image streams).
-  2.default = 1
-
-  3.name = ~ros_threads
-  3.type = integer
-  3.desc = The number of threads running ros spinners. These threads are used to do the actual image encoding. These threads are shared between all current streams so the number does not need to match the number of connections.
-  3.default = 2
-
-}
-```
-
-
+- `~port` (`integer`, default: `8080`): Port number to listen for http
+  requests.
+- `~address` (`string`, default: `0.0.0.0`): Address to listen for http
+  requests
+- `~server_threads` (`integer`, default: `1`): The number of threads
+  used to serve HTTP requests (these are not used for actual image
+  streams).
+- `~ros_threads` (`integer`, default: `2`): The number of threads
+  running ros spinners. These threads are used to do the actual image
+  encoding. These threads are shared between all current streams so the
+  number does not need to match the number of connections.
 
 ## Usage
 
@@ -59,130 +44,60 @@ Several parameters can be configure via the video stream URL - Example:
 These are the parameters that can be used to configure a stream or
 snapshot:
 
-
-
-```clearsilver
-param {
-  no_header= True
-  0.name= width
-  0.type= integer
-  0.default= original width
-  0.desc= The image stream will be resized to a new width and height. This parameter has to be used in conjunction with the height parameter.
-  1.name= height
-  1.type= integer
-  1.default= original height
-  1.desc= The image stream will be resized to a new width and height. This parameter has to be used in conjunction with the height parameter.
-  2.name= quality
-  2.type= integer
-  2.default= 90
-  2.desc= The jpeg image quality (1...100). This parameter can be used to reduce the size of the resulting stream.
-  3.name= invert
-  3.type= none
-  3.default=
-  3.desc= Rotates the image by 180 degrees before streaming.
-  4.name= default_transport
-  4.type= string
-  4.default= "raw"
-  4.desc= The image transport to use (raw, compressed, theora).
-}
-```
-
-
+- `width` (`integer`, default: `original width`): The image stream will
+  be resized to a new width and height. This parameter has to be used in
+  conjunction with the height parameter.
+- `height` (`integer`, default: `original height`): The image stream
+  will be resized to a new width and height. This parameter has to be
+  used in conjunction with the height parameter.
+- `quality` (`integer`, default: `90`): The jpeg image quality
+  (1\...100). This parameter can be used to reduce the size of the
+  resulting stream.
+- `invert` (`none`): Rotates the image by 180 degrees before streaming.
+- `default_transport` (`string`, default: `"raw"`): The image transport
+  to use (raw, compressed, theora).
 
 ### Snapshot Parameters
 
 These are the parameters that can be used to configure a snapshot:
 
-
-
-```clearsilver
-param {
-  no_header= True
-  0.name= quality
-  0.type= integer
-  0.default= 95
-  0.desc= The jpeg image quality (1...100). This parameter can be used to reduce the size of the resulting stream.
-}
-```
-
-
+- `quality` (`integer`, default: `95`): The jpeg image quality
+  (1\...100). This parameter can be used to reduce the size of the
+  resulting stream.
 
 ### Stream Parameters
 
 These are the parameters that can be used to configure a stream:
 
+- `type` (`string`, default: `mjpeg`): The encoding method for the
+  stream (mjpeg, vp8, ros_compressed, png, h264).
 
-
-```clearsilver
-param {
-  no_header= True
-  0.name= type
-  0.type= string
-  0.default= mjpeg
-  0.desc= The encoding method for the stream (mjpeg, vp8, ros_compressed, png, h264).
-}
-```
-
- Additional parameters can be specified for each
-encoding type as described below.
+Additional parameters can be specified for each encoding type as
+described below.
 
 #### Mjpeg Stream Parameters
 
 These are the parameters that can be used to configure a mjpeg stream:
 
-
-
-```clearsilver
-param {
-  no_header= True
-  0.name= quality
-  0.type= integer
-  0.default= 95
-  0.desc= The jpeg image quality (1...100). This parameter can be used to reduce the size of the resulting stream.
-}
-```
-
-
+- `quality` (`integer`, default: `95`): The jpeg image quality
+  (1\...100). This parameter can be used to reduce the size of the
+  resulting stream.
 
 #### VP8 Stream Parameters
 
 These are the parameters that can be used to configure a vp8 stream:
 
+- `bitrate` (`integer`, default: `100000`): Maximum bitrate setting.
+  Note that a small bitrate could significantly increase the latency due
+  to a delayed transmission of larger intra frames.
+- `qmin` (`integer`, default: `10`): Minimum quantizer.
+- `qmax` (`integer`, default: `42`): Maximum quantizer.
+- `gop` (`integer`, default: `250`): Keyframe interval, this determines
+  the maximum distance between I-frames.
+- `quality` (`string`, default: `realtime`): The encoding quality.
 
-
-```clearsilver
-param {
-  no_header= True
-  0.name = bitrate
-  0.type = integer
-  0.desc = Maximum bitrate setting. Note that a small bitrate could significantly increase the latency due to a delayed transmission of larger intra frames.
-  0.default = 100000
-
-  1.name = qmin
-  1.type = integer
-  1.desc = Minimum quantizer.
-  1.default = 10
-
-  2.name = qmax
-  2.type = integer
-  2.desc = Maximum quantizer.
-  2.default = 42
-
-  3.name = gop
-  3.type = integer
-  3.desc = Keyframe interval, this determines the maximum distance between I-frames.
-  3.default = 250
-
-  4.name = quality
-  4.type = string
-  4.desc = The encoding quality.
-  4.default = realtime
-}
-```
-
- More information on the quality and profile
-parameter of the VP8 codec can be found here:
-<http://www.webmproject.org/docs/encoder-parameters>
+More information on the quality and profile parameter of the VP8 codec
+can be found here: <http://www.webmproject.org/docs/encoder-parameters>
 
 ### Unsupported customizations
 

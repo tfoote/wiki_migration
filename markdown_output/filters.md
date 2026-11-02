@@ -173,26 +173,15 @@ y\[n\] = (x\[n\] + x\[n-1\] + \... + x\[n-obs\])/obs
 
 #### ROS API
 
+##### Parameters
 
-
-```clearsilver
-param{
-  0.name=~name
-  0.type=string
-  0.desc= Name of the filter
-  0.default=Required
-  1.name=~type
-  2.type=string
-  2.desc= The filter's typename as declared in it's [[pluginlib]] registration: `MultiChannelMeanFilterDouble` or `MeanFilterDouble` 
-  2.default=Required
-  3.name=~params/number_of_observations
-  3.type= int 
-  3.desc= The order of the filter 
-  3.default=Required
-}
-```
-
-
+- `~name` (`string`, default: `Required`): Name of the filter
+- `~type`
+- (`string`, default: `Required`): The filter's typename as declared in
+  it's [pluginlib](https://index.ros.org/p/pluginlib) registration:
+  `MultiChannelMeanFilterDouble` or `MeanFilterDouble`
+- `~params/number_of_observations` (`int`, default: `Required`): The
+  order of the filter
 
 **Example Configuration:** 
 
@@ -217,26 +206,15 @@ y\[n\] = median(x\[n\] + x\[n-1\] + \... + x\[n-obs\])
 
 #### ROS API
 
+##### Parameters
 
-
-```clearsilver
-param{
-  0.name=~name
-  0.type=string
-  0.desc= Name of the filter
-  0.default=Required
-  1.name=~type
-  2.type=string
-  2.desc= The filter's typename as declared in it's [[pluginlib]] registration: `MultiChannelMedianFilterDouble` or `MedianFilterDouble` 
-  2.default=Required
-  3.name=~params/number_of_observations
-  3.type= int 
-  3.desc= The order of the filter 
-  3.default=Required
-}
-```
-
-
+- `~name` (`string`, default: `Required`): Name of the filter
+- `~type`
+- (`string`, default: `Required`): The filter's typename as declared in
+  it's [pluginlib](https://index.ros.org/p/pluginlib) registration:
+  `MultiChannelMedianFilterDouble` or `MedianFilterDouble`
+- `~params/number_of_observations` (`int`, default: `Required`): The
+  order of the filter
 
 **Example Configuration:** 
 
@@ -261,22 +239,13 @@ y\[n\] = x\[n\] + 1
 
 #### ROS API
 
+##### Parameters
 
-
-```clearsilver
-param{
-  0.name=~name
-  0.type=string
-  0.desc= Name of the filter
-  0.default=Required
-  1.name=~type
-  2.type=string
-  2.desc= The filter's typename as declared in it's [[pluginlib]] registration: `MultiChannelIncrementFilterDouble` or `IncrementFilterDouble` 
-  2.default=Required
-}
-```
-
-
+- `~name` (`string`, default: `Required`): Name of the filter
+- `~type`
+- (`string`, default: `Required`): The filter's typename as declared in
+  it's [pluginlib](https://index.ros.org/p/pluginlib) registration:
+  `MultiChannelIncrementFilterDouble` or `IncrementFilterDouble`
 
 **Example Configuration:** 
 
@@ -303,30 +272,16 @@ If a\[0\] is not equal to 1, the coefficients are normalised by a\[0\].
 
 #### ROS API
 
+##### Parameters
 
-
-```clearsilver
-param{
-  0.name=~name
-  0.type=string
-  0.desc= Name of the filter
-  0.default=Required
-  1.name=~type
-  2.type=string
-  2.desc= The filter's typename as declared in it's [[pluginlib]] registration: `MultiChannelTransferFunctionFilterDouble` or `TransferFunctionFilterDouble` 
-  2.default=Required
-  3.name=~params/a
-  3.type= double 
-  3.desc= A vector of coefficients 
-  3.default=Required
-  4.name=~params/b
-  4.type= double 
-  4.desc= A vector of coefficients 
-  4.default=Required
-}
-```
-
-
+- `~name` (`string`, default: `Required`): Name of the filter
+- `~type`
+- (`string`, default: `Required`): The filter's typename as declared in
+  it's [pluginlib](https://index.ros.org/p/pluginlib) registration:
+  `MultiChannelTransferFunctionFilterDouble` or
+  `TransferFunctionFilterDouble`
+- `~params/a` (`double`, default: `Required`): A vector of coefficients
+- `~params/b` (`double`, default: `Required`): A vector of coefficients
 
 **Example Configuration:** 
 
@@ -364,6 +319,16 @@ The current list of open issues is available on
 [trac](https://code.ros.org/trac/ros-pkg/query?status=assigned&status=new&status=reopened&group=milestone&order=priority&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&component=common&keywords=~filters)
 
 ## Implementing a simple filter
+
+- **Description:** This will describe how to implement a simple filter.
+  This filter will simply add 1 to any incoming value. This filter
+  exists in the filter package. The version for this tutorial has been
+  isolated from other example files in the filters package.
+- **Keywords:** filters
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:** How to use filters with respect to laser data
+  [Laser filtering using the filter nodes](https://index.ros.org/p/laser_filters)
+  [Laser filtering in C++](https://index.ros.org/p/laser_filters)
 
 ### Process
 

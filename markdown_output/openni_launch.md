@@ -84,18 +84,12 @@ rosrun image_view image_view image:=/camera/rgb/image_mono
 
 ## Launch files
 
+### openni.launch
 
-
-```clearsilver
-node.0 {
-  name = openni.launch
-  desc << EOM
-Launches in one process the device driver and many processing nodelets for turning the raw RGB and depth images into useful products, such as point clouds. Provides default tf tree linking the RGB and depth cameras.
-EOM
-}
-```
-
-
+Launches in one process the device driver and many processing nodelets
+for turning the raw RGB and depth images into useful products, such as
+point clouds. Provides default tf tree linking the RGB and depth
+cameras.
 
 #### Arguments
 
@@ -104,177 +98,89 @@ This section only covers arguments that are specific to
 supplied to `openni.launch` that are documented with
 [rgbd_launch](https://index.ros.org/p/rgbd_launch).
 
+- `camera` (`string`, default: `camera`): Descriptive name for your
+  device. All published topics are *pushed down* into the `<camera>`
+  namespace, and this also affects tf frame ids and some node names. If
+  you are using multiple cameras, use this argument to disambiguate
+  them.
 
+##### Device driver
 
-```clearsilver
-param {
-  no_header=True
-  group.0 {
-    0.name = camera
-    0.type = string
-    0.default = camera
-    0.desc << EOM
-Descriptive name for your device. All published topics are ''pushed down'' into the `<camera>` namespace, and this also affects tf frame ids and some node names. If you are using multiple cameras, use this argument to disambiguate them.
-EOM
-  }
-  group.1 {
-    name = Device driver
-    0.name = device_id
-    0.type = string
-    0.default = #1
-    0.desc << EOM
-Specifies which device to open. The following formats are recognized:
-    ||#1 ||Use first device found ||
-    ||2@3 ||Use device on USB bus 2, address 3 ||
-    ||B00367707227042B||Use device with given serial number||
-EOM
-    1.name = rgb_camera_info_url
-    1.type = string
-    1.default = `file://${ROS_HOME}/camera_info/${NAME}.yaml`
-    1.desc << EOM
-[[camera_info_manager#URL_Names|Calibration URL]] for the RGB camera. By default, looks in your ROS home directory for calibration identified by the device serial number, e.g. `$HOME/.ros/camera_info/rgb_B00367707227042B`. If no calibration is found, uses a default camera model with a typical focal length and distortion unmodeled.
-EOM
-    2.name = depth_camera_info_url
-    2.type = string
-    2.default = `file://${ROS_HOME}/camera_info/${NAME}.yaml`
-    2.desc << EOM
-[[camera_info_manager#URL_Names|Calibration URL]] for the IR/depth camera. By default, looks in your ROS home directory for calibration identified by the device serial number, e.g. `$HOME/.ros/camera_info/depth_B00367707227042B`. If no calibration is found, uses a default camera model with the focal length reported by OpenNI and distortion unmodeled.
-EOM
-  }
-```
+- `device_id` (`string`, default: `#1`): Specifies which device to open.
+  The following formats are recognized: \|\|#1 \|\|Use first device
+  found \|\| \|\|2@3 \|\|Use device on USB bus 2, address 3 \|\|
+  \|\|B00367707227042B\|\|Use device with given serial number\|\|
+- `rgb_camera_info_url` (`string`, default:
+  `file:*\${ROS_HOME}/camera_info/\${NAME}.yaml`):
+  [Calibration URL](https://index.ros.org/p/camera_info_manager) for the
+  RGB camera. By default, looks in your ROS home directory for
+  calibration identified by the device serial number, e.g.
+  `\$HOME/.ros/camera_info/rgb_B00367707227042B`. If no calibration is
+  found, uses a default camera model with a typical focal length and
+  distortion unmodeled. \* `depth_camera_info_url` (`string`, default:
+  `file:*\${ROS_HOME}/camera_info/\${NAME}.yaml`):
+  [Calibration URL](https://index.ros.org/p/camera_info_manager) for the
+  IR/depth camera. By default, looks in your ROS home directory for
+  calibration identified by the device serial number, e.g.
+  `\$HOME/.ros/camera_info/depth_B00367707227042B`. If no calibration
+  is found, uses a default camera model with the focal length reported
+  by OpenNI and distortion unmodeled.
 
+<!-- -->
 
+- `depth_registration` (`bool`, default: `false`): If true, use
+  OpenNI's factory-calibrated depth->RGB registration.
+- `load_driver` (`bool`, default: `true`): If true, load the OpenNI
+  device driver. Set to false if raw data is provided by another source,
+  e.g. bag file playback.
 
+##### tf frames
 
+- `rgb_frame_id` (`string`, default:
+  `/<camera>_rgb_optical_frame`): The tf frame id of the RGB
+  camera.
+- `depth_frame_id` (`string`, default:
+  `/<camera>_depth_optical_frame`): The tf frame id of the IR
+  camera.
 
-```clearsilver
-param {
-  no_header=True
-  3.name = depth_registration
-  3.type = bool
-  3.default = false
-  3.desc = If true, use OpenNI's factory-calibrated depth->RGB registration.
-  4.name = load_driver
-  4.type = bool
-  4.default = true
-  4.desc = If true, load the OpenNI device driver. Set to false if raw data is provided by another source, e.g. bag file playback.
-}
-```
+<!-- -->
 
+- `publish_tf` (`bool`, default: `true`): If true, publish the default
+  (uncalibrated) tf tree. Set to false if extrinsics are provided by
+  another source, e.g. calibration or bag file playback.
 
+<!-- -->
 
+- `tf_prefix` (`string`, default: `""`): If set, this tf_prefix is
+  prefixed to all frame ids used/generated by `openni.launch`
 
+##### Remapping
 
-```clearsilver
-param {
-  no_header=True
-  group.2 {
-    name = tf frames
-    0.name = rgb_frame_id
-    0.type = string
-    0.default = `/<camera>_rgb_optical_frame`
-    0.desc = The tf frame id of the RGB camera.
-    1.name = depth_frame_id
-    1.type = string
-    1.default = `/<camera>_depth_optical_frame`
-    1.desc = The tf frame id of the IR camera.
-  }
-```
+- `rgb` (`string`, default: `rgb`): Remap the `rgb` namespace.
+- `ir` (`string`, default: `ir`): Remap the `ir` namespace.
+- `depth` (`string`, default: `depth`): Remap the `depth` namespace.
+- `depth_registered` (`string`, default: `depth_registered`): Remap the
+  `depth_registered` namespace.
+- `projector` (`string`, default: `projector`): Remap the `projector`
+  namespace.
 
+##### Launch configuration
 
+- `debug` (`bool`, default: `false`): If true, launches nodelet manager
+  in GDB for debugging.
 
+<!-- -->
 
+- `respawn` (`bool`, default: `false`): If true, enables bond topics
+  between nodelet loaders and the managers and respawns any nodes
+  (manager or loader) that die. This makes the system robust to any node
+  dying, but the proliferation of bond topics can overwhelm
+  introspection tools like rxgraph.
 
-```clearsilver
-param {
-  no_header=True
-  2.name = publish_tf
-  2.type = bool
-  2.default = true
-  2.desc = If true, publish the default (uncalibrated) tf tree. Set to false if extrinsics are provided by another source, e.g. calibration or bag file playback.
-}
-```
+<!-- -->
 
-
-
-
-
-```clearsilver
-param {
-  no_header=True
-  3.name = tf_prefix
-  3.type = string
-  3.default = ""
-  3.desc = If set, this tf_prefix is prefixed to all frame ids used/generated by `openni.launch`
-}
-```
-
-
-
-
-
-```clearsilver
-param {
-  no_header=True
-  group.3 {
-    name = Remapping
-    0.name = rgb
-    0.type = string
-    0.default = rgb
-    0.desc = Remap the `rgb` namespace.
-    1.name = ir
-    1.type = string
-    1.default = ir
-    1.desc = Remap the `ir` namespace.
-    2.name = depth
-    2.type = string
-    2.default = depth
-    2.desc = Remap the `depth` namespace.
-    3.name = depth_registered
-    3.type = string
-    3.default = depth_registered
-    3.desc = Remap the `depth_registered` namespace.
-    4.name = projector
-    4.type = string
-    4.default = projector
-    4.desc = Remap the `projector` namespace.
-  }
-  group.4 {
-    name = Launch configuration
-    0.name = debug
-    0.type = bool
-    0.default = false
-    0.desc = If true, launches nodelet manager in GDB for debugging.
-}
-```
-
-
-
-
-
-```clearsilver
-param {
-  no_header=True
-  1.name = respawn
-  1.type = bool
-  1.default = false
-  1.desc = If true, enables bond topics between nodelet loaders and the managers and respawns any nodes (manager or loader) that die. This makes the system robust to any node dying, but the proliferation of bond topics can overwhelm introspection tools like rxgraph.
-}
-```
-
- 
-
-```clearsilver
-param {
-  no_header=True
-  1.name = num_worker_threads
-  1.type = int
-  1.default = 4
-  1.desc = Sets the number of worker threads in the nodelet manager
-}
-```
-
-
+- `num_worker_threads` (`int`, default: `4`): Sets the number of worker
+  threads in the nodelet manager
 
 This section only covers arguments that are specific to
 `openni_launch`. There are also some common arguments that can be
@@ -321,6 +227,15 @@ Please consult the documentation at
   outputs like color point clouds.
 
 ## Recording and playing back Kinect data
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Quick start guide](#quick-start-guide),
+  [Recording and playing back data with rosbag](https://index.ros.org/p/rosbag).
+- **Description:** This tutorial shows how to efficiently record Kinect
+  data into the ROS bag file format, and play it back into the same ROS
+  processing graph.
+- **Tutorial Level:** BEGINNER
 
 Motivating use case: We are writing algorithms that process point
 clouds, and wish to record some benchmark datasets for testing. We can
@@ -534,6 +449,15 @@ rosbag play --clock kinect.bag
 
 ## Calibrating the Kinect depth camera to the built-in RGB camera
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Calibrating the Kinect depth camera to an external RGB camera](#calibrating-the-kinect-depth-camera-to-an-external-rgb-camera).
+- **Description:** This tutorial demonstrates an alternative to OpenNI
+  for registering the depth and RGB cameras based on a user calibration
+  instead of the factory one. It requires an extrinsic calibration,
+  calculating the relative transform between the two cameras.
+- **Tutorial Level:** INTERMEDIATE
+
 ### Should I calibrate?
 
 As we saw in the
@@ -725,6 +649,16 @@ You can compare with OpenNI registration by enabling it as shown in the
 [Quick Start guide](#registration-matching-depth-to-color).
 
 ## Calibrating the Kinect depth camera to an external RGB camera
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Intrinsic calibration of the Kinect cameras](#intrinsic-calibration-of-the-kinect-cameras),
+  [Getting started with camera_pose_calibration](https://index.ros.org/p/camera_pose_calibration).
+- **Description:** This tutorial demonstrates how to register the Kinect
+  depth image to an external RGB camera instead of the built-in one.
+  This requires an extrinsic calibration, calculating the relative
+  transform between the two cameras.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Attaching an external RGB camera
 
@@ -922,6 +856,22 @@ densely interpolate the higher-resolution registered depth image.
 
 ## Intrinsic calibration of the Kinect cameras
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Quick start guide](#quick-start-guide),
+  [How to calibrate a monocular camera](https://index.ros.org/p/camera_calibration).
+- **Description:** This tutorial shows how to calibrate the intrinsic
+  parameters of the IR (depth) and RGB cameras, including focal length
+  and the distortion model. For applications requiring high accuracy,
+  calibration can improve on the default camera models used by
+  [openni_camera](https://index.ros.org/p/openni_camera). **This
+  calibration does not necessary fully calibrate the depth.** Especially
+  the ASUS Xtion is prone to depth errors and needs further calibration
+  (see also [here](http://www.roboticsproceedings.org/rss09/p27.pdf) and
+  [here](http://alexteichman.com/octo/clams/)). There is no official
+  module in ROS yet to calibrate this (as of 6th February 2015).
+- **Tutorial Level:** BEGINNER
+
 ### Should I calibrate?
 
 Not necessarily. The
@@ -1036,6 +986,14 @@ launch file which configures the camera info URLs:
 
 ## Quick start guide
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS/Introduction](ROS/Introduction).
+- **Description:** Begin here. This tutorial demonstrates how to open a
+  Kinect (or other OpenNI device) in ROS, introduces ROS tools for
+  visualization and configuration, and explains how to get registered
+  (depth + RGB) outputs like color point clouds.
+- **Tutorial Level:** BEGINNER
+
 ### Opening the device
 
 Open a command line and launch the OpenNI driver like this:
@@ -1049,7 +1007,7 @@ roslaunch openni_launch openni.launch
 
 That's it! `openni.launch` opens your Kinect and processes the raw
 data into convenient outputs like [point clouds](pcl). See the
-reference documentation for
+[reference documentation](#opennilaunch) for
 all topics published by `openni.launch`. We'll explore some of them
 below.
 

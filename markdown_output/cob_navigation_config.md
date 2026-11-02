@@ -25,10 +25,9 @@ a folder with configuration files for each of the
 
 - robot\* is the folder of the specific robot (e.g. `cob3-2`, `raw3-1`).
 - **`\*robot\*/costmap_common_params.yaml`**: Holds the common
-  configuration for the
-  [ costmap's](https://index.ros.org/p/costmap_2d) run on the robot.
-  Those can differ between the different robot versions concerning e.g.
-  the footprint.
+  configuration for the [costmap's](https://index.ros.org/p/costmap_2d)
+  run on the robot. Those can differ between the different robot
+  versions concerning e.g. the footprint.
 - **`\*robot\*/base_local_planner_params.yaml`**: Parameters for the
   [base_local_planner](https://index.ros.org/p/base_local_planner) for
   the respective robot.

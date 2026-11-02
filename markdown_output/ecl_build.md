@@ -10,6 +10,12 @@
 
 ## The Ecl CMake Library
 
+- **Description:** Lists ecl's cmake library api and demos its usage.
+- **Keywords:** ecl cmake
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Link as Needed](#link-as-needed)
+
 ### Overview
 
 These are modules which can be included by cmake in the regular way with
@@ -100,6 +106,14 @@ ecl_ros_output_paths() - sets standard output paths for ros builds.
 ```
 
 ## Link as Needed
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [The Ecl CMake Library](#the-ecl-cmake-library).
+- **Description:** Remove unused library dependencies from being
+  automatically linked by ros.
+- **Keywords:** ecl linking
+- **Tutorial Level:** INTERMEDIATE
 
   -- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- --
      <#FFFF00> This tutorial is no longer relevant for most platforms supporting ros hydro and beyond since gcc has switched its internal behaviour to link as needed.   

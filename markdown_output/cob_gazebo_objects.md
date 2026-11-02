@@ -66,6 +66,9 @@ You can find the objects with an SRS_Data_ID in the
 
 ## Create your own object
 
+- **Description:** This tutorial shows how to model your own object and
+  add it to gazebo
+
 ### Modelling
 
 In general: avoid zero thickness for planes, this will cause rendering

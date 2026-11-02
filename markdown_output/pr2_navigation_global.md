@@ -35,13 +35,13 @@ global navigation specific configurations.
   the [base_local_planner](https://index.ros.org/p/base_local_planner)
   specific to global navigation on the PR2.
 - **`config/global_costmap_params.yaml`**: Holds parameters for the
-  global [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  global [costmap](https://index.ros.org/p/costmap_2d) used in the
   `move_base.xml` configuration file. This is the costmap used by the
   [navfn](https://index.ros.org/p/navfn) planner, and in this case, is
   initialized by a static map offered by an instance of the
   [map_server](https://index.ros.org/p/map_server) node.
 - **`config/local_costmap_params.yaml`**: Holds parameters for the
-  local [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  local [costmap](https://index.ros.org/p/costmap_2d) used in the
   `move_base.xml` configuration file. This is the costmap used by the
   [base_local_planner](https://index.ros.org/p/base_local_planner)
   planner, which operates in an odometric frame.

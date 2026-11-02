@@ -13,6 +13,6 @@ Spanish-speaking world and published for the first time in 1941.
 ## Usage
 
 Usage examples can be found in the
-[Code API\|](http://docs.ros.org/kinetic/api/baldor/html/)
+[Code API](http://docs.ros.org/kinetic/api/baldor/html/)
 
 ## Report a Bug

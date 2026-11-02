@@ -73,95 +73,82 @@ conjunction with the ROS nodes in this package.
 
 ## Nodes
 
+### robot_state
 
+Connects to the !StateServer RAPID task on the controller and publishes
+joint states.
 
-```clearsilver
+#### Action Feedback
 
-node.0 {
-  name=robot_state
-  desc=Connects to the !StateServer RAPID task on the controller and publishes joint states.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectory](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectory.html)):
+  Provide feedback of current vs. desired joint position (and
+  velocity/acceleration).
 
-  pub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-  }
+#### Published Topics
 
-  pub {
-    1.name = robot_status
-    1.type = industrial_msgs/RobotStatus
-    1.desc = Aggregate controller/robot status (ie: drives enabled, motion possible, etc)
-  }
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `robot_status`
+  ([industrial_msgs/msg/RobotStatus](https://docs.ros.org/en/rolling/p/industrial_msgs/msg/RobotStatus.html)):
+  Aggregate controller/robot status (ie: drives enabled, motion
+  possible, etc)
 
-  feedback {
-    0.name = feedback_states
-    0.type = control_msgs/FollowJointTrajectory
-    0.desc = Provide feedback of current vs. desired joint position (and velocity/acceleration).
-  }
+#### Parameters
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the !StateServer RAPID task is listening on.
-    1.default = 11002
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only publish joint states for a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-  }
-}
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11002`): TCP port the !StateServer RAPID
+  task is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`): (optional) A list
+  containing all joints the driver should assume control over. If this
+  parameter is not found, the driver will try to extract this from the
+  `robot_description` parameter, but this will result in all joints in
+  the urdf to be included. If the driver should only publish joint
+  states for a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
-node.1 {
-  name=motion_download_interface
-  desc=Connects to the !MotionServer RAPID task on the controller and uploads trajectories.
+### motion_download_interface
 
-  sub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-    1.name = joint_path_command
-    1.type = trajectory_msgs/JointTrajectory
-    1.desc = Execute a pre-calculated joint trajectory on the robot.
-  }
+Connects to the !MotionServer RAPID task on the controller and uploads
+trajectories.
 
-  srv {
-    0.name = joint_path_command
-    0.type = industrial_msgs/CmdJointTrajectory
-    0.desc = Execute a new motion trajectory on the robot.
-    1.name = stop_motion
-    1.type = industrial_msgs/StopMotion
-    1.desc = Stop execution of the current motion at the earliest time possible.
-  }
+#### Subscribed Topics
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the !MotionServer RAPID program is listening on.
-    1.default = 11000
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only control a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-    3.default = none
-  }
-}
-```
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Execute a pre-calculated joint trajectory on the robot.
 
+#### Services
 
+- `joint_path_command`
+  ([industrial_msgs/srv/CmdJointTrajectory](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/CmdJointTrajectory.html)):
+  Execute a new motion trajectory on the robot.
+- `stop_motion`
+  ([industrial_msgs/srv/StopMotion](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/StopMotion.html)):
+  Stop execution of the current motion at the earliest time possible.
+
+#### Parameters
+
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11000`): TCP port the !MotionServer
+  RAPID program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`, default: `none`):
+  (optional) A list containing all joints the driver should assume
+  control over. If this parameter is not found, the driver will try to
+  extract this from the `robot_description` parameter, but this will
+  result in all joints in the urdf to be included. If the driver should
+  only control a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
 ## Contact us/Technical support
 
@@ -193,6 +180,18 @@ This tutorial describes how to setup the ABB !RobotStudio simulator for
 use with the ROS-Industrial driver.
 
 ## Installing the ABB ROS Server
+
+- **Note:** This tutorial assumes basic familiarity with the ABB robot
+  controller. Consult the manufacturer's documentation for further
+  details on any of the steps listed in this tutorial.
+- **Description:** This tutorial walks through the steps of installing
+  the ROS server code on the ABB robot controller and configuring the
+  required controller settings.
+- **Keywords:** ABB, Industrial, IRC5
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:** Next, you'll learn how to run and manage the ABB
+  ROS Server
+  [Running the server](#running-the-ros-server)
 
 This tutorial has two parts: installing server code and configuring the
 controller with the appropriate tasks.
@@ -364,6 +363,15 @@ Restart the controller using a **P-Start**
 
 ## Running the ROS Server
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Installing the ABB ROS Server](https://index.ros.org/p/abb).
+- **Description:** This tutorial describes how to run the ABB ROS
+  Server, so the robot will execute motion commands sent from the ROS
+  client node.
+- **Keywords:** ABB, Industrial, IRC5
+- **Tutorial Level:** BEGINNER
+
 ### Overview
 
 As described in
@@ -431,6 +439,13 @@ Here are a few notes about running in AUTO mode:
 - press STOP on the pendant to stop the robot, and PLAY to resume motion
 
 ## Using Simulated Robot in Robot Studio
+
+- **Description:** This tutorial describes how to setup the ABB
+  !RobotStudio simulator for use with the ROS-Industrial driver.
+- **Keywords:** ABB, Industrial, IRC5, !RobotStudio
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Installing the ABB ROS Server](https://index.ros.org/p/abb)
 
 ### ABB RobotStudio
 

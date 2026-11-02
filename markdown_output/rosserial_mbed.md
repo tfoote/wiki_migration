@@ -57,6 +57,12 @@ example programs and explain where to purchase the additional hardware.
 
 ## Blink (example subscriber)
 
+- **Description:** This tutorial shows step by step how to use rosserial
+  with subscribers.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using Time and TF](#using-time-and-tf)
+
 ### Blink: Creating a Subscriber
 
 #### The Code
@@ -177,6 +183,12 @@ more information on publishers and subscribers. Also see
 more complex data types.
 
 ## Buzzer Module
+
+- **Description:** This tutorial will cover the use of an Mbed with a
+  Buzzer Module.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Collision Sensor](#collision-sensor)
 
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
@@ -305,6 +317,12 @@ $ rostopic pub /buzzer std_msgs/Float32MultiArray "{46, 2}"
 
 ## Collision Sensor
 
+- **Description:** In this tutorial, we will use a Mbed and a Collision
+  Sensor Module.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [PIR Motion Sensor](#pir-motion-sensor)
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
 to use a Collision Sensor Module with a Mbed.
@@ -414,6 +432,12 @@ $ rostopic echo collision
 ```
 
 ## DHT Humidity and Temperature Sensor
+
+- **Description:** In this tutorial, we will use a Mbed and a DHT
+  Humidity and Temperature Sensor.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Motor Shield Example](#motor-shield-example)
 
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
@@ -555,6 +579,13 @@ $ rostopic echo /humidity
 
 ## Hello World (example publisher)
 
+- **Description:** This tutorial shows step by step how to create a
+  publisher using rosserial.
+- **Keywords:** MBED, rosserial, serial
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Blink (example subscriber)](#blink-example-subscriber)
+
 ### Hello World: Creating a Publisher
 
 #### The Code
@@ -678,6 +709,14 @@ more information on publishers and subscribers. Also see
 more complex data types.
 
 ## IR Ranger Tutorial
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [rosserial mbed Setup](#rosserial-mbed-setup).
+- **Description:** Using an IR Ranger with rosserial and an MBED
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [SRF08 Ultrasonic Range Finder](#srf08-ultrasonic-ranger)
 
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate mbed-based hardware with ROS. This tutorial will explain how
@@ -826,6 +865,12 @@ rxplot range_data/range
 ```
 
 ## MBED Oscilloscope
+
+- **Description:** In this tutorial, we will be making a poor man's
+  oscilloscope using the MBED's ADC (analog to digital converter) and
+  rqt_plot.
+- **Keywords:** MBED, rosserial, serial, ADC
+- **Tutorial Level:** BEGINNER
 
 In this tutorial, we will be making a poor man's oscilloscope using the
 MBED's ADC (analog to digital converter) and rqt_plot. We will set up a
@@ -976,6 +1021,10 @@ between 5V and gnd. There are wild oscillations during the transition.
 
 ## Maxbotix Ultrasonic Ranger
 
+- **Description:** In this tutorial, we will use an MBED and a Maxbotix
+  Ultrasonic Range Finder.
+- **Tutorial Level:** BEGINNER
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate MBED-based hardware with ROS. This tutorial will explain how
 to use a Maxbotix Ultrasonic Ranger along with an MBED.
@@ -1092,6 +1141,11 @@ rostopic echo /ultrasound
 ```
 
 ## Temperature Sensor
+
+- **Description:** Measuring Temperature using the TMP102
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Push Button](#push-button)
 
 In this tutorial, we will use an MBED and a
 [TMP102 temperature sensor](http://focus.ti.com/docs/prod/folders/print/tmp102.html)
@@ -1233,6 +1287,10 @@ rostopic echo temperature
 ```
 
 ## Motor Shield Example
+
+- **Description:** In this tutorial, we will use a Mbed and a Motor
+  Controller Shield
+- **Tutorial Level:** BEGINNER
 
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
@@ -1396,6 +1454,12 @@ $ rostopic pub /cmd_vel geometry_msgs/Twist '[1.0, 0.0, 0.0]' '[0.0, 0.0, 0.0]'
 
 ## PIR Motion Sensor
 
+- **Description:** This tutorial shows an example for using an Mbed with
+  a PIR Motion Sensor.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [DHT Humidity and Temperature Sensor](#dht-humidity-and-temperature-sensor)
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
 to use a PIR Motion Sensor with an Mbed.
@@ -1507,6 +1571,11 @@ $ rostopic echo /motion
 ```
 
 ## Push Button
+
+- **Description:** Monitor a push button and publish its state in ROS
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Servo Controller](#servo-controller-example)
 
 This tutorial describes one of the simplest and most common pieces of
 hardware you might want to integrate into your ROS system: a push
@@ -1655,6 +1724,13 @@ rostopic echo pushed
 
 ## SRF08 Ultrasonic Ranger
 
+- **Description:** In this tutorial, we will use a Mbed and a
+  [SRF08 Ultrasonic Ranger](http://www.acroname.com/robotics/parts/R145-SRF08.html)
+  as a Range Finder.The SRF08 communicates with the Mbed over SPI/I2C.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Buzzer Module](#buzzer-module)
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Mbed-based hardware with ROS. This tutorial will explain how
 to use a SRF08 Ultrasonic ranger with a Mbed.
@@ -1769,6 +1845,11 @@ $ rostopic echo /ultrasound
 ```
 
 ## Servo Controller Example
+
+- **Description:** Tutorial for controlling an R/C servo with rosserial
+  and an MBED
+- **Next Tutorial:**
+  [IR Ranger](#ir-ranger-tutorial)
 
 This tutorial explains how to control an R/C servo through ROS by using
 an MBED and rosserial. This can be used to control a release mechanism,
@@ -1888,6 +1969,13 @@ rostopic pub servo std_msgs/UInt16  <angle>
 ```
 
 ## Using Time and TF
+
+- **Description:** This tutorial shows how to use ros::Time and TF to
+  create a tf publisher on MBED.
+- **Keywords:** MBED, rosserial, serial
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Measuring Temperature](#temperature-sensor)
 
 ### Using Time and TF on MBED
 
@@ -2020,6 +2108,13 @@ Please see [rosserial/Overview](https://index.ros.org/p/rosserial) for
 more information using Time instances.
 
 ## Using rosserial with Inforce MBED PAC Shield
+
+- **Description:** This tutorial show how to use rosserial_mbed with the
+  Inforce 6410 plus + PAC Shield
+- **Keywords:** Inforce PAC MBED serial rosserial
+- **Tutorial Level:** BEGINNER
+
+### Using rosserial with Inforce MBED PAC Shield
 
 #### Downloading the required files
 
@@ -2269,6 +2364,14 @@ Here's a demo video of the Inforce 6410P with rosserial_mbed in action:
 [Youtube](https://www.youtube.com/watch?v=_Fw67s5DVuc&rel=0)
 
 ## rosserial MBED Setup
+
+- **Description:** This tutorial shows how to configure a basic
+  development environment to use rosserial_mbed with an enabled MBED
+  board
+- **Keywords:** MBED serial rosserial
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Hello World (example publisher)](https://index.ros.org/p/rosserial_mbed)
 
 ### Introduction
 

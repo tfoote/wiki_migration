@@ -84,6 +84,14 @@ See also [rosserial/Overview](https://index.ros.org/p/rosserial).
 
 ## Arduino IDE Setup
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial shows step-by-step how to setup up the
+  Arduino IDE to use rosserial.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Hello World (example publisher)](#hello-world-example-publisher)
+
 ### Introduction
 
 The Arduino and Arduino IDE are great tools for quickly and easily
@@ -270,6 +278,15 @@ And under Windows:
 ![align="middle"](doc/arduino_ide_examples_screenshot_windows.png)
 
 ## Hello World (example publisher)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Arduino IDE Setup](#arduino-ide-setup).
+- **Description:** This tutorial shows step by step how to create a
+  publisher using rosserial.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Blink (example subscriber)](#blink-example-subscriber)
 
 ### Hello World: Creating a Publisher
 
@@ -503,6 +520,15 @@ tutorial.
 
 ## Blink (example subscriber)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Hello World (example Publisher)](#hello-world-example-publisher).
+- **Description:** This tutorial shows step by step how to use rosserial
+  with subscribers.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Logging](#logging-in-rosserial)
+
 ### Blink: Creating a Subscriber
 
 #### The Code
@@ -697,6 +723,15 @@ tutorial.
 
 ## Logging in rosserial
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Hello World](#hello-world-example-publisher).
+- **Description:** This tutorial shows step-by-step how to use logging
+  for rosserial.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using Time and TF](#using-time-and-tf)
+
 ### Logging
 
 Like any ROS node, you can log messages at the appropriate verbosity
@@ -799,6 +834,12 @@ more information on publishers and subscribers. Also see
 more complex data types.
 
 ## Using Time and TF
+
+- **Description:** This tutorial shows how to use ros::Time and TF to
+  create a tf publisher on the Arduino.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Adding Custom Messages](#adding-custom-messages-generating-message-header-file)
 
 ### Using Time and TF on the Arduino
 
@@ -928,6 +969,13 @@ more information using Time instances.
 
 ## Adding Custom Messages (Generating Message Header File)
 
+- **Description:** This tutorial shows how to generate message header
+  files for using new message packages with rosserial (i.e. how to add
+  custom message type to your application with rosserial).
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Measuring Temperature](#temperature-sensor)
+
 ### Overview
 
 This tutorial contains the same information as
@@ -963,6 +1011,11 @@ rosrun rosserial_client make_library.py ~/sketchbook/libraries crazy_msgs
 locate them in `/sketchbook/libraries/ros_lib/crazy_msgs/`.
 
 ## Temperature Sensor
+
+- **Description:** Measuring Temperature using the TMP102
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Push Button](#push-button)
 
 In this tutorial, we will use an Arduino and a
 [TMP102 temperature sensor](http://focus.ti.com/docs/prod/folders/print/tmp102.html)
@@ -1084,6 +1137,11 @@ rostopic echo temperature
 ```
 
 ## Push Button
+
+- **Description:** Monitor a push button and publish its state in ROS
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [CMake](#cmake-with-rosserial_arduino)
 
 This tutorial describes one of the simplest and most common pieces of
 hardware you might want to integrate into your ROS system: a push
@@ -1251,6 +1309,15 @@ rostopic echo pushed
 ```
 
 ## CMake with rosserial_arduino
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Hello World Publisher](#hello-world-example-publisher).
+- **Description:** This tutorial shows how to use the CMake build system
+  with rosserial_arduino.
+- **Tutorial Level:** ADVANCED
+- **Next Tutorial:**
+  [Servo Controller](#servo-controller-example)
 
 When you are doing large software projects, the Arduino IDE quickly
 becomes unwieldy. You often want to be able to compile your project from
@@ -1806,13 +1873,18 @@ It does not know about libraries in your sketchbook.
 
 rosserial_arduino CMake implementation is found under
 rosserial_arduino/cmake_scripts. It is based on the
-[ arduino-cmake project](https://github.com/queezythegreat/arduino-cmake ).
+[arduino-cmake project](https://github.com/queezythegreat/arduino-cmake).
 You should never need to edit these files. You just need to include them
 into your CMakeLists.txt.
 
 }}}}}
 
 ## Servo Controller Example
+
+- **Description:** Tutorial for controlling an R/C servo with rosserial
+  and an Arduino
+- **Next Tutorial:**
+  [IR Ranger](#ir-ranger-tutorial)
 
 This tutorial explains how to control an R/C servo through ROS by using
 an Arduino and rosserial. This can be used to control a release
@@ -1946,18 +2018,26 @@ rostopic pub servo std_msgs/UInt16  <angle>
 
 ## IR Ranger Tutorial
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Arduino IDE Setup](#arduino-ide-setup).
+- **Description:** Using an IR Ranger with rosserial and an Arduino
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [SRF08 Ultrasonic Range Finder](#srf08-ultrasonic-ranger)
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Arduino-based hardware with ROS. This tutorial will explain
 how to use a sharp IR ranger with an Arduino.
 
-You will need an [Arduino]( http://www.arduino.cc) which you can
-purchase [here](http://www.sparkfun.com/products/9950) for example.
-Additionally, you will need a
+You will need an [Arduino](http://www.arduino.cc) which you can purchase
+[here](http://www.sparkfun.com/products/9950) for example. Additionally,
+you will need a
 [Sharp IR Ranger, Model# GP2D120XJ00F](http://www.sparkfun.com/products/8959),
 and a way to connect your IR Ranger to your Arduino such as a breadboard
 or protoboard. If you have a different model IR Ranger, you'll need to
 modify the code based on your model. This is a helpful
-[Arudino library](https://github.com/guillaume-rico/SharpIR ) for some
+[Arudino library](https://github.com/guillaume-rico/SharpIR) for some
 other popular models.
 
 ### Hardware Setup
@@ -2101,6 +2181,13 @@ If this is the first time you've run rqt_plot, you will need to [[rqt_plot#First
 
 ## SRF08 Ultrasonic Ranger
 
+- **Description:** In this tutorial, we will use an Arduino and a
+  [SRF08 Ultrasonic Ranger](http://www.acroname.com/robotics/parts/R145-SRF08.html)
+  as a Range Finder.The SRF08 communicates with an Arduino over SPI/I2C.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [BlinkM](#blinkm-tutorial)
+
 [rosserial](https://index.ros.org/p/rosserial) allows you to easily
 integrate Arduino-based hardware with ROS. This tutorial will explain
 how to use a SRF08 Ultrasonic ranger with an Arduino.
@@ -2233,10 +2320,16 @@ rostopic echo sonar
 
 ## BlinkM Tutorial
 
+- **Description:** Control a BlinkM through ROS using an Arduino and
+  rosserial
+- **Tutorial Level:** ADVANCED
+- **Next Tutorial:**
+  [Arduino Oscilloscope](#arduino-oscilloscope)
+
 One thing every robot needs is a good indicator light. If you are
 looking for something more fancy or just plane brighter than just a
 single tiny LED, the BlinkM is a good choice for your robotics project.
-The [ BlinkM ]( http://thingm.com/products/blinkm) is a I2C controlled
+The [BlinkM](http://thingm.com/products/blinkm) is a I2C controlled
 multi-colored LED which can change colors and run lighting scripts. In
 this tutorial, we are going to use the default scripts of a BlinkM to
 create a multicolored blinking or solid indicator light.
@@ -2248,19 +2341,19 @@ In your Arduino IDE, go to File>Examples>ros_lib>BlinkM. The code can
 also be found in rosserial_arduino/src/ros_lib/examples.
 
 For a full reference and getting started guide for the BlinkM, see the
-[ BlinkM datasheet](http://docs.google.com/viewer?url=http%3A%2F%2Fthingm.com%2Ffileadmin%2Fthingm%2Fdownloads%2FBlinkM_datasheet.pdf).
+[BlinkM datasheet](http://docs.google.com/viewer?url=http%3A%2F%2Fthingm.com%2Ffileadmin%2Fthingm%2Fdownloads%2FBlinkM_datasheet.pdf).
 
 ### Hardware
 
 ![attachment:blinkm_connections.jpg](doc/blinkm_connections.jpg)
 
-[ Diagram from the BlinkM datasheet](http://docs.google.com/viewer?url=http%3A%2F%2Fthingm.com%2Ffileadmin%2Fthingm%2Fdownloads%2FBlinkM_datasheet.pdf)
+[Diagram from the BlinkM datasheet](http://docs.google.com/viewer?url=http%3A%2F%2Fthingm.com%2Ffileadmin%2Fthingm%2Fdownloads%2FBlinkM_datasheet.pdf)
 
 The hardware for this tutorial is relatively simple. All that is
 neccesary is a BlinkM and an Arduino. The BlinkM needs to be connected
 to 5V, GND, and the Arduino's I2C connections (SDA and SCL). You can
 purchase both a [BlinkM](http://www.sparkfun.com/products/8579) and an
-[ Arduino](http://www.sparkfun.com/products/9950) from Sparkfun.
+[Arduino](http://www.sparkfun.com/products/9950) from Sparkfun.
 
 ### Code
 
@@ -2492,6 +2585,13 @@ rostopic pub blinkm std_msgs/String "sb"
 
 ## Arduino Oscilloscope
 
+- **Description:** In this tutorial, we will be making a poor man's
+  oscilloscope using the Arduino's ADC (analog to digital converter)
+  and rqt_plot.
+- **Tutorial Level:** ADVANCED
+- **Next Tutorial:**
+  [NodeHandle and ArduinoHardware](#advanced-configuration-for-nodehandle-and-arduinohardware)
+
 In this tutorial, we will be making a poor man's oscilloscope using the
 Arduino's ADC (analog to digital converter) and rqt_plot. We will set
 up a publisher which will forward the analog values from each of the
@@ -2635,6 +2735,13 @@ between 5V and gnd. There are wild oscillations during the transition.
 
 ## Advanced Configuration for NodeHandle and ArduinoHardware.
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Hello World (example Publisher)](#hello-world-example-publisher).
+- **Description:** This tutorial shows step by step how to configure
+  NodeHandle and ArduinoHareware to better suit user needs.
+- **Tutorial Level:** ADVANCED
+
 The `rosserial_arduino` package is designed to work out-of-box for
 many users, but users might need to change the `ros.h` and the
 `ArduinoHardware.h` to better suit their need.
@@ -2647,7 +2754,7 @@ of the advanced settings.
 #### Hardware
 
 - [Arduino Mega](https://store.arduino.cc/usa/arduino-mega-2560-rev3)
-- [ FTDI Breakout board](https://www.sparkfun.com/products/9716) or
+- [FTDI Breakout board](https://www.sparkfun.com/products/9716) or
   similar UART to USB bridge
 - USB cables for both devices
 - Some jumper wire to connect both devices

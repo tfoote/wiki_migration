@@ -78,99 +78,90 @@ your setup.
 
 ## ROS API
 
+### explore
 
+Provides exploration services offered by this package. Exploration will
+start immediately after node initialization.
 
-```clearsilver
+#### Actions Called
 
-name = explore
-desc = Provides exploration services offered by this package. Exploration will start immediately after node initialization.
+- `move_base`
+  ([MoveBaseAction](https://index.ros.org/p/move_base_msgs)):
+  [move_base](https://index.ros.org/p/move_base) actionlib API for
+  posting goals. See [move_base](https://index.ros.org/p/move_base) for
+  details. This expects [move_base](https://index.ros.org/p/move_base)
+  node in the same namespace as `explore_lite`, you may want to remap
+  this node if this is not true.
 
-pub {
-  0.name  = ~frontiers
-  0.type = visualization_msgs/MarkerArray
-  0.desc = Visualization of frontiers considered by exploring algorithm. Each frontier is visualized by frontier points in blue and with a small sphere, which visualize the cost of the frontiers (costlier frontiers will have smaller spheres).
-}
-sub {
-  0.name = costmap
-  0.type = nav_msgs/OccupancyGrid
-  0.desc = Map which will be used for exploration planning. Can be either costmap from [[move_base]] or map created by SLAM (see above). Occupancy grid must have got properly marked unknown space, mapping algorithms usually track unknown space by default. If you want to use costmap provided by [[move_base]] you need to enable unknown space tracking by setting `track_unknown_space: true`.
+#### Subscribed Topics
 
-  1.name = costmap_updates
-  1.type = map_msgs/OccupancyGridUpdate
-  1.desc = Incremental updates on costmap. Not necessary if source of map is always publishing full updates, i.e. does not provide this topic.
-}
+- `costmap`
+  ([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)):
+  Map which will be used for exploration planning. Can be either costmap
+  from [move_base](https://index.ros.org/p/move_base) or map created by
+  SLAM (see above). Occupancy grid must have got properly marked unknown
+  space, mapping algorithms usually track unknown space by default. If
+  you want to use costmap provided by
+  [move_base](https://index.ros.org/p/move_base) you need to enable
+  unknown space tracking by setting `track_unknown_space: true`.
+- `costmap_updates`
+  ([map_msgs/msg/OccupancyGridUpdate](https://docs.ros.org/en/rolling/p/map_msgs/msg/OccupancyGridUpdate.html)):
+  Incremental updates on costmap. Not necessary if source of map is
+  always publishing full updates, i.e. does not provide this topic.
 
-param {
-  0.name = ~robot_base_frame
-  0.default = `base_link`
-  0.type = string
-  0.desc = The name of the base frame of the robot. This is used for determining robot position on map. Mandatory.
+#### Published Topics
 
-  1.name = ~costmap_topic
-  1.default = `costmap`
-  1.type = string
-  1.desc = Specifies topic of source <<MsgLink(nav_msgs/OccupancyGrid)>>. Mandatory.
+- `~frontiers`
+  ([visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)):
+  Visualization of frontiers considered by exploring algorithm. Each
+  frontier is visualized by frontier points in blue and with a small
+  sphere, which visualize the cost of the frontiers (costlier frontiers
+  will have smaller spheres).
 
-  3.name = ~costmap_updates_topic
-  3.default = `costmap_updates`
-  3.type = string
-  3.desc = Specifies topic of source <<MsgLink(map_msgs/OccupancyGridUpdate)>>. Not necessary if source of map is always publishing full updates, i.e. does not provide this topic.
+#### Parameters
 
-  4.name = ~visualize
-  4.default = `false`
-  4.type = bool
-  4.desc = Specifies whether or not publish visualized frontiers.
+- `~robot_base_frame` (`string`, default: `base_link`): The name of
+  the base frame of the robot. This is used for determining robot
+  position on map. Mandatory.
+- `~costmap_topic` (`string`, default: `costmap`): Specifies topic of
+  source
+  [nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html).
+  Mandatory.
+- `~costmap_updates_topic` (`string`, default: `costmap_updates`):
+  Specifies topic of source
+  [map_msgs/msg/OccupancyGridUpdate](https://docs.ros.org/en/rolling/p/map_msgs/msg/OccupancyGridUpdate.html).
+  Not necessary if source of map is always publishing full updates, i.e.
+  does not provide this topic.
+- `~visualize` (`bool`, default: `false`): Specifies whether or not
+  publish visualized frontiers.
+- `~planner_frequency` (`double`, default: `1.0`): Rate in Hz at which
+  new frontiers will computed and goal reconsidered.
+- `~progress_timeout` (`double`, default: `30.0`): Time in seconds.
+  When robot do not make any progress for `progress_timeout`, current
+  goal will be abandoned.
+- `~potential_scale` (`double`, default: `1e-3`): Used for weighting
+  frontiers. This multiplicative parameter affects frontier potential
+  component of the frontier weight (distance to frontier).
+- `~orientation_scale` (`double`, default: `0`): Used for weighting
+  frontiers. This multiplicative parameter affects frontier orientation
+  component of the frontier weight. This parameter does currently
+  nothing and is provided solely for forward compatibility.
+- `~gain_scale` (`double`, default: `1.0`): Used for weighting
+  frontiers. This multiplicative parameter affects frontier gain
+  component of the frontier weight (frontier size).
+- `~transform_tolerance` (`double`, default: `0.3`): Transform
+  tolerance to use when transforming robot pose.
+- `~min_frontier_size` (`double`, default: `0.5`): Minimum size of the
+  frontier to consider the frontier as the exploration goal. In meters.
 
-  6.name = ~planner_frequency
-  6.default = `1.0`
-  6.type = double
-  6.desc = Rate in Hz at which new frontiers will computed and goal reconsidered.
+#### Required tf Transforms
 
-  7.name = ~progress_timeout
-  7.default = `30.0`
-  7.type = double
-  7.desc = Time in seconds. When robot do not make any progress for `progress_timeout`, current goal will be abandoned.
-
-  8.name = ~potential_scale
-  8.default = `1e-3`
-  8.type = double
-  8.desc = Used for weighting frontiers. This multiplicative parameter affects frontier potential component of the frontier weight (distance to frontier).
-
-  9.name = ~orientation_scale
-  9.default = `0`
-  9.type = double
-  9.desc = Used for weighting frontiers. This multiplicative parameter affects frontier orientation component of the frontier weight. This parameter does currently nothing and is provided solely for forward compatibility.
-
-  10.name = ~gain_scale
-  10.default = `1.0`
-  10.type = double
-  10.desc = Used for weighting frontiers. This multiplicative parameter affects frontier gain component of the frontier weight (frontier size).
-
-  11.name = ~transform_tolerance
-  11.default = `0.3`
-  11.type = double
-  11.desc = Transform tolerance to use when transforming robot pose.
-
-  12.name = ~min_frontier_size
-  12.default = `0.5`
-  12.type = double
-  12.desc = Minimum size of the frontier to consider the frontier as the exploration goal. In meters.
-}
-
-req_tf {
-  0.from = global_frame
-  0.to = robot_base_frame
-  0.desc = This transformation is usually provided by mapping algorithm. Those frames are usually called `map` and `base_link`. For adjusting `robot_base_frame` name see respective parameter. You don't need to set `global_frame`. The name for `global_frame` will be sourced from `costmap_topic` automatically.
-}
-
-act_called {
-  0.name = move_base
-  0.type = move_base_msgs/MoveBaseAction
-  0.desc = [[move_base]] actionlib API for posting goals. See [[move_base#Action API]] for details. This expects [[move_base]] node in the same namespace as `explore_lite`, you may want to remap this node if this is not true.
-}
-```
-
-
+- `global_frame` → `robot_base_frame`: This transformation is usually
+  provided by mapping algorithm. Those frames are usually called `map`
+  and `base_link`. For adjusting `robot_base_frame` name see
+  respective parameter. You don't need to set `global_frame`. The
+  name for `global_frame` will be sourced from `costmap_topic`
+  automatically.
 
 ## Acknowledgements
 

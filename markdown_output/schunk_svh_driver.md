@@ -91,124 +91,124 @@ rosrun schunk_svh_driver create_udev_rules
 
 ## ROS API
 
+### svh_controller
 
+This node is interfacing with the Schunk Five Finger Hand and provides
+the ability to control the fingers and read out any feedback
 
-```clearsilver
-name = svh_controller
-desc = This node is interfacing with the Schunk Five Finger Hand and provides the ability to control the fingers and read out any feedback
-sub {
-  0.name = connect
-  0.type = std_msgs/Empty
-  0.desc = Tries to connect to the hardware when triggered. The hardware will use the `serial_device` that can be reconfigured via dynamic reconfigure
-}
-sub {
-  1.name = reset_channel
-  1.type = std_msgs/Int8
-  1.desc = Triggers a reset of the given channel (finger). See channel mapping below.
-  2.name = enable_channel
-  2.type = std_msgs/Int8
-  2.desc = Enables a given channel (finger). See channel mapping below.
-  3.name = channel_targets
-  3.type = sensor_msgs/JointState
-  3.desc = Target position the channels (fingers) shall move to. Note that it has less performance to give targets for individual channels or a subset of the available DoF than providing it for all at once. If 8 channels are given instead of 9 the driver will send 8 packets instead of 1 which might influence serial device performance. Only the names and positions will be evaluated from the JointState message.
-}
-pub{
- 0.name = channel_feedback
- 0.type = sensor_msgs/JointState
- 0.desc = Current position of the channels (fingers).
- 1.name = channel_currents
- 1.type = std_msgs/Float64MultiArray
- 1.desc = Current currents of the channels (fingers).
- 2.name = parameter_descriptions
- 2.type = dynamic_reconfigure/ConfigDescription
- 2.desc = Names, values and description of the current parameters
- 3.name = parameter_descriptions
- 3.type = dynamic_reconfigure/ConfigDescription
- 3.desc = Names, min/max values and description of the parameters in general
- 4.name = parameter_updates
- 4.type = dynamic_reconfigure/Config
- 4.desc = Names, values and description of the current parameters
-}
-param {
-  0.name = ~autostart
-  0.type = bool
-  0.desc = If set to true the controller will immediately try to connect to the hardware and start a reset of all the channels (fingers)
-  0.default = true
-  1.name = ~serial_device
-  1.type = string
-  1.desc = Device handle to use for the serial communication, e.g /dev/ttyUSB0
-  1.default = /dev/ttyUSB0
-  2.name = ~disable_flags
-  2.type = vector of bool
-  2.desc = Indicates if a channel (finger) should be disabled. If disabled a finger will not be activated by the hardware but behaves as if everything was fine. This can be used in case a finger has a hardware failure.
-  2.default = 9 x false
-  3.name = ~reset_timeout
-  3.type = int
-  3.desc = Time in seconds after which a reset of a channel (finger) is aborted if the reset current threshold can not be reached. If a channel (finger) needs to reach 300mA for detection of a hard stop but is stuck at 200mA the reset is aborted after reset_timeout seconds.
-  3.default = 5
-  4.name = ~finger_reset_speed
-  4.type = double
-  4.desc = Dynamic reconfigure value. Speed of fingers during reset, given as percentage of their usual speed.
-  4.default = 0.2
-  5.name = /robot_description
-  5.type = urdf model
-  5.default = URDF at description/urdf/svh-standalone.urdf.xacro
-  5.desc = Urdf model of the hand, including the joints and links describing the svh
-  6.name = ~logging_config
-  6.type = string
-  6.desc = Path to the logging.xml file configuring the internal logging of the svh_driver library. If none is specified but the internal logging is enabled the output will be lost and warnings will be given.
-  6.default = /etc/logging.xml 
-  7.name = ~use_internal_logging
-  7.type = bool
-  7.desc = Actives the log output of the svh driver library. This uses a ROS Independent logging system providing deeper insight into whats happening. By Default the log files are stored in ~/.ros/log but the files can be specified by providing a new logging.xml.
-  7.default = false
-}
-param {
-  8.name = ~CHANNEL_NAME/position_controller
-  8.type = vector of floats
-  8.desc = Parameters used for the hardware position controller. See additional documentation in YAML files and below.  If no values are provides the controller will use safe internal defaults.
-  8.default = see yaml files
+#### Subscribed Topics
 
-  9.name = ~CHANNEL_NAME/current_controller
-  9.type = vector of floats
-  9.desc = Parameters used for the hardware current controller. See additional documentation in YAML files and below. If no values are provides the current will use safe internal defaults.
-  9.default = see yaml files
+- `connect`
+  ([std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html)):
+  Tries to connect to the hardware when triggered. The hardware will use
+  the `serial_device` that can be reconfigured via dynamic reconfigure
+- `reset_channel`
+  ([std_msgs/msg/Int8](https://docs.ros.org/en/rolling/p/std_msgs/msg/Int8.html)):
+  Triggers a reset of the given channel (finger). See channel mapping
+  below.
+- `enable_channel`
+  ([std_msgs/msg/Int8](https://docs.ros.org/en/rolling/p/std_msgs/msg/Int8.html)):
+  Enables a given channel (finger). See channel mapping below.
+- `channel_targets`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Target position the channels (fingers) shall move to. Note that it has
+  less performance to give targets for individual channels or a subset
+  of the available DoF than providing it for all at once. If 8 channels
+  are given instead of 9 the driver will send 8 packets instead of 1
+  which might influence serial device performance. Only the names and
+  positions will be evaluated from the JointState message.
 
-  10.name = ~CHANNEL_NAME/home_settings
-  10.type = vector of floats
-  10.desc = Parameters used for the homing of the fingers providing soft stops and reset parameterization. See additional documentation in YAML files and below. If no values are provides the controller will use safe internal defaults.
-  10.default = see yaml files
-  11.name = ~VERSIONS_PARAMETER
-  11.type = array
-  11.desc = Array of parameters for all hardware versions and all joints. The values are read from the *.yaml files in the package's ''etc'' directory.
-  11.default = Filled with values from the etc/controller_default.yaml file
-}
-```
+#### Published Topics
 
- 
+- `channel_feedback`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Current position of the channels (fingers).
+- `channel_currents`
+  ([std_msgs/msg/Float64MultiArray](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64MultiArray.html)):
+  Current currents of the channels (fingers).
+- `parameter_descriptions`
+  ([dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)):
+  Names, values and description of the current parameters
+- `parameter_descriptions`
+  ([dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)):
+  Names, min/max values and description of the parameters in general
+- `parameter_updates`
+  ([dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)):
+  Names, values and description of the current parameters
 
-```clearsilver
-name = svh_sin_test
-desc = this node is meant as a very very simple test program to show how to interface with the `svh_controller` and to check if the hardware works
-sub {
-  0.name = toggle_run
-  0.type = std_msgs/Empty
-  0.desc = If toggled by a message the node will start or stop outputting joint angles based on a sin.
-  1.name = speed
-  1.type = std_msgs/Float32
-  1.desc = Sets the execution speed. The higher the number, the slower it is. Should not be smaller than 3.0.
-  2.name = loop
-  2.type = std_msgs/Float32
-  2.desc = Sets the loop rate for the update interval. The greater the better.
-}
-pub{
- 0.name = channel_targets
- 0.type = sensor_msgs/JointState
- 0.desc = Target position of the fingers for the svh_controller
-}
-```
+#### Parameters
 
+- `~autostart` (`bool`, default: `true`): If set to true the controller
+  will immediately try to connect to the hardware and start a reset of
+  all the channels (fingers)
+- `~serial_device` (`string`, default: `/dev/ttyUSB0`): Device handle to
+  use for the serial communication, e.g /dev/ttyUSB0
+- `~disable_flags` (`vector of bool`, default: `9 x false`): Indicates
+  if a channel (finger) should be disabled. If disabled a finger will
+  not be activated by the hardware but behaves as if everything was
+  fine. This can be used in case a finger has a hardware failure.
+- `~reset_timeout` (`int`, default: `5`): Time in seconds after which a
+  reset of a channel (finger) is aborted if the reset current threshold
+  can not be reached. If a channel (finger) needs to reach 300mA for
+  detection of a hard stop but is stuck at 200mA the reset is aborted
+  after reset_timeout seconds.
+- `~finger_reset_speed` (`double`, default: `0.2`): Dynamic reconfigure
+  value. Speed of fingers during reset, given as percentage of their
+  usual speed.
+- `/robot_description` (`urdf model`, default:
+  `URDF at description/urdf/svh-standalone.urdf.xacro`): Urdf model of
+  the hand, including the joints and links describing the svh
+- `~logging_config` (`string`, default: `/etc/logging.xml`): Path to the
+  logging.xml file configuring the internal logging of the svh_driver
+  library. If none is specified but the internal logging is enabled the
+  output will be lost and warnings will be given.
+- `~use_internal_logging` (`bool`, default: `false`): Actives the log
+  output of the svh driver library. This uses a ROS Independent logging
+  system providing deeper insight into whats happening. By Default the
+  log files are stored in /.ros/log but the files can be specified by
+  providing a new logging.xml.
+- `~CHANNEL_NAME/position_controller` (`vector of floats`, default:
+  `see yaml files`): Parameters used for the hardware position
+  controller. See additional documentation in YAML files and below. If
+  no values are provides the controller will use safe internal defaults.
+- `~CHANNEL_NAME/current_controller` (`vector of floats`, default:
+  `see yaml files`): Parameters used for the hardware current
+  controller. See additional documentation in YAML files and below. If
+  no values are provides the current will use safe internal defaults.
+- `~CHANNEL_NAME/home_settings` (`vector of floats`, default:
+  `see yaml files`): Parameters used for the homing of the fingers
+  providing soft stops and reset parameterization. See additional
+  documentation in YAML files and below. If no values are provides the
+  controller will use safe internal defaults.
+- `~VERSIONS_PARAMETER` (`array`, default:
+  `Filled with values from the etc/controller_default.yaml file`): Array
+  of parameters for all hardware versions and all joints. The values are
+  read from the \*.yaml files in the package's *etc* directory.
 
+### svh_sin_test
+
+this node is meant as a very very simple test program to show how to
+interface with the `svh_controller` and to check if the hardware works
+
+#### Subscribed Topics
+
+- `toggle_run`
+  ([std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html)):
+  If toggled by a message the node will start or stop outputting joint
+  angles based on a sin.
+- `speed`
+  ([std_msgs/msg/Float32](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float32.html)):
+  Sets the execution speed. The higher the number, the slower it is.
+  Should not be smaller than 3.0.
+- `loop`
+  ([std_msgs/msg/Float32](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float32.html)):
+  Sets the loop rate for the update interval. The greater the better.
+
+#### Published Topics
+
+- `channel_targets`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Target position of the fingers for the svh_controller
 
 ## Additional API information
 

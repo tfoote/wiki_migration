@@ -18,22 +18,11 @@ controller.
 
 ### Parameters
 
+#### Parameters
 
-
-```clearsilver
-param {
-  0.name=~joint
-  0.type=string
-  0.default=Required
-  0.desc=The joint to command
-  1.name=~goal_threshold
-  1.type=double
-  1.default=0.1
-  1.desc=The maximum distance from the goal at which to report success.
-}
-```
-
-
+- `~joint` (`string`, default: `Required`): The joint to command
+- `~goal_threshold` (`double`, default: `0.1`): The maximum distance
+  from the goal at which to report success.
 
 ### Action interface
 
@@ -42,45 +31,38 @@ The joint trajectory action provides an action server (see
 the type
 [pr2_controllers_msgs/msg/SingleJointPositionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionGoal.html).
 
+#### Subscribed Topics
 
+- `~position_joint_action/goal`
+  ([pr2_controllers_msgs/msg/SingleJointPositionActionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionActionGoal.html)):
+  The goal describes the position for the robot to achieve
+- `~position_joint_action/cancel`
+  ([actionlib_msgs/msg/GoalID](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalID.html)):
+  A request to cancel a specific goal.
 
-```clearsilver
-sub {
-  0.name=~position_joint_action/goal
-  0.type=pr2_controllers_msgs/SingleJointPositionActionGoal
-  0.desc=The goal describes the position for the robot to achieve
-  1.name=~position_joint_action/cancel
-  1.type=actionlib_msgs/GoalID
-  1.desc=A request to cancel a specific goal.
-}
-pub {
-  0.name=~position_joint_action/feedback
-  0.type=pr2_controllers_msgs/SingleJointPositionActionFeedback
-  0.desc=Feedback describing the progress the mechanism is making on reaching the goal position
-  1.name=~position_joint_action/status
-  1.type=actionlib_msgs/GoalStatusArray
-  1.desc=Provides status information on the goals that are sent to the action.
-  2.name=~position_joint_action/result
-  2.type=pr2_controllers_msgs/SingleJointPositionActionResult
-  2.desc=empty
-}
-```
+#### Published Topics
 
-
+- `~position_joint_action/feedback`
+  ([pr2_controllers_msgs/msg/SingleJointPositionActionFeedback](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionActionFeedback.html)):
+  Feedback describing the progress the mechanism is making on reaching
+  the goal position
+- `~position_joint_action/status`
+  ([actionlib_msgs/msg/GoalStatusArray](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalStatusArray.html)):
+  Provides status information on the goals that are sent to the action.
+- `~position_joint_action/result`
+  ([pr2_controllers_msgs/msg/SingleJointPositionActionResult](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/SingleJointPositionActionResult.html)):
+  empty
 
 ### Controller interface
 
+#### Subscribed Topics
 
+- `~state`
+  ([pr2_controllers_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryControllerState.html)):
+  Listens to the state of the controller.
 
-```clearsilver
-sub {
-  0.name=~state
-  0.type=pr2_controllers_msgs/JointTrajectoryControllerState
-  0.desc=Listens to the state of the controller.
-}
-pub {
-  0.name=~command
-  0.type=trajectory_msgs/JointTrajectory
-  0.desc=Sends joint trajectories to the controller.
-}
-```
+#### Published Topics
+
+- `~command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Sends joint trajectories to the controller.

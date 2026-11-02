@@ -25,6 +25,21 @@ It can be divided into different parts:
 
 ## Using maxon EPOS4 in Profile Operating Modes
 
+- **Note:** This tutorial was tested with ROS Melodic and assumes that
+  you have some basic knowledge of ROS and CANopen. Take care of the
+  wiring and safety instructions mentioned by the "Hardware Reference"
+  of your EPOS4 controller!.
+- **Description:** This tutorial explains how to use Profile Modes of
+  maxon EPOS4 controller such as Profile Position Mode and Profile
+  Velocity Mode with ros_canopen for a single motor.
+- **Keywords:** canopen, ros_canopen, epos4, maxon, profile position,
+  profile velocity
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Using maxon EPOS4 in Cyclic Synchronous Operating Modes](#using-maxon-epos4-in-cyclic-synchronous-operating-modes)
+
+
+
 ```wiki
 Please adapt the code to the needs of your concrete application.
 Any warranty for proper functionality is excluded and has to be ensured based on tests within the concrete system environment.
@@ -685,6 +700,22 @@ tutorial we are going to use
 [Cyclic Synchronous Operating Modes](#using-maxon-epos4-in-cyclic-synchronous-operating-modes).
 
 ## Using maxon EPOS4 in Cyclic Synchronous Operating Modes
+
+- **Note:** This tutorial was tested with ROS Melodic and assumes that
+  you have some basic knowledge of ROS and CANopen. It is recommended to
+  follow the first tutorial on
+  [Profile Operating Modes](#using-maxon-epos4-in-profile-operating-modes)
+  before going through this tutorial. Take care of the wiring and safety
+  instructions mentioned by the "Hardware Reference" of your EPOS4
+  controller!.
+- **Description:** This tutorial explains how to use Cyclic Synchronous
+  Modes of maxon EPOS4 controller such as Cyclic Synchronous Position
+  Mode with ros_canopen and MoveIt for a pair of motors.
+- **Keywords:** canopen, ros_canopen, epos4, maxon, cyclic synchronous
+  position, CSP
+- **Tutorial Level:** ADVANCED
+
+
 
 ```wiki
 Please adapt the code to the needs of your concrete application.

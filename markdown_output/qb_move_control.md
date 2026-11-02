@@ -59,6 +59,14 @@ specifications of this two base packages.
 
 ## Control Modes
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Control](https://index.ros.org/p/qb_device_control).
+- **Description:** Details on the control modes available for the qbmove
+- **Keywords:** qbrobotics qbmove control
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [GUI Control](#gui-control)
+
 For the sake of simplicity, we are going to cover all the control modes
 for a single *[qbmove](Robots/qbmove)*, but it is just a matter of
 putting things together and set the launch file parameters properly to
@@ -131,6 +139,15 @@ parameters, but the concepts of this paragraph hold for all of them:
 
 ## GUI Control
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes).
+- **Description:** Control the qbmove through a simple GUI
+- **Keywords:** qbrobotics qbmove control
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Waypoint Control](#waypoint-control)
+
 This control mode is the one suggested to test that everything is
 working as expected. You are able to move the *[qbmove](Robots/qbmove)*
 shaft position and its stiffness interactively, but nothing more than
@@ -162,6 +179,17 @@ other timing constraints can be set in this mode.
 ![screen_gui](https://bitbucket.org/qbrobotics/qbmove-ros/raw/dab88e4fd48facdf82237c217b53ad8032b295aa/qb_move_media/screen_gui.png)
 
 ## Waypoint Control
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes),
+  [GUI Control](#gui-control).
+- **Description:** Control the qbmove motion through an automatic
+  waypoint trajectory loop
+- **Keywords:** qbrobotics qbmove control
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [API Control](#api-control)
 
 This control mode is a bit more structured and useful than the previous:
 it allows to set a fixed trajectory of any number of position waypoints
@@ -221,6 +249,14 @@ waypoints:
 ```
 
 ## API Control
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes),
+  [Waypoint Control](#waypoint-control).
+- **Description:** Custom control application using the qbrobotics API
+- **Keywords:** qbrobotics qbmove control
+- **Tutorial Level:** ADVANCED
 
 If you need a complex (i.e. real) control application, e.g. the
 *[qbmove](Robots/qbmove)* is mounted on a robot which uses computer

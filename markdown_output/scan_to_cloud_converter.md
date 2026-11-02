@@ -13,28 +13,25 @@ are represented by `nan` values in the output cloud.
 
 ## Nodes
 
+### scan_to_cloud_converter_node
 
+The `scan_to_cloud_converter` takes in
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages and outputs
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+messages.
 
-```clearsilver
- name = scan_to_cloud_converter_node
- desc = The `scan_to_cloud_converter` takes in <<MsgLink(sensor_msgs/LaserScan)>> messages and outputs <<MsgLink(sensor_msgs/PointCloud2)>> messages.
-sub {
-   0{
-    name = scan
-    type = sensor_msgs/LaserScan
-    desc = Input laser scan
-    }
-}
-pub {
-   0{
-    name = cloud
-    type = sensor_msgs/PointCloud2
-    desc = Output cloud
-   }
-  }
-```
+#### Subscribed Topics
 
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Input laser scan
 
+#### Published Topics
+
+- `cloud`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  Output cloud
 
 ## Bug Reports & Feature Requests
 

@@ -70,6 +70,10 @@ Existing concepts in the ecl include:
 
 ## Implementing Concepts
 
+- **Description:** Writing and using concept check tests.
+- **Keywords:** ecl concepts
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 Usage is fairly simple. There are two steps:

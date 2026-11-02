@@ -27,6 +27,10 @@ using ecl::cube_root; // only for real numbers/solutions
 
 ## ## multi-line description to be displayed in search
 
+- **Description:** Simple Math
+- **Keywords:** ecl math
+- **Tutorial Level:** BEGINNER
+
 ### Macros for PI
 
 Usually there will always be macros for pi defined in <i>math.h</i>,

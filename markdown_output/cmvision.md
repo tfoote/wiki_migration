@@ -55,56 +55,45 @@ rosrun cmvision cmvision image:=<image topic>
 
 ## Nodes
 
+### colorgui
 
+Simple node for selecting blob colors.
 
-```clearsilver
-node.0 {
-  name = colorgui
-  desc = Simple node for selecting blob colors.
-  sub {
-    0.name = image
-    0.type = sensor_msgs/Image
-    0.desc = The image topic. Should be remapped to the name of the real image topic.
-  }
-}
-node.1 {
-  name = cmvision
-  desc = Node for detecting blobs.
-  sub {
-    0.name = image
-    0.type = sensor_msgs/Image
-    0.desc = The image topic. Should be remapped to the name of the real image appropriately.
-  }
-  pub {
-    0.name = blobs
-    0.type = cmvision/Blobs
-    0.desc = A list of detected blobs.
-  }
-  param {
-    0.name = /cmvision/color_file
-    0.type = string
-    0.desc = Specifies a path to the colors file.
-    0.default = ""
+#### Subscribed Topics
 
-    1.name = /cmvision/mean_shift_on
-    1.type = bool
-    1.desc = If `true`, smooth the image using the mean shift algorithm before doing blob detection.
-    1.default = false
-    
-    2.name = /cmvision/debug_on
-    2.type = bool
-    2.desc = Enables or disables debug output.
-    2.default = false
-    
-    3.name = /cmvision/spatial_radius_pix
-    3.type = int
-    3.desc = If using mean shift, sets mean shift's spacial radius parameter.
-    3.default = 0
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image topic. Should be remapped to the name of the real image
+  topic.
 
-    4.name = /cmvision/color_radius_pix
-    4.type = int
-    4.desc = If using mean shift, sets mean shift's color radius parameter.
-    5.default = 0
-  }
-}
-```
+### cmvision
+
+Node for detecting blobs.
+
+#### Subscribed Topics
+
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image topic. Should be remapped to the name of the real image
+  appropriately.
+
+#### Published Topics
+
+- `blobs`
+  ([cmvision/msg/Blobs](https://docs.ros.org/en/rolling/p/cmvision/msg/Blobs.html)):
+  A list of detected blobs.
+
+#### Parameters
+
+- `/cmvision/color_file` (`string`, default: `""`): Specifies a path to
+  the colors file.
+- `/cmvision/mean_shift_on` (`bool`, default: `false`): If `true`,
+  smooth the image using the mean shift algorithm before doing blob
+  detection.
+- `/cmvision/debug_on` (`bool`, default: `false`): Enables or disables
+  debug output.
+- `/cmvision/spatial_radius_pix` (`int`, default: `0`): If using mean
+  shift, sets mean shift's spacial radius parameter.
+- `/cmvision/color_radius_pix` (`int`): If using mean shift, sets mean
+  shift's color radius parameter.
+- (default: `0`)

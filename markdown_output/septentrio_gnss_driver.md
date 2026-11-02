@@ -7,12 +7,12 @@ ROSaic for people in the robotics and autonomous vehicle communities.
 The C++ driver can be used with the Septentrio family of mosaic
 receivers (e.g.
 [mosaic-x5](https://www.septentrio.com/en/products/gnss-receivers/rover-base-receivers/receivers-module/mosaic),
-[mosaic-H](https://www.septentrio.com/en/products/gnss-receivers/gnss-modules/mosaic-h ))
+[mosaic-H](https://www.septentrio.com/en/products/gnss-receivers/gnss-modules/mosaic-h))
 and is also usable with other Septentrio GNSS or event GNSS/INS
 receivers (e.g.
-\[\[<https://www.septentrio.com/en/products/gnss-receivers/oem-receiver-boards/asterx-m3-pro-plus>
-\|AsteRx-m3 \],
-[AsteRx SB](https://www.septentrio.com/en/products/gnss-receivers/rover-base-receivers/integrated-gnss-receivers/asterxsb ),
+\[\[<https://www.septentrio.com/en/products/gnss-receivers/oem-receiver-boards/asterx-m3-pro-plus%7CAsteRx-m3>
+\],
+<https://www.septentrio.com/en/products/gnss-receivers/rover-base-receivers/integrated-gnss-receivers/asterxsb>,
 \[\[<https://www.septentrio.com/en/products/gnss-receivers/gnss-ins-ruggedized-boxes/asterx-sbi3-pro-plus>
 \|AsteRx-SBi3\] and others).
 

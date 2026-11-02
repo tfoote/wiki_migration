@@ -51,31 +51,16 @@ map has been converted and not the complete static map.
 
 #### Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/cluster_max_distance
-  0.default = 0.4
-  0.type = double
-  0.desc = Parameter for DB_Scan, maximum distance to neighbors [m]
-  1.name = ~<name>/cluster_min_pts
-  1.default = 2
-  1.type = int
-  1.desc = Parameter for DB_Scan: minimum number of points that define a cluster
-  2.name = ~<name>/cluster_max_pts
-  2.default = 30
-  2.type = int
-  2.desc = Parameter for DB_Scan: maximum number of points that define a cluster (limit cluster size to avoid large L- and U-shapes)
-  3.name = ~<name>/convex_hull_min_pt_separation
-  3.default = 0.1
-  3.type = double
-  3.desc = Clear keypoints/vertices of the convex polygon that are close to each other [distance in meters] (0: keep all)
-}
-```
-
-
+- `~<name>/cluster_max_distance` (`double`, default: `0.4`): Parameter
+  for DB_Scan, maximum distance to neighbors \[m\]
+- `~<name>/cluster_min_pts` (`int`, default: `2`): Parameter for
+  DB_Scan: minimum number of points that define a cluster
+- `~<name>/cluster_max_pts` (`int`, default: `30`): Parameter for
+  DB_Scan: maximum number of points that define a cluster (limit cluster
+  size to avoid large L- and U-shapes)
+- `~<name>/convex_hull_min_pt_separation` (`double`, default: `0.1`):
+  Clear keypoints/vertices of the convex polygon that are close to each
+  other \[distance in meters\] (0: keep all)
 
 ### CostmapToPolygonsDBSConcaveHull
 
@@ -94,35 +79,18 @@ map has been converted and not the complete static map.
 
 #### Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/cluster_max_distance
-  0.default = 0.4
-  0.type = double
-  0.desc = Parameter for DB_Scan, maximum distance to neighbors [m]
-  1.name = ~<name>/cluster_min_pts
-  1.default = 2
-  1.type = int
-  1.desc = Parameter for DB_Scan: minimum number of points that define a cluster
-  2.name = ~<name>/cluster_max_pts
-  2.default = 30
-  2.type = int
-  2.desc = Parameter for DB_Scan: maximum number of points that define a cluster (limit cluster size to avoid large L- and U-shapes)
-  3.name = ~<name>/convex_hull_min_pt_separation
-  3.default = 0.1
-  3.type = double
-  3.desc = Clear keypoints/vertices of the convex polygon that are close to each other [distance in meters] (0: keep all)
-  4.name = ~<name>/concave_hull_depth
-  4.default = 2.0
-  4.type = double
-  4.desc = Smaller depth: sharper surface, large depth: convex hull
-}
-```
-
-
+- `~<name>/cluster_max_distance` (`double`, default: `0.4`): Parameter
+  for DB_Scan, maximum distance to neighbors \[m\]
+- `~<name>/cluster_min_pts` (`int`, default: `2`): Parameter for
+  DB_Scan: minimum number of points that define a cluster
+- `~<name>/cluster_max_pts` (`int`, default: `30`): Parameter for
+  DB_Scan: maximum number of points that define a cluster (limit cluster
+  size to avoid large L- and U-shapes)
+- `~<name>/convex_hull_min_pt_separation` (`double`, default: `0.1`):
+  Clear keypoints/vertices of the convex polygon that are close to each
+  other \[distance in meters\] (0: keep all)
+- `~<name>/concave_hull_depth` (`double`, default: `2.0`): Smaller
+  depth: sharper surface, large depth: convex hull
 
 ### CostmapToLinesDBSMCCH
 
@@ -143,43 +111,24 @@ and polygons are colored in red while lines are colored in green.
 
 #### Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/cluster_max_distance
-  0.default = 0.4
-  0.type = double
-  0.desc = Parameter for DB_Scan, maximum distance to neighbors [m]
-  1.name = ~<name>/cluster_min_pts
-  1.default = 2
-  1.type = int
-  1.desc = Parameter for DB_Scan: minimum number of points that define a cluster
-  2.name = ~<name>/cluster_max_pts
-  2.default = 30
-  2.type = int
-  2.desc = Parameter for DB_Scan: maximum number of points that define a cluster (limit cluster size to avoid large L- and U-shapes)
-  3.name = ~<name>/convex_hull_min_pt_separation
-  3.default = 0.1
-  3.type = double
-  3.desc = Clear keypoints/vertices of the convex polygon that are close to each other [distance in meters] (0: keep all)
-  4.name = ~<name>/support_pts_max_dist
-  4.default = 0.3
-  4.type = double
-  4.desc = Minimum distance from a point to the line to be counted as support point
-  5.name = ~<name>/support_pts_max_dist_inbetween
-  5.default = 1.0
-  5.type = double
-  5.desc = A line is only defined, if the distance between two consecutive support points is less than this treshold. Set to 0 in order to deactivate this check.
-  6.name = ~<name>/min_support_pts
-  6.default = 2
-  6.type = int
-  6.desc = Minimum number of support points required to represent a line.
-}
-```
-
-
+- `~<name>/cluster_max_distance` (`double`, default: `0.4`): Parameter
+  for DB_Scan, maximum distance to neighbors \[m\]
+- `~<name>/cluster_min_pts` (`int`, default: `2`): Parameter for
+  DB_Scan: minimum number of points that define a cluster
+- `~<name>/cluster_max_pts` (`int`, default: `30`): Parameter for
+  DB_Scan: maximum number of points that define a cluster (limit cluster
+  size to avoid large L- and U-shapes)
+- `~<name>/convex_hull_min_pt_separation` (`double`, default: `0.1`):
+  Clear keypoints/vertices of the convex polygon that are close to each
+  other \[distance in meters\] (0: keep all)
+- `~<name>/support_pts_max_dist` (`double`, default: `0.3`): Minimum
+  distance from a point to the line to be counted as support point
+- `~<name>/support_pts_max_dist_inbetween` (`double`, default: `1.0`): A
+  line is only defined, if the distance between two consecutive support
+  points is less than this treshold. Set to 0 in order to deactivate
+  this check.
+- `~<name>/min_support_pts` (`int`, default: `2`): Minimum number of
+  support points required to represent a line.
 
 ### CostmapToLinesDBSRANSAC
 
@@ -202,56 +151,30 @@ and polygons are colored in red while lines are colored in green.
 
 #### Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/cluster_max_distance
-  0.default = 0.4
-  0.type = double
-  0.desc = Parameter for DB_Scan, maximum distance to neighbors [m]
-  1.name = ~<name>/cluster_min_pts
-  1.default = 2
-  1.type = int
-  1.desc = Parameter for DB_Scan: minimum number of points that define a cluster
-  2.name = ~<name>/cluster_max_pts
-  2.default = 30
-  2.type = int
-  2.desc = Parameter for DB_Scan: maximum number of points that define a cluster (limit cluster size to avoid large L- and U-shapes)
-  3.name = ~<name>/ransac_inlier_distance
-  3.default = 0.2
-  3.type = double
-  3.desc = Maximum distance to the line segment for inliers [in meters].
-  4.name = ~<name>/ransac_min_inliers
-  4.default = 10
-  4.type = int
-  4.desc = Minimum numer of inliers required to form a line.
-  5.name = ~<name>/ransac_no_iterations
-  5.default = 2000
-  5.type = int
-  5.desc = Number of ransac iterations per cluster.
-  6.name = ~<name>/ransac_remainig_outliers
-  6.default = 3
-  6.type = int
-  6.desc = Abort ransac iterations if the number of outliers is equal or below the value specified here.
-  7.name = ~<name>/ransac_convert_outlier_pts
-  7.default = true
-  7.type = bool
-  7.desc = Convert remaining outliers to single points.
-  8.name = ~<name>/ransac_filter_remaining_outlier_pts
-  8.default = false
-  8.type = bool
-  8.desc = Filter the interior of remaining outliers and keep only keypoints of their convex hull.
-  9.name = ~<name>/convex_hull_min_pt_separation
-  9.default = 0.1
-  9.type = double
-  9.desc = Clear keypoints/vertices of the convex polygon that are close to each other [distance in meters] (0: keep all)
-
-}
-```
-
-
+- `~<name>/cluster_max_distance` (`double`, default: `0.4`): Parameter
+  for DB_Scan, maximum distance to neighbors \[m\]
+- `~<name>/cluster_min_pts` (`int`, default: `2`): Parameter for
+  DB_Scan: minimum number of points that define a cluster
+- `~<name>/cluster_max_pts` (`int`, default: `30`): Parameter for
+  DB_Scan: maximum number of points that define a cluster (limit cluster
+  size to avoid large L- and U-shapes)
+- `~<name>/ransac_inlier_distance` (`double`, default: `0.2`): Maximum
+  distance to the line segment for inliers \[in meters\].
+- `~<name>/ransac_min_inliers` (`int`, default: `10`): Minimum numer of
+  inliers required to form a line.
+- `~<name>/ransac_no_iterations` (`int`, default: `2000`): Number of
+  ransac iterations per cluster.
+- `~<name>/ransac_remainig_outliers` (`int`, default: `3`): Abort ransac
+  iterations if the number of outliers is equal or below the value
+  specified here.
+- `~<name>/ransac_convert_outlier_pts` (`bool`, default: `true`):
+  Convert remaining outliers to single points.
+- `~<name>/ransac_filter_remaining_outlier_pts` (`bool`, default:
+  `false`): Filter the interior of remaining outliers and keep only
+  keypoints of their convex hull.
+- `~<name>/convex_hull_min_pt_separation` (`double`, default: `0.1`):
+  Clear keypoints/vertices of the convex polygon that are close to each
+  other \[distance in meters\] (0: keep all)
 
 ## Standalone Node
 

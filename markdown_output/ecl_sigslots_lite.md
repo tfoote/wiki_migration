@@ -76,6 +76,13 @@ using ecl::lite::member_slots_capacity;
 
 ## Debugging Sigslots Lite
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Using Sigslots Lite](#using-sigslots-lite).
+- **Description:** Utility functions for diagnosing lite sigslots.
+- **Keywords:** ecl sigslots lite
+- **Tutorial Level:** INTERMEDIATE
+
 ### Utility Functions
 
 
@@ -101,6 +108,13 @@ class outlined in
 [Using Sigslots Lite](#using-sigslots-lite).
 
 ## Using Sigslots Lite
+
+- **Description:** Shows how to set up signals and slots with
+  ecl_sigslots_lite.
+- **Keywords:** ecl sigslots lite
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Debugging Sigslots Lite](#debugging-sigslots-lite)
 
 ### Slots in the Background
 

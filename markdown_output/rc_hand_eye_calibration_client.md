@@ -50,7 +50,7 @@ rc_visard manual: <https://doc.rc-visard.com>.
   calibrating. Default: "camera"
 - `end_effector_frame_id`: Name of the frame calibrated to when using
   a `robot_mounted` (see
-  [ Section 3.2](#dynamic-reconfigure-parameters))
+  [Section 3.2](#dynamic-reconfigure-parameters))
   rc_visard. Default: "end_effector"
 - `base_frame_id`: Name of the frame calibrated to when using a
   statically (externally) mounted rc_visard (`robot_mounted ==

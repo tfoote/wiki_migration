@@ -118,66 +118,54 @@ Example usage:
 roslaunch mrpt_localization demo.launch
 ```
 
- 
 
-```clearsilver
-srv {
-  0.name = static_map
-  0.type = nav_msgs/GetMap
-  0.desc = You can retrieve the loaded map here
-}
-pub {
-  0.name= map
-  0.type= nav_msgs/OccupancyGrid
-  0.desc= Only if param `~map_file` is NOT empty, the loaded map will be published here  (Latched)
 
-  1.name= map_metadata
-  1.type= nav_msgs::MapMetaData
-  1.desc= Only if param `~map_file` is NOT empty, the loaded map will be published here  (Latched)
+#### Published Topics
 
-  2.name= particlecloud
-  2.type= geometry_msgs/PoseArray
-  2.desc= The hypotheses of the particle filter. Its mean is published via a tf transformation.
-}
-param{
-    0.name = ~ini_file
-    0.type = string
-    0.default = `"pf-localization.ini"`
-    0.desc = Path to a configuration file containing all the particle-filter parameters required by MRPT pf-localization. It defines the kind and number of metric maps and many important parameters of probabilistic observation models. See commented example files in [[https://github.com/jlblancoc/mrpt/tree/master/share/mrpt/config_files/pf-localization]]
+- `map`
+  ([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)):
+  Only if param `map_file` is NOT empty, the loaded map will be
+  published here (Latched)
+- `map_metadata` (`nav_msgs::MapMetaData`): Only if param `map_file`
+  is NOT empty, the loaded map will be published here (Latched)
+- `particlecloud`
+  ([geometry_msgs/msg/PoseArray](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseArray.html)):
+  The hypotheses of the particle filter. Its mean is published via a tf
+  transformation.
 
-    1.name = ~map_file
-    1.type = string
-    1.default = (none)
-    1.desc = Path to an MRPT map file in either `.simplemap` or `.gridmap` formats. If none is provided, the node *will do a blocking call* to the service GetMap("static_map") to retrieve an occupancy grid map from a static map server like [[map_server]] or [[mrpt_map]].
+#### Services
 
-    2.name = ~tf_prefix
-    2.type = string
-    2.default = ""
-    2.desc = Prefix for TF frame names (e.g. "r1", "robot2", or none if only using one robot)
+- `static_map`
+  ([nav_msgs/srv/GetMap](https://docs.ros.org/en/rolling/p/nav_msgs/srv/GetMap.html)):
+  You can retrieve the loaded map here
 
-    3.name = ~global_frame_id
-    3.type = string
-    3.default = "map"
-    3.desc = TF frame name for the global reference map (typically, a static map)
+#### Parameters
 
-    4.name = ~odom_frame_id
-    4.type = string
-    4.default = "odom"
-    4.desc = TF frame name for odometry
+- `~ini_file` (`string`, default: `"pf-localization.ini"`): Path to
+  a configuration file containing all the particle-filter parameters
+  required by MRPT pf-localization. It defines the kind and number of
+  metric maps and many important parameters of probabilistic observation
+  models. See commented example files in
+  <https://github.com/jlblancoc/mrpt/tree/master/share/mrpt/config_files/pf-localization>
+- `~map_file` (`string`, default: `(none)`): Path to an MRPT map file in
+  either `.simplemap` or `.gridmap` formats. If none is provided,
+  the node \*will do a blocking call\* to the service
+  GetMap("static_map") to retrieve an occupancy grid map from a static
+  map server like [map_server](https://index.ros.org/p/map_server) or
+  [mrpt_map](https://index.ros.org/p/mrpt_map).
+- `~tf_prefix` (`string`, default: `""`): Prefix for TF frame names
+  (e.g. "r1", "robot2", or none if only using one robot)
+- `~global_frame_id` (`string`, default: `"map"`): TF frame name for the
+  global reference map (typically, a static map)
+- `~odom_frame_id` (`string`, default: `"odom"`): TF frame name for
+  odometry
+- `~base_frame_id` (`string`, default: `"base_link"`): TF frame name for
+  the robot
+- `~sensor_sources` (`string`, default: `"scan,scan1,scan2"`): List of
+  topics to subscribe to for sensory data (split with ",")
 
-    5.name = ~base_frame_id
-    5.type = string
-    5.default = "base_link"
-    5.desc =  TF frame name for the robot
+#### Provided tf Transforms
 
-    6.name = ~sensor_sources
-    6.type = string
-    6.default = "scan,scan1,scan2"
-    6.desc =  List of topics to subscribe to for sensory data (split with ",")
-}
-prov_tf {
-    0.from = <value of ~global_frame_id> (typ: `map`)
-    0.to = <value of ~odom_frame_id> (typ: `odom`)
-    0.desc = transform from global map to odometry origin
-}
-```
+- <value of global_frame_id> (typ: `map`) → <value of
+  odom_frame_id> (typ: `odom`): transform from global map to odometry
+  origin

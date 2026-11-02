@@ -111,151 +111,152 @@ The names mentioned <in brackets> are actually the names of '''parameters''' con
 
 
 
+### usb_cam_node
 
+Opens the V4L device handler to poll the camera, recompress and publish
+the images on demand
 
-```clearsilver
-node.0{
-name=usb_cam_node
-desc=Opens the V4L device handler to poll the camera, recompress and publish the images on demand
+#### Published Topics
 
-pub {
-  0.name= /<node_name>/camera_info
-  0.type= sensor_msgs/CameraInfo
-  0.desc= Camera calibration matrices from the specified calibration YAML file provided by the camera's vendor, or obtained with tools from [[camera_calibration]] package
-  1.name= /<node_name>/<camera_transport_suffix>
-  1.type= sensor_msgs/Image
-  1.desc= Uncompressed frames
-  2.name= /<node_name>/<camera_transport_suffix>/compressed
-  2.type= sensor_msgs/CompressedImage
-  2.desc= PNG/JPEG compressed frames according to [[image_transport]] specifications
-  3.name= /<node_name>/<camera_transport_suffix>/compressed/parameter_descriptions
-  3.type= dynamic_reconfigure/ConfigDescription
-  3.desc= Latched topic providing compressed frame's parameter descriptions for the nodes supporting [[image_transport]] specification and [[dynamic_reconfigure]]
-  4.name= /<node_name>/<camera_transport_suffix>/compressed/parameter_updates
-  4.type= dynamic_reconfigure/Config
-  4.desc= Latched topic providing compressed frame's actual parameters for the nodes supporting [[image_transport]] specification and [[dynamic_reconfigure]]
-  5.name= /<node_name>/<camera_transport_suffix>/compressedDepth
-  5.type= sensor_msgs/CompressedImage
-  5.desc= PNG-compressed 16-bit depth frames
-  6.name= /<node_name>/<camera_transport_suffix>/compressedDepth/parameter_descriptions
-  6.type= dynamic_reconfigure/ConfigDescription
-  6.desc= Latched topic providing compressed frame's parameter descriptions for [[depth_image_proc]]
-  7.name= /<node_name>/<camera_transport_suffix>/compressedDepth/parameter_updates
-  7.type= dynamic_reconfigure/Config
-  7.desc= Latched topic providing compressed frame's actual parameters for [[depth_image_proc]]
-  8.name= /<node_name>/<camera_transport_suffix>/theora
-  8.type= theora_image_transport/Packet
-  8.desc= Incrementally encoded stacks of frames compatible with [[theora_image_transport]] package specification
-  9.name= /<node_name>/<camera_transport_suffix>/theora/parameter_descriptions
-  9.type= dynamic_reconfigure/ConfigDescription
-  9.desc= Latched topic providing compressed frame's parameter descriptions for the nodes supporting [[theora_image_transport]] specification and [[dynamic_reconfigure]]
-  10.name= /<node_name>/<camera_transport_suffix>/theora/parameter_updates
-  10.type= dynamic_reconfigure/Config
-  10.desc= Latched topic providing compressed frame's actual parameters for the nodes supporting [[theora_image_transport]] specification and [[dynamic_reconfigure]]
-}
+- `/<node_name>/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration matrices from the specified calibration YAML file
+  provided by the camera's vendor, or obtained with tools from
+  [camera_calibration](https://index.ros.org/p/camera_calibration)
+  package
+- `/<node_name>/<camera_transport_suffix>`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Uncompressed frames
+- `/<node_name>/<camera_transport_suffix>/compressed`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  PNG/JPEG compressed frames according to
+  [image_transport](https://index.ros.org/p/image_transport)
+  specifications
+- `/<node_name>/<camera_transport_suffix>/compressed/parameter_descriptions`
+  ([dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)):
+  Latched topic providing compressed frame's parameter descriptions for
+  the nodes supporting
+  [image_transport](https://index.ros.org/p/image_transport)
+  specification and
+  [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+- `/<node_name>/<camera_transport_suffix>/compressed/parameter_updates`
+  ([dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)):
+  Latched topic providing compressed frame's actual parameters for the
+  nodes supporting
+  [image_transport](https://index.ros.org/p/image_transport)
+  specification and
+  [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+- `/<node_name>/<camera_transport_suffix>/compressedDepth`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  PNG-compressed 16-bit depth frames
+- `/<node_name>/<camera_transport_suffix>/compressedDepth/parameter_descriptions`
+  ([dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)):
+  Latched topic providing compressed frame's parameter descriptions for
+  [depth_image_proc](https://index.ros.org/p/depth_image_proc)
+- `/<node_name>/<camera_transport_suffix>/compressedDepth/parameter_updates`
+  ([dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)):
+  Latched topic providing compressed frame's actual parameters for
+  [depth_image_proc](https://index.ros.org/p/depth_image_proc)
+- `/<node_name>/<camera_transport_suffix>/theora`
+  ([theora_image_transport/msg/Packet](https://docs.ros.org/en/rolling/p/theora_image_transport/msg/Packet.html)):
+  Incrementally encoded stacks of frames compatible with
+  [theora_image_transport](https://index.ros.org/p/theora_image_transport)
+  package specification
+- `/<node_name>/<camera_transport_suffix>/theora/parameter_descriptions`
+  ([dynamic_reconfigure/msg/ConfigDescription](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/ConfigDescription.html)):
+  Latched topic providing compressed frame's parameter descriptions for
+  the nodes supporting
+  [theora_image_transport](https://index.ros.org/p/theora_image_transport)
+  specification and
+  [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+- `/<node_name>/<camera_transport_suffix>/theora/parameter_updates`
+  ([dynamic_reconfigure/msg/Config](https://docs.ros.org/en/rolling/p/dynamic_reconfigure/msg/Config.html)):
+  Latched topic providing compressed frame's actual parameters for the
+  nodes supporting
+  [theora_image_transport](https://index.ros.org/p/theora_image_transport)
+  specification and
+  [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
 
-srv{
-  0.name = /<node_name>/<start_service_name>
-  0.type = std_srvs/Empty
-  0.desc = Call this service to start the suspended capture of frames from the device
+#### Services
 
-  1.name = /<node_name>/<stop_service_name>
-  1.type = std_srvs/Empty
-  1.desc = Call this service to stop the active capture of frames from the device
+- `/<node_name>/<start_service_name>`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Call this service to start the suspended capture of frames from the
+  device
+- `/<node_name>/<stop_service_name>`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Call this service to stop the active capture of frames from the device
+- `/<node_name>/supported_controls`
+  ([std_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_srvs/srv/Trigger.html)):
+  <a id="intrinsic_control_names"></a>Returns
+  the `"\|"`-separated string containing the list of intrinsic
+  controls (parameters) the camera supports, queried from V4L kernel
+  driver. In case of presence, the first `"\|"` symbol should be
+  ignored.
+- `/<node_name>/supported_formats`
+  ([std_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/std_srvs/srv/Trigger.html)):
+  <a id="img_formats"></a>Returns the
+  `"\|"`-separated string containing the list of image
+  formats/encodings the camera supports, queried from V4L kernel driver.
+  In case of presence, the first `"\|"` symbol should be ignored.
 
-  2.name = /<node_name>/supported_controls
-  2.type = std_srvs/Trigger
-  2.desc = <<Anchor(intrinsic_control_names)>>Returns the `"|"`-separated string containing the list of intrinsic controls (parameters) the camera supports, queried from V4L kernel driver. In case of presence, the first `"|"` symbol should be ignored.
+#### Parameters
 
-  3.name = /<node_name>/supported_formats
-  3.type = std_srvs/Trigger
-  3.desc = <<Anchor(img_formats)>>Returns the `"|"`-separated string containing the list of image formats/encodings the camera supports, queried from V4L kernel driver. In case of presence, the first `"|"` symbol should be ignored.
-}
-
-param {
-  0.name= start_service_name 
-  0.default= `start_capture`
-  0.type= string
-  0.desc= Defines name suffix for <<SrvLink(std_srvs/Empty)>> service which restarts suspended streaming
-
-  1.name= stop_service_name
-  1.default= `stop_capture`
-  1.type= string
-  1.desc= Defines name suffix for  <<SrvLink(std_srvs/Empty)>> service which suspends camera polling timer
-
-  2.name= video_device
-  2.default=`/dev/video0`
-  2.type= string
-  2.desc= Device driver's entry point in Linux kernel's virtual filesystem
-
-  3.name= io_method
-  3.default=`mmap`
-  3.type= string
-  3.desc= I/O method (see [[#io_modes|Available I/O methods]] for value reference)
-
-  4.name= pixel_format
-  4.default=`yuyv`
-  4.type= string
-  4.desc= Pixel format for Video4linux device (also selects decoder mode). See [[#pixel_formats|Pixel formats]] for value reference 
-
-  5.name= color_format
-  5.default=`yuv422p`
-  5.type= string
-  5.desc= On-chip color representation mode for the input frame encoded by hardware. See [[#color_formats|Color formats]] for value reference
-
-  6.name= create_suspended
-  6.default=`false`
-  6.type= bool
-  6.desc= Instructs the node whether to start streaming immediately after launch or to wait until the `<start_service_name>` service will be triggered
-
-  7.name= full_ffmpeg_log
-  7.default=`false`
-  7.type= bool
-  7.desc= When set to `false` allows to suppress warning messages generated by `libavcodec` during MJPEG decoding, cleans log files
-
-  8.name= camera_name
-  8.default=`head_camera`
-  8.type= string
-  8.desc= ROS internal name for the camera, used to generate <<MsgLink(sensor_msgs/CameraInfo)>> message
-
-  9.name= camera_frame_id
-  9.default=`head_camera`
-  9.type= string
-  9.desc= Frame ID used to generate coordinate transformations
-
-  10.name= camera_transport_suffix
-  10.default=`image_raw`
-  10.type= string
-  10.desc= Suffix used by [[image_transport]] to generate topic names
-
-  11.name= camera_info_url
-  11.default=`""`
-  11.type= string
-  11.desc= URI for camera calibration data (likely a YML file obtained from [[camera_calibration]] tools)
-
-  12.name= image_width
-  12.default=`640`
-  12.type= integer
-  12.desc= Frame width in pixels, '''should be supported by hardware'''! Please refer to [[#img_formats|supported_formats]] service for list of possible values
-
-  13.name= image_height
-  13.default=`480`
-  13.type= integer
-  13.desc= Frame height in pixels, '''should be supported by hardware'''! Please refer to [[#img_formats|supported_formats]] service for list of possible values
-
-  14.name= framerate
-  14.default=`30`
-  14.type= integer
-  14.desc= Camera polling frequency, Hz (integer)
-
-  15.name= intrinsic_controls
-  15.default= refer to [[https://github.com/ros-drivers/usb_cam/blob/develop/config/usb_cam.yml|sample config file]]
-  15.type= multilist
-  15.desc= Intrinsic controls queried from V4L kernel driver. See [[#intrinsics|Intrinsic Controls]] to learn how to configure this list, and [[#intrinsic_control_names|supported_controls]] service to retrieve possible values.
-}
-```
-
-
+- `start_service_name` (`string`, default: `start_capture`): Defines
+  name suffix for
+  [std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)
+  service which restarts suspended streaming
+- `stop_service_name` (`string`, default: `stop_capture`): Defines
+  name suffix for
+  [std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)
+  service which suspends camera polling timer
+- `video_device` (`string`, default: `/dev/video0`): Device driver's
+  entry point in Linux kernel's virtual filesystem
+- `io_method` (`string`, default: `mmap`): I/O method (see
+  [Available I/O methods](#io_modes) for value
+  reference)
+- `pixel_format` (`string`, default: `yuyv`): Pixel format for
+  Video4linux device (also selects decoder mode). See
+  [Pixel formats](#pixel_formats) for value reference
+- `color_format` (`string`, default: `yuv422p`): On-chip color
+  representation mode for the input frame encoded by hardware. See
+  [Color formats](#color_formats) for value reference
+- `create_suspended` (`bool`, default: `false`): Instructs the node
+  whether to start streaming immediately after launch or to wait until
+  the `<start_service_name>` service will be triggered
+- `full_ffmpeg_log` (`bool`, default: `false`): When set to `false`
+  allows to suppress warning messages generated by `libavcodec` during
+  MJPEG decoding, cleans log files
+- `camera_name` (`string`, default: `head_camera`): ROS internal name
+  for the camera, used to generate
+  [sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)
+  message
+- `camera_frame_id` (`string`, default: `head_camera`): Frame ID used
+  to generate coordinate transformations
+- `camera_transport_suffix` (`string`, default: `image_raw`): Suffix
+  used by [image_transport](https://index.ros.org/p/image_transport) to
+  generate topic names
+- `camera_info_url` (`string`, default: `""`): URI for camera
+  calibration data (likely a YML file obtained from
+  [camera_calibration](https://index.ros.org/p/camera_calibration)
+  tools)
+- `image_width` (`integer`, default: `640`): Frame width in pixels,
+  **should be supported by hardware**! Please refer to
+  [supported_formats](#img_formats) service for list
+  of possible values
+- `image_height` (`integer`, default: `480`): Frame height in pixels,
+  **should be supported by hardware**! Please refer to
+  [supported_formats](#img_formats) service for list
+  of possible values
+- `framerate` (`integer`, default: `30`): Camera polling frequency, Hz
+  (integer)
+- `intrinsic_controls` (`multilist`, default: refer to
+  [sample config file](https://github.com/ros-drivers/usb_cam/blob/develop/config/usb_cam.yml)):
+  Intrinsic controls queried from V4L kernel driver. See
+  [Intrinsic Controls](#intrinsics) to learn how to
+  configure this list, and
+  [supported_controls](#intrinsic_control_names)
+  service to retrieve possible values.
 
 ### I/O modes reference
 

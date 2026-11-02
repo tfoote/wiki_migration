@@ -124,140 +124,126 @@ Point clouds are generated in the optical frame of the left imager (X
 Right, Y Down, Z out). ![stereo_frames.png](doc/stereo_frames.png)
 
 [image_transport](https://index.ros.org/p/image_transport) is used for
-all image publications and subscriptions. 
+all image publications and subscriptions.
 
-```clearsilver
-sub {
-  group.0 {
-    name = Left camera
-    0.name = left/image_raw
-    0.type = sensor_msgs/Image
-    0.desc = Raw image stream from the left camera.
-    1.name = left/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Left camera metadata.
-  }
-  group.1 {
-    name = Right camera
-    0.name = right/image_raw
-    0.type = sensor_msgs/Image
-    0.desc = Raw image stream from the right camera.
-    1.name = right/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Right camera metadata.
-  }
-}
-pub {
-  group.0 {
-    name = Left camera processed images
-    0.name = left/image_mono
-    0.type = sensor_msgs/Image
-    0.desc = Left monochrome unrectified image.
-    1.name = left/image_rect
-    1.type = sensor_msgs/Image
-    1.desc = Left monochrome rectified image.
-    2.name = left/image_color
-    2.type = sensor_msgs/Image
-    2.desc = Left color unrectified image.
-    3.name = left/image_rect_color
-    3.type = sensor_msgs/Image
-    3.desc = Left color rectified image.
-  }
-  group.1 {
-    name = Right camera processed images
-    0.name = right/image_mono
-    0.type = sensor_msgs/Image
-    0.desc = Right monochrome unrectified image.
-    1.name = right/image_rect
-    1.type = sensor_msgs/Image
-    1.desc = Right monochrome rectified image.
-    2.name = right/image_color
-    2.type = sensor_msgs/Image
-    2.desc = Right color unrectified image.
-    3.name = right/image_rect_color
-    3.type = sensor_msgs/Image
-    3.desc = Right color rectified image.
-  }
-  group.2 {
-    name = 3D processing
-    0.name = disparity
-    0.type = stereo_msgs/DisparityImage
-    0.desc = Floating point disparity image with metadata.
-    1.name = points2
-    1.type = sensor_msgs/PointCloud2
-    1.desc = Stereo point cloud with RGB color.
-    2.name = points
-    2.type = sensor_msgs/PointCloud
-    2.desc = Stereo point cloud with RGB color. This message type is obsoleted by <<MsgLink(sensor_msgs/PointCloud2)>>; if possible, use the `points2` topic instead.
-  }
-}
-```
+#### Subscribed Topics
 
+##### Left camera
 
+- `left/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Raw image stream from the left camera.
+- `left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Left camera metadata.
 
+##### Right camera
 
-```clearsilver
-param {
-  group.0 {
-    name = Disparity pre-filtering
-    0.name = ~prefilter_size
-    0.type = int
-    0.desc = Normalization window size, pixels.
-    0.default = 9
-    1.name = ~prefilter_cap
-    1.type = int
-    1.desc = Bound on normalized pixel values.
-    1.default = 31
-  }
-  group.1 {
-    name = Disparity correlation
-    0.name = ~correlation_window_size
-    0.type = int
-    0.desc = Edge size (pixels) of the correlation window for matching. Values must be odd, in the range 5 to 255 (but with an extra performance hit for values larger than 21). Larger values have smoother disparity results, but smear out small features and depth discontinuities.
-    0.default = 15
-    1.name = ~min_disparity
-    1.type = int
-    1.desc = Minimum disparity, or the offset to the disparity search window. By setting to a positive value, the cameras become more "cross-eyed" and will find objects closer to the cameras. If the cameras are "verged" (inclined toward each other), it may be appropriate to set `min_disparity` to a negative value. When `min_disparity` is greater than 0, objects at large distances will not be found.
-    1.default = 0
-    2.name = ~disparity_range
-    2.type = int
-    2.desc = The size of the disparity search window (pixels). Together with `min_disparity`, this defines the "horopter," the 3D volume that is visible to the stereo algorithm.
-    2.default = 64
-  }
-  group.2 {
-    name = Disparity post-filtering
-    0.name = ~uniqueness_ratio
-    0.type = double
-    0.desc = Filters disparity readings based on a comparison to the next-best correlation along the epipolar line. Matches where `uniqueness_ratio > (best_match - next_match) / next_match` are filtered out.
-    0.default = 15.0
-    1.name = ~texture_threshold
-    1.type = int
-    1.desc = Filters disparity readings based on the amount of texture in the correlation window.
-    1.default = 10
-    2.name = ~speckle_size
-    2.type = int
-    2.desc = Filters disparity regions that are less than this number of pixels.  For example, a value of 100 means that all regions with fewer than 100 pixels will be rejected.
-    2.default = 100
-    3.name = ~speckle_range
-    3.type = int
-    3.desc = Groups disparity regions based on their connectedness. Disparities are grouped together in the same region if they are within this distance in pixels.
-    3.default = 4
-  }
-  group.4 {
-    name = Synchronization
-    0.name = ~approximate_sync
-    0.type = bool
-    0.desc = Whether to use approximate synchronization. Set to true if the left and right cameras do not produce exactly synced timestamps.
-    0.default = false
-    1.name = ~queue_size
-    1.type = int
-    1.desc = Size of message queue for each synchronized topic. You may need to raise this if images take significantly longer to travel over the network than camera info and/or the delay from disparity processing is too long.
-    1.default = 5
-  }
-}
-```
+- `right/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Raw image stream from the right camera.
+- `right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Right camera metadata.
 
+#### Published Topics
 
+##### Left camera processed images
+
+- `left/image_mono`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left monochrome unrectified image.
+- `left/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left monochrome rectified image.
+- `left/image_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left color unrectified image.
+- `left/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left color rectified image.
+
+##### Right camera processed images
+
+- `right/image_mono`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Right monochrome unrectified image.
+- `right/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Right monochrome rectified image.
+- `right/image_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Right color unrectified image.
+- `right/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Right color rectified image.
+
+##### 3D processing
+
+- `disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  Floating point disparity image with metadata.
+- `points2`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  Stereo point cloud with RGB color.
+- `points`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  Stereo point cloud with RGB color. This message type is obsoleted by
+  [sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html);
+  if possible, use the `points2` topic instead.
+
+#### Parameters
+
+##### Disparity pre-filtering
+
+- `~prefilter_size` (`int`, default: `9`): Normalization window size,
+  pixels.
+- `~prefilter_cap` (`int`, default: `31`): Bound on normalized pixel
+  values.
+
+##### Disparity correlation
+
+- `~correlation_window_size` (`int`, default: `15`): Edge size (pixels)
+  of the correlation window for matching. Values must be odd, in the
+  range 5 to 255 (but with an extra performance hit for values larger
+  than 21). Larger values have smoother disparity results, but smear out
+  small features and depth discontinuities.
+- `~min_disparity` (`int`, default: `0`): Minimum disparity, or the
+  offset to the disparity search window. By setting to a positive value,
+  the cameras become more "cross-eyed" and will find objects closer to
+  the cameras. If the cameras are "verged" (inclined toward each
+  other), it may be appropriate to set `min_disparity` to a negative
+  value. When `min_disparity` is greater than 0, objects at large
+  distances will not be found.
+- `~disparity_range` (`int`, default: `64`): The size of the disparity
+  search window (pixels). Together with `min_disparity`, this defines
+  the "horopter," the 3D volume that is visible to the stereo
+  algorithm.
+
+##### Disparity post-filtering
+
+- `~uniqueness_ratio` (`double`, default: `15.0`): Filters disparity
+  readings based on a comparison to the next-best correlation along the
+  epipolar line. Matches where `uniqueness_ratio > (best_match -
+  next_match) / next_match` are filtered out.
+- `~texture_threshold` (`int`, default: `10`): Filters disparity
+  readings based on the amount of texture in the correlation window.
+- `~speckle_size` (`int`, default: `100`): Filters disparity regions
+  that are less than this number of pixels. For example, a value of 100
+  means that all regions with fewer than 100 pixels will be rejected.
+- `~speckle_range` (`int`, default: `4`): Groups disparity regions based
+  on their connectedness. Disparities are grouped together in the same
+  region if they are within this distance in pixels.
+
+##### Synchronization
+
+- `~approximate_sync` (`bool`, default: `false`): Whether to use
+  approximate synchronization. Set to true if the left and right cameras
+  do not produce exactly synced timestamps.
+- `~queue_size` (`int`, default: `5`): Size of message queue for each
+  synchronized topic. You may need to raise this if images take
+  significantly longer to travel over the network than camera info
+  and/or the delay from disparity processing is too long.
 
 ## Nodelets
 
@@ -268,235 +254,213 @@ nodelets, for example camera drivers or higher-level vision processing.
 In fact, the `stereo_image_proc` node simply loads a combination of
 nodelets.
 
+### stereo_image_proc/disparity
 
+Performs block matching on a pair of rectified stereo images, producing
+a disparity image.
 
-```clearsilver
-node {
-  name = stereo_image_proc/disparity
-  desc = Performs block matching on a pair of rectified stereo images, producing a disparity image.
-  sub {
-    0.name = left/image_rect
-    0.type = sensor_msgs/Image
-    0.desc = Left monochrome rectified image stream.
-    1.name = left/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Left camera metadata.
-    2.name = right/image_rect
-    2.type = sensor_msgs/Image
-    2.desc = Right monochrome rectified image stream.
-    3.name = right/camera_info
-    3.type = sensor_msgs/CameraInfo
-    3.desc = Right camera metadata.
-  }
-  pub {
-    0.name = disparity
-    0.type = stereo_msgs/DisparityImage
-    0.desc = Floating point disparity image with metadata.
-  }
-  param {
-    0.name = ~approximate_sync
-    0.type = bool
-    0.desc = Whether to use approximate synchronization. Set to true if the left and right cameras do not produce exactly synced timestamps.
-    0.default = false
-    1.name = ~queue_size
-    1.type = int
-    1.desc = Size of message queue for each synchronized topic. You may need to raise this if images take significantly longer to travel over the network than camera info and/or the delay from disparity processing is too long.
-    1.default = 5
-  }
-}
-```
+#### Subscribed Topics
 
+- `left/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left monochrome rectified image stream.
+- `left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Left camera metadata.
+- `right/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Right monochrome rectified image stream.
+- `right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Right camera metadata.
 
+#### Published Topics
 
+- `disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  Floating point disparity image with metadata.
 
+#### Parameters
 
-```clearsilver
-param {
-  group.0 {
-    name = Disparity pre-filtering
-    0.name = ~prefilter_size
-    0.type = int
-    0.desc = Normalization window size, pixels.
-    0.default = 9
-    1.name = ~prefilter_cap
-    1.type = int
-    1.desc = Bound on normalized pixel values.
-    1.default = 31
-  }
-  group.1 {
-    name = Disparity correlation
-    0.name = ~correlation_window_size
-    0.type = int
-    0.desc = Edge size (pixels) of the correlation window for matching. Values must be odd, in the range 5 to 255 (but with an extra performance hit for values larger than 21). Larger values have smoother disparity results, but smear out small features and depth discontinuities.
-    0.default = 15
-    1.name = ~min_disparity
-    1.type = int
-    1.desc = Minimum disparity, or the offset to the disparity search window. By setting to a positive value, the cameras become more "cross-eyed" and will find objects closer to the cameras. If the cameras are "verged" (inclined toward each other), it may be appropriate to set `min_disparity` to a negative value. When `min_disparity` is greater than 0, objects at large distances will not be found.
-    1.default = 0
-    2.name = ~disparity_range
-    2.type = int
-    2.desc = The size of the disparity search window (pixels). Together with `min_disparity`, this defines the "horopter," the 3D volume that is visible to the stereo algorithm.
-    2.default = 64
-  }
-  group.2 {
-    name = Disparity post-filtering
-    0.name = ~uniqueness_ratio
-    0.type = double
-    0.desc = Filters disparity readings based on a comparison to the next-best correlation along the epipolar line. Matches where `uniqueness_ratio > (best_match - next_match) / next_match` are filtered out.
-    0.default = 15.0
-    1.name = ~texture_threshold
-    1.type = int
-    1.desc = Filters disparity readings based on the amount of texture in the correlation window.
-    1.default = 10
-    2.name = ~speckle_size
-    2.type = int
-    2.desc = Filters disparity regions that are less than this number of pixels.  For example, a value of 100 means that all regions with fewer than 100 pixels will be rejected.
-    2.default = 100
-    3.name = ~speckle_range
-    3.type = int
-    3.desc = Groups disparity regions based on their connectedness. Disparities are grouped together in the same region if they are within this distance in pixels.
-    3.default = 4
-  }
-  group.4 {
-    name = Synchronization
-    0.name = ~approximate_sync
-    0.type = bool
-    0.desc = Whether to use approximate synchronization. Set to true if the left and right cameras do not produce exactly synced timestamps.
-    0.default = false
-    1.name = ~queue_size
-    1.type = int
-    1.desc = Size of message queue for each synchronized topic. You may need to raise this if images take significantly longer to travel over the network than camera info and/or the delay from disparity processing is too long.
-    1.default = 5
-  }
-}
-```
+- `~approximate_sync` (`bool`, default: `false`): Whether to use
+  approximate synchronization. Set to true if the left and right cameras
+  do not produce exactly synced timestamps.
+- `~queue_size` (`int`, default: `5`): Size of message queue for each
+  synchronized topic. You may need to raise this if images take
+  significantly longer to travel over the network than camera info
+  and/or the delay from disparity processing is too long.
 
+#### Parameters
 
+##### Disparity pre-filtering
 
+- `~prefilter_size` (`int`, default: `9`): Normalization window size,
+  pixels.
+- `~prefilter_cap` (`int`, default: `31`): Bound on normalized pixel
+  values.
 
+##### Disparity correlation
 
-```clearsilver
-node.0 {
-  name = stereo_image_proc/point_cloud2
-  desc = Combines a rectified color image and disparity image to produce a point cloud.
-  sub {
-    0.name = left/image_rect_color
-    0.type = sensor_msgs/Image
-    0.desc = Left color rectified image stream.
-    1.name = left/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Left camera metadata.
-    2.name = right/camera_info
-    2.type = sensor_msgs/CameraInfo
-    2.desc = Right camera metadata.
-    3.name = disparity
-    3.type = stereo_msgs/DisparityImage
-    3.desc = Floating point disparity image with metadata.
-  }
-  pub {
-    0.name = points2
-    0.type = sensor_msgs/PointCloud2
-    0.desc = Stereo point cloud with RGB color.
-  }
-  param {
-    0.name = ~approximate_sync
-    0.type = bool
-    0.desc = Whether to use approximate synchronization. Set to true if the left and right cameras do not produce exactly synced timestamps.
-    0.default = false
-    1.name = ~queue_size
-    1.type = int
-    1.desc = Size of message queue for each synchronized topic. You may need to raise this if images take significantly longer to travel over the network than camera info and/or the delay from disparity processing is too long.
-    1.default = 5
-  }
-}
-node.1 {
-  name = stereo_image_proc/point_cloud
-  desc = Combines a rectified color image and disparity image to produce a <<MsgLink(sensor_msgs/PointCloud)>>. Provided for backwards compatibility; this message type is obsoleted by <<MsgLink(sensor_msgs/PointCloud2)>>.
-  sub {
-    0.name = left/image_rect_color
-    0.type = sensor_msgs/Image
-    0.desc = Left color rectified image stream.
-    1.name = left/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Left camera metadata.
-    2.name = right/camera_info
-    2.type = sensor_msgs/CameraInfo
-    2.desc = Right camera metadata.
-    3.name = disparity
-    3.type = stereo_msgs/DisparityImage
-    3.desc = Floating point disparity image with metadata.
-  }
-  pub {
-    0.name = points
-    0.type = sensor_msgs/PointCloud
-    0.desc = Stereo point cloud with RGB color.
-  }
-  param {
-    0.name = ~approximate_sync
-    0.type = bool
-    0.desc = Whether to use approximate synchronization. Set to true if the left and right cameras do not produce exactly synced timestamps.
-    0.default = false
-    1.name = ~queue_size
-    1.type = int
-    1.desc = Size of message queue for each synchronized topic. You may need to raise this if images take significantly longer to travel over the network than camera info and/or the delay from disparity processing is too long.
-    1.default = 5
-  }
-}
-```
+- `~correlation_window_size` (`int`, default: `15`): Edge size (pixels)
+  of the correlation window for matching. Values must be odd, in the
+  range 5 to 255 (but with an extra performance hit for values larger
+  than 21). Larger values have smoother disparity results, but smear out
+  small features and depth discontinuities.
+- `~min_disparity` (`int`, default: `0`): Minimum disparity, or the
+  offset to the disparity search window. By setting to a positive value,
+  the cameras become more "cross-eyed" and will find objects closer to
+  the cameras. If the cameras are "verged" (inclined toward each
+  other), it may be appropriate to set `min_disparity` to a negative
+  value. When `min_disparity` is greater than 0, objects at large
+  distances will not be found.
+- `~disparity_range` (`int`, default: `64`): The size of the disparity
+  search window (pixels). Together with `min_disparity`, this defines
+  the "horopter," the 3D volume that is visible to the stereo
+  algorithm.
 
+##### Disparity post-filtering
 
+- `~uniqueness_ratio` (`double`, default: `15.0`): Filters disparity
+  readings based on a comparison to the next-best correlation along the
+  epipolar line. Matches where `uniqueness_ratio > (best_match -
+  next_match) / next_match` are filtered out.
+- `~texture_threshold` (`int`, default: `10`): Filters disparity
+  readings based on the amount of texture in the correlation window.
+- `~speckle_size` (`int`, default: `100`): Filters disparity regions
+  that are less than this number of pixels. For example, a value of 100
+  means that all regions with fewer than 100 pixels will be rejected.
+- `~speckle_range` (`int`, default: `4`): Groups disparity regions based
+  on their connectedness. Disparities are grouped together in the same
+  region if they are within this distance in pixels.
+
+##### Synchronization
+
+- `~approximate_sync` (`bool`, default: `false`): Whether to use
+  approximate synchronization. Set to true if the left and right cameras
+  do not produce exactly synced timestamps.
+- `~queue_size` (`int`, default: `5`): Size of message queue for each
+  synchronized topic. You may need to raise this if images take
+  significantly longer to travel over the network than camera info
+  and/or the delay from disparity processing is too long.
+
+### stereo_image_proc/point_cloud2
+
+Combines a rectified color image and disparity image to produce a point
+cloud.
+
+#### Subscribed Topics
+
+- `left/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left color rectified image stream.
+- `left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Left camera metadata.
+- `right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Right camera metadata.
+- `disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  Floating point disparity image with metadata.
+
+#### Published Topics
+
+- `points2`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  Stereo point cloud with RGB color.
+
+#### Parameters
+
+- `~approximate_sync` (`bool`, default: `false`): Whether to use
+  approximate synchronization. Set to true if the left and right cameras
+  do not produce exactly synced timestamps.
+- `~queue_size` (`int`, default: `5`): Size of message queue for each
+  synchronized topic. You may need to raise this if images take
+  significantly longer to travel over the network than camera info
+  and/or the delay from disparity processing is too long.
+
+### stereo_image_proc/point_cloud
+
+Combines a rectified color image and disparity image to produce a
+[sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html).
+Provided for backwards compatibility; this message type is obsoleted by
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html).
+
+#### Subscribed Topics
+
+- `left/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Left color rectified image stream.
+- `left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Left camera metadata.
+- `right/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Right camera metadata.
+- `disparity`
+  ([stereo_msgs/msg/DisparityImage](https://docs.ros.org/en/rolling/p/stereo_msgs/msg/DisparityImage.html)):
+  Floating point disparity image with metadata.
+
+#### Published Topics
+
+- `points`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  Stereo point cloud with RGB color.
+
+#### Parameters
+
+- `~approximate_sync` (`bool`, default: `false`): Whether to use
+  approximate synchronization. Set to true if the left and right cameras
+  do not produce exactly synced timestamps.
+- `~queue_size` (`int`, default: `5`): Size of message queue for each
+  synchronized topic. You may need to raise this if images take
+  significantly longer to travel over the network than camera info
+  and/or the delay from disparity processing is too long.
 
 ## Launch files
 
+### stereo_image_proc.launch
 
-
-```clearsilver
-name = stereo_image_proc.launch
-desc << EOM
-Loads the full constellation of `image_proc`/`stereo_image_proc` nodelets for one stereo camera pair into a user-provided nodelet manager. The in-process equivalent of running the `stereo_image_proc` node. Launch (or include in a higher-level launch file) in the camera namespace, just as you would run `stereo_image_proc`.
-EOM
-}
-```
-
-
+Loads the full constellation of `image_proc`/`stereo_image_proc`
+nodelets for one stereo camera pair into a user-provided nodelet
+manager. The in-process equivalent of running the `stereo_image_proc`
+node. Launch (or include in a higher-level launch file) in the camera
+namespace, just as you would run `stereo_image_proc`.
 
 #### Arguments
 
+- `manager` (`string`): The name of the target nodelet manager. It will
+  need to be globally qualified (e.g. `/my_manager`), unless the
+  manager is already in the stereo namespace.
+- `respawn` (`bool`, default: `false`): If true, enables bond topics and
+  respawns any nodelet loaders that die. If the manager also respawns,
+  the system is robust to any node dying. However, the proliferation of
+  bond topics can overwhelm introspection tools like
+  [rqt_graph](https://index.ros.org/p/rqt_graph).
 
+##### Remapping
 
-```clearsilver
-param {
-  no_header=True
-  group.0 {
-    0.name = manager
-    0.type = string
-    0.desc = The name of the target nodelet manager. It will need to be globally qualified (e.g. `/my_manager`), unless the manager is already in the stereo namespace.
-    1.name = respawn
-    1.type = bool
-    1.default = false
-    1.desc = If true, enables bond topics and respawns any nodelet loaders that die. If the manager also respawns, the system is robust to any node dying. However, the proliferation of bond topics can overwhelm introspection tools like [[rqt_graph]].
-  }
-  group.1 {
-    name = Remapping
-    0.name = left
-    0.type = string
-    0.default = left
-    0.desc = Remap the 'left' camera namespace.
-    1.name = right
-    1.type = string
-    1.default = right
-    1.desc = Remap the 'right' camera namespace.
-  }
-}
-```
-
-
+- `left` (`string`, default: `left`): Remap the 'left' camera
+  namespace.
+- `right` (`string`, default: `right`): Remap the 'right' camera
+  namespace.
 
 #### Subscribed and Published Topics
 
 Identical to the `stereo_image_proc` node.
 
 ## Choosing Good Stereo Parameters
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Recording and playing back data](http://www.ros.org/wiki/rosbag/Tutorials/Recording%20and%20playing%20back%20data).
+- **Description:** This tutorial walks you through a real-world example
+  of tuning a running
+  stereo_image_proc instance to get
+  the best stereo results, using
+  [stereo_view](https://index.ros.org/p/image_view) and
+  [rviz](https://index.ros.org/p/rviz) for visual feedback.
+- **Tutorial Level:** BEGINNER
 
 ### Preliminaries
 
@@ -797,14 +761,21 @@ install OpenCV3 library.
 
 ## Using OpenCV with Image Processing
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** A setup and initialization guide to using an OpenCV
+  node with [image_pipeline](https://index.ros.org/p/image_pipeline).
+- **Keywords:** OpenCV, stereo vision, image pipeline
+- **Tutorial Level:** BEGINNER
+
 ### Introduction
 
 While [image_publisher](https://index.ros.org/p/image_publisher) is a
 great tool and the [camera_drivers](camera_drivers) package contains a
 great resources for using industrial cameras, like the
-[ Prosilica GigE](https://index.ros.org/p/prosilica_camera) and
-[ Firewire cameras](https://index.ros.org/p/camera1394), it lacks an
-easy guide on how to use OpenCV. Enter: this guide.
+[Prosilica GigE](https://index.ros.org/p/prosilica_camera) and
+[Firewire cameras](https://index.ros.org/p/camera1394), it lacks an easy
+guide on how to use OpenCV. Enter: this guide.
 
 ### image_pipeline
 
@@ -813,8 +784,8 @@ only difference is the use of the
 [cv_camera](https://index.ros.org/p/cv_camera) node in lieu of another
 camera driver. There will be two
 [cv_camera](https://index.ros.org/p/cv_camera) nodes that each publish
-[ image_raw](https://index.ros.org/p/sensor_msgs) and
-[ camera_info](https://index.ros.org/p/sensor_msgs) topics. The
+[image_raw](https://index.ros.org/p/sensor_msgs) and
+[camera_info](https://index.ros.org/p/sensor_msgs) topics. The
 [image_pipeline](https://index.ros.org/p/image_pipeline) node,
 stereo_image_proc will subscribe to
 these topics and publish the usual data, including a disparity map and
@@ -825,7 +796,7 @@ pointcloud.
 Assuming that ROS is installed following the standard install procedure
 for your operating system and a catkin workspace has been set up
 according to the ROS tutorials, the next step is to install and setup
-[ OpenCV](https://index.ros.org/p/opencv3) and
+[OpenCV](https://index.ros.org/p/opencv3) and
 [cv_bridge](https://index.ros.org/p/cv_bridge).
 
 #### Project Folder

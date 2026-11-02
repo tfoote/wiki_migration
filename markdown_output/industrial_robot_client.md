@@ -125,137 +125,126 @@ Besides the reusable libraries, this package also provides default
 implementations of a set of generic nodes. The following is the ROS API
 of those generic nodes.
 
+### robot_state
 
+Connects to a robot state server program on a controller and publishes
+joint states.
 
-```clearsilver
+#### Action Feedback
 
-node.0 {
-  name=robot_state
-  desc=Connects to a robot state server program on a controller and publishes joint states.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectory](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectory.html)):
+  Provide feedback of current vs. desired joint position (and
+  velocity/acceleration).
 
-  pub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-  }
+#### Published Topics
 
-  pub {
-    1.name = robot_status
-    1.type = industrial_msgs/RobotStatus
-    1.desc = Aggregate controller/robot status (ie: drives enabled, motion possible, etc)
-  }
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `robot_status`
+  ([industrial_msgs/msg/RobotStatus](https://docs.ros.org/en/rolling/p/industrial_msgs/msg/RobotStatus.html)):
+  Aggregate controller/robot status (ie: drives enabled, motion
+  possible, etc)
 
-  feedback {
-    0.name = feedback_states
-    0.type = control_msgs/FollowJointTrajectory
-    0.desc = Provide feedback of current vs. desired joint position (and velocity/acceleration).
-  }
+#### Parameters
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the robot state server program is listening on.
-    1.default = 11002
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only publish joint states for a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-  }
-}
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11002`): TCP port the robot state server
+  program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`): (optional) A list
+  containing all joints the driver should assume control over. If this
+  parameter is not found, the driver will try to extract this from the
+  `robot_description` parameter, but this will result in all joints in
+  the urdf to be included. If the driver should only publish joint
+  states for a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
-node.1 {
-  name=motion_download_interface
-  desc=Connects to a motion relay server program on the controller and uploads trajectories. Note: this is the ''download'' version of the interface, which means the entire trajectory is uploaded to the motion relay server program before motion is started.
+### motion_download_interface
 
-  sub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-    1.name = joint_path_command
-    1.type = trajectory_msgs/JointTrajectory
-    1.desc = Execute a pre-calculated joint trajectory on the robot.
-  }
+Connects to a motion relay server program on the controller and uploads
+trajectories. Note: this is the *download* version of the interface,
+which means the entire trajectory is uploaded to the motion relay server
+program before motion is started.
 
-  srv {
-    0.name = joint_path_command
-    0.type = industrial_msgs/CmdJointTrajectory
-    0.desc = Execute a new motion trajectory on the robot.
-    1.name = stop_motion
-    1.type = industrial_msgs/StopMotion
-    1.desc = Stop execution of the current motion at the earliest time possible.
-  }
+#### Subscribed Topics
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the motion relay server program is listening on.
-    1.default = 11000
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only control a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-    3.default = none
-  }
-}
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Execute a pre-calculated joint trajectory on the robot.
 
-node.2 {
-  name=motion_streaming_interface
-  desc=Connects to a motion relay server program on the controller and streams trajectories. Note: this is the ''streaming'' version of the interface, which means trajectories are relayed piecewise to the motion relay server program and motion is expected to start immediately (or: as soon as possible).
+#### Services
 
-  sub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-    1.name = joint_path_command
-    1.type = trajectory_msgs/JointTrajectory
-    1.desc = Execute a pre-calculated joint trajectory on the robot.
-  }
+- `joint_path_command`
+  ([industrial_msgs/srv/CmdJointTrajectory](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/CmdJointTrajectory.html)):
+  Execute a new motion trajectory on the robot.
+- `stop_motion`
+  ([industrial_msgs/srv/StopMotion](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/StopMotion.html)):
+  Stop execution of the current motion at the earliest time possible.
 
-  srv {
-    0.name = joint_path_command
-    0.type = industrial_msgs/CmdJointTrajectory
-    0.desc = Execute a new motion trajectory on the robot.
-    1.name = stop_motion
-    1.type = industrial_msgs/StopMotion
-    1.desc = Stop execution of the current motion at the earliest time possible.
-  }
+#### Parameters
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the motion relay server program is listening on.
-    1.default = 11000
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only control a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-    3.default = none
-  }
-}
-```
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11000`): TCP port the motion relay
+  server program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`, default: `none`):
+  (optional) A list containing all joints the driver should assume
+  control over. If this parameter is not found, the driver will try to
+  extract this from the `robot_description` parameter, but this will
+  result in all joints in the urdf to be included. If the driver should
+  only control a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
+### motion_streaming_interface
 
+Connects to a motion relay server program on the controller and streams
+trajectories. Note: this is the *streaming* version of the interface,
+which means trajectories are relayed piecewise to the motion relay
+server program and motion is expected to start immediately (or: as soon
+as possible).
+
+#### Subscribed Topics
+
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Execute a pre-calculated joint trajectory on the robot.
+
+#### Services
+
+- `joint_path_command`
+  ([industrial_msgs/srv/CmdJointTrajectory](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/CmdJointTrajectory.html)):
+  Execute a new motion trajectory on the robot.
+- `stop_motion`
+  ([industrial_msgs/srv/StopMotion](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/StopMotion.html)):
+  Stop execution of the current motion at the earliest time possible.
+
+#### Parameters
+
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11000`): TCP port the motion relay
+  server program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`, default: `none`):
+  (optional) A list containing all joints the driver should assume
+  control over. If this parameter is not found, the driver will try to
+  extract this from the `robot_description` parameter, but this will
+  result in all joints in the urdf to be included. If the driver should
+  only control a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
 ## Contact us/Technical support
 
@@ -355,84 +344,72 @@ robot-specific launch files):
 All `industrial_robot_client` generic launch files provide the same
 nodes and topics:
 
+#### robot_state
 
+Provides feedback of robot position and status from the industrial robot
+controller.
 
-```clearsilver
+##### Published Topics
 
-node.0 {
-  name = robot_state
-  desc = Provides feedback of robot position and status from the industrial robot controller.
+- `joint_states`
+  ([control_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/control_msgs/msg/JointState.html)):
+  Joint trajectory feedback messages.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectoryFeedback](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryFeedback.html)):
+  Joint trajectory feedback messages.
+- `robot_status`
+  ([industrial_msgs/msg/RobotStatus](https://docs.ros.org/en/rolling/p/industrial_msgs/msg/RobotStatus.html)):
+  Robot status messages.
 
-  pub {
-    0.name = joint_states
-    0.type = control_msgs/JointState
-    0.desc = Joint trajectory feedback messages.
+##### Parameters
 
-    1.name = feedback_states
-    1.type = control_msgs/FollowJointTrajectoryFeedback
-    1.desc = Joint trajectory feedback messages.
+- `robot_ip_address` (`string`): IP address of robot-controller
 
-    2.name = robot_status
-    2.type = industrial_msgs/RobotStatus
-    2.desc = Robot status messages.
-  }
+#### motion_\*_interface
 
-  param {
-    0.name = robot_ip_address
-    0.type = string
-    0.desc = IP address of robot-controller
-  }
-}
+Sends joint trajectory messages to the industrial robot controller.
 
-node.1 {
-  name = motion_*_interface
-  desc = Sends joint trajectory messages to the industrial robot controller.
+##### Subscribed Topics
 
-  sub {
-    0.name = joint_path_command
-    0.type = trajectory_msgs/JointTrajectory
-    0.desc = Joint trajectory command messages.
-  }
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Joint trajectory command messages.
 
-  param {
-    0.name = robot_ip_address
-    0.type = string
-    0.desc = IP address of robot-controller
-  }
-}
+##### Parameters
 
-node.2 {
-  name = joint_trajectory_action
-  desc = Action interface for commanding robot motion.
+- `robot_ip_address` (`string`): IP address of robot-controller
 
-  sub {
-    0.name=joint_trajectory_action/goal
-    0.type=control_msgs/FollowJointTrajectoryActionGoal
-    0.desc=The goal describes the trajectory for the robot to follow.
-    1.name=joint_trajectory_action/cancel
-    1.type=actionlib_msgs/GoalID
-    1.desc=A request to cancel a specific goal.
-    2.name=feedback_states
-    2.type=control_msgs/FollowJointTrajectoryFeedback
-    2.desc=Listens to the state of the controller.
-  }
+#### joint_trajectory_action
 
-  pub {
-    0.name=joint_path_command
-    0.type=trajectory_msgs/JointTrajectory
-    0.desc=Sends joint trajectories to the controller.
-    1.name=joint_trajectory_action/feedback
-    1.type=control_msgs/FollowJointTrajectoryActionFeedback
-    1.desc=Feedback describing the progress the robot is making on following the trajectory.
-    2.name=joint_trajectory_action/status
-    2.type=actionlib_msgs/GoalStatusArray
-    2.desc=Provides status information on the goals that are sent to the action.
-    3.name=joint_trajectory_action/result
-    3.type=control_msgs/FollowJointTrajectoryActionResult
-    3.desc=Result of the commanded action
-  }
-}
-```
+Action interface for commanding robot motion.
+
+##### Subscribed Topics
+
+- `joint_trajectory_action/goal`
+  ([control_msgs/msg/FollowJointTrajectoryActionGoal](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionGoal.html)):
+  The goal describes the trajectory for the robot to follow.
+- `joint_trajectory_action/cancel`
+  ([actionlib_msgs/msg/GoalID](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalID.html)):
+  A request to cancel a specific goal.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectoryFeedback](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryFeedback.html)):
+  Listens to the state of the controller.
+
+##### Published Topics
+
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Sends joint trajectories to the controller.
+- `joint_trajectory_action/feedback`
+  ([control_msgs/msg/FollowJointTrajectoryActionFeedback](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionFeedback.html)):
+  Feedback describing the progress the robot is making on following the
+  trajectory.
+- `joint_trajectory_action/status`
+  ([actionlib_msgs/msg/GoalStatusArray](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalStatusArray.html)):
+  Provides status information on the goals that are sent to the action.
+- `joint_trajectory_action/result`
+  ([control_msgs/msg/FollowJointTrajectoryActionResult](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionResult.html)):
+  Result of the commanded action
 
 ## design
 
@@ -962,137 +939,126 @@ Besides the reusable libraries, this package also provides default
 implementations of a set of generic nodes. The following is the ROS API
 of those generic nodes.
 
+#### robot_state
 
+Connects to a robot state server program on a controller and publishes
+joint states.
 
-```clearsilver
+##### Action Feedback
 
-node.0 {
-  name=robot_state
-  desc=Connects to a robot state server program on a controller and publishes joint states.
+- `feedback_states`
+  ([control_msgs/msg/FollowJointTrajectory](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectory.html)):
+  Provide feedback of current vs. desired joint position (and
+  velocity/acceleration).
 
-  pub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-  }
+##### Published Topics
 
-  pub {
-    1.name = robot_status
-    1.type = industrial_msgs/RobotStatus
-    1.desc = Aggregate controller/robot status (ie: drives enabled, motion possible, etc)
-  }
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `robot_status`
+  ([industrial_msgs/msg/RobotStatus](https://docs.ros.org/en/rolling/p/industrial_msgs/msg/RobotStatus.html)):
+  Aggregate controller/robot status (ie: drives enabled, motion
+  possible, etc)
 
-  feedback {
-    0.name = feedback_states
-    0.type = control_msgs/FollowJointTrajectory
-    0.desc = Provide feedback of current vs. desired joint position (and velocity/acceleration).
-  }
+##### Parameters
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the robot state server program is listening on.
-    1.default = 11002
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only publish joint states for a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-  }
-}
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11002`): TCP port the robot state server
+  program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`): (optional) A list
+  containing all joints the driver should assume control over. If this
+  parameter is not found, the driver will try to extract this from the
+  `robot_description` parameter, but this will result in all joints in
+  the urdf to be included. If the driver should only publish joint
+  states for a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
-node.1 {
-  name=motion_download_interface
-  desc=Connects to a motion relay server program on the controller and uploads trajectories. Note: this is the ''download'' version of the interface, which means the entire trajectory is uploaded to the motion relay server program before motion is started.
+#### motion_download_interface
 
-  sub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-    1.name = joint_path_command
-    1.type = trajectory_msgs/JointTrajectory
-    1.desc = Execute a pre-calculated joint trajectory on the robot.
-  }
+Connects to a motion relay server program on the controller and uploads
+trajectories. Note: this is the *download* version of the interface,
+which means the entire trajectory is uploaded to the motion relay server
+program before motion is started.
 
-  srv {
-    0.name = joint_path_command
-    0.type = industrial_msgs/CmdJointTrajectory
-    0.desc = Execute a new motion trajectory on the robot.
-    1.name = stop_motion
-    1.type = industrial_msgs/StopMotion
-    1.desc = Stop execution of the current motion at the earliest time possible.
-  }
+##### Subscribed Topics
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the motion relay server program is listening on.
-    1.default = 11000
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only control a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-    3.default = none
-  }
-}
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Execute a pre-calculated joint trajectory on the robot.
 
-node.2 {
-  name=motion_streaming_interface
-  desc=Connects to a motion relay server program on the controller and streams trajectories. Note: this is the ''streaming'' version of the interface, which means trajectories are relayed piecewise to the motion relay server program and motion is expected to start immediately (or: as soon as possible).
+##### Services
 
-  sub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = Joint state for all joints of the connected robot.
-    1.name = joint_path_command
-    1.type = trajectory_msgs/JointTrajectory
-    1.desc = Execute a pre-calculated joint trajectory on the robot.
-  }
+- `joint_path_command`
+  ([industrial_msgs/srv/CmdJointTrajectory](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/CmdJointTrajectory.html)):
+  Execute a new motion trajectory on the robot.
+- `stop_motion`
+  ([industrial_msgs/srv/StopMotion](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/StopMotion.html)):
+  Stop execution of the current motion at the earliest time possible.
 
-  srv {
-    0.name = joint_path_command
-    0.type = industrial_msgs/CmdJointTrajectory
-    0.desc = Execute a new motion trajectory on the robot.
-    1.name = stop_motion
-    1.type = industrial_msgs/StopMotion
-    1.desc = Stop execution of the current motion at the earliest time possible.
-  }
+##### Parameters
 
-  param {
-    0.name = robot_ip_address
-    0.type = str
-    0.desc = IP address of the controller to connect to. If this is not set the node will exit.
-    0.default = none
-    1.name = ~port
-    1.type = integer
-    1.desc = TCP port the motion relay server program is listening on.
-    1.default = 11000
-    2.name = robot_description
-    2.type = str
-    2.desc = The urdf xml robot description.
-    2.default = none
-    3.name = controller_joint_names
-    3.type = [str, str, str, ..]
-    3.desc = (optional) A list containing all joints the driver should assume control over. If this parameter is not found, the driver will try to extract this from the `robot_description` parameter, but this will result in all joints in the urdf to be included. If the driver should only control a subset of the joints in the urdf, the `controller_joint_names` parameter must be set.
-    3.default = none
-  }
-}
-```
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11000`): TCP port the motion relay
+  server program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`, default: `none`):
+  (optional) A list containing all joints the driver should assume
+  control over. If this parameter is not found, the driver will try to
+  extract this from the `robot_description` parameter, but this will
+  result in all joints in the urdf to be included. If the driver should
+  only control a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
+#### motion_streaming_interface
 
+Connects to a motion relay server program on the controller and streams
+trajectories. Note: this is the *streaming* version of the interface,
+which means trajectories are relayed piecewise to the motion relay
+server program and motion is expected to start immediately (or: as soon
+as possible).
+
+##### Subscribed Topics
+
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint state for all joints of the connected robot.
+- `joint_path_command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Execute a pre-calculated joint trajectory on the robot.
+
+##### Services
+
+- `joint_path_command`
+  ([industrial_msgs/srv/CmdJointTrajectory](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/CmdJointTrajectory.html)):
+  Execute a new motion trajectory on the robot.
+- `stop_motion`
+  ([industrial_msgs/srv/StopMotion](https://docs.ros.org/en/rolling/p/industrial_msgs/srv/StopMotion.html)):
+  Stop execution of the current motion at the earliest time possible.
+
+##### Parameters
+
+- `robot_ip_address` (`str`, default: `none`): IP address of the
+  controller to connect to. If this is not set the node will exit.
+- `~port` (`integer`, default: `11000`): TCP port the motion relay
+  server program is listening on.
+- `robot_description` (`str`, default: `none`): The urdf xml robot
+  description.
+- `controller_joint_names` (`[str, str, str, ..]`, default: `none`):
+  (optional) A list containing all joints the driver should assume
+  control over. If this parameter is not found, the driver will try to
+  extract this from the `robot_description` parameter, but this will
+  result in all joints in the urdf to be included. If the driver should
+  only control a subset of the joints in the urdf, the
+  `controller_joint_names` parameter must be set.
 
 ### Contact us/Technical support
 

@@ -61,20 +61,19 @@ each mode.
 
 ### unit conversions
 
-The driver features [ muparser](http://muparser.beltoforion.de/ ) based
+The driver features [muparser](http://muparser.beltoforion.de/) based
 conversion functions.
 
 In addition to the predefined
-[ functions](http://muparser.beltoforion.de/mup_features.html#idDef2 )
-and
-[ operators](http://muparser.beltoforion.de/mup_features.html#idDef3 ),
+[functions](http://muparser.beltoforion.de/mup_features.html#idDef2) and
+[operators](http://muparser.beltoforion.de/mup_features.html#idDef3),
 the following functions are available:
 
 - rad2deg(radians): convert from radians to degrees
 - deg2rad(degrees): convert from degrees to radians
 - norm(value, min, max): normalize value to the range \[min, max)
 - smooth(value, old_value, alpha):
-  [ exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing ),
+  [exponential smoothing](https://en.wikipedia.org/wiki/Exponential_smoothing),
   returns alpha\*val + (1.0-alpha)\*old_val
 - avg(val1,val2,\...): average functions that stops on the first NaN
   value
@@ -168,4 +167,4 @@ The spawned controllers will provide additional interfaces.
 
 The current implementation does not expose a C++ API, but it is planned
 for the future:
-[ Issue #101](https://github.com/ros-industrial/ros_canopen/issues/101 )
+[Issue #101](https://github.com/ros-industrial/ros_canopen/issues/101)

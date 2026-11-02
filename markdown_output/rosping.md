@@ -27,25 +27,17 @@ data: 40.961
 
 ## ROS API
 
+### rosping
 
+`rosping` is a node that publish ping result of hostaname
 
-```clearsilver
-node.0 {
-  name=rosping
-  desc=`rosping` is a node that publish ping result of hostaname
-  sub{
-  }
-  pub{
-    0.name=~delay
-    0.type=std_msgs/Float
-    0.desc=Network Delay(sec) between current machine and hostnamae
-  }
-  srv{
-  }
-  param {
-    1.name= ~rate
-    1.default=10
-    1.type= float
-    1.desc= duration between sending ping, 10.0 means 0.1 [hz]
-}
-```
+#### Published Topics
+
+- `~delay`
+  ([std_msgs/msg/Float](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float.html)):
+  Network Delay(sec) between current machine and hostnamae
+
+#### Parameters
+
+- `~rate` (`float`, default: `10`): duration between sending ping, 10.0
+  means 0.1 \[hz\]

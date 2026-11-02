@@ -126,80 +126,46 @@ $ roslaunch find_object_2d find_object_3d_kinect2.launch
 
 ### find_object_2d
 
+#### Subscribed Topics
 
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  RGB/Mono image. Used only if `subscribe_depth` is false.
+- `rgb/image_rect_color`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  RGB/Mono image. Required if `subscribe_depth` is true.
+- `rgb/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  RGB camera metadata. Required if `subscribe_depth` is true.
+- `registered_depth/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Registered depth image. Required if `subscribe_depth` is true.
 
-```clearsilver
-sub {
-  0{
-   name = image
-   type = sensor_msgs/Image
-   desc = RGB/Mono image. Used only if `subscribe_depth` is false.
-   }
-  1{
-   name = rgb/image_rect_color
-   type = sensor_msgs/Image
-   desc = RGB/Mono image. Required if `subscribe_depth` is true.
-   }
-  2{
-   name = rgb/camera_info
-   type = sensor_msgs/CameraInfo
-   desc = RGB camera metadata. Required if `subscribe_depth` is true.
-   }
-  3{
-   name = registered_depth/image_raw
-   type = sensor_msgs/Image
-   desc = Registered depth image. Required if `subscribe_depth` is true.
-   }
-}
-pub {
-  0{
-   name = objects
-   type = std_msgs/Float32MultiArray
-   desc = Objects detected formatted as [objectId1, objectWidth, objectHeight, h11, h12, h13, h21, h22, h23, h31, h32, h33, objectId2...] where h## is a 3x3 homography matrix (h31 = dx and h32 = dy, see QTransform). Example handling the message (source [[https://github.com/introlab/find-object/blob/master/src/ros/print_objects_detected_node.cpp|here]])
-   }
-  1{
-   name = objectsStamped
-   type = find_object_2d/ObjectsStamped
-   desc = Objects detected with stamp (useful to sync with corresponding TF).
-   }
-}
+#### Published Topics
 
-param {
-  0{
-   name = ~subscribe_depth
-   type = bool
-   default = `"true"`
-   desc = Subscribe to depth image. [[tf]] will be published for each object detected (if the depth values are valid inside the object's region of the color image).
-   }
-  1{
-   name = ~gui
-   type = bool
-   default = `"true"`
-   desc = Launch the GUI
-   }
-  2{
-   name = ~objects_path
-   type = string
-   default = `""`
-   desc = Path to folder containing objects to detect.
-   }
-  3{
-   name = ~session_path
-   type = string
-   default = `""`
-   desc = Path to a session file to load. `objects_path` ignored if set.
-   }
-  4{
-   name = ~settings_path
-   type = string
-   default = `""`
-   desc = Path to settings file (*.ini).
-   }
-  5{
-   name = ~object_prefix
-   type = string
-   default = `"object"`
-   desc = Object's prefix for [[tf]].
-   }
-}
-```
+- `objects`
+  ([std_msgs/msg/Float32MultiArray](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float32MultiArray.html)):
+  Objects detected formatted as \[objectId1, objectWidth, objectHeight,
+  h11, h12, h13, h21, h22, h23, h31, h32, h33, objectId2\...\] where h##
+  is a 3x3 homography matrix (h31 = dx and h32 = dy, see QTransform).
+  Example handling the message (source
+  [here](https://github.com/introlab/find-object/blob/master/src/ros/print_objects_detected_node.cpp))
+- `objectsStamped`
+  ([find_object_2d/msg/ObjectsStamped](https://docs.ros.org/en/rolling/p/find_object_2d/msg/ObjectsStamped.html)):
+  Objects detected with stamp (useful to sync with corresponding TF).
+
+#### Parameters
+
+- `~subscribe_depth` (`bool`, default: `"true"`): Subscribe to depth
+  image. [tf](https://index.ros.org/p/tf) will be published for each
+  object detected (if the depth values are valid inside the object's
+  region of the color image).
+- `~gui` (`bool`, default: `"true"`): Launch the GUI
+- `~objects_path` (`string`, default: `""`): Path to folder
+  containing objects to detect.
+- `~session_path` (`string`, default: `""`): Path to a session file
+  to load. `objects_path` ignored if set.
+- `~settings_path` (`string`, default: `""`): Path to settings file
+  (\*.ini).
+- `~object_prefix` (`string`, default: `"object"`): Object's prefix
+  for [tf](https://index.ros.org/p/tf).

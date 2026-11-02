@@ -10,56 +10,59 @@ The ROS API of this node should be considered stable.
 
 ## Nodes
 
+### joy_node
 
+Provides a generic Linux joystick node.
 
-```clearsilver
+#### Subscribed Topics
 
-node.0 {
-  name=joy_node
-  desc=Provides a generic Linux joystick node.
+- `joy/set_feedback`
+  ([sensor_msgs/msg/JoyFeedbackArray](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JoyFeedbackArray.html)):
+  Force feedback control.
 
-  pub {
-    0.name = joy
-    0.type = sensor_msgs/Joy
-    0.desc = Outputs the joystick state.
-  }
+#### Published Topics
 
-  sub {
-    0.name = joy/set_feedback
-    0.type = sensor_msgs/JoyFeedbackArray
-    0.desc = Force feedback control.
-  }
+- `joy`
+  ([sensor_msgs/msg/Joy](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Joy.html)):
+  Outputs the joystick state.
 
-  param {
-    0.name = ~dev
-    0.type = str
-    0.default = "/dev/input/js0"
-    0.desc = Linux joystick device from which to read joystick events.
-    1.name = ~deadzone
-    1.type = double
-    1.default = 0.05
-    1.desc = Amount by which the joystick has to move before it is considered to be off-center. This parameter is specified relative to an axis normalized between -1 and 1. Thus, 0.1 means that the joystick has to move 10% of the way to the edge of an axis's range before that axis will output a non-zero value. Linux does its own deadzone processing, so in many cases this value can be set to zero.
-    2.name = ~autorepeat_rate
-    2.type = double
-    2.default = 0.0 (disabled)
-    2.desc = Rate in Hz at which a joystick that has a non-changing state will resend the previously sent message.
-    3.name = ~coalesce_interval
-    3.type = double
-    3.default = 0.001
-    3.desc = Axis events that are received within coalesce_interval (seconds) of each other are sent out in a single ROS message. Since the kernel sends each axis motion as a separate event, coalescing greatly reduces the rate at which messages are sent. This option can also be used to limit the rate of outgoing messages. Button events are always sent out immediately to avoid missing button presses.
-    4.name = ~default_trig_val
-    4.type = bool
-    4.default = false
-    4.desc = When this parameter is ''false'', each button and axis will report a value of 0 until it gets pressed/touched. This might be a problem e.g. for the trigger axes which should report 1.0 in their default untouched position. Setting this parameter to ''true'' forces the driver to read the actual joystick button values on startup and report the correct values even before the buttons/axes were touched. There is a small probability that reading out the initial state will not work for some combinations of gamepads and kernel versions, and that is why this parameter is ''false'' by default.
-    5.name = ~dev_ff
-    5.type = str
-    5.default = "/dev/input/event0" (<<Version(Noetic)>>: autodetection is tried if this parameter is not specified)
-    5.desc = The device to use for accessing force feedback function. It is usually one of `/dev/input/event*` devices. You can use `udevadm monitor` command when plugging in the gamepad to tell the right event file name.
-  }
-}
-```
+#### Parameters
 
-
+- `~dev` (`str`, default: `"/dev/input/js0"`): Linux joystick device
+  from which to read joystick events.
+- `~deadzone` (`double`, default: `0.05`): Amount by which the joystick
+  has to move before it is considered to be off-center. This parameter
+  is specified relative to an axis normalized between -1 and 1. Thus,
+  0.1 means that the joystick has to move 10% of the way to the edge of
+  an axis's range before that axis will output a non-zero value. Linux
+  does its own deadzone processing, so in many cases this value can be
+  set to zero.
+- `~autorepeat_rate` (`double`, default: `0.0 (disabled)`): Rate in Hz
+  at which a joystick that has a non-changing state will resend the
+  previously sent message.
+- `~coalesce_interval` (`double`, default: `0.001`): Axis events that
+  are received within coalesce_interval (seconds) of each other are sent
+  out in a single ROS message. Since the kernel sends each axis motion
+  as a separate event, coalescing greatly reduces the rate at which
+  messages are sent. This option can also be used to limit the rate of
+  outgoing messages. Button events are always sent out immediately to
+  avoid missing button presses.
+- `~default_trig_val` (`bool`, default: `false`): When this parameter is
+  *false*, each button and axis will report a value of 0 until it gets
+  pressed/touched. This might be a problem e.g. for the trigger axes
+  which should report 1.0 in their default untouched position. Setting
+  this parameter to *true* forces the driver to read the actual joystick
+  button values on startup and report the correct values even before the
+  buttons/axes were touched. There is a small probability that reading
+  out the initial state will not work for some combinations of gamepads
+  and kernel versions, and that is why this parameter is *false* by
+  default.
+- `~dev_ff` (`str`, default: "/dev/input/event0" (: autodetection is
+  tried if this parameter is not specified)): The device to use for
+  accessing force feedback function. It is usually one of
+  `/dev/input/event\*` devices. You can use `udevadm monitor`
+  command when plugging in the gamepad to tell the right event file
+  name.
 
 ## Using this Package
 

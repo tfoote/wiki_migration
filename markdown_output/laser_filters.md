@@ -32,7 +32,7 @@ and then applies a series of filters to the
 
 ## Using Laser Filters
 
-Each [ laser filter](#plugins) is a separate
+Each [laser filter](#plugins) is a separate
 plugin exported by the laser_filters package. This allows them to be
 specified in a configuration file which can be loaded into an arbitrary
 filter_chain templated on a
@@ -40,14 +40,14 @@ filter_chain templated on a
 You can instantiate a laser filter into a filter_chain in C++
 ([example](#laser-filtering-in-c)),
 or you can use the
-[ scan_to_scan_filter_chain](#scan_to_scan_filter_chain)
+[scan_to_scan_filter_chain](#scan_to_scan_filter_chain)
 and
-[ scan_to_cloud_filter_chain](#scan_to_cloud_filter_chain)
+[scan_to_cloud_filter_chain](#scan_to_cloud_filter_chain)
 nodes which contain appropriate filter chains internally
 ([example](#using-the-laser-filtering-nodes)).
 
-[ Filter chains](https://index.ros.org/p/filters) are configured from
-the parameter server. They expect a parameter which is a list made up of
+[Filter chains](https://index.ros.org/p/filters) are configured from the
+parameter server. They expect a parameter which is a list made up of
 repeating blocks of filter configurations. These should almost always be
 specified in a `.yaml` file to be pushed to the parameter server. Each
 filter specified in the chain will be applied in order.
@@ -66,7 +66,7 @@ is
 if only the `FilterClass` is used.
 
 For example, in a package, `mypkg`, to launch a
-[ scan_to_scan_filter_chain](#scan_to_scan_filter_chain)
+[scan_to_scan_filter_chain](#scan_to_scan_filter_chain)
 with two filters: `LaserFilterClass1` and `LaserFilterClass2`, you
 could use the file:
 
@@ -576,6 +576,17 @@ scan_filter_chain:
 
 ## Laser filtering in C++
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [introduction to using laser scanners tutorial](https://index.ros.org/p/laser_pipeline).
+- **Description:** Raw laser scans contain all points returned from the
+  scanner without processing. Many applications, however, are better
+  served by filtered scans which remove unnecessary points (such as
+  unreliable laser hits or hits on the robot itself), or pre-process the
+  scans in some way (such as by median filtering). This tutorial will
+  teach you how to apply pre-existing filters to laser scans.
+- **Tutorial Level:** INTERMEDIATE
+
 Let's take a look at `generic_laser_filter_node.cpp` to see how to
 run a set of filters from within a node:
 
@@ -662,6 +673,20 @@ namespace. Call the `update` function to filter the scan.
 Now you can use the filtered scan in your own node.
 
 ## Using the laser filtering nodes
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [introduction to using laser scanners tutorial](https://index.ros.org/p/laser_pipeline).
+- **Description:** Raw laser scans contain all points returned from the
+  scanner without processing. Many applications, however, are better
+  served by filtered scans which remove unnecessary points (such as
+  unreliable laser hits or hits on the robot itself), or pre-process the
+  scans in some way (such as by median filtering). This tutorial will
+  teach you how to apply pre-existing filters to laser scans.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [HowToAssembleLaserScans](https://index.ros.org/p/laser_assembler)
+  [Laser filtering in C++](#laser-filtering-in-c)
 
 The laser filters package provides nodes
 that can run multiple filters internally. These nodes are useful if you

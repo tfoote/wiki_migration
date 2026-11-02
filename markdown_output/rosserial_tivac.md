@@ -116,7 +116,7 @@ specify a custom startup file.
 
 ## Tutorials
 
-See also  Overview.
+See also Overview.
 
 - [Energia IDE Setup](#energia-ide-setup):
   This tutorial shows step-by-step instruction on how setting up Energia
@@ -140,6 +140,14 @@ See also  Overview.
   service for changing LED color.
 
 ## Energia IDE Setup
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial shows step-by-step instruction on how
+  setting up Energia IDE.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [TivaWare Setup](#tivaware-setup-for-catkin-build)
 
 ### Introduction
 
@@ -354,6 +362,14 @@ board layout is different.
 [Hello World](https://index.ros.org/p/rosserial_arduino)
 
 ## TivaWare Setup for catkin build
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial shows step-by-step how to setup up
+  TI's Tivaware SDK
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Hello world publisher for EK-TM4C123GXL](#hello-world-publisher-on-tm4c123gxl)
 
 ### Introduction
 
@@ -584,6 +600,15 @@ psRingBuf->ui32Size = psBufVars->sRingBuf.ui32Size;
 ```
 
 ## Hello world publisher on TM4C123GXL
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Tivaware and toolchain setup](#tivaware-setup-for-catkin-build).
+- **Description:** Chatter publisher for the EK-TM4C123GXL board using
+  UART over debug USB port.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Hello world publisher on TM4C1294XL](#hello-world-publisher-on-tm4c1294xl)
 
 ### Introduction
 
@@ -907,6 +932,15 @@ catkin_make VERBOSE=1
 
 ## Hello world publisher on TM4C1294XL.
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Tivaware and toolchain setup](#tivaware-setup-for-catkin-build).
+- **Description:** Chatter publisher for the EK-TM4C1294XL board using
+  UART over debug USB port.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Buttons publisher](#buttons-publisher)
+
 ### Introduction
 
 This tutorial is simply an extension of the previous
@@ -1007,6 +1041,15 @@ rostopic echo /chatter
 ```
 
 ## Buttons publisher
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Tivaware and toolchain setup](#tivaware-setup-for-catkin-build).
+- **Description:** Buttons state publisher for the EK-TM4C123GXL board
+  over CDC USB device.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [RGB subscriber](#rgb-subscriber)
 
 ### Introduction
 
@@ -1212,6 +1255,15 @@ Press any of the two buttons, and watch the output of the topic change.
 
 ## RGB subscriber
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Tivaware and toolchain setup](#tivaware-setup-for-catkin-build).
+- **Description:** EK-TM4C123GXL board over CDC USB device subscribes to
+  ColorRGB msg type and change LED color.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [RGB service](#rgb-service)
+
 ### Introduction
 
 Having created several publishers on the previous tutorials, its about
@@ -1357,6 +1409,13 @@ a: 1.0"
 It should change to the brightest green.
 
 ## RGB service
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Tivaware and toolchain setup](#tivaware-setup-for-catkin-build).
+- **Description:** EK-TM4C123GXL board over CDC USB device provides a
+  custom message service for changing LED color.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Introduction
 

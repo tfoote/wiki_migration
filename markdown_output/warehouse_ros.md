@@ -21,6 +21,9 @@ uses the MongoDB database for storage.
 
 ## Running the warehouse
 
+- **Description:** How to start up and configure the Mongo DB server
+- **Tutorial Level:** BEGINNER
+
 The `mongodb` system dependency of warehouse_ros includes the
 `mongod` executable, which runs a MongoDB server. For convenience, we
 provide a wrapper that starts up this server and sets some configuration
@@ -57,6 +60,10 @@ file and setting some parameters (the full list of parameters is in the
 ```
 
 ## Using the C++ client library
+
+- **Description:** How to use the C++ client library to talk to the
+  warehouse
+- **Tutorial Level:** BEGINNER
 
 ### Example code
 

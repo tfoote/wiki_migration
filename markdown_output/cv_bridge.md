@@ -23,6 +23,14 @@ the [tutorials page](#tutorials).
 
 ## Converting between ROS images and OpenCV images (Android Java)
 
+- **Description:** This tutorial describes how to interface ROS and
+  OpenCV by converting ROS images into OpenCV images, and vice versa,
+  using cv_bridge. Included is a sample node that can be used as a
+  template for your own node.
+- **Keywords:** image, images, OpenCV, cvbridge, !CvBridge, Java,
+  Android
+- **Tutorial Level:** INTERMEDIATE
+
 ### TODO:
 
 TODO: Need to compleate this tutorial and documentation in github code.
@@ -338,6 +346,15 @@ the images using [image_view](https://index.ros.org/p/image_view).
 
 ## Converting between ROS images and OpenCV images (Python)
 
+- **Description:** This tutorial describes how to interface ROS and
+  OpenCV by converting ROS images into OpenCV images, and vice versa,
+  using cv_bridge. Included is a sample node that can be used as a
+  template for your own node.
+- **Keywords:** image, images, OpenCV, cvbridge, !CvBridge
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Converting between ROS images and OpenCV images (Android Java)](#converting-between-ros-images-and-opencv-images-android-java)
+
 ### Concepts
 
 ROS passes around images in its own
@@ -554,6 +571,19 @@ std_msgs
 ```
 
 ## Converting between ROS images and OpenCV images (C++)
+
+- **Note:** Diamondback introduces a new C++ cv_bridge API. Make sure
+  you have selected the correct distribution above.
+- **Description:** This tutorial describes how to interface ROS and
+  OpenCV by converting ROS images into OpenCV images, and vice versa,
+  using cv_bridge. Included is a sample node that can be used as a
+  template for your own node.
+- **Keywords:** image, images, OpenCV, cvbridge, !CvBridge
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Converting between ROS images and OpenCV images (Python)](#converting-between-ros-images-and-opencv-images-python)
+
+
 
 ```wiki
 <<TableOfContents(4)>>

@@ -380,6 +380,16 @@ If you experience any problems or have suggestions to improve the tutorials, ple
 
 ## How to set up a Pilz PSENscan laser scanner with Ethernet
 
+- **Description:** Learn how to set up the PSENscan laser scanner with
+  Ethernet for later use within the ROS environment.
+- **Keywords:** Industrial, Ethernet, laser scanner, PSENscan,
+  psen_scan, psen_scan_v2
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [How to set up ROS to communicate with the scanner](#how-to-set-up-ros-to-communicate-with-the-scanner)
+
+
+
 ```wiki
 '''WARNING'''
 
@@ -433,7 +443,7 @@ In order to complete this tutorial, you need the following:
 
 <!-- -->
 
-- [ The proper PSENscan Configurator software](https://www.pilz.com/de-INT/support/downloads#currentPage=1&SEARCH=psenscan%20configurator&pilz_group_type=download&search_connector=and&SORT=dmodified)
+- [The proper PSENscan Configurator software](https://www.pilz.com/de-INT/support/downloads#currentPage=1&SEARCH=psenscan%20configurator&pilz_group_type=download&search_connector=and&SORT=dmodified)
   installed on the PC.
 
 ### Setup connection between PSENscan and the PC
@@ -594,6 +604,18 @@ Linux and proceed with the
 [ROS package setup](#how-to-set-up-ros-to-communicate-with-the-scanner).
 
 ## How to set up ROS to communicate with the scanner
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [How to set up a Pilz PSENscan laser scanner with Ethernet](#how-to-set-up-a-pilz-psenscan-laser-scanner-with-ethernet).
+- **Description:** You learn how to set up the PILZ laser scanner with
+  ROS and show the result in Rviz.
+- **Keywords:** PSENscan, psen_scan, psen_scan_v2
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Launching multiple scanners](#launching-multiple-scanners)
+
+
 
 ```wiki
 '''WARNING'''
@@ -850,6 +872,14 @@ PSENscan laser scanner together with ROS. In the next tutorial you learn
 [how to connect to multiple scanners](#launching-multiple-scanners).
 
 ## Launching multiple scanners
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [How to set up a Pilz PSENscan laser scanner with Ethernet](#how-to-set-up-a-pilz-psenscan-laser-scanner-with-ethernet),
+  [How to set up ROS to communicate with the scanner](#how-to-set-up-ros-to-communicate-with-the-scanner).
+- **Description:** This tutorial explains how to use multiple scanners.
+- **Keywords:** PSENscan, psen_scan, psen_scan_v2
+- **Tutorial Level:** BEGINNER
 
 ### Introduction
 

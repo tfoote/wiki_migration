@@ -46,102 +46,109 @@ $ rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyUSB0 _baud:=38400
 
 ## Nodes
 
+### nmea_topic_driver
 
+NMEA GPS Topic driver node. Reads NMEA sentences from a ROS topic
+instead of directly from e.g. a serial port.
 
-```clearsilver
-node.0 {
- name = nmea_topic_driver
- desc = NMEA GPS Topic driver node. Reads NMEA sentences from a ROS topic instead of directly from e.g. a serial port.
- sub{
-  0.name = nmea_sentence
-  0.type = nmea_msgs/Sentence
-  0.desc = NMEA sentences, 1 per message. The header.stamp should correspond to the time that the message was read from the device for accurate time_reference output. The header.frame_id on the messages on this topic will be used when setting frame_id on the output messages. These sentences do not have to be checksummed or otherwise validated before reaching the driver.
- }
- pub{
-  0.name = fix
-  0.type = sensor_msgs/NavSatFix
-  0.desc = GPS position fix reported by the device. This will be published with whatever positional and status data was available even if the device doesn't have a valid fix. Invalid fields may contain !NaNs.
-  1.name = vel
-  1.type = geometry_msgs/TwistStamped
-  1.desc = Velocity output from the GPS device. Only published when the device outputs valid velocity information. The driver does not calculate the velocity based on only position fixes.
-  2.name = time_reference
-  2.type = sensor_msgs/TimeReference
-  2.desc = The timestamp from the GPS device is used as the `time_ref`.
-  }
- param {
-  1.name = ~time_ref_source
-  1.default = <the value of ~frame_id>
-  1.type = string
-  1.desc = The value to use as the source in the <<MsgLink(sensor_msgs/TimeReference messages)>>.
-  2.name = ~useRMC
-  2.default = False
-  2.type = bool
-  2.desc = Whether to generate position fixes from GGA sentences or RMC sentences. If `True`, fixes will be generated from RMC. If `False`, fixes will be generated based on the GGA sentences. Using GGA sentences allows for approximated covariance output while RMC provides velocity information.
-  }
- }
-node.1 {
- name = nmea_serial_driver
- desc = NMEA GPS Serial driver node. Replaces nmea_gps_driver.py to reduce naming conflicts and use new common parsing+driver backend.
- pub{
-  0.name = fix
-  0.type = sensor_msgs/NavSatFix
-  0.desc = GPS position fix reported by the device. This will be published with whatever positional and status data was available even if the device doesn't have a valid fix. Invalid fields may contain !NaNs.
-  1.name = vel
-  1.type = geometry_msgs/TwistStamped
-  1.desc = Velocity output from the GPS device. Only published when the device outputs valid velocity information. The driver does not calculate the velocity based on only position fixes.
-  2.name = time_reference
-  2.type = sensor_msgs/TimeReference
-  2.desc = The timestamp from the GPS device is used as the `time_ref`.
-  }
- param {
-  0.name = ~port
-  0.default = /dev/ttyUSB0
-  0.type = string
-  0.desc = The device path
-  1.name = ~baud
-  1.default = 4800
-  1.type = int
-  1.desc = The baud rate to receive NMEA data.
-  2.name = ~frame_id
-  2.default = gps
-  2.type = string
-  2.desc = The `frame_id` for the header of the <<MsgLink(sensor_msgs/NavSatFix)>> and <<MsgLink(geometry_msgs/TwistStamped)>> output messages. Will be resolved with `tf_prefix` if defined.
-  3.name = ~time_ref_source
-  3.default = <the value of ~frame_id>
-  3.type = string
-  3.desc = The value to use as the source in the <<MsgLink(sensor_msgs/TimeReference messages)>>.
-  4.name = ~useRMC
-  4.default = False
-  4.type = bool
-  4.desc = Whether to generate position fixes from GGA sentences or RMC sentences. If `True`, fixes will be generated from RMC. If `False`, fixes will be generated based on the GGA sentences. Using GGA sentences allows for approximated covariance output while RMC provides velocity information.
-  }
- }
-node.3 {
- name = nmea_topic_serial_reader
- desc = Reads NMEA sentences from the specified serial port and publishes them to a ROS topic. This is a simple front-end for use with nmea_topic_driver.py
- pub{
-  0.name = nmea_sentence
-  0.type = nmea_msgs/Sentence
-  0.desc = A single time-stamped NMEA sentence captured from the serial device
-  }
- param {
-  0.name = ~port
-  0.default = /dev/ttyUSB0
-  0.type = string
-  0.desc = The device path
-  1.name = ~baud
-  1.default = 4800
-  1.type = int
-  1.desc = The baud rate to receive NMEA data.
-  2.name = ~frame_id
-  2.default = gps
-  2.type = string
-  2.desc = The `frame_id` for the header of the <<MsgLink(nmea_msgs/Sentence)>> and output message. Will be resolved with `tf_prefix` if defined.
-  }
- }
-```
+#### Subscribed Topics
 
+- `nmea_sentence`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  NMEA sentences, 1 per message. The header.stamp should correspond to
+  the time that the message was read from the device for accurate
+  time_reference output. The header.frame_id on the messages on this
+  topic will be used when setting frame_id on the output messages. These
+  sentences do not have to be checksummed or otherwise validated before
+  reaching the driver.
 
+#### Published Topics
+
+- `fix`
+  ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
+  GPS position fix reported by the device. This will be published with
+  whatever positional and status data was available even if the device
+  doesn't have a valid fix. Invalid fields may contain !NaNs.
+- `vel`
+  ([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)):
+  Velocity output from the GPS device. Only published when the device
+  outputs valid velocity information. The driver does not calculate the
+  velocity based on only position fixes.
+- `time_reference`
+  ([sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html)):
+  The timestamp from the GPS device is used as the `time_ref`.
+
+#### Parameters
+
+- `~time_ref_source` (`string`, default: `<the value of ~frame_id>`):
+  The value to use as the source in the
+  [sensor_msgs/msg/TimeReference messages](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference messages.html).
+- `~useRMC` (`bool`, default: `False`): Whether to generate position
+  fixes from GGA sentences or RMC sentences. If `True`, fixes will be
+  generated from RMC. If `False`, fixes will be generated based on the
+  GGA sentences. Using GGA sentences allows for approximated covariance
+  output while RMC provides velocity information.
+
+### nmea_serial_driver
+
+NMEA GPS Serial driver node. Replaces nmea_gps_driver.py to reduce
+naming conflicts and use new common parsing+driver backend.
+
+#### Published Topics
+
+- `fix`
+  ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
+  GPS position fix reported by the device. This will be published with
+  whatever positional and status data was available even if the device
+  doesn't have a valid fix. Invalid fields may contain !NaNs.
+- `vel`
+  ([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)):
+  Velocity output from the GPS device. Only published when the device
+  outputs valid velocity information. The driver does not calculate the
+  velocity based on only position fixes.
+- `time_reference`
+  ([sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html)):
+  The timestamp from the GPS device is used as the `time_ref`.
+
+#### Parameters
+
+- `~port` (`string`, default: `/dev/ttyUSB0`): The device path
+- `~baud` (`int`, default: `4800`): The baud rate to receive NMEA data.
+- `~frame_id` (`string`, default: `gps`): The `frame_id` for the
+  header of the
+  [sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)
+  and
+  [geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)
+  output messages. Will be resolved with `tf_prefix` if defined.
+- `~time_ref_source` (`string`, default: `<the value of ~frame_id>`):
+  The value to use as the source in the
+  [sensor_msgs/msg/TimeReference messages](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference messages.html).
+- `~useRMC` (`bool`, default: `False`): Whether to generate position
+  fixes from GGA sentences or RMC sentences. If `True`, fixes will be
+  generated from RMC. If `False`, fixes will be generated based on the
+  GGA sentences. Using GGA sentences allows for approximated covariance
+  output while RMC provides velocity information.
+
+### nmea_topic_serial_reader
+
+Reads NMEA sentences from the specified serial port and publishes them
+to a ROS topic. This is a simple front-end for use with
+nmea_topic_driver.py
+
+#### Published Topics
+
+- `nmea_sentence`
+  ([nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)):
+  A single time-stamped NMEA sentence captured from the serial device
+
+#### Parameters
+
+- `~port` (`string`, default: `/dev/ttyUSB0`): The device path
+- `~baud` (`int`, default: `4800`): The baud rate to receive NMEA data.
+- `~frame_id` (`string`, default: `gps`): The `frame_id` for the
+  header of the
+  [nmea_msgs/msg/Sentence](https://docs.ros.org/en/rolling/p/nmea_msgs/msg/Sentence.html)
+  and output message. Will be resolved with `tf_prefix` if defined.
 
 ## Troubleshooting
 

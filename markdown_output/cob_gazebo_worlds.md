@@ -15,6 +15,9 @@
 
 ## Create your own world
 
+- **Description:** This tutorial shows how to model your own world and
+  add it to gazebo
+
 ### Modelling
 
 In general: avoid zero thickness for planes, this will cause rendering

@@ -72,6 +72,17 @@ the Wiki tutorials listed below.
 
 ## Writing a Simple Publisher and Subscriber
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [understanding ROS services and params](ROS/Tutorials/UnderstandingServicesParams).
+- **Description:** This demo will walk you through creating a ROS
+  package as well as creating two simple rospy nodes. The "talker"
+  node will broadcast a message on topic "chatter", while the
+  "listener" node will receive and print that message.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Writing a simple service and client](#writing-a-simple-service-and-client)
+
 ### Writing the Publisher Node
 
 "Node" is the ROS term for an executable that is connected to the ROS
@@ -487,6 +498,15 @@ to the next tutorial
 
 ## Writing a Simple Service and Client
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [examining the simple publisher and subscriber](ROS/Tutorials/ExaminingPublisherSubscriber).
+- **Description:** This tutorial covers how to write a service and
+  client node in python.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using Parameters in rospy](#using-parameters-in-rospy)
+
 ### Writing a Service Node
 
 Here we'll create the service ("add_two_ints_server") node which will
@@ -800,6 +820,17 @@ Next tutorial:
 
 ## Using Parameters in rospy
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Writing a service and client](#writing-a-simple-service-and-client).
+- **Description:** This tutorial covers the various ways in which you
+  can get and set [Parameters](Parameters) in
+  [rospy](https://index.ros.org/p/rospy). Getting, setting and deleting
+  parameters from a rospy [Node](Nodes) is fairly simple.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Logging with rospy](#logging-with-rospy)
+
 You may wish to view the "param_talker" tutorial in the
 rospy_tutorials Package. It uses a
 [roslaunch](https://index.ros.org/p/roslaunch) file to initialize some
@@ -946,6 +977,21 @@ Next tutorial:
 
 ## Logging with rospy
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** Logging messages to
+  [rosout](https://index.ros.org/p/rosout) is easy with
+  [rospy](https://index.ros.org/p/rospy) and encouraged. When you are
+  running many [nodes](Nodes), seeing the command-line output of your
+  node gets very difficult. Instead, it is much easier to publish a
+  debugging message to [rosout](https://index.ros.org/p/rosout) and then
+  view it with [rqt_console](https://index.ros.org/p/rqt_console) /
+  [rxconsole](rxconsole). \*console is "over-console" of ROS and lets
+  you view and filter the logging messages from all ROS nodes.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [rospy Makefile](#writing-a-ros-python-makefile)
+
 Before we look at how to use this in rospy, you should probably review
 the [rosout verbosity levels](Verbosity Levels) so you know how to use
 the various log levels properly. It's important to use the correct
@@ -1064,6 +1110,15 @@ Next tutorial:
 [Makefile](#writing-a-ros-python-makefile).
 
 ## Writing a ROS Python Makefile
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** I know what you're saying: "Python\...
+  *Makefile*?" Believe it or not, you do need `Makefile` (and
+  [CMakeLists](CMakeLists)), even if you just hack Python all day.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Setting Up Your PYTHONPATH](#setting-up-your-pythonpath)
 
 This tutorial repeats information from earlier tutorials with a focus on
 the Makefiles. You can skip this tutorial unless you just need
@@ -1425,6 +1480,13 @@ Next tutorial:
 
 ## Setting Up Your PYTHONPATH
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** What to do to find other python modules
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Using numpy with rospy](#using-numpy-with-rospy)
+
 Commonly in python, when you use another python module, you use:
 
 
@@ -1615,6 +1677,18 @@ As you can see, the Num module of beginner_tutorials was successfully.
 ------------------------------------------------------------------------
 
 ## Using numpy with rospy
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  rospy tutorials.
+- **Description:** This tutorial covers using
+  [numpy](http://numpy.scipy.org/) with
+  [rospy](https://index.ros.org/p/rospy), the ROS Python client library.
+  Numpy is a popular scientific computing package for Python. You will
+  often want to consider using Numpy with rospy if you are working with
+  sensor data as it has better performance and many libraries for
+  manipulating arrays of data.
+- **Tutorial Level:** BEGINNER
 
 In this tutorial, we will go over the `rospy.numpy_msg` module. The
 `rospy.numpy_msg` module comes with the `numpy_msg()` wrapper, which
@@ -1957,6 +2031,21 @@ use numpy with rospy.
 
 ## Publishing messages in rospy
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [writing a simple publisher and subscriber](#writing-a-simple-publisher-and-subscriber).
+- **Description:**
+  [Writing a simple publisher and subscriber](#writing-a-simple-publisher-and-subscriber)
+  already introduced you to the basics of creating
+  [rospy](https://index.ros.org/p/rospy) [Nodes](Nodes) that publish and
+  receive messages on ROS [Topics](Topics). As you get more experienced
+  with ROS and rospy, you may wish to learn some advanced syntax for
+  publishing that will save you some typing \-- as well as make your
+  code more robust to future changes.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:** Publishing and Subscribing to Images
+  [WritingImagePublisherSubscriber](#python-compressedimage-subscriber-publisher)
+
 First, lets look at the publish call:
 
 
@@ -2076,6 +2165,14 @@ if __name__ == '__main__':
 ------------------------------------------------------------------------
 
 ## Python CompressedImage Subscriber Publisher
+
+- **Description:** This example subscribes to a ros topic containing
+  sensor_msgs::CompressedImage. It converts the CompressedImage into a
+  numpy.ndarray, then detects and marks features in that image. It
+  finally displays and publishes the new image - again as
+  CompressedImage topic.
+- **Keywords:** CompressedImage, OpenCV, Publisher, Subscriber
+- **Tutorial Level:** INTERMEDIATE
 
 #### Python Code
 

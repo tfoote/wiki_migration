@@ -161,52 +161,69 @@ or, if you just want to load the controller, but not start it yet:
 To interact with controllers form another ROS node, the controller
 manager provides five service calls:
 
+### pr2_controller_manager
 
+#### Published Topics
 
-```clearsilver
-node.0 {
-  name = pr2_controller_manager
-  pub {
-    0.name = joint_states
-    0.type = sensor_msgs/JointState
-    0.desc = the measured position, velocity and effort of each joint
-    1.name = mechanism_statistics
-    1.type = pr2_mechanism_msgs/MechanismStatistics
-    1.desc = this message contains statistics about the joints, the controllers and the actuators.
-  }
-  srv {
-    0.name = pr2_controller_manager/load_controller
-    0.type = pr2_mechanism_msgs/LoadController
-    0.desc = the service request contains the name of the controller to load, and the response contains a boolean indicating success or failure.
-    1.name = pr2_controller_manager/unload_controller
-    1.type = pr2_mechanism_msgs/UnloadController
-    1.desc = the service request contains the name of the controller to unload, and the response contains a boolean indicating success or failure. A controller can only be unloaded when it is in the stopped state.
-    2.name = pr2_controller_manager/switch_controller
-    2.type = pr2_mechanism_msgs/SwitchController
-    2.desc = the service request contains a list of controller names to start, a list of controller names to stop and an int to indicate the strictness (`BEST_EFFORT` or `STRICT`). `STRICT` means that switching will fail if anything goes wrong (an invalid controller name, a controller that failed to start, etc. ). `BEST_EFFORT` means that even when something goes wrong with on controller, the service will still try to start/stop the remaining controllers. The service response contains a boolean indicating success or failure.  The list of controllers to stop or start can be an empty list, if you are only stopping or only starting controllers.
-    3.name = pr2_controller_manager/list_controllers
-    3.type = pr2_mechanism_msgs/ListControllers
-    3.desc = the service returns all the controller names that are loaded in pr2_controller_manager at that time. Also, the service returns the state of each controller: running or stopped.
-    4.name = pr2_controller_manager/list_controller_types
-    4.type = pr2_mechanism_msgs/ListControllerTypes
-    4.desc = the service returns all the controller types that are known to pr2_controller_manager. Only the controller types that are known can be constructed. To let pr2_controller_manager know about your own controller type, use the [[pluginlib]] as explained in [[pr2_mechanism/Tutorials/Writing a realtime joint controller|this tutorial]].
-    5.name = pr2_controller_manager/reload_controller_libraries
-    5.type = pr2_mechanism_msgs/ReloadControllerLibraries
-    5.desc = the service reloads all the controller libraries that are available as plugins. This is convenient when you are developing a controller, and you want to test your new controller code without restarting the robot every time. This service only works when there are NO controller loaded. 
-  }
-  param {
-    0.name = pr2_controller_manager/joint_state_publish_rate
-    0.type = double
-    0.desc = the publish frequency of messages on the joint_states topic
-    0.default = 100.0
-    1.name = pr2_controller_manager/mechanism_statistics_publish_rate
-    1.type = double
-    1.desc = the publish frequency of messages on the mechanism_statistics topic
-    1.default = 1.0
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  the measured position, velocity and effort of each joint
+- `mechanism_statistics`
+  ([pr2_mechanism_msgs/msg/MechanismStatistics](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/msg/MechanismStatistics.html)):
+  this message contains statistics about the joints, the controllers and
+  the actuators.
 
-  }
-}
-```
+#### Services
+
+- `pr2_controller_manager/load_controller`
+  ([pr2_mechanism_msgs/srv/LoadController](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/LoadController.html)):
+  the service request contains the name of the controller to load, and
+  the response contains a boolean indicating success or failure.
+- `pr2_controller_manager/unload_controller`
+  ([pr2_mechanism_msgs/srv/UnloadController](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/UnloadController.html)):
+  the service request contains the name of the controller to unload, and
+  the response contains a boolean indicating success or failure. A
+  controller can only be unloaded when it is in the stopped state.
+- `pr2_controller_manager/switch_controller`
+  ([pr2_mechanism_msgs/srv/SwitchController](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/SwitchController.html)):
+  the service request contains a list of controller names to start, a
+  list of controller names to stop and an int to indicate the strictness
+  (`BEST_EFFORT` or `STRICT`). `STRICT` means that switching will
+  fail if anything goes wrong (an invalid controller name, a controller
+  that failed to start, etc. ). `BEST_EFFORT` means that even when
+  something goes wrong with on controller, the service will still try to
+  start/stop the remaining controllers. The service response contains a
+  boolean indicating success or failure. The list of controllers to stop
+  or start can be an empty list, if you are only stopping or only
+  starting controllers.
+- `pr2_controller_manager/list_controllers`
+  ([pr2_mechanism_msgs/srv/ListControllers](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/ListControllers.html)):
+  the service returns all the controller names that are loaded in
+  pr2_controller_manager at that time. Also, the service returns the
+  state of each controller: running or stopped.
+- `pr2_controller_manager/list_controller_types`
+  ([pr2_mechanism_msgs/srv/ListControllerTypes](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/ListControllerTypes.html)):
+  the service returns all the controller types that are known to
+  pr2_controller_manager. Only the controller types that are known can
+  be constructed. To let pr2_controller_manager know about your own
+  controller type, use the
+  [pluginlib](https://index.ros.org/p/pluginlib) as explained in
+  [this tutorial](https://index.ros.org/p/pr2_mechanism).
+- `pr2_controller_manager/reload_controller_libraries`
+  ([pr2_mechanism_msgs/srv/ReloadControllerLibraries](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/srv/ReloadControllerLibraries.html)):
+  the service reloads all the controller libraries that are available as
+  plugins. This is convenient when you are developing a controller, and
+  you want to test your new controller code without restarting the robot
+  every time. This service only works when there are NO controller
+  loaded.
+
+#### Parameters
+
+- `pr2_controller_manager/joint_state_publish_rate` (`double`, default:
+  `100.0`): the publish frequency of messages on the joint_states topic
+- `pr2_controller_manager/mechanism_statistics_publish_rate` (`double`,
+  default: `1.0`): the publish frequency of messages on the
+  mechanism_statistics topic
 
 ## safety_limits
 

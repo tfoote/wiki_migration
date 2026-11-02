@@ -18,62 +18,37 @@ respectively).
 
 The cob_footprint_observer
 package provides a configurable node for checking and adjusting the
-footprint based on the current setup. 
+footprint based on the current setup.
 
-```clearsilver
- name = cob_footprint_observer
- desc = The `cob_footprint_observer` node uses a `tf::TransformListener` to check the transformations for desired frames and adjusts the footprint accordingly. It publishes the adjusted footprint as a [[Topics|topic]] and sets the footprint using a [[Services|service]].
+### cob_footprint_observer
 
-goal{
-}
+The `cob_footprint_observer` node uses a `tf::TransformListener` to
+check the transformations for desired frames and adjusts the footprint
+accordingly. It publishes the adjusted footprint as a [topic](Topics)
+and sets the footprint using a [service](Services).
 
-result{
-}
+#### Published Topics
 
-feedback{
-}
+- `adjusted_footprint`
+  ([geometry_msgs/msg/PolygonStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PolygonStamped.html)):
+  Publishes the adjusted footprint of the robot.
 
-sub{
-}
+#### Services
 
-pub{
- 0.name = adjusted_footprint
- 0.type = geometry_msgs/PolygonStamped
- 0.desc = Publishes the adjusted footprint of the robot.
-}
+- `/get_footprint`
+  ([cob_footprint_observer/srv/GetFootprint](https://docs.ros.org/en/rolling/p/cob_footprint_observer/srv/GetFootprint.html)):
+  Responds with the adjusted footprint.
 
-srv{
- 0.name = /get_footprint
- 0.type = cob_footprint_observer/GetFootprint
- 0.desc = Responds with the adjusted footprint.
-}
+#### Parameters
 
-param{
- 0.name = ~footprint_source
- 0.type = string
- 0.default = "/local_costmap_node/costmap"
- 0.desc = Specifies which node to search for the initial footprint, e.g. /local_costmap_node/costmap.
-
- 1.name = ~frames_to_check
- 1.type = string
- 1.default = ""
- 1.desc = Frames which should be checked for footprint adjustment (separated by spaces), e.g. /base_link /sdh_tip_link /arm_4_link.
-
- 2.name = ~robot_base_frame
- 2.type = string
- 2.default = "/base_link"
- 2.desc = Specifies the robot base frame, e.g. /base_link.
-
-}
-
-req_tf{
-}
-
-prov_tf{
-}
-```
-
-
+- `~footprint_source` (`string`, default:
+  `"/local_costmap_node/costmap"`): Specifies which node to search for
+  the initial footprint, e.g. /local_costmap_node/costmap.
+- `~frames_to_check` (`string`, default: `""`): Frames which should be
+  checked for footprint adjustment (separated by spaces), e.g.
+  /base_link /sdh_tip_link /arm_4_link.
+- `~robot_base_frame` (`string`, default: `"/base_link"`): Specifies the
+  robot base frame, e.g. /base_link.
 
 ## Usage/Examples
 

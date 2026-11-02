@@ -11,30 +11,25 @@ from the joints, actuators and controllers.
 
 ## ROS API
 
+### pr2_mechanism_diagnostics
 
+Publishes joint and controller diagnostics
 
-```clearsilver
-name = pr2_mechanism_diagnostics
-desc = Publishes joint and controller diagnostics
-sub {
-  0.name = mechanism_statistics
-  0.type = pr2_mechanism_msgs/MechanismStatistics
-  0.desc = Data from pr2_controller_manager
-}
-pub {
-  0.name = /diagnostics
-  0.type = diagnostic_msgs/DiagnosticArray
-  0.desc = Joints and controllers diagnostics output at 1Hz
-}
-param {
-  0.name = ~disable_controller_warnings
-  0.type = bool
-  0.desc = Disable warnings from controller overruns.
-  0.default = false
+#### Subscribed Topics
 
-  1.name = /use_sim_time
-  1.type = bool
-  1.desc = Warnings from controller overruns are disabled if running in simulation
-  1.default = false
-}
-```
+- `mechanism_statistics`
+  ([pr2_mechanism_msgs/msg/MechanismStatistics](https://docs.ros.org/en/rolling/p/pr2_mechanism_msgs/msg/MechanismStatistics.html)):
+  Data from pr2_controller_manager
+
+#### Published Topics
+
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Joints and controllers diagnostics output at 1Hz
+
+#### Parameters
+
+- `~disable_controller_warnings` (`bool`, default: `false`): Disable
+  warnings from controller overruns.
+- `/use_sim_time` (`bool`, default: `false`): Warnings from controller
+  overruns are disabled if running in simulation

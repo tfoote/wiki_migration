@@ -63,6 +63,12 @@ Each standard formatter is a template specialisation of the form
 
 ## Using Ecl Formatters
 
+- **Description:** Introduction to the usage of ecl formatters.
+- **Keywords:** ecl formatters
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Custom Formatters](#writing-a-custom-formatter)
+
 ### Instantiation & Configuration
 
 #### Construction
@@ -197,6 +203,13 @@ TextStream lightweight and since the first option is merely a coding
 style issue, that's easy to handle so long as we are aware of it.
 
 ## Writing a Custom Formatter
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Using Ecl Formatters](#using-ecl-formatters).
+- **Description:** Writing your own custom formatters.
+- **Keywords:** ecl formatters
+- **Tutorial Level:** INTERMEDIATE
 
 Formatters must implement
 

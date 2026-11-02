@@ -24,22 +24,22 @@ roslaunch leo_bringup leo_bringup.launch
 
 ## Nodes
 
+### leo_system
 
+A simple node which exposes system shutdown and reboot functions on ROS
+topics
 
-```clearsilver
-name= leo_system
-desc= A simple node which exposes system shutdown and reboot functions on ROS topics
-sub {
-  0.name= system/shutdown
-  0.type= std_msgs/Empty
-  0.desc= Performs system shutdown.
-  1.name= system/reboot
-  1.type= std_msgs/Empty
-  1.desc= Performs system reboot.
-}
-pub {
-  0.name= robot_namespace
-  0.type= std_msgs/String
-  0.desc= The namespace of the robot.
-}
-```
+#### Subscribed Topics
+
+- `system/shutdown`
+  ([std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html)):
+  Performs system shutdown.
+- `system/reboot`
+  ([std_msgs/msg/Empty](https://docs.ros.org/en/rolling/p/std_msgs/msg/Empty.html)):
+  Performs system reboot.
+
+#### Published Topics
+
+- `robot_namespace`
+  ([std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html)):
+  The namespace of the robot.

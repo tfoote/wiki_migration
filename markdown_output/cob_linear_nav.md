@@ -8,130 +8,73 @@ certain period of time (to be specified over a parameter).
 
 ## ROS API
 
+### cob_linear_nav
 
+The `cob_linear_nav` node takes in
+[geometry_msgs/PoseStamped](http://ros.org/doc/api/geometry_msgs/html/msg/PoseStamped.html)
+messages as a new goal, as well as
+[nav_msgs/Odometry](http://ros.org/doc/api/nav_msgs/html/msg/Odometry.html)
+messages specifying the odometry of the robot. The movement commands are
+published as a
+[geometry_msgs/Twist](http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html)
+[topic](Topics). It also provides the ability to send a goal using
+[rviz](https://index.ros.org/p/rviz) on the
+*/move_base_linear_simple/goal* topic.
 
-```clearsilver
- name = cob_linear_nav
- desc = The `cob_linear_nav` node takes in [[http://ros.org/doc/api/geometry_msgs/html/msg/PoseStamped.html|geometry_msgs/PoseStamped]] messages as a new goal, as well as [[http://ros.org/doc/api/nav_msgs/html/msg/Odometry.html|nav_msgs/Odometry]] messages specifying the odometry of the robot. The movement commands are published as a [[http://ros.org/doc/api/geometry_msgs/html/msg/Twist.html|geometry_msgs/Twist]] [[Topics|topic]]. It also provides the ability to send a goal using [[rviz]] on the ''/move_base_linear_simple/goal'' topic.
+#### Subscribed Topics
 
-goal{
-}
+- `/move_baser_linear_simple/goal`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  new goal for the robot
+- `odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  odometry of the robot
 
-result{
-}
+#### Published Topics
 
-feedback{
-}
+- `cmd_vel`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  movement command to robot base
 
-sub{
- 0.name = /move_baser_linear_simple/goal
- 0.type = geometry_msgs/PoseStamped
- 0.desc = new goal for the robot
+#### Parameters
 
- 1.name = odom
- 1.type = nav_msgs/Odometry
- 1.desc = odometry of the robot
-}
-
-pub{
- 0.name = cmd_vel
- 0.type = geometry_msgs/Twist
- 0.desc = movement command to robot base
-}
-
-srv{
-}
-
-param{
- 1.name = ~kv
- 1.type = double
- 1.default = 2.5
- 1.desc = Damping term for potential field like controller for translational movement.
-
- 2.name = ~kp
- 2.type = double
- 2.default = 3.0
- 2.desc = Stiffness term for potential field like controller for translational movement.
-
- 3.name = ~virt_mass
- 3.type = double
- 3.default = 0.5
- 3.desc = Virtual mass term for potential field like controller for translational movement.
-
- 4.name = ~vmax
- 4.type = double
- 4.default = 0.3
- 4.desc = Maximum allowed velocity for translational movement.
-
- 5.name = ~goal_threshold
- 5.type = double
- 5.default = 0.03 [m]
- 5.desc = Distance to goal at which robot considers to have reached the goal (translational movement only).
-
- 6.name = ~speed_threshold
- 6.type = double
- 6.default = 0.08
- 6.desc = Speed at which the robot considers to have stopped (translational movement only).
-
- 7.name = ~kv_rot
- 7.type = double
- 7.default = 2.5
- 7.desc = Damping term for potential field like controller for rotational movement.
-
- 8.name = ~kp_rot
- 8.type = double
- 8.default = 3.0
- 8.desc = Stiffness term for potential field like controller for rotational movement.
-
- 9.name = ~virt_mass_rot
- 9.type = double
- 9.default = 0.5
- 9.desc = Virtual mass term for potential field like controller for rotational movement.
-
- 10.name = ~vtheta_max
- 10.type = double
- 10.default = 0.3
- 10.desc = Maximum allowed rotational velocity for movement.
-
- 11.name = ~goal_threshold_rot
- 11.type = double
- 11.default = 0.08
- 11.desc = Distance to goal at which robot considers to have reached the goal (rotational movement only).
-
- 12.name = ~speed_threshold_rot
- 12.type = double
- 12.default = 0.08
- 12.desc = Speed at which the robot considers to have stopped (rotational movement only).
-
- 13.name = ~global_frame
- 13.type = string
- 13.default = "/map"
- 13.desc = Map frame.
-
- 14.name = ~robot_frame
- 14.type = string
- 14.default = "/base_link"
- 14.desc = Frame of robot which is considered to be the frame that should reach the goal position.
-
- 15.name = ~slow_down_distance
- 15.type = double
- 15.default = 0.5 [m]
- 15.desc = Distance to goal at which the robot starts slowing down.
-
- 16.name = ~goal_abortion_time
- 16.type = double
- 16.default = 5.0 [s]
- 16.desc = Time after which the robot stops trying to reach the goal, if it does not move anymore (as indicated by the odometry). This happens when the movement is stopped by an external collision avoidance function due to e.g. obstacles on the linear path.
-}
-
-req_tf{
-}
-
-prov_tf{
-}
-```
-
-
+- `~kv` (`double`, default: `2.5`): Damping term for potential field
+  like controller for translational movement.
+- `~kp` (`double`, default: `3.0`): Stiffness term for potential field
+  like controller for translational movement.
+- `~virt_mass` (`double`, default: `0.5`): Virtual mass term for
+  potential field like controller for translational movement.
+- `~vmax` (`double`, default: `0.3`): Maximum allowed velocity for
+  translational movement.
+- `~goal_threshold` (`double`, default: `0.03 [m]`): Distance to goal at
+  which robot considers to have reached the goal (translational movement
+  only).
+- `~speed_threshold` (`double`, default: `0.08`): Speed at which the
+  robot considers to have stopped (translational movement only).
+- `~kv_rot` (`double`, default: `2.5`): Damping term for potential field
+  like controller for rotational movement.
+- `~kp_rot` (`double`, default: `3.0`): Stiffness term for potential
+  field like controller for rotational movement.
+- `~virt_mass_rot` (`double`, default: `0.5`): Virtual mass term for
+  potential field like controller for rotational movement.
+- `~vtheta_max` (`double`, default: `0.3`): Maximum allowed rotational
+  velocity for movement.
+- `~goal_threshold_rot` (`double`, default: `0.08`): Distance to goal at
+  which robot considers to have reached the goal (rotational movement
+  only).
+- `~speed_threshold_rot` (`double`, default: `0.08`): Speed at which the
+  robot considers to have stopped (rotational movement only).
+- `~global_frame` (`string`, default: `"/map"`): Map frame.
+- `~robot_frame` (`string`, default: `"/base_link"`): Frame of robot
+  which is considered to be the frame that should reach the goal
+  position.
+- `~slow_down_distance` (`double`, default: `0.5 [m]`): Distance to goal
+  at which the robot starts slowing down.
+- `~goal_abortion_time` (`double`, default: `5.0 [s]`): Time after which
+  the robot stops trying to reach the goal, if it does not move anymore
+  (as indicated by the odometry). This happens when the movement is
+  stopped by an external collision avoidance function due to e.g.
+  obstacles on the linear path.
 
 ## Usage/Examples
 

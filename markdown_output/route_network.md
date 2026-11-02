@@ -9,68 +9,60 @@ These interfaces are still changing rapidly, nothing is stable yet.
 
 ## ROS Nodes
 
+### plan_route
 
+ROS node that reads route network messages, and provides a route
+planning service.
 
-```clearsilver
-node.0 {
- name = plan_route
- desc = ROS node that reads route network messages, and provides a route planning service. 
- sub {
-  0.name= route_network
-  0.type= geographic_msgs/RouteNetwork
-  0.desc= Graph of drivable routes.
-}
- srv {
-  0.name= get_route_plan
-  0.type= geographic_msgs/GetRoutePlan
-  0.desc= Determine path to from start to goal way point.
-}
-}
-```
+#### Subscribed Topics
 
+- `route_network`
+  ([geographic_msgs/msg/RouteNetwork](https://docs.ros.org/en/rolling/p/geographic_msgs/msg/RouteNetwork.html)):
+  Graph of drivable routes.
 
+#### Services
 
+- `get_route_plan`
+  ([geographic_msgs/srv/GetRoutePlan](https://docs.ros.org/en/rolling/p/geographic_msgs/srv/GetRoutePlan.html)):
+  Determine path to from start to goal way point.
 
+### route_network
 
-```clearsilver
-node.0 {
- name = route_network
- desc = ROS node that gets a geographic map from a server (like the [[osm_cartography#osm_server|osm_server]] node), and publishes a route network graph based on it. 
- pub {
-  0.name= route_network
-  0.type= geographic_msgs/RouteNetwork
-  0.desc= Graph of drivable routes.
-}
- srv_called {
-  0.name= get_geographic_map
-  0.type= geographic_msgs/GetGeographicMap
-  0.desc= Get map of current region.
-}
- param {
-  0.name= map_url
-  0.type= string
-  0.desc= Uniform Resource Locator for the map (see [[osm_cartography#Uniform_Resource_Locators|osm_cartography]] for details).
-}
-}
-```
+ROS node that gets a geographic map from a server (like the
+[osm_server](https://index.ros.org/p/osm_cartography) node), and
+publishes a route network graph based on it.
 
+#### Published Topics
 
+- `route_network`
+  ([geographic_msgs/msg/RouteNetwork](https://docs.ros.org/en/rolling/p/geographic_msgs/msg/RouteNetwork.html)):
+  Graph of drivable routes.
 
+#### Services Called
 
+- `get_geographic_map`
+  ([geographic_msgs/srv/GetGeographicMap](https://docs.ros.org/en/rolling/p/geographic_msgs/srv/GetGeographicMap.html)):
+  Get map of current region.
 
-```clearsilver
-node.0 {
- name = viz_routes
- desc = ROS node that reads route network messages, and publishes [[rviz]] visualization markers.
- sub {
-  0.name= route_network
-  0.type= geographic_msgs/RouteNetwork
-  0.desc= Graph of drivable routes.
-}
- pub {
-  0.name= visualization_marker_array
-  0.type= visualization_msgs/MarkerArray
-  0.desc= Markers for visualizing the route network.
-}
-}
-```
+#### Parameters
+
+- `map_url` (`string`): Uniform Resource Locator for the map (see
+  [osm_cartography](https://index.ros.org/p/osm_cartography) for
+  details).
+
+### viz_routes
+
+ROS node that reads route network messages, and publishes
+[rviz](https://index.ros.org/p/rviz) visualization markers.
+
+#### Subscribed Topics
+
+- `route_network`
+  ([geographic_msgs/msg/RouteNetwork](https://docs.ros.org/en/rolling/p/geographic_msgs/msg/RouteNetwork.html)):
+  Graph of drivable routes.
+
+#### Published Topics
+
+- `visualization_marker_array`
+  ([visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)):
+  Markers for visualizing the route network.

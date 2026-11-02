@@ -156,238 +156,145 @@ All the topic names listed here are '''configurable'''. The general rule is the 
 
 
 
+### witmotion_imu
 
+Opens a serial port to read data from Witmotion sensor.
 
-```clearsilver
-node.0 {
- name = witmotion_imu
- desc = Opens a serial port to read data from Witmotion sensor.
- pub{
-  1.name = imu
-  1.type = sensor_msgs/Imu
-  1.desc = IMU measurement output.
-  2.name = temperature
-  2.type = sensor_msgs/Temperature
-  2.desc = Temperature observation.
-  3.name = magnetometer
-  3.type = sensor_msgs/MagneticField
-  3.desc = Magnetometer output.
-  4.name = barometer
-  4.type = sensor_msgs/FluidPressure
-  4.desc = Athmospheric pressure.
-  5.name = altitude
-  5.type = std_msgs/Float64
-  5.desc = Geographic altitude.
-  6.name = orientation
-  6.type = geometry_msgs/Quaternion
-  6.desc = Raw orientation.
-  7.name = gps
-  7.type = sensor_msgs/NavSatFix
-  7.desc = GPS fix position.
-  8.name = gps_altitude
-  8.type = std_msgs/Float32
-  8.desc = GPS altimeter.
-  9.name = gps_satellites
-  9.type = std_msgs/UInt32
-  9.desc = Number of the GPS active satellite IDs.
-  10.name = gps_variance
-  10.type = geometry_msgs/Vector3
-  10.desc = GPS position variance vector (ENU orientation).
-  11.name = gps_ground_speed
-  11.type = geometry_msgs/Twist
-  11.desc = GPS ground speed.
-  12.name = witmotion_clock
-  12.type = rosgraph_msgs/Clock
-  12.desc = Realtime clock information provided by the sensor (if available).
-  }
-  srv{
-    0.name = restart_imu
-    0.type = std_srvs/Empty
-    0.desc = Call this service to restart the UART kernel bridge after sensor error is occurred.
-  }
- param {
-  0.name = restart_service_name
-  0.default = /restart_imu
-  0.type = string
-  0.desc = Service name to advertise the after-error-restart function.
+#### Published Topics
 
-  1.name = port
-  1.default = ttyUSB0
-  1.type = string
-  1.desc = The virtual kernel device name for a serial port.
+- `imu`
+  ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
+  IMU measurement output.
+- `temperature`
+  ([sensor_msgs/msg/Temperature](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Temperature.html)):
+  Temperature observation.
+- `magnetometer`
+  ([sensor_msgs/msg/MagneticField](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/MagneticField.html)):
+  Magnetometer output.
+- `barometer`
+  ([sensor_msgs/msg/FluidPressure](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/FluidPressure.html)):
+  Athmospheric pressure.
+- `altitude`
+  ([std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)):
+  Geographic altitude.
+- `orientation`
+  ([geometry_msgs/msg/Quaternion](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Quaternion.html)):
+  Raw orientation.
+- `gps`
+  ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
+  GPS fix position.
+- `gps_altitude`
+  ([std_msgs/msg/Float32](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float32.html)):
+  GPS altimeter.
+- `gps_satellites`
+  ([std_msgs/msg/UInt32](https://docs.ros.org/en/rolling/p/std_msgs/msg/UInt32.html)):
+  Number of the GPS active satellite IDs.
+- `gps_variance`
+  ([geometry_msgs/msg/Vector3](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3.html)):
+  GPS position variance vector (ENU orientation).
+- `gps_ground_speed`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  GPS ground speed.
+- `witmotion_clock`
+  ([rosgraph_msgs/msg/Clock](https://docs.ros.org/en/rolling/p/rosgraph_msgs/msg/Clock.html)):
+  Realtime clock information provided by the sensor (if available).
 
-  2.name = baud_rate
-  2.default = 9600
-  2.type = integer
-  2.desc = Port rate value to be used by the library for opening the port. 
+#### Services
 
-  3.name = polling_interval
-  3.default = 50
-  3.type = integer
-  3.desc = The sensor polling interval in milliseconds. If this parameter is omitted, the default value is set up by the library (50 ms).
+- `restart_imu`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Call this service to restart the UART kernel bridge after sensor error
+  is occurred.
 
-  4.name = timeout_ms
-  4.default = 50
-  4.type = integer
-  4.desc = Sensor timeout period in milliseconds. If no data is received from the sensor after this period, then an error is raised and the node terminates. If this parameter is omitted, a default value of 3 times the polling interval is used. If this parameter is zero, the timeout check is disabled.
+#### Parameters
 
-  5.name = imu_publisher/topic_name
-  5.default = /imu
-  5.type = string
-  5.desc = Topic name for IMU data publisher.
-
-  6.name = imu_publisher/frame_id
-  6.default = imu
-  6.type = string
-  6.desc = IMU message header frame.
-
-  7.name = imu_publisher/use_native_orientation
-  7.default = false
-  7.type = bool
-  7.desc = Instructs the node to use the native quaternion orientation measurement from the sensor instead of the one synthesized from Euler angles.
-
-  8.name = imu_publisher/measurements
-  8.type = group
-  8.desc = Includes presence control for IMU components: ''acceleration'', ''angular_velocity'', ''orientation''. Every component includes ''enabled'' flag and row-major 3x3 matrix defining ''covariance'' (see the [[https://github.com/ElettraSciComp/witmotion_IMU_ros/blob/main/config/config.yml|sample config file]])
-
-  9.name = temperature_publisher/topic_name
-  9.default = /temperature
-  9.type = string
-  9.desc = Temperature topic name.
-
-  10.name = temperature_publisher/frame_id
-  10.default = base_link
-  10.type = string
-  10.desc = Temperature message header frame.
-
-  11.name = temperature_publisher/enabled
-  11.default = true
-  11.type = bool
-  11.desc = Enables/disables temperature measurement extraction.
-
-  12.name = temperature_publisher/from_message
-  12.default = acceleration
-  12.type = string
-  12.desc = Message type string to determine from which type of Witmotion measurement message the temperature data should be extracted (please refer to the original documentation for a detailed description). The possible values are: ''acceleration'', ''angular_vel'', ''orientation'' or ''magnetometer''.
-
-  13.name = temperature_publisher/variance
-  13.default = 0
-  13.type = float
-  13.desc = Constant variance, if applicable, otherwise 0.
-
-  14.name = magnetometer_publisher/topic_name
-  14.default = /magnetometer
-  14.type = string
-  14.desc = Magnetometer topic name.
-
-  15.name = magnetometer_publisher/frame_id
-  15.default = base_link
-  15.type = string
-  15.desc = Magnetometer message header frame.
-
-  16.name = magnetometer_publisher/enabled
-  16.default = true
-  16.type = bool
-  16.desc = Enables/disables magnetic measurement extraction.
-
-  17.name = magnetometer_publisher/covariance
-  17.type = Row-major matrix 3x3
-  17.desc = Static covariance, all zeros for unknown
-
-  18.name = barometer_publisher/enabled
-  18.default = true
-  18.type = bool
-  18.desc = Enables/disables barometer measurement extraction.
-
-  19.name = barometer_publisher/variance
-  19.default = 0
-  19.type = float
-  19.desc = Constant variance, if applicable, otherwise 0.
-
-  20.name = barometer_publisher/frame_id
-  20.default = base_link
-  20.type = string
-  20.desc = Pressure message header frame.
-
-  21.name = barometer_publisher/topic_name
-  21.default = /barometer
-  21.type = string
-  21.desc = Barometer topic name.
-
-  22.name = altimeter_publisher/enabled
-  22.default = true
-  22.type = bool
-  22.desc = Enables/disables altimeter measurement extraction.
-
-  23.name = altimeter_publisher/topic_name
-  23.default = /altimeter
-  23.type = string
-  23.desc = Altimeter topic name.
-
-  24.name = orientation_publisher/topic_name
-  24.default = /orientation
-  24.type = string
-  24.desc = Orientation topic name.
-
-  25.name = orientation_publisher/enabled
-  25.default = false
-  25.type = bool
-  25.desc = Enables/disables orientation measurement extraction.
-
-  26.name = gps_publisher/enabled
-  26.default = false
-  26.type = bool
-  26.desc = Enables/disables '''all''' GPS receiver measurements extraction.
-
-  27.name = gps_publisher/navsat_fix_frame_id
-  27.default = world
-  27.type = string
-  27.desc = Frame ID for GPS fixed position publisher.
-
-  28.name = gps_publisher/navsat_fix_topic_name
-  28.default = /gps
-  28.type = string
-  28.desc = Topic name for GPS fixed position publisher.
-
-  29.name = gps_publisher/navsat_altitude_topic_name
-  29.default = /gps_altitude
-  29.type = string
-  29.desc = Topic name for GPS altitude publisher.
-
-  30.name = gps_publisher/navsat_satellites_topic_name
-  30.default = /gps_satellites
-  30.type = string
-  30.desc = Topic name for GPS active satellites number publisher.
-
-  31.name = gps_publisher/navsat_variance_topic_name
-  31.default = /gps_variance
-  31.type = string
-  31.desc = Topic name for GPS diagonal variance publisher.
-
-  32.name = gps_publisher/ground_speed_topic_name
-  32.default = /gps_ground_speed
-  32.type = string
-  32.desc = Topic name for GPS ground speed publisher.
-
-  33.name = rtc_publisher/enabled
-  33.default = false
-  33.type = bool
-  33.desc = Enables/disables realtime clock decoder/publisher.
-
-  34.name = rtc_publisher/topic_name
-  34.default = /witmotion_clock
-  34.type = string
-  34.desc = Topic name for realtime clock information publisher.
-
-  35.name = rtc_publisher/presync
-  35.default = true
-  35.type = bool
-  35.desc = Instructs the node to perform an attempt to pre-synchronize the sensor's internal realtime clock.
-  }
- }
-```
-
-
+- `restart_service_name` (`string`, default: `/restart_imu`): Service
+  name to advertise the after-error-restart function.
+- `port` (`string`, default: `ttyUSB0`): The virtual kernel device name
+  for a serial port.
+- `baud_rate` (`integer`, default: `9600`): Port rate value to be used
+  by the library for opening the port.
+- `polling_interval` (`integer`, default: `50`): The sensor polling
+  interval in milliseconds. If this parameter is omitted, the default
+  value is set up by the library (50 ms).
+- `timeout_ms` (`integer`, default: `50`): Sensor timeout period in
+  milliseconds. If no data is received from the sensor after this
+  period, then an error is raised and the node terminates. If this
+  parameter is omitted, a default value of 3 times the polling interval
+  is used. If this parameter is zero, the timeout check is disabled.
+- `imu_publisher/topic_name` (`string`, default: `/imu`): Topic name for
+  IMU data publisher.
+- `imu_publisher/frame_id` (`string`, default: `imu`): IMU message
+  header frame.
+- `imu_publisher/use_native_orientation` (`bool`, default: `false`):
+  Instructs the node to use the native quaternion orientation
+  measurement from the sensor instead of the one synthesized from Euler
+  angles.
+- `imu_publisher/measurements` (`group`): Includes presence control for
+  IMU components: *acceleration*, *angular_velocity*, *orientation*.
+  Every component includes *enabled* flag and row-major 3x3 matrix
+  defining *covariance* (see the
+  [sample config file](https://github.com/ElettraSciComp/witmotion_IMU_ros/blob/main/config/config.yml))
+- `temperature_publisher/topic_name` (`string`, default:
+  `/temperature`): Temperature topic name.
+- `temperature_publisher/frame_id` (`string`, default: `base_link`):
+  Temperature message header frame.
+- `temperature_publisher/enabled` (`bool`, default: `true`):
+  Enables/disables temperature measurement extraction.
+- `temperature_publisher/from_message` (`string`, default:
+  `acceleration`): Message type string to determine from which type of
+  Witmotion measurement message the temperature data should be extracted
+  (please refer to the original documentation for a detailed
+  description). The possible values are: *acceleration*, *angular_vel*,
+  *orientation* or *magnetometer*.
+- `temperature_publisher/variance` (`float`, default: `0`): Constant
+  variance, if applicable, otherwise 0.
+- `magnetometer_publisher/topic_name` (`string`, default:
+  `/magnetometer`): Magnetometer topic name.
+- `magnetometer_publisher/frame_id` (`string`, default: `base_link`):
+  Magnetometer message header frame.
+- `magnetometer_publisher/enabled` (`bool`, default: `true`):
+  Enables/disables magnetic measurement extraction.
+- `magnetometer_publisher/covariance` (`Row-major matrix 3x3`): Static
+  covariance, all zeros for unknown
+- `barometer_publisher/enabled` (`bool`, default: `true`):
+  Enables/disables barometer measurement extraction.
+- `barometer_publisher/variance` (`float`, default: `0`): Constant
+  variance, if applicable, otherwise 0.
+- `barometer_publisher/frame_id` (`string`, default: `base_link`):
+  Pressure message header frame.
+- `barometer_publisher/topic_name` (`string`, default: `/barometer`):
+  Barometer topic name.
+- `altimeter_publisher/enabled` (`bool`, default: `true`):
+  Enables/disables altimeter measurement extraction.
+- `altimeter_publisher/topic_name` (`string`, default: `/altimeter`):
+  Altimeter topic name.
+- `orientation_publisher/topic_name` (`string`, default:
+  `/orientation`): Orientation topic name.
+- `orientation_publisher/enabled` (`bool`, default: `false`):
+  Enables/disables orientation measurement extraction.
+- `gps_publisher/enabled` (`bool`, default: `false`): Enables/disables
+  **all** GPS receiver measurements extraction.
+- `gps_publisher/navsat_fix_frame_id` (`string`, default: `world`):
+  Frame ID for GPS fixed position publisher.
+- `gps_publisher/navsat_fix_topic_name` (`string`, default: `/gps`):
+  Topic name for GPS fixed position publisher.
+- `gps_publisher/navsat_altitude_topic_name` (`string`, default:
+  `/gps_altitude`): Topic name for GPS altitude publisher.
+- `gps_publisher/navsat_satellites_topic_name` (`string`, default:
+  `/gps_satellites`): Topic name for GPS active satellites number
+  publisher.
+- `gps_publisher/navsat_variance_topic_name` (`string`, default:
+  `/gps_variance`): Topic name for GPS diagonal variance publisher.
+- `gps_publisher/ground_speed_topic_name` (`string`, default:
+  `/gps_ground_speed`): Topic name for GPS ground speed publisher.
+- `rtc_publisher/enabled` (`bool`, default: `false`): Enables/disables
+  realtime clock decoder/publisher.
+- `rtc_publisher/topic_name` (`string`, default: `/witmotion_clock`):
+  Topic name for realtime clock information publisher.
+- `rtc_publisher/presync` (`bool`, default: `true`): Instructs the node
+  to perform an attempt to pre-synchronize the sensor's internal
+  realtime clock.
 
 ## Report a Bug
 

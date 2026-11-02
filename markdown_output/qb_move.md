@@ -7,6 +7,13 @@
 
 ## ROS Packages Installation
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS/Tutorials](ROS/Tutorials).
+- **Description:** Install the last qbmove or qb SoftClaw related ROS
+  packages
+- **Keywords:** qbrobotics qbmove qb SoftClaw installation
+- **Tutorial Level:** BEGINNER 
+
 ```
 {#!wiki version kinetic_and_newer
 
@@ -16,8 +23,8 @@ If you have never set it up, you probably need to add your linux user to the `di
 sudo gpasswd -a <user_name> dialout
 ```
 
- where you need to replace the `<user_name>`
-with your current linux username.
+ where you need
+  to replace the `<user_name>` with your current linux username.
 
 *Note: Don't forget to logout or reboot.*
 

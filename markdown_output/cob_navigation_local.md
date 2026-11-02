@@ -25,12 +25,12 @@ an application that requires navigation in an odometric frame.
 ## Configuration Files
 
 - **`config/global_costmap_params.yaml`**: Holds parameters for the
-  global [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  global [costmap](https://index.ros.org/p/costmap_2d) used in the
   `2dnav_ros_tr.xml` and `2dnav_ros_dwa.xml` configuration files.
-  This is the [ costmap](https://index.ros.org/p/costmap_2d) used by the
+  This is the [costmap](https://index.ros.org/p/costmap_2d) used by the
   global planner and, in this case, operates in an odometric frame.
 - **`config/local_costmap_params.yaml`**: Holds parameters for the
-  local [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  local [costmap](https://index.ros.org/p/costmap_2d) used in the
   `2dnav_ros_tr.xml` and `2dnav_ros_dwa.xml` configuration file.
-  This is the [ costmap](https://index.ros.org/p/costmap_2d) used by the
+  This is the [costmap](https://index.ros.org/p/costmap_2d) used by the
   local planner, and operates in an odometric frame.

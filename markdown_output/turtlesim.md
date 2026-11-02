@@ -29,77 +29,82 @@ You'll see the turtlesim window:
 
 ## Nodes == As of //Hydro// turtlesim uses the \[\[https://index.ros.org/p/geometry_msgs\|geometry_msgs\]\]/Twist message instead of its own custom one (//turtlesim/Velocity// in //Groovy// and older). Also the topic has been changed to `cmd_vel` (instead of `command_velocity` before).
 
+### turtlesim_node
 
+`turtlesim_node` provides a simple simulator for teaching ROS
+concepts.
 
-```clearsilver
-node.0 {
- name = turtlesim_node
- desc = `turtlesim_node` provides a simple simulator for teaching ROS concepts.
- sub{
-  0.name= turtleX/cmd_vel
-  0.type= geometry_msgs/Twist
-  0.desc= The linear and angular command velocity for turtleX. The turtle will execute a velocity command for 1 second then time out. Twist.linear.x is the forward velocity, Twist.linear.y is the strafe velocity, and Twist.angular.z is the angular velocity.
-  }
- pub {
-  0.name= turtleX/pose
-  0.type= turtlesim/Pose
-  0.desc= The x, y, theta, linear velocity, and angular velocity of turtleX.
- }
- srv {
-  0.name= clear
-  0.type= std_srvs/Empty
-  0.desc= Clears the turtlesim background and sets the color to the value of the background parameters.
-  1.name= reset
-  1.type= std_srvs/Empty
-  1.desc= Resets the turtlesim to the start configuration and sets the background color to the value of the background.
-  2.name= kill
-  2.type= turtlesim/Kill
-  2.desc= Kills a turtle by name.
-  3.name= spawn
-  3.type= turtlesim/Spawn
-  3.desc= Spawns a turtle at (x, y, theta) and returns the name of the turtle. Also will take name for argument but will fail if a duplicate name.
-  4.name= turtleX/set_pen
-  4.type= turtlesim/SetPen
-  4.desc= Sets the pen's color (r g b), width (width), and  turns the pen on and off (off).
-  5.name= turtleX/teleport_absolute
-  5.type= turtlesim/TeleportAbsolute
-  5.desc= Teleports the turtleX to (x, y, theta).
-  6.name= turtleX/teleport_relative
-  6.type= turtlesim/TeleportRelative
-  6.desc= Teleports the turtleX a linear and angular distance from the turtles current position.
- }
- param {
-  0.name= ~background_b
-  0.default= 255
-  0.type= int
-  0.desc= Sets the blue channel of the background color.
-  1.name= ~background_g
-  1.default= 86
-  1.type= int
-  1.desc= Sets the green channel of the background color.
-  2.name= ~background_r
-  2.default= 69
-  2.type= int
-  2.desc= Sets the red channel of the background color.
- }
-}
-node.1{
- name = mimic
- desc = `mimic` provides a simple interface for making one turtlesim mimic another.
- sub{
-  0.name= input
-  0.type= turtlesim/Pose
-  0.desc= The input topic for the `mimic` node. The topic must be remapped to the `pose` topic of the desired turtle to mimic. 
-  }
- pub {
-  0.name= output
-  0.type= geometry_msgs/Twist
-  0.desc= The output topic for the `mimic` node. The topic must be remapped to the `cmd_vel` topic of the mimicking turtle. 
- }
-}
-```
+#### Subscribed Topics
 
+- `turtleX/cmd_vel`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  The linear and angular command velocity for turtleX. The turtle will
+  execute a velocity command for 1 second then time out. Twist.linear.x
+  is the forward velocity, Twist.linear.y is the strafe velocity, and
+  Twist.angular.z is the angular velocity.
 
+#### Published Topics
+
+- `turtleX/pose`
+  ([turtlesim/msg/Pose](https://docs.ros.org/en/rolling/p/turtlesim/msg/Pose.html)):
+  The x, y, theta, linear velocity, and angular velocity of turtleX.
+
+#### Services
+
+- `clear`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Clears the turtlesim background and sets the color to the value of the
+  background parameters.
+- `reset`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Resets the turtlesim to the start configuration and sets the
+  background color to the value of the background.
+- `kill`
+  ([turtlesim/srv/Kill](https://docs.ros.org/en/rolling/p/turtlesim/srv/Kill.html)):
+  Kills a turtle by name.
+- `spawn`
+  ([turtlesim/srv/Spawn](https://docs.ros.org/en/rolling/p/turtlesim/srv/Spawn.html)):
+  Spawns a turtle at (x, y, theta) and returns the name of the turtle.
+  Also will take name for argument but will fail if a duplicate name.
+- `turtleX/set_pen`
+  ([turtlesim/srv/SetPen](https://docs.ros.org/en/rolling/p/turtlesim/srv/SetPen.html)):
+  Sets the pen's color (r g b), width (width), and turns the pen on and
+  off (off).
+- `turtleX/teleport_absolute`
+  ([turtlesim/srv/TeleportAbsolute](https://docs.ros.org/en/rolling/p/turtlesim/srv/TeleportAbsolute.html)):
+  Teleports the turtleX to (x, y, theta).
+- `turtleX/teleport_relative`
+  ([turtlesim/srv/TeleportRelative](https://docs.ros.org/en/rolling/p/turtlesim/srv/TeleportRelative.html)):
+  Teleports the turtleX a linear and angular distance from the turtles
+  current position.
+
+#### Parameters
+
+- `~background_b` (`int`, default: `255`): Sets the blue channel of the
+  background color.
+- `~background_g` (`int`, default: `86`): Sets the green channel of the
+  background color.
+- `~background_r` (`int`, default: `69`): Sets the red channel of the
+  background color.
+
+### mimic
+
+`mimic` provides a simple interface for making one turtlesim mimic
+another.
+
+#### Subscribed Topics
+
+- `input`
+  ([turtlesim/msg/Pose](https://docs.ros.org/en/rolling/p/turtlesim/msg/Pose.html)):
+  The input topic for the `mimic` node. The topic must be remapped to
+  the `pose` topic of the desired turtle to mimic.
+
+#### Published Topics
+
+- `output`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  The output topic for the `mimic` node. The topic must be remapped to
+  the `cmd_vel` topic of the mimicking turtle.
 
 ## Turtlesim Video Tutorials
 
@@ -194,7 +199,7 @@ Any packages you create in that directory will be found by
 An alternative to source your script file is to add it to your
 `.bashrc`, but remember that this will persist in your `.bashrc`
 into the future, and you can only have one environment setup. For more
-on what this is doing see [ this page](rosinstall#Generating_setup.sh)
+on what this is doing see [this page](rosinstall#Generating_setup.sh)
 }}}}}
 
 
@@ -327,14 +332,14 @@ Watch the video below to have more explanation on transforms.
 
 ### Practicing Python with Turtlesim
 
-1.[ Moving in a Straight Line](#moving-in-a-straight-line)
+1.[Moving in a Straight Line](#moving-in-a-straight-line)
 This tutorial teaches you how to move your turtle in order to learn
 python.
 
-2.[ Rotating Left/Right ](#rotating-leftright)
+2.[Rotating Left/Right](#rotating-leftright)
 This tutorial teaches you how to rotate your turtle.
 
-3.[ Moving to goal ](#go-to-goal)
+3.[Moving to goal](#go-to-goal)
 Move the turtle to a specified location.
 
 ### Create a new tutorial
@@ -342,6 +347,15 @@ Move the turtle to a specified location.
 ## Moving in a Straight Line
 
 !
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: writing a simple publisher and subscriber
+  [(python)](ROS/Tutorials/WritingPublisherSubscriber(python)).
+- **Description:** This tutorial is based on
+  [Turtlesim Video Tutorials](#tutorials)
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Rotating Left/Right](#rotating-leftright)
 
 In this tutorial series, we will create python scripts to move our
 turtle, in order to practice the ROS basics.
@@ -568,6 +582,15 @@ your turtle.
 
 !
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Moving in a Straight Line](#moving-in-a-straight-line).
+- **Description:** This tutorial is based on
+  [Turtlesim Video Tutorials](#tutorials)
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Moving to goal](#go-to-goal)
+
 You can find the complete package at:
 <https://github.com/clebercoutof/turtlesim_cleaner>
 
@@ -761,11 +784,15 @@ The turtle will rotate like this:
 ![attachment:turtle_spin.png](doc/turtle_spin.png)
 
 Now you can go to the next tutorial! Learn how to move your to a
-specified [ goal ](#go-to-goal).
+specified [goal](#go-to-goal).
 
 ## Go to Goal
 
 !
+
+- **Description:** This tutorial is based on
+  [Turtlesim Video Tutorials](#tutorials)
+- **Tutorial Level:** INTERMEDIATE
 
 You can find the complete package at:
 <https://github.com/clebercoutof/turtlesim_cleaner>

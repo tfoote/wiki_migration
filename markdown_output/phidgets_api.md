@@ -8,12 +8,12 @@ Phidgets inherit. Currently, we have implemented classes for the
 following devices:
 
 - IMU sensor
-  ([ PhidgetsSpatial 3/3/3](http://www.phidgets.com/products.php?product_id=1056_0 ))
+  ([PhidgetsSpatial 3/3/3](http://www.phidgets.com/products.php?product_id=1056_0))
 
 <!-- -->
 
 - IR sensor
-  ([ PhidgetIR ](http://www.phidgets.com/products.php?product_id=1055_0 ))
+  ([PhidgetIR](http://www.phidgets.com/products.php?product_id=1055_0))
 
 Creating a class is fairly easy - feel free to request devices to be
 added to the stack. If you write a class for any device using the

@@ -31,6 +31,13 @@ When we have a need, it will be reintroduced.
 
 ## Semaphores
 
+- **Description:** Locks for multiple processes (use with shared
+  memory).
+- **Keywords:** ecl semaphores
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Shared Memory](#shared-memory)
+
 There are many ways to implement semaphores (especially the counting
 semaphores on posix), but I've kept it relatively simple here with the
 task at hand being just to provide a lock that can be used when
@@ -63,6 +70,14 @@ locked semaphore, it will wait until the first semaphore releases the
 lock. Be wary of deadlocks.
 
 ## Shared Memory
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Semaphores](#semaphores).
+- **Description:** Simplified api-like interface to shared memory
+  storage.
+- **Keywords:** ecl shared memory
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overview
 

@@ -6,39 +6,21 @@
 
 ## ROS API
 
+### joint_operator
 
+#### Services
 
-```clearsilver
-node.0 {
-name= joint_operator
+- `joint_command`
+  ([dynamixel_workbench_msgs/srv/JointCommand](https://docs.ros.org/en/rolling/p/dynamixel_workbench_msgs/srv/JointCommand.html)):
+  Send commands(id and goal_position) to move the Dynamixel
 
-srv{
-  0{
-    name= joint_command
-    type= dynamixel_workbench_msgs/JointCommand
-    desc= Send commands(id and goal_position) to move the Dynamixel
-  }
-}
-```
+### wheel_operator
 
+#### Services
 
-
-
-
-```clearsilver
-node.0 {
-name= wheel_operator
-
-srv{
-  0{
-    name= wheel_command
-    type= dynamixel_workbench_msgs/WheelCommand
-    desc= Send commands(right_vel and left_vel) to move the Dynamixels
-  }
-}
-```
-
-
+- `wheel_command`
+  ([dynamixel_workbench_msgs/srv/WheelCommand](https://docs.ros.org/en/rolling/p/dynamixel_workbench_msgs/srv/WheelCommand.html)):
+  Send commands(right_vel and left_vel) to move the Dynamixels
 
 ## Tutorials
 

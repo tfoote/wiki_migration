@@ -270,10 +270,10 @@ features.
 
 The pid controller makes heavy use of parameters to set its operating
 characteristics. Use the launch-file node-private parameter syntax
-documented [ here]( http://wiki.ros.org/roslaunch/XML/param ) to set
+documented [here](http://wiki.ros.org/roslaunch/XML/param) to set
 parameters from a launch file, or the rosrun parameter syntax documented
-[ here ]( http://wiki.ros.org/rosbash#rosrun ) to set parameters from
-the command line.
+[here](http://wiki.ros.org/rosbash#rosrun) to set parameters from the
+command line.
 
 The following snippet from a launch file shows how to launch the node
 and set its parameters from a launch file. 
@@ -325,12 +325,12 @@ third:
 1\. Push each controller node into its own namespace (perhaps together
 with its plant). The controller topic names are then prefixed with the
 namespace. The book "A Gentle Introduction to ROS" by Jason O'Kane,
-[ chapter 6 ]( https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf )
+[chapter 6](https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf)
 section 6.3 describes the technique and gives examples. 2. Remap topic
 names, such that the topic name each controller publishes or subscribes
 to is remapped to something appropriate. See "A Gentle Introduction to
 ROS"
-[ chapter 6 ]( https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf )
+[chapter 6](https://cse.sc.edu/~jokane/agitr/agitr-letter-launch.pdf)
 section 6.4 for an explanation with examples. 3. Tell the PID controller
 which topics to publish/subscribe to using parameters. This technique is
 pid-controller specific - see the parameters section.

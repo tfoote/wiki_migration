@@ -101,5 +101,8 @@ and discussions, use the mailing list at
 
 ## Creating an OctoMap from existing 3D (mesh) data
 
+- **Note:** This is only a rough outline at the moment.
+- **Tutorial Level:** INTERMEDIATE
+
 This tutorial has moved:
 <https://github.com/OctoMap/octomap/wiki/Importing-Data-into-OctoMap>

@@ -23,65 +23,47 @@ how [action goals are interpreted](https://index.ros.org/p/pr2).
 
 ### Parameters
 
+#### Parameters
 
-
-```clearsilver
-param {
-  0.name=~goal_threshold
-  0.type=double
-  0.desc=The distance from the desired position at which the result is considered successful.
-  0.default=0.01
-  1.name=~stall_timeout
-  1.type=double
-  1.default=0.1
-  1.desc=The amount of time (in seconds) the joint must be stationary to be considered a stall.
-  2.name=~stall_velocity_threshold
-  2.type=double
-  2.default=1e-6
-  2.desc=Parameter used when stall velocity oscillates (e.g. simulation jitter).
-}
-```
-
-
+- `~goal_threshold` (`double`, default: `0.01`): The distance from the
+  desired position at which the result is considered successful.
+- `~stall_timeout` (`double`, default: `0.1`): The amount of time (in
+  seconds) the joint must be stationary to be considered a stall.
+- `~stall_velocity_threshold` (`double`, default: `1e-6`): Parameter
+  used when stall velocity oscillates (e.g. simulation jitter).
 
 ### Action interface
 
+#### Subscribed Topics
 
+- `~gripper_action/goal`
+  ([pr2_controllers_msgs/msg/Pr2GripperCommandActionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/Pr2GripperCommandActionGoal.html)):
+  The position/force for the gripper to achieve.
+- `~gripper_action/cancel`
+  ([actionlib_msgs/msg/GoalID](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalID.html)):
+  A request to stop trying to move the gripper.
 
-```clearsilver
-sub {
-  0.name=~gripper_action/goal
-  0.type=pr2_controllers_msgs/Pr2GripperCommandActionGoal
-  0.desc=The position/force for the gripper to achieve.
-  1.name=~gripper_action/cancel
-  1.type=actionlib_msgs/GoalID
-  1.desc=A request to stop trying to move the gripper.
-}
-pub {
-  1.name= ~gripper_action/status
-  1.type= actionlib_msgs/GoalStatusArray
-  1.desc= Provides status information on the goals that are sent to the `action` action.
-  2.name= ~gripper_action/result
-  2.type= pr2_controllers_msgs/Pr2GripperActionResult
-  2.desc= Describes why the gripper stopped (stalled or reached the final position).
-}
-```
+#### Published Topics
 
-
+- `~gripper_action/status`
+  ([actionlib_msgs/msg/GoalStatusArray](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalStatusArray.html)):
+  Provides status information on the goals that are sent to the
+  `action` action.
+- `~gripper_action/result`
+  ([pr2_controllers_msgs/msg/Pr2GripperActionResult](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/Pr2GripperActionResult.html)):
+  Describes why the gripper stopped (stalled or reached the final
+  position).
 
 ### Controller interface
 
+#### Subscribed Topics
 
+- `~state`
+  ([pr2_controllers_msgs/msg/JointControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointControllerState.html)):
+  Listens to the state of the controller.
 
-```clearsilver
-sub {
-  0.name=~state
-  0.type=pr2_controllers_msgs/JointControllerState
-  0.desc=Listens to the state of the controller.
-}
-pub {
-  0.name=~command
-  0.type=pr2_controllers_msgs/Pr2GripperCommand
-  0.desc=Sends grip commands to the controller.
-}
-```
+#### Published Topics
+
+- `~command`
+  ([pr2_controllers_msgs/msg/Pr2GripperCommand](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/Pr2GripperCommand.html)):
+  Sends grip commands to the controller.

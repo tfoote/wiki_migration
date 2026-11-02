@@ -19,118 +19,96 @@ on other platforms, please
 The schunk_sdh package provides a
 configurable node for operating a schunk dexterous hand.
 
+### sdh_only
 
-```clearsilver
- name = sdh_only
- desc = The `schunk_sdh` node takes in <<MsgLink(trajectory_msgs/JointTrajectory)>> messages and send this directly to the hardware. The joint states can be received by [[Topics|topics]] and the sdh can be initialized, stopped or recovered via [[Services|services]].
+The `schunk_sdh` node takes in
+[trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)
+messages and send this directly to the hardware. The joint states can be
+received by [topics](Topics) and the sdh can be initialized, stopped or
+recovered via [services](Services).
 
-goal{
- 0.name=follow_joint_trajectory_action/goal
- 0.type=control_msgs/FollowJointTrajectoryActionGoal
- 0.desc=The goal describes the target trajectory for the sdh (at the moment only the position value of the last trajectory point is used).
-}
+#### Action Goal
 
-result{
- 2.name=follow_joint_trajectory_action/result
- 2.type=control_msgs/FollowJointTrajectoryActionResult
- 2.desc=empty
-}
+- `follow_joint_trajectory_action/goal`
+  ([control_msgs/msg/FollowJointTrajectoryActionGoal](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionGoal.html)):
+  The goal describes the target trajectory for the sdh (at the moment
+  only the position value of the last trajectory point is used).
 
-feedback{
- 0.name=follow_joint_trajectory_action/feedback
- 0.type=control_msgs/FollowJointTrajectoryActionFeedback
- 0.desc=empty
-}
+#### Action Result
 
-sub{
- 0.name = command
- 0.type = trajectory_msgs/JointTrajectory
- 0.desc = Receives direct commands.
-}
+- `follow_joint_trajectory_action/result`
+  ([control_msgs/msg/FollowJointTrajectoryActionResult](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionResult.html)):
+  empty
 
-pub{
- 0.name = /joint_states
- 0.type = sensor_msgs/JointState
- 0.desc = Publishes the joint states of all joints.
-}
+#### Action Feedback
 
-srv{
- 0.name = init
- 0.type = cob_srvs/Trigger
- 0.desc = Initializes the node and connects to the hardware.
- 1.name = stop
- 1.type = cob_srvs/Trigger
- 1.desc = Stops immediately all hardware movements.
- 2.name = recover
- 2.type = cob_srvs/Trigger
- 2.desc = Recovers the hardware after an emergency stop.
- 3.name = set_operation_mode
- 3.type = cob_srvs/Trigger
- 3.desc = Sets the operation mode for the node.
-}
+- `follow_joint_trajectory_action/feedback`
+  ([control_msgs/msg/FollowJointTrajectoryActionFeedback](https://docs.ros.org/en/rolling/p/control_msgs/msg/FollowJointTrajectoryActionFeedback.html)):
+  empty
 
-param{
- 0.name = ~sdhdevicetype
- 0.type = string
- 0.default = PCAN
- 0.desc = Device type for can dongle hand
- 1.name = ~sdhdevicestring
- 1.type = string
- 1.default = /dev/pcan0
- 1.desc = Device identifier for hand, e.g. /dev/pcan32
- 2.name = ~dsadevicestring
- 2.type = string
- 2.default = Required
- 2.desc = Device identifier for tactile sensors, e.g. /dev/ttyUSB0
- 3.name = ~baudrate
- 3.type = int
- 3.default = 1000000
- 3.desc = Baudrate of can module, e.g. 1000, 500,...
- 4.name = ~joint_names
- 4.type = list of strings
- 4.default = Required
- 4.desc = List of joint names corresponding to urdf description, e.g. [sdh_thumb_3_joint, sdh_finger_11_joint,...]
- 5.name = /robot_description
- 5.type = urdf model
- 5.default = Required
- 5.desc = Urdf model of the robot, including the joints and links describing the sdh
-}
+#### Subscribed Topics
 
-req_tf{
-}
+- `command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Receives direct commands.
 
-prov_tf{
-}
-```
+#### Published Topics
 
- 
+- `/joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Publishes the joint states of all joints.
 
-```clearsilver
- name = dsa_only
- desc = The `dsa_only` node publishes data from the tactile sensors in form of <<MsgLink(schunk_sdh/TactileSensor)>> messages.
-pub{
- 0.name = tactile_data
- 0.type = schunk_sdh/TactileSensor
- 0.desc = Publishes data from the tactile sensors.
-}
+#### Services
 
-param{
- 0.name = ~dsadevicestring
- 0.type = string
- 0.default = Required
- 0.desc = Device identifier for dsa, e.g. /dev/ttyS0
- 1.name = ~polling
- 1.type = bool
- 1.defaut = false
- 1.desc = Use polling mode for getting sensor data
- 2.name = ~publish_frequency
- 2.type = float
- 2.defaut = 0.0
- 2.desc = Frequency for publishing sensor data
-}
-```
+- `init`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  Initializes the node and connects to the hardware.
+- `stop`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  Stops immediately all hardware movements.
+- `recover`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  Recovers the hardware after an emergency stop.
+- `set_operation_mode`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  Sets the operation mode for the node.
 
+#### Parameters
 
+- `~sdhdevicetype` (`string`, default: `PCAN`): Device type for can
+  dongle hand
+- `~sdhdevicestring` (`string`, default: `/dev/pcan0`): Device
+  identifier for hand, e.g. /dev/pcan32
+- `~dsadevicestring` (`string`, default: `Required`): Device identifier
+  for tactile sensors, e.g. /dev/ttyUSB0
+- `~baudrate` (`int`, default: `1000000`): Baudrate of can module, e.g.
+  1000, 500,\...
+- `~joint_names` (`list of strings`, default: `Required`): List of joint
+  names corresponding to urdf description, e.g. \[sdh_thumb_3_joint,
+  sdh_finger_11_joint,\...\]
+- `/robot_description` (`urdf model`, default: `Required`): Urdf model
+  of the robot, including the joints and links describing the sdh
+
+### dsa_only
+
+The `dsa_only` node publishes data from the tactile sensors in form of
+[schunk_sdh/msg/TactileSensor](https://docs.ros.org/en/rolling/p/schunk_sdh/msg/TactileSensor.html)
+messages.
+
+#### Published Topics
+
+- `tactile_data`
+  ([schunk_sdh/msg/TactileSensor](https://docs.ros.org/en/rolling/p/schunk_sdh/msg/TactileSensor.html)):
+  Publishes data from the tactile sensors.
+
+#### Parameters
+
+- `~dsadevicestring` (`string`, default: `Required`): Device identifier
+  for dsa, e.g. /dev/ttyS0
+- `~polling` (`bool`, default: `false`): Use polling mode for getting
+  sensor data
+- `~publish_frequency` (`float`, default: `0.0`): Frequency for
+  publishing sensor data
 
 ## Usage/Examples
 

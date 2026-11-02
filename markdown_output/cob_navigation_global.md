@@ -55,14 +55,14 @@ of Fraunhofer IPA.
 ## Configuration Files
 
 - **`config/global_costmap_params.yaml`**: Holds parameters for the
-  global [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  global [costmap](https://index.ros.org/p/costmap_2d) used in the
   `2dnav_ros_dwa.xml` and `2dnav_ros_tr.xml` building blocks. This
   is the costmap used by the [navfn](https://index.ros.org/p/navfn)
   planner, and in this case, is initialized by a static map offered by
   an instance of the [map_server](https://index.ros.org/p/map_server)
   node.
 - **`config/local_costmap_params.yaml`**: Holds parameters for the
-  local [ costmap](https://index.ros.org/p/costmap_2d) used in the
+  local [costmap](https://index.ros.org/p/costmap_2d) used in the
   `2dnav_ros_dwa.xml` and `2dnav_ros_tr.xml` building blocks. This
   is the costmap used by the specific local planner, which operates in
   an odometric frame.

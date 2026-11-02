@@ -16,38 +16,31 @@ identical timestamps.
 
 ## Nodes
 
+### utm_odometry_node
 
+`utm_odometry_node` converts latitude-longitude readings into UTM
+odometry
 
-```clearsilver
-node.0 {
- name = utm_odometry_node
- desc = `utm_odometry_node` converts latitude-longitude readings into UTM odometry
- sub{
-  0.name= fix
-  0.type= sensor_msgs/NavSatFix
-  0.desc= GPS measurement and status
-  }
- pub{
-  0.name= odom
-  0.type= nav_msgs/Odometry
-  0.desc= UTM-encoded position
-  }
- param{
-  0.name= ~rot_covariance
-  0.type= double
-  0.default= 99999
-  0.desc= Variance (in meters) to specify for rotational measurements
-  1.name= ~frame_id
-  1.type= string
-  1.default= Copy `frame_id` from `fix` message
-  1.desc= Frame to specify in header of outgoing Odometry message
-  2.name= ~child_frame_id
-  2.type= string
-  2.desc= Child frame to specify in header of outgoing Odometry message
-  }
-```
+#### Subscribed Topics
 
+- `fix`
+  ([sensor_msgs/msg/NavSatFix](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/NavSatFix.html)):
+  GPS measurement and status
 
+#### Published Topics
+
+- `odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  UTM-encoded position
+
+#### Parameters
+
+- `~rot_covariance` (`double`, default: `99999`): Variance (in meters)
+  to specify for rotational measurements
+- `~frame_id` (`string`, default: Copy `frame_id` from `fix`
+  message): Frame to specify in header of outgoing Odometry message
+- `~child_frame_id` (`string`): Child frame to specify in header of
+  outgoing Odometry message
 
 ## Tutorial
 

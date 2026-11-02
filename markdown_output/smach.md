@@ -39,7 +39,7 @@ interesting things.
   for *low-level* systems that require high efficiency, SMACH is a
   *task-level* architecture.
 - Smash: Do not use SMACH when you want to smash something, for that use
-  [ smash](https://en.wikipedia.org/wiki/Hulk_and_the_Agents_of_S.M.A.S.H.).
+  [smash](https://en.wikipedia.org/wiki/Hulk_and_the_Agents_of_S.M.A.S.H.).
 
 **Is SMACH only a finite state machine library?**
 
@@ -301,6 +301,12 @@ a look at
 
 ## Getting Started with smach
 
+- **Description:** This tutorial guides you through the very first steps
+  of using smach.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Passing User Data between States](#passing-user-data-between-states)
+
 ### Why learn Smach?
 
 Smach, which stands for "State Machine", is a powerful and scalable
@@ -508,6 +514,12 @@ machines.
 
 ## Passing User Data between States
 
+- **Description:** This tutorial teaches you how to pass data from one
+  state(machine) to the next state(machine).
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Create a hierarchical state machine](#create-a-hierarchical-state-machine)
+
 ### Specifying User Data
 
 A state could require some input data to do its work, and/or it could
@@ -650,6 +662,12 @@ hierarchical state machine.
 
 ## Create a Hierarchical State Machine
 
+- **Description:** This tutorial teaches you how to nest different state
+  machines, creating a hierarchical state machine.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Calling Actions from a SMACH State Machine](#calling-actions-from-a-state-machine-ros)
+
 ### Creating some states
 
 For this example, we create a number of states, each with a number of
@@ -757,6 +775,21 @@ teaches you how to call action servers from within a SMACH state
 machine.
 
 ## Calling Actions from a State Machine (ROS)
+
+- **Description:** This tutorial teaches you how to call action servers
+  from within a SMACH state machine.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Viewing your state machine](#viewing-state-machines-ros)
+
+<!-- -->
+
+- **Description:** This tutorial teaches you how to call action servers
+  from within a SMACH state machine.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Viewing your state machine](#viewing-state-machines-ros)
+  
 
 ```python
 from smach_ros import SimpleActionState
@@ -953,6 +986,11 @@ machines and get introspection into the data flow between states.
 
 ## Viewing State Machines (ROS)
 
+- **Description:** This tutorial shows you how to use the smach viewer,
+  a simple tool to monitor state machines and get introspection into the
+  data flow between states.
+- **Tutorial Level:** BEGINNER
+
 This is what you want to debug a running SMACH state machine:
 
 ![width="750"](doc/smach_viewer.png)
@@ -1047,6 +1085,12 @@ servers.
 
 ## Simple State Machine
 
+- **Description:** This tutorial shows how to put together a simple
+  state machine with two states.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [User Data Passing](#user-data-passing)
+
 All of the following examples can be run without modification. They can
 be found in the [smach_tutorials](smach_tutorials) package in the
 `examples` directory. The comments at the head of each file show
@@ -1061,6 +1105,12 @@ roughly what the output from running the script should look like.
 ```
 
 ## User Data Passing
+
+- **Description:** This tutorial gives an example of two states passing
+  user data to each other.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Nesting State Machines](#nesting-state-machines)
 
 All of the following examples can be run without modification. They can
 be found in the [smach_tutorials](smach_tutorials) package in the
@@ -1077,6 +1127,13 @@ roughly what the output from running the script should look like.
 
 ## Nesting State Machines
 
+- **Description:** This tutorial gives an example of nesting a state
+  machine in another state machine, creating a hierarchical state
+  machine.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Concurrent States](#concurrent-state-machine)
+
 All of the following examples can be run without modification. They can
 be found in the [smach_tutorials](smach_tutorials) package in the
 `examples` directory. The comments at the head of each file show
@@ -1091,6 +1148,12 @@ roughly what the output from running the script should look like.
 ```
 
 ## Concurrent State Machine
+
+- **Description:** This tutorial shows an example of running two states
+  in parallel.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Simple Action State](#simple-action-state-ros)
 
 All of the following examples can be run without modification. They can
 be found in the [smach_tutorials](smach_tutorials) package in the
@@ -1107,6 +1170,10 @@ roughly what the output from running the script should look like.
 
 ## Simple Action State (ROS)
 
+- **Description:** This tutorial shows an example of states that call
+  directly into the actionlib interface.
+- **Tutorial Level:** BEGINNER
+
 All of the following examples can be ran without modification. They can
 be found in the [smach_tutorials](smach_tutorials) package in the
 *examples* directory. The comments at the head of each file show roughly
@@ -1121,6 +1188,12 @@ what the output from running the script should look like.
 ```
 
 ## StateMachine container
+
+- **Description:** This tutorial teaches you how to use the
+  !StateMachine container.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Concurrence container](#concurrence-container)
 
 ### Creating a State Machine
 
@@ -1198,6 +1271,13 @@ For more details on remapping, take a look at
 [User Data](#passing-user-data-between-states)
 
 ## Concurrence container
+
+- **Description:** This tutorial teaches you how to use the Concurrence
+  container.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Sequence container](#sequence-container)
+  
 
 ```python
 from smach import Concurrence
@@ -1304,6 +1384,12 @@ with sm:
 
 ## Sequence container
 
+- **Description:** This tutorial teaches you how to use the Sequence
+  container.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Iterator container](#iterator-container)
+
 The Sequence container is a
 [StateMachine container](#statemachine-container),
 extended with auto-generated transitions that create a sequence of
@@ -1365,6 +1451,12 @@ with sq:
 ```
 
 ## Iterator container
+
+- **Description:** This tutorial teaches you how to use the Iterator
+  container.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Wrapping a SMACH container with actionlib](#wrapping-a-container-with-actionlib)
 
 ### Overview
 
@@ -1588,6 +1680,10 @@ $ python ./iterator_tutorial.py
 
 ## Wrapping a Container With actionlib
 
+- **Description:** This tutorial explains how to serve out a SMACH plan
+  as an action over [actionlib](https://index.ros.org/p/actionlib).
+- **Tutorial Level:** INTERMEDIATE
+
 ### Wrapping a SMACH State
 
 SMACH provides the top-level container called !ActionServerWrapper. This
@@ -1688,6 +1784,14 @@ to *sm*. For more goal/result policies, see the
 
 ## Generic State
 
+- **Description:** This tutorial show how to implement a generic SMACH
+  State
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [CB State](#cbstate)
+
+
+
 ```python
 from smach import State
 ```
@@ -1723,6 +1827,13 @@ Some good code practices:
   another component to come up, do this in a separate thread
 
 ## CBState
+
+- **Description:** This tutorial gives an example of how to use CBState,
+  a state that simply executes a callback when it is active.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Simple Action State](#simpleactionstate-ros)
+  
 
 ```python
 from smach import CBState
@@ -1769,6 +1880,13 @@ with sm:
 ```
 
 ## SimpleActionState (ROS)
+
+- **Description:** This tutorial show how to use the !SimpleActionState
+  to directly call an action interface using SMACH
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [ServiceState](#servicestate-ros)
+  
 
 ```python
 from smach_ros import SimpleActionState
@@ -1961,6 +2079,14 @@ decorator.
 
 ## ServiceState (ROS)
 
+- **Description:** This tutorial shows how to represent the execution of
+  a service as a SMACH state.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Monitor State](#monitorstate-ros)
+
+
+
 ```python
 from smach_ros import ServiceState
 ```
@@ -2076,6 +2202,11 @@ decorator.
 
 ## MonitorState (ROS)
 
+- **Description:** Monitor a state!
+- **Tutorial Level:** INTERMEDIATE
+
+
+
 ```wiki
 NB - This is just what I coded up while trying to understand the MonitorState. Please don't take it for best practices or anything, until JonBohren or somebody with more experience takes a look at it.
 -LauraLindzey
@@ -2181,6 +2312,14 @@ called before the MonitorState will return 'valid'.
 
 ## StateMachinePreemption
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [monitor state](ROS/Tutorials/MonitorState).
+- **Description:** Example of a state machine that implements
+  preemption, using a concurrence container and monitor state.
+- **Tutorial Level:** ADVANCED
+
+
+
 ```wiki
 NB - This is just what I coded up while trying to understand how to add preemption into a state machine. Please don't take it for best practices or anything, until JonBohren or somebody with more experience takes a look at it.
 -LauraLindzey
@@ -2193,7 +2332,7 @@ NB - This is just what I coded up while trying to understand how to add preempti
 The goal here is to have a state within a state machine that terminates
 either after a calculation has been finished OR after a particular
 condition has been met. We use a
-[ concurrence container](http://www.ros.org/wiki/smach/Tutorials/Concurrence%20container )
+[concurrence container](http://www.ros.org/wiki/smach/Tutorials/Concurrence%20container)
 to join together a
 [simple state that implements preemption](http://www.ros.org/wiki/smach/Tutorials/State%20Preemption%20Implementation)and
 a [monitor state](http://ros.org/wiki/smach/Tutorials/MonitorState). The
@@ -2293,6 +2432,10 @@ if __name__=="__main__":
 
 ## State Preemption Implementation
 
+- **Description:** This tutorial shows how to implement simple
+  flag-based preemption in SMACH states.
+- **Tutorial Level:** ADVANCED
+
 Sometimes, no state or container type will not satisfy your needs.
 Before you decide this, make sure you have examined all the provided
 state and container types. There are three key features that need to be
@@ -2382,7 +2525,19 @@ processes to preempt.
 
 ## Writing Custom Container Classes
 
+- **Description:** Most tasks can be performed without writing new types
+  of container classes, but this tutorial explains how to write a new
+  one.
+- **Tutorial Level:** ADVANCED
+
 ## Writing Custom State Classes with User-defined Callbacks
+
+- **Description:** Sometimes you want to create a state class like
+  smach.!SimpleActionState which receives user callbacks as arguments.
+  If these callbacks change the SMACH interface of a state (outcomes,
+  userdata keys), then the callbacks need to be annotated with this
+  information.
+- **Tutorial Level:** ADVANCED
 
 SMACH provides a decorator which can attach a SMACH interface to a
 function. This includes user data input keys, output keys, and state

@@ -31,22 +31,17 @@ but i hope delay option does same thing.
 
 ## Node
 
+### shm_driver
 
+This node sends time from topic to time server.
 
-```clearsilver
-node.0 {
- name= shm_driver
- desc= This node sends time from topic to time server.
- sub {
-  0.name= ~time_ref
-  0.type= sensor_msgs/TimeReference
-  0.desc= Time source topic.
- }
- param {
-  0.name= ~shm_unit
-  0.type= int
-  0.desc= SHM Unit (must be same as in time server config).
-  0.default= 2
- }
-}
-```
+#### Subscribed Topics
+
+- `~time_ref`
+  ([sensor_msgs/msg/TimeReference](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/TimeReference.html)):
+  Time source topic.
+
+#### Parameters
+
+- `~shm_unit` (`int`, default: `2`): SHM Unit (must be same as in time
+  server config).

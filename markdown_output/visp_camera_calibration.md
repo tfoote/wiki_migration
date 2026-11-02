@@ -129,141 +129,134 @@ images and is configured as follows:
 
 ## ROS API
 
+### visp_camera_calibration_image_processing
 
+The image processing module subscribes to the image feed from a camera,
+displays it to the user in order to select the (four) points used to
+initialise the image processing. Then, it processes the images to
+extract every possible keypoint. Finally it publishes the processed data
+to a calibrator topic.
 
-```clearsilver
-name = visp_camera_calibration_image_processing
-desc = The image processing module subscribes to the image feed from a camera, displays it to the user in order to select the (four) points used to initialise the image processing. Then, it processes the images to extract every possible keypoint. Finally it publishes the processed data to a calibrator topic.
+#### Subscribed Topics
 
-sub {
-  0.name = image
-  0.type = sensor_msgs/Image
-  0.desc = raw image topic, feed from camera
-}
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  raw image topic, feed from camera
 
-pub {
-  0.name = point_correspondence
-  0.type = visp_camera_calibration/CalibPointArray
-  0.desc = array of 2D/3D point pairs used to calibrate the camera
-}
+#### Published Topics
 
-param {
-  group.0 {
-    0.name = gray_level_precision
-    0.type = double
-    0.desc = Gray level precision used to detect the dot boundaries in ]0, 1]. 1 means full precision, whereas values close to 0 show a very bad accuracy.
-    0.default = 0.7
-  }
-  group.1 {
-    1.name = size_precision
-    1.type = double
-    1.desc = Size precision of the dot in ]0, 1]. Used to test the validity of the dots that are detected in the image. 1 means that all the dots should have the same size, whereas values close to 0 allows variation in the dot size. To desactivate validity test set size_precision to 0.
-    1.default = 0.5
-  }
-  group.2 {
-    2.name = pause_at_each_frame
-    2.type = bool
-    2.desc = If True, pauses the interface each time a new frame is recieved. Consequently, the user selects points at each frame. You should set this to True only with the experimental camera shipped with the package.
-    2.default = False
-  }
+- `point_correspondence`
+  ([visp_camera_calibration/msg/CalibPointArray](https://docs.ros.org/en/rolling/p/visp_camera_calibration/msg/CalibPointArray.html)):
+  array of 2D/3D point pairs used to calibrate the camera
 
-  group.3 {
-    3.name = model_points_x
-    3.type = array
-    3.desc = List of x coordinates of the model points.
-  }
+#### Parameters
 
+- `gray_level_precision` (`double`, default: `0.7`): Gray level
+  precision used to detect the dot boundaries in \]0, 1\]. 1 means full
+  precision, whereas values close to 0 show a very bad accuracy.
 
-  group.4 {
-    4.name = model_points_y
-    4.type = array
-    4.desc = List of y coordinates of the model points.
-  }
+<!-- -->
 
+- `size_precision` (`double`, default: `0.5`): Size precision of the dot
+  in \]0, 1\]. Used to test the validity of the dots that are detected
+  in the image. 1 means that all the dots should have the same size,
+  whereas values close to 0 allows variation in the dot size. To
+  desactivate validity test set size_precision to 0.
 
-  group.5 {
-    5.name = model_points_z
-    5.type = array
-    5.desc = List of z coordinates of the model points.
-  }
+<!-- -->
 
-  group.6 {
-    6.name = selected_points_x
-    6.type = array
-    6.desc = List of x coordinates of model 3D points corresponding to the user-selected points.
-  }
+- `pause_at_each_frame` (`bool`, default: `False`): If True, pauses the
+  interface each time a new frame is recieved. Consequently, the user
+  selects points at each frame. You should set this to True only with
+  the experimental camera shipped with the package.
 
+<!-- -->
 
-  group.7 {
-    7.name = selected_points_y
-    7.type = array
-    7.desc = List of y coordinates of model 3D points corresponding to the user-selected points.
-  }
+- `model_points_x` (`array`): List of x coordinates of the model points.
 
+<!-- -->
 
-  group.8 {
-    8.name = selected_points_z
-    8.type = array
-    8.desc = List of z coordinates of model 3D points corresponding to the user-selected points.
-  }
+- `model_points_y` (`array`): List of y coordinates of the model points.
 
-  group.9 {
-    9.name = calibration_path
-    9.type = string
-    9.desc = Location of the ini file to write calibration configuration into.
-  }
-}
-```
+<!-- -->
 
+- `model_points_z` (`array`): List of z coordinates of the model points.
 
+<!-- -->
 
+- `selected_points_x` (`array`): List of x coordinates of model 3D
+  points corresponding to the user-selected points.
 
+<!-- -->
 
-```clearsilver
-name = visp_camera_calibration_calibrator
-desc = This node computes the camera calibration parameters and calls the <<SrvLink(sensor_msgs/SetCameraInfo)>> service on the current camera. It produces a calibration.ini file that will be in your $HOME/.ros directory.
+- `selected_points_y` (`array`): List of y coordinates of model 3D
+  points corresponding to the user-selected points.
 
-sub {
-  0.name = point_correspondence
-  0.type = visp_camera_calibration/CalibPointArray
-  0.desc = array of 2D/3D point pairs used to calibrate the camera
-}
+<!-- -->
 
-pub {
-  0.name = point_correspondence
-  0.type = visp_camera_calibration/CalibPointArray
-  0.desc = array of 2D/3D point pairs used to calibrate the camera
-}
+- `selected_points_z` (`array`): List of z coordinates of model 3D
+  points corresponding to the user-selected points.
 
-srv_called {
-  0.name = set_camera_info
-  0.type = sensor_msgs/SetCameraInfo
-  0.desc = Sets the camera info.
-}
-```
+<!-- -->
 
+- `calibration_path` (`string`): Location of the ini file to write
+  calibration configuration into.
 
+### visp_camera_calibration_calibrator
 
+This node computes the camera calibration parameters and calls the
+[sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)
+service on the current camera. It produces a calibration.ini file that
+will be in your \$HOME/.ros directory.
 
+#### Subscribed Topics
 
-```clearsilver
-name = visp_camera_calibration_camera
-desc = This is an experimental camera node used for test purposes.
+- `point_correspondence`
+  ([visp_camera_calibration/msg/CalibPointArray](https://docs.ros.org/en/rolling/p/visp_camera_calibration/msg/CalibPointArray.html)):
+  array of 2D/3D point pairs used to calibrate the camera
 
-pub {
-  0.name = image
-  0.type = sensor_msgs/Image
-  0.desc = raw image topic, feed from camera
-}
+#### Published Topics
 
-srv_called {
-  0.name = calibrate
-  0.type = visp_camera_calibration/calibrate
-  0.desc = Get the camera parameters according to the chosen camera model, with or without distorsion and the size of the images.
-}
-```
+- `point_correspondence`
+  ([visp_camera_calibration/msg/CalibPointArray](https://docs.ros.org/en/rolling/p/visp_camera_calibration/msg/CalibPointArray.html)):
+  array of 2D/3D point pairs used to calibrate the camera
+
+#### Services Called
+
+- `set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)):
+  Sets the camera info.
+
+### visp_camera_calibration_camera
+
+This is an experimental camera node used for test purposes.
+
+#### Published Topics
+
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  raw image topic, feed from camera
+
+#### Services Called
+
+- `calibrate`
+  ([visp_camera_calibration/srv/calibrate](https://docs.ros.org/en/rolling/p/visp_camera_calibration/srv/calibrate.html)):
+  Get the camera parameters according to the chosen camera model, with
+  or without distorsion and the size of the images.
 
 ## Running a calibration using visp_camera_calibration's experimental camera
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Using roslaunch and rxconsole](ROS/Tutorials/UsingRxconsoleRoslaunch).
+- **Description:** This tutorial explains how to calibrate a camera
+  using the experimantal camera shipped with visp_camera_calibration.
+  You don't need to own any external camera nor do you need a pattern.
+  It is a good first step towards using the package.
+- **Keywords:** camera calibration visp
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Calibration of an external camera using the ViSP library](#calibration-of-an-external-camera-using-the-visp-library)
 
 ### Compiling
 
@@ -419,6 +412,13 @@ roslaunch visp_camera_calibration lagadic_grid.launch calibration_path:="/path/t
 ```
 
 ## Calibration of an external camera using the ViSP library
+
+- **Description:** This tutorials is a step by step guide which shows
+  how to define your calibration pattern, model. Then it discusses
+  camera calibration using the ViSP library. Finally, it will briefly
+  walk you through the calibration results.
+- **Keywords:** visp camera calibration
+- **Tutorial Level:** INTERMEDIATE
 
 ### Before starting
 

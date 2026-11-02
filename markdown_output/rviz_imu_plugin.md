@@ -10,8 +10,8 @@ It displays the orientation of the IMU using a box as well as and
 coordinate axes. The acceleration can be visualized using a vector.
 
 The package has been
-[ ticketed](https://code.ros.org/trac/ros-pkg/ticket/5476 ) for
-inclusion in ROS.
+[ticketed](https://code.ros.org/trac/ros-pkg/ticket/5476) for inclusion
+in ROS.
 
 ![attachment:rviz_imu_plugin.png](doc/rviz_imu_plugin.png)
 

@@ -71,196 +71,131 @@ and its initial pose. It also provides the pose covariance.
 
 Note: data is only published if there is at least one listener.
 
+### tracker
 
+Main tracking node.
 
-```clearsilver
-name = tracker
-desc = Main tracking node.
+#### Subscribed Topics
 
-sub {
-  0.name = ~camera_prefix/camera_info
-  0.type = sensor_msgs/CameraInfo
-  0.desc = Camera calibration information, see the camera_calibration package for more details.
+- `~camera_prefix/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera calibration information, see the camera_calibration package for
+  more details.
+- `~camera_prefix/image_rect`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Rectified image, see the camera_calibration package for more details.
+- `object_position_hint`
+  ([geometry_msgs/msg/TransformStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TransformStamped.html)):
+  Estimation of the tracked object position. This is optional and allows
+  automatic tracker restart if the tracking fails.
 
-  1.name = ~camera_prefix/image_rect
-  1.type = sensor_msgs/Image
-  1.desc = Rectified image, see the camera_calibration package for more details.
+#### Published Topics
 
-  2.name = object_position_hint
-  2.type = geometry_msgs/TransformStamped
-  2.desc = Estimation of the tracked object position. This is optional and allows automatic tracker restart if the tracking fails.
-}
+- `object_position`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  Tracking object pose (stamped).
+- `object_position_covariance`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  Tracking object pose with its associated covariance (stamped). You may
+  want to use [rviz_plugin_covariance](rviz_plugin_covariance) to
+  display this datatype in rviz (Fuerte+).
+- `moving_edge_sites`
+  ([visp_tracker/msg/MovingEdgeSites](https://docs.ros.org/en/rolling/p/visp_tracker/msg/MovingEdgeSites.html)):
+  Moving edge sites information (stamped). For debugging/monitoring
+  purpose.
+- `klt_points_positions`
+  ([visp_tracker/msg/KltPoints](https://docs.ros.org/en/rolling/p/visp_tracker/msg/KltPoints.html)):
+  Position and id of the keypoints (stamped). For debugging/monitoring
+  purpose.
 
-pub {
-  0.name = object_position
-  0.type = geometry_msgs/PoseStamped
-  0.desc = Tracking object pose (stamped).
+#### Services
 
-  1.name = object_position_covariance
-  1.type = geometry_msgs/PoseWithCovarianceStamped
-  1.desc = Tracking object pose with its associated covariance (stamped). You may want to use [[rviz_plugin_covariance]] to display this datatype in rviz (Fuerte+).
+- `init_tracker`
+  ([visp_tracker/srv/Init](https://docs.ros.org/en/rolling/p/visp_tracker/srv/Init.html)):
+  Initialize the tracking by providing the model name, model path,
+  initial object pose and moving edge settings.
+- `tracking_meta_data`
+  ([visp_tracker/srv/TrackingMetaData](https://docs.ros.org/en/rolling/p/visp_tracker/srv/TrackingMetaData.html)):
+  Provides the current camera prefix, model name and model path.
 
-  2.name = moving_edge_sites
-  2.type = visp_tracker/MovingEdgeSites
-  2.desc = Moving edge sites information (stamped). For debugging/monitoring purpose.
+#### Parameters
 
-  3.name = klt_points_positions
-  3.type = visp_tracker/KltPoints
-  3.desc = Position and id of the keypoints (stamped). For debugging/monitoring purpose.
-}
+- `~camera_prefix` (`std_msgs/String`): Camera topics namespace
+  ('image_rect' and 'camera_info' topics must be published in this
+  namespace)
+- `~first_threshold` (`float64`): What proportion of points should be
+  valid to acccept an initial pose.
+- `~lambda` (`float64`): Gain used to compute the control law.
+- `~mask_size` (`int64`): Mask size (in pixel) used to compute the image
+  gradient and determine the object contour.
+- `~min_samplestep` (`float64`): Minimum allowed samplestep. Useful to
+  specify a lower bound when the samplestep is changed.
+- `~model_name` (`std_msgs/String`): Model name (without the `.wrl`
+  filename extension)
+- `~model_path` (`std_msgs/String`): Model database path. Uses the
+  [resource_retriever](https://index.ros.org/p/resource_retriever)
+  syntax to fetch remote models (i.e. `package:*`, `http:*`, etc.)
+- `~mu1` (`float64`): Minimum image contrast allowed to detect a
+  contour.
+- `~mu2` (`float64`): Maximum image contrast allowed to detect a
+  contour.
+- `~n_mask` (`int64`): Number of masks applied to determine the object
+  contour.
+- `~n_total_sample` (`int64`): How many discretization points are used
+  to track the feature.
+- `~range` (`int64`): Maximum seek distance on both sides of the
+  reference pixel.
+- `~sample_step` (`int64`): Minimum distance in pixel between two
+  discretization points.
+- `~strip` (`int64`): How many pixels are ignored around the borders.
+- `~threshold` (`float64`): Value used to determine if a moving edge is
+  valid or not.
+- `~aberration` (`float64`): Ignored.
+- `~init_aberration` (`float64`): Ignored.
+- `~compensate_robot_motion` (`bool`, default: `false`): If set to true,
+  the robot movement will be used to help reliable tracking
+  (experimental). For this feature to work, tf must provide the
+  transformation between the world frame id and the camera.
+- `~world_frame_id` (`string`, default: `/odom`): World frame name (see
+  `compensate_robot_motion`).
 
-param {
-  0.name = ~camera_prefix
-  0.type = std_msgs/String
-  0.desc = Camera topics namespace ('image_rect' and 'camera_info' topics must be published in this namespace)
+#### Required tf Transforms
 
-  1.name = ~first_threshold
-  1.type = float64
-  1.desc = What proportion of points should be valid to acccept an initial pose.
+- `~world_frame_id` → `<camera frame>`: Robot movement (optional, see
+  `compensate_robot_motion`).
 
-  2.name = ~lambda
-  2.type = float64
-  2.desc = Gain used to compute the control law.
+#### Provided tf Transforms
 
-  3.name = ~mask_size
-  3.type = int64
-  3.desc = Mask size (in pixel) used to compute the image gradient and determine the object contour.
+- `<camera frame>` → `visp_tracker`: Object position w.r.t. the camera.
 
-  4.name = ~min_samplestep
-  4.type = float64
-  4.desc = Minimum allowed samplestep. Useful to specify a lower bound when the samplestep is changed.
+### client
 
-  5.name = ~model_name
-  5.type = std_msgs/String
-  5.desc = Model name (without the `.wrl` filename extension)
+Command line tool used to decide which object to track and what is its
+initial pose.
 
-  6.name = ~model_path
-  6.type = std_msgs/String
-  6.desc = Model database path. Uses the [[resource_retriever]] syntax to fetch remote models (i.e. `package://`, `http://`, etc.)
+#### Parameters
 
-  7.name = ~mu1
-  7.type = float64
-  7.desc = Minimum image contrast allowed to detect a contour.
+- `~camera_prefix` (`std_msgs/String`): Camera topics namespace
+  ('image_rect' and 'camera_info' topics must be published in this
+  namespace)
+- `~tracker_prefix` (`std_msgs/String`, default: `tracker_mbt`):
+  Namespace in which the tracker has been launched.
+- `~model_path` (`std_msgs/String`, default:
+  `$(find visp_tracker)/models`): Model location on the filesystem.
+- `~model_name` (`std_msgs/String`): Model name. **This parameter is
+  mandatory when launching the client.**
 
-  8.name = ~mu2
-  8.type = float64
-  8.desc = Maximum image contrast allowed to detect a contour.
+### viewer
 
-  9.name = ~n_mask
-  9.type = int64
-  9.desc = Number of masks applied to determine the object contour.
+Monitoring tool.
 
-  10.name = ~n_total_sample
-  10.type = int64
-  10.desc = How many discretization points are used to track the feature.
+#### Parameters
 
-  11.name = ~range
-  11.type = int64
-  11.desc = Maximum seek distance on both sides of the reference pixel.
-
-  12.name = ~sample_step
-  12.type = int64
-  12.desc = Minimum distance in pixel between two discretization points.
-
-  13.name = ~strip
-  13.type = int64
-  13.desc = How many pixels are ignored around the borders.
-
-  14.name = ~threshold
-  14.type = float64
-  14.desc = Value used to determine if a moving edge is valid or not.
-
-  15.name = ~aberration
-  15.type = float64
-  15.desc = Ignored.
-
-  16.name = ~init_aberration
-  16.type = float64
-  16.desc = Ignored.
-
-  17.name = ~compensate_robot_motion
-  17.type = bool
-  17.desc = If set to true, the robot movement will be used to help reliable tracking (experimental). For this feature to work, tf must provide the transformation between the world frame id and the camera.
-  17.default = false
-
-  18.name = ~world_frame_id
-  18.type = string
-  18.desc = World frame name (see `~compensate_robot_motion`).
-  18.default = /odom
-}
-
-srv {
-  0.name = init_tracker
-  0.type = visp_tracker/Init
-  0.desc = Initialize the tracking by providing the model name, model path, initial object pose and moving edge settings.
-
-  1.name = tracking_meta_data
-  1.type = visp_tracker/TrackingMetaData
-  1.desc = Provides the current camera prefix, model name and model path.
-}
-
-prov_tf {
-  0.from = <camera frame>
-  0.to   = visp_tracker
-  0.desc = Object position w.r.t. the camera.
-}
-
-req_tf {
-  0.from = ~world_frame_id
-  0.to   = <camera frame>
-  0.desc = Robot movement (optional, see `~compensate_robot_motion`).
-}
-```
-
-
-
-
-
-```clearsilver
-name = client
-desc = Command line tool used to decide which object to track and what is its initial pose.
-param {
-  0.name = ~camera_prefix
-  0.type = std_msgs/String
-  0.desc = Camera topics namespace ('image_rect' and 'camera_info' topics must be published in this namespace)
-
-  1.name = ~tracker_prefix
-  1.type = std_msgs/String
-  1.desc = Namespace in which the tracker has been launched.
-  1.default = tracker_mbt
-
-  2.name = ~model_path
-  2.type = std_msgs/String
-  2.desc = Model location on the filesystem.
-  2.default = $(find visp_tracker)/models
-
-  3.name = ~model_name
-  3.type = std_msgs/String
-  3.desc = Model name. '''This parameter is mandatory when launching the client.'''
-}
-```
-
-
-
-
-
-```clearsilver
-name = viewer
-desc = Monitoring tool.
-param {
-  0.name = ~tracker_prefix
-  0.type = std_msgs/String
-  0.desc = Namespace in which the tracker has been launched.
-  0.default = /tracker_mbt
-
-  1.name = ~image_transport
-  1.type = string
-  1.desc = [[image_transport]] plug-in to be used.
-  1.default = raw
-}
-```
-
-
+- `~tracker_prefix` (`std_msgs/String`, default: `/tracker_mbt`):
+  Namespace in which the tracker has been launched.
+- `~image_transport` (`string`, default: `raw`):
+  [image_transport](https://index.ros.org/p/image_transport) plug-in to
+  be used.
 
 ## Nodelets
 
@@ -424,6 +359,9 @@ algorithm will fail.
 
 ## Fine tuning of the tracking parameters
 
+- **Description:** Modifying offline and online the tracking parameters.
+- **Tutorial Level:** INTERMEDIATE
+
 ### Parameters description
 
 The most important parameters for the tracking are the moving edge
@@ -470,6 +408,13 @@ rosrun dynamic_reconfigure reconfigure_gui /tracker_mbt
 ![Tracker node reconfigure GUI](doc/visp-tracker-reconfigure-gui.png)
 
 ## Getting started with the ViSP moving edge tracker
+
+- **Note:** Start here if you want to learn how to track an object.
+- **Description:** How to track an object using a recorded video
+  sequence.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Tracking your own model](#tracking-your-own-model)
 
 ### Starting the video sequence
 
@@ -561,6 +506,11 @@ rosrun rqt_reconfigure rqt_reconfigure /tracker_mbt
 ```
 
 ## Tracking your own model
+
+- **Description:** How to track a custom object.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Fine tuning of the tracking parameters](#fine-tuning-of-the-tracking-parameters)
 
 If you are not familiar with ViSP model-based tracker, follow first the
 ViSP

@@ -11,64 +11,56 @@ power board temperature.
 
 ## Nodes
 
+### power_node2
 
+#### Subscribed Topics
 
-```clearsilver
-name = power_node2
-pub {
-  0.name= /diagnostics
-  0.type= diagnostics_msgs/DiagnosticArray
-  0.desc= Diagnostic information
-  1.name= ~state
-  1.type= pr2_msgs/PowerBoardState
-  1.desc= Power board state
-}
-sub {
-  0.name = battery/server2
-  0.type = pr2_msgs/BatteryServer2
-  0.desc = Battery data, for temperatures
-}
-srv {
-  0.name= ~control2
-  0.type= pr2_power_board/PowerBoardCommand2
-  0.desc= Send a command to the power board
-  1.name= ~control
-  1.type= pr2_power_board/PowerBoardCommand
-  1.desc= Send a command to the power board (DEPRECATED)
-}
-param {
-  0.name= ~sample_frequency
-  0.type= float
-  0.default= 10.0
-  0.desc= Sampling frequency
-  1.name= ~transition_frequency
-  1.type= float
-  1.default= 0.1
-  1.desc= Transition frequency
-}
-```
+- `battery/server2`
+  ([pr2_msgs/msg/BatteryServer2](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/BatteryServer2.html)):
+  Battery data, for temperatures
 
+#### Published Topics
 
+- `/diagnostics`
+  ([diagnostics_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostics_msgs/msg/DiagnosticArray.html)):
+  Diagnostic information
+- `~state`
+  ([pr2_msgs/msg/PowerBoardState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PowerBoardState.html)):
+  Power board state
 
+#### Services
 
+- `~control2`
+  ([pr2_power_board/srv/PowerBoardCommand2](https://docs.ros.org/en/rolling/p/pr2_power_board/srv/PowerBoardCommand2.html)):
+  Send a command to the power board
+- `~control`
+  ([pr2_power_board/srv/PowerBoardCommand](https://docs.ros.org/en/rolling/p/pr2_power_board/srv/PowerBoardCommand.html)):
+  Send a command to the power board (DEPRECATED)
 
-```clearsilver
-name = power_node
-desc = Deprecated node for controller Rev. A and B power boards.
-pub {
-  0.name= /diagnostics
-  0.type= diagnostics_msgs/DiagnosticArray
-  0.desc= Diagnostic information
-  1.name= ~state
-  1.type= pr2_msgs/PowerBoardState
-  1.desc= Power board state
-}
-srv {
-  1.name= ~control
-  1.type= pr2_power_board/PowerBoardCommand
-  1.desc= Send a command to the power board
-}
-```
+#### Parameters
+
+- `~sample_frequency` (`float`, default: `10.0`): Sampling frequency
+- `~transition_frequency` (`float`, default: `0.1`): Transition
+  frequency
+
+### power_node
+
+Deprecated node for controller Rev. A and B power boards.
+
+#### Published Topics
+
+- `/diagnostics`
+  ([diagnostics_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostics_msgs/msg/DiagnosticArray.html)):
+  Diagnostic information
+- `~state`
+  ([pr2_msgs/msg/PowerBoardState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PowerBoardState.html)):
+  Power board state
+
+#### Services
+
+- `~control`
+  ([pr2_power_board/srv/PowerBoardCommand](https://docs.ros.org/en/rolling/p/pr2_power_board/srv/PowerBoardCommand.html)):
+  Send a command to the power board
 
 ## Troubleshooting
 
@@ -135,7 +127,7 @@ rosnode list
 
  and see if pr2_power_board is running.
 - If it is not running:
-- [ Is your ROS_MASTER_URI pointing at the right place?](CommonTroubleshooting#head-284b2d1fa3bf38c9dfedeb10526297ba2963e541)
+- [Is your ROS_MASTER_URI pointing at the right place?](CommonTroubleshooting#head-284b2d1fa3bf38c9dfedeb10526297ba2963e541)
 - Can you run it manually? On the robot 
 
 ```

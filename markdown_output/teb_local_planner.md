@@ -76,61 +76,62 @@ video (supporting car-like robots and costmap conversion).
 
 ### Topics
 
+#### Published Topics
 
+- `~<name>/global_plan`
+  ([nav_msgs/msg/Path](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Path.html)):
+  Global plan that the local planner is currently attempting to follow.
+  Used primarily for visualization purposes.
+- `~<name>/local_plan`
+  ([nav_msgs/msg/Path](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Path.html)):
+  The local plan or trajectory that the teb_local_planner optimizes and
+  follows. Used primarily for visualization purposes.
+- `~<name>/teb_poses`
+  ([geometry_msgs/msg/PoseArray](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseArray.html)):
+  The discrete pose list (SE2) of the current local plan. Used primarily
+  for visualization purposes.
+- `~<name>/teb_markers`
+  ([visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)):
+  The teb_local_planner provides additional information of the planning
+  scene via markers with different namespaces. Namespaces
+  *PointObstacles* and *PolyObstacles*: visualize all point and polygon
+  obstacles that are currently considered during optimization. Namespace
+  *TebContainer*: Visualize all found and optimized trajectories that
+  rest in alternative topologies (only if parallel planning is enabled).
+  Some more information is published such as the optimization footprint
+  model.
+- `~<name>/teb_feedback`
+  ([teb_local_planner/msg/FeedbackMsg](https://docs.ros.org/en/rolling/p/teb_local_planner/msg/FeedbackMsg.html)):
+  The feedback message contains the planned trajectory including the
+  velocity profile and temporal information as well as the obstacle
+  list. Used primarily for evaluation and debugging. Parameter
+  `<name>/publish_feedback` must be enabled.
 
-```clearsilver
-pub {
-  0.name = ~<name>/global_plan
-  0.type = nav_msgs/Path
-  0.desc = Global plan that the local planner is currently attempting to follow. Used primarily for visualization purposes.
-  1.name = ~<name>/local_plan
-  1.type = nav_msgs/Path
-  1.desc = The local plan or trajectory that the teb_local_planner optimizes and follows. Used primarily for visualization purposes.
-  2.name = ~<name>/teb_poses
-  2.type = geometry_msgs/PoseArray
-  2.desc = The discrete pose list (SE2) of the current local plan. Used primarily for visualization purposes.
-  3.name = ~<name>/teb_markers
-  3.type = visualization_msgs/Marker
-  3.desc = The teb_local_planner provides additional information of the planning scene via markers with different namespaces. Namespaces ''PointObstacles'' and ''PolyObstacles'': visualize all point and polygon obstacles that are currently considered during optimization. Namespace ''TebContainer'': Visualize all found and optimized trajectories that rest in alternative topologies (only if parallel planning is enabled). Some more information is published such as the optimization footprint model.
-  4.name = ~<name>/teb_feedback
-  4.type = teb_local_planner/FeedbackMsg
-  4.desc = The feedback message contains the planned trajectory including the velocity profile and temporal information as well as the obstacle list. Used primarily for evaluation and debugging. Parameter `~<name>/publish_feedback` must be enabled.
-}
-```
+#### Subscribed Topics
 
-
-
-
-
-```clearsilver
-sub {
-  0.name = ~<name>/odom
-  0.type = nav_msgs/Odometry
-  0.desc = Odometry information that gives the local planner the current speed of the robot. Change this topic by either remapping or by changing the parameter `~<name>/odom_topic`.
-  1.name = ~<name>/obstacles
-  1.type = costmap_converter/ObstacleArrayMsg
-  1.desc = Provide custom obstacles as point-, line- or polygon-shaped ones (additionally to or instead of the costmap obstacles).
-}
-```
-
-
+- `~<name>/odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  Odometry information that gives the local planner the current speed of
+  the robot. Change this topic by either remapping or by changing the
+  parameter `<name>/odom_topic`.
+- `~<name>/obstacles`
+  ([costmap_converter/msg/ObstacleArrayMsg](https://docs.ros.org/en/rolling/p/costmap_converter/msg/ObstacleArrayMsg.html)):
+  Provide custom obstacles as point-, line- or polygon-shaped ones
+  (additionally to or instead of the costmap obstacles).
 
 
 
 ```
 {#!wiki version kinetic_and_newer
 
-{{{
-#!clearsilver CS/NodeAPI
-sub {
-  no_header=True
-  0.name = ~<name>/via_points
-  0.type = nav_msgs/Path
-  0.desc = Provide custom via-points (you need to set `~<name>/global_plan_viapoint_sep` to zero or negative)
-}
+
+ * {{{~<name>/via_points
 ```
 
 
+([nav_msgs/msg/Path](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Path.html)):
+Provide custom via-points (you need to set
+`<name>/global_plan_viapoint_sep` to zero or negative)
 
 }}}}
 
@@ -148,59 +149,37 @@ them are chosen to be compliant with the
 
 #### Robot Configuration Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/acc_lim_x
-  0.default = 0.5
-  0.type = double
-  0.desc = Maximum translational acceleration of the robot in meters/sec^2  
-  1.name = ~<name>/acc_lim_theta
-  1.default = 0.5
-  1.type = double
-  1.desc = Maximum angular acceleration of the robot in radians/sec^2
-  2.name = ~<name>/max_vel_x
-  2.default = 0.4
-  2.type = double
-  2.desc = Maximum translational velocity of the robot in meters/sec
-  3.name = ~<name>/max_vel_x_backwards
-  3.default =  0.2
-  3.type = double
-  3.desc = Maximum absolute translational velocity of the robot while driving backwards in meters/sec. See optimization parameter `weight_kinematics_forward_drive`
-  4.name = ~<name>/max_vel_theta
-  4.default = 0.3
-  4.type = double
-  4.desc = Maximum angular velocity of the robot in radians/sec
-}
-```
-
-
+- `~<name>/acc_lim_x` (`double`, default: `0.5`): Maximum translational
+  acceleration of the robot in meters/sec\^2
+- `~<name>/acc_lim_theta` (`double`, default: `0.5`): Maximum angular
+  acceleration of the robot in radians/sec\^2
+- `~<name>/max_vel_x` (`double`, default: `0.4`): Maximum translational
+  velocity of the robot in meters/sec
+- `~<name>/max_vel_x_backwards` (`double`, default: `0.2`): Maximum
+  absolute translational velocity of the robot while driving backwards
+  in meters/sec. See optimization parameter
+  `weight_kinematics_forward_drive`
+- `~<name>/max_vel_theta` (`double`, default: `0.3`): Maximum angular
+  velocity of the robot in radians/sec
 
 The following parameters are relevant only for carlike robots:
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/min_turning_radius
-  0.default = 0.0
-  0.type = double
-  0.desc = Minimum turning radius of a carlike robot (set to zero for a diff-drive robot).
-  1.name = ~<name>/wheelbase
-  1.default = 1.0
-  1.type = double
-  1.desc = The distance between the rear axle and the front axle. The value might be negative for back-wheeled robots (only required if `~<name>/cmd_angle_instead_rotvel`is set to `true`). 
-  2.name = ~<name>/cmd_angle_instead_rotvel
-  2.default = false
-  2.type = bool
-  2.desc = Substitute the rotational velocity in the commanded velocity message by the corresponding steering angle [-pi/2,pi/2]. ''Note, changing the semantics of yaw rate depending on the application is not preferable. Here, it just complies with the inputs required by the stage simulator. Datatypes in [[ackermann_msgs]] are more appropriate, but are not supported by move_base. The local planner is not intended to send commands by itself. '' 
-}
-```
-
-
+- `~<name>/min_turning_radius` (`double`, default: `0.0`): Minimum
+  turning radius of a carlike robot (set to zero for a diff-drive
+  robot).
+- `~<name>/wheelbase` (`double`, default: `1.0`): The distance between
+  the rear axle and the front axle. The value might be negative for
+  back-wheeled robots (only required if
+  `<name>/cmd_angle_instead_rotvel`is set to `true`).
+- `~<name>/cmd_angle_instead_rotvel` (`bool`, default: `false`):
+  Substitute the rotational velocity in the commanded velocity message
+  by the corresponding steering angle \[-pi/2,pi/2\]. *Note, changing
+  the semantics of yaw rate depending on the application is not
+  preferable. Here, it just complies with the inputs required by the
+  stage simulator. Datatypes in
+  [ackermann_msgs](https://index.ros.org/p/ackermann_msgs) are more
+  appropriate, but are not supported by move_base. The local planner is
+  not intended to send commands by itself.*
 
 
 
@@ -211,22 +190,15 @@ The following parameters are relevant only for holonomic robots: <<Version(ROS k
 
 '''Note''', reduce `~<name>/weight_kinematics_nh` significantly in order to adjust the tradeoff between compliant longitudinal motion and non-compliant lateral motion (strafing). 
 
-{{{
-#!clearsilver CS/NodeAPI
-param{
-  no_header=True
-  0.name = ~<name>/max_vel_y
-  0.default = 0.0
-  0.type = double
-  0.desc = Maximum strafing velocity of the robot (should be zero for non-holonomic robots!)
-  1.name = ~<name>/acc_lim_y
-  1.default = 0.5
-  1.type = double
-  1.desc = Maximum strafing acceleration of the robot 
-}
+
+ * {{{~<name>/max_vel_y
 ```
 
+ (`double`, default: `0.0`): Maximum strafing
+velocity of the robot (should be zero for non-holonomic robots!)
 
+- `~<name>/acc_lim_y` (`double`, default: `0.5`): Maximum strafing
+  acceleration of the robot
 
 }}}}
 
@@ -235,221 +207,187 @@ optimization (see
 [Tutorial Obstacle Avoidance and Robot Footprint Model](#obstacle-avoidance-and-robot-footprint-model)).
 **New in version 0.3**
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/footprint_model/type
-  0.default = "point"
-  0.type = string
-  0.desc = Specify the robot footprint model type used for optimization. Different types are "point", "circular", "line", "two_circles" and "polygon." The type of the model significantly influences the required computation time. 
-  1.name = ~<name>/footprint_model/radius
-  1.default = 0.2
-  1.type = double
-  1.desc = This parameter is only relevant for type "circular". It contains the radius of the circle. The center of the circle is located at the robot's axis of rotation.
-  2.name = ~<name>/footprint_model/line_start
-  2.default = [-0.3, 0.0]
-  2.type = double[2]
-  2.desc = This parameter is only relevant for type "line". It contains the start coordinates of the line segment.
-  3.name = ~<name>/footprint_model/line_end
-  3.default = [0.3, 0.0]
-  3.type = double[2]
-  3.desc = This parameter is only relevant for type "line". It contains the end coordinates of the line segment.
-  4.name = ~<name>/footprint_model/front_offset
-  4.default = 0.2
-  4.type = double
-  4.desc = This parameter is only relevant for type "two_circles". It describes how much the center of the front circle is shifted along the robot's x-axis. The robot's axis of rotation is assumed to be located at [0,0].
-  5.name = ~<name>/footprint_model/front_radius
-  5.default = 0.2
-  5.type = double
-  5.desc = This parameter is only relevant for type "two_circles". It contains the radius of front circle.
-  6.name = ~<name>/footprint_model/rear_offset
-  6.default = 0.2
-  6.type = double
-  6.desc = This parameter is only relevant for type "two_circles". It describes how much the center of the rear circle is shifted along the robot's negative x-axis. The robot's axis of rotation is assumed to be located at [0,0].
-  7.name = ~<name>/footprint_model/rear_radius
-  7.default = 0.2
-  7.type = double
-  7.desc = This parameter is only relevant for type "two_circles". It contains the radius of rear circle.
-  8.name = ~<name>/footprint_model/vertices
-  8.default = [ [0.25,-0.05], [...], ...]
-  8.type = double[]
-  8.desc = This parameter is only relevant for type "polygon". It contains the list of polygon vertices (2d coordinates each). The polygon is always closed: do not repeat the first vertex at the end.
-  9.name = ~<name>/is_footprint_dynamic
-  9.default = false
-  9.type = bool
-  9.desc = If true, updates the footprint before checking trajectory feasibility
-}
-```
-
-
+- `~<name>/footprint_model/type` (`string`, default: `"point"`): Specify
+  the robot footprint model type used for optimization. Different types
+  are "point", "circular", "line", "two_circles" and
+  "polygon." The type of the model significantly influences the
+  required computation time.
+- `~<name>/footprint_model/radius` (`double`, default: `0.2`): This
+  parameter is only relevant for type "circular". It contains the
+  radius of the circle. The center of the circle is located at the
+  robot's axis of rotation.
+- `~<name>/footprint_model/line_start` (`double[2]`, default:
+  `[-0.3, 0.0]`): This parameter is only relevant for type "line". It
+  contains the start coordinates of the line segment.
+- `~<name>/footprint_model/line_end` (`double[2]`, default:
+  `[0.3, 0.0]`): This parameter is only relevant for type "line". It
+  contains the end coordinates of the line segment.
+- `~<name>/footprint_model/front_offset` (`double`, default: `0.2`):
+  This parameter is only relevant for type "two_circles". It describes
+  how much the center of the front circle is shifted along the robot's
+  x-axis. The robot's axis of rotation is assumed to be located at
+  \[0,0\].
+- `~<name>/footprint_model/front_radius` (`double`, default: `0.2`):
+  This parameter is only relevant for type "two_circles". It contains
+  the radius of front circle.
+- `~<name>/footprint_model/rear_offset` (`double`, default: `0.2`): This
+  parameter is only relevant for type "two_circles". It describes how
+  much the center of the rear circle is shifted along the robot's
+  negative x-axis. The robot's axis of rotation is assumed to be
+  located at \[0,0\].
+- `~<name>/footprint_model/rear_radius` (`double`, default: `0.2`): This
+  parameter is only relevant for type "two_circles". It contains the
+  radius of rear circle.
+- `~<name>/footprint_model/vertices` (`double[]`, default:
+  `[ [0.25,-0.05], [...], ...]`): This parameter is only relevant for
+  type "polygon". It contains the list of polygon vertices (2d
+  coordinates each). The polygon is always closed: do not repeat the
+  first vertex at the end.
+- `~<name>/is_footprint_dynamic` (`bool`, default: `false`): If true,
+  updates the footprint before checking trajectory feasibility
 
 #### Goal Tolerance Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/xy_goal_tolerance
-  0.default = 0.2
-  0.type = double
-  0.desc = Allowed final euclidean distance to the goal position in meters
-  1.name = ~<name>/yaw_goal_tolerance
-  1.default = 0.2
-  1.type = double
-  1.desc = Allowed final orientation error in radians
-  2.name = ~<name>/free_goal_vel
-  2.default = false
-  2.type = bool
-  2.desc = Remove the goal velocity constraint such that the robot can arrive at the goal with maximum speed
-}
-```
-
-
+- `~<name>/xy_goal_tolerance` (`double`, default: `0.2`): Allowed final
+  euclidean distance to the goal position in meters
+- `~<name>/yaw_goal_tolerance` (`double`, default: `0.2`): Allowed final
+  orientation error in radians
+- `~<name>/free_goal_vel` (`bool`, default: `false`): Remove the goal
+  velocity constraint such that the robot can arrive at the goal with
+  maximum speed
 
 #### Trajectory Configuration Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/dt_ref
-  0.default = 0.3
-  0.type = double
-  0.desc = Desired temporal resolution of the trajectory (the trajectory is not fixed to `dt_ref` since the temporal resolution is part of the optimization, but the trajectory will be resized between iterations if ''dt_ref +-dt_hysteresis'' is violated.
-  1.name = ~<name>/dt_hysteresis
-  1.default = 0.1
-  1.type = double
-  1.desc = Hysteresis for automatic resizing depending on the current temporal resolution, usually approx. 10% of `dt_ref` is recommended
-  2.name = ~<name>/min_samples
-  2.default = 3
-  2.type = int
-  2.desc = Minimum number of samples (should be always greater than 2)
-  3.name = ~<name>/global_plan_overwrite_orientation
-  3.default = true
-  3.type = bool
-  3.desc = Overwrite orientation of local subgoals provided by the global planner (since they often provide only a 2D path)
-  4.name = ~<name>/global_plan_viapoint_sep
-  4.default = -0.1 (disabled)
-  4.type = double
-  4.desc = If positive, via-points are extrected from the global plan (path-following mode). The value determines the resolution of the reference path (min. separation between each two consecutive via-points along the global plan, if negative: disabled). Refer to parameter `weight_viapoint` for adjusting the intensity. '''New in version 0.4'''
-  5.name = ~<name>/max_global_plan_lookahead_dist
-  5.default = 3.0
-  5.type = double
-  5.desc = Specify the maximum length (cumulative Euclidean distances) of the subset of the global plan taken into account for optimization. The actual length is than determined by the logical conjunction of the local costmap size and this maximum bound. Set to zero or negative in order to deactivate this limitation.
-  6.name = ~<name>/force_reinit_new_goal_dist
-  6.default = 1.0
-  6.type = double
-  6.desc = Reinitialize the trajectory if a previous goal is updated with a separation of more than the specified value in meters (skip hot-starting)
-  7.name = ~<name>/feasibility_check_no_poses
-  7.default = 4
-  7.type = int
-  7.desc = Specify up to which pose on the predicted plan the feasibility should be checked each sampling interval.
-  8.name = ~<name>/publish_feedback
-  8.default = false
-  8.type = bool
-  8.desc = Publish planner feedback containing the full trajectory and a list of active obstacles (should be enabled only for evaluation or debugging). See list of publishers above.
-  9.name = ~<name>/shrink_horizon_backup
-  9.default = true
-  9.type = bool
-  9.desc = Allows the planner to shrink the horizon temporary (50%) in case of automatically detected issues (e.g. infeasibility). Also see parameter `shrink_horizon_min_duration`.
-}
-```
-
-
+- `~<name>/dt_ref` (`double`, default: `0.3`): Desired temporal
+  resolution of the trajectory (the trajectory is not fixed to
+  `dt_ref` since the temporal resolution is part of the optimization,
+  but the trajectory will be resized between iterations if *dt_ref
+  +-dt_hysteresis* is violated.
+- `~<name>/dt_hysteresis` (`double`, default: `0.1`): Hysteresis for
+  automatic resizing depending on the current temporal resolution,
+  usually approx. 10% of `dt_ref` is recommended
+- `~<name>/min_samples` (`int`, default: `3`): Minimum number of samples
+  (should be always greater than 2)
+- `~<name>/global_plan_overwrite_orientation` (`bool`, default: `true`):
+  Overwrite orientation of local subgoals provided by the global planner
+  (since they often provide only a 2D path)
+- `~<name>/global_plan_viapoint_sep` (`double`, default:
+  `-0.1 (disabled)`): If positive, via-points are extrected from the
+  global plan (path-following mode). The value determines the resolution
+  of the reference path (min. separation between each two consecutive
+  via-points along the global plan, if negative: disabled). Refer to
+  parameter `weight_viapoint` for adjusting the intensity. **New in
+  version 0.4**
+- `~<name>/max_global_plan_lookahead_dist` (`double`, default: `3.0`):
+  Specify the maximum length (cumulative Euclidean distances) of the
+  subset of the global plan taken into account for optimization. The
+  actual length is than determined by the logical conjunction of the
+  local costmap size and this maximum bound. Set to zero or negative in
+  order to deactivate this limitation.
+- `~<name>/force_reinit_new_goal_dist` (`double`, default: `1.0`):
+  Reinitialize the trajectory if a previous goal is updated with a
+  separation of more than the specified value in meters (skip
+  hot-starting)
+- `~<name>/feasibility_check_no_poses` (`int`, default: `4`): Specify up
+  to which pose on the predicted plan the feasibility should be checked
+  each sampling interval.
+- `~<name>/publish_feedback` (`bool`, default: `false`): Publish planner
+  feedback containing the full trajectory and a list of active obstacles
+  (should be enabled only for evaluation or debugging). See list of
+  publishers above.
+- `~<name>/shrink_horizon_backup` (`bool`, default: `true`): Allows the
+  planner to shrink the horizon temporary (50%) in case of automatically
+  detected issues (e.g. infeasibility). Also see parameter
+  `shrink_horizon_min_duration`.
 
 
 
 ```
 {#!wiki version kinetic_and_newer
 
-{{{
-#!clearsilver CS/NodeAPI
-param{
-  no_header=True
-  0.name = ~<name>/allow_init_with_backwards_motion
-  0.default = false
-  0.type = bool
-  0.desc = If true, underlying trajectories might be initialized with backwards motions in case the goal is behind the start within the local costmap (this is only recommended if the robot is equipped with rear sensors).
-  1.name = ~<name>/exact_arc_length
-  1.default = false
-  1.type = bool
-  1.desc = If true, the planner uses the exact arc length in velocity, acceleration and turning rate computations (-> increased cpu time), otherwise the Euclidean approximation is used.
-  2.name = ~<name>/shrink_horizon_min_duration
-  2.default = 10.0
-  2.type = double
-  2.desc = Specify minimum duration for the reduced horizon in case an infeasible trajectory is detected (refer to parameter `shrink_horizon_backup` in order to activate the reduced horizon mode).
-}
+
+ * {{{~<name>/allow_init_with_backwards_motion
 ```
 
+ (`bool`, default: `false`): If true, underlying
+trajectories might be initialized with backwards motions in case the
+goal is behind the start within the local costmap (this is only
+recommended if the robot is equipped with rear sensors).
 
+- `~<name>/exact_arc_length` (`bool`, default: `false`): If true, the
+  planner uses the exact arc length in velocity, acceleration and
+  turning rate computations (-> increased cpu time), otherwise the
+  Euclidean approximation is used.
+- `~<name>/shrink_horizon_min_duration` (`double`, default: `10.0`):
+  Specify minimum duration for the reduced horizon in case an infeasible
+  trajectory is detected (refer to parameter `shrink_horizon_backup`
+  in order to activate the reduced horizon mode).
 
 }}}}
 
 #### Obstacle Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/min_obstacle_dist
-  0.default = 0.5
-  0.type = double
-  0.desc = Minimum desired separation from obstacles in meters
-  1.name = ~<name>/include_costmap_obstacles
-  1.default = true
-  1.type = bool
-  1.desc = Specify if obstacles of the local costmap should be taken into account. Each cell that is marked as obstacle is considered as a point-obstacle. Therefore do not choose a very small resolution of the costmap since it increases computation time. In future releases this circumstance is going to be addressed as well as providing an additional api for dynamic obstacles.
-  2.name = ~<name>/costmap_obstacles_behind_robot_dist
-  2.default = 1.0
-  2.type = double
-  2.desc = Limit the occupied local costmap obstacles taken into account for planning behind the robot (specify distance in meters).
-  3.name = ~<name>/obstacle_poses_affected
-  3.default = 30
-  3.type = int
-  3.desc = Each obstacle position is attached to the closest pose on the trajectory in order to keep a distance. Additional neighbors can be taken into account as well. Note, this parameter might be removed in future versions, since the the obstacle association strategy has been modified in kinetic+. Refer to the parameter description of `legacy_obstacle_association`.
-  4.name = ~<name>/inflation_dist
-  4.default = pre kinetic: 0.0, kinetic+: 0.6
-  4.type = double
-  4.desc = Buffer zone around obstacles with non-zero penalty costs (should be larger than `min_obstacle_dist` in order to take effect). Also refer to the weight `weight_inflation`.
-}
-```
-
-
+- `~<name>/min_obstacle_dist` (`double`, default: `0.5`): Minimum
+  desired separation from obstacles in meters
+- `~<name>/include_costmap_obstacles` (`bool`, default: `true`): Specify
+  if obstacles of the local costmap should be taken into account. Each
+  cell that is marked as obstacle is considered as a point-obstacle.
+  Therefore do not choose a very small resolution of the costmap since
+  it increases computation time. In future releases this circumstance is
+  going to be addressed as well as providing an additional api for
+  dynamic obstacles.
+- `~<name>/costmap_obstacles_behind_robot_dist` (`double`, default:
+  `1.0`): Limit the occupied local costmap obstacles taken into account
+  for planning behind the robot (specify distance in meters).
+- `~<name>/obstacle_poses_affected` (`int`, default: `30`): Each
+  obstacle position is attached to the closest pose on the trajectory in
+  order to keep a distance. Additional neighbors can be taken into
+  account as well. Note, this parameter might be removed in future
+  versions, since the the obstacle association strategy has been
+  modified in kinetic+. Refer to the parameter description of
+  `legacy_obstacle_association`.
+- `~<name>/inflation_dist` (`double`, default:
+  `pre kinetic: 0.0, kinetic+: 0.6`): Buffer zone around obstacles with
+  non-zero penalty costs (should be larger than `min_obstacle_dist` in
+  order to take effect). Also refer to the weight `weight_inflation`.
 
 
 
 ```
 {#!wiki version kinetic_and_newer
 
-{{{
-#!clearsilver CS/NodeAPI
-param{
-  no_header=True
-  0.name = ~<name>/include_dynamic_obstacles
-  0.default = false
-  0.type = bool
-  0.desc = If this parameter is set to true, the motion of obstacles with non-zero velocity (provided via user-supplied obstacles on topic `~/obstacles` or obtained from the [[costmap_converter]]) is predicted and considered during optimization via a constant velocity model.  '''New'''
-  1.name = ~<name>/legacy_obstacle_association
-  1.default = false
-  1.type = bool
-  1.desc = The strategy of connecting trajectory poses with obstacles for optimization has been modified (see changelog). You can switch to the old/previous strategy by setting this parameter to `true`. Old strategy: for each obstacle, find the nearest TEB pose; new strategy: for each teb pose, find only "relevant" obstacles.
-  2.name = ~<name>/obstacle_association_force_inclusion_factor
-  2.default = 1.5
-  2.type = double
-  2.desc = The non-legacy obstacle association strategy tries to connect only relevant obstacles with the discretized trajectory during optimization. But all obstacles within a specifed distance are forced to be included (as a multiple of `min_obstacle_dist`). E.g. choose 2.0 in order to`enforce the consideration obstacles within a radius of 2.0*`min_obstacle_dist. [This parameter is used only if parameter `legacy_obstacle_association` is `false`]
-  3.name = ~<name>/obstacle_association_cutoff_factor
-  3.default = 5
-  3.type = double
-  3.desc = See `obstacle_association_force_inclusion_factor`, but beyond a multiple of [value]*`min_obstacle_dist` all obstacles are ignored during optimization. Parameter `obstacle_association_force_inclusion_factor` is processed first. [This parameter is used only if parameter `legacy_obstacle_association` is `false`]
-}
+
+ * {{{~<name>/include_dynamic_obstacles
 ```
 
+ (`bool`, default: `false`): If this parameter
+is set to true, the motion of obstacles with non-zero velocity (provided
+via user-supplied obstacles on topic `/obstacles` or obtained from the
+[costmap_converter](https://index.ros.org/p/costmap_converter)) is
+predicted and considered during optimization via a constant velocity
+model. **New**
 
+- `~<name>/legacy_obstacle_association` (`bool`, default: `false`): The
+  strategy of connecting trajectory poses with obstacles for
+  optimization has been modified (see changelog). You can switch to the
+  old/previous strategy by setting this parameter to `true`. Old
+  strategy: for each obstacle, find the nearest TEB pose; new strategy:
+  for each teb pose, find only "relevant" obstacles.
+- `~<name>/obstacle_association_force_inclusion_factor` (`double`,
+  default: `1.5`): The non-legacy obstacle association strategy tries to
+  connect only relevant obstacles with the discretized trajectory during
+  optimization. But all obstacles within a specifed distance are forced
+  to be included (as a multiple of `min_obstacle_dist`). E.g. choose
+  2.0 in order to`enforce the consideration obstacles within a radius
+  of 2.0\*`min_obstacle_dist. \[This parameter is used only if
+  parameter `legacy_obstacle_association` is `false`\]
+- `~<name>/obstacle_association_cutoff_factor` (`double`, default: `5`):
+  See `obstacle_association_force_inclusion_factor`, but beyond a
+  multiple of \[value\]\*`min_obstacle_dist` all obstacles are ignored
+  during optimization. Parameter
+  `obstacle_association_force_inclusion_factor` is processed first.
+  \[This parameter is used only if parameter
+  `legacy_obstacle_association` is `false`\]
 
 }}}}
 
@@ -457,223 +395,156 @@ The following parameters are relevant only if
 [costmap_converter](https://index.ros.org/p/costmap_converter) plugins
 are desired (see tutorial):
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/costmap_converter_plugin
-  0.default = ""
-  0.type = string
-  0.desc = Define plugin name in order to convert costmap cells to points/lines/polygons. Set an empty string to disable the conversion such that all cells are treated as point-obstacles.  
-  1.name = ~<name>/costmap_converter_spin_thread
-  1.default = true
-  1.type = bool
-  1.desc = If set to true, the costmap converter invokes its callback queue in a different thread. 
-  2.name = ~<name>/costmap_converter_rate
-  2.default = 5.0
-  2.type = double
-  2.desc = Rate that defines how often the costmap_converter plugin processes the current costmap (the value should not be much higher than the costmap update rate) [in Hz].
-}
-```
-
-
+- `~<name>/costmap_converter_plugin` (`string`, default: `""`): Define
+  plugin name in order to convert costmap cells to
+  points/lines/polygons. Set an empty string to disable the conversion
+  such that all cells are treated as point-obstacles.
+- `~<name>/costmap_converter_spin_thread` (`bool`, default: `true`): If
+  set to true, the costmap converter invokes its callback queue in a
+  different thread.
+- `~<name>/costmap_converter_rate` (`double`, default: `5.0`): Rate that
+  defines how often the costmap_converter plugin processes the current
+  costmap (the value should not be much higher than the costmap update
+  rate) \[in Hz\].
 
 #### Optimization Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/no_inner_iterations
-  0.default = 5
-  0.type = int
-  0.desc = Number of actual solver iterations called in each ''outerloop'' iteration. See param `no_outer_iterations`.
-  1.name = ~<name>/no_outer_iterations
-  1.default = 4
-  1.type = int
-  1.desc = Each outerloop iteration automatically resizes the trajectory according to the desired temporal resolution `dt_ref` and invokes the internal optimizer (that performs `no_inner_iterations`). The total number of solver iterations in each planning cycle is therefore the product of both values.
-  2.name = ~<name>/penalty_epsilon
-  2.default = 0.1
-  2.type = double
-  2.desc = Add a small safety margin to penalty functions for hard-constraint approximations
-  3.name = ~<name>/weight_max_vel_x
-  3.default = 2.0
-  3.type = double
-  3.desc = Optimization weight for satisfying the maximum allowed translational velocity
-  4.name = ~<name>/weight_max_vel_theta
-  4.default = 1.0
-  4.type = double
-  4.desc = Optimization weight for satisfying the maximum allowed angular velocity
-  5.name = ~<name>/weight_acc_lim_x
-  5.default = 1.0
-  5.type = double
-  5.desc = Optimization weight for satisfying the maximum allowed translational acceleration
-  6.name = ~<name>/weight_acc_lim_theta
-  6.default = 1.0
-  6.type = double
-  6.desc = Optimization weight for satisfying the maximum allowed angular acceleration
-  7.name = ~<name>/weight_kinematics_nh
-  7.default = 1000.0
-  7.type = double
-  7.desc = Optimization weight for satisfying the non-holonomic kinematics (this parameter must be high since the kinematics equation constitutes an equality constraint, even a value of 1000 does not imply a bad matrix condition due to small 'raw' cost values in comparison to other costs).
-  8.name = ~<name>/weight_kinematics_forward_drive
-  8.default = 1.0
-  8.type = double
-  8.desc = Optimization weight for forcing the robot to choose only forward directions (positive transl. velocities). A small weight (e.g. 1.0) still allows driving backwards. A value around 1000 almost prevents backward driving (but cannot be guaranteed).
-  9.name = ~<name>/weight_kinematics_turning_radius
-  9.default = 1.0
-  9.type = double
-  9.desc = Optimization weight for enforcing a minimum turning radius (only for carlike robots).
-  10.name = ~<name>/weight_optimaltime
-  10.default = 1.0
-  10.type = double
-  10.desc = Optimization weight for contracting the trajectory w.r.t transition/execution time
-  11.name = ~<name>/weight_obstacle
-  11.default = 50.0
-  11.type = double
-  11.desc = Optimization weight for keeping a minimum distance from obstacles
-  12.name = ~<name>/weight_viapoint
-  12.default = 1.0
-  12.type = double
-  12.desc = Optimization weight for minimzing the distance to via-points (resp. reference path). '''New in version 0.4'''
-  13.name = ~<name>/weight_inflation
-  13.default = 0.1
-  13.type = double
-  13.desc = Optimization weight for the inflation penalty (should be small).
-}
-```
-
-
+- `~<name>/no_inner_iterations` (`int`, default: `5`): Number of actual
+  solver iterations called in each *outerloop* iteration. See param
+  `no_outer_iterations`.
+- `~<name>/no_outer_iterations` (`int`, default: `4`): Each outerloop
+  iteration automatically resizes the trajectory according to the
+  desired temporal resolution `dt_ref` and invokes the internal
+  optimizer (that performs `no_inner_iterations`). The total number of
+  solver iterations in each planning cycle is therefore the product of
+  both values.
+- `~<name>/penalty_epsilon` (`double`, default: `0.1`): Add a small
+  safety margin to penalty functions for hard-constraint approximations
+- `~<name>/weight_max_vel_x` (`double`, default: `2.0`): Optimization
+  weight for satisfying the maximum allowed translational velocity
+- `~<name>/weight_max_vel_theta` (`double`, default: `1.0`):
+  Optimization weight for satisfying the maximum allowed angular
+  velocity
+- `~<name>/weight_acc_lim_x` (`double`, default: `1.0`): Optimization
+  weight for satisfying the maximum allowed translational acceleration
+- `~<name>/weight_acc_lim_theta` (`double`, default: `1.0`):
+  Optimization weight for satisfying the maximum allowed angular
+  acceleration
+- `~<name>/weight_kinematics_nh` (`double`, default: `1000.0`):
+  Optimization weight for satisfying the non-holonomic kinematics (this
+  parameter must be high since the kinematics equation constitutes an
+  equality constraint, even a value of 1000 does not imply a bad matrix
+  condition due to small 'raw' cost values in comparison to other
+  costs).
+- `~<name>/weight_kinematics_forward_drive` (`double`, default: `1.0`):
+  Optimization weight for forcing the robot to choose only forward
+  directions (positive transl. velocities). A small weight (e.g. 1.0)
+  still allows driving backwards. A value around 1000 almost prevents
+  backward driving (but cannot be guaranteed).
+- `~<name>/weight_kinematics_turning_radius` (`double`, default: `1.0`):
+  Optimization weight for enforcing a minimum turning radius (only for
+  carlike robots).
+- `~<name>/weight_optimaltime` (`double`, default: `1.0`): Optimization
+  weight for contracting the trajectory w.r.t transition/execution time
+- `~<name>/weight_obstacle` (`double`, default: `50.0`): Optimization
+  weight for keeping a minimum distance from obstacles
+- `~<name>/weight_viapoint` (`double`, default: `1.0`): Optimization
+  weight for minimzing the distance to via-points (resp. reference
+  path). **New in version 0.4**
+- `~<name>/weight_inflation` (`double`, default: `0.1`): Optimization
+  weight for the inflation penalty (should be small).
 
 
 
 ```
 {#!wiki version kinetic_and_newer
 
-{{{
-#!clearsilver CS/NodeAPI
-param{
-  no_header=True
-  0.name = ~<name>/weight_adapt_factor
-  0.default = 2.0
-  0.type = double
-  0.desc = Some special weights (currently `weight_obstacle`) are repeatedly scaled by this factor in each outer TEB iteration (weight_new = weight_old*factor). Increasing weights iteratively instead of setting a huge value a-priori leads to better numerical conditions of the underlying optimization problem.
-}
+
+ * {{{~<name>/weight_adapt_factor
 ```
 
-
+ (`double`, default: `2.0`): Some special
+weights (currently `weight_obstacle`) are repeatedly scaled by this
+factor in each outer TEB iteration (weight_new = weight_old\*factor).
+Increasing weights iteratively instead of setting a huge value a-priori
+leads to better numerical conditions of the underlying optimization
+problem.
 
 }}}}
 
 #### Parallel Planning in distinctive Topologies
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/enable_homotopy_class_planning
-  0.default = true
-  0.type = bool
-  0.desc = Activate parallel planning in distinctive topologies (requires much more CPU resources, since multiple trajectories are optimized at once)
-  1.name = ~<name>/enable_multithreading
-  1.default = true
-  1.type = bool
-  1.desc = Activate multiple threading in order to plan each trajectory in a different thread
-  2.name = ~<name>/max_number_classes
-  2.default = 4
-  2.type = int
-  2.desc = Specify the maximum number of distinctive trajectories taken into account (limits computational effort)
-  3.name = ~<name>/selection_cost_hysteresis
-  3.default = 1.0
-  3.type = double
-  3.desc = Specify how much trajectory cost must a new candidate have w.r.t. a previously selected trajectory in order to be selected (selection if new_cost < old_cost*factor).
-  4.name = ~<name>/selection_obst_cost_scale
-  4.default = 100.0
-  4.type = double
-  4.desc = Extra scaling of obstacle cost terms just for selecting the 'best' candidate.
-  5.name = ~<name>/selection_viapoint_cost_scale
-  5.default = 1.0
-  5.type = double
-  5.desc = Extra scaling of via-point cost terms just for selecting the 'best' candidate. '''New in version 0.4'''
-  6.name = ~<name>/selection_alternative_time_cost
-  6.default = false
-  6.type = bool
-  6.desc = If true, time cost (sum of squared time differences) is replaced by the total transition time (sum of time differences).
-  7.name = ~<name>/roadmap_graph_no_samples
-  7.default = 15
-  7.type = int
-  7.desc = Specify the number of samples generated for creating the roadmap graph
-  8.name = ~<name>/roadmap_graph_area_width
-  8.default = 6
-  8.type = double
-  8.desc = Random keypoints/waypoints are sampled in a rectangular region between start and goal. Specify the width of that region in meters.
-  9.name = ~<name>/h_signature_prescaler
-  9.default = 1.0
-  9.type = double
-  9.desc = Scale internal parameter (''H-signature'') that is used to distinguish between homotopy classes. Warning: reduce this parameter only, if you observe problems with too many obstacles in the local cost map, do not choose it extremly low, otherwise obstacles cannot be distinguished from each other (0.2<''value''<=1).
-  10.name = ~<name>/h_signature_threshold
-  10.default = 0.1
-  10.type = double
-  10.desc = Two H-signatures are assumed to be equal, if both the difference of real parts and complex parts are below the specified threshold.
-  11.name = ~<name>/obstacle_heading_threshold
-  11.default = 1.0
-  11.type = double
-  11.desc = Specify the value of the scalar product between obstacle heading and goal heading in order to take them (obstacles) into account for exploration.
-  12.name = ~<name>/visualize_hc_graph
-  12.default = false
-  12.type = bool
-  12.desc = Visualize the graph that is created for exploring distinctive trajectories (check marker message in rviz)
-  13.name = ~<name>/viapoints_all_candidates
-  13.default = true
-  13.type = bool
-  13.desc = If true, all trajectories of different topologies are attached to the set of via-points, otherwise only the trajectory sharing the same topology as the initial/global plan is connected with them (no effect on ''test_optim_node''). '''New in version 0.4'''
-}
-```
-
-
+- `~<name>/enable_homotopy_class_planning` (`bool`, default: `true`):
+  Activate parallel planning in distinctive topologies (requires much
+  more CPU resources, since multiple trajectories are optimized at once)
+- `~<name>/enable_multithreading` (`bool`, default: `true`): Activate
+  multiple threading in order to plan each trajectory in a different
+  thread
+- `~<name>/max_number_classes` (`int`, default: `4`): Specify the
+  maximum number of distinctive trajectories taken into account (limits
+  computational effort)
+- `~<name>/selection_cost_hysteresis` (`double`, default: `1.0`):
+  Specify how much trajectory cost must a new candidate have w.r.t. a
+  previously selected trajectory in order to be selected (selection if
+  new_cost < old_cost\*factor).
+- `~<name>/selection_obst_cost_scale` (`double`, default: `100.0`):
+  Extra scaling of obstacle cost terms just for selecting the 'best'
+  candidate.
+- `~<name>/selection_viapoint_cost_scale` (`double`, default: `1.0`):
+  Extra scaling of via-point cost terms just for selecting the 'best'
+  candidate. **New in version 0.4**
+- `~<name>/selection_alternative_time_cost` (`bool`, default: `false`):
+  If true, time cost (sum of squared time differences) is replaced by
+  the total transition time (sum of time differences).
+- `~<name>/roadmap_graph_no_samples` (`int`, default: `15`): Specify the
+  number of samples generated for creating the roadmap graph
+- `~<name>/roadmap_graph_area_width` (`double`, default: `6`): Random
+  keypoints/waypoints are sampled in a rectangular region between start
+  and goal. Specify the width of that region in meters.
+- `~<name>/h_signature_prescaler` (`double`, default: `1.0`): Scale
+  internal parameter (*H-signature*) that is used to distinguish between
+  homotopy classes. Warning: reduce this parameter only, if you observe
+  problems with too many obstacles in the local cost map, do not choose
+  it extremly low, otherwise obstacles cannot be distinguished from each
+  other (0.2<*value*<=1).
+- `~<name>/h_signature_threshold` (`double`, default: `0.1`): Two
+  H-signatures are assumed to be equal, if both the difference of real
+  parts and complex parts are below the specified threshold.
+- `~<name>/obstacle_heading_threshold` (`double`, default: `1.0`):
+  Specify the value of the scalar product between obstacle heading and
+  goal heading in order to take them (obstacles) into account for
+  exploration.
+- `~<name>/visualize_hc_graph` (`bool`, default: `false`): Visualize the
+  graph that is created for exploring distinctive trajectories (check
+  marker message in rviz)
+- `~<name>/viapoints_all_candidates` (`bool`, default: `true`): If true,
+  all trajectories of different topologies are attached to the set of
+  via-points, otherwise only the trajectory sharing the same topology as
+  the initial/global plan is connected with them (no effect on
+  *test_optim_node*). **New in version 0.4**
 
 
 
 ```
 {#!wiki version kinetic_and_newer
 
-{{{
-#!clearsilver CS/NodeAPI
-param{
-  no_header=True
-  0.name = ~<name>/switching_blocking_period
-  0.default = 0.0
-  0.type = double
-  0.desc = Specify a time duration in seconds that needs to be expired before a switch to a new equivalence class is allowed.
-}
+
+ * {{{~<name>/switching_blocking_period
 ```
 
-
+ (`double`, default: `0.0`): Specify a time
+duration in seconds that needs to be expired before a switch to a new
+equivalence class is allowed.
 
 }}}}
 
 #### Miscellaneous Parameters
 
-
-
-```clearsilver
-param{
-  no_header=True
-  0.name = ~<name>/odom_topic
-  0.default = "odom"
-  0.type = string
-  0.desc = Topic name of the odometry message, provided by the robot driver or simulator.
-  1.name = ~<name>/map_frame
-  1.default = "odom"
-  1.type = string
-  1.desc = Global planning frame (in case of a static map, this parameter must be usually changed to "/map".
-}
-```
-
-
+- `~<name>/odom_topic` (`string`, default: `"odom"`): Topic name of the
+  odometry message, provided by the robot driver or simulator.
+- `~<name>/map_frame` (`string`, default: `"odom"`): Global planning
+  frame (in case of a static map, this parameter must be usually changed
+  to "/map".
 
 ## Roadmap
 
@@ -732,6 +603,19 @@ future. Contributions are welcome!
   regarding the teb_local_planner.
 
 ## Obstacle Avoidance and Robot Footprint Model
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Configure and run Robot Navigation](#configure-and-run-robot-navigation).
+- **Description:** In this tutorial you will learn how obstacle
+  avoidance is realized. Necessary parameter settings with a major focus
+  on the robot footprint model and its influences are described.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Obstacles Footprint
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Following the Global Plan (Via-Points)](#following-the-global-plan-via-points)
 
 This tutorial targets **version 0.3+** of the teb_local_planner package.
 
@@ -972,6 +856,15 @@ package 2. Inspect and launch the carlike configuration
 
 ## Set up and test Optimization
 
+- **Description:** In this tutorial you will learn how to run the
+  trajectory optimization and how to change the underlying parameters in
+  order to setup a custom behavior and performance.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Inspect optimization feedback](#inspect-optimization-feedback),
+  [Configure and run Robot Navigation](#configure-and-run-robot-navigation)
+
 ### Install Package
 
 
@@ -1146,6 +1039,18 @@ distinctive topologies. Adjust the parameters according to your desires.
 
 ## Inspect optimization feedback
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization).
+- **Description:** In this tutorial you will learn how to inspect
+  feedback of optimized trajectories; an example is presented which
+  visualizes the velocity profile of the currently selected trajectory.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Velocity
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Configure and run Robot Navigation](#configure-and-run-robot-navigation)
+
 In the previous example you learned how to test the optimization, how to
 tune the parameters and how to visualize the resulting trajectories in
 rviz. However, the trajectories visualized in rviz do not contain any
@@ -1161,7 +1066,7 @@ found in distinctive topologies. The currently selected trajectory index
 is stored in variable `selected_trajectory_idx`.
 
 The feedback topic (see
-planner API) can be
+[planner API](#published-topics)) can be
 subscribed by any node (e.g. to export data to file, write some custom
 visualization, \...).
 
@@ -1277,6 +1182,17 @@ depicted in the following figure:
 ![Inspecting velocity profile](doc/test_optim_node_inspect_velocity.png)
 
 ## Configure and run Robot Navigation
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Navigation: RobotSetup](https://index.ros.org/p/navigation).
+- **Description:** In this tutorial you will learn how to set up the
+  teb_local_planner as local planner plugin for the navigation stack.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Obstacle Avoidance and Robot Footprint Model](#obstacle-avoidance-and-robot-footprint-model)
 
 ### Set up your Robot for 2D Navigation
 
@@ -1506,6 +1422,20 @@ or ideas, please share it on github (report issue/pull request).
 
 ## Following the Global Plan (Via-Points)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Configure and run Robot Navigation](#configure-and-run-robot-navigation).
+- **Description:** In this tutorial you will learn how to configure the
+  local planner to follow the global plan more strictly. In particular
+  you will learn how to adapt the tradeoff between time-optimality and
+  path-following.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Path-Following Via-Points
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Costmap conversion](#costmap-conversion)
+
 This tutorial targets **version 0.4+** of the teb_local_planner package.
 
 ### Optimization with Via-Points
@@ -1671,6 +1601,19 @@ roslaunch teb_local_planner_tutorials robot_carlike_in_stage.launch
 
 ## Costmap conversion
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Configure and run Robot Navigation](#configure-and-run-robot-navigation).
+- **Description:** In this tutorial you will learn how to apply costmap
+  conversion plugins to convert occupied costmap2d cells to geometric
+  primitives for optimization (experimental).
+- **Keywords:** Trajectory Optimization Local Planner Navigation Costmap
+  Obstacles
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Planning for car-like robots](#planning-for-car-like-robots)
+
 The teb_local_planner package supports
 [costmap_converter](https://index.ros.org/p/costmap_converter) plugins.
 Those plugins convert occupied
@@ -1790,6 +1733,18 @@ adapting the files. 6. Switch different costmap conversion algorithms in
 `costmap_converter_params.yaml`
 
 ## Planning for car-like robots
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Obstacle Avoidance and Robot Footprint Model](#obstacle-avoidance-and-robot-footprint-model).
+- **Description:** In this tutorial you will learn how to set up the
+  planner for car-like robots (experimental).
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Car-like Ackermann
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Planning for holonomic robots](#planning-for-holonomic-robots)
 
 Planning and navigation of car-like robots is not intended explicitly by
 the [navigation stack](https://index.ros.org/p/navigation). However, the
@@ -2002,6 +1957,18 @@ rqt_reconfigure rqt_reconfigure` or by adapting the files.
 
 ## Planning for holonomic robots
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Obstacle Avoidance and Robot Footprint Model](#obstacle-avoidance-and-robot-footprint-model).
+- **Description:** In this tutorial you will learn how to set up the
+  planner for holonomic robots (experimental).
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Holonomic Omnidirectional
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Incorporate customized Obstacles](#incorporate-customized-obstacles)
+
 This tutorial targets version 0.6+ of the teb_local_planner package.
 
 ### Planner Configuration
@@ -2050,6 +2017,17 @@ robot_omnidir_in_stage.launch` 5. Modify parameters using `rosrun
 rqt_reconfigure rqt_reconfigure` or by adapting the files.
 
 ## Incorporate customized Obstacles
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization).
+- **Description:** In this tutorial you will learn how to take
+  polygon-shaped obstacles published from other nodes into account.
+- **Keywords:** Trajectory Optimization Local Planner Navigation
+  Obstacles Polygon
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Incorporate dynamic obstacles](#incorporate-dynamic-obstacles)
 
 ### Introduction
 
@@ -2203,6 +2181,18 @@ details):
 - `<name>/footprint_model`: The robot footprint model
 
 ## Incorporate dynamic obstacles
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Incorporate customized Obstacles](#incorporate-customized-obstacles).
+- **Description:** In this tutorial you will learn how to take dynamic
+  obstacles published from other nodes into account.
+- **Keywords:** Trajectory Optimization Local Planner Navigation Dynamic
+  Obstacles
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Track and include dynamic obstacles via costmap_converter](#track-and-include-dynamic-obstacles-via-costmap_converter)
 
 ### Introduction
 
@@ -2412,6 +2402,21 @@ details):
 
 ## Track and include dynamic obstacles via costmap_converter
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Set up and test Optimization](#set-up-and-test-optimization),
+  [Incorporate customized Obstacles](#incorporate-customized-obstacles),
+  [Incorporate dynamic obstacles](#incorporate-dynamic-obstacles),
+  [Costmap conversion](#costmap-conversion).
+- **Description:** In this tutorial you will learn how to utilize the
+  costmap converter to easily track dynamic obstacles based on costmap
+  updates.
+- **Keywords:** Trajectory Optimization Local Planner Navigation Dynamic
+  Obstacles Tracking Costmap-Conversion
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Frequently Asked Questions](#frequently-asked-questions)
+
 ### Introduction
 
 Before you proceed, make sure that you are familiar with the
@@ -2497,6 +2502,10 @@ are treated as static ones (teb_local_planner parameter
 `include_dynamic_obstacles=false`).
 
 ## Frequently Asked Questions
+
+- **Description:** This page tries to answer and explain frequently
+  asked questions regarding the teb_local_planner.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Navigation close to walls
 

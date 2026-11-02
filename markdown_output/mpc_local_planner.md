@@ -42,5 +42,10 @@ Please also have a look at the repository's
 
 ## teb_local_planner vs mpc_local_planner
 
+- **Description:** This page describes the main differences between
+  teb_local_planner and mpc_local_planner
+- **Keywords:** MPC Trajectory Optimization Local Planner Navigation
+- **Tutorial Level:** INTERMEDIATE
+
 Refer to
 [this repository wiki page](https://github.com/rst-tu-dortmund/mpc_local_planner/wiki/MPCvsTEB).

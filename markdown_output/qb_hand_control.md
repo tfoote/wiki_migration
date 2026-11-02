@@ -62,6 +62,15 @@ specifications of this two base packages.
 
 ## Control Modes
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Control](https://index.ros.org/p/qb_device_control).
+- **Description:** Details on the control modes available for the qb
+  SoftHand Research and qb SoftHand2 Research
+- **Keywords:** qbrobotics SoftHand SoftHand2 control
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [GUI Control](#gui-control)
+
 For the sake of simplicity, we are going to cover all the control modes
 for a *[qb SoftHand Research](Robots/qbhand)* or a
 *[qb SoftHand2 Research](Robots/qbhand)*, but it is just a matter of
@@ -143,6 +152,16 @@ parameters, but the concepts of this paragraph hold for all of them:
 
 ## GUI Control
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes).
+- **Description:** Control the qb SoftHand Research and the qb SoftHand2
+  Research through a simple GUI
+- **Keywords:** qbrobotics SoftHand SoftHand2 control
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Waypoint Control](#waypoint-control)
+
 This control mode is the one suggested to test that everything is
 working as expected. You are able to open and close the
 *[qb SoftHand Research](Robots/qbhand)* or to command both the synergies
@@ -174,6 +193,17 @@ motion. No other timing constraints can be set in this mode.
 ![screen_gui](https://bitbucket.org/qbrobotics/qbhand-ros/raw/ddbccc369d6846549e9b03c9dce0c2dc6c1115e1/qb_hand_media/screen_gui.png)
 
 ## Waypoint Control
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes),
+  [GUI Control](#gui-control).
+- **Description:** Control the qb SoftHand Research and the qb SoftHand2
+  Research motion through an automatic waypoint trajectory loop
+- **Keywords:** qbrobotics SoftHand control
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [API Control](#api-control)
 
 This control mode is a bit more structured and useful than the previous:
 it allows to set a fixed trajectory of any number of position waypoints
@@ -268,8 +298,16 @@ waypoints:
 
 ## API Control
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Control Modes](#control-modes),
+  [Waypoint Control](#waypoint-control).
+- **Description:** Custom control application using the qbrobotics API
+- **Keywords:** qbrobotics SoftHand SoftHand2 control
+- **Tutorial Level:** ADVANCED
+
 If you need a complex (i.e. real) control application, e.g. the
-*[qb SoftHand Research ](Robots/qbhand)* or the
+*[qb SoftHand Research](Robots/qbhand)* or the
 *[qb SoftHand2 Research](Robots/qbhand)* is mounted on a robot which
 uses computer vision aid to grasp objects, the previous two control
 modes don't really help much. What we provide for real applications is

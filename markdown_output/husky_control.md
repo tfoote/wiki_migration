@@ -30,6 +30,11 @@ miscellaneous external input on the standard `cmd_vel` topic.
 
 ## Interfacing with Husky
 
+- **Description:** How to visualize, control, and communicate with a
+  real or simulated Husky robot from your desktop.
+- **Keywords:** Clearpath Husky
+- **Tutorial Level:** BEGINNER
+
 Both simulated and real Husky robots expose the same ROS interface, and
 can be interacted with in the same way. Please make sure that the
 desktop packages for Husky are installed:

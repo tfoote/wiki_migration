@@ -61,35 +61,34 @@ ROS messages. A Nodelet version is also provided for ROS1.
 
 The node can publish the received data through three different topics:
 
-
-
-```clearsilver
-
-pub {
-  no_header=True
-  0.name = /nerian_stereo/point_cloud
-  0.type = sensor_msgs/PointCloud2
-  0.desc = A point cloud, which is obtained by reconstructing the 3D location of each pixel in the disparity map. Optionally, the point cloud can include an intensity channel, which contains intensity data from the left rectified camera image.
-
-  1.name = /nerian_stereo/disparity_map
-  1.type = sensor_msgs/Image
-  1.desc = The stereo disparity map that is computed by SceneScan. The disparity map is transmitted as an image message with mono16 encoding. Please note that the disparity map has a 4-bit subpixel resolution. This means that its values have to be divided by 16 in order to receive the true pixel disparity. Optionally, the disparity map can be color coded for visualization. In this case the encoding will be bgr8.
-
-  2.name = /nerian_stereo/left_image
-  2.type = sensor_msgs/Image
-  2.desc = The rectified image of the left camera with mono8 or mono12 encoding, if SceneScan is configured in stereo matching or rectify mode. If the device is configured in pass-through mode the unrectified left camera image will be published through this topic.
-
-  3.name = /nerian_stereo/right_image
-  3.type = sensor_msgs/Image
-  3.desc = If the SceneScan is configured in pass-through or rectify mode, then the (un)rectified right camera image will be published through this topic in mono8 encoding
-
-  4.name = /nerian_stereo/stereo_camera_info
-  4.type = nerian_stereo/StereoCameraInfo
-  4.desc = Camera calibration information for both cameras.
-}
-```
-
-
+- `/nerian_stereo/point_cloud`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  A point cloud, which is obtained by reconstructing the 3D location of
+  each pixel in the disparity map. Optionally, the point cloud can
+  include an intensity channel, which contains intensity data from the
+  left rectified camera image.
+- `/nerian_stereo/disparity_map`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The stereo disparity map that is computed by SceneScan. The disparity
+  map is transmitted as an image message with mono16 encoding. Please
+  note that the disparity map has a 4-bit subpixel resolution. This
+  means that its values have to be divided by 16 in order to receive the
+  true pixel disparity. Optionally, the disparity map can be color coded
+  for visualization. In this case the encoding will be bgr8.
+- `/nerian_stereo/left_image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The rectified image of the left camera with mono8 or mono12 encoding,
+  if SceneScan is configured in stereo matching or rectify mode. If the
+  device is configured in pass-through mode the unrectified left camera
+  image will be published through this topic.
+- `/nerian_stereo/right_image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  If the SceneScan is configured in pass-through or rectify mode, then
+  the (un)rectified right camera image will be published through this
+  topic in mono8 encoding
+- `/nerian_stereo/stereo_camera_info`
+  ([nerian_stereo/msg/StereoCameraInfo](https://docs.ros.org/en/rolling/p/nerian_stereo/msg/StereoCameraInfo.html)):
+  Camera calibration information for both cameras.
 
 ### Launching and parameters
 
@@ -114,75 +113,46 @@ The behaviour of the node can be configured through various parameters.
 An example parameterization can be found in the included launch file
 `nerian_stereo.launch`. The following parameters are supported:
 
-
-
-```clearsilver
-
-param {
-  no_header=True
-  0.name = ~point_cloud_intensity_channel
-  0.type = string
-  0.default = `"mono8"`
-  0.desc = Specifies if and how the intensity channel is encoded in the published point cloud. Available options are: none, mono8, rgb8, rgb32f.
-
-  1.name = ~ros_coordinate_system
-  1.type = bool
-  1.default = `"true"`
-  1.desc = If enabled, the typical ROS coordinate system is used, with the x-axis pointing forward, the y-axis pointing left and the z-axis pointing upwards. If disabled, SceneScan's default coordinate system is used, with the x-axis pointing right, the y-axis pointing downwards, and the z-axis pointing forward.
-
-  2.name = ~ros_timestamps
-  2.type = bool
-  2.default = `"true"`
-  2.desc = If enabled, the ROS system time will be used for timestamping the generated messages. If disabled, the timestamp transmitted by SceneScan will be used for all messages that carry sensor data. When using timestamps from SceneScan, it should be ensured that SceneScan is synchronizing its clock to an external reference .
-
-  3.name = ~color_code_disparity_map
-  3.type = string
-  3.default = `"none"`
-  3.desc = Selects the color scale for color coding of the disparity map. Possible values are "none", "rainbow" and "red_blue".
-
-  4.name = ~color_code_legend
-  4.type = bool
-  4.default = `"true"`
-  4.desc = If enabled, a legend will be added to the color coded disparity map.
-
-  5.name = ~frame
-  5.type = string
-  5.default = `"world"`
-  5.desc = ID of the frame that will be set for all transmitted messages.
-
-  6.name = ~remote_host
-  6.type = string
-  6.default = `"0.0.0.0"`
-  6.desc = Host name or IP address of SceneScan, which is used for network communication.
-
-  7.name = ~remote_port
-  7.type = string
-  7.default = `"7681"`
-  7.desc = Remote port number or service name that is used for network communicating with SceneScan.
-
-  8.name = ~use_tcp
-  8.type = bool
-  8.default = `"false"`
-  8.desc = If enabled, TCP is used rather than UDP as underlying network protocol.
-
-  9.name = ~calibration_file
-  9.type = string
-  9.default = `""`
-  9.desc = Location of a YAML-file containing camera calibration data. This file can be obtained from the SceneScan webinterface. An example calibration file is provided in the repository. If this parameter is omitted, the published camera calibration information only contains the q-Matrix.
-
-  10.name = ~delay_execution
-  10.type = double
-  10.default = `0`
-  10.desc = Allows the configuration of an initial delay in seconds when launching the node. This option can be used to delay the node launch while the calibration information is downloaded.
-
-  11.name = ~max_depth
-  11.type = double
-  11.default = `-1`
-  11.desc = If set to a positive value, all points in the point cloud with a higher depth will be set to invalid.
-}
-```
-
-
+- `~point_cloud_intensity_channel` (`string`, default: `"mono8"`):
+  Specifies if and how the intensity channel is encoded in the published
+  point cloud. Available options are: none, mono8, rgb8, rgb32f.
+- `~ros_coordinate_system` (`bool`, default: `"true"`): If enabled,
+  the typical ROS coordinate system is used, with the x-axis pointing
+  forward, the y-axis pointing left and the z-axis pointing upwards. If
+  disabled, SceneScan's default coordinate system is used, with the
+  x-axis pointing right, the y-axis pointing downwards, and the z-axis
+  pointing forward.
+- `~ros_timestamps` (`bool`, default: `"true"`): If enabled, the ROS
+  system time will be used for timestamping the generated messages. If
+  disabled, the timestamp transmitted by SceneScan will be used for all
+  messages that carry sensor data. When using timestamps from SceneScan,
+  it should be ensured that SceneScan is synchronizing its clock to an
+  external reference .
+- `~color_code_disparity_map` (`string`, default: `"none"`): Selects
+  the color scale for color coding of the disparity map. Possible values
+  are "none", "rainbow" and "red_blue".
+- `~color_code_legend` (`bool`, default: `"true"`): If enabled, a
+  legend will be added to the color coded disparity map.
+- `~frame` (`string`, default: `"world"`): ID of the frame that will
+  be set for all transmitted messages.
+- `~remote_host` (`string`, default: `"0.0.0.0"`): Host name or IP
+  address of SceneScan, which is used for network communication.
+- `~remote_port` (`string`, default: `"7681"`): Remote port number
+  or service name that is used for network communicating with SceneScan.
+- `~use_tcp` (`bool`, default: `"false"`): If enabled, TCP is used
+  rather than UDP as underlying network protocol.
+- `~calibration_file` (`string`, default: `""`): Location of a
+  YAML-file containing camera calibration data. This file can be
+  obtained from the SceneScan webinterface. An example calibration file
+  is provided in the repository. If this parameter is omitted, the
+  published camera calibration information only contains the q-Matrix.
+- `~delay_execution` (`double`, default: `0`): Allows the
+  configuration of an initial delay in seconds when launching the node.
+  This option can be used to delay the node launch while the calibration
+  information is downloaded.
+- `~max_depth` (`double`, default: `-1`): If set to a positive value,
+  all points in the point cloud with a higher depth will be set to
+  invalid.
 
 ### Testing
 

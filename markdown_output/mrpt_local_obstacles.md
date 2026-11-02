@@ -6,62 +6,40 @@ A node that maintains a local obstacle map (point cloud, voxels or
 occupancy grid) from recent sensor readings within a configurable time
 window.
 
+#### Published Topics
 
+- `local_map_pointcloud`
+  ([sensor_msgs/msg/PointCloud](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud.html)):
+  The local map as a point cloud. The frame_id is <frameid_robot>
+  (default: `odom`).
 
-```clearsilver
-pub {
-  0.name= local_map_pointcloud
-  0.type= sensor_msgs/PointCloud
-  0.desc= The local map as a point cloud. The frame_id is <frameid_robot> (default: `odom`). 
-}
-param{
-    0.name = ~frameid_reference
-    0.type = string
-    0.default = `"odom"`
-    0.desc = TF frame name for the reference frame
+#### Parameters
 
-    1.name = ~frameid_robot
-    1.type = string
-    1.default = `"base_link"`
-    1.desc =  TF frame name for the robot
+- `~frameid_reference` (`string`, default: `"odom"`): TF frame name
+  for the reference frame
+- `~frameid_robot` (`string`, default: `"base_link"`): TF frame name
+  for the robot
+- `~source_topics_2dscan` (`string`, default: `"scan,laser1"`): A
+  comma-separate list of topics to subscribe to for 2D
+  [sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+  messages.
+- `~topic_local_map_pointcloud` (`string`, default:
+  `"local_map_pointcloud"`): Name of the topic where to publish the
+  local map
+- `~time_window` (`double`, default: `0.2`): For how long past
+  observations will be stored in the local map (seconds)
+- `~publish_period` (`double`, default: `0.1`): How often to publish the
+  local map (seconds)
+- `~show_gui` (`bool`, default: `true`): Show an independent window with
+  a 3D view of the local obstacles map
 
-    2.name = ~source_topics_2dscan
-    2.type = string
-    2.default = `"scan,laser1"`
-    2.desc = A comma-separate list of topics to subscribe to for 2D <<MsgLink(sensor_msgs/LaserScan)>> messages.
+#### Required tf Transforms
 
-    3.name = ~topic_local_map_pointcloud
-    3.type = string
-    3.default = `"local_map_pointcloud"`
-    3.desc = Name of the topic where to publish the local map
-
-    4.name = ~time_window
-    4.type = double
-    4.default = 0.2
-    4.desc = For how long past observations will be stored in the local map (seconds)
-
-    5.name = ~publish_period
-    5.type = double
-    5.default = 0.1
-    5.desc = How often to publish the local map (seconds)
-
-    6.name = ~show_gui
-    6.type = bool
-    6.default = true
-    6.desc = Show an independent window with a 3D view of the local obstacles map
-}
-req_tf {
-    0.from = <value of ~frameid_robot> (typ: `base_link`)
-    0.to = <each sensor frameid> (typ: `scan`, etc)
-    0.desc = local pose of each sensor on the robot
-
-    1.from = <value of ~frameid_reference> (typ: `odom`)
-    1.to = <value of ~frameid_robot> (typ: `base_link`)
-    1.desc = pose of the robot on the reference frame
-}
-```
-
-
+- <value of frameid_robot> (typ: `base_link`) → <each sensor
+  frameid> (typ: `scan`, etc): local pose of each sensor on the robot
+- <value of frameid_reference> (typ: `odom`) → <value of
+  frameid_robot> (typ: `base_link`): pose of the robot on the
+  reference frame
 
 ## Demo
 

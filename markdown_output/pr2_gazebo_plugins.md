@@ -1,17 +1,17 @@
 ## PR2 Plugins
 
-This package contains dynamic plugins for [ Gazebo](gazebo) and
+This package contains dynamic plugins for [Gazebo](gazebo) and
 [ROS](ROS) integration with simulated hardware.
 
 - Plugin-Supported Hardware:
-- [pr2_etherCAT](pr2_etherCAT)/[ PR2 Controller Manager](https://index.ros.org/p/pr2_controller_manager):
+- [pr2_etherCAT](pr2_etherCAT)/[PR2 Controller Manager](https://index.ros.org/p/pr2_controller_manager):
   provided by `GazeboRosControllerManager`.
-- [ Prosilica Camera](https://index.ros.org/p/prosilica_camera):
-  provided by `GazeboRosProsilica`.
+- [Prosilica Camera](https://index.ros.org/p/prosilica_camera): provided
+  by `GazeboRosProsilica`.
 - [Battery Power Monitor](https://index.ros.org/p/power_monitor):
   provided by `GazeboRosPowerMonitor`.
 - Unsupported Features:
-- [ Power Board Driver](https://index.ros.org/p/pr2_power_drivers)
+- [Power Board Driver](https://index.ros.org/p/pr2_power_drivers)
 
 Please see [gazebo_plugins](https://index.ros.org/p/gazebo_plugins) for
 additional supported hardware components in simulation.
@@ -46,8 +46,8 @@ parameter where robot description is stored. `<robotNamespace>`
 
 `GazeboRosProsilica` plugin provides ROS topic and service interfaces
 similar to those provided by the
-[ Prosilica Camera hardware](https://index.ros.org/p/prosilica_camera)
-on PR2.
+[Prosilica Camera hardware](https://index.ros.org/p/prosilica_camera) on
+PR2.
 
 #### Parameters
 
@@ -147,47 +147,42 @@ voltate `<dischargeRate>` (double, default: -500.0) Discharge rate
 
 ## ROS API
 
+### gazebo_ros_power_node
 
+Gazebo plugin for simulating the PR2 power monitor.
 
-```clearsilver
-name = gazebo_ros_power_node
-desc = Gazebo plugin for simulating the PR2 power monitor.
-sub {
-  0.name = plugged_in
-  0.type = pr2_gazebo_plugins/PlugCommand
-  0.desc = plugged in state
-}
-pub {
-  0.name = <powerStateTopic>
-  0.type = pr2_msgs/PowerState
-  0.desc = simulated power state
-}
-```
+#### Subscribed Topics
 
+- `plugged_in`
+  ([pr2_gazebo_plugins/msg/PlugCommand](https://docs.ros.org/en/rolling/p/pr2_gazebo_plugins/msg/PlugCommand.html)):
+  plugged in state
 
+#### Published Topics
 
+- `<powerStateTopic>`
+  ([pr2_msgs/msg/PowerState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PowerState.html)):
+  simulated power state
 
+### gazebo_ros_prosilica_node
 
-```clearsilver
-name = gazebo_ros_prosilica_node
-desc = Gazebo plugin for simulating the prosilica camera. This follows the standard ROS API for camera drivers.
-pub {
-  0.name = <imageTopicName>
-  0.type = sensor_msgs/Image
-  0.desc = Camera image
-  1.name = <cameraInfoTopicName>
-  1.type = sensor_msgs/CameraInfo
-  1.desc = Camera info
-}
+Gazebo plugin for simulating the prosilica camera. This follows the
+standard ROS API for camera drivers.
 
-srv {
-    0.name = request_image
-    0.type = polled_camera/GetPolledImage
-    0.desc = '''(Polled Mode Only)''' Captures an image and publishes it in the namespace specified by the request message. Returns the timestamp.
-}
-```
+#### Published Topics
 
+- `<imageTopicName>`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Camera image
+- `<cameraInfoTopicName>`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera info
 
+#### Services
+
+- `request_image`
+  ([polled_camera/srv/GetPolledImage](https://docs.ros.org/en/rolling/p/polled_camera/srv/GetPolledImage.html)):
+  **(Polled Mode Only)** Captures an image and publishes it in the
+  namespace specified by the request message. Returns the timestamp.
 
 ### gazebo_ros_controller_manager
 
@@ -218,6 +213,10 @@ is updated. Future versions will also incorporate
 options to match ORS driver functionality.
 
 ## Adding a GazeboRosForce gazebo ros plugin to a simulated object
+
+- **Note:** Adding a GazeboRosForce gazebo ros plugin to a simulated
+  object.
+- **Keywords:** gazebo plugins GazeboRosForce
 
 ### GazeboRosForce Example
 
@@ -313,6 +312,14 @@ rostopic pub /force geometry_msgs/Wrench  '{force:  {x: 0.0, y: 0.0, z: 0.0}, to
 
 ## Attaching a ROS Ground Truth Pose Broadcaster to Objects in Simulation
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Spawn simple URDF object in simulation](simulator_gazebo/Tutorials/SpawningObjectInSimulation).
+- **Description:** Attaching a ROS ground truth pose broadcaster to
+  objects in simulation
+
+
+
 ```wiki
 Users are highly discouraged from using the documentation and tutorials for Gazebo on this page. Gazebo is now a stand alone project at [[http://gazebosim.org|gazebosim.org]]. See documentation there, thanks!
 ```
@@ -394,7 +401,7 @@ rostopic echo my_box_pose_ground_truth
 ## Tutorials
 
 *Also see
-[ pr2_simulator tutorials](https://index.ros.org/p/pr2_simulator).*
+[pr2_simulator tutorials](https://index.ros.org/p/pr2_simulator).*
 
 - [Adding a GazeboRosForce gazebo ros plugin to a simulated object](#adding-a-gazeborosforce-gazebo-ros-plugin-to-a-simulated-object):
   \## the next tutorial description (optional)

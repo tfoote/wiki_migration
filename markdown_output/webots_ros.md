@@ -138,6 +138,12 @@ operation of a Universal Robot using the ROS Industrial interfaces:
 
 ## Sample Simulations
 
+- **Description:** This tutorial presents the sample simulations
+  included in this package.
+- **Keywords:** Webots, simulation, pioneer, e-puck, slam, line
+  following, video recording
+- **Tutorial Level:** BEGINNER
+
 For each simulation, the simplest solution is to use the associated
 launch file, but of course, if you prefer you can start Webots, open the
 corresponding world and then launch the node yourself.

@@ -34,6 +34,11 @@ rosserial.
 
 ## Adding Support for New Hardware
 
+- **Description:** This tutorial contains details about the custom code
+  required to get rosserial_client working on your hardware.
+- **Keywords:** rosserial, rosserial_client, embedded, microcontroller
+- **Tutorial Level:** INTERMEDIATE
+
 rosserial_client contains the generic
 client-side [rosserial](https://index.ros.org/p/rosserial)
 implementation. It is designed for microcontrollers and it can run on
@@ -120,6 +125,13 @@ namespace ros
 
 ## Generating Message Header File
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Arduino IDE Setup](https://index.ros.org/p/rosserial_arduino).
+- **Description:** This tutorial shows how to generate message header
+  files for using new message packages with rosserial.
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 Software running in embedded systems like
@@ -198,6 +210,23 @@ include the ROS definition of your custom messages into a ROS C++ or
 python node.
 
 ## Using rosserial with AVR and UART
+
+- **Note:** This tutorial assumes you are familiar with the previous
+  tutorials
+  [Adding Support for New Hardware](#adding-support-for-new-hardware),
+  [Adding Support for New Hardware](#adding-support-for-new-hardware),
+  and
+  [Hello World (example publisher)](https://index.ros.org/p/rosserial_arduino).
+- **Description:** This tutorial will show you how to get the
+  [rosserial_arduino](https://index.ros.org/p/rosserial_arduino)
+  [Hello World (example publisher)](https://index.ros.org/p/rosserial_arduino)
+  tutorial running on an AVR.
+- **Keywords:** rosserial, rosserial_client, AVR, embedded,
+  microcontroller
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:** The next tutorial will show you how to use
+  rosserial_client with USB
+  [Using rosserial with AVR and USB](#using-rosserial-with-avr-and-usb)
 
 ### Source Code
 
@@ -1339,6 +1368,15 @@ rostopic echo chatter
 of communicating with your ROS nodes!
 
 ## Using rosserial with AVR and USB
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Using rosserial with AVR and UART](#using-rosserial-with-avr-and-uart).
+- **Description:** This tutorial will show you how to run rosserial on
+  an AVR that supports USB.
+- **Keywords:** rosserial, rosserial_client, AVR, embedded,
+  microcontroller, USB, LUFA
+- **Tutorial Level:** INTERMEDIATE
 
 ### Source Code
 

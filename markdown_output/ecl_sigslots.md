@@ -183,6 +183,14 @@ discussed [here](#background).
 
 ## Introduction to Sigslots
 
+- **Description:** Creating, connecting and triggering signals and
+  slots.
+- **Keywords:** ecl sigslots
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Relaying Signals](#relaying-signals)
+  [Debugging Sigslots](#debugging-sigslots)
+
 ### Slot Loading
 
 Loading of slots can be done directly to free or member functions
@@ -263,6 +271,15 @@ still manage heavy workloads.
 
 ## Relaying Signals
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Introduction to Sigslots](#introduction-to-sigslots).
+- **Description:** Relaying data from one signaller to the next.
+- **Keywords:** ecl relaying signals
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Debugging Sigslots](#debugging-sigslots)
+
 ### Relaying
 
 A signal can relay another signal, effectively posing temporarily as a
@@ -282,6 +299,14 @@ signal.emit();
 ```
 
 ## Debugging Sigslots
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Introduction to Sigslots](#introduction-to-sigslots),
+  [Relaying Signals](#relaying-signals).
+- **Description:** Tools to help debug sigslots problems.
+- **Keywords:** ecl sigslots
+- **Tutorial Level:** INTERMEDIATE
 
 Often you may wish to see what is actually connected. This can be done
 by calling the `SigSlotsManager<T>::printStatistics()` function.

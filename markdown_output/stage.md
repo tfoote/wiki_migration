@@ -134,6 +134,17 @@ Now let start creating a map of the world from a image file.
 
 ## Introduction to Stage Controllers
 
+- **Note:** This tutorial works on ROS Electric but has known issues in
+  ROS Fuerte and ROS Groovy.
+- **Description:** Stage (ver 3.0.0 and above) is equipped to work as
+  standalone, wherein controllers integrated into stage enables motion,
+  behaviour and processes for the robot(s). This tutorial discusses two
+  such stage controllers.
+- **Keywords:** Stage
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Making Maps Using Stage's Wander Controller](http://www.ros.org/wiki/stage/Tutorials/MakingMapsUsingStagesWanderController)
+
 ### Why Stage Controllers ?
 
 Those of us who have used Stage (or Player/Stage) would have probably
@@ -153,7 +164,7 @@ the same time.
 Download the codes from
 <https://code.google.com/archive/p/mobotica/downloads> and extract the
 stage_controllers file and make sure that it is in the
-[ ROS path](http://www.ros.org/wiki/ROS/EnvironmentVariables#ROS_PACKAGE_PATH ).
+[ROS path](http://www.ros.org/wiki/ROS/EnvironmentVariables#ROS_PACKAGE_PATH).
 
 Build the package;
 
@@ -272,9 +283,18 @@ library to develop controllers.
 
 ### References
 
-[ Richard T. Vaughan. Massively Multi-Robot Simulations in Stage. Swarm Intelligence, 2(2-4):189-208, 2008](http://autonomy.cs.sfu.ca/doc/vaughan_si08.pdf )
+[Richard T. Vaughan. Massively Multi-Robot Simulations in Stage. Swarm Intelligence, 2(2-4):189-208, 2008](http://autonomy.cs.sfu.ca/doc/vaughan_si08.pdf)
 
 ## Making Maps Using Stage's Wander Controller
+
+- **Note:** This tutorial works on ROS Electric but has known issues in
+  ROS Fuerte and ROS Groovy.
+- **Description:** This tutorial assumes that you have mastered stage
+  simulations and you are well acquainted with the wander
+  controller.This tutorial uses stage's wander controller to obtain a
+  map of the robot's environment in an incremental manner.
+- **Keywords:** Stage, SLAM, map
+- **Tutorial Level:** ADVANCED
 
 ### SLAM Using Stage's Wander Controller
 
@@ -290,7 +310,7 @@ multirobot SLAM is not within the scope of this tutorial.
 Download the codes from
 <http://mobotica.googlecode.com/files/stage_controllers.tar.gz> and
 extract the stage_controllers file and make sure that it is in the
-[ ROS path](http://www.ros.org/wiki/ROS/EnvironmentVariables#ROS_PACKAGE_PATH ).
+[ROS path](http://www.ros.org/wiki/ROS/EnvironmentVariables#ROS_PACKAGE_PATH).
 
 Build the package;
 
@@ -365,6 +385,13 @@ The `rxgraph` of this simulation shows the nodes in use;
 ![alt text/\|width=720](http://1.bp.blogspot.com/-D3K0tmRW6ts/Tqz-UgP-jWI/AAAAAAAABtA/HfERsysc0cs/s1600/rxgraph.png)
 
 ## Simulating One Robot in Stage
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** This tutorial shows you how to use the Stage
+  simulator to simulate a single, Erratic-like robot, roaming an
+  environment that looks a lot like the Willow Garage building.
+- **Tutorial Level:** BEGINNER
 
 ### Build stage
 

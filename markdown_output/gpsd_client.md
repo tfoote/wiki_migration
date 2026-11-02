@@ -14,6 +14,11 @@
 
 ## Configuring a Trimble AgGPS Receiver
 
+- **Description:** Trimble AgGPS configuration requirements for
+  interoperability with gpsd_client
+- **Keywords:** Trimble, Trimble AgGPS, AgGPS, GPS, gpsd, gpsd_client,
+  gps
+
 In order for a Trimble AgGPS262 or similar AgGPS receiver to operate
 correctly with gpsd_client the receiver has to be configured properly.
 
@@ -46,6 +51,11 @@ settings on the receiver I was finally able to receive valid result via
 "rostopic echo /gps" after setting up my receiver as above.
 
 ## Getting Started with gpsd_client (C++)
+
+- **Description:** Detailed tutorial for running gpsd_client in ROS
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Writing a Subscriber for gpsd_client (C++)](#writing-a-subscriber-for-gpsd_client-c)
 
 ### Hardware Requirements
 
@@ -250,6 +260,16 @@ $ rostopic echo /fix
 messages from the GPS on the terminal.
 
 ## Writing a Subscriber for gpsd_client (C++)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Getting Started with gpsd_client (C++)](#getting-started-with-gpsd_client-c),
+  [Beginner Level Tutorials](ROS/Tutorials) and
+  [Publishers and Subscribers](https://index.ros.org/p/roscpp).
+- **Description:** This tutorial illustrates a sample code in C++ to get
+  gps data using gpsd_client. We use class methods to bring the gps data
+  to the main function.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Hardware Requirements
 

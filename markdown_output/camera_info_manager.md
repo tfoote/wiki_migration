@@ -92,6 +92,14 @@ transform frame IDs.
 
 ## Using camera_info_manager in a Camera Driver (C++)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials),
+  [Writing a Simple Image Publisher (C++)](https://index.ros.org/p/image_transport).
+- **Description:** This tutorial shows how to provide calibration
+  information while publishing images.
+- **Keywords:** camera_calibration, image_transport, image_pipeline
+- **Tutorial Level:** BEGINNER
+
 ### Example code
 
 Until I have time to write up a good tutorial, here is an example of a

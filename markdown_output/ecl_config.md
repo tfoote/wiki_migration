@@ -134,6 +134,11 @@ if ( ecl::is_char_signed() {
 
 ## Custom Platform Detection
 
+- **Description:** Manually setting ecl_config parameters for a custom
+  board configuration.
+- **Keywords:** ecl config custom
+- **Tutorial Level:** INTERMEDIATE
+
 ### Manual Configuration
 
 If ecl can't successfully autodetect your platform implementation, then

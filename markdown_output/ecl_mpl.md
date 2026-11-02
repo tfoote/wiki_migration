@@ -26,6 +26,9 @@ using ecl::Unsigned;    // type converters
 
 ## Boolean Logic
 
+- **Description:** Using compile time boolean types for metaprogramming.
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 It provides a compile-time boolean type used to make logical inferences
@@ -73,6 +76,10 @@ int main() {
 
 ## Enable If
 
+- **Description:** An if operator for template type arguments.
+- **Keywords:** ecl mpl
+- **Tutorial Level:** INTERMEDIATE
+
 ### Usage
 
 These allow you to various compile tricks with SFINAE (Substitution
@@ -118,6 +125,10 @@ class TestObject : public ecl::FailedObject {};
 ```
 
 ## Converters
+
+- **Description:** Compile time type converters.
+- **Keywords:** ecl converters
+- **Tutorial Level:** INTERMEDIATE
 
 ### Usage
 

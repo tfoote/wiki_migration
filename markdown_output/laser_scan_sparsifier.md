@@ -11,34 +11,30 @@ Two drivers are available: `laser_scan_sparsifier_nodelet` and
 `laser_scan_sparsifier_node`. Their parameters and topics are
 identical.
 
+### laser_scan_sparsifier_node / laser_scan_sparsifier_nodelet
 
+The `laser_scan_sparsifier` takes in
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages, and downsamples it by a given step size.
 
-```clearsilver
- name = laser_scan_sparsifier_node / laser_scan_sparsifier_nodelet
- desc = The `laser_scan_sparsifier` takes in <<MsgLink(sensor_msgs/LaserScan)>> messages, and downsamples it by a given step size.
-sub {
-   0{
-    name = scan
-    type = sensor_msgs/LaserScan
-    desc = Input scan
-    }
-  }
-pub {
-   0{
-    name = scan_sparse
-    type = sensor_msgs/LaserScan
-    desc = Output scan
-   }
-  }
-param{
-    0.name = ~step
-    0.type = int
-    0.default = 2
-    0.desc = Step size for decimation (must be > 0). A step size of 1 means the output scan will be the same as the input scan. A step size of 2 means the output scan will be half the input scan, etc.
-}
-```
+#### Subscribed Topics
 
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Input scan
 
+#### Published Topics
+
+- `scan_sparse`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Output scan
+
+#### Parameters
+
+- `~step` (`int`, default: `2`): Step size for decimation (must be >
+  0). A step size of 1 means the output scan will be the same as the
+  input scan. A step size of 2 means the output scan will be half the
+  input scan, etc.
 
 ## Bug Reports & Feature Requests
 

@@ -32,38 +32,28 @@ This package's API is expected to be stable.
 
 ## Nodes
 
+### spacenav_node
 
+`spacenav_node` provides output from the
+[spacenav](https://index.ros.org/p/spacenav) driver over ROS.
 
-```clearsilver
-node {
- 0{
- name = spacenav_node
- desc = `spacenav_node` provides output from the [[spacenav]] driver over ROS.
- pub {
-  0{
-  name= spacenav/offset
-  type= geometry_msgs/Vector3
-  desc= Publishes the linear component of the joystick's position. Approximately normalized to a range of -1 to 1.
-  }
-  1{
-  name= spacenav/rot_offset
-  type= geometry_msgs/Vector3
-  desc= Publishes the angular component of the joystick's position. Approximately normalized to a range of -1 to 1.
-  }
-  2{
-  name= spacenav/twist
-  type= geometry_msgs/Twist
-  desc= Combines `offset` and `rot_offset` into a single message.
-  }
-  3{
-  name= spacenav/joy
-  type= sensor_msgs/Joy
-  desc= Outputs the spacenav's six degrees of freedom and its buttons as a joystick message.
-  }
- }
- }
-}
-```
+#### Published Topics
+
+- `spacenav/offset`
+  ([geometry_msgs/msg/Vector3](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3.html)):
+  Publishes the linear component of the joystick's position.
+  Approximately normalized to a range of -1 to 1.
+- `spacenav/rot_offset`
+  ([geometry_msgs/msg/Vector3](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Vector3.html)):
+  Publishes the angular component of the joystick's position.
+  Approximately normalized to a range of -1 to 1.
+- `spacenav/twist`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  Combines `offset` and `rot_offset` into a single message.
+- `spacenav/joy`
+  ([sensor_msgs/msg/Joy](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Joy.html)):
+  Outputs the spacenav's six degrees of freedom and its buttons as a
+  joystick message.
 
 ## Tutorials
 
@@ -150,6 +140,17 @@ device name: 3Dconnexion SpaceNavigator for Notebooks
 ```
 
 ## How to Use a SpaceNavigator with the spacenav_node
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** This tutorial is an introduction to using the
+  3DConnexion !SpaceNavigator connected to a desktop. After reading
+  this, you should be able to bring up the spacenav_node and display the
+  data.
+- **Keywords:** spacenavigator, 3DConnexion, joystick, driver
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Writing a Teleoperation Node for the SpaceNavigator](#writing-a-teleoperation-node-for-the-spacenavigator)
 
 ### Compiling
 
@@ -245,6 +246,15 @@ Move the spacenavigator around to see the data change.
 
 ## Writing a Teleoperation Node for the SpaceNavigator
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [How to Use a SpaceNavigator with the Spacenav_node](#how-to-use-a-spacenavigator-with-the-spacenav_node).
+- **Description:** This tutorial covers how to write a teleoperation
+  node and use it to drive the turtle in the
+  [turtlesim](https://index.ros.org/p/turtlesim).
+- **Keywords:** teleoperation, !SpaceNavigator
+- **Tutorial Level:** BEGINNER
+
 ### Workspace Setup
 
 If you have not yet created a workspace in which to complete the
@@ -285,7 +295,7 @@ Any packages you create in that directory will be found by
 An alternative to source your script file is to add it to your
 `.bashrc`, but remember that this will persist in your `.bashrc`
 into the future, and you can only have one environment setup. For more
-on what this is doing see [ this page](rosinstall#Generating_setup.sh)
+on what this is doing see [this page](rosinstall#Generating_setup.sh)
 }}}}}
 
 
@@ -344,6 +354,15 @@ learning_spacenav package and run
 
 First, create learning_spacenav/src/teleop_turtle_spacenav.cpp in your
 favorite editor, and place the following inside of it:
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [How to Use a SpaceNavigator with the Spacenav_node](#how-to-use-a-spacenavigator-with-the-spacenav_node).
+- **Description:** This tutorial covers how to write a teleoperation
+  node and use it to drive the turtle in the
+  [turtlesim](https://index.ros.org/p/turtlesim).
+- **Keywords:** teleoperation, !SpaceNavigator
+- **Tutorial Level:** BEGINNER
 
 ##### The Code
 

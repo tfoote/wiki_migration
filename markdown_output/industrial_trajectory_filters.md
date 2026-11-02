@@ -5,33 +5,28 @@ filters are focused on the needs of industrial robots and applications.
 
 ## Filters
 
+### uniform_sample_filter
 
+Re-samples a planned trajectory with a uniform time step in between
+points. Re-sampling is done using a higher order spline smoother in
+joint space. The filter expects fully defined trajectories (position,
+velocity, acceleration).
 
-```clearsilver
+#### Parameters
 
-node.0 {
-  name = uniform_sample_filter
-  desc = Re-samples a planned trajectory with a uniform time step in between points.  Re-sampling is done using a higher order spline smoother in joint space.  The filter expects fully defined trajectories (position, velocity, acceleration).
+- `sample_duration` (`float`): step size in seconds between way-points.
 
-  param {
-    0.name = sample_duration
-    0.type = float
-    0.desc = step size in seconds between way-points.
-  }
-}
+### n_point_filter
 
-node.1 {
-  name = n_point_filter
-  desc = Reduces trajectory to be <=N total points.  This reduction process uses existing points (re-sampling and interpolation are not done).  This filter works best with a uniformly sampled trajectory, but this is not required.  If the trajectory is less than N points, no filtering is performed.
+Reduces trajectory to be <=N total points. This reduction process uses
+existing points (re-sampling and interpolation are not done). This
+filter works best with a uniformly sampled trajectory, but this is not
+required. If the trajectory is less than N points, no filtering is
+performed.
 
-  param {
-    0.name = n_points
-    0.type = float
-    0.desc = maximum number of waypoints (must be >=2)
-  }
-```
+#### Parameters
 
-
+- `n_points` (`float`): maximum number of waypoints (must be >=2)
 
 ## Applying Filters
 
@@ -88,6 +83,15 @@ Arm navigation has been deprecated in the ROS Groovy release and removed in ROS 
 ```
 
 
+
+- **Description:** This tutorial describes how to convert an
+  [Arm Navigation](arm_navigation) *Trajectory Filter Plugin* into a
+  MoveIt *Planning Request Adapter* that can be compiled in a catkin
+  package. **(<=Groovy)**
+- **Keywords:** trajectory, filters, plugin, path, adapter
+- **Tutorial Level:** ADVANCED
+- **Next Tutorial:**
+  [Developing a Planning Request Adapter in MoveIt!](#developing-a-planning-request-adapter)
 
 This tutorial will guide you through the process of taking a legacy
 [Arm Navigation](arm_navigation) *trajectory filter* and converting into
@@ -242,7 +246,7 @@ a\. In your filter implementation, replace the base class
 `industrial_trajectory_filters::FilterBase<T>`.
 
 a\. Remove all calls to the `getParam()` methods from the old
-[FilterBase ](http://ros.org/doc/groovy/api/filters/html/classfilters_1_1FilterBase.html)
+[FilterBase](http://ros.org/doc/groovy/api/filters/html/classfilters_1_1FilterBase.html)
 class and instead use the roscpp parameter interface for any parameter
 lookup tasks.
 
@@ -302,6 +306,12 @@ functionality inside of MoveIt.
 will guide you through the steps.
 
 ## Developing a Planning Request Adapter
+
+- **Description:** This tutorial is a step by step development of a
+  planning request adapter using a simple smoothing filter as an example
+- **Tutorial Level:** ADVANCED
+- **Next Tutorial:**
+  [Using a planning adapter inside of MoveIt](#using-a-planning-adapter-inside-of-moveit)
 
 ### Overview
 
@@ -524,6 +534,14 @@ contain an entry for your newly created plugin similar to the following:
 
 ## Using a planning adapter inside of MoveIt.
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Converting Arm Navigation trajectory filters into MoveIt Planning Request Adapters](#converting-arm-navigation-trajectory-filters-into-moveit-planning-request-adapters).
+- **Description:** This tutorial will show you how to use a planning
+  request adapter with !MoveIt.
+- **Keywords:** Trajectory Filter MoveIt Arm Planning
+- **Tutorial Level:** ADVANCED
+
 This tutorial will teach you how to use an industrial trajectory filter
 that was converted into a planning adapter inside of MoveIt.
 
@@ -623,6 +641,14 @@ Two modifications were made to the file:
   waypoints after the filter is applied.
 
 ## Utilizing Trajectory Filters with a Generated Arm Navigation Package
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Creating an Arm Navigation Package for an Industrial Robot](Tutorials/Create_a_Arm_Nav_Pkg_for_an_Industrial_Robot).
+- **Description:** Gives an overview of the common industrial trajectory
+  filters and shows how to apply them to an auto-generated arm
+  navigation package
+- **Tutorial Level:** INTERMEDIATE
 
 In this tutorial we will give an overview of the more common industrial
 trajectory filters. We will then show how to apply the filters to an

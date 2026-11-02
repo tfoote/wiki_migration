@@ -1,37 +1,36 @@
 ## Nodes
 
+### neato_laser_publisher
 
+`neato_laser_publisher` ROS wrapper for the `xv11_laser_driver`
+library also available in this package.
 
-```clearsilver
-node.0 {
- name = neato_laser_publisher
- desc = `neato_laser_publisher` ROS wrapper for the `xv11_laser_driver` library also available in this package.
- pub{
-  0.name= scan
-  0.type= sensor_msgs/LaserScan
-  0.desc= Scan data from the laser. Under normal conditions, contains 360 pings at 1 degree increments.
-  }
- param {
-  0.name = ~port
-  0.default = /dev/ttyUSB0
-  0.type = string
-  0.desc = The device path
-  1.name = ~baud_rate
-  1.default = 115200
-  1.type = int
-  1.desc = The baud rate to receive laser data. Should not be changed from 115200 unless the laser's baud rate is changed (by a firmware upgrade, for example).
-  2.name = ~firmware_version
-  2.default = 1
-  2.type = int
-  2.desc = The firmware version that attempts to interpret the byte format of the laser.  There are two known firmwares right now.  One is noted for sending all 360 pings in a structure.  This is probably the older firmware and is "1" for this value.  The other sends the pings 4 at a time.  This is probably the newer firmware and is "2" for this value. There isn't a reliable way to get the firmware version from the laser right now, so you'll have to set this and check a visualization of the pings in order to see if the driver is correctly interpreting the laser bytes.
-  3.name = ~frame_id
-  3.default = neato_laser
-  3.type = string
-  3.desc = The laser data frame. This frame should be at the optical center of the laser, with the x-axis along the zero degree ray, and the y-axis along the pi/2 degree ray.
-  }
-```
+#### Published Topics
 
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Scan data from the laser. Under normal conditions, contains 360 pings
+  at 1 degree increments.
 
+#### Parameters
+
+- `~port` (`string`, default: `/dev/ttyUSB0`): The device path
+- `~baud_rate` (`int`, default: `115200`): The baud rate to receive
+  laser data. Should not be changed from 115200 unless the laser's baud
+  rate is changed (by a firmware upgrade, for example).
+- `~firmware_version` (`int`, default: `1`): The firmware version that
+  attempts to interpret the byte format of the laser. There are two
+  known firmwares right now. One is noted for sending all 360 pings in a
+  structure. This is probably the older firmware and is "1" for this
+  value. The other sends the pings 4 at a time. This is probably the
+  newer firmware and is "2" for this value. There isn't a reliable
+  way to get the firmware version from the laser right now, so you'll
+  have to set this and check a visualization of the pings in order to
+  see if the driver is correctly interpreting the laser bytes.
+- `~frame_id` (`string`, default: `neato_laser`): The laser data frame.
+  This frame should be at the optical center of the laser, with the
+  x-axis along the zero degree ray, and the y-axis along the pi/2 degree
+  ray.
 
 ## Library
 
@@ -58,6 +57,17 @@ As a standalone library, it has no ROS API.
   formatting. This is for the older firmware only.
 
 ## Connecting the XV-11 Laser to USB
+
+- **Note:** This tutorial requires voiding your Neato XV-11's warranty
+  and removing the laser from the robot. Your robot will not work
+  without this laser present. For using the robot inside ROS, please
+  see: [The Neato Robot Stack](neato_robot).
+- **Description:** This tutorial will show you how to remove the XV-11
+  vacuum cleaner's built in laser and connect it as a stand alone laser
+  scanner through USB.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Running the XV-11 Node](#running-the-xv-11-laser-node)
 
 So you want to use the XV-11 laser without gluing the vacuum robot to
 the top of your iRobot Create? This tutorial will show you how to remove
@@ -168,6 +178,15 @@ something that looks like this and you can move on to the
 ![width="60%"](doc/XV_Lidar_Controller_with_Laser.jpg)
 
 ## Running the XV-11 Laser Node
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Connecting the XV-11 Laser to USB](#connecting-the-xv-11-laser-to-usb),
+  [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial will walk you through installing and
+  running the XV-11 Laser Node so that you get laser scans in rviz.
+- **Keywords:** xv11 xv-11 neato laser rviz udev ftdi
+- **Tutorial Level:** BEGINNER
 
 ### Install the Driver
 
@@ -316,6 +335,16 @@ look right, try the other way of starting the driver.
 {} {} Have fun playing with your XV-11 Laser!
 
 ## The Underlying XV-11 Protocol Explained
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Running the XV-11 Node](#running-the-xv-11-laser-node).
+- **Description:** This tutorial will walk you through one entire
+  message sent from the XV-11 laser and will tell you exactly what gets
+  output from the unit. This is an advanced tutorial for those
+  interested in the raw data formatting. This is for the older firmware
+  only.
+- **Tutorial Level:** ADVANCED
 
 An entire message consists of 1446 bytes. The format consists of:
 

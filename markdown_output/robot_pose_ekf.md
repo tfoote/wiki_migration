@@ -60,27 +60,37 @@ $ roslaunch robot_pose_ekf.launch
 
 ## Nodes
 
+### robot_pose_ekf
 
+`robot_pose_ekf` implements an extended Kalman filter for determining
+the robot pose.
 
-```clearsilver
-node.0{
- name = robot_pose_ekf
- desc = `robot_pose_ekf` implements an extended Kalman filter for determining the robot pose.
- sub {
-  0.name= odom
-  0.type= nav_msgs/Odometry
-  0.desc= '''2D pose''' (used by wheel odometry): The 2D pose contains the position and orientation of the robot in the ground plane and the covariance on this pose. The message to send this 2D pose actually represents a 3D pose, but the z, roll and pitch are simply ignored. 
-  1.name= imu_data 
-  1.type= sensor_msgs/Imu
-  1.desc= '''3D orientation''' (used by the IMU): The 3D orientation provides information about the Roll, Pitch and Yaw angles of the robot base frame relative to a world reference frame. The Roll and Pitch angles are interpreted as absolute angles (because an IMU sensor has a gravity reference), and the Yaw angle is interpreted as a relative angle. A covariance matrix specifies the uncertainty on the orientation measurement. The robot pose ekf will not start when it only receives messages on this topic; it also expects messages on either the 'vo' or the 'odom' topic.
-  2.name= vo
-  2.type= nav_msgs/Odometry
-  2.desc= '''3D pose''' (used by Visual Odometry): The 3D pose represents the full position and orientation of the robot and the covariance on this pose. When a sensor only measures part of a 3D pose (e.g. the wheel odometry only measures a 2D pose), simply specify a large covariance on the parts of the 3D pose that were not actually measured.
- }
-}
-```
+#### Subscribed Topics
 
-
+- `odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  **2D pose** (used by wheel odometry): The 2D pose contains the
+  position and orientation of the robot in the ground plane and the
+  covariance on this pose. The message to send this 2D pose actually
+  represents a 3D pose, but the z, roll and pitch are simply ignored.
+- `imu_data`
+  ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
+  **3D orientation** (used by the IMU): The 3D orientation provides
+  information about the Roll, Pitch and Yaw angles of the robot base
+  frame relative to a world reference frame. The Roll and Pitch angles
+  are interpreted as absolute angles (because an IMU sensor has a
+  gravity reference), and the Yaw angle is interpreted as a relative
+  angle. A covariance matrix specifies the uncertainty on the
+  orientation measurement. The robot pose ekf will not start when it
+  only receives messages on this topic; it also expects messages on
+  either the 'vo' or the 'odom' topic.
+- `vo`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  **3D pose** (used by Visual Odometry): The 3D pose represents the full
+  position and orientation of the robot and the covariance on this pose.
+  When a sensor only measures part of a 3D pose (e.g. the wheel odometry
+  only measures a 2D pose), simply specify a large covariance on the
+  parts of the 3D pose that were not actually measured.
 
 The `robot_pose_ekf` node does not require all three sensor sources to
 be available all the time. Each source gives a pose estimate and a
@@ -90,29 +100,15 @@ will automatically detect and use the available sensors.To add your own
 sensor inputs, check out
 [the Adding a GPS sensor tutorial](#adding-a-gps-sensor-to-the-robot-pose-ekf-filter)
 
+#### Published Topics
 
+- `robot_pose_ekf/odom_combined`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  The output of the filter (the estimated 3D robot pose).
 
-```clearsilver
-pub {
-  0.name= robot_pose_ekf/odom_combined
-  0.type= geometry_msgs/PoseWithCovarianceStamped
-  0.desc= The output of the filter (the estimated 3D robot pose).
-}
-```
+#### Provided tf Transforms
 
-
-
-
-
-```clearsilver
-prov_tf {
-  0.from = odom_combined  
-  0.to= base_footprint
-  0.desc= 
-}
-```
-
-
+- `odom_combined` → `base_footprint`
 
 ## How Robot Pose EKF works
 
@@ -186,6 +182,12 @@ below).
 ## Tutorials
 
 ## Adding a GPS sensor to the Robot Pose EKF Filter
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** This tutorial describes how to add GPS sensor input
+  to the Robot Pose EKF Filter.
+- **Tutorial Level:** BEGINNER
 
 ### Available topics
 

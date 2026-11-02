@@ -82,7 +82,7 @@ the transport-specific topic used by a particular plugin.
 `image_transport` does not yet support Python, though it is on the
 [Roadmap](https://index.ros.org/p/image_common). If you need to
 interface a Python node with some compressed image transport, try
-interposing a republish node.
+interposing a [republish](#republish) node.
 
 ## Known Transport Packages
 
@@ -141,27 +141,17 @@ For example, using plugins for `"compressed"` and `"theora"`
 transports, with a base topic of `/stereo/left/image`, the topics
 would be:
 
-
-
-```clearsilver
-  pub {
-  no_header=True
-  0.name= stereo/left/image
-  0.type= sensor_msgs/Image
-  0.desc= Base topic, used for `"raw"` transport. Advertised just as if we used `ros::Publisher`.
-  1.name= stereo/left/image/compressed
-  1.type= <transport-specific type>
-  1.desc= Topic for `"compressed"` transport.
-  2.name= stereo/left/image/theora
-  2.type= <transport-specific type>
-  2.desc= Topic for `"theora"` transport.
-  3.name= stereo/left/camera_info
-  3.type= sensor_msgs/CameraInfo
-  3.desc= (''`image_transport::CameraPublisher`-only'') Camera info topic.
-}
-```
-
-
+- `stereo/left/image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Base topic, used for `"raw"` transport. Advertised just as if we
+  used `ros::Publisher`.
+- `stereo/left/image/compressed` (`<transport-specific type>`): Topic
+  for `"compressed"` transport.
+- `stereo/left/image/theora` (`<transport-specific type>`): Topic for
+  `"theora"` transport.
+- `stereo/left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  (*`image_transport::CameraPublisher`-only*) Camera info topic.
 
 #### Parameters
 
@@ -186,26 +176,20 @@ plugin parameters. }}}}
 ```
 {#!wiki version diamondback_and_newer
 Publisher plugin parameters should be exposed through [[dynamic_reconfigure]] for best visibility and ease of use. Conventionally, they take the following form:
-{{{
-#!clearsilver CS/NodeAPI
-param {
-  no_header= True
-  group.0 {
-    name=Reconfigurable parameters
-    desc=
-    0.name= <base topic>/<transport name>/<parameter name>
-    0.type= type
-    0.default= ?
-    0.desc= Transport-specific publisher parameter.
-    1.name= /camera/image/compressed/jpeg_quality
-    1.type= int
-    1.default= 80
-    1.desc= An example transport-specific parameter which sets the JPEG quality for `"compressed"` transport for image topic `/camera/image`.
-  }
-}
+
+===== Reconfigurable parameters =====
+
+ * {{{<base topic>/<transport name>/<parameter name>
 ```
 
- }}}}
+ (`type`, default: `?`):
+Transport-specific publisher parameter.
+
+- `/camera/image/compressed/jpeg_quality` (`int`, default: `80`): An
+  example transport-specific parameter which sets the JPEG quality for
+  `"compressed"` transport for image topic `/camera/image`.
+
+}}}}
 
 ### image_transport Subscribers
 
@@ -226,37 +210,24 @@ ROS topic associated with the base topic. For example, if the base topic
 is `/stereo/left/image`, the subscribed topics for transports
 `"raw"` and `"compressed"` are respectively:
 
+- `stereo/left/image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Base topic, used for the default `"raw"` transport. Subscribed
+  just as if we used `ros::Subscriber`.
+- `stereo/left/image/compressed` (`<transport-specific type>`): Topic
+  for `"compressed"` transport.
+- `stereo/left/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  (*`image_transport::CameraSubscriber`-only*) Camera info topic.
 
+#### Parameters
 
-```clearsilver
-sub {
-  no_header=True
-  0.name= stereo/left/image
-  0.type= sensor_msgs/Image
-  0.desc= Base topic, used for the default `"raw"` transport. Subscribed just as if we used `ros::Subscriber`.
-  1.name= stereo/left/image/compressed
-  1.type= <transport-specific type>
-  1.desc= Topic for `"compressed"` transport.
-  2.name= stereo/left/camera_info
-  2.type= sensor_msgs/CameraInfo
-  2.desc= (''`image_transport::CameraSubscriber`-only'') Camera info topic.
-}
-```
+- `~image_transport` (`string`, default: `"raw"`): Name of the transport
+  to use.
 
- 
-
-```clearsilver
-param {
-  0.name= ~image_transport
-  0.default= "raw"
-  0.type= string
-  0.desc= Name of the transport to use.
-}
-```
-
- If this parameter is
-not set, the transport from the `image_transport::TransportHints`
-argument of `image_transport::ImageTransport::subscribe()` is used.
+If this parameter is not set, the transport from the
+`image_transport::TransportHints` argument of
+`image_transport::ImageTransport::subscribe()` is used.
 
 `image_transport::TransportHints` may be used to specify a different
 namespace for parameter lookup. This is useful to remap
@@ -290,39 +261,33 @@ plugin parameters. }}}}
 
 Subscriber plugin parameters should be exposed through [[dynamic_reconfigure]] for best visibility and ease of use. Conventionally, they take the following form:
 
-{{{
-#!clearsilver CS/NodeAPI
-param {
-  no_header= True
-  group.0 {
-    name=Reconfigurable parameters
-    desc=
-    0.name= ~<transport name>/<parameter name>
-    0.type= type
-    0.default= ?
-    0.desc= Transport-specific subscriber parameter.
-    1.name= ~theora/post_processing_level
-    1.type= int
-    1.default= 0
-    1.desc= An example transport-specific parameter which sets the post-processing level when subscribed using `"theora"` transport.
-  }
-}
+
+===== Reconfigurable parameters =====
+
+ * {{{~<transport name>/<parameter name>
 ```
 
- }}}}
+ (`type`, default: `?`):
+Transport-specific subscriber parameter.
+
+- `~theora/post_processing_level` (`int`, default: `0`): An example
+  transport-specific parameter which sets the post-processing level when
+  subscribed using `"theora"` transport.
+
+}}}}
 
 ## Nodes
 
+### republish
 
-
-```clearsilver
-node {
-  0.name= republish
-  0.desc= `republish` listens on one base image topic (using any transport type, `"raw"` by default) and republishes the images to another base topic. By default it uses all available publishing plugins; you may optionally specify a single out transport type. `"raw"` is the name of the default transport, publishing <<MsgLink(sensor_msgs/Image)>> messages. What other transports are available depends on which plugins are built.
-}
-```
-
-
+`republish` listens on one base image topic (using any transport type,
+`"raw"` by default) and republishes the images to another base
+topic. By default it uses all available publishing plugins; you may
+optionally specify a single out transport type. `"raw"` is the name
+of the default transport, publishing
+[sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)
+messages. What other transports are available depends on which plugins
+are built.
 
 #### Usage
 
@@ -370,23 +335,15 @@ $ rosrun image_transport republish raw in:=camera/image out:=camera/image_repub
 
 
 
+#### Subscribed Topics
 
+- `in` (`<transport-specific type>`): The image base topic to listen on
+  (may actually subscribe to a subtopic).
 
-```clearsilver
-sub {
-  0.name= in
-  0.type= <transport-specific type>
-  0.desc= The image base topic to listen on (may actually subscribe to a subtopic).
-}
+#### Published Topics
 
-pub {
-  0.name= out
-  0.type= <transport-specific type>
-  0.desc= The image base topic to publish to (may also publish subtopics).
-}
-```
-
-
+- `out` (`<transport-specific type>`): The image base topic to publish
+  to (may also publish subtopics).
 
 #### Parameters
 
@@ -523,6 +480,16 @@ $ rostopic list
 ## ## multi-line description to be displayed in search
 
 ## Running the Simple Image Publisher and Subscriber with Different Transports
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Writing a Simple Image Publisher](#writing-a-simple-image-publisher-c),
+  [Writing a Simple Image Subscriber](#writing-a-simple-image-subscriber-c).
+- **Description:** This tutorial discusses running the simple image
+  publisher and subscriber using multiple transports.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Managing Transport Plugins](#managing-transport-plugins)
 
 ### Running the Publisher
 
@@ -703,6 +670,13 @@ This should display 15.
 
 ## Managing Transport Plugins
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** This tutorial covers how to discover which transport
+  plugins are included in your system and make them available for use.
+  No programming required!
+- **Tutorial Level:** BEGINNER
+
 ### Finding available transports
 
 `image_transport` searches your ROS installation for transport plugins
@@ -799,6 +773,15 @@ For catkin, just follow the instructions and build the packages in the workspace
 }
 
 ## Writing a Simple Image Publisher (C++)
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials),
+  [Using CvBridge to Convert Between ROS Images and OpenCV Images](https://index.ros.org/p/cv_bridge).
+- **Description:** This tutorial shows how to publish images using all
+  available transports.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Writing a Simple Image Subscriber](#writing-a-simple-image-subscriber-c)
 
 ### Writing a Simple Image Publisher
 
@@ -1008,6 +991,18 @@ catkin_make
 
 ## Writing a Simple Image Subscriber (C++)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials),
+  [Using CvBridge to Convert Between ROS Images and OpenCV Images](https://index.ros.org/p/cv_bridge).
+- **Description:** This tutorial shows how to subscribe to images using
+  any available transport. By using the `image_transport` subscriber
+  to subscribe to images, any image transport can be used at run-time.
+  To learn how to actually use a specific image transport, see the next
+  tutorial.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Running the Simple Image Publisher and Subscriber with Different Transports](#running-the-simple-image-publisher-and-subscriber-with-different-transports)
+
 ### Writing a Simple Image Subscriber
 
 Here we'll create the subscriber node which will display an image topic
@@ -1158,6 +1153,14 @@ Next let's
 [run our publisher and subscriber with different image transports](#running-the-simple-image-publisher-and-subscriber-with-different-transports).
 
 ## Writing a New Transport
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [image_transport Beginner Tutorials](#tutorials),
+  [pluginlib](https://index.ros.org/p/pluginlib).
+- **Description:** This tutorials covers how to write publisher and
+  subscriber plugins for a new image transport option.
+- **Tutorial Level:** INTERMEDIATE
 
 NOTE: This tutorial is incomplete.
 

@@ -60,6 +60,10 @@ If outside ros, you will also need to link to *ecl_streams*.
 
 ## Input and Output Streams
 
+- **Description:** General usage notes for input-output streams.
+- **Keywords:** ecl streams
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 Ecl streams work on top of ecl io devices.
@@ -174,6 +178,9 @@ if ( ostream.fail() ) {
 
 ## Logging Streams
 
+- **Keywords:** ecl streams
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 `LogStream` is a convenient, fast means to logging from multiple
@@ -235,6 +242,10 @@ By default this will automatically add header and timestamp information.
 You can manually disable these if you prefer.
 
 ## Manipulators
+
+- **Description:** Manipulators for ecl streams.
+- **Keywords:** ecl streams manipulators
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overview
 

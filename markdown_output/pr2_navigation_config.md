@@ -17,10 +17,9 @@ between many different configurations of the
   work well on the PR2 and are shared between many different
   [move_base](https://index.ros.org/p/move_base) configurations.
 - **`move_base/costmap_common_params.yaml`**: Holds the sensor
-  configuration for the
-  [ costmap's](https://index.ros.org/p/costmap_2d) run on the PR2. This
-  configuration assumes that the robot is being run with the sensors and
-  filters specified in the
+  configuration for the [costmap's](https://index.ros.org/p/costmap_2d)
+  run on the PR2. This configuration assumes that the robot is being run
+  with the sensors and filters specified in the
   [pr2_navigation_perception](https://index.ros.org/p/pr2_navigation_perception)
   package.
 - **`move_base/move_base_params.yaml`**: Holds the PR2 robot footprint

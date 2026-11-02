@@ -58,6 +58,12 @@ These are in [ecl_core_apps](https://index.ros.org/p/ecl_core_apps).
 
 ## Introduction to Ecl Devices
 
+- **Description:** Introduces the general framework for ecl devices.
+- **Keywords:** ecl devices
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Serial Devices](#serial-devices)
+
 ### Device Usage
 
 #### Open/Close
@@ -175,5 +181,13 @@ builds (or similar).
   How to use the serial class for RS232/485 connections.
 
 ## Serial Devices
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Introduction to Ecl Devices](#introduction-to-ecl-devices).
+- **Description:** How to use the serial class for RS232/485
+  connections.
+- **Keywords:** ecl serial
+- **Tutorial Level:** INTERMEDIATE
 
 TODO!!!

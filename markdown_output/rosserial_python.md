@@ -10,24 +10,16 @@ pyserial).
 
 ## Nodes
 
+### serial_node.py
 
+Interface to a rosserial-enabled device. This node automatically spins
+up subscribers and publishers based on the configuration information
+stored in the device.
 
-```clearsilver
-name=serial_node.py
-desc=Interface to a rosserial-enabled device. This node automatically spins up subscribers and publishers based on the configuration information stored in the device.
-param {
-  0.name = ~port
-  0.type = str
-  0.desc = Name of port to use.
-  0.default = /dev/ttyUSB0
-  1.name = ~baud
-  1.type = int
-  1.desc = Baud rate, in bps.
-  1.default = 57600
-}
-```
+#### Parameters
 
-
+- `~port` (`str`, default: `/dev/ttyUSB0`): Name of port to use.
+- `~baud` (`int`, default: `57600`): Baud rate, in bps.
 
 ## Examples
 

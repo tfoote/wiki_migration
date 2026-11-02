@@ -7,6 +7,13 @@
 
 ## Simulating Husky
 
+- **Description:** How to bring up a simulated Husky robot using the
+  Gazebo simulator.
+- **Keywords:** Clearpath Husky
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Interfacing with Husky](https://index.ros.org/p/husky_control)
+
 Husky can be simulated in several environments using the
 husky_gazebo packages. To start a
 simulation:

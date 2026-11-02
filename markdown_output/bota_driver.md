@@ -137,50 +137,41 @@ and services used for communication over ROS.
 
 ## Nodes
 
+### rokubimini
 
+ROS node that establishes communication with the available rokubi mini
+devices and publishes their captured data in standardized ROS messages.
 
-```clearsilver
-name = rokubimini
-desc = ROS node that establishes communication with the available rokubi mini devices and publishes their captured data in standardized ROS messages.
-pub {
-  0.name = /rokubimini/<name>/ft_sensor_readings/reading
-  0.type = rokubimini_msgs/Reading
-  0.desc = The whole reading structure (including Force/torque, IMU and temperature data) measured from the device with name <name>
-  1.name = /rokubimini/<name>/ft_sensor_readings/imu
-  1.type = sensor_msgs/Imu
-  1.desc = The IMU data measured from the device with name <name>
-  2.name = /rokubimini/<name>/ft_sensor_readings/wrench
-  2.type = geometry_msgs/WrenchStamped
-  2.desc = The Wrench (3-axis Force + 3-axis Torque) data measured from the device with name <name>
-  3.name = /rokubimini/<name>/ft_sensor_readings/temperature
-  3.type = sensor_msgs/Temperature
-  3.desc = The temperature measured from the device with name <name>
-}
-param {
-  0.name = ~num_spinners
-  0.type = int
-  0.desc = Number of concurrent spinners to use
-  0.default = 1
-  1.name = ~rokubimini_setup_file
-  1.type = string
-  1.desc = The location of the rokubimini setup file
-  1.default = "$(find bota_device_driver)/config/setup.yaml"
-  2.name = ~sensor_config_name
-  2.type = string
-  2.desc = The name of the sensor (used for debugging a single sensor)
-  2.default = ""
-  3.name = ~standalone
-  3.type = boolean
-  3.desc = Checks if the node runs in standalone mode
-  3.default = true
-  4.name = ~time_step
-  4.type = double
-  4.desc = The time step for polling the sensors
-  4.default = 0.01
-}
-```
+#### Published Topics
 
+- `/rokubimini/<name>/ft_sensor_readings/reading`
+  ([rokubimini_msgs/msg/Reading](https://docs.ros.org/en/rolling/p/rokubimini_msgs/msg/Reading.html)):
+  The whole reading structure (including Force/torque, IMU and
+  temperature data) measured from the device with name <name>
+- `/rokubimini/<name>/ft_sensor_readings/imu`
+  ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
+  The IMU data measured from the device with name <name>
+- `/rokubimini/<name>/ft_sensor_readings/wrench`
+  ([geometry_msgs/msg/WrenchStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/WrenchStamped.html)):
+  The Wrench (3-axis Force + 3-axis Torque) data measured from the
+  device with name <name>
+- `/rokubimini/<name>/ft_sensor_readings/temperature`
+  ([sensor_msgs/msg/Temperature](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Temperature.html)):
+  The temperature measured from the device with name <name>
 
+#### Parameters
+
+- `~num_spinners` (`int`, default: `1`): Number of concurrent spinners
+  to use
+- `~rokubimini_setup_file` (`string`, default:
+  `"$(find bota_device_driver)/config/setup.yaml"`): The location of the
+  rokubimini setup file
+- `~sensor_config_name` (`string`, default: `""`): The name of the
+  sensor (used for debugging a single sensor)
+- `~standalone` (`boolean`, default: `true`): Checks if the node runs in
+  standalone mode
+- `~time_step` (`double`, default: `0.01`): The time step for polling
+  the sensors
 
 ## Configuration
 
@@ -392,8 +383,8 @@ group. This can be done with:
 $ sudo usermod -a -G dialout username
 ```
 
- Please log off and log in again for the
-changes to take effect!
+ Please log off and log in again for the changes
+to take effect!
 
 ### Custom parameters
 

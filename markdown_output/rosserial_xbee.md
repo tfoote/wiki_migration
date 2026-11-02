@@ -74,6 +74,12 @@ or Digi's X-CTU software.
 
 ## An Example rosserial_xbee Network
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Arduino IDE Setup](https://index.ros.org/p/rosserial_arduino).
+- **Description:** A guide to building a simple rosserial_xbee network
+- **Tutorial Level:** BEGINNER
+
 The rosserial_xbee package is meant to simplify setting up a network of
 ROS hardware nodes throughout a building. This tutorial will show how to
 have two Arduino publishers on a rosserial_xbee network. It will walk
@@ -252,6 +258,11 @@ augment your robots.
 
 ## ROS RC Car
 
+- **Note:** This tutorial assumes that you are comfortable with
+  rosserial_arduino.
+- **Description:** controlling an a small robot base with rosserial_xbee
+- **Tutorial Level:** BEGINNER
+
 There a lot of times when as a roboticist, we just want to make a little
 robot drive around. If you are not using a robotics framework like ROS,
 you need to write the teleoperation code for keyboards and joysticks
@@ -272,12 +283,12 @@ you can control via ROS.
 You need motors, wheels, an arduino, Xbees, a motor controller, and a
 chassis.
 
-- [ Xbee Shield ](http://www.sparkfun.com/products/9976)
-- [ Xbee Explorer ](http://www.sparkfun.com/products/8687)
-- [ Motor Driver Shield ](http://www.sparkfun.com/products/9815 )
-- 2 x [ Xbees](http://www.sparkfun.com/products/8665)
+- [Xbee Shield](http://www.sparkfun.com/products/9976)
+- [Xbee Explorer](http://www.sparkfun.com/products/8687)
+- [Motor Driver Shield](http://www.sparkfun.com/products/9815)
+- 2 x [Xbees](http://www.sparkfun.com/products/8665)
 - 2
-  x[ Arduino Stackable Header Kit](http://www.sparkfun.com/products/10007 )
+  x[Arduino Stackable Header Kit](http://www.sparkfun.com/products/10007)
 - Motors- There are a lot of different, good choices for motors. I am a
   big fan of
   [http://www.solarbotics.com/products/gmpw_deal/ Solarbotics GM9 with wheels combo](http://www.solarbotics.com/products/gmpw_deal/ Solarbotics GM9 with wheels combo).
@@ -285,9 +296,9 @@ chassis.
   model of the above robot. ADD LINK
 - Battery. Again. This choice is up to you. A good choice is a
   rechargable 9V battery.
-  [ Li-ion 9V from Sparkfun ](http://www.sparkfun.com/products/10053 )
-  and [ charger](http://www.sparkfun.com/products/10265 ). If you start
-  doing a lot of small robotics, RC plane lipo batteries are the best.
+  [Li-ion 9V from Sparkfun](http://www.sparkfun.com/products/10053) and
+  [charger](http://www.sparkfun.com/products/10265). If you start doing
+  a lot of small robotics, RC plane lipo batteries are the best.
 
 ### Arduino Code
 
@@ -299,3 +310,6 @@ chassis.
 
 note = Just trying description = A RC bot is prepared on Arduino
 platform using Xbee for wireless communication
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: here also trying.

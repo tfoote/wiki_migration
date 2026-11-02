@@ -761,7 +761,7 @@ try.
   use a launch ﬁle, and include respawn="true" in the node tag for
   RViz.
 
-[ For more detail, see this ticket](https://code.ros.org/trac/ros-pkg/ticket/4830)
+[For more detail, see this ticket](https://code.ros.org/trac/ros-pkg/ticket/4830)
 
 #### Multiple Monitors
 
@@ -847,6 +847,15 @@ Thanks!
   -- --------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------- -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ --
 
 ## Markers: Sending Basic Shapes (C++)
+
+- **Note:** This tutorial assumes you are comfortable with using roscpp,
+  and have gone through the [ROS Tutorials](ROS/Tutorials).
+- **Description:** Shows how to use
+  [visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)
+  messages to send basic shapes (cube, sphere, cylinder, arrow) to rviz.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Markers: Points and Lines](#markers-points-and-lines-c)
 
 ### Intro
 
@@ -1340,6 +1349,16 @@ shown here, please see the
 
 ## Markers: Points and Lines (C++)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Markers: Basic Shapes](#markers-sending-basic-shapes-c).
+- **Description:** Teaches how to use the
+  [visualization_msgs/msg/Marker](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/Marker.html)
+  message to send points and lines to rviz.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Interactive Markers: Getting Started](#interactive-markers-getting-started)
+
 ### Intro
 
 In the
@@ -1667,6 +1686,14 @@ the other markers!
 
 ## Interactive Markers: Getting Started
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial explains what Interactive Marker are
+  and teaches you some of the basic concepts.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Interactive Markers: Writing a Simple Interactive Marker Server](#interactive-markers-writing-a-simple-interactive-marker-server)
+
 ### Intro
 
 Interactive markers are similar to the "regular" markers described in
@@ -1856,6 +1883,14 @@ interactive markers.
 
 ## Interactive Markers: Writing a Simple Interactive Marker Server
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial explains how to setup a minimalist
+  server which manages a single interactive marker.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Interactive Markers: Basic Controls](#interactive-markers-basic-controls)
+
 ### The simple_marker tutorial explained
 
 If you run the simple_marker example from
@@ -1967,6 +2002,14 @@ That's all there is. You are now ready to go on to the next tutorial:
 [Interactive Markers: Basic Controls](#interactive-markers-basic-controls).
 
 ## Interactive Markers: Basic Controls
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS Tutorials](ROS/Tutorials).
+- **Description:** This tutorial explains how the basic_controls
+  tutorial code works.
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Plugins: New Display Type](#plugins-new-display-type)
 
 ### The basic_controls tutorial explained
 
@@ -2768,11 +2811,27 @@ void processFeedback( const visualization_msgs::InteractiveMarkerFeedbackConstPt
 
 ## Plugins: New Display Type
 
+- **Description:** How to write a plugin which adds a new display
+  capability to RViz.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Plugins: New Dockable Panel](#plugins-new-dockable-panel)
+
+
+
 ```wiki
 This tutorial can be found here: http://docs.ros.org/noetic/api/rviz_plugin_tutorials/html/display_plugin_tutorial.html
 ```
 
 ## Plugins: New Dockable Panel
+
+- **Description:** How to write a plugin which adds a new type of
+  dock-able Panel widget to RViz.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Plugins: New Tool Type](#plugins-new-tool-type)
+
+
 
 ```wiki
 This tutorial has not been ported to Noetic.
@@ -2780,9 +2839,23 @@ This tutorial has not been ported to Noetic.
 
 ## Plugins: New Tool Type
 
+- **Description:** How to write a plugin which adds a new tool to RViz.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Librviz: Incorporating RViz into a Custom GUI](#librviz-incorporating-rviz-into-a-custom-gui)
+
 ## Librviz: Incorporating RViz into a Custom GUI
 
+- **Description:** How to write an application using an RViz
+  visualization widget.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Rviz in Stereo](#rviz-in-stereo)
+
 ## Rviz in Stereo
+
+- **Description:** Teaches how to set up Rviz to render in 3D Stereo.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Intro
 

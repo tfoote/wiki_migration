@@ -52,6 +52,12 @@ If outside ros, you will also need to link to `ecl_errors`.
 
 ## Debug Modes in the Ecl
 
+- **Description:** Toggling debug/ndebug mode for the ecl.
+- **Keywords:** ecl debug
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Error Handling](#error-handling-in-the-ecl)
+
 ### Debug Mode
 
 To compile in **debug mode**, do not define either `NDEBUG` or
@@ -94,6 +100,16 @@ system when choosing to build in `Release` mode.
 
 ## Error Handling in the ECL
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Debug Modes](#debug-modes-in-the-ecl).
+- **Description:** Shows how the ecl does error handling at the simplest
+  level, with macros and flags.
+- **Keywords:** ecl error handling
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Assertions](#assertions-in-the-ecl)
+
 ### Macros
 
 ecl_errors defines a macro, `LOC`, is a
@@ -135,6 +151,14 @@ messages - refer to
 `ecl::TimeError` class for an example.
 
 ## Assertions in the Ecl
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Error Handling](#error-handling-in-the-ecl).
+- **Description:** how to utilise ecl's run-time and compile-time
+  asserts/aborts.
+- **Keywords:** ecl errors assertions
+- **Tutorial Level:** BEGINNER
 
 ### Run-Time Assert/Abort
 

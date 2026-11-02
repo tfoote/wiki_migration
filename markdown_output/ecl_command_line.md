@@ -47,6 +47,10 @@ using ecl::UnlabeledMultiArg; // there are more - see tclap docs
 
 ## Command Line Parsing with TCLAP
 
+- **Description:** Introduction to command line parsing with TCLAP.
+- **Keywords:** ecl command line parsing
+- **Tutorial Level:** BEGINNER
+
 For a more detailed tutorial, visit the
 [TCLAP documentation](http://tclap.sourceforge.net/). Some common use
 cases are outlined below.

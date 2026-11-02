@@ -17,70 +17,59 @@ The functionality is offered in the form of three nodes:
 same CAN device, the `socketcan_bridge_node` needs to be used to prevent
 every sent message from being echoed to the receiving topic.
 
+### socketcan_bridge_node
 
+Receives frames from SocketCAN devices and publishes these on the topic,
+at the same time it listens to CAN messages and sends these to
+SocketCAN. The frames that are sent to the CAN device are not published
+as received messages.
 
-```clearsilver
-name = socketcan_bridge_node
-desc = Receives frames from SocketCAN devices and publishes these on the topic, at the same time it listens to CAN messages and sends these to SocketCAN. The frames that are sent to the CAN device are not published as received messages.
-pub {
-  0.name = received_messages
-  0.type = can_msgs/Frame
-  0.desc = Frames received on the SocketCAN device are published in this topic.
-}
-sub {
-  0.name = sent_messages
-  0.type = can_msgs/Frame
-  0.desc = Messages received here will be sent to the SocketCAN device.
-}
-param {
-  0.name = ~can_device
-  0.type = string
-  0.desc = Name of the SocketCAN device, by default these devices are named ''can0'' and upwards.
-  0.default = can0
-}
-```
+#### Subscribed Topics
 
+- `sent_messages`
+  ([can_msgs/msg/Frame](https://docs.ros.org/en/rolling/p/can_msgs/msg/Frame.html)):
+  Messages received here will be sent to the SocketCAN device.
 
+#### Published Topics
 
+- `received_messages`
+  ([can_msgs/msg/Frame](https://docs.ros.org/en/rolling/p/can_msgs/msg/Frame.html)):
+  Frames received on the SocketCAN device are published in this topic.
 
+#### Parameters
 
-```clearsilver
-name = socketcan_to_topic_node
-desc = Publishes the frames received on the SocketCAN device to a topic.
-pub {
-  0.name = received_messages
-  0.type = can_msgs/Frame
-  0.desc = Frames received on the SocketCAN device are published in this topic.
-}
-param {
-  0.name = ~can_device
-  0.type = string
-  0.desc = Name of the SocketCAN device, by default these devices are named ''can0'' and upwards.
-  0.default = can0
-}
-```
+- `~can_device` (`string`, default: `can0`): Name of the SocketCAN
+  device, by default these devices are named *can0* and upwards.
 
+### socketcan_to_topic_node
 
+Publishes the frames received on the SocketCAN device to a topic.
 
+#### Published Topics
 
+- `received_messages`
+  ([can_msgs/msg/Frame](https://docs.ros.org/en/rolling/p/can_msgs/msg/Frame.html)):
+  Frames received on the SocketCAN device are published in this topic.
 
-```clearsilver
-name = topic_to_socketcan_node
-desc = Sends CAN messages received on the topic to the SocketCAN device.
-sub {
-  0.name = sent_messages
-  0.type = can_msgs/Frame
-  0.desc = Messages received here will be sent to the SocketCAN device.
-}
-param {
-  0.name = ~can_device
-  0.type = string
-  0.desc = Name of the SocketCAN device, by default these devices are named ''can0'' and upwards.
-  0.default = can0
-}
-```
+#### Parameters
 
+- `~can_device` (`string`, default: `can0`): Name of the SocketCAN
+  device, by default these devices are named *can0* and upwards.
 
+### topic_to_socketcan_node
+
+Sends CAN messages received on the topic to the SocketCAN device.
+
+#### Subscribed Topics
+
+- `sent_messages`
+  ([can_msgs/msg/Frame](https://docs.ros.org/en/rolling/p/can_msgs/msg/Frame.html)):
+  Messages received here will be sent to the SocketCAN device.
+
+#### Parameters
+
+- `~can_device` (`string`, default: `can0`): Name of the SocketCAN
+  device, by default these devices are named *can0* and upwards.
 
 ### Remarks
 

@@ -123,15 +123,10 @@ from Point Cloud Data (PCD) file format.
 
 <a id="bag_to_pcd"></a>
 
+### bag_to_pcd
 
-```clearsilver
-node.0 {
-name=bag_to_pcd
-desc=Reads a bag file, saving all ROS point cloud messages on a specified topic as PCD files.
-}
-```
-
-
+Reads a bag file, saving all ROS point cloud messages on a specified
+topic as PCD files.
 
 #### Usage
 
@@ -166,20 +161,16 @@ $ rosrun pcl_ros bag_to_pcd data.bag /laser_tilt_cloud ./pointclouds
 
 <a id="convert_pcd_to_image"></a>
 
+### convert_pcd_to_image
 
-```clearsilver
-node.0 {
-name=convert_pcd_to_image
-desc=Loads a PCD file, publishing it as a ROS image message five times a second.
-pub {
-0.name=output
-0.type=sensor_msgs/Image
-0.desc=A stream of images generated from the PCD file.
-}
-}
-```
+Loads a PCD file, publishing it as a ROS image message five times a
+second.
 
+#### Published Topics
 
+- `output`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  A stream of images generated from the PCD file.
 
 #### Usage
 
@@ -196,25 +187,21 @@ messages at 5Hz.
 
 <a id="convert_pointcloud_to_image"></a>
 
+### convert_pointcloud_to_image
 
-```clearsilver
-node.0 {
-name=convert_pointcloud_to_image
-desc=Subscribes to a ROS point cloud topic and republishes image messages.
-sub {
-0.name=input
-0.type=sensor_msgs/PointCloud2
-0.desc=A stream of point clouds to convert to images.
-}
-pub {
-0.name=output
-0.type=sensor_msgs/Image
-0.desc=Corresponding stream of images.
-}
-}
-```
+Subscribes to a ROS point cloud topic and republishes image messages.
 
+#### Subscribed Topics
 
+- `input`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  A stream of point clouds to convert to images.
+
+#### Published Topics
+
+- `output`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Corresponding stream of images.
 
 #### Examples
 
@@ -241,26 +228,21 @@ $ rosrun image_view image_view image:=/my_image
 
 <a id="pcd_to_pointcloud"></a>
 
+### pcd_to_pointcloud
 
-```clearsilver
-node.0 {
-name=pcd_to_pointcloud
-desc=Loads a PCD file, publishing it one or more times as a ROS point cloud message.
-pub {
-0.name=cloud_pcd
-0.type=sensor_msgs/PointCloud2
-0.desc=A stream of point clouds generated from the PCD file.
-}
-param {
-0.name=~frame_id
-0.type=str
-0.default=/base_link
-0.desc=Transform frame ID for published data.
-}
-}
-```
+Loads a PCD file, publishing it one or more times as a ROS point cloud
+message.
 
+#### Published Topics
 
+- `cloud_pcd`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  A stream of point clouds generated from the PCD file.
+
+#### Parameters
+
+- `~frame_id` (`str`, default: `/base_link`): Transform frame ID for
+  published data.
 
 #### Usage
 
@@ -305,36 +287,29 @@ $ rosrun pcl_ros pcd_to_pointcloud cloud_file.pcd 0.1 _frame_id:=/odom
 
 <a id="pointcloud_to_pcd"></a>
 
+### pointcloud_to_pcd
 
-```clearsilver
-node.0 {
-name=pointcloud_to_pcd
-desc=Subscribes to a ROS topic and saves point cloud messages to PCD files. Each message is saved to a separate file, names are composed of an optional `prefix` parameter, the ROS time of the message, and the `.pcd` extension.
-sub {
-0.name=input
-0.type=sensor_msgs/PointCloud2
-0.desc=A stream of point clouds to save as PCD files.
-}
-param {
-0.name=~prefix
-0.type=str
-0.desc=Prefix for PCD file names created.
-1.name=~fixed_frame
-1.type=str
-1.desc=If set, the transform from the fixed frame to the frame of the point cloud is written to the VIEWPOINT entry of the pcd file.
-2.name=~binary
-2.type=bool
-2.default=false
-2.desc=Output the pcd file in binary form. 
-3.name=~compressed
-3.type=bool
-3.default=false
-3.desc=In case that binary output format is set, use binary compressed output.
-}
-}
-```
+Subscribes to a ROS topic and saves point cloud messages to PCD files.
+Each message is saved to a separate file, names are composed of an
+optional `prefix` parameter, the ROS time of the message, and the
+`.pcd` extension.
 
+#### Subscribed Topics
 
+- `input`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  A stream of point clouds to save as PCD files.
+
+#### Parameters
+
+- `~prefix` (`str`): Prefix for PCD file names created.
+- `~fixed_frame` (`str`): If set, the transform from the fixed frame to
+  the frame of the point cloud is written to the VIEWPOINT entry of the
+  pcd file.
+- `~binary` (`bool`, default: `false`): Output the pcd file in binary
+  form.
+- `~compressed` (`bool`, default: `false`): In case that binary output
+  format is set, use binary compressed output.
 
 #### Examples
 
@@ -398,6 +373,11 @@ $ rosrun rviz rviz -d table_scene_mug_textured.vcg
 
 ## Turning a PointCloud into an Image
 
+- **Description:** This tutorial is a simple guide to turning a dense
+  point cloud into an image message
+- **Keywords:** kinect, pcl, opencv, openni
+- **Tutorial Level:** BEGINNER
+
 ### Use ROS
 
 Let's assume you have an openni camera up and running. Fire up a
@@ -435,7 +415,7 @@ rosrun image_view image_view image:=/camera/depth/cloud_image
 Given a dense cloud, you can efficiently grab the rgb image from it as a
 `sensor_msgs::Image`. The image message can then either be republished
 or turned into an opencv `cv::Mat` using
-[ standard methods](http://www.ros.org/wiki/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages )
+[standard methods](http://www.ros.org/wiki/cv_bridge/Tutorials/UsingCvBridgeToConvertBetweenROSImagesAndOpenCVImages)
 
 
 ```cplusplus
@@ -524,6 +504,9 @@ main (int argc, char **argv)
 ```
 
 ## ConvexHull planar surface reconstruction
+
+- **Description:** ConvexHull planar surface reconstruction
+- **Tutorial Level:** BEGINNER
 
 The following launch file starts a nodelet manager together with a
 `VoxelGrid` PCL filter nodelet. The input `PointCloud2` topic is set
@@ -640,6 +623,10 @@ published on the */convex_hull/output* topic.
 
 ## ExtractPolygonalPrismData segmentation
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: ExtractPolygonalPrismData segmentation.
+- **Description:** ExtractPolygonalPrismData segmentation
+
 The following launch file starts a nodelet manager together with a
 `VoxelGrid` PCL filter nodelet. The input `PointCloud2` topic is set
 to */scene_pointcloud2*.
@@ -752,6 +739,9 @@ with their projections falling inside the convex hull.
 
 ## PassThrough filtering
 
+- **Description:** PassThrough filtering
+- **Tutorial Level:** BEGINNER
+
 The following launch file starts a nodelet manager together with a
 `PassThrough` PCL filter nodelet. The input `PointCloud2` topic is
 set to */scene_pointcloud2*.
@@ -814,6 +804,9 @@ The following image is passthrough filter.
 ![attachment:pic2.png](doc/pic2.png)
 
 ## SACSegmentationFromNormals planar segmentation
+
+- **Description:** SACSegmentationFromNormals planar segmentation
+- **Tutorial Level:** BEGINNER
 
 The following launch file starts a nodelet manager together with a
 `VoxelGrid` PCL filter nodelet. The input `PointCloud2` topic is set
@@ -940,6 +933,9 @@ The following image is image extracted plane.
 
 ## VoxelGrid filtering
 
+- **Description:** VoxelGrid filtering
+- **Tutorial Level:** BEGINNER
+
 The following launch file starts a nodelet manager together with a
 `VoxelGrid` PCL filter nodelet. The input `PointCloud2` topic is set
 to */camera/depth/points*.
@@ -1016,24 +1012,18 @@ filter (also see
 
 The following
 [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
-parameters are used: 
+parameters are used:
 
-```clearsilver
-# Autogenerated param section. Do not hand edit.
-param {
-group.0 {
-name=Dynamically Reconfigurable Parameters
-desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
-0.name= ~negative
-0.default= False
-0.type= bool
-0.desc=Extract indices or the negative (all-indices)
-}
-}
-# End of autogenerated section. You may edit below.
-```
+##### Parameters
 
+###### Dynamically Reconfigurable Parameters
 
+See the
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+package for details on dynamically reconfigurable parameters.
+
+- `~negative` (`bool`, default: `False`): Extract indices or the
+  negative (all-indices)
 
 #### PassThrough
 
@@ -1044,44 +1034,31 @@ filter (also see
 
 The following
 [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
-parameters are used: 
+parameters are used:
 
-```clearsilver
-# Autogenerated param section. Do not hand edit.
-param {
-group.0 {
-name=Dynamically Reconfigurable Parameters
-desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
-0.name= ~filter_field_name
-0.default= z
-0.type= str
-0.desc=The field name used for filtering
-1.name= ~filter_limit_min
-1.default= 0.0
-1.type= double
-1.desc=The minimum allowed field value a point will be considered from Range: -1000.0 to 1000.0
-2.name= ~filter_limit_max
-2.default= 1.0
-2.type= double
-2.desc=The maximum allowed field value a point will be considered from Range: -1000.0 to 1000.0
-3.name= ~filter_limit_negative
-3.default= False
-3.type= bool
-3.desc=Set to true if we want to return the data outside [filter_limit_min; filter_limit_max].
-4.name= ~input_frame
-4.default=
-4.type= str
-4.desc=The input TF frame the data should be transformed into before processing, if input.header.frame_id is different.
-5.name= ~output_frame
-5.default=
-5.type= str
-5.desc=The output TF frame the data should be transformed into after processing, if input.header.frame_id is different.
-}
-}
-# End of autogenerated section. You may edit below.
-```
+##### Parameters
 
+###### Dynamically Reconfigurable Parameters
 
+See the
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+package for details on dynamically reconfigurable parameters.
+
+- `~filter_field_name` (`str`, default: `z`): The field name used for
+  filtering
+- `~filter_limit_min` (`double`, default: `0.0`): The minimum allowed
+  field value a point will be considered from Range: -1000.0 to 1000.0
+- `~filter_limit_max` (`double`, default: `1.0`): The maximum allowed
+  field value a point will be considered from Range: -1000.0 to 1000.0
+- `~filter_limit_negative` (`bool`, default: `False`): Set to true if we
+  want to return the data outside \[filter_limit_min;
+  filter_limit_max\].
+- `~input_frame` (`str`): The input TF frame the data should be
+  transformed into before processing, if input.header.frame_id is
+  different.
+- `~output_frame` (`str`): The output TF frame the data should be
+  transformed into after processing, if input.header.frame_id is
+  different.
 
 #### ProjectInliers
 
@@ -1106,32 +1083,23 @@ filter (also see
 
 The following
 [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
-parameters are used: 
+parameters are used:
 
-```clearsilver
-# Autogenerated param section. Do not hand edit.
-param {
-group.0 {
-name=Dynamically Reconfigurable Parameters
-desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
-0.name= ~mean_k
-0.default= 2
-0.type= int
-0.desc=The number of points (k) to use for mean distance estimation Range: 2 to 100
-1.name= ~stddev
-1.default= 0.0
-1.type= double
-1.desc=The standard deviation multiplier threshold. All points outside the mean +- sigma * std_mul will be considered outliers. Range: 0.0 to 5.0
-2.name= ~negative
-2.default= False
-2.type= bool
-2.desc=Set whether the inliers should be returned (true) or the outliers (false)
-}
-}
-# End of autogenerated section. You may edit below.
-```
+##### Parameters
 
+###### Dynamically Reconfigurable Parameters
 
+See the
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+package for details on dynamically reconfigurable parameters.
+
+- `~mean_k` (`int`, default: `2`): The number of points (k) to use for
+  mean distance estimation Range: 2 to 100
+- `~stddev` (`double`, default: `0.0`): The standard deviation
+  multiplier threshold. All points outside the mean +- sigma \* std_mul
+  will be considered outliers. Range: 0.0 to 5.0
+- `~negative` (`bool`, default: `False`): Set whether the inliers should
+  be returned (true) or the outliers (false)
 
 #### VoxelGrid
 
@@ -1142,48 +1110,33 @@ filter (also see
 
 The following
 [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
-parameters are used: 
+parameters are used:
 
-```clearsilver
-# Autogenerated param section. Do not hand edit.
-param {
-group.0 {
-name=Dynamically Reconfigurable Parameters
-desc=See the [[dynamic_reconfigure]] package for details on dynamically reconfigurable parameters.
-0.name= ~leaf_size
-0.default= 0.01
-0.type= double
-0.desc=The size of a leaf (on x,y,z) used for downsampling. Range: 0.0 to 1.0
-1.name= ~filter_field_name
-1.default= z
-1.type= str
-1.desc=The field name used for filtering
-2.name= ~filter_limit_min
-2.default= 0.0
-2.type= double
-2.desc=The minimum allowed field value a point will be considered from Range: -1000.0 to 1000.0
-3.name= ~filter_limit_max
-3.default= 1.0
-3.type= double
-3.desc=The maximum allowed field value a point will be considered from Range: -1000.0 to 1000.0
-4.name= ~filter_limit_negative
-4.default= False
-4.type= bool
-4.desc=Set to true if we want to return the data outside [filter_limit_min; filter_limit_max].
-5.name= ~input_frame
-5.default=
-5.type= str
-5.desc=The input TF frame the data should be transformed into before processing, if input.header.frame_id is different.
-6.name= ~output_frame
-6.default=
-6.type= str
-6.desc=The output TF frame the data should be transformed into after processing, if input.header.frame_id is different.
-}
-}
-# End of autogenerated section. You may edit below.
-```
+##### Parameters
 
+###### Dynamically Reconfigurable Parameters
 
+See the
+[dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
+package for details on dynamically reconfigurable parameters.
+
+- `~leaf_size` (`double`, default: `0.01`): The size of a leaf (on
+  x,y,z) used for downsampling. Range: 0.0 to 1.0
+- `~filter_field_name` (`str`, default: `z`): The field name used for
+  filtering
+- `~filter_limit_min` (`double`, default: `0.0`): The minimum allowed
+  field value a point will be considered from Range: -1000.0 to 1000.0
+- `~filter_limit_max` (`double`, default: `1.0`): The maximum allowed
+  field value a point will be considered from Range: -1000.0 to 1000.0
+- `~filter_limit_negative` (`bool`, default: `False`): Set to true if we
+  want to return the data outside \[filter_limit_min;
+  filter_limit_max\].
+- `~input_frame` (`str`): The input TF frame the data should be
+  transformed into before processing, if input.header.frame_id is
+  different.
+- `~output_frame` (`str`): The output TF frame the data should be
+  transformed into after processing, if input.header.frame_id is
+  different.
 
 #### CropBox
 
@@ -1193,59 +1146,39 @@ filter.
 
 The following
 [dynamic_reconfigure](https://index.ros.org/p/dynamic_reconfigure)
-parameters are used: 
+parameters are used:
 
-```clearsilver
-# Autogenerated param section. Do not hand edit.
-param {
-group.0 {
-name=Dynamically Reconfigurable Parameters
-0.name= ~min_x
-0.default= -1.0
-0.type= double
-0.desc=The minimum allowed x value a point will be considered from. Range: -1000.0 to 1000.0
-1.name= ~max_x
-1.default= 1.0
-1.type= double
-1.desc=The maximum allowed x value a point will be considered from. Range: -1000.0 to 1000.0
-2.name= ~min_y
-2.default= -1.0
-2.type= double
-2.desc=The minimum allowed y value a point will be considered from. Range: -1000.0 to 1000.0
-3.name= ~max_y
-3.default= 1.0
-3.type= double
-3.desc=The maximum allowed y value a point will be considered from. Range: -1000.0 to 1000.0
-4.name= ~min_z
-4.default= -1.0
-4.type= double
-4.desc=The minimum allowed z value a point will be considered from. Range: -1000.0 to 1000.0
-5.name= ~max_z
-5.default= 1.0
-5.type= double
-5.desc=The maximum allowed z value a point will be considered from. Range: -1000.0 to 1000.0
-6.name= ~keep_organized
-6.default= False
-6.type= bool
-6.desc=If true, the pointcloud shape (width, height) will be retained and filtered-out points will be set to nan. If false, pointcloud is reshaped to height 1 and filtered-out points are removed. Please not this is broken in Melodic and the pointcloud is always unorganized. In Noetic, it works correctly.
-7.name= ~negative
-7.default= False
-7.type= bool
-7.desc=Set to true if we want to return the data outside the limiting box. If false, data inside the box are returned.
-8.name= ~input_frame
-8.default=
-8.type= str
-8.desc=The input TF frame the data should be transformed into before processing, if input.header.frame_id is different.
-9.name= ~output_frame
-9.default=
-9.type= str
-9.desc=The output TF frame the data should be transformed into after processing, if input.header.frame_id is different.
-}
-}
-# End of autogenerated section. You may edit below.
-```
+##### Parameters
 
+###### Dynamically Reconfigurable Parameters
 
+- `~min_x` (`double`, default: `-1.0`): The minimum allowed x value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~max_x` (`double`, default: `1.0`): The maximum allowed x value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~min_y` (`double`, default: `-1.0`): The minimum allowed y value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~max_y` (`double`, default: `1.0`): The maximum allowed y value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~min_z` (`double`, default: `-1.0`): The minimum allowed z value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~max_z` (`double`, default: `1.0`): The maximum allowed z value a
+  point will be considered from. Range: -1000.0 to 1000.0
+- `~keep_organized` (`bool`, default: `False`): If true, the pointcloud
+  shape (width, height) will be retained and filtered-out points will be
+  set to nan. If false, pointcloud is reshaped to height 1 and
+  filtered-out points are removed. Please not this is broken in Melodic
+  and the pointcloud is always unorganized. In Noetic, it works
+  correctly.
+- `~negative` (`bool`, default: `False`): Set to true if we want to
+  return the data outside the limiting box. If false, data inside the
+  box are returned.
+- `~input_frame` (`str`): The input TF frame the data should be
+  transformed into before processing, if input.header.frame_id is
+  different.
+- `~output_frame` (`str`): The output TF frame the data should be
+  transformed into after processing, if input.header.frame_id is
+  different.
 
 ### Developers
 

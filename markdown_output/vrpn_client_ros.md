@@ -13,45 +13,38 @@ unsolved. See sample configuration launch file
 
 ## Node API
 
+### vrpn_client_node
 
+The client node connects to a remote VRPN server, and exposes
+information from the server's Trackers over ROS topics and
+[tf2](https://index.ros.org/p/tf2). The client node auto-detects, or is
+provided the Tracker names via ROS params (must be
+[valid](http://wiki.ros.org/Names#Valid_Names) ROS Graph names).
 
-```clearsilver
-name = vrpn_client_node
-desc = The client node connects to a remote VRPN server, and exposes information from the server's Trackers over ROS topics and [[tf2]]. The client node auto-detects, or is provided the Tracker names via ROS params (must be [[http://wiki.ros.org/Names#Valid_Names|valid]] ROS Graph names).
-pub{
-  0.name = <tracker name>/pose
-  0.type = geometry_msgs/PoseStamped
-  0.desc = Tracker pose in world frame.
-  1.name = <tracker name>/twist
-  1.type = geometry_msgs/TwistStamped
-  1.desc = Tracker velocity in world frame. Available in VICON Tracker 3.3+.
-  2.name = <tracker name>/accel
-  2.type = geometry_msgs/AccelStamped
-  2.desc = Tracker acceleration in world frame. Available in VICON Tracker 3.3+.
-}
-param {
-  0.name = ~update_frequency
-  0.type = double
-  0.desc = Frequency to process incoming updates from the VRPN server.
-  0.default = 100.0
-  1.name = ~refresh_tracker_frequency
-  1.type = double
-  1.desc = Frequency at which to auto-detect new Trackers from the VRPN server. Mutually exclusive with `~trackers`.
-  1.default = 0.0
-  2.name = ~trackers
-  2.type = list
-  2.desc = List of tracker names to expect from the VRPN server. Mutually exclusive with `~refresh_tracker_frequency` > 0.0
-  3.name = ~frame_id
-  3.type = string
-  3.desc = World frame id for the Trackers.
-  3.default = "world"
-  4.name = ~use_server_time
-  4.type = bool
-  4.desc = Publish/broadcast using VRPN server's timestamp, or the local ROS time.
-  4.default = false
-  5.name = ~broadcast_tf
-  5.type = bool
-  5.desc = Broadcast transforms of Tracker pose on `/tf`.
-  5.default = true
-}
-```
+#### Published Topics
+
+- `<tracker name>/pose`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  Tracker pose in world frame.
+- `<tracker name>/twist`
+  ([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)):
+  Tracker velocity in world frame. Available in VICON Tracker 3.3+.
+- `<tracker name>/accel`
+  ([geometry_msgs/msg/AccelStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/AccelStamped.html)):
+  Tracker acceleration in world frame. Available in VICON Tracker 3.3+.
+
+#### Parameters
+
+- `~update_frequency` (`double`, default: `100.0`): Frequency to process
+  incoming updates from the VRPN server.
+- `~refresh_tracker_frequency` (`double`, default: `0.0`): Frequency at
+  which to auto-detect new Trackers from the VRPN server. Mutually
+  exclusive with `trackers`.
+- `~trackers` (`list`): List of tracker names to expect from the VRPN
+  server. Mutually exclusive with `refresh_tracker_frequency` > 0.0
+- `~frame_id` (`string`, default: `"world"`): World frame id for the
+  Trackers.
+- `~use_server_time` (`bool`, default: `false`): Publish/broadcast using
+  VRPN server's timestamp, or the local ROS time.
+- `~broadcast_tf` (`bool`, default: `true`): Broadcast transforms of
+  Tracker pose on `/tf`.

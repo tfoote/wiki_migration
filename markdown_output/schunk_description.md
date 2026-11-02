@@ -17,7 +17,7 @@ Each joint has a predefined limit:
 ### LWA 4D
 
 Further information
-[ LWA 4D -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/dextrous-lightweight-arm-lwa-4d.html )
+[LWA 4D -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/dextrous-lightweight-arm-lwa-4d.html)
 
 Each joint has a predefined limit:
 
@@ -31,7 +31,7 @@ Each joint has a predefined limit:
 ### LWA 4P
 
 Further information
-[ LWA 4P -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/powerball-lightweight-arm-lwa-4p.html )
+[LWA 4P -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/powerball-lightweight-arm-lwa-4p.html)
 
 Each joint has a predefined limit:
 
@@ -45,7 +45,7 @@ Each joint has a predefined limit:
 ### LWA 4P extended version
 
 Further information
-[ LWA 4P -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/powerball-lightweight-arm-lwa-4p.html )
+[LWA 4P -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/powerball-lightweight-arm-lwa-4p.html)
 
 Each joint has a predefined limit:
 
@@ -59,9 +59,9 @@ Each joint has a predefined limit:
 ### PG 70
 
 Further information
-[ PG 70 -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/pg-plus-70-2-finger-parallel-gripper.html)
+[PG 70 -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/pg-plus-70-2-finger-parallel-gripper.html)
 
 ### SDH
 
 Further information
-[ SDH -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/servoelektrische-3-finger-greifhand-sdh.html)
+[SDH -Schunk official website](http://mobile.schunk-microsite.com/en/produkte/produkte/servoelektrische-3-finger-greifhand-sdh.html)

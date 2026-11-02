@@ -217,32 +217,25 @@ $ rosrun sound_play test.py
 
 ## Nodes
 
+### soundplay_node.py
 
+`soundplay_node.py` subscribes to `robotsound` and plays sounds on
+the sound card. This node must be running before the command-line
+utilities described below will work.
 
-```clearsilver
-node {
- 0{
- name = soundplay_node.py
- desc = `soundplay_node.py` subscribes to `robotsound` and plays sounds on the sound card. This node must be running before the command-line utilities described below will work.
- sub {
-  0{
-  name= robotsound
-  type= sound_play/SoundRequest
-  desc= Topic for playing sound. 
-  }
- }
- pub {
-  0{
-  name= diagnostics
-  type= diagnostic_msgs/DiagnosticArray
-  desc= Reports driver diagnostic information. Detection of a disconnected sound device can only happen when no sounds have been played for a few seconds.
-  }
- }
- }
-}
-```
+#### Subscribed Topics
 
+- `robotsound`
+  ([sound_play/msg/SoundRequest](https://docs.ros.org/en/rolling/p/sound_play/msg/SoundRequest.html)):
+  Topic for playing sound.
 
+#### Published Topics
+
+- `diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Reports driver diagnostic information. Detection of a disconnected
+  sound device can only happen when no sounds have been played for a few
+  seconds.
 
 ### Example Launch File
 
@@ -299,6 +292,17 @@ In this case there is no need to stop playing the sound.
 The special wildcard sound can be used to stop playback on all sounds.
 
 ## How to Configure and Use Speakers with sound_play
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS tutorials](ROS/Tutorials).
+- **Description:** This tutorial is an introduction to setting up and
+  using USB speakers connected to a desktop computer. After reading it,
+  you should be able to bring up the speakers, configure the speakers,
+  and play sounds.
+- **Keywords:** sound, speakers, driver
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:** How to Create a Sound Interface
+  [How to Create a Sound Interface](#how-to-create-a-sound-interface)
 
 ### Compiling
 
@@ -606,6 +610,12 @@ the [unofficial ALSA wiki](http://alsa.opensrc.org/). And please update
 the wiki or let us know when you find the solution.
 
 ## How to Create a Sound Interface
+
+- **Description:** This tutorial covers how to create an interface for
+  using `sound_play`. The interface uses a node acting as a 'funnel'
+  as a convenient way to route sound commands through `sound_play`.
+- **Keywords:** sound, sound_play
+- **Tutorial Level:** INTERMEDIATE
 
 ### Background
 

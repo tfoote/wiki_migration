@@ -50,6 +50,13 @@ rosrun collada_urdf collada_to_urdf <input.dae> <output.urdf>
 
 ## Exporting URDF to COLLADA
 
+- **Note:** This tutorial assumes you have already
+  [created your own URDF file](https://index.ros.org/p/urdf) or that you
+  are working with the existing PR2 URDF file.
+- **Description:** This tutorial teaches you how to export an
+  [URDF](https://index.ros.org/p/urdf) file to a COLLADA document
+- **Tutorial Level:** BEGINNER
+
 ### Building collada_urdf
 
 
@@ -195,6 +202,12 @@ For more details, take a look at the
 [API documentation](http://www.ros.org/doc/api/collada_urdf/html/namespacecollada__urdf.html).
 
 ## Working Directly with COLLADA
+
+- **Description:** This tutorial shows how to visualize COLLADA XML
+  files and use the in the ROS system as an alternative to URDF XML
+  files.
+- **Keywords:** collada
+- **Tutorial Level:** BEGINNER
 
 The urdf package can open COLLADA files directly. This makes it possible
 to set a COLLADA document as the robot in the parameter server, and have

@@ -3,50 +3,19 @@
 API below is for information purposes only. pr2_computer_monitor is only
 supported to monitor PR2 computers and systems.
 
+### cpu_monitor.py
 
+The CPU Monitor, `cpu_monitor.py`, monitors the temperature, usage,
+and NFS status of the host computers. It is launch when a robot launches
+as part of pr2_core. It publishes to /diagnostics on three status names:
+"<hostname> CPU Temperatures", "<hostname> CPU Usage", and
+"<hostname> NFS I/O".
 
-```clearsilver
-node.0 {
-  name=cpu_monitor.py
-  desc=The CPU Monitor, `cpu_monitor.py`, monitors the temperature, usage, and NFS status of the host computers. It is launch when a robot launches as part of pr2_core. It publishes to /diagnostics on three status names: "<hostname> CPU Temperatures", "<hostname> CPU Usage", and "<hostname> NFS I/O".
-  pub{
-    0.name= /diagnostics
-    0.type= diagnostic_msgs/DiagnosticArray
-    0.desc= Diagnostics about the status of the CPU(s).
-  }
-  param{Knowing
-    0.name=~check_core_temps
-    0.type=boolean
-    0.default=False
-    0.desc=Whether to check core temparatures. Deprecated.
-    1.name=~check_impi_tool
-    1.type=boolean
-    1.default=True
-    1.desc=Whether to use ipmi_tool, which only works on some machines
-    2.name=~enforce_clock_speed
-    2.type=boolean
-    2.default=True
-    2.desc=If clock speed below 2240 MHz and this is engaged, gives warning. Error if speed below 2150 MHz
-    3.name=~load1_threshold
-    3.type=float
-    3.default=5.0
-    3.desc=Warn if 1 minute load average goes above this threshold.
-    4.name=~load5_threshold
-    4.type=float
-    4.default=3.0
-    4.desc=Warn if 5 minute load average goes above this threshold.
-    5.name=~check_nfs
-    5.type=boolean
-    5.default=False
-    5.desc=Give statistics on NFS (network filesystem). Deprecated.    
-    6.name=~num_cores
-    6.type=int
-    6.default=8
-    6.desc=Check that we have correct number of cores. If set to <0, disables the check.
-  }
-```
+#### Published Topics
 
-
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Diagnostics about the status of the CPU(s).
 
 #### Usage
 
@@ -85,26 +54,23 @@ down.
      `find /sys/devices -name temp1_input`                Gives names of CPU core temps, only called at startup                                                                                          
   -- ----------------------------------------- ------------ ------------------------------------------------------- -------------------------------------------------------------------------------------- --
 
+### hd_monitor.py
 
+The HD Monitor, `hd_monitor.py`, monitors temperature and disk usage
+of the host's hard drive. It is launch on the PR2 as part of pr2_core.
+It publishes to /diagnostics on two status names: "<hostname> HD
+Temperature" and "<hostname> HD Usage" (optional).
 
-```clearsilver
-node.0 {
-  name=hd_monitor.py
-  desc=The HD Monitor, `hd_monitor.py`, monitors temperature and disk usage of the host's hard drive. It is launch on the PR2 as part of pr2_core. It publishes to /diagnostics on two status names: "<hostname> HD Temperature" and "<hostname> HD Usage" (optional).
-  pub{
-    0.name= /diagnostics
-    0.type= diagnostic_msgs/DiagnosticArray
-    0.desc= Diagnostics about the status of the HD(s).
-  }
-  param{
-    0.name=~no_hd_temp_warn
-    0.type=boolean
-    0.default=False
-    0.desc=If True, then don't warn if hard drive temp is too hot. Deprecated.
-  }
-```
+#### Published Topics
 
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Diagnostics about the status of the HD(s).
 
+#### Parameters
+
+- `~no_hd_temp_warn` (`boolean`, default: `False`): If True, then don't
+  warn if hard drive temp is too hot. Deprecated.
 
 #### Usage
 
@@ -155,20 +121,19 @@ $ netcat localhost 7634
 
 
 
+### ntp_monitor.py
 
+The NTP Monitor, `ntp_monitor.py`, monitors the offset between
+computer clocks on a robot, if the robot uses Network Time Protocol
+(NTP). It uses `ntpdate` to check the offset. It publishes to
+/diagnostics with the names "NTP offset from <hostname> to
+<server>" and "NTP self-offset for <hostname>".
 
-```clearsilver
-node.0 {
-  name=ntp_monitor.py
-  desc=The NTP Monitor, `ntp_monitor.py`, monitors the offset between computer clocks on a robot, if the robot uses Network Time Protocol (NTP). It uses `ntpdate` to check the offset. It publishes to /diagnostics  with the names "NTP offset from <hostname> to <server>" and "NTP self-offset for <hostname>".
-  pub{
-    0.name= /diagnostics
-    0.type= diagnostic_msgs/DiagnosticArray
-    0.desc= Diagnostics about the status of NTP.
-  }
-```
+#### Published Topics
 
-
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Diagnostics about the status of NTP.
 
 #### Usage
 
@@ -219,23 +184,18 @@ compare host's chrony time with the local system time. Doing `ntpdate
 -q <hostname>` allows you to verify that the chrony time and the
 system time match.
 
+### nvidia_temp.py
 
+This node monitors an NVIDIA GPU for temperature and usage statistics.
 
-```clearsilver
-node.0 {
-  name=nvidia_temp.py
-  desc=This node monitors an NVIDIA GPU for temperature and usage statistics.
-  pub{
-    0.name= /diagnostics
-    0.type= diagnostic_msgs/DiagnosticArray
-    0.desc= Diagnostics about the status of NTP.
-    1.name = gpu_status
-    1.type = pr2_msgs/GPUStatus
-    1.desc = Machine readable status of the GPU
-  }
-```
+#### Published Topics
 
-
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Diagnostics about the status of NTP.
+- `gpu_status`
+  ([pr2_msgs/msg/GPUStatus](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/GPUStatus.html)):
+  Machine readable status of the GPU
 
 #### Usage
 
@@ -249,36 +209,36 @@ Usage: nvidia_temp.py
 
 #### Implementation Details
 
-The `nvidia_temp.py` script uses the command:
-
+The `nvidia_temp.py` script uses the command: 
 
 ```
 sudo nvidia-smi -a
 ```
 
- to check the status of the GPU. This command
-must work without a password. Configure your sudoers file accordingly.
 
+to check the status of the GPU. This command must work without a
+password. Configure your sudoers file accordingly.
 
+### network_detector
 
-```clearsilver
-node.0 {
-  name=network_detector
-  desc=The network detector, `network_detector`, monitors a given network interface (such as "eth0") and publishes whether it is up and running (connected) or not.  The purpose is to detect '''wired''' network connections, so the robot can avoid driving and yanking out its network cable.  Finding which network interface (if any) really represents a wired connection must be done by the person who configures the robot.  On the PR2, this is "wan0" on computer C1.
-  pub{
-    0.name= /network/connected
-    0.type= std_msgs/Bool
-    0.desc= True if the interface exists and is connected, false otherwise.
-  }
-  param{
-    0.name=~interface_name
-    0.type=string
-    0.default=none
-    0.desc=Name of the network interface to monitor, for example "eth0" or "wan0".
-  }
-```
+The network detector, `network_detector`, monitors a given network
+interface (such as "eth0") and publishes whether it is up and running
+(connected) or not. The purpose is to detect **wired** network
+connections, so the robot can avoid driving and yanking out its network
+cable. Finding which network interface (if any) really represents a
+wired connection must be done by the person who configures the robot. On
+the PR2, this is "wan0" on computer C1.
 
+#### Published Topics
 
+- `/network/connected`
+  ([std_msgs/msg/Bool](https://docs.ros.org/en/rolling/p/std_msgs/msg/Bool.html)):
+  True if the interface exists and is connected, false otherwise.
+
+#### Parameters
+
+- `~interface_name` (`string`, default: `none`): Name of the network
+  interface to monitor, for example "eth0" or "wan0".
 
 #### Usage
 

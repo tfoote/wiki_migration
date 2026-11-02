@@ -275,57 +275,43 @@ suppress any output from anything that it matches.
 
 ## ROS API
 
+### aggregator_node
 
+Collects diagnostics, loads diagnostic analyzer plugins
 
-```clearsilver
-name = aggregator_node
-desc = Collects diagnostics, loads diagnostic analyzer plugins
-sub {
-  0.name = /diagnostics
-  0.type = diagnostic_msgs/DiagnosticArray
-  0.desc = Raw diagnostics input
-}
-pub {
-  0.name = /diagnostics_agg
-  0.type = diagnostic_msgs/DiagnosticArray
-  0.desc = Processed diagnostics output, at 1.0 Hz (default)
+#### Subscribed Topics
 
-  1.name = /diagnostics_toplevel_state
-  1.type = diagnostic_msgs/DiagnosticStatus
-  1.desc = '''New in Fuerte:''' The toplevel status of /diagnostics_agg published with the same rate
-}
-param {
-  0.name = ~pub_rate
-  0.type = double
-  0.desc = Rate diagnostics output published
-  0.default = 1.0
+- `/diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Raw diagnostics input
 
-  1.name = ~base_path
-  1.type = string
-  1.desc = Prepended to all diagnostics output (ex: "Robot")
-  1.default = " " (empty string)
+#### Published Topics
 
-  2.name = ~analyzers
-  2.type = {}
-  2.desc = Load diagnostics analyzers according to these params. Each analyzer is initialized in separate namespace. 
-}
-```
+- `/diagnostics_agg`
+  ([diagnostic_msgs/msg/DiagnosticArray](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticArray.html)):
+  Processed diagnostics output, at 1.0 Hz (default)
+- `/diagnostics_toplevel_state`
+  ([diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)):
+  **New in Fuerte:** The toplevel status of /diagnostics_agg published
+  with the same rate
 
+#### Parameters
 
+- `~pub_rate` (`double`, default: `1.0`): Rate diagnostics output
+  published
+- `~base_path` (`string`, default: `" " (empty string)`): Prepended to
+  all diagnostics output (ex: "Robot")
+- `~analyzers` (`{}`): Load diagnostics analyzers according to these
+  params. Each analyzer is initialized in separate namespace.
 
+### analyzer_loader
 
+Loads diagnostic analyzers, verifies initialization OK. Used as
+regression test.
 
-```clearsilver
-name = analyzer_loader
-desc = Loads diagnostic analyzers, verifies initialization OK. Used as regression test.
-param {
-  0.name = ~analyzers
-  0.type = {}
-  0.desc = Same format as aggregator_node
-}
-```
+#### Parameters
 
-
+- `~analyzers` (`{}`): Same format as aggregator_node
 
 ## Examples and Applications
 

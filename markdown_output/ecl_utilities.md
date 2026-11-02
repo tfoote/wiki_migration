@@ -12,6 +12,10 @@
 
 ## Function Objects
 
+- **Description:** Passing functions around as typed class objects.
+- **Keywords:** ecl function objects
+- **Tutorial Level:** INTERMEDIATE
+
 ### Introduction
 
 Resolving c++ function passing (as arguments to other functions) is
@@ -202,6 +206,10 @@ structure, so either none or one is always sufficient for all purposes.
 
 ## Parameters
 
+- **Description:** Avoiding a profusion of get/set.
+- **Keywords:** ecl parameters
+- **Tutorial Level:** INTERMEDIATE
+
 ### Introduction
 
 Parameter types substitute the basic types for a more convenient
@@ -316,6 +324,11 @@ are protected by their constness.
 
 ## Reference Wrappers
 
+- **Description:** When you want to pass a reference, but are only
+  permitted to pass a copy.
+- **Keywords:** ecl reference wrappers
+- **Tutorial Level:** INTERMEDIATE
+
 ### Introduction
 
 There are situations where you may wish to overload a function with both
@@ -413,6 +426,10 @@ bool result = is_reference_wrapper<int>::value
 This is most useful when used as a template argument metafunction.
 
 ## Singleton
+
+- **Description:** The classic singleton design pattern.
+- **Keywords:** ecl singleton
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overview
 

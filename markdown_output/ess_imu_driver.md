@@ -7,18 +7,18 @@
 
 \-\-\-\-\-\-\-\-\-\-\--
 
-- The [ Epson IMU ROS software](ess_sensors ) is ROS C++ wrapper of a
+- The [Epson IMU ROS software](ess_sensors) is ROS C++ wrapper of a
   Linux C driver for communicating on a ROS system
 - The original Linux C driver can be found at
-  [ github](https://github.com/cubicleguy/imu_linux_example )
+  [github](https://github.com/cubicleguy/imu_linux_example)
 - This driver software supports either UART or SPI interface connection
   to the Epson device
 - The user should be familiar with building ROS packages using the
   *catkin_make* process
 - This is **NOT** detailed step by step instructions
 - Refer to the *README.md* inside the ROS package or
-  [ Github repository](https://github.com/cubicleguy/ess_imu_driver )
-  for more detailed up-to-date info
+  [Github repository](https://github.com/cubicleguy/ess_imu_driver) for
+  more detailed up-to-date info
 
 ## Interface Connections
 
@@ -30,7 +30,7 @@
   compatible with CMOS 3.3V I/O
 - Connection is also possible through a USB-UART 3.3V converter IC such
   as on the
-  [M-G32EV041 evaluation board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/ )
+  [M-G32EV041 evaluation board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/)
 - Connecting GPIO output for asserting RESET# pin on the Epson device is
   optional, but recommended where possible (i.e. on embedded platforms)
 - Below is an example UART connection when using a Raspberry Pi based
@@ -61,9 +61,9 @@
   embedded Linux platforms
 - Direct connection to SPI port must be compatible with CMOS 3.3V I/O
 - Connection between the host & Epson device is possible using the
-  [ M-G32EV031 evaluation breakout board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/ )
+  [M-G32EV031 evaluation breakout board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/)
 - This driver uses the external library
-  [Unofficial wiringPi library](https://github.com/WiringPi/WiringPi/ )
+  [Unofficial wiringPi library](https://github.com/WiringPi/WiringPi/)
   to generate low level SPI communication, GPIO, & accurate time delays
 - Other libraries can be used to generate timer delays and SPI messages
   but requires changes to redirect the low-level function calls
@@ -113,29 +113,29 @@
 \-\-\-\-\-\-\-\-\-\-\--
 
 - This driver publishes IMU messages as per
-  [ REP 145 Conventions for IMU Sensor Drivers](http://www.ros.org/reps/rep-0145.html )
-- [ Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html ) -
+  [REP 145 Conventions for IMU Sensor Drivers](http://www.ros.org/reps/rep-0145.html)
+- [Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html) -
   contains header, orientation, angular velocity and linear acceleration
-- [ Temperature Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Temperature.html ) -
+- [Temperature Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Temperature.html) -
   contains header, temperature in Degrees Celsius
 
 ### Orientation Data
 
 - For models that support *quaternion output*,
-  [ Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html )
+  [Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html)
   publish on **imu/data**, and the orientation field can update with
   valid data
 - For models that **do not** support *quaternion output*,
-  [ Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html )
+  [Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html)
   publish on **imu/data_raw**, and the orientation field will not update
   with valid data
 
 ### Launch File
 
-- The [roslaunch/XML](https://wiki.ros.org/roslaunch/XML ) in the launch
+- The [roslaunch/XML](https://wiki.ros.org/roslaunch/XML) in the launch
   folder is used to pass the initialization parameters to configure the
   Epson device at runtime using
-  [ roslaunch](https://wiki.ros.org/roslaunch )
+  [roslaunch](https://wiki.ros.org/roslaunch)
 - Initialization parameter changes by editing the launch file does not
   require rebuilding with *catkin_make*
 - The user needs to modify **dout_rate** & **filter_sel** as needed
@@ -147,15 +147,15 @@
   to a cyclic external sync signal such as a GNSS 1PPS signal
 - When **time_correction** is enabled (set to 1), the driver attempts to
   correct the time stamp field in
-  [ Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html )
+  [Imu Message](https://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html)
   using the devices internal reset counter value (measured time delay
   since latest GNSS 1PPS)
 - To enable the **time_correction**, do the following: 1. Connect a
   function 1PPS signal to the EXT/GPIO2 pin of the Epson device 2. Edit
-  the appropriate [roslaunch/XML](https://wiki.ros.org/roslaunch/XML )
-  in *launch*/ to set **ext_sel** to External Counter Reset, set
-  *<param name="ext_sel" type="int" value="1" />* 3. In the same
-  launch file, enable **time_correction**, set *<param
+  the appropriate [roslaunch/XML](https://wiki.ros.org/roslaunch/XML) in
+  *launch*/ to set **ext_sel** to External Counter Reset, set *<param
+  name="ext_sel" type="int" value="1" />* 3. In the same launch
+  file, enable **time_correction**, set *<param
   name="time_correction" type="int" value="1" />*
 - The use of **time_correction** is intended to give a more accurate
   timestamp of the inertial data by minimizing the effects of link &
@@ -188,8 +188,8 @@ catkin workspace *src*/ folder.
 
 
 5\. Modify the appropriate
-[roslaunch/XML](https://wiki.ros.org/roslaunch/XML ) in the launch
-folder to set your desired initialization parameters
+[roslaunch/XML](https://wiki.ros.org/roslaunch/XML) in the launch folder
+to set your desired initialization parameters
 
 - Typically, only the **dout_rate** & **filter_sel** needs to be edited
 
@@ -198,8 +198,8 @@ folder to set your desired initialization parameters
 \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--
 
 - To start the Epson IMU ROS driver use the appropriate
-  [roslaunch/XML](https://wiki.ros.org/roslaunch/XML ) located in
-  *launch*/ with [roslaunch](https://wiki.ros.org/roslaunch )
+  [roslaunch/XML](https://wiki.ros.org/roslaunch/XML) located in
+  *launch*/ with [roslaunch](https://wiki.ros.org/roslaunch)
 - For example:
 
 
@@ -218,7 +218,7 @@ folder to set your desired initialization parameters
   Epson device, higher than expected latencies or slower than expected
   data rates are possible
 - For example, the
-  [M-G32EV041 evaluation board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/ )
+  [M-G32EV041 evaluation board](https://global.epson.com/products_and_drivers/sensing_system/technical_info/evaluation_tools/)
   uses an FTDI IC and driver
 - If the connection between the Epson device UART and Linux host is by
   FTDI, the **latency_timer** setting in the FTDI Linux driver may be

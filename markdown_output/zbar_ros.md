@@ -6,29 +6,29 @@ topic has a client.
 
 ## Node API
 
+### barcode_reader_node
 
+The `barcode_reader_node` listens to image data (camera or otherwise)
+on the incoming topic, outputs the contents of any barcodes detected in
+the images.
 
-```clearsilver
-name = barcode_reader_node
-desc = The `barcode_reader_node` listens to image data (camera or otherwise) on the incoming topic, outputs the contents of any barcodes detected in the images.
-sub {
-  0.name = image
-  0.type = sensor_msgs/Image
-  0.desc = Image input to scan for barcodes.
-}
-pub{
-  0.name = barcode
-  0.type = std_msgs/String
-  0.desc = Barcodes detected in image input.
-}
-param {
-  0.name = ~throttle_repeated_barcodes
-  0.type = double
-  0.desc = Time (s) to throttle any repeated barcode scans. If `0.0`, all detected barcodes will be output as fast as the node can process the incoming images.
-}
-```
+#### Subscribed Topics
 
+- `image`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Image input to scan for barcodes.
 
+#### Published Topics
+
+- `barcode`
+  ([std_msgs/msg/String](https://docs.ros.org/en/rolling/p/std_msgs/msg/String.html)):
+  Barcodes detected in image input.
+
+#### Parameters
+
+- `~throttle_repeated_barcodes` (`double`): Time (s) to throttle any
+  repeated barcode scans. If `0.0`, all detected barcodes will be
+  output as fast as the node can process the incoming images.
 
 ## Nodelet API
 

@@ -23,60 +23,68 @@ For basic vision processing of camera images, see the
 
 ## Nodes
 
-<a id="NodeAPI"></a> 
+<a id="NodeAPI"></a>
 
-```clearsilver
-name = prosilica_node
-desc = ROS driver for Prosilica GigE cameras. Note that the ROS API varies depending on whether the driver is in streaming or polled mode. In streaming mode it publishes to `camera/image_raw` and `camera/camera_info` like any other camera. In polled mode it publishes on request to a client-specified namespace, following the [[polled_camera]] protocol.<<BR>><<BR>>[[image_transport]] is used for all image publications.
-pub {
-  group.0 {
-    name = Streaming mode
-    0.name = camera/image_raw
-    0.type = sensor_msgs/Image
-    0.desc = The raw image topic.
-    1.name = camera/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = Calibration info for each image.
-  }
-  group.1 {
-    name = Polled mode
-    desc = There may be multiple clients, each with their own `response_namespace`. These topics are only published in response to the `request_image` service.
-    0.name = <response_namespace>/image_raw
-    0.type = sensor_msgs/Image
-    0.desc = The polled image topic for a particular client.
-    1.name = <response_namespace>/camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = The corresponding camera state.
-  }
-}
-srv {
-  group.0 {
-    0.name = set_camera_info
-    0.type = sensor_msgs/SetCameraInfo
-    0.desc = Sets the calibration parameters stored internally on the camera.
-  }
-  group.1 {
-    name = Polled mode
-    0.name = request_image
-    0.type = polled_camera/GetPolledImage
-    0.desc = Captures an image and publishes it in the namespace specified by the request message. Returns the timestamp.
-  }
-}
-param {
-group.0 {
-name=Camera selection
-desc=If `~ip_address` is set, the node opens the camera at that IP. If only `~guid` is set, the node opens the camera with that unique ID. If both, the camera is opened by IP address and the GUID verified. If neither, the node opens the first available camera.
-  0.name = ~ip_address
-  0.type = string
-  0.desc = IP address of the camera to open.
-  1.name = ~guid
-  1.type = string
-  1.desc = Unique ID of the camera to open.
-}
-}
-```
+### prosilica_node
 
+ROS driver for Prosilica GigE cameras. Note that the ROS API varies
+depending on whether the driver is in streaming or polled mode. In
+streaming mode it publishes to `camera/image_raw` and
+`camera/camera_info` like any other camera. In polled mode it
+publishes on request to a client-specified namespace, following the
+[polled_camera](https://index.ros.org/p/polled_camera) protocol.\
+\
+[image_transport](https://index.ros.org/p/image_transport) is used for
+all image publications.
 
+#### Published Topics
+
+##### Streaming mode
+
+- `camera/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The raw image topic.
+- `camera/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Calibration info for each image.
+
+##### Polled mode
+
+There may be multiple clients, each with their own
+`response_namespace`. These topics are only published in response to
+the `request_image` service.
+
+- `<response_namespace>/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The polled image topic for a particular client.
+- `<response_namespace>/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  The corresponding camera state.
+
+#### Services
+
+- `set_camera_info`
+  ([sensor_msgs/srv/SetCameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/srv/SetCameraInfo.html)):
+  Sets the calibration parameters stored internally on the camera.
+
+##### Polled mode
+
+- `request_image`
+  ([polled_camera/srv/GetPolledImage](https://docs.ros.org/en/rolling/p/polled_camera/srv/GetPolledImage.html)):
+  Captures an image and publishes it in the namespace specified by the
+  request message. Returns the timestamp.
+
+#### Parameters
+
+##### Camera selection
+
+If `ip_address` is set, the node opens the camera at that IP. If only
+`guid` is set, the node opens the camera with that unique ID. If both,
+the camera is opened by IP address and the GUID verified. If neither,
+the node opens the first available camera.
+
+- `~ip_address` (`string`): IP address of the camera to open.
+- `~guid` (`string`): Unique ID of the camera to open.
 
 ## Command-line tools
 
@@ -215,6 +223,11 @@ hostile) connection attempt from the outside and blocks it.
   networks.
 
 ## Configuring the Prosilica GigE for a Desktop
+
+- **Description:** This tutorial covers configuring the Prosilica camera
+  for a desktop and viewing images.
+- **Keywords:** Prosilica, desktop, IP, configure
+- **Tutorial Level:** BEGINNER
 
 ### Compiling
 
@@ -394,6 +407,13 @@ calibrate it in this tutorial,
 
 ## How to Determine Your Prosilica GigE Camera's IP Address
 
+- **Description:** This tutorial will show you how to determine the
+  prosilica camera's IP address if you do not remember it.
+- **Keywords:** Prosilica, IP, camera
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Configuring the Prosilica gigE for a desktop](#configuring-the-prosilica-gige-for-a-desktop)
+
 ### Compiling
 
 Start by getting the dependencies and compiling the driver.
@@ -516,6 +536,11 @@ address as described in the
 tutorial.
 
 ## Configuring the Prosilica GigE for the PR2
+
+- **Description:** This tutorial covers configuring the Prosilica camera
+  for a PR2 and viewing images.
+- **Keywords:** prosilica, PR2, configuration
+- **Tutorial Level:** BEGINNER
 
 ### Compiling
 
@@ -755,6 +780,17 @@ $ rosrun image_view image_view image:=/prosilica/image_raw
 
 ## Introduction to working with the Prosilica camera.
 
+- **Note:** If your camera is not yet configured, take a look at the
+  following tutorials:
+  [Determining the Prosilica's IP address](#how-to-determine-your-prosilica-gige-cameras-ip-address),
+  [Configure the Prosilica for a desktop computer](#configuring-the-prosilica-gige-for-a-desktop),
+  or
+  [Configuring the Prosilica for the PR2](#configuring-the-prosilica-gige-for-the-pr2).
+- **Description:** This introduction will teach you how to work with a
+  pre-configured Prosilica camera.
+- **Keywords:** prosilica, camera, high res, image, introduction
+- **Tutorial Level:** BEGINNER
+
 This is an introduction to using the high-resolution Prosilica camera.
 It assumes that the camera has already been configured. If you need to
 configure a new Prosilica camera, please see the other tutorials in this
@@ -773,20 +809,14 @@ to see if the node is running.
 The camera can start in two modes. The first is `streaming`. This mode
 looks like most other cameras.
 
+##### Published Topics
 
-
-```clearsilver
-pub{
-0.name= image_raw
-0.type= sensor_msgs/Image
-0.desc= The raw image topic. 
-1.name= camera_info
-1.type= sensor_msgs/CameraInfo
-1.desc= Camera intrinsics for images published on `image_raw`.
-}
-```
-
-
+- `image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The raw image topic.
+- `camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera intrinsics for images published on `image_raw`.
 
 ### Polled mode
 
@@ -806,20 +836,15 @@ rosservice call /prosilica/request_image /<response_namespace> '{x_offset: 0, y_
 
 
 
+##### Published Topics
 
-
-```clearsilver
-pub{
-0.name= <response_namespace>/image_raw
-0.type= sensor_msgs/Image
-0.desc= The polled image topic for a particular client.
-1.name= <response_namespace>/camera_info
-1.type= sensor_msgs/CameraInfo
-1.desc= Camera intrinsics for images published on `<response_namespace>/image_raw`.
-}
-```
-
-
+- `<response_namespace>/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The polled image topic for a particular client.
+- `<response_namespace>/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Camera intrinsics for images published on
+  `<response_namespace>/image_raw`.
 
 ### Changing parameters
 

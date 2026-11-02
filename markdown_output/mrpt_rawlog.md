@@ -62,54 +62,38 @@ handling rawlogs:
 
 ## Nodes
 
+### rawlog_play_node
 
+The `rawlog_play_node` node parses a Rawlog file and emit its messages
+as `rosbag play`.
 
-```clearsilver
- name = rawlog_play_node
- desc = The `rawlog_play_node` node parses a Rawlog file and emit its messages as `rosbag play`.
- pub {
-   0{
-    name = tf
-    type = tf/tfMessage
-    desc = Poses of the different sensors and odometry.
-   }
-  }
+#### Published Topics
 
- param{
-    0.name = ~base_frame
-    0.type = string
-    0.default = `"base_link"`
-    0.desc = The frame attached to the mobile base.
-  }
+- `tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Poses of the different sensors and odometry.
 
- prov_tf{
-  0{
-    from = map
-    to = odom
-    desc = XXX
-  }
- }
-```
+#### Parameters
 
+- `~base_frame` (`string`, default: `"base_link"`): The frame
+  attached to the mobile base.
 
+#### Provided tf Transforms
 
+- `map` → `odom`: XXX
 
+### rawlog_record_node
 
-```clearsilver
- name = rawlog_record_node
- desc = The `rawlog_record_node` node subscribes to topics and writes a Rawlog file, like `rosbag record`.
- pub {
-   0{
-    name = tf
-    type = tf/tfMessage
-    desc = Poses of the different sensors and odometry.
-   }
-  }
+The `rawlog_record_node` node subscribes to topics and writes a Rawlog
+file, like `rosbag record`.
 
- param{
-    0.name = ~raw_log_folder
-    0.type = string
-    0.default = `"~/"`
-    0.desc = The output directory in which to store rawlogs.
-  }
-```
+#### Published Topics
+
+- `tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Poses of the different sensors and odometry.
+
+#### Parameters
+
+- `~raw_log_folder` (`string`, default: `"/"`): The output directory
+  in which to store rawlogs.

@@ -45,6 +45,12 @@ them.
 
 ## Configuring a gvm multicamera sensor
 
+- **Description:** This tutorial walks you through how to configure a
+  gvm multicamera sensor
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Utility Plugins](#utility-plugins)
+
 ### Background
 
 If you are not curious about why the configuration of the sensor looks
@@ -274,6 +280,12 @@ and how to use it.
 
 ## Utility Plugins
 
+- **Description:** This tutorial presents various utility plugins that
+  are useful for the video plugins
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Gazebo Video Monitor Plugin](#gazebo-video-monitor-plugin)
+
 A set of utility plugins is available to be used along with the monitor
 plugins.
 
@@ -324,6 +336,12 @@ This means the second and third view in the video will be blacked out.
 
 ## Gazebo Video Monitor Plugin
 
+- **Description:** This tutorial presents the gazebo video monitor
+  plugin
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Gazebo Multi Video Monitor Plugin](#gazebo-multi-video-monitor-plugin)
+
 ![width="600px"](doc/video-monitor-plugin.png)
 
 The gazebo video monitor plugin records videos in the format shown
@@ -366,6 +384,12 @@ See an example configuration of the plugin in
 
 ## Gazebo Multi Video Monitor Plugin
 
+- **Description:** This tutorial presents the gazebo multi video monitor
+  plugin
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Gazebo Multi Camera Monitor Plugin](#gazebo-multi-camera-monitor-plugin)
+
 ![width="600px"](doc/multi-video-monitor-plugin.gif)
 
 The gazebo multi-video monitor plugin records multiple videos from
@@ -405,6 +429,12 @@ See an example configuration of the plugin in
 [gazebo_multi_video_monitor_plugin.world](https://github.com/nlamprian/gazebo_video_monitors/blob/ros1/gazebo_video_monitor_plugins/test/worlds/gazebo_multi_video_monitor_plugin.world).
 
 ## Gazebo Multi Camera Monitor Plugin
+
+- **Description:** This tutorial presents the gazebo multi camera
+  monitor plugin
+- **Tutorial Level:** BEGINNER
+- **Next Tutorial:**
+  [Gazebo Multi View Monitor Plugin](#gazebo-multi-view-monitor-plugin)
 
 ![width="600px"](doc/multi-camera-monitor-plugin.gif)
 
@@ -459,6 +489,10 @@ See an example configuration of the plugin in
 [gazebo_multi_camera_monitor_plugin.world](https://github.com/nlamprian/gazebo_video_monitors/blob/ros1/gazebo_video_monitor_plugins/test/worlds/gazebo_multi_camera_monitor_plugin.world).
 
 ## Gazebo Multi View Monitor Plugin
+
+- **Description:** This tutorial presents the gazebo multi view monitor
+  plugin
+- **Tutorial Level:** BEGINNER
 
 ![width="600px"](doc/multi-view-monitor-plugin.gif)
 

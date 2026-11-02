@@ -26,35 +26,51 @@ roslaunch qb_device_driver communication_handler.launch
 
 
 
+### qb_device_communication_handler
 
-```clearsilver
-name = qb_device_communication_handler
-desc = The Communication Handler provides seven services to interact with ''qbrobotics'' devices connected to the system. It is assumed that each device has a unique ID and that no other qbrobotics devices have the same ID.
-srv {
-  0.name = /communication_handler/activate_motors
-  0.type = qb_device_srvs/Trigger
-  0.desc = Activates the motors of the device which ID is specified in the service request. The response `success` variable is set to `true` if motors are active.
-  1.name = /communication_handler/deactivate_motors
-  1.type = qb_device_srvs/Trigger
-  1.desc = Deactivates the motors of the device which ID is specified in the service request. The response `success` variable is set to `true` if motors are inactive.
-  2.name = /communication_handler/get_info
-  2.type = qb_device_srvs/Trigger
-  2.desc = Retrieves the printable configuration setup of the device which ID is specified in the service request. On error, the response `message` variable is empty.
-  3.name = /communication_handler/get_measurements
-  3.type = qb_device_srvs/GetMeasurements
-  3.desc = Retrieves the motor positions and currents of the device which ID is specified in the service request. The response `success` variable is set to `true` if data retrieved (i.e. the response `currents` and `positions` variables) is meaningful.
-  4.name = /communication_handler/go_to_home
-  4.type = qb_device_srvs/Trigger
-  4.desc = Currently this service is only for qb SoftHand2 Research. It sends the device to its initial position.'''COMING SOON FOR ALL qbrobotics DEVICES'''
-  5.name = /communication_handler/initialize_device
-  5.type = qb_device_srvs/InitializeDevice
-  5.desc = Initialize the communication with the device.
+The Communication Handler provides seven services to interact with
+*qbrobotics* devices connected to the system. It is assumed that each
+device has a unique ID and that no other qbrobotics devices have the
+same ID.
 
-  6.name = /communication_handler/set_commands
-  6.type = qb_device_srvs/SetCommands
-  6.desc = Send the reference commands (i.e. the request `commands` variable) to the motors of the device which ID is specified in the service request.
-  7.name = /communication_handler/set_control_mode
-  7.type = qb_device_srvs/SetControlMode
-  7.desc = Currently this service is only for qb SoftClaw Research. Set the desired control mode. The accepted request field should be ''deflection'' or ''position'' '''COMING SOON FOR ALL qbrobotics DEVICES'''
-}
-```
+#### Services
+
+- `/communication_handler/activate_motors`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Activates the motors of the device which ID is specified in the
+  service request. The response `success` variable is set to `true`
+  if motors are active.
+- `/communication_handler/deactivate_motors`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Deactivates the motors of the device which ID is specified in the
+  service request. The response `success` variable is set to `true`
+  if motors are inactive.
+- `/communication_handler/get_info`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Retrieves the printable configuration setup of the device which ID is
+  specified in the service request. On error, the response `message`
+  variable is empty.
+- `/communication_handler/get_measurements`
+  ([qb_device_srvs/srv/GetMeasurements](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/GetMeasurements.html)):
+  Retrieves the motor positions and currents of the device which ID is
+  specified in the service request. The response `success` variable is
+  set to `true` if data retrieved (i.e. the response `currents` and
+  `positions` variables) is meaningful.
+- `/communication_handler/go_to_home`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Currently this service is only for qb SoftHand2 Research. It sends the
+  device to its initial position.**COMING SOON FOR ALL qbrobotics
+  DEVICES**
+- `/communication_handler/initialize_device`
+  ([qb_device_srvs/srv/InitializeDevice](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/InitializeDevice.html)):
+  Initialize the communication with the device.
+- `/communication_handler/set_commands`
+  ([qb_device_srvs/srv/SetCommands](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/SetCommands.html)):
+  Send the reference commands (i.e. the request `commands` variable)
+  to the motors of the device which ID is specified in the service
+  request.
+- `/communication_handler/set_control_mode`
+  ([qb_device_srvs/srv/SetControlMode](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/SetControlMode.html)):
+  Currently this service is only for qb SoftClaw Research. Set the
+  desired control mode. The accepted request field should be
+  *deflection* or *position* **COMING SOON FOR ALL qbrobotics DEVICES**

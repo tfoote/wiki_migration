@@ -8,6 +8,13 @@
 
 ## ROS Packages Installation
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [ROS/Tutorials](ROS/Tutorials).
+- **Description:** Install the last qb SoftHand Research and qb
+  SoftHand2 Research related ROS packages
+- **Keywords:** qbrobotics SoftHand SoftHand2 installation
+- **Tutorial Level:** BEGINNER 
+
 ```
 {#!wiki version kinetic_and_newer
 
@@ -17,8 +24,8 @@ If you have never set it up, you probably need to add your linux user to the `di
 sudo gpasswd -a <user_name> dialout
 ```
 
- where you need to replace the `<user_name>`
-with your current linux username.
+ where you need
+  to replace the `<user_name>` with your current linux username.
 
 *Note: Don't forget to logout or reboot.*
 
@@ -84,7 +91,7 @@ the compilation, feel free to ask for support on
 
 ### Device Setup
 
-Connect a *[qb SoftHand Research ](Robots/qbhand)* or a
+Connect a *[qb SoftHand Research](Robots/qbhand)* or a
 *[qb SoftHand2 Research](Robots/qbhand)* to your system is basically a
 matter of plugging in a USB cable. Nonetheless, **read carefully** the
 product manual to understand all the requirements and advices about

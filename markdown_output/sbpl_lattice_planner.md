@@ -39,87 +39,69 @@ roslaunch sbpl_lattice_planner  move_base_sbpl_fake_localization_2.5cm.launch
 
 ### ROS API
 
+#### Published Topics
 
+- `~/SBPLLatticePlanner/plan`
+  ([nav_msgs/msg/Path](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Path.html)):
+  The last plan computed by SBPL, published every time the planner
+  computes a new path, and used primarily for visualization purposes.
+- `~/SBPLLatticePlanner/sbpl_lattice_planner_stats`
+  ([sbpl_lattice_planner/msg/SBPLLatticePlannerStats](https://docs.ros.org/en/rolling/p/sbpl_lattice_planner/msg/SBPLLatticePlannerStats.html)):
+  Statistics from the last planning request. Stats include: time taken
+  to get to the first and final solutions, number of state expansions
+  taken to get the first and final solutions, the epsilon (bound on the
+  sub-optimality of the solution) of the first and final solutions, and
+  the size of the final solution.
 
-```clearsilver
-pub {
-  0.name  = ~/SBPLLatticePlanner/plan
-  0.type = nav_msgs/Path
-  0.desc = The last plan computed by SBPL, published every time the planner computes a new path, and used primarily for visualization purposes.
-  1.name  = ~/SBPLLatticePlanner/sbpl_lattice_planner_stats
-  1.type = sbpl_lattice_planner/SBPLLatticePlannerStats
-  1.desc = Statistics from the last planning request. Stats include: time taken to get to the first and final solutions, number of state expansions taken to get the first and final solutions, the epsilon (bound on the sub-optimality of the solution) of the first and final solutions, and the size of the final solution. 
-}
-```
+#### Parameters
 
-
-
-
-
-```clearsilver
-param {
-  0.name = ~/SBPLLatticePlanner/planner_type
-  0.default = "ARAPlanner"
-  0.type = string
-  0.desc = Specifies which planner to use.  It can either be "ARAPlanner" for ARA* or "ADPlanner" for AD*.
-}
-param {
-  1.name = ~/SBPLLatticePlanner/allocated_time
-  1.default = 10
-  1.type = double
-  1.desc = The amount of time given to the planner to find a solution. If there is still time remaining after the planner finds its sub-optimal initial solution (specified by "initial_epsilon"), the planner will use up remaining time improving solution until it is optimal or until time runs out (which ever comes first).
-}
-param {
-  2.name = ~/SBPLLatticePlanner/initial_epsilon
-  2.default = 3.0
-  2.type = double
-  2.desc = The value the heuristic is scaled by for the first search.  This value must be greater or equal to 1.  The larger this value is the faster the search tends to find a solution (likely sub-optimal if epsilon is larger than 1).  After the first search, the planner will continue to reduce the epsilon value until it is 1 (optimal search).
-}
-param {
-  3.name = ~/SBPLLatticePlanner/environment_type
-  3.default = "XYThetaLattice"
-  3.type = string
-  3.desc = The type of environment being searched. Currently, XYThetaLattice is the only supported environment.
-}
-param {
-  4.name = ~/SBPLLatticePlanner/forward_search
-  4.default = false
-  4.type = bool
-  4.desc = The direction the search is done in. If you are using AD* you should use backward search for fast replanning times.  For ARA* it doesn't matter too much which direction you use.
-}
-param {
-  5.name = ~/SBPLLatticePlanner/primitive_filename
-  5.default = ""
-  5.type = string
-  5.desc = The path to a motion primitive file. This MUST be specified by the user for the planner to work. There is an example motion primitive file that can be used in matlab/mprim/pr2.mprim in the SBPL package. If you want to generate your own motion primitive file to match the kinematics of your robot or your map resolution, there is are several genmprim*.m scripts in matlab/mprim/ in the SBPL package to help you.
-}
-param {
-  6.name = ~/SBPLLatticePlanner/force_scratch_limit
-  6.default = 500
-  6.type = int
-  6.desc = The parameter only matters if you are using AD*. If at least this many map cells have changed since the last plan was generated, the planner will not reuse previous search information and instead plan from scratch.
-}
-param {
-  7.name = ~/SBPLLatticePlanner/nominalvel_mpersecs
-  7.default = 0.4
-  7.type = double
-  7.desc = The linear velocity of the robot in meters/sec
-}
-param {
-  8.name = ~/SBPLLatticePlanner/timetoturn45degsinplace_secs
-  8.default = 0.6
-  8.type = double
-  8.desc = The time it takes the robot to turn 45 degrees in place in seconds.
-}
-param {
-  9.name = ~/SBPLLatticePlanner/lethal_obstacle
-  9.default = 20
-  9.type = unsigned char
-  9.desc = The cost of an obstacle in the planner's version of the costmap. All other values in the costmap are scaled accordingly. The obstacle cost is the largest in the costmap2d so by setting this parameter to something below its obstacle thresh, we can get obstacle padding that is less harsh and more reasonable. This will make the planner more likely to choose to go through more narrow areas such as doorways. 
-}
-```
-
-
+- `~/SBPLLatticePlanner/planner_type` (`string`, default:
+  `"ARAPlanner"`): Specifies which planner to use. It can either be
+  "ARAPlanner" for ARA\* or "ADPlanner" for AD\*.
+- `~/SBPLLatticePlanner/allocated_time` (`double`, default: `10`): The
+  amount of time given to the planner to find a solution. If there is
+  still time remaining after the planner finds its sub-optimal initial
+  solution (specified by "initial_epsilon"), the planner will use up
+  remaining time improving solution until it is optimal or until time
+  runs out (which ever comes first).
+- `~/SBPLLatticePlanner/initial_epsilon` (`double`, default: `3.0`): The
+  value the heuristic is scaled by for the first search. This value must
+  be greater or equal to 1. The larger this value is the faster the
+  search tends to find a solution (likely sub-optimal if epsilon is
+  larger than 1). After the first search, the planner will continue to
+  reduce the epsilon value until it is 1 (optimal search).
+- `~/SBPLLatticePlanner/environment_type` (`string`, default:
+  `"XYThetaLattice"`): The type of environment being searched.
+  Currently, XYThetaLattice is the only supported environment.
+- `~/SBPLLatticePlanner/forward_search` (`bool`, default: `false`): The
+  direction the search is done in. If you are using AD\* you should use
+  backward search for fast replanning times. For ARA\* it doesn't
+  matter too much which direction you use.
+- `~/SBPLLatticePlanner/primitive_filename` (`string`, default: `""`):
+  The path to a motion primitive file. This MUST be specified by the
+  user for the planner to work. There is an example motion primitive
+  file that can be used in matlab/mprim/pr2.mprim in the SBPL package.
+  If you want to generate your own motion primitive file to match the
+  kinematics of your robot or your map resolution, there is are several
+  genmprim\*.m scripts in matlab/mprim/ in the SBPL package to help you.
+- `~/SBPLLatticePlanner/force_scratch_limit` (`int`, default: `500`):
+  The parameter only matters if you are using AD\*. If at least this
+  many map cells have changed since the last plan was generated, the
+  planner will not reuse previous search information and instead plan
+  from scratch.
+- `~/SBPLLatticePlanner/nominalvel_mpersecs` (`double`, default: `0.4`):
+  The linear velocity of the robot in meters/sec
+- `~/SBPLLatticePlanner/timetoturn45degsinplace_secs` (`double`,
+  default: `0.6`): The time it takes the robot to turn 45 degrees in
+  place in seconds.
+- `~/SBPLLatticePlanner/lethal_obstacle` (`unsigned char`, default:
+  `20`): The cost of an obstacle in the planner's version of the
+  costmap. All other values in the costmap are scaled accordingly. The
+  obstacle cost is the largest in the costmap2d so by setting this
+  parameter to something below its obstacle thresh, we can get obstacle
+  padding that is less harsh and more reasonable. This will make the
+  planner more likely to choose to go through more narrow areas such as
+  doorways.
 
 ### Customizing your Motion Primitives
 

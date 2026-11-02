@@ -13,12 +13,12 @@ details.
 ## Overview
 
 This node provides ROS service calls and parameters for the
-[ TagDetect](https://roboception.com/product/tag-detection/) module.
+[TagDetect](https://roboception.com/product/tag-detection/) module.
 
 For detail description of the
-[ TagDetect](https://roboception.com/product/tag-detection/) module
-check the
-[ rc_visard manual](https://doc.rc-visard.com/latest/en/tagdetect.html ).
+[TagDetect](https://roboception.com/product/tag-detection/) module check
+the
+[rc_visard manual](https://doc.rc-visard.com/latest/en/tagdetect.html).
 
 ## Configuration
 

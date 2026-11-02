@@ -58,65 +58,40 @@ trajectory).
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=joints
-  0.type=string[]
-  0.desc=The list of joints to control
-  1.name=gains/<joint>/p
-  1.type=double
-  1.default=Required
-  1.desc=The position gain for joint <joint>.  (There should be a `p` gain for every joint listed in the `joints` parameter)
-  2.name=gains/<joint>/d
-  2.type=double
-  2.desc=The position derivative gain for joint <joint>
-  2.default=0.0
-  3.name=gains/<joint>/i
-  3.type=double
-  3.desc=The integral gain around position for joint <joint>
-  3.default=0.0
-  4.name=gains/<joint>/i_clamp
-  4.type=double
-  4.desc=The clamp of the integral gain for joint <joint>
-  4.default=0.0
-  5.name=gains/<joint>/mass
-  5.type=double
-  5.desc=The approximate inertia for joint <joint>
-  5.default=0.0
-  6.name=gains/<joint>/proxy/lambda
-  6.type=double
-  6.desc=Bandwidth of proxy reconvergence
-  6.default=1.0
-  7.name=gains/<joint>/proxy/acc_converge
-  7.type=double
-  7.desc=Acceleration of proxy reconvergence
-  7.default=0.0
-  8.name=gains/<joint>/proxy/vel_limit
-  8.type=double
-  8.desc=Velocity limit (enforced by the proxy)
-  8.default=0.0
-  9.name=gains/<joint>/proxy/effort_limit
-  9.type=double
-  9.desc=Acceleration limit (enforced by the proxy)
-  9.default=0.0
-  10.name=joint_trajectory_action_node/constraints/goal_time
-  10.type=double
-  10.desc=If the timestamp of the goal trajectory point is t, then following the trajectory succeeds if it reaches the goal within t +/- goal_time, and aborts otherwise.
-  10.default=0.0
-  11.name=joint_trajectory_action_node/constraints/<joint>/goal
-  11.type=double
-  11.desc=Position tolerance for a particular joint to reach the goal.  When the joint is within goal_position +/- goal_tolerance, than the trajectory can succeed.
-  11.default=0.0
-  12.name=joint_trajectory_action_node/constraints/<joint>/trajectory
-  12.type=double
-  12.desc=Position tolerance for a particular joint throughout the trajectory.  If the joint position every falls outside trajectory_position +/- tolerance, then the trajectory aborts.
-  12.default=0.0
-}
-```
-
-
+- `joints` (`string[]`): The list of joints to control
+- `gains/<joint>/p` (`double`, default: `Required`): The position gain
+  for joint <joint>. (There should be a `p` gain for every joint
+  listed in the `joints` parameter)
+- `gains/<joint>/d` (`double`, default: `0.0`): The position derivative
+  gain for joint <joint>
+- `gains/<joint>/i` (`double`, default: `0.0`): The integral gain around
+  position for joint <joint>
+- `gains/<joint>/i_clamp` (`double`, default: `0.0`): The clamp of the
+  integral gain for joint <joint>
+- `gains/<joint>/mass` (`double`, default: `0.0`): The approximate
+  inertia for joint <joint>
+- `gains/<joint>/proxy/lambda` (`double`, default: `1.0`): Bandwidth of
+  proxy reconvergence
+- `gains/<joint>/proxy/acc_converge` (`double`, default: `0.0`):
+  Acceleration of proxy reconvergence
+- `gains/<joint>/proxy/vel_limit` (`double`, default: `0.0`): Velocity
+  limit (enforced by the proxy)
+- `gains/<joint>/proxy/effort_limit` (`double`, default: `0.0`):
+  Acceleration limit (enforced by the proxy)
+- `joint_trajectory_action_node/constraints/goal_time` (`double`,
+  default: `0.0`): If the timestamp of the goal trajectory point is t,
+  then following the trajectory succeeds if it reaches the goal within t
+  +/- goal_time, and aborts otherwise.
+- `joint_trajectory_action_node/constraints/<joint>/goal` (`double`,
+  default: `0.0`): Position tolerance for a particular joint to reach
+  the goal. When the joint is within goal_position +/- goal_tolerance,
+  than the trajectory can succeed.
+- `joint_trajectory_action_node/constraints/<joint>/trajectory`
+  (`double`, default: `0.0`): Position tolerance for a particular joint
+  throughout the trajectory. If the joint position every falls outside
+  trajectory_position +/- tolerance, then the trajectory aborts.
 
 Example configuration (from
 [pr2_controller_configuration](https://index.ros.org/p/pr2_controller_configuration)/pr2_arm_controllers.yaml):
@@ -264,33 +239,18 @@ trajectory).
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=joints
-  0.type=string[]
-  0.desc=The list of joints to control
-  1.name=gains/<joint>/p
-  1.type=double
-  1.default=Required
-  1.desc=The position gain for joint <joint>.  (There should be a `p` gain for every joint listed in the `joints` parameter)
-  2.name=gains/<joint>/d
-  2.type=double
-  2.desc=The position derivative gain for joint <joint>
-  2.default=0.0
-  3.name=gains/<joint>/i
-  3.type=double
-  3.desc=The integral gain around position for joint <joint>
-  3.default=0.0
-  4.name=gains/<joint>/i_clamp
-  4.type=double
-  4.desc=The clamp of the integral gain for joint <joint>
-  4.default=0.0
-}
-```
-
-
+- `joints` (`string[]`): The list of joints to control
+- `gains/<joint>/p` (`double`, default: `Required`): The position gain
+  for joint <joint>. (There should be a `p` gain for every joint
+  listed in the `joints` parameter)
+- `gains/<joint>/d` (`double`, default: `0.0`): The position derivative
+  gain for joint <joint>
+- `gains/<joint>/i` (`double`, default: `0.0`): The integral gain around
+  position for joint <joint>
+- `gains/<joint>/i_clamp` (`double`, default: `0.0`): The clamp of the
+  integral gain for joint <joint>
 
 Example configuration (from
 [pr2_controller_configuration](https://index.ros.org/p/pr2_controller_configuration)/pr2_arm_controllers.yaml):
@@ -320,41 +280,31 @@ r_arm_controller:
 
 
 
+###### Published Topics
 
+- `state`
+  ([pr2_controllers_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryControllerState.html)):
+  Current state of the controller, including the current and desired
+  positions, velocities, and accelerations.
 
-```clearsilver
-pub{
-  0.name=state
-  0.type=pr2_controllers_msgs/JointTrajectoryControllerState
-  0.desc=Current state of the controller, including the current and desired positions, velocities, and accelerations.
-}
-```
+###### Subscribed Topics
 
+- `command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  The trajectory to follow. The absolute start time of the trajectory is
+  given in header.stamp. If positions, velocities, and accelerations are
+  all specified, then the controller will interpolate using quintic
+  splines. If only positions and velocities are specified, it will use
+  cubic splines. If only positions are specified, it will interpolate
+  linearly (though using this behavior is not recommended, as the
+  trajectory will not be smooth).
 
+###### Services
 
-
-
-```clearsilver
-sub{
-  0.name=command
-  0.type=trajectory_msgs/JointTrajectory
-  0.desc=The trajectory to follow.  The absolute start time of the trajectory is given in header.stamp.  If positions, velocities, and accelerations are all specified, then the controller will interpolate using quintic splines.  If only positions and velocities are specified, it will use cubic splines.  If only positions are specified, it will interpolate linearly (though using this behavior is not recommended, as the trajectory will not be smooth).
-}
-```
-
-
-
-
-
-```clearsilver
-srv{
-  0.name=query_state
-  0.type=pr2_controllers_msgs/QueryTrajectoryState
-  0.desc=The query_state service allows the user to inquire where the controller setpoint will be at a desired time.
-}
-```
-
-
+- `query_state`
+  ([pr2_controllers_msgs/srv/QueryTrajectoryState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/srv/QueryTrajectoryState.html)):
+  The query_state service allows the user to inquire where the
+  controller setpoint will be at a desired time.
 
 #### Advanced behaviors
 
@@ -404,23 +354,15 @@ the joint.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)):
+  The effort to command
 
-```clearsilver
-param {
-  0.name=joint
-  0.type=string
-  0.default=Required
-  0.desc=The joint to control
-}
-sub {
-  0.name=command
-  0.type=std_msgs/Float64
-  0.desc=The effort to command
-}
-```
+###### Parameters
 
-
+- `joint` (`string`, default: `Required`): The joint to control
 
 Example configuration:
 
@@ -448,39 +390,21 @@ robot, so the velocity will not be achieved near the joint limits.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)):
+  The velocity to command
 
-```clearsilver
-param {
-  0.name=joint
-  0.type=string
-  0.default=Required
-  0.desc=The joint to control
-  1.name=pid/p
-  1.type=double
-  1.default=Required
-  1.desc=The proportional gain relating efforts to the error in velocity
-  2.name=pid/d
-  2.type=double
-  2.default=0.0
-  2.desc=Derivative gain
-  3.name=pid/i
-  3.type=double
-  3.default=0.0
-  3.desc=Integral gain
-  4.name=pid/i_clamp
-  4.type=double
-  4.default=0.0
-  4.desc=Bounds enforced on the integral windup
-}
-sub {
-  0.name=command
-  0.type=std_msgs/Float64
-  0.desc=The velocity to command
-}
-```
+###### Parameters
 
-
+- `joint` (`string`, default: `Required`): The joint to control
+- `pid/p` (`double`, default: `Required`): The proportional gain
+  relating efforts to the error in velocity
+- `pid/d` (`double`, default: `0.0`): Derivative gain
+- `pid/i` (`double`, default: `0.0`): Integral gain
+- `pid/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  integral windup
 
 Example configuration:
 
@@ -513,39 +437,22 @@ robot, so position commands near the joint limits may not be achieved.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([std_msgs/msg/Float64](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64.html)):
+  The position to command
 
-```clearsilver
-param {
-  0.name=joint
-  0.type=string
-  0.default=Required
-  0.desc=The joint to control
-  1.name=pid/p
-  1.type=double
-  1.default=Required
-  1.desc=The proportional gain relating efforts to the error in position
-  2.name=pid/d
-  2.type=double
-  2.default=0.0
-  2.desc=Derivative gain, relating efforts to velocity (derivative of position)
-  3.name=pid/i
-  3.type=double
-  3.default=0.0
-  3.desc=Integral gain
-  4.name=pid/i_clamp
-  4.type=double
-  4.default=0.0
-  4.desc=Bounds enforced on the integral windup
-}
-sub {
-  0.name=command
-  0.type=std_msgs/Float64
-  0.desc=The position to command
-}
-```
+###### Parameters
 
-
+- `joint` (`string`, default: `Required`): The joint to control
+- `pid/p` (`double`, default: `Required`): The proportional gain
+  relating efforts to the error in position
+- `pid/d` (`double`, default: `0.0`): Derivative gain, relating efforts
+  to velocity (derivative of position)
+- `pid/i` (`double`, default: `0.0`): Integral gain
+- `pid/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  integral windup
 
 Example configuration:
 
@@ -577,62 +484,31 @@ practice when controlling the PR2.
 
 #### ROS API
 
+###### Parameters
 
-
-```clearsilver
-param{
-  0.name=root_name
-  0.type=string
-  0.default=Required
-  0.desc=The root link of the chain to control.
-  1.name=tip_name
-  1.type=string
-  1.default=Required
-  1.desc=The tip link (end effector) of the chain to control.
-  2.name=cart_gain/trans/p
-  2.type=double
-  2.default=Required
-  2.desc=Proportional gain for translation of the end effector.
-  3.name=cart_gains/trans/d
-  3.type=double
-  3.default=Required
-  3.desc=Derivative gain for translation of the end effector
-  4.name=cart_gains/rot/p
-  4.type=double
-  4.default=Required
-  4.desc=Proportional gain for rotation of the end effector
-  5.name=cart_gains/rot/d
-  5.type=double
-  5.default=Required
-  5.desc=Derivative gain for rotation of the end effector
-  6.name=vel_saturation_trans
-  6.type=double
-  6.default=0.0
-  6.desc=Velocity limit for translation (m/s).  Zero means not limited.
-  7.name=vel_saturation_rot
-  7.type=double
-  7.default=0.0
-  7.desc=Velocity limit for rotation (rad/s).  Zero means not limited.
-  8.name=jacobian_inverse_damping
-  8.type=double
-  8.default=0.0
-  8.desc=Damping term for taking the inverse of the Jacobian.
-  9.name=joint_feedforward/<joint>
-  9.type=double
-  9.default=0.0
-  9.desc=Feedforward term for the posture controller.
-  10.name=saturation/<joint>
-  10.type=double
-  10.default=0.0
-  10.desc=Maximum torque for the joint.
-  11.name=k_posture
-  11.type=double
-  11.default=1.0
-  11.desc=Gain on the posture control.
-}
-```
-
-
+- `root_name` (`string`, default: `Required`): The root link of the
+  chain to control.
+- `tip_name` (`string`, default: `Required`): The tip link (end
+  effector) of the chain to control.
+- `cart_gain/trans/p` (`double`, default: `Required`): Proportional gain
+  for translation of the end effector.
+- `cart_gains/trans/d` (`double`, default: `Required`): Derivative gain
+  for translation of the end effector
+- `cart_gains/rot/p` (`double`, default: `Required`): Proportional gain
+  for rotation of the end effector
+- `cart_gains/rot/d` (`double`, default: `Required`): Derivative gain
+  for rotation of the end effector
+- `vel_saturation_trans` (`double`, default: `0.0`): Velocity limit for
+  translation (m/s). Zero means not limited.
+- `vel_saturation_rot` (`double`, default: `0.0`): Velocity limit for
+  rotation (rad/s). Zero means not limited.
+- `jacobian_inverse_damping` (`double`, default: `0.0`): Damping term
+  for taking the inverse of the Jacobian.
+- `joint_feedforward/<joint>` (`double`, default: `0.0`): Feedforward
+  term for the posture controller.
+- `saturation/<joint>` (`double`, default: `0.0`): Maximum torque for
+  the joint.
+- `k_posture` (`double`, default: `1.0`): Gain on the posture control.
 
 Example configuration (from
 [pr2_controller_configuration](https://index.ros.org/p/pr2_controller_configuration)/pr2_jt_controllers.yaml):
@@ -677,36 +553,28 @@ r_cart:
 
 
 
+###### Published Topics
 
+- `state`
+  ([robot_mechanism_controllers/msg/JTCartesianControllerState](https://docs.ros.org/en/rolling/p/robot_mechanism_controllers/msg/JTCartesianControllerState.html)):
+  Current state of the controller
+- `state/x_desi`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  Current setpoint of the controller
 
-```clearsilver
-pub{
-  0.name=state
-  0.type=robot_mechanism_controllers/JTCartesianControllerState
-  0.desc=Current state of the controller
-  1.name=state/x_desi
-  1.type=geometry_msgs/PoseStamped
-  1.desc=Current setpoint of the controller
-}
-```
+###### Subscribed Topics
 
-
-
-
-
-```clearsilver
-sub{
-  0.name=command_pose
-  0.type=geometry_msgs/PoseStamped
-  0.desc=Tells the controller where to go.
-  1.name=gains
-  1.type=std_msgs/Float64MultiArray
-  1.desc=New gains.  6 values replaces all the Kp terms (trans, trans, trans, rot, rot, rot).  12 Replaces the Kp and Kd terms.
-  2.name=command_posture
-  2.type=std_msgs/Float64MultiArray
-  2.desc=New desired joint posture.  Should have the same size as the number of joints being controlled.
-}
-```
+- `command_pose`
+  ([geometry_msgs/msg/PoseStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseStamped.html)):
+  Tells the controller where to go.
+- `gains`
+  ([std_msgs/msg/Float64MultiArray](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64MultiArray.html)):
+  New gains. 6 values replaces all the Kp terms (trans, trans, trans,
+  rot, rot, rot). 12 Replaces the Kp and Kd terms.
+- `command_posture`
+  ([std_msgs/msg/Float64MultiArray](https://docs.ros.org/en/rolling/p/std_msgs/msg/Float64MultiArray.html)):
+  New desired joint posture. Should have the same size as the number of
+  joints being controlled.
 
 ## CartesianWrenchController
 
@@ -721,27 +589,18 @@ applied at the origin of the tip link in the frame of the root link.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([geometry_msgs/msg/Wrench](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Wrench.html)):
+  The wrench to command
 
-```clearsilver
-param {
-  0.name=root_link
-  0.type=string
-  0.default=Required
-  0.desc=The root link of the chain of joints
-  1.name=tip_link
-  1.type=string
-  1.default=Required
-  1.desc=The tip link of the chain of joints
-}
-sub {
-  0.name=command
-  0.type=geometry_msgs/Wrench
-  0.desc=The wrench to command
-}
-```
+###### Parameters
 
-
+- `root_link` (`string`, default: `Required`): The root link of the
+  chain of joints
+- `tip_link` (`string`, default: `Required`): The tip link of the chain
+  of joints
 
 Example configuration:
 
@@ -769,60 +628,30 @@ are set separately.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  The twist to command
 
-```clearsilver
-param {
-  0.name=root_name
-  0.type=string
-  0.default=Required
-  0.desc=The root link of the chain of joints
-  1.name=tip_name
-  1.type=string
-  1.default=Required
-  1.desc=The tip link of the chain of joints
-  2.name=fb_trans/p
-  2.type=double
-  2.default=Required
-  2.desc=Translational gain, relating force to velocity error
-  3.name=fb_trans/d
-  3.type=double
-  3.default=0.0
-  3.desc=Translational derivative gain
-  4.name=fb_trans/i
-  4.type=double
-  4.default=0.0
-  4.desc=Translational integral gain
-  5.name=fb_trans/i_clamp
-  5.type=double
-  5.default=0.0
-  5.desc=Bounds enforced on the translational integral windup
-  6.name=fb_rot/p
-  6.type=double
-  6.default=Required
-  6.desc=Rotational gain, relating end-effector torques to angular velocity error
-  7.name=fb_rot/d
-  7.type=double
-  7.default=0.0
-  7.desc=Rotational derivative gain
-  8.name=fb_rot/i
-  8.type=double
-  8.default=0.0
-  8.desc=Rotational integral gain
-  9.name=fb_rot/i_clamp
-  9.type=double
-  9.default=0.0
-  9.desc=Bounds enforced on the rotational integral windup
+###### Parameters
 
-}
-sub {
-  0.name=command
-  0.type=geometry_msgs/Twist
-  0.desc=The twist to command
-}
-```
-
-
+- `root_name` (`string`, default: `Required`): The root link of the
+  chain of joints
+- `tip_name` (`string`, default: `Required`): The tip link of the chain
+  of joints
+- `fb_trans/p` (`double`, default: `Required`): Translational gain,
+  relating force to velocity error
+- `fb_trans/d` (`double`, default: `0.0`): Translational derivative gain
+- `fb_trans/i` (`double`, default: `0.0`): Translational integral gain
+- `fb_trans/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  translational integral windup
+- `fb_rot/p` (`double`, default: `Required`): Rotational gain, relating
+  end-effector torques to angular velocity error
+- `fb_rot/d` (`double`, default: `0.0`): Rotational derivative gain
+- `fb_rot/i` (`double`, default: `0.0`): Rotational integral gain
+- `fb_rot/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  rotational integral windup
 
 #### Example configuration
 
@@ -860,60 +689,30 @@ are set separately.
 
 #### ROS API
 
+###### Subscribed Topics
 
+- `command`
+  ([geometry_msgs/msg/Pose](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose.html)):
+  The pose to command
 
-```clearsilver
-param {
-  0.name=root_name
-  0.type=string
-  0.default=Required
-  0.desc=The root link of the chain of joints
-  1.name=tip_name
-  1.type=string
-  1.default=Required
-  1.desc=The tip link of the chain of joints
-  2.name=fb_trans/p
-  2.type=double
-  2.default=Required
-  2.desc=Translational gain, relating force to position error
-  3.name=fb_trans/d
-  3.type=double
-  3.default=0.0
-  3.desc=Translational derivative gain
-  4.name=fb_trans/i
-  4.type=double
-  4.default=0.0
-  4.desc=Translational integral gain
-  5.name=fb_trans/i_clamp
-  5.type=double
-  5.default=0.0
-  5.desc=Bounds enforced on the translational integral windup
-  6.name=fb_rot/p
-  6.type=double
-  6.default=Required
-  6.desc=Rotational gain, relating end-effector torques to orientation error
-  7.name=fb_rot/d
-  7.type=double
-  7.default=0.0
-  7.desc=Rotational derivative gain
-  8.name=fb_rot/i
-  8.type=double
-  8.default=0.0
-  8.desc=Rotational integral gain
-  9.name=fb_rot/i_clamp
-  9.type=double
-  9.default=0.0
-  9.desc=Bounds enforced on the rotational integral windup
+###### Parameters
 
-}
-sub {
-  0.name=command
-  0.type=geometry_msgs/Pose
-  0.desc=The pose to command
-}
-```
-
-
+- `root_name` (`string`, default: `Required`): The root link of the
+  chain of joints
+- `tip_name` (`string`, default: `Required`): The tip link of the chain
+  of joints
+- `fb_trans/p` (`double`, default: `Required`): Translational gain,
+  relating force to position error
+- `fb_trans/d` (`double`, default: `0.0`): Translational derivative gain
+- `fb_trans/i` (`double`, default: `0.0`): Translational integral gain
+- `fb_trans/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  translational integral windup
+- `fb_rot/p` (`double`, default: `Required`): Rotational gain, relating
+  end-effector torques to orientation error
+- `fb_rot/d` (`double`, default: `0.0`): Rotational derivative gain
+- `fb_rot/i` (`double`, default: `0.0`): Rotational integral gain
+- `fb_rot/i_clamp` (`double`, default: `0.0`): Bounds enforced on the
+  rotational integral windup
 
 #### Example configuration
 

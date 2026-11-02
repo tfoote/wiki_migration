@@ -26,6 +26,11 @@ covariance matrices.
 
 ## Covariance Ellipsoids
 
+- **Description:** Algorithms for 2d and 3d covariance ellipsoids,
+  typically used in slam.
+- **Keywords:** ecl statistics
+- **Tutorial Level:** INTERMEDIATE
+
 ### Overview
 
 Implemented by the template class `CovarianceEllipsoid` - this takes

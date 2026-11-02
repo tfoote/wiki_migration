@@ -58,25 +58,14 @@ A detailed example can be found in
 
 ## Nodes
 
+### selftest_rostest
 
+A rostest that runs a self-test and reports success if the self-test
+passed.
 
-```clearsilver
-node {
- 0{
- name = selftest_rostest
- desc = A rostest that runs a self-test and reports success if the self-test passed.
- param {
-  0{
-  name= ~node_to_test
-  type= string
-  default= ""
-  desc= Name of the node to run the self-test on.
-  }
-  1{
-  name= ~max_delay
-  type= string
-  default= 60
-  desc= Maximum amount of time to wait for the `self_test` service to show up.
-  }
- }
-```
+#### Parameters
+
+- `~node_to_test` (`string`, default: `""`): Name of the node to run the
+  self-test on.
+- `~max_delay` (`string`, default: `60`): Maximum amount of time to wait
+  for the `self_test` service to show up.

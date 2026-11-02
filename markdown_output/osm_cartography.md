@@ -20,47 +20,42 @@ URL. The current implementation only supports these URL types:
 
 ## ROS Interface
 
+### osm_server node
 
+ROS node that parses XML in Open Street Map format and returns
+[geographic_msgs](https://index.ros.org/p/geographic_msgs) data to the
+caller.
 
-```clearsilver
-node.0 {
- name = osm_server node
- desc = ROS node that parses XML in Open Street Map format and returns [[geographic_msgs]] data to the caller. 
- srv {
-  0.name= get_geographic_map
-  0.type= geographic_msgs/GetGeographicMap
-  0.desc= OSM map data from the requested URL
-}
-}
-```
+#### Services
 
+- `get_geographic_map`
+  ([geographic_msgs/srv/GetGeographicMap](https://docs.ros.org/en/rolling/p/geographic_msgs/srv/GetGeographicMap.html)):
+  OSM map data from the requested URL
 
+### viz_osm node
 
+ROS node that requests Open Street Map
+[geographic_msgs](https://index.ros.org/p/geographic_msgs) information
+from the osm_server node,
+publishing it as [rviz](https://index.ros.org/p/rviz) visualization
+markers.
 
+#### Published Topics
 
-```clearsilver
-node.0 {
- name = viz_osm node
- desc = ROS node that requests Open Street Map [[geographic_msgs]] information from the [[#osm_server|osm_server]] node, publishing it as [[rviz]] visualization markers. 
- pub {
-  0.name= visualization_marker_array
-  0.type= visualization_msgs/MarkerArray
-  0.desc= Markers for OSM map data from the requested URL.
-}
- srv_called {
-  0.name= get_geographic_map
-  0.type= geographic_msgs/GetGeographicMap
-  0.desc= OSM map data for the requested URL.
-}
- param {
-  0.name= map_url
-  0.type= string
-  0.desc= Uniform Resource Locator for XML map in OSM format.
-}
-}
-```
+- `visualization_marker_array`
+  ([visualization_msgs/msg/MarkerArray](https://docs.ros.org/en/rolling/p/visualization_msgs/msg/MarkerArray.html)):
+  Markers for OSM map data from the requested URL.
 
+#### Services Called
 
+- `get_geographic_map`
+  ([geographic_msgs/srv/GetGeographicMap](https://docs.ros.org/en/rolling/p/geographic_msgs/srv/GetGeographicMap.html)):
+  OSM map data for the requested URL.
+
+#### Parameters
+
+- `map_url` (`string`): Uniform Resource Locator for XML map in OSM
+  format.
 
 ### viz_osm Launch File
 

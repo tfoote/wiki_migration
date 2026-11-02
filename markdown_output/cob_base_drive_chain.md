@@ -20,48 +20,47 @@ its functions to the ROS network as services. This makes it quite easy
 to create different controllers (e.g. joystick, keyboard,
 vision-based\...) without taking care of the basic communication.
 
+### cob_base_drive_chain_node
 
+This node provides access to the platform control of the Care-O-Bot
+(steer and drive motors) to the ROS network.
 
-```clearsilver
+#### Subscribed Topics
 
-name = cob_base_drive_chain_node
-desc = This node provides access to the platform control of the Care-O-Bot (steer and drive motors) to the ROS network.
-sub {
-  0.name = joint_command
-  0.type = pr2_controllers_msgs/JointTrajectoryControllerState
-  0.desc = it listenes to motor commands on this topic
-}
-srv {
-  0.name = Init
-  0.type = cob_srvs/Trigger
-  0.desc = initializes the platform and executes homing procedure of motors
-  1.name = Reset
-  1.type = cob_srvs/Trigger
-  1.desc = re-initializes the platform
-  2.name = Shutdown
-  2.type = cob_srvs/Trigger
-  2.desc = stops motors and shuts down the platform
-  3.name = GetJointState
-  3.type = cob_srvs/GetJointState
-  3.desc = get joint joint states
-  4.name = ElmoRecorderConfig
-  4.type = cob_srvs/ElmoRecorderConfig
-  4.desc = configures the Elmo specific recorder (see below)
-  5.name = ElmoRecorderReadout
-  5.type = cob_srvs/ElmoRecorderReadout
-  5.desc = reads out and stores previous recorded drive information (see below)
-}
-pub {
-  0.name = JointState
-  0.type = sensor_msgs/JointState
-  0.desc = every time you request joint states via ROS service, these states are also published on this topic
-  1.name = Diagnostic
-  1.type = diagnostic_msgs/DiagnosticStatus
-  1.desc = it publishes states and error information of the platform
-}
-```
+- `joint_command`
+  ([pr2_controllers_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryControllerState.html)):
+  it listenes to motor commands on this topic
 
+#### Published Topics
 
+- `JointState`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  every time you request joint states via ROS service, these states are
+  also published on this topic
+- `Diagnostic`
+  ([diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)):
+  it publishes states and error information of the platform
+
+#### Services
+
+- `Init`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  initializes the platform and executes homing procedure of motors
+- `Reset`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  re-initializes the platform
+- `Shutdown`
+  ([cob_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/cob_srvs/srv/Trigger.html)):
+  stops motors and shuts down the platform
+- `GetJointState`
+  ([cob_srvs/srv/GetJointState](https://docs.ros.org/en/rolling/p/cob_srvs/srv/GetJointState.html)):
+  get joint joint states
+- `ElmoRecorderConfig`
+  ([cob_srvs/srv/ElmoRecorderConfig](https://docs.ros.org/en/rolling/p/cob_srvs/srv/ElmoRecorderConfig.html)):
+  configures the Elmo specific recorder (see below)
+- `ElmoRecorderReadout`
+  ([cob_srvs/srv/ElmoRecorderReadout](https://docs.ros.org/en/rolling/p/cob_srvs/srv/ElmoRecorderReadout.html)):
+  reads out and stores previous recorded drive information (see below)
 
 ## Using the Elmo Recorder
 

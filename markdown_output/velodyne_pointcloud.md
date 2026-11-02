@@ -2,7 +2,7 @@
 
 This package provides point cloud conversions for Velodyne 3D LIDARs.
 For a list of all supported models refer to the
-[ Supported Devices](https://index.ros.org/p/velodyne_driver) section.
+[Supported Devices](https://index.ros.org/p/velodyne_driver) section.
 
 The
 [API review](http://ros.org/wiki/velodyne/Reviews/2012-02-02_API_Review)
@@ -20,51 +20,43 @@ reference.
 
 ## ROS Nodes and Nodelets
 
+### CloudNodelet
 
+This nodelet reads raw data from the `velodyne_packets` ROS topic,
+converts to
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+format, and republishes to `velodyne_points` ROS topic in the original
+frame of reference (typically `/velodyne`). In addition to the XYZ
+points, this cloud includes fields for "intensity" and "ring".
 
-```clearsilver
-node.0 {
- name = CloudNodelet
- desc = This nodelet reads raw data from the `velodyne_packets` ROS topic, converts to <<MsgLink(sensor_msgs/PointCloud2)>> format, and republishes to `velodyne_points` ROS topic in the original frame of reference (typically `/velodyne`). In addition to the XYZ points, this cloud includes fields for "intensity" and "ring".
- sub {
-  0.name= velodyne_packets
-  0.type= velodyne_msgs/VelodyneScan
-  0.desc= one or more raw Velodyne data packets from the device.
- }
- pub {
-  0.name= velodyne_points
-  0.type= sensor_msgs/PointCloud2
-  0.desc= accumulated Velodyne points transformed in the original frame of reference.
- }
-param {
-  2.name= ~model
-  2.type= string
-  2.default= "64E"
-  2.desc= model of sensor being used. Currently supported are: "VLP16", "32C", "32E", "64E", "64E_S2", "64E_S2.1", "64E_S3"
-  3.name= ~max_range
-  3.type= double
-  3.default= 130.0
-  3.desc= maximum range (in meters) to publish; measurements further than this won't be published.
-  4.name= ~min_range
-  4.type= double
-  4.default= <<Version(Indigo)>> 0.9, formerly 2.0
-  4.desc= minimum range (in meters) to publish; measurements closer than this won't be published.
-  10.name= ~calibration
-  10.type= string
-  10.desc= YAML file containing device-specific calibration information.
-  20.name= ~view_direction
-  20.type= double
-  20.default= 0.0
-  20.desc= <<Version(Indigo)>>: center of view angle in radians in the device frame of reference.
-  21.name= ~view_width
-  21.type= double
-  21.default= 2 * pi
-  21.desc= <<Version(Indigo)>>: width of view angle in radians in the XY plane of the device frame of reference.
- }
-}
-```
+#### Subscribed Topics
 
+- `velodyne_packets`
+  ([velodyne_msgs/msg/VelodyneScan](https://docs.ros.org/en/rolling/p/velodyne_msgs/msg/VelodyneScan.html)):
+  one or more raw Velodyne data packets from the device.
 
+#### Published Topics
+
+- `velodyne_points`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  accumulated Velodyne points transformed in the original frame of
+  reference.
+
+#### Parameters
+
+- `~model` (`string`, default: `"64E"`): model of sensor being used.
+  Currently supported are: "VLP16", "32C", "32E", "64E",
+  "64E_S2", "64E_S2.1", "64E_S3"
+- `~max_range` (`double`, default: `130.0`): maximum range (in meters)
+  to publish; measurements further than this won't be published.
+- `~min_range` (`double`, default: 0.9, formerly 2.0): minimum range (in
+  meters) to publish; measurements closer than this won't be published.
+- `~calibration` (`string`): YAML file containing device-specific
+  calibration information.
+- `~view_direction` (`double`, default: `0.0`):: center of view angle in
+  radians in the device frame of reference.
+- `~view_width` (`double`, default: `2 * pi`):: width of view angle in
+  radians in the XY plane of the device frame of reference.
 
 #### Examples
 
@@ -100,16 +92,9 @@ of the package test files for calibration.
 
 
 
+### cloud_node
 
-
-```clearsilver
-node.0 {
- name = cloud_node
- desc = This node runs the same code as `CloudNodelet` in a node by itself.
-}
-```
-
-
+This node runs the same code as `CloudNodelet` in a node by itself.
 
 #### Examples
 
@@ -123,55 +108,45 @@ $ rosrun velodyne_pointcloud cloud_node _calibration:=calibration.yaml
 
 
 
+### TransformNodelet
 
+This nodelet reads raw data from the `velodyne_packets` ROS topic,
+converts to
+[sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)
+format, and republishes to `velodyne_points` ROS topic in a specified
+frame of reference (typically `/odom`). In addition to the XYZ points,
+this cloud includes fields for "intensity" and "ring".
 
-```clearsilver
-node.0 {
- name = TransformNodelet
- desc = This nodelet reads raw data from the `velodyne_packets` ROS topic, converts to <<MsgLink(sensor_msgs/PointCloud2)>> format, and republishes to `velodyne_points` ROS topic in a specified frame of reference (typically `/odom`). In addition to the XYZ points, this cloud includes fields for "intensity" and "ring".
- sub {
-  0.name= velodyne_packets
-  0.type= velodyne_msgs/VelodyneScan
-  0.desc= one or more Raw Velodyne data packets from the device
- }
- pub {
-  0.name= velodyne_points
-  0.type= sensor_msgs/PointCloud2
-  0.desc= accumulated Velodyne points transformed into the `frame_id` frame of reference.
- }
-param {
-  0.name= ~frame_id
-  0.type= str
-  0.default= "odom"
-  0.desc= Target frame ID. Resolved using `tf_prefix`, if defined.
-  2.name= ~model
-  2.type= string
-  2.default= "64E"
-  2.desc= model of sensor being used. Currently supported are: "VLP16", "32C", "32E", "64E", "64E_S2", "64E_S2.1", "64E_S3"
-  3.name= ~max_range
-  3.type= double
-  3.default= 130.0
-  3.desc= maximum range (in meters) to publish; measurements further than this won't be published.
-  4.name= ~min_range
-  4.type= double
-  4.default= <<Version(Indigo)>> 0.9, formerly 2.0
-  4.desc= minimum range to publish; measurements closer than this won't be published.
-  10.name= ~calibration
-  10.type= string
-  10.desc= YAML file containing device-specific calibration information.
-  20.name= ~view_direction
-  20.type= double
-  20.default= 0.0
-  20.desc= <<Version(Indigo)>>: center of view angle in radians in the device frame of reference.
-  21.name= ~view_width
-  21.type= double
-  21.default= 2 * pi
-  21.desc= <<Version(Indigo)>>: width of view angle in radians in the XY plane of the device frame of reference.
- }
-}
-```
+#### Subscribed Topics
 
+- `velodyne_packets`
+  ([velodyne_msgs/msg/VelodyneScan](https://docs.ros.org/en/rolling/p/velodyne_msgs/msg/VelodyneScan.html)):
+  one or more Raw Velodyne data packets from the device
 
+#### Published Topics
+
+- `velodyne_points`
+  ([sensor_msgs/msg/PointCloud2](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/PointCloud2.html)):
+  accumulated Velodyne points transformed into the `frame_id` frame of
+  reference.
+
+#### Parameters
+
+- `~frame_id` (`str`, default: `"odom"`): Target frame ID. Resolved
+  using `tf_prefix`, if defined.
+- `~model` (`string`, default: `"64E"`): model of sensor being used.
+  Currently supported are: "VLP16", "32C", "32E", "64E",
+  "64E_S2", "64E_S2.1", "64E_S3"
+- `~max_range` (`double`, default: `130.0`): maximum range (in meters)
+  to publish; measurements further than this won't be published.
+- `~min_range` (`double`, default: 0.9, formerly 2.0): minimum range to
+  publish; measurements closer than this won't be published.
+- `~calibration` (`string`): YAML file containing device-specific
+  calibration information.
+- `~view_direction` (`double`, default: `0.0`):: center of view angle in
+  radians in the device frame of reference.
+- `~view_width` (`double`, default: `2 * pi`):: width of view angle in
+  radians in the XY plane of the device frame of reference.
 
 #### Examples
 
@@ -206,16 +181,10 @@ of the package test files.
 
 
 
+### transform_node
 
-
-```clearsilver
-node.0 {
- name = transform_node
- desc = This node runs the same code as `TransformNodelet` in a node by itself. 
-}
-```
-
-
+This node runs the same code as `TransformNodelet` in a node by
+itself.
 
 #### Examples
 

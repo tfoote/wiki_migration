@@ -3,54 +3,66 @@ features to be exploited and expanded in the derived packages (cf.
 [qb_hand](https://index.ros.org/p/qb_hand) and
 [qb_move](https://index.ros.org/p/qb_move)).
 
+### qb_device_hardware_interface
 
+This device-independent library provides all the common structures to
+interface both the [qb_hand](https://index.ros.org/p/qb_hand) and the
+[qb_move](https://index.ros.org/p/qb_move) ROS packages with their
+related physical devices. It exploits the Communication Handler (cf.
+[qb_device_driver](https://index.ros.org/p/qb_device_driver)) to manage
+the serial communication and inherits its core from the
+[hardware_interface](https://index.ros.org/p/hardware_interface) for the
+sake of compatibility with other robots which use ROS. This package
+paves the way for control applications (cf.
+[qb_device_control](https://index.ros.org/p/qb_device_control)).
 
-```clearsilver
-name = qb_device_hardware_interface
-desc = This device-independent library provides all the common structures to interface both the [[qb_hand]] and the [[qb_move]] ROS packages with their related physical devices. It exploits the Communication Handler (cf. [[qb_device_driver]]) to manage the serial communication and inherits its core from the [[hardware_interface]] for the sake of compatibility with other robots which use ROS. This package paves the way for control applications (cf. [[qb_device_control]]).
-pub {
-  0.name = /<namespace>/state
-  0.type = qb_device_msgs::StateStamped
-  0.desc = Advertise the whole device state, i.e. currents and positions for both actuators and joints, plus additional device infos.
-}
-srv_called {
-  0.name = /communication_handler/activate_motors
-  0.type = qb_device_srvs/Trigger
-  0.desc = Activates the motors of the device which ID is specified in the service request. The response `success` variable is set to `true` if motors are active.
-  1.name = /communication_handler/deactivate_motors
-  1.type = qb_device_srvs/Trigger
-  1.desc = Deactivates the motors of the device which ID is specified in the service request. The response `success` variable is set to `true` if motors are inactive.
-  2.name = /communication_handler/get_info
-  2.type = qb_device_srvs/Trigger
-  2.desc = Retrieves the printable configuration setup of the device which ID is specified in the service request. On error, the response `message` variable is empty.
-  3.name = /communication_handler/get_measurements
-  3.type = qb_device_srvs/GetMeasurements
-  3.desc = Retrieves the motor positions and currents of the device which ID is specified in the service request. The response `success` variable is set to `true` if data retrieved (i.e. the response `currents` and `positions` variables) is meaningful.
-  4.name = /communication_handler/set_commands
-  4.type = qb_device_srvs/SetCommands
-  4.desc = Send the reference commands (i.e. the request `commands` variable) to the motors of the device which ID is specified in the service request.
-}
-param {
-  0.name = ~actuators
-  0.type = string[]
-  0.desc = The actuator names in the `robot_description`.
-  1.name = ~device_id
-  1.type = int
-  1.desc = The device ID, in range [`1`, `128`].
-  1.default = 1
-  2.name = ~joints
-  2.type = string[]
-  2.desc = The joint names in the `robot_description`.
-  3.name = ~namespace
-  3.type = string
-  3.desc = The device namespace used to avoid name clashes among same-type devices.
-  3.default = qbdevice_<device_id>
-  4.name = ~robot_description
-  4.type = string
-  4.desc = The [[urdf]] xml robot description.
-  5.name = ~transmission
-  5.type = string
-  5.desc = The name of the current transmission derived from `transmission_interface::Transmission`: ''qbhand'' and ''qbmove'' use their own specific transmission.
-  5.default = transmission
-}
-```
+#### Published Topics
+
+- `/<namespace>/state` (`qb_device_msgs::StateStamped`): Advertise the
+  whole device state, i.e. currents and positions for both actuators and
+  joints, plus additional device infos.
+
+#### Services Called
+
+- `/communication_handler/activate_motors`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Activates the motors of the device which ID is specified in the
+  service request. The response `success` variable is set to `true`
+  if motors are active.
+- `/communication_handler/deactivate_motors`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Deactivates the motors of the device which ID is specified in the
+  service request. The response `success` variable is set to `true`
+  if motors are inactive.
+- `/communication_handler/get_info`
+  ([qb_device_srvs/srv/Trigger](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/Trigger.html)):
+  Retrieves the printable configuration setup of the device which ID is
+  specified in the service request. On error, the response `message`
+  variable is empty.
+- `/communication_handler/get_measurements`
+  ([qb_device_srvs/srv/GetMeasurements](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/GetMeasurements.html)):
+  Retrieves the motor positions and currents of the device which ID is
+  specified in the service request. The response `success` variable is
+  set to `true` if data retrieved (i.e. the response `currents` and
+  `positions` variables) is meaningful.
+- `/communication_handler/set_commands`
+  ([qb_device_srvs/srv/SetCommands](https://docs.ros.org/en/rolling/p/qb_device_srvs/srv/SetCommands.html)):
+  Send the reference commands (i.e. the request `commands` variable)
+  to the motors of the device which ID is specified in the service
+  request.
+
+#### Parameters
+
+- `~actuators` (`string[]`): The actuator names in the
+  `robot_description`.
+- `~device_id` (`int`, default: `1`): The device ID, in range \[`1`,
+  `128`\].
+- `~joints` (`string[]`): The joint names in the `robot_description`.
+- `~namespace` (`string`, default: `qbdevice_<device_id>`): The device
+  namespace used to avoid name clashes among same-type devices.
+- `~robot_description` (`string`): The
+  [urdf](https://index.ros.org/p/urdf) xml robot description.
+- `~transmission` (`string`, default: `transmission`): The name of the
+  current transmission derived from
+  `transmission_interface::Transmission`: *qbhand* and *qbmove* use
+  their own specific transmission.

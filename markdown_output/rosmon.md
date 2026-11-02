@@ -138,22 +138,21 @@ Additionally collected statistics (CPU and memory usage) are displayed.
 
 ## Nodes
 
+### rosmon
 
+Main rosmon node.
 
-```clearsilver
-name = rosmon
-desc = Main rosmon node.
-pub {
-  0.name = ~state
-  0.type = rosmon/State
-  0.desc = Current state of all controlled nodes. Updated every second.
-}
-srv {
-  0.name = ~start_stop
-  0.type = rosmon/StartStop
-  0.desc = Start or stop a controlled node.
-}
-```
+#### Published Topics
+
+- `~state`
+  ([rosmon/msg/State](https://docs.ros.org/en/rolling/p/rosmon/msg/State.html)):
+  Current state of all controlled nodes. Updated every second.
+
+#### Services
+
+- `~start_stop`
+  ([rosmon/srv/StartStop](https://docs.ros.org/en/rolling/p/rosmon/srv/StartStop.html)):
+  Start or stop a controlled node.
 
 ## XML
 

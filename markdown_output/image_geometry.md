@@ -52,6 +52,18 @@ documentation.
 
 ## Projecting a TF frame onto an image (C++)
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Writing a Simple Image Publisher (C++)](https://index.ros.org/p/image_transport),
+  [Writing a Simple Image Subscriber (C++)](https://index.ros.org/p/image_transport),
+  [Learning about tf and time (C++)](https://index.ros.org/p/tf),
+  [Recording and playing back data](https://index.ros.org/p/rosbag).
+- **Description:** This tutorial shows how to use
+  image_geometry together with
+  [tf](https://index.ros.org/p/tf) to project a tf frame onto a live
+  image stream.
+- **Tutorial Level:** INTERMEDIATE
+
 In this tutorial we will write a node that projects one or more tf
 frames to image coordinates and draws them on the image:
 

@@ -15,18 +15,9 @@ according to the configuration file.
 
 ### Parameters
 
+#### Parameters
 
-
-```clearsilver
-param {
-  0.name=~teleop
-  0.type=array
-  0.default=
-  0.desc=Array of axis/button to topic and action bindings
-}
-```
-
-
+- `~teleop` (`array`): Array of axis/button to topic and action bindings
 
 #### Example configuration file
 
@@ -91,12 +82,8 @@ teleop:
 
 ### Topic interface
 
+#### Subscribed Topics
 
-
-```clearsilver
-sub {
-  0.name=~joy
-  0.type=sensor_msgs/Joy
-  0.desc=Listens to the joystick state
-}
-```
+- `~joy`
+  ([sensor_msgs/msg/Joy](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Joy.html)):
+  Listens to the joystick state

@@ -1,54 +1,46 @@
 ![attachment:ik.png](doc/ik.png)
 
+## pr2_arm_move_ik
 
+`pr2_arm_ik_action` action is uses the
+[joint_trajectory_action](https://index.ros.org/p/joint_trajectory_action)
+to move the wrist roll link to a desired pose.
 
-```clearsilver
-node.0 {
- name = pr2_arm_move_ik
- desc << EOM  
-`pr2_arm_ik_action` action is uses the [[joint_trajectory_action]] to move the wrist roll link to a desired pose.
-EOM
- goal{
-  0.name= <~arm>_arm_ik/goal
-  0.type= pr2_common_action_msgs/ArmMoveIKGoal
-  0.desc= This is the desired pose of the wrist roll link.
-  }
- result{
-  0.name= <~arm>_arm_ik/result
-  0.type= pr2_common_action_msgs/ArmMoveIKResult
-  0.desc= This returns the location where the plug was found in the gripper.
-  }
- act_called {
-  0.name= <~arm>_arm_controller/<~joint_trajectory_action>
-  0.type= joint_trajectory_action
-  0.desc= This action moves the arm to a joint configuration.
- }
- param {
-  0.name= ~arm
-  0.default= r
-  0.type= string
-  0.desc= Which arm to control (l or r).
-  1.name= ~joint_trajectory_action
-  1.default= r_arm_controller/joint_trajectory_action
-  1.type= string
-  1.desc= The namespace of the joint trajectory action to send trajectories to.
-  2.name= ~free_angle
-  2.default= 2
-  2.type= int
-  2.desc= Since the PR2 arms are redundant (they have 7 DOF), there are an infinite number of joint space configurations that satisfy a given Cartesian end effector pose. The ik solver will compute a joint space solution solution for every value of the "free angle" joint, and the valid solution that is closest to the seed configuration in the goal is chosen.
-  3.name= ~search_discretization
-  3.default= 0.01 rad
-  3.type= double
-  3.desc= The search step size for the "free angle" joint. 
-  4.name= ~ik_timeout
-  4.default= 5.0 sec
-  4.type= double
-  4.desc= The timeout on the ik solver. The action will fail if no valid solution is found withing this duration.
- }
-}
-```
+### Action Goal
 
+- `<~arm>_arm_ik/goal`
+  ([pr2_common_action_msgs/msg/ArmMoveIKGoal](https://docs.ros.org/en/rolling/p/pr2_common_action_msgs/msg/ArmMoveIKGoal.html)):
+  This is the desired pose of the wrist roll link.
 
+### Action Result
+
+- `<~arm>_arm_ik/result`
+  ([pr2_common_action_msgs/msg/ArmMoveIKResult](https://docs.ros.org/en/rolling/p/pr2_common_action_msgs/msg/ArmMoveIKResult.html)):
+  This returns the location where the plug was found in the gripper.
+
+### Actions Called
+
+- `<~arm>_arm_controller/<~joint_trajectory_action>`
+  ([joint_trajectory_action](https://index.ros.org/p/joint_trajectory_action)):
+  This action moves the arm to a joint configuration.
+
+### Parameters
+
+- `~arm` (`string`, default: `r`): Which arm to control (l or r).
+- `~joint_trajectory_action` (`string`, default:
+  `r_arm_controller/joint_trajectory_action`): The namespace of the
+  joint trajectory action to send trajectories to.
+- `~free_angle` (`int`, default: `2`): Since the PR2 arms are redundant
+  (they have 7 DOF), there are an infinite number of joint space
+  configurations that satisfy a given Cartesian end effector pose. The
+  ik solver will compute a joint space solution solution for every value
+  of the "free angle" joint, and the valid solution that is closest to
+  the seed configuration in the goal is chosen.
+- `~search_discretization` (`double`, default: `0.01 rad`): The search
+  step size for the "free angle" joint.
+- `~ik_timeout` (`double`, default: `5.0 sec`): The timeout on the ik
+  solver. The action will fail if no valid solution is found withing
+  this duration.
 
 Example launch file :
 

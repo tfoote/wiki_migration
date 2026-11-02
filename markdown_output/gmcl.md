@@ -149,156 +149,82 @@ Dead Reckoning. ![width="750px"](doc/gmcl_localization.png)
 
 ### Subscribed Topics
 
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Laser scans.
 
+<!-- -->
 
-```clearsilver
-  sub{
-no_header=True
-    0.name= scan
-    0.type= sensor_msgs/LaserScan
-    0.desc= Laser scans.
-}
-```
+- `tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Transforms.
 
- 
+<!-- -->
 
-```clearsilver
- sub{
-no_header=True
+- `initialpose`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  Mean and covariance with which to (re-)initialize the particle filter.
 
-    1.name= tf
-    1.type= tf/tfMessage
-    1.desc= Transforms.
-}
-```
+<!-- -->
 
-
-
-
-```clearsilver
- sub{
-no_header=True
-    2.name= initialpose
-    2.type= geometry_msgs/PoseWithCovarianceStamped
-    2.desc= Mean and covariance with which to (re-)initialize the particle filter.
-}
-```
-
- 
-
-```clearsilver
- sub{
-no_header=True
-    3.name= map
-    3.type= nav_msgs/OccupancyGrid
-    3.desc= When the `~use_map_topic` parameter is set, gmcl subscribes to this topic to retrieve the map used for laser-based localization.
-  }
-```
-
-
+- `map`
+  ([nav_msgs/msg/OccupancyGrid](https://docs.ros.org/en/rolling/p/nav_msgs/msg/OccupancyGrid.html)):
+  When the `use_map_topic` parameter is set, gmcl subscribes to this
+  topic to retrieve the map used for laser-based localization.
 
 ### Published Topics
 
+- `gmcl_pose`
+  ([geometry_msgs/msg/PoseWithCovarianceStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseWithCovarianceStamped.html)):
+  Robot's estimated pose in the map, with covariance.
 
+<!-- -->
 
-```clearsilver
-  pub{
-    no_header=True
-    0.name= gmcl_pose
-    0.type= geometry_msgs/PoseWithCovarianceStamped
-    0.desc= Robot's estimated pose in the map, with covariance.
-}
-```
+- `gmcl_particlecloud`
+  ([geometry_msgs/msg/PoseArray](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseArray.html)):
+  The set of pose estimates being maintained by the filter.
 
- 
+<!-- -->
 
-```clearsilver
-  pub{
-    no_header=True
-    1.name= gmcl_particlecloud
-    1.type= geometry_msgs/PoseArray
-    1.desc= The set of pose estimates being maintained by the filter.
-}
-```
+- `gmcl_SER`
+  ([geometry_msgs/msg/PoseArray](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseArray.html)):
+  The set of poses that shape Similar Energy Region (`SER`).
 
+<!-- -->
 
-
-
-```clearsilver
-  pub{
-    no_header=True
-    2.name= gmcl_SER
-    2.type= geometry_msgs/PoseArray
-    2.desc=The set of poses that shape Similar Energy Region (`SER`).
-}
-```
-
- 
-
-```clearsilver
-  pub{
-    no_header=True
-    3.name= tf
-    3.type= tf/tfMessage
-    3.desc= Publishes the transform from `odom` (which can be remapped via the `~odom_frame_id` parameter) to `map`.
-  }
-```
-
-
+- `tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Publishes the transform from `odom` (which can be remapped via the
+  `odom_frame_id` parameter) to `map`.
 
 ### Services
 
+- `global_localization`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Initiate global localization, wherein all particles are dispersed
+  randomly through the free space in the map if `use_self_adaptive` is
+  set to false, otherwise particles will be dispersed randomly in
+  `SER`.
 
+<!-- -->
 
-```clearsilver
-  srv{
-    no_header=True
-    0.name=global_localization 
-    0.type= std_srvs/Empty
-    0.desc= Initiate global localization, wherein all particles are dispersed randomly through the free space in the map if `~use_self_adaptive` is set to false, otherwise particles will be dispersed randomly in `SER`.
+- `request_nomotion_update`
+  ([std_srvs/srv/Empty](https://docs.ros.org/en/rolling/p/std_srvs/srv/Empty.html)):
+  Service to manually perform update and publish updated particles.
 
-}
-```
+<!-- -->
 
- 
-
-```clearsilver
-  srv{
-    no_header=True
-    1.name=request_nomotion_update 
-    1.type= std_srvs/Empty
-    1.desc= Service to manually perform update and publish updated particles.
-}
-```
-
-
-
-
-```clearsilver
-  srv{
-    no_header=True
-    2.name=set_map 
-    2.type= nav_msgs/SetMap
-    2.desc= Service to manually set a new map and pose.
-}
-```
-
-
+- `set_map`
+  ([nav_msgs/srv/SetMap](https://docs.ros.org/en/rolling/p/nav_msgs/srv/SetMap.html)):
+  Service to manually set a new map and pose.
 
 ### Services Called
 
-
-
-```clearsilver
-  srv_called{
-    no_header=True
-    0.name=static_map 
-    0.type= nav_msgs/GetMap
-    0.desc= gmcl calls this service to retrieve the map that is used for laser-based localization; startup blocks on getting the map from this service.
-  }
-```
-
-
+- `static_map`
+  ([nav_msgs/srv/GetMap](https://docs.ros.org/en/rolling/p/nav_msgs/srv/GetMap.html)):
+  gmcl calls this service to retrieve the map that is used for
+  laser-based localization; startup blocks on getting the map from this
+  service.
 
 ### Parameters
 
@@ -307,77 +233,41 @@ Besides Parameters that amcl uses to configure its node --Please check
 Parameters to overall filter parameters to configure the `gmcl` node
 and they are:
 
+- `~use_optimal_filter` (`bool`, default: false (`disabled`)): When
+  set to true, gmcl will compute new pose and weight of particles
+  through auxiliary particles of the optimal filter, otherwise it will
+  compute pose and weight through `standard-MCL` approach.
 
+<!-- -->
 
-```clearsilver
-param {
-  no_header=True
-  0.name= ~use_optimal_filter
-  0.default=false (`disabled`)
-  0.type= bool
-  0.desc= When set to true, gmcl will compute new pose and weight of particles through auxiliary particles of the optimal filter, otherwise it will compute pose and weight through `standard-MCL` approach.
-}
-```
+- `~use_intelligent_filter` (`bool`, default: false (`disabled`)):
+  When set to true, gmcl will crossover and mutate the pose of one third
+  of small weight particles through crossover and mutation models.
 
- 
+<!-- -->
 
-```clearsilver
-param {
-  no_header=True
-  1.name= ~use_intelligent_filter
-  1.default=false (`disabled`)
-  1.type= bool
-  1.desc=When set to true, gmcl will crossover and mutate the pose of one third of small weight particles through crossover and mutation models.
-}
-```
+- `~use_self_adaptive` (`bool`, default: false (`disabled`)): When set
+  to true, gmcl will spread global particles randomly in `SER`,
+  otherwise it will spread global particles randomly in free space of
+  the map.
 
+<!-- -->
 
+- `~use_kld_sampling` (`bool`, default: `true`): When set to true, gmcl
+  will adapt the number of its particles, Otherwise it will fix the
+  number of particles to parameter `max_particles`.
 
-
-```clearsilver
-param {
-  no_header=True 
-  2.name= ~use_self_adaptive
-  2.default=false (`disabled`)
-  2.type= bool
-  2.desc= When set to true, gmcl will spread global particles randomly in `SER`, otherwise it will spread global particles randomly in free space of the map.
-}
-```
-
- 
-
-```clearsilver
-param {
-  no_header=True
-  3.name= ~use_kld_sampling
-  3.default=true
-  3.type= bool
-  3.desc=When set to true, gmcl will adapt the number of its particles, Otherwise it will fix the number of particles to parameter `~max_particles`. 
-}
-```
-
- Previous parameters
-define the Flow of gmcl algorithm and can be seen in following
-drawing..... ![width="750px"](doc/flow_chart.png) Full size available
+Previous parameters define the Flow of gmcl algorithm and can be seen in
+following drawing..... ![width="750px"](doc/flow_chart.png) Full size
+available
 [here](https://wiki.ros.org/gmcl?action=AttachFile&do=get&target=flow_chart.png).
 
 The following table shows name of different techniques based on filters
 implemented, it could be seen that gmcl works with default parameters
 same as amcl..... ![width="750px"](doc/table.png)
 
-
-
-```clearsilver
-param {
-  no_header=True
-  4.name= ~N_aux_particles
-  4.default=10
-  4.type= int
-  4.desc=Defines the number of auxiliary particles. Used in Optimal particle filter.  
-}
-```
-
-
+- `~N_aux_particles` (`int`, default: `10`): Defines the number of
+  auxiliary particles. Used in Optimal particle filter.
 
 ##### 
 
@@ -391,56 +281,25 @@ Be careful when setting the number of auxiliary particles, since they increase l
 
 
 
+- `~crossover_alpha` (`double`, default: `0.5`): Specifies the amount of
+  effect that pose of large weight particle does to pose of small weight
+  particle. Used in crossover model in Intelligent particle filter.
 
+<!-- -->
 
-```clearsilver
-param {
-  no_header=True
-  5.name= ~crossover_alpha
-  5.default=0.5
-  5.type= double
-  5.desc=Specifies the amount of effect that pose of large weight particle does to pose of small weight particle. Used in crossover model in Intelligent particle filter. 
-}
-```
+- `~mutation_probability` (`double`, default: `0.1`): Specifies the
+  occurrence probability of a mutation to pose of small weight particle.
+  Used in mutation model in Intelligent particle filter.
 
- 
+<!-- -->
 
-```clearsilver
-param {
-  no_header=True
-  6.name= ~mutation_probability
-  6.default=0.1
-  6.type= double
-  6.desc=Specifies the occurrence probability of a mutation to pose of small weight particle. Used in mutation model in Intelligent particle filter.
-}
-```
+- `~energy_map_resolution_x` (`double`, default: `0.2 meters`): X-axis
+  resolution of energy map. Used in Self-Adaptive particle filter.
 
+<!-- -->
 
-
-
-```clearsilver
-param {
-  no_header=True
-  7.name= ~energy_map_resolution_x
-  7.default=0.2 meters
-  7.type= double
-  7.desc=X-axis resolution of energy map. Used in Self-Adaptive particle filter.
-}
-```
-
- 
-
-```clearsilver
-param {
-  no_header=True
-  8.name= ~energy_map_resolution_y
-  8.default= 0.2 meters
-  8.type= double
-  8.desc=Y-axis resolution of energy map. Used in Self-Adaptive particle filter.
-}
-```
-
-
+- `~energy_map_resolution_y` (`double`, default: `0.2 meters`): Y-axis
+  resolution of energy map. Used in Self-Adaptive particle filter.
 
 ##### 
 
@@ -452,32 +311,19 @@ param {
 Don’t set either of energy_map_resoluation_x or -resoultion_y to zero or gmcl node won’t execute.
 ```
 
- 
-
-```clearsilver
-param {
-  no_header=True
-  9.name= ~energy_threshold_value
-  9.default=0.05
-  9.type= double
-  9.desc=Defines the upper limit in energy difference between energy map cells and sensor reading’s energy to shape `SER`. Used in Self-Adaptive particle filter. 
-}
-```
 
 
+- `~energy_threshold_value` (`double`, default: `0.05`): Defines the
+  upper limit in energy difference between energy map cells and sensor
+  reading's energy to shape `SER`. Used in Self-Adaptive particle
+  filter.
 
+<!-- -->
 
-```clearsilver
-param {
-  no_header=True
-  10.name= ~publish_ser
-  10.default=false
-  10.type= bool 
-  10.desc=When set to true, gmcl will display `SER` in Rviz as a (<<MsgLink(geometry_msgs/PoseArray Message)>>) massege.
-}
-```
-
-
+- `~publish_ser` (`bool`, default: `false`): When set to true, gmcl will
+  display `SER` in Rviz as a
+  ([geometry_msgs/msg/PoseArray Message](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/PoseArray Message.html))
+  massege.
 
 ## Feedback
 

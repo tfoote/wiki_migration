@@ -85,155 +85,99 @@ The controller main input is a
 [geometry_msgs::Twist](http://docs.ros.org/api/geometry_msgs/html/msg/Twist.html)
 topic in the namespace of the controller.
 
+#### Subscribed Topics
 
+- `cmd_vel`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  Velocity command.
 
-```clearsilver
-sub {
-  0.name= cmd_vel
-  0.type= geometry_msgs/Twist
-  0.desc= Velocity command.
-}
-```
+#### Published Topics
 
- 
+- `odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  Odometry computed from the hardware feedback.
+- `/tf`
+  ([tf/msg/tfMessage](https://docs.ros.org/en/rolling/p/tf/msg/tfMessage.html)):
+  Transform from odom to base_footprint
+- `publish_cmd`
+  ([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)):
+  Available when "publish_cmd" parameter is set to True. It is the
+  Twist after limiters have been applied on the controller input.
 
-```clearsilver
-pub {
-  0.name= odom
-  0.type= nav_msgs/Odometry
-  0.desc= Odometry computed from the hardware feedback.
+#### Parameters
 
-  1.name= /tf
-  1.type= tf/tfMessage
-  1.desc= Transform from odom to base_footprint
-
-  2.name= publish_cmd
-  2.type= geometry_msgs/TwistStamped
-  2.desc= Available when "publish_cmd" parameter is set to True. It is the Twist after limiters have been applied on the controller input.
-}
-```
-
-
-
-
-```clearsilver
-param{
-  0.name=left_wheel
-  0.type=string | string[...]
-  0.desc=Left wheel joint name or list of joint names
-  1.name=right_wheel
-  1.type=string | string[...]
-  1.desc=Right wheel joint name or list of joint names
-  2.name=pose_covariance_diagonal
-  2.type=double[6]
-  2.desc=Diagonal of the covariance matrix for odometry pose publishing
-  3.name=twist_covariance_diagonal
-  3.type=double[6]
-  3.desc=Diagonal of the covariance matrix for odometry twist publishing
-  4.name=publish_rate
-  4.type=double
-  4.desc=Frequency (in Hz) at which the odometry is published. Used for both tf and odom
-  4.default=50.0
-  5.name=wheel_separation_multiplier
-  5.type=double
-  5.desc=Multiplier applied to the wheel separation parameter. This is used to account for a difference between the robot model and a real robot.
-  5.default=1.0
-  6.name=wheel_radius_multiplier
-  6.type=double
-  6.desc=Multiplier applied to the wheel radius parameter. This is used to account for a difference between the robot model and a real robot.
-  6.default=1.0
-  7.name=cmd_vel_timeout
-  7.type=double
-  7.desc=Allowed period (in s) allowed between two successive velocity commands. After this delay, a zero speed command will be sent to the wheels.
-  7.default=0.5
-  8.name=base_frame_id
-  8.type=string
-  8.desc=Base frame_id, which is used to fill in the child_frame_id of the Odometry messages and TF.
-  8.default=base_link
-  9.name=linear/x/has_velocity_limits
-  9.type=bool
-  9.desc=Whether the controller should limit linear speed or not.
-  9.default=false
- 10.name=linear/x/max_velocity
- 10.type=double
- 10.desc=Maximum linear velocity (in m/s)
- 11.name=linear/x/min_velocity
- 11.type=double
- 11.desc=Minimum linear velocity (in m/s). Setting this to 0.0 will disable backwards motion. When unspecified, -max_velocity is used.
- 12.name=linear/x/has_acceleration_limits
- 12.type=bool
- 12.desc=Whether the controller should limit linear acceleration or not.
- 12.default=false
- 13.name=linear/x/max_acceleration
- 13.type=double
- 13.desc=Maximum linear acceleration (in m/s^2)
- 14.name=linear/x/min_acceleration
- 14.type=double
- 14.desc=Minimum linear acceleration (in m/s^2). When unspecified, -max_acceleration is used.
- 15.name=linear/x/has_jerk_limits
- 15.type=bool
- 15.desc=Whether the controller should limit linear jerk or not.
- 15.default=false
- 16.desc=Maximum linear jerk (in m/s^3).
- 16.name=linear/x/max_jerk
- 16.type=double
- 17.name=angular/z/has_velocity_limits
- 17.type=bool
- 17.desc=Whether the controller should limit angular velocity or not.
- 17.default=false
- 18.name=angular/z/max_velocity
- 18.type=double
- 18.desc=Maximum angular velocity (in rad/s)
- 19.name=angular/z/min_velocity
- 19.type=double
- 19.desc=Minimum angular velocity (in rad/s). Setting this to 0.0 will disable counter-clockwise rotation. When unspecified, -max_velocity is used.
- 20.name=angular/z/has_acceleration_limits
- 20.type=bool
- 20.desc=Whether the controller should limit angular acceleration or not.
- 20.default=false
- 21.name=angular/z/max_acceleration
- 21.type=double
- 21.desc=Maximum angular acceleration (in rad/s^2)
- 22.name=angular/z/min_acceleration
- 22.type=double
- 22.desc=Minimum angular acceleration (in rad/s^2). When unspecified, -max_acceleration is used.
- 23.name=angular/z/has_jerk_limits
- 23.type=bool
- 23.desc=Whether the controller should limit angular jerk or not.
- 23.default=false
- 24.desc=Maximum angular jerk (in m/s^3).
- 24.name=angular/z/max_jerk
- 24.type=double
- 25.name=enable_odom_tf
- 25.type=bool
- 25.desc= Publish to TF directly or not
- 25.default=true
- 26.name=wheel_separation
- 26.type=double
- 26.desc=The distance of the left and right wheel(s). The diff_drive_controller will attempt to read the value from the URDF if this parameter is not specified
- 27.name=wheel_radius
- 27.type=double
- 27.desc=Radius of the wheels. It is expected they all have the same size. The diff_drive_controller will attempt to read the value from the URDF if this parameter is not specified.
- 28.name=odom_frame_id
- 28.type=string
- 28.desc=Name of frame to publish odometry in.
- 28.default="/odom"
- 29.name=publish_cmd
- 29.type=bool
- 29.desc=Publish the velocity command to be executed. It is to monitor the effect of limiters on the controller input.
- 29.default=False
- 30.name=allow_multiple_cmd_vel_publishers
- 30.type=bool
- 30.desc=Setting this to true will allow more than one publisher on the input topic, ~/cmd_vel.  Setting this to false will cause the controller to brake if there is more than one publisher on ~/cmd_vel.
- 30.default=False
- 31.name=velocity_rolling_window_size
- 31.type=int
- 31.desc=The number of velocity samples to average together to compute the odometry twist.linear.x and twist.angular.z velocities
- 31.default=10
-}
-```
-
-
+- `left_wheel` (`string | string[...]`): Left wheel joint name or list
+  of joint names
+- `right_wheel` (`string | string[...]`): Right wheel joint name or list
+  of joint names
+- `pose_covariance_diagonal` (`double[6]`): Diagonal of the covariance
+  matrix for odometry pose publishing
+- `twist_covariance_diagonal` (`double[6]`): Diagonal of the covariance
+  matrix for odometry twist publishing
+- `publish_rate` (`double`, default: `50.0`): Frequency (in Hz) at which
+  the odometry is published. Used for both tf and odom
+- `wheel_separation_multiplier` (`double`, default: `1.0`): Multiplier
+  applied to the wheel separation parameter. This is used to account for
+  a difference between the robot model and a real robot.
+- `wheel_radius_multiplier` (`double`, default: `1.0`): Multiplier
+  applied to the wheel radius parameter. This is used to account for a
+  difference between the robot model and a real robot.
+- `cmd_vel_timeout` (`double`, default: `0.5`): Allowed period (in s)
+  allowed between two successive velocity commands. After this delay, a
+  zero speed command will be sent to the wheels.
+- `base_frame_id` (`string`, default: `base_link`): Base frame_id, which
+  is used to fill in the child_frame_id of the Odometry messages and TF.
+- `linear/x/has_velocity_limits` (`bool`, default: `false`): Whether the
+  controller should limit linear speed or not.
+- `linear/x/max_velocity` (`double`): Maximum linear velocity (in m/s)
+- `linear/x/min_velocity` (`double`): Minimum linear velocity (in m/s).
+  Setting this to 0.0 will disable backwards motion. When unspecified,
+  -max_velocity is used.
+- `linear/x/has_acceleration_limits` (`bool`, default: `false`): Whether
+  the controller should limit linear acceleration or not.
+- `linear/x/max_acceleration` (`double`): Maximum linear acceleration
+  (in m/s\^2)
+- `linear/x/min_acceleration` (`double`): Minimum linear acceleration
+  (in m/s\^2). When unspecified, -max_acceleration is used.
+- `linear/x/has_jerk_limits` (`bool`, default: `false`): Whether the
+  controller should limit linear jerk or not.
+- `linear/x/max_jerk` (`double`): Maximum linear jerk (in m/s\^3).
+- `angular/z/has_velocity_limits` (`bool`, default: `false`): Whether
+  the controller should limit angular velocity or not.
+- `angular/z/max_velocity` (`double`): Maximum angular velocity (in
+  rad/s)
+- `angular/z/min_velocity` (`double`): Minimum angular velocity (in
+  rad/s). Setting this to 0.0 will disable counter-clockwise rotation.
+  When unspecified, -max_velocity is used.
+- `angular/z/has_acceleration_limits` (`bool`, default: `false`):
+  Whether the controller should limit angular acceleration or not.
+- `angular/z/max_acceleration` (`double`): Maximum angular acceleration
+  (in rad/s\^2)
+- `angular/z/min_acceleration` (`double`): Minimum angular acceleration
+  (in rad/s\^2). When unspecified, -max_acceleration is used.
+- `angular/z/has_jerk_limits` (`bool`, default: `false`): Whether the
+  controller should limit angular jerk or not.
+- `angular/z/max_jerk` (`double`): Maximum angular jerk (in m/s\^3).
+- `enable_odom_tf` (`bool`, default: `true`): Publish to TF directly or
+  not
+- `wheel_separation` (`double`): The distance of the left and right
+  wheel(s). The diff_drive_controller will attempt to read the value
+  from the URDF if this parameter is not specified
+- `wheel_radius` (`double`): Radius of the wheels. It is expected they
+  all have the same size. The diff_drive_controller will attempt to read
+  the value from the URDF if this parameter is not specified.
+- `odom_frame_id` (`string`, default: `"/odom"`): Name of frame to
+  publish odometry in.
+- `publish_cmd` (`bool`, default: `False`): Publish the velocity command
+  to be executed. It is to monitor the effect of limiters on the
+  controller input.
+- `allow_multiple_cmd_vel_publishers` (`bool`, default: `False`):
+  Setting this to true will allow more than one publisher on the input
+  topic, /cmd_vel. Setting this to false will cause the controller to
+  brake if there is more than one publisher on /cmd_vel.
+- `velocity_rolling_window_size` (`int`, default: `10`): The number of
+  velocity samples to average together to compute the odometry
+  twist.linear.x and twist.angular.z velocities
 
 ### Controller configuration examples
 

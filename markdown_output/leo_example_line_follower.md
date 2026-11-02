@@ -111,117 +111,78 @@ rosrun leo_example_line_follower prepare_data.py -t train1 train2 -v val1 val2 -
 
 ## ROS API
 
+### line_follower
 
+#### Subscribed Topics
 
-```clearsilver
-name= line_follower
-sub {
-  group.0 {
-    0.name= camera/image_raw
-    0.type= sensor_msgs/Image
-    0.desc= The image from the camera that will be provided to the neural network model.
-  }
-}
-pub {
-  0.name= cmd_vel
-  0.type= geometry_msgs/Twist
-  0.desc= The target velocity for the rover from the neural network model output
-}
-param {
-  group.0 {
-    0.name= pub_mask
-    0.type= bool
-    0.desc= the flag specifying whether or not the node will publish the color_mask (the model's input).
-    1.name= hue_max
-    1.type= int
-    1.default= 179
-    1.desc= The maximum hue value for the color_mask.
-    2.name= hue_min
-    2.type= int
-    2.default= 0
-    2.desc= The minimum hue value for the color_mask.
-    3.name= sat_max
-    3.type= int
-    3.default= 255
-    3.desc= The maximum saturation value for the color_mask.
-    4.name= sat_min
-    4.type= int
-    4.default= 0
-    4.desc= The minimum saturation value for the color_mask.
-    5.name= val_max
-    5.type= int
-    5.default= 255
-    5.desc= The maximum val (V from HSV) value for the color_mask.
-    6.name= val_min
-    6.type= int
-    6.default= 0
-    6.desc= The minimum val (V from HSV) value for the color_mask.
-  }
-}
-```
+- `camera/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image from the camera that will be provided to the neural network
+  model.
 
- 
+#### Published Topics
 
-```clearsilver
-name= color_mask
-sub {
-  group.0 {
-    0.name= camera/image_raw
-    0.type= sensor_msgs/Image
-    0.desc= The image from the camera that will be used for catching a color with the color mask.
-  }
-}
-pub {
-    0.name= color_mask
-    0.type= sensor_msgs/Image
-    0.desc= A live view of the color mask caught with the currently chosen values.
-    1.name= catched_colors/compressed
-    1.type= sensor_msgs/CompressedImage
-    1.desc= The live view of the colors that were caught with the color mask.
-}
-param {
-  group.0 {
-    0.name= hue_max
-    0.type= int
-    0.default= 179
-    0.desc= The maximum hue value for the color_mask.
-    1.name= hue_min
-    1.type= int
-    1.default= 0
-    1.desc= The minimum hue value for the color_mask.
-    2.name= sat_max
-    2.type= int
-    2.default= 255
-    2.desc= The maximum saturation value for the color_mask.
-    3.name= sat_min
-    3.type= int
-    3.default= 0
-    3.desc= The minimum saturation value for the color_mask.
-    4.name= val_max
-    4.type= int
-    4.default= 255
-    4.desc= The maximum val (V from HSV) value for the color_mask.
-    5.name= val_min
-    5.type= int
-    5.default= 0
-    5.desc= The minimum val (V from HSV) value for the color_mask.
-  }
-}
-```
+- `cmd_vel`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  The target velocity for the rover from the neural network model output
 
+#### Parameters
 
+- `pub_mask` (`bool`): the flag specifying whether or not the node will
+  publish the color_mask (the model's input).
+- `hue_max` (`int`, default: `179`): The maximum hue value for the
+  color_mask.
+- `hue_min` (`int`, default: `0`): The minimum hue value for the
+  color_mask.
+- `sat_max` (`int`, default: `255`): The maximum saturation value for
+  the color_mask.
+- `sat_min` (`int`, default: `0`): The minimum saturation value for the
+  color_mask.
+- `val_max` (`int`, default: `255`): The maximum val (V from HSV) value
+  for the color_mask.
+- `val_min` (`int`, default: `0`): The minimum val (V from HSV) value
+  for the color_mask.
 
+### color_mask
 
-```clearsilver
-name= data_saver
-sub {
-  group.0 {
-    0.name= camera/image_raw
-    0.type= sensor_msgs/Image
-    0.desc= The camera view that will be recorded.
-    1.name= cmd_vel
-    1.type= geometry_msgs/Twist
-    1.desc= The current velocity of the rover, used as labels for a recorded image
-  }
-}
-```
+#### Subscribed Topics
+
+- `camera/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The image from the camera that will be used for catching a color with
+  the color mask.
+
+#### Published Topics
+
+- `color_mask`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  A live view of the color mask caught with the currently chosen values.
+- `catched_colors/compressed`
+  ([sensor_msgs/msg/CompressedImage](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CompressedImage.html)):
+  The live view of the colors that were caught with the color mask.
+
+#### Parameters
+
+- `hue_max` (`int`, default: `179`): The maximum hue value for the
+  color_mask.
+- `hue_min` (`int`, default: `0`): The minimum hue value for the
+  color_mask.
+- `sat_max` (`int`, default: `255`): The maximum saturation value for
+  the color_mask.
+- `sat_min` (`int`, default: `0`): The minimum saturation value for the
+  color_mask.
+- `val_max` (`int`, default: `255`): The maximum val (V from HSV) value
+  for the color_mask.
+- `val_min` (`int`, default: `0`): The minimum val (V from HSV) value
+  for the color_mask.
+
+### data_saver
+
+#### Subscribed Topics
+
+- `camera/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  The camera view that will be recorded.
+- `cmd_vel`
+  ([geometry_msgs/msg/Twist](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Twist.html)):
+  The current velocity of the rover, used as labels for a recorded image

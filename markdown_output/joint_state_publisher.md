@@ -66,61 +66,46 @@ use the `zeros` parameter. An example YAML file is seen below.
 
 ## Node API
 
+### joint_state_publisher
 
+Publishes !JointState message with values read from various sources,
+including GUI.
 
-```clearsilver
-name = joint_state_publisher
-desc = Publishes !JointState message with values read from various sources, including GUI.
-pub {
-  0.name = joint_states
-  0.type = sensor_msgs/JointState
-  0.desc = Joint State for each non-fixed joint in the robot
-}
-param {
-  0.name = robot_description
-  0.type = String
-  0.desc = Contents of the URDF file for the robot
-  0.default = None
-  1.name = dependent_joints
-  1.type = Map of Maps
-  1.desc = The keys in the map are the names of the constrained joints. The values are maps which define a parent joint name, and optionally, a factor which to multiply the parent's value by to get the constrained joints value. An example YAML file can be seen below.
-  1.default = None
-  2.name = rate
-  2.type = Integer
-  2.desc = Rate at which joint states are published
-  2.default = 10 Hz
-  3.name = source_list
-  3.type = list of strings
-  3.desc = A list of topics to listen on for <<MsgLink(sensor_msgs/JointState)>> messages.
-  3.default = []
-  4.name = use_mimic_tags
-  4.type = Boolean
-  4.desc = Boolean flag to use mimic tags from URDF
-  4.default = True
-  5.name = zeros
-  5.type = Dict mapping Strings to Floats
-  5.desc = Dictionary to specify some joints' 'zero position' (since hydro)
-  5.default = {}
-  6.name = use_smallest_joint_limits
-  6.type = Boolean
-  6.desc = (?) Somehow narrow the joint limits using URDF-tag `safety_controller`.
-  6.default = True
-  7.name = publish_default_positions
-  7.type = Boolean
-  7.desc = Publish the joints' default positions (see [[#Default_value|Default value]] above) if no other data input is available.
-  7.default = True
-  8.name = publish_default_velocities
-  8.type = Boolean
-  8.desc = Publish the joints' velocities as 0 if no other data input is available.
-  8.default = False
-  9.name = publish_default_efforts
-  9.type = Boolean
-  9.desc = Publish the joints' efforts as 0 if no other data input is available.
-  9.default = False
-}
-```
+#### Published Topics
 
+- `joint_states`
+  ([sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)):
+  Joint State for each non-fixed joint in the robot
 
+#### Parameters
+
+- `robot_description` (`String`, default: `None`): Contents of the URDF
+  file for the robot
+- `dependent_joints` (`Map of Maps`, default: `None`): The keys in the
+  map are the names of the constrained joints. The values are maps which
+  define a parent joint name, and optionally, a factor which to multiply
+  the parent's value by to get the constrained joints value. An example
+  YAML file can be seen below.
+- `rate` (`Integer`, default: `10 Hz`): Rate at which joint states are
+  published
+- `source_list` (`list of strings`, default: `[]`): A list of topics to
+  listen on for
+  [sensor_msgs/msg/JointState](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/JointState.html)
+  messages.
+- `use_mimic_tags` (`Boolean`, default: `True`): Boolean flag to use
+  mimic tags from URDF
+- `zeros` (`Dict mapping Strings to Floats`, default: `{}`): Dictionary
+  to specify some joints' 'zero position' (since hydro)
+- `use_smallest_joint_limits` (`Boolean`, default: `True`): (?) Somehow
+  narrow the joint limits using URDF-tag `safety_controller`.
+- `publish_default_positions` (`Boolean`, default: `True`): Publish the
+  joints' default positions (see
+  [Default value](#default-value)
+  above) if no other data input is available.
+- `publish_default_velocities` (`Boolean`, default: `False`): Publish
+  the joints' velocities as 0 if no other data input is available.
+- `publish_default_efforts` (`Boolean`, default: `False`): Publish the
+  joints' efforts as 0 if no other data input is available.
 
 ### Example YAML file for dependent_joints and zeros parameters
 

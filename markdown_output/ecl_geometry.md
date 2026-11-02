@@ -63,6 +63,10 @@ package.
 
 ## Cartesian Points
 
+- **Description:** Simple object representations for cartesian points.
+- **Keywords:** ecl points
+- **Tutorial Level:** BEGINNER
+
 ### Cartesian Point
 
 This is a simple templatised abstraction of a cartesian/euclidean point.
@@ -128,6 +132,11 @@ any time (comma initisalisations, `operator \[\]`).
 
 ## Angles
 
+- **Description:** Convenience class for abstractly storing and
+  representing angles.
+- **Keywords:** ecl angles
+- **Tutorial Level:** BEGINNER
+
 ### Overview
 
 The angle class is a convenience class that automates storage and angle
@@ -178,6 +187,12 @@ double degrees = degrees_to_radians(rads);
 ```
 
 ## Polynomials
+
+- **Description:** Working with polynomials of the n-th degree.
+- **Keywords:** ecl polynomials
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Splines](#splines)
 
 ### The Polynomial Class
 
@@ -356,6 +371,14 @@ cout << endl;
 
 ## Splines
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Polynomials](#polynomials).
+- **Description:** Continuously connected functions (splines) and
+  interpolation algorithms.
+- **Keywords:** ecl splines
+- **Tutorial Level:** INTERMEDIATE
+
 ### CubicSpline
 
 The `CubicSpline` class has a relatively simple c++ interface.
@@ -492,6 +515,10 @@ like a cubic.
 ![Tension Spline](doc/tension_splines.png)
 
 ## Pose
+
+- **Description:** 2D and 3D representations for poses.
+- **Keywords:** ecl pose
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overvew
 

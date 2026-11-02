@@ -19,34 +19,32 @@ controller.
 
 ### Parameters
 
+#### Parameters
 
-
-```clearsilver
-param {
-  0.name=joints
-  0.type=Array of strings
-  0.desc=List of joints that this action will be commanding.  Must match the joints the controller is commanding.
-  0.default=Required
-  1.name=constraints/goal_time
-  1.type=double
-  1.default=0.0
-  1.desc=The amount of time (in seconds) that the controller is permitted to be late to the goal.  If goal_time has passed and the controller still has not reached the final position, then the goal is aborted.
-  2.name=constraints/<joint>/goal
-  2.type=double
-  2.default=-1.0
-  2.desc=The maximum final error for <joint> for the trajectory goal to be considered successful.  Negative numbers indicate that there is no constraint.  Given in units of joint position (generally radians for revolute joints or meters for prismatic joints).  If this constraint is violated, the goal is aborted.
-  3.name=constraints/<joint>/trajectory
-  3.type=double
-  3.default=-1.0
-  3.desc=The maximum error for <joint> at any point during execution for the trajectory goal to be considered successful.  Negative numbers indicate that there is no constraint.  Given in units of joint position (generally radians for revolute joints or meters for prismatic joints).  If this constraint is violated, the goal is aborted.
-  4.name=constraints/stopped_velocity_tolerance
-  4.type=double
-  4.default=0.01
-  4.desc=The maximum velocity at the end of the trajectory for the joint to be considered stopped.  Given in units of joint position (generally radians for revolute joints or meters for prismatic joints).  If this constraint is satisfied, the goal is successful.
-}
-```
-
-
+- `joints` (`Array of strings`, default: `Required`): List of joints
+  that this action will be commanding. Must match the joints the
+  controller is commanding.
+- `constraints/goal_time` (`double`, default: `0.0`): The amount of time
+  (in seconds) that the controller is permitted to be late to the goal.
+  If goal_time has passed and the controller still has not reached the
+  final position, then the goal is aborted.
+- `constraints/<joint>/goal` (`double`, default: `-1.0`): The maximum
+  final error for <joint> for the trajectory goal to be considered
+  successful. Negative numbers indicate that there is no constraint.
+  Given in units of joint position (generally radians for revolute
+  joints or meters for prismatic joints). If this constraint is
+  violated, the goal is aborted.
+- `constraints/<joint>/trajectory` (`double`, default: `-1.0`): The
+  maximum error for <joint> at any point during execution for the
+  trajectory goal to be considered successful. Negative numbers indicate
+  that there is no constraint. Given in units of joint position
+  (generally radians for revolute joints or meters for prismatic
+  joints). If this constraint is violated, the goal is aborted.
+- `constraints/stopped_velocity_tolerance` (`double`, default: `0.01`):
+  The maximum velocity at the end of the trajectory for the joint to be
+  considered stopped. Given in units of joint position (generally
+  radians for revolute joints or meters for prismatic joints). If this
+  constraint is satisfied, the goal is successful.
 
 Example configuration (from
 pr2_controller_configuration/pr2_arm_controllers.yaml):
@@ -90,50 +88,41 @@ The joint trajectory action provides an action server (see
 the type
 [pr2_controllers_msgs/msg/JointTrajectoryGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryGoal.html).
 
+#### Subscribed Topics
 
+- `joint_trajectory_action/goal`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionGoal](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionGoal.html)):
+  The goal describes the trajectory for the robot to follow.
+- `joint_trajectory_action/cancel`
+  ([actionlib_msgs/msg/GoalID](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalID.html)):
+  A request to cancel a specific goal.
 
-```clearsilver
-sub {
-  0.name=joint_trajectory_action/goal
-  0.type=pr2_controllers_msgs/JointTrajectoryActionGoal
-  0.desc=The goal describes the trajectory for the robot to follow.
-  1.name=joint_trajectory_action/cancel
-  1.type=actionlib_msgs/GoalID
-  1.desc=A request to cancel a specific goal.
-}
-pub {
-  0.name=joint_trajectory_action/feedback
-  0.type=pr2_controllers_msgs/JointTrajectoryActionFeedback
-  0.desc=Feedback describing the progress the mechanism is making on following the trajectory.
-  1.name=joint_trajectory_action/status
-  1.type=actionlib_msgs/GoalStatusArray
-  1.desc=Provides status information on the goals that are sent to the action.
-  2.name=joint_trajectory_action/result
-  2.type=pr2_controllers_msgs/JointTrajectoryActionResult
-  2.desc=empty
-}
-```
+#### Published Topics
 
-
+- `joint_trajectory_action/feedback`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionFeedback](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionFeedback.html)):
+  Feedback describing the progress the mechanism is making on following
+  the trajectory.
+- `joint_trajectory_action/status`
+  ([actionlib_msgs/msg/GoalStatusArray](https://docs.ros.org/en/rolling/p/actionlib_msgs/msg/GoalStatusArray.html)):
+  Provides status information on the goals that are sent to the action.
+- `joint_trajectory_action/result`
+  ([pr2_controllers_msgs/msg/JointTrajectoryActionResult](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryActionResult.html)):
+  empty
 
 ### Controller interface
 
+#### Subscribed Topics
 
+- `state`
+  ([pr2_controllers_msgs/msg/JointTrajectoryControllerState](https://docs.ros.org/en/rolling/p/pr2_controllers_msgs/msg/JointTrajectoryControllerState.html)):
+  Listens to the state of the controller.
 
-```clearsilver
-sub {
-  0.name=state
-  0.type=pr2_controllers_msgs/JointTrajectoryControllerState
-  0.desc=Listens to the state of the controller.
-}
-pub {
-  0.name=command
-  0.type=trajectory_msgs/JointTrajectory
-  0.desc=Sends joint trajectories to the controller.
-}
-```
+#### Published Topics
 
-
+- `command`
+  ([trajectory_msgs/msg/JointTrajectory](https://docs.ros.org/en/rolling/p/trajectory_msgs/msg/JointTrajectory.html)):
+  Sends joint trajectories to the controller.
 
 ## Usage
 

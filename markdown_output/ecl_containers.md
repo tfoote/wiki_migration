@@ -36,6 +36,14 @@ subdirectories.
 
 ## Arrays
 
+- **Description:** Introduction to c++ style arrays, both fixed and
+  dynamic.
+- **Keywords:** ecl containers arrays
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Stencils](#stencils)
+  [Buffer Overflow Detection](#buffer-overflow-detection)
+
 ### Overview
 
 Ecl arrays provide a typical c++ style stl interface. There are, however
@@ -117,6 +125,14 @@ array1.resize(10);    // Resize - delete and recreate uninitialised buffer.
 
 ## Stencils
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Arrays](#arrays).
+- **Description:** Windows onto ecl arrays.
+- **Keywords:** ecl arrays
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Buffer Overflow Detection](#buffer-overflow-detection)
+
 Often you require a window onto a container (array) and stencils provide
 a safe way to do this. Stencils avoid the use of dangerous pointers
 which can cause problems if the underlying container goes out of scope
@@ -137,6 +153,13 @@ std::cout << stencil[1] << std::endl; // accesses array[2];
 ```
 
 ## Buffer Overflow Detection
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Arrays](#arrays),
+  [Stencils](#stencils).
+- **Description:** Detecting ecl array over/under runs.
+- **Keywords:** ecl arrays buffer overflow
+- **Tutorial Level:** INTERMEDIATE
 
 Arrays also provide a feature to allow for buffer overflow checking -
 for both fixed and dynamic arrays. Often programs pull pointers to
@@ -175,6 +198,10 @@ int main() {
 
 ## Fifo
 
+- **Description:** A simple first in, first out class.
+- **Keywords:** ecl containers fifo
+- **Tutorial Level:** BEGINNER
+
 During the construction of fifo, typically length of buffer may be
 important.
 
@@ -202,6 +229,13 @@ fifo.push_back( next_data );                // set next data
 ```
 
 ## Container Utilities
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials: [Arrays](#arrays),
+  [Stencils](#arrays).
+- **Description:** container formatters and converters.
+- **Keywords:** ecl container utilities
+- **Tutorial Level:** INTERMEDIATE
 
 ### Formatters
 

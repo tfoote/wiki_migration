@@ -54,20 +54,22 @@ Usage:
 $ poller 5 camera:=my_camera output:=my_polled_output
 ```
 
- 
 
-```clearsilver
-pub {
-  0.name = <output>/image_raw
-  0.type = sensor_msgs/Image
-  0.desc = Image topic, actually published by the camera driver. `output` should be remapped by the user.
-  1.name = <output>/camera_info
-  1.type = sensor_msgs/CameraInfo
-  1.desc = Info topic, actually published by the camera driver. `output` should be remapped by the user.
-}
-srv_called {
-  0.name = <camera>/request_image
-  0.type = polled_camera/GetPolledImage
-  0.desc = The camera driver's polled image service. `camera` should be remapped by the user to the camera namespace.
-}
-```
+
+#### Published Topics
+
+- `<output>/image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  Image topic, actually published by the camera driver. `output`
+  should be remapped by the user.
+- `<output>/camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  Info topic, actually published by the camera driver. `output` should
+  be remapped by the user.
+
+#### Services Called
+
+- `<camera>/request_image`
+  ([polled_camera/srv/GetPolledImage](https://docs.ros.org/en/rolling/p/polled_camera/srv/GetPolledImage.html)):
+  The camera driver's polled image service. `camera` should be
+  remapped by the user to the camera namespace.

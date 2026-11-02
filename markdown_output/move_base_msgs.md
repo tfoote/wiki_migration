@@ -4,9 +4,9 @@ This package contains the messages used to communicate with the
 [move_base](https://index.ros.org/p/move_base) node. These messages are
 auto-generated from the `MoveBase.action` action specification. For
 more information on actions see
-[ actionlib documentation](https://index.ros.org/p/actionlib), for more
+[actionlib documentation](https://index.ros.org/p/actionlib), for more
 information on the [move_base](https://index.ros.org/p/move_base) node
-see [ move_base documentation](https://index.ros.org/p/move_base).
+see [move_base documentation](https://index.ros.org/p/move_base).
 
 ## MoveBase.action
 

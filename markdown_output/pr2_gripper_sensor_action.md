@@ -1,6 +1,6 @@
 [Youtube](https://www.youtube.com/watch?v=IKxh5ZNqYY0)
 
-[ TRO Publication ](http://fling.seas.upenn.edu/~jrom/wiki/uploads/Projects/touch2_rerevised.pdf )
+[TRO Publication](http://fling.seas.upenn.edu/~jrom/wiki/uploads/Projects/touch2_rerevised.pdf)
 
 ## Overview
 
@@ -90,7 +90,7 @@ The pr2_gripper_sensor_action
 package contains a set of action nodes. The
 pr2_gripper_sensor_action
 nodes provide implementations of `SimpleActionServer` (see
-[ actionlib documentation](https://index.ros.org/p/actionlib)). The
+[actionlib documentation](https://index.ros.org/p/actionlib)). The
 various actions subscribe and publish to a series of messages found in
 [pr2_gripper_sensor_msgs](https://index.ros.org/p/pr2_gripper_sensor_msgs),
 but this API is not intended for use outside of the
@@ -126,90 +126,63 @@ namespace of the real-time controller for each of the two PR2 grippers,
 `\*` below indicates that the parameter is not reloadable with the
 [`reload_params` service](#ros-services).
 
+#### Parameters
 
-
-```clearsilver
-param {
-  1.name= close_speed
-  1.default= 0.02 m/s
-  1.type= double
-  1.desc= The speed at which to close the gripper during the [[#Action APIs|find_contact action]]. Speed should always be positive.
-
-  2.name= max_joint_effort
-  2.default= -1.0 N
-  2.type= double
-  2.desc= The maximum amount of force to allow the virtual gripper parallel joint to apply during the various [[#Action APIs|actions]]. A value of -1 results in unlimited effort.
-
-  3.name= fingertip_force_limit
-  3.default= -1.0 N
-  3.type= double
-  3.desc= The maximum amount of force to allow the gripper to apply as measured by the fingertip sensors during a few of the force-feedback [[#Action APIs|actions]]. A value of -1 results in unlimited force.
-
-  4.name= deformation_limit
-  4.default= 0.03 m
-  4.type= double
-  4.desc= The maximum amount of deformation to allow after contact with several of the force-feedback [[#Action APIs|actions]]. A value of -1 results in unlimited deformation being allowed.
-
-  5.name= force_lightest
-  5.default= 1.2 N
-  5.type= double
-  5.desc= The minimum amount of force that any force-feedback [[#Action APIs|actions]] apply. All force-control actions that are commanded to lower forces will default to this value. This value is also used to help determine when the gripper is empty.
-
-  6.name= hp_force_trigger
-  6.default= 0.1 N
-  6.type= double
-  6.desc= The value of high-frequency force distrubance necessary to trigger contact with the gripper.
-
-  7.name= force_servo_force_tolerance
-  7.default= 0.3 N
-  7.type= double
-  7.desc= The force tolerance that any force-feedback actions need to be within (relative to the desired force) to be considered successful.
-
-  8.name= force_servo_velocity_tolerance
-  8.default= 0.001 m/s
-  8.type= double
-  8.desc= The velocity tolerance that any force-feedback actions need to be within (relative to 0) to be considered successful.
-
-  9.name= slip_servo_start_force
-  9.default= -1.0 N
-  9.type= double
-  9.desc= The force to immediately try and servo to once the [[#Action APIs|slip-servo action]] has been called. A value of -1.0 results in using whatever force is currently being experienced when the action was first called.
-
-  10.name= position_servo_position_tolerance
-  10.default= 0.01 m
-  10.type= double
-  10.desc= The position tolerance that any position-feedback actions need to be within (relative to the desired position) to be considered successful.
-
-  11.name= position_open
-  11.default= 0.09 m
-  11.type= double
-  11.desc= The maximum open position of the gripper. Used as a waypoint to move toward for several of the actions.
-
-  12.name= joint_name*
-  12.default= l(r)_gripper_joint
-  12.type= string
-  12.desc= The joint we want our controller to control.
-
-  13.name= accelerometer_name*
-  13.default= l(r)_gripper_motor
-  13.type= string
-  13.desc= The string that can be used to get a C++ handle to the palm accelerometer.
-
-  14.name= left_pressure_sensor_name*
-  14.default= l(r)_gripper_motorl(r)_finger_tip
-  14.type= string
-  14.desc= The string that can be used to get a C++ handle to the left finger pressure sensor.
-
-  15.name= right_pressure_sensor_name*
-  15.default= l(r)_gripper_motorr_finger_tip
-  15.type= string
-  15.desc= The string that can be used to get a C++ handle to the right finger pressure sensor.
-
-
-}
-```
-
-
+- `close_speed` (`double`, default: `0.02 m/s`): The speed at which to
+  close the gripper during the
+  [find_contact action](#action-apis).
+  Speed should always be positive.
+- `max_joint_effort` (`double`, default: `-1.0 N`): The maximum amount
+  of force to allow the virtual gripper parallel joint to apply during
+  the various
+  [actions](#action-apis). A
+  value of -1 results in unlimited effort.
+- `fingertip_force_limit` (`double`, default: `-1.0 N`): The maximum
+  amount of force to allow the gripper to apply as measured by the
+  fingertip sensors during a few of the force-feedback
+  [actions](#action-apis). A
+  value of -1 results in unlimited force.
+- `deformation_limit` (`double`, default: `0.03 m`): The maximum amount
+  of deformation to allow after contact with several of the
+  force-feedback
+  [actions](#action-apis). A
+  value of -1 results in unlimited deformation being allowed.
+- `force_lightest` (`double`, default: `1.2 N`): The minimum amount of
+  force that any force-feedback
+  [actions](#action-apis) apply.
+  All force-control actions that are commanded to lower forces will
+  default to this value. This value is also used to help determine when
+  the gripper is empty.
+- `hp_force_trigger` (`double`, default: `0.1 N`): The value of
+  high-frequency force distrubance necessary to trigger contact with the
+  gripper.
+- `force_servo_force_tolerance` (`double`, default: `0.3 N`): The force
+  tolerance that any force-feedback actions need to be within (relative
+  to the desired force) to be considered successful.
+- `force_servo_velocity_tolerance` (`double`, default: `0.001 m/s`): The
+  velocity tolerance that any force-feedback actions need to be within
+  (relative to 0) to be considered successful.
+- `slip_servo_start_force` (`double`, default: `-1.0 N`): The force to
+  immediately try and servo to once the
+  [slip-servo action](#action-apis)
+  has been called. A value of -1.0 results in using whatever force is
+  currently being experienced when the action was first called.
+- `position_servo_position_tolerance` (`double`, default: `0.01 m`): The
+  position tolerance that any position-feedback actions need to be
+  within (relative to the desired position) to be considered successful.
+- `position_open` (`double`, default: `0.09 m`): The maximum open
+  position of the gripper. Used as a waypoint to move toward for several
+  of the actions.
+- `joint_name*` (`string`, default: `l(r)_gripper_joint`): The joint we
+  want our controller to control.
+- `accelerometer_name*` (`string`, default: `l(r)_gripper_motor`): The
+  string that can be used to get a C++ handle to the palm accelerometer.
+- `left_pressure_sensor_name*` (`string`, default:
+  `l(r)_gripper_motorl(r)_finger_tip`): The string that can be used to
+  get a C++ handle to the left finger pressure sensor.
+- `right_pressure_sensor_name*` (`string`, default:
+  `l(r)_gripper_motorr_finger_tip`): The string that can be used to get
+  a C++ handle to the right finger pressure sensor.
 
 ### Action APIs
 
@@ -218,7 +191,7 @@ gripper. The same API is available for the left gripper simply by
 replacing the (r) in the beginning of each name with (l).
 
 Users should refer to the
-[ tutorials](#tutorials) section
+[tutorials](#tutorials) section
 for specific examples on using the action nodes defined below.
 
 #### Beginner
@@ -604,8 +577,8 @@ m/s\^2).
 There is a known bug currently with the accelerometer where sometimes it
 will enter a bad state on the PR2 ethercat system and not respond
 properly. Please refer to the
-[ accelerometer](https://index.ros.org/p/ethercat_hardware) wiki page
-for additional information, and the
+[accelerometer](https://index.ros.org/p/ethercat_hardware) wiki page for
+additional information, and the
 [troubleshooting](https://index.ros.org/p/ethercat_hardware) section
 that explain how to quickly reset your accelerometer, which often fixes
 the problem.
@@ -616,6 +589,13 @@ constantly triggering when I don't think they should be.
 See above answer.
 
 ## Force Control with the PR2 Gripper
+
+- **Note:**
+  [Grab and Release an Object Using pr2_gripper_sensor_action](#grab-and-release-an-object-using-pr2_gripper_sensor_action).
+- **Description:** This tutorial teaches the user how to use the
+  pr2_gripper_sensor_action package to do force control with the PR2
+  gripper.
+- **Tutorial Level:** INTERMEDIATE
 
 ### Overview and prerequisites
 
@@ -866,6 +846,13 @@ seconds, and release upon object contact with the environment.
 
 ## Grab and Release an Object Using pr2_gripper_sensor_action
 
+- **Description:** This tutorial will show you how to get the gripper to
+  delicately grab an object, then after a certain amount of time
+  automatically look for a contact event (hopefully the contact of the
+  object and the surface you wanted to place it on), and release the
+  object after contact.
+- **Tutorial Level:** BEGINNER
+
 ### Overview and prerequisites
 
 This tutorial will show you to use the basic
@@ -1100,6 +1087,13 @@ The robot should now wait a few seconds, grab an object, wait a few more
 seconds, and release upon object contact with the environment.
 
 ## Object Manipulation using find_contact, slip_servo, event_detector, and gripper_action
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Grab and Release an Object Using pr2_gripper_sensor_action](#grab-and-release-an-object-using-pr2_gripper_sensor_action).
+- **Description:** Advanced tutorial on how to use the low-level actions
+  in the pr2_gripper_sensor_action package
+- **Tutorial Level:** ADVANCED
 
 ### Overview and prerequisites
 

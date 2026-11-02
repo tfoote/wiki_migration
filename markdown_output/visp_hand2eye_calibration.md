@@ -144,33 +144,33 @@ rotation:
 
 ## Nodes
 
-<a id="NodeApi"></a> 
+<a id="NodeApi"></a>
 
-```clearsilver
-node.0 {
-name=calibrator
-desc=
+### calibrator
 
+#### Subscribed Topics
 
-sub{
-0.name= world_effector
-0.type= visp_hand2eye_calibration/TransformArray
-0.desc= transformation between the world and the hand frame. The node expects to receive several of those transformations.
+- `world_effector`
+  ([visp_hand2eye_calibration/msg/TransformArray](https://docs.ros.org/en/rolling/p/visp_hand2eye_calibration/msg/TransformArray.html)):
+  transformation between the world and the hand frame. The node expects
+  to receive several of those transformations.
+- `camera_object`
+  ([visp_hand2eye_calibration/msg/TransformArray](https://docs.ros.org/en/rolling/p/visp_hand2eye_calibration/msg/TransformArray.html)):
+  transformation between the camera and the object frame. The node
+  expects to receive several of those transformations.
 
-1.name= camera_object
-1.type= visp_hand2eye_calibration/TransformArray
-1.desc= transformation between the camera and the object frame. The node expects to receive several of those transformations.
-}
-srv_called{
-0.name= compute_effector_camera
-0.type= visp_hand2eye_calibration/compute_effector_camera
-0.desc= Returns the hand to camera transformation result after calibration based on the data published on the subscribed topics.
-1.name= compute_effector_camera_quick
-1.type= visp_hand2eye_calibration/compute_effector_camera_quick
-1.desc= Returns the hand to camera transformation result after calibration. This service is not based on the data published on the subscribed topics. Instead, the transformation are passed as service parameters. 
-2.name= reset
-2.type= visp_hand2eye_calibration/reset
-2.desc= Reset all the data published on the subscribed topics. Only new publications (transformations) will be taken into account.
-}
-}
-```
+#### Services Called
+
+- `compute_effector_camera`
+  ([visp_hand2eye_calibration/srv/compute_effector_camera](https://docs.ros.org/en/rolling/p/visp_hand2eye_calibration/srv/compute_effector_camera.html)):
+  Returns the hand to camera transformation result after calibration
+  based on the data published on the subscribed topics.
+- `compute_effector_camera_quick`
+  ([visp_hand2eye_calibration/srv/compute_effector_camera_quick](https://docs.ros.org/en/rolling/p/visp_hand2eye_calibration/srv/compute_effector_camera_quick.html)):
+  Returns the hand to camera transformation result after calibration.
+  This service is not based on the data published on the subscribed
+  topics. Instead, the transformation are passed as service parameters.
+- `reset`
+  ([visp_hand2eye_calibration/srv/reset](https://docs.ros.org/en/rolling/p/visp_hand2eye_calibration/srv/reset.html)):
+  Reset all the data published on the subscribed topics. Only new
+  publications (transformations) will be taken into account.

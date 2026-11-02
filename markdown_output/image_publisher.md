@@ -56,70 +56,47 @@ More complex nodelet example using launch file
 
 ## Node
 
+### image_publisher
 
+Node to publish sensor_msgs/Image, requires filename argument.
 
-```clearsilver
-node.0 {
-  name = image_publisher
-  desc = Node to publish sensor_msgs/Image, requires filename argument.
-  pub {
-    0.name = image_raw
-    0.type = sensor_msgs/Image
-    0.desc = ROS Image message of your input file.
-    1.name = camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = CameraInfo published along with Image
-  }
+#### Published Topics
 
-  param {
-    0.name = filename
-    0.type = string
-    0.default = ""
-    0.desc = Name of image file to be published.
-    1.name = flip_horizontal
-    1.type = bool
-    1.default = false
-    1.desc = Flip output image horizontally.
-    2.name = flip_vertical
-    2.type = bool
-    2.default = false
-    2.desc = Flip output image vertically.
-    3.name = frame_id
-    3.type = string
-    3.default = "camera"
-    3.desc = Frame id inserted in published image and camera_info.
-    4.name = publish_rate
-    4.type = double
-    4.default = 10
-    4.desc = Rate to publish image (hz).
-    5.name = camera_info_uri
-    5.type = string
-    5.default = ""
-    5.desc = Path to camera info.
-  }
+- `image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  ROS Image message of your input file.
+- `camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  CameraInfo published along with Image
 
-}
-```
+#### Parameters
 
-
+- `filename` (`string`, default: `""`): Name of image file to be
+  published.
+- `flip_horizontal` (`bool`, default: `false`): Flip output image
+  horizontally.
+- `flip_vertical` (`bool`, default: `false`): Flip output image
+  vertically.
+- `frame_id` (`string`, default: `"camera"`): Frame id inserted in
+  published image and camera_info.
+- `publish_rate` (`double`, default: `10`): Rate to publish image (hz).
+- `camera_info_uri` (`string`, default: `""`): Path to camera info.
 
 ## Nodelets
 
+### image_publisher/image_publisher
 
+Nodelet to publish sensor_msgs/Image
 
-```clearsilver
-node.0 {
-  name = image_publisher/image_publisher
-  desc = Nodelet to publish sensor_msgs/Image
-  pub {
-    0.name = image_raw
-    0.type = sensor_msgs/Image
-    0.desc = ROS Image message of your input file.
-    1.name = camera_info
-    1.type = sensor_msgs/CameraInfo
-    1.desc = CameraInfo published along with Image
-  }
-  param {
-    0.name = Same as image_publisher node
-  }
-```
+#### Published Topics
+
+- `image_raw`
+  ([sensor_msgs/msg/Image](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Image.html)):
+  ROS Image message of your input file.
+- `camera_info`
+  ([sensor_msgs/msg/CameraInfo](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/CameraInfo.html)):
+  CameraInfo published along with Image
+
+#### Parameters
+
+- `Same as image_publisher node`

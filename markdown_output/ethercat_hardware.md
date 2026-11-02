@@ -37,31 +37,29 @@ board has the following features:
 
 ## ROS API
 
-<a id="NodeApi"></a> 
+<a id="NodeApi"></a>
 
-```clearsilver
-node.0 {
-name=ethercat_hardware
-desc=`ethercat_hardware` is a driver for the EtherCAT motor controller boards (MCBs).  The driver handles all initialization, communication, and diagnostic reporting for the MCBs.  The driver currently supports four board types (WG005, WG006, WG014, and WG021)
+### ethercat_hardware
 
-pub{
-0.name= diagnostics
-0.type= diagnostic_msgs/DiagnosticStatus
-0.desc= Diagnostic status information.
-1.name= accelerometer
-1.type= pr2_msgs/AccelerometerState
-1.desc= Accelerometer data from a WG006 board (gripper)
-2.name= pressure
-2.type= pr2_msgs/PressureState
-2.desc= Fingertip pressure sensor data from a WG006 board (gripper)
-3.name= motors_halted
-3.type= std_msgs/Bool
-3.desc= A boolean value indicating if the motors have been halted
-}
-}
-```
+`ethercat_hardware` is a driver for the EtherCAT motor controller
+boards (MCBs). The driver handles all initialization, communication, and
+diagnostic reporting for the MCBs. The driver currently supports four
+board types (WG005, WG006, WG014, and WG021)
 
+#### Published Topics
 
+- `diagnostics`
+  ([diagnostic_msgs/msg/DiagnosticStatus](https://docs.ros.org/en/rolling/p/diagnostic_msgs/msg/DiagnosticStatus.html)):
+  Diagnostic status information.
+- `accelerometer`
+  ([pr2_msgs/msg/AccelerometerState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/AccelerometerState.html)):
+  Accelerometer data from a WG006 board (gripper)
+- `pressure`
+  ([pr2_msgs/msg/PressureState](https://docs.ros.org/en/rolling/p/pr2_msgs/msg/PressureState.html)):
+  Fingertip pressure sensor data from a WG006 board (gripper)
+- `motors_halted`
+  ([std_msgs/msg/Bool](https://docs.ros.org/en/rolling/p/std_msgs/msg/Bool.html)):
+  A boolean value indicating if the motors have been halted
 
 ## Command-line Tools
 
@@ -360,6 +358,10 @@ roscd pr2_power_board
 
 ## Changing the packet timeout and number of process data retries for pr2_etherCAT
 
+- **Description:** Changing the packet timeout and retries for
+  pr2_etherCAT
+- **Tutorial Level:** INTERMEDIATE
+
 #### Timeout
 
 An EtherCAT slave device never generates network traffic. The EtherCAT
@@ -465,6 +467,12 @@ This will change it for all users of your PR2.
 
 ## Setting up communication with a new EtherCAT device
 
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Integrating A New EtherCAT Device](#integrating-a-new-type-of-ethercat-device-with-ros).
+- **Description:** Second part of tutorial. Shows how to setup process
+  communication with new device.
+
 The previous tutorial added initial support for a mythical analog device
 with one 16bit analog input and one 16bit analog output. This tutorial
 will setup process communication with the new device.
@@ -510,6 +518,13 @@ The EtherCAT ASIC is connected to two Ethernet PHYs.
 #### Modify construct() function
 
 ## Using the 3-axis accelerometer on the PR2 gripper
+
+- **Description:** Introduction to the 3-axis accelerometer on the PR2
+  gripper
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Controller for gripper accelerometer](#writing-a-controller-for-the-gripper-accelerometer)
+  Writing controller for the accelerometer on the PR2 gripper.
 
 ### Introduction
 
@@ -576,7 +591,7 @@ average rate: 1000.191
 error state where they seem to sample at rates far about 3kHz. If the
 accelerometer topic always outputs messages 4 accelerometer samples then
 the accelerometer is in this error state. See
-[ Troubleshooting Gripper Accelerometer ](#troubleshootinggripperaccelerometer)
+[Troubleshooting Gripper Accelerometer](#troubleshootinggripperaccelerometer)
 for more information.
 
 #### With Controller
@@ -587,7 +602,7 @@ settings are with a controller.
 
 An example controller has been written to get users started and show how
 to change these settings. See
-[ Controller for gripper accelerometer](#writing-a-controller-for-the-gripper-accelerometer)
+[Controller for gripper accelerometer](#writing-a-controller-for-the-gripper-accelerometer)
 for the example.
 
 #### With diagnostics (pr2_dashboard)
@@ -614,7 +629,7 @@ inconstancies with the data.
 Currently, the only way to change the current range of the accelerometer
 you will need to write a controller plugin. Example code has been
 provided to get users started that shows how to change these settings:
-[ Controller for gripper accelerometer](#writing-a-controller-for-the-gripper-accelerometer).
+[Controller for gripper accelerometer](#writing-a-controller-for-the-gripper-accelerometer).
 
 #### Bandwidth
 
@@ -629,7 +644,7 @@ needed, use highest bandwidth setting and filter samples in software.
 **NOTE:** On older software releases, the bandwidth mistakenly defaulted
 to lowest value. On newer software releases the bandwidth setting
 defaults to highest value. See
-[ Troubleshooting Gripper Accelerometer ](#troubleshootinggripperaccelerometer)
+[Troubleshooting Gripper Accelerometer](#troubleshootinggripperaccelerometer)
 for more information on this bug.
 
 ### Orientation
@@ -644,9 +659,15 @@ the accelerometer X,Y,and Z axis.
 ### Troubleshooting
 
 See
-[ Troubleshooting Gripper Accelerometer ](#troubleshootinggripperaccelerometer)
+[Troubleshooting Gripper Accelerometer](#troubleshootinggripperaccelerometer)
 
 ## Writing a controller for the gripper accelerometer.
+
+- **Note:** This tutorial assumes that you have completed the previous
+  tutorials:
+  [Writing a Real-Time Joint Controller](https://index.ros.org/p/pr2_mechanism).
+- **Description:** Writing a real-time controller for the gripper
+  accelerometer.
 
 ### Introduction
 
@@ -971,11 +992,16 @@ refer to the real-time joint controller tutorial here:
 
 ## Integrating a new type of EtherCAT device with ROS.
 
-This tutorial shows the steps needed to integrate an new type of
-EtherCAT device into and ethercat_hardware and pr2_etherCAT. This
-tutorial integrates an imaginary EtherCAT device with one 16bit analog
-input and one 16bit analog output. The imaginary EtherCAT device is
-assumed to have a product ID of **1234567**.
+- **Description:** First part of tutorial. Provides minimal code needed
+  to get pr2_etherCAT to recognize a new type of device.
+- **Tutorial Level:** INTERMEDIATE
+- **Next Tutorial:**
+  [Settingup Communication With A New EtherCAT Device](#setting-up-communication-with-a-new-ethercat-device)
+  This tutorial shows the steps needed to integrate an new type of
+  EtherCAT device into and ethercat_hardware and pr2_etherCAT. This
+  tutorial integrates an imaginary EtherCAT device with one 16bit analog
+  input and one 16bit analog output. The imaginary EtherCAT device is
+  assumed to have a product ID of **1234567**.
 
 ### Getting ROS
 
@@ -1002,7 +1028,7 @@ chmod 755 ~/rosinstall
 
 To verify the new EtherCAT device is connected properly, run
 pr2_etherCAT before writing any code. Go through
-[ this tutorial](pr2_etherCAT/Tutorials/Running ) for instruction on
+[this tutorial](pr2_etherCAT/Tutorials/Running) for instruction on
 building and running pr2_etherCAT.
 
 On startup, pr2_etherCAT will read the product ID, serial number, and
@@ -1250,7 +1276,7 @@ each device, a setup function will try to match the device to a plugin
 using its product code. The code snippet registers `MyDevice` as a
 plugin for any device with the product code **1234567**. There is more
 information on pluginlib available
-[ here](https://index.ros.org/p/pluginlib).
+[here](https://index.ros.org/p/pluginlib).
 
 `construct()` is supposed to configure the EtherCAT !SyncManagers and
 Fieldbus Memory Mannegment Units (FMMU) for a given device. This
@@ -1397,6 +1423,9 @@ that is provided by `EthercatDevice::ethercatDiagnostics()`
 
 ## Understanding the motor model
 
+- **Description:** Understanding motor model checks, and motor trace.
+- **Tutorial Level:** INTERMEDIATE
+
 ### Introduction
 
 All of the PR2 motor control board (MCB) drivers use an electrical model
@@ -1522,10 +1551,13 @@ On the PR2 robot the motor trace is recorded along with diagnostics to a
 bag file. By looking at the motor trace data it is sometimes possible to
 determine what the problem with a motor might have been.
 
-The [ mtrace_plot](mtrace_tools/Tutorials/MtracePlot ) tool can be used
-to plot motor trace data.
+The [mtrace_plot](mtrace_tools/Tutorials/MtracePlot) tool can be used to
+plot motor trace data.
 
 ## Using Force/Torque sensor with WG035 and pr2_etherCAT
+
+- **Description:** Using Force/Torque sensor with WG035 and pr2_etherCAT
+- **Tutorial Level:** INTERMEDIATE
 
 ### Introduction
 
@@ -1675,7 +1707,7 @@ The gripper motor controller board (MCB) uses a newer version of firmware that i
 There is a overlay of pr2_etherCAT drivers that should support gripper
 FW 2.xx Copy the following to ft_electric.rosinstall. You can download
 the file with this
-[ link](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=ft_electric.rosinstall ).
+[link](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=ft_electric.rosinstall).
 
 
 
@@ -1764,10 +1796,10 @@ cp robot_uncalibrated_1.8.2.xml robot_uncalibrated_1.8.2_ft.xml
 
 
 The patch for adding a left F/T sensor can be downloaded here:
-[ robot_urdf_left_ft.patch](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=robot_urdf_left_ft.patch ).
+[robot_urdf_left_ft.patch](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=robot_urdf_left_ft.patch).
 
 The patch for adding a right F/T sensor can be downloaded here:
-[ robot_urdf_right_ft.patch](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=robot_urdf_right_ft.patch ).
+[robot_urdf_right_ft.patch](http://www.ros.org/wiki/ethercat_hardware/Tutorials/UsingForceTorqueSensorWithWG035?action=AttachFile&do=get&target=robot_urdf_right_ft.patch).
 
 Patch the URDF with left F/T sensor: 
 

@@ -38,101 +38,115 @@ the parameters are exactly the same as the other a part from
 
 <a id="control_bringup"></a>
 
+### control_bringup
 
-```clearsilver
-name = control_bringup
-desc = This launch file starts the device control node with the given parameters.
-param {
-  0.name = control_action
-  0.type = string
-  0.desc = The type of the control action without the namespace prefix and the "_trajectory_controller/follow_joint_trajectory" suffix (e.g. `foo` if it is `<namespace>_foo_trajectory_controller/follow_joint_trajectory`). The namespace alone is not sufficient since a device can implement several distinct actions.
-  0.default = empty string
-  1.name = control_duration
-  1.type = double
-  1.desc = The duration of the control loop, in [s].
-  1.default = 0.01
-  2.name = device_id
-  2.type = int
-  2.desc = The device ID, in range [`1`, `128`].
-  2.default = 1
-  3.name = device_control
-  3.type = string
-  3.desc = The base package name prefix (without "_control") of the control node (e.g. `qb_device` if it is `qb_device_control`).
-  4.name = device_namespace
-  4.type = string
-  4.desc = The device namespace used to avoid name clashes among same-type devices. It must be the same prefix used in the description because the control node searches for structures with this prefix (e.g. joint names).
-  5.name = use_waypoints
-  5.type = bool
-  5.desc = Selects whether to automatically control the device by looping on the given waypoints. If `true` the waypoints are expected to be stored in the Parameter Server under `~waypoints`.
-  5.default = false
-  6.name = waypoint_namespace
-  6.type = string
-  6.desc = The namespace prefix (without "_waypoints.yaml") of the waypoints configuration file (e.g. `my_device` if it is `my_device_waypoints.yaml`). The file must be located in the `config/` subdirectory of the selected `_control` package. In addition, the namespaced joint names inside should be consistent with the ones specified in the description bringup, usually the share the same namespace.
-  7.name = waypoint_settings
-  7.type = string
-  7.desc = The base package name prefix (without "_control") where the waypoint yaml file is stored (e.g. `qb_device` if it is `qb_device_control`).
-}
-```
+This launch file starts the device control node with the given
+parameters.
 
+#### Parameters
 
+- `control_action` (`string`, default: `empty string`): The type of the
+  control action without the namespace prefix and the
+  "_trajectory_controller/follow_joint_trajectory" suffix (e.g.
+  `foo` if it is
+  `<namespace>_foo_trajectory_controller/follow_joint_trajectory`).
+  The namespace alone is not sufficient since a device can implement
+  several distinct actions.
+- `control_duration` (`double`, default: `0.01`): The duration of the
+  control loop, in \[s\].
+- `device_id` (`int`, default: `1`): The device ID, in range \[`1`,
+  `128`\].
+- `device_control` (`string`): The base package name prefix (without
+  "_control") of the control node (e.g. `qb_device` if it is
+  `qb_device_control`).
+- `device_namespace` (`string`): The device namespace used to avoid name
+  clashes among same-type devices. It must be the same prefix used in
+  the description because the control node searches for structures with
+  this prefix (e.g. joint names).
+- `use_waypoints` (`bool`, default: `false`): Selects whether to
+  automatically control the device by looping on the given waypoints. If
+  `true` the waypoints are expected to be stored in the Parameter
+  Server under `waypoints`.
+- `waypoint_namespace` (`string`): The namespace prefix (without
+  "_waypoints.yaml") of the waypoints configuration file (e.g.
+  `my_device` if it is `my_device_waypoints.yaml`). The file must be
+  located in the `config/` subdirectory of the selected `_control`
+  package. In addition, the namespaced joint names inside should be
+  consistent with the ones specified in the description bringup, usually
+  the share the same namespace.
+- `waypoint_settings` (`string`): The base package name prefix (without
+  "_control") where the waypoint yaml file is stored (e.g.
+  `qb_device` if it is `qb_device_control`).
 
 <a id="controllers_bringup"></a>
 
+### controllers_bringup
 
-```clearsilver
-name = controllers_bringup
-desc = This launch file just calls the [[qb_device_control#spawner_template|spawner_template]] to bringup the device controllers including the [[rqt_joint_trajectory_controller]] GUI if requested.
-param {
-  0.name = controllers
-  0.type = string
-  0.desc = The list of names of the controllers to be spawned (e.g. `*_trajectory_controller`)
-  1.name = controllers_namespace
-  1.type = string
-  1.desc = The namespace prefix (without "_controllers.yaml") of the controller configuration file, necessary with many devices (e.g. `my_device` if it is `my_device_controllers.yaml`). The file must be located in the `config/` subdirectory of the selected `_control` package. In addition, the joint names inside should be consistent with the ones specified in the description bringup, usually the share the same namespace.
-  2.name = controllers_settings
-  2.type = string
-  2.desc = The base package name prefix (without "_control") where controller settings are stored (e.g. `qb_device` if it is `qb_device_control`).
-  3.name = use_controller_gui
-  3.type = bool
-  3.desc = Selects whether to load joint trajectory controller GUI.
-  3.default = false
-}
-```
+This launch file just calls the
+[spawner_template](https://index.ros.org/p/qb_device_control) to bringup
+the device controllers including the
+[rqt_joint_trajectory_controller](https://index.ros.org/p/rqt_joint_trajectory_controller)
+GUI if requested.
 
+#### Parameters
 
+- `controllers` (`string`): The list of names of the controllers to be
+  spawned (e.g. `\*_trajectory_controller`)
+- `controllers_namespace` (`string`): The namespace prefix (without
+  "_controllers.yaml") of the controller configuration file,
+  necessary with many devices (e.g. `my_device` if it is
+  `my_device_controllers.yaml`). The file must be located in the
+  `config/` subdirectory of the selected `_control` package. In
+  addition, the joint names inside should be consistent with the ones
+  specified in the description bringup, usually the share the same
+  namespace.
+- `controllers_settings` (`string`): The base package name prefix
+  (without "_control") where controller settings are stored (e.g.
+  `qb_device` if it is `qb_device_control`).
+- `use_controller_gui` (`bool`, default: `false`): Selects whether to
+  load joint trajectory controller GUI.
 
 <a id="description_bringup"></a>
 
+### description_bringup
 
-```clearsilver
-name = description_bringup
-desc = This launch file packs together the [[qb_device_description#load_description_template|load_description_template]] and the [[qb_device_description#state_publisher_template|state_publisher_template]] to bringup all the device description including [[joint_state_publisher]] and [[robot_state_publisher]]. If specified also starts [[rviz]].
-param {
-  0.name = device_description
-  0.type = string
-  0.desc = The base package name prefix (without "_description") where robot models are stored (e.g. `qb_device` if it is `qb_device_description`).
-  1.name = device_namespace
-  1.type = string
-  1.desc = The namespace prefix of joints and links, necessary with many devices (e.g. `my_device` creates a robot model composed by `my_device_joint_...` and  `my_device_link_...` elements).
-  2.name = device_urdf
-  2.type = string
-  2.desc = The name of the [[xacro]] URDF model file to be loaded, without extension (e.g. `qb_device` if it is `qb_device.urdf.xacro.`). The file must be located in the `urdf/` subdirectory of the selected `_description` package.
-  3.name = frequency
-  3.type = int
-  3.desc = The publish frequency in `Hz` of the joint state and the robot state publishers.
-  3.default = 100
-  4.name = source_list
-  4.type = string
-  4.desc = The joint state source list for the [[joint_state_publisher]] (including square braces).
-  4.default = [joint_states]
-  5.name = use_rviz
-  5.type = bool
-  5.desc = Selects whether to load [[rviz]]. If `true`, searches for the configuration file with the same name as the one specified in `device_urdf` which must be located in the `rviz/` subdirectory of the selected `_description` package (i.e. it is recommended to create a specific file for each robot model). If not specified, uses the default configuration.
-  5.default = true
-}
-```
+This launch file packs together the
+[load_description_template](https://index.ros.org/p/qb_device_description)
+and the
+[state_publisher_template](https://index.ros.org/p/qb_device_description)
+to bringup all the device description including
+[joint_state_publisher](https://index.ros.org/p/joint_state_publisher)
+and
+[robot_state_publisher](https://index.ros.org/p/robot_state_publisher).
+If specified also starts [rviz](https://index.ros.org/p/rviz).
 
+#### Parameters
 
+- `device_description` (`string`): The base package name prefix (without
+  "_description") where robot models are stored (e.g. `qb_device`
+  if it is `qb_device_description`).
+- `device_namespace` (`string`): The namespace prefix of joints and
+  links, necessary with many devices (e.g. `my_device` creates a robot
+  model composed by `my_device_joint_\...` and
+  `my_device_link_\...` elements).
+- `device_urdf` (`string`): The name of the
+  [xacro](https://index.ros.org/p/xacro) URDF model file to be loaded,
+  without extension (e.g. `qb_device` if it is
+  `qb_device.urdf.xacro.`). The file must be located in the `urdf/`
+  subdirectory of the selected `_description` package.
+- `frequency` (`int`, default: `100`): The publish frequency in `Hz`
+  of the joint state and the robot state publishers.
+- `source_list` (`string`, default: `[joint_states]`): The joint state
+  source list for the
+  [joint_state_publisher](https://index.ros.org/p/joint_state_publisher)
+  (including square braces).
+- `use_rviz` (`bool`, default: `true`): Selects whether to load
+  [rviz](https://index.ros.org/p/rviz). If `true`, searches for the
+  configuration file with the same name as the one specified in
+  `device_urdf` which must be located in the `rviz/` subdirectory of
+  the selected `_description` package (i.e. it is recommended to
+  create a specific file for each robot model). If not specified, uses
+  the default configuration.
 
 ### full_bringup
 

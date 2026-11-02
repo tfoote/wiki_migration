@@ -80,24 +80,25 @@ ROS_NAMESPACE=leo1 rosrun leo_teleop key_teleop
 
 ## Nodes
 
+### odom_relay
 
+A simple node which relays odometry calculated by
+[diff_drive_controller](https://index.ros.org/p/diff_drive_controller)
+to topics which are used by the
+[firmware](https://index.ros.org/p/leo_fw) on the real robot.
 
-```clearsilver
-name= odom_relay
-desc= A simple node which relays odometry calculated by [[diff_drive_controller]] to topics which are used by the [[leo_fw|firmware]] on the real robot.
-sub {
-  0.name= controllers/diff_drive/odom
-  0.type= nav_msgs/Odometry
-  0.desc= Odometry computed by the differential drive controller.
-}
-pub {
-  0.name= wheel_odom
-  0.type= geometry_msgs/TwistStamped
-  0.desc= Current linear and angular velocity estimated from simulated wheel positions.
-}
-```
+#### Subscribed Topics
 
+- `controllers/diff_drive/odom`
+  ([nav_msgs/msg/Odometry](https://docs.ros.org/en/rolling/p/nav_msgs/msg/Odometry.html)):
+  Odometry computed by the differential drive controller.
 
+#### Published Topics
+
+- `wheel_odom`
+  ([geometry_msgs/msg/TwistStamped](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/TwistStamped.html)):
+  Current linear and angular velocity estimated from simulated wheel
+  positions.
 
 ## Launch files
 

@@ -69,107 +69,71 @@ additional odometry is provided.
 
 ## Nodes
 
+### psm_node
 
+The `psm_node` takes in
+[sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)
+messages, performs scan registration, and outputs an estimate for the
+displacement of the robot.
 
-```clearsilver
- name = psm_node
- desc = The `psm_node` takes in <<MsgLink(sensor_msgs/LaserScan)>> messages, performs scan registration, and outputs an estimate for the displacement of the robot.
-sub {
-   0{
-    name = scan
-    type = sensor_msgs/LaserScan
-    desc = Scans from a laser range-finder
-    }
-   1{
-    name = imu
-    type = sensor_msgs/Imu
-    desc = Imu messages, used for theta estimation. Only used if `odometry_type` is set to `imu`.
-    }
-  }
-pub {
-   0{
-    name = pose2D
-    type = geometry_msgs/Pose2D
-    desc = The pose of the base frame, in some fixed (world) frame.
-   }
-  }
+#### Subscribed Topics
 
-param{
+- `scan`
+  ([sensor_msgs/msg/LaserScan](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/LaserScan.html)):
+  Scans from a laser range-finder
+- `imu`
+  ([sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)):
+  Imu messages, used for theta estimation. Only used if
+  `odometry_type` is set to `imu`.
 
-    1.name = ~world_frame
-    1.type = string
-    1.default = `"world"`
-    1.desc = the fixed frame
+#### Published Topics
 
-    2.name = ~base_frame
-    2.type = string
-    2.default = `"base_link"`
-    2.desc = the base frame of the robot
+- `pose2D`
+  ([geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)):
+  The pose of the base frame, in some fixed (world) frame.
 
-    3.name = ~publish_tf
-    3.type = bool
-    3.default = `true`
-    3.desc = whether to publish scan matcher's estimation for the position of the base frame in the world frame as a transform. Disable this if some other node is already publishing an odometric estimation.
+#### Parameters
 
-    4.name = ~publish_pose
-    4.type = bool
-    4.default = `true`
-    4.desc = whether to publish scan matcher's estimation for the position of the base frame in the world frame as a <<MsgLink(geometry_msgs/Pose2D)>>
+- `~world_frame` (`string`, default: `"world"`): the fixed frame
+- `~base_frame` (`string`, default: `"base_link"`): the base frame
+  of the robot
+- `~publish_tf` (`bool`, default: `true`): whether to publish scan
+  matcher's estimation for the position of the base frame in the world
+  frame as a transform. Disable this if some other node is already
+  publishing an odometric estimation.
+- `~publish_pose` (`bool`, default: `true`): whether to publish scan
+  matcher's estimation for the position of the base frame in the world
+  frame as a
+  [geometry_msgs/msg/Pose2D](https://docs.ros.org/en/rolling/p/geometry_msgs/msg/Pose2D.html)
+- `~odometry_type` (`string`, default: "`none`"): If "`none`",
+  the scan matcher will not use any estimate for the displacement
+  between scans. If "`imu`", the matcher will use as an estimate the
+  yaw value of
+  [sensor_msgs/msg/Imu](https://docs.ros.org/en/rolling/p/sensor_msgs/msg/Imu.html)
+  messages published on a topic called "`imu`". If "`tf`", the
+  matcher will use as an estimate the x, y, and yaw value of a tf
+  transform between the `world` and `base` frames.
+- `~min_valid_points` (`int`, default: `200`): the minimum valid
+  points required to perform a scan match
+- `~search_window` (`int`, default: `40`): the window in which to
+  search for a match for the rotation. The units are number of laser
+  scan beams.
+- `~max_error` (`double`, default: `0.20`): the maximum distance, in
+  meters, for correlating two points.
+- `~max_iterations` (`int`, default: `20`): the maximum number of
+  algorithm iterations
+- `~stop_condition` (`double`, default: `0.01`): the stop condition,
+  in meters, for the variance of the error
 
-    5.name = ~odometry_type
-    5.type = string
-    5.default = "`none`"
-    5.desc = If "`none`", the scan matcher will not use any estimate for the displacement between scans. If "`imu`", the matcher will use as an estimate the yaw value of <<MsgLink(sensor_msgs/Imu)>> messages published on a topic called "`imu`". If "`tf`", the matcher will use as an estimate the x, y, and yaw value of a tf transform between the `world` and `base` frames.
+#### Required tf Transforms
 
-    6.name = ~min_valid_points
-    6.type = int
-    6.default = `200`
-    6.desc = the minimum valid points required to perform a scan match
+- `base_link` → `laser`: the pose of the laser in the base frame. Only
+  needed when `use_odometry` is enabled.
 
-    7.name = ~search_window
-    7.type = int
-    7.default = `40`
-    7.desc = the window in which to search for a match for the rotation. The units are number of laser scan beams.
+#### Provided tf Transforms
 
-    8.name = ~max_error
-    8.type = double
-    8.default = `0.20`
-    8.desc = the maximum distance, in meters, for correlating two points.
-
-    9.name = ~max_iterations
-    9.type = int
-    9.default = `20`
-    9.desc = the maximum number of algorithm iterations
-
-    10.name = ~stop_condition
-    10.type = double
-    10.default = `0.01`
-    10.desc = the stop condition, in meters, for the variance of the error
-  }
-
- req_tf{
-  0{
-    from = world
-    to = base_link
-    desc = the pose of the robot base in the world frame. Only needed when `use_odometry` is enabled.
-  }
-  0{
-    from = base_link
-    to = laser
-    desc = the pose of the laser in the base frame. Only needed when `use_odometry` is enabled.
-  }
- }
-
- prov_tf{
-  0{
-    from = world
-    to = base_link
-    desc = the pose of the robot base in the world frame. Only provided when `publish_tf` is enabled.
-  }
- }
-```
-
-
+- `world` → `base_link`: the pose of the robot base in the world frame.
+  Only provided when `publish_tf` is enabled.
 
 ## References
 

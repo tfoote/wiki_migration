@@ -463,6 +463,88 @@ def filter_versions(content):
     )
 
 
+TAGGED_CODE_CACHE = "tagged_code_cache"
+_GET_TAGGED_CODE = re.compile(r"<<GetTaggedCode\((.*?)\)>>")
+_CODE_LANGUAGES = {"cplusplus": "cpp", "launch": "xml", "py": "python"}
+
+
+def parse_get_tagged_code(args):
+    """Parse GetTaggedCode(url, lang, TAG, options...) arguments."""
+    parts = [p.strip() for p in args.split(",")]
+    url = parts[0] if parts else ""
+    lang = parts[1] if len(parts) > 1 else ""
+    tag = parts[2] if len(parts) > 2 and parts[2] else "FULLTEXT"
+    options = set(parts[3:])
+    return url, lang, tag, options
+
+
+def tagged_code_cache_path(url):
+    """Local cache file for a GetTaggedCode source URL."""
+    parsed = urllib.parse.urlparse(url)
+    safe = re.sub(r"[^A-Za-z0-9._/-]", "_", parsed.netloc + parsed.path)
+    return os.path.join(TAGGED_CODE_CACHE, safe.strip("/"))
+
+
+def github_blob_url(url):
+    """raw.github(usercontent).com URL -> browsable github.com blob URL."""
+    m = re.match(r"https?://raw\.github(?:usercontent)?\.com/([^/]+)/([^/]+)/(.+)$", url)
+    return f"https://github.com/{m.group(1)}/{m.group(2)}/blob/{m.group(3)}" if m else url
+
+
+def extract_tagged_code(text, tag, unindent=False):
+    """Return the code between %Tag(tag)% and %EndTag(tag)% markers.
+
+    FULLTEXT returns the whole file. Lines holding any %Tag/%EndTag marker
+    are removed, as the wiki did. Returns None if the tag isn't found.
+    """
+    lines = text.replace("\r\n", "\n").split("\n")
+    if tag != "FULLTEXT":
+        start = next((i + 1 for i, l in enumerate(lines) if f"%Tag({tag})%" in l), None)
+        if start is None:
+            return None
+        end = next((i for i in range(start, len(lines))
+                    if f"%EndTag({tag})%" in lines[i]), None)
+        if end is None:
+            # Tolerate upstream typos: a mismatched %EndTag(...)% or a
+            # repeated %Tag(tag)% closes the block.
+            end = next((i for i in range(start, len(lines))
+                        if "%EndTag(" in lines[i] or f"%Tag({tag})%" in lines[i]),
+                       len(lines))
+        lines = lines[start:end]
+    lines = [l for l in lines if not re.search(r"%(End)?Tag\([^)]*\)%", l)]
+    code = "\n".join(lines).strip("\n")
+    if unindent:
+        import textwrap
+        code = textwrap.dedent(code)
+    return code
+
+
+def expand_get_tagged_code(content, code_blocks):
+    """Replace <<GetTaggedCode(...)>> with the cached code as a code block."""
+
+    def repl(match):
+        url, lang, tag, options = parse_get_tagged_code(match.group(1))
+        name = url.rstrip("/").rsplit("/", 1)[-1] or url
+        link = f"[[{github_blob_url(url)}|{name}]]"
+        path = tagged_code_cache_path(url)
+        code = None
+        if os.path.exists(path):
+            with open(path, "r", errors="ignore") as f:
+                code = extract_tagged_code(f.read(), tag, "unindent" in options)
+        if code is None:
+            print(f"Warning: GetTaggedCode: no cached code for {url} tag {tag}; "
+                  "linking instead (run fetch_tagged_code.py).")
+            return f"(See {link})"
+        lang = _CODE_LANGUAGES.get(lang, lang)
+        code_blocks.append(f"#!{lang}\n{code}" if lang else code)
+        placeholder = f"PLACEHOLDER_CODE_BLOCK_{len(code_blocks) - 1}"
+        if "show_uri" in options:
+            return f"Source: {link}\n\n{placeholder}"
+        return placeholder
+
+    return _GET_TAGGED_CODE.sub(repl, content)
+
+
 _all_page_names = None
 
 
@@ -633,6 +715,10 @@ def preprocess(content, current_page=None, attachments=None, doc=None):
         r"\{\{\{(?![^\n]*\}\}\})(.*?)\}\}\}", code_block_repl, content, flags=re.DOTALL,
     )
 
+    # Embed <<GetTaggedCode(...)>> snippets from the local cache as code
+    # blocks (added straight to code_blocks so the code is never reformatted).
+    content = expand_get_tagged_code(content, code_blocks)
+
     # 2. Rewrite links to indexed packages and attachments (code blocks are
     # already extracted, so their contents are untouched).
     content = rewrite_links(content, current_page, attachments, doc)
@@ -742,25 +828,25 @@ def postprocess(content, code_blocks):
     content = content.replace(r"\<", "<")
     content = content.replace(r"\>", ">")
 
-    # Restore code blocks from placeholders
-    for i, block in enumerate(code_blocks):
-        placeholder = f"PLACEHOLDER_CODE_BLOCK_{i}"
-        # Pandoc might escape underscores! So we check for both!
-        escaped_placeholder = placeholder.replace("_", r"\_")
-        
-        # We want to convert it to a fenced code block in Markdown!
-        # If the block starts with #!, we can use it as language!
+    # Restore code blocks from placeholders. Done in a single regex pass that
+    # matches the whole number, so PLACEHOLDER_CODE_BLOCK_1 can't match the
+    # start of PLACEHOLDER_CODE_BLOCK_12 (pandoc may escape the underscores).
+    def code_block_replacement(match):
+        i = int(match.group(1))
+        if i >= len(code_blocks):
+            return match.group(0)
+        block = code_blocks[i]
+        # If the block starts with #!, use it as the language.
         lines = block.strip().split("\n")
         if lines and lines[0].startswith("#!"):
             lang = lines[0][2:].strip().split()[0]
             body = "\n".join(lines[1:])
-            replacement = f"\n\n```{lang}\n{body}\n```\n\n"
-        else:
-            replacement = f"\n\n```\n{block.strip()}\n```\n\n"
-            
-        # Replace in content!
-        content = content.replace(placeholder, replacement)
-        content = content.replace(escaped_placeholder, replacement)
+            return f"\n\n```{lang}\n{body}\n```\n\n"
+        return f"\n\n```\n{block.strip()}\n```\n\n"
+
+    content = re.sub(
+        r"PLACEHOLDER\\?_CODE\\?_BLOCK\\?_(\d+)(?!\d)", code_block_replacement, content
+    )
 
     # Rest of postprocess
     lines = content.split("\n")
@@ -908,6 +994,35 @@ def render_manifest(attachments):
     return yaml.safe_dump(dict(sorted(attachments.items())), default_flow_style=False)
 
 
+def generated_hashes_path():
+    """Records the hash of every Markdown file this script last wrote."""
+    return os.path.join(output_dir, ".generated_hashes.yaml")
+
+
+def content_hash(text):
+    import hashlib
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def load_generated_hashes():
+    return load_yaml(generated_hashes_path())
+
+
+def save_generated_hashes(hashes):
+    with open(generated_hashes_path(), "w") as f:
+        f.write("# Maintained by convert_to_markdown.py: sha256 of each file as last generated.\n")
+        yaml.safe_dump(dict(sorted(hashes.items())), f, default_flow_style=False)
+
+
+def is_unmodified_output(path, hashes):
+    """True if `path` is exactly what this script last generated for it."""
+    recorded = hashes.get(os.path.normpath(path))
+    if not recorded or not os.path.exists(path):
+        return False
+    with open(path, "r") as f:
+        return content_hash(f.read()) == recorded
+
+
 def git_modified_files(path):
     """Return the set of files under path with uncommitted git changes."""
     try:
@@ -973,12 +1088,14 @@ def main(argv=None):
     os.makedirs(output_dir, exist_ok=True)
     submitted = set(load_yaml(submitted_file))
     dirty = git_modified_files(output_dir)
+    generated = load_generated_hashes()
     only = set(args.only) if args.only else None
 
     stats = {"unchanged": 0, "updated": 0, "created": 0, "failed": 0,
              "skipped_submitted": 0, "skipped_edited": 0, "skipped_dirty": 0,
              "missing_source": 0}
     changed = []
+    skipped_dirty = []
 
     for yaml_file in yaml_files:
         data = load_yaml(yaml_file)
@@ -998,9 +1115,13 @@ def main(argv=None):
                     print(f"Skipping {key}: marked 'edited: true' in {yaml_file}.")
                     stats["skipped_edited"] += 1
                     continue
-                if os.path.normpath(dst_file) in dirty:
-                    print(f"Skipping {key}: {dst_file} has uncommitted changes.")
+                # Uncommitted changes only block regeneration if they aren't
+                # simply the output of an earlier run of this script.
+                if (os.path.normpath(dst_file) in dirty
+                        and not is_unmodified_output(dst_file, generated)):
+                    print(f"Skipping {key}: {dst_file} has uncommitted manual changes.")
                     stats["skipped_dirty"] += 1
+                    skipped_dirty.append(key)
                     continue
 
             src_file = value.get("source_file")
@@ -1030,6 +1151,8 @@ def main(argv=None):
                     existing = f_old.read()
             if existing == final_markdown and old_manifest == manifest:
                 stats["unchanged"] += 1
+                if not args.dry_run:
+                    generated[os.path.normpath(dst_file)] = content_hash(final_markdown)
                 continue
 
             stats["created" if existing is None else "updated"] += 1
@@ -1037,6 +1160,7 @@ def main(argv=None):
             if not args.dry_run:
                 with open(dst_file, "w") as f_out:
                     f_out.write(final_markdown)
+                generated[os.path.normpath(dst_file)] = content_hash(final_markdown)
                 if manifest is not None:
                     with open(manifest_file, "w") as f_out:
                         f_out.write(manifest)
@@ -1051,10 +1175,18 @@ def main(argv=None):
             with open(yaml_file, "w") as f:
                 yaml.dump(data, f, default_flow_style=False, sort_keys=True)
 
+    if not args.dry_run:
+        save_generated_hashes(generated)
+
     verb = "Would change" if args.dry_run else "Changed"
     print(f"\n{verb} {len(changed)} file(s):")
     for path in changed:
         print(f"  {path}")
+    if skipped_dirty:
+        print(f"\nNOT regenerated ({len(skipped_dirty)}) because their Markdown has "
+              f"uncommitted manual changes: {', '.join(skipped_dirty)}\n"
+              "  Commit or revert those files, or rerun with --force-edited "
+              "(e.g. --only <pkg> --force-edited) to overwrite them.")
     print("Summary: " + ", ".join(f"{k}={v}" for k, v in stats.items()))
     return 0
 

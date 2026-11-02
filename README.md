@@ -70,6 +70,8 @@ pages/
 | `find_current_pages.py` | Scans `pages/` for top-level pages tagged with `CategoryPackage` and generates `current_pages.yaml`. |
 | `find_macros.py` | Utility script that scans `current_pages.yaml` source files and reports MoinMoin `<<Macro>>` prevalence. |
 | `fetch_index_packages.py` | Builds `index_packages.yaml` (every released package, i.e. everything on index.ros.org) from the rosdistro index and distribution caches. Requires network access. |
+| `fetch_tagged_code.py` | Downloads the source files referenced by `<<GetTaggedCode(...)>>` in exported pages into `tagged_code_cache/`. Requires network access. |
+| `tagged_code_cache/` | Cached source files used to embed `GetTaggedCode` snippets offline. |
 | `index_packages.yaml` | Package name → distros list used by `convert_to_markdown.py` to rewrite wiki package links to `https://index.ros.org/p/<package>`. |
 | `convert_to_markdown.py` | Preprocesses MoinMoin syntax, runs `pandoc`, postprocesses output, and writes `markdown_output/<pkg>.md` for entries in the review queues, skipping submitted and manually edited pages. |
 | `correlate_packages.py` | Matches packages in a YAML file against the ROS Noetic `rosdistro` index and queries GitHub for `package.xml`, `README.md`, and archive status. |
@@ -121,7 +123,7 @@ python3 convert_to_markdown.py --only bond tf2    # convert specific packages
 - These are never overwritten, so in-progress reviews are safe:
   - packages listed in `submitted_pages.yaml`
   - entries marked `edited: true` (set by `review_packages.py`)
-  - Markdown files with uncommitted git changes
+  - Markdown files with uncommitted git changes that aren't simply this script's own output. The converter records a hash of every file it writes in `markdown_output/.generated_hashes.yaml`, so uncommitted output from an earlier run is still regenerated, but a file edited by hand afterwards is skipped. Skipped files are listed at the end of the run.
 - `--force-edited` overrides the last two (submitted packages are still skipped).
 
 **Links and attachments:**
@@ -129,6 +131,11 @@ python3 convert_to_markdown.py --only bond tf2    # convert specific packages
 - **Subpages are appended:** when a page links to one of its own subpages (e.g. `[[/Tutorials]]`, `[[mypkg/MeanFilter]]`), that subpage is converted and appended to the same README as a `## <subpage>` section. Its headings are demoted, and a tutorial's `## title =` is used as the section heading when it has one. Subpages linked from appended subpages are appended too (no limit by default; `convert_file(..., max_subpages=N)` can cap it). Tutorial listings that MoinMoin generates at view time (`<<FullSearch*(title:"pkg/Tutorials/" SomeCategory)>>`, `<<TutorialChain(...)>>`) are expanded into static link lists with descriptions, so the listed tutorials get appended too.
 - **Standard subpages are always considered:** MoinMoin's `<<PackageHeader>>` linked `pkg/Tutorials`, `pkg/Troubleshooting` and `pkg/FAQ` automatically. These are appended even when the page doesn't link them, but only if they have real content (a tutorial listing that finds tutorials, or more than headings, macros and the "No troubleshooting tips have been added…" boilerplate).
 - **Never appended:** `Reviews` (API/doc reviews), `ChangeList`/`ChangeLog`, and old-distro pages (`cturtle` … `melodic`). Links to them go to the package's index.ros.org page. Translated pages (`ja/pkg`, `cn/pkg`, …) are not exported.
+
+**Embedded code (`GetTaggedCode`):**
+- `<<GetTaggedCode(url, lang, TAG, options)>>` is replaced with the code between `%Tag(TAG)%` and `%EndTag(TAG)%` in the cached source file (`FULLTEXT` = whole file), as a fenced code block. Lines holding tag markers are removed. `unindent` dedents the snippet, and `show_uri` adds a `Source:` link to the file on github.com. `cplusplus` maps to `cpp` and `launch` to `xml`. Line numbers (`global_lines`) aren't reproduced.
+- A mismatched `%EndTag(...)%` or a repeated `%Tag(TAG)%` closes a snippet (some upstream files have such typos).
+- Run `python3 fetch_tagged_code.py` (needs network) to fill `tagged_code_cache/` before converting. A macro whose file isn't cached becomes `(See <link>)`.
 - **Same-document links become Markdown anchors:** links to sections of the same page (`[[#Usage]]`, `[[mypkg#Usage]]`, MoinMoin `head-<sha1>` or UTF-7-encoded ids) and to appended subpages are resolved to GitHub heading anchors (`#usage`). `<<Anchor(name)>>` becomes `<a id="name"></a>`. A link to the page itself with no section, or to a section that can't be found, is reduced to its text.
 - `{{attachment:file}}` images and `[[attachment:file|...]]` links whose file exists in `pages/<page>/attachments/` become relative `doc/<file>` links (spaces become `_`). The mapping is written to `markdown_output/<package>.attachments.yaml`, and `submit_prs.py` commits those files into `<package>/doc/`. Attachments of included pages are resolved against the included page.
 - Files are only rewritten when the content changes, and the queue YAML files are never modified, so it is safe to run alongside `review_packages.py`.

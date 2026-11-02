@@ -240,6 +240,68 @@ class TestStandardSubpages(WikiDumpTestCase):
         self.assertIn("https://index.ros.org/p/mypkg", md)
 
 
+class TestGetTaggedCode(WikiDumpTestCase):
+    URL = "https://raw.github.com/ros/ros_tutorials/kinetic-devel/roscpp_tutorials/talker/talker.cpp"
+    SOURCE = (
+        "// %Tag(FULLTEXT)%\n"
+        "#include \"ros/ros.h\"\n"
+        "int main() {\n"
+        "  // %Tag(INIT)%\n"
+        "  ros::init(argc, argv, \"talker\");\n"
+        "  // %EndTag(INIT)%\n"
+        "  if (a) {{{ }}}\n"
+        "}\n"
+        "// %EndTag(FULLTEXT)%\n"
+    )
+
+    def setUp(self):
+        super().setUp()
+        path = ctm.tagged_code_cache_path(self.URL)
+        os.makedirs(os.path.dirname(path))
+        with open(path, "w") as f:
+            f.write(self.SOURCE)
+
+    def test_extract_tag_and_fulltext(self):
+        self.assertEqual(ctm.extract_tagged_code(self.SOURCE, "INIT", unindent=True),
+                         'ros::init(argc, argv, "talker");')
+        full = ctm.extract_tagged_code(self.SOURCE, "FULLTEXT")
+        self.assertNotIn("%Tag", full)
+        self.assertIn("int main() {", full)
+        self.assertIsNone(ctm.extract_tagged_code(self.SOURCE, "NOPE"))
+
+    def test_tolerates_mismatched_end_tags(self):
+        src = "a\n// %Tag(X)%\nkeep\n// %EndTag(Y)%\nafter\n"
+        self.assertEqual(ctm.extract_tagged_code(src, "X"), "keep")
+        src = "// %Tag(X)%\nkeep\n// %Tag(X)%\nafter\n"
+        self.assertEqual(ctm.extract_tagged_code(src, "X"), "keep")
+
+    def test_macro_becomes_code_block(self):
+        blocks = []
+        out = ctm.expand_get_tagged_code(
+            f"Text <<GetTaggedCode({self.URL},cplusplus,FULLTEXT,show_uri,"
+            f"no_tag_newlines,global_lines)>>", blocks)
+        self.assertEqual(
+            out,
+            "Text Source: [[https://github.com/ros/ros_tutorials/blob/kinetic-devel/"
+            "roscpp_tutorials/talker/talker.cpp|talker.cpp]]\n\nPLACEHOLDER_CODE_BLOCK_0")
+        self.assertTrue(blocks[0].startswith("#!cpp\n#include"))
+        self.assertIn("{{{ }}}", blocks[0])  # code kept verbatim
+
+    def test_end_to_end_markdown(self):
+        src = write_page("mypkg", f"Init:\n<<GetTaggedCode({self.URL},cplusplus,INIT,unindent)>>\n")
+        with patch("builtins.print"):
+            md = ctm.convert_file(src)
+        self.assertIn('```cpp\nros::init(argc, argv, "talker");\n```', md)
+
+    def test_missing_cache_falls_back_to_link(self):
+        blocks = []
+        with patch("builtins.print"):
+            out = ctm.expand_get_tagged_code(
+                "<<GetTaggedCode(https://code.ros.org/svn/x/a.launch,launch,FULL)>>", blocks)
+        self.assertEqual(out, "(See [[https://code.ros.org/svn/x/a.launch|a.launch]])")
+        self.assertEqual(blocks, [])
+
+
 class TestCommitAttachments(WikiDumpTestCase):
     def test_single_commit_with_blobs(self):
         calls = []

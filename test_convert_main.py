@@ -87,6 +87,29 @@ class TestConvertMainSafety(unittest.TestCase):
         self.assertEqual(self.read("ext"), "NEW")
         self.assertEqual(self.read("fresh"), "OLD")
 
+    def test_dirty_file_from_previous_run_is_regenerated(self):
+        # First run writes "NEW" and records its hash.
+        self.run_main("--only", "fresh")
+        self.assertEqual(self.read("fresh"), "NEW")
+        # The file is now uncommitted, but unchanged since the script wrote it.
+        with patch.object(ctm, "convert_file", return_value="NEWER"), \
+             patch.object(ctm, "git_modified_files",
+                          return_value={"markdown_output/fresh.md"}), \
+             patch("builtins.print"):
+            ctm.main(["--only", "fresh"])
+        self.assertEqual(self.read("fresh"), "NEWER")
+
+    def test_dirty_file_edited_after_generation_is_skipped(self):
+        self.run_main("--only", "fresh")
+        with open("markdown_output/fresh.md", "w") as f:
+            f.write("HAND EDIT")
+        with patch.object(ctm, "convert_file", return_value="NEWER"), \
+             patch.object(ctm, "git_modified_files",
+                          return_value={"markdown_output/fresh.md"}), \
+             patch("builtins.print"):
+            ctm.main(["--only", "fresh"])
+        self.assertEqual(self.read("fresh"), "HAND EDIT")
+
 
 if __name__ == "__main__":
     unittest.main()

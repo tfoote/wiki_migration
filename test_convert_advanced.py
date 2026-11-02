@@ -73,5 +73,18 @@ class TestAdvancedConversion(unittest.TestCase):
         )
 
 
+    def test_more_than_ten_code_blocks_restored_correctly(self):
+        blocks = [f"code {i}" for i in range(12)]
+        content = "\n".join(
+            f"PLACEHOLDER_CODE_BLOCK_{i}" if i % 2 else f"PLACEHOLDER\\_CODE\\_BLOCK\\_{i}"
+            for i in range(12)
+        )
+        processed = postprocess(content, blocks)
+        for i in range(12):
+            self.assertIn(f"```\ncode {i}\n```", processed)
+        self.assertNotIn("code 1\n```\n\n1", processed)
+        self.assertNotIn("PLACEHOLDER", processed)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -244,8 +244,8 @@ python3 check_pr_status.py            # listing + summary
 python3 check_pr_status.py --json     # machine-readable rows
 ```
 
-- **Listing:** one line per PR with the package, repo#number, base branch, state (`OPEN`, `DRAFT`, `MERGED`, `CLOSED`), the latest review verdict (approved / changes requested / commented), comment count, age, and days since the last update (or since merge/close).
-- **Summary:** totals and percentages per state, packages with a merged PR, packages whose PRs were all closed without merging (won't fix), open PRs with changes requested or with comments, the oldest open PR, and any PRs that couldn't be checked.
+- **Listing:** one line per PR with the package, repo#number, base branch, state (`OPEN`, `DRAFT`, `MERGED`, `CLOSED`), the latest review verdict (approved / changes requested / commented), comment count, lines added/removed and files changed, age, and days since the last update (or since merge/close).
+- **Summary:** totals and percentages per state, lines changed (overall, merged, open/draft, closed), packages with a merged PR, packages whose PRs were all closed without merging (won't fix), open PRs with changes requested or with comments, the oldest open PR, and any PRs that couldn't be checked.
 - `GITHUB_TOKEN` is optional (read-only access is enough). Without it, unauthenticated requests are limited to 60 per hour, and each PR uses 2 requests.
 
 ---

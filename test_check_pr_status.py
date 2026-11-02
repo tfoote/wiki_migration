@@ -14,10 +14,12 @@ import check_pr_status as cps
 PRS = {
     "ros/angles/pulls/50": {"state": "closed", "merged_at": "2026-10-20T10:00:00Z",
                             "merged_by": {"login": "maint"}, "comments": 1,
+                            "additions": 120, "deletions": 0, "changed_files": 3,
                             "review_comments": 0, "base": {"ref": "noetic-devel"},
                             "created_at": "2026-10-14T10:00:00Z",
                             "updated_at": "2026-10-20T10:00:00Z"},
     "ros/bond_core/pulls/118": {"state": "open", "draft": False, "comments": 2,
+                                "additions": 40, "deletions": 2, "changed_files": 1,
                                 "review_comments": 3, "base": {"ref": "noetic-devel"},
                                 "created_at": "2026-10-21T10:00:00Z",
                                 "updated_at": "2026-10-25T10:00:00Z"},
@@ -97,6 +99,14 @@ class TestCheckPrStatus(unittest.TestCase):
         self.assertIn("Changes requested (open):", text)
         self.assertIn("Could not check:", text)
         self.assertIn("(1 could not be checked)", text)
+        # lines changed: per PR in the listing, totals by state in the summary
+        self.assertIn("+120/-0", text)
+        self.assertIn("+40/-2", text)
+        self.assertIn("Lines changed:", text)
+        self.assertIn("All PRs:            +160/-2 in 4 file(s)", text)
+        self.assertIn("Merged:             +120/-0 in 3 file(s)", text)
+        self.assertIn("Open/draft:         +40/-2 in 1 file(s)", text)
+        self.assertIn("Closed:             +0/-0 in 0 file(s)", text)
 
     def test_main_does_not_modify_submitted_file(self):
         with tempfile.TemporaryDirectory() as tmp:

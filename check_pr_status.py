@@ -75,6 +75,9 @@ def fetch_pr_status(url, token=None):
         "state": state,
         "review": latest_review_state(reviews if isinstance(reviews, list) else []),
         "comments": int(pr.get("comments", 0)) + int(pr.get("review_comments", 0)),
+        "additions": int(pr.get("additions", 0) or 0),
+        "deletions": int(pr.get("deletions", 0) or 0),
+        "changed_files": int(pr.get("changed_files", 0) or 0),
         "base": (pr.get("base") or {}).get("ref", ""),
         "created_at": pr.get("created_at", ""),
         "updated_at": pr.get("updated_at", ""),
@@ -111,11 +114,12 @@ def collect(submitted, token=None):
 
 def print_listing(rows, out=None):
     out = out or sys.stdout
-    headers = ["Package", "PR", "Base", "State", "Review", "Cmts", "Age", "Idle"]
+    headers = ["Package", "PR", "Base", "State", "Review", "Cmts", "Lines", "Files", "Age", "Idle"]
     table = []
     for r in rows:
         if r["state"] == "ERROR":
-            table.append([r["package"], r["url"], "", "ERROR", r.get("error", "")[:40], "", "", ""])
+            table.append([r["package"], r["url"], "", "ERROR", r.get("error", "")[:40],
+                          "", "", "", "", ""])
             continue
         age = days_since(r["created_at"])
         idle = days_since(r["closed_at"] or r["updated_at"])
@@ -126,6 +130,8 @@ def print_listing(rows, out=None):
             r["state"],
             r["review"].replace("_", " ").lower() or "-",
             str(r["comments"]),
+            f"+{r['additions']}/-{r['deletions']}",
+            str(r["changed_files"]),
             f"{age}d" if age is not None else "",
             f"{idle}d" if idle is not None else "",
         ])
@@ -136,8 +142,8 @@ def print_listing(rows, out=None):
     print(fmt.format(*("-" * w for w in widths)), file=out)
     for row in table:
         print(fmt.format(*row), file=out)
-    print("\nAge = days since opened; Idle = days since last update (or since merge/close).",
-          file=out)
+    print("\nAge = days since opened; Idle = days since last update (or since merge/close);\n"
+          "Lines = lines added/removed; Files = files changed.", file=out)
 
 
 def print_summary(rows, submitted, out=None):
@@ -155,6 +161,20 @@ def print_summary(rows, submitted, out=None):
         n = states.get(state, 0)
         pct = f" ({100 * n / total:.0f}%)" if total else ""
         print(f"  {state.capitalize() + ':':<20}{n}{pct}", file=out)
+
+    def line_totals(selected):
+        return (sum(r["additions"] for r in selected), sum(r["deletions"] for r in selected),
+                sum(r["changed_files"] for r in selected))
+
+    print("Lines changed:", file=out)
+    for label, selected in (
+        ("All PRs:", ok),
+        ("Merged:", [r for r in ok if r["state"] == "MERGED"]),
+        ("Open/draft:", [r for r in ok if r["state"] in ("OPEN", "DRAFT")]),
+        ("Closed:", [r for r in ok if r["state"] == "CLOSED"]),
+    ):
+        added, removed, files = line_totals(selected)
+        print(f"  {label:<20}+{added}/-{removed} in {files} file(s)", file=out)
 
     by_pkg = {}
     for r in ok:

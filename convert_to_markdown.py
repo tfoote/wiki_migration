@@ -2,6 +2,7 @@ import argparse
 import os
 import re
 import subprocess
+import urllib.parse
 import yaml
 
 # Legacy bootstrap input: only used if none of the review queues exist.
@@ -57,6 +58,329 @@ def resolve_page_name(target, current_page=None):
     return target.lstrip("/")
 
 
+INDEX_PACKAGES_FILE = "index_packages.yaml"
+INDEX_PACKAGE_URL = "https://index.ros.org/p/{}"
+_index_packages = None
+
+
+def get_index_packages():
+    """Package names on index.ros.org (from fetch_index_packages.py)."""
+    global _index_packages
+    if _index_packages is None:
+        if os.path.exists(INDEX_PACKAGES_FILE):
+            with open(INDEX_PACKAGES_FILE, "r") as f:
+                _index_packages = set(yaml.safe_load(f) or {})
+        else:
+            print(f"Warning: {INDEX_PACKAGES_FILE} not found; package links "
+                  "will not be rewritten. Run fetch_index_packages.py.")
+            _index_packages = set()
+    return _index_packages
+
+
+_ATTACHMENT_REF = re.compile(r"(\[\[|\{\{)(\s*)attachment:([^|\]\}]+)")
+
+
+def absolutize_attachments(content, page):
+    """Qualify bare attachment refs with their owning page (for includes)."""
+
+    def repl(match):
+        ref = match.group(3).strip()
+        if "/" not in ref:
+            ref = f"{page}/{ref}"
+        return f"{match.group(1)}{match.group(2)}attachment:{ref}"
+
+    return _ATTACHMENT_REF.sub(repl, content)
+
+
+def attachment_link(ref, current_page, attachments):
+    """Map attachment:[Page/]file to a doc/ path and record it.
+
+    Returns the relative link, or None if the file isn't in the wiki dump.
+    """
+    owner, _, fname = ref.strip().rpartition("/")
+    owner = resolve_page_name(owner, current_page) if owner else current_page
+    if not owner or not fname:
+        return None
+    src = os.path.join("pages", quote_wikiname_fs(owner), "attachments", fname)
+    if not os.path.exists(src):
+        return None
+    doc_name = fname.replace(" ", "_")
+    key = f"doc/{doc_name}"
+    if attachments.get(key, src) != src:
+        # Same filename attached to a different page: disambiguate.
+        doc_name = f"{owner.replace('/', '_')}_{doc_name}"
+        key = f"doc/{doc_name}"
+    attachments[key] = src
+    return "doc/" + urllib.parse.quote(doc_name)
+
+
+def read_page(name):
+    """Return the current revision text of a wiki page, or None."""
+    for page_dir in (os.path.join("pages", quote_wikiname_fs(name)),
+                     os.path.join("pages", name)):
+        current_file = os.path.join(page_dir, "current")
+        if not os.path.exists(current_file):
+            continue
+        with open(current_file, "r") as f:
+            revision = f.read().strip()
+        revision_file = os.path.join(page_dir, "revisions", revision)
+        if os.path.exists(revision_file):
+            with open(revision_file, "r", errors="ignore") as f_rev:
+                return f_rev.read()
+    return None
+
+
+# Maximum number of subpages appended to one README (None = unlimited).
+MAX_SUBPAGES = None
+
+
+class DocContext:
+    """Tracks which wiki pages end up in one generated README."""
+
+    def __init__(self, root, max_subpages=MAX_SUBPAGES):
+        self.root = root
+        self.max_subpages = max_subpages
+        self.subpages = []      # appended as sections, in order
+        self.included = set()   # inlined via <<Include>>
+        self.skipped = []       # subpages not appended (over the limit)
+
+    def contains(self, page):
+        return page == self.root or page in self.subpages or page in self.included
+
+    def try_append_subpage(self, page):
+        if not page.startswith(self.root + "/") or self.contains(page):
+            return False
+        if read_page(page) is None:
+            return False
+        if self.max_subpages is not None and len(self.subpages) >= self.max_subpages:
+            if page not in self.skipped:
+                self.skipped.append(page)
+            return False
+        self.subpages.append(page)
+        return True
+
+
+_ANCHOR_MARKER = "#wikianchor/"
+
+
+def anchor_marker(page, anchor):
+    """In-page link placeholder resolved by finalize_document()."""
+    return (_ANCHOR_MARKER + urllib.parse.quote(page, safe="") + "/"
+            + urllib.parse.quote(anchor.strip(), safe=""))
+
+
+def explicit_anchor_placeholder(name):
+    return f"WIKIANCHORBEGIN{name.strip().encode('utf-8').hex()}WIKIANCHOREND"
+
+
+_EXPLICIT_ANCHOR = re.compile(r"WIKIANCHORBEGIN([0-9a-f]*)WIKIANCHOREND")
+
+
+def github_slug(heading_text):
+    """Approximate GitHub's heading anchor for Markdown heading text."""
+    text = re.sub(r"<[^>]+>", "", _EXPLICIT_ANCHOR.sub("", heading_text))
+    text = re.sub(r"!?\[((?:[^\[\]]|\[[^\]]*\])*)\]\([^)]*\)", r"\1", text)
+    text = text.replace("\\", "").replace("`", "").replace("*", "")
+    text = re.sub(r"[^\w\- ]", "", text.strip().lower())
+    return text.replace(" ", "-")
+
+
+def _loose(slug):
+    return re.sub(r"[\s_-]+", "-", slug.lower()).strip("-")
+
+
+def moin_anchor_candidates(anchor):
+    """Possible heading texts for a MoinMoin heading anchor.
+
+    MoinMoin 1.9 builds heading ids as quote_plus(utf7(text)) with '%' -> '.'
+    and '+' -> '_'; ids of included pages are prefixed with "<page>.", and
+    duplicate ids get "-N" suffixes.
+    """
+    candidates = []
+    segments = re.split(r"\.(?![0-9A-Fa-f]{2})", anchor)
+    for raw in dict.fromkeys([anchor, segments[-1]]):
+        for variant in dict.fromkeys([raw, re.sub(r"-\d+$", "", raw)]):
+            candidates.append(variant)
+            try:
+                s = re.sub(r"\.([0-9A-Fa-f]{2})", r"%\1", variant).replace("_", " ")
+                s = urllib.parse.unquote(s)
+                candidates.append(s.encode("latin-1", "ignore").decode("utf-7"))
+            except (UnicodeError, ValueError):
+                pass
+    return [c for c in dict.fromkeys(candidates) if c]
+
+
+_ATX_HEADING = re.compile(r"^(#{1,6})[ \t]+(.*?)[ \t]*#*[ \t]*$")
+
+
+def iter_headings(markdown):
+    """Yield (line_index, level, text) for ATX headings outside code fences."""
+    in_fence = False
+    for i, line in enumerate(markdown.split("\n")):
+        if line.lstrip().startswith("```"):
+            in_fence = not in_fence
+            continue
+        if in_fence:
+            continue
+        m = _ATX_HEADING.match(line)
+        if m:
+            yield i, len(m.group(1)), m.group(2)
+
+
+def shift_headings(markdown, top_level):
+    """Shift headings so the highest-level one becomes `top_level`."""
+    headings = list(iter_headings(markdown))
+    if not headings:
+        return markdown
+    shift = top_level - min(level for _, level, _ in headings)
+    lines = markdown.split("\n")
+    for i, level, text in headings:
+        lines[i] = "#" * max(1, min(6, level + shift)) + " " + text
+    return "\n".join(lines)
+
+
+def finalize_document(parts, stats=None):
+    """Join (page, markdown) parts and resolve in-page anchor markers.
+
+    If `stats` is a dict, counts of resolved/unresolved anchors are added.
+    """
+    import hashlib
+
+    counts = {}
+    headings = []  # (page, slug, loose base slug, sha1 of text)
+    for page, md in parts:
+        for _, _, text in iter_headings(md):
+            base = github_slug(text)
+            n = counts.get(base, 0)
+            counts[base] = n + 1
+            plain = re.sub(r"[`*\\]", "", text).strip()
+            headings.append((page, base if n == 0 else f"{base}-{n}", _loose(base),
+                             hashlib.sha1(plain.encode("utf-8")).hexdigest()))
+    first_heading = {}
+    for page, slug, _, _ in headings:
+        first_heading.setdefault(page, slug)
+
+    full = "\n\n".join(md.rstrip("\n") for _, md in parts) + "\n"
+    explicit = {bytes.fromhex(h).decode("utf-8", "ignore")
+                for h in _EXPLICIT_ANCHOR.findall(full)}
+
+    def resolve(page, anchor):
+        if anchor:
+            if anchor in explicit:
+                return anchor
+            if anchor.startswith("head-") and len(anchor) == 45:
+                for _, slug, _, sha in headings:
+                    if sha == anchor[5:]:
+                        return slug
+            wanted = [_loose(github_slug(c)) for c in moin_anchor_candidates(anchor)]
+            for scope in ([h for h in headings if h[0] == page], headings):
+                for w in wanted:
+                    for _, slug, loose, _ in scope:
+                        if loose == w:
+                            return slug
+        return first_heading.get(page) if page != parts[0][0] else None
+
+    def link_repl(match):
+        label, page, anchor = match.groups()
+        slug = resolve(urllib.parse.unquote(page), urllib.parse.unquote(anchor))
+        if stats is not None:
+            key = "anchors_resolved" if slug else "anchors_unresolved"
+            stats[key] = stats.get(key, 0) + 1
+            if not slug:
+                stats.setdefault("unresolved", []).append(
+                    (urllib.parse.unquote(page), urllib.parse.unquote(anchor)))
+        return f"[{label}](#{slug})" if slug else label
+
+    full = re.sub(
+        r"\[((?:[^\[\]]|\[[^\]]*\])*)\]\(" + re.escape(_ANCHOR_MARKER) + r"([^/)]*)/([^)]*)\)",
+        link_repl, full,
+    )
+    full = _EXPLICIT_ANCHOR.sub(
+        lambda m: '<a id="{}"></a>'.format(
+            bytes.fromhex(m.group(1)).decode("utf-8", "ignore").replace('"', "")),
+        full,
+    )
+    return full
+
+
+def rewrite_link_target(target, current_page, doc=None):
+    """Return a replacement URL for a wiki link target, or None to keep it.
+
+    - Links into the current document (the page itself, pages included in it,
+      or subpages appended to it) become in-page anchor markers that
+      finalize_document() resolves to Markdown heading anchors.
+    - Links to subpages of the document's root page are queued on `doc` so
+      that convert_file() appends them as sections of the same README.
+    - Links to packages on index.ros.org -> https://index.ros.org/p/<pkg>;
+      links to subpages of *other* indexed packages -> that package's page.
+    """
+    target = target.strip()
+    if re.match(r"^[A-Za-z][\w+.-]*:", target):
+        return None  # URL, interwiki or attachment
+    base, _, anchor = target.partition("#")
+    base = base.strip()
+    resolved = resolve_page_name(base, current_page) if base else current_page
+    if not resolved:
+        return None
+    if doc is not None:
+        if resolved == current_page or doc.contains(resolved):
+            return anchor_marker(resolved, anchor)
+        if doc.try_append_subpage(resolved):
+            return anchor_marker(resolved, anchor)
+    elif resolved == current_page:
+        return None
+    index = get_index_packages()
+    if resolved in index:
+        return INDEX_PACKAGE_URL.format(resolved)
+    owner = resolved.split("/", 1)[0]
+    if "/" in resolved and owner in index:
+        return INDEX_PACKAGE_URL.format(owner)
+    return None
+
+
+def rewrite_links(content, current_page, attachments, doc=None):
+    """Rewrite MoinMoin {{image}} and [[link]] targets.
+
+    - attachment:file -> doc/file (recorded in `attachments`)
+    - see rewrite_link_target() for page links
+    """
+
+    def image_repl(match):
+        target, rest = match.group(1).strip(), match.group(2)
+        if not target.startswith("attachment:"):
+            return match.group(0)
+        new = attachment_link(target[len("attachment:"):], current_page, attachments)
+        if new is None:
+            return match.group(0)
+        alt = rest.lstrip("|").split("|")[0].strip() if rest else ""
+        alt = alt or os.path.basename(target)
+        return f"{{{{{new}|{alt}}}}}"
+
+    def link_repl(match):
+        target, rest = match.group(1).strip(), match.group(2)
+        # [[target|label|params]]: keep the label (which may itself be an
+        # image like {{doc/x.png|alt}}) and drop link params.
+        label = None
+        if rest:
+            label_part = rest[1:]
+            img = re.match(r"\s*\{\{.*?\}\}", label_part)
+            label = img.group(0) if img else label_part.split("|")[0]
+        if target.startswith("attachment:"):
+            new = attachment_link(target[len("attachment:"):], current_page, attachments)
+        else:
+            new = rewrite_link_target(target, current_page, doc)
+        if new is None:
+            return match.group(0)
+        if not label or not label.strip():
+            base, _, anchor = target.partition("#")
+            label = base.split("attachment:")[-1].rsplit("/", 1)[-1] or anchor
+        return f"[[{new}|{label}]]"
+
+    content = re.sub(r"\{\{(?!\{)([^|}\n]+)(\|[^}\n]*)?\}\}", image_repl, content)
+    content = re.sub(r"\[\[([^|\]\n]+)(\|(?:[^\]\n]|\](?!\]))*)?\]\]", link_repl, content)
+    return content
+
+
 def filter_versions(content):
     """Drop version sections unless they end in _and_newer or are noetic."""
 
@@ -75,7 +399,94 @@ def filter_versions(content):
     )
 
 
-def preprocess(content, current_page=None):
+_all_page_names = None
+
+
+def all_page_names():
+    """All page names in the wiki dump (cached)."""
+    global _all_page_names
+    if _all_page_names is None:
+        try:
+            _all_page_names = sorted(unquote_wikiname_fs(d) for d in os.listdir("pages"))
+        except OSError:
+            _all_page_names = []
+    return _all_page_names
+
+
+def page_meta(name, content):
+    """(title, description) from a tutorial page's '## title =' header."""
+    def field(key):
+        m = re.search(rf"^##\s*{key}\s*=\s*(.*?)\s*$", content, re.M)
+        return m.group(1).strip() if m else ""
+    return field("title") or name.rsplit("/", 1)[-1], field("description")
+
+
+def page_list_markup(names):
+    lines = []
+    for name in names:
+        content = read_page(name) or ""
+        title, desc = page_meta(name, content)
+        lines.append(f" * [[{name}|{title}]]" + (f": {desc}" if desc else ""))
+    return "\n".join(lines)
+
+
+def expand_listing_macros(content, current_page, max_items=20):
+    """Statically expand tutorial listing macros that MoinMoin renders live.
+
+    - <<FullSearch*(title:"pkg/Tutorials/" SomeCategory)>> -> list of the
+      matching pages in the dump (name prefix + all category terms present)
+    - <<TutorialChain(page)>> -> the page and its '## next.N.link' successors
+    - the "Create a new tutorial: <<NewPage(...)>>" boilerplate is dropped
+    """
+
+    def fullsearch_repl(match):
+        args = match.group(1)
+        m = re.search(r'title:"([^"]+)"', args)
+        if not m:
+            return ""
+        prefix = resolve_page_name(m.group(1), current_page)
+        terms = [t for t in re.sub(r'title:"[^"]*"', "", args).split()
+                 if re.match(r"^\w*Category\w*$", t)]
+        names = []
+        for name in all_page_names():
+            if not name.startswith(prefix) or name == prefix.rstrip("/"):
+                continue
+            text = read_page(name)
+            if text is None or not all(t in text for t in terms):
+                continue
+            names.append(name)
+            if len(names) >= max_items:
+                break
+        return page_list_markup(names)
+
+    def chain_repl(match):
+        names = []
+        page = resolve_page_name(match.group(1).strip().strip("\"'"), current_page)
+        while page and page not in names and len(names) < max_items:
+            text = read_page(page)
+            if text is None:
+                break
+            names.append(page)
+            nxt = re.search(r"^##\s*next\.\d+\.link\s*=\s*\[\[([^|\]]+)", text, re.M)
+            page = resolve_page_name(nxt.group(1).strip(), page) if nxt else None
+        return page_list_markup(names)
+
+    content = re.sub(r"<<FullSearch\w*\((.*?)\)>>", fullsearch_repl, content)
+    content = re.sub(r"<<TutorialChain\((.*?)\)>>", chain_repl, content)
+    content = re.sub(r"^.*'''Create a new tutorial:'''.*$\n?", "", content, flags=re.M)
+    return content
+
+
+def preprocess(content, current_page=None, attachments=None, doc=None):
+    """Preprocess MoinMoin markup into Creole for pandoc.
+
+    If `attachments` is a dict, it is filled with {"doc/<name>": <source path>}
+    for every attachment that was rewritten to a doc/ link. If `doc` is a
+    DocContext, in-document links become anchor markers and linked subpages
+    of the root page are queued for appending (see convert_file()).
+    """
+    if attachments is None:
+        attachments = {}
     # 0. Handle <<Include(arg)>> recursively (Moved to first step)
     def resolve_include(content, depth=0, max_depth=5, current_page=None):
         if depth > max_depth:
@@ -105,6 +516,12 @@ def preprocess(content, current_page=None):
                 if os.path.exists(revision_file):
                     with open(revision_file, "r", errors="ignore") as f_rev:
                         included_content = f_rev.read()
+                        if doc is not None:
+                            doc.included.add(page_name)
+                        # Attachments in an included page belong to that page.
+                        included_content = absolutize_attachments(
+                            included_content, page_name
+                        )
                         # Recursively resolve includes in the included content
                         return resolve_include(
                             included_content, depth + 1, current_page=page_name
@@ -122,6 +539,11 @@ def preprocess(content, current_page=None):
     # page) *before* includes are expanded, so that code blocks pulled in from
     # included pages can't confuse the version-block regex.
     content = resolve_include(content, current_page=current_page)
+
+    # Expand live tutorial listings into static link lists (before link
+    # rewriting, so the listed subpages get appended to the document).
+    if current_page:
+        content = expand_listing_macros(content, current_page)
 
     # Convert CRLF to LF
     content = content.replace("\r\n", "\n")
@@ -145,6 +567,18 @@ def preprocess(content, current_page=None):
     # Match {{{ ... }}} where it's NOT inline (i.e. not followed by }}} on same line)
     content = re.sub(
         r"\{\{\{(?![^\n]*\}\}\})(.*?)\}\}\}", code_block_repl, content, flags=re.DOTALL,
+    )
+
+    # 2. Rewrite links to indexed packages and attachments (code blocks are
+    # already extracted, so their contents are untouched).
+    content = rewrite_links(content, current_page, attachments, doc)
+
+    # Keep explicit <<Anchor(name)>> targets as <a id="name"> (restored in
+    # finalize_document) so in-page links to them keep working.
+    content = re.sub(
+        r"<<Anchor\(([^)]*)\)>>",
+        lambda m: explicit_anchor_placeholder(m.group(1)) if doc is not None else "",
+        content,
     )
 
     # 3. Omit specified WikiMacros
@@ -177,6 +611,8 @@ def preprocess(content, current_page=None):
         "FootNote",
         "Ticket",
         "Anchor",
+        "IncludeCSTemplate",
+        "xacro_file",
     ]
 
     macros_regex = "|".join(macros_to_omit)
@@ -189,6 +625,8 @@ def preprocess(content, current_page=None):
     # 5. Remove lines containing AUTOGENERATED or CategoryPackage
     lines = content.split("\n")
     lines = [l for l in lines if "AUTOGENERATED" not in l and "CategoryPackage" not in l]
+    # Drop lines that only contain wiki category tags (e.g. "TutorialCategory").
+    lines = [l for l in lines if not re.match(r"^\s*(\w*Category\w*\s*)+$", l)]
     content = "\n".join(lines)
 
     # 6. Convert <<Youtube(video_id)>> to [[https://www.youtube.com/watch?v=video_id|Youtube]]
@@ -321,17 +759,11 @@ def postprocess(content, code_blocks):
     return "\n".join(new_lines)
 
 
-def convert_file(src_file):
-    """Convert a MoinMoin revision file to Markdown. Returns the Markdown."""
-    with open(src_file, "r", errors="ignore") as f_in:
-        content = f_in.read()
-
-    # src_file looks like pages/<encoded name>/revisions/<rev>
-    page_dir_name = os.path.basename(os.path.dirname(os.path.dirname(src_file)))
+def convert_markup(content, page, attachments=None, doc=None):
+    """Convert one page's MoinMoin markup to Markdown (no finalization)."""
     preprocessed_content, code_blocks = preprocess(
-        content, current_page=unquote_wikiname_fs(page_dir_name)
+        content, current_page=page, attachments=attachments, doc=doc
     )
-
     process = subprocess.run(
         ["pandoc", "-f", "creole", "-t", "markdown"],
         input=preprocessed_content.encode("utf-8"),
@@ -340,6 +772,68 @@ def convert_file(src_file):
     if process.returncode != 0:
         raise RuntimeError(process.stderr.decode("utf-8"))
     return postprocess(process.stdout.decode("utf-8"), code_blocks)
+
+
+def convert_file(src_file, attachments=None, max_subpages=MAX_SUBPAGES, stats=None):
+    """Convert a MoinMoin revision file to Markdown. Returns the Markdown.
+
+    Subpages of the page (e.g. pkg/Tutorials) that it links to are appended
+    as "## <subpage>" sections, and links to them, as well as same-page
+    section links, become Markdown heading anchors.
+
+    If `attachments` is a dict it is filled with {"doc/<name>": <source path>}
+    for attachments referenced by the page (see attachments_manifest_path).
+    """
+    with open(src_file, "r", errors="ignore") as f_in:
+        content = f_in.read()
+    if attachments is None:
+        attachments = {}
+
+    # src_file looks like pages/<encoded name>/revisions/<rev>
+    page_dir_name = os.path.basename(os.path.dirname(os.path.dirname(src_file)))
+    root = unquote_wikiname_fs(page_dir_name)
+    doc = DocContext(root, max_subpages=max_subpages)
+
+    parts = [(root, convert_markup(content, root, attachments, doc))]
+    i = 0
+    while i < len(doc.subpages):  # may grow while subpages are converted
+        page = doc.subpages[i]
+        i += 1
+        page_text = read_page(page) or ""
+        body = convert_markup(page_text, page, attachments, doc)
+        title = page[len(root) + 1:]
+        meta_title, _ = page_meta(page, page_text)
+        if re.search(r"^##\s*title\s*=", page_text, re.M):
+            title = meta_title
+        body = shift_headings(body, 3).strip("\n")
+        # Drop the subpage's own top heading if it just repeats the title.
+        first = next(iter_headings(body), None)
+        if first and first[0] == 0 and _loose(github_slug(first[2])) in (
+                _loose(github_slug(title)), _loose(github_slug(title.rsplit("/", 1)[-1]))):
+            body = body.split("\n", 1)[1].lstrip("\n") if "\n" in body else ""
+        parts.append((page, f"## {title}\n\n" + body))
+    if doc.skipped:
+        print(f"Warning: {root}: not appending {len(doc.skipped)} subpage(s) "
+              f"over the limit of {max_subpages}: {', '.join(doc.skipped)}")
+    if stats is not None:
+        stats["subpages"] = list(doc.subpages)
+        stats["subpages_skipped"] = list(doc.skipped)
+    return finalize_document(parts, stats)
+
+
+def attachments_manifest_path(markdown_file):
+    """Sidecar listing the attachments a Markdown file links to under doc/.
+
+    Format: {"doc/<name>": "pages/<page>/attachments/<file>"}. Read by
+    submit_prs.py to commit the files into <package>/doc/.
+    """
+    return os.path.splitext(markdown_file)[0] + ".attachments.yaml"
+
+
+def render_manifest(attachments):
+    if not attachments:
+        return None
+    return yaml.safe_dump(dict(sorted(attachments.items())), default_flow_style=False)
 
 
 def git_modified_files(path):
@@ -443,18 +937,26 @@ def main(argv=None):
                 stats["missing_source"] += 1
                 continue
 
+            attachments = {}
             try:
-                final_markdown = convert_file(src_file)
+                final_markdown = convert_file(src_file, attachments=attachments)
             except Exception as e:
                 print(f"Error processing {src_file}: {e}")
                 stats["failed"] += 1
                 continue
 
+            manifest_file = attachments_manifest_path(dst_file)
+            manifest = render_manifest(attachments)
+            old_manifest = None
+            if os.path.exists(manifest_file):
+                with open(manifest_file, "r") as f_old:
+                    old_manifest = f_old.read()
+
             existing = None
             if os.path.exists(dst_file):
                 with open(dst_file, "r") as f_old:
                     existing = f_old.read()
-            if existing == final_markdown:
+            if existing == final_markdown and old_manifest == manifest:
                 stats["unchanged"] += 1
                 continue
 
@@ -463,6 +965,11 @@ def main(argv=None):
             if not args.dry_run:
                 with open(dst_file, "w") as f_out:
                     f_out.write(final_markdown)
+                if manifest is not None:
+                    with open(manifest_file, "w") as f_out:
+                        f_out.write(manifest)
+                elif old_manifest is not None:
+                    os.remove(manifest_file)
             if legacy_mode:
                 value["markdown_file"] = dst_file
 

@@ -68,6 +68,101 @@ def get_readme_path(subdirectory):
     return f"{subdir}/README.md" if subdir else "README.md"
 
 
+def attachments_manifest_path(md_file):
+    """Sidecar written by convert_to_markdown.py listing doc/ attachments."""
+    return os.path.splitext(md_file)[0] + ".attachments.yaml"
+
+
+def load_attachments(md_file):
+    """Return {"doc/<name>": <local source path>} for a Markdown file."""
+    if not md_file:
+        return {}
+    path = attachments_manifest_path(md_file)
+    if not os.path.exists(path):
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
+
+def get_attachment_repo_path(subdirectory, doc_key):
+    """Repository path for an attachment key like 'doc/foo.png'."""
+    subdir = (subdirectory or "").strip("/")
+    return f"{subdir}/{doc_key}" if subdir else doc_key
+
+
+def commit_attachments(
+    fork_owner, fork_repo, branch, subdirectory, attachments, package, token
+):
+    """Commit attachment files into <subdirectory>/doc/ as a single commit.
+
+    Files that already exist on the branch are left untouched. Returns
+    (commit_sha or None, list of uploaded repo paths).
+    """
+    api = f"https://api.github.com/repos/{fork_owner}/{fork_repo}"
+    encoded_branch = urllib.parse.quote(branch, safe="")
+
+    tree_entries = []
+    uploaded = []
+    for doc_key, src in sorted(attachments.items()):
+        repo_path = get_attachment_repo_path(subdirectory, doc_key)
+        if not os.path.exists(src):
+            print(f"  Warning: attachment source {src} not found; skipping.", flush=True)
+            continue
+        _, existing_sha = get_existing_file_on_branch(
+            fork_owner, fork_repo, repo_path, branch, token
+        )
+        if existing_sha is not None:
+            print(f"  Warning: {repo_path} already exists on {branch}; not overwriting.", flush=True)
+            continue
+        with open(src, "rb") as f:
+            blob = github_api_request(
+                f"{api}/git/blobs",
+                method="POST",
+                data={"content": base64.b64encode(f.read()).decode("ascii"),
+                      "encoding": "base64"},
+                token=token,
+            )
+        tree_entries.append(
+            {"path": repo_path, "mode": "100644", "type": "blob", "sha": blob["sha"]}
+        )
+        uploaded.append(repo_path)
+
+    if not tree_entries:
+        return None, []
+
+    print(f"  Committing {len(tree_entries)} attachment(s) to {branch}...", flush=True)
+    ref = github_api_request(f"{api}/git/ref/heads/{encoded_branch}", token=token)
+    parent_sha = ref["object"]["sha"]
+    parent = github_api_request(f"{api}/git/commits/{parent_sha}", token=token)
+    tree = github_api_request(
+        f"{api}/git/trees",
+        method="POST",
+        data={"base_tree": parent["tree"]["sha"], "tree": tree_entries},
+        token=token,
+    )
+    commit = github_api_request(
+        f"{api}/git/commits",
+        method="POST",
+        data={
+            "message": (
+                f"Add {package} documentation attachments from wiki.ros.org\n\n"
+                f"Images and files attached to the ROS Wiki page "
+                f"https://wiki.ros.org/{package}, referenced from README.md."
+            ),
+            "tree": tree["sha"],
+            "parents": [parent_sha],
+        },
+        token=token,
+    )
+    github_api_request(
+        f"{api}/git/refs/heads/{encoded_branch}",
+        method="PATCH",
+        data={"sha": commit["sha"]},
+        token=token,
+    )
+    return commit["sha"], uploaded
+
+
 def build_commit_message(package, source_file, action):
     """Build the commit message explaining the origin of the content."""
     verb = "Add" if action == "create" else "Append"
@@ -366,6 +461,13 @@ def execute_submission(package, info, fork_org, token):
         package,
         token,
     )
+    attachments = load_attachments(md_file)
+    attachments_commit_sha, uploaded_attachments = None, []
+    if attachments:
+        attachments_commit_sha, uploaded_attachments = commit_attachments(
+            fork_owner, fork_repo, new_branch, subdirectory, attachments,
+            package, token,
+        )
     pr_url = create_pull_request(
         upstream_owner,
         upstream_repo,
@@ -386,6 +488,9 @@ def execute_submission(package, info, fork_org, token):
         "commit_sha": commit_sha,
         "action": action,
     }
+    if uploaded_attachments:
+        result["attachments"] = uploaded_attachments
+        result["attachments_commit_sha"] = attachments_commit_sha
 
     if default_branch and default_branch != declared_branch:
         print(
@@ -415,6 +520,11 @@ def execute_submission(package, info, fork_org, token):
             package,
             token,
         )
+        if attachments:
+            commit_attachments(
+                fork_owner, fork_repo, default_new_branch, subdirectory,
+                attachments, package, token,
+            )
         default_pr_url = create_pull_request(
             upstream_owner,
             upstream_repo,
@@ -473,6 +583,11 @@ def print_preview(package, info, source_yaml, fork_org):
         flush=True,
     )
     print(f"3. File Operation:  {action_description}", flush=True)
+    attachments = load_attachments(md_file)
+    if attachments:
+        print(f"   Attachments:     {len(attachments)} file(s) committed separately:", flush=True)
+        for doc_key, src in sorted(attachments.items()):
+            print(f"     {get_attachment_repo_path(subdirectory, doc_key)}  <-  {src}", flush=True)
     print(
         f"4. Commit Message:\n   "
         + build_commit_message(package, source_file, planned_action).replace("\n", "\n   "),

@@ -69,6 +69,8 @@ pages/
 | :--- | :--- |
 | `find_current_pages.py` | Scans `pages/` for top-level pages tagged with `CategoryPackage` and generates `current_pages.yaml`. |
 | `find_macros.py` | Utility script that scans `current_pages.yaml` source files and reports MoinMoin `<<Macro>>` prevalence. |
+| `fetch_index_packages.py` | Builds `index_packages.yaml` (every released package, i.e. everything on index.ros.org) from the rosdistro index and distribution caches. Requires network access. |
+| `index_packages.yaml` | Package name → distros list used by `convert_to_markdown.py` to rewrite wiki package links to `https://index.ros.org/p/<package>`. |
 | `convert_to_markdown.py` | Preprocesses MoinMoin syntax, runs `pandoc`, postprocesses output, and writes `markdown_output/<pkg>.md` for entries in the review queues, skipping submitted and manually edited pages. |
 | `correlate_packages.py` | Matches packages in a YAML file against the ROS Noetic `rosdistro` index and queries GitHub for `package.xml`, `README.md`, and archive status. |
 | `count_results.py` | Read-only analysis script that summarizes correlation, review, and submission statistics across `current_pages.yaml`, `export_pages.yaml`, `extend_pages.yaml`, and `submitted_pages.yaml`. |
@@ -79,7 +81,7 @@ pages/
 | `extend_pages.yaml` | Active (matched, non-archived) packages that **already** have a `README.md` in their upstream repository. |
 | `submitted_pages.yaml` | Tracks packages whose migration pull requests have been submitted via `submit_prs.py`. |
 | `test_current_pages.yaml` | Small 3-package fixture (`amcl`, `roscpp`, `tf2`) for testing `correlate_packages.py`. |
-| `markdown_output/` | Directory containing the converted `<package>.md` files. |
+| `markdown_output/` | Directory containing the converted `<package>.md` files, plus `<package>.attachments.yaml` manifests for pages that reference wiki attachments. |
 | `test_*.py` | Unit and integration test suites for conversion and review scripts. |
 
 ---
@@ -121,6 +123,12 @@ python3 convert_to_markdown.py --only bond tf2    # convert specific packages
   - entries marked `edited: true` (set by `review_packages.py`)
   - Markdown files with uncommitted git changes
 - `--force-edited` overrides the last two (submitted packages are still skipped).
+
+**Links and attachments:**
+- Wiki links to packages listed in `index_packages.yaml` become `https://index.ros.org/p/<package>` links. Refresh the list with `python3 fetch_index_packages.py` (needs network). Links to subpages of *other* indexed packages (e.g. `rviz/DisplayTypes/Map`) go to the owning package's index page. Links to other wiki pages are currently left unchanged.
+- **Subpages are appended:** when a page links to one of its own subpages (e.g. `[[/Tutorials]]`, `[[mypkg/MeanFilter]]`), that subpage is converted and appended to the same README as a `## <subpage>` section. Its headings are demoted, and a tutorial's `## title =` is used as the section heading when it has one. Subpages linked from appended subpages are appended too (no limit by default; `convert_file(..., max_subpages=N)` can cap it). Tutorial listings that MoinMoin generates at view time (`<<FullSearch*(title:"pkg/Tutorials/" SomeCategory)>>`, `<<TutorialChain(...)>>`) are expanded into static link lists with descriptions, so the listed tutorials get appended too.
+- **Same-document links become Markdown anchors:** links to sections of the same page (`[[#Usage]]`, `[[mypkg#Usage]]`, MoinMoin `head-<sha1>` or UTF-7-encoded ids) and to appended subpages are resolved to GitHub heading anchors (`#usage`). `<<Anchor(name)>>` becomes `<a id="name"></a>`. A link to the page itself with no section, or to a section that can't be found, is reduced to its text.
+- `{{attachment:file}}` images and `[[attachment:file|...]]` links whose file exists in `pages/<page>/attachments/` become relative `doc/<file>` links (spaces become `_`). The mapping is written to `markdown_output/<package>.attachments.yaml`, and `submit_prs.py` commits those files into `<package>/doc/`. Attachments of included pages are resolved against the included page.
 - Files are only rewritten when the content changes, and the queue YAML files are never modified, so it is safe to run alongside `review_packages.py`.
 
 **What the converter does:**
@@ -207,6 +215,7 @@ For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_revi
    - Creates (or syncs) a fork of the repository in the `tfoote-ros-wiki-migration-forks` organization (parameterized via `FORK_ORG` / `--fork-org`).
    - Creates a new branch `ros-wiki-migration-<package>` off the declared branch in the YAML file.
    - Creates `README.md` in the package subdirectory if it does not exist, or appends the converted Markdown content to the existing `README.md`.
+   - If `markdown_output/<package>.attachments.yaml` exists, commits the listed attachment files into `<package subdirectory>/doc/` in one additional commit (existing files with the same path are not overwritten).
    - Commits the change with a message explaining the ROS Wiki origin.
    - Opens a pull request against the upstream repository's declared branch explaining the migration goal and noting that maintainers may merge, edit, or close it as *won't fix*.
    - If the declared branch differs from the repository's default branch, creates a second branch off the default branch (`ros-wiki-migration-<package>-<default_branch>`), applies the `README.md` change, and opens a second pull request against the default branch with a warning caveat at the top linking to the original PR and noting that the content is not confirmed up to date.
@@ -221,6 +230,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_convert_markup.py` — Tests MoinMoin bold, italic, nested quotes, and code block placeholder extraction.
 - `test_convert_include.py` — Tests `<<Include(...)>>` resolution, missing page fallbacks, nested includes, and recursion depth limits.
 - `test_convert_main.py` — Tests which pages `convert_to_markdown.py` regenerates (queue-only, skips submitted/edited/dirty files, `--dry-run`, `--only`, `--force-edited`).
+- `test_links_attachments.py` — Tests index.ros.org link rewriting, attachment → `doc/` rewriting and manifests, the attachment commit in `submit_prs.py`, same-page anchor resolution, subpage appending (including tutorial listing expansion and the subpage limit).
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
 - `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.

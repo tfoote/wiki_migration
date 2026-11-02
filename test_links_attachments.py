@@ -98,6 +98,15 @@ class TestRewriteLinks(WikiDumpTestCase):
             "{{attachment:mypkg/Tutorials/diagram.png}}",
         )
 
+    def test_included_page_relative_links_are_qualified(self):
+        self.assertEqual(
+            ctm.absolutize_attachments(
+                "[[/Timers|t]] [[../Other]] <<TutorialChain(/Basics)>> [[abs/page]]",
+                "mypkg/Tutorials"),
+            "[[mypkg/Tutorials/Timers|t]] [[mypkg/Other]] "
+            "<<TutorialChain(mypkg/Tutorials/Basics)>> [[abs/page]]",
+        )
+
 
 def write_page(name, text, rev="00000001"):
     d = os.path.join("pages", ctm.quote_wikiname_fs(name))
@@ -165,6 +174,70 @@ class TestAnchorsAndSubpages(WikiDumpTestCase):
         self.assertEqual(stats["subpages_skipped"], ["mypkg/S2"])
         self.assertIn("## S1", md)
         self.assertNotIn("## S2", md)
+
+
+class TestStandardSubpages(WikiDumpTestCase):
+    def setUp(self):
+        super().setUp()
+        ctm._all_page_names = None
+
+    def tearDown(self):
+        ctm._all_page_names = None
+        super().tearDown()
+
+    def test_unlinked_tutorials_and_troubleshooting_are_appended(self):
+        write_page("mypkg/Tutorials",
+                   "<<FullSearchWithDescriptionsCS(title:\"mypkg/Tutorials/\" TutorialCategory)>>\n")
+        write_page("mypkg/Tutorials/Basics",
+                   "## title = The Basics\n## description = Learn the basics\nTutorialCategory\n"
+                   "= Basics =\n" + "Some real tutorial content here. " * 5 + "\n")
+        write_page("mypkg/Troubleshooting",
+                   "No troubleshooting tips have been added for this package/stack.\n"
+                   "== Error: it breaks ==\n" + "Restart the node and check the cable. " * 4 + "\n")
+        write_page("mypkg/FAQ", "= FAQ =\n<<NewPage(x)>>\n")  # template only
+        src = write_page("mypkg", "== Overview ==\nNo links to subpages here.\n")
+        stats = {}
+        with patch("builtins.print"):
+            md = ctm.convert_file(src, stats=stats)
+        self.assertEqual(stats["subpages"], [
+            "mypkg/Tutorials", "mypkg/Troubleshooting", "mypkg/Tutorials/Basics"])
+        self.assertIn("## Tutorials", md)
+        self.assertIn("## The Basics", md)
+        self.assertIn("## Troubleshooting", md)
+        self.assertIn("Restart the node", md)
+        self.assertNotIn("No troubleshooting tips", md)
+        self.assertNotIn("## FAQ", md)
+
+    def test_empty_standard_subpages_skipped(self):
+        write_page("mypkg/Tutorials",
+                   "<<FullSearchWithDescriptionsCS(title:\"mypkg/Tutorials/\" TutorialCategory)>>\n"
+                   "'''Create a new tutorial:''' <<NewPage(x)>>\n")
+        write_page("mypkg/Troubleshooting",
+                   "No troubleshooting tips have been added for this package/stack.\n")
+        self.assertFalse(ctm.has_real_content("mypkg/Tutorials"))
+        self.assertFalse(ctm.has_real_content("mypkg/Troubleshooting"))
+        self.assertFalse(ctm.has_real_content("mypkg/Missing"))
+
+    def test_excluded_subpages(self):
+        for rel in ["Reviews", "Reviews/2010-07-28_API_Review", "ChangeList",
+                    "ChangeList/1.0", "cturtle", "Electric", "melodic",
+                    "5-28-2009_API_Review", "Tutorials/Doc_Review"]:
+            self.assertTrue(ctm.is_excluded_subpage(rel), rel)
+        for rel in ["Tutorials", "Troubleshooting", "FAQ", "Plugins", "noetic",
+                    "Tutorials/Getting Started"]:
+            self.assertFalse(ctm.is_excluded_subpage(rel), rel)
+
+    def test_excluded_subpage_links_not_appended(self):
+        write_page("mypkg/Reviews", "Review notes " * 20 + "\n")
+        write_page("mypkg/cturtle", "Old content " * 20 + "\n")
+        src = write_page("mypkg", "See [[/Reviews]] and [[mypkg/cturtle]].\n")
+        stats = {}
+        with patch("builtins.print"):
+            md = ctm.convert_file(src, stats=stats)
+        self.assertEqual(stats["subpages"], [])
+        self.assertNotIn("Review notes", md)
+        # falls back to the package's index.ros.org page
+        self.assertIn("https://index.ros.org/p/mypkg", md)
 
 
 class TestCommitAttachments(WikiDumpTestCase):

@@ -81,7 +81,12 @@ _ATTACHMENT_REF = re.compile(r"(\[\[|\{\{)(\s*)attachment:([^|\]\}]+)")
 
 
 def absolutize_attachments(content, page):
-    """Qualify bare attachment refs with their owning page (for includes)."""
+    """Qualify page-relative references with the page they came from.
+
+    Used for included pages, whose content is inlined into another page:
+    bare attachment refs and relative links ([[/Sub]], [[../Sibling]],
+    <<TutorialChain(/Sub)>>) must keep resolving against the included page.
+    """
 
     def repl(match):
         ref = match.group(3).strip()
@@ -89,7 +94,19 @@ def absolutize_attachments(content, page):
             ref = f"{page}/{ref}"
         return f"{match.group(1)}{match.group(2)}attachment:{ref}"
 
-    return _ATTACHMENT_REF.sub(repl, content)
+    def rel_link_repl(match):
+        return match.group(1) + resolve_page_name(match.group(2), page)
+
+    def chain_repl(match):
+        target = match.group(1).strip()
+        if target.startswith(("/", "../")):
+            target = resolve_page_name(target, page)
+        return f"<<TutorialChain({target})>>"
+
+    content = _ATTACHMENT_REF.sub(repl, content)
+    content = re.sub(r"(\[\[\s*)((?:\.\./|/)[^|\]#\n]*)", rel_link_repl, content)
+    content = re.sub(r"<<TutorialChain\((.*?)\)>>", chain_repl, content)
+    return content
 
 
 def attachment_link(ref, current_page, attachments):
@@ -133,6 +150,51 @@ def read_page(name):
 # Maximum number of subpages appended to one README (None = unlimited).
 MAX_SUBPAGES = None
 
+# Subpages appended even when the page doesn't link them (MoinMoin's
+# <<PackageHeader>> linked these automatically), if they have real content.
+STANDARD_SUBPAGES = ["Tutorials", "Troubleshooting", "FAQ"]
+
+# Subpages never appended: historical reviews, change lists, and pages for
+# old ROS distributions (noetic content comes in via version blocks).
+_OLD_DISTROS = ("boxturtle", "cturtle", "diamondback", "electric", "fuerte",
+                "groovy", "hydro", "indigo", "jade", "kinetic", "lunar", "melodic")
+_EXCLUDED_SUBPAGE = re.compile(
+    r"^(reviews?\b|changelist\b|changelog\b|(" + "|".join(_OLD_DISTROS) + r")\b)"
+    r"|(api|doc)_review",
+    re.IGNORECASE,
+)
+
+# Boilerplate text that doesn't count as content.
+_TEMPLATE_TEXT = [
+    "No troubleshooting tips have been added for this package/stack.",
+]
+
+
+def is_excluded_subpage(rel_name):
+    """True for subpages (relative to the package) that are never exported."""
+    return any(_EXCLUDED_SUBPAGE.search(part) for part in rel_name.split("/"))
+
+
+def has_real_content(page, min_chars=80):
+    """True if a wiki page has more than headings, macros and boilerplate."""
+    text = read_page(page)
+    if text is None:
+        return False
+    expanded = expand_listing_macros(text, page)
+    if expanded.count("[[") > text.count("[["):
+        return True  # a tutorial listing that found existing pages
+    text = expanded
+    for phrase in _TEMPLATE_TEXT:
+        text = text.replace(phrase, "")
+    lines = []
+    for line in text.replace("\r", "").split("\n"):
+        s = line.strip()
+        if (s.startswith("##") or re.match(r"^=+.*=+$", s)
+                or re.match(r"^(\w*Category\w*\s*)+$", s) or s == "----"):
+            continue
+        lines.append(re.sub(r"<<[^>]*>>", "", s))
+    return len(re.sub(r"\s+", "", "".join(lines))) >= min_chars
+
 
 class DocContext:
     """Tracks which wiki pages end up in one generated README."""
@@ -149,6 +211,8 @@ class DocContext:
 
     def try_append_subpage(self, page):
         if not page.startswith(self.root + "/") or self.contains(page):
+            return False
+        if is_excluded_subpage(page[len(self.root) + 1:]):
             return False
         if read_page(page) is None:
             return False
@@ -628,6 +692,8 @@ def preprocess(content, current_page=None, attachments=None, doc=None):
     # Drop lines that only contain wiki category tags (e.g. "TutorialCategory").
     lines = [l for l in lines if not re.match(r"^\s*(\w*Category\w*\s*)+$", l)]
     content = "\n".join(lines)
+    for phrase in _TEMPLATE_TEXT:
+        content = content.replace(phrase, "")
 
     # 6. Convert <<Youtube(video_id)>> to [[https://www.youtube.com/watch?v=video_id|Youtube]]
     content = re.sub(
@@ -795,6 +861,12 @@ def convert_file(src_file, attachments=None, max_subpages=MAX_SUBPAGES, stats=No
     doc = DocContext(root, max_subpages=max_subpages)
 
     parts = [(root, convert_markup(content, root, attachments, doc))]
+    # Pages MoinMoin's PackageHeader linked automatically (after the subpages
+    # the page links explicitly, so the page's own ordering comes first).
+    for name in STANDARD_SUBPAGES:
+        page = f"{root}/{name}"
+        if not doc.contains(page) and has_real_content(page):
+            doc.try_append_subpage(page)
     i = 0
     while i < len(doc.subpages):  # may grow while subpages are converted
         page = doc.subpages[i]

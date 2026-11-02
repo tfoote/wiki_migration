@@ -76,6 +76,12 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
     def tearDown(self):
         self.temp_dir.cleanup()
 
+    def run(self, result=None):
+        # These workflow tests simulate a first-time fork; the existing-fork
+        # lookup is covered by TestForkLookup below.
+        with patch("submit_prs.find_existing_fork", return_value=None):
+            return super().run(result)
+
     def test_create_new_readme_same_default_branch(self):
         api_calls = []
 
@@ -293,6 +299,91 @@ class TestSubmitPrsWorkflow(unittest.TestCase):
         with open(self.export_file, "r", encoding="utf-8") as f:
             remaining_export = yaml.safe_load(f)
         self.assertIn("pkg_export", remaining_export)
+
+
+class TestForkLookup(unittest.TestCase):
+    """Regression tests for duplicate forks (bond_core-1, bond_core-2, ...)."""
+
+    UPSTREAM_FORK = {
+        "fork": True, "name": "bond_core", "full_name": "org/bond_core",
+        "owner": {"login": "org"},
+        "parent": {"full_name": "ros/bond_core", "default_branch": "ros2"},
+    }
+
+    def test_existing_fork_is_reused_without_creating_a_new_one(self):
+        calls = []
+
+        def fake_api(url, method="GET", data=None, token=None, accept_statuses=None):
+            calls.append((method, url))
+            if url == "https://api.github.com/repos/org/bond_core":
+                return self.UPSTREAM_FORK
+            if "/git/ref/heads/" in url:
+                return {"object": {"sha": "abc123"}}
+            return {}
+
+        with patch("submit_prs.github_api_request", side_effect=fake_api), \
+             redirect_stdout(io.StringIO()):
+            owner, repo, sha, default = submit_prs.ensure_fork(
+                "ros", "bond_core", "org", "noetic-devel", "tok")
+        self.assertEqual((owner, repo, sha, default), ("org", "bond_core", "abc123", "ros2"))
+        self.assertFalse(any(m == "POST" and u.endswith("/forks") for m, u in calls))
+
+    def test_renamed_fork_found_via_upstream_fork_list(self):
+        renamed = dict(self.UPSTREAM_FORK, name="bond_core_fork",
+                       full_name="org/bond_core_fork")
+
+        def fake_api(url, method="GET", data=None, token=None, accept_statuses=None):
+            if url == "https://api.github.com/repos/org/bond_core":
+                raise urllib.error.HTTPError(url, 404, "Not Found", {}, None)
+            if "/repos/ros/bond_core/forks?" in url:
+                return [{"owner": {"login": "someone"}, "url": "x"},
+                        {"owner": {"login": "org"},
+                         "url": "https://api.github.com/repos/org/bond_core_fork"}]
+            if url == "https://api.github.com/repos/org/bond_core_fork":
+                return renamed
+            raise AssertionError(url)
+
+        with patch("submit_prs.github_api_request", side_effect=fake_api):
+            info = submit_prs.find_existing_fork("ros", "bond_core", "org", "tok")
+        self.assertEqual(info["name"], "bond_core_fork")
+
+    def test_unrelated_repo_with_same_name_is_not_used(self):
+        def fake_api(url, method="GET", data=None, token=None, accept_statuses=None):
+            if url == "https://api.github.com/repos/org/bond_core":
+                return {"fork": False, "name": "bond_core", "owner": {"login": "org"}}
+            if "/forks?" in url:
+                return []
+            raise AssertionError(url)
+
+        with patch("submit_prs.github_api_request", side_effect=fake_api):
+            self.assertIsNone(submit_prs.find_existing_fork("ros", "bond_core", "org", "tok"))
+
+    def test_pull_request_names_head_repo(self):
+        sent = {}
+
+        def fake_api(url, method="GET", data=None, token=None, accept_statuses=None):
+            sent.update(data or {})
+            return {"html_url": "https://github.com/ros/bond_core/pull/1"}
+
+        with patch("submit_prs.github_api_request", side_effect=fake_api), \
+             redirect_stdout(io.StringIO()):
+            submit_prs.create_pull_request(
+                "ros", "bond_core", "org", "ros-wiki-migration-bondpy", "noetic-devel",
+                "bondpy", "src", "bondpy/README.md", "create", "tok", fork_repo="bond_core")
+        self.assertEqual(sent["head"], "org:ros-wiki-migration-bondpy")
+        self.assertEqual(sent["head_repo"], "bond_core")
+
+    def test_http_errors_include_github_message(self):
+        body = io.BytesIO(b'{"message": "Validation Failed", "errors": '
+                          b'[{"message": "A pull request already exists"}]}')
+        err = urllib.error.HTTPError("https://api.github.com/x", 422,
+                                     "Unprocessable Entity", {}, body)
+        with patch("urllib.request.urlopen", side_effect=err):
+            with self.assertRaises(urllib.error.HTTPError) as ctx:
+                submit_prs.github_api_request("https://api.github.com/x", method="POST",
+                                              data={}, token="tok")
+        self.assertIn("Validation Failed; A pull request already exists", str(ctx.exception))
+        self.assertIn("POST https://api.github.com/x", str(ctx.exception))
 
 
 if __name__ == "__main__":

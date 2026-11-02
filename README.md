@@ -226,7 +226,7 @@ python3 submit_prs.py --review-key <your_review_key>
 For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_review_key>: ready`:
 1. Displays a preview of the fork target, branch name, target `README.md` path, commit message, PR details, and Markdown content, then prompts `[Y]es / [S]kip / [Q]uit`.
 2. Upon confirmation (`Y`):
-   - Creates (or syncs) a fork of the repository in the `tfoote-ros-wiki-migration-forks` organization (parameterized via `FORK_ORG` / `--fork-org`).
+   - Reuses the organization's existing fork of the repository, or creates one in the `tfoote-ros-wiki-migration-forks` organization (parameterized via `FORK_ORG` / `--fork-org`), and syncs it with upstream. Asking GitHub to fork a repo that's already forked into the organization creates duplicates (`<repo>-1`, …), so the existing fork is looked up first. PRs name the head repository explicitly.
    - Creates a new branch `ros-wiki-migration-<package>` off the declared branch in the YAML file.
    - Creates `README.md` in the package subdirectory if it does not exist, or appends the converted Markdown content to the existing `README.md`.
    - If `markdown_output/<package>.attachments.yaml` exists, commits the listed attachment files into `<package subdirectory>/doc/` in one additional commit (existing files with the same path are not overwritten).

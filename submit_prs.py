@@ -59,6 +59,18 @@ def github_api_request(url, method="GET", data=None, token=None, accept_statuses
                         print(f"  Rate limit hit. Sleeping for {sleep_time:.1f}s...", flush=True)
                         time.sleep(sleep_time)
                         continue
+            # Include GitHub's explanation (e.g. "Validation Failed: ...") in
+            # the error, otherwise a 422 is impossible to diagnose.
+            try:
+                detail = json.loads(e.read().decode("utf-8") or "{}")
+                parts = [detail.get("message", "")]
+                parts += [err.get("message") or json.dumps(err)
+                          for err in detail.get("errors", []) if isinstance(err, dict)]
+                message = "; ".join(p for p in parts if p)
+                if message:
+                    e.msg = f"{e.msg}: {message} ({method} {url})"
+            except Exception:
+                pass
             raise e
 
 
@@ -269,16 +281,63 @@ def sync_and_get_branch_sha(owner, repo, fork_owner, fork_repo, branch, token):
     return base_sha
 
 
+def find_existing_fork(owner, repo, fork_org, token, max_pages=10):
+    """Return the repo info of fork_org's existing fork of owner/repo, or None.
+
+    GitHub's "create fork" endpoint does not reliably return an existing fork:
+    calling it again for a repo already forked into the organization created
+    duplicate forks named <repo>-1, <repo>-2, ... So look for the fork first.
+    """
+    upstream = f"{owner}/{repo}".lower()
+
+    def is_our_fork(info):
+        if not info.get("fork"):
+            return False
+        if info.get("owner", {}).get("login", "").lower() != fork_org.lower():
+            return False
+        parents = {(info.get(k) or {}).get("full_name", "").lower() for k in ("parent", "source")}
+        return upstream in parents
+
+    # Fast path: the fork has the same name as the upstream repo.
+    try:
+        info = github_api_request(f"https://api.github.com/repos/{fork_org}/{repo}", token=token)
+        if is_our_fork(info):
+            return info
+    except urllib.error.HTTPError as e:
+        if e.code != 404:
+            raise
+
+    # Slow path: the fork has another name (e.g. renamed); scan upstream's forks.
+    for page in range(1, max_pages + 1):
+        forks = github_api_request(
+            f"https://api.github.com/repos/{owner}/{repo}/forks?per_page=100&sort=oldest&page={page}",
+            token=token,
+        )
+        for f in forks:
+            if f.get("owner", {}).get("login", "").lower() == fork_org.lower():
+                # Listing entries lack parent info; fetch the full repo.
+                return github_api_request(f["url"], token=token)
+        if len(forks) < 100:
+            break
+    return None
+
+
 def ensure_fork(owner, repo, fork_org, declared_branch, token):
-    """Create a fork in fork_org and return (fork_owner, fork_repo, base_sha, default_branch)."""
-    fork_url = f"https://api.github.com/repos/{owner}/{repo}/forks"
+    """Find or create the fork in fork_org.
+
+    Returns (fork_owner, fork_repo, base_sha, default_branch).
+    """
     print(f"  Ensuring fork of {owner}/{repo} in organization {fork_org}...", flush=True)
-    fork_info = github_api_request(
-        fork_url,
-        method="POST",
-        data={"organization": fork_org, "default_branch_only": False},
-        token=token,
-    )
+    fork_info = find_existing_fork(owner, repo, fork_org, token)
+    if fork_info:
+        print(f"  Using existing fork {fork_info.get('full_name')}.", flush=True)
+    else:
+        fork_info = github_api_request(
+            f"https://api.github.com/repos/{owner}/{repo}/forks",
+            method="POST",
+            data={"organization": fork_org, "default_branch_only": False},
+            token=token,
+        )
     fork_owner = fork_info.get("owner", {}).get("login", fork_org)
     fork_repo = fork_info.get("name", repo)
 
@@ -402,6 +461,7 @@ def create_pull_request(
     token,
     original_pr_url=None,
     declared_branch=None,
+    fork_repo=None,
 ):
     """Create a pull request from fork_owner:new_branch to upstream_owner/upstream_repo:base_branch."""
     pulls_url = f"https://api.github.com/repos/{upstream_owner}/{upstream_repo}/pulls"
@@ -421,6 +481,10 @@ def create_pull_request(
         "base": base_branch,
         "body": body,
     }
+    if fork_repo:
+        # "owner:branch" alone is ambiguous when the owner has more than one
+        # fork of the upstream repo; name the head repository explicitly.
+        payload["head_repo"] = fork_repo
     print(
         f"  Creating PR against {upstream_owner}/{upstream_repo}:{base_branch}...",
         flush=True,
@@ -479,6 +543,7 @@ def execute_submission(package, info, fork_org, token):
         target_path,
         action,
         token,
+        fork_repo=fork_repo,
     )
 
     result = {
@@ -538,6 +603,7 @@ def execute_submission(package, info, fork_org, token):
             token,
             original_pr_url=pr_url,
             declared_branch=declared_branch,
+            fork_repo=fork_repo,
         )
         result["default_branch"] = default_branch
         result["default_branch_pr_url"] = default_pr_url

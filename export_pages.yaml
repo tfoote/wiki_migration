@@ -139,6 +139,7 @@ aruco:
   repository_archived: false
   source_file: pages/aruco/revisions/00000001
   subdirectory: aruco
+  tully2: ignored
 aruco_msgs:
   branch: noetic-devel
   markdown_file: markdown_output/aruco_msgs.md
@@ -148,6 +149,7 @@ aruco_msgs:
   repository_archived: false
   source_file: pages/aruco_msgs/revisions/00000001
   subdirectory: aruco_msgs
+  tully2: ignored
 aruco_ros:
   branch: noetic-devel
   markdown_file: markdown_output/aruco_ros.md
@@ -157,6 +159,7 @@ aruco_ros:
   repository_archived: false
   source_file: pages/aruco_ros/revisions/00000001
   subdirectory: aruco_ros
+  tully2: ignored
 assimp_devel:
   branch: master
   markdown_file: markdown_output/assimp_devel.md
@@ -166,6 +169,7 @@ assimp_devel:
   repository_archived: false
   source_file: pages/assimp_devel/revisions/00000001
   subdirectory: 3rdparty/assimp_devel
+  tully2: ignored
 audio_capture:
   branch: master
   markdown_file: markdown_output/audio_capture.md
@@ -175,6 +179,7 @@ audio_capture:
   repository_archived: false
   source_file: pages/audio_capture/revisions/00000030
   subdirectory: audio_capture
+  tully2: ignored
 audio_common_msgs:
   branch: master
   markdown_file: markdown_output/audio_common_msgs.md
@@ -184,6 +189,7 @@ audio_common_msgs:
   repository_archived: false
   source_file: pages/audio_common_msgs/revisions/00000004
   subdirectory: audio_common_msgs
+  tully2: ignored
 audio_play:
   branch: master
   markdown_file: markdown_output/audio_play.md
@@ -193,15 +199,7 @@ audio_play:
   repository_archived: false
   source_file: pages/audio_play/revisions/00000005
   subdirectory: audio_play
-automotive_navigation_msgs:
-  branch: master
-  markdown_file: markdown_output/automotive_navigation_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/astuff/automotive_autonomy_msgs.git
-  repository_archived: false
-  source_file: pages/automotive_navigation_msgs/revisions/00000002
-  subdirectory: automotive_navigation_msgs
+  tully2: ignored
 automotive_platform_msgs:
   branch: master
   markdown_file: markdown_output/automotive_platform_msgs.md
@@ -211,6 +209,7 @@ automotive_platform_msgs:
   repository_archived: false
   source_file: pages/automotive_platform_msgs/revisions/00000001
   subdirectory: automotive_platform_msgs
+  tully2: ready
 bayesian_belief_networks:
   branch: master
   markdown_file: markdown_output/bayesian_belief_networks.md
@@ -220,17 +219,10 @@ bayesian_belief_networks:
   repository_archived: false
   source_file: pages/bayesian_belief_networks/revisions/00000001
   subdirectory: bayesian_belief_networks
-bond:
-  branch: noetic-devel
-  markdown_file: markdown_output/bond.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros/bond_core.git
-  repository_archived: false
-  source_file: pages/bond/revisions/00000013
-  subdirectory: bond
+  tully2: ignored
 bondcpp:
   branch: noetic-devel
+  edited: true
   markdown_file: markdown_output/bondcpp.md
   package_xml_match: true
   readme_exists: false
@@ -238,6 +230,7 @@ bondcpp:
   repository_archived: false
   source_file: pages/bondcpp/revisions/00000016
   subdirectory: bondcpp
+  tully2: ready
 bondpy:
   branch: noetic-devel
   markdown_file: markdown_output/bondpy.md
@@ -247,6 +240,7 @@ bondpy:
   repository_archived: false
   source_file: pages/bondpy/revisions/00000016
   subdirectory: bondpy
+  tully2: ready
 bota_driver:
   branch: noetic-devel
   markdown_file: markdown_output/bota_driver.md

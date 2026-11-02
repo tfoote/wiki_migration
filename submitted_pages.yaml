@@ -70,3 +70,40 @@ apriltag_ros:
   subdirectory: apriltag_ros
   submitted_branch: ros-wiki-migration-apriltag_ros
   tully2: ready
+automotive_navigation_msgs:
+  action: create
+  branch: master
+  commit_sha: e08698a6dbc1bb16aae4671df0d6875b9bd630de
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/automotive_autonomy_msgs.git
+  markdown_file: markdown_output/automotive_navigation_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/astuff/automotive_autonomy_msgs/pull/33
+  readme_exists: false
+  repository: https://github.com/astuff/automotive_autonomy_msgs.git
+  repository_archived: false
+  source_file: pages/automotive_navigation_msgs/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: automotive_navigation_msgs
+  submitted_branch: ros-wiki-migration-automotive_navigation_msgs
+  tully2: ready
+bond:
+  action: create
+  branch: noetic-devel
+  commit_sha: c4ed117f41e901e0cac1a4d2651c44fc87388fc0
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/ros/bond_core/pull/119
+  default_commit_sha: a5285bc29c5e4429870f33a24608853bb6987153
+  default_submitted_branch: ros-wiki-migration-bond-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/bond_core.git
+  markdown_file: markdown_output/bond.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/bond_core/pull/118
+  readme_exists: false
+  repository: https://github.com/ros/bond_core.git
+  repository_archived: false
+  source_file: pages/bond/revisions/00000013
+  source_queue: export_pages.yaml
+  subdirectory: bond
+  submitted_branch: ros-wiki-migration-bond
+  tully2: ready

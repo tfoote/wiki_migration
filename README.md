@@ -235,6 +235,19 @@ For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_revi
    - If the declared branch differs from the repository's default branch, creates a second branch off the default branch (`ros-wiki-migration-<package>-<default_branch>`), applies the `README.md` change, and opens a second pull request against the default branch with a warning caveat at the top linking to the original PR and noting that the content is not confirmed up to date.
    - Removes the package entry from `export_pages.yaml` or `extend_pages.yaml` and records it in `submitted_pages.yaml` alongside the created PR URL(s).
 
+### 7. Check Pull Request Status
+
+Check every PR recorded in `submitted_pages.yaml` (both `pr_url` and `default_branch_pr_url`):
+
+```bash
+python3 check_pr_status.py            # listing + summary
+python3 check_pr_status.py --json     # machine-readable rows
+```
+
+- **Listing:** one line per PR with the package, repo#number, base branch, state (`OPEN`, `DRAFT`, `MERGED`, `CLOSED`), the latest review verdict (approved / changes requested / commented), comment count, age, and days since the last update (or since merge/close).
+- **Summary:** totals and percentages per state, packages with a merged PR, packages whose PRs were all closed without merging (won't fix), open PRs with changes requested or with comments, the oldest open PR, and any PRs that couldn't be checked.
+- `GITHUB_TOKEN` is optional (read-only access is enough). Without it, unauthenticated requests are limited to 60 per hour, and each PR uses 2 requests.
+
 ---
 
 ## Development & Testing
@@ -246,6 +259,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_convert_main.py` — Tests which pages `convert_to_markdown.py` regenerates (queue-only, skips submitted/edited/dirty files, `--dry-run`, `--only`, `--force-edited`).
 - `test_links_attachments.py` — Tests index.ros.org link rewriting, attachment → `doc/` rewriting and manifests, the attachment commit in `submit_prs.py`, same-page anchor resolution, subpage appending (including tutorial listing expansion and the subpage limit).
 - `test_convert_clearsilver.py` — Tests the HDF parser, CS/NodeAPI rendering (single/multiple nodes, groups, tf, `no_header`, multi-line descriptions) and the tutorial header.
+- `test_check_pr_status.py` — Tests PR status collection (merged/open/closed/errors, review verdicts) and the listing/summary output, against a mocked GitHub API.
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
 - `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.

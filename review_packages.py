@@ -5,6 +5,30 @@ import sys
 import yaml
 
 
+PREVIEW_LINES = 25
+HEADER_BAR = "=" * 20
+TRUNCATE_BAR = "V" * 20
+
+
+def print_markdown(md_file, max_lines=None):
+    """Print markdown content between matching headers, optionally truncated."""
+    with open(md_file, "r") as f_md:
+        lines = f_md.readlines()
+
+    label = "Markdown Preview" if max_lines is not None else "Markdown Full View"
+    print(f"{HEADER_BAR} BEGIN {label}: {md_file} {HEADER_BAR}", flush=True)
+    shown = lines if max_lines is None else lines[:max_lines]
+    for line in shown:
+        print(line.rstrip(), flush=True)
+    remaining = len(lines) - len(shown)
+    if remaining > 0:
+        print(
+            f"{TRUNCATE_BAR} Truncated {remaining} Lines {TRUNCATE_BAR}",
+            flush=True,
+        )
+    print(f"{HEADER_BAR}  END  {label}: {md_file} {HEADER_BAR}", flush=True)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Review and edit export pages."
@@ -49,32 +73,27 @@ def main():
             subdir = info.get("subdirectory")
             md_file = info.get("markdown_file")
 
+            show_details = True
             while True:
-                print("\n" + "=" * 40, flush=True)
-                print(f"Package: {package}", flush=True)
-                print(f"Repository: {repo}", flush=True)
-                print(f"Branch: {branch}", flush=True)
-                print(f"Relative Path: {subdir}", flush=True)
-                print("-" * 20, flush=True)
+                if show_details:
+                    print("\n" + "=" * 40, flush=True)
+                    print(f"Package: {package}", flush=True)
+                    print(f"Repository: {repo}", flush=True)
+                    print(f"Branch: {branch}", flush=True)
+                    print(f"Relative Path: {subdir}", flush=True)
+                    print("-" * 20, flush=True)
 
-                if md_file and os.path.exists(md_file):
-                    print(f"Markdown Preview ({md_file}):", flush=True)
-                    with open(md_file, "r") as f_md:
-                        lines = f_md.readlines()
-                        for line in lines[:10]:
-                            print(line.rstrip(), flush=True)
-                        if len(lines) > 10:
-                            print("...", flush=True)
-                else:
-                    print(
-                        f"Warning: Markdown file {md_file} not found or not specified.",
-                        flush=True,
-                    )
-
-                print("=" * 40, flush=True)
+                    if md_file and os.path.exists(md_file):
+                        print_markdown(md_file, max_lines=PREVIEW_LINES)
+                    else:
+                        print(
+                            f"Warning: Markdown file {md_file} not found or not specified.",
+                            flush=True,
+                        )
+                show_details = True
 
                 print(
-                    "\nAction: [R]eady / [S]kip / [I]gnore / [E]dit / [Q]uit: ",
+                    "\nAction: [R]eady / [S]kip / [I]gnore / [E]dit / [V]iew All / [Q]uit: ",
                     end="",
                     flush=True,
                 )
@@ -112,9 +131,17 @@ def main():
                     else:
                         print("Error: Markdown file not found.", flush=True)
                     # Continue in the loop to show preview and prompt again
+                elif choice == "V":
+                    if md_file and os.path.exists(md_file):
+                        print(flush=True)
+                        print_markdown(md_file)
+                    else:
+                        print("Error: Markdown file not found.", flush=True)
+                    # Return directly to the Action prompt
+                    show_details = False
                 else:
                     print(
-                        "Invalid choice. Please choose R, S, I, E, or Q.",
+                        "Invalid choice. Please choose R, S, I, E, V, or Q.",
                         flush=True,
                     )
 

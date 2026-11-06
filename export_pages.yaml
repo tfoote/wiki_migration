@@ -212,6 +212,7 @@ bayesian_belief_networks:
   tully2: ignored
 bota_driver:
   branch: noetic-devel
+  edited: true
   markdown_file: markdown_output/bota_driver.md
   package_xml_match: false
   readme_exists: false
@@ -219,6 +220,7 @@ bota_driver:
   repository_archived: false
   source_file: pages/bota_driver/revisions/00000010
   subdirectory: bota_driver
+  tully2: ready
 calibration_estimation:
   branch: noetic-devel
   markdown_file: markdown_output/calibration_estimation.md
@@ -228,6 +230,7 @@ calibration_estimation:
   repository_archived: false
   source_file: pages/calibration_estimation/revisions/00000001
   subdirectory: calibration_estimation
+  tully2: ignored
 calibration_launch:
   branch: noetic-devel
   markdown_file: markdown_output/calibration_launch.md
@@ -237,15 +240,7 @@ calibration_launch:
   repository_archived: false
   source_file: pages/calibration_launch/revisions/00000001
   subdirectory: calibration_launch
-calibration_msgs:
-  branch: noetic-devel
-  markdown_file: markdown_output/calibration_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/calibration.git
-  repository_archived: false
-  source_file: pages/calibration_msgs/revisions/00000007
-  subdirectory: calibration_msgs
+  tully2: ignored
 calibration_setup_helper:
   branch: noetic-devel
   markdown_file: markdown_output/calibration_setup_helper.md
@@ -255,33 +250,7 @@ calibration_setup_helper:
   repository_archived: false
   source_file: pages/calibration_setup_helper/revisions/00000001
   subdirectory: calibration_setup_helper
-camera_calibration:
-  branch: noetic
-  markdown_file: markdown_output/camera_calibration.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/image_pipeline.git
-  repository_archived: false
-  source_file: pages/camera_calibration/revisions/00000049
-  subdirectory: camera_calibration
-camera_calibration_parsers:
-  branch: noetic-devel
-  markdown_file: markdown_output/camera_calibration_parsers.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/image_common.git
-  repository_archived: false
-  source_file: pages/camera_calibration_parsers/revisions/00000017
-  subdirectory: camera_calibration_parsers
-camera_info_manager:
-  branch: noetic-devel
-  markdown_file: markdown_output/camera_info_manager.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/image_common.git
-  repository_archived: false
-  source_file: pages/camera_info_manager/revisions/00000045
-  subdirectory: camera_info_manager
+  tully2: ignored
 can_msgs:
   branch: melodic-devel
   markdown_file: markdown_output/can_msgs.md
@@ -291,51 +260,7 @@ can_msgs:
   repository_archived: false
   source_file: pages/can_msgs/revisions/00000001
   subdirectory: can_msgs
-canopen_402:
-  branch: melodic-devel
-  markdown_file: markdown_output/canopen_402.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-industrial/ros_canopen.git
-  repository_archived: false
-  source_file: pages/canopen_402/revisions/00000013
-  subdirectory: canopen_402
-canopen_chain_node:
-  branch: melodic-devel
-  markdown_file: markdown_output/canopen_chain_node.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-industrial/ros_canopen.git
-  repository_archived: false
-  source_file: pages/canopen_chain_node/revisions/00000013
-  subdirectory: canopen_chain_node
-canopen_master:
-  branch: melodic-devel
-  markdown_file: markdown_output/canopen_master.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-industrial/ros_canopen.git
-  repository_archived: false
-  source_file: pages/canopen_master/revisions/00000006
-  subdirectory: canopen_master
-canopen_motor_node:
-  branch: melodic-devel
-  markdown_file: markdown_output/canopen_motor_node.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-industrial/ros_canopen.git
-  repository_archived: false
-  source_file: pages/canopen_motor_node/revisions/00000008
-  subdirectory: canopen_motor_node
-capabilities:
-  branch: master
-  markdown_file: markdown_output/capabilities.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/osrf/capabilities.git
-  repository_archived: false
-  source_file: pages/capabilities/revisions/00000008
-  subdirectory: ''
+  tully2: ignored
 catkin_virtualenv:
   branch: master
   markdown_file: markdown_output/catkin_virtualenv.md
@@ -345,6 +270,7 @@ catkin_virtualenv:
   repository_archived: false
   source_file: pages/catkin_virtualenv/revisions/00000003
   subdirectory: catkin_virtualenv
+  tully2: ignored
 checkerboard_detector:
   branch: master
   markdown_file: markdown_output/checkerboard_detector.md
@@ -354,6 +280,7 @@ checkerboard_detector:
   repository_archived: false
   source_file: pages/checkerboard_detector/revisions/00000009
   subdirectory: checkerboard_detector
+  tully2: ignored
 chomp_motion_planner:
   branch: master
   markdown_file: markdown_output/chomp_motion_planner.md
@@ -363,6 +290,7 @@ chomp_motion_planner:
   repository_archived: false
   source_file: pages/chomp_motion_planner/revisions/00000028
   subdirectory: moveit_planners/chomp/chomp_motion_planner
+  tully2: ready
 cob_3d_mapping_msgs:
   branch: indigo_dev
   markdown_file: markdown_output/cob_3d_mapping_msgs.md
@@ -372,51 +300,7 @@ cob_3d_mapping_msgs:
   repository_archived: false
   source_file: pages/cob_3d_mapping_msgs/revisions/00000003
   subdirectory: cob_3d_mapping_msgs
-cob_base_drive_chain:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_base_drive_chain.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_driver.git
-  repository_archived: false
-  source_file: pages/cob_base_drive_chain/revisions/00000011
-  subdirectory: cob_base_drive_chain
-cob_base_velocity_smoother:
-  branch: melodic_dev
-  markdown_file: markdown_output/cob_base_velocity_smoother.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_control.git
-  repository_archived: false
-  source_file: pages/cob_base_velocity_smoother/revisions/00000012
-  subdirectory: cob_base_velocity_smoother
-cob_bringup:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_bringup.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_robots.git
-  repository_archived: false
-  source_file: pages/cob_bringup/revisions/00000024
-  subdirectory: cob_bringup
-cob_bringup_sim:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_bringup_sim.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_simulation.git
-  repository_archived: false
-  source_file: pages/cob_bringup_sim/revisions/00000017
-  subdirectory: cob_bringup_sim
-cob_canopen_motor:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_canopen_motor.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_driver.git
-  repository_archived: false
-  source_file: pages/cob_canopen_motor/revisions/00000007
-  subdirectory: cob_canopen_motor
+  tully2: ignored
 cob_cartesian_controller:
   branch: melodic_dev
   markdown_file: markdown_output/cob_cartesian_controller.md
@@ -426,24 +310,7 @@ cob_cartesian_controller:
   repository_archived: false
   source_file: pages/cob_cartesian_controller/revisions/00000001
   subdirectory: cob_cartesian_controller
-cob_collision_velocity_filter:
-  branch: melodic_dev
-  markdown_file: markdown_output/cob_collision_velocity_filter.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_control.git
-  repository_archived: false
-  source_file: pages/cob_collision_velocity_filter/revisions/00000009
-  subdirectory: cob_collision_velocity_filter
-cob_command_gui:
-  branch: indigo_dev
-  markdown_file: markdown_output/cob_command_gui.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_command_tools.git
-  repository_archived: false
-  source_file: pages/cob_command_gui/revisions/00000016
-  subdirectory: cob_command_gui
+  tully2: ignored
 cob_control_mode_adapter:
   branch: melodic_dev
   markdown_file: markdown_output/cob_control_mode_adapter.md
@@ -453,6 +320,7 @@ cob_control_mode_adapter:
   repository_archived: false
   source_file: pages/cob_control_mode_adapter/revisions/00000001
   subdirectory: cob_control_mode_adapter
+  tully2: ignored
 cob_dashboard:
   branch: indigo_dev
   markdown_file: markdown_output/cob_dashboard.md
@@ -462,42 +330,7 @@ cob_dashboard:
   repository_archived: false
   source_file: pages/cob_dashboard/revisions/00000001
   subdirectory: cob_dashboard
-cob_default_env_config:
-  branch: indigo_dev
-  markdown_file: markdown_output/cob_default_env_config.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_environments.git
-  repository_archived: false
-  source_file: pages/cob_default_env_config/revisions/00000008
-  subdirectory: cob_default_env_config
-cob_default_robot_config:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_default_robot_config.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_robots.git
-  repository_archived: false
-  source_file: pages/cob_default_robot_config/revisions/00000006
-  subdirectory: cob_default_robot_config
-cob_description:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_description.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_common.git
-  repository_archived: false
-  source_file: pages/cob_description/revisions/00000017
-  subdirectory: cob_description
-cob_footprint_observer:
-  branch: melodic_dev
-  markdown_file: markdown_output/cob_footprint_observer.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_control.git
-  repository_archived: false
-  source_file: pages/cob_footprint_observer/revisions/00000012
-  subdirectory: cob_footprint_observer
+  tully2: ignored
 cob_frame_tracker:
   branch: melodic_dev
   markdown_file: markdown_output/cob_frame_tracker.md
@@ -507,33 +340,7 @@ cob_frame_tracker:
   repository_archived: false
   source_file: pages/cob_frame_tracker/revisions/00000001
   subdirectory: cob_frame_tracker
-cob_gazebo:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_gazebo.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_simulation.git
-  repository_archived: false
-  source_file: pages/cob_gazebo/revisions/00000004
-  subdirectory: cob_gazebo
-cob_gazebo_objects:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_gazebo_objects.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_simulation.git
-  repository_archived: false
-  source_file: pages/cob_gazebo_objects/revisions/00000017
-  subdirectory: cob_gazebo_objects
-cob_gazebo_worlds:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_gazebo_worlds.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_simulation.git
-  repository_archived: false
-  source_file: pages/cob_gazebo_worlds/revisions/00000004
-  subdirectory: cob_gazebo_worlds
+  tully2: ignored
 cob_generic_can:
   branch: kinetic_dev
   markdown_file: markdown_output/cob_generic_can.md

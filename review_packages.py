@@ -12,7 +12,7 @@ TRUNCATE_BAR = "V" * 20
 
 def print_markdown(md_file, max_lines=None):
     """Print markdown content between matching headers, optionally truncated."""
-    with open(md_file, "r") as f_md:
+    with open(md_file, "r", encoding="utf-8") as f_md:
         lines = f_md.readlines()
 
     label = "Markdown Preview" if max_lines is not None else "Markdown Full View"

@@ -9,6 +9,8 @@ import urllib.parse
 import urllib.request
 import yaml
 
+from review_packages import PREVIEW_LINES, print_markdown
+
 FORK_ORG = "tfoote-ros-wiki-migration-forks"
 
 
@@ -668,17 +670,9 @@ def print_preview(package, info, source_yaml, fork_org):
     print("-" * 60, flush=True)
 
     if md_file and os.path.exists(md_file):
-        print(f"Markdown Content Preview ({md_file}):", flush=True)
-        with open(md_file, "r", encoding="utf-8") as f_md:
-            lines = f_md.readlines()
-            for line in lines[:15]:
-                print("  " + line.rstrip(), flush=True)
-            if len(lines) > 15:
-                print(f"  ... ({len(lines) - 15} more lines)", flush=True)
+        print_markdown(md_file, max_lines=PREVIEW_LINES)
     else:
         print(f"Warning: Markdown file '{md_file}' not found!", flush=True)
-
-    print("=" * 60, flush=True)
 
 
 def process_yaml_file(
@@ -724,7 +718,7 @@ def process_yaml_file(
 
         while True:
             print(
-                "\nConfirm submission? [Y]es / [S]kip / [Q]uit: ",
+                "\nConfirm submission? [Y]es / [S]kip / [V]iew All / [Q]uit: ",
                 end="",
                 flush=True,
             )
@@ -777,8 +771,16 @@ def process_yaml_file(
                     flush=True,
                 )
                 break
+            elif choice in ("V", "VIEW"):
+                md_file = info.get("markdown_file")
+                if md_file and os.path.exists(md_file):
+                    print(flush=True)
+                    print_markdown(md_file)
+                else:
+                    print(f"Error: Markdown file '{md_file}' not found!", flush=True)
+                # Loop back to the confirmation prompt
             else:
-                print("Invalid choice. Please enter Y, S, or Q.", flush=True)
+                print("Invalid choice. Please enter Y, S, V, or Q.", flush=True)
 
     return True
 

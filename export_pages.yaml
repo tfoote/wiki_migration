@@ -350,15 +350,7 @@ cob_generic_can:
   repository_archived: false
   source_file: pages/cob_generic_can/revisions/00000002
   subdirectory: cob_generic_can
-cob_hardware_config:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_hardware_config.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_robots.git
-  repository_archived: false
-  source_file: pages/cob_hardware_config/revisions/00000013
-  subdirectory: cob_hardware_config
+  tully2: ignored
 cob_image_flip:
   branch: indigo_dev
   markdown_file: markdown_output/cob_image_flip.md
@@ -368,42 +360,7 @@ cob_image_flip:
   repository_archived: false
   source_file: pages/cob_image_flip/revisions/00000001
   subdirectory: cob_image_flip
-cob_light:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_light.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_driver.git
-  repository_archived: false
-  source_file: pages/cob_light/revisions/00000006
-  subdirectory: cob_light
-cob_linear_nav:
-  branch: indigo_dev
-  markdown_file: markdown_output/cob_linear_nav.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_navigation.git
-  repository_archived: false
-  source_file: pages/cob_linear_nav/revisions/00000003
-  subdirectory: cob_linear_nav
-cob_mapping_slam:
-  branch: indigo_dev
-  markdown_file: markdown_output/cob_mapping_slam.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_navigation.git
-  repository_archived: false
-  source_file: pages/cob_mapping_slam/revisions/00000004
-  subdirectory: cob_mapping_slam
-cob_mimic:
-  branch: kinetic_dev
-  markdown_file: markdown_output/cob_mimic.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/4am-robotics/cob_driver.git
-  repository_archived: false
-  source_file: pages/cob_mimic/revisions/00000006
-  subdirectory: cob_mimic
+  tully2: ignored
 cob_monitoring:
   branch: indigo_dev
   markdown_file: markdown_output/cob_monitoring.md
@@ -413,6 +370,7 @@ cob_monitoring:
   repository_archived: false
   source_file: pages/cob_monitoring/revisions/00000001
   subdirectory: cob_monitoring
+  tully2: ignored
 cob_msgs:
   branch: kinetic_dev
   markdown_file: markdown_output/cob_msgs.md
@@ -422,15 +380,7 @@ cob_msgs:
   repository_archived: false
   source_file: pages/cob_msgs/revisions/00000008
   subdirectory: cob_msgs
-cob_navigation_config:
-  branch: indigo_dev
-  markdown_file: markdown_output/cob_navigation_config.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ipa320/cob_navigation.git
-  repository_archived: false
-  source_file: pages/cob_navigation_config/revisions/00000005
-  subdirectory: cob_navigation_config
+  tully2: ignored
 cob_navigation_global:
   branch: indigo_dev
   markdown_file: markdown_output/cob_navigation_global.md

@@ -207,11 +207,13 @@ python3 review_packages.py export_pages.yaml --review-key <your_review_key>
 
 - `input_file` defaults to `export_pages.yaml` if omitted.
 - `--review-key` (required) specifies the YAML key under each package entry where your review decision is stored (allowing multiple review passes or reviewers).
-- For each unreviewed package, the CLI displays the repository details and the first 10 lines of the generated Markdown file, then prompts for an action:
+- Unreviewed packages are presented in random order by default (pass `--sequential` to review in file order) so batches of reviewed pages spread across repositories and maintainers.
+- For each unreviewed package, the CLI displays the repository details and a preview of the generated Markdown file, then prompts for an action:
   - `[R]eady` — Marks `<review_key>: ready`.
   - `[S]kip` — Leaves the package unmarked and moves to the next entry.
   - `[I]gnore` — Marks `<review_key>: ignored`.
   - `[E]dit` — Opens the Markdown file in `$EDITOR` (defaults to `nano`) and sets `edited: true` upon saving.
+  - `[V]iew All` — Displays the full Markdown file without truncation.
   - `[Q]uit` — Saves all updates back to the YAML file and exits.
 
 ### 6. Submit Pull Requests

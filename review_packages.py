@@ -1,5 +1,6 @@
 import argparse
 import os
+import random
 import subprocess
 import sys
 import yaml
@@ -42,32 +43,49 @@ def main():
     parser.add_argument(
         "--review-key", required=True, help="Key to record review status under"
     )
+    parser.add_argument(
+        "--sequential",
+        action="store_true",
+        help="Present pages in file order instead of random order",
+    )
     args = parser.parse_args()
 
     if not os.path.exists(args.input_file):
         print(f"Error: File {args.input_file} not found.", flush=True)
         sys.exit(1)
 
-    with open(args.input_file, "r") as f:
+    with open(args.input_file, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
 
     if not data:
         print("No data in YAML file.", flush=True)
         return
 
+    pending = [
+        (package, info)
+        for package, info in data.items()
+        if args.review_key not in info
+    ]
+    skipped_count = len(data) - len(pending)
+    if skipped_count:
+        print(
+            f"Skipping {skipped_count} package(s) already processed for {args.review_key} "
+            f"({len(pending)} remaining).",
+            flush=True,
+        )
+
+    if not pending:
+        print("No unreviewed packages remaining.", flush=True)
+        return
+
+    if not args.sequential:
+        random.shuffle(pending)
+
     updated = False
     editor = os.environ.get("EDITOR", "nano")
 
     try:
-        for package, info in data.items():
-            # Skip if review key already exists
-            if args.review_key in info:
-                print(
-                    f"Skipping {package} (already processed for {args.review_key})",
-                    flush=True,
-                )
-                continue
-
+        for package, info in pending:
             repo = info.get("repository")
             branch = info.get("branch")
             subdir = info.get("subdirectory")
@@ -152,7 +170,7 @@ def main():
 
     if updated:
         print(f"\nSaving updates to {args.input_file}...", flush=True)
-        with open(args.input_file, "w") as f:
+        with open(args.input_file, "w", encoding="utf-8") as f:
             yaml.dump(data, f, default_flow_style=False)
         print("Saved.", flush=True)
     else:

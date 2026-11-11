@@ -830,3 +830,56 @@ cob_navigation_config:
   subdirectory: cob_navigation_config
   submitted_branch: ros-wiki-migration-cob_navigation_config
   tully2: ready
+diagnostic_analysis:
+  action: create
+  branch: noetic-devel
+  commit_sha: f06a5cafefd960cb8a33b4adc5bee1ab07d2a47d
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/ros/diagnostics/pull/685
+  default_commit_sha: 7209016a5fe3b0d8387e26921f45b5ba081d14ad
+  default_submitted_branch: ros-wiki-migration-diagnostic_analysis-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/diagnostics.git
+  markdown_file: markdown_output/diagnostic_analysis.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/diagnostics/pull/684
+  readme_exists: false
+  repository: https://github.com/ros/diagnostics.git
+  repository_archived: false
+  source_file: pages/diagnostic_analysis/revisions/00000020
+  source_queue: export_pages.yaml
+  subdirectory: diagnostic_analysis
+  submitted_branch: ros-wiki-migration-diagnostic_analysis
+  tully2: ready
+fanuc_lrmate200i_support:
+  action: create
+  branch: noetic-devel
+  commit_sha: e7cb6d040c97c041ca994a336e6975efc9ecbb3f
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/fanuc.git
+  markdown_file: markdown_output/fanuc_lrmate200i_support.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/fanuc/pull/382
+  readme_exists: false
+  repository: https://github.com/ros-industrial/fanuc.git
+  repository_archived: false
+  source_file: pages/fanuc_lrmate200i_support/revisions/00000007
+  source_queue: export_pages.yaml
+  subdirectory: fanuc_lrmate200i_support
+  submitted_branch: ros-wiki-migration-fanuc_lrmate200i_support
+  tully2: ready
+hector_mapping:
+  action: create
+  branch: noetic-devel
+  commit_sha: 6d7ced0ad473122ac08b0f212ca58faad0dcc962
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/hector_slam.git
+  markdown_file: markdown_output/hector_mapping.md
+  package_xml_match: true
+  pr_url: https://github.com/tu-darmstadt-ros-pkg/hector_slam/pull/117
+  readme_exists: false
+  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
+  repository_archived: false
+  source_file: pages/hector_mapping/revisions/00000033
+  source_queue: export_pages.yaml
+  subdirectory: hector_mapping
+  submitted_branch: ros-wiki-migration-hector_mapping
+  tully2: ready

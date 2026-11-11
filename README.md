@@ -78,6 +78,8 @@ pages/
 | `count_results.py` | Read-only analysis script that summarizes correlation, review, and submission statistics across `current_pages.yaml`, `export_pages.yaml`, `extend_pages.yaml`, and `submitted_pages.yaml`. |
 | `review_packages.py` | Interactive CLI tool for reviewing, editing, and tagging converted Markdown files for export. |
 | `submit_prs.py` | Iterates through `export_pages.yaml` and `extend_pages.yaml` for `ready` packages, previews planned changes, forks into `tfoote-ros-wiki-migration-forks`, commits `README.md`, opens a PR, and moves entries to `submitted_pages.yaml`. |
+| `check_pr_status.py` | Queries GitHub for every PR recorded in `submitted_pages.yaml` and prints a status table and summary. |
+| `check_rate_limit.py` | Queries GitHub's zero-cost `/rate_limit` endpoint to display remaining `GITHUB_TOKEN` quota and reset countdowns. |
 | `current_pages.yaml` | Master dataset mapping all discovered package pages to their source revision, converted Markdown path, and upstream repository metadata. |
 | `export_pages.yaml` | Active (matched, non-archived) packages that **do not** yet have a `README.md` in their upstream repository. |
 | `extend_pages.yaml` | Active (matched, non-archived) packages that **already** have a `README.md` in their upstream repository. |
@@ -236,6 +238,7 @@ For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_revi
    - Opens a pull request against the upstream repository's declared branch explaining the migration goal and noting that maintainers may merge, edit, or close it as *won't fix*.
    - If the declared branch differs from the repository's default branch, creates a second branch off the default branch (`ros-wiki-migration-<package>-<default_branch>`), applies the `README.md` change, and opens a second pull request against the default branch with a warning caveat at the top linking to the original PR and noting that the content is not confirmed up to date.
    - Removes the package entry from `export_pages.yaml` or `extend_pages.yaml` and records it in `submitted_pages.yaml` alongside the created PR URL(s).
+   - Mutating API calls (`POST`/`PUT`/`PATCH`/`DELETE`) are paced with a 1.5s minimum gap (configurable via `--mutation-delay`), and `403`/`429` responses distinguish primary quota exhaustion (`X-RateLimit-Remaining == 0`) from secondary throttling (`Retry-After` header, wait times in the error body, or exponential backoff).
 
 ### 7. Check Pull Request Status
 
@@ -250,6 +253,11 @@ python3 check_pr_status.py --json     # machine-readable rows
 - **Next step** for each open PR, from its reviews and GitHub's mergeability: `READY` (approved and mergeable, including when only non-required checks fail), `REVIEW` (no approving review yet), `CHANGES` (changes requested), `CONFLICT` (merge conflicts), `BEHIND` (approved but must be updated with the base branch), `BLOCKED` (approved but blocked by required checks or reviews), `DRAFT`.
 - **Summary:** totals and percentages per state, lines changed (overall, merged, open/draft, closed), counts per next step with the PRs in each group (ready to merge and needs review first, oldest first, with requested reviewers and failing checks noted), packages with a merged PR, packages whose PRs were all closed without merging (won't fix), open PRs with changes requested or with comments, the oldest open PR, and any PRs that couldn't be checked.
 - `GITHUB_TOKEN` is optional (read-only access is enough). Without it, unauthenticated requests are limited to 60 per hour, and each PR uses 2 requests.
+- To inspect remaining `GITHUB_TOKEN` quota and reset times (costs 0 API requests):
+  ```bash
+  python3 check_rate_limit.py          # table of active buckets + reset countdowns
+  python3 check_rate_limit.py --all    # include all GitHub rate-limit buckets
+  ```
 
 ---
 
@@ -263,6 +271,7 @@ Unit and integration tests are implemented with Python's built-in `unittest` mod
 - `test_links_attachments.py` — Tests index.ros.org link rewriting, attachment → `doc/` rewriting and manifests, the attachment commit in `submit_prs.py`, same-page anchor resolution, subpage appending (including tutorial listing expansion and the subpage limit).
 - `test_convert_clearsilver.py` — Tests the HDF parser, CS/NodeAPI rendering (single/multiple nodes, groups, tf, `no_header`, multi-line descriptions) and the tutorial header.
 - `test_check_pr_status.py` — Tests PR status collection (merged/open/closed/errors, review verdicts) and the listing/summary output, against a mocked GitHub API.
+- `test_check_rate_limit.py` — Tests GitHub rate-limit formatting, bucket selection, JSON output, and error handling.
 - `test_convert_advanced.py` — Tests 4-quote bold monospace, postprocess unescaping, code block spacing, and `Youtube` / `MsgLink` / `SrvLink` macros.
 - `test_review_packages.py` — End-to-end CLI tests for `review_packages.py` (`Skip`, `Ready`, `Ignore`, and `Edit` flows).
 - `test_count_results.py` — Tests for `count_results.py` review status aggregation, `--review-key` filtering, and read-only behavior.

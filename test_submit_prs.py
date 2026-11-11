@@ -1,5 +1,6 @@
 import base64
 import io
+import json
 import os
 import tempfile
 import unittest
@@ -378,12 +379,216 @@ class TestForkLookup(unittest.TestCase):
                           b'[{"message": "A pull request already exists"}]}')
         err = urllib.error.HTTPError("https://api.github.com/x", 422,
                                      "Unprocessable Entity", {}, body)
-        with patch("urllib.request.urlopen", side_effect=err):
+        with patch.object(submit_prs, "MUTATION_DELAY", 0), \
+             patch("urllib.request.urlopen", side_effect=err):
             with self.assertRaises(urllib.error.HTTPError) as ctx:
                 submit_prs.github_api_request("https://api.github.com/x", method="POST",
                                               data={}, token="tok")
         self.assertIn("Validation Failed; A pull request already exists", str(ctx.exception))
         self.assertIn("POST https://api.github.com/x", str(ctx.exception))
+
+
+class _FakeHTTPResponse:
+    def __init__(self, payload, status=200):
+        self._bytes = json.dumps(payload).encode("utf-8")
+        self.status = status
+
+    def read(self):
+        return self._bytes
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *args):
+        return False
+
+
+class TestRateLimitAndPacing(unittest.TestCase):
+    def setUp(self):
+        submit_prs._last_mutation_time = 0.0
+
+    def test_primary_exhaustion_uses_ratelimit_reset(self):
+        sleep_s, kind, desc = submit_prs.compute_rate_limit_sleep(
+            403,
+            {"X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "1100"},
+            {"message": "API rate limit exceeded"},
+            "API rate limit exceeded",
+            now=1000.0,
+        )
+        self.assertEqual(kind, "primary")
+        self.assertEqual(sleep_s, 105.0)
+        self.assertIn("Primary rate limit exhausted", desc)
+
+    def test_secondary_prefers_retry_after_header_over_ratelimit_reset(self):
+        sleep_s, kind, desc = submit_prs.compute_rate_limit_sleep(
+            403,
+            {
+                "X-RateLimit-Remaining": "4900",
+                "X-RateLimit-Reset": "4600",
+                "Retry-After": "45",
+            },
+            {
+                "message": "You have exceeded a secondary rate limit. "
+                           "Please wait a few minutes before you try again."
+            },
+            "You have exceeded a secondary rate limit. "
+            "Please wait a few minutes before you try again.",
+            now=1000.0,
+        )
+        self.assertEqual(kind, "secondary")
+        self.assertEqual(sleep_s, 45.0)
+        self.assertIn("Retry-After: 45s", desc)
+
+    def test_retry_after_http_date_header(self):
+        wait = submit_prs.parse_retry_after_header(
+            "Tue, 10 Nov 2026 22:05:00 GMT",
+            now=1794348240.0,  # 2026-11-10 22:04:00 UTC
+        )
+        self.assertEqual(wait, 60.0)
+
+    def test_body_duration_parsing_variants(self):
+        # JSON numeric field
+        self.assertEqual(
+            submit_prs.parse_retry_after_body({"retry_after": 75}, "throttled"),
+            (75.0, True),
+        )
+        # Explicit minutes / seconds / hours in prose
+        self.assertEqual(
+            submit_prs.parse_retry_after_body(
+                {}, "You have exceeded a secondary rate limit. Please wait 5 minutes."
+            ),
+            (300.0, True),
+        )
+        self.assertEqual(
+            submit_prs.parse_retry_after_body({}, "Please retry after 90 seconds."),
+            (90.0, True),
+        )
+        self.assertEqual(
+            submit_prs.parse_retry_after_body({}, "Temporarily blocked for 1 hour."),
+            (3600.0, True),
+        )
+        self.assertEqual(
+            submit_prs.parse_retry_after_body({}, "Please wait a minute before retrying."),
+            (60.0, True),
+        )
+        # Fuzzy 'a few minutes'
+        self.assertEqual(
+            submit_prs.parse_retry_after_body(
+                {}, "Please wait a few minutes before you try again."
+            ),
+            (180.0, False),
+        )
+        # UTC timestamp in message
+        self.assertEqual(
+            submit_prs.parse_retry_after_body(
+                {},
+                "Blocked until 2026-11-10T22:05:00Z.",
+                now=1794348240.0,  # 22:04:00 UTC -> 60s + 5s buffer
+            ),
+            (65.0, True),
+        )
+        # Rate description ('80 requests per minute') is not misread as a duration
+        self.assertEqual(
+            submit_prs.parse_retry_after_body(
+                {}, "You exceeded 80 requests per minute; retry later."
+            ),
+            (None, False),
+        )
+
+    def test_explicit_body_updates_sleep_even_with_shorter_header(self):
+        sleep_s, kind, _ = submit_prs.compute_rate_limit_sleep(
+            403,
+            {"X-RateLimit-Remaining": "4900", "Retry-After": "30"},
+            {"message": "Secondary rate limit: please wait 2 minutes before retrying."},
+            "Secondary rate limit: please wait 2 minutes before retrying.",
+            now=1000.0,
+        )
+        self.assertEqual(kind, "secondary")
+        self.assertEqual(sleep_s, 120.0)
+
+    def test_exponential_backoff_when_no_duration_given(self):
+        msg = "You have exceeded a secondary rate limit. Please retry your request again later."
+        waits = [
+            submit_prs.compute_rate_limit_sleep(
+                403, {"X-RateLimit-Remaining": "4900"}, {"message": msg}, msg, secondary_attempt=i
+            )[0]
+            for i in range(3)
+        ]
+        self.assertEqual(waits, [60.0, 120.0, 240.0])
+
+    def test_permission_403_fails_immediately_without_sleeping(self):
+        body = io.BytesIO(
+            b'{"message": "Resource not accessible by personal access token"}'
+        )
+        err = urllib.error.HTTPError(
+            "https://api.github.com/repos/o/r/pulls",
+            403,
+            "Forbidden",
+            {"X-RateLimit-Remaining": "4950", "X-RateLimit-Reset": "9999999999"},
+            body,
+        )
+        with patch.object(submit_prs, "MUTATION_DELAY", 0), \
+             patch("urllib.request.urlopen", side_effect=err), \
+             patch("time.sleep") as mock_sleep:
+            with self.assertRaises(urllib.error.HTTPError) as ctx:
+                submit_prs.github_api_request(
+                    "https://api.github.com/repos/o/r/pulls",
+                    method="POST",
+                    data={},
+                    token="tok",
+                )
+        mock_sleep.assert_not_called()
+        self.assertIn("Resource not accessible", str(ctx.exception))
+
+    def test_github_api_request_retries_secondary_limit_using_body_wait(self):
+        body = io.BytesIO(
+            b'{"message": "You have exceeded a secondary rate limit. '
+            b'Please wait 2 minutes before you try again."}'
+        )
+        err = urllib.error.HTTPError(
+            "https://api.github.com/repos/o/r/pulls",
+            403,
+            "Forbidden",
+            {"X-RateLimit-Remaining": "4900", "X-RateLimit-Reset": "9999999999"},
+            body,
+        )
+        ok_resp = _FakeHTTPResponse({"html_url": "https://github.com/o/r/pull/1"}, status=201)
+        out = io.StringIO()
+        with patch.object(submit_prs, "MUTATION_DELAY", 0), \
+             patch("urllib.request.urlopen", side_effect=[err, ok_resp]), \
+             patch("time.sleep") as mock_sleep, \
+             redirect_stdout(out):
+            resp = submit_prs.github_api_request(
+                "https://api.github.com/repos/o/r/pulls",
+                method="POST",
+                data={},
+                token="tok",
+            )
+        self.assertEqual(resp["html_url"], "https://github.com/o/r/pull/1")
+        mock_sleep.assert_called_once_with(120.0)
+        self.assertIn("Please wait 2 minutes", out.getvalue())
+
+    def test_mutation_pacing_delays_consecutive_writes_only(self):
+        responses = [
+            _FakeHTTPResponse({"ok": 1}, status=201),
+            _FakeHTTPResponse({"ok": 2}, status=200),
+            _FakeHTTPResponse({"ok": 3}, status=201),
+        ]
+        # Monotonic timestamps:
+        # POST #1 finishes at t=100.0
+        # GET runs (does not check or update _last_mutation_time)
+        # POST #2 checks at t=100.4 -> sleeps 1.5 - 0.4 = 1.1s, finishes at t=101.6
+        clock = iter([100.0, 100.4, 101.6])
+        with patch.object(submit_prs, "MUTATION_DELAY", 1.5), \
+             patch("urllib.request.urlopen", side_effect=responses), \
+             patch("time.monotonic", side_effect=lambda: next(clock)), \
+             patch("time.sleep") as mock_sleep:
+            submit_prs.github_api_request("https://api.github.com/a", method="POST", data={})
+            submit_prs.github_api_request("https://api.github.com/b", method="GET")
+            submit_prs.github_api_request("https://api.github.com/c", method="POST", data={})
+
+        self.assertEqual(mock_sleep.call_count, 1)
+        self.assertAlmostEqual(mock_sleep.call_args[0][0], 1.1, places=5)
 
 
 if __name__ == "__main__":

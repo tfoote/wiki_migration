@@ -1,7 +1,10 @@
 import argparse
 import base64
+import datetime
+import email.utils
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -12,6 +15,43 @@ import yaml
 from review_packages import PREVIEW_LINES, print_markdown
 
 FORK_ORG = "tfoote-ros-wiki-migration-forks"
+
+MUTATING_METHODS = ("POST", "PUT", "PATCH", "DELETE")
+# Minimum quiet gap (seconds) between consecutive mutating API calls to avoid
+# tripping GitHub's secondary content-creation rate limits.
+MUTATION_DELAY = 1.5
+SECONDARY_BACKOFF_INITIAL = 60.0
+SECONDARY_BACKOFF_MAX = 900.0
+MAX_SECONDARY_RETRIES = 5
+
+_last_mutation_time = 0.0
+
+_THROTTLE_PHRASES = (
+    "rate limit",
+    "secondary rate",
+    "abuse detection",
+    "too quickly",
+    "temporarily blocked",
+    "too many requests",
+)
+_EXPLICIT_DURATION_RE = re.compile(
+    r"(?<!\bper\s)(?<!/)(\d+(?:\.\d+)?)\s*(seconds?|secs?|minutes?|mins?|hours?|hrs?)\b",
+    re.IGNORECASE,
+)
+_WORD_MINUTE_RE = re.compile(
+    r"\b(?:wait|after|in|for)\s+(?:a|one)\s+minutes?\b", re.IGNORECASE
+)
+_WORD_HOUR_RE = re.compile(
+    r"\b(?:wait|after|in|for)\s+(?:an|one)\s+hours?\b", re.IGNORECASE
+)
+_FEW_MINUTES_RE = re.compile(r"\ba\s+few\s+minutes\b", re.IGNORECASE)
+_COUPLE_MINUTES_RE = re.compile(
+    r"\ba\s+couple\s+(?:of\s+)?minutes\b", re.IGNORECASE
+)
+_FEW_SECONDS_RE = re.compile(r"\ba\s+few\s+seconds\b", re.IGNORECASE)
+_UTC_TIMESTAMP_RE = re.compile(
+    r"\b(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2})(?:Z|\s*UTC)\b"
+)
 
 
 def parse_github_repo(repo_url):
@@ -27,8 +67,194 @@ def parse_github_repo(repo_url):
     return parts[-2], parts[-1]
 
 
+def _get_header(headers, name):
+    """Case-insensitive header lookup supporting both HTTPMessage and dict."""
+    if not headers:
+        return None
+    val = headers.get(name)
+    if val is not None:
+        return val
+    lower = name.lower()
+    for k, v in headers.items():
+        if k.lower() == lower:
+            return v
+    return None
+
+
+def _parse_error_detail(raw_body):
+    """Extract (detail_dict, combined_message_str) from a GitHub error body."""
+    if not raw_body:
+        return {}, ""
+    try:
+        detail = json.loads(raw_body)
+        if not isinstance(detail, dict):
+            return {}, ""
+        parts = [detail.get("message", "")]
+        parts += [
+            err.get("message") or json.dumps(err)
+            for err in detail.get("errors", [])
+            if isinstance(err, dict)
+        ]
+        message = "; ".join(p for p in parts if p)
+        return detail, message
+    except Exception:
+        return {}, ""
+
+
+def parse_retry_after_header(value, now=None):
+    """Parse a Retry-After header (seconds or HTTP-date) into seconds to wait."""
+    if value is None:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    try:
+        secs = float(text)
+        return max(0.0, secs)
+    except ValueError:
+        pass
+    try:
+        dt = email.utils.parsedate_to_datetime(text)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        if now is None:
+            now = time.time()
+        return max(0.0, dt.timestamp() - now)
+    except Exception:
+        return None
+
+
+def parse_retry_after_body(detail, message, now=None):
+    """Extract retry delay from JSON body fields or prose in the error message.
+
+    Returns (seconds, is_explicit) where is_explicit is True for exact numbers
+    or timestamps and False for fuzzy phrases like 'a few minutes'.
+    """
+    if isinstance(detail, dict) and detail.get("retry_after") is not None:
+        try:
+            return max(0.0, float(detail["retry_after"])), True
+        except (TypeError, ValueError):
+            pass
+
+    if not message:
+        return None, False
+
+    ts_match = _UTC_TIMESTAMP_RE.search(message)
+    if ts_match:
+        try:
+            raw_ts = ts_match.group(1).replace(" ", "T")
+            dt = datetime.datetime.fromisoformat(raw_ts).replace(
+                tzinfo=datetime.timezone.utc
+            )
+            if now is None:
+                now = time.time()
+            delta = dt.timestamp() - now
+            if delta > 0:
+                return delta + 5.0, True
+        except ValueError:
+            pass
+
+    dur_match = _EXPLICIT_DURATION_RE.search(message)
+    if dur_match:
+        amount = float(dur_match.group(1))
+        unit = dur_match.group(2).lower()
+        if unit.startswith("h"):
+            return amount * 3600.0, True
+        if unit.startswith("m"):
+            return amount * 60.0, True
+        return amount, True
+
+    if _WORD_HOUR_RE.search(message):
+        return 3600.0, True
+    if _WORD_MINUTE_RE.search(message):
+        return 60.0, True
+    if _FEW_MINUTES_RE.search(message):
+        return 180.0, False
+    if _COUPLE_MINUTES_RE.search(message):
+        return 120.0, False
+    if _FEW_SECONDS_RE.search(message):
+        return 10.0, False
+
+    return None, False
+
+
+def compute_rate_limit_sleep(
+    status_code, headers, detail, message, secondary_attempt=0, now=None
+):
+    """Determine (sleep_seconds, kind, description) for a 403/429 response.
+
+    kind is 'primary', 'secondary', or None (when the error is not a rate limit,
+    such as a repository permission error).
+    """
+    if status_code not in (403, 429):
+        return None, None, None
+
+    if now is None:
+        now = time.time()
+
+    remaining = _get_header(headers, "X-RateLimit-Remaining")
+    reset_hdr = _get_header(headers, "X-RateLimit-Reset")
+    retry_after_hdr = _get_header(headers, "Retry-After")
+
+    header_wait = parse_retry_after_header(retry_after_hdr, now=now)
+    body_wait, body_explicit = parse_retry_after_body(detail, message, now=now)
+
+    # 1. Primary quota exhausted (X-RateLimit-Remaining == 0)
+    if remaining is not None and str(remaining).strip() == "0" and reset_hdr:
+        try:
+            reset_wait = max(1.0, float(reset_hdr) - now + 5.0)
+            candidates = [reset_wait]
+            if header_wait is not None:
+                candidates.append(header_wait)
+            if body_explicit and body_wait is not None:
+                candidates.append(body_wait)
+            return (
+                max(candidates),
+                "primary",
+                "Primary rate limit exhausted (X-RateLimit-Remaining: 0)",
+            )
+        except ValueError:
+            pass
+
+    # 2. Secondary / content-creation rate limit
+    msg_lower = (message or "").lower()
+    is_secondary = (
+        status_code == 429
+        or header_wait is not None
+        or body_wait is not None
+        or any(phrase in msg_lower for phrase in _THROTTLE_PHRASES)
+    )
+    if not is_secondary:
+        return None, None, None
+
+    if header_wait is not None and body_explicit and body_wait is not None:
+        sleep_time = max(1.0, header_wait, body_wait)
+        source = f"Retry-After / message body: {sleep_time:.0f}s"
+    elif header_wait is not None:
+        sleep_time = max(1.0, header_wait)
+        source = f"Retry-After: {header_wait:.0f}s"
+    elif body_wait is not None:
+        scaled = min(SECONDARY_BACKOFF_MAX, body_wait * (2 ** secondary_attempt))
+        sleep_time = max(1.0, scaled)
+        source = (
+            "message body"
+            if secondary_attempt == 0
+            else f"message body + backoff #{secondary_attempt + 1}"
+        )
+    else:
+        scaled = min(
+            SECONDARY_BACKOFF_MAX,
+            SECONDARY_BACKOFF_INITIAL * (2 ** secondary_attempt),
+        )
+        sleep_time = max(1.0, scaled)
+        source = f"exponential backoff #{secondary_attempt + 1}"
+
+    return sleep_time, "secondary", f"Secondary rate limit hit ({source})"
+
+
 def github_api_request(url, method="GET", data=None, token=None, accept_statuses=(200, 201, 202)):
-    """Perform a GitHub REST API request with rate-limit handling."""
+    """Perform a GitHub REST API request with pacing and primary/secondary rate-limit handling."""
+    global _last_mutation_time
     if token is None:
         token = os.environ.get("GITHUB_TOKEN")
 
@@ -44,35 +270,69 @@ def github_api_request(url, method="GET", data=None, token=None, accept_statuses
         body_bytes = json.dumps(data).encode("utf-8")
         headers["Content-Type"] = "application/json"
 
+    is_mutation = method.upper() in MUTATING_METHODS
+    secondary_retries = 0
+
     while True:
+        if is_mutation and MUTATION_DELAY > 0 and _last_mutation_time > 0:
+            pace_wait = MUTATION_DELAY - (time.monotonic() - _last_mutation_time)
+            if pace_wait > 0:
+                time.sleep(pace_wait)
+
         req = urllib.request.Request(url, data=body_bytes, headers=headers, method=method)
         try:
-            with urllib.request.urlopen(req) as response:
-                resp_body = response.read().decode("utf-8")
-                if response.status in accept_statuses:
-                    return json.loads(resp_body) if resp_body else {}
-                raise RuntimeError(f"Unexpected status {response.status} from {url}")
-        except urllib.error.HTTPError as e:
-            if e.code in (403, 429):
-                reset_time = e.headers.get("X-RateLimit-Reset")
-                if reset_time:
-                    sleep_time = int(reset_time) - time.time() + 5
-                    if sleep_time > 0:
-                        print(f"  Rate limit hit. Sleeping for {sleep_time:.1f}s...", flush=True)
-                        time.sleep(sleep_time)
-                        continue
-            # Include GitHub's explanation (e.g. "Validation Failed: ...") in
-            # the error, otherwise a 422 is impossible to diagnose.
             try:
-                detail = json.loads(e.read().decode("utf-8") or "{}")
-                parts = [detail.get("message", "")]
-                parts += [err.get("message") or json.dumps(err)
-                          for err in detail.get("errors", []) if isinstance(err, dict)]
-                message = "; ".join(p for p in parts if p)
-                if message:
-                    e.msg = f"{e.msg}: {message} ({method} {url})"
+                with urllib.request.urlopen(req) as response:
+                    resp_body = response.read().decode("utf-8")
+                    if response.status in accept_statuses:
+                        return json.loads(resp_body) if resp_body else {}
+                    raise RuntimeError(f"Unexpected status {response.status} from {url}")
+            finally:
+                if is_mutation:
+                    _last_mutation_time = time.monotonic()
+        except urllib.error.HTTPError as e:
+            raw_err = ""
+            try:
+                raw_err = e.read().decode("utf-8", errors="replace")
             except Exception:
                 pass
+            detail, message = _parse_error_detail(raw_err)
+
+            sleep_time, kind, desc = compute_rate_limit_sleep(
+                e.code,
+                e.headers,
+                detail,
+                message,
+                secondary_attempt=secondary_retries,
+            )
+            if sleep_time is not None and (
+                kind == "primary" or secondary_retries < MAX_SECONDARY_RETRIES
+            ):
+                wake_dt = datetime.datetime.fromtimestamp(
+                    time.time() + sleep_time, tz=datetime.timezone.utc
+                ).astimezone()
+                wake_str = wake_dt.strftime("%H:%M:%S %Z")
+                msg_part = f": {message}" if message else ""
+                print(f"  {desc}{msg_part}", flush=True)
+                if kind == "secondary":
+                    secondary_retries += 1
+                    print(
+                        f"  Sleeping for {sleep_time:.1f}s (until {wake_str}, "
+                        f"retry {secondary_retries}/{MAX_SECONDARY_RETRIES})...",
+                        flush=True,
+                    )
+                else:
+                    print(
+                        f"  Sleeping for {sleep_time:.1f}s (until {wake_str})...",
+                        flush=True,
+                    )
+                time.sleep(sleep_time)
+                continue
+
+            # Include GitHub's explanation (e.g. "Validation Failed: ...") in
+            # the error, otherwise a 422 or non-retryable 403 is impossible to diagnose.
+            if message:
+                e.msg = f"{e.msg}: {message} ({method} {url})"
             raise e
 
 
@@ -786,6 +1046,7 @@ def process_yaml_file(
 
 
 def main():
+    global MUTATION_DELAY
     parser = argparse.ArgumentParser(
         description="Submit pull requests for Ready packages in export_pages.yaml and extend_pages.yaml."
     )
@@ -814,7 +1075,17 @@ def main():
         default=FORK_ORG,
         help=f"GitHub organization to create forks in (default: {FORK_ORG})",
     )
+    parser.add_argument(
+        "--mutation-delay",
+        type=float,
+        default=MUTATION_DELAY,
+        help=(
+            f"Minimum delay in seconds between mutating GitHub API calls "
+            f"(default: {MUTATION_DELAY})"
+        ),
+    )
     args = parser.parse_args()
+    MUTATION_DELAY = max(0.0, args.mutation_delay)
 
     token = os.environ.get("GITHUB_TOKEN")
     if not token:

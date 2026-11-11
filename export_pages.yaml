@@ -2378,16 +2378,6 @@ industrial_robot_simulator:
   repository_archived: false
   source_file: pages/industrial_robot_simulator/revisions/00000008
   subdirectory: industrial_robot_simulator
-industrial_robot_status_controller:
-  branch: master
-  markdown_file: markdown_output/industrial_robot_status_controller.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/gavanderhoorn/industrial_robot_status_controller.git
-  repository_archived: false
-  source_file: pages/industrial_robot_status_controller/revisions/00000004
-  subdirectory: industrial_robot_status_controller
-  tully2: ready
 industrial_trajectory_filters:
   branch: melodic
   markdown_file: markdown_output/industrial_trajectory_filters.md
@@ -2460,16 +2450,6 @@ ixblue_stdbin_decoder:
   repository_archived: false
   source_file: pages/ixblue_stdbin_decoder/revisions/00000003
   subdirectory: ''
-jackal_control:
-  branch: noetic-devel
-  markdown_file: markdown_output/jackal_control.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/jackal/jackal.git
-  repository_archived: false
-  source_file: pages/jackal_control/revisions/00000006
-  subdirectory: jackal_control
-  tully2: ready
 jackal_desktop:
   branch: melodic-devel
   markdown_file: markdown_output/jackal_desktop.md
@@ -3094,16 +3074,6 @@ leo_description:
   repository_archived: false
   source_file: pages/leo_description/revisions/00000007
   subdirectory: leo_description
-leo_desktop:
-  branch: master
-  markdown_file: markdown_output/leo_desktop.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/LeoRover/leo_desktop.git
-  repository_archived: false
-  source_file: pages/leo_desktop/revisions/00000004
-  subdirectory: leo_desktop
-  tully2: ready
 leo_example_follow_ar_tag:
   branch: master
   markdown_file: markdown_output/leo_example_follow_ar_tag.md
@@ -3149,16 +3119,6 @@ leo_fw:
   repository_archived: false
   source_file: pages/leo_fw/revisions/00000007
   subdirectory: leo_fw
-leo_gazebo:
-  branch: master
-  markdown_file: markdown_output/leo_gazebo.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/LeoRover/leo_simulator.git
-  repository_archived: false
-  source_file: pages/leo_gazebo/revisions/00000006
-  subdirectory: leo_gazebo
-  tully2: ready
 leo_msgs:
   branch: master
   markdown_file: markdown_output/leo_msgs.md
@@ -3258,16 +3218,6 @@ librviz_tutorial:
   repository_archived: false
   source_file: pages/librviz_tutorial/revisions/00000004
   subdirectory: librviz_tutorial
-libsensors_monitor:
-  branch: kinetic
-  markdown_file: markdown_output/libsensors_monitor.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-drivers/linux_peripheral_interfaces.git
-  repository_archived: false
-  source_file: pages/libsensors_monitor/revisions/00000001
-  subdirectory: libsensors_monitor
-  tully2: ready
 libsiftfast:
   branch: master
   markdown_file: markdown_output/libsiftfast.md
@@ -3448,16 +3398,6 @@ mobileye_560_660_msgs:
   repository_archived: false
   source_file: pages/mobileye_560_660_msgs/revisions/00000001
   subdirectory: mobileye_560_660_msgs
-mocap_optitrack:
-  branch: master
-  markdown_file: markdown_output/mocap_optitrack.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-drivers/mocap_optitrack.git
-  repository_archived: false
-  source_file: pages/mocap_optitrack/revisions/00000010
-  subdirectory: ''
-  tully2: ready
 mongodb_log:
   branch: noetic-devel
   markdown_file: markdown_output/mongodb_log.md
@@ -3665,16 +3605,6 @@ mpc_local_planner_msgs:
   repository_archived: false
   source_file: pages/mpc_local_planner_msgs/revisions/00000001
   subdirectory: mpc_local_planner_msgs
-mqtt_client:
-  branch: main
-  markdown_file: markdown_output/mqtt_client.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ika-rwth-aachen/mqtt_client.git
-  repository_archived: false
-  source_file: pages/mqtt_client/revisions/00000001
-  subdirectory: mqtt_client
-  tully2: ready
 mrpt2:
   branch: noetic
   markdown_file: markdown_output/mrpt2.md
@@ -3783,16 +3713,6 @@ mrpt_sensorlib:
   repository_archived: false
   source_file: pages/mrpt_sensorlib/revisions/00000001
   subdirectory: mrpt_sensorlib
-mrpt_tutorials:
-  branch: ros1
-  markdown_file: markdown_output/mrpt_tutorials.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/mrpt-ros-pkg/mrpt_navigation.git
-  repository_archived: false
-  source_file: pages/mrpt_tutorials/revisions/00000001
-  subdirectory: mrpt_tutorials
-  tully2: ready
 multi_map_server:
   branch: master
   markdown_file: markdown_output/multi_map_server.md
@@ -4189,16 +4109,6 @@ people:
   repository_archived: false
   source_file: pages/people/revisions/00000011
   subdirectory: people
-people_msgs:
-  branch: noetic
-  markdown_file: markdown_output/people_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/wg-perception/people.git
-  repository_archived: false
-  source_file: pages/people_msgs/revisions/00000006
-  subdirectory: people_msgs
-  tully2: ready
 people_tracking_filter:
   branch: noetic
   markdown_file: markdown_output/people_tracking_filter.md
@@ -4460,16 +4370,6 @@ pr2_dashboard_aggregator:
   repository_archived: false
   source_file: pages/pr2_dashboard_aggregator/revisions/00000010
   subdirectory: pr2_dashboard_aggregator
-pr2_description:
-  branch: melodic-devel
-  markdown_file: markdown_output/pr2_description.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_common.git
-  repository_archived: false
-  source_file: pages/pr2_description/revisions/00000027
-  subdirectory: pr2_description
-  tully2: ready
 pr2_ethercat:
   branch: kinetic-devel
   markdown_file: markdown_output/pr2_ethercat.md
@@ -5604,16 +5504,6 @@ rqt_runtime_monitor:
   repository_archived: false
   source_file: pages/rqt_runtime_monitor/revisions/00000002
   subdirectory: ''
-rqt_rviz:
-  branch: noetic-devel
-  markdown_file: markdown_output/rqt_rviz.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-visualization/rqt_rviz.git
-  repository_archived: false
-  source_file: pages/rqt_rviz/revisions/00000002
-  subdirectory: ''
-  tully2: ready
 rqt_service_caller:
   branch: noetic-devel
   markdown_file: markdown_output/rqt_service_caller.md
@@ -5776,16 +5666,6 @@ rtabmap_slam:
   repository_archived: false
   source_file: pages/rtabmap_slam/revisions/00000005
   subdirectory: rtabmap_slam
-rtabmap_sync:
-  branch: noetic-devel
-  markdown_file: markdown_output/rtabmap_sync.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/introlab/rtabmap_ros.git
-  repository_archived: false
-  source_file: pages/rtabmap_sync/revisions/00000006
-  subdirectory: rtabmap_sync
-  tully2: ready
 rtabmap_util:
   branch: noetic-devel
   markdown_file: markdown_output/rtabmap_util.md
@@ -6020,16 +5900,6 @@ smach:
   repository_archived: false
   source_file: pages/smach/revisions/00000110
   subdirectory: smach
-smach_msgs:
-  branch: noetic-devel
-  markdown_file: markdown_output/smach_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros/executive_smach.git
-  repository_archived: false
-  source_file: pages/smach_msgs/revisions/00000006
-  subdirectory: smach_msgs
-  tully2: ready
 smach_ros:
   branch: noetic-devel
   markdown_file: markdown_output/smach_ros.md
@@ -6075,16 +5945,6 @@ socketcan_interface:
   repository_archived: false
   source_file: pages/socketcan_interface/revisions/00000015
   subdirectory: socketcan_interface
-sophus:
-  branch: release/1.1.x
-  markdown_file: markdown_output/sophus.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/stonier/sophus.git
-  repository_archived: false
-  source_file: pages/sophus/revisions/00000006
-  subdirectory: ''
-  tully2: ready
 speech_recognition_msgs:
   branch: master
   markdown_file: markdown_output/speech_recognition_msgs.md
@@ -6310,16 +6170,6 @@ turtle_tf2:
   repository_archived: false
   source_file: pages/turtle_tf2/revisions/00000001
   subdirectory: turtle_tf2
-turtlesim:
-  branch: noetic-devel
-  markdown_file: markdown_output/turtlesim.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros/ros_tutorials.git
-  repository_archived: false
-  source_file: pages/turtlesim/revisions/00000051
-  subdirectory: turtlesim
-  tully2: ready
 unique_id:
   branch: noetic
   markdown_file: markdown_output/unique_id.md

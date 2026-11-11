@@ -935,6 +935,150 @@ def print_preview(package, info, source_yaml, fork_org):
         print(f"Warning: Markdown file '{md_file}' not found!", flush=True)
 
 
+def record_submitted_package(
+    package, info, result_meta, yaml_file, data, submitted_file
+):
+    """Move a successfully submitted package from data/yaml_file to submitted_file."""
+    submitted_data = {}
+    if os.path.exists(submitted_file):
+        with open(submitted_file, "r", encoding="utf-8") as f_sub:
+            submitted_data = yaml.safe_load(f_sub) or {}
+
+    submitted_entry = dict(info)
+    submitted_entry.update(result_meta)
+    submitted_entry["source_queue"] = yaml_file
+    submitted_data[package] = submitted_entry
+
+    del data[package]
+
+    with open(submitted_file, "w", encoding="utf-8") as f_sub:
+        yaml.dump(submitted_data, f_sub, default_flow_style=False, sort_keys=True)
+
+    with open(yaml_file, "w", encoding="utf-8") as f_src:
+        yaml.dump(data, f_src, default_flow_style=False, sort_keys=True)
+
+    print(
+        f"  Moved '{package}' from {yaml_file} to {submitted_file}.",
+        flush=True,
+    )
+
+
+def format_batch_item(package, info, yaml_file):
+    """Format a single-line summary for batch confirmation."""
+    repo_url = info.get("repository", "")
+    declared_branch = info.get("branch", "noetic")
+    subdirectory = info.get("subdirectory", "")
+    readme_exists = bool(info.get("readme_exists", False))
+    try:
+        owner, repo = parse_github_repo(repo_url)
+        repo_disp = f"{owner}/{repo}"
+    except ValueError:
+        repo_disp = repo_url or "unknown"
+    action = "append" if readme_exists else "create"
+    target_path = get_readme_path(subdirectory)
+    return (
+        f"{package} -> {repo_disp}:{declared_branch} "
+        f"({action} {target_path}) [{yaml_file}]"
+    )
+
+
+def process_batch(
+    yaml_files,
+    submitted_file,
+    review_key,
+    batch_size,
+    fork_org=FORK_ORG,
+    token=None,
+):
+    """Collect up to batch_size ready packages, confirm once, and submit non-interactively."""
+    loaded_files = {}
+    all_ready = []
+
+    for yaml_file in yaml_files:
+        if yaml_file in loaded_files or not os.path.exists(yaml_file):
+            continue
+        with open(yaml_file, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+        loaded_files[yaml_file] = data
+        for pkg, info in data.items():
+            if (
+                isinstance(info, dict)
+                and str(info.get(review_key, "")).lower() == "ready"
+            ):
+                all_ready.append((yaml_file, pkg))
+
+    if not all_ready:
+        print(
+            f"No packages marked ready for review key '{review_key}'.",
+            flush=True,
+        )
+        return 0
+
+    selected = all_ready[:batch_size]
+    print(
+        f"\nBatch submission: {len(selected)} of {len(all_ready)} ready package(s) "
+        f"for review key '{review_key}':",
+        flush=True,
+    )
+    for idx, (yaml_file, pkg) in enumerate(selected, 1):
+        info = loaded_files[yaml_file][pkg]
+        print(f"  {idx}. {format_batch_item(pkg, info, yaml_file)}", flush=True)
+
+    while True:
+        print(
+            f"\nSubmit these {len(selected)} package(s)? [Y]es / [N]o: ",
+            end="",
+            flush=True,
+        )
+        line = sys.stdin.readline()
+        if not line:
+            print("\nAborted.", flush=True)
+            return 0
+        choice = line.strip().upper()
+        if choice in ("Y", "YES"):
+            break
+        if choice in ("N", "NO", "Q", "QUIT"):
+            print("Batch submission cancelled.", flush=True)
+            return 0
+        print("Invalid choice. Please enter Y or N.", flush=True)
+
+    succeeded = 0
+    failed = 0
+    for idx, (yaml_file, package) in enumerate(selected, 1):
+        data = loaded_files[yaml_file]
+        info = data[package]
+        print(
+            f"\n[{idx}/{len(selected)}] Submitting {package} ({yaml_file})...",
+            flush=True,
+        )
+        try:
+            result_meta = execute_submission(
+                package, info, fork_org=fork_org, token=token
+            )
+        except Exception as e:
+            print(f"Error submitting PR for {package}: {e}", flush=True)
+            failed += 1
+            continue
+
+        print(f"  Successfully created PR: {result_meta['pr_url']}", flush=True)
+        if "default_branch_pr_url" in result_meta:
+            print(
+                f"  Successfully created default-branch PR: {result_meta['default_branch_pr_url']}",
+                flush=True,
+            )
+
+        record_submitted_package(
+            package, info, result_meta, yaml_file, data, submitted_file
+        )
+        succeeded += 1
+
+    summary = f"\nBatch complete: {succeeded}/{len(selected)} package(s) submitted."
+    if failed:
+        summary += f" ({failed} failed)"
+    print(summary, flush=True)
+    return succeeded
+
+
 def process_yaml_file(
     yaml_file,
     submitted_file,
@@ -1006,29 +1150,8 @@ def process_yaml_file(
                         flush=True,
                     )
 
-                # Load existing submitted_pages.yaml
-                submitted_data = {}
-                if os.path.exists(submitted_file):
-                    with open(submitted_file, "r", encoding="utf-8") as f_sub:
-                        submitted_data = yaml.safe_load(f_sub) or {}
-
-                # Record entry in submitted_pages.yaml and remove from source yaml_file
-                submitted_entry = dict(info)
-                submitted_entry.update(result_meta)
-                submitted_entry["source_queue"] = yaml_file
-                submitted_data[package] = submitted_entry
-
-                del data[package]
-
-                with open(submitted_file, "w", encoding="utf-8") as f_sub:
-                    yaml.dump(submitted_data, f_sub, default_flow_style=False, sort_keys=True)
-
-                with open(yaml_file, "w", encoding="utf-8") as f_src:
-                    yaml.dump(data, f_src, default_flow_style=False, sort_keys=True)
-
-                print(
-                    f"  Moved '{package}' from {yaml_file} to {submitted_file}.",
-                    flush=True,
+                record_submitted_package(
+                    package, info, result_meta, yaml_file, data, submitted_file
                 )
                 break
             elif choice in ("V", "VIEW"):
@@ -1045,7 +1168,17 @@ def process_yaml_file(
     return True
 
 
-def main():
+def _positive_int(value):
+    try:
+        ivalue = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"invalid int value: '{value}'")
+    if ivalue <= 0:
+        raise argparse.ArgumentTypeError("--batch must be a positive integer")
+    return ivalue
+
+
+def main(argv=None):
     global MUTATION_DELAY
     parser = argparse.ArgumentParser(
         description="Submit pull requests for Ready packages in export_pages.yaml and extend_pages.yaml."
@@ -1054,6 +1187,16 @@ def main():
         "--review-key",
         required=True,
         help="Review key to check for 'ready' status",
+    )
+    parser.add_argument(
+        "--batch",
+        type=_positive_int,
+        default=None,
+        metavar="N",
+        help=(
+            "Batch mode: confirm up to N ready packages upfront, then submit "
+            "them without further prompts and exit"
+        ),
     )
     parser.add_argument(
         "--export-file",
@@ -1084,7 +1227,7 @@ def main():
             f"(default: {MUTATION_DELAY})"
         ),
     )
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     MUTATION_DELAY = max(0.0, args.mutation_delay)
 
     token = os.environ.get("GITHUB_TOKEN")
@@ -1096,16 +1239,26 @@ def main():
         )
 
     try:
-        for yaml_file in (args.export_file, args.extend_file):
-            keep_going = process_yaml_file(
-                yaml_file=yaml_file,
+        if args.batch is not None:
+            process_batch(
+                yaml_files=(args.export_file, args.extend_file),
                 submitted_file=args.submitted_file,
                 review_key=args.review_key,
+                batch_size=args.batch,
                 fork_org=args.fork_org,
                 token=token,
             )
-            if not keep_going:
-                break
+        else:
+            for yaml_file in (args.export_file, args.extend_file):
+                keep_going = process_yaml_file(
+                    yaml_file=yaml_file,
+                    submitted_file=args.submitted_file,
+                    review_key=args.review_key,
+                    fork_org=args.fork_org,
+                    token=token,
+                )
+                if not keep_going:
+                    break
     except KeyboardInterrupt:
         print("\nInterrupted by user.", flush=True)
 

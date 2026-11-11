@@ -591,5 +591,165 @@ class TestRateLimitAndPacing(unittest.TestCase):
         self.assertAlmostEqual(mock_sleep.call_args[0][0], 1.1, places=5)
 
 
+class TestBatchSubmission(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.export_file = os.path.join(self.temp_dir.name, "export_pages.yaml")
+        self.extend_file = os.path.join(self.temp_dir.name, "extend_pages.yaml")
+        self.submitted_file = os.path.join(self.temp_dir.name, "submitted_pages.yaml")
+
+        export_data = {
+            "pkg_a": {
+                "branch": "noetic-devel",
+                "readme_exists": False,
+                "repository": "https://github.com/example/repo_a.git",
+                "subdirectory": "pkg_a",
+                "my_review": "ready",
+            },
+            "pkg_b": {
+                "branch": "noetic-devel",
+                "readme_exists": False,
+                "repository": "https://github.com/example/repo_b.git",
+                "subdirectory": "pkg_b",
+                "my_review": "ready",
+            },
+            "pkg_ignored": {
+                "branch": "noetic-devel",
+                "readme_exists": False,
+                "repository": "https://github.com/example/repo_ign.git",
+                "subdirectory": "pkg_ignored",
+                "my_review": "ignored",
+            },
+        }
+        extend_data = {
+            "pkg_c": {
+                "branch": "master",
+                "readme_exists": True,
+                "repository": "https://github.com/example/repo_c.git",
+                "subdirectory": "",
+                "my_review": "ready",
+            },
+        }
+        with open(self.export_file, "w", encoding="utf-8") as f:
+            yaml.dump(export_data, f)
+        with open(self.extend_file, "w", encoding="utf-8") as f:
+            yaml.dump(extend_data, f)
+
+    def tearDown(self):
+        self.temp_dir.cleanup()
+
+    def test_batch_confirms_once_and_stops_at_batch_count(self):
+        submitted_calls = []
+
+        def fake_execute(package, info, fork_org=None, token=None):
+            submitted_calls.append(package)
+            return {
+                "pr_url": f"https://github.com/example/{package}/pull/1",
+                "fork_repository": f"https://github.com/{fork_org}/{package}.git",
+                "submitted_branch": f"ros-wiki-migration-{package}",
+                "commit_sha": "abc123",
+                "action": "append" if info.get("readme_exists") else "create",
+            }
+
+        out = io.StringIO()
+        with patch.dict(os.environ, {"GITHUB_TOKEN": "tok"}), \
+             patch("submit_prs.execute_submission", side_effect=fake_execute), \
+             patch("sys.stdin", io.StringIO("Y\n")), \
+             redirect_stdout(out):
+            submit_prs.main(
+                [
+                    "--review-key", "my_review",
+                    "--batch", "2",
+                    "--export-file", self.export_file,
+                    "--extend-file", self.extend_file,
+                    "--submitted-file", self.submitted_file,
+                ]
+            )
+
+        text = out.getvalue()
+        self.assertIn("Batch submission: 2 of 3 ready package(s)", text)
+        self.assertIn("1. pkg_a -> example/repo_a:noetic-devel", text)
+        self.assertIn("2. pkg_b -> example/repo_b:noetic-devel", text)
+        self.assertNotIn("pkg_c ->", text)
+        self.assertIn("Batch complete: 2/2 package(s) submitted.", text)
+
+        self.assertEqual(submitted_calls, ["pkg_a", "pkg_b"])
+
+        with open(self.submitted_file, "r", encoding="utf-8") as f:
+            submitted = yaml.safe_load(f)
+        self.assertEqual(sorted(submitted.keys()), ["pkg_a", "pkg_b"])
+
+        with open(self.export_file, "r", encoding="utf-8") as f:
+            remaining_export = yaml.safe_load(f)
+        self.assertEqual(list(remaining_export.keys()), ["pkg_ignored"])
+
+        with open(self.extend_file, "r", encoding="utf-8") as f:
+            remaining_extend = yaml.safe_load(f)
+        self.assertIn("pkg_c", remaining_extend)
+
+    def test_batch_decline_cancels_without_submitting(self):
+        out = io.StringIO()
+        with patch("submit_prs.execute_submission") as mock_exec, \
+             patch("sys.stdin", io.StringIO("N\n")), \
+             redirect_stdout(out):
+            count = submit_prs.process_batch(
+                yaml_files=(self.export_file, self.extend_file),
+                submitted_file=self.submitted_file,
+                review_key="my_review",
+                batch_size=2,
+                token="tok",
+            )
+
+        self.assertEqual(count, 0)
+        mock_exec.assert_not_called()
+        self.assertFalse(os.path.exists(self.submitted_file))
+        self.assertIn("Batch submission cancelled.", out.getvalue())
+
+    def test_batch_spans_files_and_continues_past_error(self):
+        def fake_execute(package, info, fork_org=None, token=None):
+            if package == "pkg_b":
+                raise RuntimeError("simulated API failure")
+            return {
+                "pr_url": f"https://github.com/example/{package}/pull/1",
+                "fork_repository": f"https://github.com/{fork_org}/{package}.git",
+                "submitted_branch": f"ros-wiki-migration-{package}",
+                "commit_sha": "abc123",
+                "action": "append" if info.get("readme_exists") else "create",
+            }
+
+        out = io.StringIO()
+        with patch("submit_prs.execute_submission", side_effect=fake_execute), \
+             patch("sys.stdin", io.StringIO("Y\n")), \
+             redirect_stdout(out):
+            count = submit_prs.process_batch(
+                yaml_files=(self.export_file, self.extend_file),
+                submitted_file=self.submitted_file,
+                review_key="my_review",
+                batch_size=5,
+                token="tok",
+            )
+
+        self.assertEqual(count, 2)
+        text = out.getvalue()
+        self.assertIn("Batch submission: 3 of 3 ready package(s)", text)
+        self.assertIn("Batch complete: 2/3 package(s) submitted. (1 failed)", text)
+
+        with open(self.submitted_file, "r", encoding="utf-8") as f:
+            submitted = yaml.safe_load(f)
+        self.assertEqual(sorted(submitted.keys()), ["pkg_a", "pkg_c"])
+
+        with open(self.export_file, "r", encoding="utf-8") as f:
+            remaining_export = yaml.safe_load(f)
+        # pkg_b failed so it stays in export_pages.yaml
+        self.assertIn("pkg_b", remaining_export)
+        self.assertNotIn("pkg_a", remaining_export)
+
+    def test_batch_rejects_non_positive_size(self):
+        with patch("sys.stderr", io.StringIO()):
+            with self.assertRaises(SystemExit) as ctx:
+                submit_prs.main(["--review-key", "my_review", "--batch", "0"])
+        self.assertEqual(ctx.exception.code, 2)
+
+
 if __name__ == "__main__":
     unittest.main()

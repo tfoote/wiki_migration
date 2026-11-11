@@ -224,10 +224,13 @@ Once packages are marked `ready` under a review key, run `submit_prs.py` to prev
 
 ```bash
 export GITHUB_TOKEN="ghp_your_personal_access_token"
-python3 submit_prs.py --review-key <your_review_key>
+python3 submit_prs.py --review-key <your_review_key>            # interactive per-package preview
+python3 submit_prs.py --review-key <your_review_key> --batch 10  # confirm a batch of 10 upfront, then submit unattended
 ```
 
-For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_review_key>: ready`:
+- **Batch mode (`--batch N`):** Lists up to `N` ready packages across `export_pages.yaml` and `extend_pages.yaml`, asks for a single `[Y]es / [N]o` confirmation upfront, then submits all confirmed packages non-interactively and exits.
+
+For each package in `export_pages.yaml` and `extend_pages.yaml` with `<your_review_key>: ready` (in interactive mode):
 1. Displays a preview of the fork target, branch name, target `README.md` path, commit message, PR details, and Markdown content, then prompts `[Y]es / [S]kip / [Q]uit`.
 2. Upon confirmation (`Y`):
    - Reuses the organization's existing fork of the repository, or creates one in the `tfoote-ros-wiki-migration-forks` organization (parameterized via `FORK_ORG` / `--fork-org`), and syncs it with upstream. Asking GitHub to fork a repo that's already forked into the organization creates duplicates (`<repo>-1`, …), so the existing fork is looked up first. PRs name the head repository explicitly.

@@ -1161,6 +1161,27 @@ mrpt_tutorials:
   subdirectory: mrpt_tutorials
   submitted_branch: ros-wiki-migration-mrpt_tutorials
   tully2: ready
+nav2d_navigator:
+  action: create
+  branch: noetic
+  commit_sha: 192636d23a122851c82ce126b9100e230d9993de
+  default_action: create
+  default_branch: master
+  default_branch_pr_url: https://github.com/skasperski/navigation_2d/pull/69
+  default_commit_sha: 4efbe2ce0f37cd202f1310adc28918ee6698ffb7
+  default_submitted_branch: ros-wiki-migration-nav2d_navigator-master
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/navigation_2d.git
+  markdown_file: markdown_output/nav2d_navigator.md
+  package_xml_match: true
+  pr_url: https://github.com/skasperski/navigation_2d/pull/68
+  readme_exists: false
+  repository: https://github.com/skasperski/navigation_2d.git
+  repository_archived: false
+  source_file: pages/nav2d_navigator/revisions/00000008
+  source_queue: export_pages.yaml
+  subdirectory: nav2d_navigator
+  submitted_branch: ros-wiki-migration-nav2d_navigator
+  tully2: ready
 people_msgs:
   action: create
   branch: noetic
@@ -1200,6 +1221,38 @@ pr2_description:
   source_queue: export_pages.yaml
   subdirectory: pr2_description
   submitted_branch: ros-wiki-migration-pr2_description
+  tully2: ready
+rosserial_server:
+  action: create
+  branch: noetic-devel
+  commit_sha: 0da0fe3309a360630cf4edade16b516c2bbbaad0
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosserial.git
+  markdown_file: markdown_output/rosserial_server.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/rosserial/pull/634
+  readme_exists: false
+  repository: https://github.com/ros-drivers/rosserial.git
+  repository_archived: false
+  source_file: pages/rosserial_server/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: rosserial_server
+  submitted_branch: ros-wiki-migration-rosserial_server
+  tully2: ready
+rosserial_windows:
+  action: create
+  branch: noetic-devel
+  commit_sha: ea09389cd974b01de23e5878b6293daead32eea2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosserial.git
+  markdown_file: markdown_output/rosserial_windows.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/rosserial/pull/635
+  readme_exists: false
+  repository: https://github.com/ros-drivers/rosserial.git
+  repository_archived: false
+  source_file: pages/rosserial_windows/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: rosserial_windows
+  submitted_branch: ros-wiki-migration-rosserial_windows
   tully2: ready
 rqt_rviz:
   action: create

@@ -830,6 +830,25 @@ cob_navigation_config:
   subdirectory: cob_navigation_config
   submitted_branch: ros-wiki-migration-cob_navigation_config
   tully2: ready
+collada_urdf:
+  action: create
+  attachments:
+  - collada_urdf/doc/collada_rviz_barrettwam.jpg
+  attachments_commit_sha: 1c8cc93b277cc161aa33a43bf2e4b88db685068a
+  branch: kinetic-devel
+  commit_sha: 1c3f1ab2c945aa93f07d171c610c7c3ede10c672
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/collada_urdf.git
+  markdown_file: markdown_output/collada_urdf.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/collada_urdf/pull/50
+  readme_exists: false
+  repository: https://github.com/ros/collada_urdf.git
+  repository_archived: false
+  source_file: pages/collada_urdf/revisions/00000015
+  source_queue: export_pages.yaml
+  subdirectory: collada_urdf
+  submitted_branch: ros-wiki-migration-collada_urdf
+  tully2: ready
 diagnostic_analysis:
   action: create
   branch: noetic-devel
@@ -867,6 +886,26 @@ fanuc_lrmate200i_support:
   subdirectory: fanuc_lrmate200i_support
   submitted_branch: ros-wiki-migration-fanuc_lrmate200i_support
   tully2: ready
+fingertip_pressure:
+  action: create
+  attachments:
+  - fingertip_pressure/doc/fingertip_sensors_panel.png
+  - fingertip_pressure/doc/overview.gif
+  attachments_commit_sha: 0ae1f3a1e98dba7267b8c024b3e12b4fe506c8ec
+  branch: kinetic-devel
+  commit_sha: 400d50f21a91426602a223469a8370d227967717
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_ethercat_drivers.git
+  markdown_file: markdown_output/fingertip_pressure.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_ethercat_drivers/pull/83
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_ethercat_drivers.git
+  repository_archived: false
+  source_file: pages/fingertip_pressure/revisions/00000029
+  source_queue: export_pages.yaml
+  subdirectory: fingertip_pressure
+  submitted_branch: ros-wiki-migration-fingertip_pressure
+  tully2: ready
 hector_mapping:
   action: create
   branch: noetic-devel
@@ -882,6 +921,67 @@ hector_mapping:
   source_queue: export_pages.yaml
   subdirectory: hector_mapping
   submitted_branch: ros-wiki-migration-hector_mapping
+  tully2: ready
+hector_pose_estimation:
+  action: create
+  branch: catkin
+  commit_sha: 4c8ab872ddc4893f0bfa713f7195fa50540650d6
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/hector_localization.git
+  markdown_file: markdown_output/hector_pose_estimation.md
+  package_xml_match: true
+  pr_url: https://github.com/tu-darmstadt-ros-pkg/hector_localization/pull/23
+  readme_exists: false
+  repository: https://github.com/tu-darmstadt-ros-pkg/hector_localization.git
+  repository_archived: false
+  source_file: pages/hector_pose_estimation/revisions/00000007
+  source_queue: export_pages.yaml
+  subdirectory: hector_pose_estimation
+  submitted_branch: ros-wiki-migration-hector_pose_estimation
+  tully2: ready
+image_rotate:
+  action: create
+  attachments:
+  - image_rotate/doc/image_rotate.jpg
+  attachments_commit_sha: 2f98f3b18fc63796f25f98e0db41b7629b778313
+  branch: noetic
+  commit_sha: 340334a0e363de5d4a4aa46140bf24f460167114
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/image_pipeline/pull/1210
+  default_commit_sha: 934967876506eaeed4b7c2a2739faba69cfa613d
+  default_submitted_branch: ros-wiki-migration-image_rotate-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/image_pipeline.git
+  markdown_file: markdown_output/image_rotate.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/image_pipeline/pull/1209
+  readme_exists: false
+  repository: https://github.com/ros-perception/image_pipeline.git
+  repository_archived: false
+  source_file: pages/image_rotate/revisions/00000036
+  source_queue: export_pages.yaml
+  subdirectory: image_rotate
+  submitted_branch: ros-wiki-migration-image_rotate
+  tully2: ready
+image_view:
+  action: create
+  branch: noetic
+  commit_sha: 6c326721007af218df9752de23efc17edc4a5781
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/image_pipeline/pull/1212
+  default_commit_sha: b2c1710fe349a50c3dc151f5bcd892b8299bfe57
+  default_submitted_branch: ros-wiki-migration-image_view-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/image_pipeline.git
+  markdown_file: markdown_output/image_view.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/image_pipeline/pull/1211
+  readme_exists: false
+  repository: https://github.com/ros-perception/image_pipeline.git
+  repository_archived: false
+  source_file: pages/image_view/revisions/00000039
+  source_queue: export_pages.yaml
+  subdirectory: image_view
+  submitted_branch: ros-wiki-migration-image_view
   tully2: ready
 industrial_robot_status_controller:
   action: create
@@ -931,6 +1031,22 @@ leo_desktop:
   subdirectory: leo_desktop
   submitted_branch: ros-wiki-migration-leo_desktop
   tully2: ready
+leo_example_line_follower:
+  action: create
+  branch: master
+  commit_sha: e35211f3d5ed456fe4af63c08f50ac81fc3a6da1
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/leo_examples.git
+  markdown_file: markdown_output/leo_example_line_follower.md
+  package_xml_match: true
+  pr_url: https://github.com/LeoRover/leo_examples/pull/4
+  readme_exists: false
+  repository: https://github.com/LeoRover/leo_examples.git
+  repository_archived: false
+  source_file: pages/leo_example_line_follower/revisions/00000012
+  source_queue: export_pages.yaml
+  subdirectory: leo_example_line_follower
+  submitted_branch: ros-wiki-migration-leo_example_line_follower
+  tully2: ready
 leo_gazebo:
   action: create
   attachments:
@@ -965,6 +1081,22 @@ libsensors_monitor:
   source_queue: export_pages.yaml
   subdirectory: libsensors_monitor
   submitted_branch: ros-wiki-migration-libsensors_monitor
+  tully2: ready
+lockfree:
+  action: create
+  branch: noetic-devel
+  commit_sha: d31904f5363d7a3a8df3c960b5c754abf26e0c97
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ros_realtime.git
+  markdown_file: markdown_output/lockfree.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/ros_realtime/pull/18
+  readme_exists: false
+  repository: https://github.com/ros/ros_realtime.git
+  repository_archived: false
+  source_file: pages/lockfree/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: lockfree
+  submitted_branch: ros-wiki-migration-lockfree
   tully2: ready
 mocap_optitrack:
   action: create

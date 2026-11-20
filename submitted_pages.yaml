@@ -849,6 +849,53 @@ collada_urdf:
   subdirectory: collada_urdf
   submitted_branch: ros-wiki-migration-collada_urdf
   tully2: ready
+compressed_depth_image_transport:
+  action: create
+  branch: noetic-devel
+  commit_sha: ac9249905e1ad10f4ecb4ec3ed4cb5cebf5d4799
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/image_transport_plugins/pull/248
+  default_commit_sha: 30c470964801fe45bb60416ca5508acbf9f6efe9
+  default_submitted_branch: ros-wiki-migration-compressed_depth_image_transport-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/image_transport_plugins.git
+  markdown_file: markdown_output/compressed_depth_image_transport.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/image_transport_plugins/pull/247
+  readme_exists: false
+  repository: https://github.com/ros-perception/image_transport_plugins.git
+  repository_archived: false
+  source_file: pages/compressed_depth_image_transport/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: compressed_depth_image_transport
+  submitted_branch: ros-wiki-migration-compressed_depth_image_transport
+  tully2: ready
+cv_bridge:
+  action: create
+  attachments:
+  - cv_bridge/doc/cvbridge.png
+  - cv_bridge/doc/cvbridge3.png
+  - cv_bridge/doc/cvbridge4.png
+  attachments_commit_sha: 14b6c340ac2c420930073c4fe01d9ce919cc55e0
+  branch: noetic
+  commit_sha: a1b1604fd7e7e2d3f3c6a0735cdf1791eebae3be
+  default_action: append
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/vision_opencv/pull/577
+  default_commit_sha: 130b53d9e2e695da6803524c2558f352e32c500c
+  default_submitted_branch: ros-wiki-migration-cv_bridge-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/vision_opencv.git
+  markdown_file: markdown_output/cv_bridge.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/vision_opencv/pull/576
+  readme_exists: false
+  repository: https://github.com/ros-perception/vision_opencv.git
+  repository_archived: false
+  source_file: pages/cv_bridge/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: cv_bridge
+  submitted_branch: ros-wiki-migration-cv_bridge
+  tully2: ready
 diagnostic_analysis:
   action: create
   branch: noetic-devel
@@ -870,6 +917,111 @@ diagnostic_analysis:
   subdirectory: diagnostic_analysis
   submitted_branch: ros-wiki-migration-diagnostic_analysis
   tully2: ready
+dingo_msgs:
+  action: create
+  branch: melodic-devel
+  commit_sha: 010046e36949b3f578c69341eb1d2eff2cbba12c
+  default_action: create
+  default_branch: noetic-devel
+  default_branch_pr_url: https://github.com/dingo-cpr/dingo/pull/33
+  default_commit_sha: 487a6b3c0664bb7d60b59fb8b88a48aee9002978
+  default_submitted_branch: ros-wiki-migration-dingo_msgs-noetic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/dingo.git
+  markdown_file: markdown_output/dingo_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/dingo-cpr/dingo/pull/32
+  readme_exists: false
+  repository: https://github.com/dingo-cpr/dingo.git
+  repository_archived: false
+  source_file: pages/dingo_msgs/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: dingo_msgs
+  submitted_branch: ros-wiki-migration-dingo_msgs
+  tully2: ready
+ecl_converters_lite:
+  action: create
+  branch: release/0.61-noetic
+  commit_sha: 3ded95e62bde387d68487d75be42fb78b2b7a620
+  default_action: create
+  default_branch: devel
+  default_branch_pr_url: https://github.com/stonier/ecl_lite/pull/45
+  default_commit_sha: 51c8952d53b645009517e5606dac56e39847f6b2
+  default_submitted_branch: ros-wiki-migration-ecl_converters_lite-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ecl_lite.git
+  markdown_file: markdown_output/ecl_converters_lite.md
+  package_xml_match: true
+  pr_url: https://github.com/stonier/ecl_lite/pull/44
+  readme_exists: false
+  repository: https://github.com/stonier/ecl_lite.git
+  repository_archived: false
+  source_file: pages/ecl_converters_lite/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: ecl_converters_lite
+  submitted_branch: ros-wiki-migration-ecl_converters_lite
+  tully2: ready
+ecl_devices:
+  action: create
+  branch: release/0.62-noetic
+  commit_sha: 120da5ce6bddb6de9c0ddced4f7b3cfd3d98287c
+  default_action: create
+  default_branch: devel
+  default_branch_pr_url: https://github.com/stonier/ecl_core/pull/123
+  default_commit_sha: b72e3cc96f4303efb56d20a85f2c037d0f653edc
+  default_submitted_branch: ros-wiki-migration-ecl_devices-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ecl_core.git
+  markdown_file: markdown_output/ecl_devices.md
+  package_xml_match: true
+  pr_url: https://github.com/stonier/ecl_core/pull/122
+  readme_exists: false
+  repository: https://github.com/stonier/ecl_core.git
+  repository_archived: false
+  source_file: pages/ecl_devices/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: ecl_devices
+  submitted_branch: ros-wiki-migration-ecl_devices
+  tully2: ready
+ecl_statistics:
+  action: create
+  branch: release/0.62-noetic
+  commit_sha: d7e81e6ee01dfc716707c26c1808f8234f703499
+  default_action: create
+  default_branch: devel
+  default_branch_pr_url: https://github.com/stonier/ecl_core/pull/125
+  default_commit_sha: 28e9fdea6dc4fd2f25c11836950c99822764872f
+  default_submitted_branch: ros-wiki-migration-ecl_statistics-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ecl_core.git
+  markdown_file: markdown_output/ecl_statistics.md
+  package_xml_match: true
+  pr_url: https://github.com/stonier/ecl_core/pull/124
+  readme_exists: false
+  repository: https://github.com/stonier/ecl_core.git
+  repository_archived: false
+  source_file: pages/ecl_statistics/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: ecl_statistics
+  submitted_branch: ros-wiki-migration-ecl_statistics
+  tully2: ready
+ecl_utilities:
+  action: create
+  branch: release/0.62-noetic
+  commit_sha: 1f925d35e6da0e15fd8f5c230d96dc631752f776
+  default_action: create
+  default_branch: devel
+  default_branch_pr_url: https://github.com/stonier/ecl_core/pull/127
+  default_commit_sha: ba5f0132bd596efa67020993d652a0e020de3029
+  default_submitted_branch: ros-wiki-migration-ecl_utilities-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ecl_core.git
+  markdown_file: markdown_output/ecl_utilities.md
+  package_xml_match: true
+  pr_url: https://github.com/stonier/ecl_core/pull/126
+  readme_exists: false
+  repository: https://github.com/stonier/ecl_core.git
+  repository_archived: false
+  source_file: pages/ecl_utilities/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: ecl_utilities
+  submitted_branch: ros-wiki-migration-ecl_utilities
+  tully2: ready
 fanuc_lrmate200i_support:
   action: create
   branch: noetic-devel
@@ -885,6 +1037,38 @@ fanuc_lrmate200i_support:
   source_queue: export_pages.yaml
   subdirectory: fanuc_lrmate200i_support
   submitted_branch: ros-wiki-migration-fanuc_lrmate200i_support
+  tully2: ready
+fanuc_lrmate200ib_support:
+  action: create
+  branch: noetic-devel
+  commit_sha: 7f6f83141909f166928c82c8dc676093dc54a66f
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/fanuc.git
+  markdown_file: markdown_output/fanuc_lrmate200ib_support.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/fanuc/pull/383
+  readme_exists: false
+  repository: https://github.com/ros-industrial/fanuc.git
+  repository_archived: false
+  source_file: pages/fanuc_lrmate200ib_support/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: fanuc_lrmate200ib_support
+  submitted_branch: ros-wiki-migration-fanuc_lrmate200ib_support
+  tully2: ready
+fanuc_m430ia_support:
+  action: create
+  branch: noetic-devel
+  commit_sha: 509e07ccd3074642fe0fece29d3cecf3187d069a
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/fanuc.git
+  markdown_file: markdown_output/fanuc_m430ia_support.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/fanuc/pull/384
+  readme_exists: false
+  repository: https://github.com/ros-industrial/fanuc.git
+  repository_archived: false
+  source_file: pages/fanuc_m430ia_support/revisions/00000009
+  source_queue: export_pages.yaml
+  subdirectory: fanuc_m430ia_support
+  submitted_branch: ros-wiki-migration-fanuc_m430ia_support
   tully2: ready
 fingertip_pressure:
   action: create
@@ -905,6 +1089,43 @@ fingertip_pressure:
   source_queue: export_pages.yaml
   subdirectory: fingertip_pressure
   submitted_branch: ros-wiki-migration-fingertip_pressure
+  tully2: ready
+geographic_msgs:
+  action: create
+  branch: master
+  commit_sha: bee3985e8758b41154ff4aef3fea14851355fe7b
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/geographic_info.git
+  markdown_file: markdown_output/geographic_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-geographic-info/geographic_info/pull/66
+  readme_exists: false
+  repository: https://github.com/ros-geographic-info/geographic_info.git
+  repository_archived: false
+  source_file: pages/geographic_msgs/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: geographic_msgs
+  submitted_branch: ros-wiki-migration-geographic_msgs
+  tully2: ready
+gps_common:
+  action: create
+  branch: master
+  commit_sha: 9af4243b38f0b7c05cd9ef99e4768ec8c3e27907
+  default_action: create
+  default_branch: ros2-devel
+  default_branch_pr_url: https://github.com/swri-robotics/gps_umd/pull/203
+  default_commit_sha: 7a6ffb0f98d260f11722d624918445fd5cb8e5de
+  default_submitted_branch: ros-wiki-migration-gps_common-ros2-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/gps_umd.git
+  markdown_file: markdown_output/gps_common.md
+  package_xml_match: true
+  pr_url: https://github.com/swri-robotics/gps_umd/pull/202
+  readme_exists: false
+  repository: https://github.com/swri-robotics/gps_umd.git
+  repository_archived: false
+  source_file: pages/gps_common/revisions/00000011
+  source_queue: export_pages.yaml
+  subdirectory: gps_common
+  submitted_branch: ros-wiki-migration-gps_common
   tully2: ready
 hector_mapping:
   action: create
@@ -937,6 +1158,30 @@ hector_pose_estimation:
   source_queue: export_pages.yaml
   subdirectory: hector_pose_estimation
   submitted_branch: ros-wiki-migration-hector_pose_estimation
+  tully2: ready
+image_geometry:
+  action: create
+  attachments:
+  - image_geometry/doc/draw_frames.png
+  attachments_commit_sha: b218633db6a8fdaf6a2d2f306b721b23ed7d7681
+  branch: noetic
+  commit_sha: eb98735870c48c902f77beb54cf22705213b953d
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/vision_opencv/pull/584
+  default_commit_sha: 7d24bee984180586eb93baceb61e0fc7989b5e73
+  default_submitted_branch: ros-wiki-migration-image_geometry-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/vision_opencv.git
+  markdown_file: markdown_output/image_geometry.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/vision_opencv/pull/583
+  readme_exists: false
+  repository: https://github.com/ros-perception/vision_opencv.git
+  repository_archived: false
+  source_file: pages/image_geometry/revisions/00000053
+  source_queue: export_pages.yaml
+  subdirectory: image_geometry
+  submitted_branch: ros-wiki-migration-image_geometry
   tully2: ready
 image_rotate:
   action: create
@@ -983,6 +1228,48 @@ image_view:
   subdirectory: image_view
   submitted_branch: ros-wiki-migration-image_view
   tully2: ready
+industrial_msgs:
+  action: create
+  branch: melodic
+  commit_sha: 5977937f4d4bfe27e31a1cf29713e4ca19c9973f
+  default_action: create
+  default_branch: melodic-devel
+  default_branch_pr_url: https://github.com/ros-industrial/industrial_core/pull/296
+  default_commit_sha: 4e16864274d305cd14e180c57f99144ff66b00fa
+  default_submitted_branch: ros-wiki-migration-industrial_msgs-melodic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/industrial_core.git
+  markdown_file: markdown_output/industrial_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/industrial_core/pull/295
+  readme_exists: false
+  repository: https://github.com/ros-industrial/industrial_core.git
+  repository_archived: false
+  source_file: pages/industrial_msgs/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: industrial_msgs
+  submitted_branch: ros-wiki-migration-industrial_msgs
+  tully2: ready
+industrial_robot_client:
+  action: create
+  branch: melodic
+  commit_sha: e96f60c47cc3b46e05fb88cadd009e2effe446f5
+  default_action: create
+  default_branch: melodic-devel
+  default_branch_pr_url: https://github.com/ros-industrial/industrial_core/pull/298
+  default_commit_sha: 2014c785a6ed0e9ec6d914a190d0d9aa71f22cd8
+  default_submitted_branch: ros-wiki-migration-industrial_robot_client-melodic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/industrial_core.git
+  markdown_file: markdown_output/industrial_robot_client.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/industrial_core/pull/297
+  readme_exists: false
+  repository: https://github.com/ros-industrial/industrial_core.git
+  repository_archived: false
+  source_file: pages/industrial_robot_client/revisions/00000016
+  source_queue: export_pages.yaml
+  subdirectory: industrial_robot_client
+  submitted_branch: ros-wiki-migration-industrial_robot_client
+  tully2: ready
 industrial_robot_status_controller:
   action: create
   branch: master
@@ -1014,6 +1301,179 @@ jackal_control:
   source_queue: export_pages.yaml
   subdirectory: jackal_control
   submitted_branch: ros-wiki-migration-jackal_control
+  tully2: ready
+jackal_msgs:
+  action: create
+  branch: noetic-devel
+  commit_sha: 04ecc9473311a0a6c31b9995eb52612f76db0a0d
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/jackal.git
+  markdown_file: markdown_output/jackal_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/jackal/jackal/pull/158
+  readme_exists: false
+  repository: https://github.com/jackal/jackal.git
+  repository_archived: false
+  source_file: pages/jackal_msgs/revisions/00000007
+  source_queue: export_pages.yaml
+  subdirectory: jackal_msgs
+  submitted_branch: ros-wiki-migration-jackal_msgs
+  tully2: ready
+jackal_tutorials:
+  action: create
+  branch: noetic-devel
+  commit_sha: c2edcf70923f912168751d6064f9c741d86d8773
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/jackal.git
+  markdown_file: markdown_output/jackal_tutorials.md
+  package_xml_match: true
+  pr_url: https://github.com/jackal/jackal/pull/159
+  readme_exists: false
+  repository: https://github.com/jackal/jackal.git
+  repository_archived: false
+  source_file: pages/jackal_tutorials/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: jackal_tutorials
+  submitted_branch: ros-wiki-migration-jackal_tutorials
+  tully2: ready
+jackal_viz:
+  action: create
+  branch: melodic-devel
+  commit_sha: fb672d49aa528b21b631c04d8c45771325cd7a44
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/jackal_desktop.git
+  markdown_file: markdown_output/jackal_viz.md
+  package_xml_match: true
+  pr_url: https://github.com/jackal/jackal_desktop/pull/8
+  readme_exists: false
+  repository: https://github.com/jackal/jackal_desktop.git
+  repository_archived: false
+  source_file: pages/jackal_viz/revisions/00000016
+  source_queue: export_pages.yaml
+  subdirectory: jackal_viz
+  submitted_branch: ros-wiki-migration-jackal_viz
+  tully2: ready
+kartech_linear_actuator_msgs:
+  action: create
+  branch: master
+  commit_sha: 8a6ac00ddd9b35cdc43a4ee251f900ff1a472730
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/astuff_sensor_msgs.git
+  markdown_file: markdown_output/kartech_linear_actuator_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/astuff/astuff_sensor_msgs/pull/98
+  readme_exists: false
+  repository: https://github.com/astuff/astuff_sensor_msgs.git
+  repository_archived: false
+  source_file: pages/kartech_linear_actuator_msgs/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: kartech_linear_actuator_msgs
+  submitted_branch: ros-wiki-migration-kartech_linear_actuator_msgs
+  tully2: ready
+kdl_parser:
+  action: create
+  attachments:
+  - kdl_parser/doc/parser2.png
+  attachments_commit_sha: 40c9ea90d5bffb27657458e15b4682cd5904b921
+  branch: noetic-devel
+  commit_sha: d838ddfe5cb46467dc2ee1b3af8e9eaa95f4346e
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros/kdl_parser/pull/93
+  default_commit_sha: b4e3c3c5da94920acb4770cbef26b5f1ae98e45b
+  default_submitted_branch: ros-wiki-migration-kdl_parser-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/kdl_parser.git
+  markdown_file: markdown_output/kdl_parser.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/kdl_parser/pull/92
+  readme_exists: false
+  repository: https://github.com/ros/kdl_parser.git
+  repository_archived: false
+  source_file: pages/kdl_parser/revisions/00000049
+  source_queue: export_pages.yaml
+  subdirectory: kdl_parser
+  submitted_branch: ros-wiki-migration-kdl_parser
+  tully2: ready
+kvh_geo_fog_3d_rviz:
+  action: create
+  branch: noetic-devel
+  commit_sha: e1b87dc8b34ed85569799b5bb33b7acc3704ba59
+  default_action: create
+  default_branch: kinetic-devel
+  default_branch_pr_url: https://github.com/mitre/kvh_geo_fog_3d/pull/2
+  default_commit_sha: 40a7b66c947eeec3deb288f243a0c2dd0040db6a
+  default_submitted_branch: ros-wiki-migration-kvh_geo_fog_3d_rviz-kinetic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/kvh_geo_fog_3d.git
+  markdown_file: markdown_output/kvh_geo_fog_3d_rviz.md
+  package_xml_match: true
+  pr_url: https://github.com/mitre/kvh_geo_fog_3d/pull/1
+  readme_exists: false
+  repository: https://github.com/MITRE/kvh_geo_fog_3d.git
+  repository_archived: false
+  source_file: pages/kvh_geo_fog_3d_rviz/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: kvh_geo_fog_3d_rviz
+  submitted_branch: ros-wiki-migration-kvh_geo_fog_3d_rviz
+  tully2: ready
+laser_ortho_projector:
+  action: create
+  attachments:
+  - laser_ortho_projector/doc/laser_ortho_projector.png
+  attachments_commit_sha: 858bc832b931ba320e535b24c259ac00c10f1612
+  branch: ros1
+  commit_sha: 53f8b4502b229fe07382552b9ca37b9b532ec5cf
+  default_action: create
+  default_branch: indigo
+  default_branch_pr_url: https://github.com/CCNYRoboticsLab/scan_tools/pull/94
+  default_commit_sha: 4dec5c5fea94579a7d4d9a556b573e9e128435df
+  default_submitted_branch: ros-wiki-migration-laser_ortho_projector-indigo
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/scan_tools.git
+  markdown_file: markdown_output/laser_ortho_projector.md
+  package_xml_match: true
+  pr_url: https://github.com/CCNYRoboticsLab/scan_tools/pull/93
+  readme_exists: false
+  repository: https://github.com/CCNYRoboticsLab/scan_tools.git
+  repository_archived: false
+  source_file: pages/laser_ortho_projector/revisions/00000023
+  source_queue: export_pages.yaml
+  subdirectory: laser_ortho_projector
+  submitted_branch: ros-wiki-migration-laser_ortho_projector
+  tully2: ready
+laser_scan_matcher:
+  action: create
+  attachments:
+  - laser_scan_matcher/doc/laser_scan_matcher.png
+  attachments_commit_sha: 983863323ec02d669374b810fbd0b68fc89c69a9
+  branch: ros1
+  commit_sha: 4cdb7af6faba9b902c67d0bf999e6e87ce401cec
+  default_action: create
+  default_branch: indigo
+  default_branch_pr_url: https://github.com/CCNYRoboticsLab/scan_tools/pull/96
+  default_commit_sha: 9ba60fc1df9a25cf6095331b3b9d5a6febf4a929
+  default_submitted_branch: ros-wiki-migration-laser_scan_matcher-indigo
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/scan_tools.git
+  markdown_file: markdown_output/laser_scan_matcher.md
+  package_xml_match: true
+  pr_url: https://github.com/CCNYRoboticsLab/scan_tools/pull/95
+  readme_exists: false
+  repository: https://github.com/CCNYRoboticsLab/scan_tools.git
+  repository_archived: false
+  source_file: pages/laser_scan_matcher/revisions/00000022
+  source_queue: export_pages.yaml
+  subdirectory: laser_scan_matcher
+  submitted_branch: ros-wiki-migration-laser_scan_matcher
+  tully2: ready
+leo_bringup:
+  action: create
+  branch: master
+  commit_sha: 00220e05e4622854ded87d3f34c8b38f6ebde7d6
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/leo_robot.git
+  markdown_file: markdown_output/leo_bringup.md
+  package_xml_match: true
+  pr_url: https://github.com/LeoRover/leo_robot/pull/15
+  readme_exists: false
+  repository: https://github.com/LeoRover/leo_robot.git
+  repository_archived: false
+  source_file: pages/leo_bringup/revisions/00000004
+  source_queue: export_pages.yaml
+  subdirectory: leo_bringup
+  submitted_branch: ros-wiki-migration-leo_bringup
   tully2: ready
 leo_desktop:
   action: create
@@ -1065,6 +1525,22 @@ leo_gazebo:
   source_queue: export_pages.yaml
   subdirectory: leo_gazebo
   submitted_branch: ros-wiki-migration-leo_gazebo
+  tully2: ready
+libpcan:
+  action: create
+  branch: indigo_dev
+  commit_sha: a83999311cf8b7fb736dd2b32afdfeece77d5b88
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/cob_extern.git
+  markdown_file: markdown_output/libpcan.md
+  package_xml_match: true
+  pr_url: https://github.com/ipa320/cob_extern/pull/115
+  readme_exists: false
+  repository: https://github.com/ipa320/cob_extern.git
+  repository_archived: false
+  source_file: pages/libpcan/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: libpcan
+  submitted_branch: ros-wiki-migration-libpcan
   tully2: ready
 libsensors_monitor:
   action: create
@@ -1124,6 +1600,27 @@ mocap_optitrack:
   subdirectory: ''
   submitted_branch: ros-wiki-migration-mocap_optitrack
   tully2: ready
+mpc_local_planner:
+  action: create
+  branch: noetic-devel
+  commit_sha: 56af36e4d70afa0c542fd60b071a5a51f62bf7af
+  default_action: create
+  default_branch: master
+  default_branch_pr_url: https://github.com/rst-tu-dortmund/mpc_local_planner/pull/61
+  default_commit_sha: d65def194b15c43fd728d71e53bf26a1f838278c
+  default_submitted_branch: ros-wiki-migration-mpc_local_planner-master
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/mpc_local_planner.git
+  markdown_file: markdown_output/mpc_local_planner.md
+  package_xml_match: true
+  pr_url: https://github.com/rst-tu-dortmund/mpc_local_planner/pull/60
+  readme_exists: false
+  repository: https://github.com/rst-tu-dortmund/mpc_local_planner.git
+  repository_archived: false
+  source_file: pages/mpc_local_planner/revisions/00000006
+  source_queue: export_pages.yaml
+  subdirectory: mpc_local_planner
+  submitted_branch: ros-wiki-migration-mpc_local_planner
+  tully2: ready
 mqtt_client:
   action: create
   branch: main
@@ -1139,6 +1636,69 @@ mqtt_client:
   source_queue: export_pages.yaml
   subdirectory: mqtt_client
   submitted_branch: ros-wiki-migration-mqtt_client
+  tully2: ready
+mrpt_ekf_slam_2d:
+  action: create
+  branch: ros1
+  commit_sha: 83d975964dd0d5f7cf70c61f7bb6904fa14ab562
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/mrpt-ros-pkg/mrpt_slam/pull/77
+  default_commit_sha: 9309124e6a1bd1e162fdd244fce1dab3dd47d1c8
+  default_submitted_branch: ros-wiki-migration-mrpt_ekf_slam_2d-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/mrpt_slam.git
+  markdown_file: markdown_output/mrpt_ekf_slam_2d.md
+  package_xml_match: true
+  pr_url: https://github.com/mrpt-ros-pkg/mrpt_slam/pull/76
+  readme_exists: false
+  repository: https://github.com/mrpt-ros-pkg/mrpt_slam.git
+  repository_archived: false
+  source_file: pages/mrpt_ekf_slam_2d/revisions/00000013
+  source_queue: export_pages.yaml
+  subdirectory: mrpt_ekf_slam_2d
+  submitted_branch: ros-wiki-migration-mrpt_ekf_slam_2d
+  tully2: ready
+mrpt_rbpf_slam:
+  action: create
+  branch: ros1
+  commit_sha: e797f126ad7c2a20625de204c37746cf2b920730
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/mrpt-ros-pkg/mrpt_slam/pull/79
+  default_commit_sha: 680934365459d3db3ef6c04732a926abecafc9ed
+  default_submitted_branch: ros-wiki-migration-mrpt_rbpf_slam-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/mrpt_slam.git
+  markdown_file: markdown_output/mrpt_rbpf_slam.md
+  package_xml_match: true
+  pr_url: https://github.com/mrpt-ros-pkg/mrpt_slam/pull/78
+  readme_exists: false
+  repository: https://github.com/mrpt-ros-pkg/mrpt_slam.git
+  repository_archived: false
+  source_file: pages/mrpt_rbpf_slam/revisions/00000076
+  source_queue: export_pages.yaml
+  subdirectory: mrpt_rbpf_slam
+  submitted_branch: ros-wiki-migration-mrpt_rbpf_slam
+  tully2: ready
+mrpt_reactivenav2d:
+  action: create
+  branch: ros1
+  commit_sha: 130466c251e19f4bfb6b9b8f97cad0b257a8c958
+  default_action: append
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/mrpt-ros-pkg/mrpt_navigation/pull/223
+  default_commit_sha: 20752ec3389d376fa757a18a134e76c5ae9c01a4
+  default_submitted_branch: ros-wiki-migration-mrpt_reactivenav2d-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/mrpt_navigation.git
+  markdown_file: markdown_output/mrpt_reactivenav2d.md
+  package_xml_match: true
+  pr_url: https://github.com/mrpt-ros-pkg/mrpt_navigation/pull/222
+  readme_exists: false
+  repository: https://github.com/mrpt-ros-pkg/mrpt_navigation.git
+  repository_archived: false
+  source_file: pages/mrpt_reactivenav2d/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: mrpt_reactivenav2d
+  submitted_branch: ros-wiki-migration-mrpt_reactivenav2d
   tully2: ready
 mrpt_tutorials:
   action: create
@@ -1182,6 +1742,82 @@ nav2d_navigator:
   subdirectory: nav2d_navigator
   submitted_branch: ros-wiki-migration-nav2d_navigator
   tully2: ready
+nmea_navsat_driver:
+  action: create
+  branch: master
+  commit_sha: 2490a6e14e501a00edb253e9e4ffabf81a9f9dc5
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/nmea_navsat_driver.git
+  markdown_file: markdown_output/nmea_navsat_driver.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/nmea_navsat_driver/pull/197
+  readme_exists: false
+  repository: https://github.com/ros-drivers/nmea_navsat_driver.git
+  repository_archived: false
+  source_file: pages/nmea_navsat_driver/revisions/00000017
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-nmea_navsat_driver
+  tully2: ready
+ocean_battery_driver:
+  action: create
+  attachments:
+  - ocean_battery_driver/doc/Screenshot-PR2_Power_State.png
+  - ocean_battery_driver/doc/sbdat110.pdf
+  attachments_commit_sha: 6ec8cfbdd8c1e6086fcf492ecea1edc2144be15a
+  branch: kinetic-devel
+  commit_sha: 91b665eb536f5c0612a8401d1852208def19c962
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_power_drivers.git
+  markdown_file: markdown_output/ocean_battery_driver.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_power_drivers/pull/78
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_power_drivers.git
+  repository_archived: false
+  source_file: pages/ocean_battery_driver/revisions/00000038
+  source_queue: export_pages.yaml
+  subdirectory: ocean_battery_driver
+  submitted_branch: ros-wiki-migration-ocean_battery_driver
+  tully2: ready
+octomap_server:
+  action: create
+  branch: kinetic-devel
+  commit_sha: c661eb3980d371d2ada999009605bdd8dd145884
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/OctoMap/octomap_mapping/pull/144
+  default_commit_sha: 2f9b56f3a3d17b87a4957e262a8d96a3e6568ba2
+  default_submitted_branch: ros-wiki-migration-octomap_server-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/octomap_mapping.git
+  markdown_file: markdown_output/octomap_server.md
+  package_xml_match: true
+  pr_url: https://github.com/OctoMap/octomap_mapping/pull/143
+  readme_exists: false
+  repository: https://github.com/OctoMap/octomap_mapping.git
+  repository_archived: false
+  source_file: pages/octomap_server/revisions/00000024
+  source_queue: export_pages.yaml
+  subdirectory: octomap_server
+  submitted_branch: ros-wiki-migration-octomap_server
+  tully2: ready
+omron_os32c_driver:
+  action: create
+  attachments:
+  - omron_os32c_driver/doc/os32c.jpg
+  attachments_commit_sha: 44623f0f53dc93c149fe2451e471dc709be762eb
+  branch: kinetic-devel
+  commit_sha: 42e5ca747b9cafa8350f00961d5e43e612ce16d7
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/omron.git
+  markdown_file: markdown_output/omron_os32c_driver.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/omron/pull/31
+  readme_exists: false
+  repository: https://github.com/ros-drivers/omron.git
+  repository_archived: false
+  source_file: pages/omron_os32c_driver/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: omron_os32c_driver
+  submitted_branch: ros-wiki-migration-omron_os32c_driver
+  tully2: ready
 people_msgs:
   action: create
   branch: noetic
@@ -1203,6 +1839,70 @@ people_msgs:
   subdirectory: people_msgs
   submitted_branch: ros-wiki-migration-people_msgs
   tully2: ready
+position_controllers:
+  action: create
+  branch: noetic-devel
+  commit_sha: 26f48d86b6fb47b0b05e2b340001d2bcb45a86e2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ros_controllers.git
+  markdown_file: markdown_output/position_controllers.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-controls/ros_controllers/pull/639
+  readme_exists: false
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/position_controllers/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: position_controllers
+  submitted_branch: ros-wiki-migration-position_controllers
+  tully2: ready
+pr2_bringup_tests:
+  action: create
+  branch: kinetic-devel
+  commit_sha: 2f0adbe1e2f1bf2f780d6c3ea7e6271f2af075ed
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_self_test.git
+  markdown_file: markdown_output/pr2_bringup_tests.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_self_test/pull/23
+  readme_exists: false
+  repository: https://github.com/PR2/pr2_self_test.git
+  repository_archived: false
+  source_file: pages/pr2_bringup_tests/revisions/00000004
+  source_queue: export_pages.yaml
+  subdirectory: pr2_bringup_tests
+  submitted_branch: ros-wiki-migration-pr2_bringup_tests
+  tully2: ready
+pr2_controller_configuration:
+  action: create
+  branch: kinetic-devel
+  commit_sha: 57faac9905d5c15ab20bf49afeaa2e4f14b8348b
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_robot.git
+  markdown_file: markdown_output/pr2_controller_configuration.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_robot/pull/278
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_robot.git
+  repository_archived: false
+  source_file: pages/pr2_controller_configuration/revisions/00000008
+  source_queue: export_pages.yaml
+  subdirectory: pr2_controller_configuration
+  submitted_branch: ros-wiki-migration-pr2_controller_configuration
+  tully2: ready
+pr2_dashboard_aggregator:
+  action: create
+  branch: melodic-devel
+  commit_sha: 6680dfef3ba6b4742e12e43d8955090bd9501a1b
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_common.git
+  markdown_file: markdown_output/pr2_dashboard_aggregator.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_common/pull/297
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_common.git
+  repository_archived: false
+  source_file: pages/pr2_dashboard_aggregator/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: pr2_dashboard_aggregator
+  submitted_branch: ros-wiki-migration-pr2_dashboard_aggregator
+  tully2: ready
 pr2_description:
   action: create
   attachments:
@@ -1221,6 +1921,188 @@ pr2_description:
   source_queue: export_pages.yaml
   subdirectory: pr2_description
   submitted_branch: ros-wiki-migration-pr2_description
+  tully2: ready
+pr2_navigation_global:
+  action: create
+  branch: kinetic-devel
+  commit_sha: 69269b489bc5897bee54836fec614e77574fc9cd
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_navigation.git
+  markdown_file: markdown_output/pr2_navigation_global.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_navigation/pull/48
+  readme_exists: false
+  repository: https://github.com/PR2/pr2_navigation.git
+  repository_archived: false
+  source_file: pages/pr2_navigation_global/revisions/00000011
+  source_queue: export_pages.yaml
+  subdirectory: pr2_navigation_global
+  submitted_branch: ros-wiki-migration-pr2_navigation_global
+  tully2: ready
+resource_retriever:
+  action: create
+  branch: noetic-devel
+  commit_sha: fbe33ff9b1e919db74bdffdcd522d96beb2f41a0
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros/resource_retriever/pull/129
+  default_commit_sha: 1f4405221456a444f9fc44e5ad1343b2b922eef2
+  default_submitted_branch: ros-wiki-migration-resource_retriever-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/resource_retriever.git
+  markdown_file: markdown_output/resource_retriever.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/resource_retriever/pull/128
+  readme_exists: false
+  repository: https://github.com/ros/resource_retriever.git
+  repository_archived: false
+  source_file: pages/resource_retriever/revisions/00000010
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-resource_retriever
+  tully2: ready
+ridgeback_viz:
+  action: create
+  branch: kinetic-devel
+  commit_sha: b7273dc929232ae929abc7545c30d3fd2fd79002
+  default_action: create
+  default_branch: melodic-devel
+  default_branch_pr_url: https://github.com/ridgeback/ridgeback_desktop/pull/4
+  default_commit_sha: 94886c4590dd2b15c6622c462b12a2f204acb7c3
+  default_submitted_branch: ros-wiki-migration-ridgeback_viz-melodic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ridgeback_desktop.git
+  markdown_file: markdown_output/ridgeback_viz.md
+  package_xml_match: true
+  pr_url: https://github.com/ridgeback/ridgeback_desktop/pull/3
+  readme_exists: false
+  repository: https://github.com/ridgeback/ridgeback_desktop.git
+  repository_archived: false
+  source_file: pages/ridgeback_viz/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: ridgeback_viz
+  submitted_branch: ros-wiki-migration-ridgeback_viz
+  tully2: ready
+ros_canopen:
+  action: create
+  attachments:
+  - ros_canopen/doc/ros_canopen_structure.png
+  attachments_commit_sha: 71618f334a693870f1faca45cf8761400bb89a69
+  branch: melodic-devel
+  commit_sha: bdb55780ca0cb950a178ae6e0d1f0277ed51e40d
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ros_canopen.git
+  markdown_file: markdown_output/ros_canopen.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/ros_canopen/pull/494
+  readme_exists: false
+  repository: https://github.com/ros-industrial/ros_canopen.git
+  repository_archived: false
+  source_file: pages/ros_canopen/revisions/00000023
+  source_queue: export_pages.yaml
+  subdirectory: ros_canopen
+  submitted_branch: ros-wiki-migration-ros_canopen
+  tully2: ready
+ros_controllers_cartesian:
+  action: create
+  branch: main
+  commit_sha: 6511b4f31acf83764e98a08a533fef25e7f43f87
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/Universal_Robots_ROS_controllers_cartesian.git
+  markdown_file: markdown_output/ros_controllers_cartesian.md
+  package_xml_match: true
+  pr_url: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian/pull/22
+  readme_exists: false
+  repository: https://github.com/UniversalRobots/Universal_Robots_ROS_controllers_cartesian.git
+  repository_archived: false
+  source_file: pages/ros_controllers_cartesian/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: ros_controllers_cartesian
+  submitted_branch: ros-wiki-migration-ros_controllers_cartesian
+  tully2: ready
+rosbridge_server:
+  action: create
+  branch: ros1
+  commit_sha: 89b78423868d4483bfd248b9e7695e39b5726e85
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/RobotWebTools/rosbridge_suite/pull/1345
+  default_commit_sha: aee5c3913202019ad92e5948859ca42270789691
+  default_submitted_branch: ros-wiki-migration-rosbridge_server-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosbridge_suite.git
+  markdown_file: markdown_output/rosbridge_server.md
+  package_xml_match: true
+  pr_url: https://github.com/RobotWebTools/rosbridge_suite/pull/1344
+  readme_exists: false
+  repository: https://github.com/RobotWebTools/rosbridge_suite.git
+  repository_archived: false
+  source_file: pages/rosbridge_server/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: rosbridge_server
+  submitted_branch: ros-wiki-migration-rosbridge_server
+  tully2: ready
+rosmon:
+  action: create
+  attachments:
+  - rosmon/doc/screenshot.svg
+  attachments_commit_sha: 0cd9c8f23f5de917c8e8dcef2cb6f912a8eb5845
+  branch: master
+  commit_sha: db87024ddf471faf013328cacc301a50575c27f7
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosmon.git
+  markdown_file: markdown_output/rosmon.md
+  package_xml_match: true
+  pr_url: https://github.com/xqms/rosmon/pull/195
+  readme_exists: false
+  repository: https://github.com/xqms/rosmon.git
+  repository_archived: false
+  source_file: pages/rosmon/revisions/00000019
+  source_queue: export_pages.yaml
+  subdirectory: rosmon
+  submitted_branch: ros-wiki-migration-rosmon
+  tully2: ready
+rosserial_arduino:
+  action: create
+  attachments:
+  - rosserial_arduino/doc/RXPlot.jpg
+  - rosserial_arduino/doc/SRF08_CIRCUIT.png
+  - rosserial_arduino/doc/Sonar_srf08.zip
+  - rosserial_arduino/doc/arduino_ide_examples_screenshot.png
+  - rosserial_arduino/doc/arduino_ide_examples_screenshot_windows.png
+  - rosserial_arduino/doc/arduino_ir_ranger.jpg
+  - rosserial_arduino/doc/arduino_servo.png
+  - rosserial_arduino/doc/blinkm.jpg
+  - rosserial_arduino/doc/blinkm_connections.jpg
+  - rosserial_arduino/doc/button_hardware.png
+  - rosserial_arduino/doc/debounce.png
+  - rosserial_arduino/doc/tmp102.png
+  attachments_commit_sha: 15c7bb669435c90129bdc3d96496c1d5c0b555bf
+  branch: noetic-devel
+  commit_sha: f50d7d946be33f2388a967e5b8b67e6c6b3932a1
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosserial.git
+  markdown_file: markdown_output/rosserial_arduino.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/rosserial/pull/636
+  readme_exists: false
+  repository: https://github.com/ros-drivers/rosserial.git
+  repository_archived: false
+  source_file: pages/rosserial_arduino/revisions/00000007
+  source_queue: export_pages.yaml
+  subdirectory: rosserial_arduino
+  submitted_branch: ros-wiki-migration-rosserial_arduino
+  tully2: ready
+rosserial_embeddedlinux:
+  action: create
+  attachments:
+  - rosserial_embeddedlinux/doc/rosserial_embeddedlinux_schematic.png
+  attachments_commit_sha: c818d7f364944800f5dff7a578fe79d28a1eb564
+  branch: noetic-devel
+  commit_sha: bf10e336b2b20f3e447188a44e345b2c1c15f1c5
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rosserial.git
+  markdown_file: markdown_output/rosserial_embeddedlinux.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/rosserial/pull/637
+  readme_exists: false
+  repository: https://github.com/ros-drivers/rosserial.git
+  repository_archived: false
+  source_file: pages/rosserial_embeddedlinux/revisions/00000017
+  source_queue: export_pages.yaml
+  subdirectory: rosserial_embeddedlinux
+  submitted_branch: ros-wiki-migration-rosserial_embeddedlinux
   tully2: ready
 rosserial_server:
   action: create
@@ -1253,6 +2135,75 @@ rosserial_windows:
   source_queue: export_pages.yaml
   subdirectory: rosserial_windows
   submitted_branch: ros-wiki-migration-rosserial_windows
+  tully2: ready
+rqt_bag_plugins:
+  action: create
+  attachments:
+  - rqt_bag_plugins/doc/image_grab.png
+  - rqt_bag_plugins/doc/plot_grab.png
+  - rqt_bag_plugins/doc/rqt_bag_views.png
+  attachments_commit_sha: 9b6ef2a54a75c7107fbeb687d737b251e7da7d12
+  branch: noetic-devel
+  commit_sha: 2bd3c89bac976f1ac04a10814e98513805d1104c
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-visualization/rqt_bag/pull/225
+  default_commit_sha: ccaed3c44e422cce3c651bed65a999ecbf7801cf
+  default_submitted_branch: ros-wiki-migration-rqt_bag_plugins-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rqt_bag.git
+  markdown_file: markdown_output/rqt_bag_plugins.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-visualization/rqt_bag/pull/224
+  readme_exists: false
+  repository: https://github.com/ros-visualization/rqt_bag.git
+  repository_archived: false
+  source_file: pages/rqt_bag_plugins/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: rqt_bag_plugins
+  submitted_branch: ros-wiki-migration-rqt_bag_plugins
+  tully2: ready
+rqt_dep:
+  action: create
+  attachments:
+  - doc/snap_rqt_dep.png
+  attachments_commit_sha: 5c2f30b9e8cbfed94c7a82a5ae0e845d1c27ad1d
+  branch: noetic-devel
+  commit_sha: 903ef921322ef650cd4be15b7f7c822bf20f7ec2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rqt_dep.git
+  markdown_file: markdown_output/rqt_dep.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-visualization/rqt_dep/pull/22
+  readme_exists: false
+  repository: https://github.com/ros-visualization/rqt_dep.git
+  repository_archived: false
+  source_file: pages/rqt_dep/revisions/00000004
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-rqt_dep
+  tully2: ready
+rqt_moveit:
+  action: create
+  attachments:
+  - doc/sna_rqt_moveit_1.png
+  attachments_commit_sha: 6635075be1b1c7be83ed1bbf21f4d2236c49e42f
+  branch: master
+  commit_sha: 93c8b2ee77032d0de186c8ea7db7a0f3c6f9a9cf
+  default_action: create
+  default_branch: ros1
+  default_branch_pr_url: https://github.com/ros-visualization/rqt_moveit/pull/16
+  default_commit_sha: ae05e11f785c309c0af731d29c1f35794dfa17c6
+  default_submitted_branch: ros-wiki-migration-rqt_moveit-ros1
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rqt_moveit.git
+  markdown_file: markdown_output/rqt_moveit.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-visualization/rqt_moveit/pull/15
+  readme_exists: false
+  repository: https://github.com/ros-visualization/rqt_moveit.git
+  repository_archived: false
+  source_file: pages/rqt_moveit/revisions/00000008
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-rqt_moveit
   tully2: ready
 rqt_rviz:
   action: create

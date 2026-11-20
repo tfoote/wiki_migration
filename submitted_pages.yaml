@@ -2205,6 +2205,49 @@ rqt_moveit:
   subdirectory: ''
   submitted_branch: ros-wiki-migration-rqt_moveit
   tully2: ready
+rqt_plot:
+  action: create
+  attachments:
+  - doc/rqt_plot.png
+  attachments_commit_sha: 33ea7667f5f5130acbe984e5ccc2a0b5f2fb31f1
+  branch: noetic-devel
+  commit_sha: f42c7c8b59080b5a87ee01135d1a9867b4fc16c1
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-visualization/rqt_plot/pull/133
+  default_commit_sha: f73533331085fede54e63bea7e2ad6ff1fd89beb
+  default_submitted_branch: ros-wiki-migration-rqt_plot-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rqt_plot.git
+  markdown_file: markdown_output/rqt_plot.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-visualization/rqt_plot/pull/132
+  readme_exists: false
+  repository: https://github.com/ros-visualization/rqt_plot.git
+  repository_archived: false
+  source_file: pages/rqt_plot/revisions/00000017
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-rqt_plot
+  tully2: ready
+rqt_pose_view:
+  action: create
+  attachments:
+  - doc/rqt_pose_view.png
+  attachments_commit_sha: e017fdfd61180af168bce3a8b0e91eabf7dde1f3
+  branch: noetic-devel
+  commit_sha: b683e35be9937179dc3ad357c81cf6f6be6793ba
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rqt_pose_view.git
+  markdown_file: markdown_output/rqt_pose_view.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-visualization/rqt_pose_view/pull/11
+  readme_exists: false
+  repository: https://github.com/ros-visualization/rqt_pose_view.git
+  repository_archived: false
+  source_file: pages/rqt_pose_view/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-rqt_pose_view
+  tully2: ready
 rqt_rviz:
   action: create
   branch: noetic-devel
@@ -2220,6 +2263,30 @@ rqt_rviz:
   source_queue: export_pages.yaml
   subdirectory: ''
   submitted_branch: ros-wiki-migration-rqt_rviz
+  tully2: ready
+rtabmap_rviz_plugins:
+  action: create
+  attachments:
+  - rtabmap_rviz_plugins/doc/MapCloudType.png
+  attachments_commit_sha: b01cc727cca863c0f8f62f420fd57aae7fa796e6
+  branch: noetic-devel
+  commit_sha: 6e9d6c728182cc52ff2bd34c6c7a3b562d8565e3
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/introlab/rtabmap_ros/pull/1480
+  default_commit_sha: 3e04c9b38c88f37c9a84b4ced0ea4f4291f6e635
+  default_submitted_branch: ros-wiki-migration-rtabmap_rviz_plugins-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/rtabmap_ros.git
+  markdown_file: markdown_output/rtabmap_rviz_plugins.md
+  package_xml_match: true
+  pr_url: https://github.com/introlab/rtabmap_ros/pull/1479
+  readme_exists: false
+  repository: https://github.com/introlab/rtabmap_ros.git
+  repository_archived: false
+  source_file: pages/rtabmap_rviz_plugins/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: rtabmap_rviz_plugins
+  submitted_branch: ros-wiki-migration-rtabmap_rviz_plugins
   tully2: ready
 rtabmap_sync:
   action: create
@@ -2241,6 +2308,70 @@ rtabmap_sync:
   source_queue: export_pages.yaml
   subdirectory: rtabmap_sync
   submitted_branch: ros-wiki-migration-rtabmap_sync
+  tully2: ready
+rviz_imu_plugin:
+  action: create
+  attachments:
+  - rviz_imu_plugin/doc/rviz_imu_plugin.png
+  attachments_commit_sha: 22fc56eca20e86f650a18cfc02c78a6cd55784e4
+  branch: noetic
+  commit_sha: eb952a6f8ac8f7b3f35ca3933b5160fc5d5625f8
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/CCNYRoboticsLab/imu_tools/pull/239
+  default_commit_sha: 5239a8091d5b87f3b0cdad6c849734835df9484b
+  default_submitted_branch: ros-wiki-migration-rviz_imu_plugin-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/imu_tools.git
+  markdown_file: markdown_output/rviz_imu_plugin.md
+  package_xml_match: true
+  pr_url: https://github.com/CCNYRoboticsLab/imu_tools/pull/238
+  readme_exists: false
+  repository: https://github.com/CCNYRoboticsLab/imu_tools.git
+  repository_archived: false
+  source_file: pages/rviz_imu_plugin/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: rviz_imu_plugin
+  submitted_branch: ros-wiki-migration-rviz_imu_plugin
+  tully2: ready
+simple_message:
+  action: create
+  branch: melodic
+  commit_sha: 2e447dba52dfd5088ecc627b18082ac596a753d7
+  default_action: create
+  default_branch: melodic-devel
+  default_branch_pr_url: https://github.com/ros-industrial/industrial_core/pull/300
+  default_commit_sha: da41e7672f5b67ea8b073b4d444180e206db22ef
+  default_submitted_branch: ros-wiki-migration-simple_message-melodic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/industrial_core.git
+  markdown_file: markdown_output/simple_message.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/industrial_core/pull/299
+  readme_exists: false
+  repository: https://github.com/ros-industrial/industrial_core.git
+  repository_archived: false
+  source_file: pages/simple_message/revisions/00000021
+  source_queue: export_pages.yaml
+  subdirectory: simple_message
+  submitted_branch: ros-wiki-migration-simple_message
+  tully2: ready
+single_joint_position_action:
+  action: create
+  attachments:
+  - single_joint_position_action/doc/sjposition_action_topics.png
+  attachments_commit_sha: 4653e5100b3e5eaa8a46ddaedfbbe1e86cdda773
+  branch: melodic-devel
+  commit_sha: 6d6057f64af4d3ec5b2081da7197e431d27c4a22
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_controllers.git
+  markdown_file: markdown_output/single_joint_position_action.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_controllers/pull/407
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_controllers.git
+  repository_archived: false
+  source_file: pages/single_joint_position_action/revisions/00000009
+  source_queue: export_pages.yaml
+  subdirectory: single_joint_position_action
+  submitted_branch: ros-wiki-migration-single_joint_position_action
   tully2: ready
 smach_msgs:
   action: create
@@ -2284,6 +2415,25 @@ sophus:
   subdirectory: ''
   submitted_branch: ros-wiki-migration-sophus
   tully2: ready
+turtle_actionlib:
+  action: create
+  attachments:
+  - turtle_actionlib/doc/turtle_shape.png
+  attachments_commit_sha: bc134be943163af25866476449d29abf3f4ddef9
+  branch: noetic-devel
+  commit_sha: 089cea1725b2222d67f73ac81bb6a5f6bd878c28
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/common_tutorials.git
+  markdown_file: markdown_output/turtle_actionlib.md
+  package_xml_match: true
+  pr_url: https://github.com/ros/common_tutorials/pull/33
+  readme_exists: false
+  repository: https://github.com/ros/common_tutorials.git
+  repository_archived: false
+  source_file: pages/turtle_actionlib/revisions/00000013
+  source_queue: export_pages.yaml
+  subdirectory: turtle_actionlib
+  submitted_branch: ros-wiki-migration-turtle_actionlib
+  tully2: ready
 turtlesim:
   action: create
   attachments:
@@ -2319,4 +2469,52 @@ turtlesim:
   source_queue: export_pages.yaml
   subdirectory: turtlesim
   submitted_branch: ros-wiki-migration-turtlesim
+  tully2: ready
+ur10_moveit_config:
+  action: create
+  branch: noetic-devel
+  commit_sha: 675b7eaa970ed1931eac4c4d5679dc00557accc5
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/universal_robot.git
+  markdown_file: markdown_output/ur10_moveit_config.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/universal_robot/pull/712
+  readme_exists: false
+  repository: https://github.com/ros-industrial/universal_robot.git
+  repository_archived: false
+  source_file: pages/ur10_moveit_config/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: ur10_moveit_config
+  submitted_branch: ros-wiki-migration-ur10_moveit_config
+  tully2: ready
+ur3_moveit_config:
+  action: create
+  branch: noetic-devel
+  commit_sha: 9e4211721d8b6f17e0b57dd33a901afb7cda2cdf
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/universal_robot.git
+  markdown_file: markdown_output/ur3_moveit_config.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-industrial/universal_robot/pull/713
+  readme_exists: false
+  repository: https://github.com/ros-industrial/universal_robot.git
+  repository_archived: false
+  source_file: pages/ur3_moveit_config/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: ur3_moveit_config
+  submitted_branch: ros-wiki-migration-ur3_moveit_config
+  tully2: ready
+velocity_controllers:
+  action: create
+  branch: noetic-devel
+  commit_sha: 0bd23127b15207f3db6d8165e78ac80a5d2612f5
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/ros_controllers.git
+  markdown_file: markdown_output/velocity_controllers.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-controls/ros_controllers/pull/640
+  readme_exists: false
+  repository: https://github.com/ros-controls/ros_controllers.git
+  repository_archived: false
+  source_file: pages/velocity_controllers/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: velocity_controllers
+  submitted_branch: ros-wiki-migration-velocity_controllers
   tully2: ready

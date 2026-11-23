@@ -1534,7 +1534,7 @@ franka_control:
   repository_archived: false
   source_file: pages/franka_control/revisions/00000001
   subdirectory: franka_control
-  tully2: ready
+  tully2: ignored
 franka_description:
   branch: noetic-devel
   markdown_file: markdown_output/franka_description.md
@@ -1553,7 +1553,7 @@ franka_example_controllers:
   repository_archived: false
   source_file: pages/franka_example_controllers/revisions/00000001
   subdirectory: franka_example_controllers
-  tully2: ready
+  tully2: ignored
 franka_gripper:
   branch: noetic-devel
   markdown_file: markdown_output/franka_gripper.md
@@ -1563,7 +1563,7 @@ franka_gripper:
   repository_archived: false
   source_file: pages/franka_gripper/revisions/00000001
   subdirectory: franka_gripper
-  tully2: ready
+  tully2: ignored
 franka_hw:
   branch: noetic-devel
   markdown_file: markdown_output/franka_hw.md
@@ -1592,7 +1592,7 @@ franka_ros:
   repository_archived: false
   source_file: pages/franka_ros/revisions/00000002
   subdirectory: franka_ros
-  tully2: ready
+  tully2: ignored
 franka_visualization:
   branch: noetic-devel
   markdown_file: markdown_output/franka_visualization.md

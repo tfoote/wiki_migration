@@ -490,7 +490,11 @@ def build_pr_body(
         f"ROS Wiki page [{package}]({wiki_url})"
         + (f" (`{source_file}`)" if source_file else "")
         + ".\n\n"
-        f"Project source with the scripts I'm using are at https://github.com/tfoote-ros-wiki-migration-forks"
+        f"Project source with the scripts I'm using are at https://github.com/tfoote/wiki_migration"
+        + ".\n\n"
+        f"Please see this thread for more info https://discourse.openrobotics.org/t/ros-wiki-content-migration-effort/59926?u=tfoote"
+        + "\n\n"
+        f"Project source with the scripts I'm using are at https://github.com/tfoote/wiki_migration"
         + ".\n\n"
         f"### Please Note\n\n"
         f"The goal of this effort is to provide the existing ROS Wiki documentation "

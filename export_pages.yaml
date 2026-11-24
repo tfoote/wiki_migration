@@ -1759,16 +1759,6 @@ hebi_cpp_api:
   repository_archived: false
   source_file: pages/hebi_cpp_api/revisions/00000004
   subdirectory: ''
-hector_compressed_map_transport:
-  branch: noetic-devel
-  markdown_file: markdown_output/hector_compressed_map_transport.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
-  repository_archived: false
-  source_file: pages/hector_compressed_map_transport/revisions/00000006
-  subdirectory: hector_compressed_map_transport
-  tully2: ready
 hector_gazebo_plugins:
   branch: melodic-devel
   markdown_file: markdown_output/hector_gazebo_plugins.md
@@ -1805,16 +1795,6 @@ hector_geotiff_plugins:
   repository_archived: false
   source_file: pages/hector_geotiff_plugins/revisions/00000001
   subdirectory: hector_geotiff_plugins
-hector_imu_attitude_to_tf:
-  branch: noetic-devel
-  markdown_file: markdown_output/hector_imu_attitude_to_tf.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
-  repository_archived: false
-  source_file: pages/hector_imu_attitude_to_tf/revisions/00000002
-  subdirectory: hector_imu_attitude_to_tf
-  tully2: ready
 hector_map_server:
   branch: noetic-devel
   markdown_file: markdown_output/hector_map_server.md
@@ -1887,16 +1867,6 @@ hector_slam_launch:
   repository_archived: false
   source_file: pages/hector_slam_launch/revisions/00000001
   subdirectory: hector_slam_launch
-hector_trajectory_server:
-  branch: noetic-devel
-  markdown_file: markdown_output/hector_trajectory_server.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
-  repository_archived: false
-  source_file: pages/hector_trajectory_server/revisions/00000005
-  subdirectory: hector_trajectory_server
-  tully2: ready
 hector_xacro_tools:
   branch: melodic-devel
   markdown_file: markdown_output/hector_xacro_tools.md
@@ -1934,16 +1904,6 @@ husky_msgs:
   repository_archived: false
   source_file: pages/husky_msgs/revisions/00000005
   subdirectory: husky_msgs
-husky_viz:
-  branch: noetic-devel
-  markdown_file: markdown_output/husky_viz.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/husky/husky.git
-  repository_archived: false
-  source_file: pages/husky_viz/revisions/00000006
-  subdirectory: husky_viz
-  tully2: ready
 ibeo_msgs:
   branch: master
   markdown_file: markdown_output/ibeo_msgs.md
@@ -1962,16 +1922,6 @@ image_cb_detector:
   repository_archived: false
   source_file: pages/image_cb_detector/revisions/00000006
   subdirectory: image_cb_detector
-image_proc:
-  branch: noetic
-  markdown_file: markdown_output/image_proc.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/image_pipeline.git
-  repository_archived: false
-  source_file: pages/image_proc/revisions/00000050
-  subdirectory: image_proc
-  tully2: ready
 image_publisher:
   branch: noetic
   markdown_file: markdown_output/image_publisher.md
@@ -2257,16 +2207,6 @@ joint_trajectory_action_tools:
   source_file: pages/joint_trajectory_action_tools/revisions/00000002
   subdirectory: joint_trajectory_action_tools
   tully2: ignored
-joint_trajectory_generator:
-  branch: kinetic-devel
-  markdown_file: markdown_output/joint_trajectory_generator.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_common_actions.git
-  repository_archived: false
-  source_file: pages/joint_trajectory_generator/revisions/00000009
-  subdirectory: joint_trajectory_generator
-  tully2: ready
 joy_listener:
   branch: noetic
   markdown_file: markdown_output/joy_listener.md
@@ -2400,16 +2340,6 @@ jsk_rqt_plugins:
   source_file: pages/jsk_rqt_plugins/revisions/00000002
   subdirectory: jsk_rqt_plugins
   tully2: ignored
-jsk_rviz_plugins:
-  branch: master
-  markdown_file: markdown_output/jsk_rviz_plugins.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/jsk-ros-pkg/jsk_visualization.git
-  repository_archived: false
-  source_file: pages/jsk_rviz_plugins/revisions/00000002
-  subdirectory: jsk_rviz_plugins
-  tully2: ready
 jsk_tools:
   branch: master
   markdown_file: markdown_output/jsk_tools.md
@@ -2607,16 +2537,6 @@ kobuki_driver:
   repository_archived: false
   source_file: pages/kobuki_driver/revisions/00000010
   subdirectory: kobuki_driver
-kvh_geo_fog_3d:
-  branch: noetic-devel
-  markdown_file: markdown_output/kvh_geo_fog_3d.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/MITRE/kvh_geo_fog_3d.git
-  repository_archived: false
-  source_file: pages/kvh_geo_fog_3d/revisions/00000001
-  subdirectory: kvh_geo_fog_3d
-  tully2: ready
 kvh_geo_fog_3d_msgs:
   branch: noetic-devel
   markdown_file: markdown_output/kvh_geo_fog_3d_msgs.md
@@ -2797,16 +2717,6 @@ leo_teleop:
   repository_archived: false
   source_file: pages/leo_teleop/revisions/00000003
   subdirectory: leo_teleop
-leo_viz:
-  branch: master
-  markdown_file: markdown_output/leo_viz.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/LeoRover/leo_desktop.git
-  repository_archived: false
-  source_file: pages/leo_viz/revisions/00000003
-  subdirectory: leo_viz
-  tully2: ready
 libcmt:
   branch: master
   markdown_file: markdown_output/libcmt.md
@@ -2861,16 +2771,6 @@ libsiftfast:
   repository_archived: false
   source_file: pages/libsiftfast/revisions/00000003
   subdirectory: 3rdparty/libsiftfast
-libuvc_camera:
-  branch: master
-  markdown_file: markdown_output/libuvc_camera.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-drivers/libuvc_ros.git
-  repository_archived: false
-  source_file: pages/libuvc_camera/revisions/00000016
-  subdirectory: libuvc_camera
-  tully2: ready
 lusb:
   branch: master
   markdown_file: markdown_output/lusb.md
@@ -2945,26 +2845,6 @@ mia_hand_ros_pkgs:
   repository_archived: false
   source_file: pages/mia_hand_ros_pkgs/revisions/00000005
   subdirectory: mia_hand_ros_pkgs
-microstrain_3dmgx2_imu:
-  branch: indigo-devel
-  markdown_file: markdown_output/microstrain_3dmgx2_imu.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-drivers/microstrain_3dmgx2_imu.git
-  repository_archived: false
-  source_file: pages/microstrain_3dmgx2_imu/revisions/00000065
-  subdirectory: ''
-  tully2: ready
-microstrain_inertial_description:
-  branch: ros
-  markdown_file: markdown_output/microstrain_inertial_description.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/LORD-MicroStrain/microstrain_inertial.git
-  repository_archived: false
-  source_file: pages/microstrain_inertial_description/revisions/00000003
-  subdirectory: microstrain_inertial_description
-  tully2: ready
 mir_actions:
   branch: noetic
   markdown_file: markdown_output/mir_actions.md

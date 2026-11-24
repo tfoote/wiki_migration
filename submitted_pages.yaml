@@ -1464,6 +1464,38 @@ gps_common:
   subdirectory: gps_common
   submitted_branch: ros-wiki-migration-gps_common
   tully2: ready
+hector_compressed_map_transport:
+  action: create
+  branch: noetic-devel
+  commit_sha: 52b7dfb0c2b38e0e58cdc3deb32170eafdcef82e
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/hector_slam.git
+  markdown_file: markdown_output/hector_compressed_map_transport.md
+  package_xml_match: true
+  pr_url: https://github.com/tu-darmstadt-ros-pkg/hector_slam/pull/118
+  readme_exists: false
+  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
+  repository_archived: false
+  source_file: pages/hector_compressed_map_transport/revisions/00000006
+  source_queue: export_pages.yaml
+  subdirectory: hector_compressed_map_transport
+  submitted_branch: ros-wiki-migration-hector_compressed_map_transport
+  tully2: ready
+hector_imu_attitude_to_tf:
+  action: create
+  branch: noetic-devel
+  commit_sha: e0dc53ca89b982b72162e7ff61dd9d2283f5f3f0
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/hector_slam.git
+  markdown_file: markdown_output/hector_imu_attitude_to_tf.md
+  package_xml_match: true
+  pr_url: https://github.com/tu-darmstadt-ros-pkg/hector_slam/pull/119
+  readme_exists: false
+  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
+  repository_archived: false
+  source_file: pages/hector_imu_attitude_to_tf/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: hector_imu_attitude_to_tf
+  submitted_branch: ros-wiki-migration-hector_imu_attitude_to_tf
+  tully2: ready
 hector_mapping:
   action: create
   branch: noetic-devel
@@ -1496,6 +1528,38 @@ hector_pose_estimation:
   subdirectory: hector_pose_estimation
   submitted_branch: ros-wiki-migration-hector_pose_estimation
   tully2: ready
+hector_trajectory_server:
+  action: create
+  branch: noetic-devel
+  commit_sha: 47fff5d7bdf5888df962d76539b544fe32c1f9c8
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/hector_slam.git
+  markdown_file: markdown_output/hector_trajectory_server.md
+  package_xml_match: true
+  pr_url: https://github.com/tu-darmstadt-ros-pkg/hector_slam/pull/120
+  readme_exists: false
+  repository: https://github.com/tu-darmstadt-ros-pkg/hector_slam.git
+  repository_archived: false
+  source_file: pages/hector_trajectory_server/revisions/00000005
+  source_queue: export_pages.yaml
+  subdirectory: hector_trajectory_server
+  submitted_branch: ros-wiki-migration-hector_trajectory_server
+  tully2: ready
+husky_viz:
+  action: create
+  branch: noetic-devel
+  commit_sha: 3b9d10e673561aa505b1178ebb8e60f522dae7f2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/husky.git
+  markdown_file: markdown_output/husky_viz.md
+  package_xml_match: true
+  pr_url: https://github.com/husky/husky/pull/451
+  readme_exists: false
+  repository: https://github.com/husky/husky.git
+  repository_archived: false
+  source_file: pages/husky_viz/revisions/00000006
+  source_queue: export_pages.yaml
+  subdirectory: husky_viz
+  submitted_branch: ros-wiki-migration-husky_viz
+  tully2: ready
 image_geometry:
   action: create
   attachments:
@@ -1519,6 +1583,32 @@ image_geometry:
   source_queue: export_pages.yaml
   subdirectory: image_geometry
   submitted_branch: ros-wiki-migration-image_geometry
+  tully2: ready
+image_proc:
+  action: create
+  attachments:
+  - image_proc/doc/image_proc.png
+  - image_proc/doc/left_raw.png
+  - image_proc/doc/left_rect_color.png
+  attachments_commit_sha: d94d9db7030824589fda90c8ec0c943b100bd3ac
+  branch: noetic
+  commit_sha: e1222b998839091d1568d73e2bf56dcbdfe7dbfa
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/image_pipeline/pull/1215
+  default_commit_sha: 4824cbe05e29238928c16168373ea07b90608cf8
+  default_submitted_branch: ros-wiki-migration-image_proc-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/image_pipeline.git
+  markdown_file: markdown_output/image_proc.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/image_pipeline/pull/1214
+  readme_exists: false
+  repository: https://github.com/ros-perception/image_pipeline.git
+  repository_archived: false
+  source_file: pages/image_proc/revisions/00000050
+  source_queue: export_pages.yaml
+  subdirectory: image_proc
+  submitted_branch: ros-wiki-migration-image_proc
   tully2: ready
 image_rotate:
   action: create
@@ -1687,6 +1777,41 @@ jackal_viz:
   subdirectory: jackal_viz
   submitted_branch: ros-wiki-migration-jackal_viz
   tully2: ready
+joint_trajectory_generator:
+  action: create
+  attachments:
+  - joint_trajectory_generator/doc/trapezoid.png
+  attachments_commit_sha: fdee14c2c3b840a78b62fd9be4ad9d076c0b8f22
+  branch: kinetic-devel
+  commit_sha: 3eed9c8c481beee2a757f4725feba42195f8c30f
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_common_actions.git
+  markdown_file: markdown_output/joint_trajectory_generator.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_common_actions/pull/44
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_common_actions.git
+  repository_archived: false
+  source_file: pages/joint_trajectory_generator/revisions/00000009
+  source_queue: export_pages.yaml
+  subdirectory: joint_trajectory_generator
+  submitted_branch: ros-wiki-migration-joint_trajectory_generator
+  tully2: ready
+jsk_rviz_plugins:
+  action: append
+  branch: master
+  commit_sha: dcba1cae23cf732e6b7f02fafa40c730cf3a7a9e
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/jsk_visualization.git
+  markdown_file: markdown_output/jsk_rviz_plugins.md
+  package_xml_match: true
+  pr_url: https://github.com/jsk-ros-pkg/jsk_visualization/pull/909
+  readme_exists: false
+  repository: https://github.com/jsk-ros-pkg/jsk_visualization.git
+  repository_archived: false
+  source_file: pages/jsk_rviz_plugins/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: jsk_rviz_plugins
+  submitted_branch: ros-wiki-migration-jsk_rviz_plugins
+  tully2: ready
 kartech_linear_actuator_msgs:
   action: create
   branch: master
@@ -1726,6 +1851,27 @@ kdl_parser:
   source_queue: export_pages.yaml
   subdirectory: kdl_parser
   submitted_branch: ros-wiki-migration-kdl_parser
+  tully2: ready
+kvh_geo_fog_3d:
+  action: create
+  branch: noetic-devel
+  commit_sha: 72996b0c8bde4915567b56581757912f33965bce
+  default_action: create
+  default_branch: kinetic-devel
+  default_branch_pr_url: https://github.com/mitre/kvh_geo_fog_3d/pull/4
+  default_commit_sha: f8fa06a2c67f908a5bf8477942edf9a43dee8bd0
+  default_submitted_branch: ros-wiki-migration-kvh_geo_fog_3d-kinetic-devel
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/kvh_geo_fog_3d.git
+  markdown_file: markdown_output/kvh_geo_fog_3d.md
+  package_xml_match: true
+  pr_url: https://github.com/mitre/kvh_geo_fog_3d/pull/3
+  readme_exists: false
+  repository: https://github.com/MITRE/kvh_geo_fog_3d.git
+  repository_archived: false
+  source_file: pages/kvh_geo_fog_3d/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: kvh_geo_fog_3d
+  submitted_branch: ros-wiki-migration-kvh_geo_fog_3d
   tully2: ready
 kvh_geo_fog_3d_rviz:
   action: create
@@ -1863,6 +2009,22 @@ leo_gazebo:
   subdirectory: leo_gazebo
   submitted_branch: ros-wiki-migration-leo_gazebo
   tully2: ready
+leo_viz:
+  action: create
+  branch: master
+  commit_sha: 6d715235bbaf77d872ae4f2fd16888d3a1ff8077
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/leo_desktop.git
+  markdown_file: markdown_output/leo_viz.md
+  package_xml_match: true
+  pr_url: https://github.com/LeoRover/leo_desktop/pull/3
+  readme_exists: false
+  repository: https://github.com/LeoRover/leo_desktop.git
+  repository_archived: false
+  source_file: pages/leo_viz/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: leo_viz
+  submitted_branch: ros-wiki-migration-leo_viz
+  tully2: ready
 libpcan:
   action: create
   branch: indigo_dev
@@ -1895,6 +2057,22 @@ libsensors_monitor:
   subdirectory: libsensors_monitor
   submitted_branch: ros-wiki-migration-libsensors_monitor
   tully2: ready
+libuvc_camera:
+  action: create
+  branch: master
+  commit_sha: df20ce872e4780ee1f163ae55bad2b60d853deba
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/libuvc_ros.git
+  markdown_file: markdown_output/libuvc_camera.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/libuvc_ros/pull/76
+  readme_exists: false
+  repository: https://github.com/ros-drivers/libuvc_ros.git
+  repository_archived: false
+  source_file: pages/libuvc_camera/revisions/00000016
+  source_queue: export_pages.yaml
+  subdirectory: libuvc_camera
+  submitted_branch: ros-wiki-migration-libuvc_camera
+  tully2: ready
 lockfree:
   action: create
   branch: noetic-devel
@@ -1910,6 +2088,50 @@ lockfree:
   source_queue: export_pages.yaml
   subdirectory: lockfree
   submitted_branch: ros-wiki-migration-lockfree
+  tully2: ready
+microstrain_3dmgx2_imu:
+  action: create
+  attachments:
+  - doc/imu.png
+  attachments_commit_sha: 32042e1c0bd266ee84cdbbb1a23f6bec521927bc
+  branch: indigo-devel
+  commit_sha: 57fc0ce9fcc7ddce950191b6d57313375c2b179e
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/microstrain_3dmgx2_imu.git
+  markdown_file: markdown_output/microstrain_3dmgx2_imu.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-drivers/microstrain_3dmgx2_imu/pull/15
+  readme_exists: false
+  repository: https://github.com/ros-drivers/microstrain_3dmgx2_imu.git
+  repository_archived: false
+  source_file: pages/microstrain_3dmgx2_imu/revisions/00000065
+  source_queue: export_pages.yaml
+  subdirectory: ''
+  submitted_branch: ros-wiki-migration-microstrain_3dmgx2_imu
+  tully2: ready
+microstrain_inertial_description:
+  action: create
+  attachments:
+  - microstrain_inertial_description/doc/all_sensors.png
+  - microstrain_inertial_description/doc/gq7_example.png
+  attachments_commit_sha: a02ed7ea3af8634fecc9640e950eccf01e223307
+  branch: ros
+  commit_sha: a0da1e84150ec98e062ad1cccc5c5264e0b053f1
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/LORD-MicroStrain/microstrain_inertial/pull/412
+  default_commit_sha: e33e0731f6dcf7fa0cead9100742fc452a0ca3c1
+  default_submitted_branch: ros-wiki-migration-microstrain_inertial_description-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/microstrain_inertial.git
+  markdown_file: markdown_output/microstrain_inertial_description.md
+  package_xml_match: true
+  pr_url: https://github.com/LORD-MicroStrain/microstrain_inertial/pull/411
+  readme_exists: false
+  repository: https://github.com/LORD-MicroStrain/microstrain_inertial.git
+  repository_archived: false
+  source_file: pages/microstrain_inertial_description/revisions/00000003
+  source_queue: export_pages.yaml
+  subdirectory: microstrain_inertial_description
+  submitted_branch: ros-wiki-migration-microstrain_inertial_description
   tully2: ready
 mocap_optitrack:
   action: create

@@ -2900,16 +2900,6 @@ mir_navigation:
   repository_archived: false
   source_file: pages/mir_navigation/revisions/00000001
   subdirectory: mir_navigation
-mobileye_560_660_msgs:
-  branch: master
-  markdown_file: markdown_output/mobileye_560_660_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/astuff/astuff_sensor_msgs.git
-  repository_archived: false
-  source_file: pages/mobileye_560_660_msgs/revisions/00000001
-  subdirectory: mobileye_560_660_msgs
-  tully2: ready
 mongodb_log:
   branch: noetic-devel
   markdown_file: markdown_output/mongodb_log.md
@@ -3538,16 +3528,6 @@ pcl_conversions:
   source_file: pages/pcl_conversions/revisions/00000001
   subdirectory: pcl_conversions
   tully2: ignored
-pcl_ros:
-  branch: melodic-devel
-  markdown_file: markdown_output/pcl_ros.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/perception_pcl.git
-  repository_archived: false
-  source_file: pages/pcl_ros/revisions/00000039
-  subdirectory: pcl_ros
-  tully2: ready
 people:
   branch: noetic
   markdown_file: markdown_output/people.md
@@ -3648,16 +3628,6 @@ polar_scan_matcher:
   repository_archived: false
   source_file: pages/polar_scan_matcher/revisions/00000008
   subdirectory: polar_scan_matcher
-polled_camera:
-  branch: noetic-devel
-  markdown_file: markdown_output/polled_camera.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/ros-perception/image_common.git
-  repository_archived: false
-  source_file: pages/polled_camera/revisions/00000018
-  subdirectory: polled_camera
-  tully2: ready
 posedetection_msgs:
   branch: master
   markdown_file: markdown_output/posedetection_msgs.md
@@ -3784,26 +3754,6 @@ pr2_counterbalance_check:
   repository_archived: false
   source_file: pages/pr2_counterbalance_check/revisions/00000002
   subdirectory: pr2_counterbalance_check
-pr2_ethercat:
-  branch: kinetic-devel
-  markdown_file: markdown_output/pr2_ethercat.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_robot.git
-  repository_archived: false
-  source_file: pages/pr2_ethercat/revisions/00000002
-  subdirectory: pr2_ethercat
-  tully2: ready
-pr2_gazebo:
-  branch: kinetic-devel
-  markdown_file: markdown_output/pr2_gazebo.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/PR2/pr2_simulator.git
-  repository_archived: false
-  source_file: pages/pr2_gazebo/revisions/00000011
-  subdirectory: pr2_gazebo
-  tully2: ready
 pr2_gazebo_plugins:
   branch: kinetic-devel
   markdown_file: markdown_output/pr2_gazebo_plugins.md
@@ -3813,16 +3763,6 @@ pr2_gazebo_plugins:
   repository_archived: false
   source_file: pages/pr2_gazebo_plugins/revisions/00000044
   subdirectory: pr2_gazebo_plugins
-pr2_gripper_action:
-  branch: melodic-devel
-  markdown_file: markdown_output/pr2_gripper_action.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_controllers.git
-  repository_archived: false
-  source_file: pages/pr2_gripper_action/revisions/00000022
-  subdirectory: pr2_gripper_action
-  tully2: ready
 pr2_hardware_interface:
   branch: kinetic-devel
   markdown_file: markdown_output/pr2_hardware_interface.md
@@ -3905,16 +3845,6 @@ pr2_motor_diagnostic_tool:
   repository_archived: false
   source_file: pages/pr2_motor_diagnostic_tool/revisions/00000004
   subdirectory: pr2_motor_diagnostic_tool
-pr2_msgs:
-  branch: melodic-devel
-  markdown_file: markdown_output/pr2_msgs.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_common.git
-  repository_archived: false
-  source_file: pages/pr2_msgs/revisions/00000015
-  subdirectory: pr2_msgs
-  tully2: ready
 pr2_navigation_config:
   branch: kinetic-devel
   markdown_file: markdown_output/pr2_navigation_config.md
@@ -3969,16 +3899,6 @@ pr2_navigation_teleop:
   repository_archived: false
   source_file: pages/pr2_navigation_teleop/revisions/00000004
   subdirectory: pr2_navigation_teleop
-pr2_power_board:
-  branch: kinetic-devel
-  markdown_file: markdown_output/pr2_power_board.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_power_drivers.git
-  repository_archived: false
-  source_file: pages/pr2_power_board/revisions/00000025
-  subdirectory: pr2_power_board
-  tully2: ready
 pr2_run_stop_auto_restart:
   branch: kinetic-devel
   markdown_file: markdown_output/pr2_run_stop_auto_restart.md
@@ -4025,16 +3945,6 @@ pr2_tilt_laser_interface:
   source_file: pages/pr2_tilt_laser_interface/revisions/00000001
   subdirectory: pr2_tilt_laser_interface
   tully2: ignored
-pr2_tuck_arms_action:
-  branch: kinetic-devel
-  markdown_file: markdown_output/pr2_tuck_arms_action.md
-  package_xml_match: true
-  readme_exists: false
-  repository: https://github.com/pr2/pr2_common_actions.git
-  repository_archived: false
-  source_file: pages/pr2_tuck_arms_action/revisions/00000013
-  subdirectory: pr2_tuck_arms_action
-  tully2: ready
 pr2_tuckarm:
   branch: melodic-devel
   markdown_file: markdown_output/pr2_tuckarm.md

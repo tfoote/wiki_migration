@@ -2133,6 +2133,22 @@ microstrain_inertial_description:
   subdirectory: microstrain_inertial_description
   submitted_branch: ros-wiki-migration-microstrain_inertial_description
   tully2: ready
+mobileye_560_660_msgs:
+  action: create
+  branch: master
+  commit_sha: 05397d96a64f3ad42159d0fb9b49db7f1f11c7bf
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/astuff_sensor_msgs.git
+  markdown_file: markdown_output/mobileye_560_660_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/astuff/astuff_sensor_msgs/pull/99
+  readme_exists: false
+  repository: https://github.com/astuff/astuff_sensor_msgs.git
+  repository_archived: false
+  source_file: pages/mobileye_560_660_msgs/revisions/00000001
+  source_queue: export_pages.yaml
+  subdirectory: mobileye_560_660_msgs
+  submitted_branch: ros-wiki-migration-mobileye_560_660_msgs
+  tully2: ready
 mocap_optitrack:
   action: create
   attachments:
@@ -2377,6 +2393,37 @@ omron_os32c_driver:
   subdirectory: omron_os32c_driver
   submitted_branch: ros-wiki-migration-omron_os32c_driver
   tully2: ready
+pcl_ros:
+  action: create
+  attachments:
+  - pcl_ros/doc/pcl_ros_Tutorials_SACSegmentationFromNormals planar segmentation_pic1.png
+  - pcl_ros/doc/pcl_ros_Tutorials_SACSegmentationFromNormals planar segmentation_pic2.png
+  - pcl_ros/doc/pcl_ros_Tutorials_VoxelGrid filtering_pic1.png
+  - pcl_ros/doc/pcl_ros_Tutorials_VoxelGrid filtering_pic2.png
+  - pcl_ros/doc/pic1.png
+  - pcl_ros/doc/pic2.png
+  - pcl_ros/doc/rviz.jpg
+  - pcl_ros/doc/table_scene_mug_textured.vcg
+  attachments_commit_sha: a0e5a7a5a5c7932ca14a215aba2a94f6b4fe32da
+  branch: melodic-devel
+  commit_sha: 40a61bfc7d47b22b1f5d345441a628112ec95c21
+  default_action: create
+  default_branch: ros2
+  default_branch_pr_url: https://github.com/ros-perception/perception_pcl/pull/556
+  default_commit_sha: d62c1424d16394f4c24d8c568c68bbcb94421182
+  default_submitted_branch: ros-wiki-migration-pcl_ros-ros2
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/perception_pcl.git
+  markdown_file: markdown_output/pcl_ros.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/perception_pcl/pull/555
+  readme_exists: false
+  repository: https://github.com/ros-perception/perception_pcl.git
+  repository_archived: false
+  source_file: pages/pcl_ros/revisions/00000039
+  source_queue: export_pages.yaml
+  subdirectory: pcl_ros
+  submitted_branch: ros-wiki-migration-pcl_ros
+  tully2: ready
 people_msgs:
   action: create
   branch: noetic
@@ -2397,6 +2444,27 @@ people_msgs:
   source_queue: export_pages.yaml
   subdirectory: people_msgs
   submitted_branch: ros-wiki-migration-people_msgs
+  tully2: ready
+polled_camera:
+  action: create
+  branch: noetic-devel
+  commit_sha: c2f3be16371ee8ac1825f809c2fe20d4fa0944e1
+  default_action: create
+  default_branch: rolling
+  default_branch_pr_url: https://github.com/ros-perception/image_common/pull/472
+  default_commit_sha: d2da727f4ad1ce64410eaed2c4eaf6ad8f091759
+  default_submitted_branch: ros-wiki-migration-polled_camera-rolling
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/image_common.git
+  markdown_file: markdown_output/polled_camera.md
+  package_xml_match: true
+  pr_url: https://github.com/ros-perception/image_common/pull/471
+  readme_exists: false
+  repository: https://github.com/ros-perception/image_common.git
+  repository_archived: false
+  source_file: pages/polled_camera/revisions/00000018
+  source_queue: export_pages.yaml
+  subdirectory: polled_camera
+  submitted_branch: ros-wiki-migration-polled_camera
   tully2: ready
 position_controllers:
   action: create
@@ -2481,6 +2549,73 @@ pr2_description:
   subdirectory: pr2_description
   submitted_branch: ros-wiki-migration-pr2_description
   tully2: ready
+pr2_ethercat:
+  action: create
+  branch: kinetic-devel
+  commit_sha: 3984431737664778a78d038fab8a80da355380fe
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_robot.git
+  markdown_file: markdown_output/pr2_ethercat.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_robot/pull/279
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_robot.git
+  repository_archived: false
+  source_file: pages/pr2_ethercat/revisions/00000002
+  source_queue: export_pages.yaml
+  subdirectory: pr2_ethercat
+  submitted_branch: ros-wiki-migration-pr2_ethercat
+  tully2: ready
+pr2_gazebo:
+  action: create
+  branch: kinetic-devel
+  commit_sha: b3c9f33934ed548b232cde05c59132cece123f37
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_simulator.git
+  markdown_file: markdown_output/pr2_gazebo.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_simulator/pull/151
+  readme_exists: false
+  repository: https://github.com/PR2/pr2_simulator.git
+  repository_archived: false
+  source_file: pages/pr2_gazebo/revisions/00000011
+  source_queue: export_pages.yaml
+  subdirectory: pr2_gazebo
+  submitted_branch: ros-wiki-migration-pr2_gazebo
+  tully2: ready
+pr2_gripper_action:
+  action: create
+  attachments:
+  - pr2_gripper_action/doc/gripper_action_topics.png
+  attachments_commit_sha: f7138cd717472ec3dc3a5d7d3a080e9d4a4e270e
+  branch: melodic-devel
+  commit_sha: 5fddbbf5d49dbe3df2e442add293e65157e950f5
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_controllers.git
+  markdown_file: markdown_output/pr2_gripper_action.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_controllers/pull/408
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_controllers.git
+  repository_archived: false
+  source_file: pages/pr2_gripper_action/revisions/00000022
+  source_queue: export_pages.yaml
+  subdirectory: pr2_gripper_action
+  submitted_branch: ros-wiki-migration-pr2_gripper_action
+  tully2: ready
+pr2_msgs:
+  action: create
+  branch: melodic-devel
+  commit_sha: 39a75dcef1390b0b9107d70835f30c720bebbf71
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_common.git
+  markdown_file: markdown_output/pr2_msgs.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_common/pull/298
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_common.git
+  repository_archived: false
+  source_file: pages/pr2_msgs/revisions/00000015
+  source_queue: export_pages.yaml
+  subdirectory: pr2_msgs
+  submitted_branch: ros-wiki-migration-pr2_msgs
+  tully2: ready
 pr2_navigation_global:
   action: create
   branch: kinetic-devel
@@ -2496,6 +2631,47 @@ pr2_navigation_global:
   source_queue: export_pages.yaml
   subdirectory: pr2_navigation_global
   submitted_branch: ros-wiki-migration-pr2_navigation_global
+  tully2: ready
+pr2_power_board:
+  action: create
+  attachments:
+  - pr2_power_board/doc/blankpower.png
+  - pr2_power_board/doc/buttonestop.png
+  - pr2_power_board/doc/disabled.png
+  - pr2_power_board/doc/wirelessestop.png
+  attachments_commit_sha: 512bb48f218273a2614574a0c1c7f712cd78259e
+  branch: kinetic-devel
+  commit_sha: 386de458874559c18b6e74e72c9ce0f544a2028b
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_power_drivers.git
+  markdown_file: markdown_output/pr2_power_board.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_power_drivers/pull/79
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_power_drivers.git
+  repository_archived: false
+  source_file: pages/pr2_power_board/revisions/00000025
+  source_queue: export_pages.yaml
+  subdirectory: pr2_power_board
+  submitted_branch: ros-wiki-migration-pr2_power_board
+  tully2: ready
+pr2_tuck_arms_action:
+  action: create
+  attachments:
+  - pr2_tuck_arms_action/doc/tuckarm.jpg
+  attachments_commit_sha: 4893c8d68d9224448f51fe4bad9cee534305c061
+  branch: kinetic-devel
+  commit_sha: cbefa8067197f976db7caadb0acf399004fac820
+  fork_repository: https://github.com/tfoote-ros-wiki-migration-forks/pr2_common_actions.git
+  markdown_file: markdown_output/pr2_tuck_arms_action.md
+  package_xml_match: true
+  pr_url: https://github.com/PR2/pr2_common_actions/pull/45
+  readme_exists: false
+  repository: https://github.com/pr2/pr2_common_actions.git
+  repository_archived: false
+  source_file: pages/pr2_tuck_arms_action/revisions/00000013
+  source_queue: export_pages.yaml
+  subdirectory: pr2_tuck_arms_action
+  submitted_branch: ros-wiki-migration-pr2_tuck_arms_action
   tully2: ready
 resource_retriever:
   action: create
